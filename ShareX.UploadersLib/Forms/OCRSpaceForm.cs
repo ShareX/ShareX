@@ -44,6 +44,8 @@ namespace ShareX.UploadersLib
         DeepL,
         [Description("Jisho")]
         Jisho,
+        [Description("JPDB")]
+        JPDB,
         [Description("ichi.moe")]
         Ichi
     }
@@ -63,6 +65,7 @@ namespace ShareX.UploadersLib
             { OCRSpaceSites.GoogleSearch, "https://www.google.com/search?q=" },
             { OCRSpaceSites.DeepL, "https://www.deepl.com/translator#auto/en/" },
             { OCRSpaceSites.Jisho, "https://jisho.org/search/" },
+            { OCRSpaceSites.JPDB, "https://jpdb.io/search?q=" },
             { OCRSpaceSites.Ichi, "https://ichi.moe/cl/qr/?q=" }
         };
 
