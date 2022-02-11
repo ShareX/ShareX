@@ -101,12 +101,7 @@ namespace ShareX.HelpersLib
                 else
                 {
                     // If no extension exists, we will make %fe blank and fix any // issues.
-                    if (pattern.StartsWith("%fe"))
-                    {
-                        sb.Replace("%fe/", "");
-                    }
-
-                    sb.Replace("/%fe/", "/");
+                    sb.Replace("%fe/", "");
                     sb.Replace("%fe", "");
                 }
             }
