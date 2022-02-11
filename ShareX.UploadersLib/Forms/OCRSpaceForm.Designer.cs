@@ -86,9 +86,9 @@
             // 
             // cbDefaultSite
             // 
+            resources.ApplyResources(this.cbDefaultSite, "cbDefaultSite");
             this.cbDefaultSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDefaultSite.FormattingEnabled = true;
-            resources.ApplyResources(this.cbDefaultSite, "cbDefaultSite");
             this.cbDefaultSite.Name = "cbDefaultSite";
             this.cbDefaultSite.SelectedIndexChanged += new System.EventHandler(this.cbDefaultSite_SelectedIndexChanged);
             // 
