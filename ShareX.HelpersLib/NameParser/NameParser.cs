@@ -94,7 +94,21 @@ namespace ShareX.HelpersLib
             if (!string.IsNullOrEmpty(fileName))
             {
                 string fileExtension = Helpers.GetFileNameExtension(fileName);
-                sb.Replace("%ft", fileExtension);
+                if (!string.IsNullOrEmpty(fileExtension))
+                {
+                    sb.Replace("%fe", fileExtension);
+                }
+                else
+                {
+                    // If no extension exists, we will make %fe blank and fix any // issues.
+                    if (pattern.StartsWith("%fe"))
+                    {
+                        sb.Replace("%fe/", "");
+                    }
+
+                    sb.Replace("/%fe/", "/");
+                    sb.Replace("%fe", "");
+                }
             }
 
             if (WindowText != null)
