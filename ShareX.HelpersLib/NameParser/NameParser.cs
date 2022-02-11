@@ -91,6 +91,8 @@ namespace ShareX.HelpersLib
 
             StringBuilder sb = new StringBuilder(pattern);
 
+            // TODO: Update "Upload Path:" documentation
+            // to include a reference to %fe support.
             if (!string.IsNullOrEmpty(fileName))
             {
                 string fileExtension = Helpers.GetFileNameExtension(fileName);
