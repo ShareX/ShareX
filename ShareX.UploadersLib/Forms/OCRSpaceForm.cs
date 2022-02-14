@@ -44,7 +44,7 @@ namespace ShareX.UploadersLib
         DeepL,
         [Description("Jisho")]
         Jisho,
-        [Description("JPDB")]
+        [Description("jpdb.io")]
         JPDB,
         [Description("ichi.moe")]
         Ichi
