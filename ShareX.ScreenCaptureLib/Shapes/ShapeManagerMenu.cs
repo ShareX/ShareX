@@ -885,6 +885,12 @@ namespace ShareX.ScreenCaptureLib
                     (sender, e) => Options.ImageEditorStartMode = (ImageEditorStartMode)tscbImageEditorStartMode.Content.SelectedIndex;
                 tsddbOptions.DropDownItems.Add(tscbImageEditorStartMode);
 
+                ToolStripMenuItem tsmiZoomToFitOnOpen = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_ZoomToFitOnOpen);
+                tsmiZoomToFitOnOpen.Checked = Options.ZoomToFitOnOpen;
+                tsmiZoomToFitOnOpen.CheckOnClick = true;
+                tsmiZoomToFitOnOpen.Click += (sender, e) => Options.ZoomToFitOnOpen = tsmiZoomToFitOnOpen.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiZoomToFitOnOpen);
+
                 ToolStripMenuItem tsmiEditorAutoCopyImage = new ToolStripMenuItem(Resources.AutoCopyImageToClipboard);
                 tsmiEditorAutoCopyImage.Checked = Options.EditorAutoCopyImage;
                 tsmiEditorAutoCopyImage.CheckOnClick = true;

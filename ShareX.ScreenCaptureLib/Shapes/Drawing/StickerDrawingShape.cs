@@ -48,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreating()
         {
-            Point pos = InputManager.ClientMousePosition;
+            Point pos = Manager.Form.ScaledClientMousePosition;
             Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
             if (Manager.IsCtrlModifier && LoadSticker(AnnotationOptions.LastStickerPath, AnnotationOptions.StickerSize))

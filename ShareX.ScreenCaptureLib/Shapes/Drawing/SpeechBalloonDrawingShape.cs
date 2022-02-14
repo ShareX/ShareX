@@ -82,7 +82,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (TailNode.IsDragging)
             {
-                TailPosition = InputManager.ClientMousePosition;
+                TailPosition = Manager.Form.ScaledClientMousePosition;
             }
         }
 

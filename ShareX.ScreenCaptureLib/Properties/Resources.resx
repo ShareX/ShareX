@@ -379,6 +379,9 @@
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>Editor start mode:</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Zoom to fit on open</value>
+  </data>
   <data name="layer_shade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

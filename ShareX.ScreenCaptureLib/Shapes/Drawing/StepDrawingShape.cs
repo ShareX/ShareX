@@ -71,7 +71,7 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreating()
         {
             Manager.IsMoving = true;
-            Point pos = InputManager.ClientMousePosition;
+            Point pos = Manager.Form.ScaledClientMousePosition;
             Rectangle = new Rectangle(new Point(pos.X - (Rectangle.Width / 2), pos.Y - (Rectangle.Height / 2)), Rectangle.Size);
             int tailOffset = 5;
             TailPosition = Rectangle.Location.Add(Rectangle.Width + tailOffset, Rectangle.Height + tailOffset);
@@ -94,7 +94,7 @@ namespace ShareX.ScreenCaptureLib
             if (TailNode.IsDragging)
             {
                 IsTailActive = true;
-                TailPosition = InputManager.ClientMousePosition;
+                TailPosition = Manager.Form.ScaledClientMousePosition;
             }
         }
 

@@ -236,7 +236,7 @@ namespace ShareX.ScreenCaptureLib
                         CenterNodeActive = true;
                     }
 
-                    Points[i] = InputManager.ClientMousePosition;
+                    Points[i] = Manager.Form.ScaledClientMousePosition;
                 }
             }
         }

@@ -144,6 +144,11 @@ namespace ShareX.HelpersLib
             return new Point(point.X + offset.X, point.Y + offset.Y);
         }
 
+        public static Point Scale(this Point point, float scaleFactor)
+        {
+            return new Point((int)Math.Round(point.X * scaleFactor), (int)Math.Round(point.Y * scaleFactor));
+        }
+
         public static Size Offset(this Size size, int offset)
         {
             return size.Offset(offset, offset);
@@ -157,6 +162,15 @@ namespace ShareX.HelpersLib
         public static Rectangle Offset(this Rectangle rect, int offset)
         {
             return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + (offset * 2), rect.Height + (offset * 2));
+        }
+
+        public static Rectangle Scale(this Rectangle rect, float scaleFactor)
+        {
+            return new Rectangle(
+                (int)Math.Round(rect.X * scaleFactor),
+                (int)Math.Round(rect.Y * scaleFactor),
+                (int)Math.Round(rect.Width * scaleFactor),
+                (int)Math.Round(rect.Height * scaleFactor));
         }
 
         public static Rectangle LocationOffset(this Rectangle rect, int x, int y)

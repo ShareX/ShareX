@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -87,6 +88,22 @@ namespace ShareX.ScreenCaptureLib
         private TextAnimation editorPanTipAnimation;
         private Cursor defaultCursor, openHandCursor, closedHandCursor;
         private Color canvasBackgroundColor, canvasBorderColor, textColor, textShadowColor, textBackgroundColor, textOuterBorderColor, textInnerBorderColor;
+        private float zoomFactor = 1;
+
+        public float ZoomFactor
+        {
+            get { return zoomFactor; }
+            set { zoomFactor = Math.Max(0.2F, Math.Min(6F, value)); } // constrain range from 20% - 600%
+        }
+
+        public void ZoomTransform(Graphics g, bool invertZoom = false)
+        {
+            if (Math.Round(ZoomFactor * 100) != 100)
+            {
+                float scale = invertZoom ? 1 / ZoomFactor : ZoomFactor;
+                g.ScaleTransform(scale, scale);
+            }
+        }
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Bitmap canvas = null)
         {
@@ -162,6 +179,9 @@ namespace ShareX.ScreenCaptureLib
             InitializeComponent();
         }
 
+        public Point ScaledClientMousePosition => InputManager.ClientMousePosition.Scale(1 / ZoomFactor);
+        public Point ScaledClientMouseVelocity => InputManager.MouseVelocity.Scale(1 / ZoomFactor);
+
         private void InitializeComponent()
         {
             SuspendLayout();
@@ -236,6 +256,7 @@ namespace ShareX.ScreenCaptureLib
             Shown += RegionCaptureForm_Shown;
             KeyDown += RegionCaptureForm_KeyDown;
             MouseDown += RegionCaptureForm_MouseDown;
+            MouseWheel += RegionCaptureForm_MouseWheel;
             Resize += RegionCaptureForm_Resize;
             LocationChanged += RegionCaptureForm_LocationChanged;
             LostFocus += RegionCaptureForm_LostFocus;
@@ -249,35 +270,41 @@ namespace ShareX.ScreenCaptureLib
         {
             if (forceClose) return;
 
-            string text;
+            var title = new StringBuilder();
 
             if (IsEditorMode)
             {
-                text = "ShareX - " + Resources.RegionCaptureForm_InitializeComponent_ImageEditor;
+                title.AppendFormat("ShareX - {0}", Resources.RegionCaptureForm_InitializeComponent_ImageEditor);
 
                 if (Canvas != null)
                 {
-                    text += $" - {Canvas.Width}x{Canvas.Height}";
+                    title.AppendFormat(" - {0}x{1}", Canvas.Width, Canvas.Height);
                 }
 
                 string fileName = Helpers.GetFileNameSafe(ImageFilePath);
 
                 if (!string.IsNullOrEmpty(fileName))
                 {
-                    text += " - " + fileName;
+                    title.AppendFormat(" - {0}", fileName);
                 }
 
                 if (!IsFullscreen && Options.ShowFPS)
                 {
-                    text += " - FPS: " + FPSManager.FPS.ToString();
+                    title.AppendFormat(" - FPS: {0}", FPSManager.FPS.ToString());
+                }
+
+                double zoomPercentage = Math.Round(ZoomFactor * 100);
+                if (zoomPercentage != 100)
+                {
+                    title.AppendFormat(" - ZOOM: {0}%", zoomPercentage);
                 }
             }
             else
             {
-                text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
+                title.AppendFormat("ShareX - {0}", Resources.BaseRegionForm_InitializeComponent_Region_capture);
             }
 
-            Text = text;
+            Text = title.ToString();
         }
 
         private void Prepare(Bitmap canvas = null)
@@ -409,6 +436,8 @@ namespace ShareX.ScreenCaptureLib
             Rectangle limitRectangle = new Rectangle(ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
                 ClientArea.Width - (panLimitSize.Width * 2), ClientArea.Height - (panLimitSize.Height * 2));
 
+            limitRectangle = limitRectangle.Scale(1 / ZoomFactor);
+
             deltaX = Math.Max(deltaX, limitRectangle.Left - CanvasRectangle.Right);
             deltaX = Math.Min(deltaX, limitRectangle.Right - CanvasRectangle.Left);
             deltaY = Math.Max(deltaY, limitRectangle.Top - CanvasRectangle.Bottom);
@@ -447,12 +476,13 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsEditorMode)
             {
-                int x = (int)Math.Round((ClientArea.Width * 0.5f) + centerOffset.X);
-                int y = (int)Math.Round((ClientArea.Height * 0.5f) + centerOffset.Y);
-                int newX = x - (CanvasRectangle.Width / 2);
-                int newY = y - (CanvasRectangle.Height / 2);
-                int deltaX = newX - CanvasRectangle.X;
-                int deltaY = newY - CanvasRectangle.Y;
+                Rectangle canvas = CanvasRectangle.Scale(ZoomFactor);
+                float x = ClientArea.Width / 2  + centerOffset.X;
+                float y = ClientArea.Height / 2 + centerOffset.Y;
+                float newX = x - canvas.Width / 2;
+                float newY = y - canvas.Height / 2;
+                int deltaX = (int)Math.Round((newX - canvas.X) / ZoomFactor);
+                int deltaY = (int)Math.Round((newY - canvas.Y) / ZoomFactor);
                 Pan(deltaX, deltaY, false);
             }
         }
@@ -515,9 +545,16 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            if (IsEditorMode && Options.ShowEditorPanTip && editorPanTipAnimation != null)
+            if (IsEditorMode)
             {
-                editorPanTipAnimation.Start();
+                if (Options.ShowEditorPanTip && editorPanTipAnimation != null)
+                {
+                    editorPanTipAnimation.Start();
+                }
+                if (Options.ZoomToFitOnOpen)
+                {
+                    ZoomToFit();
+                }
             }
         }
 
@@ -618,6 +655,19 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Control | Keys.C:
                     CopyAreaInfo();
                     break;
+                case Keys.Control | Keys.Alt | Keys.D0:
+                    ZoomToFit();
+                    break;
+                case Keys.Control | Keys.D0:
+                    ZoomFactor = 1;
+                    CenterCanvas();
+                    break;
+                case Keys.Control | Keys.Oemplus:
+                    Zoom(true, false);
+                    break;
+                case Keys.Control | Keys.OemMinus:
+                    Zoom(false, false);
+                    break;
             }
 
             if (!IsEditorMode && e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
@@ -639,6 +689,46 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 CloseWindow(RegionResult.Region);
+            }
+        }
+
+        private void RegionCaptureForm_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (!IsEditorMode || !ModifierKeys.HasFlag(Keys.Control))
+            {
+                return;
+            }
+
+            Zoom(e.Delta > 0);
+        }
+
+        private void Zoom(bool closer, bool atMouse = true)
+        {
+            const float ZoomScaleAmount = 1.1F;
+
+            Point centerBefore = atMouse ? ScaledClientMousePosition : ScaledClientCenter;
+            ZoomFactor *= closer ? ZoomScaleAmount : 1 / ZoomScaleAmount;
+            Point centerAfter = atMouse ? ScaledClientMousePosition : ScaledClientCenter;
+
+            Point delta = new Point(centerAfter.X - centerBefore.X, centerAfter.Y - centerBefore.Y);
+            Pan(delta);
+
+            UpdateTitle();
+        }
+
+        private void ZoomToFit()
+        {
+            ZoomFactor = Math.Min((float)ClientArea.Width/CanvasRectangle.Width, (float)ClientArea.Height/CanvasRectangle.Height);
+            CenterCanvas();
+        }
+
+        private Point ScaledClientCenter
+        {
+            get
+            {
+                return new Point(
+                    (int)Math.Round(ClientArea.Width  / 2f / ZoomFactor),
+                    (int)Math.Round(ClientArea.Height / 2f / ZoomFactor));
             }
         }
 
@@ -727,7 +817,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (ShapeManager.IsPanning)
             {
-                Pan(InputManager.MouseVelocity);
+                Pan(ScaledClientMouseVelocity);
                 UpdateCenterOffset();
             }
 
@@ -758,17 +848,16 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
 
+            ZoomTransform(g);
+
             if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))
             {
                 g.Clear(canvasBackgroundColor);
                 g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1));
             }
 
-            g.CompositingMode = CompositingMode.SourceCopy;
-            g.FillRectangle(backgroundBrush, CanvasRectangle);
-            g.CompositingMode = CompositingMode.SourceOver;
-
-            Draw(g);
+            DrawBackground(g);
+            DrawShapes(g);
 
             if (Options.ShowFPS && IsFullscreen)
             {
@@ -779,9 +868,22 @@ namespace ShareX.ScreenCaptureLib
             {
                 Invalidate();
             }
+
+            g.PixelOffsetMode = PixelOffsetMode.Default;
+            g.InterpolationMode = InterpolationMode.Default;
         }
 
-        private void Draw(Graphics g)
+        private void DrawBackground(Graphics g)
+        {
+            using (GraphicsQualityManager quality = new GraphicsQualityManager(g, GraphicsQualityManager.Quality.Low))
+            {
+                g.CompositingMode = CompositingMode.SourceCopy;
+                g.DrawImage(backgroundBrush.Image, CanvasRectangle);
+                g.CompositingMode = CompositingMode.SourceOver;
+            }
+        }
+
+        private void DrawShapes(Graphics g)
         {
             // Draw snap rectangles
             if (ShapeManager.IsCreating && ShapeManager.IsSnapResizing)
@@ -1040,7 +1142,10 @@ namespace ShareX.ScreenCaptureLib
             using (Brush textBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), textColor)))
             using (Brush textShadowBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), textShadowColor)))
             {
+                Matrix transform = g.Transform;
+                ZoomTransform(g, true);
                 DrawInfoText(g, textAnimation.Text, textRectangle, infoFontMedium, padding, backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
+                g.Transform = transform;
             }
         }
 
@@ -1077,7 +1182,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsEditorMode)
             {
-                Point canvasRelativePosition = new Point(InputManager.ClientMousePosition.X - CanvasRectangle.X, InputManager.ClientMousePosition.Y - CanvasRectangle.Y);
+                Point canvasRelativePosition = new Point(ScaledClientMousePosition.X - CanvasRectangle.X, ScaledClientMousePosition.Y - CanvasRectangle.Y);
                 return $"X: {canvasRelativePosition.X} Y: {canvasRelativePosition.Y}";
             }
             else if (Mode == RegionCaptureMode.ScreenColorPicker || Options.UseCustomInfoText)
@@ -1105,7 +1210,7 @@ namespace ShareX.ScreenCaptureLib
         private void DrawCrosshair(Graphics g)
         {
             int offset = 5;
-            Point mousePos = InputManager.ClientMousePosition;
+            Point mousePos = ScaledClientMousePosition;
             Point left = new Point(mousePos.X - offset, mousePos.Y), left2 = new Point(0, mousePos.Y);
             Point right = new Point(mousePos.X + offset, mousePos.Y), right2 = new Point(ClientArea.Width - 1, mousePos.Y);
             Point top = new Point(mousePos.X, mousePos.Y - offset), top2 = new Point(mousePos.X, 0);
@@ -1138,8 +1243,6 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawCursorGraphics(Graphics g)
         {
-            Point mousePos = InputManager.ClientMousePosition;
-            Rectangle currentScreenRect0Based = CaptureHelpers.GetActiveScreenBounds0Based();
             int cursorOffsetX = 10, cursorOffsetY = 10, itemGap = 10, itemCount = 0;
             Size totalSize = Size.Empty;
 
@@ -1151,7 +1254,7 @@ namespace ShareX.ScreenCaptureLib
                 if (itemCount > 0) totalSize.Height += itemGap;
                 magnifierPosition = totalSize.Height;
 
-                magnifier = Magnifier(Canvas, mousePos, Options.MagnifierPixelCount, Options.MagnifierPixelCount, Options.MagnifierPixelSize);
+                magnifier = Magnifier(Canvas, ScaledClientMousePosition, Options.MagnifierPixelCount, Options.MagnifierPixelCount, Options.MagnifierPixelSize);
                 totalSize.Width = Math.Max(totalSize.Width, magnifier.Width);
 
                 totalSize.Height += magnifier.Height;
@@ -1178,6 +1281,8 @@ namespace ShareX.ScreenCaptureLib
                 //itemCount++;
             }
 
+            Point mousePos = InputManager.ClientMousePosition;
+            Rectangle currentScreenRect0Based = CaptureHelpers.GetActiveScreenBounds0Based();
             int x = mousePos.X + cursorOffsetX;
 
             if (x + totalSize.Width > currentScreenRect0Based.Right)
@@ -1192,8 +1297,10 @@ namespace ShareX.ScreenCaptureLib
                 y = mousePos.Y - cursorOffsetY - totalSize.Height;
             }
 
+            Matrix initialTranform = g.Transform;
             if (Options.ShowMagnifier)
             {
+                ZoomTransform(g, true);
                 if (Options.UseSquareMagnifier)
                 {
                     g.DrawImage(magnifier, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
@@ -1212,6 +1319,7 @@ namespace ShareX.ScreenCaptureLib
                         g.DrawEllipse(Pens.Black, x, y + magnifierPosition, magnifier.Width - 1, magnifier.Height - 1);
                     }
                 }
+                g.Transform = initialTranform;
             }
 
             if (Options.ShowInfo)
@@ -1242,7 +1350,9 @@ namespace ShareX.ScreenCaptureLib
                     infoTextRect.Location = new Point(x + (totalSize.Width / 2) - (infoTextRect.Width / 2), y + infoTextPosition);
                     Point padding = new Point(infoTextPadding, infoTextPadding);
 
+                    ZoomTransform(g, true);
                     DrawInfoText(g, infoText, infoTextRect, infoFont, padding);
+                    g.Transform = initialTranform;
                 }
             }
         }
