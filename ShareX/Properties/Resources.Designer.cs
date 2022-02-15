@@ -1902,7 +1902,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static string IntegrationHelpers_UploadWithShareX {
             get {
-                return ResourceManager.GetString("IntegrationHelpers_UploadWithShareX", resourceCulture);
+                return "Upload with 420 SwagX";
             }
         }
         

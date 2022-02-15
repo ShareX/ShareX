@@ -96,6 +96,10 @@ namespace ShareX.HelpersLib
                 string fileExtension = Helpers.GetFileNameExtension(fileName);
                 sb.Replace("%ft", fileExtension);
             }
+            else
+            {
+                sb.Replace("%ft", "NoExtension");
+            }
 
             if (WindowText != null)
             {

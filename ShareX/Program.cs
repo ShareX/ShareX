@@ -77,7 +77,7 @@ namespace ShareX
         {
             get
             {
-                string title = $"{Name} {VersionText}";
+                string title = "420 SwagX v69";
 
                 if (Settings != null && Settings.DevMode)
                 {
