@@ -62,13 +62,12 @@ namespace ShareX.ScreenCaptureLib
         public bool IsImageModified => ShapeManager != null && ShapeManager.IsImageModified;
 
         public Point CurrentPosition { get; private set; }
-        public Point PanningStrech = new Point();
-
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
-        public Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
+        internal Point PanningStrech = new Point();
+        internal Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
 
-        public float ZoomFactor
+        internal float ZoomFactor
         {
             get
             {
@@ -80,8 +79,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool IsZoomed => Math.Round(ZoomFactor * 100) != 100;
-
+        internal bool IsZoomed => Math.Round(ZoomFactor * 100) != 100;
         internal Point ScaledClientMousePosition => InputManager.ClientMousePosition.Scale(1 / ZoomFactor);
         internal Point ScaledClientMouseVelocity => InputManager.MouseVelocity.Scale(1 / ZoomFactor);
         internal Point ScaledClientCenter => new Point((int)Math.Round(ClientArea.Width / 2f / ZoomFactor), (int)Math.Round(ClientArea.Height / 2f / ZoomFactor));
@@ -713,12 +711,41 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void Zoom(bool closer, bool atMouse = true)
+        private void Zoom(bool zoomIn, bool atMouse = true)
         {
-            const float ZoomScaleAmount = 1.1F;
-
             Point centerBefore = atMouse ? ScaledClientMousePosition : ScaledClientCenter;
-            ZoomFactor *= closer ? ZoomScaleAmount : 1 / ZoomScaleAmount;
+
+            if (zoomIn)
+            {
+                if (ZoomFactor >= 2f)
+                {
+                    ZoomFactor += 0.5f;
+                }
+                else if (ZoomFactor >= 1f)
+                {
+                    ZoomFactor += 0.25f;
+                }
+                else
+                {
+                    ZoomFactor += 0.1f;
+                }
+            }
+            else
+            {
+                if (ZoomFactor <= 1f)
+                {
+                    ZoomFactor -= 0.1f;
+                }
+                else if (ZoomFactor <= 2f)
+                {
+                    ZoomFactor -= 0.25f;
+                }
+                else
+                {
+                    ZoomFactor -= 0.5f;
+                }
+            }
+
             Point centerAfter = atMouse ? ScaledClientMousePosition : ScaledClientCenter;
 
             Point delta = new Point(centerAfter.X - centerBefore.X, centerAfter.Y - centerBefore.Y);
