@@ -255,10 +255,12 @@ namespace ShareX.UploadersLib.FileUploaders
         private bool UploadDataInternal(Stream localStream, string remotePath)
         {
             bool result;
+#pragma warning disable 0618
             using (Stream remoteStream = client.OpenWrite(remotePath))
             {
                 result = TransferData(localStream, remoteStream);
             }
+#pragma warning restore 0618
             FtpReply ftpReply = client.GetReply();
             return result && ftpReply.Success;
         }
@@ -325,10 +327,12 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (Connect())
             {
+#pragma warning disable 0618
                 using (Stream remoteStream = client.OpenRead(remotePath))
                 {
                     TransferData(remoteStream, localStream);
                 }
+#pragma warning restore 0618
                 client.GetReply();
             }
         }

@@ -568,10 +568,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region JSON responses
 
-        // we disable these IDE warnings here because this is effectively generated code
-#pragma warning disable IDE1006 // Naming Styles
-        // ReSharper disable ClassNeverInstantiated.Local, MemberCanBePrivate.Local, UnusedAutoPropertyAccessor.Local
-
         /// <summary>
         /// The b2_authorize_account API's optional 'allowed' field.
         /// </summary>
@@ -673,9 +669,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 this.fileInfo = fileInfo;
             }
         }
-
-        // ReSharper restore ClassNeverInstantiated.Local, MemberCanBePrivate.Local, UnusedAutoPropertyAccessor.Local
-#pragma warning restore IDE1006 // Naming Styles
 
         #endregion JSON responses
     }
