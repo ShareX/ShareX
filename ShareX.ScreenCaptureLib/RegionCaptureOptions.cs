@@ -90,8 +90,8 @@ namespace ShareX.ScreenCaptureLib
 
         // Image editor
         public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.AutoSize;
-        public bool ZoomToFitOnOpen = false;
         public WindowState ImageEditorWindowState = new WindowState();
+        public bool ZoomToFitOnOpen = false;
         public bool EditorAutoCopyImage = false;
         public bool AutoCloseEditorOnTask = false;
         public bool ShowEditorPanTip = true;

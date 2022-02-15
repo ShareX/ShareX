@@ -166,11 +166,8 @@ namespace ShareX.HelpersLib
 
         public static Rectangle Scale(this Rectangle rect, float scaleFactor)
         {
-            return new Rectangle(
-                (int)Math.Round(rect.X * scaleFactor),
-                (int)Math.Round(rect.Y * scaleFactor),
-                (int)Math.Round(rect.Width * scaleFactor),
-                (int)Math.Round(rect.Height * scaleFactor));
+            return new Rectangle((int)Math.Round(rect.X * scaleFactor), (int)Math.Round(rect.Y * scaleFactor),
+                (int)Math.Round(rect.Width * scaleFactor), (int)Math.Round(rect.Height * scaleFactor));
         }
 
         public static Rectangle LocationOffset(this Rectangle rect, int x, int y)

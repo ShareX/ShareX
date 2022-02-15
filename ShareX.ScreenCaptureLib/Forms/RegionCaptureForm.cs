@@ -68,6 +68,24 @@ namespace ShareX.ScreenCaptureLib
 
         public Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
 
+        public float ZoomFactor
+        {
+            get
+            {
+                return zoomFactor;
+            }
+            set
+            {
+                zoomFactor = value.Clamp(0.2f, 6f);
+            }
+        }
+
+        public bool IsZoomed => Math.Round(ZoomFactor * 100) != 100;
+
+        internal Point ScaledClientMousePosition => InputManager.ClientMousePosition.Scale(1 / ZoomFactor);
+        internal Point ScaledClientMouseVelocity => InputManager.MouseVelocity.Scale(1 / ZoomFactor);
+        internal Point ScaledClientCenter => new Point((int)Math.Round(ClientArea.Width / 2f / ZoomFactor), (int)Math.Round(ClientArea.Height / 2f / ZoomFactor));
+
         internal ShapeManager ShapeManager { get; private set; }
         internal bool IsClosing { get; private set; }
         internal FPSManager FPSManager { get; private set; }
@@ -89,21 +107,6 @@ namespace ShareX.ScreenCaptureLib
         private Cursor defaultCursor, openHandCursor, closedHandCursor;
         private Color canvasBackgroundColor, canvasBorderColor, textColor, textShadowColor, textBackgroundColor, textOuterBorderColor, textInnerBorderColor;
         private float zoomFactor = 1;
-
-        public float ZoomFactor
-        {
-            get { return zoomFactor; }
-            set { zoomFactor = Math.Max(0.2F, Math.Min(6F, value)); } // constrain range from 20% - 600%
-        }
-
-        public void ZoomTransform(Graphics g, bool invertZoom = false)
-        {
-            if (Math.Round(ZoomFactor * 100) != 100)
-            {
-                float scale = invertZoom ? 1 / ZoomFactor : ZoomFactor;
-                g.ScaleTransform(scale, scale);
-            }
-        }
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Bitmap canvas = null)
         {
@@ -178,9 +181,6 @@ namespace ShareX.ScreenCaptureLib
 
             InitializeComponent();
         }
-
-        public Point ScaledClientMousePosition => InputManager.ClientMousePosition.Scale(1 / ZoomFactor);
-        public Point ScaledClientMouseVelocity => InputManager.MouseVelocity.Scale(1 / ZoomFactor);
 
         private void InitializeComponent()
         {
@@ -270,7 +270,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (forceClose) return;
 
-            var title = new StringBuilder();
+            StringBuilder title = new StringBuilder();
 
             if (IsEditorMode)
             {
@@ -279,6 +279,12 @@ namespace ShareX.ScreenCaptureLib
                 if (Canvas != null)
                 {
                     title.AppendFormat(" - {0}x{1}", Canvas.Width, Canvas.Height);
+                }
+
+                if (IsZoomed)
+                {
+                    int zoomPercentage = (int)Math.Round(ZoomFactor * 100);
+                    title.AppendFormat(" ({0}%)", zoomPercentage);
                 }
 
                 string fileName = Helpers.GetFileNameSafe(ImageFilePath);
@@ -291,12 +297,6 @@ namespace ShareX.ScreenCaptureLib
                 if (!IsFullscreen && Options.ShowFPS)
                 {
                     title.AppendFormat(" - FPS: {0}", FPSManager.FPS.ToString());
-                }
-
-                double zoomPercentage = Math.Round(ZoomFactor * 100);
-                if (zoomPercentage != 100)
-                {
-                    title.AppendFormat(" - ZOOM: {0}%", zoomPercentage);
                 }
             }
             else
@@ -436,7 +436,10 @@ namespace ShareX.ScreenCaptureLib
             Rectangle limitRectangle = new Rectangle(ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
                 ClientArea.Width - (panLimitSize.Width * 2), ClientArea.Height - (panLimitSize.Height * 2));
 
-            limitRectangle = limitRectangle.Scale(1 / ZoomFactor);
+            if (IsZoomed)
+            {
+                limitRectangle = limitRectangle.Scale(1 / ZoomFactor);
+            }
 
             deltaX = Math.Max(deltaX, limitRectangle.Left - CanvasRectangle.Right);
             deltaX = Math.Min(deltaX, limitRectangle.Right - CanvasRectangle.Left);
@@ -477,7 +480,7 @@ namespace ShareX.ScreenCaptureLib
             if (IsEditorMode)
             {
                 Rectangle canvas = CanvasRectangle.Scale(ZoomFactor);
-                float x = ClientArea.Width / 2  + centerOffset.X;
+                float x = ClientArea.Width / 2 + centerOffset.X;
                 float y = ClientArea.Height / 2 + centerOffset.Y;
                 float newX = x - canvas.Width / 2;
                 float newY = y - canvas.Height / 2;
@@ -502,6 +505,15 @@ namespace ShareX.ScreenCaptureLib
         {
             CanvasCenterOffset = new Vector2(0f, ToolbarHeight / 2f);
             AutomaticPan();
+        }
+
+        public void ZoomTransform(Graphics g, bool invertZoom = false)
+        {
+            if (IsZoomed)
+            {
+                float scale = invertZoom ? 1 / ZoomFactor : ZoomFactor;
+                g.ScaleTransform(scale, scale);
+            }
         }
 
         public void SetDefaultCursor()
@@ -551,6 +563,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     editorPanTipAnimation.Start();
                 }
+
                 if (Options.ZoomToFitOnOpen)
                 {
                     ZoomToFit();
@@ -694,12 +707,10 @@ namespace ShareX.ScreenCaptureLib
 
         private void RegionCaptureForm_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (!IsEditorMode || !ModifierKeys.HasFlag(Keys.Control))
+            if (IsEditorMode && ModifierKeys == Keys.Control)
             {
-                return;
+                Zoom(e.Delta > 0);
             }
-
-            Zoom(e.Delta > 0);
         }
 
         private void Zoom(bool closer, bool atMouse = true)
@@ -718,18 +729,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void ZoomToFit()
         {
-            ZoomFactor = Math.Min((float)ClientArea.Width/CanvasRectangle.Width, (float)ClientArea.Height/CanvasRectangle.Height);
-            CenterCanvas();
-        }
+            ZoomFactor = Math.Min((float)ClientArea.Width / CanvasRectangle.Width, (float)ClientArea.Height / CanvasRectangle.Height);
 
-        private Point ScaledClientCenter
-        {
-            get
-            {
-                return new Point(
-                    (int)Math.Round(ClientArea.Width  / 2f / ZoomFactor),
-                    (int)Math.Round(ClientArea.Height / 2f / ZoomFactor));
-            }
+            CenterCanvas();
         }
 
         private void MonitorKey(int index)
@@ -868,14 +870,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 Invalidate();
             }
-
-            g.PixelOffsetMode = PixelOffsetMode.Default;
-            g.InterpolationMode = InterpolationMode.Default;
         }
 
         private void DrawBackground(Graphics g)
         {
-            using (GraphicsQualityManager quality = new GraphicsQualityManager(g, GraphicsQualityManager.Quality.Low))
+            using (GraphicsQualityManager quality = new GraphicsQualityManager(g, false))
             {
                 g.CompositingMode = CompositingMode.SourceCopy;
                 g.DrawImage(backgroundBrush.Image, CanvasRectangle);
@@ -1309,7 +1308,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    using (GraphicsQualityManager quality = new GraphicsQualityManager(g))
+                    using (GraphicsQualityManager quality = new GraphicsQualityManager(g, true))
                     using (TextureBrush brush = new TextureBrush(magnifier))
                     {
                         brush.TranslateTransform(x, y + magnifierPosition);

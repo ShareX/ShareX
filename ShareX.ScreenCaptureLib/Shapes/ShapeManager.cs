@@ -501,36 +501,35 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_MouseWheel(object sender, MouseEventArgs e)
         {
-            if ((Control.ModifierKeys & Keys.Control) != 0)
+            if (Control.ModifierKeys == Keys.None)
             {
-                return;
-            }
-            if (e.Delta > 0)
-            {
-                if (Options.ShowMagnifier)
+                if (e.Delta > 0)
                 {
-                    Options.MagnifierPixelCount = Math.Min(Options.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
+                    if (Options.ShowMagnifier)
+                    {
+                        Options.MagnifierPixelCount = Math.Min(Options.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
+                    }
+                    else
+                    {
+                        Options.ShowMagnifier = true;
+                    }
                 }
-                else
+                else if (e.Delta < 0)
                 {
-                    Options.ShowMagnifier = true;
+                    int magnifierPixelCount = Options.MagnifierPixelCount - 2;
+                    if (magnifierPixelCount < RegionCaptureOptions.MagnifierPixelCountMinimum)
+                    {
+                        magnifierPixelCount = RegionCaptureOptions.MagnifierPixelCountMinimum;
+                        Options.ShowMagnifier = false;
+                    }
+                    Options.MagnifierPixelCount = magnifierPixelCount;
                 }
-            }
-            else if (e.Delta < 0)
-            {
-                int magnifierPixelCount = Options.MagnifierPixelCount - 2;
-                if (magnifierPixelCount < RegionCaptureOptions.MagnifierPixelCountMinimum)
-                {
-                    magnifierPixelCount = RegionCaptureOptions.MagnifierPixelCountMinimum;
-                    Options.ShowMagnifier = false;
-                }
-                Options.MagnifierPixelCount = magnifierPixelCount;
-            }
 
-            if (Form.IsAnnotationMode)
-            {
-                tsmiShowMagnifier.Checked = Options.ShowMagnifier;
-                tslnudMagnifierPixelCount.Content.Value = Options.MagnifierPixelCount;
+                if (Form.IsAnnotationMode)
+                {
+                    tsmiShowMagnifier.Checked = Options.ShowMagnifier;
+                    tslnudMagnifierPixelCount.Content.Value = Options.MagnifierPixelCount;
+                }
             }
         }
 

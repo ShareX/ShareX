@@ -37,13 +37,7 @@ namespace ShareX.HelpersLib
         private PixelOffsetMode previousPixelOffsetMode;
         private Graphics g;
 
-        public enum Quality
-        {
-            Low,
-            High,
-        }
-
-        public GraphicsQualityManager(Graphics g, Quality? quality = Quality.High)
+        public GraphicsQualityManager(Graphics g, bool highQuality)
         {
             this.g = g;
 
@@ -52,15 +46,11 @@ namespace ShareX.HelpersLib
             previousSmoothingMode = g.SmoothingMode;
             previousPixelOffsetMode = g.PixelOffsetMode;
 
-            if (!quality.HasValue)
-            {
-                return;
-            }
-            if (quality.Value == Quality.High)
+            if (highQuality)
             {
                 SetHighQuality();
             }
-            else if (quality.Value == Quality.Low)
+            else
             {
                 SetLowQuality();
             }
@@ -80,10 +70,10 @@ namespace ShareX.HelpersLib
         {
             if (g != null)
             {
-                g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
+                g.CompositingQuality = CompositingQuality.HighSpeed;
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
                 g.SmoothingMode = SmoothingMode.HighSpeed;
-                g.CompositingQuality = CompositingQuality.HighSpeed;
+                g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
             }
         }
 
