@@ -45,7 +45,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.RegionCornerRadius = CornerRadius;
         }
 
-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
         {
             gp.AddRoundedRectangle(rect, CornerRadius);
         }

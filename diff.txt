@@ -1,0 +1,2265 @@
+diff --git a/ShareX.HelpersLib/Extensions/Extensions.cs b/ShareX.HelpersLib/Extensions/Extensions.cs
+index 379f7377e..e51a059e4 100644
+--- a/ShareX.HelpersLib/Extensions/Extensions.cs
++++ b/ShareX.HelpersLib/Extensions/Extensions.cs
+@@ -129,9 +129,9 @@ public static bool IsValid(this Rectangle rect)
+             return rect.Width > 0 && rect.Height > 0;
+         }
+ 
+-        public static Point Add(this Point point, int offset)
++        public static bool IsValid(this RectangleF rect)
+         {
+-            return point.Add(offset, offset);
++            return rect.Width > 0 && rect.Height > 0;
+         }
+ 
+         public static Point Add(this Point point, int offsetX, int offsetY)
+@@ -144,9 +144,30 @@ public static Point Add(this Point point, Point offset)
+             return new Point(point.X + offset.X, point.Y + offset.Y);
+         }
+ 
+-        public static Point Scale(this Point point, float scaleFactor)
++        public static PointF Add(this PointF point, float offsetX, float offsetY)
++        {
++            return new PointF(point.X + offsetX, point.Y + offsetY);
++        }
++
++        public static PointF Add(this PointF point, PointF offset)
++        {
++            return new PointF(point.X + offset.X, point.Y + offset.Y);
++        }
++
++        public static PointF Scale(this Point point, float scaleFactor)
++        {
++            return new PointF(point.X * scaleFactor, point.Y * scaleFactor);
++        }
++
++        public static Point Round(this PointF point)
++        {
++            return Point.Round(point);
++        }
++
++        public static void Offset(this PointF point, PointF offset)
+         {
+-            return new Point((int)Math.Round(point.X * scaleFactor), (int)Math.Round(point.Y * scaleFactor));
++            point.X += offset.X;
++            point.Y += offset.Y;
+         }
+ 
+         public static Size Offset(this Size size, int offset)
+@@ -164,10 +185,23 @@ public static Rectangle Offset(this Rectangle rect, int offset)
+             return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + (offset * 2), rect.Height + (offset * 2));
+         }
+ 
+-        public static Rectangle Scale(this Rectangle rect, float scaleFactor)
++        public static RectangleF Offset(this RectangleF rect, float offset)
+         {
+-            return new Rectangle((int)Math.Round(rect.X * scaleFactor), (int)Math.Round(rect.Y * scaleFactor),
+-                (int)Math.Round(rect.Width * scaleFactor), (int)Math.Round(rect.Height * scaleFactor));
++            return new RectangleF(rect.X - offset, rect.Y - offset, rect.Width + (offset * 2), rect.Height + (offset * 2));
++        }
++
++        public static RectangleF Scale(this RectangleF rect, float scaleFactor)
++        {
++            return new RectangleF(
++                rect.X * scaleFactor,
++                rect.Y * scaleFactor,
++                rect.Width * scaleFactor,
++                rect.Height * scaleFactor);
++        }
++
++        public static Rectangle Round(this RectangleF rect)
++        {
++            return Rectangle.Round(rect);
+         }
+ 
+         public static Rectangle LocationOffset(this Rectangle rect, int x, int y)
+@@ -175,6 +209,16 @@ public static Rectangle LocationOffset(this Rectangle rect, int x, int y)
+             return new Rectangle(rect.X + x, rect.Y + y, rect.Width, rect.Height);
+         }
+ 
++        public static RectangleF LocationOffset(this RectangleF rect, float x, float y)
++        {
++            return new RectangleF(rect.X + x, rect.Y + y, rect.Width, rect.Height);
++        }
++
++        public static RectangleF LocationOffset(this RectangleF rect, PointF offset)
++        {
++            return rect.LocationOffset(offset.X, offset.Y);
++        }
++
+         public static Rectangle LocationOffset(this Rectangle rect, Point offset)
+         {
+             return rect.LocationOffset(offset.X, offset.Y);
+@@ -190,10 +234,20 @@ public static Rectangle SizeOffset(this Rectangle rect, int width, int height)
+             return new Rectangle(rect.X, rect.Y, rect.Width + width, rect.Height + height);
+         }
+ 
++        public static RectangleF SizeOffset(this RectangleF rect, float width, float height)
++        {
++            return new RectangleF(rect.X, rect.Y, rect.Width + width, rect.Height + height);
++        }
++
+         public static Rectangle SizeOffset(this Rectangle rect, int offset)
+         {
+             return rect.SizeOffset(offset, offset);
+         }
++        
++        public static RectangleF SizeOffset(this RectangleF rect, float offset)
++        {
++            return rect.SizeOffset(offset, offset);
++        }
+ 
+         public static string Join<T>(this T[] array, string separator = " ")
+         {
+@@ -575,20 +629,39 @@ public static Rectangle Combine(this IEnumerable<Rectangle> rects)
+             return result;
+         }
+ 
+-        public static Rectangle AddPoint(this Rectangle rect, Point point)
++        public static RectangleF Combine(this IEnumerable<RectangleF> rects)
+         {
+-            return Rectangle.Union(rect, new Rectangle(point, new Size(1, 1)));
++            RectangleF result = RectangleF.Empty;
++
++            foreach (RectangleF rect in rects)
++            {
++                if (result.IsEmpty)
++                {
++                    result = rect;
++                }
++                else
++                {
++                    result = RectangleF.Union(result, rect);
++                }
++            }
++
++            return result;
+         }
+ 
+-        public static Rectangle CreateRectangle(this IEnumerable<Point> points)
++        public static RectangleF AddPoint(this RectangleF rect, PointF point)
+         {
+-            Rectangle result = Rectangle.Empty;
++            return RectangleF.Union(rect, new RectangleF(point, new SizeF(1, 1)));
++        }
++
++        public static RectangleF CreateRectangle(this IEnumerable<PointF> points)
++        {
++            RectangleF result = Rectangle.Empty;
+ 
+-            foreach (Point point in points)
++            foreach (PointF point in points)
+             {
+                 if (result.IsEmpty)
+                 {
+-                    result = new Rectangle(point, new Size(1, 1));
++                    result = new RectangleF(point, new Size(1, 1));
+                 }
+                 else
+                 {
+@@ -604,17 +677,22 @@ public static Point Center(this Rectangle rect)
+             return new Point(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
+         }
+ 
+-        public static int Area(this Rectangle rect)
++        public static PointF Center(this RectangleF rect)
++        {
++            return new PointF(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
++        }
++
++        public static float Area(this RectangleF rect)
+         {
+             return rect.Width * rect.Height;
+         }
+ 
+-        public static int Perimeter(this Rectangle rect)
++        public static float Perimeter(this RectangleF rect)
+         {
+             return 2 * (rect.Width + rect.Height);
+         }
+ 
+-        public static Point Restrict(this Point point, Rectangle rect)
++        public static PointF Restrict(this PointF point, RectangleF rect)
+         {
+             point.X = Math.Max(point.X, rect.X);
+             point.Y = Math.Max(point.Y, rect.Y);
+diff --git a/ShareX.HelpersLib/Extensions/GraphicsExtensions.cs b/ShareX.HelpersLib/Extensions/GraphicsExtensions.cs
+index 1b6b3923e..bc8e8e4d3 100644
+--- a/ShareX.HelpersLib/Extensions/GraphicsExtensions.cs
++++ b/ShareX.HelpersLib/Extensions/GraphicsExtensions.cs
+@@ -31,7 +31,7 @@ namespace ShareX.HelpersLib
+ {
+     public static class GraphicsExtensions
+     {
+-        public static void DrawRectangleProper(this Graphics g, Pen pen, Rectangle rect)
++        public static void DrawRectangleProper(this Graphics g, Pen pen, RectangleF rect)
+         {
+             if (pen.Width == 1)
+             {
+@@ -40,7 +40,7 @@ public static void DrawRectangleProper(this Graphics g, Pen pen, Rectangle rect)
+ 
+             if (rect.Width > 0 && rect.Height > 0)
+             {
+-                g.DrawRectangle(pen, rect);
++                g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
+             }
+         }
+ 
+@@ -68,17 +68,17 @@ public static void DrawRectangleShadow(this Graphics g, Rectangle rect, Color sh
+             }
+         }
+ 
+-        public static void DrawRoundedRectangle(this Graphics g, Pen pen, Rectangle rect, float radius)
++        public static void DrawRoundedRectangle(this Graphics g, Pen pen, RectangleF rect, float radius)
+         {
+             g.DrawRoundedRectangle(null, pen, rect, radius);
+         }
+ 
+-        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Rectangle rect, float radius)
++        public static void DrawRoundedRectangle(this Graphics g, Brush brush, RectangleF rect, float radius)
+         {
+             g.DrawRoundedRectangle(brush, null, rect, radius);
+         }
+ 
+-        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, Rectangle rect, float radius)
++        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, RectangleF rect, float radius)
+         {
+             using (GraphicsPath gp = new GraphicsPath())
+             {
+@@ -88,7 +88,7 @@ public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, R
+             }
+         }
+ 
+-        public static void DrawCapsule(this Graphics g, Brush brush, Rectangle rect)
++        public static void DrawCapsule(this Graphics g, Brush brush, RectangleF rect)
+         {
+             using (GraphicsPath gp = new GraphicsPath())
+             {
+@@ -111,7 +111,7 @@ public static void DrawDiamond(this Graphics g, Pen pen, Rectangle rect)
+             }
+         }
+ 
+-        public static void DrawCross(this Graphics g, Pen pen, Point center, int crossSize)
++        public static void DrawCross(this Graphics g, Pen pen, PointF center, int crossSize)
+         {
+             if (crossSize > 0)
+             {
+@@ -123,7 +123,7 @@ public static void DrawCross(this Graphics g, Pen pen, Point center, int crossSi
+             }
+         }
+ 
+-        public static void DrawCrossRectangle(this Graphics g, Pen pen, Rectangle rect, int crossSize)
++        public static void DrawCrossRectangle(this Graphics g, Pen pen, RectangleF rect, int crossSize)
+         {
+             rect = rect.SizeOffset(-1);
+ 
+@@ -143,7 +143,7 @@ public static void DrawCrossRectangle(this Graphics g, Pen pen, Rectangle rect,
+             }
+         }
+ 
+-        public static void DrawCornerLines(this Graphics g, Rectangle rect, Pen pen, int lineSize)
++        public static void DrawCornerLines(this Graphics g, RectangleF rect, Pen pen, int lineSize)
+         {
+             if (rect.Width <= lineSize * 2)
+             {
+diff --git a/ShareX.HelpersLib/Helpers/CaptureHelpers.cs b/ShareX.HelpersLib/Helpers/CaptureHelpers.cs
+index 52a92dc08..e544b4fff 100644
+--- a/ShareX.HelpersLib/Helpers/CaptureHelpers.cs
++++ b/ShareX.HelpersLib/Helpers/CaptureHelpers.cs
+@@ -192,9 +192,9 @@ public static bool CheckPixelColor(int x, int y, Color color, byte variation)
+                    targetColor.B.IsBetween((byte)(color.B - variation), (byte)(color.B + variation));
+         }
+ 
+-        public static Rectangle CreateRectangle(int x, int y, int x2, int y2)
++        public static RectangleF CreateRectangle(float x, float y, float x2, float y2)
+         {
+-            int width, height;
++            float width, height;
+ 
+             if (x <= x2)
+             {
+@@ -216,10 +216,10 @@ public static Rectangle CreateRectangle(int x, int y, int x2, int y2)
+                 y = y2;
+             }
+ 
+-            return new Rectangle(x, y, width, height);
++            return new RectangleF(x, y, width, height);
+         }
+ 
+-        public static Rectangle CreateRectangle(Point pos, Point pos2)
++        public static RectangleF CreateRectangle(PointF pos, PointF pos2)
+         {
+             return CreateRectangle(pos.X, pos.Y, pos2.X, pos2.Y);
+         }
+@@ -263,45 +263,45 @@ public static Point ProportionalPosition(Point pos, Point pos2)
+             return newPosition;
+         }
+ 
+-        public static Point SnapPositionToDegree(Point pos, Point pos2, float degree, float startDegree)
++        public static PointF SnapPositionToDegree(PointF pos, PointF pos2, float degree, float startDegree)
+         {
+             float angle = MathHelpers.LookAtRadian(pos, pos2);
+             float startAngle = MathHelpers.DegreeToRadian(startDegree);
+             float snapAngle = MathHelpers.DegreeToRadian(degree);
+             float newAngle = ((float)Math.Round((angle + startAngle) / snapAngle) * snapAngle) - startAngle;
+             float distance = MathHelpers.Distance(pos, pos2);
+-            return (Point)(pos + MathHelpers.RadianToVector2(newAngle, distance));
++            return pos.Add((PointF)MathHelpers.RadianToVector2(newAngle, distance));
+         }
+ 
+-        public static Point CalculateNewPosition(Point posOnClick, Point posCurrent, Size size)
++        public static PointF CalculateNewPosition(PointF posOnClick, PointF posCurrent, Size size)
+         {
+             if (posCurrent.X > posOnClick.X)
+             {
+                 if (posCurrent.Y > posOnClick.Y)
+                 {
+-                    return new Point(posOnClick.X + size.Width - 1, posOnClick.Y + size.Height - 1);
++                    return new PointF(posOnClick.X + size.Width - 1, posOnClick.Y + size.Height - 1);
+                 }
+                 else
+                 {
+-                    return new Point(posOnClick.X + size.Width - 1, posOnClick.Y - size.Height + 1);
++                    return new PointF(posOnClick.X + size.Width - 1, posOnClick.Y - size.Height + 1);
+                 }
+             }
+             else
+             {
+                 if (posCurrent.Y > posOnClick.Y)
+                 {
+-                    return new Point(posOnClick.X - size.Width + 1, posOnClick.Y + size.Height - 1);
++                    return new PointF(posOnClick.X - size.Width + 1, posOnClick.Y + size.Height - 1);
+                 }
+                 else
+                 {
+-                    return new Point(posOnClick.X - size.Width + 1, posOnClick.Y - size.Height + 1);
++                    return new PointF(posOnClick.X - size.Width + 1, posOnClick.Y - size.Height + 1);
+                 }
+             }
+         }
+ 
+-        public static Rectangle CalculateNewRectangle(Point posOnClick, Point posCurrent, Size size)
++        public static RectangleF CalculateNewRectangle(PointF posOnClick, PointF posCurrent, Size size)
+         {
+-            Point newPosition = CalculateNewPosition(posOnClick, posCurrent, size);
++            PointF newPosition = CalculateNewPosition(posOnClick, posCurrent, size);
+             return CreateRectangle(posOnClick, newPosition);
+         }
+ 
+diff --git a/ShareX.HelpersLib/Helpers/ImageHelpers.cs b/ShareX.HelpersLib/Helpers/ImageHelpers.cs
+index d29ac4f18..ce0ac9d94 100644
+--- a/ShareX.HelpersLib/Helpers/ImageHelpers.cs
++++ b/ShareX.HelpersLib/Helpers/ImageHelpers.cs
+@@ -213,9 +213,9 @@ public static Bitmap ResizeImageLimit(Bitmap bmp, int size)
+             return ResizeImageLimit(bmp, size, size);
+         }
+ 
+-        public static Bitmap CropBitmap(Bitmap bmp, Rectangle rect)
++        public static Bitmap CropBitmap(Bitmap bmp, RectangleF rect)
+         {
+-            if (bmp != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 && new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(rect))
++            if (bmp != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 && new RectangleF(0, 0, bmp.Width, bmp.Height).Contains(rect))
+             {
+                 return bmp.Clone(rect, bmp.PixelFormat);
+             }
+diff --git a/ShareX.HelpersLib/Helpers/MathHelpers.cs b/ShareX.HelpersLib/Helpers/MathHelpers.cs
+index 281fd8e5d..638a5f4f6 100644
+--- a/ShareX.HelpersLib/Helpers/MathHelpers.cs
++++ b/ShareX.HelpersLib/Helpers/MathHelpers.cs
+@@ -24,6 +24,7 @@
+ #endregion License Information (GPL v3)
+ 
+ using System;
++using System.Drawing;
+ 
+ namespace ShareX.HelpersLib
+ {
+@@ -135,6 +136,11 @@ public static float LookAtRadian(Vector2 pos1, Vector2 pos2)
+             return (float)Math.Atan2(pos2.Y - pos1.Y, pos2.X - pos1.X);
+         }
+ 
++        public static float LookAtRadian(PointF pos1, PointF pos2)
++        {
++            return (float)Math.Atan2(pos2.Y - pos1.Y, pos2.X - pos1.X);
++        }
++
+         public static Vector2 LookAtVector2(Vector2 pos1, Vector2 pos2)
+         {
+             return RadianToVector2(LookAtRadian(pos1, pos2));
+@@ -145,9 +151,19 @@ public static float LookAtDegree(Vector2 pos1, Vector2 pos2)
+             return RadianToDegree(LookAtRadian(pos1, pos2));
+         }
+ 
++        public static float LookAtDegree(PointF pos1, PointF pos2)
++        {
++            return RadianToDegree(LookAtRadian(pos1, pos2));
++        }
++
+         public static float Distance(Vector2 pos1, Vector2 pos2)
+         {
+             return (float)Math.Sqrt(Math.Pow(pos2.X - pos1.X, 2) + Math.Pow(pos2.Y - pos1.Y, 2));
+         }
++
++        public static float Distance(PointF pos1, PointF pos2)
++        {
++            return (float)Math.Sqrt(Math.Pow(pos2.X - pos1.X, 2) + Math.Pow(pos2.Y - pos1.Y, 2));
++        }
+     }
+ }
+\ No newline at end of file
+diff --git a/ShareX.HelpersLib/Vector2.cs b/ShareX.HelpersLib/Vector2.cs
+index 519f50170..89102ca35 100644
+--- a/ShareX.HelpersLib/Vector2.cs
++++ b/ShareX.HelpersLib/Vector2.cs
+@@ -124,6 +124,11 @@ public override string ToString()
+             return new Point((int)Math.Round(u.x), (int)Math.Round(u.y));
+         }
+ 
++        public static explicit operator PointF(Vector2 u)
++        {
++            return new PointF(u.x, u.y);
++        }
++
+         public static implicit operator Vector2(Point p)
+         {
+             return new Vector2(p.X, p.Y);
+diff --git a/ShareX.ScreenCaptureLib/Animations/RectangleAnimation.cs b/ShareX.ScreenCaptureLib/Animations/RectangleAnimation.cs
+index c6b94ab83..d3df929c3 100644
+--- a/ShareX.ScreenCaptureLib/Animations/RectangleAnimation.cs
++++ b/ShareX.ScreenCaptureLib/Animations/RectangleAnimation.cs
+@@ -31,11 +31,11 @@ namespace ShareX.ScreenCaptureLib
+ {
+     internal class RectangleAnimation : BaseAnimation
+     {
+-        public Rectangle FromRectangle { get; set; }
+-        public Rectangle ToRectangle { get; set; }
++        public RectangleF FromRectangle { get; set; }
++        public RectangleF ToRectangle { get; set; }
+         public TimeSpan Duration { get; set; }
+ 
+-        public Rectangle CurrentRectangle { get; private set; }
++        public RectangleF CurrentRectangle { get; private set; }
+ 
+         public override bool Update()
+         {
+@@ -46,12 +46,12 @@ public override bool Update()
+                 float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
+                 amount = Math.Min(amount, 1);
+ 
+-                int x = (int)MathHelpers.Lerp(FromRectangle.X, ToRectangle.X, amount);
+-                int y = (int)MathHelpers.Lerp(FromRectangle.Y, ToRectangle.Y, amount);
+-                int width = (int)MathHelpers.Lerp(FromRectangle.Width, ToRectangle.Width, amount);
+-                int height = (int)MathHelpers.Lerp(FromRectangle.Height, ToRectangle.Height, amount);
++                float x = MathHelpers.Lerp(FromRectangle.X, ToRectangle.X, amount);
++                float y = MathHelpers.Lerp(FromRectangle.Y, ToRectangle.Y, amount);
++                float width = MathHelpers.Lerp(FromRectangle.Width, ToRectangle.Width, amount);
++                float height = MathHelpers.Lerp(FromRectangle.Height, ToRectangle.Height, amount);
+ 
+-                CurrentRectangle = new Rectangle(x, y, width, height);
++                CurrentRectangle = new RectangleF(x, y, width, height);
+ 
+                 if (amount >= 1)
+                 {
+diff --git a/ShareX.ScreenCaptureLib/Forms/RegionCaptureForm.cs b/ShareX.ScreenCaptureLib/Forms/RegionCaptureForm.cs
+index 1add34e34..f9112fe3f 100644
+--- a/ShareX.ScreenCaptureLib/Forms/RegionCaptureForm.cs
++++ b/ShareX.ScreenCaptureLib/Forms/RegionCaptureForm.cs
+@@ -50,7 +50,7 @@ public sealed class RegionCaptureForm : Form
+         public RegionCaptureOptions Options { get; set; }
+         public Rectangle ClientArea { get; private set; }
+         public Bitmap Canvas { get; private set; }
+-        public Rectangle CanvasRectangle { get; internal set; }
++        public RectangleF CanvasRectangle { get; internal set; }
+         public RegionResult Result { get; private set; }
+         public int MonitorIndex { get; set; }
+         public string ImageFilePath { get; set; }
+@@ -64,7 +64,7 @@ public sealed class RegionCaptureForm : Form
+         public Point CurrentPosition { get; private set; }
+         public SimpleWindowInfo SelectedWindow { get; private set; }
+ 
+-        internal Point PanningStrech = new Point();
++        internal PointF PanningStrech = new PointF();
+         internal Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
+ 
+         internal float ZoomFactor
+@@ -80,9 +80,8 @@ internal float ZoomFactor
+         }
+ 
+         internal bool IsZoomed => Math.Round(ZoomFactor * 100) != 100;
+-        internal Point ScaledClientMousePosition => InputManager.ClientMousePosition.Scale(1 / ZoomFactor);
+-        internal Point ScaledClientMouseVelocity => InputManager.MouseVelocity.Scale(1 / ZoomFactor);
+-        internal Point ScaledClientCenter => new Point((int)Math.Round(ClientArea.Width / 2f / ZoomFactor), (int)Math.Round(ClientArea.Height / 2f / ZoomFactor));
++        internal PointF ScaledClientMousePosition => InputManager.ClientMousePosition.Scale(1 / ZoomFactor);
++        internal PointF ScaledClientMouseVelocity => InputManager.MouseVelocity.Scale(1 / ZoomFactor);
+ 
+         internal ShapeManager ShapeManager { get; private set; }
+         internal bool IsClosing { get; private set; }
+@@ -351,7 +350,7 @@ internal void InitBackground(Bitmap canvas, bool centerCanvas = true)
+             {
+                 UpdateTitle();
+ 
+-                CanvasRectangle = new Rectangle(CanvasRectangle.X, CanvasRectangle.Y, Canvas.Width, Canvas.Height);
++                CanvasRectangle = new RectangleF(CanvasRectangle.X, CanvasRectangle.Y, Canvas.Width, Canvas.Height);
+ 
+                 using (Bitmap background = new Bitmap(Canvas.Width, Canvas.Height))
+                 using (Graphics g = Graphics.FromImage(background))
+@@ -420,18 +419,23 @@ private void OnMoved()
+             }
+         }
+ 
+-        private void Pan(int deltaX, int deltaY, bool usePanningStretch = true)
++        private void Pan(float deltaX, float deltaY, bool usePanningStretch = true)
+         {
++            if (deltaX == 0 && deltaY == 0)
++            {
++                return;
++            }
++
+             if (usePanningStretch)
+             {
+                 PanningStrech.X -= deltaX;
+                 PanningStrech.Y -= deltaY;
+             }
+ 
+-            Size panLimitSize = new Size(Math.Min((int)Math.Round(ClientArea.Width * 0.25f), CanvasRectangle.Width),
+-                Math.Min((int)Math.Round(ClientArea.Height * 0.25f), CanvasRectangle.Height));
++            SizeF panLimitSize = new SizeF(Math.Min(ClientArea.Width * 0.25f, CanvasRectangle.Width),
++                Math.Min(ClientArea.Height * 0.25f, CanvasRectangle.Height));
+ 
+-            Rectangle limitRectangle = new Rectangle(ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
++            RectangleF limitRectangle = new RectangleF(ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
+                 ClientArea.Width - (panLimitSize.Width * 2), ClientArea.Height - (panLimitSize.Height * 2));
+ 
+             if (IsZoomed)
+@@ -477,13 +481,13 @@ private void AutomaticPan(Vector2 centerOffset)
+         {
+             if (IsEditorMode)
+             {
+-                Rectangle canvas = CanvasRectangle.Scale(ZoomFactor);
+-                float x = ClientArea.Width / 2 + centerOffset.X;
+-                float y = ClientArea.Height / 2 + centerOffset.Y;
+-                float newX = x - canvas.Width / 2;
+-                float newY = y - canvas.Height / 2;
+-                int deltaX = (int)Math.Round((newX - canvas.X) / ZoomFactor);
+-                int deltaY = (int)Math.Round((newY - canvas.Y) / ZoomFactor);
++                RectangleF canvas = CanvasRectangle.Scale(ZoomFactor);
++                float x = (ClientArea.Width / 2)  + centerOffset.X;
++                float y = (ClientArea.Height / 2) + centerOffset.Y;
++                float newX = x - (canvas.Width / 2);
++                float newY = y - (canvas.Height / 2);
++                float deltaX = (newX - canvas.X) / ZoomFactor;
++                float deltaY = (newY - canvas.Y) / ZoomFactor;
+                 Pan(deltaX, deltaY, false);
+             }
+         }
+@@ -502,7 +506,7 @@ private void UpdateCenterOffset()
+         public void CenterCanvas()
+         {
+             CanvasCenterOffset = new Vector2(0f, ToolbarHeight / 2f);
+-            AutomaticPan();
++            AutomaticPan(CanvasCenterOffset / ZoomFactor);
+         }
+ 
+         public void ZoomTransform(Graphics g, bool invertZoom = false)
+@@ -713,7 +717,9 @@ private void RegionCaptureForm_MouseWheel(object sender, MouseEventArgs e)
+ 
+         private void Zoom(bool zoomIn, bool atMouse = true)
+         {
+-            Point centerBefore = atMouse ? ScaledClientMousePosition : ScaledClientCenter;
++            Func<PointF> ScaledClientCenter = () => new PointF(ClientArea.Width / 2f / ZoomFactor, ClientArea.Height / 2f / ZoomFactor);
++
++            PointF centerBefore = atMouse ? ScaledClientMousePosition : ScaledClientCenter();
+ 
+             if (zoomIn)
+             {
+@@ -746,17 +752,16 @@ private void Zoom(bool zoomIn, bool atMouse = true)
+                 }
+             }
+ 
+-            Point centerAfter = atMouse ? ScaledClientMousePosition : ScaledClientCenter;
++            PointF centerAfter = atMouse ? ScaledClientMousePosition : ScaledClientCenter();
+ 
+-            Point delta = new Point(centerAfter.X - centerBefore.X, centerAfter.Y - centerBefore.Y);
+-            Pan(delta);
++            Pan(centerAfter.X - centerBefore.X, centerAfter.Y - centerBefore.Y);
+ 
+             UpdateTitle();
+         }
+ 
+         private void ZoomToFit()
+         {
+-            ZoomFactor = Math.Min((float)ClientArea.Width / CanvasRectangle.Width, (float)ClientArea.Height / CanvasRectangle.Height);
++            ZoomFactor = Math.Min(ClientArea.Width/CanvasRectangle.Width, (ClientArea.Height-ToolbarHeight)/CanvasRectangle.Height);
+ 
+             CenterCanvas();
+         }
+@@ -846,7 +851,7 @@ private new void Update()
+ 
+             if (ShapeManager.IsPanning)
+             {
+-                Pan(ScaledClientMouseVelocity);
++                Pan(ScaledClientMouseVelocity.X, ScaledClientMouseVelocity.Y);
+                 UpdateCenterOffset();
+             }
+ 
+@@ -882,7 +887,7 @@ protected override void OnPaint(PaintEventArgs e)
+             if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))
+             {
+                 g.Clear(canvasBackgroundColor);
+-                g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1));
++                g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1F));
+             }
+ 
+             DrawBackground(g);
+@@ -920,7 +925,7 @@ private void DrawShapes(Graphics g)
+                 {
+                     foreach (Size size in Options.SnapSizes)
+                     {
+-                        Rectangle snapRect = CaptureHelpers.CalculateNewRectangle(shape.StartPosition, shape.EndPosition, size);
++                        RectangleF snapRect = CaptureHelpers.CalculateNewRectangle(shape.StartPosition, shape.EndPosition, size);
+                         g.DrawRectangleProper(markerPen, snapRect);
+                     }
+                 }
+@@ -1071,7 +1076,7 @@ private void DrawShapes(Graphics g)
+             }
+         }
+ 
+-        internal void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated)
++        internal void DrawRegionArea(Graphics g, RectangleF rect, bool isAnimated)
+         {
+             g.DrawRectangleProper(borderPen, rect);
+ 
+@@ -1098,23 +1103,23 @@ private void DrawFPS(Graphics g, int offset)
+             g.DrawTextWithShadow(FPSManager.FPS.ToString(), textPosition, infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
+         }
+ 
+-        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
++        private void DrawInfoText(Graphics g, string text, RectangleF rect, Font font, int padding)
+         {
+             DrawInfoText(g, text, rect, font, new Point(padding, padding));
+         }
+ 
+-        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, Point padding)
++        private void DrawInfoText(Graphics g, string text, RectangleF rect, Font font, Point padding)
+         {
+             DrawInfoText(g, text, rect, font, padding, textBackgroundBrush, textOuterBorderPen, textInnerBorderPen, textBrush, textShadowBrush);
+         }
+ 
+-        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding,
++        private void DrawInfoText(Graphics g, string text, RectangleF rect, Font font, int padding,
+             Brush backgroundBrush, Pen outerBorderPen, Pen innerBorderPen, Brush textBrush, Brush textShadowBrush)
+         {
+             DrawInfoText(g, text, rect, font, new Point(padding, padding), backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
+         }
+ 
+-        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, Point padding,
++        private void DrawInfoText(Graphics g, string text, RectangleF rect, Font font, Point padding,
+             Brush backgroundBrush, Pen outerBorderPen, Pen innerBorderPen, Brush textBrush, Brush textShadowBrush)
+         {
+             g.FillRectangle(backgroundBrush, rect.Offset(-2));
+@@ -1124,20 +1129,20 @@ private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, Po
+             g.DrawTextWithShadow(text, rect.LocationOffset(padding.X, padding.Y).Location, font, textBrush, textShadowBrush);
+         }
+ 
+-        internal void DrawAreaText(Graphics g, string text, Rectangle area)
++        internal void DrawAreaText(Graphics g, string text, RectangleF area)
+         {
+             int offset = 6;
+             int backgroundPadding = 3;
+             Size textSize = g.MeasureString(text, infoFont).ToSize();
+-            Point textPos;
++            PointF textPos;
+ 
+             if (area.Y - offset - textSize.Height - (backgroundPadding * 2) < ClientArea.Y)
+             {
+-                textPos = new Point(area.X + offset + backgroundPadding, area.Y + offset + backgroundPadding);
++                textPos = new PointF(area.X + offset + backgroundPadding, area.Y + offset + backgroundPadding);
+             }
+             else
+             {
+-                textPos = new Point(area.X + backgroundPadding, area.Y - offset - backgroundPadding - textSize.Height);
++                textPos = new PointF(area.X + backgroundPadding, area.Y - offset - backgroundPadding - textSize.Height);
+             }
+ 
+             if (textPos.X + textSize.Width + backgroundPadding >= ClientArea.Width)
+@@ -1145,7 +1150,7 @@ internal void DrawAreaText(Graphics g, string text, Rectangle area)
+                 textPos.X = ClientArea.Width - textSize.Width - backgroundPadding;
+             }
+ 
+-            Rectangle backgroundRect = new Rectangle(textPos.X - backgroundPadding, textPos.Y - backgroundPadding, textSize.Width + (backgroundPadding * 2), textSize.Height + (backgroundPadding * 2));
++            RectangleF backgroundRect = new RectangleF(textPos.X - backgroundPadding, textPos.Y - backgroundPadding, textSize.Width + (backgroundPadding * 2), textSize.Height + (backgroundPadding * 2));
+ 
+             DrawInfoText(g, text, backgroundRect, infoFont, backgroundPadding);
+         }
+@@ -1186,15 +1191,15 @@ private void DrawBottomTipAnimation(Graphics g, TextAnimation textAnimation)
+             DrawTextAnimation(g, textAnimation, textRectangle, padding);
+         }
+ 
+-        internal string GetAreaText(Rectangle rect)
++        internal string GetAreaText(RectangleF rect)
+         {
+             if (IsEditorMode)
+             {
+-                rect = new Rectangle(rect.X - CanvasRectangle.X, rect.Y - CanvasRectangle.Y, rect.Width, rect.Height);
++                rect = new RectangleF(rect.X - CanvasRectangle.X, rect.Y - CanvasRectangle.Y, rect.Width, rect.Height);
+             }
+             else if (Mode == RegionCaptureMode.Ruler)
+             {
+-                Point endLocation = new Point(rect.Right - 1, rect.Bottom - 1);
++                PointF endLocation = new PointF(rect.Right - 1, rect.Bottom - 1);
+                 string text = $"X: {rect.X} | Y: {rect.Y} | Right: {endLocation.X} | Bottom: {endLocation.Y}\r\n" +
+                     $"Width: {rect.Width} px | Height: {rect.Height} px | Area: {rect.Area()} px | Perimeter: {rect.Perimeter()} px\r\n" +
+                     $"Distance: {MathHelpers.Distance(rect.Location, endLocation):0.00} px | Angle: {MathHelpers.LookAtDegree(rect.Location, endLocation):0.00}°";
+@@ -1208,7 +1213,7 @@ private string GetInfoText()
+         {
+             if (IsEditorMode)
+             {
+-                Point canvasRelativePosition = new Point(ScaledClientMousePosition.X - CanvasRectangle.X, ScaledClientMousePosition.Y - CanvasRectangle.Y);
++                PointF canvasRelativePosition = new PointF(ScaledClientMousePosition.X - CanvasRectangle.X, ScaledClientMousePosition.Y - CanvasRectangle.Y);
+                 return $"X: {canvasRelativePosition.X} Y: {canvasRelativePosition.Y}";
+             }
+             else if (Mode == RegionCaptureMode.ScreenColorPicker || Options.UseCustomInfoText)
+@@ -1236,11 +1241,11 @@ private string GetInfoText()
+         private void DrawCrosshair(Graphics g)
+         {
+             int offset = 5;
+-            Point mousePos = ScaledClientMousePosition;
+-            Point left = new Point(mousePos.X - offset, mousePos.Y), left2 = new Point(0, mousePos.Y);
+-            Point right = new Point(mousePos.X + offset, mousePos.Y), right2 = new Point(ClientArea.Width - 1, mousePos.Y);
+-            Point top = new Point(mousePos.X, mousePos.Y - offset), top2 = new Point(mousePos.X, 0);
+-            Point bottom = new Point(mousePos.X, mousePos.Y + offset), bottom2 = new Point(mousePos.X, ClientArea.Height - 1);
++            PointF mousePos = ScaledClientMousePosition;
++            PointF left = new PointF(mousePos.X - offset, mousePos.Y), left2 = new PointF(0, mousePos.Y);
++            PointF right = new PointF(mousePos.X + offset, mousePos.Y), right2 = new PointF(ClientArea.Width - 1, mousePos.Y);
++            PointF top = new PointF(mousePos.X, mousePos.Y - offset), top2 = new PointF(mousePos.X, 0);
++            PointF bottom = new PointF(mousePos.X, mousePos.Y + offset), bottom2 = new PointF(mousePos.X, ClientArea.Height - 1);
+ 
+             if (left.X - left2.X > 10)
+             {
+@@ -1383,7 +1388,7 @@ private void DrawCursorGraphics(Graphics g)
+             }
+         }
+ 
+-        private Bitmap Magnifier(Image img, Point position, int horizontalPixelCount, int verticalPixelCount, int pixelSize)
++        private Bitmap Magnifier(Image img, PointF position, int horizontalPixelCount, int verticalPixelCount, int pixelSize)
+         {
+             horizontalPixelCount = (horizontalPixelCount | 1).Clamp(1, 101);
+             verticalPixelCount = (verticalPixelCount | 1).Clamp(1, 101);
+@@ -1395,7 +1400,7 @@ private Bitmap Magnifier(Image img, Point position, int horizontalPixelCount, in
+                 pixelSize = 10;
+             }
+ 
+-            Rectangle srcRect = new Rectangle(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
++            RectangleF srcRect = new RectangleF(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
+                 position.Y - (verticalPixelCount / 2) - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount);
+ 
+             int width = horizontalPixelCount * pixelSize;
+@@ -1406,7 +1411,7 @@ private Bitmap Magnifier(Image img, Point position, int horizontalPixelCount, in
+             {
+                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
+ 
+-                if (!new Rectangle(0, 0, img.Width, img.Height).Contains(srcRect))
++                if (!new RectangleF(0, 0, img.Width, img.Height).Contains(srcRect))
+                 {
+                     g.Clear(canvasBackgroundColor);
+                 }
+@@ -1447,20 +1452,20 @@ private Bitmap Magnifier(Image img, Point position, int horizontalPixelCount, in
+             return bmp;
+         }
+ 
+-        private void DrawRuler(Graphics g, Rectangle rect, Pen pen, int rulerSize, int rulerWidth)
++        private void DrawRuler(Graphics g, RectangleF rect, Pen pen, int rulerSize, int rulerWidth)
+         {
+             if (rect.Width >= rulerSize && rect.Height >= rulerSize)
+             {
+                 for (int x = 1; x <= rect.Width / rulerWidth; x++)
+                 {
+-                    g.DrawLine(pen, new Point(rect.X + (x * rulerWidth), rect.Y), new Point(rect.X + (x * rulerWidth), rect.Y + rulerSize));
+-                    g.DrawLine(pen, new Point(rect.X + (x * rulerWidth), rect.Bottom), new Point(rect.X + (x * rulerWidth), rect.Bottom - rulerSize));
++                    g.DrawLine(pen, new PointF(rect.X + (x * rulerWidth), rect.Y), new PointF(rect.X + (x * rulerWidth), rect.Y + rulerSize));
++                    g.DrawLine(pen, new PointF(rect.X + (x * rulerWidth), rect.Bottom), new PointF(rect.X + (x * rulerWidth), rect.Bottom - rulerSize));
+                 }
+ 
+                 for (int y = 1; y <= rect.Height / rulerWidth; y++)
+                 {
+-                    g.DrawLine(pen, new Point(rect.X, rect.Y + (y * rulerWidth)), new Point(rect.X + rulerSize, rect.Y + (y * rulerWidth)));
+-                    g.DrawLine(pen, new Point(rect.Right, rect.Y + (y * rulerWidth)), new Point(rect.Right - rulerSize, rect.Y + (y * rulerWidth)));
++                    g.DrawLine(pen, new PointF(rect.X, rect.Y + (y * rulerWidth)), new PointF(rect.X + rulerSize, rect.Y + (y * rulerWidth)));
++                    g.DrawLine(pen, new PointF(rect.Right, rect.Y + (y * rulerWidth)), new PointF(rect.Right - rulerSize, rect.Y + (y * rulerWidth)));
+                 }
+             }
+         }
+diff --git a/ShareX.ScreenCaptureLib/Forms/RegionCaptureLightForm.cs b/ShareX.ScreenCaptureLib/Forms/RegionCaptureLightForm.cs
+index e693c4f41..24dfebb46 100644
+--- a/ShareX.ScreenCaptureLib/Forms/RegionCaptureLightForm.cs
++++ b/ShareX.ScreenCaptureLib/Forms/RegionCaptureLightForm.cs
+@@ -37,15 +37,15 @@ public sealed class RegionCaptureLightForm : Form
+     {
+         private const int MinimumRectangleSize = 3;
+ 
+-        public static Rectangle LastSelectionRectangle0Based { get; private set; }
++        public static RectangleF LastSelectionRectangle0Based { get; private set; }
+ 
+-        public Rectangle ScreenRectangle { get; private set; }
++        public RectangleF ScreenRectangle { get; private set; }
+ 
+-        public Rectangle ScreenRectangle0Based => new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
++        public RectangleF ScreenRectangle0Based => new RectangleF(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
+ 
+-        public Rectangle SelectionRectangle { get; private set; }
++        public RectangleF SelectionRectangle { get; private set; }
+ 
+-        public Rectangle SelectionRectangle0Based => new Rectangle(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
++        public RectangleF SelectionRectangle0Based => new RectangleF(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
+             SelectionRectangle.Width, SelectionRectangle.Height);
+ 
+         private Timer timer;
+@@ -92,7 +92,7 @@ private void InitializeComponent()
+ 
+             AutoScaleMode = AutoScaleMode.None;
+             StartPosition = FormStartPosition.Manual;
+-            Bounds = ScreenRectangle;
++            Bounds = Rectangle.Round(ScreenRectangle);
+             FormBorderStyle = FormBorderStyle.None;
+             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+             Text = "ShareX - " + Resources.RectangleLight_InitializeComponent_Rectangle_capture_light;
+@@ -164,7 +164,7 @@ private void RectangleLight_MouseUp(object sender, MouseEventArgs e)
+ 
+         public Bitmap GetAreaImage()
+         {
+-            Rectangle rect = SelectionRectangle0Based;
++            RectangleF rect = SelectionRectangle0Based;
+ 
+             if (rect.Width > 0 && rect.Height > 0)
+             {
+diff --git a/ShareX.ScreenCaptureLib/Forms/RegionCaptureTransparentForm.cs b/ShareX.ScreenCaptureLib/Forms/RegionCaptureTransparentForm.cs
+index 3fe195c33..ef5cb6928 100644
+--- a/ShareX.ScreenCaptureLib/Forms/RegionCaptureTransparentForm.cs
++++ b/ShareX.ScreenCaptureLib/Forms/RegionCaptureTransparentForm.cs
+@@ -37,7 +37,7 @@ public sealed class RegionCaptureTransparentForm : LayeredForm
+     {
+         private const int MinimumRectangleSize = 3;
+ 
+-        public static Rectangle LastSelectionRectangle0Based { get; private set; }
++        public static RectangleF LastSelectionRectangle0Based { get; private set; }
+ 
+         public Rectangle ScreenRectangle { get; private set; }
+ 
+@@ -174,7 +174,7 @@ private void timer_Tick(object sender, EventArgs e)
+         {
+             currentPosition = CaptureHelpers.GetCursorPosition();
+             PreviousSelectionRectangle = SelectionRectangle;
+-            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
++            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y).Round();
+ 
+             UpdateBackgroundImage();
+         }
+diff --git a/ShareX.ScreenCaptureLib/RegionCaptureTasks.cs b/ShareX.ScreenCaptureLib/RegionCaptureTasks.cs
+index 24762d93d..9bdf32628 100644
+--- a/ShareX.ScreenCaptureLib/RegionCaptureTasks.cs
++++ b/ShareX.ScreenCaptureLib/RegionCaptureTasks.cs
+@@ -63,7 +63,7 @@ public static bool GetRectangleRegion(out Rectangle rect, out WindowInfo windowI
+                 {
+                     if (form.ShapeManager.IsCurrentShapeValid)
+                     {
+-                        rect = CaptureHelpers.ClientToScreen(form.ShapeManager.CurrentRectangle);
++                        rect = CaptureHelpers.ClientToScreen(form.ShapeManager.CurrentRectangle.Round());
+                         return true;
+                     }
+                 }
+diff --git a/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorButton.cs b/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorButton.cs
+index 51506cc0e..b0893e637 100644
+--- a/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorButton.cs
++++ b/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorButton.cs
+@@ -38,7 +38,7 @@ internal class ImageEditorButton : ImageEditorControl
+ 
+         public override void OnDraw(Graphics g)
+         {
+-            Rectangle rect = Rectangle;
++            RectangleF rect = Rectangle;
+ 
+             if (IsCursorHover)
+             {
+diff --git a/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorControl.cs b/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorControl.cs
+index f71a9dbdd..64ab4ae50 100644
+--- a/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorControl.cs
++++ b/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorControl.cs
+@@ -36,7 +36,7 @@ internal abstract class ImageEditorControl
+ 
+         public bool Visible { get; set; }
+         public bool HandleMouseInput { get; set; } = true;
+-        public Rectangle Rectangle { get; set; }
++        public RectangleF Rectangle { get; set; }
+ 
+         private bool isCursorHover;
+ 
+diff --git a/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorScrollbar.cs b/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorScrollbar.cs
+index c5873e534..7e40a5c91 100644
+--- a/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorScrollbar.cs
++++ b/ShareX.ScreenCaptureLib/RegionHelpers/ImageEditorScrollbar.cs
+@@ -42,7 +42,7 @@ internal class ImageEditorScrollbar : ImageEditorControl
+         public Color ThumbColor { get; set; } = Color.FromArgb(90, 94, 104);
+         public Color ActiveThumbColor { get; set; } = Color.FromArgb(111, 115, 123);
+         public bool AutoHide { get; set; } = true;
+-        public Rectangle ThumbRectangle { get; private set; }
++        public RectangleF ThumbRectangle { get; private set; }
+ 
+         private RegionCaptureForm form;
+ 
+@@ -56,17 +56,18 @@ public void Update()
+         {
+             if (AutoHide)
+             {
++                RectangleF imageRectangle = form.CanvasRectangle.Scale(form.ZoomFactor);
+                 bool isScrollbarNeeded;
+ 
+                 if (Orientation == Orientation.Horizontal)
+                 {
+-                    isScrollbarNeeded = form.CanvasRectangle.Left < form.ClientArea.Left ||
+-                        (form.CanvasRectangle.Right * form.ZoomFactor) > form.ClientArea.Right;
++                    isScrollbarNeeded = imageRectangle.Left < form.ClientArea.Left ||
++                        (imageRectangle.Right * form.ZoomFactor) > form.ClientArea.Right;
+                 }
+                 else
+                 {
+-                    isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top ||
+-                        (form.CanvasRectangle.Bottom * form.ZoomFactor) > form.ClientArea.Bottom;
++                    isScrollbarNeeded = imageRectangle.Top < form.ClientArea.Top ||
++                        (imageRectangle.Bottom * form.ZoomFactor) > form.ClientArea.Bottom;
+                 }
+ 
+                 Visible = isScrollbarNeeded || IsDragging;
+@@ -83,17 +84,18 @@ public void Update()
+                     Scroll(form.ShapeManager.InputManager.ClientMousePosition);
+                 }
+ 
+-                Rectangle imageRectangleVisible = form.CanvasRectangle;
++                RectangleF imageRectangle = form.CanvasRectangle.Scale(form.ZoomFactor);
++                RectangleF imageRectangleVisible = imageRectangle;
+                 imageRectangleVisible.Intersect(form.ClientArea);
+ 
+-                int inClientAreaSize, inImageVisibleSize, inImageSize, sideOffsetBase;
++                float inClientAreaSize, inImageVisibleSize, inImageSize, sideOffsetBase;
+                 float inCanvasCenterOffset;
+ 
+                 if (Orientation == Orientation.Horizontal)
+                 {
+                     inClientAreaSize = form.ClientArea.Width;
+                     inImageVisibleSize = imageRectangleVisible.Width;
+-                    inImageSize = form.CanvasRectangle.Width;
++                    inImageSize = imageRectangle.Width;
+                     sideOffsetBase = form.ClientArea.Bottom;
+                     inCanvasCenterOffset = form.CanvasCenterOffset.X;
+                 }
+@@ -101,13 +103,13 @@ public void Update()
+                 {
+                     inClientAreaSize = form.ClientArea.Height;
+                     inImageVisibleSize = imageRectangleVisible.Height;
+-                    inImageSize = form.CanvasRectangle.Height;
++                    inImageSize = imageRectangle.Height;
+                     sideOffsetBase = form.ClientArea.Right;
+                     inCanvasCenterOffset = form.CanvasCenterOffset.Y;
+                 }
+ 
+-                int trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
+-                int trackLengthInternal = trackLength - (Padding * 2);
++                float trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
++                float trackLengthInternal = trackLength - (Padding * 2);
+ 
+                 int thumbLength = Math.Max(Thickness, (int)Math.Round((float)inImageVisibleSize / inImageSize * trackLengthInternal));
+                 double thumbLimit = (trackLengthInternal - thumbLength) / 2.0f;
+@@ -115,18 +117,18 @@ public void Update()
+                     Math.Min(thumbLimit, Math.Max(-thumbLimit, inCanvasCenterOffset / inImageSize * trackLengthInternal)));
+ 
+                 int trackWidth = (Padding * 2) + Thickness;
+-                int thumbSideOffset = sideOffsetBase - Margin - Padding - Thickness;
+-                int trackSideOffset = thumbSideOffset - Padding;
++                float thumbSideOffset = sideOffsetBase - Margin - Padding - Thickness;
++                float trackSideOffset = thumbSideOffset - Padding;
+ 
+                 if (Orientation == Orientation.Horizontal)
+                 {
+-                    Rectangle = new Rectangle(Margin, trackSideOffset, trackLength, trackWidth);
+-                    ThumbRectangle = new Rectangle(thumbPosition, thumbSideOffset, thumbLength, Thickness);
++                    Rectangle = new RectangleF(Margin, trackSideOffset, trackLength, trackWidth);
++                    ThumbRectangle = new RectangleF(thumbPosition, thumbSideOffset, thumbLength, Thickness);
+                 }
+                 else
+                 {
+-                    Rectangle = new Rectangle(trackSideOffset, Margin, trackWidth, trackLength);
+-                    ThumbRectangle = new Rectangle(thumbSideOffset, thumbPosition, Thickness, thumbLength);
++                    Rectangle = new RectangleF(trackSideOffset, Margin, trackWidth, trackLength);
++                    ThumbRectangle = new RectangleF(thumbSideOffset, thumbPosition, Thickness, thumbLength);
+                 }
+             }
+         }
+@@ -173,27 +175,28 @@ public override void OnDraw(Graphics g)
+ 
+         private void Scroll(Point position)
+         {
+-            int inMousePosition, inClientAreaSize, inImageSize;
++            RectangleF imageRectangle = form.CanvasRectangle.Scale(form.ZoomFactor);
++            float inMousePosition, inClientAreaSize, inImageSize;
+ 
+             if (Orientation == Orientation.Horizontal)
+             {
+                 inMousePosition = position.X;
+                 inClientAreaSize = form.ClientArea.Width;
+-                inImageSize = form.CanvasRectangle.Width;
++                inImageSize = imageRectangle.Width;
+             }
+             else
+             {
+                 inMousePosition = position.Y;
+                 inClientAreaSize = form.ClientArea.Height;
+-                inImageSize = form.CanvasRectangle.Height;
++                inImageSize = imageRectangle.Height;
+             }
+ 
+-            int mousePositionLocal = inMousePosition - Margin - Padding;
++            float mousePositionLocal = inMousePosition - Margin - Padding;
+ 
+-            int trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
+-            int trackLengthInternal = trackLength - (Padding * 2);
++            float trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
++            float trackLengthInternal = trackLength - (Padding * 2);
+ 
+-            int centerOffsetNew = (int)(((trackLengthInternal / 2.0f) - mousePositionLocal) / trackLengthInternal * inImageSize);
++            float centerOffsetNew = ((trackLengthInternal / 2.0f) - mousePositionLocal) / trackLengthInternal * inImageSize;
+ 
+             if (Orientation == Orientation.Horizontal)
+             {
+diff --git a/ShareX.ScreenCaptureLib/RegionHelpers/ResizeNode.cs b/ShareX.ScreenCaptureLib/RegionHelpers/ResizeNode.cs
+index 6167b5980..9bd8d015c 100644
+--- a/ShareX.ScreenCaptureLib/RegionHelpers/ResizeNode.cs
++++ b/ShareX.ScreenCaptureLib/RegionHelpers/ResizeNode.cs
+@@ -33,9 +33,9 @@ internal class ResizeNode : ImageEditorControl
+     {
+         public const int DefaultSize = 13;
+ 
+-        private Point position;
++        private PointF position;
+ 
+-        public Point Position
++        public PointF Position
+         {
+             get
+             {
+@@ -45,7 +45,7 @@ public Point Position
+             {
+                 position = value;
+ 
+-                Rectangle = new Rectangle(position.X - ((Size - 1) / 2), position.Y - ((Size - 1) / 2), Size, Size);
++                Rectangle = new RectangleF(position.X - ((Size - 1) / 2), position.Y - ((Size - 1) / 2), Size, Size);
+             }
+         }
+ 
+@@ -81,10 +81,10 @@ public NodeShape Shape
+ 
+         public Image CustomNodeImage { get; private set; }
+ 
+-        public ResizeNode(int x = 0, int y = 0)
++        public ResizeNode(float x = 0, float y = 0)
+         {
+             Shape = NodeShape.Square;
+-            Position = new Point(x, y);
++            Position = new PointF(x, y);
+         }
+ 
+         public void SetCustomNode(Image customNodeImage)
+@@ -95,13 +95,13 @@ public void SetCustomNode(Image customNodeImage)
+ 
+         public override void OnDraw(Graphics g)
+         {
+-            Rectangle rect = Rectangle.SizeOffset(-1);
++            RectangleF rect = Rectangle.SizeOffset(-1);
+ 
+             switch (Shape)
+             {
+                 case NodeShape.Square:
+-                    g.DrawRectangle(Pens.White, rect.Offset(-1));
+-                    g.DrawRectangle(Pens.Black, rect);
++                    g.DrawRectangle(Pens.White, rect.Offset(-1).Round());
++                    g.DrawRectangle(Pens.Black, rect.Round());
+                     break;
+                 default:
+                 case NodeShape.Circle:
+@@ -109,8 +109,8 @@ public override void OnDraw(Graphics g)
+                     g.DrawEllipse(Pens.Black, rect);
+                     break;
+                 case NodeShape.Diamond:
+-                    g.DrawDiamond(Pens.White, rect.Offset(-1));
+-                    g.DrawDiamond(Pens.Black, rect);
++                    g.DrawDiamond(Pens.White, rect.Offset(-1).Round());
++                    g.DrawDiamond(Pens.Black, rect.Round());
+                     break;
+                 case NodeShape.CustomNode when CustomNodeImage != null:
+                     g.DrawImage(CustomNodeImage, Rectangle);
+diff --git a/ShareX.ScreenCaptureLib/Shapes/BaseShape.cs b/ShareX.ScreenCaptureLib/Shapes/BaseShape.cs
+index 7e5074e3b..c3701a742 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/BaseShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/BaseShape.cs
+@@ -37,9 +37,9 @@ public abstract class BaseShape : IDisposable
+ 
+         public abstract ShapeType ShapeType { get; }
+ 
+-        private Rectangle rectangle;
++        private RectangleF rectangle;
+ 
+-        public Rectangle Rectangle
++        public RectangleF Rectangle
+         {
+             get
+             {
+@@ -49,19 +49,19 @@ public Rectangle Rectangle
+             {
+                 rectangle = value;
+                 startPosition = rectangle.Location;
+-                endPosition = new Point(rectangle.X + rectangle.Width - 1, rectangle.Y + rectangle.Height - 1);
++                endPosition = new PointF(rectangle.X + rectangle.Width - 1, rectangle.Y + rectangle.Height - 1);
+             }
+         }
+ 
+-        public Rectangle RectangleInsideCanvas => Rectangle.Intersect(Rectangle, Manager.Form.CanvasRectangle);
++        public RectangleF RectangleInsideCanvas => RectangleF.Intersect(Rectangle, Manager.Form.CanvasRectangle);
+ 
+         public bool IsInsideCanvas => !RectangleInsideCanvas.IsEmpty;
+ 
+         public virtual bool LimitRectangleToInsideCanvas { get; }
+ 
+-        private Point startPosition;
++        private PointF startPosition;
+ 
+-        public Point StartPosition
++        public PointF StartPosition
+         {
+             get
+             {
+@@ -74,9 +74,9 @@ private set
+             }
+         }
+ 
+-        private Point endPosition;
++        private PointF endPosition;
+ 
+-        public Point EndPosition
++        public PointF EndPosition
+         {
+             get
+             {
+@@ -89,7 +89,7 @@ private set
+             }
+         }
+ 
+-        public Size InitialSize { get; set; }
++        public SizeF InitialSize { get; set; }
+ 
+         public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= Options.MinimumSize && Rectangle.Height >= Options.MinimumSize;
+ 
+@@ -103,8 +103,8 @@ private set
+         protected RegionCaptureOptions Options => Manager.Options;
+         protected AnnotationOptions AnnotationOptions => Manager.Options.AnnotationOptions;
+ 
+-        private Point tempNodePos, tempStartPos, tempEndPos;
+-        private Rectangle tempRectangle;
++        private PointF tempNodePos, tempStartPos, tempEndPos;
++        private RectangleF tempRectangle;
+ 
+         public bool IsHandledBySelectTool
+         {
+@@ -121,7 +121,7 @@ public bool IsHandledBySelectTool
+             }
+         }
+ 
+-        public virtual bool Intersects(Point position)
++        public virtual bool Intersects(PointF position)
+         {
+             return Rectangle.Contains(position);
+         }
+@@ -164,7 +164,7 @@ public virtual void Remove()
+ 
+         public void AddShapePath(GraphicsPath gp, int sizeOffset = 0)
+         {
+-            Rectangle rect = Rectangle;
++            RectangleF rect = Rectangle;
+ 
+             if (sizeOffset != 0)
+             {
+@@ -174,18 +174,18 @@ public void AddShapePath(GraphicsPath gp, int sizeOffset = 0)
+             OnShapePathRequested(gp, rect);
+         }
+ 
+-        public virtual void Move(int x, int y)
++        public virtual void Move(float x, float y)
+         {
+             StartPosition = StartPosition.Add(x, y);
+             EndPosition = EndPosition.Add(x, y);
+         }
+ 
+-        public void Move(Point offset)
++        public void Move(PointF offset)
+         {
+             Move(offset.X, offset.Y);
+         }
+ 
+-        public void MoveAbsolute(int x, int y, bool center = false)
++        public void MoveAbsolute(float x, float y, bool center = false)
+         {
+             if (center)
+             {
+@@ -196,7 +196,7 @@ public void MoveAbsolute(int x, int y, bool center = false)
+             Move(x - Rectangle.X, y - Rectangle.Y);
+         }
+ 
+-        public void MoveAbsolute(Point point, bool center = false)
++        public void MoveAbsolute(PointF point, bool center = false)
+         {
+             MoveAbsolute(point.X, point.Y, center);
+         }
+@@ -225,18 +225,18 @@ public virtual BaseShape Duplicate()
+ 
+         public virtual void OnCreating()
+         {
+-            Point pos = Manager.Form.ScaledClientMousePosition;
++            PointF pos = Manager.Form.ScaledClientMousePosition;
+ 
+             if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
+             {
+                 Manager.IsMoving = true;
+-                Rectangle = new Rectangle(new Point(pos.X - (Options.FixedSize.Width / 2), pos.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
++                Rectangle = new RectangleF(new PointF(pos.X - (Options.FixedSize.Width / 2), pos.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
+                 OnCreated();
+             }
+             else
+             {
+                 Manager.IsCreating = true;
+-                Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
++                Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
+             }
+         }
+ 
+@@ -270,7 +270,7 @@ public virtual void OnUpdate()
+         {
+             if (Manager.IsCreating)
+             {
+-                Point pos = Manager.Form.ScaledClientMousePosition;
++                PointF pos = Manager.Form.ScaledClientMousePosition;
+ 
+                 if (Manager.IsCornerMoving && !Manager.IsPanning)
+                 {
+@@ -313,7 +313,7 @@ public virtual void OnUpdate()
+             }
+         }
+ 
+-        public virtual void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
++        public virtual void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
+         {
+             gp.AddRectangle(rect);
+         }
+@@ -353,7 +353,7 @@ public virtual void OnNodeUpdate()
+                     {
+                         tempNodePos = node.Position;
+                         tempStartPos = Rectangle.Location;
+-                        tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
++                        tempEndPos = new PointF(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
+                         tempRectangle = Rectangle;
+ 
+                         OnResizing();
+@@ -367,13 +367,13 @@ public virtual void OnNodeUpdate()
+                         tempRectangle.LocationOffset(Manager.Form.ScaledClientMouseVelocity);
+                     }
+ 
+-                    Point pos = Manager.Form.ScaledClientMousePosition;
+-                    Point startPos = tempStartPos;
+-                    Point endPos = tempEndPos;
++                    PointF pos = Manager.Form.ScaledClientMousePosition;
++                    PointF startPos = tempStartPos;
++                    PointF endPos = tempEndPos;
+ 
+                     NodePosition nodePosition = (NodePosition)i;
+ 
+-                    int x = pos.X - tempNodePos.X;
++                    float x = pos.X - tempNodePos.X;
+ 
+                     switch (nodePosition)
+                     {
+@@ -389,7 +389,7 @@ public virtual void OnNodeUpdate()
+                             break;
+                     }
+ 
+-                    int y = pos.Y - tempNodePos.Y;
++                    float y = pos.Y - tempNodePos.Y;
+ 
+                     switch (nodePosition)
+                     {
+@@ -423,7 +423,7 @@ public virtual void OnNodeUpdate()
+                         int newWidth = (int)Math.Round(InitialSize.Width * ratio);
+                         int newHeight = (int)Math.Round(InitialSize.Height * ratio);
+ 
+-                        Point anchor = new Point();
++                        PointF anchor = new PointF();
+ 
+                         switch (nodePosition)
+                         {
+@@ -453,7 +453,7 @@ public virtual void OnNodeUpdate()
+                                 break;
+                         }
+ 
+-                        Rectangle newRect = Rectangle;
++                        RectangleF newRect = Rectangle;
+ 
+                         if (pos.X < anchor.X)
+                         {
+@@ -482,22 +482,22 @@ public virtual void OnNodeUpdate()
+ 
+         public virtual void OnNodePositionUpdate()
+         {
+-            int xStart = Rectangle.X;
+-            int xMid = Rectangle.X + (Rectangle.Width / 2);
+-            int xEnd = Rectangle.X + Rectangle.Width - 1;
+-
+-            int yStart = Rectangle.Y;
+-            int yMid = Rectangle.Y + (Rectangle.Height / 2);
+-            int yEnd = Rectangle.Y + Rectangle.Height - 1;
+-
+-            Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = new Point(xStart, yStart);
+-            Manager.ResizeNodes[(int)NodePosition.Top].Position = new Point(xMid, yStart);
+-            Manager.ResizeNodes[(int)NodePosition.TopRight].Position = new Point(xEnd, yStart);
+-            Manager.ResizeNodes[(int)NodePosition.Right].Position = new Point(xEnd, yMid);
+-            Manager.ResizeNodes[(int)NodePosition.BottomRight].Position = new Point(xEnd, yEnd);
+-            Manager.ResizeNodes[(int)NodePosition.Bottom].Position = new Point(xMid, yEnd);
+-            Manager.ResizeNodes[(int)NodePosition.BottomLeft].Position = new Point(xStart, yEnd);
+-            Manager.ResizeNodes[(int)NodePosition.Left].Position = new Point(xStart, yMid);
++            float xStart = Rectangle.X;
++            float xMid = Rectangle.X + (Rectangle.Width / 2);
++            float xEnd = Rectangle.X + Rectangle.Width - 1;
++
++            float yStart = Rectangle.Y;
++            float yMid = Rectangle.Y + (Rectangle.Height / 2);
++            float yEnd = Rectangle.Y + Rectangle.Height - 1;
++
++            Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = new PointF(xStart, yStart);
++            Manager.ResizeNodes[(int)NodePosition.Top].Position = new PointF(xMid, yStart);
++            Manager.ResizeNodes[(int)NodePosition.TopRight].Position = new PointF(xEnd, yStart);
++            Manager.ResizeNodes[(int)NodePosition.Right].Position = new PointF(xEnd, yMid);
++            Manager.ResizeNodes[(int)NodePosition.BottomRight].Position = new PointF(xEnd, yEnd);
++            Manager.ResizeNodes[(int)NodePosition.Bottom].Position = new PointF(xMid, yEnd);
++            Manager.ResizeNodes[(int)NodePosition.BottomLeft].Position = new PointF(xStart, yEnd);
++            Manager.ResizeNodes[(int)NodePosition.Left].Position = new PointF(xStart, yMid);
+ 
+             for (int i = 0; i < 8; i++)
+             {
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/CursorDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/CursorDrawingShape.cs
+index ad95f95d7..e92fc0aa3 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/CursorDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/CursorDrawingShape.cs
+@@ -23,6 +23,7 @@
+ 
+ #endregion License Information (GPL v3)
+ 
++using ShareX.HelpersLib;
+ using System;
+ using System.Drawing;
+ 
+@@ -49,7 +50,7 @@ public override void ShowNodes()
+         public override void OnCreating()
+         {
+             Manager.IsMoving = true;
+-            UpdateCursor(Manager.GetSelectedCursor().Handle, Manager.Form.ScaledClientMousePosition);
++            UpdateCursor(Manager.GetSelectedCursor().Handle, Manager.Form.ScaledClientMousePosition.Round());
+             OnCreated();
+         }
+ 
+@@ -61,7 +62,7 @@ public override void OnDraw(Graphics g)
+ 
+                 if (!Manager.IsRenderingOutput && Manager.CurrentTool == ShapeType.DrawingCursor)
+                 {
+-                    Manager.DrawRegionArea(g, Rectangle, false);
++                    Manager.DrawRegionArea(g, Rectangle.Round(), false);
+                 }
+             }
+         }
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/EllipseDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/EllipseDrawingShape.cs
+index 8d134b516..d3fa78279 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/EllipseDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/EllipseDrawingShape.cs
+@@ -55,7 +55,7 @@ protected void DrawEllipse(Graphics g)
+             DrawEllipse(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle);
+         }
+ 
+-        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, Rectangle rect)
++        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, RectangleF rect)
+         {
+             g.SmoothingMode = SmoothingMode.HighQuality;
+ 
+@@ -80,7 +80,7 @@ protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, Border
+             g.SmoothingMode = SmoothingMode.None;
+         }
+ 
+-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
++        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
+         {
+             gp.AddEllipse(rect);
+         }
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/FreehandDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/FreehandDrawingShape.cs
+index 5657e6dce..7cf9c6c68 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/FreehandDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/FreehandDrawingShape.cs
+@@ -40,7 +40,7 @@ public class FreehandDrawingShape : BaseDrawingShape
+ 
+         public override bool IsSelectable => Manager.CurrentTool == ShapeType.ToolSelect;
+ 
+-        public Point LastPosition
++        public PointF LastPosition
+         {
+             get
+             {
+@@ -60,7 +60,7 @@ public Point LastPosition
+             }
+         }
+ 
+-        private List<Point> positions = new List<Point>();
++        private List<PointF> positions = new List<PointF>();
+         private bool isPolygonMode;
+ 
+         public override void ShowNodes()
+@@ -77,7 +77,7 @@ public override void OnUpdate()
+                 }
+                 else
+                 {
+-                    Point pos = Manager.Form.ScaledClientMousePosition;
++                    PointF pos = Manager.Form.ScaledClientMousePosition;
+ 
+                     if (positions.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
+                     {
+@@ -122,7 +122,7 @@ protected void DrawFreehand(Graphics g)
+             DrawFreehand(g, BorderColor, borderSize, BorderStyle, positions.ToArray());
+         }
+ 
+-        protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Point[] points)
++        protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, PointF[] points)
+         {
+             if (points.Length > 0 && borderSize > 0 && borderColor.A > 0)
+             {
+@@ -160,7 +160,7 @@ protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, Borde
+             }
+         }
+ 
+-        public override void Move(int x, int y)
++        public override void Move(float x, float y)
+         {
+             for (int i = 0; i < positions.Count; i++)
+             {
+@@ -170,6 +170,11 @@ public override void Move(int x, int y)
+             Rectangle = Rectangle.LocationOffset(x, y);
+         }
+ 
++        public void Move(Vector2 offset)
++        {
++            Move(offset.X, offset.Y);
++        }
++
+         public override void Resize(int x, int y, bool fromBottomRight)
+         {
+             Move(x, y);
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/ImageDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/ImageDrawingShape.cs
+index 81ff5e2c5..ec2f4ac87 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/ImageDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/ImageDrawingShape.cs
+@@ -64,19 +64,19 @@ public void SetImage(Image img, bool centerImage)
+ 
+             if (Image != null)
+             {
+-                Point location;
++                PointF location;
+                 Size size = Image.Size;
+ 
+                 if (centerImage)
+                 {
+-                    location = new Point(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
++                    location = new PointF(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
+                 }
+                 else
+                 {
+                     location = Rectangle.Location;
+                 }
+ 
+-                Rectangle = new Rectangle(location, size);
++                Rectangle = new RectangleF(location, size);
+             }
+         }
+ 
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/ImageFileDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/ImageFileDrawingShape.cs
+index acf423237..344b0ae6c 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/ImageFileDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/ImageFileDrawingShape.cs
+@@ -32,8 +32,8 @@ public class ImageFileDrawingShape : ImageDrawingShape
+     {
+         public override void OnCreating()
+         {
+-            Point pos = Manager.Form.ScaledClientMousePosition;
+-            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
++            PointF pos = Manager.Form.ScaledClientMousePosition;
++            Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
+ 
+             if (Manager.IsCtrlModifier && LoadImageFile(AnnotationOptions.LastImageFilePath, true))
+             {
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/LineDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/LineDrawingShape.cs
+index 9a7711756..cd46ce8ec 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/LineDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/LineDrawingShape.cs
+@@ -37,7 +37,7 @@ public class LineDrawingShape : BaseDrawingShape
+ 
+         public override ShapeType ShapeType { get; } = ShapeType.DrawingLine;
+ 
+-        public Point[] Points { get; private set; } = new Point[2];
++        public PointF[] Points { get; private set; } = new PointF[2];
+         public bool CenterNodeActive { get; private set; }
+         public int CenterPointCount { get; private set; }
+ 
+@@ -50,7 +50,7 @@ protected override void UseLightResizeNodes()
+ 
+         private void AdjustPoints(int centerPointCount)
+         {
+-            Point[] newPoints = new Point[2 + centerPointCount];
++            PointF[] newPoints = new PointF[2 + centerPointCount];
+ 
+             if (Points != null)
+             {
+@@ -67,8 +67,8 @@ private void AutoPositionCenterPoints()
+             {
+                 for (int i = 1; i < Points.Length - 1; i++)
+                 {
+-                    Points[i] = new Point((int)MathHelpers.Lerp(Points[0].X, Points[Points.Length - 1].X, i / (CenterPointCount + 1f)),
+-                        (int)MathHelpers.Lerp(Points[0].Y, Points[Points.Length - 1].Y, i / (CenterPointCount + 1f)));
++                    Points[i] = new PointF(MathHelpers.Lerp(Points[0].X, Points[Points.Length - 1].X, i / (CenterPointCount + 1f)),
++                        MathHelpers.Lerp(Points[0].Y, Points[Points.Length - 1].Y, i / (CenterPointCount + 1f)));
+                 }
+             }
+         }
+@@ -121,12 +121,12 @@ private void CalculateRectangle()
+ 
+             if (Rectangle.Width < MinimumCollisionSize)
+             {
+-                Rectangle = new Rectangle(Rectangle.X - (MinimumCollisionSize / 2), Rectangle.Y, Rectangle.Width + MinimumCollisionSize, Rectangle.Height);
++                Rectangle = new RectangleF(Rectangle.X - (MinimumCollisionSize / 2), Rectangle.Y, Rectangle.Width + MinimumCollisionSize, Rectangle.Height);
+             }
+ 
+             if (Rectangle.Height < MinimumCollisionSize)
+             {
+-                Rectangle = new Rectangle(Rectangle.X, Rectangle.Y - (MinimumCollisionSize / 2), Rectangle.Width, Rectangle.Height + MinimumCollisionSize);
++                Rectangle = new RectangleF(Rectangle.X, Rectangle.Y - (MinimumCollisionSize / 2), Rectangle.Width, Rectangle.Height + MinimumCollisionSize);
+             }
+         }
+ 
+@@ -141,7 +141,7 @@ protected void DrawLine(Graphics g)
+ 
+             if (Shadow)
+             {
+-                Point[] shadowPoints = new Point[Points.Length];
++                PointF[] shadowPoints = new PointF[Points.Length];
+ 
+                 for (int i = 0; i < shadowPoints.Length; i++)
+                 {
+@@ -154,7 +154,7 @@ protected void DrawLine(Graphics g)
+             DrawLine(g, BorderColor, borderSize, BorderStyle, Points);
+         }
+ 
+-        protected void DrawLine(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Point[] points)
++        protected void DrawLine(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, PointF[] points)
+         {
+             if (borderSize > 0 && borderColor.A > 0)
+             {
+@@ -193,7 +193,7 @@ protected virtual Pen CreatePen(Color borderColor, int borderSize, BorderStyle b
+             };
+         }
+ 
+-        public override void Move(int x, int y)
++        public override void Move(float x, float y)
+         {
+             base.Move(x, y);
+ 
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/MagnifyDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/MagnifyDrawingShape.cs
+index 732f50bb3..3eb6fa32a 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/MagnifyDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/MagnifyDrawingShape.cs
+@@ -71,7 +71,7 @@ public override void OnDraw(Graphics g)
+                 int newHeight = (int)(Rectangle.Height / magnify);
+ 
+                 g.DrawImage(Manager.Form.Canvas, Rectangle,
+-                    new Rectangle(Rectangle.X + (Rectangle.Width / 2) - (newWidth / 2) - Manager.Form.CanvasRectangle.X + Manager.RenderOffset.X,
++                    new RectangleF(Rectangle.X + (Rectangle.Width / 2) - (newWidth / 2) - Manager.Form.CanvasRectangle.X + Manager.RenderOffset.X,
+                     Rectangle.Y + (Rectangle.Height / 2) - (newHeight / 2) - Manager.Form.CanvasRectangle.Y + Manager.RenderOffset.Y,
+                     newWidth, newHeight), GraphicsUnit.Pixel);
+ 
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/RectangleDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/RectangleDrawingShape.cs
+index db85c9644..f4eb85cab 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/RectangleDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/RectangleDrawingShape.cs
+@@ -69,7 +69,7 @@ protected void DrawRectangle(Graphics g)
+             DrawRectangle(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle, CornerRadius);
+         }
+ 
+-        protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, Rectangle rect, int cornerRadius)
++        protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, RectangleF rect, int cornerRadius)
+         {
+             Brush brush = null;
+             Pen pen = null;
+@@ -109,7 +109,7 @@ protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, Bord
+             }
+         }
+ 
+-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
++        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
+         {
+             gp.AddRoundedRectangle(rect, CornerRadius);
+         }
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/SpeechBalloonDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/SpeechBalloonDrawingShape.cs
+index 49a1e6f38..03c39b96a 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/SpeechBalloonDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/SpeechBalloonDrawingShape.cs
+@@ -34,9 +34,9 @@ public class SpeechBalloonDrawingShape : TextDrawingShape
+     {
+         public override ShapeType ShapeType { get; } = ShapeType.DrawingSpeechBalloon;
+ 
+-        private Point tailPosition;
++        private PointF tailPosition;
+ 
+-        public Point TailPosition
++        public PointF TailPosition
+         {
+             get
+             {
+@@ -86,7 +86,7 @@ public override void OnNodeUpdate()
+             }
+         }
+ 
+-        public override void Move(int x, int y)
++        public override void Move(float x, float y)
+         {
+             base.Move(x, y);
+ 
+@@ -119,7 +119,7 @@ protected void DrawSpeechBalloon(Graphics g)
+             DrawSpeechBalloon(g, BorderColor, BorderSize, FillColor, Rectangle, TailPosition);
+         }
+ 
+-        protected void DrawSpeechBalloon(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect, Point tailPosition)
++        protected void DrawSpeechBalloon(Graphics g, Color borderColor, int borderSize, Color fillColor, RectangleF rect, PointF tailPosition)
+         {
+             GraphicsPath gpTail = null;
+ 
+@@ -142,7 +142,7 @@ protected void DrawSpeechBalloon(Graphics g, Color borderColor, int borderSize,
+ 
+                 if (fillColor.A > 0)
+                 {
+-                    g.ExcludeClip(rect);
++                    g.ExcludeClip(rect.Round());
+ 
+                     using (Brush brush = new SolidBrush(fillColor))
+                     {
+@@ -154,7 +154,7 @@ protected void DrawSpeechBalloon(Graphics g, Color borderColor, int borderSize,
+ 
+                 if (borderSize > 0 && borderColor.A > 0)
+                 {
+-                    g.ExcludeClip(rect.Offset(-1));
++                    g.ExcludeClip(rect.Offset(-1).Round());
+ 
+                     using (Pen pen = new Pen(borderColor, borderSize))
+                     {
+@@ -191,14 +191,14 @@ protected void DrawSpeechBalloon(Graphics g, Color borderColor, int borderSize,
+             }
+         }
+ 
+-        protected GraphicsPath CreateTailPath(Rectangle rect, Point tailPosition)
++        protected GraphicsPath CreateTailPath(RectangleF rect, PointF tailPosition)
+         {
+             GraphicsPath gpTail = new GraphicsPath();
+-            Point center = rect.Center();
+-            int rectAverageSize = (rect.Width + rect.Height) / 2;
+-            int tailWidth = (int)(TailWidthMultiplier * rectAverageSize);
++            PointF center = rect.Center();
++            float rectAverageSize = (rect.Width + rect.Height) / 2;
++            float tailWidth = TailWidthMultiplier * rectAverageSize;
+             tailWidth = Math.Min(Math.Min(tailWidth, rect.Width), rect.Height);
+-            int tailOrigin = tailWidth / 2;
++            float tailOrigin = tailWidth / 2;
+             int tailLength = (int)MathHelpers.Distance(center, tailPosition);
+             gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
+             gpTail.AddLine(0, tailOrigin, tailLength, 0);
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/StepDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/StepDrawingShape.cs
+index 3ccd54dd7..9f7f1549d 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/StepDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/StepDrawingShape.cs
+@@ -42,9 +42,9 @@ public class StepDrawingShape : EllipseDrawingShape
+         public StepType StepType { get; set; } = StepType.Numbers;
+         public bool IsTailActive { get; set; }
+ 
+-        private Point tailPosition;
++        private PointF tailPosition;
+ 
+-        public Point TailPosition
++        public PointF TailPosition
+         {
+             get
+             {
+@@ -71,8 +71,8 @@ public StepDrawingShape()
+         public override void OnCreating()
+         {
+             Manager.IsMoving = true;
+-            Point pos = Manager.Form.ScaledClientMousePosition;
+-            Rectangle = new Rectangle(new Point(pos.X - (Rectangle.Width / 2), pos.Y - (Rectangle.Height / 2)), Rectangle.Size);
++            PointF pos = Manager.Form.ScaledClientMousePosition;
++            Rectangle = new RectangleF(new PointF(pos.X - (Rectangle.Width / 2), pos.Y - (Rectangle.Height / 2)), Rectangle.Size);
+             int tailOffset = 5;
+             TailPosition = Rectangle.Location.Add(Rectangle.Width + tailOffset, Rectangle.Height + tailOffset);
+             OnCreated();
+@@ -158,8 +158,8 @@ protected void DrawNumber(Graphics g)
+                 int maxSize = Math.Max(textSize.Width, textSize.Height);
+                 int padding = 3;
+ 
+-                Point center = Rectangle.Center();
+-                Rectangle = new Rectangle(center.X - (maxSize / 2) - padding, center.Y - (maxSize / 2) - padding, maxSize + (padding * 2), maxSize + (padding * 2));
++                PointF center = Rectangle.Center();
++                Rectangle = new RectangleF(center.X - (maxSize / 2) - padding, center.Y - (maxSize / 2) - padding, maxSize + (padding * 2), maxSize + (padding * 2));
+ 
+                 if (Shadow)
+                 {
+@@ -205,7 +205,7 @@ protected void DrawNumber(Graphics g)
+             }
+         }
+ 
+-        protected void DrawNumber(Graphics g, string text, Font font, Color textColor, Rectangle rect)
++        protected void DrawNumber(Graphics g, string text, Font font, Color textColor, RectangleF rect)
+         {
+             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+             using (Brush textBrush = new SolidBrush(textColor))
+@@ -217,7 +217,7 @@ protected void DrawNumber(Graphics g, string text, Font font, Color textColor, R
+             }
+         }
+ 
+-        private void DrawTail(Graphics g, Color tailColor, Rectangle rectangle, Point tailPosition)
++        private void DrawTail(Graphics g, Color tailColor, RectangleF rectangle, PointF tailPosition)
+         {
+             using (GraphicsPath gpTail = CreateTailPath(rectangle, tailPosition))
+             {
+@@ -235,7 +235,7 @@ private void DrawTail(Graphics g, Color tailColor, Rectangle rectangle, Point ta
+             }
+         }
+ 
+-        public override void Move(int x, int y)
++        public override void Move(float x, float y)
+         {
+             base.Move(x, y);
+ 
+@@ -247,15 +247,15 @@ public override void Resize(int x, int y, bool fromBottomRight)
+             Move(x, y);
+         }
+ 
+-        protected GraphicsPath CreateTailPath(Rectangle rect, Point tailPosition)
++        protected GraphicsPath CreateTailPath(RectangleF rect, PointF tailPosition)
+         {
+             GraphicsPath gpTail = new GraphicsPath();
+-            Point center = rect.Center();
+-            int rectAverageSize = (rect.Width + rect.Height) / 2;
+-            int tailWidth = (int)(TailWidthMultiplier * rectAverageSize);
++            PointF center = rect.Center();
++            float rectAverageSize = (rect.Width + rect.Height) / 2;
++            float tailWidth = TailWidthMultiplier * rectAverageSize;
+             tailWidth = Math.Min(Math.Min(tailWidth, rect.Width), rect.Height);
+-            int tailOrigin = tailWidth / 2;
+-            int tailLength = (int)MathHelpers.Distance(center, tailPosition);
++            float tailOrigin = tailWidth / 2;
++            float tailLength = MathHelpers.Distance(center, tailPosition);
+             gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
+             gpTail.AddLine(0, tailOrigin, tailLength, 0);
+             gpTail.CloseFigure();
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/StickerDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/StickerDrawingShape.cs
+index ab13bbcea..61ed21683 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/StickerDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/StickerDrawingShape.cs
+@@ -48,8 +48,8 @@ public override void ShowNodes()
+ 
+         public override void OnCreating()
+         {
+-            Point pos = Manager.Form.ScaledClientMousePosition;
+-            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
++            PointF pos = Manager.Form.ScaledClientMousePosition;
++            Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
+ 
+             if (Manager.IsCtrlModifier && LoadSticker(AnnotationOptions.LastStickerPath, AnnotationOptions.StickerSize))
+             {
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/TextDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/TextDrawingShape.cs
+index e68f1c1e7..1202b5878 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/TextDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/TextDrawingShape.cs
+@@ -78,12 +78,12 @@ protected void DrawText(Graphics g)
+             DrawText(g, Text, TextOptions, Rectangle);
+         }
+ 
+-        protected void DrawText(Graphics g, string text, TextDrawingOptions options, Rectangle rect)
++        protected void DrawText(Graphics g, string text, TextDrawingOptions options, RectangleF rect)
+         {
+             DrawText(g, text, options.Color, options, rect);
+         }
+ 
+-        protected void DrawText(Graphics g, string text, Color textColor, TextDrawingOptions options, Rectangle rect)
++        protected void DrawText(Graphics g, string text, Color textColor, TextDrawingOptions options, RectangleF rect)
+         {
+             if (!string.IsNullOrEmpty(text) && rect.Width > 10 && rect.Height > 10)
+             {
+@@ -100,8 +100,8 @@ protected void DrawText(Graphics g, string text, Color textColor, TextDrawingOpt
+ 
+         public override void OnCreating()
+         {
+-            Point pos = Manager.Form.ScaledClientMousePosition;
+-            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
++            PointF pos = Manager.Form.ScaledClientMousePosition;
++            Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
+ 
+             if (ShowTextInputBox())
+             {
+@@ -168,18 +168,18 @@ public void AutoSize(bool center)
+                 size = new Size(100, 60);
+             }
+ 
+-            Point location;
++            PointF location;
+ 
+             if (center)
+             {
+-                location = new Point(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
++                location = new PointF(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
+             }
+             else
+             {
+                 location = Rectangle.Location;
+             }
+ 
+-            Rectangle = new Rectangle(location, size);
++            Rectangle = new RectangleF(location, size);
+         }
+     }
+ }
+\ No newline at end of file
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Drawing/TextOutlineDrawingShape.cs b/ShareX.ScreenCaptureLib/Shapes/Drawing/TextOutlineDrawingShape.cs
+index dd0d654a3..acfdb5eec 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Drawing/TextOutlineDrawingShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Drawing/TextOutlineDrawingShape.cs
+@@ -60,7 +60,7 @@ public override void OnDraw(Graphics g)
+             DrawTextWithOutline(g, Text, TextOptions, TextOptions.Color, BorderColor, BorderSize, Rectangle);
+         }
+ 
+-        protected void DrawTextWithOutline(Graphics g, string text, TextDrawingOptions options, Color textColor, Color borderColor, int borderSize, Rectangle rect)
++        protected void DrawTextWithOutline(Graphics g, string text, TextDrawingOptions options, Color textColor, Color borderColor, int borderSize, RectangleF rect)
+         {
+             if (!string.IsNullOrEmpty(text) && rect.Width > 10 && rect.Height > 10)
+             {
+@@ -123,7 +123,7 @@ protected void DrawTextWithOutline(Graphics g, string text, TextDrawingOptions o
+                     {
+                         if (TextOptions.Gradient)
+                         {
+-                            textBrush = new LinearGradientBrush(Rectangle.Round(pathRect).Offset(1), textColor, TextOptions.Color2, TextOptions.GradientMode);
++                            textBrush = new LinearGradientBrush(System.Drawing.Rectangle.Round(pathRect).Offset(1), textColor, TextOptions.Color2, TextOptions.GradientMode);
+                         }
+                         else
+                         {
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Effect/BaseEffectShape.cs b/ShareX.ScreenCaptureLib/Shapes/Effect/BaseEffectShape.cs
+index e33733bd8..d6aea5038 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Effect/BaseEffectShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Effect/BaseEffectShape.cs
+@@ -109,7 +109,7 @@ public void OnDrawOverlay(Graphics g, string overlayText)
+ 
+         public virtual void OnDrawFinal(Graphics g, Bitmap bmp)
+         {
+-            Rectangle rect = Rectangle.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
++            RectangleF rect = RectangleF.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
+ 
+             if (!rect.IsEmpty)
+             {
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Region/EllipseRegionShape.cs b/ShareX.ScreenCaptureLib/Shapes/Region/EllipseRegionShape.cs
+index 17b568558..b71e81e6e 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Region/EllipseRegionShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Region/EllipseRegionShape.cs
+@@ -32,7 +32,7 @@ public class EllipseRegionShape : BaseRegionShape
+     {
+         public override ShapeType ShapeType { get; } = ShapeType.RegionEllipse;
+ 
+-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
++        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
+         {
+             gp.AddEllipse(rect);
+         }
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Region/FreehandRegionShape.cs b/ShareX.ScreenCaptureLib/Shapes/Region/FreehandRegionShape.cs
+index fa441791a..a59d8cc29 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Region/FreehandRegionShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Region/FreehandRegionShape.cs
+@@ -34,7 +34,7 @@ public class FreehandRegionShape : BaseRegionShape
+     {
+         public override ShapeType ShapeType { get; } = ShapeType.RegionFreehand;
+ 
+-        public Point LastPosition
++        public PointF LastPosition
+         {
+             get
+             {
+@@ -43,7 +43,7 @@ public Point LastPosition
+                     return points[points.Count - 1];
+                 }
+ 
+-                return Point.Empty;
++                return PointF.Empty;
+             }
+             set
+             {
+@@ -54,7 +54,7 @@ public Point LastPosition
+             }
+         }
+ 
+-        private List<Point> points = new List<Point>();
++        private List<PointF> points = new List<PointF>();
+         private bool isPolygonMode;
+ 
+         protected override void UseLightResizeNodes()
+@@ -72,7 +72,7 @@ public override void OnUpdate()
+                 }
+                 else
+                 {
+-                    Point pos = Manager.Form.ScaledClientMousePosition;
++                    PointF pos = Manager.Form.ScaledClientMousePosition;
+ 
+                     if (points.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
+                     {
+@@ -100,7 +100,7 @@ public override void OnUpdate()
+             }
+         }
+ 
+-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
++        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
+         {
+             if (points.Count > 2)
+             {
+@@ -112,7 +112,7 @@ public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+             }
+         }
+ 
+-        public override void Move(int x, int y)
++        public override void Move(float x, float y)
+         {
+             for (int i = 0; i < points.Count; i++)
+             {
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Region/RectangleRegionShape.cs b/ShareX.ScreenCaptureLib/Shapes/Region/RectangleRegionShape.cs
+index d125be540..9c3f8a8d1 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Region/RectangleRegionShape.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Region/RectangleRegionShape.cs
+@@ -45,7 +45,7 @@ public override void OnConfigSave()
+             AnnotationOptions.RegionCornerRadius = CornerRadius;
+         }
+ 
+-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
++        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
+         {
+             gp.AddRoundedRectangle(rect, CornerRadius);
+         }
+diff --git a/ShareX.ScreenCaptureLib/Shapes/ShapeManager.cs b/ShareX.ScreenCaptureLib/Shapes/ShapeManager.cs
+index d19f12781..6be866e9e 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/ShapeManager.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/ShapeManager.cs
+@@ -133,7 +133,7 @@ public ShapeType CurrentShapeTool
+             }
+         }
+ 
+-        public Rectangle CurrentRectangle
++        public RectangleF CurrentRectangle
+         {
+             get
+             {
+@@ -142,7 +142,7 @@ public Rectangle CurrentRectangle
+                     return CurrentShape.Rectangle;
+                 }
+ 
+-                return Rectangle.Empty;
++                return RectangleF.Empty;
+             }
+         }
+ 
+@@ -184,7 +184,7 @@ private set
+             }
+         }
+ 
+-        public Rectangle PreviousHoverRectangle { get; private set; }
++        public RectangleF PreviousHoverRectangle { get; private set; }
+ 
+         public bool IsCurrentHoverShapeValid => CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
+ 
+@@ -254,7 +254,7 @@ public bool IsPanning
+         // Is holding Alt?
+         public bool IsSnapResizing { get; private set; }
+         public bool IsRenderingOutput { get; private set; }
+-        public Point RenderOffset { get; private set; }
++        public PointF RenderOffset { get; private set; }
+         public bool IsImageModified { get; internal set; }
+ 
+         public InputManager InputManager { get; private set; } = new InputManager();
+@@ -1038,7 +1038,7 @@ private void EndPanning()
+             IsPanning = false;
+         }
+ 
+-        internal void UpdateObjects(ImageEditorControl[] objects, Point mousePosition)
++        internal void UpdateObjects(ImageEditorControl[] objects, PointF mousePosition)
+         {
+             if (objects.All(x => !x.IsDragging))
+             {
+@@ -1054,7 +1054,7 @@ internal void UpdateObjects(ImageEditorControl[] objects, Point mousePosition)
+                         {
+                             if (InputManager.IsMousePressed(MouseButtons.Left))
+                             {
+-                                obj.OnMouseDown(mousePosition);
++                                obj.OnMouseDown(mousePosition.Round());
+                             }
+ 
+                             for (int j = i + 1; j < objects.Length; j++)
+@@ -1079,7 +1079,7 @@ internal void UpdateObjects(ImageEditorControl[] objects, Point mousePosition)
+                     {
+                         if (obj.IsDragging)
+                         {
+-                            obj.OnMouseUp(mousePosition);
++                            obj.OnMouseUp(mousePosition.Round());
+                         }
+                     }
+                 }
+@@ -1233,9 +1233,9 @@ private void SwapShapeType()
+             }
+         }
+ 
+-        public Point SnapPosition(Point posOnClick, Point posCurrent)
++        public PointF SnapPosition(PointF posOnClick, PointF posCurrent)
+         {
+-            Size currentSize = CaptureHelpers.CreateRectangle(posOnClick, posCurrent).Size;
++            SizeF currentSize = CaptureHelpers.CreateRectangle(posOnClick, posCurrent).Size;
+             Vector2 vector = new Vector2(currentSize.Width, currentSize.Height);
+ 
+             SnapSize snapSize = (from size in Options.SnapSizes
+@@ -1246,11 +1246,11 @@ orderby distance
+ 
+             if (snapSize != null)
+             {
+-                Point posNew = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, snapSize);
++                PointF posNew = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, snapSize);
+ 
+-                Rectangle newRect = CaptureHelpers.CreateRectangle(posOnClick, posNew);
++                RectangleF newRect = CaptureHelpers.CreateRectangle(posOnClick, posNew);
+ 
+-                if (Form.ClientArea.Contains(newRect))
++                if (Form.ClientArea.Contains(newRect.Round()))
+                 {
+                     return posNew;
+                 }
+@@ -1295,10 +1295,10 @@ private BaseShape CheckHover()
+ 
+                     if (Options.IsFixedSize && IsCurrentShapeTypeRegion)
+                     {
+-                        Point location = Form.ScaledClientMousePosition;
++                        PointF location = Form.ScaledClientMousePosition;
+ 
+                         BaseShape rectangleRegionShape = CreateShape(ShapeType.RegionRectangle);
+-                        rectangleRegionShape.Rectangle = new Rectangle(new Point(location.X - (Options.FixedSize.Width / 2),
++                        rectangleRegionShape.Rectangle = new RectangleF(new PointF(location.X - (Options.FixedSize.Width / 2),
+                             location.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
+                         return rectangleRegionShape;
+                     }
+@@ -1351,7 +1351,7 @@ public Bitmap RenderOutputImage(Bitmap bmp)
+             return RenderOutputImage(bmp, Point.Empty);
+         }
+ 
+-        public Bitmap RenderOutputImage(Bitmap bmp, Point offset)
++        public Bitmap RenderOutputImage(Bitmap bmp, PointF offset)
+         {
+             Bitmap bmpOutput = (Bitmap)bmp.Clone();
+ 
+@@ -1494,7 +1494,7 @@ public BaseShape GetIntersectShape()
+             return GetIntersectShape(Form.ScaledClientMousePosition);
+         }
+ 
+-        public BaseShape GetIntersectShape(Point position)
++        public BaseShape GetIntersectShape(PointF position)
+         {
+             if (!IsCtrlModifier)
+             {
+@@ -1605,7 +1605,7 @@ public void MoveCurrentShapeUp()
+             MoveShapeUp(CurrentShape);
+         }
+ 
+-        public void MoveAll(int x, int y)
++        public void MoveAll(float x, float y)
+         {
+             if (x != 0 || y != 0)
+             {
+@@ -1616,7 +1616,7 @@ public void MoveAll(int x, int y)
+             }
+         }
+ 
+-        public void MoveAll(Point offset)
++        public void MoveAll(PointF offset)
+         {
+             MoveAll(offset.X, offset.Y);
+         }
+@@ -1729,7 +1729,7 @@ private void PasteFromClipboard(bool insertMousePosition)
+ 
+                 if (!string.IsNullOrEmpty(text))
+                 {
+-                    Point pos;
++                    PointF pos;
+ 
+                     if (insertMousePosition)
+                     {
+@@ -1742,7 +1742,7 @@ private void PasteFromClipboard(bool insertMousePosition)
+ 
+                     CurrentTool = ShapeType.DrawingTextBackground;
+                     TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingTextBackground);
+-                    shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
++                    shape.Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
+                     shape.Text = text.Trim();
+                     shape.OnCreated();
+                     AddShape(shape);
+@@ -1758,7 +1758,7 @@ public void AddCursor(IntPtr cursorHandle, Point position)
+             Shapes.Add(shape);
+         }
+ 
+-        public void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated, bool showAreaInfo = false)
++        public void DrawRegionArea(Graphics g, RectangleF rect, bool isAnimated, bool showAreaInfo = false)
+         {
+             Form.DrawRegionArea(g, rect, isAnimated);
+ 
+@@ -1781,7 +1781,7 @@ public void UpdateCanvas(Bitmap canvas, bool centerCanvas = true)
+             OnImageModified();
+         }
+ 
+-        public void CropArea(Rectangle rect)
++        public void CropArea(RectangleF rect)
+         {
+             Bitmap bmp = CropImage(rect, true);
+ 
+@@ -1792,10 +1792,10 @@ public void CropArea(Rectangle rect)
+             }
+         }
+ 
+-        public Bitmap CropImage(Rectangle rect, bool onlyIfSizeDifferent = false)
++        public Bitmap CropImage(RectangleF rect, bool onlyIfSizeDifferent = false)
+         {
+-            rect = CaptureHelpers.ScreenToClient(rect);
+-            Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location);
++            rect = CaptureHelpers.ScreenToClient(rect.Round());
++            PointF offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
+             rect.X -= offset.X;
+             rect.Y -= offset.Y;
+             rect.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height));
+@@ -1813,7 +1813,7 @@ public Color GetColor(Bitmap bmp, Point pos)
+             if (bmp != null)
+             {
+                 Point position = CaptureHelpers.ScreenToClient(pos);
+-                Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location);
++                Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
+                 position.X -= offset.X;
+                 position.Y -= offset.Y;
+ 
+@@ -1828,7 +1828,7 @@ public Color GetColor(Bitmap bmp, Point pos)
+ 
+         public Color GetCurrentColor(Bitmap bmp)
+         {
+-            return GetColor(bmp, Form.ScaledClientMousePosition);
++            return GetColor(bmp, Form.ScaledClientMousePosition.Round());
+         }
+ 
+         public Color GetCurrentColor()
+@@ -1922,7 +1922,7 @@ private void InsertImage(Image img)
+         {
+             if (img != null)
+             {
+-                Point pos;
++                PointF pos;
+                 bool centerImage;
+ 
+                 using (ImageInsertForm imageInsertForm = new ImageInsertForm())
+@@ -1939,21 +1939,21 @@ private void InsertImage(Image img)
+                             centerImage = true;
+                             break;
+                         case ImageInsertMethod.CanvasExpandDown:
+-                            pos = new Point(Form.CanvasRectangle.X, Form.CanvasRectangle.Bottom);
++                            pos = new PointF(Form.CanvasRectangle.X, Form.CanvasRectangle.Bottom);
+                             centerImage = false;
+-                            ChangeCanvasSize(new Padding(0, 0, Math.Max(0, img.Width - Form.CanvasRectangle.Width), img.Height), Options.EditorCanvasColor);
++                            ChangeCanvasSize(new Padding(0, 0, (int)Math.Round(Math.Max(0, img.Width - Form.CanvasRectangle.Width)), img.Height), Options.EditorCanvasColor);
+                             break;
+                         case ImageInsertMethod.CanvasExpandRight:
+-                            pos = new Point(Form.CanvasRectangle.Right, Form.CanvasRectangle.Y);
++                            pos = new PointF(Form.CanvasRectangle.Right, Form.CanvasRectangle.Y);
+                             centerImage = false;
+-                            ChangeCanvasSize(new Padding(0, 0, img.Width, Math.Max(0, img.Height - Form.CanvasRectangle.Height)), Options.EditorCanvasColor);
++                            ChangeCanvasSize(new Padding(0, 0, img.Width, (int)Math.Round(Math.Max(0, img.Height - Form.CanvasRectangle.Height))), Options.EditorCanvasColor);
+                             break;
+                     }
+                 }
+ 
+                 CurrentTool = ShapeType.DrawingImage;
+                 ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
+-                shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
++                shape.Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
+                 shape.SetImage(img, centerImage);
+                 shape.OnCreated();
+                 AddShape(shape);
+@@ -2016,13 +2016,16 @@ private void ChangeCanvasSize()
+ 
+         public void AutoResizeCanvas()
+         {
+-            Rectangle canvas = Form.CanvasRectangle;
+-            Rectangle combinedImageRectangle = Shapes.OfType<ImageDrawingShape>().Select(x => x.Rectangle).Combine();
++            RectangleF canvas = Form.CanvasRectangle;
++            RectangleF combinedImageRectangle = Shapes.OfType<ImageDrawingShape>().Select(x => x.Rectangle).Combine();
+ 
+             if (!canvas.Contains(combinedImageRectangle))
+             {
+-                Padding margin = new Padding(Math.Max(0, canvas.X - combinedImageRectangle.X), Math.Max(0, canvas.Y - combinedImageRectangle.Y),
+-                    Math.Max(0, combinedImageRectangle.Right - canvas.Right), Math.Max(0, combinedImageRectangle.Bottom - canvas.Bottom));
++                Padding margin = new Padding(
++                    (int)Math.Round(Math.Max(0, canvas.X - combinedImageRectangle.X)),
++                    (int)Math.Round(Math.Max(0, canvas.Y - combinedImageRectangle.Y)),
++                    (int)Math.Round(Math.Max(0, combinedImageRectangle.Right - canvas.Right)),
++                    (int)Math.Round(Math.Max(0, combinedImageRectangle.Bottom - canvas.Bottom)));
+                 ChangeCanvasSize(margin, Options.EditorCanvasColor);
+             }
+         }
+@@ -2051,7 +2054,7 @@ private void AddCropTool()
+         private void AutoCropImage()
+         {
+             Rectangle source = new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height);
+-            Rectangle crop;
++            RectangleF crop;
+ 
+             using (Bitmap resultImage = Form.GetResultImage())
+             {
+diff --git a/ShareX.ScreenCaptureLib/Shapes/Tool/CropTool.cs b/ShareX.ScreenCaptureLib/Shapes/Tool/CropTool.cs
+index 5a59fb155..0aa163fb1 100644
+--- a/ShareX.ScreenCaptureLib/Shapes/Tool/CropTool.cs
++++ b/ShareX.ScreenCaptureLib/Shapes/Tool/CropTool.cs
+@@ -49,16 +49,16 @@ public override void OnUpdate()
+                     Rectangle.Width > (buttonSize.Width * 2) + (buttonOffset * 3) &&
+                     Rectangle.Height > buttonSize.Height + (buttonOffset * 2))
+                 {
+-                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - (buttonOffset * 2) - (buttonSize.Width * 2),
++                    confirmButton.Rectangle = new RectangleF(Rectangle.Right - (buttonOffset * 2) - (buttonSize.Width * 2),
+                         Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
+-                    cancelButton.Rectangle = new Rectangle(Rectangle.Right - buttonOffset - buttonSize.Width,
++                    cancelButton.Rectangle = new RectangleF(Rectangle.Right - buttonOffset - buttonSize.Width,
+                         Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
+                 }
+                 else
+                 {
+-                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - (buttonSize.Width * 2) - buttonOffset,
++                    confirmButton.Rectangle = new RectangleF(Rectangle.Right - (buttonSize.Width * 2) - buttonOffset,
+                         Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
+-                    cancelButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width,
++                    cancelButton.Rectangle = new RectangleF(Rectangle.Right - buttonSize.Width,
+                         Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
+                 }
+             }

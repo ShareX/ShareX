@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool Visible { get; set; }
         public bool HandleMouseInput { get; set; } = true;
-        public Rectangle Rectangle { get; set; }
+        public RectangleF Rectangle { get; set; }
 
         private bool isCursorHover;
 

@@ -192,9 +192,9 @@ namespace ShareX.HelpersLib
                    targetColor.B.IsBetween((byte)(color.B - variation), (byte)(color.B + variation));
         }
 
-        public static Rectangle CreateRectangle(int x, int y, int x2, int y2)
+        public static RectangleF CreateRectangle(float x, float y, float x2, float y2)
         {
-            int width, height;
+            float width, height;
 
             if (x <= x2)
             {
@@ -216,10 +216,10 @@ namespace ShareX.HelpersLib
                 y = y2;
             }
 
-            return new Rectangle(x, y, width, height);
+            return new RectangleF(x, y, width, height);
         }
 
-        public static Rectangle CreateRectangle(Point pos, Point pos2)
+        public static RectangleF CreateRectangle(PointF pos, PointF pos2)
         {
             return CreateRectangle(pos.X, pos.Y, pos2.X, pos2.Y);
         }
@@ -263,45 +263,45 @@ namespace ShareX.HelpersLib
             return newPosition;
         }
 
-        public static Point SnapPositionToDegree(Point pos, Point pos2, float degree, float startDegree)
+        public static PointF SnapPositionToDegree(PointF pos, PointF pos2, float degree, float startDegree)
         {
             float angle = MathHelpers.LookAtRadian(pos, pos2);
             float startAngle = MathHelpers.DegreeToRadian(startDegree);
             float snapAngle = MathHelpers.DegreeToRadian(degree);
             float newAngle = ((float)Math.Round((angle + startAngle) / snapAngle) * snapAngle) - startAngle;
             float distance = MathHelpers.Distance(pos, pos2);
-            return (Point)(pos + MathHelpers.RadianToVector2(newAngle, distance));
+            return pos.Add((PointF)MathHelpers.RadianToVector2(newAngle, distance));
         }
 
-        public static Point CalculateNewPosition(Point posOnClick, Point posCurrent, Size size)
+        public static PointF CalculateNewPosition(PointF posOnClick, PointF posCurrent, Size size)
         {
             if (posCurrent.X > posOnClick.X)
             {
                 if (posCurrent.Y > posOnClick.Y)
                 {
-                    return new Point(posOnClick.X + size.Width - 1, posOnClick.Y + size.Height - 1);
+                    return new PointF(posOnClick.X + size.Width - 1, posOnClick.Y + size.Height - 1);
                 }
                 else
                 {
-                    return new Point(posOnClick.X + size.Width - 1, posOnClick.Y - size.Height + 1);
+                    return new PointF(posOnClick.X + size.Width - 1, posOnClick.Y - size.Height + 1);
                 }
             }
             else
             {
                 if (posCurrent.Y > posOnClick.Y)
                 {
-                    return new Point(posOnClick.X - size.Width + 1, posOnClick.Y + size.Height - 1);
+                    return new PointF(posOnClick.X - size.Width + 1, posOnClick.Y + size.Height - 1);
                 }
                 else
                 {
-                    return new Point(posOnClick.X - size.Width + 1, posOnClick.Y - size.Height + 1);
+                    return new PointF(posOnClick.X - size.Width + 1, posOnClick.Y - size.Height + 1);
                 }
             }
         }
 
-        public static Rectangle CalculateNewRectangle(Point posOnClick, Point posCurrent, Size size)
+        public static RectangleF CalculateNewRectangle(PointF posOnClick, PointF posCurrent, Size size)
         {
-            Point newPosition = CalculateNewPosition(posOnClick, posCurrent, size);
+            PointF newPosition = CalculateNewPosition(posOnClick, posCurrent, size);
             return CreateRectangle(posOnClick, newPosition);
         }
 

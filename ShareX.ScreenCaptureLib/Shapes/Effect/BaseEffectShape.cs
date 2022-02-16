@@ -109,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnDrawFinal(Graphics g, Bitmap bmp)
         {
-            Rectangle rect = Rectangle.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
+            RectangleF rect = RectangleF.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
 
             if (!rect.IsEmpty)
             {

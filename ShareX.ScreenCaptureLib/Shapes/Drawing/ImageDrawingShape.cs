@@ -64,19 +64,19 @@ namespace ShareX.ScreenCaptureLib
 
             if (Image != null)
             {
-                Point location;
+                PointF location;
                 Size size = Image.Size;
 
                 if (centerImage)
                 {
-                    location = new Point(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
+                    location = new PointF(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
                 }
                 else
                 {
                     location = Rectangle.Location;
                 }
 
-                Rectangle = new Rectangle(location, size);
+                Rectangle = new RectangleF(location, size);
             }
         }
 

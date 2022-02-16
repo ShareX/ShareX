@@ -37,7 +37,7 @@ namespace ShareX.ScreenCaptureLib
     {
         private const int MinimumRectangleSize = 3;
 
-        public static Rectangle LastSelectionRectangle0Based { get; private set; }
+        public static RectangleF LastSelectionRectangle0Based { get; private set; }
 
         public Rectangle ScreenRectangle { get; private set; }
 
@@ -174,7 +174,7 @@ namespace ShareX.ScreenCaptureLib
         {
             currentPosition = CaptureHelpers.GetCursorPosition();
             PreviousSelectionRectangle = SelectionRectangle;
-            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
+            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y).Round();
 
             UpdateBackgroundImage();
         }

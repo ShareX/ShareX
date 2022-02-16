@@ -213,9 +213,9 @@ namespace ShareX.HelpersLib
             return ResizeImageLimit(bmp, size, size);
         }
 
-        public static Bitmap CropBitmap(Bitmap bmp, Rectangle rect)
+        public static Bitmap CropBitmap(Bitmap bmp, RectangleF rect)
         {
-            if (bmp != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 && new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(rect))
+            if (bmp != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 && new RectangleF(0, 0, bmp.Width, bmp.Height).Contains(rect))
             {
                 return bmp.Clone(rect, bmp.PixelFormat);
             }

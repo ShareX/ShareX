@@ -63,7 +63,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (form.ShapeManager.IsCurrentShapeValid)
                     {
-                        rect = CaptureHelpers.ClientToScreen(form.ShapeManager.CurrentRectangle);
+                        rect = CaptureHelpers.ClientToScreen(form.ShapeManager.CurrentRectangle.Round());
                         return true;
                     }
                 }
