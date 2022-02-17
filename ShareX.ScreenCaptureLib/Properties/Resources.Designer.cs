@@ -1311,17 +1311,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ShareX - Image editor.
+        ///   Looks up a localized string similar to Save Changes?.
         /// </summary>
-        internal static string RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor {
+        internal static string RegionCaptureForm_ShowExitConfirmation_SaveChanges {
             get {
-                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor", resourceCulture);
+                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_SaveChanges", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are unsaved changes.
-        ///Would you like to close image editor?.
+        ///   Looks up a localized string similar to Would you like to save changes?.
         /// </summary>
         internal static string RegionCaptureForm_ShowExitConfirmation_Text {
             get {

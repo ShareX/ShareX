@@ -497,8 +497,7 @@
     <value>..\Resources\image--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>There are unsaved changes.
-Would you like to close image editor?</value>
+    <value>Would you like to save changes?</value>
   </data>
   <data name="DropShadowColor" xml:space="preserve">
     <value>Drop shadow color...</value>
@@ -569,8 +568,8 @@ Would you like to close image editor?</value>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>Value of first step:</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
-    <value>ShareX - Image editor</value>
+  <data name="RegionCaptureForm_ShowExitConfirmation_SaveChanges" xml:space="preserve">
+    <value>Save Changes?</value>
   </data>
   <data name="arrow_circle_225_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-circle-225-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
