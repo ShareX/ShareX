@@ -159,6 +159,11 @@ namespace ShareX.HelpersLib
             return new PointF(point.X * scaleFactor, point.Y * scaleFactor);
         }
 
+        public static PointF Scale(this PointF point, float scaleFactor)
+        {
+            return new PointF(point.X * scaleFactor, point.Y * scaleFactor);
+        }
+
         public static Point Round(this PointF point)
         {
             return Point.Round(point);

@@ -717,9 +717,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void Zoom(bool zoomIn, bool atMouse = true)
         {
-            Func<PointF> ScaledClientCenter = () => new PointF(ClientArea.Width / 2f / ZoomFactor, ClientArea.Height / 2f / ZoomFactor);
-
-            PointF centerBefore = atMouse ? ScaledClientMousePosition : ScaledClientCenter();
+            PointF clientCenter = new PointF(ClientArea.Width / 2f, ClientArea.Height / 2f);
+            PointF scaledCenterBefore = atMouse ? ScaledClientMousePosition : clientCenter.Scale(1 / zoomFactor);
 
             if (zoomIn)
             {
@@ -752,10 +751,10 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            PointF centerAfter = atMouse ? ScaledClientMousePosition : ScaledClientCenter();
-
-            Pan(centerAfter.X - centerBefore.X, centerAfter.Y - centerBefore.Y);
-
+            PointF scaledCenterAfter = atMouse ? ScaledClientMousePosition : clientCenter.Scale(1 / zoomFactor);
+            Pan(scaledCenterAfter.X - scaledCenterBefore.X, scaledCenterAfter.Y - scaledCenterBefore.Y);
+            CanvasCenterOffset = new Vector2((CanvasRectangle.X + CanvasRectangle.Width  / 2f) * ZoomFactor - clientCenter.X,
+                                             (CanvasRectangle.Y + CanvasRectangle.Height / 2f) * ZoomFactor - clientCenter.Y);
             UpdateTitle();
         }
 
