@@ -96,7 +96,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("email", email);
             args.Add("password", password);
 
-            string response = SendRequestMultiPart("https://lithi.io/api/v2/fetch-api-key", args);
+            string response = SendRequestMultiPart("https://lobfile.com/api/v3/fetch-api-key", args);
 
             if (!string.IsNullOrEmpty(response))
             {
