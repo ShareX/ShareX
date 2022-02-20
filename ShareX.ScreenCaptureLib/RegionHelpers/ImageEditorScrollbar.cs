@@ -198,16 +198,10 @@ namespace ShareX.ScreenCaptureLib
 
             float centerOffsetNew = ((trackLengthInternal / 2.0f) - mousePositionLocal) / trackLengthInternal * inImageSize;
 
-            if (Orientation == Orientation.Horizontal)
-            {
-                form.CanvasCenterOffset = new Vector2(centerOffsetNew, form.CanvasCenterOffset.Y);
-            }
-            else
-            {
-                form.CanvasCenterOffset = new Vector2(form.CanvasCenterOffset.X, centerOffsetNew);
-            }
-
-            form.AutomaticPan();
+            Vector2 canvasCenterOffset = Orientation == Orientation.Horizontal
+                ? new Vector2(centerOffsetNew, form.CanvasCenterOffset.Y)
+                : new Vector2(form.CanvasCenterOffset.X, centerOffsetNew);
+            form.PanToOffset(canvasCenterOffset);
         }
     }
 }

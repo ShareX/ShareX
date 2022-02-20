@@ -64,7 +64,6 @@ namespace ShareX.ScreenCaptureLib
         public Point CurrentPosition { get; private set; }
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
-        internal PointF PanningStrech = new PointF();
         internal Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
 
         internal float ZoomFactor
@@ -419,19 +418,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void Pan(float deltaX, float deltaY, bool usePanningStretch = true)
+        private bool Pan(float deltaX, float deltaY)
         {
-            if (deltaX == 0 && deltaY == 0)
-            {
-                return;
-            }
-
-            if (usePanningStretch)
-            {
-                PanningStrech.X -= deltaX;
-                PanningStrech.Y -= deltaY;
-            }
-
             SizeF panLimitSize = new SizeF(Math.Min(ClientArea.Width * 0.25f, CanvasRectangle.Width),
                 Math.Min(ClientArea.Height * 0.25f, CanvasRectangle.Height));
 
@@ -448,15 +436,9 @@ namespace ShareX.ScreenCaptureLib
             deltaY = Math.Max(deltaY, limitRectangle.Top - CanvasRectangle.Bottom);
             deltaY = Math.Min(deltaY, limitRectangle.Bottom - CanvasRectangle.Top);
 
-            if (usePanningStretch)
+            if (deltaX == 0 && deltaY == 0)
             {
-                deltaX -= Math.Min(Math.Max(deltaX, 0), Math.Max(0, PanningStrech.X));
-                deltaX -= Math.Max(Math.Min(deltaX, 0), Math.Min(0, PanningStrech.X));
-                deltaY -= Math.Min(Math.Max(deltaY, 0), Math.Max(0, PanningStrech.Y));
-                deltaY -= Math.Max(Math.Min(deltaY, 0), Math.Min(0, PanningStrech.Y));
-
-                PanningStrech.X += deltaX;
-                PanningStrech.Y += deltaY;
+                return false;
             }
 
             CanvasRectangle = CanvasRectangle.LocationOffset(deltaX, deltaY);
@@ -470,14 +452,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 ShapeManager.MoveAll(deltaX, deltaY);
             }
+
+            return true;
         }
 
-        private void Pan(Point delta)
-        {
-            Pan(delta.X, delta.Y);
-        }
-
-        private void AutomaticPan(Vector2 centerOffset)
+        public void PanToOffset(Vector2 centerOffset)
         {
             if (IsEditorMode)
             {
@@ -488,25 +467,16 @@ namespace ShareX.ScreenCaptureLib
                 float newY = y - (canvas.Height / 2);
                 float deltaX = (newX - canvas.X) / ZoomFactor;
                 float deltaY = (newY - canvas.Y) / ZoomFactor;
-                Pan(deltaX, deltaY, false);
+                if (Pan(deltaX, deltaY))
+                {
+                    CanvasCenterOffset = centerOffset;
+                }
             }
-        }
-
-        public void AutomaticPan()
-        {
-            AutomaticPan(CanvasCenterOffset);
-        }
-
-        private void UpdateCenterOffset()
-        {
-            CanvasCenterOffset = new Vector2(CanvasRectangle.X + (CanvasRectangle.Width / 2f) - (ClientArea.Width / 2f),
-                CanvasRectangle.Y + (CanvasRectangle.Height / 2f) - (ClientArea.Height / 2f));
         }
 
         public void CenterCanvas()
         {
-            CanvasCenterOffset = new Vector2(0f, ToolbarHeight / 2f);
-            AutomaticPan(CanvasCenterOffset / ZoomFactor);
+            PanToOffset(new Vector2(0f, ToolbarHeight / 2f));
         }
 
         public void ZoomTransform(Graphics g, bool invertZoom = false)
@@ -576,7 +546,7 @@ namespace ShareX.ScreenCaptureLib
         private void RegionCaptureForm_Resize(object sender, EventArgs e)
         {
             OnMoved();
-            AutomaticPan();
+            PanToOffset(CanvasCenterOffset);
         }
 
         private void RegionCaptureForm_LocationChanged(object sender, EventArgs e)
@@ -752,9 +722,11 @@ namespace ShareX.ScreenCaptureLib
             }
 
             PointF scaledCenterAfter = atMouse ? ScaledClientMousePosition : clientCenter.Scale(1 / zoomFactor);
-            Pan(scaledCenterAfter.X - scaledCenterBefore.X, scaledCenterAfter.Y - scaledCenterBefore.Y);
-            CanvasCenterOffset = new Vector2((CanvasRectangle.X + CanvasRectangle.Width  / 2f) * ZoomFactor - clientCenter.X,
-                                             (CanvasRectangle.Y + CanvasRectangle.Height / 2f) * ZoomFactor - clientCenter.Y);
+            if (Pan(scaledCenterAfter.X - scaledCenterBefore.X, scaledCenterAfter.Y - scaledCenterBefore.Y))
+            {
+                CanvasCenterOffset = new Vector2((CanvasRectangle.X + CanvasRectangle.Width / 2f) * ZoomFactor - clientCenter.X,
+                                                 (CanvasRectangle.Y + CanvasRectangle.Height / 2f) * ZoomFactor - clientCenter.Y);
+            }
             UpdateTitle();
         }
 
@@ -850,8 +822,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (ShapeManager.IsPanning)
             {
-                CanvasCenterOffset = new Vector2(CanvasCenterOffset.X + InputManager.MouseVelocity.X, CanvasCenterOffset.Y + InputManager.MouseVelocity.Y);
-                AutomaticPan();
+                Vector2 offset = new Vector2(CanvasCenterOffset.X + InputManager.MouseVelocity.X, CanvasCenterOffset.Y + InputManager.MouseVelocity.Y);
+                PanToOffset(offset);
             }
 
             if (Options.EnableAnimations)
