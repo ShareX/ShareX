@@ -1242,9 +1242,9 @@ namespace ShareX.ScreenCaptureLib
             int offset = 5;
             PointF mousePos = ScaledClientMousePosition;
             PointF left = new PointF(mousePos.X - offset, mousePos.Y), left2 = new PointF(0, mousePos.Y);
-            PointF right = new PointF(mousePos.X + offset, mousePos.Y), right2 = new PointF(ClientArea.Width - 1, mousePos.Y);
+            PointF right = new PointF(mousePos.X + offset, mousePos.Y), right2 = new PointF((ClientArea.Width - 1) / ZoomFactor, mousePos.Y);
             PointF top = new PointF(mousePos.X, mousePos.Y - offset), top2 = new PointF(mousePos.X, 0);
-            PointF bottom = new PointF(mousePos.X, mousePos.Y + offset), bottom2 = new PointF(mousePos.X, ClientArea.Height - 1);
+            PointF bottom = new PointF(mousePos.X, mousePos.Y + offset), bottom2 = new PointF(mousePos.X, (ClientArea.Height - 1) / ZoomFactor);
 
             if (left.X - left2.X > 10)
             {
