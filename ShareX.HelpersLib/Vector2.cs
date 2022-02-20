@@ -124,6 +124,11 @@ namespace ShareX.HelpersLib
             return new Point((int)Math.Round(u.x), (int)Math.Round(u.y));
         }
 
+        public static explicit operator PointF(Vector2 u)
+        {
+            return new PointF(u.x, u.y);
+        }
+
         public static implicit operator Vector2(Point p)
         {
             return new Vector2(p.X, p.Y);

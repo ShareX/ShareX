@@ -133,7 +133,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Rectangle CurrentRectangle
+        public RectangleF CurrentRectangle
         {
             get
             {
@@ -142,7 +142,7 @@ namespace ShareX.ScreenCaptureLib
                     return CurrentShape.Rectangle;
                 }
 
-                return Rectangle.Empty;
+                return RectangleF.Empty;
             }
         }
 
@@ -184,7 +184,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Rectangle PreviousHoverRectangle { get; private set; }
+        public RectangleF PreviousHoverRectangle { get; private set; }
 
         public bool IsCurrentHoverShapeValid => CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
 
@@ -254,7 +254,7 @@ namespace ShareX.ScreenCaptureLib
         // Is holding Alt?
         public bool IsSnapResizing { get; private set; }
         public bool IsRenderingOutput { get; private set; }
-        public Point RenderOffset { get; private set; }
+        public PointF RenderOffset { get; private set; }
         public bool IsImageModified { get; internal set; }
 
         public InputManager InputManager { get; private set; } = new InputManager();
@@ -1038,7 +1038,7 @@ namespace ShareX.ScreenCaptureLib
             IsPanning = false;
         }
 
-        internal void UpdateObjects(ImageEditorControl[] objects, Point mousePosition)
+        internal void UpdateObjects(ImageEditorControl[] objects, PointF mousePosition)
         {
             if (objects.All(x => !x.IsDragging))
             {
@@ -1054,7 +1054,7 @@ namespace ShareX.ScreenCaptureLib
                         {
                             if (InputManager.IsMousePressed(MouseButtons.Left))
                             {
-                                obj.OnMouseDown(mousePosition);
+                                obj.OnMouseDown(mousePosition.Round());
                             }
 
                             for (int j = i + 1; j < objects.Length; j++)
@@ -1079,7 +1079,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (obj.IsDragging)
                         {
-                            obj.OnMouseUp(mousePosition);
+                            obj.OnMouseUp(mousePosition.Round());
                         }
                     }
                 }
@@ -1233,9 +1233,9 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Point SnapPosition(Point posOnClick, Point posCurrent)
+        public PointF SnapPosition(PointF posOnClick, PointF posCurrent)
         {
-            Size currentSize = CaptureHelpers.CreateRectangle(posOnClick, posCurrent).Size;
+            SizeF currentSize = CaptureHelpers.CreateRectangle(posOnClick, posCurrent).Size;
             Vector2 vector = new Vector2(currentSize.Width, currentSize.Height);
 
             SnapSize snapSize = (from size in Options.SnapSizes
@@ -1246,11 +1246,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (snapSize != null)
             {
-                Point posNew = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, snapSize);
+                PointF posNew = CaptureHelpers.CalculateNewPosition(posOnClick, posCurrent, snapSize);
 
-                Rectangle newRect = CaptureHelpers.CreateRectangle(posOnClick, posNew);
+                RectangleF newRect = CaptureHelpers.CreateRectangle(posOnClick, posNew);
 
-                if (Form.ClientArea.Contains(newRect))
+                if (Form.ClientArea.Contains(newRect.Round()))
                 {
                     return posNew;
                 }
@@ -1295,10 +1295,10 @@ namespace ShareX.ScreenCaptureLib
 
                     if (Options.IsFixedSize && IsCurrentShapeTypeRegion)
                     {
-                        Point location = Form.ScaledClientMousePosition;
+                        PointF location = Form.ScaledClientMousePosition;
 
                         BaseShape rectangleRegionShape = CreateShape(ShapeType.RegionRectangle);
-                        rectangleRegionShape.Rectangle = new Rectangle(new Point(location.X - (Options.FixedSize.Width / 2),
+                        rectangleRegionShape.Rectangle = new RectangleF(new PointF(location.X - (Options.FixedSize.Width / 2),
                             location.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
                         return rectangleRegionShape;
                     }
@@ -1351,7 +1351,7 @@ namespace ShareX.ScreenCaptureLib
             return RenderOutputImage(bmp, Point.Empty);
         }
 
-        public Bitmap RenderOutputImage(Bitmap bmp, Point offset)
+        public Bitmap RenderOutputImage(Bitmap bmp, PointF offset)
         {
             Bitmap bmpOutput = (Bitmap)bmp.Clone();
 
@@ -1494,7 +1494,7 @@ namespace ShareX.ScreenCaptureLib
             return GetIntersectShape(Form.ScaledClientMousePosition);
         }
 
-        public BaseShape GetIntersectShape(Point position)
+        public BaseShape GetIntersectShape(PointF position)
         {
             if (!IsCtrlModifier)
             {
@@ -1605,7 +1605,7 @@ namespace ShareX.ScreenCaptureLib
             MoveShapeUp(CurrentShape);
         }
 
-        public void MoveAll(int x, int y)
+        public void MoveAll(float x, float y)
         {
             if (x != 0 || y != 0)
             {
@@ -1616,7 +1616,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void MoveAll(Point offset)
+        public void MoveAll(PointF offset)
         {
             MoveAll(offset.X, offset.Y);
         }
@@ -1729,7 +1729,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!string.IsNullOrEmpty(text))
                 {
-                    Point pos;
+                    PointF pos;
 
                     if (insertMousePosition)
                     {
@@ -1742,7 +1742,7 @@ namespace ShareX.ScreenCaptureLib
 
                     CurrentTool = ShapeType.DrawingTextBackground;
                     TextDrawingShape shape = (TextDrawingShape)CreateShape(ShapeType.DrawingTextBackground);
-                    shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
+                    shape.Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
                     shape.Text = text.Trim();
                     shape.OnCreated();
                     AddShape(shape);
@@ -1758,7 +1758,7 @@ namespace ShareX.ScreenCaptureLib
             Shapes.Add(shape);
         }
 
-        public void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated, bool showAreaInfo = false)
+        public void DrawRegionArea(Graphics g, RectangleF rect, bool isAnimated, bool showAreaInfo = false)
         {
             Form.DrawRegionArea(g, rect, isAnimated);
 
@@ -1781,7 +1781,7 @@ namespace ShareX.ScreenCaptureLib
             OnImageModified();
         }
 
-        public void CropArea(Rectangle rect)
+        public void CropArea(RectangleF rect)
         {
             Bitmap bmp = CropImage(rect, true);
 
@@ -1792,10 +1792,10 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Bitmap CropImage(Rectangle rect, bool onlyIfSizeDifferent = false)
+        public Bitmap CropImage(RectangleF rect, bool onlyIfSizeDifferent = false)
         {
-            rect = CaptureHelpers.ScreenToClient(rect);
-            Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location);
+            rect = CaptureHelpers.ScreenToClient(rect.Round());
+            PointF offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
             rect.X -= offset.X;
             rect.Y -= offset.Y;
             rect.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height));
@@ -1813,7 +1813,7 @@ namespace ShareX.ScreenCaptureLib
             if (bmp != null)
             {
                 Point position = CaptureHelpers.ScreenToClient(pos);
-                Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location);
+                Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
                 position.X -= offset.X;
                 position.Y -= offset.Y;
 
@@ -1828,7 +1828,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Color GetCurrentColor(Bitmap bmp)
         {
-            return GetColor(bmp, Form.ScaledClientMousePosition);
+            return GetColor(bmp, Form.ScaledClientMousePosition.Round());
         }
 
         public Color GetCurrentColor()
@@ -1922,7 +1922,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (img != null)
             {
-                Point pos;
+                PointF pos;
                 bool centerImage;
 
                 using (ImageInsertForm imageInsertForm = new ImageInsertForm())
@@ -1939,21 +1939,21 @@ namespace ShareX.ScreenCaptureLib
                             centerImage = true;
                             break;
                         case ImageInsertMethod.CanvasExpandDown:
-                            pos = new Point(Form.CanvasRectangle.X, Form.CanvasRectangle.Bottom);
+                            pos = new PointF(Form.CanvasRectangle.X, Form.CanvasRectangle.Bottom);
                             centerImage = false;
-                            ChangeCanvasSize(new Padding(0, 0, Math.Max(0, img.Width - Form.CanvasRectangle.Width), img.Height), Options.EditorCanvasColor);
+                            ChangeCanvasSize(new Padding(0, 0, (int)Math.Round(Math.Max(0, img.Width - Form.CanvasRectangle.Width)), img.Height), Options.EditorCanvasColor);
                             break;
                         case ImageInsertMethod.CanvasExpandRight:
-                            pos = new Point(Form.CanvasRectangle.Right, Form.CanvasRectangle.Y);
+                            pos = new PointF(Form.CanvasRectangle.Right, Form.CanvasRectangle.Y);
                             centerImage = false;
-                            ChangeCanvasSize(new Padding(0, 0, img.Width, Math.Max(0, img.Height - Form.CanvasRectangle.Height)), Options.EditorCanvasColor);
+                            ChangeCanvasSize(new Padding(0, 0, img.Width, (int)Math.Round(Math.Max(0, img.Height - Form.CanvasRectangle.Height))), Options.EditorCanvasColor);
                             break;
                     }
                 }
 
                 CurrentTool = ShapeType.DrawingImage;
                 ImageDrawingShape shape = (ImageDrawingShape)CreateShape(ShapeType.DrawingImage);
-                shape.Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
+                shape.Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
                 shape.SetImage(img, centerImage);
                 shape.OnCreated();
                 AddShape(shape);
@@ -2016,13 +2016,13 @@ namespace ShareX.ScreenCaptureLib
 
         public void AutoResizeCanvas()
         {
-            Rectangle canvas = Form.CanvasRectangle;
-            Rectangle combinedImageRectangle = Shapes.OfType<ImageDrawingShape>().Select(x => x.Rectangle).Combine();
+            RectangleF canvas = Form.CanvasRectangle;
+            RectangleF combinedImageRectangle = Shapes.OfType<ImageDrawingShape>().Select(x => x.Rectangle).Combine();
 
             if (!canvas.Contains(combinedImageRectangle))
             {
-                Padding margin = new Padding(Math.Max(0, canvas.X - combinedImageRectangle.X), Math.Max(0, canvas.Y - combinedImageRectangle.Y),
-                    Math.Max(0, combinedImageRectangle.Right - canvas.Right), Math.Max(0, combinedImageRectangle.Bottom - canvas.Bottom));
+                Padding margin = new Padding((int)Math.Round(Math.Max(0, canvas.X - combinedImageRectangle.X)), (int)Math.Round(Math.Max(0, canvas.Y - combinedImageRectangle.Y)),
+                    (int)Math.Round(Math.Max(0, combinedImageRectangle.Right - canvas.Right)), (int)Math.Round(Math.Max(0, combinedImageRectangle.Bottom - canvas.Bottom)));
                 ChangeCanvasSize(margin, Options.EditorCanvasColor);
             }
         }
@@ -2051,7 +2051,7 @@ namespace ShareX.ScreenCaptureLib
         private void AutoCropImage()
         {
             Rectangle source = new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height);
-            Rectangle crop;
+            RectangleF crop;
 
             using (Bitmap resultImage = Form.GetResultImage())
             {

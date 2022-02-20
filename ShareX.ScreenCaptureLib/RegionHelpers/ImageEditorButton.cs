@@ -38,7 +38,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            Rectangle rect = Rectangle;
+            RectangleF rect = Rectangle;
 
             if (IsCursorHover)
             {

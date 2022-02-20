@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
             DrawTextWithOutline(g, Text, TextOptions, TextOptions.Color, BorderColor, BorderSize, Rectangle);
         }
 
-        protected void DrawTextWithOutline(Graphics g, string text, TextDrawingOptions options, Color textColor, Color borderColor, int borderSize, Rectangle rect)
+        protected void DrawTextWithOutline(Graphics g, string text, TextDrawingOptions options, Color textColor, Color borderColor, int borderSize, RectangleF rect)
         {
             if (!string.IsNullOrEmpty(text) && rect.Width > 10 && rect.Height > 10)
             {
@@ -123,7 +123,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (TextOptions.Gradient)
                         {
-                            textBrush = new LinearGradientBrush(Rectangle.Round(pathRect).Offset(1), textColor, TextOptions.Color2, TextOptions.GradientMode);
+                            textBrush = new LinearGradientBrush(System.Drawing.Rectangle.Round(pathRect).Offset(1), textColor, TextOptions.Color2, TextOptions.GradientMode);
                         }
                         else
                         {

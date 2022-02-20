@@ -34,7 +34,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.RegionFreehand;
 
-        public Point LastPosition
+        public PointF LastPosition
         {
             get
             {
@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
                     return points[points.Count - 1];
                 }
 
-                return Point.Empty;
+                return PointF.Empty;
             }
             set
             {
@@ -54,7 +54,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private List<Point> points = new List<Point>();
+        private List<PointF> points = new List<PointF>();
         private bool isPolygonMode;
 
         protected override void UseLightResizeNodes()
@@ -72,7 +72,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    Point pos = Manager.Form.ScaledClientMousePosition;
+                    PointF pos = Manager.Form.ScaledClientMousePosition;
 
                     if (points.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
                     {
@@ -100,7 +100,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
         {
             if (points.Count > 2)
             {
@@ -112,7 +112,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void Move(int x, int y)
+        public override void Move(float x, float y)
         {
             for (int i = 0; i < points.Count; i++)
             {

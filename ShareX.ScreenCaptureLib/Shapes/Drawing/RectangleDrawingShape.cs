@@ -69,7 +69,7 @@ namespace ShareX.ScreenCaptureLib
             DrawRectangle(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle, CornerRadius);
         }
 
-        protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, Rectangle rect, int cornerRadius)
+        protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, RectangleF rect, int cornerRadius)
         {
             Brush brush = null;
             Pen pen = null;
@@ -109,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
         {
             gp.AddRoundedRectangle(rect, CornerRadius);
         }

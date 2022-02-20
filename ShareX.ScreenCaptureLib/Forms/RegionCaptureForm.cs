@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
         public RegionCaptureOptions Options { get; set; }
         public Rectangle ClientArea { get; private set; }
         public Bitmap Canvas { get; private set; }
-        public Rectangle CanvasRectangle { get; internal set; }
+        public RectangleF CanvasRectangle { get; internal set; }
         public RegionResult Result { get; private set; }
         public int MonitorIndex { get; set; }
         public string ImageFilePath { get; set; }
@@ -64,7 +64,7 @@ namespace ShareX.ScreenCaptureLib
         public Point CurrentPosition { get; private set; }
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
-        internal Point PanningStrech = new Point();
+        internal PointF PanningStrech = new PointF();
         internal Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
 
         internal float ZoomFactor
@@ -80,9 +80,8 @@ namespace ShareX.ScreenCaptureLib
         }
 
         internal bool IsZoomed => Math.Round(ZoomFactor * 100) != 100;
-        internal Point ScaledClientMousePosition => InputManager.ClientMousePosition.Scale(1 / ZoomFactor);
-        internal Point ScaledClientMouseVelocity => InputManager.MouseVelocity.Scale(1 / ZoomFactor);
-        internal Point ScaledClientCenter => new Point((int)Math.Round(ClientArea.Width / 2f / ZoomFactor), (int)Math.Round(ClientArea.Height / 2f / ZoomFactor));
+        internal PointF ScaledClientMousePosition => InputManager.ClientMousePosition.Scale(1 / ZoomFactor);
+        internal PointF ScaledClientMouseVelocity => InputManager.MouseVelocity.Scale(1 / ZoomFactor);
 
         internal ShapeManager ShapeManager { get; private set; }
         internal bool IsClosing { get; private set; }
@@ -351,7 +350,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 UpdateTitle();
 
-                CanvasRectangle = new Rectangle(CanvasRectangle.X, CanvasRectangle.Y, Canvas.Width, Canvas.Height);
+                CanvasRectangle = new RectangleF(CanvasRectangle.X, CanvasRectangle.Y, Canvas.Width, Canvas.Height);
 
                 using (Bitmap background = new Bitmap(Canvas.Width, Canvas.Height))
                 using (Graphics g = Graphics.FromImage(background))
@@ -420,18 +419,23 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void Pan(int deltaX, int deltaY, bool usePanningStretch = true)
+        private void Pan(float deltaX, float deltaY, bool usePanningStretch = true)
         {
+            if (deltaX == 0 && deltaY == 0)
+            {
+                return;
+            }
+
             if (usePanningStretch)
             {
                 PanningStrech.X -= deltaX;
                 PanningStrech.Y -= deltaY;
             }
 
-            Size panLimitSize = new Size(Math.Min((int)Math.Round(ClientArea.Width * 0.25f), CanvasRectangle.Width),
-                Math.Min((int)Math.Round(ClientArea.Height * 0.25f), CanvasRectangle.Height));
+            SizeF panLimitSize = new SizeF(Math.Min(ClientArea.Width * 0.25f, CanvasRectangle.Width),
+                Math.Min(ClientArea.Height * 0.25f, CanvasRectangle.Height));
 
-            Rectangle limitRectangle = new Rectangle(ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
+            RectangleF limitRectangle = new RectangleF(ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
                 ClientArea.Width - (panLimitSize.Width * 2), ClientArea.Height - (panLimitSize.Height * 2));
 
             if (IsZoomed)
@@ -477,13 +481,13 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsEditorMode)
             {
-                Rectangle canvas = CanvasRectangle.Scale(ZoomFactor);
-                float x = ClientArea.Width / 2 + centerOffset.X;
-                float y = ClientArea.Height / 2 + centerOffset.Y;
-                float newX = x - canvas.Width / 2;
-                float newY = y - canvas.Height / 2;
-                int deltaX = (int)Math.Round((newX - canvas.X) / ZoomFactor);
-                int deltaY = (int)Math.Round((newY - canvas.Y) / ZoomFactor);
+                RectangleF canvas = CanvasRectangle.Scale(ZoomFactor);
+                float x = (ClientArea.Width / 2)  + centerOffset.X;
+                float y = (ClientArea.Height / 2) + centerOffset.Y;
+                float newX = x - (canvas.Width / 2);
+                float newY = y - (canvas.Height / 2);
+                float deltaX = (newX - canvas.X) / ZoomFactor;
+                float deltaY = (newY - canvas.Y) / ZoomFactor;
                 Pan(deltaX, deltaY, false);
             }
         }
@@ -502,7 +506,7 @@ namespace ShareX.ScreenCaptureLib
         public void CenterCanvas()
         {
             CanvasCenterOffset = new Vector2(0f, ToolbarHeight / 2f);
-            AutomaticPan();
+            AutomaticPan(CanvasCenterOffset / ZoomFactor);
         }
 
         public void ZoomTransform(Graphics g, bool invertZoom = false)
@@ -713,7 +717,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void Zoom(bool zoomIn, bool atMouse = true)
         {
-            Point centerBefore = atMouse ? ScaledClientMousePosition : ScaledClientCenter;
+            PointF clientCenter = new PointF(ClientArea.Width / 2f, ClientArea.Height / 2f);
+            PointF scaledCenterBefore = atMouse ? ScaledClientMousePosition : clientCenter.Scale(1 / zoomFactor);
 
             if (zoomIn)
             {
@@ -746,17 +751,16 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            Point centerAfter = atMouse ? ScaledClientMousePosition : ScaledClientCenter;
-
-            Point delta = new Point(centerAfter.X - centerBefore.X, centerAfter.Y - centerBefore.Y);
-            Pan(delta);
-
+            PointF scaledCenterAfter = atMouse ? ScaledClientMousePosition : clientCenter.Scale(1 / zoomFactor);
+            Pan(scaledCenterAfter.X - scaledCenterBefore.X, scaledCenterAfter.Y - scaledCenterBefore.Y);
+            CanvasCenterOffset = new Vector2((CanvasRectangle.X + CanvasRectangle.Width  / 2f) * ZoomFactor - clientCenter.X,
+                                             (CanvasRectangle.Y + CanvasRectangle.Height / 2f) * ZoomFactor - clientCenter.Y);
             UpdateTitle();
         }
 
         private void ZoomToFit()
         {
-            ZoomFactor = Math.Min((float)ClientArea.Width / CanvasRectangle.Width, (float)ClientArea.Height / CanvasRectangle.Height);
+            ZoomFactor = Math.Min(ClientArea.Width/CanvasRectangle.Width, (ClientArea.Height-ToolbarHeight)/CanvasRectangle.Height);
 
             CenterCanvas();
         }
@@ -846,8 +850,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (ShapeManager.IsPanning)
             {
-                Pan(ScaledClientMouseVelocity);
-                UpdateCenterOffset();
+                CanvasCenterOffset = new Vector2(CanvasCenterOffset.X + InputManager.MouseVelocity.X, CanvasCenterOffset.Y + InputManager.MouseVelocity.Y);
+                AutomaticPan();
             }
 
             if (Options.EnableAnimations)
@@ -882,7 +886,7 @@ namespace ShareX.ScreenCaptureLib
             if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))
             {
                 g.Clear(canvasBackgroundColor);
-                g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1));
+                g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1F));
             }
 
             DrawBackground(g);
@@ -920,7 +924,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     foreach (Size size in Options.SnapSizes)
                     {
-                        Rectangle snapRect = CaptureHelpers.CalculateNewRectangle(shape.StartPosition, shape.EndPosition, size);
+                        RectangleF snapRect = CaptureHelpers.CalculateNewRectangle(shape.StartPosition, shape.EndPosition, size);
                         g.DrawRectangleProper(markerPen, snapRect);
                     }
                 }
@@ -1071,7 +1075,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        internal void DrawRegionArea(Graphics g, Rectangle rect, bool isAnimated)
+        internal void DrawRegionArea(Graphics g, RectangleF rect, bool isAnimated)
         {
             g.DrawRectangleProper(borderPen, rect);
 
@@ -1098,23 +1102,23 @@ namespace ShareX.ScreenCaptureLib
             g.DrawTextWithShadow(FPSManager.FPS.ToString(), textPosition, infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
 
-        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)
+        private void DrawInfoText(Graphics g, string text, RectangleF rect, Font font, int padding)
         {
             DrawInfoText(g, text, rect, font, new Point(padding, padding));
         }
 
-        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, Point padding)
+        private void DrawInfoText(Graphics g, string text, RectangleF rect, Font font, Point padding)
         {
             DrawInfoText(g, text, rect, font, padding, textBackgroundBrush, textOuterBorderPen, textInnerBorderPen, textBrush, textShadowBrush);
         }
 
-        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding,
+        private void DrawInfoText(Graphics g, string text, RectangleF rect, Font font, int padding,
             Brush backgroundBrush, Pen outerBorderPen, Pen innerBorderPen, Brush textBrush, Brush textShadowBrush)
         {
             DrawInfoText(g, text, rect, font, new Point(padding, padding), backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
         }
 
-        private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, Point padding,
+        private void DrawInfoText(Graphics g, string text, RectangleF rect, Font font, Point padding,
             Brush backgroundBrush, Pen outerBorderPen, Pen innerBorderPen, Brush textBrush, Brush textShadowBrush)
         {
             g.FillRectangle(backgroundBrush, rect.Offset(-2));
@@ -1124,20 +1128,20 @@ namespace ShareX.ScreenCaptureLib
             g.DrawTextWithShadow(text, rect.LocationOffset(padding.X, padding.Y).Location, font, textBrush, textShadowBrush);
         }
 
-        internal void DrawAreaText(Graphics g, string text, Rectangle area)
+        internal void DrawAreaText(Graphics g, string text, RectangleF area)
         {
             int offset = 6;
             int backgroundPadding = 3;
             Size textSize = g.MeasureString(text, infoFont).ToSize();
-            Point textPos;
+            PointF textPos;
 
             if (area.Y - offset - textSize.Height - (backgroundPadding * 2) < ClientArea.Y)
             {
-                textPos = new Point(area.X + offset + backgroundPadding, area.Y + offset + backgroundPadding);
+                textPos = new PointF(area.X + offset + backgroundPadding, area.Y + offset + backgroundPadding);
             }
             else
             {
-                textPos = new Point(area.X + backgroundPadding, area.Y - offset - backgroundPadding - textSize.Height);
+                textPos = new PointF(area.X + backgroundPadding, area.Y - offset - backgroundPadding - textSize.Height);
             }
 
             if (textPos.X + textSize.Width + backgroundPadding >= ClientArea.Width)
@@ -1145,7 +1149,7 @@ namespace ShareX.ScreenCaptureLib
                 textPos.X = ClientArea.Width - textSize.Width - backgroundPadding;
             }
 
-            Rectangle backgroundRect = new Rectangle(textPos.X - backgroundPadding, textPos.Y - backgroundPadding, textSize.Width + (backgroundPadding * 2), textSize.Height + (backgroundPadding * 2));
+            RectangleF backgroundRect = new RectangleF(textPos.X - backgroundPadding, textPos.Y - backgroundPadding, textSize.Width + (backgroundPadding * 2), textSize.Height + (backgroundPadding * 2));
 
             DrawInfoText(g, text, backgroundRect, infoFont, backgroundPadding);
         }
@@ -1186,15 +1190,15 @@ namespace ShareX.ScreenCaptureLib
             DrawTextAnimation(g, textAnimation, textRectangle, padding);
         }
 
-        internal string GetAreaText(Rectangle rect)
+        internal string GetAreaText(RectangleF rect)
         {
             if (IsEditorMode)
             {
-                rect = new Rectangle(rect.X - CanvasRectangle.X, rect.Y - CanvasRectangle.Y, rect.Width, rect.Height);
+                rect = new RectangleF(rect.X - CanvasRectangle.X, rect.Y - CanvasRectangle.Y, rect.Width, rect.Height);
             }
             else if (Mode == RegionCaptureMode.Ruler)
             {
-                Point endLocation = new Point(rect.Right - 1, rect.Bottom - 1);
+                PointF endLocation = new PointF(rect.Right - 1, rect.Bottom - 1);
                 string text = $"X: {rect.X} | Y: {rect.Y} | Right: {endLocation.X} | Bottom: {endLocation.Y}\r\n" +
                     $"Width: {rect.Width} px | Height: {rect.Height} px | Area: {rect.Area()} px | Perimeter: {rect.Perimeter()} px\r\n" +
                     $"Distance: {MathHelpers.Distance(rect.Location, endLocation):0.00} px | Angle: {MathHelpers.LookAtDegree(rect.Location, endLocation):0.00}°";
@@ -1208,7 +1212,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsEditorMode)
             {
-                Point canvasRelativePosition = new Point(ScaledClientMousePosition.X - CanvasRectangle.X, ScaledClientMousePosition.Y - CanvasRectangle.Y);
+                PointF canvasRelativePosition = new PointF(ScaledClientMousePosition.X - CanvasRectangle.X, ScaledClientMousePosition.Y - CanvasRectangle.Y);
                 return $"X: {canvasRelativePosition.X} Y: {canvasRelativePosition.Y}";
             }
             else if (Mode == RegionCaptureMode.ScreenColorPicker || Options.UseCustomInfoText)
@@ -1236,11 +1240,11 @@ namespace ShareX.ScreenCaptureLib
         private void DrawCrosshair(Graphics g)
         {
             int offset = 5;
-            Point mousePos = ScaledClientMousePosition;
-            Point left = new Point(mousePos.X - offset, mousePos.Y), left2 = new Point(0, mousePos.Y);
-            Point right = new Point(mousePos.X + offset, mousePos.Y), right2 = new Point(ClientArea.Width - 1, mousePos.Y);
-            Point top = new Point(mousePos.X, mousePos.Y - offset), top2 = new Point(mousePos.X, 0);
-            Point bottom = new Point(mousePos.X, mousePos.Y + offset), bottom2 = new Point(mousePos.X, ClientArea.Height - 1);
+            PointF mousePos = ScaledClientMousePosition;
+            PointF left = new PointF(mousePos.X - offset, mousePos.Y), left2 = new PointF(0, mousePos.Y);
+            PointF right = new PointF(mousePos.X + offset, mousePos.Y), right2 = new PointF(ClientArea.Width - 1, mousePos.Y);
+            PointF top = new PointF(mousePos.X, mousePos.Y - offset), top2 = new PointF(mousePos.X, 0);
+            PointF bottom = new PointF(mousePos.X, mousePos.Y + offset), bottom2 = new PointF(mousePos.X, ClientArea.Height - 1);
 
             if (left.X - left2.X > 10)
             {
@@ -1383,7 +1387,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private Bitmap Magnifier(Image img, Point position, int horizontalPixelCount, int verticalPixelCount, int pixelSize)
+        private Bitmap Magnifier(Image img, PointF position, int horizontalPixelCount, int verticalPixelCount, int pixelSize)
         {
             horizontalPixelCount = (horizontalPixelCount | 1).Clamp(1, 101);
             verticalPixelCount = (verticalPixelCount | 1).Clamp(1, 101);
@@ -1395,7 +1399,7 @@ namespace ShareX.ScreenCaptureLib
                 pixelSize = 10;
             }
 
-            Rectangle srcRect = new Rectangle(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
+            RectangleF srcRect = new RectangleF(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
                 position.Y - (verticalPixelCount / 2) - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount);
 
             int width = horizontalPixelCount * pixelSize;
@@ -1406,7 +1410,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
 
-                if (!new Rectangle(0, 0, img.Width, img.Height).Contains(srcRect))
+                if (!new RectangleF(0, 0, img.Width, img.Height).Contains(srcRect))
                 {
                     g.Clear(canvasBackgroundColor);
                 }
@@ -1447,20 +1451,20 @@ namespace ShareX.ScreenCaptureLib
             return bmp;
         }
 
-        private void DrawRuler(Graphics g, Rectangle rect, Pen pen, int rulerSize, int rulerWidth)
+        private void DrawRuler(Graphics g, RectangleF rect, Pen pen, int rulerSize, int rulerWidth)
         {
             if (rect.Width >= rulerSize && rect.Height >= rulerSize)
             {
                 for (int x = 1; x <= rect.Width / rulerWidth; x++)
                 {
-                    g.DrawLine(pen, new Point(rect.X + (x * rulerWidth), rect.Y), new Point(rect.X + (x * rulerWidth), rect.Y + rulerSize));
-                    g.DrawLine(pen, new Point(rect.X + (x * rulerWidth), rect.Bottom), new Point(rect.X + (x * rulerWidth), rect.Bottom - rulerSize));
+                    g.DrawLine(pen, new PointF(rect.X + (x * rulerWidth), rect.Y), new PointF(rect.X + (x * rulerWidth), rect.Y + rulerSize));
+                    g.DrawLine(pen, new PointF(rect.X + (x * rulerWidth), rect.Bottom), new PointF(rect.X + (x * rulerWidth), rect.Bottom - rulerSize));
                 }
 
                 for (int y = 1; y <= rect.Height / rulerWidth; y++)
                 {
-                    g.DrawLine(pen, new Point(rect.X, rect.Y + (y * rulerWidth)), new Point(rect.X + rulerSize, rect.Y + (y * rulerWidth)));
-                    g.DrawLine(pen, new Point(rect.Right, rect.Y + (y * rulerWidth)), new Point(rect.Right - rulerSize, rect.Y + (y * rulerWidth)));
+                    g.DrawLine(pen, new PointF(rect.X, rect.Y + (y * rulerWidth)), new PointF(rect.X + rulerSize, rect.Y + (y * rulerWidth)));
+                    g.DrawLine(pen, new PointF(rect.Right, rect.Y + (y * rulerWidth)), new PointF(rect.Right - rulerSize, rect.Y + (y * rulerWidth)));
                 }
             }
         }

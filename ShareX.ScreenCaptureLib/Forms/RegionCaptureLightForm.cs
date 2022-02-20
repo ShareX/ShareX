@@ -37,15 +37,15 @@ namespace ShareX.ScreenCaptureLib
     {
         private const int MinimumRectangleSize = 3;
 
-        public static Rectangle LastSelectionRectangle0Based { get; private set; }
+        public static RectangleF LastSelectionRectangle0Based { get; private set; }
 
-        public Rectangle ScreenRectangle { get; private set; }
+        public RectangleF ScreenRectangle { get; private set; }
 
-        public Rectangle ScreenRectangle0Based => new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
+        public RectangleF ScreenRectangle0Based => new RectangleF(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
 
-        public Rectangle SelectionRectangle { get; private set; }
+        public RectangleF SelectionRectangle { get; private set; }
 
-        public Rectangle SelectionRectangle0Based => new Rectangle(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
+        public RectangleF SelectionRectangle0Based => new RectangleF(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
             SelectionRectangle.Width, SelectionRectangle.Height);
 
         private Timer timer;
@@ -92,7 +92,7 @@ namespace ShareX.ScreenCaptureLib
 
             AutoScaleMode = AutoScaleMode.None;
             StartPosition = FormStartPosition.Manual;
-            Bounds = ScreenRectangle;
+            Bounds = Rectangle.Round(ScreenRectangle);
             FormBorderStyle = FormBorderStyle.None;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Text = "ShareX - " + Resources.RectangleLight_InitializeComponent_Rectangle_capture_light;
@@ -164,7 +164,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Bitmap GetAreaImage()
         {
-            Rectangle rect = SelectionRectangle0Based;
+            RectangleF rect = SelectionRectangle0Based;
 
             if (rect.Width > 0 && rect.Height > 0)
             {

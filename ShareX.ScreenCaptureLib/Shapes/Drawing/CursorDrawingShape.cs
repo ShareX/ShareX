@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 
@@ -49,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreating()
         {
             Manager.IsMoving = true;
-            UpdateCursor(Manager.GetSelectedCursor().Handle, Manager.Form.ScaledClientMousePosition);
+            UpdateCursor(Manager.GetSelectedCursor().Handle, Manager.Form.ScaledClientMousePosition.Round());
             OnCreated();
         }
 
@@ -61,7 +62,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!Manager.IsRenderingOutput && Manager.CurrentTool == ShapeType.DrawingCursor)
                 {
-                    Manager.DrawRegionArea(g, Rectangle, false);
+                    Manager.DrawRegionArea(g, Rectangle.Round(), false);
                 }
             }
         }

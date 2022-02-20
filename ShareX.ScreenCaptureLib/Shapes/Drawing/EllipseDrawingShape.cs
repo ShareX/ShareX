@@ -55,7 +55,7 @@ namespace ShareX.ScreenCaptureLib
             DrawEllipse(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle);
         }
 
-        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, Rectangle rect)
+        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, RectangleF rect)
         {
             g.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -80,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
             g.SmoothingMode = SmoothingMode.None;
         }
 
-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
         {
             gp.AddEllipse(rect);
         }

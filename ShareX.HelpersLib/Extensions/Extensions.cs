@@ -129,9 +129,9 @@ namespace ShareX.HelpersLib
             return rect.Width > 0 && rect.Height > 0;
         }
 
-        public static Point Add(this Point point, int offset)
+        public static bool IsValid(this RectangleF rect)
         {
-            return point.Add(offset, offset);
+            return rect.Width > 0 && rect.Height > 0;
         }
 
         public static Point Add(this Point point, int offsetX, int offsetY)
@@ -144,9 +144,35 @@ namespace ShareX.HelpersLib
             return new Point(point.X + offset.X, point.Y + offset.Y);
         }
 
-        public static Point Scale(this Point point, float scaleFactor)
+        public static PointF Add(this PointF point, float offsetX, float offsetY)
         {
-            return new Point((int)Math.Round(point.X * scaleFactor), (int)Math.Round(point.Y * scaleFactor));
+            return new PointF(point.X + offsetX, point.Y + offsetY);
+        }
+
+        public static PointF Add(this PointF point, PointF offset)
+        {
+            return new PointF(point.X + offset.X, point.Y + offset.Y);
+        }
+
+        public static PointF Scale(this Point point, float scaleFactor)
+        {
+            return new PointF(point.X * scaleFactor, point.Y * scaleFactor);
+        }
+
+        public static PointF Scale(this PointF point, float scaleFactor)
+        {
+            return new PointF(point.X * scaleFactor, point.Y * scaleFactor);
+        }
+
+        public static Point Round(this PointF point)
+        {
+            return Point.Round(point);
+        }
+
+        public static void Offset(this PointF point, PointF offset)
+        {
+            point.X += offset.X;
+            point.Y += offset.Y;
         }
 
         public static Size Offset(this Size size, int offset)
@@ -164,15 +190,38 @@ namespace ShareX.HelpersLib
             return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + (offset * 2), rect.Height + (offset * 2));
         }
 
-        public static Rectangle Scale(this Rectangle rect, float scaleFactor)
+        public static RectangleF Offset(this RectangleF rect, float offset)
         {
-            return new Rectangle((int)Math.Round(rect.X * scaleFactor), (int)Math.Round(rect.Y * scaleFactor),
-                (int)Math.Round(rect.Width * scaleFactor), (int)Math.Round(rect.Height * scaleFactor));
+            return new RectangleF(rect.X - offset, rect.Y - offset, rect.Width + (offset * 2), rect.Height + (offset * 2));
+        }
+
+        public static RectangleF Scale(this RectangleF rect, float scaleFactor)
+        {
+            return new RectangleF(
+                rect.X * scaleFactor,
+                rect.Y * scaleFactor,
+                rect.Width * scaleFactor,
+                rect.Height * scaleFactor);
+        }
+
+        public static Rectangle Round(this RectangleF rect)
+        {
+            return Rectangle.Round(rect);
         }
 
         public static Rectangle LocationOffset(this Rectangle rect, int x, int y)
         {
             return new Rectangle(rect.X + x, rect.Y + y, rect.Width, rect.Height);
+        }
+
+        public static RectangleF LocationOffset(this RectangleF rect, float x, float y)
+        {
+            return new RectangleF(rect.X + x, rect.Y + y, rect.Width, rect.Height);
+        }
+
+        public static RectangleF LocationOffset(this RectangleF rect, PointF offset)
+        {
+            return rect.LocationOffset(offset.X, offset.Y);
         }
 
         public static Rectangle LocationOffset(this Rectangle rect, Point offset)
@@ -190,7 +239,17 @@ namespace ShareX.HelpersLib
             return new Rectangle(rect.X, rect.Y, rect.Width + width, rect.Height + height);
         }
 
+        public static RectangleF SizeOffset(this RectangleF rect, float width, float height)
+        {
+            return new RectangleF(rect.X, rect.Y, rect.Width + width, rect.Height + height);
+        }
+
         public static Rectangle SizeOffset(this Rectangle rect, int offset)
+        {
+            return rect.SizeOffset(offset, offset);
+        }
+        
+        public static RectangleF SizeOffset(this RectangleF rect, float offset)
         {
             return rect.SizeOffset(offset, offset);
         }
@@ -575,20 +634,39 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        public static Rectangle AddPoint(this Rectangle rect, Point point)
+        public static RectangleF Combine(this IEnumerable<RectangleF> rects)
         {
-            return Rectangle.Union(rect, new Rectangle(point, new Size(1, 1)));
-        }
+            RectangleF result = RectangleF.Empty;
 
-        public static Rectangle CreateRectangle(this IEnumerable<Point> points)
-        {
-            Rectangle result = Rectangle.Empty;
-
-            foreach (Point point in points)
+            foreach (RectangleF rect in rects)
             {
                 if (result.IsEmpty)
                 {
-                    result = new Rectangle(point, new Size(1, 1));
+                    result = rect;
+                }
+                else
+                {
+                    result = RectangleF.Union(result, rect);
+                }
+            }
+
+            return result;
+        }
+
+        public static RectangleF AddPoint(this RectangleF rect, PointF point)
+        {
+            return RectangleF.Union(rect, new RectangleF(point, new SizeF(1, 1)));
+        }
+
+        public static RectangleF CreateRectangle(this IEnumerable<PointF> points)
+        {
+            RectangleF result = Rectangle.Empty;
+
+            foreach (PointF point in points)
+            {
+                if (result.IsEmpty)
+                {
+                    result = new RectangleF(point, new Size(1, 1));
                 }
                 else
                 {
@@ -604,17 +682,22 @@ namespace ShareX.HelpersLib
             return new Point(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
         }
 
-        public static int Area(this Rectangle rect)
+        public static PointF Center(this RectangleF rect)
+        {
+            return new PointF(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
+        }
+
+        public static float Area(this RectangleF rect)
         {
             return rect.Width * rect.Height;
         }
 
-        public static int Perimeter(this Rectangle rect)
+        public static float Perimeter(this RectangleF rect)
         {
             return 2 * (rect.Width + rect.Height);
         }
 
-        public static Point Restrict(this Point point, Rectangle rect)
+        public static PointF Restrict(this PointF point, RectangleF rect)
         {
             point.X = Math.Max(point.X, rect.X);
             point.Y = Math.Max(point.Y, rect.Y);

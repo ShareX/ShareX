@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
         public Color ThumbColor { get; set; } = Color.FromArgb(90, 94, 104);
         public Color ActiveThumbColor { get; set; } = Color.FromArgb(111, 115, 123);
         public bool AutoHide { get; set; } = true;
-        public Rectangle ThumbRectangle { get; private set; }
+        public RectangleF ThumbRectangle { get; private set; }
 
         private RegionCaptureForm form;
 
@@ -56,17 +56,18 @@ namespace ShareX.ScreenCaptureLib
         {
             if (AutoHide)
             {
+                RectangleF imageRectangle = form.CanvasRectangle.Scale(form.ZoomFactor);
                 bool isScrollbarNeeded;
 
                 if (Orientation == Orientation.Horizontal)
                 {
-                    isScrollbarNeeded = form.CanvasRectangle.Left < form.ClientArea.Left ||
-                        (form.CanvasRectangle.Right * form.ZoomFactor) > form.ClientArea.Right;
+                    isScrollbarNeeded = imageRectangle.Left < form.ClientArea.Left ||
+                        (imageRectangle.Right * form.ZoomFactor) > form.ClientArea.Right;
                 }
                 else
                 {
-                    isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top ||
-                        (form.CanvasRectangle.Bottom * form.ZoomFactor) > form.ClientArea.Bottom;
+                    isScrollbarNeeded = imageRectangle.Top < form.ClientArea.Top ||
+                        (imageRectangle.Bottom * form.ZoomFactor) > form.ClientArea.Bottom;
                 }
 
                 Visible = isScrollbarNeeded || IsDragging;
@@ -83,17 +84,18 @@ namespace ShareX.ScreenCaptureLib
                     Scroll(form.ShapeManager.InputManager.ClientMousePosition);
                 }
 
-                Rectangle imageRectangleVisible = form.CanvasRectangle;
+                RectangleF imageRectangle = form.CanvasRectangle.Scale(form.ZoomFactor);
+                RectangleF imageRectangleVisible = imageRectangle;
                 imageRectangleVisible.Intersect(form.ClientArea);
 
-                int inClientAreaSize, inImageVisibleSize, inImageSize, sideOffsetBase;
+                float inClientAreaSize, inImageVisibleSize, inImageSize, sideOffsetBase;
                 float inCanvasCenterOffset;
 
                 if (Orientation == Orientation.Horizontal)
                 {
                     inClientAreaSize = form.ClientArea.Width;
                     inImageVisibleSize = imageRectangleVisible.Width;
-                    inImageSize = form.CanvasRectangle.Width;
+                    inImageSize = imageRectangle.Width;
                     sideOffsetBase = form.ClientArea.Bottom;
                     inCanvasCenterOffset = form.CanvasCenterOffset.X;
                 }
@@ -101,13 +103,13 @@ namespace ShareX.ScreenCaptureLib
                 {
                     inClientAreaSize = form.ClientArea.Height;
                     inImageVisibleSize = imageRectangleVisible.Height;
-                    inImageSize = form.CanvasRectangle.Height;
+                    inImageSize = imageRectangle.Height;
                     sideOffsetBase = form.ClientArea.Right;
                     inCanvasCenterOffset = form.CanvasCenterOffset.Y;
                 }
 
-                int trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
-                int trackLengthInternal = trackLength - (Padding * 2);
+                float trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
+                float trackLengthInternal = trackLength - (Padding * 2);
 
                 int thumbLength = Math.Max(Thickness, (int)Math.Round((float)inImageVisibleSize / inImageSize * trackLengthInternal));
                 double thumbLimit = (trackLengthInternal - thumbLength) / 2.0f;
@@ -115,18 +117,18 @@ namespace ShareX.ScreenCaptureLib
                     Math.Min(thumbLimit, Math.Max(-thumbLimit, inCanvasCenterOffset / inImageSize * trackLengthInternal)));
 
                 int trackWidth = (Padding * 2) + Thickness;
-                int thumbSideOffset = sideOffsetBase - Margin - Padding - Thickness;
-                int trackSideOffset = thumbSideOffset - Padding;
+                float thumbSideOffset = sideOffsetBase - Margin - Padding - Thickness;
+                float trackSideOffset = thumbSideOffset - Padding;
 
                 if (Orientation == Orientation.Horizontal)
                 {
-                    Rectangle = new Rectangle(Margin, trackSideOffset, trackLength, trackWidth);
-                    ThumbRectangle = new Rectangle(thumbPosition, thumbSideOffset, thumbLength, Thickness);
+                    Rectangle = new RectangleF(Margin, trackSideOffset, trackLength, trackWidth);
+                    ThumbRectangle = new RectangleF(thumbPosition, thumbSideOffset, thumbLength, Thickness);
                 }
                 else
                 {
-                    Rectangle = new Rectangle(trackSideOffset, Margin, trackWidth, trackLength);
-                    ThumbRectangle = new Rectangle(thumbSideOffset, thumbPosition, Thickness, thumbLength);
+                    Rectangle = new RectangleF(trackSideOffset, Margin, trackWidth, trackLength);
+                    ThumbRectangle = new RectangleF(thumbSideOffset, thumbPosition, Thickness, thumbLength);
                 }
             }
         }
@@ -173,27 +175,28 @@ namespace ShareX.ScreenCaptureLib
 
         private void Scroll(Point position)
         {
-            int inMousePosition, inClientAreaSize, inImageSize;
+            RectangleF imageRectangle = form.CanvasRectangle.Scale(form.ZoomFactor);
+            float inMousePosition, inClientAreaSize, inImageSize;
 
             if (Orientation == Orientation.Horizontal)
             {
                 inMousePosition = position.X;
                 inClientAreaSize = form.ClientArea.Width;
-                inImageSize = form.CanvasRectangle.Width;
+                inImageSize = imageRectangle.Width;
             }
             else
             {
                 inMousePosition = position.Y;
                 inClientAreaSize = form.ClientArea.Height;
-                inImageSize = form.CanvasRectangle.Height;
+                inImageSize = imageRectangle.Height;
             }
 
-            int mousePositionLocal = inMousePosition - Margin - Padding;
+            float mousePositionLocal = inMousePosition - Margin - Padding;
 
-            int trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
-            int trackLengthInternal = trackLength - (Padding * 2);
+            float trackLength = inClientAreaSize - (Margin * 2) - (Padding * 2) - Thickness;
+            float trackLengthInternal = trackLength - (Padding * 2);
 
-            int centerOffsetNew = (int)(((trackLengthInternal / 2.0f) - mousePositionLocal) / trackLengthInternal * inImageSize);
+            float centerOffsetNew = ((trackLengthInternal / 2.0f) - mousePositionLocal) / trackLengthInternal * inImageSize;
 
             if (Orientation == Orientation.Horizontal)
             {
