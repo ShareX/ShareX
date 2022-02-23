@@ -80,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
         public int InputDelay = 500;
         public bool SwitchToDrawingToolAfterSelection = false;
         public bool SwitchToSelectionToolAfterDrawing = false;
-        public bool ActiveMonitorMode = true;
+        public bool ActiveMonitorMode = false;
 
         // Annotation
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
