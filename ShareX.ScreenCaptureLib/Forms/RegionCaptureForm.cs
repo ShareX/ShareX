@@ -195,7 +195,16 @@ namespace ShareX.ScreenCaptureLib
             if (IsFullscreen)
             {
                 FormBorderStyle = FormBorderStyle.None;
-                Bounds = CaptureHelpers.GetScreenBounds();
+
+                if (Options.ActiveMonitorMode)
+                {
+                    Bounds = CaptureHelpers.GetActiveScreenBounds();
+                }
+                else
+                {
+                    Bounds = CaptureHelpers.GetScreenBounds();
+                }
+
                 ShowInTaskbar = false;
 #if !DEBUG
                 TopMost = true;
@@ -252,6 +261,7 @@ namespace ShareX.ScreenCaptureLib
             Shown += RegionCaptureForm_Shown;
             KeyDown += RegionCaptureForm_KeyDown;
             MouseDown += RegionCaptureForm_MouseDown;
+            MouseEnter += RegionCaptureForm_MouseEnter;
             MouseWheel += RegionCaptureForm_MouseWheel;
             Resize += RegionCaptureForm_Resize;
             LocationChanged += RegionCaptureForm_LocationChanged;
@@ -461,7 +471,7 @@ namespace ShareX.ScreenCaptureLib
             if (IsEditorMode)
             {
                 RectangleF canvas = CanvasRectangle.Scale(ZoomFactor);
-                float x = (ClientArea.Width / 2)  + centerOffset.X;
+                float x = (ClientArea.Width / 2) + centerOffset.X;
                 float y = (ClientArea.Height / 2) + centerOffset.Y;
                 float newX = x - (canvas.Width / 2);
                 float newY = y - (canvas.Height / 2);
@@ -677,6 +687,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void RegionCaptureForm_MouseEnter(object sender, EventArgs e)
+        {
+            if (IsFullscreen && Options.ActiveMonitorMode)
+            {
+                Cursor.Clip = Bounds;
+            }
+        }
+
         private void RegionCaptureForm_MouseWheel(object sender, MouseEventArgs e)
         {
             if (IsEditorMode && ModifierKeys == Keys.Control)
@@ -732,7 +750,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ZoomToFit()
         {
-            ZoomFactor = Math.Min(ClientArea.Width/CanvasRectangle.Width, (ClientArea.Height-ToolbarHeight)/CanvasRectangle.Height);
+            ZoomFactor = Math.Min(ClientArea.Width / CanvasRectangle.Width, (ClientArea.Height - ToolbarHeight) / CanvasRectangle.Height);
 
             CenterCanvas();
         }

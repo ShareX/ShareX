@@ -321,6 +321,7 @@ namespace ShareX
             nudRegionCaptureFixedSizeHeight.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FixedSize.Height);
             cbRegionCaptureShowFPS.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowFPS;
             nudRegionCaptureFPSLimit.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FPSLimit);
+            cbRegionCaptureActiveMonitorMode.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
 
             #endregion Region capture
 
@@ -1214,6 +1215,11 @@ namespace ShareX
         private void nudRegionCaptureFPSLimit_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.SurfaceOptions.FPSLimit = (int)nudRegionCaptureFPSLimit.Value;
+        }
+
+        private void cbRegionCaptureActiveMonitorMode_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode = cbRegionCaptureActiveMonitorMode.Checked;
         }
 
         #endregion Region capture

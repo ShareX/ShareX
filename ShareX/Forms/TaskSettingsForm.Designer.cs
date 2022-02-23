@@ -157,6 +157,8 @@
             this.nudCaptureShadowOffset = new System.Windows.Forms.NumericUpDown();
             this.cbOverrideCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
+            this.nudRegionCaptureFPSLimit = new System.Windows.Forms.NumericUpDown();
+            this.lblRegionCaptureFPSLimit = new System.Windows.Forms.Label();
             this.cbRegionCaptureShowFPS = new System.Windows.Forms.CheckBox();
             this.flpRegionCaptureFixedSize = new System.Windows.Forms.FlowLayoutPanel();
             this.lblRegionCaptureFixedSizeWidth = new System.Windows.Forms.Label();
@@ -295,8 +297,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblRegionCaptureFPSLimit = new System.Windows.Forms.Label();
-            this.nudRegionCaptureFPSLimit = new System.Windows.Forms.NumericUpDown();
+            this.cbRegionCaptureActiveMonitorMode = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -330,6 +331,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpRegionCapture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).BeginInit();
             this.flpRegionCaptureFixedSize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeHeight)).BeginInit();
@@ -357,7 +359,6 @@
             this.tpTools.SuspendLayout();
             this.pTools.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -1408,6 +1409,7 @@
             // tpRegionCapture
             // 
             this.tpRegionCapture.BackColor = System.Drawing.SystemColors.Window;
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureActiveMonitorMode);
             this.tpRegionCapture.Controls.Add(this.nudRegionCaptureFPSLimit);
             this.tpRegionCapture.Controls.Add(this.lblRegionCaptureFPSLimit);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowFPS);
@@ -1442,6 +1444,22 @@
             this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelSize);
             resources.ApplyResources(this.tpRegionCapture, "tpRegionCapture");
             this.tpRegionCapture.Name = "tpRegionCapture";
+            // 
+            // nudRegionCaptureFPSLimit
+            // 
+            resources.ApplyResources(this.nudRegionCaptureFPSLimit, "nudRegionCaptureFPSLimit");
+            this.nudRegionCaptureFPSLimit.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureFPSLimit.Name = "nudRegionCaptureFPSLimit";
+            this.nudRegionCaptureFPSLimit.ValueChanged += new System.EventHandler(this.nudRegionCaptureFPSLimit_ValueChanged);
+            // 
+            // lblRegionCaptureFPSLimit
+            // 
+            resources.ApplyResources(this.lblRegionCaptureFPSLimit, "lblRegionCaptureFPSLimit");
+            this.lblRegionCaptureFPSLimit.Name = "lblRegionCaptureFPSLimit";
             // 
             // cbRegionCaptureShowFPS
             // 
@@ -2567,21 +2585,12 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // lblRegionCaptureFPSLimit
+            // cbRegionCaptureActiveMonitorMode
             // 
-            resources.ApplyResources(this.lblRegionCaptureFPSLimit, "lblRegionCaptureFPSLimit");
-            this.lblRegionCaptureFPSLimit.Name = "lblRegionCaptureFPSLimit";
-            // 
-            // nudRegionCaptureFPSLimit
-            // 
-            resources.ApplyResources(this.nudRegionCaptureFPSLimit, "nudRegionCaptureFPSLimit");
-            this.nudRegionCaptureFPSLimit.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.nudRegionCaptureFPSLimit.Name = "nudRegionCaptureFPSLimit";
-            this.nudRegionCaptureFPSLimit.ValueChanged += new System.EventHandler(this.nudRegionCaptureFPSLimit_ValueChanged);
+            resources.ApplyResources(this.cbRegionCaptureActiveMonitorMode, "cbRegionCaptureActiveMonitorMode");
+            this.cbRegionCaptureActiveMonitorMode.Name = "cbRegionCaptureActiveMonitorMode";
+            this.cbRegionCaptureActiveMonitorMode.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureActiveMonitorMode.CheckedChanged += new System.EventHandler(this.cbRegionCaptureActiveMonitorMode_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
@@ -2637,6 +2646,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
             this.tpRegionCapture.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).EndInit();
             this.flpRegionCaptureFixedSize.ResumeLayout(false);
             this.flpRegionCaptureFixedSize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).EndInit();
@@ -2678,7 +2688,6 @@
             this.pTools.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2952,5 +2961,6 @@
         private System.Windows.Forms.CheckBox cbToastWindowAutoHide;
         private System.Windows.Forms.NumericUpDown nudRegionCaptureFPSLimit;
         private System.Windows.Forms.Label lblRegionCaptureFPSLimit;
+        private System.Windows.Forms.CheckBox cbRegionCaptureActiveMonitorMode;
     }
 }

@@ -397,7 +397,7 @@
     <value>btnAfterCapture</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -409,7 +409,7 @@
     <value>btnAfterUpload</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -421,7 +421,7 @@
     <value>btnDestinations</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -433,7 +433,7 @@
     <value>btnTask</value>
   </data>
   <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -591,6 +591,33 @@
   <data name="&gt;&gt;tpCaptureGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbRegionCaptureActiveMonitorMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 464</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 17</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Text" xml:space="preserve">
+    <value>Show region capture only in active monitor and restrict cursor inside it</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureActiveMonitorMode.Name" xml:space="preserve">
+    <value>cbRegionCaptureActiveMonitorMode</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureActiveMonitorMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureActiveMonitorMode.Parent" xml:space="preserve">
+    <value>tpRegionCapture</value>
+  </data>
+  <data name="&gt;&gt;cbRegionCaptureActiveMonitorMode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="nudRegionCaptureFPSLimit.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 436</value>
   </data>
@@ -613,7 +640,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;nudRegionCaptureFPSLimit.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblRegionCaptureFPSLimit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -640,7 +667,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;lblRegionCaptureFPSLimit.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbRegionCaptureShowFPS.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -670,7 +697,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureShowFPS.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="flpRegionCaptureFixedSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -748,7 +775,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;flpRegionCaptureFixedSize.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbRegionCaptureIsFixedSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -778,7 +805,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureIsFixedSize.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -808,7 +835,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureShowCrosshair.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -838,7 +865,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;lblRegionCaptureMagnifierPixelSize.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -868,7 +895,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;lblRegionCaptureMagnifierPixelCount.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbRegionCaptureUseSquareMagnifier.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -898,7 +925,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureUseSquareMagnifier.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="cbRegionCaptureShowMagnifier.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -928,7 +955,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureShowMagnifier.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="cbRegionCaptureShowInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -958,7 +985,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureShowInfo.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnRegionCaptureSnapSizesRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -985,7 +1012,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;btnRegionCaptureSnapSizesRemove.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="btnRegionCaptureSnapSizesAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1012,7 +1039,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;btnRegionCaptureSnapSizesAdd.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="cbRegionCaptureSnapSizes.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 220</value>
@@ -1033,7 +1060,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureSnapSizes.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lblRegionCaptureSnapSizes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1063,7 +1090,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;lblRegionCaptureSnapSizes.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="cbRegionCaptureUseCustomInfoText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1093,7 +1120,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureUseCustomInfoText.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="cbRegionCaptureDetectControls.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1123,7 +1150,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureDetectControls.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="cbRegionCaptureDetectWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1153,7 +1180,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureDetectWindows.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="cbRegionCaptureMouse5ClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 100</value>
@@ -1174,7 +1201,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureMouse5ClickAction.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="lblRegionCaptureMouse5ClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1204,7 +1231,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;lblRegionCaptureMouse5ClickAction.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="cbRegionCaptureMouse4ClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 76</value>
@@ -1225,7 +1252,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureMouse4ClickAction.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="lblRegionCaptureMouse4ClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1255,7 +1282,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;lblRegionCaptureMouse4ClickAction.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="cbRegionCaptureMouseMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 52</value>
@@ -1276,7 +1303,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureMouseMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="lblRegionCaptureMouseMiddleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1306,7 +1333,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;lblRegionCaptureMouseMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="cbRegionCaptureMouseRightClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 28</value>
@@ -1327,7 +1354,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureMouseRightClickAction.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="lblRegionCaptureMouseRightClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1357,7 +1384,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;lblRegionCaptureMouseRightClickAction.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1387,7 +1414,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureMultiRegionMode.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <data name="&gt;&gt;btnRegionCaptureSnapSizesDialogCancel.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesDialogCancel</value>
@@ -1483,7 +1510,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;pRegionCaptureSnapSizes.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>28</value>
   </data>
   <data name="cbRegionCaptureUseDimming.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1513,7 +1540,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureUseDimming.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>29</value>
   </data>
   <data name="txtRegionCaptureCustomInfoText.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 198</value>
@@ -1534,7 +1561,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;txtRegionCaptureCustomInfoText.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>30</value>
   </data>
   <data name="nudRegionCaptureMagnifierPixelCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 316</value>
@@ -1558,7 +1585,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;nudRegionCaptureMagnifierPixelCount.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>31</value>
   </data>
   <data name="nudRegionCaptureMagnifierPixelSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 340</value>
@@ -1582,7 +1609,7 @@
     <value>tpRegionCapture</value>
   </data>
   <data name="&gt;&gt;nudRegionCaptureMagnifierPixelSize.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>32</value>
   </data>
   <data name="tpRegionCapture.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2071,7 +2098,7 @@
     <value>lvWatchFolderList</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Parent" xml:space="preserve">
     <value>tpWatchFolders</value>
@@ -2485,7 +2512,7 @@
     <value>btnAfterCapture</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -2515,7 +2542,7 @@
     <value>btnAfterUpload</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -2557,7 +2584,7 @@
     <value>btnDestinations</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -2623,7 +2650,7 @@
     <value>btnTask</value>
   </data>
   <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
     <value>tpTask</value>
@@ -8143,7 +8170,7 @@
     <value>lvUploaderFiltersList</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Parent" xml:space="preserve">
     <value>tpUploaderFilters</value>
@@ -8290,7 +8317,7 @@
     <value>lvUploaderFiltersList</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Parent" xml:space="preserve">
     <value>tpUploaderFilters</value>
@@ -8575,7 +8602,7 @@
     <value>lvActions</value>
   </data>
   <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
     <value>pActions</value>
@@ -8764,7 +8791,7 @@
     <value>lvActions</value>
   </data>
   <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
     <value>pActions</value>
@@ -8965,7 +8992,7 @@
     <value>lvWatchFolderList</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Parent" xml:space="preserve">
     <value>tpWatchFolders</value>
@@ -9409,7 +9436,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
