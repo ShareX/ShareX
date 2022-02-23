@@ -197,11 +197,7 @@ namespace ShareX.HelpersLib
 
         public static RectangleF Scale(this RectangleF rect, float scaleFactor)
         {
-            return new RectangleF(
-                rect.X * scaleFactor,
-                rect.Y * scaleFactor,
-                rect.Width * scaleFactor,
-                rect.Height * scaleFactor);
+            return new RectangleF(rect.X * scaleFactor, rect.Y * scaleFactor, rect.Width * scaleFactor, rect.Height * scaleFactor);
         }
 
         public static Rectangle Round(this RectangleF rect)
@@ -248,7 +244,7 @@ namespace ShareX.HelpersLib
         {
             return rect.SizeOffset(offset, offset);
         }
-        
+
         public static RectangleF SizeOffset(this RectangleF rect, float offset)
         {
             return rect.SizeOffset(offset, offset);

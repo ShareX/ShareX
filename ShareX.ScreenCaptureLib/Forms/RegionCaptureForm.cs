@@ -261,8 +261,8 @@ namespace ShareX.ScreenCaptureLib
             Shown += RegionCaptureForm_Shown;
             KeyDown += RegionCaptureForm_KeyDown;
             MouseDown += RegionCaptureForm_MouseDown;
-            MouseEnter += RegionCaptureForm_MouseEnter;
             MouseWheel += RegionCaptureForm_MouseWheel;
+            MouseEnter += RegionCaptureForm_MouseEnter;
             Resize += RegionCaptureForm_Resize;
             LocationChanged += RegionCaptureForm_LocationChanged;
             LostFocus += RegionCaptureForm_LostFocus;
@@ -743,8 +743,9 @@ namespace ShareX.ScreenCaptureLib
             if (Pan(scaledCenterAfter.X - scaledCenterBefore.X, scaledCenterAfter.Y - scaledCenterBefore.Y))
             {
                 CanvasCenterOffset = new Vector2((CanvasRectangle.X + CanvasRectangle.Width / 2f) * ZoomFactor - clientCenter.X,
-                                                 (CanvasRectangle.Y + CanvasRectangle.Height / 2f) * ZoomFactor - clientCenter.Y);
+                    (CanvasRectangle.Y + CanvasRectangle.Height / 2f) * ZoomFactor - clientCenter.Y);
             }
+
             UpdateTitle();
         }
 
@@ -876,7 +877,7 @@ namespace ShareX.ScreenCaptureLib
             if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))
             {
                 g.Clear(canvasBackgroundColor);
-                g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1F));
+                g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1f));
             }
 
             DrawBackground(g);

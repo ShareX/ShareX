@@ -37,16 +37,14 @@ namespace ShareX.ScreenCaptureLib
     {
         private const int MinimumRectangleSize = 3;
 
-        public static RectangleF LastSelectionRectangle0Based { get; private set; }
+        public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
-        public RectangleF ScreenRectangle { get; private set; }
-
-        public RectangleF ScreenRectangle0Based => new RectangleF(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
-
-        public RectangleF SelectionRectangle { get; private set; }
-
-        public RectangleF SelectionRectangle0Based => new RectangleF(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
+        public Rectangle ScreenRectangle { get; private set; }
+        public Rectangle ScreenRectangle0Based => new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
+        public Rectangle SelectionRectangle { get; private set; }
+        public Rectangle SelectionRectangle0Based => new Rectangle(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
             SelectionRectangle.Width, SelectionRectangle.Height);
+        public bool ActiveMonitorMode { get; private set; }
 
         private Timer timer;
         private Bitmap backgroundImage;
@@ -56,7 +54,7 @@ namespace ShareX.ScreenCaptureLib
         private bool isMouseDown;
         private Stopwatch penTimer;
 
-        public RegionCaptureLightForm(Screenshot screenshot)
+        public RegionCaptureLightForm(Screenshot screenshot, bool activeMonitorMode = false)
         {
             backgroundImage = screenshot.CaptureFullscreen();
             backgroundBrush = new TextureBrush(backgroundImage);
@@ -64,7 +62,17 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
             penTimer = Stopwatch.StartNew();
-            ScreenRectangle = CaptureHelpers.GetScreenBounds();
+
+            ActiveMonitorMode = activeMonitorMode;
+
+            if (ActiveMonitorMode)
+            {
+                ScreenRectangle = CaptureHelpers.GetActiveScreenBounds();
+            }
+            else
+            {
+                ScreenRectangle = CaptureHelpers.GetScreenBounds();
+            }
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -92,7 +100,7 @@ namespace ShareX.ScreenCaptureLib
 
             AutoScaleMode = AutoScaleMode.None;
             StartPosition = FormStartPosition.Manual;
-            Bounds = Rectangle.Round(ScreenRectangle);
+            Bounds = ScreenRectangle;
             FormBorderStyle = FormBorderStyle.None;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Text = "ShareX - " + Resources.RectangleLight_InitializeComponent_Rectangle_capture_light;
@@ -105,6 +113,7 @@ namespace ShareX.ScreenCaptureLib
             KeyUp += RectangleLight_KeyUp;
             MouseDown += RectangleLight_MouseDown;
             MouseUp += RectangleLight_MouseUp;
+            MouseEnter += RegionLight_MouseEnter;
 
             ResumeLayout(false);
         }
@@ -162,9 +171,17 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void RegionLight_MouseEnter(object sender, EventArgs e)
+        {
+            if (ActiveMonitorMode)
+            {
+                Cursor.Clip = Bounds;
+            }
+        }
+
         public Bitmap GetAreaImage()
         {
-            RectangleF rect = SelectionRectangle0Based;
+            Rectangle rect = SelectionRectangle0Based;
 
             if (rect.Width > 0 && rect.Height > 0)
             {

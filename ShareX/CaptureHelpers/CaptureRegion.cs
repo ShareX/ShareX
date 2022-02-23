@@ -119,8 +119,10 @@ namespace ShareX
         protected TaskMetadata ExecuteRegionCaptureLight(TaskSettings taskSettings)
         {
             Bitmap bmp = null;
+            Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+            bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
 
-            using (RegionCaptureLightForm rectangleLight = new RegionCaptureLightForm(TaskHelpers.GetScreenshot(taskSettings)))
+            using (RegionCaptureLightForm rectangleLight = new RegionCaptureLightForm(screenshot, activeMonitorMode))
             {
                 if (rectangleLight.ShowDialog() == DialogResult.OK)
                 {
@@ -139,8 +141,9 @@ namespace ShareX
         protected TaskMetadata ExecuteRegionCaptureTransparent(TaskSettings taskSettings)
         {
             Bitmap bmp = null;
+            bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
 
-            using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm())
+            using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm(activeMonitorMode))
             {
                 if (rectangleTransparent.ShowDialog() == DialogResult.OK)
                 {

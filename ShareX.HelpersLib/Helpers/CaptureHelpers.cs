@@ -192,6 +192,38 @@ namespace ShareX.HelpersLib
                    targetColor.B.IsBetween((byte)(color.B - variation), (byte)(color.B + variation));
         }
 
+        public static Rectangle CreateRectangle(int x, int y, int x2, int y2)
+        {
+            int width, height;
+
+            if (x <= x2)
+            {
+                width = x2 - x + 1;
+            }
+            else
+            {
+                width = x - x2 + 1;
+                x = x2;
+            }
+
+            if (y <= y2)
+            {
+                height = y2 - y + 1;
+            }
+            else
+            {
+                height = y - y2 + 1;
+                y = y2;
+            }
+
+            return new Rectangle(x, y, width, height);
+        }
+
+        public static Rectangle CreateRectangle(Point pos, Point pos2)
+        {
+            return CreateRectangle(pos.X, pos.Y, pos2.X, pos2.Y);
+        }
+
         public static RectangleF CreateRectangle(float x, float y, float x2, float y2)
         {
             float width, height;

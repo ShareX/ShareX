@@ -37,21 +37,17 @@ namespace ShareX.ScreenCaptureLib
     {
         private const int MinimumRectangleSize = 3;
 
-        public static RectangleF LastSelectionRectangle0Based { get; private set; }
+        public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
         public Rectangle ScreenRectangle { get; private set; }
-
         public Rectangle ScreenRectangle0Based => new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
-
         public Rectangle SelectionRectangle { get; private set; }
-
         public Rectangle SelectionRectangle0Based => new Rectangle(SelectionRectangle.X - ScreenRectangle.X,
             SelectionRectangle.Y - ScreenRectangle.Y, SelectionRectangle.Width, SelectionRectangle.Height);
-
         private Rectangle PreviousSelectionRectangle { get; set; }
-
-        private Rectangle PreviousSelectionRectangle0Based => new Rectangle(PreviousSelectionRectangle.X - ScreenRectangle.X, PreviousSelectionRectangle.Y - ScreenRectangle.Y,
-            PreviousSelectionRectangle.Width, PreviousSelectionRectangle.Height);
+        private Rectangle PreviousSelectionRectangle0Based => new Rectangle(PreviousSelectionRectangle.X - ScreenRectangle.X,
+            PreviousSelectionRectangle.Y - ScreenRectangle.Y, PreviousSelectionRectangle.Width, PreviousSelectionRectangle.Height);
+        public bool ActiveMonitorMode { get; private set; }
 
         private Timer timer;
         private Bitmap backgroundImage;
@@ -61,14 +57,24 @@ namespace ShareX.ScreenCaptureLib
         private bool isMouseDown;
         private Stopwatch penTimer;
 
-        public RegionCaptureTransparentForm()
+        public RegionCaptureTransparentForm(bool activeMonitorMode = false)
         {
             clearPen = new Pen(Color.FromArgb(1, 0, 0, 0));
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
             penTimer = Stopwatch.StartNew();
-            ScreenRectangle = CaptureHelpers.GetScreenBounds();
+
+            ActiveMonitorMode = activeMonitorMode;
+
+            if (ActiveMonitorMode)
+            {
+                ScreenRectangle = CaptureHelpers.GetActiveScreenBounds();
+            }
+            else
+            {
+                ScreenRectangle = CaptureHelpers.GetScreenBounds();
+            }
 
             backgroundImage = new Bitmap(ScreenRectangle.Width, ScreenRectangle.Height);
             gBackgroundImage = Graphics.FromImage(backgroundImage);
@@ -88,6 +94,7 @@ namespace ShareX.ScreenCaptureLib
             KeyUp += RectangleTransparent_KeyUp;
             MouseDown += RectangleTransparent_MouseDown;
             MouseUp += RectangleTransparent_MouseUp;
+            MouseEnter += RectangleTransparent_MouseEnter;
 
             timer = new Timer { Interval = 10 };
             timer.Tick += timer_Tick;
@@ -158,6 +165,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void RectangleTransparent_MouseEnter(object sender, EventArgs e)
+        {
+            if (ActiveMonitorMode)
+            {
+                Cursor.Clip = Bounds;
+            }
+        }
+
         public Bitmap GetAreaImage(Screenshot screenshot)
         {
             Rectangle rect = SelectionRectangle0Based;
@@ -174,7 +189,7 @@ namespace ShareX.ScreenCaptureLib
         {
             currentPosition = CaptureHelpers.GetCursorPosition();
             PreviousSelectionRectangle = SelectionRectangle;
-            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y).Round();
+            SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
 
             UpdateBackgroundImage();
         }
