@@ -1705,5 +1705,11 @@ namespace ShareX.HelpersLib
 
             return false;
         }
+
+        public static void LockCursorToWindow(Form form)
+        {
+            form.Activated += (sender, e) => Cursor.Clip = form.Bounds;
+            form.Deactivate += (sender, e) => Cursor.Clip = Rectangle.Empty;
+        }
     }
 }

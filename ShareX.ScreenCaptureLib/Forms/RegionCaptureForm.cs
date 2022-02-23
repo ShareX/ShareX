@@ -199,6 +199,8 @@ namespace ShareX.ScreenCaptureLib
                 if (Options.ActiveMonitorMode)
                 {
                     Bounds = CaptureHelpers.GetActiveScreenBounds();
+
+                    Helpers.LockCursorToWindow(this);
                 }
                 else
                 {
@@ -262,11 +264,10 @@ namespace ShareX.ScreenCaptureLib
             KeyDown += RegionCaptureForm_KeyDown;
             MouseDown += RegionCaptureForm_MouseDown;
             MouseWheel += RegionCaptureForm_MouseWheel;
-            MouseEnter += RegionCaptureForm_MouseEnter;
             Resize += RegionCaptureForm_Resize;
             LocationChanged += RegionCaptureForm_LocationChanged;
-            LostFocus += RegionCaptureForm_LostFocus;
             GotFocus += RegionCaptureForm_GotFocus;
+            LostFocus += RegionCaptureForm_LostFocus;
             FormClosing += RegionCaptureForm_FormClosing;
 
             ResumeLayout(false);
@@ -684,14 +685,6 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 CloseWindow(RegionResult.Region);
-            }
-        }
-
-        private void RegionCaptureForm_MouseEnter(object sender, EventArgs e)
-        {
-            if (IsFullscreen && Options.ActiveMonitorMode)
-            {
-                Cursor.Clip = Bounds;
             }
         }
 

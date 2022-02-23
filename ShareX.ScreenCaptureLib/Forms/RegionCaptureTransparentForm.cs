@@ -47,7 +47,6 @@ namespace ShareX.ScreenCaptureLib
         private Rectangle PreviousSelectionRectangle { get; set; }
         private Rectangle PreviousSelectionRectangle0Based => new Rectangle(PreviousSelectionRectangle.X - ScreenRectangle.X,
             PreviousSelectionRectangle.Y - ScreenRectangle.Y, PreviousSelectionRectangle.Width, PreviousSelectionRectangle.Height);
-        public bool ActiveMonitorMode { get; private set; }
 
         private Timer timer;
         private Bitmap backgroundImage;
@@ -65,11 +64,11 @@ namespace ShareX.ScreenCaptureLib
             borderDotPen2.DashPattern = new float[] { 5, 5 };
             penTimer = Stopwatch.StartNew();
 
-            ActiveMonitorMode = activeMonitorMode;
-
-            if (ActiveMonitorMode)
+            if (activeMonitorMode)
             {
                 ScreenRectangle = CaptureHelpers.GetActiveScreenBounds();
+
+                Helpers.LockCursorToWindow(this);
             }
             else
             {
@@ -94,7 +93,6 @@ namespace ShareX.ScreenCaptureLib
             KeyUp += RectangleTransparent_KeyUp;
             MouseDown += RectangleTransparent_MouseDown;
             MouseUp += RectangleTransparent_MouseUp;
-            MouseEnter += RectangleTransparent_MouseEnter;
 
             timer = new Timer { Interval = 10 };
             timer.Tick += timer_Tick;
@@ -162,14 +160,6 @@ namespace ShareX.ScreenCaptureLib
                     DialogResult = DialogResult.Cancel;
                     Close();
                 }
-            }
-        }
-
-        private void RectangleTransparent_MouseEnter(object sender, EventArgs e)
-        {
-            if (ActiveMonitorMode)
-            {
-                Cursor.Clip = Bounds;
             }
         }
 
