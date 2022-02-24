@@ -53,9 +53,9 @@ namespace ShareX.ScreenCaptureLib
         private bool isMouseDown;
         private Stopwatch penTimer;
 
-        public RegionCaptureLightForm(Screenshot screenshot, bool activeMonitorMode = false)
+        public RegionCaptureLightForm(Bitmap canvas, bool activeMonitorMode = false)
         {
-            backgroundImage = screenshot.CaptureFullscreen();
+            backgroundImage = canvas;
             backgroundBrush = new TextureBrush(backgroundImage);
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);

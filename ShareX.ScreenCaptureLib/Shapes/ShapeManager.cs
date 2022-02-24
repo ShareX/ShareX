@@ -1307,7 +1307,7 @@ namespace ShareX.ScreenCaptureLib
 
                         if (window != null && !window.Rectangle.IsEmpty)
                         {
-                            Rectangle hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
+                            Rectangle hoverArea = Form.RectangleToClient(window.Rectangle);
 
                             BaseShape rectangleRegionShape = CreateShape(ShapeType.RegionRectangle);
                             rectangleRegionShape.Rectangle = Rectangle.Intersect(Form.ClientArea, hoverArea);

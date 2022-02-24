@@ -48,6 +48,7 @@ namespace ShareX.ScreenCaptureLib
         public event Action<Bitmap> PrintImageRequested;
 
         public RegionCaptureOptions Options { get; set; }
+        public Rectangle ScreenBounds { get; set; }
         public Rectangle ClientArea { get; private set; }
         public Bitmap Canvas { get; private set; }
         public RectangleF CanvasRectangle { get; internal set; }
@@ -109,14 +110,30 @@ namespace ShareX.ScreenCaptureLib
             Mode = mode;
             Options = options;
 
-            if (canvas == null)
-            {
-                canvas = new Screenshot().CaptureFullscreen();
-            }
-
             IsFullscreen = !IsEditorMode || Options.ImageEditorStartMode == ImageEditorStartMode.Fullscreen;
 
-            ClientArea = CaptureHelpers.GetScreenBounds0Based();
+            if (IsFullscreen && Options.ActiveMonitorMode)
+            {
+                ScreenBounds = CaptureHelpers.GetActiveScreenBounds();
+
+                if (canvas == null)
+                {
+                    canvas = new Screenshot().CaptureRectangle(ScreenBounds);
+                }
+
+                Helpers.LockCursorToWindow(this);
+            }
+            else
+            {
+                ScreenBounds = CaptureHelpers.GetScreenBounds();
+
+                if (canvas == null)
+                {
+                    canvas = new Screenshot().CaptureRectangle(ScreenBounds);
+                }
+            }
+
+            ClientArea = new Rectangle(0, 0, ScreenBounds.Width, ScreenBounds.Height);
             CanvasRectangle = ClientArea;
 
             timerStart = new Stopwatch();
@@ -195,18 +212,7 @@ namespace ShareX.ScreenCaptureLib
             if (IsFullscreen)
             {
                 FormBorderStyle = FormBorderStyle.None;
-
-                if (Options.ActiveMonitorMode)
-                {
-                    Bounds = CaptureHelpers.GetActiveScreenBounds();
-
-                    Helpers.LockCursorToWindow(this);
-                }
-                else
-                {
-                    Bounds = CaptureHelpers.GetScreenBounds();
-                }
-
+                Bounds = ScreenBounds;
                 ShowInTaskbar = false;
 #if !DEBUG
                 TopMost = true;
@@ -1079,7 +1085,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsFullscreen)
             {
-                Rectangle rectScreen = CaptureHelpers.GetActiveScreenBounds0Based();
+                Rectangle rectScreen = CaptureHelpers.GetActiveScreenBounds();
+                rectScreen = RectangleToClient(rectScreen);
                 textPosition = textPosition.Add(rectScreen.Location);
             }
 
@@ -1520,7 +1527,7 @@ namespace ShareX.ScreenCaptureLib
                 if (MonitorIndex < screens.Length)
                 {
                     Screen screen = screens[MonitorIndex];
-                    Rectangle screenRect = CaptureHelpers.ScreenToClient(screen.Bounds);
+                    Rectangle screenRect = RectangleToClient(screen.Bounds);
 
                     using (Bitmap bmp = ShapeManager.RenderOutputImage(Canvas))
                     {
