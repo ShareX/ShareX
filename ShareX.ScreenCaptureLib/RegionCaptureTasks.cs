@@ -175,8 +175,8 @@ namespace ShareX.ScreenCaptureLib
             if (bmp != null && gp != null)
             {
                 Rectangle regionArea = Rectangle.Round(gp.GetBounds());
-                Rectangle screenRectangle = CaptureHelpers.GetScreenBounds0Based();
-                resultArea = Rectangle.Intersect(regionArea, screenRectangle);
+                Rectangle screenRectangle = CaptureHelpers.GetScreenBounds();
+                resultArea = Rectangle.Intersect(regionArea, new Rectangle(0, 0, screenRectangle.Width, screenRectangle.Height));
 
                 if (resultArea.IsValid())
                 {

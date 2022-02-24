@@ -1303,17 +1303,17 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Point mousePos = InputManager.ClientMousePosition;
-            Rectangle currentScreenRect0Based = CaptureHelpers.GetActiveScreenBounds0Based();
+            Rectangle activeScreenClientRect = RectangleToClient(CaptureHelpers.GetActiveScreenBounds());
             int x = mousePos.X + cursorOffsetX;
 
-            if (x + totalSize.Width > currentScreenRect0Based.Right)
+            if (x + totalSize.Width > activeScreenClientRect.Right)
             {
                 x = mousePos.X - cursorOffsetX - totalSize.Width;
             }
 
             int y = mousePos.Y + cursorOffsetY;
 
-            if (y + totalSize.Height > currentScreenRect0Based.Bottom)
+            if (y + totalSize.Height > activeScreenClientRect.Bottom)
             {
                 y = mousePos.Y - cursorOffsetY - totalSize.Height;
             }
@@ -1537,7 +1537,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Result == RegionResult.ActiveMonitor)
             {
-                Rectangle activeScreenRect = CaptureHelpers.GetActiveScreenBounds0Based();
+                Rectangle activeScreenRect = RectangleToClient(CaptureHelpers.GetActiveScreenBounds());
 
                 using (Bitmap bmp = ShapeManager.RenderOutputImage(Canvas))
                 {

@@ -42,7 +42,7 @@ namespace ShareX.HelpersLib
             return Screen.AllScreens.Select(x => x.WorkingArea).Combine();
         }
 
-        public static Rectangle GetScreenBounds2()
+        private static Rectangle GetScreenBounds2()
         {
             Point topLeft = Point.Empty;
             Point bottomRight = Point.Empty;
@@ -58,7 +58,7 @@ namespace ShareX.HelpersLib
             return new Rectangle(topLeft.X, topLeft.Y, bottomRight.X + Math.Abs(topLeft.X), bottomRight.Y + Math.Abs(topLeft.Y));
         }
 
-        public static Rectangle GetScreenBounds3()
+        private static Rectangle GetScreenBounds3()
         {
             Point topLeft = Point.Empty;
             Point bottomRight = Point.Empty;
@@ -74,7 +74,7 @@ namespace ShareX.HelpersLib
             return new Rectangle(topLeft.X, topLeft.Y, bottomRight.X + Math.Abs(topLeft.X), bottomRight.Y + Math.Abs(topLeft.Y));
         }
 
-        public static Rectangle GetScreenBounds4()
+        private static Rectangle GetScreenBounds4()
         {
             return Screen.AllScreens.Select(x => x.Bounds).Combine();
         }
@@ -92,21 +92,6 @@ namespace ShareX.HelpersLib
         public static Rectangle GetPrimaryScreenBounds()
         {
             return Screen.PrimaryScreen.Bounds;
-        }
-
-        public static Rectangle GetScreenBounds0Based()
-        {
-            return ScreenToClient(GetScreenBounds());
-        }
-
-        public static Rectangle GetActiveScreenBounds0Based()
-        {
-            return ScreenToClient(GetActiveScreenBounds());
-        }
-
-        public static Rectangle GetPrimaryScreenBounds0Based()
-        {
-            return ScreenToClient(GetPrimaryScreenBounds());
         }
 
         public static Point ScreenToClient(Point p)
@@ -141,11 +126,6 @@ namespace ShareX.HelpersLib
             }
 
             return Point.Empty;
-        }
-
-        public static Point GetZeroBasedMousePosition()
-        {
-            return ScreenToClient(GetCursorPosition());
         }
 
         public static void SetCursorPosition(int x, int y)
@@ -188,8 +168,8 @@ namespace ShareX.HelpersLib
             Color targetColor = GetPixelColor(x, y);
 
             return targetColor.R.IsBetween((byte)(color.R - variation), (byte)(color.R + variation)) &&
-                   targetColor.G.IsBetween((byte)(color.G - variation), (byte)(color.G + variation)) &&
-                   targetColor.B.IsBetween((byte)(color.B - variation), (byte)(color.B + variation));
+                targetColor.G.IsBetween((byte)(color.G - variation), (byte)(color.G + variation)) &&
+                targetColor.B.IsBetween((byte)(color.B - variation), (byte)(color.B + variation));
         }
 
         public static Rectangle CreateRectangle(int x, int y, int x2, int y2)
