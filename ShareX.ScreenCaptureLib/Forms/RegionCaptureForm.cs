@@ -67,6 +67,8 @@ namespace ShareX.ScreenCaptureLib
 
         internal Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
 
+        private static List<float> ZoomFactors = new List<float> { .2f, .3f, .4f, .5f, .6f, .7f, .8f, .9f, 1f, 1.25f, 1.5f, 1.75f, 2f, 2.5f, 3f, 3.5f, 4f, 4.5f, 5f, 5.5f, 6f };
+
         internal float ZoomFactor
         {
             get
@@ -75,7 +77,7 @@ namespace ShareX.ScreenCaptureLib
             }
             set
             {
-                zoomFactor = value.Clamp(0.2f, 6f);
+                zoomFactor = value.Clamp(ZoomFactors.First(), ZoomFactors.Last());
             }
         }
 
@@ -704,40 +706,25 @@ namespace ShareX.ScreenCaptureLib
 
         private void Zoom(bool zoomIn, bool atMouse = true)
         {
-            PointF clientCenter = new PointF(ClientArea.Width / 2f, ClientArea.Height / 2f);
-            PointF scaledCenterBefore = atMouse ? ScaledClientMousePosition : clientCenter.Scale(1 / zoomFactor);
-
+            float nearestValidZoomFactor = ZoomFactors.OrderBy(n => Math.Abs(n - ZoomFactor)).First();
+            int zoomIndex = ZoomFactors.IndexOf(nearestValidZoomFactor);
             if (zoomIn)
             {
-                if (ZoomFactor >= 2f)
-                {
-                    ZoomFactor += 0.5f;
-                }
-                else if (ZoomFactor >= 1f)
-                {
-                    ZoomFactor += 0.25f;
-                }
-                else
-                {
-                    ZoomFactor += 0.1f;
-                }
+                if (ZoomFactor < nearestValidZoomFactor)
+                    ZoomFactor = nearestValidZoomFactor;
+                else if (zoomIndex < ZoomFactors.Count - 1)
+                    ZoomFactor = ZoomFactors[zoomIndex + 1];
             }
             else
             {
-                if (ZoomFactor <= 1f)
-                {
-                    ZoomFactor -= 0.1f;
-                }
-                else if (ZoomFactor <= 2f)
-                {
-                    ZoomFactor -= 0.25f;
-                }
-                else
-                {
-                    ZoomFactor -= 0.5f;
-                }
+                if (ZoomFactor > nearestValidZoomFactor)
+                    ZoomFactor = nearestValidZoomFactor;
+                else if (zoomIndex > 0)
+                    ZoomFactor = ZoomFactors[zoomIndex - 1];
             }
 
+            PointF clientCenter = new PointF(ClientArea.Width / 2f, ClientArea.Height / 2f);
+            PointF scaledCenterBefore = atMouse ? ScaledClientMousePosition : clientCenter.Scale(1 / zoomFactor);
             PointF scaledCenterAfter = atMouse ? ScaledClientMousePosition : clientCenter.Scale(1 / zoomFactor);
             if (Pan(scaledCenterAfter.X - scaledCenterBefore.X, scaledCenterAfter.Y - scaledCenterBefore.Y))
             {
