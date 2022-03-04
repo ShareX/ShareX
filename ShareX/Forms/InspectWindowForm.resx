@@ -135,6 +135,9 @@
   <data name="rtbInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="rtbInfo.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;rtbInfo.Name" xml:space="preserve">
     <value>rtbInfo</value>
   </data>
@@ -172,7 +175,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnInspectWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -196,7 +199,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnInspectWindow.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnInspectControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 8</value>
@@ -220,7 +223,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnInspectControl.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 8</value>
@@ -244,6 +247,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRefresh.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnPinToTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>460, 8</value>
+  </data>
+  <data name="btnPinToTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 23</value>
+  </data>
+  <data name="btnPinToTop.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnPinToTop.Text" xml:space="preserve">
+    <value>Pin to Top</value>
+  </data>
+  <data name="&gt;&gt;btnPinToTop.Name" xml:space="preserve">
+    <value>btnPinToTop</value>
+  </data>
+  <data name="&gt;&gt;btnPinToTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPinToTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnPinToTop.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

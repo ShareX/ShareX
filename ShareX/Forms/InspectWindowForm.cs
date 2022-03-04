@@ -124,5 +124,17 @@ namespace ShareX
         {
             UpdateWindowInfo();
         }
+
+        private void btnPinToTop_Click(object sender, EventArgs e)
+        {
+            if (SelectedWindow == null) return;
+            // Determine current Pinned status to toggle pin
+            IntPtr style = NativeMethods.GetWindowLong(SelectedWindow.Handle, NativeConstants.GWL_EXSTYLE);
+            SpecialWindowHandles flag = (style.ToInt32() & (int)WindowStyles.WS_EX_TOPMOST) != 0 ?
+                SpecialWindowHandles.HWND_NOTOPMOST : SpecialWindowHandles.HWND_TOPMOST;
+
+            NativeMethods.SetWindowPos(SelectedWindow.Handle, (IntPtr)flag,
+                0, 0, 0, 0, SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE);
+        }
     }
 }

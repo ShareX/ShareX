@@ -35,6 +35,7 @@ namespace ShareX
             this.btnInspectWindow = new System.Windows.Forms.Button();
             this.btnInspectControl = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnPinToTop = new System.Windows.Forms.Button();
             this.pInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,10 +75,18 @@ namespace ShareX
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // btnPinToTop
+            // 
+            resources.ApplyResources(this.btnPinToTop, "btnPinToTop");
+            this.btnPinToTop.Name = "btnPinToTop";
+            this.btnPinToTop.UseVisualStyleBackColor = true;
+            this.btnPinToTop.Click += new System.EventHandler(this.btnPinToTop_Click);
+            // 
             // InspectWindowForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnPinToTop);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnInspectControl);
             this.Controls.Add(this.btnInspectWindow);
@@ -95,5 +104,6 @@ namespace ShareX
         private System.Windows.Forms.Button btnInspectWindow;
         private System.Windows.Forms.Button btnInspectControl;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnPinToTop;
     }
 }
