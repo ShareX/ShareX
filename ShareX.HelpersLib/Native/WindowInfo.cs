@@ -104,6 +104,19 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public bool TopMost
+        {
+            get
+            {
+                return ExStyle.HasFlag(WindowStyles.WS_EX_TOPMOST);
+            }
+            set
+            {
+                SetWindowPos(value ? SpecialWindowHandles.HWND_TOPMOST : SpecialWindowHandles.HWND_NOTOPMOST,
+                    SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE);
+            }
+        }
+
         public Icon Icon => NativeMethods.GetApplicationIcon(Handle);
 
         public bool IsMaximized => NativeMethods.IsZoomed(Handle);
@@ -139,17 +152,22 @@ namespace ShareX.HelpersLib
 
         public void SetWindowPos(SetWindowPosFlags flags)
         {
-            SetWindowPos(0, 0, 0, 0, flags);
+            SetWindowPos(SpecialWindowHandles.HWND_TOP, 0, 0, 0, 0, flags);
         }
 
         public void SetWindowPos(Rectangle rect, SetWindowPosFlags flags)
         {
-            SetWindowPos(rect.X, rect.Y, rect.Width, rect.Height, flags);
+            SetWindowPos(SpecialWindowHandles.HWND_TOP, rect.X, rect.Y, rect.Width, rect.Height, flags);
         }
 
-        public void SetWindowPos(int x, int y, int width, int height, SetWindowPosFlags flags)
+        public void SetWindowPos(SpecialWindowHandles specialWindowHandles, SetWindowPosFlags flags)
         {
-            NativeMethods.SetWindowPos(Handle, IntPtr.Zero, x, y, width, height, flags);
+            SetWindowPos(specialWindowHandles, 0, 0, 0, 0, flags);
+        }
+
+        public void SetWindowPos(SpecialWindowHandles specialWindowHandles, int x, int y, int width, int height, SetWindowPosFlags flags)
+        {
+            NativeMethods.SetWindowPos(Handle, (IntPtr)specialWindowHandles, x, y, width, height, flags);
         }
 
         public override string ToString()
