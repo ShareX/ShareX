@@ -1085,4 +1085,7 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write image to path:</value>
   </data>
+  <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
+    <value>Extended window styles</value>
+  </data>
 </root>

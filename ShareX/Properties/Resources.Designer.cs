@@ -1826,6 +1826,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extended window styles.
+        /// </summary>
+        public static string InspectWindow_ExtendedWindowStyles {
+            get {
+                return ResourceManager.GetString("InspectWindow_ExtendedWindowStyles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Process file name.
         /// </summary>
         public static string InspectWindow_ProcessFileName {
