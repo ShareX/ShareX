@@ -34,22 +34,23 @@ namespace ShareX
     public partial class InspectWindowForm : Form
     {
         public WindowInfo SelectedWindow { get; private set; }
+        public bool IsWindow { get; private set; }
 
         public InspectWindowForm()
         {
             InitializeComponent();
             rtbInfo.AddContextMenu();
             ShareXResources.ApplyTheme(this);
-            SelectHandle();
+            SelectHandle(true);
         }
 
-        private bool SelectHandle()
+        private bool SelectHandle(bool isWindow)
         {
-            return SelectHandle(new RegionCaptureOptions());
-        }
+            RegionCaptureOptions options = new RegionCaptureOptions()
+            {
+                DetectControls = !isWindow
+            };
 
-        private bool SelectHandle(RegionCaptureOptions options)
-        {
             SelectedWindow = null;
 
             SimpleWindowInfo simpleWindowInfo = RegionCaptureTasks.GetWindowInfo(options);
@@ -57,6 +58,7 @@ namespace ShareX
             if (simpleWindowInfo != null)
             {
                 SelectedWindow = new WindowInfo(simpleWindowInfo.Handle);
+                IsWindow = isWindow;
                 UpdateWindowInfo();
                 return true;
             }
@@ -66,6 +68,7 @@ namespace ShareX
 
         private void UpdateWindowInfo()
         {
+            btnPinToTop.Enabled = SelectedWindow != null && IsWindow;
             rtbInfo.ResetText();
 
             if (SelectedWindow != null)
@@ -80,7 +83,7 @@ namespace ShareX
                     AddInfo(Resources.InspectWindow_ProcessIdentifier, SelectedWindow.ProcessId.ToString());
                     AddInfo(Resources.InspectWindow_WindowRectangle, SelectedWindow.Rectangle.ToStringProper());
                     AddInfo(Resources.InspectWindow_ClientRectangle, SelectedWindow.ClientRectangle.ToStringProper());
-                    AddInfo(Resources.InspectWindow_WindowStyles, SelectedWindow.Style.ToString());
+                    AddInfo(Resources.InspectWindow_WindowStyles, SelectedWindow.Style.ToString().Replace(", ", "\r\n"));
                 }
                 catch
                 {
@@ -107,17 +110,12 @@ namespace ShareX
 
         private void btnInspectWindow_Click(object sender, EventArgs e)
         {
-            RegionCaptureOptions options = new RegionCaptureOptions()
-            {
-                DetectControls = false
-            };
-
-            SelectHandle(options);
+            SelectHandle(true);
         }
 
         private void btnInspectControl_Click(object sender, EventArgs e)
         {
-            SelectHandle();
+            SelectHandle(false);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -128,13 +126,9 @@ namespace ShareX
         private void btnPinToTop_Click(object sender, EventArgs e)
         {
             if (SelectedWindow == null) return;
-            // Determine current Pinned status to toggle pin
-            IntPtr style = NativeMethods.GetWindowLong(SelectedWindow.Handle, NativeConstants.GWL_EXSTYLE);
-            SpecialWindowHandles flag = (style.ToInt32() & (int)WindowStyles.WS_EX_TOPMOST) != 0 ?
-                SpecialWindowHandles.HWND_NOTOPMOST : SpecialWindowHandles.HWND_TOPMOST;
 
-            NativeMethods.SetWindowPos(SelectedWindow.Handle, (IntPtr)flag,
-                0, 0, 0, 0, SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE);
+            WindowInfo windowInfo = new WindowInfo(SelectedWindow.Handle);
+            windowInfo.TopMost = !windowInfo.TopMost;
         }
     }
 }

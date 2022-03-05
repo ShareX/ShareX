@@ -163,7 +163,7 @@
     <value>672, 488</value>
   </data>
   <data name="pInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;pInfo.Name" xml:space="preserve">
     <value>pInfo</value>
@@ -248,6 +248,9 @@
   </data>
   <data name="&gt;&gt;btnRefresh.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnPinToTop.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btnPinToTop.Location" type="System.Drawing.Point, System.Drawing">
     <value>464, 8</value>
