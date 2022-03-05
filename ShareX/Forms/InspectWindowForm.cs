@@ -130,6 +130,8 @@ namespace ShareX
 
             WindowInfo windowInfo = new WindowInfo(SelectedWindow.Handle);
             windowInfo.TopMost = !windowInfo.TopMost;
+
+            UpdateWindowInfo();
         }
     }
 }
