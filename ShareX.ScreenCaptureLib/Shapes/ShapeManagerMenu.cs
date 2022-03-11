@@ -597,7 +597,7 @@ namespace ShareX.ScreenCaptureLib
             tsddbShapeOptions.DropDownItems.Add(tslnudStepFontSize);
 
             tslnudStartingStepValue = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateToolbar_StartingStepValue);
-            tslnudStartingStepValue.Content.Minimum = 1;
+            tslnudStartingStepValue.Content.Minimum = 0;
             tslnudStartingStepValue.Content.Maximum = 10000;
             tslnudStartingStepValue.Content.ValueChanged = (sender, e) =>
             {
