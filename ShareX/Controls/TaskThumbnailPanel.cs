@@ -94,6 +94,9 @@ namespace ShareX
             }
         }
 
+        public delegate void TaskThumbnailPanelEventHandler(TaskThumbnailPanel panel);
+        public event TaskThumbnailPanelEventHandler ImagePreviewRequested;
+
         public WorkerTask Task { get; private set; }
 
         private bool selected;
@@ -238,6 +241,11 @@ namespace ShareX
             InitializeComponent();
             UpdateTheme();
             UpdateTitle();
+        }
+
+        protected void OnImagePreviewRequested()
+        {
+            ImagePreviewRequested?.Invoke(this);
         }
 
         public void UpdateTheme()
@@ -428,7 +436,7 @@ namespace ShareX
 
                                 try
                                 {
-                                    ImageViewer.ShowImage(filePath);
+                                    OnImagePreviewRequested();
                                 }
                                 finally
                                 {
@@ -449,7 +457,7 @@ namespace ShareX
 
                             try
                             {
-                                ImageViewer.ShowImage(filePath);
+                                OnImagePreviewRequested();
                             }
                             finally
                             {

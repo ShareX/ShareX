@@ -31,14 +31,66 @@ namespace ShareX.HelpersLib
 {
     public class ImageViewer : Form
     {
-        private Image image;
+        public Image CurrentImage { get; private set; }
+        public bool SupportsImageNavigation => Images != null && Images.Length > 0;
+        public string[] Images { get; private set; }
+        public int CurrentImageIndex { get; private set; }
 
         private ImageViewer(Image img)
         {
-            image = img;
-
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+
+            LoadImage(img);
+        }
+
+        private ImageViewer(string[] images, int currentImageIndex = 0)
+        {
+            InitializeComponent();
+            ShareXResources.ApplyTheme(this);
+
+            Images = images;
+            CurrentImageIndex = currentImageIndex;
+            LoadCurrentImage();
+        }
+
+        private void LoadImage(Image img)
+        {
+            CurrentImage?.Dispose();
+            CurrentImage = img;
+            pbPreview.LoadImage(CurrentImage);
+        }
+
+        private void LoadCurrentImage()
+        {
+            if (!SupportsImageNavigation) return;
+
+            CurrentImageIndex = CurrentImageIndex.Clamp(0, Images.Length - 1);
+            string imageFilePath = Images[CurrentImageIndex];
+            Image img = ImageHelpers.LoadImage(imageFilePath);
+            LoadImage(img);
+        }
+
+        private void NavigateImage(int position)
+        {
+            if (!SupportsImageNavigation) return;
+
+            int nextImageIndex = CurrentImageIndex + position;
+
+            if (nextImageIndex > Images.Length - 1)
+            {
+                nextImageIndex = 0;
+            }
+            else if (nextImageIndex < 0)
+            {
+                nextImageIndex = Images.Length - 1;
+            }
+
+            if (CurrentImageIndex != nextImageIndex)
+            {
+                CurrentImageIndex = nextImageIndex;
+                LoadCurrentImage();
+            }
         }
 
         public static void ShowImage(Image img)
@@ -72,12 +124,23 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void ShowScreenshot_Shown(object sender, EventArgs e)
+        public static void ShowImage(string[] images, int currentImageIndex = 0)
+        {
+            if (images != null && images.Length > 0)
+            {
+                using (ImageViewer viewer = new ImageViewer(images, currentImageIndex))
+                {
+                    viewer.ShowDialog();
+                }
+            }
+        }
+
+        private void ImageViewer_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
         }
 
-        private void ShowScreenshot_Deactivate(object sender, EventArgs e)
+        private void ImageViewer_Deactivate(object sender, EventArgs e)
         {
             Close();
         }
@@ -89,23 +152,37 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Space)
+            switch (e.KeyCode)
             {
-                Close();
+                case Keys.Escape:
+                case Keys.Enter:
+                case Keys.Space:
+                    Close();
+                    break;
+                case Keys.Left:
+                    NavigateImage(-1);
+                    break;
+                case Keys.Right:
+                    NavigateImage(1);
+                    break;
+            }
+        }
+
+        private void pbPreview_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                case Keys.Right:
+                    e.IsInputKey = true;
+                    break;
             }
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -113,18 +190,11 @@ namespace ShareX.HelpersLib
                 components.Dispose();
             }
 
-            if (image != null)
-            {
-                image.Dispose();
-            }
+            CurrentImage?.Dispose();
 
             base.Dispose(disposing);
         }
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             pbPreview = new MyPictureBox();
@@ -134,6 +204,7 @@ namespace ShareX.HelpersLib
             Bounds = CaptureHelpers.GetActiveScreenBounds();
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            // TODO: Translate
             Text = "ShareX - Image viewer";
             TopMost = true;
             WindowState = FormWindowState.Normal;
@@ -148,13 +219,13 @@ namespace ShareX.HelpersLib
             pbPreview.ShowImageSizeLabel = true;
             pbPreview.Size = new Size(96, 100);
             pbPreview.TabIndex = 0;
-            pbPreview.LoadImage(image);
             Controls.Add(pbPreview);
 
-            Shown += new EventHandler(ShowScreenshot_Shown);
-            Deactivate += new EventHandler(ShowScreenshot_Deactivate);
+            Shown += ImageViewer_Shown;
+            Deactivate += ImageViewer_Deactivate;
             pbPreview.MouseDown += pbPreview_MouseDown;
             pbPreview.KeyDown += pbPreview_KeyDown;
+            pbPreview.PreviewKeyDown += pbPreview_PreviewKeyDown;
 
             ResumeLayout(false);
         }
