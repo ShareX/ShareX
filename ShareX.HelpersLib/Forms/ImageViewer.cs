@@ -69,6 +69,7 @@ namespace ShareX.HelpersLib
             string imageFilePath = Images[CurrentImageIndex];
             Image img = ImageHelpers.LoadImage(imageFilePath);
             LoadImage(img);
+            UpdateIndexLabel();
         }
 
         private void NavigateImage(int position)
@@ -91,6 +92,14 @@ namespace ShareX.HelpersLib
                 CurrentImageIndex = nextImageIndex;
                 LoadCurrentImage();
             }
+        }
+
+        private void UpdateIndexLabel()
+        {
+            if (!SupportsImageNavigation) return;
+
+            lblIndex.Text = CurrentImageIndex + 1 + " / " + Images.Length;
+            lblIndex.Location = new Point((ClientSize.Width - lblIndex.Width) / 2, -1);
         }
 
         public static void ShowImage(Image img)
@@ -137,6 +146,8 @@ namespace ShareX.HelpersLib
 
         private void ImageViewer_Shown(object sender, EventArgs e)
         {
+            UpdateIndexLabel();
+
             this.ForceActivate();
         }
 
@@ -198,6 +209,7 @@ namespace ShareX.HelpersLib
         private void InitializeComponent()
         {
             pbPreview = new MyPictureBox();
+            lblIndex = new Label();
             SuspendLayout();
 
             BackColor = SystemColors.Window;
@@ -209,6 +221,12 @@ namespace ShareX.HelpersLib
             TopMost = true;
             WindowState = FormWindowState.Normal;
             StartPosition = FormStartPosition.Manual;
+
+            lblIndex.AutoSize = true;
+            lblIndex.Font = new Font("Arial", 20f);
+            lblIndex.Padding = new Padding(5);
+            lblIndex.TextAlign = ContentAlignment.MiddleCenter;
+            Controls.Add(lblIndex);
 
             pbPreview.Cursor = Cursors.Hand;
             pbPreview.Dock = DockStyle.Fill;
@@ -231,6 +249,7 @@ namespace ShareX.HelpersLib
         }
 
         private MyPictureBox pbPreview;
+        private Label lblIndex;
 
         #endregion Windows Form Designer generated code
     }
