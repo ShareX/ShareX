@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -52,6 +53,7 @@ namespace ShareX.HelpersLib
 
             Images = images;
             CurrentImageIndex = currentImageIndex;
+            FilterImageFiles();
             LoadCurrentImage();
         }
 
@@ -93,6 +95,37 @@ namespace ShareX.HelpersLib
                 CurrentImageIndex = nextImageIndex;
                 LoadCurrentImage();
             }
+        }
+
+        private void FilterImageFiles()
+        {
+            List<string> filteredImages = new List<string>();
+
+            for (int i = 0; i < Images.Length; i++)
+            {
+                string imageFilePath = Images[i];
+
+                bool isImageFile = !string.IsNullOrEmpty(imageFilePath) && Helpers.IsImageFile(imageFilePath);
+
+                if (i == CurrentImageIndex)
+                {
+                    if (isImageFile)
+                    {
+                        CurrentImageIndex = filteredImages.Count;
+                    }
+                    else
+                    {
+                        CurrentImageIndex = 0;
+                    }
+                }
+
+                if (isImageFile)
+                {
+                    filteredImages.Add(imageFilePath);
+                }
+            }
+
+            Images = filteredImages.ToArray();
         }
 
         private void UpdateIndexLabel()
