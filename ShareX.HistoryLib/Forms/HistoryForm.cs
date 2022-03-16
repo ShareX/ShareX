@@ -543,6 +543,35 @@ namespace ShareX.HistoryLib
             }
         }
 
+        private void pbThumbnail_MouseDown(object sender, MouseEventArgs e)
+        {
+            pbThumbnail.Enabled = false;
+
+            int currentImageIndex = lvHistory.SelectedIndex;
+            int modifiedImageIndex = 0;
+            int halfRange = 100;
+            int startIndex = Math.Max(currentImageIndex - halfRange, 0);
+            int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, filteredHistoryItems.Length);
+
+            List<string> filteredImages = new List<string>();
+
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                string imageFilePath = filteredHistoryItems[i].FilePath;
+
+                if (i == currentImageIndex)
+                {
+                    modifiedImageIndex = filteredImages.Count;
+                }
+
+                filteredImages.Add(imageFilePath);
+            }
+
+            ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
+
+            pbThumbnail.Enabled = true;
+        }
+
         #endregion Form events
     }
 }

@@ -31,21 +31,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.tscHistory = new System.Windows.Forms.ToolStripContainer();
-            this.gbAdvancedSearch = new System.Windows.Forms.GroupBox();
-            this.btnAdvancedSearchReset = new System.Windows.Forms.Button();
-            this.lblURLFilter = new System.Windows.Forms.Label();
-            this.txtURLFilter = new System.Windows.Forms.TextBox();
-            this.lblFilenameFilter = new System.Windows.Forms.Label();
-            this.cbHostFilterSelection = new System.Windows.Forms.ComboBox();
-            this.cbTypeFilterSelection = new System.Windows.Forms.ComboBox();
-            this.cbHostFilter = new System.Windows.Forms.CheckBox();
-            this.cbTypeFilter = new System.Windows.Forms.CheckBox();
-            this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
-            this.lblFilterFrom = new System.Windows.Forms.Label();
-            this.lblFilterTo = new System.Windows.Forms.Label();
-            this.cbDateFilter = new System.Windows.Forms.CheckBox();
-            this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
-            this.txtFilenameFilter = new System.Windows.Forms.TextBox();
             this.lvHistory = new ShareX.HelpersLib.MyListView();
             this.chIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -61,16 +46,31 @@
             this.tsbShowStats = new System.Windows.Forms.ToolStripButton();
             this.tss2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSettings = new System.Windows.Forms.ToolStripButton();
+            this.gbAdvancedSearch = new System.Windows.Forms.GroupBox();
+            this.btnAdvancedSearchClose = new System.Windows.Forms.Button();
+            this.btnAdvancedSearchReset = new System.Windows.Forms.Button();
+            this.lblURLFilter = new System.Windows.Forms.Label();
+            this.txtURLFilter = new System.Windows.Forms.TextBox();
+            this.lblFilenameFilter = new System.Windows.Forms.Label();
+            this.cbHostFilterSelection = new System.Windows.Forms.ComboBox();
+            this.cbTypeFilterSelection = new System.Windows.Forms.ComboBox();
+            this.cbHostFilter = new System.Windows.Forms.CheckBox();
+            this.cbTypeFilter = new System.Windows.Forms.CheckBox();
+            this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
+            this.lblFilterFrom = new System.Windows.Forms.Label();
+            this.lblFilterTo = new System.Windows.Forms.Label();
+            this.cbDateFilter = new System.Windows.Forms.CheckBox();
+            this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
+            this.txtFilenameFilter = new System.Windows.Forms.TextBox();
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.scHistoryItemInfo = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.pgHistoryItemInfo = new System.Windows.Forms.PropertyGrid();
-            this.btnAdvancedSearchClose = new System.Windows.Forms.Button();
             this.tscHistory.ContentPanel.SuspendLayout();
             this.tscHistory.TopToolStripPanel.SuspendLayout();
             this.tscHistory.SuspendLayout();
-            this.gbAdvancedSearch.SuspendLayout();
             this.tsHistory.SuspendLayout();
+            this.gbAdvancedSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -94,114 +94,6 @@
             // tscHistory.TopToolStripPanel
             // 
             this.tscHistory.TopToolStripPanel.Controls.Add(this.tsHistory);
-            // 
-            // gbAdvancedSearch
-            // 
-            this.gbAdvancedSearch.Controls.Add(this.btnAdvancedSearchClose);
-            this.gbAdvancedSearch.Controls.Add(this.btnAdvancedSearchReset);
-            this.gbAdvancedSearch.Controls.Add(this.lblURLFilter);
-            this.gbAdvancedSearch.Controls.Add(this.txtURLFilter);
-            this.gbAdvancedSearch.Controls.Add(this.lblFilenameFilter);
-            this.gbAdvancedSearch.Controls.Add(this.cbHostFilterSelection);
-            this.gbAdvancedSearch.Controls.Add(this.cbTypeFilterSelection);
-            this.gbAdvancedSearch.Controls.Add(this.cbHostFilter);
-            this.gbAdvancedSearch.Controls.Add(this.cbTypeFilter);
-            this.gbAdvancedSearch.Controls.Add(this.dtpFilterFrom);
-            this.gbAdvancedSearch.Controls.Add(this.lblFilterFrom);
-            this.gbAdvancedSearch.Controls.Add(this.lblFilterTo);
-            this.gbAdvancedSearch.Controls.Add(this.cbDateFilter);
-            this.gbAdvancedSearch.Controls.Add(this.dtpFilterTo);
-            this.gbAdvancedSearch.Controls.Add(this.txtFilenameFilter);
-            resources.ApplyResources(this.gbAdvancedSearch, "gbAdvancedSearch");
-            this.gbAdvancedSearch.Name = "gbAdvancedSearch";
-            this.gbAdvancedSearch.TabStop = false;
-            // 
-            // btnAdvancedSearchReset
-            // 
-            resources.ApplyResources(this.btnAdvancedSearchReset, "btnAdvancedSearchReset");
-            this.btnAdvancedSearchReset.Name = "btnAdvancedSearchReset";
-            this.btnAdvancedSearchReset.UseVisualStyleBackColor = true;
-            this.btnAdvancedSearchReset.Click += new System.EventHandler(this.btnAdvancedSearchReset_Click);
-            // 
-            // lblURLFilter
-            // 
-            resources.ApplyResources(this.lblURLFilter, "lblURLFilter");
-            this.lblURLFilter.Name = "lblURLFilter";
-            // 
-            // txtURLFilter
-            // 
-            resources.ApplyResources(this.txtURLFilter, "txtURLFilter");
-            this.txtURLFilter.Name = "txtURLFilter";
-            this.txtURLFilter.TextChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
-            // 
-            // lblFilenameFilter
-            // 
-            resources.ApplyResources(this.lblFilenameFilter, "lblFilenameFilter");
-            this.lblFilenameFilter.Name = "lblFilenameFilter";
-            // 
-            // cbHostFilterSelection
-            // 
-            this.cbHostFilterSelection.FormattingEnabled = true;
-            resources.ApplyResources(this.cbHostFilterSelection, "cbHostFilterSelection");
-            this.cbHostFilterSelection.Name = "cbHostFilterSelection";
-            this.cbHostFilterSelection.SelectedIndexChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
-            // 
-            // cbTypeFilterSelection
-            // 
-            this.cbTypeFilterSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTypeFilterSelection.FormattingEnabled = true;
-            resources.ApplyResources(this.cbTypeFilterSelection, "cbTypeFilterSelection");
-            this.cbTypeFilterSelection.Name = "cbTypeFilterSelection";
-            this.cbTypeFilterSelection.SelectedIndexChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
-            // 
-            // cbHostFilter
-            // 
-            resources.ApplyResources(this.cbHostFilter, "cbHostFilter");
-            this.cbHostFilter.Name = "cbHostFilter";
-            this.cbHostFilter.UseVisualStyleBackColor = true;
-            this.cbHostFilter.CheckedChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
-            // 
-            // cbTypeFilter
-            // 
-            resources.ApplyResources(this.cbTypeFilter, "cbTypeFilter");
-            this.cbTypeFilter.Name = "cbTypeFilter";
-            this.cbTypeFilter.UseVisualStyleBackColor = true;
-            this.cbTypeFilter.CheckedChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
-            // 
-            // dtpFilterFrom
-            // 
-            resources.ApplyResources(this.dtpFilterFrom, "dtpFilterFrom");
-            this.dtpFilterFrom.Name = "dtpFilterFrom";
-            this.dtpFilterFrom.ValueChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
-            // 
-            // lblFilterFrom
-            // 
-            resources.ApplyResources(this.lblFilterFrom, "lblFilterFrom");
-            this.lblFilterFrom.Name = "lblFilterFrom";
-            // 
-            // lblFilterTo
-            // 
-            resources.ApplyResources(this.lblFilterTo, "lblFilterTo");
-            this.lblFilterTo.Name = "lblFilterTo";
-            // 
-            // cbDateFilter
-            // 
-            resources.ApplyResources(this.cbDateFilter, "cbDateFilter");
-            this.cbDateFilter.Name = "cbDateFilter";
-            this.cbDateFilter.UseVisualStyleBackColor = true;
-            this.cbDateFilter.CheckedChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
-            // 
-            // dtpFilterTo
-            // 
-            resources.ApplyResources(this.dtpFilterTo, "dtpFilterTo");
-            this.dtpFilterTo.Name = "dtpFilterTo";
-            this.dtpFilterTo.ValueChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
-            // 
-            // txtFilenameFilter
-            // 
-            resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
-            this.txtFilenameFilter.Name = "txtFilenameFilter";
-            this.txtFilenameFilter.TextChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
             // 
             // lvHistory
             // 
@@ -321,6 +213,121 @@
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
             // 
+            // gbAdvancedSearch
+            // 
+            this.gbAdvancedSearch.Controls.Add(this.btnAdvancedSearchClose);
+            this.gbAdvancedSearch.Controls.Add(this.btnAdvancedSearchReset);
+            this.gbAdvancedSearch.Controls.Add(this.lblURLFilter);
+            this.gbAdvancedSearch.Controls.Add(this.txtURLFilter);
+            this.gbAdvancedSearch.Controls.Add(this.lblFilenameFilter);
+            this.gbAdvancedSearch.Controls.Add(this.cbHostFilterSelection);
+            this.gbAdvancedSearch.Controls.Add(this.cbTypeFilterSelection);
+            this.gbAdvancedSearch.Controls.Add(this.cbHostFilter);
+            this.gbAdvancedSearch.Controls.Add(this.cbTypeFilter);
+            this.gbAdvancedSearch.Controls.Add(this.dtpFilterFrom);
+            this.gbAdvancedSearch.Controls.Add(this.lblFilterFrom);
+            this.gbAdvancedSearch.Controls.Add(this.lblFilterTo);
+            this.gbAdvancedSearch.Controls.Add(this.cbDateFilter);
+            this.gbAdvancedSearch.Controls.Add(this.dtpFilterTo);
+            this.gbAdvancedSearch.Controls.Add(this.txtFilenameFilter);
+            resources.ApplyResources(this.gbAdvancedSearch, "gbAdvancedSearch");
+            this.gbAdvancedSearch.Name = "gbAdvancedSearch";
+            this.gbAdvancedSearch.TabStop = false;
+            // 
+            // btnAdvancedSearchClose
+            // 
+            resources.ApplyResources(this.btnAdvancedSearchClose, "btnAdvancedSearchClose");
+            this.btnAdvancedSearchClose.Name = "btnAdvancedSearchClose";
+            this.btnAdvancedSearchClose.UseVisualStyleBackColor = true;
+            this.btnAdvancedSearchClose.Click += new System.EventHandler(this.btnAdvancedSearchClose_Click);
+            // 
+            // btnAdvancedSearchReset
+            // 
+            resources.ApplyResources(this.btnAdvancedSearchReset, "btnAdvancedSearchReset");
+            this.btnAdvancedSearchReset.Name = "btnAdvancedSearchReset";
+            this.btnAdvancedSearchReset.UseVisualStyleBackColor = true;
+            this.btnAdvancedSearchReset.Click += new System.EventHandler(this.btnAdvancedSearchReset_Click);
+            // 
+            // lblURLFilter
+            // 
+            resources.ApplyResources(this.lblURLFilter, "lblURLFilter");
+            this.lblURLFilter.Name = "lblURLFilter";
+            // 
+            // txtURLFilter
+            // 
+            resources.ApplyResources(this.txtURLFilter, "txtURLFilter");
+            this.txtURLFilter.Name = "txtURLFilter";
+            this.txtURLFilter.TextChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
+            // 
+            // lblFilenameFilter
+            // 
+            resources.ApplyResources(this.lblFilenameFilter, "lblFilenameFilter");
+            this.lblFilenameFilter.Name = "lblFilenameFilter";
+            // 
+            // cbHostFilterSelection
+            // 
+            this.cbHostFilterSelection.FormattingEnabled = true;
+            resources.ApplyResources(this.cbHostFilterSelection, "cbHostFilterSelection");
+            this.cbHostFilterSelection.Name = "cbHostFilterSelection";
+            this.cbHostFilterSelection.SelectedIndexChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
+            // 
+            // cbTypeFilterSelection
+            // 
+            this.cbTypeFilterSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTypeFilterSelection.FormattingEnabled = true;
+            resources.ApplyResources(this.cbTypeFilterSelection, "cbTypeFilterSelection");
+            this.cbTypeFilterSelection.Name = "cbTypeFilterSelection";
+            this.cbTypeFilterSelection.SelectedIndexChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
+            // 
+            // cbHostFilter
+            // 
+            resources.ApplyResources(this.cbHostFilter, "cbHostFilter");
+            this.cbHostFilter.Name = "cbHostFilter";
+            this.cbHostFilter.UseVisualStyleBackColor = true;
+            this.cbHostFilter.CheckedChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
+            // 
+            // cbTypeFilter
+            // 
+            resources.ApplyResources(this.cbTypeFilter, "cbTypeFilter");
+            this.cbTypeFilter.Name = "cbTypeFilter";
+            this.cbTypeFilter.UseVisualStyleBackColor = true;
+            this.cbTypeFilter.CheckedChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
+            // 
+            // dtpFilterFrom
+            // 
+            resources.ApplyResources(this.dtpFilterFrom, "dtpFilterFrom");
+            this.dtpFilterFrom.Name = "dtpFilterFrom";
+            this.dtpFilterFrom.ValueChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
+            // 
+            // lblFilterFrom
+            // 
+            resources.ApplyResources(this.lblFilterFrom, "lblFilterFrom");
+            this.lblFilterFrom.Name = "lblFilterFrom";
+            // 
+            // lblFilterTo
+            // 
+            resources.ApplyResources(this.lblFilterTo, "lblFilterTo");
+            this.lblFilterTo.Name = "lblFilterTo";
+            // 
+            // cbDateFilter
+            // 
+            resources.ApplyResources(this.cbDateFilter, "cbDateFilter");
+            this.cbDateFilter.Name = "cbDateFilter";
+            this.cbDateFilter.UseVisualStyleBackColor = true;
+            this.cbDateFilter.CheckedChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
+            // 
+            // dtpFilterTo
+            // 
+            resources.ApplyResources(this.dtpFilterTo, "dtpFilterTo");
+            this.dtpFilterTo.Name = "dtpFilterTo";
+            this.dtpFilterTo.ValueChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
+            // 
+            // txtFilenameFilter
+            // 
+            resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
+            this.txtFilenameFilter.Name = "txtFilenameFilter";
+            this.txtFilenameFilter.TextChanged += new System.EventHandler(this.AdvancedFilter_ValueChanged);
+            // 
             // scMain
             // 
             resources.ApplyResources(this.scMain, "scMain");
@@ -359,10 +366,10 @@
             this.pbThumbnail.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.pbThumbnail, "pbThumbnail");
             this.pbThumbnail.DrawCheckeredBackground = true;
-            this.pbThumbnail.FullscreenOnClick = true;
             this.pbThumbnail.Name = "pbThumbnail";
             this.pbThumbnail.PictureBoxBackColor = System.Drawing.SystemColors.Control;
             this.pbThumbnail.ShowImageSizeLabel = true;
+            this.pbThumbnail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbThumbnail_MouseDown);
             // 
             // pgHistoryItemInfo
             // 
@@ -370,13 +377,6 @@
             this.pgHistoryItemInfo.Name = "pgHistoryItemInfo";
             this.pgHistoryItemInfo.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgHistoryItemInfo.ToolbarVisible = false;
-            // 
-            // btnAdvancedSearchClose
-            // 
-            resources.ApplyResources(this.btnAdvancedSearchClose, "btnAdvancedSearchClose");
-            this.btnAdvancedSearchClose.Name = "btnAdvancedSearchClose";
-            this.btnAdvancedSearchClose.UseVisualStyleBackColor = true;
-            this.btnAdvancedSearchClose.Click += new System.EventHandler(this.btnAdvancedSearchClose_Click);
             // 
             // HistoryForm
             // 
@@ -395,10 +395,10 @@
             this.tscHistory.TopToolStripPanel.PerformLayout();
             this.tscHistory.ResumeLayout(false);
             this.tscHistory.PerformLayout();
-            this.gbAdvancedSearch.ResumeLayout(false);
-            this.gbAdvancedSearch.PerformLayout();
             this.tsHistory.ResumeLayout(false);
             this.tsHistory.PerformLayout();
+            this.gbAdvancedSearch.ResumeLayout(false);
+            this.gbAdvancedSearch.PerformLayout();
             this.scMain.Panel1.ResumeLayout(false);
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();

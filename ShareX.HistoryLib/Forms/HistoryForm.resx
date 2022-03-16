@@ -148,7 +148,7 @@
     <value>lvHistory</value>
   </data>
   <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
     <value>tscHistory.ContentPanel</value>
@@ -256,6 +256,300 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;tscHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chIcon.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chIcon.Width" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="chDateTime.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="chDateTime.Width" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="chFilename.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="chURL.Width" type="System.Int32, mscorlib">
+    <value>230</value>
+  </data>
+  <data name="tslSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 22</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="tstbSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="tstbSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 25</value>
+  </data>
+  <data name="tsbSearch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="tsbAdvancedSearch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbAdvancedSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>Advanced search...</value>
+  </data>
+  <data name="tss1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="tsbToggleMoreInfo.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>Toggle more info</value>
+  </data>
+  <data name="tsbShowStats.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbShowStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Show stats...</value>
+  </data>
+  <data name="tss2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="tsbSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Settings...</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchClose.Name" xml:space="preserve">
+    <value>btnAdvancedSearchClose</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchClose.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchClose.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchReset.Name" xml:space="preserve">
+    <value>btnAdvancedSearchReset</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchReset.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchReset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.Name" xml:space="preserve">
+    <value>lblURLFilter</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.Name" xml:space="preserve">
+    <value>txtURLFilter</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.Name" xml:space="preserve">
+    <value>lblFilenameFilter</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.Name" xml:space="preserve">
+    <value>cbHostFilterSelection</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.Name" xml:space="preserve">
+    <value>cbTypeFilterSelection</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.Name" xml:space="preserve">
+    <value>cbHostFilter</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.Name" xml:space="preserve">
+    <value>cbTypeFilter</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.Name" xml:space="preserve">
+    <value>dtpFilterFrom</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.Name" xml:space="preserve">
+    <value>lblFilterFrom</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.Name" xml:space="preserve">
+    <value>lblFilterTo</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.Name" xml:space="preserve">
+    <value>cbDateFilter</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.Name" xml:space="preserve">
+    <value>dtpFilterTo</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.Name" xml:space="preserve">
+    <value>txtFilenameFilter</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="gbAdvancedSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="gbAdvancedSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 213</value>
+  </data>
+  <data name="gbAdvancedSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>Advanced search</value>
+  </data>
+  <data name="gbAdvancedSearch.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;gbAdvancedSearch.Name" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;gbAdvancedSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbAdvancedSearch.Parent" xml:space="preserve">
+    <value>scHistoryItemInfo.Panel1</value>
+  </data>
+  <data name="&gt;&gt;gbAdvancedSearch.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="btnAdvancedSearchClose.Location" type="System.Drawing.Point, System.Drawing">
@@ -642,120 +936,6 @@
   <data name="&gt;&gt;txtFilenameFilter.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="gbAdvancedSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="gbAdvancedSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 213</value>
-  </data>
-  <data name="gbAdvancedSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="gbAdvancedSearch.Text" xml:space="preserve">
-    <value>Advanced search</value>
-  </data>
-  <data name="gbAdvancedSearch.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;gbAdvancedSearch.Name" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;gbAdvancedSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbAdvancedSearch.Parent" xml:space="preserve">
-    <value>scHistoryItemInfo.Panel1</value>
-  </data>
-  <data name="&gt;&gt;gbAdvancedSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="chIcon.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="chIcon.Width" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="chDateTime.Width" type="System.Int32, mscorlib">
-    <value>115</value>
-  </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Filename</value>
-  </data>
-  <data name="chFilename.Width" type="System.Int32, mscorlib">
-    <value>170</value>
-  </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="chURL.Width" type="System.Int32, mscorlib">
-    <value>230</value>
-  </data>
-  <data name="tslSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 22</value>
-  </data>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>Search:</value>
-  </data>
-  <data name="tstbSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="tstbSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 25</value>
-  </data>
-  <data name="tsbSearch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="tsbAdvancedSearch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbAdvancedSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
-    <value>Advanced search...</value>
-  </data>
-  <data name="tss1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="tsbToggleMoreInfo.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbToggleMoreInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
-    <value>Toggle more info</value>
-  </data>
-  <data name="tsbShowStats.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbShowStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbShowStats.Text" xml:space="preserve">
-    <value>Show stats...</value>
-  </data>
-  <data name="tss2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="tsbSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>Settings...</value>
-  </data>
   <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -796,7 +976,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>627, 433</value>
+    <value>627, 430</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -805,7 +985,7 @@
     <value>pbThumbnail</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
     <value>scHistoryItemInfo.Panel1</value>
@@ -835,7 +1015,7 @@
     <value>0, 0</value>
   </data>
   <data name="pgHistoryItemInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>627, 221</value>
+    <value>627, 224</value>
   </data>
   <data name="pgHistoryItemInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -868,7 +1048,7 @@
     <value>627, 661</value>
   </data>
   <data name="scHistoryItemInfo.SplitterDistance" type="System.Int32, mscorlib">
-    <value>433</value>
+    <value>430</value>
   </data>
   <data name="scHistoryItemInfo.SplitterWidth" type="System.Int32, mscorlib">
     <value>7</value>
@@ -880,7 +1060,7 @@
     <value>scHistoryItemInfo</value>
   </data>
   <data name="&gt;&gt;scHistoryItemInfo.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scHistoryItemInfo.Parent" xml:space="preserve">
     <value>scMain.Panel2</value>
@@ -919,7 +1099,7 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>$this</value>

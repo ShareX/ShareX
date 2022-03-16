@@ -34,7 +34,7 @@ namespace ShareX.HelpersLib
     {
         public Image CurrentImage { get; private set; }
         public string CurrentImageFilePath { get; private set; }
-        public bool SupportsImageNavigation => Images != null && Images.Length > 0;
+        public bool SupportImageNavigation => Images != null && Images.Length > 0;
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
 
@@ -66,7 +66,7 @@ namespace ShareX.HelpersLib
 
         private void LoadCurrentImage()
         {
-            if (!SupportsImageNavigation) return;
+            if (!SupportImageNavigation) return;
 
             CurrentImageIndex = CurrentImageIndex.Clamp(0, Images.Length - 1);
             CurrentImageFilePath = Images[CurrentImageIndex];
@@ -77,7 +77,7 @@ namespace ShareX.HelpersLib
 
         private void NavigateImage(int position)
         {
-            if (!SupportsImageNavigation || Images.Length < 2) return;
+            if (!SupportImageNavigation || Images.Length < 2) return;
 
             int nextImageIndex = CurrentImageIndex + position;
 
@@ -130,7 +130,7 @@ namespace ShareX.HelpersLib
 
         private void UpdateIndexLabel()
         {
-            if (!SupportsImageNavigation || Images.Length < 2) return;
+            if (!SupportImageNavigation || Images.Length < 2) return;
 
             string status = CurrentImageIndex + 1 + " / " + Images.Length;
             string fileName = Helpers.GetFileNameSafe(CurrentImageFilePath);
