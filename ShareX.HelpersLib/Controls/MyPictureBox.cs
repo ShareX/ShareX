@@ -172,7 +172,16 @@ namespace ShareX.HelpersLib
 
         private void UpdateImageSizeLabel()
         {
-            lblImageSize.Location = new Point((ClientSize.Width - lblImageSize.Width) / 2, ClientSize.Height - lblImageSize.Height + 1);
+            if (IsValidImage)
+            {
+                lblImageSize.Visible = true;
+                lblImageSize.Text = $"{Image.Width} x {Image.Height}";
+                lblImageSize.Location = new Point((ClientSize.Width - lblImageSize.Width) / 2, ClientSize.Height - lblImageSize.Height + 1);
+            }
+            else
+            {
+                lblImageSize.Visible = false;
+            }
         }
 
         public void UpdateTheme()
@@ -225,9 +234,18 @@ namespace ShareX.HelpersLib
                 if (!isImageLoading)
                 {
                     Reset();
-                    isImageLoading = true;
-                    Image = (Image)img.Clone();
-                    isImageLoading = false;
+
+                    if (img != null)
+                    {
+                        isImageLoading = true;
+                        Image = (Image)img.Clone();
+                        isImageLoading = false;
+                    }
+                    else
+                    {
+                        Image = null;
+                    }
+
                     AutoSetSizeMode();
                 }
             }
@@ -310,8 +328,6 @@ namespace ShareX.HelpersLib
         {
             if (IsValidImage)
             {
-                lblImageSize.Text = $"{Image.Width} x {Image.Height}";
-
                 if (Image.Width > pbMain.ClientSize.Width || Image.Height > pbMain.ClientSize.Height)
                 {
                     pbMain.SizeMode = PictureBoxSizeMode.Zoom;

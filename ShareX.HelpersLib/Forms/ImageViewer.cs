@@ -74,7 +74,7 @@ namespace ShareX.HelpersLib
 
         private void NavigateImage(int position)
         {
-            if (!SupportsImageNavigation) return;
+            if (!SupportsImageNavigation || Images.Length < 2) return;
 
             int nextImageIndex = CurrentImageIndex + position;
 
@@ -96,9 +96,10 @@ namespace ShareX.HelpersLib
 
         private void UpdateIndexLabel()
         {
-            if (!SupportsImageNavigation) return;
+            if (!SupportsImageNavigation || Images.Length < 2) return;
 
             lblIndex.Text = CurrentImageIndex + 1 + " / " + Images.Length;
+            lblIndex.Visible = true;
             lblIndex.Location = new Point((ClientSize.Width - lblIndex.Width) / 2, -1);
         }
 
@@ -226,6 +227,7 @@ namespace ShareX.HelpersLib
             lblIndex.Font = new Font("Arial", 20f);
             lblIndex.Padding = new Padding(5);
             lblIndex.TextAlign = ContentAlignment.MiddleCenter;
+            lblIndex.Visible = false;
             Controls.Add(lblIndex);
 
             pbPreview.Cursor = Cursors.Hand;
