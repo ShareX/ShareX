@@ -332,8 +332,8 @@ namespace ShareX
 
         private void Panel_ImagePreviewRequested(TaskThumbnailPanel panel)
         {
-            string[] images = Panels.Select(x => x.Task.Info.FilePath).ToArray();
-            int currentImageIndex = Panels.IndexOf(panel);
+            string[] images = Panels.Select(x => x.Task.Info.FilePath).Reverse().ToArray();
+            int currentImageIndex = Panels.Count - Panels.IndexOf(panel) - 1;
             ImageViewer.ShowImage(images, currentImageIndex);
         }
 
