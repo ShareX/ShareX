@@ -201,7 +201,27 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_ItemDoubleClick(object sender, ItemClickEventArgs e)
         {
-            him.ShowImagePreview();
+            int currentImageIndex = ilvImages.SelectedItems[0].Index;
+            int modifiedImageIndex = 0;
+            int halfRange = 100;
+            int startIndex = Math.Max(currentImageIndex - halfRange, 0);
+            int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, ilvImages.Items.Count);
+
+            List<string> filteredImages = new List<string>();
+
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                string imageFilePath = ilvImages.Items[i].FileName;
+
+                if (i == currentImageIndex)
+                {
+                    modifiedImageIndex = filteredImages.Count;
+                }
+
+                filteredImages.Add(imageFilePath);
+            }
+
+            ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
         }
 
         private void tstbSearch_KeyDown(object sender, KeyEventArgs e)
