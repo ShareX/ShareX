@@ -202,6 +202,18 @@ namespace ShareX.HelpersLib
             Close();
         }
 
+        private void pbPreview_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                NavigateImage(-1);
+            }
+            else if (e.Delta < 0)
+            {
+                NavigateImage(1);
+            }
+        }
+
         private void pbPreview_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -284,6 +296,7 @@ namespace ShareX.HelpersLib
             Shown += ImageViewer_Shown;
             Deactivate += ImageViewer_Deactivate;
             pbPreview.MouseDown += pbPreview_MouseDown;
+            pbPreview.MouseWheel += pbPreview_MouseWheel;
             pbPreview.KeyDown += pbPreview_KeyDown;
             pbPreview.PreviewKeyDown += pbPreview_PreviewKeyDown;
 
