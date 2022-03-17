@@ -35,6 +35,7 @@ namespace ShareX.HelpersLib
         public Image CurrentImage { get; private set; }
         public string CurrentImageFilePath { get; private set; }
         public bool SupportImageNavigation => Images != null && Images.Length > 0;
+        public bool SupportWrap { get; set; }
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
 
@@ -81,14 +82,19 @@ namespace ShareX.HelpersLib
 
             int nextImageIndex = CurrentImageIndex + position;
 
-            if (nextImageIndex > Images.Length - 1)
+            if (SupportWrap)
             {
-                nextImageIndex = 0;
+                if (nextImageIndex > Images.Length - 1)
+                {
+                    nextImageIndex = 0;
+                }
+                else if (nextImageIndex < 0)
+                {
+                    nextImageIndex = Images.Length - 1;
+                }
             }
-            else if (nextImageIndex < 0)
-            {
-                nextImageIndex = Images.Length - 1;
-            }
+
+            nextImageIndex = nextImageIndex.Clamp(0, Images.Length - 1);
 
             if (CurrentImageIndex != nextImageIndex)
             {
