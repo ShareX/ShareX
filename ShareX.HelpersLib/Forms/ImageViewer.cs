@@ -205,7 +205,18 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseDown(object sender, MouseEventArgs e)
         {
-            Close();
+            if (e.Location.X < ClientSize.Width * 0.2)
+            {
+                NavigateImage(-1);
+            }
+            else if (e.Location.X > ClientSize.Width * 0.8)
+            {
+                NavigateImage(1);
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private void pbPreview_MouseWheel(object sender, MouseEventArgs e)
