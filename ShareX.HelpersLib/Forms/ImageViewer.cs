@@ -34,7 +34,7 @@ namespace ShareX.HelpersLib
     {
         public Image CurrentImage { get; private set; }
         public string CurrentImageFilePath { get; private set; }
-        public bool SupportImageNavigation => Images != null && Images.Length > 0;
+        public bool SupportImageNavigation => Images != null && Images.Length > 1;
         public bool SupportWrap { get; set; }
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
@@ -67,39 +67,41 @@ namespace ShareX.HelpersLib
 
         private void LoadCurrentImage()
         {
-            if (!SupportImageNavigation) return;
-
-            CurrentImageIndex = CurrentImageIndex.Clamp(0, Images.Length - 1);
-            CurrentImageFilePath = Images[CurrentImageIndex];
-            Image img = ImageHelpers.LoadImage(CurrentImageFilePath);
-            LoadImage(img);
-            UpdateIndexLabel();
+            if (Images != null && Images.Length > 0)
+            {
+                CurrentImageIndex = CurrentImageIndex.Clamp(0, Images.Length - 1);
+                CurrentImageFilePath = Images[CurrentImageIndex];
+                Image img = ImageHelpers.LoadImage(CurrentImageFilePath);
+                LoadImage(img);
+                UpdateIndexLabel();
+            }
         }
 
         private void NavigateImage(int position)
         {
-            if (!SupportImageNavigation || Images.Length < 2) return;
-
-            int nextImageIndex = CurrentImageIndex + position;
-
-            if (SupportWrap)
+            if (SupportImageNavigation)
             {
-                if (nextImageIndex > Images.Length - 1)
-                {
-                    nextImageIndex = 0;
-                }
-                else if (nextImageIndex < 0)
-                {
-                    nextImageIndex = Images.Length - 1;
-                }
-            }
+                int nextImageIndex = CurrentImageIndex + position;
 
-            nextImageIndex = nextImageIndex.Clamp(0, Images.Length - 1);
+                if (SupportWrap)
+                {
+                    if (nextImageIndex > Images.Length - 1)
+                    {
+                        nextImageIndex = 0;
+                    }
+                    else if (nextImageIndex < 0)
+                    {
+                        nextImageIndex = Images.Length - 1;
+                    }
+                }
 
-            if (CurrentImageIndex != nextImageIndex)
-            {
-                CurrentImageIndex = nextImageIndex;
-                LoadCurrentImage();
+                nextImageIndex = nextImageIndex.Clamp(0, Images.Length - 1);
+
+                if (CurrentImageIndex != nextImageIndex)
+                {
+                    CurrentImageIndex = nextImageIndex;
+                    LoadCurrentImage();
+                }
             }
         }
 
@@ -136,17 +138,18 @@ namespace ShareX.HelpersLib
 
         private void UpdateIndexLabel()
         {
-            if (!SupportImageNavigation || Images.Length < 2) return;
-
-            string status = CurrentImageIndex + 1 + " / " + Images.Length;
-            string fileName = Helpers.GetFileNameSafe(CurrentImageFilePath);
-            if (!string.IsNullOrEmpty(fileName))
+            if (SupportImageNavigation)
             {
-                status += "  " + fileName;
+                string status = CurrentImageIndex + 1 + " / " + Images.Length;
+                string fileName = Helpers.GetFileNameSafe(CurrentImageFilePath);
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    status += "  " + fileName;
+                }
+                lblStatus.Text = status;
+                lblStatus.Visible = true;
+                lblStatus.Location = new Point((ClientSize.Width - lblStatus.Width) / 2, -1);
             }
-            lblStatus.Text = status;
-            lblStatus.Visible = true;
-            lblStatus.Location = new Point((ClientSize.Width - lblStatus.Width) / 2, -1);
         }
 
         public static void ShowImage(Image img)
@@ -205,11 +208,11 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Location.X < ClientSize.Width * 0.2)
+            if (SupportImageNavigation && e.Location.X < ClientSize.Width * 0.2)
             {
                 NavigateImage(-1);
             }
-            else if (e.Location.X > ClientSize.Width * 0.8)
+            else if (SupportImageNavigation && e.Location.X > ClientSize.Width * 0.8)
             {
                 NavigateImage(1);
             }
@@ -221,17 +224,20 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Location.X < ClientSize.Width * 0.2)
+            if (SupportImageNavigation)
             {
-                Cursor = Cursors.PanWest;
-            }
-            else if (e.Location.X > ClientSize.Width * 0.8)
-            {
-                Cursor = Cursors.PanEast;
-            }
-            else
-            {
-                Cursor = Cursors.Hand;
+                if (e.Location.X < ClientSize.Width * 0.2)
+                {
+                    Cursor = Cursors.PanWest;
+                }
+                else if (e.Location.X > ClientSize.Width * 0.8)
+                {
+                    Cursor = Cursors.PanEast;
+                }
+                else
+                {
+                    Cursor = Cursors.Hand;
+                }
             }
         }
 
@@ -300,6 +306,7 @@ namespace ShareX.HelpersLib
 
             BackColor = SystemColors.Window;
             Bounds = CaptureHelpers.GetActiveScreenBounds();
+            Cursor = Cursors.Hand;
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             // TODO: Translate
