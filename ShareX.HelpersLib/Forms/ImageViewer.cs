@@ -219,6 +219,22 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void pbPreview_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Location.X < ClientSize.Width * 0.2)
+            {
+                Cursor = Cursors.PanWest;
+            }
+            else if (e.Location.X > ClientSize.Width * 0.8)
+            {
+                Cursor = Cursors.PanEast;
+            }
+            else
+            {
+                Cursor = Cursors.Hand;
+            }
+        }
+
         private void pbPreview_MouseWheel(object sender, MouseEventArgs e)
         {
             if (e.Delta > 0)
@@ -299,20 +315,18 @@ namespace ShareX.HelpersLib
             lblStatus.Visible = false;
             Controls.Add(lblStatus);
 
-            pbPreview.Cursor = Cursors.Hand;
             pbPreview.Dock = DockStyle.Fill;
             pbPreview.DrawCheckeredBackground = true;
-            pbPreview.FullscreenOnClick = false;
             pbPreview.Location = new Point(0, 0);
-            pbPreview.Name = "pbPreview";
             pbPreview.ShowImageSizeLabel = true;
-            pbPreview.Size = new Size(96, 100);
+            pbPreview.Size = new Size(100, 100);
             pbPreview.TabIndex = 0;
             Controls.Add(pbPreview);
 
             Shown += ImageViewer_Shown;
             Deactivate += ImageViewer_Deactivate;
             pbPreview.MouseDown += pbPreview_MouseDown;
+            pbPreview.MouseMove += pbPreview_MouseMove;
             pbPreview.MouseWheel += pbPreview_MouseWheel;
             pbPreview.KeyDown += pbPreview_KeyDown;
             pbPreview.PreviewKeyDown += pbPreview_PreviewKeyDown;

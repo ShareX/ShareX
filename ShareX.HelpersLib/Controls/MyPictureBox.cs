@@ -150,6 +150,20 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public new event MouseEventHandler MouseMove
+        {
+            add
+            {
+                pbMain.MouseMove += value;
+                lblStatus.MouseMove += value;
+            }
+            remove
+            {
+                pbMain.MouseMove -= value;
+                lblStatus.MouseMove -= value;
+            }
+        }
+
         public bool IsValidImage
         {
             get
