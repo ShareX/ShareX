@@ -39,6 +39,8 @@ namespace ShareX.HelpersLib
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
 
+        private float navigationAreaSize = 0.15f;
+
         private ImageViewer(Image img)
         {
             InitializeComponent();
@@ -208,11 +210,11 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseDown(object sender, MouseEventArgs e)
         {
-            if (SupportImageNavigation && e.Location.X < ClientSize.Width * 0.2)
+            if (SupportImageNavigation && e.Location.X < ClientSize.Width * navigationAreaSize)
             {
                 NavigateImage(-1);
             }
-            else if (SupportImageNavigation && e.Location.X > ClientSize.Width * 0.8)
+            else if (SupportImageNavigation && e.Location.X > ClientSize.Width * (1 - navigationAreaSize))
             {
                 NavigateImage(1);
             }
@@ -226,11 +228,11 @@ namespace ShareX.HelpersLib
         {
             if (SupportImageNavigation)
             {
-                if (e.Location.X < ClientSize.Width * 0.2)
+                if (e.Location.X < ClientSize.Width * navigationAreaSize)
                 {
                     Cursor = Cursors.PanWest;
                 }
-                else if (e.Location.X > ClientSize.Width * 0.8)
+                else if (e.Location.X > ClientSize.Width * (1 - navigationAreaSize))
                 {
                     Cursor = Cursors.PanEast;
                 }
