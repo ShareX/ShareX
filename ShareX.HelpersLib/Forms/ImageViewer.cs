@@ -39,7 +39,7 @@ namespace ShareX.HelpersLib
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
 
-        private float navigationAreaSize = 0.15f;
+        private float navigationAreaSize = 0.1f;
 
         private ImageViewer(Image img)
         {

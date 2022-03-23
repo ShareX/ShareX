@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -33,11 +35,25 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true), Browsable(false)]
         public bool Enabled { get; set; }
 
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(""), Browsable(false)]
+        public string Name { get; set; }
+
         protected ImageEffect()
         {
             Enabled = true;
         }
 
         public abstract Bitmap Apply(Bitmap bmp);
+
+        public override string ToString()
+        {
+            if (!string.IsNullOrEmpty(Name))
+            {
+                return Name;
+            }
+
+            return GetType().GetDescription();
+        }
     }
 }

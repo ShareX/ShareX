@@ -436,13 +436,14 @@ namespace ShareX.ImageEffectsLib
 
         private void ClearSelectedEffect()
         {
-            lblEffect.Text = Resources.Effect;
+            txtEffectName.Text = "";
+            txtEffectName.SetWatermark("");
             pgSettings.SelectedObject = null;
         }
 
         private void AddEffect(ImageEffect imageEffect, ImageEffectPreset preset = null)
         {
-            ListViewItem lvi = new ListViewItem(imageEffect.GetType().GetDescription());
+            ListViewItem lvi = new ListViewItem(imageEffect.ToString());
             lvi.Checked = imageEffect.Enabled;
             lvi.Tag = imageEffect;
 
@@ -641,6 +642,20 @@ namespace ShareX.ImageEffectsLib
             UpdatePreview();
         }
 
+        private void txtEffectName_TextChanged(object sender, EventArgs e)
+        {
+            if (lvEffects.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvEffects.SelectedItems[0];
+
+                if (lvi.Tag is ImageEffect imageEffect)
+                {
+                    imageEffect.Name = txtEffectName.Text;
+                    lvi.Text = imageEffect.ToString();
+                }
+            }
+        }
+
         private void lvEffects_ItemMoved(object sender, int oldIndex, int newIndex)
         {
             ImageEffectPreset preset = GetSelectedPreset();
@@ -660,10 +675,11 @@ namespace ShareX.ImageEffectsLib
             {
                 ListViewItem lvi = lvEffects.SelectedItems[0];
 
-                if (lvi.Tag is ImageEffect ie)
+                if (lvi.Tag is ImageEffect imageEffect)
                 {
-                    lblEffect.Text = ie.GetType().GetDescription() + ":";
-                    pgSettings.SelectedObject = ie;
+                    txtEffectName.Text = imageEffect.Name;
+                    txtEffectName.SetWatermark(imageEffect.GetType().GetDescription());
+                    pgSettings.SelectedObject = imageEffect;
                 }
             }
 

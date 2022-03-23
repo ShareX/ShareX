@@ -161,9 +161,6 @@
     <value>Package with this file name already exists.
 Would you like to overwrite it?</value>
   </data>
-  <data name="Effect" xml:space="preserve">
-    <value>Effect:</value>
-  </data>
   <data name="WouldYouLikeToClearEffects" xml:space="preserve">
     <value>Would you like to clear effects?</value>
   </data>
