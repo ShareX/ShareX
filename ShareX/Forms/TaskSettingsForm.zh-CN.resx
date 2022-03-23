@@ -160,7 +160,7 @@
     <value>区域截图</value>
   </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
-    <value>屏幕记录</value>
+    <value>屏幕录制</value>
   </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>截图</value>
