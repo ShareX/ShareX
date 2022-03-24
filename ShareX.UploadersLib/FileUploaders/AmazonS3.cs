@@ -106,6 +106,7 @@ namespace ShareX.UploadersLib.FileUploaders
             new AmazonS3Endpoint("DigitalOcean (New York)", "nyc3.digitaloceanspaces.com", "nyc3"),
             new AmazonS3Endpoint("DigitalOcean (San Francisco)", "sfo2.digitaloceanspaces.com", "sfo2"),
             new AmazonS3Endpoint("DigitalOcean (Singapore)", "sgp1.digitaloceanspaces.com", "sgp1"),
+            new AmazonS3Endpoint("Vultr (New Jersey)", "ewr1.vultrobjects.com", "us-east-1"),
             new AmazonS3Endpoint("Wasabi", "s3.wasabisys.com")
         };
 
