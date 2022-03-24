@@ -1433,4 +1433,10 @@ Would you like to download and install it?</value>
   <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
     <value>Top</value>
   </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>Image viewer</value>
+  </data>
+  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
 </root>

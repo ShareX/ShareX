@@ -81,6 +81,7 @@
             this.tssTools1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEffects = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImageViewer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageSplitter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
@@ -279,6 +280,7 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
+            this.tsmiTrayImageViewer = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -669,6 +671,7 @@
             this.tssTools1,
             this.tsmiImageEditor,
             this.tsmiImageEffects,
+            this.tsmiImageViewer,
             this.tsmiImageCombiner,
             this.tsmiImageSplitter,
             this.tsmiImageThumbnailer,
@@ -728,6 +731,13 @@
             this.tsmiImageEffects.Name = "tsmiImageEffects";
             resources.ApplyResources(this.tsmiImageEffects, "tsmiImageEffects");
             this.tsmiImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
+            // 
+            // tsmiImageViewer
+            // 
+            this.tsmiImageViewer.Image = global::ShareX.Properties.Resources.images_flickr;
+            this.tsmiImageViewer.Name = "tsmiImageViewer";
+            resources.ApplyResources(this.tsmiImageViewer, "tsmiImageViewer");
+            this.tsmiImageViewer.Click += new System.EventHandler(this.tsmiImageViewer_Click);
             // 
             // tsmiImageCombiner
             // 
@@ -1792,6 +1802,7 @@
             this.tssTrayTools1,
             this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
+            this.tsmiTrayImageViewer,
             this.tsmiTrayImageCombiner,
             this.tsmiTrayImageSplitter,
             this.tsmiTrayImageThumbnailer,
@@ -2182,6 +2193,13 @@
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
             // 
+            // tsmiTrayImageViewer
+            // 
+            this.tsmiTrayImageViewer.Image = global::ShareX.Properties.Resources.images_flickr;
+            this.tsmiTrayImageViewer.Name = "tsmiTrayImageViewer";
+            resources.ApplyResources(this.tsmiTrayImageViewer, "tsmiTrayImageViewer");
+            this.tsmiTrayImageViewer.Click += new System.EventHandler(this.tsmiImageViewer_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2470,5 +2488,7 @@
         private System.Windows.Forms.ToolStripButton tsbDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiBorderlessWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayBorderlessWindow;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImageViewer;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageViewer;
     }
 }

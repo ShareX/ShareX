@@ -1726,6 +1726,11 @@ namespace ShareX
             TaskHelpers.OpenImageEffects();
         }
 
+        private void tsmiImageViewer_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageViewer();
+        }
+
         private void tsmiImageCombiner_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenImageCombiner();

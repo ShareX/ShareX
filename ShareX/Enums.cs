@@ -210,6 +210,7 @@ namespace ShareX
         ScreenColorPicker,
         ImageEditor,
         ImageEffects,
+        ImageViewer,
         HashCheck,
         DNSChanger,
         QRCode,

@@ -196,6 +196,9 @@ namespace ShareX
                         OpenImageEffects(taskSettings);
                     }
                     break;
+                case HotkeyType.ImageViewer:
+                    OpenImageViewer();
+                    break;
                 case HotkeyType.HashCheck:
                     OpenHashCheck();
                     break;
@@ -1072,6 +1075,23 @@ namespace ShareX
             return imageEffectsForm;
         }
 
+        public static void OpenImageViewer()
+        {
+            using (FolderSelectDialog fsd = new FolderSelectDialog())
+            {
+                if (fsd.ShowDialog())
+                {
+                    string folderPath = fsd.FileName;
+                    string[] files = Directory.GetFiles(folderPath);
+
+                    if (files != null && files.Length > 0)
+                    {
+                        ImageViewer.ShowImage(files);
+                    }
+                }
+            }
+        }
+
         public static void OpenMonitorTest()
         {
             using (MonitorTestForm monitorTestForm = new MonitorTestForm())
@@ -1541,6 +1561,7 @@ namespace ShareX
                     case HotkeyType.ScreenColorPicker: return Resources.pipette;
                     case HotkeyType.ImageEditor: return Resources.image_pencil;
                     case HotkeyType.ImageEffects: return Resources.image_saturation;
+                    case HotkeyType.ImageViewer: return Resources.images_flickr;
                     case HotkeyType.HashCheck: return Resources.application_task;
                     case HotkeyType.DNSChanger: return Resources.network_ip;
                     case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;

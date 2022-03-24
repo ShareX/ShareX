@@ -1881,6 +1881,9 @@
     <None Include="Resources\GitHub.png" />
     <None Include="Resources\GitHubDark.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-flickr.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
