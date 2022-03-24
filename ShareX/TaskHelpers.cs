@@ -1077,17 +1077,17 @@ namespace ShareX
 
         public static void OpenImageViewer()
         {
-            using (FolderSelectDialog fsd = new FolderSelectDialog())
-            {
-                if (fsd.ShowDialog())
-                {
-                    string folderPath = fsd.FileName;
-                    string[] files = Directory.GetFiles(folderPath);
+            string imageFilePath = ImageHelpers.OpenImageFileDialog();
 
-                    if (files != null && files.Length > 0)
-                    {
-                        ImageViewer.ShowImage(files);
-                    }
+            if (!string.IsNullOrEmpty(imageFilePath))
+            {
+                string folderPath = Path.GetDirectoryName(imageFilePath);
+                string[] files = Directory.GetFiles(folderPath);
+
+                if (files != null && files.Length > 0)
+                {
+                    int imageIndex = Array.IndexOf(files, imageFilePath);
+                    ImageViewer.ShowImage(files, imageIndex);
                 }
             }
         }
