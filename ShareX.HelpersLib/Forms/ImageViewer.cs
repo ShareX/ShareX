@@ -34,8 +34,10 @@ namespace ShareX.HelpersLib
     {
         public Image CurrentImage { get; private set; }
         public string CurrentImageFilePath { get; private set; }
-        public bool SupportImageNavigation => Images != null && Images.Length > 1;
         public bool SupportWrap { get; set; }
+        public bool CanNavigate => Images != null && Images.Length > 1;
+        public bool CanNavigateLeft => CanNavigate && (SupportWrap || CurrentImageIndex > 0);
+        public bool CanNavigateRight => CanNavigate && (SupportWrap || CurrentImageIndex < Images.Length - 1);
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
 
@@ -81,7 +83,7 @@ namespace ShareX.HelpersLib
 
         private void NavigateImage(int position)
         {
-            if (SupportImageNavigation)
+            if (CanNavigate)
             {
                 int nextImageIndex = CurrentImageIndex + position;
 
@@ -140,7 +142,7 @@ namespace ShareX.HelpersLib
 
         private void UpdateIndexLabel()
         {
-            if (SupportImageNavigation)
+            if (CanNavigate)
             {
                 string status = CurrentImageIndex + 1 + " / " + Images.Length;
                 string fileName = Helpers.GetFileNameSafe(CurrentImageFilePath);
@@ -210,11 +212,11 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseDown(object sender, MouseEventArgs e)
         {
-            if (SupportImageNavigation && e.Location.X < ClientSize.Width * navigationAreaSize)
+            if (CanNavigateLeft && e.Location.X < ClientSize.Width * navigationAreaSize)
             {
                 NavigateImage(-1);
             }
-            else if (SupportImageNavigation && e.Location.X > ClientSize.Width * (1 - navigationAreaSize))
+            else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - navigationAreaSize))
             {
                 NavigateImage(1);
             }
@@ -226,30 +228,27 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseMove(object sender, MouseEventArgs e)
         {
-            if (SupportImageNavigation)
+            if (CanNavigateLeft && e.Location.X < ClientSize.Width * navigationAreaSize)
             {
-                if (e.Location.X < ClientSize.Width * navigationAreaSize)
-                {
-                    Cursor = Cursors.PanWest;
-                }
-                else if (e.Location.X > ClientSize.Width * (1 - navigationAreaSize))
-                {
-                    Cursor = Cursors.PanEast;
-                }
-                else
-                {
-                    Cursor = Cursors.Hand;
-                }
+                Cursor = Cursors.PanWest;
+            }
+            else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - navigationAreaSize))
+            {
+                Cursor = Cursors.PanEast;
+            }
+            else
+            {
+                Cursor = Cursors.Hand;
             }
         }
 
         private void pbPreview_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (e.Delta > 0)
+            if (CanNavigateLeft && e.Delta > 0)
             {
                 NavigateImage(-1);
             }
-            else if (e.Delta < 0)
+            else if (CanNavigateRight && e.Delta < 0)
             {
                 NavigateImage(1);
             }
