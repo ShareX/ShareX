@@ -26,6 +26,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -76,7 +77,7 @@ namespace ShareX.HelpersLib
                 CurrentImageFilePath = Images[CurrentImageIndex];
                 Image img = ImageHelpers.LoadImage(CurrentImageFilePath);
                 LoadImage(img);
-                UpdateIndexLabel();
+                UpdateStatusLabel();
             }
         }
 
@@ -139,20 +140,30 @@ namespace ShareX.HelpersLib
             Images = filteredImages.ToArray();
         }
 
-        private void UpdateIndexLabel()
+        private void UpdateStatusLabel()
         {
+            StringBuilder sbStatus = new StringBuilder();
+
             if (CanNavigate)
             {
-                string status = CurrentImageIndex + 1 + " / " + Images.Length;
-                string fileName = Helpers.GetFileNameSafe(CurrentImageFilePath);
-                if (!string.IsNullOrEmpty(fileName))
-                {
-                    status += "  " + fileName;
-                }
-                lblStatus.Text = status;
-                lblStatus.Visible = true;
-                lblStatus.Location = new Point((ClientSize.Width - lblStatus.Width) / 2, -1);
+                sbStatus.Append($"{CurrentImageIndex + 1} / {Images.Length}");
             }
+
+            string fileName = Helpers.GetFileNameSafe(CurrentImageFilePath);
+
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                fileName = fileName.Truncate(128, "...");
+                sbStatus.Append($"  {fileName}");
+            }
+
+            if (CurrentImage != null)
+            {
+                sbStatus.Append($"  ({CurrentImage.Width} x {CurrentImage.Height})");
+            }
+
+            lblStatus.Text = sbStatus.ToString().Trim();
+            lblStatus.Location = new Point((ClientSize.Width - lblStatus.Width) / 2, -1);
         }
 
         public static void ShowImage(Image img)
@@ -199,7 +210,7 @@ namespace ShareX.HelpersLib
 
         private void ImageViewer_Shown(object sender, EventArgs e)
         {
-            UpdateIndexLabel();
+            UpdateStatusLabel();
 
             this.ForceActivate();
         }
@@ -227,7 +238,7 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseMove(object sender, MouseEventArgs e)
         {
-            lblStatus.Visible = CanNavigate && !new Rectangle(lblStatus.Location, lblStatus.Size).Contains(e.Location);
+            lblStatus.Visible = !new Rectangle(lblStatus.Location, lblStatus.Size).Contains(e.Location);
 
             if (CanNavigateLeft && e.Location.X < ClientSize.Width * NavigationAreaSize)
             {
@@ -323,16 +334,14 @@ namespace ShareX.HelpersLib
             StartPosition = FormStartPosition.Manual;
 
             lblStatus.AutoSize = true;
-            lblStatus.Font = new Font("Arial", 14f);
+            lblStatus.Font = new Font("Arial", 13f);
             lblStatus.Padding = new Padding(5);
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
-            lblStatus.Visible = false;
             Controls.Add(lblStatus);
 
             pbPreview.Dock = DockStyle.Fill;
             pbPreview.DrawCheckeredBackground = true;
             pbPreview.Location = new Point(0, 0);
-            pbPreview.ShowImageSizeLabel = true;
             pbPreview.Size = new Size(100, 100);
             pbPreview.TabIndex = 0;
             Controls.Add(pbPreview);
