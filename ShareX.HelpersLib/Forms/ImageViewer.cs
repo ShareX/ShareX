@@ -38,10 +38,9 @@ namespace ShareX.HelpersLib
         public bool CanNavigate => Images != null && Images.Length > 1;
         public bool CanNavigateLeft => CanNavigate && (SupportWrap || CurrentImageIndex > 0);
         public bool CanNavigateRight => CanNavigate && (SupportWrap || CurrentImageIndex < Images.Length - 1);
+        public float NavigationAreaSize { get; set; } = 0.1f;
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
-
-        private float navigationAreaSize = 0.1f;
 
         private ImageViewer(Image img)
         {
@@ -212,11 +211,11 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseDown(object sender, MouseEventArgs e)
         {
-            if (CanNavigateLeft && e.Location.X < ClientSize.Width * navigationAreaSize)
+            if (CanNavigateLeft && e.Location.X < ClientSize.Width * NavigationAreaSize)
             {
                 NavigateImage(-1);
             }
-            else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - navigationAreaSize))
+            else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - NavigationAreaSize))
             {
                 NavigateImage(1);
             }
@@ -228,11 +227,13 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseMove(object sender, MouseEventArgs e)
         {
-            if (CanNavigateLeft && e.Location.X < ClientSize.Width * navigationAreaSize)
+            lblStatus.Visible = CanNavigate && !new Rectangle(lblStatus.Location, lblStatus.Size).Contains(e.Location);
+
+            if (CanNavigateLeft && e.Location.X < ClientSize.Width * NavigationAreaSize)
             {
                 Cursor = Cursors.PanWest;
             }
-            else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - navigationAreaSize))
+            else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - NavigationAreaSize))
             {
                 Cursor = Cursors.PanEast;
             }
@@ -281,6 +282,11 @@ namespace ShareX.HelpersLib
                     e.IsInputKey = true;
                     break;
             }
+        }
+
+        private void lblStatus_MouseEnter(object sender, EventArgs e)
+        {
+            lblStatus.Visible = false;
         }
 
         #region Windows Form Designer generated code
@@ -338,6 +344,7 @@ namespace ShareX.HelpersLib
             pbPreview.MouseWheel += pbPreview_MouseWheel;
             pbPreview.KeyDown += pbPreview_KeyDown;
             pbPreview.PreviewKeyDown += pbPreview_PreviewKeyDown;
+            lblStatus.MouseEnter += lblStatus_MouseEnter;
 
             ResumeLayout(false);
         }
