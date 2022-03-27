@@ -188,13 +188,8 @@ namespace ShareX.HelpersLib
         {
             if (IsValidImage)
             {
-                lblImageSize.Visible = true;
                 lblImageSize.Text = $"{Image.Width} x {Image.Height}";
                 lblImageSize.Location = new Point((ClientSize.Width - lblImageSize.Width) / 2, ClientSize.Height - lblImageSize.Height + 1);
-            }
-            else
-            {
-                lblImageSize.Visible = false;
             }
         }
 

@@ -225,6 +225,7 @@ namespace ShareX.HelpersLib
             if (e.Button == MouseButtons.Left)
             {
                 NavigateImage(-1);
+                lblLeft.Visible = CanNavigateLeft;
             }
         }
 
@@ -233,6 +234,7 @@ namespace ShareX.HelpersLib
             if (e.Button == MouseButtons.Left)
             {
                 NavigateImage(1);
+                lblRight.Visible = CanNavigateRight;
             }
         }
 
@@ -320,7 +322,6 @@ namespace ShareX.HelpersLib
 
             BackColor = SystemColors.Window;
             Bounds = CaptureHelpers.GetActiveScreenBounds();
-            Cursor = Cursors.Hand;
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             // TODO: Translate
