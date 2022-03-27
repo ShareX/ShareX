@@ -220,20 +220,23 @@ namespace ShareX.HelpersLib
             Close();
         }
 
-        private void pbPreview_MouseDown(object sender, MouseEventArgs e)
+        private void pbPreview_MouseClick(object sender, MouseEventArgs e)
         {
-            if (CanNavigateLeft && e.Location.X < ClientSize.Width * NavigationAreaSize)
+            if (e.Button == MouseButtons.Left)
             {
-                NavigateImage(-1);
+                if (CanNavigateLeft && e.Location.X < ClientSize.Width * NavigationAreaSize)
+                {
+                    NavigateImage(-1);
+                    return;
+                }
+                else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - NavigationAreaSize))
+                {
+                    NavigateImage(1);
+                    return;
+                }
             }
-            else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - NavigationAreaSize))
-            {
-                NavigateImage(1);
-            }
-            else
-            {
-                Close();
-            }
+
+            Close();
         }
 
         private void pbPreview_MouseMove(object sender, MouseEventArgs e)
@@ -348,7 +351,7 @@ namespace ShareX.HelpersLib
 
             Shown += ImageViewer_Shown;
             Deactivate += ImageViewer_Deactivate;
-            pbPreview.MouseDown += pbPreview_MouseDown;
+            pbPreview.MouseClick += pbPreview_MouseClick;
             pbPreview.MouseMove += pbPreview_MouseMove;
             pbPreview.MouseWheel += pbPreview_MouseWheel;
             pbPreview.KeyDown += pbPreview_KeyDown;
