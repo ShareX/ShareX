@@ -39,9 +39,9 @@ namespace ShareX.HelpersLib
         public bool CanNavigate => Images != null && Images.Length > 1;
         public bool CanNavigateLeft => CanNavigate && (SupportWrap || CurrentImageIndex > 0);
         public bool CanNavigateRight => CanNavigate && (SupportWrap || CurrentImageIndex < Images.Length - 1);
-        public float NavigationAreaSize { get; set; } = 0.1f;
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
+        public int NavigationButtonWidth { get; set; } = 80;
 
         private ImageViewer(Image img)
         {
@@ -220,41 +220,32 @@ namespace ShareX.HelpersLib
             Close();
         }
 
-        private void pbPreview_MouseClick(object sender, MouseEventArgs e)
+        private void lblLeft_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (CanNavigateLeft && e.Location.X < ClientSize.Width * NavigationAreaSize)
-                {
-                    NavigateImage(-1);
-                    return;
-                }
-                else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - NavigationAreaSize))
-                {
-                    NavigateImage(1);
-                    return;
-                }
+                NavigateImage(-1);
             }
+        }
 
+        private void lblRight_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                NavigateImage(1);
+            }
+        }
+
+        private void pbPreview_MouseClick(object sender, MouseEventArgs e)
+        {
             Close();
         }
 
         private void pbPreview_MouseMove(object sender, MouseEventArgs e)
         {
             lblStatus.Visible = !new Rectangle(lblStatus.Location, lblStatus.Size).Contains(e.Location);
-
-            if (CanNavigateLeft && e.Location.X < ClientSize.Width * NavigationAreaSize)
-            {
-                Cursor = Cursors.PanWest;
-            }
-            else if (CanNavigateRight && e.Location.X > ClientSize.Width * (1 - NavigationAreaSize))
-            {
-                Cursor = Cursors.PanEast;
-            }
-            else
-            {
-                Cursor = Cursors.Hand;
-            }
+            lblLeft.Visible = CanNavigateLeft && new Rectangle(lblLeft.Location, lblLeft.Size).Contains(e.Location);
+            lblRight.Visible = CanNavigateRight && new Rectangle(lblRight.Location, lblRight.Size).Contains(e.Location);
         }
 
         private void pbPreview_MouseWheel(object sender, MouseEventArgs e)
@@ -323,6 +314,8 @@ namespace ShareX.HelpersLib
         {
             pbPreview = new MyPictureBox();
             lblStatus = new Label();
+            lblLeft = new Label();
+            lblRight = new Label();
             SuspendLayout();
 
             BackColor = SystemColors.Window;
@@ -338,9 +331,27 @@ namespace ShareX.HelpersLib
 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Arial", 13f);
-            lblStatus.Padding = new Padding(5);
+            lblStatus.Padding = new Padding(6);
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
             Controls.Add(lblStatus);
+
+            lblLeft.Cursor = Cursors.Hand;
+            lblLeft.Font = new Font("Arial", 50f, FontStyle.Bold);
+            lblLeft.Location = new Point(0, 0);
+            lblLeft.Text = "‹";
+            lblLeft.TextAlign = ContentAlignment.MiddleCenter;
+            lblLeft.Size = new Size(NavigationButtonWidth, Bounds.Height);
+            lblLeft.MouseDown += lblLeft_MouseDown;
+            Controls.Add(lblLeft);
+
+            lblRight.Cursor = Cursors.Hand;
+            lblRight.Font = new Font("Arial", 50f, FontStyle.Bold);
+            lblRight.Location = new Point(Bounds.Width - NavigationButtonWidth, 0);
+            lblRight.Text = "›";
+            lblRight.TextAlign = ContentAlignment.MiddleCenter;
+            lblRight.Size = new Size(NavigationButtonWidth, Bounds.Height);
+            lblRight.MouseDown += lblRight_MouseDown;
+            Controls.Add(lblRight);
 
             pbPreview.Dock = DockStyle.Fill;
             pbPreview.DrawCheckeredBackground = true;
@@ -363,6 +374,8 @@ namespace ShareX.HelpersLib
 
         private MyPictureBox pbPreview;
         private Label lblStatus;
+        private Label lblLeft;
+        private Label lblRight;
 
         #endregion Windows Form Designer generated code
     }
