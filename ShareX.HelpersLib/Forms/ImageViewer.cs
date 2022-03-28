@@ -41,7 +41,7 @@ namespace ShareX.HelpersLib
         public bool CanNavigateRight => CanNavigate && (SupportWrap || CurrentImageIndex < Images.Length - 1);
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
-        public int NavigationButtonWidth { get; set; } = 80;
+        public int NavigationButtonWidth { get; set; } = 100;
 
         private ImageViewer(Image img)
         {
@@ -163,7 +163,7 @@ namespace ShareX.HelpersLib
             }
 
             lblStatus.Text = sbStatus.ToString().Trim();
-            lblStatus.Location = new Point((ClientSize.Width - lblStatus.Width) / 2, -1);
+            lblStatus.Location = new Point((ClientSize.Width - lblStatus.Width) / 2, 0);
         }
 
         public static void ShowImage(Image img)
