@@ -77,8 +77,9 @@ namespace ShareX.HelpersLib
                 CurrentImageFilePath = Images[CurrentImageIndex];
                 Image img = ImageHelpers.LoadImage(CurrentImageFilePath);
                 LoadImage(img);
-                UpdateStatusLabel();
             }
+
+            UpdateStatusLabel();
         }
 
         private void NavigateImage(int position)
@@ -127,7 +128,7 @@ namespace ShareX.HelpersLib
                     }
                     else
                     {
-                        CurrentImageIndex = 0;
+                        CurrentImageIndex = Math.Max(filteredImages.Count - 1, 0);
                     }
                 }
 
@@ -162,7 +163,10 @@ namespace ShareX.HelpersLib
                 sbStatus.Append($"  ({CurrentImage.Width} x {CurrentImage.Height})");
             }
 
-            lblStatus.Text = sbStatus.ToString().Trim();
+            string status = sbStatus.ToString().Trim();
+
+            lblStatus.Visible = !string.IsNullOrEmpty(status);
+            lblStatus.Text = status;
             lblStatus.Location = new Point((ClientSize.Width - lblStatus.Width) / 2, 0);
         }
 
@@ -197,11 +201,11 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void ShowImage(string[] images, int currentImageIndex = 0)
+        public static void ShowImage(string[] files, int imageIndex = 0)
         {
-            if (images != null && images.Length > 0)
+            if (files != null && files.Length > 0)
             {
-                using (ImageViewer viewer = new ImageViewer(images, currentImageIndex))
+                using (ImageViewer viewer = new ImageViewer(files, imageIndex))
                 {
                     viewer.ShowDialog();
                 }
@@ -245,7 +249,7 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseMove(object sender, MouseEventArgs e)
         {
-            lblStatus.Visible = !new Rectangle(lblStatus.Location, lblStatus.Size).Contains(e.Location);
+            lblStatus.Visible = !string.IsNullOrEmpty(lblStatus.Text) && !new Rectangle(lblStatus.Location, lblStatus.Size).Contains(e.Location);
             lblLeft.Visible = CanNavigateLeft && new Rectangle(lblLeft.Location, lblLeft.Size).Contains(e.Location);
             lblRight.Visible = CanNavigateRight && new Rectangle(lblRight.Location, lblRight.Size).Contains(e.Location);
         }

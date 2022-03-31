@@ -232,6 +232,7 @@
             this.tssTrayTools1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageViewer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageSplitter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
@@ -280,7 +281,6 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
-            this.tsmiTrayImageViewer = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -380,10 +380,10 @@
             resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.EnableRightClickMenu = true;
-            this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Name = "pbPreview";
             this.pbPreview.PictureBoxBackColor = System.Drawing.SystemColors.Control;
             this.pbPreview.ShowImageSizeLabel = true;
+            this.pbPreview.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbPreview_MouseDown);
             // 
             // tsMain
             // 
@@ -1863,6 +1863,13 @@
             resources.ApplyResources(this.tsmiTrayImageEffects, "tsmiTrayImageEffects");
             this.tsmiTrayImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
             // 
+            // tsmiTrayImageViewer
+            // 
+            this.tsmiTrayImageViewer.Image = global::ShareX.Properties.Resources.images_flickr;
+            this.tsmiTrayImageViewer.Name = "tsmiTrayImageViewer";
+            resources.ApplyResources(this.tsmiTrayImageViewer, "tsmiTrayImageViewer");
+            this.tsmiTrayImageViewer.Click += new System.EventHandler(this.tsmiImageViewer_Click);
+            // 
             // tsmiTrayImageCombiner
             // 
             this.tsmiTrayImageCombiner.Image = global::ShareX.Properties.Resources.document_break;
@@ -2192,13 +2199,6 @@
             resources.ApplyResources(this.pToolbars, "pToolbars");
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
-            // 
-            // tsmiTrayImageViewer
-            // 
-            this.tsmiTrayImageViewer.Image = global::ShareX.Properties.Resources.images_flickr;
-            this.tsmiTrayImageViewer.Name = "tsmiTrayImageViewer";
-            resources.ApplyResources(this.tsmiTrayImageViewer, "tsmiTrayImageViewer");
-            this.tsmiTrayImageViewer.Click += new System.EventHandler(this.tsmiImageViewer_Click);
             // 
             // MainForm
             // 

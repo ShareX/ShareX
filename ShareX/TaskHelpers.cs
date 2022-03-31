@@ -1090,7 +1090,7 @@ namespace ShareX
 
         public static void OpenImageViewer(string filePath)
         {
-            if (!string.IsNullOrEmpty(filePath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 string folderPath = Path.GetDirectoryName(filePath);
                 string[] files = Directory.GetFiles(folderPath);
