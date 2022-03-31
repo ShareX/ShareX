@@ -26,7 +26,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -42,6 +41,7 @@ namespace ShareX.HelpersLib
         public string[] Images { get; private set; }
         public int CurrentImageIndex { get; private set; }
         public int NavigationButtonWidth { get; set; } = 100;
+        public string Status { get; private set; }
 
         private ImageViewer(Image img)
         {
@@ -79,7 +79,7 @@ namespace ShareX.HelpersLib
                 LoadImage(img);
             }
 
-            UpdateStatusLabel();
+            UpdateStatus();
         }
 
         private void NavigateImage(int position)
@@ -141,13 +141,13 @@ namespace ShareX.HelpersLib
             Images = filteredImages.ToArray();
         }
 
-        private void UpdateStatusLabel()
+        private void UpdateStatus()
         {
-            StringBuilder sbStatus = new StringBuilder();
+            Status = "";
 
             if (CanNavigate)
             {
-                sbStatus.Append($"{CurrentImageIndex + 1} / {Images.Length}");
+                AppendStatus($"{CurrentImageIndex + 1} / {Images.Length}");
             }
 
             string fileName = Helpers.GetFileNameSafe(CurrentImageFilePath);
@@ -155,19 +155,27 @@ namespace ShareX.HelpersLib
             if (!string.IsNullOrEmpty(fileName))
             {
                 fileName = fileName.Truncate(128, "...");
-                sbStatus.Append($"  {fileName}");
+                AppendStatus(fileName);
             }
 
             if (CurrentImage != null)
             {
-                sbStatus.Append($"  ({CurrentImage.Width} x {CurrentImage.Height})");
+                AppendStatus($"{CurrentImage.Width} x {CurrentImage.Height}");
             }
 
-            string status = sbStatus.ToString().Trim();
-
-            lblStatus.Visible = !string.IsNullOrEmpty(status);
-            lblStatus.Text = status;
+            lblStatus.Visible = !string.IsNullOrEmpty(Status);
+            lblStatus.Text = Status;
             lblStatus.Location = new Point((ClientSize.Width - lblStatus.Width) / 2, 0);
+        }
+
+        private void AppendStatus(string text)
+        {
+            if (!string.IsNullOrEmpty(Status))
+            {
+                Status += " │ ";
+            }
+
+            Status += text;
         }
 
         public static void ShowImage(Image img)
@@ -214,7 +222,7 @@ namespace ShareX.HelpersLib
 
         private void ImageViewer_Shown(object sender, EventArgs e)
         {
-            UpdateStatusLabel();
+            UpdateStatus();
 
             this.ForceActivate();
         }
@@ -249,7 +257,7 @@ namespace ShareX.HelpersLib
 
         private void pbPreview_MouseMove(object sender, MouseEventArgs e)
         {
-            lblStatus.Visible = !string.IsNullOrEmpty(lblStatus.Text) && !new Rectangle(lblStatus.Location, lblStatus.Size).Contains(e.Location);
+            lblStatus.Visible = !string.IsNullOrEmpty(Status) && !new Rectangle(lblStatus.Location, lblStatus.Size).Contains(e.Location);
             lblLeft.Visible = CanNavigateLeft && new Rectangle(lblLeft.Location, lblLeft.Size).Contains(e.Location);
             lblRight.Visible = CanNavigateRight && new Rectangle(lblRight.Location, lblRight.Size).Contains(e.Location);
         }
