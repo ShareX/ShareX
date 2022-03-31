@@ -197,7 +197,14 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.ImageViewer:
-                    OpenImageViewer();
+                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    {
+                        OpenImageViewer(command.Parameter);
+                    }
+                    else
+                    {
+                        OpenImageViewer();
+                    }
                     break;
                 case HotkeyType.HashCheck:
                     OpenHashCheck();
@@ -1077,16 +1084,20 @@ namespace ShareX
 
         public static void OpenImageViewer()
         {
-            string imageFilePath = ImageHelpers.OpenImageFileDialog();
+            string filePath = ImageHelpers.OpenImageFileDialog();
+            OpenImageViewer(filePath);
+        }
 
-            if (!string.IsNullOrEmpty(imageFilePath))
+        public static void OpenImageViewer(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath))
             {
-                string folderPath = Path.GetDirectoryName(imageFilePath);
+                string folderPath = Path.GetDirectoryName(filePath);
                 string[] files = Directory.GetFiles(folderPath);
 
                 if (files != null && files.Length > 0)
                 {
-                    int imageIndex = Array.IndexOf(files, imageFilePath);
+                    int imageIndex = Array.IndexOf(files, filePath);
                     ImageViewer.ShowImage(files, imageIndex);
                 }
             }
