@@ -654,7 +654,7 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Oemtilde:
                     CloseWindow(RegionResult.ActiveMonitor);
                     break;
-                case Keys.Control | Keys.C:
+                case Keys.Control | Keys.Shift | Keys.C:
                     CopyAreaInfo();
                     break;
                 case Keys.Control | Keys.Alt | Keys.D0:

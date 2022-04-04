@@ -256,7 +256,7 @@
     <value>Lanjutkan tugas (Spasi atau klik kanan)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Salin gambar ke papan klip (Ctrl + Shift + C)</value>
+    <value>Salin gambar ke papan klip (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
     <value>Radius sudut:</value>

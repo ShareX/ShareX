@@ -729,7 +729,7 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.Control | Keys.Shift | Keys.S:
                             Form.OnSaveImageAsRequested();
                             break;
-                        case Keys.Control | Keys.Shift | Keys.C:
+                        case Keys.Control | Keys.C:
                             Form.OnCopyImageRequested();
                             break;
                         case Keys.Control | Keys.U:

@@ -214,7 +214,7 @@
     <value>Tiếp tục tác vụ (Phím cách hoặc chuột phải)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Chép ảnh vào vùng nhớ tạm (Ctrl + Shift + C)</value>
+    <value>Chép ảnh vào vùng nhớ tạm (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
     <value>Bán kính góc:</value>
