@@ -377,6 +377,7 @@
             // pbPreview
             // 
             this.pbPreview.BackColor = System.Drawing.SystemColors.Window;
+            this.pbPreview.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.EnableRightClickMenu = true;

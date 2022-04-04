@@ -364,6 +364,7 @@
             // pbThumbnail
             // 
             this.pbThumbnail.BackColor = System.Drawing.SystemColors.Window;
+            this.pbThumbnail.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pbThumbnail, "pbThumbnail");
             this.pbThumbnail.DrawCheckeredBackground = true;
             this.pbThumbnail.Name = "pbThumbnail";
