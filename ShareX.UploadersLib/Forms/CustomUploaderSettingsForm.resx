@@ -313,7 +313,7 @@
     <value>mbHelp</value>
   </data>
   <data name="&gt;&gt;mbHelp.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbHelp.Parent" xml:space="preserve">
     <value>$this</value>
@@ -424,7 +424,7 @@
     <value>eiCustomUploaders</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.Parent" xml:space="preserve">
     <value>$this</value>
@@ -670,7 +670,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;dgvHeaders.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="cParametersName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -703,7 +703,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;dgvParameters.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblHeaders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -733,7 +733,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblHeaders.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblParameters.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -763,7 +763,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblParameters.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;rtbRequestURL.Name" xml:space="preserve">
     <value>rtbRequestURL</value>
@@ -799,7 +799,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;pRequestURL.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="rtbRequestURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -850,7 +850,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;cbRequestMethod.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="lblRequestURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -880,7 +880,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblRequestURL.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="cbBody.Location" type="System.Drawing.Point, System.Drawing">
     <value>256, 112</value>
@@ -901,7 +901,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;cbBody.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="lblRequestMethod.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -931,7 +931,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblRequestMethod.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="lblBody.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -961,7 +961,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblBody.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="&gt;&gt;dgvArguments.Name" xml:space="preserve">
     <value>dgvArguments</value>
@@ -1018,7 +1018,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;pBodyArguments.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <metadata name="cArgumentsName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1159,7 +1159,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;pBodyData.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="btnDataBeautify.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1315,7 +1315,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;pResultErrorMessage.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="rtbResultErrorMessage.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1375,7 +1375,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblResultErrorMessage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;rtbResultDeletionURL.Name" xml:space="preserve">
     <value>rtbResultDeletionURL</value>
@@ -1411,7 +1411,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;pResultDeletionURL.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="rtbResultDeletionURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1474,7 +1474,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblResultDeletionURL.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;rtbResultThumbnailURL.Name" xml:space="preserve">
     <value>rtbResultThumbnailURL</value>
@@ -1510,7 +1510,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;pResultThumbnailURL.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="rtbResultThumbnailURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1545,6 +1545,27 @@
   <data name="&gt;&gt;rtbResultThumbnailURL.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="rtbResultURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbResultURL.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="rtbResultURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResultURL.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtbResultURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>442, 14</value>
+  </data>
+  <data name="rtbResultURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResultURL.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;rtbResultURL.Name" xml:space="preserve">
     <value>rtbResultURL</value>
   </data>
@@ -1564,7 +1585,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pResultURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 20</value>
+    <value>448, 20</value>
   </data>
   <data name="pResultURL.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -1579,40 +1600,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;pResultURL.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="rtbResultURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rtbResultURL.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="rtbResultURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="rtbResultURL.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="rtbResultURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 14</value>
-  </data>
-  <data name="rtbResultURL.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rtbResultURL.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;rtbResultURL.Name" xml:space="preserve">
-    <value>rtbResultURL</value>
-  </data>
-  <data name="&gt;&gt;rtbResultURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rtbResultURL.Parent" xml:space="preserve">
-    <value>pResultURL</value>
-  </data>
-  <data name="&gt;&gt;rtbResultURL.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>12</value>
   </data>
   <data name="lblResultThumbnailURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1642,7 +1630,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblResultThumbnailURL.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lblResultURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1672,7 +1660,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblResultURL.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="lblDestinationType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1702,7 +1690,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblDestinationType.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lblName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1732,7 +1720,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="mbDestinationType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1771,13 +1759,13 @@
     <value>mbDestinationType</value>
   </data>
   <data name="&gt;&gt;mbDestinationType.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbDestinationType.Parent" xml:space="preserve">
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;mbDestinationType.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 24</value>
@@ -1798,7 +1786,7 @@
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblURLSharingService.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1904,6 +1892,30 @@
   </data>
   <data name="&gt;&gt;lblUploaders.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="btnTestURLSyntax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>465, 478</value>
+  </data>
+  <data name="btnTestURLSyntax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnTestURLSyntax.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="btnTestURLSyntax.Text" xml:space="preserve">
+    <value>T</value>
+  </data>
+  <data name="&gt;&gt;btnTestURLSyntax.Name" xml:space="preserve">
+    <value>btnTestURLSyntax</value>
+  </data>
+  <data name="&gt;&gt;btnTestURLSyntax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTestURLSyntax.Parent" xml:space="preserve">
+    <value>pMain</value>
+  </data>
+  <data name="&gt;&gt;btnTestURLSyntax.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="pMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 0</value>

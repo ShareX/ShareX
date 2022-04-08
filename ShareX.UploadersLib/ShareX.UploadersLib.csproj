@@ -181,6 +181,12 @@
     <Compile Include="Forms\CustomUploaderSettingsForm.Designer.cs">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CustomUploaderSyntaxTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomUploaderSyntaxTestForm.Designer.cs">
+      <DependentUpon>CustomUploaderSyntaxTestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OCRSpaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -538,6 +544,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.zh-TW.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomUploaderSyntaxTestForm.resx">
+      <DependentUpon>CustomUploaderSyntaxTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.de.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>

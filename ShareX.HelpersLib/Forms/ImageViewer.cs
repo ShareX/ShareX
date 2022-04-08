@@ -344,7 +344,7 @@ namespace ShareX.HelpersLib
 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Arial", 13f);
-            lblStatus.Padding = new Padding(6);
+            lblStatus.Padding = new Padding(5);
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
             Controls.Add(lblStatus);
 

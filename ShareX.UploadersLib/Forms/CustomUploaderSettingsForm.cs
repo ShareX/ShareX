@@ -1033,6 +1033,14 @@ namespace ShareX.UploadersLib
             CustomUploaderFormatJsonData(Formatting.None);
         }
 
+        private void btnTestURLSyntax_Click(object sender, EventArgs e)
+        {
+            using (CustomUploaderSyntaxTestForm syntaxTestForm = new CustomUploaderSyntaxTestForm(null, rtbResultURL.Text))
+            {
+                syntaxTestForm.ShowDialog();
+            }
+        }
+
         private void rtbCustomUploaderURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();

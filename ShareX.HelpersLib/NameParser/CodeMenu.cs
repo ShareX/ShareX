@@ -39,12 +39,14 @@ namespace ShareX.HelpersLib
             {
                 if (MenuLocationBottom)
                 {
-                    return new Point(0, textBoxBase.Height + 1);
+                    return new Point(MenuLocationOffset.X, textBoxBase.Height + MenuLocationOffset.Y + 1);
                 }
 
-                return new Point(textBoxBase.Width + 1, 0);
+                return new Point(textBoxBase.Width + MenuLocationOffset.X + 1, MenuLocationOffset.Y);
             }
         }
+
+        public Point MenuLocationOffset { get; set; }
 
         public bool MenuLocationBottom { get; set; }
 
