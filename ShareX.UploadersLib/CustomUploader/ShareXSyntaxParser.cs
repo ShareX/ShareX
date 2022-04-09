@@ -117,6 +117,11 @@ namespace ShareX.UploadersLib
                     {
                         string parsed = ParseSyntax(text, true, i, out i);
                         parameters.Add(parsed);
+
+                        if (text[i] == SyntaxEnd)
+                        {
+                            break;
+                        }
                     }
                 }
 
