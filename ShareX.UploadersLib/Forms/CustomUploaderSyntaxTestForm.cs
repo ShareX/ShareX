@@ -78,6 +78,7 @@ namespace ShareX.UploadersLib
 
             ShareXResources.ApplyTheme(this);
 
+            CustomUploaderSyntaxHighlight(rtbURLSyntax);
             UpdatePreview();
         }
 
@@ -120,8 +121,11 @@ namespace ShareX.UploadersLib
         {
             if (string.IsNullOrEmpty(responseText) || string.IsNullOrEmpty(urlSyntax)) return null;
 
-            ResponseInfo responseInfo = new ResponseInfo();
-            responseInfo.ResponseText = responseText;
+            ResponseInfo responseInfo = new ResponseInfo()
+            {
+                ResponseText = responseText,
+                ResponseURL = "https://example.com/upload"
+            };
 
             CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser()
             {
@@ -135,8 +139,6 @@ namespace ShareX.UploadersLib
 
         private void UpdatePreview()
         {
-            CustomUploaderSyntaxHighlight(rtbURLSyntax);
-
             try
             {
                 string result = ParseSyntax(txtResponseText.Text, rtbURLSyntax.Text);
@@ -148,8 +150,14 @@ namespace ShareX.UploadersLib
             }
         }
 
+        private void txtResponseText_TextChanged(object sender, EventArgs e)
+        {
+            UpdatePreview();
+        }
+
         private void rtbURLSyntax_TextChanged(object sender, EventArgs e)
         {
+            CustomUploaderSyntaxHighlight(rtbURLSyntax);
             UpdatePreview();
         }
     }

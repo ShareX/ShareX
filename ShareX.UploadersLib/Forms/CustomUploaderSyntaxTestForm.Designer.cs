@@ -43,8 +43,10 @@
             this.txtResponseText.Location = new System.Drawing.Point(16, 32);
             this.txtResponseText.Multiline = true;
             this.txtResponseText.Name = "txtResponseText";
+            this.txtResponseText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtResponseText.Size = new System.Drawing.Size(568, 168);
             this.txtResponseText.TabIndex = 5;
+            this.txtResponseText.TextChanged += new System.EventHandler(this.txtResponseText_TextChanged);
             // 
             // lblResponseText
             // 
@@ -79,6 +81,7 @@
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
+            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtResult.Size = new System.Drawing.Size(568, 56);
             this.txtResult.TabIndex = 3;
             // 
