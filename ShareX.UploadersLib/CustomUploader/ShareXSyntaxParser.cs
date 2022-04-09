@@ -46,90 +46,55 @@ namespace ShareX.UploadersLib
             return ParseSyntax(text, false, 0, out _);
         }
 
-        private string ParseSyntax(string text, bool isParameter, int startPosition, out int endPosition)
+        private string ParseSyntax(string text, bool isFunction, int startPosition, out int endPosition)
         {
             StringBuilder sbResult = new StringBuilder();
-            bool escape = false;
-            int i;
-
-            for (i = startPosition; i < text.Length; i++)
-            {
-                if (!escape)
-                {
-                    if (text[i] == SyntaxStart)
-                    {
-                        string parsed = ParseFunction(text, i + 1, out i);
-                        sbResult.Append(parsed);
-                        continue;
-                    }
-                    else if (isParameter && (text[i] == SyntaxEnd || text[i] == SyntaxParameterDelimiter))
-                    {
-                        break;
-                    }
-                    else if (text[i] == SyntaxEscape)
-                    {
-                        escape = true;
-                        continue;
-                    }
-                }
-
-                escape = false;
-                sbResult.Append(text[i]);
-            }
-
-            endPosition = i;
-            return sbResult.ToString();
-        }
-
-        private string ParseFunction(string text, int startPosition, out int endPosition)
-        {
-            StringBuilder sbFunctionName = new StringBuilder();
-            bool parsingFunctionName = true;
             List<string> parameters = new List<string>();
             bool escape = false;
             int i;
 
             for (i = startPosition; i < text.Length; i++)
             {
+                char c = text[i];
+
                 if (!escape)
                 {
-                    if (text[i] == SyntaxEnd)
+                    if (c == SyntaxStart)
+                    {
+                        string parsed = ParseSyntax(text, true, i + 1, out i);
+                        sbResult.Append(parsed);
+                        continue;
+                    }
+                    else if (c == SyntaxEnd || (!isFunction && c == SyntaxParameterDelimiter))
                     {
                         break;
                     }
-                    else if (text[i] == SyntaxEscape)
+                    else if (c == SyntaxEscape)
                     {
                         escape = true;
                         continue;
                     }
-
-                    if (parsingFunctionName)
+                    else if (isFunction && (c == SyntaxParameterStart || c == SyntaxParameterDelimiter))
                     {
-                        if (text[i] == SyntaxParameterStart)
-                        {
-                            parsingFunctionName = false;
-                            continue;
-                        }
-
-                        sbFunctionName.Append(text[i]);
-                    }
-                    else
-                    {
-                        string parsed = ParseSyntax(text, true, i, out i);
+                        string parsed = ParseSyntax(text, false, i + 1, out i);
                         parameters.Add(parsed);
-
-                        if (text[i] == SyntaxEnd)
-                        {
-                            break;
-                        }
+                        i--;
+                        continue;
                     }
                 }
 
                 escape = false;
+                sbResult.Append(c);
             }
 
             endPosition = i;
-            return CallFunction(sbFunctionName.ToString(), parameters.ToArray());
+
+            if (isFunction)
+            {
+                return CallFunction(sbResult.ToString(), parameters.ToArray());
+            }
+
+            return sbResult.ToString();
         }
 
         protected abstract string CallFunction(string functionName, string[] parameters);
