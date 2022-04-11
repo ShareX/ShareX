@@ -122,7 +122,7 @@
 Уверенны, что хотите продолжить?</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
-    <value>Осталось: {0}с ({1}%) Всего: {2}</value>
+    <value>Осталось: {0} с ({1}%). Всего: {2}</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Ссылка для закачки перед загрузкой</value>
@@ -261,7 +261,7 @@
     <value>Не удалось сохранить изображение по пути {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>Для изменения языка ShareX должен быть перезапущен.
+    <value>Для изменения языка ShareX необходимо перезапустить.
 Хотите перезапустить ShareX?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
@@ -375,7 +375,7 @@
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Загрузить этот скриншот?
-Нажмите «Нет», чтобы отменить загрузку и отключить автозагрузку скриншотов.</value>
+Нажмите «Нет», чтобы отменить загрузку и отключить автоматическую загрузку скриншотов.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Загружается</value>
@@ -500,7 +500,7 @@
     <value>Распознавание в процессе.</value>
   </data>
   <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Произошла ошибка распознавание, либо текст не обнаружен.</value>
+    <value>Произошла ошибка распознавания, либо текст не обнаружен.</value>
   </data>
   <data name="OCRForm_AutoComplete" xml:space="preserve">
     <value>Результат распознавания скопирован в буфер обмена.</value>
@@ -514,7 +514,7 @@
     <value>ShareX - Подтверждение</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
-    <value>Задержка скриншота: {0}с</value>
+    <value>Задержка скриншота: {0} с</value>
   </data>
   <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
     <value>Обратите внимание, ShareX использует онлайн API OCR.Space для распознавания текста. Вы даете ShareX разрешение на загрузку изображений на этот сервис?</value>
@@ -541,13 +541,13 @@
     <value>Буфер обмена пуст или содержит неизвестные данные.</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Содержимое буфера обмена: Файл (Количество: {0})</value>
+    <value>Содержимое буфера обмена: Файл (количество: {0})</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Содержимое буфера обмена: Изображение (Размер: {0}x{1})</value>
+    <value>Содержимое буфера обмена: Изображение (размер: {0}x{1})</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Содержимое буфера обмена: Текст (Длина: {0})</value>
+    <value>Содержимое буфера обмена: Текст (длина: {0})</value>
   </data>
   <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
     <value>Португальский</value>
@@ -562,7 +562,7 @@
     <value>ShareX свернут в системный трей.</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Ваш анитвирус или контролируемый доступ к файлам в Windows могут блокировать ShareX.</value>
+    <value>Ваш антивирус или контролируемый доступ к файлам в Windows могут блокировать ShareX.</value>
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Не удалось сохранить настройки</value>
@@ -576,7 +576,7 @@
 Их можно выключить из меню "После захвата".</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Клавиша</value>
+    <value>Горячая клавиша</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Описание</value>
