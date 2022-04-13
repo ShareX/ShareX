@@ -30,6 +30,8 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "header";
 
+        public override int MinParameterLength { get; } = 1;
+
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
             string header = parameters[0];

@@ -32,6 +32,8 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "select";
 
+        public override int MinParameterLength { get; } = 1;
+
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
             string[] values = parameters.Where(x => !string.IsNullOrEmpty(x)).ToArray();

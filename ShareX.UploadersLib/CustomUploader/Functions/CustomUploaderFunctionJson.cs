@@ -32,6 +32,8 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "json";
 
+        public override int MinParameterLength { get; } = 1;
+
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
             // https://goessner.net/articles/JsonPath/

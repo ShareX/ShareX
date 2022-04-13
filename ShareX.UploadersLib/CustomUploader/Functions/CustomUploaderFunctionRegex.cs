@@ -34,37 +34,36 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "regex";
 
+        public override int MinParameterLength { get; } = 1;
+
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
-            if (parameters.Length > 0)
+            string pattern = parameters[0];
+
+            if (!string.IsNullOrEmpty(pattern))
             {
-                string pattern = parameters[0];
+                Match match = Regex.Match(parser.ResponseInfo.ResponseText, pattern);
 
-                if (!string.IsNullOrEmpty(pattern))
+                if (match.Success)
                 {
-                    Match match = Regex.Match(parser.ResponseInfo.ResponseText, pattern);
-
-                    if (match.Success)
+                    if (parameters.Length > 1)
                     {
-                        if (parameters.Length > 1)
-                        {
-                            string group = parameters[1];
+                        string group = parameters[1];
 
-                            if (!string.IsNullOrEmpty(group))
+                        if (!string.IsNullOrEmpty(group))
+                        {
+                            if (int.TryParse(group, out int groupNumber))
                             {
-                                if (int.TryParse(group, out int groupNumber))
-                                {
-                                    return match.Groups[groupNumber].Value;
-                                }
-                                else
-                                {
-                                    return match.Groups[group].Value;
-                                }
+                                return match.Groups[groupNumber].Value;
+                            }
+                            else
+                            {
+                                return match.Groups[group].Value;
                             }
                         }
-
-                        return match.Value;
                     }
+
+                    return match.Value;
                 }
             }
 

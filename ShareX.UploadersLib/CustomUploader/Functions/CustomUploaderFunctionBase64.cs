@@ -32,6 +32,8 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "base64";
 
+        public override int MinParameterLength { get; } = 1;
+
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
             string text = parameters[0];
