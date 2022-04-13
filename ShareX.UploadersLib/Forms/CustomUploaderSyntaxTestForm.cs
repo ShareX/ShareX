@@ -32,17 +32,25 @@ namespace ShareX.UploadersLib
 {
     public partial class CustomUploaderSyntaxTestForm : Form
     {
+        private ResponseInfo testResponseInfo;
+
         public CustomUploaderSyntaxTestForm() : this(null, null)
         {
         }
 
-        public CustomUploaderSyntaxTestForm(string responseText, string urlSyntax)
+        public CustomUploaderSyntaxTestForm(ResponseInfo responseInfo, string urlSyntax)
         {
             InitializeComponent();
 
-            if (string.IsNullOrEmpty(responseText))
+            testResponseInfo = responseInfo;
+
+            if (testResponseInfo == null)
             {
-                responseText = "{\r\n    \"status\": 200,\r\n    \"data\": {\r\n        \"link\": \"https:\\/\\/example.com\\/image.png\"\r\n    }\r\n}";
+                testResponseInfo = new ResponseInfo()
+                {
+                    ResponseText = "{\r\n    \"status\": 200,\r\n    \"data\": {\r\n        \"link\": \"https:\\/\\/example.com\\/image.png\"\r\n    }\r\n}",
+                    ResponseURL = "https://example.com/upload"
+                };
             }
 
             if (string.IsNullOrEmpty(urlSyntax))
@@ -50,7 +58,7 @@ namespace ShareX.UploadersLib
                 urlSyntax = "{json:data.link}";
             }
 
-            txtResponseText.Text = responseText;
+            rtbResponseText.Text = testResponseInfo.ResponseText;
             rtbURLSyntax.Text = urlSyntax;
             rtbURLSyntax.Select(rtbURLSyntax.TextLength, 0);
 
@@ -117,15 +125,12 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private string ParseSyntax(string responseText, string urlSyntax)
+        private string ParseSyntax(ResponseInfo responseInfo, string urlSyntax)
         {
-            if (string.IsNullOrEmpty(responseText) || string.IsNullOrEmpty(urlSyntax)) return null;
-
-            ResponseInfo responseInfo = new ResponseInfo()
+            if (responseInfo == null || string.IsNullOrEmpty(urlSyntax))
             {
-                ResponseText = responseText,
-                ResponseURL = "https://example.com/upload"
-            };
+                return null;
+            }
 
             ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser()
             {
@@ -141,7 +146,8 @@ namespace ShareX.UploadersLib
         {
             try
             {
-                string result = ParseSyntax(txtResponseText.Text, rtbURLSyntax.Text);
+                testResponseInfo.ResponseText = rtbResponseText.Text;
+                string result = ParseSyntax(testResponseInfo, rtbURLSyntax.Text);
                 txtResult.Text = result;
             }
             catch (Exception ex)

@@ -28,25 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtResponseText = new System.Windows.Forms.TextBox();
             this.lblResponseText = new System.Windows.Forms.Label();
             this.lblURLSyntax = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.rtbURLSyntax = new System.Windows.Forms.RichTextBox();
             this.pURLSyntax = new System.Windows.Forms.Panel();
+            this.pResponseText = new System.Windows.Forms.Panel();
+            this.rtbResponseText = new System.Windows.Forms.RichTextBox();
             this.pURLSyntax.SuspendLayout();
+            this.pResponseText.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtResponseText
-            // 
-            this.txtResponseText.Location = new System.Drawing.Point(16, 32);
-            this.txtResponseText.Multiline = true;
-            this.txtResponseText.Name = "txtResponseText";
-            this.txtResponseText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtResponseText.Size = new System.Drawing.Size(568, 168);
-            this.txtResponseText.TabIndex = 5;
-            this.txtResponseText.TextChanged += new System.EventHandler(this.txtResponseText_TextChanged);
             // 
             // lblResponseText
             // 
@@ -109,36 +101,58 @@
             this.pURLSyntax.Size = new System.Drawing.Size(568, 20);
             this.pURLSyntax.TabIndex = 1;
             // 
+            // pResponseText
+            // 
+            this.pResponseText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pResponseText.Controls.Add(this.rtbResponseText);
+            this.pResponseText.Location = new System.Drawing.Point(16, 32);
+            this.pResponseText.Name = "pResponseText";
+            this.pResponseText.Padding = new System.Windows.Forms.Padding(2);
+            this.pResponseText.Size = new System.Drawing.Size(568, 168);
+            this.pResponseText.TabIndex = 5;
+            // 
+            // rtbResponseText
+            // 
+            this.rtbResponseText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbResponseText.DetectUrls = false;
+            this.rtbResponseText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbResponseText.Location = new System.Drawing.Point(2, 2);
+            this.rtbResponseText.Name = "rtbResponseText";
+            this.rtbResponseText.Size = new System.Drawing.Size(562, 162);
+            this.rtbResponseText.TabIndex = 0;
+            this.rtbResponseText.Text = "";
+            // 
             // CustomUploaderSyntaxTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 344);
+            this.Controls.Add(this.pResponseText);
             this.Controls.Add(this.pURLSyntax);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblURLSyntax);
             this.Controls.Add(this.lblResponseText);
-            this.Controls.Add(this.txtResponseText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "CustomUploaderSyntaxTestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Custom uploader syntax test";
             this.pURLSyntax.ResumeLayout(false);
+            this.pResponseText.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtResponseText;
         private System.Windows.Forms.Label lblResponseText;
         private System.Windows.Forms.Label lblURLSyntax;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.RichTextBox rtbURLSyntax;
         private System.Windows.Forms.Panel pURLSyntax;
+        private System.Windows.Forms.Panel pResponseText;
+        private System.Windows.Forms.RichTextBox rtbResponseText;
     }
 }

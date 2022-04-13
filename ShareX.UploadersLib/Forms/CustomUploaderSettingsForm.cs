@@ -50,6 +50,7 @@ namespace ShareX.UploadersLib
         public UploadersConfig Config { get; private set; }
 
         private bool customUploaderPauseLoad;
+        private UploadResult lastResult;
 
         public CustomUploaderSettingsForm(UploadersConfig config)
         {
@@ -670,6 +671,8 @@ namespace ShareX.UploadersLib
 
             if (!IsDisposed)
             {
+                lastResult = result;
+
                 if (result != null)
                 {
                     ResponseForm.ShowInstance(result);
@@ -1035,7 +1038,7 @@ namespace ShareX.UploadersLib
 
         private void btnTestURLSyntax_Click(object sender, EventArgs e)
         {
-            using (CustomUploaderSyntaxTestForm syntaxTestForm = new CustomUploaderSyntaxTestForm(null, rtbResultURL.Text))
+            using (CustomUploaderSyntaxTestForm syntaxTestForm = new CustomUploaderSyntaxTestForm(lastResult?.ResponseInfo, rtbResultURL.Text))
             {
                 syntaxTestForm.ShowDialog();
             }
