@@ -65,7 +65,7 @@ namespace ShareX.UploadersLib
                         sbResult.Append(parsed);
                         continue;
                     }
-                    else if (c == SyntaxEnd || (!isFunction && c == SyntaxParameterDelimiter))
+                    else if (c == SyntaxEnd || c == SyntaxParameterDelimiter)
                     {
                         break;
                     }
@@ -74,12 +74,15 @@ namespace ShareX.UploadersLib
                         escape = true;
                         continue;
                     }
-                    else if (isFunction && (c == SyntaxParameterStart || c == SyntaxParameterDelimiter))
+                    else if (isFunction && c == SyntaxParameterStart)
                     {
-                        string parsed = ParseSyntax(text, false, i + 1, out i);
-                        parameters.Add(parsed);
-                        i--;
-                        continue;
+                        do
+                        {
+                            string parsed = ParseSyntax(text, false, i + 1, out i);
+                            parameters.Add(parsed);
+                        } while (i < text.Length && text[i] == SyntaxParameterDelimiter);
+
+                        break;
                     }
                 }
 
