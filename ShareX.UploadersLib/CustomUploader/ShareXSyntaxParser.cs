@@ -43,13 +43,12 @@ namespace ShareX.UploadersLib
                 return "";
             }
 
-            return ParseSyntax(text, false, 0, out _);
+            return Parse(text, false, 0, out _);
         }
 
-        private string ParseSyntax(string text, bool isFunction, int startPosition, out int endPosition)
+        private string Parse(string text, bool isFunction, int startPosition, out int endPosition)
         {
-            StringBuilder sbResult = new StringBuilder();
-            List<string> parameters = new List<string>();
+            StringBuilder sbOutput = new StringBuilder();
             bool escape = false;
             int i;
 
@@ -61,8 +60,8 @@ namespace ShareX.UploadersLib
                 {
                     if (c == SyntaxStart)
                     {
-                        string parsed = ParseSyntax(text, true, i + 1, out i);
-                        sbResult.Append(parsed);
+                        string parsed = Parse(text, true, i + 1, out i);
+                        sbOutput.Append(parsed);
                         continue;
                     }
                     else if (c == SyntaxEnd || c == SyntaxParameterDelimiter)
@@ -76,30 +75,34 @@ namespace ShareX.UploadersLib
                     }
                     else if (isFunction && c == SyntaxParameterStart)
                     {
+                        List<string> parameters = new List<string>();
+
                         do
                         {
-                            string parsed = ParseSyntax(text, false, i + 1, out i);
+                            string parsed = Parse(text, false, i + 1, out i);
                             parameters.Add(parsed);
                         } while (i < text.Length && text[i] == SyntaxParameterDelimiter);
 
-                        break;
+                        endPosition = i;
+
+                        return CallFunction(sbOutput.ToString(), parameters.ToArray());
                     }
                 }
 
                 escape = false;
-                sbResult.Append(c);
+                sbOutput.Append(c);
             }
 
             endPosition = i;
 
             if (isFunction)
             {
-                return CallFunction(sbResult.ToString(), parameters.ToArray());
+                return CallFunction(sbOutput.ToString());
             }
 
-            return sbResult.ToString();
+            return sbOutput.ToString();
         }
 
-        protected abstract string CallFunction(string functionName, string[] parameters);
+        protected abstract string CallFunction(string functionName, string[] parameters = null);
     }
 }

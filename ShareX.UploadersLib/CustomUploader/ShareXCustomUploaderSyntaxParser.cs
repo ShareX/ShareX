@@ -63,8 +63,13 @@ namespace ShareX.UploadersLib
             return base.Parse(text);
         }
 
-        protected override string CallFunction(string functionName, string[] parameters)
+        protected override string CallFunction(string functionName, string[] parameters = null)
         {
+            if (string.IsNullOrEmpty(functionName))
+            {
+                throw new Exception("Function name cannot be empty.");
+            }
+
             foreach (CustomUploaderFunction function in Functions)
             {
                 if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase))
