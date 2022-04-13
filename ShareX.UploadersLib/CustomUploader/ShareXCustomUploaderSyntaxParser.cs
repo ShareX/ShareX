@@ -74,9 +74,9 @@ namespace ShareX.UploadersLib
             {
                 if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase))
                 {
-                    if (function.MinParameterLength > 0 && (parameters == null || parameters.Length < function.MinParameterLength))
+                    if (function.MinParameterCount > 0 && (parameters == null || parameters.Length < function.MinParameterCount))
                     {
-                        throw new Exception($"Minimum parameter length for function \"{function.Name}\" is {function.MinParameterLength}.");
+                        throw new Exception($"Minimum parameter count for function \"{function.Name}\" is {function.MinParameterCount}.");
                     }
 
                     return function.Call(this, parameters);

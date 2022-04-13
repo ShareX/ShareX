@@ -32,7 +32,7 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "random";
 
-        public override int MinParameterLength { get; } = 2;
+        public override int MinParameterCount { get; } = 2;
 
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
