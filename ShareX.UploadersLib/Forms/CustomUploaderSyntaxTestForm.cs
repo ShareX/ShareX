@@ -96,7 +96,7 @@ namespace ShareX.UploadersLib
                 rtb.SelectionLength = rtb.TextLength;
                 rtb.SelectionColor = rtb.ForeColor;
 
-                CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser();
+                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser();
 
                 for (int i = 0; i < text.Length; i++)
                 {
@@ -127,7 +127,7 @@ namespace ShareX.UploadersLib
                 ResponseURL = "https://example.com/upload"
             };
 
-            CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser()
+            ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser()
             {
                 FileName = "example.png",
                 ResponseInfo = responseInfo,

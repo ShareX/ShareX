@@ -146,7 +146,7 @@ namespace ShareX.UploadersLib
                 throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
             }
 
-            CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
+            ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
             parser.URLEncode = true;
             string url = parser.Parse(RequestURL);
 
@@ -162,7 +162,7 @@ namespace ShareX.UploadersLib
 
             if (Parameters != null)
             {
-                CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
+                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
                 parser.UseNameParser = true;
 
                 foreach (KeyValuePair<string, string> parameter in Parameters)
@@ -239,7 +239,7 @@ namespace ShareX.UploadersLib
 
             if (Arguments != null)
             {
-                CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
+                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
                 parser.UseNameParser = true;
 
                 foreach (KeyValuePair<string, string> arg in Arguments)
@@ -257,7 +257,7 @@ namespace ShareX.UploadersLib
             {
                 NameValueCollection collection = new NameValueCollection();
 
-                CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
+                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
                 parser.UseNameParser = true;
 
                 foreach (KeyValuePair<string, string> header in Headers)
@@ -282,7 +282,7 @@ namespace ShareX.UploadersLib
                     responseInfo.ResponseText = "";
                 }
 
-                CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser()
+                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser()
                 {
                     FileName = input.FileName,
                     ResponseInfo = responseInfo,

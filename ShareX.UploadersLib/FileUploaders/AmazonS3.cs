@@ -288,7 +288,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (Settings.UseCustomCNAME && !string.IsNullOrEmpty(Settings.CustomDomain))
                 {
-                    CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser();
+                    ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser();
                     string parsedDomain = parser.Parse(Settings.CustomDomain);
                     url = URLHelpers.CombineURL(parsedDomain, uploadPath);
                 }

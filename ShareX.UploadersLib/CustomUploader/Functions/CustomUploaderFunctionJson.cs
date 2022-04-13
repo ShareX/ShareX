@@ -32,7 +32,7 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "json";
 
-        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
+        public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
             // https://goessner.net/articles/JsonPath/
             string jsonPath = parameters[0];

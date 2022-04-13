@@ -138,7 +138,7 @@
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionHeader.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionRegex.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionJson.cs" />
-    <Compile Include="CustomUploader\CustomUploaderSyntaxParser.cs" />
+    <Compile Include="CustomUploader\ShareXCustomUploaderSyntaxParser.cs" />
     <Compile Include="CustomUploader\ShareXSyntaxParser.cs" />
     <Compile Include="FileUploaders\AmazonS3.cs" />
     <Compile Include="FileUploaders\AmazonS3Endpoint.cs" />

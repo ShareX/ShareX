@@ -32,7 +32,7 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "select";
 
-        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
+        public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
             string[] values = parameters.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 

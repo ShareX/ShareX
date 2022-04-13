@@ -35,7 +35,7 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "prompt";
 
-        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
+        public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
             string title = "ShareX - Prompt";
             string defaultValue = "";

@@ -29,7 +29,7 @@ using System.Collections.Generic;
 
 namespace ShareX.UploadersLib
 {
-    public class CustomUploaderSyntaxParser : ShareXSyntaxParser
+    public class ShareXCustomUploaderSyntaxParser : ShareXSyntaxParser
     {
         private static IEnumerable<CustomUploaderFunction> Functions = Helpers.GetInstances<CustomUploaderFunction>();
 
@@ -40,11 +40,11 @@ namespace ShareX.UploadersLib
         public bool UseNameParser { get; set; }
         public NameParserType NameParserType { get; set; } = NameParserType.Text;
 
-        public CustomUploaderSyntaxParser()
+        public ShareXCustomUploaderSyntaxParser()
         {
         }
 
-        public CustomUploaderSyntaxParser(CustomUploaderInput input)
+        public ShareXCustomUploaderSyntaxParser(CustomUploaderInput input)
         {
             FileName = input.FileName;
             Input = input.Input;
