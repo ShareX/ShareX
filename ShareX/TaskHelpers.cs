@@ -1239,7 +1239,7 @@ namespace ShareX
                 }
                 else
                 {
-                    using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName, ocrOptions))
+                    using (OCRForm form = new OCRForm(stream))
                     {
                         form.ShowDialog();
 

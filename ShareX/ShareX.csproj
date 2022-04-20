@@ -212,6 +212,12 @@
     <Compile Include="Forms\InspectWindowForm.Designer.cs">
       <DependentUpon>InspectWindowForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OCRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OCRForm.Designer.cs">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NativeMessageInput.cs" />
     <Compile Include="NewsItem.cs" />
     <Compile Include="NewsManager.cs" />
@@ -1310,6 +1316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.zh-TW.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OCRForm.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.de.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>

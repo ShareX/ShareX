@@ -36,9 +36,17 @@ namespace ShareX
 {
     public static class OCRHelper
     {
-        private static void ThrowIfNotSupported()
+        public static bool IsSupported
         {
-            if (Helpers.OSVersion < new Version("10.0.18362.0"))
+            get
+            {
+                return Helpers.OSVersion >= new Version("10.0.18362.0");
+            }
+        }
+
+        public static void ThrowIfNotSupported()
+        {
+            if (!IsSupported)
             {
                 throw new Exception("Windows version 10.0.18362.0 or newer is required for OCR to work.");
             }
