@@ -208,6 +208,7 @@
     </Compile>
     <Compile Include="NotificationFormConfig.cs" />
     <Compile Include="OCRHelper.cs" />
+    <Compile Include="OCRLanguage.cs" />
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>

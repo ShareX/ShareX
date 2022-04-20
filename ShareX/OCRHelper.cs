@@ -44,6 +44,14 @@ namespace ShareX
             }
         }
 
+        public static OCRLanguage[] AvailableLanguages
+        {
+            get
+            {
+                return OcrEngine.AvailableRecognizerLanguages.Select(x => new OCRLanguage(x.DisplayName, x.LanguageTag)).ToArray();
+            }
+        }
+
         public static void ThrowIfNotSupported()
         {
             if (!IsSupported)

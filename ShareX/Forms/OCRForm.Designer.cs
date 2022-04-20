@@ -51,6 +51,7 @@
             this.cbLanguages.Name = "cbLanguages";
             this.cbLanguages.Size = new System.Drawing.Size(216, 21);
             this.cbLanguages.TabIndex = 1;
+            this.cbLanguages.SelectedIndexChanged += new System.EventHandler(this.cbLanguages_SelectedIndexChanged);
             // 
             // lblResult
             // 

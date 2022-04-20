@@ -25,15 +25,14 @@
 
 using ShareX.HelpersLib;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Windows.Media.Ocr;
 
 namespace ShareX
 {
     public partial class OCRForm : Form
     {
+        public OCRLanguage Language { get; set; }
         public string Result { get; private set; }
 
         private Stream stream;
@@ -45,25 +44,30 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            cbLanguages.Items.AddRange(OcrEngine.AvailableRecognizerLanguages.Select(x => x.DisplayName).ToArray());
+            cbLanguages.Items.AddRange(OCRHelper.AvailableLanguages);
             cbLanguages.SelectedIndex = 0;
             txtResult.SupportSelectAll();
         }
 
-        private async void OCRForm_Shown(object sender, System.EventArgs e)
+        private async Task OCR(string languageTag)
         {
-            await OCR();
-        }
-
-        private async Task OCR()
-        {
-            Result = await OCRHelper.OCR(stream);
+            Result = await OCRHelper.OCR(stream, languageTag);
 
             if (!IsDisposed)
             {
                 txtResult.Focus();
                 txtResult.Text = Result;
             }
+        }
+
+        private async void OCRForm_Shown(object sender, System.EventArgs e)
+        {
+            await OCR(Language.LanguageTag);
+        }
+
+        private void cbLanguages_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            Language = cbLanguages.SelectedItem as OCRLanguage;
         }
     }
 }
