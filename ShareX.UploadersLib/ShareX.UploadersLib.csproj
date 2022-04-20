@@ -109,10 +109,8 @@
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
@@ -186,12 +184,6 @@
     </Compile>
     <Compile Include="Forms\CustomUploaderSyntaxTestForm.Designer.cs">
       <DependentUpon>CustomUploaderSyntaxTestForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\OCRSpaceForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\OCRSpaceForm.Designer.cs">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ParserSelectForm.cs">
       <SubType>Form</SubType>
@@ -661,51 +653,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\JiraUpload.zh-TW.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.de.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.es-MX.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.fa-IR.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.fr.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.id-ID.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.ja-JP.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.ko-KR.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.pt-PT.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.ru.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.tr.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.uk.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.vi-VN.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.zh-CN.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRSpaceForm.zh-TW.resx">
-      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ParserSelectForm.resx">
       <DependentUpon>ParserSelectForm.cs</DependentUpon>

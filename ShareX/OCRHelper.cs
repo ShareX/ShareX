@@ -48,6 +48,8 @@ namespace ShareX
         {
             get
             {
+                ThrowIfNotSupported();
+
                 return OcrEngine.AvailableRecognizerLanguages.Select(x => new OCRLanguage(x.DisplayName, x.LanguageTag)).ToArray();
             }
         }

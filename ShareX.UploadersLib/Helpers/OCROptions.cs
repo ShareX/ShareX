@@ -31,7 +31,6 @@ namespace ShareX.UploadersLib
     {
         public bool Permission { get; set; } = false;
         public OCRSpaceLanguages DefaultLanguage { get; set; } = OCRSpaceLanguages.eng;
-        public OCRSpaceSites DefaultSite { get; set; } = OCRSpaceSites.GoogleTranslate;
         public bool Silent { get; set; } = false;
         public bool ProcessOnLoad { get; set; } = true;
         public bool AutoCopy { get; set; } = false;
