@@ -1222,7 +1222,7 @@ namespace ShareX
                 }
                 else
                 {
-                    using (OCRForm form = new OCRForm(stream))
+                    using (OCRForm form = new OCRForm(ocrOptions, stream))
                     {
                         form.ShowDialog();
 
@@ -1249,7 +1249,10 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(result))
             {
-                ClipboardHelpers.CopyText(result);
+                Program.MainForm.InvokeSafe(() =>
+                {
+                    ClipboardHelpers.CopyText(result);
+                });
 
                 if (!string.IsNullOrEmpty(filePath))
                 {

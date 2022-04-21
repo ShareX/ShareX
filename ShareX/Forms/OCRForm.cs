@@ -33,12 +33,14 @@ namespace ShareX
     public partial class OCRForm : Form
     {
         public OCRLanguage Language { get; set; }
+        public OCROptions Options { get; set; }
         public string Result { get; private set; }
 
         private Stream stream;
 
-        public OCRForm(Stream stream)
+        public OCRForm(OCROptions options, Stream stream)
         {
+            Options = options;
             this.stream = stream;
 
             InitializeComponent();
@@ -53,6 +55,11 @@ namespace ShareX
         {
             Result = await OCRHelper.OCR(stream, languageTag);
 
+            if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
+            {
+                ClipboardHelpers.CopyText(Result);
+            }
+
             if (!IsDisposed)
             {
                 txtResult.Focus();
@@ -62,7 +69,10 @@ namespace ShareX
 
         private async void OCRForm_Shown(object sender, System.EventArgs e)
         {
-            await OCR(Language.LanguageTag);
+            if (Options.ProcessOnLoad)
+            {
+                await OCR(Language.LanguageTag);
+            }
         }
 
         private void cbLanguages_SelectedIndexChanged(object sender, System.EventArgs e)
