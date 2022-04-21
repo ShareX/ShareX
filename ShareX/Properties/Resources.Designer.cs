@@ -2255,16 +2255,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please note that ShareX is using OCR.Space&apos;s online API to perform optical character recognition. Do you give permission to ShareX to upload images to this service?.
-        /// </summary>
-        public static string PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService {
-            get {
-                return ResourceManager.GetString("PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognition" +
-                        "DoYouGivePermissionToShareXToUploadImagesToThisService", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap printer {
@@ -2442,15 +2432,6 @@ namespace ShareX.Properties {
         public static string ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply {
             get {
                 return ResourceManager.GetString("ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ShareX - Optical character recognition.
-        /// </summary>
-        public static string ShareXOpticalCharacterRecognition {
-            get {
-                return ResourceManager.GetString("ShareXOpticalCharacterRecognition", resourceCulture);
             }
         }
         

@@ -31,7 +31,6 @@ using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.OtherServices;
 using ShareX.UploadersLib.SharingServices;
 using System;
 using System.Collections.Generic;
@@ -1179,40 +1178,37 @@ namespace ShareX
 
         public static async Task OCRImage(TaskSettings taskSettings = null)
         {
-            if (IsUploadAllowed())
-            {
-                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
-                {
-                    await OCRImage(bmp, taskSettings);
-                }
+            using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+            {
+                await OCRImage(bmp, taskSettings);
             }
         }
 
         public static async Task OCRImage(Image img, TaskSettings taskSettings = null)
         {
-            if (IsUploadAllowed() && img != null)
+            if (img != null)
             {
                 using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
                 {
-                    await OCRImage(stream, "ShareX.png", null, taskSettings);
+                    await OCRImage(stream, null, taskSettings);
                 }
             }
         }
 
         public static async Task OCRImage(string filePath, TaskSettings taskSettings = null)
         {
-            if (IsUploadAllowed() && File.Exists(filePath))
+            if (File.Exists(filePath))
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    await OCRImage(fs, Path.GetFileName(filePath), filePath, taskSettings);
+                    await OCRImage(fs, filePath, taskSettings);
                 }
             }
         }
 
-        private static async Task OCRImage(Stream stream, string fileName, string filePath = null, TaskSettings taskSettings = null)
+        private static async Task OCRImage(Stream stream, string filePath = null, TaskSettings taskSettings = null)
         {
             if (stream != null)
             {
@@ -1220,22 +1216,9 @@ namespace ShareX
 
                 OCROptions ocrOptions = taskSettings.CaptureSettingsReference.OCROptions;
 
-                if (!ocrOptions.Permission)
-                {
-                    if (MessageBox.Show(Resources.PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService,
-                        Resources.ShareXOpticalCharacterRecognition, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        ocrOptions.Permission = true;
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }
-
                 if (ocrOptions.Silent)
                 {
-                    await AsyncOCRImage(stream, fileName, filePath, ocrOptions);
+                    await AsyncOCRImage(stream, filePath, ocrOptions);
                 }
                 else
                 {
@@ -1253,15 +1236,15 @@ namespace ShareX
             }
         }
 
-        private static async Task AsyncOCRImage(Stream stream, string fileName, string filePath, OCROptions ocrOptions)
+        private static async Task AsyncOCRImage(Stream stream, string filePath, OCROptions ocrOptions)
         {
             ShowNotificationTip(Resources.OCRForm_AutoProcessing);
 
             string result = null;
 
-            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
+            if (stream != null && stream.Length > 0)
             {
-                result = await OCRSpace.DoOCRAsync(ocrOptions.DefaultLanguage, stream, fileName);
+                result = await OCRHelper.OCR(stream);
             }
 
             if (!string.IsNullOrEmpty(result))

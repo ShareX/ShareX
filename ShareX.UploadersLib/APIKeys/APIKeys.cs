@@ -67,6 +67,5 @@ namespace ShareX.UploadersLib
         public static readonly string GoogleClientSecret = "";
         public static readonly string TwitterConsumerKey = "";
         public static readonly string TwitterConsumerSecret = "";
-        public static readonly string OCRSpaceAPIKey = "";
     }
 }

@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -344,8 +343,8 @@ namespace ShareX
 
             OCROptions ocrOptions = TaskSettings.CaptureSettings.OCROptions;
 
-            cbCaptureOCRDefaultLanguage.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
-            cbCaptureOCRDefaultLanguage.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+            //cbCaptureOCRDefaultLanguage.Items.AddRange();
+            //cbCaptureOCRDefaultLanguage.SelectedIndex = (int)ocrOptions.DefaultLanguage;
 
             cbCaptureOCRSilent.Checked = ocrOptions.Silent;
             cbCaptureOCRProcessOnLoad.Checked = ocrOptions.ProcessOnLoad;
@@ -1306,7 +1305,7 @@ namespace ShareX
 
         private void cbCaptureOCRDefaultLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.OCROptions.DefaultLanguage = (OCRSpaceLanguages)cbCaptureOCRDefaultLanguage.SelectedIndex;
+            //TaskSettings.CaptureSettings.OCROptions.DefaultLanguage = cbCaptureOCRDefaultLanguage.SelectedIndex;
         }
 
         private void cbCaptureOCRSilent_CheckedChanged(object sender, EventArgs e)

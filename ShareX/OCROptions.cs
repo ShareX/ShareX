@@ -23,14 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.UploadersLib.OtherServices;
-
-namespace ShareX.UploadersLib
+namespace ShareX
 {
     public class OCROptions
     {
-        public bool Permission { get; set; } = false;
-        public OCRSpaceLanguages DefaultLanguage { get; set; } = OCRSpaceLanguages.eng;
         public bool Silent { get; set; } = false;
         public bool ProcessOnLoad { get; set; } = true;
         public bool AutoCopy { get; set; } = false;
