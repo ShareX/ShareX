@@ -43,8 +43,8 @@
             // cbLanguages
             // 
             this.cbLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLanguages.FormattingEnabled = true;
             resources.ApplyResources(this.cbLanguages, "cbLanguages");
+            this.cbLanguages.FormattingEnabled = true;
             this.cbLanguages.Name = "cbLanguages";
             this.cbLanguages.SelectedIndexChanged += new System.EventHandler(this.cbLanguages_SelectedIndexChanged);
             // 
