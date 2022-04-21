@@ -218,7 +218,6 @@
             this.lblGIFFPS = new System.Windows.Forms.Label();
             this.tpOCR = new System.Windows.Forms.TabPage();
             this.cbCaptureOCRAutoCopy = new System.Windows.Forms.CheckBox();
-            this.cbCaptureOCRProcessOnLoad = new System.Windows.Forms.CheckBox();
             this.cbCaptureOCRSilent = new System.Windows.Forms.CheckBox();
             this.lblOCRDefaultLanguage = new System.Windows.Forms.Label();
             this.cbCaptureOCRDefaultLanguage = new System.Windows.Forms.ComboBox();
@@ -1987,7 +1986,6 @@
             // tpOCR
             // 
             this.tpOCR.Controls.Add(this.cbCaptureOCRAutoCopy);
-            this.tpOCR.Controls.Add(this.cbCaptureOCRProcessOnLoad);
             this.tpOCR.Controls.Add(this.cbCaptureOCRSilent);
             this.tpOCR.Controls.Add(this.lblOCRDefaultLanguage);
             this.tpOCR.Controls.Add(this.cbCaptureOCRDefaultLanguage);
@@ -2001,13 +1999,6 @@
             this.cbCaptureOCRAutoCopy.Name = "cbCaptureOCRAutoCopy";
             this.cbCaptureOCRAutoCopy.UseVisualStyleBackColor = true;
             this.cbCaptureOCRAutoCopy.CheckedChanged += new System.EventHandler(this.cbCaptureOCRAutoCopy_CheckedChanged);
-            // 
-            // cbCaptureOCRProcessOnLoad
-            // 
-            resources.ApplyResources(this.cbCaptureOCRProcessOnLoad, "cbCaptureOCRProcessOnLoad");
-            this.cbCaptureOCRProcessOnLoad.Name = "cbCaptureOCRProcessOnLoad";
-            this.cbCaptureOCRProcessOnLoad.UseVisualStyleBackColor = true;
-            this.cbCaptureOCRProcessOnLoad.CheckedChanged += new System.EventHandler(this.cbCaptureOCRProcessOnLoad_CheckedChanged);
             // 
             // cbCaptureOCRSilent
             // 
@@ -2901,7 +2892,6 @@
         private System.Windows.Forms.Label lblOCRDefaultLanguage;
         private System.Windows.Forms.ComboBox cbCaptureOCRDefaultLanguage;
         private System.Windows.Forms.CheckBox cbCaptureOCRSilent;
-        private System.Windows.Forms.CheckBox cbCaptureOCRProcessOnLoad;
         private System.Windows.Forms.CheckBox cbCaptureOCRAutoCopy;
         private System.Windows.Forms.Label lblScreenshotDelay;
         private System.Windows.Forms.Label lblAutoIncrementNumber;

@@ -343,15 +343,43 @@ namespace ShareX
 
             OCROptions ocrOptions = TaskSettings.CaptureSettings.OCROptions;
 
-            //cbCaptureOCRDefaultLanguage.Items.AddRange();
-            //cbCaptureOCRDefaultLanguage.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+            try
+            {
+                OCRLanguage[] languages = OCRHelper.AvailableLanguages;
+
+                if (languages.Length > 0)
+                {
+                    cbCaptureOCRDefaultLanguage.Items.AddRange(languages);
+
+                    if (ocrOptions.Language == null)
+                    {
+                        cbCaptureOCRDefaultLanguage.SelectedIndex = 0;
+                        ocrOptions.Language = languages[0].LanguageTag;
+                    }
+                    else
+                    {
+                        int index = Array.FindIndex(languages, x => x.LanguageTag.Equals(ocrOptions.Language, StringComparison.OrdinalIgnoreCase));
+
+                        if (index >= 0)
+                        {
+                            cbCaptureOCRDefaultLanguage.SelectedIndex = index;
+                        }
+                        else
+                        {
+                            cbCaptureOCRDefaultLanguage.SelectedIndex = 0;
+                            ocrOptions.Language = languages[0].LanguageTag;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                cbCaptureOCRDefaultLanguage.Enabled = false;
+            }
 
             cbCaptureOCRSilent.Checked = ocrOptions.Silent;
-            cbCaptureOCRProcessOnLoad.Checked = ocrOptions.ProcessOnLoad;
+            cbCaptureOCRAutoCopy.Enabled = !ocrOptions.Silent;
             cbCaptureOCRAutoCopy.Checked = ocrOptions.AutoCopy;
-
-            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
-            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
 
             #endregion OCR
 
@@ -1305,20 +1333,16 @@ namespace ShareX
 
         private void cbCaptureOCRDefaultLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //TaskSettings.CaptureSettings.OCROptions.DefaultLanguage = cbCaptureOCRDefaultLanguage.SelectedIndex;
+            if (loaded)
+            {
+                TaskSettings.CaptureSettings.OCROptions.Language = ((OCRLanguage)cbCaptureOCRDefaultLanguage.SelectedItem).LanguageTag;
+            }
         }
 
         private void cbCaptureOCRSilent_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.Silent = cbCaptureOCRSilent.Checked;
-
-            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
-            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
-        }
-
-        private void cbCaptureOCRProcessOnLoad_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.OCROptions.ProcessOnLoad = cbCaptureOCRProcessOnLoad.Checked;
+            cbCaptureOCRAutoCopy.Enabled = !TaskSettings.CaptureSettings.OCROptions.Silent;
         }
 
         private void cbCaptureOCRAutoCopy_CheckedChanged(object sender, EventArgs e)
