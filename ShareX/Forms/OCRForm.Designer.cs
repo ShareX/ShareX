@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OCRForm));
             this.lblLanguage = new System.Windows.Forms.Label();
             this.cbLanguages = new System.Windows.Forms.ComboBox();
             this.lblResult = new System.Windows.Forms.Label();
@@ -36,58 +37,37 @@
             // 
             // lblLanguage
             // 
-            this.lblLanguage.AutoSize = true;
-            this.lblLanguage.Location = new System.Drawing.Point(13, 16);
+            resources.ApplyResources(this.lblLanguage, "lblLanguage");
             this.lblLanguage.Name = "lblLanguage";
-            this.lblLanguage.Size = new System.Drawing.Size(58, 13);
-            this.lblLanguage.TabIndex = 2;
-            this.lblLanguage.Text = "Language:";
             // 
             // cbLanguages
             // 
             this.cbLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLanguages.FormattingEnabled = true;
-            this.cbLanguages.Location = new System.Drawing.Point(16, 32);
+            resources.ApplyResources(this.cbLanguages, "cbLanguages");
             this.cbLanguages.Name = "cbLanguages";
-            this.cbLanguages.Size = new System.Drawing.Size(216, 21);
-            this.cbLanguages.TabIndex = 3;
             this.cbLanguages.SelectedIndexChanged += new System.EventHandler(this.cbLanguages_SelectedIndexChanged);
             // 
             // lblResult
             // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(13, 64);
+            resources.ApplyResources(this.lblResult, "lblResult");
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(40, 13);
-            this.lblResult.TabIndex = 0;
-            this.lblResult.Text = "Result:";
             // 
             // txtResult
             // 
-            this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResult.Location = new System.Drawing.Point(16, 80);
-            this.txtResult.Multiline = true;
+            resources.ApplyResources(this.txtResult, "txtResult");
             this.txtResult.Name = "txtResult";
-            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtResult.Size = new System.Drawing.Size(592, 376);
-            this.txtResult.TabIndex = 1;
             // 
             // OCRForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 471);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.cbLanguages);
             this.Controls.Add(this.lblLanguage);
             this.Name = "OCRForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Optical character recognition";
             this.Shown += new System.EventHandler(this.OCRForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
