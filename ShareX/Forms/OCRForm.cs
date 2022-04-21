@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,11 +33,11 @@ namespace ShareX
 {
     public partial class OCRForm : Form
     {
-        public OCRLanguage Language { get; set; }
         public OCROptions Options { get; set; }
         public string Result { get; private set; }
 
         private Stream stream;
+        private bool loaded;
 
         public OCRForm(OCROptions options, Stream stream)
         {
@@ -46,38 +47,73 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            cbLanguages.Items.AddRange(OCRHelper.AvailableLanguages);
-            cbLanguages.SelectedIndex = 0;
+            OCRLanguage[] languages = OCRHelper.AvailableLanguages;
+
+            if (languages.Length > 0)
+            {
+                cbLanguages.Items.AddRange(languages);
+
+                if (Options.Language == null)
+                {
+                    cbLanguages.SelectedIndex = 0;
+                    Options.Language = languages[0].LanguageTag;
+                }
+                else
+                {
+                    int index = Array.FindIndex(languages, x => x.LanguageTag.Equals(Options.Language, StringComparison.OrdinalIgnoreCase));
+
+                    if (index >= 0)
+                    {
+                        cbLanguages.SelectedIndex = index;
+                    }
+                    else
+                    {
+                        cbLanguages.SelectedIndex = 0;
+                        Options.Language = languages[0].LanguageTag;
+                    }
+                }
+            }
+            else
+            {
+                cbLanguages.Enabled = false;
+            }
+
             txtResult.SupportSelectAll();
+
+            loaded = true;
         }
 
-        private async Task OCR(string languageTag)
+        private async Task OCR()
         {
-            Result = await OCRHelper.OCR(stream, languageTag);
-
-            if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(Options.Language))
             {
-                ClipboardHelpers.CopyText(Result);
-            }
+                Result = await OCRHelper.OCR(stream, Options.Language);
 
-            if (!IsDisposed)
-            {
-                txtResult.Focus();
-                txtResult.Text = Result;
-            }
-        }
+                if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
+                {
+                    ClipboardHelpers.CopyText(Result);
+                }
 
-        private async void OCRForm_Shown(object sender, System.EventArgs e)
-        {
-            if (Options.ProcessOnLoad)
-            {
-                await OCR(Language.LanguageTag);
+                if (!IsDisposed)
+                {
+                    txtResult.Text = Result;
+                }
             }
         }
 
-        private void cbLanguages_SelectedIndexChanged(object sender, System.EventArgs e)
+        private async void OCRForm_Shown(object sender, EventArgs e)
         {
-            Language = cbLanguages.SelectedItem as OCRLanguage;
+            await OCR();
+        }
+
+        private async void cbLanguages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (loaded)
+            {
+                Options.Language = ((OCRLanguage)cbLanguages.SelectedItem).LanguageTag;
+
+                await OCR();
+            }
         }
     }
 }

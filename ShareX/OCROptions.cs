@@ -27,6 +27,7 @@ namespace ShareX
 {
     public class OCROptions
     {
+        public string Language { get; set; }
         public bool Silent { get; set; } = false;
         public bool ProcessOnLoad { get; set; } = true;
         public bool AutoCopy { get; set; } = false;

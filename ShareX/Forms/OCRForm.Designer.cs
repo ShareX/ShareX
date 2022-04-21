@@ -40,7 +40,7 @@
             this.lblLanguage.Location = new System.Drawing.Point(13, 16);
             this.lblLanguage.Name = "lblLanguage";
             this.lblLanguage.Size = new System.Drawing.Size(58, 13);
-            this.lblLanguage.TabIndex = 0;
+            this.lblLanguage.TabIndex = 2;
             this.lblLanguage.Text = "Language:";
             // 
             // cbLanguages
@@ -50,7 +50,7 @@
             this.cbLanguages.Location = new System.Drawing.Point(16, 32);
             this.cbLanguages.Name = "cbLanguages";
             this.cbLanguages.Size = new System.Drawing.Size(216, 21);
-            this.cbLanguages.TabIndex = 1;
+            this.cbLanguages.TabIndex = 3;
             this.cbLanguages.SelectedIndexChanged += new System.EventHandler(this.cbLanguages_SelectedIndexChanged);
             // 
             // lblResult
@@ -59,7 +59,7 @@
             this.lblResult.Location = new System.Drawing.Point(13, 64);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(40, 13);
-            this.lblResult.TabIndex = 2;
+            this.lblResult.TabIndex = 0;
             this.lblResult.Text = "Result:";
             // 
             // txtResult
@@ -67,12 +67,13 @@
             this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResult.Location = new System.Drawing.Point(16, 80);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtResult.Size = new System.Drawing.Size(592, 376);
-            this.txtResult.TabIndex = 3;
+            this.txtResult.TabIndex = 1;
             // 
             // OCRForm
             // 
