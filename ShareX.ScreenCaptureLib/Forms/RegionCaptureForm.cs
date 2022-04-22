@@ -1552,8 +1552,6 @@ namespace ShareX.ScreenCaptureLib
         {
             Bitmap bmp = GetResultImage();
 
-            ShapeManager.IsImageModified = false;
-
             if (Options.AutoCloseEditorOnTask)
             {
                 CloseWindow();
@@ -1575,6 +1573,7 @@ namespace ShareX.ScreenCaptureLib
                     ImageFilePath = imageFilePath;
                     UpdateTitle();
                     ShapeManager.ShowMenuTooltip(Resources.ImageSaved);
+                    ShapeManager.IsImageModified = false;
                 }
             }
         }
@@ -1592,6 +1591,7 @@ namespace ShareX.ScreenCaptureLib
                     ImageFilePath = imageFilePath;
                     UpdateTitle();
                     ShapeManager.ShowMenuTooltip(Resources.ImageSavedAs);
+                    ShapeManager.IsImageModified = false;
                 }
             }
         }
