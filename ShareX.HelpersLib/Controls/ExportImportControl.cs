@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,10 +25,10 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 using ShareX.HelpersLib.Properties;
 using System;
 using System.ComponentModel;
-using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,11 +44,15 @@ namespace ShareX.HelpersLib
         public delegate void ImportEventHandler(object obj);
         public event ImportEventHandler ImportRequested;
 
+        public event Action ImportCompleted;
+
         public delegate void UploadEventHandler(string json);
         public static event UploadEventHandler UploadRequested;
 
         // Can't use generic class because not works in form designer
         public Type ObjectType { get; set; }
+
+        public ISerializationBinder SerializationBinder { get; set; }
 
         [DefaultValue(false)]
         public bool ExportIgnoreDefaultValue { get; set; }
@@ -66,29 +70,14 @@ namespace ShareX.HelpersLib
             InitializeComponent();
         }
 
-        public string Serialize(object obj)
+        private string Serialize(object obj)
         {
             if (obj != null)
             {
                 try
                 {
-                    StringBuilder sb = new StringBuilder(256);
-                    StringWriter stringWriter = new StringWriter(sb, CultureInfo.InvariantCulture);
-
-                    using (JsonTextWriter textWriter = new JsonTextWriter(stringWriter))
-                    {
-                        textWriter.Formatting = Formatting.Indented;
-
-                        JsonSerializer serializer = new JsonSerializer();
-                        serializer.ContractResolver = new WritablePropertiesOnlyResolver();
-                        serializer.Converters.Add(new StringEnumConverter());
-                        serializer.DefaultValueHandling = ExportIgnoreDefaultValue ? DefaultValueHandling.Ignore : DefaultValueHandling.Include;
-                        serializer.NullValueHandling = ExportIgnoreNull ? NullValueHandling.Ignore : NullValueHandling.Include;
-                        serializer.TypeNameHandling = TypeNameHandling.Auto;
-                        serializer.Serialize(textWriter, obj, ObjectType);
-                    }
-
-                    return stringWriter.ToString();
+                    return JsonHelpers.SerializeToString(obj, ExportIgnoreDefaultValue ? DefaultValueHandling.Ignore : DefaultValueHandling.Include,
+                        ExportIgnoreNull ? NullValueHandling.Ignore : NullValueHandling.Include, SerializationBinder);
                 }
                 catch (Exception e)
                 {
@@ -159,7 +148,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public object Deserialize(string json)
+        private object Deserialize(string json)
         {
             try
             {
@@ -167,9 +156,9 @@ namespace ShareX.HelpersLib
                 {
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Converters.Add(new StringEnumConverter());
-                    serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
-                    serializer.TypeNameHandling = TypeNameHandling.Auto;
+                    if (SerializationBinder != null) serializer.SerializationBinder = SerializationBinder;
+                    serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
                     return serializer.Deserialize(textReader, ObjectType);
                 }
             }
@@ -183,77 +172,90 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        private void Import(string json)
+        private void OnImportRequested(string json)
+        {
+            if (ImportRequested != null)
+            {
+                if (!string.IsNullOrEmpty(json))
+                {
+                    object obj = Deserialize(json);
+
+                    if (obj != null)
+                    {
+                        ImportRequested(obj);
+                    }
+                }
+            }
+        }
+
+        private void OnImportCompleted()
+        {
+            ImportCompleted?.Invoke();
+        }
+
+        private void ImportJson(string json)
         {
             if (!string.IsNullOrEmpty(json))
             {
-                object obj = Deserialize(json);
-
-                if (obj != null)
-                {
-                    ImportRequested(obj);
-                }
+                OnImportRequested(json);
+                OnImportCompleted();
             }
         }
 
         private void tsmiImportClipboard_Click(object sender, EventArgs e)
         {
-            if (ImportRequested != null)
-            {
-                if (Clipboard.ContainsText())
-                {
-                    string json = Clipboard.GetText();
-                    Import(json);
-                }
-            }
+            string json = ClipboardHelpers.GetText(true);
+            ImportJson(json);
+        }
+
+        private void ImportFile(string filePath)
+        {
+            string json = File.ReadAllText(filePath, Encoding.UTF8);
+            OnImportRequested(json);
         }
 
         private void tsmiImportFile_Click(object sender, EventArgs e)
         {
-            if (ImportRequested != null)
+            string filter = "Settings (*.json)|*.json|All files (*.*)|*.*";
+
+            if (!string.IsNullOrEmpty(CustomFilter))
             {
-                string filter = "Settings (*.json)|*.json|All files (*.*)|*.*";
+                filter = CustomFilter + "|" + filter;
+            }
 
-                if (!string.IsNullOrEmpty(CustomFilter))
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = filter, Multiselect = true })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    filter = CustomFilter + "|" + filter;
-                }
-
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = filter, Multiselect = true })
-                {
-                    if (ofd.ShowDialog() == DialogResult.OK)
+                    foreach (string fileName in ofd.FileNames)
                     {
-                        foreach (string filename in ofd.FileNames)
-                        {
-                            string json = File.ReadAllText(filename, Encoding.UTF8);
-                            Import(json);
-                        }
+                        ImportFile(fileName);
                     }
+
+                    OnImportCompleted();
                 }
             }
         }
 
         private async void tsmiImportURL_Click(object sender, EventArgs e)
         {
-            if (ImportRequested != null)
+            string url = InputBox.GetInputText(Resources.ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from);
+
+            if (!string.IsNullOrEmpty(url))
             {
-                string url = InputBox.GetInputText(Resources.ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from);
+                btnImport.Enabled = false;
 
-                if (!string.IsNullOrEmpty(url))
+                string json = null;
+
+                await Task.Run(() =>
                 {
-                    btnImport.Enabled = false;
+                    json = Helpers.DownloadString(url);
+                });
 
-                    string json = null;
+                OnImportRequested(json);
+                OnImportCompleted();
 
-                    await Task.Run(() =>
-                    {
-                        json = Helpers.DownloadString(url);
-                    });
-
-                    Import(json);
-
-                    btnImport.Enabled = true;
-                }
+                btnImport.Enabled = true;
             }
         }
     }

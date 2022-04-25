@@ -130,9 +130,12 @@
     <value>Yükle ve bu pencereyi kapat</value>
   </data>
   <data name="tpPreview.Text" xml:space="preserve">
-    <value>Önizleme</value>
+    <value>Ön izleme</value>
   </data>
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Ayarlar</value>
+  </data>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>Resimi farklı kaydet ve bu pencereyi kapat...</value>
   </data>
 </root>

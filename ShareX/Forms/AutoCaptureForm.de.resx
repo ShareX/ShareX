@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - automatisches Aufnehmen</value>
+    <value>ShareX - Automatisches Aufnehmen</value>
   </data>
   <data name="btnExecute.Text" xml:space="preserve">
     <value>Starten</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>Auswählen der Region</value>
+    <value>Bereich auswählen</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>Automatisch in Tray minimieren</value>
+    <value>Automatisch in den Infobereich/Tray minimieren</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
     <value>Warten, bis Aufgabe fertig ist</value>
   </data>
   <data name="gbRegion.Text" xml:space="preserve">
-    <value>Region</value>
+    <value>Bereich</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
     <value>Wiederholzeit:</value>
@@ -142,13 +142,13 @@
     <value>Sekunden</value>
   </data>
   <data name="lblRegion.Text" xml:space="preserve">
-    <value>Region</value>
+    <value>Bereich</value>
   </data>
   <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX - automatisches Aufnehmen</value>
+    <value>ShareX - Automatisches Aufnehmen</value>
   </data>
   <data name="rbCustomRegion.Text" xml:space="preserve">
-    <value>Eigene Region</value>
+    <value>Benutzerdefinierter Bereich</value>
   </data>
   <data name="rbFullscreen.Text" xml:space="preserve">
     <value>Vollbild</value>

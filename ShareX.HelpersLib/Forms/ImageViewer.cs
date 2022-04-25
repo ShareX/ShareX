@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,81 +24,282 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
     public class ImageViewer : Form
     {
-        private Image screenshot;
+        public Image CurrentImage { get; private set; }
+        public string CurrentImageFilePath { get; private set; }
+        public bool SupportWrap { get; set; }
+        public bool CanNavigate => Images != null && Images.Length > 1;
+        public bool CanNavigateLeft => CanNavigate && (SupportWrap || CurrentImageIndex > 0);
+        public bool CanNavigateRight => CanNavigate && (SupportWrap || CurrentImageIndex < Images.Length - 1);
+        public string[] Images { get; private set; }
+        public int CurrentImageIndex { get; private set; }
+        public int NavigationButtonWidth { get; set; } = 80;
 
-        private ImageViewer(Image image)
+        private ImageViewer(Image img)
         {
-            screenshot = image;
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
+
+            LoadImage(img);
+        }
+
+        private ImageViewer(string[] images, int currentImageIndex = 0)
+        {
+            InitializeComponent();
+            ShareXResources.ApplyTheme(this);
+
+            Images = images;
+            CurrentImageIndex = currentImageIndex;
+            FilterImageFiles();
+            LoadCurrentImage();
+        }
+
+        private void LoadImage(Image img)
+        {
+            CurrentImage?.Dispose();
+            CurrentImage = img;
+            pbPreview.LoadImage(CurrentImage);
+        }
+
+        private void LoadCurrentImage()
+        {
+            if (Images != null && Images.Length > 0)
+            {
+                CurrentImageIndex = CurrentImageIndex.Clamp(0, Images.Length - 1);
+                CurrentImageFilePath = Images[CurrentImageIndex];
+                Image img = ImageHelpers.LoadImage(CurrentImageFilePath);
+                LoadImage(img);
+                UpdateStatusLabel();
+            }
+        }
+
+        private void NavigateImage(int position)
+        {
+            if (CanNavigate)
+            {
+                int nextImageIndex = CurrentImageIndex + position;
+
+                if (SupportWrap)
+                {
+                    if (nextImageIndex > Images.Length - 1)
+                    {
+                        nextImageIndex = 0;
+                    }
+                    else if (nextImageIndex < 0)
+                    {
+                        nextImageIndex = Images.Length - 1;
+                    }
+                }
+
+                nextImageIndex = nextImageIndex.Clamp(0, Images.Length - 1);
+
+                if (CurrentImageIndex != nextImageIndex)
+                {
+                    CurrentImageIndex = nextImageIndex;
+                    LoadCurrentImage();
+                }
+            }
+        }
+
+        private void FilterImageFiles()
+        {
+            List<string> filteredImages = new List<string>();
+
+            for (int i = 0; i < Images.Length; i++)
+            {
+                string imageFilePath = Images[i];
+
+                bool isImageFile = !string.IsNullOrEmpty(imageFilePath) && Helpers.IsImageFile(imageFilePath);
+
+                if (i == CurrentImageIndex)
+                {
+                    if (isImageFile)
+                    {
+                        CurrentImageIndex = filteredImages.Count;
+                    }
+                    else
+                    {
+                        CurrentImageIndex = 0;
+                    }
+                }
+
+                if (isImageFile)
+                {
+                    filteredImages.Add(imageFilePath);
+                }
+            }
+
+            Images = filteredImages.ToArray();
+        }
+
+        private void UpdateStatusLabel()
+        {
+            StringBuilder sbStatus = new StringBuilder();
+
+            if (CanNavigate)
+            {
+                sbStatus.Append($"{CurrentImageIndex + 1} / {Images.Length}");
+            }
+
+            string fileName = Helpers.GetFileNameSafe(CurrentImageFilePath);
+
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                fileName = fileName.Truncate(128, "...");
+                sbStatus.Append($"  {fileName}");
+            }
+
+            if (CurrentImage != null)
+            {
+                sbStatus.Append($"  ({CurrentImage.Width} x {CurrentImage.Height})");
+            }
+
+            lblStatus.Text = sbStatus.ToString().Trim();
+            lblStatus.Location = new Point((ClientSize.Width - lblStatus.Width) / 2, -1);
         }
 
         public static void ShowImage(Image img)
         {
             if (img != null)
             {
-                using (Image tempImage = (Image)img.Clone())
-                using (ImageViewer viewer = new ImageViewer(tempImage))
+                using (Image tempImage = img.CloneSafe())
                 {
-                    viewer.ShowDialog();
+                    if (tempImage != null)
+                    {
+                        using (ImageViewer viewer = new ImageViewer(tempImage))
+                        {
+                            viewer.ShowDialog();
+                        }
+                    }
                 }
             }
         }
 
-        public static void ShowImage(string filepath)
+        public static void ShowImage(string filePath)
         {
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
             {
-                using (Image img = ImageHelpers.LoadImage(filepath))
-                using (ImageViewer viewer = new ImageViewer(img))
+                if (bmp != null)
+                {
+                    using (ImageViewer viewer = new ImageViewer(bmp))
+                    {
+                        viewer.ShowDialog();
+                    }
+                }
+            }
+        }
+
+        public static void ShowImage(string[] images, int currentImageIndex = 0)
+        {
+            if (images != null && images.Length > 0)
+            {
+                using (ImageViewer viewer = new ImageViewer(images, currentImageIndex))
                 {
                     viewer.ShowDialog();
                 }
             }
         }
 
-        private void ShowScreenshot_Shown(object sender, EventArgs e)
+        private void ImageViewer_Shown(object sender, EventArgs e)
         {
+            UpdateStatusLabel();
+
             this.ForceActivate();
         }
 
-        private void ShowScreenshot_Deactivate(object sender, EventArgs e)
+        private void ImageViewer_Deactivate(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void pbPreview_MouseDown(object sender, MouseEventArgs e)
+        private void lblLeft_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                NavigateImage(-1);
+                lblLeft.Visible = CanNavigateLeft;
+            }
+        }
+
+        private void lblRight_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                NavigateImage(1);
+                lblRight.Visible = CanNavigateRight;
+            }
+        }
+
+        private void pbPreview_MouseClick(object sender, MouseEventArgs e)
         {
             Close();
+        }
+
+        private void pbPreview_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblStatus.Visible = !new Rectangle(lblStatus.Location, lblStatus.Size).Contains(e.Location);
+            lblLeft.Visible = CanNavigateLeft && new Rectangle(lblLeft.Location, lblLeft.Size).Contains(e.Location);
+            lblRight.Visible = CanNavigateRight && new Rectangle(lblRight.Location, lblRight.Size).Contains(e.Location);
+        }
+
+        private void pbPreview_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (CanNavigateLeft && e.Delta > 0)
+            {
+                NavigateImage(-1);
+            }
+            else if (CanNavigateRight && e.Delta < 0)
+            {
+                NavigateImage(1);
+            }
         }
 
         private void pbPreview_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Space)
+            switch (e.KeyCode)
             {
-                Close();
+                case Keys.Escape:
+                case Keys.Enter:
+                case Keys.Space:
+                    Close();
+                    break;
+                case Keys.Left:
+                    NavigateImage(-1);
+                    break;
+                case Keys.Right:
+                    NavigateImage(1);
+                    break;
             }
+        }
+
+        private void pbPreview_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                case Keys.Right:
+                    e.IsInputKey = true;
+                    break;
+            }
+        }
+
+        private void lblStatus_MouseEnter(object sender, EventArgs e)
+        {
+            lblStatus.Visible = false;
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -106,52 +307,76 @@ namespace ShareX.HelpersLib
                 components.Dispose();
             }
 
-            if (screenshot != null)
-            {
-                screenshot.Dispose();
-            }
+            CurrentImage?.Dispose();
 
             base.Dispose(disposing);
         }
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             pbPreview = new MyPictureBox();
+            lblStatus = new Label();
+            lblLeft = new Label();
+            lblRight = new Label();
             SuspendLayout();
 
             BackColor = SystemColors.Window;
             Bounds = CaptureHelpers.GetActiveScreenBounds();
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            // TODO: Translate
             Text = "ShareX - Image viewer";
             TopMost = true;
             WindowState = FormWindowState.Normal;
             StartPosition = FormStartPosition.Manual;
 
-            pbPreview.Cursor = Cursors.Hand;
-            pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblStatus.AutoSize = true;
+            lblStatus.Font = new Font("Arial", 13f);
+            lblStatus.Padding = new Padding(6);
+            lblStatus.TextAlign = ContentAlignment.MiddleCenter;
+            Controls.Add(lblStatus);
+
+            lblLeft.Cursor = Cursors.Hand;
+            lblLeft.Font = new Font("Arial", 50f, FontStyle.Bold);
+            lblLeft.Location = new Point(0, 0);
+            lblLeft.Text = "‹";
+            lblLeft.TextAlign = ContentAlignment.MiddleCenter;
+            lblLeft.Size = new Size(NavigationButtonWidth, Bounds.Height);
+            lblLeft.MouseDown += lblLeft_MouseDown;
+            Controls.Add(lblLeft);
+
+            lblRight.Cursor = Cursors.Hand;
+            lblRight.Font = new Font("Arial", 50f, FontStyle.Bold);
+            lblRight.Location = new Point(Bounds.Width - NavigationButtonWidth, 0);
+            lblRight.Text = "›";
+            lblRight.TextAlign = ContentAlignment.MiddleCenter;
+            lblRight.Size = new Size(NavigationButtonWidth, Bounds.Height);
+            lblRight.MouseDown += lblRight_MouseDown;
+            Controls.Add(lblRight);
+
+            pbPreview.Dock = DockStyle.Fill;
             pbPreview.DrawCheckeredBackground = true;
-            pbPreview.FullscreenOnClick = false;
-            pbPreview.Location = new System.Drawing.Point(0, 0);
-            pbPreview.Name = "pbPreview";
-            pbPreview.Size = new System.Drawing.Size(96, 100);
+            pbPreview.Location = new Point(0, 0);
+            pbPreview.Size = new Size(100, 100);
             pbPreview.TabIndex = 0;
-            pbPreview.LoadImage(screenshot);
             Controls.Add(pbPreview);
 
-            Shown += new System.EventHandler(ShowScreenshot_Shown);
-            Deactivate += new System.EventHandler(ShowScreenshot_Deactivate);
-            pbPreview.MouseDown += pbPreview_MouseDown;
+            Shown += ImageViewer_Shown;
+            Deactivate += ImageViewer_Deactivate;
+            pbPreview.MouseClick += pbPreview_MouseClick;
+            pbPreview.MouseMove += pbPreview_MouseMove;
+            pbPreview.MouseWheel += pbPreview_MouseWheel;
             pbPreview.KeyDown += pbPreview_KeyDown;
+            pbPreview.PreviewKeyDown += pbPreview_PreviewKeyDown;
+            lblStatus.MouseEnter += lblStatus_MouseEnter;
 
             ResumeLayout(false);
         }
 
         private MyPictureBox pbPreview;
+        private Label lblStatus;
+        private Label lblLeft;
+        private Label lblRight;
 
         #endregion Windows Form Designer generated code
     }

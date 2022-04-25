@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -41,10 +42,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Plik(config.PlikSettings)
-            {
-                Settings = config.PlikSettings
-            };
+            return new Plik(config.PlikSettings);
         }
 
         public override bool CheckConfig(UploadersConfig config)
@@ -59,10 +57,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class Plik : FileUploader
     {
-        public PlikSettings Settings { get; set; }
+        public PlikSettings Settings { get; private set; }
 
-        public Plik(PlikSettings s)
+        public Plik(PlikSettings settings)
         {
+            Settings = settings;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -77,7 +76,7 @@ namespace ShareX.UploadersLib.FileUploaders
             metaDataReq.Files = new UploadMetadataRequestFile0();
             metaDataReq.Files.File0 = new UploadMetadataRequestFile();
             metaDataReq.Files.File0.FileName = fileName;
-            metaDataReq.Files.File0.FileType = UploadHelpers.GetMimeType(fileName);
+            metaDataReq.Files.File0.FileType = RequestHelpers.GetMimeType(fileName);
             metaDataReq.Files.File0.FileSize = Convert.ToInt32(stream.Length);
             metaDataReq.Removable = Settings.Removable;
             metaDataReq.OneShot = Settings.OneShot;
@@ -101,7 +100,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string metaDataResp = SendRequest(HttpMethod.POST, Settings.URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders);
             UploadMetadataResponse metaData = JsonConvert.DeserializeObject<UploadMetadataResponse>(metaDataResp);
             requestHeaders["x-uploadtoken"] = metaData.uploadToken;
-            string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files.First().Value.id.ToString()}/{fileName}";
+            string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files.First().Value.id}/{fileName}";
             UploadResult FileDatReq = SendRequestFile(url, stream, fileName, "file", headers: requestHeaders);
 
             return ConvertResult(metaData, FileDatReq);
@@ -110,9 +109,9 @@ namespace ShareX.UploadersLib.FileUploaders
         private UploadResult ConvertResult(UploadMetadataResponse metaData, UploadResult fileDataReq)
         {
             UploadResult result = new UploadResult(fileDataReq.Response);
-            UploadMetadataResponse fileData = JsonConvert.DeserializeObject<UploadMetadataResponse>(fileDataReq.Response);
+            //UploadMetadataResponse fileData = JsonConvert.DeserializeObject<UploadMetadataResponse>(fileDataReq.Response);
             UploadMetadataResponseFile actFile = metaData.files.First().Value;
-            result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id.ToString()}/{actFile.fileName}";
+            result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id}/{URLHelpers.URLEncode(actFile.fileName)}";
             return result;
         }
 
@@ -124,7 +123,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     ttlElement.Value = 1;
                 }
-                ttlElement.Value = ttlElement.Value * GetMultiplyIndex(newUnit, oldUnit);
+                ttlElement.Value *= GetMultiplyIndex(newUnit, oldUnit);
                 ttlElement.ReadOnly = false;
             }
             else

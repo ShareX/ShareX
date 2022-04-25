@@ -130,7 +130,7 @@
     <value>Aktualisiere Autorisierung</value>
   </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
-    <value>Benutzeraccount</value>
+    <value>Benutzerkonto</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Verifikationscode (Hole den Code von der Autorisierungsseite):</value>

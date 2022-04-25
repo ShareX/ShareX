@@ -159,12 +159,6 @@
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Area terakhir</value>
   </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Buka halaman web kampanye Patreon ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Sembunyikan tombol Patreon secara permanen</value>
-  </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Perekaman layar</value>
   </data>
@@ -173,9 +167,6 @@
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Ambil bergulir...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Ambil halaman web...</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Ambil teks (OCR)...</value>
@@ -252,9 +243,6 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Pemotret video...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Klien FTP...</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet pesan...</value>
   </data>
@@ -305,9 +293,6 @@
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Riwayat gambar...</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Berita</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Log debug...</value>
@@ -492,9 +477,6 @@
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Bagikan URL</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Pencarian Gambar Google...</value>
-  </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Tampilkan kode QR...</value>
   </data>
@@ -509,30 +491,6 @@
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Bersihkan daftar</value>
-  </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Sembunyikan menu</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Sembunyikan kolom</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Tampilkan</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Sembunyikan</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Otomatis</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Samping</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Bawah</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Pratinjau gambar</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Layar penuh</value>
@@ -563,9 +521,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Ambil bergulir...</value>
-  </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Ambil halaman web...</value>
   </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Ambil teks (OCR)...</value>
@@ -642,9 +597,6 @@
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Pemotret video...</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Klien FTP...</value>
-  </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet pesan...</value>
   </data>
@@ -702,33 +654,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Riwayat gambar...</value>
   </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Log debug...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Uji gambar unggahan</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Uji teks unggahan</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Uji file unggahan</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Uji penyingkat URL</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Uji berbagi URL</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Debug</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Donasi...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Tentang...</value>
-  </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>Tautan terbaru</value>
   </data>
@@ -740,15 +665,6 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Tutup</value>
-  </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Sembunyikan tombol Discord secara permanen</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Buka tautan undangan server Discord ShareX</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Alihkan bilah alat tindakan</value>

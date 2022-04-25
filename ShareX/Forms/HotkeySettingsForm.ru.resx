@@ -121,7 +121,7 @@
     <value>ShareX - Горячие клавиши</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Восстановить стандартные горячие клавиши</value>
+    <value>Сбросить горячие клавиши...</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Добавить...</value>
@@ -134,5 +134,8 @@
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Удалить</value>
+  </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Горячие клавиши отключены. Нажмите здесь, чтобы включить их.</value>
   </data>
 </root>

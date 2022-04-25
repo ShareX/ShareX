@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -42,7 +42,7 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                radius = value.Min(3);
+                radius = value.Max(3);
 
                 if (radius.IsEvenNumber())
                 {
@@ -56,10 +56,10 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            ImageHelpers.BoxBlur((Bitmap)img, Radius);
-            return img;
+            ImageHelpers.ApplyBoxBlur(bmp, Radius);
+            return bmp;
         }
     }
 }

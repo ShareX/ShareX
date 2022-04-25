@@ -173,7 +173,7 @@ armedcrab
 armednylonshrimp
 armyant
 armyworm
-arrowana
+arowana
 arrowcrab
 arrowworm
 arthropods
@@ -1348,6 +1348,7 @@ raven
 ray
 redhead
 redheadedwoodpecker
+redpanda
 redpoll
 redstart
 redtailedhawk

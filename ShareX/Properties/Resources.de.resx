@@ -120,11 +120,8 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Zeit übrig: {0}s ({1}%) Gesamt: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Mitwirkende</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>URL zum Herunter- und Hochladen </value>
+    <value>URL zum Down- und Upload</value>
   </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>Dateipfad kann nicht leer sein.</value>
@@ -142,7 +139,7 @@
     <value>Hotkeys deaktiviert.</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
-    <value>Lade Dateien hoch</value>
+    <value>Dateien hochladen</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
     <value>Diese Anwendungen könnten die Benutzung vom ShareX stören:</value>
@@ -162,34 +159,24 @@
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>Tastenkürzel</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Pfad kann nicht leer sein.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>Dateihochlader: {0}</value>
+    <value>Dateiuploader: {0}</value>
   </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Projektseite</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet erfolgreich gesendet</value>
-  </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Wähle einen Verschlüsselungspfad</value>
+    <value>Tweet erfolgreich gesendet.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Es kann nicht auf die Datei {0} zugegriffen werden.
-
 Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>CLI-Videocodec existiert nicht:</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Um die Einstellungen zu Übernehmen muss ShareX über Steam neu gestartet werden.</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
-    <value>Name kann nicht leer sein</value>
+    <value>Name kann nicht leer sein.</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Hotkeys deaktivieren</value>
@@ -197,20 +184,14 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Aufgabe beendet</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Bitte warten...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>Bildhochlader: {0}</value>
+    <value>Bilduploader: {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>In Zwischenablage kopiert: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Menü verstecken</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Kann keinen gültigen Twitter Account finden.</value>
+    <value>Kann kein gültiges Twitter-Konto finden.</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
@@ -244,13 +225,7 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>X: {0}, Y {1}, Breite: {2}, Höhe: {3}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>Diese Nachricht nicht mehr anzeigen</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Aufgabe: Aufgabe {0}</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg-Video- und -Audioquellen können nicht beide "Nichts" sein.</value>
+    <value>Diese Nachricht nicht mehr anzeigen.</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Änderungsprotokoll</value>
@@ -270,25 +245,11 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Startet</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} existiert nicht.
-
-Möchtest du es automatisch herunterladen?</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Externe Bibliotheken</value>
-  </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Fehler</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Klicke, um die Aufnahme zu beenden.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Du kannst Arbeitsschritte aus den Hotkeyeinstellungen hinzufügen...</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>FTP-Programm unterstützt nur FTP oder FTPS.</value>
   </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Konnte Bild nicht in den Pfad {0} schreiben.</value>
@@ -299,40 +260,31 @@ Möchtest du es automatisch herunterladen?</value>
 Soll ShareX neu gestartet werden?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Benutze neuen Namen:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Fehlt</value>
+    <value>Neuen Namen verwenden: </value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Übersetzer</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
-    <value>Warnung: Erstes Hochladen</value>
+    <value>Warnung: Erster Upload</value>
   </data>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Chrome-Unterstützung aktiviert.</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Erweiterung kann nicht leer sein.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Nach der Aufnahme: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Konfiguriere CLI-Videocodec</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>URL-Kürzer: {0}</value>
   </data>
   <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
-    <value>Hochladefehler</value>
+    <value>Uploadfehler</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
-    <value>Konnte Ordner nicht erstellen</value>
+    <value>Konnte Ordner nicht erstellen:</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Derzeit konfigurierte Tastenkürzel</value>
+    <value>Derzeit konfigurierte Tastenkürzel:</value>
   </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Linksklick um den URL zu kopieren. Rechtsklick um den URL zu öffnen.</value>
@@ -350,7 +302,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Herunterladen fehlgeschlagen: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>Texthochlader: {0}</value>
+    <value>Textuploader: {0}</value>
   </data>
   <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
     <value>Vorbereiten</value>
@@ -362,7 +314,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Angehalten</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>URL-Teiler: {0}</value>
+    <value>URL-Freigabedienst: {0}</value>
   </data>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Chrome-Unterstützung deaktiviert.</value>
@@ -374,7 +326,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Vorschau:</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
-    <value>Teste Hochladen von Text</value>
+    <value>Text-Upload-Test</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>Aufgabeneinstellungen für {0}</value>
@@ -389,37 +341,19 @@ Soll ShareX neu gestartet werden?</value>
     <value>Fertig</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} wird in Kürze zu {1} hochgeladen. Du kannst ein anderes Ziel auswählen.</value>
+    <value>{0} wird gleich zu {1} hochgeladen. Du kannst ein anderes Ziel auswählen.</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>Webseite</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
-    <value>Nach der Aufnahme: {0}</value>
+    <value>Nach dem Upload: {0}</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Wähle einen Screenshotordner aus</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Klicke, um die Aufnahme zu starten.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Herunterladen von FFmpeg fehlgeschlagen.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Zeige Menü</value>
+    <value>Wähle einen Screenshot-Ordner aus</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Ordner hochladen</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg erfolgreich heruntergeladen</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Kodiere...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg-Fehler</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Bist du sicher, dass du {0} Dateien hochladen möchtest?</value>
@@ -435,17 +369,10 @@ Soll ShareX neu gestartet werden?</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Bist du dir sicher, dass du du diesen Screenshot hochladen möchtest?
-
-Klicke auf 'Nein', um das derzeitige Hochladen abzubrechen und das automatische Hochladen von Screenshots zu deaktivieren.</value>
+Klicke auf 'Nein', um den derzeitigen Upload abzubrechen und den automatischen Upload von Screenshots zu deaktivieren.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Hochladen</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Es wurde keine gültiger CLI-Videocodec ausgewählt</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Kann kein gültiges FTP Konto finden.</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Du versuchst eine große Datei hochzuladen.
@@ -457,17 +384,11 @@ Bist du sicher?</value>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Alle Hotkeys auf die Standardeinstellungen zurücksetzen?</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Spalten anzeigen</value>
-  </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>Bearbeiten...</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Mit ShareX hochladen</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Spalten ausblenden</value>
   </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Schließen</value>
@@ -486,11 +407,8 @@ Bist du sicher?</value>
 Rechte Maustaste um das Menü zu öffnen
 Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Möchten Sie die Aufnahme wirklich beenden?</value>
-  </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>mit ShareX bearbeiten</value>
+    <value>Mit ShareX bearbeiten</value>
   </data>
   <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
     <value>Entwicklungs-Versionen können instabil sein und sind nur für Testzwecke geeignet. Möchten Sie diese trotzdem installieren?</value>
@@ -546,7 +464,93 @@ Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Spanisch</value>
   </data>
-  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
-    <value>Sie müssen ShareX erneut öffnen, damit Änderungen an persönlichen Ordnern wirksam werden.</value>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Bestätigung</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Screenshot-Verzögerung: {0}s</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Texterkennung (OCR)</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>Texterkennung wird verarbeitet.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Indonesisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Ukrainisch</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>Text zum Encodieren einfügen</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Mexikanisches Spanisch</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>Das Debugprotokoll könnte sensible Informationen beinhalten. Bist du sicher, dass du fortfahren möchtest?</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>ShareX muss neu gestartet werden, damit die Änderungen am Einstellungsordner wirksam werden.
+
+Soll ShareX neu gestartet werden?</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Bitte beachte, dass ShareX OCR.Space's online API für die Ausführung der Texterkennung benutzt. Gibst du ShareX die Berechtigung, Bilder an diesen Dienst hochzuladen?</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>Autostart wurde durch Ihrer Organisation aktiviert</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>Autostart wurde durch Ihrer Organisation deaktiviert</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>Zur Bildvorschau wechseln</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>Zur Listenansicht wechseln</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Alle Quick-Tasks auf die Standardeinstellungen zurücksetzen?</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>Bei der OCR-Verarbeitung ist ein Fehler aufgetreten oder es wurde kein Text zurückgegeben.</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>Die OCR-Ausgabe wurde in die Zwischenablage kopiert.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>Autostart wurde im Task-Manager deaktiviert</value>
+  </data>
+  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>Konfiguration {0} ist ungültig oder fehlt. Zur Konfiguration überprüfen Sie das Fenster "Zieleinstellungen".</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Portugiesisch</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Bestätigung</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Die Zwischenablage ist leer oder enthält unbekannte Daten.</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Inhalt der Zwischenablage: Text (Länge: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Inhalt der Zwischenablage: Bild (Größe: {0}x{1})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Inhalt der Zwischenablage: Datei (Anzahl: {0})</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Persisch</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>Diese Funktion funktioniert nicht, wenn die "DisableUpload"-Option eingeschaltet wurde!</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>Ihr Systemadministrator hat diese Funktion ausgeschaltet.</value>
   </data>
 </root>

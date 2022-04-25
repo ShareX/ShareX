@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,7 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
-using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -40,7 +40,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
         }
 
-        public void CheckUpdate(UpdateChecker updateChecker)
+        public async Task CheckUpdate(UpdateChecker updateChecker)
         {
             if (!IsBusy)
             {
@@ -54,15 +54,25 @@ namespace ShareX.HelpersLib
                 pbLoading.Visible = true;
                 lblCheckingUpdates.Visible = true;
 
-                Thread thread = new Thread(CheckingUpdate);
-                thread.IsBackground = true;
-                thread.Start();
+                await CheckingUpdate();
             }
         }
 
-        private void CheckingUpdate()
+        public void UpdateLoadingImage()
         {
-            updateChecker.CheckUpdate();
+            if (ShareXResources.IsDarkTheme)
+            {
+                pbLoading.Image = Resources.LoadingSmallWhite;
+            }
+            else
+            {
+                pbLoading.Image = Resources.LoadingSmallBlack;
+            }
+        }
+
+        private async Task CheckingUpdate()
+        {
+            await updateChecker.CheckUpdateAsync();
 
             try
             {
@@ -102,10 +112,7 @@ namespace ShareX.HelpersLib
 
         private void llblUpdateAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
-            {
-                updateChecker.DownloadUpdate();
-            }
+            UpdateMessageBox.Start(updateChecker);
         }
     }
 }

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>Verificar actualizaciones de versión adelantada</value>
+    <value>Verificar actualizaciones adelantadas</value>
   </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>Clic medio en el icono del área de notificación:</value>
@@ -160,7 +160,7 @@
     <value>Habilitar soporte para complemento de Firefox</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Instalar complemento de ShareX para Firefox...</value>
+    <value>Instalar extensión de ShareX para Firefox...</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Complemento de Firefox</value>
@@ -181,7 +181,7 @@
     <value>Extensión de Chrome</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Mostrar botón de "Modificar con ShareX" en el menú contextual</value>
+    <value>Mostrar botón de "Modificar con ShareX" en el menú contextual de Windows</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Mostrar ShareX en el menú de "Enviar a"</value>
@@ -194,9 +194,6 @@
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integración</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: es necesario abrir ShareX otra vez para que los cambios de carpeta personal surtan efecto.</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Abrir...</value>
@@ -232,13 +229,10 @@
     <value>Restablecer configuración...</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>Configuración de exportación...</value>
+    <value>Exportar...</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>Configuración de importación...</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Exportar o importar</value>
+    <value>Importar...</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Límite de subidas simultáneas:</value>
@@ -264,15 +258,6 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>Formato</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos del portapapeles: aparecen debajo de la opción Copiar en el menú contextual de la ventana principal </value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Usar orden de preferencia de servidores alternos al reintentar subir</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Servidores alternos para imágenes</value>
   </data>
@@ -284,9 +269,6 @@
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Reintentos si la subida falla:</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reintentar</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Subir</value>
@@ -359,5 +341,32 @@
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Instalar versión de desarrollador...</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Usar icono blanco de ShareX</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Restablecer</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Apariencia</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Historial</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Nota: No comparta con nadie el archivo exportado ya que podría contener información privada, como los detalles de su cuenta y su historial de subidas.</value>
   </data>
 </root>

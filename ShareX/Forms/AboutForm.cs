@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,40 +27,35 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace ShareX
 {
     public partial class AboutForm : Form
     {
+        private EasterEggAboutAnimation easterEgg;
+        private bool checkUpdate = false;
+
         public AboutForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
             lblProductName.Text = Program.Title;
             pbLogo.Image = ShareXResources.Logo;
+            ShareXResources.ApplyTheme(this);
 
-            rtbShareXInfo.AddContextMenu();
-            rtbCredits.AddContextMenu();
-
-#if STEAM || WindowsStore
+#if STEAM
             uclUpdate.Visible = false;
+            lblBuild.Text = "Steam build";
             lblBuild.Visible = true;
-
-            if (Program.Build == ShareXBuild.Steam)
-            {
-                lblBuild.Text = "Steam build";
-            }
-            else if (Program.Build == ShareXBuild.MicrosoftStore)
-            {
-                lblBuild.Text = "Microsoft Store build";
-            }
+#elif MicrosoftStore
+            uclUpdate.Visible = false;
+            lblBuild.Text = "Microsoft Store build";
+            lblBuild.Visible = true;
 #else
-            if (!Program.PortableApps)
+            if (!SystemOptions.DisableUpdateCheck)
             {
-                UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
-                uclUpdate.CheckUpdate(updateChecker);
+                uclUpdate.UpdateLoadingImage();
+                checkUpdate = true;
             }
             else
             {
@@ -68,21 +63,20 @@ namespace ShareX
             }
 #endif
 
-            lblTeam.Text = "ShareX Team:";
-            lblBerk.Text = "Jaex (Berk)";
-            lblMike.Text = "McoreD (Michael Delpach)";
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Links, FontStyle.Bold, 13);
+            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
+{Resources.AboutForm_AboutForm_Project_page}: {Links.URL_GITHUB}
+{Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}
+{Resources.AboutForm_AboutForm_Privacy_policy}: {Links.URL_PRIVACY_POLICY}
+", FontStyle.Regular);
 
-            rtbShareXInfo.Text = $@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
-{Resources.AboutForm_AboutForm_Project_page}: {Links.URL_PROJECT}
-{Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}";
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Team, FontStyle.Bold, 13);
+            rtbInfo.AppendLine($@"Jaex: {Links.URL_JAEX}
+McoreD (Michael Delpach): {Links.URL_MCORED}
+", FontStyle.Regular);
 
-            rtbCredits.Text = $@"{Resources.AboutForm_AboutForm_Contributors}:
-
-https://github.com/ShareX/ShareX/graphs/contributors
-
-{Resources.AboutForm_AboutForm_Translators}:
-
-{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex & https://github.com/muratmoon
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Translators, FontStyle.Bold, 13);
+            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex
 {Resources.AboutForm_AboutForm_Language_de}: https://github.com/Starbug2 & https://github.com/Kaeltis
 {Resources.AboutForm_AboutForm_Language_fr}: https://github.com/nwies & https://github.com/Shadorc
 {Resources.AboutForm_AboutForm_Language_zh_CH}: https://github.com/jiajiechan
@@ -98,50 +92,47 @@ https://github.com/ShareX/ShareX/graphs/contributors
 {Resources.AboutForm_AboutForm_Language_uk}: https://github.com/6c6c6
 {Resources.AboutForm_AboutForm_Language_id_ID}: https://github.com/Nicedward
 {Resources.AboutForm_AboutForm_Language_es_MX}: https://github.com/absay
+{Resources.AboutForm_AboutForm_Language_fa_IR}: https://github.com/pourmand1376
+{Resources.AboutForm_AboutForm_Language_pt_PT}: https://github.com/FarewellAngelina
+{Resources.AboutForm_AboutForm_Language_ja_JP}: https://github.com/kanaxx
+", FontStyle.Regular);
 
-{Resources.AboutForm_AboutForm_External_libraries}:
-
-Json.NET: https://github.com/JamesNK/Newtonsoft.Json
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Credits, FontStyle.Bold, 13);
+            rtbInfo.AppendLine(@"Json.NET: https://github.com/JamesNK/Newtonsoft.Json
 SSH.NET: https://github.com/sshnet/SSH.NET
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: https://www.ffmpeg.org
-Zeranoe FFmpeg: https://ffmpeg.zeranoe.com/builds
-DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
+Recorder devices: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 FluentFTP: https://github.com/robinrodricks/FluentFTP
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 OCR Space: https://ocr.space
 ZXing.Net: https://github.com/micjahn/ZXing.Net
 MegaApiClient: https://github.com/gpailler/MegaApiClient
+Inno Setup Dependency Installer: https://github.com/DomGries/InnoDependencyInstaller
 Blob Emoji: http://blobs.gg
+", FontStyle.Regular);
 
-Copyright (c) 2007-2018 ShareX Team";
+            rtbInfo.AppendText("Copyright (c) 2007-2022 ShareX Team", FontStyle.Bold, 13);
+
+            easterEgg = new EasterEggAboutAnimation(cLogo, this);
         }
 
-        private void AboutForm_Shown(object sender, EventArgs e)
+        private async void AboutForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+
+            if (checkUpdate)
+            {
+                UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
+                await uclUpdate.CheckUpdate(updateChecker);
+            }
         }
 
         private void pbLogo_MouseDown(object sender, MouseEventArgs e)
         {
-            cLogo.Start(50);
+            easterEgg.Start();
             pbLogo.Visible = false;
-        }
-
-        private void pbSteam_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_STEAM);
-        }
-
-        private void pbBerkURL_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_BERK);
-        }
-
-        private void pbMikeURL_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_MIKE);
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
@@ -163,169 +154,5 @@ Copyright (c) 2007-2018 ShareX Team";
         {
             Close();
         }
-
-        #region Animation
-
-        private const int w = 200;
-        private const int h = w;
-        private const int mX = w / 2;
-        private const int mY = h / 2;
-        private const int minStep = 3;
-        private const int maxStep = 35;
-        private const int speed = 1;
-        private int step = 10;
-        private int direction = speed;
-        private Color lineColor = new HSB(0d, 1d, 0.9d);
-        private bool isPaused;
-        private int clickCount;
-
-        private void cLogo_Draw(Graphics g)
-        {
-            g.SetHighQuality();
-
-            using (Matrix m = new Matrix())
-            {
-                m.RotateAt(45, new PointF(mX, mY));
-                g.Transform = m;
-            }
-
-            using (Pen pen = new Pen(lineColor, 2))
-            {
-                for (int i = 0; i <= mX; i += step)
-                {
-                    g.DrawLine(pen, i, mY, mX, mY - i); // Left top
-                    g.DrawLine(pen, mX, i, mX + i, mY); // Right top
-                    g.DrawLine(pen, w - i, mY, mX, mY + i); // Right bottom
-                    g.DrawLine(pen, mX, h - i, mX - i, mY); // Left bottom
-
-                    /*
-                    g.DrawLine(pen, i, mY, mX, mY - i); // Left top
-                    g.DrawLine(pen, w - i, mY, mX, mY - i); // Right top
-                    g.DrawLine(pen, w - i, mY, mX, mY + i); // Right bottom
-                    g.DrawLine(pen, i, mY, mX, mY + i); // Left bottom
-                    */
-
-                    /*
-                    g.DrawLine(pen, mX, i, i, mY); // Left top
-                    g.DrawLine(pen, mX, i, w - i, mY); // Right top
-                    g.DrawLine(pen, mX, h - i, w - i, mY); // Right bottom
-                    g.DrawLine(pen, mX, h - i, i, mY); // Left bottom
-                    */
-                }
-
-                //g.DrawLine(pen, mX, 0, mX, h);
-            }
-
-            if (!isPaused)
-            {
-                if (step + speed > maxStep)
-                {
-                    direction = -speed;
-                }
-                else if (step - speed < minStep)
-                {
-                    direction = speed;
-                }
-
-                step += direction;
-
-                HSB hsb = lineColor;
-
-                if (hsb.Hue >= 1)
-                {
-                    hsb.Hue = 0;
-                }
-                else
-                {
-                    hsb.Hue += 0.01;
-                }
-
-                lineColor = hsb;
-            }
-        }
-
-        private void cLogo_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (!isEasterEggStarted)
-            {
-                isPaused = !isPaused;
-
-                clickCount++;
-
-                if (clickCount >= 10)
-                {
-                    isEasterEggStarted = true;
-                    RunEasterEgg();
-                }
-            }
-            else
-            {
-                if (bounceTimer != null)
-                {
-                    bounceTimer.Stop();
-                }
-
-                isEasterEggStarted = false;
-            }
-        }
-
-        #endregion Animation
-
-        #region Easter egg
-
-        private bool isEasterEggStarted;
-        private Rectangle screenRect;
-        private Timer bounceTimer;
-        private const int windowGravityPower = 3;
-        private const int windowBouncePower = -50;
-        private const int windowSpeed = 20;
-        private Point windowVelocity = new Point(windowSpeed, windowGravityPower);
-
-        private void RunEasterEgg()
-        {
-            screenRect = CaptureHelpers.GetScreenWorkingArea();
-
-            bounceTimer = new Timer();
-            bounceTimer.Interval = 20;
-            bounceTimer.Tick += bounceTimer_Tick;
-            bounceTimer.Start();
-        }
-
-        private void bounceTimer_Tick(object sender, EventArgs e)
-        {
-            if (!IsDisposed)
-            {
-                int x = Left + windowVelocity.X;
-                int windowRight = screenRect.X + screenRect.Width - 1 - Width;
-
-                if (x <= screenRect.X)
-                {
-                    x = screenRect.X;
-                    windowVelocity.X = windowSpeed;
-                }
-                else if (x >= windowRight)
-                {
-                    x = windowRight;
-                    windowVelocity.X = -windowSpeed;
-                }
-
-                int y = Top + windowVelocity.Y;
-                int windowBottom = screenRect.Y + screenRect.Height - 1 - Height;
-
-                if (y >= windowBottom)
-                {
-                    y = windowBottom;
-                    windowVelocity.Y = windowBouncePower.RandomAdd(-10, 10);
-                }
-                else
-                {
-                    windowVelocity.Y += windowGravityPower;
-                }
-
-                Location = new Point(x, y);
-            }
-        }
-
-        #endregion Easter egg
     }
 }

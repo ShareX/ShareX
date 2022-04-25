@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -42,7 +42,10 @@ namespace ShareX
         public HotkeySettingsForm(HotkeyManager hotkeyManager)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
+
+            btnHotkeysDisabled.Visible = Program.Settings.DisableHotkeys;
+
             PrepareHotkeys(hotkeyManager);
         }
 
@@ -110,10 +113,21 @@ namespace ShareX
             }
         }
 
+        private void RegisterFailedHotkeys()
+        {
+            foreach (HotkeySettings hotkeySettings in manager.Hotkeys.Where(x => x.HotkeyInfo.Status == HotkeyStatus.Failed))
+            {
+                manager.RegisterHotkey(hotkeySettings);
+            }
+
+            UpdateHotkeyStatus();
+        }
+
         private void control_HotkeyChanged(object sender, EventArgs e)
         {
             HotkeySelectionControl control = (HotkeySelectionControl)sender;
             manager.RegisterHotkey(control.Setting);
+            RegisterFailedHotkeys();
         }
 
         private HotkeySelectionControl AddHotkeySelectionControl(HotkeySettings hotkeySetting)
@@ -264,6 +278,12 @@ namespace ShareX
                 Selected = null;
                 UpdateButtons();
             }
+        }
+
+        private void btnHotkeysDisabled_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.ToggleHotkeys(false);
+            btnHotkeysDisabled.Visible = false;
         }
     }
 }

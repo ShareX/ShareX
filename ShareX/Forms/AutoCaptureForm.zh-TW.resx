@@ -1,4 +1,4 @@
-﻿
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -130,13 +130,13 @@
     <value>自動最小化到系統匣</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>等到任務完成</value>
+    <value>等待工作完成</value>
   </data>
   <data name="gbRegion.Text" xml:space="preserve">
     <value>區域</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
-    <value>重複時間:</value>
+    <value>重複時間：</value>
   </data>
   <data name="lblDurationSeconds.Text" xml:space="preserve">
     <value>秒</value>
@@ -148,10 +148,10 @@
     <value>ShareX - 自動擷取</value>
   </data>
   <data name="rbCustomRegion.Text" xml:space="preserve">
-    <value>自定義區域</value>
+    <value>自訂區域</value>
   </data>
   <data name="rbFullscreen.Text" xml:space="preserve">
-    <value>全屏</value>
+    <value>全螢幕</value>
   </data>
   <data name="ssBar.Text" xml:space="preserve">
     <value>狀態</value>

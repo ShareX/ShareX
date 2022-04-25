@@ -120,26 +120,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Histórico</value>
   </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Aplicar filtros</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Remover filtros</value>
-  </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtro de data:</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Contém</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Começa com</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Termina com</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Combinação exata</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Filtro de hospedagem:</value>
@@ -153,13 +135,19 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nome do arquivo</value>
   </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filtros</value>
-  </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>De:</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Para:</value>
+  </data>
+  <data name="lblFilenameFilter.Text" xml:space="preserve">
+    <value>Nome do arquivo:</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>URL:</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -84,9 +84,9 @@ namespace ShareX.HelpersLib
             if (WindowText != null)
             {
                 string windowText = WindowText.Trim().Replace(' ', '_');
-                if (MaxTitleLength > 0 && windowText.Length > MaxTitleLength)
+                if (MaxTitleLength > 0)
                 {
-                    windowText = windowText.Remove(MaxTitleLength);
+                    windowText = windowText.Truncate(MaxTitleLength);
                 }
                 sb.Replace(CodeMenuEntryFilename.t.ToPrefixString(), windowText);
             }
@@ -141,11 +141,12 @@ namespace ShareX.HelpersLib
                 .Replace(CodeMenuEntryFilename.mi.ToPrefixString(), Helpers.AddZeroes(dt.Minute))
                 .Replace(CodeMenuEntryFilename.s.ToPrefixString(), Helpers.AddZeroes(dt.Second))
                 .Replace(CodeMenuEntryFilename.ms.ToPrefixString(), Helpers.AddZeroes(dt.Millisecond, 3))
+                .Replace(CodeMenuEntryFilename.wy.ToPrefixString(), dt.WeekOfYear().ToString())
                 .Replace(CodeMenuEntryFilename.w2.ToPrefixString(), CultureInfo.InvariantCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
                 .Replace(CodeMenuEntryFilename.w.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
                 .Replace(CodeMenuEntryFilename.pm.ToPrefixString(), dt.Hour >= 12 ? "PM" : "AM");
 
-            sb.Replace(CodeMenuEntryFilename.unix.ToPrefixString(), DateTime.UtcNow.ToUnix().ToString());
+            sb.Replace(CodeMenuEntryFilename.unix.ToPrefixString(), DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString());
 
             if (sb.ToString().Contains(CodeMenuEntryFilename.i.ToPrefixString())
                 || sb.ToString().Contains(CodeMenuEntryFilename.ib.ToPrefixString())
@@ -265,6 +266,11 @@ namespace ShareX.HelpersLib
                 });
             }
 
+            foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rna.ToPrefixString()))
+            {
+                result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Base56).ToString()));
+            }
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rn.ToPrefixString()))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Numbers).ToString()));
@@ -285,12 +291,19 @@ namespace ShareX.HelpersLib
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToUpperInvariant()).ToString()));
             }
 
+            foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.remoji.ToPrefixString()))
+            {
+                result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => RandomCrypto.Pick(Emoji.Emojis)));
+            }
+
+            result = result.ReplaceAll(CodeMenuEntryFilename.rna.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Base56).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.rn.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Numbers).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.ra.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.rx.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToLowerInvariant()).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.rx.ToPrefixString().Replace('x', 'X'), () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToUpperInvariant()).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.guid.ToPrefixString().ToLowerInvariant(), () => Guid.NewGuid().ToString().ToLowerInvariant());
             result = result.ReplaceAll(CodeMenuEntryFilename.guid.ToPrefixString().ToUpperInvariant(), () => Guid.NewGuid().ToString().ToUpperInvariant());
+            result = result.ReplaceAll(CodeMenuEntryFilename.remoji.ToPrefixString(), () => RandomCrypto.Pick(Emoji.Emojis));
 
             if (Type == NameParserType.FolderPath)
             {
@@ -309,9 +322,9 @@ namespace ShareX.HelpersLib
                 result = Helpers.GetValidURL(result);
             }
 
-            if (MaxNameLength > 0 && result.Length > MaxNameLength)
+            if (MaxNameLength > 0)
             {
-                result = result.Remove(MaxNameLength);
+                result = result.Truncate(MaxNameLength);
             }
 
             return result;
@@ -345,8 +358,7 @@ namespace ShareX.HelpersLib
                 int[] a = new int[o.Item2.Length];
                 for (int i = o.Item2.Length - 1; i >= 0; --i)
                 {
-                    int n = 0;
-                    if (int.TryParse(o.Item2[i], out n))
+                    if (int.TryParse(o.Item2[i], out int n))
                     {
                         a[i] = n;
                     }

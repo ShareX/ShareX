@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>显示器测试</value>
+    <value>ShareX - 显示器测试</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>关闭</value>
@@ -127,28 +127,28 @@
     <value>颜色对话框...</value>
   </data>
   <data name="btnGradientColor1.Text" xml:space="preserve">
-    <value>颜色1</value>
+    <value>颜色 1</value>
   </data>
   <data name="btnGradientColor2.Text" xml:space="preserve">
-    <value>颜色2</value>
+    <value>颜色 2</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
-    <value>检查</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
     <value>水平线</value>
   </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
+  <data name="cbShapes.Items1" xml:space="preserve">
     <value>垂直线</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>网格</value>
   </data>
   <data name="lblShapeSize.Text" xml:space="preserve">
     <value>尺寸：</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>您可以点击外侧隐藏/显示此面板</value>
+    <value>提示：可以点击外侧来隐藏/显示此面板。</value>
   </data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
-    <value>黑色,  白色：</value>
+    <value>黑色，白色：</value>
   </data>
   <data name="rbGradient.Text" xml:space="preserve">
     <value>梯度：</value>
@@ -170,5 +170,20 @@
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>B（蓝）：</value>
+  </data>
+  <data name="lblGreenValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBlueValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRedValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShapeSizeValue.Text" xml:space="preserve">
+    <value>1</value>
   </data>
 </root>

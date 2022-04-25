@@ -177,9 +177,6 @@
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Enviar</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Doar...</value>
-  </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Sair</value>
   </data>
@@ -267,26 +264,11 @@
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Editar imagem...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Tela cheia</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Esconder menu</value>
-  </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Efeitos de imagem...</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automático</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Esconder</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Mostrar</value>
   </data>
   <data name="tsmiOpen.Text" xml:space="preserve">
     <value>Abrir</value>
@@ -354,9 +336,6 @@
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Parar envio</value>
   </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Sobre...</value>
-  </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
     <value>Testar encurtador de URL</value>
   </data>
@@ -414,9 +393,6 @@
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>Pós-upload</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
-  </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>Histórico...</value>
   </data>
@@ -464,9 +440,6 @@
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Conferir hash...</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Prévia de imagem</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Envio de imagens</value>
@@ -570,17 +543,11 @@
   <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
     <value>Serviços de compartilhamento de URLs</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Capturar página da web...</value>
-  </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Serviços de compartilhamento de URLs</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Captura de página da web...</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Miniaturizador de vídeo...</value>
@@ -599,36 +566,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Captura rolante...</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Testar encurtador de URL</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Testar compartilhamento de URL</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Testar envio de texto</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Testar envio de imagem</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Testar envio de arquivo</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Log de depuração...</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Depurar</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Esconder colunas</value>
-  </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Abrir página do Patreon do ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Esconder botão do Patreon permanentemente</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Captura de texto (OCR)...</value>

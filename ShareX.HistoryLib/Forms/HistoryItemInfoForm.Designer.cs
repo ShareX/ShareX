@@ -29,35 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryItemInfoForm));
-            this.olvMain = new ShareX.HistoryLib.ObjectListView();
+            this.pgHistoryItem = new System.Windows.Forms.PropertyGrid();
             this.SuspendLayout();
             // 
-            // olvMain
+            // pgHistoryItem
             // 
-            resources.ApplyResources(this.olvMain, "olvMain");
-            this.olvMain.FullRowSelect = true;
-            this.olvMain.GridLines = true;
-            this.olvMain.HideSelection = false;
-            this.olvMain.MultiSelect = false;
-            this.olvMain.Name = "olvMain";
-            this.olvMain.SetObjectType = ShareX.HistoryLib.ObjectListView.ObjectType.Properties;
-            this.olvMain.UseCompatibleStateImageBehavior = false;
-            this.olvMain.View = System.Windows.Forms.View.Details;
+            resources.ApplyResources(this.pgHistoryItem, "pgHistoryItem");
+            this.pgHistoryItem.Name = "pgHistoryItem";
+            this.pgHistoryItem.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgHistoryItem.ToolbarVisible = false;
             // 
             // HistoryItemInfoForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.olvMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.MaximizeBox = false;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.pgHistoryItem);
             this.Name = "HistoryItemInfoForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.ResumeLayout(false);
 
         }
 
         #endregion Windows Form Designer generated code
 
-        private ShareX.HistoryLib.ObjectListView olvMain;
+        private System.Windows.Forms.PropertyGrid pgHistoryItem;
     }
 }

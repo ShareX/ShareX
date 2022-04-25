@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -88,8 +88,7 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    uint processID;
-                    GetWindowThreadProcessId(hwnd, out processID);
+                    GetWindowThreadProcessId(hwnd, out uint processID);
                     return Process.GetProcessById((int)processID);
                 }
                 catch (Exception e)
@@ -126,11 +125,29 @@ namespace ShareX.HelpersLib
             return new IntPtr(GetClassLong(hWnd, nIndex));
         }
 
+        public static IntPtr GetWindowLong(IntPtr hWnd, int nIndex)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return GetWindowLong32(hWnd, nIndex);
+            }
+
+            return GetWindowLongPtr64(hWnd, nIndex);
+        }
+
+        public static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return SetWindowLongPtr32(hWnd, nIndex, dwNewLong);
+            }
+
+            return SetWindowLongPtr64(hWnd, nIndex, dwNewLong);
+        }
+
         private static Icon GetSmallApplicationIcon(IntPtr handle)
         {
-            IntPtr iconHandle;
-
-            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_SMALL2, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
+            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_SMALL2, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out IntPtr iconHandle);
 
             if (iconHandle == IntPtr.Zero)
             {
@@ -157,9 +174,7 @@ namespace ShareX.HelpersLib
 
         private static Icon GetBigApplicationIcon(IntPtr handle)
         {
-            IntPtr iconHandle;
-
-            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_BIG, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
+            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_BIG, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out IntPtr iconHandle);
 
             if (iconHandle == IntPtr.Zero)
             {
@@ -181,8 +196,7 @@ namespace ShareX.HelpersLib
 
         public static bool GetBorderSize(IntPtr handle, out Size size)
         {
-            WINDOWINFO wi = new WINDOWINFO();
-
+            WINDOWINFO wi = WINDOWINFO.Create();
             bool result = GetWindowInfo(handle, ref wi);
 
             if (result)
@@ -212,36 +226,54 @@ namespace ShareX.HelpersLib
 
         public static bool GetExtendedFrameBounds(IntPtr handle, out Rectangle rectangle)
         {
-            RECT rect;
-            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.ExtendedFrameBounds, out rect, Marshal.SizeOf(typeof(RECT)));
+            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_EXTENDED_FRAME_BOUNDS, out RECT rect, Marshal.SizeOf(typeof(RECT)));
             rectangle = rect;
             return result == 0;
         }
 
         public static bool GetNCRenderingEnabled(IntPtr handle)
         {
-            bool enabled;
-            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.NCRenderingEnabled, out enabled, sizeof(bool));
+            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_NCRENDERING_ENABLED, out bool enabled, sizeof(bool));
             return result == 0 && enabled;
         }
 
         public static void SetNCRenderingPolicy(IntPtr handle, DwmNCRenderingPolicy renderingPolicy)
         {
             int renderPolicy = (int)renderingPolicy;
-            DwmSetWindowAttribute(handle, (int)DwmWindowAttribute.NCRenderingPolicy, ref renderPolicy, sizeof(int));
+            DwmSetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_NCRENDERING_POLICY, ref renderPolicy, sizeof(int));
+        }
+
+        public static bool UseImmersiveDarkMode(IntPtr handle, bool enabled)
+        {
+            if (Helpers.IsWindows10OrGreater(17763))
+            {
+                DwmWindowAttribute attribute;
+
+                if (Helpers.IsWindows10OrGreater(18985))
+                {
+                    attribute = DwmWindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE;
+                }
+                else
+                {
+                    attribute = DwmWindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1;
+                }
+
+                int useImmersiveDarkMode = enabled ? 1 : 0;
+                return DwmSetWindowAttribute(handle, (int)attribute, ref useImmersiveDarkMode, sizeof(int)) == 0;
+            }
+
+            return false;
         }
 
         public static Rectangle GetWindowRect(IntPtr handle)
         {
-            RECT rect;
-            GetWindowRect(handle, out rect);
+            GetWindowRect(handle, out RECT rect);
             return rect;
         }
 
         public static Rectangle GetClientRect(IntPtr handle)
         {
-            RECT rect;
-            GetClientRect(handle, out rect);
+            GetClientRect(handle, out RECT rect);
             Point position = rect.Location;
             ClientToScreen(handle, ref position);
             return new Rectangle(position, rect.Size);
@@ -249,20 +281,12 @@ namespace ShareX.HelpersLib
 
         public static Rectangle MaximizedWindowFix(IntPtr handle, Rectangle windowRect)
         {
-            Size size;
-
-            if (GetBorderSize(handle, out size))
+            if (GetBorderSize(handle, out Size size))
             {
                 windowRect = new Rectangle(windowRect.X + size.Width, windowRect.Y + size.Height, windowRect.Width - (size.Width * 2), windowRect.Height - (size.Height * 2));
             }
 
             return windowRect;
-        }
-
-        public static void ActivateWindow(IntPtr handle)
-        {
-            SetForegroundWindow(handle);
-            SetActiveWindow(handle);
         }
 
         public static void ActivateWindowRepeat(IntPtr handle, int count)
@@ -349,42 +373,40 @@ namespace ShareX.HelpersLib
             SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, (IntPtr)(-1), (IntPtr)(-1));
         }
 
-        public static bool IsWindowMaximized(IntPtr handle)
-        {
-            WINDOWPLACEMENT wp = new WINDOWPLACEMENT();
-            wp.length = Marshal.SizeOf(wp);
-            GetWindowPlacement(handle, ref wp);
-            return wp.showCmd == WindowShowStyle.Maximize;
-        }
-
         public static bool IsWindowCloaked(IntPtr handle)
         {
             if (IsDWMEnabled())
             {
-                int cloaked;
-                int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.Cloaked, out cloaked, sizeof(int));
+                int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_CLOAKED, out int cloaked, sizeof(int));
                 return result == 0 && cloaked != 0;
             }
 
             return false;
         }
 
+        public static bool IsActive(IntPtr handle)
+        {
+            return GetForegroundWindow() == handle;
+        }
+
         public static void RestoreWindow(IntPtr handle)
         {
             WINDOWPLACEMENT wp = new WINDOWPLACEMENT();
             wp.length = Marshal.SizeOf(wp);
-            GetWindowPlacement(handle, ref wp);
 
-            if (wp.flags == (int)WindowPlacementFlags.WPF_RESTORETOMAXIMIZED)
+            if (GetWindowPlacement(handle, ref wp))
             {
-                wp.showCmd = WindowShowStyle.ShowMaximized;
-            }
-            else
-            {
-                wp.showCmd = WindowShowStyle.Restore;
-            }
+                if (wp.flags == (int)WindowPlacementFlags.WPF_RESTORETOMAXIMIZED)
+                {
+                    wp.showCmd = WindowShowStyle.ShowMaximized;
+                }
+                else
+                {
+                    wp.showCmd = WindowShowStyle.Restore;
+                }
 
-            SetWindowPlacement(handle, ref wp);
+                SetWindowPlacement(handle, ref wp);
+            }
         }
 
         /// <summary>
@@ -466,7 +488,7 @@ namespace ShareX.HelpersLib
 
         public static bool Is64Bit()
         {
-#if WindowsStore
+#if MicrosoftStore
             return true;
 #else
             return IntPtr.Size == 8 || (IntPtr.Size == 4 && Is32BitProcessOn64BitProcessor());
@@ -475,8 +497,7 @@ namespace ShareX.HelpersLib
 
         private static bool Is32BitProcessOn64BitProcessor()
         {
-            bool retVal;
-            IsWow64Process(Process.GetCurrentProcess().Handle, out retVal);
+            IsWow64Process(Process.GetCurrentProcess().Handle, out bool retVal);
             return retVal;
         }
 
@@ -508,14 +529,74 @@ namespace ShareX.HelpersLib
 
         public static bool CreateProcess(string path, string arguments, CreateProcessFlags flags = CreateProcessFlags.NORMAL_PRIORITY_CLASS)
         {
-            PROCESS_INFORMATION pInfo = new PROCESS_INFORMATION();
+            //PROCESS_INFORMATION pInfo = new PROCESS_INFORMATION();
             STARTUPINFO sInfo = new STARTUPINFO();
             SECURITY_ATTRIBUTES pSec = new SECURITY_ATTRIBUTES();
             SECURITY_ATTRIBUTES tSec = new SECURITY_ATTRIBUTES();
             pSec.nLength = Marshal.SizeOf(pSec);
             tSec.nLength = Marshal.SizeOf(tSec);
 
-            return CreateProcess(path, $"\"{path}\" {arguments}", ref pSec, ref tSec, false, (uint)flags, IntPtr.Zero, null, ref sInfo, out pInfo);
+            return CreateProcess(path, $"\"{path}\" {arguments}", ref pSec, ref tSec, false, (uint)flags, IntPtr.Zero, null, ref sInfo, out _);
+        }
+
+        public static Icon GetFileIcon(string filePath, bool isSmallIcon)
+        {
+            SHFILEINFO shfi = new SHFILEINFO();
+
+            SHGFI flags = SHGFI.Icon;
+
+            if (isSmallIcon)
+            {
+                flags |= SHGFI.SmallIcon;
+            }
+            else
+            {
+                flags |= SHGFI.LargeIcon;
+            }
+
+            SHGetFileInfo(filePath, 0, ref shfi, (uint)Marshal.SizeOf(shfi), (uint)flags);
+
+            Icon icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
+            DestroyIcon(shfi.hIcon);
+            return icon;
+        }
+
+        public static Icon GetJumboFileIcon(string filePath, bool jumboSize = true)
+        {
+            SHFILEINFO shfi = new SHFILEINFO();
+
+            SHGFI flags = SHGFI.SysIconIndex | SHGFI.UseFileAttributes;
+            SHGetFileInfo(filePath, 0, ref shfi, (uint)Marshal.SizeOf(shfi), (uint)flags);
+
+            IImageList spiml = null;
+            Guid guil = new Guid(NativeConstants.IID_IImageList2);
+
+            SHGetImageList(jumboSize ? NativeConstants.SHIL_JUMBO : NativeConstants.SHIL_EXTRALARGE, ref guil, ref spiml);
+            IntPtr hIcon = IntPtr.Zero;
+            spiml.GetIcon(shfi.iIcon, NativeConstants.ILD_TRANSPARENT | NativeConstants.ILD_IMAGE, ref hIcon);
+
+            Icon icon = (Icon)Icon.FromHandle(hIcon).Clone();
+            DestroyIcon(hIcon);
+            return icon;
+        }
+
+        public static float GetScreenScalingFactor()
+        {
+            float scalingFactor;
+
+            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                IntPtr desktop = g.GetHdc();
+                int LogicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.VERTRES);
+                int PhysicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.DESKTOPVERTRES);
+                int logpixelsy = GetDeviceCaps(desktop, (int)DeviceCap.LOGPIXELSY);
+                float screenScalingFactor = (float)PhysicalScreenHeight / LogicalScreenHeight;
+                float dpiScalingFactor = logpixelsy / 96f;
+                scalingFactor = Math.Max(screenScalingFactor, dpiScalingFactor);
+                g.ReleaseHdc(desktop);
+            }
+
+            return scalingFactor;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -82,7 +82,7 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             ColorMatrix colorMatrix = new ColorMatrix(new[]
             {
@@ -93,9 +93,9 @@ namespace ShareX.ImageEffectsLib
                 new float[] { Ro, Go, Bo, Ao, 1 }
             });
 
-            using (img)
+            using (bmp)
             {
-                return colorMatrix.Apply(img);
+                return colorMatrix.Apply(bmp);
             }
         }
     }

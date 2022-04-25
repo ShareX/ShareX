@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -68,7 +68,6 @@ namespace ShareX.HistoryLib
         private ToolStripMenuItem tsmiCopyFileName;
         private ToolStripMenuItem tsmiCopyFileNameWithExtension;
         private ToolStripMenuItem tsmiCopyFolder;
-        private ToolStripMenuItem tsmiShow;
         private ToolStripMenuItem tsmiShowImagePreview;
         private ToolStripMenuItem tsmiShowMoreInfo;
         private ToolStripMenuItem tsmiUploadFile;
@@ -111,7 +110,6 @@ namespace ShareX.HistoryLib
             tsmiCopyFileName = new ToolStripMenuItem();
             tsmiCopyFileNameWithExtension = new ToolStripMenuItem();
             tsmiCopyFolder = new ToolStripMenuItem();
-            tsmiShow = new ToolStripMenuItem();
             tsmiShowImagePreview = new ToolStripMenuItem();
             tsmiShowMoreInfo = new ToolStripMenuItem();
             tsmiUploadFile = new ToolStripMenuItem();
@@ -125,9 +123,10 @@ namespace ShareX.HistoryLib
             {
                 tsmiOpen,
                 tsmiCopy,
-                tsmiShow,
+                tsmiShowImagePreview,
                 tsmiUploadFile,
-                tsmiEditImage
+                tsmiEditImage,
+                tsmiShowMoreInfo
             });
             cmsHistory.Name = "cmsHistory";
             cmsHistory.ShowImageMargin = false;
@@ -153,6 +152,7 @@ namespace ShareX.HistoryLib
             // tsmiOpenURL
             //
             tsmiOpenURL.Name = "tsmiOpenURL";
+            tsmiOpenURL.ShortcutKeyDisplayString = "Enter";
             tsmiOpenURL.Size = new Size(156, 22);
             tsmiOpenURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
             tsmiOpenURL.Click += tsmiOpenURL_Click;
@@ -186,6 +186,7 @@ namespace ShareX.HistoryLib
             // tsmiOpenFile
             //
             tsmiOpenFile.Name = "tsmiOpenFile";
+            tsmiOpenFile.ShortcutKeyDisplayString = "Ctrl+Enter";
             tsmiOpenFile.Size = new Size(156, 22);
             tsmiOpenFile.Text = Resources.HistoryItemManager_InitializeComponent_File;
             tsmiOpenFile.Click += tsmiOpenFile_Click;
@@ -193,6 +194,7 @@ namespace ShareX.HistoryLib
             // tsmiOpenFolder
             //
             tsmiOpenFolder.Name = "tsmiOpenFolder";
+            tsmiOpenFolder.ShortcutKeyDisplayString = "Shift+Enter";
             tsmiOpenFolder.Size = new Size(156, 22);
             tsmiOpenFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
             tsmiOpenFolder.Click += tsmiOpenFolder_Click;
@@ -234,6 +236,7 @@ namespace ShareX.HistoryLib
             // tsmiCopyURL
             //
             tsmiCopyURL.Name = "tsmiCopyURL";
+            tsmiCopyURL.ShortcutKeyDisplayString = "Ctrl+C";
             tsmiCopyURL.Size = new Size(233, 22);
             tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
             tsmiCopyURL.Click += tsmiCopyURL_Click;
@@ -267,6 +270,7 @@ namespace ShareX.HistoryLib
             // tsmiCopyFile
             //
             tsmiCopyFile.Name = "tsmiCopyFile";
+            tsmiCopyFile.ShortcutKeyDisplayString = "Shift+C";
             tsmiCopyFile.Size = new Size(233, 22);
             tsmiCopyFile.Text = Resources.HistoryItemManager_InitializeComponent_File;
             tsmiCopyFile.Click += tsmiCopyFile_Click;
@@ -274,6 +278,7 @@ namespace ShareX.HistoryLib
             // tsmiCopyImage
             //
             tsmiCopyImage.Name = "tsmiCopyImage";
+            tsmiCopyImage.ShortcutKeyDisplayString = "Alt+C";
             tsmiCopyImage.Size = new Size(233, 22);
             tsmiCopyImage.Text = Resources.HistoryItemManager_InitializeComponent_Image;
             tsmiCopyImage.Click += tsmiCopyImage_Click;
@@ -371,6 +376,7 @@ namespace ShareX.HistoryLib
             // tsmiCopyFilePath
             //
             tsmiCopyFilePath.Name = "tsmiCopyFilePath";
+            tsmiCopyFilePath.ShortcutKeyDisplayString = "Ctrl+Shift+C";
             tsmiCopyFilePath.Size = new Size(233, 22);
             tsmiCopyFilePath.Text = Resources.HistoryItemManager_InitializeComponent_File_path;
             tsmiCopyFilePath.Click += tsmiCopyFilePath_Click;
@@ -396,17 +402,6 @@ namespace ShareX.HistoryLib
             tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
             tsmiCopyFolder.Click += tsmiCopyFolder_Click;
             //
-            // tsmiShow
-            //
-            tsmiShow.DropDownItems.AddRange(new ToolStripItem[]
-            {
-                tsmiShowImagePreview,
-                tsmiShowMoreInfo
-            });
-            tsmiShow.Name = "tsmiShow";
-            tsmiShow.Size = new Size(127, 22);
-            tsmiShow.Text = Resources.HistoryItemManager_InitializeComponent_Show;
-            //
             // tsmiShowImagePreview
             //
             tsmiShowImagePreview.Name = "tsmiShowImagePreview";
@@ -424,6 +419,7 @@ namespace ShareX.HistoryLib
             // tsmiUploadFile
             //
             tsmiUploadFile.Name = "tsmiUploadFile";
+            tsmiUploadFile.ShortcutKeyDisplayString = "Ctrl+U";
             tsmiUploadFile.Size = new Size(127, 22);
             tsmiUploadFile.Text = Resources.HistoryItemManager_InitializeComponent_UploadFile;
             tsmiUploadFile.Click += tsmiUploadFile_Click;
@@ -431,6 +427,7 @@ namespace ShareX.HistoryLib
             // tsmiEditImage
             //
             tsmiEditImage.Name = "tsmiEditImage";
+            tsmiEditImage.ShortcutKeyDisplayString = "Ctrl+E";
             tsmiEditImage.Size = new Size(127, 22);
             tsmiEditImage.Text = Resources.HistoryItemManager_InitializeComponent_EditImage;
             tsmiEditImage.Click += tsmiEditImage_Click;
@@ -438,65 +435,139 @@ namespace ShareX.HistoryLib
             cmsHistory.ResumeLayout(false);
         }
 
-        public void UpdateTexts(int itemsCount)
-        {
-            if (itemsCount > 1)
-            {
-                tsmiCopyURL.Text = string.Format(Resources.HistoryItemManager_UpdateTexts_URLs___0__, itemsCount);
-                tsmiCopyHTMLLink.Text = string.Format(Resources.HistoryItemManager_UpdateTexts_HTML_link___0__, itemsCount);
-            }
-            else
-            {
-                tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
-                tsmiCopyHTMLLink.Text = Resources.HistoryItemManager_InitializeComponent_HTML_link;
-            }
-        }
-
-        public void UpdateButtons()
+        public void UpdateContextMenu(int itemCount)
         {
             cmsHistory.SuspendLayout();
             cmsHistory.Enabled = true;
 
-            // Open
-            tsmiOpenURL.Enabled = IsURLExist;
-            tsmiOpenShortenedURL.Enabled = IsShortenedURLExist;
-            tsmiOpenThumbnailURL.Enabled = IsThumbnailURLExist;
-            tsmiOpenDeletionURL.Enabled = IsDeletionURLExist;
+            if (itemCount > 1)
+            {
+                // Open
+                tsmiOpenURL.Enabled = false;
+                tsmiOpenShortenedURL.Enabled = false;
+                tsmiOpenThumbnailURL.Enabled = false;
+                tsmiOpenDeletionURL.Enabled = false;
 
-            tsmiOpenFile.Enabled = IsFileExist;
-            tsmiOpenFolder.Enabled = IsFileExist;
+                tsmiOpenFile.Enabled = false;
+                tsmiOpenFolder.Enabled = false;
 
-            // Copy
-            tsmiCopyURL.Enabled = IsURLExist;
-            tsmiCopyShortenedURL.Enabled = IsShortenedURLExist;
-            tsmiCopyThumbnailURL.Enabled = IsThumbnailURLExist;
-            tsmiCopyDeletionURL.Enabled = IsDeletionURLExist;
+                // Copy
+                tsmiCopyURL.Enabled = true;
+                tsmiCopyShortenedURL.Enabled = true;
+                tsmiCopyThumbnailURL.Enabled = true;
+                tsmiCopyDeletionURL.Enabled = true;
 
-            tsmiCopyFile.Enabled = IsFileExist;
-            tsmiCopyImage.Enabled = IsImageFile;
-            tsmiCopyText.Enabled = IsTextFile;
+                tsmiCopyFile.Enabled = true;
+                tsmiCopyImage.Enabled = false;
+                tsmiCopyText.Enabled = false;
 
-            tsmiCopyHTMLLink.Enabled = IsURLExist;
-            tsmiCopyHTMLImage.Enabled = IsImageURL;
-            tsmiCopyHTMLLinkedImage.Enabled = IsImageURL && IsThumbnailURLExist;
+                tsmiCopyHTMLLink.Enabled = true;
+                tsmiCopyHTMLImage.Enabled = true;
+                tsmiCopyHTMLLinkedImage.Enabled = true;
 
-            tsmiCopyForumLink.Enabled = IsURLExist;
-            tsmiCopyForumImage.Enabled = IsImageURL && IsURLExist;
-            tsmiCopyForumLinkedImage.Enabled = IsImageURL && IsThumbnailURLExist;
+                tsmiCopyForumLink.Enabled = true;
+                tsmiCopyForumImage.Enabled = true;
+                tsmiCopyForumLinkedImage.Enabled = true;
 
-            tsmiCopyFilePath.Enabled = IsFilePathValid;
-            tsmiCopyFileName.Enabled = IsFilePathValid;
-            tsmiCopyFileNameWithExtension.Enabled = IsFilePathValid;
-            tsmiCopyFolder.Enabled = IsFilePathValid;
+                tsmiCopyMarkdownLink.Enabled = true;
+                tsmiCopyMarkdownImage.Enabled = true;
+                tsmiCopyMarkdownLinkedImage.Enabled = true;
 
-            // Show
-            tsmiShowImagePreview.Enabled = IsImageFile;
+                tsmiCopyFilePath.Enabled = true;
+                tsmiCopyFileName.Enabled = true;
+                tsmiCopyFileNameWithExtension.Enabled = true;
+                tsmiCopyFolder.Enabled = true;
 
-            // Upload file
-            tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
+                tsmiCopyFile.Text = Resources.HistoryItemManager_InitializeComponent_File + " (" + itemCount + ")";
+                tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL + " (" + itemCount + ")";
+                tsmiCopyShortenedURL.Text = Resources.HistoryItemManager_InitializeComponent_Shortened_URL + " (" + itemCount + ")";
+                tsmiCopyThumbnailURL.Text = Resources.HistoryItemManager_InitializeComponent_Thumbnail_URL + " (" + itemCount + ")";
+                tsmiCopyDeletionURL.Text = Resources.HistoryItemManager_InitializeComponent_Deletion_URL + " (" + itemCount + ")";
+                tsmiCopyHTMLLink.Text = Resources.HistoryItemManager_InitializeComponent_HTML_link + " (" + itemCount + ")";
+                tsmiCopyHTMLImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_image + " (" + itemCount + ")";
+                tsmiCopyHTMLLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_linked_image + " (" + itemCount + ")";
+                tsmiCopyHTMLLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_linked_image + " (" + itemCount + ")";
+                tsmiCopyForumLink.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__link + " (" + itemCount + ")";
+                tsmiCopyForumImage.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__image + " (" + itemCount + ")";
+                tsmiCopyForumLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image + " (" + itemCount + ")";
+                tsmiCopyMarkdownLink.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__link + " (" + itemCount + ")";
+                tsmiCopyMarkdownImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__image + " (" + itemCount + ")";
+                tsmiCopyMarkdownLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__linked_image + " (" + itemCount + ")";
+                tsmiCopyFilePath.Text = Resources.HistoryItemManager_InitializeComponent_File_path + " (" + itemCount + ")";
+                tsmiCopyFileName.Text = Resources.HistoryItemManager_InitializeComponent_File_name + " (" + itemCount + ")";
+                tsmiCopyFileNameWithExtension.Text = Resources.HistoryItemManager_InitializeComponent_File_name_with_extension + " (" + itemCount + ")";
+                tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder + " (" + itemCount + ")";
 
-            // Edit image
-            tsmiEditImage.Enabled = editImage != null && IsImageFile;
+                // Other
+                tsmiShowImagePreview.Enabled = false;
+                tsmiUploadFile.Enabled = false;
+                tsmiEditImage.Enabled = false;
+                tsmiShowMoreInfo.Enabled = false;
+            }
+            else
+            {
+                // Open
+                tsmiOpenURL.Enabled = IsURLExist;
+                tsmiOpenShortenedURL.Enabled = IsShortenedURLExist;
+                tsmiOpenThumbnailURL.Enabled = IsThumbnailURLExist;
+                tsmiOpenDeletionURL.Enabled = IsDeletionURLExist;
+
+                tsmiOpenFile.Enabled = IsFileExist;
+                tsmiOpenFolder.Enabled = IsFileExist;
+
+                // Copy
+                tsmiCopyURL.Enabled = IsURLExist;
+                tsmiCopyShortenedURL.Enabled = IsShortenedURLExist;
+                tsmiCopyThumbnailURL.Enabled = IsThumbnailURLExist;
+                tsmiCopyDeletionURL.Enabled = IsDeletionURLExist;
+
+                tsmiCopyFile.Enabled = IsFileExist;
+                tsmiCopyImage.Enabled = IsImageFile;
+                tsmiCopyText.Enabled = IsTextFile;
+
+                tsmiCopyHTMLLink.Enabled = IsURLExist;
+                tsmiCopyHTMLImage.Enabled = IsImageURL;
+                tsmiCopyHTMLLinkedImage.Enabled = IsImageURL && IsThumbnailURLExist;
+
+                tsmiCopyForumLink.Enabled = IsURLExist;
+                tsmiCopyForumImage.Enabled = IsImageURL && IsURLExist;
+                tsmiCopyForumLinkedImage.Enabled = IsImageURL && IsThumbnailURLExist;
+
+                tsmiCopyMarkdownLink.Enabled = IsURLExist;
+                tsmiCopyMarkdownImage.Enabled = IsImageURL && IsURLExist;
+                tsmiCopyMarkdownLinkedImage.Enabled = IsImageURL && IsThumbnailURLExist;
+
+                tsmiCopyFilePath.Enabled = IsFilePathValid;
+                tsmiCopyFileName.Enabled = IsFilePathValid;
+                tsmiCopyFileNameWithExtension.Enabled = IsFilePathValid;
+                tsmiCopyFolder.Enabled = IsFilePathValid;
+
+                tsmiCopyFile.Text = Resources.HistoryItemManager_InitializeComponent_File;
+                tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
+                tsmiCopyShortenedURL.Text = Resources.HistoryItemManager_InitializeComponent_Shortened_URL;
+                tsmiCopyThumbnailURL.Text = Resources.HistoryItemManager_InitializeComponent_Thumbnail_URL;
+                tsmiCopyDeletionURL.Text = Resources.HistoryItemManager_InitializeComponent_Deletion_URL;
+                tsmiCopyHTMLLink.Text = Resources.HistoryItemManager_InitializeComponent_HTML_link;
+                tsmiCopyHTMLImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_image;
+                tsmiCopyHTMLLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_linked_image;
+                tsmiCopyHTMLLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_linked_image;
+                tsmiCopyForumLink.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__link;
+                tsmiCopyForumImage.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__image;
+                tsmiCopyForumLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image;
+                tsmiCopyMarkdownLink.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__link;
+                tsmiCopyMarkdownImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__image;
+                tsmiCopyMarkdownLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__linked_image;
+                tsmiCopyFilePath.Text = Resources.HistoryItemManager_InitializeComponent_File_path;
+                tsmiCopyFileName.Text = Resources.HistoryItemManager_InitializeComponent_File_name;
+                tsmiCopyFileNameWithExtension.Text = Resources.HistoryItemManager_InitializeComponent_File_name_with_extension;
+                tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
+
+                // Other
+                tsmiShowImagePreview.Enabled = IsImageFile;
+                tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
+                tsmiEditImage.Enabled = editImage != null && IsImageFile;
+                tsmiShowMoreInfo.Enabled = true;
+            }
 
             cmsHistory.ResumeLayout();
         }
@@ -636,11 +707,6 @@ namespace ShareX.HistoryLib
             ShowImagePreview();
         }
 
-        private void tsmiShowMoreInfo_Click(object sender, EventArgs e)
-        {
-            ShowMoreInfo();
-        }
-
         private void tsmiUploadFile_Click(object sender, EventArgs e)
         {
             UploadFile();
@@ -649,6 +715,11 @@ namespace ShareX.HistoryLib
         private void tsmiEditImage_Click(object sender, EventArgs e)
         {
             EditImage();
+        }
+
+        private void tsmiShowMoreInfo_Click(object sender, EventArgs e)
+        {
+            ShowMoreInfo();
         }
     }
 }

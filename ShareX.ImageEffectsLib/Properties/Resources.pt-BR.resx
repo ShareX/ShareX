@@ -132,4 +132,32 @@
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
     <value>Efeitos de imagem - Largura: {0}, Altura: {1}, Tempo de renderização: {2} ms</value>
   </data>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>A pasta de ativos deve estar dentro da pasta de efeitos de imagem do ShareX.</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="Effect" xml:space="preserve">
+    <value>Efeito:</value>
+  </data>
+  <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>Caminho de pasta de ativos inválido</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>Nome da predefinição ausente</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>Já existe um pacote com este nome de arquivo.
+Você gostaria de substituí-lo?</value>
+  </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>O nome da predefinição não pode estar vazio.</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>Você gostaria de limpar os efeitos?</value>
+  </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -48,9 +48,12 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                size = value.Min(1);
+                size = value.Max(1);
             }
         }
+
+        [DefaultValue(DashStyle.Solid), TypeConverter(typeof(EnumProperNameConverter))]
+        public DashStyle DashStyle { get; set; }
 
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color Color { get; set; }
@@ -58,25 +61,32 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color2 { get; set; }
-
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
+        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
+        public GradientInfo Gradient { get; set; }
 
         public DrawBorder()
         {
             this.ApplyDefaultPropertyValues();
+            AddDefaultGradient();
         }
 
-        public override Image Apply(Image img)
+        private void AddDefaultGradient()
         {
-            if (UseGradient)
+            Gradient = new GradientInfo();
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(68, 120, 194), 0f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(13, 58, 122), 50f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(6, 36, 78), 50f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
+        }
+
+        public override Bitmap Apply(Bitmap bmp)
+        {
+            if (UseGradient && Gradient != null && Gradient.IsValid)
             {
-                return ImageHelpers.DrawBorder(img, Color, Color2, GradientType, Size, Type);
+                return ImageHelpers.DrawBorder(bmp, Gradient, Size, Type, DashStyle);
             }
 
-            return ImageHelpers.DrawBorder(img, Color, Size, Type);
+            return ImageHelpers.DrawBorder(bmp, Color, Size, Type, DashStyle);
         }
     }
 }

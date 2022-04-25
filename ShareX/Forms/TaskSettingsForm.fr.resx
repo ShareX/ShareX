@@ -156,11 +156,8 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Capturer la zone client pendant la capture d'une fenêtre ou d'une fenêtre active</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Délai de la capture d'écran :</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
-    <value>Capture d'une région </value>
+    <value>Capture d'une région</value>
   </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Enregistreur d'écran</value>
@@ -234,9 +231,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Si le presse-papier contient un chemin de dossier, indexer ce dossier et mettre en ligne l'index</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Si le presse-papier contient l'URL d'un fichier, le télécharger et le mettre en ligne</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Si le presse-papier contient une URL, la partager en utilisant le service de partage de URL</value>
   </data>
@@ -248,9 +242,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Utiliser un modèle de nom pour la mise en ligne de fichiers plutôt que le nom du fichier réel</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Remettre à zéro le compteur incrémental automatique</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Prévisualisation :</value>
@@ -264,9 +255,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Utiliser un fuseau horaire personnalisé :</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Utiliser le modèle du nom de la fenêtre pour la capture de région (ShareX essayera de détecter la fenêtre derrière la sélection)</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Nommage des fichiers</value>
   </data>
@@ -276,20 +264,11 @@
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Durée fixée :</value>
   </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profils...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Exécuter CLI après :</value>
-  </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>IPS de l'enregistrement d'écran :</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>secondes</value>
-  </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Démarrer l'enregistrement après :</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>secondes</value>
@@ -307,7 +286,7 @@
     <value>Hauteur :</value>
   </data>
   <data name="lblThumbnailName.Text" xml:space="preserve">
-    <value>Nom de la miniature</value>
+    <value>Nom de la miniature :</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Prévisualisation</value>
@@ -324,11 +303,8 @@
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>N'appliquer les effets que sur la région capturée</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Afficher la fenêtre des effets d'image après la capture</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>Vous pouvez activer/désactiver les effets d'image grâce au menu « Après les tâches de capture » -&gt; « Ajouter des effets d'image ».</value>
+    <value>Remarque : Vous pouvez activer/désactiver les effets d'image grâce au menu « Après les tâches de capture » -&gt; « Ajouter des effets d'image ».</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Effets</value>
@@ -350,9 +326,6 @@
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Jouer un son quand la tâche est complétée</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Après que la tâche soit complétée :</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tâche...</value>
@@ -381,12 +354,6 @@
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Après la capture...</value>
   </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Remplacer le compte FTP par défaut :</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Remplacer le service de mise en ligne personnalisé par défaut :</value>
-  </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Séléctionner une région...</value>
   </data>
@@ -403,7 +370,7 @@
     <value>Filtre d'extension :</value>
   </data>
   <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
-    <value>kO</value>
+    <value>ko</value>
   </data>
   <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
     <value>Hauteur :</value>
@@ -495,37 +462,103 @@
   <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
     <value>Détecter des régions de la fenêtre et permettre l'apparition du curseur sur la capture</value>
   </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres de mise en ligne</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres des outils</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres des images</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres généraux</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres des captures</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Remplacer les actions</value>
-  </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
     <value>Remplacer les paramètres de destination</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
     <value>Remplacer les paramètres "Après la mise en ligne"</value>
   </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres avancés</value>
-  </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
     <value>Remplacer les paramètres "Après la capture"</value>
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>La taille des régions s'adaptera à cette liste lors du maintient de la touche "Alt" :</value>
+  </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>Délai de capture d'écran :</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Incrémentation automatique du numéro :</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>Langue par défaut :</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>Copier automatiquement les résultats dans le presse-papier</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>Détecter également les régions des contrôles dans les fenêtres</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>Demander une confirmation lors de l'abandon</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Modifier...</value>
+  </data>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Si le presse-papier contient un fichier d'URL alors le télécharger et le mettre en ligne</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>Note : Vous pouvez activer/désactiver des actions depuis "Tâches après la capture -&gt; Effectuer des actions".</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>Profondeur de bits PNG :</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>Enregistrer en utilisant un encodage sans perte puis appliquer les options d'encodage de l'utilisateur</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>Remplacer les caractères problématiques dans les URL par des underscores lors de la mise en ligne</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>Traitement OCR silencieux</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>Traitement OCR lorsque la boîte de dialogue est ouverte</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>Remplacer le dossier des captures d'écran</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>Parcourir...</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>Utiliser une sélection de région transparente</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>Modèle :</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>Format du sélecteur de couleurs de l'écran (Ctrl + clic) :</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>Texte du sélecteur de couleurs de l'écran :</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>Substitution :</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>Remplacer l'URL résultante en utilisant des substitutions par expression régulière</value>
   </data>
 </root>

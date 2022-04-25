@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@ namespace ShareX.HelpersLib
 {
     public class CodeMenuEntryActions : CodeMenuEntry
     {
-        protected override string Prefix { get; } = "%";
+        protected override string Prefix { get; } = "$";
 
         public static readonly CodeMenuEntryActions input = new CodeMenuEntryActions("input", Resources.ActionsCodeMenuEntry_FilePath_File_path);
         public static readonly CodeMenuEntryActions output = new CodeMenuEntryActions("output", Resources.ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_);
@@ -44,12 +44,14 @@ namespace ShareX.HelpersLib
 
             if (inputPath != null)
             {
-                result = result.Replace(input.ToPrefixString(), '"' + inputPath + '"');
+                result = result.Replace(input.ToPrefixString("%"), '"' + inputPath + '"');
+                result = result.Replace(input.ToPrefixString(), inputPath);
             }
 
             if (outputPath != null)
             {
-                result = result.Replace(output.ToPrefixString(), '"' + outputPath + '"');
+                result = result.Replace(output.ToPrefixString("%"), '"' + outputPath + '"');
+                result = result.Replace(output.ToPrefixString(), outputPath);
             }
 
             return result;

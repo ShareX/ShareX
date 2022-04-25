@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -22,8 +22,6 @@
 */
 
 #endregion License Information (GPL v3)
-
-// Credits: https://github.com/BallisticLingonberries
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
@@ -76,7 +74,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public UploadResult PushFile(Stream stream, string fileName)
         {
-            NameValueCollection headers = UploadHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             Dictionary<string, string> pushArgs, upArgs = new Dictionary<string, string>();
 
@@ -109,6 +107,7 @@ namespace ShareX.UploadersLib.FileUploaders
             pushArgs.Add("type", "file");
             pushArgs.Add("file_url", fileInfo.file_url);
             pushArgs.Add("body", "Sent via ShareX");
+            pushArgs.Add("file_type", fileInfo.file_type);
 
             string pushResult = SendRequestMultiPart(apiSendPushURL, pushArgs, headers);
 
@@ -124,7 +123,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string Push(string pushType, string valueType, string value, string title)
         {
-            NameValueCollection headers = UploadHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("device_iden", Config.CurrentDevice.Key);
@@ -173,14 +172,16 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public List<PushbulletDevice> GetDeviceList()
         {
-            NameValueCollection headers = UploadHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             string response = SendRequest(HttpMethod.GET, apiGetDevicesURL, headers: headers);
 
             PushbulletResponseDevices devicesResponse = JsonConvert.DeserializeObject<PushbulletResponseDevices>(response);
 
             if (devicesResponse != null && devicesResponse.devices != null)
-                return devicesResponse.devices.Select(x => new PushbulletDevice { Key = x.iden, Name = x.nickname }).ToList();
+            {
+                return devicesResponse.devices.Where(x => !string.IsNullOrEmpty(x.nickname)).Select(x1 => new PushbulletDevice { Key = x1.iden, Name = x1.nickname }).ToList();
+            }
 
             return new List<PushbulletDevice>();
         }
@@ -240,16 +241,19 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class PushbulletSettings
     {
-        public string UserAPIKey = "";
-        public List<PushbulletDevice> DeviceList = new List<PushbulletDevice>();
-        public int SelectedDevice = 0;
+        [JsonEncrypt]
+        public string UserAPIKey { get; set; } = "";
+        public List<PushbulletDevice> DeviceList { get; set; } = new List<PushbulletDevice>();
+        public int SelectedDevice { get; set; } = 0;
 
         public PushbulletDevice CurrentDevice
         {
             get
             {
                 if (DeviceList.IsValidIndex(SelectedDevice))
+                {
                     return DeviceList[SelectedDevice];
+                }
 
                 return null;
             }

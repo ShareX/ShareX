@@ -195,8 +195,8 @@
   <data name="tsmiCopyImage.Text" xml:space="preserve">
     <value>Copy image</value>
   </data>
-  <data name="lblImageSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="lblImageSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblImageSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8.25pt</value>
@@ -205,10 +205,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblImageSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 133</value>
+    <value>35, 120</value>
+  </data>
+  <data name="lblImageSize.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="lblImageSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 18</value>
+    <value>8, 22</value>
   </data>
   <data name="lblImageSize.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>

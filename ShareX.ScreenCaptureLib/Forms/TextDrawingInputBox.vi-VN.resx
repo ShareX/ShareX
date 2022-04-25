@@ -177,9 +177,6 @@
   <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
     <value>Giữa</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Dòng mới: Ctrl + Enter</value>
-  </data>
   <data name="tsmiAlignmentRight.Text" xml:space="preserve">
     <value>Phải</value>
   </data>

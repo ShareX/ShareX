@@ -39,9 +39,15 @@
             this.lblSpace = new System.Windows.Forms.Label();
             this.nudSpace = new System.Windows.Forms.NumericUpDown();
             this.lblOrientation = new System.Windows.Forms.Label();
-            this.cbOrientation = new System.Windows.Forms.ComboBox();
             this.lblSpacePixel = new System.Windows.Forms.Label();
+            this.lblImageAlignment = new System.Windows.Forms.Label();
+            this.cbAlignment = new System.Windows.Forms.ComboBox();
+            this.flpOrientation = new System.Windows.Forms.FlowLayoutPanel();
+            this.rbOrientationHorizontal = new System.Windows.Forms.RadioButton();
+            this.rbOrientationVertical = new System.Windows.Forms.RadioButton();
+            this.cbAutoFillBackground = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).BeginInit();
+            this.flpOrientation.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -82,6 +88,7 @@
             this.chFilepath});
             this.lvImages.FullRowSelect = true;
             this.lvImages.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvImages.HideSelection = false;
             this.lvImages.Name = "lvImages";
             this.lvImages.UseCompatibleStateImageBehavior = false;
             this.lvImages.View = System.Windows.Forms.View.Details;
@@ -120,28 +127,66 @@
             resources.ApplyResources(this.lblOrientation, "lblOrientation");
             this.lblOrientation.Name = "lblOrientation";
             // 
-            // cbOrientation
-            // 
-            resources.ApplyResources(this.cbOrientation, "cbOrientation");
-            this.cbOrientation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbOrientation.FormattingEnabled = true;
-            this.cbOrientation.Name = "cbOrientation";
-            this.cbOrientation.SelectedIndexChanged += new System.EventHandler(this.cbOrientation_SelectedIndexChanged);
-            // 
             // lblSpacePixel
             // 
             resources.ApplyResources(this.lblSpacePixel, "lblSpacePixel");
             this.lblSpacePixel.Name = "lblSpacePixel";
+            // 
+            // lblImageAlignment
+            // 
+            resources.ApplyResources(this.lblImageAlignment, "lblImageAlignment");
+            this.lblImageAlignment.Name = "lblImageAlignment";
+            // 
+            // cbAlignment
+            // 
+            resources.ApplyResources(this.cbAlignment, "cbAlignment");
+            this.cbAlignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAlignment.FormattingEnabled = true;
+            this.cbAlignment.Name = "cbAlignment";
+            this.cbAlignment.SelectedIndexChanged += new System.EventHandler(this.cbAlignment_SelectedIndexChanged);
+            // 
+            // flpOrientation
+            // 
+            resources.ApplyResources(this.flpOrientation, "flpOrientation");
+            this.flpOrientation.Controls.Add(this.rbOrientationHorizontal);
+            this.flpOrientation.Controls.Add(this.rbOrientationVertical);
+            this.flpOrientation.Name = "flpOrientation";
+            // 
+            // rbOrientationHorizontal
+            // 
+            resources.ApplyResources(this.rbOrientationHorizontal, "rbOrientationHorizontal");
+            this.rbOrientationHorizontal.Name = "rbOrientationHorizontal";
+            this.rbOrientationHorizontal.TabStop = true;
+            this.rbOrientationHorizontal.UseVisualStyleBackColor = true;
+            this.rbOrientationHorizontal.CheckedChanged += new System.EventHandler(this.rbOrientationHorizontal_CheckedChanged);
+            // 
+            // rbOrientationVertical
+            // 
+            resources.ApplyResources(this.rbOrientationVertical, "rbOrientationVertical");
+            this.rbOrientationVertical.Name = "rbOrientationVertical";
+            this.rbOrientationVertical.TabStop = true;
+            this.rbOrientationVertical.UseVisualStyleBackColor = true;
+            this.rbOrientationVertical.CheckedChanged += new System.EventHandler(this.rbOrientationVertical_CheckedChanged);
+            // 
+            // cbAutoFillBackground
+            // 
+            resources.ApplyResources(this.cbAutoFillBackground, "cbAutoFillBackground");
+            this.cbAutoFillBackground.Name = "cbAutoFillBackground";
+            this.cbAutoFillBackground.UseVisualStyleBackColor = true;
+            this.cbAutoFillBackground.CheckedChanged += new System.EventHandler(this.cbAutoFillBackground_CheckedChanged);
             // 
             // ImageCombinerForm
             // 
             this.AcceptButton = this.btnCombine;
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.cbAutoFillBackground);
+            this.Controls.Add(this.flpOrientation);
+            this.Controls.Add(this.cbAlignment);
+            this.Controls.Add(this.lblImageAlignment);
             this.Controls.Add(this.lblSpacePixel);
-            this.Controls.Add(this.cbOrientation);
             this.Controls.Add(this.lblOrientation);
             this.Controls.Add(this.nudSpace);
             this.Controls.Add(this.lblSpace);
@@ -155,6 +200,8 @@
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).EndInit();
+            this.flpOrientation.ResumeLayout(false);
+            this.flpOrientation.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,8 +218,13 @@
         private System.Windows.Forms.Label lblSpace;
         private System.Windows.Forms.NumericUpDown nudSpace;
         private System.Windows.Forms.Label lblOrientation;
-        private System.Windows.Forms.ComboBox cbOrientation;
         private System.Windows.Forms.ColumnHeader chFilepath;
         private System.Windows.Forms.Label lblSpacePixel;
+        private System.Windows.Forms.Label lblImageAlignment;
+        private System.Windows.Forms.ComboBox cbAlignment;
+        private System.Windows.Forms.FlowLayoutPanel flpOrientation;
+        private System.Windows.Forms.RadioButton rbOrientationHorizontal;
+        private System.Windows.Forms.RadioButton rbOrientationVertical;
+        private System.Windows.Forms.CheckBox cbAutoFillBackground;
     }
 }

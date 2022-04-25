@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,13 +24,51 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ShareX.HelpersLib
 {
     public static class ColorHelpers
     {
+        public static Color[] StandardColors = new Color[]
+        {
+            Color.FromArgb(0, 0, 0),
+            Color.FromArgb(64, 64, 64),
+            Color.FromArgb(255, 0, 0),
+            Color.FromArgb(255, 106, 0),
+            Color.FromArgb(255, 216, 0),
+            Color.FromArgb(182, 255, 0),
+            Color.FromArgb(76, 255, 0),
+            Color.FromArgb(0, 255, 33),
+            Color.FromArgb(0, 255, 144),
+            Color.FromArgb(0, 255, 255),
+            Color.FromArgb(0, 148, 255),
+            Color.FromArgb(0, 38, 255),
+            Color.FromArgb(72, 0, 255),
+            Color.FromArgb(178, 0, 255),
+            Color.FromArgb(255, 0, 220),
+            Color.FromArgb(255, 0, 110),
+            Color.FromArgb(255, 255, 255),
+            Color.FromArgb(128, 128, 128),
+            Color.FromArgb(127, 0, 0),
+            Color.FromArgb(127, 51, 0),
+            Color.FromArgb(127, 106, 0),
+            Color.FromArgb(91, 127, 0),
+            Color.FromArgb(38, 127, 0),
+            Color.FromArgb(0, 127, 14),
+            Color.FromArgb(0, 127, 70),
+            Color.FromArgb(0, 127, 127),
+            Color.FromArgb(0, 74, 127),
+            Color.FromArgb(0, 19, 127),
+            Color.FromArgb(33, 0, 127),
+            Color.FromArgb(87, 0, 127),
+            Color.FromArgb(127, 0, 110),
+            Color.FromArgb(127, 0, 55)
+        };
+
         #region Convert Color to ...
 
         public static string ColorToHex(Color color, ColorFormat format = ColorFormat.RGB)
@@ -283,22 +321,22 @@ namespace ShareX.HelpersLib
 
         public static double ValidColor(double number)
         {
-            return number.Between(0, 1);
+            return number.Clamp(0, 1);
         }
 
         public static int ValidColor(int number)
         {
-            return number.Between(0, 255);
+            return number.Clamp(0, 255);
         }
 
         public static byte ValidColor(byte number)
         {
-            return number.Between(0, 255);
+            return number.Clamp<byte>(0, 255);
         }
 
         public static Color RandomColor()
         {
-            return Color.FromArgb(MathHelpers.Random(255), MathHelpers.Random(255), MathHelpers.Random(255));
+            return Color.FromArgb(RandomFast.Next(255), RandomFast.Next(255), RandomFast.Next(255));
         }
 
         public static bool ParseColor(string text, out Color color)
@@ -345,7 +383,22 @@ namespace ShareX.HelpersLib
 
         public static Color VisibleColor(Color color, Color lightColor, Color darkColor)
         {
-            return PerceivedBrightness(color) > 130 ? darkColor : lightColor;
+            if (IsLightColor(color))
+            {
+                return darkColor;
+            }
+
+            return lightColor;
+        }
+
+        public static bool IsLightColor(Color color)
+        {
+            return PerceivedBrightness(color) > 130;
+        }
+
+        public static bool IsDarkColor(Color color)
+        {
+            return !IsLightColor(color);
         }
 
         public static Color Lerp(Color from, Color to, float amount)
@@ -383,6 +436,31 @@ namespace ShareX.HelpersLib
         public static Color DarkerColor(Color color, float amount)
         {
             return Lerp(color, Color.Black, amount);
+        }
+
+        public static List<Color> GetKnownColors()
+        {
+            List<Color> colors = new List<Color>();
+
+            for (KnownColor knownColor = KnownColor.AliceBlue; knownColor <= KnownColor.YellowGreen; knownColor++)
+            {
+                Color color = Color.FromKnownColor(knownColor);
+                colors.Add(color);
+            }
+
+            return colors;
+        }
+
+        public static Color FindClosestKnownColor(Color color)
+        {
+            List<Color> colors = GetKnownColors();
+            return colors.Aggregate(Color.Black, (accu, curr) => ColorDifference(color, curr) < ColorDifference(color, accu) ? curr : accu);
+        }
+
+        public static string GetColorName(Color color)
+        {
+            Color knownColor = FindClosestKnownColor(color);
+            return Helpers.GetProperName(knownColor.Name);
         }
     }
 }

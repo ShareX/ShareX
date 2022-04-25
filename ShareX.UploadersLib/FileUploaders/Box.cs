@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -50,7 +50,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return new Box(config.BoxOAuth2Info)
             {
                 FolderID = config.BoxSelectedFolder.id,
-                Share = config.BoxShare
+                Share = config.BoxShare,
+                ShareAccessLevel = config.BoxShareAccessLevel
             };
         }
 
@@ -69,12 +70,14 @@ namespace ShareX.UploadersLib.FileUploaders
         public OAuth2Info AuthInfo { get; set; }
         public string FolderID { get; set; }
         public bool Share { get; set; }
+        public BoxShareAccessLevel ShareAccessLevel { get; set; }
 
         public Box(OAuth2Info oauth)
         {
             AuthInfo = oauth;
             FolderID = "0";
             Share = true;
+            ShareAccessLevel = BoxShareAccessLevel.Open;
         }
 
         public string GetAuthorizationURL()
@@ -83,7 +86,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return URLHelpers.CreateQuery("https://www.box.com/api/oauth2/authorize", args);
+            return URLHelpers.CreateQueryString("https://www.box.com/api/oauth2/authorize", args);
         }
 
         public bool GetAccessToken(string pin)
@@ -189,9 +192,9 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public string CreateSharedLink(string id)
+        public string CreateSharedLink(string id, BoxShareAccessLevel accessLevel)
         {
-            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"open\"}}", headers: GetAuthHeaders());
+            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"" + accessLevel.ToString().ToLower() + "\"}}", headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -234,7 +237,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     if (Share)
                     {
                         AllowReportProgress = false;
-                        result.URL = CreateSharedLink(fileEntry.id);
+                        result.URL = CreateSharedLink(fileEntry.id, ShareAccessLevel);
                     }
                     else
                     {

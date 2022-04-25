@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class UpdateMessageBox : BlackStyleForm
+    public partial class UpdateMessageBox : Form
     {
         public static bool IsOpen { get; private set; }
         public static bool DontShow { get; private set; }
@@ -42,7 +42,9 @@ namespace ShareX.HelpersLib
         public UpdateMessageBox(bool activateWindow, UpdateChecker updateChecker)
         {
             ActivateWindow = activateWindow;
+
             InitializeComponent();
+            ShareXResources.ApplyTheme(this);
 
             if (!ActivateWindow)
             {

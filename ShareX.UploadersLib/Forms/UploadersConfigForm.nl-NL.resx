@@ -131,66 +131,6 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Linkverkorters</value>
   </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Leeg uploaders</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Uploaders</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Waarde</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>Bijwerken</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Headers</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Waarde</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Bijwerken</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argumenten</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Verwijder</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Bijwerken</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Aangepaste uploaders</value>
-  </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Toevoegen</value>
   </data>
@@ -208,60 +148,6 @@ Bijvoorbeeld, als de bucket de naam bucket.example.com heeft dan is de URL http:
   </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>Bijwerken</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Voorbeelden...</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Help...</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Afbeeldingsuploader:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Bestandsuploader:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Testresultaat:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Link om te verwijderen:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Toon laatste antwoord...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Type respons:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Tekstuploader:</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL verzoek:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Linkverkorter:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>Link naar miniatuur:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Naam van bestandsformulier:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Type verzoek:</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Domein:</value>
@@ -459,17 +345,11 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Seafile instellingen voor share:</value>
   </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Uploaders:</value>
-  </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>Uploadlink:</value>
   </data>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
     <value>Link resultaat:</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Test alles</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Link:</value>
@@ -497,18 +377,6 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Gebruik een directe link als hij bestaat</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Inloggen vereist.</value>
   </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Gebruikersnaam:</value>
@@ -711,18 +579,6 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Upload afbeeldingen naar</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Open pagina met mijn afbeeldingen...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Wachtwoord:</value>
   </data>
@@ -786,20 +642,8 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>Wachtwoord:</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>nooit</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>dagen</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>minuten</value>
-  </data>
   <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
     <value>Open account pagina...</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>uren</value>
   </data>
   <data name="lblPuushPassword.Text" xml:space="preserve">
     <value>Wachtwoord:</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -71,25 +71,27 @@ namespace ShareX.HelpersLib
 
         private int Run(string arguments, string workingDirectory = "")
         {
-            ProcessStartInfo startInfo = new ProcessStartInfo()
+            using (Process process = new Process())
             {
-                FileName = SevenZipPath,
-                Arguments = arguments,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = SevenZipPath,
+                    Arguments = arguments,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
 
-            if (!string.IsNullOrEmpty(workingDirectory))
-            {
-                startInfo.WorkingDirectory = workingDirectory;
+                if (!string.IsNullOrEmpty(workingDirectory))
+                {
+                    psi.WorkingDirectory = workingDirectory;
+                }
+
+                process.StartInfo = psi;
+                process.Start();
+                process.WaitForExit();
+
+                return process.ExitCode;
             }
-
-            Process process = new Process();
-            process.StartInfo = startInfo;
-            process.Start();
-            process.WaitForExit();
-
-            return process.ExitCode;
         }
     }
 }

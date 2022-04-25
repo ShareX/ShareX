@@ -132,4 +132,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Registro de depuración</value>
   </data>
+  <data name="btnUploadLog.Text" xml:space="preserve">
+    <value>Subir registro...</value>
+  </data>
 </root>

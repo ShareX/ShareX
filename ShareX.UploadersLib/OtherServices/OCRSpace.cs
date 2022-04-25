@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,9 +24,12 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib.OtherServices
 {
@@ -91,24 +94,41 @@ namespace ShareX.UploadersLib.OtherServices
         private const string APIURLAsia = "https://apipro3.ocr.space/parse/image";
         private const string APIURLFree = "https://api.ocr.space/parse/image";
 
+        public string APIKey { get; set; }
         public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
         public bool Overlay { get; set; }
+        public bool UseOCREngine2 { get; set; }
 
-        public OCRSpace(OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false)
+        public OCRSpace(string apiKey, OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false, bool useOCREngine2 = false)
         {
+            APIKey = apiKey;
             Language = language;
             Overlay = overlay;
+            UseOCREngine2 = useOCREngine2;
         }
 
         public OCRSpaceResponse DoOCR(Stream stream, string fileName)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("apikey", APIKeys.OCRSpaceAPIKey);
-            //arguments.Add("url", "");
-            arguments.Add("language", Language.ToString());
+            arguments.Add("apikey", APIKey);
+
+            if (UseOCREngine2)
+            {
+                arguments.Add("OCREngine", "2");
+            }
+            else
+            {
+                arguments.Add("language", Language.ToString());
+            }
+
             arguments.Add("isOverlayRequired", Overlay.ToString());
 
-            UploadResult ur = SendRequestFile(APIURLUSA, stream, fileName, args: arguments);
+            UploadResult ur = SendRequestFile(APIURLUSA, stream, fileName, "file", arguments);
+
+            if (!ur.IsSuccess)
+            {
+                ur = SendRequestFile(APIURLEurope, stream, fileName, "file", arguments);
+            }
 
             if (ur.IsSuccess)
             {
@@ -116,6 +136,38 @@ namespace ShareX.UploadersLib.OtherServices
             }
 
             return null;
+        }
+
+        public static string DoOCR(OCRSpaceLanguages language, Stream stream, string fileName)
+        {
+            string result = null;
+
+            try
+            {
+                OCRSpace ocr = new OCRSpace(APIKeys.OCRSpaceAPIKey, language, false, language == OCRSpaceLanguages.eng);
+                OCRSpaceResponse response = ocr.DoOCR(stream, fileName);
+
+                if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
+                {
+                    result = response.ParsedResults[0].ParsedText;
+
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        result = result.ReplaceNewLines();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return result;
+        }
+
+        public static Task<string> DoOCRAsync(OCRSpaceLanguages language, Stream stream, string fileName)
+        {
+            return Task.Run(() => DoOCR(language, stream, fileName));
         }
     }
 

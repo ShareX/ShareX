@@ -213,9 +213,6 @@
   <data name="lblNote.Text" xml:space="preserve">
     <value>Gelieve op te merken dat desondanks het feit dat ShareX probeert een accurate opname inclusief scrollen te maken, het nog steeds kan gebeuren dat niet alles correct opgenomen wordt. De voornaamste reden hiervoor is bewegende elementen op het scherm (zoals een geanimeerde gif, of een menu dat niet meescrollt), die ervoor zorgen dat niet alles meegenomen wordt tijdens het combineren.</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Upload/Sla op afhankelijk van de "na opname" instelling</value>
-  </data>
   <data name="gbBeforeCapture.Text" xml:space="preserve">
     <value>Voor opname</value>
   </data>

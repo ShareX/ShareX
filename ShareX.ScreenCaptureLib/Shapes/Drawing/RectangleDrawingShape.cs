@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -58,18 +58,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsBorderVisible)
                 {
-                    DrawRectangle(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
+                    DrawRectangle(g, ShadowColor, BorderSize, BorderStyle, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
                 }
                 else if (FillColor.A == 255)
                 {
-                    DrawRectangle(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
+                    DrawRectangle(g, Color.Transparent, 0, BorderStyle, ShadowColor, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
                 }
             }
 
-            DrawRectangle(g, BorderColor, BorderSize, FillColor, Rectangle, CornerRadius);
+            DrawRectangle(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle, CornerRadius);
         }
 
-        protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect, int cornerRadius)
+        protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, RectangleF rect, int cornerRadius)
         {
             Brush brush = null;
             Pen pen = null;
@@ -84,6 +84,7 @@ namespace ShareX.ScreenCaptureLib
                 if (borderSize > 0 && borderColor.A > 0)
                 {
                     pen = new Pen(borderColor, borderSize);
+                    pen.DashStyle = (DashStyle)borderStyle;
                 }
 
                 if (cornerRadius > 0)
@@ -108,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
         {
             gp.AddRoundedRectangle(rect, CornerRadius);
         }

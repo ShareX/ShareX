@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,11 +27,11 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
@@ -531,26 +531,25 @@ namespace ShareX.UploadersLib.FileUploaders
         public class CheckProgress : IDisposable
         {
             private SendSpace sendSpace;
-            private BackgroundWorker bw;
             private string url;
             private int interval = 1000;
+            private CancellationTokenSource cts;
 
             public CheckProgress(string progressURL, SendSpace sendSpace)
             {
                 url = progressURL;
                 this.sendSpace = sendSpace;
-                bw = new BackgroundWorker { WorkerSupportsCancellation = true };
-                bw.DoWork += bw_DoWork;
-                bw.RunWorkerAsync();
+
+                cts = new CancellationTokenSource();
+                Task.Run(() => DoWork(cts.Token), cts.Token);
             }
 
-            private void bw_DoWork(object sender, DoWorkEventArgs e)
+            private void DoWork(CancellationToken ct)
             {
                 Thread.Sleep(1000);
                 ProgressInfo progressInfo = new ProgressInfo();
-                int progress, elapsed;
                 DateTime time;
-                while (!bw.CancellationPending)
+                while (!ct.IsCancellationRequested)
                 {
                     time = DateTime.Now;
                     try
@@ -561,7 +560,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         if (progressInfo.Status != "fail" && !string.IsNullOrEmpty(progressInfo.Meter))
                         {
-                            if (int.TryParse(progressInfo.Meter, out progress))
+                            if (int.TryParse(progressInfo.Meter, out int progress))
                             {
                                 //sendSpace.OnProgressChanged(0, 0);
                             }
@@ -570,7 +569,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     catch
                     {
                     }
-                    elapsed = (int)(DateTime.Now - time).TotalMilliseconds;
+                    int elapsed = (int)(DateTime.Now - time).TotalMilliseconds;
                     if (elapsed < interval)
                     {
                         Thread.Sleep(interval - elapsed);
@@ -620,7 +619,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
             public void Dispose()
             {
-                bw.CancelAsync();
+                if (cts != null)
+                {
+                    cts.Cancel();
+                }
             }
         }
 

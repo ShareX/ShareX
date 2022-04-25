@@ -132,18 +132,6 @@
   <data name="Stop" xml:space="preserve">
     <value>Стоп</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Содержимое буфера: Изображение (Размер: {0} x {1} точек)</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Содержимое буфера: Текст (Символов: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Содержимое буфера: Файл(ы) (Количество: {0} шт.)</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Буфер пуст либо содержит неизвестную информацию.</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Имя: {0}, Размер: {1}</value>
   </data>
@@ -211,7 +199,7 @@
     <value>DNS успешно задан. Необходима перезагрузка.</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>Не удалось задать DNS, код ошибки: </value>
+    <value>Не удалось задать DNS, код ошибки:</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
     <value>Не удалось задать DNS.</value>
@@ -360,7 +348,7 @@
     <value>Загрузка со ссылки</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис загрузки файлов</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
     <value>Электронная почта</value>
@@ -369,7 +357,7 @@
     <value>Общая папка</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис загрузки картинок</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>Файловый сервис</value>
@@ -384,7 +372,7 @@
     <value>Текст ответа</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис загрузки текста</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Файловый сервис</value>
@@ -393,10 +381,10 @@
     <value>Электронная почта</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис коротких ссылок</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Добавить эффекты/водяной знак</value>
+    <value>Добавить эффекты изображений</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Открыть в редакторе изображений</value>
@@ -420,7 +408,7 @@
     <value>Сохранить изображение в файл</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Сохранить изображение в файл как…</value>
+    <value>Сохранить изображение в файл как...</value>
   </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Показать файл в проводнике</value>
@@ -652,16 +640,16 @@
     <value>Другие</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>Алфавитно-цифровой счетчик. Нули слева, {n} задает длину.</value>
+    <value>Алфавитно-цифровой счетчик. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Шестнадцатеричный счетчик. Нули слева, {n} задает длину.</value>
+    <value>Шестнадцатеричный счетчик. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Случайный шестнадцатеричный символ. Повторение задается через {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>Алфавитно-цифровой счетчик с учетом регистра. Нули слева, {n} задает длину.</value>
+    <value>Алфавитно-цифровой счетчик с учетом регистра. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Счетчик, прибавляющий базовое алфавитно-цифровое {n} (1 &lt; n &lt; 63)</value>
@@ -683,9 +671,6 @@
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Компьютер</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Цель</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Захват с прокруткой</value>
@@ -788,7 +773,7 @@
     <value>Текущий год (2 цифры)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Числовой счетчик. Нули слева, {n} задает длину.</value>
+    <value>Числовой счетчик. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
     <value>Текущий день недели (Местный язык)</value>
@@ -830,7 +815,7 @@
     <value>Захват экрана</value>
   </data>
   <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Захват текста (ORC)</value>
+    <value>Захват текста (OCR)</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Распознать текст (OCR)</value>
@@ -863,40 +848,40 @@
     <value>Захват активного монитора</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Рисование: Стрелка</value>
+    <value>Стрелка (A)</value>
   </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Эффект: Размытие</value>
+    <value>Размытие (B)</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Рисование: Эллипс</value>
+    <value>Эллипс (E)</value>
   </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Эффект: Подсветить область</value>
+    <value>Подсветить область (H)</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Рисование: Линия</value>
+    <value>Линия (L)</value>
   </data>
   <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Эффект: Пикселизация</value>
+    <value>Пикселизация (P)</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Рисование: Прямоугольник</value>
+    <value>Прямоугольник (R)</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Рисование: Шаг</value>
+    <value>Шаг (I)</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Область: Эллипс</value>
+    <value>Эллиптическая область</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Область: Прямоугольник</value>
+    <value>Прямоугольная область</value>
   </data>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Область: От руки</value>
+    <value>Область от руки</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Рисование: От руки</value>
+    <value>От руки (F)</value>
   </data>
   <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
     <value>Захват всего экрана</value>
@@ -932,7 +917,7 @@
     <value>Отправить сообщение "scroll top"</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Отправить окну или элементу сообщение "scroll"</value>
+    <value>Отправлять окну или элементу сообщение "scroll"</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Ничего не делать</value>
@@ -941,10 +926,10 @@
     <value>Отключить прокрутку вверх</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Рисование: Картинка из файла</value>
+    <value>Картинка из файла</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Рисование: Сноска</value>
+    <value>Сноска (S)</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Переключить панель действий</value>
@@ -953,10 +938,10 @@
     <value>Выйти из ShareX</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Рисование: Текст с обводкой</value>
+    <value>Текст с обводкой (O)</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Рисование: Текст с фоном</value>
+    <value>Текст с фоном (T)</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
     <value>Другие</value>
@@ -965,10 +950,10 @@
     <value>Другие</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>Рисование: Картинка с экрана</value>
+    <value>Картинка с экрана</value>
   </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Кадрировать</value>
+    <value>Кадрировать (C)</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Поиск по картинке в Google</value>
@@ -1019,7 +1004,7 @@
     <value>Сокращение ссылки</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Рисование: Курсор</value>
+    <value>Курсор</value>
   </data>
   <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
     <value>Загрузка</value>
@@ -1029,12 +1014,6 @@
   </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Загрузка текста</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Стандартное хранилище</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Стандартное хранилище нечастого доступа</value>
   </data>
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>Большой квадрат</value>
@@ -1105,23 +1084,8 @@
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Авторазмер</value>
   </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Ступенчатая</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Бикубическая</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Бикубическая (высококачественная)</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>Билинейная (высококачественная)</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Билинейная</value>
-  </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Рисование: Стикер</value>
+    <value>Стикер</value>
   </data>
   <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
     <value>Случайное животное</value>
@@ -1146,5 +1110,287 @@
   </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
     <value>Искать звуковой файл...</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Повтор</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Выбирать и двигать (M)</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Увеличение</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Случайный недвусмысленный алфавитно-цифровой символ. Повторение задается через {n}</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Случайный символ эмодзи. Повторение задается через {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Неделя года</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Скопировать имя</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Скопировать значение</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Процент полотна</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Процент изображения</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Умный ластик</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Конвертер видео</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Абсолютный размер</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Не масштабировать</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Разделитель изображений</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Миниатюры изображений</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>Результат первого файла:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>Результат второго файла:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Результат:</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Цель:</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR код (Считать с экрана)</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Конец</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Оба</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>Исследовать окно</value>
+  </data>
+  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>Буфер обмена</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>Пунктир</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>Штрихпунктир</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>Штрихпунктир с двумя точками</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>Точки</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>Сплошная</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>Буквы (нижний регистр)</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>Буквы (верхний регистр)</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>Цифры</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>Римские цифры (нижний регистр)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>Римские цифры (верхний регистр)</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Окно</value>
+  </data>
+  <data name="ContentAlignment_TopLeft" xml:space="preserve">
+    <value>Вверху слева</value>
+  </data>
+  <data name="ContentAlignment_TopCenter" xml:space="preserve">
+    <value>Вверху посередине</value>
+  </data>
+  <data name="ContentAlignment_TopRight" xml:space="preserve">
+    <value>Вверху справа</value>
+  </data>
+  <data name="ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>Посередине слева</value>
+  </data>
+  <data name="ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>Посередине</value>
+  </data>
+  <data name="ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>Посередине справа</value>
+  </data>
+  <data name="ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>Внизу слева</value>
+  </data>
+  <data name="ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>Внизу посередине</value>
+  </data>
+  <data name="ContentAlignment_BottomRight" xml:space="preserve">
+    <value>Внизу справа</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>Пометить изображение</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>Закрыть уведомление</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>Скопировать файл</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>Скопировать путь к файлу</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>Скопировать изображение</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>Скопировать ссылку</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>Скопировать файл</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>Скопировать папку</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>Скопировать ссылку</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>Загрузить файл</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Визуальный поиск Bing</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Режим списка</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Режим миниатюр</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>Внизу</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>Вверху</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>Редактировать изображение</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>Открыть файл</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>Смотреть изображение</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>Открыть ссылку</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Внизу</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Сбоку</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Автоматически</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Скрыть</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Показывать</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>Прекратить запись экрана</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>Захват последней области</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
+    <value>Другие</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Переключить меню трея</value>
   </data>
 </root>

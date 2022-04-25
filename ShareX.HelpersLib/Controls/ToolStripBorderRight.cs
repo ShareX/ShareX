@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,13 +30,18 @@ namespace ShareX.HelpersLib
 {
     public class ToolStripBorderRight : ToolStrip
     {
+        public bool DrawCustomBorder { get; set; } = true;
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
 
-            using (Pen pen = new Pen(ProfessionalColors.SeparatorDark))
+            if (DrawCustomBorder)
             {
-                e.Graphics.DrawLine(pen, new Point(ClientSize.Width - 1, 0), new Point(ClientSize.Width - 1, ClientSize.Height - 1));
+                using (Pen pen = new Pen(ProfessionalColors.SeparatorDark))
+                {
+                    e.Graphics.DrawLine(pen, new Point(ClientSize.Width - 1, 0), new Point(ClientSize.Width - 1, ClientSize.Height - 1));
+                }
             }
         }
 

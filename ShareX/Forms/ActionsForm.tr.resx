@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblName.Text" xml:space="preserve">
-    <value>Ad:</value>
+    <value>İsim:</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
     <value>Dosya yolu:</value>
@@ -143,5 +143,8 @@
   </data>
   <data name="cbHiddenWindow.Text" xml:space="preserve">
     <value>Gizli pencere</value>
+  </data>
+  <data name="cbDeleteInputFile.Text" xml:space="preserve">
+    <value>Girdi dosyasını sil</value>
   </data>
 </root>

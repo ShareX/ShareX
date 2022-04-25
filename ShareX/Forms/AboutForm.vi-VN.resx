@@ -129,4 +129,7 @@
   <data name="btnLicenses.Text" xml:space="preserve">
     <value>Giấy phép...</value>
   </data>
+  <data name="lblBuild.Text" xml:space="preserve">
+    <value>Phiên bản</value>
+  </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chFilename.Text" xml:space="preserve">
-    <value>Nombre del archivo</value>
+    <value>Nombre de archivo</value>
   </data>
   <data name="chStatus.Text" xml:space="preserve">
     <value>Estado</value>
@@ -137,12 +137,6 @@
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>Enlace</value>
-  </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Ir a la página de Pateron de ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Ocultar el botón de Patreon de forma permanente</value>
   </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Pantalla completa</value>
@@ -174,9 +168,6 @@
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Capturar desplazamiento...</value>
   </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Capturar página web...</value>
-  </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Capturar texto (OCR)...</value>
   </data>
@@ -184,7 +175,7 @@
     <value>Capturar automáticamente</value>
   </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
-    <value>Incluir puntero del ratón</value>
+    <value>Incluir puntero</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
     <value>Capturar</value>
@@ -252,9 +243,6 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Generador de miniaturas de video...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tuitear mensaje...</value>
   </data>
@@ -308,9 +296,6 @@
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Historial de imagen...</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Novedades</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Registro de depuración...</value>
@@ -373,7 +358,7 @@
     <value>Carpeta</value>
   </data>
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
-    <value>Archivo de minuatura</value>
+    <value>Archivo de miniatura</value>
   </data>
   <data name="tsmiOpen.Text" xml:space="preserve">
     <value>Abrir</value>
@@ -394,7 +379,7 @@
     <value>Enlace de borrado</value>
   </data>
   <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Intro</value>
+    <value>Mayús+C</value>
   </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>Archivo</value>
@@ -495,9 +480,6 @@
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Compartir enlace</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Buscar en Google...</value>
-  </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Mostrar código QR...</value>
   </data>
@@ -512,30 +494,6 @@
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Borrar lista</value>
-  </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Ocultar menú</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Ocultar columnas</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Mostrar</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Ocultar</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automático</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Al lado</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Debajo</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Vista previa de imagen</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Pantalla completa</value>
@@ -566,9 +524,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Capturar desplazamiento...</value>
-  </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Capturar página web...</value>
   </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Capturar texto (OCR)...</value>
@@ -645,9 +600,6 @@
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Generador de miniaturas de video...</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
-  </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tuitear mensaje...</value>
   </data>
@@ -705,33 +657,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Novedades</value>
   </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Registro de depuración...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Prueba de subida de imagen</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Prueba de subida de texto</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Prueba de subida de archivo</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Prueba de acortador de enlaces</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Prueba para compartir enlace</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Depurar</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Donar...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Acerca de...</value>
-  </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>Enlaces recientes</value>
   </data>
@@ -747,13 +672,73 @@
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
   </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Abrir enlace de invitación al servidor en Discord</value>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>Sin retraso</value>
   </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Ocultar botón de Discord permanentemente</value>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 segundo</value>
   </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Cerrar</value>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 segundos</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 segundos</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 segundos</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 segundos</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>Aplazar captura</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Separador de imágenes...</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Configuración de servidor personalizado...</value>
+  </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>Dimensiones de la imagen</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Ejecutar acción</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>Cambiar a vista de miniatura</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>Sin retraso</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 segundo</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 segundos</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 segundos</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 segundos</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 segundos</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>Aplazar captura</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>Separador de imágenes...</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Configuración de servidor personalizado...</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord</value>
   </data>
 </root>

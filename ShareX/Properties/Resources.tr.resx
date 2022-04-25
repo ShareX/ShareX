@@ -131,31 +131,16 @@
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Ekran görüntüsünü yüklemek istediğinize emin misiniz?
-'Hayır' tuşuna basarak şuanki yüklemeyi iptal edebilir ve otomatik ekran görüntüsü yüklemeyi iptal edebilirsiniz.</value>
+'Hayır' tuşuna basarak şu anki yüklemeyi iptal edebilir ve otomatik ekran görüntüsü yüklemeyi iptal edebilirsiniz.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Yükleniyor</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Geçerli CLI video işleyici seçili değil.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>İşleniyor...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg hatası</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg başarıyla indirildi.</value>
-  </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Kalan zaman: {0}s ({1}%) Toplam: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Katkıda bulunanlar</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>Adresden dosya indir ve yükle</value>
+    <value>Adresten dosya indir ve yükle</value>
   </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>Dosya yolu boş olamaz.</value>
@@ -194,9 +179,6 @@ sürükle</value>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>Kısayollar</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Yol boş olamaz.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Dosya yükleyici: {0}</value>
   </data>
@@ -206,21 +188,15 @@ sürükle</value>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tweet başarıyla gönderildi.</value>
   </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>İşleyici yolu seç</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>"{0}" dosyasına erişilemiyor.
 Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çalıştırın.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>CLI video işleyici dosyası mevcut değil: </value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Ayarların geçerli olabilmesi için ShareX in Steam den yeniden açılması gerekmektedir.</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
-    <value>Ad boş olamaz.</value>
+    <value>İsim boş olamaz.</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Kısayolları devre dışı bırak</value>
@@ -228,29 +204,17 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Görev tamamlandı</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Bekliyor...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Resim yükleyici: {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Panoya kopyalandı: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Menüyü gizle</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Geçerli Twitter hesabı bulunamadı.</value>
   </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Menüyü göster</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Kolonları göster</value>
-  </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
-    <value>İptal et</value>
+    <value>İptal</value>
   </data>
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>Geçmiş</value>
@@ -283,12 +247,6 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Bu mesajı tekrar gösterme.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Görev: {0}</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg video ve ses kaynağının ikisi birden "Hiçbiri" olamaz.</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Değişim günlüğü</value>
   </data>
@@ -307,38 +265,21 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Başlatılıyor</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} mevcut değil.
-
-Otomatik olarak indirmek ister misiniz?</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Harici kütüphaneler</value>
-  </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Hata</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Kaydı durdurmak için simge ikonuna tıklayın.</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Kısayol ayarlarından yeni iş akışı ekliyebilirsiniz...</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>FTP istemcisi sadece FTP veya FTPS destekliyor.</value>
-  </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Resim buraya kaydedilemedi: {0}</value>
+    <value>Resim buraya kaydedilemedi: {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX dil değişikliğinin uygulanması için yeniden başlatılmalı.
 ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Yeni ad kullan:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Eksik</value>
+    <value>Yeni ad kullan: </value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Çevirmenler</value>
@@ -349,14 +290,8 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Chrome desteği aktif edildi.</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Uzantı boş olamaz.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Yakalama sonrası: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>CLI video işleyicileri ayarla ---&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Adres kısaltıcı: {0}</value>
@@ -411,10 +346,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Ön izleme:</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
-    <value>Yazı yükleme testi</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Kolonları sakla</value>
+    <value>Metin yükleme testi</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>{0} için görev ayarları</value>
@@ -438,19 +370,10 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Yükleme sonrası: {0}</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Ekren görüntüsü dizini seç</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Kaydı başlatmak için simge ikonuna tıklayın.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg indirme başarısız.</value>
+    <value>Ekran görüntüsü dizini seç</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Dizin yükle</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Geçerli FTP hesabı bulunamadı.</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Büyük bir dosya yüklüyorsunuz.
@@ -458,9 +381,6 @@ Devam etmek istediğinizden emin misiniz?</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Windows başladığında ShareX'i çalıştır</value>
-  </data>
-  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
-    <value>Türkçe</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>Kısalt</value>
@@ -473,6 +393,18 @@ Devam etmek istediğinizden emin misiniz?</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ShareX ile düzenle</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Farsça</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Japonca</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Meksika İspanyolcası</value>
   </data>
   <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
     <value>Almanca</value>
@@ -499,7 +431,7 @@ Devam etmek istediğinizden emin misiniz?</value>
     <value>Portekizce (Brezilya)</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
-    <value>Rusca</value>
+    <value>Rusça</value>
   </data>
   <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
     <value>Vietnamca</value>
@@ -534,9 +466,6 @@ Devam etmek istediğinizden emin misiniz?</value>
   <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>Ayırıcı</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Bu kaydı iptal etmek istediğinden emin misin?</value>
-  </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Bütün kısayolları varsayılan haline döndür?</value>
   </data>
@@ -556,5 +485,146 @@ Orta fare tuşu kapatmak için</value>
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Buraya yazı girin kodlama için</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Pano içeriği: Metin (Uzunluk: {0})</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>Başlangıç, kuruluşunuz tarafından devre dışı bırakıldı</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
+    <value>Antivirüs yazılımınız veya Windows 10'daki kontrollü klasör erişimi özelliği ShareX'i engelliyor olabilir.</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Optik karakter tanıma</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Kısayol</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>Başlangıç, kuruluşunuz tarafından etkinleştirildi</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>Temaları sıfırlamak ister misiniz?</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>"Yüklemeyi Devre Dışı Bırak" seçeneği etkinleştirildiğinde bu özellik çalışmayacaktır!</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Görüntü efektlerini etkinleştirmek ister misiniz?
+
+Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>Kişisel klasör değişikliklerinin uygulanması için ShareX'in yeniden başlatılması gerekir.
+
+ShareX'i yeniden başlatmak ister misiniz?</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Ukrayna</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Ekran rengi seçici</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Onay</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Onayla</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Pano içeriği: Resim (Boyut: {0} x {1})</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>Liste görünümüne geç</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Ayarlar kaydedilemedi</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>OCR işlemi sırasında hata oluştu veya metin döndürülmedi.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Pano boş veya bilinmeyen veriler içeriyor.</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>OCR çıkışı panonuza kopyalandı.</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Ekran görüntüsü gecikmesi: {0}sn</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Endonezyaca</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Portekizce</value>
+  </data>
+  <data name="FFmpeg_Missing" xml:space="preserve">
+    <value>Eksik</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Pano içeriği: Dosya (Sayısı: {0})</value>
+  </data>
+  <data name="FFmpeg_does_not_exist" xml:space="preserve">
+    <value>{0} mevcut değil.
+
+Otomatik olarak indirmek ister misiniz?</value>
+  </data>
+  <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
+    <value>FFmpeg indirme başarısız.</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
+    <value>FFmpeg başarıyla indirildi.</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>FFmpeg hatası</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>FFmpeg video ve ses kaynağının ikisi birden "Hiçbiri" olamaz.</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX sistem tepsisine küçültüldü.</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>Küçük resim görünümüne geç</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Sınıf ismi</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>İstemci dikdörtgeni</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>İşlem dosya ismi</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>İşlem belirleyici</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>İşlem ismi</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Pencere tanıtıcı</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Pencere dikdörtgeni</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Pencere stili</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Pencere başlığı</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>OCR işleniyor.</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>Hata ayıklama kütüğü hassas bilgiler içerebilir. Devam etmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Lütfen dikkat, ShareX optik karakter tanıma gerçekleştirmek için OCR.Space'in çevrimiçi API'sini kullanmaktadır. ShareX'e bu servise resim yüklemesi için izin veriyor musunuz?</value>
   </data>
 </root>

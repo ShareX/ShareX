@@ -121,6 +121,15 @@
     <value>Giriş</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>puush girişi</value>
+    <value>ShareX - puush girişi</value>
+  </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="lblPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="llForgottenPassword.Text" xml:space="preserve">
+    <value>Şifrenizi mi unuttunuz?</value>
   </data>
 </root>

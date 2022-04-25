@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,7 +30,6 @@ using System.Collections.Specialized;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -94,8 +93,12 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             string uploadPath = GetUploadPath(fileName);
-            string url = GenerateURL(uploadPath, true);
-            string contentType = UploadHelpers.GetMimeType(fileName);
+            string requestURL = GenerateURL(uploadPath, true);
+            string resultURL = GenerateURL(uploadPath);
+
+            OnEarlyURLCopyRequested(resultURL);
+
+            string contentType = RequestHelpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["x-ms-date"] = date;
@@ -108,16 +111,15 @@ namespace ShareX.UploadersLib.FileUploaders
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
 
-            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, stream, contentType, null, requestHeaders, null))
+            SendRequest(HttpMethod.PUT, requestURL, stream, contentType, null, requestHeaders);
+
+            if (LastResponseInfo != null && LastResponseInfo.IsSuccess)
             {
-                if (response != null && response.Headers != null)
+                return new UploadResult
                 {
-                    return new UploadResult
-                    {
-                        IsSuccess = true,
-                        URL = GenerateURL(uploadPath)
-                    };
-                }
+                    IsSuccess = true,
+                    URL = resultURL
+                };
             }
 
             Errors.Add("Upload failed.");

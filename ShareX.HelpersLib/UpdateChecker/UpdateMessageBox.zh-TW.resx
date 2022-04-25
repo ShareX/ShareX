@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -127,6 +127,6 @@
     <value>檢視更新日誌</value>
   </data>
   <data name="cbDontShow.Text" xml:space="preserve">
-    <value>ShareX下一次啟動後再提示</value>
+    <value>下次啟動 ShareX 再提示</value>
   </data>
 </root>

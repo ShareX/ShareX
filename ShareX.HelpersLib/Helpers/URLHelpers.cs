@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,11 +23,14 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -51,27 +54,41 @@ namespace ShareX.HelpersLib
                 {
                     try
                     {
-                        if (!string.IsNullOrEmpty(HelpersOptions.BrowserPath))
+                        using (Process process = new Process())
                         {
-                            Process.Start(HelpersOptions.BrowserPath, url);
-                        }
-                        else
-                        {
-                            Process.Start(url);
+                            ProcessStartInfo psi = new ProcessStartInfo();
+
+                            if (!string.IsNullOrEmpty(HelpersOptions.BrowserPath))
+                            {
+                                psi.FileName = HelpersOptions.BrowserPath;
+                                psi.Arguments = url;
+                            }
+                            else
+                            {
+                                psi.FileName = url;
+                            }
+
+                            process.StartInfo = psi;
+                            process.Start();
                         }
 
                         DebugHelper.WriteLine("URL opened: " + url);
                     }
                     catch (Exception e)
                     {
-                        DebugHelper.WriteException(e, string.Format("OpenURL({0}) failed", url));
+                        DebugHelper.WriteException(e, $"OpenURL({url}) failed");
                     }
                 });
             }
         }
 
-        public static string URLEncode(string text, bool isPath = false)
+        public static string URLEncode(string text, bool isPath = false, bool ignoreEmoji = false)
         {
+            if (ignoreEmoji)
+            {
+                return URLEncodeIgnoreEmoji(text, isPath);
+            }
+
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrEmpty(text))
@@ -97,6 +114,30 @@ namespace ShareX.HelpersLib
                     {
                         sb.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", (int)c);
                     }
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        public static string URLEncodeIgnoreEmoji(string text, bool isPath = false)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                string remainingText = text.Substring(i);
+
+                int emojiLength = Emoji.SearchEmoji(remainingText);
+
+                if (emojiLength > 0)
+                {
+                    sb.Append(remainingText.Substring(0, emojiLength));
+                    i += emojiLength - 1;
+                }
+                else
+                {
+                    sb.Append(URLEncode(remainingText.Substring(0, 1), isPath));
                 }
             }
 
@@ -155,6 +196,17 @@ namespace ShareX.HelpersLib
             }
 
             return result.ToString();
+        }
+
+        public static string JSONEncode(string text)
+        {
+            text = JsonConvert.ToString(text);
+            return text.Substring(1, text.Length - 2);
+        }
+
+        public static string XMLEncode(string text)
+        {
+            return SecurityElement.Escape(text);
         }
 
         public static string URLDecode(string url, int count = 1)
@@ -216,7 +268,7 @@ namespace ShareX.HelpersLib
 
             if (useRegex)
             {
-                // https://gist.github.com/729294
+                // Source: https://gist.github.com/729294
                 string pattern =
                     "^" +
                     // protocol identifier
@@ -423,29 +475,65 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string CreateQuery(Dictionary<string, string> args, bool customEncoding = false)
+        public static string CreateQueryString(Dictionary<string, string> args, bool customEncoding = false)
         {
             if (args != null && args.Count > 0)
             {
-                return string.Join("&", args.Select(x => x.Key + "=" + (customEncoding ? URLEncode(x.Value) : HttpUtility.UrlEncode(x.Value))).ToArray());
+                List<string> pairs = new List<string>();
+
+                foreach (KeyValuePair<string, string> arg in args)
+                {
+                    string pair;
+
+                    if (string.IsNullOrEmpty(arg.Value))
+                    {
+                        pair = arg.Key;
+                    }
+                    else
+                    {
+                        string value;
+
+                        if (customEncoding)
+                        {
+                            value = URLEncode(arg.Value);
+                        }
+                        else
+                        {
+                            value = HttpUtility.UrlEncode(arg.Value);
+                        }
+
+                        pair = arg.Key + "=" + value;
+                    }
+
+                    pairs.Add(pair);
+                }
+
+                return string.Join("&", pairs);
             }
 
             return "";
         }
 
-        public static string CreateQuery(string url, Dictionary<string, string> args, bool customEncoding = false)
+        public static string CreateQueryString(string url, Dictionary<string, string> args, bool customEncoding = false)
         {
-            string query = CreateQuery(args, customEncoding);
+            string query = CreateQueryString(args, customEncoding);
 
             if (!string.IsNullOrEmpty(query))
             {
-                return url + "?" + query;
+                if (url.Contains("?"))
+                {
+                    return url + "&" + query;
+                }
+                else
+                {
+                    return url + "?" + query;
+                }
             }
 
             return url;
         }
 
-        public static string RemoveQuery(string url)
+        public static string RemoveQueryString(string url)
         {
             if (!string.IsNullOrEmpty(url))
             {
@@ -458,6 +546,22 @@ namespace ShareX.HelpersLib
             }
 
             return url;
+        }
+
+        public static NameValueCollection ParseQueryString(string url)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                int index = url.IndexOf("?");
+
+                if (index > -1 && index + 1 < url.Length)
+                {
+                    string query = url.Substring(index + 1);
+                    return HttpUtility.ParseQueryString(query);
+                }
+            }
+
+            return null;
         }
 
         public static string BuildUri(string root, string path, string query = null)

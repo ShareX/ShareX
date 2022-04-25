@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,19 +37,14 @@ namespace ShareX.HistoryLib
         public ImageHistorySettingsForm(ImageHistorySettings settings)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
 
             Settings = settings;
-            cbViewMode.Items.AddRange(Enum.GetNames(typeof(Manina.Windows.Forms.View)));
-            cbViewMode.SelectedIndex = Settings.ViewMode;
             nudThumbnailSize.SetValue(Settings.ThumbnailSize.Width);
             nudMaximumImageLimit.SetValue(Settings.MaxItemCount);
+            cbFilterMissingFiles.Checked = Settings.FilterMissingFiles;
             cbRememberSearchText.Checked = Settings.RememberSearchText;
-        }
-
-        private void cbViewMode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Settings.ViewMode = cbViewMode.SelectedIndex;
+            cbRememberWindowState.Checked = Settings.RememberWindowState;
         }
 
         private void nudThumbnailSize_ValueChanged(object sender, EventArgs e)
@@ -62,9 +57,19 @@ namespace ShareX.HistoryLib
             Settings.MaxItemCount = (int)nudMaximumImageLimit.Value;
         }
 
+        private void cbFilterMissingFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.FilterMissingFiles = cbFilterMissingFiles.Checked;
+        }
+
         private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)
         {
             Settings.RememberSearchText = cbRememberSearchText.Checked;
+        }
+
+        private void cbRememberWindowState_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.RememberWindowState = cbRememberWindowState.Checked;
         }
     }
 }

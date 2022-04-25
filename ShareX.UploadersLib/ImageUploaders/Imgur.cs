@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -104,7 +104,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("response_type", "pin");
 
-            return URLHelpers.CreateQuery("https://api.imgur.com/oauth2/authorize", args);
+            return URLHelpers.CreateQueryString("https://api.imgur.com/oauth2/authorize", args);
         }
 
         public bool GetAccessToken(string pin)
@@ -296,7 +296,18 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             ReturnResponseOnError = true;
 
-            UploadResult result = SendRequestFile("https://api.imgur.com/3/image", stream, fileName, "image", args, headers);
+            string fileFormName;
+
+            if (Helpers.IsVideoFile(fileName))
+            {
+                fileFormName = "video";
+            }
+            else
+            {
+                fileFormName = "image";
+            }
+
+            UploadResult result = SendRequestFile("https://api.imgur.com/3/upload", stream, fileName, fileFormName, args, headers);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
@@ -318,7 +329,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 }
                                 else
                                 {
-                                    result.URL = imageData.link;
+                                    // webm uploads returns link with dot at the end
+                                    result.URL = imageData.link.TrimEnd('.');
                                 }
                             }
                             else

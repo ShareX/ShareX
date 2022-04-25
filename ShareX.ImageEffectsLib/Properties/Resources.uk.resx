@@ -112,4 +112,7 @@
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
     <value>Ефекти зображення — ширина: {0}, висота: {1}, час побудови: {2} мс</value>
   </data>
+  <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
 </root>

@@ -171,4 +171,19 @@
   <data name="btnScreenTearingTest.Text" xml:space="preserve">
     <value>Kiểm tra hiển thị đứt đoạn của màn hình (screen tearing)</value>
   </data>
+  <data name="lblShapeSizeValue.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblBlueValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblGreenValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRedValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
 </root>

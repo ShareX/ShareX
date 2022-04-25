@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -62,15 +62,15 @@ namespace ShareX
         {
             InitializeComponent();
 
-            DropSize = size.Between(10, 300);
+            DropSize = size.Clamp(10, 300);
             DropOffset = offset;
             DropAlignment = alignment;
-            DropOpacity = opacity.Between(1, 255);
-            DropHoverOpacity = hoverOpacity.Between(1, 255);
+            DropOpacity = opacity.Clamp(1, 255);
+            DropHoverOpacity = hoverOpacity.Clamp(1, 255);
 
             backgroundImage = DrawDropImage(DropSize);
 
-            Location = Helpers.GetPosition(DropAlignment, new Point(DropOffset, DropOffset), Screen.PrimaryScreen.WorkingArea.Size, backgroundImage.Size);
+            Location = Helpers.GetPosition(DropAlignment, DropOffset, Screen.PrimaryScreen.WorkingArea.Size, backgroundImage.Size);
 
             SelectBitmap(backgroundImage, DropOpacity);
         }
@@ -191,10 +191,12 @@ namespace ShareX
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            AllowDrop = true;
+            AutoScaleMode = AutoScaleMode.Font;
             Cursor = Cursors.SizeAll;
             Text = "DropForm";
-            AllowDrop = true;
+            TopMost = true;
 
             MouseDown += DropForm_MouseDown;
             MouseUp += DropForm_MouseUp;

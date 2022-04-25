@@ -133,7 +133,7 @@
     <value>Полное имя:</value>
   </data>
   <data name="lblPassword.Text" xml:space="preserve">
-    <value>Пароль</value>
+    <value>Пароль:</value>
   </data>
   <data name="lblUserName.Text" xml:space="preserve">
     <value>Имя:</value>

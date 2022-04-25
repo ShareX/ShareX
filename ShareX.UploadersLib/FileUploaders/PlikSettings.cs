@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,20 +23,24 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class PlikSettings
     {
-        public string URL = "";
-        public string APIKey = "";
-        public bool IsSecured = false;
-        public string Login = "";
-        public string Password = "";
-        public bool Removable = false;
-        public bool OneShot = false;
-        public int TTLUnit = 2;
-        public decimal TTL = 30;
-        public bool HasComment = false;
-        public string Comment = "";
+        public string URL { get; set; } = "";
+        [JsonEncrypt]
+        public string APIKey { get; set; } = "";
+        public bool IsSecured { get; set; } = false;
+        public string Login { get; set; } = "";
+        [JsonEncrypt]
+        public string Password { get; set; } = "";
+        public bool Removable { get; set; } = false;
+        public bool OneShot { get; set; } = false;
+        public int TTLUnit { get; set; } = 2;
+        public decimal TTL { get; set; } = 30;
+        public bool HasComment { get; set; } = false;
+        public string Comment { get; set; } = "";
     }
 }

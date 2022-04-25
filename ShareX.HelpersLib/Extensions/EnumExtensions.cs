@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -89,7 +89,7 @@ namespace ShareX.HelpersLib
             return Array.IndexOf(values, value);
         }
 
-        public static IEnumerable<T> GetFlags<T>(this Enum value)
+        public static IEnumerable<T> GetFlags<T>(this T value) where T : Enum
         {
             return Helpers.GetEnums<T>().Where(x => Convert.ToUInt64(x) != 0 && value.HasFlag(x));
         }

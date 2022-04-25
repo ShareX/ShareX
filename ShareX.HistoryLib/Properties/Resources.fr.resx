@@ -120,14 +120,8 @@
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Copier</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Copier le nom</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Copier la valeur</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>URL de suppression </value>
+    <value>URL de suppression</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>Fichier</value>
@@ -162,9 +156,6 @@
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>Lien HTML</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>Lien HTML ({0})</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>Image liée HTML</value>
   </data>
@@ -175,22 +166,13 @@
     <value>Prévisualisation de l'image</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Plus d'infos</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nom</value>
+    <value>Plus d'infos...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Ouvrir</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Valeur</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>URL raccourcie</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Afficher</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>Total : {0}</value>
@@ -204,13 +186,40 @@
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>URLs ({0})</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Erreur</value>
   </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>Une erreur est survenue lors de la lecture du fichier XML : {0}</value>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>Lien markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Image markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Lien image markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>Modifier image...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Mettre en ligne un fichier</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Total :</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>Extensions de fichier :</value>
+  </data>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Nombre d'éléments de l'historique :</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Hôtes :</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Usages annuels :</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Erreur lors de la lecture du fichier d'historique :</value>
   </data>
 </root>

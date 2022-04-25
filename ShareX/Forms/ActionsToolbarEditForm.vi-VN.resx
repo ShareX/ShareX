@@ -121,7 +121,7 @@
     <value>Thêm</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Sửa thanh công cụ hành động</value>
+    <value>ShareX - Sửa thanh công cụ tác vụ</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Xóa bỏ</value>

@@ -141,4 +141,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Yeni resim</value>
   </data>
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>piksel</value>
+  </data>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>piksel</value>
+  </data>
 </root>

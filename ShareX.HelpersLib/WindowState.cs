@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,9 +31,9 @@ namespace ShareX.HelpersLib
 {
     public class WindowState
     {
-        public Point Location { get; private set; }
-        public Size Size { get; private set; }
-        public bool IsMaximized { get; private set; }
+        public Point Location { get; set; }
+        public Size Size { get; set; }
+        public bool IsMaximized { get; set; }
 
         public void ApplyFormState(Form form)
         {

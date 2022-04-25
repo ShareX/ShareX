@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -40,31 +40,38 @@ namespace ShareX.ScreenCaptureLib
         public static Rectangle LastSelectionRectangle0Based { get; private set; }
 
         public Rectangle ScreenRectangle { get; private set; }
-
         public Rectangle ScreenRectangle0Based => new Rectangle(0, 0, ScreenRectangle.Width, ScreenRectangle.Height);
-
         public Rectangle SelectionRectangle { get; private set; }
-
         public Rectangle SelectionRectangle0Based => new Rectangle(SelectionRectangle.X - ScreenRectangle.X, SelectionRectangle.Y - ScreenRectangle.Y,
             SelectionRectangle.Width, SelectionRectangle.Height);
 
         private Timer timer;
-        private Image backgroundImage;
+        private Bitmap backgroundImage;
         private TextureBrush backgroundBrush;
         private Pen borderDotPen, borderDotPen2;
         private Point currentPosition, positionOnClick;
         private bool isMouseDown;
         private Stopwatch penTimer;
 
-        public RegionCaptureLightForm(Screenshot screenshot)
+        public RegionCaptureLightForm(Bitmap canvas, bool activeMonitorMode = false)
         {
-            backgroundImage = screenshot.CaptureFullscreen();
+            backgroundImage = canvas;
             backgroundBrush = new TextureBrush(backgroundImage);
             borderDotPen = new Pen(Color.Black, 1);
             borderDotPen2 = new Pen(Color.White, 1);
             borderDotPen2.DashPattern = new float[] { 5, 5 };
             penTimer = Stopwatch.StartNew();
-            ScreenRectangle = CaptureHelpers.GetScreenBounds();
+
+            if (activeMonitorMode)
+            {
+                ScreenRectangle = CaptureHelpers.GetActiveScreenBounds();
+
+                Helpers.LockCursorToWindow(this);
+            }
+            else
+            {
+                ScreenRectangle = CaptureHelpers.GetScreenBounds();
+            }
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
@@ -162,7 +169,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Image GetAreaImage()
+        public Bitmap GetAreaImage()
         {
             Rectangle rect = SelectionRectangle0Based;
 
@@ -170,10 +177,10 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (rect.X == 0 && rect.Y == 0 && rect.Width == backgroundImage.Width && rect.Height == backgroundImage.Height)
                 {
-                    return (Image)backgroundImage.Clone();
+                    return (Bitmap)backgroundImage.Clone();
                 }
 
-                return ImageHelpers.CropImage(backgroundImage, rect);
+                return ImageHelpers.CropBitmap(backgroundImage, rect);
             }
 
             return null;

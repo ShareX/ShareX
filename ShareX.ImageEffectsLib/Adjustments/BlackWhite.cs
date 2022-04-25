@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,11 +32,11 @@ namespace ShareX.ImageEffectsLib
     [Description("Black & white")]
     internal class BlackWhite : ImageEffect
     {
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            using (img)
+            using (bmp)
             {
-                return ColorMatrixManager.BlackWhite().Apply(img);
+                return ColorMatrixManager.BlackWhite().Apply(bmp);
             }
         }
     }

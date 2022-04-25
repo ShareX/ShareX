@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -64,7 +64,7 @@ namespace ShareX
         private AutoCaptureForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
             niTray.Icon = Resources.clock.ToIcon();
 
             screenshotTimer = new System.Timers.Timer();
@@ -108,25 +108,23 @@ namespace ShareX
 
             if (!rect.IsEmpty)
             {
-                Image img = TaskHelpers.GetScreenshot(TaskSettings).CaptureRectangle(rect);
+                Bitmap bmp = TaskHelpers.GetScreenshot(TaskSettings).CaptureRectangle(rect);
 
-                if (img != null)
+                if (bmp != null)
                 {
                     TaskSettings.UseDefaultAfterCaptureJob = false;
                     TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
                     TaskSettings.UseDefaultAdvancedSettings = false;
-                    TaskSettings.AdvancedSettings.DisableNotifications = true;
+                    TaskSettings.GeneralSettings.DisableNotifications = true;
 
-                    UploadManager.RunImageTask(img, TaskSettings, true, true);
+                    UploadManager.RunImageTask(bmp, TaskSettings, true, true);
                 }
             }
         }
 
         private void SelectRegion()
         {
-            Rectangle rect;
-
-            if (RegionCaptureTasks.GetRectangleRegion(out rect, TaskSettings.CaptureSettings.SurfaceOptions))
+            if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect, TaskSettings.CaptureSettings.SurfaceOptions))
             {
                 Program.Settings.AutoCaptureRegion = rect;
                 UpdateRegion();

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -35,22 +35,22 @@ namespace ShareX.IndexerLib
 
             if (!string.IsNullOrEmpty(style))
             {
-                css = string.Format(" style=\"{0}\"", style);
+                css = $" style=\"{style}\"";
             }
 
             string fields = "";
 
             if (!string.IsNullOrEmpty(otherFields))
             {
-                fields = " " + otherFields;
+                fields = $" {otherFields}";
             }
 
-            return string.Format("<{0}{2}{1}>", tag, fields, css);
+            return $"<{tag}{css}{fields}>";
         }
 
         public static string EndTag(string tag)
         {
-            return string.Format("</{0}>", tag);
+            return $"</{tag}>";
         }
 
         public static string Tag(string tag, string content, string style = "", string otherFields = "")

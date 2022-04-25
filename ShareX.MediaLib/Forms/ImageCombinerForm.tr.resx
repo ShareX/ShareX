@@ -147,4 +147,16 @@
   <data name="lblSpacePixel.Text" xml:space="preserve">
     <value>piksel olarak</value>
   </data>
+  <data name="cbAutoFillBackground.Text" xml:space="preserve">
+    <value>Otomatik arkaplanı doldur</value>
+  </data>
+  <data name="lblImageAlignment.Text" xml:space="preserve">
+    <value>Resim hizası:</value>
+  </data>
+  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
+    <value>Yatay</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>Dikey</value>
+  </data>
 </root>

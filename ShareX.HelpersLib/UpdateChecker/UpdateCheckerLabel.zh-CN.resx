@@ -124,6 +124,6 @@
     <value>...是最新的</value>
   </data>
   <data name="llblUpdateAvailable.Text" xml:space="preserve">
-    <value>ShareX有可用新版本</value>
+    <value>ShareX 有可用新版本</value>
   </data>
 </root>

@@ -149,7 +149,7 @@
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>Preajuste más rápido: Codificación más rápida pero archivo más grande.
-Preajuste más lento : Codificación más lenta pero archivo más pequeño.
+Preajuste más lento: Codificación más lenta pero archivo más pequeño.
 El preajuste debe ser el más rápido para codificación en tiempo real (ej. grabación de pantalla).</value>
   </data>
   <data name="gbCodecs.Text" xml:space="preserve">
@@ -186,7 +186,7 @@ El preajuste debe ser el más rápido para codificación en tiempo real (ej. gra
     <value>Modo de paleta:</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>Instala fuentes de audio y video "screen-captura-recorder" y "virtual-audio-capturer".</value>
+    <value>Instala fuentes de audio y video "screen-capture-recorder" y "virtual-audio-capturer".</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Calidad:</value>
@@ -234,5 +234,68 @@ De lo contrario, la grabación se desfasará y se perderán fotogramas.</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>El rango es 0 a 10. 10 es la calidad más alta, 3 a 6 es un buen margen para probar. 3 es el valor predefinido.</value>
+  </data>
+  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>Calidad:</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Uso:</value>
+  </data>
+  <data name="lblOpusQuality.Text" xml:space="preserve">
+    <value>Tasa de bits:</value>
+  </data>
+  <data name="lblQSVBitrate.Text" xml:space="preserve">
+    <value>Tasa de bits:</value>
+  </data>
+  <data name="lblQSVPreset.Text" xml:space="preserve">
+    <value>Preajuste:</value>
+  </data>
+  <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
+    <value>Predefinido: 128k.</value>
+  </data>
+  <data name="tpX264.Text" xml:space="preserve">
+    <value>x264 / x265</value>
+  </data>
+  <data name="lblVP8BitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="tpVpx.Text" xml:space="preserve">
+    <value>VP8</value>
+  </data>
+  <data name="tpXvid.Text" xml:space="preserve">
+    <value>Xvid</value>
+  </data>
+  <data name="tpNVENC.Text" xml:space="preserve">
+    <value>NVENC</value>
+  </data>
+  <data name="tpGIF.Text" xml:space="preserve">
+    <value>GIF</value>
+  </data>
+  <data name="tbAMF.Text" xml:space="preserve">
+    <value>AMF</value>
+  </data>
+  <data name="tbQSV.Text" xml:space="preserve">
+    <value>QuickSync</value>
+  </data>
+  <data name="tpAAC.Text" xml:space="preserve">
+    <value>AAC</value>
+  </data>
+  <data name="tpVorbis.Text" xml:space="preserve">
+    <value>Vorbis</value>
+  </data>
+  <data name="tpMP3.Text" xml:space="preserve">
+    <value>MP3</value>
+  </data>
+  <data name="tpOpus.Text" xml:space="preserve">
+    <value>Opus</value>
+  </data>
+  <data name="lblx264CRF.Text" xml:space="preserve">
+    <value>CRF:</value>
   </data>
 </root>

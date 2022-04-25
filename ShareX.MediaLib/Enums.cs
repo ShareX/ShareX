@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -35,5 +35,25 @@ namespace ShareX.MediaLib
         ParentFolder,
         [Description("Custom folder")]
         CustomFolder
+    }
+
+    public enum ConverterVideoCodecs
+    {
+        [Description("H.264 / x264")]
+        x264,
+        [Description("H.265 / x265")]
+        x265,
+        [Description("VP8 (WebM)")]
+        vp8,
+        [Description("VP9 (WebM)")]
+        vp9,
+        [Description("MPEG-4 / Xvid")]
+        xvid,
+        [Description("GIF")]
+        gif,
+        [Description("WebP")]
+        webp,
+        [Description("APNG")]
+        apng
     }
 }

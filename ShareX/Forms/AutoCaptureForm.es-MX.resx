@@ -142,10 +142,10 @@
     <value>Share X - Captura automática</value>
   </data>
   <data name="lblDurationSeconds.Text" xml:space="preserve">
-    <value>sgundos</value>
+    <value>segundos</value>
   </data>
   <data name="rbFullscreen.Text" xml:space="preserve">
-    <value>Pantralla completa</value>
+    <value>Pantalla completa</value>
   </data>
   <data name="rbCustomRegion.Text" xml:space="preserve">
     <value>Región personalizada</value>

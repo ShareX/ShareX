@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,22 +33,22 @@ namespace ShareX
 {
     public partial class FileExistForm : Form
     {
-        public string Filepath { get; private set; }
+        public string FilePath { get; private set; }
 
-        private string filename;
-        private string uniqueFilepath;
+        private string fileName;
+        private string uniqueFilePath;
 
-        public FileExistForm(string filepath)
+        public FileExistForm(string filePath)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
 
-            Filepath = filepath;
-            filename = Path.GetFileNameWithoutExtension(Filepath);
-            txtNewName.Text = filename;
-            btnOverwrite.Text += Path.GetFileName(Filepath);
-            uniqueFilepath = Helpers.GetUniqueFilePath(Filepath);
-            btnUniqueName.Text += Path.GetFileName(uniqueFilepath);
+            FilePath = filePath;
+            fileName = Path.GetFileNameWithoutExtension(FilePath);
+            txtNewName.Text = fileName;
+            btnOverwrite.Text += Path.GetFileName(FilePath);
+            uniqueFilePath = Helpers.GetUniqueFilePath(FilePath);
+            btnUniqueName.Text += Path.GetFileName(uniqueFilePath);
         }
 
         private void FileExistForm_Shown(object sender, EventArgs e)
@@ -56,34 +56,83 @@ namespace ShareX
             this.ForceActivate();
         }
 
-        private string GetNewFilename()
+        private string GetNewFileName()
         {
-            string newFilename = txtNewName.Text;
+            string newFileName = txtNewName.Text;
 
-            if (!string.IsNullOrEmpty(newFilename))
+            if (!string.IsNullOrEmpty(newFileName))
             {
-                return newFilename + Path.GetExtension(Filepath);
+                return newFileName + Path.GetExtension(FilePath);
             }
 
             return "";
         }
 
-        private void btnNewName_Click(object sender, EventArgs e)
+        private void UseNewFileName()
         {
-            string newFilename = GetNewFilename();
+            string newFileName = GetNewFileName();
 
-            if (!string.IsNullOrEmpty(newFilename))
+            if (!string.IsNullOrEmpty(newFileName))
             {
-                Filepath = Path.Combine(Path.GetDirectoryName(Filepath), newFilename);
+                FilePath = Path.Combine(Path.GetDirectoryName(FilePath), newFileName);
                 Close();
             }
         }
 
+        private void UseUniqueFileName()
+        {
+            FilePath = uniqueFilePath;
+            Close();
+        }
+
+        private void Cancel()
+        {
+            FilePath = "";
+            Close();
+        }
+
         private void txtNewName_TextChanged(object sender, EventArgs e)
         {
-            string newFilename = txtNewName.Text;
-            btnNewName.Enabled = !string.IsNullOrEmpty(newFilename) && !newFilename.Equals(filename, StringComparison.InvariantCultureIgnoreCase);
-            btnNewName.Text = Resources.FileExistForm_txtNewName_TextChanged_Use_new_name__ + GetNewFilename();
+            string newFileName = txtNewName.Text;
+            btnNewName.Enabled = !string.IsNullOrEmpty(newFileName) && !newFileName.Equals(fileName, StringComparison.InvariantCultureIgnoreCase);
+            btnNewName.Text = Resources.FileExistForm_txtNewName_TextChanged_Use_new_name__ + GetNewFileName();
+        }
+
+        private void txtNewName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter || e.KeyData == Keys.Escape)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void txtNewName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                string newFileName = txtNewName.Text;
+
+                if (!string.IsNullOrEmpty(newFileName))
+                {
+                    if (newFileName.Equals(fileName, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        Close();
+                    }
+                    else
+                    {
+                        UseNewFileName();
+                    }
+                }
+            }
+            else if (e.KeyData == Keys.Escape)
+            {
+                Cancel();
+            }
+        }
+
+        private void btnNewName_Click(object sender, EventArgs e)
+        {
+            UseNewFileName();
         }
 
         private void btnOverwrite_Click(object sender, EventArgs e)
@@ -93,14 +142,12 @@ namespace ShareX
 
         private void btnUniqueName_Click(object sender, EventArgs e)
         {
-            Filepath = uniqueFilepath;
-            Close();
+            UseUniqueFileName();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Filepath = "";
-            Close();
+            Cancel();
         }
     }
 }

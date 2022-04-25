@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -22,8 +22,6 @@
 */
 
 #endregion License Information (GPL v3)
-
-/* https://github.com/matthewburnett */
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
@@ -54,7 +52,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 Prefix = config.GoogleCloudStorageObjectPrefix,
                 RemoveExtensionImage = config.GoogleCloudStorageRemoveExtensionImage,
                 RemoveExtensionText = config.GoogleCloudStorageRemoveExtensionText,
-                RemoveExtensionVideo = config.GoogleCloudStorageRemoveExtensionVideo
+                RemoveExtensionVideo = config.GoogleCloudStorageRemoveExtensionVideo,
+                SetPublicACL = config.GoogleCloudStorageSetPublicACL
             };
         }
 
@@ -69,6 +68,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool RemoveExtensionImage { get; set; }
         public bool RemoveExtensionText { get; set; }
         public bool RemoveExtensionVideo { get; set; }
+        public bool SetPublicACL { get; set; }
 
         public OAuth2Info AuthInfo => googleAuth.AuthInfo;
 
@@ -78,7 +78,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             googleAuth = new GoogleOAuth2(oauth, this)
             {
-                Scope = "https://www.googleapis.com/auth/devstorage.full_control"
+                Scope = "https://www.googleapis.com/auth/devstorage.read_write"
             };
         }
 
@@ -106,44 +106,34 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            string name = fileName;
+            string uploadPath = GetUploadPath(fileName);
 
-            if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
-                (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
-                (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            OnEarlyURLCopyRequested(GenerateURL(uploadPath));
+
+            GoogleCloudStorageMetadata googleCloudStorageMetadata = new GoogleCloudStorageMetadata
             {
-                name = Path.GetFileNameWithoutExtension(fileName);
-            }
+                name = uploadPath
+            };
 
-            string uploadpath = GetUploadPath(name);
-
-            GoogleCloudStorageMetadata metadata = new GoogleCloudStorageMetadata
+            if (SetPublicACL)
             {
-                name = uploadpath,
-                acl = new GoogleCloudStorageAcl[]
+                googleCloudStorageMetadata.acl = new GoogleCloudStorageAcl[]
                 {
                     new GoogleCloudStorageAcl
                     {
                         entity = "allUsers",
                         role = "READER"
                     }
-                }
-            };
-
-            string metadatajson = JsonConvert.SerializeObject(metadata);
-
-            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart", stream, fileName,
-                headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
-
-            GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
-
-            if (upload.name != uploadpath)
-            {
-                Errors.Add("Upload failed.");
-                return null;
+                };
             }
 
-            result.URL = GenerateURL(uploadpath);
+            string serializedGoogleCloudStorageMetadata = JsonConvert.SerializeObject(googleCloudStorageMetadata);
+
+            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart&fields=name", stream, fileName, null, headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", relatedData: serializedGoogleCloudStorageMetadata);
+
+            GoogleCloudStorageResponse googleCloudStorageResponse = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
+
+            result.URL = GenerateURL(googleCloudStorageResponse.name);
 
             return result;
         }
@@ -151,6 +141,14 @@ namespace ShareX.UploadersLib.FileUploaders
         private string GetUploadPath(string fileName)
         {
             string uploadPath = NameParser.Parse(NameParserType.FolderPath, Prefix.Trim('/'));
+
+            if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
+                (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
+                (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            {
+                fileName = Path.GetFileNameWithoutExtension(fileName);
+            }
+
             return URLHelpers.CombineURL(uploadPath, fileName);
         }
 
@@ -166,7 +164,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 Domain = URLHelpers.CombineURL("storage.googleapis.com", Bucket);
             }
 
-            uploadPath = URLHelpers.URLEncode(uploadPath, true);
+            uploadPath = URLHelpers.URLEncode(uploadPath, true, HelpersOptions.URLEncodeIgnoreEmoji);
 
             string url = URLHelpers.CombineURL(Domain, uploadPath);
 

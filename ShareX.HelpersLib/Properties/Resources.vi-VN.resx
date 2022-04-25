@@ -135,18 +135,6 @@
   <data name="Stop" xml:space="preserve">
     <value>Dừng lại</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Nội dung vùng nhớ tạm: Ảnh (Kích thước: {0}x{1})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Nội dung vùng nhớ tạm: Văn bản (Độ dài: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Nội dung vùng nhớ tạm: Tệp tin (Đếm: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Vùng nhớ tạm trống hoặc chứa dữ liệu chưa biết.</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Tên: {0}, Kích thước: {1}</value>
   </data>
@@ -417,7 +405,7 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Xóa tệp trên máy</value>
   </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
-    <value>Thực hiện các hành động</value>
+    <value>Thực hiện các tác vụ</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
     <value>Lưu ảnh vào tệp tin</value>
@@ -684,9 +672,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Máy tính</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Đối tượng</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Chụp khi cuộn trang</value>
   </data>
@@ -826,14 +811,8 @@ Bạn có muốn tải về không?</value>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Kẻ chéo về phía sau</value>
   </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Bicubic</value>
-  </data>
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>Hình vuông lớn</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Bilinear</value>
   </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
     <value>Duyệt lấy tệp âm thanh...</value>
@@ -991,23 +970,8 @@ Bạn có muốn tải về không?</value>
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Ghi lại màn hình</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Lưu trữ tiêu chuẩn</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Lưu trữ ít truy cập tiêu chuẩn</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Bicubic chất lượng cao</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>Bilinear chất lượng cao</value>
-  </data>
   <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
     <value>Phiên bản mới nhất</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Nearest neighbor</value>
   </data>
   <data name="PastebinExpiration_N" xml:space="preserve">
     <value>Không bao giờ</value>
@@ -1073,13 +1037,13 @@ Bạn có muốn tải về không?</value>
     <value>Xóa hình hoặc hủy chụp</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
-    <value>Bật/Tắt thanh công cụ hành động</value>
+    <value>Bật/Tắt thanh công cụ tác vụ</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
     <value>Mô phỏng cuộn chuột</value>
   </data>
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
-    <value>Trình tải lên ảnh</value>
+    <value>Dịch vụ tải lên ảnh</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Vùng: E-líp</value>
@@ -1146,5 +1110,26 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Hoán đổi kiểu công cụ</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Hoàn tác</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Phóng to</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Chọn và di chuyển (M)</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Chọn tất cả</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Làm lại</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Kí tự ngẫu nhiên chứa số và chữ alphabet. Lặp lại dùng {n}</value>
   </data>
 </root>

@@ -120,4 +120,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Historial de imagen</value>
   </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="tsbSearch.ToolTipText" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Configuración...</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Buscar:</value>
+  </data>
 </root>

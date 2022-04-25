@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,11 +23,14 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class AmazonS3Settings
     {
         public string AccessKeyID { get; set; }
+        [JsonEncrypt]
         public string SecretAccessKey { get; set; }
         public string Endpoint { get; set; }
         public string Region { get; set; }
@@ -36,10 +39,11 @@ namespace ShareX.UploadersLib.FileUploaders
         public string ObjectPrefix { get; set; }
         public bool UseCustomCNAME { get; set; }
         public string CustomDomain { get; set; }
-        public bool SetPublicACL { get; set; } = true;
         public AmazonS3StorageClass StorageClass { get; set; }
-        public bool RemoveExtensionImage { get; set; } = false;
-        public bool RemoveExtensionVideo { get; set; } = false;
-        public bool RemoveExtensionText { get; set; } = false;
+        public bool SetPublicACL { get; set; } = true;
+        public bool SignedPayload { get; set; }
+        public bool RemoveExtensionImage { get; set; }
+        public bool RemoveExtensionVideo { get; set; }
+        public bool RemoveExtensionText { get; set; }
     }
 }

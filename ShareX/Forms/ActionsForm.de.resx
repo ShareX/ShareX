@@ -136,12 +136,15 @@
     <value>Name:</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Ausgabe Dateinamenserweiterung: (Leer = Benutzt selbe Erweiterung)</value>
+    <value>Ausgabe Dateinamenserweiterung: (Leer = Gleiche Erweiterung verwenden)</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
     <value>Dateipfad:</value>
   </data>
   <data name="cbHiddenWindow.Text" xml:space="preserve">
     <value>Verstecktes Fenster</value>
+  </data>
+  <data name="cbDeleteInputFile.Text" xml:space="preserve">
+    <value>Eingabedatei löschen</value>
   </data>
 </root>

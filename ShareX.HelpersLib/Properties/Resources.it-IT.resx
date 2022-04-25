@@ -213,18 +213,6 @@
   <data name="Stop" xml:space="preserve">
     <value>Ferma</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Contenuto Appunti: Immagine (Dimensione: {0}x{1})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Contenuto Appunti: Testo (Lunghezza: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Contenuto Appunti: File (Numero: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Appunti vuoti o contententi dati sconosciuti.</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Nome: {0}, Dimensione: {1}</value>
   </data>
@@ -735,9 +723,6 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Obiettivo</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Cattura a Scorrimento</value>
   </data>
@@ -1075,16 +1060,10 @@ Vuoi scaricarla ora?</value>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Servizio Condivisione URL Personalizzato</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Standard - Infrequent Access (Accessi Sporadici)</value>
-  </data>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Versione Attuale</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
     <value>Ultima Versione</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Standard</value>
   </data>
 </root>

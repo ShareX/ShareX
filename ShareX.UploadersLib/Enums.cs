@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -35,8 +35,6 @@ namespace ShareX.UploadersLib
         Imgur,
         [Description("ImageShack")]
         ImageShack,
-        [Description("TinyPic")]
-        TinyPic,
         [Description("Flickr")]
         Flickr,
         [Description("Photobucket")]
@@ -66,6 +64,8 @@ namespace ShareX.UploadersLib
         Paste_ee,
         [Description("GitHub Gist")]
         Gist,
+        [Description("Teknik")]
+        Teknik,
         [Description("uPaste")]
         Upaste,
         [Description("Hastebin")]
@@ -113,8 +113,6 @@ namespace ShareX.UploadersLib
         Pushbullet,
         [Description("SendSpace")]
         SendSpace,
-        [Description("Ge.tt")]
-        Ge_tt,
         [Description("Hostr")]
         Localhostr,
         [Description("JIRA")]
@@ -123,6 +121,8 @@ namespace ShareX.UploadersLib
         Lambda,
         [Description("VideoBin")]
         VideoBin,
+        [Description("Teknik")]
+        Teknik,
         [Description("Pomf")]
         Pomf,
         [Description("Uguu")]
@@ -133,7 +133,7 @@ namespace ShareX.UploadersLib
         Streamable,
         [Description("s-ul")]
         Sul,
-        [Description("Lithiio")]
+        [Description("LobFile")]
         Lithiio,
         [Description("transfer.sh")]
         Transfersh,
@@ -141,6 +141,8 @@ namespace ShareX.UploadersLib
         Plik,
         [Description("YouTube")]
         YouTube,
+        [Description("Vault.ooo")]
+        Vault_ooo,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
@@ -165,6 +167,8 @@ namespace ShareX.UploadersLib
         AdFly,
         [Description("qr.net")]
         QRnet,
+        [Description("tknk.io")]
+        Teknik,
         [Description("vurl.com")]
         VURL,
         [Description("2.gp")]
@@ -175,6 +179,8 @@ namespace ShareX.UploadersLib
         FirebaseDynamicLinks,
         [Description("Kutt")]
         Kutt,
+        [Description("Zero Width Shortener")]
+        ZeroWidthShortener,
         CustomURLShortener // Localized
     }
 
@@ -186,8 +192,6 @@ namespace ShareX.UploadersLib
         Twitter,
         [Description("Facebook")]
         Facebook,
-        [Description("Google+")]
-        GooglePlus,
         [Description("Reddit")]
         Reddit,
         [Description("Pinterest")]
@@ -205,6 +209,7 @@ namespace ShareX.UploadersLib
         [Description("Pushbullet")]
         Pushbullet,
         GoogleImageSearch, // Localized
+        BingVisualSearch, // Localized
         CustomURLSharingService // Localized
     }
 
@@ -289,13 +294,20 @@ namespace ShareX.UploadersLib
         LocalFilePathUri
     }
 
-    public enum CustomUploaderRequestMethod
+    public enum CustomUploaderBody
     {
-        POST,
-        GET,
-        PUT,
-        PATCH,
-        DELETE
+        [Description("No body")]
+        None,
+        [Description("Form data (multipart/form-data)")]
+        MultipartFormData,
+        [Description("Form URL encoded (application/x-www-form-urlencoded)")]
+        FormURLEncoded,
+        [Description("JSON (application/json)")]
+        JSON,
+        [Description("XML (application/xml)")]
+        XML,
+        [Description("Binary")]
+        Binary
     }
 
     [Flags]
@@ -329,17 +341,20 @@ namespace ShareX.UploadersLib
         LoginFailed
     }
 
-    public enum URLType
-    {
-        URL,
-        ThumbnailURL,
-        DeletionURL
-    }
-
     public enum YouTubeVideoPrivacy // Localized
     {
         Public,
         Unlisted,
         Private
+    }
+
+    public enum BoxShareAccessLevel
+    {
+        [Description("Public - People with the link")]
+        Open,
+        [Description("Company - People in your company")]
+        Company,
+        [Description("Collaborators - Invited people only")]
+        Collaborators
     }
 }

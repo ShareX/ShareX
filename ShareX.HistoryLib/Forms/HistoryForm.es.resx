@@ -120,21 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Historial</value>
   </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Aplicar filtros</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Quitar filtros</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Contiene</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Comienza con</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Termina con</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Fecha y hora</value>
   </data>
@@ -144,9 +129,6 @@
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Filtro de host:</value>
   </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filtros</value>
-  </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Para:</value>
   </data>
@@ -155,9 +137,6 @@
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>Filtro de tipo de archivo:</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Coincidencia exacta</value>
   </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>Desde:</value>

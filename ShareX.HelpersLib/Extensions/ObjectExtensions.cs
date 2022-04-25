@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-// Credits: https://github.com/Burtsev-Alexey/net-object-deep-copy
+// Source: https://github.com/Burtsev-Alexey/net-object-deep-copy
 
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace ShareX.HelpersLib
 {
     public static class ObjectExtensions
     {
-        private static readonly MethodInfo CloneMethod = typeof(Object).GetMethod("MemberwiseClone", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static readonly MethodInfo CloneMethod = typeof(object).GetMethod("MemberwiseClone", BindingFlags.NonPublic | BindingFlags.Instance);
 
         public static bool IsPrimitive(this Type type)
         {
@@ -41,12 +41,12 @@ namespace ShareX.HelpersLib
             return type.IsValueType && type.IsPrimitive;
         }
 
-        public static Object Copy(this Object originalObject)
+        public static object Copy(this object originalObject)
         {
-            return InternalCopy(originalObject, new Dictionary<Object, Object>(new ReferenceEqualityComparer()));
+            return InternalCopy(originalObject, new Dictionary<object, object>(new ReferenceEqualityComparer()));
         }
 
-        private static Object InternalCopy(Object originalObject, IDictionary<Object, Object> visited)
+        private static object InternalCopy(object originalObject, IDictionary<object, object> visited)
         {
             if (originalObject == null) return null;
             Type typeToReflect = originalObject.GetType();
@@ -92,11 +92,11 @@ namespace ShareX.HelpersLib
 
         public static T Copy<T>(this T original)
         {
-            return (T)Copy((Object)original);
+            return (T)Copy((object)original);
         }
     }
 
-    public class ReferenceEqualityComparer : EqualityComparer<Object>
+    public class ReferenceEqualityComparer : EqualityComparer<object>
     {
         public override bool Equals(object x, object y)
         {

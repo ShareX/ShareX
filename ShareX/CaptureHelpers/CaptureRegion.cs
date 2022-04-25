@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -45,7 +45,7 @@ namespace ShareX
             RegionCaptureType = regionCaptureType;
         }
 
-        protected override ImageInfo Execute(TaskSettings taskSettings)
+        protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
             switch (RegionCaptureType)
             {
@@ -59,10 +59,8 @@ namespace ShareX
             }
         }
 
-        protected ImageInfo ExecuteRegionCapture(TaskSettings taskSettings)
+        protected TaskMetadata ExecuteRegionCapture(TaskSettings taskSettings)
         {
-            ImageInfo imageInfo = new ImageInfo();
-
             RegionCaptureMode mode;
 
             if (taskSettings.AdvancedSettings.RegionCaptureDisableAnnotation)
@@ -74,9 +72,18 @@ namespace ShareX
                 mode = RegionCaptureMode.Annotation;
             }
 
+            Bitmap canvas;
             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
             screenshot.CaptureCursor = false;
-            Image img = screenshot.CaptureFullscreen();
+
+            if (taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode)
+            {
+                canvas = screenshot.CaptureActiveMonitor();
+            }
+            else
+            {
+                canvas = screenshot.CaptureFullscreen();
+            }
 
             CursorData cursorData = null;
 
@@ -85,76 +92,96 @@ namespace ShareX
                 cursorData = new CursorData();
             }
 
-            using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, img))
+            using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, canvas))
             {
-                if (cursorData != null && cursorData.IsValid)
+                if (cursorData != null && cursorData.IsVisible)
                 {
-                    form.AddCursor(cursorData.Handle, cursorData.Position);
-                    cursorData.Dispose();
+                    form.AddCursor(cursorData.Handle, form.PointToClient(cursorData.Position));
                 }
 
                 form.ShowDialog();
 
-                imageInfo.Image = form.GetResultImage();
+                Bitmap result = form.GetResultImage();
 
-                if (imageInfo.Image != null)
+                if (result != null)
                 {
-                    if (form.IsModified)
+                    TaskMetadata metadata = new TaskMetadata(result);
+
+                    if (form.IsImageModified)
                     {
                         AllowAnnotation = false;
                     }
 
-                    if (form.Result == RegionResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
+                    if (form.Result == RegionResult.Region)
                     {
                         WindowInfo windowInfo = form.GetWindowInfo();
-                        imageInfo.UpdateInfo(windowInfo);
+                        metadata.UpdateInfo(windowInfo);
                     }
 
                     lastRegionCaptureType = RegionCaptureType.Default;
+
+                    return metadata;
                 }
             }
 
-            return imageInfo;
+            return null;
         }
 
-        protected ImageInfo ExecuteRegionCaptureLight(TaskSettings taskSettings)
+        protected TaskMetadata ExecuteRegionCaptureLight(TaskSettings taskSettings)
         {
-            Image img = null;
+            Bitmap canvas;
+            Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
 
-            using (RegionCaptureLightForm rectangleLight = new RegionCaptureLightForm(TaskHelpers.GetScreenshot(taskSettings)))
+            if (taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode)
+            {
+                canvas = screenshot.CaptureActiveMonitor();
+            }
+            else
+            {
+                canvas = screenshot.CaptureFullscreen();
+            }
+
+            bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
+
+            using (RegionCaptureLightForm rectangleLight = new RegionCaptureLightForm(canvas, activeMonitorMode))
             {
                 if (rectangleLight.ShowDialog() == DialogResult.OK)
                 {
-                    img = rectangleLight.GetAreaImage();
+                    Bitmap result = rectangleLight.GetAreaImage();
 
-                    if (img != null)
+                    if (result != null)
                     {
                         lastRegionCaptureType = RegionCaptureType.Light;
+
+                        return new TaskMetadata(result);
                     }
                 }
             }
 
-            return new ImageInfo(img);
+            return null;
         }
 
-        protected ImageInfo ExecuteRegionCaptureTransparent(TaskSettings taskSettings)
+        protected TaskMetadata ExecuteRegionCaptureTransparent(TaskSettings taskSettings)
         {
-            Image img = null;
+            bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
 
-            using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm())
+            using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm(activeMonitorMode))
             {
                 if (rectangleTransparent.ShowDialog() == DialogResult.OK)
                 {
-                    img = rectangleTransparent.GetAreaImage(TaskHelpers.GetScreenshot(taskSettings));
+                    Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+                    Bitmap result = rectangleTransparent.GetAreaImage(screenshot);
 
-                    if (img != null)
+                    if (result != null)
                     {
                         lastRegionCaptureType = RegionCaptureType.Transparent;
+
+                        return new TaskMetadata(result);
                     }
                 }
             }
 
-            return new ImageInfo(img);
+            return null;
         }
     }
 }

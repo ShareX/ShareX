@@ -121,7 +121,7 @@
     <value>ShareX - QR kod</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Panoya kopyala</value>
+    <value>Resimi panoya kopyala</value>
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>Resim dosyası olarak kaydet...</value>
@@ -145,6 +145,6 @@
     <value>Kodla</value>
   </data>
   <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Sonuç</value>
+    <value>Sonuç:</value>
   </data>
 </root>

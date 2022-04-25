@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -51,7 +51,7 @@ namespace ShareX.HelpersLib
                 }
                 else
                 {
-                    menuLocation = new Point(0, Height);
+                    menuLocation = new Point(0, Height - 1);
                 }
 
                 Menu.Show(this, menuLocation);
@@ -67,9 +67,12 @@ namespace ShareX.HelpersLib
                 int arrowX = ClientRectangle.Width - 14;
                 int arrowY = (ClientRectangle.Height / 2) - 1;
 
-                Brush brush = Enabled ? SystemBrushes.ControlText : SystemBrushes.ButtonShadow;
-                Point[] arrows = new Point[] { new Point(arrowX, arrowY), new Point(arrowX + 7, arrowY), new Point(arrowX + 3, arrowY + 4) };
-                pevent.Graphics.FillPolygon(brush, arrows);
+                Color color = Enabled ? ForeColor : SystemColors.ControlDark;
+                using (Brush brush = new SolidBrush(color))
+                {
+                    Point[] arrows = new Point[] { new Point(arrowX, arrowY), new Point(arrowX + 7, arrowY), new Point(arrowX + 3, arrowY + 4) };
+                    pevent.Graphics.FillPolygon(brush, arrows);
+                }
             }
         }
     }

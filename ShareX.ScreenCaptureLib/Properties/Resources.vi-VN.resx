@@ -138,9 +138,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Duyệt đến ffmpeg.exe</value>
   </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>Lỗi FFmpeg</value>
-  </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>Tải về FFmpeg thành công.</value>
   </data>
@@ -153,19 +150,11 @@
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Chụp hình chữ nhật kiểu trong suốt</value>
   </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-Rộng: {4} px / Cao: {5} px
-Khoảng cách: {6:0.00} px / Góc: {7:0.00}°</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>Menu chú thích</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
     <value>Áp dụng thay đổi và tiếp tục tác vụ (Enter)</value>
-  </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Mũi tên ở hai đầu</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>Tự đóng trình chỉnh sửa khi chạy tác vụ</value>
@@ -248,9 +237,6 @@ Khoảng cách: {6:0.00} px / Góc: {7:0.00}°</value>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Chỉnh sửa</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
-    <value>Màu nền trình chỉnh sửa...</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>Chế độ bắt đầu trình chỉnh sửa:</value>
   </data>
@@ -277,9 +263,6 @@ Khoảng cách: {6:0.00} px / Góc: {7:0.00}°</value>
   </data>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>Giá trị bước đầu tiên:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Dùng chữ cái</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - Trình chỉnh sửa ảnh</value>
@@ -347,9 +330,6 @@ Khoảng cách: {6:0.00} px / Góc: {7:0.00}°</value>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Lưu ảnh thành... (Ctrl + Shift + S)</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Tùy chọn hình</value>
-  </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>Có những thay đổi chưa được lưu.
 Bạn có muốn đóng trình chỉnh sửa ảnh không?</value>
@@ -395,5 +375,32 @@ Bạn có muốn đóng trình chỉnh sửa ảnh không?</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Phóng đại kiểu hình vuông</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Chuyển qua công vụ vẽ sau khi chọn hình</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Chuyển qua công cụ chọn hình sau khi vẽ hình</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Đóng (Esc)</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Thêm hiệu ứng ảnh...</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Đổ bóng có màu...</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Độ phóng to:</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Mở trang web chứa thiết lập phím tắt...</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Dùng light resize nodes</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>Cửa sổ sẽ được đóng trước khi mở trang web chứa thông tin phím tắt. Bạn có muốn tiếp tục không?</value>
   </data>
 </root>

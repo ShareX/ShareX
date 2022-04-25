@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,6 +33,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Color BorderColor { get; set; }
         public int BorderSize { get; set; }
+        public BorderStyle BorderStyle { get; set; }
         public Color FillColor { get; set; }
 
         public bool Shadow { get; set; }
@@ -47,6 +48,7 @@ namespace ShareX.ScreenCaptureLib
         {
             BorderColor = AnnotationOptions.BorderColor;
             BorderSize = AnnotationOptions.BorderSize;
+            BorderStyle = AnnotationOptions.BorderStyle;
             FillColor = AnnotationOptions.FillColor;
             Shadow = AnnotationOptions.Shadow;
             ShadowColor = AnnotationOptions.ShadowColor;
@@ -57,6 +59,7 @@ namespace ShareX.ScreenCaptureLib
         {
             AnnotationOptions.BorderColor = BorderColor;
             AnnotationOptions.BorderSize = BorderSize;
+            AnnotationOptions.BorderStyle = BorderStyle;
             AnnotationOptions.FillColor = FillColor;
             AnnotationOptions.Shadow = Shadow;
             AnnotationOptions.ShadowColor = ShadowColor;

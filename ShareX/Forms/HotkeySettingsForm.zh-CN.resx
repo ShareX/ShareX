@@ -133,6 +133,6 @@
     <value>删除</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>恢复默认快捷键</value>
+    <value>恢复默认快捷键...</value>
   </data>
 </root>

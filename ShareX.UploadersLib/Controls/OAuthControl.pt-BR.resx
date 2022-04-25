@@ -135,4 +135,7 @@
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Código de verificação:</value>
   </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,15 +33,15 @@ namespace ShareX.ScreenCaptureLib
     public partial class ImageSizeForm : Form
     {
         public Size ImageSize { get; private set; }
-        public ImageEditorInterpolationMode InterpolationMode { get; private set; }
+        public ImageInterpolationMode InterpolationMode { get; private set; }
 
         private double widthRatio, heightRatio;
         private bool ignoreValueChanged = true;
 
-        public ImageSizeForm(Size size, ImageEditorInterpolationMode interpolationMode)
+        public ImageSizeForm(Size size, ImageInterpolationMode interpolationMode)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
 
             ImageSize = size;
             InterpolationMode = interpolationMode;
@@ -56,7 +56,7 @@ namespace ShareX.ScreenCaptureLib
             nudWidth.TextChanged += NudWidth_TextChanged;
             nudHeight.TextChanged += NudHeight_TextChanged;
 
-            cbResampling.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageEditorInterpolationMode>());
+            cbResampling.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageInterpolationMode>());
             cbResampling.SelectedIndex = (int)InterpolationMode;
 
             ignoreValueChanged = false;
@@ -119,7 +119,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbResampling_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InterpolationMode = (ImageEditorInterpolationMode)cbResampling.SelectedIndex;
+            InterpolationMode = (ImageInterpolationMode)cbResampling.SelectedIndex;
         }
 
         private void btnOK_Click(object sender, EventArgs e)

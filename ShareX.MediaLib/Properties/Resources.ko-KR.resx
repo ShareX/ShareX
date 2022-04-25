@@ -120,4 +120,7 @@
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>미디어 파일 고르기</value>
   </data>
+  <data name="StopEncoding" xml:space="preserve">
+    <value>인코딩 중단</value>
+  </data>
 </root>

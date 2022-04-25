@@ -162,9 +162,6 @@
   <data name="cbAutoCombine.Text" xml:space="preserve">
     <value>오프셋을 추측하고 이미지 취합</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>촬영 설정에 따라 업로드/저장</value>
-  </data>
   <data name="lblScrollMethod.Text" xml:space="preserve">
     <value>스크롤 방법:</value>
   </data>

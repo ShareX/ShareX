@@ -129,4 +129,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 정보</value>
   </data>
+  <data name="lblBuild.Text" xml:space="preserve">
+    <value>빌드</value>
+  </data>
 </root>

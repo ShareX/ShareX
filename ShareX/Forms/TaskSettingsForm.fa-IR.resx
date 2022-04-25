@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>۰ - ۱۰۰</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>کارها</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>اضافه کردن</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>اضافه کردن</value>
+  </data>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>اضافه کردن</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>اضافه کردن...</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>پیشرفته</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>بعد از ضبط ...</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>بعد از آپلود ...</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>آرگومان های ورودی:</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>کیفیت GIF:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>پهنا:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>پهنا:</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>پهنا:</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>پهنا:</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>پوشه های در حال مشاهده</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>کوتاه کننده لینک</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>سرویس های اشتراک گذاری لینک</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>آپلودکننده ها:</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>فیلترهای آپلودکننده ها:</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>آپلودکننده</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>آپلود</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>به روزرسانی</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>ابزار</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>آپلود کننده های متن</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>وظیفه ...</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>وظیفه</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>نشان دادن ذره بین کنار کرسر</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>نمایش کرسر در اسکرین شات ها</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>نمایش کرسر هنگام ضبط فیلم صفحه</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - تنظیمات وظیفه</value>
+  </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>انتخاب ناحیه...</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>ثانیه</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>ثانیه</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>ثانیه</value>
+  </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>تاخیر ضبط:</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>تنظیمات ضبط فیلم صفحه ...</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>تنظیم FPS:</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>ضبط کننده فیلم صفحه</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>فرمت انتخاب گر رنگ صفحه:</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>حذف کردن</value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>حذف کردن</value>
+  </data>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>حذف کردن</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>ناحیه ضبط</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>پیش نمایش:</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>پیش نمایش:</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>پیش نمایش</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>مسیر</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>ویرایش..</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>کپی کردن</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>مقصدها...</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>شرح:</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>آپلود کننده های عکس</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>آپلودکننده فایل</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>عمق رنگ PNG:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>فرمت عکس:</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>اگر فایل وجود داشت:</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>کیلوبابت</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>کیفیت JPEG:</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>تنظیمات افکت های عکس ...</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>افکت ها</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>ناحیه از پیش تنظیم شده:</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>نمایش اطلاعات مکان و سایز</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>عمل وسط کلیک موس:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>عمل راست کلیک موس:</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>مدت ثابت:</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>زبان پیش فرض:</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>به صورت خودکار نتایج را در کلیپ بورد کپی کن</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>تغییردادن</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>نام گذاری فایل</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>آپلود کلیپ بورد</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>اگر کلیپ بورد حاوی لینک است لینک را کوتاه کن</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>اگر کلیپ بورد حاوی آدرس پوشه است، پوشه را ایندکس کن و ایندکس را آپلود کن</value>
+  </data>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>اگر کلیپ بورد حاوی آدرس فایل است، آن را دانلود و سپس آپلود کن</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>اگر کلیپ بورد حاوی آدرس است، آن را با سرویس اشتراک گذاری آدرس به اشتراک بگذار.</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>پسوند</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>نمونه: png, jpg, jpeg</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>فیلتر پسوند:</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>پسوندها</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>مسیر پوشه</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>فیلتر</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>شما می توانید افکت های عکس را با رفتن به منوی «وظایف بعد از ضبط»  -&gt; «اضافه کردن افکت های عکس» فعال / غیرفعال کنید.</value>
+  </data>
+</root>

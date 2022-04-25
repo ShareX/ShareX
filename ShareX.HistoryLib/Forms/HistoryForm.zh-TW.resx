@@ -118,48 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>歷史記錄</value>
-  </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>套用篩選</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>刪除篩選</value>
+    <value>ShareX - 歷史記錄</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>日期篩選:</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>包含</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>開始</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>結尾</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>精確匹配</value>
+    <value>日期：</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>域名篩選:</value>
+    <value>主機：</value>
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>檔案類型篩選:</value>
+    <value>類型：</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
-    <value>日期時間</value>
+    <value>日期</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>檔名</value>
   </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>篩選器</value>
-  </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>從:</value>
+    <value>從：</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>到:</value>
+    <value>到：</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>網址</value>
+  </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>網址：</value>
+  </data>
+  <data name="lblFilenameFilter.Text" xml:space="preserve">
+    <value>檔名：</value>
   </data>
 </root>

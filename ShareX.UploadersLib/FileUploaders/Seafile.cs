@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -22,8 +22,6 @@
 */
 
 #endregion License Information (GPL v3)
-
-// Credits: https://github.com/zikeji
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
@@ -58,6 +56,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 ShareDaysToExpire = config.SeafileShareDaysToExpire,
                 SharePassword = config.SeafileSharePassword,
                 CreateShareableURL = config.SeafileCreateShareableURL,
+                CreateShareableURLRaw = config.SeafileCreateShareableURLRaw,
                 IgnoreInvalidCert = config.SeafileIgnoreInvalidCert
             };
         }
@@ -76,6 +75,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public int ShareDaysToExpire { get; set; }
         public string SharePassword { get; set; }
         public bool CreateShareableURL { get; set; }
+        public bool CreateShareableURLRaw { get; set; }
         public bool IgnoreInvalidCert { get; set; }
 
         public Seafile(string apiurl, string authtoken, string repoid)
@@ -90,7 +90,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string GetAuthToken(string username, string password)
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "auth-token/?format=json");
+            url = URLHelpers.CombineURL(url, "auth-token/?format=json");
 
             Dictionary<string, string> args = new Dictionary<string, string>
             {
@@ -117,7 +117,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool CheckAPIURL()
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "ping/?format=json");
+            url = URLHelpers.CombineURL(url, "ping/?format=json");
 
             SSLBypassHelper sslBypassHelper = null;
 
@@ -152,7 +152,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool CheckAuthToken()
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "auth/ping/?format=json");
+            url = URLHelpers.CombineURL(url, "auth/ping/?format=json");
 
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
@@ -194,7 +194,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public SeafileCheckAccInfoResponse GetAccountInfo()
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "account/info/?format=json");
+            url = URLHelpers.CombineURL(url, "account/info/?format=json");
 
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
@@ -235,10 +235,10 @@ namespace ShareX.UploadersLib.FileUploaders
         public string GetOrMakeDefaultLibrary(string authtoken = null)
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "default-repo/?format=json");
+            url = URLHelpers.CombineURL(url, "default-repo/?format=json");
 
             NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Token " + (authtoken == null ? AuthToken : authtoken));
+            headers.Add("Authorization", "Token " + (authtoken ?? AuthToken));
 
             SSLBypassHelper sslBypassHelper = null;
 
@@ -272,7 +272,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public List<SeafileLibraryObj> GetLibraries()
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "repos/?format=json");
+            url = URLHelpers.CombineURL(url, "repos/?format=json");
 
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
@@ -309,7 +309,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool ValidatePath(string path)
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "repos/" + RepoID + "/dir/?p=" + path + "&format=json");
+            url = URLHelpers.CombineURL(url, "repos/" + RepoID + "/dir/?p=" + path + "&format=json");
 
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
@@ -348,7 +348,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool DecryptLibrary(string libraryPassword)
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "repos/" + RepoID + "/?format=json");
+            url = URLHelpers.CombineURL(url, "repos/" + RepoID + "/?format=json");
 
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
@@ -420,7 +420,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "repos/" + RepoID + "/upload-link/?format=json");
+            url = URLHelpers.CombineURL(url, "repos/" + RepoID + "/upload-link/?format=json");
 
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Token " + AuthToken);
@@ -450,6 +450,15 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         AllowReportProgress = false;
                         result.URL = ShareFile(Path + fileName);
+
+                        if (CreateShareableURLRaw)
+                        {
+                            var uriBuilder = new UriBuilder(result.URL);
+                            var query = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
+                            query["raw"] = "1";
+                            uriBuilder.Query = query.ToString();
+                            result.URL = $"{uriBuilder.Scheme}://{uriBuilder.Host}{uriBuilder.Path}{uriBuilder.Query}";
+                        }
                     }
                     else
                     {
@@ -471,7 +480,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string ShareFile(string path)
         {
             string url = URLHelpers.FixPrefix(APIURL);
-            url = URLHelpers.CombineURL(APIURL, "repos", RepoID, "file/shared-link/");
+            url = URLHelpers.CombineURL(url, "repos", RepoID, "file/shared-link/");
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("p", path);
@@ -491,7 +500,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                return SendRequestURLEncoded(HttpMethod.PUT, url, args, headers, null, ResponseType.LocationHeader);
+                SendRequestURLEncoded(HttpMethod.PUT, url, args, headers);
+                return LastResponseInfo.Headers["Location"];
             }
             finally
             {

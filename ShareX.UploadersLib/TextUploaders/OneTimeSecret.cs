@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -22,8 +22,6 @@
 */
 
 #endregion License Information (GPL v3)
-
-// Credits: https://github.com/DanielMcAssey
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
@@ -75,7 +73,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 if (!string.IsNullOrEmpty(API_USERNAME) && !string.IsNullOrEmpty(API_KEY))
                 {
-                    headers = UploadHelpers.CreateAuthenticationHeader(API_USERNAME, API_KEY);
+                    headers = RequestHelpers.CreateAuthenticationHeader(API_USERNAME, API_KEY);
                 }
 
                 result.Response = SendRequestMultiPart(API_ENDPOINT, args, headers);

@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -127,12 +127,12 @@
     <value>傳送</value>
   </data>
   <data name="lblMessage.Text" xml:space="preserve">
-    <value>訊息:</value>
+    <value>訊息：</value>
   </data>
   <data name="lblSubject.Text" xml:space="preserve">
-    <value>主旨:</value>
+    <value>主旨：</value>
   </data>
   <data name="lblToEmail.Text" xml:space="preserve">
-    <value>傳送到電子郵件:</value>
+    <value>傳送到電子信箱：</value>
   </data>
 </root>

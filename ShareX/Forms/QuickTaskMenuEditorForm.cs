@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -37,7 +36,7 @@ namespace ShareX
         public QuickTaskMenuEditorForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
 
             if (Program.Settings.QuickTaskPresets == null)
             {
@@ -49,7 +48,6 @@ namespace ShareX
 
         private void UpdateItem(ListViewItem lvi, QuickTaskInfo taskInfo)
         {
-            lvi.BackColor = taskInfo.IsValid ? Color.White : Color.WhiteSmoke;
             lvi.Tag = taskInfo;
             lvi.Text = taskInfo.ToString();
         }

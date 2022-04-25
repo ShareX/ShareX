@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,14 +37,18 @@ namespace ShareX.Setup
     {
         public static string DownloadFile(string url)
         {
-            Console.WriteLine("Downloading: " + url);
+            string fileName = Path.GetFileName(url);
+            string filePath = Path.GetFullPath(fileName);
+
+            Console.WriteLine($"Downloading: \"{url}\" -> \"{filePath}\"");
 
             using (WebClient wc = new WebClient())
             {
-                string filename = Path.GetFileName(url);
-                wc.DownloadFile(url, filename);
-                return filename;
+                wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
+                wc.DownloadFile(url, filePath);
             }
+
+            return filePath;
         }
 
         public static void CopyFile(string path, string toFolder)
@@ -58,11 +63,11 @@ namespace ShareX.Setup
                 Directory.CreateDirectory(toFolder);
             }
 
-            foreach (string filepath in files)
+            foreach (string filePath in files)
             {
-                string filename = Path.GetFileName(filepath);
-                string dest = Path.Combine(toFolder, filename);
-                File.Copy(filepath, dest);
+                string fileName = Path.GetFileName(filePath);
+                string dest = Path.Combine(toFolder, fileName);
+                File.Copy(filePath, dest);
             }
         }
 
@@ -76,9 +81,9 @@ namespace ShareX.Setup
 
                 foreach (string file in files)
                 {
-                    string filename = Path.GetFileName(file);
+                    string fileName = Path.GetFileName(file);
 
-                    if (ignoreFiles.All(x => !filename.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
+                    if (ignoreFiles.All(x => !fileName.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
                     {
                         newFiles.Add(file);
                     }
@@ -94,15 +99,20 @@ namespace ShareX.Setup
         {
             Console.WriteLine($"Process starting: {filePath} {arguments}");
 
-            ProcessStartInfo startInfo = new ProcessStartInfo()
+            using (Process process = new Process())
             {
-                FileName = filePath,
-                Arguments = arguments,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = filePath,
+                    Arguments = arguments,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
 
-            Process.Start(startInfo).WaitForExit();
+                process.StartInfo = psi;
+                process.Start();
+                process.WaitForExit();
+            }
         }
 
         public static bool CheckArguments(string[] args, string check)

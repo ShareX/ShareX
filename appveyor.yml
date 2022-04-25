@@ -1,0 +1,48 @@
+version: 1.0.0.{build}
+image: Visual Studio 2022
+configuration:
+- Release
+- Debug
+- Steam
+- MicrosoftStore
+platform: Any CPU
+shallow_clone: true
+environment:
+  APIKeys:
+    secure: oWmEefxkbok87VNVsrUuXKgNaM4+j+EW6FBLsXwCbv3OVHgFvT0M9k4891OvYXDsj0oLuEn0oZeaeV8RrRDHA87ap7oCyD5FQJaiZSTHgeE=
+install:
+- ps: AppVeyor\install.ps1
+before_build:
+- ps: AppVeyor\before_build.ps1
+build:
+  project: ShareX.sln
+  parallel: true
+  verbosity: minimal
+after_build:
+- ps: AppVeyor\after_build.ps1
+artifacts:
+- path: ShareX-*-setup.exe
+  name: Setup
+- path: ShareX-*-setup.exe.sha256
+  name: Setup-Checksum
+- path: ShareX-*-portable.zip
+  name: Portable
+- path: ShareX-*-portable.zip.sha256
+  name: Portable-Checksum
+- path: ShareX-Steam
+  name: Steam
+- path: ShareX.appx
+  name: MicrosoftStore
+deploy:
+  - provider: GitHub
+    tag: $(APPVEYOR_REPO_TAG_NAME)
+    release: ShareX $(AppVersion)
+    description: "[Changelog](https://getsharex.com/changelog)"
+    auth_token:
+      secure: bbUkNvyu1jnKkuZGlM1ois3MkmpCMlm3Lv68L9V5AYepHt1SG4ZQ15ZoKfjOFg9R
+    artifact: Setup,Setup-Checksum,Portable,Portable-Checksum
+    draft: false
+    prerelease: true
+    on:
+      configuration: Release
+      appveyor_repo_tag: true

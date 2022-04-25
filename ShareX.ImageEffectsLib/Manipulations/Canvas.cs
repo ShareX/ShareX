@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
@@ -36,6 +37,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
         public Padding Margin { get; set; }
 
+        [DefaultValue(CanvasMarginMode.AbsoluteSize), Description("How the margin around the canvas will be calculated."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public CanvasMarginMode MarginMode { get; set; }
+
         [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color Color { get; set; }
 
@@ -44,17 +48,38 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public enum CanvasMarginMode
         {
-            Image result = ImageHelpers.AddCanvas(img, Margin, Color);
+            AbsoluteSize,
+            PercentageOfCanvas
+        }
 
-            if (result == null)
+        public override Bitmap Apply(Bitmap bmp)
+        {
+            Padding canvasMargin;
+
+            if (MarginMode == CanvasMarginMode.PercentageOfCanvas)
             {
-                return img;
+                canvasMargin = new Padding();
+                canvasMargin.Left = (int)Math.Round(Margin.Left / 100f * bmp.Width);
+                canvasMargin.Right = (int)Math.Round(Margin.Right / 100f * bmp.Width);
+                canvasMargin.Top = (int)Math.Round(Margin.Top / 100f * bmp.Height);
+                canvasMargin.Bottom = (int)Math.Round(Margin.Bottom / 100f * bmp.Height);
+            }
+            else
+            {
+                canvasMargin = Margin;
             }
 
-            img.Dispose();
-            return result;
+            Bitmap bmpResult = ImageHelpers.AddCanvas(bmp, canvasMargin, Color);
+
+            if (bmpResult == null)
+            {
+                return bmp;
+            }
+
+            bmp.Dispose();
+            return bmpResult;
         }
     }
 }

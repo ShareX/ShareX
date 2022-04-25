@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -117,7 +117,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             if (!string.IsNullOrEmpty(Settings.ContentType)) args.Add("content_type", Settings.ContentType);
             if (!string.IsNullOrEmpty(Settings.Hidden)) args.Add("hidden", Settings.Hidden);
 
-            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo, out Dictionary<string, string> parameters);
+            OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo, out Dictionary<string, string> parameters);
 
             UploadResult result = SendRequestFile(url, stream, fileName, "photo", parameters);
 
@@ -129,9 +129,10 @@ namespace ShareX.UploadersLib.ImageUploaders
                 {
                     string photoid = xele.Value;
                     FlickrPhotosGetSizesResponse photos = PhotosGetSizes(photoid);
-                    FlickrPhotosGetSizesSize photo = photos?.sizes?.size?[photos.sizes.size.Length - 1];
-                    if (photo != null)
+                    if (photos != null && photos.sizes != null && photos.sizes.size != null && photos.sizes.size.Length > 0)
                     {
+                        FlickrPhotosGetSizesSize photo = photos.sizes.size[photos.sizes.size.Length - 1];
+
                         if (Settings.DirectLink)
                         {
                             result.URL = photo.source;
@@ -162,7 +163,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                             return xele.Element(field);
                         case "fail":
                             XElement err = xele.Element("err");
-                            string code = err.GetAttributeValue("code");
+                            //string code = err.GetAttributeValue("code");
                             string msg = err.GetAttributeValue("msg");
                             Errors.Add(msg);
                             break;
@@ -215,7 +216,7 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class FlickrPhotosGetSizesSizes
     {
         public int canblog { get; set; }
-        public int canprint { get; set; }
+        public bool canprint { get; set; }
         public int candownload { get; set; }
         public FlickrPhotosGetSizesSize[] size { get; set; }
     }

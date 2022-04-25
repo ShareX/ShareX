@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Galería de etiquetas</value>
+    <value>ShareX - Selector de calcomanías</value>
   </data>
   <data name="tsbEditStickers.Text" xml:space="preserve">
-    <value>Modificar colección de etiquetas</value>
+    <value>Modificar colecciones de calcomanías</value>
   </data>
   <data name="tslSearch.Text" xml:space="preserve">
     <value>Buscar:</value>
@@ -130,9 +130,6 @@
     <value>Tamaño:</value>
   </data>
   <data name="tslStickers.Text" xml:space="preserve">
-    <value>Etiquetas:</value>
-  </data>
-  <data name="tsnudSize.Text" xml:space="preserve">
-    <value>64</value>
+    <value>Calcomanías:</value>
   </data>
 </root>

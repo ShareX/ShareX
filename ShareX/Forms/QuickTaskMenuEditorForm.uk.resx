@@ -127,7 +127,7 @@
     <value>Вилучити</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Відновити до типових</value>
+    <value>Відновити до типових...</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Закрити</value>

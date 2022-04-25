@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,7 +37,7 @@ namespace ShareX.ScreenCaptureLib
         public NewImageForm(RegionCaptureOptions options)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
 
             Options = options;
 
@@ -47,10 +47,11 @@ namespace ShareX.ScreenCaptureLib
             nudWidth.Value = Options.EditorNewImageSize.Width;
             nudHeight.Value = Options.EditorNewImageSize.Height;
             cbTransparent.Checked = Options.EditorNewImageTransparent;
+            btnChangeColor.ColorPickerOptions = options.ColorPickerOptions;
             btnChangeColor.Color = options.EditorNewImageBackgroundColor;
         }
 
-        public static Image CreateNewImage(RegionCaptureOptions options, Form form = null)
+        public static Bitmap CreateNewImage(RegionCaptureOptions options, Form form = null)
         {
             using (NewImageForm newImageForm = new NewImageForm(options))
             {

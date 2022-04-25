@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShareX.Steam</RootNamespace>
     <AssemblyName>ShareX_Launcher</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -63,10 +63,7 @@
     <None Include="steam_appid.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="CSteamworks.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <Content Include="ShareX_Icon.ico" />
+    <None Include="ShareX_Icon.ico" />
     <None Include="installscript.vdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

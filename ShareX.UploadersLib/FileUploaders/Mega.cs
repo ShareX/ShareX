@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -22,8 +22,6 @@
 */
 
 #endregion License Information (GPL v3)
-
-// Credits: https://github.com/gpailler
 
 using CG.Web.MegaApiClient;
 using ShareX.UploadersLib.Properties;
@@ -50,7 +48,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Mega(config.MegaAuthInfos, config.MegaParentNodeId);
+            return new Mega(config.MegaAuthInfos?.GetMegaApiClientAuthInfos(), config.MegaParentNodeId);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMega;
@@ -150,9 +148,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region IWebClient
 
+        public Stream GetRequestRaw(Uri url)
+        {
+            throw new NotImplementedException();
+        }
+
         public string PostRequestJson(Uri url, string jsonData)
         {
-            return SendRequest(HttpMethod.POST, url.ToString(), jsonData, UploadHelpers.ContentTypeJSON);
+            return SendRequest(HttpMethod.POST, url.ToString(), jsonData, RequestHelpers.ContentTypeJSON);
         }
 
         public string PostRequestRaw(Uri url, Stream dataStream)
@@ -168,7 +171,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public Stream GetRequestRaw(Uri url)
+        public Stream PostRequestRawAsStream(Uri url, Stream dataStream)
         {
             throw new NotImplementedException();
         }

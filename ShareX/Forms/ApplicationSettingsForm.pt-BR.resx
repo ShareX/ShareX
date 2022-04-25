@@ -171,9 +171,6 @@
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Adicionar...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos da área de transferência - aparecem debaixo de Copiar no menu de contexto na janela principal</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Descrição</value>
   </data>
@@ -225,9 +222,6 @@
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Senha:</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reenvio</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Enviar</value>
   </data>
@@ -236,12 +230,6 @@
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Formato</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Hospedagem alternativa</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Hospedagem de imagens</value>
@@ -254,9 +242,6 @@
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Hospedagem de texto </value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: é necessário reiniciar o programa para que as alterações façam efeito.</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Pasta de screenshots customizada</value>
@@ -290,9 +275,6 @@
   </data>
   <data name="btnImport.Text" xml:space="preserve">
     <value>Importar...</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Exportar / Importar</value>
   </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
     <value>Salvar somente se o URL não estiver vazio</value>

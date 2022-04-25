@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,7 +31,7 @@ namespace ShareX.HelpersLib
 {
     public static class ColorMatrixManager
     {
-        #region Grayscale values
+        // Grayscale values
 
         private const float rw = 0.212671f;
         private const float gw = 0.715160f;
@@ -43,16 +43,15 @@ namespace ShareX.HelpersLib
         private const float bw = 0.0820f;
         */
 
-        #endregion Grayscale values
-
-        public static Image Apply(this ColorMatrix matrix, Image img)
+        public static Bitmap Apply(this ColorMatrix matrix, Bitmap bmp)
         {
-            Bitmap dest = img.CreateEmptyBitmap();
+            Bitmap dest = bmp.CreateEmptyBitmap();
             Rectangle destRect = new Rectangle(0, 0, dest.Width, dest.Height);
-            return Apply(matrix, img, dest, destRect);
+            Apply(matrix, bmp, dest, destRect);
+            return dest;
         }
 
-        public static Image Apply(this ColorMatrix matrix, Image src, Image dest, Rectangle destRect)
+        public static void Apply(this ColorMatrix matrix, Bitmap src, Bitmap dest, Rectangle destRect)
         {
             using (Graphics g = Graphics.FromImage(dest))
             using (ImageAttributes ia = new ImageAttributes())
@@ -62,28 +61,26 @@ namespace ShareX.HelpersLib
                 g.SetHighQuality();
                 g.DrawImage(src, destRect, 0, 0, src.Width, src.Height, GraphicsUnit.Pixel, ia);
             }
-
-            return dest;
         }
 
         /// <param name="img"></param>
         /// <param name="value">1 = No change (Min 0.1, Max 5.0)</param>
-        public static Image ChangeGamma(Image img, float value)
+        public static Bitmap ChangeGamma(Bitmap bmp, float value)
         {
-            value = value.Between(0.1f, 5.0f);
+            value = value.Clamp(0.1f, 5.0f);
 
-            Bitmap bmp = img.CreateEmptyBitmap();
+            Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
-            using (Graphics g = Graphics.FromImage(bmp))
+            using (Graphics g = Graphics.FromImage(bmpResult))
             using (ImageAttributes ia = new ImageAttributes())
             {
                 ia.ClearColorMatrix();
                 ia.SetGamma(value, ColorAdjustType.Bitmap);
                 g.SetHighQuality();
-                g.DrawImage(img, new Rectangle(0, 0, img.Width, img.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, ia);
+                g.DrawImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, bmp.Width, bmp.Height, GraphicsUnit.Pixel, ia);
             }
 
-            return bmp;
+            return bmpResult;
         }
 
         public static ColorMatrix Inverse()
@@ -234,6 +231,18 @@ namespace ShareX.HelpersLib
                 new float[] { value * r * bw, value * g * bw, inv_amount + (value * b * bw), 0, 0 },
                 new float[] { 0, 0, 0, 1, 0 },
                 new float[] { 0, 0, 0, 0, 1 }
+            });
+        }
+
+        public static ColorMatrix Mask(float opacity, Color color)
+        {
+            return new ColorMatrix(new[]
+            {
+                new float[] { 0, 0, 0, 0, 0 },
+                new float[] { 0, 0, 0, 0, 0 },
+                new float[] { 0, 0, 0, 0, 0 },
+                new float[] { 0, 0, 0, color.A / 255f * opacity, 0 },
+                new float[] { ((float)color.R).Remap(0, 255, 0, 1), ((float)color.G).Remap(0, 255, 0, 1), ((float)color.B).Remap(0, 255, 0, 1), 0, 1 }
             });
         }
     }

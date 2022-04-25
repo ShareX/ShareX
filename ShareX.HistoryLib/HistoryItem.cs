@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,14 +23,17 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace ShareX.HistoryLib
 {
     public class HistoryItem
     {
-        public string Filename { get; set; }
-        public string Filepath { get; set; }
+        public string FileName { get; set; }
+        public string FilePath { get; set; }
         public DateTime DateTime { get; set; }
         public string Type { get; set; }
         public string Host { get; set; }
@@ -38,5 +41,36 @@ namespace ShareX.HistoryLib
         public string ThumbnailURL { get; set; }
         public string DeletionURL { get; set; }
         public string ShortenedURL { get; set; }
+
+        [Browsable(false)]
+        public Dictionary<string, string> Tags { get; set; }
+
+        [JsonIgnore, DisplayName("Tags[WindowTitle]")]
+        public string TagsWindowTitle
+        {
+            get
+            {
+                if (Tags != null && Tags.TryGetValue("WindowTitle", out string value))
+                {
+                    return value;
+                }
+
+                return null;
+            }
+        }
+
+        [JsonIgnore, DisplayName("Tags[ProcessName]")]
+        public string TagsProcessName
+        {
+            get
+            {
+                if (Tags != null && Tags.TryGetValue("ProcessName", out string value))
+                {
+                    return value;
+                }
+
+                return null;
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -44,18 +44,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsBorderVisible)
                 {
-                    DrawEllipse(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
+                    DrawEllipse(g, ShadowColor, BorderSize, BorderStyle, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
                 }
                 else if (FillColor.A == 255)
                 {
-                    DrawEllipse(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
+                    DrawEllipse(g, Color.Transparent, 0, BorderStyle, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
                 }
             }
 
-            DrawEllipse(g, BorderColor, BorderSize, FillColor, Rectangle);
+            DrawEllipse(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle);
         }
 
-        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect)
+        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, RectangleF rect)
         {
             g.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -71,6 +71,8 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (Pen pen = new Pen(borderColor, borderSize))
                 {
+                    pen.DashStyle = (DashStyle)borderStyle;
+
                     g.DrawEllipse(pen, rect);
                 }
             }
@@ -78,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
             g.SmoothingMode = SmoothingMode.None;
         }
 
-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
         {
             gp.AddEllipse(rect);
         }

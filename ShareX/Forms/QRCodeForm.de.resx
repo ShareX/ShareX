@@ -136,7 +136,7 @@
     <value>Dekodieren</value>
   </data>
   <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>vom Bildschirm dekodieren...</value>
+    <value>Vom Bildschirm dekodieren...</value>
   </data>
   <data name="tsmiDecode.Text" xml:space="preserve">
     <value>Dekodieren</value>

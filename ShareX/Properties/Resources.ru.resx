@@ -124,9 +124,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Осталось: {0}с ({1}%) Всего: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Участники</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Ссылка для закачки перед загрузкой</value>
   </data>
@@ -143,7 +140,7 @@
     <value>Не удалось зарегистрировать горячую клавишу</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
-    <value>Горячие клавиши отключены</value>
+    <value>Горячие клавиши отключены.</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>Загрузить файлы</value>
@@ -163,13 +160,10 @@
 сюда</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
-    <value>Горячие клавиши включены</value>
+    <value>Горячие клавиши включены.</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>горячие клавиши</value>
-  </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Путь не может быть пустым.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Сервис загрузки файлов: {0}</value>
@@ -180,15 +174,9 @@
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Твит успешно отправлен.</value>
   </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Выберите путь к кодировщику.</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Нет доступа к файлу "{0}".
 Пожалуйста запустите ShareX от имени администратора для изменения пути к личной папке.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>Консольный кодировщик видео не существует: </value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Чтобы применить настройки, ShareX нужно заново открыть в Steam.</value>
@@ -202,26 +190,14 @@
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Задача выполнена</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Ожидание...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Сервис загрузки картинок: {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Скопировано в буфер: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Скрыть меню</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Не удалось найти рабочий аккаунт Twitter.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Показать меню</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Показать столбцы</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Отменить</value>
@@ -255,13 +231,7 @@
     <value>X: {0}, Y: {1}, Ширина: {2}, Высота: {3}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>Больше не показывать это сообщение</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Задача: {0}</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Видео и аудио для FFmpeg не могут отсутствовать одновременно.</value>
+    <value>Больше не показывать это сообщение.</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Список изменений</value>
@@ -270,7 +240,7 @@
     <value>горячую клавишу</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>Выберите горячую клавишу…</value>
+    <value>Выберите горячую клавишу...</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
     <value>Настройки задач</value>
@@ -281,25 +251,11 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Начинается</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} не существует.
-
-Хотите автоматически его скачать?</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Внешние библиотеки</value>
-  </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Ошибка</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Нажмите для остановки записи.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Операции можно добавить в настройках горячих клавиш…</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Клиент FTP поддерживает только протоколы FTP или FTPS.</value>
+    <value>Операции можно добавить в настройках горячих клавиш...</value>
   </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Не удалось сохранить изображение по пути {0}.</value>
@@ -309,10 +265,7 @@
 Хотите перезапустить ShareX?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Использовать новое имя:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Отсутствует</value>
+    <value>Использовать новое имя: </value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Переводчики</value>
@@ -323,14 +276,8 @@
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Поддержка Chrome включена.</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Расширение не может быть пустым.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>После захвата: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Добавить консольные кодировщики &gt;&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Сервис коротких ссылок: {0}</value>
@@ -387,9 +334,6 @@
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Проверка загрузки текста</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Скрыть столбцы</value>
-  </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>Настройки задачи для операции «{0}»</value>
   </data>
@@ -414,26 +358,8 @@
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Выберите путь к папке скриншотов</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Нажмите для начала записи.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Не удалось загрузить FFmpeg.</value>
-  </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Загрузка папки</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Не удалось найти рабочий аккаунт FTP.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg успешно загружен.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Кодирование...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Ошибка FFmpeg</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Приступить к загрузке файлов ({0} шт.) ?</value>
@@ -453,9 +379,6 @@
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Загружается</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Ни один подходящий консольный кодировщик не выбран.</value>
   </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Сбросить все горячие клавиши?</value>
@@ -489,7 +412,7 @@
   </data>
   <data name="ActionsToolbar_Tip" xml:space="preserve">
     <value>Удерживайте левую кнопку мыши для перемещения
-Кликните правой конопкой мыши, чтобы открыть меню
+Кликните правой кнопкой мыши, чтобы открыть меню
 Средней кнопкой мыши, чтобы закрыть панель</value>
   </data>
   <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
@@ -549,9 +472,6 @@
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Редактировать в ShareX</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Вы действительно хотите отменить эту запись?</value>
-  </data>
   <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
     <value>Dev сборки могут быть нестабильными и должны использоваться только для тестирования. Хотите установить?</value>
   </data>
@@ -564,9 +484,6 @@
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Автозапуск включен вашей организацией</value>
   </data>
-  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
-    <value>Для применения персональной папки нужно перезапустить ShareX.</value>
-  </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Журнал отладки может содержать конфиденциальную информацию. Вы уверены, что хотите продолжить?</value>
   </data>
@@ -578,5 +495,158 @@
   </data>
   <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
     <value>Испанский (Мексика)</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>Распознавание в процессе.</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>Произошла ошибка распознавание, либо текст не обнаружен.</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>Результат распознавания скопирован в буфер обмена.</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>Для применения настроек персональной папки ShareX должен быть перезапущен. 
+
+Хотите перезапустить ShareX?</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Подтверждение</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Задержка скриншота: {0}с</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Обратите внимание, ShareX использует онлайн API OCR.Space для распознавания текста. Вы даете ShareX разрешение на загрузку изображений на этот сервис?</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Распознавание текста</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>Перейти в режим миниатюр</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>Перейти в режим списка</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>Эта функция не будет работать, когда опция "DisableUpload" включена!</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>Хотите сбросить темы?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Буфер обмена пуст или содержит неизвестные данные.</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Содержимое буфера обмена: Файл (Количество: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Содержимое буфера обмена: Изображение (Размер: {0}x{1})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Содержимое буфера обмена: Текст (Длина: {0})</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Португальский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Персидский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Японский</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX свернут в системный трей.</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>Ваш анитвирус или контролируемый доступ к файлам в Windows могут блокировать ShareX.</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Не удалось сохранить настройки</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Пипетка</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Хотите включить эффекты изображений?
+
+Их можно выключить из меню "После захвата".</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Клавиша</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Заголовок окна</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Дескриптор окна</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Имя класса</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>Имя процесса</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Имя файла процесса</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Идентификатор процесса</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Стили окна</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Прямоугольник окна</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>Клиентский прямоугольник</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>Ошибка FFmpeg</value>
+  </data>
+  <data name="FFmpeg_does_not_exist" xml:space="preserve">
+    <value>{0} отсутствует.
+
+Хотите скачать автоматически?</value>
+  </data>
+  <data name="FFmpeg_Missing" xml:space="preserve">
+    <value>Отсутствует</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>Источники видео и аудио в FFmpeg не могут оба быть "None".</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
+    <value>FFmpeg успешно загружен.</value>
+  </data>
+  <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
+    <value>Загрузка FFmpeg не удалась.</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>Не удалось найти окно с указанным заголовком.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>Команда</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>Ссылки</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>Политика конфиденциальности</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>Благодарности</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>Ваш системный администратор отключил возможность загрузки.</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>Не удалось сохранить изображение по пути:</value>
   </data>
 </root>

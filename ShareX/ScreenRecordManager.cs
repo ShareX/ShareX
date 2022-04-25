@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -56,19 +56,19 @@ namespace ShareX
             }
         }
 
+        public static void StopRecording()
+        {
+            if (IsRecording && screenRecorder != null)
+            {
+                screenRecorder.StopRecording();
+            }
+        }
+
         public static void AbortRecording()
         {
             if (IsRecording && recordForm != null && !recordForm.IsDisposed)
             {
                 recordForm.AbortRecording();
-            }
-        }
-
-        private static void StopRecording()
-        {
-            if (IsRecording && screenRecorder != null)
-            {
-                screenRecorder.StopRecording();
             }
         }
 
@@ -105,17 +105,31 @@ namespace ShareX
 
             if (!taskSettings.CaptureSettings.FFmpegOptions.IsSourceSelected)
             {
-                MessageBox.Show(Resources.ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__,
-                    "ShareX - " + Resources.ScreenRecordForm_StartRecording_FFmpeg_error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resources.FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__,
+                    "ShareX - " + Resources.FFmpeg_FFmpeg_error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            if (taskSettings.GeneralSettings.ToastWindowAutoHide)
+            {
+                NotificationForm.CloseActiveForm();
+            }
+
             Rectangle captureRectangle = Rectangle.Empty;
+            TaskMetadata metadata = new TaskMetadata();
 
             switch (startMethod)
             {
                 case ScreenRecordStartMethod.Region:
-                    RegionCaptureTasks.GetRectangleRegion(out captureRectangle, taskSettings.CaptureSettings.SurfaceOptions);
+                    if (taskSettings.CaptureSettings.ScreenRecordTransparentRegion)
+                    {
+                        RegionCaptureTasks.GetRectangleRegionTransparent(out captureRectangle);
+                    }
+                    else
+                    {
+                        RegionCaptureTasks.GetRectangleRegion(out captureRectangle, out WindowInfo windowInfo, taskSettings.CaptureSettings.SurfaceOptions);
+                        metadata.UpdateInfo(windowInfo);
+                    }
                     break;
                 case ScreenRecordStartMethod.ActiveWindow:
                     if (taskSettings.CaptureSettings.CaptureClientArea)
@@ -157,7 +171,13 @@ namespace ShareX
 
             float duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
-            recordForm = new ScreenRecordForm(captureRectangle, taskSettings, startMethod == ScreenRecordStartMethod.Region, duration);
+            recordForm = new ScreenRecordForm(captureRectangle)
+            {
+                ActivateWindow = startMethod == ScreenRecordStartMethod.Region,
+                Duration = duration,
+                AskConfirmationOnAbort = taskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort
+            };
+
             recordForm.StopRequested += StopRecording;
             recordForm.Show();
 
@@ -174,8 +194,9 @@ namespace ShareX
                     {
                         extension = taskSettings.CaptureSettings.FFmpegOptions.Extension;
                     }
-                    string filename = TaskHelpers.GetFilename(taskSettings, extension);
-                    path = TaskHelpers.HandleExistsFile(taskSettings.CaptureFolder, filename, taskSettings);
+                    string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings, metadata);
+                    string fileName = TaskHelpers.GetFileName(taskSettings, extension, metadata);
+                    path = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettings);
 
                     if (string.IsNullOrEmpty(path))
                     {
@@ -209,7 +230,7 @@ namespace ShareX
 
                         if (!abortRequested)
                         {
-                            ScreencastOptions options = new ScreencastOptions()
+                            ScreenRecordingOptions options = new ScreenRecordingOptions()
                             {
                                 IsRecording = true,
                                 IsLossless = taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding,
@@ -225,7 +246,8 @@ namespace ShareX
                             screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
 
                             screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
-                            screenRecorder.RecordingStarted += () => recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
+                            screenRecorder.RecordingStarted += ScreenRecorder_RecordingStarted;
+                            screenRecorder.EncodingProgressChanged += ScreenRecorder_EncodingProgressChanged;
                             recordForm.ChangeState(ScreenRecordState.AfterStart);
                             screenRecorder.StartRecording();
 
@@ -245,7 +267,7 @@ namespace ShareX
                 {
                     recordForm.ChangeState(ScreenRecordState.Encoding);
 
-                    path = ProcessTwoPassEncoding(path, taskSettings);
+                    path = ProcessTwoPassEncoding(path, metadata, taskSettings);
                 }
 
                 if (recordForm != null)
@@ -270,22 +292,20 @@ namespace ShareX
                 }
             }).ContinueInCurrentContext(() =>
             {
-                string customFileName;
-
-                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, null, path))
+                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out string customFileName, null, path))
                 {
                     if (!string.IsNullOrEmpty(customFileName))
                     {
-                        string currentFilename = Path.GetFileNameWithoutExtension(path);
+                        string currentFileName = Path.GetFileNameWithoutExtension(path);
                         string ext = Path.GetExtension(path);
 
-                        if (!currentFilename.Equals(customFileName, StringComparison.InvariantCultureIgnoreCase))
+                        if (!currentFileName.Equals(customFileName, StringComparison.InvariantCultureIgnoreCase))
                         {
                             path = Helpers.RenameFile(path, customFileName + ext);
                         }
                     }
 
-                    WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings, customFileName);
+                    WorkerTask task = WorkerTask.CreateFileJobTask(path, metadata, taskSettings, customFileName);
                     TaskManager.Start(task);
                 }
 
@@ -294,16 +314,27 @@ namespace ShareX
             });
         }
 
-        private static string ProcessTwoPassEncoding(string input, TaskSettings taskSettings, bool deleteInputFile = true)
+        private static void ScreenRecorder_RecordingStarted()
         {
-            string filename = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension);
-            string output = Path.Combine(taskSettings.CaptureFolder, filename);
+            recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
+        }
+
+        private static void ScreenRecorder_EncodingProgressChanged(int progress)
+        {
+            recordForm.ChangeStateProgress(progress);
+        }
+
+        private static string ProcessTwoPassEncoding(string input, TaskMetadata metadata, TaskSettings taskSettings, bool deleteInputFile = true)
+        {
+            string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings, metadata);
+            string fileName = TaskHelpers.GetFileName(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension, metadata);
+            string output = Path.Combine(screenshotsFolder, fileName);
 
             try
             {
                 if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
                 {
-                    screenRecorder.FFmpegEncodeAsGIF(input, output, Program.ToolsFolder);
+                    screenRecorder.FFmpegEncodeAsGIF(input, output);
                 }
                 else
                 {

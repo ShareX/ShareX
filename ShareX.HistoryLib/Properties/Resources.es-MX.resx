@@ -186,40 +186,37 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>Enlace acortado</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Mostrar</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Texto</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>Enlace de minuatura</value>
+    <value>Enlace de miniatura</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>Enlace</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>Link HTML ({0})</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>Enlaces ({0})</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>Ocurrió un error al leer el archivo XML: {0}</value>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Número de elementos del historial:</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Copiar nombre</value>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>Modificar imagen...</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Copiar valor</value>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Subir archivo</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nombre</value>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>Extensiones de archivos:</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Valor</value>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Hosts:</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Usos al año:</value>
   </data>
 </root>

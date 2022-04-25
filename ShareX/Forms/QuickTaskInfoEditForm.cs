@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,9 +36,11 @@ namespace ShareX
 
         public QuickTaskInfoEditForm(QuickTaskInfo taskInfo)
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
             TaskInfo = taskInfo;
+
+            InitializeComponent();
+            ShareXResources.ApplyTheme(this);
+
             txtName.Text = TaskInfo.Name;
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskInfo.AfterCaptureTasks = TaskInfo.AfterCaptureTasks.Swap(x), cmsAfterCapture);
             AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskInfo.AfterUploadTasks = TaskInfo.AfterUploadTasks.Swap(x), cmsAfterUpload);
@@ -52,7 +54,7 @@ namespace ShareX
             TaskInfo.Name = txtName.Text;
         }
 
-        private void AddMultiEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
+        private void AddMultiEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents) where T : Enum
         {
             string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
 
@@ -98,8 +100,8 @@ namespace ShareX
         private void UpdateUploaderMenuNames()
         {
             txtName.SetWatermark(TaskInfo.ToString(), true);
-            mbAfterCaptureTasks.Text = string.Join(", ", TaskInfo.AfterCaptureTasks.GetFlags<AfterCaptureTasks>().Select(x => x.GetLocalizedDescription()));
-            mbAfterUploadTasks.Text = string.Join(", ", TaskInfo.AfterUploadTasks.GetFlags<AfterUploadTasks>().Select(x => x.GetLocalizedDescription()));
+            mbAfterCaptureTasks.Text = string.Join(", ", TaskInfo.AfterCaptureTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
+            mbAfterUploadTasks.Text = string.Join(", ", TaskInfo.AfterUploadTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
         }
     }
 }

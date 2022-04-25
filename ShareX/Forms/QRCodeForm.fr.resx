@@ -124,7 +124,7 @@
     <value>Enregistrer en tant que fichier image...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR code</value>
+    <value>ShareX - Code QR</value>
   </data>
   <data name="tpDecode.Text" xml:space="preserve">
     <value>Décoder</value>
@@ -140,5 +140,11 @@
   </data>
   <data name="btnDecodeFromScreen.Text" xml:space="preserve">
     <value>Décoder à partir de l'écran...</value>
+  </data>
+  <data name="tsmiDecode.Text" xml:space="preserve">
+    <value>Décoder</value>
+  </data>
+  <data name="tsmiUpload.Text" xml:space="preserve">
+    <value>Mettre en ligne une image</value>
   </data>
 </root>

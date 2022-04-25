@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - FFmpeg Optionen</value>
+    <value>ShareX - Bildschirmaufzeichnungsoptionen</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Kopieren</value>
@@ -222,15 +222,15 @@ Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann
     <value>1 ist die höchste Qualität/Dateigröße und 31 die niedrigste Qualität/kleinste Dateigröße.</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>"Faster" Voreinstellung = Schnelle Enkodierung aber größere Dateien.
-"Slower" Voreinstellung = Langsamere Enkodierung aber kleinere Dateien.
-Für Echtzeitenkodierung (z.B. Bildschirmaufnahmen) muss die Voreinstellung so schnell wie möglich sein.</value>
+    <value>Schnellere Voreinstellung = Schnelle Encodierung, aber größere Dateien.
+Langsamere Voreinstellung = Langsamere Encodierung, aber kleinere Dateien.
+Für Echtzeitencodierung (z. B. Bildschirmaufzeichnungen) muss die Voreinstellung so schnell wie möglich sein.</value>
   </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
     <value>Dieser Audiocodec wird vom ausgewählten Videocontainer nicht unterstützt.</value>
   </data>
   <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
-    <value>Für Echtzeitenkodierungen wie Bildschirmaufnahmen sollte die Voreinstellung so schnell wie möglich sein.
+    <value>Für Echtzeitencodierungen wie Bildschirmaufnahmen sollte die Voreinstellung so schnell wie möglich sein.
 Ansonsten kann es zu vielen Framedrops kommen.</value>
   </data>
 </root>

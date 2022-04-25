@@ -264,35 +264,17 @@
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên tệp</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Trình FTP...</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Toàn màn hình</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Kiểm tra Hash...</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Ẩn menu</value>
-  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Trình gộp ảnh...</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Hiệu ứng ảnh...</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Xem trước ảnh</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Tự động</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Ẩn</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Hiện</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh</value>
@@ -399,9 +381,6 @@
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>Kiểm tra các dịch vụ tải lên</value>
   </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Giới thiệu...</value>
-  </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>Tác vụ sau khi chụp</value>
   </data>
@@ -423,9 +402,6 @@
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>Trình đổi DNS</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Quyên góp...</value>
-  </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Thoát</value>
   </data>
@@ -434,9 +410,6 @@
   </data>
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên tệp</value>
-  </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Trình FTP...</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Toàn màn hình</value>
@@ -558,9 +531,6 @@
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>Dịch vụ rút gọn URL</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Chụp trang web...</value>
-  </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Cửa sổ</value>
   </data>
@@ -572,9 +542,6 @@
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
     <value>Dịch vụ rút gọn URL</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Chụp trang web...</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>Cửa sổ</value>
@@ -603,20 +570,8 @@
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Giới thiệu...</value>
   </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Dưới</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Đóng</value>
-  </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Gộp ảnh</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Bắt lỗi</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Nhật ký ghi lỗi...</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Quyên góp...</value>
@@ -636,21 +591,6 @@
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>Hiện con trỏ</value>
   </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Kiểm tra tải lên tệp tin</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Kiểm tra tải lên ảnh</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Kiểm tra tải lên văn bản</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Kiểm tra chia sẻ URL</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Kiểm tra rút gọn URL</value>
-  </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Lấy văn bản (Nhận dạng kí tự)...</value>
   </data>
@@ -663,26 +603,8 @@
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>Tải lên văn bản...</value>
   </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Ẩn các cột</value>
-  </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Ẩn nút Discord vĩnh viễn</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Ẩn nút Patreon vĩnh viễn</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Mới</value>
-  </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Nhận dạng kí tự từ ảnh...</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Mở liên kết mời vào ShareX Discord</value>
-  </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Mở trang web chiến dịch quyên góp ShareX Patreon</value>
   </data>
   <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
     <value>Liên kết Markdown</value>
@@ -690,17 +612,11 @@
   <data name="tsmiImageEditor.Text" xml:space="preserve">
     <value>Trình chỉnh sửa ảnh...</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Tìm kiếm ảnh trên Google...</value>
-  </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>Xóa tác vụ khỏi danh sách</value>
   </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Cạnh</value>
-  </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
-    <value>Bật/Tắt thanh công cụ hành động</value>
+    <value>Bật/Tắt thanh công cụ tác vụ</value>
   </data>
   <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
     <value>Trình chỉnh sửa ảnh...</value>
@@ -716,5 +632,113 @@
   </data>
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
     <value>Ảnh liên kết Markdown</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>Không trễ</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 giây</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 giây</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 giây</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 giây</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 giây</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>Thời gian trễ chụp màn hình</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Trình chia ảnh...</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Thiết lập dịch vụ tải lên tùy chọn...</value>
+  </data>
+  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Enter</value>
+  </data>
+  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Enter</value>
+  </data>
+  <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+C</value>
+  </data>
+  <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+C</value>
+  </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>Kích thước ảnh</value>
+  </data>
+  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Shift+C</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+U</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+D</value>
+  </data>
+  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Chạy tác vụ</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Del</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>Chuyển qua xem trước ảnh</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>Không trễ</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 giây</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 giây</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 giây</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 giây</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 giây</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>Thời gian trễ chụp ảnh màn hình</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>Trình chia ảnh...</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Thiết lập dịch vụ tải lên tùy chọn...</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord</value>
   </data>
 </root>

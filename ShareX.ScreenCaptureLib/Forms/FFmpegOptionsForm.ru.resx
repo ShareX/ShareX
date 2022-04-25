@@ -195,7 +195,7 @@
     <value>Источники</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>Установит источники видео/аудио "screen-capture-recorder" и "virtual-audio-capturer"</value>
+    <value>Установит источники видео/аудио "screen-capture-recorder" и "virtual-audio-capturer".</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Качество:</value>
@@ -238,5 +238,26 @@
   </data>
   <data name="lblNVENCBitrate.Text" xml:space="preserve">
     <value>Битрейт:</value>
+  </data>
+  <data name="lblQSVBitrate.Text" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
+  <data name="lblQSVPreset.Text" xml:space="preserve">
+    <value>Настройка:</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>Качество:</value>
+  </data>
+  <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
+    <value>По умолчанию 128k.</value>
+  </data>
+  <data name="lblOpusQuality.Text" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Usage:</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Настраивает индекс Bayer Scale, с большим значением больше бандинг. По умолчанию 2.</value>
   </data>
 </root>

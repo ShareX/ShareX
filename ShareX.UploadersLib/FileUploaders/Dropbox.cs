@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -115,7 +115,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return URLHelpers.CreateQuery(URLOAuth2Authorize, args);
+            return URLHelpers.CreateQueryString(URLOAuth2Authorize, args);
         }
 
         public bool GetAccessToken(string code)
@@ -149,24 +149,24 @@ namespace ShareX.UploadersLib.FileUploaders
             return headers;
         }
 
-        public static string VerifyPath(string path, string filename = null)
+        public static string VerifyPath(string path, string fileName = null)
         {
             if (!string.IsNullOrEmpty(path))
             {
                 path = path.Trim().Replace('\\', '/').Trim('/');
                 path = URLHelpers.AddSlash(path, SlashType.Prefix);
 
-                if (!string.IsNullOrEmpty(filename))
+                if (!string.IsNullOrEmpty(fileName))
                 {
-                    path = URLHelpers.CombineURL(path, filename);
+                    path = URLHelpers.CombineURL(path, fileName);
                 }
 
                 return path;
             }
 
-            if (!string.IsNullOrEmpty(filename))
+            if (!string.IsNullOrEmpty(fileName))
             {
-                return filename;
+                return fileName;
             }
 
             return "";
@@ -176,7 +176,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (OAuth2Info.CheckOAuth(AuthInfo))
             {
-                string response = SendRequest(HttpMethod.POST, URLGetCurrentAccount, "null", UploadHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLGetCurrentAccount, "null", RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -199,13 +199,13 @@ namespace ShareX.UploadersLib.FileUploaders
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("arg", json);
 
-                return SendRequestDownload(HttpMethod.POST, URLDownload, downloadStream, args, GetAuthHeaders(), null, UploadHelpers.ContentTypeJSON);
+                return SendRequestDownload(HttpMethod.POST, URLDownload, downloadStream, args, GetAuthHeaders(), null, RequestHelpers.ContentTypeJSON);
             }
 
             return false;
         }
 
-        public UploadResult UploadFile(Stream stream, string path, string filename, bool createShareableLink = false, bool useDirectLink = false)
+        public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableLink = false, bool useDirectLink = false)
         {
             if (stream.Length > 150000000)
             {
@@ -215,7 +215,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(new
             {
-                path = VerifyPath(path, filename),
+                path = VerifyPath(path, fileName),
                 mode = "overwrite",
                 autorename = false,
                 mute = true
@@ -224,7 +224,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("arg", json);
 
-            string response = SendRequest(HttpMethod.POST, URLUpload, stream, UploadHelpers.ContentTypeOctetStream, args, GetAuthHeaders());
+            string response = SendRequest(HttpMethod.POST, URLUpload, stream, RequestHelpers.ContentTypeOctetStream, args, GetAuthHeaders());
 
             UploadResult ur = new UploadResult(response);
 
@@ -264,7 +264,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     include_has_explicit_shared_members = false
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLGetMetadata, json, UploadHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLGetMetadata, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -295,7 +295,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLCreateSharedLink, json, UploadHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLCreateSharedLink, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
 
                 DropboxLinkMetadata linkMetadata = null;
 
@@ -341,7 +341,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     direct_only = directOnly
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLListSharedLinks, json, UploadHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLListSharedLinks, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -364,7 +364,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     to_path = VerifyPath(toPath)
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLCopy, json, UploadHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLCopy, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -386,7 +386,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     path = VerifyPath(path)
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLCreateFolder, json, UploadHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLCreateFolder, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -408,7 +408,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     path = VerifyPath(path)
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLDelete, json, UploadHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLDelete, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -431,7 +431,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     to_path = VerifyPath(toPath)
                 });
 
-                string response = SendRequest(HttpMethod.POST, URLMove, json, UploadHelpers.ContentTypeJSON, null, GetAuthHeaders());
+                string response = SendRequest(HttpMethod.POST, URLMove, json, RequestHelpers.ContentTypeJSON, null, GetAuthHeaders());
 
                 if (!string.IsNullOrEmpty(response))
                 {

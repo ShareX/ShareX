@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -57,7 +57,7 @@ namespace ShareX.HelpersLib
                     SetSliderMarker();
                 }
 
-                Refresh();
+                Invalidate();
             }
         }
 
@@ -80,7 +80,7 @@ namespace ShareX.HelpersLib
                     SetSliderMarker();
                 }
 
-                Refresh();
+                Invalidate();
             }
         }
 
@@ -173,7 +173,7 @@ namespace ShareX.HelpersLib
                 if (SelectedColor.IsTransparent)
                 {
                     if (bmp != null) bmp.Dispose();
-                    bmp = (Bitmap)ImageHelpers.DrawCheckers(clientWidth, clientHeight);
+                    bmp = ImageHelpers.DrawCheckers(clientWidth, clientHeight);
                 }
 
                 DrawColors();
@@ -205,10 +205,7 @@ namespace ShareX.HelpersLib
 
         protected void OnColorChanged()
         {
-            if (ColorChanged != null)
-            {
-                ColorChanged(this, new ColorEventArgs(SelectedColor, DrawStyle));
-            }
+            ColorChanged?.Invoke(this, new ColorEventArgs(SelectedColor, DrawStyle));
         }
 
         protected void DrawColors()
@@ -396,7 +393,7 @@ namespace ShareX.HelpersLib
 
         protected Point GetPoint(Point point)
         {
-            return new Point(point.X.Between(0, clientWidth - 1), point.Y.Between(0, clientHeight - 1));
+            return new Point(point.X.Clamp(0, clientWidth - 1), point.Y.Clamp(0, clientHeight - 1));
         }
 
         protected int Round(double val)

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,29 +23,24 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class CursorDrawingShape : BaseDrawingShape
+    public class CursorDrawingShape : ImageDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingCursor;
-
-        private Bitmap cursorBitmap;
-
-        public CursorDrawingShape()
-        {
-        }
 
         public void UpdateCursor(IntPtr cursorHandle, Point position)
         {
             Dispose();
 
             Icon icon = Icon.FromHandle(cursorHandle);
-            cursorBitmap = icon.ToBitmap();
+            Image = icon.ToBitmap();
 
-            Rectangle = new Rectangle(position, cursorBitmap.Size);
+            Rectangle = new Rectangle(position, Image.Size);
         }
 
         public override void ShowNodes()
@@ -55,19 +50,19 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreating()
         {
             Manager.IsMoving = true;
-
-            UpdateCursor(Manager.GetSelectedCursor().Handle, InputManager.ClientMousePosition);
+            UpdateCursor(Manager.GetSelectedCursor().Handle, Manager.Form.ScaledClientMousePosition.Round());
+            OnCreated();
         }
 
         public override void OnDraw(Graphics g)
         {
-            if (cursorBitmap != null)
+            if (Image != null)
             {
-                g.DrawImage(cursorBitmap, Rectangle);
+                g.DrawImage(Image, Rectangle);
 
                 if (!Manager.IsRenderingOutput && Manager.CurrentTool == ShapeType.DrawingCursor)
                 {
-                    Manager.DrawRegionArea(g, Rectangle, false);
+                    Manager.DrawRegionArea(g, Rectangle.Round(), false);
                 }
             }
         }
@@ -75,14 +70,6 @@ namespace ShareX.ScreenCaptureLib
         public override void Resize(int x, int y, bool fromBottomRight)
         {
             Move(x, y);
-        }
-
-        public override void Dispose()
-        {
-            if (cursorBitmap != null)
-            {
-                cursorBitmap.Dispose();
-            }
         }
     }
 }

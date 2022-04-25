@@ -19,7 +19,7 @@ namespace ShareX.HistoryLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -73,10 +73,57 @@ namespace ShareX.HistoryLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chart {
+            get {
+                object obj = ResourceManager.GetObject("chart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error occured while reading history file:.
+        /// </summary>
+        internal static string ErrorOccuredWhileReadingHistoryFile {
+            get {
+                return ResourceManager.GetString("ErrorOccuredWhileReadingHistoryFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filtered.
+        /// </summary>
+        internal static string Filtered {
+            get {
+                return ResourceManager.GetString("Filtered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gear {
+            get {
+                object obj = ResourceManager.GetObject("gear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap globe {
             get {
                 object obj = ResourceManager.GetObject("globe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File name, window title, process name, etc..
+        /// </summary>
+        internal static string HistoryForm_Search_Watermark {
+            get {
+                return ResourceManager.GetString("HistoryForm_Search_Watermark", resourceCulture);
             }
         }
         
@@ -95,6 +142,15 @@ namespace ShareX.HistoryLib.Properties {
         internal static string HistoryForm_UpdateItemCount_Total___0_ {
             get {
                 return ResourceManager.GetString("HistoryForm_UpdateItemCount_Total___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History item counts:.
+        /// </summary>
+        internal static string HistoryItemCounts {
+            get {
+                return ResourceManager.GetString("HistoryItemCounts", resourceCulture);
             }
         }
         
@@ -234,7 +290,7 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image preview.
+        ///   Looks up a localized string similar to Image preview....
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_Image_preview {
             get {
@@ -270,7 +326,7 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More info.
+        ///   Looks up a localized string similar to More info....
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_More_info {
             get {
@@ -293,15 +349,6 @@ namespace ShareX.HistoryLib.Properties {
         internal static string HistoryItemManager_InitializeComponent_Shortened_URL {
             get {
                 return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Shortened_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show.
-        /// </summary>
-        internal static string HistoryItemManager_InitializeComponent_Show {
-            get {
-                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Show", resourceCulture);
             }
         }
         
@@ -342,24 +389,6 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HTML link ({0}).
-        /// </summary>
-        internal static string HistoryItemManager_UpdateTexts_HTML_link___0__ {
-            get {
-                return ResourceManager.GetString("HistoryItemManager_UpdateTexts_HTML_link___0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to URLs ({0}).
-        /// </summary>
-        internal static string HistoryItemManager_UpdateTexts_URLs___0__ {
-            get {
-                return ResourceManager.GetString("HistoryItemManager_UpdateTexts_URLs___0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string HistoryManager_GetHistoryItems_Error {
@@ -369,11 +398,47 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error occured while reading XML file: {0}.
+        ///   Looks up a localized string similar to History stats.
         /// </summary>
-        internal static string HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_ {
+        internal static string HistoryStats {
             get {
-                return ResourceManager.GetString("HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_", resourceCulture);
+                return ResourceManager.GetString("HistoryStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File extensions:.
+        /// </summary>
+        internal static string HistoryStats_FileExtensions {
+            get {
+                return ResourceManager.GetString("HistoryStats_FileExtensions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hosts:.
+        /// </summary>
+        internal static string HistoryStats_Hosts {
+            get {
+                return ResourceManager.GetString("HistoryStats_Hosts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total:.
+        /// </summary>
+        internal static string HistoryStats_Total {
+            get {
+                return ResourceManager.GetString("HistoryStats_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly usages:.
+        /// </summary>
+        internal static string HistoryStats_YearlyUsages {
+            get {
+                return ResourceManager.GetString("HistoryStats_YearlyUsages", resourceCulture);
             }
         }
         
@@ -383,6 +448,16 @@ namespace ShareX.HistoryLib.Properties {
         internal static System.Drawing.Bitmap image {
             get {
                 object obj = ResourceManager.GetObject("image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layout_header_3_mix {
+            get {
+                object obj = ResourceManager.GetObject("layout-header-3-mix", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -400,6 +475,16 @@ namespace ShareX.HistoryLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap magnifier__plus {
+            get {
+                object obj = ResourceManager.GetObject("magnifier--plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap notebook {
             get {
                 object obj = ResourceManager.GetObject("notebook", resourceCulture);
@@ -408,38 +493,20 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy name.
+        ///   Looks up a localized string similar to Process names:.
         /// </summary>
-        internal static string ObjectListView_ObjectListView_Copy_name {
+        internal static string ProcessNames {
             get {
-                return ResourceManager.GetString("ObjectListView_ObjectListView_Copy_name", resourceCulture);
+                return ResourceManager.GetString("ProcessNames", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy value.
+        ///   Looks up a localized string similar to Total.
         /// </summary>
-        internal static string ObjectListView_ObjectListView_Copy_value {
+        internal static string Total {
             get {
-                return ResourceManager.GetString("ObjectListView_ObjectListView_Copy_value", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name.
-        /// </summary>
-        internal static string ObjectListView_ObjectListView_Name {
-            get {
-                return ResourceManager.GetString("ObjectListView_ObjectListView_Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Value.
-        /// </summary>
-        internal static string ObjectListView_ObjectListView_Value {
-            get {
-                return ResourceManager.GetString("ObjectListView_ObjectListView_Value", resourceCulture);
+                return ResourceManager.GetString("Total", resourceCulture);
             }
         }
     }

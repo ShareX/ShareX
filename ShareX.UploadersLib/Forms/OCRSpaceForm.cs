@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,41 +26,75 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.OtherServices;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
+    public enum OCRSpaceSites
+    {
+        [Description("Google Translate")]
+        GoogleTranslate,
+        [Description("Google Search")]
+        GoogleSearch,
+        [Description("DeepL Translate")]
+        DeepL,
+        [Description("Jisho")]
+        Jisho,
+        [Description("ichi.moe")]
+        Ichi
+    }
+
     public partial class OCRSpaceForm : Form
     {
-        public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
+        public OCRSpaceLanguages Language { get; set; }
         public string Result { get; private set; }
 
         private Stream data;
-        private string filename;
+        private string fileName;
+        private OCROptions ocrOptions;
 
-        public OCRSpaceForm()
+        private Dictionary<OCRSpaceSites, string> defaultSiteLinks = new Dictionary<OCRSpaceSites, string>()
+        {
+            { OCRSpaceSites.GoogleTranslate, "https://translate.google.com/#auto/en/" },
+            { OCRSpaceSites.GoogleSearch, "https://www.google.com/search?q=" },
+            { OCRSpaceSites.DeepL, "https://www.deepl.com/translator#auto/en/" },
+            { OCRSpaceSites.Jisho, "https://jisho.org/search/" },
+            { OCRSpaceSites.Ichi, "https://ichi.moe/cl/qr/?q=" }
+        };
+
+        public OCRSpaceForm(OCROptions ocrOptions)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
+
+            this.ocrOptions = ocrOptions;
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
+            cbLanguages.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+
+            cbDefaultSite.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceSites>());
+            cbDefaultSite.SelectedIndex = (int)ocrOptions.DefaultSite;
+
+            Language = ocrOptions.DefaultLanguage;
             txtResult.SupportSelectAll();
         }
 
-        public OCRSpaceForm(Stream data, string filename) : this()
+        public OCRSpaceForm(Stream data, string fileName, OCROptions ocrOptions) : this(ocrOptions)
         {
             this.data = data;
-            this.filename = filename;
+            this.fileName = fileName;
         }
 
         private async void OCRSpaceResultForm_Shown(object sender, EventArgs e)
         {
             UpdateControls();
 
-            if (string.IsNullOrEmpty(Result))
+            if (ocrOptions.ProcessOnLoad && string.IsNullOrEmpty(Result))
             {
-                await StartOCR(data, filename);
+                await StartOCR(data, fileName);
             }
         }
 
@@ -73,41 +107,29 @@ namespace ShareX.UploadersLib
                 txtResult.Text = Result;
             }
 
-            btnStartOCR.Visible = data != null && data.Length > 0 && !string.IsNullOrEmpty(filename);
+            btnStartOCR.Visible = data != null && data.Length > 0 && !string.IsNullOrEmpty(fileName);
         }
 
-        private async Task StartOCR(Stream stream, string filename)
+        public async Task StartOCR(Stream stream, string fileName)
         {
-            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
             {
-                cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = false;
+                cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = btnOpenInBrowser.Enabled = cbDefaultSite.Enabled = false;
                 pbProgress.Visible = true;
 
-                await Task.Run(() =>
-                {
-                    try
-                    {
-                        OCRSpace ocr = new OCRSpace(Language, false);
-                        OCRSpaceResponse response = ocr.DoOCR(stream, filename);
+                Result = await OCRSpace.DoOCRAsync(Language, stream, fileName);
 
-                        if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
-                        {
-                            Result = response.ParsedResults[0].ParsedText;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                    }
-                });
+                if (!string.IsNullOrEmpty(Result) && ocrOptions.AutoCopy)
+                {
+                    ClipboardHelpers.CopyText(Result);
+                }
 
                 if (!IsDisposed)
                 {
                     UpdateControls();
-                    cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
+                    cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = btnOpenInBrowser.Enabled = cbDefaultSite.Enabled = true;
                     pbProgress.Visible = false;
                     txtResult.Focus();
-                    llGoogleTranslate.Enabled = true;
                 }
             }
         }
@@ -119,18 +141,23 @@ namespace ShareX.UploadersLib
 
         private async void btnStartOCR_Click(object sender, EventArgs e)
         {
-            await StartOCR(data, filename);
+            await StartOCR(data, fileName);
         }
 
-        private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void cbDefaultSite_SelectedIndexChanged(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://ocr.space");
+            ocrOptions.DefaultSite = (OCRSpaceSites)cbDefaultSite.SelectedIndex;
         }
 
-        private void llGoogleTranslate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnOpenInBrowser_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://translate.google.com/#auto/en/" + Uri.EscapeDataString(txtResult.Text));
-            Close();
+            string result = txtResult.Text;
+
+            if (!string.IsNullOrWhiteSpace(result))
+            {
+                string site = defaultSiteLinks[ocrOptions.DefaultSite] + URLHelpers.URLEncode(result.Trim());
+                URLHelpers.OpenURL(site);
+            }
         }
     }
 }

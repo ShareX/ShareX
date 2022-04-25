@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,9 +34,9 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingSpeechBalloon;
 
-        private Point tailPosition;
+        private PointF tailPosition;
 
-        public Point TailPosition
+        public PointF TailPosition
         {
             get
             {
@@ -53,14 +53,13 @@ namespace ShareX.ScreenCaptureLib
 
         internal ResizeNode TailNode => Manager.ResizeNodes[(int)NodePosition.Extra];
 
-        // If rectangle average size is 100px then tail width will be 30px
         protected const float TailWidthMultiplier = 0.3f;
 
         public override void OnCreated()
         {
-            base.OnCreated();
-
+            AutoSize(true);
             TailPosition = Rectangle.Location.Add(0, Rectangle.Height + 30);
+            OnCreated(false);
         }
 
         protected override void UseLightResizeNodes()
@@ -83,11 +82,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (TailNode.IsDragging)
             {
-                TailPosition = InputManager.ClientMousePosition;
+                TailPosition = Manager.Form.ScaledClientMousePosition;
             }
         }
 
-        public override void Move(int x, int y)
+        public override void Move(float x, float y)
         {
             base.Move(x, y);
 
@@ -120,7 +119,7 @@ namespace ShareX.ScreenCaptureLib
             DrawSpeechBalloon(g, BorderColor, BorderSize, FillColor, Rectangle, TailPosition);
         }
 
-        protected void DrawSpeechBalloon(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect, Point tailPosition)
+        protected void DrawSpeechBalloon(Graphics g, Color borderColor, int borderSize, Color fillColor, RectangleF rect, PointF tailPosition)
         {
             GraphicsPath gpTail = null;
 
@@ -143,7 +142,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (fillColor.A > 0)
                 {
-                    g.ExcludeClip(rect);
+                    g.ExcludeClip(rect.Round());
 
                     using (Brush brush = new SolidBrush(fillColor))
                     {
@@ -155,7 +154,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (borderSize > 0 && borderColor.A > 0)
                 {
-                    g.ExcludeClip(rect.Offset(-1));
+                    g.ExcludeClip(rect.Offset(-1).Round());
 
                     using (Pen pen = new Pen(borderColor, borderSize))
                     {
@@ -192,14 +191,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected GraphicsPath CreateTailPath(Rectangle rect, Point tailPosition)
+        protected GraphicsPath CreateTailPath(RectangleF rect, PointF tailPosition)
         {
             GraphicsPath gpTail = new GraphicsPath();
-            Point center = rect.Center();
-            int rectAverageSize = (rect.Width + rect.Height) / 2;
-            int tailWidth = (int)(TailWidthMultiplier * rectAverageSize);
+            PointF center = rect.Center();
+            float rectAverageSize = (rect.Width + rect.Height) / 2;
+            float tailWidth = TailWidthMultiplier * rectAverageSize;
             tailWidth = Math.Min(Math.Min(tailWidth, rect.Width), rect.Height);
-            int tailOrigin = tailWidth / 2;
+            float tailOrigin = tailWidth / 2;
             int tailLength = (int)MathHelpers.Distance(center, tailPosition);
             gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
             gpTail.AddLine(0, tailOrigin, tailLength, 0);

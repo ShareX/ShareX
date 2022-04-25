@@ -144,4 +144,10 @@
   <data name="lblOutputExtension.Text" xml:space="preserve">
     <value>Phần mở rộng của tệp tin đầu ra: (Để trống = Sử dụng tên tệp)</value>
   </data>
+  <data name="btnPathBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="cbDeleteInputFile.Text" xml:space="preserve">
+    <value>Xóa tệp đã chọn</value>
+  </data>
 </root>

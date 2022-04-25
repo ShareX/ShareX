@@ -129,9 +129,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 텍스트 입력</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>개행: Ctrl+Enter</value>
-  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>취소</value>
   </data>

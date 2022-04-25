@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -67,7 +67,7 @@ namespace ShareX.HelpersLib
 
             // ITaskbarList3
             [PreserveSig]
-            void SetProgressValue(IntPtr hwnd, UInt64 ullCompleted, UInt64 ullTotal);
+            void SetProgressValue(IntPtr hwnd, ulong ullCompleted, ulong ullTotal);
 
             [PreserveSig]
             void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus tbpFlags);
@@ -140,7 +140,7 @@ namespace ShareX.HelpersLib
         {
             if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
             {
-                currentValue = currentValue.Between(0, maximumValue);
+                currentValue = currentValue.Clamp(0, maximumValue);
 
                 try
                 {

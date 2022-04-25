@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -37,7 +38,9 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool IsValidShape => positions.Count > 0;
 
-        public Point LastPosition
+        public override bool IsSelectable => Manager.CurrentTool == ShapeType.ToolSelect;
+
+        public PointF LastPosition
         {
             get
             {
@@ -57,13 +60,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private List<Point> positions = new List<Point>();
+        private List<PointF> positions = new List<PointF>();
         private bool isPolygonMode;
-
-        public override bool Intersects(Point position)
-        {
-            return false;
-        }
 
         public override void ShowNodes()
         {
@@ -75,11 +73,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (Manager.IsCornerMoving && !Manager.IsPanning)
                 {
-                    Move(InputManager.MouseVelocity);
+                    Move(Manager.Form.ScaledClientMouseVelocity);
                 }
                 else
                 {
-                    Point pos = InputManager.ClientMousePosition;
+                    PointF pos = Manager.Form.ScaledClientMousePosition;
 
                     if (positions.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
                     {
@@ -103,7 +101,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Manager.IsMoving)
             {
-                Move(InputManager.MouseVelocity);
+                Move(Manager.Form.ScaledClientMouseVelocity);
             }
         }
 
@@ -114,15 +112,17 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawFreehand(Graphics g)
         {
+            int borderSize = Math.Max(BorderSize, 1);
+
             if (Shadow)
             {
-                DrawFreehand(g, ShadowColor, BorderSize, positions.Select(x => x.Add(ShadowOffset)).ToArray());
+                DrawFreehand(g, ShadowColor, borderSize, BorderStyle, positions.Select(x => x.Add(ShadowOffset)).ToArray());
             }
 
-            DrawFreehand(g, BorderColor, BorderSize, positions.ToArray());
+            DrawFreehand(g, BorderColor, borderSize, BorderStyle, positions.ToArray());
         }
 
-        protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, Point[] points)
+        protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, PointF[] points)
         {
             if (points.Length > 0 && borderSize > 0 && borderColor.A > 0)
             {
@@ -145,8 +145,13 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    using (Pen pen = new Pen(borderColor, borderSize) { StartCap = LineCap.Round, EndCap = LineCap.Round, LineJoin = LineJoin.Round })
+                    using (Pen pen = new Pen(borderColor, borderSize))
                     {
+                        pen.StartCap = LineCap.Round;
+                        pen.EndCap = LineCap.Round;
+                        pen.LineJoin = LineJoin.Round;
+                        pen.DashStyle = (DashStyle)borderStyle;
+
                         g.DrawLines(pen, points.ToArray());
                     }
                 }
@@ -155,7 +160,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void Move(int x, int y)
+        public override void Move(float x, float y)
         {
             for (int i = 0; i < positions.Count; i++)
             {

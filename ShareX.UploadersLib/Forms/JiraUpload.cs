@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -22,8 +22,6 @@
 */
 
 #endregion License Information (GPL v3)
-
-// gpailler
 
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
@@ -51,17 +49,13 @@ namespace ShareX.UploadersLib
         public JiraUpload()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
         }
 
         public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()
         {
-            if (getSummary == null)
-            {
-                throw new ArgumentNullException("getSummary");
-            }
             this.issuePrefix = issuePrefix;
-            this.getSummary = getSummary;
+            this.getSummary = getSummary ?? throw new ArgumentNullException(nameof(getSummary));
         }
 
         private void JiraUpload_Load(object sender, EventArgs e)
@@ -90,7 +84,7 @@ namespace ShareX.UploadersLib
 
         private void UpdateSummaryAsync(Task<string> task)
         {
-            Invoke((Action)(() => UpdateSummary(task.Result)));
+            this.InvokeSafe(() => UpdateSummary(task.Result));
         }
 
         private void UpdateSummary(string summary)

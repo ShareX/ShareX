@@ -123,7 +123,4 @@
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Penjelajah web</value>
   </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>Teks</value>
-  </data>
 </root>

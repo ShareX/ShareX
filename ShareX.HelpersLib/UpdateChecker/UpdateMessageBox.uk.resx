@@ -123,6 +123,9 @@
   <data name="btnYes.Text" xml:space="preserve">
     <value>Так</value>
   </data>
+  <data name="cbDontShow.Text" xml:space="preserve">
+    <value>Не пропонувати до наступного запуску ShareX</value>
+  </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>Переглянути історію змін</value>
   </data>

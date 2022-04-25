@@ -1,0 +1,761 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="scMain.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="scMain.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tsmiFullscreen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiFullscreen.Text" xml:space="preserve">
+    <value>تمام صفحه</value>
+  </data>
+  <data name="tsmiWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiWindow.Text" xml:space="preserve">
+    <value>پنجره</value>
+  </data>
+  <data name="tsmiMonitor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiMonitor.Text" xml:space="preserve">
+    <value>صفحه نمایش</value>
+  </data>
+  <data name="tsmiRectangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiRectangle.Text" xml:space="preserve">
+    <value>ناحیه</value>
+  </data>
+  <data name="tsmiRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiLastRegion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiLastRegion.Text" xml:space="preserve">
+    <value>آخرین ناحیه</value>
+  </data>
+  <data name="tsmiScreenRecordingFFmpeg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>ضبط فیلم صفحه</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
+    <value>ضبط فیلم صفحه (GIF)</value>
+  </data>
+  <data name="tsmiScrollingCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTextCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>تشخیص متن از عکس (OCR) ...</value>
+  </data>
+  <data name="tsmiAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiAutoCapture.Text" xml:space="preserve">
+    <value>ضبط خودکار ...</value>
+  </data>
+  <data name="tssCapture1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
+  </data>
+  <data name="tsmiShowCursor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>نمایش کرسر</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>تاخیر ضبط</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="tsmiUploadFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadFile.Text" xml:space="preserve">
+    <value>آپلود فایل ...</value>
+  </data>
+  <data name="tsmiUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadFolder.Text" xml:space="preserve">
+    <value>آپلود پوشه ...</value>
+  </data>
+  <data name="tsmiUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadClipboard.Text" xml:space="preserve">
+    <value>آپلود از کلیپ بورد ...</value>
+  </data>
+  <data name="tsmiUploadText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>آپلود متن ...</value>
+  </data>
+  <data name="tsmiUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadURL.Text" xml:space="preserve">
+    <value>آپلود از طریق URL</value>
+  </data>
+  <data name="tsmiUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiShortenURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>کوتاه کردن آدرس ...</value>
+  </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>آپلود</value>
+  </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>انتخاب رنگ ...</value>
+  </data>
+  <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
+    <value>انتخاب رنگ صفحه ...</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>ویرایشگر عکس ...</value>
+  </data>
+  <data name="tsmiImageEffects.Text" xml:space="preserve">
+    <value>افکت های عکس ...</value>
+  </data>
+  <data name="tsmiHashCheck.Text" xml:space="preserve">
+    <value>چک کردن Hash</value>
+  </data>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>کد QR ...</value>
+  </data>
+  <data name="tsmiRuler.Text" xml:space="preserve">
+    <value>خط کش...</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>ترکیب کننده عکس...</value>
+  </data>
+  <data name="tsmiMonitorTest.Text" xml:space="preserve">
+    <value>تست صفحه نمایش ...</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>ابزار</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
+    <value>وظایف بعد از ضبط</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
+    <value>وظایف بعد از آپلود</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>مقصدها</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>تنظیمات وظیفه ...</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>تنظیمات برنامه ...</value>
+  </data>
+  <data name="tsbHotkeySettings.Text" xml:space="preserve">
+    <value>تنظیمات کلیدهای میانبر...</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
+    <value>رجوع به فولدر عکس ها</value>
+  </data>
+  <data name="tsbHistory.Text" xml:space="preserve">
+    <value>تاریخچه ...</value>
+  </data>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>تاریخچه عکس ...</value>
+  </data>
+  <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>خطایابی</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>کمک مالی ...</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>درباره ما ...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>خلاصه کننده ویدئو ...</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>کوتاه کننده لینک</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>سرویس های اشتراک گذاری لینک</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
+    <value>آپلود</value>
+  </data>
+  <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
+    <value>آپلود با کشیدن و رهاکردن ...</value>
+  </data>
+  <data name="tsmiTweetMessage.Text" xml:space="preserve">
+    <value>پیام توئیت ...</value>
+  </data>
+  <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
+    <value>گردش کار</value>
+  </data>
+  <data name="tsmiTrayWindow.Text" xml:space="preserve">
+    <value>پنجره</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>خلاصه کننده ویدئو ...</value>
+  </data>
+  <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
+    <value>کوتاه کننده لینک</value>
+  </data>
+  <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
+    <value>سرویس های اشتراک گذاری لینک</value>
+  </data>
+  <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
+    <value>آپلود از طریق URL</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>آپلود متن ...</value>
+  </data>
+  <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
+    <value>آپلود پوشه ...</value>
+  </data>
+  <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
+    <value>اپلود فایل ...</value>
+  </data>
+  <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
+    <value>آپلود با کشیدن و رهاکردن ...</value>
+  </data>
+  <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
+    <value>آپلود از کلیپ بورد ...</value>
+  </data>
+  <data name="tsmiTrayUpload.Text" xml:space="preserve">
+    <value>آپلود</value>
+  </data>
+  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
+    <value>پیام توئیت ...</value>
+  </data>
+  <data name="tsmiTrayTools.Text" xml:space="preserve">
+    <value>ابزار</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>غیرفعال کردن کلیدهای میانبر</value>
+  </data>
+  <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
+    <value>آپلود کننده های متن</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>تشخیص متن از عکس (OCR) ...</value>
+  </data>
+  <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
+    <value>تنظیمات وظیفه ...</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>نمایش کرسر</value>
+  </data>
+  <data name="tsmiTrayShow.Text" xml:space="preserve">
+    <value>باز کردن پنجره اصلی</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>کوتاه کردن آدرس ...</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>ضبط تصویر با اسکرول ...</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>۵ ثانیه</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>۴ ثانیه</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>۳ ثانیه</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>۲ ثانیه</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>۱ ثانیه</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>بدون تاخیر</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>تاخیر ضبط</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
+    <value>ضبط فیلم صفحه (GIF)</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>ضبط فیلم صفحه</value>
+  </data>
+  <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
+    <value>انتخاب رنگ صفحه ...</value>
+  </data>
+  <data name="tsmiTrayRuler.Text" xml:space="preserve">
+    <value>خط کش...</value>
+  </data>
+  <data name="tsmiTrayRectangle.Text" xml:space="preserve">
+    <value>ناحیه</value>
+  </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>لینک های اخیر</value>
+  </data>
+  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
+    <value>کد QR ...</value>
+  </data>
+  <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
+    <value>تست صفحه نمایش ...</value>
+  </data>
+  <data name="tsmiTrayMonitor.Text" xml:space="preserve">
+    <value>صفحه نمایش</value>
+  </data>
+  <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
+    <value>آخرین ناحیه</value>
+  </data>
+  <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
+    <value>لیست کننده کل دایرکتوری ...</value>
+  </data>
+  <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
+    <value>آپلودکننده های عکس</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>خلاصه کننده عکس ...</value>
+  </data>
+  <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
+    <value>تاریخچه عکس ...</value>
+  </data>
+  <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
+    <value>افکت های عکس ...</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>ویرایشگر عکس ...</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>ترکیب کننده عکس...</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>ناحیه (شفاف)</value>
+  </data>
+  <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
+    <value>ناحیه (روشن)</value>
+  </data>
+  <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
+    <value>تنظیمات کلیدهای میانبر...</value>
+  </data>
+  <data name="tsmiTrayHistory.Text" xml:space="preserve">
+    <value>تاریخچه ...</value>
+  </data>
+  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
+    <value>چک کردن Hash ...</value>
+  </data>
+  <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
+    <value>تمام صفحه</value>
+  </data>
+  <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
+    <value>آپلودکننده های فایل</value>
+  </data>
+  <data name="tsmiTrayExit.Text" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
+    <value>تغییردادن DNS ...</value>
+  </data>
+  <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
+    <value>تنظیمات مقصد ...</value>
+  </data>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>مقصدها</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>تنظیمات آپلود سفارشی ...</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>انتخاب رنگ ...</value>
+  </data>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
+    <value>ضبط خودکار ...</value>
+  </data>
+  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
+    <value>تنظیمات برنامه ...</value>
+  </data>
+  <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
+    <value>وظایف بعد از آپلود</value>
+  </data>
+  <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
+    <value>وظایف بعد از ضبط</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>آپلود کننده های متن</value>
+  </data>
+  <data name="tsmiTestURLShortener.Text" xml:space="preserve">
+    <value>تست کردن کوتاه کننده آٔدرس</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>۱ ثانیه</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>۲ ثانیه</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>۳ ثانیه</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>۴ ثانیه</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>۵ ثانیه</value>
+  </data>
+  <data name="tsmiClearList.Text" xml:space="preserve">
+    <value>پاک کردن لیست وظایف</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>ترکیب کردن عکس ها ...</value>
+  </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>کپی</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>تنظیمات آپلود سفارشی ...</value>
+  </data>
+  <data name="tsmiShowDebugLog.Text" xml:space="preserve">
+    <value>خطایابی ...</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>کلید Delete</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
+    <value>حذف فایل بصورت محلی ...</value>
+  </data>
+  <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
+    <value>آدرس حذف</value>
+  </data>
+  <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
+    <value>آدرس حذف</value>
+  </data>
+  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
+    <value>تنظیمات مقصد ...</value>
+  </data>
+  <data name="tsmiIndexFolder.Text" xml:space="preserve">
+    <value>لیست کننده کل دایرکتوری ...</value>
+  </data>
+  <data name="tsmiDNSChanger.Text" xml:space="preserve">
+    <value>تغییردادن DNS ...</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>دانلود (بارگذاری)</value>
+  </data>
+  <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
+    <value>ویرایش عکس ...</value>
+  </data>
+  <data name="chElapsed.Text" xml:space="preserve">
+    <value>زمان گذشته</value>
+  </data>
+  <data name="tsmiOpenFile.Text" xml:space="preserve">
+    <value>فایل</value>
+  </data>
+  <data name="tsmiCopyFile.Text" xml:space="preserve">
+    <value>فایل </value>
+  </data>
+  <data name="tsmiCopyFileName.Text" xml:space="preserve">
+    <value>نام فایل</value>
+  </data>
+  <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
+    <value>نام فایل به همراه پسوند</value>
+  </data>
+  <data name="tsmiCopyFilePath.Text" xml:space="preserve">
+    <value>مسیرفایل</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>آپلودکننده های فایل</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>نام فایل</value>
+  </data>
+  <data name="tsmiOpenFolder.Text" xml:space="preserve">
+    <value>پوشه</value>
+  </data>
+  <data name="tsmiCopyFolder.Text" xml:space="preserve">
+    <value>پوشه</value>
+  </data>
+  <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
+    <value>عکس HTML</value>
+  </data>
+  <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
+    <value>لینک HTML</value>
+  </data>
+  <data name="tsmiCopyImage.Text" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>ابعاد عکس</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>خلاصه کننده عکس ...</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>آپلودکننده های عکس</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>بدون تاخیر</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>تصویر OCR ...</value>
+  </data>
+  <data name="tsmiOpen.Text" xml:space="preserve">
+    <value>بازکردن</value>
+  </data>
+  <data name="chProgress.Text" xml:space="preserve">
+    <value>پیشرفت</value>
+  </data>
+  <data name="tsmiRectangleLight.Text" xml:space="preserve">
+    <value>ناحیه (روشن)</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>ناحیه (شفاف)</value>
+  </data>
+  <data name="chRemaining.Text" xml:space="preserve">
+    <value>باقیمانده</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>پاک کردن وظیفه از لیست</value>
+  </data>
+  <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
+    <value>رجوع به فولدر عکس ها</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>ضبط تصویر با اسکرول ...</value>
+  </data>
+  <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
+    <value>اشتراک گذاری آدرس</value>
+  </data>
+  <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
+    <value>کوتاه کردن آدرس</value>
+  </data>
+  <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
+    <value>ادرس کوتاه شده</value>
+  </data>
+  <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
+    <value>ادرس کوتاه شده</value>
+  </data>
+  <data name="tsmiShowErrors.Text" xml:space="preserve">
+    <value>نمایش خطاها</value>
+  </data>
+  <data name="tsmiShowQRCode.Text" xml:space="preserve">
+    <value>نمایش کد QR ...</value>
+  </data>
+  <data name="tsmiShowResponse.Text" xml:space="preserve">
+    <value>نمایش پاسخ ...</value>
+  </data>
+  <data name="chSpeed.Text" xml:space="preserve">
+    <value>سرعت</value>
+  </data>
+  <data name="chStatus.Text" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="tsmiStopUpload.Text" xml:space="preserve">
+    <value>توقف آپلود</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>سوییچ به حالت نمایش خلاصه</value>
+  </data>
+  <data name="tsmiTestFileUpload.Text" xml:space="preserve">
+    <value>تست آپلود فایل</value>
+  </data>
+  <data name="tsmiTestImageUpload.Text" xml:space="preserve">
+    <value>تست آپلود عکس</value>
+  </data>
+  <data name="tsmiTestTextUpload.Text" xml:space="preserve">
+    <value>تست آپلود متن</value>
+  </data>
+  <data name="tsmiTestURLSharing.Text" xml:space="preserve">
+    <value>تست به اشتراک گذاری آدرس</value>
+  </data>
+  <data name="tsmiCopyText.Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="tsddbWorkflows.Text" xml:space="preserve">
+    <value>گردش کار</value>
+  </data>
+  <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
+    <value>آدرس کوچک</value>
+  </data>
+  <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
+    <value>فایل کوچک</value>
+  </data>
+  <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
+    <value>آدرس کوچک</value>
+  </data>
+  <data name="tsmiCopyThumbnailFile.Text" xml:space="preserve">
+    <value>فایل کوچک</value>
+  </data>
+  <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
+    <value>عکس کوچک</value>
+  </data>
+</root>

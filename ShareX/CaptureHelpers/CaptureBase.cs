@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -45,9 +45,14 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
+            if (taskSettings.GeneralSettings.ToastWindowAutoHide)
             {
-                int delay = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
+                NotificationForm.CloseActiveForm();
+            }
+
+            if (taskSettings.CaptureSettings.ScreenshotDelay > 0)
+            {
+                int delay = (int)(taskSettings.CaptureSettings.ScreenshotDelay * 1000);
 
                 Task.Delay(delay).ContinueInCurrentContext(() =>
                 {
@@ -60,7 +65,7 @@ namespace ShareX
             }
         }
 
-        protected abstract ImageInfo Execute(TaskSettings taskSettings);
+        protected abstract TaskMetadata Execute(TaskSettings taskSettings);
 
         private void CaptureInternal(TaskSettings taskSettings, bool autoHideForm)
         {
@@ -70,12 +75,12 @@ namespace ShareX
                 Thread.Sleep(250);
             }
 
-            ImageInfo imageInfo = null;
+            TaskMetadata metadata = null;
 
             try
             {
                 AllowAnnotation = true;
-                imageInfo = Execute(taskSettings);
+                metadata = Execute(taskSettings);
             }
             catch (Exception ex)
             {
@@ -88,13 +93,13 @@ namespace ShareX
                     Program.MainForm.ForceActivate();
                 }
 
-                AfterCapture(imageInfo, taskSettings);
+                AfterCapture(metadata, taskSettings);
             }
         }
 
-        private void AfterCapture(ImageInfo imageInfo, TaskSettings taskSettings)
+        private void AfterCapture(TaskMetadata metadata, TaskSettings taskSettings)
         {
-            if (imageInfo != null && imageInfo.Image != null)
+            if (metadata != null && metadata.Image != null)
             {
                 if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
                 {
@@ -112,23 +117,23 @@ namespace ShareX
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }
 
-                UploadManager.RunImageTask(imageInfo, taskSettings);
+                UploadManager.RunImageTask(metadata, taskSettings);
             }
         }
 
-        protected ImageInfo CreateImageInfo()
+        protected TaskMetadata CreateMetadata()
         {
-            return CreateImageInfo(Rectangle.Empty, null);
+            return CreateMetadata(Rectangle.Empty, null);
         }
 
-        protected ImageInfo CreateImageInfo(Rectangle insideRect)
+        protected TaskMetadata CreateMetadata(Rectangle insideRect)
         {
-            return CreateImageInfo(insideRect, "explorer");
+            return CreateMetadata(insideRect, "explorer");
         }
 
-        protected ImageInfo CreateImageInfo(Rectangle insideRect, string ignoreProcess)
+        protected TaskMetadata CreateMetadata(Rectangle insideRect, string ignoreProcess)
         {
-            ImageInfo imageInfo = new ImageInfo();
+            TaskMetadata metadata = new TaskMetadata();
 
             IntPtr handle = NativeMethods.GetForegroundWindow();
             WindowInfo windowInfo = new WindowInfo(handle);
@@ -136,10 +141,10 @@ namespace ShareX
             if ((ignoreProcess == null || !windowInfo.ProcessName.Equals(ignoreProcess, StringComparison.InvariantCultureIgnoreCase)) &&
                 (insideRect.IsEmpty || windowInfo.Rectangle.Contains(insideRect)))
             {
-                imageInfo.UpdateInfo(windowInfo);
+                metadata.UpdateInfo(windowInfo);
             }
 
-            return imageInfo;
+            return metadata;
         }
     }
 }

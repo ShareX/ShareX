@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ShareX.HelpersLib
 {
@@ -97,7 +98,7 @@ namespace ShareX.HelpersLib
 
         public static string Replace(this string str, string oldValue, string newValue, StringComparison comparison)
         {
-            if (string.IsNullOrEmpty(oldValue))
+            if (string.IsNullOrEmpty(str) || string.IsNullOrEmpty(oldValue))
             {
                 return str;
             }
@@ -167,7 +168,7 @@ namespace ShareX.HelpersLib
             return text;
         }
 
-        public static string BatchReplace(this string text, Dictionary<string, string> replace)
+        public static string BatchReplace(this string text, Dictionary<string, string> replace, StringComparison comparisonType = StringComparison.CurrentCulture)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -179,15 +180,16 @@ namespace ShareX.HelpersLib
 
                 foreach (KeyValuePair<string, string> entry in replace)
                 {
-                    if (current.StartsWith(entry.Key))
+                    if (current.StartsWith(entry.Key, comparisonType))
                     {
                         if (!string.IsNullOrEmpty(entry.Value))
                         {
                             sb.Append(entry.Value);
                         }
+
                         i += entry.Key.Length - 1;
                         replaced = true;
-                        continue;
+                        break;
                     }
                 }
 
@@ -277,8 +279,7 @@ namespace ShareX.HelpersLib
 
         public static bool IsNumber(this string text)
         {
-            int num;
-            return int.TryParse(text, out num);
+            return int.TryParse(text, out _);
         }
 
         public static string[] Lines(this string text)
@@ -286,10 +287,15 @@ namespace ShareX.HelpersLib
             return text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
         }
 
+        public static string ReplaceNewLines(this string text, string replacement = "\r\n")
+        {
+            return Regex.Replace(text, @"\r\n?|\n", replacement);
+        }
+
         public static IEnumerable<Tuple<string, string>> ForEachBetween(this string text, string front, string back)
         {
             int f = 0;
-            int b = 0;
+            int b;
             while (text.Length > f && (f = text.IndexOf(front, f)) >= 0 && (b = text.IndexOf(back, f + front.Length)) >= 0)
             {
                 string result = text.Substring(f, (b + back.Length) - f);
@@ -336,6 +342,13 @@ namespace ShareX.HelpersLib
         public static string ToBase(this string text, int from, int to, string digits)
         {
             return text.FromBase(from, digits).ToBase(to, digits);
+        }
+
+        public static string PadCenter(this string str, int totalWidth, char paddingChar = ' ')
+        {
+            int padding = totalWidth - str.Length;
+            int padLeft = (padding / 2) + str.Length;
+            return str.PadLeft(padLeft, paddingChar).PadRight(totalWidth, paddingChar);
         }
     }
 }

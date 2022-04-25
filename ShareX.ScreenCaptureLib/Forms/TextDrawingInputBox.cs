@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,16 +37,18 @@ namespace ShareX.ScreenCaptureLib
     {
         public string InputText { get; private set; }
         public TextDrawingOptions Options { get; private set; }
+        public ColorPickerOptions ColorPickerOptions { get; private set; }
 
         private int processKeyCount;
 
-        public TextDrawingInputBox(string text, TextDrawingOptions options, bool supportGradient)
+        public TextDrawingInputBox(string text, TextDrawingOptions options, bool supportGradient, ColorPickerOptions colorPickerOptions)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
 
             InputText = text;
             Options = options;
+            ColorPickerOptions = colorPickerOptions;
 
             if (InputText != null)
             {
@@ -67,6 +69,8 @@ namespace ShareX.ScreenCaptureLib
             }
 
             nudTextSize.SetValue(Options.Size);
+
+            btnTextColor.ColorPickerOptions = ColorPickerOptions;
             btnTextColor.Color = Options.Color;
 
             btnGradient.Visible = supportGradient;
@@ -98,8 +102,8 @@ namespace ShareX.ScreenCaptureLib
             cbItalic.Checked = Options.Italic;
             cbUnderline.Checked = Options.Underline;
 
-            UpdateHorizontalAlignmentImage();
-            UpdateVerticalAlignmentImage();
+            UpdateButtonImages();
+            UpdateEnterTip();
 
             txtInput.SupportSelectAll();
         }
@@ -114,6 +118,18 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Close();
+        }
+
+        private void UpdateEnterTip()
+        {
+            if (Options.EnterKeyNewLine)
+            {
+                lblTip.Text = Resources.NewLineEnterOKCtrlEnter;
+            }
+            else
+            {
+                lblTip.Text = Resources.NewLineCtrlEnterOKEnter;
+            }
         }
 
         private void TextDrawingInputBox_Shown(object sender, EventArgs e)
@@ -151,7 +167,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void tsmiSecondColor_Click(object sender, EventArgs e)
         {
-            ColorPickerForm.PickColor(Options.Color2, out Color newColor, this);
+            ColorPickerForm.PickColor(Options.Color2, out Color newColor, this, null, ColorPickerOptions);
             Options.Color2 = newColor;
             if (tsmiSecondColor.Image != null) tsmiSecondColor.Image.Dispose();
             tsmiSecondColor.Image = ImageHelpers.CreateColorPickerIcon(Options.Color2, new Rectangle(0, 0, 16, 16));
@@ -246,6 +262,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void txtInput_KeyDown(object sender, KeyEventArgs e)
         {
+            Keys keyOK = Options.EnterKeyNewLine ? Keys.Control | Keys.Enter : Keys.Enter;
+
             // If we get VK_PROCESSKEY, the next KeyUp event will be fired by the IME
             // we should ignore these when checking if enter is pressed (GH-3621)
             if (e.KeyCode == Keys.ProcessKey)
@@ -253,7 +271,7 @@ namespace ShareX.ScreenCaptureLib
                 processKeyCount += 1;
             }
 
-            if (e.KeyData == Keys.Enter || e.KeyData == Keys.Escape)
+            if (e.KeyData == keyOK || e.KeyData == Keys.Escape)
             {
                 e.SuppressKeyPress = true;
             }
@@ -265,7 +283,9 @@ namespace ShareX.ScreenCaptureLib
             // IME suggestion box, not by the user intentionally pressing Enter
             if (processKeyCount == 0)
             {
-                if (e.KeyData == Keys.Enter)
+                Keys keyOK = Options.EnterKeyNewLine ? Keys.Control | Keys.Enter : Keys.Enter;
+
+                if (e.KeyData == keyOK)
                 {
                     Close(DialogResult.OK);
                 }
@@ -276,6 +296,12 @@ namespace ShareX.ScreenCaptureLib
             }
 
             processKeyCount = Math.Max(0, processKeyCount - 1);
+        }
+
+        private void btnSwapEnterKey_Click(object sender, EventArgs e)
+        {
+            Options.EnterKeyNewLine = !Options.EnterKeyNewLine;
+            UpdateEnterTip();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -326,19 +352,34 @@ namespace ShareX.ScreenCaptureLib
             txtInput.TextAlign = horizontalAlignment;
         }
 
+        private void UpdateButtonImages()
+        {
+            cbBold.Image = ShareXResources.IsDarkTheme ? Resources.edit_bold_white : Resources.edit_bold;
+            cbItalic.Image = ShareXResources.IsDarkTheme ? Resources.edit_italic_white : Resources.edit_italic;
+            cbUnderline.Image = ShareXResources.IsDarkTheme ? Resources.edit_underline_white : Resources.edit_underline;
+            UpdateHorizontalAlignmentImage();
+            UpdateVerticalAlignmentImage();
+            tsmiAlignmentLeft.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_white : Resources.edit_alignment;
+            tsmiAlignmentCenter.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_center_white : Resources.edit_alignment_center;
+            tsmiAlignmentRight.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_right_white : Resources.edit_alignment_right;
+            tsmiAlignmentTop.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_top_white : Resources.edit_vertical_alignment_top;
+            tsmiAlignmentMiddle.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_middle_white : Resources.edit_vertical_alignment_middle;
+            tsmiAlignmentBottom.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_white : Resources.edit_vertical_alignment;
+        }
+
         private void UpdateHorizontalAlignmentImage()
         {
             switch (Options.AlignmentHorizontal)
             {
                 default:
                 case StringAlignment.Near:
-                    btnAlignmentHorizontal.Image = Resources.edit_alignment;
+                    btnAlignmentHorizontal.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_white : Resources.edit_alignment;
                     break;
                 case StringAlignment.Center:
-                    btnAlignmentHorizontal.Image = Resources.edit_alignment_center;
+                    btnAlignmentHorizontal.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_center_white : Resources.edit_alignment_center;
                     break;
                 case StringAlignment.Far:
-                    btnAlignmentHorizontal.Image = Resources.edit_alignment_right;
+                    btnAlignmentHorizontal.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_right_white : Resources.edit_alignment_right;
                     break;
             }
         }
@@ -349,13 +390,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 default:
                 case StringAlignment.Near:
-                    btnAlignmentVertical.Image = Resources.edit_vertical_alignment_top;
+                    btnAlignmentVertical.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_top_white : Resources.edit_vertical_alignment_top;
                     break;
                 case StringAlignment.Center:
-                    btnAlignmentVertical.Image = Resources.edit_vertical_alignment_middle;
+                    btnAlignmentVertical.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_middle_white : Resources.edit_vertical_alignment_middle;
                     break;
                 case StringAlignment.Far:
-                    btnAlignmentVertical.Image = Resources.edit_vertical_alignment;
+                    btnAlignmentVertical.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_white : Resources.edit_vertical_alignment;
                     break;
             }
         }

@@ -133,6 +133,6 @@
     <value>제거</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>기본 단축키 복구</value>
+    <value>기본 단축키 복구...</value>
   </data>
 </root>

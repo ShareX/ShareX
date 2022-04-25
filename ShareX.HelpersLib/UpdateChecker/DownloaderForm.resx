@@ -129,7 +129,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>3</value>
   </data>
   <data name="lblProgress.Text" xml:space="preserve">
     <value>Progress:</value>
@@ -138,7 +138,7 @@
     <value>lblProgress</value>
   </data>
   <data name="&gt;&gt;lblProgress.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblProgress.Parent" xml:space="preserve">
     <value>$this</value>
@@ -156,7 +156,7 @@
     <value>472, 24</value>
   </data>
   <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>2</value>
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
     <value>Status:</value>
@@ -165,7 +165,7 @@
     <value>lblStatus</value>
   </data>
   <data name="&gt;&gt;lblStatus.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblStatus.Parent" xml:space="preserve">
     <value>$this</value>
@@ -183,7 +183,7 @@
     <value>472, 24</value>
   </data>
   <data name="lblFilename.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>1</value>
   </data>
   <data name="lblFilename.Text" xml:space="preserve">
     <value>Filename:</value>
@@ -192,7 +192,7 @@
     <value>lblFilename</value>
   </data>
   <data name="&gt;&gt;lblFilename.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblFilename.Parent" xml:space="preserve">
     <value>$this</value>
@@ -210,7 +210,7 @@
     <value>128, 32</value>
   </data>
   <data name="btnAction.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="btnAction.Text" xml:space="preserve">
     <value>Download</value>
@@ -219,7 +219,7 @@
     <value>btnAction</value>
   </data>
   <data name="&gt;&gt;btnAction.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnAction.Parent" xml:space="preserve">
     <value>$this</value>
@@ -234,13 +234,17 @@
     <value>336, 32</value>
   </data>
   <data name="pbProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>4</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pbProgress.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="&gt;&gt;pbProgress.Name" xml:space="preserve">
     <value>pbProgress</value>
   </data>
   <data name="&gt;&gt;pbProgress.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbProgress.Parent" xml:space="preserve">
     <value>$this</value>
@@ -252,12 +256,11 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>488, 205</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -268,6 +271,6 @@
     <value>DownloaderForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -123,4 +123,7 @@
   <data name="cbAccountType.Items" xml:space="preserve">
     <value>Анонім</value>
   </data>
+  <data name="cbAccountType.Items1" xml:space="preserve">
+    <value>Користувач</value>
+  </data>
 </root>

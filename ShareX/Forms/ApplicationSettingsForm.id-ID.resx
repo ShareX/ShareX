@@ -222,9 +222,6 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Tampilkan "Unggah dengan ShareX" di menu konteks Windows Explorer</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Catatan: Anda harus membuka kembali ShareX untuk menerapkan perubahan folder pribadi.</value>
-  </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Jalur</value>
   </data>
@@ -236,9 +233,6 @@
   </data>
   <data name="btnImport.Text" xml:space="preserve">
     <value>Impor pengaturan...</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Ekspor / Impor</value>
   </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
     <value>0 - 25 (0 nonaktif)</value>
@@ -263,12 +257,6 @@
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Format</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Hasil</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Coba kembali</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Unggah</value>
@@ -308,12 +296,6 @@
   </data>
   <data name="tpPrint.Text" xml:space="preserve">
     <value>Cetak</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Format papan klip - ini muncul di bawah Salin dalam menu konteks jendela utama</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Gunakan preferensi urutan pengunggah sekunder saat mencoba kembali</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Pengunggah gambar sekunder</value>

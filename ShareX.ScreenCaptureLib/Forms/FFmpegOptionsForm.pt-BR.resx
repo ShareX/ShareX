@@ -199,7 +199,7 @@
     <value>Modo da paleta:</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>Instala fonte de vídeo/áudio "screen-capture-recorder" e "virtual-audio-capturer"</value>
+    <value>Instala fonte de áudio/vídeo "captura de tela" e "capturador de áudio virtual".</value>
   </data>
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>Modo de pontilhado:</value>
@@ -231,5 +231,35 @@ Da mesma forma, para qualidade de encoding constante, você irá simplesmente ec
   <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
     <value>Para codificação em tempo real como gravação de tela é recomendado que se selecione uma predefinição mais rápida.
 Caso contrário a gravação não conseguirá continuar e várias quedas de quadros acontecerão.</value>
+  </data>
+  <data name="lblx264CRF.Text" xml:space="preserve">
+    <value>CRF:</value>
+  </data>
+  <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
+    <value>O padrão é 128k.</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Controla o índice da escala Bayer, uma escala maior exibirá mais faixas. O padrão é 2.</value>
+  </data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Predefinição:</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>Qualidade:</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Uso:</value>
+  </data>
+  <data name="lblQSVPreset.Text" xml:space="preserve">
+    <value>Predefinição:</value>
+  </data>
+  <data name="lblQSVBitrate.Text" xml:space="preserve">
+    <value>Taxa de bits:</value>
+  </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>Taxa de bits:</value>
+  </data>
+  <data name="lblOpusQuality.Text" xml:space="preserve">
+    <value>Taxa de bits:</value>
   </data>
 </root>

@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader1 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "Name", 100, 0, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader2 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "Size", 100, 1, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader3 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "Dimensions", 100, 2, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader4 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "Path", 100, 3, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.ilvImages = new Manina.Windows.Forms.ImageListView();
@@ -61,24 +65,43 @@
             // 
             this.ilvImages.AllowDrag = true;
             this.ilvImages.AllowDuplicateFileNames = true;
+            this.ilvImages.AllowItemReorder = false;
             this.ilvImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ilvImages.CacheLimit = "100MB";
-            this.ilvImages.ColumnHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            ımageListViewColumnHeader1.Comparer = null;
+            ımageListViewColumnHeader1.DisplayIndex = 0;
+            ımageListViewColumnHeader1.Grouper = null;
+            ımageListViewColumnHeader1.Key = "";
+            ımageListViewColumnHeader1.Type = Manina.Windows.Forms.ColumnType.Name;
+            ımageListViewColumnHeader2.Comparer = null;
+            ımageListViewColumnHeader2.DisplayIndex = 1;
+            ımageListViewColumnHeader2.Grouper = null;
+            ımageListViewColumnHeader2.Key = "";
+            ımageListViewColumnHeader2.Type = Manina.Windows.Forms.ColumnType.FileSize;
+            ımageListViewColumnHeader3.Comparer = null;
+            ımageListViewColumnHeader3.DisplayIndex = 2;
+            ımageListViewColumnHeader3.Grouper = null;
+            ımageListViewColumnHeader3.Key = "";
+            ımageListViewColumnHeader3.Type = Manina.Windows.Forms.ColumnType.Dimensions;
+            ımageListViewColumnHeader4.Comparer = null;
+            ımageListViewColumnHeader4.DisplayIndex = 3;
+            ımageListViewColumnHeader4.Grouper = null;
+            ımageListViewColumnHeader4.Key = "";
+            ımageListViewColumnHeader4.Type = Manina.Windows.Forms.ColumnType.FilePath;
             this.ilvImages.Columns.AddRange(new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader[] {
-            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "", 100, 0, true),
-            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "", 100, 1, true),
-            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "", 100, 2, true),
-            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "", 100, 3, true)});
+            ımageListViewColumnHeader1,
+            ımageListViewColumnHeader2,
+            ımageListViewColumnHeader3,
+            ımageListViewColumnHeader4});
             resources.ApplyResources(this.ilvImages, "ilvImages");
-            this.ilvImages.GroupHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.ilvImages.Name = "ilvImages";
             this.ilvImages.PersistentCacheDirectory = "";
             this.ilvImages.PersistentCacheSize = ((long)(100));
             this.ilvImages.ThumbnailSize = new System.Drawing.Size(100, 100);
+            this.ilvImages.UseWIC = true;
             this.ilvImages.ItemDoubleClick += new Manina.Windows.Forms.ItemDoubleClickEventHandler(this.ilvImages_ItemDoubleClick);
             this.ilvImages.SelectionChanged += new System.EventHandler(this.ilvImages_SelectionChanged);
             this.ilvImages.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ilvImages_KeyDown);
-            this.ilvImages.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ilvImages_MouseUp);
             // 
             // tsMain
             // 
@@ -91,7 +114,6 @@
             this.tss1,
             this.tsbSettings});
             this.tsMain.Name = "tsMain";
-            this.tsMain.ShowItemToolTips = false;
             // 
             // tslSearch
             // 
@@ -101,8 +123,8 @@
             // tstbSearch
             // 
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tstbSearch.Name = "tstbSearch";
             resources.ApplyResources(this.tstbSearch, "tstbSearch");
+            this.tstbSearch.Name = "tstbSearch";
             this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
             // 
             // tsbSearch
@@ -120,7 +142,8 @@
             // 
             // tsbSettings
             // 
-            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSettings.Image = global::ShareX.HistoryLib.Properties.Resources.gear;
             resources.ApplyResources(this.tsbSettings, "tsbSettings");
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
@@ -128,11 +151,12 @@
             // ImageHistoryForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tscMain);
             this.KeyPreview = true;
             this.Name = "ImageHistoryForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImageHistoryForm_FormClosing);
             this.Shown += new System.EventHandler(this.ImageHistoryForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImageHistoryForm_KeyDown);
             this.tscMain.ContentPanel.ResumeLayout(false);

@@ -141,4 +141,7 @@
   <data name="lblOutputFolder.Text" xml:space="preserve">
     <value>Çıktı klasörü:</value>
   </data>
+  <data name="lblQuality.Text" xml:space="preserve">
+    <value>Kalite:</value>
+  </data>
 </root>

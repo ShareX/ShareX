@@ -127,10 +127,10 @@
     <value>Использовать новое имя:</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>Перезаписать:</value>
+    <value>Перезаписать: </value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>Использовать уникальное имя:</value>
+    <value>Использовать уникальное имя: </value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Уже существует файл с таким именем в этом каталоге.

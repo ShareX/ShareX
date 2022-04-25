@@ -100,4 +100,7 @@
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>Відкрити медіа-файл</value>
   </data>
+  <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
+    <value>Мініатюри вдало згенеровано.</value>
+  </data>
 </root>

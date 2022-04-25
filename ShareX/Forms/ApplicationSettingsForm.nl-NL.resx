@@ -144,9 +144,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX persoonlijke map:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Opgelet: Je moet ShareX heropstarten alvorens de aangebrachte wijzigingen effect zullen hebben.</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integratie</value>
   </data>
@@ -176,15 +173,6 @@
   </data>
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Toevoegen...</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Klembord formaten</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Gebruik secundaire uploaders in de volgende volgorde tijdens herproberen</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultaten</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Tweede afbeeldingsuploaders</value>
@@ -239,9 +227,6 @@
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Wachtwoord:</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Opnieuw proberen</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Uploaden</value>
@@ -302,9 +287,6 @@
   </data>
   <data name="btnImport.Text" xml:space="preserve">
     <value>Importeer...</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Exporteer / Importeer</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>Taken opslaan naar geschiedenis</value>

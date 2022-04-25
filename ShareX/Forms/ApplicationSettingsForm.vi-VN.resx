@@ -147,9 +147,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>Thư mục riêng của ShareX:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Lưu ý: Bạn cần mở lại ShareX để các thay đổi thư mục riêng có hiệu lực</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Tích hợp</value>
   </data>
@@ -213,9 +210,6 @@
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Duyệt...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Định dạng cho vùng nhớ tạm - xuất hiện dưới mục Sao chép ở menu ngữ cảnh trong cửa sổ chính</value>
-  </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Tên người dùng:</value>
   </data>
@@ -237,9 +231,6 @@
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Mật khẩu:</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Thử lại</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Tải lên</value>
   </data>
@@ -251,12 +242,6 @@
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên văn bản phụ</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Sử dụng các dịch vụ thứ cấp theo thứ tự trong danh sách khi thử lại</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Kết quả</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh phụ</value>
@@ -281,9 +266,6 @@
   </data>
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
     <value>Kích hoạt hỗ trợ tiện ích mở rộng cho Firefox</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Nhập vào/Xuất ra</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Xuất ra các cài đặt...</value>
@@ -347,5 +329,38 @@
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
     <value>Hiện tác vụ gần đây ở menu khay hệ thống</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Dùng biểu tượng ShareX màu trắng</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Thiết lập lại</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Xóa bỏ</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Áp dụng</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Lưu ý: Việc này sẽ xuất ra tất cả các tệp tin cài đặt và lịch sử</value>
   </data>
 </root>

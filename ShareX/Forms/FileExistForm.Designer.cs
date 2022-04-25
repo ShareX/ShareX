@@ -75,11 +75,14 @@
             resources.ApplyResources(this.txtNewName, "txtNewName");
             this.txtNewName.Name = "txtNewName";
             this.txtNewName.TextChanged += new System.EventHandler(this.txtNewName_TextChanged);
+            this.txtNewName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNewName_KeyDown);
+            this.txtNewName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNewName_KeyUp);
             // 
             // FileExistForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.txtNewName);
             this.Controls.Add(this.btnNewName);
@@ -87,6 +90,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOverwrite);
             this.Controls.Add(this.lblTitle);
+            this.MaximizeBox = false;
             this.Name = "FileExistForm";
             this.TopMost = true;
             this.Shown += new System.EventHandler(this.FileExistForm_Shown);

@@ -1,4 +1,4 @@
-﻿
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -127,21 +127,24 @@
     <value>確定</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
-    <value>引數:</value>
+    <value>參數：</value>
   </data>
   <data name="lblExtensions.Text" xml:space="preserve">
-    <value>副檔名篩選: (例如: jpg png mp4)</value>
+    <value>副檔名篩選：(例如 jpg png mp4)</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
-    <value>名稱:</value>
+    <value>名稱：</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>輸出檔案的副檔名: （空=使用相同的檔名）</value>
+    <value>輸出檔案的副檔名：(空 = 使用相同的檔名)</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
-    <value>檔案路徑:</value>
+    <value>檔案路徑：</value>
   </data>
   <data name="cbHiddenWindow.Text" xml:space="preserve">
     <value>隱藏視窗</value>
+  </data>
+  <data name="cbDeleteInputFile.Text" xml:space="preserve">
+    <value>刪除輸入檔案</value>
   </data>
 </root>

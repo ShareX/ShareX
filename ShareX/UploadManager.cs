@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,7 +30,6 @@ using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
@@ -138,25 +137,25 @@ namespace ShareX
                 if (folderDialog.ShowDialog() && !string.IsNullOrEmpty(folderDialog.FileName))
                 {
                     Program.Settings.FileUploadDefaultDirectory = folderDialog.FileName;
-                    UploadFile(folderDialog.FileName);
+                    UploadFile(folderDialog.FileName, taskSettings);
                 }
             }
         }
 
-        private static void ProcessImageUpload(Image img, TaskSettings taskSettings)
+        public static void ProcessImageUpload(Bitmap bmp, TaskSettings taskSettings)
         {
-            if (img != null)
+            if (bmp != null)
             {
                 if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
                 {
                     taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
                 }
 
-                RunImageTask(img, taskSettings);
+                RunImageTask(bmp, taskSettings);
             }
         }
 
-        private static void ProcessTextUpload(string text, TaskSettings taskSettings)
+        public static void ProcessTextUpload(string text, TaskSettings taskSettings)
         {
             if (!string.IsNullOrEmpty(text))
             {
@@ -194,9 +193,9 @@ namespace ShareX
             }
         }
 
-        private static void ProcessFilesUpload(string[] files, TaskSettings taskSettings)
+        public static void ProcessFilesUpload(string[] files, TaskSettings taskSettings)
         {
-            if (files.Length > 0)
+            if (files != null && files.Length > 0)
             {
                 UploadFile(files, taskSettings);
             }
@@ -206,68 +205,23 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (Clipboard.ContainsImage())
+            if (ClipboardHelpers.ContainsImage())
             {
-                Image img = ClipboardHelpers.GetImage();
+                Bitmap bmp = ClipboardHelpers.GetImage();
 
-                ProcessImageUpload(img, taskSettings);
+                ProcessImageUpload(bmp, taskSettings);
             }
-            else if (Clipboard.ContainsText())
+            else if (ClipboardHelpers.ContainsText())
             {
-                string text = Clipboard.GetText();
+                string text = ClipboardHelpers.GetText();
 
                 ProcessTextUpload(text, taskSettings);
             }
-            else if (Clipboard.ContainsFileDropList())
+            else if (ClipboardHelpers.ContainsFileDropList())
             {
-                string[] files = Clipboard.GetFileDropList().OfType<string>().ToArray();
+                string[] files = ClipboardHelpers.GetFileDropList();
 
                 ProcessFilesUpload(files, taskSettings);
-            }
-        }
-
-        private static void ClipboardUploadCached(ClipboardContentViewer ccv, TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (ccv.ClipboardContentType == EClipboardContentType.Image)
-            {
-                Image img = (Image)ccv.ClipboardContent;
-
-                ProcessImageUpload(img, taskSettings);
-            }
-            else if (ccv.ClipboardContentType == EClipboardContentType.Text)
-            {
-                string text = (string)ccv.ClipboardContent;
-
-                ProcessTextUpload(text, taskSettings);
-            }
-            else if (ccv.ClipboardContentType == EClipboardContentType.Files)
-            {
-                string[] files = (string[])ccv.ClipboardContent;
-
-                ProcessFilesUpload(files, taskSettings);
-            }
-        }
-
-        private static void ProcessClipboardContentViewerDialog(ClipboardContentViewer ccv, TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
-            {
-                if (ccv.ClipboardContentType != EClipboardContentType.Default)
-                {
-                    ClipboardUploadCached(ccv, taskSettings);
-                }
-                else
-                {
-                    ClipboardUpload(taskSettings);
-                }
-            }
-            else if (ccv.ClipboardContentType == EClipboardContentType.Image)
-            {
-                ((Image)ccv.ClipboardContent).Dispose();
             }
         }
 
@@ -275,9 +229,9 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (ClipboardContentViewer ccv = new ClipboardContentViewer())
+            using (ClipboardUploadForm clipboardUploadForm = new ClipboardUploadForm(taskSettings))
             {
-                ProcessClipboardContentViewerDialog(ccv, taskSettings);
+                clipboardUploadForm.ShowDialog();
             }
         }
 
@@ -287,11 +241,10 @@ namespace ShareX
 
             if (Program.Settings.ShowClipboardContentViewer)
             {
-                using (ClipboardContentViewer ccv = new ClipboardContentViewer(true))
+                using (ClipboardUploadForm clipboardUploadForm = new ClipboardUploadForm(taskSettings, true))
                 {
-                    ProcessClipboardContentViewerDialog(ccv, taskSettings);
-
-                    Program.Settings.ShowClipboardContentViewer = !ccv.DontShowThisWindow;
+                    clipboardUploadForm.ShowDialog();
+                    Program.Settings.ShowClipboardContentViewer = !clipboardUploadForm.DontShowThisWindow;
                 }
             }
             else
@@ -329,8 +282,8 @@ namespace ShareX
             }
             else if (data.GetDataPresent(DataFormats.Bitmap, false))
             {
-                Image img = data.GetData(DataFormats.Bitmap, false) as Image;
-                RunImageTask(img, taskSettings);
+                Bitmap bmp = data.GetData(DataFormats.Bitmap, false) as Bitmap;
+                RunImageTask(bmp, taskSettings);
             }
             else if (data.GetDataPresent(DataFormats.Text, false))
             {
@@ -345,14 +298,11 @@ namespace ShareX
 
             string inputText = null;
 
-            if (Clipboard.ContainsText())
-            {
-                string text = Clipboard.GetText();
+            string text = ClipboardHelpers.GetText(true);
 
-                if (URLHelpers.IsValidURL(text))
-                {
-                    inputText = text;
-                }
+            if (URLHelpers.IsValidURL(text))
+            {
+                inputText = text;
             }
 
             string url = InputBox.GetInputText("ShareX - " + Resources.UploadManager_UploadURL_URL_to_download_from_and_upload, inputText);
@@ -369,17 +319,15 @@ namespace ShareX
 
             string inputText = null;
 
-            if (Clipboard.ContainsText())
-            {
-                string text = Clipboard.GetText();
+            string text = ClipboardHelpers.GetText(true);
 
-                if (URLHelpers.IsValidURL(text))
-                {
-                    inputText = text;
-                }
+            if (URLHelpers.IsValidURL(text))
+            {
+                inputText = text;
             }
 
-            string url = InputBox.GetInputText("ShareX - " + ShareX.Properties.Resources.UploadManager_ShowShortenURLDialog_ShortenURL, inputText, ShareX.Properties.Resources.UploadManager_ShowShortenURLDialog_Shorten);
+            string url = InputBox.GetInputText("ShareX - " + Resources.UploadManager_ShowShortenURLDialog_ShortenURL, inputText,
+                Resources.UploadManager_ShowShortenURLDialog_Shorten);
 
             if (!string.IsNullOrEmpty(url))
             {
@@ -387,17 +335,17 @@ namespace ShareX
             }
         }
 
-        public static void RunImageTask(Image img, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
+        public static void RunImageTask(Bitmap bmp, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
         {
-            ImageInfo imageInfo = new ImageInfo(img);
-            RunImageTask(imageInfo, taskSettings, skipQuickTaskMenu, skipAfterCaptureWindow);
+            TaskMetadata metadata = new TaskMetadata(bmp);
+            RunImageTask(metadata, taskSettings, skipQuickTaskMenu, skipAfterCaptureWindow);
         }
 
-        public static void RunImageTask(ImageInfo imageInfo, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
+        public static void RunImageTask(TaskMetadata metadata, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (imageInfo != null && imageInfo.Image != null && taskSettings != null)
+            if (metadata != null && metadata.Image != null && taskSettings != null)
             {
                 if (!skipQuickTaskMenu && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowQuickTaskMenu))
                 {
@@ -407,13 +355,13 @@ namespace ShareX
                     {
                         if (taskInfo == null)
                         {
-                            RunImageTask(imageInfo, taskSettings, true);
+                            RunImageTask(metadata, taskSettings, true);
                         }
                         else if (taskInfo.IsValid)
                         {
                             taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
                             taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;
-                            RunImageTask(imageInfo, taskSettings, true);
+                            RunImageTask(metadata, taskSettings, true);
                         }
                     };
 
@@ -424,40 +372,54 @@ namespace ShareX
 
                 string customFileName = null;
 
-                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, imageInfo))
+                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, metadata))
                 {
                     return;
                 }
 
-                WorkerTask task = WorkerTask.CreateImageUploaderTask(imageInfo, taskSettings, customFileName);
+                WorkerTask task = WorkerTask.CreateImageUploaderTask(metadata, taskSettings, customFileName);
                 TaskManager.Start(task);
             }
         }
 
-        public static void UploadImage(Image img)
+        public static void UploadImage(Bitmap bmp, TaskSettings taskSettings = null)
         {
-            if (img != null)
+            if (bmp != null)
             {
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-                taskSettings.UseDefaultAfterCaptureJob = false;
-                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                if (taskSettings == null)
+                {
+                    taskSettings = TaskSettings.GetDefaultTaskSettings();
+                }
 
-                RunImageTask(img, taskSettings);
+                if (taskSettings.IsSafeTaskSettings)
+                {
+                    taskSettings.UseDefaultAfterCaptureJob = false;
+                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                }
+
+                RunImageTask(bmp, taskSettings);
             }
         }
 
-        public static void UploadImage(Image img, ImageDestination imageDestination, FileDestination imageFileDestination)
+        public static void UploadImage(Bitmap bmp, ImageDestination imageDestination, FileDestination imageFileDestination, TaskSettings taskSettings = null)
         {
-            if (img != null)
+            if (bmp != null)
             {
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-                taskSettings.UseDefaultAfterCaptureJob = false;
-                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
-                taskSettings.UseDefaultDestinations = false;
-                taskSettings.ImageDestination = imageDestination;
-                taskSettings.ImageFileDestination = imageFileDestination;
+                if (taskSettings == null)
+                {
+                    taskSettings = TaskSettings.GetDefaultTaskSettings();
+                }
 
-                RunImageTask(img, taskSettings);
+                if (taskSettings.IsSafeTaskSettings)
+                {
+                    taskSettings.UseDefaultAfterCaptureJob = false;
+                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                    taskSettings.UseDefaultDestinations = false;
+                    taskSettings.ImageDestination = imageDestination;
+                    taskSettings.ImageFileDestination = imageFileDestination;
+                }
+
+                RunImageTask(bmp, taskSettings);
             }
         }
 
@@ -487,13 +449,13 @@ namespace ShareX
             }
         }
 
-        public static void UploadImageStream(Stream stream, string filename, TaskSettings taskSettings = null)
+        public static void UploadImageStream(Stream stream, string fileName, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
             {
-                WorkerTask task = WorkerTask.CreateDataUploaderTask(EDataType.Image, stream, filename, taskSettings);
+                WorkerTask task = WorkerTask.CreateDataUploaderTask(EDataType.Image, stream, fileName, taskSettings);
                 TaskManager.Start(task);
             }
         }

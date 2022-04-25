@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,8 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace ShareX
@@ -75,12 +77,27 @@ namespace ShareX
                     taskSettings.WatchFolderList.Add(watchFolderSetting);
                 }
 
-                WatchFolder watchFolder = new WatchFolder { Settings = watchFolderSetting, TaskSettings = taskSettings };
-                watchFolder.FileWatcherTrigger += path =>
+                WatchFolder watchFolder = new WatchFolder();
+                watchFolder.Settings = watchFolderSetting;
+                watchFolder.TaskSettings = taskSettings;
+
+                watchFolder.FileWatcherTrigger += origPath =>
                 {
                     TaskSettings taskSettingsCopy = TaskSettings.GetSafeTaskSettings(taskSettings);
-                    UploadManager.UploadFile(path, taskSettingsCopy);
+                    string destPath = origPath;
+
+                    if (watchFolderSetting.MoveFilesToScreenshotsFolder)
+                    {
+                        string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettingsCopy);
+                        string fileName = Path.GetFileName(origPath);
+                        destPath = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettingsCopy);
+                        Helpers.CreateDirectoryFromFilePath(destPath);
+                        File.Move(origPath, destPath);
+                    }
+
+                    UploadManager.UploadFile(destPath, taskSettingsCopy);
                 };
+
                 WatchFolders.Add(watchFolder);
 
                 if (taskSettings.WatchFolderEnabled)

@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
+    <value>در حال توقف</value>
+  </data>
+  <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
+    <value>کوتاه کردن آدرس {{0}}</value>
+  </data>
+  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+    <value>سفارشی سازی</value>
+  </data>
+  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
+    <value>بازکردن برنامه در هنگام شروع ویندوز</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>فرانسوی</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
+    <value>در حال آپلود کردن</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
+    <value>آیا میخواهید {0} فایل را آپلود کنید؟</value>
+  </data>
+  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
+    <value>یک فولدر برای ذخیره کردن انتخاب کنید</value>
+  </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>ادامه دادن</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
+    <value>غیرفعال کردن کلیدهای سریع</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
+    <value>آیا مایل به حذف این فایل هستید؟</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
+    <value>انجام شد</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
+    <value>دیگر این پیام را نمایش نده</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>در حال دانلود</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="Program_Run_Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="ActionsToolbar_Edit" xml:space="preserve">
+    <value>ویرایش..</value>
+  </data>
+  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>سایت</value>
+  </data>
+  <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
+    <value>آدرس خالی است.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>آلمانی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>اسپانیایی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>ایتالیایی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+    <value>کره ای</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>هلندی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+    <value>پرتغالی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>ترکی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>اوکراینی</value>
+  </data>
+  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
+    <value>شروع</value>
+  </data>
+  <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
+    <value>توقف</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>روسی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+    <value>ویتنامی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>چینی (ساده)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>چینی (سنتی)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>اندونزیایی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+    <value>مجاری</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>اسپانیایی - مکزیکی</value>
+  </data>
+  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+    <value>مترجمین</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
+    <value>کلیدمیانبر</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>کلیدهای میانبر</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
+    <value>تاریخچه</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
+    <value>در صف</value>
+  </data>
+  <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
+    <value>پیش نمایش:</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
+    <value>وظیفه انجام شد.</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>کوتاه کن</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>کوتاه کردن آدرس</value>
+  </data>
+  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
+    <value>آپلود فایل</value>
+  </data>
+  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
+    <value>آپلود فولدر</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>کلیدهای میانبر غیرفعال شدند.</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>کلیدهای میانبر غیرفعال شدند.</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>آیا می خواهید تنظیمات ShareX را به حالت اولیه برگردانید؟</value>
+  </data>
+  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
+    <value>از نام جدید استفاده کن:</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>کوتاه کننده لینک : {0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
+    <value>سرویس اشتراک گذاری لینک: {0}</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>آپلود با ShareX</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
+    <value>آپلود فایل ها</value>
+  </data>
+  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
+    <value>آپلود خطاها</value>
+  </data>
+  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
+    <value>ایجاد پوشه با مشکل مواجه شد:</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
+    <value>توییت با موفقیت ارسال شد</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
+    <value>آپلود کننده های متن: {0}</value>
+  </data>
+  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
+    <value>تست آپلود متن</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
+    <value>تنظیمات وظیفه برای {0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
+    <value>تنظیمات وظیفه</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
+    <value>متوقف شد</value>
+  </data>
+  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
+    <value>در حال شروع</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>برای تغییر پوشه شخصی ShareX نیاز به راه اندازی مجدد دارد.
+
+آیا می خواهید ShareX مجدد راه اندازی شود؟</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
+    <value>ShareX برای تغییر زبان نیاز به راه اندازی مجدد دارد.
+
+آیا می خواهید ShareX را مجددا راه اندازی کنید؟</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - شناسایی متن از تصویر</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - تاییدیه</value>
+  </data>
+  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
+    <value>اشتراک گذاری آدرس ({0})</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>جداکننده</value>
+  </data>
+  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
+    <value>کلید میانبر را انتخاب کن...</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>تاخیر ضبط: {0} ثانیه</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>هنگام شروع ویندوز، ShareX را اجرا کن</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>ویرایش با ShareX ...</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
+    <value>شما در حال آپلود یک فایل بزرگ هستید. 
+آیا مایل به ادامه هستید؟</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>متن ورودی برای انکد  کردن</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>خطایی در هنگام پردازش OCR صورت گرفته یا هیچ متنی تشخیص داده نشده است.</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>خروجی OCR به کلیپ بورد شما کپی شد.</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
+    <value>نام نمی تواند خالی باشد</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>برای اعمال تنظیمات نرم افزار باید بسته و سپس باز شود. </value>
+  </data>
+  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
+    <value>پوشه شخصی شیرایکس را انتخاب کن</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
+    <value>تاییدیه حذف فایل</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
+    <value>بعد از آپلود: {0}</value>
+  </data>
+  <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
+    <value>آیا می خواهید تمام تنظیمات کلیدهای میانبر به حالت اولیه خودشان بازگردند؟</value>
+  </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>تغییرات</value>
+  </data>
+  <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
+    <value>لطفا یک مقصد انتخاب کنید.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
+    <value>آپلود کننده عکس: {0}</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>به کلیپ بورد کپی شد: {0}</value>
+  </data>
+  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
+    <value>آدرس برای دانلود و آپلود</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
+    <value>مسیر فایل نمی تواند خالی باشد</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>فعال سازی کلیدهای میانبر</value>
+  </data>
+  <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
+    <value>زمان باقیمانده: {0} ثانیه ({1}%) مجموع: {2}</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>تنظیم کلیدهای میانبر با مشکل مواجه شد.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>شروع خودکار در Task Manager غیرفعال شده است.</value>
+  </data>
+  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
+    <value>اینجا
+رها کنید</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
+    <value>آپلودکننده فایل: {0}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>صفحه پروزّه</value>
+  </data>
+  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>دانلود با مشکل مواجه شد:
+{0}</value>
+  </data>
+  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
+    <value>در حال آماده سازی</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>ویرایش این منو ...</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>پشتیبانی از کروم غیرفعال شد.</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>پردازش OCR در حال انجام است.</value>
+  </data>
+  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
+    <value>نمی توان به فایل «{0}» دسترسی پیدا کرد. 
+لطفا برای تغییر مسیر پوشه شخصی نرم افزار را در حالت ادمین اجرا کنید.</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>آیا می خواهید تمام تنظیمات وظایف سریع را به حالت پیش فرض برگردانید؟</value>
+  </data>
+  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
+    <value>برای کپی کردن آدرس به کلیپ بورد چپ کلیک کنید. برای بازکردن آدرس راست کلیک کنید.</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>سوییچ کردن به حالت نمایش لیستی</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>نتوانستیم اکانت توئیتر معتبری پیدا کنیم.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
+    <value>بعد از ضبط: {0}</value>
+  </data>
+</root>

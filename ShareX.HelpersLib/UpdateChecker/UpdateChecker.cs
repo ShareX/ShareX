@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,6 +25,7 @@
 
 using System;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 
@@ -33,7 +34,7 @@ namespace ShareX.HelpersLib
     public abstract class UpdateChecker
     {
         /// <summary>For testing purposes.</summary>
-        public static bool ForceUpdate { get; set; } = false;
+        public static bool ForceUpdate { get; private set; } = false;
 
         public UpdateStatus Status { get; set; }
         public Version CurrentVersion { get; set; }
@@ -43,22 +44,22 @@ namespace ShareX.HelpersLib
         public bool IsPortable { get; set; }
         public IWebProxy Proxy { get; set; }
 
-        private string filename;
+        private string fileName;
 
-        public string Filename
+        public string FileName
         {
             get
             {
-                if (string.IsNullOrEmpty(filename))
+                if (string.IsNullOrEmpty(fileName))
                 {
                     return HttpUtility.UrlDecode(DownloadURL.Substring(DownloadURL.LastIndexOf('/') + 1));
                 }
 
-                return filename;
+                return fileName;
             }
             set
             {
-                filename = value;
+                fileName = value;
             }
         }
 
@@ -83,6 +84,11 @@ namespace ShareX.HelpersLib
         }
 
         public abstract void CheckUpdate();
+
+        public Task CheckUpdateAsync()
+        {
+            return Task.Run(CheckUpdate);
+        }
 
         public void DownloadUpdate()
         {

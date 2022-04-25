@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tsmiExportClipboard.Text" xml:space="preserve">
-    <value>Copiar al protapapeles</value>
+    <value>Copiar al portapapeles</value>
   </data>
   <data name="tsmiExportFile.Text" xml:space="preserve">
     <value>Guardar en archivo...</value>

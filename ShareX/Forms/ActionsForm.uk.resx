@@ -141,6 +141,9 @@
   <data name="cbHiddenWindow.Text" xml:space="preserve">
     <value>Приховати вікно</value>
   </data>
+  <data name="cbDeleteInputFile.Text" xml:space="preserve">
+    <value>Видалити вхідний файл</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Дії</value>
   </data>

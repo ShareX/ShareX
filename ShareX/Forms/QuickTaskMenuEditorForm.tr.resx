@@ -124,10 +124,10 @@
     <value>Düzenle</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>Sil</value>
+    <value>Kaldır</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Varsayılan ayarlara dön</value>
+    <value>Varsayılan ayarlara dön...</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Kapat</value>
@@ -136,6 +136,6 @@
     <value>ShareX - Hızlı görev menüsü düzenleyici</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>İpucu: Eğer boş bir görev yaratırsanız menüde ayraç çizgisi olarak gözükecektir</value>
+    <value>İpucu: Eğer boş bir görev yaratırsanız menüde ayraç çizgisi olarak gözükecektir.</value>
   </data>
 </root>

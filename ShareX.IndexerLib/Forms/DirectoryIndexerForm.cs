@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -42,7 +43,8 @@ namespace ShareX.IndexerLib
         public DirectoryIndexerForm(IndexerSettings settings)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
+
             Settings = settings;
             pgSettings.SelectedObject = Settings;
         }
@@ -83,6 +85,7 @@ namespace ShareX.IndexerLib
             {
                 btnIndexFolder.Enabled = false;
                 btnUpload.Enabled = false;
+                btnSaveAs.Enabled = false;
 
                 await Task.Run(() =>
                 {
@@ -112,6 +115,7 @@ namespace ShareX.IndexerLib
                     }
 
                     btnIndexFolder.Enabled = true;
+                    btnSaveAs.Enabled = true;
                 }
             }
         }
@@ -127,9 +131,31 @@ namespace ShareX.IndexerLib
 
         protected void OnUploadRequested(string source)
         {
-            if (UploadRequested != null)
+            UploadRequested?.Invoke(source);
+        }
+
+        private void btnSaveAs_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Source))
             {
-                UploadRequested(source);
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    string indexType = Settings.Output.ToString().ToLower();
+                    sfd.FileName = "Index for " + Path.GetFileNameWithoutExtension(txtFolderPath.Text);
+                    sfd.DefaultExt = indexType;
+                    sfd.Filter = string.Format("*.{0}|*.{0}|All files (*.*)|*.*", indexType);
+
+                    if (!string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))
+                    {
+                        sfd.InitialDirectory = HelpersOptions.LastSaveDirectory;
+                    }
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        File.WriteAllText(sfd.FileName, Source, Encoding.UTF8);
+                        Close();
+                    }
+                }
             }
         }
     }

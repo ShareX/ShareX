@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -496,11 +496,13 @@ zxbasic = ZXBasic";
     public class PastebinSettings
     {
         public string Username { get; set; }
+        [JsonEncrypt]
         public string Password { get; set; }
         public PastebinPrivacy Exposure { get; set; } = PastebinPrivacy.Unlisted;
         public PastebinExpiration Expiration { get; set; } = PastebinExpiration.N;
         public string Title { get; set; }
         public string TextFormat { get; set; } = "text";
+        [JsonEncrypt]
         public string UserKey { get; set; }
         public bool RawURL { get; set; }
     }

@@ -145,7 +145,7 @@
     <value>Subir</value>
   </data>
   <data name="tpActions.Text" xml:space="preserve">
-    <value>Actions</value>
+    <value>Acciones</value>
   </data>
   <data name="tpWatchFolders.Text" xml:space="preserve">
     <value>Vigilar carpetas</value>
@@ -153,17 +153,8 @@
   <data name="tpTools.Text" xml:space="preserve">
     <value>Herramientas</value>
   </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración avanzada</value>
-  </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Avanzado</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Sobrescribir servidor personalizado predefinido</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de cuenta FTP predefinida</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Después de capturar...</value>
@@ -192,17 +183,11 @@
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tarea...</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Tras completar la tarea:</value>
-  </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Reproducir sonido al completar la tarea</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Reproducir sonido al realizar una captura</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Sobre escribir configuración general</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>Profundidad de bits de PNG:</value>
@@ -228,17 +213,11 @@
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Calidad de JPEG:</value>
   </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de imagen</value>
-  </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Efectos</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Los efectos se pueden activar o desactivar en "Tareas después de capturar -&gt; Agregar efectos a la imagen".</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Mostrar la ventana de efectos de imágenes después de capturar</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Aplicar efectos solamente a la captura de región</value>
@@ -276,12 +255,6 @@
   <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
     <value>Alto:</value>
   </data>
-  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
     <value>Incluir puntero del ratón en las capturas</value>
   </data>
@@ -303,12 +276,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Capturar área del cliente al capturar una ventana</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Retraso de la captura de pantalla:</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de captura</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Captura de región</value>
   </data>
@@ -325,13 +292,13 @@
     <value>Modo de región con tamaño fijo:</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
-    <value>Mostrar retículo en pantalla</value>
+    <value>Mostrar retícula en pantalla</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
-    <value>Ampliar tamaño de pixel:</value>
+    <value>Tamaño del píxel de la lupa:</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
-    <value>Ampliar cantidad de pixeles:</value>
+    <value>Número de píxeles de la lupa:</value>
   </data>
   <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
     <value>Usar un recuadro en lugar de un círculo al ampliar</value>
@@ -342,17 +309,11 @@
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
     <value>Mostrar posición y tamaño</value>
   </data>
-  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Fijar proporciones de la región con la tecla "Alt":</value>
   </data>
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
-    <value>Usar texto personalizado junto al puntero del ratón:</value>
+    <value>Usar texto personalizado junto al puntero:</value>
   </data>
   <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
     <value>Detectar regiones de control dentro de ventanas</value>
@@ -393,9 +354,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Grabadora de pantalla</value>
   </data>
-  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
-    <value>Pedir confirmación al interrumpir</value>
-  </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Incluir puntero del ratón en la grabación</value>
   </data>
@@ -405,20 +363,11 @@
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>segundos</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Iniciar la grabación después de:</value>
-  </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>segundos</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Fotogramas por segundo:</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Ejecutar CLI después:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>PErfiles</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Duración fija:</value>
@@ -426,20 +375,14 @@
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>FPS del GIF:</value>
   </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de subida:</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
-    <value>Nombres para archivos</value>
+    <value>Nombres de archivos</value>
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
-    <value>Al subir, remplazar con guion bajo los caracteres no estándar en el enlace</value>
+    <value>Al subir, remplazar con guion bajo los caracteres no estándar en un enlace</value>
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Usar el título de la ventana al capturar región (ShareX intentará detectar la ventana detrás de la selección</value>
+    <value>Número de incremento automático:</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Usar zona horaria personalizada:</value>
@@ -453,9 +396,6 @@
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Vista previa:</value>
   </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Restablecer cuenta automática</value>
-  </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Usar formato de nombre para subida de archivos en lugar del nombre real</value>
   </data>
@@ -467,9 +407,6 @@
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Compartir también el enlace que esté en el portapapeles</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Descargar y subir el archivo al enlace que esté en el portapapeles</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Indizar la carpeta y subir el índice que esté 
@@ -529,9 +466,6 @@ en el portapapeles</value>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Eliminar</value>
   </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Sobrescribir acciones</value>
-  </data>
   <data name="btnWatchFolderEdit.Text" xml:space="preserve">
     <value>Editar...</value>
   </data>
@@ -556,10 +490,40 @@ en el portapapeles</value>
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>Formato de selector de color de pantalla:</value>
   </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de herramientas</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configuración de tarea</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>Nota: Las acciones pueden controlarse en "Tareas después de capturar -&gt; Realizar acciones".</value>
+  </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>Aplazar captura:</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>Grabar en formato sin pérdida para luego aplicar la opción de formato de usuario</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>Confirmar antes de interrumpir</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>Copiar resultados al portapapeles automáticamente</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>Procesar OCR al abrir el cuadro de diálogo</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>Procesar OCR silenciosamente</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Cambiar</value>
+  </data>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Si el portapapeles contiene un enlace a un archivo, guardarlo y luego subirlo</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>Idioma predefinido:</value>
   </data>
 </root>

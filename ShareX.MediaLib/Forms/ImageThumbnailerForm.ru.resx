@@ -141,4 +141,7 @@
   <data name="btnGenerate.Text" xml:space="preserve">
     <value>Сгенерировать миниатюры</value>
   </data>
+  <data name="lblQuality.Text" xml:space="preserve">
+    <value>Качество:</value>
+  </data>
 </root>

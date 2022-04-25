@@ -123,7 +123,4 @@
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Browser Web</value>
   </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>Testo</value>
-  </data>
 </root>

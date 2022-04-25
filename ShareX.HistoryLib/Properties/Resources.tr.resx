@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Göster</value>
-  </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtrelenmiş: {0}</value>
   </data>
@@ -169,10 +166,10 @@
     <value>Resim</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Resim önizleme</value>
+    <value>Resim önizleme...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Daha fazla bilgi</value>
+    <value>Daha fazla bilgi...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Aç</value>
@@ -189,29 +186,8 @@
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>Adres</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>HTML link ({0})</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>Adresler ({0})</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Adı kopyala</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Değeri kopyala</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Ad</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Değer</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Hata</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>XML dosyası okunurken hata oluştu: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
     <value>Markdown bağlantı</value>
@@ -221,5 +197,38 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
     <value>Markdown resim</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Geçmiş dosyası okunurken hata oluştu:</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Dosya ismi, pencere başlığı, işlem ismi vs.</value>
+  </data>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Geçmiş girdi sayıları:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>Resimi düzenle...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Dosyayı karşıya aktar</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>Dosya uzantıları:</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Sunucular:</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Toplam:</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Yıllık kullanım:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Toplam</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Filtrelenmiş</value>
   </data>
 </root>

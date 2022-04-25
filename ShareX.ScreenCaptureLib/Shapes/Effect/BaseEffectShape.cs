@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading.Tasks;
@@ -37,9 +38,18 @@ namespace ShareX.ScreenCaptureLib
         public abstract string OverlayText { get; }
 
         private bool drawCache, isEffectCaching, isCachePending, isDisposePending;
-        private Image cachedEffect;
+        private Bitmap cachedEffect;
 
         public abstract void ApplyEffect(Bitmap bmp);
+
+        public override BaseShape Duplicate()
+        {
+            Bitmap cachedEffectTemp = cachedEffect;
+            cachedEffect = null;
+            BaseEffectShape shape = (BaseEffectShape)base.Duplicate();
+            cachedEffect = cachedEffectTemp;
+            return shape;
+        }
 
         public override void OnUpdate()
         {
@@ -55,7 +65,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (drawCache && isEffectCaching)
             {
-                OnDrawOverlay(g, "Processing...");
+                OnDrawOverlay(g, Resources.Processing);
             }
             else if (drawCache && cachedEffect != null)
             {
@@ -99,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnDrawFinal(Graphics g, Bitmap bmp)
         {
-            Rectangle rect = Rectangle.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
+            RectangleF rect = RectangleF.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
 
             if (!rect.IsEmpty)
             {
@@ -155,7 +165,7 @@ namespace ShareX.ScreenCaptureLib
 
                     Task.Run(() =>
                     {
-                        ApplyEffect((Bitmap)cachedEffect);
+                        ApplyEffect(cachedEffect);
 
                         isEffectCaching = false;
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,25 +37,36 @@ namespace ShareX.MediaLib
         public delegate void ProgressChangedEventHandler(int current, int length);
         public event ProgressChangedEventHandler ProgressChanged;
 
-        public string MediaPath { get; private set; }
         public string FFmpegPath { get; private set; }
         public VideoThumbnailOptions Options { get; private set; }
+        public string MediaPath { get; private set; }
         public VideoInfo VideoInfo { get; private set; }
 
-        public VideoThumbnailer(string mediaPath, string ffmpegPath, VideoThumbnailOptions options)
+        public VideoThumbnailer(string ffmpegPath, VideoThumbnailOptions options)
         {
-            MediaPath = mediaPath;
             FFmpegPath = ffmpegPath;
             Options = options;
+        }
 
-            using (FFmpegCLIManager ffmpegCLI = new FFmpegCLIManager(FFmpegPath))
+        private void UpdateVideoInfo()
+        {
+            using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(FFmpegPath))
             {
-                VideoInfo = ffmpegCLI.GetVideoInfo(MediaPath);
+                VideoInfo = ffmpeg.GetVideoInfo(MediaPath);
             }
         }
 
-        public List<VideoThumbnailInfo> TakeThumbnails()
+        public List<VideoThumbnailInfo> TakeThumbnails(string mediaPath)
         {
+            MediaPath = mediaPath;
+
+            UpdateVideoInfo();
+
+            if (VideoInfo == null || VideoInfo.Duration == TimeSpan.Zero)
+            {
+                return null;
+            }
+
             List<VideoThumbnailInfo> tempThumbnails = new List<VideoThumbnailInfo>();
 
             for (int i = 0; i < Options.ThumbnailCount; i++)
@@ -73,17 +84,22 @@ namespace ShareX.MediaLib
                     timeSliceElapsed = GetTimeSlice(Options.ThumbnailCount) * (i + 1);
                 }
 
-                string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
-                string tempThumbnailPath = Path.Combine(GetOutputDirectory(), filename);
+                string fileName = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
+                string tempThumbnailPath = Path.Combine(GetOutputDirectory(), fileName);
 
-                using (Process p = new Process())
+                using (Process process = new Process())
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo(FFmpegPath);
-                    psi.WindowStyle = ProcessWindowStyle.Hidden;
-                    psi.Arguments = string.Format("-ss {0} -i \"{1}\" -f image2 -vframes 1 -y \"{2}\"", timeSliceElapsed, MediaPath, tempThumbnailPath);
-                    p.StartInfo = psi;
-                    p.Start();
-                    p.WaitForExit(1000 * 30);
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = FFmpegPath,
+                        Arguments = $"-ss {timeSliceElapsed} -i \"{MediaPath}\" -f image2 -vframes 1 -y \"{tempThumbnailPath}\"",
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    };
+
+                    process.StartInfo = psi;
+                    process.Start();
+                    process.WaitForExit(1000 * 30);
                 }
 
                 if (File.Exists(tempThumbnailPath))
@@ -112,14 +128,14 @@ namespace ShareX.MediaLib
                 {
                     using (Image img = CombineScreenshots(tempThumbnails))
                     {
-                        string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + Options.FilenameSuffix + "." + Options.ImageFormat.GetDescription());
-                        ImageHelpers.SaveImage(img, tempFilepath);
-                        thumbnails.Add(new VideoThumbnailInfo(tempFilepath));
+                        string tempFilePath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + Options.FilenameSuffix + "." + Options.ImageFormat.GetDescription());
+                        ImageHelpers.SaveImage(img, tempFilePath);
+                        thumbnails.Add(new VideoThumbnailInfo(tempFilePath));
                     }
 
                     if (!Options.KeepScreenshots)
                     {
-                        tempThumbnails.ForEach(x => File.Delete(x.Filepath));
+                        tempThumbnails.ForEach(x => File.Delete(x.FilePath));
                     }
                 }
                 else
@@ -129,7 +145,7 @@ namespace ShareX.MediaLib
 
                 if (Options.OpenDirectory && thumbnails.Count > 0)
                 {
-                    Helpers.OpenFolderWithFile(thumbnails[0].Filepath);
+                    Helpers.OpenFolderWithFile(thumbnails[0].FilePath);
                 }
             }
 
@@ -138,10 +154,7 @@ namespace ShareX.MediaLib
 
         protected void OnProgressChanged(int current, int length)
         {
-            if (ProgressChanged != null)
-            {
-                ProgressChanged(current, length);
-            }
+            ProgressChanged?.Invoke(current, length);
         }
 
         private string GetOutputDirectory()
@@ -162,7 +175,7 @@ namespace ShareX.MediaLib
                     break;
             }
 
-            Helpers.CreateDirectoryFromDirectoryPath(directory);
+            Helpers.CreateDirectory(directory);
 
             return directory;
         }
@@ -181,13 +194,12 @@ namespace ShareX.MediaLib
                 mediaSeekTimes.Add(GetTimeSlice(Options.ThumbnailCount + 2) * i);
             }
 
-            Random random = new Random();
-            return (int)((random.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start])) + mediaSeekTimes[start]);
+            return (int)((RandomFast.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start])) + mediaSeekTimes[start]);
         }
 
         private Image CombineScreenshots(List<VideoThumbnailInfo> thumbnails)
         {
-            List<Image> images = new List<Image>();
+            List<Bitmap> images = new List<Bitmap>();
             Image finalImage = null;
 
             try
@@ -207,15 +219,15 @@ namespace ShareX.MediaLib
 
                 foreach (VideoThumbnailInfo thumbnail in thumbnails)
                 {
-                    Image img = ImageHelpers.LoadImage(thumbnail.Filepath);
+                    Bitmap bmp = ImageHelpers.LoadImage(thumbnail.FilePath);
 
-                    if (Options.MaxThumbnailWidth > 0 && img.Width > Options.MaxThumbnailWidth)
+                    if (Options.MaxThumbnailWidth > 0 && bmp.Width > Options.MaxThumbnailWidth)
                     {
-                        int maxThumbnailHeight = (int)((float)Options.MaxThumbnailWidth / img.Width * img.Height);
-                        img = ImageHelpers.ResizeImage(img, Options.MaxThumbnailWidth, maxThumbnailHeight);
+                        int maxThumbnailHeight = (int)((float)Options.MaxThumbnailWidth / bmp.Width * bmp.Height);
+                        bmp = ImageHelpers.ResizeImage(bmp, Options.MaxThumbnailWidth, maxThumbnailHeight);
                     }
 
-                    images.Add(img);
+                    images.Add(bmp);
                 }
 
                 int columnCount = Options.ColumnCount;
@@ -312,7 +324,7 @@ namespace ShareX.MediaLib
             }
             finally
             {
-                foreach (Image image in images)
+                foreach (Bitmap image in images)
                 {
                     if (image != null)
                     {

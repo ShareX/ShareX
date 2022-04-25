@@ -132,4 +132,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Resim boyutu</value>
   </data>
+  <data name="cbAspectRatio.Text" xml:space="preserve">
+    <value>En boy oranını koru</value>
+  </data>
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>piksel</value>
+  </data>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>piksel</value>
+  </data>
+  <data name="lblResampling.Text" xml:space="preserve">
+    <value>Yeniden örnekleme:</value>
+  </data>
 </root>

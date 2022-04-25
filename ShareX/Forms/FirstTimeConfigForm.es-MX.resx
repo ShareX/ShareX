@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbRunStartup.Text" xml:space="preserve">
-    <value>Iniciar ShareX al inciar Windows</value>
+    <value>Ejecutar ShareX al iniciar Windows</value>
   </data>
   <data name="cbShellContextMenuButton.Text" xml:space="preserve">
     <value>Mostrar botón de "Subir con ShareX" en el menú contextual</value>

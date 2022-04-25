@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -33,7 +34,17 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingImage;
 
         public Image Image { get; protected set; }
-        public ImageEditorInterpolationMode ImageInterpolationMode { get; protected set; }
+        public ImageInterpolationMode ImageInterpolationMode { get; protected set; }
+
+        public override BaseShape Duplicate()
+        {
+            Image imageTemp = Image;
+            Image = null;
+            ImageDrawingShape shape = (ImageDrawingShape)base.Duplicate();
+            shape.Image = imageTemp.CloneSafe();
+            Image = imageTemp;
+            return shape;
+        }
 
         public override void OnConfigLoad()
         {
@@ -53,19 +64,19 @@ namespace ShareX.ScreenCaptureLib
 
             if (Image != null)
             {
-                Point location;
+                PointF location;
                 Size size = Image.Size;
 
                 if (centerImage)
                 {
-                    location = new Point(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
+                    location = new PointF(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
                 }
                 else
                 {
                     location = Rectangle.Location;
                 }
 
-                Rectangle = new Rectangle(location, size);
+                Rectangle = new RectangleF(location, size);
             }
         }
 
@@ -79,7 +90,7 @@ namespace ShareX.ScreenCaptureLib
             if (Image != null)
             {
                 g.PixelOffsetMode = PixelOffsetMode.Half;
-                g.InterpolationMode = Manager.GetInterpolationMode(ImageInterpolationMode);
+                g.InterpolationMode = ImageHelpers.GetInterpolationMode(ImageInterpolationMode);
 
                 g.DrawImage(Image, Rectangle);
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2022 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,10 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -62,37 +60,38 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             return null;
         }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpCustomUploaders;
     }
 
     public sealed class CustomImageUploader : ImageUploader
     {
-        private CustomUploaderItem customUploader;
+        private CustomUploaderItem uploader;
 
         public CustomImageUploader(CustomUploaderItem customUploaderItem)
         {
-            customUploader = customUploaderItem;
+            uploader = customUploaderItem;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, "");
+            UploadResult result = new UploadResult();
+            CustomUploaderInput input = new CustomUploaderInput(fileName, "");
 
-            UploadResult result = SendRequestFile(customUploader.GetRequestURL(), stream, fileName, customUploader.GetFileFormName(),
-                customUploader.GetArguments(input), customUploader.GetHeaders(input), null, customUploader.ResponseType, customUploader.GetHttpMethod());
-
-            if (result.IsSuccess)
+            if (uploader.Body == CustomUploaderBody.MultipartFormData)
             {
-                try
-                {
-                    customUploader.ParseResponse(result);
-                }
-                catch (Exception e)
-                {
-                    Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
-                }
+                result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.RequestMethod);
             }
+            else if (uploader.Body == CustomUploaderBody.Binary)
+            {
+                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, RequestHelpers.GetMimeType(fileName),
+                    null, uploader.GetHeaders(input));
+            }
+            else
+            {
+                throw new Exception("Unsupported request format: " + uploader.Body);
+            }
+
+            uploader.TryParseResponse(result, LastResponseInfo, input);
 
             return result;
         }

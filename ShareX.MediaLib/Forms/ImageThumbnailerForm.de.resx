@@ -136,9 +136,12 @@
     <value>Ausgabe-Ordner</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Bild Thumbnailer</value>
+    <value>ShareX - Bild-Thumbnailer</value>
   </data>
   <data name="lblOutputFilename.Text" xml:space="preserve">
     <value>Ausgabe-Dateiname</value>
+  </data>
+  <data name="lblQuality.Text" xml:space="preserve">
+    <value>Qualität:</value>
   </data>
 </root>

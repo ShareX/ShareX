@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2021 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -57,8 +57,6 @@ namespace ShareX.UploadersLib
             this.txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.cbAmazonS3CustomCNAME = new System.Windows.Forms.CheckBox();
-            this.mbCustomUploaderDestinationType = new ShareX.HelpersLib.MenuButton();
-            this.cmsCustomUploaderDestinationType = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtB2CustomUrl = new System.Windows.Forms.TextBox();
             this.cbB2CustomUrl = new System.Windows.Forms.CheckBox();
             this.txtB2Bucket = new System.Windows.Forms.TextBox();
@@ -78,93 +76,6 @@ namespace ShareX.UploadersLib
             this.lblTwitterDescription = new System.Windows.Forms.Label();
             this.btnTwitterRemove = new System.Windows.Forms.Button();
             this.btnTwitterAdd = new System.Windows.Forms.Button();
-            this.tpCustomUploaders = new System.Windows.Forms.TabPage();
-            this.btnCustomUploaderURLSharingServiceTest = new System.Windows.Forms.Button();
-            this.cbCustomUploaderURLSharingService = new System.Windows.Forms.ComboBox();
-            this.lblCustomUploaderURLSharingService = new System.Windows.Forms.Label();
-            this.pCustomUploader = new System.Windows.Forms.Panel();
-            this.lblCustomUploaderName = new System.Windows.Forms.Label();
-            this.cbCustomUploaderRequestType = new System.Windows.Forms.ComboBox();
-            this.tcCustomUploaderResponseParse = new System.Windows.Forms.TabControl();
-            this.tpCustomUploaderJsonParse = new System.Windows.Forms.TabPage();
-            this.btnCustomUploaderJsonAddSyntax = new System.Windows.Forms.Button();
-            this.btnCustomUploadJsonPathHelp = new System.Windows.Forms.Button();
-            this.lblCustomUploaderJsonPathExample = new System.Windows.Forms.Label();
-            this.lblCustomUploaderJsonPath = new System.Windows.Forms.Label();
-            this.txtCustomUploaderJsonPath = new System.Windows.Forms.TextBox();
-            this.tpCustomUploaderXmlParse = new System.Windows.Forms.TabPage();
-            this.btnCustomUploaderXmlSyntaxAdd = new System.Windows.Forms.Button();
-            this.btnCustomUploaderXPathHelp = new System.Windows.Forms.Button();
-            this.lblCustomUploaderXPathExample = new System.Windows.Forms.Label();
-            this.lblCustomUploaderXPath = new System.Windows.Forms.Label();
-            this.txtCustomUploaderXPath = new System.Windows.Forms.TextBox();
-            this.tpCustomUploaderRegexParse = new System.Windows.Forms.TabPage();
-            this.btnCustomUploaderRegexHelp = new System.Windows.Forms.Button();
-            this.btnCustomUploaderRegexAddSyntax = new System.Windows.Forms.Button();
-            this.txtCustomUploaderRegexp = new System.Windows.Forms.TextBox();
-            this.btnCustomUploaderRegexpUpdate = new System.Windows.Forms.Button();
-            this.btnCustomUploaderRegexpAdd = new System.Windows.Forms.Button();
-            this.btnCustomUploaderRegexpRemove = new System.Windows.Forms.Button();
-            this.lvCustomUploaderRegexps = new ShareX.HelpersLib.MyListView();
-            this.lvRegexpsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblCustomUploaderURL = new System.Windows.Forms.Label();
-            this.tcCustomUploaderArguments = new System.Windows.Forms.TabControl();
-            this.tpCustomUploaderArguments = new System.Windows.Forms.TabPage();
-            this.btnCustomUploaderArgUpdate = new System.Windows.Forms.Button();
-            this.txtCustomUploaderArgName = new System.Windows.Forms.TextBox();
-            this.txtCustomUploaderArgValue = new System.Windows.Forms.TextBox();
-            this.btnCustomUploaderArgAdd = new System.Windows.Forms.Button();
-            this.btnCustomUploaderArgRemove = new System.Windows.Forms.Button();
-            this.lvCustomUploaderArguments = new ShareX.HelpersLib.MyListView();
-            this.chCustomUploaderArgumentsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCustomUploaderArgumentsValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tpCustomUploaderHeaders = new System.Windows.Forms.TabPage();
-            this.btnCustomUploaderHeaderUpdate = new System.Windows.Forms.Button();
-            this.txtCustomUploaderHeaderName = new System.Windows.Forms.TextBox();
-            this.txtCustomUploaderHeaderValue = new System.Windows.Forms.TextBox();
-            this.btnCustomUploaderHeaderAdd = new System.Windows.Forms.Button();
-            this.btnCustomUploaderHeaderRemove = new System.Windows.Forms.Button();
-            this.lvCustomUploaderHeaders = new ShareX.HelpersLib.MyListView();
-            this.chCustomUploaderHeadersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCustomUploaderHeadersValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtCustomUploaderFileForm = new System.Windows.Forms.TextBox();
-            this.lblCustomUploaderRequestType = new System.Windows.Forms.Label();
-            this.lblCustomUploaderFileForm = new System.Windows.Forms.Label();
-            this.txtCustomUploaderName = new System.Windows.Forms.TextBox();
-            this.lblCustomUploaderThumbnailURL = new System.Windows.Forms.Label();
-            this.txtCustomUploaderRequestURL = new System.Windows.Forms.TextBox();
-            this.txtCustomUploaderURL = new System.Windows.Forms.TextBox();
-            this.cbCustomUploaderResponseType = new System.Windows.Forms.ComboBox();
-            this.txtCustomUploaderThumbnailURL = new System.Windows.Forms.TextBox();
-            this.txtCustomUploaderDeletionURL = new System.Windows.Forms.TextBox();
-            this.lblCustomUploaderRequestURL = new System.Windows.Forms.Label();
-            this.lblCustomUploaderResponseType = new System.Windows.Forms.Label();
-            this.lblCustomUploaderDeletionURL = new System.Windows.Forms.Label();
-            this.btnCustomUploaderExamples = new System.Windows.Forms.Button();
-            this.btnCustomUploaderHelp = new System.Windows.Forms.Button();
-            this.lblCustomUploaderImageUploader = new System.Windows.Forms.Label();
-            this.btnCustomUploaderFileUploaderTest = new System.Windows.Forms.Button();
-            this.lblCustomUploaderFileUploader = new System.Windows.Forms.Label();
-            this.btnCustomUploaderImageUploaderTest = new System.Windows.Forms.Button();
-            this.lblCustomUploaderTestResult = new System.Windows.Forms.Label();
-            this.cbCustomUploaderFileUploader = new System.Windows.Forms.ComboBox();
-            this.btnCustomUploaderShowLastResponse = new System.Windows.Forms.Button();
-            this.cbCustomUploaderURLShortener = new System.Windows.Forms.ComboBox();
-            this.gbCustomUploaders = new System.Windows.Forms.GroupBox();
-            this.btnCustomUploaderDuplicate = new System.Windows.Forms.Button();
-            this.btnCustomUploadersExportAll = new System.Windows.Forms.Button();
-            this.btnCustomUploaderClearUploaders = new System.Windows.Forms.Button();
-            this.eiCustomUploaders = new ShareX.HelpersLib.ExportImportControl();
-            this.lbCustomUploaderList = new System.Windows.Forms.ListBox();
-            this.btnCustomUploaderRemove = new System.Windows.Forms.Button();
-            this.btnCustomUploaderAdd = new System.Windows.Forms.Button();
-            this.lblCustomUploaderTextUploader = new System.Windows.Forms.Label();
-            this.btnCustomUploaderURLShortenerTest = new System.Windows.Forms.Button();
-            this.cbCustomUploaderTextUploader = new System.Windows.Forms.ComboBox();
-            this.lblCustomUploaderURLShortener = new System.Windows.Forms.Label();
-            this.btnCustomUploaderTextUploaderTest = new System.Windows.Forms.Button();
-            this.cbCustomUploaderImageUploader = new System.Windows.Forms.ComboBox();
-            this.txtCustomUploaderLog = new System.Windows.Forms.RichTextBox();
             this.tpURLShorteners = new System.Windows.Forms.TabPage();
             this.tcURLShorteners = new System.Windows.Forms.TabControl();
             this.tpBitly = new System.Windows.Forms.TabPage();
@@ -202,6 +113,8 @@ namespace ShareX.UploadersLib
             this.txtFirebaseWebAPIKey = new System.Windows.Forms.TextBox();
             this.lblFirebaseWebAPIKey = new System.Windows.Forms.Label();
             this.tpKutt = new System.Windows.Forms.TabPage();
+            this.txtKuttDomain = new System.Windows.Forms.TextBox();
+            this.lblKuttDomain = new System.Windows.Forms.Label();
             this.lblKuttPassword = new System.Windows.Forms.Label();
             this.txtKuttPassword = new System.Windows.Forms.TextBox();
             this.cbKuttReuse = new System.Windows.Forms.CheckBox();
@@ -209,6 +122,11 @@ namespace ShareX.UploadersLib
             this.txtKuttHost = new System.Windows.Forms.TextBox();
             this.lblKuttAPIKey = new System.Windows.Forms.Label();
             this.lblKuttHost = new System.Windows.Forms.Label();
+            this.tpZeroWidthShortener = new System.Windows.Forms.TabPage();
+            this.txtZWSToken = new System.Windows.Forms.TextBox();
+            this.txtZWSURL = new System.Windows.Forms.TextBox();
+            this.lblZWSToken = new System.Windows.Forms.Label();
+            this.lblZWSURL = new System.Windows.Forms.Label();
             this.tpFileUploaders = new System.Windows.Forms.TabPage();
             this.tcFileUploaders = new System.Windows.Forms.TabControl();
             this.tpFTP = new System.Windows.Forms.TabPage();
@@ -230,7 +148,6 @@ namespace ShareX.UploadersLib
             this.pFTPTransferMode = new System.Windows.Forms.Panel();
             this.rbFTPTransferModeActive = new System.Windows.Forms.RadioButton();
             this.rbFTPTransferModePassive = new System.Windows.Forms.RadioButton();
-            this.btnFTPClient = new System.Windows.Forms.Button();
             this.txtFTPHost = new System.Windows.Forms.TextBox();
             this.pFTPProtocol = new System.Windows.Forms.Panel();
             this.rbFTPProtocolFTP = new System.Windows.Forms.RadioButton();
@@ -279,6 +196,7 @@ namespace ShareX.UploadersLib
             this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
+            this.cbGoogleDriveSharedDrive = new System.Windows.Forms.ComboBox();
             this.cbGoogleDriveDirectLink = new System.Windows.Forms.CheckBox();
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
@@ -301,6 +219,8 @@ namespace ShareX.UploadersLib
             this.tpBox = new System.Windows.Forms.TabPage();
             this.lblBoxFolderTip = new System.Windows.Forms.Label();
             this.cbBoxShare = new System.Windows.Forms.CheckBox();
+            this.cbBoxShareAccessLevel = new System.Windows.Forms.ComboBox();
+            this.lblBoxShareAccessLevel = new System.Windows.Forms.Label();
             this.lvBoxFolders = new ShareX.HelpersLib.MyListView();
             this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblBoxFolderID = new System.Windows.Forms.Label();
@@ -308,6 +228,7 @@ namespace ShareX.UploadersLib
             this.oauth2Box = new ShareX.UploadersLib.OAuthControl();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
             this.gbAmazonS3Advanced = new System.Windows.Forms.GroupBox();
+            this.cbAmazonS3SignedPayload = new System.Windows.Forms.CheckBox();
             this.lblAmazonS3StripExtension = new System.Windows.Forms.Label();
             this.cbAmazonS3StripExtensionText = new System.Windows.Forms.CheckBox();
             this.cbAmazonS3StorageClass = new System.Windows.Forms.ComboBox();
@@ -337,9 +258,11 @@ namespace ShareX.UploadersLib
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
             this.tpGoogleCloudStorage = new System.Windows.Forms.TabPage();
+            this.gbGoogleCloudStorageAdvanced = new System.Windows.Forms.GroupBox();
             this.lblGoogleCloudStorageStripExtension = new System.Windows.Forms.Label();
             this.cbGoogleCloudStorageStripExtensionText = new System.Windows.Forms.CheckBox();
             this.cbGoogleCloudStorageStripExtensionVideo = new System.Windows.Forms.CheckBox();
+            this.cbGoogleCloudStorageSetPublicACL = new System.Windows.Forms.CheckBox();
             this.cbGoogleCloudStorageStripExtensionImage = new System.Windows.Forms.CheckBox();
             this.lblGoogleCloudStoragePathPreview = new System.Windows.Forms.Label();
             this.lblGoogleCloudStoragePathPreviewLabel = new System.Windows.Forms.Label();
@@ -367,14 +290,17 @@ namespace ShareX.UploadersLib
             this.txtAzureStorageCustomDomain = new System.Windows.Forms.TextBox();
             this.lblAzureStorageCustomDomain = new System.Windows.Forms.Label();
             this.tpBackblazeB2 = new System.Windows.Forms.TabPage();
-            this.lblB2ManageLink = new System.Windows.Forms.LinkLabel();
-            this.txtB2UrlPreview = new System.Windows.Forms.TextBox();
             this.lblB2UrlPreview = new System.Windows.Forms.Label();
+            this.lblB2ManageLink = new System.Windows.Forms.LinkLabel();
+            this.lblB2UrlPreviewLabel = new System.Windows.Forms.Label();
             this.lblB2Bucket = new System.Windows.Forms.Label();
             this.lblB2UploadPath = new System.Windows.Forms.Label();
             this.lblB2ApplicationKey = new System.Windows.Forms.Label();
             this.lblB2ApplicationKeyId = new System.Windows.Forms.Label();
             this.tpGfycat = new System.Windows.Forms.TabPage();
+            this.txtGfycatTitle = new System.Windows.Forms.TextBox();
+            this.lblGfycatTitle = new System.Windows.Forms.Label();
+            this.cbGfycatKeepAudio = new System.Windows.Forms.CheckBox();
             this.cbGfycatIsPublic = new System.Windows.Forms.CheckBox();
             this.atcGfycatAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Gfycat = new ShareX.UploadersLib.OAuthControl();
@@ -391,6 +317,7 @@ namespace ShareX.UploadersLib
             this.txtMegaPassword = new System.Windows.Forms.TextBox();
             this.lblMegaPassword = new System.Windows.Forms.Label();
             this.tpOwnCloud = new System.Windows.Forms.TabPage();
+            this.cbOwnCloudAppendFileNameToURL = new System.Windows.Forms.CheckBox();
             this.txtOwnCloudExpiryTime = new System.Windows.Forms.NumericUpDown();
             this.cbOwnCloudAutoExpire = new System.Windows.Forms.CheckBox();
             this.lblOwnCloudExpiryTime = new System.Windows.Forms.Label();
@@ -417,7 +344,7 @@ namespace ShareX.UploadersLib
             this.lblMediaFireEmail = new System.Windows.Forms.Label();
             this.tpPushbullet = new System.Windows.Forms.TabPage();
             this.lblPushbulletDevices = new System.Windows.Forms.Label();
-            this.cboPushbulletDevices = new System.Windows.Forms.ComboBox();
+            this.cbPushbulletDevices = new System.Windows.Forms.ComboBox();
             this.btnPushbulletGetDeviceList = new System.Windows.Forms.Button();
             this.lblPushbulletUserKey = new System.Windows.Forms.Label();
             this.txtPushbulletUserKey = new System.Windows.Forms.TextBox();
@@ -428,13 +355,6 @@ namespace ShareX.UploadersLib
             this.txtSendSpacePassword = new System.Windows.Forms.TextBox();
             this.txtSendSpaceUserName = new System.Windows.Forms.TextBox();
             this.atcSendSpaceAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.tpGe_tt = new System.Windows.Forms.TabPage();
-            this.lblGe_ttStatus = new System.Windows.Forms.Label();
-            this.lblGe_ttPassword = new System.Windows.Forms.Label();
-            this.lblGe_ttEmail = new System.Windows.Forms.Label();
-            this.btnGe_ttLogin = new System.Windows.Forms.Button();
-            this.txtGe_ttPassword = new System.Windows.Forms.TextBox();
-            this.txtGe_ttEmail = new System.Windows.Forms.TextBox();
             this.tpHostr = new System.Windows.Forms.TabPage();
             this.cbLocalhostrDirectURL = new System.Windows.Forms.CheckBox();
             this.lblLocalhostrPassword = new System.Windows.Forms.Label();
@@ -455,14 +375,26 @@ namespace ShareX.UploadersLib
             this.txtLambdaApiKey = new System.Windows.Forms.TextBox();
             this.lblLambdaUploadURL = new System.Windows.Forms.Label();
             this.cbLambdaUploadURL = new System.Windows.Forms.ComboBox();
+            this.tpTeknik = new System.Windows.Forms.TabPage();
+            this.nudTeknikExpirationLength = new System.Windows.Forms.NumericUpDown();
+            this.cbTeknikExpirationUnit = new System.Windows.Forms.ComboBox();
+            this.lblTeknikExpiration = new System.Windows.Forms.Label();
+            this.lblTeknikUrlShortenerAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikUrlShortenerAPIUrl = new System.Windows.Forms.TextBox();
+            this.lblTeknikPasteAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikPasteAPIUrl = new System.Windows.Forms.TextBox();
+            this.lblTeknikAuthUrl = new System.Windows.Forms.Label();
+            this.tbTeknikAuthUrl = new System.Windows.Forms.TextBox();
+            this.cbTeknikGenDeleteKey = new System.Windows.Forms.CheckBox();
+            this.cbTeknikEncrypt = new System.Windows.Forms.CheckBox();
+            this.lblTeknikUploadAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikUploadAPIUrl = new System.Windows.Forms.TextBox();
+            this.oauthTeknik = new ShareX.UploadersLib.OAuthControl();
             this.tpPomf = new System.Windows.Forms.TabPage();
-            this.btnPomfTest = new System.Windows.Forms.Button();
             this.txtPomfResultURL = new System.Windows.Forms.TextBox();
             this.txtPomfUploadURL = new System.Windows.Forms.TextBox();
             this.lblPomfResultURL = new System.Windows.Forms.Label();
             this.lblPomfUploadURL = new System.Windows.Forms.Label();
-            this.lblPomfUploaders = new System.Windows.Forms.Label();
-            this.cbPomfUploaders = new System.Windows.Forms.ComboBox();
             this.tpSeafile = new System.Windows.Forms.TabPage();
             this.cbSeafileAPIURL = new System.Windows.Forms.ComboBox();
             this.grpSeafileShareSettings = new System.Windows.Forms.GroupBox();
@@ -499,6 +431,7 @@ namespace ShareX.UploadersLib
             this.lblSeafilePassword = new System.Windows.Forms.Label();
             this.cbSeafileIgnoreInvalidCert = new System.Windows.Forms.CheckBox();
             this.cbSeafileCreateShareableURL = new System.Windows.Forms.CheckBox();
+            this.cbSeafileCreateShareableURLRaw = new System.Windows.Forms.CheckBox();
             this.txtSeafileAuthToken = new System.Windows.Forms.TextBox();
             this.lblSeafileAuthToken = new System.Windows.Forms.Label();
             this.lblSeafileAPIURL = new System.Windows.Forms.Label();
@@ -530,7 +463,7 @@ namespace ShareX.UploadersLib
             this.cbPlikRemovable = new System.Windows.Forms.CheckBox();
             this.gbPlikLoginCredentials = new System.Windows.Forms.GroupBox();
             this.nudPlikTTL = new System.Windows.Forms.NumericUpDown();
-            this.cbxPlikTTLUnit = new System.Windows.Forms.ComboBox();
+            this.cbPlikTTLUnit = new System.Windows.Forms.ComboBox();
             this.lblPlikTTL = new System.Windows.Forms.Label();
             this.txtPlikURL = new System.Windows.Forms.TextBox();
             this.lblPlikURL = new System.Windows.Forms.Label();
@@ -542,6 +475,9 @@ namespace ShareX.UploadersLib
             this.txtPlikPassword = new System.Windows.Forms.TextBox();
             this.txtPlikLogin = new System.Windows.Forms.TextBox();
             this.tpYouTube = new System.Windows.Forms.TabPage();
+            this.llYouTubePermissionsLink = new System.Windows.Forms.LinkLabel();
+            this.lblYouTubePermissionsTip = new System.Windows.Forms.Label();
+            this.cbYouTubeShowDialog = new System.Windows.Forms.CheckBox();
             this.cbYouTubeUseShortenedLink = new System.Windows.Forms.CheckBox();
             this.cbYouTubePrivacyType = new System.Windows.Forms.ComboBox();
             this.lblYouTubePrivacyType = new System.Windows.Forms.Label();
@@ -554,10 +490,10 @@ namespace ShareX.UploadersLib
             this.btnSharedFolderAdd = new System.Windows.Forms.Button();
             this.lblSharedFolderFiles = new System.Windows.Forms.Label();
             this.lblSharedFolderText = new System.Windows.Forms.Label();
-            this.cboSharedFolderFiles = new System.Windows.Forms.ComboBox();
+            this.cbSharedFolderFiles = new System.Windows.Forms.ComboBox();
             this.lblSharedFolderImages = new System.Windows.Forms.Label();
-            this.cboSharedFolderText = new System.Windows.Forms.ComboBox();
-            this.cboSharedFolderImages = new System.Windows.Forms.ComboBox();
+            this.cbSharedFolderText = new System.Windows.Forms.ComboBox();
+            this.cbSharedFolderImages = new System.Windows.Forms.ComboBox();
             this.tpEmail = new System.Windows.Forms.TabPage();
             this.txtEmailAutomaticSendTo = new System.Windows.Forms.TextBox();
             this.cbEmailAutomaticSend = new System.Windows.Forms.CheckBox();
@@ -631,7 +567,7 @@ namespace ShareX.UploadersLib
             this.cbImgurDirectLink = new System.Windows.Forms.CheckBox();
             this.atcImgurAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new ShareX.UploadersLib.OAuthControl();
-            this.lvImgurAlbumList = new System.Windows.Forms.ListView();
+            this.lvImgurAlbumList = new ShareX.HelpersLib.MyListView();
             this.chImgurID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chImgurTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chImgurDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -647,14 +583,6 @@ namespace ShareX.UploadersLib
             this.txtImageShackUsername = new System.Windows.Forms.TextBox();
             this.txtImageShackPassword = new System.Windows.Forms.TextBox();
             this.lblImageShackPassword = new System.Windows.Forms.Label();
-            this.tpTinyPic = new System.Windows.Forms.TabPage();
-            this.atcTinyPicAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.btnTinyPicLogin = new System.Windows.Forms.Button();
-            this.txtTinyPicPassword = new System.Windows.Forms.TextBox();
-            this.lblTinyPicPassword = new System.Windows.Forms.Label();
-            this.txtTinyPicUsername = new System.Windows.Forms.TextBox();
-            this.lblTinyPicUsername = new System.Windows.Forms.Label();
-            this.btnTinyPicOpenMyImages = new System.Windows.Forms.Button();
             this.tpFlickr = new System.Windows.Forms.TabPage();
             this.cbFlickrDirectLink = new System.Windows.Forms.CheckBox();
             this.oauthFlickr = new ShareX.UploadersLib.OAuthControl();
@@ -662,7 +590,7 @@ namespace ShareX.UploadersLib
             this.gbPhotobucketAlbumPath = new System.Windows.Forms.GroupBox();
             this.btnPhotobucketAddAlbum = new System.Windows.Forms.Button();
             this.btnPhotobucketRemoveAlbum = new System.Windows.Forms.Button();
-            this.cboPhotobucketAlbumPaths = new System.Windows.Forms.ComboBox();
+            this.cbPhotobucketAlbumPaths = new System.Windows.Forms.ComboBox();
             this.gbPhotobucketAlbums = new System.Windows.Forms.GroupBox();
             this.lblPhotobucketNewAlbumName = new System.Windows.Forms.Label();
             this.lblPhotobucketParentAlbumPath = new System.Windows.Forms.Label();
@@ -678,6 +606,10 @@ namespace ShareX.UploadersLib
             this.txtPhotobucketVerificationCode = new System.Windows.Forms.TextBox();
             this.lblPhotobucketAccountStatus = new System.Windows.Forms.Label();
             this.tpGooglePhotos = new System.Windows.Forms.TabPage();
+            this.lblGooglePhotosCreateAlbumName = new System.Windows.Forms.Label();
+            this.txtGooglePhotosCreateAlbumName = new System.Windows.Forms.TextBox();
+            this.btnGooglePhotosCreateAlbum = new System.Windows.Forms.Button();
+            this.cbGooglePhotosIsPublic = new System.Windows.Forms.CheckBox();
             this.txtPicasaAlbumID = new System.Windows.Forms.TextBox();
             this.lblPicasaAlbumID = new System.Windows.Forms.Label();
             this.lvPicasaAlbumList = new System.Windows.Forms.ListView();
@@ -687,10 +619,7 @@ namespace ShareX.UploadersLib
             this.btnPicasaRefreshAlbumList = new System.Windows.Forms.Button();
             this.oauth2Picasa = new ShareX.UploadersLib.OAuthControl();
             this.tpChevereto = new System.Windows.Forms.TabPage();
-            this.btnCheveretoTestAll = new System.Windows.Forms.Button();
             this.lblCheveretoUploadURLExample = new System.Windows.Forms.Label();
-            this.lblCheveretoUploaders = new System.Windows.Forms.Label();
-            this.cbCheveretoUploaders = new System.Windows.Forms.ComboBox();
             this.cbCheveretoDirectURL = new System.Windows.Forms.CheckBox();
             this.lblCheveretoUploadURL = new System.Windows.Forms.Label();
             this.txtCheveretoUploadURL = new System.Windows.Forms.TextBox();
@@ -701,22 +630,11 @@ namespace ShareX.UploadersLib
             this.txtVgymeUserKey = new System.Windows.Forms.TextBox();
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
-            this.lblWidthHint = new System.Windows.Forms.Label();
-            this.ttlvMain = new ShareX.HelpersLib.TabToListView();
+            this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
-            this.tpCustomUploaders.SuspendLayout();
-            this.pCustomUploader.SuspendLayout();
-            this.tcCustomUploaderResponseParse.SuspendLayout();
-            this.tpCustomUploaderJsonParse.SuspendLayout();
-            this.tpCustomUploaderXmlParse.SuspendLayout();
-            this.tpCustomUploaderRegexParse.SuspendLayout();
-            this.tcCustomUploaderArguments.SuspendLayout();
-            this.tpCustomUploaderArguments.SuspendLayout();
-            this.tpCustomUploaderHeaders.SuspendLayout();
-            this.gbCustomUploaders.SuspendLayout();
             this.tpURLShorteners.SuspendLayout();
             this.tcURLShorteners.SuspendLayout();
             this.tpBitly.SuspendLayout();
@@ -725,6 +643,7 @@ namespace ShareX.UploadersLib
             this.tpPolr.SuspendLayout();
             this.tpFirebaseDynamicLinks.SuspendLayout();
             this.tpKutt.SuspendLayout();
+            this.tpZeroWidthShortener.SuspendLayout();
             this.tpFileUploaders.SuspendLayout();
             this.tcFileUploaders.SuspendLayout();
             this.tpFTP.SuspendLayout();
@@ -742,6 +661,7 @@ namespace ShareX.UploadersLib
             this.tpAmazonS3.SuspendLayout();
             this.gbAmazonS3Advanced.SuspendLayout();
             this.tpGoogleCloudStorage.SuspendLayout();
+            this.gbGoogleCloudStorageAdvanced.SuspendLayout();
             this.tpAzureStorage.SuspendLayout();
             this.tpBackblazeB2.SuspendLayout();
             this.tpGfycat.SuspendLayout();
@@ -751,11 +671,12 @@ namespace ShareX.UploadersLib
             this.tpMediaFire.SuspendLayout();
             this.tpPushbullet.SuspendLayout();
             this.tpSendSpace.SuspendLayout();
-            this.tpGe_tt.SuspendLayout();
             this.tpHostr.SuspendLayout();
             this.tpJira.SuspendLayout();
             this.gbJiraServer.SuspendLayout();
             this.tpLambda.SuspendLayout();
+            this.tpTeknik.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTeknikExpirationLength)).BeginInit();
             this.tpPomf.SuspendLayout();
             this.tpSeafile.SuspendLayout();
             this.grpSeafileShareSettings.SuspendLayout();
@@ -786,7 +707,6 @@ namespace ShareX.UploadersLib
             this.tcImageUploaders.SuspendLayout();
             this.tpImgur.SuspendLayout();
             this.tpImageShack.SuspendLayout();
-            this.tpTinyPic.SuspendLayout();
             this.tpFlickr.SuspendLayout();
             this.tpPhotobucket.SuspendLayout();
             this.gbPhotobucketAlbumPath.SuspendLayout();
@@ -809,7 +729,6 @@ namespace ShareX.UploadersLib
             this.ttHelpTip.AutoPopDelay = 30000;
             this.ttHelpTip.BackColor = System.Drawing.SystemColors.Window;
             this.ttHelpTip.InitialDelay = 500;
-            this.ttHelpTip.IsBalloon = true;
             this.ttHelpTip.ReshowDelay = 100;
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
@@ -822,32 +741,16 @@ namespace ShareX.UploadersLib
             this.cbAmazonS3CustomCNAME.UseVisualStyleBackColor = true;
             this.cbAmazonS3CustomCNAME.CheckedChanged += new System.EventHandler(this.cbAmazonS3CustomCNAME_CheckedChanged);
             // 
-            // mbCustomUploaderDestinationType
-            // 
-            resources.ApplyResources(this.mbCustomUploaderDestinationType, "mbCustomUploaderDestinationType");
-            this.mbCustomUploaderDestinationType.Menu = this.cmsCustomUploaderDestinationType;
-            this.mbCustomUploaderDestinationType.Name = "mbCustomUploaderDestinationType";
-            this.ttHelpTip.SetToolTip(this.mbCustomUploaderDestinationType, resources.GetString("mbCustomUploaderDestinationType.ToolTip"));
-            this.mbCustomUploaderDestinationType.UseVisualStyleBackColor = true;
-            // 
-            // cmsCustomUploaderDestinationType
-            // 
-            this.cmsCustomUploaderDestinationType.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.cmsCustomUploaderDestinationType.Name = "cmsCustomUploaderDestinationType";
-            resources.ApplyResources(this.cmsCustomUploaderDestinationType, "cmsCustomUploaderDestinationType");
-            // 
             // txtB2CustomUrl
             // 
             resources.ApplyResources(this.txtB2CustomUrl, "txtB2CustomUrl");
             this.txtB2CustomUrl.Name = "txtB2CustomUrl";
-            this.ttHelpTip.SetToolTip(this.txtB2CustomUrl, resources.GetString("txtB2CustomUrl.ToolTip"));
             this.txtB2CustomUrl.TextChanged += new System.EventHandler(this.txtB2CustomUrl_TextChanged);
             // 
             // cbB2CustomUrl
             // 
             resources.ApplyResources(this.cbB2CustomUrl, "cbB2CustomUrl");
             this.cbB2CustomUrl.Name = "cbB2CustomUrl";
-            this.ttHelpTip.SetToolTip(this.cbB2CustomUrl, resources.GetString("cbB2CustomUrl.ToolTip"));
             this.cbB2CustomUrl.UseVisualStyleBackColor = true;
             this.cbB2CustomUrl.CheckedChanged += new System.EventHandler(this.cbB2CustomUrl_CheckedChanged);
             // 
@@ -855,21 +758,18 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.txtB2Bucket, "txtB2Bucket");
             this.txtB2Bucket.Name = "txtB2Bucket";
-            this.ttHelpTip.SetToolTip(this.txtB2Bucket, resources.GetString("txtB2Bucket.ToolTip"));
             this.txtB2Bucket.TextChanged += new System.EventHandler(this.txtB2Bucket_TextChanged);
             // 
             // txtB2UploadPath
             // 
             resources.ApplyResources(this.txtB2UploadPath, "txtB2UploadPath");
             this.txtB2UploadPath.Name = "txtB2UploadPath";
-            this.ttHelpTip.SetToolTip(this.txtB2UploadPath, resources.GetString("txtB2UploadPath.ToolTip"));
             this.txtB2UploadPath.TextChanged += new System.EventHandler(this.txtB2UploadPath_TextChanged);
             // 
             // txtB2ApplicationKey
             // 
             resources.ApplyResources(this.txtB2ApplicationKey, "txtB2ApplicationKey");
             this.txtB2ApplicationKey.Name = "txtB2ApplicationKey";
-            this.ttHelpTip.SetToolTip(this.txtB2ApplicationKey, resources.GetString("txtB2ApplicationKey.ToolTip"));
             this.txtB2ApplicationKey.UseSystemPasswordChar = true;
             this.txtB2ApplicationKey.TextChanged += new System.EventHandler(this.txtB2ApplicationKey_TextChanged);
             // 
@@ -877,7 +777,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.txtB2ApplicationKeyId, "txtB2ApplicationKeyId");
             this.txtB2ApplicationKeyId.Name = "txtB2ApplicationKeyId";
-            this.ttHelpTip.SetToolTip(this.txtB2ApplicationKeyId, resources.GetString("txtB2ApplicationKeyId.ToolTip"));
             this.txtB2ApplicationKeyId.TextChanged += new System.EventHandler(this.txtB2ApplicationKeyId_TextChanged);
             // 
             // tpOtherUploaders
@@ -890,7 +789,6 @@ namespace ShareX.UploadersLib
             // tcOtherUploaders
             // 
             this.tcOtherUploaders.Controls.Add(this.tpTwitter);
-            this.tcOtherUploaders.Controls.Add(this.tpCustomUploaders);
             resources.ApplyResources(this.tcOtherUploaders, "tcOtherUploaders");
             this.tcOtherUploaders.Name = "tcOtherUploaders";
             this.tcOtherUploaders.SelectedIndex = 0;
@@ -948,6 +846,7 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.oauthTwitter, "oauthTwitter");
             this.oauthTwitter.IsRefreshable = false;
             this.oauthTwitter.Name = "oauthTwitter";
+            this.oauthTwitter.UserInfo = null;
             this.oauthTwitter.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauthTwitter_OpenButtonClicked);
             this.oauthTwitter.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauthTwitter_CompleteButtonClicked);
             this.oauthTwitter.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauthTwitter_ClearButtonClicked);
@@ -976,669 +875,6 @@ namespace ShareX.UploadersLib
             this.btnTwitterAdd.UseVisualStyleBackColor = true;
             this.btnTwitterAdd.Click += new System.EventHandler(this.btnTwitterAdd_Click);
             // 
-            // tpCustomUploaders
-            // 
-            this.tpCustomUploaders.BackColor = System.Drawing.SystemColors.Window;
-            this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderURLSharingServiceTest);
-            this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderURLSharingService);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderURLSharingService);
-            this.tpCustomUploaders.Controls.Add(this.pCustomUploader);
-            this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderExamples);
-            this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderHelp);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderImageUploader);
-            this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderFileUploaderTest);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderFileUploader);
-            this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderImageUploaderTest);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderTestResult);
-            this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderFileUploader);
-            this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderShowLastResponse);
-            this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderURLShortener);
-            this.tpCustomUploaders.Controls.Add(this.gbCustomUploaders);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderTextUploader);
-            this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderURLShortenerTest);
-            this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderTextUploader);
-            this.tpCustomUploaders.Controls.Add(this.lblCustomUploaderURLShortener);
-            this.tpCustomUploaders.Controls.Add(this.btnCustomUploaderTextUploaderTest);
-            this.tpCustomUploaders.Controls.Add(this.cbCustomUploaderImageUploader);
-            this.tpCustomUploaders.Controls.Add(this.txtCustomUploaderLog);
-            resources.ApplyResources(this.tpCustomUploaders, "tpCustomUploaders");
-            this.tpCustomUploaders.Name = "tpCustomUploaders";
-            // 
-            // btnCustomUploaderURLSharingServiceTest
-            // 
-            resources.ApplyResources(this.btnCustomUploaderURLSharingServiceTest, "btnCustomUploaderURLSharingServiceTest");
-            this.btnCustomUploaderURLSharingServiceTest.Name = "btnCustomUploaderURLSharingServiceTest";
-            this.btnCustomUploaderURLSharingServiceTest.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderURLSharingServiceTest.Click += new System.EventHandler(this.btnCustomUploaderURLSharingServiceTest_Click);
-            // 
-            // cbCustomUploaderURLSharingService
-            // 
-            this.cbCustomUploaderURLSharingService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCustomUploaderURLSharingService.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCustomUploaderURLSharingService, "cbCustomUploaderURLSharingService");
-            this.cbCustomUploaderURLSharingService.Name = "cbCustomUploaderURLSharingService";
-            this.cbCustomUploaderURLSharingService.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderURLSharingService_SelectedIndexChanged);
-            // 
-            // lblCustomUploaderURLSharingService
-            // 
-            resources.ApplyResources(this.lblCustomUploaderURLSharingService, "lblCustomUploaderURLSharingService");
-            this.lblCustomUploaderURLSharingService.Name = "lblCustomUploaderURLSharingService";
-            // 
-            // pCustomUploader
-            // 
-            this.pCustomUploader.Controls.Add(this.lblCustomUploaderName);
-            this.pCustomUploader.Controls.Add(this.mbCustomUploaderDestinationType);
-            this.pCustomUploader.Controls.Add(this.cbCustomUploaderRequestType);
-            this.pCustomUploader.Controls.Add(this.tcCustomUploaderResponseParse);
-            this.pCustomUploader.Controls.Add(this.lblCustomUploaderURL);
-            this.pCustomUploader.Controls.Add(this.tcCustomUploaderArguments);
-            this.pCustomUploader.Controls.Add(this.txtCustomUploaderFileForm);
-            this.pCustomUploader.Controls.Add(this.lblCustomUploaderRequestType);
-            this.pCustomUploader.Controls.Add(this.lblCustomUploaderFileForm);
-            this.pCustomUploader.Controls.Add(this.txtCustomUploaderName);
-            this.pCustomUploader.Controls.Add(this.lblCustomUploaderThumbnailURL);
-            this.pCustomUploader.Controls.Add(this.txtCustomUploaderRequestURL);
-            this.pCustomUploader.Controls.Add(this.txtCustomUploaderURL);
-            this.pCustomUploader.Controls.Add(this.cbCustomUploaderResponseType);
-            this.pCustomUploader.Controls.Add(this.txtCustomUploaderThumbnailURL);
-            this.pCustomUploader.Controls.Add(this.txtCustomUploaderDeletionURL);
-            this.pCustomUploader.Controls.Add(this.lblCustomUploaderRequestURL);
-            this.pCustomUploader.Controls.Add(this.lblCustomUploaderResponseType);
-            this.pCustomUploader.Controls.Add(this.lblCustomUploaderDeletionURL);
-            resources.ApplyResources(this.pCustomUploader, "pCustomUploader");
-            this.pCustomUploader.Name = "pCustomUploader";
-            // 
-            // lblCustomUploaderName
-            // 
-            resources.ApplyResources(this.lblCustomUploaderName, "lblCustomUploaderName");
-            this.lblCustomUploaderName.Name = "lblCustomUploaderName";
-            // 
-            // cbCustomUploaderRequestType
-            // 
-            this.cbCustomUploaderRequestType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCustomUploaderRequestType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCustomUploaderRequestType, "cbCustomUploaderRequestType");
-            this.cbCustomUploaderRequestType.Name = "cbCustomUploaderRequestType";
-            this.cbCustomUploaderRequestType.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderRequestType_SelectedIndexChanged);
-            // 
-            // tcCustomUploaderResponseParse
-            // 
-            this.tcCustomUploaderResponseParse.Controls.Add(this.tpCustomUploaderJsonParse);
-            this.tcCustomUploaderResponseParse.Controls.Add(this.tpCustomUploaderXmlParse);
-            this.tcCustomUploaderResponseParse.Controls.Add(this.tpCustomUploaderRegexParse);
-            resources.ApplyResources(this.tcCustomUploaderResponseParse, "tcCustomUploaderResponseParse");
-            this.tcCustomUploaderResponseParse.Name = "tcCustomUploaderResponseParse";
-            this.tcCustomUploaderResponseParse.SelectedIndex = 0;
-            // 
-            // tpCustomUploaderJsonParse
-            // 
-            this.tpCustomUploaderJsonParse.Controls.Add(this.btnCustomUploaderJsonAddSyntax);
-            this.tpCustomUploaderJsonParse.Controls.Add(this.btnCustomUploadJsonPathHelp);
-            this.tpCustomUploaderJsonParse.Controls.Add(this.lblCustomUploaderJsonPathExample);
-            this.tpCustomUploaderJsonParse.Controls.Add(this.lblCustomUploaderJsonPath);
-            this.tpCustomUploaderJsonParse.Controls.Add(this.txtCustomUploaderJsonPath);
-            resources.ApplyResources(this.tpCustomUploaderJsonParse, "tpCustomUploaderJsonParse");
-            this.tpCustomUploaderJsonParse.Name = "tpCustomUploaderJsonParse";
-            this.tpCustomUploaderJsonParse.UseVisualStyleBackColor = true;
-            // 
-            // btnCustomUploaderJsonAddSyntax
-            // 
-            resources.ApplyResources(this.btnCustomUploaderJsonAddSyntax, "btnCustomUploaderJsonAddSyntax");
-            this.btnCustomUploaderJsonAddSyntax.Name = "btnCustomUploaderJsonAddSyntax";
-            this.btnCustomUploaderJsonAddSyntax.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderJsonAddSyntax.Click += new System.EventHandler(this.btnCustomUploaderJsonAddSyntax_Click);
-            // 
-            // btnCustomUploadJsonPathHelp
-            // 
-            resources.ApplyResources(this.btnCustomUploadJsonPathHelp, "btnCustomUploadJsonPathHelp");
-            this.btnCustomUploadJsonPathHelp.Name = "btnCustomUploadJsonPathHelp";
-            this.btnCustomUploadJsonPathHelp.UseVisualStyleBackColor = true;
-            this.btnCustomUploadJsonPathHelp.Click += new System.EventHandler(this.btnCustomUploadJsonPathHelp_Click);
-            // 
-            // lblCustomUploaderJsonPathExample
-            // 
-            resources.ApplyResources(this.lblCustomUploaderJsonPathExample, "lblCustomUploaderJsonPathExample");
-            this.lblCustomUploaderJsonPathExample.Name = "lblCustomUploaderJsonPathExample";
-            // 
-            // lblCustomUploaderJsonPath
-            // 
-            resources.ApplyResources(this.lblCustomUploaderJsonPath, "lblCustomUploaderJsonPath");
-            this.lblCustomUploaderJsonPath.Name = "lblCustomUploaderJsonPath";
-            // 
-            // txtCustomUploaderJsonPath
-            // 
-            resources.ApplyResources(this.txtCustomUploaderJsonPath, "txtCustomUploaderJsonPath");
-            this.txtCustomUploaderJsonPath.Name = "txtCustomUploaderJsonPath";
-            this.txtCustomUploaderJsonPath.TextChanged += new System.EventHandler(this.txtCustomUploaderJsonPath_TextChanged);
-            // 
-            // tpCustomUploaderXmlParse
-            // 
-            this.tpCustomUploaderXmlParse.Controls.Add(this.btnCustomUploaderXmlSyntaxAdd);
-            this.tpCustomUploaderXmlParse.Controls.Add(this.btnCustomUploaderXPathHelp);
-            this.tpCustomUploaderXmlParse.Controls.Add(this.lblCustomUploaderXPathExample);
-            this.tpCustomUploaderXmlParse.Controls.Add(this.lblCustomUploaderXPath);
-            this.tpCustomUploaderXmlParse.Controls.Add(this.txtCustomUploaderXPath);
-            resources.ApplyResources(this.tpCustomUploaderXmlParse, "tpCustomUploaderXmlParse");
-            this.tpCustomUploaderXmlParse.Name = "tpCustomUploaderXmlParse";
-            this.tpCustomUploaderXmlParse.UseVisualStyleBackColor = true;
-            // 
-            // btnCustomUploaderXmlSyntaxAdd
-            // 
-            resources.ApplyResources(this.btnCustomUploaderXmlSyntaxAdd, "btnCustomUploaderXmlSyntaxAdd");
-            this.btnCustomUploaderXmlSyntaxAdd.Name = "btnCustomUploaderXmlSyntaxAdd";
-            this.btnCustomUploaderXmlSyntaxAdd.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderXmlSyntaxAdd.Click += new System.EventHandler(this.btnCustomUploaderXmlSyntaxAdd_Click);
-            // 
-            // btnCustomUploaderXPathHelp
-            // 
-            resources.ApplyResources(this.btnCustomUploaderXPathHelp, "btnCustomUploaderXPathHelp");
-            this.btnCustomUploaderXPathHelp.Name = "btnCustomUploaderXPathHelp";
-            this.btnCustomUploaderXPathHelp.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderXPathHelp.Click += new System.EventHandler(this.btnCustomUploaderXPathHelp_Click);
-            // 
-            // lblCustomUploaderXPathExample
-            // 
-            resources.ApplyResources(this.lblCustomUploaderXPathExample, "lblCustomUploaderXPathExample");
-            this.lblCustomUploaderXPathExample.Name = "lblCustomUploaderXPathExample";
-            // 
-            // lblCustomUploaderXPath
-            // 
-            resources.ApplyResources(this.lblCustomUploaderXPath, "lblCustomUploaderXPath");
-            this.lblCustomUploaderXPath.Name = "lblCustomUploaderXPath";
-            // 
-            // txtCustomUploaderXPath
-            // 
-            resources.ApplyResources(this.txtCustomUploaderXPath, "txtCustomUploaderXPath");
-            this.txtCustomUploaderXPath.Name = "txtCustomUploaderXPath";
-            this.txtCustomUploaderXPath.TextChanged += new System.EventHandler(this.txtCustomUploaderXPath_TextChanged);
-            // 
-            // tpCustomUploaderRegexParse
-            // 
-            this.tpCustomUploaderRegexParse.Controls.Add(this.btnCustomUploaderRegexHelp);
-            this.tpCustomUploaderRegexParse.Controls.Add(this.btnCustomUploaderRegexAddSyntax);
-            this.tpCustomUploaderRegexParse.Controls.Add(this.txtCustomUploaderRegexp);
-            this.tpCustomUploaderRegexParse.Controls.Add(this.btnCustomUploaderRegexpUpdate);
-            this.tpCustomUploaderRegexParse.Controls.Add(this.btnCustomUploaderRegexpAdd);
-            this.tpCustomUploaderRegexParse.Controls.Add(this.btnCustomUploaderRegexpRemove);
-            this.tpCustomUploaderRegexParse.Controls.Add(this.lvCustomUploaderRegexps);
-            resources.ApplyResources(this.tpCustomUploaderRegexParse, "tpCustomUploaderRegexParse");
-            this.tpCustomUploaderRegexParse.Name = "tpCustomUploaderRegexParse";
-            this.tpCustomUploaderRegexParse.UseVisualStyleBackColor = true;
-            // 
-            // btnCustomUploaderRegexHelp
-            // 
-            resources.ApplyResources(this.btnCustomUploaderRegexHelp, "btnCustomUploaderRegexHelp");
-            this.btnCustomUploaderRegexHelp.Name = "btnCustomUploaderRegexHelp";
-            this.btnCustomUploaderRegexHelp.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderRegexHelp.Click += new System.EventHandler(this.btnCustomUploaderRegexHelp_Click);
-            // 
-            // btnCustomUploaderRegexAddSyntax
-            // 
-            resources.ApplyResources(this.btnCustomUploaderRegexAddSyntax, "btnCustomUploaderRegexAddSyntax");
-            this.btnCustomUploaderRegexAddSyntax.Name = "btnCustomUploaderRegexAddSyntax";
-            this.btnCustomUploaderRegexAddSyntax.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderRegexAddSyntax.Click += new System.EventHandler(this.btnCustomUploaderRegexAddSyntax_Click);
-            // 
-            // txtCustomUploaderRegexp
-            // 
-            resources.ApplyResources(this.txtCustomUploaderRegexp, "txtCustomUploaderRegexp");
-            this.txtCustomUploaderRegexp.Name = "txtCustomUploaderRegexp";
-            this.txtCustomUploaderRegexp.TextChanged += new System.EventHandler(this.txtCustomUploaderRegexp_TextChanged);
-            // 
-            // btnCustomUploaderRegexpUpdate
-            // 
-            resources.ApplyResources(this.btnCustomUploaderRegexpUpdate, "btnCustomUploaderRegexpUpdate");
-            this.btnCustomUploaderRegexpUpdate.Name = "btnCustomUploaderRegexpUpdate";
-            this.btnCustomUploaderRegexpUpdate.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderRegexpUpdate.Click += new System.EventHandler(this.btnCustomUploaderRegexpEdit_Click);
-            // 
-            // btnCustomUploaderRegexpAdd
-            // 
-            resources.ApplyResources(this.btnCustomUploaderRegexpAdd, "btnCustomUploaderRegexpAdd");
-            this.btnCustomUploaderRegexpAdd.Name = "btnCustomUploaderRegexpAdd";
-            this.btnCustomUploaderRegexpAdd.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderRegexpAdd.Click += new System.EventHandler(this.btnCustomUploaderRegexpAdd_Click);
-            // 
-            // btnCustomUploaderRegexpRemove
-            // 
-            resources.ApplyResources(this.btnCustomUploaderRegexpRemove, "btnCustomUploaderRegexpRemove");
-            this.btnCustomUploaderRegexpRemove.Name = "btnCustomUploaderRegexpRemove";
-            this.btnCustomUploaderRegexpRemove.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderRegexpRemove.Click += new System.EventHandler(this.btnCustomUploaderRegexpRemove_Click);
-            // 
-            // lvCustomUploaderRegexps
-            // 
-            this.lvCustomUploaderRegexps.AllowDrop = true;
-            this.lvCustomUploaderRegexps.AllowItemDrag = true;
-            this.lvCustomUploaderRegexps.AutoFillColumn = true;
-            this.lvCustomUploaderRegexps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.lvRegexpsColumn});
-            this.lvCustomUploaderRegexps.FullRowSelect = true;
-            this.lvCustomUploaderRegexps.GridLines = true;
-            this.lvCustomUploaderRegexps.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvCustomUploaderRegexps.HideSelection = false;
-            resources.ApplyResources(this.lvCustomUploaderRegexps, "lvCustomUploaderRegexps");
-            this.lvCustomUploaderRegexps.MultiSelect = false;
-            this.lvCustomUploaderRegexps.Name = "lvCustomUploaderRegexps";
-            this.lvCustomUploaderRegexps.UseCompatibleStateImageBehavior = false;
-            this.lvCustomUploaderRegexps.View = System.Windows.Forms.View.Details;
-            this.lvCustomUploaderRegexps.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderRegexps_SelectedIndexChanged);
-            // 
-            // lvRegexpsColumn
-            // 
-            resources.ApplyResources(this.lvRegexpsColumn, "lvRegexpsColumn");
-            // 
-            // lblCustomUploaderURL
-            // 
-            resources.ApplyResources(this.lblCustomUploaderURL, "lblCustomUploaderURL");
-            this.lblCustomUploaderURL.Name = "lblCustomUploaderURL";
-            // 
-            // tcCustomUploaderArguments
-            // 
-            this.tcCustomUploaderArguments.Controls.Add(this.tpCustomUploaderArguments);
-            this.tcCustomUploaderArguments.Controls.Add(this.tpCustomUploaderHeaders);
-            resources.ApplyResources(this.tcCustomUploaderArguments, "tcCustomUploaderArguments");
-            this.tcCustomUploaderArguments.Name = "tcCustomUploaderArguments";
-            this.tcCustomUploaderArguments.SelectedIndex = 0;
-            // 
-            // tpCustomUploaderArguments
-            // 
-            this.tpCustomUploaderArguments.Controls.Add(this.btnCustomUploaderArgUpdate);
-            this.tpCustomUploaderArguments.Controls.Add(this.txtCustomUploaderArgName);
-            this.tpCustomUploaderArguments.Controls.Add(this.txtCustomUploaderArgValue);
-            this.tpCustomUploaderArguments.Controls.Add(this.btnCustomUploaderArgAdd);
-            this.tpCustomUploaderArguments.Controls.Add(this.btnCustomUploaderArgRemove);
-            this.tpCustomUploaderArguments.Controls.Add(this.lvCustomUploaderArguments);
-            resources.ApplyResources(this.tpCustomUploaderArguments, "tpCustomUploaderArguments");
-            this.tpCustomUploaderArguments.Name = "tpCustomUploaderArguments";
-            this.tpCustomUploaderArguments.UseVisualStyleBackColor = true;
-            // 
-            // btnCustomUploaderArgUpdate
-            // 
-            resources.ApplyResources(this.btnCustomUploaderArgUpdate, "btnCustomUploaderArgUpdate");
-            this.btnCustomUploaderArgUpdate.Name = "btnCustomUploaderArgUpdate";
-            this.btnCustomUploaderArgUpdate.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderArgUpdate.Click += new System.EventHandler(this.btnCustomUploaderArgUpdate_Click);
-            // 
-            // txtCustomUploaderArgName
-            // 
-            resources.ApplyResources(this.txtCustomUploaderArgName, "txtCustomUploaderArgName");
-            this.txtCustomUploaderArgName.Name = "txtCustomUploaderArgName";
-            this.txtCustomUploaderArgName.TextChanged += new System.EventHandler(this.txtCustomUploaderArgName_TextChanged);
-            // 
-            // txtCustomUploaderArgValue
-            // 
-            resources.ApplyResources(this.txtCustomUploaderArgValue, "txtCustomUploaderArgValue");
-            this.txtCustomUploaderArgValue.Name = "txtCustomUploaderArgValue";
-            // 
-            // btnCustomUploaderArgAdd
-            // 
-            resources.ApplyResources(this.btnCustomUploaderArgAdd, "btnCustomUploaderArgAdd");
-            this.btnCustomUploaderArgAdd.Name = "btnCustomUploaderArgAdd";
-            this.btnCustomUploaderArgAdd.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderArgAdd.Click += new System.EventHandler(this.btnCustomUploaderArgAdd_Click);
-            // 
-            // btnCustomUploaderArgRemove
-            // 
-            resources.ApplyResources(this.btnCustomUploaderArgRemove, "btnCustomUploaderArgRemove");
-            this.btnCustomUploaderArgRemove.Name = "btnCustomUploaderArgRemove";
-            this.btnCustomUploaderArgRemove.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderArgRemove.Click += new System.EventHandler(this.btnCustomUploaderArgRemove_Click);
-            // 
-            // lvCustomUploaderArguments
-            // 
-            this.lvCustomUploaderArguments.AllowDrop = true;
-            this.lvCustomUploaderArguments.AllowItemDrag = true;
-            this.lvCustomUploaderArguments.AutoFillColumn = true;
-            this.lvCustomUploaderArguments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chCustomUploaderArgumentsName,
-            this.chCustomUploaderArgumentsValue});
-            this.lvCustomUploaderArguments.FullRowSelect = true;
-            this.lvCustomUploaderArguments.GridLines = true;
-            this.lvCustomUploaderArguments.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvCustomUploaderArguments.HideSelection = false;
-            resources.ApplyResources(this.lvCustomUploaderArguments, "lvCustomUploaderArguments");
-            this.lvCustomUploaderArguments.MultiSelect = false;
-            this.lvCustomUploaderArguments.Name = "lvCustomUploaderArguments";
-            this.lvCustomUploaderArguments.UseCompatibleStateImageBehavior = false;
-            this.lvCustomUploaderArguments.View = System.Windows.Forms.View.Details;
-            this.lvCustomUploaderArguments.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderArguments_SelectedIndexChanged);
-            // 
-            // chCustomUploaderArgumentsName
-            // 
-            resources.ApplyResources(this.chCustomUploaderArgumentsName, "chCustomUploaderArgumentsName");
-            // 
-            // chCustomUploaderArgumentsValue
-            // 
-            resources.ApplyResources(this.chCustomUploaderArgumentsValue, "chCustomUploaderArgumentsValue");
-            // 
-            // tpCustomUploaderHeaders
-            // 
-            this.tpCustomUploaderHeaders.Controls.Add(this.btnCustomUploaderHeaderUpdate);
-            this.tpCustomUploaderHeaders.Controls.Add(this.txtCustomUploaderHeaderName);
-            this.tpCustomUploaderHeaders.Controls.Add(this.txtCustomUploaderHeaderValue);
-            this.tpCustomUploaderHeaders.Controls.Add(this.btnCustomUploaderHeaderAdd);
-            this.tpCustomUploaderHeaders.Controls.Add(this.btnCustomUploaderHeaderRemove);
-            this.tpCustomUploaderHeaders.Controls.Add(this.lvCustomUploaderHeaders);
-            resources.ApplyResources(this.tpCustomUploaderHeaders, "tpCustomUploaderHeaders");
-            this.tpCustomUploaderHeaders.Name = "tpCustomUploaderHeaders";
-            this.tpCustomUploaderHeaders.UseVisualStyleBackColor = true;
-            // 
-            // btnCustomUploaderHeaderUpdate
-            // 
-            resources.ApplyResources(this.btnCustomUploaderHeaderUpdate, "btnCustomUploaderHeaderUpdate");
-            this.btnCustomUploaderHeaderUpdate.Name = "btnCustomUploaderHeaderUpdate";
-            this.btnCustomUploaderHeaderUpdate.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderHeaderUpdate.Click += new System.EventHandler(this.btnCustomUploaderHeaderUpdate_Click);
-            // 
-            // txtCustomUploaderHeaderName
-            // 
-            resources.ApplyResources(this.txtCustomUploaderHeaderName, "txtCustomUploaderHeaderName");
-            this.txtCustomUploaderHeaderName.Name = "txtCustomUploaderHeaderName";
-            this.txtCustomUploaderHeaderName.TextChanged += new System.EventHandler(this.txtCustomUploaderHeaderName_TextChanged);
-            // 
-            // txtCustomUploaderHeaderValue
-            // 
-            resources.ApplyResources(this.txtCustomUploaderHeaderValue, "txtCustomUploaderHeaderValue");
-            this.txtCustomUploaderHeaderValue.Name = "txtCustomUploaderHeaderValue";
-            // 
-            // btnCustomUploaderHeaderAdd
-            // 
-            resources.ApplyResources(this.btnCustomUploaderHeaderAdd, "btnCustomUploaderHeaderAdd");
-            this.btnCustomUploaderHeaderAdd.Name = "btnCustomUploaderHeaderAdd";
-            this.btnCustomUploaderHeaderAdd.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderHeaderAdd.Click += new System.EventHandler(this.btnCustomUploaderHeaderAdd_Click);
-            // 
-            // btnCustomUploaderHeaderRemove
-            // 
-            resources.ApplyResources(this.btnCustomUploaderHeaderRemove, "btnCustomUploaderHeaderRemove");
-            this.btnCustomUploaderHeaderRemove.Name = "btnCustomUploaderHeaderRemove";
-            this.btnCustomUploaderHeaderRemove.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderHeaderRemove.Click += new System.EventHandler(this.btnCustomUploaderHeaderRemove_Click);
-            // 
-            // lvCustomUploaderHeaders
-            // 
-            this.lvCustomUploaderHeaders.AllowDrop = true;
-            this.lvCustomUploaderHeaders.AllowItemDrag = true;
-            this.lvCustomUploaderHeaders.AutoFillColumn = true;
-            this.lvCustomUploaderHeaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chCustomUploaderHeadersName,
-            this.chCustomUploaderHeadersValue});
-            this.lvCustomUploaderHeaders.FullRowSelect = true;
-            this.lvCustomUploaderHeaders.GridLines = true;
-            this.lvCustomUploaderHeaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvCustomUploaderHeaders.HideSelection = false;
-            resources.ApplyResources(this.lvCustomUploaderHeaders, "lvCustomUploaderHeaders");
-            this.lvCustomUploaderHeaders.MultiSelect = false;
-            this.lvCustomUploaderHeaders.Name = "lvCustomUploaderHeaders";
-            this.lvCustomUploaderHeaders.UseCompatibleStateImageBehavior = false;
-            this.lvCustomUploaderHeaders.View = System.Windows.Forms.View.Details;
-            this.lvCustomUploaderHeaders.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderHeaders_SelectedIndexChanged);
-            // 
-            // chCustomUploaderHeadersName
-            // 
-            resources.ApplyResources(this.chCustomUploaderHeadersName, "chCustomUploaderHeadersName");
-            // 
-            // chCustomUploaderHeadersValue
-            // 
-            resources.ApplyResources(this.chCustomUploaderHeadersValue, "chCustomUploaderHeadersValue");
-            // 
-            // txtCustomUploaderFileForm
-            // 
-            resources.ApplyResources(this.txtCustomUploaderFileForm, "txtCustomUploaderFileForm");
-            this.txtCustomUploaderFileForm.Name = "txtCustomUploaderFileForm";
-            this.txtCustomUploaderFileForm.TextChanged += new System.EventHandler(this.txtCustomUploaderFileForm_TextChanged);
-            // 
-            // lblCustomUploaderRequestType
-            // 
-            resources.ApplyResources(this.lblCustomUploaderRequestType, "lblCustomUploaderRequestType");
-            this.lblCustomUploaderRequestType.Name = "lblCustomUploaderRequestType";
-            // 
-            // lblCustomUploaderFileForm
-            // 
-            resources.ApplyResources(this.lblCustomUploaderFileForm, "lblCustomUploaderFileForm");
-            this.lblCustomUploaderFileForm.Name = "lblCustomUploaderFileForm";
-            // 
-            // txtCustomUploaderName
-            // 
-            resources.ApplyResources(this.txtCustomUploaderName, "txtCustomUploaderName");
-            this.txtCustomUploaderName.Name = "txtCustomUploaderName";
-            this.txtCustomUploaderName.TextChanged += new System.EventHandler(this.txtCustomUploaderName_TextChanged);
-            // 
-            // lblCustomUploaderThumbnailURL
-            // 
-            resources.ApplyResources(this.lblCustomUploaderThumbnailURL, "lblCustomUploaderThumbnailURL");
-            this.lblCustomUploaderThumbnailURL.Name = "lblCustomUploaderThumbnailURL";
-            // 
-            // txtCustomUploaderRequestURL
-            // 
-            resources.ApplyResources(this.txtCustomUploaderRequestURL, "txtCustomUploaderRequestURL");
-            this.txtCustomUploaderRequestURL.Name = "txtCustomUploaderRequestURL";
-            this.txtCustomUploaderRequestURL.TextChanged += new System.EventHandler(this.txtCustomUploaderRequestURL_TextChanged);
-            // 
-            // txtCustomUploaderURL
-            // 
-            resources.ApplyResources(this.txtCustomUploaderURL, "txtCustomUploaderURL");
-            this.txtCustomUploaderURL.Name = "txtCustomUploaderURL";
-            this.txtCustomUploaderURL.TextChanged += new System.EventHandler(this.txtCustomUploaderURL_TextChanged);
-            this.txtCustomUploaderURL.Enter += new System.EventHandler(this.txtCustomUploaderURL_Enter);
-            // 
-            // cbCustomUploaderResponseType
-            // 
-            this.cbCustomUploaderResponseType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCustomUploaderResponseType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCustomUploaderResponseType, "cbCustomUploaderResponseType");
-            this.cbCustomUploaderResponseType.Name = "cbCustomUploaderResponseType";
-            this.cbCustomUploaderResponseType.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderResponseType_SelectedIndexChanged);
-            // 
-            // txtCustomUploaderThumbnailURL
-            // 
-            resources.ApplyResources(this.txtCustomUploaderThumbnailURL, "txtCustomUploaderThumbnailURL");
-            this.txtCustomUploaderThumbnailURL.Name = "txtCustomUploaderThumbnailURL";
-            this.txtCustomUploaderThumbnailURL.TextChanged += new System.EventHandler(this.txtCustomUploaderThumbnailURL_TextChanged);
-            this.txtCustomUploaderThumbnailURL.Enter += new System.EventHandler(this.txtCustomUploaderThumbnailURL_Enter);
-            // 
-            // txtCustomUploaderDeletionURL
-            // 
-            resources.ApplyResources(this.txtCustomUploaderDeletionURL, "txtCustomUploaderDeletionURL");
-            this.txtCustomUploaderDeletionURL.Name = "txtCustomUploaderDeletionURL";
-            this.txtCustomUploaderDeletionURL.TextChanged += new System.EventHandler(this.txtCustomUploaderDeletionURL_TextChanged);
-            this.txtCustomUploaderDeletionURL.Enter += new System.EventHandler(this.txtCustomUploaderDeletionURL_Enter);
-            // 
-            // lblCustomUploaderRequestURL
-            // 
-            resources.ApplyResources(this.lblCustomUploaderRequestURL, "lblCustomUploaderRequestURL");
-            this.lblCustomUploaderRequestURL.Name = "lblCustomUploaderRequestURL";
-            // 
-            // lblCustomUploaderResponseType
-            // 
-            resources.ApplyResources(this.lblCustomUploaderResponseType, "lblCustomUploaderResponseType");
-            this.lblCustomUploaderResponseType.Name = "lblCustomUploaderResponseType";
-            // 
-            // lblCustomUploaderDeletionURL
-            // 
-            resources.ApplyResources(this.lblCustomUploaderDeletionURL, "lblCustomUploaderDeletionURL");
-            this.lblCustomUploaderDeletionURL.Name = "lblCustomUploaderDeletionURL";
-            // 
-            // btnCustomUploaderExamples
-            // 
-            resources.ApplyResources(this.btnCustomUploaderExamples, "btnCustomUploaderExamples");
-            this.btnCustomUploaderExamples.Name = "btnCustomUploaderExamples";
-            this.btnCustomUploaderExamples.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderExamples.Click += new System.EventHandler(this.btnCustomUploaderExamples_Click);
-            // 
-            // btnCustomUploaderHelp
-            // 
-            resources.ApplyResources(this.btnCustomUploaderHelp, "btnCustomUploaderHelp");
-            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
-            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderHelp.Click += new System.EventHandler(this.btnCustomUploaderHelp_Click);
-            // 
-            // lblCustomUploaderImageUploader
-            // 
-            resources.ApplyResources(this.lblCustomUploaderImageUploader, "lblCustomUploaderImageUploader");
-            this.lblCustomUploaderImageUploader.Name = "lblCustomUploaderImageUploader";
-            // 
-            // btnCustomUploaderFileUploaderTest
-            // 
-            resources.ApplyResources(this.btnCustomUploaderFileUploaderTest, "btnCustomUploaderFileUploaderTest");
-            this.btnCustomUploaderFileUploaderTest.Name = "btnCustomUploaderFileUploaderTest";
-            this.btnCustomUploaderFileUploaderTest.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderFileUploaderTest.Click += new System.EventHandler(this.btnCustomUploaderFileUploaderTest_Click);
-            // 
-            // lblCustomUploaderFileUploader
-            // 
-            resources.ApplyResources(this.lblCustomUploaderFileUploader, "lblCustomUploaderFileUploader");
-            this.lblCustomUploaderFileUploader.Name = "lblCustomUploaderFileUploader";
-            // 
-            // btnCustomUploaderImageUploaderTest
-            // 
-            resources.ApplyResources(this.btnCustomUploaderImageUploaderTest, "btnCustomUploaderImageUploaderTest");
-            this.btnCustomUploaderImageUploaderTest.Name = "btnCustomUploaderImageUploaderTest";
-            this.btnCustomUploaderImageUploaderTest.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderImageUploaderTest.Click += new System.EventHandler(this.btnCustomUploaderImageUploaderTest_Click);
-            // 
-            // lblCustomUploaderTestResult
-            // 
-            resources.ApplyResources(this.lblCustomUploaderTestResult, "lblCustomUploaderTestResult");
-            this.lblCustomUploaderTestResult.Name = "lblCustomUploaderTestResult";
-            // 
-            // cbCustomUploaderFileUploader
-            // 
-            this.cbCustomUploaderFileUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCustomUploaderFileUploader.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCustomUploaderFileUploader, "cbCustomUploaderFileUploader");
-            this.cbCustomUploaderFileUploader.Name = "cbCustomUploaderFileUploader";
-            this.cbCustomUploaderFileUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderFileUploader_SelectedIndexChanged);
-            // 
-            // btnCustomUploaderShowLastResponse
-            // 
-            resources.ApplyResources(this.btnCustomUploaderShowLastResponse, "btnCustomUploaderShowLastResponse");
-            this.btnCustomUploaderShowLastResponse.Name = "btnCustomUploaderShowLastResponse";
-            this.btnCustomUploaderShowLastResponse.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderShowLastResponse.Click += new System.EventHandler(this.btnCustomUploaderShowLastResponse_Click);
-            // 
-            // cbCustomUploaderURLShortener
-            // 
-            this.cbCustomUploaderURLShortener.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCustomUploaderURLShortener.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCustomUploaderURLShortener, "cbCustomUploaderURLShortener");
-            this.cbCustomUploaderURLShortener.Name = "cbCustomUploaderURLShortener";
-            this.cbCustomUploaderURLShortener.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderURLShortener_SelectedIndexChanged);
-            // 
-            // gbCustomUploaders
-            // 
-            this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderDuplicate);
-            this.gbCustomUploaders.Controls.Add(this.btnCustomUploadersExportAll);
-            this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderClearUploaders);
-            this.gbCustomUploaders.Controls.Add(this.eiCustomUploaders);
-            this.gbCustomUploaders.Controls.Add(this.lbCustomUploaderList);
-            this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderRemove);
-            this.gbCustomUploaders.Controls.Add(this.btnCustomUploaderAdd);
-            resources.ApplyResources(this.gbCustomUploaders, "gbCustomUploaders");
-            this.gbCustomUploaders.Name = "gbCustomUploaders";
-            this.gbCustomUploaders.TabStop = false;
-            // 
-            // btnCustomUploaderDuplicate
-            // 
-            resources.ApplyResources(this.btnCustomUploaderDuplicate, "btnCustomUploaderDuplicate");
-            this.btnCustomUploaderDuplicate.Name = "btnCustomUploaderDuplicate";
-            this.btnCustomUploaderDuplicate.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderDuplicate.Click += new System.EventHandler(this.btnCustomUploaderDuplicate_Click);
-            // 
-            // btnCustomUploadersExportAll
-            // 
-            resources.ApplyResources(this.btnCustomUploadersExportAll, "btnCustomUploadersExportAll");
-            this.btnCustomUploadersExportAll.Name = "btnCustomUploadersExportAll";
-            this.btnCustomUploadersExportAll.UseVisualStyleBackColor = true;
-            this.btnCustomUploadersExportAll.Click += new System.EventHandler(this.btnCustomUploadersExportAll_Click);
-            // 
-            // btnCustomUploaderClearUploaders
-            // 
-            resources.ApplyResources(this.btnCustomUploaderClearUploaders, "btnCustomUploaderClearUploaders");
-            this.btnCustomUploaderClearUploaders.Name = "btnCustomUploaderClearUploaders";
-            this.btnCustomUploaderClearUploaders.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderClearUploaders.Click += new System.EventHandler(this.btnCustomUploaderClearUploaders_Click);
-            // 
-            // eiCustomUploaders
-            // 
-            this.eiCustomUploaders.CustomFilter = "ShareX custom uploader (*.sxcu)|*.sxcu";
-            this.eiCustomUploaders.DefaultFileName = null;
-            this.eiCustomUploaders.ExportIgnoreDefaultValue = true;
-            this.eiCustomUploaders.ExportIgnoreNull = true;
-            resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
-            this.eiCustomUploaders.Name = "eiCustomUploaders";
-            this.eiCustomUploaders.ObjectType = null;
-            this.eiCustomUploaders.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiCustomUploaders_ExportRequested);
-            this.eiCustomUploaders.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiCustomUploaders_ImportRequested);
-            // 
-            // lbCustomUploaderList
-            // 
-            this.lbCustomUploaderList.FormattingEnabled = true;
-            resources.ApplyResources(this.lbCustomUploaderList, "lbCustomUploaderList");
-            this.lbCustomUploaderList.Name = "lbCustomUploaderList";
-            this.lbCustomUploaderList.SelectedIndexChanged += new System.EventHandler(this.lbCustomUploaderList_SelectedIndexChanged);
-            // 
-            // btnCustomUploaderRemove
-            // 
-            resources.ApplyResources(this.btnCustomUploaderRemove, "btnCustomUploaderRemove");
-            this.btnCustomUploaderRemove.Name = "btnCustomUploaderRemove";
-            this.btnCustomUploaderRemove.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderRemove.Click += new System.EventHandler(this.btnCustomUploaderRemove_Click);
-            // 
-            // btnCustomUploaderAdd
-            // 
-            resources.ApplyResources(this.btnCustomUploaderAdd, "btnCustomUploaderAdd");
-            this.btnCustomUploaderAdd.Name = "btnCustomUploaderAdd";
-            this.btnCustomUploaderAdd.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderAdd.Click += new System.EventHandler(this.btnCustomUploaderAdd_Click);
-            // 
-            // lblCustomUploaderTextUploader
-            // 
-            resources.ApplyResources(this.lblCustomUploaderTextUploader, "lblCustomUploaderTextUploader");
-            this.lblCustomUploaderTextUploader.Name = "lblCustomUploaderTextUploader";
-            // 
-            // btnCustomUploaderURLShortenerTest
-            // 
-            resources.ApplyResources(this.btnCustomUploaderURLShortenerTest, "btnCustomUploaderURLShortenerTest");
-            this.btnCustomUploaderURLShortenerTest.Name = "btnCustomUploaderURLShortenerTest";
-            this.btnCustomUploaderURLShortenerTest.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderURLShortenerTest.Click += new System.EventHandler(this.btnCustomUploaderURLShortenerTest_Click);
-            // 
-            // cbCustomUploaderTextUploader
-            // 
-            this.cbCustomUploaderTextUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCustomUploaderTextUploader.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCustomUploaderTextUploader, "cbCustomUploaderTextUploader");
-            this.cbCustomUploaderTextUploader.Name = "cbCustomUploaderTextUploader";
-            this.cbCustomUploaderTextUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderTextUploader_SelectedIndexChanged);
-            // 
-            // lblCustomUploaderURLShortener
-            // 
-            resources.ApplyResources(this.lblCustomUploaderURLShortener, "lblCustomUploaderURLShortener");
-            this.lblCustomUploaderURLShortener.Name = "lblCustomUploaderURLShortener";
-            // 
-            // btnCustomUploaderTextUploaderTest
-            // 
-            resources.ApplyResources(this.btnCustomUploaderTextUploaderTest, "btnCustomUploaderTextUploaderTest");
-            this.btnCustomUploaderTextUploaderTest.Name = "btnCustomUploaderTextUploaderTest";
-            this.btnCustomUploaderTextUploaderTest.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderTextUploaderTest.Click += new System.EventHandler(this.btnCustomUploaderTextUploaderTest_Click);
-            // 
-            // cbCustomUploaderImageUploader
-            // 
-            this.cbCustomUploaderImageUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCustomUploaderImageUploader.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCustomUploaderImageUploader, "cbCustomUploaderImageUploader");
-            this.cbCustomUploaderImageUploader.Name = "cbCustomUploaderImageUploader";
-            this.cbCustomUploaderImageUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderImageUploader_SelectedIndexChanged);
-            // 
-            // txtCustomUploaderLog
-            // 
-            resources.ApplyResources(this.txtCustomUploaderLog, "txtCustomUploaderLog");
-            this.txtCustomUploaderLog.Name = "txtCustomUploaderLog";
-            this.txtCustomUploaderLog.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtCustomUploaderLog_LinkClicked);
-            // 
             // tpURLShorteners
             // 
             this.tpURLShorteners.BackColor = System.Drawing.SystemColors.Window;
@@ -1654,6 +890,7 @@ namespace ShareX.UploadersLib
             this.tcURLShorteners.Controls.Add(this.tpPolr);
             this.tcURLShorteners.Controls.Add(this.tpFirebaseDynamicLinks);
             this.tcURLShorteners.Controls.Add(this.tpKutt);
+            this.tcURLShorteners.Controls.Add(this.tpZeroWidthShortener);
             resources.ApplyResources(this.tcURLShorteners, "tcURLShorteners");
             this.tcURLShorteners.Name = "tcURLShorteners";
             this.tcURLShorteners.SelectedIndex = 0;
@@ -1683,6 +920,7 @@ namespace ShareX.UploadersLib
             this.oauth2Bitly.IsRefreshable = false;
             resources.ApplyResources(this.oauth2Bitly, "oauth2Bitly");
             this.oauth2Bitly.Name = "oauth2Bitly";
+            this.oauth2Bitly.UserInfo = null;
             this.oauth2Bitly.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Bitly_OpenButtonClicked);
             this.oauth2Bitly.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Bitly_CompleteButtonClicked);
             this.oauth2Bitly.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Bitly_ClearButtonClicked);
@@ -1775,7 +1013,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.txtAdflyAPIUID, "txtAdflyAPIUID");
             this.txtAdflyAPIUID.Name = "txtAdflyAPIUID";
-            this.txtAdflyAPIUID.UseSystemPasswordChar = true;
             this.txtAdflyAPIUID.TextChanged += new System.EventHandler(this.txtAdflyAPIUID_TextChanged);
             // 
             // lblAdflyAPIUID
@@ -1787,6 +1024,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.txtAdflyAPIKEY, "txtAdflyAPIKEY");
             this.txtAdflyAPIKEY.Name = "txtAdflyAPIKEY";
+            this.txtAdflyAPIKEY.UseSystemPasswordChar = true;
             this.txtAdflyAPIKEY.TextChanged += new System.EventHandler(this.txtAdflyAPIKEY_TextChanged);
             // 
             // lblAdflyAPIKEY
@@ -1892,6 +1130,8 @@ namespace ShareX.UploadersLib
             // 
             // tpKutt
             // 
+            this.tpKutt.Controls.Add(this.txtKuttDomain);
+            this.tpKutt.Controls.Add(this.lblKuttDomain);
             this.tpKutt.Controls.Add(this.lblKuttPassword);
             this.tpKutt.Controls.Add(this.txtKuttPassword);
             this.tpKutt.Controls.Add(this.cbKuttReuse);
@@ -1903,6 +1143,17 @@ namespace ShareX.UploadersLib
             this.tpKutt.Name = "tpKutt";
             this.tpKutt.UseVisualStyleBackColor = true;
             // 
+            // txtKuttDomain
+            // 
+            resources.ApplyResources(this.txtKuttDomain, "txtKuttDomain");
+            this.txtKuttDomain.Name = "txtKuttDomain";
+            this.txtKuttDomain.TextChanged += new System.EventHandler(this.txtKuttDomain_TextChanged);
+            // 
+            // lblKuttDomain
+            // 
+            resources.ApplyResources(this.lblKuttDomain, "lblKuttDomain");
+            this.lblKuttDomain.Name = "lblKuttDomain";
+            // 
             // lblKuttPassword
             // 
             resources.ApplyResources(this.lblKuttPassword, "lblKuttPassword");
@@ -1912,6 +1163,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.txtKuttPassword, "txtKuttPassword");
             this.txtKuttPassword.Name = "txtKuttPassword";
+            this.txtKuttPassword.UseSystemPasswordChar = true;
             this.txtKuttPassword.TextChanged += new System.EventHandler(this.txtKuttPassword_TextChanged);
             // 
             // cbKuttReuse
@@ -1944,6 +1196,39 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.lblKuttHost, "lblKuttHost");
             this.lblKuttHost.Name = "lblKuttHost";
             // 
+            // tpZeroWidthShortener
+            // 
+            this.tpZeroWidthShortener.Controls.Add(this.txtZWSToken);
+            this.tpZeroWidthShortener.Controls.Add(this.txtZWSURL);
+            this.tpZeroWidthShortener.Controls.Add(this.lblZWSToken);
+            this.tpZeroWidthShortener.Controls.Add(this.lblZWSURL);
+            resources.ApplyResources(this.tpZeroWidthShortener, "tpZeroWidthShortener");
+            this.tpZeroWidthShortener.Name = "tpZeroWidthShortener";
+            this.tpZeroWidthShortener.UseVisualStyleBackColor = true;
+            // 
+            // txtZWSToken
+            // 
+            resources.ApplyResources(this.txtZWSToken, "txtZWSToken");
+            this.txtZWSToken.Name = "txtZWSToken";
+            this.txtZWSToken.UseSystemPasswordChar = true;
+            this.txtZWSToken.TextChanged += new System.EventHandler(this.txtZWSToken_TextChanged);
+            // 
+            // txtZWSURL
+            // 
+            resources.ApplyResources(this.txtZWSURL, "txtZWSURL");
+            this.txtZWSURL.Name = "txtZWSURL";
+            this.txtZWSURL.TextChanged += new System.EventHandler(this.txtZWSURL_TextChanged);
+            // 
+            // lblZWSToken
+            // 
+            resources.ApplyResources(this.lblZWSToken, "lblZWSToken");
+            this.lblZWSToken.Name = "lblZWSToken";
+            // 
+            // lblZWSURL
+            // 
+            resources.ApplyResources(this.lblZWSURL, "lblZWSURL");
+            this.lblZWSURL.Name = "lblZWSURL";
+            // 
             // tpFileUploaders
             // 
             this.tpFileUploaders.BackColor = System.Drawing.SystemColors.Window;
@@ -1969,10 +1254,10 @@ namespace ShareX.UploadersLib
             this.tcFileUploaders.Controls.Add(this.tpMediaFire);
             this.tcFileUploaders.Controls.Add(this.tpPushbullet);
             this.tcFileUploaders.Controls.Add(this.tpSendSpace);
-            this.tcFileUploaders.Controls.Add(this.tpGe_tt);
             this.tcFileUploaders.Controls.Add(this.tpHostr);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
+            this.tcFileUploaders.Controls.Add(this.tpTeknik);
             this.tcFileUploaders.Controls.Add(this.tpPomf);
             this.tcFileUploaders.Controls.Add(this.tpSeafile);
             this.tcFileUploaders.Controls.Add(this.tpStreamable);
@@ -2017,7 +1302,6 @@ namespace ShareX.UploadersLib
             this.gbFTPAccount.Controls.Add(this.lblFTPHost);
             this.gbFTPAccount.Controls.Add(this.eiFTP);
             this.gbFTPAccount.Controls.Add(this.pFTPTransferMode);
-            this.gbFTPAccount.Controls.Add(this.btnFTPClient);
             this.gbFTPAccount.Controls.Add(this.txtFTPHost);
             this.gbFTPAccount.Controls.Add(this.pFTPProtocol);
             this.gbFTPAccount.Controls.Add(this.lblFTPPort);
@@ -2128,6 +1412,7 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.eiFTP, "eiFTP");
             this.eiFTP.Name = "eiFTP";
             this.eiFTP.ObjectType = null;
+            this.eiFTP.SerializationBinder = null;
             this.eiFTP.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
             this.eiFTP.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
             // 
@@ -2153,13 +1438,6 @@ namespace ShareX.UploadersLib
             this.rbFTPTransferModePassive.TabStop = true;
             this.rbFTPTransferModePassive.UseVisualStyleBackColor = true;
             this.rbFTPTransferModePassive.CheckedChanged += new System.EventHandler(this.rbFTPTransferModePassive_CheckedChanged);
-            // 
-            // btnFTPClient
-            // 
-            resources.ApplyResources(this.btnFTPClient, "btnFTPClient");
-            this.btnFTPClient.Name = "btnFTPClient";
-            this.btnFTPClient.UseVisualStyleBackColor = true;
-            this.btnFTPClient.Click += new System.EventHandler(this.btnFTPClient_Click);
             // 
             // txtFTPHost
             // 
@@ -2448,6 +1726,7 @@ namespace ShareX.UploadersLib
             this.oauth2Dropbox.IsRefreshable = false;
             resources.ApplyResources(this.oauth2Dropbox, "oauth2Dropbox");
             this.oauth2Dropbox.Name = "oauth2Dropbox";
+            this.oauth2Dropbox.UserInfo = null;
             this.oauth2Dropbox.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Dropbox_OpenButtonClicked);
             this.oauth2Dropbox.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Dropbox_CompleteButtonClicked);
             this.oauth2Dropbox.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Dropbox_ClearButtonClicked);
@@ -2485,6 +1764,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oAuth2OneDrive, "oAuth2OneDrive");
             this.oAuth2OneDrive.Name = "oAuth2OneDrive";
+            this.oAuth2OneDrive.UserInfo = null;
             this.oAuth2OneDrive.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2OneDrive_OpenButtonClicked);
             this.oAuth2OneDrive.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2OneDrive_CompleteButtonClicked);
             this.oAuth2OneDrive.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2OneDrive_ClearButtonClicked);
@@ -2493,6 +1773,7 @@ namespace ShareX.UploadersLib
             // tpGoogleDrive
             // 
             this.tpGoogleDrive.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveSharedDrive);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveDirectLink);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveUseFolder);
             this.tpGoogleDrive.Controls.Add(this.txtGoogleDriveFolderID);
@@ -2503,6 +1784,14 @@ namespace ShareX.UploadersLib
             this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
             resources.ApplyResources(this.tpGoogleDrive, "tpGoogleDrive");
             this.tpGoogleDrive.Name = "tpGoogleDrive";
+            // 
+            // cbGoogleDriveSharedDrive
+            // 
+            this.cbGoogleDriveSharedDrive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGoogleDriveSharedDrive.FormattingEnabled = true;
+            resources.ApplyResources(this.cbGoogleDriveSharedDrive, "cbGoogleDriveSharedDrive");
+            this.cbGoogleDriveSharedDrive.Name = "cbGoogleDriveSharedDrive";
+            this.cbGoogleDriveSharedDrive.SelectedIndexChanged += new System.EventHandler(this.cbGoogleDriveSharedDrive_SelectedIndexChanged);
             // 
             // cbGoogleDriveDirectLink
             // 
@@ -2536,6 +1825,7 @@ namespace ShareX.UploadersLib
             this.chGoogleDriveTitle,
             this.chGoogleDriveDescription});
             this.lvGoogleDriveFoldersList.FullRowSelect = true;
+            this.lvGoogleDriveFoldersList.HideSelection = false;
             resources.ApplyResources(this.lvGoogleDriveFoldersList, "lvGoogleDriveFoldersList");
             this.lvGoogleDriveFoldersList.MultiSelect = false;
             this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
@@ -2569,6 +1859,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2GoogleDrive, "oauth2GoogleDrive");
             this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
+            this.oauth2GoogleDrive.UserInfo = null;
             this.oauth2GoogleDrive.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleDrive_OpenButtonClicked);
             this.oauth2GoogleDrive.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
             this.oauth2GoogleDrive.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleDrive_ClearButtonClicked);
@@ -2640,6 +1931,8 @@ namespace ShareX.UploadersLib
             this.tpBox.BackColor = System.Drawing.SystemColors.Window;
             this.tpBox.Controls.Add(this.lblBoxFolderTip);
             this.tpBox.Controls.Add(this.cbBoxShare);
+            this.tpBox.Controls.Add(this.cbBoxShareAccessLevel);
+            this.tpBox.Controls.Add(this.lblBoxShareAccessLevel);
             this.tpBox.Controls.Add(this.lvBoxFolders);
             this.tpBox.Controls.Add(this.lblBoxFolderID);
             this.tpBox.Controls.Add(this.btnBoxRefreshFolders);
@@ -2659,12 +1952,26 @@ namespace ShareX.UploadersLib
             this.cbBoxShare.UseVisualStyleBackColor = true;
             this.cbBoxShare.CheckedChanged += new System.EventHandler(this.cbBoxShare_CheckedChanged);
             // 
+            // cbBoxShareAccessLevel
+            // 
+            this.cbBoxShareAccessLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBoxShareAccessLevel.FormattingEnabled = true;
+            resources.ApplyResources(this.cbBoxShareAccessLevel, "cbBoxShareAccessLevel");
+            this.cbBoxShareAccessLevel.Name = "cbBoxShareAccessLevel";
+            this.cbBoxShareAccessLevel.SelectedIndexChanged += new System.EventHandler(this.cbBoxShareAccessLevel_SelectedIndexChanged);
+            // 
+            // lblBoxShareAccessLevel
+            // 
+            resources.ApplyResources(this.lblBoxShareAccessLevel, "lblBoxShareAccessLevel");
+            this.lblBoxShareAccessLevel.Name = "lblBoxShareAccessLevel";
+            // 
             // lvBoxFolders
             // 
             this.lvBoxFolders.AutoFillColumn = true;
             this.lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chBoxFoldersName});
             this.lvBoxFolders.FullRowSelect = true;
+            this.lvBoxFolders.HideSelection = false;
             resources.ApplyResources(this.lvBoxFolders, "lvBoxFolders");
             this.lvBoxFolders.Name = "lvBoxFolders";
             this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
@@ -2692,6 +1999,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2Box, "oauth2Box");
             this.oauth2Box.Name = "oauth2Box";
+            this.oauth2Box.UserInfo = null;
             this.oauth2Box.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Box_OpenButtonClicked);
             this.oauth2Box.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Box_CompleteButtonClicked);
             this.oauth2Box.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Box_ClearButtonClicked);
@@ -2726,6 +2034,7 @@ namespace ShareX.UploadersLib
             // 
             // gbAmazonS3Advanced
             // 
+            this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3SignedPayload);
             this.gbAmazonS3Advanced.Controls.Add(this.lblAmazonS3StripExtension);
             this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StripExtensionText);
             this.gbAmazonS3Advanced.Controls.Add(this.cbAmazonS3StorageClass);
@@ -2738,6 +2047,13 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.gbAmazonS3Advanced, "gbAmazonS3Advanced");
             this.gbAmazonS3Advanced.Name = "gbAmazonS3Advanced";
             this.gbAmazonS3Advanced.TabStop = false;
+            // 
+            // cbAmazonS3SignedPayload
+            // 
+            resources.ApplyResources(this.cbAmazonS3SignedPayload, "cbAmazonS3SignedPayload");
+            this.cbAmazonS3SignedPayload.Name = "cbAmazonS3SignedPayload";
+            this.cbAmazonS3SignedPayload.UseVisualStyleBackColor = true;
+            this.cbAmazonS3SignedPayload.CheckedChanged += new System.EventHandler(this.cbAmazonS3SignedPayload_CheckedChanged);
             // 
             // lblAmazonS3StripExtension
             // 
@@ -2911,10 +2227,7 @@ namespace ShareX.UploadersLib
             // 
             // tpGoogleCloudStorage
             // 
-            this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageStripExtension);
-            this.tpGoogleCloudStorage.Controls.Add(this.cbGoogleCloudStorageStripExtensionText);
-            this.tpGoogleCloudStorage.Controls.Add(this.cbGoogleCloudStorageStripExtensionVideo);
-            this.tpGoogleCloudStorage.Controls.Add(this.cbGoogleCloudStorageStripExtensionImage);
+            this.tpGoogleCloudStorage.Controls.Add(this.gbGoogleCloudStorageAdvanced);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreview);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreviewLabel);
             this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageObjectPrefix);
@@ -2927,6 +2240,17 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
             this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
             this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
+            // 
+            // gbGoogleCloudStorageAdvanced
+            // 
+            this.gbGoogleCloudStorageAdvanced.Controls.Add(this.lblGoogleCloudStorageStripExtension);
+            this.gbGoogleCloudStorageAdvanced.Controls.Add(this.cbGoogleCloudStorageStripExtensionText);
+            this.gbGoogleCloudStorageAdvanced.Controls.Add(this.cbGoogleCloudStorageStripExtensionVideo);
+            this.gbGoogleCloudStorageAdvanced.Controls.Add(this.cbGoogleCloudStorageSetPublicACL);
+            this.gbGoogleCloudStorageAdvanced.Controls.Add(this.cbGoogleCloudStorageStripExtensionImage);
+            resources.ApplyResources(this.gbGoogleCloudStorageAdvanced, "gbGoogleCloudStorageAdvanced");
+            this.gbGoogleCloudStorageAdvanced.Name = "gbGoogleCloudStorageAdvanced";
+            this.gbGoogleCloudStorageAdvanced.TabStop = false;
             // 
             // lblGoogleCloudStorageStripExtension
             // 
@@ -2946,6 +2270,13 @@ namespace ShareX.UploadersLib
             this.cbGoogleCloudStorageStripExtensionVideo.Name = "cbGoogleCloudStorageStripExtensionVideo";
             this.cbGoogleCloudStorageStripExtensionVideo.UseVisualStyleBackColor = true;
             this.cbGoogleCloudStorageStripExtensionVideo.CheckedChanged += new System.EventHandler(this.cbGoogleCloudStorageStripExtensionVideo_CheckedChanged);
+            // 
+            // cbGoogleCloudStorageSetPublicACL
+            // 
+            resources.ApplyResources(this.cbGoogleCloudStorageSetPublicACL, "cbGoogleCloudStorageSetPublicACL");
+            this.cbGoogleCloudStorageSetPublicACL.Name = "cbGoogleCloudStorageSetPublicACL";
+            this.cbGoogleCloudStorageSetPublicACL.UseVisualStyleBackColor = true;
+            this.cbGoogleCloudStorageSetPublicACL.CheckedChanged += new System.EventHandler(this.cbGoogleCloudStorageSetPublicACL_CheckedChanged);
             // 
             // cbGoogleCloudStorageStripExtensionImage
             // 
@@ -3001,6 +2332,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
             this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
+            this.oauth2GoogleCloudStorage.UserInfo = null;
             this.oauth2GoogleCloudStorage.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleCloudStorage_OpenButtonClicked);
             this.oauth2GoogleCloudStorage.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleCloudStorage_CompleteButtonClicked);
             this.oauth2GoogleCloudStorage.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleCloudStorage_ClearButtonClicked);
@@ -3120,10 +2452,10 @@ namespace ShareX.UploadersLib
             // tpBackblazeB2
             // 
             this.tpBackblazeB2.BackColor = System.Drawing.SystemColors.Window;
-            this.tpBackblazeB2.Controls.Add(this.lblB2ManageLink);
-            this.tpBackblazeB2.Controls.Add(this.txtB2UrlPreview);
-            this.tpBackblazeB2.Controls.Add(this.txtB2CustomUrl);
             this.tpBackblazeB2.Controls.Add(this.lblB2UrlPreview);
+            this.tpBackblazeB2.Controls.Add(this.lblB2ManageLink);
+            this.tpBackblazeB2.Controls.Add(this.txtB2CustomUrl);
+            this.tpBackblazeB2.Controls.Add(this.lblB2UrlPreviewLabel);
             this.tpBackblazeB2.Controls.Add(this.cbB2CustomUrl);
             this.tpBackblazeB2.Controls.Add(this.lblB2Bucket);
             this.tpBackblazeB2.Controls.Add(this.txtB2Bucket);
@@ -3136,6 +2468,11 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpBackblazeB2, "tpBackblazeB2");
             this.tpBackblazeB2.Name = "tpBackblazeB2";
             // 
+            // lblB2UrlPreview
+            // 
+            resources.ApplyResources(this.lblB2UrlPreview, "lblB2UrlPreview");
+            this.lblB2UrlPreview.Name = "lblB2UrlPreview";
+            // 
             // lblB2ManageLink
             // 
             resources.ApplyResources(this.lblB2ManageLink, "lblB2ManageLink");
@@ -3144,16 +2481,10 @@ namespace ShareX.UploadersLib
             this.lblB2ManageLink.VisitedLinkColor = System.Drawing.Color.Blue;
             this.lblB2ManageLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblB2ManageLink_LinkClicked);
             // 
-            // txtB2UrlPreview
+            // lblB2UrlPreviewLabel
             // 
-            resources.ApplyResources(this.txtB2UrlPreview, "txtB2UrlPreview");
-            this.txtB2UrlPreview.Name = "txtB2UrlPreview";
-            this.txtB2UrlPreview.ReadOnly = true;
-            // 
-            // lblB2UrlPreview
-            // 
-            resources.ApplyResources(this.lblB2UrlPreview, "lblB2UrlPreview");
-            this.lblB2UrlPreview.Name = "lblB2UrlPreview";
+            resources.ApplyResources(this.lblB2UrlPreviewLabel, "lblB2UrlPreviewLabel");
+            this.lblB2UrlPreviewLabel.Name = "lblB2UrlPreviewLabel";
             // 
             // lblB2Bucket
             // 
@@ -3178,11 +2509,32 @@ namespace ShareX.UploadersLib
             // tpGfycat
             // 
             this.tpGfycat.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGfycat.Controls.Add(this.txtGfycatTitle);
+            this.tpGfycat.Controls.Add(this.lblGfycatTitle);
+            this.tpGfycat.Controls.Add(this.cbGfycatKeepAudio);
             this.tpGfycat.Controls.Add(this.cbGfycatIsPublic);
             this.tpGfycat.Controls.Add(this.atcGfycatAccountType);
             this.tpGfycat.Controls.Add(this.oauth2Gfycat);
             resources.ApplyResources(this.tpGfycat, "tpGfycat");
             this.tpGfycat.Name = "tpGfycat";
+            // 
+            // txtGfycatTitle
+            // 
+            resources.ApplyResources(this.txtGfycatTitle, "txtGfycatTitle");
+            this.txtGfycatTitle.Name = "txtGfycatTitle";
+            this.txtGfycatTitle.TextChanged += new System.EventHandler(this.txtGfycatTitle_TextChanged);
+            // 
+            // lblGfycatTitle
+            // 
+            resources.ApplyResources(this.lblGfycatTitle, "lblGfycatTitle");
+            this.lblGfycatTitle.Name = "lblGfycatTitle";
+            // 
+            // cbGfycatKeepAudio
+            // 
+            resources.ApplyResources(this.cbGfycatKeepAudio, "cbGfycatKeepAudio");
+            this.cbGfycatKeepAudio.Name = "cbGfycatKeepAudio";
+            this.cbGfycatKeepAudio.UseVisualStyleBackColor = true;
+            this.cbGfycatKeepAudio.CheckedChanged += new System.EventHandler(this.cbGfycatKeepAudio_CheckedChanged);
             // 
             // cbGfycatIsPublic
             // 
@@ -3202,6 +2554,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2Gfycat, "oauth2Gfycat");
             this.oauth2Gfycat.Name = "oauth2Gfycat";
+            this.oauth2Gfycat.UserInfo = null;
             this.oauth2Gfycat.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Gfycat_OpenButtonClicked);
             this.oauth2Gfycat.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Gfycat_CompleteButtonClicked);
             this.oauth2Gfycat.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Gfycat_ClearButtonClicked);
@@ -3294,6 +2647,7 @@ namespace ShareX.UploadersLib
             // tpOwnCloud
             // 
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
+            this.tpOwnCloud.Controls.Add(this.cbOwnCloudAppendFileNameToURL);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudExpiryTime);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudAutoExpire);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudExpiryTime);
@@ -3312,6 +2666,14 @@ namespace ShareX.UploadersLib
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudHost);
             resources.ApplyResources(this.tpOwnCloud, "tpOwnCloud");
             this.tpOwnCloud.Name = "tpOwnCloud";
+            // 
+            // cbOwnCloudAppendFileNameToURL
+            // 
+            resources.ApplyResources(this.cbOwnCloudAppendFileNameToURL, "cbOwnCloudAppendFileNameToURL");
+            this.cbOwnCloudAppendFileNameToURL.Name = "cbOwnCloudAppendFileNameToURL";
+            this.cbOwnCloudAppendFileNameToURL.UseMnemonic = false;
+            this.cbOwnCloudAppendFileNameToURL.UseVisualStyleBackColor = true;
+            this.cbOwnCloudAppendFileNameToURL.CheckedChanged += new System.EventHandler(this.cbOwnCloudAppendFileNameToURL_CheckedChanged);
             // 
             // txtOwnCloudExpiryTime
             // 
@@ -3483,7 +2845,7 @@ namespace ShareX.UploadersLib
             // 
             this.tpPushbullet.BackColor = System.Drawing.SystemColors.Window;
             this.tpPushbullet.Controls.Add(this.lblPushbulletDevices);
-            this.tpPushbullet.Controls.Add(this.cboPushbulletDevices);
+            this.tpPushbullet.Controls.Add(this.cbPushbulletDevices);
             this.tpPushbullet.Controls.Add(this.btnPushbulletGetDeviceList);
             this.tpPushbullet.Controls.Add(this.lblPushbulletUserKey);
             this.tpPushbullet.Controls.Add(this.txtPushbulletUserKey);
@@ -3495,13 +2857,13 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.lblPushbulletDevices, "lblPushbulletDevices");
             this.lblPushbulletDevices.Name = "lblPushbulletDevices";
             // 
-            // cboPushbulletDevices
+            // cbPushbulletDevices
             // 
-            this.cboPushbulletDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cboPushbulletDevices, "cboPushbulletDevices");
-            this.cboPushbulletDevices.FormattingEnabled = true;
-            this.cboPushbulletDevices.Name = "cboPushbulletDevices";
-            this.cboPushbulletDevices.SelectedIndexChanged += new System.EventHandler(this.cboPushbulletDevices_SelectedIndexChanged);
+            this.cbPushbulletDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbPushbulletDevices, "cbPushbulletDevices");
+            this.cbPushbulletDevices.FormattingEnabled = true;
+            this.cbPushbulletDevices.Name = "cbPushbulletDevices";
+            this.cbPushbulletDevices.SelectedIndexChanged += new System.EventHandler(this.cbPushbulletDevices_SelectedIndexChanged);
             // 
             // btnPushbulletGetDeviceList
             // 
@@ -3570,51 +2932,6 @@ namespace ShareX.UploadersLib
             this.atcSendSpaceAccountType.Name = "atcSendSpaceAccountType";
             this.atcSendSpaceAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             this.atcSendSpaceAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcSendSpaceAccountType_AccountTypeChanged);
-            // 
-            // tpGe_tt
-            // 
-            this.tpGe_tt.BackColor = System.Drawing.SystemColors.Window;
-            this.tpGe_tt.Controls.Add(this.lblGe_ttStatus);
-            this.tpGe_tt.Controls.Add(this.lblGe_ttPassword);
-            this.tpGe_tt.Controls.Add(this.lblGe_ttEmail);
-            this.tpGe_tt.Controls.Add(this.btnGe_ttLogin);
-            this.tpGe_tt.Controls.Add(this.txtGe_ttPassword);
-            this.tpGe_tt.Controls.Add(this.txtGe_ttEmail);
-            resources.ApplyResources(this.tpGe_tt, "tpGe_tt");
-            this.tpGe_tt.Name = "tpGe_tt";
-            // 
-            // lblGe_ttStatus
-            // 
-            resources.ApplyResources(this.lblGe_ttStatus, "lblGe_ttStatus");
-            this.lblGe_ttStatus.Name = "lblGe_ttStatus";
-            // 
-            // lblGe_ttPassword
-            // 
-            resources.ApplyResources(this.lblGe_ttPassword, "lblGe_ttPassword");
-            this.lblGe_ttPassword.Name = "lblGe_ttPassword";
-            // 
-            // lblGe_ttEmail
-            // 
-            resources.ApplyResources(this.lblGe_ttEmail, "lblGe_ttEmail");
-            this.lblGe_ttEmail.Name = "lblGe_ttEmail";
-            // 
-            // btnGe_ttLogin
-            // 
-            resources.ApplyResources(this.btnGe_ttLogin, "btnGe_ttLogin");
-            this.btnGe_ttLogin.Name = "btnGe_ttLogin";
-            this.btnGe_ttLogin.UseVisualStyleBackColor = true;
-            this.btnGe_ttLogin.Click += new System.EventHandler(this.btnGe_ttLogin_Click);
-            // 
-            // txtGe_ttPassword
-            // 
-            resources.ApplyResources(this.txtGe_ttPassword, "txtGe_ttPassword");
-            this.txtGe_ttPassword.Name = "txtGe_ttPassword";
-            this.txtGe_ttPassword.UseSystemPasswordChar = true;
-            // 
-            // txtGe_ttEmail
-            // 
-            resources.ApplyResources(this.txtGe_ttEmail, "txtGe_ttEmail");
-            this.txtGe_ttEmail.Name = "txtGe_ttEmail";
             // 
             // tpHostr
             // 
@@ -3709,6 +3026,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oAuthJira, "oAuthJira");
             this.oAuthJira.Name = "oAuthJira";
+            this.oAuthJira.UserInfo = null;
             this.oAuthJira.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuthJira_OpenButtonClicked);
             this.oAuthJira.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuthJira_CompleteButtonClicked);
             this.oAuthJira.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuthJira_ClearButtonClicked);
@@ -3756,25 +3074,127 @@ namespace ShareX.UploadersLib
             this.cbLambdaUploadURL.Name = "cbLambdaUploadURL";
             this.cbLambdaUploadURL.SelectedIndexChanged += new System.EventHandler(this.cbLambdaUploadURL_SelectedIndexChanged);
             // 
+            // tpTeknik
+            // 
+            this.tpTeknik.BackColor = System.Drawing.SystemColors.Window;
+            this.tpTeknik.Controls.Add(this.nudTeknikExpirationLength);
+            this.tpTeknik.Controls.Add(this.cbTeknikExpirationUnit);
+            this.tpTeknik.Controls.Add(this.lblTeknikExpiration);
+            this.tpTeknik.Controls.Add(this.lblTeknikUrlShortenerAPIUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikUrlShortenerAPIUrl);
+            this.tpTeknik.Controls.Add(this.lblTeknikPasteAPIUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikPasteAPIUrl);
+            this.tpTeknik.Controls.Add(this.lblTeknikAuthUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikAuthUrl);
+            this.tpTeknik.Controls.Add(this.cbTeknikGenDeleteKey);
+            this.tpTeknik.Controls.Add(this.cbTeknikEncrypt);
+            this.tpTeknik.Controls.Add(this.lblTeknikUploadAPIUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikUploadAPIUrl);
+            this.tpTeknik.Controls.Add(this.oauthTeknik);
+            resources.ApplyResources(this.tpTeknik, "tpTeknik");
+            this.tpTeknik.Name = "tpTeknik";
+            // 
+            // nudTeknikExpirationLength
+            // 
+            resources.ApplyResources(this.nudTeknikExpirationLength, "nudTeknikExpirationLength");
+            this.nudTeknikExpirationLength.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudTeknikExpirationLength.Name = "nudTeknikExpirationLength";
+            this.nudTeknikExpirationLength.ValueChanged += new System.EventHandler(this.nudTeknikExpirationLength_ValueChanged);
+            // 
+            // cbTeknikExpirationUnit
+            // 
+            this.cbTeknikExpirationUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTeknikExpirationUnit.FormattingEnabled = true;
+            resources.ApplyResources(this.cbTeknikExpirationUnit, "cbTeknikExpirationUnit");
+            this.cbTeknikExpirationUnit.Name = "cbTeknikExpirationUnit";
+            this.cbTeknikExpirationUnit.SelectedIndexChanged += new System.EventHandler(this.cbTeknikExpirationUnit_SelectedIndexChanged);
+            // 
+            // lblTeknikExpiration
+            // 
+            resources.ApplyResources(this.lblTeknikExpiration, "lblTeknikExpiration");
+            this.lblTeknikExpiration.Name = "lblTeknikExpiration";
+            // 
+            // lblTeknikUrlShortenerAPIUrl
+            // 
+            resources.ApplyResources(this.lblTeknikUrlShortenerAPIUrl, "lblTeknikUrlShortenerAPIUrl");
+            this.lblTeknikUrlShortenerAPIUrl.Name = "lblTeknikUrlShortenerAPIUrl";
+            // 
+            // tbTeknikUrlShortenerAPIUrl
+            // 
+            resources.ApplyResources(this.tbTeknikUrlShortenerAPIUrl, "tbTeknikUrlShortenerAPIUrl");
+            this.tbTeknikUrlShortenerAPIUrl.Name = "tbTeknikUrlShortenerAPIUrl";
+            this.tbTeknikUrlShortenerAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikUrlShortenerAPIUrl_TextChanged);
+            // 
+            // lblTeknikPasteAPIUrl
+            // 
+            resources.ApplyResources(this.lblTeknikPasteAPIUrl, "lblTeknikPasteAPIUrl");
+            this.lblTeknikPasteAPIUrl.Name = "lblTeknikPasteAPIUrl";
+            // 
+            // tbTeknikPasteAPIUrl
+            // 
+            resources.ApplyResources(this.tbTeknikPasteAPIUrl, "tbTeknikPasteAPIUrl");
+            this.tbTeknikPasteAPIUrl.Name = "tbTeknikPasteAPIUrl";
+            this.tbTeknikPasteAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikPasteAPIUrl_TextChanged);
+            // 
+            // lblTeknikAuthUrl
+            // 
+            resources.ApplyResources(this.lblTeknikAuthUrl, "lblTeknikAuthUrl");
+            this.lblTeknikAuthUrl.Name = "lblTeknikAuthUrl";
+            // 
+            // tbTeknikAuthUrl
+            // 
+            resources.ApplyResources(this.tbTeknikAuthUrl, "tbTeknikAuthUrl");
+            this.tbTeknikAuthUrl.Name = "tbTeknikAuthUrl";
+            this.tbTeknikAuthUrl.TextChanged += new System.EventHandler(this.tbTeknikAuthUrl_TextChanged);
+            // 
+            // cbTeknikGenDeleteKey
+            // 
+            resources.ApplyResources(this.cbTeknikGenDeleteKey, "cbTeknikGenDeleteKey");
+            this.cbTeknikGenDeleteKey.Name = "cbTeknikGenDeleteKey";
+            this.cbTeknikGenDeleteKey.UseVisualStyleBackColor = true;
+            this.cbTeknikGenDeleteKey.CheckedChanged += new System.EventHandler(this.cbTeknikGenDeleteKey_CheckedChanged);
+            // 
+            // cbTeknikEncrypt
+            // 
+            resources.ApplyResources(this.cbTeknikEncrypt, "cbTeknikEncrypt");
+            this.cbTeknikEncrypt.Name = "cbTeknikEncrypt";
+            this.cbTeknikEncrypt.UseVisualStyleBackColor = true;
+            this.cbTeknikEncrypt.CheckedChanged += new System.EventHandler(this.cbTeknikEncrypt_CheckedChanged);
+            // 
+            // lblTeknikUploadAPIUrl
+            // 
+            resources.ApplyResources(this.lblTeknikUploadAPIUrl, "lblTeknikUploadAPIUrl");
+            this.lblTeknikUploadAPIUrl.Name = "lblTeknikUploadAPIUrl";
+            // 
+            // tbTeknikUploadAPIUrl
+            // 
+            resources.ApplyResources(this.tbTeknikUploadAPIUrl, "tbTeknikUploadAPIUrl");
+            this.tbTeknikUploadAPIUrl.Name = "tbTeknikUploadAPIUrl";
+            this.tbTeknikUploadAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikUploadAPIUrl_TextChanged);
+            // 
+            // oauthTeknik
+            // 
+            resources.ApplyResources(this.oauthTeknik, "oauthTeknik");
+            this.oauthTeknik.Name = "oauthTeknik";
+            this.oauthTeknik.UserInfo = null;
+            this.oauthTeknik.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauthTeknik_OpenButtonClicked);
+            this.oauthTeknik.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauthTeknik_CompleteButtonClicked);
+            this.oauthTeknik.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauthTeknik_ClearButtonClicked);
+            this.oauthTeknik.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauthTeknik_RefreshButtonClicked);
+            // 
             // tpPomf
             // 
             this.tpPomf.BackColor = System.Drawing.SystemColors.Window;
-            this.tpPomf.Controls.Add(this.btnPomfTest);
             this.tpPomf.Controls.Add(this.txtPomfResultURL);
             this.tpPomf.Controls.Add(this.txtPomfUploadURL);
             this.tpPomf.Controls.Add(this.lblPomfResultURL);
             this.tpPomf.Controls.Add(this.lblPomfUploadURL);
-            this.tpPomf.Controls.Add(this.lblPomfUploaders);
-            this.tpPomf.Controls.Add(this.cbPomfUploaders);
             resources.ApplyResources(this.tpPomf, "tpPomf");
             this.tpPomf.Name = "tpPomf";
-            // 
-            // btnPomfTest
-            // 
-            resources.ApplyResources(this.btnPomfTest, "btnPomfTest");
-            this.btnPomfTest.Name = "btnPomfTest";
-            this.btnPomfTest.UseVisualStyleBackColor = true;
-            this.btnPomfTest.Click += new System.EventHandler(this.btnPomfTest_Click);
             // 
             // txtPomfResultURL
             // 
@@ -3798,19 +3218,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.lblPomfUploadURL, "lblPomfUploadURL");
             this.lblPomfUploadURL.Name = "lblPomfUploadURL";
             // 
-            // lblPomfUploaders
-            // 
-            resources.ApplyResources(this.lblPomfUploaders, "lblPomfUploaders");
-            this.lblPomfUploaders.Name = "lblPomfUploaders";
-            // 
-            // cbPomfUploaders
-            // 
-            this.cbPomfUploaders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPomfUploaders.FormattingEnabled = true;
-            resources.ApplyResources(this.cbPomfUploaders, "cbPomfUploaders");
-            this.cbPomfUploaders.Name = "cbPomfUploaders";
-            this.cbPomfUploaders.SelectedIndexChanged += new System.EventHandler(this.cbPomfUploaders_SelectedIndexChanged);
-            // 
             // tpSeafile
             // 
             this.tpSeafile.BackColor = System.Drawing.SystemColors.Window;
@@ -3832,6 +3239,7 @@ namespace ShareX.UploadersLib
             this.tpSeafile.Controls.Add(this.grpSeafileObtainAuthToken);
             this.tpSeafile.Controls.Add(this.cbSeafileIgnoreInvalidCert);
             this.tpSeafile.Controls.Add(this.cbSeafileCreateShareableURL);
+            this.tpSeafile.Controls.Add(this.cbSeafileCreateShareableURLRaw);
             this.tpSeafile.Controls.Add(this.txtSeafileAuthToken);
             this.tpSeafile.Controls.Add(this.lblSeafileAuthToken);
             this.tpSeafile.Controls.Add(this.lblSeafileAPIURL);
@@ -4082,10 +3490,18 @@ namespace ShareX.UploadersLib
             this.cbSeafileCreateShareableURL.UseVisualStyleBackColor = true;
             this.cbSeafileCreateShareableURL.CheckedChanged += new System.EventHandler(this.cbSeafileCreateShareableURL_CheckedChanged);
             // 
+            // cbSeafileCreateShareableURLRaw
+            // 
+            resources.ApplyResources(this.cbSeafileCreateShareableURLRaw, "cbSeafileCreateShareableURLRaw");
+            this.cbSeafileCreateShareableURLRaw.Name = "cbSeafileCreateShareableURLRaw";
+            this.cbSeafileCreateShareableURLRaw.UseVisualStyleBackColor = true;
+            this.cbSeafileCreateShareableURLRaw.CheckedChanged += new System.EventHandler(this.cbSeafileCreateShareableURLRaw_CheckedChanged);
+            // 
             // txtSeafileAuthToken
             // 
             resources.ApplyResources(this.txtSeafileAuthToken, "txtSeafileAuthToken");
             this.txtSeafileAuthToken.Name = "txtSeafileAuthToken";
+            this.txtSeafileAuthToken.UseSystemPasswordChar = true;
             this.txtSeafileAuthToken.TextChanged += new System.EventHandler(this.txtSeafileAuthToken_TextChanged);
             // 
             // lblSeafileAuthToken
@@ -4145,7 +3561,7 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.cbStreamableAnonymous, "cbStreamableAnonymous");
             this.cbStreamableAnonymous.Name = "cbStreamableAnonymous";
             this.cbStreamableAnonymous.UseVisualStyleBackColor = true;
-            this.cbStreamableAnonymous.CheckedChanged += new System.EventHandler(this.cboxStreamableAnonymous_CheckedChanged);
+            this.cbStreamableAnonymous.CheckedChanged += new System.EventHandler(this.cbStreamableAnonymous_CheckedChanged);
             // 
             // tpSul
             // 
@@ -4285,7 +3701,7 @@ namespace ShareX.UploadersLib
             // gbPlikLoginCredentials
             // 
             this.gbPlikLoginCredentials.Controls.Add(this.nudPlikTTL);
-            this.gbPlikLoginCredentials.Controls.Add(this.cbxPlikTTLUnit);
+            this.gbPlikLoginCredentials.Controls.Add(this.cbPlikTTLUnit);
             this.gbPlikLoginCredentials.Controls.Add(this.lblPlikTTL);
             this.gbPlikLoginCredentials.Controls.Add(this.txtPlikURL);
             this.gbPlikLoginCredentials.Controls.Add(this.lblPlikURL);
@@ -4322,18 +3738,18 @@ namespace ShareX.UploadersLib
             0});
             this.nudPlikTTL.ValueChanged += new System.EventHandler(this.nudPlikTTL_ValueChanged);
             // 
-            // cbxPlikTTLUnit
+            // cbPlikTTLUnit
             // 
-            this.cbxPlikTTLUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPlikTTLUnit.FormattingEnabled = true;
-            this.cbxPlikTTLUnit.Items.AddRange(new object[] {
-            resources.GetString("cbxPlikTTLUnit.Items"),
-            resources.GetString("cbxPlikTTLUnit.Items1"),
-            resources.GetString("cbxPlikTTLUnit.Items2"),
-            resources.GetString("cbxPlikTTLUnit.Items3")});
-            resources.ApplyResources(this.cbxPlikTTLUnit, "cbxPlikTTLUnit");
-            this.cbxPlikTTLUnit.Name = "cbxPlikTTLUnit";
-            this.cbxPlikTTLUnit.SelectedIndexChanged += new System.EventHandler(this.cbxPlikTTLUnit_SelectedIndexChanged);
+            this.cbPlikTTLUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPlikTTLUnit.FormattingEnabled = true;
+            this.cbPlikTTLUnit.Items.AddRange(new object[] {
+            resources.GetString("cbPlikTTLUnit.Items"),
+            resources.GetString("cbPlikTTLUnit.Items1"),
+            resources.GetString("cbPlikTTLUnit.Items2"),
+            resources.GetString("cbPlikTTLUnit.Items3")});
+            resources.ApplyResources(this.cbPlikTTLUnit, "cbPlikTTLUnit");
+            this.cbPlikTTLUnit.Name = "cbPlikTTLUnit";
+            this.cbPlikTTLUnit.SelectedIndexChanged += new System.EventHandler(this.cbPlikTTLUnit_SelectedIndexChanged);
             // 
             // lblPlikTTL
             // 
@@ -4395,6 +3811,9 @@ namespace ShareX.UploadersLib
             // 
             // tpYouTube
             // 
+            this.tpYouTube.Controls.Add(this.llYouTubePermissionsLink);
+            this.tpYouTube.Controls.Add(this.lblYouTubePermissionsTip);
+            this.tpYouTube.Controls.Add(this.cbYouTubeShowDialog);
             this.tpYouTube.Controls.Add(this.cbYouTubeUseShortenedLink);
             this.tpYouTube.Controls.Add(this.cbYouTubePrivacyType);
             this.tpYouTube.Controls.Add(this.lblYouTubePrivacyType);
@@ -4402,6 +3821,25 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpYouTube, "tpYouTube");
             this.tpYouTube.Name = "tpYouTube";
             this.tpYouTube.UseVisualStyleBackColor = true;
+            // 
+            // llYouTubePermissionsLink
+            // 
+            resources.ApplyResources(this.llYouTubePermissionsLink, "llYouTubePermissionsLink");
+            this.llYouTubePermissionsLink.Name = "llYouTubePermissionsLink";
+            this.llYouTubePermissionsLink.TabStop = true;
+            this.llYouTubePermissionsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llYouTubePermissionsLink_LinkClicked);
+            // 
+            // lblYouTubePermissionsTip
+            // 
+            resources.ApplyResources(this.lblYouTubePermissionsTip, "lblYouTubePermissionsTip");
+            this.lblYouTubePermissionsTip.Name = "lblYouTubePermissionsTip";
+            // 
+            // cbYouTubeShowDialog
+            // 
+            resources.ApplyResources(this.cbYouTubeShowDialog, "cbYouTubeShowDialog");
+            this.cbYouTubeShowDialog.Name = "cbYouTubeShowDialog";
+            this.cbYouTubeShowDialog.UseVisualStyleBackColor = true;
+            this.cbYouTubeShowDialog.CheckedChanged += new System.EventHandler(this.cbYouTubeShowDialog_CheckedChanged);
             // 
             // cbYouTubeUseShortenedLink
             // 
@@ -4427,6 +3865,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
             this.oauth2YouTube.Name = "oauth2YouTube";
+            this.oauth2YouTube.UserInfo = null;
             this.oauth2YouTube.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2YouTube_OpenButtonClicked);
             this.oauth2YouTube.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2YouTube_CompleteButtonClicked);
             this.oauth2YouTube.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2YouTube_ClearButtonClicked);
@@ -4442,10 +3881,10 @@ namespace ShareX.UploadersLib
             this.tpSharedFolder.Controls.Add(this.btnSharedFolderAdd);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderFiles);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderText);
-            this.tpSharedFolder.Controls.Add(this.cboSharedFolderFiles);
+            this.tpSharedFolder.Controls.Add(this.cbSharedFolderFiles);
             this.tpSharedFolder.Controls.Add(this.lblSharedFolderImages);
-            this.tpSharedFolder.Controls.Add(this.cboSharedFolderText);
-            this.tpSharedFolder.Controls.Add(this.cboSharedFolderImages);
+            this.tpSharedFolder.Controls.Add(this.cbSharedFolderText);
+            this.tpSharedFolder.Controls.Add(this.cbSharedFolderImages);
             resources.ApplyResources(this.tpSharedFolder, "tpSharedFolder");
             this.tpSharedFolder.Name = "tpSharedFolder";
             // 
@@ -4495,34 +3934,34 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.lblSharedFolderText, "lblSharedFolderText");
             this.lblSharedFolderText.Name = "lblSharedFolderText";
             // 
-            // cboSharedFolderFiles
+            // cbSharedFolderFiles
             // 
-            this.cboSharedFolderFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSharedFolderFiles.FormattingEnabled = true;
-            resources.ApplyResources(this.cboSharedFolderFiles, "cboSharedFolderFiles");
-            this.cboSharedFolderFiles.Name = "cboSharedFolderFiles";
-            this.cboSharedFolderFiles.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderFiles_SelectedIndexChanged);
+            this.cbSharedFolderFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSharedFolderFiles.FormattingEnabled = true;
+            resources.ApplyResources(this.cbSharedFolderFiles, "cbSharedFolderFiles");
+            this.cbSharedFolderFiles.Name = "cbSharedFolderFiles";
+            this.cbSharedFolderFiles.SelectedIndexChanged += new System.EventHandler(this.cbSharedFolderFiles_SelectedIndexChanged);
             // 
             // lblSharedFolderImages
             // 
             resources.ApplyResources(this.lblSharedFolderImages, "lblSharedFolderImages");
             this.lblSharedFolderImages.Name = "lblSharedFolderImages";
             // 
-            // cboSharedFolderText
+            // cbSharedFolderText
             // 
-            this.cboSharedFolderText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSharedFolderText.FormattingEnabled = true;
-            resources.ApplyResources(this.cboSharedFolderText, "cboSharedFolderText");
-            this.cboSharedFolderText.Name = "cboSharedFolderText";
-            this.cboSharedFolderText.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderText_SelectedIndexChanged);
+            this.cbSharedFolderText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSharedFolderText.FormattingEnabled = true;
+            resources.ApplyResources(this.cbSharedFolderText, "cbSharedFolderText");
+            this.cbSharedFolderText.Name = "cbSharedFolderText";
+            this.cbSharedFolderText.SelectedIndexChanged += new System.EventHandler(this.cbSharedFolderText_SelectedIndexChanged);
             // 
-            // cboSharedFolderImages
+            // cbSharedFolderImages
             // 
-            this.cboSharedFolderImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSharedFolderImages.FormattingEnabled = true;
-            resources.ApplyResources(this.cboSharedFolderImages, "cboSharedFolderImages");
-            this.cboSharedFolderImages.Name = "cboSharedFolderImages";
-            this.cboSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cboSharedFolderImages_SelectedIndexChanged);
+            this.cbSharedFolderImages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSharedFolderImages.FormattingEnabled = true;
+            resources.ApplyResources(this.cbSharedFolderImages, "cbSharedFolderImages");
+            this.cbSharedFolderImages.Name = "cbSharedFolderImages";
+            this.cbSharedFolderImages.SelectedIndexChanged += new System.EventHandler(this.cbSharedFolderImages_SelectedIndexChanged);
             // 
             // tpEmail
             // 
@@ -4862,13 +4301,14 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.cbGistPublishPublic, "cbGistPublishPublic");
             this.cbGistPublishPublic.Name = "cbGistPublishPublic";
             this.cbGistPublishPublic.UseVisualStyleBackColor = true;
-            this.cbGistPublishPublic.CheckedChanged += new System.EventHandler(this.chkGistPublishPublic_CheckedChanged);
+            this.cbGistPublishPublic.CheckedChanged += new System.EventHandler(this.cbGistPublishPublic_CheckedChanged);
             // 
             // oAuth2Gist
             // 
             this.oAuth2Gist.IsRefreshable = false;
             resources.ApplyResources(this.oAuth2Gist, "oAuth2Gist");
             this.oAuth2Gist.Name = "oAuth2Gist";
+            this.oAuth2Gist.UserInfo = null;
             this.oAuth2Gist.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oAuth2Gist_OpenButtonClicked);
             this.oAuth2Gist.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oAuth2Gist_CompleteButtonClicked);
             this.oAuth2Gist.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oAuth2Gist_ClearButtonClicked);
@@ -4999,7 +4439,6 @@ namespace ShareX.UploadersLib
             // 
             this.tcImageUploaders.Controls.Add(this.tpImgur);
             this.tcImageUploaders.Controls.Add(this.tpImageShack);
-            this.tcImageUploaders.Controls.Add(this.tpTinyPic);
             this.tcImageUploaders.Controls.Add(this.tpFlickr);
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
             this.tcImageUploaders.Controls.Add(this.tpGooglePhotos);
@@ -5056,6 +4495,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2Imgur, "oauth2Imgur");
             this.oauth2Imgur.Name = "oauth2Imgur";
+            this.oauth2Imgur.UserInfo = null;
             this.oauth2Imgur.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Imgur_OpenButtonClicked);
             this.oauth2Imgur.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Imgur_CompleteButtonClicked);
             this.oauth2Imgur.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Imgur_ClearButtonClicked);
@@ -5063,12 +4503,13 @@ namespace ShareX.UploadersLib
             // 
             // lvImgurAlbumList
             // 
+            this.lvImgurAlbumList.AllowColumnSort = true;
+            this.lvImgurAlbumList.AutoFillColumn = true;
             this.lvImgurAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chImgurID,
             this.chImgurTitle,
             this.chImgurDescription});
             this.lvImgurAlbumList.FullRowSelect = true;
-            this.lvImgurAlbumList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvImgurAlbumList.HideSelection = false;
             resources.ApplyResources(this.lvImgurAlbumList, "lvImgurAlbumList");
             this.lvImgurAlbumList.MultiSelect = false;
@@ -5174,63 +4615,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.lblImageShackPassword, "lblImageShackPassword");
             this.lblImageShackPassword.Name = "lblImageShackPassword";
             // 
-            // tpTinyPic
-            // 
-            this.tpTinyPic.BackColor = System.Drawing.SystemColors.Window;
-            this.tpTinyPic.Controls.Add(this.atcTinyPicAccountType);
-            this.tpTinyPic.Controls.Add(this.btnTinyPicLogin);
-            this.tpTinyPic.Controls.Add(this.txtTinyPicPassword);
-            this.tpTinyPic.Controls.Add(this.lblTinyPicPassword);
-            this.tpTinyPic.Controls.Add(this.txtTinyPicUsername);
-            this.tpTinyPic.Controls.Add(this.lblTinyPicUsername);
-            this.tpTinyPic.Controls.Add(this.btnTinyPicOpenMyImages);
-            resources.ApplyResources(this.tpTinyPic, "tpTinyPic");
-            this.tpTinyPic.Name = "tpTinyPic";
-            // 
-            // atcTinyPicAccountType
-            // 
-            resources.ApplyResources(this.atcTinyPicAccountType, "atcTinyPicAccountType");
-            this.atcTinyPicAccountType.Name = "atcTinyPicAccountType";
-            this.atcTinyPicAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            this.atcTinyPicAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcTinyPicAccountType_AccountTypeChanged);
-            // 
-            // btnTinyPicLogin
-            // 
-            resources.ApplyResources(this.btnTinyPicLogin, "btnTinyPicLogin");
-            this.btnTinyPicLogin.Name = "btnTinyPicLogin";
-            this.btnTinyPicLogin.UseVisualStyleBackColor = true;
-            this.btnTinyPicLogin.Click += new System.EventHandler(this.btnTinyPicLogin_Click);
-            // 
-            // txtTinyPicPassword
-            // 
-            resources.ApplyResources(this.txtTinyPicPassword, "txtTinyPicPassword");
-            this.txtTinyPicPassword.Name = "txtTinyPicPassword";
-            this.txtTinyPicPassword.UseSystemPasswordChar = true;
-            this.txtTinyPicPassword.TextChanged += new System.EventHandler(this.txtTinyPicPassword_TextChanged);
-            // 
-            // lblTinyPicPassword
-            // 
-            resources.ApplyResources(this.lblTinyPicPassword, "lblTinyPicPassword");
-            this.lblTinyPicPassword.Name = "lblTinyPicPassword";
-            // 
-            // txtTinyPicUsername
-            // 
-            resources.ApplyResources(this.txtTinyPicUsername, "txtTinyPicUsername");
-            this.txtTinyPicUsername.Name = "txtTinyPicUsername";
-            this.txtTinyPicUsername.TextChanged += new System.EventHandler(this.txtTinyPicUsername_TextChanged);
-            // 
-            // lblTinyPicUsername
-            // 
-            resources.ApplyResources(this.lblTinyPicUsername, "lblTinyPicUsername");
-            this.lblTinyPicUsername.Name = "lblTinyPicUsername";
-            // 
-            // btnTinyPicOpenMyImages
-            // 
-            resources.ApplyResources(this.btnTinyPicOpenMyImages, "btnTinyPicOpenMyImages");
-            this.btnTinyPicOpenMyImages.Name = "btnTinyPicOpenMyImages";
-            this.btnTinyPicOpenMyImages.UseVisualStyleBackColor = true;
-            this.btnTinyPicOpenMyImages.Click += new System.EventHandler(this.btnTinyPicOpenMyImages_Click);
-            // 
             // tpFlickr
             // 
             this.tpFlickr.BackColor = System.Drawing.SystemColors.Window;
@@ -5251,6 +4635,7 @@ namespace ShareX.UploadersLib
             this.oauthFlickr.IsRefreshable = false;
             resources.ApplyResources(this.oauthFlickr, "oauthFlickr");
             this.oauthFlickr.Name = "oauthFlickr";
+            this.oauthFlickr.UserInfo = null;
             this.oauthFlickr.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauthFlickr_OpenButtonClicked);
             this.oauthFlickr.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauthFlickr_CompleteButtonClicked);
             this.oauthFlickr.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauthFlickr_ClearButtonClicked);
@@ -5268,7 +4653,7 @@ namespace ShareX.UploadersLib
             // 
             this.gbPhotobucketAlbumPath.Controls.Add(this.btnPhotobucketAddAlbum);
             this.gbPhotobucketAlbumPath.Controls.Add(this.btnPhotobucketRemoveAlbum);
-            this.gbPhotobucketAlbumPath.Controls.Add(this.cboPhotobucketAlbumPaths);
+            this.gbPhotobucketAlbumPath.Controls.Add(this.cbPhotobucketAlbumPaths);
             resources.ApplyResources(this.gbPhotobucketAlbumPath, "gbPhotobucketAlbumPath");
             this.gbPhotobucketAlbumPath.Name = "gbPhotobucketAlbumPath";
             this.gbPhotobucketAlbumPath.TabStop = false;
@@ -5287,12 +4672,12 @@ namespace ShareX.UploadersLib
             this.btnPhotobucketRemoveAlbum.UseVisualStyleBackColor = true;
             this.btnPhotobucketRemoveAlbum.Click += new System.EventHandler(this.btnPhotobucketRemoveAlbum_Click);
             // 
-            // cboPhotobucketAlbumPaths
+            // cbPhotobucketAlbumPaths
             // 
-            this.cboPhotobucketAlbumPaths.FormattingEnabled = true;
-            resources.ApplyResources(this.cboPhotobucketAlbumPaths, "cboPhotobucketAlbumPaths");
-            this.cboPhotobucketAlbumPaths.Name = "cboPhotobucketAlbumPaths";
-            this.cboPhotobucketAlbumPaths.SelectedIndexChanged += new System.EventHandler(this.cboPhotobucketAlbumPaths_SelectedIndexChanged);
+            this.cbPhotobucketAlbumPaths.FormattingEnabled = true;
+            resources.ApplyResources(this.cbPhotobucketAlbumPaths, "cbPhotobucketAlbumPaths");
+            this.cbPhotobucketAlbumPaths.Name = "cbPhotobucketAlbumPaths";
+            this.cbPhotobucketAlbumPaths.SelectedIndexChanged += new System.EventHandler(this.cbPhotobucketAlbumPaths_SelectedIndexChanged);
             // 
             // gbPhotobucketAlbums
             // 
@@ -5388,6 +4773,10 @@ namespace ShareX.UploadersLib
             // tpGooglePhotos
             // 
             this.tpGooglePhotos.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGooglePhotos.Controls.Add(this.lblGooglePhotosCreateAlbumName);
+            this.tpGooglePhotos.Controls.Add(this.txtGooglePhotosCreateAlbumName);
+            this.tpGooglePhotos.Controls.Add(this.btnGooglePhotosCreateAlbum);
+            this.tpGooglePhotos.Controls.Add(this.cbGooglePhotosIsPublic);
             this.tpGooglePhotos.Controls.Add(this.txtPicasaAlbumID);
             this.tpGooglePhotos.Controls.Add(this.lblPicasaAlbumID);
             this.tpGooglePhotos.Controls.Add(this.lvPicasaAlbumList);
@@ -5395,6 +4784,30 @@ namespace ShareX.UploadersLib
             this.tpGooglePhotos.Controls.Add(this.oauth2Picasa);
             resources.ApplyResources(this.tpGooglePhotos, "tpGooglePhotos");
             this.tpGooglePhotos.Name = "tpGooglePhotos";
+            // 
+            // lblGooglePhotosCreateAlbumName
+            // 
+            resources.ApplyResources(this.lblGooglePhotosCreateAlbumName, "lblGooglePhotosCreateAlbumName");
+            this.lblGooglePhotosCreateAlbumName.Name = "lblGooglePhotosCreateAlbumName";
+            // 
+            // txtGooglePhotosCreateAlbumName
+            // 
+            resources.ApplyResources(this.txtGooglePhotosCreateAlbumName, "txtGooglePhotosCreateAlbumName");
+            this.txtGooglePhotosCreateAlbumName.Name = "txtGooglePhotosCreateAlbumName";
+            // 
+            // btnGooglePhotosCreateAlbum
+            // 
+            resources.ApplyResources(this.btnGooglePhotosCreateAlbum, "btnGooglePhotosCreateAlbum");
+            this.btnGooglePhotosCreateAlbum.Name = "btnGooglePhotosCreateAlbum";
+            this.btnGooglePhotosCreateAlbum.UseVisualStyleBackColor = true;
+            this.btnGooglePhotosCreateAlbum.Click += new System.EventHandler(this.btnGooglePhotosCreateAlbum_Click);
+            // 
+            // cbGooglePhotosIsPublic
+            // 
+            resources.ApplyResources(this.cbGooglePhotosIsPublic, "cbGooglePhotosIsPublic");
+            this.cbGooglePhotosIsPublic.Name = "cbGooglePhotosIsPublic";
+            this.cbGooglePhotosIsPublic.UseVisualStyleBackColor = true;
+            this.cbGooglePhotosIsPublic.CheckedChanged += new System.EventHandler(this.cbGooglePhotosIsPublic_CheckedChanged);
             // 
             // txtPicasaAlbumID
             // 
@@ -5414,6 +4827,7 @@ namespace ShareX.UploadersLib
             this.chPicasaName,
             this.chPicasaDescription});
             this.lvPicasaAlbumList.FullRowSelect = true;
+            this.lvPicasaAlbumList.HideSelection = false;
             resources.ApplyResources(this.lvPicasaAlbumList, "lvPicasaAlbumList");
             this.lvPicasaAlbumList.MultiSelect = false;
             this.lvPicasaAlbumList.Name = "lvPicasaAlbumList";
@@ -5444,6 +4858,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2Picasa, "oauth2Picasa");
             this.oauth2Picasa.Name = "oauth2Picasa";
+            this.oauth2Picasa.UserInfo = null;
             this.oauth2Picasa.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Picasa_OpenButtonClicked);
             this.oauth2Picasa.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Picasa_CompleteButtonClicked);
             this.oauth2Picasa.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Picasa_ClearButtonClicked);
@@ -5452,10 +4867,7 @@ namespace ShareX.UploadersLib
             // tpChevereto
             // 
             this.tpChevereto.BackColor = System.Drawing.SystemColors.Window;
-            this.tpChevereto.Controls.Add(this.btnCheveretoTestAll);
             this.tpChevereto.Controls.Add(this.lblCheveretoUploadURLExample);
-            this.tpChevereto.Controls.Add(this.lblCheveretoUploaders);
-            this.tpChevereto.Controls.Add(this.cbCheveretoUploaders);
             this.tpChevereto.Controls.Add(this.cbCheveretoDirectURL);
             this.tpChevereto.Controls.Add(this.lblCheveretoUploadURL);
             this.tpChevereto.Controls.Add(this.txtCheveretoUploadURL);
@@ -5464,30 +4876,10 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpChevereto, "tpChevereto");
             this.tpChevereto.Name = "tpChevereto";
             // 
-            // btnCheveretoTestAll
-            // 
-            resources.ApplyResources(this.btnCheveretoTestAll, "btnCheveretoTestAll");
-            this.btnCheveretoTestAll.Name = "btnCheveretoTestAll";
-            this.btnCheveretoTestAll.UseVisualStyleBackColor = true;
-            this.btnCheveretoTestAll.Click += new System.EventHandler(this.btnCheveretoTestAll_Click);
-            // 
             // lblCheveretoUploadURLExample
             // 
             resources.ApplyResources(this.lblCheveretoUploadURLExample, "lblCheveretoUploadURLExample");
             this.lblCheveretoUploadURLExample.Name = "lblCheveretoUploadURLExample";
-            // 
-            // lblCheveretoUploaders
-            // 
-            resources.ApplyResources(this.lblCheveretoUploaders, "lblCheveretoUploaders");
-            this.lblCheveretoUploaders.Name = "lblCheveretoUploaders";
-            // 
-            // cbCheveretoUploaders
-            // 
-            this.cbCheveretoUploaders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCheveretoUploaders.FormattingEnabled = true;
-            resources.ApplyResources(this.cbCheveretoUploaders, "cbCheveretoUploaders");
-            this.cbCheveretoUploaders.Name = "cbCheveretoUploaders";
-            this.cbCheveretoUploaders.SelectedIndexChanged += new System.EventHandler(this.cbCheveretoUploaders_SelectedIndexChanged);
             // 
             // cbCheveretoDirectURL
             // 
@@ -5558,19 +4950,17 @@ namespace ShareX.UploadersLib
             this.tcUploaders.Name = "tcUploaders";
             this.tcUploaders.SelectedIndex = 0;
             // 
-            // lblWidthHint
+            // tttvMain
             // 
-            this.lblWidthHint.BackColor = System.Drawing.SystemColors.Highlight;
-            resources.ApplyResources(this.lblWidthHint, "lblWidthHint");
-            this.lblWidthHint.Name = "lblWidthHint";
-            // 
-            // ttlvMain
-            // 
-            resources.ApplyResources(this.ttlvMain, "ttlvMain");
-            this.ttlvMain.ImageList = null;
-            this.ttlvMain.ListViewSize = 180;
-            this.ttlvMain.MainTabControl = null;
-            this.ttlvMain.Name = "ttlvMain";
+            this.tttvMain.AutoSelectChild = true;
+            resources.ApplyResources(this.tttvMain, "tttvMain");
+            this.tttvMain.ImageList = null;
+            this.tttvMain.LeftPanelBackColor = System.Drawing.SystemColors.Window;
+            this.tttvMain.MainTabControl = null;
+            this.tttvMain.Name = "tttvMain";
+            this.tttvMain.SeparatorColor = System.Drawing.SystemColors.ControlDark;
+            this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tttvMain.TreeViewSize = 230;
             // 
             // actRapidShareAccountType
             // 
@@ -5581,38 +4971,17 @@ namespace ShareX.UploadersLib
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.lblWidthHint);
             this.Controls.Add(this.tcUploaders);
-            this.Controls.Add(this.ttlvMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
+            this.Controls.Add(this.tttvMain);
             this.Name = "UploadersConfigForm";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.UploadersConfigForm_Shown);
             this.Resize += new System.EventHandler(this.UploadersConfigForm_Resize);
             this.tpOtherUploaders.ResumeLayout(false);
             this.tcOtherUploaders.ResumeLayout(false);
             this.tpTwitter.ResumeLayout(false);
             this.tpTwitter.PerformLayout();
-            this.tpCustomUploaders.ResumeLayout(false);
-            this.tpCustomUploaders.PerformLayout();
-            this.pCustomUploader.ResumeLayout(false);
-            this.pCustomUploader.PerformLayout();
-            this.tcCustomUploaderResponseParse.ResumeLayout(false);
-            this.tpCustomUploaderJsonParse.ResumeLayout(false);
-            this.tpCustomUploaderJsonParse.PerformLayout();
-            this.tpCustomUploaderXmlParse.ResumeLayout(false);
-            this.tpCustomUploaderXmlParse.PerformLayout();
-            this.tpCustomUploaderRegexParse.ResumeLayout(false);
-            this.tpCustomUploaderRegexParse.PerformLayout();
-            this.tcCustomUploaderArguments.ResumeLayout(false);
-            this.tpCustomUploaderArguments.ResumeLayout(false);
-            this.tpCustomUploaderArguments.PerformLayout();
-            this.tpCustomUploaderHeaders.ResumeLayout(false);
-            this.tpCustomUploaderHeaders.PerformLayout();
-            this.gbCustomUploaders.ResumeLayout(false);
             this.tpURLShorteners.ResumeLayout(false);
             this.tcURLShorteners.ResumeLayout(false);
             this.tpBitly.ResumeLayout(false);
@@ -5627,6 +4996,8 @@ namespace ShareX.UploadersLib
             this.tpFirebaseDynamicLinks.PerformLayout();
             this.tpKutt.ResumeLayout(false);
             this.tpKutt.PerformLayout();
+            this.tpZeroWidthShortener.ResumeLayout(false);
+            this.tpZeroWidthShortener.PerformLayout();
             this.tpFileUploaders.ResumeLayout(false);
             this.tcFileUploaders.ResumeLayout(false);
             this.tpFTP.ResumeLayout(false);
@@ -5658,6 +5029,8 @@ namespace ShareX.UploadersLib
             this.gbAmazonS3Advanced.PerformLayout();
             this.tpGoogleCloudStorage.ResumeLayout(false);
             this.tpGoogleCloudStorage.PerformLayout();
+            this.gbGoogleCloudStorageAdvanced.ResumeLayout(false);
+            this.gbGoogleCloudStorageAdvanced.PerformLayout();
             this.tpAzureStorage.ResumeLayout(false);
             this.tpAzureStorage.PerformLayout();
             this.tpBackblazeB2.ResumeLayout(false);
@@ -5675,8 +5048,6 @@ namespace ShareX.UploadersLib
             this.tpPushbullet.PerformLayout();
             this.tpSendSpace.ResumeLayout(false);
             this.tpSendSpace.PerformLayout();
-            this.tpGe_tt.ResumeLayout(false);
-            this.tpGe_tt.PerformLayout();
             this.tpHostr.ResumeLayout(false);
             this.tpHostr.PerformLayout();
             this.tpJira.ResumeLayout(false);
@@ -5685,6 +5056,9 @@ namespace ShareX.UploadersLib
             this.gbJiraServer.PerformLayout();
             this.tpLambda.ResumeLayout(false);
             this.tpLambda.PerformLayout();
+            this.tpTeknik.ResumeLayout(false);
+            this.tpTeknik.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTeknikExpirationLength)).EndInit();
             this.tpPomf.ResumeLayout(false);
             this.tpPomf.PerformLayout();
             this.tpSeafile.ResumeLayout(false);
@@ -5737,13 +5111,10 @@ namespace ShareX.UploadersLib
             this.tpImgur.PerformLayout();
             this.tpImageShack.ResumeLayout(false);
             this.tpImageShack.PerformLayout();
-            this.tpTinyPic.ResumeLayout(false);
-            this.tpTinyPic.PerformLayout();
             this.tpFlickr.ResumeLayout(false);
             this.tpFlickr.PerformLayout();
             this.tpPhotobucket.ResumeLayout(false);
             this.gbPhotobucketAlbumPath.ResumeLayout(false);
-            this.gbPhotobucketAlbumPath.PerformLayout();
             this.gbPhotobucketAlbums.ResumeLayout(false);
             this.gbPhotobucketAlbums.PerformLayout();
             this.gbPhotobucketUserAccount.ResumeLayout(false);
@@ -5764,58 +5135,8 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtRapidSharePremiumUserName;
         private AccountTypeControl actRapidShareAccountType;
         private System.Windows.Forms.ToolTip ttHelpTip;
-        private ShareX.HelpersLib.TabToListView ttlvMain;
         private System.Windows.Forms.TabPage tpOtherUploaders;
         private System.Windows.Forms.TabControl tcOtherUploaders;
-        private System.Windows.Forms.Button btnCustomUploaderHelp;
-        private System.Windows.Forms.Label lblCustomUploaderImageUploader;
-        private System.Windows.Forms.Button btnCustomUploaderFileUploaderTest;
-        private System.Windows.Forms.Label lblCustomUploaderFileUploader;
-        private System.Windows.Forms.Button btnCustomUploaderImageUploaderTest;
-        private System.Windows.Forms.Label lblCustomUploaderTestResult;
-        private System.Windows.Forms.TextBox txtCustomUploaderDeletionURL;
-        private System.Windows.Forms.ComboBox cbCustomUploaderFileUploader;
-        private System.Windows.Forms.Label lblCustomUploaderDeletionURL;
-        private System.Windows.Forms.Button btnCustomUploaderShowLastResponse;
-        private System.Windows.Forms.Label lblCustomUploaderResponseType;
-        private System.Windows.Forms.ComboBox cbCustomUploaderURLShortener;
-        private System.Windows.Forms.GroupBox gbCustomUploaders;
-        private System.Windows.Forms.ListBox lbCustomUploaderList;
-        private System.Windows.Forms.Button btnCustomUploaderRemove;
-        private System.Windows.Forms.TextBox txtCustomUploaderName;
-        private System.Windows.Forms.Button btnCustomUploaderAdd;
-        private System.Windows.Forms.Label lblCustomUploaderTextUploader;
-        private System.Windows.Forms.Label lblCustomUploaderRequestURL;
-        private System.Windows.Forms.Button btnCustomUploaderURLShortenerTest;
-        private System.Windows.Forms.Button btnCustomUploaderRegexpUpdate;
-        private System.Windows.Forms.TextBox txtCustomUploaderRegexp;
-        private ShareX.HelpersLib.MyListView lvCustomUploaderRegexps;
-        private System.Windows.Forms.ColumnHeader lvRegexpsColumn;
-        private System.Windows.Forms.Button btnCustomUploaderRegexpRemove;
-        private System.Windows.Forms.Button btnCustomUploaderRegexpAdd;
-        private System.Windows.Forms.ComboBox cbCustomUploaderTextUploader;
-        private System.Windows.Forms.TextBox txtCustomUploaderThumbnailURL;
-        private System.Windows.Forms.Label lblCustomUploaderURLShortener;
-        private System.Windows.Forms.ComboBox cbCustomUploaderResponseType;
-        private System.Windows.Forms.Button btnCustomUploaderTextUploaderTest;
-        private System.Windows.Forms.TextBox txtCustomUploaderURL;
-        private System.Windows.Forms.ComboBox cbCustomUploaderImageUploader;
-        private System.Windows.Forms.TextBox txtCustomUploaderRequestURL;
-        private System.Windows.Forms.RichTextBox txtCustomUploaderLog;
-        private System.Windows.Forms.Label lblCustomUploaderThumbnailURL;
-        private System.Windows.Forms.Label lblCustomUploaderFileForm;
-        private System.Windows.Forms.Label lblCustomUploaderRequestType;
-        private System.Windows.Forms.ComboBox cbCustomUploaderRequestType;
-        private System.Windows.Forms.TextBox txtCustomUploaderFileForm;
-        private System.Windows.Forms.Label lblCustomUploaderURL;
-        private System.Windows.Forms.Button btnCustomUploaderArgUpdate;
-        private System.Windows.Forms.TextBox txtCustomUploaderArgValue;
-        private System.Windows.Forms.Button btnCustomUploaderArgRemove;
-        private ShareX.HelpersLib.MyListView lvCustomUploaderArguments;
-        private System.Windows.Forms.ColumnHeader chCustomUploaderArgumentsName;
-        private System.Windows.Forms.ColumnHeader chCustomUploaderArgumentsValue;
-        private System.Windows.Forms.Button btnCustomUploaderArgAdd;
-        private System.Windows.Forms.TextBox txtCustomUploaderArgName;
         private System.Windows.Forms.TabPage tpURLShorteners;
         private System.Windows.Forms.TabControl tcURLShorteners;
         private OAuthControl oauth2Bitly;
@@ -5835,7 +5156,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtDropboxPath;
         private System.Windows.Forms.Button btnCopyShowFiles;
         internal System.Windows.Forms.TabPage tpFTP;
-        private System.Windows.Forms.Button btnFTPClient;
         private System.Windows.Forms.Label lblFTPFile;
         private System.Windows.Forms.Label lblFTPText;
         private System.Windows.Forms.Label lblFTPImage;
@@ -5870,7 +5190,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblAmazonS3AccessKey;
         private System.Windows.Forms.TextBox txtAmazonS3AccessKey;
         private System.Windows.Forms.Label lblPushbulletDevices;
-        private System.Windows.Forms.ComboBox cboPushbulletDevices;
+        private System.Windows.Forms.ComboBox cbPushbulletDevices;
         private System.Windows.Forms.Button btnPushbulletGetDeviceList;
         private System.Windows.Forms.Label lblPushbulletUserKey;
         private System.Windows.Forms.TextBox txtPushbulletUserKey;
@@ -5878,6 +5198,8 @@ namespace ShareX.UploadersLib
         private OAuthControl oauth2GoogleDrive;
         private System.Windows.Forms.Label lblBoxFolderTip;
         private System.Windows.Forms.CheckBox cbBoxShare;
+        private System.Windows.Forms.ComboBox cbBoxShareAccessLevel;
+        private System.Windows.Forms.Label lblBoxShareAccessLevel;
         private ShareX.HelpersLib.MyListView lvBoxFolders;
         private System.Windows.Forms.ColumnHeader chBoxFoldersName;
         private System.Windows.Forms.Label lblBoxFolderID;
@@ -5889,12 +5211,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtSendSpacePassword;
         private System.Windows.Forms.TextBox txtSendSpaceUserName;
         private AccountTypeControl atcSendSpaceAccountType;
-        private System.Windows.Forms.Label lblGe_ttStatus;
-        private System.Windows.Forms.Label lblGe_ttPassword;
-        private System.Windows.Forms.Label lblGe_ttEmail;
-        private System.Windows.Forms.Button btnGe_ttLogin;
-        private System.Windows.Forms.TextBox txtGe_ttPassword;
-        private System.Windows.Forms.TextBox txtGe_ttEmail;
         private System.Windows.Forms.CheckBox cbLocalhostrDirectURL;
         private System.Windows.Forms.Label lblLocalhostrPassword;
         private System.Windows.Forms.Label lblLocalhostrEmail;
@@ -5923,9 +5239,9 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblSharedFolderFiles;
         private System.Windows.Forms.Label lblSharedFolderText;
         private System.Windows.Forms.Label lblSharedFolderImages;
-        private System.Windows.Forms.ComboBox cboSharedFolderFiles;
-        private System.Windows.Forms.ComboBox cboSharedFolderText;
-        private System.Windows.Forms.ComboBox cboSharedFolderImages;
+        private System.Windows.Forms.ComboBox cbSharedFolderFiles;
+        private System.Windows.Forms.ComboBox cbSharedFolderText;
+        private System.Windows.Forms.ComboBox cbSharedFolderImages;
         private System.Windows.Forms.TabPage tpTextUploaders;
         private System.Windows.Forms.TabControl tcTextUploaders;
         private System.Windows.Forms.Button btnPastebinLogin;
@@ -5939,7 +5255,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TabPage tpImageUploaders;
         private System.Windows.Forms.TabControl tcImageUploaders;
         private OAuthControl oauth2Imgur;
-        private System.Windows.Forms.ListView lvImgurAlbumList;
+        private ShareX.HelpersLib.MyListView lvImgurAlbumList;
         private System.Windows.Forms.ColumnHeader chImgurID;
         private System.Windows.Forms.ColumnHeader chImgurTitle;
         private System.Windows.Forms.ColumnHeader chImgurDescription;
@@ -5955,17 +5271,10 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtImageShackUsername;
         private System.Windows.Forms.TextBox txtImageShackPassword;
         private System.Windows.Forms.Label lblImageShackPassword;
-        private AccountTypeControl atcTinyPicAccountType;
-        private System.Windows.Forms.Button btnTinyPicLogin;
-        private System.Windows.Forms.TextBox txtTinyPicPassword;
-        private System.Windows.Forms.Label lblTinyPicPassword;
-        private System.Windows.Forms.TextBox txtTinyPicUsername;
-        private System.Windows.Forms.Label lblTinyPicUsername;
-        private System.Windows.Forms.Button btnTinyPicOpenMyImages;
         private System.Windows.Forms.GroupBox gbPhotobucketAlbumPath;
         private System.Windows.Forms.Button btnPhotobucketAddAlbum;
         private System.Windows.Forms.Button btnPhotobucketRemoveAlbum;
-        private System.Windows.Forms.ComboBox cboPhotobucketAlbumPaths;
+        private System.Windows.Forms.ComboBox cbPhotobucketAlbumPaths;
         private System.Windows.Forms.GroupBox gbPhotobucketAlbums;
         private System.Windows.Forms.Label lblPhotobucketNewAlbumName;
         private System.Windows.Forms.Label lblPhotobucketParentAlbumPath;
@@ -5989,7 +5298,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnPicasaRefreshAlbumList;
         private OAuthControl oauth2Picasa;
         private System.Windows.Forms.TabControl tcUploaders;
-        private ShareX.HelpersLib.ExportImportControl eiCustomUploaders;
         private ShareX.HelpersLib.ExportImportControl eiFTP;
         private OAuthControl oauth2Dropbox;
         private System.Windows.Forms.TextBox txtBitlyDomain;
@@ -6001,8 +5309,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnGoogleDriveRefreshFolders;
         private System.Windows.Forms.ColumnHeader chGoogleDriveDescription;
         private System.Windows.Forms.CheckBox cbGoogleDriveUseFolder;
-        private System.Windows.Forms.Label lblWidthHint;
-        private System.Windows.Forms.Button btnCustomUploaderExamples;
         private System.Windows.Forms.TextBox txtOwnCloudPath;
         private System.Windows.Forms.TextBox txtOwnCloudPassword;
         private System.Windows.Forms.TextBox txtOwnCloudUsername;
@@ -6070,7 +5376,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtTwitterDefaultMessage;
         private System.Windows.Forms.CheckBox cbTwitterSkipMessageBox;
         private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
-        private System.Windows.Forms.Button btnCustomUploaderClearUploaders;
         private System.Windows.Forms.Label lblOneTimeSecretAPIKey;
         private System.Windows.Forms.Label lblOneTimeSecretEmail;
         private System.Windows.Forms.TextBox txtOneTimeSecretAPIKey;
@@ -6084,8 +5389,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnTwitterNameUpdate;
         private System.Windows.Forms.Label lblPomfResultURL;
         private System.Windows.Forms.Label lblPomfUploadURL;
-        private System.Windows.Forms.Label lblPomfUploaders;
-        private System.Windows.Forms.ComboBox cbPomfUploaders;
         private System.Windows.Forms.TextBox txtPomfUploadURL;
         private System.Windows.Forms.TextBox txtPomfResultURL;
         private System.Windows.Forms.Button btnSeafileCheckAuthToken;
@@ -6098,6 +5401,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblSeafilePassword;
         private System.Windows.Forms.CheckBox cbSeafileIgnoreInvalidCert;
         private System.Windows.Forms.CheckBox cbSeafileCreateShareableURL;
+        private System.Windows.Forms.CheckBox cbSeafileCreateShareableURLRaw;
         private System.Windows.Forms.TextBox txtSeafileAuthToken;
         private System.Windows.Forms.Label lblSeafileAuthToken;
         private System.Windows.Forms.Label lblSeafileAPIURL;
@@ -6126,55 +5430,22 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.NumericUpDown nudSeafileExpireDays;
         private System.Windows.Forms.Label lblSeafileDaysToExpire;
         private System.Windows.Forms.ComboBox cbSeafileAPIURL;
-        private System.Windows.Forms.TabControl tcCustomUploaderArguments;
-        private System.Windows.Forms.TabPage tpCustomUploaderArguments;
-        private System.Windows.Forms.TabPage tpCustomUploaderHeaders;
-        private System.Windows.Forms.Button btnCustomUploaderHeaderUpdate;
-        private System.Windows.Forms.TextBox txtCustomUploaderHeaderName;
-        private System.Windows.Forms.TextBox txtCustomUploaderHeaderValue;
-        private System.Windows.Forms.Button btnCustomUploaderHeaderAdd;
-        private System.Windows.Forms.Button btnCustomUploaderHeaderRemove;
-        private HelpersLib.MyListView lvCustomUploaderHeaders;
-        private System.Windows.Forms.ColumnHeader chCustomUploaderHeadersName;
-        private System.Windows.Forms.ColumnHeader chCustomUploaderHeadersValue;
-        private System.Windows.Forms.Button btnPomfTest;
         private System.Windows.Forms.TextBox txtStreamablePassword;
         private System.Windows.Forms.TextBox txtStreamableUsername;
         private System.Windows.Forms.Label lblStreamableUsername;
         private System.Windows.Forms.Label lblStreamablePassword;
         private System.Windows.Forms.CheckBox cbStreamableAnonymous;
-        private System.Windows.Forms.TabControl tcCustomUploaderResponseParse;
-        private System.Windows.Forms.TabPage tpCustomUploaderRegexParse;
-        private System.Windows.Forms.Button btnCustomUploaderRegexAddSyntax;
-        private System.Windows.Forms.TabPage tpCustomUploaderJsonParse;
-        private System.Windows.Forms.Label lblCustomUploaderJsonPathExample;
-        private System.Windows.Forms.Label lblCustomUploaderJsonPath;
-        private System.Windows.Forms.TextBox txtCustomUploaderJsonPath;
-        private System.Windows.Forms.TabPage tpCustomUploaderXmlParse;
-        private System.Windows.Forms.Button btnCustomUploaderJsonAddSyntax;
-        private System.Windows.Forms.Button btnCustomUploadJsonPathHelp;
-        private System.Windows.Forms.Button btnCustomUploaderXmlSyntaxAdd;
-        private System.Windows.Forms.Button btnCustomUploaderXPathHelp;
-        private System.Windows.Forms.Label lblCustomUploaderXPathExample;
-        private System.Windows.Forms.Label lblCustomUploaderXPath;
-        private System.Windows.Forms.TextBox txtCustomUploaderXPath;
-        private System.Windows.Forms.Button btnCustomUploaderRegexHelp;
         private System.Windows.Forms.Label lblSulAPIKey;
         private System.Windows.Forms.TextBox txtSulAPIKey;
-        private System.Windows.Forms.Button btnCustomUploadersExportAll;
         private System.Windows.Forms.TextBox txtVgymeUserKey;
         private System.Windows.Forms.Label lvlVgymeUserKey;
         private System.Windows.Forms.LinkLabel llVgymeAccountDetailsPage;
-        private System.Windows.Forms.Label lblCheveretoUploaders;
-        private System.Windows.Forms.ComboBox cbCheveretoUploaders;
         private System.Windows.Forms.Label lblCheveretoUploadURLExample;
-        private System.Windows.Forms.Button btnCheveretoTestAll;
         private System.Windows.Forms.CheckBox cbPastebinRaw;
         private System.Windows.Forms.CheckBox cbGistUseRawURL;
         private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
         internal System.Windows.Forms.TabPage tpImgur;
         internal System.Windows.Forms.TabPage tpImageShack;
-        internal System.Windows.Forms.TabPage tpTinyPic;
         internal System.Windows.Forms.TabPage tpFlickr;
         internal System.Windows.Forms.TabPage tpPhotobucket;
         internal System.Windows.Forms.TabPage tpGooglePhotos;
@@ -6196,7 +5467,6 @@ namespace ShareX.UploadersLib
         internal System.Windows.Forms.TabPage tpMediaFire;
         internal System.Windows.Forms.TabPage tpPushbullet;
         internal System.Windows.Forms.TabPage tpSendSpace;
-        internal System.Windows.Forms.TabPage tpGe_tt;
         internal System.Windows.Forms.TabPage tpHostr;
         internal System.Windows.Forms.TabPage tpJira;
         internal System.Windows.Forms.TabPage tpLambda;
@@ -6212,7 +5482,6 @@ namespace ShareX.UploadersLib
         internal System.Windows.Forms.TabPage tpAdFly;
         internal System.Windows.Forms.TabPage tpPolr;
         internal System.Windows.Forms.TabPage tpTwitter;
-        internal System.Windows.Forms.TabPage tpCustomUploaders;
         private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
         private System.Windows.Forms.CheckBox cbEmailAutomaticSend;
         private System.Windows.Forms.Button btnLithiioGetAPIKey;
@@ -6232,8 +5501,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbPastieIsPublic;
         private System.Windows.Forms.CheckBox cbPolrUseAPIv1;
         private System.Windows.Forms.CheckBox cbPolrIsSecret;
-        private HelpersLib.MenuButton mbCustomUploaderDestinationType;
-        private System.Windows.Forms.ContextMenuStrip cmsCustomUploaderDestinationType;
         internal System.Windows.Forms.TabPage tpAzureStorage;
         private System.Windows.Forms.Label lblAzureStorageAccessKey;
         private System.Windows.Forms.TextBox txtAzureStorageAccountName;
@@ -6262,7 +5529,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblPlikURL;
         private System.Windows.Forms.TextBox txtPlikURL;
         private System.Windows.Forms.CheckBox cbPlikOneShot;
-        private System.Windows.Forms.ComboBox cbxPlikTTLUnit;
+        private System.Windows.Forms.ComboBox cbPlikTTLUnit;
         private System.Windows.Forms.NumericUpDown nudPlikTTL;
         private System.Windows.Forms.Label lblPlikTTL;
         private System.Windows.Forms.TextBox txtGistCustomURL;
@@ -6326,12 +5593,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtSFTPKeyPassphrase;
         private System.Windows.Forms.Button btnSFTPKeyLocationBrowse;
         private System.Windows.Forms.Label lblSFTPKeyPassphrase;
-        private System.Windows.Forms.Button btnCustomUploaderDuplicate;
-        private System.Windows.Forms.Panel pCustomUploader;
-        private System.Windows.Forms.Button btnCustomUploaderURLSharingServiceTest;
-        private System.Windows.Forms.ComboBox cbCustomUploaderURLSharingService;
-        private System.Windows.Forms.Label lblCustomUploaderURLSharingService;
-        private System.Windows.Forms.Label lblCustomUploaderName;
         private System.Windows.Forms.Label lblAmazonS3StorageClass;
         private System.Windows.Forms.ComboBox cbAmazonS3StorageClass;
         private System.Windows.Forms.Button btnAmazonS3StorageClassHelp;
@@ -6387,7 +5648,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.NumericUpDown txtOwnCloudExpiryTime;
         internal System.Windows.Forms.TabPage tpBackblazeB2;
         private System.Windows.Forms.TextBox txtB2CustomUrl;
-        private System.Windows.Forms.Label lblB2UrlPreview;
+        private System.Windows.Forms.Label lblB2UrlPreviewLabel;
         private System.Windows.Forms.CheckBox cbB2CustomUrl;
         private System.Windows.Forms.Label lblB2Bucket;
         private System.Windows.Forms.TextBox txtB2Bucket;
@@ -6397,7 +5658,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblB2ApplicationKey;
         private System.Windows.Forms.Label lblB2ApplicationKeyId;
         private System.Windows.Forms.TextBox txtB2ApplicationKeyId;
-        private System.Windows.Forms.TextBox txtB2UrlPreview;
         private System.Windows.Forms.LinkLabel lblB2ManageLink;
         private System.Windows.Forms.TextBox txtKuttAPIKey;
         private System.Windows.Forms.TextBox txtKuttHost;
@@ -6407,9 +5667,48 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblKuttPassword;
         private System.Windows.Forms.TextBox txtKuttPassword;
         internal System.Windows.Forms.TabPage tpKutt;
+        private System.Windows.Forms.CheckBox cbAmazonS3SignedPayload;
+        private System.Windows.Forms.CheckBox cbGooglePhotosIsPublic;
+        private System.Windows.Forms.Label lblGooglePhotosCreateAlbumName;
+        private System.Windows.Forms.TextBox txtGooglePhotosCreateAlbumName;
+        private System.Windows.Forms.Button btnGooglePhotosCreateAlbum;
+        private System.Windows.Forms.CheckBox cbTeknikGenDeleteKey;
+        private System.Windows.Forms.CheckBox cbTeknikEncrypt;
+        private System.Windows.Forms.Label lblTeknikUploadAPIUrl;
+        private System.Windows.Forms.TextBox tbTeknikUploadAPIUrl;
+        private OAuthControl oauthTeknik;
+        private System.Windows.Forms.Label lblTeknikAuthUrl;
+        private System.Windows.Forms.TextBox tbTeknikAuthUrl;
+        internal System.Windows.Forms.TabPage tpTeknik;
+        private System.Windows.Forms.Label lblTeknikPasteAPIUrl;
+        private System.Windows.Forms.TextBox tbTeknikPasteAPIUrl;
+        private System.Windows.Forms.Label lblTeknikUrlShortenerAPIUrl;
+        private System.Windows.Forms.TextBox tbTeknikUrlShortenerAPIUrl;
+        private System.Windows.Forms.Label lblTeknikExpiration;
+        private System.Windows.Forms.ComboBox cbTeknikExpirationUnit;
+        private System.Windows.Forms.NumericUpDown nudTeknikExpirationLength;
+        private System.Windows.Forms.CheckBox cbGfycatKeepAudio;
+        private System.Windows.Forms.GroupBox gbGoogleCloudStorageAdvanced;
         private System.Windows.Forms.Label lblGoogleCloudStorageStripExtension;
         private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionText;
         private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionVideo;
+        private System.Windows.Forms.CheckBox cbGoogleCloudStorageSetPublicACL;
         private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionImage;
+        private System.Windows.Forms.Label lblB2UrlPreview;
+        private HelpersLib.TabToTreeView tttvMain;
+        private System.Windows.Forms.ComboBox cbGoogleDriveSharedDrive;
+        private System.Windows.Forms.TextBox txtKuttDomain;
+        private System.Windows.Forms.Label lblKuttDomain;
+        private System.Windows.Forms.TextBox txtGfycatTitle;
+        private System.Windows.Forms.Label lblGfycatTitle;
+        internal System.Windows.Forms.TabPage tpZeroWidthShortener;
+        private System.Windows.Forms.TextBox txtZWSToken;
+        private System.Windows.Forms.TextBox txtZWSURL;
+        private System.Windows.Forms.Label lblZWSToken;
+        private System.Windows.Forms.Label lblZWSURL;
+        private System.Windows.Forms.CheckBox cbOwnCloudAppendFileNameToURL;
+        private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
+        private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
+        private System.Windows.Forms.Label lblYouTubePermissionsTip;
     }
 }

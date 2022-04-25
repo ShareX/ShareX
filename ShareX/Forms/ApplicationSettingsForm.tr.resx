@@ -138,9 +138,6 @@
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Ana pencere boyutunu hatırla</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Not: Kişisel dizin değişikliğinin aktif olması için ShareX yeniden başlatılmalıdır.</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Entegrasyon</value>
   </data>
@@ -180,9 +177,6 @@
   <data name="btnImport.Text" xml:space="preserve">
     <value>İçeri aktar...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Dışarı / içeri aktar</value>
-  </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Aynı anda yükleme limiti:</value>
   </data>
@@ -206,15 +200,6 @@
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Biçim</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Pano biçimleri</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Sonuçlar</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Tekrar denerken ikincil yükleyicileri sırasına göre kullan</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>İkincil resim yükleyiciler</value>
@@ -285,9 +270,6 @@
   <data name="btnExport.Text" xml:space="preserve">
     <value>Dışarı aktar...</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Tekrarla</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Yükleme</value>
   </data>
@@ -347,5 +329,50 @@
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>"ShareX ile düzenle" tuşunu Windows sağ tık menüsünde göster</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Sıfırla...</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Eski yedek dosyalarını otomatik olarak temizle</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Eski günlük dosyalarını otomatik olarak temizle</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Geçmiş</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Özel tema kullan</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Beyaz ShareX ikonu kullan</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Saklancak dosya sayısı:</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Not: Dışarı aktarılan dosyayı kimseyle paylaşmayınız, çünkü hesap detayları ve yükleme girdileri gibi kişisel bilgiler içerebilir.</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Tekrar denerken ikincil yükleyicileri sırasına göre kullan</value>
   </data>
 </root>

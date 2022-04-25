@@ -130,7 +130,8 @@
   </data>
   <data name="btnPathBrowse.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+    <comment>@Invariant</comment>
+  </data>
   <data name="&gt;&gt;btnPathBrowse.Name" xml:space="preserve">
     <value>btnPathBrowse</value>
   </data>
@@ -141,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPathBrowse.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtFilter.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -162,7 +163,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFilter.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtFolderPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -183,7 +184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFolderPath.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -210,7 +211,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFilter.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblFolderPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -237,7 +238,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFolderPath.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblFilterExample.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -264,7 +265,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFilterExample.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbIncludeSubdirectories.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -291,10 +292,14 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbIncludeSubdirectories.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 160</value>
+    <value>232, 175</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -315,10 +320,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 160</value>
+    <value>144, 175</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -339,18 +347,47 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="cbMoveToScreenshotsFolder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbMoveToScreenshotsFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbMoveToScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 148</value>
+  </data>
+  <data name="cbMoveToScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 17</value>
+  </data>
+  <data name="cbMoveToScreenshotsFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cbMoveToScreenshotsFolder.Text" xml:space="preserve">
+    <value>Move file to screenshots folder</value>
+  </data>
+  <data name="&gt;&gt;cbMoveToScreenshotsFolder.Name" xml:space="preserve">
+    <value>cbMoveToScreenshotsFolder</value>
+  </data>
+  <data name="&gt;&gt;cbMoveToScreenshotsFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbMoveToScreenshotsFolder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbMoveToScreenshotsFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>324, 193</value>
+    <value>324, 208</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>

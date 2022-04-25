@@ -126,13 +126,13 @@
   <data name="lblResult.Text" xml:space="preserve">
     <value>Результат:</value>
   </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>Работает через API OCR.Space</value>
-  </data>
   <data name="btnStartOCR.Text" xml:space="preserve">
     <value>Начать распознавание</value>
   </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>Открыть в Google Translate и закрыть окно</value>
+  <data name="btnOpenInBrowser.Text" xml:space="preserve">
+    <value>Открыть в браузере...</value>
+  </data>
+  <data name="lblExternalSite.Text" xml:space="preserve">
+    <value>Внешний сайт:</value>
   </data>
 </root>
