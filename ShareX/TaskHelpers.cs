@@ -1180,9 +1180,10 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+            using (Bitmap bmpScreenshot = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+            using (Bitmap bmpScaled = ImageHelpers.ResizeImage(bmpScreenshot, bmpScreenshot.Width * 2, bmpScreenshot.Height * 2))
             {
-                await OCRImage(bmp, taskSettings);
+                await OCRImage(bmpScaled, taskSettings);
             }
         }
 
