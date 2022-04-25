@@ -1210,29 +1210,38 @@ namespace ShareX
 
         private static async Task OCRImage(Stream stream, string filePath = null, TaskSettings taskSettings = null)
         {
-            if (stream != null)
+            try
             {
-                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+                OCRHelper.ThrowIfNotSupported();
 
-                OCROptions ocrOptions = taskSettings.CaptureSettingsReference.OCROptions;
+                if (stream != null)
+                {
+                    if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                if (ocrOptions.Silent)
-                {
-                    await AsyncOCRImage(stream, filePath, ocrOptions);
-                }
-                else
-                {
-                    using (OCRForm form = new OCRForm(ocrOptions, stream))
+                    OCROptions ocrOptions = taskSettings.CaptureSettingsReference.OCROptions;
+
+                    if (ocrOptions.Silent)
                     {
-                        form.ShowDialog();
-
-                        if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
+                        await AsyncOCRImage(stream, filePath, ocrOptions);
+                    }
+                    else
+                    {
+                        using (OCRForm form = new OCRForm(ocrOptions, stream))
                         {
-                            string textPath = Path.ChangeExtension(filePath, "txt");
-                            File.WriteAllText(textPath, form.Result, Encoding.UTF8);
+                            form.ShowDialog();
+
+                            if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
+                            {
+                                string textPath = Path.ChangeExtension(filePath, "txt");
+                                File.WriteAllText(textPath, form.Result, Encoding.UTF8);
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                e.ShowError(false);
             }
         }
 

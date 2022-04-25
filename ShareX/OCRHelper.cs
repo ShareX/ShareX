@@ -36,11 +36,13 @@ namespace ShareX
 {
     public static class OCRHelper
     {
+        private const string SupportedVersion = "10.0.18362.0";
+
         public static bool IsSupported
         {
             get
             {
-                return Helpers.OSVersion >= new Version("10.0.18362.0");
+                return Helpers.OSVersion >= new Version(SupportedVersion);
             }
         }
 
@@ -58,7 +60,9 @@ namespace ShareX
         {
             if (!IsSupported)
             {
-                throw new Exception("Windows version 10.0.18362.0 or newer is required for OCR to work.");
+                // TODO: Translate
+                throw new Exception(string.Format("Optical character recognition feature is only supported with Windows version {0} or newer.",
+                    SupportedVersion));
             }
         }
 
