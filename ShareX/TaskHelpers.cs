@@ -1180,61 +1180,54 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (Bitmap bmpScreenshot = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
-            using (Bitmap bmpScaled = ImageHelpers.ResizeImage(bmpScreenshot, bmpScreenshot.Width * 2, bmpScreenshot.Height * 2))
+            using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
             {
-                await OCRImage(bmpScaled, taskSettings);
-            }
-        }
-
-        public static async Task OCRImage(Image img, TaskSettings taskSettings = null)
-        {
-            if (img != null)
-            {
-                using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
-                {
-                    await OCRImage(stream, null, taskSettings);
-                }
+                await OCRImage(bmp, taskSettings);
             }
         }
 
         public static async Task OCRImage(string filePath, TaskSettings taskSettings = null)
         {
-            if (File.Exists(filePath))
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
                 {
-                    await OCRImage(fs, filePath, taskSettings);
+                    await OCRImage(bmp, taskSettings, filePath);
                 }
             }
         }
 
-        private static async Task OCRImage(Stream stream, string filePath = null, TaskSettings taskSettings = null)
+        public static async Task OCRImage(Bitmap bmp, TaskSettings taskSettings = null, string filePath = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            await OCRImage(bmp, taskSettings.CaptureSettingsReference.OCROptions, filePath);
+        }
+
+        private static async Task OCRImage(Bitmap bmp, OCROptions options, string filePath = null)
         {
             try
             {
                 OCRHelper.ThrowIfNotSupported();
 
-                if (stream != null)
+                if (bmp != null)
                 {
-                    if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-                    OCROptions ocrOptions = taskSettings.CaptureSettingsReference.OCROptions;
-
-                    if (ocrOptions.Silent)
+                    if (options.Silent)
                     {
-                        await AsyncOCRImage(stream, filePath, ocrOptions);
+                        await AsyncOCRImage(bmp, options, filePath);
                     }
                     else
                     {
-                        using (OCRForm form = new OCRForm(ocrOptions, stream))
+                        using (OCRForm form = new OCRForm(bmp, options))
                         {
                             form.ShowDialog();
 
                             if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
                             {
-                                string textPath = Path.ChangeExtension(filePath, "txt");
-                                File.WriteAllText(textPath, form.Result, Encoding.UTF8);
+                                string textFilePath = Path.ChangeExtension(filePath, "txt");
+                                File.WriteAllText(textFilePath, form.Result, Encoding.UTF8);
                             }
                         }
                     }
@@ -1246,15 +1239,15 @@ namespace ShareX
             }
         }
 
-        private static async Task AsyncOCRImage(Stream stream, string filePath, OCROptions ocrOptions)
+        private static async Task AsyncOCRImage(Bitmap bmp, OCROptions options, string filePath = null)
         {
             ShowNotificationTip(Resources.OCRForm_AutoProcessing);
 
             string result = null;
 
-            if (stream != null && stream.Length > 0)
+            if (bmp != null)
             {
-                result = await OCRHelper.OCR(stream);
+                result = await OCRHelper.OCR(bmp, options.Language, options.ScaleFactor);
             }
 
             if (!string.IsNullOrEmpty(result))
@@ -1266,8 +1259,8 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
-                    string textPath = Path.ChangeExtension(filePath, "txt");
-                    File.WriteAllText(textPath, result, Encoding.UTF8);
+                    string textFilePath = Path.ChangeExtension(filePath, "txt");
+                    File.WriteAllText(textFilePath, result, Encoding.UTF8);
                 }
 
                 ShowNotificationTip(Resources.OCRForm_AutoComplete);

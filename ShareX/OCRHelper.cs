@@ -25,12 +25,15 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Windows.Globalization;
 using Windows.Graphics.Imaging;
 using Windows.Media.Ocr;
+using Windows.Storage.Streams;
 
 namespace ShareX
 {
@@ -66,24 +69,20 @@ namespace ShareX
             }
         }
 
-        public static async Task<string> OCR(string filePath, string languageTag = "en")
+        public static async Task<string> OCR(Bitmap bmp, string languageTag = "en", float scaleFactor = 1f)
         {
             ThrowIfNotSupported();
 
-            using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+            scaleFactor = Math.Max(scaleFactor, 1f);
+
+            using (Bitmap bmpClone = (Bitmap)bmp.Clone())
+            using (Bitmap bmpScaled = ImageHelpers.ResizeImage(bmpClone, (int)(bmpClone.Width * scaleFactor), (int)(bmpClone.Height * scaleFactor)))
             {
-                return await OCRInternal(fileStream, languageTag);
+                return await OCRInternal(bmpScaled, languageTag);
             }
         }
 
-        public static async Task<string> OCR(Stream stream, string languageTag = "en")
-        {
-            ThrowIfNotSupported();
-
-            return await OCRInternal(stream, languageTag);
-        }
-
-        private static async Task<string> OCRInternal(Stream stream, string languageTag)
+        private static async Task<string> OCRInternal(Bitmap bmp, string languageTag)
         {
             Language language = new Language(languageTag);
 
@@ -92,14 +91,18 @@ namespace ShareX
                 throw new Exception($"{language.LanguageTag} is not supported in this system.");
             }
 
-            BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream.AsRandomAccessStream());
+            OcrEngine engine = OcrEngine.TryCreateFromLanguage(language);
 
-            using (SoftwareBitmap bitmap = await decoder.GetSoftwareBitmapAsync())
+            using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
             {
-                OcrEngine engine = OcrEngine.TryCreateFromLanguage(language);
-                OcrResult ocrResult = await engine.RecognizeAsync(bitmap).AsTask();
+                bmp.Save(stream.AsStream(), ImageFormat.Bmp);
+                BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
 
-                return string.Join("\r\n", ocrResult.Lines.Select(x => x.Text));
+                using (SoftwareBitmap softwareBitmap = await decoder.GetSoftwareBitmapAsync())
+                {
+                    OcrResult ocrResult = await engine.RecognizeAsync(softwareBitmap);
+                    return string.Join("\r\n", ocrResult.Lines.Select(x => x.Text));
+                }
             }
         }
     }

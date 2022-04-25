@@ -25,7 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.IO;
+using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -36,13 +36,13 @@ namespace ShareX
         public OCROptions Options { get; set; }
         public string Result { get; private set; }
 
-        private Stream stream;
+        private Bitmap bmp;
         private bool loaded;
 
-        public OCRForm(OCROptions options, Stream stream)
+        public OCRForm(Bitmap bmp, OCROptions options)
         {
+            this.bmp = bmp;
             Options = options;
-            this.stream = stream;
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
@@ -85,9 +85,9 @@ namespace ShareX
 
         private async Task OCR()
         {
-            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(Options.Language))
+            if (bmp != null && !string.IsNullOrEmpty(Options.Language))
             {
-                Result = await OCRHelper.OCR(stream, Options.Language);
+                Result = await OCRHelper.OCR(bmp, Options.Language, Options.ScaleFactor);
 
                 if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
                 {
