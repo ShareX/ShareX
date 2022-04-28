@@ -33,6 +33,9 @@
             this.cbLanguages = new System.Windows.Forms.ComboBox();
             this.lblResult = new System.Windows.Forms.Label();
             this.txtResult = new System.Windows.Forms.TextBox();
+            this.lblScaleFactor = new System.Windows.Forms.Label();
+            this.nudScaleFactor = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLanguage
@@ -58,10 +61,44 @@
             resources.ApplyResources(this.txtResult, "txtResult");
             this.txtResult.Name = "txtResult";
             // 
+            // lblScaleFactor
+            // 
+            resources.ApplyResources(this.lblScaleFactor, "lblScaleFactor");
+            this.lblScaleFactor.Name = "lblScaleFactor";
+            // 
+            // nudScaleFactor
+            // 
+            this.nudScaleFactor.DecimalPlaces = 1;
+            resources.ApplyResources(this.nudScaleFactor, "nudScaleFactor");
+            this.nudScaleFactor.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nudScaleFactor.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudScaleFactor.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudScaleFactor.Name = "nudScaleFactor";
+            this.nudScaleFactor.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudScaleFactor.ValueChanged += new System.EventHandler(this.nudScaleFactor_ValueChanged);
+            // 
             // OCRForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.nudScaleFactor);
+            this.Controls.Add(this.lblScaleFactor);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.cbLanguages);
@@ -69,6 +106,7 @@
             this.Name = "OCRForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.OCRForm_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,5 +118,7 @@
         private System.Windows.Forms.ComboBox cbLanguages;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.Label lblScaleFactor;
+        private System.Windows.Forms.NumericUpDown nudScaleFactor;
     }
 }

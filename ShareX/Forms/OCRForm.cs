@@ -78,6 +78,8 @@ namespace ShareX
                 cbLanguages.Enabled = false;
             }
 
+            nudScaleFactor.SetValue((decimal)Options.ScaleFactor);
+
             txtResult.SupportSelectAll();
 
             loaded = true;
@@ -111,6 +113,16 @@ namespace ShareX
             if (loaded)
             {
                 Options.Language = ((OCRLanguage)cbLanguages.SelectedItem).LanguageTag;
+
+                await OCR();
+            }
+        }
+
+        private async void nudScaleFactor_ValueChanged(object sender, EventArgs e)
+        {
+            if (loaded)
+            {
+                Options.ScaleFactor = (float)nudScaleFactor.Value;
 
                 await OCR();
             }

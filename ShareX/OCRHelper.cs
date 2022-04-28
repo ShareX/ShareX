@@ -64,7 +64,7 @@ namespace ShareX
             if (!IsSupported)
             {
                 // TODO: Translate
-                throw new Exception(string.Format("Optical character recognition feature is only supported with Windows version {0} or newer.",
+                throw new Exception(string.Format("Optical character recognition feature is only available with Windows version {0} or newer.",
                     SupportedVersion));
             }
         }
