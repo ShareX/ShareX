@@ -23,21 +23,45 @@
 
 #endregion License Information (GPL v3)
 
-using System.Collections.Generic;
+using ShareX.HelpersLib;
 
 namespace ShareX
 {
-    public class OCROptions
+    public class ServiceLink
     {
-        public string Language { get; set; } = "en";
-        public float ScaleFactor { get; set; } = 2f;
-        public bool Silent { get; set; } = false;
-        public bool AutoCopy { get; set; } = false;
-        public List<ServiceLink> ServiceLinks { get; set; } = new List<ServiceLink>()
+        public string Name { get; set; }
+        public string URL { get; set; }
+
+        public ServiceLink(string name, string url)
         {
-            new ServiceLink("Google Translate", "https://translate.google.com/?sl=auto&tl=en&text={0}&op=translate"),
-            new ServiceLink("Google Search", "https://www.google.com/search?q={0}"),
-            new ServiceLink("Bing", "https://www.bing.com/search?q={0}")
-        };
+            Name = name;
+            URL = url;
+        }
+
+        public string GenerateLink(string input)
+        {
+            if (!string.IsNullOrEmpty(input))
+            {
+                string encodedInput = URLHelpers.URLEncode(input);
+                return string.Format(URL, encodedInput);
+            }
+
+            return null;
+        }
+
+        public void OpenLink(string input)
+        {
+            string link = GenerateLink(input);
+
+            if (!string.IsNullOrEmpty(link))
+            {
+                URLHelpers.OpenURL(link);
+            }
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

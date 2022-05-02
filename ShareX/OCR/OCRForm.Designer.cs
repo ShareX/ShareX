@@ -35,6 +35,8 @@
             this.txtResult = new System.Windows.Forms.TextBox();
             this.lblScaleFactor = new System.Windows.Forms.Label();
             this.nudScaleFactor = new System.Windows.Forms.NumericUpDown();
+            this.cbServices = new System.Windows.Forms.ComboBox();
+            this.btnOpen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,10 +95,26 @@
             0});
             this.nudScaleFactor.ValueChanged += new System.EventHandler(this.nudScaleFactor_ValueChanged);
             // 
+            // cbServices
+            // 
+            this.cbServices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbServices, "cbServices");
+            this.cbServices.FormattingEnabled = true;
+            this.cbServices.Name = "cbServices";
+            // 
+            // btnOpen
+            // 
+            resources.ApplyResources(this.btnOpen, "btnOpen");
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
             // OCRForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.cbServices);
             this.Controls.Add(this.nudScaleFactor);
             this.Controls.Add(this.lblScaleFactor);
             this.Controls.Add(this.txtResult);
@@ -120,5 +138,7 @@
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Label lblScaleFactor;
         private System.Windows.Forms.NumericUpDown nudScaleFactor;
+        private System.Windows.Forms.ComboBox cbServices;
+        private System.Windows.Forms.Button btnOpen;
     }
 }

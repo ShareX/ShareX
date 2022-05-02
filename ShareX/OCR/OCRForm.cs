@@ -80,6 +80,16 @@ namespace ShareX
 
             nudScaleFactor.SetValue((decimal)Options.ScaleFactor);
 
+            if (Options.ServiceLinks != null && Options.ServiceLinks.Count > 0)
+            {
+                cbServices.Items.AddRange(Options.ServiceLinks.ToArray());
+                cbServices.SelectedIndex = 0;
+            }
+            else
+            {
+                cbServices.Enabled = false;
+            }
+
             txtResult.SupportSelectAll();
 
             loaded = true;
@@ -125,6 +135,15 @@ namespace ShareX
                 Options.ScaleFactor = (float)nudScaleFactor.Value;
 
                 await OCR();
+            }
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            if (cbServices.SelectedItem is ServiceLink serviceLink)
+            {
+                string input = txtResult.Text.Trim();
+                serviceLink.OpenLink(input);
             }
         }
     }

@@ -207,6 +207,7 @@
     <Compile Include="OCR\OCRHelper.cs" />
     <Compile Include="OCR\OCRLanguage.cs" />
     <Compile Include="OCR\OCROptions.cs" />
+    <Compile Include="OCR\ServiceLink.cs" />
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
