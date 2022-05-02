@@ -191,10 +191,10 @@
     <Compile Include="Forms\InspectWindowForm.Designer.cs">
       <DependentUpon>InspectWindowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OCRForm.cs">
+    <Compile Include="OCR\OCRForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OCRForm.Designer.cs">
+    <Compile Include="OCR\OCRForm.Designer.cs">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NativeMessageInput.cs" />
@@ -204,9 +204,9 @@
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="NotificationFormConfig.cs" />
-    <Compile Include="OCRHelper.cs" />
-    <Compile Include="OCRLanguage.cs" />
-    <Compile Include="OCROptions.cs" />
+    <Compile Include="OCR\OCRHelper.cs" />
+    <Compile Include="OCR\OCRLanguage.cs" />
+    <Compile Include="OCR\OCROptions.cs" />
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
@@ -1298,7 +1298,7 @@
     <EmbeddedResource Include="Forms\MainForm.zh-TW.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OCRForm.resx">
+    <EmbeddedResource Include="OCR\OCRForm.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.de.resx">
