@@ -74,11 +74,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (NativeMethods.Is64Bit())
                     {
-                        return Helpers.GetAbsolutePath("ffmpeg-x64.exe");
+                        return FileHelpers.GetAbsolutePath("ffmpeg-x64.exe");
                     }
                     else
                     {
-                        return Helpers.GetAbsolutePath("ffmpeg.exe");
+                        return FileHelpers.GetAbsolutePath("ffmpeg.exe");
                     }
                 }
 #endif

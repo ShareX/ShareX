@@ -31,7 +31,7 @@ namespace ShareX
 {
     public class SteamStartupManager : GenericStartupManager
     {
-        public override string StartupTargetPath => Helpers.GetAbsolutePath("../ShareX_Launcher.exe");
+        public override string StartupTargetPath => FileHelpers.GetAbsolutePath("../ShareX_Launcher.exe");
     }
 }
 
