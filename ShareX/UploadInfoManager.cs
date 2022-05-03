@@ -353,7 +353,7 @@ namespace ShareX
             {
                 foreach (string filePath in SelectedItems.Select(x => x.Info.FilePath))
                 {
-                    Helpers.SendFileToRecycleBin(filePath);
+                    Helpers.DeleteFile(filePath, true);
                 }
             }
         }

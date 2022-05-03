@@ -1048,6 +1048,32 @@ namespace ShareX.HelpersLib
             return filePath;
         }
 
+        public static bool DeleteFile(string filePath, bool sendToRecycleBin = false)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                try
+                {
+                    if (sendToRecycleBin)
+                    {
+                        FileSystem.DeleteFile(filePath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                    }
+                    else
+                    {
+                        File.Delete(filePath);
+                    }
+
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+            }
+
+            return false;
+        }
+
         public static string BackupFileWeekly(string filePath, string destinationFolder)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
@@ -1687,23 +1713,6 @@ namespace ShareX.HelpersLib
             });
 
             return Task.WhenAll(tasks);
-        }
-
-        public static bool SendFileToRecycleBin(string filePath)
-        {
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-            {
-                try
-                {
-                    FileSystem.DeleteFile(filePath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
-                    return true;
-                }
-                catch
-                {
-                }
-            }
-
-            return false;
         }
 
         public static void LockCursorToWindow(Form form)
