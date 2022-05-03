@@ -142,9 +142,9 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             string uploadPath = NameParser.Parse(NameParserType.FolderPath, Prefix.Trim('/'));
 
-            if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
-                (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
-                (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            if ((RemoveExtensionImage && FileHelpers.IsImageFile(fileName)) ||
+                (RemoveExtensionText && FileHelpers.IsTextFile(fileName)) ||
+                (RemoveExtensionVideo && FileHelpers.IsVideoFile(fileName)))
             {
                 fileName = Path.GetFileNameWithoutExtension(fileName);
             }

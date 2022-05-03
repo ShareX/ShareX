@@ -91,7 +91,7 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(filePath))
             {
-                Helpers.CreateDirectoryFromFilePath(filePath);
+                FileHelpers.CreateDirectoryFromFilePath(filePath);
 
                 using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
                 {

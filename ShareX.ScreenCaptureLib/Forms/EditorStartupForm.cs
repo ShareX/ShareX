@@ -85,7 +85,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (files != null)
                 {
-                    string imageFilePath = files.FirstOrDefault(x => Helpers.IsImageFile(x));
+                    string imageFilePath = files.FirstOrDefault(x => FileHelpers.IsImageFile(x));
                     LoadImageFile(imageFilePath);
                 }
             }

@@ -135,7 +135,7 @@ namespace ShareX.HistoryLib
             {
                 lock (thisLock)
                 {
-                    Helpers.CreateDirectoryFromFilePath(filePath);
+                    FileHelpers.CreateDirectoryFromFilePath(filePath);
 
                     using (FileStream fileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
                     using (XmlTextWriter writer = new XmlTextWriter(fileStream, Encoding.UTF8))

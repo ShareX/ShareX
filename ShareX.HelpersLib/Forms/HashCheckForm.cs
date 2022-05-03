@@ -99,12 +99,12 @@ namespace ShareX.HelpersLib
 
         private void btnFilePathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtFilePath);
+            FileHelpers.BrowseFile(txtFilePath);
         }
 
         private void btnFilePathBrowse2_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtFilePath2);
+            FileHelpers.BrowseFile(txtFilePath2);
         }
 
         private void cbCompareTwoFiles_CheckedChanged(object sender, EventArgs e)

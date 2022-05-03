@@ -830,7 +830,7 @@ namespace ShareX.ImageEffectsLib
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {
-                if (e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0 && Helpers.IsImageFile(files[0]))
+                if (e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0 && FileHelpers.IsImageFile(files[0]))
                 {
                     if (PreviewImage != null) PreviewImage.Dispose();
                     PreviewImage = ImageHelpers.LoadImage(files[0]);

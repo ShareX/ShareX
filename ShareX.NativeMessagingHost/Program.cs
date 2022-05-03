@@ -43,8 +43,8 @@ namespace ShareX.NativeMessagingHost
 
                     if (!string.IsNullOrEmpty(input))
                     {
-                        string filePath = Helpers.GetAbsolutePath("ShareX.exe");
-                        string tempFilePath = Helpers.GetTempFilePath("json");
+                        string filePath = FileHelpers.GetAbsolutePath("ShareX.exe");
+                        string tempFilePath = FileHelpers.GetTempFilePath("json");
                         File.WriteAllText(tempFilePath, input, Encoding.UTF8);
                         string argument = $"-NativeMessagingInput \"{tempFilePath}\"";
                         NativeMethods.CreateProcess(filePath, argument, CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB);

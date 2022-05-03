@@ -281,7 +281,7 @@ namespace ShareX.ScreenCaptureLib
 
         private async void buttonFFmpegBrowse_Click(object sender, EventArgs e)
         {
-            if (Helpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), true))
+            if (FileHelpers.BrowseFile(Resources.FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe, txtFFmpegPath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), true))
             {
                 await RefreshSourcesAsync();
             }
@@ -306,7 +306,7 @@ namespace ShareX.ScreenCaptureLib
 
         private async void btnInstallHelperDevices_Click(object sender, EventArgs e)
         {
-            string filePath = Helpers.GetAbsolutePath("Recorder-devices-setup.exe");
+            string filePath = FileHelpers.GetAbsolutePath("Recorder-devices-setup.exe");
 
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
@@ -548,7 +548,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 this.InvokeSafe(async () =>
                 {
-                    txtFFmpegPath.Text = Helpers.GetVariableFolderPath(Path.Combine(DefaultToolsFolder, "ffmpeg.exe"));
+                    txtFFmpegPath.Text = FileHelpers.GetVariableFolderPath(Path.Combine(DefaultToolsFolder, "ffmpeg.exe"));
                     await RefreshSourcesAsync();
                     if (!IsDisposed) UpdateUI();
                 });

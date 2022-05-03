@@ -88,7 +88,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string filePath = account.GetLocalhostPath(fileName);
 
-            Helpers.CreateDirectoryFromFilePath(filePath);
+            FileHelpers.CreateDirectoryFromFilePath(filePath);
 
             using (FileStream fs = new FileStream(filePath, FileMode.Create))
             {

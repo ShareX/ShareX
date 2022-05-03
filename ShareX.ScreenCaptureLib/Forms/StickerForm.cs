@@ -91,11 +91,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (tscbStickers.SelectedItem is StickerPackInfo stickerPack && !string.IsNullOrEmpty(stickerPack.FolderPath))
             {
-                string folderPath = Helpers.GetAbsolutePath(stickerPack.FolderPath);
+                string folderPath = FileHelpers.GetAbsolutePath(stickerPack.FolderPath);
 
                 if (Directory.Exists(folderPath))
                 {
-                    imageFiles = Directory.GetFiles(folderPath).Where(x => Helpers.IsImageFile(x)).ToArray();
+                    imageFiles = Directory.GetFiles(folderPath).Where(x => FileHelpers.IsImageFile(x)).ToArray();
 
                     UpdateImageFiles();
                 }

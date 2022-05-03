@@ -45,7 +45,7 @@ namespace ShareX.HelpersLib
 
                 if (dlg.ShowDialog())
                 {
-                    value = Helpers.GetVariableFolderPath(dlg.FileName, true);
+                    value = FileHelpers.GetVariableFolderPath(dlg.FileName, true);
                 }
             }
 

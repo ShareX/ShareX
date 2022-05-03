@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib
 
         public bool IsValidFilter(string fileName)
         {
-            string extension = Helpers.GetFileNameExtension(fileName);
+            string extension = FileHelpers.GetFileNameExtension(fileName);
 
             return !string.IsNullOrEmpty(extension) && Extensions.Any(x => x.TrimStart('.').Equals(extension, StringComparison.OrdinalIgnoreCase));
         }

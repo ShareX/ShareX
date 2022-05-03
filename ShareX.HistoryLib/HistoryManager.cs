@@ -113,12 +113,12 @@ namespace ShareX.HistoryLib
             {
                 if (CreateBackup)
                 {
-                    Helpers.CopyFile(filePath, BackupFolder);
+                    FileHelpers.CopyFile(filePath, BackupFolder);
                 }
 
                 if (CreateWeeklyBackup)
                 {
-                    Helpers.BackupFileWeekly(filePath, BackupFolder);
+                    FileHelpers.BackupFileWeekly(filePath, BackupFolder);
                 }
             }
         }

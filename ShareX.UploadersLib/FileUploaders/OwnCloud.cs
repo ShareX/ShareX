@@ -184,7 +184,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
                         string link = data.url;
 
-                        if (PreviewLink && Helpers.IsImageFile(path))
+                        if (PreviewLink && FileHelpers.IsImageFile(path))
                         {
                             link += "/preview";
                         }

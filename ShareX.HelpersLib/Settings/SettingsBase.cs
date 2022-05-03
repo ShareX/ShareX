@@ -132,7 +132,7 @@ namespace ShareX.HelpersLib
                 {
                     lock (this)
                     {
-                        Helpers.CreateDirectoryFromFilePath(filePath);
+                        FileHelpers.CreateDirectoryFromFilePath(filePath);
 
                         string tempFilePath = filePath + ".temp";
 
@@ -154,7 +154,7 @@ namespace ShareX.HelpersLib
                             {
                                 string fileName = Path.GetFileName(filePath);
                                 backupFilePath = Path.Combine(BackupFolder, fileName);
-                                Helpers.CreateDirectory(BackupFolder);
+                                FileHelpers.CreateDirectory(BackupFolder);
                             }
 
                             File.Replace(tempFilePath, filePath, backupFilePath);
@@ -166,7 +166,7 @@ namespace ShareX.HelpersLib
 
                         if (CreateWeeklyBackup && !string.IsNullOrEmpty(BackupFolder))
                         {
-                            Helpers.BackupFileWeekly(filePath, BackupFolder);
+                            FileHelpers.BackupFileWeekly(filePath, BackupFolder);
                         }
 
                         isSuccess = true;

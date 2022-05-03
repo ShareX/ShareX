@@ -298,7 +298,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             string fileFormName;
 
-            if (Helpers.IsVideoFile(fileName))
+            if (FileHelpers.IsVideoFile(fileName))
             {
                 fileFormName = "video";
             }

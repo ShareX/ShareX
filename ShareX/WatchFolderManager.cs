@@ -91,7 +91,7 @@ namespace ShareX
                         string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettingsCopy);
                         string fileName = Path.GetFileName(origPath);
                         destPath = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettingsCopy);
-                        Helpers.CreateDirectoryFromFilePath(destPath);
+                        FileHelpers.CreateDirectoryFromFilePath(destPath);
                         File.Move(origPath, destPath);
                     }
 

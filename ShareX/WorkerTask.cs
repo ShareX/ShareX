@@ -107,7 +107,7 @@ namespace ShareX
 
             if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string ext = Helpers.GetFileNameExtension(task.Info.FilePath);
+                string ext = FileHelpers.GetFileNameExtension(task.Info.FilePath);
                 task.Info.FileName = TaskHelpers.GetFileName(task.Info.TaskSettings, ext);
             }
 
@@ -137,7 +137,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(customFileName))
             {
-                task.Info.FileName = Helpers.AppendExtension(customFileName, "bmp");
+                task.Info.FileName = FileHelpers.AppendExtension(customFileName, "bmp");
             }
             else
             {
@@ -187,12 +187,12 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(customFileName))
             {
-                string ext = Helpers.GetFileNameExtension(task.Info.FilePath);
-                task.Info.FileName = Helpers.AppendExtension(customFileName, ext);
+                string ext = FileHelpers.GetFileNameExtension(task.Info.FilePath);
+                task.Info.FileName = FileHelpers.AppendExtension(customFileName, ext);
             }
             else if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string ext = Helpers.GetFileNameExtension(task.Info.FilePath);
+                string ext = FileHelpers.GetFileNameExtension(task.Info.FilePath);
                 task.Info.FileName = TaskHelpers.GetFileName(task.Info.TaskSettings, ext);
             }
 
@@ -214,11 +214,11 @@ namespace ShareX
 
             string fileName = URLHelpers.URLDecode(url, 10);
             fileName = URLHelpers.GetFileName(fileName);
-            fileName = Helpers.GetValidFileName(fileName);
+            fileName = FileHelpers.GetValidFileName(fileName);
 
             if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string ext = Helpers.GetFileNameExtension(fileName);
+                string ext = FileHelpers.GetFileNameExtension(fileName);
                 fileName = TaskHelpers.GetFileName(task.Info.TaskSettings, ext);
             }
 
@@ -763,8 +763,8 @@ namespace ShareX
 
                         if (isFileModified)
                         {
-                            string extension = Helpers.GetFileNameExtension(Info.FilePath);
-                            Info.FileName = Helpers.ChangeFileNameExtension(fileName, extension);
+                            string extension = FileHelpers.GetFileNameExtension(Info.FilePath);
+                            Info.FileName = FileHelpers.ChangeFileNameExtension(fileName, extension);
 
                             LoadFileStream();
                         }
@@ -782,7 +782,7 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowInExplorer))
                 {
-                    Helpers.OpenFolderWithFile(Info.FilePath);
+                    FileHelpers.OpenFolderWithFile(Info.FilePath);
                 }
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ScanQRCode) && Info.DataType == EDataType.Image)
@@ -802,7 +802,7 @@ namespace ShareX
                 if (!string.IsNullOrEmpty(filePath))
                 {
                     Info.FilePath = filePath;
-                    Helpers.CreateDirectoryFromFilePath(Info.FilePath);
+                    FileHelpers.CreateDirectoryFromFilePath(Info.FilePath);
                     File.WriteAllText(Info.FilePath, Text, Encoding.UTF8);
                     DebugHelper.WriteLine("Text saved to file: " + Info.FilePath);
                 }
@@ -1056,7 +1056,7 @@ namespace ShareX
 
                 try
                 {
-                    Helpers.CreateDirectoryFromFilePath(Info.FilePath);
+                    FileHelpers.CreateDirectoryFromFilePath(Info.FilePath);
 
                     using (WebClient wc = new WebClient())
                     {

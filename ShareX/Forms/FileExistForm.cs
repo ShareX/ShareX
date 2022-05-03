@@ -47,7 +47,7 @@ namespace ShareX
             fileName = Path.GetFileNameWithoutExtension(FilePath);
             txtNewName.Text = fileName;
             btnOverwrite.Text += Path.GetFileName(FilePath);
-            uniqueFilePath = Helpers.GetUniqueFilePath(FilePath);
+            uniqueFilePath = FileHelpers.GetUniqueFilePath(FilePath);
             btnUniqueName.Text += Path.GetFileName(uniqueFilePath);
         }
 

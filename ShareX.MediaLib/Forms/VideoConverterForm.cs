@@ -189,7 +189,7 @@ namespace ShareX.MediaLib
 
                         if (Options.AutoOpenFolder && result && !ffmpeg.StopRequested)
                         {
-                            Helpers.OpenFolderWithFile(outputFilePath);
+                            FileHelpers.OpenFolderWithFile(outputFilePath);
                         }
                     }
                     catch (Exception e)
@@ -239,7 +239,7 @@ namespace ShareX.MediaLib
 
         private void btnOutputFolderBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtOutputFolder);
+            FileHelpers.BrowseFolder(txtOutputFolder);
         }
 
         private void txtOutputFileName_TextChanged(object sender, EventArgs e)

@@ -203,7 +203,7 @@ namespace ShareX.Setup
 
             if (AppVeyor)
             {
-                Helpers.CopyAll(OutputDir, ParentDir);
+                FileHelpers.CopyAll(OutputDir, ParentDir);
             }
 
             if (Job.HasFlag(SetupJobs.OpenOutputDirectory))
@@ -314,15 +314,15 @@ namespace ShareX.Setup
                 SetupHelpers.CopyFiles(Path.Combine(source, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
             }
 
-            Helpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
+            FileHelpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
 
             if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
-                Helpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
+                FileHelpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
             }
             else if (job == SetupJobs.CreatePortable)
             {
-                Helpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
+                FileHelpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
 
                 FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ReleaseExecutablePath);
                 string zipFileName = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);

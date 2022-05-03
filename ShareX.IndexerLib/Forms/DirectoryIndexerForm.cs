@@ -61,7 +61,7 @@ namespace ShareX.IndexerLib
 
         private async Task BrowseFolder()
         {
-            if (Helpers.BrowseFolder(txtFolderPath))
+            if (FileHelpers.BrowseFolder(txtFolderPath))
             {
                 await IndexFolder();
             }

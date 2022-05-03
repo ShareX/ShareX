@@ -127,7 +127,7 @@ namespace ShareX.HelpersLib
 
         public static void Compress(string archivePath, List<ZipEntryInfo> entries, CompressionLevel compression = CompressionLevel.Optimal)
         {
-            Helpers.CreateDirectoryFromFilePath(archivePath);
+            FileHelpers.CreateDirectoryFromFilePath(archivePath);
 
             if (File.Exists(archivePath))
             {

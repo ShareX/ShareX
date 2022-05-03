@@ -76,7 +76,7 @@ namespace ShareX.HelpersLib
 
         private void btnOpenLogFile_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFile(LogPath);
+            FileHelpers.OpenFile(LogPath);
         }
 
         private void btnContinue_Click(object sender, EventArgs e)

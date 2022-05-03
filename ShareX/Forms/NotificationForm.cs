@@ -336,7 +336,7 @@ namespace ShareX
             switch (action)
             {
                 case ToastClickAction.AnnotateImage:
-                    if (!string.IsNullOrEmpty(Config.FilePath) && Helpers.IsImageFile(Config.FilePath))
+                    if (!string.IsNullOrEmpty(Config.FilePath) && FileHelpers.IsImageFile(Config.FilePath))
                     {
                         TaskHelpers.AnnotateImageFromFile(Config.FilePath);
                     }
@@ -368,13 +368,13 @@ namespace ShareX
                 case ToastClickAction.OpenFile:
                     if (!string.IsNullOrEmpty(Config.FilePath))
                     {
-                        Helpers.OpenFile(Config.FilePath);
+                        FileHelpers.OpenFile(Config.FilePath);
                     }
                     break;
                 case ToastClickAction.OpenFolder:
                     if (!string.IsNullOrEmpty(Config.FilePath))
                     {
-                        Helpers.OpenFolderWithFile(Config.FilePath);
+                        FileHelpers.OpenFolderWithFile(Config.FilePath);
                     }
                     break;
                 case ToastClickAction.OpenUrl:

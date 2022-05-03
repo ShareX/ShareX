@@ -311,7 +311,7 @@ namespace ShareX
 
         private static void CreateChromeHostManifest(string filePath)
         {
-            Helpers.CreateDirectoryFromFilePath(filePath);
+            FileHelpers.CreateDirectoryFromFilePath(filePath);
 
             ChromeManifest manifest = new ChromeManifest()
             {
@@ -381,7 +381,7 @@ namespace ShareX
 
         private static void CreateFirefoxHostManifest(string filePath)
         {
-            Helpers.CreateDirectoryFromFilePath(filePath);
+            FileHelpers.CreateDirectoryFromFilePath(filePath);
 
             FirefoxManifest manifest = new FirefoxManifest()
             {
@@ -437,7 +437,7 @@ namespace ShareX
             {
                 if (showInApp)
                 {
-                    Helpers.CreateEmptyFile(path);
+                    FileHelpers.CreateEmptyFile(path);
                 }
                 else if (File.Exists(path))
                 {

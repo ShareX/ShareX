@@ -63,16 +63,16 @@ namespace ShareX
                 IsThumbnailURLExist = !string.IsNullOrEmpty(Info.Result.ThumbnailURL);
                 IsDeletionURLExist = !string.IsNullOrEmpty(Info.Result.DeletionURL);
                 IsFileURL = IsURLExist && URLHelpers.IsFileURL(Info.Result.URL);
-                IsImageURL = IsFileURL && Helpers.IsImageFile(Info.Result.URL);
-                IsTextURL = IsFileURL && Helpers.IsTextFile(Info.Result.URL);
+                IsImageURL = IsFileURL && FileHelpers.IsImageFile(Info.Result.URL);
+                IsTextURL = IsFileURL && FileHelpers.IsTextFile(Info.Result.URL);
             }
 
             IsFilePathValid = !string.IsNullOrEmpty(Info.FilePath) && Path.HasExtension(Info.FilePath);
             IsFileExist = IsFilePathValid && File.Exists(Info.FilePath);
             IsThumbnailFilePathValid = !string.IsNullOrEmpty(Info.ThumbnailFilePath) && Path.HasExtension(Info.ThumbnailFilePath);
             IsThumbnailFileExist = IsThumbnailFilePathValid && File.Exists(Info.ThumbnailFilePath);
-            IsImageFile = IsFileExist && Helpers.IsImageFile(Info.FilePath);
-            IsTextFile = IsFileExist && Helpers.IsTextFile(Info.FilePath);
+            IsImageFile = IsFileExist && FileHelpers.IsImageFile(Info.FilePath);
+            IsTextFile = IsFileExist && FileHelpers.IsTextFile(Info.FilePath);
         }
     }
 }

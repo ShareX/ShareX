@@ -300,7 +300,7 @@ namespace ShareX.ScreenCaptureLib
                     title.AppendFormat(" ({0}%)", zoomPercentage);
                 }
 
-                string fileName = Helpers.GetFileNameSafe(ImageFilePath);
+                string fileName = FileHelpers.GetFileNameSafe(ImageFilePath);
 
                 if (!string.IsNullOrEmpty(fileName))
                 {

@@ -63,7 +63,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public string ProcessFileName => Helpers.GetFileNameSafe(ProcessFilePath);
+        public string ProcessFileName => FileHelpers.GetFileNameSafe(ProcessFilePath);
 
         public int ProcessId
         {

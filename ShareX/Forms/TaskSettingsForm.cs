@@ -794,7 +794,7 @@ namespace ShareX
 
         private void btnScreenshotsFolderBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
+            FileHelpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
                 txtScreenshotsFolder, TaskSettings.ScreenshotsFolder, true);
         }
 
@@ -882,7 +882,7 @@ namespace ShareX
 
         private void btnCustomCaptureSoundPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtCustomCaptureSoundPath);
+            FileHelpers.BrowseFile(txtCustomCaptureSoundPath);
         }
 
         private void cbUseCustomTaskCompletedSound_CheckedChanged(object sender, EventArgs e)
@@ -898,7 +898,7 @@ namespace ShareX
 
         private void btnCustomTaskCompletedSoundPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtCustomTaskCompletedSoundPath);
+            FileHelpers.BrowseFile(txtCustomTaskCompletedSoundPath);
         }
 
         private void cbUseCustomErrorSound_CheckedChanged(object sender, EventArgs e)
@@ -914,7 +914,7 @@ namespace ShareX
 
         private void btnCustomErrorSoundPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtCustomErrorSoundPath);
+            FileHelpers.BrowseFile(txtCustomErrorSoundPath);
         }
 
         private void cbDisableNotifications_CheckedChanged(object sender, EventArgs e)

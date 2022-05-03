@@ -99,11 +99,11 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            string imageFolder = Helpers.ExpandFolderVariables(ImageFolder, true);
+            string imageFolder = FileHelpers.ExpandFolderVariables(ImageFolder, true);
 
             if (!string.IsNullOrEmpty(imageFolder) && Directory.Exists(imageFolder))
             {
-                string[] files = Helpers.GetFilesByExtensions(imageFolder, ".png", ".jpg").ToArray();
+                string[] files = FileHelpers.GetFilesByExtensions(imageFolder, ".png", ".jpg").ToArray();
 
                 if (files.Length > 0)
                 {

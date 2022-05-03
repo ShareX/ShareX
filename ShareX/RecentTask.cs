@@ -47,7 +47,7 @@ namespace ShareX
                     text = URL;
                 }
 
-                return Helpers.GetFileNameSafe(text);
+                return FileHelpers.GetFileNameSafe(text);
             }
         }
 

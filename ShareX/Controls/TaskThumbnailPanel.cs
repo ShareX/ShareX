@@ -430,7 +430,7 @@ namespace ShareX
                     case ThumbnailViewClickAction.Default:
                         if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
                         {
-                            if (Helpers.IsImageFile(filePath))
+                            if (FileHelpers.IsImageFile(filePath))
                             {
                                 pbThumbnail.Enabled = false;
 
@@ -443,15 +443,16 @@ namespace ShareX
                                     pbThumbnail.Enabled = true;
                                 }
                             }
-                            else if (Helpers.IsTextFile(filePath) || Helpers.IsVideoFile(filePath) || MessageBox.Show("Would you like to open this file?" + "\r\n\r\n" + filePath,
+                            else if (FileHelpers.IsTextFile(filePath) || FileHelpers.IsVideoFile(filePath) ||
+                                MessageBox.Show("Would you like to open this file?" + "\r\n\r\n" + filePath,
                                 Resources.ShareXConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                Helpers.OpenFile(filePath);
+                                FileHelpers.OpenFile(filePath);
                             }
                         }
                         break;
                     case ThumbnailViewClickAction.OpenImageViewer:
-                        if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && Helpers.IsImageFile(filePath))
+                        if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
                         {
                             pbThumbnail.Enabled = false;
 
@@ -468,13 +469,13 @@ namespace ShareX
                     case ThumbnailViewClickAction.OpenFile:
                         if (!string.IsNullOrEmpty(filePath))
                         {
-                            Helpers.OpenFile(filePath);
+                            FileHelpers.OpenFile(filePath);
                         }
                         break;
                     case ThumbnailViewClickAction.OpenFolder:
                         if (!string.IsNullOrEmpty(filePath))
                         {
-                            Helpers.OpenFolderWithFile(filePath);
+                            FileHelpers.OpenFolderWithFile(filePath);
                         }
                         break;
                     case ThumbnailViewClickAction.OpenURL:
@@ -484,7 +485,7 @@ namespace ShareX
                         }
                         break;
                     case ThumbnailViewClickAction.EditImage:
-                        if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && Helpers.IsImageFile(filePath))
+                        if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
                         {
                             TaskHelpers.AnnotateImageFromFile(filePath);
                         }
@@ -510,7 +511,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(Task.Info.FilePath))
                 {
-                    Helpers.OpenFile(Task.Info.FilePath);
+                    FileHelpers.OpenFile(Task.Info.FilePath);
                 }
             }
         }

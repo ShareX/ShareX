@@ -36,7 +36,7 @@ namespace ShareX.HelpersLib
 
         public SevenZipManager()
         {
-            SevenZipPath = Helpers.GetAbsolutePath("7za.exe");
+            SevenZipPath = FileHelpers.GetAbsolutePath("7za.exe");
         }
 
         public SevenZipManager(string sevenZipPath)

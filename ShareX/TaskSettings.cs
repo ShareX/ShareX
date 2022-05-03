@@ -497,8 +497,8 @@ namespace ShareX
         public TaskSettingsAdvanced()
         {
             this.ApplyDefaultPropertyValues();
-            ImageExtensions = Helpers.ImageFileExtensions.ToList();
-            TextExtensions = Helpers.TextFileExtensions.ToList();
+            ImageExtensions = FileHelpers.ImageFileExtensions.ToList();
+            TextExtensions = FileHelpers.TextFileExtensions.ToList();
         }
     }
 }

@@ -145,7 +145,7 @@ namespace ShareX.MediaLib
 
                 if (Options.OpenDirectory && thumbnails.Count > 0)
                 {
-                    Helpers.OpenFolderWithFile(thumbnails[0].FilePath);
+                    FileHelpers.OpenFolderWithFile(thumbnails[0].FilePath);
                 }
             }
 
@@ -171,11 +171,11 @@ namespace ShareX.MediaLib
                     directory = Path.GetDirectoryName(MediaPath);
                     break;
                 case ThumbnailLocationType.CustomFolder:
-                    directory = Helpers.ExpandFolderVariables(Options.CustomOutputDirectory);
+                    directory = FileHelpers.ExpandFolderVariables(Options.CustomOutputDirectory);
                     break;
             }
 
-            Helpers.CreateDirectory(directory);
+            FileHelpers.CreateDirectory(directory);
 
             return directory;
         }

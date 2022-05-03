@@ -301,7 +301,7 @@ namespace ShareX
 
                         if (!currentFileName.Equals(customFileName, StringComparison.InvariantCultureIgnoreCase))
                         {
-                            path = Helpers.RenameFile(path, customFileName + ext);
+                            path = FileHelpers.RenameFile(path, customFileName + ext);
                         }
                     }
 

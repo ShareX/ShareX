@@ -85,7 +85,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!string.IsNullOrEmpty(CLIPath))
                 {
-                    return Helpers.GetAbsolutePath(CLIPath);
+                    return FileHelpers.GetAbsolutePath(CLIPath);
                 }
 
                 return "";
@@ -158,7 +158,7 @@ namespace ShareX.ScreenCaptureLib
 
         public FFmpegOptions(string ffmpegPath)
         {
-            CLIPath = Helpers.GetVariableFolderPath(ffmpegPath);
+            CLIPath = FileHelpers.GetVariableFolderPath(ffmpegPath);
         }
     }
 }

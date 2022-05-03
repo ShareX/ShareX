@@ -115,17 +115,17 @@ namespace ShareX
 
         public void OpenFile()
         {
-            if (IsItemSelected && SelectedItem.IsFileExist) Helpers.OpenFile(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsFileExist) FileHelpers.OpenFile(SelectedItem.Info.FilePath);
         }
 
         public void OpenThumbnailFile()
         {
-            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) Helpers.OpenFile(SelectedItem.Info.ThumbnailFilePath);
+            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) FileHelpers.OpenFile(SelectedItem.Info.ThumbnailFilePath);
         }
 
         public void OpenFolder()
         {
-            if (IsItemSelected && SelectedItem.IsFileExist) Helpers.OpenFolderWithFile(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsFileExist) FileHelpers.OpenFolderWithFile(SelectedItem.Info.FilePath);
         }
 
         public void TryOpen()
@@ -144,7 +144,7 @@ namespace ShareX
                 }
                 else if (SelectedItem.IsFilePathValid)
                 {
-                    Helpers.OpenFile(SelectedItem.Info.FilePath);
+                    FileHelpers.OpenFile(SelectedItem.Info.FilePath);
                 }
             }
         }
@@ -353,7 +353,7 @@ namespace ShareX
             {
                 foreach (string filePath in SelectedItems.Select(x => x.Info.FilePath))
                 {
-                    Helpers.DeleteFile(filePath, true);
+                    FileHelpers.DeleteFile(filePath, true);
                 }
             }
         }

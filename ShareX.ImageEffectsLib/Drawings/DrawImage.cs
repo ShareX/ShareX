@@ -94,7 +94,7 @@ namespace ShareX.ImageEffectsLib
                 return bmp;
             }
 
-            string imageFilePath = Helpers.ExpandFolderVariables(ImageLocation, true);
+            string imageFilePath = FileHelpers.ExpandFolderVariables(ImageLocation, true);
 
             if (!string.IsNullOrEmpty(imageFilePath) && File.Exists(imageFilePath))
             {

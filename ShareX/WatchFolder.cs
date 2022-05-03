@@ -49,7 +49,8 @@ namespace ShareX
         {
             Dispose();
 
-            string folderPath = Helpers.ExpandFolderVariables(Settings.FolderPath);
+            string folderPath = FileHelpers.ExpandFolderVariables(Settings.FolderPath);
+
             if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
             {
                 context = SynchronizationContext.Current ?? new SynchronizationContext();
@@ -88,9 +89,9 @@ namespace ShareX
 
             await Helpers.WaitWhileAsync(() =>
             {
-                if (!Helpers.IsFileLocked(path))
+                if (!FileHelpers.IsFileLocked(path))
                 {
-                    long currentSize = Helpers.GetFileSize(path);
+                    long currentSize = FileHelpers.GetFileSize(path);
 
                     if (currentSize > 0 && currentSize == previousSize)
                     {

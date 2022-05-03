@@ -57,7 +57,7 @@ namespace ShareX.HelpersLib
         {
             FileWrite = true;
             LogFilePath = logFilePath;
-            Helpers.CreateDirectoryFromFilePath(LogFilePath);
+            FileHelpers.CreateDirectoryFromFilePath(LogFilePath);
         }
 
         protected void OnMessageAdded(string message)

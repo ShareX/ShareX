@@ -103,7 +103,7 @@ namespace ShareX.MediaLib
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(Resources.VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file, txtMediaPath);
+            FileHelpers.BrowseFile(Resources.VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file, txtMediaPath);
         }
     }
 }

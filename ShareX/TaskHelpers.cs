@@ -483,7 +483,7 @@ namespace ShareX
                 screenshotsFolder = Path.Combine(Program.ScreenshotsParentFolder, subFolderPath);
             }
 
-            return Helpers.GetAbsolutePath(screenshotsFolder);
+            return FileHelpers.GetAbsolutePath(screenshotsFolder);
         }
 
         public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, TaskMetadata metadata = null, string filePath = null)
@@ -625,7 +625,7 @@ namespace ShareX
                         }
                         break;
                     case FileExistAction.UniqueName:
-                        filePath = Helpers.GetUniqueFilePath(filePath);
+                        filePath = FileHelpers.GetUniqueFilePath(filePath);
                         break;
                     case FileExistAction.Cancel:
                         filePath = "";
@@ -696,11 +696,11 @@ namespace ShareX
 
             if (Directory.Exists(screenshotsFolder))
             {
-                Helpers.OpenFolder(screenshotsFolder);
+                FileHelpers.OpenFolder(screenshotsFolder);
             }
             else
             {
-                Helpers.OpenFolder(Program.ScreenshotsParentFolder);
+                FileHelpers.OpenFolder(Program.ScreenshotsParentFolder);
             }
         }
 
@@ -1302,12 +1302,12 @@ namespace ShareX
 
         public static EDataType FindDataType(string filePath, TaskSettings taskSettings)
         {
-            if (Helpers.CheckExtension(filePath, taskSettings.AdvancedSettings.ImageExtensions))
+            if (FileHelpers.CheckExtension(filePath, taskSettings.AdvancedSettings.ImageExtensions))
             {
                 return EDataType.Image;
             }
 
-            if (Helpers.CheckExtension(filePath, taskSettings.AdvancedSettings.TextExtensions))
+            if (FileHelpers.CheckExtension(filePath, taskSettings.AdvancedSettings.TextExtensions))
             {
                 return EDataType.Text;
             }

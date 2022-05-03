@@ -135,13 +135,13 @@ namespace ShareX
         private const string PersonalPathConfigFileName = "PersonalPath.cfg";
 
         public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), Name);
-        public static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath(Name);
+        public static readonly string PortablePersonalFolder = FileHelpers.GetAbsolutePath(Name);
 
         private static string PersonalPathConfigFilePath
         {
             get
             {
-                string relativePath = Helpers.GetAbsolutePath(PersonalPathConfigFileName);
+                string relativePath = FileHelpers.GetAbsolutePath(PersonalPathConfigFileName);
 
                 if (File.Exists(relativePath))
                 {
@@ -157,9 +157,9 @@ namespace ShareX
         private static readonly string PreviousPersonalPathConfigFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
             Name, PersonalPathConfigFileName);
 
-        private static readonly string PortableCheckFilePath = Helpers.GetAbsolutePath("Portable");
-        public static readonly string NativeMessagingHostFilePath = Helpers.GetAbsolutePath("ShareX_NativeMessagingHost.exe");
-        public static readonly string SteamInAppFilePath = Helpers.GetAbsolutePath("Steam");
+        private static readonly string PortableCheckFilePath = FileHelpers.GetAbsolutePath("Portable");
+        public static readonly string NativeMessagingHostFilePath = FileHelpers.GetAbsolutePath("ShareX_NativeMessagingHost.exe");
+        public static readonly string SteamInAppFilePath = FileHelpers.GetAbsolutePath("Steam");
 
         private static string CustomPersonalPath { get; set; }
 
@@ -169,7 +169,7 @@ namespace ShareX
             {
                 if (!string.IsNullOrEmpty(CustomPersonalPath))
                 {
-                    return Helpers.ExpandFolderVariables(CustomPersonalPath);
+                    return FileHelpers.ExpandFolderVariables(CustomPersonalPath);
                 }
 
                 return DefaultPersonalFolder;
@@ -226,7 +226,7 @@ namespace ShareX
 
                     if (!string.IsNullOrEmpty(path))
                     {
-                        path = Helpers.ExpandFolderVariables(path);
+                        path = FileHelpers.ExpandFolderVariables(path);
 
                         if (string.IsNullOrEmpty(path2) || Directory.Exists(path))
                         {
@@ -236,7 +236,7 @@ namespace ShareX
 
                     if (!string.IsNullOrEmpty(path2))
                     {
-                        path2 = Helpers.ExpandFolderVariables(path2);
+                        path2 = FileHelpers.ExpandFolderVariables(path2);
 
                         if (Directory.Exists(path2))
                         {
@@ -469,7 +469,7 @@ namespace ShareX
 
                     if (!string.IsNullOrEmpty(customPersonalPath))
                     {
-                        CustomPersonalPath = Helpers.GetAbsolutePath(customPersonalPath);
+                        CustomPersonalPath = FileHelpers.GetAbsolutePath(customPersonalPath);
                         PersonalPathDetectionMethod = $"PersonalPath.cfg file ({PersonalPathConfigFilePath})";
                     }
                 }
@@ -506,11 +506,11 @@ namespace ShareX
         {
             if (!Sandbox && Directory.Exists(PersonalFolder))
             {
-                Helpers.CreateDirectory(SettingManager.BackupFolder);
-                Helpers.CreateDirectory(ImageEffectsFolder);
-                Helpers.CreateDirectory(LogsFolder);
-                Helpers.CreateDirectory(ScreenshotsParentFolder);
-                Helpers.CreateDirectory(ToolsFolder);
+                FileHelpers.CreateDirectory(SettingManager.BackupFolder);
+                FileHelpers.CreateDirectory(ImageEffectsFolder);
+                FileHelpers.CreateDirectory(LogsFolder);
+                FileHelpers.CreateDirectory(ScreenshotsParentFolder);
+                FileHelpers.CreateDirectory(ToolsFolder);
             }
         }
 
@@ -547,7 +547,7 @@ namespace ShareX
                 {
                     if (!File.Exists(CurrentPersonalPathConfigFilePath))
                     {
-                        Helpers.CreateDirectoryFromFilePath(CurrentPersonalPathConfigFilePath);
+                        FileHelpers.CreateDirectoryFromFilePath(CurrentPersonalPathConfigFilePath);
                         File.Move(PreviousPersonalPathConfigFilePath, CurrentPersonalPathConfigFilePath);
                     }
 
@@ -592,7 +592,7 @@ namespace ShareX
                 {
                     try
                     {
-                        Helpers.CreateDirectoryFromFilePath(PersonalPathConfigFilePath);
+                        FileHelpers.CreateDirectoryFromFilePath(PersonalPathConfigFilePath);
                         File.WriteAllText(PersonalPathConfigFilePath, path, Encoding.UTF8);
                         return true;
                     }
@@ -659,7 +659,7 @@ namespace ShareX
 
         private static bool CheckPuushMode()
         {
-            string puushPath = Helpers.GetAbsolutePath("puush");
+            string puushPath = FileHelpers.GetAbsolutePath("puush");
             PuushMode = File.Exists(puushPath);
             return PuushMode;
         }

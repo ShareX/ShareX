@@ -334,7 +334,7 @@ namespace ShareX
         {
             try
             {
-                string personalPath = Helpers.GetValidFolderPath(txtPersonalFolderPath.Text);
+                string personalPath = FileHelpers.GetValidFolderPath(txtPersonalFolderPath.Text);
 
                 if (string.IsNullOrEmpty(personalPath))
                 {
@@ -349,7 +349,7 @@ namespace ShareX
                 }
                 else
                 {
-                    personalPath = Helpers.GetAbsolutePath(personalPath);
+                    personalPath = FileHelpers.GetAbsolutePath(personalPath);
                 }
 
                 lblPreviewPersonalFolderPath.Text = personalPath;
@@ -665,13 +665,13 @@ namespace ShareX
 
         private void btnBrowsePersonalFolderPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path,
+            FileHelpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path,
                 txtPersonalFolderPath, Program.PersonalFolder, true);
         }
 
         private void btnPersonalFolderPathApply_Click(object sender, EventArgs e)
         {
-            string currentPersonalPath = Helpers.GetValidFolderPath(txtPersonalFolderPath.Text);
+            string currentPersonalPath = FileHelpers.GetValidFolderPath(txtPersonalFolderPath.Text);
 
             if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.OrdinalIgnoreCase) && Program.WritePersonalPathConfig(currentPersonalPath))
             {
@@ -688,7 +688,7 @@ namespace ShareX
 
         private void btnOpenPersonalFolder_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFolder(lblPreviewPersonalFolderPath.Text);
+            FileHelpers.OpenFolder(lblPreviewPersonalFolderPath.Text);
         }
 
         private void cbUseCustomScreenshotsPath_CheckedChanged(object sender, EventArgs e)
@@ -699,30 +699,30 @@ namespace ShareX
 
         private void txtCustomScreenshotsPath_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.CustomScreenshotsPath = Helpers.GetValidFolderPath(txtCustomScreenshotsPath.Text);
+            Program.Settings.CustomScreenshotsPath = FileHelpers.GetValidFolderPath(txtCustomScreenshotsPath.Text);
             UpdateScreenshotsFolderPathPreview();
         }
 
         private void btnBrowseCustomScreenshotsPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
+            FileHelpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
                 txtCustomScreenshotsPath, Program.PersonalFolder, true);
         }
 
         private void txtSaveImageSubFolderPattern_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.SaveImageSubFolderPattern = Helpers.GetValidFolderPath(txtSaveImageSubFolderPattern.Text);
+            Program.Settings.SaveImageSubFolderPattern = FileHelpers.GetValidFolderPath(txtSaveImageSubFolderPattern.Text);
             UpdateScreenshotsFolderPathPreview();
         }
 
         private void btnOpenScreenshotsFolder_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFolder(lblSaveImageSubFolderPatternPreview.Text);
+            FileHelpers.OpenFolder(lblSaveImageSubFolderPatternPreview.Text);
         }
 
         private void txtSaveImageSubFolderPatternWindow_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.SaveImageSubFolderPatternWindow = Helpers.GetValidFolderPath(txtSaveImageSubFolderPatternWindow.Text);
+            Program.Settings.SaveImageSubFolderPatternWindow = FileHelpers.GetValidFolderPath(txtSaveImageSubFolderPatternWindow.Text);
         }
 
         #endregion Paths

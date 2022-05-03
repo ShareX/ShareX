@@ -123,7 +123,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnFolderBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtFolder, txtFolder.Text);
+            FileHelpers.BrowseFolder(txtFolder, txtFolder.Text);
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)

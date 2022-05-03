@@ -121,7 +121,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 default:
                 case ScreenRecordOutput.FFmpeg:
-                    Helpers.CreateDirectoryFromFilePath(Options.OutputPath);
+                    FileHelpers.CreateDirectoryFromFilePath(Options.OutputPath);
                     ffmpeg = new FFmpegCLIManager(Options.FFmpeg.FFmpegPath);
                     ffmpeg.ShowError = true;
                     ffmpeg.EncodeStarted += OnRecordingStarted;
@@ -210,7 +210,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (imgCache != null && imgCache is HardDiskCache && !IsRecording)
             {
-                Helpers.CreateDirectoryFromFilePath(path);
+                FileHelpers.CreateDirectoryFromFilePath(path);
 
                 HardDiskCache hdCache = imgCache as HardDiskCache;
 
@@ -235,7 +235,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool FFmpegEncodeVideo(string input, string output)
         {
-            Helpers.CreateDirectoryFromFilePath(output);
+            FileHelpers.CreateDirectoryFromFilePath(output);
 
             Options.IsRecording = false;
             Options.IsLossless = false;
@@ -256,7 +256,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool FFmpegEncodeAsGIF(string input, string output)
         {
-            Helpers.CreateDirectoryFromFilePath(output);
+            FileHelpers.CreateDirectoryFromFilePath(output);
 
             try
             {

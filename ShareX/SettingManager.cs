@@ -65,7 +65,7 @@ namespace ShareX
 
                 if (Settings != null && !string.IsNullOrEmpty(Settings.CustomUploadersConfigPath))
                 {
-                    uploadersConfigFolder = Helpers.ExpandFolderVariables(Settings.CustomUploadersConfigPath);
+                    uploadersConfigFolder = FileHelpers.ExpandFolderVariables(Settings.CustomUploadersConfigPath);
                 }
                 else
                 {
@@ -88,7 +88,7 @@ namespace ShareX
 
                 if (Settings != null && !string.IsNullOrEmpty(Settings.CustomHotkeysConfigPath))
                 {
-                    hotkeysConfigFolder = Helpers.ExpandFolderVariables(Settings.CustomHotkeysConfigPath);
+                    hotkeysConfigFolder = FileHelpers.ExpandFolderVariables(Settings.CustomHotkeysConfigPath);
                 }
                 else
                 {
@@ -245,7 +245,7 @@ namespace ShareX
                     }
                 }
 
-                Helpers.MoveFile(Program.HistoryFilePathOld, BackupFolder);
+                FileHelpers.MoveFile(Program.HistoryFilePathOld, BackupFolder);
             }
         }
 
@@ -395,7 +395,7 @@ namespace ShareX
             {
                 ZipManager.Extract(archivePath, Program.PersonalFolder, true, entry =>
                 {
-                    return Helpers.CheckExtension(entry.Name, new string[] { "json", "xml" });
+                    return FileHelpers.CheckExtension(entry.Name, new string[] { "json", "xml" });
                 }, 1_000_000_000);
 
                 return true;

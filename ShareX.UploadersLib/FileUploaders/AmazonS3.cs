@@ -268,9 +268,9 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             string path = NameParser.Parse(NameParserType.FolderPath, Settings.ObjectPrefix.Trim('/'));
 
-            if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
-                (Settings.RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
-                (Settings.RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            if ((Settings.RemoveExtensionImage && FileHelpers.IsImageFile(fileName)) ||
+                (Settings.RemoveExtensionText && FileHelpers.IsTextFile(fileName)) ||
+                (Settings.RemoveExtensionVideo && FileHelpers.IsVideoFile(fileName)))
             {
                 fileName = Path.GetFileNameWithoutExtension(fileName);
             }

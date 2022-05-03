@@ -52,7 +52,7 @@ namespace ShareX
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtFolderPath, "", true);
+            FileHelpers.BrowseFolder(txtFolderPath, "", true);
         }
 
         private void btnOK_Click(object sender, EventArgs e)

@@ -118,7 +118,7 @@ namespace ShareX.HelpersLib
             {
                 string imageFilePath = Images[i];
 
-                bool isImageFile = !string.IsNullOrEmpty(imageFilePath) && Helpers.IsImageFile(imageFilePath);
+                bool isImageFile = !string.IsNullOrEmpty(imageFilePath) && FileHelpers.IsImageFile(imageFilePath);
 
                 if (i == CurrentImageIndex)
                 {
@@ -150,7 +150,7 @@ namespace ShareX.HelpersLib
                 AppendStatus($"{CurrentImageIndex + 1} / {Images.Length}");
             }
 
-            string fileName = Helpers.GetFileNameSafe(CurrentImageFilePath);
+            string fileName = FileHelpers.GetFileNameSafe(CurrentImageFilePath);
 
             if (!string.IsNullOrEmpty(fileName))
             {

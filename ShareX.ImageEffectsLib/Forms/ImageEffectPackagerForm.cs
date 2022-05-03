@@ -56,7 +56,7 @@ namespace ShareX.ImageEffectsLib
 
         private void btnOpenImageEffectsFolder_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFolder(ShareXImageEffectsFolderPath);
+            FileHelpers.OpenFolder(ShareXImageEffectsFolderPath);
         }
 
         private void txtAssetsFolderPath_TextChanged(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace ShareX.ImageEffectsLib
 
         private void btnAssetsFolderPathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtAssetsFolderPath, ShareXImageEffectsFolderPath);
+            FileHelpers.BrowseFolder(txtAssetsFolderPath, ShareXImageEffectsFolderPath);
         }
 
         private void txtPackageFilePath_TextChanged(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace ShareX.ImageEffectsLib
 
                     if (!string.IsNullOrEmpty(outputFilePath) && File.Exists(outputFilePath))
                     {
-                        Helpers.OpenFolderWithFile(outputFilePath);
+                        FileHelpers.OpenFolderWithFile(outputFilePath);
                     }
                 }
             }

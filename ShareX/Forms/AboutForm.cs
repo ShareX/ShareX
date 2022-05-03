@@ -141,12 +141,12 @@ Blob Emoji: http://blobs.gg
 
         private void btnShareXLicense_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFile(Helpers.GetAbsolutePath("Licenses\\ShareX_license.txt"));
+            FileHelpers.OpenFile(FileHelpers.GetAbsolutePath("Licenses\\ShareX_license.txt"));
         }
 
         private void btnLicenses_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFolder(Helpers.GetAbsolutePath("Licenses"));
+            FileHelpers.OpenFolder(FileHelpers.GetAbsolutePath("Licenses"));
         }
 
         private void btnClose_Click(object sender, EventArgs e)

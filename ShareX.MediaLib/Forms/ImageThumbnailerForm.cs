@@ -133,7 +133,7 @@ namespace ShareX.MediaLib
 
         private void btnOutputFolder_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtOutputFolder);
+            FileHelpers.BrowseFolder(txtOutputFolder);
         }
 
         private void txtOutputFilename_TextChanged(object sender, EventArgs e)

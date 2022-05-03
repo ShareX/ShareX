@@ -250,7 +250,7 @@ namespace ShareX.HelpersLib
                     {
                         string path = entry.Item2;
 
-                        if (Helpers.IsTextFile(path))
+                        if (FileHelpers.IsTextFile(path))
                         {
                             return Helpers.GetRandomLineFromFile(path);
                         }
@@ -307,15 +307,15 @@ namespace ShareX.HelpersLib
 
             if (Type == NameParserType.FolderPath)
             {
-                result = Helpers.GetValidFolderPath(result);
+                result = FileHelpers.GetValidFolderPath(result);
             }
             else if (Type == NameParserType.FileName)
             {
-                result = Helpers.GetValidFileName(result);
+                result = FileHelpers.GetValidFileName(result);
             }
             else if (Type == NameParserType.FilePath)
             {
-                result = Helpers.GetValidFilePath(result);
+                result = FileHelpers.GetValidFilePath(result);
             }
             else if (Type == NameParserType.URL)
             {

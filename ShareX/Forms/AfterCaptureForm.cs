@@ -70,7 +70,7 @@ namespace ShareX
 
         public AfterCaptureForm(string filePath, TaskSettings taskSettings) : this(taskSettings)
         {
-            if (Helpers.IsImageFile(filePath))
+            if (FileHelpers.IsImageFile(filePath))
             {
                 pbImage.LoadImageFromFileAsync(filePath);
             }
