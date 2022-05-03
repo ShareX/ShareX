@@ -318,6 +318,9 @@
   <data name="&gt;&gt;cbServices.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnOpen.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="btnOpen.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>

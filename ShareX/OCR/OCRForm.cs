@@ -140,11 +140,16 @@ namespace ShareX
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            if (cbServices.SelectedItem is ServiceLink serviceLink)
+            if (!string.IsNullOrEmpty(Result) && cbServices.SelectedItem is ServiceLink serviceLink)
             {
-                string input = txtResult.Text.Trim();
-                serviceLink.OpenLink(input);
+                serviceLink.OpenLink(Result);
             }
+        }
+
+        private void txtResult_TextChanged(object sender, EventArgs e)
+        {
+            Result = txtResult.Text.Trim();
+            btnOpen.Enabled = !string.IsNullOrEmpty(Result);
         }
     }
 }

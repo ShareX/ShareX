@@ -62,6 +62,7 @@
             // 
             resources.ApplyResources(this.txtResult, "txtResult");
             this.txtResult.Name = "txtResult";
+            this.txtResult.TextChanged += new System.EventHandler(this.txtResult_TextChanged);
             // 
             // lblScaleFactor
             // 
