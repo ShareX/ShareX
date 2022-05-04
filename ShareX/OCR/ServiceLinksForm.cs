@@ -68,6 +68,7 @@ namespace ShareX
         {
             ServiceLink serviceLink = new ServiceLink("Name", "https://example.com/search?q={0}");
             ServiceLinks.Add(serviceLink);
+
             cbServices.Items.Add(serviceLink);
             cbServices.SelectedIndex = cbServices.Items.Count - 1;
             UpdateControls();
@@ -78,10 +79,22 @@ namespace ShareX
             if (cbServices.SelectedItem is ServiceLink serviceLink)
             {
                 ServiceLinks.Remove(serviceLink);
+
                 cbServices.Items.Remove(serviceLink);
                 cbServices.SelectedIndex = cbServices.Items.Count - 1;
                 UpdateControls();
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ServiceLinks.Clear();
+            ServiceLinks.AddRange(OCROptions.DefaultServiceLinks);
+
+            cbServices.Items.Clear();
+            cbServices.Items.AddRange(ServiceLinks.ToArray());
+            cbServices.SelectedIndex = 0;
+            UpdateControls();
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
