@@ -37,6 +37,7 @@
             this.nudScaleFactor = new System.Windows.Forms.NumericUpDown();
             this.cbServices = new System.Windows.Forms.ComboBox();
             this.btnOpen = new System.Windows.Forms.Button();
+            this.cbEditServices = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,10 +111,19 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
+            // cbEditServices
+            // 
+            this.cbEditServices.Image = global::ShareX.Properties.Resources.gear;
+            resources.ApplyResources(this.cbEditServices, "cbEditServices");
+            this.cbEditServices.Name = "cbEditServices";
+            this.cbEditServices.UseVisualStyleBackColor = true;
+            this.cbEditServices.Click += new System.EventHandler(this.cbEditServices_Click);
+            // 
             // OCRForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbEditServices);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.cbServices);
             this.Controls.Add(this.nudScaleFactor);
@@ -141,5 +151,6 @@
         private System.Windows.Forms.NumericUpDown nudScaleFactor;
         private System.Windows.Forms.ComboBox cbServices;
         private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.Button cbEditServices;
     }
 }

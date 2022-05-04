@@ -146,6 +146,22 @@ namespace ShareX
             }
         }
 
+        private void cbEditServices_Click(object sender, EventArgs e)
+        {
+            using (ServiceLinksForm form = new ServiceLinksForm(Options.ServiceLinks))
+            {
+                form.ShowDialog();
+
+                cbServices.Items.Clear();
+
+                if (Options.ServiceLinks.Count > 0)
+                {
+                    cbServices.Items.AddRange(Options.ServiceLinks.ToArray());
+                    cbServices.SelectedIndex = 0;
+                }
+            }
+        }
+
         private void txtResult_TextChanged(object sender, EventArgs e)
         {
             Result = txtResult.Text.Trim();

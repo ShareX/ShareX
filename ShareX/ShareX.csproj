@@ -208,6 +208,12 @@
     <Compile Include="OCR\OCRLanguage.cs" />
     <Compile Include="OCR\OCROptions.cs" />
     <Compile Include="OCR\ServiceLink.cs" />
+    <Compile Include="OCR\ServiceLinksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OCR\ServiceLinksForm.Designer.cs">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
@@ -1603,6 +1609,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.zh-TW.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OCR\ServiceLinksForm.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.es-MX.resx" />
