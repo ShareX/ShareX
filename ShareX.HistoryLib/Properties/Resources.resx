@@ -145,7 +145,7 @@
     <value>Markdown link</value>
   </data>
   <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>Error occurred while reading history file:</value>
+    <value>Error occured while reading history file:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Folder</value>

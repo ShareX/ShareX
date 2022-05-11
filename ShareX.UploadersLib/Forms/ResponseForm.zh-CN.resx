@@ -123,4 +123,34 @@
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Web 浏览器</value>
   </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>JSON 格式</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>XML 格式</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>复制响应</value>
+  </data>
+  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
+    <value>复制短链接</value>
+  </data>
+  <data name="tsbCopyURL.Text" xml:space="preserve">
+    <value>复制 URL</value>
+  </data>
+  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
+    <value>复制缩略图 URL</value>
+  </data>
+  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
+    <value>复制删除 URL</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>结果</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>响应信息</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>响应文字</value>
+  </data>
 </root>

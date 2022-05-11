@@ -123,23 +123,8 @@
   <data name="btnEncode.Text" xml:space="preserve">
     <value>开始编码</value>
   </data>
-  <data name="btnInputFilePathBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="btnOutputFolderBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="cbAutoOpenFolder.Text" xml:space="preserve">
     <value>编码后打开文件夹</value>
-  </data>
-  <data name="lblVideoQualityHigher.Text" xml:space="preserve">
-    <value>-&gt;</value>
-  </data>
-  <data name="lblVideoQualityLower.Text" xml:space="preserve">
-    <value>&lt;-</value>
-  </data>
-  <data name="lblVideoQualityValue.Text" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="lblInputFilePath.Text" xml:space="preserve">
     <value>输入文件路径:</value>

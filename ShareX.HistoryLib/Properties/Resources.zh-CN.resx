@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>过滤：{0}</value>
+    <value>已筛选：{0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>总计：{0}</value>
+    <value>合计：{0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>复制</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>删除URL</value>
+    <value>删除 URL</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>文件</value>
@@ -136,7 +136,7 @@
     <value>文件名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>文件扩展名</value>
+    <value>文件带扩展名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>文件路径</value>
@@ -157,16 +157,16 @@
     <value>HTML图像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>HTML链接</value>
+    <value>HTML 链接</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>HTML链接的图像</value>
+    <value>HTML 链接的图像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
     <value>图像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>图像预览</value>
+    <value>图像预览...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>更多信息...</value>
@@ -205,13 +205,13 @@
     <value>上传文件</value>
   </data>
   <data name="HistoryStats_Total" xml:space="preserve">
-    <value>总计:</value>
+    <value>合计:</value>
   </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
     <value>文件扩展名:</value>
   </data>
   <data name="HistoryItemCounts" xml:space="preserve">
-    <value>历史项目数:</value>
+    <value>历史条目数:</value>
   </data>
   <data name="HistoryStats_YearlyUsages" xml:space="preserve">
     <value>年用量:</value>
@@ -221,5 +221,20 @@
   </data>
   <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
     <value>读取历史记录文件出错:</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>已筛选</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>合计</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>文件名，窗口标题，进程名，等等。</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>进程名：</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>历史状态</value>
   </data>
 </root>

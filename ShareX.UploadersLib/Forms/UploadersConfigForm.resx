@@ -10519,7 +10519,7 @@ Using an encrypted library disables sharing.</value>
     <value>20</value>
   </data>
   <data name="tpLithiio.Text" xml:space="preserve">
-    <value>LobFile</value>
+    <value>Lithiio</value>
   </data>
   <data name="&gt;&gt;tpLithiio.Name" xml:space="preserve">
     <value>tpLithiio</value>

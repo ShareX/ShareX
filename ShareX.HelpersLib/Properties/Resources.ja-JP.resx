@@ -307,7 +307,7 @@
     <value>切り取り</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
-    <value>動画(GIF)キャプチャー</value>
+    <value>動画キャプチャー</value>
   </data>
   <data name="FileExistAction_Cancel" xml:space="preserve">
     <value>保存しない</value>

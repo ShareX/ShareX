@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>高级设置</value>
+    <value>高级</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 应用程序设置</value>
@@ -340,7 +340,7 @@
     <value>安装开发版本...</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>在Windows上下文菜单中显示“使用ShareX编辑”</value>
+    <value>在 Windows 上下文菜单中显示“使用 ShareX 编辑”</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>使用白色 ShareX 图标</value>
@@ -374,5 +374,68 @@
   </data>
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>使用自定义主题</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>窗口的子文件夹模式：</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>自动清理旧的日志文件</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>要保留文件的数目:</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>自动清理旧的备份文件</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>图像预览位置：</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>图像预览可视：</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>显示列</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>列表视图</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>缩略图点击操作：</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>缩略图尺寸：</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>标题位置：</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>显示标题</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>缩略图视图</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>显示菜单</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>任务视图模式：</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>主窗口</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>这些格式将出现在主窗口上下文菜单中的“复制”子菜单。</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>剪贴板格式</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>重试时按顺序优先使用辅助上传器</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>默认打印机覆盖：</value>
   </data>
 </root>

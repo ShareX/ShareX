@@ -1905,4 +1905,55 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="lblParseResponse.Text" xml:space="preserve">
+    <value>Parse response:</value>
+  </data>
+  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
+  </data>
+  <data name="btnJsonPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="lblJsonPathExample.Text" xml:space="preserve">
+    <value>Examples:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="lblJsonPath.Text" xml:space="preserve">
+    <value>JsonPath:</value>
+  </data>
+  <data name="tpJsonParse.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
+  </data>
+  <data name="btnXPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="lblXPathExample.Text" xml:space="preserve">
+    <value>Examples:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
+  <data name="lblXPath.Text" xml:space="preserve">
+    <value>XPath:</value>
+  </data>
+  <data name="tpXmlParse.Text" xml:space="preserve">
+    <value>XML</value>
+  </data>
+  <data name="lblRegex.Text" xml:space="preserve">
+    <value>Regex list:</value>
+  </data>
+  <data name="cRegex.HeaderText" xml:space="preserve">
+    <value>Regex</value>
+  </data>
+  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
+  </data>
+  <data name="tpRegexParse.Text" xml:space="preserve">
+    <value>Regex</value>
+  </data>
 </root>

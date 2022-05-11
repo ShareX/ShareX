@@ -151,7 +151,7 @@
     <value>要求认证。</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>父相册路径，例如</value>
+    <value>父相册路径，例如：</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>所选文件夹：</value>
@@ -163,7 +163,7 @@
     <value>登录成功。</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
-    <value>点击刷新按钮</value>
+    <value>单击刷新按钮</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
     <value>配置</value>
@@ -240,5 +240,41 @@
   </data>
   <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
     <value>我的云端硬盘</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>导出失败。</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>登录为{0}。</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>格式化失败。</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>格式化失败。</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>短链接</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>缩略图 URL</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>删除 URL</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>状态码</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>响应 URL</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>响应文字</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
   </data>
 </root>

@@ -124,7 +124,7 @@
     <value>退出</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>确定</value>
+    <value>继续</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>打开日志文件...</value>
@@ -137,6 +137,6 @@
 错误 2</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>确定</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,19 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tslStickers.Text" xml:space="preserve">
-    <value>贴纸：</value>
+  <data name="btnInspectWindow.Text" xml:space="preserve">
+    <value>检视窗口...</value>
   </data>
-  <data name="tslSize.Text" xml:space="preserve">
-    <value>尺寸：</value>
+  <data name="btnInspectControl.Text" xml:space="preserve">
+    <value>检视控件...</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>刷新</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 贴纸选取</value>
+    <value>ShareX - 检视窗口</value>
   </data>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>搜索：</value>
-  </data>
-  <data name="tsbEditStickers.Text" xml:space="preserve">
-    <value>编辑贴纸包</value>
+  <data name="btnPinToTop.Text" xml:space="preserve">
+    <value>总在最前面</value>
   </data>
 </root>

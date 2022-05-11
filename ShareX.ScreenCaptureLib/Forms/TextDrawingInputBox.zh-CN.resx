@@ -133,7 +133,7 @@
     <value>右</value>
   </data>
   <data name="tsmiAlignmentCenter.Text" xml:space="preserve">
-    <value>中心</value>
+    <value>居中</value>
   </data>
   <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
     <value>左</value>

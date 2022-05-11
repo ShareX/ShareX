@@ -173,4 +173,7 @@ Would you like to overwrite it?</value>
   <data name="MissingPresetName" xml:space="preserve">
     <value>Missing preset name</value>
   </data>
+  <data name="Effect" xml:space="preserve">
+    <value>Effect:</value>
+  </data>
 </root>

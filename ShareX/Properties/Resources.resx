@@ -1085,4 +1085,19 @@ Middle click to close</value>
   <data name="images-flickr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images-flickr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Optical character recognition</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
+    <value>Your anti-virus software or the controlled folder access feature in Windows 10 could be blocking ShareX.</value>
+  </data>
+  <data name="Program_Run_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ImageData_Write_Error" xml:space="preserve">
+    <value>Could not write image to path {0}.</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Please note that ShareX is using OCR.Space's online API to perform optical character recognition. Do you give permission to ShareX to upload images to this service?</value>
+  </data>
 </root>

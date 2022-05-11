@@ -5776,7 +5776,7 @@
     <value>30</value>
   </data>
   <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
-    <value>Show FPS</value>
+    <value>Show FPS in top left corner</value>
   </data>
   <data name="&gt;&gt;cbRegionCaptureShowFPS.Name" xml:space="preserve">
     <value>cbRegionCaptureShowFPS</value>
@@ -8212,7 +8212,7 @@
     <value>9</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>Use name pattern for file uploads instead of actual file name</value>
+    <value>Use name pattern for file uploads instead actual file name</value>
   </data>
   <data name="&gt;&gt;cbFileUploadUseNamePattern.Name" xml:space="preserve">
     <value>cbFileUploadUseNamePattern</value>
@@ -9857,5 +9857,8 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>Process OCR on dialog open</value>
   </data>
 </root>

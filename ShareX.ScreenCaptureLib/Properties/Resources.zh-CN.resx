@@ -193,7 +193,7 @@
     <value>捕捉活动显示器</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
-    <value>捕捉全屏</value>
+    <value>截图全屏</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
     <value>高亮颜色...</value>
@@ -217,7 +217,7 @@
     <value>边框颜色...</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
-    <value>捕捉</value>
+    <value>截图</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>停止</value>
@@ -229,7 +229,7 @@
     <value>阴影</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
-    <value>捕捉区域</value>
+    <value>截图区域</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>编辑</value>
@@ -256,13 +256,13 @@
     <value>上移一层</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
-    <value>应用更改并继续 (Enter)</value>
+    <value>应用更改并继续任务 (Enter)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>继续（空格或鼠标右键）</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
-    <value>取消工作 (ESC)</value>
+    <value>取消任务 (ESC)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
     <value>保存图像 (Ctrl + S)</value>
@@ -283,10 +283,10 @@
     <value>完成捕捉任务后运行 (Enter)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
-    <value>捕捉最后区域</value>
+    <value>截图上次区域</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
-    <value>捕捉</value>
+    <value>截图</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>自动裁剪图像...</value>
@@ -374,7 +374,7 @@
     <value>提示：按住鼠标中键并拖拽可以平移图像。</value>
   </data>
   <data name="ImageEffects" xml:space="preserve">
-    <value>添加图像效果...</value>
+    <value>添加图像特效...</value>
   </data>
   <data name="DropShadowColor" xml:space="preserve">
     <value>阴影颜色...</value>
@@ -402,5 +402,86 @@
   </data>
   <data name="MagnifyStrength" xml:space="preserve">
     <value>放大强度:</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>箭头方向：</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>新行：Enter，确定：Ctrl + Enter</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>新行：Ctrl + Enter，确定：Enter</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>锁定菜单</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>图像上传中</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>图像已复制</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>图像已保存</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>图像已保存</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>副本</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>菜单图标尺寸：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>步骤类型：</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>您确定要中止此录制吗？</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>单击开始录制。</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>单击停止录制。</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>编码中...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>等待中...</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>边框类型：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>工具选项</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>处理中...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>模糊</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>高亮</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>马赛克</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>自动复制图像到剪贴板</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>FPS 限制：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>打开时缩放到适当大小</value>
   </data>
 </root>
