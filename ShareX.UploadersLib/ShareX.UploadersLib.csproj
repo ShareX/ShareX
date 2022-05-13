@@ -1081,7 +1081,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>37.0.0</Version>
+      <Version>37.0.2</Version>
     </PackageReference>
     <PackageReference Include="MegaApiClient">
       <Version>1.10.2</Version>
