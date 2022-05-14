@@ -206,7 +206,7 @@ namespace ShareX.UploadersLib.FileUploaders
             headers.Remove("Content-Type");
 
             string url = URLHelpers.CombineURL(host, canonicalURI);
-            url = URLHelpers.ForcePrefix(url, "https://");
+            url = URLHelpers.FixPrefix(url, "https://");
 
             SendRequest(HttpMethod.PUT, url, stream, contentType, null, headers);
 
