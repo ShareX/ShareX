@@ -596,10 +596,16 @@ namespace ShareX
                         File.WriteAllText(PersonalPathConfigFilePath, path, Encoding.UTF8);
                         return true;
                     }
-                    catch (UnauthorizedAccessException)
+                    catch (UnauthorizedAccessException e)
                     {
+                        DebugHelper.WriteException(e);
                         MessageBox.Show(string.Format(Resources.Program_WritePersonalPathConfig_Cant_access_to_file, PersonalPathConfigFilePath),
                             "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                        e.ShowError();
                     }
                 }
             }
