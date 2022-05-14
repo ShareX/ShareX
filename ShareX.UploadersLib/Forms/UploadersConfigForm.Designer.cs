@@ -441,7 +441,6 @@ namespace ShareX.UploadersLib
             this.txtStreamableUsername = new System.Windows.Forms.TextBox();
             this.lblStreamableUsername = new System.Windows.Forms.Label();
             this.lblStreamablePassword = new System.Windows.Forms.Label();
-            this.cbStreamableAnonymous = new System.Windows.Forms.CheckBox();
             this.tpSul = new System.Windows.Forms.TabPage();
             this.btnSulGetAPIKey = new System.Windows.Forms.Button();
             this.txtSulAPIKey = new System.Windows.Forms.TextBox();
@@ -3522,7 +3521,6 @@ namespace ShareX.UploadersLib
             this.tpStreamable.Controls.Add(this.txtStreamableUsername);
             this.tpStreamable.Controls.Add(this.lblStreamableUsername);
             this.tpStreamable.Controls.Add(this.lblStreamablePassword);
-            this.tpStreamable.Controls.Add(this.cbStreamableAnonymous);
             resources.ApplyResources(this.tpStreamable, "tpStreamable");
             this.tpStreamable.Name = "tpStreamable";
             // 
@@ -3555,13 +3553,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblStreamablePassword, "lblStreamablePassword");
             this.lblStreamablePassword.Name = "lblStreamablePassword";
-            // 
-            // cbStreamableAnonymous
-            // 
-            resources.ApplyResources(this.cbStreamableAnonymous, "cbStreamableAnonymous");
-            this.cbStreamableAnonymous.Name = "cbStreamableAnonymous";
-            this.cbStreamableAnonymous.UseVisualStyleBackColor = true;
-            this.cbStreamableAnonymous.CheckedChanged += new System.EventHandler(this.cbStreamableAnonymous_CheckedChanged);
             // 
             // tpSul
             // 
@@ -5434,7 +5425,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtStreamableUsername;
         private System.Windows.Forms.Label lblStreamableUsername;
         private System.Windows.Forms.Label lblStreamablePassword;
-        private System.Windows.Forms.CheckBox cbStreamableAnonymous;
         private System.Windows.Forms.Label lblSulAPIKey;
         private System.Windows.Forms.TextBox txtSulAPIKey;
         private System.Windows.Forms.TextBox txtVgymeUserKey;

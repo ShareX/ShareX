@@ -40,20 +40,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override Icon ServiceIcon => Resources.Streamable;
 
-        public override bool CheckConfig(UploadersConfig config) => true;
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.StreamableUsername) && !string.IsNullOrEmpty(config.StreamablePassword);
+        }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            string username = "";
-            string password = "";
-
-            if (!config.StreamableAnonymous)
-            {
-                username = config.StreamableUsername;
-                password = config.StreamablePassword;
-            }
-
-            return new Streamable(username, password)
+            return new Streamable(config.StreamableUsername, config.StreamablePassword)
             {
                 UseDirectURL = config.StreamableUseDirectURL
             };

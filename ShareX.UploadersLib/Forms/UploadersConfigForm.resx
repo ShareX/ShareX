@@ -10000,7 +10000,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbStreamableUseDirectURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>16, 112</value>
   </data>
   <data name="cbStreamableUseDirectURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
@@ -10024,7 +10024,7 @@ Using an encrypted library disables sharing.</value>
     <value>0</value>
   </data>
   <data name="txtStreamablePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
+    <value>16, 80</value>
   </data>
   <data name="txtStreamablePassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>
@@ -10048,7 +10048,7 @@ Using an encrypted library disables sharing.</value>
     <value>1</value>
   </data>
   <data name="txtStreamableUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>16, 32</value>
   </data>
   <data name="txtStreamableUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>
@@ -10078,7 +10078,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblStreamableUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 40</value>
+    <value>13, 16</value>
   </data>
   <data name="lblStreamableUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 6, 0</value>
@@ -10111,7 +10111,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblStreamablePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 88</value>
+    <value>13, 64</value>
   </data>
   <data name="lblStreamablePassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 6, 0</value>
@@ -10137,44 +10137,11 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;lblStreamablePassword.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="cbStreamableAnonymous.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbStreamableAnonymous.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbStreamableAnonymous.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="cbStreamableAnonymous.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="cbStreamableAnonymous.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 17</value>
-  </data>
-  <data name="cbStreamableAnonymous.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonymous</value>
-  </data>
-  <data name="&gt;&gt;cbStreamableAnonymous.Name" xml:space="preserve">
-    <value>cbStreamableAnonymous</value>
-  </data>
-  <data name="&gt;&gt;cbStreamableAnonymous.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbStreamableAnonymous.Parent" xml:space="preserve">
-    <value>tpStreamable</value>
-  </data>
-  <data name="&gt;&gt;cbStreamableAnonymous.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="tpStreamable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpStreamable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpStreamable.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -10507,13 +10474,13 @@ Using an encrypted library disables sharing.</value>
     <value>7</value>
   </data>
   <data name="tpLithiio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpLithiio.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLithiio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpLithiio.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>

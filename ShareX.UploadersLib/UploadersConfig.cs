@@ -381,7 +381,6 @@ namespace ShareX.UploadersLib
 
         #region Streamable
 
-        public bool StreamableAnonymous { get; set; } = true;
         public string StreamableUsername { get; set; } = "";
         [JsonEncrypt]
         public string StreamablePassword { get; set; } = "";
