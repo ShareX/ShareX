@@ -1647,7 +1647,7 @@ namespace ShareX
 
         private void btnActions_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_ACTIONS);
+            URLHelpers.OpenURL(Links.Actions);
         }
 
         private void lvActions_SelectedIndexChanged(object sender, EventArgs e)

@@ -652,12 +652,12 @@ namespace ShareX.UploadersLib
                             break;
                         case CustomUploaderDestinationType.URLShortener:
                             CustomURLShortener urlShortener = new CustomURLShortener(item);
-                            result = urlShortener.ShortenURL(Links.URL_WEBSITE);
+                            result = urlShortener.ShortenURL(Links.Website);
                             result.Errors.AddRange(urlShortener.Errors);
                             break;
                         case CustomUploaderDestinationType.URLSharingService:
                             CustomURLSharer urlSharer = new CustomURLSharer(item);
-                            result = urlSharer.ShareURL(Links.URL_WEBSITE);
+                            result = urlSharer.ShareURL(Links.Website);
                             result.Errors.AddRange(urlSharer.Errors);
                             break;
                     }
@@ -885,12 +885,12 @@ namespace ShareX.UploadersLib
 
         private void tsmiCustomUploaderGuide_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADER);
+            URLHelpers.OpenURL(Links.DocsCustomUploader);
         }
 
         private void tsmiCustomUploaderExamples_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADERS);
+            URLHelpers.OpenURL(Links.CustomUploaders);
         }
 
         private void tsmiClearUploaders_Click(object sender, EventArgs e)

@@ -142,7 +142,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
             args.Add("grant_type", "authorization_code");
-            args.Add("redirect_uri", Links.URL_CALLBACK);
+            args.Add("redirect_uri", Links.Callback);
             args.Add("code", code);
 
             string response = SendRequestURLEncoded(HttpMethod.POST, AuthUrl + "/connect/token", args);
@@ -165,7 +165,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("response_type", "code");
-            args.Add("redirect_uri", Links.URL_CALLBACK);
+            args.Add("redirect_uri", Links.Callback);
             args.Add("scope", "openid teknik-api.write offline_access");
             args.Add("client_id", AuthInfo.Client_ID);
 

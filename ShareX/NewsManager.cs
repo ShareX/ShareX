@@ -72,7 +72,7 @@ namespace ShareX
                 wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
                 wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
 
-                string url = URLHelpers.CombineURL(Links.URL_WEBSITE, "news.json");
+                string url = URLHelpers.CombineURL(Links.Website, "news.json");
                 string response = wc.DownloadString(url);
 
                 if (!string.IsNullOrEmpty(response))

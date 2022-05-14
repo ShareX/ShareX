@@ -96,7 +96,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("scope", "all");
             args.Add("state", "ShareX");
             args.Add("response_type", "code");
-            args.Add("redirect_uri", Links.URL_CALLBACK);
+            args.Add("redirect_uri", Links.Callback);
 
             return URLHelpers.CreateQueryString(URL_AUTHORIZE, args);
         }
@@ -108,7 +108,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 client_id = AuthInfo.Client_ID,
                 client_secret = AuthInfo.Client_Secret,
                 grant_type = "authorization_code",
-                redirect_uri = Links.URL_CALLBACK,
+                redirect_uri = Links.Callback,
                 code = code
             });
 

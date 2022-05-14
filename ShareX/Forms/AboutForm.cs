@@ -64,15 +64,15 @@ namespace ShareX
 #endif
 
             rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Links, FontStyle.Bold, 13);
-            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
-{Resources.AboutForm_AboutForm_Project_page}: {Links.URL_GITHUB}
-{Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}
-{Resources.AboutForm_AboutForm_Privacy_policy}: {Links.URL_PRIVACY_POLICY}
+            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Website}: {Links.Website}
+{Resources.AboutForm_AboutForm_Project_page}: {Links.GitHub}
+{Resources.AboutForm_AboutForm_Changelog}: {Links.Changelog}
+{Resources.AboutForm_AboutForm_Privacy_policy}: {Links.PrivacyPolicy}
 ", FontStyle.Regular);
 
             rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Team, FontStyle.Bold, 13);
-            rtbInfo.AppendLine($@"Jaex: {Links.URL_JAEX}
-McoreD (Michael Delpach): {Links.URL_MCORED}
+            rtbInfo.AppendLine($@"Jaex: {Links.Jaex}
+McoreD: {Links.McoreD}
 ", FontStyle.Regular);
 
             rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Translators, FontStyle.Bold, 13);

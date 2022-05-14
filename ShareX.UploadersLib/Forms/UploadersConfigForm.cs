@@ -496,7 +496,7 @@ namespace ShareX.UploadersLib
         - Consumer Name: {1}
         - Public Key (without quotes): '{3}'
 
-- You can now authenticate to Jira", Links.URL_WEBSITE, "ShareX", APIKeys.JiraConsumerKey, Jira.PublicKey);
+- You can now authenticate to Jira", Links.Website, "ShareX", APIKeys.JiraConsumerKey, Jira.PublicKey);
             }
             catch (Exception e)
             {

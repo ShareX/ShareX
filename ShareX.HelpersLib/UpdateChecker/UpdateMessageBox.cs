@@ -118,7 +118,7 @@ namespace ShareX.HelpersLib
 
         private void lblViewChangelog_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_CHANGELOG);
+            URLHelpers.OpenURL(Links.Changelog);
         }
 
         private void cbDontShow_CheckedChanged(object sender, EventArgs e)

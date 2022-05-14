@@ -1914,27 +1914,27 @@ namespace ShareX
 
         private void tsmiTestURLShortener_Click(object sender, EventArgs e)
         {
-            UploadManager.ShortenURL(Links.URL_WEBSITE);
+            UploadManager.ShortenURL(Links.Website);
         }
 
         private void tsmiTestURLSharing_Click(object sender, EventArgs e)
         {
-            UploadManager.ShareURL(Links.URL_WEBSITE);
+            UploadManager.ShareURL(Links.Website);
         }
 
         private void tsbDonate_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_DONATE);
+            URLHelpers.OpenURL(Links.Donate);
         }
 
         private void tsbTwitter_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_TWITTER);
+            URLHelpers.OpenURL(Links.Twitter);
         }
 
         private void tsbDiscord_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_DISCORD);
+            URLHelpers.OpenURL(Links.Discord);
         }
 
         private void tsbAbout_Click(object sender, EventArgs e)
