@@ -119,8 +119,6 @@ namespace ShareX.UploadersLib
         Jira,
         [Description("Lambda")]
         Lambda,
-        [Description("VideoBin")]
-        VideoBin,
         [Description("Teknik")]
         Teknik,
         [Description("Pomf")]
