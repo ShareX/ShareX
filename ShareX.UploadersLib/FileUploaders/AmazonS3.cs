@@ -125,7 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 isPathStyleRequest = true;
             }
 
-            string endpoint = isPathStyleRequest ? Settings.Endpoint : Settings.Bucket + "." + URLHelpers.RemovePrefixes(Settings.Endpoint)
+            string endpoint = isPathStyleRequest ? Settings.Endpoint : Settings.Bucket + "." + URLHelpers.RemovePrefixes(Settings.Endpoint);
             string host = URLHelpers.RemovePrefixes(endpoint);
             string algorithm = "AWS4-HMAC-SHA256";
             string credentialDate = DateTime.UtcNow.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
