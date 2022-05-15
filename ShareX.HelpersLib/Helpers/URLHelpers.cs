@@ -418,12 +418,12 @@ namespace ShareX.HelpersLib
 
         public static bool HasPrefix(string url)
         {
-            return URLPrefixes.Any(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));
+            return URLPrefixes.Any(x => url.StartsWith(x, StringComparison.OrdinalIgnoreCase));
         }
-        
+
         public static string GetPrefix(string url)
         {
-            return URLPrefixes.Find(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));
+            return URLPrefixes.FirstOrDefault(x => url.StartsWith(x, StringComparison.OrdinalIgnoreCase));
         }
 
         public static string FixPrefix(string url, string prefix = "http://")
