@@ -420,6 +420,11 @@ namespace ShareX.HelpersLib
         {
             return URLPrefixes.Any(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));
         }
+        
+        public static string GetPrefix(string url)
+        {
+            return URLPrefixes.Find(x => url.StartsWith(x, StringComparison.InvariantCultureIgnoreCase));
+        }
 
         public static string FixPrefix(string url, string prefix = "http://")
         {

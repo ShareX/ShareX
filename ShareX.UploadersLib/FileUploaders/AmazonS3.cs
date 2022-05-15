@@ -125,6 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 isPathStyleRequest = true;
             }
 
+            string scheme = URLHelpers.GetPrefix(Settings.Endpoint);
             string endpoint = URLHelpers.RemovePrefixes(Settings.Endpoint);
             string host = isPathStyleRequest ? endpoint : $"{Settings.Bucket}.{endpoint}";
             string algorithm = "AWS4-HMAC-SHA256";
@@ -205,8 +206,8 @@ namespace ShareX.UploadersLib.FileUploaders
             headers.Remove("Host");
             headers.Remove("Content-Type");
 
-            string url = URLHelpers.CombineURL(host, canonicalURI);
-            url = URLHelpers.ForcePrefix(url, "https://");
+            string url = URLHelpers.CombineURL(scheme + host, canonicalURI);
+            url = URLHelpers.FixPrefix(url, "https://");
 
             SendRequest(HttpMethod.PUT, url, stream, contentType, null, headers);
 
