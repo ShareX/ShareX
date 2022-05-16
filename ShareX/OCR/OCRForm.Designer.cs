@@ -103,6 +103,7 @@
             resources.ApplyResources(this.cbServices, "cbServices");
             this.cbServices.FormattingEnabled = true;
             this.cbServices.Name = "cbServices";
+            this.cbServices.SelectedIndexChanged += new System.EventHandler(this.cbServices_SelectedIndexChanged);
             // 
             // btnOpen
             // 

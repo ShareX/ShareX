@@ -83,7 +83,7 @@ namespace ShareX
             if (Options.ServiceLinks != null && Options.ServiceLinks.Count > 0)
             {
                 cbServices.Items.AddRange(Options.ServiceLinks.ToArray());
-                cbServices.SelectedIndex = 0;
+                cbServices.SelectedIndex = Options.SelectedServiceLink;
             }
             else
             {
@@ -138,6 +138,11 @@ namespace ShareX
             }
         }
 
+        private void cbServices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.SelectedServiceLink = cbServices.SelectedIndex;
+        }
+
         private void btnOpen_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(Result) && cbServices.SelectedItem is ServiceLink serviceLink)
@@ -158,7 +163,10 @@ namespace ShareX
                 {
                     cbServices.Items.AddRange(Options.ServiceLinks.ToArray());
                     cbServices.SelectedIndex = 0;
+                    Options.SelectedServiceLink = 0;
                 }
+
+                cbServices.Enabled = cbServices.Items.Count > 0;
             }
         }
 

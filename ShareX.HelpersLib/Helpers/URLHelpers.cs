@@ -450,7 +450,7 @@ namespace ShareX.HelpersLib
         {
             foreach (string prefix in URLPrefixes)
             {
-                if (url.StartsWith(prefix, StringComparison.InvariantCultureIgnoreCase))
+                if (url.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
                 {
                     url = url.Remove(0, prefix.Length);
                     break;
@@ -468,7 +468,7 @@ namespace ShareX.HelpersLib
 
                 if (!string.IsNullOrEmpty(host))
                 {
-                    if (host.StartsWith("www.", StringComparison.InvariantCultureIgnoreCase))
+                    if (host.StartsWith("www.", StringComparison.OrdinalIgnoreCase))
                     {
                         host = host.Substring(4);
                     }
