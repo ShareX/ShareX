@@ -159,7 +159,7 @@ namespace ShareX.ScreenCaptureLib
                 int padding = 3;
 
                 PointF center = Rectangle.Center();
-                Rectangle = new RectangleF(center.X - (maxSize / 2) - padding, center.Y - (maxSize / 2) - padding, maxSize + (padding * 2), maxSize + (padding * 2));
+                Rectangle = new RectangleF(center.X - (maxSize / 2f) - padding, center.Y - (maxSize / 2f) - padding, maxSize + (padding * 2), maxSize + (padding * 2));
 
                 if (Shadow)
                 {
