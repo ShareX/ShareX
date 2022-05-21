@@ -412,7 +412,7 @@
     <value>Показывать миниатюру:</value>
   </data>
   <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
-    <value>Эти форматы появятся главном окне, контекстное меню - "Скопировать".</value>
+    <value>Эти форматы появятся в главном окне, контекстное меню - "Скопировать".</value>
   </data>
   <data name="tpClipboardFormats.Text" xml:space="preserve">
     <value>Форматы буфера</value>
