@@ -83,17 +83,20 @@ namespace ShareX.HelpersLib
 
             if (WindowText != null)
             {
-                string windowText = WindowText.Trim().Replace(' ', '_');
+                string windowText = SanitizeInput(WindowText);
+
                 if (MaxTitleLength > 0)
                 {
                     windowText = windowText.Truncate(MaxTitleLength);
                 }
+
                 sb.Replace(CodeMenuEntryFilename.t.ToPrefixString(), windowText);
             }
 
             if (ProcessName != null)
             {
-                string processName = ProcessName.Trim().Replace(' ', '_');
+                string processName = SanitizeInput(ProcessName);
+
                 sb.Replace(CodeMenuEntryFilename.pn.ToPrefixString(), processName);
             }
 
@@ -328,6 +331,18 @@ namespace ShareX.HelpersLib
             }
 
             return result;
+        }
+
+        private string SanitizeInput(string input)
+        {
+            input = input.Trim().Replace(' ', '_');
+
+            if (Type == NameParserType.FileName || Type == NameParserType.FolderPath || Type == NameParserType.FilePath)
+            {
+                input = FileHelpers.GetValidFileName(input);
+            }
+
+            return input;
         }
 
         private IEnumerable<Tuple<string, string[]>> ListEntryWithArguments(string text, string entry, int elements)
