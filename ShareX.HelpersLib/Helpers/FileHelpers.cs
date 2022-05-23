@@ -178,11 +178,25 @@ namespace ShareX.HelpersLib
             return EDataType.File;
         }
 
-        public static string SanitizeFileName(string fileName, string separator = "")
+        public static string GetAbsolutePath(string path)
         {
+            path = ExpandFolderVariables(path);
+
+            if (!Path.IsPathRooted(path)) // Is relative path?
+            {
+                path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
+            }
+
+            return Path.GetFullPath(path);
+        }
+
+        public static string SanitizeFileName(string fileName, string replaceWith = "")
+        {
+            fileName = fileName.Trim();
+
             char[] invalidFileNameChars = Path.GetInvalidFileNameChars();
 
-            if (string.IsNullOrEmpty(separator))
+            if (string.IsNullOrEmpty(replaceWith))
             {
                 return new string(fileName.Where(c => !invalidFileNameChars.Contains(c)).ToArray());
             }
@@ -190,24 +204,30 @@ namespace ShareX.HelpersLib
             {
                 foreach (char invalidFileNameChar in invalidFileNameChars)
                 {
-                    fileName = fileName.Replace(invalidFileNameChar.ToString(), separator);
+                    fileName = fileName.Replace(invalidFileNameChar.ToString(), replaceWith);
                 }
 
-                return fileName.Trim().Replace(separator + separator, separator);
+                return fileName.Replace(replaceWith + replaceWith, replaceWith);
             }
         }
 
-        public static string SanitizeFolderPath(string folderPath)
+        public static string SanitizePath(string path, string replaceWith = "")
         {
-            char[] invalidPathChars = Path.GetInvalidPathChars();
-            return new string(folderPath.Where(c => !invalidPathChars.Contains(c)).ToArray());
-        }
+            string root = Path.GetPathRoot(path);
 
-        public static string SanitizeFilePath(string filePath)
-        {
-            string folderPath = Path.GetDirectoryName(filePath);
-            string fileName = Path.GetFileName(filePath);
-            return SanitizeFolderPath(folderPath) + Path.DirectorySeparatorChar + SanitizeFileName(fileName);
+            if (!string.IsNullOrEmpty(root))
+            {
+                path = path.Substring(root.Length);
+            }
+
+            string[] paths = path.Split(Path.DirectorySeparatorChar);
+
+            for (int i = 0; i < paths.Length; i++)
+            {
+                paths[i] = SanitizeFileName(paths[i], replaceWith);
+            }
+
+            return root + string.Join(Path.DirectorySeparatorChar.ToString(), paths);
         }
 
         public static bool OpenFile(string filePath)
@@ -697,18 +717,6 @@ namespace ShareX.HelpersLib
                     File.Copy(filePath, newFilePath, false);
                 }
             }
-        }
-
-        public static string GetAbsolutePath(string path)
-        {
-            path = ExpandFolderVariables(path);
-
-            if (!Path.IsPathRooted(path)) // Is relative path?
-            {
-                path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
-            }
-
-            return Path.GetFullPath(path);
         }
 
         public static string GetTempFilePath(string extension)

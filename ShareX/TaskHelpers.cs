@@ -448,7 +448,7 @@ namespace ShareX
         {
             string screenshotsFolder;
 
-            NameParser nameParser = new NameParser(NameParserType.FolderPath);
+            NameParser nameParser = new NameParser(NameParserType.FilePath);
 
             if (metadata != null)
             {

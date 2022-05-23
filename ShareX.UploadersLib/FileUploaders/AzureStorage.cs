@@ -165,7 +165,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(AzureStorageUploadPath))
             {
-                string path = NameParser.Parse(NameParserType.FolderPath, AzureStorageUploadPath.Trim('/'));
+                string path = NameParser.Parse(NameParserType.FilePath, AzureStorageUploadPath.Trim('/'));
                 uploadPath = URLHelpers.CombineURL(path, fileName);
             }
             else

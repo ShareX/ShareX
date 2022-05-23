@@ -103,7 +103,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            string parsedUploadPath = NameParser.Parse(NameParserType.FolderPath, UploadPath);
+            string parsedUploadPath = NameParser.Parse(NameParserType.FilePath, UploadPath);
             string destinationPath = URLHelpers.CombineURL(parsedUploadPath, fileName);
 
             // docs: https://www.backblaze.com/b2/docs/
@@ -235,7 +235,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (UseCustomUrl)
                 {
-                    string parsedCustomUrl = NameParser.Parse(NameParserType.FolderPath, CustomUrl);
+                    string parsedCustomUrl = NameParser.Parse(NameParserType.FilePath, CustomUrl);
                     remoteLocation = URLHelpers.CombineURL(parsedCustomUrl, encodedFileName);
                     remoteLocation = URLHelpers.FixPrefix(remoteLocation, "https://");
 

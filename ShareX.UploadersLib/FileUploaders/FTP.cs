@@ -167,7 +167,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             UploadResult result = new UploadResult();
 
-            string subFolderPath = Account.GetSubFolderPath(null, NameParserType.FolderPath);
+            string subFolderPath = Account.GetSubFolderPath(null, NameParserType.FilePath);
             string path = URLHelpers.CombineURL(subFolderPath, fileName);
             string url = Account.GetUriPath(fileName, subFolderPath);
 

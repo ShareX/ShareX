@@ -266,7 +266,7 @@ namespace ShareX.UploadersLib
                 return "";
             }
 
-            return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(filemame, NameParserType.FolderPath));
+            return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(filemame, NameParserType.FilePath));
         }
 
         public override string ToString()

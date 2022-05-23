@@ -36,7 +36,6 @@ namespace ShareX.HelpersLib
         Default,
         Text, // Allows new line
         FileName,
-        FolderPath,
         FilePath,
         URL // URL path encodes
     }
@@ -308,17 +307,13 @@ namespace ShareX.HelpersLib
             result = result.ReplaceAll(CodeMenuEntryFilename.guid.ToPrefixString().ToUpperInvariant(), () => Guid.NewGuid().ToString().ToUpperInvariant());
             result = result.ReplaceAll(CodeMenuEntryFilename.remoji.ToPrefixString(), () => RandomCrypto.Pick(Emoji.Emojis));
 
-            if (Type == NameParserType.FolderPath)
-            {
-                result = FileHelpers.SanitizeFolderPath(result);
-            }
-            else if (Type == NameParserType.FileName)
+            if (Type == NameParserType.FileName)
             {
                 result = FileHelpers.SanitizeFileName(result);
             }
             else if (Type == NameParserType.FilePath)
             {
-                result = FileHelpers.SanitizeFilePath(result);
+                result = FileHelpers.SanitizePath(result);
             }
             else if (Type == NameParserType.URL)
             {
@@ -337,7 +332,7 @@ namespace ShareX.HelpersLib
         {
             input = input.Trim().Replace(' ', '_');
 
-            if (Type == NameParserType.FileName || Type == NameParserType.FolderPath || Type == NameParserType.FilePath)
+            if (Type == NameParserType.FileName || Type == NameParserType.FilePath)
             {
                 input = FileHelpers.SanitizeFileName(input);
             }

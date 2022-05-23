@@ -293,12 +293,12 @@ namespace ShareX.UploadersLib
 
         private void B2UpdateCustomDomainPreview()
         {
-            string uploadPath = NameParser.Parse(NameParserType.FolderPath, Config.B2UploadPath);
+            string uploadPath = NameParser.Parse(NameParserType.FilePath, Config.B2UploadPath);
             string url;
 
             if (cbB2CustomUrl.Checked)
             {
-                string customUrl = NameParser.Parse(NameParserType.FolderPath, Config.B2CustomUrl);
+                string customUrl = NameParser.Parse(NameParserType.FilePath, Config.B2CustomUrl);
                 url = URLHelpers.CombineURL(customUrl, uploadPath, "example.png");
                 url = URLHelpers.FixPrefix(url, "https://");
             }
