@@ -190,6 +190,18 @@ namespace ShareX.HelpersLib
             return Path.GetFullPath(path);
         }
 
+        public static string GetPathRoot(string path)
+        {
+            int separator = path.IndexOf(Path.DirectorySeparatorChar);
+
+            if (separator > 1 && path[separator - 1] == ':')
+            {
+                return path.Remove(separator + 1);
+            }
+
+            return "";
+        }
+
         public static string SanitizeFileName(string fileName, string replaceWith = "")
         {
             char[] invalidChars = Path.GetInvalidFileNameChars();
@@ -200,24 +212,17 @@ namespace ShareX.HelpersLib
         {
             fileName = fileName.Trim();
 
-            if (string.IsNullOrEmpty(replaceWith))
+            foreach (char c in invalidChars)
             {
-                return new string(fileName.Where(c => !invalidChars.Contains(c)).ToArray());
+                fileName = fileName.Replace(c.ToString(), replaceWith);
             }
-            else
-            {
-                foreach (char invalidFileNameChar in invalidChars)
-                {
-                    fileName = fileName.Replace(invalidFileNameChar.ToString(), replaceWith);
-                }
 
-                return fileName.Replace(replaceWith + replaceWith, replaceWith);
-            }
+            return fileName;
         }
 
         public static string SanitizePath(string path, string replaceWith = "")
         {
-            string root = Path.GetPathRoot(path);
+            string root = GetPathRoot(path);
 
             if (!string.IsNullOrEmpty(root))
             {
