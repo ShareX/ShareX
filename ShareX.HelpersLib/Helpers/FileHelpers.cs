@@ -178,7 +178,7 @@ namespace ShareX.HelpersLib
             return EDataType.File;
         }
 
-        public static string GetValidFileName(string fileName, string separator = "")
+        public static string SanitizeFileName(string fileName, string separator = "")
         {
             char[] invalidFileNameChars = Path.GetInvalidFileNameChars();
 
@@ -197,17 +197,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static string GetValidFolderPath(string folderPath)
+        public static string SanitizeFolderPath(string folderPath)
         {
             char[] invalidPathChars = Path.GetInvalidPathChars();
             return new string(folderPath.Where(c => !invalidPathChars.Contains(c)).ToArray());
         }
 
-        public static string GetValidFilePath(string filePath)
+        public static string SanitizeFilePath(string filePath)
         {
             string folderPath = Path.GetDirectoryName(filePath);
             string fileName = Path.GetFileName(filePath);
-            return GetValidFolderPath(folderPath) + Path.DirectorySeparatorChar + GetValidFileName(fileName);
+            return SanitizeFolderPath(folderPath) + Path.DirectorySeparatorChar + SanitizeFileName(fileName);
         }
 
         public static bool OpenFile(string filePath)

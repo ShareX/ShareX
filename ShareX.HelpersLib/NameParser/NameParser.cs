@@ -310,15 +310,15 @@ namespace ShareX.HelpersLib
 
             if (Type == NameParserType.FolderPath)
             {
-                result = FileHelpers.GetValidFolderPath(result);
+                result = FileHelpers.SanitizeFolderPath(result);
             }
             else if (Type == NameParserType.FileName)
             {
-                result = FileHelpers.GetValidFileName(result);
+                result = FileHelpers.SanitizeFileName(result);
             }
             else if (Type == NameParserType.FilePath)
             {
-                result = FileHelpers.GetValidFilePath(result);
+                result = FileHelpers.SanitizeFilePath(result);
             }
             else if (Type == NameParserType.URL)
             {
@@ -339,7 +339,7 @@ namespace ShareX.HelpersLib
 
             if (Type == NameParserType.FileName || Type == NameParserType.FolderPath || Type == NameParserType.FilePath)
             {
-                input = FileHelpers.GetValidFileName(input);
+                input = FileHelpers.SanitizeFileName(input);
             }
 
             return input;

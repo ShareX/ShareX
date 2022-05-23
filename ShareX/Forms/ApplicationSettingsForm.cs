@@ -334,7 +334,7 @@ namespace ShareX
         {
             try
             {
-                string personalPath = FileHelpers.GetValidFolderPath(txtPersonalFolderPath.Text);
+                string personalPath = FileHelpers.SanitizeFolderPath(txtPersonalFolderPath.Text);
 
                 if (string.IsNullOrEmpty(personalPath))
                 {
@@ -671,7 +671,7 @@ namespace ShareX
 
         private void btnPersonalFolderPathApply_Click(object sender, EventArgs e)
         {
-            string currentPersonalPath = FileHelpers.GetValidFolderPath(txtPersonalFolderPath.Text);
+            string currentPersonalPath = FileHelpers.SanitizeFolderPath(txtPersonalFolderPath.Text);
 
             if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.OrdinalIgnoreCase) && Program.WritePersonalPathConfig(currentPersonalPath))
             {
@@ -699,7 +699,7 @@ namespace ShareX
 
         private void txtCustomScreenshotsPath_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.CustomScreenshotsPath = FileHelpers.GetValidFolderPath(txtCustomScreenshotsPath.Text);
+            Program.Settings.CustomScreenshotsPath = FileHelpers.SanitizeFolderPath(txtCustomScreenshotsPath.Text);
             UpdateScreenshotsFolderPathPreview();
         }
 
@@ -711,7 +711,7 @@ namespace ShareX
 
         private void txtSaveImageSubFolderPattern_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.SaveImageSubFolderPattern = FileHelpers.GetValidFolderPath(txtSaveImageSubFolderPattern.Text);
+            Program.Settings.SaveImageSubFolderPattern = FileHelpers.SanitizeFolderPath(txtSaveImageSubFolderPattern.Text);
             UpdateScreenshotsFolderPathPreview();
         }
 
@@ -722,7 +722,7 @@ namespace ShareX
 
         private void txtSaveImageSubFolderPatternWindow_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.SaveImageSubFolderPatternWindow = FileHelpers.GetValidFolderPath(txtSaveImageSubFolderPatternWindow.Text);
+            Program.Settings.SaveImageSubFolderPatternWindow = FileHelpers.SanitizeFolderPath(txtSaveImageSubFolderPatternWindow.Text);
         }
 
         #endregion Paths

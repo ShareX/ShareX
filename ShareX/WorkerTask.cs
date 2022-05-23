@@ -214,7 +214,7 @@ namespace ShareX
 
             string fileName = URLHelpers.URLDecode(url, 10);
             fileName = URLHelpers.GetFileName(fileName);
-            fileName = FileHelpers.GetValidFileName(fileName);
+            fileName = FileHelpers.SanitizeFileName(fileName);
 
             if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
