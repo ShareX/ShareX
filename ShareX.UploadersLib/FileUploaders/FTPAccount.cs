@@ -259,14 +259,14 @@ namespace ShareX.UploadersLib
             return httpHomeUri.Uri.OriginalString;
         }
 
-        public string GetFtpPath(string filemame)
+        public string GetFtpPath(string fileName)
         {
             if (string.IsNullOrEmpty(FTPAddress))
             {
                 return "";
             }
 
-            return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(filemame, NameParserType.FilePath));
+            return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(fileName, NameParserType.FilePath));
         }
 
         public override string ToString()

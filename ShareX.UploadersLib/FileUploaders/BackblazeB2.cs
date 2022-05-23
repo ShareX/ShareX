@@ -235,8 +235,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (UseCustomUrl)
                 {
-                    string parsedCustomUrl = NameParser.Parse(NameParserType.FilePath, CustomUrl);
-                    remoteLocation = URLHelpers.CombineURL(parsedCustomUrl, encodedFileName);
+                    remoteLocation = URLHelpers.CombineURL(CustomUrl, encodedFileName);
                     remoteLocation = URLHelpers.FixPrefix(remoteLocation, "https://");
 
                     DebugHelper.WriteLine($"B2 uploader: But user requested custom URL, which will be: {remoteLocation}");
