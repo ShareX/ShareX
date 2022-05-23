@@ -192,17 +192,21 @@ namespace ShareX.HelpersLib
 
         public static string SanitizeFileName(string fileName, string replaceWith = "")
         {
-            fileName = fileName.Trim();
+            char[] invalidChars = Path.GetInvalidFileNameChars();
+            return SanitizeFileName(fileName, replaceWith, invalidChars);
+        }
 
-            char[] invalidFileNameChars = Path.GetInvalidFileNameChars();
+        private static string SanitizeFileName(string fileName, string replaceWith, char[] invalidChars)
+        {
+            fileName = fileName.Trim();
 
             if (string.IsNullOrEmpty(replaceWith))
             {
-                return new string(fileName.Where(c => !invalidFileNameChars.Contains(c)).ToArray());
+                return new string(fileName.Where(c => !invalidChars.Contains(c)).ToArray());
             }
             else
             {
-                foreach (char invalidFileNameChar in invalidFileNameChars)
+                foreach (char invalidFileNameChar in invalidChars)
                 {
                     fileName = fileName.Replace(invalidFileNameChar.ToString(), replaceWith);
                 }
@@ -220,14 +224,10 @@ namespace ShareX.HelpersLib
                 path = path.Substring(root.Length);
             }
 
-            string[] paths = path.Split(Path.DirectorySeparatorChar);
+            char[] invalidChars = Path.GetInvalidFileNameChars().Except(new char[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar }).ToArray();
+            path = SanitizeFileName(path, replaceWith, invalidChars);
 
-            for (int i = 0; i < paths.Length; i++)
-            {
-                paths[i] = SanitizeFileName(paths[i], replaceWith);
-            }
-
-            return root + string.Join(Path.DirectorySeparatorChar.ToString(), paths);
+            return root + path;
         }
 
         public static bool OpenFile(string filePath)
