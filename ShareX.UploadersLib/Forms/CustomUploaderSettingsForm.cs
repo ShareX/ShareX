@@ -888,11 +888,6 @@ namespace ShareX.UploadersLib
             URLHelpers.OpenURL(Links.DocsCustomUploader);
         }
 
-        private void tsmiCustomUploaderExamples_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.CustomUploaders);
-        }
-
         private void tsmiClearUploaders_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Resources.UploadersConfigForm_Remove_all_custom_uploaders_Confirmation, "ShareX",

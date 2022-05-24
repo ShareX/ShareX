@@ -46,7 +46,6 @@
             this.mbHelp = new ShareX.HelpersLib.MenuButton();
             this.cmsHelp = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCustomUploaderGuide = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCustomUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUpdateFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,7 +176,6 @@
             // 
             this.cmsHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiCustomUploaderGuide,
-            this.tsmiCustomUploaders,
             this.tsmiClearUploaders,
             this.tsmiExportAll,
             this.tsmiUpdateFolder});
@@ -190,12 +188,6 @@
             this.tsmiCustomUploaderGuide.Name = "tsmiCustomUploaderGuide";
             resources.ApplyResources(this.tsmiCustomUploaderGuide, "tsmiCustomUploaderGuide");
             this.tsmiCustomUploaderGuide.Click += new System.EventHandler(this.tsmiCustomUploaderGuide_Click);
-            // 
-            // tsmiCustomUploaders
-            // 
-            this.tsmiCustomUploaders.Name = "tsmiCustomUploaders";
-            resources.ApplyResources(this.tsmiCustomUploaders, "tsmiCustomUploaders");
-            this.tsmiCustomUploaders.Click += new System.EventHandler(this.tsmiCustomUploaderExamples_Click);
             // 
             // tsmiClearUploaders
             // 
@@ -855,7 +847,6 @@
         private System.Windows.Forms.Button btnURLSharingServiceTest;
         private System.Windows.Forms.ContextMenuStrip cmsHelp;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderGuide;
-        private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportAll;
         private HelpersLib.MenuButton mbHelp;
         private System.Windows.Forms.DataGridView dgvParameters;

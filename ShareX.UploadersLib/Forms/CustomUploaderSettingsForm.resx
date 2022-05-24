@@ -291,12 +291,6 @@
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Custom uploader guide...</value>
   </data>
-  <data name="tsmiCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
-  </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Custom uploaders...</value>
-  </data>
   <data name="tsmiClearUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
@@ -1831,12 +1825,6 @@
     <value>tsmiCustomUploaderGuide</value>
   </data>
   <data name="&gt;&gt;tsmiCustomUploaderGuide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiCustomUploaders.Name" xml:space="preserve">
-    <value>tsmiCustomUploaders</value>
-  </data>
-  <data name="&gt;&gt;tsmiCustomUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiClearUploaders.Name" xml:space="preserve">

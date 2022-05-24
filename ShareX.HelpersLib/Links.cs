@@ -44,6 +44,5 @@ namespace ShareX.HelpersLib
         private const string Docs = Website + "/docs";
         public const string DocsCustomUploader = Docs + "/custom-uploader";
         public const string DocsRegionCapture = Docs + "/region-capture";
-        public const string CustomUploaders = "https://github.com/ShareX/CustomUploaders";
     }
 }
