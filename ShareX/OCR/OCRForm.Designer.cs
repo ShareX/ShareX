@@ -38,6 +38,8 @@
             this.cbServices = new System.Windows.Forms.ComboBox();
             this.btnOpen = new System.Windows.Forms.Button();
             this.cbEditServices = new System.Windows.Forms.Button();
+            this.pbStatus = new System.Windows.Forms.ProgressBar();
+            this.lblStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,10 +122,24 @@
             this.cbEditServices.UseVisualStyleBackColor = true;
             this.cbEditServices.Click += new System.EventHandler(this.cbEditServices_Click);
             // 
+            // pbStatus
+            // 
+            resources.ApplyResources(this.pbStatus, "pbStatus");
+            this.pbStatus.MarqueeAnimationSpeed = 50;
+            this.pbStatus.Name = "pbStatus";
+            this.pbStatus.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            // 
+            // lblStatus
+            // 
+            resources.ApplyResources(this.lblStatus, "lblStatus");
+            this.lblStatus.Name = "lblStatus";
+            // 
             // OCRForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.cbEditServices);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.cbServices);
@@ -153,5 +169,7 @@
         private System.Windows.Forms.ComboBox cbServices;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button cbEditServices;
+        private System.Windows.Forms.ProgressBar pbStatus;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

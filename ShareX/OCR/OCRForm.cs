@@ -38,6 +38,7 @@ namespace ShareX
 
         private Bitmap bmp;
         private bool loaded;
+        private bool busy;
 
         public OCRForm(Bitmap bmp, OCROptions options)
         {
@@ -91,14 +92,28 @@ namespace ShareX
             }
 
             txtResult.SupportSelectAll();
+            UpdateControls();
 
             loaded = true;
+        }
+
+        private void UpdateControls()
+        {
+            lblLanguage.Visible = !busy;
+            cbLanguages.Visible = !busy;
+            lblScaleFactor.Visible = !busy;
+            nudScaleFactor.Visible = !busy;
+            lblStatus.Visible = busy;
+            pbStatus.Visible = busy;
         }
 
         private async Task OCR()
         {
             if (bmp != null && !string.IsNullOrEmpty(Options.Language))
             {
+                busy = true;
+                UpdateControls();
+
                 Result = await OCRHelper.OCR(bmp, Options.Language, Options.ScaleFactor);
 
                 if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
@@ -108,7 +123,9 @@ namespace ShareX
 
                 if (!IsDisposed)
                 {
+                    busy = false;
                     txtResult.Text = Result;
+                    UpdateControls();
                 }
             }
         }

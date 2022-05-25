@@ -75,11 +75,14 @@ namespace ShareX
 
             scaleFactor = Math.Max(scaleFactor, 1f);
 
-            using (Bitmap bmpClone = (Bitmap)bmp.Clone())
-            using (Bitmap bmpScaled = ImageHelpers.ResizeImage(bmpClone, (int)(bmpClone.Width * scaleFactor), (int)(bmpClone.Height * scaleFactor)))
+            return await Task.Run(async () =>
             {
-                return await OCRInternal(bmpScaled, languageTag);
-            }
+                using (Bitmap bmpClone = (Bitmap)bmp.Clone())
+                using (Bitmap bmpScaled = ImageHelpers.ResizeImage(bmpClone, (int)(bmpClone.Width * scaleFactor), (int)(bmpClone.Height * scaleFactor)))
+                {
+                    return await OCRInternal(bmpScaled, languageTag);
+                }
+            });
         }
 
         private static async Task<string> OCRInternal(Bitmap bmp, string languageTag)
