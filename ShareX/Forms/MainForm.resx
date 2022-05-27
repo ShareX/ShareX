@@ -360,12 +360,6 @@
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Scrolling capture...</value>
   </data>
-  <data name="tsmiTextCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Text capture (OCR)...</value>
-  </data>
   <data name="tsmiAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
   </data>
@@ -581,6 +575,12 @@
   </data>
   <data name="tssTools3.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 6</value>
+  </data>
+  <data name="tsmiOCR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
   </data>
   <data name="tsmiQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1389,12 +1389,6 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Scrolling capture...</value>
   </data>
-  <data name="tsmiTrayTextCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Text capture (OCR)...</value>
-  </data>
   <data name="tsmiTrayAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
   </data>
@@ -1592,6 +1586,12 @@
   </data>
   <data name="tssTrayTools3.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 6</value>
+  </data>
+  <data name="tsmiTrayOCR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
   </data>
   <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1801,7 +1801,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 440</value>
+    <value>201, 462</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -2056,12 +2056,6 @@
     <value>tsmiScrollingCapture</value>
   </data>
   <data name="&gt;&gt;tsmiScrollingCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTextCapture.Name" xml:space="preserve">
-    <value>tsmiTextCapture</value>
-  </data>
-  <data name="&gt;&gt;tsmiTextCapture.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiAutoCapture.Name" xml:space="preserve">
@@ -2952,12 +2946,6 @@
   <data name="&gt;&gt;tsmiTrayScrollingCapture.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayTextCapture.Name" xml:space="preserve">
-    <value>tsmiTrayTextCapture</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayTextCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiTrayAutoCapture.Name" xml:space="preserve">
     <value>tsmiTrayAutoCapture</value>
   </data>
@@ -3389,6 +3377,18 @@
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiOCR.Name" xml:space="preserve">
+    <value>tsmiOCR</value>
+  </data>
+  <data name="&gt;&gt;tsmiOCR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayOCR.Name" xml:space="preserve">
+    <value>tsmiTrayOCR</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayOCR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

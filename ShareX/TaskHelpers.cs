@@ -128,9 +128,6 @@ namespace ShareX
                 case HotkeyType.ScrollingCapture:
                     OpenScrollingCapture(safeTaskSettings, true);
                     break;
-                case HotkeyType.TextCapture:
-                    _ = OCRImage(safeTaskSettings);
-                    break;
                 case HotkeyType.AutoCapture:
                     OpenAutoCapture(safeTaskSettings);
                     break;
@@ -210,6 +207,9 @@ namespace ShareX
                     break;
                 case HotkeyType.DNSChanger:
                     OpenDNSChanger();
+                    break;
+                case HotkeyType.OCR:
+                    OCRImage(safeTaskSettings).GetAwaiter().GetResult();
                     break;
                 case HotkeyType.QRCode:
                     OpenQRCode();
@@ -1542,7 +1542,6 @@ namespace ShareX
                     case HotkeyType.CustomRegion: return Resources.layer__arrow;
                     case HotkeyType.LastRegion: return Resources.layers;
                     case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
-                    case HotkeyType.TextCapture: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
                     case HotkeyType.AutoCapture: return Resources.clock;
                     case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
                     // Screen record
@@ -1564,6 +1563,7 @@ namespace ShareX
                     case HotkeyType.ImageViewer: return Resources.images_flickr;
                     case HotkeyType.HashCheck: return Resources.application_task;
                     case HotkeyType.DNSChanger: return Resources.network_ip;
+                    case HotkeyType.OCR: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
                     case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                     case HotkeyType.QRCodeDecodeFromScreen: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                     case HotkeyType.Ruler: return Resources.ruler_triangle;

@@ -53,7 +53,6 @@
             this.tsmiScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScrollingCapture = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tssCapture1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiShowCursor = new System.Windows.Forms.ToolStripMenuItem();
@@ -204,7 +203,6 @@
             this.tsmiTrayScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayScrollingCapture = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTrayCapture1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayShowCursor = new System.Windows.Forms.ToolStripMenuItem();
@@ -281,6 +279,8 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
+            this.tsmiOCR = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayOCR = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -432,7 +432,6 @@
             this.tsmiScreenRecordingFFmpeg,
             this.tsmiScreenRecordingGIF,
             this.tsmiScrollingCapture,
-            this.tsmiTextCapture,
             this.tsmiAutoCapture,
             this.tssCapture1,
             this.tsmiShowCursor,
@@ -509,13 +508,6 @@
             this.tsmiScrollingCapture.Name = "tsmiScrollingCapture";
             resources.ApplyResources(this.tsmiScrollingCapture, "tsmiScrollingCapture");
             this.tsmiScrollingCapture.Click += new System.EventHandler(this.tsmiScrollingCapture_Click);
-            // 
-            // tsmiTextCapture
-            // 
-            this.tsmiTextCapture.Image = global::ShareX.Properties.Resources.edit_drop_cap;
-            this.tsmiTextCapture.Name = "tsmiTextCapture";
-            resources.ApplyResources(this.tsmiTextCapture, "tsmiTextCapture");
-            this.tsmiTextCapture.Click += new System.EventHandler(this.tsmiTextCapture_Click);
             // 
             // tsmiAutoCapture
             // 
@@ -680,6 +672,7 @@
             this.tsmiVideoConverter,
             this.tsmiVideoThumbnailer,
             this.tssTools3,
+            this.tsmiOCR,
             this.tsmiQRCode,
             this.tsmiHashCheck,
             this.tsmiIndexFolder,
@@ -1563,7 +1556,6 @@
             this.tsmiTrayScreenRecordingFFmpeg,
             this.tsmiTrayScreenRecordingGIF,
             this.tsmiTrayScrollingCapture,
-            this.tsmiTrayTextCapture,
             this.tsmiTrayAutoCapture,
             this.tssTrayCapture1,
             this.tsmiTrayShowCursor,
@@ -1640,13 +1632,6 @@
             this.tsmiTrayScrollingCapture.Name = "tsmiTrayScrollingCapture";
             resources.ApplyResources(this.tsmiTrayScrollingCapture, "tsmiTrayScrollingCapture");
             this.tsmiTrayScrollingCapture.Click += new System.EventHandler(this.tsmiScrollingCapture_Click);
-            // 
-            // tsmiTrayTextCapture
-            // 
-            this.tsmiTrayTextCapture.Image = global::ShareX.Properties.Resources.edit_drop_cap;
-            this.tsmiTrayTextCapture.Name = "tsmiTrayTextCapture";
-            resources.ApplyResources(this.tsmiTrayTextCapture, "tsmiTrayTextCapture");
-            this.tsmiTrayTextCapture.Click += new System.EventHandler(this.tsmiTrayTextCapture_Click);
             // 
             // tsmiTrayAutoCapture
             // 
@@ -1811,6 +1796,7 @@
             this.tsmiTrayVideoConverter,
             this.tsmiTrayVideoThumbnailer,
             this.tssTrayTools3,
+            this.tsmiTrayOCR,
             this.tsmiTrayQRCode,
             this.tsmiTrayHashCheck,
             this.tsmiTrayIndexFolder,
@@ -2201,6 +2187,20 @@
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
             // 
+            // tsmiOCR
+            // 
+            this.tsmiOCR.Image = global::ShareX.Properties.Resources.edit_drop_cap;
+            this.tsmiOCR.Name = "tsmiOCR";
+            resources.ApplyResources(this.tsmiOCR, "tsmiOCR");
+            this.tsmiOCR.Click += new System.EventHandler(this.tsmiOCR_Click);
+            // 
+            // tsmiTrayOCR
+            // 
+            this.tsmiTrayOCR.Image = global::ShareX.Properties.Resources.edit_drop_cap;
+            this.tsmiTrayOCR.Name = "tsmiTrayOCR";
+            resources.ApplyResources(this.tsmiTrayOCR, "tsmiTrayOCR");
+            this.tsmiTrayOCR.Click += new System.EventHandler(this.tsmiTrayOCR_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2414,8 +2414,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScrollingCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageCombiner;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageCombiner;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTextCapture;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTextCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiDownloadSelectedURL;
         private System.Windows.Forms.ToolStripMenuItem tsmiOCRImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImages;
@@ -2491,5 +2489,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayBorderlessWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageViewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageViewer;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOCR;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayOCR;
     }
 }

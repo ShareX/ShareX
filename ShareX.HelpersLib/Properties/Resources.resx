@@ -133,7 +133,7 @@
     <value>Big square</value>
   </data>
   <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>Tools</value>
+    <value>Upload</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>Second</value>
@@ -665,9 +665,6 @@ Would you like to download it?</value>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Loading image...</value>
   </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Text capture (OCR)</value>
-  </data>
   <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
     <value>Simulate pressing "Home" key</value>
   </data>
@@ -1039,9 +1036,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Filename: {0}</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Screen capture</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>Ellipse (E)</value>
@@ -1437,6 +1431,12 @@ Would you like to download and install it?</value>
     <value>Image viewer</value>
   </data>
   <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="HotkeyType_OCR_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
 </root>

@@ -34,7 +34,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -845,8 +844,8 @@ namespace ShareX
                 tsmiQRCode.Image = Resources.barcode_2d_white;
                 tsmiTrayQRCode.Image = Resources.barcode_2d_white;
                 tsmiShowQRCode.Image = Resources.barcode_2d_white;
-                tsmiTextCapture.Image = Resources.edit_drop_cap_white;
-                tsmiTrayTextCapture.Image = Resources.edit_drop_cap_white;
+                tsmiOCR.Image = Resources.edit_drop_cap_white;
+                tsmiTrayOCR.Image = Resources.edit_drop_cap_white;
                 tsmiOCRImage.Image = Resources.edit_drop_cap_white;
                 tsmiShortenURL.Image = Resources.edit_scale_white;
                 tsmiTrayShortenURL.Image = Resources.edit_scale_white;
@@ -860,8 +859,8 @@ namespace ShareX
                 tsmiQRCode.Image = Resources.barcode_2d;
                 tsmiTrayQRCode.Image = Resources.barcode_2d;
                 tsmiShowQRCode.Image = Resources.barcode_2d;
-                tsmiTextCapture.Image = Resources.edit_drop_cap;
-                tsmiTrayTextCapture.Image = Resources.edit_drop_cap;
+                tsmiOCR.Image = Resources.edit_drop_cap;
+                tsmiTrayOCR.Image = Resources.edit_drop_cap;
                 tsmiOCRImage.Image = Resources.edit_drop_cap;
                 tsmiShortenURL.Image = Resources.edit_scale;
                 tsmiTrayShortenURL.Image = Resources.edit_scale;
@@ -1611,25 +1610,6 @@ namespace ShareX
             TaskHelpers.OpenScrollingCapture();
         }
 
-        private void tsmiTextCapture_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Thread.Sleep(250);
-
-            try
-            {
-                _ = TaskHelpers.OCRImage();
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteException(ex);
-            }
-            finally
-            {
-                this.ForceActivate();
-            }
-        }
-
         private void tsmiAutoCapture_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenAutoCapture();
@@ -1764,6 +1744,25 @@ namespace ShareX
         private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenVideoThumbnailer();
+        }
+
+        private async void tsmiOCR_Click(object sender, EventArgs e)
+        {
+            Hide();
+            await Task.Delay(250);
+
+            try
+            {
+                await TaskHelpers.OCRImage();
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+            finally
+            {
+                this.ForceActivate();
+            }
         }
 
         private void tsmiQRCode_Click(object sender, EventArgs e)
@@ -2066,7 +2065,7 @@ namespace ShareX
             new CaptureLastRegion().Capture();
         }
 
-        private async void tsmiTrayTextCapture_Click(object sender, EventArgs e)
+        private async void tsmiTrayOCR_Click(object sender, EventArgs e)
         {
             try
             {

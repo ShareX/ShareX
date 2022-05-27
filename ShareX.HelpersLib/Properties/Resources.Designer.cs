@@ -1687,6 +1687,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OCR.
+        /// </summary>
+        internal static string HotkeyType_OCR {
+            get {
+                return ResourceManager.GetString("HotkeyType_OCR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_OCR_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_OCR_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open history window.
         /// </summary>
         internal static string HotkeyType_OpenHistory {
@@ -2137,24 +2155,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Text capture (OCR).
-        /// </summary>
-        internal static string HotkeyType_TextCapture {
-            get {
-                return ResourceManager.GetString("HotkeyType_TextCapture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screen capture.
-        /// </summary>
-        internal static string HotkeyType_TextCapture_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_TextCapture_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Toggle actions toolbar.
         /// </summary>
         internal static string HotkeyType_ToggleActionsToolbar {
@@ -2200,7 +2200,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tools.
+        ///   Looks up a localized string similar to Upload.
         /// </summary>
         internal static string HotkeyType_TweetMessage_Category {
             get {
