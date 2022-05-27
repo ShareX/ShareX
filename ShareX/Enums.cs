@@ -223,6 +223,7 @@ namespace ShareX
         HashCheck,
         IndexFolder,
         ClipboardViewer,
+        BorderlessWindow,
         InspectWindow,
         MonitorTest,
         DNSChanger,

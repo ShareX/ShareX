@@ -1246,6 +1246,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Borderless window.
+        /// </summary>
+        internal static string HotkeyType_BorderlessWindow {
+            get {
+                return ResourceManager.GetString("HotkeyType_BorderlessWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_BorderlessWindow_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_BorderlessWindow_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Webpage capture.
         /// </summary>
         internal static string HotkeyType_CaptureWebpage {
@@ -1606,7 +1624,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Index folder.
+        ///   Looks up a localized string similar to Directory indexer.
         /// </summary>
         internal static string HotkeyType_IndexFolder {
             get {

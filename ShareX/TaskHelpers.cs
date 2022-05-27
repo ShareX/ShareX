@@ -244,6 +244,9 @@ namespace ShareX
                 case HotkeyType.ClipboardViewer:
                     OpenClipboardViewer();
                     break;
+                case HotkeyType.BorderlessWindow:
+                    OpenBorderlessWindow();
+                    break;
                 case HotkeyType.TweetMessage:
                     TweetMessage();
                     break;
@@ -1575,6 +1578,7 @@ namespace ShareX
                     case HotkeyType.VideoThumbnailer: return Resources.images_stack;
                     case HotkeyType.InspectWindow: return Resources.application_search_result;
                     case HotkeyType.ClipboardViewer: return Resources.clipboard_block;
+                    case HotkeyType.BorderlessWindow: return Resources.application_resize_full;
                     case HotkeyType.TweetMessage: return Resources.Twitter;
                     case HotkeyType.MonitorTest: return Resources.monitor;
                     // Other

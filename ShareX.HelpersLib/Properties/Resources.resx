@@ -630,7 +630,7 @@ Would you like to download it?</value>
     <value>Screen capture</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
-    <value>Index folder</value>
+    <value>Directory indexer</value>
   </data>
   <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -1437,6 +1437,12 @@ Would you like to download and install it?</value>
     <value>OCR</value>
   </data>
   <data name="HotkeyType_OCR_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Borderless window</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
 </root>

@@ -88,6 +88,7 @@
             this.tsmiVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTools3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiOCR = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -238,6 +239,7 @@
             this.tsmiTrayVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTrayTools3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiTrayOCR = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayHashCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -279,8 +281,6 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
-            this.tsmiOCR = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayOCR = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -777,6 +777,13 @@
             // 
             this.tssTools3.Name = "tssTools3";
             resources.ApplyResources(this.tssTools3, "tssTools3");
+            // 
+            // tsmiOCR
+            // 
+            this.tsmiOCR.Image = global::ShareX.Properties.Resources.edit_drop_cap;
+            this.tsmiOCR.Name = "tsmiOCR";
+            resources.ApplyResources(this.tsmiOCR, "tsmiOCR");
+            this.tsmiOCR.Click += new System.EventHandler(this.tsmiOCR_Click);
             // 
             // tsmiQRCode
             // 
@@ -1902,6 +1909,13 @@
             this.tssTrayTools3.Name = "tssTrayTools3";
             resources.ApplyResources(this.tssTrayTools3, "tssTrayTools3");
             // 
+            // tsmiTrayOCR
+            // 
+            this.tsmiTrayOCR.Image = global::ShareX.Properties.Resources.edit_drop_cap;
+            this.tsmiTrayOCR.Name = "tsmiTrayOCR";
+            resources.ApplyResources(this.tsmiTrayOCR, "tsmiTrayOCR");
+            this.tsmiTrayOCR.Click += new System.EventHandler(this.tsmiTrayOCR_Click);
+            // 
             // tsmiTrayQRCode
             // 
             this.tsmiTrayQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
@@ -2186,20 +2200,6 @@
             resources.ApplyResources(this.pToolbars, "pToolbars");
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
-            // 
-            // tsmiOCR
-            // 
-            this.tsmiOCR.Image = global::ShareX.Properties.Resources.edit_drop_cap;
-            this.tsmiOCR.Name = "tsmiOCR";
-            resources.ApplyResources(this.tsmiOCR, "tsmiOCR");
-            this.tsmiOCR.Click += new System.EventHandler(this.tsmiOCR_Click);
-            // 
-            // tsmiTrayOCR
-            // 
-            this.tsmiTrayOCR.Image = global::ShareX.Properties.Resources.edit_drop_cap;
-            this.tsmiTrayOCR.Name = "tsmiTrayOCR";
-            resources.ApplyResources(this.tsmiTrayOCR, "tsmiTrayOCR");
-            this.tsmiTrayOCR.Click += new System.EventHandler(this.tsmiTrayOCR_Click);
             // 
             // MainForm
             // 

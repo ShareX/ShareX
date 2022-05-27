@@ -1801,7 +1801,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 462</value>
+    <value>201, 440</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -2267,6 +2267,12 @@
   </data>
   <data name="&gt;&gt;tssTools3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiOCR.Name" xml:space="preserve">
+    <value>tsmiOCR</value>
+  </data>
+  <data name="&gt;&gt;tsmiOCR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiQRCode.Name" xml:space="preserve">
     <value>tsmiQRCode</value>
@@ -3156,6 +3162,12 @@
   <data name="&gt;&gt;tssTrayTools3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayOCR.Name" xml:space="preserve">
+    <value>tsmiTrayOCR</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayOCR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayQRCode.Name" xml:space="preserve">
     <value>tsmiTrayQRCode</value>
   </data>
@@ -3377,18 +3389,6 @@
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiOCR.Name" xml:space="preserve">
-    <value>tsmiOCR</value>
-  </data>
-  <data name="&gt;&gt;tsmiOCR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayOCR.Name" xml:space="preserve">
-    <value>tsmiTrayOCR</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayOCR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
