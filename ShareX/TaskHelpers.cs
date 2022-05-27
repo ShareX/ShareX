@@ -97,6 +97,9 @@ namespace ShareX
                 case HotkeyType.ShortenURL:
                     UploadManager.ShowShortenURLDialog(safeTaskSettings);
                     break;
+                case HotkeyType.TweetMessage:
+                    TweetMessage();
+                    break;
                 case HotkeyType.StopUploads:
                     TaskManager.StopAllTasks();
                     break;
@@ -172,6 +175,9 @@ namespace ShareX
                 case HotkeyType.ScreenColorPicker:
                     OpenScreenColorPicker(safeTaskSettings);
                     break;
+                case HotkeyType.Ruler:
+                    OpenRuler(safeTaskSettings);
+                    break;
                 case HotkeyType.ImageEditor:
                     if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
                     {
@@ -202,27 +208,6 @@ namespace ShareX
                         OpenImageViewer();
                     }
                     break;
-                case HotkeyType.HashCheck:
-                    OpenHashCheck();
-                    break;
-                case HotkeyType.DNSChanger:
-                    OpenDNSChanger();
-                    break;
-                case HotkeyType.OCR:
-                    OCRImage(safeTaskSettings).GetAwaiter().GetResult();
-                    break;
-                case HotkeyType.QRCode:
-                    OpenQRCode();
-                    break;
-                case HotkeyType.QRCodeDecodeFromScreen:
-                    OpenQRCodeDecodeFromScreen();
-                    break;
-                case HotkeyType.Ruler:
-                    OpenRuler(safeTaskSettings);
-                    break;
-                case HotkeyType.IndexFolder:
-                    UploadManager.IndexFolder();
-                    break;
                 case HotkeyType.ImageCombiner:
                     OpenImageCombiner(null, safeTaskSettings);
                     break;
@@ -238,8 +223,20 @@ namespace ShareX
                 case HotkeyType.VideoThumbnailer:
                     OpenVideoThumbnailer(safeTaskSettings);
                     break;
-                case HotkeyType.InspectWindow:
-                    OpenInspectWindow();
+                case HotkeyType.OCR:
+                    OCRImage(safeTaskSettings).GetAwaiter().GetResult();
+                    break;
+                case HotkeyType.QRCode:
+                    OpenQRCode();
+                    break;
+                case HotkeyType.QRCodeDecodeFromScreen:
+                    OpenQRCodeDecodeFromScreen();
+                    break;
+                case HotkeyType.HashCheck:
+                    OpenHashCheck();
+                    break;
+                case HotkeyType.IndexFolder:
+                    UploadManager.IndexFolder();
                     break;
                 case HotkeyType.ClipboardViewer:
                     OpenClipboardViewer();
@@ -247,11 +244,14 @@ namespace ShareX
                 case HotkeyType.BorderlessWindow:
                     OpenBorderlessWindow();
                     break;
-                case HotkeyType.TweetMessage:
-                    TweetMessage();
+                case HotkeyType.InspectWindow:
+                    OpenInspectWindow();
                     break;
                 case HotkeyType.MonitorTest:
                     OpenMonitorTest();
+                    break;
+                case HotkeyType.DNSChanger:
+                    OpenDNSChanger();
                     break;
                 // Other
                 case HotkeyType.DisableHotkeys:
@@ -1534,6 +1534,7 @@ namespace ShareX
                     case HotkeyType.UploadURL: return Resources.drive;
                     case HotkeyType.DragDropUpload: return Resources.inbox;
                     case HotkeyType.ShortenURL: return ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
+                    case HotkeyType.TweetMessage: return Resources.Twitter;
                     case HotkeyType.StopUploads: return Resources.cross_button;
                     // Screen capture
                     case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
@@ -1561,26 +1562,25 @@ namespace ShareX
                     // Tools
                     case HotkeyType.ColorPicker: return Resources.color;
                     case HotkeyType.ScreenColorPicker: return Resources.pipette;
+                    case HotkeyType.Ruler: return Resources.ruler_triangle;
                     case HotkeyType.ImageEditor: return Resources.image_pencil;
                     case HotkeyType.ImageEffects: return Resources.image_saturation;
                     case HotkeyType.ImageViewer: return Resources.images_flickr;
-                    case HotkeyType.HashCheck: return Resources.application_task;
-                    case HotkeyType.DNSChanger: return Resources.network_ip;
-                    case HotkeyType.OCR: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
-                    case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
-                    case HotkeyType.QRCodeDecodeFromScreen: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
-                    case HotkeyType.Ruler: return Resources.ruler_triangle;
-                    case HotkeyType.IndexFolder: return Resources.folder_tree;
                     case HotkeyType.ImageCombiner: return Resources.document_break;
                     case HotkeyType.ImageSplitter: return Resources.image_split;
                     case HotkeyType.ImageThumbnailer: return Resources.image_resize_actual;
                     case HotkeyType.VideoConverter: return Resources.camcorder_pencil;
                     case HotkeyType.VideoThumbnailer: return Resources.images_stack;
-                    case HotkeyType.InspectWindow: return Resources.application_search_result;
+                    case HotkeyType.OCR: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
+                    case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
+                    case HotkeyType.QRCodeDecodeFromScreen: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
+                    case HotkeyType.HashCheck: return Resources.application_task;
+                    case HotkeyType.IndexFolder: return Resources.folder_tree;
                     case HotkeyType.ClipboardViewer: return Resources.clipboard_block;
                     case HotkeyType.BorderlessWindow: return Resources.application_resize_full;
-                    case HotkeyType.TweetMessage: return Resources.Twitter;
+                    case HotkeyType.InspectWindow: return Resources.application_search_result;
                     case HotkeyType.MonitorTest: return Resources.monitor;
+                    case HotkeyType.DNSChanger: return Resources.network_ip;
                     // Other
                     case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;
                     case HotkeyType.OpenMainWindow: return Resources.application_home;
