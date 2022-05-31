@@ -120,15 +120,15 @@ namespace ShareX
             pbStatus.Visible = busy;
         }
 
-        private async Task OCR()
+        private async Task OCR(Bitmap bmp)
         {
-            if (bmpSource != null && !string.IsNullOrEmpty(Options.Language))
+            if (bmp != null && !string.IsNullOrEmpty(Options.Language))
             {
                 busy = true;
                 txtResult.Text = "";
                 UpdateControls();
 
-                Result = await OCRHelper.OCR(bmpSource, Options.Language, Options.ScaleFactor);
+                Result = await OCRHelper.OCR(bmp, Options.Language, Options.ScaleFactor);
 
                 if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
                 {
@@ -146,7 +146,7 @@ namespace ShareX
 
         private async void OCRForm_Shown(object sender, EventArgs e)
         {
-            await OCR();
+            await OCR(bmpSource);
         }
 
         private async void btnSelectRegion_Click(object sender, EventArgs e)
@@ -154,12 +154,16 @@ namespace ShareX
             FormWindowState previousState = WindowState;
             WindowState = FormWindowState.Minimized;
             await Task.Delay(250);
-            bmpSource?.Dispose();
-            bmpSource = RegionCaptureTasks.GetRegionImage(new RegionCaptureOptions());
+            Bitmap regionImage = RegionCaptureTasks.GetRegionImage(new RegionCaptureOptions());
             WindowState = previousState;
-            await Task.Delay(250);
 
-            await OCR();
+            if (regionImage != null)
+            {
+                bmpSource?.Dispose();
+                bmpSource = regionImage;
+                await Task.Delay(250);
+                await OCR(bmpSource);
+            }
         }
 
         private async void cbLanguages_SelectedIndexChanged(object sender, EventArgs e)
@@ -168,7 +172,7 @@ namespace ShareX
             {
                 Options.Language = ((OCRLanguage)cbLanguages.SelectedItem).LanguageTag;
 
-                await OCR();
+                await OCR(bmpSource);
             }
         }
 
@@ -178,7 +182,7 @@ namespace ShareX
             {
                 Options.ScaleFactor = (float)nudScaleFactor.Value;
 
-                await OCR();
+                await OCR(bmpSource);
             }
         }
 
