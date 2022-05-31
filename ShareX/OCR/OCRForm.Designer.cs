@@ -7,19 +7,6 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -40,6 +27,7 @@
             this.cbEditServices = new System.Windows.Forms.Button();
             this.pbStatus = new System.Windows.Forms.ProgressBar();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.btnSelectRegion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +70,7 @@
             0,
             65536});
             this.nudScaleFactor.Maximum = new decimal(new int[] {
-            5,
+            4,
             0,
             0,
             0});
@@ -134,10 +122,18 @@
             resources.ApplyResources(this.lblStatus, "lblStatus");
             this.lblStatus.Name = "lblStatus";
             // 
+            // btnSelectRegion
+            // 
+            resources.ApplyResources(this.btnSelectRegion, "btnSelectRegion");
+            this.btnSelectRegion.Name = "btnSelectRegion";
+            this.btnSelectRegion.UseVisualStyleBackColor = true;
+            this.btnSelectRegion.Click += new System.EventHandler(this.btnSelectRegion_Click);
+            // 
             // OCRForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSelectRegion);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.cbEditServices);
@@ -171,5 +167,6 @@
         private System.Windows.Forms.Button cbEditServices;
         private System.Windows.Forms.ProgressBar pbStatus;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnSelectRegion;
     }
 }

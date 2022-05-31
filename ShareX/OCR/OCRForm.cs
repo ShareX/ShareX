@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -36,13 +37,13 @@ namespace ShareX
         public OCROptions Options { get; set; }
         public string Result { get; private set; }
 
-        private Bitmap bmp;
+        private Bitmap bmpSource;
         private bool loaded;
         private bool busy;
 
         public OCRForm(Bitmap bmp, OCROptions options)
         {
-            this.bmp = bmp;
+            bmpSource = (Bitmap)bmp.Clone();
             Options = options;
 
             InitializeComponent();
@@ -97,8 +98,20 @@ namespace ShareX
             loaded = true;
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                components?.Dispose();
+                bmpSource?.Dispose();
+            }
+
+            base.Dispose(disposing);
+        }
+
         private void UpdateControls()
         {
+            btnSelectRegion.Visible = !busy;
             lblLanguage.Visible = !busy;
             cbLanguages.Visible = !busy;
             lblScaleFactor.Visible = !busy;
@@ -109,12 +122,12 @@ namespace ShareX
 
         private async Task OCR()
         {
-            if (bmp != null && !string.IsNullOrEmpty(Options.Language))
+            if (bmpSource != null && !string.IsNullOrEmpty(Options.Language))
             {
                 busy = true;
                 UpdateControls();
 
-                Result = await OCRHelper.OCR(bmp, Options.Language, Options.ScaleFactor);
+                Result = await OCRHelper.OCR(bmpSource, Options.Language, Options.ScaleFactor);
 
                 if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
                 {
@@ -132,6 +145,17 @@ namespace ShareX
 
         private async void OCRForm_Shown(object sender, EventArgs e)
         {
+            await OCR();
+        }
+
+        private async void btnSelectRegion_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+            await Task.Delay(250);
+            bmpSource?.Dispose();
+            bmpSource = RegionCaptureTasks.GetRegionImage(new RegionCaptureOptions());
+            WindowState = FormWindowState.Normal;
+
             await OCR();
         }
 

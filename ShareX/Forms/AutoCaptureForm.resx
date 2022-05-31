@@ -270,7 +270,7 @@
     <value>2</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>Select region</value>
+    <value>Select region...</value>
   </data>
   <data name="&gt;&gt;btnRegion.Name" xml:space="preserve">
     <value>btnRegion</value>
@@ -451,7 +451,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>319, 263</value>
