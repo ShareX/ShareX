@@ -125,6 +125,7 @@ namespace ShareX
             if (bmpSource != null && !string.IsNullOrEmpty(Options.Language))
             {
                 busy = true;
+                txtResult.Text = "";
                 UpdateControls();
 
                 Result = await OCRHelper.OCR(bmpSource, Options.Language, Options.ScaleFactor);
@@ -150,11 +151,13 @@ namespace ShareX
 
         private async void btnSelectRegion_Click(object sender, EventArgs e)
         {
+            FormWindowState previousState = WindowState;
             WindowState = FormWindowState.Minimized;
             await Task.Delay(250);
             bmpSource?.Dispose();
             bmpSource = RegionCaptureTasks.GetRegionImage(new RegionCaptureOptions());
-            WindowState = FormWindowState.Normal;
+            WindowState = previousState;
+            await Task.Delay(250);
 
             await OCR();
         }
