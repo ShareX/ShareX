@@ -328,7 +328,7 @@
     <value>Indexator de dosare...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>Indexator de dosare...</value>
+    <value>Indexator de foldere...</value>
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord...</value>
@@ -382,10 +382,10 @@
     <value>Destinații fișiere</value>
   </data>
   <data name="tsmiOpenFolder.Text" xml:space="preserve">
-    <value>Dosar</value>
+    <value>Folder</value>
   </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
-    <value>Dosar</value>
+    <value>Folder</value>
   </data>
   <data name="tsmiCopyForumImage.Text" xml:space="preserve">
     <value>Imagine Forum (BBCode)</value>
@@ -601,10 +601,10 @@
     <value>Întârziere captură</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
-    <value>Dosarul de capturi de ecran...</value>
+    <value>Folderul de capturi de ecran...</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
-    <value>Dosarul de capturi de ecran...</value>
+    <value>Folderul de capturi de ecran...</value>
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Captură în derulare...</value>
@@ -730,10 +730,10 @@
     <value>Încărcați fișierul...</value>
   </data>
   <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
-    <value>Încărcați dosar...</value>
+    <value>Încărcați folder...</value>
   </data>
   <data name="tsmiUploadFolder.Text" xml:space="preserve">
-    <value>Încărcați dosar...</value>
+    <value>Încărcați folder...</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
     <value>Încărcați din clipboard...</value>
@@ -782,5 +782,11 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Miniaturizator de videoclipuri...</value>
+  </data>
+  <data name="tsmiTrayWindow.Text" xml:space="preserve">
+    <value>Fereastră</value>
+  </data>
+  <data name="tsmiWindow.Text" xml:space="preserve">
+    <value>Fereastră</value>
   </data>
 </root>
