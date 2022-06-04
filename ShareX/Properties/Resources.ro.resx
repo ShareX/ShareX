@@ -228,10 +228,10 @@ Clic în mijloc pentru a închide</value>
     <value>Separator</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Alegeți calea dosarului de capturi</value>
+    <value>Alegeți calea folderului de capturi</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Alegeți calea dosarului personal ShareX</value>
+    <value>Alegeți calea folderului personal ShareX</value>
   </data>
   <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
     <value>Versiunile de dezvoltare pot fi instabile și trebuie utilizate numai în scopuri de testare. Doriți să o instalați?</value>
@@ -442,11 +442,11 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
     <value>OCR procesează.</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
-    <value>Nu s-a putut crea dosarul:</value>
+    <value>Nu s-a putut crea folderul:</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Nu se poate accesa fișierul "{0}".
-Vă rugăm să rulați ShareX ca administrator pentru a schimba calea dosarului personal.</value>
+Vă rugăm să rulați ShareX ca administrator pentru a schimba calea folderului personal.</value>
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Introduceți textul de codificat</value>
@@ -479,7 +479,7 @@ Vă rugăm să rulați ShareX ca administrator pentru a schimba calea dosarului 
     <value>ShareX este minimizat în bara de sistem.</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX trebuie să fie repornit pentru ca modificările aduse dosarelor personale să se aplice.
+    <value>ShareX trebuie să fie repornit pentru ca modificările aduse folderelor personale să se aplice.
 
 Doriți să reporniți ShareX?</value>
   </data>
@@ -578,7 +578,7 @@ Doriți să reporniți ShareX?</value>
     <value>Încărcare fișier</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
-    <value>Încărcare dosar</value>
+    <value>Încărcare folder</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL pentru a descărca și încărca</value>
@@ -590,7 +590,7 @@ Doriți să reporniți ShareX?</value>
     <value>URL scurtare ({0})</value>
   </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
-    <value>Alegeți un dosar pentru a salva</value>
+    <value>Alegeți un folder pentru a salva</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
     <value>Avertisment de încărcare pentru prima dată</value>
@@ -639,7 +639,7 @@ Puteți să le dezactivați ulterior din meniul "Sarcini după captură".</value
     <value>Doriți să resetați temele?</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Este posibil ca software-ul antivirus sau funcția de acces controlat la dosare din Windows să blocheze ShareX.</value>
+    <value>Este posibil ca software-ul antivirus sau funcția de acces controlat la foldere din Windows să blocheze ShareX.</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Administratorul de sistem a dezactivat funcția de încărcare.</value>
