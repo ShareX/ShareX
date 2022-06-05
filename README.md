@@ -8,6 +8,6 @@
 [![Discord](https://img.shields.io/discord/194170124859736065?label=Discord&cacheSeconds=3600)](https://discord.gg/ShareX)
 [![Twitter](https://img.shields.io/twitter/follow/ShareX?cacheSeconds=3600)](https://twitter.com/ShareX)
 
-[![Screenshot](https://getsharex.com/img/ShareX_Screenshot.png)](https://getsharex.com)
+[![Screenshot](ShareX_2dcZpfl5QC.png )]
 
 ### For further information check [getsharex.com](https://getsharex.com)
