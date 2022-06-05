@@ -10,4 +10,6 @@
 
 [![Screenshot](ShareX_2dcZpfl5QC.png )](https://github.com/xkonglong/ShareX/releases)
 
+下载中文语言包, 解压覆盖ShareX 安装路径的 (zh-CN) 文件夹即可.
+
 ### For further information check [getsharex.com](https://getsharex.com)
