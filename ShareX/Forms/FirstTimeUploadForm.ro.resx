@@ -118,24 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Recunoașterea optică a caracterelor (OCR)</value>
+    <value>ShareX - Avertisment pentru prima încărcare</value>
   </data>
-  <data name="btnOpen.Text" xml:space="preserve">
-    <value>Deschidere...</value>
+  <data name="lblHeader.Text" xml:space="preserve">
+    <value>Atenție!</value>
   </data>
-  <data name="btnSelectRegion.Text" xml:space="preserve">
-    <value>Selectați regiunea...</value>
+  <data name="btnYes.Text" xml:space="preserve">
+    <value>Da</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Limbă:</value>
+  <data name="lblInfo.Text" xml:space="preserve">
+    <value>Doriți ca ShareX să încarce capturi de ecran?
+
+Apăsați "Nu" pentru a anula încărcarea curentă și pentru a dezactiva încărcarea automată a capturilor de ecran.</value>
   </data>
-  <data name="lblResult.Text" xml:space="preserve">
-    <value>Rezultat:</value>
-  </data>
-  <data name="lblScaleFactor.Text" xml:space="preserve">
-    <value>Factor de scară:</value>
-  </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>OCR procesează...</value>
+  <data name="btnNo.Text" xml:space="preserve">
+    <value>Nu</value>
   </data>
 </root>

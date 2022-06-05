@@ -118,24 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Recunoașterea optică a caracterelor (OCR)</value>
-  </data>
-  <data name="btnOpen.Text" xml:space="preserve">
-    <value>Deschidere...</value>
-  </data>
-  <data name="btnSelectRegion.Text" xml:space="preserve">
-    <value>Selectați regiunea...</value>
-  </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Limbă:</value>
-  </data>
-  <data name="lblResult.Text" xml:space="preserve">
-    <value>Rezultat:</value>
-  </data>
-  <data name="lblScaleFactor.Text" xml:space="preserve">
-    <value>Factor de scară:</value>
-  </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>OCR procesează...</value>
+    <value>ShareX - Imagine nouă</value>
   </data>
 </root>

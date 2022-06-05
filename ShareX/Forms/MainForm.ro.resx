@@ -232,10 +232,10 @@
     <value>Căutare vizuală Bing (OCR)...</value>
   </data>
   <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
-    <value>Fereastră fără margini...</value>
+    <value>Fereastră fără borduri...</value>
   </data>
   <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
-    <value>Fereastră fără margini...</value>
+    <value>Fereastră fără borduri...</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Capturați</value>

@@ -117,25 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblServices.Text" xml:space="preserve">
+    <value>Servicii:</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Recunoașterea optică a caracterelor (OCR)</value>
+    <value>ShareX - Link-uri de servicii</value>
   </data>
-  <data name="btnOpen.Text" xml:space="preserve">
-    <value>Deschidere...</value>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Resetare</value>
   </data>
-  <data name="btnSelectRegion.Text" xml:space="preserve">
-    <value>Selectați regiunea...</value>
+  <data name="lblURL.Text" xml:space="preserve">
+    <value>URL:</value>
   </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Limbă:</value>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Nume:</value>
   </data>
-  <data name="lblResult.Text" xml:space="preserve">
-    <value>Rezultat:</value>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Eliminare</value>
   </data>
-  <data name="lblScaleFactor.Text" xml:space="preserve">
-    <value>Factor de scară:</value>
-  </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>OCR procesează...</value>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>Nou</value>
   </data>
 </root>
