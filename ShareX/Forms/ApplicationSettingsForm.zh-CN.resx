@@ -411,4 +411,10 @@
   <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
     <value>图像预览位置：</value>
   </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>剪贴板格式</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>这些格式将在主窗口右键菜单内的“复制”子菜单中显示。</value>
+  </data>
 </root>
