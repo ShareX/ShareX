@@ -375,4 +375,46 @@
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>使用自定义主题</value>
   </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>主窗口</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>显示菜单</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>任务视图模式：</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>列表视图</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>缩略图视图</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>标题位置：</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>缩略图尺寸：</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>缩略图点击动作：</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>显示列名</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>图像预览可见性：</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>图像预览位置：</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>剪贴板格式</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>这些格式将在主窗口右键菜单内的“复制”子菜单中显示。</value>
+  </data>
 </root>
