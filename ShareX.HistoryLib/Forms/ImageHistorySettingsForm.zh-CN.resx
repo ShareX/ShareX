@@ -121,7 +121,7 @@
     <value>缩略图尺寸：</value>
   </data>
   <data name="cbFilterMissingFiles.Text" xml:space="preserve">
-    <value>过滤丢失文件</value>
+    <value>筛去缺失文件</value>
   </data>
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
     <value>最大图像限制：</value>

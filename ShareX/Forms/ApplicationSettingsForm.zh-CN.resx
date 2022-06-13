@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>高级设置</value>
+    <value>高级</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 应用程序设置</value>

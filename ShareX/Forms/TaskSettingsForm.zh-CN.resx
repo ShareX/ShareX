@@ -142,13 +142,13 @@
     <value>阴影偏移:</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
-    <value>捕捉具有透明度的窗口</value>
+    <value>截图窗口带透明度</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
     <value>捕捉窗口时，如果窗口与任务栏重叠，则隐藏任务栏</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>捕捉窗口阴影（需要透明度）</value>
+    <value>截图窗口带阴影（需要透明度）</value>
   </data>
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>秒</value>
@@ -178,7 +178,7 @@
     <value>工具</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>高级设置</value>
+    <value>高级</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 任务设置</value>
@@ -193,7 +193,7 @@
     <value>包括子目录</value>
   </data>
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
-    <value>过滤器</value>
+    <value>筛选器</value>
   </data>
   <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
     <value>文件夹路径</value>
@@ -208,7 +208,7 @@
     <value>编辑...</value>
   </data>
   <data name="chActionsExtensions.Text" xml:space="preserve">
-    <value>扩展</value>
+    <value>扩展名</value>
   </data>
   <data name="chActionsArgs.Text" xml:space="preserve">
     <value>参数</value>
@@ -223,7 +223,7 @@
     <value>添加...</value>
   </data>
   <data name="btnActionsDuplicate.Text" xml:space="preserve">
-    <value>复制</value>
+    <value>克隆</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
     <value>如果剪贴板包含一个网址，使用网址缩短服务</value>
@@ -298,16 +298,16 @@
     <value>缩略图</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>图像效果配置...</value>
+    <value>图像特效配置...</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>只适用于区域截图</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>您可以在"截图后的动作 -&gt;添加图像效果"启用/禁用图像效果。</value>
+    <value>您可以在"截图后的动作 -&gt;添加图像特效"启用/禁用图像特效。</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
-    <value>效果</value>
+    <value>特效</value>
   </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG 质量：</value>
@@ -400,7 +400,7 @@
     <value>同时检测窗口内的控制区域</value>
   </data>
   <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
-    <value>检测窗口区域，并允许光标悬停捕获</value>
+    <value>检测窗口区域，并允许光标悬停决定截图区域</value>
   </data>
   <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
     <value>鼠标中键单击动作:</value>
@@ -445,7 +445,7 @@
     <value>上传到</value>
   </data>
   <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
-    <value>扩展</value>
+    <value>扩展名</value>
   </data>
   <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -463,7 +463,7 @@
     <value>例如：png, jpg, jpeg</value>
   </data>
   <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
-    <value>扩展筛选：</value>
+    <value>扩展名筛选：</value>
   </data>
   <data name="tpUploaderFilters.Text" xml:space="preserve">
     <value>上传筛选</value>
@@ -484,7 +484,7 @@
     <value>上传时使用下划线替换 URL 中的非法字符</value>
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>自增数：</value>
+    <value>自动递增编号：</value>
   </data>
   <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
@@ -517,7 +517,7 @@
     <value>自动复制结果至剪贴板</value>
   </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
-    <value>静默 OCR 识别</value>
+    <value>静默识别</value>
   </data>
   <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
     <value>默认语言：</value>

@@ -124,7 +124,7 @@
     <value>添加...</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>复制</value>
+    <value>克隆</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>编辑...</value>

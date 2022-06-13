@@ -253,7 +253,7 @@
     <value>完成</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} 将上载至 {1}，您可以选择不同的上传目标。</value>
+    <value>{0} 将上传至 {1}，您可以选择不同的上传目标。</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>网站</value>
@@ -561,9 +561,9 @@
     <value>ShareX 已最小化到系统托盘。</value>
   </data>
   <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
-    <value>您要启用图像效果吗？
+    <value>要启用图像效果吗？
 
-您以后可以从“捕获任务后”菜单中禁用它。</value>
+之后可以从“截图后”菜单中禁用。</value>
   </data>
   <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
     <value>鸣谢</value>

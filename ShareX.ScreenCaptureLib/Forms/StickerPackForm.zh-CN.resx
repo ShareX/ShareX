@@ -132,7 +132,4 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="btnFolderBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
 </root>

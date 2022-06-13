@@ -124,7 +124,7 @@
     <value>第2步：完成授权</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>第1步：打开授权页面...</value>
+    <value>连接...</value>
   </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>刷新授权</value>

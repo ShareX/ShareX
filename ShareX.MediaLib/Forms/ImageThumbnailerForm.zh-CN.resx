@@ -141,16 +141,7 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>添加...</value>
   </data>
-  <data name="btnOutputFolder.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="txtOutputFilename.Text" xml:space="preserve">
-    <value>$filename_th</value>
-  </data>
   <data name="lblQuality.Text" xml:space="preserve">
     <value>质量：</value>
-  </data>
-  <data name="lblQualityPercentage.Text" xml:space="preserve">
-    <value>%</value>
   </data>
 </root>

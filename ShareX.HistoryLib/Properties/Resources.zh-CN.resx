@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>过滤：{0}</value>
+    <value>已筛选：{0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>总计：{0}</value>
@@ -136,7 +136,7 @@
     <value>文件名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>文件扩展名</value>
+    <value>文件名（含扩展名）</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>文件路径</value>
