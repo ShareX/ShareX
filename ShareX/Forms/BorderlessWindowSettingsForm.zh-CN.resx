@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,21 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 贴纸包</value>
+    <value>ShareX - 无边框窗口设置</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>移除</value>
+  <data name="cbAutoCloseWindow.Text" xml:space="preserve">
+    <value>自动关闭窗口</value>
   </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>名称：</value>
+  <data name="cbExcludeTaskbarArea.Text" xml:space="preserve">
+    <value>排除任务栏区域</value>
   </data>
-  <data name="lblFolder.Text" xml:space="preserve">
-    <value>文件夹：</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnFolderBrowse.Text" xml:space="preserve">
-    <value>...</value>
+  <data name="cbRememberWindowTitle.Text" xml:space="preserve">
+    <value>记住窗口标题</value>
   </data>
 </root>

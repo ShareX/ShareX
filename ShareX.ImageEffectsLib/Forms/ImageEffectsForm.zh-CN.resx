@@ -171,13 +171,16 @@
   <data name="btnPresetRemove.ToolTip" xml:space="preserve">
     <value>移除</value>
   </data>
-  <data name="lblEffect.Text" xml:space="preserve">
-    <value>效果:</value>
-  </data>
   <data name="lblEffects.Text" xml:space="preserve">
     <value>效果:</value>
   </data>
   <data name="lblPresets.Text" xml:space="preserve">
     <value>预设:</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>图像效果...</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>效果名称：</value>
   </data>
 </root>

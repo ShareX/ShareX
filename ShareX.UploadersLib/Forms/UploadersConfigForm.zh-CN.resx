@@ -123,13 +123,13 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>如果你有用自定义域设置的存储桶，请使用此选项。
 如果文本字段为空，则存储桶名称将被用于 URL。
-例如，如果你的存储桶名称为 bucket.example.com，则URL将为 http://bucket.example.com/...</value>
+例如，如果你的存储桶名称为 bucket.example.com，则URL将为 http://bucket.example.com/... 。</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>其它上传</value>
+    <value>其他上传</value>
   </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL 短链</value>
+    <value>网址缩短服务</value>
   </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>添加</value>
@@ -195,7 +195,7 @@
     <value>文件上载器</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>文本上载器</value>
+    <value>文本上传服务</value>
   </data>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
     <value>邮箱：</value>
@@ -754,7 +754,7 @@
     <value>公共上传</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
-    <value>ownCloud 8.1 与兼容性</value>
+    <value>ownCloud 8.1+ 兼容性</value>
   </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API 密钥：</value>
@@ -784,7 +784,7 @@
     <value>登录信息</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>文件将被自动移除于 </value>
+    <value>文件将被自动移除于</value>
   </data>
   <data name="lblPlikURL.Text" xml:space="preserve">
     <value>主机</value>
@@ -793,7 +793,7 @@
     <value>需要用户名以及密码？</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>API 密钥: </value>
+    <value>API 密钥:</value>
   </data>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>密码：</value>
@@ -976,7 +976,7 @@
     <value>使用预览链接（仅 NextCloud）</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
-    <value>使用短链</value>
+    <value>使用短链接</value>
   </data>
   <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
     <value>视频</value>
@@ -1262,5 +1262,47 @@
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>追加文件名到网址</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>天</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>小时</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>分钟</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>从不</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>显示视频选项对话框</value>
+  </data>
+  <data name="lblGfycatTitle.Text" xml:space="preserve">
+    <value>标题：</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>您随时可通过该链接撤销您的访问权限：</value>
+  </data>
+  <data name="lblZWSToken.Text" xml:space="preserve">
+    <value>令牌：</value>
+  </data>
+  <data name="lblZWSURL.Text" xml:space="preserve">
+    <value>网址：</value>
+  </data>
+  <data name="llYouTubePermissionsLink.Text" xml:space="preserve">
+    <value>https://security.google.com/settings/security/permissions</value>
+  </data>
+  <data name="rbFTPProtocolSFTP.Text" xml:space="preserve">
+    <value>SFTP</value>
+  </data>
+  <data name="tpMega.Text" xml:space="preserve">
+    <value>Mega</value>
+  </data>
+  <data name="tpZeroWidthShortener.Text" xml:space="preserve">
+    <value>Zero Width 缩短器</value>
   </data>
 </root>

@@ -301,4 +301,25 @@
   <data name="tpXvid.Text" xml:space="preserve">
     <value>Xvid</value>
   </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>使用比特率</value>
+  </data>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>命令行额外参数：</value>
+  </data>
+  <data name="lblCommandLinePreview.Text" xml:space="preserve">
+    <value>命令行预览：</value>
+  </data>
+  <data name="lblFFmpegPath.Text" xml:space="preserve">
+    <value>FFmpeg 路径：</value>
+  </data>
+  <data name="lblNVENCBitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="lblQSVBitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="lblx264BitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
 </root>

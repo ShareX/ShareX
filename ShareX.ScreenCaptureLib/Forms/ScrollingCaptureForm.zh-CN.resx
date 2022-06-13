@@ -225,4 +225,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 滚动捕捉</value>
   </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>上传/保存取决于"截图后"动作设置</value>
+  </data>
 </root>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,22 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnPinToTop.Text" xml:space="preserve">
+    <value>置顶</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>刷新</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 贴纸包</value>
+    <value>ShareX - 探查窗口</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>移除</value>
+  <data name="btnInspectControl.Text" xml:space="preserve">
+    <value>探查控件...</value>
   </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>名称：</value>
-  </data>
-  <data name="lblFolder.Text" xml:space="preserve">
-    <value>文件夹：</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnFolderBrowse.Text" xml:space="preserve">
-    <value>...</value>
+  <data name="btnInspectWindow.Text" xml:space="preserve">
+    <value>探查窗口...</value>
   </data>
 </root>

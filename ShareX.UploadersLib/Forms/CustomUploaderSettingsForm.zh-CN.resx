@@ -241,10 +241,10 @@ store.book[0].title</value>
     <value>URL 参数：</value>
   </data>
   <data name="lblURLSharingService.Text" xml:space="preserve">
-    <value>URL 共享服务：</value>
+    <value>网址分享服务：</value>
   </data>
   <data name="lblURLShortener.Text" xml:space="preserve">
-    <value>URL 短链：</value>
+    <value>网址缩短服务：</value>
   </data>
   <data name="cParametersValue.HeaderText" xml:space="preserve">
     <value>值</value>
@@ -287,5 +287,14 @@ store.book[0].title</value>
   </data>
   <data name="tpXmlParse.Text" xml:space="preserve">
     <value>XML</value>
+  </data>
+  <data name="btnTestURLSyntax.Text" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="lblUploaders.Text" xml:space="preserve">
+    <value>上传器：</value>
+  </data>
+  <data name="tsmiClearUploaders.Text" xml:space="preserve">
+    <value>清除上传器...</value>
   </data>
 </root>

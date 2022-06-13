@@ -124,7 +124,7 @@
     <value>开始</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>选择区域</value>
+    <value>选择区域...</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
     <value>自动最小化到系统托盘</value>
