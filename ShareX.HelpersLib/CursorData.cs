@@ -65,7 +65,14 @@ namespace ShareX.HelpersLib
                     {
                         if (NativeMethods.GetIconInfo(iconHandle, out IconInfo iconInfo))
                         {
-                            Position = new Point(Position.X - iconInfo.xHotspot, Position.Y - iconInfo.yHotspot);
+                            if (Size.IsEmpty)
+                            {
+                                Position = new Point(Position.X - iconInfo.xHotspot, Position.Y - iconInfo.yHotspot);
+                            }
+                            else
+                            {
+                                Position = new Point(Position.X - iconInfo.xHotspot * (Size.Width / 32), Position.Y - iconInfo.yHotspot * (Size.Height / 32));
+                            }
 
                             if (iconInfo.hbmMask != IntPtr.Zero)
                             {
@@ -111,6 +118,8 @@ namespace ShareX.HelpersLib
                     IntPtr hdcDest = g.GetHdc();
 
                     DrawCursor(hdcDest, offset);
+
+                    g.ReleaseHdc(hdcDest);
                 }
             }
         }
