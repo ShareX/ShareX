@@ -277,4 +277,7 @@
   <data name="StatusCode" xml:space="preserve">
     <value>状态码</value>
   </data>
+  <data name="Headers" xml:space="preserve">
+    <value>头</value>
+  </data>
 </root>

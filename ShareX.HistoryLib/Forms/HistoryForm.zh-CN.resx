@@ -174,4 +174,7 @@
   <data name="tslSearch.Text" xml:space="preserve">
     <value>搜索：</value>
   </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>高级搜索</value>
+  </data>
 </root>
