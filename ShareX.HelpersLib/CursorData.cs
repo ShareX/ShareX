@@ -33,6 +33,8 @@ namespace ShareX.HelpersLib
     {
         public IntPtr Handle { get; private set; }
         public Point Position { get; private set; }
+        public Point Hotspot { get; private set; }
+        public Point DrawPosition => new Point(Position.X - Hotspot.X, Position.Y - Hotspot.Y);
         public Size Size { get; private set; }
         public bool IsVisible { get; private set; }
 
@@ -67,11 +69,11 @@ namespace ShareX.HelpersLib
                         {
                             if (Size.IsEmpty)
                             {
-                                Position = new Point(Position.X - iconInfo.xHotspot, Position.Y - iconInfo.yHotspot);
+                                Hotspot = new Point(iconInfo.xHotspot, iconInfo.yHotspot);
                             }
                             else
                             {
-                                Position = new Point(Position.X - iconInfo.xHotspot * (Size.Width / 32), Position.Y - iconInfo.yHotspot * (Size.Height / 32));
+                                Hotspot = new Point(iconInfo.xHotspot * (Size.Width / 32), iconInfo.yHotspot * (Size.Height / 32));
                             }
 
                             if (iconInfo.hbmMask != IntPtr.Zero)
@@ -104,6 +106,22 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void DrawCursor(IntPtr hdcDest)
+        {
+            DrawCursor(hdcDest, Point.Empty);
+        }
+
+        public void DrawCursor(IntPtr hdcDest, Point offset)
+        {
+            if (IsVisible)
+            {
+                Point drawPosition = new Point(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y);
+                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
+
+                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
+            }
+        }
+
         public void DrawCursor(Image img)
         {
             DrawCursor(img, Point.Empty);
@@ -121,22 +139,6 @@ namespace ShareX.HelpersLib
 
                     g.ReleaseHdc(hdcDest);
                 }
-            }
-        }
-
-        public void DrawCursor(IntPtr hdcDest)
-        {
-            DrawCursor(hdcDest, Point.Empty);
-        }
-
-        public void DrawCursor(IntPtr hdcDest, Point offset)
-        {
-            if (IsVisible)
-            {
-                Point drawPosition = new Point(Position.X - offset.X, Position.Y - offset.Y);
-                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
-
-                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
         }
     }

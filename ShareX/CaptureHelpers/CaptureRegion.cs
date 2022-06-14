@@ -96,7 +96,7 @@ namespace ShareX
             {
                 if (cursorData != null && cursorData.IsVisible)
                 {
-                    form.AddCursor(cursorData.Handle, form.PointToClient(cursorData.Position));
+                    form.AddCursor(cursorData.Handle, form.PointToClient(cursorData.DrawPosition));
                 }
 
                 form.ShowDialog();
