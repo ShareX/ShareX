@@ -35,11 +35,15 @@ namespace ShareX.ScreenCaptureLib
 
         public void UpdateCursor(IntPtr cursorHandle, Point position)
         {
-            Dispose();
-
             Icon icon = Icon.FromHandle(cursorHandle);
-            Image = icon.ToBitmap();
+            Bitmap bmpCursor = icon.ToBitmap();
+            UpdateCursor(bmpCursor, position);
+        }
 
+        public void UpdateCursor(Bitmap bmpCursor, Point position)
+        {
+            Dispose();
+            Image = bmpCursor;
             Rectangle = new Rectangle(position, Image.Size);
         }
 

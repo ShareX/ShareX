@@ -810,11 +810,11 @@ namespace ShareX.ScreenCaptureLib
             return ShapeManager.FindSelectedWindowInfo(CurrentPosition);
         }
 
-        public void AddCursor(IntPtr cursorHandle, Point position)
+        public void AddCursor(Bitmap bmpCursor, Point position)
         {
             if (ShapeManager != null)
             {
-                ShapeManager.AddCursor(cursorHandle, position);
+                ShapeManager.AddCursor(bmpCursor, position);
             }
         }
 

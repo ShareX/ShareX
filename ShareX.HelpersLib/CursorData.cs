@@ -142,5 +142,32 @@ namespace ShareX.HelpersLib
                 }
             }
         }
+
+        public Bitmap ToBitmap()
+        {
+            Size cursorSize;
+
+            if (Size.IsEmpty)
+            {
+                cursorSize = new Size(32, 32);
+            }
+            else
+            {
+                cursorSize = Size;
+            }
+
+            Bitmap bmp = new Bitmap(cursorSize.Width, cursorSize.Height);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                IntPtr hdcDest = g.GetHdc();
+
+                NativeMethods.DrawIconEx(hdcDest, 0, 0, Handle, cursorSize.Width, cursorSize.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
+
+                g.ReleaseHdc(hdcDest);
+            }
+
+            return bmp;
+        }
     }
 }
