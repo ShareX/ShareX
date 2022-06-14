@@ -73,7 +73,8 @@ namespace ShareX.HelpersLib
                             }
                             else
                             {
-                                Hotspot = new Point(iconInfo.xHotspot * (Size.Width / 32), iconInfo.yHotspot * (Size.Height / 32));
+                                float multiplier = Size.Width / 32f;
+                                Hotspot = new Point((int)Math.Round(iconInfo.xHotspot * multiplier), (int)Math.Round(iconInfo.yHotspot * multiplier));
                             }
 
                             if (iconInfo.hbmMask != IntPtr.Zero)
