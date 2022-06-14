@@ -33,6 +33,7 @@ namespace ShareX.HelpersLib
     {
         public IntPtr Handle { get; private set; }
         public Point Position { get; private set; }
+        public Size Size { get; private set; }
         public bool IsVisible { get; private set; }
 
         public CursorData()
@@ -53,6 +54,7 @@ namespace ShareX.HelpersLib
             {
                 Handle = cursorInfo.hCursor;
                 Position = cursorInfo.ptScreenPos;
+                Size = GetCursorSize();
                 IsVisible = cursorInfo.flags == NativeConstants.CURSOR_SHOWING;
 
                 if (IsVisible)
@@ -82,6 +84,19 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private Size GetCursorSize()
+        {
+            try
+            {
+                int cursorBaseSize = RegistryHelpers.GetValueDWord(@"Control Panel\Cursors", "CursorBaseSize");
+                return new Size(cursorBaseSize, cursorBaseSize);
+            }
+            catch
+            {
+                return Size.Empty;
+            }
+        }
+
         public void DrawCursor(Image img)
         {
             DrawCursor(img, Point.Empty);
@@ -91,13 +106,11 @@ namespace ShareX.HelpersLib
         {
             if (IsVisible)
             {
-                Point drawPosition = new Point(Position.X - offset.X, Position.Y - offset.Y);
-                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
-
                 using (Graphics g = Graphics.FromImage(img))
-                using (Icon icon = Icon.FromHandle(Handle))
                 {
-                    g.DrawIcon(icon, drawPosition.X, drawPosition.Y);
+                    IntPtr hdcDest = g.GetHdc();
+
+                    DrawCursor(hdcDest, offset);
                 }
             }
         }
@@ -114,7 +127,7 @@ namespace ShareX.HelpersLib
                 Point drawPosition = new Point(Position.X - offset.X, Position.Y - offset.Y);
                 drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
 
-                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, 0, 0, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
+                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
         }
     }
