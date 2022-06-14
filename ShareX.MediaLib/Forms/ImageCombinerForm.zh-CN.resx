@@ -150,4 +150,13 @@
   <data name="lblImageAlignment.Text" xml:space="preserve">
     <value>图像对齐:</value>
   </data>
+  <data name="cbAutoFillBackground.Text" xml:space="preserve">
+    <value>自动填充背景</value>
+  </data>
+  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
+    <value>水平</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>垂直</value>
+  </data>
 </root>

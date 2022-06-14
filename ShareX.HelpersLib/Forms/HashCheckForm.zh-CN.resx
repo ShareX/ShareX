@@ -124,7 +124,7 @@
     <value>浏览...</value>
   </data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>开始</value>
+    <value>检查</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>哈希（Hash）类型：</value>
