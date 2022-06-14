@@ -124,25 +124,22 @@
     <value>绘图</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
-    <value>过滤器</value>
+    <value>滤镜</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
     <value>操作</value>
   </data>
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
-    <value>图像效果 - 宽: {0}, 高: {1}, 渲染时间: {2}ms</value>
+    <value>图像特效 - 宽: {0}, 高: {1}, 渲染时间: {2}ms</value>
   </data>
   <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
-    <value>资源文件夹必须位于 ShareX 图像效果文件夹内。</value>
+    <value>资源文件夹必须位于 ShareX 图像特效文件夹内。</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
     <value>确认</value>
-  </data>
-  <data name="Effect" xml:space="preserve">
-    <value>效果:</value>
   </data>
   <data name="MissingPresetName" xml:space="preserve">
     <value>缺少预设名称</value>
@@ -154,10 +151,10 @@
     <value>预设名称不能为空。</value>
   </data>
   <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
-    <value>同名效果包已存在。
+    <value>同名特效包已存在。
 是否覆盖？</value>
   </data>
   <data name="WouldYouLikeToClearEffects" xml:space="preserve">
-    <value>是否清除效果？</value>
+    <value>是否清除特效？</value>
   </data>
 </root>

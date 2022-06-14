@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Twitter 信息</value>
+    <value>ShareX - Twitter 消息</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>发推文</value>
+    <value>发推</value>
   </data>
 </root>
