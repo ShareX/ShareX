@@ -35,7 +35,7 @@ namespace ShareX.HelpersLib
         public Point Position { get; private set; }
         public Point Hotspot { get; private set; }
         public Point DrawPosition => new Point(Position.X - Hotspot.X, Position.Y - Hotspot.Y);
-        public Size Size { get; private set; }
+        public Size BaseSize { get; private set; }
         public bool IsVisible { get; private set; }
 
         public CursorData()
@@ -56,7 +56,7 @@ namespace ShareX.HelpersLib
             {
                 Handle = cursorInfo.hCursor;
                 Position = cursorInfo.ptScreenPos;
-                Size = GetCursorSize();
+                BaseSize = GetCursorBaseSize();
                 IsVisible = cursorInfo.flags == NativeConstants.CURSOR_SHOWING;
 
                 if (IsVisible)
@@ -67,13 +67,13 @@ namespace ShareX.HelpersLib
                     {
                         if (NativeMethods.GetIconInfo(iconHandle, out IconInfo iconInfo))
                         {
-                            if (Size.IsEmpty)
+                            if (BaseSize.IsEmpty)
                             {
                                 Hotspot = new Point(iconInfo.xHotspot, iconInfo.yHotspot);
                             }
                             else
                             {
-                                float multiplier = Size.Width / 32f;
+                                float multiplier = BaseSize.Width / 32f;
                                 Hotspot = new Point((int)Math.Round(iconInfo.xHotspot * multiplier), (int)Math.Round(iconInfo.yHotspot * multiplier));
                             }
 
@@ -94,7 +94,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private Size GetCursorSize()
+        public static Size GetCursorBaseSize()
         {
             try
             {
@@ -119,7 +119,7 @@ namespace ShareX.HelpersLib
                 Point drawPosition = new Point(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y);
                 drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
 
-                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
+                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, BaseSize.Width, BaseSize.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
         }
 
@@ -147,13 +147,13 @@ namespace ShareX.HelpersLib
         {
             Size cursorSize;
 
-            if (Size.IsEmpty)
+            if (BaseSize.IsEmpty)
             {
                 cursorSize = new Size(32, 32);
             }
             else
             {
-                cursorSize = Size;
+                cursorSize = BaseSize;
             }
 
             Bitmap bmp = new Bitmap(cursorSize.Width, cursorSize.Height);
