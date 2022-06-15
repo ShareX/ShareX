@@ -173,7 +173,7 @@
     <value>Нажмите кнопку обновить</value>
   </data>
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>Вход успешен.</value>
+    <value>Успешный вход.</value>
   </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
     <value>Вход не удался.</value>
@@ -185,7 +185,7 @@
     <value>Запрос не найден</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Путь к материнскому альбому, например:</value>
+    <value>Путь к родительскому альбому, например:</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Необходима аутентификация.</value>
