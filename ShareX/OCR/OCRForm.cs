@@ -128,11 +128,18 @@ namespace ShareX
                 txtResult.Text = "";
                 UpdateControls();
 
-                Result = await OCRHelper.OCR(bmp, Options.Language, Options.ScaleFactor);
-
-                if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
+                try
                 {
-                    ClipboardHelpers.CopyText(Result);
+                    Result = await OCRHelper.OCR(bmp, Options.Language, Options.ScaleFactor);
+
+                    if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
+                    {
+                        ClipboardHelpers.CopyText(Result);
+                    }
+                }
+                catch (Exception e)
+                {
+                    e.ShowError(false);
                 }
 
                 if (!IsDisposed)
