@@ -117,25 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplicați</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
+    <value>Filtre</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Resetați tastele rapide implicite...</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Drawings" xml:space="preserve">
+    <value>Deseme</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Editați...</value>
+  <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
+    <value>Efecte imagine - Lățime: {0}, Înălțime {1}, Timp de randare: {2} ms</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Eliminați</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
+    <value>Manipulări</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Adăugați...</value>
+  <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
+    <value>Anulare</value>
   </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Tastele rapide sunt dezactivate. Puteți face click aici pentru a le activa.</value>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Adjustments" xml:space="preserve">
+    <value>Ajustări</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Setări de taste rapide</value>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>Folderul de resurse trebuie să fie în interiorul folderului de efecte de imagine ShareX.</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>Calea folderului de resurse invalidă</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>Pachet cu acest nume deja există.
+Doriți să îl suprascrieți?</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>Doriți să eliminați efectele?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmare</value>
+  </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>Numele presetării nu poate fi gol.</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>Lipsă nume preset</value>
   </data>
 </root>

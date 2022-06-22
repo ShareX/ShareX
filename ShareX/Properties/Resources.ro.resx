@@ -427,7 +427,7 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
     <value>Activați tastele rapide</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Puteți adăuga desfășurări din setările tastelor de acces rapid...</value>
+    <value>Puteți adăuga desfășurări din setările tastelor rapide...</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Jurnalul de depanării poate conține informații cu caracter personal. Sunteți sigur că doriți să continuați?</value>
@@ -526,7 +526,7 @@ Doriți să reporniți ShareX?</value>
     <value>După încărcare: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>Încărcător de fișiere: {0}</value>
+    <value>Destinație de fișiere: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Destinație imagini: {0}</value>

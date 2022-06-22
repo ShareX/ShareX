@@ -71,6 +71,8 @@ namespace ShareX
         Portuguese,
         [Description("Português-Brasil (Portuguese-Brazil)")]
         PortugueseBrazil,
+        [Description("Română (România)")]
+        Romanian,
         [Description("Русский (Russian)")]
         Russian,
         [Description("简体中文 (Simplified Chinese)")]

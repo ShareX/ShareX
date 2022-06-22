@@ -117,25 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplicați</value>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>Salvați imaginea...</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Resetați tastele rapide implicite...</value>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>Din fișier...</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Editați...</value>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Din clipboard</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Eliminați</value>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Nume preset:</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Adăugați...</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Închidere</value>
   </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Tastele rapide sunt dezactivate. Puteți face click aici pentru a le activa.</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Setări de taste rapide</value>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>Încărcați imaginea</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Presetări:</value>
+  </data>
+  <data name="btnPackager.Text" xml:space="preserve">
+    <value>Împachetator...</value>
+  </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>Nou</value>
+  </data>
+  <data name="btnPresetRemove.ToolTip" xml:space="preserve">
+    <value>Eliminare</value>
+  </data>
+  <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
+    <value>Duplicare</value>
+  </data>
+  <data name="lblEffects.Text" xml:space="preserve">
+    <value>Efecte:</value>
+  </data>
+  <data name="btnEffectAdd.ToolTip" xml:space="preserve">
+    <value>Adăugare</value>
+  </data>
+  <data name="btnEffectRemove.ToolTip" xml:space="preserve">
+    <value>Eliminare</value>
+  </data>
+  <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
+    <value>Duplicare</value>
+  </data>
+  <data name="btnEffectClear.ToolTip" xml:space="preserve">
+    <value>Eliminare...</value>
+  </data>
+  <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
+    <value>Reîmprospătare</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Efecte imagine...</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>Nume efect:</value>
+  </data>
+  <data name="mbLoadImage.Text" xml:space="preserve">
+    <value>Încărcați imaginea</value>
   </data>
 </root>

@@ -342,7 +342,7 @@
   <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
     <value>從螢幕插入圖片...</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+  <data name="" xml:space="preserve">
     <value>內插模式：</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">

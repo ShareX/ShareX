@@ -364,7 +364,7 @@
   <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
     <value>이미지 파일 열기...</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+  <data name="" xml:space="preserve">
     <value>보간 모드</value>
   </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">

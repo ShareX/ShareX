@@ -19,7 +19,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -57,6 +57,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interpolation mode:.
+        /// </summary>
+        internal static string _ {
+            get {
+                return ResourceManager.GetString("", resourceCulture);
             }
         }
         
@@ -1902,15 +1911,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_InsertImageFromScreen {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFromScreen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Interpolation mode:.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_InterpolationMode {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_InterpolationMode", resourceCulture);
             }
         }
         

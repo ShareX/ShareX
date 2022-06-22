@@ -117,25 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplicați</value>
+  <data name="btnCenter.Text" xml:space="preserve">
+    <value>Inserați imaginea în centru</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Resetați tastele rapide implicite...</value>
+  <data name="btnCanvasExpandDown.Text" xml:space="preserve">
+    <value>Inserați imaginea dedesubt (se extinde pânza)</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Editați...</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Eliminați</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Adăugați...</value>
-  </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Tastele rapide sunt dezactivate. Puteți face click aici pentru a le activa.</value>
+  <data name="btnCanvasExpandRight.Text" xml:space="preserve">
+    <value>Inserați imaginea în partea dreaptă (se extinde pânza)</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Setări de taste rapide</value>
+    <value>ShareX - Inserare imagine</value>
   </data>
 </root>

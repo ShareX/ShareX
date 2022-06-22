@@ -117,25 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplicați</value>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Lățime:</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Resetați tastele rapide implicite...</value>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Înălțime:</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Editați...</value>
+  <data name="cbAspectRatio.Text" xml:space="preserve">
+    <value>Mențineți raportul de aspect</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Eliminați</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Anulare</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Adăugați...</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Tastele rapide sunt dezactivate. Puteți face click aici pentru a le activa.</value>
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>pixeli</value>
+  </data>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>pixeli</value>
+  </data>
+  <data name="lblResampling.Text" xml:space="preserve">
+    <value>Reeșantionare:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Setări de taste rapide</value>
+    <value>ShareX - Dimensiune imagine</value>
   </data>
 </root>

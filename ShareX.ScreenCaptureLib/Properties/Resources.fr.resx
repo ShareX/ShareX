@@ -363,7 +363,7 @@
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>Valeur du premier incrément :</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+  <data name="" xml:space="preserve">
     <value>Mode d'interpolation :</value>
   </data>
   <data name="MagnifyStrength" xml:space="preserve">

@@ -117,25 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplicați</value>
-  </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Resetați tastele rapide implicite...</value>
-  </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Editați...</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Adăugare...</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Eliminați</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Adăugați...</value>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Lățime:</value>
   </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Tastele rapide sunt dezactivate. Puteți face click aici pentru a le activa.</value>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Înălțime:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Setări de taste rapide</value>
+  <data name="lblOutputFilename.Text" xml:space="preserve">
+    <value>Nume fișier de ieșire:</value>
+  </data>
+  <data name="btnGenerate.Text" xml:space="preserve">
+    <value>Generează miniaturi</value>
+  </data>
+  <data name="lblOutputFolder.Text" xml:space="preserve">
+    <value>Folder ieșire:</value>
+  </data>
+  <data name="lblQuality.Text" xml:space="preserve">
+    <value>Calitate:</value>
   </data>
 </root>

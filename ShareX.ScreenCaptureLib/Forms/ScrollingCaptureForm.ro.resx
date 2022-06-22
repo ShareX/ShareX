@@ -117,25 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplicați</value>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>În timpul capturării</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Resetați tastele rapide implicite...</value>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>Selectați fereastră sau control pentru a derula...</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Editați...</value>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Începeți captura în derulare</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Eliminați</value>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Întârziere de derulare:</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Adăugați...</value>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(Opțional) Selectați regiunea particularizată în fereastră...</value>
   </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Tastele rapide sunt dezactivate. Puteți face click aici pentru a le activa.</value>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>După captură</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Înainte de captură</value>
+  </data>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>Jos:</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Capturați</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>Combinați ajustările</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>Detectați sfârșitul derulării</value>
+  </data>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>Numărul maxim de derulări:</value>
+  </data>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>Se aproximează combinațiile de ajustări și se combină</value>
+  </data>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>Se aproximează valorile marginilor pentru a tăia</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>Se aproximează decalajele și se combină imaginile</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Număr imagine(i):</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>Imagini</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>Ultimul vertical:</value>
+  </data>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>Stânga:</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Vă rugăm să rețineți că, deși ShareX depune toate eforturile pentru a realiza o captură exactă a derulării, nu este posibil ca fiecare conținut derulant să fie capturat corect. Principalele motive care pot cauza probleme în timpul combinării sunt mișcările de pe ecran în timpul capturării, de exemplu, dacă o pagină web are GIF-uri animate sau dacă există obiecte statice pe ecran în timpul derulării, de exemplu, un meniu static sau butoane statice pe pagina web care nu își schimbă poziția, dar restul paginii web derulează.</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>Se procesează...</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>Eliminați imaginile duble</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Eliminați utlimul:</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>Resetați opțiunile de ieșire</value>
+  </data>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>Dreapta:</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Metodă de derulare:</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>Metoda de derulare sus înainte de captură:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Setări de taste rapide</value>
+    <value>ShareX - Captură în derulare</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Întărziere la începere:</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Începeți să captura derulantă imediat după selectarea regiunii de captură</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>Începeți să selectați regiunea de capturare înainte de a deschide această fereastră</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>Sus:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>Tăiați marginile</value>
+  </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>Încărcare/salvare în funcție de setările de după capturare</value>
+  </data>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>Încărcare/salvare în funcție de setările de după capturare</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Vertical:</value>
   </data>
 </root>

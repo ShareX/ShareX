@@ -217,7 +217,7 @@
     <value>Încărcați</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
-    <value>Comutați bara de instrumente de acțiuni</value>
+    <value>Comutați bara de acțiuni</value>
   </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Efectuați acțiuni</value>
@@ -334,7 +334,7 @@
     <value>32 de biți</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
-    <value>Pornirea/oprirea înregistrării ecranului (GIF) utilizând regiunea activă a ferestrei</value>
+    <value>Porniți/opriți înregistrarea ecranului (GIF) utilizând regiunea activă a ferestrei</value>
   </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Capturați întregul ecran</value>
@@ -370,7 +370,7 @@
     <value>Schimbați tipul de instrument</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Regiunea de capturare</value>
+    <value>Regiune de captură</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Recunoaștere text (OCR)</value>
@@ -386,7 +386,7 @@ Doriți să o descărcați?</value>
     <value>Descărcare eșuată:</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Text (Schiță) (O)</value>
+    <value>Text (Doar contur) (O)</value>
   </data>
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
     <value>Capturarea monitorului activ</value>
@@ -428,7 +428,7 @@ Doriți să o descărcați?</value>
     <value>Verificare hash</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
-    <value>Pornirea/oprirea înregistrării ecranului utilizând regiunea activă a ferestrei</value>
+    <value>Porniți/opriți înregistrarea ecranului utilizând regiunea activă a ferestrei</value>
   </data>
   <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
     <value>Instrumente</value>
@@ -536,7 +536,7 @@ Doriți să o descărcați?</value>
     <value>Instrumente</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
-    <value>Pornirea/oprirea înregistrării ecranului (GIF)</value>
+    <value>Porniți/opriți înregistrarea ecranului (GIF)</value>
   </data>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>Nelistat</value>
@@ -890,7 +890,7 @@ Doriți să o descărcați și să o instalați?</value>
     <value>Afișați fișierul în explorer</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Încărcător de imagini personalizat</value>
+    <value>Destinație de imagini personalizată</value>
   </data>
   <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
     <value>Captură de ecran</value>
@@ -902,7 +902,7 @@ Doriți să o descărcați și să o instalați?</value>
     <value>Nu</value>
   </data>
   <data name="HotkeyType_ActiveWindow" xml:space="preserve">
-    <value>Captură fereastră activă</value>
+    <value>Capturați fereastra activă</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Etapă (I)</value>
@@ -941,7 +941,7 @@ Doriți să o descărcați și să o instalați?</value>
     <value>Căutați executabilul...</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
-    <value>Încărcător de fișiere</value>
+    <value>Destinație de fișiere</value>
   </data>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Dimensiune automată</value>
@@ -974,7 +974,7 @@ Doriți să o descărcați și să o instalați?</value>
     <value>Stare: {0}</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
-    <value>Pornirea/oprirea înregistrării ecranului (GIF) utilizând ultima regiune</value>
+    <value>Porniți/opriți înregistrarea ecranului (GIF) utilizând ultima regiune</value>
   </data>
   <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
     <value>Pătrat mic</value>
@@ -1109,7 +1109,7 @@ Doriți să o descărcați și să o instalați?</value>
     <value>1 lună</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Text (fundal) (T)</value>
+    <value>Text (Cu fundal) (T)</value>
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Caractere alfanumerice aleatorii și neambigue (se repetă folosind {n})</value>

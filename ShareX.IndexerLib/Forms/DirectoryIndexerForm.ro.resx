@@ -117,25 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplicați</value>
+  <data name="btnBrowseFolder.Text" xml:space="preserve">
+    <value>Răsfoiți folder...</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Resetați tastele rapide implicite...</value>
+  <data name="btnIndexFolder.Text" xml:space="preserve">
+    <value>Indexați folderul selectat</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Editați...</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Încărcați și închideți această fereastră</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Eliminați</value>
+  <data name="tpPreview.Text" xml:space="preserve">
+    <value>Previzualizare</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Adăugați...</value>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Setări</value>
   </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Tastele rapide sunt dezactivate. Puteți face click aici pentru a le activa.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Setări de taste rapide</value>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>Salvați ca și închideți această fereastră...</value>
   </data>
 </root>

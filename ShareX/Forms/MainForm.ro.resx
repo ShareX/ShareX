@@ -526,7 +526,7 @@
     <value>Fără întârziere</value>
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>Imagine OCR...</value>
+    <value>Procesare OCR...</value>
   </data>
   <data name="tsmiOCR.Text" xml:space="preserve">
     <value>OCR...</value>
@@ -697,7 +697,7 @@
     <value>URL miniatură</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
-    <value>Comutați bara de instrumente pentru acțiuni</value>
+    <value>Comutați bara de acțiuni</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>Instrumente</value>
