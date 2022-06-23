@@ -268,7 +268,7 @@
   <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
     <value>Rotate 90° counter clockwise</value>
   </data>
-  <data name="" xml:space="preserve">
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Interpolation mode:</value>
   </data>
   <data name="layers_stack_arrange_back" type="System.Resources.ResXFileRef, System.Windows.Forms">

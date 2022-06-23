@@ -306,7 +306,7 @@
   <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
     <value>Sisipkan gambar dari layar...</value>
   </data>
-  <data name="" xml:space="preserve">
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Mode interpolasi</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">

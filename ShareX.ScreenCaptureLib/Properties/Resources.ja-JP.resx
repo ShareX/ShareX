@@ -183,7 +183,7 @@
   <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
     <value>左に90° 回転</value>
   </data>
-  <data name="" xml:space="preserve">
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>補間方式</value>
   </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
