@@ -445,7 +445,7 @@ Resim düzenleyiciyi kapatmak ister misiniz?</value>
   <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
     <value>Araç seçenekleri</value>
   </data>
-  <data name="" xml:space="preserve">
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Aradeğerleme modu:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
