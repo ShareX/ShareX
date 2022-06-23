@@ -363,7 +363,7 @@
   <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
     <value>Размер шрифта:</value>
   </data>
-  <data name="" xml:space="preserve">
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Режим интерполяции:</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
