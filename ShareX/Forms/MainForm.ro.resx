@@ -601,10 +601,10 @@
     <value>Întârziere captură</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
-    <value>Folderul de capturi de ecran...</value>
+    <value>Folderul de capturi...</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
-    <value>Folderul de capturi de ecran...</value>
+    <value>Folderul de capturi...</value>
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Captură în derulare...</value>
