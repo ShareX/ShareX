@@ -1699,6 +1699,8 @@
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OCR\OCRForm.ro.resx">
+            <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OCR\OCRForm.zh-CN.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1706,6 +1708,8 @@
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OCR\ServiceLinksForm.ro.resx">
+            <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OCR\ServiceLinksForm.zh-CN.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
