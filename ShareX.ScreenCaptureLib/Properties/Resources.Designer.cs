@@ -69,6 +69,17 @@ namespace ShareX.ScreenCaptureLib.Properties {
             }
         }
         
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interpolation mode:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_InterpolationMode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InterpolationMode", resourceCulture);
+            }
+        }
+        
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
