@@ -130,7 +130,7 @@
     <value>设置</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 目录索引</value>
+    <value>ShareX - 文件夹索引器</value>
   </data>
   <data name="btnUpload.Text" xml:space="preserve">
     <value>上传并关闭此窗口</value>

@@ -187,7 +187,7 @@ namespace ShareX
                 int ignoreProcess = Process.GetCurrentProcess().Id;
                 List<string> conflictProcessNames = Process.GetProcesses().Where(x => x.Id != ignoreProcess && !string.IsNullOrEmpty(x.ProcessName) &&
                     processNames.Any(x2 => x.ProcessName.Equals(x2, StringComparison.InvariantCultureIgnoreCase))).
-                    Select(x => string.Format("{0} ({1})", x.MainModule.FileVersionInfo.ProductName, x.MainModule.ModuleName)).ToList();
+                    Select(x => string.Format("{0} ({1})", x.MainModule.FileVersionInfo.ProductName, x.MainModule.ModuleName)).Distinct().ToList();
 
                 if (conflictProcessNames != null && conflictProcessNames.Count > 0)
                 {

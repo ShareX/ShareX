@@ -1020,6 +1020,9 @@
     <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.ru.resx">
       <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.zh-CN.resx">
+      <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -1108,7 +1111,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>37.0.2</Version>
+      <Version>37.0.3</Version>
     </PackageReference>
     <PackageReference Include="MegaApiClient">
       <Version>1.10.2</Version>

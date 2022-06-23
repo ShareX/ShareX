@@ -118,24 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 图像效果包工具</value>
-  </data>
-  <data name="btnAssetsFolderPathBrowse.Text" xml:space="preserve">
-    <value>...</value>
+    <value>ShareX - 图像特效包</value>
   </data>
   <data name="btnOpenImageEffectsFolder.Text" xml:space="preserve">
-    <value>打开图像效果文件夹...</value>
+    <value>打开图像特效文件夹...</value>
   </data>
   <data name="btnPackage.Text" xml:space="preserve">
-    <value>效果打包</value>
-  </data>
-  <data name="btnPackageFilePathBrowse.Text" xml:space="preserve">
-    <value>...</value>
+    <value>特效包</value>
   </data>
   <data name="lblAssetsFolderPath.Text" xml:space="preserve">
     <value>资源文件夹路径:</value>
   </data>
   <data name="lblPackageFilePath.Text" xml:space="preserve">
-    <value>效果包文件路径:</value>
+    <value>特效包文件路径:</value>
   </data>
 </root>
