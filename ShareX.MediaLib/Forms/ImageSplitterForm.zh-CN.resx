@@ -123,12 +123,6 @@
   <data name="btnCopyChatEmoji.Text" xml:space="preserve">
     <value>复制聊天表情符语法</value>
   </data>
-  <data name="btnImageFilePathBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="btnOutputFolderBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="btnSplitImage.Text" xml:space="preserve">
     <value>拆分图像</value>
   </data>

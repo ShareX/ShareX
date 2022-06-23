@@ -123,7 +123,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 视频缩略图</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
 </root>

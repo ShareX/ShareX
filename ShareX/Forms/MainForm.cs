@@ -1197,16 +1197,15 @@ namespace ShareX
                         ToolStripMenuItem tsmi = new ToolStripMenuItem(title);
                         tsmi.Tag = window;
                         tsmi.Click += handlerWindow;
+                        items.Add(tsmi);
 
-                        using (Icon icon = window.Icon)
+                        using (Icon icon = await Task.Run(() => window.Icon))
                         {
                             if (icon != null && icon.Width > 0 && icon.Height > 0)
                             {
                                 tsmi.Image = icon.ToBitmap();
                             }
                         }
-
-                        items.Add(tsmi);
                     }
                     catch (Exception e)
                     {

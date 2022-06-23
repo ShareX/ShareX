@@ -157,13 +157,13 @@
     <value>动作设置...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>截图后的动作</value>
+    <value>截图后的任务</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>上传后的动作</value>
+    <value>上传后的任务</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>屏幕截图</value>
+    <value>截图</value>
   </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>调试</value>
@@ -181,7 +181,7 @@
     <value>快捷动作</value>
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
-    <value>自动捕捉...</value>
+    <value>自动截图...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>清除列表</value>
@@ -268,7 +268,7 @@
     <value>哈希值（Hash）检查...</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
-    <value>图像效果...</value>
+    <value>图像特效...</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>图片上传</value>
@@ -373,10 +373,10 @@
     <value>文字上传</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
-    <value>截图后</value>
+    <value>截图后的任务</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
-    <value>上传后</value>
+    <value>上传后的任务</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
     <value>应用程序设置...</value>
@@ -415,7 +415,7 @@
     <value>快捷键设置...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
-    <value>图像效果...</value>
+    <value>图像特效...</value>
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>历史图片...</value>
@@ -567,14 +567,8 @@
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>最近的链接</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>文字识别 (OCR)...</value>
-  </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>下载</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>文字识别 (OCR)...</value>
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
@@ -730,13 +724,13 @@
     <value>自定上传器设置...</value>
   </data>
   <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter</value>
+    <value>Twitter...</value>
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
-    <value>Discord</value>
+    <value>Discord...</value>
   </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
-    <value>添加图像效果...</value>
+    <value>添加图像特效...</value>
   </data>
   <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
     <value>剪贴板查看器...</value>
@@ -751,12 +745,48 @@
     <value>图像分割器...</value>
   </data>
   <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
-    <value>用管理员权限重启 ShareX...</value>
+    <value>用管理员权限重启 ShareX</value>
   </data>
   <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
     <value>视频转换器...</value>
   </data>
   <data name="tsmiVideoConverter.Text" xml:space="preserve">
     <value>视频转换器...</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>必应可视化搜索 (OCR)...</value>
+  </data>
+  <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
+    <value>无边框窗口...</value>
+  </data>
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
+    <value>Google 图像搜索...</value>
+  </data>
+  <data name="tsmiImageViewer.Text" xml:space="preserve">
+    <value>图像查看器...</value>
+  </data>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>探查窗口...</value>
+  </data>
+  <data name="tsmiOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
+    <value>无边框窗口...</value>
+  </data>
+  <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
+    <value>图像查看器...</value>
+  </data>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>探查窗口...</value>
+  </data>
+  <data name="tsmiTrayOCR.Text" xml:space="preserve">
+    <value>文字识别 (OCR)...</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>水平叠放</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>垂直叠放</value>
   </data>
 </root>

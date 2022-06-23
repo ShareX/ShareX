@@ -1750,10 +1750,10 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void AddCursor(IntPtr cursorHandle, Point position)
+        public void AddCursor(Bitmap bmpCursor, Point position)
         {
             CursorDrawingShape shape = (CursorDrawingShape)CreateShape(ShapeType.DrawingCursor);
-            shape.UpdateCursor(cursorHandle, position);
+            shape.UpdateCursor(bmpCursor, position);
             Shapes.Add(shape);
         }
 
