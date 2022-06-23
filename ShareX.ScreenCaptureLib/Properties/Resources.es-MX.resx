@@ -315,7 +315,7 @@
   <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
     <value>Insertar imagen desde pantalla...</value>
   </data>
-  <data name="" xml:space="preserve">
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Modo de interpolación</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
