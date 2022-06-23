@@ -259,7 +259,7 @@
     <value>Numărul de fișiere care trebuie păstrate:</value>
   </data>
   <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
-    <value>Curățați automat fișierele de backup vechi</value>
+    <value>Curățarea automată a fișierelor de backup vechi</value>
   </data>
   <data name="cbExportHistory.Text" xml:space="preserve">
     <value>Istoric</value>
