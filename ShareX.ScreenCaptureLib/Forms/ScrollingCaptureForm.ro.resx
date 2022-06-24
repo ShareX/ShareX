@@ -121,7 +121,7 @@
     <value>În timpul capturării</value>
   </data>
   <data name="btnSelectHandle.Text" xml:space="preserve">
-    <value>Selectați fereastră sau control pentru a derula...</value>
+    <value>Selectați fereastra sau control pentru a derula...</value>
   </data>
   <data name="btnCapture.Text" xml:space="preserve">
     <value>Începeți captura în derulare</value>
@@ -208,7 +208,7 @@
     <value>Întărziere la începere:</value>
   </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
-    <value>Începeți să captura derulantă imediat după selectarea regiunii de captură</value>
+    <value>Începeți captura derulantă imediat după selectarea regiunii de captură</value>
   </data>
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>Începeți să selectați regiunea de capturare înainte de a deschide această fereastră</value>
