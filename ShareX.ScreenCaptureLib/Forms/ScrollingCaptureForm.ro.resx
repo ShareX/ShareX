@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>În timpul capturării</value>
+  </data>
+  <data name="btnSelectHandle.Text" xml:space="preserve">
+    <value>Selectați fereastra sau control pentru a derula...</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Începeți captura în derulare</value>
+  </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Întârziere de derulare:</value>
+  </data>
+  <data name="btnSelectRectangle.Text" xml:space="preserve">
+    <value>(Opțional) Selectați regiunea particularizată în fereastră...</value>
+  </data>
+  <data name="gbAfterCapture.Text" xml:space="preserve">
+    <value>După captură</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>Înainte de captură</value>
+  </data>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>Jos:</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Capturați</value>
+  </data>
+  <data name="gbCombineAdjustments.Text" xml:space="preserve">
+    <value>Combinați ajustările</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>Detectați sfârșitul derulării</value>
+  </data>
+  <data name="lblMaximumScrollCount.Text" xml:space="preserve">
+    <value>Numărul maxim de derulări:</value>
+  </data>
+  <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
+    <value>Se aproximează combinațiile de ajustări și se combină</value>
+  </data>
+  <data name="btnGuessEdges.Text" xml:space="preserve">
+    <value>Se aproximează valorile marginilor pentru a tăia</value>
+  </data>
+  <data name="cbAutoCombine.Text" xml:space="preserve">
+    <value>Se aproximează decalajele și se combină imaginile</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>Număr imagine(i):</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>Imagini</value>
+  </data>
+  <data name="lblCombineLastVertical.Text" xml:space="preserve">
+    <value>Ultimul vertical:</value>
+  </data>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>Stânga:</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Vă rugăm să rețineți că, deși ShareX depune toate eforturile pentru a realiza o captură exactă a derulării, nu este posibil ca fiecare conținut derulant să fie capturat corect. Principalele motive care pot cauza probleme în timpul combinării sunt mișcările de pe ecran în timpul capturării, de exemplu, dacă o pagină web are GIF-uri animate sau dacă există obiecte statice pe ecran în timpul derulării, de exemplu, un meniu static sau butoane statice pe pagina web care nu își schimbă poziția, dar restul paginii web derulează.</value>
+  </data>
+  <data name="lblProcessing.Text" xml:space="preserve">
+    <value>Se procesează...</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>Eliminați imaginile duble</value>
+  </data>
+  <data name="lblIgnoreLast.Text" xml:space="preserve">
+    <value>Eliminați utlimul:</value>
+  </data>
+  <data name="btnResetCombine.Text" xml:space="preserve">
+    <value>Resetați opțiunile de ieșire</value>
+  </data>
+  <data name="lblTrimRight.Text" xml:space="preserve">
+    <value>Dreapta:</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Metodă de derulare:</value>
+  </data>
+  <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
+    <value>Metoda de derulare sus înainte de captură:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Captură în derulare</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Întărziere la începere:</value>
+  </data>
+  <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
+    <value>Începeți captura derulantă imediat după selectarea regiunii de captură</value>
+  </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>Începeți să selectați regiunea de capturare înainte de a deschide această fereastră</value>
+  </data>
+  <data name="lblTrimTop.Text" xml:space="preserve">
+    <value>Sus:</value>
+  </data>
+  <data name="gbTrimEdges.Text" xml:space="preserve">
+    <value>Tăiați marginile</value>
+  </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>Încărcare/salvare în funcție de setările de după capturare</value>
+  </data>
+  <data name="btnStartTask.Text" xml:space="preserve">
+    <value>Încărcare/salvare în funcție de setările de după capturare</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Vertical:</value>
+  </data>
+</root>

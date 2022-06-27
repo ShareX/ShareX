@@ -81,7 +81,7 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error occured while reading history file:.
+        ///   Looks up a localized string similar to Error occurred while reading history file:.
         /// </summary>
         internal static string ErrorOccuredWhileReadingHistoryFile {
             get {
