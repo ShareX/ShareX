@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShareX.Properties {
+namespace ShareX.ScreenCaptureLib.Properties {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace ShareX.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace ShareX.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ShareX.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ShareX.ScreenCaptureLib.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace ShareX.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,337 +61,31 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Changelog.
+        ///   Looks up a localized string similar to Interpolation mode:.
         /// </summary>
-        public static string AboutForm_AboutForm_Changelog {
+        internal static string _ {
             get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Changelog", resourceCulture);
+                return ResourceManager.GetString("", resourceCulture);
             }
         }
         
+        
         /// <summary>
-        ///   Looks up a localized string similar to Credits.
+        ///   Looks up a localized string similar to Interpolation mode:.
         /// </summary>
-        public static string AboutForm_AboutForm_Credits {
+        internal static string ShapeManager_CreateToolbar_InterpolationMode {
             get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Credits", resourceCulture);
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InterpolationMode", resourceCulture);
             }
         }
         
-        /// <summary>
-        ///   Looks up a localized string similar to German.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_de {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_de", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spanish.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_es {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_es", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mexican Spanish.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_es_MX {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_es_MX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Persian.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_fa_IR {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_fa_IR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to French.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_fr {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_fr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hungarian.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_hu {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_hu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Indonesian.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_id_ID {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_id_ID", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Italian.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_it_IT {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_it_IT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Japanese.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_ja_JP {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_ja_JP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Korean.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_ko_KR {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_ko_KR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dutch.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_nl_NL {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_nl_NL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Portuguese (Brazil).
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_pt_BR {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_pt_BR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Portuguese.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_pt_PT {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_pt_PT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Russian.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_ru {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_ru", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Turkish.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_tr {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_tr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ukrainian.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_uk {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_uk", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vietnamese.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_vi_VN {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_vi_VN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Simplified Chinese.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_zh_CH {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_zh_CH", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Traditional Chinese.
-        /// </summary>
-        public static string AboutForm_AboutForm_Language_zh_TW {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_zh_TW", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Links.
-        /// </summary>
-        public static string AboutForm_AboutForm_Links {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Links", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Privacy policy.
-        /// </summary>
-        public static string AboutForm_AboutForm_Privacy_policy {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Privacy_policy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Project page.
-        /// </summary>
-        public static string AboutForm_AboutForm_Project_page {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Project_page", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Team.
-        /// </summary>
-        public static string AboutForm_AboutForm_Team {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Team", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Translators.
-        /// </summary>
-        public static string AboutForm_AboutForm_Translators {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Translators", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Website.
-        /// </summary>
-        public static string AboutForm_AboutForm_Website {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Website", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File path can&apos;t be empty..
-        /// </summary>
-        public static string ActionsForm_btnOK_Click_File_path_can_t_be_empty_ {
-            get {
-                return ResourceManager.GetString("ActionsForm_btnOK_Click_File_path_can_t_be_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name can&apos;t be empty..
-        /// </summary>
-        public static string ActionsForm_btnOK_Click_Name_can_t_be_empty_ {
-            get {
-                return ResourceManager.GetString("ActionsForm_btnOK_Click_Name_can_t_be_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lock position.
-        /// </summary>
-        public static string ActionsToolbar__LockPosition {
-            get {
-                return ResourceManager.GetString("ActionsToolbar__LockPosition", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Close.
-        /// </summary>
-        public static string ActionsToolbar_Close {
-            get {
-                return ResourceManager.GetString("ActionsToolbar_Close", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit....
-        /// </summary>
-        public static string ActionsToolbar_Edit {
-            get {
-                return ResourceManager.GetString("ActionsToolbar_Edit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open at ShareX startup.
-        /// </summary>
-        public static string ActionsToolbar_OpenAtShareXStartup {
-            get {
-                return ResourceManager.GetString("ActionsToolbar_OpenAtShareXStartup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stay top most.
-        /// </summary>
-        public static string ActionsToolbar_StayTopMost {
-            get {
-                return ResourceManager.GetString("ActionsToolbar_StayTopMost", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hold left down to drag
-        ///Right click to open menu
-        ///Middle click to close.
-        /// </summary>
-        public static string ActionsToolbar_Tip {
-            get {
-                return ResourceManager.GetString("ActionsToolbar_Tip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Separator.
-        /// </summary>
-        public static string ActionsToolbarEditForm_Separator {
-            get {
-                return ResourceManager.GetString("ActionsToolbarEditForm_Separator", resourceCulture);
-            }
-        }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap application__arrow {
+        internal static System.Drawing.Bitmap arrow_circle {
             get {
-                object obj = ResourceManager.GetObject("application__arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_circle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -399,9 +93,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap application_block {
+        internal static System.Drawing.Bitmap arrow_circle_135_left {
             get {
-                object obj = ResourceManager.GetObject("application_block", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_circle_135_left", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -409,9 +103,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap application_blog {
+        internal static System.Drawing.Bitmap arrow_circle_225_left {
             get {
-                object obj = ResourceManager.GetObject("application_blog", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_circle_225_left", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -419,9 +113,56 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap application_blue {
+        internal static System.Drawing.Bitmap arrow_circle_double {
             get {
-                object obj = ResourceManager.GetObject("application_blue", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_circle_double", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto copy image to clipboard.
+        /// </summary>
+        internal static string AutoCopyImageToClipboard {
+            get {
+                return ResourceManager.GetString("AutoCopyImageToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap balloon_box_left {
+            get {
+                object obj = ResourceManager.GetObject("balloon_box_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Region capture.
+        /// </summary>
+        internal static string BaseRegionForm_InitializeComponent_Region_capture {
+            get {
+                return ResourceManager.GetString("BaseRegionForm_InitializeComponent_Region_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blur.
+        /// </summary>
+        internal static string Blur {
+            get {
+                return ResourceManager.GetString("Blur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camcorder__pencil {
+            get {
+                object obj = ResourceManager.GetObject("camcorder__pencil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -429,416 +170,7 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap application_browser {
-            get {
-                object obj = ResourceManager.GetObject("application_browser", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_home {
-            get {
-                object obj = ResourceManager.GetObject("application_home", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_icon_large {
-            get {
-                object obj = ResourceManager.GetObject("application_icon_large", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_list {
-            get {
-                object obj = ResourceManager.GetObject("application_list", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_monitor {
-            get {
-                object obj = ResourceManager.GetObject("application_monitor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_resize_full {
-            get {
-                object obj = ResourceManager.GetObject("application-resize-full", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_search_result {
-            get {
-                object obj = ResourceManager.GetObject("application-search-result", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_task {
-            get {
-                object obj = ResourceManager.GetObject("application_task", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_terminal {
-            get {
-                object obj = ResourceManager.GetObject("application_terminal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_text_image {
-            get {
-                object obj = ResourceManager.GetObject("application_text_image", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_tile_horizontal {
-            get {
-                object obj = ResourceManager.GetObject("application-tile-horizontal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap application_tile_vertical {
-            get {
-                object obj = ResourceManager.GetObject("application-tile-vertical", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Choose screenshots folder path.
-        /// </summary>
-        public static string ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_f" +
-                        "older_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Choose ShareX personal folder path.
-        /// </summary>
-        public static string ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_" +
-                        "folder_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dev builds can be unstable and must be used for testing purposes only. Do you want to install it?.
-        /// </summary>
-        public static string ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Would you like to reset ShareX settings?.
-        /// </summary>
-        public static string ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ShareX needs to be restarted for the language changes to apply.
-        ///
-        ///Would you like to restart ShareX?.
-        /// </summary>
-        public static string ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Startup has been disabled by your organization.
-        /// </summary>
-        public static string ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Startup has been disabled in Task Manager.
-        /// </summary>
-        public static string ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Startup has been enabled by your organization.
-        /// </summary>
-        public static string ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Run ShareX when Windows starts.
-        /// </summary>
-        public static string ApplicationSettingsForm_cbStartWithWindows_Text {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_cbStartWithWindows_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to For settings to take effect ShareX needs to be reopened from Steam..
-        /// </summary>
-        public static string ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_ {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effe" +
-                        "ct_ShareX_needs_to_be_reopened_from_Steam_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap arrow_090 {
-            get {
-                object obj = ResourceManager.GetObject("arrow_090", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap arrow_270 {
-            get {
-                object obj = ResourceManager.GetObject("arrow_270", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start.
-        /// </summary>
-        public static string AutoCaptureForm_Execute_Start {
-            get {
-                return ResourceManager.GetString("AutoCaptureForm_Execute_Start", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stop.
-        /// </summary>
-        public static string AutoCaptureForm_Execute_Stop {
-            get {
-                return ResourceManager.GetString("AutoCaptureForm_Execute_Stop", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to X: {0}, Y: {1}, Width: {2}, Height: {3}.
-        /// </summary>
-        public static string AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_ {
-            get {
-                return ResourceManager.GetString("AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Timeleft: {0}s ({1}%) Total: {2}.
-        /// </summary>
-        public static string AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_ {
-            get {
-                return ResourceManager.GetString("AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap balloon_white {
-            get {
-                object obj = ResourceManager.GetObject("balloon_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap barcode_2d {
-            get {
-                object obj = ResourceManager.GetObject("barcode_2d", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap barcode_2d_white {
-            get {
-                object obj = ResourceManager.GetObject("barcode_2d_white", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Custom.
-        /// </summary>
-        public static string BeforeUploadControl_AddDestination_Custom {
-            get {
-                return ResourceManager.GetString("BeforeUploadControl_AddDestination_Custom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} is about to be uploaded to {1}. You may choose a different destination..
-        /// </summary>
-        public static string BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_ {
-            get {
-                return ResourceManager.GetString("BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_cho" +
-                        "ose_a_different_destination_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please choose a destination..
-        /// </summary>
-        public static string BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_ {
-            get {
-                return ResourceManager.GetString("BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap bin {
-            get {
-                object obj = ResourceManager.GetObject("bin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Bing {
-            get {
-                object obj = ResourceManager.GetObject("Bing", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap br {
-            get {
-                object obj = ResourceManager.GetObject("br", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap camcorder__arrow {
-            get {
-                object obj = ResourceManager.GetObject("camcorder__arrow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap camcorder__exclamation {
-            get {
-                object obj = ResourceManager.GetObject("camcorder__exclamation", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap camcorder__minus {
-            get {
-                object obj = ResourceManager.GetObject("camcorder__minus", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap camcorder_image {
-            get {
-                object obj = ResourceManager.GetObject("camcorder_image", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap camcorder_pencil {
-            get {
-                object obj = ResourceManager.GetObject("camcorder_pencil", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap camera {
+        internal static System.Drawing.Bitmap camera {
             get {
                 object obj = ResourceManager.GetObject("camera", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -846,20 +178,11 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        public static System.IO.UnmanagedMemoryStream CaptureSound {
-            get {
-                return ResourceManager.GetStream("CaptureSound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap categories {
+        internal static System.Drawing.Bitmap CircleNode {
             get {
-                object obj = ResourceManager.GetObject("categories", resourceCulture);
+                object obj = ResourceManager.GetObject("CircleNode", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -867,45 +190,7 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap checkbox_check {
-            get {
-                object obj = ResourceManager.GetObject("checkbox_check", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap checkbox_uncheck {
-            get {
-                object obj = ResourceManager.GetObject("checkbox_uncheck", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chrome support enabled..
-        /// </summary>
-        public static string ChromeForm_btnRegister_Click_Chrome_support_enabled_ {
-            get {
-                return ResourceManager.GetString("ChromeForm_btnRegister_Click_Chrome_support_enabled_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chrome support disabled..
-        /// </summary>
-        public static string ChromeForm_btnUnregister_Click_Chrome_support_disabled_ {
-            get {
-                return ResourceManager.GetString("ChromeForm_btnUnregister_Click_Chrome_support_disabled_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap clipboard {
+        internal static System.Drawing.Bitmap clipboard {
             get {
                 object obj = ResourceManager.GetObject("clipboard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -913,168 +198,28 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap clipboard_block {
+        internal static byte[] closedhand {
             get {
-                object obj = ResourceManager.GetObject("clipboard_block", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("closedhand", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close (Esc).
+        /// </summary>
+        internal static string CloseEsc {
+            get {
+                return ResourceManager.GetString("CloseEsc", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap clipboard_list {
-            get {
-                object obj = ResourceManager.GetObject("clipboard_list", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap clipboard_paste_document_text {
-            get {
-                object obj = ResourceManager.GetObject("clipboard_paste_document_text", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap clipboard_paste_image {
-            get {
-                object obj = ResourceManager.GetObject("clipboard_paste_image", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap clipboard_task {
-            get {
-                object obj = ResourceManager.GetObject("clipboard_task", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Clipboard content: File (Count: {0}).
-        /// </summary>
-        public static string ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__ {
-            get {
-                return ResourceManager.GetString("ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count" +
-                        "___0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Clipboard content: Image (Size: {0}x{1}).
-        /// </summary>
-        public static string ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__ {
-            get {
-                return ResourceManager.GetString("ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size" +
-                        "___0_x_1__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Clipboard content: Text (Length: {0}).
-        /// </summary>
-        public static string ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__ {
-            get {
-                return ResourceManager.GetString("ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Lengt" +
-                        "h___0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Clipboard is empty or contains unknown data..
-        /// </summary>
-        public static string ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_ {
-            get {
-                return ResourceManager.GetString("ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains" +
-                        "_unknown_data_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Supported variables: {0} and other variables such as {1} etc..
-        /// </summary>
-        public static string ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_ {
-            get {
-                return ResourceManager.GetString("ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variab" +
-                        "les_such_as__1__etc_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap clock {
-            get {
-                object obj = ResourceManager.GetObject("clock", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap clock__arrow {
-            get {
-                object obj = ResourceManager.GetObject("clock__arrow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap clock_select {
-            get {
-                object obj = ResourceManager.GetObject("clock_select", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap cn {
-            get {
-                object obj = ResourceManager.GetObject("cn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap color {
-            get {
-                object obj = ResourceManager.GetObject("color", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Confirmation.
-        /// </summary>
-        public static string Confirmation {
-            get {
-                return ResourceManager.GetString("Confirmation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap control {
+        internal static System.Drawing.Bitmap control {
             get {
                 object obj = ResourceManager.GetObject("control", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1084,7 +229,37 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap cross {
+        internal static System.Drawing.Bitmap control_record {
+            get {
+                object obj = ResourceManager.GetObject("control_record", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap control_record_yellow {
+            get {
+                object obj = ResourceManager.GetObject("control_record_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap counter_reset {
+            get {
+                object obj = ResourceManager.GetObject("counter_reset", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cross {
             get {
                 object obj = ResourceManager.GetObject("cross", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1092,29 +267,19 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap cross_button {
+        internal static byte[] Crosshair {
             get {
-                object obj = ResourceManager.GetObject("cross_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("Crosshair", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap crown {
-            get {
-                object obj = ResourceManager.GetObject("crown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap cursor {
+        internal static System.Drawing.Bitmap cursor {
             get {
                 object obj = ResourceManager.GetObject("cursor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1124,46 +289,7 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap de {
-            get {
-                object obj = ResourceManager.GetObject("de", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Description.
-        /// </summary>
-        public static string Description {
-            get {
-                return ResourceManager.GetString("Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Discord {
-            get {
-                object obj = ResourceManager.GetObject("Discord", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap disk {
-            get {
-                object obj = ResourceManager.GetObject("disk", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap disk_black {
+        internal static System.Drawing.Bitmap disk_black {
             get {
                 object obj = ResourceManager.GetObject("disk_black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1173,9 +299,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap disk_rename {
+        internal static System.Drawing.Bitmap disks_black {
             get {
-                object obj = ResourceManager.GetObject("disk_rename", resourceCulture);
+                object obj = ResourceManager.GetObject("disks_black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1183,27 +309,7 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap disk_small {
-            get {
-                object obj = ResourceManager.GetObject("disk_small", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap document_break {
-            get {
-                object obj = ResourceManager.GetObject("document_break", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap document_copy {
+        internal static System.Drawing.Bitmap document_copy {
             get {
                 object obj = ResourceManager.GetObject("document_copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1213,27 +319,7 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap drive {
-            get {
-                object obj = ResourceManager.GetObject("drive", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap drive_download {
-            get {
-                object obj = ResourceManager.GetObject("drive_download", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap drive_globe {
+        internal static System.Drawing.Bitmap drive_globe {
             get {
                 object obj = ResourceManager.GetObject("drive_globe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1241,41 +327,29 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Drop shadow color....
         /// </summary>
-        public static System.Drawing.Bitmap drive_upload {
+        internal static string DropShadowColor {
             get {
-                object obj = ResourceManager.GetObject("drive_upload", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("DropShadowColor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Drop
-        ///here.
+        ///   Looks up a localized string similar to Duplicate.
         /// </summary>
-        public static string DropForm_DrawDropImage_Drop_here {
+        internal static string Duplicate {
             get {
-                return ResourceManager.GetString("DropForm_DrawDropImage_Drop_here", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap edit_drop_cap {
-            get {
-                object obj = ResourceManager.GetObject("edit_drop_cap", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Duplicate", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap edit_drop_cap_white {
+        internal static System.Drawing.Bitmap edit_alignment {
             get {
-                object obj = ResourceManager.GetObject("edit_drop_cap_white", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_alignment", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1283,9 +357,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap edit_scale {
+        internal static System.Drawing.Bitmap edit_alignment_center {
             get {
-                object obj = ResourceManager.GetObject("edit_scale", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_alignment_center", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1293,9 +367,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap edit_scale_white {
+        internal static System.Drawing.Bitmap edit_alignment_center_white {
             get {
-                object obj = ResourceManager.GetObject("edit_scale_white", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_alignment_center_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1303,7 +377,206 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap eraser {
+        internal static System.Drawing.Bitmap edit_alignment_right {
+            get {
+                object obj = ResourceManager.GetObject("edit_alignment_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_alignment_right_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_alignment_right_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_alignment_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_alignment_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_bold {
+            get {
+                object obj = ResourceManager.GetObject("edit_bold", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_bold_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_bold_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_italic {
+            get {
+                object obj = ResourceManager.GetObject("edit_italic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_italic_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_italic_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_outline {
+            get {
+                object obj = ResourceManager.GetObject("edit_outline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_outline_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_outline_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_shade {
+            get {
+                object obj = ResourceManager.GetObject("edit_shade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_shade_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_shade_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_underline {
+            get {
+                object obj = ResourceManager.GetObject("edit_underline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_underline_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_underline_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment {
+            get {
+                object obj = ResourceManager.GetObject("edit_vertical_alignment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_middle {
+            get {
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_middle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_middle_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_middle_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_top {
+            get {
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_top_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_top_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clipboard does not contain an image..
+        /// </summary>
+        internal static string EditorStartupForm_ClipboardDoesNotContainAnImage {
+            get {
+                return ResourceManager.GetString("EditorStartupForm_ClipboardDoesNotContainAnImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eraser {
             get {
                 object obj = ResourceManager.GetObject("eraser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1311,57 +584,9 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error.
-        /// </summary>
-        public static string Error {
-            get {
-                return ResourceManager.GetString("Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        public static System.IO.UnmanagedMemoryStream ErrorSound {
-            get {
-                return ResourceManager.GetStream("ErrorSound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap es {
-            get {
-                object obj = ResourceManager.GetObject("es", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap exclamation {
-            get {
-                object obj = ResourceManager.GetObject("exclamation", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Exclamation_16 {
-            get {
-                object obj = ResourceManager.GetObject("Exclamation_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap exclamation_button {
+        internal static System.Drawing.Bitmap exclamation_button {
             get {
                 object obj = ResourceManager.GetObject("exclamation_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1369,123 +594,55 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to save settings.
+        ///   Looks up a localized string similar to Browse for ffmpeg.exe.
         /// </summary>
-        public static string FailedToSaveSettings {
+        internal static string FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe {
             get {
-                return ResourceManager.GetString("FailedToSaveSettings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} does not exist.
-        ///
-        ///Would you like to automatically download it?.
-        /// </summary>
-        public static string FFmpeg_does_not_exist {
-            get {
-                return ResourceManager.GetString("FFmpeg_does_not_exist", resourceCulture);
+                return ResourceManager.GetString("FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Download of FFmpeg failed..
         /// </summary>
-        public static string FFmpeg_Download_of_FFmpeg_failed {
+        internal static string FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_ {
             get {
-                return ResourceManager.GetString("FFmpeg_Download_of_FFmpeg_failed", resourceCulture);
+                return ResourceManager.GetString("FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FFmpeg error.
+        ///   Looks up a localized string similar to Successfully downloaded FFmpeg..
         /// </summary>
-        public static string FFmpeg_FFmpeg_error {
+        internal static string FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_ {
             get {
-                return ResourceManager.GetString("FFmpeg_FFmpeg_error", resourceCulture);
+                return ResourceManager.GetString("FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" +
+                        "", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FFmpeg successfully downloaded..
+        ///   Looks up a localized string similar to Bitrate: {0}k.
         /// </summary>
-        public static string FFmpeg_FFmpeg_successfully_downloaded {
+        internal static string FFmpegOptionsForm_UpdateUI_Bitrate___0_k {
             get {
-                return ResourceManager.GetString("FFmpeg_FFmpeg_successfully_downloaded", resourceCulture);
+                return ResourceManager.GetString("FFmpegOptionsForm_UpdateUI_Bitrate___0_k", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FFmpeg video and audio source can&apos;t both be &quot;None&quot;..
+        ///   Looks up a localized string similar to Quality:.
         /// </summary>
-        public static string FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__ {
+        internal static string FFmpegOptionsForm_UpdateUI_Quality_ {
             get {
-                return ResourceManager.GetString("FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Missing.
-        /// </summary>
-        public static string FFmpeg_Missing {
-            get {
-                return ResourceManager.GetString("FFmpeg_Missing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use new name: .
-        /// </summary>
-        public static string FileExistForm_txtNewName_TextChanged_Use_new_name__ {
-            get {
-                return ResourceManager.GetString("FileExistForm_txtNewName_TextChanged_Use_new_name__", resourceCulture);
+                return ResourceManager.GetString("FFmpegOptionsForm_UpdateUI_Quality_", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap film {
-            get {
-                object obj = ResourceManager.GetObject("film", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap film__arrow {
-            get {
-                object obj = ResourceManager.GetObject("film__arrow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap folder {
-            get {
-                object obj = ResourceManager.GetObject("folder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap folder_open_document {
-            get {
-                object obj = ResourceManager.GetObject("folder_open_document", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap folder_open_image {
+        internal static System.Drawing.Bitmap folder_open_image {
             get {
                 object obj = ResourceManager.GetObject("folder_open_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1493,39 +650,18 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to FPS limit:.
         /// </summary>
-        public static System.Drawing.Bitmap folder_stand {
+        internal static string FPSLimit {
             get {
-                object obj = ResourceManager.GetObject("folder_stand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("FPSLimit", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap folder_tree {
-            get {
-                object obj = ResourceManager.GetObject("folder_tree", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap fr {
-            get {
-                object obj = ResourceManager.GetObject("fr", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap gear {
+        internal static System.Drawing.Bitmap gear {
             get {
                 object obj = ResourceManager.GetObject("gear", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1535,9 +671,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap GitHub {
+        internal static System.Drawing.Bitmap gradient {
             get {
-                object obj = ResourceManager.GetObject("GitHub", resourceCulture);
+                object obj = ResourceManager.GetObject("gradient", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1545,9 +681,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap GitHubDark {
+        internal static System.Drawing.Bitmap grid {
             get {
-                object obj = ResourceManager.GetObject("GitHubDark", resourceCulture);
+                object obj = ResourceManager.GetObject("grid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1555,9 +691,28 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap globe {
+        internal static System.Drawing.Bitmap grid_white {
             get {
-                object obj = ResourceManager.GetObject("globe", resourceCulture);
+                object obj = ResourceManager.GetObject("grid_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Highlight.
+        /// </summary>
+        internal static string Highlight {
+            get {
+                return ResourceManager.GetString("Highlight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap highlighter_text {
+            get {
+                object obj = ResourceManager.GetObject("highlighter_text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1565,9 +720,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap globe__arrow {
+        internal static System.Drawing.Bitmap image__pencil {
             get {
-                object obj = ResourceManager.GetObject("globe__arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("image__pencil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1575,9 +730,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap globe_pencil {
+        internal static System.Drawing.Bitmap image__plus {
             get {
-                object obj = ResourceManager.GetObject("globe_pencil", resourceCulture);
+                object obj = ResourceManager.GetObject("image__plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1585,9 +740,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap globe_share {
+        internal static System.Drawing.Bitmap image_crop {
             get {
-                object obj = ResourceManager.GetObject("globe_share", resourceCulture);
+                object obj = ResourceManager.GetObject("image_crop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1595,9 +750,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Google {
+        internal static System.Drawing.Bitmap image_empty {
             get {
-                object obj = ResourceManager.GetObject("Google", resourceCulture);
+                object obj = ResourceManager.GetObject("image_empty", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1605,95 +760,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap heart {
+        internal static System.Drawing.Bitmap image_resize {
             get {
-                object obj = ResourceManager.GetObject("heart", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hotkey.
-        /// </summary>
-        public static string Hotkey {
-            get {
-                return ResourceManager.GetString("Hotkey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to hotkey.
-        /// </summary>
-        public static string HotkeyManager_ShowFailedHotkeys_hotkey {
-            get {
-                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_hotkey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hotkey registration failed.
-        /// </summary>
-        public static string HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed {
-            get {
-                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to hotkeys.
-        /// </summary>
-        public static string HotkeyManager_ShowFailedHotkeys_hotkeys {
-            get {
-                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_hotkeys", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There may be an application conflict:.
-        /// </summary>
-        public static string HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_ {
-            get {
-                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unable to register {0}:
-        ///
-        ///{1}
-        ///
-        ///Please select a different hotkey or quit the conflicting application and reopen ShareX..
-        /// </summary>
-        public static string HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey {
-            get {
-                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select a hotkey....
-        /// </summary>
-        public static string HotkeySelectionControl_StartEditing_Select_a_hotkey___ {
-            get {
-                return ResourceManager.GetString("HotkeySelectionControl_StartEditing_Select_a_hotkey___", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Reset all hotkeys to defaults?.
-        /// </summary>
-        public static string HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation {
-            get {
-                return ResourceManager.GetString("HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap hu {
-            get {
-                object obj = ResourceManager.GetObject("hu", resourceCulture);
+                object obj = ResourceManager.GetObject("image_resize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1701,47 +770,7 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap id {
-            get {
-                object obj = ResourceManager.GetObject("id", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap image {
-            get {
-                object obj = ResourceManager.GetObject("image", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap image_export {
-            get {
-                object obj = ResourceManager.GetObject("image_export", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap image_pencil {
-            get {
-                object obj = ResourceManager.GetObject("image_pencil", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap image_resize_actual {
+        internal static System.Drawing.Bitmap image_resize_actual {
             get {
                 object obj = ResourceManager.GetObject("image_resize_actual", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1751,7 +780,7 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap image_saturation {
+        internal static System.Drawing.Bitmap image_saturation {
             get {
                 object obj = ResourceManager.GetObject("image_saturation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -1761,176 +790,64 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap image_split {
+        internal static System.Drawing.Bitmap image_select {
             get {
-                object obj = ResourceManager.GetObject("image_split", resourceCulture);
+                object obj = ResourceManager.GetObject("image_select", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not write image to path:.
+        ///   Looks up a localized string similar to Image copied.
         /// </summary>
-        public static string ImageData_Write_Error_Message {
+        internal static string ImageCopied {
             get {
-                return ResourceManager.GetString("ImageData_Write_Error_Message", resourceCulture);
+                return ResourceManager.GetString("ImageCopied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add image effects....
+        /// </summary>
+        internal static string ImageEffects {
+            get {
+                return ResourceManager.GetString("ImageEffects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image saved.
+        /// </summary>
+        internal static string ImageSaved {
+            get {
+                return ResourceManager.GetString("ImageSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image saved.
+        /// </summary>
+        internal static string ImageSavedAs {
+            get {
+                return ResourceManager.GetString("ImageSavedAs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image uploading.
+        /// </summary>
+        internal static string ImageUploading {
+            get {
+                return ResourceManager.GetString("ImageUploading", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap images_flickr {
+        internal static System.Drawing.Bitmap keyboard_enter {
             get {
-                object obj = ResourceManager.GetObject("images-flickr", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap images_stack {
-            get {
-                object obj = ResourceManager.GetObject("images_stack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap inbox {
-            get {
-                object obj = ResourceManager.GetObject("inbox", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap information {
-            get {
-                object obj = ResourceManager.GetObject("information", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Class name.
-        /// </summary>
-        public static string InspectWindow_ClassName {
-            get {
-                return ResourceManager.GetString("InspectWindow_ClassName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Client rectangle.
-        /// </summary>
-        public static string InspectWindow_ClientRectangle {
-            get {
-                return ResourceManager.GetString("InspectWindow_ClientRectangle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Extended window styles.
-        /// </summary>
-        public static string InspectWindow_ExtendedWindowStyles {
-            get {
-                return ResourceManager.GetString("InspectWindow_ExtendedWindowStyles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Process file name.
-        /// </summary>
-        public static string InspectWindow_ProcessFileName {
-            get {
-                return ResourceManager.GetString("InspectWindow_ProcessFileName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Process identifier.
-        /// </summary>
-        public static string InspectWindow_ProcessIdentifier {
-            get {
-                return ResourceManager.GetString("InspectWindow_ProcessIdentifier", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Process name.
-        /// </summary>
-        public static string InspectWindow_ProcessName {
-            get {
-                return ResourceManager.GetString("InspectWindow_ProcessName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Window handle.
-        /// </summary>
-        public static string InspectWindow_WindowHandle {
-            get {
-                return ResourceManager.GetString("InspectWindow_WindowHandle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Window rectangle.
-        /// </summary>
-        public static string InspectWindow_WindowRectangle {
-            get {
-                return ResourceManager.GetString("InspectWindow_WindowRectangle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Window styles.
-        /// </summary>
-        public static string InspectWindow_WindowStyles {
-            get {
-                return ResourceManager.GetString("InspectWindow_WindowStyles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Window title.
-        /// </summary>
-        public static string InspectWindow_WindowTitle {
-            get {
-                return ResourceManager.GetString("InspectWindow_WindowTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit with ShareX.
-        /// </summary>
-        public static string IntegrationHelpers_EditWithShareX {
-            get {
-                return ResourceManager.GetString("IntegrationHelpers_EditWithShareX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upload with ShareX.
-        /// </summary>
-        public static string IntegrationHelpers_UploadWithShareX {
-            get {
-                return ResourceManager.GetString("IntegrationHelpers_UploadWithShareX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ir {
-            get {
-                object obj = ResourceManager.GetObject("ir", resourceCulture);
+                object obj = ResourceManager.GetObject("keyboard-enter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1938,9 +855,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap it {
+        internal static System.Drawing.Bitmap layer {
             get {
-                object obj = ResourceManager.GetObject("it", resourceCulture);
+                object obj = ResourceManager.GetObject("layer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1948,9 +865,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap jp {
+        internal static System.Drawing.Bitmap layer__minus {
             get {
-                object obj = ResourceManager.GetObject("jp", resourceCulture);
+                object obj = ResourceManager.GetObject("layer__minus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1958,9 +875,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap keyboard {
+        internal static System.Drawing.Bitmap layer__pencil {
             get {
-                object obj = ResourceManager.GetObject("keyboard", resourceCulture);
+                object obj = ResourceManager.GetObject("layer__pencil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1968,9 +885,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap keyboard__minus {
+        internal static System.Drawing.Bitmap layer_flip {
             get {
-                object obj = ResourceManager.GetObject("keyboard__minus", resourceCulture);
+                object obj = ResourceManager.GetObject("layer_flip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1978,9 +895,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap keyboard__plus {
+        internal static System.Drawing.Bitmap layer_flip_vertical {
             get {
-                object obj = ResourceManager.GetObject("keyboard__plus", resourceCulture);
+                object obj = ResourceManager.GetObject("layer_flip_vertical", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1988,27 +905,7 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap kr {
-            get {
-                object obj = ResourceManager.GetObject("kr", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap layer__arrow {
-            get {
-                object obj = ResourceManager.GetObject("layer__arrow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap layer_fullscreen {
+        internal static System.Drawing.Bitmap layer_fullscreen {
             get {
                 object obj = ResourceManager.GetObject("layer_fullscreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -2018,7 +915,27 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap layer_shape {
+        internal static System.Drawing.Bitmap layer_shade {
+            get {
+                object obj = ResourceManager.GetObject("layer_shade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shade_white {
+            get {
+                object obj = ResourceManager.GetObject("layer_shade_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape {
             get {
                 object obj = ResourceManager.GetObject("layer_shape", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -2028,9 +945,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap layer_transparent {
+        internal static System.Drawing.Bitmap layer_shape_arrow {
             get {
-                object obj = ResourceManager.GetObject("layer_transparent", resourceCulture);
+                object obj = ResourceManager.GetObject("layer_shape_arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2038,7 +955,107 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap layers {
+        internal static System.Drawing.Bitmap layer_shape_arrow_white {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_arrow_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_ellipse {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_ellipse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_ellipse_region {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_ellipse_region", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_line {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_line_white {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_line_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_polygon {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_polygon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_region {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_region", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_round {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_round", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_round_region {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_round_region", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_text {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layers {
             get {
                 object obj = ResourceManager.GetObject("layers", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -2046,83 +1063,11 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you really want to delete this file?.
-        /// </summary>
-        public static string MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_ {
-            get {
-                return ResourceManager.GetString("MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File delete confirmation.
-        /// </summary>
-        public static string MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation {
-            get {
-                return ResourceManager.GetString("MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Text upload test.
-        /// </summary>
-        public static string MainForm_tsmiTestTextUpload_Click_Text_upload_test {
-            get {
-                return ResourceManager.GetString("MainForm_tsmiTestTextUpload_Click_Text_upload_test", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Currently configured hotkeys:.
-        /// </summary>
-        public static string MainForm_UpdateMainFormTip_Currently_configured_hotkeys_ {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateMainFormTip_Currently_configured_hotkeys_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Disable hotkeys.
-        /// </summary>
-        public static string MainForm_UpdateToggleHotkeyButton_Disable_hotkeys {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateToggleHotkeyButton_Disable_hotkeys", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enable hotkeys.
-        /// </summary>
-        public static string MainForm_UpdateToggleHotkeyButton_Enable_hotkeys {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateToggleHotkeyButton_Enable_hotkeys", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You can add workflows from hotkey settings....
-        /// </summary>
-        public static string MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___ {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The debug log can contain sensitive information. Are you sure you want to proceed?.
-        /// </summary>
-        public static string MainForm_UploadDebugLogWarning {
-            get {
-                return ResourceManager.GetString("MainForm_UploadDebugLogWarning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap megaphone {
+        internal static System.Drawing.Bitmap layers_arrange {
             get {
-                object obj = ResourceManager.GetObject("megaphone", resourceCulture);
+                object obj = ResourceManager.GetObject("layers_arrange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2130,7 +1075,113 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap monitor {
+        internal static System.Drawing.Bitmap layers_arrange_back {
+            get {
+                object obj = ResourceManager.GetObject("layers_arrange_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layers_stack_arrange {
+            get {
+                object obj = ResourceManager.GetObject("layers_stack_arrange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layers_stack_arrange_back {
+            get {
+                object obj = ResourceManager.GetObject("layers_stack_arrange_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layout_center {
+            get {
+                object obj = ResourceManager.GetObject("layout_center", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layout_split {
+            get {
+                object obj = ResourceManager.GetObject("layout_split", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layout_split_vertical {
+            get {
+                object obj = ResourceManager.GetObject("layout_split_vertical", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use light resize nodes.
+        /// </summary>
+        internal static string LightResizeNodes {
+            get {
+                return ResourceManager.GetString("LightResizeNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lock menu.
+        /// </summary>
+        internal static string LockMenu {
+            get {
+                return ResourceManager.GetString("LockMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifier_zoom {
+            get {
+                object obj = ResourceManager.GetObject("magnifier_zoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magnify strength:.
+        /// </summary>
+        internal static string MagnifyStrength {
+            get {
+                return ResourceManager.GetString("MagnifyStrength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu icon size:.
+        /// </summary>
+        internal static string MenuIconSize {
+            get {
+                return ResourceManager.GetString("MenuIconSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap monitor {
             get {
                 object obj = ResourceManager.GetObject("monitor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -2140,9 +1191,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap mx {
+        internal static System.Drawing.Bitmap monitor_image {
             get {
-                object obj = ResourceManager.GetObject("mx", resourceCulture);
+                object obj = ResourceManager.GetObject("monitor_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2150,94 +1201,54 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap navigation_000_button {
+        internal static System.Drawing.Bitmap monitor_window {
             get {
-                object obj = ResourceManager.GetObject("navigation_000_button", resourceCulture);
+                object obj = ResourceManager.GetObject("monitor_window", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New line: Ctrl + Enter, OK: Enter.
+        /// </summary>
+        internal static string NewLineCtrlEnterOKEnter {
+            get {
+                return ResourceManager.GetString("NewLineCtrlEnterOKEnter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New line: Enter, OK: Ctrl + Enter.
+        /// </summary>
+        internal static string NewLineEnterOKCtrlEnter {
+            get {
+                return ResourceManager.GetString("NewLineEnterOKCtrlEnter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] openhand {
+            get {
+                object obj = ResourceManager.GetObject("openhand", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open keybinds web page....
+        /// </summary>
+        internal static string OpenKeybindsPage {
+            get {
+                return ResourceManager.GetString("OpenKeybindsPage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap navigation_090_button {
-            get {
-                object obj = ResourceManager.GetObject("navigation_090_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap network_cloud {
-            get {
-                object obj = ResourceManager.GetObject("network_cloud", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap network_ip {
-            get {
-                object obj = ResourceManager.GetObject("network_ip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap nl {
-            get {
-                object obj = ResourceManager.GetObject("nl", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap notebook {
-            get {
-                object obj = ResourceManager.GetObject("notebook", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The OCR output has been copied to your clipboard..
-        /// </summary>
-        public static string OCRForm_AutoComplete {
-            get {
-                return ResourceManager.GetString("OCRForm_AutoComplete", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error occurred during OCR processing, or no text was returned..
-        /// </summary>
-        public static string OCRForm_AutoCompleteFail {
-            get {
-                return ResourceManager.GetString("OCRForm_AutoCompleteFail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to OCR is processing..
-        /// </summary>
-        public static string OCRForm_AutoProcessing {
-            get {
-                return ResourceManager.GetString("OCRForm_AutoProcessing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap pencil {
+        internal static System.Drawing.Bitmap pencil {
             get {
                 object obj = ResourceManager.GetObject("pencil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -2245,19 +1256,18 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Pixelate.
         /// </summary>
-        public static System.Drawing.Bitmap pipette {
+        internal static string Pixelate {
             get {
-                object obj = ResourceManager.GetObject("pipette", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Pixelate", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap printer {
+        internal static System.Drawing.Bitmap printer {
             get {
                 object obj = ResourceManager.GetObject("printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -2265,95 +1275,852 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to create folder:.
+        ///   Looks up a localized string similar to Processing....
         /// </summary>
-        public static string Program_Run_Unable_to_create_folder_ {
+        internal static string Processing {
             get {
-                return ResourceManager.GetString("Program_Run_Unable_to_create_folder_", resourceCulture);
+                return ResourceManager.GetString("Processing", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t access to &quot;{0}&quot; file.
-        ///Please run ShareX as administrator to change personal folder path..
+        ///   Looks up a localized string similar to Rectangle capture light.
         /// </summary>
-        public static string Program_WritePersonalPathConfig_Cant_access_to_file {
+        internal static string RectangleLight_InitializeComponent_Rectangle_capture_light {
             get {
-                return ResourceManager.GetString("Program_WritePersonalPathConfig_Cant_access_to_file", resourceCulture);
+                return ResourceManager.GetString("RectangleLight_InitializeComponent_Rectangle_capture_light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X: {0} Y: {1} W: {2} H: {3}.
+        /// </summary>
+        internal static string RectangleRegion_GetAreaText_Area {
+            get {
+                return ResourceManager.GetString("RectangleRegion_GetAreaText_Area", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RGB: {0}, {1}, {2}
+        ///Hex: {3}
+        ///X: {4} Y: {5}.
+        /// </summary>
+        internal static string RectangleRegion_GetColorPickerText {
+            get {
+                return ResourceManager.GetString("RectangleRegion_GetColorPickerText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rectangle capture transparent.
+        /// </summary>
+        internal static string RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent {
+            get {
+                return ResourceManager.GetString("RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image editor.
+        /// </summary>
+        internal static string RegionCaptureForm_InitializeComponent_ImageEditor {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_InitializeComponent_ImageEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX - Image editor.
+        /// </summary>
+        internal static string RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are unsaved changes.
+        ///Would you like to close image editor?.
+        /// </summary>
+        internal static string RegionCaptureForm_ShowExitConfirmation_Text {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tip: You can pan image by holding mouse middle button and dragging..
+        /// </summary>
+        internal static string RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging {
+            get {
+                return ResourceManager.GetString("RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to abort this recording?.
+        /// </summary>
+        internal static string ScreenRecordForm_ConfirmCancel {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_ConfirmCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string ScreenRecordForm_Start {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to start recording..
+        /// </summary>
+        internal static string ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to stop recording..
+        /// </summary>
+        internal static string ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encoding....
+        /// </summary>
+        internal static string ScreenRecordForm_StartRecording_Encoding___ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Encoding___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting....
+        /// </summary>
+        internal static string ScreenRecordForm_StartRecording_Waiting___ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Waiting___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        internal static string ScreenRecordForm_Stop {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop capture.
+        /// </summary>
+        internal static string ScrollingCaptureForm_StartCapture_Stop_capture {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureForm_StartCapture_Stop_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start capture.
+        /// </summary>
+        internal static string ScrollingCaptureForm_StopCapture_Start_capture {
+            get {
+                return ResourceManager.GetString("ScrollingCaptureForm_StopCapture_Start_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arrow head direction:.
+        /// </summary>
+        internal static string ShapeManager_ArrowHeadDirection {
+            get {
+                return ResourceManager.GetString("ShapeManager_ArrowHeadDirection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Border style:.
+        /// </summary>
+        internal static string ShapeManager_BorderStyle {
+            get {
+                return ResourceManager.GetString("ShapeManager_BorderStyle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center points:.
+        /// </summary>
+        internal static string ShapeManager_CenterPoints {
+            get {
+                return ResourceManager.GetString("ShapeManager_CenterPoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blur strength:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Blur_radius_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Blur_radius_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Border color....
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Border_color___ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Border_color___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Border size:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Border_size_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Border_size_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Capture {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture active monitor.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Capture_active_monitor {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_active_monitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture fullscreen.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Capture_fullscreen {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_fullscreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture monitor.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Capture_monitor {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Capture_monitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corner radius:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Corner_radius_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Corner_radius_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable animations.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_EnableAnimations {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_EnableAnimations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fill color....
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Fill_color___ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Fill_color___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fixed size region mode.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Fixed_size_region_mode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Fixed_size_region_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Height:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Height_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Height_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Highlight color....
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Highlight_color___ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Highlight_color___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magnifier pixel count:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Magnifier_pixel_count_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Magnifier_pixel_count_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magnifier pixel size:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Magnifier_pixel_size_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Magnifier_pixel_size_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multi region mode.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Multi_region_mode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Multi_region_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Options {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pixel size:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Pixel_size_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Pixel_size_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember menu state.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_RememberMenuState {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_RememberMenuState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show FPS.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_FPS {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_FPS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show magnifier.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_magnifier {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_magnifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show position and size info.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_position_and_size_info {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_position_and_size_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show screen wide crosshair.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Show_screen_wide_crosshair {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_screen_wide_crosshair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Square shape magnifier.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Square_shape_magnifier {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Square_shape_magnifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to drawing tool after shape selection.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to selection tool after shape drawing.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width:.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_Width_ {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Width_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editor menu.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AnnotateMenu {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AnnotateMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apply changes &amp; continue task (Enter).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto close editor on task.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AutoCloseEditorOnTask {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCloseEditorOnTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto crop image....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AutoCropImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCropImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bring forward.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_BringForward {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_BringForward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bring to front.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_BringToFront {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_BringToFront", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel task (Esc).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_CancelTaskEsc {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_CancelTaskEsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canvas size....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_CanvasSize {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_CanvasSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture regions.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_CaptureRegions {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_CaptureRegions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue task (Space or right click).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy image to clipboard (Ctrl + Shift + C).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_CopyImageToClipboard {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_CopyImageToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crop image....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_CropImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_CropImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Delete {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete all.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_DeleteAll {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_DeleteAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drop shadow.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_DropShadow {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_DropShadow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Edit {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editor start mode:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_EditorStartMode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_EditorStartMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flip horizontal.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FlipHorizontal {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FlipHorizontal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flip vertical.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FlipVertical {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FlipVertical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font size:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FontSize {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FontSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Image {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image size....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_ImageSize {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_ImageSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert image file....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_InsertImageFile {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert image from screen....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_InsertImageFromScreen {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFromScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capture last region.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_LastRegion {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_LastRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New image....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_NewImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_NewImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open image file....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_OpenImageFile {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_OpenImageFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paste image/text.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_PasteImageText {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_PasteImageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print image... (Ctrl + P).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_PrintImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_PrintImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate 180°.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Rotate180 {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate180", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate 90° clockwise.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Rotate90Clockwise {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate90Clockwise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate 90° counter clockwise.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Rotate90CounterClockwise {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate90CounterClockwise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run after capture tasks (Enter).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_RunAfterCaptureTasks {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_RunAfterCaptureTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save image (Ctrl + S).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_SaveImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_SaveImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save image as... (Ctrl + Shift + S).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_SaveImageAs {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_SaveImageAs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send backward.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_SendBackward {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_SendBackward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send to back.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_SendToBack {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_SendToBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value of first step:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_StartingStepValue {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartingStepValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Step type:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_StepType {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_StepType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tool options.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_ToolOptions {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_ToolOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Undo.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Undo {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Undo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload image (Ctrl + U).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_UploadImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_UploadImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zoom to fit on open.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_ZoomToFitOnOpen {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_ZoomToFitOnOpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cursor type:.
+        /// </summary>
+        internal static string ShapeManager_CursorType {
+            get {
+                return ResourceManager.GetString("ShapeManager_CursorType", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap pt {
+        internal static System.Drawing.Bitmap smiley_cool {
             get {
-                object obj = ResourceManager.GetObject("pt", resourceCulture);
+                object obj = ResourceManager.GetObject("smiley_cool", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input text to encode.
-        /// </summary>
-        public static string QRCodeForm_InputTextToEncode {
-            get {
-                return ResourceManager.GetString("QRCodeForm_InputTextToEncode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cancel.
-        /// </summary>
-        public static string QuickTaskMenu_ShowMenu_Cancel {
-            get {
-                return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Cancel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Continue.
-        /// </summary>
-        public static string QuickTaskMenu_ShowMenu_Continue {
-            get {
-                return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Continue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit this menu....
-        /// </summary>
-        public static string QuickTaskMenu_ShowMenu_Edit_this_menu___ {
-            get {
-                return ResourceManager.GetString("QuickTaskMenu_ShowMenu_Edit_this_menu___", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Reset all quick tasks to defaults?.
-        /// </summary>
-        public static string QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation {
-            get {
-                return ResourceManager.GetString("QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Left click to copy URL to clipboard. Right click to open URL..
-        /// </summary>
-        public static string RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_ {
-            get {
-                return ResourceManager.GetString("RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_t" +
-                        "o_open_URL_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Rectangle {
+        internal static System.Drawing.Bitmap smiley_yell {
             get {
-                object obj = ResourceManager.GetObject("Rectangle", resourceCulture);
+                object obj = ResourceManager.GetObject("smiley_yell", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2361,9 +2128,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap ru {
+        internal static System.Drawing.Bitmap stamp_cursor {
             get {
-                object obj = ResourceManager.GetObject("ru", resourceCulture);
+                object obj = ResourceManager.GetObject("stamp_cursor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2371,711 +2138,57 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap ruler_triangle {
+        internal static System.Drawing.Bitmap test_32 {
             get {
-                object obj = ResourceManager.GetObject("ruler_triangle", resourceCulture);
+                object obj = ResourceManager.GetObject("test_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Screen color picker.
+        ///   Looks up a localized string similar to This window will close before opening the keybinds web page. Do you want to continue?.
         /// </summary>
-        public static string ScreenColorPicker {
+        internal static string ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue {
             get {
-                return ResourceManager.GetString("ScreenColorPicker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screenshot delay: {0}s.
-        /// </summary>
-        public static string ScreenshotDelay0S {
-            get {
-                return ResourceManager.GetString("ScreenshotDelay0S", resourceCulture);
+                return ResourceManager.GetString("ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap script__minus {
+        internal static System.Drawing.Bitmap tick {
             get {
-                object obj = ResourceManager.GetObject("script__minus", resourceCulture);
+                object obj = ResourceManager.GetObject("tick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ShareX - Confirmation.
+        ///   Looks up a localized string similar to Capture.
         /// </summary>
-        public static string ShareXConfirmation {
+        internal static string WebpageCaptureForm_UpdateControls_Capture {
             get {
-                return ResourceManager.GetString("ShareXConfirmation", resourceCulture);
+                return ResourceManager.GetString("WebpageCaptureForm_UpdateControls_Capture", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ShareX is minimized to the system tray..
+        ///   Looks up a localized string similar to Stop.
         /// </summary>
-        public static string ShareXIsMinimizedToTheSystemTray {
+        internal static string WebpageCaptureForm_UpdateControls_Stop {
             get {
-                return ResourceManager.GetString("ShareXIsMinimizedToTheSystemTray", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ShareX needs to be restarted for the personal folder changes to apply.
-        ///
-        ///Would you like to restart ShareX?.
-        /// </summary>
-        public static string ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply {
-            get {
-                return ResourceManager.GetString("ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Switch to list view.
-        /// </summary>
-        public static string SwitchToListView {
-            get {
-                return ResourceManager.GetString("SwitchToListView", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Switch to thumbnail view.
-        /// </summary>
-        public static string SwitchToThumbnailView {
-            get {
-                return ResourceManager.GetString("SwitchToThumbnailView", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        public static System.IO.UnmanagedMemoryStream TaskCompletedSound {
-            get {
-                return ResourceManager.GetStream("TaskCompletedSound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Copied to clipboard: {0}.
-        /// </summary>
-        public static string TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_ {
-            get {
-                return ResourceManager.GetString("TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hotkeys disabled..
-        /// </summary>
-        public static string TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ {
-            get {
-                return ResourceManager.GetString("TaskHelpers_ToggleHotkeys_Hotkeys_disabled_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hotkeys enabled..
-        /// </summary>
-        public static string TaskHelpers_ToggleHotkeys_Hotkeys_enabled_ {
-            get {
-                return ResourceManager.GetString("TaskHelpers_ToggleHotkeys_Hotkeys_enabled_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tweet successfully sent..
-        /// </summary>
-        public static string TaskHelpers_TweetMessage_Tweet_successfully_sent_ {
-            get {
-                return ResourceManager.GetString("TaskHelpers_TweetMessage_Tweet_successfully_sent_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unable to find a valid Twitter account..
-        /// </summary>
-        public static string TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_ {
-            get {
-                return ResourceManager.GetString("TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to History.
-        /// </summary>
-        public static string TaskManager_CreateListViewItem_History {
-            get {
-                return ResourceManager.GetString("TaskManager_CreateListViewItem_History", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to In queue.
-        /// </summary>
-        public static string TaskManager_CreateListViewItem_In_queue {
-            get {
-                return ResourceManager.GetString("TaskManager_CreateListViewItem_In_queue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error.
-        /// </summary>
-        public static string TaskManager_task_UploadCompleted_Error {
-            get {
-                return ResourceManager.GetString("TaskManager_task_UploadCompleted_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Task completed.
-        /// </summary>
-        public static string TaskManager_task_UploadCompleted_ShareX___Task_completed {
-            get {
-                return ResourceManager.GetString("TaskManager_task_UploadCompleted_ShareX___Task_completed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Preview:.
-        /// </summary>
-        public static string TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to After capture: {0}.
-        /// </summary>
-        public static string TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to After upload: {0}.
-        /// </summary>
-        public static string TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File uploader: {0}.
-        /// </summary>
-        public static string TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Image uploader: {0}.
-        /// </summary>
-        public static string TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Text uploader: {0}.
-        /// </summary>
-        public static string TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to URL sharing service: {0}.
-        /// </summary>
-        public static string TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to URL shortener: {0}.
-        /// </summary>
-        public static string TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Task settings.
-        /// </summary>
-        public static string TaskSettingsForm_UpdateWindowTitle_Task_settings {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_UpdateWindowTitle_Task_settings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Task settings for {0}.
-        /// </summary>
-        public static string TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_ {
-            get {
-                return ResourceManager.GetString("TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This feature will not work when &quot;DisableUpload&quot; option is enabled!.
-        /// </summary>
-        public static string ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled {
-            get {
-                return ResourceManager.GetString("ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled", resourceCulture);
+                return ResourceManager.GetString("WebpageCaptureForm_UpdateControls_Stop", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap tick_button {
-            get {
-                object obj = ResourceManager.GetObject("tick_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap toolbox {
-            get {
-                object obj = ResourceManager.GetObject("toolbox", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap tr {
-            get {
-                object obj = ResourceManager.GetObject("tr", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap traffic_cone {
-            get {
-                object obj = ResourceManager.GetObject("traffic_cone", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap tw {
-            get {
-                object obj = ResourceManager.GetObject("tw", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Twitter {
-            get {
-                object obj = ResourceManager.GetObject("Twitter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ua {
-            get {
-                object obj = ResourceManager.GetObject("ua", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap uac {
-            get {
-                object obj = ResourceManager.GetObject("uac", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ui_menu_blue {
-            get {
-                object obj = ResourceManager.GetObject("ui_menu_blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ui_scroll_pane_image {
-            get {
-                object obj = ResourceManager.GetObject("ui_scroll_pane_image", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ui_splitter {
-            get {
-                object obj = ResourceManager.GetObject("ui_splitter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ui_toolbar__arrow {
-            get {
-                object obj = ResourceManager.GetObject("ui_toolbar__arrow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unable to find a window with specified window title..
-        /// </summary>
-        public static string UnableToFindAWindowWithSpecifiedWindowTitle {
-            get {
-                return ResourceManager.GetString("UnableToFindAWindowWithSpecifiedWindowTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap upload_cloud {
-            get {
-                object obj = ResourceManager.GetObject("upload_cloud", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upload errors.
-        /// </summary>
-        public static string UploadInfoManager_ShowErrors_Upload_errors {
-            get {
-                return ResourceManager.GetString("UploadInfoManager_ShowErrors_Upload_errors", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Download failed:
-        ///{0}.
-        /// </summary>
-        public static string UploadManager_DownloadAndUploadFile_Download_failed {
-            get {
-                return ResourceManager.GetString("UploadManager_DownloadAndUploadFile_Download_failed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to upload {0} files?.
-        /// </summary>
-        public static string UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_ {
-            get {
-                return ResourceManager.GetString("UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Don&apos;t show this message again..
-        /// </summary>
-        public static string UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_ {
-            get {
-                return ResourceManager.GetString("UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upload files.
-        /// </summary>
-        public static string UploadManager_IsUploadConfirmed_Upload_files {
-            get {
-                return ResourceManager.GetString("UploadManager_IsUploadConfirmed_Upload_files", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shorten.
-        /// </summary>
-        public static string UploadManager_ShowShortenURLDialog_Shorten {
-            get {
-                return ResourceManager.GetString("UploadManager_ShowShortenURLDialog_Shorten", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shorten URL.
-        /// </summary>
-        public static string UploadManager_ShowShortenURLDialog_ShortenURL {
-            get {
-                return ResourceManager.GetString("UploadManager_ShowShortenURLDialog_ShortenURL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File upload.
-        /// </summary>
-        public static string UploadManager_UploadFile_File_upload {
-            get {
-                return ResourceManager.GetString("UploadManager_UploadFile_File_upload", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Folder upload.
-        /// </summary>
-        public static string UploadManager_UploadFolder_Folder_upload {
-            get {
-                return ResourceManager.GetString("UploadManager_UploadFolder_Folder_upload", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to URL to download and upload.
-        /// </summary>
-        public static string UploadManager_UploadURL_URL_to_download_from_and_upload {
-            get {
-                return ResourceManager.GetString("UploadManager_UploadURL_URL_to_download_from_and_upload", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Share URL ({0}).
-        /// </summary>
-        public static string UploadTask_CreateShareURLTask_Share_URL___0__ {
-            get {
-                return ResourceManager.GetString("UploadTask_CreateShareURLTask_Share_URL___0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shorten URL ({0}).
-        /// </summary>
-        public static string UploadTask_CreateURLShortenerTask_Shorten_URL___0__ {
-            get {
-                return ResourceManager.GetString("UploadTask_CreateURLShortenerTask_Shorten_URL___0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Choose a folder to save.
-        /// </summary>
-        public static string UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save {
-            get {
-                return ResourceManager.GetString("UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to First time upload warning.
-        /// </summary>
-        public static string UploadTask_DoUploadJob_First_time_upload_warning {
-            get {
-                return ResourceManager.GetString("UploadTask_DoUploadJob_First_time_upload_warning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to upload this screenshot?
-        ///Press &apos;No&apos; to cancel the current upload and disable screenshot auto uploading..
-        /// </summary>
-        public static string UploadTask_DoUploadJob_First_time_upload_warning_text {
-            get {
-                return ResourceManager.GetString("UploadTask_DoUploadJob_First_time_upload_warning_text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Uploading.
-        /// </summary>
-        public static string UploadTask_DoUploadJob_Uploading {
-            get {
-                return ResourceManager.GetString("UploadTask_DoUploadJob_Uploading", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You are attempting to upload a large file.
-        ///Are you sure you want to continue?.
-        /// </summary>
-        public static string UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file {
-            get {
-                return ResourceManager.GetString("UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Downloading.
-        /// </summary>
-        public static string UploadTask_DownloadAndUpload_Downloading {
-            get {
-                return ResourceManager.GetString("UploadTask_DownloadAndUpload_Downloading", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Done.
-        /// </summary>
-        public static string UploadTask_OnUploadCompleted_Done {
-            get {
-                return ResourceManager.GetString("UploadTask_OnUploadCompleted_Done", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stopped.
-        /// </summary>
-        public static string UploadTask_OnUploadCompleted_Stopped {
-            get {
-                return ResourceManager.GetString("UploadTask_OnUploadCompleted_Stopped", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Preparing.
-        /// </summary>
-        public static string UploadTask_Prepare_Preparing {
-            get {
-                return ResourceManager.GetString("UploadTask_Prepare_Preparing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Starting.
-        /// </summary>
-        public static string UploadTask_Prepare_Starting {
-            get {
-                return ResourceManager.GetString("UploadTask_Prepare_Starting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stopping.
-        /// </summary>
-        public static string UploadTask_Stop_Stopping {
-            get {
-                return ResourceManager.GetString("UploadTask_Stop_Stopping", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to URL is empty..
-        /// </summary>
-        public static string UploadTask_ThreadDoWork_URL_is_empty_ {
-            get {
-                return ResourceManager.GetString("UploadTask_ThreadDoWork_URL_is_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap us {
-            get {
-                object obj = ResourceManager.GetObject("us", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap vn {
-            get {
-                object obj = ResourceManager.GetObject("vn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} configuration is invalid or missing. Please check &quot;Destination settings&quot; window to configure it..
-        /// </summary>
-        public static string WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_ {
-            get {
-                return ResourceManager.GetString("WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please" +
-                        "_check__Destination_settings__window_to_configure_it_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Would you like to enable image effects?
-        ///
-        ///You can later disable it from &quot;After capture tasks&quot; menu..
-        /// </summary>
-        public static string WouldYouLikeToEnableImageEffects {
-            get {
-                return ResourceManager.GetString("WouldYouLikeToEnableImageEffects", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Would you like to reset themes?.
-        /// </summary>
-        public static string WouldYouLikeToResetThemes {
-            get {
-                return ResourceManager.GetString("WouldYouLikeToResetThemes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap wrench_screwdriver {
+        internal static System.Drawing.Bitmap wrench_screwdriver {
             get {
                 object obj = ResourceManager.GetObject("wrench_screwdriver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Your anti-virus software or the controlled folder access feature in Windows could be blocking ShareX..
-        /// </summary>
-        public static string YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX {
-            get {
-                return ResourceManager.GetString("YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingSh" +
-                        "areX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Your system admin disabled the upload feature..
-        /// </summary>
-        public static string YourSystemAdminDisabledTheUploadFeature {
-            get {
-                return ResourceManager.GetString("YourSystemAdminDisabledTheUploadFeature", resourceCulture);
             }
         }
     }
