@@ -355,7 +355,7 @@
     <value>Destinații de imagini secundare</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Destinații secundare de text</value>
+    <value>Destinații de text secundare</value>
   </data>
   <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
     <value>Folosiți ordinea de preferință a destinațiilor secundare atunci când se reîncearcă</value>
@@ -400,7 +400,7 @@
     <value>Sarcini recente</value>
   </data>
   <data name="tpHistory.Text" xml:space="preserve">
-    <value>Istorie</value>
+    <value>Istoric</value>
   </data>
   <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
     <value>Suprascriere imprimantă implicită:</value>

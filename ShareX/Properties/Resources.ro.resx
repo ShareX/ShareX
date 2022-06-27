@@ -214,7 +214,7 @@
     <value>Editare...</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>Se deschide pornirea ShareX</value>
+    <value>Se deschide la pornirea ShareX</value>
   </data>
   <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
     <value>Întotdeauna în față</value>
@@ -587,7 +587,7 @@ Doriți să reporniți ShareX?</value>
     <value>URL de distribuire ({0})</value>
   </data>
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
-    <value>URL scurtare ({0})</value>
+    <value>Scurtare URL ({0})</value>
   </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>Alegeți un folder pentru a salva</value>

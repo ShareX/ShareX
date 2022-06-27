@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
-    <value>S-a încărcat assemblies</value>
+    <value>Assemblies încărcate</value>
   </data>
   <data name="btnCopyAll.Text" xml:space="preserve">
     <value>Copiați toate</value>

@@ -121,10 +121,10 @@
     <value>ShareX - Cod QR</value>
   </data>
   <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>Decodare din fișier imagine...</value>
+    <value>Decodificare din fișier imagine...</value>
   </data>
   <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>Decodare din ecran...</value>
+    <value>Decodificare din ecran...</value>
   </data>
   <data name="lblDecodeResult.Text" xml:space="preserve">
     <value>Rezultat:</value>
