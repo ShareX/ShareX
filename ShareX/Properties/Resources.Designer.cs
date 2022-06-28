@@ -196,6 +196,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Romanian.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_ro_RO {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_ro_RO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Russian.
         /// </summary>
         public static string AboutForm_AboutForm_Language_ru {
