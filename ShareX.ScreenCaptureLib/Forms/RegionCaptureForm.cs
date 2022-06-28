@@ -657,25 +657,34 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Control | Keys.C:
                     CopyAreaInfo();
                     break;
-                case Keys.Control | Keys.Alt | Keys.D0:
-                    ZoomToFit();
-                    break;
-                case Keys.Control | Keys.D0:
-                    ZoomFactor = 1;
-                    CenterCanvas();
-                    break;
-                case Keys.Control | Keys.Oemplus:
-                    Zoom(true, false);
-                    break;
-                case Keys.Control | Keys.OemMinus:
-                    Zoom(false, false);
-                    break;
             }
 
-            if (!IsEditorMode && e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
+            if (IsEditorMode)
             {
-                MonitorKey(e.KeyData - Keys.D0);
-                return;
+                switch (e.KeyData)
+                {
+                    case Keys.Control | Keys.Alt | Keys.D0:
+                        ZoomToFit();
+                        break;
+                    case Keys.Control | Keys.D0:
+                        ZoomFactor = 1;
+                        CenterCanvas();
+                        break;
+                    case Keys.Control | Keys.Oemplus:
+                        Zoom(true, false);
+                        break;
+                    case Keys.Control | Keys.OemMinus:
+                        Zoom(false, false);
+                        break;
+                }
+            }
+            else
+            {
+                if (e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
+                {
+                    MonitorKey(e.KeyData - Keys.D0);
+                    return;
+                }
             }
         }
 
