@@ -477,6 +477,9 @@
     <EmbeddedResource Include="Controls\OAuthControl.pt-PT.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OAuthControl.ro.resx">
+      <DependentUpon>OAuthControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.ru.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -576,6 +579,9 @@
     <EmbeddedResource Include="Forms\EmailForm.pt-PT.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmailForm.ro.resx">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.ru.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -633,6 +639,9 @@
     <EmbeddedResource Include="Forms\JiraUpload.pt-PT.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JiraUpload.ro.resx">
+      <DependentUpon>JiraUpload.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\JiraUpload.ru.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
@@ -670,6 +679,9 @@
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.ro.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.ru.resx">
@@ -729,6 +741,9 @@
     <EmbeddedResource Include="Forms\ResponseForm.pt-PT.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResponseForm.ro.resx">
+      <DependentUpon>ResponseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.ru.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -769,6 +784,9 @@
       <DependentUpon>TextUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextUploadForm.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.ro.resx">
       <DependentUpon>TextUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextUploadForm.ru.resx">
@@ -885,6 +903,9 @@
     <EmbeddedResource Include="Forms\UploadersConfigForm.pt-PT.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadersConfigForm.ro.resx">
+      <DependentUpon>UploadersConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadersConfigForm.ru.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -942,6 +963,9 @@
     <EmbeddedResource Include="Forms\UserPassBox.pt-PT.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserPassBox.ro.resx">
+      <DependentUpon>UserPassBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserPassBox.ru.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -990,6 +1014,9 @@
     <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.resx">
       <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.ro.resx">
+      <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.ru.resx">
       <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1016,6 +1043,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ro.resx" />
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.uk.resx" />

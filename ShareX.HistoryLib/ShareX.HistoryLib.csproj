@@ -180,6 +180,9 @@
     <EmbeddedResource Include="Forms\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryForm.ro.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.ru.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +240,9 @@
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryItemInfoForm.ro.resx">
+      <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.ru.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +265,9 @@
       <DependentUpon>HistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistorySettingsForm.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.ro.resx">
       <DependentUpon>HistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistorySettingsForm.ru.resx">
@@ -309,6 +318,9 @@
     <EmbeddedResource Include="Forms\ImageHistoryForm.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistoryForm.ro.resx">
+      <DependentUpon>ImageHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistoryForm.ru.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +360,9 @@
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.resx">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistorySettingsForm.ro.resx">
+      <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.ru.resx">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -382,6 +397,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ro.resx" />
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.uk.resx" />
