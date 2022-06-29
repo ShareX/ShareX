@@ -644,4 +644,7 @@ Puteți să le dezactivați ulterior din meniul "Sarcini după captură".</value
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Administratorul de sistem a dezactivat funcția de încărcare.</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_ro_RO" xml:space="preserve">
+    <value>Română</value>
+  </data>
 </root>
