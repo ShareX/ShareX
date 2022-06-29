@@ -308,7 +308,7 @@ namespace ShareX.Setup
             }
 
             string[] languages = new string[] { "de", "es", "es-MX", "fa-IR", "fr", "hu", "id-ID", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pt-BR", "pt-PT",
-                "ro-RO", "ru", "tr", "uk", "vi-VN", "zh-CN", "zh-TW" };
+                "ro", "ru", "tr", "uk", "vi-VN", "zh-CN", "zh-TW" };
 
             foreach (string language in languages)
             {
