@@ -246,7 +246,6 @@ Doriți să reporniți ShareX?</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
     <value>Pornirea a fost dezactivată de către organizația dvs.</value>
-    
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Pornirea a fost dezactivată din Managerul de activități</value>
@@ -644,7 +643,7 @@ Puteți să le dezactivați ulterior din meniul "Sarcini după captură".</value
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Administratorul de sistem a dezactivat funcția de încărcare.</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_ro_RO" xml:space="preserve">
+  <data name="AboutForm_AboutForm_Language_ro" xml:space="preserve">
     <value>Română</value>
   </data>
 </root>

@@ -95,7 +95,7 @@ McoreD: {Links.McoreD}
 {Resources.AboutForm_AboutForm_Language_fa_IR}: https://github.com/pourmand1376
 {Resources.AboutForm_AboutForm_Language_pt_PT}: https://github.com/FarewellAngelina
 {Resources.AboutForm_AboutForm_Language_ja_JP}: https://github.com/kanaxx
-{Resources.AboutForm_AboutForm_Language_ro_RO}: https://github.com/Edward205
+{Resources.AboutForm_AboutForm_Language_ro}: https://github.com/Edward205
 ", FontStyle.Regular);
 
             rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Credits, FontStyle.Bold, 13);
