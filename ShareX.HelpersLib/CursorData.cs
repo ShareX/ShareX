@@ -25,6 +25,7 @@
 
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib
@@ -35,6 +36,7 @@ namespace ShareX.HelpersLib
         public Point Position { get; private set; }
         public Size Size { get; private set; }
         public float SizeMultiplier { get; private set; }
+        public bool IsDefaultSize => SizeMultiplier == 1f;
         public Point Hotspot { get; private set; }
         public Point DrawPosition => new Point(Position.X - Hotspot.X, Position.Y - Hotspot.Y);
         public bool IsVisible { get; private set; }
@@ -69,7 +71,14 @@ namespace ShareX.HelpersLib
                     {
                         if (NativeMethods.GetIconInfo(iconHandle, out IconInfo iconInfo))
                         {
-                            Hotspot = new Point((int)Math.Round(iconInfo.xHotspot * SizeMultiplier), (int)Math.Round(iconInfo.yHotspot * SizeMultiplier));
+                            if (IsDefaultSize)
+                            {
+                                Hotspot = new Point(iconInfo.xHotspot, iconInfo.yHotspot);
+                            }
+                            else
+                            {
+                                Hotspot = new Point((int)Math.Round(iconInfo.xHotspot * SizeMultiplier), (int)Math.Round(iconInfo.yHotspot * SizeMultiplier));
+                            }
 
                             if (iconInfo.hbmColor != IntPtr.Zero)
                             {
@@ -78,11 +87,14 @@ namespace ShareX.HelpersLib
 
                             if (iconInfo.hbmMask != IntPtr.Zero)
                             {
-                                using (Bitmap bmpMask = Image.FromHbitmap(iconInfo.hbmMask))
+                                if (!IsDefaultSize)
                                 {
-                                    int cursorWidth = bmpMask.Width;
-                                    int cursorHeight = iconInfo.hbmColor != IntPtr.Zero ? bmpMask.Height : bmpMask.Height / 2;
-                                    Size = new Size((int)Math.Round(cursorWidth * SizeMultiplier), (int)Math.Round(cursorHeight * SizeMultiplier));
+                                    using (Bitmap bmpMask = Image.FromHbitmap(iconInfo.hbmMask))
+                                    {
+                                        int cursorWidth = bmpMask.Width;
+                                        int cursorHeight = iconInfo.hbmColor != IntPtr.Zero ? bmpMask.Height : bmpMask.Height / 2;
+                                        Size = new Size((int)Math.Round(cursorWidth * SizeMultiplier), (int)Math.Round(cursorHeight * SizeMultiplier));
+                                    }
                                 }
 
                                 NativeMethods.DeleteObject(iconInfo.hbmMask);
@@ -102,7 +114,11 @@ namespace ShareX.HelpersLib
             try
             {
                 int cursorSize = RegistryHelpers.GetValueDWord(@"SOFTWARE\Microsoft\Accessibility", "CursorSize");
-                sizeMultiplier = 1f + ((cursorSize - 1) * 0.5f);
+
+                if (cursorSize > 1)
+                {
+                    sizeMultiplier = 1f + ((cursorSize - 1) * 0.5f);
+                }
             }
             catch
             {
@@ -149,24 +165,19 @@ namespace ShareX.HelpersLib
 
         public Bitmap ToBitmap()
         {
-            Size cursorSize;
-
-            if (Size.IsEmpty)
+            if (IsDefaultSize || Size.IsEmpty)
             {
-                cursorSize = new Size(32, 32);
-            }
-            else
-            {
-                cursorSize = Size;
+                Icon icon = Icon.FromHandle(Handle);
+                return icon.ToBitmap();
             }
 
-            Bitmap bmp = new Bitmap(cursorSize.Width, cursorSize.Height);
+            Bitmap bmp = new Bitmap(Size.Width, Size.Height, PixelFormat.Format32bppArgb);
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 IntPtr hdcDest = g.GetHdc();
 
-                NativeMethods.DrawIconEx(hdcDest, 0, 0, Handle, cursorSize.Width, cursorSize.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
+                NativeMethods.DrawIconEx(hdcDest, 0, 0, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
 
                 g.ReleaseHdc(hdcDest);
             }
