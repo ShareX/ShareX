@@ -196,6 +196,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Romanian.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_ro_RO {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_ro_RO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Russian.
         /// </summary>
         public static string AboutForm_AboutForm_Language_ru {
@@ -2354,6 +2363,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap Rectangle {
             get {
                 object obj = ResourceManager.GetObject("Rectangle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ro {
+            get {
+                object obj = ResourceManager.GetObject("ro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

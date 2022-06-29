@@ -117,7 +117,7 @@ namespace ShareX
                     icon = Resources.br;
                     break;
                 case SupportedLanguage.Romanian:
-                    icon = Resources.globe;
+                    icon = Resources.ro;
                     break;
                 case SupportedLanguage.Russian:
                     icon = Resources.ru;
@@ -192,7 +192,7 @@ namespace ShareX
                     cultureName = "pt-BR";
                     break;
                 case SupportedLanguage.Romanian:
-                    cultureName = "ro-RO";
+                    cultureName = "ro";
                     break;
                 case SupportedLanguage.Russian:
                     cultureName = "ru-RU";

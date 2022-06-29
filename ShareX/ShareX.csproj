@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -1698,7 +1698,7 @@
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OCR\ServiceLinksForm.ro.resx">
-       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OCR\ServiceLinksForm.zh-CN.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
@@ -1978,6 +1978,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images-flickr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
