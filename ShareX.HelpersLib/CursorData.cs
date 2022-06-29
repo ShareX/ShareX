@@ -33,9 +33,10 @@ namespace ShareX.HelpersLib
     {
         public IntPtr Handle { get; private set; }
         public Point Position { get; private set; }
+        public Size Size { get; private set; }
+        public float SizeMultiplier { get; private set; }
         public Point Hotspot { get; private set; }
         public Point DrawPosition => new Point(Position.X - Hotspot.X, Position.Y - Hotspot.Y);
-        public Size BaseSize { get; private set; }
         public bool IsVisible { get; private set; }
 
         public CursorData()
@@ -56,7 +57,8 @@ namespace ShareX.HelpersLib
             {
                 Handle = cursorInfo.hCursor;
                 Position = cursorInfo.ptScreenPos;
-                BaseSize = GetCursorBaseSize();
+                Size = Size.Empty;
+                SizeMultiplier = GetCursorSizeMultiplier();
                 IsVisible = cursorInfo.flags == NativeConstants.CURSOR_SHOWING;
 
                 if (IsVisible)
@@ -67,24 +69,23 @@ namespace ShareX.HelpersLib
                     {
                         if (NativeMethods.GetIconInfo(iconHandle, out IconInfo iconInfo))
                         {
-                            if (BaseSize.IsEmpty)
-                            {
-                                Hotspot = new Point(iconInfo.xHotspot, iconInfo.yHotspot);
-                            }
-                            else
-                            {
-                                float multiplier = BaseSize.Width / 32f;
-                                Hotspot = new Point((int)Math.Round(iconInfo.xHotspot * multiplier), (int)Math.Round(iconInfo.yHotspot * multiplier));
-                            }
-
-                            if (iconInfo.hbmMask != IntPtr.Zero)
-                            {
-                                NativeMethods.DeleteObject(iconInfo.hbmMask);
-                            }
+                            Hotspot = new Point((int)Math.Round(iconInfo.xHotspot * SizeMultiplier), (int)Math.Round(iconInfo.yHotspot * SizeMultiplier));
 
                             if (iconInfo.hbmColor != IntPtr.Zero)
                             {
                                 NativeMethods.DeleteObject(iconInfo.hbmColor);
+                            }
+
+                            if (iconInfo.hbmMask != IntPtr.Zero)
+                            {
+                                using (Bitmap bmpMask = Image.FromHbitmap(iconInfo.hbmMask))
+                                {
+                                    int cursorWidth = bmpMask.Width;
+                                    int cursorHeight = iconInfo.hbmColor != IntPtr.Zero ? bmpMask.Height : bmpMask.Height / 2;
+                                    Size = new Size((int)Math.Round(cursorWidth * SizeMultiplier), (int)Math.Round(cursorHeight * SizeMultiplier));
+                                }
+
+                                NativeMethods.DeleteObject(iconInfo.hbmMask);
                             }
                         }
 
@@ -94,17 +95,20 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Size GetCursorBaseSize()
+        public static float GetCursorSizeMultiplier()
         {
+            float sizeMultiplier = 1f;
+
             try
             {
-                int cursorBaseSize = RegistryHelpers.GetValueDWord(@"Control Panel\Cursors", "CursorBaseSize");
-                return new Size(cursorBaseSize, cursorBaseSize);
+                int cursorSize = RegistryHelpers.GetValueDWord(@"SOFTWARE\Microsoft\Accessibility", "CursorSize");
+                sizeMultiplier = 1f + ((cursorSize - 1) * 0.5f);
             }
             catch
             {
-                return Size.Empty;
             }
+
+            return sizeMultiplier;
         }
 
         public void DrawCursor(IntPtr hdcDest)
@@ -119,7 +123,7 @@ namespace ShareX.HelpersLib
                 Point drawPosition = new Point(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y);
                 drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
 
-                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, BaseSize.Width, BaseSize.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
+                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
         }
 
@@ -147,13 +151,13 @@ namespace ShareX.HelpersLib
         {
             Size cursorSize;
 
-            if (BaseSize.IsEmpty)
+            if (Size.IsEmpty)
             {
                 cursorSize = new Size(32, 32);
             }
             else
             {
-                cursorSize = BaseSize;
+                cursorSize = Size;
             }
 
             Bitmap bmp = new Bitmap(cursorSize.Width, cursorSize.Height);
