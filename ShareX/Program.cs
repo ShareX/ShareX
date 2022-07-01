@@ -32,6 +32,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 #if MicrosoftStore
@@ -394,7 +395,10 @@ namespace ShareX
         {
             if (WaitFormLoad(5000))
             {
-                MainForm.InvokeSafe(() => UseCommandLineArgs(args.CommandLineArgs));
+                MainForm.InvokeSafe(async () =>
+                {
+                    await UseCommandLineArgs(args.CommandLineArgs);
+                });
             }
         }
 
@@ -412,7 +416,7 @@ namespace ShareX
             return false;
         }
 
-        private static void UseCommandLineArgs(string[] args)
+        private static async Task UseCommandLineArgs(string[] args)
         {
             if (args == null || args.Length < 1)
             {
@@ -433,7 +437,7 @@ namespace ShareX
             CLIManager cli = new CLIManager(args);
             cli.ParseCommands();
 
-            CLI.UseCommandLineArgs(cli.Commands);
+            await CLI.UseCommandLineArgs(cli.Commands);
         }
 
         private static void UpdatePersonalPath()

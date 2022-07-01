@@ -327,14 +327,14 @@ namespace ShareX
                         Image = TaskHelpers.FindMenuIcon(action)
                     };
 
-                    tsb.Click += (sender, e) =>
+                    tsb.Click += async (sender, e) =>
                     {
                         if (Program.Settings.ActionsToolbarStayTopMost)
                         {
                             TopMost = false;
                         }
 
-                        TaskHelpers.ExecuteJob(action);
+                        await TaskHelpers.ExecuteJob(action);
 
                         if (Program.Settings.ActionsToolbarStayTopMost)
                         {

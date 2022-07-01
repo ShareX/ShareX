@@ -54,7 +54,7 @@ namespace ShareX
             InitializeControls();
         }
 
-        private void MainForm_HandleCreated(object sender, EventArgs e)
+        private async void MainForm_HandleCreated(object sender, EventArgs e)
         {
             RunPuushTasks();
 
@@ -63,7 +63,7 @@ namespace ShareX
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
-            Program.CLI.UseCommandLineArgs();
+            await Program.CLI.UseCommandLineArgs();
 
             if (Program.Settings.ActionsToolbarRunAtStartup)
             {
@@ -350,11 +350,11 @@ namespace ShareX
             });
         }
 
-        private void HandleHotkeys(HotkeySettings hotkeySetting)
+        private async void HandleHotkeys(HotkeySettings hotkeySetting)
         {
             DebugHelper.WriteLine("Hotkey triggered. " + hotkeySetting);
 
-            TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
+            await TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
         }
 
         private void UpdateWorkflowsMenu()
@@ -436,7 +436,7 @@ namespace ShareX
             {
                 tsmi.Font = new Font(tsmi.Font, FontStyle.Bold);
             }
-            tsmi.Click += (sender, e) => TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
+            tsmi.Click += async (sender, e) => await TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
             return tsmi;
         }
 
@@ -1947,13 +1947,13 @@ namespace ShareX
 
         #region Tray events
 
-        private void niTray_MouseUp(object sender, MouseEventArgs e)
+        private async void niTray_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 if (Program.Settings.TrayLeftDoubleClickAction == HotkeyType.None)
                 {
-                    TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
+                    await TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
                 }
                 else
                 {
@@ -1969,24 +1969,24 @@ namespace ShareX
                         trayClickCount = 0;
                         timerTraySingleClick.Stop();
 
-                        TaskHelpers.ExecuteJob(Program.Settings.TrayLeftDoubleClickAction);
+                        await TaskHelpers.ExecuteJob(Program.Settings.TrayLeftDoubleClickAction);
                     }
                 }
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                TaskHelpers.ExecuteJob(Program.Settings.TrayMiddleClickAction);
+                await TaskHelpers.ExecuteJob(Program.Settings.TrayMiddleClickAction);
             }
         }
 
-        private void timerTraySingleClick_Tick(object sender, EventArgs e)
+        private async void timerTraySingleClick_Tick(object sender, EventArgs e)
         {
             if (trayClickCount == 1)
             {
                 trayClickCount = 0;
                 timerTraySingleClick.Stop();
 
-                TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
+                await TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
             }
         }
 

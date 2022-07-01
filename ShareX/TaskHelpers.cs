@@ -52,17 +52,17 @@ namespace ShareX
 {
     public static class TaskHelpers
     {
-        public static void ExecuteJob(HotkeyType job, CLICommand command = null)
+        public static async Task ExecuteJob(HotkeyType job, CLICommand command = null)
         {
-            ExecuteJob(Program.DefaultTaskSettings, job, command);
+            await ExecuteJob(Program.DefaultTaskSettings, job, command);
         }
 
-        public static void ExecuteJob(TaskSettings taskSettings)
+        public static async Task ExecuteJob(TaskSettings taskSettings)
         {
-            ExecuteJob(taskSettings, taskSettings.Job);
+            await ExecuteJob(taskSettings, taskSettings.Job);
         }
 
-        public static void ExecuteJob(TaskSettings taskSettings, HotkeyType job, CLICommand command = null)
+        public static async Task ExecuteJob(TaskSettings taskSettings, HotkeyType job, CLICommand command = null)
         {
             if (job == HotkeyType.None) return;
 
@@ -224,7 +224,7 @@ namespace ShareX
                     OpenVideoThumbnailer(safeTaskSettings);
                     break;
                 case HotkeyType.OCR:
-                    OCRImage(safeTaskSettings).GetAwaiter().GetResult();
+                    await OCRImage(safeTaskSettings);
                     break;
                 case HotkeyType.QRCode:
                     OpenQRCode();

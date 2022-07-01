@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
@@ -36,12 +37,12 @@ namespace ShareX
         {
         }
 
-        public void UseCommandLineArgs()
+        public async Task UseCommandLineArgs()
         {
-            UseCommandLineArgs(Commands);
+            await UseCommandLineArgs(Commands);
         }
 
-        public void UseCommandLineArgs(List<CLICommand> commands)
+        public async Task UseCommandLineArgs(List<CLICommand> commands)
         {
             TaskSettings taskSettings = FindCLITask(commands);
 
@@ -51,7 +52,7 @@ namespace ShareX
 
                 if (command.IsCommand)
                 {
-                    if (CheckCustomUploader(command) || CheckImageEffect(command) || CheckCLIHotkey(command) || CheckCLIWorkflow(command) ||
+                    if (CheckCustomUploader(command) || CheckImageEffect(command) || await CheckCLIHotkey(command) || await CheckCLIWorkflow(command) ||
                         CheckNativeMessagingInput(command))
                     {
                     }
@@ -121,13 +122,14 @@ namespace ShareX
             return false;
         }
 
-        private bool CheckCLIHotkey(CLICommand command)
+        private async Task<bool> CheckCLIHotkey(CLICommand command)
         {
             foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
             {
                 if (command.CheckCommand(job.ToString()))
                 {
-                    TaskHelpers.ExecuteJob(job, command);
+                    await TaskHelpers.ExecuteJob(job, command);
+
                     return true;
                 }
             }
@@ -135,7 +137,7 @@ namespace ShareX
             return false;
         }
 
-        private bool CheckCLIWorkflow(CLICommand command)
+        private async Task<bool> CheckCLIWorkflow(CLICommand command)
         {
             if (Program.HotkeysConfig != null && command.CheckCommand("workflow") && !string.IsNullOrEmpty(command.Parameter))
             {
@@ -145,7 +147,8 @@ namespace ShareX
                     {
                         if (command.Parameter == hotkeySetting.TaskSettings.ToString())
                         {
-                            TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
+                            await TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
+
                             return true;
                         }
                     }
