@@ -67,6 +67,8 @@ namespace ShareX
         MexicanSpanish,
         [Description("فارسی (Persian)")]
         Persian,
+        [Description("Polski (Polish)")]
+        Polish,
         [Description("Português (Portuguese)")]
         Portuguese,
         [Description("Português-Brasil (Portuguese-Brazil)")]

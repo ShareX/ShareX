@@ -189,6 +189,9 @@
     <EmbeddedResource Include="Forms\ImageEffectPackagerForm.ja-JP.resx">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.pl.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectPackagerForm.resx">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +240,9 @@
     <EmbeddedResource Include="Forms\ImageEffectsForm.nl-NL.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectsForm.pl.resx">
+      <DependentUpon>ImageEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectsForm.pt-BR.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +284,7 @@
     <EmbeddedResource Include="Properties\Resources.ja-JP.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
+    <EmbeddedResource Include="Properties\Resources.pl.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
