@@ -111,7 +111,7 @@ namespace ShareX
                     icon = Resources.ir;
                     break;
                 case SupportedLanguage.Polish:
-                    icon = Resources.pl;
+                    icon = Resources.globe;
                     break;
                 case SupportedLanguage.Portuguese:
                     icon = Resources.pt;
