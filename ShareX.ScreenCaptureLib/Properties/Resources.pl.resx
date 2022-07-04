@@ -472,4 +472,13 @@ Czy chcesz zamknąć edytor obrazów?</value>
   <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
     <value>Kierunek grotu strzałki:</value>
   </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>Przechwytywanie przezroczystego prostokąta</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>Proste przechwytywanie prostokąta</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Użyj lekkich węzłów zmiany rozmiaru</value>
+  </data>
 </root>

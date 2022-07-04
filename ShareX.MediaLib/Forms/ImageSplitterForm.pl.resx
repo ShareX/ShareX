@@ -135,4 +135,7 @@
   <data name="lblColumnCount.Text" xml:space="preserve">
     <value>Liczba kolumn:</value>
   </data>
+  <data name="lblRowCount.Text" xml:space="preserve">
+    <value>Liczba wierszy:</value>
+  </data>
 </root>

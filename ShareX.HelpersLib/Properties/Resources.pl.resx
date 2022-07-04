@@ -1354,4 +1354,55 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Wyszukiwarka grafiki Google</value>
   </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>Nazwa procesu okna</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>Losowy GUID</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>Symuluj naciśnięcie klawisza "Home"</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>Symuluj naciśnięcie klawisza "Page down"</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Symuluj przewijanie kółkiem myszy</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>Liczba losowa od 0 do 9 (powtarzaj za pomocą {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>Losowy znak szesnastkowy (powtarzaj za pomocą {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>Losowy znak alfanumeryczny (powtarzaj za pomocą {n})</value>
+  </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Przekątna w dół</value>
+  </data>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>Przekątna w górę</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Losowa linia z pliku (Użyj {filepath} aby określić plik)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Automatycznie rosnąca liczba szesnastkowa (liczba 0 na początku: {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>Automatycznie rosnąca liczba (liczba 0 na początku: {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Automatycznie rosnąca liczba alfanumeryczna bez uwzględniania wielkości liter (liczba 0 na początku: {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Automatycznie rosnąca liczba alfanumeryczna z uwzględnieniem wielkości liter (liczba 0 na początku: {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Automatyczne zwiększanie o podstawę {n} za pomocą znaków alfanumerycznych (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
+    <value>Wyślij wiadomość przewijania do okna/kontroli</value>
+  </data>
 </root>

@@ -219,4 +219,10 @@
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>Pokaż powiadomienie po zakończeniu zadania</value>
   </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Opóźnienie przewijania:</value>
+  </data>
+  <data name="lblScrollMethod.Text" xml:space="preserve">
+    <value>Metoda przewijania:</value>
+  </data>
 </root>

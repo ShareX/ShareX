@@ -132,4 +132,8 @@
   <data name="btnOverwrite.Text" xml:space="preserve">
     <value>Nadpisz: </value>
   </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>W tej lokalizacji znajduje się już plik o tej samej nazwie.
+Wybierz nową nazwę pliku lub działanie:</value>
+  </data>
 </root>

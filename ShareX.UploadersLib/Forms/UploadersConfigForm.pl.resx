@@ -1088,4 +1088,35 @@ Na przykład, jeśli Twój bucket nazywa się "bucket.example.com" to URL będzi
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
     <value>Uwaga: Możesz dwukrotnie kliknąć nazwę folderu, aby przejść do tego folderu.</value>
   </data>
+  <data name="lblSeafileAPIURL.Text" xml:space="preserve">
+    <value>Link API:</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>Dni do wygaśnięcia:</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>Hasło do biblioteki:</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>Podziel się hasłem:</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>Biblioteki bez uprawnień do zapisu są ukryte.
+Używanie zaszyfrowanej biblioteki wyłącza udostępnianie.</value>
+  </data>
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
+    <value>Hasło:</value>
+  </data>
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
+    <value>Nazwa użytkownika:</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>Możesz odwołać swój dostęp w dowolnym momencie, korzystając z poniższego linku:</value>
+  </data>
+  <data name="lblSFTPKeyLocation.Text" xml:space="preserve">
+    <value>Lokalizacja klucza:</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.Text" xml:space="preserve">
+    <value>Hasło klucza:</value>
+  </data>
 </root>

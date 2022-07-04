@@ -642,4 +642,28 @@
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Rozmiary regionu będą się przyciągać przytrzymując klawisz "Alt":</value>
   </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>Pokaż wyskakujące powiadomienie po zakończeniu zadania</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Działanie 4 kliknięć myszką:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Działanie 5 kliknięć myszką:</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Działanie środkowego kliknięcia myszy:</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>FPS podczas nagrywania ekranu:</value>
+  </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>Opóźnienie zrzutu ekranu:</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>Działanie środkowego kliknięcia myszy:</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>Czas zanikania:</value>
+  </data>
 </root>

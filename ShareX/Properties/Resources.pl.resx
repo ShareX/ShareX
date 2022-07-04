@@ -634,4 +634,16 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>Konfiguracja {0} jest nieprawidłowa lub jej brakuje. Sprawdź okno „Ustawienia miejsca docelowego”, aby je skonfigurować.</value>
   </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Przywrócić wszystkie szybkie zadania do wartości domyślnych?</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>Prostokąt klienta</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Klamka okna</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Prostokąt okna</value>
+  </data>
 </root>

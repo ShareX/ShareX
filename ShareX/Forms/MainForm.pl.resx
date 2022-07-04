@@ -754,7 +754,7 @@
     <value>Pełny ekran</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
-    <value>Historia....</value>
+    <value>Historia...</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
     <value>Sprawdzenie haszu...</value>
@@ -764,5 +764,17 @@
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>Ustawienia zadania...</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Edytor obrazów...</value>
+  </data>
+  <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
+    <value>Efekty obrazu...</value>
+  </data>
+  <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
+    <value>Historia obrazów...</value>
+  </data>
+  <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
+    <value>Przeglądarka obrazów...</value>
   </data>
 </root>

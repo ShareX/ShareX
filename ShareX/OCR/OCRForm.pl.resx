@@ -135,4 +135,7 @@
   <data name="lblResult.Text" xml:space="preserve">
     <value>Wynik:</value>
   </data>
+  <data name="lblScaleFactor.Text" xml:space="preserve">
+    <value>Współczynnik skalowania:</value>
+  </data>
 </root>

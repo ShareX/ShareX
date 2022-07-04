@@ -135,4 +135,7 @@
   <data name="btnReset.Text" xml:space="preserve">
     <value>Zresetuj do domyślnych...</value>
   </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Wskazówka: Jeśli dodasz puste zadanie, zostanie ono przekonwertowane na linię rozdzielającą w menu.</value>
+  </data>
 </root>

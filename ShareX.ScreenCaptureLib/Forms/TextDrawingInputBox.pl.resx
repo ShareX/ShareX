@@ -186,4 +186,10 @@
   <data name="tsmiSecondColor.Text" xml:space="preserve">
     <value>Drugi kolor tekstu...</value>
   </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
+    <value>Przekątna w dół</value>
+  </data>
+  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
+    <value>Przekątna w górę</value>
+  </data>
 </root>

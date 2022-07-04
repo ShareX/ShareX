@@ -135,4 +135,7 @@
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Pokaż ShareX w menu "Wyślij do"</value>
   </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Pierwsza konfiguracja ShareX</value>
+  </data>
 </root>

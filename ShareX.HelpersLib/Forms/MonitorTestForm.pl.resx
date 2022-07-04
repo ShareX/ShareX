@@ -162,4 +162,10 @@
   <data name="cbShapes.Items2" xml:space="preserve">
     <value>Szachownica</value>
   </data>
+  <data name="lblShapeSize.Text" xml:space="preserve">
+    <value>Rozmiar:</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Wskazówka: Możesz kliknąć na zewnątrz, aby ukryć/pokazać ten panel.</value>
+  </data>
 </root>
