@@ -104,7 +104,19 @@ namespace ShareX
                 using (SoftwareBitmap softwareBitmap = await decoder.GetSoftwareBitmapAsync())
                 {
                     OcrResult ocrResult = await engine.RecognizeAsync(softwareBitmap);
-                    return string.Join("\r\n", ocrResult.Lines.Select(x => x.Text));
+
+                    bool isCJK = languageTag.StartsWith("zh", StringComparison.OrdinalIgnoreCase) || // Chinese
+                        languageTag.StartsWith("ja", StringComparison.OrdinalIgnoreCase) || // Japanese
+                        languageTag.StartsWith("ko", StringComparison.OrdinalIgnoreCase); // Korean
+
+                    if (isCJK)
+                    {
+                        return string.Join("\r\n", ocrResult.Lines.Select(line => string.Concat(line.Words.Select(word => word.Text))));
+                    }
+                    else
+                    {
+                        return string.Join("\r\n", ocrResult.Lines.Select(line => line.Text));
+                    }
                 }
             }
         }
