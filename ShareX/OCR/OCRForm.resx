@@ -126,13 +126,13 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
+    <value>13, 56</value>
   </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 16</value>
   </data>
   <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Language:</value>
@@ -153,13 +153,13 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="cbLanguages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>16, 80</value>
   </data>
   <data name="cbLanguages.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 24</value>
   </data>
   <data name="cbLanguages.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;cbLanguages.Name" xml:space="preserve">
     <value>cbLanguages</value>
@@ -180,13 +180,13 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="lblResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
+    <value>341, 16</value>
   </data>
   <data name="lblResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 16</value>
   </data>
   <data name="lblResult.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>10</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Result:</value>
@@ -211,7 +211,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
+    <value>344, 40</value>
   </data>
   <data name="txtResult.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -220,10 +220,10 @@
     <value>Both</value>
   </data>
   <data name="txtResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 360</value>
+    <value>520, 344</value>
   </data>
   <data name="txtResult.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;txtResult.Name" xml:space="preserve">
     <value>txtResult</value>
@@ -244,7 +244,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="lblScaleFactor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>301, 16</value>
+    <value>13, 112</value>
   </data>
   <data name="lblScaleFactor.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 16</value>
@@ -271,10 +271,10 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="nudScaleFactor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 40</value>
+    <value>16, 136</value>
   </data>
   <data name="nudScaleFactor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>80, 22</value>
   </data>
   <data name="nudScaleFactor.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -298,13 +298,13 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="cbServices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 20</value>
+    <value>16, 192</value>
   </data>
   <data name="cbServices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 24</value>
+    <value>272, 24</value>
   </data>
   <data name="cbServices.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;cbServices.Name" xml:space="preserve">
     <value>cbServices</value>
@@ -318,41 +318,41 @@
   <data name="&gt;&gt;cbServices.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="btnOpen.Enabled" type="System.Boolean, mscorlib">
+  <data name="btnOpenServiceLink.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="btnOpen.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnOpenServiceLink.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
-  <data name="btnOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 48</value>
+  <data name="btnOpenServiceLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 224</value>
   </data>
-  <data name="btnOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 32</value>
+  <data name="btnOpenServiceLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 32</value>
   </data>
-  <data name="btnOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="btnOpenServiceLink.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="btnOpen.Text" xml:space="preserve">
-    <value>Open...</value>
+  <data name="btnOpenServiceLink.Text" xml:space="preserve">
+    <value>Open service link...</value>
   </data>
-  <data name="&gt;&gt;btnOpen.Name" xml:space="preserve">
-    <value>btnOpen</value>
+  <data name="&gt;&gt;btnOpenServiceLink.Name" xml:space="preserve">
+    <value>btnOpenServiceLink</value>
   </data>
-  <data name="&gt;&gt;btnOpen.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnOpenServiceLink.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnOpen.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnOpenServiceLink.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnOpen.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnOpenServiceLink.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="cbEditServices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 48</value>
+    <value>296, 190</value>
   </data>
   <data name="cbEditServices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 32</value>
+    <value>28, 28</value>
   </data>
   <data name="cbEditServices.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -369,68 +369,74 @@
   <data name="&gt;&gt;cbEditServices.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="pbStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
-  </data>
-  <data name="pbStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 24</value>
-  </data>
-  <data name="pbStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;pbStatus.Name" xml:space="preserve">
-    <value>pbStatus</value>
-  </data>
-  <data name="&gt;&gt;pbStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbStatus.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbStatus.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblStatus.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnOpenOCRHelp.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
-  <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
+  <data name="btnOpenOCRHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 78</value>
   </data>
-  <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 16</value>
+  <data name="btnOpenOCRHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 28</value>
   </data>
-  <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="btnOpenOCRHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>OCR is processing...</value>
+  <data name="&gt;&gt;btnOpenOCRHelp.Name" xml:space="preserve">
+    <value>btnOpenOCRHelp</value>
   </data>
-  <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
-    <value>lblStatus</value>
+  <data name="&gt;&gt;btnOpenOCRHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblStatus.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnOpenOCRHelp.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnOpenOCRHelp.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="lblService.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblService.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="lblService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 168</value>
+  </data>
+  <data name="lblService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="lblService.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblService.Text" xml:space="preserve">
+    <value>Service:</value>
+  </data>
+  <data name="&gt;&gt;lblService.Name" xml:space="preserve">
+    <value>lblService</value>
+  </data>
+  <data name="&gt;&gt;lblService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblService.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblService.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnSelectRegion.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
+  <data name="btnSelectRegion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnSelectRegion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, -2</value>
+    <value>16, 16</value>
   </data>
   <data name="btnSelectRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 32</value>
+    <value>272, 32</value>
   </data>
   <data name="btnSelectRegion.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>0</value>
   </data>
   <data name="btnSelectRegion.Text" xml:space="preserve">
     <value>Select region...</value>
@@ -445,7 +451,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSelectRegion.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -454,10 +460,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>624, 471</value>
+    <value>879, 399</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>640, 510</value>
+    <value>600, 400</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

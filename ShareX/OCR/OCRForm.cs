@@ -111,13 +111,18 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            btnSelectRegion.Visible = !busy;
-            lblLanguage.Visible = !busy;
-            cbLanguages.Visible = !busy;
-            lblScaleFactor.Visible = !busy;
-            nudScaleFactor.Visible = !busy;
-            lblStatus.Visible = busy;
-            pbStatus.Visible = busy;
+            if (busy)
+            {
+                Cursor = Cursors.WaitCursor;
+            }
+            else
+            {
+                Cursor = Cursors.Default;
+            }
+
+            btnSelectRegion.Enabled = !busy;
+            cbLanguages.Enabled = !busy;
+            nudScaleFactor.Enabled = !busy;
         }
 
         private async Task OCR(Bitmap bmp)
@@ -183,6 +188,11 @@ namespace ShareX
             }
         }
 
+        private void btnOpenOCRHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.DocsOCR);
+        }
+
         private async void nudScaleFactor_ValueChanged(object sender, EventArgs e)
         {
             if (loaded)
@@ -198,7 +208,7 @@ namespace ShareX
             Options.SelectedServiceLink = cbServices.SelectedIndex;
         }
 
-        private void btnOpen_Click(object sender, EventArgs e)
+        private void btnOpenServiceLink_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(Result) && cbServices.SelectedItem is ServiceLink serviceLink)
             {
@@ -228,7 +238,7 @@ namespace ShareX
         private void txtResult_TextChanged(object sender, EventArgs e)
         {
             Result = txtResult.Text.Trim();
-            btnOpen.Enabled = !string.IsNullOrEmpty(Result);
+            btnOpenServiceLink.Enabled = !string.IsNullOrEmpty(Result);
         }
     }
 }

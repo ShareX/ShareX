@@ -23,10 +23,10 @@
             this.lblScaleFactor = new System.Windows.Forms.Label();
             this.nudScaleFactor = new System.Windows.Forms.NumericUpDown();
             this.cbServices = new System.Windows.Forms.ComboBox();
-            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnOpenServiceLink = new System.Windows.Forms.Button();
             this.cbEditServices = new System.Windows.Forms.Button();
-            this.pbStatus = new System.Windows.Forms.ProgressBar();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.btnOpenOCRHelp = new System.Windows.Forms.Button();
+            this.lblService = new System.Windows.Forms.Label();
             this.btnSelectRegion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).BeginInit();
             this.SuspendLayout();
@@ -95,12 +95,12 @@
             this.cbServices.Name = "cbServices";
             this.cbServices.SelectedIndexChanged += new System.EventHandler(this.cbServices_SelectedIndexChanged);
             // 
-            // btnOpen
+            // btnOpenServiceLink
             // 
-            resources.ApplyResources(this.btnOpen, "btnOpen");
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            resources.ApplyResources(this.btnOpenServiceLink, "btnOpenServiceLink");
+            this.btnOpenServiceLink.Name = "btnOpenServiceLink";
+            this.btnOpenServiceLink.UseVisualStyleBackColor = true;
+            this.btnOpenServiceLink.Click += new System.EventHandler(this.btnOpenServiceLink_Click);
             // 
             // cbEditServices
             // 
@@ -110,17 +110,18 @@
             this.cbEditServices.UseVisualStyleBackColor = true;
             this.cbEditServices.Click += new System.EventHandler(this.cbEditServices_Click);
             // 
-            // pbStatus
+            // btnOpenOCRHelp
             // 
-            resources.ApplyResources(this.pbStatus, "pbStatus");
-            this.pbStatus.MarqueeAnimationSpeed = 50;
-            this.pbStatus.Name = "pbStatus";
-            this.pbStatus.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            resources.ApplyResources(this.btnOpenOCRHelp, "btnOpenOCRHelp");
+            this.btnOpenOCRHelp.Image = global::ShareX.Properties.Resources.question;
+            this.btnOpenOCRHelp.Name = "btnOpenOCRHelp";
+            this.btnOpenOCRHelp.UseVisualStyleBackColor = true;
+            this.btnOpenOCRHelp.Click += new System.EventHandler(this.btnOpenOCRHelp_Click);
             // 
-            // lblStatus
+            // lblService
             // 
-            resources.ApplyResources(this.lblStatus, "lblStatus");
-            this.lblStatus.Name = "lblStatus";
+            resources.ApplyResources(this.lblService, "lblService");
+            this.lblService.Name = "lblService";
             // 
             // btnSelectRegion
             // 
@@ -133,11 +134,11 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblService);
+            this.Controls.Add(this.btnOpenOCRHelp);
             this.Controls.Add(this.btnSelectRegion);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.cbEditServices);
-            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.btnOpenServiceLink);
             this.Controls.Add(this.cbServices);
             this.Controls.Add(this.nudScaleFactor);
             this.Controls.Add(this.lblScaleFactor);
@@ -163,10 +164,10 @@
         private System.Windows.Forms.Label lblScaleFactor;
         private System.Windows.Forms.NumericUpDown nudScaleFactor;
         private System.Windows.Forms.ComboBox cbServices;
-        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.Button btnOpenServiceLink;
         private System.Windows.Forms.Button cbEditServices;
-        private System.Windows.Forms.ProgressBar pbStatus;
-        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnOpenOCRHelp;
+        private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.Button btnSelectRegion;
     }
 }
