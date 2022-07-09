@@ -1616,6 +1616,7 @@ namespace ShareX.ScreenCaptureLib
                         CopyImageRequested(bmp);
 
                         ShapeManager.ShowMenuTooltip(Resources.ImageCopied);
+                        ShapeManager.IsImageModified = false;
                     }
                 }
             }
@@ -1637,6 +1638,7 @@ namespace ShareX.ScreenCaptureLib
 
                 UploadImageRequested(bmp);
                 ShapeManager.ShowMenuTooltip(Resources.ImageUploading);
+                ShapeManager.IsImageModified = false;
             }
         }
 
@@ -1647,6 +1649,7 @@ namespace ShareX.ScreenCaptureLib
                 Bitmap bmp = ReceiveImageForTask();
 
                 PrintImageRequested(bmp);
+                ShapeManager.IsImageModified = false;
             }
         }
 
