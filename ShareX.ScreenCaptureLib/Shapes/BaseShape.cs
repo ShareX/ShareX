@@ -292,7 +292,7 @@ namespace ShareX.ScreenCaptureLib
                         startDegree = 45;
                     }
 
-                    pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, degree, startDegree);
+                    pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, degree, startDegree).Round();
                 }
                 else if (Manager.IsSnapResizing)
                 {
