@@ -91,7 +91,7 @@ namespace ShareX
 
             if (!OcrEngine.IsLanguageSupported(language))
             {
-                throw new Exception($"{language.LanguageTag} is not supported in this system.");
+                throw new Exception($"{language.DisplayName} language is not available in this system for OCR.");
             }
 
             OcrEngine engine = OcrEngine.TryCreateFromLanguage(language);
@@ -105,13 +105,17 @@ namespace ShareX
                 {
                     OcrResult ocrResult = await engine.RecognizeAsync(softwareBitmap);
 
-                    bool isCJK = languageTag.StartsWith("zh", StringComparison.OrdinalIgnoreCase) || // Chinese
-                        languageTag.StartsWith("ja", StringComparison.OrdinalIgnoreCase) || // Japanese
-                        languageTag.StartsWith("ko", StringComparison.OrdinalIgnoreCase); // Korean
-
-                    if (isCJK)
+                    if (language.LanguageTag.StartsWith("zh", StringComparison.OrdinalIgnoreCase) || // Chinese
+                        language.LanguageTag.StartsWith("ja", StringComparison.OrdinalIgnoreCase) || // Japanese
+                        language.LanguageTag.StartsWith("ko", StringComparison.OrdinalIgnoreCase)) // Korean
                     {
+                        // If CJK language then remove spaces between words.
                         return string.Join("\r\n", ocrResult.Lines.Select(line => string.Concat(line.Words.Select(word => word.Text))));
+                    }
+                    else if (language.LayoutDirection == LanguageLayoutDirection.Rtl)
+                    {
+                        // If RTL language then reverse order of words.
+                        return string.Join("\r\n", ocrResult.Lines.Select(line => string.Join(" ", line.Words.Reverse().Select(word => word.Text))));
                     }
                     else
                     {
