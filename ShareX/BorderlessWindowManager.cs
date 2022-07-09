@@ -37,19 +37,24 @@ namespace ShareX
     {
         public static bool MakeWindowBorderless(string windowTitle, bool useWorkingArea = false)
         {
-            if (!string.IsNullOrEmpty(windowTitle))
+            switch (string.IsNullOrEmpty(windowTitle))
             {
-                IntPtr hWnd = SearchWindow(windowTitle);
-
-                if (hWnd == IntPtr.Zero)
+                case false:
                 {
-                    MessageBox.Show(Resources.UnableToFindAWindowWithSpecifiedWindowTitle, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MakeWindowBorderless(hWnd, useWorkingArea);
+                    IntPtr hWnd = SearchWindow(windowTitle);
 
-                    return true;
+                    if (hWnd == IntPtr.Zero)
+                    {
+                        MessageBox.Show(Resources.UnableToFindAWindowWithSpecifiedWindowTitle, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MakeWindowBorderless(hWnd, useWorkingArea);
+
+                        return true;
+                    }
+
+                    break;
                 }
             }
 
@@ -60,9 +65,11 @@ namespace ShareX
         {
             WindowInfo windowInfo = new WindowInfo(hWnd);
 
-            if (windowInfo.IsMinimized)
+            switch (windowInfo.IsMinimized)
             {
-                windowInfo.Restore();
+                case true:
+                    windowInfo.Restore();
+                    break;
             }
 
             WindowStyles windowStyle = windowInfo.Style;
@@ -88,14 +95,7 @@ namespace ShareX
             Screen screen = Screen.FromHandle(hWnd);
             Rectangle rect;
 
-            if (useWorkingArea)
-            {
-                rect = screen.WorkingArea;
-            }
-            else
-            {
-                rect = screen.Bounds;
-            }
+            rect = useWorkingArea ? screen.WorkingArea : screen.Bounds;
 
             // https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowpos
             SetWindowPosFlags setWindowPosFlag =
@@ -104,12 +104,14 @@ namespace ShareX
                 | SetWindowPosFlags.SWP_NOZORDER // Retains the current Z order (ignores the hWndInsertAfter parameter).
                 ;
 
-            if (rect.IsEmpty)
+            switch (rect.IsEmpty)
             {
-                setWindowPosFlag |=
-                    SetWindowPosFlags.SWP_NOMOVE // Retains the current position (ignores X and Y parameters).
-                    | SetWindowPosFlags.SWP_NOSIZE // Retains the current size (ignores the cx and cy parameters).
-                    ;
+                case true:
+                    setWindowPosFlag |=
+                        SetWindowPosFlags.SWP_NOMOVE // Retains the current position (ignores X and Y parameters).
+                        | SetWindowPosFlags.SWP_NOSIZE // Retains the current size (ignores the cx and cy parameters).
+                        ;
+                    break;
             }
 
             windowInfo.SetWindowPos(rect, setWindowPosFlag);
