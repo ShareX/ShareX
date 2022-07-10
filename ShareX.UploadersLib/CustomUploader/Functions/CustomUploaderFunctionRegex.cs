@@ -30,6 +30,7 @@ namespace ShareX.UploadersLib
     // Example: {regex:(?<=href=").+(?=")}
     // Example: {regex:href="(.+)"|1}
     // Example: {regex:href="(?<url>.+)"|url}
+    // Example: {regex:{response}|href="(.+)"|1}
     internal class CustomUploaderFunctionRegex : CustomUploaderFunction
     {
         public override string Name { get; } = "regex";
@@ -38,28 +39,43 @@ namespace ShareX.UploadersLib
 
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
-            string pattern = parameters[0];
+            string input, pattern, group = "";
 
-            if (!string.IsNullOrEmpty(pattern))
+            // {regex:input|pattern|group}
+            if (parameters.Length > 2)
             {
-                Match match = Regex.Match(parser.ResponseInfo.ResponseText, pattern);
+                input = parameters[0];
+                pattern = parameters[1];
+                group = parameters[2];
+            }
+            else
+            {
+                // {regex:pattern}
+                input = parser.ResponseInfo.ResponseText;
+                pattern = parameters[0];
+
+                // {regex:pattern|group}
+                if (parameters.Length > 1)
+                {
+                    group = parameters[1];
+                }
+            }
+
+            if (!string.IsNullOrEmpty(input) && !string.IsNullOrEmpty(pattern))
+            {
+                Match match = Regex.Match(input, pattern);
 
                 if (match.Success)
                 {
-                    if (parameters.Length > 1)
+                    if (!string.IsNullOrEmpty(group))
                     {
-                        string group = parameters[1];
-
-                        if (!string.IsNullOrEmpty(group))
+                        if (int.TryParse(group, out int groupNumber))
                         {
-                            if (int.TryParse(group, out int groupNumber))
-                            {
-                                return match.Groups[groupNumber].Value;
-                            }
-                            else
-                            {
-                                return match.Groups[group].Value;
-                            }
+                            return match.Groups[groupNumber].Value;
+                        }
+                        else
+                        {
+                            return match.Groups[group].Value;
                         }
                     }
 
