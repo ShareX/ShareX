@@ -52,6 +52,16 @@ namespace ShareX
         private Bitmap buffer;
         private Graphics gBuffer;
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ExStyle |= (int)WindowStyles.WS_EX_TOOLWINDOW;
+                return createParams;
+            }
+        }
+
         private NotificationForm()
         {
             InitializeComponent();
