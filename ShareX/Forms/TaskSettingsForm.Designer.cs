@@ -217,6 +217,7 @@
             this.nudGIFFPS = new System.Windows.Forms.NumericUpDown();
             this.lblGIFFPS = new System.Windows.Forms.Label();
             this.tpOCR = new System.Windows.Forms.TabPage();
+            this.btnCaptureOCRHelp = new System.Windows.Forms.Button();
             this.cbCaptureOCRAutoCopy = new System.Windows.Forms.CheckBox();
             this.cbCaptureOCRSilent = new System.Windows.Forms.CheckBox();
             this.lblOCRDefaultLanguage = new System.Windows.Forms.Label();
@@ -1985,6 +1986,7 @@
             // 
             // tpOCR
             // 
+            this.tpOCR.Controls.Add(this.btnCaptureOCRHelp);
             this.tpOCR.Controls.Add(this.cbCaptureOCRAutoCopy);
             this.tpOCR.Controls.Add(this.cbCaptureOCRSilent);
             this.tpOCR.Controls.Add(this.lblOCRDefaultLanguage);
@@ -1992,6 +1994,14 @@
             resources.ApplyResources(this.tpOCR, "tpOCR");
             this.tpOCR.Name = "tpOCR";
             this.tpOCR.UseVisualStyleBackColor = true;
+            // 
+            // btnCaptureOCRHelp
+            // 
+            this.btnCaptureOCRHelp.Image = global::ShareX.Properties.Resources.question;
+            resources.ApplyResources(this.btnCaptureOCRHelp, "btnCaptureOCRHelp");
+            this.btnCaptureOCRHelp.Name = "btnCaptureOCRHelp";
+            this.btnCaptureOCRHelp.UseVisualStyleBackColor = true;
+            this.btnCaptureOCRHelp.Click += new System.EventHandler(this.btnCaptureOCRHelp_Click);
             // 
             // cbCaptureOCRAutoCopy
             // 
@@ -2952,5 +2962,6 @@
         private System.Windows.Forms.NumericUpDown nudRegionCaptureFPSLimit;
         private System.Windows.Forms.Label lblRegionCaptureFPSLimit;
         private System.Windows.Forms.CheckBox cbRegionCaptureActiveMonitorMode;
+        private System.Windows.Forms.Button btnCaptureOCRHelp;
     }
 }
