@@ -178,6 +178,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Polish.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_pl {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_pl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Portuguese (Brazil).
         /// </summary>
         public static string AboutForm_AboutForm_Language_pt_BR {
