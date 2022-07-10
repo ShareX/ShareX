@@ -29,6 +29,7 @@ using System.Xml.XPath;
 namespace ShareX.UploadersLib
 {
     // Example: {xml:/files/file[1]/url}
+    // Example: {xml:{response}|/files/file[1]/url}
     internal class CustomUploaderFunctionXml : CustomUploaderFunction
     {
         public override string Name { get; } = "xml";
@@ -38,11 +39,24 @@ namespace ShareX.UploadersLib
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
             // https://www.w3schools.com/xml/xpath_syntax.asp
-            string xpath = parameters[0];
+            string input, xpath;
 
-            if (!string.IsNullOrEmpty(xpath))
+            if (parameters.Length > 1)
             {
-                using (StringReader sr = new StringReader(parser.ResponseInfo.ResponseText))
+                // {xml:input|xpath}
+                input = parameters[0];
+                xpath = parameters[1];
+            }
+            else
+            {
+                // {xml:xpath}
+                input = parser.ResponseInfo.ResponseText;
+                xpath = parameters[0];
+            }
+
+            if (!string.IsNullOrEmpty(input) && !string.IsNullOrEmpty(xpath))
+            {
+                using (StringReader sr = new StringReader(input))
                 {
                     XPathDocument doc = new XPathDocument(sr);
                     XPathNavigator nav = doc.CreateNavigator();

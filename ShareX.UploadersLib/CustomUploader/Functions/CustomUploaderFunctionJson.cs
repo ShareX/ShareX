@@ -40,9 +40,9 @@ namespace ShareX.UploadersLib
             // https://goessner.net/articles/JsonPath/
             string input, jsonPath;
 
-            // {json:input|jsonPath}
             if (parameters.Length > 1)
             {
+                // {json:input|jsonPath}
                 input = parameters[0];
                 jsonPath = parameters[1];
             }

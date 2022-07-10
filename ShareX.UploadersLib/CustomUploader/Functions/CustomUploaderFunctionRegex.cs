@@ -41,9 +41,9 @@ namespace ShareX.UploadersLib
         {
             string input, pattern, group = "";
 
-            // {regex:input|pattern|group}
             if (parameters.Length > 2)
             {
+                // {regex:input|pattern|group}
                 input = parameters[0];
                 pattern = parameters[1];
                 group = parameters[2];
@@ -54,9 +54,9 @@ namespace ShareX.UploadersLib
                 input = parser.ResponseInfo.ResponseText;
                 pattern = parameters[0];
 
-                // {regex:pattern|group}
                 if (parameters.Length > 1)
                 {
+                    // {regex:pattern|group}
                     group = parameters[1];
                 }
             }
