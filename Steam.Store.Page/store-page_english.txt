@@ -1,0 +1,108 @@
+Short Description:
+
+ShareX is a free and open source program that can capture or record selected area from the screen with a single keypress, automatically save them to your hard disk/clipboard, and instantly upload them to an image/file hosting service and then can copy the URL to your clipboard.
+
+About This Software:
+
+ShareX is a free and [url=https://github.com/ShareX/ShareX]open source[/url] program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to over 80 supported destinations you can choose from.
+
+ShareX supports many ways to capture or record your screen. The main capture methods are:
+
+[list]
+[*]Fullscreen
+[*]Active window
+[*]Active monitor
+[*]Window menu
+[*]Monitor menu
+[*]Region
+[*]Region (Light)
+[*]Region (Transparent)
+[*]Last region
+[*]Custom region
+[*]Screen recording
+[*]Screen recording (GIF)
+[*]Scrolling capture
+[*]Webpage capture
+[*]Text capture (OCR)
+[*]Auto capture
+[/list]
+
+There are many configurable screen capture settings such as showing the cursor, transparent window capture, delayed capture, multiple region selection with different shapes, etc.
+
+After the capture the following automated tasks can be executed:
+
+[list]
+[*]Show quick task menu
+[*]Show "After capture" window
+[*]Add image effects / watermark
+[*]Annotate image
+[*]Copy image to clipboard
+[*]Print image
+[*]Save image to file
+[*]Save image to file as...
+[*]Save thumbnail image to file
+[*]Perform actions
+[*]Copy file to clipboard
+[*]Copy file path to clipboard
+[*]Show file in explorer
+[*]Recognize text (OCR)
+[*]Show "Before upload" window
+[*]Upload image to host
+[*]Delete file locally
+[/list]
+
+For example, the captured image can be opened in image editor and after that, the image can be automatically saved to the hard disk and uploaded to your destination of choice.
+
+ShareX allows you to upload any type of files with these methods:
+
+[list]
+[*]Upload file
+[*]Upload folder
+[*]Upload from clipboard
+[*]Upload from URL
+[*]Drag and drop upload
+[*]Upload from Windows shell context menu
+[*]Upload from Windows send to menu
+[*]Watch folder
+[/list]
+
+After the upload, any of the following automated tasks can be executed:
+
+[list]
+[*]Show "After upload" window
+[*]Shorten URL
+[*]Share URL
+[*]Copy URL to clipboard
+[*]Open URL
+[*]Show QR code window
+[/list]
+
+For example, the uploaded image URL can be automatically shortened using one of the 15 URL shortener services and the shortened URL can be copied to the clipboard.
+
+ShareX also comes with a few simple productivity tools:
+
+[list]
+[*]Color picker
+[*]Screen color picker
+[*]Annotate image
+[*]Image effects
+[*]Hash check
+[*]DNS changer
+[*]QR code
+[*]Ruler
+[*]Directory indexer
+[*]Image combiner
+[*]Image thumbnailer
+[*]Video thumbnailer
+[*]FTP client
+[*]Tweet message
+[*]Monitor test
+[/list]
+
+ShareX has an advanced hotkey system which allows you to use any of these capture methods, upload options or tools with their own task settings. These are called "Workflows". Workflows allow each hotkey to have its own after capture tasks, after upload tasks, destination etc. For example, you can set your screen recording hotkey to upload to a specific destination, bypassing the default destination. This way, only videos will be uploaded to this configured file destination.
+
+System Requirements:
+
+Windows 7 Service Pack 1
+MB
+MB
