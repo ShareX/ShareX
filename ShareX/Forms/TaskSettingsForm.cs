@@ -345,7 +345,7 @@ namespace ShareX
 
             try
             {
-                OCRLanguage[] languages = OCRHelper.AvailableLanguages;
+                OCRLanguage[] languages = OCRHelper.AvailableLanguages.OrderBy(x => x.DisplayName).ToArray();
 
                 if (languages.Length > 0)
                 {
