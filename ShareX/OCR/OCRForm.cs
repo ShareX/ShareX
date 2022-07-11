@@ -83,7 +83,12 @@ namespace ShareX
 
             nudScaleFactor.SetValue((decimal)Options.ScaleFactor);
 
-            if (Options.ServiceLinks != null && Options.ServiceLinks.Count > 0)
+            if (Options.ServiceLinks == null || Options.IsDefaultServiceLinks())
+            {
+                Options.ServiceLinks = OCROptions.DefaultServiceLinks;
+            }
+
+            if (Options.ServiceLinks.Count > 0)
             {
                 cbServices.Items.AddRange(Options.ServiceLinks.ToArray());
                 cbServices.SelectedIndex = Options.SelectedServiceLink;
