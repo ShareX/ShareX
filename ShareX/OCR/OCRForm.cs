@@ -130,6 +130,7 @@ namespace ShareX
             btnSelectRegion.Enabled = !busy;
             cbLanguages.Enabled = !busy;
             nudScaleFactor.Enabled = !busy;
+            cbSingleLine.Enabled = !busy;
         }
 
         private async Task OCR(Bitmap bmp)
@@ -254,10 +255,15 @@ namespace ShareX
             }
         }
 
+        private void btnCopyAll_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyText(txtResult.Text);
+        }
+
         private void txtResult_TextChanged(object sender, EventArgs e)
         {
             Result = txtResult.Text.Trim();
-            btnOpenServiceLink.Enabled = !string.IsNullOrEmpty(Result);
+            btnOpenServiceLink.Enabled = btnCopyAll.Enabled = !string.IsNullOrEmpty(Result);
         }
     }
 }

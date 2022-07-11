@@ -29,6 +29,7 @@
             this.lblService = new System.Windows.Forms.Label();
             this.btnSelectRegion = new System.Windows.Forms.Button();
             this.cbSingleLine = new System.Windows.Forms.CheckBox();
+            this.btnCopyAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,10 +139,18 @@
             this.cbSingleLine.UseVisualStyleBackColor = true;
             this.cbSingleLine.CheckedChanged += new System.EventHandler(this.cbSingleLine_CheckedChanged);
             // 
+            // btnCopyAll
+            // 
+            resources.ApplyResources(this.btnCopyAll, "btnCopyAll");
+            this.btnCopyAll.Name = "btnCopyAll";
+            this.btnCopyAll.UseVisualStyleBackColor = true;
+            this.btnCopyAll.Click += new System.EventHandler(this.btnCopyAll_Click);
+            // 
             // OCRForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnCopyAll);
             this.Controls.Add(this.cbSingleLine);
             this.Controls.Add(this.lblService);
             this.Controls.Add(this.btnOpenOCRHelp);
@@ -179,5 +188,6 @@
         private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.Button btnSelectRegion;
         private System.Windows.Forms.CheckBox cbSingleLine;
+        private System.Windows.Forms.Button btnCopyAll;
     }
 }
