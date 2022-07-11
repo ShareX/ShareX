@@ -28,6 +28,7 @@
             this.btnOpenOCRHelp = new System.Windows.Forms.Button();
             this.lblService = new System.Windows.Forms.Label();
             this.btnSelectRegion = new System.Windows.Forms.Button();
+            this.cbSingleLine = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,10 +131,18 @@
             this.btnSelectRegion.UseVisualStyleBackColor = true;
             this.btnSelectRegion.Click += new System.EventHandler(this.btnSelectRegion_Click);
             // 
+            // cbSingleLine
+            // 
+            resources.ApplyResources(this.cbSingleLine, "cbSingleLine");
+            this.cbSingleLine.Name = "cbSingleLine";
+            this.cbSingleLine.UseVisualStyleBackColor = true;
+            this.cbSingleLine.CheckedChanged += new System.EventHandler(this.cbSingleLine_CheckedChanged);
+            // 
             // OCRForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbSingleLine);
             this.Controls.Add(this.lblService);
             this.Controls.Add(this.btnOpenOCRHelp);
             this.Controls.Add(this.btnSelectRegion);
@@ -169,5 +178,6 @@
         private System.Windows.Forms.Button btnOpenOCRHelp;
         private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.Button btnSelectRegion;
+        private System.Windows.Forms.CheckBox cbSingleLine;
     }
 }

@@ -32,6 +32,7 @@ namespace ShareX
     {
         public string Language { get; set; } = "en";
         public float ScaleFactor { get; set; } = 2f;
+        public bool SingleLine { get; set; } = false;
         public bool Silent { get; set; } = false;
         public bool AutoCopy { get; set; } = false;
         public List<ServiceLink> ServiceLinks { get; set; } = DefaultServiceLinks;

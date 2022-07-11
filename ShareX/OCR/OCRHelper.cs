@@ -69,7 +69,7 @@ namespace ShareX
             }
         }
 
-        public static async Task<string> OCR(Bitmap bmp, string languageTag = "en", float scaleFactor = 1f)
+        public static async Task<string> OCR(Bitmap bmp, string languageTag = "en", float scaleFactor = 1f, bool singleLine = false)
         {
             ThrowIfNotSupported();
 
@@ -80,12 +80,12 @@ namespace ShareX
                 using (Bitmap bmpClone = (Bitmap)bmp.Clone())
                 using (Bitmap bmpScaled = ImageHelpers.ResizeImage(bmpClone, (int)(bmpClone.Width * scaleFactor), (int)(bmpClone.Height * scaleFactor)))
                 {
-                    return await OCRInternal(bmpScaled, languageTag);
+                    return await OCRInternal(bmpScaled, languageTag, singleLine);
                 }
             });
         }
 
-        private static async Task<string> OCRInternal(Bitmap bmp, string languageTag)
+        private static async Task<string> OCRInternal(Bitmap bmp, string languageTag, bool singleLine = false)
         {
             Language language = new Language(languageTag);
 
@@ -105,21 +105,32 @@ namespace ShareX
                 {
                     OcrResult ocrResult = await engine.RecognizeAsync(softwareBitmap);
 
+                    string separator;
+
+                    if (singleLine)
+                    {
+                        separator = " ";
+                    }
+                    else
+                    {
+                        separator = Environment.NewLine;
+                    }
+
                     if (language.LanguageTag.StartsWith("zh", StringComparison.OrdinalIgnoreCase) || // Chinese
                         language.LanguageTag.StartsWith("ja", StringComparison.OrdinalIgnoreCase) || // Japanese
                         language.LanguageTag.StartsWith("ko", StringComparison.OrdinalIgnoreCase)) // Korean
                     {
                         // If CJK language then remove spaces between words.
-                        return string.Join("\r\n", ocrResult.Lines.Select(line => string.Concat(line.Words.Select(word => word.Text))));
+                        return string.Join(separator, ocrResult.Lines.Select(line => string.Concat(line.Words.Select(word => word.Text))));
                     }
                     else if (language.LayoutDirection == LanguageLayoutDirection.Rtl)
                     {
                         // If RTL language then reverse order of words.
-                        return string.Join("\r\n", ocrResult.Lines.Select(line => string.Join(" ", line.Words.Reverse().Select(word => word.Text))));
+                        return string.Join(separator, ocrResult.Lines.Select(line => string.Join(" ", line.Words.Reverse().Select(word => word.Text))));
                     }
                     else
                     {
-                        return string.Join("\r\n", ocrResult.Lines.Select(line => line.Text));
+                        return string.Join(separator, ocrResult.Lines.Select(line => line.Text));
                     }
                 }
             }

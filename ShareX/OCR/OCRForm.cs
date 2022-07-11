@@ -82,6 +82,7 @@ namespace ShareX
             }
 
             nudScaleFactor.SetValue((decimal)Options.ScaleFactor);
+            cbSingleLine.Checked = Options.SingleLine;
 
             if (Options.ServiceLinks == null || Options.IsDefaultServiceLinks())
             {
@@ -141,7 +142,7 @@ namespace ShareX
 
                 try
                 {
-                    Result = await OCRHelper.OCR(bmp, Options.Language, Options.ScaleFactor);
+                    Result = await OCRHelper.OCR(bmp, Options.Language, Options.ScaleFactor, Options.SingleLine);
 
                     if (Options.AutoCopy && !string.IsNullOrEmpty(Result))
                     {
@@ -206,6 +207,16 @@ namespace ShareX
             if (loaded)
             {
                 Options.ScaleFactor = (float)nudScaleFactor.Value;
+
+                await OCR(bmpSource);
+            }
+        }
+
+        private async void cbSingleLine_CheckedChanged(object sender, EventArgs e)
+        {
+            if (loaded)
+            {
+                Options.SingleLine = cbSingleLine.Checked;
 
                 await OCR(bmpSource);
             }
