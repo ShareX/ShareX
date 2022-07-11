@@ -439,7 +439,7 @@
     <value>0</value>
   </data>
   <data name="btnSelectRegion.Text" xml:space="preserve">
-    <value>Select region...</value>
+    <value>Select region for OCR...</value>
   </data>
   <data name="&gt;&gt;btnSelectRegion.Name" xml:space="preserve">
     <value>btnSelectRegion</value>

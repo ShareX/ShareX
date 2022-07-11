@@ -152,6 +152,8 @@ namespace ShareX
                 {
                     busy = false;
                     txtResult.Text = Result;
+                    txtResult.Focus();
+                    txtResult.DeselectAll();
                     UpdateControls();
                 }
             }
