@@ -484,7 +484,7 @@
     <value>1</value>
   </data>
   <data name="btnCopyAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="btnCopyAll.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -493,10 +493,10 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="btnCopyAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>728, 8</value>
+    <value>344, 392</value>
   </data>
   <data name="btnCopyAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 28</value>
+    <value>136, 32</value>
   </data>
   <data name="btnCopyAll.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -523,7 +523,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>879, 399</value>
+    <value>880, 437</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>650, 400</value>
