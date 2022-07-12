@@ -63,11 +63,22 @@ namespace ShareX.HelpersLib
 
                 AppVeyorProjectArtifact[] artifacts = appveyor.GetArtifacts(job.jobId);
 
-                AppVeyorProjectArtifact artifact = artifacts.FirstOrDefault(x => x.name.Equals("Setup", StringComparison.InvariantCultureIgnoreCase));
+                string deploymentName;
+
+                if (IsPortable)
+                {
+                    deploymentName = "Portable";
+                }
+                else
+                {
+                    deploymentName = "Setup";
+                }
+
+                AppVeyorProjectArtifact artifact = artifacts.FirstOrDefault(x => x.name.Equals(deploymentName, StringComparison.InvariantCultureIgnoreCase));
 
                 if (artifact == null)
                 {
-                    throw new Exception("Unable to find setup file.");
+                    throw new Exception($"Unable to find \"{deploymentName}\" file.");
                 }
 
                 FileName = artifact.fileName;
