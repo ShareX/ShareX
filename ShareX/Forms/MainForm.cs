@@ -1452,7 +1452,7 @@ namespace ShareX
 
         private void pbPreview_MouseDown(object sender, MouseEventArgs e)
         {
-            if (lvUploads.SelectedIndices.Count > 0)
+            if (e.Button == MouseButtons.Left && lvUploads.SelectedIndices.Count > 0)
             {
                 string[] files = lvUploads.Items.Cast<ListViewItem>().Select(x => ((WorkerTask)x.Tag).Info?.FilePath).ToArray();
                 int index = lvUploads.SelectedIndices[0];
