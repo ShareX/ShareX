@@ -192,11 +192,11 @@ namespace ShareX.HelpersLib
 
         public static string GetPathRoot(string path)
         {
-            int separator = path.IndexOf(Path.DirectorySeparatorChar);
+            int separator = path.IndexOf(":\\");
 
-            if (separator > 1 && path[separator - 1] == ':')
+            if (separator > 0)
             {
-                return path.Remove(separator + 1);
+                return path.Substring(0, separator + 2);
             }
 
             return "";
