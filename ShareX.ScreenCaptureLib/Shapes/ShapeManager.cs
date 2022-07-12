@@ -1797,11 +1797,11 @@ namespace ShareX.ScreenCaptureLib
             PointF offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
             rect.X -= offset.X;
             rect.Y -= offset.Y;
-            rect.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height));
+            Rectangle cropRect = Rectangle.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height), rect.Round());
 
-            if (rect.IsValid() && (!onlyIfSizeDifferent || rect.Size != Form.Canvas.Size))
+            if (cropRect.IsValid() && (!onlyIfSizeDifferent || cropRect.Size != Form.Canvas.Size))
             {
-                return ImageHelpers.CropBitmap(Form.Canvas, rect);
+                return ImageHelpers.CropBitmap(Form.Canvas, cropRect);
             }
 
             return null;

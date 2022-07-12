@@ -109,15 +109,15 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnDrawFinal(Graphics g, Bitmap bmp)
         {
-            RectangleF rect = RectangleF.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle);
+            Rectangle cropRect = System.Drawing.Rectangle.Intersect(new Rectangle(0, 0, bmp.Width, bmp.Height), Rectangle.Round());
 
-            if (!rect.IsEmpty)
+            if (!cropRect.IsEmpty)
             {
-                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, rect))
+                using (Bitmap croppedImage = ImageHelpers.CropBitmap(bmp, cropRect))
                 {
                     ApplyEffect(croppedImage);
 
-                    g.DrawImage(croppedImage, rect);
+                    g.DrawImage(croppedImage, cropRect);
                 }
             }
         }
