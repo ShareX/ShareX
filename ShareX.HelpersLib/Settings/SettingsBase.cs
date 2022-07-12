@@ -157,7 +157,7 @@ namespace ShareX.HelpersLib
                                 FileHelpers.CreateDirectory(BackupFolder);
                             }
 
-                            File.Replace(tempFilePath, filePath, backupFilePath);
+                            File.Replace(tempFilePath, filePath, backupFilePath, true);
                         }
                         else
                         {
