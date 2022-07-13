@@ -585,7 +585,9 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dev builds can be unstable and must be used for testing purposes only. Do you want to install it?.
+        ///   Looks up a localized string similar to Development builds are for testing bug fixes and trying out new features early. Sometimes they can be less stable.
+        ///
+        ///Do you wish to continue?.
         /// </summary>
         public static string ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning {
             get {
