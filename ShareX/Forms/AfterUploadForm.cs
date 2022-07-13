@@ -49,7 +49,11 @@ namespace ShareX
             ShareXResources.ApplyTheme(this);
 
             Info = info;
-            if (Info.TaskSettings.AdvancedSettings.AutoCloseAfterUploadForm) tmrClose.Start();
+
+            if (Info.TaskSettings.AdvancedSettings.AutoCloseAfterUploadForm)
+            {
+                tmrClose.Start();
+            }
 
             bool isFileExist = !string.IsNullOrEmpty(info.FilePath) && File.Exists(info.FilePath);
 
