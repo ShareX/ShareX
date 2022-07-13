@@ -301,7 +301,17 @@ namespace ShareX.HelpersLib
                     isImageLoading = true;
                     Text = Resources.MyPictureBox_LoadImageAsync_Loading_image___;
                     lblStatus.Visible = true;
-                    pbMain.LoadAsync(path);
+
+                    try
+                    {
+                        pbMain.LoadAsync(path);
+                    }
+                    catch
+                    {
+                        lblStatus.Visible = false;
+                        isImageLoading = false;
+                        Reset();
+                    }
                 }
             }
         }
