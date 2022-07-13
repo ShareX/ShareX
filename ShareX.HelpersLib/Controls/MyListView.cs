@@ -51,6 +51,9 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool AllowItemDrag { get; set; }
 
+        [DefaultValue(true)]
+        public bool AllowSelectAll { get; set; } = true;
+
         [DefaultValue(false)]
         public bool DisableDeselect { get; set; }
 
@@ -154,6 +157,17 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void SelectAll()
+        {
+            if (AllowSelectAll && MultiSelect)
+            {
+                foreach (ListViewItem lvi in Items)
+                {
+                    lvi.Selected = true;
+                }
+            }
+        }
+
         public void UnselectAll()
         {
             if (MultiSelect)
@@ -172,12 +186,9 @@ namespace ShareX.HelpersLib
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            if (MultiSelect && e.KeyData == (Keys.Control | Keys.A))
+            if (e.KeyData == (Keys.Control | Keys.A))
             {
-                foreach (ListViewItem lvi in Items)
-                {
-                    lvi.Selected = true;
-                }
+                SelectAll();
             }
 
             base.OnKeyDown(e);

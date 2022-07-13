@@ -97,6 +97,7 @@
             // 
             // lvHistory
             // 
+            this.lvHistory.AllowSelectAll = false;
             this.lvHistory.AutoFillColumn = true;
             this.lvHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
