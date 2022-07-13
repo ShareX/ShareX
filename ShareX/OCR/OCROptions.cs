@@ -53,6 +53,7 @@ namespace ShareX
         {
             new ServiceLink("Google Translate", "https://translate.google.com/?sl=auto&tl=en&text={0}&op=translate"),
             new ServiceLink("Google Search", "https://www.google.com/search?q={0}"),
+            new ServiceLink("Google Images", "https://www.google.com/search?q={0}&tbm=isch"),
             new ServiceLink("Bing", "https://www.bing.com/search?q={0}"),
             new ServiceLink("DuckDuckGo", "https://duckduckgo.com/?q={0}"),
             new ServiceLink("DeepL", "https://www.deepl.com/translator#auto/en/{0}")
