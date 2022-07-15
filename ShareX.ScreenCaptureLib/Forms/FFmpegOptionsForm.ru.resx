@@ -154,7 +154,7 @@
     <value>Пользовательский путь</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>Предустановка:</value>
+    <value>Установка:</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>Предустановка — это набор настроек, которые задают определенное соотношение скорости кодировки и сжатия. Более медленная предустановка задает лучшее сжатие (сжатие — это качество на размер файла).
@@ -259,5 +259,17 @@
   </data>
   <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
     <value>Настраивает индекс Bayer Scale, с большим значением больше бандинг. По умолчанию 2.</value>
+  </data>
+  <data name="lblFFmpegPath.Text" xml:space="preserve">
+    <value>Путь к FFmpeg:</value>
+  </data>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>Дополнительные аргументы:</value>
+  </data>
+  <data name="lblCommandLinePreview.Text" xml:space="preserve">
+    <value>Предпросмотр:</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>Битрейт</value>
   </data>
 </root>

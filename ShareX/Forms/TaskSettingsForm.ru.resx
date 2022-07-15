@@ -639,4 +639,13 @@
   <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
     <value>Автоматически прятать при захвате экрана</value>
   </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Text" xml:space="preserve">
+    <value>Запереть выбор области и курсор в активном мониторе</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>Задача:</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>Распознавание текста (OCR)</value>
+  </data>
 </root>

@@ -481,4 +481,7 @@
   <data name="FPSLimit" xml:space="preserve">
     <value>Лимит FPS:</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Подогнать под размеры окна при открывании</value>
+  </data>
 </root>

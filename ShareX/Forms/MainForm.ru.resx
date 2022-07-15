@@ -738,4 +738,16 @@
   <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
     <value>Безрамочное окно...</value>
   </data>
+  <data name="tsmiTrayOCR.Text" xml:space="preserve">
+    <value>Распознавание текста (OCR)...</value>
+  </data>
+  <data name="tsmiImageViewer.Text" xml:space="preserve">
+    <value>Просмотр изображений...</value>
+  </data>
+  <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
+    <value>Просмотр изображений...</value>
+  </data>
+  <data name="tsmiOCR.Text" xml:space="preserve">
+    <value>Распознавание текста (OCR)...</value>
+  </data>
 </root>

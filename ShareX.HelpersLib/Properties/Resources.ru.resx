@@ -1355,7 +1355,7 @@
     <value>Открыть папку</value>
   </data>
   <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
-    <value>Смотреть изображение</value>
+    <value>Открыть просмотр изображений</value>
   </data>
   <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
     <value>Открыть ссылку</value>
@@ -1392,5 +1392,23 @@
   </data>
   <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
     <value>Переключить меню трея</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Безрамочное окно</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_OCR_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>Распознавание текста (OCR)</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>Просмотр изображений</value>
   </data>
 </root>
