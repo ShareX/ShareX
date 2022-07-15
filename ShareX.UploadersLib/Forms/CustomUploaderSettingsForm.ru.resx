@@ -267,4 +267,7 @@ store.book[0].title</value>
   <data name="lblResultURL.Text" xml:space="preserve">
     <value>Ссылка:</value>
   </data>
+  <data name="btnTestURLSyntax.Text" xml:space="preserve">
+    <value>Тест</value>
+  </data>
 </root>

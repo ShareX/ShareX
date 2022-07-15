@@ -129,4 +129,7 @@
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Обновить</value>
   </data>
+  <data name="btnPinToTop.Text" xml:space="preserve">
+    <value>Закрепить поверх окон</value>
+  </data>
 </root>
