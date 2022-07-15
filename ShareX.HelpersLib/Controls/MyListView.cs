@@ -52,7 +52,7 @@ namespace ShareX.HelpersLib
         public bool AllowItemDrag { get; set; }
 
         [DefaultValue(true)]
-        public bool AllowSelectAll { get; set; } = true;
+        public bool AllowSelectAll { get; set; }
 
         [DefaultValue(false)]
         public bool DisableDeselect { get; set; }
@@ -94,6 +94,7 @@ namespace ShareX.HelpersLib
             AutoFillColumn = false;
             AutoFillColumnIndex = -1;
             AllowColumnSort = false;
+            AllowSelectAll = true;
             FullRowSelect = true;
             View = View.Details;
 
