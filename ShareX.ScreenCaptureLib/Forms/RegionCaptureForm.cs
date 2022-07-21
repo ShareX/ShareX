@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -664,16 +664,20 @@ namespace ShareX.ScreenCaptureLib
                 switch (e.KeyData)
                 {
                     case Keys.Control | Keys.Alt | Keys.D0:
+                    case Keys.Control | Keys.Alt | Keys.NumPad0:
                         ZoomToFit();
                         break;
                     case Keys.Control | Keys.D0:
+                    case Keys.Control | Keys.NumPad0:
                         ZoomFactor = 1;
                         CenterCanvas();
                         break;
                     case Keys.Control | Keys.Oemplus:
+                    case Keys.Control | Keys.Add:
                         Zoom(true, false);
                         break;
                     case Keys.Control | Keys.OemMinus:
+                    case Keys.Control | Keys.Subtract:
                         Zoom(false, false);
                         break;
                 }
