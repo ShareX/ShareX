@@ -250,13 +250,14 @@ namespace ShareX
 
         private void PinToScreenForm_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            switch (e.Button)
             {
-                Close();
-            }
-            else if (e.Button == MouseButtons.Middle)
-            {
-                ResetImage();
+                case MouseButtons.Right:
+                    Close();
+                    break;
+                case MouseButtons.Middle:
+                    ResetImage();
+                    break;
             }
         }
 
@@ -289,9 +290,14 @@ namespace ShareX
 
         private void PinToScreenForm_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
+            switch (e.KeyData)
             {
-                Close();
+                case Keys.Escape:
+                    Close();
+                    break;
+                case Keys.Control | Keys.C:
+                    ClipboardHelpers.CopyImage(Image);
+                    break;
             }
         }
     }
