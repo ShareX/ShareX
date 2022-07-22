@@ -281,5 +281,13 @@ namespace ShareX
                     break;
             }
         }
+
+        private void PinToScreenForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }
