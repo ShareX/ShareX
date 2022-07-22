@@ -24,6 +24,7 @@
             this.ClientSize = new System.Drawing.Size(300, 300);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PinToScreenForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ShareX - Pin to screen";
             this.TopMost = true;

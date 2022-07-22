@@ -94,6 +94,16 @@ namespace ShareX
 
         private bool isDWMEnabled;
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ExStyle |= (int)WindowStyles.WS_EX_TOOLWINDOW;
+                return createParams;
+            }
+        }
+
         private PinToScreenForm()
         {
             InitializeComponent();
