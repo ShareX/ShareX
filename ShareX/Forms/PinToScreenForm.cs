@@ -126,6 +126,12 @@ namespace ShareX
             AutoSizeForm(keepCenterLocation);
         }
 
+        private void ResetImage()
+        {
+            ImageScale = 100;
+            ImageOpacity = 100;
+        }
+
         private void ScaleImage(int scale)
         {
             float scaleFactor = scale / 100f;
@@ -198,6 +204,10 @@ namespace ShareX
             if (e.Button == MouseButtons.Right)
             {
                 Close();
+            }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                ResetImage();
             }
         }
 
