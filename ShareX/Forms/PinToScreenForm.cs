@@ -91,6 +91,7 @@ namespace ShareX
         public int ScaleStep { get; set; } = 10;
         public int OpacityStep { get; set; } = 10;
         public bool ShowShadow { get; set; } = true;
+        public Color BackgroundColor { get; set; } = Color.White;
 
         private bool isDWMEnabled;
 
@@ -108,6 +109,8 @@ namespace ShareX
         {
             InitializeComponent();
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
+
+            BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
 
             isDWMEnabled = NativeMethods.IsDWMEnabled();
         }
@@ -205,10 +208,12 @@ namespace ShareX
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            Graphics g = e.Graphics;
+
+            g.Clear(BackgroundColor);
+
             if (Image != null)
             {
-                Graphics g = e.Graphics;
-
                 if (ImageScale == 100)
                 {
                     g.InterpolationMode = InterpolationMode.NearestNeighbor;
