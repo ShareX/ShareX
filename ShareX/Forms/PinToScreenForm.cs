@@ -46,7 +46,7 @@ namespace ShareX
             }
             set
             {
-                int newImageScale = value.Clamp(10, 500);
+                int newImageScale = value.Clamp(20, 500);
 
                 if (imageScale != newImageScale)
                 {
@@ -86,7 +86,10 @@ namespace ShareX
             }
         }
 
-        public bool KeepCenterLocation { get; set; }
+        public bool KeepCenterLocation { get; set; } = true;
+        public bool HighQualityScale { get; set; } = true;
+        public int ScaleStep { get; set; } = 20;
+        public int OpacityStep { get; set; } = 10;
 
         private PinToScreenForm()
         {
@@ -104,8 +107,11 @@ namespace ShareX
 
         public static void PinToScreen(Image image)
         {
-            PinToScreenForm form = new PinToScreenForm(image);
-            form.Show();
+            if (image != null)
+            {
+                PinToScreenForm form = new PinToScreenForm(image);
+                form.Show();
+            }
         }
 
         protected override void Dispose(bool disposing)
@@ -175,7 +181,15 @@ namespace ShareX
                 }
                 else
                 {
-                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    if (HighQualityScale)
+                    {
+                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    }
+                    else
+                    {
+                        g.InterpolationMode = InterpolationMode.NearestNeighbor;
+                    }
+
                     using (ImageAttributes ia = new ImageAttributes())
                     {
                         ia.SetWrapMode(WrapMode.TileFlipXY);
@@ -213,21 +227,21 @@ namespace ShareX
                 case Keys.Control:
                     if (e.Delta > 0)
                     {
-                        ImageOpacity += 10;
+                        ImageOpacity += OpacityStep;
                     }
                     else if (e.Delta < 0)
                     {
-                        ImageOpacity -= 10;
+                        ImageOpacity -= OpacityStep;
                     }
                     break;
                 case Keys.None:
                     if (e.Delta > 0)
                     {
-                        ImageScale += 10;
+                        ImageScale += ScaleStep;
                     }
                     else if (e.Delta < 0)
                     {
-                        ImageScale -= 10;
+                        ImageScale -= ScaleStep;
                     }
                     break;
             }
