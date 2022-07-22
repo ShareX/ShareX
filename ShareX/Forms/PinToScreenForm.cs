@@ -26,6 +26,8 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -50,8 +52,16 @@ namespace ShareX
                 {
                     imageScale = newImageScale;
 
-                    ScaleImage(imageScale);
+                    UpdateImage();
                 }
+            }
+        }
+
+        public Size ImageSize
+        {
+            get
+            {
+                return new Size((int)Math.Round(Image.Width * (ImageScale / 100f)), (int)Math.Round(Image.Height * (ImageScale / 100f)));
             }
         }
 
@@ -76,21 +86,19 @@ namespace ShareX
             }
         }
 
-        private Image buffer;
+        public bool KeepCenterLocation { get; set; }
 
         private PinToScreenForm()
         {
             InitializeComponent();
-            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
-
-            MouseWheel += PinToScreenForm_MouseWheel;
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
         }
 
-        public PinToScreenForm(Image image) : this()
+        private PinToScreenForm(Image image) : this()
         {
             Image = image;
 
-            LoadImage();
+            UpdateImage();
             CenterForm();
         }
 
@@ -106,24 +114,15 @@ namespace ShareX
             {
                 components?.Dispose();
                 Image?.Dispose();
-                buffer?.Dispose();
             }
 
             base.Dispose(disposing);
         }
 
-        private void LoadImage()
+        private void UpdateImage()
         {
-            Image imageCopy = Image.CloneSafe();
-            LoadImage(imageCopy);
-        }
-
-        private void LoadImage(Image image, bool keepCenterLocation = true)
-        {
-            buffer?.Dispose();
-            buffer = image;
+            AutoSizeForm();
             Refresh();
-            AutoSizeForm(keepCenterLocation);
         }
 
         private void ResetImage()
@@ -132,47 +131,30 @@ namespace ShareX
             ImageOpacity = 100;
         }
 
-        private void ScaleImage(int scale)
-        {
-            float scaleFactor = scale / 100f;
-
-            Image imageCopy = Image.CloneSafe();
-            Image imageScaled = ImageHelpers.ResizeImage((Bitmap)imageCopy, (int)(Image.Width * scaleFactor), (int)(Image.Height * scaleFactor));
-            LoadImage(imageScaled);
-        }
-
         private void CenterForm()
         {
-            if (buffer != null)
-            {
-                Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
-                Size bufferSize = buffer.Size;
-                Location = new Point(rectScreen.X + (rectScreen.Width / 2) - (bufferSize.Width / 2), rectScreen.Y + (rectScreen.Height / 2) - (bufferSize.Height / 2));
-            }
+            Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
+            Location = new Point(rectScreen.X + (rectScreen.Width / 2) - (ImageSize.Width / 2), rectScreen.Y + (rectScreen.Height / 2) - (ImageSize.Height / 2));
         }
 
-        private void AutoSizeForm(bool keepCenterLocation = true)
+        private void AutoSizeForm()
         {
-            if (buffer != null)
+            Size previousSize = Size;
+            Size newSize = ImageSize;
+            Point newLocation = Location;
+            SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE;
+
+            if (KeepCenterLocation)
             {
-                Size previousSize = Size;
-                Size newSize = buffer.Size;
-                Point newLocation = Location;
-
-                SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE;
-
-                if (keepCenterLocation)
-                {
-                    Point locationOffset = new Point((previousSize.Width - newSize.Width) / 2, (previousSize.Height - newSize.Height) / 2);
-                    newLocation = new Point(newLocation.X + locationOffset.X, newLocation.Y + locationOffset.Y);
-                }
-                else
-                {
-                    flags |= SetWindowPosFlags.SWP_NOMOVE;
-                }
-
-                NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
+                Point locationOffset = new Point((previousSize.Width - newSize.Width) / 2, (previousSize.Height - newSize.Height) / 2);
+                newLocation = new Point(newLocation.X + locationOffset.X, newLocation.Y + locationOffset.Y);
             }
+            else
+            {
+                flags |= SetWindowPosFlags.SWP_NOMOVE;
+            }
+
+            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -182,11 +164,24 @@ namespace ShareX
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-
-            if (buffer != null)
+            if (Image != null)
             {
-                g.DrawImage(buffer, 0, 0);
+                Graphics g = e.Graphics;
+
+                if (ImageScale == 100)
+                {
+                    g.InterpolationMode = InterpolationMode.NearestNeighbor;
+                    g.DrawImage(Image, 0, 0);
+                }
+                else
+                {
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    using (ImageAttributes ia = new ImageAttributes())
+                    {
+                        ia.SetWrapMode(WrapMode.TileFlipXY);
+                        g.DrawImage(Image, new Rectangle(0, 0, ImageSize.Width, ImageSize.Height), 0, 0, Image.Width, Image.Height, GraphicsUnit.Pixel, ia);
+                    }
+                }
             }
         }
 
