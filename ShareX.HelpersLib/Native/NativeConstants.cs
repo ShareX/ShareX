@@ -41,7 +41,6 @@ namespace ShareX.HelpersLib
         public const int ICON_BIG = 1;
         public const int ICON_SMALL2 = 2;
         public const int SC_MINIMIZE = 0xF020;
-        public const int HT_CAPTION = 2;
         public const int CURSOR_SHOWING = 1;
         public const int DWM_TNP_RECTDESTINATION = 0x1;
         public const int DWM_TNP_RECTSOURCE = 0x2;

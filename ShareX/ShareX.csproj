@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -180,6 +180,12 @@
     </Compile>
     <Compile Include="Forms\InspectWindowForm.Designer.cs">
       <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PinToScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PinToScreenForm.Designer.cs">
+      <DependentUpon>PinToScreenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OCR\OCRForm.cs">
       <SubType>Form</SubType>
@@ -1426,6 +1432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.zh-TW.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PinToScreenForm.resx">
+      <DependentUpon>PinToScreenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.pl.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
