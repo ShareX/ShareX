@@ -617,8 +617,8 @@ namespace ShareX
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiGoogleImageSearch.Visible =
                 tsmiBingVisualSearch.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible = tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible =
-                tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible = tsmiAddImageEffects.Visible = tsmiRunAction.Visible = tsmiDeleteSelectedItem.Visible =
-                tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = false;
+                tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible = tsmiAddImageEffects.Visible = tsmiPinToScreen.Visible = tsmiRunAction.Visible =
+                tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = false;
 
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
@@ -726,6 +726,7 @@ namespace ShareX
                     tsmiDownloadSelectedURL.Visible = uim.SelectedItem.IsFileURL;
                     tsmiEditSelectedFile.Visible = uim.SelectedItem.IsImageFile;
                     tsmiAddImageEffects.Visible = uim.SelectedItem.IsImageFile;
+                    tsmiPinToScreen.Visible = uim.SelectedItem.IsImageFile;
                     UpdateActionsMenu(uim.SelectedItem.Info.FilePath);
                     tsmiDeleteSelectedItem.Visible = true;
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
@@ -2320,6 +2321,11 @@ namespace ShareX
         private void tsmiAddImageEffects_Click(object sender, EventArgs e)
         {
             uim.AddImageEffects();
+        }
+
+        private void tsmiPinToScreen_Click(object sender, EventArgs e)
+        {
+            uim.PinToScreen();
         }
 
         private void tsmiGoogleImageSearch_Click(object sender, EventArgs e)

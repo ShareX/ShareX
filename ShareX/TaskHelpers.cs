@@ -1279,6 +1279,12 @@ namespace ShareX
             PinToScreenForm.PinToScreen(image);
         }
 
+        public static void PinToScreen(string filePath)
+        {
+            Image image = ImageHelpers.LoadImage(filePath);
+            PinToScreen(image);
+        }
+
         public static void TweetMessage()
         {
             if (IsUploadAllowed())

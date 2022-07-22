@@ -281,6 +281,7 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
+            this.tsmiPinToScreen = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1077,6 +1078,7 @@
             this.tsmiDownloadSelectedURL,
             this.tsmiEditSelectedFile,
             this.tsmiAddImageEffects,
+            this.tsmiPinToScreen,
             this.tsmiRunAction,
             this.tsmiDeleteSelectedItem,
             this.tsmiDeleteSelectedFile,
@@ -2201,6 +2203,13 @@
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
             // 
+            // tsmiPinToScreen
+            // 
+            this.tsmiPinToScreen.Image = global::ShareX.Properties.Resources.pin;
+            this.tsmiPinToScreen.Name = "tsmiPinToScreen";
+            resources.ApplyResources(this.tsmiPinToScreen, "tsmiPinToScreen");
+            this.tsmiPinToScreen.Click += new System.EventHandler(this.tsmiPinToScreen_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2491,5 +2500,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageViewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiOCR;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayOCR;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPinToScreen;
     }
 }

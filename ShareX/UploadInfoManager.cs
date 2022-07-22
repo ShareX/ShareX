@@ -347,6 +347,11 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEffects(SelectedItem.Info.FilePath);
         }
 
+        public void PinToScreen()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.PinToScreen(SelectedItem.Info.FilePath);
+        }
+
         public void DeleteFiles()
         {
             if (IsItemSelected)
