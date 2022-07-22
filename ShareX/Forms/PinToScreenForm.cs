@@ -55,6 +55,27 @@ namespace ShareX
             }
         }
 
+        private int imageOpacity = 100;
+
+        public int ImageOpacity
+        {
+            get
+            {
+                return imageOpacity;
+            }
+            set
+            {
+                int newImageOpacity = value.Clamp(10, 100);
+
+                if (imageOpacity != newImageOpacity)
+                {
+                    imageOpacity = newImageOpacity;
+
+                    Opacity = imageOpacity / 100f;
+                }
+            }
+        }
+
         private Image buffer;
 
         private PinToScreenForm()
@@ -182,13 +203,28 @@ namespace ShareX
 
         private void PinToScreenForm_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (e.Delta > 0)
+            switch (ModifierKeys)
             {
-                ImageScale += 10;
-            }
-            else if (e.Delta < 0)
-            {
-                ImageScale -= 10;
+                case Keys.Control:
+                    if (e.Delta > 0)
+                    {
+                        ImageOpacity += 10;
+                    }
+                    else if (e.Delta < 0)
+                    {
+                        ImageOpacity -= 10;
+                    }
+                    break;
+                case Keys.None:
+                    if (e.Delta > 0)
+                    {
+                        ImageScale += 10;
+                    }
+                    else if (e.Delta < 0)
+                    {
+                        ImageScale -= 10;
+                    }
+                    break;
             }
         }
     }
