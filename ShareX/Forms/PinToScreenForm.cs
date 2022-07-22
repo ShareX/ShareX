@@ -34,15 +34,47 @@ namespace ShareX
     {
         public Image Image { get; private set; }
 
+        private int imageScale = 100;
+
+        public int ImageScale
+        {
+            get
+            {
+                return imageScale;
+            }
+            set
+            {
+                int newImageScale = value.Clamp(10, 500);
+
+                if (imageScale != newImageScale)
+                {
+                    imageScale = newImageScale;
+
+                    ScaleImage(imageScale);
+                }
+            }
+        }
+
+        private Image buffer;
+
         private PinToScreenForm()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+
+            MouseWheel += PinToScreenForm_MouseWheel;
+        }
+
+        public PinToScreenForm(Image image) : this()
+        {
+            Image = image;
+
+            LoadImage();
         }
 
         public static void PinToScreen(Image image)
         {
-            PinToScreenForm form = new PinToScreenForm();
-            form.LoadImage(image);
+            PinToScreenForm form = new PinToScreenForm(image);
             form.Show();
         }
 
@@ -52,20 +84,63 @@ namespace ShareX
             {
                 components?.Dispose();
                 Image?.Dispose();
+                buffer?.Dispose();
             }
 
             base.Dispose(disposing);
         }
 
+        private void LoadImage()
+        {
+            Image imageCopy = Image.CloneSafe();
+            LoadImage(imageCopy);
+        }
+
         private void LoadImage(Image image)
         {
-            pbImage.Reset();
+            buffer?.Dispose();
+            buffer = image;
+            Invalidate();
 
-            Image?.Dispose();
-            Image = image;
+            AutoSizeForm();
+        }
 
-            pbImage.LoadImage(Image);
-            Size = Image.Size;
+        private void ScaleImage(int scale)
+        {
+            float scaleFactor = scale / 100f;
+
+            Image imageCopy = Image.CloneSafe();
+            Image imageScaled = ImageHelpers.ResizeImage((Bitmap)imageCopy, (int)(Image.Width * scaleFactor), (int)(Image.Height * scaleFactor));
+            LoadImage(imageScaled);
+        }
+
+        private void AutoSizeForm(bool keepCenterLocation = true)
+        {
+            if (buffer != null)
+            {
+                Size previousSize = Size;
+                Size newSize = buffer.Size;
+                Point newLocation = Location;
+
+                if (keepCenterLocation)
+                {
+                    Point locationOffset = new Point((previousSize.Width - newSize.Width) / 2, (previousSize.Height - newSize.Height) / 2);
+                    newLocation = new Point(newLocation.X + locationOffset.X, newLocation.Y + locationOffset.Y);
+                }
+
+                NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, newLocation.X, newLocation.Y,
+                    newSize.Width, newSize.Height, SetWindowPosFlags.SWP_NOACTIVATE);
+            }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            if (buffer != null)
+            {
+                g.DrawImage(buffer, 0, 0);
+            }
         }
 
         private void PinToScreenForm_MouseDown(object sender, MouseEventArgs e)
@@ -82,6 +157,18 @@ namespace ShareX
             if (e.Button == MouseButtons.Right)
             {
                 Close();
+            }
+        }
+
+        private void PinToScreenForm_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                ImageScale += 10;
+            }
+            else if (e.Delta < 0)
+            {
+                ImageScale -= 10;
             }
         }
     }

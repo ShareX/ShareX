@@ -15,27 +15,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbImage = new ShareX.HelpersLib.MyPictureBox();
             this.SuspendLayout();
-            // 
-            // pbImage
-            // 
-            this.pbImage.BackColor = System.Drawing.SystemColors.Window;
-            this.pbImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbImage.Location = new System.Drawing.Point(0, 0);
-            this.pbImage.Name = "pbImage";
-            this.pbImage.PictureBoxBackColor = System.Drawing.SystemColors.Window;
-            this.pbImage.Size = new System.Drawing.Size(800, 450);
-            this.pbImage.TabIndex = 0;
-            this.pbImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PinToScreenForm_MouseDown);
-            this.pbImage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PinToScreenForm_MouseUp);
             // 
             // PinToScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pbImage);
+            this.ClientSize = new System.Drawing.Size(300, 300);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PinToScreenForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -48,7 +34,5 @@
         }
 
         #endregion
-
-        private HelpersLib.MyPictureBox pbImage;
     }
 }
