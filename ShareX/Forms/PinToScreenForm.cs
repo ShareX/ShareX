@@ -88,13 +88,18 @@ namespace ShareX
 
         public bool KeepCenterLocation { get; set; } = true;
         public bool HighQualityScale { get; set; } = true;
-        public int ScaleStep { get; set; } = 20;
+        public int ScaleStep { get; set; } = 10;
         public int OpacityStep { get; set; } = 10;
+        public bool ShowShadow { get; set; } = true;
+
+        private bool isDWMEnabled;
 
         private PinToScreenForm()
         {
             InitializeComponent();
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
+
+            isDWMEnabled = NativeMethods.IsDWMEnabled();
         }
 
         private PinToScreenForm(Image image) : this()
@@ -161,6 +166,26 @@ namespace ShareX
             }
 
             NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (ShowShadow && m.Msg == (int)WindowsMessages.NCPAINT && isDWMEnabled)
+            {
+                NativeMethods.SetNCRenderingPolicy(Handle, DwmNCRenderingPolicy.Enabled);
+
+                MARGINS margins = new MARGINS()
+                {
+                    bottomHeight = 1,
+                    leftWidth = 1,
+                    rightWidth = 1,
+                    topHeight = 1
+                };
+
+                NativeMethods.DwmExtendFrameIntoClientArea(Handle, ref margins);
+            }
+
+            base.WndProc(ref m);
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
