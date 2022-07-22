@@ -60,7 +60,7 @@ namespace ShareX
         private PinToScreenForm()
         {
             InitializeComponent();
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
 
             MouseWheel += PinToScreenForm_MouseWheel;
         }
@@ -70,6 +70,7 @@ namespace ShareX
             Image = image;
 
             LoadImage();
+            CenterForm();
         }
 
         public static void PinToScreen(Image image)
@@ -96,13 +97,12 @@ namespace ShareX
             LoadImage(imageCopy);
         }
 
-        private void LoadImage(Image image)
+        private void LoadImage(Image image, bool keepCenterLocation = true)
         {
             buffer?.Dispose();
             buffer = image;
-            Invalidate();
-
-            AutoSizeForm();
+            Refresh();
+            AutoSizeForm(keepCenterLocation);
         }
 
         private void ScaleImage(int scale)
@@ -114,6 +114,16 @@ namespace ShareX
             LoadImage(imageScaled);
         }
 
+        private void CenterForm()
+        {
+            if (buffer != null)
+            {
+                Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
+                Size bufferSize = buffer.Size;
+                Location = new Point(rectScreen.X + (rectScreen.Width / 2) - (bufferSize.Width / 2), rectScreen.Y + (rectScreen.Height / 2) - (bufferSize.Height / 2));
+            }
+        }
+
         private void AutoSizeForm(bool keepCenterLocation = true)
         {
             if (buffer != null)
@@ -122,15 +132,25 @@ namespace ShareX
                 Size newSize = buffer.Size;
                 Point newLocation = Location;
 
+                SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE;
+
                 if (keepCenterLocation)
                 {
                     Point locationOffset = new Point((previousSize.Width - newSize.Width) / 2, (previousSize.Height - newSize.Height) / 2);
                     newLocation = new Point(newLocation.X + locationOffset.X, newLocation.Y + locationOffset.Y);
                 }
+                else
+                {
+                    flags |= SetWindowPosFlags.SWP_NOMOVE;
+                }
 
-                NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, newLocation.X, newLocation.Y,
-                    newSize.Width, newSize.Height, SetWindowPosFlags.SWP_NOACTIVATE);
+                NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
             }
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            //base.OnPaintBackground(e);
         }
 
         protected override void OnPaint(PaintEventArgs e)
