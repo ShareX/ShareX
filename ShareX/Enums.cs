@@ -124,19 +124,20 @@ namespace ShareX
         AddImageEffects = 1 << 2,
         AnnotateImage = 1 << 3,
         CopyImageToClipboard = 1 << 4,
-        SendImageToPrinter = 1 << 5,
-        SaveImageToFile = 1 << 6,
-        SaveImageToFileWithDialog = 1 << 7,
-        SaveThumbnailImageToFile = 1 << 8,
-        PerformActions = 1 << 9,
-        CopyFileToClipboard = 1 << 10,
-        CopyFilePathToClipboard = 1 << 11,
-        ShowInExplorer = 1 << 12,
-        ScanQRCode = 1 << 13,
-        DoOCR = 1 << 14,
-        ShowBeforeUploadWindow = 1 << 15,
-        UploadImageToHost = 1 << 16,
-        DeleteFile = 1 << 17
+        PinToScreen = 1 << 5,
+        SendImageToPrinter = 1 << 6,
+        SaveImageToFile = 1 << 7,
+        SaveImageToFileWithDialog = 1 << 8,
+        SaveThumbnailImageToFile = 1 << 9,
+        PerformActions = 1 << 10,
+        CopyFileToClipboard = 1 << 11,
+        CopyFilePathToClipboard = 1 << 12,
+        ShowInExplorer = 1 << 13,
+        ScanQRCode = 1 << 14,
+        DoOCR = 1 << 15,
+        ShowBeforeUploadWindow = 1 << 16,
+        UploadImageToHost = 1 << 17,
+        DeleteFile = 1 << 18
     }
 
     [Flags]

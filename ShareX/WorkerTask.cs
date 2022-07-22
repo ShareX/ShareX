@@ -632,6 +632,12 @@ namespace ShareX
                 DebugHelper.WriteLine("Image copied to clipboard.");
             }
 
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PinToScreen))
+            {
+                Image imageCopy = Image.CloneSafe();
+                threadWorker.InvokeAsync(() => TaskHelpers.PinToScreen(imageCopy));
+            }
+
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SendImageToPrinter))
             {
                 TaskHelpers.PrintImage(Image);
