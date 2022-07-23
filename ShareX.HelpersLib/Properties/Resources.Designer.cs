@@ -3981,6 +3981,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pin to screen.
+        /// </summary>
+        internal static string ToastClickAction_PinToScreen {
+            get {
+                return ResourceManager.GetString("ToastClickAction_PinToScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload file.
         /// </summary>
         internal static string ToastClickAction_Upload {

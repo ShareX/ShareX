@@ -399,6 +399,12 @@ namespace ShareX
                         UploadManager.UploadFile(Config.FilePath);
                     }
                     break;
+                case ToastClickAction.PinToScreen:
+                    if (!string.IsNullOrEmpty(Config.FilePath) && FileHelpers.IsImageFile(Config.FilePath))
+                    {
+                        TaskHelpers.PinToScreen(Config.FilePath);
+                    }
+                    break;
             }
         }
 
