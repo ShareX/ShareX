@@ -79,6 +79,8 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool IsCompatibility81 { get; set; }
         public bool AutoExpire { get; set; }
 
+        public bool SSLWebClient { get; set; }
+
         public OwnCloud(string host, string username, string password)
         {
             Host = host;
@@ -166,7 +168,11 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares?format=json");
-            url = URLHelpers.FixPrefix(url);
+
+            //SSL connection
+            if (SSLWebClient)
+                url = URLHelpers.FixPrefix(url, "https://");
+            else url = URLHelpers.FixPrefix(url);
 
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, Password);
             headers["OCS-APIREQUEST"] = "true";

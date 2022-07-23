@@ -300,6 +300,7 @@ namespace ShareX.UploadersLib
         public bool OwnCloudUsePreviewLinks { get; set; } = false;
         public bool OwnCloudAppendFileNameToURL { get; set; } = false;
         public bool OwnCloudAutoExpire { get; set; } = false;
+        public bool OwnCloudSSLWebClient { get; set; } = false;
 
         #endregion ownCloud / Nextcloud
 

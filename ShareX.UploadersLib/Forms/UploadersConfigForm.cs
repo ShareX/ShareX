@@ -2312,6 +2312,11 @@ namespace ShareX.UploadersLib
             Config.OwnCloudAutoExpire = cbOwnCloudAutoExpire.Checked;
         }
 
+        private void cbOwnCloudUsingSSLwebClient_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudSSLWebClient = cbOwnCloudUsingSSLwebClient.Checked;
+        }
+
         #endregion ownCloud / Nextcloud
 
         #region Pushbullet

@@ -631,6 +631,7 @@ namespace ShareX.UploadersLib
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbOwnCloudUsingSSLwebClient = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2646,6 +2647,7 @@ namespace ShareX.UploadersLib
             // tpOwnCloud
             // 
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
+            this.tpOwnCloud.Controls.Add(this.cbOwnCloudUsingSSLwebClient);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudAppendFileNameToURL);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudExpiryTime);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudAutoExpire);
@@ -4959,6 +4961,13 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbOwnCloudUsingSSLwebClient
+            // 
+            resources.ApplyResources(this.cbOwnCloudUsingSSLwebClient, "cbOwnCloudUsingSSLwebClient");
+            this.cbOwnCloudUsingSSLwebClient.Name = "cbOwnCloudUsingSSLwebClient";
+            this.cbOwnCloudUsingSSLwebClient.UseVisualStyleBackColor = true;
+            this.cbOwnCloudUsingSSLwebClient.CheckedChanged += new System.EventHandler(this.cbOwnCloudUsingSSLwebClient_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5700,5 +5709,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
         private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
         private System.Windows.Forms.Label lblYouTubePermissionsTip;
+        private System.Windows.Forms.CheckBox cbOwnCloudUsingSSLwebClient;
     }
 }
