@@ -265,16 +265,6 @@ namespace ShareX
         {
             switch (ModifierKeys)
             {
-                case Keys.Control:
-                    if (e.Delta > 0)
-                    {
-                        ImageOpacity += OpacityStep;
-                    }
-                    else if (e.Delta < 0)
-                    {
-                        ImageOpacity -= OpacityStep;
-                    }
-                    break;
                 case Keys.None:
                     if (e.Delta > 0)
                     {
@@ -283,6 +273,16 @@ namespace ShareX
                     else if (e.Delta < 0)
                     {
                         ImageScale -= ScaleStep;
+                    }
+                    break;
+                case Keys.Control:
+                    if (e.Delta > 0)
+                    {
+                        ImageOpacity += OpacityStep;
+                    }
+                    else if (e.Delta < 0)
+                    {
+                        ImageOpacity -= OpacityStep;
                     }
                     break;
             }
@@ -297,6 +297,22 @@ namespace ShareX
                     break;
                 case Keys.Control | Keys.C:
                     ClipboardHelpers.CopyImage(Image);
+                    break;
+                case Keys.Oemplus:
+                case Keys.Add:
+                    ImageScale += ScaleStep;
+                    break;
+                case Keys.OemMinus:
+                case Keys.Subtract:
+                    ImageScale -= ScaleStep;
+                    break;
+                case Keys.Control | Keys.Oemplus:
+                case Keys.Control | Keys.Add:
+                    ImageOpacity += OpacityStep;
+                    break;
+                case Keys.Control | Keys.OemMinus:
+                case Keys.Control | Keys.Subtract:
+                    ImageOpacity -= OpacityStep;
                     break;
             }
         }
