@@ -478,6 +478,30 @@ namespace ShareX.HelpersLib
             return null;
         }
 
+        public static Bitmap TryGetImage()
+        {
+            if (ContainsImage())
+            {
+                return GetImage();
+            }
+            else if (ContainsFileDropList())
+            {
+                string[] files = GetFileDropList();
+
+                if (files != null)
+                {
+                    string imageFilePath = files.FirstOrDefault(x => FileHelpers.IsImageFile(x));
+
+                    if (!string.IsNullOrEmpty(imageFilePath))
+                    {
+                        return ImageHelpers.LoadImage(imageFilePath);
+                    }
+                }
+            }
+
+            return null;
+        }
+
         private static string GenerateHTMLFragment(string html)
         {
             StringBuilder sb = new StringBuilder();
