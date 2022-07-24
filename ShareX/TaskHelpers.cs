@@ -1288,14 +1288,36 @@ namespace ShareX
 
         public static void PinToScreenFromClipboard()
         {
+            Bitmap bmp = null;
+
             if (ClipboardHelpers.ContainsImage())
             {
-                Bitmap bmp = ClipboardHelpers.GetImage();
+                bmp = ClipboardHelpers.GetImage();
+            }
+            else if (ClipboardHelpers.ContainsFileDropList())
+            {
+                string[] files = ClipboardHelpers.GetFileDropList();
 
-                if (bmp != null)
+                if (files != null)
                 {
-                    PinToScreen(bmp);
+                    string imageFilePath = files.FirstOrDefault(x => FileHelpers.IsImageFile(x));
+
+                    if (!string.IsNullOrEmpty(imageFilePath))
+                    {
+                        bmp = ImageHelpers.LoadImage(imageFilePath);
+                    }
                 }
+            }
+            else
+            {
+                // TODO: Translate
+                MessageBox.Show("Clipboard does not contain an image.", "ShareX - " + "Pin to screen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (bmp != null)
+            {
+                PinToScreen(bmp);
             }
         }
 
