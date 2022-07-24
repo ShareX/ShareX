@@ -39,5 +39,6 @@ namespace ShareX
         public bool KeepCenterLocation { get; set; } = true;
         public bool ShowShadow { get; set; } = true;
         public Color BackgroundColor { get; set; } = Color.White;
+        public Size MinimizeSize { get; set; } = new Size(100, 100);
     }
 }

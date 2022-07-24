@@ -54,7 +54,7 @@ namespace ShareX
 
                     if (loaded)
                     {
-                        UpdateImage();
+                        AutoSizeForm();
                     }
                 }
             }
@@ -89,6 +89,8 @@ namespace ShareX
             }
         }
 
+        public bool Minimized { get; private set; }
+
         public PinToScreenOptions Options { get; private set; }
 
         private bool isDWMEnabled;
@@ -122,7 +124,7 @@ namespace ShareX
         public PinToScreenForm(Image image, PinToScreenOptions options) : this(options)
         {
             Image = image;
-            UpdateImage();
+            AutoSizeForm();
 
             Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
             Location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, rectScreen.Size, ImageSize);
@@ -139,12 +141,6 @@ namespace ShareX
             base.Dispose(disposing);
         }
 
-        private void UpdateImage()
-        {
-            AutoSizeForm();
-            Refresh();
-        }
-
         private void ResetImage()
         {
             ImageScale = 100;
@@ -154,7 +150,17 @@ namespace ShareX
         private void AutoSizeForm()
         {
             Size previousSize = Size;
-            Size newSize = ImageSize;
+            Size newSize;
+
+            if (Minimized)
+            {
+                newSize = Options.MinimizeSize;
+            }
+            else
+            {
+                newSize = ImageSize;
+            }
+
             Point newLocation = Location;
             SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE;
 
@@ -169,6 +175,27 @@ namespace ShareX
             }
 
             NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
+
+            Refresh();
+        }
+
+        private void ToggleMinimize()
+        {
+            Minimized = !Minimized;
+
+            if (ImageOpacity < 100)
+            {
+                if (Minimized)
+                {
+                    Opacity = 1f;
+                }
+                else
+                {
+                    Opacity = ImageOpacity / 100f;
+                }
+            }
+
+            AutoSizeForm();
         }
 
         protected override void WndProc(ref Message m)
@@ -204,26 +231,35 @@ namespace ShareX
 
             if (Image != null)
             {
-                if (ImageScale == 100)
+                if (Minimized)
                 {
                     g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                    g.DrawImage(Image, 0, 0);
+                    g.DrawImage(Image, new Rectangle(0, 0, Options.MinimizeSize.Width, Options.MinimizeSize.Height),
+                        0, 0, Options.MinimizeSize.Width, Options.MinimizeSize.Height, GraphicsUnit.Pixel);
                 }
                 else
                 {
-                    if (Options.HighQualityScale)
+                    if (ImageScale == 100)
                     {
-                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        g.InterpolationMode = InterpolationMode.NearestNeighbor;
+                        g.DrawImage(Image, 0, 0);
                     }
                     else
                     {
-                        g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                    }
+                        if (Options.HighQualityScale)
+                        {
+                            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        }
+                        else
+                        {
+                            g.InterpolationMode = InterpolationMode.NearestNeighbor;
+                        }
 
-                    using (ImageAttributes ia = new ImageAttributes())
-                    {
-                        ia.SetWrapMode(WrapMode.TileFlipXY);
-                        g.DrawImage(Image, new Rectangle(0, 0, ImageSize.Width, ImageSize.Height), 0, 0, Image.Width, Image.Height, GraphicsUnit.Pixel, ia);
+                        using (ImageAttributes ia = new ImageAttributes())
+                        {
+                            ia.SetWrapMode(WrapMode.TileFlipXY);
+                            g.DrawImage(Image, new Rectangle(0, 0, ImageSize.Width, ImageSize.Height), 0, 0, Image.Width, Image.Height, GraphicsUnit.Pixel, ia);
+                        }
                     }
                 }
             }
@@ -233,8 +269,15 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Left)
             {
-                NativeMethods.ReleaseCapture();
-                NativeMethods.SendMessage(Handle, (uint)WindowsMessages.NCLBUTTONDOWN, (IntPtr)WindowHitTestRegions.HTCAPTION, IntPtr.Zero);
+                if (e.Clicks > 1)
+                {
+                    ToggleMinimize();
+                }
+                else
+                {
+                    NativeMethods.ReleaseCapture();
+                    NativeMethods.SendMessage(Handle, (uint)WindowsMessages.NCLBUTTONDOWN, (IntPtr)WindowHitTestRegions.HTCAPTION, IntPtr.Zero);
+                }
             }
         }
 
@@ -245,36 +288,46 @@ namespace ShareX
                 case MouseButtons.Right:
                     Close();
                     break;
-                case MouseButtons.Middle:
-                    ResetImage();
-                    break;
+            }
+
+            if (!Minimized)
+            {
+                switch (e.Button)
+                {
+                    case MouseButtons.Middle:
+                        ResetImage();
+                        break;
+                }
             }
         }
 
         private void PinToScreenForm_MouseWheel(object sender, MouseEventArgs e)
         {
-            switch (ModifierKeys)
+            if (!Minimized)
             {
-                case Keys.None:
-                    if (e.Delta > 0)
-                    {
-                        ImageScale += Options.ScaleStep;
-                    }
-                    else if (e.Delta < 0)
-                    {
-                        ImageScale -= Options.ScaleStep;
-                    }
-                    break;
-                case Keys.Control:
-                    if (e.Delta > 0)
-                    {
-                        ImageOpacity += Options.OpacityStep;
-                    }
-                    else if (e.Delta < 0)
-                    {
-                        ImageOpacity -= Options.OpacityStep;
-                    }
-                    break;
+                switch (ModifierKeys)
+                {
+                    case Keys.None:
+                        if (e.Delta > 0)
+                        {
+                            ImageScale += Options.ScaleStep;
+                        }
+                        else if (e.Delta < 0)
+                        {
+                            ImageScale -= Options.ScaleStep;
+                        }
+                        break;
+                    case Keys.Control:
+                        if (e.Delta > 0)
+                        {
+                            ImageOpacity += Options.OpacityStep;
+                        }
+                        else if (e.Delta < 0)
+                        {
+                            ImageOpacity -= Options.OpacityStep;
+                        }
+                        break;
+                }
             }
         }
 
@@ -288,22 +341,29 @@ namespace ShareX
                 case Keys.Control | Keys.C:
                     ClipboardHelpers.CopyImage(Image);
                     break;
-                case Keys.Oemplus:
-                case Keys.Add:
-                    ImageScale += Options.ScaleStep;
-                    break;
-                case Keys.OemMinus:
-                case Keys.Subtract:
-                    ImageScale -= Options.ScaleStep;
-                    break;
-                case Keys.Control | Keys.Oemplus:
-                case Keys.Control | Keys.Add:
-                    ImageOpacity += Options.OpacityStep;
-                    break;
-                case Keys.Control | Keys.OemMinus:
-                case Keys.Control | Keys.Subtract:
-                    ImageOpacity -= Options.OpacityStep;
-                    break;
+            }
+
+            if (!Minimized)
+            {
+                switch (e.KeyData)
+                {
+                    case Keys.Oemplus:
+                    case Keys.Add:
+                        ImageScale += Options.ScaleStep;
+                        break;
+                    case Keys.OemMinus:
+                    case Keys.Subtract:
+                        ImageScale -= Options.ScaleStep;
+                        break;
+                    case Keys.Control | Keys.Oemplus:
+                    case Keys.Control | Keys.Add:
+                        ImageOpacity += Options.OpacityStep;
+                        break;
+                    case Keys.Control | Keys.OemMinus:
+                    case Keys.Control | Keys.Subtract:
+                        ImageOpacity -= Options.OpacityStep;
+                        break;
+                }
             }
         }
     }
