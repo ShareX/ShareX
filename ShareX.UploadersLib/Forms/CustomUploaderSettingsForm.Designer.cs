@@ -499,7 +499,7 @@
             // cArgumentsValue
             // 
             this.cArgumentsValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.cArgumentsValue.DefaultCellStyle = dataGridViewCellStyle6;
             resources.ApplyResources(this.cArgumentsValue, "cArgumentsValue");
             this.cArgumentsValue.Name = "cArgumentsValue";
