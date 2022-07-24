@@ -52,7 +52,10 @@ namespace ShareX
                 {
                     imageScale = newImageScale;
 
-                    UpdateImage();
+                    if (loaded)
+                    {
+                        UpdateImage();
+                    }
                 }
             }
         }
@@ -86,14 +89,10 @@ namespace ShareX
             }
         }
 
-        public bool KeepCenterLocation { get; set; } = true;
-        public bool HighQualityScale { get; set; } = true;
-        public int ScaleStep { get; set; } = 10;
-        public int OpacityStep { get; set; } = 10;
-        public bool ShowShadow { get; set; } = true;
-        public Color BackgroundColor { get; set; } = Color.White;
+        public PinToScreenOptions Options { get; private set; }
 
         private bool isDWMEnabled;
+        private bool loaded;
 
         protected override CreateParams CreateParams
         {
@@ -105,29 +104,35 @@ namespace ShareX
             }
         }
 
-        private PinToScreenForm()
+        private PinToScreenForm(PinToScreenOptions options)
         {
+            Options = options;
+
+            ImageScale = Options.InitialScale;
+            ImageOpacity = Options.InitialOpacity;
+
             InitializeComponent();
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
 
-            BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
-
             isDWMEnabled = NativeMethods.IsDWMEnabled();
+
+            loaded = true;
         }
 
-        private PinToScreenForm(Image image) : this()
+        private PinToScreenForm(Image image, PinToScreenOptions options) : this(options)
         {
             Image = image;
-
             UpdateImage();
-            CenterForm();
+
+            Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
+            Location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, rectScreen.Size, ImageSize);
         }
 
-        public static void PinToScreen(Image image)
+        public static void PinToScreen(Image image, PinToScreenOptions options)
         {
             if (image != null)
             {
-                PinToScreenForm form = new PinToScreenForm(image);
+                PinToScreenForm form = new PinToScreenForm(image, options);
                 form.Show();
             }
         }
@@ -155,12 +160,6 @@ namespace ShareX
             ImageOpacity = 100;
         }
 
-        private void CenterForm()
-        {
-            Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
-            Location = new Point(rectScreen.X + (rectScreen.Width / 2) - (ImageSize.Width / 2), rectScreen.Y + (rectScreen.Height / 2) - (ImageSize.Height / 2));
-        }
-
         private void AutoSizeForm()
         {
             Size previousSize = Size;
@@ -168,7 +167,7 @@ namespace ShareX
             Point newLocation = Location;
             SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE;
 
-            if (KeepCenterLocation)
+            if (Options.KeepCenterLocation)
             {
                 Point locationOffset = new Point((previousSize.Width - newSize.Width) / 2, (previousSize.Height - newSize.Height) / 2);
                 newLocation = new Point(newLocation.X + locationOffset.X, newLocation.Y + locationOffset.Y);
@@ -183,7 +182,7 @@ namespace ShareX
 
         protected override void WndProc(ref Message m)
         {
-            if (ShowShadow && m.Msg == (int)WindowsMessages.NCPAINT && isDWMEnabled)
+            if (Options.ShowShadow && m.Msg == (int)WindowsMessages.NCPAINT && isDWMEnabled)
             {
                 NativeMethods.SetNCRenderingPolicy(Handle, DwmNCRenderingPolicy.Enabled);
 
@@ -210,7 +209,7 @@ namespace ShareX
         {
             Graphics g = e.Graphics;
 
-            g.Clear(BackgroundColor);
+            g.Clear(Options.BackgroundColor);
 
             if (Image != null)
             {
@@ -221,7 +220,7 @@ namespace ShareX
                 }
                 else
                 {
-                    if (HighQualityScale)
+                    if (Options.HighQualityScale)
                     {
                         g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                     }
@@ -268,21 +267,21 @@ namespace ShareX
                 case Keys.None:
                     if (e.Delta > 0)
                     {
-                        ImageScale += ScaleStep;
+                        ImageScale += Options.ScaleStep;
                     }
                     else if (e.Delta < 0)
                     {
-                        ImageScale -= ScaleStep;
+                        ImageScale -= Options.ScaleStep;
                     }
                     break;
                 case Keys.Control:
                     if (e.Delta > 0)
                     {
-                        ImageOpacity += OpacityStep;
+                        ImageOpacity += Options.OpacityStep;
                     }
                     else if (e.Delta < 0)
                     {
-                        ImageOpacity -= OpacityStep;
+                        ImageOpacity -= Options.OpacityStep;
                     }
                     break;
             }
@@ -300,19 +299,19 @@ namespace ShareX
                     break;
                 case Keys.Oemplus:
                 case Keys.Add:
-                    ImageScale += ScaleStep;
+                    ImageScale += Options.ScaleStep;
                     break;
                 case Keys.OemMinus:
                 case Keys.Subtract:
-                    ImageScale -= ScaleStep;
+                    ImageScale -= Options.ScaleStep;
                     break;
                 case Keys.Control | Keys.Oemplus:
                 case Keys.Control | Keys.Add:
-                    ImageOpacity += OpacityStep;
+                    ImageOpacity += Options.OpacityStep;
                     break;
                 case Keys.Control | Keys.OemMinus:
                 case Keys.Control | Keys.Subtract:
-                    ImageOpacity -= OpacityStep;
+                    ImageOpacity -= Options.OpacityStep;
                     break;
             }
         }

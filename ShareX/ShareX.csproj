@@ -210,6 +210,7 @@
     <Compile Include="OCR\ServiceLinksForm.Designer.cs">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PinToScreenOptions.cs" />
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>

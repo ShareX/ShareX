@@ -1276,7 +1276,10 @@ namespace ShareX
 
         public static void PinToScreen(Image image)
         {
-            PinToScreenForm.PinToScreen(image);
+            PinToScreenOptions options = new PinToScreenOptions();
+            options.BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
+
+            PinToScreenForm.PinToScreen(image, options);
         }
 
         public static void PinToScreen(string filePath)
