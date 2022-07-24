@@ -77,6 +77,7 @@
             this.tsmiColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenColorPicker = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPinToScreen = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTools1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiImageEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEffects = new System.Windows.Forms.ToolStripMenuItem();
@@ -175,6 +176,7 @@
             this.tsmiDownloadSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAddImageEffects = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPinSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRunAction = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSelectedItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -281,7 +283,7 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
-            this.tsmiPinToScreen = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayPinToScreen = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -662,6 +664,7 @@
             this.tsmiColorPicker,
             this.tsmiScreenColorPicker,
             this.tsmiRuler,
+            this.tsmiPinToScreen,
             this.tssTools1,
             this.tsmiImageEditor,
             this.tsmiImageEffects,
@@ -707,6 +710,13 @@
             this.tsmiRuler.Name = "tsmiRuler";
             resources.ApplyResources(this.tsmiRuler, "tsmiRuler");
             this.tsmiRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
+            // 
+            // tsmiPinToScreen
+            // 
+            this.tsmiPinToScreen.Image = global::ShareX.Properties.Resources.pin;
+            this.tsmiPinToScreen.Name = "tsmiPinToScreen";
+            resources.ApplyResources(this.tsmiPinToScreen, "tsmiPinToScreen");
+            this.tsmiPinToScreen.Click += new System.EventHandler(this.tsmiPinToScreen_Click);
             // 
             // tssTools1
             // 
@@ -1078,7 +1088,7 @@
             this.tsmiDownloadSelectedURL,
             this.tsmiEditSelectedFile,
             this.tsmiAddImageEffects,
-            this.tsmiPinToScreen,
+            this.tsmiPinSelectedFile,
             this.tsmiRunAction,
             this.tsmiDeleteSelectedItem,
             this.tsmiDeleteSelectedFile,
@@ -1405,6 +1415,13 @@
             this.tsmiAddImageEffects.Name = "tsmiAddImageEffects";
             resources.ApplyResources(this.tsmiAddImageEffects, "tsmiAddImageEffects");
             this.tsmiAddImageEffects.Click += new System.EventHandler(this.tsmiAddImageEffects_Click);
+            // 
+            // tsmiPinSelectedFile
+            // 
+            this.tsmiPinSelectedFile.Image = global::ShareX.Properties.Resources.pin;
+            this.tsmiPinSelectedFile.Name = "tsmiPinSelectedFile";
+            resources.ApplyResources(this.tsmiPinSelectedFile, "tsmiPinSelectedFile");
+            this.tsmiPinSelectedFile.Click += new System.EventHandler(this.tsmiPinSelectedFile_Click);
             // 
             // tsmiRunAction
             // 
@@ -1794,6 +1811,7 @@
             this.tsmiTrayColorPicker,
             this.tsmiTrayScreenColorPicker,
             this.tsmiTrayRuler,
+            this.tsmiTrayPinToScreen,
             this.tssTrayTools1,
             this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
@@ -2203,12 +2221,12 @@
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
             // 
-            // tsmiPinToScreen
+            // tsmiTrayPinToScreen
             // 
-            this.tsmiPinToScreen.Image = global::ShareX.Properties.Resources.pin;
-            this.tsmiPinToScreen.Name = "tsmiPinToScreen";
-            resources.ApplyResources(this.tsmiPinToScreen, "tsmiPinToScreen");
-            this.tsmiPinToScreen.Click += new System.EventHandler(this.tsmiPinToScreen_Click);
+            this.tsmiTrayPinToScreen.Image = global::ShareX.Properties.Resources.pin;
+            this.tsmiTrayPinToScreen.Name = "tsmiTrayPinToScreen";
+            resources.ApplyResources(this.tsmiTrayPinToScreen, "tsmiTrayPinToScreen");
+            this.tsmiTrayPinToScreen.Click += new System.EventHandler(this.tsmiPinToScreen_Click);
             // 
             // MainForm
             // 
@@ -2500,6 +2518,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageViewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiOCR;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayOCR;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPinSelectedFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiPinToScreen;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayPinToScreen;
     }
 }
