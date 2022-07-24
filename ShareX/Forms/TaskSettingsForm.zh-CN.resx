@@ -511,7 +511,7 @@
     <value>使用无损编码录制，并应用用户编码选项</value>
   </data>
   <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
-    <value>中止时确认</value>
+    <value>取消时确认</value>
   </data>
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>自动复制结果至剪贴板</value>
