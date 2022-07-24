@@ -951,12 +951,12 @@ namespace ShareX.UploadersLib
                     if (tb.AutoCompleteCustomSource == null || tb.AutoCompleteCustomSource.Count == 0)
                     {
                         AutoCompleteStringCollection col = new AutoCompleteStringCollection();
-                        col.Add("$input$");
-                        col.Add("$filename$");
-                        col.Add("$random:");
-                        col.Add("$select:");
-                        col.Add("$prompt:");
-                        col.Add("$base64:");
+                        col.Add("{input}");
+                        col.Add("{filename}");
+                        col.Add("{random:");
+                        col.Add("{select:");
+                        col.Add("{prompt:");
+                        col.Add("{base64:");
 
                         tb.AutoCompleteCustomSource = col;
                         tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
