@@ -35,7 +35,7 @@ namespace ShareX
         public int InitialOpacity { get; set; } = 100;
         public int OpacityStep { get; set; } = 10;
         public ContentAlignment Placement { get; set; } = ContentAlignment.BottomRight;
-        public int PlacementOffset { get; set; } = 5;
+        public int PlacementOffset { get; set; } = 10;
         public bool KeepCenterLocation { get; set; } = true;
         public bool ShowShadow { get; set; } = true;
         public Color BackgroundColor { get; set; } = Color.White;

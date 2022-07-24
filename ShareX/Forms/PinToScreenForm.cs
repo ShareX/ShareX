@@ -119,22 +119,13 @@ namespace ShareX
             loaded = true;
         }
 
-        private PinToScreenForm(Image image, PinToScreenOptions options) : this(options)
+        public PinToScreenForm(Image image, PinToScreenOptions options) : this(options)
         {
             Image = image;
             UpdateImage();
 
             Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
             Location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, rectScreen.Size, ImageSize);
-        }
-
-        public static void PinToScreen(Image image, PinToScreenOptions options)
-        {
-            if (image != null)
-            {
-                PinToScreenForm form = new PinToScreenForm(image, options);
-                form.Show();
-            }
         }
 
         protected override void Dispose(bool disposing)
