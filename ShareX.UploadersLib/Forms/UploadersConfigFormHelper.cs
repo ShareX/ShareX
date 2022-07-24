@@ -299,7 +299,7 @@ namespace ShareX.UploadersLib
             if (cbB2CustomUrl.Checked)
             {
                 url = URLHelpers.CombineURL(Config.B2CustomUrl, uploadPath, "example.png");
-                url = URLHelpers.FixPrefix(url, "https://");
+                url = URLHelpers.FixPrefix(url);
             }
             else
             {

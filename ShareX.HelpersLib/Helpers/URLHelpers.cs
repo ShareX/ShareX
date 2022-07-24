@@ -426,7 +426,7 @@ namespace ShareX.HelpersLib
             return URLPrefixes.FirstOrDefault(x => url.StartsWith(x, StringComparison.OrdinalIgnoreCase));
         }
 
-        public static string FixPrefix(string url, string prefix = "http://")
+        public static string FixPrefix(string url, string prefix = "https://")
         {
             if (!string.IsNullOrEmpty(url) && !HasPrefix(url))
             {

@@ -207,7 +207,7 @@ namespace ShareX.UploadersLib.FileUploaders
             headers.Remove("Content-Type");
 
             string url = URLHelpers.CombineURL(scheme + host, canonicalURI);
-            url = URLHelpers.FixPrefix(url, "https://");
+            url = URLHelpers.FixPrefix(url);
 
             SendRequest(HttpMethod.PUT, url, stream, contentType, null, headers);
 
@@ -298,7 +298,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     url = URLHelpers.CombineURL(Settings.Endpoint, Settings.Bucket, uploadPath);
                 }
 
-                return URLHelpers.FixPrefix(url, "https://");
+                return URLHelpers.FixPrefix(url);
             }
 
             return "";

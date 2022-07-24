@@ -168,7 +168,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = URLHelpers.CombineURL(Domain, uploadPath);
 
-            return URLHelpers.FixPrefix(url, "https://");
+            return URLHelpers.FixPrefix(url);
         }
 
         public string GetPreviewURL()
