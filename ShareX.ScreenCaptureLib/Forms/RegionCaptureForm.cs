@@ -1404,7 +1404,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             RectangleF srcRect = new RectangleF(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
-                position.Y - (verticalPixelCount / 2) - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount);
+                position.Y - (verticalPixelCount / 2) - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount).Round();
 
             int width = horizontalPixelCount * pixelSize;
             int height = verticalPixelCount * pixelSize;
