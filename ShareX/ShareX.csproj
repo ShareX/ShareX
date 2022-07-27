@@ -108,8 +108,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BalloonTipAction.cs" />
-    <Compile Include="BorderlessWindowManager.cs" />
-    <Compile Include="BorderlessWindowSettings.cs" />
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowManager.cs" />
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowSettings.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveWindow.cs" />
     <Compile Include="CaptureHelpers\CaptureBase.cs" />
@@ -151,16 +151,16 @@
     <Compile Include="EasterEggAboutAnimation.cs" />
     <Compile Include="EasterEggBounce.cs" />
     <Compile Include="FirefoxManifest.cs" />
-    <Compile Include="Forms\BorderlessWindowForm.cs">
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BorderlessWindowForm.Designer.cs">
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowForm.Designer.cs">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BorderlessWindowSettingsForm.cs">
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BorderlessWindowSettingsForm.Designer.cs">
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.Designer.cs">
       <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ClipboardUploadForm.cs">
@@ -181,16 +181,16 @@
     <Compile Include="Forms\InspectWindowForm.Designer.cs">
       <DependentUpon>InspectWindowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PinToScreen\PinToScreenForm.cs">
+    <Compile Include="Tools\PinToScreen\PinToScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PinToScreen\PinToScreenForm.Designer.cs">
+    <Compile Include="Tools\PinToScreen\PinToScreenForm.Designer.cs">
       <DependentUpon>PinToScreenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OCR\OCRForm.cs">
+    <Compile Include="Tools\OCR\OCRForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OCR\OCRForm.Designer.cs">
+    <Compile Include="Tools\OCR\OCRForm.Designer.cs">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NativeMessageInput.cs" />
@@ -200,21 +200,21 @@
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="NotificationFormConfig.cs" />
-    <Compile Include="OCR\OCRHelper.cs" />
-    <Compile Include="OCR\OCRLanguage.cs" />
-    <Compile Include="OCR\OCROptions.cs" />
-    <Compile Include="OCR\ServiceLink.cs" />
-    <Compile Include="OCR\ServiceLinksForm.cs">
+    <Compile Include="Tools\OCR\OCRHelper.cs" />
+    <Compile Include="Tools\OCR\OCRLanguage.cs" />
+    <Compile Include="Tools\OCR\OCROptions.cs" />
+    <Compile Include="Tools\OCR\ServiceLink.cs" />
+    <Compile Include="Tools\OCR\ServiceLinksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OCR\ServiceLinksForm.Designer.cs">
+    <Compile Include="Tools\OCR\ServiceLinksForm.Designer.cs">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PinToScreen\PinToScreenOptions.cs" />
-    <Compile Include="PinToScreen\PinToScreenStartupForm.cs">
+    <Compile Include="Tools\PinToScreen\PinToScreenOptions.cs" />
+    <Compile Include="Tools\PinToScreen\PinToScreenStartupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PinToScreen\PinToScreenStartupForm.Designer.cs">
+    <Compile Include="Tools\PinToScreen\PinToScreenStartupForm.Designer.cs">
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingManager.cs" />
@@ -978,40 +978,40 @@
     <EmbeddedResource Include="Forms\BeforeUploadForm.zh-TW.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowForm.ja-JP.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.ja-JP.resx">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowForm.pl.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.pl.resx">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowForm.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.resx">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowForm.ro.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.ro.resx">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowForm.ru.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.ru.resx">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowForm.zh-CN.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.zh-CN.resx">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowSettingsForm.ja-JP.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.ja-JP.resx">
       <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowSettingsForm.pl.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.pl.resx">
       <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowSettingsForm.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.resx">
       <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowSettingsForm.ro.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.ro.resx">
       <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowSettingsForm.ru.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.ru.resx">
       <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BorderlessWindowSettingsForm.zh-CN.resx">
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.zh-CN.resx">
       <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.ja-JP.resx">
@@ -1440,7 +1440,7 @@
     <EmbeddedResource Include="Forms\MainForm.zh-TW.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PinToScreen\PinToScreenForm.resx">
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenForm.resx">
       <DependentUpon>PinToScreenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.pl.resx">
@@ -1473,10 +1473,10 @@
     <EmbeddedResource Include="Forms\WatchFolderForm.ro.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\OCRForm.pl.resx">
+    <EmbeddedResource Include="Tools\OCR\OCRForm.pl.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\OCRForm.resx">
+    <EmbeddedResource Include="Tools\OCR\OCRForm.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.de.resx">
@@ -1782,31 +1782,31 @@
     <EmbeddedResource Include="Forms\WatchFolderForm.zh-TW.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\OCRForm.ro.resx">
+    <EmbeddedResource Include="Tools\OCR\OCRForm.ro.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\OCRForm.ru.resx">
+    <EmbeddedResource Include="Tools\OCR\OCRForm.ru.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\OCRForm.zh-CN.resx">
+    <EmbeddedResource Include="Tools\OCR\OCRForm.zh-CN.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\ServiceLinksForm.pl.resx">
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.pl.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\ServiceLinksForm.resx">
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\ServiceLinksForm.ro.resx">
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.ro.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\ServiceLinksForm.ru.resx">
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.ru.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\ServiceLinksForm.zh-CN.resx">
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.zh-CN.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PinToScreen\PinToScreenStartupForm.resx">
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.resx">
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
