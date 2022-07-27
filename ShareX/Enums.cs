@@ -214,6 +214,7 @@ namespace ShareX
         ColorPicker,
         ScreenColorPicker,
         Ruler,
+        PinToScreen,
         ImageEditor,
         ImageEffects,
         ImageViewer,

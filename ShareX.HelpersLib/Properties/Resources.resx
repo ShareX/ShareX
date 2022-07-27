@@ -611,9 +611,6 @@ Would you like to download it?</value>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>Start/Stop screen recording</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Tools</value>
-  </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>Other</value>
   </data>
@@ -979,9 +976,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Default</value>
-  </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP client</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Could not create directory.</value>
@@ -1453,5 +1447,11 @@ Would you like to download and install it?</value>
   </data>
   <data name="ShareXImageViewer" xml:space="preserve">
     <value>ShareX - Image viewer</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
+  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
+    <value>Tools</value>
   </data>
 </root>

@@ -178,6 +178,9 @@ namespace ShareX
                 case HotkeyType.Ruler:
                     OpenRuler(safeTaskSettings);
                     break;
+                case HotkeyType.PinToScreen:
+                    PinToScreen();
+                    break;
                 case HotkeyType.ImageEditor:
                     if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
                     {
@@ -1593,6 +1596,7 @@ namespace ShareX
                     case HotkeyType.ColorPicker: return Resources.color;
                     case HotkeyType.ScreenColorPicker: return Resources.pipette;
                     case HotkeyType.Ruler: return Resources.ruler_triangle;
+                    case HotkeyType.PinToScreen: return Resources.pin;
                     case HotkeyType.ImageEditor: return Resources.image_pencil;
                     case HotkeyType.ImageEffects: return Resources.image_saturation;
                     case HotkeyType.ImageViewer: return Resources.images_flickr;

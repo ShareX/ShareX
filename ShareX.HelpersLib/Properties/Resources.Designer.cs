@@ -1489,24 +1489,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FTP client.
-        /// </summary>
-        internal static string HotkeyType_FTPClient {
-            get {
-                return ResourceManager.GetString("HotkeyType_FTPClient", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tools.
-        /// </summary>
-        internal static string HotkeyType_FTPClient_Category {
-            get {
-                return ResourceManager.GetString("HotkeyType_FTPClient_Category", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Hash check.
         /// </summary>
         internal static string HotkeyType_HashCheck {
@@ -1800,6 +1782,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_OpenScreenshotsFolder_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_OpenScreenshotsFolder_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pin to screen.
+        /// </summary>
+        internal static string HotkeyType_PinToScreen {
+            get {
+                return ResourceManager.GetString("HotkeyType_PinToScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_PinToScreen_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_PinToScreen_Category", resourceCulture);
             }
         }
         
