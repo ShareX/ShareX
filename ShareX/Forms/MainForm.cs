@@ -1708,7 +1708,7 @@ namespace ShareX
 
         private void tsmiPinToScreen_Click(object sender, EventArgs e)
         {
-            TaskHelpers.PinToScreenFromClipboard();
+            TaskHelpers.PinToScreen();
         }
 
         private void tsmiImageEditor_Click(object sender, EventArgs e)

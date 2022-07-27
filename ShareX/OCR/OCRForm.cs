@@ -176,7 +176,7 @@ namespace ShareX
             FormWindowState previousState = WindowState;
             WindowState = FormWindowState.Minimized;
             await Task.Delay(250);
-            Bitmap regionImage = RegionCaptureTasks.GetRegionImage(new RegionCaptureOptions());
+            Bitmap regionImage = RegionCaptureTasks.GetRegionImage();
             WindowState = previousState;
 
             if (regionImage != null)

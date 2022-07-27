@@ -181,10 +181,10 @@
     <Compile Include="Forms\InspectWindowForm.Designer.cs">
       <DependentUpon>InspectWindowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PinToScreenForm.cs">
+    <Compile Include="PinToScreen\PinToScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PinToScreenForm.Designer.cs">
+    <Compile Include="PinToScreen\PinToScreenForm.Designer.cs">
       <DependentUpon>PinToScreenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OCR\OCRForm.cs">
@@ -210,7 +210,13 @@
     <Compile Include="OCR\ServiceLinksForm.Designer.cs">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PinToScreenOptions.cs" />
+    <Compile Include="PinToScreen\PinToScreenOptions.cs" />
+    <Compile Include="PinToScreen\PinToScreenStartupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PinToScreen\PinToScreenStartupForm.Designer.cs">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
       <SubType>Form</SubType>
@@ -1434,7 +1440,7 @@
     <EmbeddedResource Include="Forms\MainForm.zh-TW.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PinToScreenForm.resx">
+    <EmbeddedResource Include="PinToScreen\PinToScreenForm.resx">
       <DependentUpon>PinToScreenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.pl.resx">
@@ -1799,6 +1805,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OCR\ServiceLinksForm.zh-CN.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PinToScreen\PinToScreenStartupForm.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.es-MX.resx" />

@@ -1914,9 +1914,9 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap LoadImageWithFileDialog()
+        public static Bitmap LoadImageWithFileDialog(Form form = null)
         {
-            string filePath = OpenImageFileDialog();
+            string filePath = OpenImageFileDialog(form);
 
             if (!string.IsNullOrEmpty(filePath))
             {

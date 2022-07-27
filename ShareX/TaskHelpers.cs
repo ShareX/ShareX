@@ -1274,6 +1274,17 @@ namespace ShareX
             }
         }
 
+        public static void PinToScreen()
+        {
+            using (PinToScreenStartupForm form = new PinToScreenStartupForm())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    PinToScreen(form.Image);
+                }
+            }
+        }
+
         public static void PinToScreen(Image image)
         {
             if (image != null)
@@ -1283,20 +1294,6 @@ namespace ShareX
 
                 PinToScreenForm form = new PinToScreenForm(image, options);
                 form.Show();
-            }
-        }
-
-        public static void PinToScreenFromClipboard()
-        {
-            Bitmap bmp = ClipboardHelpers.TryGetImage();
-
-            if (bmp == null)
-            {
-                MessageBox.Show(Resources.ClipboardDoesNotContainAnImage, "ShareX - " + Resources.PinToScreen, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                PinToScreen(bmp);
             }
         }
 

@@ -32,7 +32,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public static class RegionCaptureTasks
     {
-        public static Bitmap GetRegionImage(RegionCaptureOptions options)
+        public static Bitmap GetRegionImage(RegionCaptureOptions options = null)
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
 
