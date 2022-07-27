@@ -129,6 +129,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitrate:.
+        /// </summary>
+        internal static string Bitrate {
+            get {
+                return ResourceManager.GetString("Bitrate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blur.
         /// </summary>
         internal static string Blur {
@@ -233,6 +242,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("counter_reset", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CRF:.
+        /// </summary>
+        internal static string CRF {
+            get {
+                return ResourceManager.GetString("CRF", resourceCulture);
             }
         }
         

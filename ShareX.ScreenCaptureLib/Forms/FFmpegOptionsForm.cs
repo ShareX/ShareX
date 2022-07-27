@@ -203,8 +203,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (settingsLoaded)
             {
-                // TODO: Translate
-                lblx264CRF.Text = Options.FFmpeg.x264_Use_Bitrate ? "Bitrate:" : "CRF:";
+                lblx264CRF.Text = Options.FFmpeg.x264_Use_Bitrate ? Resources.Bitrate : Resources.CRF;
                 nudx264CRF.Visible = !Options.FFmpeg.x264_Use_Bitrate;
                 nudx264Bitrate.Visible = lblx264BitrateK.Visible = Options.FFmpeg.x264_Use_Bitrate;
 

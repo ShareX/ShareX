@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -63,8 +64,7 @@ namespace ShareX
         {
             if (!IsSupported)
             {
-                // TODO: Translate
-                throw new Exception(string.Format("Optical character recognition feature is only available with Windows version {0} or newer.",
+                throw new Exception(string.Format(Resources.OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer,
                     SupportedVersion));
             }
         }
