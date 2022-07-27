@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -336,8 +337,7 @@ namespace ShareX.HelpersLib
             Bounds = CaptureHelpers.GetActiveScreenBounds();
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
-            // TODO: Translate
-            Text = "ShareX - Image viewer";
+            Text = Resources.ShareXImageViewer;
             TopMost = true;
             WindowState = FormWindowState.Normal;
             StartPosition = FormStartPosition.Manual;

@@ -1292,8 +1292,7 @@ namespace ShareX
 
             if (bmp == null)
             {
-                // TODO: Translate
-                MessageBox.Show("Clipboard does not contain an image.", "ShareX - " + "Pin to screen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.ClipboardDoesNotContainAnImage, "ShareX - " + Resources.PinToScreen, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

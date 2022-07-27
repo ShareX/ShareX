@@ -661,4 +661,10 @@
   <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
     <value>Расширенные стили окна</value>
   </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Буфер обмена не содержит изображение.</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Закрепить на экране</value>
+  </data>
 </root>

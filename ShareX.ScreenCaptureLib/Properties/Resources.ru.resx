@@ -334,7 +334,7 @@
     <value>Заметка: Изображение можно перемещать, удерживая среднюю кнопку мыши.</value>
   </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
-    <value>Буфер обмена не содержит изображений.</value>
+    <value>Буфер обмена не содержит изображение.</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
     <value>Вставить картинку/текст</value>
@@ -483,5 +483,8 @@
   </data>
   <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
     <value>Подогнать под размеры окна при открывании</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Битрейт:</value>
   </data>
 </root>

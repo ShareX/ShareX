@@ -1105,4 +1105,13 @@ Middle click to close</value>
   <data name="pin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>Optical character recognition feature is only available with Windows version {0} or newer.</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Clipboard does not contain an image.</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
 </root>

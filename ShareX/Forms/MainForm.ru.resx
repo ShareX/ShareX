@@ -750,4 +750,13 @@
   <data name="tsmiOCR.Text" xml:space="preserve">
     <value>Распознавание текста (OCR)...</value>
   </data>
+  <data name="tsmiPinSelectedFile.Text" xml:space="preserve">
+    <value>Закрепить на экране</value>
+  </data>
+  <data name="tsmiPinToScreen.Text" xml:space="preserve">
+    <value>Закрепить на экране...</value>
+  </data>
+  <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
+    <value>Закрепить на экране...</value>
+  </data>
 </root>

@@ -3692,6 +3692,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ShareX - Image viewer.
+        /// </summary>
+        internal static string ShareXImageViewer {
+            get {
+                return ResourceManager.GetString("ShareXImageViewer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
         internal static string Start {
