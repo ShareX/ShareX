@@ -242,7 +242,7 @@ namespace ShareX
                     if (ImageScale == 100)
                     {
                         g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                        g.DrawImage(Image, 0, 0);
+                        g.DrawImage(Image, 0, 0, Image.Width, Image.Height);
                     }
                     else
                     {
