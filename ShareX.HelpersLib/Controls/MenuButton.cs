@@ -64,7 +64,7 @@ namespace ShareX.HelpersLib
 
             if (Menu != null)
             {
-                int arrowX = ClientRectangle.Width - 14;
+                int arrowX = ClientRectangle.Width - Padding.Right - 14;
                 int arrowY = (ClientRectangle.Height / 2) - 1;
 
                 Color color = Enabled ? ForeColor : SystemColors.ControlDark;
