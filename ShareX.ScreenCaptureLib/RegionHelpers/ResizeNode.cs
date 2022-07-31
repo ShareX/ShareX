@@ -100,7 +100,7 @@ namespace ShareX.ScreenCaptureLib
             switch (Shape)
             {
                 case NodeShape.Square:
-                    g.DrawRectangle(Pens.White, rect.Offset(-1).Round());
+                    g.DrawRectangle(Pens.White, rect.Round().Offset(-1));
                     g.DrawRectangle(Pens.Black, rect.Round());
                     break;
                 default:
@@ -109,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawEllipse(Pens.Black, rect);
                     break;
                 case NodeShape.Diamond:
-                    g.DrawDiamond(Pens.White, rect.Offset(-1).Round());
+                    g.DrawDiamond(Pens.White, rect.Round().Offset(-1));
                     g.DrawDiamond(Pens.Black, rect.Round());
                     break;
                 case NodeShape.CustomNode when CustomNodeImage != null:
