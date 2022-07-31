@@ -57,6 +57,7 @@
             this.btnTask.Name = "btnTask";
             this.btnTask.UseMnemonic = false;
             this.btnTask.UseVisualStyleBackColor = true;
+            this.btnTask.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnTask_MouseClick);
             // 
             // btnHotkey
             // 

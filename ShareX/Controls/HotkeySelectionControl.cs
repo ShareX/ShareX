@@ -38,25 +38,39 @@ namespace ShareX
         public event EventHandler SelectedChanged;
         public event EventHandler EditRequested;
 
-        public HotkeySettings Setting { get; set; }
+        public HotkeySettings Settings { get; private set; }
 
-        public bool Selected { get; set; }
+        private bool selected;
+
+        public bool Selected
+        {
+            get
+            {
+                return selected;
+            }
+            set
+            {
+                selected = value;
+
+                UpdateControls();
+            }
+        }
 
         public bool EditingHotkey { get; private set; }
 
-        public HotkeySelectionControl(HotkeySettings setting)
+        public HotkeySelectionControl(HotkeySettings settings)
         {
-            Setting = setting;
+            Settings = settings;
 
             InitializeComponent();
-            UpdateDescription();
+            UpdateControls();
 
             AddEnumItemsContextMenu<HotkeyType>(x =>
             {
-                Setting.TaskSettings.Job = x;
-                UpdateDescription();
+                Settings.TaskSettings.Job = x;
+                UpdateControls();
             }, cmsTask);
-            SetEnumCheckedContextMenu(Setting.TaskSettings.Job, cmsTask);
+            SetEnumCheckedContextMenu(Settings.TaskSettings.Job, cmsTask);
 
             if (ShareXResources.UseCustomTheme)
             {
@@ -84,7 +98,7 @@ namespace ShareX
 
                         selectedEnum((T)enumInfo.Value);
 
-                        UpdateDescription();
+                        UpdateControls();
                     };
 
                     if (!string.IsNullOrEmpty(enumInfo.Category))
@@ -137,26 +151,26 @@ namespace ShareX
             }
         }
 
-        public void UpdateDescription()
+        public void UpdateControls()
         {
-            if (Setting.TaskSettings.IsUsingDefaultSettings)
-            {
-                btnTask.ChangeFontStyle(FontStyle.Regular);
-            }
-            else
+            if (Selected)
             {
                 btnTask.ChangeFontStyle(FontStyle.Bold);
             }
+            else
+            {
+                btnTask.ChangeFontStyle(FontStyle.Regular);
+            }
 
-            btnTask.Image = TaskHelpers.FindMenuIcon(Setting.TaskSettings.Job);
-            btnTask.Text = " " + Setting.TaskSettings.ToString();
+            btnTask.Image = TaskHelpers.FindMenuIcon(Settings.TaskSettings.Job);
+            btnTask.Text = " " + Settings.TaskSettings.ToString();
         }
 
         public void UpdateHotkeyStatus()
         {
-            btnHotkey.Text = Setting.HotkeyInfo.ToString();
+            btnHotkey.Text = Settings.HotkeyInfo.ToString();
 
-            switch (Setting.HotkeyInfo.Status)
+            switch (Settings.HotkeyInfo.Status)
             {
                 default:
                 case HotkeyStatus.NotConfigured:
@@ -171,11 +185,69 @@ namespace ShareX
             }
         }
 
+        private void StartEditing()
+        {
+            EditingHotkey = true;
+
+            Program.HotkeyManager.IgnoreHotkeys = true;
+
+            btnHotkey.Text = Resources.HotkeySelectionControl_StartEditing_Select_a_hotkey___;
+
+            Settings.HotkeyInfo.Hotkey = Keys.None;
+            Settings.HotkeyInfo.Win = false;
+            OnHotkeyChanged();
+            UpdateHotkeyStatus();
+        }
+
+        private void StopEditing()
+        {
+            EditingHotkey = false;
+
+            Program.HotkeyManager.IgnoreHotkeys = false;
+
+            if (Settings.HotkeyInfo.IsOnlyModifiers)
+            {
+                Settings.HotkeyInfo.Hotkey = Keys.None;
+            }
+
+            OnHotkeyChanged();
+            UpdateHotkeyStatus();
+        }
+
+        protected void OnHotkeyChanged()
+        {
+            HotkeyChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected void OnSelectedChanged()
+        {
+            SelectedChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected void OnEditRequested()
+        {
+            EditRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnTask_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Selected = true;
+                OnSelectedChanged();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            OnEditRequested();
+        }
+
         private void btnHotkey_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             if (EditingHotkey)
             {
-                // For handle Tab key etc.
+                // To handle "Tab" key etc.
                 e.IsInputKey = true;
             }
         }
@@ -188,22 +260,22 @@ namespace ShareX
             {
                 if (e.KeyData == Keys.Escape)
                 {
-                    Setting.HotkeyInfo.Hotkey = Keys.None;
+                    Settings.HotkeyInfo.Hotkey = Keys.None;
                     StopEditing();
                 }
                 else if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin)
                 {
-                    Setting.HotkeyInfo.Win = !Setting.HotkeyInfo.Win;
+                    Settings.HotkeyInfo.Win = !Settings.HotkeyInfo.Win;
                     UpdateHotkeyStatus();
                 }
                 else if (new HotkeyInfo(e.KeyData).IsValidHotkey)
                 {
-                    Setting.HotkeyInfo.Hotkey = e.KeyData;
+                    Settings.HotkeyInfo.Hotkey = e.KeyData;
                     StopEditing();
                 }
                 else
                 {
-                    Setting.HotkeyInfo.Hotkey = e.KeyData;
+                    Settings.HotkeyInfo.Hotkey = e.KeyData;
                     UpdateHotkeyStatus();
                 }
             }
@@ -218,7 +290,7 @@ namespace ShareX
                 // PrintScreen not trigger KeyDown event
                 if (e.KeyCode == Keys.PrintScreen)
                 {
-                    Setting.HotkeyInfo.Hotkey = e.KeyData;
+                    Settings.HotkeyInfo.Hotkey = e.KeyData;
                     StopEditing();
                 }
             }
@@ -242,55 +314,6 @@ namespace ShareX
             {
                 StopEditing();
             }
-        }
-
-        private void StartEditing()
-        {
-            EditingHotkey = true;
-
-            Program.HotkeyManager.IgnoreHotkeys = true;
-
-            btnHotkey.Text = Resources.HotkeySelectionControl_StartEditing_Select_a_hotkey___;
-
-            Setting.HotkeyInfo.Hotkey = Keys.None;
-            Setting.HotkeyInfo.Win = false;
-            OnHotkeyChanged();
-            UpdateHotkeyStatus();
-        }
-
-        private void StopEditing()
-        {
-            EditingHotkey = false;
-
-            Program.HotkeyManager.IgnoreHotkeys = false;
-
-            if (Setting.HotkeyInfo.IsOnlyModifiers)
-            {
-                Setting.HotkeyInfo.Hotkey = Keys.None;
-            }
-
-            OnHotkeyChanged();
-            UpdateHotkeyStatus();
-        }
-
-        protected void OnHotkeyChanged()
-        {
-            HotkeyChanged?.Invoke(this, EventArgs.Empty);
-        }
-
-        protected void OnSelectedChanged()
-        {
-            SelectedChanged?.Invoke(this, EventArgs.Empty);
-        }
-
-        protected void OnEditRequested()
-        {
-            EditRequested?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            OnEditRequested();
         }
     }
 }
