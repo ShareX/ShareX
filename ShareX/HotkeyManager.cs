@@ -107,6 +107,10 @@ namespace ShareX
                         DebugHelper.WriteLine("Hotkey register failed: " + hotkeySetting);
                     }
                 }
+                else
+                {
+                    hotkeySetting.HotkeyInfo.Status = HotkeyStatus.NotConfigured;
+                }
             }
 
             if (!Hotkeys.Contains(hotkeySetting))
