@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySelectionControl));
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnHotkey = new ShareX.HelpersLib.ColorButton();
-            this.btnTask = new ShareX.HelpersLib.MenuButton();
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnTask = new ShareX.HelpersLib.MenuButton();
+            this.btnHotkey = new ShareX.HelpersLib.ColorButton();
             this.SuspendLayout();
             // 
             // btnEdit
@@ -43,6 +43,20 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // cmsTask
+            // 
+            this.cmsTask.Name = "cmsTask";
+            resources.ApplyResources(this.cmsTask, "cmsTask");
+            // 
+            // btnTask
+            // 
+            resources.ApplyResources(this.btnTask, "btnTask");
+            this.btnTask.Image = global::ShareX.Properties.Resources.gear;
+            this.btnTask.Menu = this.cmsTask;
+            this.btnTask.Name = "btnTask";
+            this.btnTask.UseMnemonic = false;
+            this.btnTask.UseVisualStyleBackColor = true;
             // 
             // btnHotkey
             // 
@@ -58,20 +72,6 @@
             this.btnHotkey.Leave += new System.EventHandler(this.btnHotkey_Leave);
             this.btnHotkey.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnHotkey_MouseClick);
             this.btnHotkey.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnHotkey_PreviewKeyDown);
-            // 
-            // btnTask
-            // 
-            resources.ApplyResources(this.btnTask, "btnTask");
-            this.btnTask.Image = global::ShareX.Properties.Resources.gear;
-            this.btnTask.Menu = this.cmsTask;
-            this.btnTask.Name = "btnTask";
-            this.btnTask.UseMnemonic = false;
-            this.btnTask.UseVisualStyleBackColor = true;
-            // 
-            // cmsTask
-            // 
-            this.cmsTask.Name = "cmsTask";
-            resources.ApplyResources(this.cmsTask, "cmsTask");
             // 
             // HotkeySelectionControl
             // 

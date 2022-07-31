@@ -164,6 +164,13 @@ namespace ShareX.HelpersLib
 
             switch (control)
             {
+                case ColorButton colorButton:
+                    colorButton.FlatStyle = FlatStyle.Flat;
+                    colorButton.FlatAppearance.BorderColor = Theme.BorderColor;
+                    colorButton.ForeColor = Theme.TextColor;
+                    colorButton.BackColor = Theme.LightBackgroundColor;
+                    colorButton.BorderColor = Theme.BorderColor;
+                    return;
                 case Button btn:
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.FlatAppearance.BorderColor = Theme.BorderColor;

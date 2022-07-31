@@ -133,7 +133,7 @@ namespace ShareX
         private HotkeySelectionControl AddHotkeySelectionControl(HotkeySettings hotkeySetting)
         {
             HotkeySelectionControl control = new HotkeySelectionControl(hotkeySetting);
-            control.Margin = new Padding(0, 0, 0, 2);
+            control.Margin = new Padding(0, 0, 0, 4);
             control.SelectedChanged += control_SelectedChanged;
             control.HotkeyChanged += control_HotkeyChanged;
             control.EditRequested += control_EditRequested;
