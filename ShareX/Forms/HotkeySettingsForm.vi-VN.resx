@@ -132,7 +132,4 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Xóa bỏ</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Khôi phục các phím tắt gốc...</value>
-  </data>
 </root>

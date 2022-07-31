@@ -132,7 +132,4 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Verwijder</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Herstel standaard sneltoetsen</value>
-  </data>
 </root>

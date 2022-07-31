@@ -129,9 +129,6 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Restaurer les raccourcis clavier par défaut...</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Paramètres des raccourcis clavier</value>
   </data>

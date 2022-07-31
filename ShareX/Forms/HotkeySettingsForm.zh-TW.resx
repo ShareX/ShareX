@@ -132,7 +132,4 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>移除</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>恢復預設快捷鍵...</value>
-  </data>
 </root>

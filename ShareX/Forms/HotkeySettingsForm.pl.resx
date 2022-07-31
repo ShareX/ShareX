@@ -129,9 +129,6 @@
   <data name="btnHotkeysDisabled.Text" xml:space="preserve">
     <value>Skróty klawiszowe są wyłączone. Możesz kliknąć tutaj, aby je włączyć.</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Przywróć domyślne skróty klawiszowe...</value>
-  </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Powiel</value>
   </data>

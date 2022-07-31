@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySettingsForm));
             this.btnDuplicate = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.flpHotkeys = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -38,6 +37,7 @@
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnMoveDown = new System.Windows.Forms.Button();
             this.btnHotkeysDisabled = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDuplicate
@@ -46,13 +46,6 @@
             this.btnDuplicate.Name = "btnDuplicate";
             this.btnDuplicate.UseVisualStyleBackColor = true;
             this.btnDuplicate.Click += new System.EventHandler(this.btnDuplicate_Click);
-            // 
-            // btnReset
-            // 
-            resources.ApplyResources(this.btnReset, "btnReset");
-            this.btnReset.Name = "btnReset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // flpHotkeys
             // 
@@ -102,16 +95,23 @@
             this.btnHotkeysDisabled.UseVisualStyleBackColor = true;
             this.btnHotkeysDisabled.Click += new System.EventHandler(this.btnHotkeysDisabled_Click);
             // 
+            // btnReset
+            // 
+            resources.ApplyResources(this.btnReset, "btnReset");
+            this.btnReset.Name = "btnReset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // HotkeySettingsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnHotkeysDisabled);
             this.Controls.Add(this.btnMoveDown);
             this.Controls.Add(this.btnMoveUp);
             this.Controls.Add(this.btnDuplicate);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.flpHotkeys);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnRemove);
@@ -126,7 +126,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnDuplicate;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.FlowLayoutPanel flpHotkeys;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnRemove;
@@ -134,5 +133,6 @@
         private System.Windows.Forms.Button btnMoveUp;
         private System.Windows.Forms.Button btnMoveDown;
         private System.Windows.Forms.Button btnHotkeysDisabled;
+        private System.Windows.Forms.Button btnReset;
     }
 }

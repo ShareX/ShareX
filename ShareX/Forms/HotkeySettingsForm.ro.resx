@@ -120,9 +120,6 @@
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Duplicați</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Resetați tastele rapide implicite...</value>
-  </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Editați...</value>
   </data>
