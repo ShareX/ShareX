@@ -197,12 +197,11 @@ namespace ShareX
 
             Program.HotkeyManager.IgnoreHotkeys = true;
 
-            btnHotkey.Text = Resources.HotkeySelectionControl_StartEditing_Select_a_hotkey___;
-
             HotkeySettings.HotkeyInfo.Hotkey = Keys.None;
             HotkeySettings.HotkeyInfo.Win = false;
             OnHotkeyChanged();
             UpdateHotkeyStatus();
+            btnHotkey.Text = Resources.HotkeySelectionControl_StartEditing_Select_a_hotkey___;
         }
 
         private void StopEditing()
