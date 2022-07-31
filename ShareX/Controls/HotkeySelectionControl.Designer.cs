@@ -33,7 +33,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnTask = new ShareX.HelpersLib.MenuButton();
-            this.btnHotkey = new ShareX.HelpersLib.ColorButton();
+            this.btnHotkey = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEdit
@@ -62,11 +62,8 @@
             // btnHotkey
             // 
             resources.ApplyResources(this.btnHotkey, "btnHotkey");
-            this.btnHotkey.Color = System.Drawing.Color.Empty;
-            this.btnHotkey.ColorPickerOptions = null;
-            this.btnHotkey.ManualButtonClick = true;
+            this.btnHotkey.Image = global::ShareX.Properties.Resources.status_away;
             this.btnHotkey.Name = "btnHotkey";
-            this.btnHotkey.Offset = 0;
             this.btnHotkey.UseVisualStyleBackColor = true;
             this.btnHotkey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnHotkey_KeyDown);
             this.btnHotkey.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnHotkey_KeyUp);
@@ -78,18 +75,18 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.btnHotkey);
             this.Controls.Add(this.btnTask);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnHotkey);
             this.Name = "HotkeySelectionControl";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private HelpersLib.ColorButton btnHotkey;
         private System.Windows.Forms.Button btnEdit;
         private HelpersLib.MenuButton btnTask;
         private System.Windows.Forms.ContextMenuStrip cmsTask;
+        private System.Windows.Forms.Button btnHotkey;
     }
 }

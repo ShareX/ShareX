@@ -180,13 +180,13 @@ namespace ShareX
             {
                 default:
                 case HotkeyStatus.NotConfigured:
-                    btnHotkey.Color = Color.LightGoldenrodYellow;
+                    btnHotkey.Image = Resources.status_away;
                     break;
                 case HotkeyStatus.Failed:
-                    btnHotkey.Color = Color.IndianRed;
+                    btnHotkey.Image = Resources.status_busy;
                     break;
                 case HotkeyStatus.Registered:
-                    btnHotkey.Color = Color.PaleGreen;
+                    btnHotkey.Image = Resources.status;
                     break;
             }
         }

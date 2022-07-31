@@ -145,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="cmsTask.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -199,40 +199,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnTask.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnHotkey.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="btnHotkey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="btnHotkey.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="btnHotkey.Location" type="System.Drawing.Point, System.Drawing">
     <value>261, 0</value>
-  </data>
-  <data name="btnHotkey.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 23, 0</value>
   </data>
   <data name="btnHotkey.Size" type="System.Drawing.Size, System.Drawing">
     <value>219, 27</value>
   </data>
   <data name="btnHotkey.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnHotkey.Text" xml:space="preserve">
     <value>Hotkey</value>
+  </data>
+  <data name="btnHotkey.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>TextBeforeImage</value>
   </data>
   <data name="&gt;&gt;btnHotkey.Name" xml:space="preserve">
     <value>btnHotkey</value>
   </data>
   <data name="&gt;&gt;btnHotkey.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=14.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnHotkey.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnHotkey.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

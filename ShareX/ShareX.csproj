@@ -2098,6 +2098,15 @@
   <ItemGroup>
     <None Include="Resources\pin.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status-busy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status-away.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
