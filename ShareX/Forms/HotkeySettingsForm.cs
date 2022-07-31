@@ -87,7 +87,7 @@ namespace ShareX
 
         private HotkeySelectionControl FindSelectionControl(HotkeySettings hotkeySetting)
         {
-            return flpHotkeys.Controls.Cast<HotkeySelectionControl>().FirstOrDefault(hsc => hsc.Settings == hotkeySetting);
+            return flpHotkeys.Controls.Cast<HotkeySelectionControl>().FirstOrDefault(hsc => hsc.HotkeySettings == hotkeySetting);
         }
 
         private void control_SelectedChanged(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace ShareX
         private void control_HotkeyChanged(object sender, EventArgs e)
         {
             HotkeySelectionControl control = (HotkeySelectionControl)sender;
-            manager.RegisterHotkey(control.Settings);
+            manager.RegisterHotkey(control.HotkeySettings);
             RegisterFailedHotkeys();
         }
 
@@ -143,7 +143,7 @@ namespace ShareX
 
         private void Edit(HotkeySelectionControl selectionControl)
         {
-            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(selectionControl.Settings.TaskSettings))
+            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(selectionControl.HotkeySettings.TaskSettings))
             {
                 taskSettingsForm.ShowDialog();
                 selectionControl.UpdateControls();
@@ -195,8 +195,8 @@ namespace ShareX
         {
             if (Selected != null)
             {
-                manager.UnregisterHotkey(Selected.Settings);
-                HotkeySelectionControl hsc = FindSelectionControl(Selected.Settings);
+                manager.UnregisterHotkey(Selected.HotkeySettings);
+                HotkeySelectionControl hsc = FindSelectionControl(Selected.HotkeySettings);
                 if (hsc != null) flpHotkeys.Controls.Remove(hsc);
                 Selected = null;
                 UpdateButtons();
@@ -213,7 +213,7 @@ namespace ShareX
             if (Selected != null)
             {
                 HotkeySettings hotkeySettings = new HotkeySettings();
-                hotkeySettings.TaskSettings = Selected.Settings.TaskSettings.Copy();
+                hotkeySettings.TaskSettings = Selected.HotkeySettings.TaskSettings.Copy();
                 hotkeySettings.TaskSettings.WatchFolderEnabled = false;
                 hotkeySettings.TaskSettings.WatchFolderList = new List<WatchFolderSettings>();
                 manager.Hotkeys.Add(hotkeySettings);

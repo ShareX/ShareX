@@ -311,7 +311,6 @@
   </data>
   <data name="btnMoveUp.Text" xml:space="preserve">
     <value>↑</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnMoveUp.Name" xml:space="preserve">
     <value>btnMoveUp</value>
@@ -342,7 +341,6 @@
   </data>
   <data name="btnMoveDown.Text" xml:space="preserve">
     <value>↓</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnMoveDown.Name" xml:space="preserve">
     <value>btnMoveDown</value>
@@ -358,6 +356,9 @@
   </data>
   <data name="btnHotkeysDisabled.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
+  </data>
+  <data name="btnHotkeysDisabled.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="btnHotkeysDisabled.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 424</value>
