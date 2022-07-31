@@ -126,10 +126,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 0</value>
+    <value>230, 0</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 23</value>
+    <value>27, 27</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
@@ -160,7 +160,7 @@
     <value>0, 0, 23, 0</value>
   </data>
   <data name="btnHotkey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 23</value>
+    <value>219, 27</value>
   </data>
   <data name="btnHotkey.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -201,8 +201,11 @@
   <data name="&gt;&gt;cmsTask.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="btnTask.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
   <data name="btnTask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 23</value>
+    <value>226, 27</value>
   </data>
   <data name="btnTask.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -238,7 +241,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 23</value>
+    <value>480, 27</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>HotkeySelectionControl</value>

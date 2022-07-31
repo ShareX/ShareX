@@ -149,7 +149,7 @@ namespace ShareX
             }
 
             btnTask.Image = TaskHelpers.FindMenuIcon(Setting.TaskSettings.Job);
-            btnTask.Text = Setting.TaskSettings.ToString();
+            btnTask.Text = " " + Setting.TaskSettings.ToString();
         }
 
         public void UpdateHotkeyStatus()
