@@ -182,9 +182,6 @@
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Пароль:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Аноним</value>
-  </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>Общая папка</value>
   </data>

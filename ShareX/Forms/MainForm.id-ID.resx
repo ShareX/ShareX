@@ -168,9 +168,6 @@
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Ambil bergulir...</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Ambil teks (OCR)...</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Otomatis ambil...</value>
   </data>
@@ -521,9 +518,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Ambil bergulir...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Ambil teks (OCR)...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Otomatis ambil...</value>

@@ -522,9 +522,6 @@
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Traitement OCR silencieux</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Traitement OCR lorsque la boîte de dialogue est ouverte</value>
-  </data>
   <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
     <value>Remplacer le dossier des captures d'écran</value>
   </data>

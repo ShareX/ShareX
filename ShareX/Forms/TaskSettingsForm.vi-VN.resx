@@ -522,9 +522,6 @@
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>Tự động chép kết quả vào vùng nhớ tạm</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Xử lí nhận diện văn bản (OCR) khi mở hộp thoại</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Xử lí nhận diện văn bản (OCR) bằng cách chạy ngầm</value>
   </data>

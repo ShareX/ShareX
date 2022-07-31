@@ -166,9 +166,6 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Indítás</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Hiba</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Hozzáadhatsz munkameneteket a gyorsbillentyű beállításokból...</value>
   </data>

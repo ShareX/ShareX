@@ -803,5 +803,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="CRF" xml:space="preserve">
     <value>CRF:</value>
+    <comment>@Invariant</comment>
   </data>
 </root>

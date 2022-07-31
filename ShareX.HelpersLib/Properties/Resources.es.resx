@@ -299,9 +299,6 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Carpeta de subir</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Cliente FTP</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Verificación hash</value>
   </data>

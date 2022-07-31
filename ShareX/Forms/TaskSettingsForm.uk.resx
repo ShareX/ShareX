@@ -402,9 +402,6 @@
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>Автоматично копіювати результати в буфер обміну</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Розпізнавати текст при відкритті вікна</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Тихе розпізнання тексту</value>
   </data>

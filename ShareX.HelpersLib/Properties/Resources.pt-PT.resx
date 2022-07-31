@@ -549,9 +549,6 @@ Você gostaria de transferi-la e instalá-la?</value>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Envio</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Ferramentas</value>
   </data>
@@ -826,12 +823,6 @@ Gostaria de transferí-la?</value>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Reconhecer texto (OCR)</value>
   </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Captura de texto (OCR)</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
-  </data>
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>Cancelar captura de ecrã</value>
   </data>
@@ -1056,9 +1047,6 @@ Gostaria de transferí-la?</value>
   </data>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Padrão</value>
-  </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Cliente FTP</value>
   </data>
   <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
     <value>Quadrado pequeno</value>

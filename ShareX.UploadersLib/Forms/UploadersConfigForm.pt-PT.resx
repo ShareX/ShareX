@@ -744,9 +744,6 @@ Utilizar uma biblioteca encriptada desactiva compartilhamento.</value>
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Palavra-passe:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anônimo</value>
-  </data>
   <data name="btnSulGetAPIKey.Text" xml:space="preserve">
     <value>Obter chave da API...</value>
   </data>

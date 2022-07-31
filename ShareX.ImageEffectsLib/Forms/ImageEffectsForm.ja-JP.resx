@@ -174,9 +174,6 @@
   <data name="lblEffects.Text" xml:space="preserve">
     <value>画像エフェクト</value>
   </data>
-  <data name="lblEffect.Text" xml:space="preserve">
-    <value>画像エフェクト</value>
-  </data>
   <data name="lblPresets.Text" xml:space="preserve">
     <value>プリセット:</value>
   </data>

@@ -495,9 +495,6 @@
   <data name="lblScreenshotDelay.Text" xml:space="preserve">
     <value>Задержка скриншота:</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Распознавать при открывании диалога</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Распознавать тихо</value>
   </data>

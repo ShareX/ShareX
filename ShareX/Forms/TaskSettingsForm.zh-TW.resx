@@ -491,9 +491,6 @@
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>自動複製結果到剪貼簿</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>開啟對話框時處理 OCR</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>背景處理 OCR</value>
   </data>

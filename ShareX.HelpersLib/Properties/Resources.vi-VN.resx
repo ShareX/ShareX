@@ -299,9 +299,6 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Tải lên thư mục</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Trình FTP</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Kiểm tra Hash</value>
   </data>
@@ -530,9 +527,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Tải lên</value>
-  </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Công cụ</value>
   </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Công cụ</value>
@@ -937,9 +931,6 @@ Bạn có muốn tải về không?</value>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Dịch vụ tải lên văn bản</value>
   </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Lấy văn bản (Nhận dạng kí tự)</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>Không công khai</value>
   </data>
@@ -1023,9 +1014,6 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
     <value>Quét mã QR</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Chụp màn hình</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Nhận dạng chữ (OCR)</value>

@@ -582,9 +582,6 @@
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Doneer...</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Tekst vastleggen (OCR)...</value>
-  </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>Laat cursor zien</value>
   </data>
@@ -599,9 +596,6 @@
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Afbeeldingen combineren...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Tekst vastleggen (OCR)...</value>
   </data>
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>Upload tekst...</value>

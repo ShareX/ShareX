@@ -150,12 +150,6 @@
   <data name="lblURLSharingService.Text" xml:space="preserve">
     <value>Сервис отправки ссылок:</value>
   </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Примеры:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
   <data name="cArgumentsValue.HeaderText" xml:space="preserve">
     <value>Значение</value>
   </data>
@@ -165,20 +159,11 @@
   <data name="cParametersValue.HeaderText" xml:space="preserve">
     <value>Значение</value>
   </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Примеры:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>Метод:</value>
   </data>
   <data name="lblParameters.Text" xml:space="preserve">
     <value>Параметры URL:</value>
-  </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Пользовательские сервисы...</value>
   </data>
   <data name="lblFileUploader.Text" xml:space="preserve">
     <value>Сервис загрузки файлов:</value>
@@ -206,21 +191,6 @@ store.book[0].title</value>
   </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>URL удаления:</value>
-  </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Парсить ответ:</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Список regex:</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
   </data>
   <data name="lblFileFormName.Text" xml:space="preserve">
     <value>Имя файловой формы:</value>

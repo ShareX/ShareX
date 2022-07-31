@@ -181,9 +181,6 @@
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>密碼：</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>匿名</value>
-  </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>共享資料夾</value>
   </data>

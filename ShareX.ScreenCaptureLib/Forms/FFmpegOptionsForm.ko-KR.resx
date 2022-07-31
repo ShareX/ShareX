@@ -141,12 +141,6 @@
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>명령 직접 입력</value>
   </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>명령줄 미리보기</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>소스</value>
-  </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>비트레이트:</value>
   </data>
@@ -167,12 +161,6 @@
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>품질:</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>추가 명령줄 인자</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>코덱</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>항율 인자 (CRF): 값의 범위는 0부터 51까지이며, 0은 무손실, 30이 기본값, 그리고 51이 가능한 최저 품질입니다.
@@ -207,9 +195,6 @@
   </data>
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>디더링 모드:</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg 경로</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>경로 직접 입력</value>

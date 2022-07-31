@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>向 URL 字段添加规则</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>向 URL 字段添加规则</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>向 URL 字段添加规则</value>
-  </data>
   <data name="lblBody.Text" xml:space="preserve">
     <value>正文：</value>
   </data>
@@ -135,9 +126,6 @@
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>自定义上传向导（英语）...</value>
   </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>自定义上传（GitHub）...</value>
-  </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>删除 URL：</value>
   </data>
@@ -146,18 +134,6 @@
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>克隆</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>示例：
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>示例：
-
-Files[0].URL
-store.book[0].title</value>
   </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>导出全部...</value>
@@ -194,18 +170,6 @@ store.book[0].title</value>
   </data>
   <data name="btnNew.Text" xml:space="preserve">
     <value>新增</value>
-  </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>解析响应：</value>
-  </data>
-  <data name="tpRegexParse.Text" xml:space="preserve">
-    <value>正则表达式</value>
-  </data>
-  <data name="cRegex.HeaderText" xml:space="preserve">
-    <value>正则表达式</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>正则表达式列表:</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -255,17 +219,8 @@ store.book[0].title</value>
   <data name="cHeadersValue.HeaderText" xml:space="preserve">
     <value>值</value>
   </data>
-  <data name="lblXPath.Text" xml:space="preserve">
-    <value>XPath：</value>
-  </data>
   <data name="btnDataBeautify.Text" xml:space="preserve">
     <value>美化</value>
-  </data>
-  <data name="btnJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
   </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
@@ -278,15 +233,6 @@ store.book[0].title</value>
   </data>
   <data name="lblRequestURL.Text" xml:space="preserve">
     <value>请求 URL:</value>
-  </data>
-  <data name="lblJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  </data>
-  <data name="tpJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="tpXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
   </data>
   <data name="btnTestURLSyntax.Text" xml:space="preserve">
     <value>测试</value>

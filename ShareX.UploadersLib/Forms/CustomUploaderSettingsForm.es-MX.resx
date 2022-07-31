@@ -135,17 +135,8 @@
   <data name="btnImageUploaderTest.Text" xml:space="preserve">
     <value>Probar</value>
   </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Agregar sintaxis al campo de URL</value>
-  </data>
-  <data name="btnJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
   <data name="btnNew.Text" xml:space="preserve">
     <value>Nuevo</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Agregar sintaxis al campo de URL</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Eliminar</value>
@@ -158,12 +149,6 @@
   </data>
   <data name="btnURLShortenerTest.Text" xml:space="preserve">
     <value>Probar</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Agregar sintaxis al campo de URL</value>
-  </data>
-  <data name="btnXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
   </data>
   <data name="cArgumentsName.HeaderText" xml:space="preserve">
     <value>Nombre</value>
@@ -183,9 +168,6 @@
   <data name="cParametersValue.HeaderText" xml:space="preserve">
     <value>Valor</value>
   </data>
-  <data name="cRegex.HeaderText" xml:space="preserve">
-    <value>Expresión regular</value>
-  </data>
   <data name="lblBody.Text" xml:space="preserve">
     <value>Cuerpo:</value>
   </data>
@@ -204,26 +186,11 @@
   <data name="lblImageUploader.Text" xml:space="preserve">
     <value>Servidor de imágenes:</value>
   </data>
-  <data name="lblJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Ejemplos:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>Nombre:</value>
   </data>
   <data name="lblParameters.Text" xml:space="preserve">
     <value>Parámetros de enlace:</value>
-  </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Analizar respuesta:</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Lista de expresiones regulares:</value>
   </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>Método:</value>
@@ -246,17 +213,8 @@ store.book[0].title</value>
   <data name="lblURLShortener.Text" xml:space="preserve">
     <value>Acortador de enlaces:</value>
   </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Ejemplos:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
   <data name="lblTextUploader.Text" xml:space="preserve">
     <value>Servidor de imagen:</value>
-  </data>
-  <data name="lblXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
   </data>
   <data name="mbDestinationType.ToolTip" xml:space="preserve">
     <value>El tipo de destino se emplea cuando el usuario importa un servidor personalizado al hacer doble clic en el archivo .sxcu.</value>
@@ -264,20 +222,8 @@ store.book[0].title</value>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
   </data>
-  <data name="tpJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="tpRegexParse.Text" xml:space="preserve">
-    <value>Expresión regular</value>
-  </data>
-  <data name="tpXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Cómo usar los servidores personalizados...</value>
-  </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Servidores personalizados...</value>
   </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>Exportar todo...</value>

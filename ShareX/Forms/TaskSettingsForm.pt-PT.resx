@@ -198,9 +198,6 @@
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>Copiar os resultados automáticamente para a área de transferências</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Processar OCR ao abrir a janela modal</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Processar OCR silenciosamente</value>
   </data>

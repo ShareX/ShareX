@@ -293,9 +293,6 @@ Fájlméret: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Mappa feltöltése</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP kliens</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Hash ellenőrzés</value>
   </data>

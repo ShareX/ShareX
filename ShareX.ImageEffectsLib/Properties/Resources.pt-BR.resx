@@ -138,9 +138,6 @@
   <data name="Confirmation" xml:space="preserve">
     <value>Confirmação</value>
   </data>
-  <data name="Effect" xml:space="preserve">
-    <value>Efeito:</value>
-  </data>
   <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>

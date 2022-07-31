@@ -145,9 +145,6 @@
     <value>Пакет с таким именем уже существует.
 Хотите перезаписать его?</value>
   </data>
-  <data name="Effect" xml:space="preserve">
-    <value>Эффект:</value>
-  </data>
   <data name="WouldYouLikeToClearEffects" xml:space="preserve">
     <value>Хотите очистить эффекты?</value>
   </data>

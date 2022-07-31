@@ -507,9 +507,6 @@
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>조용히 OCR을 진행</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>다이얼로그를 열어 OCR을 진행</value>
-  </data>
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>자동으로 결과를 클립보드에 복사</value>
   </data>

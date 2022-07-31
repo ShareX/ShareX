@@ -722,9 +722,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignorar certificado SSL inválido</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anónimo</value>
-  </data>
   <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
     <value>Ignorar cuadro para enviar mensaje</value>
   </data>

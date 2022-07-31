@@ -169,14 +169,8 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Starten</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Fout</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Je kunt workflows toevoegen via de sneltoets instellingen...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Kon de afbeelding niet wegschrijven op {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX moet opnieuw opgestart worden om de taal te wijzigen.

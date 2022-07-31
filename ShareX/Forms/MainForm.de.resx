@@ -636,12 +636,6 @@
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Texterkennung (OCR)...</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Texterkennung (OCR)...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Texterkennung (OCR)...</value>
-  </data>
   <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
     <value>Bildeditor...</value>
   </data>

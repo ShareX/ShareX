@@ -168,14 +168,8 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>開始中</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>錯誤</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>你可以在快捷鍵設定中新增快捷動作...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>無法寫入圖片到路徑 {0}。</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>更改語言需要重新啟動 ShareX 才會生效。
@@ -495,9 +489,6 @@
   <data name="OCRForm_AutoProcessing" xml:space="preserve">
     <value>OCR 處理中。</value>
   </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>請註意，ShareX 將使用 OCR.Space 的線上 API 來執行光學字元辨識。是否允許 ShareX 上傳圖片到此線上服務？</value>
-  </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>輸入文字以產生二維碼</value>
   </data>
@@ -511,9 +502,6 @@
     <value>更改個人資料夾需要重新啟動 ShareX 才會生效。
 
 是否要重新啟動 ShareX？</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX -  光學字元辨識</value>
   </data>
   <data name="SwitchToListView" xml:space="preserve">
     <value>切換到清單模式</value>

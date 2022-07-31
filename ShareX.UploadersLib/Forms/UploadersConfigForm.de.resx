@@ -182,9 +182,6 @@ z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.ex
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Passwort:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonym</value>
-  </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>Freigegebene Ordner</value>
   </data>

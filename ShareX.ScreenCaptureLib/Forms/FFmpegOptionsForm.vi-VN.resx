@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Sao chép</value>
   </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Đường dẫn tới FFmpeg</value>
-  </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Sử dụng đường dẫn tùy chỉnh</value>
   </data>
@@ -145,9 +142,6 @@ Giá trị cao hơn cho kết quả tệ hơn nhưng kích thước tệp sẽ n
   <data name="lblCodec.Text" xml:space="preserve">
     <value>Video codec:</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codec</value>
-  </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Chất lượng:</value>
   </data>
@@ -166,12 +160,6 @@ Giá trị cao hơn cho kết quả tệ hơn nhưng kích thước tệp sẽ n
   <data name="btnTest.Text" xml:space="preserve">
     <value>Kiểm tra với CMD</value>
   </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Nguồn</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Đối số thêm cho câu lệnh</value>
-  </data>
   <data name="lblAudioSource.Text" xml:space="preserve">
     <value>Nguồn audio:</value>
   </data>
@@ -186,9 +174,6 @@ Giá trị cao hơn cho kết quả tệ hơn nhưng kích thước tệp sẽ n
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Làm mới</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Xem trước dòng lệnh</value>
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Biến bitrate:</value>

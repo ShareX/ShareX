@@ -252,9 +252,6 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Repor todas as teclas de atalho?</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Não foi possível guardar a imagem no caminho {0}.</value>
-  </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Editar com ShareX</value>
   </data>
@@ -294,12 +291,6 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="OCRForm_AutoProcessing" xml:space="preserve">
     <value>OCR está a procesar.</value>
   </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Por favor note que ShareX está usando OCR.Space's online API para realizar reconhecimento óptico de caractéres. Deseja dar permissão ao ShareX para enviar imagens para este serviço?</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Erro</value>
-  </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Não foi possível criar pasta:</value>
   </data>
@@ -335,9 +326,6 @@ Por favor execute o ShareX como administrador para mudar o caminho da pasta.</va
     <value>ShareX precisa de ser reiniciado para as alterações de caminho serem alteradas.
 
 Deseja reiniciar agora?</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - OCR (reconhecimento óptico de caractéres)</value>
   </data>
   <data name="SwitchToListView" xml:space="preserve">
     <value>Mudar para vista de Lista</value>

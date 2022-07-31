@@ -147,9 +147,6 @@
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>Aggiungi Album</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonimo</value>
-  </data>
   <data name="lblLithiioApiKey.Text" xml:space="preserve">
     <value>Chiave API:</value>
   </data>

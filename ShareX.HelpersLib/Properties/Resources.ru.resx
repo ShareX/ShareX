@@ -296,9 +296,6 @@
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Загрузка папки</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Клиент FTP</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Проверка хеша</value>
   </data>
@@ -530,9 +527,6 @@
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Загрузка</value>
-  </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Инструменты</value>
   </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Инструменты</value>
@@ -810,12 +804,6 @@
   </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Открыть окно истории изображений</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Захват экрана</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Захват текста (OCR)</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Распознать текст (OCR)</value>

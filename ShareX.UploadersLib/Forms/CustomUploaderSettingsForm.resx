@@ -335,6 +335,7 @@
   </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="mbHelp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -774,9 +775,6 @@
   <data name="rtbRequestURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbRequestURL.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbRequestURL.Name" xml:space="preserve">
     <value>rtbRequestURL</value>
   </data>
@@ -1116,9 +1114,6 @@
   <data name="rtbData.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbData.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="rtbData.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1196,9 +1191,6 @@
   </data>
   <data name="rtbResultErrorMessage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="rtbResultErrorMessage.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;rtbResultErrorMessage.Name" xml:space="preserve">
     <value>rtbResultErrorMessage</value>
@@ -1280,9 +1272,6 @@
   </data>
   <data name="rtbResultDeletionURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="rtbResultDeletionURL.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;rtbResultDeletionURL.Name" xml:space="preserve">
     <value>rtbResultDeletionURL</value>
@@ -1368,9 +1357,6 @@
   <data name="rtbResultThumbnailURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbResultThumbnailURL.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbResultThumbnailURL.Name" xml:space="preserve">
     <value>rtbResultThumbnailURL</value>
   </data>
@@ -1424,9 +1410,6 @@
   </data>
   <data name="rtbResultURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="rtbResultURL.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;rtbResultURL.Name" xml:space="preserve">
     <value>rtbResultURL</value>

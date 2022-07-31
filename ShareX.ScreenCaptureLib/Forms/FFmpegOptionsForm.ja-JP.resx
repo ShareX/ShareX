@@ -163,20 +163,11 @@
   <data name="btnDownload.Text" xml:space="preserve">
     <value>ダウンロード</value>
   </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpegのパス</value>
-  </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>独自のパスを使う</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>独自のコマンドラインを使う</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>コマンドラインのプレビュー</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>追加するコマンドライン引数</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>可変ビットレート:</value>
@@ -225,12 +216,6 @@
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>更新</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>ソース</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>コーデック</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 動画キャプチャー オプション</value>

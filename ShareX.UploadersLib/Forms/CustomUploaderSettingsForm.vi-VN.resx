@@ -117,26 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="tpRegexParse.Text" xml:space="preserve">
-    <value>Biểu thức chính quy</value>
-  </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
-  </data>
-  <data name="btnXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Thêm cú pháp vào trường URL</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Thêm cú pháp vào trường URL</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Thêm cú pháp vào trường URL</value>
   </data>
   <data name="btnDataBeautify.Text" xml:space="preserve">
     <value>Làm đẹp</value>
@@ -174,15 +156,6 @@
   <data name="btnNew.Text" xml:space="preserve">
     <value>Mới</value>
   </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Xử lí dữ liệu trả về:</value>
-  </data>
-  <data name="cRegex.HeaderText" xml:space="preserve">
-    <value>Biểu thức chính quy</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Danh sách biểu thức chính quy:</value>
-  </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Xóa bỏ</value>
   </data>
@@ -210,12 +183,6 @@
   <data name="cArgumentsValue.HeaderText" xml:space="preserve">
     <value>Giá trị</value>
   </data>
-  <data name="tpXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
-  <data name="lblXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
-  </data>
   <data name="lblURLSharingService.Text" xml:space="preserve">
     <value>Dịch vụ chia sẻ URL:</value>
   </data>
@@ -234,26 +201,11 @@
   <data name="btnURLShortenerTest.Text" xml:space="preserve">
     <value>Kiểm tra</value>
   </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên tùy chọn...</value>
-  </data>
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Hướng dẫn dùng dịch vụ tải lên tùy chọn...</value>
   </data>
   <data name="mbDestinationType.ToolTip" xml:space="preserve">
     <value>Hiện tại loại dịch vụ tải lên được dùng khi người dùng đưa vào dịch vụ tải lên tùy chọn bằng cách nhấp đúp vào tệp .sxcu</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Ví dụ:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Ví dụ:
-
-Files[0].URL
-store.book[0].title</value>
   </data>
   <data name="lblFileFormName.Text" xml:space="preserve">
     <value>Tên dạng tệp:</value>
@@ -263,12 +215,6 @@ store.book[0].title</value>
   </data>
   <data name="lblImageUploader.Text" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh:</value>
-  </data>
-  <data name="tpJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="lblJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
   </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>Phương thức:</value>

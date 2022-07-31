@@ -162,7 +162,4 @@
   <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
     <value>새로고침</value>
   </data>
-  <data name="lblEffect.Text" xml:space="preserve">
-    <value>효과:</value>
-  </data>
 </root>

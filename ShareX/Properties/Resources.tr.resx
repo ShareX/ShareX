@@ -265,14 +265,8 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Başlatılıyor</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Hata</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Kısayol ayarlarından yeni iş akışı ekliyebilirsiniz...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Resim buraya kaydedilemedi: {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX dil değişikliğinin uygulanması için yeniden başlatılmalı.
@@ -492,12 +486,6 @@ Orta fare tuşu kapatmak için</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
     <value>Başlangıç, kuruluşunuz tarafından devre dışı bırakıldı</value>
   </data>
-  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
-    <value>Antivirüs yazılımınız veya Windows 10'daki kontrollü klasör erişimi özelliği ShareX'i engelliyor olabilir.</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - Optik karakter tanıma</value>
-  </data>
   <data name="Hotkey" xml:space="preserve">
     <value>Kısayol</value>
   </data>
@@ -624,7 +612,28 @@ Otomatik olarak indirmek ister misiniz?</value>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Hata ayıklama kütüğü hassas bilgiler içerebilir. Devam etmek istediğinize emin misiniz?</value>
   </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Lütfen dikkat, ShareX optik karakter tanıma gerçekleştirmek için OCR.Space'in çevrimiçi API'sini kullanmaktadır. ShareX'e bu servise resim yüklemesi için izin veriyor musunuz?</value>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>Resim buraya kaydedilemedi:</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>Antivirüs yazılımınız veya Windows'daki kontrollü klasör erişimi özelliği ShareX'i engelliyor olabilir.</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Pano resim içermiyor.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>Takım</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pl" xml:space="preserve">
+    <value>Lehçe</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ro" xml:space="preserve">
+    <value>Rumence</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Ekrana sabitle</value>
   </data>
 </root>

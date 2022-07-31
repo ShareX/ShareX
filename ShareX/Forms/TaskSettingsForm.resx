@@ -800,6 +800,7 @@
   </data>
   <data name="btnCustomErrorSoundPath.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnCustomErrorSoundPath.Name" xml:space="preserve">
     <value>btnCustomErrorSoundPath</value>
@@ -827,6 +828,7 @@
   </data>
   <data name="btnCustomTaskCompletedSoundPath.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnCustomTaskCompletedSoundPath.Name" xml:space="preserve">
     <value>btnCustomTaskCompletedSoundPath</value>
@@ -854,6 +856,7 @@
   </data>
   <data name="btnCustomCaptureSoundPath.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnCustomCaptureSoundPath.Name" xml:space="preserve">
     <value>btnCustomCaptureSoundPath</value>
@@ -1124,6 +1127,7 @@
   </data>
   <data name="lblToastWindowSizeX.Text" xml:space="preserve">
     <value>x</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblToastWindowSizeX.Name" xml:space="preserve">
     <value>lblToastWindowSizeX</value>
@@ -2057,6 +2061,7 @@
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
@@ -2837,6 +2842,7 @@
   </data>
   <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
     <value>Y</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblCaptureCustomRegionY.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionY</value>
@@ -2867,6 +2873,7 @@
   </data>
   <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblCaptureCustomRegionX.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionX</value>
@@ -3785,6 +3792,7 @@
   </data>
   <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
     <value>-</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnRegionCaptureSnapSizesRemove.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesRemove</value>
@@ -3812,6 +3820,7 @@
   </data>
   <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
     <value>+</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnRegionCaptureSnapSizesAdd.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesAdd</value>
@@ -5108,6 +5117,7 @@
   </data>
   <data name="tpOCR.Text" xml:space="preserve">
     <value>OCR</value>
+    
   </data>
   <data name="&gt;&gt;tpOCR.Name" xml:space="preserve">
     <value>tpOCR</value>

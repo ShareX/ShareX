@@ -161,18 +161,6 @@
 Значит при желании получить определенный размер файла при постоянном битрейте, лучшие результаты получаются на более медленных предустановках.
 Соответственно для кодирования с постоянным качеством вы можете попросту уменьшить битрейт, выбрав предустановку помедленнее.</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Кодеки</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Дополнительные аргументы</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Предпросмотр</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Путь к FFmpeg</value>
-  </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Битрейт:</value>
   </data>
@@ -190,9 +178,6 @@
   </data>
   <data name="lblGIFStatsMode.Text" xml:space="preserve">
     <value>Режим палитры:</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Источники</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Установит источники видео/аудио "screen-capture-recorder" и "virtual-audio-capturer".</value>

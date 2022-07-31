@@ -138,9 +138,6 @@
   <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
     <value>Rotiți 90° în sens invers acelor de ceasornic</value>
   </data>
-  <data name="_Empty[1]" xml:space="preserve">
-    <value>Modul de interpolare:</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
     <value>Capturați monitorul</value>
   </data>

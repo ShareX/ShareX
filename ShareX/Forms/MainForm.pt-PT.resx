@@ -471,9 +471,6 @@
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
     <value>Teste: Encurtar hiperligação</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Captura de texto (OCR) ...</value>
-  </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>Envio de texto</value>
   </data>
@@ -620,9 +617,6 @@
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>Configuração de tarefas...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Captura de texto (OCR) ...</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
     <value>Envio de ficheiros de texto</value>

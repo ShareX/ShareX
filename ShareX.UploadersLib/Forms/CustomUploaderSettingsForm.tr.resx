@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Özel yükleyici ayarları</value>
   </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Özel yükleyiciler...</value>
-  </data>
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Özel yükleyici kılavuzu...</value>
   </data>
@@ -207,23 +204,11 @@
   <data name="lblName.Text" xml:space="preserve">
     <value>İsim:</value>
   </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Regex listesi:</value>
-  </data>
   <data name="btnDataBeautify.Text" xml:space="preserve">
     <value>Güzelleştir</value>
   </data>
   <data name="btnDataMinify.Text" xml:space="preserve">
     <value>Küçült</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Sözdizimini adres bölümüne ekle</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Sözdizimini adres bölümüne ekle</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Sözdizimini adres bölümüne ekle</value>
   </data>
   <data name="lblBody.Text" xml:space="preserve">
     <value>Gövde:</value>
@@ -234,29 +219,14 @@
   <data name="lblHeaders.Text" xml:space="preserve">
     <value>Başlıklar:</value>
   </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Örnekler:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
   <data name="lblParameters.Text" xml:space="preserve">
     <value>Adres parametreleri:</value>
-  </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Yanıtı çözümle:</value>
   </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>Yöntem:</value>
   </data>
   <data name="lblRequestURL.Text" xml:space="preserve">
     <value>İstek adresi:</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Örnekler:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
   </data>
   <data name="mbDestinationType.ToolTip" xml:space="preserve">
     <value>Şu anda hedef türü, kullanıcılar .sxcu dosyasına çift tıklayarak özel yükleyiciyi içe aktardıklarında kullanılmaktadır.</value>
@@ -266,5 +236,8 @@ store.book[0].title</value>
   </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>Hepsini dışa aktar...</value>
+  </data>
+  <data name="btnTestURLSyntax.Text" xml:space="preserve">
+    <value>Test</value>
   </data>
 </root>

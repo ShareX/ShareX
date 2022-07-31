@@ -219,9 +219,6 @@
   <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
     <value>Narzędzia</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Narzędzia</value>
   </data>
@@ -658,9 +655,6 @@ Czy chcesz ją pobrać?</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Przeslij</value>
-  </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Klient FTP</value>
   </data>
   <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
     <value>Inne</value>

@@ -338,9 +338,6 @@ Dimensione File: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Carica Cartella</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Client FTP</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Controlla Hash</value>
   </data>
@@ -633,9 +630,6 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
     <value>Cattura Schermo</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Strumenti</value>
-  </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Strumenti</value>
   </data>
@@ -816,9 +810,6 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>Avvia/Ferma Registrazione Schermo usando la Regione Pre Configurata</value>
   </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Cattura Testo (OCR)</value>
-  </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Servizio Caricamento Testo</value>
   </data>
@@ -903,9 +894,6 @@ Vuoi scaricarla ora?</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Riconoscimento Testo (OCR)</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Cattura Schermo</value>
   </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Rimuovi Forma</value>

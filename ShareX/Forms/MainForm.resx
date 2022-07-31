@@ -626,6 +626,7 @@
   </data>
   <data name="tsmiOCR.Text" xml:space="preserve">
     <value>OCR...</value>
+    
   </data>
   <data name="tsmiQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -911,6 +912,7 @@
   </data>
   <data name="tsbTwitter.Text" xml:space="preserve">
     <value>Twitter...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsbDiscord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -923,6 +925,7 @@
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsbAbout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -968,6 +971,7 @@
   </data>
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Enter</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiOpenURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -998,6 +1002,7 @@
   </data>
   <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+Enter</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiOpenFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -1007,6 +1012,7 @@
   </data>
   <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+Enter</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -1028,6 +1034,7 @@
   </data>
   <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+C</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiCopyURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -1058,6 +1065,7 @@
   </data>
   <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+C</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiCopyFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -1067,6 +1075,7 @@
   </data>
   <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Alt+C</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiCopyImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -1166,6 +1175,7 @@
   </data>
   <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+Shift+C</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiCopyFilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -1199,6 +1209,7 @@
   </data>
   <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+U</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiUploadSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1208,6 +1219,7 @@
   </data>
   <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+D</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiDownloadSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1217,6 +1229,7 @@
   </data>
   <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+E</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiEditSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1244,6 +1257,7 @@
   </data>
   <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiDeleteSelectedItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1253,6 +1267,7 @@
   </data>
   <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+Del</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1445,6 +1460,7 @@
   </data>
   <data name="tsmiTrayOCR.Text" xml:space="preserve">
     <value>OCR...</value>
+    
   </data>
   <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1619,6 +1635,7 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsmiTrayFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>

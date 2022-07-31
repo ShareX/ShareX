@@ -138,21 +138,6 @@
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Usar comandos customizados</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Parâmetros da linha de comando adicionais</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Prévia da linha de comando</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Local do codec FFmpeg</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Fontes</value>
-  </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Taxa de bits:</value>
   </data>

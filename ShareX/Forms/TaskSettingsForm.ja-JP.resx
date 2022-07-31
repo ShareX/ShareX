@@ -498,9 +498,6 @@
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>OCRの結果をクリップボードにコピーする</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>OCRダイアログを開くと同時にOCRを開始する</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>OCR実行時にダイアログを開かない（サイレント実行）</value>
   </data>

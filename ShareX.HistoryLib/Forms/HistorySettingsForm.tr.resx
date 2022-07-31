@@ -126,7 +126,4 @@
   <data name="cbRememberWindowState.Text" xml:space="preserve">
     <value>Pencere durumunu hatırla</value>
   </data>
-  <data name="lblMaximumItemLimit.Text" xml:space="preserve">
-    <value>Maksimum girdi limiti:</value>
-  </data>
 </root>

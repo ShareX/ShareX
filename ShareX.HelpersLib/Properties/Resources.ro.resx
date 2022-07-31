@@ -604,9 +604,6 @@ Doriți să o descărcați?</value>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>Porniți/opriți înregistrarea ecranului</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>Altele</value>
   </data>
@@ -957,9 +954,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Implicit</value>
-  </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Client FTP</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Nu s-a putut crea un director.</value>

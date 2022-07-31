@@ -322,15 +322,9 @@ Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</valu
   <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
     <value>Bahasa Rusia</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Tidak dapat menulis gambar ke jalur {0}.</value>
-  </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX perlu dimulai ulang untuk menerapkan bahasa.
 Apakah Anda ingin memulai ulang ShareX?</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Eror</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
     <value>Anda yakin ingin menghapus file ini?</value>

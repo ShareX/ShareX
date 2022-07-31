@@ -120,7 +120,4 @@
   <data name="btnHotkey.Text" xml:space="preserve">
     <value>Tasta rapidă</value>
   </data>
-  <data name="lblHotkeyDescription.Text" xml:space="preserve">
-    <value>Descriere</value>
-  </data>
 </root>

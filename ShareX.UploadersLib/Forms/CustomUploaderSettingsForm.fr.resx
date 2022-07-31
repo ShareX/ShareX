@@ -123,32 +123,14 @@
   <data name="lblImageUploader.Text" xml:space="preserve">
     <value>Service de mise en ligne d'images :</value>
   </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Services de mise en ligne personnalisés...</value>
-  </data>
   <data name="lblFileUploader.Text" xml:space="preserve">
     <value>Service de mise en ligne de fichiers :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Paramètres de service de mise en ligne personnalisé</value>
   </data>
-  <data name="btnJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Ajouter la syntaxe au champ URL</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Ajouter la syntaxe au champ URL</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Ajouter la syntaxe au champ URL</value>
   </data>
   <data name="btnDataBeautify.Text" xml:space="preserve">
     <value>Beautifier</value>
@@ -168,18 +150,6 @@
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Dupliquer</value>
   </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Exemples :
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Exemples :
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>Exporter tout...</value>
   </data>
@@ -188,12 +158,6 @@ store.book[0].title</value>
   </data>
   <data name="lblHeaders.Text" xml:space="preserve">
     <value>Entêtes :</value>
-  </data>
-  <data name="tpJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="lblJsonPath.Text" xml:space="preserve">
-    <value>JsonPath :</value>
   </data>
   <data name="btnDataMinify.Text" xml:space="preserve">
     <value>Réduire</value>
@@ -212,18 +176,6 @@ store.book[0].title</value>
   </data>
   <data name="btnNew.Text" xml:space="preserve">
     <value>Nouveau</value>
-  </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Analyser la réponse :</value>
-  </data>
-  <data name="tpRegexParse.Text" xml:space="preserve">
-    <value>Expression régulière</value>
-  </data>
-  <data name="cRegex.HeaderText" xml:space="preserve">
-    <value>Expression régulière</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Liste d'expressions régulières :</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
@@ -272,12 +224,6 @@ store.book[0].title</value>
   </data>
   <data name="cHeadersValue.HeaderText" xml:space="preserve">
     <value>Valeur</value>
-  </data>
-  <data name="tpXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
-  <data name="lblXPath.Text" xml:space="preserve">
-    <value>XPath :</value>
   </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>Méthode :</value>

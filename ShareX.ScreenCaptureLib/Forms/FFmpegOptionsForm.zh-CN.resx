@@ -135,18 +135,6 @@
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>使用自定义命令</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>编解码器</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>额外的命令行参数</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>命令行预览</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>来源</value>
-  </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>比特率：</value>
   </data>
@@ -186,9 +174,6 @@
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>可变比特率：</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg 路径</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>使用自定义路径</value>

@@ -166,9 +166,6 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>시작 중</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>오류</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>단축키 설정에서 워크플로우 추가하기...</value>
   </data>
@@ -379,9 +376,6 @@ ShareX를 재시작할까요?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>계속</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>{0} 경로에 이미지를 작성할 수 없습니다.</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>단축키 비활성화</value>

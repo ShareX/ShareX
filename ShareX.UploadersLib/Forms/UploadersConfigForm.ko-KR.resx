@@ -1002,9 +1002,6 @@
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>익명</value>
-  </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
   </data>

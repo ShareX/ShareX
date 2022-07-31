@@ -617,9 +617,6 @@
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Diagonal</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Cliente FTP</value>
-  </data>
   <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
     <value>Pantalla completa</value>
   </data>
@@ -823,9 +820,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Subir archivo</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Herramientas</value>
-  </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Herramientas</value>
   </data>
@@ -1012,9 +1006,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
     <value>Capturar pantalla</value>
   </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Capturar pantalla</value>
-  </data>
   <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
     <value>Otro</value>
   </data>
@@ -1077,9 +1068,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Detener todas las subidas en curso</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Captura de texto (OCR)</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Alternar la barra de herramientas de acciones</value>

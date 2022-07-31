@@ -132,9 +132,6 @@
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Guia de envio personalizado...</value>
   </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Hospedagem personalizada</value>
-  </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>Exportar tudo...</value>
   </data>
@@ -204,9 +201,6 @@
   <data name="btnDataMinify.Text" xml:space="preserve">
     <value>Reduzir</value>
   </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Analisar resposta:</value>
-  </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>Hiperligação de remoção</value>
   </data>
@@ -215,36 +209,6 @@
   </data>
   <data name="lblResultURL.Text" xml:space="preserve">
     <value>Hiperligação:</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar syntax ao campo da hiperligação</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="lblJsonPath.Text" xml:space="preserve">
-    <value>Caminho do JSON:</value>
-  </data>
-  <data name="tpJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar syntax ao campo da hiperligação</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Lista de regex:</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar syntax ao campo da hiperligação</value>
   </data>
   <data name="lblDestinationType.Text" xml:space="preserve">
     <value>Tipo de destino:</value>

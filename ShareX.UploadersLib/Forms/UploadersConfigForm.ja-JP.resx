@@ -600,9 +600,6 @@
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>パスワード:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>匿名</value>
-  </data>
   <data name="btnSulGetAPIKey.Text" xml:space="preserve">
     <value>API キーを取得...</value>
   </data>

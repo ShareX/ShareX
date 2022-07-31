@@ -624,9 +624,6 @@
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Пароль:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Анонім</value>
-  </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Потоковий</value>
   </data>

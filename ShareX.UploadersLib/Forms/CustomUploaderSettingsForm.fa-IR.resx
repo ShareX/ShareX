@@ -192,10 +192,4 @@
   <data name="mbHelp.Text" xml:space="preserve">
     <value>؟</value>
   </data>
-  <data name="btnXPathHelp.Text" xml:space="preserve">
-    <value>؟</value>
-  </data>
-  <data name="btnJsonPathHelp.Text" xml:space="preserve">
-    <value>؟</value>
-  </data>
 </root>

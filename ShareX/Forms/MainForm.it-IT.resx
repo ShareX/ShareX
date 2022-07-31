@@ -165,9 +165,6 @@
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Cattura a Scorrimento...</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Cattura Testo (OCR)...</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Auto Cattura...</value>
   </data>
@@ -467,9 +464,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Cattura a Scorrimento...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Cattura Testo (OCR)...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Auto Cattura...</value>

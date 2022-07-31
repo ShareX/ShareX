@@ -169,14 +169,8 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Iniciando</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Erro</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Você pode adicionar workflows através das opções de atalho</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Não foi possível salvar imagem no local {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX precisa ser reiniciado para que as mudanças de idioma façam efeito.

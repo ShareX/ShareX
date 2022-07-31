@@ -120,7 +120,4 @@
   <data name="btnHotkey.Text" xml:space="preserve">
     <value>Sneltoets</value>
   </data>
-  <data name="lblHotkeyDescription.Text" xml:space="preserve">
-    <value>Beschrijving</value>
-  </data>
 </root>

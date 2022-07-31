@@ -135,4 +135,7 @@
   <data name="btnHotkeysDisabled.Text" xml:space="preserve">
     <value>Kısayol tuşları devre dışı. Buraya tıklıyarak yeniden etkinleştirebilirsiniz.</value>
   </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Sıfırla...</value>
+  </data>
 </root>

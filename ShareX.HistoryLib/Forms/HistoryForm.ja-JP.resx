@@ -144,9 +144,6 @@
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>終了日:</value>
   </data>
-  <data name="btnAdvancedSearch.Text" xml:space="preserve">
-    <value>検索</value>
-  </data>
   <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
     <value>リセット</value>
   </data>

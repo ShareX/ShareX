@@ -483,9 +483,6 @@
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>OCR im Stillen verarbeiten</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>OCR beim öffnen des Dialogs verarbeiten</value>
-  </data>
   <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
     <value>Beim Abbrechen nach Bestätigung fragen</value>
   </data>

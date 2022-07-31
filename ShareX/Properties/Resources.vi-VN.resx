@@ -169,9 +169,6 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Đang bắt đầu</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Lỗi</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Bạn có thể thêm các luồng công việc từ thiết lập phím tắt</value>
   </data>
@@ -379,9 +376,6 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Tiếp tục</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Không thể ghi tệp ảnh vào đường đẫn {0}.</value>
-  </data>
   <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
     <value>Bản phát hành cho lập trình viên có thể không ổn định và chỉ được dùng cho mục đích kiểm thử. Bạn có muốn cài đặt nó không?</value>
   </data>
@@ -498,9 +492,6 @@ Nhấn chuột giữa để đóng</value>
   <data name="OCRForm_AutoComplete" xml:space="preserve">
     <value>Kết quả nhận diện văn bản (OCR) đã được sao chép vào vùng nhớ tạm</value>
   </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - Nhận diện văn bản</value>
-  </data>
   <data name="OCRForm_AutoProcessing" xml:space="preserve">
     <value>Đang nhận diện văn bản (OCR)</value>
   </data>
@@ -520,9 +511,6 @@ Bạn có muốn khởi động lại ShareX?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
     <value>Tiếng Tây Ban Nha Mexico</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Vui lòng lưu ý ShareX đang sử dụng dịch vụ online của OCR.Space để thực hiện nhận diện văn bản. Bạn có muốn cho phép ShareX tải ảnh lên dịch vụ này không?</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Dữ liệu debug có thể chứa thông tin nhạy cảm. Bạn có chắc muốn tiếp tục không?</value>

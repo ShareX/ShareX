@@ -132,9 +132,6 @@
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Довідник з вивантажувачів...</value>
   </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Нетипові вивантажувачі...</value>
-  </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>Експортувати все...</value>
   </data>
@@ -204,9 +201,6 @@
   <data name="btnDataMinify.Text" xml:space="preserve">
     <value>Скоротити</value>
   </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Обробити відповідь:</value>
-  </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>Посилання на видалення:</value>
   </data>
@@ -215,36 +209,6 @@
   </data>
   <data name="lblResultURL.Text" xml:space="preserve">
     <value>Посилання:</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Додати синтаксис до поля посилання</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Приклади:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Додати синтаксис до поля посилання</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Приклади:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Список регулярних виразів:</value>
-  </data>
-  <data name="cRegex.HeaderText" xml:space="preserve">
-    <value>Регулярний вираз</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Додати синтаксис до поля посилання</value>
-  </data>
-  <data name="tpRegexParse.Text" xml:space="preserve">
-    <value>Регулярний вираз</value>
   </data>
   <data name="lblDestinationType.Text" xml:space="preserve">
     <value>Тип призначення:</value>

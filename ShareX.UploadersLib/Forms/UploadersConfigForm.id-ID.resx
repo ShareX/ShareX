@@ -444,9 +444,6 @@
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Domain:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonim</value>
-  </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>UID API:</value>
   </data>

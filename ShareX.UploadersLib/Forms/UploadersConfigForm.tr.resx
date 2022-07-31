@@ -182,9 +182,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Şifre:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonim</value>
-  </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>Dizin paylaş</value>
   </data>

@@ -147,9 +147,6 @@
   <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
     <value>アセットフォルダはShareXの配下に置く必要があります</value>
   </data>
-  <data name="Effect" xml:space="preserve">
-    <value>画像エフェクト:</value>
-  </data>
   <data name="Confirmation" xml:space="preserve">
     <value>確認</value>
   </data>

@@ -498,9 +498,6 @@
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>Sonuçları otomatik olarak panoya kopyala</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Pencere açıldığında OCR uygula</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Sessizce OCR uygula</value>
   </data>
@@ -632,5 +629,14 @@
   </data>
   <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
     <value>Varsayılan FTP hesabını değiştir</value>
+  </data>
+  <data name="lblRegionCaptureFPSLimit.Text" xml:space="preserve">
+    <value>FPS limiti:</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>Görev:</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>OCR</value>
   </data>
 </root>

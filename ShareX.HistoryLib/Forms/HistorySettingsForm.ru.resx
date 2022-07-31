@@ -126,7 +126,4 @@
   <data name="cbRememberSearchText.Text" xml:space="preserve">
     <value>Запоминать содержимое поиска</value>
   </data>
-  <data name="lblMaximumItemLimit.Text" xml:space="preserve">
-    <value>Максимальное количество элементов:</value>
-  </data>
 </root>

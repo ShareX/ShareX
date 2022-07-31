@@ -566,14 +566,8 @@
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>最近的連結</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>文字擷取（OCR）</value>
-  </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>下載</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>文字擷取（OCR）...</value>
   </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>從清單移除任務</value>

@@ -591,12 +591,6 @@
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>Hiện con trỏ</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Lấy văn bản (Nhận dạng kí tự)...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Lấy văn bản (Nhận dạng kí tự)...</value>
-  </data>
   <data name="tsmiUploadText.Text" xml:space="preserve">
     <value>Tải lên văn bản...</value>
   </data>

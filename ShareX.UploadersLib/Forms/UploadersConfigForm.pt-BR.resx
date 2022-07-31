@@ -185,9 +185,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Senha:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anônimo</value>
-  </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
   </data>

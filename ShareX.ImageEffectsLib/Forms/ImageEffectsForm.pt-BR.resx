@@ -171,9 +171,6 @@
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Enviar imagem</value>
   </data>
-  <data name="lblEffect.Text" xml:space="preserve">
-    <value>Efeitos:</value>
-  </data>
   <data name="lblEffects.Text" xml:space="preserve">
     <value>Efeitos:</value>
   </data>

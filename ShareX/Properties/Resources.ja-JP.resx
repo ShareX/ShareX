@@ -316,15 +316,9 @@
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>ホットキーの設定からワークフローを追加できます...</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>画像をパス {0} に書き込みできません。</value>
-  </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>言語の変更はShareX の再起動後に反映されます。
 ShareX を再起動しますか？</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>エラー</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Windows開始時にShareXを起動する</value>
@@ -518,9 +512,6 @@ ShareX を再起動しますか？</value>
   </data>
   <data name="OCRForm_AutoComplete" xml:space="preserve">
     <value>OCRの結果をクリップボードにコピーしました</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>ShareXのOCRでは、OCR.SpaceのAPIを使います。画像データをOCR.Spaceに転送してもよいですか？</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
     <value>クリップボード内のデータ：画像（サイズ：{0}x{1}）</value>

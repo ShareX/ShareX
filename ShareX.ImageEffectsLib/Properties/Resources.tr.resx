@@ -138,9 +138,6 @@
   <data name="Confirmation" xml:space="preserve">
     <value>Onay</value>
   </data>
-  <data name="Effect" xml:space="preserve">
-    <value>Efekt:</value>
-  </data>
   <data name="InvalidAssetsFolderPath" xml:space="preserve">
     <value>Geçersiz varlık klasör yolu</value>
   </data>

@@ -165,9 +165,6 @@
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>خطا</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>خطا</value>
-  </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>ویرایش..</value>
   </data>
@@ -324,9 +321,6 @@
     <value>ShareX برای تغییر زبان نیاز به راه اندازی مجدد دارد.
 
 آیا می خواهید ShareX را مجددا راه اندازی کنید؟</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - شناسایی متن از تصویر</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
     <value>ShareX - تاییدیه</value>

@@ -1429,6 +1429,7 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_OCR" xml:space="preserve">
     <value>OCR</value>
+    
   </data>
   <data name="HotkeyType_OCR_Category" xml:space="preserve">
     <value>Tools</value>

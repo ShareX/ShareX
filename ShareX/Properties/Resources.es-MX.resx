@@ -321,15 +321,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
     <value>Ruso</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>No se pudo guardar la imagen en la ubicación {0}.</value>
-  </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX debe reiniciarse para que los cambios de idioma surtan efecto.
 ¿Desea reiniciar ShareX?</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Error</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
     <value>¿Está seguro de eliminar este archivo?</value>
@@ -505,9 +499,6 @@ Clic medio para cerrar</value>
   <data name="OCRForm_AutoProcessing" xml:space="preserve">
     <value>El OCR está en proceso.</value>
   </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Tome en cuenta que ShareX emplea la API pública de OCR.space para realizar el reconocimiento óptico de caracteres. ¿Desea otorgarle permiso a ShareX de subir imágenes a tal servicio?</value>
-  </data>
   <data name="ShareXConfirmation" xml:space="preserve">
     <value>ShareX - Confirmación</value>
   </data>
@@ -515,9 +506,6 @@ Clic medio para cerrar</value>
     <value>ShareX debe reiniciarse para que los cambios a la carpeta personal surtan efecto.
 
 ¿Desea reiniciar ShareX?</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - Reconocimiento óptico de caracteres (OCR)</value>
   </data>
   <data name="SwitchToListView" xml:space="preserve">
     <value>Cambiar a vista de lista</value>

@@ -251,14 +251,8 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Начинается</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Ошибка</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Операции можно добавить в настройках горячих клавиш...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Не удалось сохранить изображение по пути {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>Для изменения языка ShareX необходимо перезапустить.
@@ -515,12 +509,6 @@
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Задержка скриншота: {0} с</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Обратите внимание, ShareX использует онлайн API OCR.Space для распознавания текста. Вы даете ShareX разрешение на загрузку изображений на этот сервис?</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - Распознавание текста</value>
   </data>
   <data name="SwitchToThumbnailView" xml:space="preserve">
     <value>Перейти в режим миниатюр</value>

@@ -265,14 +265,8 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Démarrage</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Vous pouvez ajouter des workflows à partir des paramètres des raccourcis clavier...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Impossible d'enregistrer l'image pour le chemin {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX doit être redémarré pour que les changements de langue s'appliquent.
@@ -486,9 +480,6 @@ Clique de la molette pour fermer</value>
   <data name="ShareXConfirmation" xml:space="preserve">
     <value>ShareX - Confirmation</value>
   </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - Reconnaissance optique de caractères</value>
-  </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>Raccourcir</value>
   </data>
@@ -517,9 +508,6 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
     <value>Espagnol mexicain</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Veuillez noter que ShareX utilise l'API en ligne OCR.Space pour effectuer la reconnaissance optique de caractères. Donnez-vous la permission à ShareX de mettre en ligne des images vers ce service ?</value>
   </data>
   <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
     <value>Rester sur le dessus</value>
@@ -577,8 +565,5 @@ Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
     <value>ShareX est réduit dans la zone de notification.</value>
-  </data>
-  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
-    <value>Votre antivirus ou la fonctionnalité d'accès contrôlé aux dossiers dans Windows 10 pourrait bloquer ShareX.</value>
   </data>
 </root>

@@ -278,15 +278,9 @@ Esegui ShareX come amministratore per cambiare il percorso della cartella person
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Puoi aggiungere Workflow da "Impostazioni Scorciatoie"</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Impossibile scrivere l'immagine nel percorso {0}</value>
-  </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX deve essere riavviato per cambiare lingua.
 Riavviare ShareX?</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Errore</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Usa un Nuovo Nome:</value>

@@ -123,9 +123,6 @@
   <data name="cbRememberWindowState.Text" xml:space="preserve">
     <value>ウィンドウのサイズ・位置を記憶する</value>
   </data>
-  <data name="lblMaximumItemLimit.Text" xml:space="preserve">
-    <value>最大表示数:</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 履歴ウィンドウの設定</value>
   </data>

@@ -562,9 +562,6 @@
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>Почати/зупинити запис області екрану</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Інструменти</value>
-  </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>Інші</value>
   </data>
@@ -606,9 +603,6 @@
   </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Завантаження зображення...</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Захоплення тексту (OCR)</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
     <value>Імітувати натискання клавіші «Home»</value>
@@ -877,9 +871,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Типово</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP-клієнт</value>
-  </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Неможливо створити теку.</value>
   </data>
@@ -927,9 +918,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Назва файла: {0}</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Захоплення екрана</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>Еліпс (E)</value>

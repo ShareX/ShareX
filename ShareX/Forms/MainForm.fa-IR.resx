@@ -179,9 +179,6 @@
   <data name="tsmiTextCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>تشخیص متن از عکس (OCR) ...</value>
-  </data>
   <data name="tsmiAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -397,9 +394,6 @@
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
     <value>آپلود کننده های متن</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>تشخیص متن از عکس (OCR) ...</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>تنظیمات وظیفه ...</value>

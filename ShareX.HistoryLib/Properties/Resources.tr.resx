@@ -231,4 +231,7 @@
   <data name="Filtered" xml:space="preserve">
     <value>Filtrelenmiş</value>
   </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Geçmiş istatistikleri</value>
+  </data>
 </root>

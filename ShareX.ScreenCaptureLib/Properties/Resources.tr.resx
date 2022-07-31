@@ -463,4 +463,25 @@ Resim düzenleyiciyi kapatmak ister misiniz?</value>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
     <value>Nesne çizdikten sonra seçim aracına geç</value>
   </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Resmi otomatik olarak panoya kopyala</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Bit hızı:</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Bulanıklaştır</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>FPS limiti:</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Vurgula</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Mozaikle</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>İşleniyor...</value>
+  </data>
 </root>

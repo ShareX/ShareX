@@ -511,9 +511,6 @@ en el portapapeles</value>
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>Copiar resultados al portapapeles automáticamente</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Procesar OCR al abrir el cuadro de diálogo</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Procesar OCR silenciosamente</value>
   </data>

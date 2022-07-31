@@ -245,14 +245,8 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Startet</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Fehler</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Du kannst Arbeitsschritte aus den Hotkeyeinstellungen hinzufügen...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Konnte Bild nicht in den Pfad {0} schreiben.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX muss neu gestartet werden, damit die Sprachänderungen wirksam werden.
@@ -470,9 +464,6 @@ Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Screenshot-Verzögerung: {0}s</value>
   </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - Texterkennung (OCR)</value>
-  </data>
   <data name="OCRForm_AutoProcessing" xml:space="preserve">
     <value>Texterkennung wird verarbeitet.</value>
   </data>
@@ -495,9 +486,6 @@ Mittlere Maustaste um die Aktionsleiste zu schließen</value>
     <value>ShareX muss neu gestartet werden, damit die Änderungen am Einstellungsordner wirksam werden.
 
 Soll ShareX neu gestartet werden?</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Bitte beachte, dass ShareX OCR.Space's online API für die Ausführung der Texterkennung benutzt. Gibst du ShareX die Berechtigung, Bilder an diesen Dienst hochzuladen?</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Autostart wurde durch Ihrer Organisation aktiviert</value>

@@ -565,9 +565,6 @@
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>独自領域の動画キャプチャーを開始/停止</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>ツール</value>
-  </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>その他</value>
   </data>
@@ -612,9 +609,6 @@
   </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>画像の読み込み...</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>テキスト キャプチャー (OCR)</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
     <value>"Home" キーを送信</value>
@@ -892,9 +886,6 @@
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>既定</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP クライアント</value>
-  </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>ディレクトリの作成に失敗。</value>
   </data>
@@ -945,9 +936,6 @@
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>ファイル名: {0}</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>静止画キャプチャー</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>描画: 楕円(E)</value>

@@ -171,9 +171,6 @@
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>スクロール キャプチャー</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>テキスト キャプチャー (OCR)...</value>
-  </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>自動キャプチャー...</value>
   </data>
@@ -491,9 +488,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>スクロール キャプチャー...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>テキスト キャプチャー (OCR)...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>自動キャプチャー...</value>

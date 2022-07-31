@@ -546,9 +546,6 @@
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>직사각형 (투명)</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>텍스트 촬영 (OCR)...</value>
-  </data>
   <data name="tsmiUploadText.Text" xml:space="preserve">
     <value>텍스트 업로드...</value>
   </data>
@@ -638,9 +635,6 @@
   </data>
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>URL 단축...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>텍스트 촬영 (OCR)...</value>
   </data>
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>텍스트 업로드...</value>

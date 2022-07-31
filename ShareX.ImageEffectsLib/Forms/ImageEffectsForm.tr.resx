@@ -174,13 +174,13 @@
   <data name="btnPresetRemove.ToolTip" xml:space="preserve">
     <value>Kaldır</value>
   </data>
-  <data name="lblEffect.Text" xml:space="preserve">
-    <value>Efekt:</value>
-  </data>
   <data name="lblEffects.Text" xml:space="preserve">
     <value>Efektler:</value>
   </data>
   <data name="lblPresets.Text" xml:space="preserve">
     <value>Ön ayarlar:</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>Efekt ismi:</value>
   </data>
 </root>

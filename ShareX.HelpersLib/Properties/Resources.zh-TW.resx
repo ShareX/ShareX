@@ -292,9 +292,6 @@
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>上傳資料夾</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP 客戶端</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>雜湊檢查</value>
   </data>
@@ -526,9 +523,6 @@
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>上傳</value>
-  </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>工具</value>
   </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>工具</value>
@@ -815,12 +809,6 @@
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>文字辨識（OCR）</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>文字擷取（OCR）</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
   </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>取消擷取</value>

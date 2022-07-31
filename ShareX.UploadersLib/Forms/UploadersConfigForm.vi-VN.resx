@@ -602,9 +602,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Ẩn danh</value>
-  </data>
   <data name="lblLithiioApiKey.Text" xml:space="preserve">
     <value>API key:</value>
   </data>
