@@ -219,6 +219,12 @@ namespace ShareX
             UpdateHotkeyStatus();
         }
 
+        private void SelectControl()
+        {
+            Selected = true;
+            OnSelectedChanged();
+        }
+
         protected void OnHotkeyChanged()
         {
             HotkeyChanged?.Invoke(this, EventArgs.Empty);
@@ -234,17 +240,14 @@ namespace ShareX
             EditRequested?.Invoke(this, EventArgs.Empty);
         }
 
-        private void btnTask_MouseClick(object sender, MouseEventArgs e)
+        private void btnTask_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                Selected = true;
-                OnSelectedChanged();
-            }
+            SelectControl();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            SelectControl();
             OnEditRequested();
         }
 
@@ -309,6 +312,7 @@ namespace ShareX
             }
             else
             {
+                SelectControl();
                 StartEditing();
             }
         }
