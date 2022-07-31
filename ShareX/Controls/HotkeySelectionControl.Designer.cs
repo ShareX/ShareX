@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySelectionControl));
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnHotkey = new ShareX.HelpersLib.ColorButton();
-            this.lblHotkeyDescription = new ShareX.HelpersLib.ImageLabel();
+            this.btnTask = new ShareX.HelpersLib.MenuButton();
+            this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // btnEdit
@@ -57,32 +59,36 @@
             this.btnHotkey.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnHotkey_MouseClick);
             this.btnHotkey.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnHotkey_PreviewKeyDown);
             // 
-            // lblHotkeyDescription
+            // btnTask
             // 
-            resources.ApplyResources(this.lblHotkeyDescription, "lblHotkeyDescription");
-            this.lblHotkeyDescription.BackColor = System.Drawing.SystemColors.Window;
-            this.lblHotkeyDescription.Name = "lblHotkeyDescription";
-            this.lblHotkeyDescription.UseMnemonic = false;
-            this.lblHotkeyDescription.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblHotkeyDescription_MouseClick);
-            this.lblHotkeyDescription.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lblHotkeyDescription_MouseDoubleClick);
-            this.lblHotkeyDescription.MouseEnter += new System.EventHandler(this.lblHotkeyDescription_MouseEnter);
-            this.lblHotkeyDescription.MouseLeave += new System.EventHandler(this.lblHotkeyDescription_MouseLeave);
+            resources.ApplyResources(this.btnTask, "btnTask");
+            this.btnTask.Image = global::ShareX.Properties.Resources.gear;
+            this.btnTask.Menu = this.cmsTask;
+            this.btnTask.Name = "btnTask";
+            this.btnTask.UseMnemonic = false;
+            this.btnTask.UseVisualStyleBackColor = true;
+            // 
+            // cmsTask
+            // 
+            this.cmsTask.Name = "cmsTask";
+            resources.ApplyResources(this.cmsTask, "cmsTask");
             // 
             // HotkeySelectionControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.btnTask);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnHotkey);
-            this.Controls.Add(this.lblHotkeyDescription);
             this.Name = "HotkeySelectionControl";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private ShareX.HelpersLib.ImageLabel lblHotkeyDescription;
         private HelpersLib.ColorButton btnHotkey;
         private System.Windows.Forms.Button btnEdit;
+        private HelpersLib.MenuButton btnTask;
+        private System.Windows.Forms.ContextMenuStrip cmsTask;
     }
 }

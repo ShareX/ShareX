@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -39,25 +40,9 @@ namespace ShareX
 
         public HotkeySettings Setting { get; set; }
 
-        private bool selected;
-
-        public bool Selected
-        {
-            get
-            {
-                return selected;
-            }
-            set
-            {
-                selected = value;
-
-                UpdateTheme();
-            }
-        }
+        public bool Selected { get; set; }
 
         public bool EditingHotkey { get; private set; }
-
-        private bool descriptionHover;
 
         public HotkeySelectionControl(HotkeySettings setting)
         {
@@ -65,75 +50,89 @@ namespace ShareX
 
             InitializeComponent();
             UpdateDescription();
-            UpdateHotkeyText();
+
+            AddEnumItemsContextMenu<HotkeyType>(x =>
+            {
+                Setting.TaskSettings.Job = x;
+                UpdateDescription();
+            }, cmsTask);
+            SetEnumCheckedContextMenu(Setting.TaskSettings.Job, cmsTask);
+
             if (ShareXResources.UseCustomTheme)
             {
                 ShareXResources.ApplyCustomThemeToControl(this);
             }
+
             UpdateHotkeyStatus();
-            UpdateTheme();
         }
 
-        public void UpdateTheme()
+        private void AddEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents) where T : Enum
         {
-            if (ShareXResources.UseCustomTheme)
+            EnumInfo[] enums = Helpers.GetEnums<T>().OfType<Enum>().Select(x => new EnumInfo(x)).ToArray();
+
+            foreach (ToolStripDropDown parent in parents)
             {
-                if (Selected)
+                foreach (EnumInfo enumInfo in enums)
                 {
-                    lblHotkeyDescription.ForeColor = SystemColors.ControlText;
-                    lblHotkeyDescription.BackColor = Color.FromArgb(200, 255, 200);
-                }
-                else if (descriptionHover)
-                {
-                    lblHotkeyDescription.ForeColor = SystemColors.ControlText;
-                    lblHotkeyDescription.BackColor = Color.FromArgb(220, 240, 255);
-                }
-                else
-                {
-                    lblHotkeyDescription.ForeColor = ShareXResources.Theme.TextColor;
-                    lblHotkeyDescription.BackColor = ShareXResources.Theme.LightBackgroundColor;
-                }
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enumInfo.Description.Replace("&", "&&"));
+                    tsmi.Image = TaskHelpers.FindMenuIcon(enumInfo.Value);
+                    tsmi.Tag = enumInfo;
 
-                btnHotkey.BorderColor = ShareXResources.Theme.BorderColor;
+                    tsmi.Click += (sender, e) =>
+                    {
+                        SetEnumCheckedContextMenu(enumInfo, parents);
 
-                if (EditingHotkey)
-                {
-                    btnHotkey.ForeColor = SystemColors.ControlText;
-                    btnHotkey.BackColor = Color.FromArgb(225, 255, 225);
-                }
-                else
-                {
-                    btnHotkey.ForeColor = ShareXResources.Theme.TextColor;
-                    btnHotkey.BackColor = ShareXResources.Theme.LightBackgroundColor;
+                        selectedEnum((T)enumInfo.Value);
+
+                        UpdateDescription();
+                    };
+
+                    if (!string.IsNullOrEmpty(enumInfo.Category))
+                    {
+                        ToolStripMenuItem tsmiParent = parent.Items.OfType<ToolStripMenuItem>().FirstOrDefault(x => x.Text == enumInfo.Category);
+
+                        if (tsmiParent == null)
+                        {
+                            tsmiParent = new ToolStripMenuItem(enumInfo.Category);
+                            parent.Items.Add(tsmiParent);
+                        }
+
+                        tsmiParent.DropDownItems.Add(tsmi);
+                    }
+                    else
+                    {
+                        parent.Items.Add(tsmi);
+                    }
                 }
             }
-            else
+        }
+
+        private void SetEnumCheckedContextMenu(Enum value, params ToolStripDropDown[] parents)
+        {
+            SetEnumCheckedContextMenu(new EnumInfo(value), parents);
+        }
+
+        private void SetEnumCheckedContextMenu(EnumInfo enumInfo, params ToolStripDropDown[] parents)
+        {
+            foreach (ToolStripDropDown parent in parents)
             {
-                lblHotkeyDescription.ForeColor = SystemColors.ControlText;
+                foreach (ToolStripMenuItem tsmiParent in parent.Items)
+                {
+                    EnumInfo currentEnumInfo;
 
-                if (Selected)
-                {
-                    lblHotkeyDescription.BackColor = Color.FromArgb(200, 255, 200);
-                }
-                else if (descriptionHover)
-                {
-                    lblHotkeyDescription.BackColor = Color.FromArgb(220, 240, 255);
-                }
-                else
-                {
-                    lblHotkeyDescription.BackColor = SystemColors.Window;
-                }
-
-                btnHotkey.ForeColor = SystemColors.ControlText;
-
-                if (EditingHotkey)
-                {
-                    btnHotkey.BackColor = Color.FromArgb(225, 255, 225);
-                }
-                else
-                {
-                    btnHotkey.BackColor = SystemColors.Control;
-                    btnHotkey.UseVisualStyleBackColor = true;
+                    if (tsmiParent.DropDownItems.Count > 0)
+                    {
+                        foreach (ToolStripMenuItem tsmiCategoryParent in tsmiParent.DropDownItems)
+                        {
+                            currentEnumInfo = (EnumInfo)tsmiCategoryParent.Tag;
+                            tsmiCategoryParent.Checked = currentEnumInfo.Value.Equals(enumInfo.Value);
+                        }
+                    }
+                    else
+                    {
+                        currentEnumInfo = (EnumInfo)tsmiParent.Tag;
+                        tsmiParent.Checked = currentEnumInfo.Value.Equals(enumInfo.Value);
+                    }
                 }
             }
         }
@@ -142,24 +141,21 @@ namespace ShareX
         {
             if (Setting.TaskSettings.IsUsingDefaultSettings)
             {
-                lblHotkeyDescription.ChangeFontStyle(FontStyle.Regular);
+                btnTask.ChangeFontStyle(FontStyle.Regular);
             }
             else
             {
-                lblHotkeyDescription.ChangeFontStyle(FontStyle.Bold);
+                btnTask.ChangeFontStyle(FontStyle.Bold);
             }
 
-            lblHotkeyDescription.Image = TaskHelpers.FindMenuIcon(Setting.TaskSettings.Job);
-            lblHotkeyDescription.Text = Setting.TaskSettings.ToString();
-        }
-
-        private void UpdateHotkeyText()
-        {
-            btnHotkey.Text = Setting.HotkeyInfo.ToString();
+            btnTask.Image = TaskHelpers.FindMenuIcon(Setting.TaskSettings.Job);
+            btnTask.Text = Setting.TaskSettings.ToString();
         }
 
         public void UpdateHotkeyStatus()
         {
+            btnHotkey.Text = Setting.HotkeyInfo.ToString();
+
             switch (Setting.HotkeyInfo.Status)
             {
                 default:
@@ -198,7 +194,7 @@ namespace ShareX
                 else if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin)
                 {
                     Setting.HotkeyInfo.Win = !Setting.HotkeyInfo.Win;
-                    UpdateHotkeyText();
+                    UpdateHotkeyStatus();
                 }
                 else if (new HotkeyInfo(e.KeyData).IsValidHotkey)
                 {
@@ -208,7 +204,7 @@ namespace ShareX
                 else
                 {
                     Setting.HotkeyInfo.Hotkey = e.KeyData;
-                    UpdateHotkeyText();
+                    UpdateHotkeyStatus();
                 }
             }
         }
@@ -255,7 +251,6 @@ namespace ShareX
             Program.HotkeyManager.IgnoreHotkeys = true;
 
             btnHotkey.Text = Resources.HotkeySelectionControl_StartEditing_Select_a_hotkey___;
-            UpdateTheme();
 
             Setting.HotkeyInfo.Hotkey = Keys.None;
             Setting.HotkeyInfo.Win = false;
@@ -274,10 +269,8 @@ namespace ShareX
                 Setting.HotkeyInfo.Hotkey = Keys.None;
             }
 
-            UpdateTheme();
             OnHotkeyChanged();
             UpdateHotkeyStatus();
-            UpdateHotkeyText();
         }
 
         protected void OnHotkeyChanged()
@@ -298,39 +291,6 @@ namespace ShareX
         private void btnEdit_Click(object sender, EventArgs e)
         {
             OnEditRequested();
-        }
-
-        private void lblHotkeyDescription_MouseEnter(object sender, EventArgs e)
-        {
-            if (!Selected)
-            {
-                descriptionHover = true;
-                UpdateTheme();
-            }
-        }
-
-        private void lblHotkeyDescription_MouseLeave(object sender, EventArgs e)
-        {
-            descriptionHover = false;
-            UpdateTheme();
-        }
-
-        private void lblHotkeyDescription_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                Selected = true;
-                OnSelectedChanged();
-                Focus();
-            }
-        }
-
-        private void lblHotkeyDescription_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                OnEditRequested();
-            }
         }
     }
 }
