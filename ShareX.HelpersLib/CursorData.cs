@@ -111,17 +111,11 @@ namespace ShareX.HelpersLib
         {
             float sizeMultiplier = 1f;
 
-            try
-            {
-                int cursorSize = RegistryHelpers.GetValueDWord(@"SOFTWARE\Microsoft\Accessibility", "CursorSize");
+            int? cursorSize = RegistryHelpers.GetValueDWord(@"SOFTWARE\Microsoft\Accessibility", "CursorSize");
 
-                if (cursorSize > 1)
-                {
-                    sizeMultiplier = 1f + ((cursorSize - 1) * 0.5f);
-                }
-            }
-            catch
+            if (cursorSize != null && cursorSize > 1)
             {
+                sizeMultiplier = 1f + (((int)cursorSize - 1) * 0.5f);
             }
 
             return sizeMultiplier;

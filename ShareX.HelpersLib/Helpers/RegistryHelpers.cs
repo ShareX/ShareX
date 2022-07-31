@@ -107,9 +107,9 @@ namespace ShareX.HelpersLib
             return GetValue(path, name, root, view) as string;
         }
 
-        public static int GetValueDWord(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
+        public static int? GetValueDWord(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
         {
-            return (int)GetValue(path, name, root, view);
+            return (int?)GetValue(path, name, root, view);
         }
 
         public static bool CheckStringValue(string path, string name = null, string value = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
