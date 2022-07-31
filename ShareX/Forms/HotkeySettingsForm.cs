@@ -188,7 +188,6 @@ namespace ShareX
             UpdateCheckStates();
             control.Focus();
             Update();
-            EditSelected();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
