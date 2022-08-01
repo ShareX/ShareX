@@ -126,4 +126,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Kenarsız pencere ayarları</value>
   </data>
+  <data name="cbExcludeTaskbarArea.Text" xml:space="preserve">
+    <value>Görev çubuğu alanını hariç tut</value>
+  </data>
 </root>

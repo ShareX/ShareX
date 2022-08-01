@@ -251,4 +251,7 @@ Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
   <data name="lblCommandLinePreview.Text" xml:space="preserve">
     <value>Komut satırı önizleme:</value>
   </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>Bit hızı kullan</value>
+  </data>
 </root>

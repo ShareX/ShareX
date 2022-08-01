@@ -484,4 +484,7 @@ Resim düzenleyiciyi kapatmak ister misiniz?</value>
   <data name="Processing" xml:space="preserve">
     <value>İşleniyor...</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Açılışta sığdırmak için yakınlaştır</value>
+  </data>
 </root>

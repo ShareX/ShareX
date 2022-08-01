@@ -1092,4 +1092,7 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>URL'ye dosya adı ekle</value>
   </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>Video seçenekleri penceresini göster</value>
+  </data>
 </root>

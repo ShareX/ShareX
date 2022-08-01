@@ -414,4 +414,16 @@
   <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
     <value>Küçük resim tıklama eylemi:</value>
   </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>Bu biçimler ana pencere sağ tık menüsünde "Kopyala" alt menüsü altında görünecektir.</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Varsayılan yazıcıyı değiştir:</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Görev görünümü modu:</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Pencere için alt dizin şablonu:</value>
+  </data>
 </root>

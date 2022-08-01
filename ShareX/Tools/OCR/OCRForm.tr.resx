@@ -141,4 +141,7 @@
   <data name="cbSingleLine.Text" xml:space="preserve">
     <value>Tek satır</value>
   </data>
+  <data name="lblScaleFactor.Text" xml:space="preserve">
+    <value>Ölçek faktörü:</value>
+  </data>
 </root>

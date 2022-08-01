@@ -601,7 +601,7 @@ Otomatik olarak indirmek ister misiniz?</value>
     <value>Pencere dikdörtgeni</value>
   </data>
   <data name="InspectWindow_WindowStyles" xml:space="preserve">
-    <value>Pencere stili</value>
+    <value>Pencere stilleri</value>
   </data>
   <data name="InspectWindow_WindowTitle" xml:space="preserve">
     <value>Pencere başlığı</value>
@@ -644,5 +644,17 @@ Otomatik olarak indirmek ister misiniz?</value>
   </data>
   <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
     <value>Gizlilik ilkesi</value>
+  </data>
+  <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
+    <value>Genişletilmiş pencere stilleri</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>Optik karakter tanıma özelliği yalnızca Windows sürüm {0} veya daha yenisi ile kullanılabilir.</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>Belirtilen pencere başlığına sahip bir pencere bulunamadı.</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>Sistem yöneticiniz yükleme özelliğini devre dışı bıraktı.</value>
   </data>
 </root>
