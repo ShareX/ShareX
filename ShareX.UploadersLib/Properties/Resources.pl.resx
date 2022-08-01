@@ -271,4 +271,7 @@ Utworzone foldery:</value>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
     <value>Rejestracja w SendSpace</value>
   </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>(Opcjonalnie) Używane tylko wtedy, gdy nie ustawiono bucketa podczas tworzenia klucza</value>
+  </data>
 </root>

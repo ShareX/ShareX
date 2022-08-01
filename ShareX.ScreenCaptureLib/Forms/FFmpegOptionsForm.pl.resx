@@ -138,20 +138,11 @@
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Zainstaluj urządzenia nagrywające</value>
   </data>
-  <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Pobierz</value>
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Jakość:</value>
-  </data>
-  <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Źródło wideo:</value>
@@ -164,9 +155,6 @@
   </data>
   <data name="lblNVENCBitrate.Text" xml:space="preserve">
     <value>Bitrate:</value>
-  </data>
-  <data name="lblNVENCBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
     <value>Kodek audio:</value>
@@ -195,9 +183,6 @@
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bitrate:</value>
   </data>
-  <data name="lblQSVBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
-  </data>
   <data name="lblQSVBitrate.Text" xml:space="preserve">
     <value>Bitrate:</value>
   </data>
@@ -212,12 +197,6 @@
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
     <value>Preset:</value>
-  </data>
-  <data name="lblx264BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
-  </data>
-  <data name="lblx264CRF.Text" xml:space="preserve">
-    <value>CRF:</value>
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Zmienny bitrate:</value>
@@ -253,9 +232,6 @@ Wyższa wartość oznacza złą jakość, ale niski rozmiar pliku.</value>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
     <value>Ten kodek audio nie jest obsługiwany przez wybrany kontener wideo.</value>
   </data>
-  <data name="tbAMF.Text" xml:space="preserve">
-    <value>AMF</value>
-  </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>Wartość domyślna to 128k.</value>
   </data>
@@ -264,9 +240,6 @@ Wyższa wartość oznacza złą jakość, ale niski rozmiar pliku.</value>
   </data>
   <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
     <value>Wartość domyślna to 128k.</value>
-  </data>
-  <data name="tbQSV.Text" xml:space="preserve">
-    <value>QuickSync</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>Zakres to 0–10, gdzie 10 to najwyższa jakość. 3–6 to dobry zakres do wypróbowania. Wartość domyślna to 3.</value>

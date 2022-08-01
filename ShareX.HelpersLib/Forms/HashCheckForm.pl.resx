@@ -156,14 +156,8 @@
   <data name="lblResult.Text" xml:space="preserve">
     <value>Wynik:</value>
   </data>
-  <data name="lblProgressPercentage.Text" xml:space="preserve">
-    <value>0%</value>
-  </data>
   <data name="lblHashCheckHash.Text" xml:space="preserve">
     <value>Hash:</value>
-  </data>
-  <data name="lblHashCheckASCII.Text" xml:space="preserve">
-    <value>ASCII:</value>
   </data>
   <data name="lblHashCheckBase64.Text" xml:space="preserve">
     <value>Base64:</value>

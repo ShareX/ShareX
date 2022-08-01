@@ -225,9 +225,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Ustawienia własnego serwisu</value>
   </data>
-  <data name="mbHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>Eksportuj wszystko...</value>
   </data>

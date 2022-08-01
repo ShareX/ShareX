@@ -129,9 +129,6 @@
   <data name="chStatus.Text" xml:space="preserve">
     <value>Status</value>
   </data>
-  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+U</value>
-  </data>
   <data name="tsmiUploadFile.Text" xml:space="preserve">
     <value>Prześlij plik...</value>
   </data>
@@ -339,9 +336,6 @@
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>Przełącz na widok miniatur</value>
   </data>
-  <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Alt+C</value>
-  </data>
   <data name="tsmiCopyImage.Text" xml:space="preserve">
     <value>Obraz</value>
   </data>
@@ -369,17 +363,11 @@
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
     <value>Link miniatury</value>
   </data>
-  <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+C</value>
-  </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>Link</value>
   </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>Plik</value>
-  </data>
-  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Shift+C</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>Kopiuj</value>
@@ -534,32 +522,14 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Wyczyść listę zadań</value>
   </data>
-  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Shift+C</value>
-  </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>Folder</value>
-  </data>
-  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Del</value>
-  </data>
-  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+D</value>
   </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>Pobierz</value>
   </data>
-  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+E</value>
-  </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
     <value>Link usuwania</value>
-  </data>
-  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Enter</value>
-  </data>
-  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Shift+Enter</value>
   </data>
   <data name="tsmiOpenFolder.Text" xml:space="preserve">
     <value>Folder</value>
@@ -638,9 +608,6 @@
   </data>
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
     <value>Link z obrazem markdown</value>
-  </data>
-  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Shift+Del</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>Zmiana DNS...</value>
@@ -776,5 +743,14 @@
   </data>
   <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
     <value>Przeglądarka obrazów...</value>
+  </data>
+  <data name="tsmiPinSelectedFile.Text" xml:space="preserve">
+    <value>Przypnij do ekranu</value>
+  </data>
+  <data name="tsmiPinToScreen.Text" xml:space="preserve">
+    <value>Przypnij do ekranu...</value>
+  </data>
+  <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
+    <value>Przypnij do ekranu...</value>
   </data>
 </root>
