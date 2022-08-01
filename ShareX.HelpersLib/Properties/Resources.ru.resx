@@ -1408,4 +1408,10 @@
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Закрепить на экране</value>
   </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>Закрепить на экране</value>
+  </data>
+  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
 </root>
