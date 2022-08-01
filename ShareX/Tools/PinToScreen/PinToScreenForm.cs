@@ -114,6 +114,7 @@ namespace ShareX
             ImageOpacity = Options.InitialOpacity;
 
             InitializeComponent();
+            TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
 
             isDWMEnabled = NativeMethods.IsDWMEnabled();
@@ -162,6 +163,7 @@ namespace ShareX
             }
 
             Point newLocation = Location;
+            SpecialWindowHandles insertAfter = Options.TopMost ? SpecialWindowHandles.HWND_TOPMOST : SpecialWindowHandles.HWND_TOP;
             SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE;
 
             if (Options.KeepCenterLocation)
@@ -174,7 +176,7 @@ namespace ShareX
                 flags |= SetWindowPosFlags.SWP_NOMOVE;
             }
 
-            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
+            NativeMethods.SetWindowPos(Handle, (IntPtr)insertAfter, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
 
             Refresh();
         }
