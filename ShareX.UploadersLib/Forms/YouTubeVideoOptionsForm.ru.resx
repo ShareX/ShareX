@@ -132,4 +132,7 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Отменить</value>
   </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>ОК</value>
+  </data>
 </root>

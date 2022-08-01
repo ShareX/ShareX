@@ -655,4 +655,7 @@
   <data name="PinToScreen" xml:space="preserve">
     <value>Закрепить на экране</value>
   </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>Функция распознавания текста доступна только в версий Windows {0} или новее.</value>
+  </data>
 </root>
