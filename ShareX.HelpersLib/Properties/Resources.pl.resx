@@ -1399,4 +1399,19 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
     <value>Wyślij wiadomość przewijania do okna/kontroli</value>
   </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - Przeglądarka obrazów</value>
+  </data>
+  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
+    <value>Narzędzia</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>Przypnij do ekranu</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>Przypnij do ekranu</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>Przypnij do ekranu</value>
+  </data>
 </root>

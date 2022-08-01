@@ -225,9 +225,6 @@
   <data name="gbRecentLinks.Text" xml:space="preserve">
     <value>Ostatnie zadania</value>
   </data>
-  <data name="gbSteam.Text" xml:space="preserve">
-    <value>Steam</value>
-  </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
     <value>0 - 25 (0 wyłącza)</value>
   </data>
@@ -240,14 +237,8 @@
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
-  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="gbThumbnailView.Text" xml:space="preserve">
     <value>Widok miniatur</value>
-  </data>
-  <data name="gbWindows.Text" xml:space="preserve">
-    <value>Windows</value>
   </data>
   <data name="gbListView.Text" xml:space="preserve">
     <value>Widok listy</value>
@@ -338,9 +329,6 @@
   </data>
   <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
     <value>Akcja kliknięcia miniatury:</value>
-  </data>
-  <data name="lblThumbnailViewThumbnailSizeX.Text" xml:space="preserve">
-    <value>x</value>
   </data>
   <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
     <value>Lokalizacja tytułu:</value>

@@ -225,4 +225,7 @@
   <data name="lblScrollMethod.Text" xml:space="preserve">
     <value>Metoda przewijania:</value>
   </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Przechwyć</value>
+  </data>
 </root>

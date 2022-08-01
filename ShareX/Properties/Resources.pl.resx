@@ -646,4 +646,16 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
   <data name="InspectWindow_WindowRectangle" xml:space="preserve">
     <value>Prostokąt okna</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Przypnij do ekranu</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pl" xml:space="preserve">
+    <value>Polski</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>Funkcja optycznego rozpoznawania znaków jest dostępna tylko w systemie Windows w wersji {0} lub nowszej.</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Schowek nie zawiera obrazu.</value>
+  </data>
 </root>

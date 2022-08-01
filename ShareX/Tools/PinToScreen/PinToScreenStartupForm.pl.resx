@@ -117,25 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Usuń</value>
+  <data name="btnFromClipboard.Text" xml:space="preserve">
+    <value>Przypnij do ekranu ze schowka</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Dodaj...</value>
+  <data name="btnFromFile.Text" xml:space="preserve">
+    <value>Przypnij do ekranu z pliku...</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Edytuj...</value>
+  <data name="btnFromScreen.Text" xml:space="preserve">
+    <value>Przypnij do ekranu z ekranu...</value>
   </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Skróty klawiszowe są wyłączone. Możesz kliknąć tutaj, aby je włączyć.</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Powiel</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Anuluj</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ustawienia skrótów</value>
-  </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Reset...</value>
+    <value>ShareX - Przypnij do ekranu</value>
   </data>
 </root>

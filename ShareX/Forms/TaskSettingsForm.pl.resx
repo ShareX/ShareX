@@ -174,12 +174,6 @@
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>Konfiguracja efektów obrazu...</value>
   </data>
-  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
   <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
     <value>Przeglądaj...</value>
   </data>
@@ -225,15 +219,6 @@
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
     <value>Opcje nagrywania ekranu...</value>
   </data>
-  <data name="btnCustomCaptureSoundPath.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="btnCustomErrorSoundPath.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="btnCustomTaskCompletedSoundPath.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Wybierz region...</value>
   </data>
@@ -272,9 +257,6 @@
   </data>
   <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
     <value>Przykład: png, jpg, jpeg</value>
-  </data>
-  <data name="lblToastWindowSizeX.Text" xml:space="preserve">
-    <value>x</value>
   </data>
   <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
     <value>sekund</value>
@@ -336,20 +318,11 @@
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Wskazówka: Efekty obrazu można włączyć/wyłączyć w "Zadania po przechwyceniu -&gt; Dodaj efekty obrazu".</value>
   </data>
-  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
-    <value>0 - 100</value>
-  </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>Głębia bitowa PNG:</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
     <value>Przesunięcie cienia:</value>
-  </data>
-  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
-  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
-    <value>Y</value>
   </data>
   <data name="lblActionsNote.Text" xml:space="preserve">
     <value>Uwaga: Możesz włączyć/wyłączyć akcje w "Zadania po przechwyceniu -&gt; Wykonaj akcje".</value>
@@ -665,5 +638,11 @@
   </data>
   <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
     <value>Czas zanikania:</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Przechwyć</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>OCR</value>
   </data>
 </root>

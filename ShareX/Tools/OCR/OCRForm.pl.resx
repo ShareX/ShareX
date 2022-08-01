@@ -132,4 +132,16 @@
   <data name="lblScaleFactor.Text" xml:space="preserve">
     <value>Współczynnik skalowania:</value>
   </data>
+  <data name="btnCopyAll.Text" xml:space="preserve">
+    <value>Skopiuj wszystko</value>
+  </data>
+  <data name="btnOpenServiceLink.Text" xml:space="preserve">
+    <value>Otwórz link usługi...</value>
+  </data>
+  <data name="lblService.Text" xml:space="preserve">
+    <value>Usługa:</value>
+  </data>
+  <data name="cbSingleLine.Text" xml:space="preserve">
+    <value>Pojedyncza linia</value>
+  </data>
 </root>
