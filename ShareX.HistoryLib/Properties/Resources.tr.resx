@@ -234,4 +234,7 @@
   <data name="HistoryStats" xml:space="preserve">
     <value>Geçmiş istatistikleri</value>
   </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>İşlem isimleri:</value>
+  </data>
 </root>

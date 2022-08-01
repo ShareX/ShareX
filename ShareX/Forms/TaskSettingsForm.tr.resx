@@ -639,4 +639,7 @@
   <data name="tpOCR.Text" xml:space="preserve">
     <value>OCR</value>
   </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>Ekran görüntüsü alırken otomatik olarak sakla</value>
+  </data>
 </root>

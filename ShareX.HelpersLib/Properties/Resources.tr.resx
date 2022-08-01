@@ -1301,7 +1301,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Resim kopyala</value>
   </data>
   <data name="ToastClickAction_CopyUrl" xml:space="preserve">
-    <value>Bağlantı kopyala</value>
+    <value>Bağlantıyı kopyala</value>
   </data>
   <data name="ToastClickAction_OpenFile" xml:space="preserve">
     <value>Dosya aç</value>
@@ -1398,5 +1398,14 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Ekrana sabitle</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Kenarsız pencere</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Liste görünümü</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Küçük resim görünümü</value>
   </data>
 </root>

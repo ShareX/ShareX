@@ -1086,4 +1086,10 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
     <value>hiçbir zaman</value>
   </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>Aşağıdaki bağlantıyı kullanarak erişiminizi istediğiniz zaman iptal edebilirsiniz:</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>URL'ye dosya adı ekle</value>
+  </data>
 </root>

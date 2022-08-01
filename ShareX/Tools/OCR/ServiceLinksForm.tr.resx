@@ -135,4 +135,7 @@
   <data name="lblURL.Text" xml:space="preserve">
     <value>Adres:</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Servis bağlantıları</value>
+  </data>
 </root>

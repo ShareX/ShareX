@@ -120,4 +120,13 @@
   <data name="lblWindowTitle.Text" xml:space="preserve">
     <value>Pencere başlığı:</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Kenarsız pencere</value>
+  </data>
+  <data name="btnMakeWindowBorderless.Text" xml:space="preserve">
+    <value>Pencereyi kenarsız yap</value>
+  </data>
+  <data name="mbWindowList.Text" xml:space="preserve">
+    <value>Pencere seç</value>
+  </data>
 </root>

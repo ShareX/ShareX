@@ -138,4 +138,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Tuval boyutu</value>
   </data>
+  <data name="cbtnCanvasColor.Text" xml:space="preserve">
+    <value>Tuval rengi...</value>
+  </data>
 </root>

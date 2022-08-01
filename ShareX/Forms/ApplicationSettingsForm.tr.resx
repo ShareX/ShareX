@@ -402,4 +402,16 @@
   <data name="cbListViewShowColumns.Text" xml:space="preserve">
     <value>Kolonları göster</value>
   </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Pano biçimleri</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>Liste görünümü</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Küçük resim görünümü</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Küçük resim tıklama eylemi:</value>
+  </data>
 </root>

@@ -120,4 +120,10 @@
   <data name="cbRememberWindowTitle.Text" xml:space="preserve">
     <value>Pencere başlığını hatırla</value>
   </data>
+  <data name="cbAutoCloseWindow.Text" xml:space="preserve">
+    <value>Otomatik olarak pencereyi kapat</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Kenarsız pencere ayarları</value>
+  </data>
 </root>

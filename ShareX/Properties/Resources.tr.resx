@@ -636,4 +636,13 @@ Otomatik olarak indirmek ister misiniz?</value>
   <data name="PinToScreen" xml:space="preserve">
     <value>Ekrana sabitle</value>
   </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>Bağlantılar</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>Katkıda bulunanlar</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>Gizlilik ilkesi</value>
+  </data>
 </root>

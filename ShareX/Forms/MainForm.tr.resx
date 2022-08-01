@@ -538,7 +538,7 @@
     <value>Renk seçici...</value>
   </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
-    <value>Son adresler</value>
+    <value>Son bağlantılar</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Bölge (Saydam)</value>
@@ -746,5 +746,11 @@
   </data>
   <data name="tsmiPinToScreen.Text" xml:space="preserve">
     <value>Ekrana sabitle...</value>
+  </data>
+  <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
+    <value>Kenarsız pencere...</value>
+  </data>
+  <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
+    <value>Kenarsız pencere...</value>
   </data>
 </root>

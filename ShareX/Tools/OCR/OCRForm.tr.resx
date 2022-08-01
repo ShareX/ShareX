@@ -135,4 +135,10 @@
   <data name="lblService.Text" xml:space="preserve">
     <value>Servis:</value>
   </data>
+  <data name="btnOpenServiceLink.Text" xml:space="preserve">
+    <value>Servis bağlantısını aç...</value>
+  </data>
+  <data name="cbSingleLine.Text" xml:space="preserve">
+    <value>Tek satır</value>
+  </data>
 </root>

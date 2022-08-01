@@ -121,10 +121,10 @@
     <value>Resim kopyala</value>
   </data>
   <data name="btnCopyLink.Text" xml:space="preserve">
-    <value>Link kopyala</value>
+    <value>Bağlantıyı kopyala</value>
   </data>
   <data name="btnOpenLink.Text" xml:space="preserve">
-    <value>Link aç...</value>
+    <value>Bağlantı aç...</value>
   </data>
   <data name="btnOpenFile.Text" xml:space="preserve">
     <value>Dosya aç...</value>
