@@ -43,21 +43,6 @@ namespace ShareX
             ShareXResources.ApplyTheme(this);
         }
 
-        private void btnFromClipboard_Click(object sender, EventArgs e)
-        {
-            Image = ClipboardHelpers.TryGetImage();
-
-            if (Image == null)
-            {
-                MessageBox.Show(Resources.ClipboardDoesNotContainAnImage, "ShareX - " + Resources.PinToScreen, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-        }
-
         private void btnFromScreen_Click(object sender, EventArgs e)
         {
             if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect))
@@ -71,6 +56,21 @@ namespace ShareX
                     DialogResult = DialogResult.OK;
                     Close();
                 }
+            }
+        }
+
+        private void btnFromClipboard_Click(object sender, EventArgs e)
+        {
+            Image = ClipboardHelpers.TryGetImage();
+
+            if (Image == null)
+            {
+                MessageBox.Show(Resources.ClipboardDoesNotContainAnImage, "ShareX - " + Resources.PinToScreen, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult = DialogResult.OK;
+                Close();
             }
         }
 

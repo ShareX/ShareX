@@ -160,7 +160,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnFromClipboard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>8, 48</value>
   </data>
   <data name="btnFromClipboard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 0, 0</value>
@@ -169,7 +169,7 @@
     <value>296, 32</value>
   </data>
   <data name="btnFromClipboard.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnFromClipboard.Text" xml:space="preserve">
     <value>Pin to screen from clipboard</value>
@@ -196,7 +196,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btnFromScreen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 48</value>
+    <value>8, 8</value>
   </data>
   <data name="btnFromScreen.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 0, 0</value>
@@ -205,7 +205,7 @@
     <value>296, 32</value>
   </data>
   <data name="btnFromScreen.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="btnFromScreen.Text" xml:space="preserve">
     <value>Pin to screen from screen...</value>
