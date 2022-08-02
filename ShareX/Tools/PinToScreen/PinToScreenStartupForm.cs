@@ -35,6 +35,7 @@ namespace ShareX
     public partial class PinToScreenStartupForm : Form
     {
         public Bitmap Image { get; private set; }
+        public Point? PinToScreenLocation { get; private set; }
 
         public PinToScreenStartupForm()
         {
@@ -59,12 +60,17 @@ namespace ShareX
 
         private void btnFromScreen_Click(object sender, EventArgs e)
         {
-            Image = RegionCaptureTasks.GetRegionImage();
-
-            if (Image != null)
+            if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect))
             {
-                DialogResult = DialogResult.OK;
-                Close();
+                Image = new Screenshot().CaptureRectangle(rect);
+
+                if (Image != null)
+                {
+                    PinToScreenLocation = rect.Location;
+
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
             }
         }
 

@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options)
+        public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options = null)
         {
             return GetRectangleRegion(out rect, out _, options);
         }

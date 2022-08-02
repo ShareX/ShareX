@@ -1283,19 +1283,19 @@ namespace ShareX
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    PinToScreen(form.Image);
+                    PinToScreen(form.Image, form.PinToScreenLocation);
                 }
             }
         }
 
-        public static void PinToScreen(Image image)
+        public static void PinToScreen(Image image, Point? location = null)
         {
             if (image != null)
             {
                 PinToScreenOptions options = new PinToScreenOptions();
                 options.BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
 
-                PinToScreenForm form = new PinToScreenForm(image, options);
+                PinToScreenForm form = new PinToScreenForm(image, options, location);
                 form.Show();
             }
         }

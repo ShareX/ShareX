@@ -115,7 +115,7 @@ namespace ShareX.HelpersLib
 
             if (cursorSize != null && cursorSize > 1)
             {
-                sizeMultiplier = 1f + (((int)cursorSize - 1) * 0.5f);
+                sizeMultiplier = 1f + ((cursorSize.Value - 1) * 0.5f);
             }
 
             return sizeMultiplier;

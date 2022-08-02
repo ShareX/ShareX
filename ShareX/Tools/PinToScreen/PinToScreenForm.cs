@@ -122,13 +122,20 @@ namespace ShareX
             loaded = true;
         }
 
-        public PinToScreenForm(Image image, PinToScreenOptions options) : this(options)
+        public PinToScreenForm(Image image, PinToScreenOptions options, Point? location = null) : this(options)
         {
             Image = image;
             AutoSizeForm();
 
-            Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
-            Location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, rectScreen.Size, ImageSize);
+            if (location != null)
+            {
+                Location = location.Value;
+            }
+            else
+            {
+                Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
+                Location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, rectScreen.Size, ImageSize);
+            }
         }
 
         protected override void Dispose(bool disposing)
