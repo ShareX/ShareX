@@ -2128,6 +2128,12 @@
   <ItemGroup>
     <None Include="Resources\status-away.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closedhand.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openhand.cur" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

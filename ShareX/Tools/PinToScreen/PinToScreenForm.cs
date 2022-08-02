@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -93,8 +94,9 @@ namespace ShareX
 
         public PinToScreenOptions Options { get; private set; }
 
-        private bool isDWMEnabled;
-        private bool loaded;
+        private bool isDWMEnabled, loaded, dragging;
+        private Point initialLocation;
+        private Cursor openHandCursor, closedHandCursor;
 
         protected override CreateParams CreateParams
         {
@@ -116,6 +118,10 @@ namespace ShareX
             InitializeComponent();
             TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
+
+            openHandCursor = Helpers.CreateCursor(Resources.openhand);
+            closedHandCursor = Helpers.CreateCursor(Resources.closedhand);
+            SetHandCursor(false);
 
             isDWMEnabled = NativeMethods.IsDWMEnabled();
 
@@ -144,9 +150,29 @@ namespace ShareX
             {
                 components?.Dispose();
                 Image?.Dispose();
+                openHandCursor?.Dispose();
+                closedHandCursor?.Dispose();
             }
 
             base.Dispose(disposing);
+        }
+
+        public void SetHandCursor(bool grabbing)
+        {
+            if (grabbing)
+            {
+                if (Cursor != closedHandCursor)
+                {
+                    Cursor = closedHandCursor;
+                }
+            }
+            else
+            {
+                if (Cursor != openHandCursor)
+                {
+                    Cursor = openHandCursor;
+                }
+            }
         }
 
         private void ResetImage()
@@ -284,9 +310,19 @@ namespace ShareX
                 }
                 else
                 {
-                    NativeMethods.ReleaseCapture();
-                    NativeMethods.SendMessage(Handle, (uint)WindowsMessages.NCLBUTTONDOWN, (IntPtr)WindowHitTestRegions.HTCAPTION, IntPtr.Zero);
+                    dragging = true;
+                    initialLocation = e.Location;
+                    SetHandCursor(true);
                 }
+            }
+        }
+
+        private void PinToScreenForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Location = new Point(Location.X + e.X - initialLocation.X, Location.Y + e.Y - initialLocation.Y);
+                Update();
             }
         }
 
@@ -294,6 +330,10 @@ namespace ShareX
         {
             switch (e.Button)
             {
+                case MouseButtons.Left:
+                    dragging = false;
+                    SetHandCursor(false);
+                    break;
                 case MouseButtons.Right:
                     Close();
                     break;
