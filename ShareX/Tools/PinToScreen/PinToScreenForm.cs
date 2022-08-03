@@ -197,7 +197,7 @@ namespace ShareX
 
             Point newLocation = Location;
             SpecialWindowHandles insertAfter = Options.TopMost ? SpecialWindowHandles.HWND_TOPMOST : SpecialWindowHandles.HWND_TOP;
-            SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE;
+            SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE | SetWindowPosFlags.SWP_NOSENDCHANGING;
 
             if (Options.KeepCenterLocation)
             {
