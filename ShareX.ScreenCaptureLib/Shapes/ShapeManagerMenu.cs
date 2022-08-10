@@ -1084,7 +1084,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                URLHelpers.OpenURL(Links.DocsRegionCapture);
+                URLHelpers.OpenURL(Links.DocsKeybinds);
             };
             tsddbOptions.DropDownItems.Add(tsmiKeybinds);
 
