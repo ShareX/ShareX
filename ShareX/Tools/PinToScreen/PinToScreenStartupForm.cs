@@ -28,6 +28,7 @@ using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -45,6 +46,9 @@ namespace ShareX
 
         private void btnFromScreen_Click(object sender, EventArgs e)
         {
+            Hide();
+            Thread.Sleep(250);
+
             if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect))
             {
                 Image = new Screenshot().CaptureRectangle(rect);
@@ -55,8 +59,11 @@ namespace ShareX
 
                     DialogResult = DialogResult.OK;
                     Close();
+                    return;
                 }
             }
+
+            Show();
         }
 
         private void btnFromClipboard_Click(object sender, EventArgs e)
