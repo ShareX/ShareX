@@ -1002,5 +1002,15 @@ namespace ShareX.HelpersLib
             form.Activated += (sender, e) => Cursor.Clip = form.Bounds;
             form.Deactivate += (sender, e) => Cursor.Clip = Rectangle.Empty;
         }
+
+        public static bool IsDefaultSettings<T>(IEnumerable<T> current, IEnumerable<T> source, Func<T, T, bool> predicate)
+        {
+            if (current != null && current.Count() > 0)
+            {
+                return current.All(x => source.Any(y => predicate(x, y)));
+            }
+
+            return true;
+        }
     }
 }

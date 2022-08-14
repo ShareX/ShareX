@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ShareX
 {
@@ -37,17 +36,6 @@ namespace ShareX
         public bool AutoCopy { get; set; } = false;
         public List<ServiceLink> ServiceLinks { get; set; } = DefaultServiceLinks;
         public int SelectedServiceLink { get; set; } = 0;
-
-        public bool IsDefaultServiceLinks()
-        {
-            if (ServiceLinks != null && ServiceLinks.Count > 0)
-            {
-                List<ServiceLink> defaultServiceLinks = DefaultServiceLinks;
-                return ServiceLinks.All(x => defaultServiceLinks.Any(y => x.Name == y.Name));
-            }
-
-            return false;
-        }
 
         public static List<ServiceLink> DefaultServiceLinks => new List<ServiceLink>()
         {

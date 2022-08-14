@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.Properties;
-using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
 using System;
@@ -192,38 +191,41 @@ namespace ShareX
 
         private static void ApplicationConfigBackwardCompatibilityTasks()
         {
-            if (Settings.IsUpgradeFrom("11.4.1"))
-            {
-                RegionCaptureOptions regionCaptureOptions = DefaultTaskSettings.CaptureSettings.SurfaceOptions;
-                regionCaptureOptions.AnnotationOptions = new AnnotationOptions();
-                regionCaptureOptions.LastRegionTool = ShapeType.RegionRectangle;
-                regionCaptureOptions.LastAnnotationTool = ShapeType.DrawingRectangle;
-            }
-
-            if (Settings.IsUpgradeFrom("11.5.0"))
-            {
-                if (File.Exists(Program.ChromeHostManifestFilePath))
-                {
-                    IntegrationHelpers.CreateChromeExtensionSupport(true);
-                }
-            }
-
             if (Settings.IsUpgradeFrom("13.0.2"))
             {
                 Settings.UseCustomTheme = Settings.UseDarkTheme;
-            }
-
-            if (Settings.IsUpgradeFrom("13.3.1") && Settings.Themes != null)
-            {
-                Settings.Themes.Add(ShareXTheme.NordDarkTheme);
-                Settings.Themes.Add(ShareXTheme.NordLightTheme);
-                Settings.Themes.Add(ShareXTheme.DraculaTheme);
             }
 
             if (Settings.IsUpgradeFrom("13.4.0"))
             {
                 DefaultTaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted =
                     DefaultTaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None;
+            }
+
+            if (Settings.IsUpgradeFrom("14.1.1"))
+            {
+                if (Helpers.IsDefaultSettings(Settings.Themes, ShareXTheme.GetDefaultThemes(), (x, y) => x.Name == y.Name))
+                {
+                    if (!Settings.Themes.IsValidIndex(Settings.SelectedTheme))
+                    {
+                        Settings.SelectedTheme = 0;
+                    }
+
+                    ShareXTheme selectedTheme = Settings.Themes[Settings.SelectedTheme];
+
+                    Settings.Themes = ShareXTheme.GetDefaultThemes();
+
+                    int index = Settings.Themes.FindIndex(x => x.Name.Equals(selectedTheme.Name, StringComparison.OrdinalIgnoreCase));
+
+                    if (index >= 0)
+                    {
+                        Settings.SelectedTheme = index;
+                    }
+                    else
+                    {
+                        Settings.SelectedTheme = 0;
+                    }
+                }
             }
         }
 

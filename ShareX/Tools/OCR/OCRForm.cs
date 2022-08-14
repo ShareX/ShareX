@@ -84,7 +84,7 @@ namespace ShareX
             nudScaleFactor.SetValue((decimal)Options.ScaleFactor);
             cbSingleLine.Checked = Options.SingleLine;
 
-            if (Options.ServiceLinks == null || Options.IsDefaultServiceLinks())
+            if (Helpers.IsDefaultSettings(Options.ServiceLinks, OCROptions.DefaultServiceLinks, (x, y) => x.Name == y.Name))
             {
                 Options.ServiceLinks = OCROptions.DefaultServiceLinks;
             }
