@@ -1195,6 +1195,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.ToolCrop:
                     shape = new CropTool();
                     break;
+                case ShapeType.ToolTrimInterior:
+                    shape = new TrimInteriorTool();
+                    break;
             }
 
             shape.Manager = this;
@@ -1620,6 +1623,16 @@ namespace ShareX.ScreenCaptureLib
             MoveAll(offset.X, offset.Y);
         }
 
+        public void CollapseAllHorizontal(float x, float width)
+        {
+            // todo
+        }
+
+        public void CollapseAllVertical(float y, float height)
+        {
+            // todo
+        }
+
         public void RemoveOutsideShapes()
         {
             foreach (BaseShape shape in Shapes.ToArray())
@@ -1805,6 +1818,28 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return null;
+        }
+
+        public void TrimInterior(RectangleF rect)
+        {
+            bool isHorizontal = rect.Width > rect.Height;
+
+            rect = CaptureHelpers.ScreenToClient(rect.Round());
+            PointF offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
+            rect.X -= offset.X;
+            rect.Y -= offset.Y;
+            Rectangle cropRect = Rectangle.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height), rect.Round());
+
+            if (isHorizontal && cropRect.Width > 0)
+            {
+                CollapseAllHorizontal(rect.X, rect.Width);
+                UpdateCanvas(ImageHelpers.TrimBitmapInteriorHorizontal(Form.Canvas, cropRect.X, cropRect.Width));
+            }
+            else if (!isHorizontal && cropRect.Height > 0)
+            {
+                CollapseAllVertical(rect.Y, rect.Height);
+                UpdateCanvas(ImageHelpers.TrimBitmapInteriorVertical(Form.Canvas, cropRect.Y, cropRect.Height));
+            }
         }
 
         public Color GetColor(Bitmap bmp, Point pos)

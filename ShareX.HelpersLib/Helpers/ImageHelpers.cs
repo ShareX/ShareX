@@ -223,6 +223,70 @@ namespace ShareX.HelpersLib
             return null;
         }
 
+        public static Bitmap TrimBitmapInteriorHorizontal(Bitmap bmp, int x, int width)
+        {
+            if (bmp != null && width > 0)
+            {
+                Bitmap leftPart = null, rightPart = null;
+                if (x > 0)
+                {
+                    leftPart = CropBitmap(bmp, new Rectangle(0, 0, Math.Min(x, bmp.Width), bmp.Height));
+                }
+                if (x + width < bmp.Width)
+                {
+                    int x2 = Math.Max(x + width, 0);
+                    rightPart = CropBitmap(bmp, new Rectangle(x2, 0, bmp.Width - x2, bmp.Height));
+                }
+
+                if (leftPart != null && rightPart != null)
+                {
+                    return CombineImages(new List<Bitmap> { leftPart, rightPart }, Orientation.Horizontal);
+                }
+                else if (leftPart != null)
+                {
+                    return leftPart;
+                }
+                else if (rightPart != null)
+                {
+                    return rightPart;
+                }
+            }
+
+            return null;
+        }
+
+        public static Bitmap TrimBitmapInteriorVertical(Bitmap bmp, int y, int height)
+        {
+            if (bmp != null && height > 0)
+            {
+                Bitmap topPart = null, bottomPart = null;
+                if (y > 0)
+                {
+                    topPart = CropBitmap(bmp, new Rectangle(0, 0, bmp.Width, Math.Min(y, bmp.Height)));
+                }
+                if (y + height < bmp.Height)
+                {
+                    int y2 = Math.Max(y + height, 0);
+                    bottomPart = CropBitmap(bmp, new Rectangle(0, y2, bmp.Width, bmp.Height - y2));
+                }
+
+                if (topPart != null && bottomPart != null)
+                {
+                    return CombineImages(new List<Bitmap> { topPart, bottomPart }, Orientation.Vertical);
+                }
+                else if (topPart != null)
+                {
+                    return topPart;
+                }
+                else if (bottomPart != null)
+                {
+                    return bottomPart;
+                }
+            }
+
+            return null;
+        }
+
         /// <summary>Automatically crop image to remove transparent outside area.</summary>
         public static Bitmap AutoCropTransparent(Bitmap bmp)
         {
