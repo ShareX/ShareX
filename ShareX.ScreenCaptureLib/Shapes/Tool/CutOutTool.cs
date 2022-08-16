@@ -52,21 +52,55 @@ namespace ShareX.ScreenCaptureLib
 
             if (confirmButton != null && cancelButton != null)
             {
-                if (Rectangle.Bottom + buttonOffset + buttonSize.Height > Manager.Form.ClientArea.Bottom &&
-                    Rectangle.Width > (buttonSize.Width * 2) + (buttonOffset * 3) &&
-                    Rectangle.Height > buttonSize.Height + (buttonOffset * 2))
+                if (IsVerticalTrim)
                 {
-                    confirmButton.Rectangle = new RectangleF(Rectangle.Right - (buttonOffset * 2) - (buttonSize.Width * 2),
-                        Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
-                    cancelButton.Rectangle = new RectangleF(Rectangle.Right - buttonOffset - buttonSize.Width,
-                        Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
+                    float spaceBelow = Manager.Form.ClientArea.Bottom - Rectangle.Bottom;
+                    bool positionBelow = spaceBelow >= buttonSize.Height + 2 * buttonOffset;
+                    float buttonsTop = positionBelow ? Rectangle.Bottom + buttonOffset : Rectangle.Top - buttonOffset - buttonSize.Height;
+                    float buttonsLeft = Rectangle.Left + Rectangle.Width / 2 - (2 * buttonSize.Width + buttonOffset) / 2;
+                    float buttonsRight = buttonsLeft + 2 * buttonSize.Width + buttonOffset;
+                    bool overflowsLeft = buttonsLeft < Manager.Form.ClientArea.Left + buttonOffset;
+                    bool overflowsRight = buttonsRight >= Manager.Form.ClientArea.Right - buttonOffset;
+                    if (overflowsLeft && overflowsRight)
+                    {
+                        // can't fix
+                    }
+                    else if (overflowsLeft)
+                    {
+                        buttonsLeft = Manager.Form.ClientArea.Left + buttonOffset;
+                    }
+                    else if (overflowsRight)
+                    {
+                        buttonsRight = Manager.Form.ClientArea.Right - buttonOffset;
+                        buttonsLeft = buttonsRight - 2 * buttonSize.Width - buttonOffset;
+                    }
+                    confirmButton.Rectangle = new RectangleF(buttonsLeft, buttonsTop, buttonSize.Width, buttonSize.Height);
+                    cancelButton.Rectangle = confirmButton.Rectangle.LocationOffset(buttonSize.Width + buttonOffset, 0);
                 }
                 else
                 {
-                    confirmButton.Rectangle = new RectangleF(Rectangle.Right - (buttonSize.Width * 2) - buttonOffset,
-                        Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
-                    cancelButton.Rectangle = new RectangleF(Rectangle.Right - buttonSize.Width,
-                        Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
+                    float spaceRight = Manager.Form.ClientArea.Right - Rectangle.Right;
+                    bool positionRight = spaceRight >= buttonSize.Width + 2 * buttonOffset;
+                    float buttonsLeft = positionRight ? Rectangle.Right + buttonOffset : Rectangle.Left - buttonOffset - buttonSize.Width;
+                    float buttonsTop = Rectangle.Top + Rectangle.Height / 2 - (2 * buttonSize.Height + buttonOffset) / 2;
+                    float buttonsBottom = buttonsTop + 2 * buttonSize.Height + buttonOffset;
+                    bool overflowsTop = buttonsTop < Manager.Form.ClientArea.Top + buttonOffset;
+                    bool overflowsBottom = buttonsBottom >= Manager.Form.ClientArea.Bottom - buttonOffset;
+                    if (overflowsTop && overflowsBottom)
+                    {
+                        // can't fix
+                    }
+                    else if (overflowsTop)
+                    {
+                        buttonsTop = Manager.Form.ClientArea.Top + buttonOffset;
+                    }
+                    else if (overflowsBottom)
+                    {
+                        buttonsBottom = Manager.Form.ClientArea.Bottom - buttonOffset;
+                        buttonsTop = buttonsBottom - 2 * buttonSize.Height - buttonOffset;
+                    }
+                    confirmButton.Rectangle = new RectangleF(buttonsLeft, buttonsTop, buttonSize.Width, buttonSize.Height);
+                    cancelButton.Rectangle = confirmButton.Rectangle.LocationOffset(0, buttonSize.Height + buttonOffset);
                 }
             }
         }
