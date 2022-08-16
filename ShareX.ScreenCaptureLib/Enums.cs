@@ -292,7 +292,7 @@ namespace ShareX.ScreenCaptureLib
         EffectPixelate,
         EffectHighlight,
         ToolCrop,
-        ToolTrimInterior
+        ToolCutOut
     }
 
     public enum ScrollingCaptureScrollMethod // Localized

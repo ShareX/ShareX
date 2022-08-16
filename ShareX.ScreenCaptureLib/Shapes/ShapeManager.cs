@@ -1195,8 +1195,8 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.ToolCrop:
                     shape = new CropTool();
                     break;
-                case ShapeType.ToolTrimInterior:
-                    shape = new TrimInteriorTool();
+                case ShapeType.ToolCutOut:
+                    shape = new CutOutTool();
                     break;
             }
 
@@ -1820,7 +1820,7 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public void TrimInterior(RectangleF rect)
+        public void CutOut(RectangleF rect)
         {
             bool isHorizontal = rect.Width > rect.Height;
 
@@ -1833,12 +1833,12 @@ namespace ShareX.ScreenCaptureLib
             if (isHorizontal && cropRect.Width > 0)
             {
                 CollapseAllHorizontal(rect.X, rect.Width);
-                UpdateCanvas(ImageHelpers.TrimBitmapInteriorHorizontal(Form.Canvas, cropRect.X, cropRect.Width));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddleHorizontal(Form.Canvas, cropRect.X, cropRect.Width));
             }
             else if (!isHorizontal && cropRect.Height > 0)
             {
                 CollapseAllVertical(rect.Y, rect.Height);
-                UpdateCanvas(ImageHelpers.TrimBitmapInteriorVertical(Form.Canvas, cropRect.Y, cropRect.Height));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddleVertical(Form.Canvas, cropRect.Y, cropRect.Height));
             }
         }
 

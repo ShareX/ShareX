@@ -29,9 +29,9 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class TrimInteriorTool : BaseTool
+    public class CutOutTool : BaseTool
     {
-        public override ShapeType ShapeType { get; } = ShapeType.ToolTrimInterior;
+        public override ShapeType ShapeType { get; } = ShapeType.ToolCutOut;
 
         public override bool LimitRectangleToInsideCanvas { get; } = true;
 
@@ -112,7 +112,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ConfirmButton_MousePressed(object sender, MouseEventArgs e)
         {
-            Manager.TrimInterior(Rectangle);
+            Manager.CutOut(Rectangle);
             Remove();
         }
 

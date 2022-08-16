@@ -223,7 +223,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap TrimBitmapInteriorHorizontal(Bitmap bmp, int x, int width)
+        public static Bitmap CutOutBitmapMiddleHorizontal(Bitmap bmp, int x, int width)
         {
             if (bmp != null && width > 0)
             {
@@ -255,7 +255,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap TrimBitmapInteriorVertical(Bitmap bmp, int y, int height)
+        public static Bitmap CutOutBitmapMiddleVertical(Bitmap bmp, int y, int height)
         {
             if (bmp != null && height > 0)
             {
