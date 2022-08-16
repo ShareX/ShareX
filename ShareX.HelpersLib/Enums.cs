@@ -212,4 +212,13 @@ namespace ShareX.HelpersLib
         RomanNumeralsUppercase,
         RomanNumeralsLowercase
     }
+
+    public enum CutOutEffectType // Localized (probably)
+    {
+        None,
+        ZigZag,
+        TornEdge,
+        Wave,
+        Gradient
+    }
 }

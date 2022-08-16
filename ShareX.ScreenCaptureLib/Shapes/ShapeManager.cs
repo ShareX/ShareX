@@ -1931,12 +1931,12 @@ namespace ShareX.ScreenCaptureLib
             if (isHorizontal && cropRect.Width > 0)
             {
                 CollapseAllHorizontal(rect.X, rect.Width);
-                UpdateCanvas(ImageHelpers.CutOutBitmapMiddleHorizontal(Form.Canvas, cropRect.X, cropRect.Width));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddleHorizontal(Form.Canvas, cropRect.X, cropRect.Width, CutOutEffectType.TornEdge, 5));
             }
             else if (!isHorizontal && cropRect.Height > 0)
             {
                 CollapseAllVertical(rect.Y, rect.Height);
-                UpdateCanvas(ImageHelpers.CutOutBitmapMiddleVertical(Form.Canvas, cropRect.Y, cropRect.Height));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddleVertical(Form.Canvas, cropRect.Y, cropRect.Height, CutOutEffectType.TornEdge, 5));
             }
         }
 

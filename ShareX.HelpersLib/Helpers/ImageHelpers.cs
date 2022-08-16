@@ -223,7 +223,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap CutOutBitmapMiddleHorizontal(Bitmap bmp, int x, int width)
+        public static Bitmap CutOutBitmapMiddleHorizontal(Bitmap bmp, int x, int width, CutOutEffectType effectType, int effectSize)
         {
             if (bmp != null && width > 0)
             {
@@ -231,11 +231,39 @@ namespace ShareX.HelpersLib
                 if (x > 0)
                 {
                     leftPart = CropBitmap(bmp, new Rectangle(0, 0, Math.Min(x, bmp.Width), bmp.Height));
+                    switch (effectType)
+                    {
+                        case CutOutEffectType.None:
+                            break;
+                        case CutOutEffectType.ZigZag:
+                            break;
+                        case CutOutEffectType.TornEdge:
+                            leftPart = TornEdges(leftPart, effectSize, effectSize * 2, AnchorStyles.Right, false);
+                            break;
+                        case CutOutEffectType.Wave:
+                            break;
+                        case CutOutEffectType.Gradient:
+                            break;
+                    }
                 }
                 if (x + width < bmp.Width)
                 {
                     int x2 = Math.Max(x + width, 0);
                     rightPart = CropBitmap(bmp, new Rectangle(x2, 0, bmp.Width - x2, bmp.Height));
+                    switch (effectType)
+                    {
+                        case CutOutEffectType.None:
+                            break;
+                        case CutOutEffectType.ZigZag:
+                            break;
+                        case CutOutEffectType.TornEdge:
+                            rightPart = TornEdges(rightPart, effectSize, effectSize * 2, AnchorStyles.Left, false);
+                            break;
+                        case CutOutEffectType.Wave:
+                            break;
+                        case CutOutEffectType.Gradient:
+                            break;
+                    }
                 }
 
                 if (leftPart != null && rightPart != null)
@@ -255,7 +283,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap CutOutBitmapMiddleVertical(Bitmap bmp, int y, int height)
+        public static Bitmap CutOutBitmapMiddleVertical(Bitmap bmp, int y, int height, CutOutEffectType effectType, int effectSize)
         {
             if (bmp != null && height > 0)
             {
@@ -263,11 +291,39 @@ namespace ShareX.HelpersLib
                 if (y > 0)
                 {
                     topPart = CropBitmap(bmp, new Rectangle(0, 0, bmp.Width, Math.Min(y, bmp.Height)));
+                    switch (effectType)
+                    {
+                        case CutOutEffectType.None:
+                            break;
+                        case CutOutEffectType.ZigZag:
+                            break;
+                        case CutOutEffectType.TornEdge:
+                            topPart = TornEdges(topPart, effectSize, effectSize * 2, AnchorStyles.Bottom, false);
+                            break;
+                        case CutOutEffectType.Wave:
+                            break;
+                        case CutOutEffectType.Gradient:
+                            break;
+                    }
                 }
                 if (y + height < bmp.Height)
                 {
                     int y2 = Math.Max(y + height, 0);
                     bottomPart = CropBitmap(bmp, new Rectangle(0, y2, bmp.Width, bmp.Height - y2));
+                    switch (effectType)
+                    {
+                        case CutOutEffectType.None:
+                            break;
+                        case CutOutEffectType.ZigZag:
+                            break;
+                        case CutOutEffectType.TornEdge:
+                            bottomPart = TornEdges(bottomPart, effectSize, effectSize * 2, AnchorStyles.Top, false);
+                            break;
+                        case CutOutEffectType.Wave:
+                            break;
+                        case CutOutEffectType.Gradient:
+                            break;
+                    }
                 }
 
                 if (topPart != null && bottomPart != null)
