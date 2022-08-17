@@ -223,124 +223,72 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap CutOutBitmapMiddleHorizontal(Bitmap bmp, int x, int width, CutOutEffectType effectType, int effectSize)
+        private static Bitmap ApplyCutOutEffect(Bitmap bmp, AnchorStyles effectEdge, CutOutEffectType effectType, int effectSize)
         {
-            if (bmp != null && width > 0)
+            switch (effectType)
             {
-                Bitmap leftPart = null, rightPart = null;
-                if (x > 0)
-                {
-                    leftPart = CropBitmap(bmp, new Rectangle(0, 0, Math.Min(x, bmp.Width), bmp.Height));
-                    switch (effectType)
-                    {
-                        case CutOutEffectType.None:
-                            break;
-                        case CutOutEffectType.ZigZag:
-                            break;
-                        case CutOutEffectType.TornEdge:
-                            leftPart = TornEdges(leftPart, effectSize, effectSize * 2, AnchorStyles.Right, false);
-                            break;
-                        case CutOutEffectType.Wave:
-                            break;
-                        case CutOutEffectType.Gradient:
-                            break;
-                    }
-                }
-                if (x + width < bmp.Width)
-                {
-                    int x2 = Math.Max(x + width, 0);
-                    rightPart = CropBitmap(bmp, new Rectangle(x2, 0, bmp.Width - x2, bmp.Height));
-                    switch (effectType)
-                    {
-                        case CutOutEffectType.None:
-                            break;
-                        case CutOutEffectType.ZigZag:
-                            break;
-                        case CutOutEffectType.TornEdge:
-                            rightPart = TornEdges(rightPart, effectSize, effectSize * 2, AnchorStyles.Left, false);
-                            break;
-                        case CutOutEffectType.Wave:
-                            break;
-                        case CutOutEffectType.Gradient:
-                            break;
-                    }
-                }
+                case CutOutEffectType.None:
+                    return bmp;
 
-                if (leftPart != null && rightPart != null)
-                {
-                    return CombineImages(new List<Bitmap> { leftPart, rightPart }, Orientation.Horizontal);
-                }
-                else if (leftPart != null)
-                {
-                    return leftPart;
-                }
-                else if (rightPart != null)
-                {
-                    return rightPart;
-                }
+                case CutOutEffectType.ZigZag:
+                    return bmp;
+
+                case CutOutEffectType.TornEdge:
+                    return TornEdges(bmp, effectSize, effectSize * 2, effectEdge, false);
+
+                case CutOutEffectType.Wave:
+                    return bmp;
+
+                case CutOutEffectType.Gradient:
+                    return bmp;
             }
 
-            return null;
+            throw new NotImplementedException(); // should not be reachable
         }
 
-        public static Bitmap CutOutBitmapMiddleVertical(Bitmap bmp, int y, int height, CutOutEffectType effectType, int effectSize)
+        public static Bitmap CutOutBitmapMiddle(Bitmap bmp, Orientation orientation, int start, int size, CutOutEffectType effectType, int effectSize)
         {
-            if (bmp != null && height > 0)
+            if (bmp != null && size > 0)
             {
-                Bitmap topPart = null, bottomPart = null;
-                if (y > 0)
+                Bitmap firstPart = null, secondPart = null;
+
+                if (start > 0)
                 {
-                    topPart = CropBitmap(bmp, new Rectangle(0, 0, bmp.Width, Math.Min(y, bmp.Height)));
-                    switch (effectType)
-                    {
-                        case CutOutEffectType.None:
-                            break;
-                        case CutOutEffectType.ZigZag:
-                            break;
-                        case CutOutEffectType.TornEdge:
-                            topPart = TornEdges(topPart, effectSize, effectSize * 2, AnchorStyles.Bottom, false);
-                            break;
-                        case CutOutEffectType.Wave:
-                            break;
-                        case CutOutEffectType.Gradient:
-                            break;
-                    }
-                }
-                if (y + height < bmp.Height)
-                {
-                    int y2 = Math.Max(y + height, 0);
-                    bottomPart = CropBitmap(bmp, new Rectangle(0, y2, bmp.Width, bmp.Height - y2));
-                    switch (effectType)
-                    {
-                        case CutOutEffectType.None:
-                            break;
-                        case CutOutEffectType.ZigZag:
-                            break;
-                        case CutOutEffectType.TornEdge:
-                            bottomPart = TornEdges(bottomPart, effectSize, effectSize * 2, AnchorStyles.Top, false);
-                            break;
-                        case CutOutEffectType.Wave:
-                            break;
-                        case CutOutEffectType.Gradient:
-                            break;
-                    }
+                    Rectangle r = orientation == Orientation.Horizontal
+                        ? new Rectangle(0, 0, Math.Min(start, bmp.Width), bmp.Height)
+                        : new Rectangle(0, 0, bmp.Width, Math.Min(start, bmp.Height));
+                    firstPart = CropBitmap(bmp, r);
+                    AnchorStyles effectEdge = orientation == Orientation.Horizontal ? AnchorStyles.Right : AnchorStyles.Bottom;
+                    firstPart = ApplyCutOutEffect(firstPart, effectEdge, effectType, effectSize);
                 }
 
-                if (topPart != null && bottomPart != null)
+                int cutDimension = orientation == Orientation.Horizontal ? bmp.Width : bmp.Height;
+                if (start + size < cutDimension)
                 {
-                    return CombineImages(new List<Bitmap> { topPart, bottomPart }, Orientation.Vertical);
+                    int end = Math.Max(start + size, 0);
+                    Rectangle r = orientation == Orientation.Horizontal
+                        ? new Rectangle(end, 0, bmp.Width - end, bmp.Height)
+                        : new Rectangle(0, end, bmp.Width, bmp.Height - end);
+                    secondPart = CropBitmap(bmp, r);
+                    AnchorStyles effectEdge = orientation == Orientation.Horizontal ? AnchorStyles.Left : AnchorStyles.Top;
+                    secondPart = ApplyCutOutEffect(secondPart, effectEdge, effectType, effectSize);
                 }
-                else if (topPart != null)
+
+                if (firstPart != null && secondPart != null)
                 {
-                    return topPart;
+                    return CombineImages(new List<Bitmap> { firstPart, secondPart }, orientation);
                 }
-                else if (bottomPart != null)
+                else if (firstPart != null)
                 {
-                    return bottomPart;
+                    return firstPart;
+                }
+                else if (secondPart != null)
+                {
+                    return secondPart;
                 }
             }
 
-            return null;
+            return bmp;
         }
 
         /// <summary>Automatically crop image to remove transparent outside area.</summary>
