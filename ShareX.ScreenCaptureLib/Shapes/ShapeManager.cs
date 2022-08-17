@@ -1672,8 +1672,7 @@ namespace ShareX.ScreenCaptureLib
 
             foreach (BaseShape shape in toDelete)
             {
-                shape.Dispose();
-                Shapes.Remove(shape);
+                DeleteShape(shape);
             }
         }
 
@@ -1726,8 +1725,7 @@ namespace ShareX.ScreenCaptureLib
 
             foreach (BaseShape shape in toDelete)
             {
-                shape.Dispose();
-                Shapes.Remove(shape);
+                DeleteShape(shape);
             }
         }
 
