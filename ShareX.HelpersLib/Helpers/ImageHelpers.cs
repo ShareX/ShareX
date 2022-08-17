@@ -238,9 +238,6 @@ namespace ShareX.HelpersLib
 
                 case CutOutEffectType.Wave:
                     return WavyEdges(bmp, effectSize, effectSize * 5, effectEdge);
-
-                case CutOutEffectType.Gradient:
-                    return bmp;
             }
 
             throw new NotImplementedException(); // should not be reachable

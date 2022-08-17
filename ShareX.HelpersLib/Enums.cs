@@ -218,7 +218,6 @@ namespace ShareX.HelpersLib
         None,
         ZigZag,
         TornEdge,
-        Wave,
-        Gradient
+        Wave
     }
 }
