@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -122,11 +123,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsHorizontalTrim)
                 {
-                    g.FillRectangle(selectionHighlightBrush, new RectangleF(Rectangle.X, g.ClipBounds.Y, Rectangle.Width, g.ClipBounds.Height));
+                    g.FillRectangle(selectionHighlightBrush, new RectangleF(Rectangle.X, Math.Max(g.ClipBounds.Y, Manager.Form.CanvasRectangle.Y), Rectangle.Width, Math.Min(g.ClipBounds.Height, Manager.Form.CanvasRectangle.Height)));
                 }
                 else if (IsVerticalTrim)
                 {
-                    g.FillRectangle(selectionHighlightBrush, new RectangleF(g.ClipBounds.X, Rectangle.Y, g.ClipBounds.Width, Rectangle.Height));
+                    g.FillRectangle(selectionHighlightBrush, new RectangleF(Math.Max(g.ClipBounds.X, Manager.Form.CanvasRectangle.X), Rectangle.Y, Math.Min(g.ClipBounds.Width, Manager.Form.CanvasRectangle.Width), Rectangle.Height));
                 }
             }
         }
