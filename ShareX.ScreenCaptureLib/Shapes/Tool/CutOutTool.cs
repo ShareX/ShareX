@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -39,7 +38,8 @@ namespace ShareX.ScreenCaptureLib
         public bool IsHorizontalTrim => Rectangle.Width >= Options.MinimumSize && Rectangle.Width > Rectangle.Height;
         public bool IsVerticalTrim => Rectangle.Height >= Options.MinimumSize && Rectangle.Height >= Rectangle.Width;
 
-        public override bool IsValidShape {
+        public override bool IsValidShape
+        {
             get
             {
                 if (!IsHorizontalTrim && !IsVerticalTrim) return false;
