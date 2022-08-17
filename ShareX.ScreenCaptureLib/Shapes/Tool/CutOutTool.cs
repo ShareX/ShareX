@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
         private Size buttonSize = new Size(80, 40);
         private int buttonOffset = 15;
 
-        private Brush EffectBrush = new SolidBrush(Color.FromArgb(128, Color.Gray));
+        private Brush selectionHighlightBrush = new SolidBrush(Color.FromArgb(128, Color.Gray));
 
         public override void OnUpdate()
         {
@@ -109,11 +109,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsHorizontalTrim)
             {
-                g.FillRectangle(EffectBrush, new RectangleF(Rectangle.X, g.ClipBounds.Y, Rectangle.Width, g.ClipBounds.Height));
+                g.FillRectangle(selectionHighlightBrush, new RectangleF(Rectangle.X, g.ClipBounds.Y, Rectangle.Width, g.ClipBounds.Height));
             }
             else if (IsVerticalTrim)
             {
-                g.FillRectangle(EffectBrush, new RectangleF(g.ClipBounds.X, Rectangle.Y, g.ClipBounds.Width, Rectangle.Height));
+                g.FillRectangle(selectionHighlightBrush, new RectangleF(g.ClipBounds.X, Rectangle.Y, g.ClipBounds.Width, Rectangle.Height));
             }
         }
 
@@ -168,6 +168,8 @@ namespace ShareX.ScreenCaptureLib
         public override void Dispose()
         {
             base.Dispose();
+
+            selectionHighlightBrush.Dispose();
 
             if ((confirmButton != null && confirmButton.IsCursorHover) || (cancelButton != null && cancelButton.IsCursorHover))
             {
