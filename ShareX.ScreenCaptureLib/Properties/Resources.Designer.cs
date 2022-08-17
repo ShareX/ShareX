@@ -285,6 +285,24 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cut cut effect size.
+        /// </summary>
+        internal static string CutOutEffectSize {
+            get {
+                return ResourceManager.GetString("CutOutEffectSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cut out effect.
+        /// </summary>
+        internal static string CutOutEffectType {
+            get {
+                return ResourceManager.GetString("CutOutEffectType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap disk_black {

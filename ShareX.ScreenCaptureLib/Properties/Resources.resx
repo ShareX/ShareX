@@ -805,4 +805,10 @@ X: {4} Y: {5}</value>
     <value>CRF:</value>
     <comment>@Invariant</comment>
   </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Cut cut effect size</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Cut out effect</value>
+  </data>
 </root>
