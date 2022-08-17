@@ -38,11 +38,23 @@ namespace ShareX.ScreenCaptureLib
         public bool IsHorizontalTrim => Rectangle.Width >= Options.MinimumSize && Rectangle.Width > Rectangle.Height;
         public bool IsVerticalTrim => Rectangle.Height >= Options.MinimumSize && Rectangle.Height >= Rectangle.Width;
 
-        public override bool IsValidShape => IsHorizontalTrim || IsVerticalTrim;
+        public override bool IsValidShape {
+            get
+            {
+                if (!IsHorizontalTrim && !IsVerticalTrim) return false;
+                if (IsHorizontalTrim && Rectangle.Left <= Manager.Form.CanvasRectangle.Left && Rectangle.Right >= Manager.Form.CanvasRectangle.Right) return false;
+                if (IsVerticalTrim && Rectangle.Top <= Manager.Form.CanvasRectangle.Top && Rectangle.Bottom >= Manager.Form.CanvasRectangle.Bottom) return false;
+                return true;
+            }
+        }
 
         private ImageEditorButton confirmButton, cancelButton;
         private Size buttonSize = new Size(80, 40);
         private int buttonOffset = 15;
+
+        public override void ShowNodes()
+        {
+        }
 
         public override void OnUpdate()
         {
