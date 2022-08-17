@@ -49,6 +49,22 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public RectangleF CutOutRectangle
+        {
+            get
+            {
+                if (IsHorizontalTrim)
+                {
+                    return new RectangleF(Rectangle.X, Manager.Form.CanvasRectangle.Y, Rectangle.Width, Manager.Form.CanvasRectangle.Height);
+                }
+                if (IsVerticalTrim)
+                {
+                    return new RectangleF(Manager.Form.CanvasRectangle.X, Rectangle.Y, Manager.Form.CanvasRectangle.Width, Rectangle.Height);
+                }
+                return RectangleF.Empty;
+            }
+        }
+
         private ImageEditorButton confirmButton, cancelButton;
         private Size buttonSize = new Size(80, 40);
         private int buttonOffset = 15;
@@ -121,14 +137,7 @@ namespace ShareX.ScreenCaptureLib
             using (Image selectionHighlightPattern = ImageHelpers.CreateCheckerPattern(8, 8, Color.FromArgb(128, Color.White), Color.FromArgb(128, Color.Gray)))
             using (Brush selectionHighlightBrush = new TextureBrush(selectionHighlightPattern, System.Drawing.Drawing2D.WrapMode.Tile))
             {
-                if (IsHorizontalTrim)
-                {
-                    g.FillRectangle(selectionHighlightBrush, new RectangleF(Rectangle.X, Math.Max(g.ClipBounds.Y, Manager.Form.CanvasRectangle.Y), Rectangle.Width, Math.Min(g.ClipBounds.Height, Manager.Form.CanvasRectangle.Height)));
-                }
-                else if (IsVerticalTrim)
-                {
-                    g.FillRectangle(selectionHighlightBrush, new RectangleF(Math.Max(g.ClipBounds.X, Manager.Form.CanvasRectangle.X), Rectangle.Y, Math.Min(g.ClipBounds.Width, Manager.Form.CanvasRectangle.Width), Rectangle.Height));
-                }
+                g.FillRectangle(selectionHighlightBrush, CutOutRectangle);
             }
         }
 
