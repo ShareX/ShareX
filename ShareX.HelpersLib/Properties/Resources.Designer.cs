@@ -686,6 +686,42 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No effect.
+        /// </summary>
+        internal static string CutOutEffectType_None {
+            get {
+                return ResourceManager.GetString("CutOutEffectType_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Torn edges.
+        /// </summary>
+        internal static string CutOutEffectType_TornEdge {
+            get {
+                return ResourceManager.GetString("CutOutEffectType_TornEdge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wave.
+        /// </summary>
+        internal static string CutOutEffectType_Wave {
+            get {
+                return ResourceManager.GetString("CutOutEffectType_Wave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sawtooth.
+        /// </summary>
+        internal static string CutOutEffectType_ZigZag {
+            get {
+                return ResourceManager.GetString("CutOutEffectType_ZigZag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse for a folder....
         /// </summary>
         internal static string DirectoryNameEditor_EditValue_Browse_for_a_folder___ {
@@ -3649,6 +3685,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ShapeType_ToolCrop {
             get {
                 return ResourceManager.GetString("ShapeType_ToolCrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cut out.
+        /// </summary>
+        internal static string ShapeType_ToolCutOut {
+            get {
+                return ResourceManager.GetString("ShapeType_ToolCutOut", resourceCulture);
             }
         }
         

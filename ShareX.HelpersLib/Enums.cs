@@ -213,7 +213,7 @@ namespace ShareX.HelpersLib
         RomanNumeralsLowercase
     }
 
-    public enum CutOutEffectType // TODO: localize
+    public enum CutOutEffectType // Localized
     {
         None,
         ZigZag,
