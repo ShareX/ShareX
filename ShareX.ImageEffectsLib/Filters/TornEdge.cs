@@ -52,7 +52,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges);
+            return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges, true);
         }
     }
 }

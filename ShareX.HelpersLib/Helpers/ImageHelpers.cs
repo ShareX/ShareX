@@ -231,10 +231,10 @@ namespace ShareX.HelpersLib
                     return bmp;
 
                 case CutOutEffectType.ZigZag:
-                    return bmp;
+                    return TornEdges(bmp, effectSize, effectSize, effectEdge, false, false);
 
                 case CutOutEffectType.TornEdge:
-                    return TornEdges(bmp, effectSize, effectSize * 2, effectEdge, false);
+                    return TornEdges(bmp, effectSize, effectSize * 2, effectEdge, false, true);
 
                 case CutOutEffectType.Wave:
                     return WavyEdges(bmp, effectSize, effectSize * 5, effectEdge);
@@ -1749,7 +1749,7 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Bitmap TornEdges(Bitmap bmp, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges)
+        public static Bitmap TornEdges(Bitmap bmp, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges, bool random)
         {
             if (tornDepth < 1 || tornRange < 1 || sides == AnchorStyles.None)
             {
@@ -1768,53 +1768,57 @@ namespace ShareX.HelpersLib
 
             if (sides.HasFlag(AnchorStyles.Top) && horizontalTornCount > 1)
             {
-                for (int x = 0; x < horizontalTornCount - 1; x++)
+                for (int x = 0; x < bmp.Width; x += tornRange)
                 {
-                    points.Add(new Point(tornRange * x, RandomFast.Next(0, tornDepth)));
+                    int y = random ? RandomFast.Next(0, tornDepth) : ((x / tornRange) & 1) * tornDepth;
+                    points.Add(new Point(x, y));
                 }
             }
             else
             {
                 points.Add(new Point(0, 0));
-                points.Add(new Point(bmp.Width - 1, 0));
+                points.Add(new Point(bmp.Width, 0));
             }
 
             if (sides.HasFlag(AnchorStyles.Right) && verticalTornCount > 1)
             {
-                for (int y = 0; y < verticalTornCount - 1; y++)
+                for (int y = 0; y < bmp.Height; y += tornRange)
                 {
-                    points.Add(new Point(bmp.Width - 1 - RandomFast.Next(0, tornDepth), tornRange * y));
+                    int x = random ? RandomFast.Next(0, tornDepth) : ((y / tornRange) & 1) * tornDepth;
+                    points.Add(new Point(bmp.Width - tornDepth + x, y));
                 }
             }
             else
             {
-                points.Add(new Point(bmp.Width - 1, 0));
-                points.Add(new Point(bmp.Width - 1, bmp.Height - 1));
+                points.Add(new Point(bmp.Width, 0));
+                points.Add(new Point(bmp.Width, bmp.Height));
             }
 
             if (sides.HasFlag(AnchorStyles.Bottom) && horizontalTornCount > 1)
             {
-                for (int x = 0; x < horizontalTornCount - 1; x++)
+                for (int x = bmp.Width; x >= 0; x = (x / tornRange - 1) * tornRange)
                 {
-                    points.Add(new Point(bmp.Width - 1 - (tornRange * x), bmp.Height - 1 - RandomFast.Next(0, tornDepth)));
+                    int y = random ? RandomFast.Next(0, tornDepth) : ((x / tornRange) & 1) * tornDepth;
+                    points.Add(new Point(x, bmp.Height - tornDepth + y));
                 }
             }
             else
             {
-                points.Add(new Point(bmp.Width - 1, bmp.Height - 1));
-                points.Add(new Point(0, bmp.Height - 1));
+                points.Add(new Point(bmp.Width, bmp.Height));
+                points.Add(new Point(0, bmp.Height));
             }
 
             if (sides.HasFlag(AnchorStyles.Left) && verticalTornCount > 1)
             {
-                for (int y = 0; y < verticalTornCount - 1; y++)
+                for (int y = bmp.Height; y >= 0; y = (y / tornRange - 1) * tornRange)
                 {
-                    points.Add(new Point(RandomFast.Next(0, tornDepth), bmp.Height - 1 - (tornRange * y)));
+                    int x = random ? RandomFast.Next(0, tornDepth) : ((y / tornRange) & 1) * tornDepth;
+                    points.Add(new Point(x, y));
                 }
             }
             else
             {
-                points.Add(new Point(0, bmp.Height - 1));
+                points.Add(new Point(0, bmp.Height));
                 points.Add(new Point(0, 0));
             }
 
