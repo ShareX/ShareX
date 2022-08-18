@@ -107,8 +107,8 @@ namespace ShareX.ScreenCaptureLib
         // Highlight effect
         public Color HighlightColor { get; set; } = Color.Yellow;
 
-        // Cut Out tool
+        // Cut out tool
         public CutOutEffectType CutOutEffectType { get; set; } = CutOutEffectType.None;
-        public int CutOutEffectSize { get; set; } = 5;
+        public int CutOutEffectSize { get; set; } = 10;
     }
 }
