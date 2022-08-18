@@ -306,6 +306,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.ToolCrop:
                         img = Resources.image_crop;
                         break;
+                    case ShapeType.ToolCutOut:
+                        img = Resources.table_delete_column;
+                        break;
                     case ShapeType.ToolSelect:
                         img = Resources.cursor;
                         break;
