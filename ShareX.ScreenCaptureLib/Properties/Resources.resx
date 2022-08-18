@@ -806,10 +806,10 @@ X: {4} Y: {5}</value>
     <comment>@Invariant</comment>
   </data>
   <data name="CutOutEffectSize" xml:space="preserve">
-    <value>Cut cut effect size</value>
+    <value>Cut cut effect size:</value>
   </data>
   <data name="CutOutEffectType" xml:space="preserve">
-    <value>Cut out effect</value>
+    <value>Cut out effect:</value>
   </data>
   <data name="table_delete_column" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table-delete-column.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
