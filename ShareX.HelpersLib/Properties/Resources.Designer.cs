@@ -3689,7 +3689,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cut out.
+        ///   Looks up a localized string similar to Cut out (X).
         /// </summary>
         internal static string ShapeType_ToolCutOut {
             get {
