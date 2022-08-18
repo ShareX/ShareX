@@ -202,7 +202,8 @@ namespace ShareX.ImageEffectsLib
                 typeof(Sharpen),
                 typeof(Slice),
                 typeof(Smooth),
-                typeof(TornEdge));
+                typeof(TornEdge),
+                typeof(WaveEdge));
         }
 
         private void AddEffectToContextMenu(string groupName, params Type[] imageEffects)

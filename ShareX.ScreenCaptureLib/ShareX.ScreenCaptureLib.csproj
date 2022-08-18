@@ -226,6 +226,7 @@
     <Compile Include="Animations\TextAnimation.cs" />
     <Compile Include="RegionHelpers\WindowsList.cs" />
     <Compile Include="RegionHelpers\WindowsRectangleList.cs" />
+    <Compile Include="Shapes\Tool\CutOutTool.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">

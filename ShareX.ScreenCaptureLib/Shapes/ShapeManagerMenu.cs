@@ -51,9 +51,9 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
             tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
-            tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
+            tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
-        private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes, tscbStepType;
+        private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes, tscbStepType, tscbCutOutEffectType;
 
         internal void CreateToolbar()
         {
@@ -641,6 +641,26 @@ namespace ShareX.ScreenCaptureLib
                 Form.Resume();
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiShadowColor);
+
+            tscbCutOutEffectType = new ToolStripLabeledComboBox(Resources.CutOutEffectType);
+            tscbCutOutEffectType.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<CutOutEffectType>());
+            tscbCutOutEffectType.Content.SelectedIndexChanged += (sender, e) =>
+            {
+                AnnotationOptions.CutOutEffectType = (CutOutEffectType)tscbCutOutEffectType.Content.SelectedIndex;
+                tscbCutOutEffectType.Invalidate();
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tscbCutOutEffectType);
+
+            tslnudCutOutEffectSize = new ToolStripLabeledNumericUpDown(Resources.CutOutEffectSize);
+            tslnudCutOutEffectSize.Content.Minimum = 3;
+            tslnudCutOutEffectSize.Content.Maximum = 100;
+            tslnudCutOutEffectSize.Content.ValueChanged = (sender, e) =>
+            {
+                AnnotationOptions.CutOutEffectSize = (int)tslnudCutOutEffectSize.Content.Value;
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tslnudCutOutEffectSize);
 
             // In dropdown menu if only last item is visible then menu opens at 0, 0 position on first open, so need to add dummy item to solve this weird bug...
             tsddbShapeOptions.DropDownItems.Add(new ToolStripSeparator() { Visible = false });
@@ -1456,6 +1476,10 @@ namespace ShareX.ScreenCaptureLib
 
             tscbArrowHeadDirection.Content.SelectedIndex = (int)AnnotationOptions.ArrowHeadDirection;
 
+            tscbCutOutEffectType.Content.SelectedIndex = (int)AnnotationOptions.CutOutEffectType;
+
+            tslnudCutOutEffectSize.Content.Value = AnnotationOptions.CutOutEffectSize;
+
             switch (shapeType)
             {
                 default:
@@ -1477,6 +1501,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingCursor:
                 case ShapeType.EffectBlur:
                 case ShapeType.EffectPixelate:
+                case ShapeType.ToolCutOut:
                     tsddbShapeOptions.Visible = true;
                     break;
             }
@@ -1561,6 +1586,8 @@ namespace ShareX.ScreenCaptureLib
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
+            tscbCutOutEffectType.Visible = shapeType == ShapeType.ToolCutOut;
+            tslnudCutOutEffectSize.Visible = shapeType == ShapeType.ToolCutOut;
 
             if (tsmiRegionCapture != null)
             {

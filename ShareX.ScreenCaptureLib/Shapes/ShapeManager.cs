@@ -1195,6 +1195,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.ToolCrop:
                     shape = new CropTool();
                     break;
+                case ShapeType.ToolCutOut:
+                    shape = new CutOutTool();
+                    break;
             }
 
             shape.Manager = this;
@@ -1620,6 +1623,112 @@ namespace ShareX.ScreenCaptureLib
             MoveAll(offset.X, offset.Y);
         }
 
+        public void CollapseAllHorizontal(float x, float width)
+        {
+            float x2 = x + width;
+            if (width <= 0) return;
+
+            List<BaseShape> toDelete = new List<BaseShape>();
+
+            foreach (BaseShape shape in Shapes)
+            {
+                RectangleF sr = shape.Rectangle;
+                if (sr.Left < x)
+                {
+                    if (sr.Right <= x)
+                    {
+                        // case 1: entirely before the cut, no action needed
+                    }
+                    else if (sr.Right < x2)
+                    {
+                        // case 2: end reaches into the cut, shorten shape to end at x
+                        shape.Rectangle = new RectangleF(sr.X, sr.Y, x - sr.X, sr.Height);
+                    }
+                    else
+                    {
+                        // case 3: end reaches over the cut, shorten shape by width, keeping left
+                        shape.Rectangle = new RectangleF(sr.X, sr.Y, sr.Width - width, sr.Height);
+                    }
+                }
+                else if (sr.Left < x2)
+                {
+                    if (sr.Right <= x2)
+                    {
+                        // case 4: entirely inside the cut, delete the shape
+                        toDelete.Add(shape);
+                    }
+                    else
+                    {
+                        // case 5: beginning reaches into the cut, shorten shape by difference between shape left and x2
+                        shape.Rectangle = new RectangleF(x, sr.Y, sr.Right - x2, sr.Height);
+                    }
+                }
+                else
+                {
+                    // case 6: entirely after the cut, offset shape by width
+                    shape.Rectangle = new RectangleF(sr.X - width, sr.Y, sr.Width, sr.Height);
+                }
+            }
+
+            foreach (BaseShape shape in toDelete)
+            {
+                DeleteShape(shape);
+            }
+        }
+
+        public void CollapseAllVertical(float y, float height)
+        {
+            float y2 = y + height;
+            if (height <= 0) return;
+
+            List<BaseShape> toDelete = new List<BaseShape>();
+
+            foreach (BaseShape shape in Shapes)
+            {
+                RectangleF sr = shape.Rectangle;
+                if (sr.Top < y)
+                {
+                    if (sr.Bottom <= y)
+                    {
+                        // case 1: entirely before the cut, no action needed
+                    }
+                    else if (sr.Bottom < y2)
+                    {
+                        // case 2: end reaches into the cut, shorten shape to end at x
+                        shape.Rectangle = new RectangleF(sr.X, sr.Y, sr.Width, y - sr.Y);
+                    }
+                    else
+                    {
+                        // case 3: end reaches over the cut, shorten shape by width, keeping left
+                        shape.Rectangle = new RectangleF(sr.X, sr.Y, sr.Width, sr.Height - height);
+                    }
+                }
+                else if (sr.Top < y2)
+                {
+                    if (sr.Bottom <= y2)
+                    {
+                        // case 4: entirely inside the cut, delete the shape
+                        toDelete.Add(shape);
+                    }
+                    else
+                    {
+                        // case 5: beginning reaches into the cut, shorten shape by difference between shape left and x2
+                        shape.Rectangle = new RectangleF(sr.X, y, sr.Width, sr.Bottom - y2);
+                    }
+                }
+                else
+                {
+                    // case 6: entirely after the cut, offset shape by width
+                    shape.Rectangle = new RectangleF(sr.X, sr.Y - height, sr.Width, sr.Height);
+                }
+            }
+
+            foreach (BaseShape shape in toDelete)
+            {
+                DeleteShape(shape);
+            }
+        }
+
         public void RemoveOutsideShapes()
         {
             foreach (BaseShape shape in Shapes.ToArray())
@@ -1805,6 +1914,28 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return null;
+        }
+
+        public void CutOut(RectangleF rect)
+        {
+            bool isHorizontal = rect.Width > rect.Height;
+
+            RectangleF adjustedRect = CaptureHelpers.ScreenToClient(rect.Round());
+            PointF offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
+            adjustedRect.X -= offset.X;
+            adjustedRect.Y -= offset.Y;
+            Rectangle cropRect = Rectangle.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height), adjustedRect.Round());
+
+            if (isHorizontal && cropRect.Width > 0)
+            {
+                CollapseAllHorizontal(rect.X, rect.Width);
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Horizontal, cropRect.X, cropRect.Width, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize));
+            }
+            else if (!isHorizontal && cropRect.Height > 0)
+            {
+                CollapseAllVertical(rect.Y, rect.Height);
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Vertical, cropRect.Y, cropRect.Height, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize));
+            }
         }
 
         public Color GetColor(Bitmap bmp, Point pos)

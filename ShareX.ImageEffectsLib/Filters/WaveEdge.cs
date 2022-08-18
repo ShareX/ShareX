@@ -30,29 +30,25 @@ using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    [Description("Torn edge")]
-    internal class TornEdge : ImageEffect
+    [Description("Wave edge")]
+    internal class WaveEdge : ImageEffect
     {
-        [DefaultValue(15)]
         public int Depth { get; set; }
 
-        [DefaultValue(20)]
+        [DefaultValue(10)]
         public int Range { get; set; }
 
         [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
         public AnchorStyles Sides { get; set; }
 
-        [DefaultValue(true)]
-        public bool CurvedEdges { get; set; }
-
-        public TornEdge()
+        public WaveEdge()
         {
             this.ApplyDefaultPropertyValues();
         }
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges, true);
+            return ImageHelpers.WavyEdges(bmp, Depth, Range, Sides);
         }
     }
 }

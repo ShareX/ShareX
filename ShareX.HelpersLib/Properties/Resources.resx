@@ -1429,7 +1429,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_OCR" xml:space="preserve">
     <value>OCR</value>
-    
   </data>
   <data name="HotkeyType_OCR_Category" xml:space="preserve">
     <value>Tools</value>
@@ -1454,5 +1453,20 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
     <value>Tools</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>No effect</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>Torn edges</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>Wave</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Sawtooth</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>Cut out</value>
   </data>
 </root>
