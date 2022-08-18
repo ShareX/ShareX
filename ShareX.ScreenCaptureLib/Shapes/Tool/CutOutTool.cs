@@ -134,7 +134,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            using (Image selectionHighlightPattern = ImageHelpers.CreateCheckerPattern(8, 8, Color.FromArgb(128, Color.White), Color.FromArgb(128, Color.Gray)))
+            using (Image selectionHighlightPattern = ImageHelpers.CreateCheckerPattern(1, 1, Color.FromArgb(128, Color.LightGray), Color.FromArgb(128, Color.Gray)))
             using (Brush selectionHighlightBrush = new TextureBrush(selectionHighlightPattern, System.Drawing.Drawing2D.WrapMode.Tile))
             {
                 g.FillRectangle(selectionHighlightBrush, CutOutRectangle);
