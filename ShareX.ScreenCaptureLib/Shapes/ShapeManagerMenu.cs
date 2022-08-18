@@ -221,7 +221,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
-                else if (shapeType == ShapeType.ToolCrop)
+                else if (shapeType == ShapeType.ToolCrop || shapeType == ShapeType.ToolCutOut)
                 {
                     continue;
                 }
