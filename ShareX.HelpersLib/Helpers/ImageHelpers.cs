@@ -1683,6 +1683,7 @@ namespace ShareX.HelpersLib
                 using (TextureBrush brush = new TextureBrush(bmpIn))
                 {
                     g.SetHighQuality();
+                    g.PixelOffsetMode = PixelOffsetMode.Half;
                     g.FillPolygon(brush, path);
                 }
                 return bmpResult;
@@ -1829,6 +1830,7 @@ namespace ShareX.HelpersLib
             using (TextureBrush brush = new TextureBrush(bmp))
             {
                 g.SetHighQuality();
+                g.PixelOffsetMode = PixelOffsetMode.Half;
 
                 Point[] fillPoints = points.Distinct().ToArray();
 
