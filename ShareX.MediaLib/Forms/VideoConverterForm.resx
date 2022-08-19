@@ -150,7 +150,7 @@
     <value>162, 12</value>
   </data>
   <data name="txtInputFilePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 20</value>
+    <value>342, 20</value>
   </data>
   <data name="txtInputFilePath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -168,7 +168,7 @@
     <value>15</value>
   </data>
   <data name="btnInputFilePathBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 11</value>
+    <value>512, 11</value>
   </data>
   <data name="btnInputFilePathBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 23</value>
@@ -196,7 +196,7 @@
     <value>162, 36</value>
   </data>
   <data name="txtOutputFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 20</value>
+    <value>342, 20</value>
   </data>
   <data name="txtOutputFolder.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -241,7 +241,7 @@
     <value>11</value>
   </data>
   <data name="btnOutputFolderBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 35</value>
+    <value>512, 35</value>
   </data>
   <data name="btnOutputFolderBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 23</value>
@@ -296,7 +296,7 @@
     <value>162, 60</value>
   </data>
   <data name="txtOutputFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 20</value>
+    <value>342, 20</value>
   </data>
   <data name="txtOutputFileName.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -581,7 +581,7 @@
     <value>208, 232</value>
   </data>
   <data name="pbProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 32</value>
+    <value>336, 32</value>
   </data>
   <data name="pbProgress.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -594,7 +594,7 @@
     <value>pbProgress</value>
   </data>
   <data name="&gt;&gt;pbProgress.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=13.6.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=14.1.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbProgress.Parent" xml:space="preserve">
     <value>$this</value>
