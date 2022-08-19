@@ -9,7 +9,6 @@ jobs:
     steps:
       - uses: actions/stale@v5
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: ''
           stale-pr-message: ''
           days-before-issue-stale: 180
