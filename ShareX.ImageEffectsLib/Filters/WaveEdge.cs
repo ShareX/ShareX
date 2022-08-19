@@ -33,9 +33,10 @@ namespace ShareX.ImageEffectsLib
     [Description("Wave edge")]
     internal class WaveEdge : ImageEffect
     {
+        [DefaultValue(15)]
         public int Depth { get; set; }
 
-        [DefaultValue(10)]
+        [DefaultValue(20)]
         public int Range { get; set; }
 
         [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
