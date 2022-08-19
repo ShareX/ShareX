@@ -644,6 +644,9 @@ namespace ShareX.ScreenCaptureLib
                 {
                     switch (e.KeyData)
                     {
+                        case Keys.M:
+                            CurrentTool = ShapeType.ToolSelect;
+                            break;
                         case Keys.R:
                         case Keys.NumPad1:
                             CurrentTool = ShapeType.DrawingRectangle;
@@ -709,9 +712,6 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         case Keys.PageDown:
                             MoveCurrentShapeDown();
-                            break;
-                        case Keys.M:
-                            CurrentTool = ShapeType.ToolSelect;
                             break;
                     }
                 }

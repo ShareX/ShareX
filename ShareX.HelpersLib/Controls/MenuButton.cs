@@ -37,24 +37,36 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool ShowMenuUnderCursor { get; set; }
 
+        public void OpenMenu()
+        {
+            if (Menu != null)
+            {
+                OpenMenu(new Point(0, Height));
+            }
+        }
+
+        public void OpenMenu(Point menuPosition)
+        {
+            if (Menu != null)
+            {
+                Menu.Show(this, menuPosition);
+            }
+        }
+
         protected override void OnMouseDown(MouseEventArgs mevent)
         {
             base.OnMouseDown(mevent);
 
             if (Menu != null && mevent.Button == MouseButtons.Left)
             {
-                Point menuLocation;
-
                 if (ShowMenuUnderCursor)
                 {
-                    menuLocation = mevent.Location;
+                    OpenMenu(mevent.Location);
                 }
                 else
                 {
-                    menuLocation = new Point(0, Height - 1);
+                    OpenMenu();
                 }
-
-                Menu.Show(this, menuLocation);
             }
         }
 

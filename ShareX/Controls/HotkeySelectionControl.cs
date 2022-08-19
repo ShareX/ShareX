@@ -219,6 +219,11 @@ namespace ShareX
             UpdateHotkeyStatus();
         }
 
+        public void OpenTaskMenu()
+        {
+            btnTask.OpenMenu();
+        }
+
         private void SelectControl()
         {
             Selected = true;
