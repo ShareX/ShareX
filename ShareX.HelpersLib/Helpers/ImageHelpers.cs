@@ -1769,7 +1769,9 @@ namespace ShareX.HelpersLib
 
             if (sides.HasFlag(AnchorStyles.Top) && horizontalTornCount > 1)
             {
-                for (int x = 0; x < bmp.Width; x += tornRange)
+                int startX = (sides.HasFlag(AnchorStyles.Left) && verticalTornCount > 1) ? tornDepth : 0;
+                int endX = (sides.HasFlag(AnchorStyles.Right) && verticalTornCount > 1) ? bmp.Width - tornDepth : bmp.Width;
+                for (int x = startX; x < endX; x += tornRange)
                 {
                     int y = random ? RandomFast.Next(0, tornDepth) : ((x / tornRange) & 1) * tornDepth;
                     points.Add(new Point(x, y));
@@ -1783,7 +1785,9 @@ namespace ShareX.HelpersLib
 
             if (sides.HasFlag(AnchorStyles.Right) && verticalTornCount > 1)
             {
-                for (int y = 0; y < bmp.Height; y += tornRange)
+                int startY = (sides.HasFlag(AnchorStyles.Top) && horizontalTornCount > 1) ? tornDepth : 0;
+                int endY = (sides.HasFlag(AnchorStyles.Bottom) && horizontalTornCount > 1) ? bmp.Height - tornDepth : bmp.Height;
+                for (int y = startY; y < endY; y += tornRange)
                 {
                     int x = random ? RandomFast.Next(0, tornDepth) : ((y / tornRange) & 1) * tornDepth;
                     points.Add(new Point(bmp.Width - tornDepth + x, y));
@@ -1797,7 +1801,9 @@ namespace ShareX.HelpersLib
 
             if (sides.HasFlag(AnchorStyles.Bottom) && horizontalTornCount > 1)
             {
-                for (int x = bmp.Width; x >= 0; x = (x / tornRange - 1) * tornRange)
+                int startX = (sides.HasFlag(AnchorStyles.Right) && verticalTornCount > 1) ? bmp.Width - tornDepth : bmp.Width;
+                int endX = (sides.HasFlag(AnchorStyles.Left) && verticalTornCount > 1) ? tornDepth : 0;
+                for (int x = startX; x >= endX; x = (x / tornRange - 1) * tornRange)
                 {
                     int y = random ? RandomFast.Next(0, tornDepth) : ((x / tornRange) & 1) * tornDepth;
                     points.Add(new Point(x, bmp.Height - tornDepth + y));
@@ -1811,7 +1817,9 @@ namespace ShareX.HelpersLib
 
             if (sides.HasFlag(AnchorStyles.Left) && verticalTornCount > 1)
             {
-                for (int y = bmp.Height; y >= 0; y = (y / tornRange - 1) * tornRange)
+                int startY = (sides.HasFlag(AnchorStyles.Bottom) && horizontalTornCount > 1) ? bmp.Height - tornDepth : bmp.Height;
+                int endY = (sides.HasFlag(AnchorStyles.Top) && horizontalTornCount > 1) ? tornDepth : 0;
+                for (int y = startY; y >= endY; y = (y / tornRange - 1) * tornRange)
                 {
                     int x = random ? RandomFast.Next(0, tornDepth) : ((y / tornRange) & 1) * tornDepth;
                     points.Add(new Point(x, y));
