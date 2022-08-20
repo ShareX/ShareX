@@ -1672,82 +1672,88 @@ namespace ShareX.HelpersLib
 
             int horizontalWaveCount = Math.Max(2, (bmp.Width / waveRange + 1) / 2 * 2) - 1;
             int verticalWaveCount = Math.Max(2, (bmp.Height / waveRange + 1) / 2 * 2) - 1;
+            int horizontalWaveRange = bmp.Width / horizontalWaveCount;
+            int verticalWaveRange = bmp.Height / verticalWaveCount;
 
             int step = Math.Min(Math.Max(1, waveRange / waveDepth), 10);
-
-            Bitmap updateResult(Bitmap bmpIn, Point[] path)
-            {
-                Bitmap bmpResult = bmpIn.CreateEmptyBitmap();
-                using (bmpIn)
-                using (Graphics g = Graphics.FromImage(bmpResult))
-                using (TextureBrush brush = new TextureBrush(bmpIn))
-                {
-                    g.SetHighQuality();
-                    g.PixelOffsetMode = PixelOffsetMode.Half;
-                    g.FillPolygon(brush, path);
-                }
-                return bmpResult;
-            };
 
             int waveFunction(int t, int max, int depth) => (int)((1 - Math.Cos(t * Math.PI / max)) * depth / 2);
 
             if (sides.HasFlag(AnchorStyles.Top))
             {
-                waveRange = bmp.Width / horizontalWaveCount;
-                points.Clear();
-                for (int x = 0; x < bmp.Width; x += step)
+                int startX = sides.HasFlag(AnchorStyles.Left) ? waveDepth : 0;
+                int endX = sides.HasFlag(AnchorStyles.Right) ? bmp.Width - waveDepth : bmp.Width;
+                for (int x = startX; x < endX; x += step)
                 {
-                    points.Add(new Point(x, waveFunction(x, waveRange, waveDepth)));
+                    points.Add(new Point(x, waveFunction(x, horizontalWaveRange, waveDepth)));
                 }
-                points.Add(new Point(bmp.Width, waveFunction(bmp.Width, waveRange, waveDepth)));
-                points.Add(new Point(bmp.Width, bmp.Height));
-                points.Add(new Point(0, bmp.Height));
-                bmp = updateResult(bmp, points.ToArray());
+                points.Add(new Point(endX, waveFunction(endX, horizontalWaveRange, waveDepth)));
+            }
+            else
+            {
+                points.Add(new Point(0, 0));
             }
 
             if (sides.HasFlag(AnchorStyles.Right))
             {
-                waveRange = bmp.Height / verticalWaveCount;
-                points.Clear();
-                points.Add(new Point(0, 0));
-                for (int y = 0; y < bmp.Height; y += step)
+                int startY = sides.HasFlag(AnchorStyles.Top) ? waveDepth : 0;
+                int endY = sides.HasFlag(AnchorStyles.Bottom) ? bmp.Height - waveDepth : bmp.Height;
+                for (int y = startY; y < endY; y += step)
                 {
-                    points.Add(new Point(bmp.Width - waveDepth + waveFunction(y, waveRange, waveDepth), y));
+                    points.Add(new Point(bmp.Width - waveDepth + waveFunction(y, verticalWaveRange, waveDepth), y));
                 }
-                points.Add(new Point(bmp.Width - waveDepth + waveFunction(bmp.Height, waveRange, waveDepth), bmp.Height));
-                points.Add(new Point(0, bmp.Height));
-                bmp = updateResult(bmp, points.ToArray());
+                points.Add(new Point(bmp.Width - waveDepth + waveFunction(endY, verticalWaveRange, waveDepth), endY));
+            }
+            else
+            {
+                points.Add(new Point(bmp.Width, points[points.Count - 1].Y));
             }
 
             if (sides.HasFlag(AnchorStyles.Bottom))
             {
-                waveRange = bmp.Width / horizontalWaveCount;
-                points.Clear();
-                points.Add(new Point(0, 0));
-                points.Add(new Point(bmp.Width, 0));
-                for (int x = bmp.Width; x >= 0; x -= step)
+                int startX = sides.HasFlag(AnchorStyles.Right) ? bmp.Width - waveDepth : bmp.Width;
+                int endX = sides.HasFlag(AnchorStyles.Left) ? waveDepth : 0;
+                for (int x = startX; x >= endX; x -= step)
                 {
-                    points.Add(new Point(x, bmp.Height - waveDepth + waveFunction(x, waveRange, waveDepth)));
+                    points.Add(new Point(x, bmp.Height - waveDepth + waveFunction(x, horizontalWaveRange, waveDepth)));
                 }
-                points.Add(new Point(0, bmp.Height - waveDepth + waveFunction(0, waveRange, waveDepth)));
-                bmp = updateResult(bmp, points.ToArray());
+                points.Add(new Point(endX, bmp.Height - waveDepth + waveFunction(endX, horizontalWaveRange, waveDepth)));
+            }
+            else
+            {
+                points.Add(new Point(points[points.Count - 1].X, bmp.Height));
             }
 
             if (sides.HasFlag(AnchorStyles.Left))
             {
-                waveRange = bmp.Height / verticalWaveCount;
-                points.Clear();
-                points.Add(new Point(0, 0));
-                points.Add(new Point(bmp.Width, 0));
-                points.Add(new Point(bmp.Width, bmp.Height));
-                for (int y = bmp.Height; y >= 0; y -= step)
+                int startY = sides.HasFlag(AnchorStyles.Bottom) ? bmp.Height - waveDepth : bmp.Height;
+                int endY = sides.HasFlag(AnchorStyles.Top) ? waveDepth : 0;
+                for (int y = startY; y >= endY; y -= step)
                 {
-                    points.Add(new Point(waveFunction(y, waveRange, waveDepth), y));
+                    points.Add(new Point(waveFunction(y, verticalWaveRange, waveDepth), y));
                 }
-                bmp = updateResult(bmp, points.ToArray());
+                points.Add(new Point(waveFunction(endY, verticalWaveRange, waveDepth), endY));
+            }
+            else
+            {
+                points.Add(new Point(0, points[points.Count - 1].Y));
             }
 
-            return bmp;
+            if (!sides.HasFlag(AnchorStyles.Top))
+            {
+                points[0] = new Point(points[points.Count - 1].X, 0);
+            }
+
+            Bitmap bmpResult = bmp.CreateEmptyBitmap();
+            using (bmp)
+            using (Graphics g = Graphics.FromImage(bmpResult))
+            using (TextureBrush brush = new TextureBrush(bmp))
+            {
+                g.SetHighQuality();
+                g.PixelOffsetMode = PixelOffsetMode.Half;
+                g.FillPolygon(brush, points.ToArray());
+            }
+            return bmpResult;
         }
 
         public static Bitmap TornEdges(Bitmap bmp, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges, bool random)
