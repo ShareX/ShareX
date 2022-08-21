@@ -1840,6 +1840,60 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pin to screen (From clipboard).
+        /// </summary>
+        internal static string HotkeyType_PinToScreenFromClipboard {
+            get {
+                return ResourceManager.GetString("HotkeyType_PinToScreenFromClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_PinToScreenFromClipboard_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_PinToScreenFromClipboard_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pin to screen (From file).
+        /// </summary>
+        internal static string HotkeyType_PinToScreenFromFile {
+            get {
+                return ResourceManager.GetString("HotkeyType_PinToScreenFromFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_PinToScreenFromFile_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_PinToScreenFromFile_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pin to screen (From screen).
+        /// </summary>
+        internal static string HotkeyType_PinToScreenFromScreen {
+            get {
+                return ResourceManager.GetString("HotkeyType_PinToScreenFromScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_PinToScreenFromScreen_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_PinToScreenFromScreen_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture entire screen.
         /// </summary>
         internal static string HotkeyType_PrintScreen {

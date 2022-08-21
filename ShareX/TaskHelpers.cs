@@ -181,6 +181,15 @@ namespace ShareX
                 case HotkeyType.PinToScreen:
                     PinToScreen();
                     break;
+                case HotkeyType.PinToScreenFromScreen:
+                    PinToScreenFromScreen();
+                    break;
+                case HotkeyType.PinToScreenFromClipboard:
+                    PinToScreenFromClipboard();
+                    break;
+                case HotkeyType.PinToScreenFromFile:
+                    PinToScreenFromFile();
+                    break;
                 case HotkeyType.ImageEditor:
                     if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
                     {
@@ -1306,6 +1315,43 @@ namespace ShareX
             PinToScreen(image);
         }
 
+        public static void PinToScreenFromScreen()
+        {
+            if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect))
+            {
+                Image image = new Screenshot().CaptureRectangle(rect);
+
+                if (image != null)
+                {
+                    PinToScreen(image, rect.Location);
+                }
+            }
+        }
+
+        public static void PinToScreenFromClipboard()
+        {
+            Image image = ClipboardHelpers.TryGetImage();
+
+            if (image != null)
+            {
+                PinToScreen(image);
+            }
+            else
+            {
+                MessageBox.Show(Resources.ClipboardDoesNotContainAnImage, "ShareX - " + Resources.PinToScreen, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        public static void PinToScreenFromFile()
+        {
+            Image image = ImageHelpers.LoadImageWithFileDialog();
+
+            if (image != null)
+            {
+                PinToScreen(image);
+            }
+        }
+
         public static void TweetMessage()
         {
             if (IsUploadAllowed())
@@ -1597,6 +1643,9 @@ namespace ShareX
                     case HotkeyType.ScreenColorPicker: return Resources.pipette;
                     case HotkeyType.Ruler: return Resources.ruler_triangle;
                     case HotkeyType.PinToScreen: return Resources.pin;
+                    case HotkeyType.PinToScreenFromScreen: return Resources.pin;
+                    case HotkeyType.PinToScreenFromClipboard: return Resources.pin;
+                    case HotkeyType.PinToScreenFromFile: return Resources.pin;
                     case HotkeyType.ImageEditor: return Resources.image_pencil;
                     case HotkeyType.ImageEffects: return Resources.image_saturation;
                     case HotkeyType.ImageViewer: return Resources.images_flickr;
