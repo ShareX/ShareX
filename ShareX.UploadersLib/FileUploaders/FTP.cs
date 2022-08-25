@@ -347,7 +347,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (file != null && !string.IsNullOrEmpty(file.Name))
                 {
-                    if (recursive && file.Type == FtpFileSystemObjectType.Directory)
+                    if (recursive && file.Type == FtpObjectType.Directory)
                     {
                         FtpListItem[] newFiles = GetListing(file.FullName);
                         string directoryPath = Path.Combine(localPath, file.Name);
@@ -359,7 +359,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         DownloadFiles(newFiles, directoryPath);
                     }
-                    else if (file.Type == FtpFileSystemObjectType.File)
+                    else if (file.Type == FtpObjectType.File)
                     {
                         string filePath = Path.Combine(localPath, file.Name);
                         DownloadFile(file.FullName, filePath);
@@ -438,11 +438,11 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (file != null && !string.IsNullOrEmpty(file.Name))
                 {
-                    if (file.Type == FtpFileSystemObjectType.Directory)
+                    if (file.Type == FtpObjectType.Directory)
                     {
                         DeleteDirectory(file.FullName);
                     }
-                    else if (file.Type == FtpFileSystemObjectType.File)
+                    else if (file.Type == FtpObjectType.File)
                     {
                         DeleteFile(file.FullName);
                     }
