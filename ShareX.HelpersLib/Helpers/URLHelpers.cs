@@ -30,6 +30,7 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -364,6 +365,37 @@ namespace ShareX.HelpersLib
             }
 
             return path;
+        }
+
+        public static string GetFileNameFromWebServer(string url)
+        {
+            string fileName = null;
+
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "HEAD";
+                request.UserAgent = ShareXResources.UserAgent;
+
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                {
+                    string contentDisposition = response.Headers["Content-Disposition"];
+
+                    if (!string.IsNullOrEmpty(contentDisposition))
+                    {
+                        string fileNameMarker = "filename=\"";
+                        int beginIndex = contentDisposition.IndexOf(fileNameMarker, StringComparison.OrdinalIgnoreCase);
+                        contentDisposition = contentDisposition.Substring(beginIndex + fileNameMarker.Length);
+                        int fileNameLength = contentDisposition.IndexOf("\"");
+                        fileName = contentDisposition.Substring(0, fileNameLength);
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            return fileName;
         }
 
         public static bool IsFileURL(string url)

@@ -1052,6 +1052,16 @@ namespace ShareX
             string url = Info.Result.URL.Trim();
             Info.Result.URL = "";
 
+            if (!Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
+            {
+                string fileName = URLHelpers.GetFileNameFromWebServer(url);
+
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    Info.FileName = FileHelpers.SanitizeFileName(fileName);
+                }
+            }
+
             string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings);
             Info.FilePath = TaskHelpers.HandleExistsFile(screenshotsFolder, Info.FileName, Info.TaskSettings);
 
