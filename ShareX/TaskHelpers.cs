@@ -1889,7 +1889,6 @@ namespace ShareX
             {
                 IsBeta = Program.Dev,
                 IsPortable = Program.Portable,
-                Proxy = HelpersOptions.CurrentProxy.GetWebProxy(),
                 Branch = "develop"
             };
 

@@ -25,8 +25,6 @@
 
 using System;
 using System.IO;
-using System.Net;
-using System.Net.Cache;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -47,45 +45,40 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                using (WebClient wc = new WebClient())
+                string response = URLHelpers.DownloadString(URL);
+
+                using (StringReader sr = new StringReader(response))
+                using (XmlTextReader xml = new XmlTextReader(sr))
                 {
-                    wc.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-                    wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
-                    wc.Proxy = Proxy;
+                    XDocument xd = XDocument.Load(xml);
 
-                    using (MemoryStream ms = new MemoryStream(wc.DownloadData(URL)))
-                    using (XmlTextReader xml = new XmlTextReader(ms))
+                    if (xd != null)
                     {
-                        XDocument xd = XDocument.Load(xml);
+                        string node;
 
-                        if (xd != null)
+                        switch (ReleaseType)
                         {
-                            string node;
+                            default:
+                            case ReleaseChannelType.Stable:
+                                node = "Stable";
+                                break;
+                            case ReleaseChannelType.Beta:
+                                node = "Beta|Stable";
+                                break;
+                            case ReleaseChannelType.Dev:
+                                node = "Dev|Beta|Stable";
+                                break;
+                        }
 
-                            switch (ReleaseType)
-                            {
-                                default:
-                                case ReleaseChannelType.Stable:
-                                    node = "Stable";
-                                    break;
-                                case ReleaseChannelType.Beta:
-                                    node = "Beta|Stable";
-                                    break;
-                                case ReleaseChannelType.Dev:
-                                    node = "Dev|Beta|Stable";
-                                    break;
-                            }
+                        string path = string.Format("Update/{0}/{1}", ApplicationName, node);
+                        XElement xe = xd.GetNode(path);
 
-                            string path = string.Format("Update/{0}/{1}", ApplicationName, node);
-                            XElement xe = xd.GetNode(path);
-
-                            if (xe != null)
-                            {
-                                LatestVersion = new Version(xe.Element("Version").Value);
-                                DownloadURL = xe.Element("URL").Value;
-                                RefreshStatus();
-                                return;
-                            }
+                        if (xe != null)
+                        {
+                            LatestVersion = new Version(xe.Element("Version").Value);
+                            DownloadURL = xe.Element("URL").Value;
+                            RefreshStatus();
+                            return;
                         }
                     }
                 }

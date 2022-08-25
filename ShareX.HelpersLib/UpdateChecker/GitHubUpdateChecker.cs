@@ -27,8 +27,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Cache;
 
 namespace ShareX.HelpersLib
 {
@@ -90,18 +88,11 @@ namespace ShareX.HelpersLib
 
         protected List<GitHubRelease> GetReleases()
         {
-            using (WebClient wc = new WebClient())
+            string response = URLHelpers.DownloadString(ReleasesURL);
+
+            if (!string.IsNullOrEmpty(response))
             {
-                wc.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-                wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
-                wc.Proxy = Proxy;
-
-                string response = wc.DownloadString(ReleasesURL);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    return JsonConvert.DeserializeObject<List<GitHubRelease>>(response);
-                }
+                return JsonConvert.DeserializeObject<List<GitHubRelease>>(response);
             }
 
             return null;

@@ -34,7 +34,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
-using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Resources;
@@ -541,30 +540,6 @@ namespace ShareX.HelpersLib
             }
 
             return string.Join(", ", status);
-        }
-
-        public static string DownloadString(string url)
-        {
-            if (!string.IsNullOrEmpty(url))
-            {
-                try
-                {
-                    using (WebClient wc = new WebClient())
-                    {
-                        wc.Encoding = Encoding.UTF8;
-                        wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
-                        wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                        return wc.DownloadString(url);
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                    MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + e, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            return null;
         }
 
         public static void SetDefaultUICulture(CultureInfo culture)

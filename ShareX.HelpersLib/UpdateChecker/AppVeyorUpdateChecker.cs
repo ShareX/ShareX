@@ -39,8 +39,7 @@ namespace ShareX.HelpersLib
                 AppVeyor appveyor = new AppVeyor()
                 {
                     AccountName = "ShareX",
-                    ProjectSlug = "sharex",
-                    Proxy = Proxy
+                    ProjectSlug = "sharex"
                 };
 
                 AppVeyorProject project = appveyor.GetProjectByBranch(Branch);

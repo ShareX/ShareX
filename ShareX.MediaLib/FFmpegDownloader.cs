@@ -46,7 +46,6 @@ namespace ShareX.MediaLib
 
             using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
             {
-                form.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                 form.InstallType = InstallType.Event;
                 form.RunInstallerInBackground = async;
                 form.InstallRequested += installRequested;

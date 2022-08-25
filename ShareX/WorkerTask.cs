@@ -32,7 +32,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -1072,14 +1071,7 @@ namespace ShareX
 
                 try
                 {
-                    FileHelpers.CreateDirectoryFromFilePath(Info.FilePath);
-
-                    using (WebClient wc = new WebClient())
-                    {
-                        wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
-                        wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                        wc.DownloadFile(url, Info.FilePath);
-                    }
+                    URLHelpers.DownloadFile(url, Info.FilePath);
 
                     if (upload)
                     {

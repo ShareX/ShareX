@@ -249,7 +249,16 @@ namespace ShareX.HelpersLib
 
                 await Task.Run(() =>
                 {
-                    json = Helpers.DownloadString(url);
+                    try
+                    {
+                        json = URLHelpers.DownloadString(url);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugHelper.WriteException(ex);
+                        MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + ex, "ShareX - " + Resources.Error,
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 });
 
                 OnImportRequested(json);

@@ -57,6 +57,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
+            Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             ChangeStatus(Resources.DownloaderForm_DownloaderForm_Waiting_);
             Status = DownloaderFormStatus.Waiting;
             AutoStartDownload = true;
@@ -74,8 +75,6 @@ namespace ShareX.HelpersLib
 
         public DownloaderForm(UpdateChecker updateChecker) : this(updateChecker.DownloadURL, updateChecker.FileName)
         {
-            Proxy = updateChecker.Proxy;
-
             if (updateChecker is GitHubUpdateChecker)
             {
                 AcceptHeader = "application/octet-stream";

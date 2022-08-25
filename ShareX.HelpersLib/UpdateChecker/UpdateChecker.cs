@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
@@ -42,7 +41,6 @@ namespace ShareX.HelpersLib
         public ReleaseChannelType ReleaseType { get; set; }
         public bool IsBeta { get; set; }
         public bool IsPortable { get; set; }
-        public IWebProxy Proxy { get; set; }
 
         private string fileName;
 

@@ -29,7 +29,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net;
 
 namespace ShareX.Setup
 {
@@ -42,11 +41,7 @@ namespace ShareX.Setup
 
             Console.WriteLine($"Downloading: \"{url}\" -> \"{filePath}\"");
 
-            using (WebClient wc = new WebClient())
-            {
-                wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
-                wc.DownloadFile(url, filePath);
-            }
+            URLHelpers.DownloadFile(url, filePath);
 
             return filePath;
         }

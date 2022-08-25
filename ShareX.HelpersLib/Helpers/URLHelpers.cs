@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Net.Cache;
 using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -367,37 +368,6 @@ namespace ShareX.HelpersLib
             return path;
         }
 
-        public static string GetFileNameFromWebServer(string url)
-        {
-            string fileName = null;
-
-            try
-            {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.Method = "HEAD";
-                request.UserAgent = ShareXResources.UserAgent;
-
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                {
-                    string contentDisposition = response.Headers["Content-Disposition"];
-
-                    if (!string.IsNullOrEmpty(contentDisposition))
-                    {
-                        string fileNameMarker = "filename=\"";
-                        int beginIndex = contentDisposition.IndexOf(fileNameMarker, StringComparison.OrdinalIgnoreCase);
-                        contentDisposition = contentDisposition.Substring(beginIndex + fileNameMarker.Length);
-                        int fileNameLength = contentDisposition.IndexOf("\"");
-                        fileName = contentDisposition.Substring(0, fileNameLength);
-                    }
-                }
-            }
-            catch
-            {
-            }
-
-            return fileName;
-        }
-
         public static bool IsFileURL(string url)
         {
             int index = url.LastIndexOf('/');
@@ -607,6 +577,78 @@ namespace ShareX.HelpersLib
             builder.Path = path;
             builder.Query = query;
             return builder.Uri.AbsoluteUri;
+        }
+
+        public static string GetFileNameFromWebServer(string url)
+        {
+            string fileName = null;
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                try
+                {
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                    request.Method = "HEAD";
+                    IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+                    if (proxy != null) request.Proxy = proxy;
+                    request.UserAgent = ShareXResources.UserAgent;
+
+                    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                    {
+                        string contentDisposition = response.Headers["Content-Disposition"];
+
+                        if (!string.IsNullOrEmpty(contentDisposition))
+                        {
+                            string fileNameMarker = "filename=\"";
+                            int beginIndex = contentDisposition.IndexOf(fileNameMarker, StringComparison.OrdinalIgnoreCase);
+                            contentDisposition = contentDisposition.Substring(beginIndex + fileNameMarker.Length);
+                            int fileNameLength = contentDisposition.IndexOf("\"");
+                            fileName = contentDisposition.Substring(0, fileNameLength);
+                        }
+                    }
+                }
+                catch
+                {
+                }
+            }
+
+            return fileName;
+        }
+
+        public static void DownloadFile(string url, string filePath)
+        {
+            if (!string.IsNullOrEmpty(url) && !string.IsNullOrEmpty(filePath))
+            {
+                FileHelpers.CreateDirectoryFromFilePath(filePath);
+
+                using (WebClient wc = new WebClient())
+                {
+                    wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
+                    wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+                    wc.DownloadFile(url, filePath);
+                }
+            }
+        }
+
+        public static string DownloadString(string url, bool noCache = true)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                using (WebClient wc = new WebClient())
+                {
+                    if (noCache)
+                    {
+                        wc.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
+                    }
+
+                    wc.Encoding = Encoding.UTF8;
+                    wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
+                    wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+                    return wc.DownloadString(url);
+                }
+            }
+
+            return null;
         }
     }
 }

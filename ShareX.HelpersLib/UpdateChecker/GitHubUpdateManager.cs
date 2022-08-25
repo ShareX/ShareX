@@ -96,8 +96,7 @@ namespace ShareX.HelpersLib
             {
                 IsBeta = IsBeta,
                 IsPortable = IsPortable,
-                IncludePreRelease = CheckPreReleaseUpdates,
-                Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
+                IncludePreRelease = CheckPreReleaseUpdates
             };
         }
 
