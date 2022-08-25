@@ -632,6 +632,8 @@ namespace ShareX.HelpersLib
 
         public static string DownloadString(string url, bool noCache = true)
         {
+            string response = null;
+
             if (!string.IsNullOrEmpty(url))
             {
                 using (WebClient wc = new WebClient())
@@ -644,11 +646,11 @@ namespace ShareX.HelpersLib
                     wc.Encoding = Encoding.UTF8;
                     wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
                     wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                    return wc.DownloadString(url);
+                    response = wc.DownloadString(url);
                 }
             }
 
-            return null;
+            return response;
         }
     }
 }
