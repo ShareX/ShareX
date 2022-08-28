@@ -1414,4 +1414,37 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
     <value>Tepsi menüsünü aç/kapat</value>
   </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>Kesip çıkar (X)</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>Efekt yok</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>Ekrana sabitle (Panodan)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>Ekrana sabitle (Dosyadan)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>Ekrana sabitle (Ekrandan)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>Yırtık kenarlar</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>Dalga</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Testere dişi</value>
+  </data>
 </root>

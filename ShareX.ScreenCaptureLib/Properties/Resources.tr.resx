@@ -487,4 +487,10 @@ Resim düzenleyiciyi kapatmak ister misiniz?</value>
   <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
     <value>Açılışta sığdırmak için yakınlaştır</value>
   </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Kesip çıkarma efekt boyutu:</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Kesip çıkarma efekti:</value>
+  </data>
 </root>
