@@ -191,6 +191,11 @@ namespace ShareX
 
         private static void ApplicationConfigBackwardCompatibilityTasks()
         {
+            if (Settings.IsFirstTimeRun && SystemOptions.DisableUpload)
+            {
+                DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+            }
+
             if (Settings.IsUpgradeFrom("13.0.2"))
             {
                 Settings.UseCustomTheme = Settings.UseDarkTheme;
