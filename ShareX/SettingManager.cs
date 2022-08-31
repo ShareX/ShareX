@@ -189,8 +189,26 @@ namespace ShareX
             LoadHotkeysConfig();
         }
 
+        public static void DisableAfterCaptureUpload()
+        {
+            DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+
+            foreach (HotkeySettings hotkeySettings in HotkeysConfig.Hotkeys)
+            {
+                if (hotkeySettings.TaskSettings != null)
+                {
+                    hotkeySettings.TaskSettings.AfterCaptureJob = hotkeySettings.TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                }
+            }
+        }
+
         private static void ApplicationConfigBackwardCompatibilityTasks()
         {
+            if (Settings.IsFirstTimeRun && SystemOptions.DisableUpload)
+            {
+                DisableAfterCaptureUpload();
+            }
+
             if (Settings.IsUpgradeFrom("13.0.2"))
             {
                 Settings.UseCustomTheme = Settings.UseDarkTheme;
