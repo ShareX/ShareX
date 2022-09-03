@@ -22,11 +22,11 @@
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
             this.btnAbort = new ShareX.HelpersLib.NoFocusBorderButton();
             this.pInfo = new System.Windows.Forms.Panel();
+            this.btnPause = new ShareX.HelpersLib.NoFocusBorderButton();
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAbort = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
-            this.btnPause = new ShareX.HelpersLib.NoFocusBorderButton();
             this.pInfo.SuspendLayout();
             this.cmsMain.SuspendLayout();
             this.SuspendLayout();
@@ -41,6 +41,7 @@
             // 
             resources.ApplyResources(this.lblTimer, "lblTimer");
             this.lblTimer.Name = "lblTimer";
+            this.lblTimer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTimer_MouseDown);
             // 
             // timerRefresh
             // 
@@ -60,6 +61,12 @@
             this.pInfo.Controls.Add(this.btnStart);
             this.pInfo.Controls.Add(this.lblTimer);
             this.pInfo.Name = "pInfo";
+            // 
+            // btnPause
+            // 
+            resources.ApplyResources(this.btnPause, "btnPause");
+            this.btnPause.Name = "btnPause";
+            this.btnPause.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnPause_MouseClick);
             // 
             // cmsMain
             // 
@@ -88,12 +95,6 @@
             this.niTray.ContextMenuStrip = this.cmsMain;
             resources.ApplyResources(this.niTray, "niTray");
             this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
-            // 
-            // btnPause
-            // 
-            resources.ApplyResources(this.btnPause, "btnPause");
-            this.btnPause.Name = "btnPause";
-            this.btnPause.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnPause_MouseClick);
             // 
             // ScreenRecordForm
             // 

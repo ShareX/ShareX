@@ -255,6 +255,8 @@ namespace ShareX
                                     FileHelpers.RenameFile(path, concatPath);
                                 }
 
+                                captureRectangle = recordForm.RecordRectangle;
+
                                 ScreenRecordingOptions options = new ScreenRecordingOptions()
                                 {
                                     IsRecording = true,

@@ -60,6 +60,14 @@ namespace ShareX.ScreenCaptureLib
         public float Duration { get; set; } = 0;
         public bool AskConfirmationOnAbort { get; set; } = false;
 
+        public Rectangle RecordRectangle
+        {
+            get
+            {
+                return new Rectangle(Location.X + 1, Location.Y + 1, borderRectangle.Width - 2, borderRectangle.Height - 2);
+            }
+        }
+
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
@@ -259,6 +267,15 @@ namespace ShareX.ScreenCaptureLib
                 {
                     AbortRecording();
                 }
+            }
+        }
+
+        private void lblTimer_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && Status == ScreenRecordingStatus.Paused)
+            {
+                NativeMethods.ReleaseCapture();
+                NativeMethods.SendMessage(Handle, (uint)WindowsMessages.NCLBUTTONDOWN, (IntPtr)WindowHitTestRegions.HTCAPTION, IntPtr.Zero);
             }
         }
 
