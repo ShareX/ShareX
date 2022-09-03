@@ -262,6 +262,7 @@ namespace ShareX
                                 Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
                                 screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
 
+                                screenRecorder?.Dispose();
                                 screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
                                 screenRecorder.RecordingStarted += ScreenRecorder_RecordingStarted;
                                 screenRecorder.EncodingProgressChanged += ScreenRecorder_EncodingProgressChanged;
@@ -313,12 +314,15 @@ namespace ShareX
                 {
                     screenRecorder.Dispose();
                     screenRecorder = null;
-
-                    if (abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path))
-                    {
-                        File.Delete(path);
-                    }
                 }
+
+                if (abortRequested)
+                {
+                    FileHelpers.DeleteFile(path);
+                }
+
+                FileHelpers.DeleteFile(concatPath);
+                FileHelpers.DeleteFile(tempPath);
             }).ContinueInCurrentContext(() =>
             {
                 if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out string customFileName, null, path))
