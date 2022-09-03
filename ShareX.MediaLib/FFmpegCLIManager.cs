@@ -29,6 +29,8 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -273,6 +275,36 @@ namespace ShareX.MediaLib
             }
 
             return devices;
+        }
+
+        public void ConcatenateVideos(string[] inputFiles, string outputFile, bool autoDeleteInputFiles = false)
+        {
+            string listFile = outputFile + ".txt";
+            string contents = string.Join(Environment.NewLine, inputFiles.Select(inputFile => $"file '{inputFile}'"));
+            File.WriteAllText(listFile, contents);
+
+            try
+            {
+                bool result = Run($"-hide_banner -f concat -safe 0 -i \"{listFile}\" -c copy \"{outputFile}\"");
+
+                if (result && autoDeleteInputFiles)
+                {
+                    foreach (string inputFile in inputFiles)
+                    {
+                        if (!inputFile.Equals(outputFile, StringComparison.OrdinalIgnoreCase) && File.Exists(inputFile))
+                        {
+                            File.Delete(inputFile);
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                if (File.Exists(listFile))
+                {
+                    File.Delete(listFile);
+                }
+            }
         }
     }
 }
