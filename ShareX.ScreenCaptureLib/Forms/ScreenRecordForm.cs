@@ -169,17 +169,21 @@ namespace ShareX.ScreenCaptureLib
 
         public void StartRecordingTimer()
         {
+            if (IsCountdown)
+            {
+                Timer.Reset();
+                IsCountdown = false;
+            }
+
             if (Duration > 0)
             {
                 IsCountdown = true;
+                Countdown = TimeSpan.FromSeconds(Duration);
             }
-
-            Countdown = TimeSpan.FromSeconds(Duration);
 
             borderColor = Color.FromArgb(0, 255, 0);
             Refresh();
 
-            Timer.Reset();
             Timer.Start();
             timerRefresh.Start();
             UpdateTimer();
