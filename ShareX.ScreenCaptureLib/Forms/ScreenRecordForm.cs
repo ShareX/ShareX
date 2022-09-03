@@ -52,6 +52,7 @@ namespace ShareX.ScreenCaptureLib
         }
 
         public TimeSpan Countdown { get; set; }
+        public bool IsCountdown { get; private set; }
         public Stopwatch Timer { get; private set; }
         public ManualResetEvent RecordResetEvent { get; set; }
 
@@ -158,7 +159,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void StartCountdown(int milliseconds)
         {
-            Status = ScreenRecordingStatus.Countdown;
+            IsCountdown = true;
             Countdown = TimeSpan.FromMilliseconds(milliseconds);
 
             Timer.Start();
@@ -170,8 +171,9 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Duration > 0)
             {
-                Status = ScreenRecordingStatus.Countdown;
+                IsCountdown = true;
             }
+
             Countdown = TimeSpan.FromSeconds(Duration);
 
             borderColor = Color.FromArgb(0, 255, 0);
@@ -196,7 +198,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 TimeSpan timer;
 
-                if (Status == ScreenRecordingStatus.Countdown)
+                if (IsCountdown)
                 {
                     timer = Countdown - Timer.Elapsed;
                     if (timer.Ticks < 0) timer = TimeSpan.Zero;
