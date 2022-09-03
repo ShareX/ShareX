@@ -351,6 +351,7 @@ namespace ShareX.ScreenCaptureLib
                         btnStart.Text = Resources.ScreenRecordForm_Stop;
                         // TODO: Translate
                         btnPause.Text = "Pause";
+                        lblTimer.Cursor = Cursors.Default;
                         break;
                     case ScreenRecordState.AfterRecordingStart:
                         Status = ScreenRecordingStatus.Recording;
@@ -362,6 +363,7 @@ namespace ShareX.ScreenCaptureLib
                         {
                             // TODO: Translate
                             btnPause.Text = "Resume";
+                            lblTimer.Cursor = Cursors.SizeAll;
                             borderColor = Color.FromArgb(241, 196, 27);
                             Refresh();
                         }
