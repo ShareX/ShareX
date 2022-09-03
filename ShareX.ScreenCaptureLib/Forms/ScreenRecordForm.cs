@@ -246,7 +246,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.Button == MouseButtons.Left)
             {
-                StartStopRecording(true);
+                PauseResumeRecording();
             }
         }
 
@@ -295,6 +295,11 @@ namespace ShareX.ScreenCaptureLib
             RecordResetEvent?.Set();
         }
 
+        public void PauseResumeRecording()
+        {
+            StartStopRecording(true);
+        }
+
         public void AbortRecording()
         {
             Status = ScreenRecordingStatus.Aborted;
@@ -336,9 +341,9 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ScreenRecordState.RecordingEnd:
                         StopRecordingTimer();
-                        // TODO: Translate
                         if (Status == ScreenRecordingStatus.Paused)
                         {
+                            // TODO: Translate
                             btnPause.Text = "Resume";
                             borderColor = Color.FromArgb(241, 196, 27);
                             Refresh();

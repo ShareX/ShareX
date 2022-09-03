@@ -165,6 +165,9 @@ namespace ShareX
                 case HotkeyType.StopScreenRecording:
                     StopScreenRecording();
                     break;
+                case HotkeyType.PauseScreenRecording:
+                    PauseScreenRecording();
+                    break;
                 case HotkeyType.AbortScreenRecording:
                     AbortScreenRecording();
                     break;
@@ -667,6 +670,11 @@ namespace ShareX
         public static void StopScreenRecording()
         {
             ScreenRecordManager.StopRecording();
+        }
+
+        public static void PauseScreenRecording()
+        {
+            ScreenRecordManager.PauseScreenRecording();
         }
 
         public static void AbortScreenRecording()
@@ -1637,6 +1645,7 @@ namespace ShareX
                     case HotkeyType.ScreenRecorderGIFCustomRegion: return Resources.film__arrow;
                     case HotkeyType.StartScreenRecorderGIF: return Resources.film__arrow;
                     case HotkeyType.StopScreenRecording: return Resources.camcorder__minus;
+                    case HotkeyType.PauseScreenRecording: return Resources.camcorder_pencil;
                     case HotkeyType.AbortScreenRecording: return Resources.camcorder__exclamation;
                     // Tools
                     case HotkeyType.ColorPicker: return Resources.color;

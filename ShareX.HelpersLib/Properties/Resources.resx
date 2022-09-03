@@ -1487,4 +1487,10 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>Pause screen recording</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
 </root>
