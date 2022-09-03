@@ -64,6 +64,7 @@ namespace ShareX.ScreenCaptureLib
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
         private static int lastIconStatus = -1;
+        private const int panelOffset = 3;
 
         public ScreenRecordForm(Rectangle regionRectangle)
         {
@@ -76,19 +77,19 @@ namespace ShareX.ScreenCaptureLib
 
             Location = borderRectangle.Location;
             int windowWidth = Math.Max(borderRectangle.Width, pInfo.Width);
-            Size = new Size(windowWidth, borderRectangle.Height + pInfo.Height + 1);
-            pInfo.Location = new Point(0, borderRectangle.Height + 1);
+            Size = new Size(windowWidth, borderRectangle.Height + panelOffset + pInfo.Height);
+            pInfo.Location = new Point(0, borderRectangle.Height + panelOffset);
 
             Region region = new Region(ClientRectangle);
             region.Exclude(borderRectangle0Based.Offset(-1));
-            region.Exclude(new Rectangle(0, borderRectangle.Height, windowWidth, 1));
+            region.Exclude(new Rectangle(0, borderRectangle.Height, windowWidth, panelOffset));
             if (borderRectangle.Width < pInfo.Width)
             {
                 region.Exclude(new Rectangle(borderRectangle.Width, 0, pInfo.Width - borderRectangle.Width, borderRectangle.Height));
             }
             else if (borderRectangle.Width > pInfo.Width)
             {
-                region.Exclude(new Rectangle(pInfo.Width, borderRectangle.Height + 1, borderRectangle.Width - pInfo.Width, pInfo.Height));
+                region.Exclude(new Rectangle(pInfo.Width, borderRectangle.Height + panelOffset, borderRectangle.Width - pInfo.Width, pInfo.Height));
             }
             Region = region;
 
@@ -218,7 +219,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            using (Pen pen1 = new Pen(Color.Black) { DashPattern = new float[] { 5, 5 } })
+            using (Pen pen1 = new Pen(ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : Color.Black) { DashPattern = new float[] { 5, 5 } })
             using (Pen pen2 = new Pen(borderColor) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
             {
                 e.Graphics.DrawRectangleProper(pen1, borderRectangle0Based);
