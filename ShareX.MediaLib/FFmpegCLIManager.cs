@@ -291,7 +291,7 @@ namespace ShareX.MediaLib
                 {
                     foreach (string inputFile in inputFiles)
                     {
-                        if (!inputFile.Equals(outputFile, StringComparison.OrdinalIgnoreCase) && File.Exists(inputFile))
+                        if (File.Exists(inputFile))
                         {
                             File.Delete(inputFile);
                         }

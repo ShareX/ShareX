@@ -26,6 +26,7 @@
             this.tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAbort = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.btnPause = new ShareX.HelpersLib.NoFocusBorderButton();
             this.pInfo.SuspendLayout();
             this.cmsMain.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // pInfo
             // 
             resources.ApplyResources(this.pInfo, "pInfo");
+            this.pInfo.Controls.Add(this.btnPause);
             this.pInfo.Controls.Add(this.btnAbort);
             this.pInfo.Controls.Add(this.btnStart);
             this.pInfo.Controls.Add(this.lblTimer);
@@ -87,6 +89,12 @@
             resources.ApplyResources(this.niTray, "niTray");
             this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
             // 
+            // btnPause
+            // 
+            resources.ApplyResources(this.btnPause, "btnPause");
+            this.btnPause.Name = "btnPause";
+            this.btnPause.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnPause_MouseClick);
+            // 
             // ScreenRecordForm
             // 
             resources.ApplyResources(this, "$this");
@@ -116,5 +124,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiStart;
         private System.Windows.Forms.ToolStripMenuItem tsmiAbort;
         private System.Windows.Forms.NotifyIcon niTray;
+        private HelpersLib.NoFocusBorderButton btnPause;
     }
 }

@@ -44,6 +44,7 @@ namespace ShareX.ScreenCaptureLib
         public Stopwatch Timer { get; private set; }
         public ManualResetEvent RecordResetEvent { get; set; }
         public bool IsStopRequested { get; private set; }
+        public bool IsPauseRequested { get; private set; }
         public bool IsAbortRequested { get; private set; }
 
         public bool ActivateWindow { get; set; } = true;
@@ -171,6 +172,13 @@ namespace ShareX.ScreenCaptureLib
             UpdateTimer();
         }
 
+        public void StopRecordingTimer()
+        {
+            Timer.Stop();
+            timerRefresh.Stop();
+            UpdateTimer();
+        }
+
         private void UpdateTimer()
         {
             if (!IsDisposed)
@@ -216,6 +224,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void btnPause_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                StartStopRecording(true);
+            }
+        }
+
         private void btnAbort_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -228,11 +244,17 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void StartStopRecording()
+        public void StartStopRecording(bool isPause = false)
         {
             if (IsWorking)
             {
                 IsStopRequested = true;
+
+                if (isPause)
+                {
+                    RecordResetEvent.Reset();
+                    IsPauseRequested = true;
+                }
 
                 if (!IsRecording)
                 {
@@ -274,6 +296,7 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ScreenRecordState.AfterStart:
                         IsWorking = true;
+                        IsPauseRequested = false;
                         string trayTextAfterStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
                         niTray.Text = trayTextAfterStart.Truncate(63);
                         niTray.Icon = Resources.control_record.ToIcon();
@@ -283,6 +306,11 @@ namespace ShareX.ScreenCaptureLib
                     case ScreenRecordState.AfterRecordingStart:
                         IsRecording = true;
                         StartRecordingTimer();
+                        break;
+                    case ScreenRecordState.RecordingEnd:
+                        IsWorking = false;
+                        IsRecording = false;
+                        StopRecordingTimer();
                         break;
                     case ScreenRecordState.Encoding:
                         Hide();

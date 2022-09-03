@@ -131,6 +131,21 @@ namespace ShareX.HelpersLib
             return fileName;
         }
 
+        public static string AppendTextToFileName(string filePath, string text)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                int pos = filePath.LastIndexOf('.');
+
+                if (pos >= 0)
+                {
+                    return filePath.Substring(0, pos) + text + filePath.Substring(pos);
+                }
+            }
+
+            return filePath + text;
+        }
+
         public static string AppendExtension(string filePath, string extension)
         {
             return filePath.TrimEnd('.') + '.' + extension.TrimStart('.');

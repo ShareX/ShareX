@@ -339,6 +339,6 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ScreenRecordState
     {
-        Waiting, BeforeStart, AfterStart, AfterRecordingStart, Encoding
+        Waiting, BeforeStart, AfterStart, AfterRecordingStart, RecordingEnd, Encoding
     }
 }
