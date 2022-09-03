@@ -255,13 +255,17 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void StartStopRecording(bool isPause = false)
+        public void StartStopRecording(bool pause = false)
         {
-            if (Status == ScreenRecordingStatus.Working || Status == ScreenRecordingStatus.Recording)
+            if (Status == ScreenRecordingStatus.Aborted)
             {
-                if (isPause)
+                OnStopRequested();
+            }
+            else if (Status == ScreenRecordingStatus.Working || Status == ScreenRecordingStatus.Recording)
+            {
+                if (pause)
                 {
-                    RecordResetEvent.Reset();
+                    RecordResetEvent?.Reset();
                     Status = ScreenRecordingStatus.Paused;
                 }
                 else if (Status != ScreenRecordingStatus.Recording && Status != ScreenRecordingStatus.Paused)
@@ -274,16 +278,14 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 OnStopRequested();
+                return;
             }
-            else if (Status == ScreenRecordingStatus.Paused && !isPause)
+            else if (Status == ScreenRecordingStatus.Paused && !pause)
             {
                 Status = ScreenRecordingStatus.Stopped;
-                RecordResetEvent.Set();
             }
-            else if (RecordResetEvent != null)
-            {
-                RecordResetEvent.Set();
-            }
+
+            RecordResetEvent?.Set();
         }
 
         public void AbortRecording()
