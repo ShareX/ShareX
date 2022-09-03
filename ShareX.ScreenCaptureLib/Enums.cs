@@ -341,4 +341,9 @@ namespace ShareX.ScreenCaptureLib
     {
         Waiting, BeforeStart, AfterStart, AfterRecordingStart, RecordingEnd, Encoding
     }
+
+    public enum ScreenRecordingStatus
+    {
+        Waiting, Countdown, Working, Recording, Paused, Stopped, Aborted
+    }
 }

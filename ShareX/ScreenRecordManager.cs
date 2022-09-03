@@ -213,13 +213,13 @@ namespace ShareX
                         FileHelpers.DeleteFile(tempPath);
                     }
 
-                    do
+                    while (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused)
                     {
                         if (!abortRequested)
                         {
                             recordForm.ChangeState(ScreenRecordState.BeforeStart);
 
-                            if (recordForm.IsPauseRequested || !taskSettings.CaptureSettings.ScreenRecordAutoStart)
+                            if (recordForm.Status == ScreenRecordingStatus.Paused || !taskSettings.CaptureSettings.ScreenRecordAutoStart)
                             {
                                 recordForm.RecordResetEvent.WaitOne();
                             }
@@ -235,18 +235,18 @@ namespace ShareX
                                 }
                             }
 
-                            if (recordForm.IsAbortRequested)
+                            if (recordForm.Status == ScreenRecordingStatus.Aborted)
                             {
                                 abortRequested = true;
                             }
 
-                            if (recordForm.IsPauseRequested && File.Exists(path))
+                            if (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused)
                             {
-                                FileHelpers.RenameFile(path, concatPath);
-                            }
+                                if (recordForm.Status == ScreenRecordingStatus.Paused && File.Exists(path))
+                                {
+                                    FileHelpers.RenameFile(path, concatPath);
+                                }
 
-                            if (!abortRequested)
-                            {
                                 ScreenRecordingOptions options = new ScreenRecordingOptions()
                                 {
                                     IsRecording = true,
@@ -269,7 +269,7 @@ namespace ShareX
                                 screenRecorder.StartRecording();
                                 recordForm.ChangeState(ScreenRecordState.RecordingEnd);
 
-                                if (recordForm.IsAbortRequested)
+                                if (recordForm.Status == ScreenRecordingStatus.Aborted)
                                 {
                                     abortRequested = true;
                                 }
@@ -286,7 +286,6 @@ namespace ShareX
                             }
                         }
                     }
-                    while (recordForm.IsPauseRequested);
                 }
                 catch (Exception e)
                 {

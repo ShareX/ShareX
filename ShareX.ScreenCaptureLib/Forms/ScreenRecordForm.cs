@@ -37,15 +37,23 @@ namespace ShareX.ScreenCaptureLib
     {
         public event Action StopRequested;
 
-        public bool IsWorking { get; private set; }
-        public bool IsRecording { get; private set; }
-        public bool IsCountdown { get; set; }
+        private ScreenRecordingStatus status;
+
+        public ScreenRecordingStatus Status
+        {
+            get
+            {
+                return status;
+            }
+            private set
+            {
+                status = value;
+            }
+        }
+
         public TimeSpan Countdown { get; set; }
         public Stopwatch Timer { get; private set; }
         public ManualResetEvent RecordResetEvent { get; set; }
-        public bool IsStopRequested { get; private set; }
-        public bool IsPauseRequested { get; private set; }
-        public bool IsAbortRequested { get; private set; }
 
         public bool ActivateWindow { get; set; } = true;
         public float Duration { get; set; } = 0;
@@ -137,7 +145,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void ScreenRecordForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (!IsStopRequested)
+            if (Status != ScreenRecordingStatus.Stopped)
             {
                 AbortRecording();
             }
@@ -150,7 +158,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void StartCountdown(int milliseconds)
         {
-            IsCountdown = true;
+            Status = ScreenRecordingStatus.Countdown;
             Countdown = TimeSpan.FromMilliseconds(milliseconds);
 
             Timer.Start();
@@ -160,7 +168,10 @@ namespace ShareX.ScreenCaptureLib
 
         public void StartRecordingTimer()
         {
-            IsCountdown = Duration > 0;
+            if (Duration > 0)
+            {
+                Status = ScreenRecordingStatus.Countdown;
+            }
             Countdown = TimeSpan.FromSeconds(Duration);
 
             borderColor = Color.FromArgb(0, 255, 0);
@@ -185,7 +196,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 TimeSpan timer;
 
-                if (IsCountdown)
+                if (Status == ScreenRecordingStatus.Countdown)
                 {
                     timer = Countdown - Timer.Elapsed;
                     if (timer.Ticks < 0) timer = TimeSpan.Zero;
@@ -246,22 +257,28 @@ namespace ShareX.ScreenCaptureLib
 
         public void StartStopRecording(bool isPause = false)
         {
-            if (IsWorking)
+            if (Status == ScreenRecordingStatus.Working || Status == ScreenRecordingStatus.Recording)
             {
-                IsStopRequested = true;
-
                 if (isPause)
                 {
                     RecordResetEvent.Reset();
-                    IsPauseRequested = true;
+                    Status = ScreenRecordingStatus.Paused;
                 }
-
-                if (!IsRecording)
+                else if (Status != ScreenRecordingStatus.Recording && Status != ScreenRecordingStatus.Paused)
                 {
-                    IsAbortRequested = true;
+                    Status = ScreenRecordingStatus.Aborted;
+                }
+                else
+                {
+                    Status = ScreenRecordingStatus.Stopped;
                 }
 
                 OnStopRequested();
+            }
+            else if (Status == ScreenRecordingStatus.Paused && !isPause)
+            {
+                Status = ScreenRecordingStatus.Stopped;
+                RecordResetEvent.Set();
             }
             else if (RecordResetEvent != null)
             {
@@ -271,7 +288,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void AbortRecording()
         {
-            IsAbortRequested = true;
+            Status = ScreenRecordingStatus.Aborted;
             StartStopRecording();
         }
 
@@ -295,22 +312,26 @@ namespace ShareX.ScreenCaptureLib
                         cmsMain.Enabled = true;
                         break;
                     case ScreenRecordState.AfterStart:
-                        IsWorking = true;
-                        IsPauseRequested = false;
+                        Status = ScreenRecordingStatus.Working;
                         string trayTextAfterStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
                         niTray.Text = trayTextAfterStart.Truncate(63);
                         niTray.Icon = Resources.control_record.ToIcon();
                         tsmiStart.Text = Resources.ScreenRecordForm_Stop;
                         btnStart.Text = Resources.ScreenRecordForm_Stop;
+                        // TODO: Translate
+                        btnPause.Text = "Pause";
                         break;
                     case ScreenRecordState.AfterRecordingStart:
-                        IsRecording = true;
+                        Status = ScreenRecordingStatus.Recording;
                         StartRecordingTimer();
                         break;
                     case ScreenRecordState.RecordingEnd:
-                        IsWorking = false;
-                        IsRecording = false;
                         StopRecordingTimer();
+                        // TODO: Translate
+                        if (Status == ScreenRecordingStatus.Paused)
+                        {
+                            btnPause.Text = "Resume";
+                        }
                         break;
                     case ScreenRecordState.Encoding:
                         Hide();
