@@ -132,7 +132,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 32</value>
+    <value>96, 36</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnStart.TabIndex" type="System.Int32, mscorlib">
@@ -163,7 +163,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblTimer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 32</value>
+    <value>90, 36</value>
   </data>
   <data name="lblTimer.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -202,7 +202,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="btnAbort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 32</value>
+    <value>96, 36</value>
   </data>
   <data name="btnAbort.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -232,7 +232,7 @@
     <value>8, 8</value>
   </data>
   <data name="pInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 32</value>
+    <value>280, 36</value>
   </data>
   <data name="pInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
