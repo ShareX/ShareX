@@ -17,10 +17,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScreenRecordForm));
-            this.btnStart = new ShareX.HelpersLib.BlackStyleButton();
-            this.lblTimer = new ShareX.HelpersLib.BlackStyleLabel();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.lblTimer = new System.Windows.Forms.Label();
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
-            this.btnAbort = new ShareX.HelpersLib.BlackStyleButton();
+            this.btnAbort = new System.Windows.Forms.Button();
             this.pInfo = new System.Windows.Forms.Panel();
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
@@ -33,16 +33,12 @@
             // btnStart
             // 
             resources.ApplyResources(this.btnStart, "btnStart");
-            this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.Name = "btnStart";
             this.btnStart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
             // 
             // lblTimer
             // 
-            this.lblTimer.BackColor = System.Drawing.Color.DimGray;
-            this.lblTimer.DrawBorder = true;
             resources.ApplyResources(this.lblTimer, "lblTimer");
-            this.lblTimer.ForeColor = System.Drawing.Color.White;
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -53,7 +49,6 @@
             // btnAbort
             // 
             resources.ApplyResources(this.btnAbort, "btnAbort");
-            this.btnAbort.ForeColor = System.Drawing.Color.White;
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAbort_MouseClick);
             // 
@@ -113,10 +108,10 @@
 
         #endregion
 
-        private HelpersLib.BlackStyleButton btnStart;
+        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer timerRefresh;
-        private HelpersLib.BlackStyleLabel lblTimer;
-        private HelpersLib.BlackStyleButton btnAbort;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Button btnAbort;
         private System.Windows.Forms.Panel pInfo;
         private System.Windows.Forms.ContextMenuStrip cmsMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiStart;

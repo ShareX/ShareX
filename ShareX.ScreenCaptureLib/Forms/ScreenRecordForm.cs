@@ -58,7 +58,7 @@ namespace ShareX.ScreenCaptureLib
         public ScreenRecordForm(Rectangle regionRectangle)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
             niTray.Icon = ShareXResources.Icon;
 
             borderRectangle = regionRectangle.Offset(1);
