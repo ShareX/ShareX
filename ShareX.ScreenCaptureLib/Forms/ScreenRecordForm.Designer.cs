@@ -17,10 +17,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScreenRecordForm));
-            this.btnStart = new System.Windows.Forms.Button();
+            this.btnStart = new ShareX.HelpersLib.NoFocusBorderButton();
             this.lblTimer = new System.Windows.Forms.Label();
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
-            this.btnAbort = new System.Windows.Forms.Button();
+            this.btnAbort = new ShareX.HelpersLib.NoFocusBorderButton();
             this.pInfo = new System.Windows.Forms.Panel();
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +40,6 @@
             // 
             resources.ApplyResources(this.lblTimer, "lblTimer");
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timerRefresh
             // 
@@ -108,10 +107,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnStart;
+        private ShareX.HelpersLib.NoFocusBorderButton btnStart;
         private System.Windows.Forms.Timer timerRefresh;
         private System.Windows.Forms.Label lblTimer;
-        private System.Windows.Forms.Button btnAbort;
+        private ShareX.HelpersLib.NoFocusBorderButton btnAbort;
         private System.Windows.Forms.Panel pInfo;
         private System.Windows.Forms.ContextMenuStrip cmsMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiStart;

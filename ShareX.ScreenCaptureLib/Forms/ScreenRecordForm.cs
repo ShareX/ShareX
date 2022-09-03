@@ -152,8 +152,6 @@ namespace ShareX.ScreenCaptureLib
             IsCountdown = true;
             Countdown = TimeSpan.FromMilliseconds(milliseconds);
 
-            lblTimer.ForeColor = Color.Yellow;
-
             Timer.Start();
             timerRefresh.Start();
             UpdateTimer();
@@ -164,7 +162,6 @@ namespace ShareX.ScreenCaptureLib
             IsCountdown = Duration > 0;
             Countdown = TimeSpan.FromSeconds(Duration);
 
-            lblTimer.ForeColor = Color.White;
             borderColor = Color.FromArgb(0, 255, 0);
             Refresh();
 

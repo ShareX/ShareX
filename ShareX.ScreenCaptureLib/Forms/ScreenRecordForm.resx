@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnStart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnStart.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
@@ -124,7 +128,6 @@
   <data name="btnStart.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnStart.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
@@ -142,7 +145,7 @@
     <value>btnStart</value>
   </data>
   <data name="&gt;&gt;btnStart.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=14.1.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnStart.Parent" xml:space="preserve">
     <value>pInfo</value>
@@ -160,19 +163,22 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblTimer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 32</value>
+    <value>84, 32</value>
   </data>
   <data name="lblTimer.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="lblTimer.Text" xml:space="preserve">
     <value>00:00:00</value>
-  <comment>@Invariant</comment></data>
+  </data>
+  <data name="lblTimer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <data name="&gt;&gt;lblTimer.Name" xml:space="preserve">
     <value>lblTimer</value>
   </data>
   <data name="&gt;&gt;lblTimer.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblTimer.Parent" xml:space="preserve">
     <value>pInfo</value>
@@ -183,6 +189,9 @@
   <metadata name="timerRefresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="btnAbort.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="btnAbort.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
   </data>
@@ -205,7 +214,7 @@
     <value>btnAbort</value>
   </data>
   <data name="&gt;&gt;btnAbort.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=14.1.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAbort.Parent" xml:space="preserve">
     <value>pInfo</value>
@@ -223,7 +232,7 @@
     <value>8, 8</value>
   </data>
   <data name="pInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 32</value>
+    <value>274, 32</value>
   </data>
   <data name="pInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -269,7 +278,7 @@
   </metadata>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="niTray.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
