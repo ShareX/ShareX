@@ -340,6 +340,8 @@ namespace ShareX.ScreenCaptureLib
                         if (Status == ScreenRecordingStatus.Paused)
                         {
                             btnPause.Text = "Resume";
+                            borderColor = Color.FromArgb(241, 196, 27);
+                            Refresh();
                         }
                         break;
                     case ScreenRecordState.Encoding:
