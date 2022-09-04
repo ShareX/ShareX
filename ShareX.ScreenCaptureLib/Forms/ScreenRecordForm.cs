@@ -71,6 +71,8 @@ namespace ShareX.ScreenCaptureLib
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
+        private bool dragging;
+        private Point initialLocation;
         private static int lastIconStatus = -1;
         private const int panelOffset = 3;
 
@@ -272,10 +274,27 @@ namespace ShareX.ScreenCaptureLib
 
         private void lblTimer_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && Status == ScreenRecordingStatus.Paused)
+            if (e.Button == MouseButtons.Left && (Status == ScreenRecordingStatus.Waiting || Status == ScreenRecordingStatus.Paused))
             {
-                NativeMethods.ReleaseCapture();
-                NativeMethods.SendMessage(Handle, (uint)WindowsMessages.NCLBUTTONDOWN, (IntPtr)WindowHitTestRegions.HTCAPTION, IntPtr.Zero);
+                dragging = true;
+                initialLocation = e.Location;
+            }
+        }
+
+        private void lblTimer_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Location = new Point(Location.X + e.X - initialLocation.X, Location.Y + e.Y - initialLocation.Y);
+                Update();
+            }
+        }
+
+        private void lblTimer_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = false;
             }
         }
 
@@ -323,6 +342,24 @@ namespace ShareX.ScreenCaptureLib
             StartStopRecording();
         }
 
+        private void UpdateUI()
+        {
+            if (Status == ScreenRecordingStatus.Waiting || Status == ScreenRecordingStatus.Paused)
+            {
+                // TODO: Translate
+                btnPause.Text = "Resume";
+                lblTimer.Cursor = Cursors.SizeAll;
+                borderColor = Color.FromArgb(241, 196, 27);
+                Refresh();
+            }
+            else if (Status == ScreenRecordingStatus.Working || Status == ScreenRecordingStatus.Recording)
+            {
+                // TODO: Translate
+                btnPause.Text = "Pause";
+                lblTimer.Cursor = Cursors.Default;
+            }
+        }
+
         public void ChangeState(ScreenRecordState state)
         {
             this.InvokeSafe(() =>
@@ -341,17 +378,17 @@ namespace ShareX.ScreenCaptureLib
                         niTray.Text = trayTextBeforeStart.Truncate(63);
                         tsmiStart.Text = Resources.ScreenRecordForm_Start;
                         cmsMain.Enabled = true;
+                        UpdateUI();
                         break;
                     case ScreenRecordState.AfterStart:
+                        dragging = false;
                         Status = ScreenRecordingStatus.Working;
                         string trayTextAfterStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
                         niTray.Text = trayTextAfterStart.Truncate(63);
                         niTray.Icon = Resources.control_record.ToIcon();
                         tsmiStart.Text = Resources.ScreenRecordForm_Stop;
                         btnStart.Text = Resources.ScreenRecordForm_Stop;
-                        // TODO: Translate
-                        btnPause.Text = "Pause";
-                        lblTimer.Cursor = Cursors.Default;
+                        UpdateUI();
                         break;
                     case ScreenRecordState.AfterRecordingStart:
                         Status = ScreenRecordingStatus.Recording;
@@ -359,14 +396,7 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ScreenRecordState.RecordingEnd:
                         StopRecordingTimer();
-                        if (Status == ScreenRecordingStatus.Paused)
-                        {
-                            // TODO: Translate
-                            btnPause.Text = "Resume";
-                            lblTimer.Cursor = Cursors.SizeAll;
-                            borderColor = Color.FromArgb(241, 196, 27);
-                            Refresh();
-                        }
+                        UpdateUI();
                         break;
                     case ScreenRecordState.Encoding:
                         Hide();

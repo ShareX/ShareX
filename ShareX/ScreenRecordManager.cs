@@ -221,79 +221,77 @@ namespace ShareX
                         FileHelpers.DeleteFile(tempPath);
                     }
 
-                    while (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused)
+                    while (!abortRequested && (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused))
                     {
-                        if (!abortRequested)
+                        recordForm.ChangeState(ScreenRecordState.BeforeStart);
+
+                        if (recordForm.Status == ScreenRecordingStatus.Paused || !taskSettings.CaptureSettings.ScreenRecordAutoStart)
                         {
-                            recordForm.ChangeState(ScreenRecordState.BeforeStart);
+                            recordForm.RecordResetEvent.WaitOne();
+                        }
+                        else
+                        {
+                            int delay = (int)(taskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
 
-                            if (recordForm.Status == ScreenRecordingStatus.Paused || !taskSettings.CaptureSettings.ScreenRecordAutoStart)
+                            if (delay > 0)
                             {
-                                recordForm.RecordResetEvent.WaitOne();
+                                recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
+
+                                recordForm.RecordResetEvent.WaitOne(delay);
                             }
-                            else
+                        }
+
+                        if (recordForm.Status == ScreenRecordingStatus.Aborted)
+                        {
+                            abortRequested = true;
+                        }
+
+                        if (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused)
+                        {
+                            if (recordForm.Status == ScreenRecordingStatus.Paused && File.Exists(path))
                             {
-                                int delay = (int)(taskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
-
-                                if (delay > 0)
-                                {
-                                    recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
-
-                                    recordForm.RecordResetEvent.WaitOne(delay);
-                                }
+                                FileHelpers.RenameFile(path, concatPath);
                             }
+
+                            recordForm.ChangeState(ScreenRecordState.AfterStart);
+
+                            captureRectangle = recordForm.RecordRectangle;
+
+                            ScreenRecordingOptions options = new ScreenRecordingOptions()
+                            {
+                                IsRecording = true,
+                                IsLossless = taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding,
+                                FFmpeg = taskSettings.CaptureSettings.FFmpegOptions,
+                                FPS = fps,
+                                Duration = duration,
+                                OutputPath = path,
+                                CaptureArea = captureRectangle,
+                                DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor
+                            };
+
+                            Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+                            screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
+
+                            screenRecorder?.Dispose();
+                            screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
+                            screenRecorder.RecordingStarted += ScreenRecorder_RecordingStarted;
+                            screenRecorder.EncodingProgressChanged += ScreenRecorder_EncodingProgressChanged;
+                            screenRecorder.StartRecording();
+                            recordForm.ChangeState(ScreenRecordState.RecordingEnd);
 
                             if (recordForm.Status == ScreenRecordingStatus.Aborted)
                             {
                                 abortRequested = true;
                             }
+                        }
 
-                            if (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused)
+                        if (File.Exists(concatPath))
+                        {
+                            using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath))
                             {
-                                if (recordForm.Status == ScreenRecordingStatus.Paused && File.Exists(path))
-                                {
-                                    FileHelpers.RenameFile(path, concatPath);
-                                }
-
-                                captureRectangle = recordForm.RecordRectangle;
-
-                                ScreenRecordingOptions options = new ScreenRecordingOptions()
-                                {
-                                    IsRecording = true,
-                                    IsLossless = taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding,
-                                    FFmpeg = taskSettings.CaptureSettings.FFmpegOptions,
-                                    FPS = fps,
-                                    Duration = duration,
-                                    OutputPath = path,
-                                    CaptureArea = captureRectangle,
-                                    DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor
-                                };
-
-                                Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
-                                screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
-
-                                screenRecorder?.Dispose();
-                                screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
-                                screenRecorder.RecordingStarted += ScreenRecorder_RecordingStarted;
-                                screenRecorder.EncodingProgressChanged += ScreenRecorder_EncodingProgressChanged;
-                                recordForm.ChangeState(ScreenRecordState.AfterStart);
-                                screenRecorder.StartRecording();
-                                recordForm.ChangeState(ScreenRecordState.RecordingEnd);
-
-                                if (recordForm.Status == ScreenRecordingStatus.Aborted)
-                                {
-                                    abortRequested = true;
-                                }
-                            }
-
-                            if (File.Exists(concatPath))
-                            {
-                                using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath))
-                                {
-                                    ffmpeg.ShowError = true;
-                                    ffmpeg.ConcatenateVideos(new string[] { concatPath, path }, tempPath, true);
-                                    FileHelpers.RenameFile(tempPath, path);
-                                }
+                                ffmpeg.ShowError = true;
+                                ffmpeg.ConcatenateVideos(new string[] { concatPath, path }, tempPath, true);
+                                FileHelpers.RenameFile(tempPath, path);
                             }
                         }
                     }

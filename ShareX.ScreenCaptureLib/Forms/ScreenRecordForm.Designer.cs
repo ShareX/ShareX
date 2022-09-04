@@ -42,6 +42,8 @@
             resources.ApplyResources(this.lblTimer, "lblTimer");
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTimer_MouseDown);
+            this.lblTimer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTimer_MouseMove);
+            this.lblTimer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblTimer_MouseUp);
             // 
             // timerRefresh
             // 
