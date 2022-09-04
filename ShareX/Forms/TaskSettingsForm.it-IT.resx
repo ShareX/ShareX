@@ -259,7 +259,7 @@
     <value>Applica Effetti solo alla Regione Catturata</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>Confnigurazione Effetti Immagine...</value>
+    <value>Configurazione Effetti Immagine...</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>Miniatura</value>
