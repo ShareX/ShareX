@@ -68,6 +68,24 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        protected override bool ShowWithoutActivation
+        {
+            get
+            {
+                return !ActivateWindow;
+            }
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ExStyle |= (int)(WindowStyles.WS_EX_TOPMOST | WindowStyles.WS_EX_TOOLWINDOW);
+                return createParams;
+            }
+        }
+
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
@@ -111,24 +129,6 @@ namespace ShareX.ScreenCaptureLib
             ChangeState(ScreenRecordState.Waiting);
         }
 
-        protected override bool ShowWithoutActivation
-        {
-            get
-            {
-                return !ActivateWindow;
-            }
-        }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= (int)(WindowStyles.WS_EX_TOPMOST | WindowStyles.WS_EX_TOOLWINDOW);
-                return createParams;
-            }
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -147,20 +147,47 @@ namespace ShareX.ScreenCaptureLib
             base.Dispose(disposing);
         }
 
-        private void ScreenRegionForm_Shown(object sender, EventArgs e)
+        public void StartStopRecording()
         {
-            if (ActivateWindow)
-            {
-                this.ForceActivate();
-            }
-        }
-
-        private void ScreenRecordForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (Status != ScreenRecordingStatus.Stopped)
+            if (Status == ScreenRecordingStatus.Working)
             {
                 AbortRecording();
             }
+            else if (Status == ScreenRecordingStatus.Recording)
+            {
+                Status = ScreenRecordingStatus.Stopped;
+                OnStopRequested();
+            }
+            else if (Status == ScreenRecordingStatus.Paused)
+            {
+                Status = ScreenRecordingStatus.Stopped;
+                RecordResetEvent?.Set();
+            }
+            else
+            {
+                RecordResetEvent?.Set();
+            }
+        }
+
+        public void PauseResumeRecording()
+        {
+            if (Status == ScreenRecordingStatus.Recording)
+            {
+                Status = ScreenRecordingStatus.Paused;
+                RecordResetEvent?.Reset();
+                OnStopRequested();
+            }
+            else
+            {
+                RecordResetEvent?.Set();
+            }
+        }
+
+        public void AbortRecording()
+        {
+            Status = ScreenRecordingStatus.Aborted;
+            OnStopRequested();
+            RecordResetEvent?.Set();
         }
 
         protected void OnStopRequested()
@@ -227,6 +254,111 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void UpdateUI()
+        {
+            if (Status == ScreenRecordingStatus.Waiting || Status == ScreenRecordingStatus.Paused)
+            {
+                // TODO: Translate
+                btnPause.Text = "Resume";
+                lblTimer.Cursor = Cursors.SizeAll;
+                borderColor = Color.FromArgb(241, 196, 27);
+                Refresh();
+            }
+            else if (Status == ScreenRecordingStatus.Recording)
+            {
+                // TODO: Translate
+                btnPause.Text = "Pause";
+                lblTimer.Cursor = Cursors.Default;
+            }
+        }
+
+        public void ChangeState(ScreenRecordState state)
+        {
+            this.InvokeSafe(() =>
+            {
+                switch (state)
+                {
+                    case ScreenRecordState.Waiting:
+                        string trayTextWaiting = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Waiting___;
+                        niTray.Text = trayTextWaiting.Truncate(63);
+                        niTray.Icon = Resources.control_record_yellow.ToIcon();
+                        cmsMain.Enabled = false;
+                        niTray.Visible = true;
+                        break;
+                    case ScreenRecordState.BeforeStart:
+                        string trayTextBeforeStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
+                        niTray.Text = trayTextBeforeStart.Truncate(63);
+                        tsmiStart.Text = Resources.ScreenRecordForm_Start;
+                        cmsMain.Enabled = true;
+                        UpdateUI();
+                        break;
+                    case ScreenRecordState.AfterStart:
+                        dragging = false;
+                        Status = ScreenRecordingStatus.Working;
+                        string trayTextAfterStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
+                        niTray.Text = trayTextAfterStart.Truncate(63);
+                        niTray.Icon = Resources.control_record.ToIcon();
+                        tsmiStart.Text = Resources.ScreenRecordForm_Stop;
+                        btnStart.Text = Resources.ScreenRecordForm_Stop;
+                        UpdateUI();
+                        break;
+                    case ScreenRecordState.AfterRecordingStart:
+                        Status = ScreenRecordingStatus.Recording;
+                        StartRecordingTimer();
+                        UpdateUI();
+                        break;
+                    case ScreenRecordState.RecordingEnd:
+                        StopRecordingTimer();
+                        UpdateUI();
+                        break;
+                    case ScreenRecordState.Encoding:
+                        Hide();
+                        string trayTextAfterStop = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
+                        niTray.Text = trayTextAfterStop.Truncate(63);
+                        niTray.Icon = Resources.camcorder__pencil.ToIcon();
+                        cmsMain.Enabled = false;
+                        break;
+                }
+            });
+        }
+
+        public void ChangeStateProgress(int progress)
+        {
+            niTray.Text = $"ShareX - {Resources.ScreenRecordForm_StartRecording_Encoding___} {progress}%";
+
+            if (niTray.Visible && lastIconStatus != progress)
+            {
+                Icon icon;
+
+                if (progress >= 0)
+                {
+                    try
+                    {
+                        icon = Helpers.GetProgressIcon(progress, Color.FromArgb(140, 0, 36));
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                        progress = -1;
+                        if (lastIconStatus == progress) return;
+                        icon = Resources.camcorder__pencil.ToIcon();
+                    }
+                }
+                else
+                {
+                    icon = Resources.camcorder__pencil.ToIcon();
+                }
+
+                using (Icon oldIcon = niTray.Icon)
+                {
+                    niTray.Icon = icon;
+                    oldIcon.DisposeHandle();
+                }
+
+                lastIconStatus = progress;
+            }
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             using (Pen pen1 = new Pen(ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : Color.Black) { DashPattern = new float[] { 5, 5 } })
@@ -237,6 +369,22 @@ namespace ShareX.ScreenCaptureLib
             }
 
             base.OnPaint(e);
+        }
+
+        private void ScreenRegionForm_Shown(object sender, EventArgs e)
+        {
+            if (ActivateWindow)
+            {
+                this.ForceActivate();
+            }
+        }
+
+        private void ScreenRecordForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Status != ScreenRecordingStatus.Stopped)
+            {
+                AbortRecording();
+            }
         }
 
         private void timerRefresh_Tick(object sender, EventArgs e)
@@ -295,154 +443,6 @@ namespace ShareX.ScreenCaptureLib
             if (e.Button == MouseButtons.Left)
             {
                 dragging = false;
-            }
-        }
-
-        public void StartStopRecording(bool pause = false)
-        {
-            if (Status == ScreenRecordingStatus.Aborted)
-            {
-                OnStopRequested();
-            }
-            else if (Status == ScreenRecordingStatus.Working || Status == ScreenRecordingStatus.Recording)
-            {
-                if (pause)
-                {
-                    RecordResetEvent?.Reset();
-                    Status = ScreenRecordingStatus.Paused;
-                }
-                else if (Status != ScreenRecordingStatus.Recording && Status != ScreenRecordingStatus.Paused)
-                {
-                    Status = ScreenRecordingStatus.Aborted;
-                }
-                else
-                {
-                    Status = ScreenRecordingStatus.Stopped;
-                }
-
-                OnStopRequested();
-                return;
-            }
-            else if (Status == ScreenRecordingStatus.Paused && !pause)
-            {
-                Status = ScreenRecordingStatus.Stopped;
-            }
-
-            RecordResetEvent?.Set();
-        }
-
-        public void PauseResumeRecording()
-        {
-            StartStopRecording(true);
-        }
-
-        public void AbortRecording()
-        {
-            Status = ScreenRecordingStatus.Aborted;
-            StartStopRecording();
-        }
-
-        private void UpdateUI()
-        {
-            if (Status == ScreenRecordingStatus.Waiting || Status == ScreenRecordingStatus.Paused)
-            {
-                // TODO: Translate
-                btnPause.Text = "Resume";
-                lblTimer.Cursor = Cursors.SizeAll;
-                borderColor = Color.FromArgb(241, 196, 27);
-                Refresh();
-            }
-            else if (Status == ScreenRecordingStatus.Working || Status == ScreenRecordingStatus.Recording)
-            {
-                // TODO: Translate
-                btnPause.Text = "Pause";
-                lblTimer.Cursor = Cursors.Default;
-            }
-        }
-
-        public void ChangeState(ScreenRecordState state)
-        {
-            this.InvokeSafe(() =>
-            {
-                switch (state)
-                {
-                    case ScreenRecordState.Waiting:
-                        string trayTextWaiting = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Waiting___;
-                        niTray.Text = trayTextWaiting.Truncate(63);
-                        niTray.Icon = Resources.control_record_yellow.ToIcon();
-                        cmsMain.Enabled = false;
-                        niTray.Visible = true;
-                        break;
-                    case ScreenRecordState.BeforeStart:
-                        string trayTextBeforeStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
-                        niTray.Text = trayTextBeforeStart.Truncate(63);
-                        tsmiStart.Text = Resources.ScreenRecordForm_Start;
-                        cmsMain.Enabled = true;
-                        UpdateUI();
-                        break;
-                    case ScreenRecordState.AfterStart:
-                        dragging = false;
-                        Status = ScreenRecordingStatus.Working;
-                        string trayTextAfterStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
-                        niTray.Text = trayTextAfterStart.Truncate(63);
-                        niTray.Icon = Resources.control_record.ToIcon();
-                        tsmiStart.Text = Resources.ScreenRecordForm_Stop;
-                        btnStart.Text = Resources.ScreenRecordForm_Stop;
-                        UpdateUI();
-                        break;
-                    case ScreenRecordState.AfterRecordingStart:
-                        Status = ScreenRecordingStatus.Recording;
-                        StartRecordingTimer();
-                        break;
-                    case ScreenRecordState.RecordingEnd:
-                        StopRecordingTimer();
-                        UpdateUI();
-                        break;
-                    case ScreenRecordState.Encoding:
-                        Hide();
-                        string trayTextAfterStop = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
-                        niTray.Text = trayTextAfterStop.Truncate(63);
-                        niTray.Icon = Resources.camcorder__pencil.ToIcon();
-                        cmsMain.Enabled = false;
-                        break;
-                }
-            });
-        }
-
-        public void ChangeStateProgress(int progress)
-        {
-            niTray.Text = $"ShareX - {Resources.ScreenRecordForm_StartRecording_Encoding___} {progress}%";
-
-            if (niTray.Visible && lastIconStatus != progress)
-            {
-                Icon icon;
-
-                if (progress >= 0)
-                {
-                    try
-                    {
-                        icon = Helpers.GetProgressIcon(progress, Color.FromArgb(140, 0, 36));
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                        progress = -1;
-                        if (lastIconStatus == progress) return;
-                        icon = Resources.camcorder__pencil.ToIcon();
-                    }
-                }
-                else
-                {
-                    icon = Resources.camcorder__pencil.ToIcon();
-                }
-
-                using (Icon oldIcon = niTray.Icon)
-                {
-                    niTray.Icon = icon;
-                    oldIcon.DisposeHandle();
-                }
-
-                lastIconStatus = progress;
             }
         }
     }
