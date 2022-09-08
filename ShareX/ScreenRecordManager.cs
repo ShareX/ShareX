@@ -255,7 +255,7 @@ namespace ShareX
 
                             recordForm.ChangeState(ScreenRecordState.AfterStart);
 
-                            captureRectangle = recordForm.RecordRectangle;
+                            captureRectangle = recordForm.RecordingRegion;
 
                             ScreenRecordingOptions options = new ScreenRecordingOptions()
                             {

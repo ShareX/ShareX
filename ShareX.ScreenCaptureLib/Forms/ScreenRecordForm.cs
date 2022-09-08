@@ -60,11 +60,11 @@ namespace ShareX.ScreenCaptureLib
         public float Duration { get; set; } = 0;
         public bool AskConfirmationOnAbort { get; set; } = false;
 
-        public Rectangle RecordRectangle
+        public Rectangle RecordingRegion
         {
             get
             {
-                return new Rectangle(Location.X + 1, Location.Y + 1, borderRectangle.Width - 2, borderRectangle.Height - 2);
+                return GetRecordingRegion(Location);
             }
         }
 
@@ -145,6 +145,11 @@ namespace ShareX.ScreenCaptureLib
             }
 
             base.Dispose(disposing);
+        }
+
+        private Rectangle GetRecordingRegion(Point windowLocation)
+        {
+            return new Rectangle(windowLocation.X + 1, windowLocation.Y + 1, borderRectangle.Width - 2, borderRectangle.Height - 2);
         }
 
         public void StartStopRecording()
@@ -433,8 +438,17 @@ namespace ShareX.ScreenCaptureLib
         {
             if (dragging)
             {
-                Location = new Point(Location.X + e.X - initialLocation.X, Location.Y + e.Y - initialLocation.Y);
-                Update();
+                Point newLocation = new Point(Location.X + e.X - initialLocation.X, Location.Y + e.Y - initialLocation.Y);
+                Rectangle recordingRegion = GetRecordingRegion(newLocation);
+                if (CaptureHelpers.GetScreenBounds().Contains(recordingRegion))
+                {
+                    Location = newLocation;
+                    Update();
+                }
+                else
+                {
+                    initialLocation = e.Location;
+                }
             }
         }
 
