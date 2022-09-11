@@ -123,9 +123,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Opções de gravações de tela</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Baixar</value>
-  </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Instalar dispositivos de gravação</value>
   </data>

@@ -163,9 +163,6 @@
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Змінний бітрейт:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Завантажити</value>
-  </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Власний шлях</value>
   </data>

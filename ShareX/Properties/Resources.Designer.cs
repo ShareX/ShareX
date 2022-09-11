@@ -1417,26 +1417,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} does not exist.
-        ///
-        ///Would you like to automatically download it?.
-        /// </summary>
-        public static string FFmpeg_does_not_exist {
-            get {
-                return ResourceManager.GetString("FFmpeg_does_not_exist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Download of FFmpeg failed..
-        /// </summary>
-        public static string FFmpeg_Download_of_FFmpeg_failed {
-            get {
-                return ResourceManager.GetString("FFmpeg_Download_of_FFmpeg_failed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to FFmpeg error.
         /// </summary>
         public static string FFmpeg_FFmpeg_error {
@@ -1446,29 +1426,11 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FFmpeg successfully downloaded..
-        /// </summary>
-        public static string FFmpeg_FFmpeg_successfully_downloaded {
-            get {
-                return ResourceManager.GetString("FFmpeg_FFmpeg_successfully_downloaded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to FFmpeg video and audio source can&apos;t both be &quot;None&quot;..
         /// </summary>
         public static string FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__ {
             get {
                 return ResourceManager.GetString("FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Missing.
-        /// </summary>
-        public static string FFmpeg_Missing {
-            get {
-                return ResourceManager.GetString("FFmpeg_Missing", resourceCulture);
             }
         }
         

@@ -288,9 +288,6 @@
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>Tamanho do ecrã...</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>Transferência do FFmpeg completada.</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
     <value>Inverter na vertical</value>
   </data>
@@ -339,9 +336,6 @@ Deseja fechar o editor de imagens?</value>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Captura de retângulo transparente</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Transferência do FFmpeg falhou.</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>Mostrar posição e tamanho</value>

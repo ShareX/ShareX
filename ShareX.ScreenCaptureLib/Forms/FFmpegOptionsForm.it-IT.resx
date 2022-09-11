@@ -126,9 +126,6 @@
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Bitrate Variabile:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Scarica</value>
-  </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Usa Percorso Personalizzato</value>
   </data>

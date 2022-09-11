@@ -619,25 +619,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download of FFmpeg failed..
-        /// </summary>
-        internal static string FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_ {
-            get {
-                return ResourceManager.GetString("FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Successfully downloaded FFmpeg..
-        /// </summary>
-        internal static string FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_ {
-            get {
-                return ResourceManager.GetString("FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" +
-                        "", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Bitrate: {0}k.
         /// </summary>
         internal static string FFmpegOptionsForm_UpdateUI_Bitrate___0_k {

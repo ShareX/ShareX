@@ -1422,56 +1422,27 @@ namespace ShareX
 
         public static bool CheckFFmpeg(TaskSettings taskSettings)
         {
-            string ffmpegPath = taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath;
-
-            if (string.IsNullOrEmpty(ffmpegPath))
+            if (NativeMethods.Is32Bit() && !taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath)
             {
-                ffmpegPath = Program.DefaultFFmpegFilePath;
+                // TODO: Translate
+                MessageBox.Show("FFmpeg that comes with ShareX only supports 64-bit operating systems.",
+                    "ShareX - " + "FFmpeg is missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
             }
+
+            string ffmpegPath = taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath;
 
             if (!File.Exists(ffmpegPath))
             {
-                if (MessageBox.Show(string.Format(Resources.FFmpeg_does_not_exist, ffmpegPath),
-                    "ShareX - " + Resources.FFmpeg_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    DialogResult downloadDialogResult = FFmpegGitHubDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested);
+                // TODO: Translate
+                MessageBox.Show("FFmpeg does not exist at the following path:\r\n" + ffmpegPath,
+                    "ShareX - " + "FFmpeg is missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                    if (downloadDialogResult == DialogResult.OK)
-                    {
-                        Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
-                            taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Program.DefaultFFmpegFilePath;
-
-#if STEAM || MicrosoftStore
-                        Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.OverrideCLIPath =
-                          taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
-#endif
-                    }
-                    else if (downloadDialogResult == DialogResult.Cancel)
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
 
             return true;
-        }
-
-        private static void DownloaderForm_InstallRequested(string filePath)
-        {
-            bool result = FFmpegGitHubDownloader.ExtractFFmpeg(filePath, Program.ToolsFolder);
-
-            if (result)
-            {
-                MessageBox.Show(Resources.FFmpeg_FFmpeg_successfully_downloaded, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(Resources.FFmpeg_Download_of_FFmpeg_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         public static void PlayCaptureSound(TaskSettings taskSettings)

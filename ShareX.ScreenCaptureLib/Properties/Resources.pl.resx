@@ -207,12 +207,6 @@
   <data name="DropShadowColor" xml:space="preserve">
     <value>Kolor cienia...</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Pobieranie FFmpeg nie powiodło się.</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>Pomyślnie pobrano FFmpeg.</value>
-  </data>
   <data name="LockMenu" xml:space="preserve">
     <value>Zablokuj menu</value>
   </data>

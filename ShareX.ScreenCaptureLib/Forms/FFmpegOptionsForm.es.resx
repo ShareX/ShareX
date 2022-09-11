@@ -135,9 +135,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Opciones FFmpeg</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Descargar</value>
-  </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Utilizar comandos personalizados</value>
   </data>

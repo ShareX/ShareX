@@ -243,9 +243,6 @@
   <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
     <value>Ștergeți toate</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Descărcarea FFmpeg a eșuat.</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>Umbră</value>
   </data>
@@ -445,9 +442,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Opriți captura</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>S-a descărcat cu succes FFmpeg.</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
     <value>Comutare la instrumentul de desen după selectarea formei</value>

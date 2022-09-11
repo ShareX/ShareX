@@ -557,22 +557,8 @@ ShareX を再起動しますか？</value>
     <value>ShareXの再起動が必要です。
 再起動してもいいですか？</value>
   </data>
-  <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
-    <value>FFmpegのダウンロードに失敗しました。</value>
-  </data>
   <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
     <value>FFmpegのエラーです</value>
-  </data>
-  <data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
-    <value>FFmpegのダウンロードに成功しました。</value>
-  </data>
-  <data name="FFmpeg_does_not_exist" xml:space="preserve">
-    <value>FFmpegが見つかりません。
-{0}
-ダウンロードしますか？</value>
-  </data>
-  <data name="FFmpeg_Missing" xml:space="preserve">
-    <value>FFmpegがインストールされていない</value>
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>設定の保存に失敗しました</value>

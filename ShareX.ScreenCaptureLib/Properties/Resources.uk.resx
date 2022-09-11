@@ -219,9 +219,6 @@
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>Розмір полотна...</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg вдало завантажено.</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
     <value>Віддзеркалити по вертикалі</value>
   </data>
@@ -267,9 +264,6 @@
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Прозоре прямокутне захоплення</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Збій завантаження FFmpeg.</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>Показувати інформацію про положення та розмір</value>

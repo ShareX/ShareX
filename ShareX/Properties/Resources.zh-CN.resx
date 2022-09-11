@@ -619,25 +619,11 @@
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>您的系统管理员禁止了上传功能。</value>
   </data>
-  <data name="FFmpeg_Missing" xml:space="preserve">
-    <value>缺失</value>
-  </data>
-  <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
-    <value>下载 FFmpeg 失败。</value>
-  </data>
   <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg 错误</value>
   </data>
-  <data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
-    <value>FFmpeg 下载成功。</value>
-  </data>
   <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
     <value>FFmpeg 音频和视频源不能同时设为“无”。</value>
-  </data>
-  <data name="FFmpeg_does_not_exist" xml:space="preserve">
-    <value>没有找到 {0}。
-
-是否自动下载？</value>
   </data>
   <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
     <value>无法找到指定窗口标题的窗口。</value>

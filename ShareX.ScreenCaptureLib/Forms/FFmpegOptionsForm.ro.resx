@@ -187,9 +187,6 @@ O valoare mai mare înseamnă o calitate proastă, dar o dimensiune redusă a fi
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>Mod Dithering:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Descărcați</value>
-  </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>Presetare rapidă = Codificare mai rapidă, dar dimensiune mai mare a fișierului.
 Presetare lentă = Codificare mai lentă, dar dimensiune mai mică a fișierului.

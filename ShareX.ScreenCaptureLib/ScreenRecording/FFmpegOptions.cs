@@ -69,14 +69,9 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                if (OverrideCLIPath)
+                if (OverrideCLIPath && !string.IsNullOrEmpty(CLIPath))
                 {
-                    if (!string.IsNullOrEmpty(CLIPath))
-                    {
-                        return FileHelpers.GetAbsolutePath(CLIPath);
-                    }
-
-                    return "";
+                    return FileHelpers.GetAbsolutePath(CLIPath);
                 }
 
                 return FileHelpers.GetAbsolutePath("ffmpeg.exe");
@@ -142,14 +137,5 @@ namespace ShareX.ScreenCaptureLib
         public bool IsAnimatedImage => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp || VideoCodec == FFmpegVideoCodec.apng;
 
         public bool IsEvenSizeRequired => !IsAnimatedImage;
-
-        public FFmpegOptions()
-        {
-        }
-
-        public FFmpegOptions(string ffmpegPath)
-        {
-            CLIPath = FileHelpers.GetVariableFolderPath(ffmpegPath);
-        }
     }
 }

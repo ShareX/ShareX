@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>В буфер</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Скачать</value>
-  </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Установить устройства записи</value>
   </data>

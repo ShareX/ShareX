@@ -48,7 +48,6 @@
             this.cbVideoCodec = new System.Windows.Forms.ComboBox();
             this.lblx264Preset = new System.Windows.Forms.Label();
             this.lblXvidQscale = new System.Windows.Forms.Label();
-            this.btnDownload = new System.Windows.Forms.Button();
             this.btnFFmpegBrowse = new System.Windows.Forms.Button();
             this.txtFFmpegPath = new System.Windows.Forms.TextBox();
             this.cbOverrideFFmpegPath = new System.Windows.Forms.CheckBox();
@@ -323,13 +322,6 @@
             // 
             resources.ApplyResources(this.lblXvidQscale, "lblXvidQscale");
             this.lblXvidQscale.Name = "lblXvidQscale";
-            // 
-            // btnDownload
-            // 
-            resources.ApplyResources(this.btnDownload, "btnDownload");
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.UseVisualStyleBackColor = true;
-            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // btnFFmpegBrowse
             // 
@@ -837,7 +829,6 @@
             this.Controls.Add(this.lblHelperDevices);
             this.Controls.Add(this.cbVideoCodec);
             this.Controls.Add(this.lblCodec);
-            this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.tcFFmpegAudioCodecs);
             this.Controls.Add(this.btnInstallHelperDevices);
             this.Controls.Add(this.tcFFmpegVideoCodecs);
@@ -915,7 +906,6 @@
         private System.Windows.Forms.TextBox txtFFmpegPath;
         private System.Windows.Forms.TextBox txtCommandLinePreview;
         private System.Windows.Forms.TextBox txtUserArgs;
-        private System.Windows.Forms.Button btnDownload;
         private System.Windows.Forms.TabControl tcFFmpegVideoCodecs;
         private System.Windows.Forms.TabPage tpX264;
         private System.Windows.Forms.TabPage tpVpx;

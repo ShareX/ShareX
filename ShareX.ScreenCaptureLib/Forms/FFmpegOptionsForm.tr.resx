@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Kopyala</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>İndir</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Yenile</value>
   </data>

@@ -497,6 +497,11 @@ namespace ShareX.HelpersLib
 #endif
         }
 
+        public static bool Is32Bit()
+        {
+            return !Is64Bit();
+        }
+
         private static bool Is32BitProcessOn64BitProcessor()
         {
             IsWow64Process(Process.GetCurrentProcess().Handle, out bool retVal);

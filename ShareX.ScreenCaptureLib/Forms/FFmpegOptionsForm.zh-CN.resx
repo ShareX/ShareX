@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>复制</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>下载</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>刷新</value>
   </data>

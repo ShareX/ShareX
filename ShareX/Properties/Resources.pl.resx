@@ -406,19 +406,8 @@ Jesteś pewien, że chcesz kontynuować?</value>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Błąd</value>
   </data>
-  <data name="FFmpeg_does_not_exist" xml:space="preserve">
-    <value>{0} nie istnieje.
-
-Czy chcesz go automatycznie pobrać?</value>
-  </data>
-  <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
-    <value>Pobieranie FFmpeg nie powiodło się.</value>
-  </data>
   <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
     <value>Błąd FFmpeg</value>
-  </data>
-  <data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
-    <value>FFmpeg pobrany pomyślnie.</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
     <value>Upuść
@@ -537,9 +526,6 @@ Czy chcesz ponownie uruchomić ShareX?</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
     <value>Zawartość schowka: tekst (długość: {0})</value>
-  </data>
-  <data name="FFmpeg_Missing" xml:space="preserve">
-    <value>Zaginiony</value>
   </data>
   <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
     <value>Źródło wideo i audio FFmpeg nie może być jednocześnie "Brak".</value>

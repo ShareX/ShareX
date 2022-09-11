@@ -351,7 +351,7 @@ namespace ShareX
 
         #region Capture / Screen recorder
 
-        public FFmpegOptions FFmpegOptions = new FFmpegOptions(Program.DefaultFFmpegFilePath);
+        public FFmpegOptions FFmpegOptions = new FFmpegOptions();
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;

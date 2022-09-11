@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Kopieren</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Herunterladen</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Erneuern</value>
   </data>

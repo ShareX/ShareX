@@ -126,9 +126,6 @@
   <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
     <value>Hapus</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Unduhan FFmpeg gagal.</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
@@ -182,9 +179,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Tampilkan garis bidik layar</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg berhasil diunduh.</value>
   </data>
   <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
     <value>Unggah gambar (Ctrl + U)</value>

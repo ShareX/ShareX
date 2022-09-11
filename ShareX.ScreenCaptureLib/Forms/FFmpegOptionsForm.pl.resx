@@ -138,9 +138,6 @@
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Zainstaluj urządzenia nagrywające</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Pobierz</value>
-  </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Jakość:</value>
   </data>

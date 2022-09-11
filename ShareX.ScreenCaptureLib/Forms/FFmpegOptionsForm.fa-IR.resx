@@ -144,9 +144,6 @@
   <data name="lblAMFQuality.Text" xml:space="preserve">
     <value>کیفیت:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>دانلود (بارگذاری)</value>
-  </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>کپی</value>
   </data>

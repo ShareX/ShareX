@@ -154,9 +154,6 @@ Giá trị cao hơn cho kết quả tệ hơn nhưng kích thước tệp sẽ n
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
     <value>Mặc định là sierra2_4a</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Tải về</value>
-  </data>
   <data name="btnTest.Text" xml:space="preserve">
     <value>Kiểm tra với CMD</value>
   </data>

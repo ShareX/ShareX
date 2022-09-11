@@ -279,9 +279,6 @@
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>キャンバスの大きさ...</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpegのダウンロードに成功しました。</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
     <value>上下反転</value>
   </data>
@@ -323,9 +320,6 @@
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>領域キャプチャー (透過モード)</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpegのダウンロードに失敗しました。</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>位置と大きさの情報を表示</value>

@@ -38,7 +38,6 @@ namespace ShareX.ScreenCaptureLib
     public partial class FFmpegOptionsForm : Form
     {
         public ScreenRecordingOptions Options { get; private set; }
-        public string DefaultToolsFolder { get; set; }
 
         private bool settingsLoaded;
 
@@ -66,7 +65,7 @@ namespace ShareX.ScreenCaptureLib
             settingsLoaded = false;
 
             cbOverrideFFmpegPath.Checked = Options.FFmpeg.OverrideCLIPath;
-            txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = btnDownload.Enabled = Options.FFmpeg.OverrideCLIPath;
+            txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = Options.FFmpeg.OverrideCLIPath;
             txtFFmpegPath.Text = Options.FFmpeg.CLIPath;
             txtFFmpegPath.SelectionStart = txtFFmpegPath.TextLength;
 
@@ -239,7 +238,7 @@ namespace ShareX.ScreenCaptureLib
         private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
-            txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = btnDownload.Enabled = Options.FFmpeg.OverrideCLIPath;
+            txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = Options.FFmpeg.OverrideCLIPath;
         }
 
         private void txtFFmpegPath_TextChanged(object sender, EventArgs e)
@@ -501,32 +500,6 @@ namespace ShareX.ScreenCaptureLib
         {
             Options.FFmpeg.UserArgs = txtUserArgs.Text;
             UpdateUI();
-        }
-
-        private void btnDownload_Click(object sender, EventArgs e)
-        {
-            FFmpegGitHubDownloader.DownloadFFmpeg(true, DownloaderForm_InstallRequested);
-        }
-
-        private void DownloaderForm_InstallRequested(string filePath)
-        {
-            bool result = FFmpegGitHubDownloader.ExtractFFmpeg(filePath, DefaultToolsFolder);
-
-            if (result)
-            {
-                this.InvokeSafe(async () =>
-                {
-                    txtFFmpegPath.Text = FileHelpers.GetVariableFolderPath(Path.Combine(DefaultToolsFolder, "ffmpeg.exe"));
-                    await RefreshSourcesAsync();
-                    if (!IsDisposed) UpdateUI();
-                });
-
-                MessageBox.Show(Resources.FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(Resources.FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void btnTest_Click(object sender, EventArgs e)

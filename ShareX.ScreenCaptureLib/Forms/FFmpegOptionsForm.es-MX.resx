@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Copiar</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Descargar</value>
-  </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Instalar dispositivos de grabación</value>
   </data>

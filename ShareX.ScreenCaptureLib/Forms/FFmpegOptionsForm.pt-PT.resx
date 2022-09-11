@@ -167,9 +167,6 @@ Caso contrário é impossível acompanhar a gravação e irão ocorrer muitas fa
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Taxa de bitrate variável:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Transferir</value>
-  </data>
   <data name="btnFFmpegBrowse.Text" xml:space="preserve">
     <value>...</value>
   </data>

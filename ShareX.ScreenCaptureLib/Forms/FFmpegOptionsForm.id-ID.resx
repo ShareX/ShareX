@@ -183,9 +183,6 @@
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Laju bit variabel:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Unduh</value>
-  </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
     <value>Kodek audio ini tidak didukung oleh wadah video terpilih.</value>
   </data>

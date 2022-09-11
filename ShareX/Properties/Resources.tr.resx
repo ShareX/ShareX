@@ -550,22 +550,8 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
     <value>Portekizce</value>
   </data>
-  <data name="FFmpeg_Missing" xml:space="preserve">
-    <value>Eksik</value>
-  </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
     <value>Pano içeriği: Dosya (Sayısı: {0})</value>
-  </data>
-  <data name="FFmpeg_does_not_exist" xml:space="preserve">
-    <value>{0} mevcut değil.
-
-Otomatik olarak indirmek ister misiniz?</value>
-  </data>
-  <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
-    <value>FFmpeg indirme başarısız.</value>
-  </data>
-  <data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
-    <value>FFmpeg başarıyla indirildi.</value>
   </data>
   <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg hatası</value>
