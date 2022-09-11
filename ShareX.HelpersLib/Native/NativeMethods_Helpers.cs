@@ -488,26 +488,6 @@ namespace ShareX.HelpersLib
             return new string(chs);
         }
 
-        public static bool Is64Bit()
-        {
-#if MicrosoftStore
-            return true;
-#else
-            return IntPtr.Size == 8 || (IntPtr.Size == 4 && Is32BitProcessOn64BitProcessor());
-#endif
-        }
-
-        public static bool Is32Bit()
-        {
-            return !Is64Bit();
-        }
-
-        private static bool Is32BitProcessOn64BitProcessor()
-        {
-            IsWow64Process(Process.GetCurrentProcess().Handle, out bool retVal);
-            return retVal;
-        }
-
         public static bool FlashWindowEx(Form frm, uint flashCount = uint.MaxValue)
         {
             FLASHWINFO fInfo = new FLASHWINFO();

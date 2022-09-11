@@ -1422,7 +1422,7 @@ namespace ShareX
 
         public static bool CheckFFmpeg(TaskSettings taskSettings)
         {
-            if (NativeMethods.Is32Bit() && !taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath)
+            if (!Environment.Is64BitOperatingSystem && !taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath)
             {
                 // TODO: Translate
                 MessageBox.Show("FFmpeg that comes with ShareX only supports 64-bit operating systems.",

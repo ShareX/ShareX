@@ -33,7 +33,7 @@ namespace ShareX.HelpersLib
 
         public FFmpegUpdateChecker(string owner, string repo) : base(owner, repo)
         {
-            if (NativeMethods.Is64Bit())
+            if (Environment.Is64BitOperatingSystem)
             {
                 Architecture = FFmpegArchitecture.win64;
             }

@@ -35,7 +35,7 @@ namespace ShareX.MediaLib
         {
             string url;
 
-            if (NativeMethods.Is64Bit())
+            if (Environment.Is64BitOperatingSystem)
             {
                 url = "https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.zip";
             }
