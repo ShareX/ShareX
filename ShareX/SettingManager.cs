@@ -232,6 +232,14 @@ namespace ShareX
                     }
                 }
             }
+
+            if (Settings.IsUpgradeFrom("14.1.2"))
+            {
+                if (!Environment.Is64BitOperatingSystem && !string.IsNullOrEmpty(DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath))
+                {
+                    DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
+                }
+            }
         }
 
         private static void MigrateHistoryFile()
