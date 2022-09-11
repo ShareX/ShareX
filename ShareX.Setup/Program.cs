@@ -344,7 +344,7 @@ namespace ShareX.Setup
                 if (!File.Exists(FFmpeg32bit))
                 {
                     string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v4.3.1/ffmpeg-4.3.1-win32.zip");
-                    ZipManager.Extract(filePath, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 100_000_000);
+                    ZipManager.Extract(filePath, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
                     File.Move("ffmpeg.exe", FFmpeg32bit);
                 }
 
@@ -356,7 +356,7 @@ namespace ShareX.Setup
                 if (!File.Exists(FFmpeg64bit))
                 {
                     string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v4.3.1/ffmpeg-4.3.1-win64.zip");
-                    ZipManager.Extract(filePath, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 100_000_000);
+                    ZipManager.Extract(filePath, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
                     File.Move("ffmpeg.exe", FFmpeg64bit);
                 }
 
