@@ -55,11 +55,9 @@ namespace ShareX.Setup
             MicrosoftStore = CreateMicrosoftStoreFolder,
             MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder,
             Beta = CreateSetup | UploadOutputFile,
-            AppVeyorRelease = CreateSetup | CreatePortable | CreateChecksumFile,
-            AppVeyorSteam = CreateSteamFolder,
-            AppVeyorMicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx,
-            AppVeyorSteamRelease = AppVeyorSteam | DownloadFFmpeg,
-            AppVeyorMicrosoftStoreRelease = AppVeyorMicrosoftStore | DownloadFFmpeg
+            AppVeyorRelease = CreateSetup | CreatePortable | CreateChecksumFile | DownloadFFmpeg,
+            AppVeyorSteam = CreateSteamFolder | DownloadFFmpeg,
+            AppVeyorMicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadFFmpeg
         }
 
         private static SetupJobs Job = SetupJobs.Stable;
@@ -89,41 +87,16 @@ namespace ShareX.Setup
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
+        private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
 
-        public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
-        public static string FFmpeg32bit => Path.Combine(OutputDir, "ffmpeg.exe");
-        public static string FFmpeg64bit => Path.Combine(OutputDir, "ffmpeg-x64.exe");
-        public static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
+        private static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
+        private static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
 
         private static void Main(string[] args)
         {
             Console.WriteLine("ShareX setup started.");
 
-            if (SetupHelpers.CheckArguments(args, "-AppVeyorRelease"))
-            {
-                AppVeyor = true;
-                Job = SetupJobs.AppVeyorRelease;
-            }
-            else if (SetupHelpers.CheckArguments(args, "-AppVeyorSteam"))
-            {
-                AppVeyor = true;
-                Job = SetupJobs.AppVeyorSteam;
-            }
-            else if (SetupHelpers.CheckArguments(args, "-AppVeyorMicrosoftStore"))
-            {
-                AppVeyor = true;
-                Job = SetupJobs.AppVeyorMicrosoftStore;
-            }
-            else if (SetupHelpers.CheckArguments(args, "-AppVeyorSteamRelease"))
-            {
-                AppVeyor = true;
-                Job = SetupJobs.AppVeyorSteamRelease;
-            }
-            else if (SetupHelpers.CheckArguments(args, "-AppVeyorMicrosoftStoreRelease"))
-            {
-                AppVeyor = true;
-                Job = SetupJobs.AppVeyorMicrosoftStoreRelease;
-            }
+            CheckAppVeyor(args);
 
             Console.WriteLine("Setup job: " + Job);
 
@@ -132,6 +105,11 @@ namespace ShareX.Setup
                 Console.WriteLine("Cleaning output directory: " + OutputDir);
 
                 Directory.Delete(OutputDir, true);
+            }
+
+            if (Job.HasFlag(SetupJobs.DownloadFFmpeg))
+            {
+                DownloadFFmpeg();
             }
 
             if (Job.HasFlag(SetupJobs.CreateSetup))
@@ -147,21 +125,11 @@ namespace ShareX.Setup
             if (Job.HasFlag(SetupJobs.CreateSteamFolder))
             {
                 CreateSteamFolder();
-
-                if (Job.HasFlag(SetupJobs.DownloadFFmpeg))
-                {
-                    CopyFFmpeg(SteamUpdatesDir, true, true);
-                }
             }
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
             {
                 CreateFolder(MicrosoftStoreDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreFolder);
-
-                if (Job.HasFlag(SetupJobs.DownloadFFmpeg))
-                {
-                    CopyFFmpeg(MicrosoftStoreOutputDir, false, true);
-                }
             }
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
@@ -217,6 +185,25 @@ namespace ShareX.Setup
             }
 
             Console.WriteLine("ShareX setup successfully completed.");
+        }
+
+        private static void CheckAppVeyor(string[] args)
+        {
+            if (SetupHelpers.CheckArguments(args, "-AppVeyorRelease"))
+            {
+                AppVeyor = true;
+                Job = SetupJobs.AppVeyorRelease;
+            }
+            else if (SetupHelpers.CheckArguments(args, "-AppVeyorSteam"))
+            {
+                AppVeyor = true;
+                Job = SetupJobs.AppVeyorSteam;
+            }
+            else if (SetupHelpers.CheckArguments(args, "-AppVeyorMicrosoftStore"))
+            {
+                AppVeyor = true;
+                Job = SetupJobs.AppVeyorMicrosoftStore;
+            }
         }
 
         private static void CompileSetup()
@@ -315,6 +302,11 @@ namespace ShareX.Setup
                 SetupHelpers.CopyFiles(Path.Combine(source, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
             }
 
+            if (File.Exists(FFmpegPath))
+            {
+                SetupHelpers.CopyFile(FFmpegPath, destination);
+            }
+
             FileHelpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
 
             if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
@@ -337,30 +329,12 @@ namespace ShareX.Setup
             Console.WriteLine("Folder created.");
         }
 
-        private static void CopyFFmpeg(string destination, bool include32bit, bool include64bit)
+        private static void DownloadFFmpeg()
         {
-            if (include32bit)
+            if (!File.Exists(FFmpegPath))
             {
-                if (!File.Exists(FFmpeg32bit))
-                {
-                    string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v4.3.1/ffmpeg-4.3.1-win32.zip");
-                    ZipManager.Extract(filePath, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
-                    File.Move("ffmpeg.exe", FFmpeg32bit);
-                }
-
-                SetupHelpers.CopyFile(FFmpeg32bit, destination);
-            }
-
-            if (include64bit)
-            {
-                if (!File.Exists(FFmpeg64bit))
-                {
-                    string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v4.3.1/ffmpeg-4.3.1-win64.zip");
-                    ZipManager.Extract(filePath, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
-                    File.Move("ffmpeg.exe", FFmpeg64bit);
-                }
-
-                SetupHelpers.CopyFile(FFmpeg64bit, destination);
+                string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip");
+                ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
             }
         }
 

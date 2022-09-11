@@ -69,26 +69,17 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-#if STEAM || MicrosoftStore
-                if (!OverrideCLIPath)
+                if (OverrideCLIPath)
                 {
-                    if (NativeMethods.Is64Bit())
+                    if (!string.IsNullOrEmpty(CLIPath))
                     {
-                        return FileHelpers.GetAbsolutePath("ffmpeg-x64.exe");
+                        return FileHelpers.GetAbsolutePath(CLIPath);
                     }
-                    else
-                    {
-                        return FileHelpers.GetAbsolutePath("ffmpeg.exe");
-                    }
-                }
-#endif
 
-                if (!string.IsNullOrEmpty(CLIPath))
-                {
-                    return FileHelpers.GetAbsolutePath(CLIPath);
+                    return "";
                 }
 
-                return "";
+                return FileHelpers.GetAbsolutePath("ffmpeg.exe");
             }
         }
 

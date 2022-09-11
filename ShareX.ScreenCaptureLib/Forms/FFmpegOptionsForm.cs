@@ -28,7 +28,6 @@ using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -66,13 +65,8 @@ namespace ShareX.ScreenCaptureLib
         {
             settingsLoaded = false;
 
-#if STEAM || MicrosoftStore
             cbOverrideFFmpegPath.Checked = Options.FFmpeg.OverrideCLIPath;
             txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = btnDownload.Enabled = Options.FFmpeg.OverrideCLIPath;
-#else
-            cbOverrideFFmpegPath.Visible = false;
-#endif
-
             txtFFmpegPath.Text = Options.FFmpeg.CLIPath;
             txtFFmpegPath.SelectionStart = txtFFmpegPath.TextLength;
 
@@ -234,29 +228,7 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 nudGIFBayerScale.Visible = (Options.FFmpeg.GIFDither == FFmpegPaletteUseDither.bayer);
-                UpdateFFmpegPathUI();
             }
-        }
-
-        private void UpdateFFmpegPathUI()
-        {
-#if !STEAM
-            Color backColor = Color.FromArgb(255, 200, 200);
-
-            try
-            {
-                if (File.Exists(Options.FFmpeg.FFmpegPath))
-                {
-                    backColor = Color.FromArgb(200, 255, 200);
-                }
-            }
-            catch
-            {
-            }
-
-            txtFFmpegPath.BackColor = backColor;
-            txtFFmpegPath.ForeColor = SystemColors.ControlText;
-#endif
         }
 
         private async void FFmpegOptionsForm_Load(object sender, EventArgs e)
@@ -266,16 +238,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
         {
-#if STEAM || MicrosoftStore
             Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
             txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = btnDownload.Enabled = Options.FFmpeg.OverrideCLIPath;
-#endif
         }
 
         private void txtFFmpegPath_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.CLIPath = txtFFmpegPath.Text;
-            UpdateFFmpegPathUI();
         }
 
         private async void buttonFFmpegBrowse_Click(object sender, EventArgs e)
