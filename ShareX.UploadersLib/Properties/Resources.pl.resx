@@ -274,4 +274,7 @@ Utworzone foldery:</value>
   <data name="txtB2BucketWatermark" xml:space="preserve">
     <value>(Opcjonalnie) Używane tylko wtedy, gdy nie ustawiono bucketa podczas tworzenia klucza</value>
   </data>
+  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
+    <value>Przeszukiwanie folderów...</value>
+  </data>
 </root>

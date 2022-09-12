@@ -132,4 +132,7 @@
   <data name="tsmiAbort.Text" xml:space="preserve">
     <value>Przerwij</value>
   </data>
+  <data name="btnPause.Text" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
 </root>

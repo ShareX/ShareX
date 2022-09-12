@@ -631,7 +631,7 @@
     <value>Edytor obrazu...</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
-    <value>Efekty obrazowe...</value>
+    <value>Efekty obrazu...</value>
   </data>
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>Rozdzielacz obrazu...</value>
