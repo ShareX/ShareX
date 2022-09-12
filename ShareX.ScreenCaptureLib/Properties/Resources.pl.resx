@@ -475,4 +475,10 @@ Czy chcesz zamknąć edytor obrazów?</value>
   <data name="LightResizeNodes" xml:space="preserve">
     <value>Użyj lekkich węzłów zmiany rozmiaru</value>
   </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Efekt wycięcia:</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Rozmiar efektu wycięcia:</value>
+  </data>
 </root>
