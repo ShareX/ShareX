@@ -64,7 +64,7 @@ namespace ShareX.ScreenCaptureLib
         {
             settingsLoaded = false;
 
-            cbOverrideFFmpegPath.Checked = Options.FFmpeg.OverrideCLIPath;
+            cbUseCustomFFmpegPath.Checked = Options.FFmpeg.OverrideCLIPath;
             txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = Options.FFmpeg.OverrideCLIPath;
             txtFFmpegPath.Text = Options.FFmpeg.CLIPath;
             txtFFmpegPath.SelectionStart = txtFFmpegPath.TextLength;
@@ -235,9 +235,9 @@ namespace ShareX.ScreenCaptureLib
             await SettingsLoad();
         }
 
-        private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
+        private void cbUseCustomFFmpegPath_CheckedChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
+            Options.FFmpeg.OverrideCLIPath = cbUseCustomFFmpegPath.Checked;
             txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = Options.FFmpeg.OverrideCLIPath;
         }
 

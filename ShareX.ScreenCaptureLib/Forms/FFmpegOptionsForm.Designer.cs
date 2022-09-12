@@ -50,7 +50,6 @@
             this.lblXvidQscale = new System.Windows.Forms.Label();
             this.btnFFmpegBrowse = new System.Windows.Forms.Button();
             this.txtFFmpegPath = new System.Windows.Forms.TextBox();
-            this.cbOverrideFFmpegPath = new System.Windows.Forms.CheckBox();
             this.cbCustomCommands = new System.Windows.Forms.CheckBox();
             this.txtCommandLinePreview = new System.Windows.Forms.TextBox();
             this.txtUserArgs = new System.Windows.Forms.TextBox();
@@ -106,9 +105,9 @@
             this.btnInstallHelperDevices = new System.Windows.Forms.Button();
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
-            this.lblFFmpegPath = new System.Windows.Forms.Label();
             this.lblCommandLineArgs = new System.Windows.Forms.Label();
             this.lblCommandLinePreview = new System.Windows.Forms.Label();
+            this.cbUseCustomFFmpegPath = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -335,13 +334,6 @@
             resources.ApplyResources(this.txtFFmpegPath, "txtFFmpegPath");
             this.txtFFmpegPath.Name = "txtFFmpegPath";
             this.txtFFmpegPath.TextChanged += new System.EventHandler(this.txtFFmpegPath_TextChanged);
-            // 
-            // cbOverrideFFmpegPath
-            // 
-            resources.ApplyResources(this.cbOverrideFFmpegPath, "cbOverrideFFmpegPath");
-            this.cbOverrideFFmpegPath.Name = "cbOverrideFFmpegPath";
-            this.cbOverrideFFmpegPath.UseVisualStyleBackColor = true;
-            this.cbOverrideFFmpegPath.CheckedChanged += new System.EventHandler(this.cbOverrideFFmpegPath_CheckedChanged);
             // 
             // cbCustomCommands
             // 
@@ -796,11 +788,6 @@
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
-            // lblFFmpegPath
-            // 
-            resources.ApplyResources(this.lblFFmpegPath, "lblFFmpegPath");
-            this.lblFFmpegPath.Name = "lblFFmpegPath";
-            // 
             // lblCommandLineArgs
             // 
             resources.ApplyResources(this.lblCommandLineArgs, "lblCommandLineArgs");
@@ -811,11 +798,19 @@
             resources.ApplyResources(this.lblCommandLinePreview, "lblCommandLinePreview");
             this.lblCommandLinePreview.Name = "lblCommandLinePreview";
             // 
+            // cbUseCustomFFmpegPath
+            // 
+            resources.ApplyResources(this.cbUseCustomFFmpegPath, "cbUseCustomFFmpegPath");
+            this.cbUseCustomFFmpegPath.Name = "cbUseCustomFFmpegPath";
+            this.cbUseCustomFFmpegPath.UseVisualStyleBackColor = true;
+            this.cbUseCustomFFmpegPath.CheckedChanged += new System.EventHandler(this.cbUseCustomFFmpegPath_CheckedChanged);
+            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.cbUseCustomFFmpegPath);
             this.Controls.Add(this.cbCustomCommands);
             this.Controls.Add(this.lblCommandLinePreview);
             this.Controls.Add(this.txtCommandLinePreview);
@@ -824,7 +819,6 @@
             this.Controls.Add(this.pbAudioCodecWarning);
             this.Controls.Add(this.btnHelperDevicesHelp);
             this.Controls.Add(this.cbAudioCodec);
-            this.Controls.Add(this.lblFFmpegPath);
             this.Controls.Add(this.lblAudioCodec);
             this.Controls.Add(this.lblHelperDevices);
             this.Controls.Add(this.cbVideoCodec);
@@ -832,7 +826,6 @@
             this.Controls.Add(this.tcFFmpegAudioCodecs);
             this.Controls.Add(this.btnInstallHelperDevices);
             this.Controls.Add(this.tcFFmpegVideoCodecs);
-            this.Controls.Add(this.cbOverrideFFmpegPath);
             this.Controls.Add(this.cbVideoSource);
             this.Controls.Add(this.btnFFmpegBrowse);
             this.Controls.Add(this.lblVideoSource);
@@ -942,7 +935,6 @@
         private System.Windows.Forms.Button btnHelperDevicesHelp;
         private System.Windows.Forms.Label lblHelperDevices;
         private System.Windows.Forms.Button btnInstallHelperDevices;
-        private System.Windows.Forms.CheckBox cbOverrideFFmpegPath;
         private System.Windows.Forms.PictureBox pbAudioCodecWarning;
         private System.Windows.Forms.PictureBox pbx264PresetWarning;
         private System.Windows.Forms.TabPage tpNVENC;
@@ -969,8 +961,8 @@
         private System.Windows.Forms.Label lblx264BitrateK;
         private System.Windows.Forms.Label lblNVENCBitrateK;
         private System.Windows.Forms.Label lblQSVBitrateK;
-        private System.Windows.Forms.Label lblFFmpegPath;
         private System.Windows.Forms.Label lblCommandLineArgs;
         private System.Windows.Forms.Label lblCommandLinePreview;
+        private System.Windows.Forms.CheckBox cbUseCustomFFmpegPath;
     }
 }
