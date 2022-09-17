@@ -1048,7 +1048,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ImageEditorControl obj = objects[i];
 
-                    if (obj.Visible)
+                    if (!IsCtrlModifier && obj.Visible)
                     {
                         obj.IsCursorHover = obj.Rectangle.Contains(mousePosition);
 
@@ -1098,11 +1098,14 @@ namespace ShareX.ScreenCaptureLib
 
         internal void DrawObjects(Graphics g)
         {
-            foreach (ImageEditorControl obj in DrawableObjects)
+            if (!IsCtrlModifier)
             {
-                if (obj.Visible)
+                foreach (ImageEditorControl obj in DrawableObjects)
                 {
-                    obj.OnDraw(g);
+                    if (obj.Visible)
+                    {
+                        obj.OnDraw(g);
+                    }
                 }
             }
         }
