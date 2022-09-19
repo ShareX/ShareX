@@ -1863,11 +1863,27 @@ namespace ShareX
             }
         }
 
+        public static async Task DownloadDevBuild()
+        {
+            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "DevBuilds")
+            {
+                IsBeta = true,
+                IsPortable = Program.Portable
+            };
+
+            await updateChecker.CheckUpdateAsync();
+
+            if (updateChecker.Status == UpdateStatus.UpdateAvailable)
+            {
+                updateChecker.DownloadUpdate();
+            }
+        }
+
         public static async Task DownloadAppVeyorBuild()
         {
             AppVeyorUpdateChecker updateChecker = new AppVeyorUpdateChecker()
             {
-                IsBeta = Program.Dev,
+                IsBeta = true,
                 IsPortable = Program.Portable,
                 Branch = "develop"
             };

@@ -455,7 +455,7 @@ namespace ShareX
             if (MessageBox.Show(Resources.ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning, "ShareX",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                await TaskHelpers.DownloadAppVeyorBuild();
+                await TaskHelpers.DownloadDevBuild();
             }
 
             if (!IsDisposed)
