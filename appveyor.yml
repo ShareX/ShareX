@@ -35,6 +35,19 @@ artifacts:
   name: MicrosoftStore
 deploy:
   - provider: GitHub
+    tag: v$(APPVEYOR_BUILD_VERSION)
+    release: ShareX $(APPVEYOR_BUILD_VERSION) Dev
+    description: "Dev build"
+    auth_token:
+      secure: bbUkNvyu1jnKkuZGlM1ois3MkmpCMlm3Lv68L9V5AYepHt1SG4ZQ15ZoKfjOFg9R
+    repository: ShareX/DevBuilds
+    artifact: Setup,Setup-Checksum,Portable,Portable-Checksum
+    draft: false
+    prerelease: false
+    on:
+      branch: develop
+      configuration: Release
+  - provider: GitHub
     tag: $(APPVEYOR_REPO_TAG_NAME)
     release: ShareX $(AppVersion)
     description: "[Changelog](https://getsharex.com/changelog)"
