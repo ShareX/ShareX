@@ -233,9 +233,6 @@ Clic în mijloc pentru a închide</value>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
     <value>Alegeți calea folderului personal ShareX</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Versiunile de dezvoltare pot fi instabile și trebuie utilizate numai în scopuri de testare. Doriți să o instalați?</value>
-  </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>Doriți să resetați setările ShareX?</value>
   </data>

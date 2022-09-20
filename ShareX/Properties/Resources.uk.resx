@@ -178,9 +178,6 @@
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Затримка для знімка: {0}с</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Dev-збірки можуть бути нестабільними та повинні використовуватись лише для тестування. Хочете встановити?</value>
-  </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>Назва не може бути порожньою.</value>
   </data>

@@ -376,9 +376,6 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Tiếp tục</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Bản phát hành cho lập trình viên có thể không ổn định và chỉ được dùng cho mục đích kiểm thử. Bạn có muốn cài đặt nó không?</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
     <value>Tiếng Hà Lan</value>
   </data>

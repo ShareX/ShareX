@@ -164,9 +164,6 @@ Botão do meio (scroll) para fechar</value>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
     <value>Escolher caminho da pasta raiz do ShareX</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Versões de programador são instáveis e são usadas apenas para testes. Deseja continuar com a instalação?</value>
-  </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>Deseja repor as definições do ShareX?</value>
   </data>

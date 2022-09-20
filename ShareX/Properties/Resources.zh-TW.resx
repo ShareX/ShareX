@@ -456,9 +456,6 @@
   <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>分隔符</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>開發版可能不穩定，僅供測試用途。要安裝嗎？</value>
-  </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>要重設 ShareX 設定嗎？</value>
   </data>

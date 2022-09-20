@@ -36,7 +36,7 @@ namespace ShareX.HelpersLib
         public TimeSpan UpdateReCheckInterval { get; private set; } = TimeSpan.FromHours(24); // If "No" button pressed in update message box then this interval will be used
         public string GitHubOwner { get; set; }
         public string GitHubRepo { get; set; }
-        public bool IsBeta { get; set; } // If current build is beta and latest stable release is same version as current build then it will be downloaded
+        public bool IsDev { get; set; } // If current build is dev and latest stable release is same version as current build then it will be downloaded
         public bool IsPortable { get; set; } // If current build is portable then download URL will be opened in browser instead of downloading it
         public bool CheckPreReleaseUpdates { get; set; }
 
@@ -50,9 +50,9 @@ namespace ShareX.HelpersLib
             GitHubRepo = repo;
         }
 
-        public GitHubUpdateManager(string owner, string repo, bool beta, bool portable) : this(owner, repo)
+        public GitHubUpdateManager(string owner, string repo, bool dev, bool portable) : this(owner, repo)
         {
-            IsBeta = beta;
+            IsDev = dev;
             IsPortable = portable;
         }
 
@@ -94,7 +94,7 @@ namespace ShareX.HelpersLib
         {
             return new GitHubUpdateChecker(GitHubOwner, GitHubRepo)
             {
-                IsBeta = IsBeta,
+                IsDev = IsDev,
                 IsPortable = IsPortable,
                 IncludePreRelease = CheckPreReleaseUpdates
             };

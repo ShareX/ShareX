@@ -585,17 +585,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Development builds are for testing bug fixes and trying out new features early. Sometimes they can be less stable.
-        ///
-        ///Do you wish to continue?.
-        /// </summary>
-        public static string ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning {
-            get {
-                return ResourceManager.GetString("ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Would you like to reset ShareX settings?.
         /// </summary>
         public static string ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings {

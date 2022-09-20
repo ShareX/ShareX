@@ -465,9 +465,6 @@
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>使用ShareX编辑</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>开发版可能不稳定，仅用于测试目的。要安装吗？</value>
-  </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>要重置 ShareX 设置项吗？</value>
   </data>

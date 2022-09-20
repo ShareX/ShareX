@@ -465,9 +465,6 @@ Clique de la molette pour fermer</value>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>Raccourcir URL</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Les versions de développement peuvent être instables et doivent être utilisées uniquement à des fins de test. Voulez-vous installer ?</value>
-  </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Modifier avec ShareX</value>
   </data>

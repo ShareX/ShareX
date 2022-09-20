@@ -466,9 +466,6 @@
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Редактировать в ShareX</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Dev сборки могут быть нестабильными и должны использоваться только для тестирования. Хотите установить?</value>
-  </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>Хотите сбросить настройки ShareX?</value>
   </data>

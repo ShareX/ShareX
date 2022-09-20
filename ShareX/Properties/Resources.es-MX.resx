@@ -463,9 +463,6 @@ Clic medio para cerrar</value>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Editar con ShareX</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Las versiones de desarrollo no son estables y solo deben usarse para realizar pruebas. ¿Desea instalar?</value>
-  </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>¿Desea restablecer la configuración de ShareX?</value>
   </data>

@@ -450,9 +450,6 @@ ShareX を再起動しますか？</value>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>ShareXの設定をリセットしますか？</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>開発中のバージョンは不安定なことがあります、またテスト目的にしか使えません。開発中バージョンをインストールしますか？</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
     <value>ペルシア語</value>
   </data>

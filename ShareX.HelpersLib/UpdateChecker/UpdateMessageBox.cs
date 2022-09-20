@@ -69,7 +69,7 @@ namespace ShareX.HelpersLib
             sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
             sbText.Append(": ");
             sbText.Append(updateChecker.CurrentVersion);
-            if (updateChecker.IsBeta) sbText.Append(" Beta");
+            if (updateChecker.IsDev) sbText.Append(" Dev");
             sbText.AppendLine();
             sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
             sbText.Append(": ");

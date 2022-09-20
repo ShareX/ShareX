@@ -242,9 +242,6 @@ Kliknij prawym przyciskiem myszy, aby otworzyć menu
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>Czy chcesz zresetować ustawienia ShareX?</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Kompilacje deweloperskie mogą być niestabilne i muszą być używane tylko do celów testowych. Czy chcesz je zainstalować?</value>
-  </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX musi zostać ponownie uruchomiony, aby zmiany języka zostały zastosowane.
 

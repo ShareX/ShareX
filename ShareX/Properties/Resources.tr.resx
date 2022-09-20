@@ -471,9 +471,6 @@ Devam etmek istediğinizden emin misiniz?</value>
 Sağ fare tuşu menüyü açmak için
 Orta fare tuşu kapatmak için</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Geliştirici sürümleri kararsız olabilir bu yüzden deneme amaçlı kullanılmalıdır. İndirmek istediğine emin misin?</value>
-  </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>{0} ayarları yanlış veya eksik. Lütfen "Hedef ayarları" penceresinden ayar yapınız.</value>
   </data>
