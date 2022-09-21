@@ -1887,10 +1887,7 @@ namespace ShareX
 
             await updateChecker.CheckUpdateAsync();
 
-            if (updateChecker.Status == UpdateStatus.UpdateAvailable)
-            {
-                updateChecker.DownloadUpdate();
-            }
+            UpdateMessageBox.Start(updateChecker);
         }
 
         public static Image CreateQRCode(string text, int width, int height)

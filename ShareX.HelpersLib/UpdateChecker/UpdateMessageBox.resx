@@ -147,10 +147,10 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 200</value>
+    <value>272, 200</value>
   </data>
   <data name="btnNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 32</value>
+    <value>112, 32</value>
   </data>
   <data name="btnNo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -174,10 +174,10 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnYes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 200</value>
+    <value>152, 200</value>
   </data>
   <data name="btnYes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 32</value>
+    <value>112, 32</value>
   </data>
   <data name="btnYes.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -196,36 +196,6 @@
   </data>
   <data name="&gt;&gt;btnYes.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="cbDontShow.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbDontShow.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt</value>
-  </data>
-  <data name="cbDontShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 166</value>
-  </data>
-  <data name="cbDontShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 18</value>
-  </data>
-  <data name="cbDontShow.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Do not prompt again until ShareX starts next time</value>
-  </data>
-  <data name="&gt;&gt;cbDontShow.Name" xml:space="preserve">
-    <value>cbDontShow</value>
-  </data>
-  <data name="&gt;&gt;cbDontShow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbDontShow.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbDontShow.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="lblViewChangelog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

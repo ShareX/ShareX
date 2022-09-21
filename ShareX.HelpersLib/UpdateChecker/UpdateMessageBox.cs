@@ -33,7 +33,6 @@ namespace ShareX.HelpersLib
     public partial class UpdateMessageBox : Form
     {
         public static bool IsOpen { get; private set; }
-        public static bool DontShow { get; private set; }
 
         public bool ActivateWindow { get; private set; }
 
@@ -116,14 +115,17 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void UpdateMessageBox_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (DialogResult == DialogResult.Cancel && e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult = DialogResult.No;
+            }
+        }
+
         private void lblViewChangelog_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.Changelog);
-        }
-
-        private void cbDontShow_CheckedChanged(object sender, EventArgs e)
-        {
-            DontShow = cbDontShow.Checked;
         }
 
         private void btnYes_MouseClick(object sender, MouseEventArgs e)
