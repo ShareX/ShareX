@@ -35,12 +35,14 @@ namespace ShareX.HelpersLib
         public static bool IsOpen { get; private set; }
 
         public bool ActivateWindow { get; private set; }
+        public string ChangelogURL { get; private set; }
 
         protected override bool ShowWithoutActivation => !ActivateWindow;
 
-        public UpdateMessageBox(bool activateWindow, UpdateChecker updateChecker)
+        public UpdateMessageBox(UpdateChecker updateChecker, bool activateWindow = true, string changelogURL = null)
         {
             ActivateWindow = activateWindow;
+            ChangelogURL = changelogURL;
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
@@ -76,9 +78,11 @@ namespace ShareX.HelpersLib
             if (updateChecker is GitHubUpdateChecker githubUpdateChecker && githubUpdateChecker.IsPreRelease) sbText.Append(" (Pre-release)");
 
             lblText.Text = sbText.ToString();
+
+            lblViewChangelog.Visible = !string.IsNullOrEmpty(ChangelogURL);
         }
 
-        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true)
+        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true, string changelogURL = null)
         {
             DialogResult result = DialogResult.None;
 
@@ -88,7 +92,7 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    using (UpdateMessageBox messageBox = new UpdateMessageBox(activateWindow, updateChecker))
+                    using (UpdateMessageBox messageBox = new UpdateMessageBox(updateChecker, activateWindow, changelogURL))
                     {
                         result = messageBox.ShowDialog();
                     }
@@ -125,7 +129,7 @@ namespace ShareX.HelpersLib
 
         private void lblViewChangelog_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.Changelog);
+            URLHelpers.OpenURL(ChangelogURL);
         }
 
         private void btnYes_MouseClick(object sender, MouseEventArgs e)

@@ -81,7 +81,7 @@ namespace ShareX.HelpersLib
                 UpdateChecker updateChecker = CreateUpdateChecker();
                 updateChecker.CheckUpdate();
 
-                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
+                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck, Links.Changelog) == DialogResult.No)
                 {
                     AutoUpdateEnabled = false;
                 }

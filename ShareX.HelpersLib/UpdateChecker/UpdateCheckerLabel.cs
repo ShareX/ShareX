@@ -112,7 +112,7 @@ namespace ShareX.HelpersLib
 
         private void llblUpdateAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UpdateMessageBox.Start(updateChecker);
+            UpdateMessageBox.Start(updateChecker, true, Links.Changelog);
         }
     }
 }

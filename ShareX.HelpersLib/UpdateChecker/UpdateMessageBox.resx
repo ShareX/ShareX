@@ -147,7 +147,7 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 200</value>
+    <value>272, 176</value>
   </data>
   <data name="btnNo.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 32</value>
@@ -174,7 +174,7 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnYes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 200</value>
+    <value>152, 176</value>
   </data>
   <data name="btnYes.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 32</value>
@@ -234,7 +234,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>394, 243</value>
+    <value>394, 217</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
