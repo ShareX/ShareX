@@ -74,6 +74,8 @@ namespace ShareX.UploadersLib
         OneTimeSecret,
         [Description("Pastie")]
         Pastie,
+        [Description("Privatebin")]
+        Privatebin,
         CustomTextUploader, // Localized
         FileUploader // Localized
     }

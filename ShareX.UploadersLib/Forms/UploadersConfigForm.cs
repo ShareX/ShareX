@@ -327,6 +327,17 @@ namespace ShareX.UploadersLib
             cbPastieIsPublic.Checked = Config.PastieIsPublic;
 
             #endregion Pastie
+
+            #region Privatebin
+
+            txtPrivatebinUsername.Text = Config.PrivatebinSettings.Username;
+            txtPrivatebinPassword.Text = Config.PrivatebinSettings.Password;
+            txtPrivatebinPastePassword.Text = Config.PrivatebinSettings.PastePassword;
+            txtPrivatebinCustomUrl.Text = Config.PrivatebinSettings.CustomUrl;
+            cbPrivatebinExpiration.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PrivatebinExpiration>());
+            cbPrivatebinExpiration.SelectedIndex = (int)Config.PrivatebinSettings.Expiration;
+
+            #endregion Privatebin
         }
 
         private void LoadFileUploaderSettings()
@@ -1319,6 +1330,35 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Pastie
+
+        #region Privatebin
+
+        private void txtPrivatebinUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.PrivatebinSettings.Username = txtPrivatebinUsername.Text;
+        }
+
+        private void txtPrivatebinPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.PrivatebinSettings.Password = txtPrivatebinPassword.Text;
+        }
+
+        private void txtPrivatebinCustomUrl_TextChanged(object sender, EventArgs e)
+        {
+            Config.PrivatebinSettings.CustomUrl = txtPrivatebinCustomUrl.Text;
+        }
+
+        private void txtPrivatebinPastePassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.PrivatebinSettings.PastePassword = txtPrivatebinPastePassword.Text;
+        }
+
+        private void cbPrivatebinExpiration_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.PrivatebinSettings.Expiration = (PrivatebinExpiration)cbPrivatebinExpiration.SelectedIndex;
+        }
+
+        #endregion Privatebin
 
         #endregion Text uploaders
 

@@ -250,6 +250,7 @@
     <Compile Include="Forms\YouTubeVideoOptionsForm.Designer.cs">
       <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Base58Converter.cs" />
     <Compile Include="Helpers\EscapeHelper.cs" />
     <Compile Include="Helpers\MimeTypes.cs" />
     <Compile Include="Helpers\ResponseInfo.cs" />
@@ -283,6 +284,7 @@
     <Compile Include="Helpers\TaskReferenceHelper.cs" />
     <Compile Include="BaseServices\TextUploaderService.cs" />
     <Compile Include="TextUploaders\Pastie.cs" />
+    <Compile Include="TextUploaders\Privatebin.cs" />
     <Compile Include="TextUploaders\TeknikPastebin.cs" />
     <Compile Include="UploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
@@ -1179,6 +1181,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\LobFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Favicons\Privatebin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

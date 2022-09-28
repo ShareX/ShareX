@@ -323,6 +323,9 @@ Created folders:</value>
   <data name="Pastie" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Pastie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Privatebin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Favicons\Privatebin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AzureStorage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\AzureStorage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

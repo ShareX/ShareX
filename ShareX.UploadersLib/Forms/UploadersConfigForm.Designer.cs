@@ -57,6 +57,11 @@ namespace ShareX.UploadersLib
             this.txtRapidSharePremiumUserName = new System.Windows.Forms.TextBox();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.cbAmazonS3CustomCNAME = new System.Windows.Forms.CheckBox();
+            this.gbPrivatebinCredentials = new System.Windows.Forms.GroupBox();
+            this.lblPrivatebinPassword = new System.Windows.Forms.Label();
+            this.lblPrivatebinUsername = new System.Windows.Forms.Label();
+            this.txtPrivatebinPassword = new System.Windows.Forms.TextBox();
+            this.txtPrivatebinUsername = new System.Windows.Forms.TextBox();
             this.txtB2CustomUrl = new System.Windows.Forms.TextBox();
             this.cbB2CustomUrl = new System.Windows.Forms.CheckBox();
             this.txtB2Bucket = new System.Windows.Forms.TextBox();
@@ -558,6 +563,13 @@ namespace ShareX.UploadersLib
             this.txtOneTimeSecretEmail = new System.Windows.Forms.TextBox();
             this.tpPastie = new System.Windows.Forms.TabPage();
             this.cbPastieIsPublic = new System.Windows.Forms.CheckBox();
+            this.tpPrivatebin = new System.Windows.Forms.TabPage();
+            this.lblPrivatebinCustomUrl = new System.Windows.Forms.Label();
+            this.txtPrivatebinCustomUrl = new System.Windows.Forms.TextBox();
+            this.lblPrivatebinExpiration = new System.Windows.Forms.Label();
+            this.cbPrivatebinExpiration = new System.Windows.Forms.ComboBox();
+            this.lblPrivatebinPastePassword = new System.Windows.Forms.Label();
+            this.txtPrivatebinPastePassword = new System.Windows.Forms.TextBox();
             this.tpImageUploaders = new System.Windows.Forms.TabPage();
             this.tcImageUploaders = new System.Windows.Forms.TabControl();
             this.tpImgur = new System.Windows.Forms.TabPage();
@@ -631,6 +643,7 @@ namespace ShareX.UploadersLib
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.gbPrivatebinCredentials.SuspendLayout();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -702,6 +715,7 @@ namespace ShareX.UploadersLib
             this.tpHastebin.SuspendLayout();
             this.tpOneTimeSecret.SuspendLayout();
             this.tpPastie.SuspendLayout();
+            this.tpPrivatebin.SuspendLayout();
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
             this.tpImgur.SuspendLayout();
@@ -739,6 +753,40 @@ namespace ShareX.UploadersLib
             this.ttHelpTip.SetToolTip(this.cbAmazonS3CustomCNAME, resources.GetString("cbAmazonS3CustomCNAME.ToolTip"));
             this.cbAmazonS3CustomCNAME.UseVisualStyleBackColor = true;
             this.cbAmazonS3CustomCNAME.CheckedChanged += new System.EventHandler(this.cbAmazonS3CustomCNAME_CheckedChanged);
+            // 
+            // gbPrivatebinCredentials
+            // 
+            this.gbPrivatebinCredentials.Controls.Add(this.lblPrivatebinPassword);
+            this.gbPrivatebinCredentials.Controls.Add(this.lblPrivatebinUsername);
+            this.gbPrivatebinCredentials.Controls.Add(this.txtPrivatebinPassword);
+            this.gbPrivatebinCredentials.Controls.Add(this.txtPrivatebinUsername);
+            resources.ApplyResources(this.gbPrivatebinCredentials, "gbPrivatebinCredentials");
+            this.gbPrivatebinCredentials.Name = "gbPrivatebinCredentials";
+            this.gbPrivatebinCredentials.TabStop = false;
+            this.ttHelpTip.SetToolTip(this.gbPrivatebinCredentials, resources.GetString("gbPrivatebinCredentials.ToolTip"));
+            // 
+            // lblPrivatebinPassword
+            // 
+            resources.ApplyResources(this.lblPrivatebinPassword, "lblPrivatebinPassword");
+            this.lblPrivatebinPassword.Name = "lblPrivatebinPassword";
+            // 
+            // lblPrivatebinUsername
+            // 
+            resources.ApplyResources(this.lblPrivatebinUsername, "lblPrivatebinUsername");
+            this.lblPrivatebinUsername.Name = "lblPrivatebinUsername";
+            // 
+            // txtPrivatebinPassword
+            // 
+            resources.ApplyResources(this.txtPrivatebinPassword, "txtPrivatebinPassword");
+            this.txtPrivatebinPassword.Name = "txtPrivatebinPassword";
+            this.txtPrivatebinPassword.UseSystemPasswordChar = true;
+            this.txtPrivatebinPassword.TextChanged += new System.EventHandler(this.txtPrivatebinPassword_TextChanged);
+            // 
+            // txtPrivatebinUsername
+            // 
+            resources.ApplyResources(this.txtPrivatebinUsername, "txtPrivatebinUsername");
+            this.txtPrivatebinUsername.Name = "txtPrivatebinUsername";
+            this.txtPrivatebinUsername.TextChanged += new System.EventHandler(this.txtPrivatebinUsername_TextChanged);
             // 
             // txtB2CustomUrl
             // 
@@ -4093,6 +4141,7 @@ namespace ShareX.UploadersLib
             this.tcTextUploaders.Controls.Add(this.tpHastebin);
             this.tcTextUploaders.Controls.Add(this.tpOneTimeSecret);
             this.tcTextUploaders.Controls.Add(this.tpPastie);
+            this.tcTextUploaders.Controls.Add(this.tpPrivatebin);
             resources.ApplyResources(this.tcTextUploaders, "tcTextUploaders");
             this.tcTextUploaders.Name = "tcTextUploaders";
             this.tcTextUploaders.SelectedIndex = 0;
@@ -4418,6 +4467,55 @@ namespace ShareX.UploadersLib
             this.cbPastieIsPublic.Name = "cbPastieIsPublic";
             this.cbPastieIsPublic.UseVisualStyleBackColor = true;
             this.cbPastieIsPublic.CheckedChanged += new System.EventHandler(this.cbPastieIsPublic_CheckedChanged);
+            // 
+            // tpPrivatebin
+            // 
+            this.tpPrivatebin.BackColor = System.Drawing.SystemColors.Window;
+            this.tpPrivatebin.Controls.Add(this.lblPrivatebinCustomUrl);
+            this.tpPrivatebin.Controls.Add(this.txtPrivatebinCustomUrl);
+            this.tpPrivatebin.Controls.Add(this.lblPrivatebinExpiration);
+            this.tpPrivatebin.Controls.Add(this.cbPrivatebinExpiration);
+            this.tpPrivatebin.Controls.Add(this.lblPrivatebinPastePassword);
+            this.tpPrivatebin.Controls.Add(this.txtPrivatebinPastePassword);
+            this.tpPrivatebin.Controls.Add(this.gbPrivatebinCredentials);
+            resources.ApplyResources(this.tpPrivatebin, "tpPrivatebin");
+            this.tpPrivatebin.Name = "tpPrivatebin";
+            // 
+            // lblPrivatebinCustomUrl
+            // 
+            resources.ApplyResources(this.lblPrivatebinCustomUrl, "lblPrivatebinCustomUrl");
+            this.lblPrivatebinCustomUrl.Name = "lblPrivatebinCustomUrl";
+            // 
+            // txtPrivatebinCustomUrl
+            // 
+            resources.ApplyResources(this.txtPrivatebinCustomUrl, "txtPrivatebinCustomUrl");
+            this.txtPrivatebinCustomUrl.Name = "txtPrivatebinCustomUrl";
+            this.txtPrivatebinCustomUrl.TextChanged += new System.EventHandler(this.txtPrivatebinCustomUrl_TextChanged);
+            // 
+            // lblPrivatebinExpiration
+            // 
+            resources.ApplyResources(this.lblPrivatebinExpiration, "lblPrivatebinExpiration");
+            this.lblPrivatebinExpiration.Name = "lblPrivatebinExpiration";
+            // 
+            // cbPrivatebinExpiration
+            // 
+            this.cbPrivatebinExpiration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPrivatebinExpiration.FormattingEnabled = true;
+            resources.ApplyResources(this.cbPrivatebinExpiration, "cbPrivatebinExpiration");
+            this.cbPrivatebinExpiration.Name = "cbPrivatebinExpiration";
+            this.cbPrivatebinExpiration.SelectedIndexChanged += new System.EventHandler(this.cbPrivatebinExpiration_SelectedIndexChanged);
+            // 
+            // lblPrivatebinPastePassword
+            // 
+            resources.ApplyResources(this.lblPrivatebinPastePassword, "lblPrivatebinPastePassword");
+            this.lblPrivatebinPastePassword.Name = "lblPrivatebinPastePassword";
+            // 
+            // txtPrivatebinPastePassword
+            // 
+            resources.ApplyResources(this.txtPrivatebinPastePassword, "txtPrivatebinPastePassword");
+            this.txtPrivatebinPastePassword.Name = "txtPrivatebinPastePassword";
+            this.txtPrivatebinPastePassword.UseSystemPasswordChar = true;
+            this.txtPrivatebinPastePassword.TextChanged += new System.EventHandler(this.txtPrivatebinPastePassword_TextChanged);
             // 
             // tpImageUploaders
             // 
@@ -4969,6 +5067,8 @@ namespace ShareX.UploadersLib
             this.Name = "UploadersConfigForm";
             this.Shown += new System.EventHandler(this.UploadersConfigForm_Shown);
             this.Resize += new System.EventHandler(this.UploadersConfigForm_Resize);
+            this.gbPrivatebinCredentials.ResumeLayout(false);
+            this.gbPrivatebinCredentials.PerformLayout();
             this.tpOtherUploaders.ResumeLayout(false);
             this.tcOtherUploaders.ResumeLayout(false);
             this.tpTwitter.ResumeLayout(false);
@@ -5096,6 +5196,8 @@ namespace ShareX.UploadersLib
             this.tpOneTimeSecret.PerformLayout();
             this.tpPastie.ResumeLayout(false);
             this.tpPastie.PerformLayout();
+            this.tpPrivatebin.ResumeLayout(false);
+            this.tpPrivatebin.PerformLayout();
             this.tpImageUploaders.ResumeLayout(false);
             this.tcImageUploaders.ResumeLayout(false);
             this.tpImgur.ResumeLayout(false);
@@ -5700,5 +5802,17 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
         private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
         private System.Windows.Forms.Label lblYouTubePermissionsTip;
+        private System.Windows.Forms.Label lblPrivatebinCustomUrl;
+        private System.Windows.Forms.TextBox txtPrivatebinCustomUrl;
+        private System.Windows.Forms.Label lblPrivatebinExpiration;
+        private System.Windows.Forms.ComboBox cbPrivatebinExpiration;
+        private System.Windows.Forms.Label lblPrivatebinPastePassword;
+        private System.Windows.Forms.TextBox txtPrivatebinPastePassword;
+        private System.Windows.Forms.GroupBox gbPrivatebinCredentials;
+        private System.Windows.Forms.Label lblPrivatebinPassword;
+        private System.Windows.Forms.Label lblPrivatebinUsername;
+        private System.Windows.Forms.TextBox txtPrivatebinPassword;
+        private System.Windows.Forms.TextBox txtPrivatebinUsername;
+        internal System.Windows.Forms.TabPage tpPrivatebin;
     }
 }
