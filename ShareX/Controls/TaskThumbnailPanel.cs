@@ -233,6 +233,7 @@ namespace ShareX
         public ThumbnailViewClickAction ClickAction { get; set; }
 
         private Rectangle dragBoxFromMouseDown;
+        private Orientation combineOrientation;
 
         public TaskThumbnailPanel(WorkerTask task)
         {
@@ -257,6 +258,8 @@ namespace ShareX
                 pThumbnail.PanelColor = ShareXResources.Theme.DarkBackgroundColor;
                 ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
                 ttMain.ForeColor = ShareXResources.Theme.TextColor;
+                lblCombineHorizontal.BorderColor = ShareXResources.Theme.BorderColor;
+                lblCombineVertical.BorderColor = ShareXResources.Theme.BorderColor;
             }
             else
             {
@@ -265,6 +268,8 @@ namespace ShareX
                 pThumbnail.PanelColor = SystemColors.ControlLight;
                 ttMain.BackColor = SystemColors.Window;
                 ttMain.ForeColor = SystemColors.ControlText;
+                lblCombineHorizontal.BorderColor = Color.Black;
+                lblCombineVertical.BorderColor = Color.Black;
             }
         }
 
@@ -316,6 +321,11 @@ namespace ShareX
                 lblTitle.Location = new Point(0, pThumbnail.Height + 2);
                 lblError.Location = new Point((ClientSize.Width - lblError.Width) / 2, pThumbnail.Height - lblError.Height - 1);
             }
+
+            lblCombineHorizontal.Location = new Point(0, 0);
+            lblCombineHorizontal.Size = new Size(pThumbnail.Width, pThumbnail.Height / 2);
+            lblCombineVertical.Location = new Point(0, pThumbnail.Height / 2 - 1);
+            lblCombineVertical.Size = new Size(pThumbnail.Width, pThumbnail.Height / 2);
         }
 
         public void UpdateThumbnail(Bitmap bmp = null)
@@ -560,17 +570,82 @@ namespace ShareX
             {
                 if (Task.Info != null && !string.IsNullOrEmpty(Task.Info.FilePath) && File.Exists(Task.Info.FilePath))
                 {
+                    AllowDrop = false;
                     Program.MainForm.AllowDrop = false;
-                    IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Task.Info.FilePath });
-                    dragBoxFromMouseDown = Rectangle.Empty;
-                    pbThumbnail.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
-                    Program.MainForm.AllowDrop = true;
+
+                    try
+                    {
+                        IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Task.Info.FilePath });
+                        dragBoxFromMouseDown = Rectangle.Empty;
+                        pbThumbnail.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+                    }
+                    finally
+                    {
+                        AllowDrop = true;
+                        Program.MainForm.AllowDrop = true;
+                    }
                 }
                 else
                 {
                     dragBoxFromMouseDown = Rectangle.Empty;
                 }
             }
+        }
+
+        private void TaskThumbnailPanel_DragEnter(object sender, DragEventArgs e)
+        {
+            string filePath = Task.Info.FilePath;
+
+            if (FileHelpers.IsImageFile(filePath) && e.Data.GetDataPresent(DataFormats.FileDrop, false) &&
+                e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0 && FileHelpers.IsImageFile(files[0]))
+            {
+                lblCombineHorizontal.Visible = true;
+                lblCombineVertical.Visible = true;
+
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void TaskThumbnailPanel_DragLeave(object sender, EventArgs e)
+        {
+            lblCombineHorizontal.Visible = false;
+            lblCombineVertical.Visible = false;
+        }
+
+        private void TaskThumbnailPanel_DragDrop(object sender, DragEventArgs e)
+        {
+            Rectangle horizontal = lblCombineHorizontal.RectangleToScreen(lblCombineHorizontal.ClientRectangle);
+
+            if (horizontal.Contains(e.X, e.Y))
+            {
+                combineOrientation = Orientation.Horizontal;
+            }
+            else
+            {
+                Rectangle vertical = lblCombineVertical.RectangleToScreen(lblCombineVertical.ClientRectangle);
+
+                if (vertical.Contains(e.X, e.Y))
+                {
+                    combineOrientation = Orientation.Vertical;
+                }
+            }
+
+            string filePath = Task.Info.FilePath;
+
+            if (FileHelpers.IsImageFile(filePath) && e.Data.GetDataPresent(DataFormats.FileDrop, false) &&
+                e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0 && FileHelpers.IsImageFile(files[0]))
+            {
+                string filePathDrop = files[0];
+
+                TaskHelpers.CombineImages(new string[] { filePathDrop, filePath }, combineOrientation);
+            }
+
+            lblCombineHorizontal.Visible = false;
+            lblCombineVertical.Visible = false;
         }
 
         private void TtMain_Draw(object sender, DrawToolTipEventArgs e)

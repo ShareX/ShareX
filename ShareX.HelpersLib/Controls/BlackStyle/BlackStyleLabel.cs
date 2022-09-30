@@ -112,7 +112,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private Color borderColor;
+        private Color borderColor = Color.Black;
 
         [DefaultValue(typeof(Color), "Black")]
         public Color BorderColor
