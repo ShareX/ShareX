@@ -233,7 +233,6 @@ namespace ShareX
         public ThumbnailViewClickAction ClickAction { get; set; }
 
         private Rectangle dragBoxFromMouseDown;
-        private Orientation combineOrientation;
 
         public TaskThumbnailPanel(WorkerTask task)
         {
@@ -322,10 +321,10 @@ namespace ShareX
                 lblError.Location = new Point((ClientSize.Width - lblError.Width) / 2, pThumbnail.Height - lblError.Height - 1);
             }
 
-            lblCombineHorizontal.Location = new Point(0, 0);
-            lblCombineHorizontal.Size = new Size(pThumbnail.Width, pThumbnail.Height / 2);
-            lblCombineVertical.Location = new Point(0, pThumbnail.Height / 2 - 1);
-            lblCombineVertical.Size = new Size(pThumbnail.Width, pThumbnail.Height / 2);
+            lblCombineHorizontal.Location = new Point(pbThumbnail.Left, pbThumbnail.Top);
+            lblCombineHorizontal.Size = new Size(pbThumbnail.Width, pbThumbnail.Height / 2);
+            lblCombineVertical.Location = new Point(pbThumbnail.Left, pbThumbnail.Top + pbThumbnail.Height / 2 - 1);
+            lblCombineVertical.Size = new Size(pbThumbnail.Width, pbThumbnail.Height / 2 + 1);
         }
 
         public void UpdateThumbnail(Bitmap bmp = null)
@@ -570,7 +569,7 @@ namespace ShareX
             {
                 if (Task.Info != null && !string.IsNullOrEmpty(Task.Info.FilePath) && File.Exists(Task.Info.FilePath))
                 {
-                    AllowDrop = false;
+                    pThumbnail.AllowDrop = false;
                     Program.MainForm.AllowDrop = false;
 
                     try
@@ -581,7 +580,7 @@ namespace ShareX
                     }
                     finally
                     {
-                        AllowDrop = true;
+                        pThumbnail.AllowDrop = true;
                         Program.MainForm.AllowDrop = true;
                     }
                 }
@@ -592,7 +591,7 @@ namespace ShareX
             }
         }
 
-        private void TaskThumbnailPanel_DragEnter(object sender, DragEventArgs e)
+        private void pThumbnail_DragEnter(object sender, DragEventArgs e)
         {
             string filePath = Task.Info.FilePath;
 
@@ -610,28 +609,21 @@ namespace ShareX
             }
         }
 
-        private void TaskThumbnailPanel_DragLeave(object sender, EventArgs e)
+        private void pThumbnail_DragLeave(object sender, EventArgs e)
         {
             lblCombineHorizontal.Visible = false;
             lblCombineVertical.Visible = false;
         }
 
-        private void TaskThumbnailPanel_DragDrop(object sender, DragEventArgs e)
+        private void pThumbnail_DragDrop(object sender, DragEventArgs e)
         {
-            Rectangle horizontal = lblCombineHorizontal.RectangleToScreen(lblCombineHorizontal.ClientRectangle);
+            Orientation combineOrientation = Orientation.Horizontal;
 
-            if (horizontal.Contains(e.X, e.Y))
-            {
-                combineOrientation = Orientation.Horizontal;
-            }
-            else
-            {
-                Rectangle vertical = lblCombineVertical.RectangleToScreen(lblCombineVertical.ClientRectangle);
+            Point vertical = lblCombineVertical.PointToScreen(lblCombineVertical.ClientRectangle.Location);
 
-                if (vertical.Contains(e.X, e.Y))
-                {
-                    combineOrientation = Orientation.Vertical;
-                }
+            if (e.Y >= vertical.Y)
+            {
+                combineOrientation = Orientation.Vertical;
             }
 
             string filePath = Task.Info.FilePath;

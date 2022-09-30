@@ -65,6 +65,7 @@
             // 
             // pThumbnail
             // 
+            this.pThumbnail.AllowDrop = true;
             this.pThumbnail.BackColor = System.Drawing.Color.Transparent;
             this.pThumbnail.Controls.Add(this.lblCombineVertical);
             this.pThumbnail.Controls.Add(this.lblError);
@@ -77,6 +78,9 @@
             this.pThumbnail.Radius = 5F;
             this.pThumbnail.Selected = false;
             this.pThumbnail.StatusLocation = ShareX.ThumbnailTitleLocation.Top;
+            this.pThumbnail.DragDrop += new System.Windows.Forms.DragEventHandler(this.pThumbnail_DragDrop);
+            this.pThumbnail.DragEnter += new System.Windows.Forms.DragEventHandler(this.pThumbnail_DragEnter);
+            this.pThumbnail.DragLeave += new System.EventHandler(this.pThumbnail_DragLeave);
             // 
             // lblCombineVertical
             // 
@@ -129,16 +133,12 @@
             // 
             // TaskThumbnailPanel
             // 
-            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pThumbnail);
             this.Controls.Add(this.lblTitle);
             this.Name = "TaskThumbnailPanel";
-            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.TaskThumbnailPanel_DragDrop);
-            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.TaskThumbnailPanel_DragEnter);
-            this.DragLeave += new System.EventHandler(this.TaskThumbnailPanel_DragLeave);
             this.pThumbnail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbThumbnail)).EndInit();
             this.ResumeLayout(false);

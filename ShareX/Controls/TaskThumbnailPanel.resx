@@ -147,7 +147,7 @@
     <value>1</value>
   </data>
   <data name="lblCombineVertical.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 20.25pt</value>
+    <value>Segoe UI, 14.25pt</value>
   </data>
   <data name="lblCombineVertical.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 128</value>
@@ -159,7 +159,8 @@
     <value>6</value>
   </data>
   <data name="lblCombineVertical.Text" xml:space="preserve">
-    <value>Vertical</value>
+    <value>Combine images
+(Vertical)</value>
   </data>
   <data name="lblCombineVertical.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -211,7 +212,7 @@
     <value>1</value>
   </data>
   <data name="lblCombineHorizontal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 20.25pt</value>
+    <value>Segoe UI, 14.25pt</value>
   </data>
   <data name="lblCombineHorizontal.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 40</value>
@@ -223,7 +224,8 @@
     <value>5</value>
   </data>
   <data name="lblCombineHorizontal.Text" xml:space="preserve">
-    <value>Horizontal</value>
+    <value>Combine images
+(Horizontal)</value>
   </data>
   <data name="lblCombineHorizontal.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
