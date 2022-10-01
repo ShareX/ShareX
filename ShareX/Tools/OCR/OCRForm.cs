@@ -171,6 +171,14 @@ namespace ShareX
             await OCR(bmpSource);
         }
 
+        private void OCRForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
+
         private async void btnSelectRegion_Click(object sender, EventArgs e)
         {
             FormWindowState previousState = WindowState;
