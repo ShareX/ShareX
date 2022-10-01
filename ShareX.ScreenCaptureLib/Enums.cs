@@ -276,6 +276,7 @@ namespace ShareX.ScreenCaptureLib
         DrawingRectangle,
         DrawingEllipse,
         DrawingFreehand,
+        DrawingFreehandArrow,
         DrawingLine,
         DrawingArrow,
         DrawingTextOutline,

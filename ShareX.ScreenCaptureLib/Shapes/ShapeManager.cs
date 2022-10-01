@@ -1153,6 +1153,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingFreehand:
                     shape = new FreehandDrawingShape();
                     break;
+                case ShapeType.DrawingFreehandArrow:
+                    shape = new FreehandArrowDrawingShape();
+                    break;
                 case ShapeType.DrawingLine:
                     shape = new LineDrawingShape();
                     break;
@@ -1288,6 +1291,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case ShapeType.RegionFreehand:
                         case ShapeType.DrawingFreehand:
+                        case ShapeType.DrawingFreehandArrow:
                         case ShapeType.DrawingLine:
                         case ShapeType.DrawingArrow:
                         case ShapeType.DrawingTextOutline:
