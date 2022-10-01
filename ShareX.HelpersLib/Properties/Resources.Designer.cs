@@ -3599,6 +3599,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Freehand arrow.
+        /// </summary>
+        internal static string ShapeType_DrawingFreehandArrow {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingFreehandArrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image (File).
         /// </summary>
         internal static string ShapeType_DrawingImage {
