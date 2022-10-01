@@ -112,6 +112,23 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private Color borderColor = Color.Black;
+
+        [DefaultValue(typeof(Color), "Black")]
+        public Color BorderColor
+        {
+            get
+            {
+                return borderColor;
+            }
+            set
+            {
+                borderColor = value;
+
+                Invalidate();
+            }
+        }
+
         private bool autoEllipsis;
 
         [DefaultValue(false)]
@@ -150,7 +167,10 @@ namespace ShareX.HelpersLib
 
                 if (drawBorder)
                 {
-                    g.DrawRectangleProper(Pens.Black, ClientRectangle);
+                    using (Pen pen = new Pen(BorderColor, 1))
+                    {
+                        g.DrawRectangleProper(pen, ClientRectangle);
+                    }
                 }
             }
         }
