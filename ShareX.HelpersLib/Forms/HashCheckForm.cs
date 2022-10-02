@@ -191,6 +191,26 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void txtFilePath2_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void txtFilePath2_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
+            {
+                txtFilePath2.Text = files[0];
+            }
+        }
+
         #endregion File hash check
 
         #region Text conversions
