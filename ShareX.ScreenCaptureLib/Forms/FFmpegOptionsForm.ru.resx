@@ -254,4 +254,7 @@
   <data name="cbx264UseBitrate.Text" xml:space="preserve">
     <value>Битрейт</value>
   </data>
+  <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
+    <value>Пользовательский путь к FFmpeg:</value>
+  </data>
 </root>
