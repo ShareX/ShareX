@@ -173,9 +173,12 @@
             // 
             // txtFilePath2
             // 
+            this.txtFilePath2.AllowDrop = true;
             this.txtFilePath2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtFilePath2, "txtFilePath2");
             this.txtFilePath2.Name = "txtFilePath2";
+            this.txtFilePath2.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtFilePath2_DragDrop);
+            this.txtFilePath2.DragEnter += new System.Windows.Forms.DragEventHandler(this.txtFilePath2_DragEnter);
             // 
             // btnFilePathBrowse2
             // 
