@@ -1110,4 +1110,13 @@ Middle click to close</value>
   <data name="openhand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openhand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>FFmpeg that comes with ShareX only supports 64-bit operating systems.</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg is missing</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg does not exist at the following path:</value>
+  </data>
 </root>
