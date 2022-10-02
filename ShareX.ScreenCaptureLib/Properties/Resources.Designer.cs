@@ -285,7 +285,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cut cut effect size:.
+        ///   Looks up a localized string similar to Cut out effect size:.
         /// </summary>
         internal static string CutOutEffectSize {
             get {
