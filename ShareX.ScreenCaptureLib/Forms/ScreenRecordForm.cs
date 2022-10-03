@@ -263,16 +263,14 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Status == ScreenRecordingStatus.Waiting || Status == ScreenRecordingStatus.Paused)
             {
-                // TODO: Translate
-                btnPause.Text = "Resume";
+                btnPause.Text = Resources.Resume;
                 lblTimer.Cursor = Cursors.SizeAll;
                 borderColor = Color.FromArgb(241, 196, 27);
                 Refresh();
             }
             else if (Status == ScreenRecordingStatus.Recording)
             {
-                // TODO: Translate
-                btnPause.Text = "Pause";
+                btnPause.Text = Resources.Pause;
                 lblTimer.Cursor = Cursors.Default;
             }
         }

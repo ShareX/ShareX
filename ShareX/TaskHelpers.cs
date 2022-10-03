@@ -1424,9 +1424,8 @@ namespace ShareX
         {
             if (!Environment.Is64BitOperatingSystem && !taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath)
             {
-                // TODO: Translate
-                MessageBox.Show("FFmpeg that comes with ShareX only supports 64-bit operating systems.",
-                    "ShareX - " + "FFmpeg is missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resources.FFmpegOnlySupports64BitOperatingSystems,
+                    "ShareX - " + Resources.FFmpegIsMissing, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return false;
             }
@@ -1435,9 +1434,8 @@ namespace ShareX
 
             if (!File.Exists(ffmpegPath))
             {
-                // TODO: Translate
-                MessageBox.Show("FFmpeg does not exist at the following path:\r\n" + ffmpegPath,
-                    "ShareX - " + "FFmpeg is missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resources.FFmpegDoesNotExistAtTheFollowingPath + "\r\n" + ffmpegPath,
+                    "ShareX - " + Resources.FFmpegIsMissing, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return false;
             }

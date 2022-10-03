@@ -1424,6 +1424,33 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FFmpeg does not exist at the following path:.
+        /// </summary>
+        public static string FFmpegDoesNotExistAtTheFollowingPath {
+            get {
+                return ResourceManager.GetString("FFmpegDoesNotExistAtTheFollowingPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFmpeg is missing.
+        /// </summary>
+        public static string FFmpegIsMissing {
+            get {
+                return ResourceManager.GetString("FFmpegIsMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFmpeg that comes with ShareX only supports 64-bit operating systems..
+        /// </summary>
+        public static string FFmpegOnlySupports64BitOperatingSystems {
+            get {
+                return ResourceManager.GetString("FFmpegOnlySupports64BitOperatingSystems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use new name: .
         /// </summary>
         public static string FileExistForm_txtNewName_TextChanged_Use_new_name__ {
