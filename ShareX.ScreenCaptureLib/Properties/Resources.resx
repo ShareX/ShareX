@@ -800,7 +800,7 @@ X: {4} Y: {5}</value>
     <comment>@Invariant</comment>
   </data>
   <data name="CutOutEffectSize" xml:space="preserve">
-    <value>Cut cut effect size:</value>
+    <value>Cut out effect size:</value>
   </data>
   <data name="CutOutEffectType" xml:space="preserve">
     <value>Cut out effect:</value>
