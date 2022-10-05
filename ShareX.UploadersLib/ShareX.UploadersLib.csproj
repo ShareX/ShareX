@@ -254,6 +254,7 @@
     <Compile Include="Helpers\MimeTypes.cs" />
     <Compile Include="Helpers\ResponseInfo.cs" />
     <Compile Include="Helpers\RequestHelpers.cs" />
+    <Compile Include="Helpers\UploaderErrorManager.cs" />
     <Compile Include="OAuth\GoogleOAuth2.cs" />
     <Compile Include="OAuth\IOAuthBase.cs" />
     <Compile Include="OAuth\OAuth2ProofKey.cs" />
@@ -284,6 +285,7 @@
     <Compile Include="BaseServices\TextUploaderService.cs" />
     <Compile Include="TextUploaders\Pastie.cs" />
     <Compile Include="TextUploaders\TeknikPastebin.cs" />
+    <Compile Include="Helpers\UploaderErrorInfo.cs" />
     <Compile Include="UploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />

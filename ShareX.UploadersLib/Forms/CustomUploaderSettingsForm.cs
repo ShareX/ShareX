@@ -623,7 +623,7 @@ namespace ShareX.UploadersLib
                             {
                                 CustomImageUploader imageUploader = new CustomImageUploader(item);
                                 result = imageUploader.Upload(stream, "Test.png");
-                                result.Errors.AddRange(imageUploader.Errors);
+                                result.Errors.Add(imageUploader.Errors);
                             }
                             break;
                         case CustomUploaderDestinationType.TextUploader:
@@ -637,7 +637,7 @@ namespace ShareX.UploadersLib
                                     if (!string.IsNullOrEmpty(text))
                                     {
                                         result = textUploader.UploadText(text, "Test.txt");
-                                        result.Errors.AddRange(textUploader.Errors);
+                                        result.Errors.Add(textUploader.Errors);
                                     }
                                 }
                             }
@@ -647,18 +647,18 @@ namespace ShareX.UploadersLib
                             {
                                 CustomFileUploader fileUploader = new CustomFileUploader(item);
                                 result = fileUploader.Upload(stream, "Test.png");
-                                result.Errors.AddRange(fileUploader.Errors);
+                                result.Errors.Add(fileUploader.Errors);
                             }
                             break;
                         case CustomUploaderDestinationType.URLShortener:
                             CustomURLShortener urlShortener = new CustomURLShortener(item);
                             result = urlShortener.ShortenURL(Links.Website);
-                            result.Errors.AddRange(urlShortener.Errors);
+                            result.Errors.Add(urlShortener.Errors);
                             break;
                         case CustomUploaderDestinationType.URLSharingService:
                             CustomURLSharer urlSharer = new CustomURLSharer(item);
                             result = urlSharer.ShareURL(Links.Website);
-                            result.Errors.AddRange(urlSharer.Errors);
+                            result.Errors.Add(urlSharer.Errors);
                             break;
                     }
                 }

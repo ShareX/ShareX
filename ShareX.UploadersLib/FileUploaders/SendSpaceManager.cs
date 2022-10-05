@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -39,7 +38,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public static string Password;
         public static SendSpace.UploadInfo UploadInfo;
 
-        public static List<string> PrepareUploadInfo(string apiKey, string username = null, string password = null)
+        public static UploaderErrorManager PrepareUploadInfo(string apiKey, string username = null, string password = null)
         {
             SendSpace sendSpace = new SendSpace(apiKey);
 
