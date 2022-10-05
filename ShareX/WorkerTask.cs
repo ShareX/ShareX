@@ -924,10 +924,10 @@ namespace ShareX
             }
 
             uploader = service.CreateUploader(Program.UploadersConfig, taskReferenceHelper);
-            uploader.Errors.DefaultTitle = service.ServiceName + " " + "error";
 
             if (uploader != null)
             {
+                uploader.Errors.DefaultTitle = service.ServiceName + " " + "error";
                 uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
                 uploader.ProgressChanged += uploader_ProgressChanged;
 

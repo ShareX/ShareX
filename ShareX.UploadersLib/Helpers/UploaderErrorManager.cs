@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib
             Add(DefaultTitle, text);
         }
 
-        public void Add(string title, string text)
+        private void Add(string title, string text)
         {
             Errors.Add(new UploaderErrorInfo(title, text));
         }
@@ -58,14 +58,14 @@ namespace ShareX.UploadersLib
             Errors.AddRange(manager.Errors);
         }
 
-        public void Insert(int index, string text)
+        public void AddFirst(string text)
         {
-            Insert(index, DefaultTitle, text);
+            AddFirst(DefaultTitle, text);
         }
 
-        public void Insert(int index, string title, string text)
+        private void AddFirst(string title, string text)
         {
-            Errors.Insert(index, new UploaderErrorInfo(title, text));
+            Errors.Insert(0, new UploaderErrorInfo(title, text));
         }
 
         public override string ToString()

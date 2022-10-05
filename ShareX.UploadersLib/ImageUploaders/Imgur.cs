@@ -381,8 +381,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 return InternalUpload(stream, fileName, false);
                             }
 
-                            string errorMessage = $"Imgur upload failed: ({imgurResponse.status}) {errorData.error}";
-                            Errors.Insert(0, errorMessage);
+                            Errors.AddFirst($"Imgur upload failed: ({imgurResponse.status}) {errorData.error}");
                         }
                     }
                 }

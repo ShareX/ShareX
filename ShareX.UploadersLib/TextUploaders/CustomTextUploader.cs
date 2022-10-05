@@ -121,7 +121,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 throw new Exception("Unsupported request format: " + uploader.Body);
             }
 
-            uploader.TryParseResponse(result, LastResponseInfo, input);
+            uploader.TryParseResponse(result, LastResponseInfo, Errors, input);
 
             return result;
         }
