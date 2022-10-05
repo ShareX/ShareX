@@ -36,6 +36,8 @@ namespace ShareX.UploadersLib
 
         public int Count => Errors.Count;
 
+        public string DefaultTitle { get; set; } = Resources.Error;
+
         public UploaderErrorManager()
         {
             Errors = new List<UploaderErrorInfo>();
@@ -43,7 +45,7 @@ namespace ShareX.UploadersLib
 
         public void Add(string text)
         {
-            Add(Resources.Error, text);
+            Add(DefaultTitle, text);
         }
 
         public void Add(string title, string text)
@@ -58,7 +60,7 @@ namespace ShareX.UploadersLib
 
         public void Insert(int index, string text)
         {
-            Insert(index, Resources.Error, text);
+            Insert(index, DefaultTitle, text);
         }
 
         public void Insert(int index, string title, string text)

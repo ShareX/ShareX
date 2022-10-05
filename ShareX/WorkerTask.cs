@@ -924,6 +924,7 @@ namespace ShareX
             }
 
             uploader = service.CreateUploader(Program.UploadersConfig, taskReferenceHelper);
+            uploader.Errors.DefaultTitle = service.ServiceName + " " + "error";
 
             if (uploader != null)
             {
