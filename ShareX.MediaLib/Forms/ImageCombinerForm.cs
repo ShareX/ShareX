@@ -180,7 +180,8 @@ namespace ShareX.MediaLib
 
                     if (imageFiles.Count > 1)
                     {
-                        Bitmap output = ImageHelpers.CombineImages(imageFiles, Options.Orientation, Options.Alignment, Options.Space, Options.AutoFillBackground);
+                        Bitmap output = ImageHelpers.CombineImages(imageFiles, Options.Orientation, Options.Alignment, Options.Space, Options.WrapAfter,
+                            Options.AutoFillBackground);
 
                         if (output != null)
                         {
