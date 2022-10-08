@@ -2099,22 +2099,22 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap CombineImages(List<Bitmap> images, Orientation orientation = Orientation.Vertical,
-            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
+        public static Bitmap CombineImages(List<Bitmap> images, Orientation orientation, ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop,
+            int space = 0, bool autoFillBackground = false)
         {
             int width, height;
             int imageCount = images.Count;
             int spaceSize = space * (imageCount - 1);
 
-            if (orientation == Orientation.Vertical)
-            {
-                width = images.Max(x => x.Width);
-                height = images.Sum(x => x.Height) + spaceSize;
-            }
-            else
+            if (orientation == Orientation.Horizontal)
             {
                 width = images.Sum(x => x.Width) + spaceSize;
                 height = images.Max(x => x.Height);
+            }
+            else
+            {
+                width = images.Max(x => x.Width);
+                height = images.Sum(x => x.Height) + spaceSize;
             }
 
             Bitmap bmp = new Bitmap(width, height);
@@ -2122,7 +2122,8 @@ namespace ShareX.HelpersLib
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.SetHighQuality();
-                int position = 0;
+
+                Point position = new Point(0, 0);
 
                 for (int i = 0; i < imageCount; i++)
                 {
@@ -2135,44 +2136,45 @@ namespace ShareX.HelpersLib
                     }
 
                     Rectangle rect;
+                    Point offset = new Point(0, 0);
 
-                    if (orientation == Orientation.Vertical)
+                    if (orientation == Orientation.Horizontal)
                     {
-                        int x;
                         switch (alignment)
                         {
                             default:
                             case ImageCombinerAlignment.LeftOrTop:
-                                x = 0;
+                                offset.Y = 0;
                                 break;
                             case ImageCombinerAlignment.Center:
-                                x = (width / 2) - (image.Width / 2);
+                                offset.Y = (height / 2) - (image.Height / 2);
                                 break;
                             case ImageCombinerAlignment.RightOrBottom:
-                                x = width - image.Width;
+                                offset.Y = height - image.Height;
                                 break;
                         }
-                        rect = new Rectangle(x, position, image.Width, image.Height);
-                        position += image.Height + space;
+
+                        rect = new Rectangle(position.X + offset.X, position.Y + offset.Y, image.Width, image.Height);
+                        position.X += image.Width + space;
                     }
                     else
                     {
-                        int y;
                         switch (alignment)
                         {
                             default:
                             case ImageCombinerAlignment.LeftOrTop:
-                                y = 0;
+                                offset.X = 0;
                                 break;
                             case ImageCombinerAlignment.Center:
-                                y = (height / 2) - (image.Height / 2);
+                                offset.X = (width / 2) - (image.Width / 2);
                                 break;
                             case ImageCombinerAlignment.RightOrBottom:
-                                y = height - image.Height;
+                                offset.X = width - image.Width;
                                 break;
                         }
-                        rect = new Rectangle(position, y, image.Width, image.Height);
-                        position += image.Width + space;
+
+                        rect = new Rectangle(position.X + offset.X, position.Y + offset.Y, image.Width, image.Height);
+                        position.Y += image.Height + space;
                     }
 
                     g.DrawImage(image, rect);
@@ -2182,8 +2184,8 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Bitmap CombineImages(IEnumerable<string> imageFiles, Orientation orientation = Orientation.Vertical,
-            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
+        public static Bitmap CombineImages(IEnumerable<string> imageFiles, Orientation orientation, ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop,
+            int space = 0, bool autoFillBackground = false)
         {
             List<Bitmap> images = new List<Bitmap>();
 
