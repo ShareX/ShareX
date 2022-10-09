@@ -61,6 +61,19 @@ namespace ShareX.MediaLib
             cbAutoFillBackground.Checked = Options.AutoFillBackground;
         }
 
+        public ImageCombinerForm(ImageCombinerOptions options, IEnumerable<string> imageFiles) : this(options)
+        {
+            if (imageFiles != null)
+            {
+                foreach (string image in imageFiles)
+                {
+                    lvImages.Items.Add(image);
+                }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
+            }
+        }
+
         private void UpdateOrientation()
         {
             if (rbOrientationHorizontal.Checked)
@@ -93,17 +106,6 @@ namespace ShareX.MediaLib
             cbAlignment.SelectedIndex = (int)Options.Alignment;
         }
 
-        public ImageCombinerForm(ImageCombinerOptions options, IEnumerable<string> imageFiles) : this(options)
-        {
-            if (imageFiles != null)
-            {
-                foreach (string image in imageFiles)
-                {
-                    lvImages.Items.Add(image);
-                }
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string[] images = ImageHelpers.OpenImageFileDialog(true);
@@ -114,6 +116,8 @@ namespace ShareX.MediaLib
                 {
                     lvImages.Items.Add(image);
                 }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
             }
         }
 
@@ -125,6 +129,8 @@ namespace ShareX.MediaLib
                 {
                     lvImages.Items.Remove(lvi);
                 }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
             }
         }
 
@@ -228,6 +234,8 @@ namespace ShareX.MediaLib
                 {
                     lvImages.Items.Add(file);
                 }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
             }
         }
     }

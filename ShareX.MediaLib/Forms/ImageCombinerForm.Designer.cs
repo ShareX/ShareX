@@ -49,6 +49,7 @@
             this.lblWrapAfter = new System.Windows.Forms.Label();
             this.nudWrapAfter = new System.Windows.Forms.NumericUpDown();
             this.lblWrapAfterImages = new System.Windows.Forms.Label();
+            this.lblImageCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).BeginInit();
             this.flpOrientation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudWrapAfter)).BeginInit();
@@ -200,6 +201,11 @@
             resources.ApplyResources(this.lblWrapAfterImages, "lblWrapAfterImages");
             this.lblWrapAfterImages.Name = "lblWrapAfterImages";
             // 
+            // lblImageCount
+            // 
+            resources.ApplyResources(this.lblImageCount, "lblImageCount");
+            this.lblImageCount.Name = "lblImageCount";
+            // 
             // ImageCombinerForm
             // 
             this.AcceptButton = this.btnCombine;
@@ -207,6 +213,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.lblImageCount);
             this.Controls.Add(this.lblWrapAfterImages);
             this.Controls.Add(this.nudWrapAfter);
             this.Controls.Add(this.lblWrapAfter);
@@ -258,5 +265,6 @@
         private System.Windows.Forms.Label lblWrapAfter;
         private System.Windows.Forms.NumericUpDown nudWrapAfter;
         private System.Windows.Forms.Label lblWrapAfterImages;
+        private System.Windows.Forms.Label lblImageCount;
     }
 }
