@@ -46,8 +46,12 @@
             this.rbOrientationHorizontal = new System.Windows.Forms.RadioButton();
             this.rbOrientationVertical = new System.Windows.Forms.RadioButton();
             this.cbAutoFillBackground = new System.Windows.Forms.CheckBox();
+            this.lblWrapAfter = new System.Windows.Forms.Label();
+            this.nudWrapAfter = new System.Windows.Forms.NumericUpDown();
+            this.lblWrapAfterImages = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).BeginInit();
             this.flpOrientation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWrapAfter)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -175,6 +179,27 @@
             this.cbAutoFillBackground.UseVisualStyleBackColor = true;
             this.cbAutoFillBackground.CheckedChanged += new System.EventHandler(this.cbAutoFillBackground_CheckedChanged);
             // 
+            // lblWrapAfter
+            // 
+            resources.ApplyResources(this.lblWrapAfter, "lblWrapAfter");
+            this.lblWrapAfter.Name = "lblWrapAfter";
+            // 
+            // nudWrapAfter
+            // 
+            resources.ApplyResources(this.nudWrapAfter, "nudWrapAfter");
+            this.nudWrapAfter.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudWrapAfter.Name = "nudWrapAfter";
+            this.nudWrapAfter.ValueChanged += new System.EventHandler(this.nudWrapAfter_ValueChanged);
+            // 
+            // lblWrapAfterImages
+            // 
+            resources.ApplyResources(this.lblWrapAfterImages, "lblWrapAfterImages");
+            this.lblWrapAfterImages.Name = "lblWrapAfterImages";
+            // 
             // ImageCombinerForm
             // 
             this.AcceptButton = this.btnCombine;
@@ -182,6 +207,9 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.lblWrapAfterImages);
+            this.Controls.Add(this.nudWrapAfter);
+            this.Controls.Add(this.lblWrapAfter);
             this.Controls.Add(this.cbAutoFillBackground);
             this.Controls.Add(this.flpOrientation);
             this.Controls.Add(this.cbAlignment);
@@ -202,6 +230,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).EndInit();
             this.flpOrientation.ResumeLayout(false);
             this.flpOrientation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWrapAfter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +255,8 @@
         private System.Windows.Forms.RadioButton rbOrientationHorizontal;
         private System.Windows.Forms.RadioButton rbOrientationVertical;
         private System.Windows.Forms.CheckBox cbAutoFillBackground;
+        private System.Windows.Forms.Label lblWrapAfter;
+        private System.Windows.Forms.NumericUpDown nudWrapAfter;
+        private System.Windows.Forms.Label lblWrapAfterImages;
     }
 }

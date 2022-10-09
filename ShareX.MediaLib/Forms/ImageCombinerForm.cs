@@ -57,6 +57,7 @@ namespace ShareX.MediaLib
 
             UpdateAlignmentComboBox();
             nudSpace.SetValue(Options.Space);
+            nudWrapAfter.SetValue(Options.WrapAfter);
             cbAutoFillBackground.Checked = Options.AutoFillBackground;
         }
 
@@ -163,6 +164,11 @@ namespace ShareX.MediaLib
         private void nudSpace_ValueChanged(object sender, EventArgs e)
         {
             Options.Space = (int)nudSpace.Value;
+        }
+
+        private void nudWrapAfter_ValueChanged(object sender, EventArgs e)
+        {
+            Options.WrapAfter = (int)nudWrapAfter.Value;
         }
 
         private void cbAutoFillBackground_CheckedChanged(object sender, EventArgs e)
