@@ -884,6 +884,9 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
 
+            ShapeManager.CurrentDPI.X = g.DpiX;
+            ShapeManager.CurrentDPI.Y = g.DpiY;
+
             ZoomTransform(g);
 
             if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))

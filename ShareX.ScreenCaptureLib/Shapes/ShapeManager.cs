@@ -146,6 +146,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public PointF CurrentDPI = new PointF(96f, 96f);
+
         public bool IsCurrentShapeValid => CurrentShape != null && CurrentShape.IsValidShape;
 
         public BaseShape[] Regions => Shapes.OfType<BaseRegionShape>().ToArray();
@@ -1366,6 +1368,7 @@ namespace ShareX.ScreenCaptureLib
         public Bitmap RenderOutputImage(Bitmap bmp, PointF offset)
         {
             Bitmap bmpOutput = (Bitmap)bmp.Clone();
+            bmpOutput.SetResolution(CurrentDPI.X, CurrentDPI.Y);
 
             if (DrawingShapes.Length > 0 || EffectShapes.Length > 0)
             {
