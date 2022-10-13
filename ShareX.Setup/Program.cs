@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 
 namespace ShareX.Setup
 {
@@ -41,20 +40,19 @@ namespace ShareX.Setup
             CreatePortable = 1 << 1,
             CreateSteamFolder = 1 << 2,
             OpenOutputDirectory = 1 << 3,
-            UploadOutputFile = 1 << 4,
-            CreateMicrosoftStoreFolder = 1 << 5,
-            CreateMicrosoftStoreDebugFolder = 1 << 6,
-            CompileAppx = 1 << 7,
-            DownloadFFmpeg = 1 << 8,
-            CreateChecksumFile = 1 << 9,
+            CreateMicrosoftStoreFolder = 1 << 4,
+            CreateMicrosoftStoreDebugFolder = 1 << 5,
+            CompileAppx = 1 << 6,
+            DownloadFFmpeg = 1 << 7,
+            CreateChecksumFile = 1 << 8,
 
             Stable = CreateSetup | CreatePortable | CreateChecksumFile | OpenOutputDirectory,
             Setup = CreateSetup | OpenOutputDirectory,
             Portable = CreatePortable | OpenOutputDirectory,
             Steam = CreateSteamFolder | OpenOutputDirectory,
-            MicrosoftStore = CreateMicrosoftStoreFolder,
+            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | OpenOutputDirectory,
             MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder,
-            Beta = CreateSetup | UploadOutputFile,
+
             AppVeyorRelease = CreateSetup | CreatePortable | CreateChecksumFile | DownloadFFmpeg,
             AppVeyorSteam = CreateSteamFolder | DownloadFFmpeg,
             AppVeyorMicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadFFmpeg
@@ -66,12 +64,38 @@ namespace ShareX.Setup
         private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin");
         private static string ReleaseDir => Path.Combine(BinDir, "Release");
-        private static string ReleaseExecutablePath => Path.Combine(ReleaseDir, "ShareX.exe");
         private static string DebugDir => Path.Combine(BinDir, "Debug");
-        private static string DebugExecutablePath => Path.Combine(DebugDir, "ShareX.exe");
         private static string SteamDir => Path.Combine(BinDir, "Steam");
         private static string MicrosoftStoreDir => Path.Combine(BinDir, "MicrosoftStore");
         private static string MicrosoftStoreDebugDir => Path.Combine(BinDir, "MicrosoftStoreDebug");
+
+        private static string ExecutablePath
+        {
+            get
+            {
+                string dir;
+
+                switch (Job)
+                {
+                    default:
+                    case SetupJobs.CreateSetup:
+                    case SetupJobs.CreatePortable:
+                        dir = ReleaseDir;
+                        break;
+                    case SetupJobs.CreateSteamFolder:
+                        dir = SteamDir;
+                        break;
+                    case SetupJobs.CreateMicrosoftStoreFolder:
+                        dir = MicrosoftStoreDir;
+                        break;
+                    case SetupJobs.CreateMicrosoftStoreDebugFolder:
+                        dir = MicrosoftStoreDebugDir;
+                        break;
+                }
+
+                return Path.Combine(dir, "ShareX.exe");
+            }
+        }
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
@@ -159,8 +183,6 @@ namespace ShareX.Setup
                     process.BeginOutputReadLine();
                     process.WaitForExit();
                 }
-
-                Directory.Delete(MicrosoftStoreOutputDir, true);
             }
 
             if (Job.HasFlag(SetupJobs.CreateChecksumFile))
@@ -181,11 +203,6 @@ namespace ShareX.Setup
             if (Job.HasFlag(SetupJobs.OpenOutputDirectory))
             {
                 OpenOutputDirectory();
-            }
-
-            if (Job.HasFlag(SetupJobs.UploadOutputFile))
-            {
-                UploadLatestFile();
             }
 
             Console.WriteLine("ShareX setup successfully completed.");
@@ -344,20 +361,9 @@ namespace ShareX.Setup
             Process.Start(OutputDir);
         }
 
-        private static void UploadLatestFile()
-        {
-            FileInfo fileInfo = new DirectoryInfo(OutputDir).GetFiles("*.exe").OrderByDescending(f => f.LastWriteTime).FirstOrDefault();
-
-            if (fileInfo != null)
-            {
-                Console.WriteLine("Uploading setup file.");
-                Process.Start(DebugExecutablePath, fileInfo.FullName);
-            }
-        }
-
         private static string GetAppVersion()
         {
-            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ReleaseExecutablePath);
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ExecutablePath);
             return $"{versionInfo.ProductMajorPart}.{versionInfo.ProductMinorPart}.{versionInfo.ProductBuildPart}";
         }
     }
