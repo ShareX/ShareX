@@ -82,13 +82,12 @@ namespace ShareX.Setup
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
         private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
-        private static string PortableFileName => $"ShareX-{AppVersion}-portable.zip";
-        private static string PortableFilePath => Path.Combine(OutputDir, PortableFileName);
+        private static string PortableFilePath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-portable.zip");
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
-        private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
+        private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
 
         private static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";

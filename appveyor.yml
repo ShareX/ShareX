@@ -31,7 +31,7 @@ artifacts:
   name: Portable-Checksum
 - path: ShareX-Steam
   name: Steam
-- path: ShareX.appx
+- path: ShareX-*.appx
   name: MicrosoftStore
 deploy:
   - provider: GitHub
