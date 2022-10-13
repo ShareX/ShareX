@@ -82,6 +82,8 @@ namespace ShareX.Setup
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
         private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
+        private static string PortableFileName => $"ShareX-{AppVersion}-portable.zip";
+        private static string PortableFilePath => Path.Combine(OutputDir, PortableFileName);
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
@@ -91,6 +93,7 @@ namespace ShareX.Setup
 
         private static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
+        private static string AppVersion = GetAppVersion();
 
         private static void Main(string[] args)
         {
@@ -316,14 +319,7 @@ namespace ShareX.Setup
             else if (job == SetupJobs.CreatePortable)
             {
                 FileHelpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
-
-                FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ReleaseExecutablePath);
-                string zipFileName = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
-                string zipPath = Path.Combine(OutputDir, zipFileName);
-                //string zipPath = Path.Combine(OutputDir, "ShareX-portable.zip");
-                ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(zipPath));
-
-                Directory.Delete(destination, true);
+                ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(PortableFilePath));
             }
 
             Console.WriteLine("Folder created.");
@@ -352,6 +348,12 @@ namespace ShareX.Setup
                 Console.WriteLine("Uploading setup file.");
                 Process.Start(DebugExecutablePath, fileInfo.FullName);
             }
+        }
+
+        private static string GetAppVersion()
+        {
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ReleaseExecutablePath);
+            return $"{versionInfo.ProductMajorPart}.{versionInfo.ProductMinorPart}.{versionInfo.ProductBuildPart}";
         }
     }
 }
