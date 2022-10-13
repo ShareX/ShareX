@@ -29,7 +29,7 @@ artifacts:
   name: Portable
 - path: ShareX-*-portable.zip.sha256
   name: Portable-Checksum
-- path: ShareX-Steam
+- path: ShareX-*-Steam.zip
   name: Steam
 - path: ShareX-*.appx
   name: MicrosoftStore

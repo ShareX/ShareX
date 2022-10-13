@@ -82,9 +82,10 @@ namespace ShareX.Setup
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
         private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
-        private static string PortableFilePath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-portable.zip");
+        private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-portable.zip");
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
+        private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
@@ -92,13 +93,14 @@ namespace ShareX.Setup
 
         private static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
-        private static string AppVersion = GetAppVersion();
+        private static string AppVersion;
 
         private static void Main(string[] args)
         {
             Console.WriteLine("ShareX setup started.");
 
             CheckAppVeyor(args);
+            AppVersion = GetAppVersion();
 
             Console.WriteLine("Setup job: " + Job);
 
@@ -311,14 +313,18 @@ namespace ShareX.Setup
 
             FileHelpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
 
-            if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
-            {
-                FileHelpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
-            }
-            else if (job == SetupJobs.CreatePortable)
+            if (job == SetupJobs.CreatePortable)
             {
                 FileHelpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
-                ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(PortableFilePath));
+                ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(PortableZipPath));
+            }
+            else if (job == SetupJobs.CreateSteamFolder)
+            {
+                ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(SteamZipPath));
+            }
+            else if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
+            {
+                FileHelpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
             }
 
             Console.WriteLine("Folder created.");
