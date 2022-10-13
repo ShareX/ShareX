@@ -124,9 +124,10 @@ namespace ShareX.Setup
             Console.WriteLine("ShareX setup started.");
 
             CheckAppVeyor(args);
-            AppVersion = GetAppVersion();
 
             Console.WriteLine("Setup job: " + Job);
+
+            AppVersion = GetAppVersion();
 
             if (Directory.Exists(OutputDir))
             {
