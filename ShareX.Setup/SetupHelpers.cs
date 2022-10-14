@@ -77,7 +77,7 @@ namespace ShareX.Setup
                 {
                     string fileName = Path.GetFileName(file);
 
-                    if (ignoreFiles.All(x => !fileName.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
+                    if (ignoreFiles.All(x => !fileName.Equals(x, StringComparison.OrdinalIgnoreCase)))
                     {
                         newFiles.Add(file);
                     }

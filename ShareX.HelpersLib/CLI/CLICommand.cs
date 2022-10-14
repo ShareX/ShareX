@@ -39,9 +39,9 @@ namespace ShareX.HelpersLib
             Parameter = parameter;
         }
 
-        public bool CheckCommand(string command)
+        public bool CheckCommand(string command, StringComparison comparisonType = StringComparison.OrdinalIgnoreCase)
         {
-            return !string.IsNullOrEmpty(Command) && Command.Equals(command, StringComparison.InvariantCultureIgnoreCase);
+            return !string.IsNullOrEmpty(Command) && Command.Equals(command, comparisonType);
         }
 
         public override string ToString()

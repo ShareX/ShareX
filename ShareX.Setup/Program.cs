@@ -198,7 +198,7 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.OpenOutputDirectory))
             {
-                OpenOutputDirectory();
+                FileHelpers.OpenFolder(OutputDir, false);
             }
 
             Console.WriteLine("ShareX setup successfully completed.");
@@ -236,6 +236,12 @@ namespace ShareX.Setup
                     Environment.Exit(0);
                 }
             }
+        }
+
+        private static string GetAppVersion()
+        {
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ExecutablePath);
+            return $"{versionInfo.ProductMajorPart}.{versionInfo.ProductMinorPart}.{versionInfo.ProductBuildPart}";
         }
 
         private static void CompileSetup()
@@ -365,17 +371,6 @@ namespace ShareX.Setup
                 string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip");
                 ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
             }
-        }
-
-        private static void OpenOutputDirectory()
-        {
-            Process.Start(OutputDir);
-        }
-
-        private static string GetAppVersion()
-        {
-            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ExecutablePath);
-            return $"{versionInfo.ProductMajorPart}.{versionInfo.ProductMinorPart}.{versionInfo.ProductBuildPart}";
         }
     }
 }

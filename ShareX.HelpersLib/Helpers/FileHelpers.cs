@@ -285,7 +285,7 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool OpenFolder(string folderPath)
+        public static bool OpenFolder(string folderPath, bool allowMessageBox = true)
         {
             if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
             {
@@ -316,7 +316,7 @@ namespace ShareX.HelpersLib
                     DebugHelper.WriteException(e, $"OpenFolder({folderPath}) failed.");
                 }
             }
-            else
+            else if (allowMessageBox)
             {
                 MessageBox.Show(Resources.Helpers_OpenFolder_Folder_not_exist_ + Environment.NewLine + folderPath, "ShareX",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
