@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -88,42 +87,6 @@ namespace ShareX.Setup
             }
 
             CopyFiles(files, toFolder);
-        }
-
-        private static void ProcessStart(string filePath, string arguments)
-        {
-            Console.WriteLine($"Process starting: {filePath} {arguments}");
-
-            using (Process process = new Process())
-            {
-                ProcessStartInfo psi = new ProcessStartInfo()
-                {
-                    FileName = filePath,
-                    Arguments = arguments,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-
-                process.StartInfo = psi;
-                process.Start();
-                process.WaitForExit();
-            }
-        }
-
-        public static bool CheckArguments(string[] args, string check)
-        {
-            if (!string.IsNullOrEmpty(check))
-            {
-                foreach (string arg in args)
-                {
-                    if (!string.IsNullOrEmpty(arg) && arg.Equals(check, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
         }
     }
 }

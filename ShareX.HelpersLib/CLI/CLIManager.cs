@@ -150,9 +150,14 @@ namespace ShareX.HelpersLib
             return false;
         }
 
+        public CLICommand GetCommand(string command)
+        {
+            return Commands.Find(x => x.CheckCommand(command));
+        }
+
         public string GetParameter(string command)
         {
-            CLICommand cliCommand = Commands.Find(x => x.CheckCommand(command));
+            CLICommand cliCommand = GetCommand(command);
 
             if (cliCommand != null)
             {

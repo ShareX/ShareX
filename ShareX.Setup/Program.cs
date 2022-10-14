@@ -51,11 +51,7 @@ namespace ShareX.Setup
             Portable = CreatePortable | OpenOutputDirectory,
             Steam = CreateSteamFolder | OpenOutputDirectory,
             MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | OpenOutputDirectory,
-            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder,
-
-            AppVeyorRelease = CreateSetup | CreatePortable | CreateChecksumFile | DownloadFFmpeg,
-            AppVeyorSteam = CreateSteamFolder | DownloadFFmpeg,
-            AppVeyorMicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadFFmpeg
+            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder
         }
 
         private static SetupJobs Job = SetupJobs.Stable;
@@ -122,7 +118,7 @@ namespace ShareX.Setup
         {
             Console.WriteLine("ShareX setup started.");
 
-            CheckAppVeyor(args);
+            CheckArgs(args);
 
             Console.WriteLine("Setup job: " + Job);
 
@@ -208,22 +204,37 @@ namespace ShareX.Setup
             Console.WriteLine("ShareX setup successfully completed.");
         }
 
-        private static void CheckAppVeyor(string[] args)
+        private static void CheckArgs(string[] args)
         {
-            if (SetupHelpers.CheckArguments(args, "-AppVeyorRelease"))
+            CLIManager cli = new CLIManager(args);
+            cli.ParseCommands();
+
+            CLICommand command = cli.GetCommand("AppVeyor");
+
+            if (command != null)
             {
                 AppVeyor = true;
-                Job = SetupJobs.AppVeyorRelease;
-            }
-            else if (SetupHelpers.CheckArguments(args, "-AppVeyorSteam"))
-            {
-                AppVeyor = true;
-                Job = SetupJobs.AppVeyorSteam;
-            }
-            else if (SetupHelpers.CheckArguments(args, "-AppVeyorMicrosoftStore"))
-            {
-                AppVeyor = true;
-                Job = SetupJobs.AppVeyorMicrosoftStore;
+
+                string configuration = command.Parameter;
+
+                Console.WriteLine("AppVeyor: " + configuration);
+
+                if (configuration.Equals("Release", StringComparison.OrdinalIgnoreCase))
+                {
+                    Job = SetupJobs.CreateSetup | SetupJobs.CreatePortable | SetupJobs.CreateChecksumFile | SetupJobs.DownloadFFmpeg;
+                }
+                else if (configuration.Equals("Steam", StringComparison.OrdinalIgnoreCase))
+                {
+                    Job = SetupJobs.CreateSteamFolder | SetupJobs.DownloadFFmpeg;
+                }
+                else if (configuration.Equals("MicrosoftStore", StringComparison.OrdinalIgnoreCase))
+                {
+                    Job = SetupJobs.CreateMicrosoftStoreFolder | SetupJobs.CompileAppx | SetupJobs.DownloadFFmpeg;
+                }
+                else
+                {
+                    Environment.Exit(0);
+                }
             }
         }
 
