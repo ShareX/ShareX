@@ -75,22 +75,21 @@ namespace ShareX.Setup
             {
                 string dir;
 
-                switch (Job)
+                if (Job.HasFlag(SetupJobs.CreateSteamFolder))
                 {
-                    default:
-                    case SetupJobs.CreateSetup:
-                    case SetupJobs.CreatePortable:
-                        dir = ReleaseDir;
-                        break;
-                    case SetupJobs.CreateSteamFolder:
-                        dir = SteamDir;
-                        break;
-                    case SetupJobs.CreateMicrosoftStoreFolder:
-                        dir = MicrosoftStoreDir;
-                        break;
-                    case SetupJobs.CreateMicrosoftStoreDebugFolder:
-                        dir = MicrosoftStoreDebugDir;
-                        break;
+                    dir = SteamDir;
+                }
+                else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
+                {
+                    dir = MicrosoftStoreDir;
+                }
+                else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
+                {
+                    dir = MicrosoftStoreDebugDir;
+                }
+                else
+                {
+                    dir = ReleaseDir;
                 }
 
                 return Path.Combine(dir, "ShareX.exe");
