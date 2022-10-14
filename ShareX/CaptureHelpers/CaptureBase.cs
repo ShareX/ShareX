@@ -138,7 +138,7 @@ namespace ShareX
             IntPtr handle = NativeMethods.GetForegroundWindow();
             WindowInfo windowInfo = new WindowInfo(handle);
 
-            if ((ignoreProcess == null || !windowInfo.ProcessName.Equals(ignoreProcess, StringComparison.InvariantCultureIgnoreCase)) &&
+            if ((ignoreProcess == null || !windowInfo.ProcessName.Equals(ignoreProcess, StringComparison.OrdinalIgnoreCase)) &&
                 (insideRect.IsEmpty || windowInfo.Rectangle.Contains(insideRect)))
             {
                 metadata.UpdateInfo(windowInfo);

@@ -279,7 +279,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             DropboxMetadata metadata = GetMetadata(path);
 
-            return metadata != null && !metadata.tag.Equals("deleted", StringComparison.InvariantCultureIgnoreCase);
+            return metadata != null && !metadata.tag.Equals("deleted", StringComparison.OrdinalIgnoreCase);
         }
 
         public string CreateShareableLink(string path, bool directLink)

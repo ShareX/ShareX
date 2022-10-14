@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
                 result.Response = SendRequest(HttpMethod.GET, APIURL, arguments);
 
-                if (!result.Response.StartsWith("Error:", StringComparison.InvariantCultureIgnoreCase))
+                if (!result.Response.StartsWith("Error:", StringComparison.OrdinalIgnoreCase))
                 {
                     result.ShortenedURL = result.Response;
                 }

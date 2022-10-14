@@ -1505,7 +1505,7 @@ namespace ShareX
             for (int i = 0; i < cbUploaderFiltersDestination.Items.Count; i++)
             {
                 if (cbUploaderFiltersDestination.Items[i] is IGenericUploaderService service &&
-                    service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
+                    service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.OrdinalIgnoreCase))
                 {
                     cbUploaderFiltersDestination.SelectedIndex = i;
                     break;

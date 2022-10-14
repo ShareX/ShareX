@@ -214,7 +214,7 @@ namespace ShareX
                     {
                         string filePath = sfd.FileName;
 
-                        if (filePath.EndsWith("svg", StringComparison.InvariantCultureIgnoreCase))
+                        if (filePath.EndsWith("svg", StringComparison.OrdinalIgnoreCase))
                         {
                             BarcodeWriterSvg writer = new BarcodeWriterSvg
                             {

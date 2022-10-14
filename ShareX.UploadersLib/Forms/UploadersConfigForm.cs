@@ -270,7 +270,7 @@ namespace ShareX.UploadersLib
             for (int i = 0; i < cbPastebinSyntax.Items.Count; i++)
             {
                 PastebinSyntaxInfo pastebinSyntaxInfo = (PastebinSyntaxInfo)cbPastebinSyntax.Items[i];
-                if (pastebinSyntaxInfo.Value.Equals(Config.PastebinSettings.TextFormat, StringComparison.InvariantCultureIgnoreCase))
+                if (pastebinSyntaxInfo.Value.Equals(Config.PastebinSettings.TextFormat, StringComparison.OrdinalIgnoreCase))
                 {
                     cbPastebinSyntax.SelectedIndex = i;
                     break;
@@ -543,7 +543,7 @@ namespace ShareX.UploadersLib
             cbAmazonS3Endpoints.Items.AddRange(AmazonS3.Endpoints.ToArray());
             for (int i = 0; i < cbAmazonS3Endpoints.Items.Count; i++)
             {
-                if (((AmazonS3Endpoint)cbAmazonS3Endpoints.Items[i]).Endpoint.Equals(Config.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
+                if (((AmazonS3Endpoint)cbAmazonS3Endpoints.Items[i]).Endpoint.Equals(Config.AmazonS3Settings.Endpoint, StringComparison.OrdinalIgnoreCase))
                 {
                     cbAmazonS3Endpoints.SelectedIndex = i;
                     break;

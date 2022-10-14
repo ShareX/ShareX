@@ -122,7 +122,7 @@ namespace ShareX.HelpersLib
         }
 
         public static string ReplaceWith(this string str, string search, string replace,
-            int occurrence = 0, StringComparison comparison = StringComparison.InvariantCultureIgnoreCase)
+            int occurrence = 0, StringComparison comparison = StringComparison.OrdinalIgnoreCase)
         {
             if (!string.IsNullOrEmpty(search))
             {

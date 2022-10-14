@@ -69,7 +69,7 @@ namespace ShareX.UploadersLib
                     lvi.SubItems.Add(album.title ?? "");
                     lvi.SubItems.Add(album.description ?? "");
                     lvi.Selected = Config.ImgurSelectedAlbum != null && !string.IsNullOrEmpty(Config.ImgurSelectedAlbum.id) &&
-                        album.id.Equals(Config.ImgurSelectedAlbum.id, StringComparison.InvariantCultureIgnoreCase);
+                        album.id.Equals(Config.ImgurSelectedAlbum.id, StringComparison.OrdinalIgnoreCase);
                     lvi.Tag = album;
                     lvImgurAlbumList.Items.Add(lvi);
                 }

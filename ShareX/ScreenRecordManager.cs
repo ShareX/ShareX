@@ -340,7 +340,7 @@ namespace ShareX
                         string currentFileName = Path.GetFileNameWithoutExtension(path);
                         string ext = Path.GetExtension(path);
 
-                        if (!currentFileName.Equals(customFileName, StringComparison.InvariantCultureIgnoreCase))
+                        if (!currentFileName.Equals(customFileName, StringComparison.OrdinalIgnoreCase))
                         {
                             path = FileHelpers.RenameFile(path, customFileName + ext);
                         }
@@ -384,7 +384,7 @@ namespace ShareX
             }
             finally
             {
-                if (deleteInputFile && !input.Equals(output, StringComparison.InvariantCultureIgnoreCase) && File.Exists(input))
+                if (deleteInputFile && !input.Equals(output, StringComparison.OrdinalIgnoreCase) && File.Exists(input))
                 {
                     File.Delete(input);
                 }

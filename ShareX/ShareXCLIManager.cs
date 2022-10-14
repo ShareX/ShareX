@@ -94,7 +94,7 @@ namespace ShareX
 
         private bool CheckCustomUploader(CLICommand command)
         {
-            if (command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
+            if (command.Command.Equals("CustomUploader", StringComparison.OrdinalIgnoreCase))
             {
                 if (!string.IsNullOrEmpty(command.Parameter) && command.Parameter.EndsWith(".sxcu", StringComparison.OrdinalIgnoreCase))
                 {
@@ -109,7 +109,7 @@ namespace ShareX
 
         private bool CheckImageEffect(CLICommand command)
         {
-            if (command.Command.Equals("ImageEffect", StringComparison.InvariantCultureIgnoreCase))
+            if (command.Command.Equals("ImageEffect", StringComparison.OrdinalIgnoreCase))
             {
                 if (!string.IsNullOrEmpty(command.Parameter) && command.Parameter.EndsWith(".sxie", StringComparison.OrdinalIgnoreCase))
                 {
@@ -160,7 +160,7 @@ namespace ShareX
 
         private bool CheckNativeMessagingInput(CLICommand command)
         {
-            if (command.Command.Equals("NativeMessagingInput", StringComparison.InvariantCultureIgnoreCase))
+            if (command.Command.Equals("NativeMessagingInput", StringComparison.OrdinalIgnoreCase))
             {
                 if (!string.IsNullOrEmpty(command.Parameter) && command.Parameter.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
                 {

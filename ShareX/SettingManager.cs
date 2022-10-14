@@ -279,7 +279,7 @@ namespace ShareX
 
                     foreach (AmazonS3Endpoint endpoint in AmazonS3.Endpoints)
                     {
-                        if (endpoint.Region != null && endpoint.Region.Equals(UploadersConfig.AmazonS3Settings.Endpoint, StringComparison.InvariantCultureIgnoreCase))
+                        if (endpoint.Region != null && endpoint.Region.Equals(UploadersConfig.AmazonS3Settings.Endpoint, StringComparison.OrdinalIgnoreCase))
                         {
                             UploadersConfig.AmazonS3Settings.Endpoint = endpoint.Endpoint;
                             UploadersConfig.AmazonS3Settings.Region = endpoint.Region;

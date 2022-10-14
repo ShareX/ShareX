@@ -61,7 +61,7 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(txtResult.Text) && !string.IsNullOrEmpty(txtTarget.Text))
             {
-                if (txtResult.Text.Equals(txtTarget.Text, StringComparison.InvariantCultureIgnoreCase))
+                if (txtResult.Text.Equals(txtTarget.Text, StringComparison.OrdinalIgnoreCase))
                 {
                     txtTarget.BackColor = Color.FromArgb(200, 255, 200);
                 }

@@ -178,7 +178,7 @@ namespace ShareX.HelpersLib
             {
                 hex = hex.Remove(0, 1);
             }
-            else if (hex.StartsWith("0x", StringComparison.InvariantCultureIgnoreCase))
+            else if (hex.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
             {
                 hex = hex.Remove(0, 2);
             }

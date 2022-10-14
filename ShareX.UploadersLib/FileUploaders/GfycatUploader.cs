@@ -230,7 +230,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     result.IsSuccess = false;
                     break;
                 }
-                else if (response.Task.Equals("error", StringComparison.InvariantCultureIgnoreCase))
+                else if (response.Task.Equals("error", StringComparison.OrdinalIgnoreCase))
                 {
                     Errors.Add(response.Description);
                     result.IsSuccess = false;
@@ -242,8 +242,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     result.URL = "https://gfycat.com/" + response.GfyName;
                     break;
                 }
-                else if ((response.Task.Equals("NotFoundo", StringComparison.InvariantCultureIgnoreCase) ||
-                    response.Task.Equals("NotFound", StringComparison.InvariantCultureIgnoreCase)) && iterations > 5)
+                else if ((response.Task.Equals("NotFoundo", StringComparison.OrdinalIgnoreCase) ||
+                    response.Task.Equals("NotFound", StringComparison.OrdinalIgnoreCase)) && iterations > 5)
                 {
                     Errors.Add("Gfy not found");
                     result.IsSuccess = false;

@@ -590,7 +590,7 @@ namespace ShareX
             {
                 string currentPath = ReadPersonalPathConfig();
 
-                if (!path.Equals(currentPath, StringComparison.InvariantCultureIgnoreCase))
+                if (!path.Equals(currentPath, StringComparison.OrdinalIgnoreCase))
                 {
                     try
                     {

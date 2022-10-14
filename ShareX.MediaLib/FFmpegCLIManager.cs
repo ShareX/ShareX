@@ -129,7 +129,7 @@ namespace ShareX.MediaLib
                 {
                     Output.AppendLine(data);
 
-                    if (!IsEncoding && data.Contains("Press [q] to stop", StringComparison.InvariantCultureIgnoreCase))
+                    if (!IsEncoding && data.Contains("Press [q] to stop", StringComparison.OrdinalIgnoreCase))
                     {
                         IsEncoding = true;
 

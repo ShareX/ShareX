@@ -82,7 +82,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                if (!VideoSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.InvariantCultureIgnoreCase))
+                if (!VideoSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.OrdinalIgnoreCase))
                 {
                     switch (VideoCodec)
                     {
@@ -108,7 +108,7 @@ namespace ShareX.ScreenCaptureLib
                             return "apng";
                     }
                 }
-                else if (!AudioSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.InvariantCultureIgnoreCase))
+                else if (!AudioSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.OrdinalIgnoreCase))
                 {
                     switch (AudioCodec)
                     {
@@ -129,9 +129,9 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsSourceSelected => IsVideoSourceSelected || IsAudioSourceSelected;
 
-        public bool IsVideoSourceSelected => !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.InvariantCultureIgnoreCase);
+        public bool IsVideoSourceSelected => !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.OrdinalIgnoreCase);
 
-        public bool IsAudioSourceSelected => !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.InvariantCultureIgnoreCase) &&
+        public bool IsAudioSourceSelected => !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.OrdinalIgnoreCase) &&
             (!IsVideoSourceSelected || !IsAnimatedImage);
 
         public bool IsAnimatedImage => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp || VideoCodec == FFmpegVideoCodec.apng;
