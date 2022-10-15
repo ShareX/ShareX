@@ -29,6 +29,7 @@ before_build:
     {
         Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
     }
+    nuget restore ShareX.sln
 build:
   project: ShareX.sln
   parallel: true
