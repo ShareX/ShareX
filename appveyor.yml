@@ -1,17 +1,17 @@
 version: 1.0.0.{build}
 image: Visual Studio 2022
 configuration:
-- Release
-- Debug
-- Steam
-- MicrosoftStore
+  - Release
+  - Debug
+  - Steam
+  - MicrosoftStore
 platform: Any CPU
 shallow_clone: true
 environment:
   APIKeys:
     secure: oWmEefxkbok87VNVsrUuXKgNaM4+j+EW6FBLsXwCbv3OVHgFvT0M9k4891OvYXDsj0oLuEn0oZeaeV8RrRDHA87ap7oCyD5FQJaiZSTHgeE=
 install:
-- ps: |
+  - ps: |
     $content = Get-Content "SharedAssemblyInfo.cs"
     $match = [regex]::Match($content, 'AssemblyVersion\(\"(.+?)\"\)')
     if ($match.Success)
@@ -24,7 +24,7 @@ install:
         $env:AppVersion = "1.0.0"
     }
 before_build:
-- ps: |
+  - ps: |
     if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
     {
         Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
@@ -35,24 +35,24 @@ build:
   parallel: true
   verbosity: minimal
 after_build:
-- ps: |
+  - ps: |
     if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
     {
         & "ShareX.Setup\bin\$env:CONFIGURATION\ShareX.Setup.exe" -AppVeyor "$env:CONFIGURATION"
     }
 artifacts:
-- path: ShareX-*-setup.exe
-  name: Setup
-- path: ShareX-*-setup.exe.sha256
-  name: Setup-Checksum
-- path: ShareX-*-portable.zip
-  name: Portable
-- path: ShareX-*-portable.zip.sha256
-  name: Portable-Checksum
-- path: ShareX-*-Steam.zip
-  name: Steam
-- path: ShareX-*.appx
-  name: MicrosoftStore
+  - path: ShareX-*-setup.exe
+    name: Setup
+  - path: ShareX-*-setup.exe.sha256
+    name: Setup-Checksum
+  - path: ShareX-*-portable.zip
+    name: Portable
+  - path: ShareX-*-portable.zip.sha256
+    name: Portable-Checksum
+  - path: ShareX-*-Steam.zip
+    name: Steam
+  - path: ShareX-*.appx
+    name: MicrosoftStore
 deploy:
   - provider: GitHub
     tag: v$(APPVEYOR_BUILD_VERSION)
