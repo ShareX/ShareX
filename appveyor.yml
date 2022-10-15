@@ -12,34 +12,34 @@ environment:
     secure: oWmEefxkbok87VNVsrUuXKgNaM4+j+EW6FBLsXwCbv3OVHgFvT0M9k4891OvYXDsj0oLuEn0oZeaeV8RrRDHA87ap7oCyD5FQJaiZSTHgeE=
 install:
   - ps: |
-    $content = Get-Content "SharedAssemblyInfo.cs"
-    $match = [regex]::Match($content, 'AssemblyVersion\(\"(.+?)\"\)')
-    if ($match.Success)
-    {
-        $env:AppVersion = $match.Groups[1].Value
-        Update-AppveyorBuild -Version "$env:AppVersion.$env:APPVEYOR_BUILD_NUMBER"
-    }
-    else
-    {
-        $env:AppVersion = "1.0.0"
-    }
+      $content = Get-Content "SharedAssemblyInfo.cs"
+      $match = [regex]::Match($content, 'AssemblyVersion\(\"(.+?)\"\)')
+      if ($match.Success)
+      {
+          $env:AppVersion = $match.Groups[1].Value
+          Update-AppveyorBuild -Version "$env:AppVersion.$env:APPVEYOR_BUILD_NUMBER"
+      }
+      else
+      {
+          $env:AppVersion = "1.0.0"
+      }
 before_build:
   - ps: |
-    if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
-    {
-        Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
-    }
-    nuget restore ShareX.sln
+      if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
+      {
+          Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
+      }
+      nuget restore ShareX.sln
 build:
   project: ShareX.sln
   parallel: true
   verbosity: minimal
 after_build:
   - ps: |
-    if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
-    {
-        & "ShareX.Setup\bin\$env:CONFIGURATION\ShareX.Setup.exe" -AppVeyor "$env:CONFIGURATION"
-    }
+      if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
+      {
+          & "ShareX.Setup\bin\$env:CONFIGURATION\ShareX.Setup.exe" -AppVeyor "$env:CONFIGURATION"
+      }
 artifacts:
   - path: ShareX-*-setup.exe
     name: Setup
