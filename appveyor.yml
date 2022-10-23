@@ -49,6 +49,10 @@ artifacts:
     name: Portable
   - path: ShareX-*-portable.zip.sha256
     name: Portable-Checksum
+  - path: ShareX-*-debug.zip
+    name: Debug
+  - path: ShareX-*-debug.zip.sha256
+    name: Debug-Checksum
   - path: ShareX-*-Steam.zip
     name: Steam
   - path: ShareX-*-Steam.zip.sha256
@@ -65,7 +69,7 @@ deploy:
     auth_token:
       secure: bbUkNvyu1jnKkuZGlM1ois3MkmpCMlm3Lv68L9V5AYepHt1SG4ZQ15ZoKfjOFg9R
     repository: ShareX/DevBuilds
-    artifact: Setup, Setup-Checksum, Portable, Portable-Checksum, Steam, Steam-Checksum, MicrosoftStore, MicrosoftStore-Checksum
+    artifact: Setup, Setup-Checksum, Portable, Portable-Checksum, Debug, Debug-Checksum, Steam, Steam-Checksum, MicrosoftStore, MicrosoftStore-Checksum
     draft: false
     prerelease: false
     on:
