@@ -51,8 +51,12 @@ artifacts:
     name: Portable-Checksum
   - path: ShareX-*-Steam.zip
     name: Steam
+  - path: ShareX-*-Steam.zip.sha256
+    name: Steam
   - path: ShareX-*.appx
     name: MicrosoftStore
+  - path: ShareX-*.appx
+    name: MicrosoftStore.sha256
 deploy:
   - provider: GitHub
     tag: v$(APPVEYOR_BUILD_VERSION)
@@ -66,7 +70,6 @@ deploy:
     prerelease: false
     on:
       branch: develop
-      configuration: Release
   - provider: GitHub
     tag: $(APPVEYOR_REPO_TAG_NAME)
     release: ShareX $(AppVersion)
