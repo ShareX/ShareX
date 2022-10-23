@@ -11,7 +11,7 @@ jobs:
         with:
           stale-issue-message: ''
           stale-pr-message: ''
-          days-before-issue-stale: 180
+          days-before-issue-stale: 360
           days-before-pr-stale: 30
           days-before-issue-close: 7
           days-before-pr-close: 7
