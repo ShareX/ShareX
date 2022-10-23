@@ -225,11 +225,11 @@ namespace ShareX.Setup
                 }
                 else if (configuration.Equals("Steam", StringComparison.OrdinalIgnoreCase))
                 {
-                    Job = SetupJobs.CreateSteamFolder | SetupJobs.DownloadFFmpeg;
+                    Job = SetupJobs.CreateSteamFolder | SetupJobs.CreateChecksumFile | SetupJobs.DownloadFFmpeg;
                 }
                 else if (configuration.Equals("MicrosoftStore", StringComparison.OrdinalIgnoreCase))
                 {
-                    Job = SetupJobs.CreateMicrosoftStoreFolder | SetupJobs.CompileAppx | SetupJobs.DownloadFFmpeg;
+                    Job = SetupJobs.CreateMicrosoftStoreFolder | SetupJobs.CompileAppx | SetupJobs.CreateChecksumFile | SetupJobs.DownloadFFmpeg;
                 }
                 else
                 {
