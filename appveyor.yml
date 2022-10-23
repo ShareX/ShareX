@@ -55,8 +55,8 @@ artifacts:
     name: Steam
   - path: ShareX-*.appx
     name: MicrosoftStore
-  - path: ShareX-*.appx
-    name: MicrosoftStore.sha256
+  - path: ShareX-*.appx.sha256
+    name: MicrosoftStore
 deploy:
   - provider: GitHub
     tag: v$(APPVEYOR_BUILD_VERSION)
