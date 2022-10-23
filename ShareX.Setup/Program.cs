@@ -59,44 +59,36 @@ namespace ShareX.Setup
         private static SetupJobs Job = SetupJobs.Debug;
         private static bool AppVeyor = false;
 
-        private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
-        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin");
-        private static string ReleaseDir => Path.Combine(BinDir, "Release");
-        private static string DebugDir => Path.Combine(BinDir, "Debug");
-        private static string SteamDir => Path.Combine(BinDir, "Steam");
-        private static string MicrosoftStoreDir => Path.Combine(BinDir, "MicrosoftStore");
-        private static string MicrosoftStoreDebugDir => Path.Combine(BinDir, "MicrosoftStoreDebug");
-
-        private static string ExecutablePath
+        private static string Configuration
         {
             get
             {
-                string dir;
-
-                if (Job.HasFlag(SetupJobs.CreateSteamFolder))
+                if (Job.HasFlag(SetupJobs.CreateDebug))
                 {
-                    dir = SteamDir;
+                    return "Debug";
                 }
-                else if (Job.HasFlag(SetupJobs.CreateDebug))
+                else if (Job.HasFlag(SetupJobs.CreateSteamFolder))
                 {
-                    dir = DebugDir;
+                    return "Steam";
                 }
                 else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
                 {
-                    dir = MicrosoftStoreDir;
+                    return "MicrosoftStore";
                 }
                 else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
                 {
-                    dir = MicrosoftStoreDebugDir;
-                }
-                else
-                {
-                    dir = ReleaseDir;
+                    return "MicrosoftStoreDebug";
                 }
 
-                return Path.Combine(dir, "ShareX.exe");
+                return "Release";
             }
         }
+
+        private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
+        private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
+        private static string NativeMessagingHostDir => Path.Combine(ParentDir, "ShareX.NativeMessagingHost", "bin", Configuration);
+        private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
+        private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
@@ -110,10 +102,8 @@ namespace ShareX.Setup
 
         private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-portable.zip");
         private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.zip");
-        private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
-        private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
@@ -151,12 +141,12 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreatePortable))
             {
-                CreateFolder(ReleaseDir, PortableOutputDir, SetupJobs.CreatePortable);
+                CreateFolder(BinDir, PortableOutputDir, SetupJobs.CreatePortable);
             }
 
             if (Job.HasFlag(SetupJobs.CreateDebug))
             {
-                CreateFolder(DebugDir, DebugOutputDir, SetupJobs.CreateDebug);
+                CreateFolder(BinDir, DebugOutputDir, SetupJobs.CreateDebug);
             }
 
             if (Job.HasFlag(SetupJobs.CreateSteamFolder))
@@ -166,12 +156,12 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
             {
-                CreateFolder(MicrosoftStoreDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreFolder);
+                CreateFolder(BinDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreFolder);
             }
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
             {
-                CreateFolder(MicrosoftStoreDebugDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
+                CreateFolder(BinDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
             }
 
             if (Job.HasFlag(SetupJobs.CompileAppx))
@@ -312,7 +302,7 @@ namespace ShareX.Setup
             SetupHelpers.CopyFile(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
             SetupHelpers.CopyFiles(SteamLauncherDir, "*.dll", SteamOutputDir);
 
-            CreateFolder(SteamDir, SteamUpdatesDir, SetupJobs.CreateSteamFolder);
+            CreateFolder(BinDir, SteamUpdatesDir, SetupJobs.CreateSteamFolder);
         }
 
         private static void CreateFolder(string source, string destination, SetupJobs job)
