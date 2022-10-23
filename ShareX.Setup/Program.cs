@@ -38,23 +38,25 @@ namespace ShareX.Setup
             None = 0,
             CreateSetup = 1,
             CreatePortable = 1 << 1,
-            CreateSteamFolder = 1 << 2,
-            OpenOutputDirectory = 1 << 3,
+            CreateDebug = 1 << 2,
+            CreateSteamFolder = 1 << 3,
             CreateMicrosoftStoreFolder = 1 << 4,
             CreateMicrosoftStoreDebugFolder = 1 << 5,
             CompileAppx = 1 << 6,
             DownloadFFmpeg = 1 << 7,
             CreateChecksumFile = 1 << 8,
+            OpenOutputDirectory = 1 << 9,
 
             Stable = CreateSetup | CreatePortable | CreateChecksumFile | OpenOutputDirectory,
             Setup = CreateSetup | OpenOutputDirectory,
             Portable = CreatePortable | OpenOutputDirectory,
+            Debug = CreateDebug | OpenOutputDirectory,
             Steam = CreateSteamFolder | OpenOutputDirectory,
             MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | OpenOutputDirectory,
             MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder
         }
 
-        private static SetupJobs Job = SetupJobs.Stable;
+        private static SetupJobs Job = SetupJobs.Debug;
         private static bool AppVeyor = false;
 
         private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
@@ -75,6 +77,10 @@ namespace ShareX.Setup
                 {
                     dir = SteamDir;
                 }
+                else if (Job.HasFlag(SetupJobs.CreateDebug))
+                {
+                    dir = DebugDir;
+                }
                 else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
                 {
                     dir = MicrosoftStoreDir;
@@ -94,6 +100,7 @@ namespace ShareX.Setup
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
+        private static string DebugOutputDir => Path.Combine(OutputDir, "ShareX-debug");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
         private static string MicrosoftStoreOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore");
 
@@ -102,6 +109,7 @@ namespace ShareX.Setup
         private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
         private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-portable.zip");
+        private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.zip");
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
@@ -144,6 +152,11 @@ namespace ShareX.Setup
             if (Job.HasFlag(SetupJobs.CreatePortable))
             {
                 CreateFolder(ReleaseDir, PortableOutputDir, SetupJobs.CreatePortable);
+            }
+
+            if (Job.HasFlag(SetupJobs.CreateDebug))
+            {
+                CreateFolder(DebugDir, DebugOutputDir, SetupJobs.CreateDebug);
             }
 
             if (Job.HasFlag(SetupJobs.CreateSteamFolder))
@@ -222,6 +235,10 @@ namespace ShareX.Setup
                 if (configuration.Equals("Release", StringComparison.OrdinalIgnoreCase))
                 {
                     Job = SetupJobs.CreateSetup | SetupJobs.CreatePortable | SetupJobs.CreateChecksumFile | SetupJobs.DownloadFFmpeg;
+                }
+                else if (configuration.Equals("Debug", StringComparison.OrdinalIgnoreCase))
+                {
+                    Job = SetupJobs.CreateDebug | SetupJobs.CreateChecksumFile | SetupJobs.DownloadFFmpeg;
                 }
                 else if (configuration.Equals("Steam", StringComparison.OrdinalIgnoreCase))
                 {
@@ -313,7 +330,7 @@ namespace ShareX.Setup
             SetupHelpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
             SetupHelpers.CopyFiles(source, "*.dll", destination);
 
-            if (job == SetupJobs.CreateMicrosoftStoreDebugFolder)
+            if (job == SetupJobs.CreateDebug || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
                 SetupHelpers.CopyFiles(source, "*.pdb", destination);
             }
@@ -351,6 +368,10 @@ namespace ShareX.Setup
             {
                 FileHelpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
                 ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(PortableZipPath));
+            }
+            else if (job == SetupJobs.CreateDebug)
+            {
+                ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(DebugZipPath));
             }
             else if (job == SetupJobs.CreateSteamFolder)
             {
