@@ -52,11 +52,11 @@ artifacts:
   - path: ShareX-*-Steam.zip
     name: Steam
   - path: ShareX-*-Steam.zip.sha256
-    name: Steam
+    name: Steam-Checksum
   - path: ShareX-*.appx
     name: MicrosoftStore
   - path: ShareX-*.appx.sha256
-    name: MicrosoftStore
+    name: MicrosoftStore-Checksum
 deploy:
   - provider: GitHub
     tag: v$(APPVEYOR_BUILD_VERSION)
