@@ -47,16 +47,14 @@ namespace ShareX.Setup
             CreateChecksumFile = 1 << 8,
             OpenOutputDirectory = 1 << 9,
 
-            Stable = CreateSetup | CreatePortable | CreateChecksumFile | OpenOutputDirectory,
-            Setup = CreateSetup | OpenOutputDirectory,
-            Portable = CreatePortable | OpenOutputDirectory,
-            Debug = CreateDebug | OpenOutputDirectory,
-            Steam = CreateSteamFolder | OpenOutputDirectory,
-            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | OpenOutputDirectory,
-            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder
+            Release = CreateSetup | CreatePortable | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
+            Debug = CreateDebug | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
+            Steam = CreateSteamFolder | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
+            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
+            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory
         }
 
-        private static SetupJobs Job = SetupJobs.Debug;
+        private static SetupJobs Job = SetupJobs.Release;
         private static bool AppVeyor = false;
 
         private static string Configuration
@@ -199,7 +197,7 @@ namespace ShareX.Setup
                 FileHelpers.CopyAll(OutputDir, ParentDir);
             }
 
-            if (Job.HasFlag(SetupJobs.OpenOutputDirectory))
+            if (Job.HasFlag(SetupJobs.OpenOutputDirectory) && !AppVeyor)
             {
                 FileHelpers.OpenFolder(OutputDir, false);
             }
@@ -224,19 +222,19 @@ namespace ShareX.Setup
 
                 if (configuration.Equals("Release", StringComparison.OrdinalIgnoreCase))
                 {
-                    Job = SetupJobs.CreateSetup | SetupJobs.CreatePortable | SetupJobs.CreateChecksumFile | SetupJobs.DownloadFFmpeg;
+                    Job = SetupJobs.Release;
                 }
                 else if (configuration.Equals("Debug", StringComparison.OrdinalIgnoreCase))
                 {
-                    Job = SetupJobs.CreateDebug | SetupJobs.CreateChecksumFile | SetupJobs.DownloadFFmpeg;
+                    Job = SetupJobs.Debug;
                 }
                 else if (configuration.Equals("Steam", StringComparison.OrdinalIgnoreCase))
                 {
-                    Job = SetupJobs.CreateSteamFolder | SetupJobs.CreateChecksumFile | SetupJobs.DownloadFFmpeg;
+                    Job = SetupJobs.Steam;
                 }
                 else if (configuration.Equals("MicrosoftStore", StringComparison.OrdinalIgnoreCase))
                 {
-                    Job = SetupJobs.CreateMicrosoftStoreFolder | SetupJobs.CompileAppx | SetupJobs.CreateChecksumFile | SetupJobs.DownloadFFmpeg;
+                    Job = SetupJobs.MicrosoftStore;
                 }
                 else
                 {
