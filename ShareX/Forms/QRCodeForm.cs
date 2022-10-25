@@ -137,6 +137,11 @@ namespace ShareX
             if (results != null)
             {
                 output = string.Join(Environment.NewLine + Environment.NewLine, results);
+
+                if (UploadersLib.ResponseHelpers.UrlRedirectLink(output) != null)
+                {
+                    output = output + Environment.NewLine + Environment.NewLine + Resources.QRCodeForm_ThisLinkRedirectsTo + UploadersLib.ResponseHelpers.UrlRedirectLink(output);
+                }
             }
 
             rtbDecodeResult.Text = output;

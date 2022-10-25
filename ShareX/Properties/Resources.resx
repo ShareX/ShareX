@@ -1119,4 +1119,7 @@ Middle click to close</value>
   <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
     <value>FFmpeg does not exist at the following path:</value>
   </data>
+  <data name="QRCodeForm_ThisLinkRedirectsTo" xml:space="preserve">
+    <value>This link redirects to: </value>
+  </data>
 </root>

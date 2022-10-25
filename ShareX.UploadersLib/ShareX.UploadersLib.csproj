@@ -252,6 +252,7 @@
     </Compile>
     <Compile Include="Helpers\EscapeHelper.cs" />
     <Compile Include="Helpers\MimeTypes.cs" />
+    <Compile Include="Helpers\ResponseHelpers.cs" />
     <Compile Include="Helpers\ResponseInfo.cs" />
     <Compile Include="Helpers\RequestHelpers.cs" />
     <Compile Include="Helpers\UploaderErrorManager.cs" />

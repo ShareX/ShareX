@@ -2368,6 +2368,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This link redirects to: .
+        /// </summary>
+        public static string QRCodeForm_ThisLinkRedirectsTo {
+            get {
+                return ResourceManager.GetString("QRCodeForm_ThisLinkRedirectsTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap question {
