@@ -140,7 +140,7 @@ namespace ShareX
 
                 if (UploadersLib.ResponseHelpers.UrlRedirectLink(output) != null)
                 {
-                    output = output + Environment.NewLine + Environment.NewLine + "This link redirects to: " + UploadersLib.ResponseHelpers.UrlRedirectLink(output);
+                    output = output + Environment.NewLine + Environment.NewLine + Resources.QRCodeForm_ThisLinkRedirectsTo + UploadersLib.ResponseHelpers.UrlRedirectLink(output);
                 }
             }
 
