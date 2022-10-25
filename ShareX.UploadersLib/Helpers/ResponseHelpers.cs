@@ -24,6 +24,5 @@ namespace ShareX.UploadersLib
 
             return response.ResponseUri.ToString();
         }
-
     }
 }
