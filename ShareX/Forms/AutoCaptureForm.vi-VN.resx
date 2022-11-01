@@ -124,7 +124,7 @@
     <value>Bắt đầu</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>Chọn vùng</value>
+    <value>Chọn vùng...</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
     <value>Tự động thu nhỏ xuống khay hệ thống</value>

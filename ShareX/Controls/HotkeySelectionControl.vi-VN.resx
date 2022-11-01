@@ -120,4 +120,7 @@
   <data name="btnHotkey.Text" xml:space="preserve">
     <value>Phím tắt</value>
   </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Nhiệm vụ...</value>
+  </data>
 </root>

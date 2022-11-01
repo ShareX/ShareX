@@ -133,9 +133,12 @@
     <value>Trên:</value>
   </data>
   <data name="lblLeft.Text" xml:space="preserve">
-    <value>Trái;</value>
+    <value>Trái:</value>
   </data>
   <data name="lblRight.Text" xml:space="preserve">
     <value>Phải:</value>
+  </data>
+  <data name="cbtnCanvasColor.Text" xml:space="preserve">
+    <value>Màu Canvas...</value>
   </data>
 </root>

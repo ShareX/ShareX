@@ -202,7 +202,7 @@
     <value>Các điểm giữa:</value>
   </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
-    <value>Vùng nhớ tạm không chứa hình ảnh</value>
+    <value>Vùng nhớ tạm không chứa hình ảnh.</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>Tiếp tục tác vụ (Phím cách hoặc chuột phải)</value>
@@ -286,7 +286,7 @@
     <value>Màu đánh dấu...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>Chế độ nội suy/interpolation</value>
+    <value>Chế độ nội suy:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Chế độ đa vùng</value>
@@ -396,5 +396,101 @@ Bạn có muốn đóng trình chỉnh sửa ảnh không?</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Cửa sổ sẽ được đóng trước khi mở trang web chứa thông tin phím tắt. Bạn có muốn tiếp tục không?</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Tự động sao chép hình ảnh vào khay nhớ tạm</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Tốc độ bit:</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Làm mờ</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Cắt bỏ hiệu ứng:</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Cắt bỏ kích thước hiệu ứng:</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Nhân bản</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>Giới hạn FPS:</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Điểm nổi bật</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>Đã sao chép hình ảnh</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Đã lưu hình ảnh</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>Đã lưu hình ảnh</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>Tải lên hình ảnh</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>Khóa menu</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>Kích thước biểu tượng menu:</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Dòng mới: Ctrl + Enter, OK: Enter</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Dòng mới: Enter, OK: Ctrl + Enter</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Đang xử lý...</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Tiếp tục</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn hủy bản ghi này không?</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Bấm để bắt đầu ghi.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Bấm để dừng ghi.</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Mã hóa ...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Đang chờ đợi...</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>Hướng đầu mũi tên:</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Kiểu viền:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Loại bước:</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Pixelate</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Tùy chọn công cụ</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Thu phóng để vừa mở</value>
   </data>
 </root>

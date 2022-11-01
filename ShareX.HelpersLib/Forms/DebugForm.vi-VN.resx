@@ -127,7 +127,7 @@
     <value>Các assembly đã được tải</value>
   </data>
   <data name="btnUploadLog.Text" xml:space="preserve">
-    <value>Tải lên log ghi chép</value>
+    <value>Nhật ký tải lên...</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>Mở tệp sự kiện...</value>

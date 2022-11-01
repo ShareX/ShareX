@@ -225,4 +225,7 @@
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>Phương thức cuộn lên trên cùng trước khi chụp:</value>
   </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>Tải lên / lưu tùy thuộc vào cài đặt sau khi chụp</value>
+  </data>
 </root>

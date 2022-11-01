@@ -130,16 +130,16 @@
     <value>Alpha:</value>
   </data>
   <data name="lblCyan.Text" xml:space="preserve">
-    <value>Cyan:</value>
+    <value>Màu lục lam:</value>
   </data>
   <data name="lblDecimal.Text" xml:space="preserve">
-    <value>Decimal:</value>
+    <value>Số thập phân:</value>
   </data>
   <data name="lblKey.Text" xml:space="preserve">
     <value>Key:</value>
   </data>
   <data name="lblMagenta.Text" xml:space="preserve">
-    <value>Magenta:</value>
+    <value>Màu đỏ tươi:</value>
   </data>
   <data name="lblNew.Text" xml:space="preserve">
     <value>Mới:</value>
@@ -157,7 +157,7 @@
     <value>Độ sáng:</value>
   </data>
   <data name="rbGreen.Text" xml:space="preserve">
-    <value>Green:</value>
+    <value>Xanh lá cây:</value>
   </data>
   <data name="rbHue.Text" xml:space="preserve">
     <value>Hue:</value>
@@ -251,5 +251,11 @@
   </data>
   <data name="txtHex.Text" xml:space="preserve">
     <value>FF00FF00</value>
+  </data>
+  <data name="btnClipboardColorPicker.ToolTip" xml:space="preserve">
+    <value>Chọn màu từ khay nhớ tạm</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Tên:</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,39 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Phản hồi</value>
+    <value>ShareX - Ghim vào màn hình</value>
   </data>
-  <data name="tpWebBrowser.Text" xml:space="preserve">
-    <value>Trình duyệt Web</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Hủy</value>
   </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Thông tin phản hồi</value>
+  <data name="btnFromClipboard.Text" xml:space="preserve">
+    <value>Ghim vào màn hình từ khay nhớ tạm</value>
   </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Văn bản phản hồi</value>
+  <data name="btnFromFile.Text" xml:space="preserve">
+    <value>Ghim vào màn hình từ tệp ...</value>
   </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>Kết quả</value>
-  </data>
-  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
-    <value>Sao chép URL xóa</value>
-  </data>
-  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
-    <value>Sao chép URL rút gọn</value>
-  </data>
-  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
-    <value>Sao chép URL hình thu nhỏ</value>
-  </data>
-  <data name="tsbCopyURL.Text" xml:space="preserve">
-    <value>Sao chép URL</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Sao chép phản hồi</value>
-  </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>Định dạng XML</value>
-  </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>Định dạng JSON</value>
+  <data name="btnFromScreen.Text" xml:space="preserve">
+    <value>Ghim vào màn hình từ màn hình ...</value>
   </data>
 </root>

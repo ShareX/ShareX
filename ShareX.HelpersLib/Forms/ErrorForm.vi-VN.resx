@@ -130,7 +130,7 @@
     <value>Mở tệp sự kiện...</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Gửi báo cáo lỗi</value>
+    <value>Gửi báo cáo lỗi ...</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Lỗi
