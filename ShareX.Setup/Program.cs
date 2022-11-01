@@ -283,6 +283,8 @@ namespace ShareX.Setup
             }
 
             Console.WriteLine("Appx file compiled.");
+
+            CreateChecksumFile(MicrosoftStoreAppxPath);
         }
 
         private static void CreateSteamFolder()
