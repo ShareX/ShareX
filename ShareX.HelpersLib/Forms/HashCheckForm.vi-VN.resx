@@ -174,4 +174,10 @@
   <data name="lblHashCheckHash.Text" xml:space="preserve">
     <value>Hash:</value>
   </data>
+  <data name="btnFilePathBrowse2.Text" xml:space="preserve">
+    <value>Duyệt...</value>
+  </data>
+  <data name="cbCompareTwoFiles.Text" xml:space="preserve">
+    <value>So sánh hai tệp</value>
+  </data>
 </root>

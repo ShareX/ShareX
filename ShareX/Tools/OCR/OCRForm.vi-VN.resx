@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,24 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Cài đặt lịch sử hình ảnh</value>
+    <value>ShareX - Nhận dạng ký tự quang học</value>
   </data>
-  <data name="lblThumbnailSize.Text" xml:space="preserve">
-    <value>Kích thước ảnh thu nhỏ/thumbnail:</value>
+  <data name="btnCopyAll.Text" xml:space="preserve">
+    <value>Sao chép tất cả</value>
   </data>
-  <data name="cbRememberSearchText.Text" xml:space="preserve">
-    <value>Ghi nhớ tìm kiếm đầu vào</value>
+  <data name="btnOpenServiceLink.Text" xml:space="preserve">
+    <value>Mở liên kết dịch vụ ...</value>
   </data>
-  <data name="lblMaximumImageLimit.Text" xml:space="preserve">
-    <value>Giới hạn ảnh tối đa:</value>
+  <data name="btnSelectRegion.Text" xml:space="preserve">
+    <value>Chọn khu vực cho OCR ...</value>
   </data>
-  <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
-    <value>px</value>
+  <data name="cbSingleLine.Text" xml:space="preserve">
+    <value>Dòng đơn</value>
   </data>
-  <data name="cbFilterMissingFiles.Text" xml:space="preserve">
-    <value>Lọc các tệp bị thiếu</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Ngôn ngữ:</value>
   </data>
-  <data name="cbRememberWindowState.Text" xml:space="preserve">
-    <value>Ghi nhớ trạng thái cửa sổ</value>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Kết quả:</value>
+  </data>
+  <data name="lblScaleFactor.Text" xml:space="preserve">
+    <value>Yếu tố quy mô:</value>
+  </data>
+  <data name="lblService.Text" xml:space="preserve">
+    <value>Dịch vụ:</value>
   </data>
 </root>

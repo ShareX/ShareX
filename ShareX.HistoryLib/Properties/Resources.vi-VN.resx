@@ -219,4 +219,22 @@
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>Bộ đếm số lượng trong lịch sử:</value>
   </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Đã xảy ra lỗi khi đọc tệp lịch sử:</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Tên tệp, tiêu đề cửa sổ, tên quy trình, v.v.</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Đã lọc</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Số liệu thống kê lịch sử</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Tên quy trình:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Tổng</value>
+  </data>
 </root>

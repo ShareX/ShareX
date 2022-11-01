@@ -735,4 +735,61 @@
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
   </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Thêm hiệu ứng hình ảnh ...</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm trực quan trên Bing (OCR) ...</value>
+  </data>
+  <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
+    <value>Cửa sổ không viền ...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>Trình xem khay nhớ tạm ...</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>Gộp ảnh theo chiều ngang</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>Gộp ảnh theo chiều dọc</value>
+  </data>
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm hình ảnh bằng Google ...</value>
+  </data>
+  <data name="tsmiImageViewer.Text" xml:space="preserve">
+    <value>Xem ảnh...</value>
+  </data>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>Kiểm tra cửa sổ ...</value>
+  </data>
+  <data name="tsmiPinSelectedFile.Text" xml:space="preserve">
+    <value>Ghim vào màn hình</value>
+  </data>
+  <data name="tsmiPinToScreen.Text" xml:space="preserve">
+    <value>Ghim vào màn hình</value>
+  </data>
+  <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
+    <value>Khởi động lại ShareX với tư cách quản trị viên</value>
+  </data>
+  <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
+    <value>Cửa sổ không viền ...</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>Trình xem khay nhớ tạm ...</value>
+  </data>
+  <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
+    <value>Xem ảnh...</value>
+  </data>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>Kiểm tra cửa sổ ...</value>
+  </data>
+  <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
+    <value>Ghim vào màn hình ...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Chuyển đổi video...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Chuyển đổi video...</value>
+  </data>
 </root>

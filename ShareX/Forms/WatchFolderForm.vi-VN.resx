@@ -138,4 +138,7 @@
   <data name="lblFolderPath.Text" xml:space="preserve">
     <value>Đường dẫn thư mục:</value>
   </data>
+  <data name="cbMoveToScreenshotsFolder.Text" xml:space="preserve">
+    <value>Di chuyển tệp vào thư mục ảnh chụp màn hình</value>
+  </data>
 </root>

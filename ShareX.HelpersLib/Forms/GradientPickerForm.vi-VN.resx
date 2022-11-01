@@ -147,4 +147,13 @@
   <data name="lblPreview.Text" xml:space="preserve">
     <value>Xem trước:</value>
   </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="btnReverse.Text" xml:space="preserve">
+    <value>Đảo ngược</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Cài đặt trước:</value>
+  </data>
 </root>
