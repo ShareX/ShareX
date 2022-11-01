@@ -135,4 +135,7 @@
   <data name="lblServices.Text" xml:space="preserve">
     <value>Dịch vụ:</value>
   </data>
+  <data name="lblURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

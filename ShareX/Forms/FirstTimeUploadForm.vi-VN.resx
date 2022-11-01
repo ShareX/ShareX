@@ -131,4 +131,7 @@
 
 Nhấn "Không" để hủy tải lên hiện tại và tắt tính năng tự động tải lên ảnh chụp màn hình.</value>
   </data>
+  <data name="lblHeader.Text" xml:space="preserve">
+    <value>Chú ý!</value>
+  </data>
 </root>

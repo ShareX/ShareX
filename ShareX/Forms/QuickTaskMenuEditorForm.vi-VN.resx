@@ -136,6 +136,6 @@
     <value>Đặt lại về mặc định...</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>Tip: Nếu bạn thêm tác vụ trống nó sẽ được chuyển thành dòng phân cách trên menu</value>
+    <value>Mẹo: Nếu bạn thêm tác vụ trống, nó sẽ được chuyển đổi thành dòng phân cách trong menu.</value>
   </data>
 </root>

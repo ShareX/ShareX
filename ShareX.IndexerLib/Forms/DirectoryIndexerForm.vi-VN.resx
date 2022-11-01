@@ -135,4 +135,7 @@
   <data name="btnIndexFolder.Text" xml:space="preserve">
     <value>Đánh chỉ mục thư mục đã chọn</value>
   </data>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>Lưu dưới dạng và đóng cửa sổ này ...</value>
+  </data>
 </root>

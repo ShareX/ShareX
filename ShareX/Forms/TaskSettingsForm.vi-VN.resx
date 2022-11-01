@@ -205,7 +205,7 @@
     <value>Xóa bỏ</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Chỉnh sửa</value>
+    <value>Chỉnh sửa...</value>
   </data>
   <data name="chActionsExtensions.Text" xml:space="preserve">
     <value>Phần đuôi mở rộng</value>
@@ -220,7 +220,7 @@
     <value>Tên</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>Thêm</value>
+    <value>Thêm...</value>
   </data>
   <data name="btnActionsDuplicate.Text" xml:space="preserve">
     <value>Nhân bản</value>
@@ -397,7 +397,7 @@
     <value>Phần đuôi mở rộng</value>
   </data>
   <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
-    <value>Lọc phần đuôi mở rộng</value>
+    <value>Lọc phần đuôi mở rộng:</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Đặt tên tệp</value>
@@ -511,7 +511,7 @@
     <value>Kích thước vùng sẽ biến đổi thành khi nhấn phím "Alt":</value>
   </data>
   <data name="lblActionsNote.Text" xml:space="preserve">
-    <value>Lưu ý: Bạn có thể kích hoạt/vô hiệu hóa các tác vụ từ "Tác vụ sau khi chụp -&gt; Thực hiện các tác vụ"</value>
+    <value>Lưu ý: Bạn có thể bật / tắt tác vụ từ "Sau khi chụp tác vụ -&gt; Thực hiện tác vụ".</value>
   </data>
   <data name="lblScreenshotDelay.Text" xml:space="preserve">
     <value>Thời gian trễ chụp ảnh màn hình:</value>
@@ -616,7 +616,7 @@
     <value>Giới hạn FPS:</value>
   </data>
   <data name="lblTask.Text" xml:space="preserve">
-    <value>Nhiệm vụ</value>
+    <value>Nhiệm vụ:</value>
   </data>
   <data name="lblToastWindowDuration.Text" xml:space="preserve">
     <value>Khoảng thời gian:</value>
@@ -643,7 +643,7 @@
     <value>Hành động nhấp chuột phải:</value>
   </data>
   <data name="lblToastWindowSize.Text" xml:space="preserve">
-    <value>Kích thước</value>
+    <value>Kích thước:</value>
   </data>
   <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
     <value>Định dạng bộ chọn màu màn hình (Ctrl + nhấp chuột):</value>

@@ -190,7 +190,7 @@
     <value>Host:</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Thiết lập cho in ấn</value>
+    <value>Thiết lập cho in ấn...</value>
   </data>
   <data name="tpPrint.Text" xml:space="preserve">
     <value>In</value>
@@ -220,7 +220,7 @@
     <value>Hiện nút "Tải lên với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Định dạng tên thư mục phụ</value>
+    <value>Định dạng tên thư mục phụ:</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Đường dẫn</value>
@@ -298,7 +298,7 @@
     <value>Lưu các tác vụ vào lịch sử</value>
   </data>
   <data name="gbRecentLinks.Text" xml:space="preserve">
-    <value>Tác vụ gần đây:</value>
+    <value>Tác vụ gần đây</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
     <value>Hiện tác vụ gần đây ở cửa sổ chính khi khởi động</value>
@@ -334,7 +334,7 @@
     <value>Dùng biểu tượng ShareX màu trắng</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Thiết lập lại</value>
+    <value>Thiết lập lại...</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>Xóa bỏ</value>

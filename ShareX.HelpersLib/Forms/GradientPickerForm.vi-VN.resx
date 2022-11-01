@@ -156,4 +156,7 @@
   <data name="lblPresets.Text" xml:space="preserve">
     <value>Cài đặt trước:</value>
   </data>
+  <data name="chGradient.Text" xml:space="preserve">
+    <value>Màu Gradient</value>
+  </data>
 </root>

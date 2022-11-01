@@ -169,7 +169,7 @@
     <value>Lỗi</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
-    <value>Thiết lập đã được chép tới vùng nhớ tạm</value>
+    <value>Thiết lập đã được chép tới vùng nhớ tạm.</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Tên tệp: {0}</value>
@@ -205,7 +205,7 @@
     <value>Thiết lập DNS thất bại với mã lỗi:</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>Thiết lập DNS thất bại</value>
+    <value>Thiết lập DNS thất bại.</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Trạng thái: {0}</value>
@@ -1073,7 +1073,7 @@ Bạn có muốn tải về không?</value>
     <value>Ảnh thu nhỏ/thumbnail cỡ rất lớn</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
-    <value>Bắt đầu/Dừng ghi hình màn hình (dùng GIF) sử dụng vùng đã chỉ </value>
+    <value>Bắt đầu / Dừng ghi màn hình (GIF) bằng cách sử dụng vùng được định cấu hình trước</value>
   </data>
   <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
     <value>Tối đa</value>
@@ -1446,5 +1446,14 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
     <value>Tìm kiếm trực quan trên Bing</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
   </data>
 </root>

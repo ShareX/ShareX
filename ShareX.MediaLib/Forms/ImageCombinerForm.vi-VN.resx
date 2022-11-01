@@ -147,4 +147,25 @@
   <data name="lblSpacePixel.Text" xml:space="preserve">
     <value>pixels</value>
   </data>
+  <data name="cbAutoFillBackground.Text" xml:space="preserve">
+    <value>Tự động điền nền</value>
+  </data>
+  <data name="lblImageAlignment.Text" xml:space="preserve">
+    <value>Căn chỉnh hình ảnh:</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblWrapAfter.Text" xml:space="preserve">
+    <value>Kết thúc sau:</value>
+  </data>
+  <data name="lblWrapAfterImages.Text" xml:space="preserve">
+    <value>hình ảnh</value>
+  </data>
+  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
+    <value>Nằm ngang</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>Chiều dọc</value>
+  </data>
 </root>

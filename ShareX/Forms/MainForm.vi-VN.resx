@@ -400,7 +400,7 @@
     <value>Chọn màu sắc...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>Trình đổi DNS</value>
+    <value>Trình đổi DNS...</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Thoát</value>
@@ -436,19 +436,19 @@
     <value>Dịch vụ tải ảnh lên</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
-    <value>VỊ trí </value>
+    <value>Vùng cuối cùng</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>Dịch vụ tải lên</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>Thiết lập dịch vụ tải lên</value>
+    <value>Thiết lập dịch vụ tải lên...</value>
   </data>
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
     <value>Màn hình</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
-    <value>Kiểm tra màn hình</value>
+    <value>Kiểm tra màn hình...</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>Mã QR...</value>
@@ -496,7 +496,7 @@
     <value>Tải lên</value>
   </data>
   <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
-    <value>Tải lên từ vùng nhớ tạm</value>
+    <value>Tải lên từ vùng nhớ tạm...</value>
   </data>
   <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
     <value>Kéo và thả để tải lên...</value>
@@ -511,7 +511,7 @@
     <value>Tải lên từ URL...</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
-    <value>Tải lên từ vùng nhớ tạm</value>
+    <value>Tải lên từ vùng nhớ tạm...</value>
   </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>Kéo và thả để tải lên...</value>
@@ -535,7 +535,7 @@
     <value>Cửa sổ</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet tin nhắn</value>
+    <value>Tweet tin nhắn...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Dịch vụ chia sẻ URL</value>
@@ -550,7 +550,7 @@
     <value>Công cụ</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweet tin nhắn</value>
+    <value>Tweet tin nhắn...</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Vô hiệu hóa phím tắt</value>
@@ -571,7 +571,7 @@
     <value>Giới thiệu...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
-    <value>Gộp ảnh</value>
+    <value>Gộp ảnh...</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Quyên góp...</value>
@@ -726,15 +726,6 @@
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Thiết lập dịch vụ tải lên tùy chọn...</value>
   </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX</value>
-  </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter</value>
-  </data>
-  <data name="tsbDiscord.Text" xml:space="preserve">
-    <value>Discord</value>
-  </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>Thêm hiệu ứng hình ảnh ...</value>
   </data>
@@ -766,7 +757,7 @@
     <value>Ghim vào màn hình</value>
   </data>
   <data name="tsmiPinToScreen.Text" xml:space="preserve">
-    <value>Ghim vào màn hình</value>
+    <value>Ghim vào màn hình...</value>
   </data>
   <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
     <value>Khởi động lại ShareX với tư cách quản trị viên</value>
@@ -791,5 +782,11 @@
   </data>
   <data name="tsmiVideoConverter.Text" xml:space="preserve">
     <value>Chuyển đổi video...</value>
+  </data>
+  <data name="tsmiOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiTrayOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
   </data>
 </root>
