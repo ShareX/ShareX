@@ -109,6 +109,7 @@ namespace ShareX.Setup
 
         private static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
+        private static string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip";
         private static string AppVersion;
 
         private static void Main(string[] args)
@@ -388,8 +389,8 @@ namespace ShareX.Setup
         {
             if (!File.Exists(FFmpegPath))
             {
-                string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip");
-                ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
+                string filePath = SetupHelpers.DownloadFile(FFmpegDownloadURL);
+                ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
             }
         }
 
