@@ -98,11 +98,12 @@ namespace ShareX.Setup
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
         private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
+        private static string SetupPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-setup.exe");
+        private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
         private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-portable.zip");
         private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.zip");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
-        private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
 
@@ -164,32 +165,7 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CompileAppx))
             {
-                using (Process process = new Process())
-                {
-                    ProcessStartInfo psi = new ProcessStartInfo()
-                    {
-                        FileName = MakeAppxPath,
-                        Arguments = $"pack /d \"{MicrosoftStoreOutputDir}\" /p \"{MicrosoftStoreAppxPath}\" /l /o",
-                        UseShellExecute = false,
-                        RedirectStandardOutput = true
-                    };
-
-                    process.OutputDataReceived += (s, e) => Console.WriteLine(e.Data);
-                    process.StartInfo = psi;
-                    process.Start();
-                    process.BeginOutputReadLine();
-                    process.WaitForExit();
-                }
-            }
-
-            if (Job.HasFlag(SetupJobs.CreateChecksumFile))
-            {
-                Console.WriteLine("Creating checksum files.");
-
-                foreach (string file in Directory.GetFiles(OutputDir))
-                {
-                    Helpers.CreateChecksumFile(file);
-                }
+                CompileAppx();
             }
 
             if (AppVeyor)
@@ -253,6 +229,7 @@ namespace ShareX.Setup
         {
             CompileISSFile("Recorder-devices-setup.iss");
             CompileISSFile("ShareX-setup.iss");
+            CreateChecksumFile(SetupPath);
         }
 
         private static void CompileISSFile(string fileName)
@@ -276,7 +253,7 @@ namespace ShareX.Setup
                     process.WaitForExit();
                 }
 
-                Console.WriteLine("Setup file is created.");
+                Console.WriteLine("Setup file compiled.");
             }
             else
             {
@@ -284,9 +261,33 @@ namespace ShareX.Setup
             }
         }
 
+        private static void CompileAppx()
+        {
+            Console.WriteLine("Compiling appx file: " + MicrosoftStoreAppxPath);
+
+            using (Process process = new Process())
+            {
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = MakeAppxPath,
+                    Arguments = $"pack /d \"{MicrosoftStoreOutputDir}\" /p \"{MicrosoftStoreAppxPath}\" /l /o",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true
+                };
+
+                process.OutputDataReceived += (s, e) => Console.WriteLine(e.Data);
+                process.StartInfo = psi;
+                process.Start();
+                process.BeginOutputReadLine();
+                process.WaitForExit();
+            }
+
+            Console.WriteLine("Appx file compiled.");
+        }
+
         private static void CreateSteamFolder()
         {
-            Console.WriteLine("Creating Steam folder:" + SteamOutputDir);
+            Console.WriteLine("Creating Steam folder: " + SteamOutputDir);
 
             if (Directory.Exists(SteamOutputDir))
             {
@@ -355,15 +356,15 @@ namespace ShareX.Setup
             if (job == SetupJobs.CreatePortable)
             {
                 FileHelpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
-                ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(PortableZipPath));
+                CreateZipFile(destination, PortableZipPath);
             }
             else if (job == SetupJobs.CreateDebug)
             {
-                ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(DebugZipPath));
+                CreateZipFile(destination, DebugZipPath);
             }
             else if (job == SetupJobs.CreateSteamFolder)
             {
-                ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(SteamZipPath));
+                CreateZipFile(destination, SteamZipPath);
             }
             else if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
@@ -373,12 +374,30 @@ namespace ShareX.Setup
             Console.WriteLine("Folder created.");
         }
 
+        private static void CreateZipFile(string source, string archivePath)
+        {
+            Console.WriteLine("Creating zip file: " + archivePath);
+
+            ZipManager.Compress(Path.GetFullPath(source), Path.GetFullPath(archivePath));
+            CreateChecksumFile(archivePath);
+        }
+
         private static void DownloadFFmpeg()
         {
             if (!File.Exists(FFmpegPath))
             {
                 string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip");
                 ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
+            }
+        }
+
+        private static void CreateChecksumFile(string filePath)
+        {
+            if (Job.HasFlag(SetupJobs.CreateChecksumFile))
+            {
+                Console.WriteLine("Creating checksum file: " + filePath);
+
+                Helpers.CreateChecksumFile(filePath);
             }
         }
     }
