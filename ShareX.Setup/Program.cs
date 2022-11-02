@@ -312,10 +312,10 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(SteamOutputDir);
 
-            SetupHelpers.CopyFile(Path.Combine(SteamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
-            SetupHelpers.CopyFile(Path.Combine(SteamLauncherDir, "steam_appid.txt"), SteamOutputDir);
-            SetupHelpers.CopyFile(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
-            SetupHelpers.CopyFiles(SteamLauncherDir, "*.dll", SteamOutputDir);
+            FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
+            FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "steam_appid.txt"), SteamOutputDir);
+            FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
+            FileHelpers.CopyFiles(SteamLauncherDir, SteamOutputDir, "*.dll");
 
             CreateFolder(BinDir, SteamUpdatesDir, SetupJobs.CreateSteamFolder);
         }
@@ -331,16 +331,16 @@ namespace ShareX.Setup
 
             Directory.CreateDirectory(destination);
 
-            SetupHelpers.CopyFile(Path.Combine(source, "ShareX.exe"), destination);
-            SetupHelpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
-            SetupHelpers.CopyFiles(source, "*.dll", destination);
+            FileHelpers.CopyFiles(Path.Combine(source, "ShareX.exe"), destination);
+            FileHelpers.CopyFiles(Path.Combine(source, "ShareX.exe.config"), destination);
+            FileHelpers.CopyFiles(source, destination, "*.dll");
 
             if (job == SetupJobs.CreateDebug || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
-                SetupHelpers.CopyFiles(source, "*.pdb", destination);
+                FileHelpers.CopyFiles(source, destination, "*.pdb");
             }
 
-            SetupHelpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
+            FileHelpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), Path.Combine(destination, "Licenses"), "*.txt");
 
             if (job != SetupJobs.CreateMicrosoftStoreFolder && job != SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
@@ -349,9 +349,9 @@ namespace ShareX.Setup
                     CompileISSFile("Recorder-devices-setup.iss");
                 }
 
-                SetupHelpers.CopyFile(RecorderDevicesSetupPath, destination);
+                FileHelpers.CopyFiles(RecorderDevicesSetupPath, destination);
 
-                SetupHelpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
+                FileHelpers.CopyFiles(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
             }
 
             string[] languages = new string[] { "de", "es", "es-MX", "fa-IR", "fr", "hu", "id-ID", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl", "pt-BR", "pt-PT",
@@ -359,12 +359,12 @@ namespace ShareX.Setup
 
             foreach (string language in languages)
             {
-                SetupHelpers.CopyFiles(Path.Combine(source, language), "*.resources.dll", Path.Combine(destination, "Languages", language));
+                FileHelpers.CopyFiles(Path.Combine(source, language), Path.Combine(destination, "Languages", language), "*.resources.dll");
             }
 
             if (File.Exists(FFmpegPath))
             {
-                SetupHelpers.CopyFile(FFmpegPath, destination);
+                FileHelpers.CopyFiles(FFmpegPath, destination);
             }
 
             FileHelpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
