@@ -57,32 +57,10 @@ namespace ShareX.Setup
         private static SetupJobs Job = SetupJobs.Release;
         private static bool AppVeyor = false;
 
-        private static string Configuration
-        {
-            get
-            {
-                if (Job.HasFlag(SetupJobs.CreateDebug))
-                {
-                    return "Debug";
-                }
-                else if (Job.HasFlag(SetupJobs.CreateSteamFolder))
-                {
-                    return "Steam";
-                }
-                else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
-                {
-                    return "MicrosoftStore";
-                }
-                else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
-                {
-                    return "MicrosoftStoreDebug";
-                }
+        private static string ParentDir;
+        private static string Configuration;
+        private static string AppVersion;
 
-                return "Release";
-            }
-        }
-
-        private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, "ShareX.NativeMessagingHost", "bin", Configuration);
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
@@ -107,10 +85,9 @@ namespace ShareX.Setup
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
 
-        private static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
-        private static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
-        private static string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip";
-        private static string AppVersion;
+        private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
+        private const string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
+        private const string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip";
 
         private static void Main(string[] args)
         {
@@ -118,9 +95,9 @@ namespace ShareX.Setup
 
             CheckArgs(args);
 
-            Console.WriteLine("Setup job: " + Job);
+            Console.WriteLine("Job: " + Job);
 
-            AppVersion = GetAppVersion();
+            UpdatePaths();
 
             if (Directory.Exists(OutputDir))
             {
@@ -220,10 +197,46 @@ namespace ShareX.Setup
             }
         }
 
-        private static string GetAppVersion()
+        private static void UpdatePaths()
         {
+            if (AppVeyor)
+            {
+                ParentDir = Directory.GetCurrentDirectory();
+            }
+            else
+            {
+                ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
+            }
+
+            Console.WriteLine("Parent directory: " + ParentDir);
+
+            if (Job.HasFlag(SetupJobs.CreateDebug))
+            {
+                Configuration = "Debug";
+            }
+            else if (Job.HasFlag(SetupJobs.CreateSteamFolder))
+            {
+                Configuration = "Steam";
+            }
+            else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
+            {
+                Configuration = "MicrosoftStore";
+            }
+            else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
+            {
+                Configuration = "MicrosoftStoreDebug";
+            }
+            else
+            {
+                Configuration = "Release";
+            }
+
+            Console.WriteLine("Configuration: " + Configuration);
+
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ExecutablePath);
-            return $"{versionInfo.ProductMajorPart}.{versionInfo.ProductMinorPart}.{versionInfo.ProductBuildPart}";
+            AppVersion = $"{versionInfo.ProductMajorPart}.{versionInfo.ProductMinorPart}.{versionInfo.ProductBuildPart}";
+
+            Console.WriteLine("Application version: " + AppVersion);
         }
 
         private static void CompileSetup()
@@ -244,7 +257,7 @@ namespace ShareX.Setup
                     ProcessStartInfo psi = new ProcessStartInfo()
                     {
                         FileName = InnoSetupCompilerPath,
-                        WorkingDirectory = Path.GetFullPath(InnoSetupDir),
+                        WorkingDirectory = InnoSetupDir,
                         Arguments = $"\"{fileName}\"",
                         UseShellExecute = false
                     };
@@ -381,7 +394,7 @@ namespace ShareX.Setup
         {
             Console.WriteLine("Creating zip file: " + archivePath);
 
-            ZipManager.Compress(Path.GetFullPath(source), Path.GetFullPath(archivePath));
+            ZipManager.Compress(source, archivePath);
             CreateChecksumFile(archivePath);
         }
 
