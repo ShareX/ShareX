@@ -402,7 +402,13 @@ namespace ShareX.Setup
         {
             if (!File.Exists(FFmpegPath))
             {
-                string filePath = SetupHelpers.DownloadFile(FFmpegDownloadURL);
+                string fileName = Path.GetFileName(FFmpegDownloadURL);
+                string filePath = Path.Combine(OutputDir, fileName);
+
+                Console.WriteLine("Downloading: " + FFmpegDownloadURL);
+                URLHelpers.DownloadFile(FFmpegDownloadURL, filePath);
+
+                Console.WriteLine("Extracting: " + filePath);
                 ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
             }
         }

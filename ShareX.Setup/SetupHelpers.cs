@@ -33,18 +33,6 @@ namespace ShareX.Setup
 {
     internal class SetupHelpers
     {
-        public static string DownloadFile(string url)
-        {
-            string fileName = Path.GetFileName(url);
-            string filePath = Path.GetFullPath(fileName);
-
-            Console.WriteLine($"Downloading: \"{url}\" -> \"{filePath}\"");
-
-            URLHelpers.DownloadFile(url, filePath);
-
-            return filePath;
-        }
-
         public static void CopyFile(string path, string toFolder)
         {
             CopyFiles(new string[] { path }, toFolder);
