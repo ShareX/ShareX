@@ -258,7 +258,7 @@ namespace ShareX.Setup
                     {
                         FileName = InnoSetupCompilerPath,
                         WorkingDirectory = InnoSetupDir,
-                        Arguments = $"\"{fileName}\"",
+                        Arguments = $"/Q \"{fileName}\"",
                         UseShellExecute = false
                     };
 
@@ -267,7 +267,7 @@ namespace ShareX.Setup
                     process.WaitForExit();
                 }
 
-                Console.WriteLine("Setup file compiled.");
+                Console.WriteLine("Setup file compiled: " + fileName);
             }
             else
             {
@@ -372,6 +372,16 @@ namespace ShareX.Setup
             if (job == SetupJobs.CreatePortable)
             {
                 FileHelpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
+            }
+            else if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
+            {
+                FileHelpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
+            }
+
+            Console.WriteLine("Folder created: " + destination);
+
+            if (job == SetupJobs.CreatePortable)
+            {
                 CreateZipFile(destination, PortableZipPath);
             }
             else if (job == SetupJobs.CreateDebug)
@@ -382,12 +392,6 @@ namespace ShareX.Setup
             {
                 CreateZipFile(destination, SteamZipPath);
             }
-            else if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
-            {
-                FileHelpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
-            }
-
-            Console.WriteLine("Folder created.");
         }
 
         private static void CreateZipFile(string source, string archivePath)
