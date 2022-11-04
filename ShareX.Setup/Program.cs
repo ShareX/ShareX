@@ -285,18 +285,15 @@ namespace ShareX.Setup
                 {
                     FileName = MakeAppxPath,
                     Arguments = $"pack /d \"{MicrosoftStoreOutputDir}\" /p \"{MicrosoftStoreAppxPath}\" /l /o",
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true
+                    UseShellExecute = false
                 };
 
-                process.OutputDataReceived += (s, e) => Console.WriteLine(e.Data);
                 process.StartInfo = psi;
                 process.Start();
-                process.BeginOutputReadLine();
                 process.WaitForExit();
             }
 
-            Console.WriteLine("Appx file compiled.");
+            Console.WriteLine("Appx file compiled: " + MicrosoftStoreAppxPath);
 
             CreateChecksumFile(MicrosoftStoreAppxPath);
         }
