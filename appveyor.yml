@@ -29,7 +29,7 @@ before_build:
       {
           Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
       }
-      nuget restore ShareX.sln
+      nuget restore ShareX.sln -Verbosity quiet
 build:
   project: ShareX.sln
   parallel: true
