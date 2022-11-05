@@ -146,11 +146,6 @@ namespace ShareX.Setup
                 CompileAppx();
             }
 
-            if (AppVeyor)
-            {
-                FileHelpers.CopyAll(OutputDir, ParentDir);
-            }
-
             if (Job.HasFlag(SetupJobs.OpenOutputDirectory) && !AppVeyor)
             {
                 FileHelpers.OpenFolder(OutputDir, false);
