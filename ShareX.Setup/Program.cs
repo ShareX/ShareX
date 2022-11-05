@@ -164,34 +164,27 @@ namespace ShareX.Setup
             CLIManager cli = new CLIManager(args);
             cli.ParseCommands();
 
-            CLICommand command = cli.GetCommand("AppVeyor");
+            AppVeyor = cli.IsCommandExist("AppVeyor");
+
+            if (AppVeyor)
+            {
+                Console.WriteLine("AppVeyor: " + AppVeyor);
+            }
+
+            CLICommand command = cli.GetCommand("Job");
 
             if (command != null)
             {
-                AppVeyor = true;
+                string parameter = command.Parameter;
 
-                string configuration = command.Parameter;
-
-                Console.WriteLine("AppVeyor: " + configuration);
-
-                if (configuration.Equals("Release", StringComparison.OrdinalIgnoreCase))
+                if (Enum.TryParse(parameter, out SetupJobs job))
                 {
-                    Job = SetupJobs.Release;
-                }
-                else if (configuration.Equals("Debug", StringComparison.OrdinalIgnoreCase))
-                {
-                    Job = SetupJobs.Debug;
-                }
-                else if (configuration.Equals("Steam", StringComparison.OrdinalIgnoreCase))
-                {
-                    Job = SetupJobs.Steam;
-                }
-                else if (configuration.Equals("MicrosoftStore", StringComparison.OrdinalIgnoreCase))
-                {
-                    Job = SetupJobs.MicrosoftStore;
+                    Job = job;
                 }
                 else
                 {
+                    Console.WriteLine("Invalid job: " + parameter);
+
                     Environment.Exit(0);
                 }
             }
