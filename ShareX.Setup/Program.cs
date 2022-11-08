@@ -61,6 +61,7 @@ namespace ShareX.Setup
         private static string Configuration;
         private static string AppVersion;
 
+        private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, "ShareX.NativeMessagingHost", "bin", Configuration);
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
@@ -187,13 +188,20 @@ namespace ShareX.Setup
 
         private static void UpdatePaths()
         {
-            if (AppVeyor)
+            ParentDir = Directory.GetCurrentDirectory();
+
+            if (!File.Exists(SolutionPath))
             {
-                ParentDir = Directory.GetCurrentDirectory();
-            }
-            else
-            {
+                Console.WriteLine("Invalid parent directory: " + ParentDir);
+
                 ParentDir = FileHelpers.GetAbsolutePath(@"..\..\..\");
+
+                if (!File.Exists(SolutionPath))
+                {
+                    Console.WriteLine("Invalid parent directory: " + ParentDir);
+
+                    Environment.Exit(0);
+                }
             }
 
             Console.WriteLine("Parent directory: " + ParentDir);
