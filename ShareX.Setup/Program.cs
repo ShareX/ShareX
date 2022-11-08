@@ -54,8 +54,8 @@ namespace ShareX.Setup
             MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory
         }
 
-        private static SetupJobs Job = SetupJobs.Release;
-        private static bool AppVeyor = false;
+        private static SetupJobs Job { get; set; } = SetupJobs.Release;
+        private static bool Silent { get; set; } = false;
 
         private static string ParentDir;
         private static string Configuration;
@@ -147,7 +147,7 @@ namespace ShareX.Setup
                 CompileAppx();
             }
 
-            if (Job.HasFlag(SetupJobs.OpenOutputDirectory) && !AppVeyor)
+            if (!Silent && Job.HasFlag(SetupJobs.OpenOutputDirectory))
             {
                 FileHelpers.OpenFolder(OutputDir, false);
             }
@@ -160,11 +160,11 @@ namespace ShareX.Setup
             CLIManager cli = new CLIManager(args);
             cli.ParseCommands();
 
-            AppVeyor = cli.IsCommandExist("AppVeyor");
+            Silent = cli.IsCommandExist("Silent");
 
-            if (AppVeyor)
+            if (Silent)
             {
-                Console.WriteLine("AppVeyor: " + AppVeyor);
+                Console.WriteLine("Silent: " + Silent);
             }
 
             CLICommand command = cli.GetCommand("Job");

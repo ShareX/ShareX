@@ -38,7 +38,7 @@ after_build:
   - ps: |
       if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
       {
-          & "ShareX.Setup\bin\$env:CONFIGURATION\ShareX.Setup.exe" -AppVeyor -Job "$env:CONFIGURATION"
+          & "ShareX.Setup\bin\$env:CONFIGURATION\ShareX.Setup.exe" -Silent -Job "$env:CONFIGURATION"
       }
 artifacts:
   - path: Output\ShareX-*-setup.exe
