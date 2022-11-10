@@ -882,7 +882,7 @@ namespace ShareX
 
         private void btnCustomCaptureSoundPath_Click(object sender, EventArgs e)
         {
-            FileHelpers.BrowseFile(txtCustomCaptureSoundPath);
+            FileHelpers.BrowseFile(txtCustomCaptureSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbUseCustomTaskCompletedSound_CheckedChanged(object sender, EventArgs e)
@@ -898,7 +898,7 @@ namespace ShareX
 
         private void btnCustomTaskCompletedSoundPath_Click(object sender, EventArgs e)
         {
-            FileHelpers.BrowseFile(txtCustomTaskCompletedSoundPath);
+            FileHelpers.BrowseFile(txtCustomTaskCompletedSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbUseCustomErrorSound_CheckedChanged(object sender, EventArgs e)
@@ -914,7 +914,7 @@ namespace ShareX
 
         private void btnCustomErrorSoundPath_Click(object sender, EventArgs e)
         {
-            FileHelpers.BrowseFile(txtCustomErrorSoundPath);
+            FileHelpers.BrowseFile(txtCustomErrorSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbDisableNotifications_CheckedChanged(object sender, EventArgs e)
