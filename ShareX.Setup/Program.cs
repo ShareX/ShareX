@@ -56,6 +56,7 @@ namespace ShareX.Setup
 
         private static SetupJobs Job { get; set; } = SetupJobs.Release;
         private static bool Silent { get; set; } = false;
+        private static bool AppVeyor { get; set; } = false;
 
         private static string ParentDir;
         private static string Configuration;
@@ -147,6 +148,11 @@ namespace ShareX.Setup
                 CompileAppx();
             }
 
+            if (AppVeyor)
+            {
+                FileHelpers.CopyAll(OutputDir, ParentDir);
+            }
+
             if (!Silent && Job.HasFlag(SetupJobs.OpenOutputDirectory))
             {
                 FileHelpers.OpenFolder(OutputDir, false);
@@ -161,6 +167,7 @@ namespace ShareX.Setup
             cli.ParseCommands();
 
             Silent = cli.IsCommandExist("Silent");
+            AppVeyor = cli.IsCommandExist("AppVeyor");
 
             if (Silent)
             {

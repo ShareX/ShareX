@@ -31,28 +31,28 @@ after_build:
   - ps: |
       if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
       {
-          & "ShareX.Setup\bin\$env:CONFIGURATION\ShareX.Setup.exe" -silent -job "$env:CONFIGURATION"
+          & "ShareX.Setup\bin\$env:CONFIGURATION\ShareX.Setup.exe" -silent -appveyor -job "$env:CONFIGURATION"
       }
 artifacts:
-  - path: Output\ShareX-*-setup.exe
+  - path: ShareX-*-setup.exe
     name: Setup
-  - path: Output\ShareX-*-setup.exe.sha256
+  - path: ShareX-*-setup.exe.sha256
     name: Setup-Checksum
-  - path: Output\ShareX-*-portable.zip
+  - path: ShareX-*-portable.zip
     name: Portable
-  - path: Output\ShareX-*-portable.zip.sha256
+  - path: ShareX-*-portable.zip.sha256
     name: Portable-Checksum
-  - path: Output\ShareX-*-debug.zip
+  - path: ShareX-*-debug.zip
     name: Debug
-  - path: Output\ShareX-*-debug.zip.sha256
+  - path: ShareX-*-debug.zip.sha256
     name: Debug-Checksum
-  - path: Output\ShareX-*-Steam.zip
+  - path: ShareX-*-Steam.zip
     name: Steam
-  - path: Output\ShareX-*-Steam.zip.sha256
+  - path: ShareX-*-Steam.zip.sha256
     name: Steam-Checksum
-  - path: Output\ShareX-*.appx
+  - path: ShareX-*.appx
     name: MicrosoftStore
-  - path: Output\ShareX-*.appx.sha256
+  - path: ShareX-*.appx.sha256
     name: MicrosoftStore-Checksum
 deploy:
   - provider: GitHub
