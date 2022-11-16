@@ -89,6 +89,7 @@ namespace ShareX.Setup
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private const string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\makeappx.exe";
+        private const string MakeAppxPathAppVeyor = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
         private const string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip";
 
         private static void Main(string[] args)
@@ -286,7 +287,7 @@ namespace ShareX.Setup
             {
                 ProcessStartInfo psi = new ProcessStartInfo()
                 {
-                    FileName = MakeAppxPath,
+                    FileName = AppVeyor ? MakeAppxPathAppVeyor : MakeAppxPath,
                     Arguments = $"pack /d \"{MicrosoftStoreOutputDir}\" /p \"{MicrosoftStoreAppxPath}\" /l /o",
                     UseShellExecute = false
                 };
