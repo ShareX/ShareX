@@ -88,7 +88,7 @@ namespace ShareX.Setup
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
-        private const string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
+        private const string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\makeappx.exe";
         private const string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip";
 
         private static void Main(string[] args)
