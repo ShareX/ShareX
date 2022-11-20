@@ -28,6 +28,7 @@ jobs:
 
     env:
       SOLUTION_FILE_PATH: .\ShareX.sln
+      ASSEMBLY_INFO_PATH: SharedAssemblyInfo.cs
     
     outputs:
       APP_VERSION: ${{ steps.get_app_version.outputs.APP_VERSION }}
@@ -39,10 +40,11 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
 
-      - name: Create APP_VERSION env variable
+      - name: Get app version
         id: get_app_version
+        if: matrix.configuration == 'Release'
         run: |
-          $content = Get-Content "SharedAssemblyInfo.cs"
+          $content = Get-Content "${{ env.ASSEMBLY_INFO_PATH }}"
           $match = [regex]::Match($content, 'AssemblyVersion\("(.+?)"\)')
           $version = $match.Groups[1].Value
           echo $version
