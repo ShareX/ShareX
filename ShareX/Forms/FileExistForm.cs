@@ -94,7 +94,7 @@ namespace ShareX
         private void txtNewName_TextChanged(object sender, EventArgs e)
         {
             string newFileName = txtNewName.Text;
-            btnNewName.Enabled = !string.IsNullOrEmpty(newFileName) && !newFileName.Equals(fileName, StringComparison.InvariantCultureIgnoreCase);
+            btnNewName.Enabled = !string.IsNullOrEmpty(newFileName) && !newFileName.Equals(fileName, StringComparison.OrdinalIgnoreCase);
             btnNewName.Text = Resources.FileExistForm_txtNewName_TextChanged_Use_new_name__ + GetNewFileName();
         }
 
@@ -114,7 +114,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(newFileName))
                 {
-                    if (newFileName.Equals(fileName, StringComparison.InvariantCultureIgnoreCase))
+                    if (newFileName.Equals(fileName, StringComparison.OrdinalIgnoreCase))
                     {
                         Close();
                     }

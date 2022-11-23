@@ -373,7 +373,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                         if (errorData != null)
                         {
                             if (UploadMethod == AccountType.User && refreshTokenOnError &&
-                                ((string)errorData.error).Equals("The access token provided is invalid.", StringComparison.InvariantCultureIgnoreCase) &&
+                                ((string)errorData.error).Equals("The access token provided is invalid.", StringComparison.OrdinalIgnoreCase) &&
                                 RefreshAccessToken())
                             {
                                 DebugHelper.WriteLine("Imgur access token refreshed, reuploading image.");
@@ -381,8 +381,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 return InternalUpload(stream, fileName, false);
                             }
 
-                            string errorMessage = $"Imgur upload failed: ({imgurResponse.status}) {errorData.error}";
-                            Errors.Insert(0, errorMessage);
+                            Errors.AddFirst($"Imgur upload failed: ({imgurResponse.status}) {errorData.error}");
                         }
                     }
                 }

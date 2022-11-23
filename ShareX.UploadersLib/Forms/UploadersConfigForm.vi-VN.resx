@@ -204,7 +204,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
     <value>Tên miền tùy chỉnh:</value>
   </data>
   <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
-    <value>Đánh dấu cú pháp</value>
+    <value>Đánh dấu cú pháp:</value>
   </data>
   <data name="lblUpasteUserKey.Text" xml:space="preserve">
     <value>User key:</value>
@@ -240,7 +240,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
     <value>Cú pháp:</value>
   </data>
   <data name="btnPastebinRegister.Text" xml:space="preserve">
-    <value>Đăng ký</value>
+    <value>Đăng ký...</value>
   </data>
   <data name="lblEmailSmtpPort.Text" xml:space="preserve">
     <value>Cổng:</value>
@@ -369,7 +369,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
     <value>Thư mục:</value>
   </data>
   <data name="btnMegaRegister.Text" xml:space="preserve">
-    <value>Đăng ký</value>
+    <value>Đăng ký...</value>
   </data>
   <data name="lblMegaStatus.Text" xml:space="preserve">
     <value>Đã thiết lập / Chưa thiết lập</value>
@@ -618,7 +618,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
     <value>API key:</value>
   </data>
   <data name="lblSeafileAPIURL.Text" xml:space="preserve">
-    <value>API URL</value>
+    <value>API URL:</value>
   </data>
   <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
     <value>Thêm thư mục từ xa vào đường dẫn URL</value>
@@ -1044,7 +1044,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
     <value>URL xem trước:</value>
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
-    <value>URL xem trước:</value>
+    <value>Xem trước</value>
   </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>Sử dụng:</value>
@@ -1256,5 +1256,44 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   </data>
   <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
     <value>Nâng cao</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Nối tên tệp vào URL</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>ngày</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>giờ</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>phút</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>không bao giờ</value>
+  </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>Sử dụng URL thô</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>Hiển thị hộp thoại tùy chọn video</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Cấp truy cập liên kết được chia sẻ:</value>
+  </data>
+  <data name="lblGfycatTitle.Text" xml:space="preserve">
+    <value>Tiêu đề:</value>
+  </data>
+  <data name="lblKuttDomain.Text" xml:space="preserve">
+    <value>Tên miền:</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>Bạn có thể thu hồi quyền truy cập của mình bất cứ lúc nào bằng cách sử dụng liên kết bên dưới:</value>
+  </data>
+  <data name="lblZWSURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblZWSToken.Text" xml:space="preserve">
+    <value>Token:</value>
   </data>
 </root>

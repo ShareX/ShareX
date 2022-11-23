@@ -44,16 +44,16 @@ namespace ShareX.HelpersLib
 
                 AppVeyorProject project = appveyor.GetProjectByBranch(Branch);
 
-                if (!project.build.status.Equals("success", StringComparison.InvariantCultureIgnoreCase) &&
-                    !project.build.status.Equals("running", StringComparison.InvariantCultureIgnoreCase))
+                if (!project.build.status.Equals("success", StringComparison.OrdinalIgnoreCase) &&
+                    !project.build.status.Equals("running", StringComparison.OrdinalIgnoreCase))
                 {
                     throw new Exception("Latest project build is not successful.");
                 }
 
                 AppVeyorProjectJob job = project.build.jobs.FirstOrDefault(x =>
-                    x.name.Equals("Configuration: Release", StringComparison.InvariantCultureIgnoreCase) &&
-                    x.osType.Equals("Windows", StringComparison.InvariantCultureIgnoreCase) &&
-                    x.status.Equals("success", StringComparison.InvariantCultureIgnoreCase));
+                    x.name.Equals("Configuration: Release", StringComparison.OrdinalIgnoreCase) &&
+                    x.osType.Equals("Windows", StringComparison.OrdinalIgnoreCase) &&
+                    x.status.Equals("success", StringComparison.OrdinalIgnoreCase));
 
                 if (job == null)
                 {
@@ -73,7 +73,7 @@ namespace ShareX.HelpersLib
                     deploymentName = "Setup";
                 }
 
-                AppVeyorProjectArtifact artifact = artifacts.FirstOrDefault(x => x.name.Equals(deploymentName, StringComparison.InvariantCultureIgnoreCase));
+                AppVeyorProjectArtifact artifact = artifacts.FirstOrDefault(x => x.name.Equals(deploymentName, StringComparison.OrdinalIgnoreCase));
 
                 if (artifact == null)
                 {

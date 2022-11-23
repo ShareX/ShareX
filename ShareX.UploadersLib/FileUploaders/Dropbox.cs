@@ -279,7 +279,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             DropboxMetadata metadata = GetMetadata(path);
 
-            return metadata != null && !metadata.tag.Equals("deleted", StringComparison.InvariantCultureIgnoreCase);
+            return metadata != null && !metadata.tag.Equals("deleted", StringComparison.OrdinalIgnoreCase);
         }
 
         public string CreateShareableLink(string path, bool directLink)
@@ -303,7 +303,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     linkMetadata = JsonConvert.DeserializeObject<DropboxLinkMetadata>(response);
                 }
-                else if (IsError && Errors[Errors.Count - 1].Contains("\"shared_link_already_exists\"")) // Ugly workaround
+                else if (IsError && Errors.Errors[Errors.Count - 1].Text.Contains("\"shared_link_already_exists\"")) // Ugly workaround
                 {
                     DropboxListSharedLinksResult result = ListSharedLinks(path, true);
 

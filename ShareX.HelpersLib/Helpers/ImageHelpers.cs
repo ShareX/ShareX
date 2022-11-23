@@ -2099,30 +2099,101 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap CombineImages(List<Bitmap> images, Orientation orientation = Orientation.Vertical,
-            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
+        public static Bitmap CombineImages(List<Bitmap> images, Orientation orientation, ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop,
+            int space = 0, int wrapAfter = 0, bool autoFillBackground = false)
         {
-            int width, height;
             int imageCount = images.Count;
-            int spaceSize = space * (imageCount - 1);
+            Rectangle[] imageRects = new Rectangle[imageCount];
+            Point position = new Point(0, 0);
+            int currentSize = 0;
 
-            if (orientation == Orientation.Vertical)
+            for (int i = 0; i < imageCount; i++)
             {
-                width = images.Max(x => x.Width);
-                height = images.Sum(x => x.Height) + spaceSize;
-            }
-            else
-            {
-                width = images.Sum(x => x.Width) + spaceSize;
-                height = images.Max(x => x.Height);
+                Bitmap image = images[i];
+                Point offset = new Point(0, 0);
+
+                if (orientation == Orientation.Horizontal)
+                {
+                    if (wrapAfter > 0)
+                    {
+                        if (i % wrapAfter == 0)
+                        {
+                            if (i > 0)
+                            {
+                                position.X = 0;
+                                position.Y += currentSize + space;
+                            }
+
+                            currentSize = images.Skip(i).Take(wrapAfter).Max(x => x.Height);
+                        }
+                    }
+                    else if (i == 0)
+                    {
+                        currentSize = images.Max(x => x.Height);
+                    }
+
+                    switch (alignment)
+                    {
+                        default:
+                        case ImageCombinerAlignment.LeftOrTop:
+                            offset.Y = 0;
+                            break;
+                        case ImageCombinerAlignment.Center:
+                            offset.Y = (currentSize / 2) - (image.Height / 2);
+                            break;
+                        case ImageCombinerAlignment.RightOrBottom:
+                            offset.Y = currentSize - image.Height;
+                            break;
+                    }
+
+                    imageRects[i] = new Rectangle(position.X + offset.X, position.Y + offset.Y, image.Width, image.Height);
+                    position.X += image.Width + space;
+                }
+                else
+                {
+                    if (wrapAfter > 0)
+                    {
+                        if (i % wrapAfter == 0)
+                        {
+                            if (i > 0)
+                            {
+                                position.X += currentSize + space;
+                                position.Y = 0;
+                            }
+
+                            currentSize = images.Skip(i).Take(wrapAfter).Max(x => x.Width);
+                        }
+                    }
+                    else if (i == 0)
+                    {
+                        currentSize = images.Max(x => x.Width);
+                    }
+
+                    switch (alignment)
+                    {
+                        default:
+                        case ImageCombinerAlignment.LeftOrTop:
+                            offset.X = 0;
+                            break;
+                        case ImageCombinerAlignment.Center:
+                            offset.X = (currentSize / 2) - (image.Width / 2);
+                            break;
+                        case ImageCombinerAlignment.RightOrBottom:
+                            offset.X = currentSize - image.Width;
+                            break;
+                    }
+
+                    imageRects[i] = new Rectangle(position.X + offset.X, position.Y + offset.Y, image.Width, image.Height);
+                    position.Y += image.Height + space;
+                }
             }
 
-            Bitmap bmp = new Bitmap(width, height);
+            Rectangle totalImageRect = imageRects.Combine();
+            Bitmap bmp = new Bitmap(totalImageRect.Width, totalImageRect.Height);
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.SetHighQuality();
-                int position = 0;
 
                 for (int i = 0; i < imageCount; i++)
                 {
@@ -2134,56 +2205,15 @@ namespace ShareX.HelpersLib
                         g.Clear(backgroundColor);
                     }
 
-                    Rectangle rect;
-
-                    if (orientation == Orientation.Vertical)
-                    {
-                        int x;
-                        switch (alignment)
-                        {
-                            default:
-                            case ImageCombinerAlignment.LeftOrTop:
-                                x = 0;
-                                break;
-                            case ImageCombinerAlignment.Center:
-                                x = (width / 2) - (image.Width / 2);
-                                break;
-                            case ImageCombinerAlignment.RightOrBottom:
-                                x = width - image.Width;
-                                break;
-                        }
-                        rect = new Rectangle(x, position, image.Width, image.Height);
-                        position += image.Height + space;
-                    }
-                    else
-                    {
-                        int y;
-                        switch (alignment)
-                        {
-                            default:
-                            case ImageCombinerAlignment.LeftOrTop:
-                                y = 0;
-                                break;
-                            case ImageCombinerAlignment.Center:
-                                y = (height / 2) - (image.Height / 2);
-                                break;
-                            case ImageCombinerAlignment.RightOrBottom:
-                                y = height - image.Height;
-                                break;
-                        }
-                        rect = new Rectangle(position, y, image.Width, image.Height);
-                        position += image.Width + space;
-                    }
-
-                    g.DrawImage(image, rect);
+                    g.DrawImage(image, imageRects[i]);
                 }
             }
 
             return bmp;
         }
 
-        public static Bitmap CombineImages(IEnumerable<string> imageFiles, Orientation orientation = Orientation.Vertical,
-            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
+        public static Bitmap CombineImages(IEnumerable<string> imageFiles, Orientation orientation, ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop,
+            int space = 0, int wrapAfter = 0, bool autoFillBackground = false)
         {
             List<Bitmap> images = new List<Bitmap>();
 
@@ -2201,7 +2231,7 @@ namespace ShareX.HelpersLib
 
                 if (images.Count > 1)
                 {
-                    return CombineImages(images, orientation, alignment, space, autoFillBackground);
+                    return CombineImages(images, orientation, alignment, space, wrapAfter, autoFillBackground);
                 }
             }
             finally

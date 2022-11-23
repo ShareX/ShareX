@@ -150,4 +150,31 @@
   <data name="lblURLFilter.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>Cài lại</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm nâng cao</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm nâng cao...</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Cài đặt ...</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Hiển thị số liệu thống kê ...</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm:</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>Chuyển đổi thêm thông tin</value>
+  </data>
 </root>

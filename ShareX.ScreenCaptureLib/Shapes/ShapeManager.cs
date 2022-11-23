@@ -146,6 +146,8 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public PointF CurrentDPI = new PointF(96f, 96f);
+
         public bool IsCurrentShapeValid => CurrentShape != null && CurrentShape.IsValidShape;
 
         public BaseShape[] Regions => Shapes.OfType<BaseRegionShape>().ToArray();
@@ -1153,6 +1155,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingFreehand:
                     shape = new FreehandDrawingShape();
                     break;
+                case ShapeType.DrawingFreehandArrow:
+                    shape = new FreehandArrowDrawingShape();
+                    break;
                 case ShapeType.DrawingLine:
                     shape = new LineDrawingShape();
                     break;
@@ -1288,6 +1293,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case ShapeType.RegionFreehand:
                         case ShapeType.DrawingFreehand:
+                        case ShapeType.DrawingFreehandArrow:
                         case ShapeType.DrawingLine:
                         case ShapeType.DrawingArrow:
                         case ShapeType.DrawingTextOutline:
@@ -1362,6 +1368,7 @@ namespace ShareX.ScreenCaptureLib
         public Bitmap RenderOutputImage(Bitmap bmp, PointF offset)
         {
             Bitmap bmpOutput = (Bitmap)bmp.Clone();
+            bmpOutput.SetResolution(CurrentDPI.X, CurrentDPI.Y);
 
             if (DrawingShapes.Length > 0 || EffectShapes.Length > 0)
             {

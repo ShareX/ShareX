@@ -33,13 +33,12 @@ namespace ShareX.HelpersLib
     public partial class UpdateMessageBox : Form
     {
         public static bool IsOpen { get; private set; }
-        public static bool DontShow { get; private set; }
 
         public bool ActivateWindow { get; private set; }
 
         protected override bool ShowWithoutActivation => !ActivateWindow;
 
-        public UpdateMessageBox(bool activateWindow, UpdateChecker updateChecker)
+        public UpdateMessageBox(UpdateChecker updateChecker, bool activateWindow = true, bool devBuild = false)
         {
             ActivateWindow = activateWindow;
 
@@ -74,12 +73,15 @@ namespace ShareX.HelpersLib
             sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
             sbText.Append(": ");
             sbText.Append(updateChecker.LatestVersion);
+            if (devBuild) sbText.Append(" Dev");
             if (updateChecker is GitHubUpdateChecker githubUpdateChecker && githubUpdateChecker.IsPreRelease) sbText.Append(" (Pre-release)");
 
             lblText.Text = sbText.ToString();
+
+            lblViewChangelog.Visible = !devBuild;
         }
 
-        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true)
+        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true, bool devBuild = false)
         {
             DialogResult result = DialogResult.None;
 
@@ -89,7 +91,7 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    using (UpdateMessageBox messageBox = new UpdateMessageBox(activateWindow, updateChecker))
+                    using (UpdateMessageBox messageBox = new UpdateMessageBox(updateChecker, activateWindow, devBuild))
                     {
                         result = messageBox.ShowDialog();
                     }
@@ -116,14 +118,17 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void UpdateMessageBox_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (DialogResult == DialogResult.Cancel && e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult = DialogResult.No;
+            }
+        }
+
         private void lblViewChangelog_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.Changelog);
-        }
-
-        private void cbDontShow_CheckedChanged(object sender, EventArgs e)
-        {
-            DontShow = cbDontShow.Checked;
         }
 
         private void btnYes_MouseClick(object sender, MouseEventArgs e)

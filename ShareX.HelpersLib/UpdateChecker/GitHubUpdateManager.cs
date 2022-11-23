@@ -31,9 +31,9 @@ namespace ShareX.HelpersLib
 {
     public class GitHubUpdateManager : IDisposable
     {
-        public bool AutoUpdateEnabled { get; set; } // ConfigureAutoUpdate function must be called after change this
+        public bool AllowAutoUpdate { get; set; } // ConfigureAutoUpdate function must be called after change this
+        public bool AutoUpdateEnabled { get; set; } = true;
         public TimeSpan UpdateCheckInterval { get; private set; } = TimeSpan.FromHours(1);
-        public TimeSpan UpdateReCheckInterval { get; private set; } = TimeSpan.FromHours(24); // If "No" button pressed in update message box then this interval will be used
         public string GitHubOwner { get; set; }
         public string GitHubRepo { get; set; }
         public bool IsDev { get; set; } // If current build is dev and latest stable release is same version as current build then it will be downloaded
@@ -60,7 +60,7 @@ namespace ShareX.HelpersLib
         {
             lock (updateTimerLock)
             {
-                if (AutoUpdateEnabled)
+                if (AllowAutoUpdate)
                 {
                     if (updateTimer == null)
                     {
@@ -76,14 +76,14 @@ namespace ShareX.HelpersLib
 
         private void CheckUpdate()
         {
-            if (!UpdateMessageBox.DontShow && !UpdateMessageBox.IsOpen)
+            if (AutoUpdateEnabled && !UpdateMessageBox.IsOpen)
             {
                 UpdateChecker updateChecker = CreateUpdateChecker();
                 updateChecker.CheckUpdate();
 
-                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) != DialogResult.Yes)
+                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
                 {
-                    updateTimer.Change(UpdateReCheckInterval, UpdateReCheckInterval);
+                    AutoUpdateEnabled = false;
                 }
 
                 firstUpdateCheck = false;

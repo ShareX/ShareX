@@ -121,12 +121,15 @@
     <value>Vùng nhớ tạm đang chứa những thứ sau:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bạn có chắc chắn muốn tải lên không?</value>
+    <value>ShareX - Tải lên khay nhớ tạm</value>
   </data>
   <data name="cbDontShowThisWindow.Text" xml:space="preserve">
     <value>Không hiện cửa sổ này</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Hủy bỏ</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Tải lên</value>
   </data>
 </root>

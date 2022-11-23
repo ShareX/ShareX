@@ -271,7 +271,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        public void ParseResponse(UploadResult result, ResponseInfo responseInfo, CustomUploaderInput input, bool isShortenedURL = false)
+        public void ParseResponse(UploadResult result, ResponseInfo responseInfo, UploaderErrorManager errors, CustomUploaderInput input, bool isShortenedURL = false)
         {
             if (result != null && responseInfo != null)
             {
@@ -322,29 +322,29 @@ namespace ShareX.UploadersLib
 
                         if (!string.IsNullOrEmpty(parsedErrorMessage))
                         {
-                            result.Errors.Add("Custom uploader error message:" + Environment.NewLine + parsedErrorMessage);
+                            errors.AddFirst(parsedErrorMessage);
                         }
                     }
                 }
             }
         }
 
-        public void TryParseResponse(UploadResult result, ResponseInfo responseInfo, CustomUploaderInput input, bool isShortenedURL = false)
+        public void TryParseResponse(UploadResult result, ResponseInfo responseInfo, UploaderErrorManager errors, CustomUploaderInput input, bool isShortenedURL = false)
         {
             try
             {
-                ParseResponse(result, responseInfo, input, isShortenedURL);
+                ParseResponse(result, responseInfo, errors, input, isShortenedURL);
             }
             catch (JsonReaderException e)
             {
                 string hostName = URLHelpers.GetHostName(RequestURL);
-                result.Errors.Add($"Custom uploader error. Invalid response content is returned from host ({hostName}), expected response content is JSON." +
+                errors.AddFirst($"Invalid response content is returned from host ({hostName}), expected response content is JSON." +
                     Environment.NewLine + Environment.NewLine + e);
             }
             catch (Exception e)
             {
                 string hostName = URLHelpers.GetHostName(RequestURL);
-                result.Errors.Add($"Custom uploader error. Unable to parse response content returned from host ({hostName})." +
+                errors.AddFirst($"Unable to parse response content returned from host ({hostName})." +
                     Environment.NewLine + Environment.NewLine + e);
             }
         }

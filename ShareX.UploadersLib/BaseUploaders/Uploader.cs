@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
         public event Action<string> EarlyURLCopyRequested;
 
         public bool IsUploading { get; protected set; }
-        public List<string> Errors { get; private set; } = new List<string>();
+        public UploaderErrorManager Errors { get; private set; } = new UploaderErrorManager();
         public bool IsError => !StopUploadRequested && Errors != null && Errors.Count > 0;
         public int BufferSize { get; set; } = 8192;
 
@@ -483,7 +483,7 @@ namespace ShareX.UploadersLib
 
                 string errorText = sb.ToString();
 
-                if (Errors == null) Errors = new List<string>();
+                if (Errors == null) Errors = new UploaderErrorManager();
                 Errors.Add(errorText);
 
                 DebugHelper.WriteLine("Error:\r\n" + errorText);

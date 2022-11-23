@@ -123,4 +123,37 @@
   <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
     <value>Các ảnh thu nhỏ đã được tạo ra thành công.</value>
   </data>
+  <data name="AlignmentBottom" xml:space="preserve">
+    <value>Dưới</value>
+  </data>
+  <data name="AlignmentHorizontalCenter" xml:space="preserve">
+    <value>Giữa</value>
+  </data>
+  <data name="AlignmentLeft" xml:space="preserve">
+    <value>Trái</value>
+  </data>
+  <data name="AlignmentRight" xml:space="preserve">
+    <value>Phải</value>
+  </data>
+  <data name="AlignmentTop" xml:space="preserve">
+    <value>Trên</value>
+  </data>
+  <data name="AlignmentVerticalCenter" xml:space="preserve">
+    <value>Giữa</value>
+  </data>
+  <data name="FFmpegError" xml:space="preserve">
+    <value>Lỗi FFmpeg</value>
+  </data>
+  <data name="HigherQualitySize" xml:space="preserve">
+    <value>Chất lượng / kích thước cao hơn</value>
+  </data>
+  <data name="LowerQualitySize" xml:space="preserve">
+    <value>Chất lượng / kích thước thấp hơn</value>
+  </data>
+  <data name="StartEncoding" xml:space="preserve">
+    <value>Bắt đầu mã hóa</value>
+  </data>
+  <data name="StopEncoding" xml:space="preserve">
+    <value>Dừng mã hóa</value>
+  </data>
 </root>

@@ -32,7 +32,6 @@
             this.lblText = new System.Windows.Forms.Label();
             this.btnNo = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
-            this.cbDontShow = new System.Windows.Forms.CheckBox();
             this.lblViewChangelog = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -55,13 +54,6 @@
             this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnYes_MouseClick);
             // 
-            // cbDontShow
-            // 
-            resources.ApplyResources(this.cbDontShow, "cbDontShow");
-            this.cbDontShow.Name = "cbDontShow";
-            this.cbDontShow.UseVisualStyleBackColor = false;
-            this.cbDontShow.CheckedChanged += new System.EventHandler(this.cbDontShow_CheckedChanged);
-            // 
             // lblViewChangelog
             // 
             resources.ApplyResources(this.lblViewChangelog, "lblViewChangelog");
@@ -78,10 +70,10 @@
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.lblText);
-            this.Controls.Add(this.cbDontShow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "UpdateMessageBox";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateMessageBox_FormClosing);
             this.Shown += new System.EventHandler(this.UpdateMessageBox_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -93,7 +85,6 @@
         private System.Windows.Forms.Button btnYes;
         private System.Windows.Forms.Button btnNo;
         private System.Windows.Forms.Label lblText;
-        private System.Windows.Forms.CheckBox cbDontShow;
         private System.Windows.Forms.Label lblViewChangelog;
     }
 }

@@ -300,7 +300,7 @@ namespace ShareX
                         }
                         else if (task.Status == TaskStatus.Failed)
                         {
-                            string errors = string.Join("\r\n\r\n", info.Result.Errors.ToArray());
+                            string errors = info.Result.Errors.ToString();
 
                             DebugHelper.WriteLine($"Task failed. File name: {info.FileName}, Errors:\r\n{errors}");
 
@@ -320,12 +320,18 @@ namespace ShareX
 
                                 if (info.Result.Errors.Count > 0)
                                 {
-                                    string errorMessage = info.Result.Errors[0];
+                                    UploaderErrorInfo error = info.Result.Errors.Errors[0];
 
-                                    if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(errorMessage) &&
+                                    string title = error.Title;
+                                    if (string.IsNullOrEmpty(title))
+                                    {
+                                        title = Resources.TaskManager_task_UploadCompleted_Error;
+                                    }
+
+                                    if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(error.Text) &&
                                         (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                     {
-                                        TaskHelpers.ShowNotificationTip(errorMessage, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, 5000);
+                                        TaskHelpers.ShowNotificationTip(error.Text, "ShareX - " + title, 5000);
                                     }
                                 }
                             }

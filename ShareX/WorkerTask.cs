@@ -526,7 +526,7 @@ namespace ShareX
 
                 if (uploader != null)
                 {
-                    AddErrorMessage(uploader.Errors.ToArray());
+                    AddErrorMessage(uploader.Errors);
                 }
 
                 isError |= Info.Result.IsError;
@@ -535,14 +535,24 @@ namespace ShareX
             return isError;
         }
 
-        private void AddErrorMessage(params string[] errorMessages)
+        private void AddErrorMessage(UploaderErrorManager errors)
         {
             if (Info.Result == null)
             {
                 Info.Result = new UploadResult();
             }
 
-            Info.Result.Errors.AddRange(errorMessages);
+            Info.Result.Errors.Add(errors);
+        }
+
+        private void AddErrorMessage(string error)
+        {
+            if (Info.Result == null)
+            {
+                Info.Result = new UploadResult();
+            }
+
+            Info.Result.Errors.Add(error);
         }
 
         private bool DoThreadJob()
@@ -840,7 +850,7 @@ namespace ShareX
                     if (result != null)
                     {
                         Info.Result.ShortenedURL = result.ShortenedURL;
-                        Info.Result.Errors.AddRange(result.Errors);
+                        Info.Result.Errors.Add(result.Errors);
                     }
                 }
 
@@ -850,7 +860,7 @@ namespace ShareX
 
                     if (result != null)
                     {
-                        Info.Result.Errors.AddRange(result.Errors);
+                        Info.Result.Errors.Add(result.Errors);
                     }
 
                     if (Info.Job == TaskJob.ShareURL)
@@ -917,6 +927,7 @@ namespace ShareX
 
             if (uploader != null)
             {
+                uploader.Errors.DefaultTitle = service.ServiceName + " " + "error";
                 uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
                 uploader.ProgressChanged += uploader_ProgressChanged;
 

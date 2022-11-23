@@ -608,7 +608,7 @@ namespace ShareX.ScreenCaptureLib
                 output.Add(newImage);
             }
 
-            Bitmap bmpResult = ImageHelpers.CombineImages(output);
+            Bitmap bmpResult = ImageHelpers.CombineImages(output, Orientation.Vertical);
 
             foreach (Bitmap image in output)
             {

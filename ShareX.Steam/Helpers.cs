@@ -120,7 +120,7 @@ namespace ShareX.Steam
         {
             if (args != null && !string.IsNullOrEmpty(command))
             {
-                return args.Any(arg => !string.IsNullOrEmpty(arg) && arg.Equals(command, StringComparison.InvariantCultureIgnoreCase));
+                return args.Any(arg => !string.IsNullOrEmpty(arg) && arg.Equals(command, StringComparison.OrdinalIgnoreCase));
             }
 
             return false;

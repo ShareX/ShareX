@@ -92,7 +92,7 @@ namespace ShareX.UploadersLib.TextUploaders
                         {
                             string ext = FileHelpers.GetFileNameExtension(fileName);
 
-                            if (!string.IsNullOrEmpty(ext) && !ext.Equals("txt", StringComparison.InvariantCultureIgnoreCase))
+                            if (!string.IsNullOrEmpty(ext) && !ext.Equals("txt", StringComparison.OrdinalIgnoreCase))
                             {
                                 syntaxHighlighting = ext.ToLowerInvariant();
                             }

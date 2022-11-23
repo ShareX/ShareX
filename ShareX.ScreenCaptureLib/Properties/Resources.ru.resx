@@ -481,4 +481,16 @@
   <data name="Bitrate" xml:space="preserve">
     <value>Битрейт:</value>
   </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Эффект разрыва:</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Размер эффекта:</value>
+  </data>
 </root>

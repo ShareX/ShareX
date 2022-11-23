@@ -251,6 +251,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingFreehand:
                         img = Resources.pencil;
                         break;
+                    case ShapeType.DrawingFreehandArrow:
+                        img = Resources.pencil__arrow;
+                        break;
                     case ShapeType.DrawingLine:
                         img = ShareXResources.IsDarkTheme ? Resources.layer_shape_line_white : Resources.layer_shape_line;
                         break;
@@ -1492,6 +1495,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingEllipse:
                 case ShapeType.DrawingFreehand:
+                case ShapeType.DrawingFreehandArrow:
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
                 case ShapeType.DrawingTextOutline:
@@ -1523,6 +1527,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingEllipse:
                 case ShapeType.DrawingFreehand:
+                case ShapeType.DrawingFreehandArrow:
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
                 case ShapeType.DrawingTextOutline:
@@ -1572,6 +1577,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingEllipse:
                 case ShapeType.DrawingFreehand:
+                case ShapeType.DrawingFreehandArrow:
                 case ShapeType.DrawingLine:
                 case ShapeType.DrawingArrow:
                 case ShapeType.DrawingMagnify:
@@ -1580,7 +1586,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
-            tscbArrowHeadDirection.Visible = shapeType == ShapeType.DrawingArrow;
+            tscbArrowHeadDirection.Visible = shapeType == ShapeType.DrawingArrow || shapeType == ShapeType.DrawingFreehandArrow;
             tscbImageInterpolationMode.Visible = shapeType == ShapeType.DrawingImage || shapeType == ShapeType.DrawingImageScreen || shapeType == ShapeType.DrawingMagnify;
             tslnudStartingStepValue.Visible = shapeType == ShapeType.DrawingStep;
             tslnudStepFontSize.Visible = tscbStepType.Visible = shapeType == ShapeType.DrawingStep;

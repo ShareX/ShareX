@@ -1,0 +1,200 @@
+name: Build ShareX
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration:
+          - Release
+          - Debug
+          - Steam
+          - MicrosoftStore
+        platform:
+          - Any CPU
+
+    env:
+      SOLUTION_FILE_PATH: .\ShareX.sln
+      ASSEMBLY_INFO_PATH: SharedAssemblyInfo.cs
+    
+    outputs:
+      APP_VERSION: ${{ steps.get_app_version.outputs.APP_VERSION }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+
+      - name: Get app version
+        id: get_app_version
+        if: matrix.configuration == 'Release'
+        run: |
+          $content = Get-Content "${{ env.ASSEMBLY_INFO_PATH }}"
+          $match = [regex]::Match($content, 'AssemblyVersion\("(.+?)"\)')
+          $version = $match.Groups[1].Value
+          echo $version
+          echo "APP_VERSION=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Download API keys
+        env:
+          API_KEYS: ${{ secrets.API_KEYS }}
+        if: env.API_KEYS != ''
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
+
+      - name: Restore NuGet packages
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: nuget restore ${{ env.SOLUTION_FILE_PATH }}
+
+      - name: Build
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: msbuild -m -p:Configuration="${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
+
+      - name: Setup
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          & "ShareX.Setup\bin\${{ matrix.configuration }}\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
+
+      - name: Upload artifact (Setup)
+        if: matrix.configuration == 'Release'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Setup
+          path: Output\ShareX-*-setup.exe
+
+      - name: Upload artifact (Portable)
+        if: matrix.configuration == 'Release'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Portable
+          path: Output\ShareX-*-portable.zip
+
+      - name: Upload artifact (Debug)
+        if: matrix.configuration == 'Debug'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Debug
+          path: Output\ShareX-*-debug.zip
+
+      - name: Upload artifact (Steam)
+        if: matrix.configuration == 'Steam'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Steam
+          path: Output\ShareX-*-Steam.zip
+
+      - name: Upload artifact (MicrosoftStore)
+        if: matrix.configuration == 'MicrosoftStore'
+        uses: actions/upload-artifact@v3
+        with:
+          name: MicrosoftStore
+          path: Output\ShareX-*.appx
+
+  release:
+    name: Release
+    needs: build
+    if: github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/tags/v')
+    runs-on: windows-latest
+
+    permissions:
+      contents: write
+
+    env:
+      REPO_DEV_BUILDS: ""
+      RELEASE_BODY_PATH: RELEASE_BODY.md
+      APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
+
+    steps:
+      - name: Download artifact (Setup)
+        uses: actions/download-artifact@v3
+        with:
+          name: Setup
+          path: Output
+
+      - name: Download artifact (Portable)
+        uses: actions/download-artifact@v3
+        with:
+          name: Portable
+          path: Output
+
+      - name: Download artifact (Debug)
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/download-artifact@v3
+        with:
+          name: Debug
+          path: Output
+
+      - name: Download artifact (Steam)
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/download-artifact@v3
+        with:
+          name: Steam
+          path: Output
+
+      - name: Download artifact (MicrosoftStore)
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/download-artifact@v3
+        with:
+          name: MicrosoftStore
+          path: Output
+
+      - name: Create release body file
+        run: |
+          $checksums = Get-ChildItem -Path "Output\" -Recurse -File
+            | Sort-Object -Property Name
+            | ForEach-Object { "| $($_.Name) | ``$((Get-FileHash $_.FullName -Algorithm SHA256).Hash)`` |" }
+            | Out-String
+          $output = "| File | SHA256 |`r`n| --- | --- |`r`n$($checksums.Trim())"
+          echo $output >> $env:GITHUB_STEP_SUMMARY
+          if ($env:GITHUB_REF.StartsWith("refs/tags/v")) {
+            $output = "**Changelog:** https://getsharex.com/changelog`r`n`r`n$output"
+          }
+          echo $output
+          Set-Content -Path "${{ env.RELEASE_BODY_PATH }}" -Value "$output" -NoNewline
+
+      - name: Release (Dev)
+        if: env.REPO_DEV_BUILDS != '' && github.ref == 'refs/heads/develop'
+        uses: softprops/action-gh-release@v1
+        with:
+          repository: ${{ env.REPO_DEV_BUILDS }}
+          tag_name: v${{ env.APP_VERSION }}.${{ github.run_number }}
+          name: ShareX ${{ env.APP_VERSION }}.${{ github.run_number }} Dev
+          body_path: ${{ env.RELEASE_BODY_PATH }}
+          draft: false
+          prerelease: false
+          files: |
+            Output\ShareX-*-setup.exe
+            Output\ShareX-*-portable.zip
+            Output\ShareX-*-debug.zip
+            Output\ShareX-*-Steam.zip
+            Output\ShareX-*.appx
+
+      - name: Release (Stable)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v1
+        with:
+          repository: ${{ github.repository }}
+          tag_name: ${{ github.ref_name }}
+          name: ShareX ${{ env.APP_VERSION }}
+          body_path: ${{ env.RELEASE_BODY_PATH }}
+          draft: false
+          prerelease: true
+          files: |
+            Output\ShareX-*-setup.exe
+            Output\ShareX-*-portable.zip

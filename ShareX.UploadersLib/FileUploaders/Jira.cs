@@ -269,7 +269,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
 
                 // This query can returns error so we have to remove last error from errors list
-                Errors.RemoveAt(Errors.Count - 1);
+                Errors.Errors.RemoveAt(Errors.Count - 1);
 
                 return null;
             }

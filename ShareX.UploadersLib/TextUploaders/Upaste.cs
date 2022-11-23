@@ -89,7 +89,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
                     if (response != null)
                     {
-                        if (response.status.Equals("success", StringComparison.InvariantCultureIgnoreCase))
+                        if (response.status.Equals("success", StringComparison.OrdinalIgnoreCase))
                         {
                             ur.URL = response.paste.link;
                         }

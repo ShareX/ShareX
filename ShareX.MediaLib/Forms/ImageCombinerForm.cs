@@ -57,7 +57,21 @@ namespace ShareX.MediaLib
 
             UpdateAlignmentComboBox();
             nudSpace.SetValue(Options.Space);
+            nudWrapAfter.SetValue(Options.WrapAfter);
             cbAutoFillBackground.Checked = Options.AutoFillBackground;
+        }
+
+        public ImageCombinerForm(ImageCombinerOptions options, IEnumerable<string> imageFiles) : this(options)
+        {
+            if (imageFiles != null)
+            {
+                foreach (string image in imageFiles)
+                {
+                    lvImages.Items.Add(image);
+                }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
+            }
         }
 
         private void UpdateOrientation()
@@ -92,17 +106,6 @@ namespace ShareX.MediaLib
             cbAlignment.SelectedIndex = (int)Options.Alignment;
         }
 
-        public ImageCombinerForm(ImageCombinerOptions options, IEnumerable<string> imageFiles) : this(options)
-        {
-            if (imageFiles != null)
-            {
-                foreach (string image in imageFiles)
-                {
-                    lvImages.Items.Add(image);
-                }
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string[] images = ImageHelpers.OpenImageFileDialog(true);
@@ -113,6 +116,8 @@ namespace ShareX.MediaLib
                 {
                     lvImages.Items.Add(image);
                 }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
             }
         }
 
@@ -124,6 +129,8 @@ namespace ShareX.MediaLib
                 {
                     lvImages.Items.Remove(lvi);
                 }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
             }
         }
 
@@ -165,6 +172,11 @@ namespace ShareX.MediaLib
             Options.Space = (int)nudSpace.Value;
         }
 
+        private void nudWrapAfter_ValueChanged(object sender, EventArgs e)
+        {
+            Options.WrapAfter = (int)nudWrapAfter.Value;
+        }
+
         private void cbAutoFillBackground_CheckedChanged(object sender, EventArgs e)
         {
             Options.AutoFillBackground = cbAutoFillBackground.Checked;
@@ -180,7 +192,8 @@ namespace ShareX.MediaLib
 
                     if (imageFiles.Count > 1)
                     {
-                        Bitmap output = ImageHelpers.CombineImages(imageFiles, Options.Orientation, Options.Alignment, Options.Space, Options.AutoFillBackground);
+                        Bitmap output = ImageHelpers.CombineImages(imageFiles, Options.Orientation, Options.Alignment, Options.Space, Options.WrapAfter,
+                            Options.AutoFillBackground);
 
                         if (output != null)
                         {
@@ -221,6 +234,8 @@ namespace ShareX.MediaLib
                 {
                     lvImages.Items.Add(file);
                 }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
             }
         }
     }
