@@ -373,13 +373,13 @@ namespace ShareX.HelpersLib
 
         private void cbTransparent_Click(object sender, EventArgs e)
         {
-            if (nudAlpha.Value == 0)
+            if (nudAlpha.Value == 255)
             {
-                nudAlpha.Value = 255;
+                nudAlpha.Value = 0;
             }
             else
             {
-                nudAlpha.Value = 0;
+                nudAlpha.Value = 255;
             }
         }
 
