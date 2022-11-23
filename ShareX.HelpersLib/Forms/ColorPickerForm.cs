@@ -506,5 +506,70 @@ namespace ShareX.HelpersLib
         }
 
         #endregion Events
+
+        private void nudRed_Enter(object sender, EventArgs e)
+        {
+            nudRed.Select(0, 3);
+        }
+
+        private void nudGreen_Enter(object sender, EventArgs e)
+        {
+            nudGreen.Select(0, 3);
+        }
+
+        private void nudBlue_Enter(object sender, EventArgs e)
+        {
+            nudBlue.Select(0, 3);
+        }
+
+        private void nudHue_Enter(object sender, EventArgs e)
+        {
+            nudHue.Select(0, 3);
+        }
+
+        private void nudSaturation_Enter(object sender, EventArgs e)
+        {
+            nudSaturation.Select(0, 3);
+        }
+
+        private void nudBrightness_Enter(object sender, EventArgs e)
+        {
+            nudBrightness.Select(0, 3);
+        }
+
+        private void nudAlpha_Enter(object sender, EventArgs e)
+        {
+            nudAlpha.Select(0, 3);
+        }
+
+        private void nudCyan_Enter(object sender, EventArgs e)
+        {
+            nudCyan.Select(0,5);
+        }
+
+        private void nudMagenta_Enter(object sender, EventArgs e)
+        {
+            nudMagenta.Select(0, 5);
+        }
+
+        private void nudYellow_Enter(object sender, EventArgs e)
+        {
+            nudYellow.Select(0, 5);
+        }
+
+        private void nudKey_Enter(object sender, EventArgs e)
+        {
+            nudKey.Select(0, 5);
+        }
+
+        private void txtHex_Enter(object sender, EventArgs e)
+        {
+            txtHex.SelectAll();
+        }
+
+        private void txtDecimal_Enter(object sender, EventArgs e)
+        {
+            txtDecimal.SelectAll();
+        }
     }
 }
