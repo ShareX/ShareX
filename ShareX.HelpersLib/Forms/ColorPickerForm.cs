@@ -247,7 +247,7 @@ namespace ShareX.HelpersLib
 
             if (type != ColorType.Hex)
             {
-                txtHex.Text = ColorHelpers.ColorToHex(color);
+                txtHex.Text = ColorHelpers.ColorToHex(color, color.IsOpaque ? ColorFormat.RGB : ColorFormat.RGBA);
             }
 
             if (type != ColorType.Decimal)
