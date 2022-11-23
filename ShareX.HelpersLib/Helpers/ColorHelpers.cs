@@ -169,10 +169,12 @@ namespace ShareX.HelpersLib
 
         public static Color HexToColor(string hex, ColorFormat format = ColorFormat.RGB)
         {
-            if (string.IsNullOrEmpty(hex))
+            if (string.IsNullOrWhiteSpace(hex))
             {
                 return Color.Empty;
             }
+
+            hex = hex.Trim();
 
             if (hex[0] == '#')
             {
@@ -183,10 +185,27 @@ namespace ShareX.HelpersLib
                 hex = hex.Remove(0, 2);
             }
 
-            if (((format == ColorFormat.RGBA || format == ColorFormat.ARGB) && hex.Length != 8) ||
-                (format == ColorFormat.RGB && hex.Length != 6))
+            if (format == ColorFormat.RGB)
             {
-                return Color.Empty;
+                if (hex.Length == 3)
+                {
+                    hex = string.Format("{0}{0}{1}{1}{2}{2}", hex[0], hex[1], hex[2]);
+                }
+                else if (hex.Length != 6)
+                {
+                    return Color.Empty;
+                }
+            }
+            else if (format == ColorFormat.RGBA || format == ColorFormat.ARGB)
+            {
+                if (hex.Length == 4)
+                {
+                    hex = string.Format("{0}{0}{1}{1}{2}{2}{3}{3}", hex[0], hex[1], hex[2], hex[3]);
+                }
+                else if (hex.Length != 8)
+                {
+                    return Color.Empty;
+                }
             }
 
             int r, g, b, a;
