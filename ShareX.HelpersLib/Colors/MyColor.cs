@@ -33,6 +33,7 @@ namespace ShareX.HelpersLib
         public HSB HSB;
         public CMYK CMYK;
 
+        // TODO: Rename to `HasAlpha`, `HasOpacity`, or `HasTransparency` (IsTransparent implies opacity of 0)
         public bool IsTransparent
         {
             get
@@ -40,6 +41,8 @@ namespace ShareX.HelpersLib
                 return RGBA.Alpha < 255;
             }
         }
+
+        public bool IsOpaque => RGBA.Alpha == 255;
 
         public MyColor(Color color)
         {
