@@ -1,6 +1,6 @@
 # ShareX
 
-[![Build status](https://img.shields.io/appveyor/build/ShareX/ShareX?label=Build&cacheSeconds=3600)](https://ci.appveyor.com/project/ShareX/sharex)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ShareX/ShareX/Build%20ShareX?label=Build&cacheSeconds=3600)](https://github.com/ShareX/ShareX/actions/workflows/build.yml)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/ShareX/ShareX?label=CodeFactor&cacheSeconds=3600)](https://www.codefactor.io/repository/github/sharex/sharex)
 [![License](https://img.shields.io/github/license/ShareX/ShareX?label=License&color=brightgreen&cacheSeconds=3600)](./LICENSE.txt)
 [![Release](https://img.shields.io/github/v/release/ShareX/ShareX?label=Release&color=brightgreen&cacheSeconds=3600)](https://github.com/ShareX/ShareX/releases/latest)
