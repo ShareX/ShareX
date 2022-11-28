@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2" IgnorableNamespaces="desktop2">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+         xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+         xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
+         xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
+         xmlns:desktop5="http://schemas.microsoft.com/appx/manifest/desktop/windows10/5"
+         xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+         IgnorableNamespaces="uap uap2 uap3 rescap desktop desktop2 desktop4 desktop5 com">
   <Identity Name="19568ShareX.ShareX" ProcessorArchitecture="x64" Publisher="CN=366A5DE5-2EC7-43FD-B559-05986578C4CC" Version="14.1.0.0" />
   <Properties>
     <DisplayName>ShareX</DisplayName>
@@ -32,6 +42,23 @@
         </uap:DefaultTile>
       </uap:VisualElements>
       <Extensions>
+        <desktop4:Extension Category="windows.fileExplorerContextMenus">
+          <desktop4:FileExplorerContextMenus>
+            <desktop5:ItemType Type="Directory">
+              <desktop5:Verb Id="UploadWithShareX" Clsid="4B905A2A-D71C-48D1-AE87-33B15375E13D" />
+            </desktop5:ItemType>
+            <desktop4:ItemType Type="*">
+              <desktop4:Verb Id="UploadWithShareX" Clsid="4B905A2A-D71C-48D1-AE87-33B15375E13D" />
+            </desktop4:ItemType>
+          </desktop4:FileExplorerContextMenus>
+        </desktop4:Extension>
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:ExeServer Executable="ShareX.ContextMenuHandler.exe" DisplayName="Context menu verb handler">
+              <com:Class Id="4B905A2A-D71C-48D1-AE87-33B15375E13D" />
+            </com:ExeServer>
+          </com:ComServer>
+        </com:Extension>
         <desktop:Extension Category="windows.startupTask" Executable="ShareX.exe" EntryPoint="Windows.FullTrustApplication">
           <desktop:StartupTask TaskId="ShareX" Enabled="true" DisplayName="ShareX" />
         </desktop:Extension>

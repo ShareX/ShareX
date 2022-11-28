@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
+
 using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
@@ -65,6 +67,7 @@ namespace ShareX.Setup
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, "ShareX.NativeMessagingHost", "bin", Configuration);
+        private static string ContextMenuHandlerDir => Path.Combine(ParentDir, "ShareX.ContextMenuHandler", "bin", Configuration, "net48");
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
@@ -88,8 +91,17 @@ namespace ShareX.Setup
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
-        private const string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\makeappx.exe";
-        private const string MakeAppxPathAppVeyor = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
+
+        private static string GetMakeAppxPath()
+        {
+            using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows Kits\Installed Roots"))
+            {
+                var sdkRoot = (string)key.GetValue("KitsRoot10");
+                var installedSdkVersions = key.GetSubKeyNames();
+                return Path.Combine(sdkRoot, "bin", installedSdkVersions[0], "x64", "makeappx.exe");
+            }
+        }
+
         private const string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip";
 
         private static void Main(string[] args)
@@ -287,7 +299,7 @@ namespace ShareX.Setup
             {
                 ProcessStartInfo psi = new ProcessStartInfo()
                 {
-                    FileName = AppVeyor ? MakeAppxPathAppVeyor : MakeAppxPath,
+                    FileName = GetMakeAppxPath(),
                     Arguments = $"pack /d \"{MicrosoftStoreOutputDir}\" /p \"{MicrosoftStoreAppxPath}\" /l /o",
                     UseShellExecute = false
                 };
@@ -377,6 +389,7 @@ namespace ShareX.Setup
             else if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
                 FileHelpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
+                FileHelpers.CopyAll(ContextMenuHandlerDir, destination);
             }
 
             Console.WriteLine("Folder created: " + destination);

@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.ContextMenuHandler", "ShareX.ContextMenuHandler\ShareX.ContextMenuHandler.csproj", "{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -152,6 +154,16 @@ Global
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Release|Any CPU.Build.0 = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.ActiveCfg = Steam|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.Build.0 = Steam|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.MicrosoftStore|Any CPU.ActiveCfg = MicrosoftStore|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.MicrosoftStore|Any CPU.Build.0 = MicrosoftStore|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.MicrosoftStoreDebug|Any CPU.ActiveCfg = MicrosoftStoreDebug|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.MicrosoftStoreDebug|Any CPU.Build.0 = MicrosoftStoreDebug|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.Steam|Any CPU.ActiveCfg = Steam|Any CPU
+		{F5E784E2-7D2A-4A39-A83C-F3836F3C7DEC}.Steam|Any CPU.Build.0 = Steam|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
