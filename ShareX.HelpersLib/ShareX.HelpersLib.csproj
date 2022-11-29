@@ -546,6 +546,9 @@
     <EmbeddedResource Include="Forms\ClipboardViewerForm.tr.resx">
       <DependentUpon>ClipboardViewerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardViewerForm.vi-VN.resx">
+      <DependentUpon>ClipboardViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardViewerForm.zh-CN.resx">
       <DependentUpon>ClipboardViewerForm.cs</DependentUpon>
     </EmbeddedResource>

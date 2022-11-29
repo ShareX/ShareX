@@ -466,6 +466,9 @@
     <EmbeddedResource Include="Controls\TaskThumbnailPanel.tr.resx">
       <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskThumbnailPanel.vi-VN.resx">
+      <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\TaskThumbnailPanel.zh-CN.resx">
       <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -978,6 +981,12 @@
     <EmbeddedResource Include="Forms\BeforeUploadForm.zh-TW.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.vi-VN.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.vi-VN.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.ja-JP.resx">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -994,6 +1003,9 @@
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.tr.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.vi-VN.resx">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.zh-CN.resx">
@@ -1015,6 +1027,9 @@
       <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.tr.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.vi-VN.resx">
       <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.zh-CN.resx">
@@ -1449,7 +1464,13 @@
     <EmbeddedResource Include="Tools\OCR\OCRForm.tr.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.vi-VN.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.tr.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.vi-VN.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenForm.resx">
@@ -1864,6 +1885,9 @@
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.tr.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.vi-VN.resx">
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

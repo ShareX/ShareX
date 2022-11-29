@@ -205,6 +205,9 @@
     <EmbeddedResource Include="Forms\ImageEffectPackagerForm.tr.resx">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.vi-VN.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectPackagerForm.zh-CN.resx">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </EmbeddedResource>
