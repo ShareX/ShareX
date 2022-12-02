@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net48</TargetFramework>
-    <Configurations>Debug;Release;MicrosoftStoreDebug;MicrosoftStore;Steam;</Configurations>
+    <Configurations>Debug;Release;Steam;MicrosoftStore;MicrosoftStoreDebug</Configurations>
   </PropertyGroup>
 
 </Project>

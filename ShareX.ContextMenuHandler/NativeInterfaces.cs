@@ -158,5 +158,30 @@ namespace ShareX.ContextMenuHandler
 
         void Compare(IShellItem psi, uint hint, out int piOrder);
     }
+
+    [Guid("00000001-0000-0000-C000-000000000046")]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [SuppressUnmanagedCodeSecurity]
+    public interface IClassFactory
+    {
+        void CreateInstance(IntPtr pUnkOuter, ref Guid riid, out IntPtr ppvObject);
+        void LockServer(bool fLock);
+    }
+
+    [SuppressUnmanagedCodeSecurity]
+    internal static class NativeMethods
+    {
+        [DllImport("ole32", PreserveSig = false, ExactSpelling = true)]
+        internal static extern void CoRegisterClassObject(in Guid rclsid, [MarshalAs(UnmanagedType.IUnknown)] object pUnk, RegistrationClassContext dwClsContext, RegistrationConnectionType flags, out uint lpdwRegister);
+
+        [DllImport("ole32", PreserveSig = false, ExactSpelling = true)]
+        internal static extern void CoRevokeClassObject(uint dwRegister);
+
+        [DllImport("ole32", ExactSpelling = true)]
+        internal static extern uint CoReleaseServerProcess();
+
+        [DllImport("ole32", ExactSpelling = true)]
+        internal static extern uint CoAddRefServerProcess();
+    }
 }
 

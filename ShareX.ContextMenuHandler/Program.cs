@@ -4,17 +4,13 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-
 namespace ShareX.ContextMenuHandler
 {
     internal class Program
     {   
         static void Main(string[] args)
         {
-            var services = new RegistrationServices();
-            var cookie = services.RegisterTypeForComClients(typeof(ShareXContextMenuHandler), RegistrationClassContext.LocalServer, RegistrationConnectionType.MultipleUse);
-            Console.ReadKey();
-            services.UnregisterTypeForComClients(cookie);
+            ContextMenuClassFactory.Run();
         }
     }
 
@@ -23,6 +19,15 @@ namespace ShareX.ContextMenuHandler
     [ClassInterface(ClassInterfaceType.None)]
     public class ShareXContextMenuHandler : IExplorerCommand
     {
+        public ShareXContextMenuHandler()
+        {
+            NativeMethods.CoAddRefServerProcess();
+        }
+
+        ~ShareXContextMenuHandler()
+        {
+            ContextMenuClassFactory.ReleaseServerProcess();
+        }
 
         public void GetTitle(IShellItemArray psiItemArray, [MarshalAs(UnmanagedType.LPWStr)] out string ppszName)
         {
@@ -47,7 +52,8 @@ namespace ShareX.ContextMenuHandler
         public void GetState(IShellItemArray psiItemArray, bool fOkToBeSlow, out EXPCMDSTATE pCmdState)
         {
             psiItemArray.GetCount(out var count);
-            // For now, we only support selecting one item at a time. 
+            // For now, we only support selecting one item at a time.
+            // Implementing support for multi-selection may need better UI in ShareX.
             if (count != 1)
             {
                 pCmdState = EXPCMDSTATE.ECS_HIDDEN;
