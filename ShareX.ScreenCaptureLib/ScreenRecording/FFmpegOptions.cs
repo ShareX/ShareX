@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
 
         // Video
         public FFmpegPreset x264_Preset { get; set; } = FFmpegPreset.ultrafast;
-        public int x264_CRF { get; set; } = 28;
+        public int x264_CRF { get; set; } = 23;
         public bool x264_Use_Bitrate { get; set; } = false;
         public int x264_Bitrate { get; set; } = 3000; // kbit/s
         public int VPx_Bitrate { get; set; } = 3000; // kbit/s
