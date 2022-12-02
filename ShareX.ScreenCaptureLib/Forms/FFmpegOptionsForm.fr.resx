@@ -127,7 +127,7 @@
     <value>Bitrate :</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constante Rate Factor (CRF) : La valeur peut être comprise entre 0 à 51, 0 étant sans perte, 30 étant la valeur par défaut et 51 étant la pire possible.
+    <value>Constante Rate Factor (CRF) : La valeur peut être comprise entre 0 à 51, 0 étant sans perte, 23 étant la valeur par défaut et 51 étant la pire possible.
 Une valeur élevée signifie une mauvaise qualité d'image mais un fichier léger.</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">

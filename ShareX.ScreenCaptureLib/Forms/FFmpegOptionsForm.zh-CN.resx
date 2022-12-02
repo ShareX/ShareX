@@ -154,7 +154,7 @@
     <value>质量：</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>CRF：范围为 0-51。其中，0 表示无损，30 为默认值，51 表示最差质量。
+    <value>CRF：范围为 0-51。其中，0 表示无损，23 为默认值，51 表示最差质量。
 值越高质量越差，但文件体积越小。</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">

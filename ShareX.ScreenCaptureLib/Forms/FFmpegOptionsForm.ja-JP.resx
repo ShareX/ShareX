@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>CRF (Constant Rate Factor): 範囲は0-51、0 はロスレス、30 が既定、51 は最低画質。
+    <value>CRF (Constant Rate Factor): 範囲は0-51、0 はロスレス、23 が既定、51 は最低画質。
 値が大きいほど画質は悪くなるが、ファイルサイズは小さくなる。</value>
   </data>
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">

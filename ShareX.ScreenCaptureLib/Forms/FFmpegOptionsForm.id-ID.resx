@@ -200,7 +200,7 @@
 Bila tidak, tidak bisa mengikuti rekaman dan banyak frame yang terbuang akan terjadi.</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Faktor Laju Konstan (CRF): Nilai bisa antara 0-51, 0 (lossless), 30 (bawaan), dan 51 (terburuk).
+    <value>Faktor Laju Konstan (CRF): Nilai bisa antara 0-51, 0 (lossless), 23 (bawaan), dan 51 (terburuk).
 Nilai lebih tinggi berarti kualitas buruk, tetapi ukuran file kecil.</value>
   </data>
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">

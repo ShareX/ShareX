@@ -121,7 +121,7 @@
     <value>CRF:</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Factor de rată constantă (CRF): Valoarea poate fi cuprinsă între 0-51, unde 0 este fără pierderi, 30 este valoarea implicită, iar 51 este cea mai proastă valoare posibilă.
+    <value>Factor de rată constantă (CRF): Valoarea poate fi cuprinsă între 0-51, unde 0 este fără pierderi, 23 este valoarea implicită, iar 51 este cea mai proastă valoare posibilă.
 O valoare mai mare înseamnă o calitate proastă, dar o dimensiune redusă a fișierului.</value>
   </data>
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">

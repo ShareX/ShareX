@@ -127,7 +127,7 @@
     <value>Sử dụng đường dẫn tùy chỉnh</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Nhân tố thừa số không đổi (Constant Rate Factor - CRF): Phạm vi của bộ lượng tử hóa là 0-51: trong đó 0 là lossless (không mất mát thông tin), 30 là mặc định, 51 là tồi nhất.
+    <value>Nhân tố thừa số không đổi (Constant Rate Factor - CRF): Phạm vi của bộ lượng tử hóa là 0-51: trong đó 0 là lossless (không mất mát thông tin), 23 là mặc định, 51 là tồi nhất.
 Giá trị cao hơn cho kết quả tệ hơn nhưng kích thước tệp sẽ nhỏ hơn</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">

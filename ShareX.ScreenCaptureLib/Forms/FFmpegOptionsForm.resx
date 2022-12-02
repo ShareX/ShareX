@@ -163,7 +163,7 @@
     <value>Center</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constant Rate Factor (CRF): The value can be between 0-51, where 0 is lossless, 30 is default, and 51 is the worst possible.
+    <value>Constant Rate Factor (CRF): The value can be between 0-51, where 0 is lossless, 23 is default, and 51 is the worst possible.
 A higher value means bad quality, but a low file size.</value>
   </data>
   <data name="&gt;&gt;nudx264CRF.Name" xml:space="preserve">

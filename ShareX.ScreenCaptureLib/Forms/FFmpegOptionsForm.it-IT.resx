@@ -202,7 +202,7 @@ Altrimenti ci sarà una perdita considerevole di frame.</value>
 
 Valore 0-51:
 - 00: Senza perdita di qualità
-- 30: Predefinito
+- 23: Predefinito
 - 51: Peggiore
 
 Un valore alto significa cattiva qualità, ma dimensione del file inferiore.</value>

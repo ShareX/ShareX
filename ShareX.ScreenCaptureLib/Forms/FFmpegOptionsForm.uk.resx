@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Постійний коефіцієнт (CRF): можливий діапазон 0–51, де 0 — без втрат, 30 — типовий, а 51 — найгірший можливий.
+    <value>Постійний коефіцієнт (CRF): можливий діапазон 0–51, де 0 — без втрат, 23 — типовий, а 51 — найгірший можливий.
 Більше значення означає гіршу якість, проте менший розмір файлу.</value>
   </data>
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">

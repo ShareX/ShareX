@@ -121,7 +121,7 @@
     <value>CRF:</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Factor de taxa constante (CRF): O valor pode ser entre 0-51, em que 0 é sem perdas, 30 é padrão, e 51 é pior qualidade possível.
+    <value>Factor de taxa constante (CRF): O valor pode ser entre 0-51, em que 0 é sem perdas, 23 é padrão, e 51 é pior qualidade possível.
 
 Um valor mais alto significa pior qualidade, mas com um tamanho de ficheiro menor.</value>
   </data>

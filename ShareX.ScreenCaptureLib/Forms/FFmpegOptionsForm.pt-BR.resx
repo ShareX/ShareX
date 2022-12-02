@@ -187,7 +187,7 @@
     <value>Modo de pontilhado:</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constant Rate Factor (CRF): O valor pode ser entre 0-51, onde 0 é sem perdas, 30 é o padrão, e 51 é o pior possível.
+    <value>Constant Rate Factor (CRF): O valor pode ser entre 0-51, onde 0 é sem perdas, 23 é o padrão, e 51 é o pior possível.
 Um valor maior significa uma qualidade pior mas tamanho reduzido.</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">

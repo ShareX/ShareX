@@ -153,7 +153,7 @@
     <value>品質：</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>CRF：範圍為 0-51，其中 0 為無損，30 為預設值，51 為最差品質。
+    <value>CRF：範圍為 0-51，其中 0 為無損，23 為預設值，51 為最差品質。
 值越高品質越差，但檔案越小。</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">

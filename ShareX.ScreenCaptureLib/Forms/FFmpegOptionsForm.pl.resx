@@ -220,7 +220,7 @@ W przypadku enkodowania w czasie rzeczywistym (np. nagrywanie ekranu), ustawieni
     <value>Kontroluje indeks skali Bayera, wyższa skala spowoduje wyświetlenie większej liczby pasm. Wartość domyślna to 2.</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Constant Rate Factor (CRF): Wartość może zawierać się w przedziale 0-51, gdzie 0 oznacza bezstratność, 30 to wartość domyślna, a 51 to najgorsza z możliwych.
+    <value>Constant Rate Factor (CRF): Wartość może zawierać się w przedziale 0-51, gdzie 0 oznacza bezstratność, 23 to wartość domyślna, a 51 to najgorsza z możliwych.
 Wyższa wartość oznacza złą jakość, ale niski rozmiar pliku.</value>
   </data>
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">
