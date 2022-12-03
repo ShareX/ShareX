@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
 using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
@@ -61,6 +62,7 @@ namespace ShareX.Setup
         private static string ParentDir;
         private static string Configuration;
         private static string AppVersion;
+        private static string WindowsKitsDir;
 
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
@@ -86,10 +88,9 @@ namespace ShareX.Setup
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
+        private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
-        private const string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\makeappx.exe";
-        private const string MakeAppxPathAppVeyor = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
         private const string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v5.1/ffmpeg-5.1-win64.zip";
 
         private static void Main(string[] args)
@@ -241,6 +242,14 @@ namespace ShareX.Setup
             AppVersion = $"{versionInfo.ProductMajorPart}.{versionInfo.ProductMinorPart}.{versionInfo.ProductBuildPart}";
 
             Console.WriteLine("Application version: " + AppVersion);
+
+            string sdkInstallationFolder = RegistryHelpers.GetValueString(@"SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v10.0",
+                "InstallationFolder", RegistryHive.LocalMachine);
+            string sdkProductVersion = RegistryHelpers.GetValueString(@"SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v10.0",
+                "ProductVersion", RegistryHive.LocalMachine);
+            WindowsKitsDir = Path.Combine(sdkInstallationFolder, "bin", Helpers.NormalizeVersion(sdkProductVersion).ToString());
+
+            Console.WriteLine("Windows Kits directory: " + WindowsKitsDir);
         }
 
         private static void CompileSetup()
@@ -287,7 +296,7 @@ namespace ShareX.Setup
             {
                 ProcessStartInfo psi = new ProcessStartInfo()
                 {
-                    FileName = AppVeyor ? MakeAppxPathAppVeyor : MakeAppxPath,
+                    FileName = MakeAppxPath,
                     Arguments = $"pack /d \"{MicrosoftStoreOutputDir}\" /p \"{MicrosoftStoreAppxPath}\" /l /o",
                     UseShellExecute = false
                 };

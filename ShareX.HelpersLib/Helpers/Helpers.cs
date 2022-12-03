@@ -307,7 +307,7 @@ namespace ShareX.HelpersLib
             return CompareVersion(version, Application.ProductVersion);
         }
 
-        private static Version NormalizeVersion(string version)
+        public static Version NormalizeVersion(string version)
         {
             return Version.Parse(version).Normalize();
         }
