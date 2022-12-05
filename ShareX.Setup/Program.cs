@@ -243,13 +243,16 @@ namespace ShareX.Setup
 
             Console.WriteLine("Application version: " + AppVersion);
 
-            string sdkInstallationFolder = RegistryHelpers.GetValueString(@"SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v10.0",
-                "InstallationFolder", RegistryHive.LocalMachine);
-            string sdkProductVersion = RegistryHelpers.GetValueString(@"SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v10.0",
-                "ProductVersion", RegistryHive.LocalMachine);
-            WindowsKitsDir = Path.Combine(sdkInstallationFolder, "bin", Helpers.NormalizeVersion(sdkProductVersion).ToString());
+            if (Job.HasFlag(SetupJobs.CompileAppx))
+            {
+                string sdkInstallationFolder = RegistryHelpers.GetValueString(@"SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v10.0",
+                    "InstallationFolder", RegistryHive.LocalMachine);
+                string sdkProductVersion = RegistryHelpers.GetValueString(@"SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v10.0",
+                    "ProductVersion", RegistryHive.LocalMachine);
+                WindowsKitsDir = Path.Combine(sdkInstallationFolder, "bin", Helpers.NormalizeVersion(sdkProductVersion).ToString());
 
-            Console.WriteLine("Windows Kits directory: " + WindowsKitsDir);
+                Console.WriteLine("Windows Kits directory: " + WindowsKitsDir);
+            }
         }
 
         private static void CompileSetup()
