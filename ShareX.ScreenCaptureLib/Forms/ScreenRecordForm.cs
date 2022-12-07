@@ -37,43 +37,25 @@ namespace ShareX.ScreenCaptureLib
     {
         public event Action StopRequested;
 
-        private ScreenRecordingStatus status;
-
-        public ScreenRecordingStatus Status
-        {
-            get
-            {
-                return status;
-            }
-            private set
-            {
-                status = value;
-            }
-        }
+        public ScreenRecordingStatus Status { get; private set; }
 
         public TimeSpan Countdown { get; set; }
         public bool IsCountdown { get; private set; }
         public Stopwatch Timer { get; private set; }
         public ManualResetEvent RecordResetEvent { get; set; }
 
-        public bool ActivateWindow { get; set; } = true;
-        public float Duration { get; set; } = 0;
-        public bool AskConfirmationOnAbort { get; set; } = false;
+        public bool ActivateWindow { get; } = true;
+        public float Duration { get; } = 0;
+        public bool AskConfirmationOnAbort { get; } = false;
 
         public Rectangle RecordingRegion
         {
-            get
-            {
-                return GetRecordingRegion(Location);
-            }
+            get => GetRecordingRegion(Location);
         }
 
         protected override bool ShowWithoutActivation
         {
-            get
-            {
-                return !ActivateWindow;
-            }
+            get => !ActivateWindow;
         }
 
         protected override CreateParams CreateParams
@@ -94,8 +76,12 @@ namespace ShareX.ScreenCaptureLib
         private static int lastIconStatus = -1;
         private const int panelOffset = 3;
 
-        public ScreenRecordForm(Rectangle regionRectangle)
-        {
+        public ScreenRecordForm (
+            Rectangle regionRectangle,
+            bool activateWindow,
+            float duration,
+            bool askConfirmationOnAbort
+        ) {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
             niTray.Icon = ShareXResources.Icon;
@@ -127,6 +113,10 @@ namespace ShareX.ScreenCaptureLib
             RecordResetEvent = new ManualResetEvent(false);
 
             ChangeState(ScreenRecordState.Waiting);
+
+            ActivateWindow = activateWindow;
+            Duration = duration;
+            AskConfirmationOnAbort = askConfirmationOnAbort;
         }
 
         protected override void Dispose(bool disposing)
@@ -241,22 +231,21 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateTimer()
         {
-            if (!IsDisposed)
+            if (IsDisposed) return;
+            
+            TimeSpan timer;
+
+            if (IsCountdown)
             {
-                TimeSpan timer;
-
-                if (IsCountdown)
-                {
-                    timer = Countdown - Timer.Elapsed;
-                    if (timer.Ticks < 0) timer = TimeSpan.Zero;
-                }
-                else
-                {
-                    timer = Timer.Elapsed;
-                }
-
-                lblTimer.Text = timer.ToString("mm\\:ss\\:ff");
+                timer = Countdown - Timer.Elapsed;
+                if (timer.Ticks < 0) timer = TimeSpan.Zero;
             }
+            else
+            {
+                timer = Timer.Elapsed;
+            }
+
+            lblTimer.Text = timer.ToString("mm\\:ss\\:ff");
         }
 
         private void UpdateUI()
@@ -329,43 +318,43 @@ namespace ShareX.ScreenCaptureLib
         {
             niTray.Text = $"ShareX - {Resources.ScreenRecordForm_StartRecording_Encoding___} {progress}%";
 
-            if (niTray.Visible && lastIconStatus != progress)
-            {
-                Icon icon;
+            if (!niTray.Visible || lastIconStatus == progress) return;
+            
+            Icon icon;
 
-                if (progress >= 0)
+            if (progress >= 0)
+            {
+                try
                 {
-                    try
-                    {
-                        icon = Helpers.GetProgressIcon(progress, Color.FromArgb(140, 0, 36));
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                        progress = -1;
-                        if (lastIconStatus == progress) return;
-                        icon = Resources.camcorder__pencil.ToIcon();
-                    }
+                    icon = Helpers.GetProgressIcon(progress, Color.FromArgb(140, 0, 36));
                 }
-                else
+                catch (Exception e)
                 {
+                    DebugHelper.WriteException(e);
+                    progress = -1;
+                    if (lastIconStatus == progress)
+                        return;
                     icon = Resources.camcorder__pencil.ToIcon();
                 }
-
-                using (Icon oldIcon = niTray.Icon)
-                {
-                    niTray.Icon = icon;
-                    oldIcon.DisposeHandle();
-                }
-
-                lastIconStatus = progress;
             }
+            else
+            {
+                icon = Resources.camcorder__pencil.ToIcon();
+            }
+
+            using (Icon oldIcon = niTray.Icon)
+            {
+                niTray.Icon = icon;
+                oldIcon.DisposeHandle();
+            }
+
+            lastIconStatus = progress;
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            using (Pen pen1 = new Pen(ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : Color.Black) { DashPattern = new float[] { 5, 5 } })
-            using (Pen pen2 = new Pen(borderColor) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
+            using (var pen1 = new Pen(ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : Color.Black) { DashPattern = new float[] { 5, 5 } })
+            using (var pen2 = new Pen(borderColor) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
             {
                 e.Graphics.DrawRectangleProper(pen1, borderRectangle0Based);
                 e.Graphics.DrawRectangleProper(pen2, borderRectangle0Based);
@@ -397,30 +386,32 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnStart_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                StartStopRecording();
-            }
+            if (e.Button != MouseButtons.Left) return;
+            StartStopRecording();
         }
 
         private void btnPause_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                PauseResumeRecording();
-            }
+            if (e.Button != MouseButtons.Left) return;
+            PauseResumeRecording();
         }
 
         private void btnAbort_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                if (!AskConfirmationOnAbort || MessageBox.Show(Resources.ScreenRecordForm_ConfirmCancel, "ShareX", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    AbortRecording();
-                }
+            if (e.Button != MouseButtons.Left) return;
+
+            if (
+                !AskConfirmationOnAbort ||
+                MessageBox.Show(
+                    Resources.ScreenRecordForm_ConfirmCancel,
+                    "ShareX",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                ) == DialogResult.Yes
+            ) {
+                AbortRecording();
             }
+                
         }
 
         private void lblTimer_MouseDown(object sender, MouseEventArgs e)
@@ -434,28 +425,25 @@ namespace ShareX.ScreenCaptureLib
 
         private void lblTimer_MouseMove(object sender, MouseEventArgs e)
         {
-            if (dragging)
+            if (!dragging) return;
+            
+            Point newLocation = new Point(Location.X + e.X - initialLocation.X, Location.Y + e.Y - initialLocation.Y);
+            Rectangle recordingRegion = GetRecordingRegion(newLocation);
+            if (CaptureHelpers.GetScreenBounds().Contains(recordingRegion))
             {
-                Point newLocation = new Point(Location.X + e.X - initialLocation.X, Location.Y + e.Y - initialLocation.Y);
-                Rectangle recordingRegion = GetRecordingRegion(newLocation);
-                if (CaptureHelpers.GetScreenBounds().Contains(recordingRegion))
-                {
-                    Location = newLocation;
-                    Update();
-                }
-                else
-                {
-                    initialLocation = e.Location;
-                }
+                Location = newLocation;
+                Update();
+            }
+            else
+            {
+                initialLocation = e.Location;
             }
         }
 
         private void lblTimer_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                dragging = false;
-            }
+            if (e.Button != MouseButtons.Left) return;
+            dragging = false;
         }
     }
 }

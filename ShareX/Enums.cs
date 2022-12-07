@@ -35,11 +35,11 @@ namespace ShareX
 {
     public enum ShareXBuild
     {
-        Debug,
-        Release,
-        Steam,
-        MicrosoftStore,
-        Unknown
+        Debug          ,
+        Release        ,
+        Steam          ,
+        MicrosoftStore ,
+        Unknown        ,
     }
 
     public enum SupportedLanguage
@@ -93,200 +93,205 @@ namespace ShareX
 
     public enum TaskJob
     {
-        Job,
-        DataUpload,
-        FileUpload,
-        TextUpload,
-        ShortenURL,
-        ShareURL,
-        Download,
-        DownloadUpload
+        Job            ,
+        DataUpload     ,
+        FileUpload     ,
+        TextUpload     ,
+        ShortenURL     ,
+        ShareURL       ,
+        Download       ,
+        DownloadUpload ,
     }
 
     public enum TaskStatus
     {
-        InQueue,
-        Preparing,
-        Working,
-        Stopping,
-        Stopped,
-        Failed,
-        Completed,
-        History
+        InQueue   ,
+        Preparing ,
+        Working   ,
+        Stopping  ,
+        Stopped   ,
+        Failed    ,
+        Completed ,
+        History   ,
     }
 
     [Flags]
     public enum AfterCaptureTasks // Localized
     {
-        None = 0,
-        ShowQuickTaskMenu = 1,
-        ShowAfterCaptureWindow = 1 << 1,
-        AddImageEffects = 1 << 2,
-        AnnotateImage = 1 << 3,
-        CopyImageToClipboard = 1 << 4,
-        PinToScreen = 1 << 5,
-        SendImageToPrinter = 1 << 6,
-        SaveImageToFile = 1 << 7,
-        SaveImageToFileWithDialog = 1 << 8,
-        SaveThumbnailImageToFile = 1 << 9,
-        PerformActions = 1 << 10,
-        CopyFileToClipboard = 1 << 11,
-        CopyFilePathToClipboard = 1 << 12,
-        ShowInExplorer = 1 << 13,
-        ScanQRCode = 1 << 14,
-        DoOCR = 1 << 15,
-        ShowBeforeUploadWindow = 1 << 16,
-        UploadImageToHost = 1 << 17,
-        DeleteFile = 1 << 18
+        None                      =      0  ,
+        ShowQuickTaskMenu         = 1 << 0  ,
+        ShowAfterCaptureWindow    = 1 << 1  ,
+        AddImageEffects           = 1 << 2  ,
+        AnnotateImage             = 1 << 3  ,
+        CopyImageToClipboard      = 1 << 4  ,
+        PinToScreen               = 1 << 5  ,
+        SendImageToPrinter        = 1 << 6  ,
+        SaveImageToFile           = 1 << 7  ,
+        SaveImageToFileWithDialog = 1 << 8  ,
+        SaveThumbnailImageToFile  = 1 << 9  ,
+        PerformActions            = 1 << 10 ,
+        CopyFileToClipboard       = 1 << 11 ,
+        CopyFilePathToClipboard   = 1 << 12 ,
+        ShowInExplorer            = 1 << 13 ,
+        ScanQRCode                = 1 << 14 ,
+        DoOCR                     = 1 << 15 ,
+        ShowBeforeUploadWindow    = 1 << 16 ,
+        UploadImageToHost         = 1 << 17 ,
+        DeleteFile                = 1 << 18 ,
     }
 
     [Flags]
     public enum AfterUploadTasks // Localized
     {
-        None = 0,
-        ShowAfterUploadWindow = 1,
-        UseURLShortener = 1 << 1,
-        ShareURL = 1 << 2,
-        CopyURLToClipboard = 1 << 3,
-        OpenURL = 1 << 4,
-        ShowQRCode = 1 << 5
+        None                  =      0 ,
+        ShowAfterUploadWindow = 1 << 0 ,
+        UseURLShortener       = 1 << 1 ,
+        ShareURL              = 1 << 2 ,
+        CopyURLToClipboard    = 1 << 3 ,
+        OpenURL               = 1 << 4 ,
+        ShowQRCode            = 1 << 5 ,
     }
 
     public enum CaptureType
     {
-        Fullscreen,
-        Monitor,
-        ActiveMonitor,
-        Window,
-        ActiveWindow,
-        Region,
-        CustomRegion,
-        LastRegion
+        Fullscreen    ,
+        Monitor       ,
+        ActiveMonitor ,
+        Window        ,
+        ActiveWindow  ,
+        Region        ,
+        CustomRegion  ,
+        LastRegion    ,
     }
 
     public enum ScreenRecordStartMethod
     {
-        Region,
-        ActiveWindow,
-        CustomRegion,
-        LastRegion
+        Region       ,
+        ActiveWindow ,
+        CustomRegion ,
+        LastRegion   ,
     }
 
     [JsonConverter(typeof(HotkeyTypeEnumConverter))]
     public enum HotkeyType // Localized + Category
     {
         None,
+
         // Upload
-        FileUpload,
-        FolderUpload,
-        ClipboardUpload,
-        ClipboardUploadWithContentViewer,
-        UploadText,
-        UploadURL,
-        DragDropUpload,
-        ShortenURL,
-        TweetMessage,
-        StopUploads,
+        FileUpload                       ,
+        FolderUpload                     ,
+        ClipboardUpload                  ,
+        ClipboardUploadWithContentViewer ,
+        UploadText                       ,
+        UploadURL                        ,
+        DragDropUpload                   ,
+        ShortenURL                       ,
+        TweetMessage                     ,
+        StopUploads                      ,
+
         // Screen capture
-        PrintScreen,
-        ActiveWindow,
-        ActiveMonitor,
-        RectangleRegion,
-        RectangleLight,
-        RectangleTransparent,
-        CustomRegion,
-        LastRegion,
-        ScrollingCapture,
-        AutoCapture,
-        StartAutoCapture,
+        PrintScreen          ,
+        ActiveWindow         ,
+        ActiveMonitor        ,
+        RectangleRegion      ,
+        RectangleLight       ,
+        RectangleTransparent ,
+        CustomRegion         ,
+        LastRegion           ,
+        ScrollingCapture     ,
+        AutoCapture          ,
+        StartAutoCapture     ,
+
         // Screen record
-        ScreenRecorder,
-        ScreenRecorderActiveWindow,
-        ScreenRecorderCustomRegion,
-        StartScreenRecorder,
-        ScreenRecorderGIF,
-        ScreenRecorderGIFActiveWindow,
-        ScreenRecorderGIFCustomRegion,
-        StartScreenRecorderGIF,
-        StopScreenRecording,
-        PauseScreenRecording,
-        AbortScreenRecording,
+        ScreenRecorder                ,
+        ScreenRecorderActiveWindow    ,
+        ScreenRecorderCustomRegion    ,
+        StartScreenRecorder           ,
+        ScreenRecorderGIF             ,
+        ScreenRecorderGIFActiveWindow ,
+        ScreenRecorderGIFCustomRegion ,
+        StartScreenRecorderGIF        ,
+        StopScreenRecording           ,
+        PauseScreenRecording          ,
+        AbortScreenRecording          ,
+
         // Tools
-        ColorPicker,
-        ScreenColorPicker,
-        Ruler,
-        PinToScreen,
-        PinToScreenFromScreen,
-        PinToScreenFromClipboard,
-        PinToScreenFromFile,
-        ImageEditor,
-        ImageEffects,
-        ImageViewer,
-        ImageCombiner,
-        ImageSplitter,
-        ImageThumbnailer,
-        VideoConverter,
-        VideoThumbnailer,
-        OCR,
-        QRCode,
-        QRCodeDecodeFromScreen,
-        HashCheck,
-        IndexFolder,
-        ClipboardViewer,
-        BorderlessWindow,
-        InspectWindow,
-        MonitorTest,
-        DNSChanger,
+        ColorPicker              ,
+        ScreenColorPicker        ,
+        Ruler                    ,
+        PinToScreen              ,
+        PinToScreenFromScreen    ,
+        PinToScreenFromClipboard ,
+        PinToScreenFromFile      ,
+        ImageEditor              ,
+        ImageEffects             ,
+        ImageViewer              ,
+        ImageCombiner            ,
+        ImageSplitter            ,
+        ImageThumbnailer         ,
+        VideoConverter           ,
+        VideoThumbnailer         ,
+        OCR                      ,
+        QRCode                   ,
+        QRCodeDecodeFromScreen   ,
+        HashCheck                ,
+        IndexFolder              ,
+        ClipboardViewer          ,
+        BorderlessWindow         ,
+        InspectWindow            ,
+        MonitorTest              ,
+        DNSChanger               ,
+
         // Other
-        DisableHotkeys,
-        OpenMainWindow,
-        OpenScreenshotsFolder,
-        OpenHistory,
-        OpenImageHistory,
-        ToggleActionsToolbar,
-        ToggleTrayMenu,
-        ExitShareX
+        DisableHotkeys        ,
+        OpenMainWindow        ,
+        OpenScreenshotsFolder ,
+        OpenHistory           ,
+        OpenImageHistory      ,
+        ToggleActionsToolbar  ,
+        ToggleTrayMenu        ,
+        ExitShareX            ,
     }
 
     public enum PopUpNotificationType // Localized
     {
-        None,
-        BalloonTip,
-        ToastNotification
+        None              ,
+        BalloonTip        ,
+        ToastNotification ,
     }
 
     public enum ToastClickAction // Localized
     {
-        CloseNotification,
-        AnnotateImage,
-        CopyImageToClipboard,
-        CopyFile,
-        CopyFilePath,
-        CopyUrl,
-        OpenFile,
-        OpenFolder,
-        OpenUrl,
-        Upload,
-        PinToScreen
+        CloseNotification    ,
+        AnnotateImage        ,
+        CopyImageToClipboard ,
+        CopyFile             ,
+        CopyFilePath         ,
+        CopyUrl              ,
+        OpenFile             ,
+        OpenFolder           ,
+        OpenUrl              ,
+        Upload               ,
+        PinToScreen          ,
     }
 
     public enum ThumbnailViewClickAction // Localized
     {
-        Default,
-        Select,
-        OpenImageViewer,
-        OpenFile,
-        OpenFolder,
-        OpenURL,
-        EditImage
+        Default         ,
+        Select          ,
+        OpenImageViewer ,
+        OpenFile        ,
+        OpenFolder      ,
+        OpenURL         ,
+        EditImage       ,
     }
 
     public enum FileExistAction // Localized
     {
-        Ask,
-        Overwrite,
-        UniqueName,
-        Cancel
+        Ask        ,
+        Overwrite  ,
+        UniqueName ,
+        Cancel     ,
     }
 
     public enum ImagePreviewVisibility // Localized
@@ -312,33 +317,33 @@ namespace ShareX
 #if !MicrosoftStore
     public enum StartupState
     {
-        Disabled,
-        DisabledByUser,
-        Enabled,
-        DisabledByPolicy,
-        EnabledByPolicy
+        Disabled         ,
+        DisabledByUser   ,
+        Enabled          ,
+        DisabledByPolicy ,
+        EnabledByPolicy  ,
     }
 #else
     public enum StartupState
     {
-        Disabled = StartupTaskState.Disabled,
-        DisabledByUser = StartupTaskState.DisabledByUser,
-        Enabled = StartupTaskState.Enabled,
-        DisabledByPolicy = StartupTaskState.DisabledByPolicy,
-        EnabledByPolicy = StartupTaskState.EnabledByPolicy
+        Disabled         = StartupTaskState.Disabled         ,
+        DisabledByUser   = StartupTaskState.DisabledByUser   ,
+        Enabled          = StartupTaskState.Enabled          ,
+        DisabledByPolicy = StartupTaskState.DisabledByPolicy ,
+        EnabledByPolicy  = StartupTaskState.EnabledByPolicy  ,
     }
 #endif
 
     public enum BalloonTipClickAction
     {
-        None,
-        OpenURL,
-        OpenDebugLog
+        None         ,
+        OpenURL      ,
+        OpenDebugLog ,
     }
 
     public enum TaskViewMode // Localized
     {
-        ListView,
-        ThumbnailView
+        ListView      ,
+        ThumbnailView ,
     }
 }

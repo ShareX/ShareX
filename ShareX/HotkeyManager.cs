@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class HotkeyManager
+    public sealed class HotkeyManager
     {
         public List<HotkeySettings> Hotkeys { get; private set; }
         public bool IgnoreHotkeys { get; set; }
@@ -72,14 +72,16 @@ namespace ShareX
 
         private void hotkeyForm_HotkeyPress(ushort id, Keys key, Modifiers modifier)
         {
-            if (!IgnoreHotkeys && (!Program.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+            if (IgnoreHotkeys || Program.Settings.DisableHotkeysOnFullscreen && CaptureHelpers.IsActiveWindowFullscreen())
             {
-                HotkeySettings hotkeySetting = Hotkeys.Find(x => x.HotkeyInfo.ID == id);
+                return;
+            }
 
-                if (hotkeySetting != null)
-                {
-                    OnHotkeyTrigger(hotkeySetting);
-                }
+            HotkeySettings hotkeySetting = Hotkeys.Find(x => x.HotkeyInfo.ID == id);
+
+            if (hotkeySetting != null)
+            {
+                OnHotkeyTrigger(hotkeySetting);
             }
         }
 
@@ -151,14 +153,12 @@ namespace ShareX
 
         public void UnregisterAllHotkeys(bool removeFromList = true, bool temporary = false)
         {
-            if (Hotkeys != null)
+            if (Hotkeys == null) return;
+            foreach (HotkeySettings hotkeySetting in Hotkeys.ToArray())
             {
-                foreach (HotkeySettings hotkeySetting in Hotkeys.ToArray())
+                if (!temporary || hotkeySetting.TaskSettings.Job != HotkeyType.DisableHotkeys)
                 {
-                    if (!temporary || hotkeySetting.TaskSettings.Job != HotkeyType.DisableHotkeys)
-                    {
-                        UnregisterHotkey(hotkeySetting, removeFromList);
-                    }
+                    UnregisterHotkey(hotkeySetting, removeFromList);
                 }
             }
         }
@@ -179,27 +179,26 @@ namespace ShareX
 
         public void ShowFailedHotkeys()
         {
-            List<HotkeySettings> failedHotkeysList = Hotkeys.Where(x => x.HotkeyInfo.Status == HotkeyStatus.Failed).ToList();
+            var failedHotkeysList = Hotkeys.Where(x => x.HotkeyInfo.Status == HotkeyStatus.Failed).ToArray();
 
-            if (failedHotkeysList.Count > 0)
-            {
-                string failedHotkeys = string.Join("\r\n", failedHotkeysList.Select(x => x.TaskSettings.ToString() + ": " + x.HotkeyInfo.ToString()));
-                string hotkeyText = failedHotkeysList.Count > 1 ? Resources.HotkeyManager_ShowFailedHotkeys_hotkeys : Resources.HotkeyManager_ShowFailedHotkeys_hotkey;
-                string text = string.Format(Resources.HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey, hotkeyText, failedHotkeys);
+            if (failedHotkeysList.Length == 0) return;
+            
+            string failedHotkeys = string.Join("\r\n", failedHotkeysList.Select(x => x.TaskSettings.ToString() + ": " + x.HotkeyInfo.ToString()));
+            string hotkeyText = failedHotkeysList.Length > 1 ? Resources.HotkeyManager_ShowFailedHotkeys_hotkeys : Resources.HotkeyManager_ShowFailedHotkeys_hotkey;
+            string text = string.Format(Resources.HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey, hotkeyText, failedHotkeys);
 
-                string[] processNames = new string[] { "ShareX", "OneDrive", "Dropbox", "Greenshot", "ScreenshotCaptor", "FSCapture", "Snagit32", "puush", "Lightshot" };
-                int ignoreProcess = Process.GetCurrentProcess().Id;
-                List<string> conflictProcessNames = Process.GetProcesses().Where(x => x.Id != ignoreProcess && !string.IsNullOrEmpty(x.ProcessName) &&
+            string[] processNames = new string[] { "ShareX", "OneDrive", "Dropbox", "Greenshot", "ScreenshotCaptor", "FSCapture", "Snagit32", "puush", "Lightshot" };
+            int ignoreProcess = Process.GetCurrentProcess().Id;
+            var conflictProcessNames = Process.GetProcesses().Where(x => x.Id != ignoreProcess && !string.IsNullOrEmpty(x.ProcessName) &&
                     processNames.Any(x2 => x.ProcessName.Equals(x2, StringComparison.OrdinalIgnoreCase))).
-                    Select(x => string.Format("{0} ({1})", x.MainModule.FileVersionInfo.ProductName, x.MainModule.ModuleName)).Distinct().ToList();
+                    Select(x => string.Format("{0} ({1})", x.MainModule.FileVersionInfo.ProductName, x.MainModule.ModuleName)).Distinct().ToArray();
 
-                if (conflictProcessNames != null && conflictProcessNames.Count > 0)
-                {
-                    text += "\r\n\r\n" + Resources.HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_ + "\r\n\r\n" + string.Join("\r\n", conflictProcessNames);
-                }
-
-                MessageBox.Show(text, "ShareX - " + Resources.HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (conflictProcessNames != null && conflictProcessNames.Length > 0)
+            {
+                text += "\r\n\r\n" + Resources.HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_ + "\r\n\r\n" + string.Join("\r\n", conflictProcessNames);
             }
+
+            MessageBox.Show(text, "ShareX - " + Resources.HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void ResetHotkeys()
@@ -214,16 +213,13 @@ namespace ShareX
             }
         }
 
-        public static List<HotkeySettings> GetDefaultHotkeyList()
+        public static IEnumerable<HotkeySettings> GetDefaultHotkeyList()
         {
-            return new List<HotkeySettings>
-            {
-                new HotkeySettings(HotkeyType.RectangleRegion, Keys.Control | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.PrintScreen, Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ActiveWindow, Keys.Alt | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ScreenRecorder, Keys.Shift | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ScreenRecorderGIF, Keys.Control | Keys.Shift | Keys.PrintScreen)
-            };
+            yield return new HotkeySettings(HotkeyType.RectangleRegion, Keys.Control | Keys.PrintScreen);
+            yield return new HotkeySettings(HotkeyType.PrintScreen, Keys.PrintScreen);
+            yield return new HotkeySettings(HotkeyType.ActiveWindow, Keys.Alt | Keys.PrintScreen);
+            yield return new HotkeySettings(HotkeyType.ScreenRecorder, Keys.Shift | Keys.PrintScreen);
+            yield return new HotkeySettings(HotkeyType.ScreenRecorderGIF, Keys.Control | Keys.Shift | Keys.PrintScreen);
         }
     }
 }

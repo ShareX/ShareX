@@ -44,12 +44,9 @@ namespace ShareX
 
         public static void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
         {
-            if (IsRecording)
+            if (IsRecording && recordForm != null && !recordForm.IsDisposed)
             {
-                if (recordForm != null && !recordForm.IsDisposed)
-                {
-                    recordForm.StartStopRecording();
-                }
+                recordForm.StartStopRecording();
             }
             else
             {
@@ -59,26 +56,20 @@ namespace ShareX
 
         public static void StopRecording()
         {
-            if (IsRecording && screenRecorder != null)
-            {
-                screenRecorder.StopRecording();
-            }
+            if (!IsRecording || screenRecorder == null) return;
+            screenRecorder.StopRecording();
         }
 
         public static void PauseScreenRecording()
         {
-            if (IsRecording && recordForm != null && !recordForm.IsDisposed)
-            {
-                recordForm.PauseResumeRecording();
-            }
+            if (!IsRecording || recordForm == null || recordForm.IsDisposed) return;
+            recordForm.PauseResumeRecording();
         }
 
         public static void AbortRecording()
         {
-            if (IsRecording && recordForm != null && !recordForm.IsDisposed)
-            {
-                recordForm.AbortRecording();
-            }
+            if (!IsRecording || recordForm == null || recordForm.IsDisposed) return;
+            recordForm.AbortRecording();
         }
 
         private static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
@@ -182,12 +173,12 @@ namespace ShareX
 
             float duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
-            recordForm = new ScreenRecordForm(captureRectangle)
-            {
-                ActivateWindow = startMethod == ScreenRecordStartMethod.Region,
-                Duration = duration,
-                AskConfirmationOnAbort = taskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort
-            };
+            recordForm = new ScreenRecordForm (
+                regionRectangle        : captureRectangle,
+                activateWindow         : startMethod == ScreenRecordStartMethod.Region,
+                duration               : duration,
+                askConfirmationOnAbort : taskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort
+            );
 
             recordForm.StopRequested += StopRecording;
             recordForm.Show();

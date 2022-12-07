@@ -649,20 +649,14 @@ namespace ShareX
 
         private static bool CheckUninstall()
         {
-            if (CLI.IsCommandExist("uninstall"))
+            if (!CLI.IsCommandExist("uninstall")) return false;
+            try
             {
-                try
-                {
-                    IntegrationHelpers.Uninstall();
-                }
-                catch
-                {
-                }
-
-                return true;
+                IntegrationHelpers.Uninstall();
             }
-
-            return false;
+            catch
+            { }
+            return true;
         }
 
         private static bool CheckPuushMode()

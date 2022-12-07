@@ -41,35 +41,27 @@ namespace ShareX
         public static void UploadFile(string filePath, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (!string.IsNullOrEmpty(filePath))
+            if (string.IsNullOrEmpty(filePath)) return;
+            if (File.Exists(filePath))
             {
-                if (File.Exists(filePath))
-                {
-                    WorkerTask task = WorkerTask.CreateFileUploaderTask(filePath, taskSettings);
-                    TaskManager.Start(task);
-                }
-                else if (Directory.Exists(filePath))
-                {
-                    string[] files = Directory.GetFiles(filePath, "*.*", SearchOption.AllDirectories);
-                    UploadFile(files, taskSettings);
-                }
+                WorkerTask task = WorkerTask.CreateFileUploaderTask(filePath, taskSettings);
+                TaskManager.Start(task);
+            }
+            else if (Directory.Exists(filePath))
+            {
+                string[] files = Directory.GetFiles(filePath, "*.*", SearchOption.AllDirectories);
+                UploadFile(files, taskSettings);
             }
         }
 
         public static void UploadFile(string[] files, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (files != null && files.Length > 0)
+            if (files == null || files.Length == 0) return;
+            if (files.Length > 10 && !IsUploadConfirmed(files.Length)) return;
+            foreach (string file in files)
             {
-                if (files.Length <= 10 || IsUploadConfirmed(files.Length))
-                {
-                    foreach (string file in files)
-                    {
-                        UploadFile(file, taskSettings);
-                    }
-                }
+                UploadFile(file, taskSettings);
             }
         }
 
@@ -144,61 +136,57 @@ namespace ShareX
 
         public static void ProcessImageUpload(Bitmap bmp, TaskSettings taskSettings)
         {
-            if (bmp != null)
+            if (bmp == null) return;
+            
+            if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
             {
-                if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
-                {
-                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
-                }
-
-                RunImageTask(bmp, taskSettings);
+                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
             }
+
+            RunImageTask(bmp, taskSettings);
         }
 
         public static void ProcessTextUpload(string text, TaskSettings taskSettings)
         {
-            if (!string.IsNullOrEmpty(text))
+            if (string.IsNullOrEmpty(text)) return;
+            
+            string url = text.Trim();
+
+            if (URLHelpers.IsValidURL(url))
             {
-                string url = text.Trim();
-
-                if (URLHelpers.IsValidURL(url))
+                if (taskSettings.UploadSettings.ClipboardUploadURLContents)
                 {
-                    if (taskSettings.UploadSettings.ClipboardUploadURLContents)
-                    {
-                        DownloadAndUploadFile(url, taskSettings);
-                        return;
-                    }
-
-                    if (taskSettings.UploadSettings.ClipboardUploadShortenURL)
-                    {
-                        ShortenURL(url, taskSettings);
-                        return;
-                    }
-
-                    if (taskSettings.UploadSettings.ClipboardUploadShareURL)
-                    {
-                        ShareURL(url, taskSettings);
-                        return;
-                    }
+                    DownloadAndUploadFile(url, taskSettings);
+                    return;
                 }
 
-                if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
+                if (taskSettings.UploadSettings.ClipboardUploadShortenURL)
                 {
-                    IndexFolder(text, taskSettings);
+                    ShortenURL(url, taskSettings);
+                    return;
                 }
-                else
+
+                if (taskSettings.UploadSettings.ClipboardUploadShareURL)
                 {
-                    UploadText(text, taskSettings, true);
+                    ShareURL(url, taskSettings);
+                    return;
                 }
+            }
+
+            if (taskSettings.UploadSettings.ClipboardUploadAutoIndexFolder && text.Length <= 260 && Directory.Exists(text))
+            {
+                IndexFolder(text, taskSettings);
+            }
+            else
+            {
+                UploadText(text, taskSettings, true);
             }
         }
 
         public static void ProcessFilesUpload(string[] files, TaskSettings taskSettings)
         {
-            if (files != null && files.Length > 0)
-            {
-                UploadFile(files, taskSettings);
-            }
+            if (files == null || files.Length == 0) return;
+            UploadFile(files, taskSettings);
         }
 
         public static void ClipboardUpload(TaskSettings taskSettings = null)
@@ -259,15 +247,10 @@ namespace ShareX
 
             using (TextUploadForm form = new TextUploadForm())
             {
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    string text = form.Content;
-
-                    if (!string.IsNullOrEmpty(text))
-                    {
-                        UploadText(text, taskSettings);
-                    }
-                }
+                if (form.ShowDialog() != DialogResult.OK) return;
+                string text = form.Content;
+                if (string.IsNullOrEmpty(text)) return;
+                UploadText(text, taskSettings);
             }
         }
 
@@ -345,108 +328,103 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (metadata != null && metadata.Image != null && taskSettings != null)
+            if (metadata == null || metadata.Image == null || taskSettings == null) return;
+            
+            if (!skipQuickTaskMenu && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowQuickTaskMenu))
             {
-                if (!skipQuickTaskMenu && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowQuickTaskMenu))
-                {
-                    QuickTaskMenu quickTaskMenu = new QuickTaskMenu();
+                QuickTaskMenu quickTaskMenu = new QuickTaskMenu();
 
-                    quickTaskMenu.TaskInfoSelected += taskInfo =>
+                quickTaskMenu.TaskInfoSelected += taskInfo => {
+                    if (taskInfo == null)
                     {
-                        if (taskInfo == null)
-                        {
-                            RunImageTask(metadata, taskSettings, true);
-                        }
-                        else if (taskInfo.IsValid)
-                        {
-                            taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
-                            taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;
-                            RunImageTask(metadata, taskSettings, true);
-                        }
-                    };
+                        RunImageTask(metadata, taskSettings, true);
+                    }
+                    else if (taskInfo.IsValid)
+                    {
+                        taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
+                        taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;
+                        RunImageTask(metadata, taskSettings, true);
+                    }
+                };
 
-                    quickTaskMenu.ShowMenu();
+                quickTaskMenu.ShowMenu();
 
-                    return;
-                }
-
-                string customFileName = null;
-
-                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, metadata))
-                {
-                    return;
-                }
-
-                WorkerTask task = WorkerTask.CreateImageUploaderTask(metadata, taskSettings, customFileName);
-                TaskManager.Start(task);
+                return;
             }
+
+            string customFileName = null;
+
+            if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, metadata))
+            {
+                return;
+            }
+
+            WorkerTask task = WorkerTask.CreateImageUploaderTask(metadata, taskSettings, customFileName);
+            TaskManager.Start(task);
         }
 
         public static void UploadImage(Bitmap bmp, TaskSettings taskSettings = null)
         {
-            if (bmp != null)
+            if (bmp == null) return;
+            
+            if (taskSettings == null)
             {
-                if (taskSettings == null)
-                {
-                    taskSettings = TaskSettings.GetDefaultTaskSettings();
-                }
-
-                if (taskSettings.IsSafeTaskSettings)
-                {
-                    taskSettings.UseDefaultAfterCaptureJob = false;
-                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
-                }
-
-                RunImageTask(bmp, taskSettings);
+                taskSettings = TaskSettings.GetDefaultTaskSettings();
             }
+
+            if (taskSettings.IsSafeTaskSettings)
+            {
+                taskSettings.UseDefaultAfterCaptureJob = false;
+                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+            }
+
+            RunImageTask(bmp, taskSettings);
         }
 
         public static void UploadImage(Bitmap bmp, ImageDestination imageDestination, FileDestination imageFileDestination, TaskSettings taskSettings = null)
         {
-            if (bmp != null)
+            if (bmp == null) return;
+            
+            if (taskSettings == null)
             {
-                if (taskSettings == null)
-                {
-                    taskSettings = TaskSettings.GetDefaultTaskSettings();
-                }
-
-                if (taskSettings.IsSafeTaskSettings)
-                {
-                    taskSettings.UseDefaultAfterCaptureJob = false;
-                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
-                    taskSettings.UseDefaultDestinations = false;
-                    taskSettings.ImageDestination = imageDestination;
-                    taskSettings.ImageFileDestination = imageFileDestination;
-                }
-
-                RunImageTask(bmp, taskSettings);
+                taskSettings = TaskSettings.GetDefaultTaskSettings();
             }
+
+            if (taskSettings.IsSafeTaskSettings)
+            {
+                taskSettings.UseDefaultAfterCaptureJob = false;
+                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                taskSettings.UseDefaultDestinations = false;
+                taskSettings.ImageDestination = imageDestination;
+                taskSettings.ImageFileDestination = imageFileDestination;
+            }
+
+            RunImageTask(bmp, taskSettings);
         }
 
         public static void UploadText(string text, TaskSettings taskSettings = null, bool allowCustomText = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (!string.IsNullOrEmpty(text))
+            if (string.IsNullOrEmpty(text)) return;
+            
+            if (allowCustomText)
             {
-                if (allowCustomText)
+                string input = taskSettings.AdvancedSettings.TextCustom;
+
+                if (!string.IsNullOrEmpty(input))
                 {
-                    string input = taskSettings.AdvancedSettings.TextCustom;
-
-                    if (!string.IsNullOrEmpty(input))
+                    if (taskSettings.AdvancedSettings.TextCustomEncodeInput)
                     {
-                        if (taskSettings.AdvancedSettings.TextCustomEncodeInput)
-                        {
-                            text = HttpUtility.HtmlEncode(text);
-                        }
-
-                        text = input.Replace("%input", text);
+                        text = HttpUtility.HtmlEncode(text);
                     }
-                }
 
-                WorkerTask task = WorkerTask.CreateTextUploaderTask(text, taskSettings);
-                TaskManager.Start(task);
+                    text = input.Replace("%input", text);
+                }
             }
+
+            WorkerTask task = WorkerTask.CreateTextUploaderTask(text, taskSettings);
+            TaskManager.Start(task);
         }
 
         public static void UploadImageStream(Stream stream, string fileName, TaskSettings taskSettings = null)
@@ -462,48 +440,36 @@ namespace ShareX
 
         public static void ShortenURL(string url, TaskSettings taskSettings = null)
         {
-            if (!string.IsNullOrEmpty(url))
-            {
-                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-                WorkerTask task = WorkerTask.CreateURLShortenerTask(url, taskSettings);
-                TaskManager.Start(task);
-            }
+            if (string.IsNullOrEmpty(url)) return;
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+            WorkerTask task = WorkerTask.CreateURLShortenerTask(url, taskSettings);
+            TaskManager.Start(task);
         }
 
         public static void ShortenURL(string url, UrlShortenerType urlShortener)
         {
-            if (!string.IsNullOrEmpty(url))
-            {
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-                taskSettings.URLShortenerDestination = urlShortener;
-
-                WorkerTask task = WorkerTask.CreateURLShortenerTask(url, taskSettings);
-                TaskManager.Start(task);
-            }
+            if (string.IsNullOrEmpty(url)) return;
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+            taskSettings.URLShortenerDestination = urlShortener;
+            WorkerTask task = WorkerTask.CreateURLShortenerTask(url, taskSettings);
+            TaskManager.Start(task);
         }
 
         public static void ShareURL(string url, TaskSettings taskSettings = null)
         {
-            if (!string.IsNullOrEmpty(url))
-            {
-                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-                WorkerTask task = WorkerTask.CreateShareURLTask(url, taskSettings);
-                TaskManager.Start(task);
-            }
+            if (string.IsNullOrEmpty(url)) return;
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+            WorkerTask task = WorkerTask.CreateShareURLTask(url, taskSettings);
+            TaskManager.Start(task);
         }
 
         public static void ShareURL(string url, URLSharingServices urlSharingService)
         {
-            if (!string.IsNullOrEmpty(url))
-            {
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-                taskSettings.URLSharingServiceDestination = urlSharingService;
-
-                WorkerTask task = WorkerTask.CreateShareURLTask(url, taskSettings);
-                TaskManager.Start(task);
-            }
+            if (string.IsNullOrEmpty(url)) return;
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+            taskSettings.URLSharingServiceDestination = urlSharingService;
+            WorkerTask task = WorkerTask.CreateShareURLTask(url, taskSettings);
+            TaskManager.Start(task);
         }
 
         public static void DownloadFile(string url, TaskSettings taskSettings = null)
@@ -518,17 +484,11 @@ namespace ShareX
 
         private static void DownloadFile(string url, bool upload, TaskSettings taskSettings = null)
         {
-            if (!string.IsNullOrEmpty(url))
-            {
-                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-                WorkerTask task = WorkerTask.CreateDownloadTask(url, upload, taskSettings);
-
-                if (task != null)
-                {
-                    TaskManager.Start(task);
-                }
-            }
+            if (string.IsNullOrEmpty(url)) return;
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+            WorkerTask task = WorkerTask.CreateDownloadTask(url, upload, taskSettings);
+            if (task == null) return;
+            TaskManager.Start(task);
         }
 
         public static void IndexFolder(TaskSettings taskSettings = null)
@@ -544,27 +504,23 @@ namespace ShareX
 
         public static void IndexFolder(string folderPath, TaskSettings taskSettings = null)
         {
-            if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
-            {
-                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+            if (string.IsNullOrEmpty(folderPath) || !Directory.Exists(folderPath)) return;
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
+            taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
 
-                string source = null;
+            string source = null;
 
-                Task.Run(() =>
+            Task.Run(() => {
+                source = Indexer.Index(folderPath, taskSettings.ToolsSettings.IndexerSettings);
+            }).ContinueInCurrentContext(() => {
+                if (!string.IsNullOrEmpty(source))
                 {
-                    source = Indexer.Index(folderPath, taskSettings.ToolsSettings.IndexerSettings);
-                }).ContinueInCurrentContext(() =>
-                {
-                    if (!string.IsNullOrEmpty(source))
-                    {
-                        WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
-                        task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
-                        TaskManager.Start(task);
-                    }
-                });
-            }
+                    WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
+                    task.Info.FileName = Path.ChangeExtension(task.Info.FileName, taskSettings.ToolsSettings.IndexerSettings.Output.ToString().ToLower());
+                    TaskManager.Start(task);
+                }
+            });
         }
     }
 }

@@ -85,15 +85,10 @@ namespace ShareX
             cmsTray.IgnoreSeparatorClick();
             cmsTaskInfo.IgnoreSeparatorClick();
 
-            tsddbWorkflows.HideImageMargin();
-            tsmiTrayWorkflows.HideImageMargin();
-            tsmiMonitor.HideImageMargin();
-            tsmiTrayMonitor.HideImageMargin();
-            tsmiOpen.HideImageMargin();
-            tsmiCopy.HideImageMargin();
-            tsmiShortenSelectedURL.HideImageMargin();
-            tsmiShareSelectedURL.HideImageMargin();
-            tsmiTrayRecentItems.HideImageMargin();
+            foreach (var item in EnumerateToolStripDropDown())
+            {
+                item.HideImageMargin();
+            }
 
             AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
                 tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
@@ -198,6 +193,19 @@ namespace ShareX
 #endif
 
             HandleCreated += MainForm_HandleCreated;
+        }
+
+        private IEnumerable<ToolStripDropDownItem> EnumerateToolStripDropDown ()
+        {
+            yield return tsddbWorkflows;
+            yield return tsmiTrayWorkflows;
+            yield return tsmiMonitor;
+            yield return tsmiTrayMonitor;
+            yield return tsmiOpen;
+            yield return tsmiCopy;
+            yield return tsmiShortenSelectedURL;
+            yield return tsmiShareSelectedURL;
+            yield return tsmiTrayRecentItems;
         }
 
         public void UpdateControls()
@@ -390,39 +398,38 @@ namespace ShareX
         {
             TaskManager.UpdateMainFormTip();
 
-            List<HotkeySettings> hotkeys = Program.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey).ToList();
+            var hotkeys = Program.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey).ToArray();
 
-            if (hotkeys.Count > 0)
-            {
-                StringBuilder sb = new StringBuilder();
-
-                //sb.AppendLine(Resources.MainForm_UpdateMainFormTip_Currently_configured_hotkeys_);
-                //sb.AppendLine();
-
-                int maxHotkeyLength = hotkeys.Max(x => x.HotkeyInfo.ToString().Length);
-                int maxDescriptionLength = hotkeys.Max(x => x.TaskSettings.ToString().Length);
-
-                sb.AppendFormat("┌{0}┬{1}┐\r\n", Resources.Hotkey.PadCenter(maxHotkeyLength + 2, '─'), Resources.Description.PadCenter(maxDescriptionLength + 2, '─'));
-
-                for (int i = 0; i < hotkeys.Count; i++)
-                {
-                    sb.AppendFormat("│ {0} │ {1} │\r\n", hotkeys[i].HotkeyInfo.ToString().PadRight(maxHotkeyLength),
-                        hotkeys[i].TaskSettings.ToString().PadRight(maxDescriptionLength));
-
-                    if (i + 1 < hotkeys.Count)
-                    {
-                        sb.AppendFormat("├{0}┼{1}┤\r\n", new string('─', maxHotkeyLength + 2), new string('─', maxDescriptionLength + 2));
-                    }
-                }
-
-                sb.AppendFormat("└{0}┴{1}┘", new string('─', maxHotkeyLength + 2), new string('─', maxDescriptionLength + 2));
-
-                lblListViewTip.Text = lblThumbnailViewTip.Text = sb.ToString();
-            }
-            else
+            if (hotkeys.Length == 0)
             {
                 lblListViewTip.Text = lblThumbnailViewTip.Text = "";
+                return;
             }
+
+            var sb = new StringBuilder();
+
+            //sb.AppendLine(Resources.MainForm_UpdateMainFormTip_Currently_configured_hotkeys_);
+            //sb.AppendLine();
+
+            int maxHotkeyLength = hotkeys.Max(x => x.HotkeyInfo.ToString().Length);
+            int maxDescriptionLength = hotkeys.Max(x => x.TaskSettings.ToString().Length);
+
+            sb.AppendFormat("┌{0}┬{1}┐\r\n", Resources.Hotkey.PadCenter(maxHotkeyLength + 2, '─'), Resources.Description.PadCenter(maxDescriptionLength + 2, '─'));
+
+            for (int i = 0; i < hotkeys.Length; i++)
+            {
+                sb.AppendFormat("│ {0} │ {1} │\r\n", hotkeys[i].HotkeyInfo.ToString().PadRight(maxHotkeyLength),
+                    hotkeys[i].TaskSettings.ToString().PadRight(maxDescriptionLength));
+
+                if (i + 1 < hotkeys.Length)
+                {
+                    sb.AppendFormat("├{0}┼{1}┤\r\n", new string('─', maxHotkeyLength + 2), new string('─', maxDescriptionLength + 2));
+                }
+            }
+
+            sb.AppendFormat("└{0}┴{1}┘", new string('─', maxHotkeyLength + 2), new string('─', maxDescriptionLength + 2));
+
+            lblListViewTip.Text = lblThumbnailViewTip.Text = sb.ToString();
         }
 
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)

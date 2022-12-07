@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class HotkeyInfo
+    public sealed class HotkeyInfo
     {
         public Keys Hotkey { get; set; }
 

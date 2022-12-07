@@ -31,9 +31,9 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class EasterEggAboutAnimation : IDisposable
+    public sealed class EasterEggAboutAnimation : IDisposable
     {
-        public Canvas Canvas { get; private set; }
+        public Canvas Canvas { get; }
         public bool IsPaused { get; set; }
         public Size Size { get; set; } = new Size(200, 200);
         public int Step { get; set; } = 10;
@@ -43,11 +43,13 @@ namespace ShareX
         public Color Color { get; set; } = new HSB(0.0, 1.0, 0.9);
         public int ClickCount { get; private set; }
 
-        private EasterEggBounce easterEggBounce;
+        private readonly EasterEggBounce easterEggBounce;
         private int direction;
 
         public EasterEggAboutAnimation(Canvas canvas, Form form)
         {
+            if (form is null) throw new ArgumentNullException(nameof(form));
+
             Canvas = canvas;
             Canvas.MouseDown += Canvas_MouseDown;
             Canvas.Draw += Canvas_Draw;
@@ -65,20 +67,18 @@ namespace ShareX
         {
             IsPaused = !IsPaused;
 
-            if (!easterEggBounce.IsWorking)
-            {
-                ClickCount++;
-
-                if (ClickCount >= 10)
-                {
-                    easterEggBounce.ApplyGravity = e.Button == MouseButtons.Left;
-                    easterEggBounce.Start();
-                }
-            }
-            else
+            if (easterEggBounce.IsWorking)
             {
                 easterEggBounce.Stop();
+                return;
             }
+
+            ClickCount++;
+
+            if (ClickCount < 10) return;
+            
+            easterEggBounce.ApplyGravity = e.Button == MouseButtons.Left;
+            easterEggBounce.Start();
         }
 
         private void Canvas_Draw(Graphics g)
@@ -151,10 +151,7 @@ namespace ShareX
 
         public void Dispose()
         {
-            if (easterEggBounce != null)
-            {
-                easterEggBounce.Dispose();
-            }
+            easterEggBounce.Dispose();
         }
     }
 }

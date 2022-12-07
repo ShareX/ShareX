@@ -242,11 +242,9 @@ namespace ShareX
 
         private void tsmiUpload_Click(object sender, EventArgs e)
         {
-            if (pbQRCode.Image != null)
-            {
-                Bitmap bmp = (Bitmap)pbQRCode.Image.Clone();
-                UploadManager.UploadImage(bmp);
-            }
+            if (pbQRCode.Image == null) return;
+            Bitmap bmp = (Bitmap)pbQRCode.Image.Clone();
+            UploadManager.UploadImage(bmp);
         }
 
         private void tsmiDecode_Click(object sender, EventArgs e)

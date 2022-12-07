@@ -28,9 +28,9 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class HotkeySettings
+    public sealed class HotkeySettings
     {
-        public HotkeyInfo HotkeyInfo { get; set; }
+        public HotkeyInfo HotkeyInfo { get; }
 
         public TaskSettings TaskSettings { get; set; }
 

@@ -30,103 +30,99 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class EasterEggBounce : IDisposable
+    public sealed class EasterEggBounce : IDisposable
     {
-        public Form Form { get; private set; }
+        public Form Form { get; }
         public bool IsWorking { get; private set; }
-        public Rectangle BounceRectangle { get; set; }
+        public Rectangle BounceRectangle { get; }
         public int Speed { get; set; } = 20;
         public bool ApplyGravity { get; set; } = true;
         public int GravityPower { get; set; } = 3;
         public int BouncePower { get; set; } = 50;
 
-        private Timer timer;
+        private readonly Timer timer;
         private Point velocity;
 
         public EasterEggBounce(Form form)
         {
-            Form = form;
+            var t = new Timer { Interval = 20 };
+            t.Tick += bounceTimer_Tick;
 
-            timer = new Timer();
-            timer.Interval = 20;
-            timer.Tick += bounceTimer_Tick;
-
+            Form = form ?? throw new ArgumentNullException(nameof(form));
+            timer = t;
             BounceRectangle = CaptureHelpers.GetScreenWorkingArea();
         }
 
         public void Start()
         {
-            if (!IsWorking)
-            {
-                IsWorking = true;
+            if (IsWorking) return;
+            
+            IsWorking = true;
 
-                velocity = new Point(RandomFast.Pick(-Speed, Speed), ApplyGravity ? GravityPower : RandomFast.Pick(-Speed, Speed));
-                timer.Start();
-            }
+            velocity = new Point(RandomFast.Pick(-Speed, Speed), ApplyGravity ? GravityPower : RandomFast.Pick(-Speed, Speed));
+            timer.Start();
         }
 
         public void Stop()
         {
-            if (IsWorking)
+            if (!IsWorking) return;
+            
+            if (timer != null)
             {
-                if (timer != null)
-                {
-                    timer.Stop();
-                }
-
-                IsWorking = false;
+                timer.Stop();
             }
+
+            IsWorking = false;
         }
 
         private void bounceTimer_Tick(object sender, EventArgs e)
         {
-            if (Form != null && !Form.IsDisposed)
+            if (Form == null || Form.IsDisposed) return;
+            
+            int x = Form.Left + velocity.X;
+            int windowRight = BounceRectangle.X + BounceRectangle.Width - Form.Width - 1;
+
+            if (x <= BounceRectangle.X)
             {
-                int x = Form.Left + velocity.X;
-                int windowRight = BounceRectangle.X + BounceRectangle.Width - Form.Width - 1;
+                x = BounceRectangle.X;
+                velocity.X = Speed;
+            }
+            else if (x >= windowRight)
+            {
+                x = windowRight;
+                velocity.X = -Speed;
+            }
 
-                if (x <= BounceRectangle.X)
-                {
-                    x = BounceRectangle.X;
-                    velocity.X = Speed;
-                }
-                else if (x >= windowRight)
-                {
-                    x = windowRight;
-                    velocity.X = -Speed;
-                }
+            int y = Form.Top + velocity.Y;
+            int windowBottom = BounceRectangle.Y + BounceRectangle.Height - Form.Height - 1;
 
-                int y = Form.Top + velocity.Y;
-                int windowBottom = BounceRectangle.Y + BounceRectangle.Height - Form.Height - 1;
-
-                if (ApplyGravity)
+            if (ApplyGravity)
+            {
+                if (y >= windowBottom)
                 {
-                    if (y >= windowBottom)
-                    {
-                        y = windowBottom;
-                        velocity.Y = -BouncePower + RandomFast.Next(-10, 10);
-                    }
-                    else
-                    {
-                        velocity.Y += GravityPower;
-                    }
+                    y = windowBottom;
+                    velocity.Y = -BouncePower + RandomFast.Next(-10, 10);
                 }
                 else
                 {
-                    if (y <= BounceRectangle.Y)
-                    {
-                        y = BounceRectangle.Y;
-                        velocity.Y = Speed;
-                    }
-                    else if (y >= windowBottom)
-                    {
-                        y = windowBottom;
-                        velocity.Y = -Speed;
-                    }
+                    velocity.Y += GravityPower;
                 }
-
-                Form.Location = new Point(x, y);
             }
+            else
+            {
+                if (y <= BounceRectangle.Y)
+                {
+                    y = BounceRectangle.Y;
+                    velocity.Y = Speed;
+                }
+                else if (y >= windowBottom)
+                {
+                    y = windowBottom;
+                    velocity.Y = -Speed;
+                }
+            }
+
+            Form.Location = new Point(x, y);
         }
 
         public void Dispose()
