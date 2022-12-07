@@ -53,77 +53,69 @@ namespace ShareX.UploadersLib
 
         public async Task<bool> ConnectAsync()
         {
+            Dispose();
+            Code = null;
+
+            IPAddress ip = IPAddress.Loopback;
+            int port = URLHelpers.GetRandomUnusedPort();
+            string redirectURI = string.Format($"http://{ip}:{port}/");
+
+            OAuth.RedirectURI = redirectURI;
+            string url = OAuth.GetAuthorizationURL();
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                URLHelpers.OpenURL(url);
+                DebugHelper.WriteLine("Authorization URL is opened: " + url);
+            }
+            else
+            {
+                DebugHelper.WriteLine("Authorization URL is empty.");
+                return false;
+            }
+
             try
             {
-                Dispose();
-                Code = null;
+                listener = new HttpListener();
+                listener.Prefixes.Add(redirectURI);
+                listener.Start();
 
-                IPAddress ip = IPAddress.Loopback;
-                int port = URLHelpers.GetRandomUnusedPort();
-                string redirectURI = string.Format($"http://{ip}:{port}/");
+                HttpListenerContext context = await listener.GetContextAsync();
+                Code = context.Request.QueryString.Get("code");
 
-                OAuth.RedirectURI = redirectURI;
-                string url = OAuth.GetAuthorizationURL();
-
-                if (!string.IsNullOrEmpty(url))
+                using (HttpListenerResponse response = context.Response)
                 {
-                    URLHelpers.OpenURL(url);
-                    DebugHelper.WriteLine("Authorization URL is opened: " + url);
-                }
-                else
-                {
-                    DebugHelper.WriteLine("Authorization URL is empty.");
-                    return false;
-                }
+                    string status;
 
-                try
-                {
-                    listener = new HttpListener();
-                    listener.Prefixes.Add(redirectURI);
-                    listener.Start();
-
-                    HttpListenerContext context = await listener.GetContextAsync();
-                    Code = context.Request.QueryString.Get("code");
-
-                    using (HttpListenerResponse response = context.Response)
+                    if (!string.IsNullOrEmpty(Code))
                     {
-                        string status;
+                        status = "Authorization completed successfully.";
+                    }
+                    else
+                    {
+                        status = "Authorization did not succeed.";
+                    }
 
-                        if (!string.IsNullOrEmpty(Code))
-                        {
-                            status = "Authorization completed successfully.";
-                        }
-                        else
-                        {
-                            status = "Authorization did not succeed.";
-                        }
+                    string responseText = Resources.OAuthCallbackPage.Replace("{0}", status);
+                    byte[] buffer = Encoding.UTF8.GetBytes(responseText);
+                    response.ContentLength64 = buffer.Length;
+                    response.KeepAlive = false;
 
-                        string responseText = Resources.OAuthCallbackPage.Replace("{0}", status);
-                        byte[] buffer = Encoding.UTF8.GetBytes(responseText);
-                        response.ContentLength64 = buffer.Length;
-                        response.KeepAlive = false;
-
-                        using (Stream responseOutput = response.OutputStream)
-                        {
-                            await responseOutput.WriteAsync(buffer, 0, buffer.Length);
-                            await responseOutput.FlushAsync();
-                        }
+                    using (Stream responseOutput = response.OutputStream)
+                    {
+                        await responseOutput.WriteAsync(buffer, 0, buffer.Length);
+                        await responseOutput.FlushAsync();
                     }
                 }
-                finally
-                {
-                    Dispose();
-                }
-
-                if (!string.IsNullOrEmpty(Code))
-                {
-                    return await Task.Run(() => OAuth.GetAccessToken(Code));
-                }
             }
-            catch (Exception e)
+            finally
             {
-                DebugHelper.WriteException(e);
-                e.ShowError();
+                Dispose();
+            }
+
+            if (!string.IsNullOrEmpty(Code))
+            {
+                return await Task.Run(() => OAuth.GetAccessToken(Code));
             }
 
             return false;
