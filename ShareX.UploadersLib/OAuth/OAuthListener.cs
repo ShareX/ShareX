@@ -36,7 +36,6 @@ namespace ShareX.UploadersLib
     public class OAuthListener : IDisposable
     {
         public IOAuth2Loopback OAuth { get; private set; }
-        public string Code { get; private set; }
 
         private HttpListener listener;
 
@@ -54,13 +53,14 @@ namespace ShareX.UploadersLib
         public async Task<bool> ConnectAsync()
         {
             Dispose();
-            Code = null;
 
             IPAddress ip = IPAddress.Loopback;
             int port = URLHelpers.GetRandomUnusedPort();
             string redirectURI = string.Format($"http://{ip}:{port}/");
+            string state = Helpers.GetRandomAlphanumeric(32);
 
             OAuth.RedirectURI = redirectURI;
+            OAuth.State = state;
             string url = OAuth.GetAuthorizationURL();
 
             if (!string.IsNullOrEmpty(url))
@@ -74,6 +74,10 @@ namespace ShareX.UploadersLib
                 return false;
             }
 
+            string queryCode = null;
+            string queryState = null;
+            bool stateValidation = false;
+
             try
             {
                 listener = new HttpListener();
@@ -81,13 +85,19 @@ namespace ShareX.UploadersLib
                 listener.Start();
 
                 HttpListenerContext context = await listener.GetContextAsync();
-                Code = context.Request.QueryString.Get("code");
+                queryCode = context.Request.QueryString.Get("code");
+                queryState = context.Request.QueryString.Get("state");
+                stateValidation = !string.IsNullOrEmpty(queryState) && queryState == state;
 
                 using (HttpListenerResponse response = context.Response)
                 {
                     string status;
 
-                    if (!string.IsNullOrEmpty(Code))
+                    if (!stateValidation)
+                    {
+                        status = "Invalid state parameter.";
+                    }
+                    else if (!string.IsNullOrEmpty(queryCode))
                     {
                         status = "Authorization completed successfully.";
                     }
@@ -113,9 +123,9 @@ namespace ShareX.UploadersLib
                 Dispose();
             }
 
-            if (!string.IsNullOrEmpty(Code))
+            if (stateValidation && !string.IsNullOrEmpty(queryCode))
             {
-                return await Task.Run(() => OAuth.GetAccessToken(Code));
+                return await Task.Run(() => OAuth.GetAccessToken(queryCode));
             }
 
             return false;

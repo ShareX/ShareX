@@ -39,6 +39,7 @@ namespace ShareX.UploadersLib
         public OAuth2Info AuthInfo { get; private set; }
         private Uploader GoogleUploader { get; set; }
         public string RedirectURI { get; set; }
+        public string State { get; set; }
         public string Scope { get; set; }
 
         public GoogleOAuth2(OAuth2Info oauth, Uploader uploader)
@@ -53,6 +54,7 @@ namespace ShareX.UploadersLib
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("redirect_uri", RedirectURI);
+            args.Add("state", State);
             args.Add("scope", Scope);
 
             return URLHelpers.CreateQueryString(AuthorizationEndpoint, args);
