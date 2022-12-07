@@ -33,50 +33,63 @@ using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib
 {
-    public class OAuthListener
+    public class OAuthListener : IDisposable
     {
         public IOAuth2Loopback OAuth { get; private set; }
+        public string Code { get; private set; }
+
+        private HttpListener listener;
 
         public OAuthListener(IOAuth2Loopback oauth)
         {
             OAuth = oauth;
         }
 
+        public void Dispose()
+        {
+            listener?.Close();
+            listener = null;
+        }
+
         public async Task<bool> ConnectAsync()
         {
-            IPAddress ip = IPAddress.Loopback;
-            int port = URLHelpers.GetRandomUnusedPort();
-            string redirectURI = string.Format($"http://{ip}:{port}/");
-
-            OAuth.RedirectURI = redirectURI;
-            string url = OAuth.GetAuthorizationURL();
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                URLHelpers.OpenURL(url);
-                DebugHelper.WriteLine("Authorization URL is opened: " + url);
-            }
-            else
-            {
-                DebugHelper.WriteLine("Authorization URL is empty.");
-                return false;
-            }
-
             try
             {
-                using (HttpListener listener = new HttpListener())
+                Dispose();
+                Code = null;
+
+                IPAddress ip = IPAddress.Loopback;
+                int port = URLHelpers.GetRandomUnusedPort();
+                string redirectURI = string.Format($"http://{ip}:{port}/");
+
+                OAuth.RedirectURI = redirectURI;
+                string url = OAuth.GetAuthorizationURL();
+
+                if (!string.IsNullOrEmpty(url))
                 {
+                    URLHelpers.OpenURL(url);
+                    DebugHelper.WriteLine("Authorization URL is opened: " + url);
+                }
+                else
+                {
+                    DebugHelper.WriteLine("Authorization URL is empty.");
+                    return false;
+                }
+
+                try
+                {
+                    listener = new HttpListener();
                     listener.Prefixes.Add(redirectURI);
                     listener.Start();
 
                     HttpListenerContext context = await listener.GetContextAsync();
-                    string code = context.Request.QueryString.Get("code");
+                    Code = context.Request.QueryString.Get("code");
 
                     using (HttpListenerResponse response = context.Response)
                     {
                         string status;
 
-                        if (!string.IsNullOrEmpty(code))
+                        if (!string.IsNullOrEmpty(Code))
                         {
                             status = "Authorization completed successfully.";
                         }
@@ -96,16 +109,21 @@ namespace ShareX.UploadersLib
                             await responseOutput.FlushAsync();
                         }
                     }
+                }
+                finally
+                {
+                    Dispose();
+                }
 
-                    if (!string.IsNullOrEmpty(code))
-                    {
-                        return await Task.Run(() => OAuth.GetAccessToken(code));
-                    }
+                if (!string.IsNullOrEmpty(Code))
+                {
+                    return await Task.Run(() => OAuth.GetAccessToken(Code));
                 }
             }
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
+                e.ShowError();
             }
 
             return false;

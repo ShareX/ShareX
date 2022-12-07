@@ -3051,6 +3051,11 @@ namespace ShareX.UploadersLib
             {
                 Config.YouTubeOAuth2Info = listener.OAuth.AuthInfo;
             }
+            else
+            {
+                Config.YouTubeOAuth2Info = null;
+            }
+            this.ForceActivate();
             ConfigureOAuthStatus(oauth2YouTube, result);
         }
 
