@@ -497,6 +497,34 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///    &lt;title&gt;Authorization - ShareX&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            background-color: #242424;
+        ///            color: #fafafa;
+        ///            font-family: Arial, sans-serif;
+        ///            text-align: center;
+        ///        }
+        ///
+        ///        .container {
+        ///            position: absolute;
+        ///            top: 50%;
+        ///            left: 50%;
+        ///            transform: translat [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string OAuthCallbackPage {
+            get {
+                return ResourceManager.GetString("OAuthCallbackPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paste verification code here.
         /// </summary>
         internal static string OAuthControl_OAuthControl_PasteVerificationCodeHere {

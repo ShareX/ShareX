@@ -260,6 +260,7 @@
     <Compile Include="OAuth\OAuth2ProofKey.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
+    <Compile Include="OAuth\OAuthListener.cs" />
     <Compile Include="OAuth\OAuthUserInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1184,6 +1185,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\LobFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\OAuthCallbackPage.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

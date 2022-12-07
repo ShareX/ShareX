@@ -32,6 +32,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Cache;
+using System.Net.Sockets;
 using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -651,6 +652,21 @@ namespace ShareX.HelpersLib
             }
 
             return response;
+        }
+
+        public static int GetRandomUnusedPort()
+        {
+            TcpListener listener = new TcpListener(IPAddress.Loopback, 0);
+
+            try
+            {
+                listener.Start();
+                return ((IPEndPoint)listener.LocalEndpoint).Port;
+            }
+            finally
+            {
+                listener.Stop();
+            }
         }
     }
 }
