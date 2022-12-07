@@ -35,14 +35,32 @@ namespace ShareX.UploadersLib
 {
     public class OAuthListener
     {
-        public IOAuth2 OAuth { get; private set; }
+        public IOAuth2Loopback OAuth { get; private set; }
 
-        public async Task<string> ConnectAsync()
+        public OAuthListener(IOAuth2Loopback oauth)
+        {
+            OAuth = oauth;
+        }
+
+        public async Task<bool> ConnectAsync()
         {
             IPAddress ip = IPAddress.Loopback;
             int port = URLHelpers.GetRandomUnusedPort();
             string redirectURI = string.Format($"http://{ip}:{port}/");
-            URLHelpers.OpenURL(redirectURI + "?code=test");
+
+            OAuth.RedirectURI = redirectURI;
+            string url = OAuth.GetAuthorizationURL();
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                URLHelpers.OpenURL(url);
+                DebugHelper.WriteLine("Authorization URL is opened: " + url);
+            }
+            else
+            {
+                DebugHelper.WriteLine("Authorization URL is empty.");
+                return false;
+            }
 
             try
             {
@@ -79,7 +97,10 @@ namespace ShareX.UploadersLib
                         }
                     }
 
-                    return code;
+                    if (!string.IsNullOrEmpty(code))
+                    {
+                        return await Task.Run(() => OAuth.GetAccessToken(code));
+                    }
                 }
             }
             catch (Exception e)
@@ -87,7 +108,7 @@ namespace ShareX.UploadersLib
                 DebugHelper.WriteException(e);
             }
 
-            return null;
+            return false;
         }
     }
 }

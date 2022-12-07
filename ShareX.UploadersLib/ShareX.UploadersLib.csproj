@@ -256,6 +256,7 @@
     <Compile Include="Helpers\RequestHelpers.cs" />
     <Compile Include="Helpers\UploaderErrorManager.cs" />
     <Compile Include="OAuth\GoogleOAuth2.cs" />
+    <Compile Include="OAuth\IOauth2Loopback.cs" />
     <Compile Include="OAuth\IOAuthBase.cs" />
     <Compile Include="OAuth\OAuth2ProofKey.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />

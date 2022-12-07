@@ -57,16 +57,16 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class YouTube : FileUploader, IOAuth2
     {
-        public OAuth2Info AuthInfo => googleAuth.AuthInfo;
+        public OAuth2Info AuthInfo => OAuth2.AuthInfo;
         public YouTubeVideoPrivacy PrivacyType { get; set; }
         public bool UseShortenedLink { get; set; }
         public bool ShowDialog { get; set; }
 
-        private GoogleOAuth2 googleAuth;
+        public GoogleOAuth2 OAuth2 { get; private set; }
 
         public YouTube(OAuth2Info oauth)
         {
-            googleAuth = new GoogleOAuth2(oauth, this)
+            OAuth2 = new GoogleOAuth2(oauth, this)
             {
                 Scope = "https://www.googleapis.com/auth/youtube.upload"
             };
@@ -74,22 +74,22 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public bool RefreshAccessToken()
         {
-            return googleAuth.RefreshAccessToken();
+            return OAuth2.RefreshAccessToken();
         }
 
         public bool CheckAuthorization()
         {
-            return googleAuth.CheckAuthorization();
+            return OAuth2.CheckAuthorization();
         }
 
         public string GetAuthorizationURL()
         {
-            return googleAuth.GetAuthorizationURL();
+            return OAuth2.GetAuthorizationURL();
         }
 
         public bool GetAccessToken(string code)
         {
-            return googleAuth.GetAccessToken(code);
+            return OAuth2.GetAccessToken(code);
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -133,7 +133,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string metadata = JsonConvert.SerializeObject(uploadVideo);
 
             UploadResult result = SendRequestFile("https://www.googleapis.com/upload/youtube/v3/videos?part=id,snippet,status", stream, fileName, "file",
-                headers: googleAuth.GetAuthHeaders(), relatedData: metadata);
+                headers: OAuth2.GetAuthHeaders(), relatedData: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
