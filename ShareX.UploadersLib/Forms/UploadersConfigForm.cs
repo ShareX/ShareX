@@ -3041,10 +3041,19 @@ namespace ShareX.UploadersLib
 
         #region YouTube
 
-        private async void oauth2YouTube_OpenButtonClicked()
+        private void oauth2YouTube_OpenButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            Config.YouTubeOAuth2Info = await OAuth2Loopback(new YouTube(oauth).OAuth2);
+            IOAuth2Loopback oauthLoopback = new YouTube(oauth).OAuth2;
+
+            using (OAuthListenerForm form = new OAuthListenerForm(oauthLoopback))
+            {
+                form.ShowDialog();
+                Config.YouTubeOAuth2Info = form.OAuth2Info;
+            }
+
+            this.ForceActivate();
+            ConfigureOAuthStatus(oauth2YouTube, Config.YouTubeOAuth2Info != null);
         }
 
         private void oauth2YouTube_CompleteButtonClicked(string code)

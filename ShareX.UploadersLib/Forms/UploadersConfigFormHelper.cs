@@ -1084,32 +1084,6 @@ namespace ShareX.UploadersLib
             return false;
         }
 
-        private async Task<OAuth2Info> OAuth2Loopback(IOAuth2Loopback oauth)
-        {
-            try
-            {
-                using (OAuthListener listener = new OAuthListener(oauth))
-                {
-                    bool result = await listener.ConnectAsync();
-
-                    this.ForceActivate();
-                    ConfigureOAuthStatus(oauth2YouTube, result);
-
-                    if (result)
-                    {
-                        return listener.OAuth.AuthInfo;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-                e.ShowError();
-            }
-
-            return null;
-        }
-
         private bool OAuth2Refresh(IOAuth2 uploader, OAuthControl oauth2)
         {
             try

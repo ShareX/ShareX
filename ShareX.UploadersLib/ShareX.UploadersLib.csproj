@@ -262,6 +262,12 @@
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
     <Compile Include="OAuth\OAuthListener.cs" />
+    <Compile Include="OAuth\OAuthListenerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OAuth\OAuthListenerForm.Designer.cs">
+      <DependentUpon>OAuthListenerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OAuth\OAuthUserInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1068,6 +1074,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.zh-CN.resx">
       <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OAuth\OAuthListenerForm.resx">
+      <DependentUpon>OAuthListenerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>

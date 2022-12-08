@@ -46,8 +46,11 @@ namespace ShareX.UploadersLib
 
         public void Dispose()
         {
-            listener?.Close();
-            listener = null;
+            if (listener != null)
+            {
+                listener.Close();
+                listener = null;
+            }
         }
 
         public async Task<bool> ConnectAsync()
@@ -117,6 +120,9 @@ namespace ShareX.UploadersLib
                         await responseOutput.FlushAsync();
                     }
                 }
+            }
+            catch (ObjectDisposedException)
+            {
             }
             finally
             {
