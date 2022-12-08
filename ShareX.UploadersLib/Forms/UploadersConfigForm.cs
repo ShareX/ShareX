@@ -733,6 +733,7 @@ namespace ShareX.UploadersLib
             #region YouTube
 
             oauth2YouTube.Connected = OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info);
+            oauth2YouTube.UserInfo = Config.YouTubeUserInfo;
             cbYouTubePrivacyType.Items.Clear();
             cbYouTubePrivacyType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
             cbYouTubePrivacyType.SelectedIndex = (int)Config.YouTubePrivacyType;
@@ -3046,16 +3047,20 @@ namespace ShareX.UploadersLib
             {
                 form.ShowDialog();
                 Config.YouTubeOAuth2Info = form.OAuth2Info;
+                Config.YouTubeUserInfo = form.UserInfo;
             }
 
             oauth2YouTube.Connected = Config.YouTubeOAuth2Info != null;
+            oauth2YouTube.UserInfo = Config.YouTubeUserInfo;
             this.ForceActivate();
         }
 
         private void oauth2YouTube_DisconnectButtonClicked()
         {
             Config.YouTubeOAuth2Info = null;
+            Config.YouTubeUserInfo = null;
             oauth2YouTube.Connected = false;
+            oauth2YouTube.UserInfo = null;
         }
 
         private void llYouTubePermissionsLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

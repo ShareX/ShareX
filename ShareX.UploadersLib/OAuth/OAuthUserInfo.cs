@@ -31,5 +31,6 @@ namespace ShareX.UploadersLib
         public string name { get; set; }
         public string given_name { get; set; }
         public string picture { get; set; }
+        public string locale { get; set; }
     }
 }

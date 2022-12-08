@@ -27,6 +27,8 @@ namespace ShareX.UploadersLib
 {
     public interface IOAuth2Loopback : IOAuth2
     {
+        OAuthUserInfo GetUserInfo();
+
         string RedirectURI { get; set; }
         string State { get; set; }
         string Scope { get; set; }

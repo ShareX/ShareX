@@ -34,6 +34,7 @@ namespace ShareX.UploadersLib
     {
         public IOAuth2Loopback OAuth { get; private set; }
         public OAuth2Info OAuth2Info { get; private set; }
+        public OAuthUserInfo UserInfo { get; private set; }
 
         private OAuthListener listener;
 
@@ -47,7 +48,7 @@ namespace ShareX.UploadersLib
 
         private async void OAuthListenerForm_Load(object sender, EventArgs e)
         {
-            OAuth2Info = await ConnectAsync(OAuth);
+            await ConnectAsync(OAuth);
 
             Close();
         }
@@ -62,8 +63,11 @@ namespace ShareX.UploadersLib
             Close();
         }
 
-        private async Task<OAuth2Info> ConnectAsync(IOAuth2Loopback oauth)
+        private async Task<bool> ConnectAsync(IOAuth2Loopback oauth)
         {
+            OAuth2Info = null;
+            UserInfo = null;
+
             try
             {
                 using (listener = new OAuthListener(oauth))
@@ -72,7 +76,9 @@ namespace ShareX.UploadersLib
 
                     if (result)
                     {
-                        return listener.OAuth.AuthInfo;
+                        OAuth2Info = listener.OAuth.AuthInfo;
+                        UserInfo = await Task.Run(() => oauth.GetUserInfo());
+                        return true;
                     }
                 }
             }
@@ -82,7 +88,7 @@ namespace ShareX.UploadersLib
                 e.ShowError();
             }
 
-            return null;
+            return false;
         }
     }
 }
