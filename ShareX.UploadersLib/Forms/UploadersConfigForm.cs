@@ -732,11 +732,7 @@ namespace ShareX.UploadersLib
 
             #region YouTube
 
-            if (OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info))
-            {
-                oauth2YouTube.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
+            oauth2YouTube.Connected = OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info);
             cbYouTubePrivacyType.Items.Clear();
             cbYouTubePrivacyType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
             cbYouTubePrivacyType.SelectedIndex = (int)Config.YouTubePrivacyType;
@@ -3041,7 +3037,7 @@ namespace ShareX.UploadersLib
 
         #region YouTube
 
-        private void oauth2YouTube_OpenButtonClicked()
+        private void oauth2YouTube_ConnectButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
             IOAuth2Loopback oauthLoopback = new YouTube(oauth).OAuth2;
@@ -3052,23 +3048,14 @@ namespace ShareX.UploadersLib
                 Config.YouTubeOAuth2Info = form.OAuth2Info;
             }
 
+            oauth2YouTube.Connected = Config.YouTubeOAuth2Info != null;
             this.ForceActivate();
-            ConfigureOAuthStatus(oauth2YouTube, Config.YouTubeOAuth2Info != null);
         }
 
-        private void oauth2YouTube_CompleteButtonClicked(string code)
-        {
-            OAuth2Complete(new YouTube(Config.YouTubeOAuth2Info), code, oauth2YouTube);
-        }
-
-        private void oauth2YouTube_RefreshButtonClicked()
-        {
-            OAuth2Refresh(new YouTube(Config.YouTubeOAuth2Info), oauth2YouTube);
-        }
-
-        private void oauth2YouTube_ClearButtonClicked()
+        private void oauth2YouTube_DisconnectButtonClicked()
         {
             Config.YouTubeOAuth2Info = null;
+            oauth2YouTube.Connected = false;
         }
 
         private void llYouTubePermissionsLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

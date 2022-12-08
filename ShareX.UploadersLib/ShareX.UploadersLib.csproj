@@ -123,6 +123,12 @@
     <Compile Include="BaseServices\IUploaderService.cs" />
     <Compile Include="BaseUploaders\GenericUploader.cs" />
     <Compile Include="BaseUploaders\URLSharer.cs" />
+    <Compile Include="Controls\OAuthLoopbackControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OAuthLoopbackControl.Designer.cs">
+      <DependentUpon>OAuthLoopbackControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomUploader\Functions\CustomUploaderFunction.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionBase64.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionFileName.cs" />
@@ -513,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.zh-TW.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OAuthLoopbackControl.resx">
+      <DependentUpon>OAuthLoopbackControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.de.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>

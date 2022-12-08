@@ -474,13 +474,13 @@ namespace ShareX.UploadersLib
             this.txtPlikPassword = new System.Windows.Forms.TextBox();
             this.txtPlikLogin = new System.Windows.Forms.TextBox();
             this.tpYouTube = new System.Windows.Forms.TabPage();
+            this.oauth2YouTube = new ShareX.UploadersLib.OAuthLoopbackControl();
             this.llYouTubePermissionsLink = new System.Windows.Forms.LinkLabel();
             this.lblYouTubePermissionsTip = new System.Windows.Forms.Label();
             this.cbYouTubeShowDialog = new System.Windows.Forms.CheckBox();
             this.cbYouTubeUseShortenedLink = new System.Windows.Forms.CheckBox();
             this.cbYouTubePrivacyType = new System.Windows.Forms.ComboBox();
             this.lblYouTubePrivacyType = new System.Windows.Forms.Label();
-            this.oauth2YouTube = new ShareX.UploadersLib.OAuthControl();
             this.tpSharedFolder = new System.Windows.Forms.TabPage();
             this.lbSharedFolderAccounts = new System.Windows.Forms.ListBox();
             this.pgSharedFolderAccount = new System.Windows.Forms.PropertyGrid();
@@ -3802,16 +3802,24 @@ namespace ShareX.UploadersLib
             // 
             // tpYouTube
             // 
+            this.tpYouTube.Controls.Add(this.oauth2YouTube);
             this.tpYouTube.Controls.Add(this.llYouTubePermissionsLink);
             this.tpYouTube.Controls.Add(this.lblYouTubePermissionsTip);
             this.tpYouTube.Controls.Add(this.cbYouTubeShowDialog);
             this.tpYouTube.Controls.Add(this.cbYouTubeUseShortenedLink);
             this.tpYouTube.Controls.Add(this.cbYouTubePrivacyType);
             this.tpYouTube.Controls.Add(this.lblYouTubePrivacyType);
-            this.tpYouTube.Controls.Add(this.oauth2YouTube);
             resources.ApplyResources(this.tpYouTube, "tpYouTube");
             this.tpYouTube.Name = "tpYouTube";
             this.tpYouTube.UseVisualStyleBackColor = true;
+            // 
+            // oauth2YouTube
+            // 
+            resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
+            this.oauth2YouTube.Name = "oauth2YouTube";
+            this.oauth2YouTube.UserInfo = null;
+            this.oauth2YouTube.ConnectButtonClicked += new System.Action(this.oauth2YouTube_ConnectButtonClicked);
+            this.oauth2YouTube.DisconnectButtonClicked += new System.Action(this.oauth2YouTube_DisconnectButtonClicked);
             // 
             // llYouTubePermissionsLink
             // 
@@ -3851,16 +3859,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblYouTubePrivacyType, "lblYouTubePrivacyType");
             this.lblYouTubePrivacyType.Name = "lblYouTubePrivacyType";
-            // 
-            // oauth2YouTube
-            // 
-            resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
-            this.oauth2YouTube.Name = "oauth2YouTube";
-            this.oauth2YouTube.UserInfo = null;
-            this.oauth2YouTube.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2YouTube_OpenButtonClicked);
-            this.oauth2YouTube.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2YouTube_CompleteButtonClicked);
-            this.oauth2YouTube.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2YouTube_ClearButtonClicked);
-            this.oauth2YouTube.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2YouTube_RefreshButtonClicked);
             // 
             // tpSharedFolder
             // 
@@ -5607,7 +5605,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtFirebaseDomain;
         private System.Windows.Forms.TextBox txtFirebaseWebAPIKey;
         private System.Windows.Forms.Label lblFirebaseWebAPIKey;
-        private OAuthControl oauth2YouTube;
         private System.Windows.Forms.ComboBox cbYouTubePrivacyType;
         private System.Windows.Forms.Label lblYouTubePrivacyType;
         internal System.Windows.Forms.TabPage tpYouTube;
@@ -5700,5 +5697,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
         private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
         private System.Windows.Forms.Label lblYouTubePermissionsTip;
+        private OAuthLoopbackControl oauth2YouTube;
     }
 }
