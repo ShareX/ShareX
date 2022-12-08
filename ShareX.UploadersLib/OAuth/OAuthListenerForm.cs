@@ -78,6 +78,7 @@ namespace ShareX.UploadersLib
                     {
                         OAuth2Info = listener.OAuth.AuthInfo;
                         UserInfo = await Task.Run(() => oauth.GetUserInfo());
+
                         return true;
                     }
                 }

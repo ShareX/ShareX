@@ -3059,8 +3059,6 @@ namespace ShareX.UploadersLib
         {
             Config.YouTubeOAuth2Info = null;
             Config.YouTubeUserInfo = null;
-            oauth2YouTube.Connected = false;
-            oauth2YouTube.UserInfo = null;
         }
 
         private void llYouTubePermissionsLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

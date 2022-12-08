@@ -81,6 +81,9 @@ namespace ShareX.UploadersLib
             if (Connected)
             {
                 DisconnectButtonClicked?.Invoke();
+
+                Connected = false;
+                UserInfo = null;
             }
             else
             {
@@ -102,13 +105,13 @@ namespace ShareX.UploadersLib
                 {
                     lblStatusValue.Text = Resources.OAuthControl_Status_LoggedIn;
                 }
-                lblStatusValue.ForeColor = Color.FromArgb(0, 160, 0);
+                lblStatusValue.ForeColor = Color.FromArgb(0, 180, 0);
             }
             else
             {
                 btnConnect.Text = "Connect...";
                 lblStatusValue.Text = Resources.OAuthControl_Status_NotLoggedIn;
-                lblStatusValue.ForeColor = Color.FromArgb(200, 0, 0);
+                lblStatusValue.ForeColor = Color.FromArgb(220, 0, 0);
             }
         }
     }
