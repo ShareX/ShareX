@@ -120,6 +120,12 @@
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>メディア ファイルの参照</value>
   </data>
+  <data name="LowerQualitySize" xml:space="preserve">
+    <value>低品質/小容量</value>
+  </data>
+  <data name="HigherQualitySize" xml:space="preserve">
+    <value>高品質/大容量</value>
+  </data>
   <data name="AlignmentBottom" xml:space="preserve">
     <value>下</value>
   </data>
@@ -148,6 +154,6 @@
     <value>エンコーディング停止</value>
   </data>
   <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
-    <value>サムネイル作成ができました</value>
+    <value>サムネイルの作成に成功。</value>
   </data>
 </root>

@@ -123,6 +123,9 @@
   <data name="btnAbort.Text" xml:space="preserve">
     <value>中止</value>
   </data>
+  <data name="btnPause.Text" xml:space="preserve">
+    <value>一時停止</value>
+  </data>
   <data name="tsmiStart.Text" xml:space="preserve">
     <value>開始</value>
   </data>

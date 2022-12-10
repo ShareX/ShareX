@@ -135,6 +135,9 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>
+  <data name="cbtnCanvasColor.Text" xml:space="preserve">
+    <value>キャンバスの色...</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - キャンバスの大きさ</value>
   </data>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
-    <value>タスクを中止 (Esc)</value>
+    <value>タスクをキャンセル (Esc)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
     <value>画像をアップロード</value>
@@ -184,7 +184,7 @@
     <value>左に90° 回転</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>補間方式</value>
+    <value>補間方式:</value>
   </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>中間点:</value>
@@ -211,7 +211,7 @@
     <value>画像をクリップボードにコピー</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>画像を印刷...</value>
+    <value>画像を印刷... (Ctrl + P)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
     <value>FPSを表示</value>
@@ -238,7 +238,7 @@
     <value>エディターの起動モード:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
-    <value>フルスクリーンをキャプチャー</value>
+    <value>全画面をキャプチャー</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>領域をキャプチャー</value>
@@ -250,7 +250,7 @@
     <value>領域キャプチャー (ライトモード)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
-    <value>画像を保存</value>
+    <value>画像を保存 (Ctrl + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
     <value>新しい画像...</value>
@@ -271,7 +271,7 @@
     <value>塗りつぶしの色...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>名前を付けて画像を保存...</value>
+    <value>名前を付けて画像を保存... (Ctrl + Shift + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>タスクを継続 (スペース または 右クリック)</value>
@@ -301,7 +301,7 @@
     <value>すべて削除</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
-    <value>線の太さ:</value>
+    <value>枠の太さ:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>注釈メニュー</value>
@@ -313,7 +313,7 @@
     <value>画像の切り抜き...</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
-    <value>線の色...</value>
+    <value>枠線の色...</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
     <value>ルーペを表示</value>
@@ -373,16 +373,16 @@
     <value>図形を描いた後は、図形選択モードにする</value>
   </data>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
-    <value>ステップの最初の値</value>
+    <value>ステップの最初の値:</value>
   </data>
   <data name="CloseEsc" xml:space="preserve">
     <value>閉じる(Esc)</value>
   </data>
   <data name="MagnifyStrength" xml:space="preserve">
-    <value>拡大率</value>
+    <value>拡大率:</value>
   </data>
   <data name="DropShadowColor" xml:space="preserve">
-    <value>影の色</value>
+    <value>影の色...</value>
   </data>
   <data name="ImageEffects" xml:space="preserve">
     <value>画像エフェクトを追加...</value>
@@ -391,19 +391,19 @@
     <value>小さいリサイズ用ハンドルを使う</value>
   </data>
   <data name="OpenKeybindsPage" xml:space="preserve">
-    <value>キーバインド一覧のページを開く</value>
+    <value>キーバインド一覧のページを開く...</value>
   </data>
   <data name="Duplicate" xml:space="preserve">
     <value>複製</value>
   </data>
   <data name="MenuIconSize" xml:space="preserve">
-    <value>画像エディタのアイコンサイズ</value>
+    <value>画像エディタのアイコンサイズ:</value>
   </data>
   <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
-    <value>Ctrl+Enterで改行　Enterで確定</value>
+    <value>Ctrl+Enterで改行 Enterで確定</value>
   </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
-    <value>Enterで改行　Ctrl+Enterで確定</value>
+    <value>Enterで改行 Ctrl+Enterで確定</value>
   </data>
   <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
     <value>矢の先端の方向:</value>
@@ -424,16 +424,16 @@
     <value>録画開始</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>クリックすると録画を開始</value>
+    <value>クリックすると録画を開始。</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>クリックすると録画を停止</value>
+    <value>クリックすると録画を停止。</value>
   </data>
   <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
-    <value>レコーディングを停止してよいですか？</value>
+    <value>レコーディングを停止しますか？</value>
   </data>
   <data name="AutoCopyImageToClipboard" xml:space="preserve">
-    <value>クリップボードに自動でコピーする</value>
+    <value>クリップボードに自動でコピー</value>
   </data>
   <data name="Blur" xml:space="preserve">
     <value>ぼかし</value>
@@ -442,6 +442,54 @@
     <value>モザイク</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
-    <value>注釈のオプション設定</value>
+    <value>ほかのオプション</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>ビットレート:</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>処理中...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>エンコード中...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>待機中...</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>キーバインドのウェブページを開く前に、このウィンドウを閉じます。続行しますか？</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>開いたら幅に合わせて拡大表示</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>再開</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>一時停止</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>FPS 上限:</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>画像をコピーしました</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>画像を保存しました</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>画像を保存しました</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>画像をアップロード中</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>ハイライト</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>切り抜き削除の効果:</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>切り抜き削除の効果の大きさ:</value>
   </data>
 </root>

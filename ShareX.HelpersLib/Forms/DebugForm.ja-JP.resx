@@ -133,6 +133,6 @@
     <value>ShareX - デバッグ ログ</value>
   </data>
   <data name="btnUploadLog.Text" xml:space="preserve">
-    <value>ログをアップロードする</value>
+    <value>ログをアップロード...</value>
   </data>
 </root>

@@ -121,7 +121,7 @@
     <value>検索:</value>
   </data>
   <data name="tslStickers.Text" xml:space="preserve">
-    <value>絵文字の種類</value>
+    <value>絵文字の種類:</value>
   </data>
   <data name="tsbEditStickers.Text" xml:space="preserve">
     <value>絵文字セットの編集</value>

@@ -148,13 +148,13 @@
     <value>複製</value>
   </data>
   <data name="btnPackager.Text" xml:space="preserve">
-    <value>パッケージ...</value>
+    <value>パッケージ化...</value>
   </data>
   <data name="btnEffectAdd.ToolTip" xml:space="preserve">
     <value>追加</value>
   </data>
   <data name="btnEffectClear.ToolTip" xml:space="preserve">
-    <value>クリア</value>
+    <value>クリア...</value>
   </data>
   <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
     <value>複製</value>
@@ -172,12 +172,15 @@
     <value>アップロード</value>
   </data>
   <data name="lblEffects.Text" xml:space="preserve">
-    <value>画像エフェクト</value>
+    <value>画像エフェクト:</value>
   </data>
   <data name="lblPresets.Text" xml:space="preserve">
     <value>プリセット:</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>画像エフェクト...</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>エフェクト名:</value>
   </data>
 </root>

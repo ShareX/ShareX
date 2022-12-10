@@ -136,9 +136,9 @@
     <value>URLから...</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>インポート</value>
+    <value> インポート</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>エクスポート</value>
+    <value> エクスポート</value>
   </data>
 </root>
