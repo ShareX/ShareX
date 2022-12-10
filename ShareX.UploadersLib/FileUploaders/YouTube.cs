@@ -57,12 +57,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class YouTube : FileUploader, IOAuth2
     {
+        public GoogleOAuth2 OAuth2 { get; private set; }
         public OAuth2Info AuthInfo => OAuth2.AuthInfo;
         public YouTubeVideoPrivacy PrivacyType { get; set; }
         public bool UseShortenedLink { get; set; }
         public bool ShowDialog { get; set; }
-
-        public GoogleOAuth2 OAuth2 { get; private set; }
 
         public YouTube(OAuth2Info oauth)
         {

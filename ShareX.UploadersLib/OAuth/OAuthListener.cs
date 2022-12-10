@@ -79,7 +79,6 @@ namespace ShareX.UploadersLib
 
             string queryCode = null;
             string queryState = null;
-            bool stateValidation = false;
 
             try
             {
@@ -90,13 +89,12 @@ namespace ShareX.UploadersLib
                 HttpListenerContext context = await listener.GetContextAsync();
                 queryCode = context.Request.QueryString.Get("code");
                 queryState = context.Request.QueryString.Get("state");
-                stateValidation = !string.IsNullOrEmpty(queryState) && queryState == state;
 
                 using (HttpListenerResponse response = context.Response)
                 {
                     string status;
 
-                    if (!stateValidation)
+                    if (queryState != state)
                     {
                         status = "Invalid state parameter.";
                     }
@@ -129,7 +127,7 @@ namespace ShareX.UploadersLib
                 Dispose();
             }
 
-            if (stateValidation && !string.IsNullOrEmpty(queryCode))
+            if (queryState == state && !string.IsNullOrEmpty(queryCode))
             {
                 return await Task.Run(() => OAuth.GetAccessToken(queryCode));
             }

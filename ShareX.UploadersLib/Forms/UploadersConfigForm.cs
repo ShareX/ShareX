@@ -228,13 +228,13 @@ namespace ShareX.UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info))
             {
-                oauth2Picasa.UserInfo = Config.GooglePhotosUserInfo;
-                oauth2Picasa.Status = OAuthLoginStatus.LoginSuccessful;
+                oauth2GooglePhotos.Connected = true;
+                oauth2GooglePhotos.UserInfo = Config.GooglePhotosUserInfo;
                 btnPicasaRefreshAlbumList.Enabled = true;
             }
 
-            txtPicasaAlbumID.Text = Config.GooglePhotosAlbumID;
             cbGooglePhotosIsPublic.Checked = Config.GooglePhotosIsPublic;
+            txtPicasaAlbumID.Text = Config.GooglePhotosAlbumID;
 
             #endregion Google Photos
 
@@ -732,8 +732,12 @@ namespace ShareX.UploadersLib
 
             #region YouTube
 
-            oauth2YouTube.Connected = OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info);
-            oauth2YouTube.UserInfo = Config.YouTubeUserInfo;
+            if (OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info))
+            {
+                oauth2YouTube.Connected = true;
+                oauth2YouTube.UserInfo = Config.YouTubeUserInfo;
+            }
+
             cbYouTubePrivacyType.Items.Clear();
             cbYouTubePrivacyType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
             cbYouTubePrivacyType.SelectedIndex = (int)Config.YouTubePrivacyType;
@@ -1054,41 +1058,28 @@ namespace ShareX.UploadersLib
 
         #region Google Photos
 
-        private void oauth2Picasa_OpenButtonClicked()
+        private void oauth2GooglePhotos_ConnectButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            Config.GooglePhotosOAuth2Info = OAuth2Open(new GooglePhotos(oauth));
-            Config.GooglePhotosUserInfo = null;
-        }
+            IOAuth2Loopback oauthLoopback = new GooglePhotos(oauth).OAuth2;
 
-        private void oauth2Picasa_CompleteButtonClicked(string code)
-        {
-            GooglePhotos googlePhotos = new GooglePhotos(Config.GooglePhotosOAuth2Info);
-            bool result = OAuth2Complete(googlePhotos, code, oauth2Picasa);
-            if (result)
+            using (OAuthListenerForm form = new OAuthListenerForm(oauthLoopback))
             {
-                try
-                {
-                    Config.GooglePhotosUserInfo = googlePhotos.GetUserInfo();
-                    oauth2Picasa.UserInfo = Config.GooglePhotosUserInfo;
-                }
-                catch (Exception e)
-                {
-                    e.ShowError();
-                }
+                form.ShowDialog();
+                Config.GooglePhotosOAuth2Info = form.OAuth2Info;
+                Config.GooglePhotosUserInfo = form.UserInfo;
             }
-            btnPicasaRefreshAlbumList.Enabled = result;
+
+            oauth2GooglePhotos.Connected = OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info);
+            oauth2GooglePhotos.UserInfo = Config.GooglePhotosUserInfo;
+            btnPicasaRefreshAlbumList.Enabled = oauth2GooglePhotos.Connected;
+            this.ForceActivate();
         }
 
-        private void oauth2Picasa_ClearButtonClicked()
+        private void oauth2GooglePhotos_DisconnectButtonClicked()
         {
             Config.GooglePhotosOAuth2Info = null;
             Config.GooglePhotosUserInfo = null;
-        }
-
-        private void oauth2Picasa_RefreshButtonClicked()
-        {
-            btnPicasaRefreshAlbumList.Enabled = OAuth2Refresh(new GooglePhotos(Config.GooglePhotosOAuth2Info), oauth2Picasa);
         }
 
         private void txtPicasaAlbumID_TextChanged(object sender, EventArgs e)
@@ -3050,7 +3041,7 @@ namespace ShareX.UploadersLib
                 Config.YouTubeUserInfo = form.UserInfo;
             }
 
-            oauth2YouTube.Connected = Config.YouTubeOAuth2Info != null;
+            oauth2YouTube.Connected = OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info);
             oauth2YouTube.UserInfo = Config.YouTubeUserInfo;
             this.ForceActivate();
         }

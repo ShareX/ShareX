@@ -122,6 +122,9 @@
     <value>Top, Left, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnConnect.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
   <data name="btnConnect.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 32</value>
   </data>
@@ -150,6 +153,9 @@
   <data name="lblStatus.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
   <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -157,7 +163,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+    <value>47, 16</value>
   </data>
   <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -183,14 +189,17 @@
   <data name="lblStatusValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblStatusValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
   <data name="lblStatusValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 0</value>
+    <value>47, 0</value>
   </data>
   <data name="lblStatusValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="lblStatusValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
+    <value>0, 16</value>
   </data>
   <data name="lblStatusValue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
