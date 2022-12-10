@@ -25,7 +25,6 @@
 
 using ShareX.UploadersLib.Properties;
 using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -36,39 +35,9 @@ namespace ShareX.UploadersLib
         public event Action ConnectButtonClicked;
         public event Action DisconnectButtonClicked;
 
-        private bool connected;
+        public bool Connected { get; private set; }
 
-        [DefaultValue(false)]
-        public bool Connected
-        {
-            get
-            {
-                return connected;
-            }
-            set
-            {
-                if (connected != value)
-                {
-                    connected = value;
-                    UpdateStatus();
-                }
-            }
-        }
-
-        private OAuthUserInfo userInfo;
-
-        public OAuthUserInfo UserInfo
-        {
-            get
-            {
-                return userInfo;
-            }
-            set
-            {
-                userInfo = value;
-                UpdateStatus();
-            }
-        }
+        public OAuthUserInfo UserInfo { get; private set; }
 
         public OAuthLoopbackControl()
         {
@@ -91,6 +60,18 @@ namespace ShareX.UploadersLib
             }
         }
 
+        public void UpdateStatus(OAuth2Info oauth, OAuthUserInfo userInfo = null)
+        {
+            Connected = OAuth2Info.CheckOAuth(oauth);
+
+            if (Connected)
+            {
+                UserInfo = userInfo;
+            }
+
+            UpdateStatus();
+        }
+
         private void UpdateStatus()
         {
             if (Connected)
@@ -109,6 +90,7 @@ namespace ShareX.UploadersLib
             }
             else
             {
+                // TODO: Translate
                 btnConnect.Text = "Connect...";
                 lblStatusValue.Text = Resources.OAuthControl_Status_NotLoggedIn;
                 lblStatusValue.ForeColor = Color.FromArgb(220, 0, 0);

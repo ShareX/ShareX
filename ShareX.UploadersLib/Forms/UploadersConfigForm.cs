@@ -226,12 +226,8 @@ namespace ShareX.UploadersLib
 
             #region Google Photos
 
-            if (OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info))
-            {
-                oauth2GooglePhotos.Connected = true;
-                oauth2GooglePhotos.UserInfo = Config.GooglePhotosUserInfo;
-                btnPicasaRefreshAlbumList.Enabled = true;
-            }
+            oauth2GooglePhotos.UpdateStatus(Config.GooglePhotosOAuth2Info, Config.GooglePhotosUserInfo);
+            btnPicasaRefreshAlbumList.Enabled = oauth2GooglePhotos.Connected;
 
             cbGooglePhotosIsPublic.Checked = Config.GooglePhotosIsPublic;
             txtPicasaAlbumID.Text = Config.GooglePhotosAlbumID;
@@ -386,12 +382,8 @@ namespace ShareX.UploadersLib
 
             #region Google Drive
 
-            if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
-            {
-                oauth2GoogleDrive.Connected = true;
-                oauth2GoogleDrive.UserInfo = Config.GoogleDriveUserInfo;
-                btnGoogleDriveRefreshFolders.Enabled = true;
-            }
+            oauth2GoogleDrive.UpdateStatus(Config.GoogleDriveOAuth2Info, Config.GoogleDriveUserInfo);
+            btnGoogleDriveRefreshFolders.Enabled = oauth2GoogleDrive.Connected;
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
             cbGoogleDriveDirectLink.Checked = Config.GoogleDriveDirectLink;
@@ -734,11 +726,7 @@ namespace ShareX.UploadersLib
 
             #region YouTube
 
-            if (OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info))
-            {
-                oauth2YouTube.Connected = true;
-                oauth2YouTube.UserInfo = Config.YouTubeUserInfo;
-            }
+            oauth2YouTube.UpdateStatus(Config.YouTubeOAuth2Info, Config.YouTubeUserInfo);
 
             cbYouTubePrivacyType.Items.Clear();
             cbYouTubePrivacyType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
@@ -750,11 +738,7 @@ namespace ShareX.UploadersLib
 
             #region Google Cloud Storage
 
-            if (OAuth2Info.CheckOAuth(Config.GoogleCloudStorageOAuth2Info))
-            {
-                oauth2GoogleCloudStorage.Connected = true;
-                oauth2GoogleCloudStorage.UserInfo = Config.GoogleCloudStorageUserInfo;
-            }
+            oauth2GoogleCloudStorage.UpdateStatus(Config.GoogleCloudStorageOAuth2Info, Config.GoogleCloudStorageUserInfo);
 
             txtGoogleCloudStorageBucket.Text = Config.GoogleCloudStorageBucket;
             txtGoogleCloudStorageDomain.Text = Config.GoogleCloudStorageDomain;
@@ -1073,9 +1057,9 @@ namespace ShareX.UploadersLib
                 Config.GooglePhotosUserInfo = form.UserInfo;
             }
 
-            oauth2GooglePhotos.Connected = OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info);
-            oauth2GooglePhotos.UserInfo = Config.GooglePhotosUserInfo;
+            oauth2GooglePhotos.UpdateStatus(Config.GooglePhotosOAuth2Info, Config.GooglePhotosUserInfo);
             btnPicasaRefreshAlbumList.Enabled = oauth2GooglePhotos.Connected;
+
             this.ForceActivate();
         }
 
@@ -1722,9 +1706,9 @@ namespace ShareX.UploadersLib
                 Config.GoogleDriveUserInfo = form.UserInfo;
             }
 
-            oauth2GoogleDrive.Connected = OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info);
-            oauth2GoogleDrive.UserInfo = Config.GoogleDriveUserInfo;
+            oauth2GoogleDrive.UpdateStatus(Config.GoogleDriveOAuth2Info, Config.GoogleDriveUserInfo);
             btnGoogleDriveRefreshFolders.Enabled = oauth2GoogleDrive.Connected;
+
             this.ForceActivate();
         }
 
@@ -3047,8 +3031,8 @@ namespace ShareX.UploadersLib
                 Config.YouTubeUserInfo = form.UserInfo;
             }
 
-            oauth2YouTube.Connected = OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info);
-            oauth2YouTube.UserInfo = Config.YouTubeUserInfo;
+            oauth2YouTube.UpdateStatus(Config.YouTubeOAuth2Info, Config.YouTubeUserInfo);
+
             this.ForceActivate();
         }
 
@@ -3094,8 +3078,8 @@ namespace ShareX.UploadersLib
                 Config.GoogleCloudStorageUserInfo = form.UserInfo;
             }
 
-            oauth2GoogleCloudStorage.Connected = OAuth2Info.CheckOAuth(Config.GoogleCloudStorageOAuth2Info);
-            oauth2GoogleCloudStorage.UserInfo = Config.GoogleCloudStorageUserInfo;
+            oauth2GoogleCloudStorage.UpdateStatus(Config.GoogleCloudStorageOAuth2Info, Config.GoogleCloudStorageUserInfo);
+
             this.ForceActivate();
         }
 

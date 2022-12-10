@@ -1788,7 +1788,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2GoogleDrive, "oauth2GoogleDrive");
             this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
-            this.oauth2GoogleDrive.UserInfo = null;
             this.oauth2GoogleDrive.ConnectButtonClicked += new System.Action(this.oauth2GoogleDrive_ConnectButtonClicked);
             this.oauth2GoogleDrive.DisconnectButtonClicked += new System.Action(this.oauth2GoogleDrive_DisconnectButtonClicked);
             // 
@@ -3805,7 +3804,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
             this.oauth2YouTube.Name = "oauth2YouTube";
-            this.oauth2YouTube.UserInfo = null;
             this.oauth2YouTube.ConnectButtonClicked += new System.Action(this.oauth2YouTube_ConnectButtonClicked);
             this.oauth2YouTube.DisconnectButtonClicked += new System.Action(this.oauth2YouTube_DisconnectButtonClicked);
             // 
@@ -4766,7 +4764,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2GooglePhotos, "oauth2GooglePhotos");
             this.oauth2GooglePhotos.Name = "oauth2GooglePhotos";
-            this.oauth2GooglePhotos.UserInfo = null;
             this.oauth2GooglePhotos.ConnectButtonClicked += new System.Action(this.oauth2GooglePhotos_ConnectButtonClicked);
             this.oauth2GooglePhotos.DisconnectButtonClicked += new System.Action(this.oauth2GooglePhotos_DisconnectButtonClicked);
             // 
@@ -4947,7 +4944,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
             this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
-            this.oauth2GoogleCloudStorage.UserInfo = null;
             this.oauth2GoogleCloudStorage.ConnectButtonClicked += new System.Action(this.oauth2GoogleCloudStorage_ConnectButtonClicked);
             this.oauth2GoogleCloudStorage.DisconnectButtonClicked += new System.Action(this.oauth2GoogleCloudStorage_DisconnectButtonClicked);
             // 
