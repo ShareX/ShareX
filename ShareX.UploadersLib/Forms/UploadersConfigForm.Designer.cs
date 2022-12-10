@@ -196,6 +196,7 @@ namespace ShareX.UploadersLib
             this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
+            this.oauth2GoogleDrive = new ShareX.UploadersLib.OAuthLoopbackControl();
             this.cbGoogleDriveSharedDrive = new System.Windows.Forms.ComboBox();
             this.cbGoogleDriveDirectLink = new System.Windows.Forms.CheckBox();
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
@@ -271,7 +272,6 @@ namespace ShareX.UploadersLib
             this.txtGoogleCloudStorageDomain = new System.Windows.Forms.TextBox();
             this.lblGoogleCloudStorageBucket = new System.Windows.Forms.Label();
             this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
-            this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
             this.lblAzureStorageURLPreview = new System.Windows.Forms.Label();
             this.lblAzureStorageURLPreviewLabel = new System.Windows.Forms.Label();
@@ -630,7 +630,7 @@ namespace ShareX.UploadersLib
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.oauth2GoogleDrive = new ShareX.UploadersLib.OAuthLoopbackControl();
+            this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthLoopbackControl();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1784,6 +1784,14 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpGoogleDrive, "tpGoogleDrive");
             this.tpGoogleDrive.Name = "tpGoogleDrive";
             // 
+            // oauth2GoogleDrive
+            // 
+            resources.ApplyResources(this.oauth2GoogleDrive, "oauth2GoogleDrive");
+            this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
+            this.oauth2GoogleDrive.UserInfo = null;
+            this.oauth2GoogleDrive.ConnectButtonClicked += new System.Action(this.oauth2GoogleDrive_ConnectButtonClicked);
+            this.oauth2GoogleDrive.DisconnectButtonClicked += new System.Action(this.oauth2GoogleDrive_DisconnectButtonClicked);
+            // 
             // cbGoogleDriveSharedDrive
             // 
             this.cbGoogleDriveSharedDrive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2216,6 +2224,7 @@ namespace ShareX.UploadersLib
             // 
             // tpGoogleCloudStorage
             // 
+            this.tpGoogleCloudStorage.Controls.Add(this.oauth2GoogleCloudStorage);
             this.tpGoogleCloudStorage.Controls.Add(this.gbGoogleCloudStorageAdvanced);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreview);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreviewLabel);
@@ -2225,7 +2234,6 @@ namespace ShareX.UploadersLib
             this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageDomain);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageBucket);
             this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageBucket);
-            this.tpGoogleCloudStorage.Controls.Add(this.oauth2GoogleCloudStorage);
             resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
             this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
             this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
@@ -2316,16 +2324,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.txtGoogleCloudStorageBucket, "txtGoogleCloudStorageBucket");
             this.txtGoogleCloudStorageBucket.Name = "txtGoogleCloudStorageBucket";
             this.txtGoogleCloudStorageBucket.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageBucket_TextChanged);
-            // 
-            // oauth2GoogleCloudStorage
-            // 
-            resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
-            this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
-            this.oauth2GoogleCloudStorage.UserInfo = null;
-            this.oauth2GoogleCloudStorage.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleCloudStorage_OpenButtonClicked);
-            this.oauth2GoogleCloudStorage.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleCloudStorage_CompleteButtonClicked);
-            this.oauth2GoogleCloudStorage.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleCloudStorage_ClearButtonClicked);
-            this.oauth2GoogleCloudStorage.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleCloudStorage_RefreshButtonClicked);
             // 
             // tpAzureStorage
             // 
@@ -4945,13 +4943,13 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // oauth2GoogleDrive
+            // oauth2GoogleCloudStorage
             // 
-            resources.ApplyResources(this.oauth2GoogleDrive, "oauth2GoogleDrive");
-            this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
-            this.oauth2GoogleDrive.UserInfo = null;
-            this.oauth2GoogleDrive.ConnectButtonClicked += new System.Action(this.oauth2GoogleDrive_ConnectButtonClicked);
-            this.oauth2GoogleDrive.DisconnectButtonClicked += new System.Action(this.oauth2GoogleDrive_DisconnectButtonClicked);
+            resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
+            this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
+            this.oauth2GoogleCloudStorage.UserInfo = null;
+            this.oauth2GoogleCloudStorage.ConnectButtonClicked += new System.Action(this.oauth2GoogleCloudStorage_ConnectButtonClicked);
+            this.oauth2GoogleCloudStorage.DisconnectButtonClicked += new System.Action(this.oauth2GoogleCloudStorage_DisconnectButtonClicked);
             // 
             // UploadersConfigForm
             // 
@@ -5604,7 +5602,6 @@ namespace ShareX.UploadersLib
         internal System.Windows.Forms.TabPage tpYouTube;
         private System.Windows.Forms.CheckBox cbYouTubeUseShortenedLink;
         internal System.Windows.Forms.TabPage tpGoogleCloudStorage;
-        private OAuthControl oauth2GoogleCloudStorage;
         private System.Windows.Forms.TextBox txtGoogleCloudStorageBucket;
         private System.Windows.Forms.Label lblGoogleCloudStorageBucket;
         private System.Windows.Forms.TextBox txtGoogleCloudStorageDomain;
@@ -5694,5 +5691,6 @@ namespace ShareX.UploadersLib
         private OAuthLoopbackControl oauth2YouTube;
         private OAuthLoopbackControl oauth2GooglePhotos;
         private OAuthLoopbackControl oauth2GoogleDrive;
+        private OAuthLoopbackControl oauth2GoogleCloudStorage;
     }
 }

@@ -432,6 +432,7 @@ namespace ShareX.UploadersLib
         #region Google Cloud Storage
 
         public OAuth2Info GoogleCloudStorageOAuth2Info { get; set; } = null;
+        public OAuthUserInfo GoogleCloudStorageUserInfo { get; set; } = null;
         public string GoogleCloudStorageBucket { get; set; } = "";
         public string GoogleCloudStorageDomain { get; set; } = "";
         public string GoogleCloudStorageObjectPrefix { get; set; } = "ShareX/%y/%mo";

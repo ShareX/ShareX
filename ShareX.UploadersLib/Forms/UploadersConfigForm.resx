@@ -3062,15 +3062,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;tpOneDrive.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 75</value>
-  </data>
-  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
     <value>oauth2GoogleDrive</value>
   </data>
@@ -3082,15 +3073,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="cbGoogleDriveSharedDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
-  </data>
-  <data name="cbGoogleDriveSharedDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 21</value>
-  </data>
-  <data name="cbGoogleDriveSharedDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveSharedDrive.Name" xml:space="preserve">
     <value>cbGoogleDriveSharedDrive</value>
@@ -3104,24 +3086,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;cbGoogleDriveSharedDrive.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cbGoogleDriveDirectLink.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGoogleDriveDirectLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGoogleDriveDirectLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 111</value>
-  </data>
-  <data name="cbGoogleDriveDirectLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 17</value>
-  </data>
-  <data name="cbGoogleDriveDirectLink.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
-    <value>Use direct link</value>
-  </data>
   <data name="&gt;&gt;cbGoogleDriveDirectLink.Name" xml:space="preserve">
     <value>cbGoogleDriveDirectLink</value>
   </data>
@@ -3133,24 +3097,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="&gt;&gt;cbGoogleDriveDirectLink.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 167</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
-    <value>Upload files to selected folder</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveUseFolder.Name" xml:space="preserve">
     <value>cbGoogleDriveUseFolder</value>
@@ -3164,15 +3110,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;cbGoogleDriveUseFolder.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="txtGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 208</value>
-  </data>
-  <data name="txtGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 20</value>
-  </data>
-  <data name="txtGoogleDriveFolderID.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.Name" xml:space="preserve">
     <value>txtGoogleDriveFolderID</value>
   </data>
@@ -3184,24 +3121,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 191</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
-    <value>Folder ID:</value>
   </data>
   <data name="&gt;&gt;lblGoogleDriveFolderID.Name" xml:space="preserve">
     <value>lblGoogleDriveFolderID</value>
@@ -3215,15 +3134,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;lblGoogleDriveFolderID.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="lvGoogleDriveFoldersList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 232</value>
-  </data>
-  <data name="lvGoogleDriveFoldersList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 296</value>
-  </data>
-  <data name="lvGoogleDriveFoldersList.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Name" xml:space="preserve">
     <value>lvGoogleDriveFoldersList</value>
   </data>
@@ -3236,24 +3146,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;lvGoogleDriveFoldersList.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="btnGoogleDriveRefreshFolders.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 135</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 23</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
-    <value>Refresh folders list</value>
-  </data>
   <data name="&gt;&gt;btnGoogleDriveRefreshFolders.Name" xml:space="preserve">
     <value>btnGoogleDriveRefreshFolders</value>
   </data>
@@ -3265,24 +3157,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="&gt;&gt;btnGoogleDriveRefreshFolders.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 17</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Is public upload?</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveIsPublic.Name" xml:space="preserve">
     <value>cbGoogleDriveIsPublic</value>
@@ -3297,13 +3171,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>8</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3836,6 +3710,99 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;tpAmazonS3.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="oauth2GoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 75</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Name" xml:space="preserve">
+    <value>oauth2GoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageStripExtension.Name" xml:space="preserve">
+    <value>lblGoogleCloudStorageStripExtension</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageStripExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageStripExtension.Parent" xml:space="preserve">
+    <value>gbGoogleCloudStorageAdvanced</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleCloudStorageStripExtension.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionText.Name" xml:space="preserve">
+    <value>cbGoogleCloudStorageStripExtensionText</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionText.Parent" xml:space="preserve">
+    <value>gbGoogleCloudStorageAdvanced</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionVideo.Name" xml:space="preserve">
+    <value>cbGoogleCloudStorageStripExtensionVideo</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionVideo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionVideo.Parent" xml:space="preserve">
+    <value>gbGoogleCloudStorageAdvanced</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionVideo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageSetPublicACL.Name" xml:space="preserve">
+    <value>cbGoogleCloudStorageSetPublicACL</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageSetPublicACL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageSetPublicACL.Parent" xml:space="preserve">
+    <value>gbGoogleCloudStorageAdvanced</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageSetPublicACL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionImage.Name" xml:space="preserve">
+    <value>cbGoogleCloudStorageStripExtensionImage</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionImage.Parent" xml:space="preserve">
+    <value>gbGoogleCloudStorageAdvanced</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionImage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 283</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 98</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
   <data name="&gt;&gt;gbGoogleCloudStorageAdvanced.Name" xml:space="preserve">
     <value>gbGoogleCloudStorageAdvanced</value>
   </data>
@@ -3846,7 +3813,25 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;gbGoogleCloudStorageAdvanced.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 252</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
+    <value>Preview</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStoragePathPreview.Name" xml:space="preserve">
     <value>lblGoogleCloudStoragePathPreview</value>
@@ -3858,7 +3843,25 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStoragePathPreview.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 233</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
+    <value>URL preview:</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStoragePathPreviewLabel.Name" xml:space="preserve">
     <value>lblGoogleCloudStoragePathPreviewLabel</value>
@@ -3870,7 +3873,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStoragePathPreviewLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="txtGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 153</value>
+  </data>
+  <data name="txtGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 20</value>
+  </data>
+  <data name="txtGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageObjectPrefix</value>
@@ -3882,7 +3894,25 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 137</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>Upload path:</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
     <value>lblGoogleCloudStorageObjectPrefix</value>
@@ -3894,7 +3924,25 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 185</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>Custom domain:</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageDomain.Name" xml:space="preserve">
     <value>lblGoogleCloudStorageDomain</value>
@@ -3906,7 +3954,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="txtGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 201</value>
+  </data>
+  <data name="txtGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 20</value>
+  </data>
+  <data name="txtGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageDomain.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageDomain</value>
@@ -3918,7 +3975,25 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 88</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
+    <value>Bucket name:</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageBucket.Name" xml:space="preserve">
     <value>lblGoogleCloudStorageBucket</value>
@@ -3930,7 +4005,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
+  </data>
+  <data name="txtGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 104</value>
+  </data>
+  <data name="txtGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 20</value>
+  </data>
+  <data name="txtGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageBucket.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageBucket</value>
@@ -3942,28 +4026,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Name" xml:space="preserve">
-    <value>oauth2GoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="tpGoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpGoogleCloudStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpGoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -6297,10 +6369,10 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>6</value>
   </data>
   <data name="tpYouTube.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpYouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpYouTube.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -8897,6 +8969,180 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;oAuth2OneDrive.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 75</value>
+  </data>
+  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
+    <value>oauth2GoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbGoogleDriveSharedDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 136</value>
+  </data>
+  <data name="cbGoogleDriveSharedDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 21</value>
+  </data>
+  <data name="cbGoogleDriveSharedDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveSharedDrive.Name" xml:space="preserve">
+    <value>cbGoogleDriveSharedDrive</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveSharedDrive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveSharedDrive.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveSharedDrive.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 111</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
+    <value>Use direct link</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveDirectLink.Name" xml:space="preserve">
+    <value>cbGoogleDriveDirectLink</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveDirectLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveDirectLink.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveDirectLink.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 167</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 17</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>Upload files to selected folder</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveUseFolder.Name" xml:space="preserve">
+    <value>cbGoogleDriveUseFolder</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveUseFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveUseFolder.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveUseFolder.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 208</value>
+  </data>
+  <data name="txtGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 20</value>
+  </data>
+  <data name="txtGoogleDriveFolderID.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleDriveFolderID.Name" xml:space="preserve">
+    <value>txtGoogleDriveFolderID</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleDriveFolderID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleDriveFolderID.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;txtGoogleDriveFolderID.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 191</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
+    <value>Folder ID:</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleDriveFolderID.Name" xml:space="preserve">
+    <value>lblGoogleDriveFolderID</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleDriveFolderID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleDriveFolderID.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;lblGoogleDriveFolderID.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lvGoogleDriveFoldersList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 232</value>
+  </data>
+  <data name="lvGoogleDriveFoldersList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 296</value>
+  </data>
+  <data name="lvGoogleDriveFoldersList.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lvGoogleDriveFoldersList.Name" xml:space="preserve">
+    <value>lvGoogleDriveFoldersList</value>
+  </data>
+  <data name="&gt;&gt;lvGoogleDriveFoldersList.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvGoogleDriveFoldersList.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;lvGoogleDriveFoldersList.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -8908,6 +9154,66 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="chGoogleDriveDescription.Width" type="System.Int32, mscorlib">
     <value>228</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 135</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 23</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>Refresh folders list</value>
+  </data>
+  <data name="&gt;&gt;btnGoogleDriveRefreshFolders.Name" xml:space="preserve">
+    <value>btnGoogleDriveRefreshFolders</value>
+  </data>
+  <data name="&gt;&gt;btnGoogleDriveRefreshFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGoogleDriveRefreshFolders.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;btnGoogleDriveRefreshFolders.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>Is public upload?</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveIsPublic.Name" xml:space="preserve">
+    <value>cbGoogleDriveIsPublic</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveIsPublic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveIsPublic.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveIsPublic.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="lblPuushAPIKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -10265,90 +10571,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;txtAmazonS3AccessKey.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageStripExtension.Name" xml:space="preserve">
-    <value>lblGoogleCloudStorageStripExtension</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageStripExtension.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageStripExtension.Parent" xml:space="preserve">
-    <value>gbGoogleCloudStorageAdvanced</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageStripExtension.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionText.Name" xml:space="preserve">
-    <value>cbGoogleCloudStorageStripExtensionText</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionText.Parent" xml:space="preserve">
-    <value>gbGoogleCloudStorageAdvanced</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionText.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionVideo.Name" xml:space="preserve">
-    <value>cbGoogleCloudStorageStripExtensionVideo</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionVideo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionVideo.Parent" xml:space="preserve">
-    <value>gbGoogleCloudStorageAdvanced</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionVideo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageSetPublicACL.Name" xml:space="preserve">
-    <value>cbGoogleCloudStorageSetPublicACL</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageSetPublicACL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageSetPublicACL.Parent" xml:space="preserve">
-    <value>gbGoogleCloudStorageAdvanced</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageSetPublicACL.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionImage.Name" xml:space="preserve">
-    <value>cbGoogleCloudStorageStripExtensionImage</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionImage.Parent" xml:space="preserve">
-    <value>gbGoogleCloudStorageAdvanced</value>
-  </data>
-  <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionImage.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="gbGoogleCloudStorageAdvanced.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 450</value>
-  </data>
-  <data name="gbGoogleCloudStorageAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 98</value>
-  </data>
-  <data name="gbGoogleCloudStorageAdvanced.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
-    <value>Advanced</value>
-  </data>
-  <data name="&gt;&gt;gbGoogleCloudStorageAdvanced.Name" xml:space="preserve">
-    <value>gbGoogleCloudStorageAdvanced</value>
-  </data>
-  <data name="&gt;&gt;gbGoogleCloudStorageAdvanced.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbGoogleCloudStorageAdvanced.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;gbGoogleCloudStorageAdvanced.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="lblGoogleCloudStorageStripExtension.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -10362,7 +10584,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>129, 13</value>
   </data>
   <data name="lblGoogleCloudStorageStripExtension.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>1</value>
   </data>
   <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
     <value>Remove file extension on:</value>
@@ -10392,7 +10614,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>47, 17</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionText.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>4</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
     <value>Text</value>
@@ -10422,7 +10644,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>53, 17</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionVideo.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>3</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
     <value>Video</value>
@@ -10452,7 +10674,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>151, 17</value>
   </data>
   <data name="cbGoogleCloudStorageSetPublicACL.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>0</value>
   </data>
   <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
     <value>Set public-read ACL on file</value>
@@ -10482,7 +10704,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>55, 17</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionImage.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>2</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
     <value>Image</value>
@@ -10498,240 +10720,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="&gt;&gt;cbGoogleCloudStorageStripExtensionImage.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreview.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 419</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
-    <value>Preview</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStoragePathPreview.Name" xml:space="preserve">
-    <value>lblGoogleCloudStoragePathPreview</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStoragePathPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStoragePathPreview.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStoragePathPreview.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreviewLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreviewLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 400</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreviewLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreviewLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
-    <value>URL preview:</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStoragePathPreviewLabel.Name" xml:space="preserve">
-    <value>lblGoogleCloudStoragePathPreviewLabel</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStoragePathPreviewLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStoragePathPreviewLabel.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStoragePathPreviewLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txtGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 320</value>
-  </data>
-  <data name="txtGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="txtGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
-    <value>txtGoogleCloudStorageObjectPrefix</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 304</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
-    <value>Upload path:</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
-    <value>lblGoogleCloudStorageObjectPrefix</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 352</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
-    <value>Custom domain:</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageDomain.Name" xml:space="preserve">
-    <value>lblGoogleCloudStorageDomain</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageDomain.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="txtGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 368</value>
-  </data>
-  <data name="txtGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="txtGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageDomain.Name" xml:space="preserve">
-    <value>txtGoogleCloudStorageDomain</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageDomain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageDomain.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 255</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
-    <value>Bucket name:</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageBucket.Name" xml:space="preserve">
-    <value>lblGoogleCloudStorageBucket</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageBucket.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageBucket.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;lblGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="txtGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 271</value>
-  </data>
-  <data name="txtGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="txtGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageBucket.Name" xml:space="preserve">
-    <value>txtGoogleCloudStorageBucket</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageBucket.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageBucket.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;txtGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 238</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Name" xml:space="preserve">
-    <value>oauth2GoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="lblAzureStorageURLPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

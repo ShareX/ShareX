@@ -752,7 +752,8 @@ namespace ShareX.UploadersLib
 
             if (OAuth2Info.CheckOAuth(Config.GoogleCloudStorageOAuth2Info))
             {
-                oauth2GoogleCloudStorage.Status = OAuthLoginStatus.LoginSuccessful;
+                oauth2GoogleCloudStorage.Connected = true;
+                oauth2GoogleCloudStorage.UserInfo = Config.GoogleCloudStorageUserInfo;
             }
 
             txtGoogleCloudStorageBucket.Text = Config.GoogleCloudStorageBucket;
@@ -3081,25 +3082,27 @@ namespace ShareX.UploadersLib
 
         #region Google Cloud Storage
 
-        private void oauth2GoogleCloudStorage_ClearButtonClicked()
-        {
-            Config.GoogleCloudStorageOAuth2Info = null;
-        }
-
-        private void oauth2GoogleCloudStorage_CompleteButtonClicked(string code)
-        {
-            OAuth2Complete(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), code, oauth2GoogleCloudStorage);
-        }
-
-        private void oauth2GoogleCloudStorage_OpenButtonClicked()
+        private void oauth2GoogleCloudStorage_ConnectButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            Config.GoogleCloudStorageOAuth2Info = OAuth2Open(new GoogleCloudStorage(oauth));
+            IOAuth2Loopback oauthLoopback = new GoogleCloudStorage(oauth).OAuth2;
+
+            using (OAuthListenerForm form = new OAuthListenerForm(oauthLoopback))
+            {
+                form.ShowDialog();
+                Config.GoogleCloudStorageOAuth2Info = form.OAuth2Info;
+                Config.GoogleCloudStorageUserInfo = form.UserInfo;
+            }
+
+            oauth2GoogleCloudStorage.Connected = OAuth2Info.CheckOAuth(Config.GoogleCloudStorageOAuth2Info);
+            oauth2GoogleCloudStorage.UserInfo = Config.GoogleCloudStorageUserInfo;
+            this.ForceActivate();
         }
 
-        private void oauth2GoogleCloudStorage_RefreshButtonClicked()
+        private void oauth2GoogleCloudStorage_DisconnectButtonClicked()
         {
-            OAuth2Refresh(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage);
+            Config.GoogleCloudStorageOAuth2Info = null;
+            Config.GoogleCloudStorageUserInfo = null;
         }
 
         private void txtGoogleCloudStorageBucket_TextChanged(object sender, EventArgs e)
