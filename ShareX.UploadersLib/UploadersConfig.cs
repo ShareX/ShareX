@@ -195,6 +195,7 @@ namespace ShareX.UploadersLib
         #region Google Drive
 
         public OAuth2Info GoogleDriveOAuth2Info { get; set; } = null;
+        public OAuthUserInfo GoogleDriveUserInfo { get; set; } = null;
         public bool GoogleDriveIsPublic { get; set; } = true;
         public bool GoogleDriveDirectLink { get; set; } = false;
         public bool GoogleDriveUseFolder { get; set; } = false;

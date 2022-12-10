@@ -386,6 +386,16 @@ namespace ShareX.UploadersLib
 
             #region Google Drive
 
+            if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
+            {
+                oauth2GoogleDrive.Connected = true;
+                oauth2GoogleDrive.UserInfo = Config.GoogleDriveUserInfo;
+                btnGoogleDriveRefreshFolders.Enabled = true;
+            }
+
+            cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
+            cbGoogleDriveDirectLink.Checked = Config.GoogleDriveDirectLink;
+
             cbGoogleDriveSharedDrive.Items.Clear();
             cbGoogleDriveSharedDrive.Items.Add(GoogleDrive.MyDrive);
             if (Config.GoogleDriveSelectedDrive?.id != GoogleDrive.MyDrive.id)
@@ -393,14 +403,6 @@ namespace ShareX.UploadersLib
                 cbGoogleDriveSharedDrive.Items.Add(Config.GoogleDriveSelectedDrive);
             }
 
-            if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
-            {
-                oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
-                btnGoogleDriveRefreshFolders.Enabled = true;
-            }
-
-            cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
-            cbGoogleDriveDirectLink.Checked = Config.GoogleDriveDirectLink;
             cbGoogleDriveUseFolder.Checked = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
@@ -1707,25 +1709,28 @@ namespace ShareX.UploadersLib
 
         #region Google Drive
 
-        private void oauth2GoogleDrive_OpenButtonClicked()
+        private void oauth2GoogleDrive_ConnectButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            Config.GoogleDriveOAuth2Info = OAuth2Open(new GoogleDrive(oauth));
+            IOAuth2Loopback oauthLoopback = new GoogleDrive(oauth).OAuth2;
+
+            using (OAuthListenerForm form = new OAuthListenerForm(oauthLoopback))
+            {
+                form.ShowDialog();
+                Config.GoogleDriveOAuth2Info = form.OAuth2Info;
+                Config.GoogleDriveUserInfo = form.UserInfo;
+            }
+
+            oauth2GoogleDrive.Connected = OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info);
+            oauth2GoogleDrive.UserInfo = Config.GoogleDriveUserInfo;
+            btnGoogleDriveRefreshFolders.Enabled = oauth2GoogleDrive.Connected;
+            this.ForceActivate();
         }
 
-        private void oauth2GoogleDrive_CompleteButtonClicked(string code)
-        {
-            btnGoogleDriveRefreshFolders.Enabled = OAuth2Complete(new GoogleDrive(Config.GoogleDriveOAuth2Info), code, oauth2GoogleDrive);
-        }
-
-        private void oauth2GoogleDrive_RefreshButtonClicked()
-        {
-            btnGoogleDriveRefreshFolders.Enabled = OAuth2Refresh(new GoogleDrive(Config.GoogleDriveOAuth2Info), oauth2GoogleDrive);
-        }
-
-        private void oauth2GoogleDrive_ClearButtonClicked()
+        private void oauth2GoogleDrive_DisconnectButtonClicked()
         {
             Config.GoogleDriveOAuth2Info = null;
+            Config.GoogleDriveUserInfo = null;
         }
 
         private void cbGoogleDriveIsPublic_CheckedChanged(object sender, EventArgs e)
