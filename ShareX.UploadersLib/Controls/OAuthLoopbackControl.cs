@@ -51,8 +51,7 @@ namespace ShareX.UploadersLib
             {
                 DisconnectButtonClicked?.Invoke();
 
-                Connected = false;
-                UserInfo = null;
+                UpdateStatus(null);
             }
             else
             {
@@ -67,6 +66,10 @@ namespace ShareX.UploadersLib
             if (Connected)
             {
                 UserInfo = userInfo;
+            }
+            else
+            {
+                UserInfo = null;
             }
 
             UpdateStatus();
