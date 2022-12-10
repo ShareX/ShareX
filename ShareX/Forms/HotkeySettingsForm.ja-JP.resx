@@ -135,4 +135,7 @@
   <data name="btnHotkeysDisabled.Text" xml:space="preserve">
     <value>ホットキーが無効になりました。ここをクリックすると有効になります。</value>
   </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>初期化...</value>
+  </data>
 </root>

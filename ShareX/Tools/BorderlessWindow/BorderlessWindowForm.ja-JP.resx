@@ -120,4 +120,13 @@
   <data name="lblWindowTitle.Text" xml:space="preserve">
     <value>ウィンドウのタイトル:</value>
   </data>
+  <data name="mbWindowList.Text" xml:space="preserve">
+    <value>ウィンドウを選択</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - ボーダーレスウィンドウ</value>
+  </data>
+  <data name="btnMakeWindowBorderless.Text" xml:space="preserve">
+    <value>ウィンドウを枠なしに</value>
+  </data>
 </root>

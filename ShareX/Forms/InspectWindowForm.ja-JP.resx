@@ -124,9 +124,12 @@
     <value>ShareX - ウィンドウの調査</value>
   </data>
   <data name="btnInspectWindow.Text" xml:space="preserve">
-    <value>ウィンドウを調べる</value>
+    <value>ウィンドウを調べる...</value>
   </data>
   <data name="btnInspectControl.Text" xml:space="preserve">
-    <value>コントロールを調べる</value>
+    <value>コントロールを調べる...</value>
+  </data>
+  <data name="btnPinToTop.Text" xml:space="preserve">
+    <value>最前面に固定</value>
   </data>
 </root>

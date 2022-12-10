@@ -124,7 +124,7 @@
     <value>高さ:</value>
   </data>
   <data name="cbAspectRatio.Text" xml:space="preserve">
-    <value>アスペクト比を保つ</value>
+    <value>アスペクト比を維持</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>

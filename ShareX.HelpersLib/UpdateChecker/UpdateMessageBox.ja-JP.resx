@@ -123,10 +123,7 @@
   <data name="btnYes.Text" xml:space="preserve">
     <value>はい</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>ShareX を次に起動するまでは再通知しない</value>
-  </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
-    <value>更新履歴を見る</value>
+    <value>更新履歴を表示</value>
   </data>
 </root>

@@ -124,7 +124,7 @@
     <value>開始</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>領域を選択</value>
+    <value>領域を選択...</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
     <value>自動でシステムトレイに最小化</value>
