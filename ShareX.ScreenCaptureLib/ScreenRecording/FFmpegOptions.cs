@@ -94,6 +94,7 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.hevc_amf:
                         case FFmpegVideoCodec.h264_qsv:
                         case FFmpegVideoCodec.hevc_qsv:
+                        case FFmpegVideoCodec.av1_qsv:
                             return "mp4";
                         case FFmpegVideoCodec.libvpx:
                         case FFmpegVideoCodec.libvpx_vp9:

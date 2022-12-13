@@ -106,6 +106,8 @@ namespace ShareX.ScreenCaptureLib
         h264_qsv,
         [Description("HEVC / Quick Sync")]
         hevc_qsv,
+        [Description("AV1 / Quick Sync")]
+        av1_qsv,
         [Description("GIF")]
         gif,
         [Description("WebP")]

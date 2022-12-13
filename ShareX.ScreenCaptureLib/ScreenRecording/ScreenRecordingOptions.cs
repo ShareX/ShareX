@@ -224,6 +224,7 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                         case FFmpegVideoCodec.hevc_qsv:
+                        case FFmpegVideoCodec.av1_qsv:
                             args.Append($"-preset {FFmpeg.QSV_Preset} ");
                             args.Append($"-b:v {FFmpeg.QSV_Bitrate}k ");
                             break;

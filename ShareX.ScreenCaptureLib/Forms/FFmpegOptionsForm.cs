@@ -347,6 +347,7 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case FFmpegVideoCodec.h264_qsv:
                     case FFmpegVideoCodec.hevc_qsv:
+                    case FFmpegVideoCodec.av1_qsv:
                         tcFFmpegVideoCodecs.SelectedIndex = 6;
                         break;
                 }
