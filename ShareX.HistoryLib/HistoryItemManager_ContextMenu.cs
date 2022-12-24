@@ -42,6 +42,7 @@ namespace ShareX.HistoryLib
         private ToolStripSeparator tssOpen1;
         private ToolStripMenuItem tsmiOpenFile;
         private ToolStripMenuItem tsmiOpenFolder;
+
         private ToolStripMenuItem tsmiCopy;
         private ToolStripMenuItem tsmiCopyURL;
         private ToolStripMenuItem tsmiCopyShortenedURL;
@@ -68,14 +69,17 @@ namespace ShareX.HistoryLib
         private ToolStripMenuItem tsmiCopyFileName;
         private ToolStripMenuItem tsmiCopyFileNameWithExtension;
         private ToolStripMenuItem tsmiCopyFolder;
+
         private ToolStripMenuItem tsmiShowImagePreview;
-        private ToolStripMenuItem tsmiShowMoreInfo;
         private ToolStripMenuItem tsmiUploadFile;
         private ToolStripMenuItem tsmiEditImage;
+        private ToolStripMenuItem tsmiPinToScreen;
+        private ToolStripMenuItem tsmiShowMoreInfo;
 
         private void InitializeComponent()
         {
             cmsHistory = new ContextMenuStrip();
+
             tsmiOpen = new ToolStripMenuItem();
             tsmiOpenURL = new ToolStripMenuItem();
             tsmiOpenShortenedURL = new ToolStripMenuItem();
@@ -84,6 +88,7 @@ namespace ShareX.HistoryLib
             tssOpen1 = new ToolStripSeparator();
             tsmiOpenFile = new ToolStripMenuItem();
             tsmiOpenFolder = new ToolStripMenuItem();
+
             tsmiCopy = new ToolStripMenuItem();
             tsmiCopyURL = new ToolStripMenuItem();
             tsmiCopyShortenedURL = new ToolStripMenuItem();
@@ -110,10 +115,13 @@ namespace ShareX.HistoryLib
             tsmiCopyFileName = new ToolStripMenuItem();
             tsmiCopyFileNameWithExtension = new ToolStripMenuItem();
             tsmiCopyFolder = new ToolStripMenuItem();
+
             tsmiShowImagePreview = new ToolStripMenuItem();
-            tsmiShowMoreInfo = new ToolStripMenuItem();
             tsmiUploadFile = new ToolStripMenuItem();
             tsmiEditImage = new ToolStripMenuItem();
+            tsmiPinToScreen = new ToolStripMenuItem();
+            tsmiShowMoreInfo = new ToolStripMenuItem();
+
             cmsHistory.SuspendLayout();
 
             //
@@ -126,6 +134,7 @@ namespace ShareX.HistoryLib
                 tsmiShowImagePreview,
                 tsmiUploadFile,
                 tsmiEditImage,
+                tsmiPinToScreen,
                 tsmiShowMoreInfo
             });
             cmsHistory.Name = "cmsHistory";
@@ -409,13 +418,6 @@ namespace ShareX.HistoryLib
             tsmiShowImagePreview.Text = Resources.HistoryItemManager_InitializeComponent_Image_preview;
             tsmiShowImagePreview.Click += tsmiShowImagePreview_Click;
             //
-            // tsmiShowMoreInfo
-            //
-            tsmiShowMoreInfo.Name = "tsmiShowMoreInfo";
-            tsmiShowMoreInfo.Size = new Size(127, 22);
-            tsmiShowMoreInfo.Text = Resources.HistoryItemManager_InitializeComponent_More_info;
-            tsmiShowMoreInfo.Click += tsmiShowMoreInfo_Click;
-            //
             // tsmiUploadFile
             //
             tsmiUploadFile.Name = "tsmiUploadFile";
@@ -431,6 +433,21 @@ namespace ShareX.HistoryLib
             tsmiEditImage.Size = new Size(127, 22);
             tsmiEditImage.Text = Resources.HistoryItemManager_InitializeComponent_EditImage;
             tsmiEditImage.Click += tsmiEditImage_Click;
+            //
+            // tsmiPinToScreen
+            //
+            tsmiPinToScreen.Name = "tsmiPinToScreen";
+            tsmiPinToScreen.ShortcutKeyDisplayString = "Ctrl+P";
+            tsmiPinToScreen.Size = new Size(127, 22);
+            tsmiPinToScreen.Text = "Pin to screen"; // TODO: Translate
+            tsmiPinToScreen.Click += tsmiPinToScreen_Click;
+            //
+            // tsmiShowMoreInfo
+            //
+            tsmiShowMoreInfo.Name = "tsmiShowMoreInfo";
+            tsmiShowMoreInfo.Size = new Size(127, 22);
+            tsmiShowMoreInfo.Text = Resources.HistoryItemManager_InitializeComponent_More_info;
+            tsmiShowMoreInfo.Click += tsmiShowMoreInfo_Click;
 
             cmsHistory.ResumeLayout(false);
         }
@@ -502,6 +519,7 @@ namespace ShareX.HistoryLib
                 tsmiShowImagePreview.Enabled = false;
                 tsmiUploadFile.Enabled = false;
                 tsmiEditImage.Enabled = false;
+                tsmiPinToScreen.Enabled = false;
                 tsmiShowMoreInfo.Enabled = false;
             }
             else
@@ -566,6 +584,7 @@ namespace ShareX.HistoryLib
                 tsmiShowImagePreview.Enabled = IsImageFile;
                 tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
                 tsmiEditImage.Enabled = editImage != null && IsImageFile;
+                tsmiPinToScreen.Enabled = pinToScreen != null && IsImageFile;
                 tsmiShowMoreInfo.Enabled = true;
             }
 
@@ -715,6 +734,11 @@ namespace ShareX.HistoryLib
         private void tsmiEditImage_Click(object sender, EventArgs e)
         {
             EditImage();
+        }
+
+        private void tsmiPinToScreen_Click(object sender, EventArgs e)
+        {
+            PinToScreen();
         }
 
         private void tsmiShowMoreInfo_Click(object sender, EventArgs e)

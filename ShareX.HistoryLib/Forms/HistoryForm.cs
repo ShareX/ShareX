@@ -49,7 +49,7 @@ namespace ShareX.HistoryLib
         private ListViewItem[] listViewCache;
         private int listViewCacheStartIndex;
 
-        public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
+        public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
             HistoryPath = historyPath;
             Settings = settings;
@@ -73,7 +73,7 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.globe);
             lvHistory.SmallImageList = il;
 
-            him = new HistoryItemManager(uploadFile, editImage, true);
+            him = new HistoryItemManager(uploadFile, editImage, pinToScreen, true);
             him.GetHistoryItems += him_GetHistoryItems;
             lvHistory.ContextMenuStrip = him.cmsHistory;
 

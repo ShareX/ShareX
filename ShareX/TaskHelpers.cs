@@ -730,14 +730,20 @@ namespace ShareX
         public static void OpenHistory()
         {
             HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistorySettings,
-                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
+                filePath => UploadManager.UploadFile(filePath),
+                filePath => AnnotateImageFromFile(filePath),
+                filePath => PinToScreen(filePath));
+
             historyForm.Show();
         }
 
         public static void OpenImageHistory()
         {
             ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistorySettings,
-                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
+                filePath => UploadManager.UploadFile(filePath),
+                filePath => AnnotateImageFromFile(filePath),
+                filePath => PinToScreen(filePath));
+
             imageHistoryForm.Show();
         }
 
