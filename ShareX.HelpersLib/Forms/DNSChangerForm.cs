@@ -44,7 +44,6 @@ namespace ShareX.HelpersLib
             AddDNS("Level 3 Communications", "4.2.2.1", "4.2.2.2"); // http://www.level3.com
             AddDNS("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"); // https://www.comodo.com/secure-dns/
             AddDNS("DNS Advantage", "156.154.70.1", "156.154.71.1"); // https://www.security.neustar/dns-services/free-recursive-dns-service
-            AddDNS("Yandex DNS", "77.88.8.2", "77.88.8.88"); // https://dns.yandex.com
             AddDNS("Quad9", "9.9.9.9"); // https://quad9.net
 
             foreach (AdapterInfo adapter in AdapterInfo.GetEnabledAdapters())
