@@ -38,7 +38,10 @@ namespace ShareX.HelpersLib
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+        }
 
+        private void ClipboardViewerForm_Load(object sender, EventArgs e)
+        {
             RefreshClipboardContentList();
         }
 
@@ -85,11 +88,7 @@ namespace ShareX.HelpersLib
                 {
                     object data = CurrentDataObject.GetData(format);
 
-                    if (data == null)
-                    {
-                        RefreshClipboardContentList();
-                    }
-                    else
+                    if (data != null)
                     {
                         try
                         {
