@@ -48,11 +48,11 @@ namespace ShareX.Setup
             CreateChecksumFile = 1 << 8,
             OpenOutputDirectory = 1 << 9,
 
-            Release = CreateSetup | CreatePortable | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
-            Debug = CreateDebug | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
-            Steam = CreateSteamFolder | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
-            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
-            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory
+            Release = CreateSetup | CreatePortable | DownloadFFmpeg | OpenOutputDirectory,
+            Debug = CreateDebug | DownloadFFmpeg | OpenOutputDirectory,
+            Steam = CreateSteamFolder | DownloadFFmpeg | OpenOutputDirectory,
+            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadFFmpeg | OpenOutputDirectory,
+            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadFFmpeg | OpenOutputDirectory
         }
 
         private static SetupJobs Job { get; set; } = SetupJobs.Release;
