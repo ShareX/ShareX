@@ -197,12 +197,12 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            Output/ShareX-*-setup.exe
-            Output/ShareX-*-portable.zip
-            Output/ShareX-*-debug.zip
-            Output/ShareX-*-Steam.zip
-            Output/ShareX-*.appx
-            Output/ShareX-*-debug.appx
+            Output/ShareX-${{ env.APP_VERSION }}-setup.exe
+            Output/ShareX-${{ env.APP_VERSION }}-portable.zip
+            Output/ShareX-${{ env.APP_VERSION }}-debug.zip
+            Output/ShareX-${{ env.APP_VERSION }}-Steam.zip
+            Output/ShareX-${{ env.APP_VERSION }}.appx
+            Output/ShareX-${{ env.APP_VERSION }}-debug.appx
 
       - name: Release (Stable)
         env:
@@ -218,5 +218,5 @@ jobs:
           draft: false
           prerelease: true
           files: |
-            Output/ShareX-*-setup.exe
-            Output/ShareX-*-portable.zip
+            Output/ShareX-${{ env.APP_VERSION }}-setup.exe
+            Output/ShareX-${{ env.APP_VERSION }}-portable.zip
