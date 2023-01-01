@@ -23,6 +23,7 @@ jobs:
           - Debug
           - Steam
           - MicrosoftStore
+          - MicrosoftStoreDebug
         platform:
           - Any CPU
 
@@ -106,6 +107,13 @@ jobs:
           name: MicrosoftStore
           path: Output\ShareX-*.appx
 
+      - name: Upload artifact (MicrosoftStoreDebug)
+        if: matrix.configuration == 'MicrosoftStoreDebug'
+        uses: actions/upload-artifact@v3
+        with:
+          name: MicrosoftStoreDebug
+          path: Output\ShareX-*-debug.appx
+
   release:
     name: Release
     needs: build
@@ -154,6 +162,13 @@ jobs:
           name: MicrosoftStore
           path: Output
 
+      - name: Download artifact (MicrosoftStoreDebug)
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/download-artifact@v3
+        with:
+          name: MicrosoftStoreDebug
+          path: Output
+
       - name: Create release body file
         run: |
           $checksums = Get-ChildItem -Path "Output\" -Recurse -File
@@ -187,6 +202,7 @@ jobs:
             Output/ShareX-*-debug.zip
             Output/ShareX-*-Steam.zip
             Output/ShareX-*.appx
+            Output/ShareX-*-debug.appx
 
       - name: Release (Stable)
         env:
