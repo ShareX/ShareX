@@ -1461,11 +1461,17 @@
     <EmbeddedResource Include="Forms\MainForm.zh-TW.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.ja-JP.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\OCR\OCRForm.tr.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\OCR\OCRForm.vi-VN.resx">
       <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.ja-JP.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.tr.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
@@ -1838,6 +1844,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.zh-CN.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.ja-JP.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.resx">
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>

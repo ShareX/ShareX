@@ -535,6 +535,9 @@
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.fr.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.ja-JP.resx">
+      <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.ko-KR.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -704,6 +707,9 @@
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.fr.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.ja-JP.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.ko-KR.resx">
@@ -1062,6 +1068,9 @@
     <EmbeddedResource Include="Forms\TwitterTweetForm.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.ja-JP.resx">
+      <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.pl.resx">
       <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
