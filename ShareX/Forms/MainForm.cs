@@ -1431,6 +1431,9 @@ namespace ShareX
                 case Keys.Control | Keys.E:
                     uim.EditImage();
                     break;
+                case Keys.Control | Keys.P:
+                    uim.PinToScreen();
+                    break;
                 case Keys.Delete:
                     RemoveSelectedItems();
                     break;
