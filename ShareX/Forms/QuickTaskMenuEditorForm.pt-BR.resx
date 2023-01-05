@@ -127,7 +127,7 @@
     <value>Remover</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Restaurar ao padrão</value>
+    <value>Redefinir para o padrão...</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Fechar</value>

@@ -138,4 +138,7 @@
   <data name="lblFolderPath.Text" xml:space="preserve">
     <value>Local da pasta:</value>
   </data>
+  <data name="cbMoveToScreenshotsFolder.Text" xml:space="preserve">
+    <value>Mover arquivo para a pasta de capturas de tela</value>
+  </data>
 </root>

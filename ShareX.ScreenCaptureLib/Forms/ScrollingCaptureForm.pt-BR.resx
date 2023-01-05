@@ -225,4 +225,7 @@
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>Método de rolagem do topo antes da captura:</value>
   </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>Carregar/salvar dependendo das configurações após a captura</value>
+  </data>
 </root>

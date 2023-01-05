@@ -160,7 +160,7 @@
     <value>Verde:</value>
   </data>
   <data name="rbHue.Text" xml:space="preserve">
-    <value>Matiz</value>
+    <value>Matiz:</value>
   </data>
   <data name="rbRed.Text" xml:space="preserve">
     <value>Vermelho:</value>
@@ -215,5 +215,8 @@
   </data>
   <data name="tsmiCopyRGB.Text" xml:space="preserve">
     <value>Copiar RGB</value>
+  </data>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>Hex:</value>
   </data>
 </root>

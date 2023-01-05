@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnClearAuthorization.Text" xml:space="preserve">
-    <value>Limpar autorização</value>
+    <value>Desconectar</value>
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>Passo 2: Completar autorização</value>
+    <value>Completar autorização</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>Passo 1: Abrir página de autorização...</value>
+    <value>Conectar...</value>
   </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>Atualizar autorização</value>
