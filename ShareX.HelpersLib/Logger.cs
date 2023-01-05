@@ -55,9 +55,12 @@ namespace ShareX.HelpersLib
 
         public Logger(string logFilePath)
         {
-            FileWrite = true;
-            LogFilePath = logFilePath;
-            FileHelpers.CreateDirectoryFromFilePath(LogFilePath);
+            if (!string.IsNullOrEmpty(logFilePath))
+            {
+                FileWrite = true;
+                LogFilePath = logFilePath;
+                FileHelpers.CreateDirectoryFromFilePath(LogFilePath);
+            }
         }
 
         protected void OnMessageAdded(string message)

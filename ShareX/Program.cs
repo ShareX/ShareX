@@ -209,12 +209,15 @@ namespace ShareX
         {
             get
             {
+                if (SystemOptions.DisableLogging)
+                {
+                    return null;
+                }
+
                 string fileName = string.Format("ShareX-Log-{0:yyyy-MM}.txt", DateTime.Now);
                 return Path.Combine(LogsFolder, fileName);
             }
         }
-
-        public static string RequestLogsFilePath => Path.Combine(LogsFolder, "ShareX-Request-Logs.txt");
 
         public static string ScreenshotsParentFolder
         {
@@ -510,7 +513,6 @@ namespace ShareX
             {
                 FileHelpers.CreateDirectory(SettingManager.BackupFolder);
                 FileHelpers.CreateDirectory(ImageEffectsFolder);
-                FileHelpers.CreateDirectory(LogsFolder);
                 FileHelpers.CreateDirectory(ScreenshotsParentFolder);
                 FileHelpers.CreateDirectory(ToolsFolder);
             }
@@ -685,6 +687,7 @@ namespace ShareX
             if (IgnoreHotkeyWarning) flags.Add(nameof(IgnoreHotkeyWarning));
             if (SystemOptions.DisableUpdateCheck) flags.Add(nameof(SystemOptions.DisableUpdateCheck));
             if (SystemOptions.DisableUpload) flags.Add(nameof(SystemOptions.DisableUpload));
+            if (SystemOptions.DisableLogging) flags.Add(nameof(SystemOptions.DisableLogging));
             if (PuushMode) flags.Add(nameof(PuushMode));
 
             string output = string.Join(", ", flags);

@@ -53,6 +53,8 @@ namespace ShareX.HelpersLib
             rtbDebug.ScrollToCaret();
             rtbDebug.AddContextMenu();
 
+            btnOpenLogFile.Enabled = !string.IsNullOrEmpty(Logger.LogFilePath);
+
             ShareXResources.ApplyTheme(this);
 
             string startupPath = AppDomain.CurrentDomain.BaseDirectory;

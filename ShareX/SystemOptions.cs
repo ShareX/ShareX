@@ -35,12 +35,14 @@ namespace ShareX
 
         public static bool DisableUpdateCheck { get; private set; }
         public static bool DisableUpload { get; private set; }
+        public static bool DisableLogging { get; private set; }
         public static string PersonalPath { get; private set; }
 
         public static void UpdateSystemOptions()
         {
             DisableUpdateCheck = GetSystemOptionBoolean("DisableUpdateCheck");
             DisableUpload = GetSystemOptionBoolean("DisableUpload");
+            DisableLogging = GetSystemOptionBoolean("DisableLogging");
             PersonalPath = GetSystemOptionString("PersonalPath");
         }
 
