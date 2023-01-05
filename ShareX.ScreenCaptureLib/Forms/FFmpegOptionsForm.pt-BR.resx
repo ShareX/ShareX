@@ -199,7 +199,7 @@ Da mesma forma, para qualidade de encoding constante, você irá simplesmente ec
     <value>Padrão é sierra2_4a.</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>Padrão é cheio.</value>
+    <value>Padrão está cheio.</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
     <value>kbit/s</value>

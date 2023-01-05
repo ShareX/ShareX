@@ -165,4 +165,7 @@
   <data name="lblWrapAfterImages.Text" xml:space="preserve">
     <value>Imagens</value>
   </data>
+  <data name="lblWrapAfter.Text" xml:space="preserve">
+    <value>Enrolar após:</value>
+  </data>
 </root>

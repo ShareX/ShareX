@@ -371,7 +371,7 @@ Você gostaria de fechar o editor de imagens?</value>
     <value>Esta janela será fechada antes de abrir a página da web dos atalhos de teclado. Você quer continuar?</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
-    <value>ShareX - editor de imagens</value>
+    <value>ShareX - Editor de imagens</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
     <value>Mudar para a ferramenta de seleção após o desenho da forma</value>

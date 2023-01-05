@@ -378,9 +378,6 @@
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
     <value>Mostrar informações de posição e tamanho</value>
   </data>
-  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
     <value>Usar texto personalizado próximo ao cursor:</value>
   </data>
@@ -529,8 +526,7 @@
     <value>Mostrar tela de efeitos de imagem ao capturar tela</value>
   </data>
   <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
-    <value>Mostrar notificação ao completar tarefa
-</value>
+    <value>Mostrar notificação ao completar tarefa</value>
   </data>
   <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
     <value>Esconder ao capturar tela</value>
