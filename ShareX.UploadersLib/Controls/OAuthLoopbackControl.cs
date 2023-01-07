@@ -79,8 +79,7 @@ namespace ShareX.UploadersLib
         {
             if (Connected)
             {
-                // TODO: Translate
-                btnConnect.Text = "Disconnect";
+                btnConnect.Text = Resources.Disconnect;
                 if (UserInfo != null && !string.IsNullOrEmpty(UserInfo.name))
                 {
                     lblStatusValue.Text = string.Format(Resources.LoggedInAs0, UserInfo.name);
@@ -93,8 +92,7 @@ namespace ShareX.UploadersLib
             }
             else
             {
-                // TODO: Translate
-                btnConnect.Text = "Connect...";
+                btnConnect.Text = Resources.Connect;
                 lblStatusValue.Text = Resources.OAuthControl_Status_NotLoggedIn;
                 lblStatusValue.ForeColor = Color.FromArgb(220, 0, 0);
             }

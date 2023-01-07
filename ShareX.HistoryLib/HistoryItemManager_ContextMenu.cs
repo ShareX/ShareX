@@ -439,7 +439,7 @@ namespace ShareX.HistoryLib
             tsmiPinToScreen.Name = "tsmiPinToScreen";
             tsmiPinToScreen.ShortcutKeyDisplayString = "Ctrl+P";
             tsmiPinToScreen.Size = new Size(127, 22);
-            tsmiPinToScreen.Text = "Pin to screen"; // TODO: Translate
+            tsmiPinToScreen.Text = Resources.PinToScreen;
             tsmiPinToScreen.Click += tsmiPinToScreen_Click;
             //
             // tsmiShowMoreInfo
