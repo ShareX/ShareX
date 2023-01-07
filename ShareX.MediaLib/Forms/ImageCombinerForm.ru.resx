@@ -159,4 +159,10 @@
   <data name="cbAutoFillBackground.Text" xml:space="preserve">
     <value>Заполнить фон автомитически</value>
   </data>
+  <data name="lblWrapAfterImages.Text" xml:space="preserve">
+    <value>изображений</value>
+  </data>
+  <data name="lblWrapAfter.Text" xml:space="preserve">
+    <value>Переносить после:</value>
+  </data>
 </root>

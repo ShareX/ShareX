@@ -237,4 +237,7 @@
   <data name="HistoryStats" xml:space="preserve">
     <value>Статистика истории</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Закрепить на экране</value>
+  </data>
 </root>

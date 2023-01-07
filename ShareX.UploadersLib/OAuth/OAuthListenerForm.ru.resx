@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,15 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblError.Text" xml:space="preserve">
-    <value>Ошибка</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Ожидается завершение авторизации в вашем браузере...</value>
   </data>
-  <data name="lblCombineHorizontal.Text" xml:space="preserve">
-    <value>Объединить изображения
-(Горизонтально)</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Отменить</value>
   </data>
-  <data name="lblCombineVertical.Text" xml:space="preserve">
-    <value>Объединить изображения
-(Вертикально)</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Авторизация</value>
   </data>
 </root>
