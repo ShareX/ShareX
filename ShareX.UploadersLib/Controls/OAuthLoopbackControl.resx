@@ -225,6 +225,9 @@
   <data name="flpStatus.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="flpStatus.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;flpStatus.Name" xml:space="preserve">
     <value>flpStatus</value>
   </data>

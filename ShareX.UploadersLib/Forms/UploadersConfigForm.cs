@@ -3044,7 +3044,7 @@ namespace ShareX.UploadersLib
 
         private void llYouTubePermissionsLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            URLHelpers.OpenURL("https://security.google.com/settings/security/permissions");
+            URLHelpers.OpenURL("https://myaccount.google.com/permissions");
         }
 
         private void cbYouTubePrivacyType_SelectedIndexChanged(object sender, EventArgs e)
