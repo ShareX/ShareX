@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Você tem certeza de que deseja enviar?</value>
+    <value>ShareX - Upload da área de transferência</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>&amp;Cancelar</value>
@@ -128,5 +128,8 @@
   </data>
   <data name="lblQuestion.Text" xml:space="preserve">
     <value>Sua área de transferência contém o seguinte:</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Enviar</value>
   </data>
 </root>

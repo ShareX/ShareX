@@ -316,7 +316,7 @@
     <value>Enviar para trás</value>
   </data>
   <data name="ImageEffects" xml:space="preserve">
-    <value>Adicionar efeitos de imagem ...</value>
+    <value>Adicionar efeitos de imagem...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Salvar imagem como ... (Ctrl + Shift + S)</value>
@@ -371,7 +371,7 @@ Você gostaria de fechar o editor de imagens?</value>
     <value>Esta janela será fechada antes de abrir a página da web dos atalhos de teclado. Você quer continuar?</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
-    <value>ShareX - editor de imagens</value>
+    <value>ShareX - Editor de imagens</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
     <value>Mudar para a ferramenta de seleção após o desenho da forma</value>
@@ -392,7 +392,7 @@ Você gostaria de fechar o editor de imagens?</value>
     <value>Executar após as tarefas de captura (Enter)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
-    <value>Lembre-se do estado do menu</value>
+    <value>Lembrar do estado do menu</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
     <value>Capturar a última região</value>
@@ -429,5 +429,68 @@ Você gostaria de fechar o editor de imagens?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
     <value>Tipo de uso:</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Cortar tamanho do efeito:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Clicar para iniciar a gravação.</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Processando...</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Realçar</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Auto copiar imagem para a área de transferência</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>Tem certeza de que deseja abortar esta gravação?</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Taxa de bits:</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Estilo da borda:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Clique para parar a gravação.</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Efeito de corte:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Codificando...</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>Limite FPS:</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pausar</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Pixelar</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>Parar</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Opções de ferramentas</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Aguardando...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Zoom para caber em aberto</value>
   </data>
 </root>

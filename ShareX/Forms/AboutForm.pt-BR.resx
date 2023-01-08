@@ -124,9 +124,12 @@
     <value>Fechar</value>
   </data>
   <data name="btnShareXLicense.Text" xml:space="preserve">
-    <value>Licença do ShareX</value>
+    <value>Licença do ShareX...</value>
   </data>
   <data name="btnLicenses.Text" xml:space="preserve">
     <value>Licenças...</value>
+  </data>
+  <data name="lblBuild.Text" xml:space="preserve">
+    <value>Compilação</value>
   </data>
 </root>

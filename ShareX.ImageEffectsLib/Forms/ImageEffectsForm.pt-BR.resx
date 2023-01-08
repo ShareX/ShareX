@@ -145,7 +145,7 @@
     <value>Limpar...</value>
   </data>
   <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
-    <value>Duplicara</value>
+    <value>Duplicar</value>
   </data>
   <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
     <value>Atualizar</value>
@@ -179,5 +179,8 @@
   </data>
   <data name="lblPresets.Text" xml:space="preserve">
     <value>Predefinições:</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>Nome do efeito:</value>
   </data>
 </root>

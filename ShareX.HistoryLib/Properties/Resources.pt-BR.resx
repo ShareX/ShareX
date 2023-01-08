@@ -166,7 +166,7 @@
     <value>Imagem</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Pré-visualização da imagem</value>
+    <value>Pré-visualização da imagem...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Mais informações...</value>
@@ -221,5 +221,20 @@
   </data>
   <data name="HistoryStats_YearlyUsages" xml:space="preserve">
     <value>Usos anuais:</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Nome do arquivo, título da janela, nome do processo, etc.</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Nomes de processos:</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Filtrado</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Estatísticas do histórico</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
   </data>
 </root>

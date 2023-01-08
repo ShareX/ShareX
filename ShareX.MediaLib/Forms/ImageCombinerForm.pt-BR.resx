@@ -159,4 +159,13 @@
   <data name="rbOrientationVertical.Text" xml:space="preserve">
     <value>Vertical</value>
   </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblWrapAfterImages.Text" xml:space="preserve">
+    <value>Imagens</value>
+  </data>
+  <data name="lblWrapAfter.Text" xml:space="preserve">
+    <value>Enrolar após:</value>
+  </data>
 </root>
