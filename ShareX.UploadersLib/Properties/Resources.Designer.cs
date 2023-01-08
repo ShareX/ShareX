@@ -140,6 +140,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect....
+        /// </summary>
+        internal static string Connect {
+            get {
+                return ResourceManager.GetString("Connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;File form name&quot; must be configured..
         /// </summary>
         internal static string CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured {
@@ -163,6 +172,15 @@ namespace ShareX.UploadersLib.Properties {
         internal static string DeletionURL {
             get {
                 return ResourceManager.GetString("DeletionURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disconnect.
+        /// </summary>
+        internal static string Disconnect {
+            get {
+                return ResourceManager.GetString("Disconnect", resourceCulture);
             }
         }
         

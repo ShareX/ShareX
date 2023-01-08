@@ -280,4 +280,10 @@
   <data name="URL" xml:space="preserve">
     <value>Ссылка</value>
   </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Отключить</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Подключить...</value>
+  </data>
 </root>

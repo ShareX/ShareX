@@ -265,4 +265,7 @@
   <data name="HistoryStats" xml:space="preserve">
     <value>History stats</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
 </root>

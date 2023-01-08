@@ -526,6 +526,9 @@
     <EmbeddedResource Include="Controls\OAuthLoopbackControl.resx">
       <DependentUpon>OAuthLoopbackControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OAuthLoopbackControl.ru.resx">
+      <DependentUpon>OAuthLoopbackControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.de.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1112,6 +1115,9 @@
       <DependentUpon>OAuthListenerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OAuth\OAuthListenerForm.resx">
+      <DependentUpon>OAuthListenerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OAuth\OAuthListenerForm.ru.resx">
       <DependentUpon>OAuthListenerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">

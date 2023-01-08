@@ -493,6 +493,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pin to screen.
+        /// </summary>
+        internal static string PinToScreen {
+            get {
+                return ResourceManager.GetString("PinToScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Process names:.
         /// </summary>
         internal static string ProcessNames {
