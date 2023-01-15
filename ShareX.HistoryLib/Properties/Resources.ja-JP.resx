@@ -208,7 +208,7 @@
     <value>年ごとの履歴:</value>
   </data>
   <data name="HistoryStats_FileExtensions" xml:space="preserve">
-    <value>ファイルの拡張子ごとの履歴:</value>
+    <value>ファイル拡張子ごとの履歴:</value>
   </data>
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>ホストごとの履歴:</value>
@@ -236,5 +236,8 @@
   </data>
   <data name="Total" xml:space="preserve">
     <value>合計</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>最前面に固定</value>
   </data>
 </root>
