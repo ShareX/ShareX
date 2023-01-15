@@ -46,7 +46,7 @@ jobs:
         if: matrix.configuration == 'Release'
         run: |
           $content = Get-Content "${{ env.ASSEMBLY_INFO_PATH }}"
-          $match = [regex]::Match($content, 'AssemblyVersion\("(.+?)"\)')
+          $match = [regex]::Match($content, 'AssemblyVersion\("([0-9]+(?:\.[0-9]+){1,3})"\)')
           $version = $match.Groups[1].Value
           echo $version
           echo "APP_VERSION=$version" >> $env:GITHUB_OUTPUT

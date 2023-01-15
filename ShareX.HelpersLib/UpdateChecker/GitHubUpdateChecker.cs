@@ -61,7 +61,7 @@ namespace ShareX.HelpersLib
             }
             catch (Exception e)
             {
-                DebugHelper.WriteException(e, "GitHub update check failed");
+                DebugHelper.WriteException(e, "GitHub update check failed.");
             }
 
             Status = UpdateStatus.UpdateCheckFailed;
