@@ -12,7 +12,7 @@ environment:
     secure: oWmEefxkbok87VNVsrUuXKgNaM4+j+EW6FBLsXwCbv3OVHgFvT0M9k4891OvYXDsj0oLuEn0oZeaeV8RrRDHA87ap7oCyD5FQJaiZSTHgeE=
 install:
   - ps: |
-      $content = Get-Content "SharedAssemblyInfo.cs"
+      $content = Get-Content "GlobalAssemblyInfo.cs"
       $match = [regex]::Match($content, 'AssemblyVersion\(\"(.+?)\"\)')
       $env:AppVersion = $match.Groups[1].Value
       Update-AppveyorBuild -Version "$env:AppVersion.$env:APPVEYOR_BUILD_NUMBER"
