@@ -88,14 +88,21 @@ namespace ShareX.HelpersLib
 
         protected List<GitHubRelease> GetReleases()
         {
+            List<GitHubRelease> releases = null;
+
             string response = URLHelpers.DownloadString(ReleasesURL);
 
             if (!string.IsNullOrEmpty(response))
             {
-                return JsonConvert.DeserializeObject<List<GitHubRelease>>(response);
+                releases = JsonConvert.DeserializeObject<List<GitHubRelease>>(response);
+
+                if (releases != null && releases.Count > 0)
+                {
+                    releases.Sort((x, y) => y.published_at.CompareTo(x.published_at));
+                }
             }
 
-            return null;
+            return releases;
         }
 
         protected GitHubRelease GetLatestRelease(bool includePreRelease)
@@ -125,7 +132,7 @@ namespace ShareX.HelpersLib
             {
                 LatestVersion = new Version(release.tag_name.Substring(1));
 
-                if (release.assets != null && release.assets.Count > 0)
+                if (release.assets != null && release.assets.Length > 0)
                 {
                     string endsWith;
 
@@ -170,32 +177,37 @@ namespace ShareX.HelpersLib
             public string assets_url { get; set; }
             public string upload_url { get; set; }
             public string html_url { get; set; }
-            public int id { get; set; }
+            public long id { get; set; }
+            //public GitHubAuthor author { get; set; }
+            public string node_id { get; set; }
             public string tag_name { get; set; }
             public string target_commitish { get; set; }
             public string name { get; set; }
-            public string body { get; set; }
             public bool draft { get; set; }
             public bool prerelease { get; set; }
-            public string created_at { get; set; }
-            public string published_at { get; set; }
-            public List<GitHubAsset> assets { get; set; }
+            public DateTime created_at { get; set; }
+            public DateTime published_at { get; set; }
+            public GitHubAsset[] assets { get; set; }
             public string tarball_url { get; set; }
             public string zipball_url { get; set; }
+            public string body { get; set; }
+            //public GitHubReactions reactions { get; set; }
         }
 
         protected class GitHubAsset
         {
             public string url { get; set; }
-            public int id { get; set; }
+            public long id { get; set; }
+            public string node_id { get; set; }
             public string name { get; set; }
             public string label { get; set; }
+            //public GitHubUploader uploader { get; set; }
             public string content_type { get; set; }
             public string state { get; set; }
-            public int size { get; set; }
-            public int download_count { get; set; }
-            public string created_at { get; set; }
-            public string updated_at { get; set; }
+            public long size { get; set; }
+            public long download_count { get; set; }
+            public DateTime created_at { get; set; }
+            public DateTime updated_at { get; set; }
             public string browser_download_url { get; set; }
         }
     }

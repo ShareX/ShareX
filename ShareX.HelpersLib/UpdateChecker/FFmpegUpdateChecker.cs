@@ -54,7 +54,7 @@ namespace ShareX.HelpersLib
             {
                 LatestVersion = new Version(release.tag_name.Substring(1));
 
-                if (release.assets != null && release.assets.Count > 0)
+                if (release.assets != null && release.assets.Length > 0)
                 {
                     string endsWith;
 
