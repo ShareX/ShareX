@@ -59,7 +59,7 @@ namespace ShareX.HelpersLib
             return FileHelpers.ExpandFolderVariables(Path);
         }
 
-        public string Run(string inputPath)
+        public async Task<string> RunAsync(string inputPath)
         {
             pendingInputFilePath = null;
             string path = GetFullPath();
@@ -104,15 +104,32 @@ namespace ShareX.HelpersLib
                                 FileName = path,
                                 Arguments = arguments,
                                 UseShellExecute = false,
-                                CreateNoWindow = HiddenWindow
+                                CreateNoWindow = HiddenWindow,
+                                RedirectStandardOutput = true,
+                                RedirectStandardError = true,
                             };
 
                             DebugHelper.WriteLine($"Action input: \"{inputPath}\" [{FileHelpers.GetFileSizeReadable(inputPath)}]");
                             DebugHelper.WriteLine($"Action run: \"{psi.FileName}\" {psi.Arguments}");
 
                             process.StartInfo = psi;
+                            var completion = new TaskCompletionSource<bool>();
+                            process.EnableRaisingEvents = true;
+                            process.Exited += (s, e) => { completion.TrySetResult(true); };
                             process.Start();
-                            process.WaitForExit();
+
+                            string name = System.IO.Path.GetFileName(path);
+                            string stdout = await process.StandardOutput.ReadToEndAsync().ConfigureAwait(false);
+                            if (!string.IsNullOrEmpty(stdout))
+                            {
+                                DebugHelper.WriteLine($"{name}: {stdout}");
+                            }
+                            string stderr = await process.StandardError.ReadToEndAsync().ConfigureAwait(false);
+                            if (!string.IsNullOrEmpty(stderr))
+                            {
+                                DebugHelper.WriteLine($"{name}: {stderr}");
+                            }
+                            await completion.Task.ConfigureAwait(false);
                         }
 
                         if (!string.IsNullOrEmpty(outputPath) && File.Exists(outputPath))
@@ -139,9 +156,9 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public Task<string> RunAsync(string inputPath)
+        public string Run(string inputPath)
         {
-            return Task.Run(() => Run(inputPath));
+            return RunAsync(inputPath).Result;
         }
 
         public bool CheckExtension(string path)
