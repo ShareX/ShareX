@@ -4,9 +4,7 @@
 #define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\Release"
 #define MyAppFileName MyAppName + ".exe"
 #define MyAppFilePath MyAppReleaseDirectory + "\" + MyAppFileName
-#dim Version[4]
-#expr GetVersionComponents(MyAppFilePath, Version[0], Version[1], Version[2], Version[3])
-#define MyAppVersion Str(Version[0]) + "." + Str(Version[1]) + "." + Str(Version[2])
+#define MyAppVersion GetStringFileInfo(MyAppFilePath, "ProductVersion")
 #define MyAppPublisher "ShareX Team"
 #define MyAppURL "https://getsharex.com"
 #define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"

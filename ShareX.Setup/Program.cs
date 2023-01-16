@@ -252,7 +252,7 @@ namespace ShareX.Setup
             Console.WriteLine("Configuration: " + Configuration);
 
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ExecutablePath);
-            AppVersion = $"{versionInfo.ProductMajorPart}.{versionInfo.ProductMinorPart}.{versionInfo.ProductBuildPart}";
+            AppVersion = versionInfo.ProductVersion;
 
             Console.WriteLine("Application version: " + AppVersion);
 
