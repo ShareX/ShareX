@@ -33,7 +33,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using ZXing;
-using ZXing.Common;
+using ZXing.QrCode;
 using ZXing.Rendering;
 
 namespace ShareX
@@ -216,13 +216,14 @@ namespace ShareX
 
                         if (filePath.EndsWith("svg", StringComparison.OrdinalIgnoreCase))
                         {
-                            BarcodeWriterSvg writer = new BarcodeWriterSvg
+                            BarcodeWriterSvg writer = new BarcodeWriterSvg()
                             {
                                 Format = BarcodeFormat.QR_CODE,
-                                Options = new EncodingOptions
+                                Options = new QrCodeEncodingOptions()
                                 {
                                     Width = pbQRCode.Width,
-                                    Height = pbQRCode.Height
+                                    Height = pbQRCode.Height,
+                                    CharacterSet = "UTF-8"
                                 }
                             };
                             SvgRenderer.SvgImage svgImage = writer.Write(txtQRCode.Text);
