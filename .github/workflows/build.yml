@@ -183,7 +183,7 @@ jobs:
           $output = "| File | SHA256 |`r`n| --- | --- |`r`n$($checksums.Trim())"
           echo $output >> $env:GITHUB_STEP_SUMMARY
           if ($env:GITHUB_REF.StartsWith("refs/tags/v")) {
-            $output = "**Changelog:** https://getsharex.com/changelog`r`n`r`n$output"
+            $output = "**Changelog:** https://getsharex.com/changelog#$env:GITHUB_REF_NAME`r`n`r`n$output"
           }
           echo $output
           Set-Content -Path "${{ env.RELEASE_BODY_PATH }}" -Value "$output" -NoNewline
