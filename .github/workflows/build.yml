@@ -41,7 +41,7 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
 
-      - name: Get app version
+      - name: Set APP_VERSION
         run: |
           $content = Get-Content "${{ env.ASSEMBLY_INFO_PATH }}" -Raw
           $pattern = 'Version\("([0-9]+(?:\.[0-9]+){1,3})"\)'
@@ -81,42 +81,42 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Setup
-          path: Output\ShareX-*-setup.exe
+          path: Output\ShareX-${{ env.APP_VERSION }}-setup.exe
 
       - name: Upload artifact (Portable)
         if: matrix.configuration == 'Release'
         uses: actions/upload-artifact@v3
         with:
           name: Portable
-          path: Output\ShareX-*-portable.zip
+          path: Output\ShareX-${{ env.APP_VERSION }}-portable.zip
 
       - name: Upload artifact (Debug)
         if: matrix.configuration == 'Debug'
         uses: actions/upload-artifact@v3
         with:
           name: Debug
-          path: Output\ShareX-*-debug.zip
+          path: Output\ShareX-${{ env.APP_VERSION }}-debug.zip
 
       - name: Upload artifact (Steam)
         if: matrix.configuration == 'Steam'
         uses: actions/upload-artifact@v3
         with:
           name: Steam
-          path: Output\ShareX-*-Steam.zip
+          path: Output\ShareX-${{ env.APP_VERSION }}-Steam.zip
 
       - name: Upload artifact (MicrosoftStore)
         if: matrix.configuration == 'MicrosoftStore'
         uses: actions/upload-artifact@v3
         with:
           name: MicrosoftStore
-          path: Output\ShareX-*.appx
+          path: Output\ShareX-${{ env.APP_VERSION }}.appx
 
       - name: Upload artifact (MicrosoftStoreDebug)
         if: matrix.configuration == 'MicrosoftStoreDebug'
         uses: actions/upload-artifact@v3
         with:
           name: MicrosoftStoreDebug
-          path: Output\ShareX-*-debug.appx
+          path: Output\ShareX-${{ env.APP_VERSION }}-debug.appx
 
   release:
     name: Release
