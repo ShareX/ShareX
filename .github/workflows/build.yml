@@ -32,7 +32,7 @@ jobs:
       ASSEMBLY_INFO_PATH: GlobalAssemblyInfo.cs
 
     outputs:
-      APP_VERSION: ${{ steps.get_app_version.outputs.APP_VERSION }}
+      APP_VERSION: ${{ env.APP_VERSION }}
 
     steps:
       - name: Checkout
@@ -42,7 +42,6 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
 
       - name: Get app version
-        id: get_app_version
         run: |
           $content = Get-Content "${{ env.ASSEMBLY_INFO_PATH }}" -Raw
           $pattern = 'Version\("([0-9]+(?:\.[0-9]+){1,3})"\)'
@@ -54,7 +53,7 @@ jobs:
             Set-Content -Path "${{ env.ASSEMBLY_INFO_PATH }}" -Value "$content" -NoNewline
           }
           echo $version
-          echo "APP_VERSION=$version" >> $env:GITHUB_OUTPUT
+          echo "APP_VERSION=$version" >> $env:GITHUB_ENV
 
       - name: Download API keys
         env:
