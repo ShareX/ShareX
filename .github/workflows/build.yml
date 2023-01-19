@@ -128,7 +128,7 @@ jobs:
       contents: write
 
     env:
-      REPO_DEV_BUILDS: ShareX/DevBuilds
+      REPO_DEV_BUILDS: ${{ github.repository_owner }}/DevBuilds
       RELEASE_BODY_PATH: RELEASE_BODY.md
       APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
 
