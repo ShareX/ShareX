@@ -42,11 +42,11 @@ namespace ShareX.HelpersLib
             Size = screenBounds.Size;
 
             rbBlackWhite.Checked = true;
-            tbBlackWhite.Value = 128;
+            tbBlackWhite.Value = 255;
             tbRed.Value = 255;
             cbGradient.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<LinearGradientMode>());
             cbGradient.SelectedIndex = 1;
-            btnGradientColor1.Color = Color.DarkGray;
+            btnGradientColor1.Color = Color.White;
             btnGradientColor2.Color = Color.Black;
             cbShapes.SelectedIndex = 0;
             tbShapeSize.Value = 5;
