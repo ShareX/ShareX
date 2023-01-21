@@ -513,7 +513,7 @@ namespace ShareX.ScreenCaptureLib
                         ProcessStartInfo psi = new ProcessStartInfo()
                         {
                             FileName = "cmd.exe",
-                            WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.FFmpegPath),
+                            WorkingDirectory = Path.GetTempPath(),
                             Arguments = $"/k {Path.GetFileName(Options.FFmpeg.FFmpegPath)} {Options.GetFFmpegCommands()}",
                             UseShellExecute = true
                         };
