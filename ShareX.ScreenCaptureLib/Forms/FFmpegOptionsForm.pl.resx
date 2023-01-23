@@ -250,4 +250,7 @@ Wyższa wartość oznacza złą jakość, ale niski rozmiar pliku.</value>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Użyj niestandardowej ścieżki</value>
   </data>
+  <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
+    <value>Użyj własnej ścieżki FFmpeg:</value>
+  </data>
 </root>

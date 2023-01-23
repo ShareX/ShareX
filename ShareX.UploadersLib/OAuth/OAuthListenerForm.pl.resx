@@ -117,15 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblError.Text" xml:space="preserve">
-    <value>Błąd</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Autoryzacja</value>
   </data>
-  <data name="lblCombineHorizontal.Text" xml:space="preserve">
-    <value>Połącz obrazy
-(Poziomo)</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Anuluj</value>
   </data>
-  <data name="lblCombineVertical.Text" xml:space="preserve">
-    <value>Połącz obrazy
-(Pionowo)</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Oczekiwanie na zakończenie autoryzacji w przeglądarce...</value>
   </data>
 </root>

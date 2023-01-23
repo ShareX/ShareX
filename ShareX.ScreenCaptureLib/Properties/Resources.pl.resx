@@ -481,4 +481,10 @@ Czy chcesz zamknąć edytor obrazów?</value>
   <data name="CutOutEffectSize" xml:space="preserve">
     <value>Rozmiar efektu wycięcia:</value>
   </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Ponów</value>
+  </data>
 </root>

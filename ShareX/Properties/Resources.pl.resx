@@ -641,4 +641,13 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
   <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
     <value>Schowek nie zawiera obrazu.</value>
   </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>Brakuje FFmpeg</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg nie istnieje w następującej ścieżce:</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>FFmpeg, który jest dostarczany z ShareX, obsługuje tylko 64-bitowe systemy operacyjne.</value>
+  </data>
 </root>
