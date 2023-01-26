@@ -1399,4 +1399,22 @@
   <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
     <value>必应可视化搜索</value>
   </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>屏幕贴图</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>屏幕贴图</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>将剪切板图片贴至屏幕上</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>将图片文件贴至屏幕上</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>截图并贴至屏幕上</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>屏幕贴图</value>
+  </data>
 </root>

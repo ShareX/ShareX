@@ -625,4 +625,10 @@
   <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
     <value>无法找到指定窗口标题的窗口。</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>屏幕贴图</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>剪切板中无图像。</value>
+  </data>
 </root>

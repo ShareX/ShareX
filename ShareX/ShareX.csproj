@@ -1475,6 +1475,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.zh-CN.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.zh-TW.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -1907,12 +1908,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.ro.resx" />
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
-    <EmbeddedResource Include="Properties\Resources.tr.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.uk.resx" />
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
-    <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.pl.resx">
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
@@ -1924,6 +1925,9 @@
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.vi-VN.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.zh-CN.resx">
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
