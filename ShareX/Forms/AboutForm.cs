@@ -84,7 +84,7 @@ McoreD: {Links.McoreD}
 {Resources.AboutForm_AboutForm_Language_ko_KR}: https://github.com/123jimin
 {Resources.AboutForm_AboutForm_Language_es}: https://github.com/ovnisoftware
 {Resources.AboutForm_AboutForm_Language_nl_NL}: https://github.com/canihavesomecoffee
-{Resources.AboutForm_AboutForm_Language_pt_BR}: https://github.com/RockyTV & https://github.com/athosbr99
+{Resources.AboutForm_AboutForm_Language_pt_BR}: https://github.com/RockyTV & https://github.com/athosbr99 & https://github.com/wanderleihuttel
 {Resources.AboutForm_AboutForm_Language_vi_VN}: https://github.com/thanhpd
 {Resources.AboutForm_AboutForm_Language_ru}: https://github.com/L1Q
 {Resources.AboutForm_AboutForm_Language_zh_TW}: https://github.com/alantsai
