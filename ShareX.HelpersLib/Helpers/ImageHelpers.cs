@@ -1360,6 +1360,29 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void Pixelate(Bitmap bmp, int pixelSize, int borderSize, Color borderColor)
+        {
+            Pixelate(bmp, pixelSize);
+
+            if (pixelSize > 1 && borderSize > 0 && borderColor.A > 0)
+            {
+                using (Bitmap bmpTexture = new Bitmap(pixelSize, pixelSize))
+                {
+                    using (Graphics g = Graphics.FromImage(bmpTexture))
+                    using (Pen pen = new Pen(borderColor, borderSize) { Alignment = PenAlignment.Inset })
+                    {
+                        g.DrawRectangleProper(pen, new Rectangle(0, 0, bmpTexture.Width, bmpTexture.Height));
+                    }
+
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    using (TextureBrush brush = new TextureBrush(bmpTexture))
+                    {
+                        g.FillRectangle(brush, 0, 0, bmp.Width, bmp.Height);
+                    }
+                }
+            }
+        }
+
         public static void ApplyBoxBlur(Bitmap bmp, int range)
         {
             BoxBlur(bmp, range, new Rectangle(0, 0, bmp.Width, bmp.Height));

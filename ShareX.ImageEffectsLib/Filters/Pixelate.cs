@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -46,6 +47,24 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
+        private int borderSize;
+
+        [DefaultValue(0)]
+        public int BorderSize
+        {
+            get
+            {
+                return borderSize;
+            }
+            set
+            {
+                borderSize = value.Max(0);
+            }
+        }
+
+        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color BorderColor { get; set; }
+
         public Pixelate()
         {
             this.ApplyDefaultPropertyValues();
@@ -53,7 +72,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            ImageHelpers.Pixelate(bmp, Size);
+            ImageHelpers.Pixelate(bmp, Size, BorderSize, BorderColor);
             return bmp;
         }
     }
