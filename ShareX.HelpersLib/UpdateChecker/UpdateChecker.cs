@@ -71,7 +71,7 @@ namespace ShareX.HelpersLib
             }
 
             if (Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null && !string.IsNullOrEmpty(DownloadURL) &&
-                (ForceUpdate || Helpers.CompareVersion(CurrentVersion, LatestVersion) < 0 || (IsDev && Helpers.CompareVersion(CurrentVersion, LatestVersion) == 0)))
+                (ForceUpdate || Helpers.CompareVersion(CurrentVersion, LatestVersion) < 0))
             {
                 Status = UpdateStatus.UpdateAvailable;
             }
