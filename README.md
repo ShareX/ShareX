@@ -1,7 +1,6 @@
 # ShareX
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ShareX/ShareX/build.yml?branch=develop&label=Build&cacheSeconds=3600)](https://github.com/ShareX/ShareX/actions/workflows/build.yml)
-[![CodeFactor](https://img.shields.io/codefactor/grade/github/ShareX/ShareX?label=CodeFactor&cacheSeconds=3600)](https://www.codefactor.io/repository/github/sharex/sharex)
 [![License](https://img.shields.io/github/license/ShareX/ShareX?label=License&color=brightgreen&cacheSeconds=3600)](./LICENSE.txt)
 [![Release](https://img.shields.io/github/v/release/ShareX/ShareX?label=Release&color=brightgreen&cacheSeconds=3600)](https://github.com/ShareX/ShareX/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/ShareX/ShareX/total?label=Downloads&cacheSeconds=3600)](https://getsharex.com/downloads/)
