@@ -29,6 +29,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -128,7 +129,7 @@ namespace ShareX
             loaded = true;
         }
 
-        public PinToScreenForm(Image image, PinToScreenOptions options, Point? location = null) : this(options)
+        private PinToScreenForm(Image image, PinToScreenOptions options, Point? location = null) : this(options)
         {
             Image = image;
             AutoSizeForm();
@@ -141,6 +142,28 @@ namespace ShareX
             {
                 Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
                 Location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, rectScreen.Size, ImageSize);
+            }
+        }
+
+        public static void PinToScreenAsync(Image image, PinToScreenOptions options = null, Point? location = null)
+        {
+            if (image != null)
+            {
+                if (options == null)
+                {
+                    options = new PinToScreenOptions();
+                }
+
+                Thread thread = new Thread(() =>
+                {
+                    using (PinToScreenForm form = new PinToScreenForm(image, options, location))
+                    {
+                        form.ShowDialog();
+                    }
+                });
+
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
             }
         }
 

@@ -1319,8 +1319,7 @@ namespace ShareX
                 PinToScreenOptions options = new PinToScreenOptions();
                 options.BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
 
-                PinToScreenForm form = new PinToScreenForm(image, options, location);
-                form.Show();
+                PinToScreenForm.PinToScreenAsync(image, options, location);
             }
         }
 
