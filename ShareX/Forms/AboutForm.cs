@@ -112,6 +112,7 @@ ZXing.Net: https://github.com/micjahn/ZXing.Net
 MegaApiClient: https://github.com/gpailler/MegaApiClient
 Inno Setup Dependency Installer: https://github.com/DomGries/InnoDependencyInstaller
 Blob Emoji: http://blobs.gg
+Original Logo Design: https://mpql.net
 ", FontStyle.Regular);
 
             rtbInfo.AppendText("Copyright (c) 2007-2023 ShareX Team", FontStyle.Bold, 13);
