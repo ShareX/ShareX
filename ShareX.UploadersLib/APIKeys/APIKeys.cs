@@ -55,8 +55,6 @@ namespace ShareX.UploadersLib
         public static readonly string OneDriveClientSecret = "";
         public static readonly string GfycatClientID = "";
         public static readonly string GfycatClientSecret = "";
-        public static readonly string TeknikClientID = "";
-        public static readonly string TeknikClientSecret = "";
 
         // URL shorteners
         public static readonly string BitlyClientID = "";

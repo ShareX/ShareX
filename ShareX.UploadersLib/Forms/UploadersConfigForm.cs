@@ -601,26 +601,6 @@ namespace ShareX.UploadersLib
 
             #endregion
 
-            #region Teknik
-
-            if (OAuth2Info.CheckOAuth(Config.TeknikOAuth2Info))
-            {
-                oauthTeknik.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
-            tbTeknikUploadAPIUrl.Text = Config.TeknikUploadAPIUrl;
-            tbTeknikPasteAPIUrl.Text = Config.TeknikPasteAPIUrl;
-            tbTeknikUrlShortenerAPIUrl.Text = Config.TeknikUrlShortenerAPIUrl;
-            tbTeknikAuthUrl.Text = Config.TeknikAuthUrl;
-            cbTeknikEncrypt.Checked = Config.TeknikEncryption;
-            cbTeknikGenDeleteKey.Checked = Config.TeknikGenerateDeletionKey;
-            cbTeknikExpirationUnit.Items.AddRange(Enum.GetNames(typeof(TeknikExpirationUnit)));
-            cbTeknikExpirationUnit.SelectedIndex = (int)Config.TeknikExpirationUnit;
-            nudTeknikExpirationLength.SetValue(Config.TeknikExpirationLength);
-            nudTeknikExpirationLength.Visible = Config.TeknikExpirationUnit != TeknikExpirationUnit.Never;
-
-            #endregion Teknik
-
             #region Pomf
 
             if (Config.PomfUploader == null) Config.PomfUploader = new PomfUploader();
