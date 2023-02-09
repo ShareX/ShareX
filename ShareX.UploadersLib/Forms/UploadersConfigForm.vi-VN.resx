@@ -1197,12 +1197,6 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
     <value>Dùng yêu cầu kiểu đường dẫn (path style request)</value>
   </data>
-  <data name="tpTeknik.Text" xml:space="preserve">
-    <value>Teknik</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Hết hạn:</value>
-  </data>
   <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
     <value>Tên album:</value>
   </data>

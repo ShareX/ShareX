@@ -1263,7 +1263,4 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="tpKutt.Text" xml:space="preserve">
     <value>Kutt</value>
   </data>
-  <data name="tpTeknik.Text" xml:space="preserve">
-    <value>Teknik</value>
-  </data>
 </root>

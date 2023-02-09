@@ -1251,9 +1251,6 @@
   <data name="tpSul.Text" xml:space="preserve">
     <value>s-ul</value>
   </data>
-  <data name="tpTeknik.Text" xml:space="preserve">
-    <value>Teknik</value>
-  </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
   </data>

@@ -897,9 +897,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="tpPlik.Text" xml:space="preserve">
     <value>Plik</value>
   </data>
-  <data name="tpTeknik.Text" xml:space="preserve">
-    <value>Teknik</value>
-  </data>
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
   </data>
