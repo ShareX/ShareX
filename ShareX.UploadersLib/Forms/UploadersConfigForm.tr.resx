@@ -780,9 +780,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="lblGistCustomURLExample.Text" xml:space="preserve">
     <value>Örnek: https://api.github.com</value>
   </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Son kullanma:</value>
-  </data>
   <data name="llPuushForgottenPassword.Text" xml:space="preserve">
     <value>Şifrenizi mi unuttunuz?</value>
   </data>
@@ -837,14 +834,8 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
     <value>Halka açık karşıya yükle</value>
   </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>API adresini yapıştır:</value>
-  </data>
   <data name="lblGfycatTitle.Text" xml:space="preserve">
     <value>Başlık:</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>Yükleme API adresi:</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
     <value>Yükleme yolu:</value>
@@ -869,9 +860,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   </data>
   <data name="lblZWSURL.Text" xml:space="preserve">
     <value>Adres:</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>Adres kısaltıcı API adresi:</value>
   </data>
   <data name="cbFlickrDirectLink.Text" xml:space="preserve">
     <value>Direkt link kullan</value>
@@ -960,9 +948,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="cbPolrIsSecret.Text" xml:space="preserve">
     <value>Gizli adres mi</value>
   </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>İstemci tarafı şifreleme</value>
-  </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>Kısaltılmış adres kullan</value>
   </data>
@@ -992,9 +977,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Süre sonu (gün):</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>Silme anahtarı yarat</value>
   </data>
   <data name="lblAzureStorageContainer.Text" xml:space="preserve">
     <value>Konteyner:</value>
@@ -1040,9 +1022,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Ön izleme bağlantısı kullan (sadece NextCloud)</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>Kimlik doğrulama adresi:</value>
   </data>
   <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
     <value>Adres yoluna uzak dizini ekle</value>

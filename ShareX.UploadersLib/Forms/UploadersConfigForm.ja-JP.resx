@@ -930,12 +930,6 @@
   <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
     <value>生のURLを使用</value>
   </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>削除キーを生成</value>
-  </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>クライアント側で暗号化</value>
-  </data>
   <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
     <value>なし</value>
   </data>
@@ -1031,21 +1025,6 @@
   </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>共有リンクを自動で期限切れにする</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>有効期限:</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>認証URL:</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>アップロード API の URL:</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>貼り付け API の URL:</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>URL 短縮 API の URL:</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>短縮リンクを使用</value>

@@ -1011,9 +1011,6 @@
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
     <value>Предпросмотр</value>
   </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>URL API сервиса коротких ссылок:</value>
-  </data>
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>Создать</value>
   </data>
@@ -1025,18 +1022,6 @@
   </data>
   <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
     <value>Публичная загрузка</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>Генерировать ключ для удаления</value>
-  </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>Шифрование на стороне клиента</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Срок годности:</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>URL для аутентификаци:</value>
   </data>
   <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
     <value>Задавать файлам public-read ACL</value>
@@ -1076,12 +1061,6 @@
   </data>
   <data name="lblZWSURL.Text" xml:space="preserve">
     <value>Ссылка:</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>URL API Paste:</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>URL API для загрузки:</value>
   </data>
   <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
     <value>Подписывать отправку</value>

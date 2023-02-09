@@ -633,9 +633,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>Gekürzten Link verwenden</value>
   </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>URL-Kürzer-API-URL:</value>
-  </data>
   <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
     <value>Remote-Verzeichnis:</value>
   </data>

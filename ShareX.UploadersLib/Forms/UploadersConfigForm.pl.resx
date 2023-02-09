@@ -504,12 +504,6 @@
   <data name="lblSulAPIKey.Text" xml:space="preserve">
     <value>Klucz API:</value>
   </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>Link uwierzytelniania:</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Wygasa:</value>
-  </data>
   <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
     <value>Wybierz bibliotekę:</value>
   </data>
@@ -837,9 +831,6 @@
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>Link serwisu:</value>
   </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>Link API serwisu:</value>
-  </data>
   <data name="lblMediaFirePath.Text" xml:space="preserve">
     <value>Ścieżka przesyłania:</value>
   </data>
@@ -867,12 +858,6 @@
   <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
     <value>Użyj bezpośredniego linku</value>
   </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>Szyfrowanie po stronie klienta</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>Wygeneruj klucz usuwania</value>
-  </data>
   <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
     <value>Szyfrowany</value>
   </data>
@@ -893,9 +878,6 @@
   </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>Klucz użytkownika:</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>Link API skracacza linku:</value>
   </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>Udostępniony folder</value>

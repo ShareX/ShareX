@@ -824,12 +824,6 @@
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>使用預覽連結（僅限 NextCloud）</value>
   </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>客戶端加密</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>產生刪除金鑰</value>
-  </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>使用短連結</value>
   </data>
@@ -1018,21 +1012,6 @@
   </data>
   <data name="lblSFTPKeyPassphrase.Text" xml:space="preserve">
     <value>金鑰密語：</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>驗證網址：</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>有效期限：</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>貼上 API 網址：</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>上傳 API 網址：</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>縮網址服務 API 網址：</value>
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API 網址：</value>

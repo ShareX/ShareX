@@ -1224,24 +1224,6 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
     <value>Xóa phần mở rộng của tệp trên:</value>
   </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>URL tải lên:</value>
-  </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>Mã hóa phía thiết bị (client side encryption)</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>Tạo key cho phép xóa</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>URL xác thực:</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>API rút gọn URL:</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>Dán API URL:</value>
-  </data>
   <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
     <value>Signed payload - Kèm chữ kí khi gửi lên</value>
   </data>

@@ -996,17 +996,11 @@
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
     <value>应用程序密钥 ID：</value>
   </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>认证 URL：</value>
-  </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>共享连接自动过期</value>
   </data>
   <data name="lblB2Bucket.Text" xml:space="preserve">
     <value>存储桶名称：</value>
-  </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>客户端加密</value>
   </data>
   <data name="lblB2ManageLink.Text" xml:space="preserve">
     <value>单击此处以创建应用程序密钥或管理存储桶。</value>
@@ -1014,14 +1008,8 @@
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>创建</value>
   </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>有效期：</value>
-  </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>有效期（天）：</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>生成删除密钥</value>
   </data>
   <data name="lblKuttHost.Text" xml:space="preserve">
     <value>主机：</value>
@@ -1038,9 +1026,6 @@
   <data name="lblKuttPassword.Text" xml:space="preserve">
     <value>密码：</value>
   </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>粘贴 API URL：</value>
-  </data>
   <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
     <value>公共上传</value>
   </data>
@@ -1056,17 +1041,11 @@
   <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
     <value>文本</value>
   </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>上传 API URL：</value>
-  </data>
   <data name="lblB2UploadPath.Text" xml:space="preserve">
     <value>上传路径：</value>
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
     <value>预览</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>URL 短链 API URL：</value>
   </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>使用自定义 URL（支持模板格式）：</value>

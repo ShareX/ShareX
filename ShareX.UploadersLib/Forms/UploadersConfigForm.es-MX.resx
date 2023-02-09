@@ -1167,18 +1167,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
     <value>Vista previa de enlace:</value>
   </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>Enlace de acceso:</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>Enlace de la API para pegar:</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>Enlace de la API pata subir:</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>Enlace de la API de acortador de enlaces:</value>
-  </data>
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>Crear</value>
   </data>
@@ -1209,12 +1197,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>Vida limitada a enlaces compartidos</value>
   </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>Encriptación en extremo del cliente</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>Generar clave de borrado</value>
-  </data>
+
   <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
     <value>Avanzado</value>
   </data>
@@ -1253,9 +1236,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Caducidad (días):</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Caducidad:</value>
   </data>
   <data name="tpBackblazeB2.Text" xml:space="preserve">
     <value>Backblaze B2</value>

@@ -534,9 +534,6 @@
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Посилання:</value>
   </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Термін дії:</value>
-  </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>Посилання вивантаження:</value>
   </data>

@@ -1041,9 +1041,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="lblKuttAPIKey.Text" xml:space="preserve">
     <value>Clé d'API :</value>
   </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>URL d'authentification :</value>
-  </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>Expirer automatiquement les liens partagés</value>
   </data>
@@ -1062,9 +1059,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="lblB2ManageLink.Text" xml:space="preserve">
     <value>Cliquer ici pour créer une clé d'application ou gérer vos buckets.</value>
   </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>Chiffrement côté client</value>
-  </data>
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>Créer</value>
   </data>
@@ -1080,17 +1074,11 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
     <value>Exemple : google.page.link</value>
   </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Expiration :</value>
-  </data>
   <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
     <value>Obtenir la clé d'API</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
     <value>Liens dynamiques Firebase</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>Générer une clé de suppression</value>
   </data>
   <data name="btnSulGetAPIKey.Text" xml:space="preserve">
     <value>Obtenir la clé d'API...</value>
@@ -1140,9 +1128,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="lblLithiioPassword.Text" xml:space="preserve">
     <value>Mot de passe :</value>
   </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>Coller l'URL d'API :</value>
-  </data>
   <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
     <value>Prévisualisation</value>
   </data>
@@ -1164,9 +1149,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
   </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>URL de l'API de mise en ligne :</value>
-  </data>
   <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
     <value>Chemin de mise en ligne :</value>
   </data>
@@ -1184,9 +1166,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   </data>
   <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
     <value>Prévisualisation de l'URL :</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>URL de l'API du raccourcisseur d'URL :</value>
   </data>
   <data name="cbFlickrDirectLink.Text" xml:space="preserve">
     <value>Utiliser les liens directs</value>

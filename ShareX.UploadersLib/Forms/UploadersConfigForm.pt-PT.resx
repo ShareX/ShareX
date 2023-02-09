@@ -623,27 +623,6 @@ Por exemplo, se o teu nome for 'bucket.example.com' a hiperligação será http:
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Hiperligação do envio:</value>
   </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Expiração:</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>API do encurtador de hiperligações:</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>API da hiperligação de colagem:</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>Hiperligação de autênticação:</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>Gerar chave de remoção</value>
-  </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>Encriptação do "client side"</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>API da Hiperligação de Envio:</value>
-  </data>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
     <value>Hiperligação do resultado:</value>
   </data>
