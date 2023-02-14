@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using FluentFTP;
+using FluentFTP.Exceptions;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
