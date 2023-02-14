@@ -520,6 +520,9 @@
     <EmbeddedResource Include="Controls\OAuthControl.zh-TW.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OAuthLoopbackControl.pl.resx">
+      <DependentUpon>OAuthLoopbackControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthLoopbackControl.pt-BR.resx">
       <DependentUpon>OAuthLoopbackControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -1110,6 +1113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.zh-CN.resx">
       <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OAuth\OAuthListenerForm.pl.resx">
+      <DependentUpon>OAuthListenerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OAuth\OAuthListenerForm.pt-BR.resx">
       <DependentUpon>OAuthListenerForm.cs</DependentUpon>
