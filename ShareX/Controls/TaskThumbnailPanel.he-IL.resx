@@ -121,7 +121,8 @@
     <value>שגיאה</value>
   </data>
   <data name="lblCombineHorizontal.Text" xml:space="preserve">
-    <value>מזג תמונות (אופקי)</value>
+    <value>מזג תמונות
+(אופקי)</value>
   </data>
   <data name="lblCombineVertical.Text" xml:space="preserve">
     <value>מזג תמונות
