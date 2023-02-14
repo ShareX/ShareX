@@ -391,7 +391,7 @@
     <value>キャプチャー/クリップボード アップロード名の規則:</value>
   </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
-    <value>クリップボードからアップロード</value>
+    <value>クリップボード アップロード</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>クリップボードにURLがあれば、自動でURL共有サービスで共有する</value>
