@@ -70,7 +70,7 @@ namespace ShareX
 
             backgroundImage = DrawDropImage(DropSize);
 
-            Location = Helpers.GetPosition(DropAlignment, DropOffset, Screen.PrimaryScreen.WorkingArea.Size, backgroundImage.Size);
+            Location = Helpers.GetPosition(DropAlignment, DropOffset, Screen.PrimaryScreen.WorkingArea, backgroundImage.Size);
 
             SelectBitmap(backgroundImage, DropOpacity);
         }

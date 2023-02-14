@@ -140,9 +140,7 @@ namespace ShareX
             }
             else
             {
-                Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenWorkingArea();
-                Point position = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, rectActiveScreen.Size, ImageSize);
-                Location = new Point(rectActiveScreen.X + position.X, rectActiveScreen.Y + position.Y);
+                Location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, CaptureHelpers.GetActiveScreenWorkingArea(), ImageSize);
             }
         }
 

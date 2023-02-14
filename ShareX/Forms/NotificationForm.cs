@@ -136,10 +136,10 @@ namespace ShareX
             buffer = new Bitmap(Config.Size.Width, Config.Size.Height);
             gBuffer = Graphics.FromImage(buffer);
 
-            Point position = Helpers.GetPosition(Config.Placement, Config.Offset, Screen.PrimaryScreen.WorkingArea.Size, Config.Size);
+            Point position = Helpers.GetPosition(Config.Placement, Config.Offset, Screen.PrimaryScreen.WorkingArea, Config.Size);
 
-            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X + Screen.PrimaryScreen.WorkingArea.X,
-                position.Y + Screen.PrimaryScreen.WorkingArea.Y, Config.Size.Width, Config.Size.Height, SetWindowPosFlags.SWP_NOACTIVATE);
+            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X, position.Y, Config.Size.Width, Config.Size.Height,
+                SetWindowPosFlags.SWP_NOACTIVATE);
 
             tDuration.Stop();
             tOpacity.Stop();

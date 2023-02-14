@@ -464,6 +464,18 @@ namespace ShareX.HelpersLib
             return GetPosition(placement, new Point(offset, offset), backgroundSize, objectSize);
         }
 
+        public static Point GetPosition(ContentAlignment placement, int offset, Rectangle background, Size objectSize)
+        {
+            return GetPosition(placement, new Point(offset, offset), background, objectSize);
+        }
+
+        public static Point GetPosition(ContentAlignment placement, Point offset, Rectangle background, Size objectSize)
+        {
+            Point position = GetPosition(placement, offset, background.Size, objectSize);
+
+            return new Point(background.X + position.X, background.Y + position.Y);
+        }
+
         public static Point GetPosition(ContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)
         {
             int midX = (int)Math.Round((backgroundSize.Width / 2f) - (objectSize.Width / 2f));
