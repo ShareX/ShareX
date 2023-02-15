@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.ImageUploaders;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -115,6 +116,18 @@ namespace ShareX.UploadersLib
         private void UpdateLength()
         {
             lblTweetLength.Text = (Length - Message.Length).ToString();
+            if (Length - Message.Length > 20)
+            {
+                lblTweetLength.ForeColor = default;
+            }
+            else if (Length - Message.Length <= 20)
+            {
+                lblTweetLength.ForeColor = ShareXResources.IsDarkTheme ? Color.FromArgb(254, 208, 58) : Color.DarkOrange; 
+                if (Length - Message.Length <= 0)
+                {
+                    lblTweetLength.ForeColor = ShareXResources.IsDarkTheme ? Color.Red : Color.FromArgb(241, 0, 50);
+                }
+            }
             btnOK.Enabled = IsValidMessage;
         }
 
