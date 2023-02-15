@@ -38,8 +38,11 @@ namespace ShareX
         public int PlacementOffset { get; set; } = 10;
         public bool TopMost { get; set; } = true;
         public bool KeepCenterLocation { get; set; } = true;
-        public bool ShowShadow { get; set; } = true;
         public Color BackgroundColor { get; set; } = Color.White;
+        public bool Shadow { get; set; } = true;
+        public bool Border { get; set; } = true;
+        public int BorderSize { get; set; } = 2;
+        public Color BorderColor { get; set; } = Color.Gold;
         public Size MinimizeSize { get; set; } = new Size(100, 100);
     }
 }

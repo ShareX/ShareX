@@ -144,6 +144,11 @@ namespace ShareX.HelpersLib
             return new Point(point.X + offset.X, point.Y + offset.Y);
         }
 
+        public static Point Add(this Point point, int offset)
+        {
+            return point.Add(offset, offset);
+        }
+
         public static PointF Add(this PointF point, float offsetX, float offsetY)
         {
             return new PointF(point.X + offsetX, point.Y + offsetY);

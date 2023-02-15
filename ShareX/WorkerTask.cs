@@ -644,7 +644,7 @@ namespace ShareX
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PinToScreen))
             {
                 Image imageCopy = Image.CloneSafe();
-                threadWorker.InvokeAsync(() => TaskHelpers.PinToScreen(imageCopy));
+                TaskHelpers.PinToScreen(imageCopy);
             }
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SendImageToPrinter))
