@@ -685,9 +685,10 @@ namespace ShareX
             if (Sandbox) flags.Add(nameof(Sandbox));
             if (SteamFirstTimeConfig) flags.Add(nameof(SteamFirstTimeConfig));
             if (IgnoreHotkeyWarning) flags.Add(nameof(IgnoreHotkeyWarning));
+            if (SystemOptions.DisableLanguageChange) flags.Add(nameof(SystemOptions.DisableLanguageChange));
+            if (SystemOptions.DisableLogging) flags.Add(nameof(SystemOptions.DisableLogging));
             if (SystemOptions.DisableUpdateCheck) flags.Add(nameof(SystemOptions.DisableUpdateCheck));
             if (SystemOptions.DisableUpload) flags.Add(nameof(SystemOptions.DisableUpload));
-            if (SystemOptions.DisableLogging) flags.Add(nameof(SystemOptions.DisableLogging));
             if (PuushMode) flags.Add(nameof(PuushMode));
 
             string output = string.Join(", ", flags);
