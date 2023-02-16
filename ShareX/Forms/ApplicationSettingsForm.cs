@@ -104,6 +104,8 @@ namespace ShareX
             // General
             ChangeLanguage(Program.Settings.Language);
 
+            btnLanguages.Enabled = !SystemOptions.DisableLanguageChange;
+
             cbShowTray.Checked = Program.Settings.ShowTray;
             cbSilentRun.Enabled = Program.Settings.ShowTray;
             cbSilentRun.Checked = Program.Settings.SilentRun;

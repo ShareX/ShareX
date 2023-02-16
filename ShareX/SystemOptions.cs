@@ -36,6 +36,7 @@ namespace ShareX
         public static bool DisableUpdateCheck { get; private set; }
         public static bool DisableUpload { get; private set; }
         public static bool DisableLogging { get; private set; }
+        public static bool DisableLanguageChange { get; private set; }
         public static string PersonalPath { get; private set; }
 
         public static void UpdateSystemOptions()
@@ -43,6 +44,7 @@ namespace ShareX
             DisableUpdateCheck = GetSystemOptionBoolean("DisableUpdateCheck");
             DisableUpload = GetSystemOptionBoolean("DisableUpload");
             DisableLogging = GetSystemOptionBoolean("DisableLogging");
+            DisableLanguageChange = GetSystemOptionBoolean("DisableLanguageChange");
             PersonalPath = GetSystemOptionString("PersonalPath");
         }
 
