@@ -70,6 +70,30 @@ namespace ShareX
             }
         }
 
+        public Size FormSize
+        {
+            get
+            {
+                Size size;
+
+                if (Minimized)
+                {
+                    size = Options.MinimizeSize;
+                }
+                else
+                {
+                    size = ImageSize;
+                }
+
+                if (Options.Border)
+                {
+                    size = size.Offset(Options.BorderSize * 2);
+                }
+
+                return size;
+            }
+        }
+
         private int imageOpacity = 100;
 
         public int ImageOpacity
@@ -134,14 +158,16 @@ namespace ShareX
             Image = image;
             AutoSizeForm();
 
-            if (location != null)
+            if (location == null)
             {
-                Location = location.Value;
+                location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, CaptureHelpers.GetActiveScreenWorkingArea(), FormSize);
             }
-            else
+            else if (Options.Border)
             {
-                Location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, CaptureHelpers.GetActiveScreenWorkingArea(), ImageSize);
+                location = location.Value.Add(-Options.BorderSize);
             }
+
+            Location = location.Value;
         }
 
         public static void PinToScreenAsync(Image image, PinToScreenOptions options = null, Point? location = null)
@@ -207,16 +233,7 @@ namespace ShareX
         private void AutoSizeForm()
         {
             Size previousSize = Size;
-            Size newSize;
-
-            if (Minimized)
-            {
-                newSize = Options.MinimizeSize;
-            }
-            else
-            {
-                newSize = ImageSize;
-            }
+            Size newSize = FormSize;
 
             Point newLocation = Location;
             SpecialWindowHandles insertAfter = Options.TopMost ? SpecialWindowHandles.HWND_TOPMOST : SpecialWindowHandles.HWND_TOP;
@@ -258,7 +275,7 @@ namespace ShareX
 
         protected override void WndProc(ref Message m)
         {
-            if (Options.ShowShadow && m.Msg == (int)WindowsMessages.NCPAINT && isDWMEnabled)
+            if (Options.Shadow && m.Msg == (int)WindowsMessages.NCPAINT && isDWMEnabled)
             {
                 NativeMethods.SetNCRenderingPolicy(Handle, DwmNCRenderingPolicy.Enabled);
 
@@ -289,18 +306,29 @@ namespace ShareX
 
             if (Image != null)
             {
+                Point position = new Point(0, 0);
+
+                if (Options.Border)
+                {
+                    using (Pen pen = new Pen(Options.BorderColor, Options.BorderSize) { Alignment = PenAlignment.Inset })
+                    {
+                        g.DrawRectangleProper(pen, new Rectangle(position, FormSize));
+                    }
+
+                    position = position.Add(Options.BorderSize);
+                }
+
                 if (Minimized)
                 {
                     g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                    g.DrawImage(Image, new Rectangle(0, 0, Options.MinimizeSize.Width, Options.MinimizeSize.Height),
-                        0, 0, Options.MinimizeSize.Width, Options.MinimizeSize.Height, GraphicsUnit.Pixel);
+                    g.DrawImage(Image, new Rectangle(position, Options.MinimizeSize), 0, 0, Options.MinimizeSize.Width, Options.MinimizeSize.Height, GraphicsUnit.Pixel);
                 }
                 else
                 {
                     if (ImageScale == 100)
                     {
                         g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                        g.DrawImage(Image, 0, 0, Image.Width, Image.Height);
+                        g.DrawImage(Image, new Rectangle(position, Image.Size));
                     }
                     else
                     {
@@ -316,7 +344,7 @@ namespace ShareX
                         using (ImageAttributes ia = new ImageAttributes())
                         {
                             ia.SetWrapMode(WrapMode.TileFlipXY);
-                            g.DrawImage(Image, new Rectangle(0, 0, ImageSize.Width, ImageSize.Height), 0, 0, Image.Width, Image.Height, GraphicsUnit.Pixel, ia);
+                            g.DrawImage(Image, new Rectangle(position, ImageSize), 0, 0, Image.Width, Image.Height, GraphicsUnit.Pixel, ia);
                         }
                     }
                 }
