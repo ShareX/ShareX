@@ -183,6 +183,7 @@ namespace ShareX
             UpdatePersonalFolderPathPreview();
             if (SystemOptions.ScreenshotsPath.Length > 0)
             {
+                cbUseCustomScreenshotsPath.Checked = true;
                 cbUseCustomScreenshotsPath.Enabled = false;
                 txtCustomScreenshotsPath.Enabled = false;
                 txtCustomScreenshotsPath.Text = SystemOptions.ScreenshotsPath;
