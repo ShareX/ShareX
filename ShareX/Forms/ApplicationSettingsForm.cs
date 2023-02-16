@@ -166,11 +166,33 @@ namespace ShareX
 #endif
 
             // Paths
-            lastPersonalPath = Program.ReadPersonalPathConfig();
-            txtPersonalFolderPath.Text = lastPersonalPath;
+            if (SystemOptions.PersonalPath.Length > 0)
+            {
+                txtPersonalFolderPath.Enabled = false;
+                txtPersonalFolderPath.Text = SystemOptions.PersonalPath;
+                btnBrowsePersonalFolderPath.Visible = false;
+                btnPersonalFolderPathApply.Visible = false;
+                btnOpenPersonalFolderPath.Location = new Point(16, 56);
+                lblPreviewPersonalFolderPath.Location = new Point(120, 61);
+            }
+            else
+            {
+                lastPersonalPath = Program.ReadPersonalPathConfig();
+                txtPersonalFolderPath.Text = lastPersonalPath;
+            }
             UpdatePersonalFolderPathPreview();
-            cbUseCustomScreenshotsPath.Checked = Program.Settings.UseCustomScreenshotsPath;
-            txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
+            if (SystemOptions.ScreenshotsPath.Length > 0)
+            {
+                cbUseCustomScreenshotsPath.Enabled = false;
+                txtCustomScreenshotsPath.Enabled = false;
+                txtCustomScreenshotsPath.Text = SystemOptions.ScreenshotsPath;
+                btnBrowseCustomScreenshotsPath.Visible = false;
+            }
+            else
+            {
+                cbUseCustomScreenshotsPath.Checked = Program.Settings.UseCustomScreenshotsPath;
+                txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
+            }
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
             txtSaveImageSubFolderPatternWindow.Text = Program.Settings.SaveImageSubFolderPatternWindow;
 
@@ -692,6 +714,8 @@ namespace ShareX
         private void cbUseCustomScreenshotsPath_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.UseCustomScreenshotsPath = cbUseCustomScreenshotsPath.Checked;
+            btnBrowseCustomScreenshotsPath.Enabled = cbUseCustomScreenshotsPath.Checked;
+            txtCustomScreenshotsPath.Enabled = cbUseCustomScreenshotsPath.Checked;
             UpdateScreenshotsFolderPathPreview();
         }
 
