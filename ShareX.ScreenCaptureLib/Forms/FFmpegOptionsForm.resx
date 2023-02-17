@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -133,6 +133,7 @@
   </data>
   <data name="lblx264CRF.Text" xml:space="preserve">
     <value>CRF:</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblx264CRF.Name" xml:space="preserve">
     <value>lblx264CRF</value>
@@ -597,6 +598,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="btnFFmpegBrowse.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnFFmpegBrowse.Name" xml:space="preserve">
     <value>btnFFmpegBrowse</value>
