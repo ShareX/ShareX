@@ -42,7 +42,7 @@ namespace ShareX
         public bool Shadow { get; set; } = true;
         public bool Border { get; set; } = true;
         public int BorderSize { get; set; } = 2;
-        public Color BorderColor { get; set; } = Color.Gold;
+        public Color BorderColor { get; set; } = Color.CornflowerBlue;
         public Size MinimizeSize { get; set; } = new Size(100, 100);
     }
 }
