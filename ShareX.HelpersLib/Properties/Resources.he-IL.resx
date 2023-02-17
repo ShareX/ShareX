@@ -166,7 +166,7 @@
     <value>הדפס תמונה</value>
   </data>
   <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
-    <value>הצג חלון "לאחר צילום"</value>
+    <value>הצג חלון "לאחר צילום מסך"</value>
   </data>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>הצג חלון "לפני העלאה"</value>
@@ -465,22 +465,22 @@
     <value>הקלטת מסך</value>
   </data>
   <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
-    <value>צילום מסך פעיל</value>
+    <value>צלם מסך פעיל</value>
   </data>
   <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>צילום מסך</value>
+    <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_ActiveWindow" xml:space="preserve">
-    <value>צילום חלון פעיל</value>
+    <value>צלם חלון פעיל</value>
   </data>
   <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
-    <value>צילום מסך</value>
+    <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
-    <value>צילום אוטומטי</value>
+    <value>צילום מסך אוטומטי</value>
   </data>
   <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
-    <value>צילום מסך</value>
+    <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>חלון ללא מסגרת</value>
@@ -489,10 +489,10 @@
     <value>כלים</value>
   </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
-    <value>צילום עמוד אינטרנט</value>
+    <value>צלם עמוד אינטרנט</value>
   </data>
   <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>צילום מסך</value>
+    <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>צילום מלוח הגזירה</value>
@@ -522,7 +522,7 @@
     <value>צילום אזור מוגדר מראש</value>
   </data>
   <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
-    <value>צילום מסך</value>
+    <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>השבת/הפעל מקשי קיצור</value>
@@ -972,7 +972,7 @@
     <value>10 דקות</value>
   </data>
   <data name="PastebinExpiration_N" xml:space="preserve">
-    <value>לעולם לא</value>
+    <value>אף פעם</value>
   </data>
   <data name="PastebinExpiration_W1" xml:space="preserve">
     <value>שבוע אחד</value>
@@ -1032,7 +1032,7 @@
     <value>תו אלפאנומרי אקראי לא דו-משמעי (חזור באמצעות {n})</value>
   </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
-    <value>בטל צילום</value>
+    <value>ביטול צילום מסך</value>
   </data>
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
     <value>צלם מסך פעיל</value>
@@ -1041,7 +1041,7 @@
     <value>צלם מסך מלא</value>
   </data>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
-    <value>צלם אזור אחון</value>
+    <value>צלם אזור אחרון</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>אל תעשה דבר</value>
@@ -1050,7 +1050,7 @@
     <value>הסר צורה</value>
   </data>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
-    <value>הסר צורה או בטל צילום</value>
+    <value>הסר צורה או בטל צילום מסך</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>החלף סוג כלי</value>

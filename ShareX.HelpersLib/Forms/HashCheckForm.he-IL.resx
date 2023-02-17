@@ -121,10 +121,10 @@
     <value>ShareX - בדיקת Hash</value>
   </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
-    <value>סייר...</value>
+    <value>בחר...</value>
   </data>
   <data name="btnFilePathBrowse2.Text" xml:space="preserve">
-    <value>סייר...</value>
+    <value>בחר...</value>
   </data>
   <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
     <value>העתק הכל</value>

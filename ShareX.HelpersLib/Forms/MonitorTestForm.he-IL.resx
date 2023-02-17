@@ -160,7 +160,7 @@
     <value>שחור, לבן:</value>
   </data>
   <data name="rbGradient.Text" xml:space="preserve">
-    <value>מעברי צבע:</value>
+    <value>גרדיאנט:</value>
   </data>
   <data name="rbRedGreenBlue.Text" xml:space="preserve">
     <value>אדום, ירוק, כחול:</value>

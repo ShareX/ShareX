@@ -117,46 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - בוחר גרדיאנט</value>
+  <data name="cbAccountType.Items" xml:space="preserve">
+    <value>ונימי</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>הוסף</value>
+  <data name="lblAccountType.Text" xml:space="preserve">
+    <value>סוג חשבון:</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ביטול</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>נקה</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>אישור</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>הסר</value>
-  </data>
-  <data name="btnReverse.Text" xml:space="preserve">
-    <value>הפוך</value>
-  </data>
-  <data name="cbtnCurrentColor.Text" xml:space="preserve">
-    <value>צבע</value>
-  </data>
-  <data name="chGradient.Text" xml:space="preserve">
-    <value>גרדיאנט</value>
-  </data>
-  <data name="chLocation.Text" xml:space="preserve">
-    <value>מיקום</value>
-  </data>
-  <data name="lblGradientType.Text" xml:space="preserve">
-    <value>סוג גרדיאנט:</value>
-  </data>
-  <data name="lblLocation.Text" xml:space="preserve">
-    <value>מיקום:</value>
-  </data>
-  <data name="lblPresets.Text" xml:space="preserve">
-    <value>הגדרות תצורה:</value>
-  </data>
-  <data name="lblPreview.Text" xml:space="preserve">
-    <value>תצוגה מקדימה:</value>
+  <data name="cbAccountType.Items1" xml:space="preserve">
+    <value>משתמש</value>
   </data>
 </root>

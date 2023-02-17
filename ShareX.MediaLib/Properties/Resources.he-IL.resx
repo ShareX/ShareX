@@ -117,46 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - בוחר גרדיאנט</value>
+  <data name="AlignmentBottom" xml:space="preserve">
+    <value>למטה</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>הוסף</value>
+  <data name="AlignmentHorizontalCenter" xml:space="preserve">
+    <value>מרכז</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ביטול</value>
+  <data name="AlignmentLeft" xml:space="preserve">
+    <value>שמאל</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>נקה</value>
+  <data name="AlignmentRight" xml:space="preserve">
+    <value>ימין</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>אישור</value>
+  <data name="AlignmentTop" xml:space="preserve">
+    <value>למעלה</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>הסר</value>
+  <data name="AlignmentVerticalCenter" xml:space="preserve">
+    <value>מרכז</value>
   </data>
-  <data name="btnReverse.Text" xml:space="preserve">
-    <value>הפוך</value>
+  <data name="FFmpegError" xml:space="preserve">
+    <value>שגיאת FFmpeg</value>
   </data>
-  <data name="cbtnCurrentColor.Text" xml:space="preserve">
-    <value>צבע</value>
+  <data name="HigherQualitySize" xml:space="preserve">
+    <value>גודל/איכות גבוהה יותר</value>
   </data>
-  <data name="chGradient.Text" xml:space="preserve">
-    <value>גרדיאנט</value>
+  <data name="LowerQualitySize" xml:space="preserve">
+    <value>גודל/איכות נמוכה יותר</value>
   </data>
-  <data name="chLocation.Text" xml:space="preserve">
-    <value>מיקום</value>
+  <data name="StartEncoding" xml:space="preserve">
+    <value>התחל קידוד</value>
   </data>
-  <data name="lblGradientType.Text" xml:space="preserve">
-    <value>סוג גרדיאנט:</value>
+  <data name="StopEncoding" xml:space="preserve">
+    <value>עצור קידוד</value>
   </data>
-  <data name="lblLocation.Text" xml:space="preserve">
-    <value>מיקום:</value>
+  <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
+    <value>תמונות ממוזערות נוצרו בהצלחה.</value>
   </data>
-  <data name="lblPresets.Text" xml:space="preserve">
-    <value>הגדרות תצורה:</value>
-  </data>
-  <data name="lblPreview.Text" xml:space="preserve">
-    <value>תצוגה מקדימה:</value>
+  <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
+    <value>חפש קובץ מדיה</value>
   </data>
 </root>

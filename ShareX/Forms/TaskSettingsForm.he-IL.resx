@@ -127,7 +127,7 @@
     <value>משימה:</value>
   </data>
   <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
-    <value>סייר...</value>
+    <value>בחר...</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>לאחר צילום מסך...</value>
@@ -241,7 +241,7 @@
     <value>הערה: ניתן להפעיל/להשבית אפקטים של תמונה מתוך "משימות לאחר צילום מסך -&gt; הוסף אפקטים לתמונה".</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
-    <value>דרוס לאחר משימות צילום מסך</value>
+    <value>דרוס משימות לאחר צילום מסך</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
     <value>דרוס לאחר משימות העלאה</value>
@@ -325,13 +325,13 @@
     <value>היסט צל:</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
-    <value>צילום חלון עם שקיפות</value>
+    <value>צלם חלון עם שקיפות</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
     <value>בעת צילום חלון, אם החלון מצטלב עם שורת המשימות - הסתר את שורת המשימות</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>צילום חלון עם צל (דורש שקיפות)</value>
+    <value>צלם חלון עם צל (דורש שקיפות)</value>
   </data>
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>שניות</value>
@@ -415,7 +415,7 @@
     <value>רוחב:</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
-    <value>צילום אזור</value>
+    <value>צלם אזור</value>
   </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
     <value>עמעם רקע כך שניתן להבדיל בקלות בבחירה (משפיע על מהירות ההפעלה)</value>
@@ -577,7 +577,7 @@
     <value>נתיב קובץ</value>
   </data>
   <data name="chActionsArgs.Text" xml:space="preserve">
-    <value>פרמטרים</value>
+    <value>ארגומנטים</value>
   </data>
   <data name="chActionsExtensions.Text" xml:space="preserve">
     <value>סיומות</value>

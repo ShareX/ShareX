@@ -117,46 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - בוחר גרדיאנט</value>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>אירעה שגיאה בעת קריאת קובץ ההיסטוריה:</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>הוסף</value>
+  <data name="Filtered" xml:space="preserve">
+    <value>מסונן</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ביטול</value>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>שם קובץ, כותרת חלון, שם תהליך וכו'.</value>
   </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>נקה</value>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>מסונן: {0}</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>אישור</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>סך הכל: {0}</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>הסר</value>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>ספירת פריטי היסטוריה:</value>
   </data>
-  <data name="btnReverse.Text" xml:space="preserve">
-    <value>הפוך</value>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>העתק</value>
   </data>
-  <data name="cbtnCurrentColor.Text" xml:space="preserve">
-    <value>צבע</value>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>קישור הסרה</value>
   </data>
-  <data name="chGradient.Text" xml:space="preserve">
-    <value>גרדיאנט</value>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>ערוך תמונה...</value>
   </data>
-  <data name="chLocation.Text" xml:space="preserve">
-    <value>מיקום</value>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>קובץ</value>
   </data>
-  <data name="lblGradientType.Text" xml:space="preserve">
-    <value>סוג גרדיאנט:</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>שם קובץ</value>
   </data>
-  <data name="lblLocation.Text" xml:space="preserve">
-    <value>מיקום:</value>
+  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
+    <value>שם קובץ עם סיומת</value>
   </data>
-  <data name="lblPresets.Text" xml:space="preserve">
-    <value>הגדרות תצורה:</value>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>נתיב קובץ</value>
   </data>
-  <data name="lblPreview.Text" xml:space="preserve">
-    <value>תצוגה מקדימה:</value>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>תיקייה</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>תמונת פורום (BBCode)</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
+    <value>קישור לפורום (BBCode)</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
+    <value>תמונה מקושרת לפורום (BBCode)</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>תמונת HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>קישור HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
+    <value>תמונה מקושרת ל-HTML</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>תמונה</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>תצוגה מקדימה של תמונה...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>תמונה ב-Markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>קישור ב-Markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>תמונה מקושרת ב-Markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>מידע נוסף...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>פתח</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>קישור מקוצר</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>טקסט</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
+    <value>קישור תמונה ממוזערת</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>העלה קובץ</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>קישור</value>
+  </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>שגיאה</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>סטטיסטיקות היסטוריה</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>סיומות קבצים:</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>מארחים:</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>סך הכל:</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>שימוש שנתי:</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>הצמד למסך</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>שמות תהליכים:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>סך הכל</value>
   </data>
 </root>

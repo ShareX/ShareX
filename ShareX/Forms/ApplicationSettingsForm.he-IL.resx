@@ -193,7 +193,7 @@
     <value>אינטגרציה</value>
   </data>
   <data name="lblProxyPort.Text" xml:space="preserve">
-    <value>פורט:</value>
+    <value>יציאה:</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>הסר</value>
@@ -205,10 +205,10 @@
     <value>תבנית תיקיית משנה לחלון:</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>סייר...</value>
+    <value>בחר...</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
-    <value>סייר...</value>
+    <value>בחר...</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>הערה: אל תשתף את הקובץ המיוצא עם אף אחד מכיוון שהוא עשוי להכיל מידע אישי כמו פרטי חשבון והיסטוריית ההעלאות שלך.</value>
