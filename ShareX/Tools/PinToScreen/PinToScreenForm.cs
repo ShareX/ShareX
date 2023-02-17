@@ -147,6 +147,7 @@ namespace ShareX
             TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
 
+            tsMain.Cursor = Cursors.Arrow;
             openHandCursor = Helpers.CreateCursor(Resources.openhand);
             closedHandCursor = Helpers.CreateCursor(Resources.closedhand);
             SetHandCursor(false);
@@ -284,6 +285,11 @@ namespace ShareX
             }
 
             AutoSizeForm();
+        }
+
+        private void tsbCopy_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyImage(Image);
         }
 
         private void tslScale_Click(object sender, EventArgs e)
