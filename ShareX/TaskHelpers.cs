@@ -1312,11 +1312,15 @@ namespace ShareX
             }
         }
 
-        public static void PinToScreen(Image image, Point? location = null)
+        public static void PinToScreen(Image image, Point? location = null, PinToScreenOptions options = null)
         {
             if (image != null)
             {
-                PinToScreenOptions options = new PinToScreenOptions();
+                if (options == null)
+                {
+                    options = new PinToScreenOptions();
+                }
+
                 options.BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
 
                 PinToScreenForm.PinToScreenAsync(image, options, location);

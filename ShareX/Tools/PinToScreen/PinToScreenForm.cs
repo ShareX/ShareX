@@ -58,6 +58,8 @@ namespace ShareX
                     {
                         AutoSizeForm();
                     }
+
+                    UpdateControls();
                 }
             }
         }
@@ -141,14 +143,18 @@ namespace ShareX
             ImageOpacity = Options.InitialOpacity;
 
             InitializeComponent();
+            ShareXResources.ApplyTheme(this);
             TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
 
+            tsMain.Cursor = Cursors.Arrow;
             openHandCursor = Helpers.CreateCursor(Resources.openhand);
             closedHandCursor = Helpers.CreateCursor(Resources.closedhand);
             SetHandCursor(false);
 
             isDWMEnabled = NativeMethods.IsDWMEnabled();
+
+            UpdateControls();
 
             loaded = true;
         }
@@ -206,7 +212,15 @@ namespace ShareX
             base.Dispose(disposing);
         }
 
-        public void SetHandCursor(bool grabbing)
+        private void UpdateControls()
+        {
+            bool isCursorInside = ClientRectangle.Contains(PointToClient(MousePosition));
+
+            tsMain.Visible = isCursorInside;
+            tslScale.Text = ImageScale + "%";
+        }
+
+        private void SetHandCursor(bool grabbing)
         {
             if (grabbing)
             {
@@ -271,6 +285,29 @@ namespace ShareX
             }
 
             AutoSizeForm();
+        }
+
+        private void tsbCopy_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyImage(Image);
+        }
+
+        private void tslScale_Click(object sender, EventArgs e)
+        {
+            if (!Minimized)
+            {
+                ResetImage();
+            }
+        }
+
+        private void tsbOptions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         protected override void WndProc(ref Message m)
@@ -429,6 +466,16 @@ namespace ShareX
                         break;
                 }
             }
+        }
+
+        private void PinToScreenForm_MouseEnter(object sender, EventArgs e)
+        {
+            UpdateControls();
+        }
+
+        private void PinToScreenForm_MouseLeave(object sender, EventArgs e)
+        {
+            UpdateControls();
         }
 
         private void PinToScreenForm_KeyUp(object sender, KeyEventArgs e)
