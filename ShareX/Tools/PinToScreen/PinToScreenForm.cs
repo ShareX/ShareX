@@ -296,7 +296,7 @@ namespace ShareX
         {
             if (!Minimized)
             {
-                ResetImage();
+                ImageScale = 100;
             }
         }
 
