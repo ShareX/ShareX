@@ -495,8 +495,10 @@ namespace ShareX.ScreenCaptureLib
         private void btnGuessCombineAdjustments_Click(object sender, EventArgs e)
         {
             StartingProcess();
+            DebugTimer timer = new DebugTimer("Combine V1");
             GuessCombineAdjustments();
             CombineAndPreviewImages();
+            timer.WriteElapsedMilliseconds();
             EndingProcess();
         }
 
@@ -820,6 +822,85 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return lastMatchOffset;
+        }
+
+        private void btnCombineV2_Click(object sender, EventArgs e)
+        {
+            StartingProcess();
+            DebugTimer timer = new DebugTimer("Combine V2");
+            Result = CombineImagesV2(images);
+            pbOutput.Image = Result;
+            timer.WriteElapsedMilliseconds();
+            EndingProcess();
+        }
+
+        private Bitmap CombineImagesV2(List<Bitmap> images)
+        {
+            int ignoreRightOffset = 50;
+
+            Bitmap result = (Bitmap)images[0].Clone();
+
+            for (int i = 1; i < images.Count; i++)
+            {
+                Bitmap currentImage = images[i];
+
+                bool isMatch = false;
+                int matchIndex = 0;
+
+                using (UnsafeBitmap bmpResult = new UnsafeBitmap(result, true, ImageLockMode.ReadOnly))
+                using (UnsafeBitmap bmpCurrentImage = new UnsafeBitmap(currentImage, true, ImageLockMode.ReadOnly))
+                {
+                    Rectangle rect = new Rectangle(0, result.Height - currentImage.Height,
+                        currentImage.Width - (currentImage.Width > ignoreRightOffset ? ignoreRightOffset : 0),
+                        currentImage.Height);
+
+                    for (int y = rect.Y; y < rect.Bottom; y++)
+                    {
+                        isMatch = true;
+
+                        for (int y2 = 0; y + y2 < rect.Bottom; y2++)
+                        {
+                            for (int x = rect.X; x < rect.Right; x++)
+                            {
+                                if (bmpResult.GetPixel(x, y + y2) != bmpCurrentImage.GetPixel(x, y2))
+                                {
+                                    isMatch = false;
+                                    break;
+                                }
+                            }
+
+                            if (!isMatch)
+                            {
+                                break;
+                            }
+                        }
+
+                        if (isMatch)
+                        {
+                            matchIndex = y;
+                            break;
+                        }
+                    }
+                }
+
+                if (isMatch)
+                {
+                    Bitmap newResult = new Bitmap(result.Width, matchIndex + currentImage.Height);
+
+                    using (Graphics g = Graphics.FromImage(newResult))
+                    {
+                        g.DrawImage(result, new Rectangle(0, 0, result.Width, matchIndex),
+                            new Rectangle(0, 0, result.Width, matchIndex), GraphicsUnit.Pixel);
+                        g.DrawImage(currentImage, new Rectangle(0, matchIndex, currentImage.Width, currentImage.Height),
+                            new Rectangle(0, 0, currentImage.Width, currentImage.Height), GraphicsUnit.Pixel);
+                    }
+
+                    result.Dispose();
+                    result = newResult;
+                }
+            }
+
+            return result;
         }
     }
 }

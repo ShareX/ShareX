@@ -79,6 +79,7 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput = new System.Windows.Forms.Panel();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.pbOutput = new System.Windows.Forms.PictureBox();
+            this.btnCombineV2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -351,6 +352,7 @@ namespace ShareX.ScreenCaptureLib
             // 
             // gbImages
             // 
+            this.gbImages.Controls.Add(this.btnCombineV2);
             this.gbImages.Controls.Add(this.txtImagesCount);
             this.gbImages.Controls.Add(this.lblImageCount);
             this.gbImages.Controls.Add(this.nudIgnoreLast);
@@ -554,6 +556,13 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput.Name = "pbOutput";
             this.pbOutput.TabStop = false;
             // 
+            // btnCombineV2
+            // 
+            resources.ApplyResources(this.btnCombineV2, "btnCombineV2");
+            this.btnCombineV2.Name = "btnCombineV2";
+            this.btnCombineV2.UseVisualStyleBackColor = true;
+            this.btnCombineV2.Click += new System.EventHandler(this.btnCombineV2_Click);
+            // 
             // ScrollingCaptureForm
             // 
             this.AcceptButton = this.btnCapture;
@@ -652,5 +661,6 @@ namespace ShareX.ScreenCaptureLib
         private GroupBox gbAfterCapture;
         private GroupBox gbWhileCapturing;
         private GroupBox gbBeforeCapture;
+        private Button btnCombineV2;
     }
 }
