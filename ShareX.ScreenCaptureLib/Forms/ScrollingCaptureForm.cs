@@ -834,6 +834,86 @@ namespace ShareX.ScreenCaptureLib
             EndingProcess();
         }
 
+        private void btnCombineV3_Click(object sender, EventArgs e)
+        {
+            StartingProcess();
+            DebugTimer timer = new DebugTimer("Combine V3");
+            Result = CombineImagesV3(images);
+            pbOutput.Image = Result;
+            timer.WriteElapsedMilliseconds();
+            EndingProcess();
+        }
+
+        private Bitmap CombineImagesV3(List<Bitmap> images)
+        {
+            int ignoreRightOffset = 50;
+
+            Bitmap result = (Bitmap)images[0].Clone();
+
+            for (int i = 1; i < images.Count; i++)
+            {
+                Bitmap currentImage = images[i];
+
+                int matchCount = 0;
+                int matchIndex = 0;
+                int matchLimit = currentImage.Height / 3;
+
+                using (UnsafeBitmap bmpResult = new UnsafeBitmap(result, true, ImageLockMode.ReadOnly))
+                using (UnsafeBitmap bmpCurrentImage = new UnsafeBitmap(currentImage, true, ImageLockMode.ReadOnly))
+                {
+                    Rectangle rect = new Rectangle(0, result.Height - currentImage.Height,
+                        currentImage.Width - (currentImage.Width > ignoreRightOffset ? ignoreRightOffset : 0), currentImage.Height);
+
+                    for (int currentImageY = currentImage.Height - 1; currentImageY >= 0 && matchCount < matchLimit; currentImageY--)
+                    {
+                        int currentMatchCount = 0;
+                        bool isMatch = true;
+
+                        for (int y = 0; currentImageY - y >= 0 && isMatch && currentMatchCount < matchLimit; y++)
+                        {
+                            for (int x = rect.X; x < rect.Right; x++)
+                            {
+                                if (bmpResult.GetPixel(x, rect.Bottom - 1 - y) != bmpCurrentImage.GetPixel(x, currentImageY - y))
+                                {
+                                    isMatch = false;
+                                    break;
+                                }
+                            }
+
+                            if (isMatch)
+                            {
+                                currentMatchCount++;
+                            }
+                        }
+
+                        if (currentMatchCount > matchCount)
+                        {
+                            matchCount = currentMatchCount;
+                            matchIndex = currentImageY;
+                        }
+                    }
+                }
+
+                if (matchCount > 0)
+                {
+                    Bitmap newResult = new Bitmap(result.Width, result.Height + currentImage.Height - matchIndex - 1);
+
+                    using (Graphics g = Graphics.FromImage(newResult))
+                    {
+                        g.DrawImage(result, new Rectangle(0, 0, result.Width, result.Height),
+                            new Rectangle(0, 0, result.Width, result.Height), GraphicsUnit.Pixel);
+                        g.DrawImage(currentImage, new Rectangle(0, result.Height, currentImage.Width, currentImage.Height - matchIndex - 1),
+                            new Rectangle(0, matchIndex + 1, currentImage.Width, currentImage.Height - matchIndex - 1), GraphicsUnit.Pixel);
+                    }
+
+                    result.Dispose();
+                    result = newResult;
+                }
+            }
+
+            return result;
+        }
+
         private Bitmap CombineImagesV2(List<Bitmap> images)
         {
             int ignoreRightOffset = 50;
@@ -851,8 +931,7 @@ namespace ShareX.ScreenCaptureLib
                 using (UnsafeBitmap bmpCurrentImage = new UnsafeBitmap(currentImage, true, ImageLockMode.ReadOnly))
                 {
                     Rectangle rect = new Rectangle(0, result.Height - currentImage.Height,
-                        currentImage.Width - (currentImage.Width > ignoreRightOffset ? ignoreRightOffset : 0),
-                        currentImage.Height);
+                        currentImage.Width - (currentImage.Width > ignoreRightOffset ? ignoreRightOffset : 0), currentImage.Height);
 
                     for (int y = rect.Y; y < rect.Bottom; y++)
                     {

@@ -813,11 +813,38 @@
   <data name="&gt;&gt;tpCapture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnCombineV3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCombineV3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 72</value>
+  </data>
+  <data name="btnCombineV3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 40</value>
+  </data>
+  <data name="btnCombineV3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnCombineV3.Text" xml:space="preserve">
+    <value>Combine V3</value>
+  </data>
+  <data name="&gt;&gt;btnCombineV3.Name" xml:space="preserve">
+    <value>btnCombineV3</value>
+  </data>
+  <data name="&gt;&gt;btnCombineV3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCombineV3.Parent" xml:space="preserve">
+    <value>gbImages</value>
+  </data>
+  <data name="&gt;&gt;btnCombineV3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnCombineV2.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 72</value>
   </data>
   <data name="btnCombineV2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 40</value>
+    <value>80, 40</value>
   </data>
   <data name="btnCombineV2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -835,7 +862,7 @@
     <value>gbImages</value>
   </data>
   <data name="&gt;&gt;btnCombineV2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtImagesCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 16</value>
@@ -859,7 +886,7 @@
     <value>gbImages</value>
   </data>
   <data name="&gt;&gt;txtImagesCount.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblImageCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -886,7 +913,7 @@
     <value>gbImages</value>
   </data>
   <data name="&gt;&gt;lblImageCount.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="nudIgnoreLast.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 40</value>
@@ -910,7 +937,7 @@
     <value>gbImages</value>
   </data>
   <data name="&gt;&gt;nudIgnoreLast.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblIgnoreLast.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -937,7 +964,7 @@
     <value>gbImages</value>
   </data>
   <data name="&gt;&gt;lblIgnoreLast.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="gbImages.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
