@@ -858,41 +858,40 @@ namespace ShareX.ScreenCaptureLib
                 int matchIndex = 0;
                 int matchLimit = currentImage.Height / 3;
 
-                using (UnsafeBitmap bmpResult = new UnsafeBitmap(result, true, ImageLockMode.ReadOnly))
-                using (UnsafeBitmap bmpCurrentImage = new UnsafeBitmap(currentImage, true, ImageLockMode.ReadOnly))
+                Rectangle rect = new Rectangle(0, result.Height - currentImage.Height,
+                    currentImage.Width - (currentImage.Width > ignoreRightOffset ? ignoreRightOffset : 0), currentImage.Height);
+
+                BitmapData bdResult = result.LockBits(new Rectangle(0, 0, result.Width, result.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+                BitmapData bdCurrentImage = currentImage.LockBits(new Rectangle(0, 0, currentImage.Width, currentImage.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+                int stride = bdResult.Stride;
+                int strideCompare = stride / result.Width * rect.Width;
+                int rectBottom = rect.Bottom - 1;
+
+                for (int currentImageY = currentImage.Height - 1; currentImageY >= 0 && matchCount < matchLimit; currentImageY--)
                 {
-                    Rectangle rect = new Rectangle(0, result.Height - currentImage.Height,
-                        currentImage.Width - (currentImage.Width > ignoreRightOffset ? ignoreRightOffset : 0), currentImage.Height);
+                    int currentMatchCount = 0;
 
-                    for (int currentImageY = currentImage.Height - 1; currentImageY >= 0 && matchCount < matchLimit; currentImageY--)
+                    for (int y = 0; currentImageY - y >= 0 && currentMatchCount < matchLimit; y++)
                     {
-                        int currentMatchCount = 0;
-                        bool isMatch = true;
-
-                        for (int y = 0; currentImageY - y >= 0 && isMatch && currentMatchCount < matchLimit; y++)
+                        if (NativeMethods.memcmp(bdResult.Scan0 + ((rectBottom - y) * stride), bdCurrentImage.Scan0 + ((currentImageY - y) * stride), strideCompare) == 0)
                         {
-                            for (int x = rect.X; x < rect.Right; x++)
-                            {
-                                if (bmpResult.GetPixel(x, rect.Bottom - 1 - y) != bmpCurrentImage.GetPixel(x, currentImageY - y))
-                                {
-                                    isMatch = false;
-                                    break;
-                                }
-                            }
-
-                            if (isMatch)
-                            {
-                                currentMatchCount++;
-                            }
+                            currentMatchCount++;
                         }
-
-                        if (currentMatchCount > matchCount)
+                        else
                         {
-                            matchCount = currentMatchCount;
-                            matchIndex = currentImageY;
+                            break;
                         }
                     }
+
+                    if (currentMatchCount > matchCount)
+                    {
+                        matchCount = currentMatchCount;
+                        matchIndex = currentImageY;
+                    }
                 }
+
+                result.UnlockBits(bdResult);
+                currentImage.UnlockBits(bdCurrentImage);
 
                 if (matchCount > 0)
                 {

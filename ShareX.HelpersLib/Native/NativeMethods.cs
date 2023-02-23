@@ -472,6 +472,9 @@ namespace ShareX.HelpersLib
 
         #region Other dll
 
+        [DllImport("msvcrt.dll")]
+        public static extern int memcmp(IntPtr b1, IntPtr b2, long count);
+
         /// <summary>
         /// Copy a block of memory.
         /// </summary>
