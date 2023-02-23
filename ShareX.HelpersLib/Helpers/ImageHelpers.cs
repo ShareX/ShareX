@@ -925,10 +925,23 @@ namespace ShareX.HelpersLib
 
         public static bool IsImagesEqual(Bitmap bmp1, Bitmap bmp2)
         {
-            using (UnsafeBitmap unsafeBitmap1 = new UnsafeBitmap(bmp1))
-            using (UnsafeBitmap unsafeBitmap2 = new UnsafeBitmap(bmp2))
+            if ((bmp1 == null) != (bmp2 == null)) return false;
+            if (bmp1.Size != bmp2.Size) return false;
+
+            BitmapData bd1 = bmp1.LockBits(new Rectangle(0, 0, bmp1.Width, bmp1.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+            BitmapData bd2 = bmp2.LockBits(new Rectangle(0, 0, bmp2.Width, bmp2.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+
+            try
             {
-                return unsafeBitmap1 == unsafeBitmap2;
+                int stride = bd1.Stride;
+                int count = stride * bmp1.Height;
+
+                return NativeMethods.memcmp(bd1.Scan0, bd2.Scan0, count) == 0;
+            }
+            finally
+            {
+                bmp1.UnlockBits(bd1);
+                bmp2.UnlockBits(bd2);
             }
         }
 
