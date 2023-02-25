@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -49,12 +50,12 @@ namespace ShareX.UploadersLib
             cbVisibility.SelectedIndex = (int)Visibility;
         }
 
-        private void YouTubeVideoOptionsForm_Shown(object sender, System.EventArgs e)
+        private void YouTubeVideoOptionsForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
         }
 
-        private void btnOK_Click(object sender, System.EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
             Title = txtTitle.Text;
             Description = txtDescription.Text;
@@ -64,7 +65,7 @@ namespace ShareX.UploadersLib
             Close();
         }
 
-        private void btnCancel_Click(object sender, System.EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();

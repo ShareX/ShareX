@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -154,7 +155,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void MyMessageBox_Shown(object sender, System.EventArgs e)
+        private void MyMessageBox_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
         }

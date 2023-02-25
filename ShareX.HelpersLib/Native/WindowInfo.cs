@@ -76,6 +76,8 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public IntPtr Parent => NativeMethods.GetParent(Handle);
+
         public Rectangle Rectangle => CaptureHelpers.GetWindowRectangle(Handle);
 
         public Rectangle ClientRectangle => NativeMethods.GetClientRect(Handle);

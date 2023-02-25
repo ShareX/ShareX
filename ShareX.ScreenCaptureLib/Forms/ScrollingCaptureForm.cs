@@ -348,7 +348,7 @@ namespace ShareX.ScreenCaptureLib
                     InputHelpers.SendKeyPress(VirtualKeyCode.NEXT);
                     break;
                 case ScrollingCaptureScrollMethod.MouseWheel:
-                    InputHelpers.SendMouseWheel(-240);
+                    InputHelpers.SendMouseWheel(-120 * 2);
                     break;
             }
 

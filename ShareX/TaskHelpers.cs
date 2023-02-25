@@ -686,9 +686,14 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
+            /*
             ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
                 taskSettings.CaptureSettings.SurfaceOptions, forceSelection);
             scrollingCaptureForm.ImageProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
+            scrollingCaptureForm.Show();
+            */
+
+            ScrollingCaptureLightForm scrollingCaptureForm = new ScrollingCaptureLightForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions);
             scrollingCaptureForm.Show();
         }
 
