@@ -846,9 +846,10 @@ namespace ShareX.ScreenCaptureLib
 
         private Bitmap CombineImagesV3(List<Bitmap> images)
         {
-            int ignoreRightOffset = 50;
-
             Bitmap result = (Bitmap)images[0].Clone();
+
+            int bestMatchCount = 0;
+            int bestMatchIndex = 0;
 
             for (int i = 1; i < images.Count; i++)
             {
@@ -857,15 +858,23 @@ namespace ShareX.ScreenCaptureLib
                 int matchCount = 0;
                 int matchIndex = 0;
                 int matchLimit = currentImage.Height / 3;
+                int ignoreSideOffset = Math.Max(50, currentImage.Width / 20);
 
-                Rectangle rect = new Rectangle(0, result.Height - currentImage.Height,
-                    currentImage.Width - (currentImage.Width > ignoreRightOffset ? ignoreRightOffset : 0), currentImage.Height);
+                if (currentImage.Width < ignoreSideOffset * 3)
+                {
+                    ignoreSideOffset = 0;
+                }
+
+                Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height, currentImage.Width - ignoreSideOffset * 2, currentImage.Height);
 
                 BitmapData bdResult = result.LockBits(new Rectangle(0, 0, result.Width, result.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
                 BitmapData bdCurrentImage = currentImage.LockBits(new Rectangle(0, 0, currentImage.Width, currentImage.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
                 int stride = bdResult.Stride;
-                int strideCompare = stride / result.Width * rect.Width;
+                int pixelSize = stride / result.Width;
+                IntPtr resultScan0 = bdResult.Scan0 + pixelSize * ignoreSideOffset;
+                IntPtr currentImageScan0 = bdCurrentImage.Scan0 + pixelSize * ignoreSideOffset;
                 int rectBottom = rect.Bottom - 1;
+                int compareLength = pixelSize * rect.Width;
 
                 for (int currentImageY = currentImage.Height - 1; currentImageY >= 0 && matchCount < matchLimit; currentImageY--)
                 {
@@ -873,7 +882,7 @@ namespace ShareX.ScreenCaptureLib
 
                     for (int y = 0; currentImageY - y >= 0 && currentMatchCount < matchLimit; y++)
                     {
-                        if (NativeMethods.memcmp(bdResult.Scan0 + ((rectBottom - y) * stride), bdCurrentImage.Scan0 + ((currentImageY - y) * stride), strideCompare) == 0)
+                        if (NativeMethods.memcmp(resultScan0 + ((rectBottom - y) * stride), currentImageScan0 + ((currentImageY - y) * stride), compareLength) == 0)
                         {
                             currentMatchCount++;
                         }
@@ -893,8 +902,20 @@ namespace ShareX.ScreenCaptureLib
                 result.UnlockBits(bdResult);
                 currentImage.UnlockBits(bdCurrentImage);
 
+                if (matchCount == 0 && bestMatchCount > 0)
+                {
+                    matchCount = bestMatchCount;
+                    matchIndex = bestMatchIndex;
+                }
+
                 if (matchCount > 0)
                 {
+                    if (matchCount > bestMatchCount)
+                    {
+                        bestMatchCount = matchCount;
+                        bestMatchIndex = matchIndex;
+                    }
+
                     Bitmap newResult = new Bitmap(result.Width, result.Height + currentImage.Height - matchIndex - 1);
 
                     using (Graphics g = Graphics.FromImage(newResult))
