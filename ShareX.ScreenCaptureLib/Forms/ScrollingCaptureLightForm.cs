@@ -30,6 +30,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -40,7 +41,7 @@ namespace ShareX.ScreenCaptureLib
         public Bitmap Result { get; private set; }
 
         private List<Bitmap> images = new List<Bitmap>();
-        private bool isCapturing, firstCapture;
+        private bool isCapturing, scrollTop;
         private int currentScrollCount;
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
@@ -86,7 +87,9 @@ namespace ShareX.ScreenCaptureLib
             if (!isCapturing)
             {
                 isCapturing = true;
-                firstCapture = true;
+                scrollTop = true;
+                // TODO: Translate
+                btnCapture.Text = "Stop";
                 WindowState = FormWindowState.Minimized;
                 Reset();
                 selectedWindow.Activate();
@@ -96,16 +99,20 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void StopCapture()
+        private async Task StopCapture()
         {
             if (isCapturing)
             {
                 tCapture.Stop();
+                // TODO: Translate
+                btnCapture.Text = "Capture...";
+                btnCapture.Enabled = false;
                 this.ForceActivate();
 
-                Result = CombineImages(images);
+                Result = await CombineImagesAsync(images);
                 pbOutput.Image = Result;
 
+                btnCapture.Enabled = true;
                 isCapturing = false;
             }
         }
@@ -148,19 +155,19 @@ namespace ShareX.ScreenCaptureLib
             WindowState = FormWindowState.Minimized;
             Thread.Sleep(250);
 
-            SimpleWindowInfo simpleWindowInfo = RegionCaptureTasks.GetWindowInfo(new RegionCaptureOptions());
-
-            if (simpleWindowInfo != null)
+            if (RegionCaptureTasks.GetRectangleRegion(out selectedRectangle, out selectedWindow, new RegionCaptureOptions()))
             {
-                selectedWindow = new WindowInfo(simpleWindowInfo.Handle);
-                selectedRectangle = simpleWindowInfo.Rectangle;
-
                 StartCapture();
             }
             else
             {
                 this.ForceActivate();
             }
+        }
+
+        private async Task<Bitmap> CombineImagesAsync(List<Bitmap> images)
+        {
+            return await Task.Run(() => CombineImages(images));
         }
 
         private Bitmap CombineImages(List<Bitmap> images)
@@ -253,11 +260,11 @@ namespace ShareX.ScreenCaptureLib
             return result;
         }
 
-        private void btnCapture_Click(object sender, EventArgs e)
+        private async void btnCapture_Click(object sender, EventArgs e)
         {
             if (isCapturing)
             {
-                StopCapture();
+                await StopCapture();
             }
             else
             {
@@ -270,11 +277,11 @@ namespace ShareX.ScreenCaptureLib
 
         }
 
-        private void tCapture_Tick(object sender, EventArgs e)
+        private async void tCapture_Tick(object sender, EventArgs e)
         {
-            if (firstCapture)
+            if (scrollTop)
             {
-                firstCapture = false;
+                scrollTop = false;
                 tCapture.Interval = Options.ScrollDelay;
 
                 InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
@@ -293,11 +300,13 @@ namespace ShareX.ScreenCaptureLib
 
             if (currentScrollCount == Options.MaximumScrollCount || (Options.AutoDetectScrollEnd && IsScrollReachedBottom(selectedWindow.Handle)))
             {
-                StopCapture();
+                await StopCapture();
             }
-
-            InputHelpers.SendMouseWheel(-120 * 2);
-            currentScrollCount++;
+            else
+            {
+                InputHelpers.SendMouseWheel(-120 * 2);
+                currentScrollCount++;
+            }
         }
     }
 }

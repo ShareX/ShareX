@@ -144,6 +144,14 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void BringToFront()
+        {
+            if (IsHandleCreated)
+            {
+                SetWindowPos(SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE);
+            }
+        }
+
         public void Restore()
         {
             if (IsHandleCreated)
