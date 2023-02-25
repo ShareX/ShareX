@@ -25,7 +25,6 @@ namespace ShareX.ScreenCaptureLib
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScrollingCaptureForm));
             this.btnSelectHandle = new System.Windows.Forms.Button();
-            this.lblControlText = new System.Windows.Forms.Label();
             this.btnCapture = new System.Windows.Forms.Button();
             this.captureTimer = new System.Windows.Forms.Timer(this.components);
             this.nudScrollDelay = new System.Windows.Forms.NumericUpDown();
@@ -51,7 +50,6 @@ namespace ShareX.ScreenCaptureLib
             this.cbStartCaptureAutomatically = new System.Windows.Forms.CheckBox();
             this.btnSelectRectangle = new System.Windows.Forms.Button();
             this.lblNote = new System.Windows.Forms.Label();
-            this.lblSelectedRectangle = new System.Windows.Forms.Label();
             this.tpOutput = new System.Windows.Forms.TabPage();
             this.gbImages = new System.Windows.Forms.GroupBox();
             this.btnCombineV2 = new System.Windows.Forms.Button();
@@ -80,7 +78,6 @@ namespace ShareX.ScreenCaptureLib
             this.pOutput = new System.Windows.Forms.Panel();
             this.lblProcessing = new System.Windows.Forms.Label();
             this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.btnCombineV3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).BeginInit();
             this.tcScrollingCapture.SuspendLayout();
@@ -110,11 +107,6 @@ namespace ShareX.ScreenCaptureLib
             this.btnSelectHandle.Name = "btnSelectHandle";
             this.btnSelectHandle.UseVisualStyleBackColor = true;
             this.btnSelectHandle.Click += new System.EventHandler(this.btnSelectHandle_Click);
-            // 
-            // lblControlText
-            // 
-            resources.ApplyResources(this.lblControlText, "lblControlText");
-            this.lblControlText.Name = "lblControlText";
             // 
             // btnCapture
             // 
@@ -184,8 +176,6 @@ namespace ShareX.ScreenCaptureLib
             this.tpCapture.Controls.Add(this.gbWhileCapturing);
             this.tpCapture.Controls.Add(this.gbBeforeCapture);
             this.tpCapture.Controls.Add(this.lblNote);
-            this.tpCapture.Controls.Add(this.lblSelectedRectangle);
-            this.tpCapture.Controls.Add(this.lblControlText);
             this.tpCapture.Controls.Add(this.btnCapture);
             resources.ApplyResources(this.tpCapture, "tpCapture");
             this.tpCapture.Name = "tpCapture";
@@ -332,11 +322,6 @@ namespace ShareX.ScreenCaptureLib
             resources.ApplyResources(this.lblNote, "lblNote");
             this.lblNote.Name = "lblNote";
             // 
-            // lblSelectedRectangle
-            // 
-            resources.ApplyResources(this.lblSelectedRectangle, "lblSelectedRectangle");
-            this.lblSelectedRectangle.Name = "lblSelectedRectangle";
-            // 
             // tpOutput
             // 
             this.tpOutput.BackColor = System.Drawing.SystemColors.Window;
@@ -353,7 +338,6 @@ namespace ShareX.ScreenCaptureLib
             // 
             // gbImages
             // 
-            this.gbImages.Controls.Add(this.btnCombineV3);
             this.gbImages.Controls.Add(this.btnCombineV2);
             this.gbImages.Controls.Add(this.txtImagesCount);
             this.gbImages.Controls.Add(this.lblImageCount);
@@ -565,13 +549,6 @@ namespace ShareX.ScreenCaptureLib
             this.pbOutput.Name = "pbOutput";
             this.pbOutput.TabStop = false;
             // 
-            // btnCombineV3
-            // 
-            resources.ApplyResources(this.btnCombineV3, "btnCombineV3");
-            this.btnCombineV3.Name = "btnCombineV3";
-            this.btnCombineV3.UseVisualStyleBackColor = true;
-            this.btnCombineV3.Click += new System.EventHandler(this.btnCombineV3_Click);
-            // 
             // ScrollingCaptureForm
             // 
             this.AcceptButton = this.btnCapture;
@@ -584,7 +561,6 @@ namespace ShareX.ScreenCaptureLib
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumScrollCount)).EndInit();
             this.tcScrollingCapture.ResumeLayout(false);
             this.tpCapture.ResumeLayout(false);
-            this.tpCapture.PerformLayout();
             this.gbAfterCapture.ResumeLayout(false);
             this.gbAfterCapture.PerformLayout();
             this.gbWhileCapturing.ResumeLayout(false);
@@ -616,7 +592,6 @@ namespace ShareX.ScreenCaptureLib
         #endregion
 
         private Button btnSelectHandle;
-        private Label lblControlText;
         private Button btnCapture;
         private Timer captureTimer;
         private NumericUpDown nudScrollDelay;
@@ -656,7 +631,6 @@ namespace ShareX.ScreenCaptureLib
         private Label lblStartDelay;
         private NumericUpDown nudStartDelay;
         private Button btnSelectRectangle;
-        private Label lblSelectedRectangle;
         private CheckBox cbAutoCombine;
         private CheckBox cbStartSelectionAutomatically;
         private NumericUpDown nudIgnoreLast;
@@ -671,6 +645,5 @@ namespace ShareX.ScreenCaptureLib
         private GroupBox gbWhileCapturing;
         private GroupBox gbBeforeCapture;
         private Button btnCombineV2;
-        private Button btnCombineV3;
     }
 }

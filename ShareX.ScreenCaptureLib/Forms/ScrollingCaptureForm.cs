@@ -128,9 +128,7 @@ namespace ShareX.ScreenCaptureLib
                 if (simpleWindowInfo != null)
                 {
                     selectedWindow = new WindowInfo(simpleWindowInfo.Handle);
-                    lblControlText.Text = selectedWindow.ClassName ?? "";
                     selectedRectangle = simpleWindowInfo.Rectangle;
-                    lblSelectedRectangle.Text = selectedRectangle.ToString();
                     btnSelectRectangle.Enabled = btnCapture.Enabled = true;
 
                     if (Options.StartCaptureAutomatically)
@@ -161,7 +159,6 @@ namespace ShareX.ScreenCaptureLib
                 if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect, RegionCaptureOptions))
                 {
                     selectedRectangle = rect;
-                    lblSelectedRectangle.Text = selectedRectangle.ToString();
                 }
             }
             finally
@@ -351,7 +348,7 @@ namespace ShareX.ScreenCaptureLib
                     InputHelpers.SendKeyPress(VirtualKeyCode.NEXT);
                     break;
                 case ScrollingCaptureScrollMethod.MouseWheel:
-                    InputHelpers.SendMouseWheel(-120);
+                    InputHelpers.SendMouseWheel(-240);
                     break;
             }
 
@@ -834,17 +831,7 @@ namespace ShareX.ScreenCaptureLib
             EndingProcess();
         }
 
-        private void btnCombineV3_Click(object sender, EventArgs e)
-        {
-            StartingProcess();
-            DebugTimer timer = new DebugTimer("Combine V3");
-            Result = CombineImagesV3(images);
-            pbOutput.Image = Result;
-            timer.WriteElapsedMilliseconds();
-            EndingProcess();
-        }
-
-        private Bitmap CombineImagesV3(List<Bitmap> images)
+        private Bitmap CombineImagesV2(List<Bitmap> images)
         {
             Bitmap result = (Bitmap)images[0].Clone();
 
@@ -924,74 +911,6 @@ namespace ShareX.ScreenCaptureLib
                             new Rectangle(0, 0, result.Width, result.Height), GraphicsUnit.Pixel);
                         g.DrawImage(currentImage, new Rectangle(0, result.Height, currentImage.Width, currentImage.Height - matchIndex - 1),
                             new Rectangle(0, matchIndex + 1, currentImage.Width, currentImage.Height - matchIndex - 1), GraphicsUnit.Pixel);
-                    }
-
-                    result.Dispose();
-                    result = newResult;
-                }
-            }
-
-            return result;
-        }
-
-        private Bitmap CombineImagesV2(List<Bitmap> images)
-        {
-            int ignoreRightOffset = 50;
-
-            Bitmap result = (Bitmap)images[0].Clone();
-
-            for (int i = 1; i < images.Count; i++)
-            {
-                Bitmap currentImage = images[i];
-
-                bool isMatch = false;
-                int matchIndex = 0;
-
-                using (UnsafeBitmap bmpResult = new UnsafeBitmap(result, true, ImageLockMode.ReadOnly))
-                using (UnsafeBitmap bmpCurrentImage = new UnsafeBitmap(currentImage, true, ImageLockMode.ReadOnly))
-                {
-                    Rectangle rect = new Rectangle(0, result.Height - currentImage.Height,
-                        currentImage.Width - (currentImage.Width > ignoreRightOffset ? ignoreRightOffset : 0), currentImage.Height);
-
-                    for (int y = rect.Y; y < rect.Bottom; y++)
-                    {
-                        isMatch = true;
-
-                        for (int y2 = 0; y + y2 < rect.Bottom; y2++)
-                        {
-                            for (int x = rect.X; x < rect.Right; x++)
-                            {
-                                if (bmpResult.GetPixel(x, y + y2) != bmpCurrentImage.GetPixel(x, y2))
-                                {
-                                    isMatch = false;
-                                    break;
-                                }
-                            }
-
-                            if (!isMatch)
-                            {
-                                break;
-                            }
-                        }
-
-                        if (isMatch)
-                        {
-                            matchIndex = y;
-                            break;
-                        }
-                    }
-                }
-
-                if (isMatch)
-                {
-                    Bitmap newResult = new Bitmap(result.Width, matchIndex + currentImage.Height);
-
-                    using (Graphics g = Graphics.FromImage(newResult))
-                    {
-                        g.DrawImage(result, new Rectangle(0, 0, result.Width, matchIndex),
-                            new Rectangle(0, 0, result.Width, matchIndex), GraphicsUnit.Pixel);
-                        g.DrawImage(currentImage, new Rectangle(0, matchIndex, currentImage.Width, currentImage.Height),
-                            new Rectangle(0, 0, currentImage.Width, currentImage.Height), GraphicsUnit.Pixel);
                     }
 
                     result.Dispose();
