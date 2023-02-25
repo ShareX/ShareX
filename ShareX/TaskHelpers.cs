@@ -693,7 +693,8 @@ namespace ShareX
             scrollingCaptureForm.Show();
             */
 
-            ScrollingCaptureLightForm scrollingCaptureForm = new ScrollingCaptureLightForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions);
+            ScrollingCaptureLightForm scrollingCaptureForm = new ScrollingCaptureLightForm(new ScrollingCaptureOptions());
+            scrollingCaptureForm.UploadRequested += img => UploadManager.RunImageTask(img, taskSettings);
             scrollingCaptureForm.Show();
         }
 

@@ -34,6 +34,7 @@
             this.pbOutput = new System.Windows.Forms.PictureBox();
             this.tCapture = new System.Windows.Forms.Timer(this.components);
             this.btnOptions = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.pOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +43,7 @@
             // 
             this.btnCapture.Location = new System.Drawing.Point(8, 8);
             this.btnCapture.Name = "btnCapture";
-            this.btnCapture.Size = new System.Drawing.Size(144, 32);
+            this.btnCapture.Size = new System.Drawing.Size(160, 32);
             this.btnCapture.TabIndex = 0;
             this.btnCapture.Text = "Capture...";
             this.btnCapture.UseVisualStyleBackColor = true;
@@ -59,7 +60,7 @@
             this.pOutput.Location = new System.Drawing.Point(8, 48);
             this.pOutput.Name = "pOutput";
             this.pOutput.Size = new System.Drawing.Size(968, 605);
-            this.pOutput.TabIndex = 2;
+            this.pOutput.TabIndex = 3;
             // 
             // pbOutput
             // 
@@ -76,19 +77,31 @@
             // 
             // btnOptions
             // 
-            this.btnOptions.Location = new System.Drawing.Point(160, 8);
+            this.btnOptions.Location = new System.Drawing.Point(344, 8);
             this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(144, 32);
-            this.btnOptions.TabIndex = 1;
+            this.btnOptions.Size = new System.Drawing.Size(160, 32);
+            this.btnOptions.TabIndex = 2;
             this.btnOptions.Text = "Options...";
             this.btnOptions.UseVisualStyleBackColor = true;
             this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Enabled = false;
+            this.btnUpload.Location = new System.Drawing.Point(176, 8);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(160, 32);
+            this.btnUpload.TabIndex = 1;
+            this.btnUpload.Text = "Upload / Save";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // ScrollingCaptureLightForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.pOutput);
             this.Controls.Add(this.btnCapture);
@@ -110,5 +123,6 @@
         private System.Windows.Forms.PictureBox pbOutput;
         private System.Windows.Forms.Timer tCapture;
         private System.Windows.Forms.Button btnOptions;
+        private System.Windows.Forms.Button btnUpload;
     }
 }

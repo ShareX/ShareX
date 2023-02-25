@@ -37,6 +37,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class ScrollingCaptureLightForm : Form
     {
+        public event Action<Bitmap> UploadRequested;
+
         public ScrollingCaptureOptions Options { get; private set; }
         public Bitmap Result { get; private set; }
 
@@ -61,6 +63,7 @@ namespace ShareX.ScreenCaptureLib
             currentScrollCount = 0;
 
             ResetPictureBox();
+            btnUpload.Enabled = false;
 
             if (images != null)
             {
@@ -72,7 +75,11 @@ namespace ShareX.ScreenCaptureLib
                 images.Clear();
             }
 
-            Result?.Dispose();
+            if (Result != null)
+            {
+                Result.Dispose();
+                Result = null;
+            }
         }
 
         private void ResetPictureBox()
@@ -113,6 +120,7 @@ namespace ShareX.ScreenCaptureLib
                 pbOutput.Image = Result;
 
                 btnCapture.Enabled = true;
+                btnUpload.Enabled = true;
                 isCapturing = false;
             }
         }
@@ -260,6 +268,19 @@ namespace ShareX.ScreenCaptureLib
             return result;
         }
 
+        private void UploadResult()
+        {
+            if (Result != null)
+            {
+                OnUploadRequested((Bitmap)Result.Clone());
+            }
+        }
+
+        protected void OnUploadRequested(Bitmap bmp)
+        {
+            UploadRequested?.Invoke(bmp);
+        }
+
         private async void btnCapture_Click(object sender, EventArgs e)
         {
             if (isCapturing)
@@ -270,6 +291,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 SelectWindow();
             }
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            UploadResult();
         }
 
         private void btnOptions_Click(object sender, EventArgs e)
