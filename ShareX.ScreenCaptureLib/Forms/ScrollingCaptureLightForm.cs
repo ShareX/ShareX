@@ -111,6 +111,7 @@ namespace ShareX.ScreenCaptureLib
             if (isCapturing)
             {
                 tCapture.Stop();
+                Cursor = Cursors.WaitCursor;
                 // TODO: Translate
                 btnCapture.Text = "Capture...";
                 btnCapture.Enabled = false;
@@ -119,6 +120,7 @@ namespace ShareX.ScreenCaptureLib
                 Result = await CombineImagesAsync(images);
                 pbOutput.Image = Result;
 
+                Cursor = Cursors.Default;
                 btnCapture.Enabled = true;
                 btnUpload.Enabled = true;
                 isCapturing = false;
@@ -244,24 +246,29 @@ namespace ShareX.ScreenCaptureLib
 
                 if (matchCount > 0)
                 {
-                    if (matchCount > bestMatchCount)
+                    int matchHeight = currentImage.Height - matchIndex - 1;
+
+                    if (matchHeight > 0)
                     {
-                        bestMatchCount = matchCount;
-                        bestMatchIndex = matchIndex;
+                        if (matchCount > bestMatchCount)
+                        {
+                            bestMatchCount = matchCount;
+                            bestMatchIndex = matchIndex;
+                        }
+
+                        Bitmap newResult = new Bitmap(result.Width, result.Height + matchHeight);
+
+                        using (Graphics g = Graphics.FromImage(newResult))
+                        {
+                            g.DrawImage(result, new Rectangle(0, 0, result.Width, result.Height),
+                                new Rectangle(0, 0, result.Width, result.Height), GraphicsUnit.Pixel);
+                            g.DrawImage(currentImage, new Rectangle(0, result.Height, currentImage.Width, matchHeight),
+                                new Rectangle(0, matchIndex + 1, currentImage.Width, matchHeight), GraphicsUnit.Pixel);
+                        }
+
+                        result.Dispose();
+                        result = newResult;
                     }
-
-                    Bitmap newResult = new Bitmap(result.Width, result.Height + currentImage.Height - matchIndex - 1);
-
-                    using (Graphics g = Graphics.FromImage(newResult))
-                    {
-                        g.DrawImage(result, new Rectangle(0, 0, result.Width, result.Height),
-                            new Rectangle(0, 0, result.Width, result.Height), GraphicsUnit.Pixel);
-                        g.DrawImage(currentImage, new Rectangle(0, result.Height, currentImage.Width, currentImage.Height - matchIndex - 1),
-                            new Rectangle(0, matchIndex + 1, currentImage.Width, currentImage.Height - matchIndex - 1), GraphicsUnit.Pixel);
-                    }
-
-                    result.Dispose();
-                    result = newResult;
                 }
             }
 

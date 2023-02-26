@@ -83,6 +83,7 @@
             this.btnOptions.TabIndex = 2;
             this.btnOptions.Text = "Options...";
             this.btnOptions.UseVisualStyleBackColor = true;
+            this.btnOptions.Visible = false;
             this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
             // btnUpload

@@ -39,7 +39,7 @@ namespace ShareX.ScreenCaptureLib
         public int ScrollDelay { get; set; } = 500;
 
         [DefaultValue(20)]
-        public int MaximumScrollCount { get; set; } = 20;
+        public int MaximumScrollCount { get; set; } = 100;
 
         [DefaultValue(true)]
         public bool StartSelectionAutomatically { get; set; } = true;
