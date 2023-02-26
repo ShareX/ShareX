@@ -47,6 +47,7 @@ namespace ShareX.ScreenCaptureLib
         private int currentScrollCount;
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
+        private Point dragStartPosition;
 
         public ScrollingCaptureLightForm(ScrollingCaptureOptions options)
         {
@@ -56,6 +57,21 @@ namespace ShareX.ScreenCaptureLib
             ShareXResources.ApplyTheme(this);
 
             SelectWindow();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+
+                Reset();
+            }
+
+            base.Dispose(disposing);
         }
 
         private void Reset()
@@ -111,7 +127,7 @@ namespace ShareX.ScreenCaptureLib
             if (isCapturing)
             {
                 tCapture.Stop();
-                Cursor = Cursors.WaitCursor;
+                pOutput.Cursor = Cursors.WaitCursor;
                 // TODO: Translate
                 btnCapture.Text = "Capture...";
                 btnCapture.Enabled = false;
@@ -120,7 +136,7 @@ namespace ShareX.ScreenCaptureLib
                 Result = await CombineImagesAsync(images);
                 pbOutput.Image = Result;
 
-                Cursor = Cursors.Default;
+                pOutput.Cursor = Cursors.Default;
                 btnCapture.Enabled = true;
                 btnUpload.Enabled = true;
                 isCapturing = false;
@@ -308,6 +324,33 @@ namespace ShareX.ScreenCaptureLib
         private void btnOptions_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbOutput_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && (pOutput.HorizontalScroll.Visible || pOutput.VerticalScroll.Visible))
+            {
+                pOutput.Cursor = Cursors.SizeAll;
+                dragStartPosition = e.Location;
+            }
+        }
+
+        private void pbOutput_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && (pOutput.HorizontalScroll.Visible || pOutput.VerticalScroll.Visible))
+            {
+                Point scrollOffset = new Point(e.X - dragStartPosition.X, e.Y - dragStartPosition.Y);
+                pOutput.AutoScrollPosition = new Point(-pOutput.AutoScrollPosition.X - scrollOffset.X, -pOutput.AutoScrollPosition.Y - scrollOffset.Y);
+                pOutput.Update();
+            }
+        }
+
+        private void pbOutput_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                pOutput.Cursor = Cursors.Default;
+            }
         }
 
         private async void tCapture_Tick(object sender, EventArgs e)

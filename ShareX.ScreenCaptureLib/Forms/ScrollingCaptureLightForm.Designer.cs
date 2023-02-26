@@ -7,19 +7,6 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -70,6 +57,9 @@
             this.pbOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbOutput.TabIndex = 0;
             this.pbOutput.TabStop = false;
+            this.pbOutput.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbOutput_MouseDown);
+            this.pbOutput.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbOutput_MouseMove);
+            this.pbOutput.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbOutput_MouseUp);
             // 
             // tCapture
             // 
