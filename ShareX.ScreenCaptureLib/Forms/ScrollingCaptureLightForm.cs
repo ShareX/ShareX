@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
         public Bitmap Result { get; private set; }
 
         private List<Bitmap> images = new List<Bitmap>();
-        private bool isCapturing, scrollTop;
+        private bool isCapturing, stopRequested;
         private int currentScrollCount, bestMatchCount, bestMatchIndex;
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
@@ -55,18 +55,13 @@ namespace ShareX.ScreenCaptureLib
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
-
-            SelectWindow();
         }
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                if (components != null)
-                {
-                    components.Dispose();
-                }
+                components?.Dispose();
 
                 Reset();
             }
@@ -105,12 +100,12 @@ namespace ShareX.ScreenCaptureLib
             temp?.Dispose();
         }
 
-        private void StartCapture()
+        private async Task StartCapture()
         {
             if (!isCapturing)
             {
                 isCapturing = true;
-                scrollTop = true;
+                stopRequested = false;
                 bestMatchCount = 0;
                 bestMatchIndex = 0;
 
@@ -120,25 +115,59 @@ namespace ShareX.ScreenCaptureLib
                 Reset();
                 selectedWindow.Activate();
 
-                tCapture.Interval = Options.StartDelay;
-                tCapture.Start();
+                await Task.Delay(Options.StartDelay);
+                await CaptureJob();
             }
         }
 
         private void StopCapture()
         {
-            if (isCapturing)
+            stopRequested = true;
+        }
+
+        private void EndCapture()
+        {
+            // TODO: Translate
+            btnCapture.Text = "Capture...";
+            btnUpload.Enabled = Result != null;
+            pbOutput.Image = Result;
+            this.ForceActivate();
+
+            isCapturing = false;
+        }
+
+        private async Task CaptureJob()
+        {
+            InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
+            NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+
+            do
             {
-                tCapture.Stop();
+                await Task.Delay(Options.ScrollDelay);
 
-                // TODO: Translate
-                btnCapture.Text = "Capture...";
-                btnUpload.Enabled = Result != null;
-                pbOutput.Image = Result;
-                this.ForceActivate();
+                Screenshot screenshot = new Screenshot()
+                {
+                    CaptureCursor = false
+                };
 
-                isCapturing = false;
+                Bitmap bmp = screenshot.CaptureRectangle(selectedRectangle);
+
+                if (bmp != null)
+                {
+                    images.Add(bmp);
+                }
+
+                InputHelpers.SendMouseWheel(-120 * 2);
+                currentScrollCount++;
+
+                if (images.Count > 0)
+                {
+                    Result = await CombineImagesAsync(Result, images[images.Count - 1]);
+                }
             }
+            while (!stopRequested && currentScrollCount <= Options.MaximumScrollCount && !IsScrollReachedBottom(selectedWindow.Handle));
+
+            EndCapture();
         }
 
         private bool IsScrollReachedBottom(IntPtr handle)
@@ -174,14 +203,14 @@ namespace ShareX.ScreenCaptureLib
             return result;
         }
 
-        private void SelectWindow()
+        private async Task SelectWindow()
         {
             WindowState = FormWindowState.Minimized;
             Thread.Sleep(250);
 
             if (RegionCaptureTasks.GetRectangleRegion(out selectedRectangle, out selectedWindow, new RegionCaptureOptions()))
             {
-                StartCapture();
+                await StartCapture();
             }
             else
             {
@@ -297,7 +326,12 @@ namespace ShareX.ScreenCaptureLib
             UploadRequested?.Invoke(bmp);
         }
 
-        private void btnCapture_Click(object sender, EventArgs e)
+        private async void ScrollingCaptureLightForm_Load(object sender, EventArgs e)
+        {
+            await SelectWindow();
+        }
+
+        private async void btnCapture_Click(object sender, EventArgs e)
         {
             if (isCapturing)
             {
@@ -305,7 +339,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                SelectWindow();
+                await SelectWindow();
             }
         }
 
@@ -343,43 +377,6 @@ namespace ShareX.ScreenCaptureLib
             if (e.Button == MouseButtons.Left)
             {
                 pOutput.Cursor = Cursors.Default;
-            }
-        }
-
-        private async void tCapture_Tick(object sender, EventArgs e)
-        {
-            if (scrollTop)
-            {
-                scrollTop = false;
-                tCapture.Interval = Options.ScrollDelay;
-
-                InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
-                NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
-
-                return;
-            }
-
-            Screenshot screenshot = new Screenshot() { CaptureCursor = false };
-            Bitmap bmp = screenshot.CaptureRectangle(selectedRectangle);
-
-            if (bmp != null)
-            {
-                images.Add(bmp);
-            }
-
-            if (images.Count > 0)
-            {
-                Result = await CombineImagesAsync(Result, images[images.Count - 1]);
-            }
-
-            if (currentScrollCount == Options.MaximumScrollCount || (Options.AutoDetectScrollEnd && IsScrollReachedBottom(selectedWindow.Handle)))
-            {
-                StopCapture();
-            }
-            else
-            {
-                InputHelpers.SendMouseWheel(-120 * 2);
-                currentScrollCount++;
             }
         }
     }

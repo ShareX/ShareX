@@ -15,11 +15,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnCapture = new System.Windows.Forms.Button();
             this.pOutput = new System.Windows.Forms.Panel();
             this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.tCapture = new System.Windows.Forms.Timer(this.components);
             this.btnOptions = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.pOutput.SuspendLayout();
@@ -61,10 +59,6 @@
             this.pbOutput.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbOutput_MouseMove);
             this.pbOutput.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbOutput_MouseUp);
             // 
-            // tCapture
-            // 
-            this.tCapture.Tick += new System.EventHandler(this.tCapture_Tick);
-            // 
             // btnOptions
             // 
             this.btnOptions.Location = new System.Drawing.Point(344, 8);
@@ -100,6 +94,7 @@
             this.Name = "ScrollingCaptureLightForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Scrolling capture";
+            this.Load += new System.EventHandler(this.ScrollingCaptureLightForm_Load);
             this.pOutput.ResumeLayout(false);
             this.pOutput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();
@@ -112,7 +107,6 @@
         private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.Panel pOutput;
         private System.Windows.Forms.PictureBox pbOutput;
-        private System.Windows.Forms.Timer tCapture;
         private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnUpload;
     }
