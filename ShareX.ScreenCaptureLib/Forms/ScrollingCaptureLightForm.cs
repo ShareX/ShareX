@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
 
         private List<Bitmap> images = new List<Bitmap>();
         private bool isCapturing, scrollTop;
-        private int currentScrollCount;
+        private int currentScrollCount, bestMatchCount, bestMatchIndex;
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
         private Point dragStartPosition;
@@ -111,6 +111,9 @@ namespace ShareX.ScreenCaptureLib
             {
                 isCapturing = true;
                 scrollTop = true;
+                bestMatchCount = 0;
+                bestMatchIndex = 0;
+
                 // TODO: Translate
                 btnCapture.Text = "Stop";
                 WindowState = FormWindowState.Minimized;
@@ -122,23 +125,18 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private async Task StopCapture()
+        private void StopCapture()
         {
             if (isCapturing)
             {
                 tCapture.Stop();
-                pOutput.Cursor = Cursors.WaitCursor;
+
                 // TODO: Translate
                 btnCapture.Text = "Capture...";
-                btnCapture.Enabled = false;
+                btnUpload.Enabled = Result != null;
+                pbOutput.Image = Result;
                 this.ForceActivate();
 
-                Result = await CombineImagesAsync(images);
-                pbOutput.Image = Result;
-
-                pOutput.Cursor = Cursors.Default;
-                btnCapture.Enabled = true;
-                btnUpload.Enabled = true;
                 isCapturing = false;
             }
         }
@@ -191,100 +189,95 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private async Task<Bitmap> CombineImagesAsync(List<Bitmap> images)
+        private async Task<Bitmap> CombineImagesAsync(Bitmap result, Bitmap currentImage)
         {
-            return await Task.Run(() => CombineImages(images));
+            return await Task.Run(() => CombineImages(result, currentImage));
         }
 
-        private Bitmap CombineImages(List<Bitmap> images)
+        private Bitmap CombineImages(Bitmap result, Bitmap currentImage)
         {
-            Bitmap result = (Bitmap)images[0].Clone();
-
-            int bestMatchCount = 0;
-            int bestMatchIndex = 0;
-
-            for (int i = 1; i < images.Count; i++)
+            if (result == null)
             {
-                Bitmap currentImage = images[i];
+                return (Bitmap)currentImage.Clone();
+            }
 
-                int matchCount = 0;
-                int matchIndex = 0;
-                int matchLimit = currentImage.Height / 3;
-                int ignoreSideOffset = Math.Max(50, currentImage.Width / 20);
+            int matchCount = 0;
+            int matchIndex = 0;
+            int matchLimit = currentImage.Height / 3;
+            int ignoreSideOffset = Math.Max(50, currentImage.Width / 20);
 
-                if (currentImage.Width < ignoreSideOffset * 3)
+            if (currentImage.Width < ignoreSideOffset * 3)
+            {
+                ignoreSideOffset = 0;
+            }
+
+            Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height, currentImage.Width - ignoreSideOffset * 2, currentImage.Height);
+
+            BitmapData bdResult = result.LockBits(new Rectangle(0, 0, result.Width, result.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+            BitmapData bdCurrentImage = currentImage.LockBits(new Rectangle(0, 0, currentImage.Width, currentImage.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+            int stride = bdResult.Stride;
+            int pixelSize = stride / result.Width;
+            IntPtr resultScan0 = bdResult.Scan0 + pixelSize * ignoreSideOffset;
+            IntPtr currentImageScan0 = bdCurrentImage.Scan0 + pixelSize * ignoreSideOffset;
+            int rectBottom = rect.Bottom - 1;
+            int compareLength = pixelSize * rect.Width;
+
+            for (int currentImageY = currentImage.Height - 1; currentImageY >= 0 && matchCount < matchLimit; currentImageY--)
+            {
+                int currentMatchCount = 0;
+
+                for (int y = 0; currentImageY - y >= 0 && currentMatchCount < matchLimit; y++)
                 {
-                    ignoreSideOffset = 0;
-                }
-
-                Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height, currentImage.Width - ignoreSideOffset * 2, currentImage.Height);
-
-                BitmapData bdResult = result.LockBits(new Rectangle(0, 0, result.Width, result.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-                BitmapData bdCurrentImage = currentImage.LockBits(new Rectangle(0, 0, currentImage.Width, currentImage.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-                int stride = bdResult.Stride;
-                int pixelSize = stride / result.Width;
-                IntPtr resultScan0 = bdResult.Scan0 + pixelSize * ignoreSideOffset;
-                IntPtr currentImageScan0 = bdCurrentImage.Scan0 + pixelSize * ignoreSideOffset;
-                int rectBottom = rect.Bottom - 1;
-                int compareLength = pixelSize * rect.Width;
-
-                for (int currentImageY = currentImage.Height - 1; currentImageY >= 0 && matchCount < matchLimit; currentImageY--)
-                {
-                    int currentMatchCount = 0;
-
-                    for (int y = 0; currentImageY - y >= 0 && currentMatchCount < matchLimit; y++)
+                    if (NativeMethods.memcmp(resultScan0 + ((rectBottom - y) * stride), currentImageScan0 + ((currentImageY - y) * stride), compareLength) == 0)
                     {
-                        if (NativeMethods.memcmp(resultScan0 + ((rectBottom - y) * stride), currentImageScan0 + ((currentImageY - y) * stride), compareLength) == 0)
-                        {
-                            currentMatchCount++;
-                        }
-                        else
-                        {
-                            break;
-                        }
+                        currentMatchCount++;
                     }
-
-                    if (currentMatchCount > matchCount)
+                    else
                     {
-                        matchCount = currentMatchCount;
-                        matchIndex = currentImageY;
+                        break;
                     }
                 }
 
-                result.UnlockBits(bdResult);
-                currentImage.UnlockBits(bdCurrentImage);
-
-                if (matchCount == 0 && bestMatchCount > 0)
+                if (currentMatchCount > matchCount)
                 {
-                    matchCount = bestMatchCount;
-                    matchIndex = bestMatchIndex;
+                    matchCount = currentMatchCount;
+                    matchIndex = currentImageY;
                 }
+            }
 
-                if (matchCount > 0)
+            result.UnlockBits(bdResult);
+            currentImage.UnlockBits(bdCurrentImage);
+
+            if (matchCount == 0 && bestMatchCount > 0)
+            {
+                matchCount = bestMatchCount;
+                matchIndex = bestMatchIndex;
+            }
+
+            if (matchCount > 0)
+            {
+                int matchHeight = currentImage.Height - matchIndex - 1;
+
+                if (matchHeight > 0)
                 {
-                    int matchHeight = currentImage.Height - matchIndex - 1;
-
-                    if (matchHeight > 0)
+                    if (matchCount > bestMatchCount)
                     {
-                        if (matchCount > bestMatchCount)
-                        {
-                            bestMatchCount = matchCount;
-                            bestMatchIndex = matchIndex;
-                        }
-
-                        Bitmap newResult = new Bitmap(result.Width, result.Height + matchHeight);
-
-                        using (Graphics g = Graphics.FromImage(newResult))
-                        {
-                            g.DrawImage(result, new Rectangle(0, 0, result.Width, result.Height),
-                                new Rectangle(0, 0, result.Width, result.Height), GraphicsUnit.Pixel);
-                            g.DrawImage(currentImage, new Rectangle(0, result.Height, currentImage.Width, matchHeight),
-                                new Rectangle(0, matchIndex + 1, currentImage.Width, matchHeight), GraphicsUnit.Pixel);
-                        }
-
-                        result.Dispose();
-                        result = newResult;
+                        bestMatchCount = matchCount;
+                        bestMatchIndex = matchIndex;
                     }
+
+                    Bitmap newResult = new Bitmap(result.Width, result.Height + matchHeight);
+
+                    using (Graphics g = Graphics.FromImage(newResult))
+                    {
+                        g.DrawImage(result, new Rectangle(0, 0, result.Width, result.Height),
+                            new Rectangle(0, 0, result.Width, result.Height), GraphicsUnit.Pixel);
+                        g.DrawImage(currentImage, new Rectangle(0, result.Height, currentImage.Width, matchHeight),
+                            new Rectangle(0, matchIndex + 1, currentImage.Width, matchHeight), GraphicsUnit.Pixel);
+                    }
+
+                    result.Dispose();
+                    result = newResult;
                 }
             }
 
@@ -304,11 +297,11 @@ namespace ShareX.ScreenCaptureLib
             UploadRequested?.Invoke(bmp);
         }
 
-        private async void btnCapture_Click(object sender, EventArgs e)
+        private void btnCapture_Click(object sender, EventArgs e)
         {
             if (isCapturing)
             {
-                await StopCapture();
+                StopCapture();
             }
             else
             {
@@ -374,9 +367,14 @@ namespace ShareX.ScreenCaptureLib
                 images.Add(bmp);
             }
 
+            if (images.Count > 0)
+            {
+                Result = await CombineImagesAsync(Result, images[images.Count - 1]);
+            }
+
             if (currentScrollCount == Options.MaximumScrollCount || (Options.AutoDetectScrollEnd && IsScrollReachedBottom(selectedWindow.Handle)))
             {
-                await StopCapture();
+                StopCapture();
             }
             else
             {
