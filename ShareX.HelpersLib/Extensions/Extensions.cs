@@ -420,11 +420,11 @@ namespace ShareX.HelpersLib
 
                 if (form.WindowState == FormWindowState.Minimized)
                 {
-                    form.WindowState = FormWindowState.Normal;
+                    NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.Restore);
                 }
 
-                form.BringToFront();
                 form.Activate();
+                form.BringToFront();
             }
         }
 
