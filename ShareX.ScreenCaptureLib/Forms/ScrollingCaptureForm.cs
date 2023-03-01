@@ -271,7 +271,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 for (int i = images.Count - 1; i > 0; i--)
                 {
-                    bool result = ImageHelpers.IsImagesEqual(images[i], images[i - 1]);
+                    bool result = ImageHelpers.CompareImages(images[i], images[i - 1]);
 
                     if (result)
                     {
@@ -425,7 +425,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (images.Count > 1)
             {
-                result = ImageHelpers.IsImagesEqual(images[images.Count - 1], images[images.Count - 2]);
+                result = ImageHelpers.CompareImages(images[images.Count - 1], images[images.Count - 2]);
 
                 if (result)
                 {

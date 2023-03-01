@@ -110,7 +110,7 @@ namespace ShareX.ScreenCaptureLib
 
                     Bitmap transparentImage;
 
-                    if (ImageHelpers.IsImagesEqual(whiteBackground, whiteBackground2))
+                    if (ImageHelpers.CompareImages(whiteBackground, whiteBackground2))
                     {
                         transparentImage = CreateTransparentImage(whiteBackground, blackBackground);
                         isTransparent = true;

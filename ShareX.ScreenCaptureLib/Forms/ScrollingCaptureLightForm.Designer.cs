@@ -94,6 +94,8 @@
             this.Name = "ScrollingCaptureLightForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Scrolling capture";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Activated += new System.EventHandler(this.ScrollingCaptureLightForm_Activated);
             this.Load += new System.EventHandler(this.ScrollingCaptureLightForm_Load);
             this.pOutput.ResumeLayout(false);
             this.pOutput.PerformLayout();

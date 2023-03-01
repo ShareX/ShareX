@@ -923,26 +923,25 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static bool IsImagesEqual(Bitmap bmp1, Bitmap bmp2)
+        public static bool CompareImages(Bitmap bmp1, Bitmap bmp2)
         {
-            if ((bmp1 == null) != (bmp2 == null)) return false;
-            if (bmp1.Size != bmp2.Size) return false;
-
-            BitmapData bd1 = bmp1.LockBits(new Rectangle(0, 0, bmp1.Width, bmp1.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-            BitmapData bd2 = bmp2.LockBits(new Rectangle(0, 0, bmp2.Width, bmp2.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-
-            try
+            if (bmp1 != null && bmp2 != null && bmp1.Width == bmp2.Width && bmp1.Height == bmp2.Height)
             {
-                int stride = bd1.Stride;
-                int count = stride * bmp1.Height;
+                BitmapData bd1 = bmp1.LockBits(new Rectangle(0, 0, bmp1.Width, bmp1.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+                BitmapData bd2 = bmp2.LockBits(new Rectangle(0, 0, bmp2.Width, bmp2.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
 
-                return NativeMethods.memcmp(bd1.Scan0, bd2.Scan0, count) == 0;
+                try
+                {
+                    return NativeMethods.memcmp(bd1.Scan0, bd2.Scan0, bd1.Stride * bmp1.Height) == 0;
+                }
+                finally
+                {
+                    bmp1.UnlockBits(bd1);
+                    bmp2.UnlockBits(bd2);
+                }
             }
-            finally
-            {
-                bmp1.UnlockBits(bd1);
-                bmp2.UnlockBits(bd2);
-            }
+
+            return false;
         }
 
         public static bool IsImageTransparent(Bitmap bmp)

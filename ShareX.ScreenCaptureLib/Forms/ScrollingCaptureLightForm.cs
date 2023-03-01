@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
@@ -109,8 +110,7 @@ namespace ShareX.ScreenCaptureLib
                 bestMatchCount = 0;
                 bestMatchIndex = 0;
 
-                // TODO: Translate
-                btnCapture.Text = "Stop";
+                btnCapture.Enabled = false;
                 WindowState = FormWindowState.Minimized;
                 Reset();
                 selectedWindow.Activate();
@@ -122,18 +122,21 @@ namespace ShareX.ScreenCaptureLib
 
         private void StopCapture()
         {
-            stopRequested = true;
+            if (isCapturing)
+            {
+                stopRequested = true;
+            }
         }
 
         private void EndCapture()
         {
-            // TODO: Translate
-            btnCapture.Text = "Capture...";
+            btnCapture.Enabled = true;
             btnUpload.Enabled = Result != null;
             pbOutput.Image = Result;
-            this.ForceActivate();
 
             isCapturing = false;
+
+            this.ForceActivate();
         }
 
         private async Task CaptureJob()
@@ -141,9 +144,21 @@ namespace ShareX.ScreenCaptureLib
             InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
             NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
 
+            Stopwatch timer = new Stopwatch();
+
             do
             {
-                await Task.Delay(Options.ScrollDelay);
+                int delay = Options.ScrollDelay - (int)timer.ElapsedMilliseconds;
+
+                if (delay > 0)
+                {
+                    await Task.Delay(delay);
+                }
+
+                if (stopRequested)
+                {
+                    break;
+                }
 
                 Screenshot screenshot = new Screenshot()
                 {
@@ -159,6 +174,8 @@ namespace ShareX.ScreenCaptureLib
 
                 InputHelpers.SendMouseWheel(-120 * 2);
                 currentScrollCount++;
+
+                timer.Restart();
 
                 if (images.Count > 0)
                 {
@@ -190,7 +207,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (images.Count > 1)
             {
-                result = ImageHelpers.IsImagesEqual(images[images.Count - 1], images[images.Count - 2]);
+                result = ImageHelpers.CompareImages(images[images.Count - 1], images[images.Count - 2]);
 
                 if (result)
                 {
@@ -232,7 +249,7 @@ namespace ShareX.ScreenCaptureLib
 
             int matchCount = 0;
             int matchIndex = 0;
-            int matchLimit = currentImage.Height / 3;
+            int matchLimit = currentImage.Height / 2;
             int ignoreSideOffset = Math.Max(50, currentImage.Width / 20);
 
             if (currentImage.Width < ignoreSideOffset * 3)
@@ -331,16 +348,14 @@ namespace ShareX.ScreenCaptureLib
             await SelectWindow();
         }
 
+        private void ScrollingCaptureLightForm_Activated(object sender, EventArgs e)
+        {
+            StopCapture();
+        }
+
         private async void btnCapture_Click(object sender, EventArgs e)
         {
-            if (isCapturing)
-            {
-                StopCapture();
-            }
-            else
-            {
-                await SelectWindow();
-            }
+            await SelectWindow();
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
