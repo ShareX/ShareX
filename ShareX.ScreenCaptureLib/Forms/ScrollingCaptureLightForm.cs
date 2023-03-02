@@ -71,21 +71,27 @@ namespace ShareX.ScreenCaptureLib
 
         private async Task StartCapture()
         {
-            if (!manager.IsCapturing)
+            WindowState = FormWindowState.Minimized;
+            btnCapture.Enabled = false;
+            btnUpload.Enabled = false;
+            ResetPictureBox();
+
+            try
             {
-                WindowState = FormWindowState.Minimized;
-                btnCapture.Enabled = false;
-                btnUpload.Enabled = false;
-                ResetPictureBox();
-
                 await manager.StartCapture();
-
-                btnCapture.Enabled = true;
-                btnUpload.Enabled = manager.Result != null;
-                pbOutput.Image = manager.Result;
-
-                this.ForceActivate();
             }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+
+                e.ShowError();
+            }
+
+            btnCapture.Enabled = true;
+            btnUpload.Enabled = manager.Result != null;
+            pbOutput.Image = manager.Result;
+
+            this.ForceActivate();
         }
 
         private async Task SelectWindow()

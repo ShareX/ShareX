@@ -42,7 +42,7 @@ namespace ShareX.ScreenCaptureLib
 
         private List<Bitmap> images = new List<Bitmap>();
         private bool stopRequested;
-        private int bestMatchCount, bestMatchIndex, currentScrollCount;
+        private int bestMatchCount, bestMatchIndex;
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
 
@@ -76,7 +76,6 @@ namespace ShareX.ScreenCaptureLib
             stopRequested = false;
             bestMatchCount = 0;
             bestMatchIndex = 0;
-            currentScrollCount = 0;
 
             Dispose();
         }
@@ -89,53 +88,58 @@ namespace ShareX.ScreenCaptureLib
 
                 IsCapturing = true;
 
-                selectedWindow.Activate();
-
-                await Task.Delay(Options.StartDelay);
-
-                InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
-                NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
-
-                Stopwatch timer = new Stopwatch();
-
-                do
+                try
                 {
-                    int delay = Options.ScrollDelay - (int)timer.ElapsedMilliseconds;
+                    selectedWindow.Activate();
 
-                    if (delay > 0)
+                    await Task.Delay(Options.StartDelay);
+
+                    InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
+                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+
+                    Stopwatch timer = new Stopwatch();
+
+                    do
                     {
-                        await Task.Delay(delay);
+                        int delay = Options.ScrollDelay - (int)timer.ElapsedMilliseconds;
+
+                        if (delay > 0)
+                        {
+                            await Task.Delay(delay);
+                        }
+
+                        if (stopRequested)
+                        {
+                            break;
+                        }
+
+                        Screenshot screenshot = new Screenshot()
+                        {
+                            CaptureCursor = false
+                        };
+
+                        Bitmap bmp = screenshot.CaptureRectangle(selectedRectangle);
+
+                        if (bmp != null)
+                        {
+                            images.Add(bmp);
+                        }
+
+                        InputHelpers.SendMouseWheel(-120 * 2);
+
+                        timer.Restart();
+
+                        if (images.Count > 0)
+                        {
+                            Result = await CombineImagesAsync(Result, images[images.Count - 1]);
+                        }
                     }
-
-                    if (stopRequested)
-                    {
-                        break;
-                    }
-
-                    Screenshot screenshot = new Screenshot()
-                    {
-                        CaptureCursor = false
-                    };
-
-                    Bitmap bmp = screenshot.CaptureRectangle(selectedRectangle);
-
-                    if (bmp != null)
-                    {
-                        images.Add(bmp);
-                    }
-
-                    InputHelpers.SendMouseWheel(-120 * 2);
-                    currentScrollCount++;
-                    timer.Restart();
-
-                    if (images.Count > 0)
-                    {
-                        Result = await CombineImagesAsync(Result, images[images.Count - 1]);
-                    }
+                    while (!stopRequested && !IsScrollReachedBottom(selectedWindow.Handle));
                 }
-                while (!stopRequested && currentScrollCount <= Options.MaximumScrollCount && !IsScrollReachedBottom(selectedWindow.Handle));
-
-                IsCapturing = false;
+                finally
+                {
+                    IsCapturing = false;
+                }
             }
         }
 
