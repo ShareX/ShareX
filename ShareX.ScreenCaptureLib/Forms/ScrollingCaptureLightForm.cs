@@ -74,6 +74,7 @@ namespace ShareX.ScreenCaptureLib
             WindowState = FormWindowState.Minimized;
             btnCapture.Enabled = false;
             btnUpload.Enabled = false;
+            lblResultSize.Text = "";
             ResetPictureBox();
 
             try
@@ -88,8 +89,13 @@ namespace ShareX.ScreenCaptureLib
             }
 
             btnCapture.Enabled = true;
-            btnUpload.Enabled = manager.Result != null;
-            pbOutput.Image = manager.Result;
+
+            if (manager.Result != null)
+            {
+                btnUpload.Enabled = true;
+                pbOutput.Image = manager.Result;
+                lblResultSize.Text = $"{manager.Result.Width}x{manager.Result.Height}";
+            }
 
             this.ForceActivate();
         }

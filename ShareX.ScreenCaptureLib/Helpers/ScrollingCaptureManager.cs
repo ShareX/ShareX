@@ -53,6 +53,11 @@ namespace ShareX.ScreenCaptureLib
 
         public void Dispose()
         {
+            Reset();
+        }
+
+        private void Reset(bool keepResult = false)
+        {
             if (images != null)
             {
                 foreach (Bitmap bmp in images)
@@ -63,30 +68,22 @@ namespace ShareX.ScreenCaptureLib
                 images.Clear();
             }
 
-            if (Result != null)
+            if (!keepResult && Result != null)
             {
                 Result.Dispose();
                 Result = null;
             }
         }
 
-        private void Reset()
-        {
-            IsCapturing = false;
-            stopRequested = false;
-            bestMatchCount = 0;
-            bestMatchIndex = 0;
-
-            Dispose();
-        }
-
         public async Task StartCapture()
         {
             if (!IsCapturing && selectedWindow != null)
             {
-                Reset();
-
                 IsCapturing = true;
+                stopRequested = false;
+                bestMatchCount = 0;
+                bestMatchIndex = 0;
+                Reset();
 
                 try
                 {
@@ -138,6 +135,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 finally
                 {
+                    Reset(true);
                     IsCapturing = false;
                 }
             }

@@ -20,6 +20,7 @@
             this.pbOutput = new System.Windows.Forms.PictureBox();
             this.btnOptions = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
+            this.lblResultSize = new System.Windows.Forms.Label();
             this.pOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             this.SuspendLayout();
@@ -81,16 +82,27 @@
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
+            // lblResultSize
+            // 
+            this.lblResultSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblResultSize.Location = new System.Drawing.Point(872, 18);
+            this.lblResultSize.Name = "lblResultSize";
+            this.lblResultSize.Size = new System.Drawing.Size(108, 24);
+            this.lblResultSize.TabIndex = 4;
+            this.lblResultSize.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // ScrollingCaptureLightForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.lblResultSize);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.pOutput);
             this.Controls.Add(this.btnCapture);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "ScrollingCaptureLightForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Scrolling capture";
@@ -111,5 +123,6 @@
         private System.Windows.Forms.PictureBox pbOutput;
         private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Label lblResultSize;
     }
 }
