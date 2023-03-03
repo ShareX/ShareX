@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public partial class ScrollingCaptureLightForm : Form
+    public partial class ScrollingCaptureForm : Form
     {
         public event Action<Bitmap> UploadRequested;
 
@@ -41,7 +41,7 @@ namespace ShareX.ScreenCaptureLib
         private ScrollingCaptureManager manager;
         private Point dragStartPosition;
 
-        public ScrollingCaptureLightForm(ScrollingCaptureOptions options)
+        public ScrollingCaptureForm(ScrollingCaptureOptions options)
         {
             Options = options;
 
@@ -128,12 +128,12 @@ namespace ShareX.ScreenCaptureLib
             UploadRequested?.Invoke(bmp);
         }
 
-        private async void ScrollingCaptureLightForm_Load(object sender, EventArgs e)
+        private async void ScrollingCaptureForm_Load(object sender, EventArgs e)
         {
             await SelectWindow();
         }
 
-        private void ScrollingCaptureLightForm_Activated(object sender, EventArgs e)
+        private void ScrollingCaptureForm_Activated(object sender, EventArgs e)
         {
             manager.StopCapture();
         }

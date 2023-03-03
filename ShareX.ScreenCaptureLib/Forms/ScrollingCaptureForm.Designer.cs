@@ -1,6 +1,6 @@
 ﻿namespace ShareX.ScreenCaptureLib
 {
-    partial class ScrollingCaptureLightForm
+    partial class ScrollingCaptureForm
     {
         /// <summary>
         /// Required designer variable.
@@ -91,7 +91,7 @@
             this.lblResultSize.TabIndex = 4;
             this.lblResultSize.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // ScrollingCaptureLightForm
+            // ScrollingCaptureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -103,12 +103,12 @@
             this.Controls.Add(this.btnCapture);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(700, 500);
-            this.Name = "ScrollingCaptureLightForm";
+            this.Name = "ScrollingCaptureForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Scrolling capture";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-            this.Activated += new System.EventHandler(this.ScrollingCaptureLightForm_Activated);
-            this.Load += new System.EventHandler(this.ScrollingCaptureLightForm_Load);
+            this.Activated += new System.EventHandler(this.ScrollingCaptureForm_Activated);
+            this.Load += new System.EventHandler(this.ScrollingCaptureForm_Load);
             this.pOutput.ResumeLayout(false);
             this.pOutput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();

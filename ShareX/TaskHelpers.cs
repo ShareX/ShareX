@@ -129,7 +129,7 @@ namespace ShareX
                     new CaptureLastRegion().Capture(safeTaskSettings);
                     break;
                 case HotkeyType.ScrollingCapture:
-                    OpenScrollingCapture(safeTaskSettings, true);
+                    OpenScrollingCapture(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
                     OpenAutoCapture(safeTaskSettings);
@@ -682,18 +682,11 @@ namespace ShareX
             ScreenRecordManager.AbortRecording();
         }
 
-        public static void OpenScrollingCapture(TaskSettings taskSettings = null, bool forceSelection = false)
+        public static void OpenScrollingCapture(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            /*
-            ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
-                taskSettings.CaptureSettings.SurfaceOptions, forceSelection);
-            scrollingCaptureForm.ImageProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
-            scrollingCaptureForm.Show();
-            */
-
-            ScrollingCaptureLightForm scrollingCaptureForm = new ScrollingCaptureLightForm(new ScrollingCaptureOptions());
+            ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions);
             scrollingCaptureForm.UploadRequested += img => UploadManager.RunImageTask(img, taskSettings);
             scrollingCaptureForm.Show();
         }
