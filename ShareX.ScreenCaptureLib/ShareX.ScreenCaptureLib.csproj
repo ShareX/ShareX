@@ -149,12 +149,6 @@
     <Compile Include="Forms\RegionCaptureTransparentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ScrollingCaptureForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ScrollingCaptureForm.Designer.cs">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\TextDrawingInputBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -713,66 +707,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenRecordForm.zh-TW.resx">
       <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.de.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.es-MX.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.fa-IR.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.fr.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.id-ID.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.it-IT.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.ja-JP.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.ko-KR.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.nl-NL.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.pl.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.pt-BR.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.pt-PT.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.ro.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.ru.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.tr.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.uk.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.vi-VN.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.zh-CN.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScrollingCaptureForm.zh-TW.resx">
-      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureLightForm.resx">
       <DependentUpon>ScrollingCaptureLightForm.cs</DependentUpon>
