@@ -29,14 +29,13 @@ namespace ShareX.ScreenCaptureLib
 {
     public class ScrollingCaptureOptions
     {
+        public int StartDelay { get; set; } = 500;
+        public int ScrollDelay { get; set; } = 500;
+
+        // TODO: Cleanup
+
         [DefaultValue(ScrollingCaptureScrollMethod.Automatic)]
         public ScrollingCaptureScrollMethod ScrollMethod { get; set; } = ScrollingCaptureScrollMethod.Automatic;
-
-        [DefaultValue(500)]
-        public int StartDelay { get; set; } = 500;
-
-        [DefaultValue(500)]
-        public int ScrollDelay { get; set; } = 500;
 
         [DefaultValue(200)]
         public int MaximumScrollCount { get; set; } = 200;

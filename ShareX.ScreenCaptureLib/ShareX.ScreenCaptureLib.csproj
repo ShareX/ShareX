@@ -127,6 +127,12 @@
     <Compile Include="Forms\ScrollingCaptureForm.Designer.cs">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ScrollingCaptureOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScrollingCaptureOptionsForm.Designer.cs">
+      <DependentUpon>ScrollingCaptureOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StickerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -707,6 +713,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScreenRecordForm.zh-TW.resx">
       <DependentUpon>ScreenRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureOptionsForm.resx">
+      <DependentUpon>ScrollingCaptureOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StickerForm.es-MX.resx">
       <DependentUpon>StickerForm.cs</DependentUpon>

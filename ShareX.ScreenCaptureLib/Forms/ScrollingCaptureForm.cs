@@ -74,6 +74,7 @@ namespace ShareX.ScreenCaptureLib
             WindowState = FormWindowState.Minimized;
             btnCapture.Enabled = false;
             btnUpload.Enabled = false;
+            btnOptions.Enabled = false;
             lblResultSize.Text = "";
             ResetPictureBox();
 
@@ -89,6 +90,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             btnCapture.Enabled = true;
+            btnOptions.Enabled = true;
 
             if (manager.Result != null)
             {
@@ -150,7 +152,10 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnOptions_Click(object sender, EventArgs e)
         {
-
+            using (ScrollingCaptureOptionsForm scrollingCaptureOptionsForm = new ScrollingCaptureOptionsForm(Options))
+            {
+                scrollingCaptureOptionsForm.ShowDialog();
+            }
         }
 
         private void pbOutput_MouseDown(object sender, MouseEventArgs e)
