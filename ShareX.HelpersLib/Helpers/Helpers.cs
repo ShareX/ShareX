@@ -277,6 +277,17 @@ namespace ShareX.HelpersLib
             return sb.ToString();
         }
 
+        public static string GetApplicationVersion(bool includeRevision = false)
+        {
+            Version version = Version.Parse(Application.ProductVersion);
+            string result = $"{version.Major}.{version.Minor}.{version.Build}";
+            if (includeRevision)
+            {
+                result = $"{result}.{version.Revision}";
+            }
+            return result;
+        }
+
         /// <summary>
         /// If version1 newer than version2 = 1
         /// If version1 equal to version2 = 0
@@ -302,9 +313,9 @@ namespace ShareX.HelpersLib
         /// If version equal to ApplicationVersion = 0
         /// If version older than ApplicationVersion = -1
         /// </summary>
-        public static int CompareApplicationVersion(string version)
+        public static int CompareApplicationVersion(string version, bool includeRevision = false)
         {
-            return CompareVersion(version, Application.ProductVersion);
+            return CompareVersion(version, GetApplicationVersion(includeRevision));
         }
 
         public static Version NormalizeVersion(string version)

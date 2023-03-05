@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
-using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Reflection;
@@ -40,8 +39,7 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                Version version = Version.Parse(Application.ProductVersion);
-                return $"{Name}/{version.Major}.{version.Minor}.{version.Build}";
+                return $"{Name}/{Helpers.GetApplicationVersion()}";
             }
         }
 

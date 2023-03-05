@@ -32,7 +32,6 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
@@ -111,7 +110,7 @@ namespace ShareX.UploadersLib
         {
             return new CustomUploaderItem()
             {
-                Version = Application.ProductVersion,
+                Version = Helpers.GetApplicationVersion(),
                 RequestMethod = HttpMethod.POST,
                 Body = CustomUploaderBody.MultipartFormData
             };
@@ -449,7 +448,7 @@ namespace ShareX.UploadersLib
                 DeletionURL = MigrateOldSyntax(DeletionURL);
                 ErrorMessage = MigrateOldSyntax(ErrorMessage);
 
-                Version = Application.ProductVersion;
+                Version = Helpers.GetApplicationVersion();
             }
         }
 
