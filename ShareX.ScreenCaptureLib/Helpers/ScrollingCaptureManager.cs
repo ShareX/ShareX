@@ -91,25 +91,16 @@ namespace ShareX.ScreenCaptureLib
 
                     await Task.Delay(Options.StartDelay);
 
-                    InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
-                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
-
-                    Stopwatch timer = new Stopwatch();
-
-                    do
+                    if (Options.AutoScrollTop)
                     {
-                        int delay = Options.ScrollDelay - (int)timer.ElapsedMilliseconds;
+                        InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
+                        NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
 
-                        if (delay > 0)
-                        {
-                            await Task.Delay(delay);
-                        }
+                        await Task.Delay(Options.ScrollDelay);
+                    }
 
-                        if (stopRequested)
-                        {
-                            break;
-                        }
-
+                    while (!stopRequested)
+                    {
                         Screenshot screenshot = new Screenshot()
                         {
                             CaptureCursor = false
@@ -122,16 +113,32 @@ namespace ShareX.ScreenCaptureLib
                             images.Add(bmp);
                         }
 
+                        if (CompareLastTwoImages())
+                        {
+                            break;
+                        }
+
                         InputHelpers.SendMouseWheel(-120 * 2);
 
-                        timer.Restart();
+                        Stopwatch timer = Stopwatch.StartNew();
 
                         if (images.Count > 0)
                         {
                             Result = await CombineImagesAsync(Result, images[images.Count - 1]);
                         }
+
+                        if (stopRequested)
+                        {
+                            break;
+                        }
+
+                        int delay = Options.ScrollDelay - (int)timer.ElapsedMilliseconds;
+
+                        if (delay > 0)
+                        {
+                            await Task.Delay(delay);
+                        }
                     }
-                    while (!stopRequested && !IsScrollReachedBottom(selectedWindow.Handle));
                 }
                 finally
                 {
@@ -165,26 +172,17 @@ namespace ShareX.ScreenCaptureLib
                 return scrollInfo.nMax == scrollInfo.nTrackPos + scrollInfo.nPage - 1;
             }
 
-            return IsLastTwoImagesSame();
+            return CompareLastTwoImages();
         }
 
-        private bool IsLastTwoImagesSame()
+        private bool CompareLastTwoImages()
         {
-            bool result = false;
-
             if (images.Count > 1)
             {
-                result = ImageHelpers.CompareImages(images[images.Count - 1], images[images.Count - 2]);
-
-                if (result)
-                {
-                    Bitmap last = images[images.Count - 1];
-                    images.Remove(last);
-                    last.Dispose();
-                }
+                return ImageHelpers.CompareImages(images[images.Count - 1], images[images.Count - 2]);
             }
 
-            return result;
+            return false;
         }
 
         private async Task<Bitmap> CombineImagesAsync(Bitmap result, Bitmap currentImage)

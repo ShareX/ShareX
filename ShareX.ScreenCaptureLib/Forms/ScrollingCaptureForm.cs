@@ -96,6 +96,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 btnUpload.Enabled = true;
                 pbOutput.Image = manager.Result;
+                pOutput.AutoScrollPosition = new Point(0, 0);
                 lblResultSize.Text = $"{manager.Result.Width}x{manager.Result.Height}";
             }
 

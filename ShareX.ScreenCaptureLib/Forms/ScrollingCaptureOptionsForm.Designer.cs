@@ -32,6 +32,7 @@
             this.nudStartDelay = new System.Windows.Forms.NumericUpDown();
             this.lblScrollDelay = new System.Windows.Forms.Label();
             this.nudScrollDelay = new System.Windows.Forms.NumericUpDown();
+            this.cbAutoScrollTop = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +78,7 @@
             // lblScrollDelay
             // 
             this.lblScrollDelay.AutoSize = true;
-            this.lblScrollDelay.Location = new System.Drawing.Point(13, 72);
+            this.lblScrollDelay.Location = new System.Drawing.Point(13, 112);
             this.lblScrollDelay.Name = "lblScrollDelay";
             this.lblScrollDelay.Size = new System.Drawing.Size(81, 16);
             this.lblScrollDelay.TabIndex = 2;
@@ -90,7 +91,7 @@
             0,
             0,
             0});
-            this.nudScrollDelay.Location = new System.Drawing.Point(16, 96);
+            this.nudScrollDelay.Location = new System.Drawing.Point(16, 136);
             this.nudScrollDelay.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -112,11 +113,23 @@
             0});
             this.nudScrollDelay.ValueChanged += new System.EventHandler(this.nudScrollDelay_ValueChanged);
             // 
+            // cbAutoScrollTop
+            // 
+            this.cbAutoScrollTop.AutoSize = true;
+            this.cbAutoScrollTop.Location = new System.Drawing.Point(16, 80);
+            this.cbAutoScrollTop.Name = "cbAutoScrollTop";
+            this.cbAutoScrollTop.Size = new System.Drawing.Size(177, 20);
+            this.cbAutoScrollTop.TabIndex = 4;
+            this.cbAutoScrollTop.Text = "Automatically scroll to top";
+            this.cbAutoScrollTop.UseVisualStyleBackColor = true;
+            this.cbAutoScrollTop.CheckedChanged += new System.EventHandler(this.cbAutoScrollTop_CheckedChanged);
+            // 
             // ScrollingCaptureOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(434, 361);
+            this.Controls.Add(this.cbAutoScrollTop);
             this.Controls.Add(this.nudScrollDelay);
             this.Controls.Add(this.lblScrollDelay);
             this.Controls.Add(this.nudStartDelay);
@@ -140,5 +153,6 @@
         private System.Windows.Forms.NumericUpDown nudStartDelay;
         private System.Windows.Forms.Label lblScrollDelay;
         private System.Windows.Forms.NumericUpDown nudScrollDelay;
+        private System.Windows.Forms.CheckBox cbAutoScrollTop;
     }
 }

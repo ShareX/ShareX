@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
 using System;
@@ -239,6 +240,11 @@ namespace ShareX
                 {
                     DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
                 }
+            }
+
+            if (Settings.IsUpgradeFrom("15.0.0"))
+            {
+                DefaultTaskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
             }
         }
 

@@ -29,8 +29,9 @@ namespace ShareX.ScreenCaptureLib
 {
     public class ScrollingCaptureOptions
     {
-        public int StartDelay { get; set; } = 500;
-        public int ScrollDelay { get; set; } = 500;
+        public int StartDelay { get; set; } = 300;
+        public int ScrollDelay { get; set; } = 300;
+        public bool AutoScrollTop { get; set; } = false;
 
         // TODO: Cleanup
 

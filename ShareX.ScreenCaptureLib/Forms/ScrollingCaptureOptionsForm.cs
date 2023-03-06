@@ -41,12 +41,18 @@ namespace ShareX.ScreenCaptureLib
             ShareXResources.ApplyTheme(this);
 
             nudStartDelay.SetValue(Options.StartDelay);
+            cbAutoScrollTop.Checked = Options.AutoScrollTop;
             nudScrollDelay.SetValue(Options.ScrollDelay);
         }
 
         private void nudStartDelay_ValueChanged(object sender, EventArgs e)
         {
             Options.StartDelay = (int)nudStartDelay.Value;
+        }
+
+        private void cbAutoScrollTop_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.AutoScrollTop = cbAutoScrollTop.Checked;
         }
 
         private void nudScrollDelay_ValueChanged(object sender, EventArgs e)
