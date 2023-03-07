@@ -282,7 +282,7 @@ namespace ShareX.UploadersLib
         private void UpdateAzureStorageStatus()
         {
             AzureStorage azure = new AzureStorage(Config.AzureStorageAccountName, Config.AzureStorageAccountAccessKey, Config.AzureStorageContainer,
-                Config.AzureStorageEnvironment, Config.AzureStorageCustomDomain, Config.AzureStorageUploadPath);
+                Config.AzureStorageEnvironment, Config.AzureStorageCustomDomain, Config.AzureStorageUploadPath, Config.AzureStorageCacheControl);
 
             lblAzureStorageURLPreview.Text = azure.GetPreviewURL();
         }

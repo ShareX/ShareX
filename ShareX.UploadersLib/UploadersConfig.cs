@@ -398,6 +398,7 @@ namespace ShareX.UploadersLib
         public string AzureStorageEnvironment { get; set; } = "blob.core.windows.net";
         public string AzureStorageCustomDomain { get; set; } = "";
         public string AzureStorageUploadPath { get; set; } = "";
+        public string AzureStorageCacheControl { get; set; } = "";
 
         #endregion Azure Storage
 

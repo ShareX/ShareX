@@ -274,6 +274,8 @@ namespace ShareX.UploadersLib
             this.lblGoogleCloudStorageBucket = new System.Windows.Forms.Label();
             this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
+            this.txtAzureStorageCacheControl = new System.Windows.Forms.TextBox();
+            this.lblAzureStorageCacheControl = new System.Windows.Forms.Label();
             this.lblAzureStorageURLPreview = new System.Windows.Forms.Label();
             this.lblAzureStorageURLPreviewLabel = new System.Windows.Forms.Label();
             this.txtAzureStorageUploadPath = new System.Windows.Forms.TextBox();
@@ -2334,6 +2336,8 @@ namespace ShareX.UploadersLib
             // tpAzureStorage
             // 
             this.tpAzureStorage.BackColor = System.Drawing.SystemColors.Window;
+            this.tpAzureStorage.Controls.Add(this.txtAzureStorageCacheControl);
+            this.tpAzureStorage.Controls.Add(this.lblAzureStorageCacheControl);
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageURLPreview);
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageURLPreviewLabel);
             this.tpAzureStorage.Controls.Add(this.txtAzureStorageUploadPath);
@@ -2351,6 +2355,17 @@ namespace ShareX.UploadersLib
             this.tpAzureStorage.Controls.Add(this.lblAzureStorageCustomDomain);
             resources.ApplyResources(this.tpAzureStorage, "tpAzureStorage");
             this.tpAzureStorage.Name = "tpAzureStorage";
+            // 
+            // txtAzureStorageCacheControl
+            // 
+            resources.ApplyResources(this.txtAzureStorageCacheControl, "txtAzureStorageCacheControl");
+            this.txtAzureStorageCacheControl.Name = "txtAzureStorageCacheControl";
+            this.txtAzureStorageCacheControl.TextChanged += new System.EventHandler(this.txtAzureStorageCacheControl_TextChanged);
+            // 
+            // lblAzureStorageCacheControl
+            // 
+            resources.ApplyResources(this.lblAzureStorageCacheControl, "lblAzureStorageCacheControl");
+            this.lblAzureStorageCacheControl.Name = "lblAzureStorageCacheControl";
             // 
             // lblAzureStorageURLPreview
             // 
@@ -5688,5 +5703,7 @@ namespace ShareX.UploadersLib
         private OAuthLoopbackControl oauth2GooglePhotos;
         private OAuthLoopbackControl oauth2GoogleDrive;
         private OAuthLoopbackControl oauth2GoogleCloudStorage;
+        private System.Windows.Forms.TextBox txtAzureStorageCacheControl;
+        private System.Windows.Forms.Label lblAzureStorageCacheControl;
     }
 }

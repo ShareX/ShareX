@@ -5747,6 +5747,57 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;tpGoogleCloudStorage.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="txtAzureStorageCacheControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 326</value>
+  </data>
+  <data name="txtAzureStorageCacheControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 20</value>
+  </data>
+  <data name="txtAzureStorageCacheControl.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageCacheControl.Name" xml:space="preserve">
+    <value>txtAzureStorageCacheControl</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageCacheControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageCacheControl.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;txtAzureStorageCacheControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 310</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 13</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.Text" xml:space="preserve">
+    <value>Cache-Control header:</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageCacheControl.Name" xml:space="preserve">
+    <value>lblAzureStorageCacheControl</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageCacheControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageCacheControl.Parent" xml:space="preserve">
+    <value>tpAzureStorage</value>
+  </data>
+  <data name="&gt;&gt;lblAzureStorageCacheControl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblAzureStorageURLPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5754,7 +5805,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblAzureStorageURLPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 323</value>
+    <value>10, 387</value>
   </data>
   <data name="lblAzureStorageURLPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -5775,7 +5826,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageURLPreview.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblAzureStorageURLPreviewLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5784,7 +5835,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblAzureStorageURLPreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 304</value>
+    <value>10, 368</value>
   </data>
   <data name="lblAzureStorageURLPreviewLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -5805,7 +5856,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageURLPreviewLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="txtAzureStorageUploadPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 223</value>
@@ -5826,7 +5877,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageUploadPath.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblAzureStorageUploadPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5856,7 +5907,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageUploadPath.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbAzureStorageEnvironment.Items" xml:space="preserve">
     <value>blob.core.windows.net</value>
@@ -5889,7 +5940,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;cbAzureStorageEnvironment.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="lblAzureStorageEnvironment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5919,7 +5970,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageEnvironment.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="btnAzureStoragePortal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5946,7 +5997,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;btnAzureStoragePortal.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="txtAzureStorageContainer.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -5967,7 +6018,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageContainer.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="lblAzureStorageContainer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5997,7 +6048,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageContainer.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="txtAzureStorageAccessKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -6018,7 +6069,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageAccessKey.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="lblAzureStorageAccessKey.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6051,7 +6102,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageAccessKey.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="txtAzureStorageAccountName.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -6072,7 +6123,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageAccountName.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="lblAzureStorageAccountName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6105,7 +6156,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageAccountName.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="txtAzureStorageCustomDomain.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 273</value>
@@ -6126,7 +6177,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;txtAzureStorageCustomDomain.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="lblAzureStorageCustomDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6156,16 +6207,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpAzureStorage</value>
   </data>
   <data name="&gt;&gt;lblAzureStorageCustomDomain.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
