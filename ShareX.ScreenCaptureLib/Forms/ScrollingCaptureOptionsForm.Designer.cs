@@ -35,6 +35,7 @@
             this.cbAutoScrollTop = new System.Windows.Forms.CheckBox();
             this.lblScrollAmount = new System.Windows.Forms.Label();
             this.nudScrollAmount = new System.Windows.Forms.NumericUpDown();
+            this.cbAutoUpload = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollAmount)).BeginInit();
@@ -160,11 +161,23 @@
             0});
             this.nudScrollAmount.ValueChanged += new System.EventHandler(this.nudScrollAmount_ValueChanged);
             // 
+            // cbAutoUpload
+            // 
+            this.cbAutoUpload.AutoSize = true;
+            this.cbAutoUpload.Location = new System.Drawing.Point(16, 240);
+            this.cbAutoUpload.Name = "cbAutoUpload";
+            this.cbAutoUpload.Size = new System.Drawing.Size(191, 20);
+            this.cbAutoUpload.TabIndex = 7;
+            this.cbAutoUpload.Text = "Automatically upload / save";
+            this.cbAutoUpload.UseVisualStyleBackColor = true;
+            this.cbAutoUpload.CheckedChanged += new System.EventHandler(this.cbAutoUpload_CheckedChanged);
+            // 
             // ScrollingCaptureOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(384, 311);
+            this.Controls.Add(this.cbAutoUpload);
             this.Controls.Add(this.nudScrollAmount);
             this.Controls.Add(this.lblScrollAmount);
             this.Controls.Add(this.cbAutoScrollTop);
@@ -195,5 +208,6 @@
         private System.Windows.Forms.CheckBox cbAutoScrollTop;
         private System.Windows.Forms.Label lblScrollAmount;
         private System.Windows.Forms.NumericUpDown nudScrollAmount;
+        private System.Windows.Forms.CheckBox cbAutoUpload;
     }
 }

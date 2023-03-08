@@ -33,6 +33,7 @@ namespace ShareX.ScreenCaptureLib
         public bool AutoScrollTop { get; set; } = false;
         public int ScrollDelay { get; set; } = 300;
         public int ScrollAmount { get; set; } = 2;
+        public bool AutoUpload { get; set; } = false;
 
         // TODO: Cleanup
 
@@ -41,8 +42,5 @@ namespace ShareX.ScreenCaptureLib
 
         [DefaultValue(ScrollingCaptureScrollTopMethod.All)]
         public ScrollingCaptureScrollTopMethod ScrollTopMethodBeforeCapture { get; set; } = ScrollingCaptureScrollTopMethod.All;
-
-        [DefaultValue(false)]
-        public bool AutoUpload { get; set; } = false;
     }
 }

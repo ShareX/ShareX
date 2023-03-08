@@ -44,6 +44,7 @@ namespace ShareX.ScreenCaptureLib
             cbAutoScrollTop.Checked = Options.AutoScrollTop;
             nudScrollDelay.SetValue(Options.ScrollDelay);
             nudScrollAmount.SetValue(Options.ScrollAmount);
+            cbAutoUpload.Checked = Options.AutoUpload;
         }
 
         private void nudStartDelay_ValueChanged(object sender, EventArgs e)
@@ -64,6 +65,11 @@ namespace ShareX.ScreenCaptureLib
         private void nudScrollAmount_ValueChanged(object sender, EventArgs e)
         {
             Options.ScrollAmount = (int)nudScrollAmount.Value;
+        }
+
+        private void cbAutoUpload_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.AutoUpload = cbAutoUpload.Checked;
         }
     }
 }

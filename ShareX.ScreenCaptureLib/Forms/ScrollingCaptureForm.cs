@@ -101,6 +101,11 @@ namespace ShareX.ScreenCaptureLib
             }
 
             this.ForceActivate();
+
+            if (Options.AutoUpload)
+            {
+                UploadResult();
+            }
         }
 
         private async Task SelectWindow()
