@@ -30,44 +30,19 @@ namespace ShareX.ScreenCaptureLib
     public class ScrollingCaptureOptions
     {
         public int StartDelay { get; set; } = 300;
-        public int ScrollDelay { get; set; } = 300;
         public bool AutoScrollTop { get; set; } = false;
+        public int ScrollDelay { get; set; } = 300;
+        public int ScrollAmount { get; set; } = 2;
 
         // TODO: Cleanup
 
         [DefaultValue(ScrollingCaptureScrollMethod.Automatic)]
         public ScrollingCaptureScrollMethod ScrollMethod { get; set; } = ScrollingCaptureScrollMethod.Automatic;
 
-        [DefaultValue(200)]
-        public int MaximumScrollCount { get; set; } = 200;
-
-        [DefaultValue(true)]
-        public bool StartSelectionAutomatically { get; set; } = true;
-
-        [DefaultValue(false)]
-        public bool StartCaptureAutomatically { get; set; } = false;
-
         [DefaultValue(ScrollingCaptureScrollTopMethod.All)]
         public ScrollingCaptureScrollTopMethod ScrollTopMethodBeforeCapture { get; set; } = ScrollingCaptureScrollTopMethod.All;
 
-        [DefaultValue(true)]
-        public bool AutoDetectScrollEnd { get; set; } = true;
-
-        [DefaultValue(true)]
-        public bool RemoveDuplicates { get; set; } = true;
-
-        [DefaultValue(true)]
-        public bool AfterCaptureAutomaticallyCombine { get; set; } = true;
-
         [DefaultValue(false)]
         public bool AutoUpload { get; set; } = false;
-
-        public int TrimLeftEdge = 0;
-        public int TrimTopEdge = 0;
-        public int TrimRightEdge = 0;
-        public int TrimBottomEdge = 0;
-        public int CombineAdjustmentVertical = 0;
-        public int CombineAdjustmentLastVertical = 0;
-        public int IgnoreLast = 0;
     }
 }

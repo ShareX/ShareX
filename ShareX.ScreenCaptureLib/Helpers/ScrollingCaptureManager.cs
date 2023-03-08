@@ -118,7 +118,7 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         }
 
-                        InputHelpers.SendMouseWheel(-120 * 2);
+                        InputHelpers.SendMouseWheel(-120 * Options.ScrollAmount);
 
                         Stopwatch timer = Stopwatch.StartNew();
 

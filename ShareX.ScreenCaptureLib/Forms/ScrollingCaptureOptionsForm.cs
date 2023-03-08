@@ -43,6 +43,7 @@ namespace ShareX.ScreenCaptureLib
             nudStartDelay.SetValue(Options.StartDelay);
             cbAutoScrollTop.Checked = Options.AutoScrollTop;
             nudScrollDelay.SetValue(Options.ScrollDelay);
+            nudScrollAmount.SetValue(Options.ScrollAmount);
         }
 
         private void nudStartDelay_ValueChanged(object sender, EventArgs e)
@@ -58,6 +59,11 @@ namespace ShareX.ScreenCaptureLib
         private void nudScrollDelay_ValueChanged(object sender, EventArgs e)
         {
             Options.ScrollDelay = (int)nudScrollDelay.Value;
+        }
+
+        private void nudScrollAmount_ValueChanged(object sender, EventArgs e)
+        {
+            Options.ScrollAmount = (int)nudScrollAmount.Value;
         }
     }
 }
