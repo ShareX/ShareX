@@ -40,6 +40,11 @@ namespace ShareX.ScreenCaptureLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
+            LoadOptions();
+        }
+
+        private void LoadOptions()
+        {
             nudStartDelay.SetValue(Options.StartDelay);
             cbAutoScrollTop.Checked = Options.AutoScrollTop;
             nudScrollDelay.SetValue(Options.ScrollDelay);
@@ -47,29 +52,25 @@ namespace ShareX.ScreenCaptureLib
             cbAutoUpload.Checked = Options.AutoUpload;
         }
 
-        private void nudStartDelay_ValueChanged(object sender, EventArgs e)
+        private void SaveOptions()
         {
             Options.StartDelay = (int)nudStartDelay.Value;
-        }
-
-        private void cbAutoScrollTop_CheckedChanged(object sender, EventArgs e)
-        {
             Options.AutoScrollTop = cbAutoScrollTop.Checked;
-        }
-
-        private void nudScrollDelay_ValueChanged(object sender, EventArgs e)
-        {
             Options.ScrollDelay = (int)nudScrollDelay.Value;
-        }
-
-        private void nudScrollAmount_ValueChanged(object sender, EventArgs e)
-        {
             Options.ScrollAmount = (int)nudScrollAmount.Value;
+            Options.AutoUpload = cbAutoUpload.Checked;
         }
 
-        private void cbAutoUpload_CheckedChanged(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
-            Options.AutoUpload = cbAutoUpload.Checked;
+            SaveOptions();
+
+            Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
