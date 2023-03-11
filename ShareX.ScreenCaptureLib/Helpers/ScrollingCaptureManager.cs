@@ -39,6 +39,7 @@ namespace ShareX.ScreenCaptureLib
         public ScrollingCaptureOptions Options { get; private set; }
         public Bitmap Result { get; private set; }
         public bool IsCapturing { get; private set; }
+        public bool ShowRegion { get; set; } = true;
 
         private List<Bitmap> images = new List<Bitmap>();
         private bool stopRequested;
@@ -77,13 +78,21 @@ namespace ShareX.ScreenCaptureLib
 
         public async Task StartCapture()
         {
-            if (!IsCapturing && selectedWindow != null)
+            if (!IsCapturing && selectedWindow != null && !selectedRectangle.IsEmpty)
             {
                 IsCapturing = true;
                 stopRequested = false;
                 bestMatchCount = 0;
                 bestMatchIndex = 0;
                 Reset();
+
+                ScrollingCaptureRegionForm regionForm = null;
+
+                if (ShowRegion)
+                {
+                    regionForm = new ScrollingCaptureRegionForm(selectedRectangle);
+                    regionForm.Show();
+                }
 
                 try
                 {
@@ -142,6 +151,8 @@ namespace ShareX.ScreenCaptureLib
                 }
                 finally
                 {
+                    regionForm?.Close();
+
                     Reset(true);
                     IsCapturing = false;
                 }

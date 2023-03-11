@@ -224,7 +224,7 @@ namespace ShareX.ScreenCaptureLib
                 Countdown = TimeSpan.FromSeconds(Duration);
             }
 
-            borderColor = Color.FromArgb(0, 255, 0);
+            borderColor = Color.Lime;
             Refresh();
 
             Timer.Start();
