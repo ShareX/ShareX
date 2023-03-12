@@ -38,7 +38,7 @@ namespace ShareX.HelpersLib
 
         protected override bool ShowWithoutActivation => !ActivateWindow;
 
-        public UpdateMessageBox(UpdateChecker updateChecker, bool activateWindow = true, bool devBuild = false)
+        public UpdateMessageBox(UpdateChecker updateChecker, bool activateWindow = true)
         {
             ActivateWindow = activateWindow;
 
@@ -68,20 +68,19 @@ namespace ShareX.HelpersLib
             sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
             sbText.Append(": ");
             sbText.Append(updateChecker.CurrentVersion);
-            if (updateChecker.IsDev) sbText.Append(" Dev");
             sbText.AppendLine();
             sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
             sbText.Append(": ");
             sbText.Append(updateChecker.LatestVersion);
-            if (devBuild) sbText.Append(" Dev");
+            if (updateChecker.IsDev) sbText.Append(" Dev");
             if (updateChecker is GitHubUpdateChecker githubUpdateChecker && githubUpdateChecker.IsPreRelease) sbText.Append(" (Pre-release)");
 
             lblText.Text = sbText.ToString();
 
-            lblViewChangelog.Visible = !devBuild;
+            lblViewChangelog.Visible = !updateChecker.IsDev;
         }
 
-        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true, bool devBuild = false)
+        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true)
         {
             DialogResult result = DialogResult.None;
 
@@ -91,7 +90,7 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    using (UpdateMessageBox messageBox = new UpdateMessageBox(updateChecker, activateWindow, devBuild))
+                    using (UpdateMessageBox messageBox = new UpdateMessageBox(updateChecker, activateWindow))
                     {
                         result = messageBox.ShowDialog();
                     }

@@ -1880,7 +1880,7 @@ namespace ShareX
 
             await updateChecker.CheckUpdateAsync();
 
-            UpdateMessageBox.Start(updateChecker, true, true);
+            UpdateMessageBox.Start(updateChecker, true);
         }
 
         public static async Task DownloadAppVeyorBuild()
@@ -1894,7 +1894,7 @@ namespace ShareX
 
             await updateChecker.CheckUpdateAsync();
 
-            UpdateMessageBox.Start(updateChecker, true, true);
+            UpdateMessageBox.Start(updateChecker, true);
         }
 
         public static Image CreateQRCode(string text, int width, int height)

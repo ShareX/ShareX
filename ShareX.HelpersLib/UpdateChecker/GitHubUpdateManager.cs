@@ -36,7 +36,6 @@ namespace ShareX.HelpersLib
         public TimeSpan UpdateCheckInterval { get; private set; } = TimeSpan.FromHours(1);
         public string GitHubOwner { get; set; }
         public string GitHubRepo { get; set; }
-        public bool IsDev { get; set; } // If current build is dev and latest stable release is same version as current build then it will be downloaded
         public bool IsPortable { get; set; } // If current build is portable then download URL will be opened in browser instead of downloading it
         public bool CheckPreReleaseUpdates { get; set; }
 
@@ -44,15 +43,10 @@ namespace ShareX.HelpersLib
         private Timer updateTimer = null;
         private readonly object updateTimerLock = new object();
 
-        public GitHubUpdateManager(string owner, string repo)
+        public GitHubUpdateManager(string owner, string repo, bool portable = false)
         {
             GitHubOwner = owner;
             GitHubRepo = repo;
-        }
-
-        public GitHubUpdateManager(string owner, string repo, bool dev, bool portable) : this(owner, repo)
-        {
-            IsDev = dev;
             IsPortable = portable;
         }
 
@@ -94,7 +88,6 @@ namespace ShareX.HelpersLib
         {
             return new GitHubUpdateChecker(GitHubOwner, GitHubRepo)
             {
-                IsDev = IsDev,
                 IsPortable = IsPortable,
                 IncludePreRelease = CheckPreReleaseUpdates
             };

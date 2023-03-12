@@ -26,7 +26,6 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ShareX.HelpersLib
 {
@@ -40,6 +39,7 @@ namespace ShareX.HelpersLib
         private const string APIURL = "https://api.github.com";
 
         private string ReleasesURL => $"{APIURL}/repos/{Owner}/{Repo}/releases";
+        private string LatestReleaseURL => $"{ReleasesURL}/latest";
 
         public GitHubUpdateChecker(string owner, string repo)
         {
@@ -105,22 +105,36 @@ namespace ShareX.HelpersLib
             return releases;
         }
 
+        protected GitHubRelease GetLatestRelease()
+        {
+            GitHubRelease latestRelease = null;
+
+            string response = URLHelpers.DownloadString(LatestReleaseURL);
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                latestRelease = JsonConvert.DeserializeObject<GitHubRelease>(response);
+            }
+
+            return latestRelease;
+        }
+
         protected GitHubRelease GetLatestRelease(bool includePreRelease)
         {
             GitHubRelease latestRelease = null;
 
-            List<GitHubRelease> releases = GetReleases();
-
-            if (releases != null && releases.Count > 0)
+            if (includePreRelease)
             {
-                if (includePreRelease)
+                List<GitHubRelease> releases = GetReleases();
+
+                if (releases != null && releases.Count > 0)
                 {
                     latestRelease = releases[0];
                 }
-                else
-                {
-                    latestRelease = releases.FirstOrDefault(x => !x.prerelease);
-                }
+            }
+            else
+            {
+                latestRelease = GetLatestRelease();
             }
 
             return latestRelease;
