@@ -41,6 +41,7 @@
             this.lblScrollAmountHint = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cbShowRegion = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollAmount)).BeginInit();
@@ -221,11 +222,22 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cbShowRegion
+            // 
+            this.cbShowRegion.AutoSize = true;
+            this.cbShowRegion.Location = new System.Drawing.Point(16, 272);
+            this.cbShowRegion.Name = "cbShowRegion";
+            this.cbShowRegion.Size = new System.Drawing.Size(201, 20);
+            this.cbShowRegion.TabIndex = 13;
+            this.cbShowRegion.Text = "Show scrolling capture region";
+            this.cbShowRegion.UseVisualStyleBackColor = true;
+            // 
             // ScrollingCaptureOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(384, 361);
+            this.Controls.Add(this.cbShowRegion);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblScrollAmountHint);
@@ -268,5 +280,6 @@
         private System.Windows.Forms.Label lblScrollAmountHint;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox cbShowRegion;
     }
 }

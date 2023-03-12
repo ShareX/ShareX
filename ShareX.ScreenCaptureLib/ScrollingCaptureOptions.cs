@@ -34,6 +34,7 @@ namespace ShareX.ScreenCaptureLib
         public int ScrollDelay { get; set; } = 300;
         public int ScrollAmount { get; set; } = 2;
         public bool AutoUpload { get; set; } = false;
+        public bool ShowRegion { get; set; } = true;
 
         // TODO: Cleanup
 

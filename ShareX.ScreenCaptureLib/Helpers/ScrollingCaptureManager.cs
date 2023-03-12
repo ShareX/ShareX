@@ -39,7 +39,6 @@ namespace ShareX.ScreenCaptureLib
         public ScrollingCaptureOptions Options { get; private set; }
         public Bitmap Result { get; private set; }
         public bool IsCapturing { get; private set; }
-        public bool ShowRegion { get; set; } = true;
 
         private List<Bitmap> images = new List<Bitmap>();
         private bool stopRequested;
@@ -88,7 +87,7 @@ namespace ShareX.ScreenCaptureLib
 
                 ScrollingCaptureRegionForm regionForm = null;
 
-                if (ShowRegion)
+                if (Options.ShowRegion)
                 {
                     regionForm = new ScrollingCaptureRegionForm(selectedRectangle);
                     regionForm.Show();
