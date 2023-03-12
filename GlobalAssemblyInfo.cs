@@ -30,5 +30,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("ShareX")]
 [assembly: AssemblyCopyright("Copyright (c) 2007-2023 ShareX Team")]
 [assembly: ComVisible(false)]
-[assembly: AssemblyVersion("15.0.0")]
-[assembly: AssemblyFileVersion("15.0.0")]
+[assembly: AssemblyVersion("15.0.1")]
+[assembly: AssemblyFileVersion("15.0.1")]
