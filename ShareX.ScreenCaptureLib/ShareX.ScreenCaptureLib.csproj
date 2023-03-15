@@ -145,7 +145,7 @@
     <Compile Include="Forms\StickerForm.Designer.cs">
       <DependentUpon>StickerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StickerImageListViewRenderer.cs" />
+    <Compile Include="Helpers\StickerImageListViewRenderer.cs" />
     <Compile Include="Forms\StickerPackForm.cs">
       <SubType>Form</SubType>
     </Compile>
