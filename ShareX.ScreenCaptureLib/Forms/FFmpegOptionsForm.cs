@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -513,7 +513,7 @@ namespace ShareX.ScreenCaptureLib
                         ProcessStartInfo psi = new ProcessStartInfo()
                         {
                             FileName = "cmd.exe",
-                            WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.FFmpegPath),
+                            WorkingDirectory = Path.GetTempPath(),
                             Arguments = $"/k {Path.GetFileName(Options.FFmpeg.FFmpegPath)} {Options.GetFFmpegCommands()}",
                             UseShellExecute = true
                         };

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -142,6 +142,11 @@ namespace ShareX.HelpersLib
         public static Point Add(this Point point, Point offset)
         {
             return new Point(point.X + offset.X, point.Y + offset.Y);
+        }
+
+        public static Point Add(this Point point, int offset)
+        {
+            return point.Add(offset, offset);
         }
 
         public static PointF Add(this PointF point, float offsetX, float offsetY)
@@ -415,11 +420,11 @@ namespace ShareX.HelpersLib
 
                 if (form.WindowState == FormWindowState.Minimized)
                 {
-                    form.WindowState = FormWindowState.Normal;
+                    NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.Restore);
                 }
 
-                form.BringToFront();
                 form.Activate();
+                form.BringToFront();
             }
         }
 

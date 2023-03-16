@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -53,9 +53,11 @@ namespace ShareX.MediaLib
             txtInputFilePath.Text = Options.InputFilePath;
             txtOutputFolder.Text = Options.OutputFolderPath;
             txtOutputFileName.Text = Options.OutputFileName;
-            cbVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<ConverterVideoCodecs>());
-            cbVideoCodec.SelectedIndex = (int)Options.VideoCodec;
+            cbVideoEncoder.Items.AddRange(Helpers.GetEnumDescriptions<ConverterVideoCodecs>());
+            cbVideoEncoder.SelectedIndex = (int)Options.VideoCodec;
+            cbVideoQualityUseBitrate.Checked = Options.VideoQualityUseBitrate;
             tbVideoQuality.SetValue(tbVideoQuality.Minimum + tbVideoQuality.Maximum - Options.VideoQuality);
+            nudVideoQualityBitrate.SetValue(Options.VideoQualityBitrate);
 
             cbAutoOpenFolder.Checked = Options.AutoOpenFolder;
 
@@ -76,8 +78,11 @@ namespace ShareX.MediaLib
                 Options.InputFilePath = txtInputFilePath.Text;
                 Options.OutputFolderPath = txtOutputFolder.Text;
                 Options.OutputFileName = txtOutputFileName.Text;
-                Options.VideoCodec = (ConverterVideoCodecs)cbVideoCodec.SelectedIndex;
+                Options.VideoCodec = (ConverterVideoCodecs)cbVideoEncoder.SelectedIndex;
+                Options.VideoQualityUseBitrate = cbVideoQualityUseBitrate.Checked;
+                Options.VideoQualityBitrate = (int)nudVideoQualityBitrate.Value;
                 Options.UseCustomArguments = cbUseCustomArguments.Checked;
+
                 if (Options.UseCustomArguments)
                 {
                     Options.CustomArguments = txtArguments.Text;
@@ -91,12 +96,13 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:
                 case ConverterVideoCodecs.xvid:
-                    lblVideoQuality.Visible = tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible =
-                        lblVideoQualityHigher.Visible = !Options.UseCustomArguments;
+                    cbVideoQualityUseBitrate.Visible = true;
+                    tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible = !Options.VideoQualityUseBitrate;
+                    nudVideoQualityBitrate.Visible = lblVideoQualityBitrateHint.Visible = Options.VideoQualityUseBitrate;
                     break;
                 default:
-                    lblVideoQuality.Visible = tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible =
-                        lblVideoQualityHigher.Visible = false;
+                    cbVideoQualityUseBitrate.Visible = tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible =
+                        lblVideoQualityHigher.Visible = nudVideoQualityBitrate.Visible = lblVideoQualityBitrateHint.Visible = false;
                     break;
             }
 
@@ -124,8 +130,8 @@ namespace ShareX.MediaLib
                     break;
             }
 
-            lblVideoQualityLower.Text = tbVideoQuality.Maximum + "   <- " + Resources.LowerQualitySize;
-            lblVideoQualityHigher.Text = Resources.HigherQualitySize + " ->   " + tbVideoQuality.Minimum;
+            lblVideoQualityLower.Text = tbVideoQuality.Maximum + "   ← " + Resources.LowerQualitySize;
+            lblVideoQualityHigher.Text = Resources.HigherQualitySize + " →   " + tbVideoQuality.Minimum;
 
             if (formReady)
             {
@@ -146,8 +152,7 @@ namespace ShareX.MediaLib
                 }
             }
 
-            lblVideoCodec.Visible = cbVideoCodec.Visible = !Options.UseCustomArguments;
-            txtArguments.Visible = Options.UseCustomArguments;
+            txtArguments.Enabled = Options.UseCustomArguments;
 
             btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
                 !string.IsNullOrEmpty(Options.OutputFileName);
@@ -247,12 +252,22 @@ namespace ShareX.MediaLib
             UpdateOptions();
         }
 
-        private void cbVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbVideoEncoder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateOptions();
+        }
+
+        private void cbVideoQualityUseBitrate_CheckedChanged(object sender, EventArgs e)
         {
             UpdateOptions();
         }
 
         private void tbVideoQuality_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateOptions();
+        }
+
+        private void nudVideoQualityBitrate_ValueChanged(object sender, EventArgs e)
         {
             UpdateOptions();
         }

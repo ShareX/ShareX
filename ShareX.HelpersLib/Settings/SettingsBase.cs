@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,7 +32,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -86,7 +85,7 @@ namespace ShareX.HelpersLib
         public bool Save(string filePath)
         {
             FilePath = filePath;
-            ApplicationVersion = Application.ProductVersion;
+            ApplicationVersion = Helpers.GetApplicationVersion();
 
             bool result = SaveInternal(FilePath);
 
@@ -112,7 +111,7 @@ namespace ShareX.HelpersLib
 
         public MemoryStream SaveToMemoryStream(bool supportDPAPIEncryption = false)
         {
-            ApplicationVersion = Application.ProductVersion;
+            ApplicationVersion = Helpers.GetApplicationVersion();
 
             MemoryStream ms = new MemoryStream();
             SaveToStream(ms, supportDPAPIEncryption, true);

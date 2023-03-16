@@ -37,19 +37,23 @@
             this.btnOutputFolderBrowse = new System.Windows.Forms.Button();
             this.lblOutputFileName = new System.Windows.Forms.Label();
             this.txtOutputFileName = new System.Windows.Forms.TextBox();
-            this.lblVideoCodec = new System.Windows.Forms.Label();
-            this.cbVideoCodec = new System.Windows.Forms.ComboBox();
+            this.cbVideoEncoder = new System.Windows.Forms.ComboBox();
             this.lblVideoQuality = new System.Windows.Forms.Label();
             this.btnEncode = new System.Windows.Forms.Button();
             this.txtArguments = new System.Windows.Forms.TextBox();
+            this.cbAutoOpenFolder = new System.Windows.Forms.CheckBox();
+            this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
+            this.cbUseCustomArguments = new System.Windows.Forms.CheckBox();
+            this.lblVideoEncoder = new System.Windows.Forms.Label();
             this.tbVideoQuality = new System.Windows.Forms.TrackBar();
             this.lblVideoQualityValue = new System.Windows.Forms.Label();
             this.lblVideoQualityHigher = new System.Windows.Forms.Label();
             this.lblVideoQualityLower = new System.Windows.Forms.Label();
-            this.cbAutoOpenFolder = new System.Windows.Forms.CheckBox();
-            this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
-            this.cbUseCustomArguments = new System.Windows.Forms.CheckBox();
+            this.nudVideoQualityBitrate = new System.Windows.Forms.NumericUpDown();
+            this.lblVideoQualityBitrateHint = new System.Windows.Forms.Label();
+            this.cbVideoQualityUseBitrate = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVideoQualityBitrate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInputFilePath
@@ -99,18 +103,13 @@
             this.txtOutputFileName.Name = "txtOutputFileName";
             this.txtOutputFileName.TextChanged += new System.EventHandler(this.txtOutputFileName_TextChanged);
             // 
-            // lblVideoCodec
+            // cbVideoEncoder
             // 
-            resources.ApplyResources(this.lblVideoCodec, "lblVideoCodec");
-            this.lblVideoCodec.Name = "lblVideoCodec";
-            // 
-            // cbVideoCodec
-            // 
-            this.cbVideoCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVideoCodec.FormattingEnabled = true;
-            resources.ApplyResources(this.cbVideoCodec, "cbVideoCodec");
-            this.cbVideoCodec.Name = "cbVideoCodec";
-            this.cbVideoCodec.SelectedIndexChanged += new System.EventHandler(this.cbVideoCodec_SelectedIndexChanged);
+            this.cbVideoEncoder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVideoEncoder.FormattingEnabled = true;
+            resources.ApplyResources(this.cbVideoEncoder, "cbVideoEncoder");
+            this.cbVideoEncoder.Name = "cbVideoEncoder";
+            this.cbVideoEncoder.SelectedIndexChanged += new System.EventHandler(this.cbVideoEncoder_SelectedIndexChanged);
             // 
             // lblVideoQuality
             // 
@@ -129,6 +128,32 @@
             resources.ApplyResources(this.txtArguments, "txtArguments");
             this.txtArguments.Name = "txtArguments";
             this.txtArguments.TextChanged += new System.EventHandler(this.txtArguments_TextChanged);
+            // 
+            // cbAutoOpenFolder
+            // 
+            resources.ApplyResources(this.cbAutoOpenFolder, "cbAutoOpenFolder");
+            this.cbAutoOpenFolder.Name = "cbAutoOpenFolder";
+            this.cbAutoOpenFolder.UseVisualStyleBackColor = true;
+            this.cbAutoOpenFolder.CheckedChanged += new System.EventHandler(this.cbAutoOpenFolder_CheckedChanged);
+            // 
+            // pbProgress
+            // 
+            resources.ApplyResources(this.pbProgress, "pbProgress");
+            this.pbProgress.ForeColor = System.Drawing.Color.White;
+            this.pbProgress.Name = "pbProgress";
+            this.pbProgress.ShowPercentageText = true;
+            // 
+            // cbUseCustomArguments
+            // 
+            resources.ApplyResources(this.cbUseCustomArguments, "cbUseCustomArguments");
+            this.cbUseCustomArguments.Name = "cbUseCustomArguments";
+            this.cbUseCustomArguments.UseVisualStyleBackColor = true;
+            this.cbUseCustomArguments.CheckedChanged += new System.EventHandler(this.cbUseCustomArguments_CheckedChanged);
+            // 
+            // lblVideoEncoder
+            // 
+            resources.ApplyResources(this.lblVideoEncoder, "lblVideoEncoder");
+            this.lblVideoEncoder.Name = "lblVideoEncoder";
             // 
             // tbVideoQuality
             // 
@@ -153,26 +178,38 @@
             resources.ApplyResources(this.lblVideoQualityLower, "lblVideoQualityLower");
             this.lblVideoQualityLower.Name = "lblVideoQualityLower";
             // 
-            // cbAutoOpenFolder
+            // nudVideoQualityBitrate
             // 
-            resources.ApplyResources(this.cbAutoOpenFolder, "cbAutoOpenFolder");
-            this.cbAutoOpenFolder.Name = "cbAutoOpenFolder";
-            this.cbAutoOpenFolder.UseVisualStyleBackColor = true;
-            this.cbAutoOpenFolder.CheckedChanged += new System.EventHandler(this.cbAutoOpenFolder_CheckedChanged);
+            resources.ApplyResources(this.nudVideoQualityBitrate, "nudVideoQualityBitrate");
+            this.nudVideoQualityBitrate.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudVideoQualityBitrate.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudVideoQualityBitrate.Name = "nudVideoQualityBitrate";
+            this.nudVideoQualityBitrate.Value = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.nudVideoQualityBitrate.ValueChanged += new System.EventHandler(this.nudVideoQualityBitrate_ValueChanged);
             // 
-            // pbProgress
+            // lblVideoQualityBitrateHint
             // 
-            resources.ApplyResources(this.pbProgress, "pbProgress");
-            this.pbProgress.ForeColor = System.Drawing.Color.White;
-            this.pbProgress.Name = "pbProgress";
-            this.pbProgress.ShowPercentageText = true;
+            resources.ApplyResources(this.lblVideoQualityBitrateHint, "lblVideoQualityBitrateHint");
+            this.lblVideoQualityBitrateHint.Name = "lblVideoQualityBitrateHint";
             // 
-            // cbUseCustomArguments
+            // cbVideoQualityUseBitrate
             // 
-            resources.ApplyResources(this.cbUseCustomArguments, "cbUseCustomArguments");
-            this.cbUseCustomArguments.Name = "cbUseCustomArguments";
-            this.cbUseCustomArguments.UseVisualStyleBackColor = true;
-            this.cbUseCustomArguments.CheckedChanged += new System.EventHandler(this.cbUseCustomArguments_CheckedChanged);
+            resources.ApplyResources(this.cbVideoQualityUseBitrate, "cbVideoQualityUseBitrate");
+            this.cbVideoQualityUseBitrate.Name = "cbVideoQualityUseBitrate";
+            this.cbVideoQualityUseBitrate.UseVisualStyleBackColor = true;
+            this.cbVideoQualityUseBitrate.CheckedChanged += new System.EventHandler(this.cbVideoQualityUseBitrate_CheckedChanged);
             // 
             // VideoConverterForm
             // 
@@ -180,6 +217,10 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.cbVideoQualityUseBitrate);
+            this.Controls.Add(this.lblVideoQualityBitrateHint);
+            this.Controls.Add(this.nudVideoQualityBitrate);
+            this.Controls.Add(this.lblVideoEncoder);
             this.Controls.Add(this.lblVideoQualityValue);
             this.Controls.Add(this.cbUseCustomArguments);
             this.Controls.Add(this.cbAutoOpenFolder);
@@ -187,10 +228,9 @@
             this.Controls.Add(this.lblVideoQualityLower);
             this.Controls.Add(this.txtOutputFileName);
             this.Controls.Add(this.lblOutputFileName);
-            this.Controls.Add(this.lblVideoCodec);
             this.Controls.Add(this.tbVideoQuality);
             this.Controls.Add(this.btnOutputFolderBrowse);
-            this.Controls.Add(this.cbVideoCodec);
+            this.Controls.Add(this.cbVideoEncoder);
             this.Controls.Add(this.lblOutputFolder);
             this.Controls.Add(this.lblVideoQuality);
             this.Controls.Add(this.txtOutputFolder);
@@ -207,6 +247,7 @@
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.VideoConverterForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.VideoConverterForm_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVideoQualityBitrate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,17 +263,20 @@
         private System.Windows.Forms.Button btnOutputFolderBrowse;
         private System.Windows.Forms.Label lblOutputFileName;
         private System.Windows.Forms.TextBox txtOutputFileName;
-        private System.Windows.Forms.Label lblVideoCodec;
-        private System.Windows.Forms.ComboBox cbVideoCodec;
+        private System.Windows.Forms.ComboBox cbVideoEncoder;
         private System.Windows.Forms.Label lblVideoQuality;
         private System.Windows.Forms.Button btnEncode;
         private System.Windows.Forms.TextBox txtArguments;
+        private HelpersLib.BlackStyleProgressBar pbProgress;
+        private System.Windows.Forms.CheckBox cbAutoOpenFolder;
+        private System.Windows.Forms.CheckBox cbUseCustomArguments;
+        private System.Windows.Forms.Label lblVideoEncoder;
         private System.Windows.Forms.TrackBar tbVideoQuality;
         private System.Windows.Forms.Label lblVideoQualityValue;
         private System.Windows.Forms.Label lblVideoQualityHigher;
         private System.Windows.Forms.Label lblVideoQualityLower;
-        private HelpersLib.BlackStyleProgressBar pbProgress;
-        private System.Windows.Forms.CheckBox cbAutoOpenFolder;
-        private System.Windows.Forms.CheckBox cbUseCustomArguments;
+        private System.Windows.Forms.NumericUpDown nudVideoQualityBitrate;
+        private System.Windows.Forms.Label lblVideoQualityBitrateHint;
+        private System.Windows.Forms.CheckBox cbVideoQualityUseBitrate;
     }
 }

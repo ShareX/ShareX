@@ -159,4 +159,7 @@
   <data name="rbOrientationVertical.Text" xml:space="preserve">
     <value>Pionowy</value>
   </data>
+  <data name="lblWrapAfterImages.Text" xml:space="preserve">
+    <value>obrazy</value>
+  </data>
 </root>

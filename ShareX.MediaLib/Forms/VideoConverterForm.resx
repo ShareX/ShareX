@@ -144,13 +144,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblInputFilePath.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="txtInputFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 12</value>
+    <value>160, 12</value>
   </data>
   <data name="txtInputFilePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 20</value>
+    <value>344, 20</value>
   </data>
   <data name="txtInputFilePath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -165,7 +165,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtInputFilePath.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
   <data name="btnInputFilePathBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 11</value>
@@ -178,7 +178,6 @@
   </data>
   <data name="btnInputFilePathBrowse.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnInputFilePathBrowse.Name" xml:space="preserve">
     <value>btnInputFilePathBrowse</value>
@@ -190,13 +189,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnInputFilePathBrowse.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="txtOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 36</value>
+    <value>160, 36</value>
   </data>
   <data name="txtOutputFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 20</value>
+    <value>344, 20</value>
   </data>
   <data name="txtOutputFolder.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -211,7 +210,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtOutputFolder.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="lblOutputFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -238,7 +237,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOutputFolder.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="btnOutputFolderBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 35</value>
@@ -251,7 +250,6 @@
   </data>
   <data name="btnOutputFolderBrowse.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnOutputFolderBrowse.Name" xml:space="preserve">
     <value>btnOutputFolderBrowse</value>
@@ -263,7 +261,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOutputFolderBrowse.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="lblOutputFileName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -290,13 +288,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOutputFileName.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="txtOutputFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 60</value>
+    <value>160, 60</value>
   </data>
   <data name="txtOutputFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 20</value>
+    <value>344, 20</value>
   </data>
   <data name="txtOutputFileName.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -311,61 +309,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtOutputFileName.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblVideoCodec.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblVideoCodec.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 96</value>
-  </data>
-  <data name="lblVideoCodec.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
-  </data>
-  <data name="lblVideoCodec.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblVideoCodec.Text" xml:space="preserve">
-    <value>Video codec:</value>
-  </data>
-  <data name="&gt;&gt;lblVideoCodec.Name" xml:space="preserve">
-    <value>lblVideoCodec</value>
-  </data>
-  <data name="&gt;&gt;lblVideoCodec.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblVideoCodec.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblVideoCodec.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="cbVideoCodec.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 92</value>
-  </data>
-  <data name="cbVideoCodec.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
-  </data>
-  <data name="cbVideoCodec.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;cbVideoCodec.Name" xml:space="preserve">
-    <value>cbVideoCodec</value>
+  <data name="cbVideoEncoder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 84</value>
   </data>
-  <data name="&gt;&gt;cbVideoCodec.Type" xml:space="preserve">
+  <data name="cbVideoEncoder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 21</value>
+  </data>
+  <data name="cbVideoEncoder.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;cbVideoEncoder.Name" xml:space="preserve">
+    <value>cbVideoEncoder</value>
+  </data>
+  <data name="&gt;&gt;cbVideoEncoder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbVideoCodec.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbVideoEncoder.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cbVideoCodec.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;cbVideoEncoder.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="lblVideoQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblVideoQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 128</value>
+    <value>13, 112</value>
   </data>
   <data name="lblVideoQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -386,19 +357,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblVideoQuality.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="btnEncode.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="btnEncode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 232</value>
+    <value>16, 296</value>
   </data>
   <data name="btnEncode.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 32</value>
   </data>
   <data name="btnEncode.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>21</value>
   </data>
   <data name="btnEncode.Text" xml:space="preserve">
     <value>Start encoding</value>
@@ -413,22 +384,26 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEncode.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>20</value>
   </data>
   <data name="txtArguments.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 9.75pt</value>
   </data>
   <data name="txtArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 184</value>
   </data>
   <data name="txtArguments.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtArguments.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
   <data name="txtArguments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>526, 80</value>
+    <value>528, 72</value>
   </data>
   <data name="txtArguments.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;txtArguments.Name" xml:space="preserve">
     <value>txtArguments</value>
@@ -440,124 +415,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtArguments.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="tbVideoQuality.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tbVideoQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 123</value>
-  </data>
-  <data name="tbVideoQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 22</value>
-  </data>
-  <data name="tbVideoQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;tbVideoQuality.Name" xml:space="preserve">
-    <value>tbVideoQuality</value>
-  </data>
-  <data name="&gt;&gt;tbVideoQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbVideoQuality.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tbVideoQuality.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="lblVideoQualityValue.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblVideoQualityValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>515, 126</value>
-  </data>
-  <data name="lblVideoQualityValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="lblVideoQualityValue.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="lblVideoQualityValue.Text" xml:space="preserve">
-    <value>0</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityValue.Name" xml:space="preserve">
-    <value>lblVideoQualityValue</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityValue.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityValue.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblVideoQualityHigher.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 146</value>
-  </data>
-  <data name="lblVideoQualityHigher.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 22</value>
-  </data>
-  <data name="lblVideoQualityHigher.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="lblVideoQualityHigher.Text" xml:space="preserve">
-    <value>Xxxxxxxxxxxxxxxxxxxxxxxxxxxx -&gt;   99</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="lblVideoQualityHigher.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityHigher.Name" xml:space="preserve">
-    <value>lblVideoQualityHigher</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityHigher.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityHigher.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityHigher.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblVideoQualityLower.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 146</value>
-  </data>
-  <data name="lblVideoQualityLower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
-  <data name="lblVideoQualityLower.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="lblVideoQualityLower.Text" xml:space="preserve">
-    <value>99   &lt;- Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</value>
-    <comment>@Invariant</comment>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityLower.Name" xml:space="preserve">
-    <value>lblVideoQualityLower</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityLower.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityLower.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblVideoQualityLower.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>22</value>
   </data>
   <data name="cbAutoOpenFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbAutoOpenFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 200</value>
+    <value>16, 264</value>
   </data>
   <data name="cbAutoOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 17</value>
   </data>
   <data name="cbAutoOpenFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>20</value>
   </data>
   <data name="cbAutoOpenFolder.Text" xml:space="preserve">
     <value>Open folder after encoding</value>
@@ -572,21 +442,20 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAutoOpenFolder.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="pbProgress.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 11.25pt</value>
   </data>
   <data name="pbProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 232</value>
+    <value>208, 296</value>
   </data>
   <data name="pbProgress.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 32</value>
   </data>
   <data name="pbProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>22</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pbProgress.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
@@ -594,28 +463,28 @@
     <value>pbProgress</value>
   </data>
   <data name="&gt;&gt;pbProgress.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=14.1.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbProgress.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbProgress.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>21</value>
   </data>
   <data name="cbUseCustomArguments.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbUseCustomArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 176</value>
+    <value>16, 160</value>
   </data>
   <data name="cbUseCustomArguments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
+    <value>137, 17</value>
   </data>
   <data name="cbUseCustomArguments.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="cbUseCustomArguments.Text" xml:space="preserve">
-    <value>Use custom arguments</value>
+    <value>Use custom arguments:</value>
   </data>
   <data name="&gt;&gt;cbUseCustomArguments.Name" xml:space="preserve">
     <value>cbUseCustomArguments</value>
@@ -627,7 +496,226 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbUseCustomArguments.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblVideoEncoder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVideoEncoder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 88</value>
+  </data>
+  <data name="lblVideoEncoder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="lblVideoEncoder.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Video encoder:</value>
+  </data>
+  <data name="&gt;&gt;lblVideoEncoder.Name" xml:space="preserve">
+    <value>lblVideoEncoder</value>
+  </data>
+  <data name="&gt;&gt;lblVideoEncoder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVideoEncoder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblVideoEncoder.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbVideoQuality.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tbVideoQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbVideoQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 112</value>
+  </data>
+  <data name="tbVideoQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 24</value>
+  </data>
+  <data name="tbVideoQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;tbVideoQuality.Name" xml:space="preserve">
+    <value>tbVideoQuality</value>
+  </data>
+  <data name="&gt;&gt;tbVideoQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbVideoQuality.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbVideoQuality.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lblVideoQualityValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVideoQualityValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblVideoQualityValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>512, 116</value>
+  </data>
+  <data name="lblVideoQualityValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="lblVideoQualityValue.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblVideoQualityValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityValue.Name" xml:space="preserve">
+    <value>lblVideoQualityValue</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityValue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityValue.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblVideoQualityHigher.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblVideoQualityHigher.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 137</value>
+  </data>
+  <data name="lblVideoQualityHigher.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 18</value>
+  </data>
+  <data name="lblVideoQualityHigher.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblVideoQualityHigher.Text" xml:space="preserve">
+    <value>xxxxxxxxxxxxxxxxxxxxxxxxxxxx -&gt;   99</value>
+  </data>
+  <data name="lblVideoQualityHigher.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityHigher.Name" xml:space="preserve">
+    <value>lblVideoQualityHigher</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityHigher.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityHigher.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityHigher.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblVideoQualityLower.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblVideoQualityLower.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 137</value>
+  </data>
+  <data name="lblVideoQualityLower.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 18</value>
+  </data>
+  <data name="lblVideoQualityLower.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblVideoQualityLower.Text" xml:space="preserve">
+    <value>99   &lt;- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityLower.Name" xml:space="preserve">
+    <value>lblVideoQualityLower</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityLower.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityLower.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityLower.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="nudVideoQualityBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 112</value>
+  </data>
+  <data name="nudVideoQualityBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="nudVideoQualityBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="nudVideoQualityBitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudVideoQualityBitrate.Name" xml:space="preserve">
+    <value>nudVideoQualityBitrate</value>
+  </data>
+  <data name="&gt;&gt;nudVideoQualityBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudVideoQualityBitrate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudVideoQualityBitrate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblVideoQualityBitrateHint.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVideoQualityBitrateHint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>245, 116</value>
+  </data>
+  <data name="lblVideoQualityBitrateHint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblVideoQualityBitrateHint.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblVideoQualityBitrateHint.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityBitrateHint.Name" xml:space="preserve">
+    <value>lblVideoQualityBitrateHint</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityBitrateHint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityBitrateHint.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblVideoQualityBitrateHint.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 136</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 17</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.Text" xml:space="preserve">
+    <value>Use bitrate</value>
+  </data>
+  <data name="&gt;&gt;cbVideoQualityUseBitrate.Name" xml:space="preserve">
+    <value>cbVideoQualityUseBitrate</value>
+  </data>
+  <data name="&gt;&gt;cbVideoQualityUseBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbVideoQualityUseBitrate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbVideoQualityUseBitrate.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -636,7 +724,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>558, 278</value>
+    <value>558, 344</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

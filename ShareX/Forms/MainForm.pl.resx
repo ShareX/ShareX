@@ -409,10 +409,10 @@
     <value>Generator miniatur obrazów...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>Ustawienia skrótu...</value>
+    <value>Ustawienia skrótów...</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
-    <value>Ustawienia skrótu...</value>
+    <value>Ustawienia skrótów...</value>
   </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>Plik</value>
@@ -499,7 +499,7 @@
     <value>Folder zrzutów ekranu...</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>Ustawienia zdań...</value>
+    <value>Ustawienia zadań...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>Zadania po przechwyceniu</value>

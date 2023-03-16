@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,6 +32,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Cache;
+using System.Net.Sockets;
 using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -651,6 +652,21 @@ namespace ShareX.HelpersLib
             }
 
             return response;
+        }
+
+        public static int GetRandomUnusedPort()
+        {
+            TcpListener listener = new TcpListener(IPAddress.Loopback, 0);
+
+            try
+            {
+                listener.Start();
+                return ((IPEndPoint)listener.LocalEndpoint).Port;
+            }
+            finally
+            {
+                listener.Stop();
+            }
         }
     }
 }

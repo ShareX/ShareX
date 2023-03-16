@@ -188,7 +188,7 @@ Pastas criadas:</value>
     <value>Procurar por um arquivo de chave...</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Local do álbum pai, por exemplo.</value>
+    <value>Caminho do álbum pai, por exemplo:</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Consultando pastas...</value>
@@ -246,5 +246,38 @@ Pastas criadas:</value>
   </data>
   <data name="LoggedInAs0" xml:space="preserve">
     <value>Conectado como {0}.</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>URL de exclusão</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>A formatação falhou.</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>A formatação falhou.</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Cabeçalhos</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>Texto de resposta</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>URL de resposta</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>URL encurtado</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Código de status</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>URL da miniatura</value>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Conferir hash</value>
+    <value>ShareX - Conferir hash</value>
   </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>Procurar...</value>
@@ -185,5 +185,11 @@
   </data>
   <data name="lblFilePath2.Text" xml:space="preserve">
     <value>Caminho de arquivo:</value>
+  </data>
+  <data name="lblProgressPercentage.Text" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="lblHashCheckASCII.Text" xml:space="preserve">
+    <value>ASCII:</value>
   </data>
 </root>

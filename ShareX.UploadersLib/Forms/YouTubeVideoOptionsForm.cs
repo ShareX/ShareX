@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -49,12 +50,12 @@ namespace ShareX.UploadersLib
             cbVisibility.SelectedIndex = (int)Visibility;
         }
 
-        private void YouTubeVideoOptionsForm_Shown(object sender, System.EventArgs e)
+        private void YouTubeVideoOptionsForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
         }
 
-        private void btnOK_Click(object sender, System.EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
             Title = txtTitle.Text;
             Description = txtDescription.Text;
@@ -64,7 +65,7 @@ namespace ShareX.UploadersLib
             Close();
         }
 
-        private void btnCancel_Click(object sender, System.EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();

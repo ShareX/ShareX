@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -277,6 +277,17 @@ namespace ShareX.HelpersLib
             return sb.ToString();
         }
 
+        public static string GetApplicationVersion(bool includeRevision = false)
+        {
+            Version version = Version.Parse(Application.ProductVersion);
+            string result = $"{version.Major}.{version.Minor}.{version.Build}";
+            if (includeRevision)
+            {
+                result = $"{result}.{version.Revision}";
+            }
+            return result;
+        }
+
         /// <summary>
         /// If version1 newer than version2 = 1
         /// If version1 equal to version2 = 0
@@ -302,9 +313,9 @@ namespace ShareX.HelpersLib
         /// If version equal to ApplicationVersion = 0
         /// If version older than ApplicationVersion = -1
         /// </summary>
-        public static int CompareApplicationVersion(string version)
+        public static int CompareApplicationVersion(string version, bool includeRevision = false)
         {
-            return CompareVersion(version, Application.ProductVersion);
+            return CompareVersion(version, GetApplicationVersion(includeRevision));
         }
 
         public static Version NormalizeVersion(string version)
@@ -462,6 +473,18 @@ namespace ShareX.HelpersLib
         public static Point GetPosition(ContentAlignment placement, int offset, Size backgroundSize, Size objectSize)
         {
             return GetPosition(placement, new Point(offset, offset), backgroundSize, objectSize);
+        }
+
+        public static Point GetPosition(ContentAlignment placement, int offset, Rectangle background, Size objectSize)
+        {
+            return GetPosition(placement, new Point(offset, offset), background, objectSize);
+        }
+
+        public static Point GetPosition(ContentAlignment placement, Point offset, Rectangle background, Size objectSize)
+        {
+            Point position = GetPosition(placement, offset, background.Size, objectSize);
+
+            return new Point(background.X + position.X, background.Y + position.Y);
         }
 
         public static Point GetPosition(ContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)

@@ -120,4 +120,12 @@
   <data name="lblError.Text" xml:space="preserve">
     <value>Ошибка</value>
   </data>
+  <data name="lblCombineHorizontal.Text" xml:space="preserve">
+    <value>Объединить изображения
+(Горизонтально)</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Объединить изображения
+(Вертикально)</value>
+  </data>
 </root>

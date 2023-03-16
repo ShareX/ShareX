@@ -124,7 +124,7 @@
     <value>Iniciar</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>Selecionar região</value>
+    <value>Selecionar região...</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
     <value>Minimizar automaticamente para a bandeja</value>
@@ -136,7 +136,7 @@
     <value>Região</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
-    <value>Tempo de repetição</value>
+    <value>Tempo de repetição:</value>
   </data>
   <data name="lblDurationSeconds.Text" xml:space="preserve">
     <value>segundos</value>

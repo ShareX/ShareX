@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -48,11 +48,11 @@ namespace ShareX.Setup
             CreateChecksumFile = 1 << 8,
             OpenOutputDirectory = 1 << 9,
 
-            Release = CreateSetup | CreatePortable | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
-            Debug = CreateDebug | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
-            Steam = CreateSteamFolder | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
-            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory,
-            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadFFmpeg | CreateChecksumFile | OpenOutputDirectory
+            Release = CreateSetup | CreatePortable | DownloadFFmpeg | OpenOutputDirectory,
+            Debug = CreateDebug | DownloadFFmpeg | OpenOutputDirectory,
+            Steam = CreateSteamFolder | DownloadFFmpeg | OpenOutputDirectory,
+            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadFFmpeg | OpenOutputDirectory,
+            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadFFmpeg | OpenOutputDirectory
         }
 
         private static SetupJobs Job { get; set; } = SetupJobs.Release;
@@ -75,6 +75,7 @@ namespace ShareX.Setup
         private static string DebugOutputDir => Path.Combine(OutputDir, "ShareX-debug");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
         private static string MicrosoftStoreOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore");
+        private static string MicrosoftStoreDebugOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore-debug");
 
         private static string SetupDir => Path.Combine(ParentDir, "ShareX.Setup");
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
@@ -87,6 +88,7 @@ namespace ShareX.Setup
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
+        private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
         private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
@@ -123,31 +125,42 @@ namespace ShareX.Setup
             if (Job.HasFlag(SetupJobs.CreatePortable))
             {
                 CreateFolder(BinDir, PortableOutputDir, SetupJobs.CreatePortable);
+
+                CreateZipFile(PortableOutputDir, PortableZipPath);
             }
 
             if (Job.HasFlag(SetupJobs.CreateDebug))
             {
                 CreateFolder(BinDir, DebugOutputDir, SetupJobs.CreateDebug);
+
+                CreateZipFile(DebugOutputDir, DebugZipPath);
             }
 
             if (Job.HasFlag(SetupJobs.CreateSteamFolder))
             {
                 CreateSteamFolder();
+
+                CreateZipFile(SteamOutputDir, SteamZipPath);
             }
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
             {
                 CreateFolder(BinDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreFolder);
+
+                if (Job.HasFlag(SetupJobs.CompileAppx))
+                {
+                    CompileAppx(MicrosoftStoreOutputDir, MicrosoftStoreAppxPath);
+                }
             }
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
             {
-                CreateFolder(BinDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
-            }
+                CreateFolder(BinDir, MicrosoftStoreDebugOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
 
-            if (Job.HasFlag(SetupJobs.CompileAppx))
-            {
-                CompileAppx();
+                if (Job.HasFlag(SetupJobs.CompileAppx))
+                {
+                    CompileAppx(MicrosoftStoreDebugOutputDir, MicrosoftStoreDebugAppxPath);
+                }
             }
 
             if (AppVeyor)
@@ -239,7 +252,7 @@ namespace ShareX.Setup
             Console.WriteLine("Configuration: " + Configuration);
 
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ExecutablePath);
-            AppVersion = $"{versionInfo.ProductMajorPart}.{versionInfo.ProductMinorPart}.{versionInfo.ProductBuildPart}";
+            AppVersion = versionInfo.ProductVersion;
 
             Console.WriteLine("Application version: " + AppVersion);
 
@@ -291,16 +304,16 @@ namespace ShareX.Setup
             }
         }
 
-        private static void CompileAppx()
+        private static void CompileAppx(string contentDirectory, string outputPackageName)
         {
-            Console.WriteLine("Compiling appx file: " + MicrosoftStoreAppxPath);
+            Console.WriteLine("Compiling appx file: " + contentDirectory);
 
             using (Process process = new Process())
             {
                 ProcessStartInfo psi = new ProcessStartInfo()
                 {
                     FileName = MakeAppxPath,
-                    Arguments = $"pack /d \"{MicrosoftStoreOutputDir}\" /p \"{MicrosoftStoreAppxPath}\" /l /o",
+                    Arguments = $"pack /d \"{contentDirectory}\" /p \"{outputPackageName}\" /l /o",
                     UseShellExecute = false
                 };
 
@@ -309,9 +322,9 @@ namespace ShareX.Setup
                 process.WaitForExit();
             }
 
-            Console.WriteLine("Appx file compiled: " + MicrosoftStoreAppxPath);
+            Console.WriteLine("Appx file compiled: " + outputPackageName);
 
-            CreateChecksumFile(MicrosoftStoreAppxPath);
+            CreateChecksumFile(outputPackageName);
         }
 
         private static void CreateSteamFolder()
@@ -392,19 +405,6 @@ namespace ShareX.Setup
             }
 
             Console.WriteLine("Folder created: " + destination);
-
-            if (job == SetupJobs.CreatePortable)
-            {
-                CreateZipFile(destination, PortableZipPath);
-            }
-            else if (job == SetupJobs.CreateDebug)
-            {
-                CreateZipFile(destination, DebugZipPath);
-            }
-            else if (job == SetupJobs.CreateSteamFolder)
-            {
-                CreateZipFile(destination, SteamZipPath);
-            }
         }
 
         private static void CreateZipFile(string source, string archivePath)

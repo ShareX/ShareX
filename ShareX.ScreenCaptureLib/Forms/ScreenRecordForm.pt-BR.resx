@@ -132,4 +132,13 @@
   <data name="tsmiStart.Text" xml:space="preserve">
     <value>Iniciar</value>
   </data>
+  <data name="lblTimer.Text" xml:space="preserve">
+    <value>00:00:00</value>
+  </data>
+  <data name="btnPause.Text" xml:space="preserve">
+    <value>Pausar</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
 </root>

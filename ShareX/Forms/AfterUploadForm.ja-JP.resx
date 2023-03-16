@@ -139,7 +139,7 @@
     <value>説明</value>
   </data>
   <data name="chFormat.Text" xml:space="preserve">
-    <value>フォーマット</value>
+    <value>書式</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - アップロード後</value>

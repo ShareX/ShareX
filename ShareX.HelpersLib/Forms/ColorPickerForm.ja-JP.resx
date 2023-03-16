@@ -130,19 +130,19 @@
     <value>最近使った色</value>
   </data>
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
-    <value>画面から色をピックする</value>
+    <value>画面から色を取得</value>
   </data>
   <data name="btnClipboardColorPicker.ToolTip" xml:space="preserve">
-    <value>クリップボードからピックする</value>
+    <value>クリップボードから取得</value>
   </data>
   <data name="tsmiCopyAll.Text" xml:space="preserve">
-    <value>全てコピー</value>
+    <value>すべてコピー</value>
   </data>
   <data name="tsmiCopyRGB.Text" xml:space="preserve">
     <value>RGBの値</value>
   </data>
   <data name="tsmiCopyHexadecimal.Text" xml:space="preserve">
-    <value>Hex（#FFFFFF）</value>
+    <value>16進（#FFFFFF）</value>
   </data>
   <data name="tsmiCopyCMYK.Text" xml:space="preserve">
     <value>CMYKの値</value>
@@ -157,7 +157,7 @@
     <value>カーソルの位置</value>
   </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
-    <value>カーソル位置</value>
+    <value>カーソル位置:</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>閉じる</value>
@@ -212,5 +212,11 @@
   </data>
   <data name="lblOld.Text" xml:space="preserve">
     <value>旧:</value>
+  </data>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>16進 (Hex):</value>
+  </data>
+  <data name="lblKey.Text" xml:space="preserve">
+    <value>キー:</value>
   </data>
 </root>

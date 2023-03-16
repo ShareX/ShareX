@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
 using System;
@@ -239,6 +240,11 @@ namespace ShareX
                 {
                     DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
                 }
+            }
+
+            if (Settings.IsUpgradeFrom("15.0.0"))
+            {
+                DefaultTaskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
             }
         }
 

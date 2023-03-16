@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -38,8 +38,11 @@ namespace ShareX
         public int PlacementOffset { get; set; } = 10;
         public bool TopMost { get; set; } = true;
         public bool KeepCenterLocation { get; set; } = true;
-        public bool ShowShadow { get; set; } = true;
         public Color BackgroundColor { get; set; } = Color.White;
+        public bool Shadow { get; set; } = true;
+        public bool Border { get; set; } = true;
+        public int BorderSize { get; set; } = 2;
+        public Color BorderColor { get; set; } = Color.CornflowerBlue;
         public Size MinimizeSize { get; set; } = new Size(100, 100);
     }
 }

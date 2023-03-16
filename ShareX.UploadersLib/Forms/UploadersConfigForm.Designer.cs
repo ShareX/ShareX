@@ -196,6 +196,7 @@ namespace ShareX.UploadersLib
             this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
+            this.oauth2GoogleDrive = new ShareX.UploadersLib.OAuthLoopbackControl();
             this.cbGoogleDriveSharedDrive = new System.Windows.Forms.ComboBox();
             this.cbGoogleDriveDirectLink = new System.Windows.Forms.CheckBox();
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
@@ -206,7 +207,6 @@ namespace ShareX.UploadersLib
             this.chGoogleDriveDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnGoogleDriveRefreshFolders = new System.Windows.Forms.Button();
             this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
-            this.oauth2GoogleDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpPuush = new System.Windows.Forms.TabPage();
             this.lblPuushAPIKey = new System.Windows.Forms.Label();
             this.txtPuushAPIKey = new System.Windows.Forms.TextBox();
@@ -258,6 +258,7 @@ namespace ShareX.UploadersLib
             this.lblAmazonS3AccessKey = new System.Windows.Forms.Label();
             this.txtAmazonS3AccessKey = new System.Windows.Forms.TextBox();
             this.tpGoogleCloudStorage = new System.Windows.Forms.TabPage();
+            this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthLoopbackControl();
             this.gbGoogleCloudStorageAdvanced = new System.Windows.Forms.GroupBox();
             this.lblGoogleCloudStorageStripExtension = new System.Windows.Forms.Label();
             this.cbGoogleCloudStorageStripExtensionText = new System.Windows.Forms.CheckBox();
@@ -272,7 +273,6 @@ namespace ShareX.UploadersLib
             this.txtGoogleCloudStorageDomain = new System.Windows.Forms.TextBox();
             this.lblGoogleCloudStorageBucket = new System.Windows.Forms.Label();
             this.txtGoogleCloudStorageBucket = new System.Windows.Forms.TextBox();
-            this.oauth2GoogleCloudStorage = new ShareX.UploadersLib.OAuthControl();
             this.tpAzureStorage = new System.Windows.Forms.TabPage();
             this.lblAzureStorageURLPreview = new System.Windows.Forms.Label();
             this.lblAzureStorageURLPreviewLabel = new System.Windows.Forms.Label();
@@ -474,13 +474,13 @@ namespace ShareX.UploadersLib
             this.txtPlikPassword = new System.Windows.Forms.TextBox();
             this.txtPlikLogin = new System.Windows.Forms.TextBox();
             this.tpYouTube = new System.Windows.Forms.TabPage();
+            this.oauth2YouTube = new ShareX.UploadersLib.OAuthLoopbackControl();
             this.llYouTubePermissionsLink = new System.Windows.Forms.LinkLabel();
             this.lblYouTubePermissionsTip = new System.Windows.Forms.Label();
             this.cbYouTubeShowDialog = new System.Windows.Forms.CheckBox();
             this.cbYouTubeUseShortenedLink = new System.Windows.Forms.CheckBox();
             this.cbYouTubePrivacyType = new System.Windows.Forms.ComboBox();
             this.lblYouTubePrivacyType = new System.Windows.Forms.Label();
-            this.oauth2YouTube = new ShareX.UploadersLib.OAuthControl();
             this.tpSharedFolder = new System.Windows.Forms.TabPage();
             this.lbSharedFolderAccounts = new System.Windows.Forms.ListBox();
             this.pgSharedFolderAccount = new System.Windows.Forms.PropertyGrid();
@@ -605,6 +605,7 @@ namespace ShareX.UploadersLib
             this.txtPhotobucketVerificationCode = new System.Windows.Forms.TextBox();
             this.lblPhotobucketAccountStatus = new System.Windows.Forms.Label();
             this.tpGooglePhotos = new System.Windows.Forms.TabPage();
+            this.oauth2GooglePhotos = new ShareX.UploadersLib.OAuthLoopbackControl();
             this.lblGooglePhotosCreateAlbumName = new System.Windows.Forms.Label();
             this.txtGooglePhotosCreateAlbumName = new System.Windows.Forms.TextBox();
             this.btnGooglePhotosCreateAlbum = new System.Windows.Forms.Button();
@@ -616,7 +617,6 @@ namespace ShareX.UploadersLib
             this.chPicasaName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPicasaDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPicasaRefreshAlbumList = new System.Windows.Forms.Button();
-            this.oauth2Picasa = new ShareX.UploadersLib.OAuthControl();
             this.tpChevereto = new System.Windows.Forms.TabPage();
             this.lblCheveretoUploadURLExample = new System.Windows.Forms.Label();
             this.cbCheveretoDirectURL = new System.Windows.Forms.CheckBox();
@@ -1772,6 +1772,7 @@ namespace ShareX.UploadersLib
             // tpGoogleDrive
             // 
             this.tpGoogleDrive.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveSharedDrive);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveDirectLink);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveUseFolder);
@@ -1780,9 +1781,15 @@ namespace ShareX.UploadersLib
             this.tpGoogleDrive.Controls.Add(this.lvGoogleDriveFoldersList);
             this.tpGoogleDrive.Controls.Add(this.btnGoogleDriveRefreshFolders);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveIsPublic);
-            this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
             resources.ApplyResources(this.tpGoogleDrive, "tpGoogleDrive");
             this.tpGoogleDrive.Name = "tpGoogleDrive";
+            // 
+            // oauth2GoogleDrive
+            // 
+            resources.ApplyResources(this.oauth2GoogleDrive, "oauth2GoogleDrive");
+            this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
+            this.oauth2GoogleDrive.ConnectButtonClicked += new System.Action(this.oauth2GoogleDrive_ConnectButtonClicked);
+            this.oauth2GoogleDrive.DisconnectButtonClicked += new System.Action(this.oauth2GoogleDrive_DisconnectButtonClicked);
             // 
             // cbGoogleDriveSharedDrive
             // 
@@ -1853,16 +1860,6 @@ namespace ShareX.UploadersLib
             this.cbGoogleDriveIsPublic.Name = "cbGoogleDriveIsPublic";
             this.cbGoogleDriveIsPublic.UseVisualStyleBackColor = true;
             this.cbGoogleDriveIsPublic.CheckedChanged += new System.EventHandler(this.cbGoogleDriveIsPublic_CheckedChanged);
-            // 
-            // oauth2GoogleDrive
-            // 
-            resources.ApplyResources(this.oauth2GoogleDrive, "oauth2GoogleDrive");
-            this.oauth2GoogleDrive.Name = "oauth2GoogleDrive";
-            this.oauth2GoogleDrive.UserInfo = null;
-            this.oauth2GoogleDrive.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleDrive_OpenButtonClicked);
-            this.oauth2GoogleDrive.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleDrive_CompleteButtonClicked);
-            this.oauth2GoogleDrive.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleDrive_ClearButtonClicked);
-            this.oauth2GoogleDrive.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleDrive_RefreshButtonClicked);
             // 
             // tpPuush
             // 
@@ -2226,6 +2223,7 @@ namespace ShareX.UploadersLib
             // 
             // tpGoogleCloudStorage
             // 
+            this.tpGoogleCloudStorage.Controls.Add(this.oauth2GoogleCloudStorage);
             this.tpGoogleCloudStorage.Controls.Add(this.gbGoogleCloudStorageAdvanced);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreview);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStoragePathPreviewLabel);
@@ -2235,10 +2233,16 @@ namespace ShareX.UploadersLib
             this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageDomain);
             this.tpGoogleCloudStorage.Controls.Add(this.lblGoogleCloudStorageBucket);
             this.tpGoogleCloudStorage.Controls.Add(this.txtGoogleCloudStorageBucket);
-            this.tpGoogleCloudStorage.Controls.Add(this.oauth2GoogleCloudStorage);
             resources.ApplyResources(this.tpGoogleCloudStorage, "tpGoogleCloudStorage");
             this.tpGoogleCloudStorage.Name = "tpGoogleCloudStorage";
             this.tpGoogleCloudStorage.UseVisualStyleBackColor = true;
+            // 
+            // oauth2GoogleCloudStorage
+            // 
+            resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
+            this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
+            this.oauth2GoogleCloudStorage.ConnectButtonClicked += new System.Action(this.oauth2GoogleCloudStorage_ConnectButtonClicked);
+            this.oauth2GoogleCloudStorage.DisconnectButtonClicked += new System.Action(this.oauth2GoogleCloudStorage_DisconnectButtonClicked);
             // 
             // gbGoogleCloudStorageAdvanced
             // 
@@ -2326,16 +2330,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.txtGoogleCloudStorageBucket, "txtGoogleCloudStorageBucket");
             this.txtGoogleCloudStorageBucket.Name = "txtGoogleCloudStorageBucket";
             this.txtGoogleCloudStorageBucket.TextChanged += new System.EventHandler(this.txtGoogleCloudStorageBucket_TextChanged);
-            // 
-            // oauth2GoogleCloudStorage
-            // 
-            resources.ApplyResources(this.oauth2GoogleCloudStorage, "oauth2GoogleCloudStorage");
-            this.oauth2GoogleCloudStorage.Name = "oauth2GoogleCloudStorage";
-            this.oauth2GoogleCloudStorage.UserInfo = null;
-            this.oauth2GoogleCloudStorage.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2GoogleCloudStorage_OpenButtonClicked);
-            this.oauth2GoogleCloudStorage.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2GoogleCloudStorage_CompleteButtonClicked);
-            this.oauth2GoogleCloudStorage.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2GoogleCloudStorage_ClearButtonClicked);
-            this.oauth2GoogleCloudStorage.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2GoogleCloudStorage_RefreshButtonClicked);
             // 
             // tpAzureStorage
             // 
@@ -3802,16 +3796,23 @@ namespace ShareX.UploadersLib
             // 
             // tpYouTube
             // 
+            this.tpYouTube.Controls.Add(this.oauth2YouTube);
             this.tpYouTube.Controls.Add(this.llYouTubePermissionsLink);
             this.tpYouTube.Controls.Add(this.lblYouTubePermissionsTip);
             this.tpYouTube.Controls.Add(this.cbYouTubeShowDialog);
             this.tpYouTube.Controls.Add(this.cbYouTubeUseShortenedLink);
             this.tpYouTube.Controls.Add(this.cbYouTubePrivacyType);
             this.tpYouTube.Controls.Add(this.lblYouTubePrivacyType);
-            this.tpYouTube.Controls.Add(this.oauth2YouTube);
             resources.ApplyResources(this.tpYouTube, "tpYouTube");
             this.tpYouTube.Name = "tpYouTube";
             this.tpYouTube.UseVisualStyleBackColor = true;
+            // 
+            // oauth2YouTube
+            // 
+            resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
+            this.oauth2YouTube.Name = "oauth2YouTube";
+            this.oauth2YouTube.ConnectButtonClicked += new System.Action(this.oauth2YouTube_ConnectButtonClicked);
+            this.oauth2YouTube.DisconnectButtonClicked += new System.Action(this.oauth2YouTube_DisconnectButtonClicked);
             // 
             // llYouTubePermissionsLink
             // 
@@ -3851,16 +3852,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblYouTubePrivacyType, "lblYouTubePrivacyType");
             this.lblYouTubePrivacyType.Name = "lblYouTubePrivacyType";
-            // 
-            // oauth2YouTube
-            // 
-            resources.ApplyResources(this.oauth2YouTube, "oauth2YouTube");
-            this.oauth2YouTube.Name = "oauth2YouTube";
-            this.oauth2YouTube.UserInfo = null;
-            this.oauth2YouTube.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2YouTube_OpenButtonClicked);
-            this.oauth2YouTube.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2YouTube_CompleteButtonClicked);
-            this.oauth2YouTube.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2YouTube_ClearButtonClicked);
-            this.oauth2YouTube.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2YouTube_RefreshButtonClicked);
             // 
             // tpSharedFolder
             // 
@@ -4764,6 +4755,7 @@ namespace ShareX.UploadersLib
             // tpGooglePhotos
             // 
             this.tpGooglePhotos.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGooglePhotos.Controls.Add(this.oauth2GooglePhotos);
             this.tpGooglePhotos.Controls.Add(this.lblGooglePhotosCreateAlbumName);
             this.tpGooglePhotos.Controls.Add(this.txtGooglePhotosCreateAlbumName);
             this.tpGooglePhotos.Controls.Add(this.btnGooglePhotosCreateAlbum);
@@ -4772,9 +4764,15 @@ namespace ShareX.UploadersLib
             this.tpGooglePhotos.Controls.Add(this.lblPicasaAlbumID);
             this.tpGooglePhotos.Controls.Add(this.lvPicasaAlbumList);
             this.tpGooglePhotos.Controls.Add(this.btnPicasaRefreshAlbumList);
-            this.tpGooglePhotos.Controls.Add(this.oauth2Picasa);
             resources.ApplyResources(this.tpGooglePhotos, "tpGooglePhotos");
             this.tpGooglePhotos.Name = "tpGooglePhotos";
+            // 
+            // oauth2GooglePhotos
+            // 
+            resources.ApplyResources(this.oauth2GooglePhotos, "oauth2GooglePhotos");
+            this.oauth2GooglePhotos.Name = "oauth2GooglePhotos";
+            this.oauth2GooglePhotos.ConnectButtonClicked += new System.Action(this.oauth2GooglePhotos_ConnectButtonClicked);
+            this.oauth2GooglePhotos.DisconnectButtonClicked += new System.Action(this.oauth2GooglePhotos_DisconnectButtonClicked);
             // 
             // lblGooglePhotosCreateAlbumName
             // 
@@ -4844,16 +4842,6 @@ namespace ShareX.UploadersLib
             this.btnPicasaRefreshAlbumList.Name = "btnPicasaRefreshAlbumList";
             this.btnPicasaRefreshAlbumList.UseVisualStyleBackColor = true;
             this.btnPicasaRefreshAlbumList.Click += new System.EventHandler(this.btnPicasaRefreshAlbumList_Click);
-            // 
-            // oauth2Picasa
-            // 
-            resources.ApplyResources(this.oauth2Picasa, "oauth2Picasa");
-            this.oauth2Picasa.Name = "oauth2Picasa";
-            this.oauth2Picasa.UserInfo = null;
-            this.oauth2Picasa.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Picasa_OpenButtonClicked);
-            this.oauth2Picasa.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Picasa_CompleteButtonClicked);
-            this.oauth2Picasa.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Picasa_ClearButtonClicked);
-            this.oauth2Picasa.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Picasa_RefreshButtonClicked);
             // 
             // tpChevereto
             // 
@@ -5186,7 +5174,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblPushbulletUserKey;
         private System.Windows.Forms.TextBox txtPushbulletUserKey;
         private System.Windows.Forms.CheckBox cbGoogleDriveIsPublic;
-        private OAuthControl oauth2GoogleDrive;
         private System.Windows.Forms.Label lblBoxFolderTip;
         private System.Windows.Forms.CheckBox cbBoxShare;
         private System.Windows.Forms.ComboBox cbBoxShareAccessLevel;
@@ -5287,7 +5274,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ColumnHeader chPicasaName;
         private System.Windows.Forms.ColumnHeader chPicasaDescription;
         private System.Windows.Forms.Button btnPicasaRefreshAlbumList;
-        private OAuthControl oauth2Picasa;
         private System.Windows.Forms.TabControl tcUploaders;
         private ShareX.HelpersLib.ExportImportControl eiFTP;
         private OAuthControl oauth2Dropbox;
@@ -5607,13 +5593,11 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtFirebaseDomain;
         private System.Windows.Forms.TextBox txtFirebaseWebAPIKey;
         private System.Windows.Forms.Label lblFirebaseWebAPIKey;
-        private OAuthControl oauth2YouTube;
         private System.Windows.Forms.ComboBox cbYouTubePrivacyType;
         private System.Windows.Forms.Label lblYouTubePrivacyType;
         internal System.Windows.Forms.TabPage tpYouTube;
         private System.Windows.Forms.CheckBox cbYouTubeUseShortenedLink;
         internal System.Windows.Forms.TabPage tpGoogleCloudStorage;
-        private OAuthControl oauth2GoogleCloudStorage;
         private System.Windows.Forms.TextBox txtGoogleCloudStorageBucket;
         private System.Windows.Forms.Label lblGoogleCloudStorageBucket;
         private System.Windows.Forms.TextBox txtGoogleCloudStorageDomain;
@@ -5700,5 +5684,9 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
         private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
         private System.Windows.Forms.Label lblYouTubePermissionsTip;
+        private OAuthLoopbackControl oauth2YouTube;
+        private OAuthLoopbackControl oauth2GooglePhotos;
+        private OAuthLoopbackControl oauth2GoogleDrive;
+        private OAuthLoopbackControl oauth2GoogleCloudStorage;
     }
 }

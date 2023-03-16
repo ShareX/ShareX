@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -129,7 +129,7 @@ namespace ShareX
                     new CaptureLastRegion().Capture(safeTaskSettings);
                     break;
                 case HotkeyType.ScrollingCapture:
-                    OpenScrollingCapture(safeTaskSettings, true);
+                    OpenScrollingCapture(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
                     OpenAutoCapture(safeTaskSettings);
@@ -682,13 +682,12 @@ namespace ShareX
             ScreenRecordManager.AbortRecording();
         }
 
-        public static void OpenScrollingCapture(TaskSettings taskSettings = null, bool forceSelection = false)
+        public static void OpenScrollingCapture(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
-                taskSettings.CaptureSettings.SurfaceOptions, forceSelection);
-            scrollingCaptureForm.ImageProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
+            ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions);
+            scrollingCaptureForm.UploadRequested += img => UploadManager.RunImageTask(img, taskSettings);
             scrollingCaptureForm.Show();
         }
 
@@ -730,14 +729,20 @@ namespace ShareX
         public static void OpenHistory()
         {
             HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistorySettings,
-                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
+                filePath => UploadManager.UploadFile(filePath),
+                filePath => AnnotateImageFromFile(filePath),
+                filePath => PinToScreen(filePath));
+
             historyForm.Show();
         }
 
         public static void OpenImageHistory()
         {
             ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistorySettings,
-                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
+                filePath => UploadManager.UploadFile(filePath),
+                filePath => AnnotateImageFromFile(filePath),
+                filePath => PinToScreen(filePath));
+
             imageHistoryForm.Show();
         }
 
@@ -1306,15 +1311,18 @@ namespace ShareX
             }
         }
 
-        public static void PinToScreen(Image image, Point? location = null)
+        public static void PinToScreen(Image image, Point? location = null, PinToScreenOptions options = null)
         {
             if (image != null)
             {
-                PinToScreenOptions options = new PinToScreenOptions();
+                if (options == null)
+                {
+                    options = new PinToScreenOptions();
+                }
+
                 options.BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
 
-                PinToScreenForm form = new PinToScreenForm(image, options, location);
-                form.Show();
+                PinToScreenForm.PinToScreenAsync(image, options, location);
             }
         }
 
@@ -1872,7 +1880,15 @@ namespace ShareX
 
             await updateChecker.CheckUpdateAsync();
 
-            UpdateMessageBox.Start(updateChecker, true, true);
+            if (updateChecker.Status == UpdateStatus.UpdateAvailable)
+            {
+                UpdateMessageBox.Start(updateChecker);
+            }
+            else if (updateChecker.Status == UpdateStatus.UpToDate)
+            {
+                // TODO: Translate
+                MessageBox.Show("ShareX is up to date!", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public static async Task DownloadAppVeyorBuild()
@@ -1886,7 +1902,7 @@ namespace ShareX
 
             await updateChecker.CheckUpdateAsync();
 
-            UpdateMessageBox.Start(updateChecker, true, true);
+            UpdateMessageBox.Start(updateChecker);
         }
 
         public static Image CreateQRCode(string text, int width, int height)

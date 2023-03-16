@@ -136,7 +136,7 @@
     <value>拡張子フィルター: (例: jpg png mp4)</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>出力ファイル拡張子: (空白= ファイル名と同じ)</value>
+    <value>出力ファイル拡張子: (空白 = ファイル名と同じ)</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
     <value>引数:</value>
@@ -145,6 +145,6 @@
     <value>ファイルのパス:</value>
   </data>
   <data name="cbDeleteInputFile.Text" xml:space="preserve">
-    <value>入力ファイルを削除する</value>
+    <value>入力ファイルを削除</value>
   </data>
 </root>

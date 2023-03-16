@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Teste de monitor</value>
+    <value>ShareX - Teste de monitor</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Fechar</value>
@@ -169,6 +169,6 @@
     <value>Forma:</value>
   </data>
   <data name="btnScreenTearingTest.Text" xml:space="preserve">
-    <value>Teste de screen tearing</value>
+    <value>Iniciar animação de teste</value>
   </data>
 </root>

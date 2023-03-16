@@ -21,6 +21,7 @@ jobs:
           - Debug
           - Steam
           - MicrosoftStore
+          - MicrosoftStoreDebug
         platform:
           - Any CPU
 

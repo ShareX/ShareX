@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -226,15 +226,11 @@ namespace ShareX.UploadersLib
 
             #region Google Photos
 
-            if (OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info))
-            {
-                oauth2Picasa.UserInfo = Config.GooglePhotosUserInfo;
-                oauth2Picasa.Status = OAuthLoginStatus.LoginSuccessful;
-                btnPicasaRefreshAlbumList.Enabled = true;
-            }
+            oauth2GooglePhotos.UpdateStatus(Config.GooglePhotosOAuth2Info, Config.GooglePhotosUserInfo);
+            btnPicasaRefreshAlbumList.Enabled = oauth2GooglePhotos.Connected;
 
-            txtPicasaAlbumID.Text = Config.GooglePhotosAlbumID;
             cbGooglePhotosIsPublic.Checked = Config.GooglePhotosIsPublic;
+            txtPicasaAlbumID.Text = Config.GooglePhotosAlbumID;
 
             #endregion Google Photos
 
@@ -386,6 +382,12 @@ namespace ShareX.UploadersLib
 
             #region Google Drive
 
+            oauth2GoogleDrive.UpdateStatus(Config.GoogleDriveOAuth2Info, Config.GoogleDriveUserInfo);
+            btnGoogleDriveRefreshFolders.Enabled = oauth2GoogleDrive.Connected;
+
+            cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
+            cbGoogleDriveDirectLink.Checked = Config.GoogleDriveDirectLink;
+
             cbGoogleDriveSharedDrive.Items.Clear();
             cbGoogleDriveSharedDrive.Items.Add(GoogleDrive.MyDrive);
             if (Config.GoogleDriveSelectedDrive?.id != GoogleDrive.MyDrive.id)
@@ -393,14 +395,6 @@ namespace ShareX.UploadersLib
                 cbGoogleDriveSharedDrive.Items.Add(Config.GoogleDriveSelectedDrive);
             }
 
-            if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
-            {
-                oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
-                btnGoogleDriveRefreshFolders.Enabled = true;
-            }
-
-            cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
-            cbGoogleDriveDirectLink.Checked = Config.GoogleDriveDirectLink;
             cbGoogleDriveUseFolder.Checked = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
@@ -732,10 +726,7 @@ namespace ShareX.UploadersLib
 
             #region YouTube
 
-            if (OAuth2Info.CheckOAuth(Config.YouTubeOAuth2Info))
-            {
-                oauth2YouTube.Status = OAuthLoginStatus.LoginSuccessful;
-            }
+            oauth2YouTube.UpdateStatus(Config.YouTubeOAuth2Info, Config.YouTubeUserInfo);
 
             cbYouTubePrivacyType.Items.Clear();
             cbYouTubePrivacyType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
@@ -747,10 +738,7 @@ namespace ShareX.UploadersLib
 
             #region Google Cloud Storage
 
-            if (OAuth2Info.CheckOAuth(Config.GoogleCloudStorageOAuth2Info))
-            {
-                oauth2GoogleCloudStorage.Status = OAuthLoginStatus.LoginSuccessful;
-            }
+            oauth2GoogleCloudStorage.UpdateStatus(Config.GoogleCloudStorageOAuth2Info, Config.GoogleCloudStorageUserInfo);
 
             txtGoogleCloudStorageBucket.Text = Config.GoogleCloudStorageBucket;
             txtGoogleCloudStorageDomain.Text = Config.GoogleCloudStorageDomain;
@@ -1057,41 +1045,28 @@ namespace ShareX.UploadersLib
 
         #region Google Photos
 
-        private void oauth2Picasa_OpenButtonClicked()
+        private void oauth2GooglePhotos_ConnectButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            Config.GooglePhotosOAuth2Info = OAuth2Open(new GooglePhotos(oauth));
-            Config.GooglePhotosUserInfo = null;
-        }
+            IOAuth2Loopback oauthLoopback = new GooglePhotos(oauth).OAuth2;
 
-        private void oauth2Picasa_CompleteButtonClicked(string code)
-        {
-            GooglePhotos googlePhotos = new GooglePhotos(Config.GooglePhotosOAuth2Info);
-            bool result = OAuth2Complete(googlePhotos, code, oauth2Picasa);
-            if (result)
+            using (OAuthListenerForm form = new OAuthListenerForm(oauthLoopback))
             {
-                try
-                {
-                    Config.GooglePhotosUserInfo = googlePhotos.GetUserInfo();
-                    oauth2Picasa.UserInfo = Config.GooglePhotosUserInfo;
-                }
-                catch (Exception e)
-                {
-                    e.ShowError();
-                }
+                form.ShowDialog();
+                Config.GooglePhotosOAuth2Info = form.OAuth2Info;
+                Config.GooglePhotosUserInfo = form.UserInfo;
             }
-            btnPicasaRefreshAlbumList.Enabled = result;
+
+            oauth2GooglePhotos.UpdateStatus(Config.GooglePhotosOAuth2Info, Config.GooglePhotosUserInfo);
+            btnPicasaRefreshAlbumList.Enabled = oauth2GooglePhotos.Connected;
+
+            this.ForceActivate();
         }
 
-        private void oauth2Picasa_ClearButtonClicked()
+        private void oauth2GooglePhotos_DisconnectButtonClicked()
         {
             Config.GooglePhotosOAuth2Info = null;
             Config.GooglePhotosUserInfo = null;
-        }
-
-        private void oauth2Picasa_RefreshButtonClicked()
-        {
-            btnPicasaRefreshAlbumList.Enabled = OAuth2Refresh(new GooglePhotos(Config.GooglePhotosOAuth2Info), oauth2Picasa);
         }
 
         private void txtPicasaAlbumID_TextChanged(object sender, EventArgs e)
@@ -1719,25 +1694,28 @@ namespace ShareX.UploadersLib
 
         #region Google Drive
 
-        private void oauth2GoogleDrive_OpenButtonClicked()
+        private void oauth2GoogleDrive_ConnectButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            Config.GoogleDriveOAuth2Info = OAuth2Open(new GoogleDrive(oauth));
+            IOAuth2Loopback oauthLoopback = new GoogleDrive(oauth).OAuth2;
+
+            using (OAuthListenerForm form = new OAuthListenerForm(oauthLoopback))
+            {
+                form.ShowDialog();
+                Config.GoogleDriveOAuth2Info = form.OAuth2Info;
+                Config.GoogleDriveUserInfo = form.UserInfo;
+            }
+
+            oauth2GoogleDrive.UpdateStatus(Config.GoogleDriveOAuth2Info, Config.GoogleDriveUserInfo);
+            btnGoogleDriveRefreshFolders.Enabled = oauth2GoogleDrive.Connected;
+
+            this.ForceActivate();
         }
 
-        private void oauth2GoogleDrive_CompleteButtonClicked(string code)
-        {
-            btnGoogleDriveRefreshFolders.Enabled = OAuth2Complete(new GoogleDrive(Config.GoogleDriveOAuth2Info), code, oauth2GoogleDrive);
-        }
-
-        private void oauth2GoogleDrive_RefreshButtonClicked()
-        {
-            btnGoogleDriveRefreshFolders.Enabled = OAuth2Refresh(new GoogleDrive(Config.GoogleDriveOAuth2Info), oauth2GoogleDrive);
-        }
-
-        private void oauth2GoogleDrive_ClearButtonClicked()
+        private void oauth2GoogleDrive_DisconnectButtonClicked()
         {
             Config.GoogleDriveOAuth2Info = null;
+            Config.GoogleDriveUserInfo = null;
         }
 
         private void cbGoogleDriveIsPublic_CheckedChanged(object sender, EventArgs e)
@@ -3041,30 +3019,32 @@ namespace ShareX.UploadersLib
 
         #region YouTube
 
-        private void oauth2YouTube_OpenButtonClicked()
+        private void oauth2YouTube_ConnectButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            Config.YouTubeOAuth2Info = OAuth2Open(new YouTube(oauth));
+            IOAuth2Loopback oauthLoopback = new YouTube(oauth).OAuth2;
+
+            using (OAuthListenerForm form = new OAuthListenerForm(oauthLoopback))
+            {
+                form.ShowDialog();
+                Config.YouTubeOAuth2Info = form.OAuth2Info;
+                Config.YouTubeUserInfo = form.UserInfo;
+            }
+
+            oauth2YouTube.UpdateStatus(Config.YouTubeOAuth2Info, Config.YouTubeUserInfo);
+
+            this.ForceActivate();
         }
 
-        private void oauth2YouTube_CompleteButtonClicked(string code)
-        {
-            OAuth2Complete(new YouTube(Config.YouTubeOAuth2Info), code, oauth2YouTube);
-        }
-
-        private void oauth2YouTube_RefreshButtonClicked()
-        {
-            OAuth2Refresh(new YouTube(Config.YouTubeOAuth2Info), oauth2YouTube);
-        }
-
-        private void oauth2YouTube_ClearButtonClicked()
+        private void oauth2YouTube_DisconnectButtonClicked()
         {
             Config.YouTubeOAuth2Info = null;
+            Config.YouTubeUserInfo = null;
         }
 
         private void llYouTubePermissionsLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            URLHelpers.OpenURL("https://security.google.com/settings/security/permissions");
+            URLHelpers.OpenURL("https://myaccount.google.com/permissions");
         }
 
         private void cbYouTubePrivacyType_SelectedIndexChanged(object sender, EventArgs e)
@@ -3086,25 +3066,27 @@ namespace ShareX.UploadersLib
 
         #region Google Cloud Storage
 
-        private void oauth2GoogleCloudStorage_ClearButtonClicked()
-        {
-            Config.GoogleCloudStorageOAuth2Info = null;
-        }
-
-        private void oauth2GoogleCloudStorage_CompleteButtonClicked(string code)
-        {
-            OAuth2Complete(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), code, oauth2GoogleCloudStorage);
-        }
-
-        private void oauth2GoogleCloudStorage_OpenButtonClicked()
+        private void oauth2GoogleCloudStorage_ConnectButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            Config.GoogleCloudStorageOAuth2Info = OAuth2Open(new GoogleCloudStorage(oauth));
+            IOAuth2Loopback oauthLoopback = new GoogleCloudStorage(oauth).OAuth2;
+
+            using (OAuthListenerForm form = new OAuthListenerForm(oauthLoopback))
+            {
+                form.ShowDialog();
+                Config.GoogleCloudStorageOAuth2Info = form.OAuth2Info;
+                Config.GoogleCloudStorageUserInfo = form.UserInfo;
+            }
+
+            oauth2GoogleCloudStorage.UpdateStatus(Config.GoogleCloudStorageOAuth2Info, Config.GoogleCloudStorageUserInfo);
+
+            this.ForceActivate();
         }
 
-        private void oauth2GoogleCloudStorage_RefreshButtonClicked()
+        private void oauth2GoogleCloudStorage_DisconnectButtonClicked()
         {
-            OAuth2Refresh(new GoogleCloudStorage(Config.GoogleCloudStorageOAuth2Info), oauth2GoogleCloudStorage);
+            Config.GoogleCloudStorageOAuth2Info = null;
+            Config.GoogleCloudStorageUserInfo = null;
         }
 
         private void txtGoogleCloudStorageBucket_TextChanged(object sender, EventArgs e)

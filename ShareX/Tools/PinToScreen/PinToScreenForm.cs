@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,6 +29,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -57,6 +58,8 @@ namespace ShareX
                     {
                         AutoSizeForm();
                     }
+
+                    UpdateControls();
                 }
             }
         }
@@ -66,6 +69,30 @@ namespace ShareX
             get
             {
                 return new Size((int)Math.Round(Image.Width * (ImageScale / 100f)), (int)Math.Round(Image.Height * (ImageScale / 100f)));
+            }
+        }
+
+        public Size FormSize
+        {
+            get
+            {
+                Size size;
+
+                if (Minimized)
+                {
+                    size = Options.MinimizeSize;
+                }
+                else
+                {
+                    size = ImageSize;
+                }
+
+                if (Options.Border)
+                {
+                    size = size.Offset(Options.BorderSize * 2);
+                }
+
+                return size;
             }
         }
 
@@ -116,31 +143,59 @@ namespace ShareX
             ImageOpacity = Options.InitialOpacity;
 
             InitializeComponent();
+            ShareXResources.ApplyTheme(this);
             TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
 
+            tsMain.Cursor = Cursors.Arrow;
             openHandCursor = Helpers.CreateCursor(Resources.openhand);
             closedHandCursor = Helpers.CreateCursor(Resources.closedhand);
             SetHandCursor(false);
 
             isDWMEnabled = NativeMethods.IsDWMEnabled();
 
+            UpdateControls();
+
             loaded = true;
         }
 
-        public PinToScreenForm(Image image, PinToScreenOptions options, Point? location = null) : this(options)
+        private PinToScreenForm(Image image, PinToScreenOptions options, Point? location = null) : this(options)
         {
             Image = image;
             AutoSizeForm();
 
-            if (location != null)
+            if (location == null)
             {
-                Location = location.Value;
+                location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, CaptureHelpers.GetActiveScreenWorkingArea(), FormSize);
             }
-            else
+            else if (Options.Border)
             {
-                Rectangle rectScreen = CaptureHelpers.GetActiveScreenWorkingArea();
-                Location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, rectScreen.Size, ImageSize);
+                location = location.Value.Add(-Options.BorderSize);
+            }
+
+            Location = location.Value;
+        }
+
+        public static void PinToScreenAsync(Image image, PinToScreenOptions options = null, Point? location = null)
+        {
+            if (image != null)
+            {
+                if (options == null)
+                {
+                    options = new PinToScreenOptions();
+                }
+
+                Thread thread = new Thread(() =>
+                {
+                    using (PinToScreenForm form = new PinToScreenForm(image, options, location))
+                    {
+                        form.ShowDialog();
+                    }
+                });
+
+                thread.IsBackground = true;
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
             }
         }
 
@@ -157,7 +212,15 @@ namespace ShareX
             base.Dispose(disposing);
         }
 
-        public void SetHandCursor(bool grabbing)
+        private void UpdateControls()
+        {
+            bool isCursorInside = ClientRectangle.Contains(PointToClient(MousePosition));
+
+            tsMain.Visible = isCursorInside;
+            tslScale.Text = ImageScale + "%";
+        }
+
+        private void SetHandCursor(bool grabbing)
         {
             if (grabbing)
             {
@@ -184,16 +247,7 @@ namespace ShareX
         private void AutoSizeForm()
         {
             Size previousSize = Size;
-            Size newSize;
-
-            if (Minimized)
-            {
-                newSize = Options.MinimizeSize;
-            }
-            else
-            {
-                newSize = ImageSize;
-            }
+            Size newSize = FormSize;
 
             Point newLocation = Location;
             SpecialWindowHandles insertAfter = Options.TopMost ? SpecialWindowHandles.HWND_TOPMOST : SpecialWindowHandles.HWND_TOP;
@@ -233,9 +287,32 @@ namespace ShareX
             AutoSizeForm();
         }
 
+        private void tsbCopy_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyImage(Image);
+        }
+
+        private void tslScale_Click(object sender, EventArgs e)
+        {
+            if (!Minimized)
+            {
+                ImageScale = 100;
+            }
+        }
+
+        private void tsbOptions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         protected override void WndProc(ref Message m)
         {
-            if (Options.ShowShadow && m.Msg == (int)WindowsMessages.NCPAINT && isDWMEnabled)
+            if (Options.Shadow && m.Msg == (int)WindowsMessages.NCPAINT && isDWMEnabled)
             {
                 NativeMethods.SetNCRenderingPolicy(Handle, DwmNCRenderingPolicy.Enabled);
 
@@ -266,18 +343,29 @@ namespace ShareX
 
             if (Image != null)
             {
+                Point position = new Point(0, 0);
+
+                if (Options.Border)
+                {
+                    using (Pen pen = new Pen(Options.BorderColor, Options.BorderSize) { Alignment = PenAlignment.Inset })
+                    {
+                        g.DrawRectangleProper(pen, new Rectangle(position, FormSize));
+                    }
+
+                    position = position.Add(Options.BorderSize);
+                }
+
                 if (Minimized)
                 {
                     g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                    g.DrawImage(Image, new Rectangle(0, 0, Options.MinimizeSize.Width, Options.MinimizeSize.Height),
-                        0, 0, Options.MinimizeSize.Width, Options.MinimizeSize.Height, GraphicsUnit.Pixel);
+                    g.DrawImage(Image, new Rectangle(position, Options.MinimizeSize), 0, 0, Options.MinimizeSize.Width, Options.MinimizeSize.Height, GraphicsUnit.Pixel);
                 }
                 else
                 {
                     if (ImageScale == 100)
                     {
                         g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                        g.DrawImage(Image, 0, 0, Image.Width, Image.Height);
+                        g.DrawImage(Image, new Rectangle(position, Image.Size));
                     }
                     else
                     {
@@ -293,7 +381,7 @@ namespace ShareX
                         using (ImageAttributes ia = new ImageAttributes())
                         {
                             ia.SetWrapMode(WrapMode.TileFlipXY);
-                            g.DrawImage(Image, new Rectangle(0, 0, ImageSize.Width, ImageSize.Height), 0, 0, Image.Width, Image.Height, GraphicsUnit.Pixel, ia);
+                            g.DrawImage(Image, new Rectangle(position, ImageSize), 0, 0, Image.Width, Image.Height, GraphicsUnit.Pixel, ia);
                         }
                     }
                 }
@@ -378,6 +466,16 @@ namespace ShareX
                         break;
                 }
             }
+        }
+
+        private void PinToScreenForm_MouseEnter(object sender, EventArgs e)
+        {
+            UpdateControls();
+        }
+
+        private void PinToScreenForm_MouseLeave(object sender, EventArgs e)
+        {
+            UpdateControls();
         }
 
         private void PinToScreenForm_KeyUp(object sender, KeyEventArgs e)

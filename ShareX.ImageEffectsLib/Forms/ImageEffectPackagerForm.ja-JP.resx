@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnPackage.Text" xml:space="preserve">
-    <value>パッケージ</value>
+    <value>パッケージ化</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 画像エフェクトを保存</value>
   </data>
   <data name="btnOpenImageEffectsFolder.Text" xml:space="preserve">
-    <value>画像エフェクトのフォルダを開く</value>
+    <value>画像エフェクトのフォルダを開く...</value>
   </data>
   <data name="lblAssetsFolderPath.Text" xml:space="preserve">
     <value>アセットフォルダのパス:</value>

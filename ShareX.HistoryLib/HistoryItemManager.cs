@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -50,12 +50,13 @@ namespace ShareX.HistoryLib
         public bool IsImageFile { get; private set; }
         public bool IsTextFile { get; private set; }
 
-        private Action<string> uploadFile, editImage;
+        private Action<string> uploadFile, editImage, pinToScreen;
 
-        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage, bool hideShowMoreInfoButton = false)
+        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage, Action<string> pinToScreen, bool hideShowMoreInfoButton = false)
         {
             this.uploadFile = uploadFile;
             this.editImage = editImage;
+            this.pinToScreen = pinToScreen;
 
             InitializeComponent();
 
@@ -63,6 +64,7 @@ namespace ShareX.HistoryLib
             tsmiCopy.HideImageMargin();
             tsmiUploadFile.Visible = uploadFile != null;
             tsmiEditImage.Visible = editImage != null;
+            tsmiPinToScreen.Visible = pinToScreen != null;
             tsmiShowMoreInfo.Visible = !hideShowMoreInfoButton;
         }
 
@@ -144,6 +146,9 @@ namespace ShareX.HistoryLib
                     break;
                 case Keys.Control | Keys.E:
                     EditImage();
+                    break;
+                case Keys.Control | Keys.P:
+                    PinToScreen();
                     break;
             }
 
@@ -572,6 +577,11 @@ namespace ShareX.HistoryLib
         public void EditImage()
         {
             if (editImage != null && HistoryItem != null && IsImageFile) editImage(HistoryItem.FilePath);
+        }
+
+        public void PinToScreen()
+        {
+            if (pinToScreen != null && HistoryItem != null && IsImageFile) pinToScreen(HistoryItem.FilePath);
         }
 
         public void ShowMoreInfo()

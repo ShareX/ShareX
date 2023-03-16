@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Histórico</value>
+    <value>ShareX - Histórico</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtro de data:</value>
@@ -149,5 +149,32 @@
   </data>
   <data name="lblURLFilter.Text" xml:space="preserve">
     <value>URL:</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Procurar:</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>Busca avançada</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>Busca avançada...</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>Alternar mais informações</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Mostrar estatísticas...</value>
+  </data>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>Redefinir</value>
+  </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Configurações...</value>
   </data>
 </root>

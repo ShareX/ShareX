@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -131,6 +131,9 @@ namespace ShareX.HelpersLib
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern short GetKeyState(int keyCode);
+
+        [DllImport("user32.dll", ExactSpelling = true, CharSet = CharSet.Auto)]
+        public static extern IntPtr GetParent(IntPtr hWnd);
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -471,6 +474,9 @@ namespace ShareX.HelpersLib
         #endregion
 
         #region Other dll
+
+        [DllImport("msvcrt.dll")]
+        public static extern int memcmp(IntPtr b1, IntPtr b2, long count);
 
         /// <summary>
         /// Copy a block of memory.

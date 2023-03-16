@@ -459,7 +459,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauthTwitter</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
     <value>tpTwitter</value>
@@ -586,7 +586,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
@@ -715,7 +714,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Bitly</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
     <value>tpBitly</value>
@@ -737,7 +736,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
@@ -999,7 +997,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
@@ -1159,7 +1156,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
     <value>tpAdFly</value>
@@ -1346,7 +1342,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
     <value>tpPolr</value>
@@ -1536,7 +1531,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
     <value>Firebase Dynamic Links</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpFirebaseDynamicLinks.Name" xml:space="preserve">
     <value>tpFirebaseDynamicLinks</value>
@@ -1798,7 +1792,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpKutt.Text" xml:space="preserve">
     <value>Kutt</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpKutt.Name" xml:space="preserve">
     <value>tpKutt</value>
@@ -1928,7 +1921,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpZeroWidthShortener.Text" xml:space="preserve">
     <value>Zero Width Shortener</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpZeroWidthShortener.Name" xml:space="preserve">
     <value>tpZeroWidthShortener</value>
@@ -2028,7 +2020,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="btnSFTPKeyLocationBrowse.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnSFTPKeyLocationBrowse.Name" xml:space="preserve">
     <value>btnSFTPKeyLocationBrowse</value>
@@ -2134,7 +2125,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="gbSFTP.Text" xml:space="preserve">
     <value>SFTP</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbSFTP.Name" xml:space="preserve">
     <value>gbSFTP</value>
@@ -2359,7 +2349,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>eiFTP</value>
   </data>
   <data name="&gt;&gt;eiFTP.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
     <value>gbFTPAccount</value>
@@ -2492,7 +2482,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="rbFTPProtocolFTP.Text" xml:space="preserve">
     <value>FTP</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;rbFTPProtocolFTP.Name" xml:space="preserve">
     <value>rbFTPProtocolFTP</value>
@@ -2523,7 +2512,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="rbFTPProtocolFTPS.Text" xml:space="preserve">
     <value>FTPS</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;rbFTPProtocolFTPS.Name" xml:space="preserve">
     <value>rbFTPProtocolFTPS</value>
@@ -2554,7 +2542,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="rbFTPProtocolSFTP.Text" xml:space="preserve">
     <value>SFTP</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;rbFTPProtocolSFTP.Name" xml:space="preserve">
     <value>rbFTPProtocolSFTP</value>
@@ -2969,7 +2956,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="btnFTPSCertificateLocationBrowse.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.Name" xml:space="preserve">
     <value>btnFTPSCertificateLocationBrowse</value>
@@ -3096,7 +3082,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="gbFTPS.Text" xml:space="preserve">
     <value>FTPS</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbFTPS.Name" xml:space="preserve">
     <value>gbFTPS</value>
@@ -3433,7 +3418,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
@@ -3571,7 +3555,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Dropbox</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
     <value>tpDropbox</value>
@@ -3593,7 +3577,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
@@ -3704,7 +3687,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oAuth2OneDrive</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
     <value>tpOneDrive</value>
@@ -3726,7 +3709,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
@@ -3740,8 +3722,29 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;tpOneDrive.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 75</value>
+  </data>
+  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
+    <value>oauth2GoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbGoogleDriveSharedDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 16</value>
+    <value>16, 136</value>
   </data>
   <data name="cbGoogleDriveSharedDrive.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 21</value>
@@ -3759,7 +3762,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveSharedDrive.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbGoogleDriveDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3768,7 +3771,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 287</value>
+    <value>16, 111</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
@@ -3789,7 +3792,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveDirectLink.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbGoogleDriveUseFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3798,7 +3801,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 47</value>
+    <value>16, 167</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 17</value>
@@ -3819,10 +3822,10 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveUseFolder.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 88</value>
+    <value>16, 208</value>
   </data>
   <data name="txtGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 20</value>
@@ -3840,7 +3843,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblGoogleDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3849,7 +3852,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 71</value>
+    <value>13, 191</value>
   </data>
   <data name="lblGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -3870,7 +3873,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lblGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Title</value>
@@ -3885,10 +3888,10 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>228</value>
   </data>
   <data name="lvGoogleDriveFoldersList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 112</value>
+    <value>16, 232</value>
   </data>
   <data name="lvGoogleDriveFoldersList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 352</value>
+    <value>432, 296</value>
   </data>
   <data name="lvGoogleDriveFoldersList.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3897,13 +3900,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvGoogleDriveFoldersList</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3912,7 +3915,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 15</value>
+    <value>280, 135</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 23</value>
@@ -3933,7 +3936,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;btnGoogleDriveRefreshFolders.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbGoogleDriveIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3942,7 +3945,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 264</value>
+    <value>16, 88</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 17</value>
@@ -3963,27 +3966,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveIsPublic.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
-    <value>oauth2GoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
-    <value>tpGoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
@@ -4000,7 +3982,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
@@ -4238,7 +4219,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpPuush.Text" xml:space="preserve">
     <value>puush</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPuush.Name" xml:space="preserve">
     <value>tpPuush</value>
@@ -4385,7 +4365,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvBoxFolders</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -4466,7 +4446,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Box</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -4488,7 +4468,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
@@ -4747,7 +4726,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="btnAmazonS3StorageClassHelp.Text" xml:space="preserve">
     <value>?</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Name" xml:space="preserve">
     <value>btnAmazonS3StorageClassHelp</value>
@@ -5012,7 +4990,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.Name" xml:space="preserve">
     <value>btnAmazonS3BucketNameOpen</value>
@@ -5040,7 +5017,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.Name" xml:space="preserve">
     <value>btnAmazonS3AccessKeyOpen</value>
@@ -5323,7 +5299,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
@@ -5336,6 +5311,27 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="&gt;&gt;tpAmazonS3.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 75</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Name" xml:space="preserve">
+    <value>oauth2GoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblGoogleCloudStorageStripExtension.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5350,7 +5346,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>129, 13</value>
   </data>
   <data name="lblGoogleCloudStorageStripExtension.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>1</value>
   </data>
   <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
     <value>Remove file extension on:</value>
@@ -5380,7 +5376,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>47, 17</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionText.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>4</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
     <value>Text</value>
@@ -5410,7 +5406,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>53, 17</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionVideo.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>3</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
     <value>Video</value>
@@ -5440,7 +5436,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>151, 17</value>
   </data>
   <data name="cbGoogleCloudStorageSetPublicACL.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>0</value>
   </data>
   <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
     <value>Set public-read ACL on file</value>
@@ -5470,7 +5466,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>55, 17</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionImage.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>2</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
     <value>Image</value>
@@ -5488,13 +5484,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>4</value>
   </data>
   <data name="gbGoogleCloudStorageAdvanced.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 450</value>
+    <value>16, 283</value>
   </data>
   <data name="gbGoogleCloudStorageAdvanced.Size" type="System.Drawing.Size, System.Drawing">
     <value>416, 98</value>
   </data>
   <data name="gbGoogleCloudStorageAdvanced.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
+    <value>9</value>
   </data>
   <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
     <value>Advanced</value>
@@ -5509,7 +5505,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;gbGoogleCloudStorageAdvanced.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5518,7 +5514,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 419</value>
+    <value>13, 252</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -5539,7 +5535,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStoragePathPreview.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreviewLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5548,7 +5544,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 400</value>
+    <value>13, 233</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreviewLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -5569,16 +5565,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStoragePathPreviewLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 320</value>
+    <value>16, 153</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageObjectPrefix</value>
@@ -5590,7 +5586,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5599,13 +5595,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 304</value>
+    <value>13, 137</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
     <value>Upload path:</value>
@@ -5620,7 +5616,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5629,13 +5625,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 352</value>
+    <value>13, 185</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
     <value>Custom domain:</value>
@@ -5650,16 +5646,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 368</value>
+    <value>16, 201</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageDomain.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageDomain</value>
@@ -5671,7 +5667,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5680,13 +5676,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 255</value>
+    <value>13, 88</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
     <value>Bucket name:</value>
@@ -5701,16 +5697,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 271</value>
+    <value>16, 104</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageBucket.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageBucket</value>
@@ -5722,27 +5718,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 238</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Name" xml:space="preserve">
-    <value>oauth2GoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="tpGoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
@@ -5759,7 +5734,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpGoogleCloudStorage.Text" xml:space="preserve">
     <value>Google Cloud Storage</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGoogleCloudStorage.Name" xml:space="preserve">
     <value>tpGoogleCloudStorage</value>
@@ -5886,19 +5860,15 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="cbAzureStorageEnvironment.Items" xml:space="preserve">
     <value>blob.core.windows.net</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Items1" xml:space="preserve">
     <value>blob.core.usgovcloudapi.net</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Items2" xml:space="preserve">
     <value>blob.core.chinacloudapi.cn</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Items3" xml:space="preserve">
     <value>blob.core.cloudapi.de</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 173</value>
@@ -5965,7 +5935,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="btnAzureStoragePortal.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnAzureStoragePortal.Name" xml:space="preserve">
     <value>btnAzureStoragePortal</value>
@@ -6203,7 +6172,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpAzureStorage.Text" xml:space="preserve">
     <value>Azure Storage</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpAzureStorage.Name" xml:space="preserve">
     <value>tpAzureStorage</value>
@@ -6441,7 +6409,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpBackblazeB2.Text" xml:space="preserve">
     <value>Backblaze B2</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpBackblazeB2.Name" xml:space="preserve">
     <value>tpBackblazeB2</value>
@@ -6579,7 +6546,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>atcGfycatAccountType</value>
   </data>
   <data name="&gt;&gt;atcGfycatAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcGfycatAccountType.Parent" xml:space="preserve">
     <value>tpGfycat</value>
@@ -6600,7 +6567,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Gfycat</value>
   </data>
   <data name="&gt;&gt;oauth2Gfycat.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Gfycat.Parent" xml:space="preserve">
     <value>tpGfycat</value>
@@ -6622,7 +6589,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpGfycat.Text" xml:space="preserve">
     <value>Gfycat</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGfycat.Name" xml:space="preserve">
     <value>tpGfycat</value>
@@ -6941,7 +6907,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
@@ -7434,7 +7399,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud / Nextcloud</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
@@ -7645,7 +7609,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
@@ -7808,7 +7771,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
@@ -7964,7 +7926,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>atcSendSpaceAccountType</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
     <value>tpSendSpace</value>
@@ -7986,7 +7948,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
@@ -8146,7 +8107,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
@@ -8171,7 +8131,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;txtJiraIssuePrefix.Name" xml:space="preserve">
     <value>txtJiraIssuePrefix</value>
@@ -8256,7 +8215,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;txtJiraHost.Name" xml:space="preserve">
     <value>txtJiraHost</value>
@@ -8337,7 +8295,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oAuthJira</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
     <value>tpJira</value>
@@ -8356,7 +8314,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
@@ -8516,7 +8473,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpLambda.Name" xml:space="preserve">
     <value>tpLambda</value>
@@ -8882,7 +8838,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauthTeknik</value>
   </data>
   <data name="&gt;&gt;oauthTeknik.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthTeknik.Parent" xml:space="preserve">
     <value>tpTeknik</value>
@@ -8904,7 +8860,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpTeknik.Text" xml:space="preserve">
     <value>Teknik</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpTeknik.Name" xml:space="preserve">
     <value>tpTeknik</value>
@@ -9034,7 +8989,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPomf.Name" xml:space="preserve">
     <value>tpPomf</value>
@@ -9050,11 +9004,9 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
     <value>https://cloud.mein-seafile.de/api2/</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="cbSeafileAPIURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -9309,7 +9261,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvSeafileLibraries</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Parent" xml:space="preserve">
     <value>tpSeafile</value>
@@ -10028,7 +9980,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSeafile.Text" xml:space="preserve">
     <value>Seafile</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpSeafile.Name" xml:space="preserve">
     <value>tpSeafile</value>
@@ -10187,17 +10138,16 @@ Using an encrypted library disables sharing.</value>
     <value>4</value>
   </data>
   <data name="tpStreamable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpStreamable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpStreamable.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpStreamable.Name" xml:space="preserve">
     <value>tpStreamable</value>
@@ -10303,7 +10253,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSul.Text" xml:space="preserve">
     <value>s-ul</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpSul.Name" xml:space="preserve">
     <value>tpSul</value>
@@ -10538,7 +10487,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpLithiio.Text" xml:space="preserve">
     <value>LobFile</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpLithiio.Name" xml:space="preserve">
     <value>tpLithiio</value>
@@ -11046,7 +10994,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPlik.Text" xml:space="preserve">
     <value>Plik</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPlik.Name" xml:space="preserve">
     <value>tpPlik</value>
@@ -11060,6 +11007,27 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPlik.ZOrder" xml:space="preserve">
     <value>25</value>
   </data>
+  <data name="oauth2YouTube.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2YouTube.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 72</value>
+  </data>
+  <data name="oauth2YouTube.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Name" xml:space="preserve">
+    <value>oauth2YouTube</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="llYouTubePermissionsLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -11067,17 +11035,16 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="llYouTubePermissionsLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 273</value>
+    <value>13, 105</value>
   </data>
   <data name="llYouTubePermissionsLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 13</value>
+    <value>212, 13</value>
   </data>
   <data name="llYouTubePermissionsLink.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="llYouTubePermissionsLink.Text" xml:space="preserve">
-    <value>https://security.google.com/settings/security/permissions</value>
-    <comment>@Invariant</comment>
+    <value>https://myaccount.google.com/permissions</value>
   </data>
   <data name="&gt;&gt;llYouTubePermissionsLink.Name" xml:space="preserve">
     <value>llYouTubePermissionsLink</value>
@@ -11089,7 +11056,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;llYouTubePermissionsLink.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblYouTubePermissionsTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11098,13 +11065,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblYouTubePermissionsTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 256</value>
+    <value>13, 88</value>
   </data>
   <data name="lblYouTubePermissionsTip.Size" type="System.Drawing.Size, System.Drawing">
     <value>294, 13</value>
   </data>
   <data name="lblYouTubePermissionsTip.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
     <value>You may revoke your access at anytime using the link below:</value>
@@ -11119,7 +11086,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;lblYouTubePermissionsTip.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbYouTubeShowDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11128,13 +11095,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbYouTubeShowDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 368</value>
+    <value>16, 200</value>
   </data>
   <data name="cbYouTubeShowDialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 17</value>
   </data>
   <data name="cbYouTubeShowDialog.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
     <value>Show video options dialog</value>
@@ -11149,7 +11116,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;cbYouTubeShowDialog.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11158,13 +11125,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 344</value>
+    <value>16, 176</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 17</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>Use shortened link</value>
@@ -11179,16 +11146,16 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;cbYouTubeUseShortenedLink.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbYouTubePrivacyType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 312</value>
+    <value>16, 144</value>
   </data>
   <data name="cbYouTubePrivacyType.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 21</value>
   </data>
   <data name="cbYouTubePrivacyType.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cbYouTubePrivacyType.Name" xml:space="preserve">
     <value>cbYouTubePrivacyType</value>
@@ -11200,7 +11167,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;cbYouTubePrivacyType.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblYouTubePrivacyType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11209,13 +11176,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblYouTubePrivacyType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 296</value>
+    <value>13, 128</value>
   </data>
   <data name="lblYouTubePrivacyType.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
   </data>
   <data name="lblYouTubePrivacyType.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
     <value>Visibility:</value>
@@ -11230,41 +11197,19 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;lblYouTubePrivacyType.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="oauth2YouTube.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2YouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 232</value>
-  </data>
-  <data name="oauth2YouTube.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Name" xml:space="preserve">
-    <value>oauth2YouTube</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
-    <value>tpYouTube</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="tpYouTube.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpYouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpYouTube.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
   </data>
   <data name="tpYouTube.Text" xml:space="preserve">
     <value>YouTube</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpYouTube.Name" xml:space="preserve">
     <value>tpYouTube</value>
@@ -12507,7 +12452,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
@@ -12613,7 +12557,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
@@ -12811,7 +12754,7 @@ Using an encrypted library disables sharing.</value>
     <value>oAuth2Gist</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
     <value>tpGist</value>
@@ -12830,7 +12773,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
@@ -12939,7 +12881,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
@@ -13099,7 +13040,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
@@ -13229,7 +13169,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpOneTimeSecret.Name" xml:space="preserve">
     <value>tpOneTimeSecret</value>
@@ -13287,7 +13226,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPastie.Text" xml:space="preserve">
     <value>Pastie</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPastie.Name" xml:space="preserve">
     <value>tpPastie</value>
@@ -13455,7 +13393,7 @@ Using an encrypted library disables sharing.</value>
     <value>atcImgurAccountType</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13476,7 +13414,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2Imgur</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13512,7 +13450,7 @@ Using an encrypted library disables sharing.</value>
     <value>lvImgurAlbumList</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13615,7 +13553,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
@@ -13856,7 +13793,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
@@ -13913,7 +13849,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauthFlickr</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Parent" xml:space="preserve">
     <value>tpFlickr</value>
@@ -13935,7 +13871,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
@@ -14425,7 +14360,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
@@ -14439,6 +14373,27 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPhotobucket.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="oauth2GooglePhotos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2GooglePhotos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 75</value>
+  </data>
+  <data name="oauth2GooglePhotos.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GooglePhotos.Name" xml:space="preserve">
+    <value>oauth2GooglePhotos</value>
+  </data>
+  <data name="&gt;&gt;oauth2GooglePhotos.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GooglePhotos.Parent" xml:space="preserve">
+    <value>tpGooglePhotos</value>
+  </data>
+  <data name="&gt;&gt;oauth2GooglePhotos.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblGooglePhotosCreateAlbumName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -14446,13 +14401,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGooglePhotosCreateAlbumName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 472</value>
+    <value>13, 505</value>
   </data>
   <data name="lblGooglePhotosCreateAlbumName.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
   </data>
   <data name="lblGooglePhotosCreateAlbumName.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
     <value>Album name:</value>
@@ -14467,10 +14422,10 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lblGooglePhotosCreateAlbumName.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtGooglePhotosCreateAlbumName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 488</value>
+    <value>16, 521</value>
   </data>
   <data name="txtGooglePhotosCreateAlbumName.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 20</value>
@@ -14488,19 +14443,19 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;txtGooglePhotosCreateAlbumName.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>688, 487</value>
+    <value>352, 520</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>Create</value>
@@ -14515,7 +14470,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;btnGooglePhotosCreateAlbum.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbGooglePhotosIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -14524,13 +14479,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGooglePhotosIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 262</value>
+    <value>16, 88</value>
   </data>
   <data name="cbGooglePhotosIsPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 17</value>
   </data>
   <data name="cbGooglePhotosIsPublic.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
     <value>Public upload</value>
@@ -14545,16 +14500,16 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;cbGooglePhotosIsPublic.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txtPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 64</value>
+    <value>16, 160</value>
   </data>
   <data name="txtPicasaAlbumID.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 20</value>
   </data>
   <data name="txtPicasaAlbumID.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtPicasaAlbumID.Name" xml:space="preserve">
     <value>txtPicasaAlbumID</value>
@@ -14566,7 +14521,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;txtPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblPicasaAlbumID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -14575,13 +14530,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 48</value>
+    <value>13, 144</value>
   </data>
   <data name="lblPicasaAlbumID.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 13</value>
   </data>
   <data name="lblPicasaAlbumID.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>Album ID for upload (Empty = No album upload):</value>
@@ -14596,7 +14551,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lblPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
@@ -14617,13 +14572,13 @@ Using an encrypted library disables sharing.</value>
     <value>143</value>
   </data>
   <data name="lvPicasaAlbumList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 96</value>
+    <value>16, 192</value>
   </data>
   <data name="lvPicasaAlbumList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 368</value>
+    <value>432, 304</value>
   </data>
   <data name="lvPicasaAlbumList.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lvPicasaAlbumList.Name" xml:space="preserve">
     <value>lvPicasaAlbumList</value>
@@ -14635,7 +14590,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lvPicasaAlbumList.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -14644,13 +14599,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 16</value>
+    <value>16, 112</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 23</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
     <value>Refresh album list</value>
@@ -14665,27 +14620,6 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;btnPicasaRefreshAlbumList.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="oauth2Picasa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Picasa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Picasa.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Name" xml:space="preserve">
-    <value>oauth2Picasa</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="tpGooglePhotos.Location" type="System.Drawing.Point, System.Drawing">
@@ -14702,7 +14636,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGooglePhotos.Text" xml:space="preserve">
     <value>Google Photos</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGooglePhotos.Name" xml:space="preserve">
     <value>tpGooglePhotos</value>
@@ -14892,7 +14825,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
@@ -15001,7 +14933,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpVgyme.Text" xml:space="preserve">
     <value>vgy.me</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpVgyme.Name" xml:space="preserve">
     <value>tpVgyme</value>
@@ -15115,7 +15046,7 @@ Using an encrypted library disables sharing.</value>
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -15136,7 +15067,7 @@ Using an encrypted library disables sharing.</value>
     <value>actRapidShareAccountType</value>
   </data>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

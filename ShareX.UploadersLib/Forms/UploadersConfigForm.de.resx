@@ -162,7 +162,7 @@ z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.ex
     <value>Benutzername:</value>
   </data>
   <data name="lblYourlsSignature.Text" xml:space="preserve">
-    <value>Sigantur:</value>
+    <value>Signatur:</value>
   </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>Du kannst deinen API Schlüssel und UID hier finden</value>
@@ -415,7 +415,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Uploadpfad:</value>
   </data>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
-    <value>Benutze langen Link, der den Dateinamen beinhaltet</value>
+    <value>Benutze einen langen Link, der den Dateinamen beinhaltet</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Host:</value>
@@ -553,7 +553,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Album ID für Upload (Leer = Kein Albumupload)</value>
   </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Einloggen erfodert</value>
+    <value>Login erforderlich</value>
   </data>
   <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
     <value>2. Schritt: Schließe die Autorisierung ab</value>

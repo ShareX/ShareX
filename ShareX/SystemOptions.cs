@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2022 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -35,12 +35,14 @@ namespace ShareX
 
         public static bool DisableUpdateCheck { get; private set; }
         public static bool DisableUpload { get; private set; }
+        public static bool DisableLogging { get; private set; }
         public static string PersonalPath { get; private set; }
 
         public static void UpdateSystemOptions()
         {
             DisableUpdateCheck = GetSystemOptionBoolean("DisableUpdateCheck");
             DisableUpload = GetSystemOptionBoolean("DisableUpload");
+            DisableLogging = GetSystemOptionBoolean("DisableLogging");
             PersonalPath = GetSystemOptionString("PersonalPath");
         }
 
