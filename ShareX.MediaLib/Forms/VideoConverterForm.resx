@@ -363,7 +363,7 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="btnEncode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 232</value>
+    <value>16, 296</value>
   </data>
   <data name="btnEncode.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 32</value>
@@ -390,16 +390,20 @@
     <value>Verdana, 9.75pt</value>
   </data>
   <data name="txtArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 184</value>
   </data>
   <data name="txtArguments.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtArguments.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
   </data>
   <data name="txtArguments.Size" type="System.Drawing.Size, System.Drawing">
     <value>528, 72</value>
   </data>
   <data name="txtArguments.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;txtArguments.Name" xml:space="preserve">
     <value>txtArguments</value>
@@ -417,7 +421,7 @@
     <value>True</value>
   </data>
   <data name="cbAutoOpenFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 192</value>
+    <value>16, 264</value>
   </data>
   <data name="cbAutoOpenFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 17</value>
@@ -444,7 +448,7 @@
     <value>Arial, 11.25pt</value>
   </data>
   <data name="pbProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 232</value>
+    <value>208, 296</value>
   </data>
   <data name="pbProgress.Size" type="System.Drawing.Size, System.Drawing">
     <value>336, 32</value>
@@ -452,7 +456,6 @@
   <data name="pbProgress.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pbProgress.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
@@ -472,16 +475,16 @@
     <value>True</value>
   </data>
   <data name="cbUseCustomArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 168</value>
+    <value>16, 160</value>
   </data>
   <data name="cbUseCustomArguments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
+    <value>137, 17</value>
   </data>
   <data name="cbUseCustomArguments.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="cbUseCustomArguments.Text" xml:space="preserve">
-    <value>Use custom arguments</value>
+    <value>Use custom arguments:</value>
   </data>
   <data name="&gt;&gt;cbUseCustomArguments.Name" xml:space="preserve">
     <value>cbUseCustomArguments</value>
@@ -556,7 +559,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblVideoQualityValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 117</value>
+    <value>512, 116</value>
   </data>
   <data name="lblVideoQualityValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -583,7 +586,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblVideoQualityHigher.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 139</value>
+    <value>316, 137</value>
   </data>
   <data name="lblVideoQualityHigher.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 18</value>
@@ -613,7 +616,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblVideoQualityLower.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 139</value>
+    <value>157, 137</value>
   </data>
   <data name="lblVideoQualityLower.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 18</value>
@@ -721,7 +724,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>558, 278</value>
+    <value>558, 344</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

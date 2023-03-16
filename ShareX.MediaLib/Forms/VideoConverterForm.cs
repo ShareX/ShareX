@@ -96,13 +96,12 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:
                 case ConverterVideoCodecs.xvid:
-                    lblVideoQuality.Visible = cbVideoQualityUseBitrate.Visible = !Options.UseCustomArguments;
-                    tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible =
-                        !Options.UseCustomArguments && !Options.VideoQualityUseBitrate;
-                    nudVideoQualityBitrate.Visible = lblVideoQualityBitrateHint.Visible = !Options.UseCustomArguments && Options.VideoQualityUseBitrate;
+                    cbVideoQualityUseBitrate.Visible = true;
+                    tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible = !Options.VideoQualityUseBitrate;
+                    nudVideoQualityBitrate.Visible = lblVideoQualityBitrateHint.Visible = Options.VideoQualityUseBitrate;
                     break;
                 default:
-                    lblVideoQuality.Visible = cbVideoQualityUseBitrate.Visible = tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible =
+                    cbVideoQualityUseBitrate.Visible = tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible =
                         lblVideoQualityHigher.Visible = nudVideoQualityBitrate.Visible = lblVideoQualityBitrateHint.Visible = false;
                     break;
             }
@@ -153,8 +152,7 @@ namespace ShareX.MediaLib
                 }
             }
 
-            lblVideoEncoder.Visible = cbVideoEncoder.Visible = !Options.UseCustomArguments;
-            txtArguments.Visible = Options.UseCustomArguments;
+            txtArguments.Enabled = Options.UseCustomArguments;
 
             btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
                 !string.IsNullOrEmpty(Options.OutputFileName);
