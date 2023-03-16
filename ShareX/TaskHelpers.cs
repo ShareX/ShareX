@@ -1880,7 +1880,15 @@ namespace ShareX
 
             await updateChecker.CheckUpdateAsync();
 
-            UpdateMessageBox.Start(updateChecker, true);
+            if (updateChecker.Status == UpdateStatus.UpdateAvailable)
+            {
+                UpdateMessageBox.Start(updateChecker);
+            }
+            else if (updateChecker.Status == UpdateStatus.UpToDate)
+            {
+                // TODO: Translate
+                MessageBox.Show("ShareX is up to date!", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public static async Task DownloadAppVeyorBuild()
@@ -1894,7 +1902,7 @@ namespace ShareX
 
             await updateChecker.CheckUpdateAsync();
 
-            UpdateMessageBox.Start(updateChecker, true);
+            UpdateMessageBox.Start(updateChecker);
         }
 
         public static Image CreateQRCode(string text, int width, int height)
