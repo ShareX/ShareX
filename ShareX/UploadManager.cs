@@ -30,6 +30,8 @@ using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
@@ -205,23 +207,50 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (ClipboardHelpers.ContainsImage())
+            try
             {
-                Bitmap bmp = ClipboardHelpers.GetImage();
+                if (Clipboard.ContainsImage())
+                {
+                    Bitmap image;
 
-                ProcessImageUpload(bmp, taskSettings);
+                    if (HelpersOptions.UseAlternativeClipboardGetImage)
+                    {
+                        image = ClipboardHelpers.GetImageAlternative2();
+                    }
+                    else
+                    {
+                        image = (Bitmap)Clipboard.GetImage();
+                    }
+
+                    ProcessImageUpload(image, taskSettings);
+                }
+                else if (Clipboard.ContainsText())
+                {
+                    string text = Clipboard.GetText();
+
+                    ProcessTextUpload(text, taskSettings);
+                }
+                else if (Clipboard.ContainsFileDropList())
+                {
+                    string[] files = Clipboard.GetFileDropList().Cast<string>().ToArray();
+
+                    ProcessFilesUpload(files, taskSettings);
+                }
             }
-            else if (ClipboardHelpers.ContainsText())
+            catch (ExternalException e)
             {
-                string text = ClipboardHelpers.GetText();
+                DebugHelper.WriteException(e);
 
-                ProcessTextUpload(text, taskSettings);
+                // TODO: Translate
+                if (MessageBox.Show("\"" + e.Message + "\"\r\n\r\n" + "Would you like to retry clipboard upload?", "ShareX - " + "Clipboard upload",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    ClipboardUpload(taskSettings);
+                }
             }
-            else if (ClipboardHelpers.ContainsFileDropList())
+            catch (Exception e)
             {
-                string[] files = ClipboardHelpers.GetFileDropList();
-
-                ProcessFilesUpload(files, taskSettings);
+                DebugHelper.WriteException(e);
             }
         }
 

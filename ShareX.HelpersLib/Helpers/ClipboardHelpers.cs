@@ -354,7 +354,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        private static Bitmap GetImageAlternative2()
+        public static Bitmap GetImageAlternative2()
         {
             IDataObject dataObject = Clipboard.GetDataObject();
 
