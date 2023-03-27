@@ -670,6 +670,7 @@ namespace ShareX.UploadersLib
             cbAzureStorageEnvironment.Text = Config.AzureStorageEnvironment;
             txtAzureStorageCustomDomain.Text = Config.AzureStorageCustomDomain;
             txtAzureStorageUploadPath.Text = Config.AzureStorageUploadPath;
+            txtAzureStorageCacheControl.Text = Config.AzureStorageCacheControl;
             UpdateAzureStorageStatus();
 
             #endregion Azure Storage
@@ -2858,6 +2859,12 @@ namespace ShareX.UploadersLib
         private void txtAzureStorageCustomDomain_TextChanged(object sender, EventArgs e)
         {
             Config.AzureStorageCustomDomain = txtAzureStorageCustomDomain.Text;
+            UpdateAzureStorageStatus();
+        }
+
+        private void txtAzureStorageCacheControl_TextChanged(object sender, EventArgs e)
+        {
+            Config.AzureStorageCacheControl = txtAzureStorageCacheControl.Text;
             UpdateAzureStorageStatus();
         }
 
