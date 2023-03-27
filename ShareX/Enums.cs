@@ -53,6 +53,8 @@ namespace ShareX
         French,
         [Description("Deutsch (German)")]
         German,
+        [Description("עִברִית (Hebrew)")]
+        Hebrew,
         [Description("Magyar (Hungarian)")]
         Hungarian,
         [Description("Bahasa Indonesia (Indonesian)")]

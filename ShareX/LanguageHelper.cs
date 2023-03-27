@@ -89,6 +89,9 @@ namespace ShareX
                 case SupportedLanguage.German:
                     icon = Resources.de;
                     break;
+                case SupportedLanguage.Hebrew:
+                    icon = Resources.il;
+                    break;
                 case SupportedLanguage.Hungarian:
                     icon = Resources.hu;
                     break;
@@ -166,6 +169,9 @@ namespace ShareX
                     break;
                 case SupportedLanguage.German:
                     cultureName = "de-DE";
+                    break;
+                case SupportedLanguage.Hebrew:
+                    cultureName = "he-IL";
                     break;
                 case SupportedLanguage.Hungarian:
                     cultureName = "hu-HU";

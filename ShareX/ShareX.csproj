@@ -2279,6 +2279,9 @@
   <ItemGroup>
     <None Include="Resources\openhand.cur" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\il.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
