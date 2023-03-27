@@ -28,6 +28,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace ShareX.Setup
 {
@@ -380,12 +381,14 @@ namespace ShareX.Setup
                 FileHelpers.CopyFiles(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
             }
 
-            string[] languages = new string[] { "de", "es", "es-MX", "fa-IR", "fr", "he-IL", "hu", "id-ID", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pl", "pt-BR", "pt-PT",
-                "ro", "ru", "tr", "uk", "vi-VN", "zh-CN", "zh-TW" };
-
-            foreach (string language in languages)
+            foreach (string directory in Directory.GetDirectories(source))
             {
-                FileHelpers.CopyFiles(Path.Combine(source, language), Path.Combine(destination, "Languages", language), "*.resources.dll");
+                string language = Path.GetFileName(directory);
+
+                if (Regex.IsMatch(language, "^[a-z]{2}(?:-[A-Z]{2})?$"))
+                {
+                    FileHelpers.CopyFiles(Path.Combine(source, language), Path.Combine(destination, "Languages", language), "*.resources.dll");
+                }
             }
 
             if (File.Exists(FFmpegPath))

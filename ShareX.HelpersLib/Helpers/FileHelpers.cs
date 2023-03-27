@@ -641,18 +641,21 @@ namespace ShareX.HelpersLib
             CopyFiles(new string[] { filePath }, destinationFolder);
         }
 
-        public static void CopyFiles(IEnumerable<string> files, string destinationFolder)
+        public static void CopyFiles(string[] files, string destinationFolder)
         {
-            if (!Directory.Exists(destinationFolder))
+            if (files != null && files.Length > 0)
             {
-                Directory.CreateDirectory(destinationFolder);
-            }
+                if (!Directory.Exists(destinationFolder))
+                {
+                    Directory.CreateDirectory(destinationFolder);
+                }
 
-            foreach (string filePath in files)
-            {
-                string fileName = Path.GetFileName(filePath);
-                string destinationFilePath = Path.Combine(destinationFolder, fileName);
-                File.Copy(filePath, destinationFilePath);
+                foreach (string filePath in files)
+                {
+                    string fileName = Path.GetFileName(filePath);
+                    string destinationFilePath = Path.Combine(destinationFolder, fileName);
+                    File.Copy(filePath, destinationFilePath);
+                }
             }
         }
 
