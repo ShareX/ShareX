@@ -683,6 +683,7 @@
   </data>
   <data name="lblImageCount.Text" xml:space="preserve">
     <value>0</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="lblImageCount.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopRight</value>
