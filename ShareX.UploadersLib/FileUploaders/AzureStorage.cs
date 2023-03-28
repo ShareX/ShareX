@@ -106,9 +106,16 @@ namespace ShareX.UploadersLib.FileUploaders
             requestHeaders["x-ms-date"] = date;
             requestHeaders["x-ms-version"] = APIVersion;
             requestHeaders["x-ms-blob-type"] = "BlockBlob";
-            if (!String.IsNullOrEmpty(AzureStorageCacheControl)) requestHeaders["x-ms-blob-cache-control"] = AzureStorageCacheControl;
 
-            string canonicalizedHeaders = $"{((!String.IsNullOrEmpty(AzureStorageCacheControl)) ? $"x-ms-blob-cache-control:{AzureStorageCacheControl}\n" : "")}x-ms-blob-type:BlockBlob\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
+            string canonicalizedHeaders = $"x-ms-blob-type:BlockBlob\nx-ms-date:{date}\nx-ms-version:{APIVersion}\n";
+
+            if (!string.IsNullOrEmpty(AzureStorageCacheControl))
+            {
+                requestHeaders["x-ms-blob-cache-control"] = AzureStorageCacheControl;
+
+                canonicalizedHeaders = $"x-ms-blob-cache-control:{AzureStorageCacheControl}\n{canonicalizedHeaders}";
+            }
+
             string canonicalizedResource = $"/{AzureStorageAccountName}/{AzureStorageContainer}/{uploadPath}";
             string stringToSign = GenerateStringToSign(canonicalizedHeaders, canonicalizedResource, stream.Length.ToString(), contentType);
 
