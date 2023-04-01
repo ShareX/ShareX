@@ -1244,8 +1244,20 @@ namespace ShareX
 
         public void ForceClose()
         {
-            forceClose = true;
-            Close();
+            if (ScreenRecordManager.IsRecording)
+            {
+                // TODO: Translate
+                if (MessageBox.Show("ShareX cannot be closed while screen recording is active.\r\n\r\nDo you want to abort the active screen recording?", "ShareX",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    ScreenRecordManager.AbortRecording();
+                }
+            }
+            else
+            {
+                forceClose = true;
+                Close();
+            }
         }
 
         #region Form events
