@@ -268,7 +268,7 @@
     <value>בדיקת מקצר קישור</value>
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
-    <value>בדוק את שיתוף הקישור</value>
+    <value>בדיקת שיתוף הקישור</value>
   </data>
   <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
     <value>מזג אופקית</value>
@@ -544,13 +544,13 @@
     <value>העלה תיקייה...</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
-    <value>העלאה מלוח הגזירה...</value>
+    <value>העלה מלוח הגזירה...</value>
   </data>
   <data name="tsmiUploadText.Text" xml:space="preserve">
     <value>העלה טקסט...</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>העלאה מקישור...</value>
+    <value>העלה מקישור...</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>צייץ הודעה...</value>

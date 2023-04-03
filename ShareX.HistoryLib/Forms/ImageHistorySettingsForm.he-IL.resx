@@ -130,7 +130,7 @@
     <value>זכור את מצב החלון</value>
   </data>
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
-    <value>מגבלת תמונות מקסימלית:</value>
+    <value>מגבלת תמונות מירבית:</value>
   </data>
   <data name="lblThumbnailSize.Text" xml:space="preserve">
     <value>גודל תמונה ממוזערת:</value>
