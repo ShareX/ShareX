@@ -124,7 +124,7 @@
     <value>העתק הכל</value>
   </data>
   <data name="btnLoadedAssemblies.Text" xml:space="preserve">
-    <value>מכלולים נטענו</value>
+    <value>מכלולים שנטענו</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
     <value>פתח קובץ לוג...</value>

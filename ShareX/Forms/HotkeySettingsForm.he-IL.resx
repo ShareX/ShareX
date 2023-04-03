@@ -124,7 +124,7 @@
     <value>הוסף...</value>
   </data>
   <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>מקשי קיצור מושבתים. אתה יכול ללחוץ כאן כדי להפעיל אותם.</value>
+    <value>מקשי קיצור מושבתים. ניתן ללחוץ כאן כדי להפעיל אותם.</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>הסר</value>

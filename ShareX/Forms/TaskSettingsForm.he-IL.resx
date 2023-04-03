@@ -598,7 +598,7 @@
     <value>ערוך...</value>
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>צפה בתיקיות ואם נוצר קובץ חדש אז העלה אותו</value>
+    <value>נטר תיקיות, ואם נוצר קובץ חדש אז העלה אותו</value>
   </data>
   <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
     <value>נתיב תיקייה</value>
@@ -616,7 +616,7 @@
     <value>הוסף...</value>
   </data>
   <data name="tpWatchFolders.Text" xml:space="preserve">
-    <value>צפה בתיקיות</value>
+    <value>נטר תיקיות</value>
   </data>
   <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
     <value>פורמט בוחר צבעי המסך (Ctrl + click):</value>

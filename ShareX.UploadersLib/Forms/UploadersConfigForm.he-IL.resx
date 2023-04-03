@@ -145,7 +145,7 @@
     <value>הצג תיבת דו-שיח של אפשרויות וידאו</value>
   </data>
   <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
-    <value>אתה יכול לבטל את הגישה שלך בכל עת באמצעות הקישור הבא:</value>
+    <value>ניתן לבטל את הגישה שלך בכל עת באמצעות הקישור הבא:</value>
   </data>
   <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
     <value>אף פעם</value>
@@ -172,7 +172,7 @@
     <value>?</value>
   </data>
   <data name="rbFTPTransferModeActive.Text" xml:space="preserve">
-    <value>פעיל</value>
+    <value>אקטיבי</value>
   </data>
   <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
     <value>נקודת קצה:</value>
@@ -349,7 +349,7 @@
     <value>מפתח משתמש:</value>
   </data>
   <data name="lblB2ManageLink.Text" xml:space="preserve">
-    <value>לחץ כאן כדי ליצור מפתח יישום או לנהל את הדליים שלך.</value>
+    <value>לחץ כאן כדי ליצור מפתח יישום או לנהל את ה-buckets שלך.</value>
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
     <value>קוד אימות (קבל קוד אימות מדף ההרשאה):</value>
@@ -764,7 +764,7 @@
     <value>קבל רשימת מכשירים</value>
   </data>
   <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
-    <value>השג auth token</value>
+    <value>השג טוקן אימות</value>
   </data>
   <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
     <value>פתח דף פרופיל ציבורי...</value>
@@ -857,7 +857,7 @@
     <value>הערה: אם יש לך חתימה אז לא נדרש שם משתמש/סיסמה.</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>הערה: אתה יכול ללחוץ פעמיים על שם התיקייה כדי להיכנס לתיקייה זו.</value>
+    <value>הערה: ניתן ללחוץ פעמיים על שם התיקייה כדי להיכנס לתיקייה זו.</value>
   </data>
   <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
     <value>ספרייה מרוחקת:</value>
@@ -1074,10 +1074,40 @@
 אם שדה הטקסט ריק, שם ה-bucket ישמש עבור הקישור.
 לדוגמה, אם ה-bucket שלך נקרא "bucket.example.com", הקישור היה "http://bucket.example.com/...".</value>
   </data>
-  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
-    <value>אתה יכול לקבל מפתח משתמש מעמוד "account details".</value>
-  </data>
   <data name="llAdflyLink.Text" xml:space="preserve">
     <value>ניתן למצוא את ה-UID ואת מפתח ה-API שלך כאן</value>
+  </data>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>שם bucket:</value>
+  </data>
+  <data name="lblB2Bucket.Text" xml:space="preserve">
+    <value>שם bucket:</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
+    <value>שם bucket:</value>
+  </data>
+  <data name="lblAzureStorageContainer.Text" xml:space="preserve">
+    <value>קונטיינר:</value>
+  </data>
+  <data name="lblSeafileAuthToken.Text" xml:space="preserve">
+    <value>טוקן אימות:</value>
+  </data>
+  <data name="btnSulGetAPIKey.Text" xml:space="preserve">
+    <value>קבל מפתח API...</value>
+  </data>
+  <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
+    <value>הבא מפתח API</value>
+  </data>
+  <data name="lblFTPHost.Text" xml:space="preserve">
+    <value>מארח:</value>
+  </data>
+  <data name="lblKuttHost.Text" xml:space="preserve">
+    <value>מארח:</value>
+  </data>
+  <data name="lblPlikURL.Text" xml:space="preserve">
+    <value>מארח</value>
+  </data>
+  <data name="lblZWSToken.Text" xml:space="preserve">
+    <value>טוקן:</value>
   </data>
 </root>

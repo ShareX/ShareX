@@ -321,9 +321,6 @@
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>הפעל תמיכה בתוסף Chrome</value>
   </data>
-  <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>מזעור למגש בהתחלה</value>
-  </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>מגבלת העלאה סימולטנית:</value>
   </data>
@@ -425,5 +422,8 @@
   </data>
   <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
     <value>דריסת ברירת המחדל של מדפסת:</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>מזער למגש בעליית התוכנית</value>
   </data>
 </root>

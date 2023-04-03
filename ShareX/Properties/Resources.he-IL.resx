@@ -271,7 +271,7 @@
     <value>X: {0}, Y: {1}, רוחב: {2}, גובה: {3}</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} יועלה אל {1}. אתה יכול לבחור יעד אחר.</value>
+    <value>{0} יועלה אל {1}. ניתן לבחור יעד אחר.</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>לא ניתן לרשום את {0}:
@@ -636,7 +636,7 @@
     <value>הגדרות משימות</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>אתה יכול להוסיף תהליכי עבודה מהגדרות מקשי קיצור...</value>
+    <value>ניתן להוסיף תהליכי עבודה מהגדרות מקשי קיצור...</value>
   </data>
   <data name="InspectWindow_WindowHandle" xml:space="preserve">
     <value>מנהל חלון</value>
@@ -649,5 +649,8 @@
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
     <value>שירות שיתוף קישורים: {0}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>עברית</value>
   </data>
 </root>
