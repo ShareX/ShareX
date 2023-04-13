@@ -24,41 +24,35 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    // Example: {prompt}
-    // Example: {prompt:title}
-    // Example: {prompt:title|default text}
-    internal class CustomUploaderFunctionPrompt : CustomUploaderFunction
+    // Example: {output:text}
+    // Example: {output:title|text}
+    internal class CustomUploaderFunctionOutput : CustomUploaderFunction
     {
-        public override string Name { get; } = "prompt";
+        public override string Name { get; } = "output";
+
+        public override int MinParameterCount { get; } = 1;
 
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
-            string title = "ShareX - Prompt";
-            string defaultText = "";
+            string text, title;
 
-            if (parameters.Length > 0)
+            if (parameters.Length > 1)
             {
+                text = parameters[1];
                 title = parameters[0];
-
-                if (parameters.Length > 1)
-                {
-                    defaultText = parameters[1];
-                }
             }
-
-            using (InputBox inputBox = new InputBox(title, defaultText))
+            else
             {
-                if (inputBox.ShowDialog() == DialogResult.OK)
-                {
-                    return inputBox.InputText;
-                }
+                text = parameters[0];
+                title = "ShareX - Output";
             }
 
-            return defaultText;
+            OutputBox.Show(text, title);
+
+            return null;
         }
     }
 }

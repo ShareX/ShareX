@@ -28,24 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtText = new System.Windows.Forms.TextBox();
+            this.rtbText = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // txtText
+            // rtbText
             // 
-            this.txtText.BackColor = System.Drawing.Color.Black;
-            this.txtText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtText.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtText.ForeColor = System.Drawing.Color.White;
-            this.txtText.Location = new System.Drawing.Point(0, 0);
-            this.txtText.Multiline = true;
-            this.txtText.Name = "txtText";
-            this.txtText.ReadOnly = true;
-            this.txtText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtText.Size = new System.Drawing.Size(984, 761);
-            this.txtText.TabIndex = 0;
-            this.txtText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtText_KeyUp);
+            this.rtbText.BackColor = System.Drawing.Color.Black;
+            this.rtbText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbText.Location = new System.Drawing.Point(8, 8);
+            this.rtbText.Name = "rtbText";
+            this.rtbText.Size = new System.Drawing.Size(968, 745);
+            this.rtbText.TabIndex = 1;
+            this.rtbText.Text = "";
+            this.rtbText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtbText_KeyUp);
             // 
             // OutputBox
             // 
@@ -53,18 +50,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(984, 761);
-            this.Controls.Add(this.txtText);
+            this.Controls.Add(this.rtbText);
             this.Name = "OutputBox";
+            this.Padding = new System.Windows.Forms.Padding(8);
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OutputBox";
             this.Shown += new System.EventHandler(this.OutputBox_Shown);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtText;
+        private System.Windows.Forms.RichTextBox rtbText;
     }
 }

@@ -295,6 +295,11 @@ namespace ShareX.UploadersLib
                     if (!string.IsNullOrEmpty(URL))
                     {
                         url = parser.Parse(URL);
+
+                        if (string.IsNullOrEmpty(url) && !string.IsNullOrEmpty(URL) && URL.Contains("{output:"))
+                        {
+                            result.IsURLExpected = false;
+                        }
                     }
                     else
                     {
