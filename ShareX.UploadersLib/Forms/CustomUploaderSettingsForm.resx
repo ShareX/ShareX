@@ -122,7 +122,7 @@
     <value>8, 440</value>
   </data>
   <data name="cbImageUploader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 21</value>
+    <value>200, 21</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cbImageUploader.TabIndex" type="System.Int32, mscorlib">
@@ -145,10 +145,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnTextUploaderTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 478</value>
+    <value>216, 478</value>
   </data>
   <data name="btnTextUploaderTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>72, 24</value>
   </data>
   <data name="btnTextUploaderTest.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -202,7 +202,7 @@
     <value>8, 480</value>
   </data>
   <data name="cbTextUploader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 21</value>
+    <value>200, 21</value>
   </data>
   <data name="cbTextUploader.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -223,10 +223,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnURLShortenerTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 558</value>
+    <value>216, 558</value>
   </data>
   <data name="btnURLShortenerTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>72, 24</value>
   </data>
   <data name="btnURLShortenerTest.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -280,7 +280,7 @@
     <value>NoControl</value>
   </data>
   <data name="mbHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 392</value>
+    <value>248, 392</value>
   </data>
   <metadata name="cmsHelp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>119, 17</value>
@@ -316,7 +316,7 @@
     <value>False</value>
   </data>
   <data name="cmsHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 114</value>
+    <value>184, 92</value>
   </data>
   <data name="&gt;&gt;cmsHelp.Name" xml:space="preserve">
     <value>cmsHelp</value>
@@ -328,14 +328,13 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="mbHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 24</value>
+    <value>40, 24</value>
   </data>
   <data name="mbHelp.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="mbHelp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -344,7 +343,7 @@
     <value>mbHelp</value>
   </data>
   <data name="&gt;&gt;mbHelp.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbHelp.Parent" xml:space="preserve">
     <value>$this</value>
@@ -359,7 +358,7 @@
     <value>8, 24</value>
   </data>
   <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -383,10 +382,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="btnDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnDuplicate.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -419,7 +418,7 @@
     <value>eiCustomUploaders</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.Parent" xml:space="preserve">
     <value>$this</value>
@@ -434,7 +433,7 @@
     <value>8, 56</value>
   </data>
   <data name="lbCustomUploaderList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 328</value>
+    <value>280, 328</value>
   </data>
   <data name="lbCustomUploaderList.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -455,10 +454,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 24</value>
+    <value>104, 24</value>
   </data>
   <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -482,7 +481,7 @@
     <value>8, 560</value>
   </data>
   <data name="cbURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 21</value>
+    <value>200, 21</value>
   </data>
   <data name="cbURLShortener.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -503,7 +502,7 @@
     <value>8, 520</value>
   </data>
   <data name="cbFileUploader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 21</value>
+    <value>200, 21</value>
   </data>
   <data name="cbFileUploader.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -524,10 +523,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnImageUploaderTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 438</value>
+    <value>216, 438</value>
   </data>
   <data name="btnImageUploaderTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>72, 24</value>
   </data>
   <data name="btnImageUploaderTest.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -581,10 +580,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnFileUploaderTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 518</value>
+    <value>216, 518</value>
   </data>
   <data name="btnFileUploaderTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>72, 24</value>
   </data>
   <data name="btnFileUploaderTest.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -640,6 +639,9 @@
   <data name="cHeadersName.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="cHeadersName.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
   <metadata name="cHeadersValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -650,7 +652,7 @@
     <value>8, 296</value>
   </data>
   <data name="dgvHeaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 160</value>
+    <value>328, 160</value>
   </data>
   <data name="dgvHeaders.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -673,6 +675,9 @@
   <data name="cParametersName.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="cParametersName.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
   <metadata name="cParametersValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -683,7 +688,7 @@
     <value>8, 112</value>
   </data>
   <data name="dgvParameters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 160</value>
+    <value>328, 160</value>
   </data>
   <data name="dgvParameters.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -770,10 +775,13 @@
     <value>False</value>
   </data>
   <data name="rtbRequestURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 14</value>
+    <value>586, 14</value>
   </data>
   <data name="rtbRequestURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="rtbRequestURL.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rtbRequestURL.Name" xml:space="preserve">
     <value>rtbRequestURL</value>
@@ -788,13 +796,13 @@
     <value>0</value>
   </data>
   <data name="pRequestURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 64</value>
+    <value>88, 64</value>
   </data>
   <data name="pRequestURL.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pRequestURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 20</value>
+    <value>592, 20</value>
   </data>
   <data name="pRequestURL.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -815,7 +823,7 @@
     <value>8, 64</value>
   </data>
   <data name="cbRequestMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 21</value>
+    <value>72, 21</value>
   </data>
   <data name="cbRequestMethod.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -839,7 +847,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblRequestURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 48</value>
+    <value>85, 48</value>
   </data>
   <data name="lblRequestURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -863,10 +871,10 @@
     <value>19</value>
   </data>
   <data name="cbBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 112</value>
+    <value>352, 112</value>
   </data>
   <data name="cbBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 21</value>
+    <value>328, 21</value>
   </data>
   <data name="cbBody.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -920,7 +928,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 96</value>
+    <value>349, 96</value>
   </data>
   <data name="lblBody.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -949,6 +957,9 @@
   <data name="cArgumentsName.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="cArgumentsName.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
   <metadata name="cArgumentsValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -959,7 +970,7 @@
     <value>0, 0</value>
   </data>
   <data name="dgvArguments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 264</value>
+    <value>328, 264</value>
   </data>
   <data name="dgvArguments.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1010,7 +1021,7 @@
     <value>0, 288</value>
   </data>
   <data name="txtFileFormName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
+    <value>328, 20</value>
   </data>
   <data name="txtFileFormName.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1028,10 +1039,10 @@
     <value>2</value>
   </data>
   <data name="pBodyArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 144</value>
+    <value>352, 144</value>
   </data>
   <data name="pBodyArguments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 312</value>
+    <value>328, 312</value>
   </data>
   <data name="pBodyArguments.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1055,7 +1066,7 @@
     <value>0, 288</value>
   </data>
   <data name="btnDataBeautify.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 24</value>
+    <value>160, 24</value>
   </data>
   <data name="btnDataBeautify.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1079,10 +1090,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnDataMinify.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 288</value>
+    <value>168, 288</value>
   </data>
   <data name="btnDataMinify.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 24</value>
+    <value>160, 24</value>
   </data>
   <data name="btnDataMinify.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1109,10 +1120,13 @@
     <value>2, 2</value>
   </data>
   <data name="rtbData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 274</value>
+    <value>322, 274</value>
   </data>
   <data name="rtbData.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="rtbData.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="rtbData.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1136,7 +1150,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 280</value>
+    <value>328, 280</value>
   </data>
   <data name="pData.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1154,10 +1168,10 @@
     <value>2</value>
   </data>
   <data name="pBodyData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 144</value>
+    <value>352, 144</value>
   </data>
   <data name="pBodyData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 312</value>
+    <value>328, 312</value>
   </data>
   <data name="pBodyData.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1187,10 +1201,13 @@
     <value>False</value>
   </data>
   <data name="rtbResultErrorMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 14</value>
+    <value>666, 14</value>
   </data>
   <data name="rtbResultErrorMessage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="rtbResultErrorMessage.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rtbResultErrorMessage.Name" xml:space="preserve">
     <value>rtbResultErrorMessage</value>
@@ -1211,7 +1228,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pResultErrorMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 20</value>
+    <value>672, 20</value>
   </data>
   <data name="pResultErrorMessage.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -1268,10 +1285,13 @@
     <value>False</value>
   </data>
   <data name="rtbResultDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 14</value>
+    <value>666, 14</value>
   </data>
   <data name="rtbResultDeletionURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="rtbResultDeletionURL.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rtbResultDeletionURL.Name" xml:space="preserve">
     <value>rtbResultDeletionURL</value>
@@ -1292,7 +1312,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pResultDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 20</value>
+    <value>672, 20</value>
   </data>
   <data name="pResultDeletionURL.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -1352,10 +1372,13 @@
     <value>False</value>
   </data>
   <data name="rtbResultThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 14</value>
+    <value>666, 14</value>
   </data>
   <data name="rtbResultThumbnailURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="rtbResultThumbnailURL.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rtbResultThumbnailURL.Name" xml:space="preserve">
     <value>rtbResultThumbnailURL</value>
@@ -1376,7 +1399,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pResultThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 20</value>
+    <value>672, 20</value>
   </data>
   <data name="pResultThumbnailURL.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1406,10 +1429,13 @@
     <value>False</value>
   </data>
   <data name="rtbResultURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 14</value>
+    <value>586, 14</value>
   </data>
   <data name="rtbResultURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="rtbResultURL.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rtbResultURL.Name" xml:space="preserve">
     <value>rtbResultURL</value>
@@ -1430,7 +1456,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pResultURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 20</value>
+    <value>592, 20</value>
   </data>
   <data name="pResultURL.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -1514,7 +1540,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblDestinationType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 8</value>
+    <value>349, 8</value>
   </data>
   <data name="lblDestinationType.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -1571,7 +1597,7 @@
     <value>NoControl</value>
   </data>
   <data name="mbDestinationType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 24</value>
+    <value>352, 24</value>
   </data>
   <metadata name="cmsDestinationType.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>218, 17</value>
@@ -1586,7 +1612,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="mbDestinationType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 23</value>
+    <value>328, 23</value>
   </data>
   <data name="mbDestinationType.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1604,7 +1630,7 @@
     <value>mbDestinationType</value>
   </data>
   <data name="&gt;&gt;mbDestinationType.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbDestinationType.Parent" xml:space="preserve">
     <value>pMain</value>
@@ -1616,7 +1642,7 @@
     <value>8, 24</value>
   </data>
   <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
+    <value>328, 20</value>
   </data>
   <data name="txtName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1667,7 +1693,7 @@
     <value>8, 600</value>
   </data>
   <data name="cbURLSharingService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 21</value>
+    <value>200, 21</value>
   </data>
   <data name="cbURLSharingService.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -1688,10 +1714,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnURLSharingServiceTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 598</value>
+    <value>216, 598</value>
   </data>
   <data name="btnURLSharingServiceTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>72, 24</value>
   </data>
   <data name="btnURLSharingServiceTest.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -1739,10 +1765,10 @@
     <value>3</value>
   </data>
   <data name="btnTestURLSyntax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 478</value>
+    <value>608, 478</value>
   </data>
   <data name="btnTestURLSyntax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>72, 24</value>
   </data>
   <data name="btnTestURLSyntax.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -1763,10 +1789,10 @@
     <value>0</value>
   </data>
   <data name="pMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 0</value>
+    <value>296, 0</value>
   </data>
   <data name="pMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 632</value>
+    <value>688, 632</value>
   </data>
   <data name="pMain.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -1793,10 +1819,13 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>760, 628</value>
+    <value>984, 628</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>776, 600</value>
+    <value>1000, 600</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -1828,17 +1857,11 @@
   <data name="&gt;&gt;tsmiUpdateFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cHeadersName.Name" xml:space="preserve">
-    <value>cHeadersName</value>
+  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
+    <value>ttHelpTip</value>
   </data>
-  <data name="&gt;&gt;cHeadersName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cHeadersValue.Name" xml:space="preserve">
-    <value>cHeadersValue</value>
-  </data>
-  <data name="&gt;&gt;cHeadersValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cParametersName.Name" xml:space="preserve">
     <value>cParametersName</value>
@@ -1852,6 +1875,18 @@
   <data name="&gt;&gt;cParametersValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;cHeadersName.Name" xml:space="preserve">
+    <value>cHeadersName</value>
+  </data>
+  <data name="&gt;&gt;cHeadersName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cHeadersValue.Name" xml:space="preserve">
+    <value>cHeadersValue</value>
+  </data>
+  <data name="&gt;&gt;cHeadersValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;cArgumentsName.Name" xml:space="preserve">
     <value>cArgumentsName</value>
   </data>
@@ -1863,12 +1898,6 @@
   </data>
   <data name="&gt;&gt;cArgumentsValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
-    <value>ttHelpTip</value>
-  </data>
-  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CustomUploaderSettingsForm</value>
