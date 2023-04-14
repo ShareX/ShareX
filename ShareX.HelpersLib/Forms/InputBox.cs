@@ -33,17 +33,30 @@ namespace ShareX.HelpersLib
     {
         public string InputText { get; private set; }
 
-        public InputBox(string title = null, string inputText = null, string okText = null, string cancelText = null)
+        private InputBox(string title, string inputText = null, string okText = null, string cancelText = null)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
             InputText = inputText;
 
-            if (!string.IsNullOrEmpty(title)) Text = title;
+            Text = "ShareX - " + title;
             if (!string.IsNullOrEmpty(InputText)) txtInputText.Text = InputText;
             if (!string.IsNullOrEmpty(okText)) btnOK.Text = okText;
             if (!string.IsNullOrEmpty(cancelText)) btnCancel.Text = cancelText;
+        }
+
+        public static string Show(string title, string inputText = null, string okText = null, string cancelText = null)
+        {
+            using (InputBox form = new InputBox(title, inputText, okText, cancelText))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    return form.InputText;
+                }
+
+                return null;
+            }
         }
 
         private void InputBox_Shown(object sender, EventArgs e)
@@ -67,19 +80,6 @@ namespace ShareX.HelpersLib
         {
             DialogResult = DialogResult.Cancel;
             Close();
-        }
-
-        public static string GetInputText(string title = null, string inputText = null, string okText = null, string cancelText = null)
-        {
-            using (InputBox form = new InputBox(title, inputText, okText, cancelText))
-            {
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    return form.InputText;
-                }
-
-                return null;
-            }
         }
 
         #region Windows Form Designer generated code

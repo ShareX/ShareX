@@ -239,7 +239,7 @@ namespace ShareX.HelpersLib
 
         private async void tsmiImportURL_Click(object sender, EventArgs e)
         {
-            string url = InputBox.GetInputText(Resources.ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from);
+            string url = InputBox.Show(Resources.ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from);
 
             if (!string.IsNullOrEmpty(url))
             {

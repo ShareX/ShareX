@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
@@ -42,7 +41,7 @@ namespace ShareX.UploadersLib
             string title = "Input";
             string defaultText = "";
 
-            if (parameters.Length > 0)
+            if (parameters != null && parameters.Length > 0)
             {
                 title = parameters[0];
 
@@ -52,15 +51,7 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            using (InputBox inputBox = new InputBox(title, defaultText))
-            {
-                if (inputBox.ShowDialog() == DialogResult.OK)
-                {
-                    return inputBox.InputText;
-                }
-            }
-
-            return defaultText;
+            return InputBox.Show(title, defaultText);
         }
     }
 }

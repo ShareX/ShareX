@@ -334,7 +334,7 @@ namespace ShareX
                 inputText = text;
             }
 
-            string url = InputBox.GetInputText("ShareX - " + Resources.UploadManager_UploadURL_URL_to_download_from_and_upload, inputText);
+            string url = InputBox.Show(Resources.UploadManager_UploadURL_URL_to_download_from_and_upload, inputText);
 
             if (!string.IsNullOrEmpty(url))
             {
@@ -355,7 +355,7 @@ namespace ShareX
                 inputText = text;
             }
 
-            string url = InputBox.GetInputText("ShareX - " + Resources.UploadManager_ShowShortenURLDialog_ShortenURL, inputText,
+            string url = InputBox.Show(Resources.UploadManager_ShowShortenURLDialog_ShortenURL, inputText,
                 Resources.UploadManager_ShowShortenURLDialog_Shorten);
 
             if (!string.IsNullOrEmpty(url))
