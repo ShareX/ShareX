@@ -29,6 +29,8 @@ namespace ShareX.UploadersLib
     {
         public abstract string Name { get; }
 
+        public virtual string[] Aliases { get; }
+
         public virtual int MinParameterCount { get; } = 0;
 
         public abstract string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters);

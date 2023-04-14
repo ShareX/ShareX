@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShareX.UploadersLib
 {
@@ -72,7 +73,8 @@ namespace ShareX.UploadersLib
 
             foreach (CustomUploaderFunction function in Functions)
             {
-                if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase))
+                if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase) ||
+                    (function.Aliases != null && function.Aliases.Any(x => x.Equals(functionName, StringComparison.OrdinalIgnoreCase))))
                 {
                     if (function.MinParameterCount > 0 && (parameters == null || parameters.Length < function.MinParameterCount))
                     {

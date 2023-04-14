@@ -28,16 +28,18 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    // Example: {prompt}
-    // Example: {prompt:title}
-    // Example: {prompt:title|default text}
-    internal class CustomUploaderFunctionPrompt : CustomUploaderFunction
+    // Example: {inputbox}
+    // Example: {inputbox:title}
+    // Example: {inputbox:title|default text}
+    internal class CustomUploaderFunctionInputBox : CustomUploaderFunction
     {
-        public override string Name { get; } = "prompt";
+        public override string Name { get; } = "inputbox";
+
+        public override string[] Aliases { get; } = new string[] { "prompt" };
 
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
-            string title = "ShareX - Prompt";
+            string title = "Input";
             string defaultText = "";
 
             if (parameters.Length > 0)

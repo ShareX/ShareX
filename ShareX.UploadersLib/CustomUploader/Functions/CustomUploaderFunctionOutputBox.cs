@@ -27,30 +27,37 @@ using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib
 {
-    // Example: {output:text}
-    // Example: {output:title|text}
-    internal class CustomUploaderFunctionOutput : CustomUploaderFunction
+    // Example: {outputbox:text}
+    // Example: {outputbox:title|text}
+    internal class CustomUploaderFunctionOutputBox : CustomUploaderFunction
     {
-        public override string Name { get; } = "output";
+        public override string Name { get; } = "outputbox";
 
         public override int MinParameterCount { get; } = 1;
 
         public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
         {
-            string text, title;
+            string text, title = null;
 
             if (parameters.Length > 1)
             {
-                text = parameters[1];
                 title = parameters[0];
+                text = parameters[1];
             }
             else
             {
                 text = parameters[0];
-                title = "ShareX - Output";
             }
 
-            OutputBox.Show(text, title);
+            if (!string.IsNullOrEmpty(text))
+            {
+                if (string.IsNullOrEmpty(title))
+                {
+                    title = "Output";
+                }
+
+                OutputBox.Show(text, title);
+            }
 
             return null;
         }

@@ -133,10 +133,10 @@
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionBase64.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionFileName.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionInput.cs" />
-    <Compile Include="CustomUploader\Functions\CustomUploaderFunctionOutput.cs" />
+    <Compile Include="CustomUploader\Functions\CustomUploaderFunctionOutputBox.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionResponseURL.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionResponse.cs" />
-    <Compile Include="CustomUploader\Functions\CustomUploaderFunctionPrompt.cs" />
+    <Compile Include="CustomUploader\Functions\CustomUploaderFunctionInputBox.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionSelect.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionRandom.cs" />
     <Compile Include="CustomUploader\Functions\CustomUploaderFunctionXml.cs" />
