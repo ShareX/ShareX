@@ -35,6 +35,7 @@ namespace ShareX.HelpersLib
         private OutputBox(string text, string title, bool scrollToEnd = false)
         {
             InitializeComponent();
+            rtbText.AddContextMenu();
             ShareXResources.ApplyTheme(this);
 
             Text = "ShareX - " + title;
@@ -59,6 +60,10 @@ namespace ShareX.HelpersLib
             if (ScrollToEnd)
             {
                 NativeMethods.SendMessage(rtbText.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_BOTTOM, 0);
+            }
+            else
+            {
+                NativeMethods.SendMessage(rtbText.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
             }
         }
 

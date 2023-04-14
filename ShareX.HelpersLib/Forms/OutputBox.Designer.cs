@@ -39,6 +39,7 @@
             this.rtbText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbText.Location = new System.Drawing.Point(8, 8);
             this.rtbText.Name = "rtbText";
+            this.rtbText.ReadOnly = true;
             this.rtbText.Size = new System.Drawing.Size(968, 745);
             this.rtbText.TabIndex = 1;
             this.rtbText.Text = "";
