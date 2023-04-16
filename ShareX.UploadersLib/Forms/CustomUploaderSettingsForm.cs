@@ -65,7 +65,7 @@ namespace ShareX.UploadersLib
                 new CodeMenuItem("{filename}", "File name"),
                 new CodeMenuItem("{random:input1|input2}", "Random selection from list"),
                 new CodeMenuItem("{select:input1|input2}", "Lets user to select one input from list"),
-                new CodeMenuItem("{prompt:title|default_value}", "Lets user to input text"),
+                new CodeMenuItem("{inputbox:title|default_value}", "Lets user to input text"),
                 new CodeMenuItem("{base64:input}", "Base64 encode input")
             };
             */
@@ -81,7 +81,8 @@ namespace ShareX.UploadersLib
                 new CodeMenuItem("{filename}", "File name used when uploading"),
                 new CodeMenuItem("{random:input1|input2}", "Random selection from list"),
                 new CodeMenuItem("{select:input1|input2}", "Lets user to select one input from list"),
-                new CodeMenuItem("{prompt:title|default_value}", "Lets user to input text"),
+                new CodeMenuItem("{inputbox:title|default_value}", "Lets user to input text"),
+                new CodeMenuItem("{outputbox:title|text}", "Lets user to output text"),
                 new CodeMenuItem("{base64:input}", "Base64 encode input")
             };
 
