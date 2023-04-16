@@ -145,7 +145,7 @@
     <value>btnStart</value>
   </data>
   <data name="&gt;&gt;btnStart.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=14.1.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnStart.Parent" xml:space="preserve">
     <value>pInfo</value>
@@ -170,7 +170,6 @@
   </data>
   <data name="lblTimer.Text" xml:space="preserve">
     <value>00:00:00</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="lblTimer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -215,7 +214,7 @@
     <value>btnAbort</value>
   </data>
   <data name="&gt;&gt;btnAbort.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=14.1.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAbort.Parent" xml:space="preserve">
     <value>pInfo</value>
@@ -228,6 +227,39 @@
   </data>
   <data name="pInfo.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;btnPause.Name" xml:space="preserve">
+    <value>btnPause</value>
+  </data>
+  <data name="&gt;&gt;btnPause.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnPause.Parent" xml:space="preserve">
+    <value>pInfo</value>
+  </data>
+  <data name="&gt;&gt;btnPause.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="pInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>377, 36</value>
+  </data>
+  <data name="pInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pInfo.Name" xml:space="preserve">
+    <value>pInfo</value>
+  </data>
+  <data name="&gt;&gt;pInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="btnPause.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -257,7 +289,7 @@
     <value>btnPause</value>
   </data>
   <data name="&gt;&gt;btnPause.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=14.1.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnPause.Parent" xml:space="preserve">
     <value>pInfo</value>
@@ -265,44 +297,29 @@
   <data name="&gt;&gt;btnPause.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="pInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="pInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>377, 36</value>
-  </data>
-  <data name="pInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pInfo.Name" xml:space="preserve">
-    <value>pInfo</value>
-  </data>
-  <data name="&gt;&gt;pInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pInfo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pInfo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="cmsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>138, 17</value>
   </metadata>
   <data name="tsmiStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 22</value>
+    <value>105, 22</value>
   </data>
   <data name="tsmiStart.Text" xml:space="preserve">
     <value>Start</value>
   </data>
+  <data name="tsmiPause.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="tsmiPause.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
   <data name="tsmiAbort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 22</value>
+    <value>105, 22</value>
   </data>
   <data name="tsmiAbort.Text" xml:space="preserve">
     <value>Abort</value>
   </data>
   <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 48</value>
+    <value>106, 70</value>
   </data>
   <data name="&gt;&gt;cmsMain.Name" xml:space="preserve">
     <value>cmsMain</value>
@@ -315,7 +332,6 @@
   </metadata>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="niTray.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -345,6 +361,12 @@
     <value>tsmiStart</value>
   </data>
   <data name="&gt;&gt;tsmiStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiPause.Name" xml:space="preserve">
+    <value>tsmiPause</value>
+  </data>
+  <data name="&gt;&gt;tsmiPause.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiAbort.Name" xml:space="preserve">

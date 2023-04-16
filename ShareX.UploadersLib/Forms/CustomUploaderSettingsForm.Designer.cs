@@ -61,7 +61,11 @@
             this.btnFileUploaderTest = new System.Windows.Forms.Button();
             this.lblImageUploader = new System.Windows.Forms.Label();
             this.dgvHeaders = new System.Windows.Forms.DataGridView();
+            this.cHeadersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cHeadersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvParameters = new System.Windows.Forms.DataGridView();
+            this.cParametersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cParametersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHeaders = new System.Windows.Forms.Label();
             this.lblParameters = new System.Windows.Forms.Label();
             this.pRequestURL = new System.Windows.Forms.Panel();
@@ -73,6 +77,8 @@
             this.lblBody = new System.Windows.Forms.Label();
             this.pBodyArguments = new System.Windows.Forms.Panel();
             this.dgvArguments = new System.Windows.Forms.DataGridView();
+            this.cArgumentsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cArgumentsValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFileFormName = new System.Windows.Forms.Label();
             this.txtFileFormName = new System.Windows.Forms.TextBox();
             this.pBodyData = new System.Windows.Forms.Panel();
@@ -104,12 +110,6 @@
             this.lblUploaders = new System.Windows.Forms.Label();
             this.pMain = new System.Windows.Forms.Panel();
             this.btnTestURLSyntax = new System.Windows.Forms.Button();
-            this.cParametersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cParametersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHeadersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHeadersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cArgumentsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cArgumentsValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsHelp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHeaders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParameters)).BeginInit();
@@ -326,6 +326,19 @@
             this.dgvHeaders.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHeaders_CellValueChanged);
             this.dgvHeaders.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
             // 
+            // cHeadersName
+            // 
+            resources.ApplyResources(this.cHeadersName, "cHeadersName");
+            this.cHeadersName.Name = "cHeadersName";
+            this.cHeadersName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cHeadersValue
+            // 
+            this.cHeadersValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.cHeadersValue, "cHeadersValue");
+            this.cHeadersValue.Name = "cHeadersValue";
+            this.cHeadersValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // dgvParameters
             // 
             this.dgvParameters.AllowUserToResizeRows = false;
@@ -361,6 +374,19 @@
             this.dgvParameters.RowHeadersVisible = false;
             this.dgvParameters.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParameters_CellValueChanged);
             this.dgvParameters.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
+            // 
+            // cParametersName
+            // 
+            resources.ApplyResources(this.cParametersName, "cParametersName");
+            this.cParametersName.Name = "cParametersName";
+            this.cParametersName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cParametersValue
+            // 
+            this.cParametersValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.cParametersValue, "cParametersValue");
+            this.cParametersValue.Name = "cParametersValue";
+            this.cParametersValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // lblHeaders
             // 
@@ -463,6 +489,21 @@
             this.dgvArguments.RowHeadersVisible = false;
             this.dgvArguments.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArguments_CellValueChanged);
             this.dgvArguments.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
+            // 
+            // cArgumentsName
+            // 
+            resources.ApplyResources(this.cArgumentsName, "cArgumentsName");
+            this.cArgumentsName.Name = "cArgumentsName";
+            this.cArgumentsName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cArgumentsValue
+            // 
+            this.cArgumentsValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cArgumentsValue.DefaultCellStyle = dataGridViewCellStyle6;
+            resources.ApplyResources(this.cArgumentsValue, "cArgumentsValue");
+            this.cArgumentsValue.Name = "cArgumentsValue";
+            this.cArgumentsValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // lblFileFormName
             // 
@@ -695,47 +736,6 @@
             this.btnTestURLSyntax.Name = "btnTestURLSyntax";
             this.btnTestURLSyntax.UseVisualStyleBackColor = true;
             this.btnTestURLSyntax.Click += new System.EventHandler(this.btnTestURLSyntax_Click);
-            // 
-            // cParametersName
-            // 
-            resources.ApplyResources(this.cParametersName, "cParametersName");
-            this.cParametersName.Name = "cParametersName";
-            this.cParametersName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cParametersValue
-            // 
-            this.cParametersValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.cParametersValue, "cParametersValue");
-            this.cParametersValue.Name = "cParametersValue";
-            this.cParametersValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cHeadersName
-            // 
-            resources.ApplyResources(this.cHeadersName, "cHeadersName");
-            this.cHeadersName.Name = "cHeadersName";
-            this.cHeadersName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cHeadersValue
-            // 
-            this.cHeadersValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.cHeadersValue, "cHeadersValue");
-            this.cHeadersValue.Name = "cHeadersValue";
-            this.cHeadersValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cArgumentsName
-            // 
-            resources.ApplyResources(this.cArgumentsName, "cArgumentsName");
-            this.cArgumentsName.Name = "cArgumentsName";
-            this.cArgumentsName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cArgumentsValue
-            // 
-            this.cArgumentsValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cArgumentsValue.DefaultCellStyle = dataGridViewCellStyle6;
-            resources.ApplyResources(this.cArgumentsValue, "cArgumentsValue");
-            this.cArgumentsValue.Name = "cArgumentsValue";
-            this.cArgumentsValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // CustomUploaderSettingsForm
             // 

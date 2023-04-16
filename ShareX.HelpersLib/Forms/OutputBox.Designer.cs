@@ -33,7 +33,6 @@
             // 
             // rtbText
             // 
-            this.rtbText.BackColor = System.Drawing.Color.Black;
             this.rtbText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -49,14 +48,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.rtbText);
             this.Name = "OutputBox";
             this.Padding = new System.Windows.Forms.Padding(8);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OutputBox";
             this.Shown += new System.EventHandler(this.OutputBox_Shown);
             this.ResumeLayout(false);
 

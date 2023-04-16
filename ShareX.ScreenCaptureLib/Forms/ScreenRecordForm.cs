@@ -261,17 +261,43 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateUI()
         {
-            if (Status == ScreenRecordingStatus.Waiting || Status == ScreenRecordingStatus.Paused)
+            switch (Status)
             {
-                btnPause.Text = Resources.Resume;
-                lblTimer.Cursor = Cursors.SizeAll;
-                borderColor = Color.FromArgb(241, 196, 27);
-                Refresh();
-            }
-            else if (Status == ScreenRecordingStatus.Recording)
-            {
-                btnPause.Text = Resources.Pause;
-                lblTimer.Cursor = Cursors.Default;
+                case ScreenRecordingStatus.Working:
+                    string trayTextWorking = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
+                    niTray.Text = trayTextWorking.Truncate(63);
+                    niTray.Icon = Resources.control_record.ToIcon();
+                    btnStart.Text = Resources.ScreenRecordForm_Stop;
+                    tsmiStart.Text = Resources.ScreenRecordForm_Stop;
+                    tsmiStart.Image = Resources.tick;
+                    break;
+                case ScreenRecordingStatus.Waiting:
+                case ScreenRecordingStatus.Paused:
+                    if (Status == ScreenRecordingStatus.Paused)
+                    {
+                        string trayTextWaiting = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
+                        niTray.Text = trayTextWaiting.Truncate(63);
+                    }
+                    else
+                    {
+                        string trayTextBeforeStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
+                        niTray.Text = trayTextBeforeStart.Truncate(63);
+                    }
+                    niTray.Icon = Resources.control_record_yellow.ToIcon();
+                    btnPause.Text = Resources.Resume;
+                    tsmiPause.Text = Resources.Resume;
+                    tsmiPause.Image = Resources.control;
+                    lblTimer.Cursor = Cursors.SizeAll;
+                    borderColor = Color.FromArgb(241, 196, 27);
+                    Refresh();
+                    break;
+                case ScreenRecordingStatus.Recording:
+                    niTray.Icon = Resources.control_record.ToIcon();
+                    btnPause.Text = Resources.Pause;
+                    tsmiPause.Text = Resources.Pause;
+                    tsmiPause.Image = Resources.control_pause;
+                    lblTimer.Cursor = Cursors.Default;
+                    break;
             }
         }
 
@@ -289,20 +315,12 @@ namespace ShareX.ScreenCaptureLib
                         niTray.Visible = true;
                         break;
                     case ScreenRecordState.BeforeStart:
-                        string trayTextBeforeStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
-                        niTray.Text = trayTextBeforeStart.Truncate(63);
-                        tsmiStart.Text = Resources.ScreenRecordForm_Start;
                         cmsMain.Enabled = true;
                         UpdateUI();
                         break;
                     case ScreenRecordState.AfterStart:
                         dragging = false;
                         Status = ScreenRecordingStatus.Working;
-                        string trayTextAfterStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
-                        niTray.Text = trayTextAfterStart.Truncate(63);
-                        niTray.Icon = Resources.control_record.ToIcon();
-                        tsmiStart.Text = Resources.ScreenRecordForm_Stop;
-                        btnStart.Text = Resources.ScreenRecordForm_Stop;
                         UpdateUI();
                         break;
                     case ScreenRecordState.AfterRecordingStart:
@@ -316,10 +334,10 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ScreenRecordState.Encoding:
                         Hide();
+                        cmsMain.Enabled = false;
                         string trayTextAfterStop = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
                         niTray.Text = trayTextAfterStop.Truncate(63);
                         niTray.Icon = Resources.camcorder__pencil.ToIcon();
-                        cmsMain.Enabled = false;
                         break;
                 }
             });

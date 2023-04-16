@@ -1429,7 +1429,7 @@
     <value>False</value>
   </data>
   <data name="rtbResultURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>586, 14</value>
+    <value>570, 14</value>
   </data>
   <data name="rtbResultURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1456,7 +1456,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pResultURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 20</value>
+    <value>576, 20</value>
   </data>
   <data name="pResultURL.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -1765,16 +1765,16 @@
     <value>3</value>
   </data>
   <data name="btnTestURLSyntax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 478</value>
+    <value>592, 478</value>
   </data>
   <data name="btnTestURLSyntax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>88, 24</value>
   </data>
   <data name="btnTestURLSyntax.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
   <data name="btnTestURLSyntax.Text" xml:space="preserve">
-    <value>Test</value>
+    <value>Test...</value>
   </data>
   <data name="&gt;&gt;btnTestURLSyntax.Name" xml:space="preserve">
     <value>btnTestURLSyntax</value>
@@ -1821,9 +1821,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>984, 628</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 600</value>
   </data>
@@ -1857,11 +1854,17 @@
   <data name="&gt;&gt;tsmiUpdateFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
-    <value>ttHelpTip</value>
+  <data name="&gt;&gt;cHeadersName.Name" xml:space="preserve">
+    <value>cHeadersName</value>
   </data>
-  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cHeadersName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cHeadersValue.Name" xml:space="preserve">
+    <value>cHeadersValue</value>
+  </data>
+  <data name="&gt;&gt;cHeadersValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cParametersName.Name" xml:space="preserve">
     <value>cParametersName</value>
@@ -1875,18 +1878,6 @@
   <data name="&gt;&gt;cParametersValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cHeadersName.Name" xml:space="preserve">
-    <value>cHeadersName</value>
-  </data>
-  <data name="&gt;&gt;cHeadersName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cHeadersValue.Name" xml:space="preserve">
-    <value>cHeadersValue</value>
-  </data>
-  <data name="&gt;&gt;cHeadersValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;cArgumentsName.Name" xml:space="preserve">
     <value>cArgumentsName</value>
   </data>
@@ -1898,6 +1889,12 @@
   </data>
   <data name="&gt;&gt;cArgumentsValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
+    <value>ttHelpTip</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CustomUploaderSettingsForm</value>
