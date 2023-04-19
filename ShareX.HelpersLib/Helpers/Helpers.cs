@@ -884,24 +884,15 @@ namespace ShareX.HelpersLib
             using (MemoryStream ms = new MemoryStream())
             using (XmlTextWriter writer = new XmlTextWriter(ms, Encoding.Unicode))
             {
-                // Load the XmlDocument with the XML.
+                writer.Formatting = Formatting.Indented;
+
                 XmlDocument document = new XmlDocument();
                 document.LoadXml(xml);
-
-                writer.Formatting = System.Xml.Formatting.Indented;
-
-                // Write the XML into a formatting XmlTextWriter
                 document.WriteContentTo(writer);
                 writer.Flush();
                 ms.Flush();
-
-                // Have to rewind the MemoryStream in order to read its contents.
                 ms.Position = 0;
-
-                // Read MemoryStream contents into a StreamReader.
                 StreamReader sReader = new StreamReader(ms);
-
-                // Extract the text from the StreamReader.
                 return sReader.ReadToEnd();
             }
         }
@@ -913,28 +904,48 @@ namespace ShareX.HelpersLib
 
         public static Icon GetProgressIcon(int percentage, Color color)
         {
-            percentage = percentage.Clamp(0, 99);
+            percentage = percentage.Clamp(0, 100);
 
             Size size = SystemInformation.SmallIconSize;
+
             using (Bitmap bmp = new Bitmap(size.Width, size.Height))
             using (Graphics g = Graphics.FromImage(bmp))
             {
+                using (Brush brush = new SolidBrush(Color.FromArgb(39, 39, 39)))
+                {
+                    g.FillRectangle(brush, 0, 0, size.Width, size.Height);
+                }
+
                 int y = (int)(size.Height * (percentage / 100f));
 
                 if (y > 0)
                 {
                     using (Brush brush = new SolidBrush(color))
                     {
-                        g.FillRectangle(brush, 0, size.Height - 1 - y, size.Width, y);
+                        g.FillRectangle(brush, 0, size.Height - y, size.Width, y);
+                    }
+
+                    if (y < size.Height)
+                    {
+                        using (Pen pen = new Pen(ColorHelpers.LighterColor(color, 0.3f)))
+                        {
+                            g.DrawLine(pen, 0, size.Height - y, size.Width - 1, size.Height - y);
+                        }
                     }
                 }
 
                 using (Font font = new Font("Arial", 10))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
-                    g.DrawString(percentage.ToString(), font, Brushes.Black, size.Width / 2f, size.Height / 2f, sf);
-                    g.DrawString(percentage.ToString(), font, Brushes.White, size.Width / 2f, (size.Height / 2f) - 1, sf);
+                    percentage = percentage.Clamp(0, 99);
+
+                    g.DrawString(percentage.ToString(), font, Brushes.White, size.Width / 2f, size.Height / 2f, sf);
                 }
+
+                bmp.SetPixel(0, 0, Color.Transparent);
+                bmp.SetPixel(bmp.Width - 1, 0, Color.Transparent);
+                bmp.SetPixel(0, bmp.Height - 1, Color.Transparent);
+                bmp.SetPixel(bmp.Width - 1, bmp.Height - 1, Color.Transparent);
 
                 return Icon.FromHandle(bmp.GetHicon());
             }

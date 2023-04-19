@@ -474,7 +474,7 @@ namespace ShareX
             else
             {
                 Program.MainForm.Text = Program.Title;
-                UpdateTrayIcon(-1);
+                UpdateTrayIcon();
                 TaskbarManager.SetProgressState(Program.MainForm, TaskbarProgressBarStatus.NoProgress);
             }
         }
@@ -527,24 +527,14 @@ namespace ShareX
             }
         }
 
-        public static void TestTrayIcon()
+        public static async Task TestTrayIcon()
         {
-            Timer timer = new Timer();
-            timer.Interval = 50;
-            int i = 0;
-            timer.Tick += (sender, e) =>
+            for (int i = 0; i <= 100; i++)
             {
-                if (i > 99)
-                {
-                    timer.Stop();
-                    UpdateTrayIcon();
-                }
-                else
-                {
-                    UpdateTrayIcon(i++);
-                }
-            };
-            timer.Start();
+                UpdateTrayIcon(i);
+
+                await Task.Delay(50);
+            }
         }
 
         private static void AppendHistoryItemAsync(HistoryItem historyItem)

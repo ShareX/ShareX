@@ -71,8 +71,8 @@ namespace ShareX.HelpersLib
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;
                     g.PixelOffsetMode = PixelOffsetMode.Half;
-                    g.DrawRoundedRectangle(shadowBrush, null, new Rectangle(0, 1, bmp.Width, bmp.Height), 3);
-                    g.DrawRoundedRectangle(brush, null, new Rectangle(0, 0, bmp.Width, bmp.Height), 3);
+                    g.DrawRoundedRectangle(shadowBrush, new Rectangle(0, 1, bmp.Width, bmp.Height), 3);
+                    g.DrawRoundedRectangle(brush, new Rectangle(0, 0, bmp.Width, bmp.Height), 3);
                     stringFormat.Alignment = StringAlignment.Center;
                     stringFormat.LineAlignment = StringAlignment.Center;
                     string text;

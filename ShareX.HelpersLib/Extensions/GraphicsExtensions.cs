@@ -78,6 +78,11 @@ namespace ShareX.HelpersLib
             g.DrawRoundedRectangle(brush, null, rect, radius);
         }
 
+        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, int x, int y, int width, int height, float radius)
+        {
+            DrawRoundedRectangle(g, brush, pen, new Rectangle(x, y, width, height), radius);
+        }
+
         public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, RectangleF rect, float radius)
         {
             using (GraphicsPath gp = new GraphicsPath())
@@ -88,6 +93,23 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void FillRoundedRectangle(this Graphics g, Brush brush, int x, int y, int width, int height, float radius)
+        {
+            FillRoundedRectangle(g, brush, new Rectangle(x, y, width, height), radius);
+        }
+
+        public static void FillRoundedRectangle(this Graphics g, Brush brush, RectangleF rect, float radius)
+        {
+            if (rect.Width > 0 && rect.Height > 0)
+            {
+                using (GraphicsPath gp = new GraphicsPath())
+                {
+                    gp.AddRoundedRectangle(rect, radius);
+                    g.FillPath(brush, gp);
+                }
+            }
+        }
+
         public static void DrawCapsule(this Graphics g, Brush brush, RectangleF rect)
         {
             using (GraphicsPath gp = new GraphicsPath())
@@ -95,11 +117,6 @@ namespace ShareX.HelpersLib
                 gp.AddCapsule(rect);
                 g.FillPath(brush, gp);
             }
-        }
-
-        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, int x, int y, int width, int height, float radius)
-        {
-            DrawRoundedRectangle(g, brush, pen, new Rectangle(x, y, width, height), radius);
         }
 
         public static void DrawDiamond(this Graphics g, Pen pen, Rectangle rect)
