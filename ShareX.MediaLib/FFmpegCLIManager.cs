@@ -51,6 +51,8 @@ namespace ShareX.MediaLib
         public const int vp8_max = 63;
         public const int vp9_min = 0;
         public const int vp9_max = 63;
+        public const int av1_min = 0;
+        public const int av1_max = 63;
         public const int xvid_min = 1;
         public const int xvid_max = 31;
         public const int mp3_min = 0;

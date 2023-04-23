@@ -136,6 +136,17 @@ namespace ShareX.MediaLib
                         args.Append("-b:v 0 ");
                     }
                     break;
+                case ConverterVideoCodecs.av1: // https://trac.ffmpeg.org/wiki/Encode/AV1
+                    args.Append("-c:v libsvtav1 ");
+                    if (VideoQualityUseBitrate)
+                    {
+                        args.Append($"-b:v {VideoQualityBitrate}k ");
+                    }
+                    else
+                    {
+                        args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.av1_min, FFmpegCLIManager.av1_max)} ");
+                    }
+                    break;
                 case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
                     args.Append("-c:v libxvid ");
                     if (VideoQualityUseBitrate)
@@ -175,6 +186,10 @@ namespace ShareX.MediaLib
                     args.Append("-c:a libvorbis ");
                     args.Append("-q:a 3 ");
                     break;
+                case ConverterVideoCodecs.av1: // https://ffmpeg.org/ffmpeg-codecs.html#libopus-1
+                    args.Append("-c:a libopus ");
+                    args.Append("-b:a 128k ");
+                    break;
                 case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MP3
                     args.Append("-c:a libmp3lame ");
                     args.Append("-q:a 4 ");
@@ -201,6 +216,8 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:
                     return "webm";
+                case ConverterVideoCodecs.av1:
+                    return "mkv";
                 case ConverterVideoCodecs.xvid:
                     return "avi";
                 case ConverterVideoCodecs.gif:

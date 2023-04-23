@@ -43,10 +43,12 @@ namespace ShareX.MediaLib
         x264,
         [Description("H.265 / x265")]
         x265,
-        [Description("VP8 (WebM)")]
+        [Description("VP8")]
         vp8,
-        [Description("VP9 (WebM)")]
+        [Description("VP9")]
         vp9,
+        [Description("AV1")]
+        av1,
         [Description("MPEG-4 / Xvid")]
         xvid,
         [Description("GIF")]

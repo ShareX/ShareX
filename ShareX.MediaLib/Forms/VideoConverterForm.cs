@@ -95,6 +95,7 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.x265:
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:
+                case ConverterVideoCodecs.av1:
                 case ConverterVideoCodecs.xvid:
                     cbVideoQualityUseBitrate.Visible = true;
                     tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible = !Options.VideoQualityUseBitrate;
@@ -123,6 +124,10 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.vp9:
                     tbVideoQuality.Minimum = FFmpegCLIManager.vp9_min;
                     tbVideoQuality.Maximum = FFmpegCLIManager.vp9_max;
+                    break;
+                case ConverterVideoCodecs.av1:
+                    tbVideoQuality.Minimum = FFmpegCLIManager.av1_min;
+                    tbVideoQuality.Maximum = FFmpegCLIManager.av1_max;
                     break;
                 case ConverterVideoCodecs.xvid:
                     tbVideoQuality.Minimum = FFmpegCLIManager.xvid_min;
