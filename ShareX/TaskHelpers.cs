@@ -1059,6 +1059,17 @@ namespace ShareX
             return null;
         }
 
+        public static void OpenImageBeautifier()
+        {
+            Bitmap sourceImage = ImageHelpers.LoadImageWithFileDialog();
+
+            if (sourceImage != null)
+            {
+                ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(sourceImage);
+                imageBeautifierForm.Show();
+            }
+        }
+
         public static void OpenImageEffects(TaskSettings taskSettings = null)
         {
             string filePath = ImageHelpers.OpenImageFileDialog();

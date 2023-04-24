@@ -80,6 +80,7 @@
             this.tsmiPinToScreen = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTools1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiImageEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImageBeautifier = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageViewer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
@@ -233,6 +234,7 @@
             this.tsmiTrayPinToScreen = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTrayTools1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayImageEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageBeautifier = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageViewer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
@@ -667,6 +669,7 @@
             this.tsmiPinToScreen,
             this.tssTools1,
             this.tsmiImageEditor,
+            this.tsmiImageBeautifier,
             this.tsmiImageEffects,
             this.tsmiImageViewer,
             this.tsmiImageCombiner,
@@ -729,6 +732,13 @@
             this.tsmiImageEditor.Name = "tsmiImageEditor";
             resources.ApplyResources(this.tsmiImageEditor, "tsmiImageEditor");
             this.tsmiImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
+            // 
+            // tsmiImageBeautifier
+            // 
+            this.tsmiImageBeautifier.Image = global::ShareX.Properties.Resources.picture_sunset;
+            this.tsmiImageBeautifier.Name = "tsmiImageBeautifier";
+            resources.ApplyResources(this.tsmiImageBeautifier, "tsmiImageBeautifier");
+            this.tsmiImageBeautifier.Click += new System.EventHandler(this.tsmiImageBeautifier_Click);
             // 
             // tsmiImageEffects
             // 
@@ -1814,6 +1824,7 @@
             this.tsmiTrayPinToScreen,
             this.tssTrayTools1,
             this.tsmiTrayImageEditor,
+            this.tsmiTrayImageBeautifier,
             this.tsmiTrayImageEffects,
             this.tsmiTrayImageViewer,
             this.tsmiTrayImageCombiner,
@@ -1876,6 +1887,13 @@
             this.tsmiTrayImageEditor.Name = "tsmiTrayImageEditor";
             resources.ApplyResources(this.tsmiTrayImageEditor, "tsmiTrayImageEditor");
             this.tsmiTrayImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
+            // 
+            // tsmiTrayImageBeautifier
+            // 
+            this.tsmiTrayImageBeautifier.Image = global::ShareX.Properties.Resources.picture_sunset;
+            this.tsmiTrayImageBeautifier.Name = "tsmiTrayImageBeautifier";
+            resources.ApplyResources(this.tsmiTrayImageBeautifier, "tsmiTrayImageBeautifier");
+            this.tsmiTrayImageBeautifier.Click += new System.EventHandler(this.tsmiImageBeautifier_Click);
             // 
             // tsmiTrayImageEffects
             // 
@@ -2521,5 +2539,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPinSelectedFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiPinToScreen;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayPinToScreen;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImageBeautifier;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageBeautifier;
     }
 }

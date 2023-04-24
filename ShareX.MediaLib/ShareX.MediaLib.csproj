@@ -87,6 +87,12 @@
     <Compile Include="FFmpegCLIManager.cs" />
     <Compile Include="FFmpegDownloader.cs" />
     <Compile Include="FFmpegGitHubDownloader.cs" />
+    <Compile Include="Forms\ImageBeautifierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageBeautifierForm.Designer.cs">
+      <DependentUpon>ImageBeautifierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ImageCombinerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,7 @@
     <Compile Include="Forms\VideoThumbnailerForm.Designer.cs">
       <DependentUpon>VideoThumbnailerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageBeautifierOptions.cs" />
     <Compile Include="ImageCombinerOptions.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,6 +144,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\ImageBeautifierForm.resx">
+      <DependentUpon>ImageBeautifierForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageCombinerForm.de.resx">
       <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </EmbeddedResource>
