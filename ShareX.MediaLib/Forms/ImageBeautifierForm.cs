@@ -58,6 +58,7 @@ namespace ShareX.MediaLib
             tbRoundedCorner.SetValue(Options.RoundedCorner);
             tbShadowSize.SetValue(Options.ShadowSize);
             UpdateUI();
+            UpdateBackgroundPreview();
 
             isReady = true;
         }
@@ -68,6 +69,12 @@ namespace ShareX.MediaLib
             lblPaddingValue.Text = tbPadding.Value.ToString();
             lblRoundedCornerValue.Text = tbRoundedCorner.Value.ToString();
             lblShadowSizeValue.Text = tbShadowSize.Value.ToString();
+        }
+
+        private void UpdateBackgroundPreview()
+        {
+            pbBackground.Image?.Dispose();
+            pbBackground.Image = Options.Background.CreateGradientPreview(pbBackground.ClientRectangle.Width, pbBackground.ClientRectangle.Height, true, true);
         }
 
         private async Task UpdatePreview()
@@ -89,7 +96,7 @@ namespace ShareX.MediaLib
                     Bitmap resultImage = await RenderPreview(SourceImage, Options);
                     PreviewImage?.Dispose();
                     PreviewImage = resultImage;
-                    pbPreview.Image = PreviewImage;
+                    pbPreview.LoadImage(PreviewImage);
 
                     isBusy = false;
 
@@ -186,6 +193,20 @@ namespace ShareX.MediaLib
         private async void tbShadowSize_Scroll(object sender, EventArgs e)
         {
             await UpdatePreview();
+        }
+
+        private async void pbBackground_Click(object sender, EventArgs e)
+        {
+            using (GradientPickerForm gradientPickerForm = new GradientPickerForm(Options.Background.Copy()))
+            {
+                if (gradientPickerForm.ShowDialog() == DialogResult.OK)
+                {
+                    Options.Background = gradientPickerForm.Gradient;
+                    UpdateBackgroundPreview();
+
+                    await UpdatePreview();
+                }
+            }
         }
     }
 }

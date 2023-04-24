@@ -127,12 +127,7 @@ namespace ShareX.HelpersLib
             if (isReady)
             {
                 Bitmap bmp = Gradient.CreateGradientPreview(pbPreview.ClientRectangle.Width, pbPreview.ClientRectangle.Height, true);
-
-                if (pbPreview.Image != null)
-                {
-                    pbPreview.Image.Dispose();
-                }
-
+                pbPreview.Image?.Dispose();
                 pbPreview.Image = bmp;
             }
         }

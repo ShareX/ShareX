@@ -38,24 +38,27 @@
             this.lblShadowSize = new System.Windows.Forms.Label();
             this.tbShadowSize = new System.Windows.Forms.TrackBar();
             this.lblBackground = new System.Windows.Forms.Label();
-            this.pbPreview = new System.Windows.Forms.PictureBox();
-            this.pPreview = new System.Windows.Forms.Panel();
             this.lblMarginValue = new System.Windows.Forms.Label();
             this.lblPaddingValue = new System.Windows.Forms.Label();
             this.lblRoundedCornerValue = new System.Windows.Forms.Label();
             this.lblShadowSizeValue = new System.Windows.Forms.Label();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.pOptions = new System.Windows.Forms.Panel();
+            this.pbBackground = new System.Windows.Forms.PictureBox();
+            this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPadding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRoundedCorner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbShadowSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
-            this.pPreview.SuspendLayout();
+            this.tlpMain.SuspendLayout();
+            this.pOptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMargin
             // 
             this.lblMargin.AutoSize = true;
-            this.lblMargin.Location = new System.Drawing.Point(16, 16);
+            this.lblMargin.Location = new System.Drawing.Point(13, 16);
             this.lblMargin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMargin.Name = "lblMargin";
             this.lblMargin.Size = new System.Drawing.Size(53, 17);
@@ -68,7 +71,7 @@
             this.tbMargin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbMargin.Maximum = 300;
             this.tbMargin.Name = "tbMargin";
-            this.tbMargin.Size = new System.Drawing.Size(299, 45);
+            this.tbMargin.Size = new System.Drawing.Size(296, 45);
             this.tbMargin.TabIndex = 1;
             this.tbMargin.TickFrequency = 10;
             this.tbMargin.Scroll += new System.EventHandler(this.tbMargin_Scroll);
@@ -76,7 +79,7 @@
             // lblPadding
             // 
             this.lblPadding.AutoSize = true;
-            this.lblPadding.Location = new System.Drawing.Point(16, 88);
+            this.lblPadding.Location = new System.Drawing.Point(13, 88);
             this.lblPadding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPadding.Name = "lblPadding";
             this.lblPadding.Size = new System.Drawing.Size(59, 17);
@@ -89,7 +92,7 @@
             this.tbPadding.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbPadding.Maximum = 200;
             this.tbPadding.Name = "tbPadding";
-            this.tbPadding.Size = new System.Drawing.Size(299, 45);
+            this.tbPadding.Size = new System.Drawing.Size(296, 45);
             this.tbPadding.TabIndex = 4;
             this.tbPadding.TickFrequency = 10;
             this.tbPadding.Scroll += new System.EventHandler(this.tbPadding_Scroll);
@@ -109,7 +112,7 @@
             // lblRoundedCorner
             // 
             this.lblRoundedCorner.AutoSize = true;
-            this.lblRoundedCorner.Location = new System.Drawing.Point(16, 192);
+            this.lblRoundedCorner.Location = new System.Drawing.Point(13, 192);
             this.lblRoundedCorner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRoundedCorner.Name = "lblRoundedCorner";
             this.lblRoundedCorner.Size = new System.Drawing.Size(106, 17);
@@ -122,7 +125,7 @@
             this.tbRoundedCorner.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbRoundedCorner.Maximum = 50;
             this.tbRoundedCorner.Name = "tbRoundedCorner";
-            this.tbRoundedCorner.Size = new System.Drawing.Size(299, 45);
+            this.tbRoundedCorner.Size = new System.Drawing.Size(296, 45);
             this.tbRoundedCorner.TabIndex = 8;
             this.tbRoundedCorner.TickFrequency = 5;
             this.tbRoundedCorner.Scroll += new System.EventHandler(this.tbRoundedCorner_Scroll);
@@ -130,7 +133,7 @@
             // lblShadowSize
             // 
             this.lblShadowSize.AutoSize = true;
-            this.lblShadowSize.Location = new System.Drawing.Point(16, 264);
+            this.lblShadowSize.Location = new System.Drawing.Point(13, 264);
             this.lblShadowSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShadowSize.Name = "lblShadowSize";
             this.lblShadowSize.Size = new System.Drawing.Size(83, 17);
@@ -143,7 +146,7 @@
             this.tbShadowSize.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbShadowSize.Maximum = 100;
             this.tbShadowSize.Name = "tbShadowSize";
-            this.tbShadowSize.Size = new System.Drawing.Size(299, 45);
+            this.tbShadowSize.Size = new System.Drawing.Size(296, 45);
             this.tbShadowSize.TabIndex = 11;
             this.tbShadowSize.TickFrequency = 5;
             this.tbShadowSize.Scroll += new System.EventHandler(this.tbShadowSize_Scroll);
@@ -151,35 +154,12 @@
             // lblBackground
             // 
             this.lblBackground.AutoSize = true;
-            this.lblBackground.Location = new System.Drawing.Point(16, 336);
+            this.lblBackground.Location = new System.Drawing.Point(13, 336);
             this.lblBackground.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBackground.Name = "lblBackground";
             this.lblBackground.Size = new System.Drawing.Size(80, 17);
             this.lblBackground.TabIndex = 13;
             this.lblBackground.Text = "Background:";
-            // 
-            // pbPreview
-            // 
-            this.pbPreview.Location = new System.Drawing.Point(0, 0);
-            this.pbPreview.Name = "pbPreview";
-            this.pbPreview.Size = new System.Drawing.Size(100, 100);
-            this.pbPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPreview.TabIndex = 11;
-            this.pbPreview.TabStop = false;
-            // 
-            // pPreview
-            // 
-            this.pPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pPreview.AutoScroll = true;
-            this.pPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pPreview.Controls.Add(this.pbPreview);
-            this.pPreview.Location = new System.Drawing.Point(328, 8);
-            this.pPreview.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pPreview.Name = "pPreview";
-            this.pPreview.Size = new System.Drawing.Size(1048, 745);
-            this.pPreview.TabIndex = 14;
             // 
             // lblMarginValue
             // 
@@ -221,26 +201,72 @@
             this.lblShadowSizeValue.Text = "0";
             this.lblShadowSizeValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // tlpMain
+            // 
+            this.tlpMain.ColumnCount = 2;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Controls.Add(this.pbPreview, 1, 0);
+            this.tlpMain.Controls.Add(this.pOptions, 0, 0);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 1;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Size = new System.Drawing.Size(1384, 761);
+            this.tlpMain.TabIndex = 15;
+            // 
+            // pOptions
+            // 
+            this.pOptions.Controls.Add(this.pbBackground);
+            this.pOptions.Controls.Add(this.lblMargin);
+            this.pOptions.Controls.Add(this.lblShadowSizeValue);
+            this.pOptions.Controls.Add(this.tbMargin);
+            this.pOptions.Controls.Add(this.lblRoundedCornerValue);
+            this.pOptions.Controls.Add(this.lblPadding);
+            this.pOptions.Controls.Add(this.lblPaddingValue);
+            this.pOptions.Controls.Add(this.tbPadding);
+            this.pOptions.Controls.Add(this.lblMarginValue);
+            this.pOptions.Controls.Add(this.cbSmartPadding);
+            this.pOptions.Controls.Add(this.lblRoundedCorner);
+            this.pOptions.Controls.Add(this.lblBackground);
+            this.pOptions.Controls.Add(this.tbRoundedCorner);
+            this.pOptions.Controls.Add(this.tbShadowSize);
+            this.pOptions.Controls.Add(this.lblShadowSize);
+            this.pOptions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pOptions.Location = new System.Drawing.Point(3, 3);
+            this.pOptions.Name = "pOptions";
+            this.pOptions.Size = new System.Drawing.Size(329, 755);
+            this.pOptions.TabIndex = 0;
+            // 
+            // pbBackground
+            // 
+            this.pbBackground.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBackground.Location = new System.Drawing.Point(16, 360);
+            this.pbBackground.Name = "pbBackground";
+            this.pbBackground.Size = new System.Drawing.Size(296, 40);
+            this.pbBackground.TabIndex = 14;
+            this.pbBackground.TabStop = false;
+            this.pbBackground.Click += new System.EventHandler(this.pbBackground_Click);
+            // 
+            // pbPreview
+            // 
+            this.pbPreview.BackColor = System.Drawing.SystemColors.Window;
+            this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPreview.DrawCheckeredBackground = true;
+            this.pbPreview.Location = new System.Drawing.Point(335, 0);
+            this.pbPreview.Margin = new System.Windows.Forms.Padding(0);
+            this.pbPreview.Name = "pbPreview";
+            this.pbPreview.PictureBoxBackColor = System.Drawing.SystemColors.Window;
+            this.pbPreview.Size = new System.Drawing.Size(1049, 761);
+            this.pbPreview.TabIndex = 12;
+            // 
             // ImageBeautifierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 761);
-            this.Controls.Add(this.lblShadowSizeValue);
-            this.Controls.Add(this.lblRoundedCornerValue);
-            this.Controls.Add(this.lblPaddingValue);
-            this.Controls.Add(this.lblMarginValue);
-            this.Controls.Add(this.pPreview);
-            this.Controls.Add(this.lblBackground);
-            this.Controls.Add(this.tbShadowSize);
-            this.Controls.Add(this.lblShadowSize);
-            this.Controls.Add(this.tbRoundedCorner);
-            this.Controls.Add(this.lblRoundedCorner);
-            this.Controls.Add(this.cbSmartPadding);
-            this.Controls.Add(this.tbPadding);
-            this.Controls.Add(this.lblPadding);
-            this.Controls.Add(this.tbMargin);
-            this.Controls.Add(this.lblMargin);
+            this.Controls.Add(this.tlpMain);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ImageBeautifierForm";
@@ -252,11 +278,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbPadding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRoundedCorner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbShadowSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).EndInit();
-            this.pPreview.ResumeLayout(false);
-            this.pPreview.PerformLayout();
+            this.tlpMain.ResumeLayout(false);
+            this.pOptions.ResumeLayout(false);
+            this.pOptions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackground)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -271,11 +297,13 @@
         private System.Windows.Forms.Label lblShadowSize;
         private System.Windows.Forms.TrackBar tbShadowSize;
         private System.Windows.Forms.Label lblBackground;
-        private System.Windows.Forms.PictureBox pbPreview;
-        private System.Windows.Forms.Panel pPreview;
         private System.Windows.Forms.Label lblMarginValue;
         private System.Windows.Forms.Label lblPaddingValue;
         private System.Windows.Forms.Label lblRoundedCornerValue;
         private System.Windows.Forms.Label lblShadowSizeValue;
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
+        private System.Windows.Forms.Panel pOptions;
+        private HelpersLib.MyPictureBox pbPreview;
+        private System.Windows.Forms.PictureBox pbBackground;
     }
 }
