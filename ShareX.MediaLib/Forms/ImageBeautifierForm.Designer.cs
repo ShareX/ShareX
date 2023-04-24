@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblMargin = new System.Windows.Forms.Label();
             this.tbMargin = new System.Windows.Forms.TrackBar();
             this.lblPadding = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.btnSaveAs = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
             this.pbBackground = new System.Windows.Forms.PictureBox();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tbMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPadding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRoundedCorner)).BeginInit();
@@ -219,7 +221,7 @@
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Size = new System.Drawing.Size(1384, 761);
-            this.tlpMain.TabIndex = 15;
+            this.tlpMain.TabIndex = 0;
             // 
             // pbPreview
             // 
@@ -234,7 +236,7 @@
             this.pbPreview.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             this.pbPreview.ShowImageSizeLabel = true;
             this.pbPreview.Size = new System.Drawing.Size(1049, 761);
-            this.pbPreview.TabIndex = 12;
+            this.pbPreview.TabIndex = 1;
             // 
             // pOptions
             // 
@@ -266,11 +268,13 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPrint.Image = global::ShareX.MediaLib.Properties.Resources.printer;
             this.btnPrint.Location = new System.Drawing.Point(264, 696);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(56, 48);
-            this.btnPrint.TabIndex = 19;
+            this.btnPrint.TabIndex = 18;
+            this.ttMain.SetToolTip(this.btnPrint, "Print...");
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -281,7 +285,8 @@
             this.btnSave.Location = new System.Drawing.Point(72, 696);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 48);
-            this.btnSave.TabIndex = 18;
+            this.btnSave.TabIndex = 15;
+            this.ttMain.SetToolTip(this.btnSave, "Save");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -293,6 +298,7 @@
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(56, 48);
             this.btnUpload.TabIndex = 17;
+            this.ttMain.SetToolTip(this.btnUpload, "Upload");
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
@@ -304,6 +310,7 @@
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.Size = new System.Drawing.Size(56, 48);
             this.btnSaveAs.TabIndex = 16;
+            this.ttMain.SetToolTip(this.btnSaveAs, "Save as...");
             this.btnSaveAs.UseVisualStyleBackColor = true;
             this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
             // 
@@ -314,7 +321,8 @@
             this.btnCopy.Location = new System.Drawing.Point(8, 696);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(56, 48);
-            this.btnCopy.TabIndex = 15;
+            this.btnCopy.TabIndex = 14;
+            this.ttMain.SetToolTip(this.btnCopy, "Copy");
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
@@ -378,5 +386,6 @@
         private System.Windows.Forms.Button btnSaveAs;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.ToolTip ttMain;
     }
 }
