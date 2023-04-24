@@ -36,12 +36,12 @@ namespace ShareX.MediaLib
         public Bitmap SourceImage { get; private set; }
         public Bitmap PreviewImage { get; private set; }
         public ImageBeautifierOptions Options { get; private set; }
+        public string FilePath { get; private set; }
 
         private bool isReady, isBusy, isPending;
 
-        public ImageBeautifierForm(Bitmap sourceImage, ImageBeautifierOptions options = null)
+        private ImageBeautifierForm(ImageBeautifierOptions options = null)
         {
-            SourceImage = sourceImage;
             Options = options;
 
             if (Options == null)
@@ -61,6 +61,17 @@ namespace ShareX.MediaLib
             UpdateBackgroundPreview();
 
             isReady = true;
+        }
+
+        public ImageBeautifierForm(Bitmap sourceImage, ImageBeautifierOptions options = null) : this(options)
+        {
+            SourceImage = sourceImage;
+        }
+
+        public ImageBeautifierForm(string filePath, ImageBeautifierOptions options = null) : this(options)
+        {
+            FilePath = filePath;
+            SourceImage = ImageHelpers.LoadImage(filePath);
         }
 
         private void UpdateUI()
@@ -188,6 +199,45 @@ namespace ShareX.MediaLib
         private async void tbRoundedCorner_Scroll(object sender, EventArgs e)
         {
             await UpdatePreview();
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (PreviewImage != null)
+            {
+                ClipboardHelpers.CopyImage(PreviewImage);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (PreviewImage != null && !string.IsNullOrEmpty(FilePath))
+            {
+                ImageHelpers.SaveImage(PreviewImage, FilePath);
+            }
+        }
+
+        private void btnSaveAs_Click(object sender, EventArgs e)
+        {
+            if (PreviewImage != null)
+            {
+                string filePath = ImageHelpers.SaveImageFileDialog(PreviewImage, FilePath);
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    FilePath = filePath;
+                }
+            }
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
         }
 
         private async void tbShadowSize_Scroll(object sender, EventArgs e)

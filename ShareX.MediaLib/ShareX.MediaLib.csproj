@@ -436,6 +436,21 @@
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disks-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload-cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

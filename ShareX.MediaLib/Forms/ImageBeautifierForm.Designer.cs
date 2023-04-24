@@ -43,9 +43,14 @@
             this.lblRoundedCornerValue = new System.Windows.Forms.Label();
             this.lblShadowSizeValue = new System.Windows.Forms.Label();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.pOptions = new System.Windows.Forms.Panel();
-            this.pbBackground = new System.Windows.Forms.PictureBox();
             this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
+            this.pOptions = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.btnSaveAs = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.pbBackground = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPadding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRoundedCorner)).BeginInit();
@@ -216,8 +221,28 @@
             this.tlpMain.Size = new System.Drawing.Size(1384, 761);
             this.tlpMain.TabIndex = 15;
             // 
+            // pbPreview
+            // 
+            this.pbPreview.BackColor = System.Drawing.SystemColors.Window;
+            this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbPreview.DrawCheckeredBackground = true;
+            this.pbPreview.EnableRightClickMenu = true;
+            this.pbPreview.FullscreenOnClick = true;
+            this.pbPreview.Location = new System.Drawing.Point(335, 0);
+            this.pbPreview.Margin = new System.Windows.Forms.Padding(0);
+            this.pbPreview.Name = "pbPreview";
+            this.pbPreview.PictureBoxBackColor = System.Drawing.SystemColors.Window;
+            this.pbPreview.ShowImageSizeLabel = true;
+            this.pbPreview.Size = new System.Drawing.Size(1049, 761);
+            this.pbPreview.TabIndex = 12;
+            // 
             // pOptions
             // 
+            this.pOptions.Controls.Add(this.btnPrint);
+            this.pOptions.Controls.Add(this.btnSave);
+            this.pOptions.Controls.Add(this.btnUpload);
+            this.pOptions.Controls.Add(this.btnSaveAs);
+            this.pOptions.Controls.Add(this.btnCopy);
             this.pOptions.Controls.Add(this.pbBackground);
             this.pOptions.Controls.Add(this.lblMargin);
             this.pOptions.Controls.Add(this.lblShadowSizeValue);
@@ -239,6 +264,60 @@
             this.pOptions.Size = new System.Drawing.Size(329, 755);
             this.pOptions.TabIndex = 0;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Image = global::ShareX.MediaLib.Properties.Resources.printer;
+            this.btnPrint.Location = new System.Drawing.Point(264, 696);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(56, 48);
+            this.btnPrint.TabIndex = 19;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSave.Image = global::ShareX.MediaLib.Properties.Resources.disk_black;
+            this.btnSave.Location = new System.Drawing.Point(72, 696);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(56, 48);
+            this.btnSave.TabIndex = 18;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUpload.Image = global::ShareX.MediaLib.Properties.Resources.upload_cloud;
+            this.btnUpload.Location = new System.Drawing.Point(200, 696);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(56, 48);
+            this.btnUpload.TabIndex = 17;
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnSaveAs
+            // 
+            this.btnSaveAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSaveAs.Image = global::ShareX.MediaLib.Properties.Resources.disks_black;
+            this.btnSaveAs.Location = new System.Drawing.Point(136, 696);
+            this.btnSaveAs.Name = "btnSaveAs";
+            this.btnSaveAs.Size = new System.Drawing.Size(56, 48);
+            this.btnSaveAs.TabIndex = 16;
+            this.btnSaveAs.UseVisualStyleBackColor = true;
+            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCopy.Image = global::ShareX.MediaLib.Properties.Resources.document_copy;
+            this.btnCopy.Location = new System.Drawing.Point(8, 696);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(56, 48);
+            this.btnCopy.TabIndex = 15;
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
             // pbBackground
             // 
             this.pbBackground.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -249,18 +328,6 @@
             this.pbBackground.TabStop = false;
             this.pbBackground.Click += new System.EventHandler(this.pbBackground_Click);
             // 
-            // pbPreview
-            // 
-            this.pbPreview.BackColor = System.Drawing.SystemColors.Window;
-            this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbPreview.DrawCheckeredBackground = true;
-            this.pbPreview.Location = new System.Drawing.Point(335, 0);
-            this.pbPreview.Margin = new System.Windows.Forms.Padding(0);
-            this.pbPreview.Name = "pbPreview";
-            this.pbPreview.PictureBoxBackColor = System.Drawing.SystemColors.Window;
-            this.pbPreview.Size = new System.Drawing.Size(1049, 761);
-            this.pbPreview.TabIndex = 12;
-            // 
             // ImageBeautifierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -269,6 +336,7 @@
             this.Controls.Add(this.tlpMain);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "ImageBeautifierForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -305,5 +373,10 @@
         private System.Windows.Forms.Panel pOptions;
         private HelpersLib.MyPictureBox pbPreview;
         private System.Windows.Forms.PictureBox pbBackground;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnSaveAs;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

@@ -1019,7 +1019,10 @@ namespace ShareX
 
                         form.CopyImageRequested += output =>
                         {
-                            Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(output));
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                ClipboardHelpers.CopyImage(output);
+                            });
                         };
 
                         form.UploadImageRequested += output =>
@@ -1061,11 +1064,11 @@ namespace ShareX
 
         public static void OpenImageBeautifier()
         {
-            Bitmap sourceImage = ImageHelpers.LoadImageWithFileDialog();
+            string filePath = ImageHelpers.OpenImageFileDialog();
 
-            if (sourceImage != null)
+            if (!string.IsNullOrEmpty(filePath))
             {
-                ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(sourceImage);
+                ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(filePath, new ImageBeautifierOptions());
                 imageBeautifierForm.Show();
             }
         }

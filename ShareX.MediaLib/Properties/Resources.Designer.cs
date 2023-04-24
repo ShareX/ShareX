@@ -19,7 +19,7 @@ namespace ShareX.MediaLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -115,6 +115,36 @@ namespace ShareX.MediaLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disk_black {
+            get {
+                object obj = ResourceManager.GetObject("disk-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disks_black {
+            get {
+                object obj = ResourceManager.GetObject("disks-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap document_copy {
+            get {
+                object obj = ResourceManager.GetObject("document-copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FFmpeg error.
         /// </summary>
         internal static string FFmpegError {
@@ -142,6 +172,16 @@ namespace ShareX.MediaLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer {
+            get {
+                object obj = ResourceManager.GetObject("printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start encoding.
         /// </summary>
         internal static string StartEncoding {
@@ -165,6 +205,16 @@ namespace ShareX.MediaLib.Properties {
         internal static string ThumbnailsSuccessfullyGenerated {
             get {
                 return ResourceManager.GetString("ThumbnailsSuccessfullyGenerated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upload_cloud {
+            get {
+                object obj = ResourceManager.GetObject("upload-cloud", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
