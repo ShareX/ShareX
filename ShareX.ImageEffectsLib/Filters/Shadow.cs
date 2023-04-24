@@ -71,6 +71,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Point), "0, 0")]
         public Point Offset { get; set; }
 
+        [DefaultValue(true)]
+        public bool AutoResize { get; set; }
+
         public Shadow()
         {
             this.ApplyDefaultPropertyValues();
@@ -78,7 +81,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.AddShadow(bmp, Opacity, Size, Darkness + 1, Color, Offset);
+            return ImageHelpers.AddShadow(bmp, Opacity, Size, Darkness + 1, Color, Offset, AutoResize);
         }
     }
 }

@@ -1082,7 +1082,7 @@ namespace ShareX.HelpersLib
             return AddShadow(bmp, opacity, size, 1, Color.Black, new Point(0, 0));
         }
 
-        public static Bitmap AddShadow(Bitmap bmp, float opacity, int size, float darkness, Color color, Point offset)
+        public static Bitmap AddShadow(Bitmap bmp, float opacity, int size, float darkness, Color color, Point offset, bool autoResize = true)
         {
             Bitmap bmpShadow = null;
 
@@ -1104,13 +1104,29 @@ namespace ShareX.HelpersLib
                     bmpShadow = shadowImage2;
                 }
 
-                Bitmap bmpResult = bmpShadow.CreateEmptyBitmap(Math.Abs(offset.X), Math.Abs(offset.Y));
+                Bitmap bmpResult;
 
-                using (Graphics g = Graphics.FromImage(bmpResult))
+                if (autoResize)
                 {
-                    g.SetHighQuality();
-                    g.DrawImage(bmpShadow, Math.Max(0, offset.X), Math.Max(0, offset.Y), bmpShadow.Width, bmpShadow.Height);
-                    g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
+                    bmpResult = bmpShadow.CreateEmptyBitmap(Math.Abs(offset.X), Math.Abs(offset.Y));
+
+                    using (Graphics g = Graphics.FromImage(bmpResult))
+                    {
+                        g.SetHighQuality();
+                        g.DrawImage(bmpShadow, Math.Max(0, offset.X), Math.Max(0, offset.Y), bmpShadow.Width, bmpShadow.Height);
+                        g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
+                    }
+                }
+                else
+                {
+                    bmpResult = bmp.CreateEmptyBitmap();
+
+                    using (Graphics g = Graphics.FromImage(bmpResult))
+                    {
+                        g.SetHighQuality();
+                        g.DrawImage(bmpShadow, -size + Math.Max(0, offset.X), -size + Math.Max(0, offset.Y), bmpShadow.Width, bmpShadow.Height);
+                        g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
+                    }
                 }
 
                 return bmpResult;
