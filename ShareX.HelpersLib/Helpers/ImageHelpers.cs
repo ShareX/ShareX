@@ -452,6 +452,11 @@ namespace ShareX.HelpersLib
             return AddCanvas(img, new Padding(margin));
         }
 
+        public static Bitmap AddCanvas(Image img, int margin, Color canvasColor)
+        {
+            return AddCanvas(img, new Padding(margin), canvasColor);
+        }
+
         public static Bitmap AddCanvas(Image img, Padding margin)
         {
             return AddCanvas(img, margin, Color.Transparent);
@@ -2464,7 +2469,7 @@ namespace ShareX.HelpersLib
         }
 
         public static Bitmap AutoCropImage(Bitmap bmp, bool sameColorCrop = false,
-            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
+            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, int padding = 0)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
             Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop, sides);
@@ -2475,8 +2480,19 @@ namespace ShareX.HelpersLib
 
                 if (croppedBitmap != null)
                 {
-                    bmp.Dispose();
-                    return croppedBitmap;
+                    using (bmp)
+                    {
+                        if (padding > 0)
+                        {
+                            using (croppedBitmap)
+                            {
+                                Color color = bmp.GetPixel(0, 0);
+                                return AddCanvas(croppedBitmap, padding, color);
+                            }
+                        }
+
+                        return croppedBitmap;
+                    }
                 }
             }
 

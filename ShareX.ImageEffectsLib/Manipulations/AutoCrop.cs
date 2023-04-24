@@ -36,6 +36,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
         public AnchorStyles Sides { get; set; }
 
+        [DefaultValue(0)]
+        public int Padding { get; set; }
+
         public AutoCrop()
         {
             this.ApplyDefaultPropertyValues();
@@ -43,7 +46,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.AutoCropImage(bmp, false, Sides);
+            return ImageHelpers.AutoCropImage(bmp, true, Sides, Padding);
         }
     }
 }
