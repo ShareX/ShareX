@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
@@ -35,7 +37,7 @@ namespace ShareX.MediaLib
         public Bitmap PreviewImage { get; private set; }
         public ImageBeautifierOptions Options { get; private set; }
 
-        private bool isReady;
+        private bool isReady, isBusy, isPending;
 
         public ImageBeautifierForm(Bitmap sourceImage, ImageBeautifierOptions options = null)
         {
@@ -50,71 +52,101 @@ namespace ShareX.MediaLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            Size = new Size(1400, 800);
             tbMargin.SetValue(Options.Margin);
             tbPadding.SetValue(Options.Padding);
             cbSmartPadding.Checked = Options.SmartPadding;
             tbRoundedCorner.SetValue(Options.RoundedCorner);
             tbShadowSize.SetValue(Options.ShadowSize);
+            UpdateUI();
 
             isReady = true;
-
-            UpdatePreview();
         }
 
-        private void UpdatePreview()
+        private void UpdateUI()
+        {
+            lblMarginValue.Text = tbMargin.Value.ToString();
+            lblPaddingValue.Text = tbPadding.Value.ToString();
+            lblRoundedCornerValue.Text = tbRoundedCorner.Value.ToString();
+            lblShadowSizeValue.Text = tbShadowSize.Value.ToString();
+        }
+
+        private async Task UpdatePreview()
         {
             if (isReady)
             {
-                UpdateOptions();
-                Bitmap resultImage = RenderPreview(SourceImage, Options);
-                PreviewImage?.Dispose();
-                PreviewImage = resultImage;
-                pbPreview.Image = PreviewImage;
+                UpdateUI();
+
+                if (isBusy)
+                {
+                    isPending = true;
+                }
+                else
+                {
+                    isBusy = true;
+
+                    UpdateOptions();
+
+                    Bitmap resultImage = await RenderPreview(SourceImage, Options);
+                    PreviewImage?.Dispose();
+                    PreviewImage = resultImage;
+                    pbPreview.Image = PreviewImage;
+
+                    isBusy = false;
+
+                    if (isPending)
+                    {
+                        isPending = false;
+
+                        await UpdatePreview();
+                    }
+                }
             }
         }
 
-        private static Bitmap RenderPreview(Bitmap sourceImage, ImageBeautifierOptions options)
+        private static async Task<Bitmap> RenderPreview(Bitmap sourceImage, ImageBeautifierOptions options)
         {
-            Bitmap resultImage = (Bitmap)sourceImage.Clone();
-
-            if (options.SmartPadding)
+            return await Task.Run(() =>
             {
-                resultImage = ImageHelpers.AutoCropImage(resultImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, options.Padding);
-            }
-            else if (options.Padding > 0)
-            {
-                Color color = resultImage.GetPixel(0, 0);
-                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, options.Padding, color);
-                resultImage.Dispose();
-                resultImage = resultImageNew;
-            }
+                Bitmap resultImage = (Bitmap)sourceImage.Clone();
 
-            if (options.RoundedCorner > 0)
-            {
-                resultImage = ImageHelpers.RoundedCorners(resultImage, options.RoundedCorner);
-            }
+                if (options.SmartPadding)
+                {
+                    resultImage = ImageHelpers.AutoCropImage(resultImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, options.Padding);
+                }
+                else if (options.Padding > 0)
+                {
+                    Color color = resultImage.GetPixel(0, 0);
+                    Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, options.Padding, color);
+                    resultImage.Dispose();
+                    resultImage = resultImageNew;
+                }
 
-            if (options.Margin > 0)
-            {
-                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, options.Margin);
-                resultImage.Dispose();
-                resultImage = resultImageNew;
-            }
+                if (options.RoundedCorner > 0)
+                {
+                    resultImage = ImageHelpers.RoundedCorners(resultImage, options.RoundedCorner);
+                }
 
-            if (options.ShadowSize > 0)
-            {
-                resultImage = ImageHelpers.AddShadow(resultImage, 1f, options.ShadowSize, 0f, Color.Black, new Point(0, 0), false);
-            }
+                if (options.Margin > 0)
+                {
+                    Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, options.Margin);
+                    resultImage.Dispose();
+                    resultImage = resultImageNew;
+                }
 
-            if (options.Background != null)
-            {
-                Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, options.Background);
-                resultImage.Dispose();
-                resultImage = resultImageNew;
-            }
+                if (options.ShadowSize > 0)
+                {
+                    resultImage = ImageHelpers.AddShadow(resultImage, 1f, options.ShadowSize, 0f, Color.Black, new Point(0, 0), false);
+                }
 
-            return resultImage;
+                if (options.Background != null)
+                {
+                    Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, options.Background);
+                    resultImage.Dispose();
+                    resultImage = resultImageNew;
+                }
+
+                return resultImage;
+            });
         }
 
         private void UpdateOptions()
@@ -126,29 +158,34 @@ namespace ShareX.MediaLib
             Options.ShadowSize = tbShadowSize.Value;
         }
 
-        private void tbMargin_Scroll(object sender, System.EventArgs e)
+        private async void ImageBeautifierForm_Shown(object sender, EventArgs e)
         {
-            UpdatePreview();
+            await UpdatePreview();
         }
 
-        private void tbPadding_Scroll(object sender, System.EventArgs e)
+        private async void tbMargin_Scroll(object sender, EventArgs e)
         {
-            UpdatePreview();
+            await UpdatePreview();
         }
 
-        private void cbSmartPadding_CheckedChanged(object sender, System.EventArgs e)
+        private async void tbPadding_Scroll(object sender, EventArgs e)
         {
-            UpdatePreview();
+            await UpdatePreview();
         }
 
-        private void tbRoundedCorner_Scroll(object sender, System.EventArgs e)
+        private async void cbSmartPadding_CheckedChanged(object sender, EventArgs e)
         {
-            UpdatePreview();
+            await UpdatePreview();
         }
 
-        private void tbShadowSize_Scroll(object sender, System.EventArgs e)
+        private async void tbRoundedCorner_Scroll(object sender, EventArgs e)
         {
-            UpdatePreview();
+            await UpdatePreview();
+        }
+
+        private async void tbShadowSize_Scroll(object sender, EventArgs e)
+        {
+            await UpdatePreview();
         }
     }
 }
