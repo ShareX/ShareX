@@ -1037,7 +1037,10 @@ namespace ShareX
                         {
                             Program.MainForm.InvokeSafe(() =>
                             {
-                                using (output) { PrintImage(output); }
+                                using (output)
+                                {
+                                    PrintImage(output);
+                                }
                             });
                         };
 
@@ -1062,13 +1065,29 @@ namespace ShareX
             return null;
         }
 
-        public static void OpenImageBeautifier()
+        public static void OpenImageBeautifier(TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             string filePath = ImageHelpers.OpenImageFileDialog();
 
             if (!string.IsNullOrEmpty(filePath))
             {
                 ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(filePath, new ImageBeautifierOptions());
+
+                imageBeautifierForm.UploadImageRequested += output =>
+                {
+                    UploadManager.UploadImage(output, taskSettings);
+                };
+
+                imageBeautifierForm.PrintImageRequested += output =>
+                {
+                    using (output)
+                    {
+                        PrintImage(output);
+                    }
+                };
+
                 imageBeautifierForm.Show();
             }
         }

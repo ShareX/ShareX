@@ -38,6 +38,9 @@ namespace ShareX.MediaLib
         public ImageBeautifierOptions Options { get; private set; }
         public string FilePath { get; private set; }
 
+        public event Action<Bitmap> UploadImageRequested;
+        public event Action<Bitmap> PrintImageRequested;
+
         private bool isReady, isBusy, isPending;
 
         private ImageBeautifierForm(ImageBeautifierOptions options = null)
@@ -176,6 +179,16 @@ namespace ShareX.MediaLib
             Options.ShadowSize = tbShadowSize.Value;
         }
 
+        private void OnUploadImageRequested()
+        {
+            UploadImageRequested?.Invoke(PreviewImage);
+        }
+
+        private void OnPrintImageRequested()
+        {
+            PrintImageRequested?.Invoke(PreviewImage);
+        }
+
         private async void ImageBeautifierForm_Shown(object sender, EventArgs e)
         {
             await UpdatePreview();
@@ -232,12 +245,18 @@ namespace ShareX.MediaLib
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
-
+            if (PreviewImage != null)
+            {
+                OnUploadImageRequested();
+            }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            if (PreviewImage != null)
+            {
+                OnPrintImageRequested();
+            }
         }
 
         private async void tbShadowSize_Scroll(object sender, EventArgs e)
