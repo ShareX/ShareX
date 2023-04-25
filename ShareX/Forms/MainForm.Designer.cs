@@ -286,6 +286,7 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
+            this.tsmiBeautifyImage = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1097,6 +1098,7 @@
             this.tsmiUploadSelectedFile,
             this.tsmiDownloadSelectedURL,
             this.tsmiEditSelectedFile,
+            this.tsmiBeautifyImage,
             this.tsmiAddImageEffects,
             this.tsmiPinSelectedFile,
             this.tsmiRunAction,
@@ -2246,6 +2248,13 @@
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
             // 
+            // tsmiBeautifyImage
+            // 
+            this.tsmiBeautifyImage.Image = global::ShareX.Properties.Resources.picture_sunset;
+            this.tsmiBeautifyImage.Name = "tsmiBeautifyImage";
+            resources.ApplyResources(this.tsmiBeautifyImage, "tsmiBeautifyImage");
+            this.tsmiBeautifyImage.Click += new System.EventHandler(this.tsmiBeautifyImage_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2541,5 +2550,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayPinToScreen;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageBeautifier;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageBeautifier;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBeautifyImage;
     }
 }

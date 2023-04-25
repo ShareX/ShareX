@@ -1067,12 +1067,17 @@ namespace ShareX
 
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)
         {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
             string filePath = ImageHelpers.OpenImageFileDialog();
 
+            OpenImageBeautifier(filePath);
+        }
+
+        public static void OpenImageBeautifier(string filePath, TaskSettings taskSettings = null)
+        {
             if (!string.IsNullOrEmpty(filePath))
             {
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
                 ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(filePath, new ImageBeautifierOptions());
 
                 imageBeautifierForm.UploadImageRequested += output =>
