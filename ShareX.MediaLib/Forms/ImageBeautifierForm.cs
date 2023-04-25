@@ -107,7 +107,7 @@ namespace ShareX.MediaLib
 
                     UpdateOptions();
 
-                    Bitmap resultImage = await RenderPreview(SourceImage, Options);
+                    Bitmap resultImage = await RenderPreviewAsync(SourceImage, Options);
                     PreviewImage?.Dispose();
                     PreviewImage = resultImage;
                     pbPreview.LoadImage(PreviewImage);
@@ -124,7 +124,7 @@ namespace ShareX.MediaLib
             }
         }
 
-        private static async Task<Bitmap> RenderPreview(Bitmap sourceImage, ImageBeautifierOptions options)
+        private static async Task<Bitmap> RenderPreviewAsync(Bitmap sourceImage, ImageBeautifierOptions options)
         {
             return await Task.Run(() =>
             {
@@ -159,7 +159,7 @@ namespace ShareX.MediaLib
                     resultImage = ImageHelpers.AddShadow(resultImage, 1f, options.ShadowSize, 0f, Color.Black, new Point(0, 0), false);
                 }
 
-                if (options.Background != null)
+                if (options.Background != null && options.Background.IsValid)
                 {
                     Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, options.Background);
                     resultImage.Dispose();

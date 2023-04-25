@@ -1069,7 +1069,7 @@ namespace ShareX
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
 
-            OpenImageBeautifier(filePath);
+            OpenImageBeautifier(filePath, taskSettings);
         }
 
         public static void OpenImageBeautifier(string filePath, TaskSettings taskSettings = null)
@@ -1078,7 +1078,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(filePath, new ImageBeautifierOptions());
+                ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(filePath, taskSettings.ToolsSettingsReference.ImageBeautifierOptions);
 
                 imageBeautifierForm.UploadImageRequested += output =>
                 {
@@ -1100,6 +1100,7 @@ namespace ShareX
         public static void OpenImageEffects(TaskSettings taskSettings = null)
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
+
             OpenImageEffects(filePath, taskSettings);
         }
 
