@@ -46,7 +46,6 @@ namespace ShareX.HelpersLib
             cbGradientType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
             UpdateGradientList(true);
-            AddPresets();
         }
 
         private void AddPresets()
@@ -444,20 +443,31 @@ namespace ShareX.HelpersLib
                 new GradientInfo(Color.FromArgb(255, 0, 0), Color.FromArgb(255, 0, 255), Color.FromArgb(0, 0, 255), Color.FromArgb(0, 255, 255), Color.FromArgb(0, 255, 0), Color.FromArgb(255, 255, 0), Color.FromArgb(255, 0, 0))
             };
 
+            lvPresets.BeginUpdate();
+
             lvPresets.Items.Clear();
             ilPresets.Images.Clear();
+
+            Bitmap[] gradientBitmaps = new Bitmap[gradients.Length];
 
             for (int i = 0; i < gradients.Length; i++)
             {
                 GradientInfo gradient = gradients[i];
                 gradient.Type = Gradient.Type;
-                ilPresets.Images.Add(gradient.CreateGradientPreview(100, 25, true));
+                gradientBitmaps[i] = gradient.CreateGradientPreview(64, 64, true);
+            }
 
+            ilPresets.Images.AddRange(gradientBitmaps);
+
+            for (int i = 0; i < gradients.Length; i++)
+            {
                 ListViewItem lvi = new ListViewItem();
                 lvi.ImageIndex = i;
-                lvi.Tag = gradient;
+                lvi.Tag = gradients[i];
                 lvPresets.Items.Add(lvi);
             }
+
+            lvPresets.EndUpdate();
         }
 
         private void UpdateGradientList(bool selectFirst = false)
@@ -550,6 +560,13 @@ namespace ShareX.HelpersLib
                 lvi.Selected = true;
             }
             return lvi;
+        }
+
+        private void GradientPickerForm_Shown(object sender, EventArgs e)
+        {
+            Application.DoEvents();
+
+            AddPresets();
         }
 
         private void cbGradientType_SelectedIndexChanged(object sender, EventArgs e)

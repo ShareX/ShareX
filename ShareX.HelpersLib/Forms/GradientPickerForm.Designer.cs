@@ -153,8 +153,7 @@
             resources.ApplyResources(this.lvPresets, "lvPresets");
             this.lvPresets.MultiSelect = false;
             this.lvPresets.Name = "lvPresets";
-            this.lvPresets.SmallImageList = this.ilPresets;
-            this.lvPresets.TileSize = new System.Drawing.Size(110, 28);
+            this.lvPresets.TileSize = new System.Drawing.Size(70, 70);
             this.lvPresets.UseCompatibleStateImageBehavior = false;
             this.lvPresets.View = System.Windows.Forms.View.Tile;
             this.lvPresets.SelectedIndexChanged += new System.EventHandler(this.lvPresets_SelectedIndexChanged);
@@ -173,6 +172,7 @@
             // cbtnCurrentColor
             // 
             this.cbtnCurrentColor.Color = System.Drawing.Color.White;
+            this.cbtnCurrentColor.ColorPickerOptions = null;
             resources.ApplyResources(this.cbtnCurrentColor, "cbtnCurrentColor");
             this.cbtnCurrentColor.Name = "cbtnCurrentColor";
             this.cbtnCurrentColor.UseVisualStyleBackColor = true;
@@ -224,6 +224,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "GradientPickerForm";
+            this.Shown += new System.EventHandler(this.GradientPickerForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.nudLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).EndInit();
             this.ResumeLayout(false);

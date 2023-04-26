@@ -454,7 +454,7 @@
     <value>109, 17</value>
   </metadata>
   <data name="ilPresets.ImageSize" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
+    <value>64, 64</value>
   </data>
   <data name="chGradient.Text" xml:space="preserve">
     <value>Gradient</value>
@@ -466,7 +466,7 @@
     <value>216, 24</value>
   </data>
   <data name="lvPresets.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 280</value>
+    <value>376, 280</value>
   </data>
   <data name="lvPresets.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -529,7 +529,7 @@
     <value>cbtnCurrentColor</value>
   </data>
   <data name="&gt;&gt;cbtnCurrentColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbtnCurrentColor.Parent" xml:space="preserve">
     <value>$this</value>
@@ -556,7 +556,7 @@
     <value>lvGradientPoints</value>
   </data>
   <data name="&gt;&gt;lvGradientPoints.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvGradientPoints.Parent" xml:space="preserve">
     <value>$this</value>
@@ -571,10 +571,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>360, 311</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>600, 312</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
