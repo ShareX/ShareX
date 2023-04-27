@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -158,7 +158,7 @@
     <value>2</value>
   </data>
   <data name="rtbInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>상단, 하단, 왼쪽, 오른쪽</value>
   </data>
   <data name="rtbInfo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -188,7 +188,7 @@
     <value>7</value>
   </data>
   <data name="pbLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>상단, 오른쪽</value>
   </data>
   <data name="pbLogo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -218,7 +218,7 @@
     <value>0</value>
   </data>
   <data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>하단 , 오른쪽</value>
   </data>
   <data name="btnClose.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -239,7 +239,7 @@
     <value>0</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>Close</value>
+    <value>닫기</value>
   </data>
   <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
     <value>btnClose</value>
@@ -254,7 +254,7 @@
     <value>6</value>
   </data>
   <data name="btnShareXLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>하단 오른쪽</value>
   </data>
   <data name="btnShareXLicense.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -275,7 +275,7 @@
     <value>20</value>
   </data>
   <data name="btnShareXLicense.Text" xml:space="preserve">
-    <value>ShareX license...</value>
+    <value>ShareX 라이선스...</value>
   </data>
   <data name="&gt;&gt;btnShareXLicense.Name" xml:space="preserve">
     <value>btnShareXLicense</value>
@@ -290,7 +290,7 @@
     <value>5</value>
   </data>
   <data name="btnLicenses.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>하단, 오른쪽</value>
   </data>
   <data name="btnLicenses.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -311,7 +311,7 @@
     <value>21</value>
   </data>
   <data name="btnLicenses.Text" xml:space="preserve">
-    <value>Licenses...</value>
+    <value>라이선스...</value>
   </data>
   <data name="&gt;&gt;btnLicenses.Name" xml:space="preserve">
     <value>btnLicenses</value>
@@ -344,7 +344,7 @@
     <value>22</value>
   </data>
   <data name="lblBuild.Text" xml:space="preserve">
-    <value>Build</value>
+    <value>빌드</value>
   </data>
   <data name="lblBuild.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -362,7 +362,7 @@
     <value>3</value>
   </data>
   <data name="cLogo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>상단, 오른쪽</value>
   </data>
   <data name="cLogo.Location" type="System.Drawing.Point, System.Drawing">
     <value>448, 8</value>
@@ -431,7 +431,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - About</value>
+    <value>ShareX - 정보</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AboutForm</value>
