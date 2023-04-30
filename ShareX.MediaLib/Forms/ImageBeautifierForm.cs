@@ -60,6 +60,9 @@ namespace ShareX.MediaLib
             cbSmartPadding.Checked = Options.SmartPadding;
             tbRoundedCorner.SetValue(Options.RoundedCorner);
             tbShadowSize.SetValue(Options.ShadowSize);
+            cbBackgroundType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageBeautifierBackgroundType>());
+            cbBackgroundType.SelectedIndex = (int)Options.BackgroundType;
+            lblBackgroundImageFilePath.Text = Options.BackgroundImageFilePath;
             UpdateUI();
             UpdateBackgroundPreview();
 
@@ -83,12 +86,41 @@ namespace ShareX.MediaLib
             lblPaddingValue.Text = tbPadding.Value.ToString();
             lblRoundedCornerValue.Text = tbRoundedCorner.Value.ToString();
             lblShadowSizeValue.Text = tbShadowSize.Value.ToString();
+            lblBackgroundImageFilePath.Text = Options.BackgroundImageFilePath;
         }
 
         private void UpdateBackgroundPreview()
         {
             pbBackground.Image?.Dispose();
-            pbBackground.Image = Options.Background.CreateGradientPreview(pbBackground.ClientRectangle.Width, pbBackground.ClientRectangle.Height, true, true);
+            pbBackground.Image = null;
+
+            switch (Options.BackgroundType)
+            {
+                case ImageBeautifierBackgroundType.Gradient:
+                    pbBackground.Visible = true;
+                    lblBackgroundImageFilePath.Visible = false;
+                    btnBackgroundImageFilePathBrowse.Visible = false;
+                    pbBackground.Image = Options.BackgroundGradient.CreateGradientPreview(pbBackground.ClientRectangle.Width, pbBackground.ClientRectangle.Height, true, true);
+                    break;
+                case ImageBeautifierBackgroundType.Color:
+                    pbBackground.Visible = true;
+                    lblBackgroundImageFilePath.Visible = false;
+                    btnBackgroundImageFilePathBrowse.Visible = false;
+                    pbBackground.Image = new GradientInfo(Options.BackgroundColor).
+                        CreateGradientPreview(pbBackground.ClientRectangle.Width, pbBackground.ClientRectangle.Height, true, true);
+                    break;
+                case ImageBeautifierBackgroundType.Image:
+                    pbBackground.Visible = false;
+                    lblBackgroundImageFilePath.Visible = true;
+                    btnBackgroundImageFilePathBrowse.Visible = true;
+                    break;
+                case ImageBeautifierBackgroundType.Desktop:
+                case ImageBeautifierBackgroundType.Transparent:
+                    pbBackground.Visible = false;
+                    lblBackgroundImageFilePath.Visible = false;
+                    btnBackgroundImageFilePathBrowse.Visible = false;
+                    break;
+            }
         }
 
         private async Task UpdatePreview()
@@ -107,7 +139,7 @@ namespace ShareX.MediaLib
 
                     UpdateOptions();
 
-                    Bitmap resultImage = await RenderPreviewAsync(SourceImage, Options);
+                    Bitmap resultImage = await Options.RenderAsync(SourceImage);
                     PreviewImage?.Dispose();
                     PreviewImage = resultImage;
                     pbPreview.LoadImage(PreviewImage);
@@ -122,52 +154,6 @@ namespace ShareX.MediaLib
                     }
                 }
             }
-        }
-
-        private static async Task<Bitmap> RenderPreviewAsync(Bitmap sourceImage, ImageBeautifierOptions options)
-        {
-            return await Task.Run(() =>
-            {
-                Bitmap resultImage = (Bitmap)sourceImage.Clone();
-
-                if (options.SmartPadding)
-                {
-                    resultImage = ImageHelpers.AutoCropImage(resultImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, options.Padding);
-                }
-                else if (options.Padding > 0)
-                {
-                    Color color = resultImage.GetPixel(0, 0);
-                    Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, options.Padding, color);
-                    resultImage.Dispose();
-                    resultImage = resultImageNew;
-                }
-
-                if (options.RoundedCorner > 0)
-                {
-                    resultImage = ImageHelpers.RoundedCorners(resultImage, options.RoundedCorner);
-                }
-
-                if (options.Margin > 0)
-                {
-                    Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, options.Margin);
-                    resultImage.Dispose();
-                    resultImage = resultImageNew;
-                }
-
-                if (options.ShadowSize > 0)
-                {
-                    resultImage = ImageHelpers.AddShadow(resultImage, 1f, options.ShadowSize, 0f, Color.Black, new Point(0, 0), false);
-                }
-
-                if (options.Background != null && options.Background.IsValid)
-                {
-                    Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, options.Background);
-                    resultImage.Dispose();
-                    resultImage = resultImageNew;
-                }
-
-                return resultImage;
-            });
         }
 
         private void UpdateOptions()
@@ -264,17 +250,51 @@ namespace ShareX.MediaLib
             await UpdatePreview();
         }
 
+        private async void cbBackgroundType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.BackgroundType = (ImageBeautifierBackgroundType)cbBackgroundType.SelectedIndex;
+            UpdateBackgroundPreview();
+
+            await UpdatePreview();
+        }
+
         private async void pbBackground_Click(object sender, EventArgs e)
         {
-            using (GradientPickerForm gradientPickerForm = new GradientPickerForm(Options.Background.Copy()))
+            switch (Options.BackgroundType)
             {
-                if (gradientPickerForm.ShowDialog() == DialogResult.OK)
-                {
-                    Options.Background = gradientPickerForm.Gradient;
-                    UpdateBackgroundPreview();
+                case ImageBeautifierBackgroundType.Gradient:
+                    using (GradientPickerForm gradientPickerForm = new GradientPickerForm(Options.BackgroundGradient.Copy()))
+                    {
+                        if (gradientPickerForm.ShowDialog() == DialogResult.OK)
+                        {
+                            Options.BackgroundGradient = gradientPickerForm.Gradient;
+                            UpdateBackgroundPreview();
 
-                    await UpdatePreview();
-                }
+                            await UpdatePreview();
+                        }
+                    }
+                    break;
+                case ImageBeautifierBackgroundType.Color:
+                    if (ColorPickerForm.PickColor(Options.BackgroundColor, out Color newColor, this))
+                    {
+                        Options.BackgroundColor = newColor;
+                        UpdateBackgroundPreview();
+
+                        await UpdatePreview();
+                    }
+                    break;
+            }
+        }
+
+        private async void btnBackgroundImageFilePathBrowse_Click(object sender, EventArgs e)
+        {
+            string filePath = ImageHelpers.OpenImageFileDialog(this);
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                Options.BackgroundImageFilePath = filePath;
+
+                await UpdatePreview();
             }
         }
     }

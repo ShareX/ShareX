@@ -26,6 +26,8 @@
 using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ShareX.MediaLib
 {
@@ -36,9 +38,80 @@ namespace ShareX.MediaLib
         public bool SmartPadding { get; set; } = true;
         public int RoundedCorner { get; set; } = 20;
         public int ShadowSize { get; set; } = 30;
-        public GradientInfo Background { get; set; } = new GradientInfo(Color.FromArgb(255, 81, 47), Color.FromArgb(221, 36, 118))
+        public ImageBeautifierBackgroundType BackgroundType { get; set; } = ImageBeautifierBackgroundType.Gradient;
+        public GradientInfo BackgroundGradient { get; set; } = new GradientInfo(LinearGradientMode.ForwardDiagonal, Color.FromArgb(255, 81, 47), Color.FromArgb(221, 36, 118));
+        public Color BackgroundColor { get; set; } = Color.DarkGray;
+        public string BackgroundImageFilePath { get; set; } = "";
+
+        public Bitmap Render(Bitmap image)
         {
-            Type = LinearGradientMode.ForwardDiagonal
-        };
+            Bitmap resultImage = (Bitmap)image.Clone();
+
+            if (SmartPadding)
+            {
+                resultImage = ImageHelpers.AutoCropImage(resultImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, Padding);
+            }
+            else if (Padding > 0)
+            {
+                Color color = resultImage.GetPixel(0, 0);
+                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Padding, color);
+                resultImage.Dispose();
+                resultImage = resultImageNew;
+            }
+
+            if (RoundedCorner > 0)
+            {
+                resultImage = ImageHelpers.RoundedCorners(resultImage, RoundedCorner);
+            }
+
+            if (Margin > 0)
+            {
+                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Margin);
+                resultImage.Dispose();
+                resultImage = resultImageNew;
+            }
+
+            if (ShadowSize > 0)
+            {
+                resultImage = ImageHelpers.AddShadow(resultImage, 1f, ShadowSize, 0f, Color.Black, new Point(0, 0), false);
+            }
+
+            switch (BackgroundType)
+            {
+                case ImageBeautifierBackgroundType.Gradient:
+                    if (BackgroundGradient != null && BackgroundGradient.IsVisible)
+                    {
+                        Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, BackgroundGradient);
+                        resultImage.Dispose();
+                        resultImage = resultImageNew;
+                    }
+                    break;
+                case ImageBeautifierBackgroundType.Color:
+                    if (!BackgroundColor.IsTransparent())
+                    {
+                        Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, BackgroundColor);
+                        resultImage.Dispose();
+                        resultImage = resultImageNew;
+                    }
+                    break;
+                case ImageBeautifierBackgroundType.Image:
+                    resultImage = ImageHelpers.AddBackgroundImage(resultImage, BackgroundImageFilePath);
+                    break;
+                case ImageBeautifierBackgroundType.Desktop:
+                    string desktopWallpaperFilePath = Helpers.GetDesktopWallpaperFilePath();
+                    resultImage = ImageHelpers.AddBackgroundImage(resultImage, desktopWallpaperFilePath);
+                    break;
+                default:
+                case ImageBeautifierBackgroundType.Transparent:
+                    break;
+            }
+
+            return resultImage;
+        }
+
+        public async Task<Bitmap> RenderAsync(Bitmap image)
+        {
+            return await Task.Run(() => Render(image));
+        }
     }
 }

@@ -1021,5 +1021,14 @@ namespace ShareX.HelpersLib
 
             return true;
         }
+
+        public static string GetDesktopWallpaperFilePath()
+        {
+            byte[] transcodedImageCache = (byte[])RegistryHelpers.GetValue(@"Control Panel\Desktop", "TranscodedImageCache");
+            byte[] transcodedImageCacheDest = new byte[transcodedImageCache.Length - 24];
+            Array.Copy(transcodedImageCache, 24, transcodedImageCacheDest, 0, transcodedImageCacheDest.Length);
+            string wallpaperFilePath = Encoding.Unicode.GetString(transcodedImageCacheDest);
+            return wallpaperFilePath.TrimEnd('\0');
+        }
     }
 }

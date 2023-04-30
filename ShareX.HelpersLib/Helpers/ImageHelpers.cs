@@ -229,18 +229,15 @@ namespace ShareX.HelpersLib
             {
                 case CutOutEffectType.None:
                     return bmp;
-
                 case CutOutEffectType.ZigZag:
                     return TornEdges(bmp, effectSize, effectSize, effectEdge, false, false);
-
                 case CutOutEffectType.TornEdge:
                     return TornEdges(bmp, effectSize, effectSize * 2, effectEdge, false, true);
-
                 case CutOutEffectType.Wave:
                     return WavyEdges(bmp, effectSize, effectSize * 5, effectEdge);
             }
 
-            throw new NotImplementedException(); // should not be reachable
+            throw new NotImplementedException();
         }
 
         public static Bitmap CutOutBitmapMiddle(Bitmap bmp, Orientation orientation, int start, int size, CutOutEffectType effectType, int effectSize)
@@ -507,6 +504,48 @@ namespace ShareX.HelpersLib
             }
 
             return bmp;
+        }
+
+        public static Bitmap AddBackgroundImage(Bitmap bmp, Bitmap backgroundImage)
+        {
+            if (backgroundImage != null)
+            {
+                using (bmp)
+                using (backgroundImage)
+                {
+                    Bitmap result = new Bitmap(bmp.Width, bmp.Height);
+
+                    float aspectRatio = (float)backgroundImage.Width / backgroundImage.Height;
+
+                    int width = result.Width;
+                    int height = (int)(width / aspectRatio);
+
+                    if (height < result.Height)
+                    {
+                        height = result.Height;
+                        width = (int)(height * aspectRatio);
+                    }
+
+                    int centerX = (result.Width - width) / 2;
+                    int centerY = (result.Height - height) / 2;
+
+                    using (Graphics graphics = Graphics.FromImage(result))
+                    {
+                        graphics.DrawImage(backgroundImage, centerX, centerY, width, height);
+                        graphics.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
+                    }
+
+                    return result;
+                }
+            }
+
+            return bmp;
+        }
+
+        public static Bitmap AddBackgroundImage(Bitmap bmp, string backgroundImageFilePath)
+        {
+            Bitmap backgroundImage = LoadImage(backgroundImageFilePath);
+            return AddBackgroundImage(bmp, backgroundImage);
         }
 
         public static Bitmap RoundedCorners(Bitmap bmp, int cornerRadius)

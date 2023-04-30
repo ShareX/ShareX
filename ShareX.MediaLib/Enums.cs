@@ -58,4 +58,13 @@ namespace ShareX.MediaLib
         [Description("APNG")]
         apng
     }
+
+    public enum ImageBeautifierBackgroundType
+    {
+        Gradient,
+        Color,
+        Image,
+        Desktop,
+        Transparent
+    }
 }
