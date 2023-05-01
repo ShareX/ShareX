@@ -147,11 +147,6 @@ namespace ShareX.ScreenCaptureLib
                 args.Append($"-i \"{InputPath}\" ");
             }
 
-            if (!string.IsNullOrEmpty(FFmpeg.UserArgs))
-            {
-                args.Append(FFmpeg.UserArgs + " ");
-            }
-
             if (FFmpeg.IsVideoSourceSelected)
             {
                 if (IsLossless || FFmpeg.VideoCodec != FFmpegVideoCodec.apng)
@@ -257,6 +252,11 @@ namespace ShareX.ScreenCaptureLib
                         args.Append($"-c:a libmp3lame -qscale:a {FFmpeg.MP3_QScale} ");
                         break;
                 }
+            }
+
+            if (!string.IsNullOrEmpty(FFmpeg.UserArgs))
+            {
+                args.Append(FFmpeg.UserArgs + " ");
             }
 
             if (Duration > 0)
