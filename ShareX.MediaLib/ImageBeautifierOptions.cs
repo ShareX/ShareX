@@ -40,7 +40,7 @@ namespace ShareX.MediaLib
         public int ShadowSize { get; set; } = 30;
         public ImageBeautifierBackgroundType BackgroundType { get; set; } = ImageBeautifierBackgroundType.Gradient;
         public GradientInfo BackgroundGradient { get; set; } = new GradientInfo(LinearGradientMode.ForwardDiagonal, Color.FromArgb(255, 81, 47), Color.FromArgb(221, 36, 118));
-        public Color BackgroundColor { get; set; } = Color.DarkGray;
+        public Color BackgroundColor { get; set; } = Color.FromArgb(34, 34, 34);
         public string BackgroundImageFilePath { get; set; } = "";
 
         public Bitmap Render(Bitmap image)

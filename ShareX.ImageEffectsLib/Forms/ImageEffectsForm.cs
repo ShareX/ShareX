@@ -149,6 +149,7 @@ namespace ShareX.ImageEffectsLib
         {
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Drawings,
                 typeof(DrawBackground),
+                typeof(DrawBackgroundImage),
                 typeof(DrawBorder),
                 typeof(DrawCheckerboard),
                 typeof(DrawImage),

@@ -109,6 +109,7 @@
     <Compile Include="Adjustments\SelectiveColor.cs" />
     <Compile Include="Adjustments\Sepia.cs" />
     <Compile Include="Adjustments\MatrixColor.cs" />
+    <Compile Include="Drawings\DrawBackgroundImage.cs" />
     <Compile Include="Drawings\DrawCheckerboard.cs" />
     <Compile Include="Drawings\DrawImage.cs" />
     <Compile Include="Drawings\DrawParticles.cs" />
