@@ -29,6 +29,7 @@ using System;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace ShareX.ScreenCaptureLib
@@ -175,6 +176,90 @@ namespace ShareX.ScreenCaptureLib
                     args.Append($"-preset {FFmpegPreset.ultrafast} ");
                     args.Append($"-tune {FFmpegTune.zerolatency} ");
                     args.Append("-qp 0 ");
+                }
+                else if (!string.IsNullOrEmpty(FFmpeg.UserArgs))
+                {
+                    switch (FFmpeg.VideoCodec)
+                    {
+                        case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/Encode/H.264
+                        case FFmpegVideoCodec.libx265: // https://trac.ffmpeg.org/wiki/Encode/H.265
+                            if(!FFmpeg.UserArgs.Contains("-preset"))
+                                args.Append($"-preset {FFmpeg.x264_Preset} ");
+                            if (IsRecording) args.Append($"-tune {FFmpegTune.zerolatency} ");
+                            if (FFmpeg.x264_Use_Bitrate)
+                            {
+                                if(!FFmpeg.UserArgs.Contains("-b:v"))
+                                    args.Append($"-b:v {FFmpeg.x264_Bitrate}k ");
+                            }
+                            else
+                            {
+                                if (!FFmpeg.UserArgs.Contains("-crf"))
+                                    args.Append($"-crf {FFmpeg.x264_CRF} ");
+                            }
+                            if (!FFmpeg.UserArgs.Contains("-pix_fmt"))
+                                args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
+                            if (!FFmpeg.UserArgs.Contains("-movflags"))
+                                args.Append("-movflags "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
+                            if (!FFmpeg.UserArgs.Contains("+faststart"))
+                                args.Append("+faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
+                            break;
+                        case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
+                        case FFmpegVideoCodec.libvpx_vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
+                            if (IsRecording) args.Append("-deadline realtime ");
+                            if (!FFmpeg.UserArgs.Contains("-b:v"))
+                                args.Append($"-b:v {FFmpeg.VPx_Bitrate}k ");
+                            if (!FFmpeg.UserArgs.Contains("-pix_fmt"))
+                                args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise causing issues in Chrome related to WebM transparency support
+                            break;
+                        case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
+                        if (!FFmpeg.UserArgs.Contains("-qscale:v"))
+                                args.Append($"-qscale:v {FFmpeg.XviD_QScale} ");
+                            break;
+                        case FFmpegVideoCodec.h264_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
+                        case FFmpegVideoCodec.hevc_nvenc:
+                            if (!FFmpeg.UserArgs.Contains("-preset"))
+                                args.Append($"-preset {FFmpeg.NVENC_Preset} ");
+                            if (!FFmpeg.UserArgs.Contains("-b:v"))
+                                args.Append($"-b:v {FFmpeg.NVENC_Bitrate}k ");
+                            if (!FFmpeg.UserArgs.Contains("-pix_fmt") || string.Equals("-", FFmpeg.UserArgs))
+                                args.Append("-pix_fmt yuv420p ");
+                            if (!FFmpeg.UserArgs.Contains("-movflags"))
+                                args.Append("-movflags "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
+                            if (!FFmpeg.UserArgs.Contains("+faststart"))
+                                args.Append("+faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
+                            break;
+                        case FFmpegVideoCodec.h264_amf:
+                        case FFmpegVideoCodec.hevc_amf:
+                            if (!FFmpeg.UserArgs.Contains("-usage"))
+                                args.Append($"-usage {FFmpeg.AMF_Usage} ");
+                            if (!FFmpeg.UserArgs.Contains("-quality"))
+                                args.Append($"-quality {FFmpeg.AMF_Quality} ");
+                            if (!FFmpeg.UserArgs.Contains("-pix_fmt"))
+                                args.Append("-pix_fmt yuv420p ");
+                            break;
+                        case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
+                        case FFmpegVideoCodec.hevc_qsv:
+                            if (!FFmpeg.UserArgs.Contains("-preset"))
+                                args.Append($"-preset {FFmpeg.QSV_Preset} ");
+                            if (!FFmpeg.UserArgs.Contains("-b:v"))
+                                args.Append($"-b:v {FFmpeg.QSV_Bitrate}k ");
+                            break;
+                        case FFmpegVideoCodec.libwebp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
+                            if (!FFmpeg.UserArgs.Contains("-lossless"))
+                                args.Append("-lossless 0 ");
+                            if (!FFmpeg.UserArgs.Contains("-preset"))
+                                args.Append("-preset default ");
+                            if (!FFmpeg.UserArgs.Contains("-loop"))
+                                args.Append("-loop 0 ");
+                            break;
+                        case FFmpegVideoCodec.apng:
+                            if (!FFmpeg.UserArgs.Contains("-f"))
+                                args.Append("-f apng ");
+                            if (!FFmpeg.UserArgs.Contains("-plays"))
+                                args.Append("-plays 0 ");
+                            break;
+                    }
+                    //args.Append(FFmpeg.UserArgs + " ");
                 }
                 else
                 {
