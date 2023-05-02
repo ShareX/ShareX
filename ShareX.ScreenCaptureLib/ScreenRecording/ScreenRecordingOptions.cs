@@ -340,9 +340,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             if (!string.IsNullOrEmpty(FFmpeg.UserArgs))
-            {
                 args.Append(FFmpeg.UserArgs + " ");
-            }
 
             if (Duration > 0)
             {
