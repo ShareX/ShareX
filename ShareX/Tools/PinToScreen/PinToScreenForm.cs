@@ -143,6 +143,8 @@ namespace ShareX
             ImageOpacity = Options.InitialOpacity;
 
             InitializeComponent();
+            // TODO: Add options form
+            tsbOptions.Visible = false;
             ShareXResources.ApplyTheme(this);
             TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);

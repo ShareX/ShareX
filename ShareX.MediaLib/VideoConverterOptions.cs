@@ -39,14 +39,20 @@ namespace ShareX.MediaLib
         {
             get
             {
-                if (string.IsNullOrEmpty(OutputFolderPath) || string.IsNullOrEmpty(OutputFileName))
+                string path = "";
+
+                if (!string.IsNullOrEmpty(OutputFolderPath) && !string.IsNullOrEmpty(OutputFileName))
                 {
-                    return "";
+                    path = Path.Combine(OutputFolderPath, OutputFileName);
+
+                    if (!Path.HasExtension(OutputFileName))
+                    {
+                        string extension = GetFileExtension();
+                        path = Path.ChangeExtension(path, extension);
+                    }
                 }
 
-                string path = Path.Combine(OutputFolderPath, OutputFileName);
-                string extension = GetFileExtension();
-                return Path.ChangeExtension(path, extension);
+                return path;
             }
         }
 
