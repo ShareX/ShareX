@@ -126,23 +126,11 @@
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Bitrate Variabile:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Scarica</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Percorso FFmpeg</value>
-  </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Usa Percorso Personalizzato</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Usa Comandi Personalizzati</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Anteprima Riga di Comando</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Parametri Aggiuntivi da Riga di Comando</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Bitrate Variabile:</value>
@@ -179,12 +167,6 @@
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Aggiorna</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Sorgenti</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codificatori</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Opzioni Registrazione Schermo</value>

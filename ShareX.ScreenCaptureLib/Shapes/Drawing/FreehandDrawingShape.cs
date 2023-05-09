@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -40,7 +40,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool IsSelectable => Manager.CurrentTool == ShapeType.ToolSelect;
 
-        public Point LastPosition
+        public PointF LastPosition
         {
             get
             {
@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private List<Point> positions = new List<Point>();
+        protected List<PointF> positions = new List<PointF>();
         private bool isPolygonMode;
 
         public override void ShowNodes()
@@ -73,11 +73,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (Manager.IsCornerMoving && !Manager.IsPanning)
                 {
-                    Move(InputManager.MouseVelocity);
+                    Move(Manager.Form.ScaledClientMouseVelocity);
                 }
                 else
                 {
-                    Point pos = InputManager.ClientMousePosition;
+                    PointF pos = Manager.Form.ScaledClientMousePosition;
 
                     if (positions.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
                     {
@@ -101,7 +101,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Manager.IsMoving)
             {
-                Move(InputManager.MouseVelocity);
+                Move(Manager.Form.ScaledClientMouseVelocity);
             }
         }
 
@@ -122,7 +122,7 @@ namespace ShareX.ScreenCaptureLib
             DrawFreehand(g, BorderColor, borderSize, BorderStyle, positions.ToArray());
         }
 
-        protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Point[] points)
+        protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, PointF[] points)
         {
             if (points.Length > 0 && borderSize > 0 && borderColor.A > 0)
             {
@@ -145,13 +145,8 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    using (Pen pen = new Pen(borderColor, borderSize))
+                    using (Pen pen = CreatePen(borderColor, borderSize, borderStyle))
                     {
-                        pen.StartCap = LineCap.Round;
-                        pen.EndCap = LineCap.Round;
-                        pen.LineJoin = LineJoin.Round;
-                        pen.DashStyle = (DashStyle)borderStyle;
-
                         g.DrawLines(pen, points.ToArray());
                     }
                 }
@@ -160,7 +155,17 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void Move(int x, int y)
+        protected virtual Pen CreatePen(Color borderColor, int borderSize, BorderStyle borderStyle)
+        {
+            Pen pen = new Pen(borderColor, borderSize);
+            pen.StartCap = LineCap.Round;
+            pen.EndCap = LineCap.Round;
+            pen.LineJoin = LineJoin.Round;
+            pen.DashStyle = (DashStyle)borderStyle;
+            return pen;
+        }
+
+        public override void Move(float x, float y)
         {
             for (int i = 0; i < positions.Count; i++)
             {

@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblAdapters.Text" xml:space="preserve">
+    <value>ネットワークアダプター:</value>
+  </data>
+  <data name="lblPreferredDNS.Text" xml:space="preserve">
+    <value>優先する DNS サーバー:</value>
+  </data>
+  <data name="lblAlternateDNS.Text" xml:space="preserve">
+    <value>代替の DNS サーバー:</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>適用</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="lblDNS.Text" xml:space="preserve">
+    <value>DNS サーバー:</value>
+  </data>
+  <data name="cbAutomatic.Text" xml:space="preserve">
+    <value>DNS サーバーのアドレスを自動で取得</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - DNS変更</value>
+    <value>ShareX - DNS 変更</value>
   </data>
 </root>

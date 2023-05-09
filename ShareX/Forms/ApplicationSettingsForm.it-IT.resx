@@ -243,15 +243,6 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>Formato</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formati Appunti - Appaiono sotto "Copia" nel Menu Contestuale della Finestra Principale</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Risultati</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Usare l'ordine di preferenza dei Servizi Caricamento Secondari quando si riprova</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Immagini: Servizi Secondari</value>
   </data>
@@ -263,9 +254,6 @@
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Numero di Tentativi se il Caricamento Fallisce:</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Riprova</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Carica</value>

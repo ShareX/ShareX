@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -119,9 +119,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>瀏覽 ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg 下載成功。</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>位元率: {0}k</value>
   </data>
@@ -139,9 +136,6 @@
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>矩形擷取（透明）</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg 下載失敗。</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>矩形擷取（高亮）</value>
@@ -251,9 +245,6 @@
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>提示：點擊滑鼠中鍵並拖曳即可平移圖片。</value>
-  </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>兩端箭頭</value>
   </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>中心點：</value>
@@ -387,9 +378,6 @@
   <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
     <value>置於底層</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>形狀選項</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>復原</value>
   </data>
@@ -398,9 +386,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>第一步的值：</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>使用字母</value>
   </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>游標類型：</value>

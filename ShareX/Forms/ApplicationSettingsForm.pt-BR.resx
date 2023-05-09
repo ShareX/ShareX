@@ -171,9 +171,6 @@
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Adicionar...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos da área de transferência - aparecem debaixo de Copiar no menu de contexto na janela principal</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Descrição</value>
   </data>
@@ -183,11 +180,8 @@
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Mostrar progresso na barra de tarefas</value>
   </data>
-  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Configurações de impressão da imagem</value>
+    <value>Configurações de impressão da imagem...</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Domínio:</value>
@@ -210,9 +204,6 @@
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Lembrar tamanho da janela principal</value>
   </data>
-  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Locais</value>
   </data>
@@ -225,9 +216,6 @@
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Senha:</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reenvio</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Enviar</value>
   </data>
@@ -236,12 +224,6 @@
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Formato</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Hospedagem alternativa</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Hospedagem de imagens</value>
@@ -253,10 +235,10 @@
     <value>Mostrar ShareX no menu de "Enviar para"</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Hospedagem de texto </value>
+    <value>Hospedagem de texto</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Pasta de screenshots customizada</value>
+    <value>Use a pasta de capturas de tela personalizadas:</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>Enquanto o programa estiver aberto, mostrar "Em aplicativo" na Steam</value>
@@ -320,5 +302,128 @@
   </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>Verificar por atualizações de teste</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Usar ícone branco do ShareX</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Mostrar título</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Usar tema personalizado</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Use a ordem de preferência dos uploaders secundários ao tentar novamente</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Tamanho da miniatura:</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Padrão de subpasta para janela:</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Substituição da impressora padrão:</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Limpe automaticamente arquivos de log antigos</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Limpe automaticamente arquivos de backup antigos</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Aviso: não compartilhe o arquivo exportado com ninguém, pois ele pode conter informações privadas, como detalhes da conta e seu histórico de upload.</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Ativar suporte a extensões do Firefox</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Extensões do Firefox</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>Instalar extensão ShareX no Firefox...</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>Janela principal</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>Esses formatos aparecerão no submenu "Copiar" no menu de contexto da janela principal.</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Formatos da área de transferência</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>Visibilidade da visualização da imagem:</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>Mostrar colunas</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Redefinir</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Localização do título:</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>Local de visualização da imagem:</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>Mostrar menu</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Redefinir as configurações...</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Instalar compilação de desenvolvimento...</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Redefinir...</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Ativar suporte a extensões do Chrome</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>Instalar extensão ShareX no Chrome...</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Extensão do Chrome</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>Exibição de lista</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Número de arquivos a serem mantidos:</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Mostrar o botão "Editar com ShareX" no menu de contexto do Windows Explorer</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Modo de exibição de tarefas:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Ação de clique na miniatura:</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Exibição em miniatura</value>
   </data>
 </root>

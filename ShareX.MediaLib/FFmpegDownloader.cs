@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -35,7 +35,7 @@ namespace ShareX.MediaLib
         {
             string url;
 
-            if (NativeMethods.Is64Bit())
+            if (Environment.Is64BitOperatingSystem)
             {
                 url = "https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.zip";
             }
@@ -46,7 +46,6 @@ namespace ShareX.MediaLib
 
             using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
             {
-                form.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                 form.InstallType = InstallType.Event;
                 form.RunInstallerInBackground = async;
                 form.InstallRequested += installRequested;

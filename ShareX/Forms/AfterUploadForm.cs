@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -49,7 +49,11 @@ namespace ShareX
             ShareXResources.ApplyTheme(this);
 
             Info = info;
-            if (Info.TaskSettings.AdvancedSettings.AutoCloseAfterUploadForm) tmrClose.Start();
+
+            if (Info.TaskSettings.AdvancedSettings.AutoCloseAfterUploadForm)
+            {
+                tmrClose.Start();
+            }
 
             bool isFileExist = !string.IsNullOrEmpty(info.FilePath) && File.Exists(info.FilePath);
 
@@ -75,7 +79,7 @@ namespace ShareX
 
             foreach (LinkFormatEnum type in Helpers.GetEnums<LinkFormatEnum>())
             {
-                if (!Helpers.IsImageFile(Info.Result.URL) &&
+                if (!FileHelpers.IsImageFile(Info.Result.URL) &&
                     (type == LinkFormatEnum.HTMLImage || type == LinkFormatEnum.HTMLLinkedImage ||
                     type == LinkFormatEnum.ForumImage || type == LinkFormatEnum.ForumLinkedImage ||
                     type == LinkFormatEnum.WikiImage || type == LinkFormatEnum.WikiLinkedImage))
@@ -84,7 +88,7 @@ namespace ShareX
                 AddFormat(type.GetLocalizedDescription(), GetUrlByType(type));
             }
 
-            if (Helpers.IsImageFile(Info.Result.URL))
+            if (FileHelpers.IsImageFile(Info.Result.URL))
             {
                 foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
                 {
@@ -136,7 +140,7 @@ namespace ShareX
 
         private void btnCopyImage_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Info.FilePath) && Helpers.IsImageFile(Info.FilePath) && File.Exists(Info.FilePath))
+            if (!string.IsNullOrEmpty(Info.FilePath) && FileHelpers.IsImageFile(Info.FilePath) && File.Exists(Info.FilePath))
             {
                 ClipboardHelpers.CopyImageFromFile(Info.FilePath);
             }
@@ -146,7 +150,7 @@ namespace ShareX
         {
             if (lvClipboardFormats.Items.Count > 0)
             {
-                string url = null;
+                string url;
 
                 if (lvClipboardFormats.SelectedItems.Count == 0)
                 {
@@ -176,12 +180,12 @@ namespace ShareX
 
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFile(Info.FilePath);
+            FileHelpers.OpenFile(Info.FilePath);
         }
 
         private void btnFolderOpen_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFolderWithFile(Info.FilePath);
+            FileHelpers.OpenFolderWithFile(Info.FilePath);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

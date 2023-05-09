@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,7 +34,7 @@ namespace ShareX.HelpersLib
 {
     internal class ClipboardHelpersEx
     {
-        // Credits: https://stackoverflow.com/a/46424800/264877
+        // Source: https://stackoverflow.com/a/46424800/264877
 
         /// <summary>
         /// Copies the given image to the clipboard as PNG, DIB and standard Bitmap format.
@@ -85,8 +85,7 @@ namespace ShareX.HelpersLib
                     gr.DrawImage(image, new Rectangle(0, 0, bm32b.Width, bm32b.Height));
                 // Bitmap format has its lines reversed.
                 bm32b.RotateFlip(RotateFlipType.Rotate180FlipX);
-                int stride;
-                bm32bData = GetImageData(bm32b, out stride);
+                bm32bData = GetImageData(bm32b, out int stride);
             }
             // BITMAPINFOHEADER struct for DIB.
             int hdrSize = 0x28;
@@ -128,18 +127,16 @@ namespace ShareX.HelpersLib
         {
             Bitmap clipboardimage = null;
             // Order: try PNG, move on to try 32-bit ARGB DIB, then try the normal Bitmap and Image types.
-            if (retrievedData.GetDataPresent("PNG"))
+            if (retrievedData.GetDataPresent("PNG", false) && retrievedData.GetData("PNG", false) is MemoryStream pngStream)
             {
-                MemoryStream png_stream = retrievedData.GetData("PNG") as MemoryStream;
-                if (png_stream != null)
-                    using (Bitmap bm = new Bitmap(png_stream))
-                        clipboardimage = CloneImage(bm);
+                using (Bitmap bm = new Bitmap(pngStream))
+                {
+                    clipboardimage = CloneImage(bm);
+                }
             }
-            if (clipboardimage == null && retrievedData.GetDataPresent(DataFormats.Dib))
+            if (clipboardimage == null && retrievedData.GetDataPresent(DataFormats.Dib, false) && retrievedData.GetData(DataFormats.Dib, false) is MemoryStream dib)
             {
-                MemoryStream dib = retrievedData.GetData(DataFormats.Dib) as MemoryStream;
-                if (dib != null)
-                    clipboardimage = ImageFromClipboardDib(dib.ToArray());
+                clipboardimage = ImageFromClipboardDib(dib.ToArray());
             }
             if (clipboardimage == null && retrievedData.GetDataPresent(DataFormats.Bitmap))
                 clipboardimage = new Bitmap(retrievedData.GetData(DataFormats.Bitmap) as Image);

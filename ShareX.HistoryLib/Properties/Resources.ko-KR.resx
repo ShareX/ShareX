@@ -171,9 +171,6 @@
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>섬네일 URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>보기</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
   </data>

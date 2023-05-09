@@ -124,7 +124,7 @@
     <value>添加...</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>复制</value>
+    <value>克隆</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>编辑...</value>
@@ -132,7 +132,7 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>删除</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>恢复默认快捷键...</value>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>快捷键已禁用。点此可重新启用。</value>
   </data>
 </root>

@@ -138,7 +138,7 @@
   <data name="lblFolderPath.Text" xml:space="preserve">
     <value>Путь к папке:</value>
   </data>
-  <data name="chkMoveToScreenshotsDir.Text" xml:space="preserve">
-    <value>Переместить файл в папку скриншотов</value>
+  <data name="cbMoveToScreenshotsFolder.Text" xml:space="preserve">
+    <value>Перемещать файлы в папку скриншотов</value>
   </data>
 </root>

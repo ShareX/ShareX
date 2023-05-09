@@ -120,10 +120,37 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Resposta</value>
   </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>Texto</value>
-  </data>
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Navegador</value>
+  </data>
+  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
+    <value>Copiar URL de exclusão</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Copiar resposta</value>
+  </data>
+  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
+    <value>Copiar URL encurtada</value>
+  </data>
+  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
+    <value>Copiar URL da miniatura</value>
+  </data>
+  <data name="tsbCopyURL.Text" xml:space="preserve">
+    <value>Copiar URL</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>Formato JSON</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Informação da resposta</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Texto de resposta</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>Formato XML</value>
   </data>
 </root>

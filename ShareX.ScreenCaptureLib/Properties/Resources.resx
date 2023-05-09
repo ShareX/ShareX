@@ -163,9 +163,6 @@
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Multi region mode</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Use letters</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Image size...</value>
   </data>
@@ -231,9 +228,6 @@
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Region capture</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Shape options</value>
   </data>
   <data name="edit_vertical_alignment_top_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-vertical-alignment-top-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -385,6 +379,9 @@
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>Editor start mode:</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Zoom to fit on open</value>
+  </data>
   <data name="layer_shade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -469,9 +466,6 @@
   <data name="eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>Successfully downloaded FFmpeg.</value>
-  </data>
   <data name="image_saturation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-saturation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -546,7 +540,7 @@ Would you like to close image editor?</value>
     <value>Border size:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
-    <value>Annotate menu</value>
+    <value>Editor menu</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
     <value>Paste image/text</value>
@@ -607,9 +601,6 @@ Would you like to close image editor?</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Stop capture</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Download of FFmpeg failed.</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Show screen wide crosshair</value>
@@ -739,5 +730,91 @@ X: {4} Y: {5}</value>
   </data>
   <data name="MenuIconSize" xml:space="preserve">
     <value>Menu icon size:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Step type:</value>
+  </data>
+  <data name="camcorder__pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\camcorder--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="control_record" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\control-record.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="control_record_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\control-record-yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>Are you sure you want to abort this recording?</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Click to start recording.</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Click to stop recording.</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Encoding...</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Waiting...</value>
+    <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Border style:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Tool options</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Processing...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Blur</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Highlight</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Pixelate</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Auto copy image to clipboard</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>FPS limit:</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="CRF" xml:space="preserve">
+    <value>CRF:</value>
+    <comment>@Invariant</comment>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Cut out effect size:</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Cut out effect:</value>
+  </data>
+  <data name="table_delete_column" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\table-delete-column.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pencil__arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencil--arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Resume</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pause</value>
   </data>
 </root>

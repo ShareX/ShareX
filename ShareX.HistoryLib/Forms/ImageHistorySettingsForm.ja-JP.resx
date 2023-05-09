@@ -118,10 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblThumbnailSize.Text" xml:space="preserve">
-    <value>サムネイルのサイズ</value>
-  </data>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>履歴の表示形式:</value>
+    <value>サムネイルのサイズ:</value>
   </data>
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
     <value>最大画像数:</value>
@@ -130,6 +127,12 @@
     <value>ShareX - 画像履歴の設定</value>
   </data>
   <data name="cbRememberSearchText.Text" xml:space="preserve">
-    <value>検索文字を記憶する</value>
+    <value>検索文字を記憶</value>
+  </data>
+  <data name="cbFilterMissingFiles.Text" xml:space="preserve">
+    <value>失敗したファイルを非表示</value>
+  </data>
+  <data name="cbRememberWindowState.Text" xml:space="preserve">
+    <value>ウィンドウのサイズ・位置を記憶</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,8 +29,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Cache;
 
 namespace ShareX
 {
@@ -66,24 +64,17 @@ namespace ShareX
 
         private List<NewsItem> GetNews()
         {
-            using (WebClient wc = new WebClient())
+            string url = URLHelpers.CombineURL(Links.Website, "news.json");
+            string response = URLHelpers.DownloadString(url);
+
+            if (!string.IsNullOrEmpty(response))
             {
-                wc.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-                wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
-                wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-
-                string url = URLHelpers.CombineURL(Links.URL_WEBSITE, "news.json");
-                string response = wc.DownloadString(url);
-
-                if (!string.IsNullOrEmpty(response))
+                JsonSerializerSettings settings = new JsonSerializerSettings
                 {
-                    JsonSerializerSettings settings = new JsonSerializerSettings
-                    {
-                        DateTimeZoneHandling = DateTimeZoneHandling.Local
-                    };
+                    DateTimeZoneHandling = DateTimeZoneHandling.Local
+                };
 
-                    return JsonConvert.DeserializeObject<List<NewsItem>>(response, settings);
-                }
+                return JsonConvert.DeserializeObject<List<NewsItem>>(response, settings);
             }
 
             return null;

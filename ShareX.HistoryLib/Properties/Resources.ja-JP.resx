@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Filtered" xml:space="preserve">
+    <value>条件に一致</value>
+  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>エラー</value>
   </data>
@@ -124,7 +127,7 @@
     <value>サムネイルのURL</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>画像のプレビュー</value>
+    <value>画像のプレビュー...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>ファイル</value>
@@ -146,9 +149,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>コピー</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>表示</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML 画像</value>
@@ -181,7 +181,7 @@
     <value>フォーラム (BBCode) リンク付き画像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>削除URL</value>
+    <value>削除用URL</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
     <value>フォーラム (BBCode) 画像</value>
@@ -200,33 +200,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
     <value>フォーラム (BBCode) リンク</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>HTML リンク ({0})</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>URL ({0})</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>名前をコピー</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>値をコピー</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>名前</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>値</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>XML ファイルの読み取り中のエラー: {0}</value>
-  </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>利用状況を表示</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>利用状況を隠す</value>
   </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>履歴の総数:</value>
@@ -248,5 +221,20 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
     <value>ファイルアップロード</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>履歴を読み込むときにエラーがおきました:</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>ファイル名、ウィンドウ名などを入力して検索</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>利用統計</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>プロセス名:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>合計</value>
   </data>
 </root>

@@ -201,15 +201,6 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>Biçim</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Pano biçimleri</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Sonuçlar</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Tekrar denerken ikincil yükleyicileri sırasına göre kullan</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>İkincil resim yükleyiciler</value>
   </data>
@@ -279,9 +270,6 @@
   <data name="btnExport.Text" xml:space="preserve">
     <value>Dışarı aktar...</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Tekrarla</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Yükleme</value>
   </data>
@@ -341,5 +329,101 @@
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>"ShareX ile düzenle" tuşunu Windows sağ tık menüsünde göster</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Sıfırla...</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Eski yedek dosyalarını otomatik olarak temizle</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Eski günlük dosyalarını otomatik olarak temizle</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Geçmiş</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Özel tema kullan</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Beyaz ShareX ikonu kullan</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Saklancak dosya sayısı:</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Not: Dışarı aktarılan dosyayı kimseyle paylaşmayınız, çünkü hesap detayları ve yükleme girdileri gibi kişisel bilgiler içerebilir.</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Tekrar denerken ikincil yükleyicileri sırasına göre kullan</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>Resim ön izleme konumu:</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>Resim ön izleme görünürlüğü:</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>Ana pencere</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Sıfırla</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Küçük resim boyutu:</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Başlık konumu:</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Başlığı göster</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>Menüyü göster</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>Kolonları göster</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Pano biçimleri</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>Liste görünümü</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Küçük resim görünümü</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Küçük resim tıklama eylemi:</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>Bu biçimler ana pencere sağ tık menüsünde "Kopyala" alt menüsü altında görünecektir.</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Varsayılan yazıcıyı değiştir:</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Görev görünümü modu:</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Pencere için alt dizin şablonu:</value>
   </data>
 </root>

@@ -132,7 +132,4 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Remover</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Repor teclas de atalho padrão...</value>
-  </data>
 </root>

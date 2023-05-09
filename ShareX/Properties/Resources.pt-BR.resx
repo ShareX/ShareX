@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Tempo restante: {0}s ({1}%) Total: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Contribuidores</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Não foi possível encontrar uma conta válida do Twitter.</value>
   </data>
@@ -140,7 +137,7 @@
 Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabra o ShareX.</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
-    <value>Confirmação para deletar arquivo:</value>
+    <value>Confirmação para excluir arquivo</value>
   </data>
   <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
     <value>Parar</value>
@@ -154,12 +151,6 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Não mostrar esta mensagem novamente.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tarefa: {0}</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Fonte de video e áudio do FFmpeg não podem estar vazias.</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Registro de alterações</value>
   </data>
@@ -170,7 +161,7 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
     <value>Escolha um atalho...</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>Config. de tarefas</value>
+    <value>Configuração de tarefas</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
     <value>Por favor escolha um destino.</value>
@@ -178,35 +169,15 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Iniciando</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} não existe.
-
-Você gostaria de baixar automaticamente?</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliotecas externas</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Erro</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Clique para parar de gravar.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Você pode adicionar workflows através das opções de atalho</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Não foi possível salvar imagem no local {0}.</value>
+    <value>Você pode adicionar workflows através das opções de atalho...</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX precisa ser reiniciado para que as mudanças de idioma façam efeito.
 Gostaria de reiniciar agora?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Usar novo nome:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Faltando</value>
+    <value>Usar novo nome: </value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Tradutores</value>
@@ -273,7 +244,7 @@ Gostaria de reiniciar agora?</value>
     <value>Teste de upload de texto</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>Config. de tarefas para {0}</value>
+    <value>Configuração de tarefas para {0}</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Baixando</value>
@@ -293,26 +264,11 @@ Gostaria de reiniciar agora?</value>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Escolher caminho da pasta de capturas de tela</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Clique para começar a gravar.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Falha no download do FFmpeg.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Esperando...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Envio de imagens: {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado para a área de transferência: {0}</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Esconder menu</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Mostrar menu</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL para baixar arquivo e enviar</value>
@@ -342,7 +298,7 @@ Gostaria de reiniciar agora?</value>
     <value>Erro</value>
   </data>
   <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
-    <value>Variáveis suportadas: {0} e outras como {1}, etc</value>
+    <value>Variáveis suportadas: {0} e outras como {1}, etc.</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
     <value>Largue
@@ -401,24 +357,12 @@ Pressione "Não" para cancelar e desabilitar o upload automático.</value>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Enviando</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg baixado com sucesso.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Erro do FFmpeg</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Codificando...</value>
-  </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Você está tentando enviar um arquivo grande.
 Tem certeza de que quer continuar?</value>
   </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Redefinir todos os atalhos?</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Mostrar colunas</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Redefinir todas tarefas rápidas?</value>
@@ -428,9 +372,6 @@ Tem certeza de que quer continuar?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Continuar</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Esconder colunas</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Cancelar</value>
@@ -443,5 +384,260 @@ Tem certeza de que quer continuar?</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Executar ShareX quando o Windows iniciar</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+    <value>Português (Brasil)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>Alemão</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>Espanhol</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Espanhol (México)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Persa</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>Francês</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+    <value>Húngaro</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Indonésio</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Japonês</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+    <value>Coreano</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>Holandês</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pl" xml:space="preserve">
+    <value>Polonês</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ro" xml:space="preserve">
+    <value>Romeno</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>Russo</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>Turco</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Ucraniano</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+    <value>Vietnamita</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>Chinês simplificado</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>Chinês tradicional</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>Política de privacidade</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="ActionsToolbar__LockPosition" xml:space="preserve">
+    <value>Posição de bloqueio</value>
+  </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="ActionsToolbar_Edit" xml:space="preserve">
+    <value>Editar...</value>
+  </data>
+  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
+    <value>Abrir na inicialização do ShareX</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>O administrador do sistema desativou o recurso de upload.</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>Seu software antivírus ou o recurso de acesso controlado a pastas no Windows podem estar bloqueando o ShareX.</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>Deseja redefinir os temas?</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Gostaria de ativar os efeitos de imagem?
+
+Você pode desativar posteriormente no menu "Tarefas após a captura".</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>Encurtar URL</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>Encurtar</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>Não é possível localizar uma janela com o título da janela especificado.</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Atraso na captura de tela: {0}s</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Nome do arquivo do processo</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Conteúdo da área de transferência: Imagem (Tamanho: {0}x{1})</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>Ocorreu um erro durante o processamento de OCR ou nenhum texto foi retornado.</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>Processando OCR.</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Identificador do processo</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>Nome do processo</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Seleção de cores da tela</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Falha ao salvar as configurações</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Conteúdo da área de transferência: Arquivo (Total: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Conteúdo da área de transferência: Texto (Comprimento: {0})</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>A área de transferência não contém uma imagem.</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>A área de transferência está vazia ou contém dados desconhecidos.</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>A saída do OCR foi copiada para a área de transferência.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>A inicialização foi habilitada por sua organização</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>Este recurso não funcionará quando a opção "Desativar upload" estiver ativada!</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Gostaria de redefinir as configurações do ShareX?</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Título da janela</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Estilos da janela</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Retângulo da janela</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>Enviar com o ShareX</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>O log de depuração pode conter informações confidenciais. Tem certeza de que deseja continuar?</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>Alternar para exibição de miniaturas</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>Alternar para exibição de lista</value>
+  </data>
+  <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
+    <value>Ficar no topo</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>A inicialização foi desativada no Gerenciador de Tarefas</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>A inicialização foi desativada pela sua organização</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX foi minimizado para a bandeja do sistema.</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Confirmação</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>Separador</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Fixar na tela</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>Optical character recognition feature is only available with Windows version {0} or newer.</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>Insira o texto para codificar</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Tecla de atalho</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>O ShareX precisa ser reiniciado para que as alterações na pasta pessoal sejam aplicadas.
+
+Deseja reiniciar o ShareX?</value>
+  </data>
+  <data name="ActionsToolbar_Tip" xml:space="preserve">
+    <value>Segure à esquerda para arrastar
+Clique com o botão direito para abrir o menu
+Clique do meio para fechar</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>O vídeo FFmpeg e a fonte de áudio não podem ser "Nenhum".</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>O FFmpeg que vem com o ShareX suporta apenas sistemas operacionais de 64 bits.</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg está faltando</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>FFmpeg erro</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg não existe no seguinte caminho:</value>
+  </data>
+  <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
+    <value>Estilos de janela estendida</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>Editar com ShareX</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>Não foi possível salvar a imagem no caminho:</value>
   </data>
 </root>

@@ -147,9 +147,6 @@
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>Aggiungi Album</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonimo</value>
-  </data>
   <data name="lblLithiioApiKey.Text" xml:space="preserve">
     <value>Chiave API:</value>
   </data>
@@ -228,9 +225,6 @@
   <data name="lblEmailFrom.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -303,9 +297,6 @@
   <data name="lblFTPHost.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>ore</value>
-  </data>
   <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignora Certificato SSL non Valido</value>
   </data>
@@ -360,9 +351,6 @@
   <data name="btnPastebinLogin.Text" xml:space="preserve">
     <value>Accedi</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Accedi</value>
-  </data>
   <data name="btnPuushLogin.Text" xml:space="preserve">
     <value>Accedi</value>
   </data>
@@ -371,12 +359,6 @@
   </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>Accesso richiesto.</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Accesso richiesto.</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>minuti</value>
   </data>
   <data name="colSeafileLibraryName.Text" xml:space="preserve">
     <value>Nome</value>
@@ -389,9 +371,6 @@
   </data>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
     <value>Nome:</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>mai</value>
   </data>
   <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
     <value>Passiva</value>
@@ -409,9 +388,6 @@
     <value>Password:</value>
   </data>
   <data name="lblEmailPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
   <data name="lblMediaFirePassword.Text" xml:space="preserve">
@@ -813,9 +789,6 @@ Usare una library criptata disabilita la condivisione.</value>
   </data>
   <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
     <value>Nome Album Predefinito</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>giorni</value>
   </data>
   <data name="lblGistCustomURL.Text" xml:space="preserve">
     <value>Dominio Personalizzato:</value>

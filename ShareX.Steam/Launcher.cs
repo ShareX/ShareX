@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,6 +27,7 @@ using Steamworks;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Management;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -34,37 +35,39 @@ namespace ShareX.Steam
 {
     public static class Launcher
     {
-        private static string ContentFolderPath => Helpers.GetAbsolutePath("ShareX");
-        private static string ContentExecutablePath => Path.Combine(ContentFolderPath, "ShareX.exe");
-        private static string ContentSteamFilePath => Path.Combine(ContentFolderPath, "Steam");
-        private static string UpdateFolderPath => Helpers.GetAbsolutePath("Updates");
-        private static string UpdateExecutablePath => Path.Combine(UpdateFolderPath, "ShareX.exe");
-        private static string UpdatingTempFilePath => Path.Combine(ContentFolderPath, "Updating");
+        private static string ContentFolderPath = GetContentFolderPath();
+        private static string ContentExecutablePath = Path.Combine(ContentFolderPath, "ShareX.exe");
+        private static string ContentSteamFilePath = Path.Combine(ContentFolderPath, "Steam");
+        private static string UpdatingTempFilePath = Path.Combine(ContentFolderPath, "Updating");
 
-        private static bool IsFirstTimeRunning { get; set; }
-        private static bool IsStartupRun { get; set; }
-        private static bool ShowInApp => File.Exists(ContentSteamFilePath);
+        private static string UpdateFolderPath = Helpers.GetAbsolutePath("Updates");
+        private static string UpdateExecutablePath = Path.Combine(UpdateFolderPath, "ShareX.exe");
+
+        private static bool IsFirstTimeRunning, IsStartupRun, ShowInApp, IsSteamInit;
+        private static Stopwatch SteamInitStopwatch;
 
         public static void Run(string[] args)
         {
-            Stopwatch startTimer = Stopwatch.StartNew();
-
             if (Helpers.IsCommandExist(args, "-uninstall"))
             {
                 UninstallShareX();
                 return;
             }
 
-            bool isSteamInit = false;
-
             IsStartupRun = Helpers.IsCommandExist(args, "-silent");
+
+#if DEBUG
+            ShowInApp = true;
+#else
+            ShowInApp = File.Exists(ContentSteamFilePath);
+#endif
 
             if (!IsShareXRunning())
             {
-                // If running on startup and need to show "In-app" then wait until Steam is open
+                // If running on startup and need to show "In-app" then wait for Steam to run.
                 if (IsStartupRun && ShowInApp)
                 {
-                    for (int i = 0; i < 20 && !SteamAPI.IsSteamRunning(); i++)
+                    for (int i = 0; i < 30 && !SteamAPI.IsSteamRunning(); i++)
                     {
                         Thread.Sleep(1000);
                     }
@@ -72,15 +75,27 @@ namespace ShareX.Steam
 
                 if (SteamAPI.IsSteamRunning())
                 {
-                    isSteamInit = SteamAPI.Init();
+                    // Even "IsSteamRunning" is true still Steam API init can fail, therefore need to give more time for Steam to launch.
+                    for (int i = 0; i < 10; i++)
+                    {
+                        IsSteamInit = SteamAPI.Init();
+
+                        if (IsSteamInit)
+                        {
+                            SteamInitStopwatch = Stopwatch.StartNew();
+                            break;
+                        }
+
+                        Thread.Sleep(1000);
+                    }
                 }
 
                 if (IsUpdateRequired())
                 {
-                    DoUpdate();
+                    UpdateShareX();
                 }
 
-                if (isSteamInit)
+                if (IsSteamInit)
                 {
                     SteamAPI.Shutdown();
                 }
@@ -92,23 +107,27 @@ namespace ShareX.Steam
 
                 if (IsFirstTimeRunning)
                 {
-                    // Show first time config window
+                    // Show first time config window.
                     arguments = "-SteamConfig";
                 }
                 else if (IsStartupRun)
                 {
-                    // Don't show ShareX main window
+                    // Don't show ShareX main window.
                     arguments = "-silent";
                 }
 
                 RunShareX(arguments);
 
-                if (isSteamInit)
+                if (IsSteamInit)
                 {
-                    // Reason for this workaround because Steam only allows writing review if you played game at least 5 minutes
-                    // So launcher will stay on for 10 seconds and eventually users can reach 5 minutes that way (It will require 30 times opening)
-                    // Otherwise nobody can write review
-                    int waitTime = 10000 - (int)startTimer.ElapsedMilliseconds;
+                    // Reason for this workaround is because Steam only allows writing review if user is played the game at least 5 minutes.
+                    // For this reason ShareX launcher will stay on for at least 10 seconds to let users eventually reach 5 minutes play time.
+                    int waitTime = 10000;
+
+                    if (SteamInitStopwatch != null)
+                    {
+                        waitTime -= (int)SteamInitStopwatch.ElapsedMilliseconds;
+                    }
 
                     if (waitTime > 0)
                     {
@@ -118,9 +137,23 @@ namespace ShareX.Steam
             }
         }
 
+        private static string GetContentFolderPath()
+        {
+#if DEBUG
+            string path = Helpers.GetAbsolutePath(@"..\..\..\ShareX\bin\Debug");
+
+            if (Directory.Exists(path))
+            {
+                return path;
+            }
+#endif
+
+            return Helpers.GetAbsolutePath("ShareX");
+        }
+
         private static bool IsShareXRunning()
         {
-            // Check ShareX mutex
+            // Check ShareX mutex.
             return Helpers.IsRunning("82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC");
         }
 
@@ -128,8 +161,14 @@ namespace ShareX.Steam
         {
             try
             {
+                // Update not exists?
+                if (!File.Exists(UpdateExecutablePath))
+                {
+                    return false;
+                }
+
                 // First time running?
-                if (!Directory.Exists(ContentFolderPath) || !File.Exists(ContentExecutablePath))
+                if (!File.Exists(ContentExecutablePath))
                 {
                     IsFirstTimeRunning = true;
                     return true;
@@ -155,7 +194,7 @@ namespace ShareX.Steam
             return false;
         }
 
-        private static void DoUpdate()
+        private static void UpdateShareX()
         {
             try
             {
@@ -164,7 +203,7 @@ namespace ShareX.Steam
                     Directory.CreateDirectory(ContentFolderPath);
                 }
 
-                // In case updating terminate middle of it, in next Launcher start it can repair
+                // In case updating process terminate middle of it, allow launcher to repair ShareX.
                 Helpers.CreateEmptyFile(UpdatingTempFilePath);
                 Helpers.CopyAll(UpdateFolderPath, ContentFolderPath);
                 File.Delete(UpdatingTempFilePath);
@@ -184,29 +223,40 @@ namespace ShareX.Steam
         {
             try
             {
-                if (ShowInApp)
+                if (!ShowInApp)
                 {
-                    using (Process process = new Process())
-                    {
-                        ProcessStartInfo psi = new ProcessStartInfo()
-                        {
-                            FileName = ContentExecutablePath,
-                            Arguments = arguments,
-                            UseShellExecute = true
-                        };
+                    // Workarounds to not show "In-Game" on Steam.
 
-                        process.StartInfo = psi;
-                        process.Start();
-                    }
-                }
-                else
-                {
+                    // Workaround 1.
                     try
                     {
-                        // Workaround for don't show "In-app"
+                        using (ManagementClass managementClass = new ManagementClass("Win32_Process"))
+                        {
+                            ManagementClass processInfo = new ManagementClass("Win32_ProcessStartup");
+                            processInfo.Properties["CreateFlags"].Value = 0x00000008;
+
+                            ManagementBaseObject inParameters = managementClass.GetMethodParameters("Create");
+                            inParameters["CommandLine"] = $"\"{ContentExecutablePath}\" {arguments}";
+                            inParameters["ProcessStartupInformation"] = processInfo;
+
+                            ManagementBaseObject result = managementClass.InvokeMethod("Create", inParameters, null);
+                            // Returns a value of 0 (zero) if the process was successfully created, and any other number to indicate an error.
+                            if (result != null && (uint)result.Properties["ReturnValue"].Value == 0)
+                            {
+                                return;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                    }
+
+                    // Workaround 2.
+                    try
+                    {
                         uint result = Helpers.WinExec($"\"{ContentExecutablePath}\" {arguments}", 5);
 
-                        // If the function succeeds, the return value is greater than 31
+                        // If the function succeeds, the return value is greater than 31.
                         if (result > 31)
                         {
                             return;
@@ -216,27 +266,51 @@ namespace ShareX.Steam
                     {
                     }
 
-                    // Workaround 2
-                    string path = Path.Combine(Environment.SystemDirectory, "cmd.exe");
-
-                    if (!File.Exists(path))
+                    // Workaround 3.
+                    try
                     {
-                        path = "cmd.exe";
-                    }
+                        string path = Path.Combine(Environment.SystemDirectory, "cmd.exe");
 
-                    using (Process process = new Process())
-                    {
-                        ProcessStartInfo psi = new ProcessStartInfo()
+                        if (!File.Exists(path))
                         {
-                            FileName = path,
-                            Arguments = $"/C start \"\" \"{ContentExecutablePath}\" {arguments}",
-                            UseShellExecute = false,
-                            CreateNoWindow = true
-                        };
+                            path = "cmd.exe";
+                        }
 
-                        process.StartInfo = psi;
-                        process.Start();
+                        using (Process process = new Process())
+                        {
+                            ProcessStartInfo psi = new ProcessStartInfo()
+                            {
+                                FileName = path,
+                                Arguments = $"/C start \"\" \"{ContentExecutablePath}\" {arguments}",
+                                UseShellExecute = false,
+                                CreateNoWindow = true
+                            };
+
+                            process.StartInfo = psi;
+                            bool result = process.Start();
+
+                            if (result)
+                            {
+                                return;
+                            }
+                        }
                     }
+                    catch
+                    {
+                    }
+                }
+
+                using (Process process = new Process())
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = ContentExecutablePath,
+                        Arguments = arguments,
+                        UseShellExecute = true
+                    };
+
+                    process.StartInfo = psi;
+                    process.Start();
                 }
             }
             catch (Exception e)

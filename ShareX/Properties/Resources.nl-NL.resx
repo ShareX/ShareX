@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Resterende tijd: {0}s ({1}%) Totaal: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Bijdragen door:</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Kan geen geldig Twitter account vinden.</value>
   </data>
@@ -154,12 +151,6 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Toon dit bericht niet opnieuw.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Taak: {0}</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>de FFmpeg video en audio bron kunnen niet "None" zijn.</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Updategeschiedenis</value>
   </data>
@@ -178,25 +169,8 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Starten</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} bestaat niet.
-
-Wil je het automatisch downloaden?</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Externe bibliotheken</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Fout</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Klik om opname te stoppen.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Je kunt workflows toevoegen via de sneltoets instellingen...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Kon de afbeelding niet wegschrijven op {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX moet opnieuw opgestart worden om de taal te wijzigen.
@@ -204,9 +178,6 @@ Wil je ShareX opnieuw opstarten?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Gebruik een nieuwe naam:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Ontbrekend</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Vertalers</value>
@@ -293,26 +264,11 @@ Wil je ShareX opnieuw opstarten?</value>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Kies een map voor de screenshots</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Klik om opname te starten.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Downloaden van FFmpeg mislukt.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Wachten...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Afbeeldingsuploader: {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Gekopieerd naar klembord: {0}</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Verberg menu</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Toon menu</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL om te downloaden en dan te uploaden</value>
@@ -381,15 +337,6 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Map uploaden</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg succesvol gedownload.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Converteren...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg fout</value>
-  </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Ben je zeker dat je {0} bestanden wilt uploaden?</value>
   </data>
@@ -418,9 +365,6 @@ Ben je zeker dat je door wilt gaan?</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Upload met ShareX</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Kolommen verbergen</value>
   </data>
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>Geschiedenis</value>

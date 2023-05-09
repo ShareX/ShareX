@@ -123,9 +123,6 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Annulla</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Nuova Linea: Ctrl + Invio</value>
-  </data>
   <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
     <value>Sinistra</value>
   </data>

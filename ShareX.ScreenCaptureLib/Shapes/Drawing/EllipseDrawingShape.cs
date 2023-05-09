@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -55,7 +55,7 @@ namespace ShareX.ScreenCaptureLib
             DrawEllipse(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle);
         }
 
-        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, Rectangle rect)
+        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, RectangleF rect)
         {
             g.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -80,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
             g.SmoothingMode = SmoothingMode.None;
         }
 
-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
         {
             gp.AddEllipse(rect);
         }

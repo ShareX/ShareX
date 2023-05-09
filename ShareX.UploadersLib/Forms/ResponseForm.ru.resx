@@ -120,10 +120,37 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Ответ</value>
   </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>Текст</value>
-  </data>
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Веб-браузер</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Скопировать ответ</value>
+  </data>
+  <data name="tsbCopyURL.Text" xml:space="preserve">
+    <value>Копировать ссылку</value>
+  </data>
+  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
+    <value>Копировать ссылку на удаление</value>
+  </data>
+  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
+    <value>Копировать короткую ссылку</value>
+  </data>
+  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
+    <value>Копировать ссылку на миниатюру</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Текст ответа</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Информация об ответе</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>Форматировать JSON</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>Форматировать XML</value>
   </data>
 </root>

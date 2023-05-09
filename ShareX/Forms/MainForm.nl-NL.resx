@@ -372,21 +372,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Leeg lijst</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Verberg menu</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Voorbeeld afbeelding</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Toon</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Verberg</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automatisch</value>
-  </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Vastleggen</value>
   </data>
@@ -510,12 +495,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Afbeeldingsgeschiedenis...</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Doneer...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Over...</value>
-  </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Toon ShareX venster</value>
   </data>
@@ -588,30 +567,6 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Scrollopname...</value>
   </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Logboek foutopsporing...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Test afbeeldingsupload</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Test tekstupload</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Test bestandsupload</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Test linkverkorter</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Test linkdeler</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Foutopsporing</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Nieuws</value>
-  </data>
   <data name="tsmiShortenURL.Text" xml:space="preserve">
     <value>URL verkorten...</value>
   </data>
@@ -621,20 +576,11 @@
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>OCR afbeelding...</value>
   </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Kolommen verbergen</value>
-  </data>
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>Verkort URL...</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Doneer...</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Sluiten</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Tekst vastleggen (OCR)...</value>
   </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>Laat cursor zien</value>
@@ -648,14 +594,8 @@
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Over...</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google afbeelding zoeken...</value>
-  </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Afbeeldingen combineren...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Tekst vastleggen (OCR)...</value>
   </data>
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>Upload tekst...</value>

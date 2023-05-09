@@ -205,7 +205,7 @@
     <value>Xóa bỏ</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Chỉnh sửa</value>
+    <value>Chỉnh sửa...</value>
   </data>
   <data name="chActionsExtensions.Text" xml:space="preserve">
     <value>Phần đuôi mở rộng</value>
@@ -220,7 +220,7 @@
     <value>Tên</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>Thêm</value>
+    <value>Thêm...</value>
   </data>
   <data name="btnActionsDuplicate.Text" xml:space="preserve">
     <value>Nhân bản</value>
@@ -267,9 +267,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>giây</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Bắt đầu ghi lại sau:</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>giây</value>
   </data>
@@ -303,9 +300,6 @@
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Chỉ áp dụng hiệu ứng tới vùng được chụp</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Hiện cửa sổ hiệu ứng ảnh sau khi chụp</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Bạn có thể kích hoạt/vô hiệu hóa hiệu ứng cho ảnh từ "Tác vụ sau khi chụp -&gt; Thêm hiệu ứng ảnh".</value>
   </data>
@@ -329,9 +323,6 @@
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Bật nhạc sau khi tác vụ đã hoàn thành</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Sau khi tác vụ hoàn thành:</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tác vụ...</value>
@@ -360,12 +351,6 @@
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Sau khi chụp...</value>
   </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Vượt quyền tài khoản FTP mặc định</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Vượt quyền dịch vụ tải lên tùy chỉnh</value>
-  </data>
   <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
     <value>-</value>
   </data>
@@ -373,7 +358,7 @@
     <value>+</value>
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>0</value>
+    <value>Số tăng tự động:</value>
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
@@ -412,7 +397,7 @@
     <value>Phần đuôi mở rộng</value>
   </data>
   <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
-    <value>Lọc phần đuôi mở rộng</value>
+    <value>Lọc phần đuôi mở rộng:</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Đặt tên tệp</value>
@@ -504,27 +489,6 @@
   <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
     <value>Kích cỡ phóng đại điểm ảnh:</value>
   </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt chung</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt ảnh</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt công cụ</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt tải lên</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt chụp</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Ghi đè các tác vụ</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt nâng cao</value>
-  </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
     <value>Vùng được thiết lập trước:</value>
   </data>
@@ -540,9 +504,6 @@
   <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
     <value>Dùng vùng phóng đại hình vuông thay vì hình tròn</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Dùng mẫu từ tên cửa sổ cho chụp theo vùng (ShareX sẽ cố gắng xác định cửa sổ sau vùng chọn)</value>
-  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>Dùng chế độ đa vùng cho phép thay đổi kích thước và di chuyển các vùng</value>
   </data>
@@ -550,7 +511,7 @@
     <value>Kích thước vùng sẽ biến đổi thành khi nhấn phím "Alt":</value>
   </data>
   <data name="lblActionsNote.Text" xml:space="preserve">
-    <value>Lưu ý: Bạn có thể kích hoạt/vô hiệu hóa các tác vụ từ "Tác vụ sau khi chụp -&gt; Thực hiện các tác vụ"</value>
+    <value>Lưu ý: Bạn có thể bật / tắt tác vụ từ "Sau khi chụp tác vụ -&gt; Thực hiện tác vụ".</value>
   </data>
   <data name="lblScreenshotDelay.Text" xml:space="preserve">
     <value>Thời gian trễ chụp ảnh màn hình:</value>
@@ -560,9 +521,6 @@
   </data>
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>Tự động chép kết quả vào vùng nhớ tạm</value>
-  </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Xử lí nhận diện văn bản (OCR) khi mở hộp thoại</value>
   </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Xử lí nhận diện văn bản (OCR) bằng cách chạy ngầm</value>
@@ -575,5 +533,131 @@
   </data>
   <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
     <value>Nếu vùng nhớ tạm chứa URL tới tệp thì tải tệp xuống rồi tải lên</value>
+  </data>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>Các hành động ...</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>Duyệt qua ...</value>
+  </data>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>Tắt thông báo</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>Tắt thông báo trên toàn màn hình</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>Điều chỉnh chất lượng JPEG tự động để giữ cho kích thước hình ảnh gần với kích thước được chỉ định</value>
+  </data>
+  <data name="cbOverrideActions.Text" xml:space="preserve">
+    <value>Ghi đè các hành động</value>
+  </data>
+  <data name="cbOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Ghi đè cài đặt nâng cao</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Ghi đè cài đặt chụp</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Ghi đè trình tải lên tùy chỉnh mặc định</value>
+  </data>
+  <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
+    <value>Ghi đè tài khoản FTP mặc định</value>
+  </data>
+  <data name="cbOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Ghi đè cài đặt chung</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>Ghi đè cài đặt hình ảnh</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>Ghi đè thư mục ảnh chụp màn hình</value>
+  </data>
+  <data name="cbOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Ghi đè cài đặt công cụ</value>
+  </data>
+  <data name="cbOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Ghi đè cài đặt tải lên</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Text" xml:space="preserve">
+    <value>Hạn chế chụp vùng và con trỏ trong màn hình đang hoạt động</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Bắt đầu ghi sau:</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>Sử dụng lựa chọn vùng trong suốt</value>
+  </data>
+  <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Hiển thị cửa sổ hiệu ứng hình ảnh sau khi chụp</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>Hiển thị thông báo sau khi hoàn thành nhiệm vụ</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>Tự động ẩn khi chụp màn hình</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>Thay thế URL kết quả bằng cách sử dụng thay thế cụm từ thông dụng</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>Sử dụng âm thanh chụp tùy chỉnh:</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>Sử dụng âm thanh lỗi tùy chỉnh:</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>Sử dụng âm thanh hoàn thành nhiệm vụ tùy chỉnh:</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>Pop-up thông báo</value>
+  </data>
+  <data name="lblRegionCaptureFPSLimit.Text" xml:space="preserve">
+    <value>Giới hạn FPS:</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>Nhiệm vụ:</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>Khoảng thời gian:</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>giây</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>Khoảng thời gian mờ dần:</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>giây</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>Hành động nhấp chuột trái:</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>Hành động nhấp chuột giữa:</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>Vị trí:</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>Hành động nhấp chuột phải:</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>Kích thước:</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>Định dạng bộ chọn màu màn hình (Ctrl + nhấp chuột):</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>Văn bản thông tin bộ chọn màu màn hình:</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>Họa tiết:</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>Thay thế:</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>Thông báo</value>
   </data>
 </root>

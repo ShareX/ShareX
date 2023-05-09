@@ -130,10 +130,7 @@
     <value>最大滚动次数：</value>
   </data>
   <data name="tpCapture.Text" xml:space="preserve">
-    <value>捕捉</value>
-  </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>上传/保存依赖于捕捉后设置</value>
+    <value>截图</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
     <value>请注意，虽然ShareX尽它最大的努力呈现准确的滚动捕捉，但它仍不可能准确捕捉每一个滚动内容。主要原因包括：在捕捉屏幕内容时有用户的操作，则可能会出现问题；执行滚动捕捉的网页上有GIF动画或屏幕顶层有固定窗体；网页上存在不随网页滚动改变位置的静态菜单或按钮，而网页的其它部分又跟着滚动。</value>
@@ -217,15 +214,18 @@
     <value>捕捉前滚动到顶部方式:</value>
   </data>
   <data name="gbBeforeCapture.Text" xml:space="preserve">
-    <value>捕捉前</value>
+    <value>截图前</value>
   </data>
   <data name="gbWhileCapturing.Text" xml:space="preserve">
     <value>捕捉中</value>
   </data>
   <data name="gbAfterCapture.Text" xml:space="preserve">
-    <value>捕捉后</value>
+    <value>截图后</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 滚动捕捉</value>
+  </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>上传/保存依赖截图后的设置</value>
   </data>
 </root>

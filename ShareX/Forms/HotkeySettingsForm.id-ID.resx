@@ -120,9 +120,6 @@
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Duplikat</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Pulihkan tombol cepat bawaan...</value>
-  </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Edit...</value>
   </data>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -178,7 +178,7 @@ namespace ShareX.HelpersLib
             {
                 hex = hex.Remove(0, 1);
             }
-            else if (hex.StartsWith("0x", StringComparison.InvariantCultureIgnoreCase))
+            else if (hex.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
             {
                 hex = hex.Remove(0, 2);
             }

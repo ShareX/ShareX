@@ -147,10 +147,10 @@
     <value>16</value>
   </data>
   <data name="txtInputFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 12</value>
+    <value>162, 12</value>
   </data>
   <data name="txtInputFilePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 20</value>
+    <value>342, 20</value>
   </data>
   <data name="txtInputFilePath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -168,7 +168,7 @@
     <value>15</value>
   </data>
   <data name="btnInputFilePathBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 11</value>
+    <value>512, 11</value>
   </data>
   <data name="btnInputFilePathBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 23</value>
@@ -178,6 +178,7 @@
   </data>
   <data name="btnInputFilePathBrowse.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnInputFilePathBrowse.Name" xml:space="preserve">
     <value>btnInputFilePathBrowse</value>
@@ -192,10 +193,10 @@
     <value>14</value>
   </data>
   <data name="txtOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 36</value>
+    <value>162, 36</value>
   </data>
   <data name="txtOutputFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 20</value>
+    <value>342, 20</value>
   </data>
   <data name="txtOutputFolder.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -240,7 +241,7 @@
     <value>11</value>
   </data>
   <data name="btnOutputFolderBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 35</value>
+    <value>512, 35</value>
   </data>
   <data name="btnOutputFolderBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 23</value>
@@ -250,6 +251,7 @@
   </data>
   <data name="btnOutputFolderBrowse.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnOutputFolderBrowse.Name" xml:space="preserve">
     <value>btnOutputFolderBrowse</value>
@@ -291,10 +293,10 @@
     <value>6</value>
   </data>
   <data name="txtOutputFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 60</value>
+    <value>162, 60</value>
   </data>
   <data name="txtOutputFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 20</value>
+    <value>342, 20</value>
   </data>
   <data name="txtOutputFileName.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -423,7 +425,7 @@
     <value>True</value>
   </data>
   <data name="txtArguments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 80</value>
+    <value>526, 80</value>
   </data>
   <data name="txtArguments.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -447,7 +449,7 @@
     <value>112, 123</value>
   </data>
   <data name="tbVideoQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 22</value>
+    <value>398, 22</value>
   </data>
   <data name="tbVideoQuality.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -468,7 +470,7 @@
     <value>True</value>
   </data>
   <data name="lblVideoQualityValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>413, 126</value>
+    <value>515, 126</value>
   </data>
   <data name="lblVideoQualityValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -478,6 +480,7 @@
   </data>
   <data name="lblVideoQualityValue.Text" xml:space="preserve">
     <value>0</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblVideoQualityValue.Name" xml:space="preserve">
     <value>lblVideoQualityValue</value>
@@ -492,16 +495,17 @@
     <value>0</value>
   </data>
   <data name="lblVideoQualityHigher.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 146</value>
+    <value>323, 146</value>
   </data>
   <data name="lblVideoQualityHigher.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
+    <value>182, 22</value>
   </data>
   <data name="lblVideoQualityHigher.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
   <data name="lblVideoQualityHigher.Text" xml:space="preserve">
-    <value>-&gt;</value>
+    <value>Xxxxxxxxxxxxxxxxxxxxxxxxxxxx -&gt;   99</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="lblVideoQualityHigher.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopRight</value>
@@ -522,13 +526,14 @@
     <value>117, 146</value>
   </data>
   <data name="lblVideoQualityLower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
+    <value>192, 22</value>
   </data>
   <data name="lblVideoQualityLower.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="lblVideoQualityLower.Text" xml:space="preserve">
-    <value>&lt;-</value>
+    <value>99   &lt;- Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblVideoQualityLower.Name" xml:space="preserve">
     <value>lblVideoQualityLower</value>
@@ -576,7 +581,7 @@
     <value>208, 232</value>
   </data>
   <data name="pbProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 32</value>
+    <value>336, 32</value>
   </data>
   <data name="pbProgress.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -589,7 +594,7 @@
     <value>pbProgress</value>
   </data>
   <data name="&gt;&gt;pbProgress.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=14.1.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbProgress.Parent" xml:space="preserve">
     <value>$this</value>
@@ -628,10 +633,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>456, 278</value>
+    <value>558, 278</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

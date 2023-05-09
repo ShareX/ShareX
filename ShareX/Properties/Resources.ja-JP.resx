@@ -121,9 +121,6 @@
     <value>大きな容量のファイルをアップロードしようとしています。
 本当に続行しますか？</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>エンコードしています...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>URL短縮サービス: {0}</value>
   </data>
@@ -151,9 +148,6 @@
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>アップロード中</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpegのエラー</value>
-  </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>編集...</value>
   </data>
@@ -163,9 +157,6 @@
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>エンコードするテキストを入力</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>コントリビューター</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>タスクの完了</value>
   </data>
@@ -173,7 +164,7 @@
     <value>名前を入力してください。</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>設定を反映するには、SteamからShareXを開きなおす必要があります。</value>
+    <value>設定を反映するには、Steam から ShareX を開きなおしてください。</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>ホットキーを無効にする</value>
@@ -210,16 +201,10 @@
     <value>X: {0}, Y: {1}, 幅: {2}, 高さ: {3}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>このメッセージを再表示しない。</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg のダウンロードに失敗しました。</value>
+    <value>このメッセージを再び表示しない。</value>
   </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>すべてのホットキーを既定に戻しますか？</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg ビデオとオーディオの両方を「None」にはできません。</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>更新履歴</value>
@@ -239,19 +224,11 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>開始しています</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} がありません。
-
-自動でダウンロードしますか？</value>
-  </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>翻訳者</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>キャンセル</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>待機中...</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>短縮</value>
@@ -262,20 +239,11 @@
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>クリップボードにコピー: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>メニューを隠す</value>
-  </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>{0} のタスク設定</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>有効なTwitter アカウントが見つかりません。</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>メニューを表示</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>列を表示</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>ダウンロード後にアップロードするファイルのあるURL</value>
@@ -291,9 +259,6 @@
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>残り時間: {0}s ({1}%) 合計: {2}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>タスク: {0}</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>ホットキーの登録に失敗</value>
@@ -348,30 +313,18 @@
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
     <value>アップロード後: {0}</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>クリックで録画を停止</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>ホットキーの設定からワークフローを追加できます...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>画像をパス {0} に書き込みできません。</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>言語の変更はShareX の再起動後に反映されます。
 ShareX を再起動しますか？</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>エラー</value>
-  </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Windows開始時にShareXを起動する</value>
+    <value>Windows開始時に ShareX を起動</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} を {1} にアップロードしようとしています。別のアップロード先を選択することもできます。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>参照不可</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
     <value>初回アップロード時の警告</value>
@@ -381,9 +334,6 @@ ShareX を再起動しますか？</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>フォルダーのアップロード</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>外部ライブラリ</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>キャプチャー後: {0}</value>
@@ -410,8 +360,8 @@ ShareX を再起動しますか？</value>
     <value>ファイルのアップロード</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
-    <value>本当にこのスクリーンショットをアップロードしますか？
-「いいえ」をクリックするとアップロードを中止し、画像の自動アップロードを無効にします。</value>
+    <value>スクリーンショットをアップロードしますか？
+「いいえ」で、これを中止し、自動アップロードを無効化します。</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
     <value>本当にこのファイルを削除しますか？</value>
@@ -430,7 +380,7 @@ ShareX を再起動しますか？</value>
     <value>準備中</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>新しい名前を使用:</value>
+    <value>新しい名前を使用: </value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
     <value>このメニューを編集...</value>
@@ -458,12 +408,6 @@ ShareX を再起動しますか？</value>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>テキストアップロードのテスト</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>列を隠す</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpegのダウンロードが完了しました。</value>
-  </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>閉じる</value>
   </data>
@@ -479,9 +423,6 @@ ShareX を再起動しますか？</value>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>すべてのクイックタスクを既定に戻しますか？</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>クリックで録画を開始</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
     <value>ドイツ語</value>
   </data>
@@ -492,16 +433,13 @@ ShareX を再起動しますか？</value>
     <value>ShareX で画像編集</value>
   </data>
   <data name="SwitchToListView" xml:space="preserve">
-    <value>リストビューに切り替え</value>
+    <value>リスト表示に切り替え</value>
   </data>
   <data name="SwitchToThumbnailView" xml:space="preserve">
-    <value>サムネイルビューに切り替え</value>
+    <value>サムネイル表示に切り替え</value>
   </data>
   <data name="WouldYouLikeToResetThemes" xml:space="preserve">
-    <value>テーマをリセットしますか？</value>
-  </data>
-  <data name="ShowThumbnailTitle" xml:space="preserve">
-    <value>サムネイルのタイトル</value>
+    <value>すべてのテーマを初期化しますか？</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>スクリーンショットを{0}秒後に起動する</value>
@@ -510,10 +448,7 @@ ShareX を再起動しますか？</value>
     <value>スタートアップの設定は組織によって無効にされています</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>ShareXの設定をリセットしますか？</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>開発中のバージョンは不安定なことがあります、またテスト目的にしか使えません。開発中バージョンをインストールしますか？</value>
+    <value>ShareX の設定を初期化しますか？</value>
   </data>
   <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
     <value>ペルシア語</value>
@@ -570,22 +505,16 @@ ShareX を再起動しますか？</value>
     <value>OCR実行中</value>
   </data>
   <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>OCRでエラーが起きました。もしくはテキストがありません。</value>
+    <value>OCR処理中にエラーが発生。またはテキストがありません。</value>
   </data>
   <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>OCRの結果をクリップボードにコピーしました</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>ShareXのOCRでは、OCR.SpaceのAPIを使います。画像データをOCR.Spaceに転送してもよいですか？</value>
-  </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>録画を中断してもよいですか？</value>
+    <value>OCRの結果をクリップボードにコピーしました。</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
     <value>クリップボード内のデータ：画像（サイズ：{0}x{1}）</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>クリップボードが空っぽか、読み取れないデータが入っています</value>
+    <value>クリップボードが空っぽか、読み取れないデータが入っています。</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
     <value>クリップボード内のデータ：ファイル（ファイル数：{0}）</value>
@@ -606,7 +535,7 @@ ShareX を再起動しますか？</value>
     <value>ホットキー</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
-    <value>デバッグログには重大な情報が含まれています</value>
+    <value>デバッグのログには詳細な情報が含まれます。続行しますか？</value>
   </data>
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>スクリーン カラーピッカー</value>
@@ -615,14 +544,109 @@ ShareX を再起動しますか？</value>
     <value>ShareX - 確認</value>
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareXはシステムトレイに最小化されています</value>
+    <value>ShareX はシステムトレイに最小化されています。</value>
   </data>
   <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
     <value>インストールした画像エフェクトを有効にしますか？
-キャプチャー後のタスクから無効に設定しなおすことができます</value>
+
+後で「キャプチャー後のタスク」から無効化もできます。</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareXの再起動が必要です。
-再起動してもいいですか？</value>
+    <value>ShareX の再起動が必要です。
+
+再起動しますか？</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>FFmpegのエラーです</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>設定の保存に失敗しました</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>DisableUpload (アップロード無効)の設定が有効のためこの機能は動作しません！</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>リンク</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>クレジット</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>チーム</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>プライバシーポリシー</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pl" xml:space="preserve">
+    <value>ポーランド語</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg が以下のパスに存在しません:</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg がありません</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>ウィンドウ ハンドル</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>クラス名</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>プロセス名</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ro" xml:space="preserve">
+    <value>ルーマニア語</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>クリップボードに画像が含まれません。</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>FFmpeg の映像とオーディオ両方を同時に None にはできません。</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>ShareX の用意する FFmpeg は、64ビットOSにしか対応していません。</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>次のパスへ画像を書き込めません:</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>プロセス ファイル名</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>プロセス識別子</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>ウィンドウ タイトル</value>
+  </data>
+  <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
+    <value>拡張ウィンドウスタイル</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>ウィンドウスタイル</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>ウィンドウ Rectangle</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>クライアント Rectangle</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>最前面に固定</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>光学式文字認識の機能は Windows バージョン {0} 以降で利用できます。</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>指定のタイトルを持つウィンドウは見つかりません。</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>お使いのシステムの管理者がアップロード機能を無効にしています。</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>アンチウィルスソフトやWindowsのフォルダアクセス権限により、ShareX の使用が阻止されている可能性があります。</value>
   </data>
 </root>

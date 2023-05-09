@@ -132,7 +132,10 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
   </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Kısayol tuşları devre dışı. Buraya tıklıyarak yeniden etkinleştirebilirsiniz.</value>
+  </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Varsayılan kısayollara dön</value>
+    <value>Sıfırla...</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
 
         private static Dictionary<T, T2> CacheServices<T, T2>() where T2 : UploaderService<T>
         {
-            T2[] instances = Helpers.GetInstances<T2>();
+            IEnumerable<T2> instances = Helpers.GetInstances<T2>();
 
             AllServices.AddRange(instances.OfType<IUploaderService>());
             AllGenericUploaderServices.AddRange(instances.OfType<IGenericUploaderService>());

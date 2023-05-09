@@ -304,7 +304,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>264, 279</value>
@@ -313,7 +313,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>puush login</value>
+    <value>ShareX - puush login</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PuushLoginForm</value>

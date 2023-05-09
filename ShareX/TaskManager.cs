@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -167,8 +167,8 @@ namespace ShareX
         {
             TaskInfo info = task.Info;
 
-            string status = string.Format("Upload started. Filename: {0}", info.FileName);
-            if (!string.IsNullOrEmpty(info.FilePath)) status += ", Filepath: " + info.FilePath;
+            string status = string.Format("Upload started. File name: {0}", info.FileName);
+            if (!string.IsNullOrEmpty(info.FilePath)) status += ", File path: " + info.FilePath;
             DebugHelper.WriteLine(status);
 
             ListViewItem lvi = TaskListView.FindItem(task);
@@ -289,7 +289,7 @@ namespace ShareX
 
                         if (task.Status == TaskStatus.Stopped)
                         {
-                            DebugHelper.WriteLine($"Task stopped. Filename: {info.FileName}");
+                            DebugHelper.WriteLine($"Task stopped. File name: {info.FileName}");
 
                             if (lvi != null)
                             {
@@ -300,9 +300,9 @@ namespace ShareX
                         }
                         else if (task.Status == TaskStatus.Failed)
                         {
-                            string errors = string.Join("\r\n\r\n", info.Result.Errors.ToArray());
+                            string errors = info.Result.Errors.ToString();
 
-                            DebugHelper.WriteLine($"Task failed. Filename: {info.FileName}, Errors:\r\n{errors}");
+                            DebugHelper.WriteLine($"Task failed. File name: {info.FileName}, Errors:\r\n{errors}");
 
                             if (lvi != null)
                             {
@@ -320,19 +320,25 @@ namespace ShareX
 
                                 if (info.Result.Errors.Count > 0)
                                 {
-                                    string errorMessage = info.Result.Errors[0];
+                                    UploaderErrorInfo error = info.Result.Errors.Errors[0];
 
-                                    if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(errorMessage) &&
+                                    string title = error.Title;
+                                    if (string.IsNullOrEmpty(title))
+                                    {
+                                        title = Resources.TaskManager_task_UploadCompleted_Error;
+                                    }
+
+                                    if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(error.Text) &&
                                         (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                     {
-                                        TaskHelpers.ShowNotificationTip(errorMessage, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, 5000);
+                                        TaskHelpers.ShowNotificationTip(error.Text, "ShareX - " + title, 5000);
                                     }
                                 }
                             }
                         }
                         else
                         {
-                            DebugHelper.WriteLine($"Task completed. Filename: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
+                            DebugHelper.WriteLine($"Task completed. File name: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
 
                             string result = info.ToString();
 
@@ -483,7 +489,7 @@ namespace ShareX
                 {
                     try
                     {
-                        icon = TaskHelpers.GetProgressIcon(progress);
+                        icon = Helpers.GetProgressIcon(progress);
                     }
                     catch (Exception e)
                     {

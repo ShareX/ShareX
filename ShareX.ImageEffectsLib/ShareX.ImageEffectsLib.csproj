@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShareX.ImageEffectsLib</RootNamespace>
     <AssemblyName>ShareX.ImageEffectsLib</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -69,8 +69,8 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStore|AnyCPU'">
-    <OutputPath>bin\WindowsStore\</OutputPath>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MicrosoftStore|AnyCPU' ">
+    <OutputPath>bin\MicrosoftStore\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
@@ -80,9 +80,9 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStoreDebug|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MicrosoftStoreDebug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\WindowsStoreDebug\</OutputPath>
+    <OutputPath>bin\MicrosoftStoreDebug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>full</DebugType>
@@ -99,12 +99,13 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SharedAssemblyInfo.cs">
-      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Adjustments\Alpha.cs" />
     <Compile Include="Adjustments\BlackWhite.cs" />
     <Compile Include="Adjustments\Polaroid.cs" />
+    <Compile Include="Adjustments\ReplaceColor.cs" />
     <Compile Include="Adjustments\SelectiveColor.cs" />
     <Compile Include="Adjustments\Sepia.cs" />
     <Compile Include="Adjustments\MatrixColor.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Filters\EdgeDetect.cs" />
     <Compile Include="Filters\Emboss.cs" />
     <Compile Include="Filters\GaussianBlur.cs" />
+    <Compile Include="Filters\Glow.cs" />
     <Compile Include="Filters\MatrixConvolution.cs" />
     <Compile Include="Filters\MeanRemoval.cs" />
     <Compile Include="Filters\Outline.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="Adjustments\Hue.cs" />
     <Compile Include="Adjustments\Inverse.cs" />
     <Compile Include="Adjustments\Saturation.cs" />
+    <Compile Include="Filters\WaveEdge.cs" />
     <Compile Include="ImageEffectPackager.cs" />
     <Compile Include="Forms\ImageEffectPackagerForm.cs">
       <SubType>Form</SubType>
@@ -171,6 +174,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ImageEffectsSerializationBinder.cs" />
     <Compile Include="WatermarkConfig.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,10 +190,25 @@
     <EmbeddedResource Include="Forms\ImageEffectPackagerForm.ja-JP.resx">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.pl.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.pt-BR.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectPackagerForm.resx">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.ro.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectPackagerForm.ru.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.tr.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.vi-VN.resx">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectPackagerForm.zh-CN.resx">
@@ -228,6 +247,9 @@
     <EmbeddedResource Include="Forms\ImageEffectsForm.nl-NL.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectsForm.pl.resx">
+      <DependentUpon>ImageEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectsForm.pt-BR.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +257,9 @@
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectsForm.resx">
+      <DependentUpon>ImageEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectsForm.ro.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectsForm.ru.resx">
@@ -266,12 +291,14 @@
     <EmbeddedResource Include="Properties\Resources.ja-JP.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
+    <EmbeddedResource Include="Properties\Resources.pl.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ro.resx" />
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.uk.resx" />
@@ -281,7 +308,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
+      <Version>13.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

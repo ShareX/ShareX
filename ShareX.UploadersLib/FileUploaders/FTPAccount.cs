@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -99,10 +99,10 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private string exampleFilename = "example.png";
+        private string exampleFileName = "example.png";
 
         [Category("FTP"), Description("Preview of the FTP path based on the settings above")]
-        public string PreviewFtpPath => GetFtpPath(exampleFilename);
+        public string PreviewFtpPath => GetFtpPath(exampleFileName);
 
         [Category("FTP"), Description("Preview of the HTTP path based on the settings above")]
         public string PreviewHttpPath
@@ -111,7 +111,7 @@ namespace ShareX.UploadersLib
             {
                 try
                 {
-                    return GetUriPath(exampleFilename);
+                    return GetUriPath(exampleFileName);
                 }
                 catch
                 {
@@ -150,23 +150,23 @@ namespace ShareX.UploadersLib
             FTPSCertificateLocation = "";
         }
 
-        public string GetSubFolderPath(string filename = null, NameParserType nameParserType = NameParserType.URL)
+        public string GetSubFolderPath(string fileName = null, NameParserType nameParserType = NameParserType.URL)
         {
             string path = NameParser.Parse(nameParserType, SubFolderPath.Replace("%host", Host));
-            return URLHelpers.CombineURL(path, filename);
+            return URLHelpers.CombineURL(path, fileName);
         }
 
         public string GetHttpHomePath()
         {
             string homePath = HttpHomePath.Replace("%host", Host);
 
-            CustomUploaderParser parser = new CustomUploaderParser();
+            ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser();
             parser.UseNameParser = true;
             parser.NameParserType = NameParserType.URL;
             return parser.Parse(homePath);
         }
 
-        public string GetUriPath(string filename, string subFolderPath = null)
+        public string GetUriPath(string fileName, string subFolderPath = null)
         {
             if (string.IsNullOrEmpty(Host))
             {
@@ -175,10 +175,10 @@ namespace ShareX.UploadersLib
 
             if (HttpHomePathNoExtension)
             {
-                filename = Path.GetFileNameWithoutExtension(filename);
+                fileName = Path.GetFileNameWithoutExtension(fileName);
             }
 
-            filename = URLHelpers.URLEncode(filename);
+            fileName = URLHelpers.URLEncode(fileName);
 
             if (subFolderPath == null)
             {
@@ -203,7 +203,7 @@ namespace ShareX.UploadersLib
                     url = URLHelpers.CombineURL(url, subFolderPath);
                 }
 
-                url = URLHelpers.CombineURL(url, filename);
+                url = URLHelpers.CombineURL(url, fileName);
 
                 httpHomeUri = new UriBuilder(url);
                 httpHomeUri.Port = -1; //Since httpHomePath is not set, it's safe to erase UriBuilder's assumed port number
@@ -237,11 +237,11 @@ namespace ShareX.UploadersLib
                     //Setting URIBuilder.Query automatically prepends a ? so we must trim it first.
                     if (HttpHomePathAutoAddSubFolderPath)
                     {
-                        httpHomeUri.Query = URLHelpers.CombineURL(httpHomeUri.Query.Substring(1), subFolderPath, filename);
+                        httpHomeUri.Query = URLHelpers.CombineURL(httpHomeUri.Query.Substring(1), subFolderPath, fileName);
                     }
                     else
                     {
-                        httpHomeUri.Query = httpHomeUri.Query.Substring(1) + filename;
+                        httpHomeUri.Query = httpHomeUri.Query.Substring(1) + fileName;
                     }
                 }
                 else
@@ -251,7 +251,7 @@ namespace ShareX.UploadersLib
                         httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, subFolderPath);
                     }
 
-                    httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, filename);
+                    httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, fileName);
                 }
             }
 
@@ -259,14 +259,14 @@ namespace ShareX.UploadersLib
             return httpHomeUri.Uri.OriginalString;
         }
 
-        public string GetFtpPath(string filemame)
+        public string GetFtpPath(string fileName)
         {
             if (string.IsNullOrEmpty(FTPAddress))
             {
                 return "";
             }
 
-            return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(filemame, NameParserType.FolderPath));
+            return URLHelpers.CombineURL(FTPAddress, GetSubFolderPath(fileName, NameParserType.FilePath));
         }
 
         public override string ToString()

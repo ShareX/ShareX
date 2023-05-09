@@ -402,9 +402,6 @@
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">
     <value>کلمه عبور:</value>
   </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>کلمه عبور:</value>
-  </data>
   <data name="lblSendSpacePassword.Text" xml:space="preserve">
     <value>کلمه عبور:</value>
   </data>
@@ -426,9 +423,6 @@
   <data name="lblFTPPassword.Text" xml:space="preserve">
     <value>کلمه عبور:</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>هرگز</value>
-  </data>
   <data name="lblFTPName.Text" xml:space="preserve">
     <value>نام:</value>
   </data>
@@ -440,9 +434,6 @@
   </data>
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>نام:</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>دقیقه</value>
   </data>
   <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
     <value>ایمیل:</value>
@@ -466,9 +457,6 @@
     <value>ایمیل:</value>
   </data>
   <data name="lblLithiioEmail.Text" xml:space="preserve">
-    <value>ایمیل:</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
     <value>ایمیل:</value>
   </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">

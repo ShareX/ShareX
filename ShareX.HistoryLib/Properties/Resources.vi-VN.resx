@@ -153,9 +153,6 @@
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Đã lọc: {0}</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Hiện</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Lỗi</value>
   </data>
@@ -169,7 +166,7 @@
     <value>Ảnh</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Xem trước ảnh</value>
+    <value>Xem trước ảnh...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Văn bản</value>
@@ -190,7 +187,7 @@
     <value>Ảnh kèm đường dẫn HTML</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Thông tin thêm</value>
+    <value>Thông tin thêm...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
     <value>Ảnh Markdown</value>
@@ -207,12 +204,6 @@
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Chỉnh sửa ảnh...</value>
   </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>Hiện số liệu thống kê</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>Ẩn số liệu thống kê</value>
-  </data>
   <data name="HistoryStats_Total" xml:space="preserve">
     <value>Tổng cộng:</value>
   </data>
@@ -227,5 +218,23 @@
   </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>Bộ đếm số lượng trong lịch sử:</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Đã xảy ra lỗi khi đọc tệp lịch sử:</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Tên tệp, tiêu đề cửa sổ, tên quy trình, v.v.</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Đã lọc</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Số liệu thống kê lịch sử</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Tên quy trình:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Tổng</value>
   </data>
 </root>

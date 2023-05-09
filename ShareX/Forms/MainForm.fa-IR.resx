@@ -179,9 +179,6 @@
   <data name="tsmiTextCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>تشخیص متن از عکس (OCR) ...</value>
-  </data>
   <data name="tsmiAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -305,9 +302,6 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>تاریخچه عکس ...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>اعلامیه ها</value>
-  </data>
   <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -401,29 +395,8 @@
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
     <value>آپلود کننده های متن</value>
   </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>تشخیص متن از عکس (OCR) ...</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>تست کردن کوتاه کننده آٔدرس</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>تست به اشتراک گذاری آدرس</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>تست آپلود متن</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>تست آپلود عکس</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>تست آپلود فایل</value>
-  </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>تنظیمات وظیفه ...</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>خطایابی ...</value>
   </data>
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>نمایش کرسر</value>
@@ -533,9 +506,6 @@
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>خروج</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>کمک مالی ...</value>
-  </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>تغییردادن DNS ...</value>
   </data>
@@ -544,9 +514,6 @@
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>مقصدها</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>خطایابی</value>
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>تنظیمات آپلود سفارشی ...</value>
@@ -569,9 +536,6 @@
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>وظایف بعد از ضبط</value>
   </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>درباره ما ...</value>
-  </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>آپلود کننده های متن</value>
   </data>
@@ -593,17 +557,8 @@
   <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
     <value>۵ ثانیه</value>
   </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>خودکار</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>زیر</value>
-  </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>پاک کردن لیست وظایف</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>بستن</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>ترکیب کردن عکس ها ...</value>
@@ -674,18 +629,6 @@
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>پوشه</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>جستجوی عکس با گوگل ...</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>مخفی کردن</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>مخفی کردن ستون ها</value>
-  </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>مخفی کردن منو</value>
-  </data>
   <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
     <value>عکس HTML</value>
   </data>
@@ -697,9 +640,6 @@
   </data>
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>ابعاد عکس</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>پیش نمایش عکس</value>
   </data>
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>خلاصه کننده عکس ...</value>
@@ -748,9 +688,6 @@
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
     <value>ادرس کوتاه شده</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>نمایش</value>
   </data>
   <data name="tsmiShowErrors.Text" xml:space="preserve">
     <value>نمایش خطاها</value>
@@ -814,20 +751,5 @@
   </data>
   <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
     <value>عکس کوچک</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>نشان دادن</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>مخفی کردن</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>بالا</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>پایین</value>
-  </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>عنوان کوچک</value>
   </data>
 </root>

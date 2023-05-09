@@ -132,9 +132,6 @@
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Корневая директория</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Ошибка при парсинге ответа.</value>
-  </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Выбрать файл ключа...</value>
   </data>
@@ -188,7 +185,7 @@
     <value>Запрос не найден</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Путь к материнскому альбому, например</value>
+    <value>Путь к материнскому альбому, например:</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>Необходима аутентификация.</value>
@@ -246,5 +243,47 @@
   </data>
   <data name="LoggedInAs0" xml:space="preserve">
     <value>Вход выполнен как {0}.</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>Мой диск</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>Ссылка на удаление</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>Форматирование не удалось.</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>Форматирование не удалось.</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Заголовки</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>Текст ответа</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>URL ответа</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>Короткая ссылка</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Код ответа</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>Ссылка на миниатюру</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Отключить</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Подключить...</value>
   </data>
 </root>

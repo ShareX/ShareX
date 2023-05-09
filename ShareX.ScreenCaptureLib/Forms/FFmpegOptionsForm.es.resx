@@ -126,26 +126,14 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Copiar</value>
   </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>ffmpeg.exe</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Fuentes</value>
-  </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Tasa de bits:</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
     <value>Codec de audio:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Opciones FFmpeg</value>
-  </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Descargar</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Utilizar comandos personalizados</value>
@@ -164,12 +152,6 @@
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Fuente de vídeo:</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Línea de comandos vista previa</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Argumentos adicionales de línea de comandos</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>El valor predeterminado es de 128k.</value>

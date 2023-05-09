@@ -160,9 +160,6 @@
   <data name="btnEffectAdd.ToolTip" xml:space="preserve">
     <value>Ajouter</value>
   </data>
-  <data name="lblEffect.Text" xml:space="preserve">
-    <value>Effet :</value>
-  </data>
   <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
     <value>Rafraîchir</value>
   </data>

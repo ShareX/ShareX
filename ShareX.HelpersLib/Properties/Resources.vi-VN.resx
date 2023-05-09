@@ -169,7 +169,7 @@
     <value>Lỗi</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
-    <value>Thiết lập đã được chép tới vùng nhớ tạm</value>
+    <value>Thiết lập đã được chép tới vùng nhớ tạm.</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Tên tệp: {0}</value>
@@ -205,7 +205,7 @@
     <value>Thiết lập DNS thất bại với mã lỗi:</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>Thiết lập DNS thất bại</value>
+    <value>Thiết lập DNS thất bại.</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Trạng thái: {0}</value>
@@ -298,9 +298,6 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Tải lên thư mục</value>
-  </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Trình FTP</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Kiểm tra Hash</value>
@@ -531,9 +528,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Tải lên</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Công cụ</value>
-  </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Công cụ</value>
   </data>
@@ -671,9 +665,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Máy tính</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Đối tượng</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Chụp khi cuộn trang</value>
@@ -940,9 +931,6 @@ Bạn có muốn tải về không?</value>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Dịch vụ tải lên văn bản</value>
   </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Lấy văn bản (Nhận dạng kí tự)</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>Không công khai</value>
   </data>
@@ -972,12 +960,6 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Ghi lại màn hình</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Lưu trữ tiêu chuẩn</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Lưu trữ ít truy cập tiêu chuẩn</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
     <value>Phiên bản mới nhất</value>
@@ -1032,9 +1014,6 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
     <value>Quét mã QR</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Chụp màn hình</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Nhận dạng chữ (OCR)</value>
@@ -1094,7 +1073,7 @@ Bạn có muốn tải về không?</value>
     <value>Ảnh thu nhỏ/thumbnail cỡ rất lớn</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
-    <value>Bắt đầu/Dừng ghi hình màn hình (dùng GIF) sử dụng vùng đã chỉ </value>
+    <value>Bắt đầu / Dừng ghi màn hình (GIF) bằng cách sử dụng vùng được định cấu hình trước</value>
   </data>
   <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
     <value>Tối đa</value>
@@ -1140,5 +1119,341 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Kí tự ngẫu nhiên chứa số và chữ alphabet. Lặp lại dùng {n}</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>Ghim vào màn hình</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Cả hai</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Cuối</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Đầu</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>Dấu gạch ngang</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>Dấu gạch chấm</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>Dấu gạch 2 chấm</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>In đậm</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>Dấu chấm</value>
+  </data>
+  <data name="ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>Dưới - Giữa</value>
+  </data>
+  <data name="ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>Dưới - Trái</value>
+  </data>
+  <data name="ContentAlignment_BottomRight" xml:space="preserve">
+    <value>Dưới - Phải</value>
+  </data>
+  <data name="ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>Trung tâm</value>
+  </data>
+  <data name="ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>Trung tâm bên trái</value>
+  </data>
+  <data name="ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>Trung tâm bên phải</value>
+  </data>
+  <data name="ContentAlignment_TopCenter" xml:space="preserve">
+    <value>Trên - Giữa</value>
+  </data>
+  <data name="ContentAlignment_TopLeft" xml:space="preserve">
+    <value>Trên - Trái</value>
+  </data>
+  <data name="ContentAlignment_TopRight" xml:space="preserve">
+    <value>Trên - Phải</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>Không hiệu ứng</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>Rách mép</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>Sóng</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Răng cưa</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Kích thước tuyệt đối</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Không thay đổi kích thước</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Phần trăm canvas</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Phần trăm hình ảnh</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>Mặc định</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>Tệp</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>Chữ</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Cửa sổ không viền</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>Trình xem khay nhớ tạm</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Bộ tách hình ảnh</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Hình thu nhỏ hình ảnh</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>Xem ảnh</value>
+  </data>
+  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>Kiểm tra cửa sổ</value>
+  </data>
+  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_OCR_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>Tạm dừng ghi màn hình</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording_Category" xml:space="preserve">
+    <value>Ghi hình màn hình</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>Ghim vào màn hình</value>
+  </data>
+  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>Ghim vào màn hình (Từ khay nhớ tạm)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>Ghim vào màn hình (Từ màn hình)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>Ghim vào màn hình (Từ tệp)</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>Mã QR (Giải mã từ màn hình)</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>Dừng ghi màn hình</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
+    <value>Ghi hình màn hình</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Chuyển đổi menu</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Chuyển đổi video</value>
+  </data>
+  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Dưới</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Bên cạnh</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Tự Động</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Ẩn</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Hiện</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Sao chép tên</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Sao chép giá trị</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Giá trị</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Biểu tượng cảm xúc ngẫu nhiên (Lặp lại bằng cách sử dụng {n})</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>Chụp vùng cuối cùng</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Tuần trong năm</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>Kết quả của tệp đầu tiên:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Kết quả:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>Kết quả của tệp thứ hai:</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>Mũi tên tự do</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Tẩy thông minh</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>Cắt bỏ (X)</value>
+  </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - Trình xem hình ảnh</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>Chữ cái (Chữ thường)</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>Chữ cái (Chữ hoa)</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>Số</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>Chữ số La mã (Chữ thường)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>Chữ số La mã (Chữ hoa)</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Mục tiêu:</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Chế độ xem hình thu nhỏ</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Chế độ xem danh sách</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>Chỉnh sửa hình ảnh</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>Đóng thông báo</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>Sao chép tệp</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>Sao chép đường dẫn tệp</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>Sao chép hình ảnh</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>Sao chép đường dẫn</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>Mở tệp</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>Mở thư mục</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>Mở liên kết</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>Ghim vào màn hình</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>Tải file lên</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>Dưới</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>Trên</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>Mặc định</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>Chỉnh sửa hình ảnh</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>Mở tệp</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>Mở thư mục</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>Mở trình xem hình ảnh</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>Mở URL</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>Chọn</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Tìm kiếm trực quan trên Bing</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
   </data>
 </root>

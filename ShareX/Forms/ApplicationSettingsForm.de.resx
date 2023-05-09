@@ -183,17 +183,8 @@
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Hinzufügen...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Zwischenablagenformate</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Beschreibung</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Benutze Ersatzuploader der Wahl beim Wiederholen des Uploads</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Ergebnisse</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Ersatzbilduploader</value>
@@ -269,9 +260,6 @@
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Upload</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Erneut versuchen</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
     <value>Letzte Aufgaben im Hauptfenster beim Starten anzeigen</value>

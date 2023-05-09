@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -165,7 +165,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(AzureStorageUploadPath))
             {
-                string path = NameParser.Parse(NameParserType.FolderPath, AzureStorageUploadPath.Trim('/'));
+                string path = NameParser.Parse(NameParserType.FilePath, AzureStorageUploadPath.Trim('/'));
                 uploadPath = URLHelpers.CombineURL(path, fileName);
             }
             else
@@ -183,7 +183,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!isRequest && !string.IsNullOrEmpty(AzureStorageCustomDomain))
             {
                 url = URLHelpers.CombineURL(AzureStorageCustomDomain, uploadPath);
-                url = URLHelpers.FixPrefix(url, "https://");
+                url = URLHelpers.FixPrefix(url);
             }
             else if (!isRequest && AzureStorageContainer == "$root")
             {

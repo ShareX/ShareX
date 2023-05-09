@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,24 +37,36 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool ShowMenuUnderCursor { get; set; }
 
+        public void OpenMenu()
+        {
+            if (Menu != null)
+            {
+                OpenMenu(new Point(0, Height));
+            }
+        }
+
+        public void OpenMenu(Point menuPosition)
+        {
+            if (Menu != null)
+            {
+                Menu.Show(this, menuPosition);
+            }
+        }
+
         protected override void OnMouseDown(MouseEventArgs mevent)
         {
             base.OnMouseDown(mevent);
 
             if (Menu != null && mevent.Button == MouseButtons.Left)
             {
-                Point menuLocation;
-
                 if (ShowMenuUnderCursor)
                 {
-                    menuLocation = mevent.Location;
+                    OpenMenu(mevent.Location);
                 }
                 else
                 {
-                    menuLocation = new Point(0, Height);
+                    OpenMenu();
                 }
-
-                Menu.Show(this, menuLocation);
             }
         }
 
@@ -64,7 +76,7 @@ namespace ShareX.HelpersLib
 
             if (Menu != null)
             {
-                int arrowX = ClientRectangle.Width - 14;
+                int arrowX = ClientRectangle.Width - Padding.Right - 14;
                 int arrowY = (ClientRectangle.Height / 2) - 1;
 
                 Color color = Enabled ? ForeColor : SystemColors.ControlDark;

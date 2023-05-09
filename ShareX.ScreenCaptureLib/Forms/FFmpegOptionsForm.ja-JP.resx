@@ -130,10 +130,10 @@
 リアルタイム エンコード (スクリーン録画など)では、可能な限り高速な設定がよい。</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>0–10の範囲、10 が最高品質、3–6 が妥当な範囲、既定は 3。</value>
+    <value>0–10の範囲、10 が最高品質、3–6 が良好な範囲、既定は 3。</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>0-9の範囲、数値が小さいほど高品質、0-3 はで結果は明白、4 (既定) では明白な違いが知覚でき、6 は 「許容できる」品質です。</value>
+    <value>0-9の範囲、数値が小さいほど高品質、0-3 では結果は明白、4 (既定) では明白な違いが知覚でき、6 は 「許容できる」品質です。</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>既定は 128k</value>
@@ -145,14 +145,14 @@
     <value>既定は sierra2_4a</value>
   </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-    <value>このオーディオ コーデックは、選択中のビデオ コンテナでは対応していません。</value>
+    <value>この音声コーデックは、選択中の動画コンテナには対応していません。</value>
   </data>
   <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
     <value>スクリーン録画のようなリアルタイム エンコードでは可能な限り高速な設定を推奨。
 そうでないと、録画が中断されたり、フレーム落ちが発生します。</value>
   </data>
   <data name="lblCodec.Text" xml:space="preserve">
-    <value>ビデオ コーデック:</value>
+    <value>動画コーデック:</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
     <value>プリセット:</value>
@@ -160,23 +160,8 @@
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>可変ビットレート:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>ダウンロード</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpegのパス</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
-    <value>独自のパスを使う</value>
-  </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>独自のコマンドラインを使う</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>コマンドラインのプレビュー</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>追加するコマンドライン引数</value>
+    <value>独自のコマンドラインを使用</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>可変ビットレート:</value>
@@ -188,10 +173,10 @@
     <value>ビットレート:</value>
   </data>
   <data name="lblGIFDither.Text" xml:space="preserve">
-    <value>ディザリング形式:</value>
+    <value>ディザリング方式:</value>
   </data>
   <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>パレット形式:</value>
+    <value>パレット方式:</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
     <value>コマンドのテスト</value>
@@ -209,16 +194,16 @@
     <value>音質:</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>ビデオ ソース:</value>
+    <value>映像入力:</value>
   </data>
   <data name="lblAudioSource.Text" xml:space="preserve">
-    <value>オーディオ ソース:</value>
+    <value>オーディオ入力:</value>
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>オーディオ コーデック:</value>
+    <value>音声コーデック:</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>「screen-capture-recorder」と「virtual-audio-capturer」ビデオ/オーディオ ソースをインストール</value>
+    <value>映像/オーディオ入力の screen-capture-recorder と virtual-audio-capturer をインストール</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>録画デバイスをインストール</value>
@@ -226,11 +211,14 @@
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>更新</value>
   </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>ソース</value>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>追加したいコマンドライン引数:</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>コーデック</value>
+  <data name="lblCommandLinePreview.Text" xml:space="preserve">
+    <value>コマンドラインのプレビュー:</value>
+  </data>
+  <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
+    <value>独自の FFmpeg のパスを使用:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 動画キャプチャー オプション</value>
@@ -249,5 +237,14 @@
   </data>
   <data name="lblQSVPreset.Text" xml:space="preserve">
     <value>プリセット:</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>使い方:</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>ビットレートを使用</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Bayer Scale を管理。高くするとバンディング（縞）を増やすでしょう。標準は 2 です。</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -74,18 +74,18 @@ namespace ShareX.UploadersLib
                     return "";
                 }
 
-                return new Uri(Helpers.ExpandFolderVariables(LocalhostRoot)).AbsoluteUri;
+                return new Uri(FileHelpers.ExpandFolderVariables(LocalhostRoot)).AbsoluteUri;
             }
         }
 
-        private string exampleFilename = "screenshot.jpg";
+        private string exampleFileName = "screenshot.jpg";
 
         [Category("Localhost"), Description("Preview of the Localhost Path based on the settings above")]
         public string PreviewLocalPath
         {
             get
             {
-                return GetLocalhostUri(exampleFilename);
+                return GetLocalhostUri(exampleFileName);
             }
         }
 
@@ -94,7 +94,7 @@ namespace ShareX.UploadersLib
         {
             get
             {
-                return GetUriPath(exampleFilename);
+                return GetUriPath(exampleFileName);
             }
         }
 
@@ -112,7 +112,7 @@ namespace ShareX.UploadersLib
 
         public string GetSubFolderPath()
         {
-            return NameParser.Parse(NameParserType.URL, SubFolderPath.Replace("%host", Helpers.ExpandFolderVariables(LocalhostRoot)));
+            return NameParser.Parse(NameParserType.URL, SubFolderPath.Replace("%host", FileHelpers.ExpandFolderVariables(LocalhostRoot)));
         }
 
         public string GetHttpHomePath()
@@ -126,10 +126,10 @@ namespace ShareX.UploadersLib
 
             HttpHomePath = URLHelpers.RemovePrefixes(HttpHomePath);
 
-            return NameParser.Parse(NameParserType.URL, HttpHomePath.Replace("%host", Helpers.ExpandFolderVariables(LocalhostRoot)));
+            return NameParser.Parse(NameParserType.URL, HttpHomePath.Replace("%host", FileHelpers.ExpandFolderVariables(LocalhostRoot)));
         }
 
-        public string GetUriPath(string filename)
+        public string GetUriPath(string fileName)
         {
             if (string.IsNullOrEmpty(LocalhostRoot))
             {
@@ -138,10 +138,10 @@ namespace ShareX.UploadersLib
 
             if (HttpHomePathNoExtension)
             {
-                filename = Path.GetFileNameWithoutExtension(filename);
+                fileName = Path.GetFileNameWithoutExtension(fileName);
             }
 
-            filename = URLHelpers.URLEncode(filename);
+            fileName = URLHelpers.URLEncode(fileName);
 
             string subFolderPath = GetSubFolderPath();
             subFolderPath = URLHelpers.URLEncode(subFolderPath, true);
@@ -170,7 +170,7 @@ namespace ShareX.UploadersLib
                 path = URLHelpers.CombineURL(path, subFolderPath);
             }
 
-            path = URLHelpers.CombineURL(path, filename);
+            path = URLHelpers.CombineURL(path, fileName);
 
             string remoteProtocol = RemoteProtocol.GetDescription();
 
@@ -189,7 +189,7 @@ namespace ShareX.UploadersLib
                 return "";
             }
 
-            return Path.Combine(Path.Combine(Helpers.ExpandFolderVariables(LocalhostRoot), GetSubFolderPath()), fileName);
+            return Path.Combine(Path.Combine(FileHelpers.ExpandFolderVariables(LocalhostRoot), GetSubFolderPath()), fileName);
         }
 
         public string GetLocalhostUri(string fileName)
@@ -206,7 +206,7 @@ namespace ShareX.UploadersLib
 
         public override string ToString()
         {
-            return string.Format("{0} - {1}:{2}", Name, Helpers.GetVariableFolderPath(LocalhostRoot), Port);
+            return string.Format("{0} - {1}:{2}", Name, FileHelpers.GetVariableFolderPath(LocalhostRoot), Port);
         }
 
         public LocalhostAccount Clone()

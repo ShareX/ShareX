@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,21 +27,23 @@ namespace ShareX.HelpersLib
 {
     public static class Links
     {
-        public const string URL_WEBSITE = "https://getsharex.com";
-        public const string URL_GITHUB = "https://github.com/ShareX/ShareX";
-        public const string URL_ISSUES = URL_GITHUB + "/issues?q=is%3Aissue";
-        public const string URL_CALLBACK = URL_WEBSITE + "/callback/";
-        public const string URL_CHANGELOG = URL_WEBSITE + "/changelog";
-        public const string URL_DONATE = URL_WEBSITE + "/donate";
-        public const string URL_IMAGE_EFFECTS = URL_WEBSITE + "/image-effects";
-        public const string URL_ACTIONS = URL_WEBSITE + "/actions";
-        public const string URL_JAEX = "https://github.com/Jaex";
-        public const string URL_MCORED = "https://github.com/McoreD";
-        public const string URL_STEAM = "http://store.steampowered.com/app/400040/";
-        public const string URL_DISCORD = "https://discord.gg/ShareX";
-        public const string URL_TWITTER = "https://twitter.com/GetShareX";
-        private const string URL_DOCS = URL_WEBSITE + "/docs";
-        public const string URL_CUSTOM_UPLOADER = URL_DOCS + "/custom-uploader";
-        public const string URL_CUSTOM_UPLOADERS = "https://github.com/ShareX/CustomUploaders";
+        public const string Website = "https://getsharex.com";
+        public const string GitHub = "https://github.com/ShareX/ShareX";
+        public const string GitHubIssues = GitHub + "/issues?q=is%3Aissue";
+        public const string Callback = Website + "/callback/";
+        public const string Changelog = Website + "/changelog";
+        public const string Donate = Website + "/donate";
+        public const string PrivacyPolicy = Website + "/privacy-policy";
+        public const string ImageEffects = Website + "/image-effects";
+        public const string Actions = Website + "/actions";
+        public const string Jaex = "https://github.com/Jaex";
+        public const string McoreD = "https://github.com/McoreD";
+        public const string Steam = "http://store.steampowered.com/app/400040/";
+        public const string Discord = "https://discord.gg/ShareX";
+        public const string Twitter = "https://twitter.com/ShareX";
+        private const string Docs = Website + "/docs";
+        public const string DocsCustomUploader = Docs + "/custom-uploader";
+        public const string DocsKeybinds = Docs + "/keybinds";
+        public const string DocsOCR = Docs + "/ocr";
     }
 }

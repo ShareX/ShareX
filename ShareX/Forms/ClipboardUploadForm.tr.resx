@@ -129,4 +129,7 @@
   <data name="lblQuestion.Text" xml:space="preserve">
     <value>Panonuz aşağıdakini içermektedir:</value>
   </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Karşıya yükle</value>
+  </data>
 </root>

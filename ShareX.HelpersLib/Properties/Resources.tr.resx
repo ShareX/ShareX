@@ -175,10 +175,10 @@
     <value>Pencerenin işlem ismi</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Rastgele alfanumerik karakter. {n} haneli</value>
+    <value>Rastgele alfanumerik karakter ({n} haneli)</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Rastgele 0 ile 9 arasında sayı. {n} haneli</value>
+    <value>Rastgele 0 ile 9 arasında sayı ({n} haneli)</value>
   </data>
   <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
     <value>Pencerenin başlığı</value>
@@ -193,7 +193,7 @@
     <value>Güncel hafta adı (Yerel dil)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Otomatik artan sayı. {n} başa n kadar 0 ekler</value>
+    <value>Otomatik artan sayı ({n} başa n kadar 0 ekler)</value>
   </data>
   <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
     <value>Elle</value>
@@ -214,7 +214,7 @@
     <value>Durdur</value>
   </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
-    <value>Ad: {0}, Boyut: {1}</value>
+    <value>İsim: {0}, Boyut: {1}</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>Güncelleme kontrolü yapılamadı</value>
@@ -377,9 +377,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Dizin yükle</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP istemci</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Hash kontrol</value>
   </data>
@@ -444,13 +441,13 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Dosya yükleyici</value>
   </data>
   <data name="ResponseType_Headers" xml:space="preserve">
-    <value>Cevap başlıkları</value>
+    <value>Yanıt başlıkları</value>
   </data>
   <data name="ResponseType_RedirectionURL" xml:space="preserve">
     <value>Yönlendirme adresi</value>
   </data>
   <data name="ResponseType_Text" xml:space="preserve">
-    <value>Cevap içeriği</value>
+    <value>Yanıt içeriği</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Özel yazı yükleyici</value>
@@ -465,7 +462,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Özel adres kısaltıcı</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Resim efekti / filigran ekle</value>
+    <value>Resim efekti ekle</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Resim düzenleyicide aç</value>
@@ -534,7 +531,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Balon uyarısı göster</value>
   </data>
   <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Hiç bişey gösterme</value>
+    <value>Hiçbir şey gösterme</value>
   </data>
   <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
     <value>Önizlemeli uyarı penceresi göster</value>
@@ -611,9 +608,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Yükle</value>
-  </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Araçlar</value>
   </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Araçlar</value>
@@ -721,16 +715,16 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Diğer</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>Otomatik artan alfanumerik büyük küçük harfe duyarsız. {n} başa n kadar 0 ekler</value>
+    <value>Otomatik artan alfanumerik büyük küçük harfe duyarsız ({n} başa n kadar 0 ekler)</value>
   </data>
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Otomatik artan heksadesimal. {n} başa n kadar 0 ekler</value>
+    <value>Otomatik artan heksadesimal ({n} başa n kadar 0 ekler)</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
-    <value>Rastgele heksadesimal karakter. {n} haneli</value>
+    <value>Rastgele heksadesimal karakter ({n} haneli)</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>Otomatik artan alfanumerik büyük küçük harfe duyarlı. {n} başa n kadar 0 ekler</value>
+    <value>Otomatik artan alfanumerik büyük küçük harfe duyarlı ({n} başa n kadar 0 ekler)</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Otomatik artan {n} sayı tabanında alfanumerik (1 &lt; n &lt; 63)</value>
@@ -752,9 +746,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Bilgisayar</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Hedef</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Kaydırarak yakalama</value>
@@ -832,12 +823,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Özel alan ile ekran kaydetme (GIF) başlat</value>
   </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Ekran yakalama</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Yazı yakalama (OCR)</value>
-  </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Yazı tanı (OCR)</value>
   </data>
@@ -908,52 +893,52 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Varsayılan</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Çizim: Ok (A)</value>
+    <value>Ok (A)</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Çizim: İmleç</value>
+    <value>İmleç</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Çizim: Elips (E)</value>
+    <value>Elips (E)</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Çizim: Serbest çizim (F)</value>
+    <value>Serbest çizim (F)</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Çizim: Resim (Dosya)</value>
+    <value>Resim (Dosya)</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>Çizim: Resim (Ekrandan)</value>
+    <value>Resim (Ekrandan)</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Çizim: Çizgi (L)</value>
+    <value>Çizgi (L)</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Çizim: Dikdörtgen (R)</value>
+    <value>Dikdörtgen (R)</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Çizim: Konuşma balonu (S)</value>
+    <value>Konuşma balonu (S)</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Çizim: Kademe (I)</value>
+    <value>Kademe (I)</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Çizim: Çıkartma</value>
+    <value>Çıkartma</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Çizim: Yazı (Arkaplanlı) (T)</value>
+    <value>Yazı (Arkaplanlı) (T)</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Çizim: Yazı (Dış çizgili) (O)</value>
+    <value>Yazı (Dış çizgili) (O)</value>
   </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Efekt: Bulanıklaştır (B)</value>
+    <value>Bulanıklaştır (B)</value>
   </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Efekt: Vurgula (H)</value>
+    <value>Vurgula (H)</value>
   </data>
   <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Efekt: Mozaikle (P)</value>
+    <value>Mozaikle (P)</value>
   </data>
   <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
     <value>Yükle</value>
@@ -980,7 +965,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Dikey</value>
   </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Araç: Resimi kırp (C)</value>
+    <value>Resmi kırp (C)</value>
   </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Yazı yükleyici</value>
@@ -1016,7 +1001,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>ShareX kapat</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
-    <value>Hiç birşey yapma</value>
+    <value>Hiçbir şey yapma</value>
   </data>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Özel adres paylaşma servisi</value>
@@ -1073,7 +1058,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Nesneyi sil veya yakalamayı iptal et</value>
   </data>
   <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Rastgele satır dosyadan. {filepath} kullan dosya adresi için</value>
+    <value>Rastgele satır dosyadan (Dosya adresi için {filepath} kullan)</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
     <value>"Page down" tuşuna bas</value>
@@ -1091,22 +1076,16 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Yukarı kaydırma mesajı yolla</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Bölge: Elips</value>
+    <value>Elips bölge</value>
   </data>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Bölge: Serbest çizim</value>
+    <value>Serbest bölge</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Bölge: Dikdörtgen</value>
+    <value>Dikdörtgen bölge</value>
   </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>Kişisel</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Standart depolama</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Standart seyrek erişim depolama</value>
   </data>
   <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
     <value>Rastgele sıfat</value>
@@ -1119,5 +1098,353 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="PNGBitDepth_Bit32" xml:space="preserve">
     <value>32 bit</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>İki taraf</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Son</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Baş</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>Tire</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>Tire nokta</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>Tire nokta nokta</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>Nokta</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>Düz</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Pencere</value>
+  </data>
+  <data name="ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>Orta alt</value>
+  </data>
+  <data name="ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>Sol alt</value>
+  </data>
+  <data name="ContentAlignment_BottomRight" xml:space="preserve">
+    <value>Sağ alt</value>
+  </data>
+  <data name="ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>Orta merkez</value>
+  </data>
+  <data name="ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>Sol orta</value>
+  </data>
+  <data name="ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>Sağ orta</value>
+  </data>
+  <data name="ContentAlignment_TopCenter" xml:space="preserve">
+    <value>Orta üst</value>
+  </data>
+  <data name="ContentAlignment_TopLeft" xml:space="preserve">
+    <value>Sol üst</value>
+  </data>
+  <data name="ContentAlignment_TopRight" xml:space="preserve">
+    <value>Sağ üst</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Mutlak boyut</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Yeniden boyutlandırma</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Tuval yüzdesi</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Resim yüzdesi</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>Resim</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>Yazı</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Yinele</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Tümünü seç</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Geri al</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>Pano görüntüleyici</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Resim ayırıcı</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Küçük resim yapıcı</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>Pencere incele</value>
+  </data>
+  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR kod (Ekrandan çöz)</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Video çevirici</value>
+  </data>
+  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>İsmi kopyala</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Değeri kopyala</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Rastgele emoji ({n} kullanarak tekrarla)</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Rastgele belirsiz olmayan alfanumerik karakter ({n} haneli)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Yılın haftası</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Sonuç:</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>İlk dosya sonucu:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>İkinci dosya sonucu:</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Büyüt</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Akıllı silgi</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Seç ve taşı (M)</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>Harfler (Küçük harf)</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>Harfler (Büyük harf)</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>Sayılar</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>Roma rakamları (Küçük harf)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>Roma rakamları (Büyük harf)</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Hedef:</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>Resimi düzenle</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>Uyarı penceresini kapat</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>Dosya kopyala</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>Dosya yolunu kopyala</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>Resim kopyala</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>Bağlantıyı kopyala</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>Dosya aç</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>Klasör aç</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>Bağlantı aç</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>Karşıya dosya yükle</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Bing görsel arama</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Otomatik</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>Son bölgeyi yakala</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>Resimi düzenle</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Gizle</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>Resim görüntüleyici</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>Dosya aç</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>Klasör aç</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>Resim görüntüleyiciyi aç</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>Adresi aç</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
+    <value>Ekran kaydetme</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>Seç</value>
+  </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - Resim görüntüleyici</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Göster</value>
+  </data>
+  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_OCR_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>Üst</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Kenar</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>Ekrana sabitle</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>Ekrana sabitle</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>Ekrana sabitle</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Kenarsız pencere</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Liste görünümü</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Küçük resim görünümü</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>Ekran kaydını durdur</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Tepsi menüsünü aç/kapat</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>Kesip çıkar (X)</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>Efekt yok</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>Ekrana sabitle (Panodan)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>Ekrana sabitle (Dosyadan)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>Ekrana sabitle (Ekrandan)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>Yırtık kenarlar</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>Dalga</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Testere dişi</value>
   </data>
 </root>

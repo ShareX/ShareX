@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,8 +31,8 @@ namespace ShareX.HelpersLib
     {
         protected override string Prefix { get; } = "%";
 
-        public static readonly CodeMenuEntryFilename t = new CodeMenuEntryFilename("t", Resources.ReplCodeMenuEntry_t_Title_of_active_window, Resources.ReplCodeMenuCategory_Target);
-        public static readonly CodeMenuEntryFilename pn = new CodeMenuEntryFilename("pn", Resources.ReplCodeMenuEntry_pn_Process_name_of_active_window, Resources.ReplCodeMenuCategory_Target);
+        public static readonly CodeMenuEntryFilename t = new CodeMenuEntryFilename("t", Resources.ReplCodeMenuEntry_t_Title_of_active_window, Resources.ReplCodeMenuCategory_Window);
+        public static readonly CodeMenuEntryFilename pn = new CodeMenuEntryFilename("pn", Resources.ReplCodeMenuEntry_pn_Process_name_of_active_window, Resources.ReplCodeMenuCategory_Window);
         public static readonly CodeMenuEntryFilename y = new CodeMenuEntryFilename("y", Resources.ReplCodeMenuEntry_y_Current_year, Resources.ReplCodeMenuCategory_Date_and_Time);
         public static readonly CodeMenuEntryFilename yy = new CodeMenuEntryFilename("yy", Resources.ReplCodeMenuEntry_yy_Current_year__2_digits_, Resources.ReplCodeMenuCategory_Date_and_Time);
         public static readonly CodeMenuEntryFilename mo = new CodeMenuEntryFilename("mo", Resources.ReplCodeMenuEntry_mo_Current_month, Resources.ReplCodeMenuCategory_Date_and_Time);

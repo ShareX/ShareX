@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShareX</RootNamespace>
     <AssemblyName>ShareX</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>ShareX_Icon.ico</ApplicationIcon>
     <FileUpgradeFlags>
@@ -75,9 +75,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStore|AnyCPU'">
-    <OutputPath>bin\WindowsStore\</OutputPath>
-    <DefineConstants>TRACE;WindowsStore</DefineConstants>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MicrosoftStore|AnyCPU' ">
+    <OutputPath>bin\MicrosoftStore\</OutputPath>
+    <DefineConstants>TRACE;MicrosoftStore</DefineConstants>
     <Optimize>true</Optimize>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -85,10 +85,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStoreDebug|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MicrosoftStoreDebug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\WindowsStoreDebug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WindowsStore</DefineConstants>
+    <OutputPath>bin\MicrosoftStoreDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MicrosoftStore</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -97,11 +97,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -110,36 +106,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-  <Choose>
-    <When Condition="'$(Configuration)' == 'WindowsStore' Or '$(Configuration)' == 'WindowsStoreDebug'">
-      <ItemGroup>
-        <Reference Include="System.Runtime.WindowsRuntime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-          <SpecificVersion>False</SpecificVersion>
-          <HintPath>$(MSBuildProgramFiles32)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="windows">
-          <SpecificVersion>False</SpecificVersion>
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.0.17763.0\Facade\windows.winmd</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Windows.ApplicationModel.StartupTaskContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.ApplicationModel.StartupTaskContract\3.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Windows.Foundation.FoundationContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Windows.Foundation.UniversalApiContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.UniversalApiContract\7.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
   <ItemGroup>
     <Compile Include="BalloonTipAction.cs" />
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowManager.cs" />
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowSettings.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveWindow.cs" />
     <Compile Include="CaptureHelpers\CaptureBase.cs" />
@@ -181,11 +151,29 @@
     <Compile Include="EasterEggAboutAnimation.cs" />
     <Compile Include="EasterEggBounce.cs" />
     <Compile Include="FirefoxManifest.cs" />
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowForm.Designer.cs">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.Designer.cs">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClipboardUploadForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ClipboardUploadForm.Designer.cs">
       <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FirstTimeUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FirstTimeUploadForm.Designer.cs">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InspectWindowForm.cs">
       <SubType>Form</SubType>
@@ -193,22 +181,41 @@
     <Compile Include="Forms\InspectWindowForm.Designer.cs">
       <DependentUpon>InspectWindowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TextUploadForm.cs">
+    <Compile Include="Tools\PinToScreen\PinToScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TextUploadForm.Designer.cs">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    <Compile Include="Tools\PinToScreen\PinToScreenForm.Designer.cs">
+      <DependentUpon>PinToScreenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ThumbnailSizeForm.cs">
+    <Compile Include="Tools\OCR\OCRForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ThumbnailSizeForm.Designer.cs">
-      <DependentUpon>ThumbnailSizeForm.cs</DependentUpon>
+    <Compile Include="Tools\OCR\OCRForm.Designer.cs">
+      <DependentUpon>OCRForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NativeMessageInput.cs" />
     <Compile Include="NewsItem.cs" />
     <Compile Include="NewsManager.cs" />
-    <Compile Include="..\SharedAssemblyInfo.cs">
-      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="NotificationFormConfig.cs" />
+    <Compile Include="Tools\OCR\OCRHelper.cs" />
+    <Compile Include="Tools\OCR\OCRLanguage.cs" />
+    <Compile Include="Tools\OCR\OCROptions.cs" />
+    <Compile Include="Tools\OCR\ServiceLink.cs" />
+    <Compile Include="Tools\OCR\ServiceLinksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\OCR\ServiceLinksForm.Designer.cs">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\PinToScreen\PinToScreenOptions.cs" />
+    <Compile Include="Tools\PinToScreen\PinToScreenStartupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\PinToScreen\PinToScreenStartupForm.Designer.cs">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingManager.cs" />
     <Compile Include="Forms\BeforeUploadForm.cs">
@@ -296,12 +303,6 @@
     <Compile Include="QuickTaskMenu.cs" />
     <Compile Include="RecentTask.cs" />
     <Compile Include="ScreenRecordManager.cs" />
-    <Compile Include="Forms\ScreenRecordForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ScreenRecordForm.Designer.cs">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ApplicationSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,7 +346,7 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImageInfo.cs" />
+    <Compile Include="TaskMetadata.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -360,6 +361,7 @@
     <Compile Include="StartupManagers\IStartupManager.cs" />
     <Compile Include="StartupManagers\StartupManagerSingletonProvider.cs" />
     <Compile Include="StartupManagers\SteamStartupManager.cs" />
+    <Compile Include="SystemOptions.cs" />
     <Compile Include="TaskHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -410,10 +412,16 @@
     <EmbeddedResource Include="Controls\HotkeySelectionControl.nl-NL.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HotkeySelectionControl.pl.resx">
+      <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeySelectionControl.pt-BR.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeySelectionControl.pt-PT.resx">
+      <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HotkeySelectionControl.ro.resx">
       <DependentUpon>HotkeySelectionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\HotkeySelectionControl.ru.resx">
@@ -443,10 +451,25 @@
     <EmbeddedResource Include="Controls\TaskThumbnailPanel.ja-JP.resx">
       <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskThumbnailPanel.pl.resx">
+      <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskThumbnailPanel.pt-BR.resx">
+      <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\TaskThumbnailPanel.resx">
       <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskThumbnailPanel.ro.resx">
+      <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\TaskThumbnailPanel.ru.resx">
+      <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskThumbnailPanel.tr.resx">
+      <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskThumbnailPanel.vi-VN.resx">
       <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TaskThumbnailPanel.zh-CN.resx">
@@ -488,6 +511,9 @@
     <EmbeddedResource Include="Forms\AboutForm.nl-NL.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.pl.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.pt-BR.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -497,6 +523,9 @@
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.ro.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.ru.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
@@ -549,10 +578,16 @@
     <EmbeddedResource Include="Forms\ActionsForm.nl-NL.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsForm.pl.resx">
+      <DependentUpon>ActionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsForm.pt-BR.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsForm.pt-PT.resx">
+      <DependentUpon>ActionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsForm.ro.resx">
       <DependentUpon>ActionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsForm.ru.resx">
@@ -597,7 +632,16 @@
     <EmbeddedResource Include="Forms\ActionsToolbarEditForm.ko-KR.resx">
       <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.pl.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.pt-BR.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsToolbarEditForm.pt-PT.resx">
+      <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActionsToolbarEditForm.ro.resx">
       <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsToolbarEditForm.ru.resx">
@@ -651,6 +695,9 @@
     <EmbeddedResource Include="Forms\AfterCaptureForm.nl-NL.resx">
       <DependentUpon>AfterCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterCaptureForm.pl.resx">
+      <DependentUpon>AfterCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterCaptureForm.pt-BR.resx">
       <DependentUpon>AfterCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -658,6 +705,9 @@
       <DependentUpon>AfterCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterCaptureForm.resx">
+      <DependentUpon>AfterCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterCaptureForm.ro.resx">
       <DependentUpon>AfterCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterCaptureForm.ru.resx">
@@ -711,10 +761,16 @@
     <EmbeddedResource Include="Forms\AfterUploadForm.nl-NL.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterUploadForm.pl.resx">
+      <DependentUpon>AfterUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterUploadForm.pt-BR.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterUploadForm.pt-PT.resx">
+      <DependentUpon>AfterUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AfterUploadForm.ro.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterUploadForm.ru.resx">
@@ -768,10 +824,16 @@
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.nl-NL.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationSettingsForm.pl.resx">
+      <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.pt-BR.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.pt-PT.resx">
+      <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationSettingsForm.ro.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.ru.resx">
@@ -825,6 +887,9 @@
     <EmbeddedResource Include="Forms\AutoCaptureForm.nl-NL.resx">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoCaptureForm.pl.resx">
+      <DependentUpon>AutoCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutoCaptureForm.pt-BR.resx">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -832,6 +897,9 @@
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutoCaptureForm.resx">
+      <DependentUpon>AutoCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoCaptureForm.ro.resx">
       <DependentUpon>AutoCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutoCaptureForm.ru.resx">
@@ -885,6 +953,9 @@
     <EmbeddedResource Include="Forms\BeforeUploadForm.nl-NL.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BeforeUploadForm.pl.resx">
+      <DependentUpon>BeforeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BeforeUploadForm.pt-BR.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -892,6 +963,9 @@
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BeforeUploadForm.resx">
+      <DependentUpon>BeforeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BeforeUploadForm.ro.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BeforeUploadForm.ru.resx">
@@ -913,7 +987,79 @@
     <EmbeddedResource Include="Forms\BeforeUploadForm.zh-TW.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.pt-BR.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.vi-VN.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.pt-BR.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.vi-VN.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.ja-JP.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.pl.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.pt-BR.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.ro.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.ru.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.tr.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.vi-VN.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.zh-CN.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.ja-JP.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.pl.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.pt-BR.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.ro.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.ru.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.tr.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.vi-VN.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowSettingsForm.zh-CN.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.ja-JP.resx">
+      <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardFormatForm.pl.resx">
+      <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardFormatForm.ro.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardUploadForm.de.resx">
@@ -949,6 +1095,9 @@
     <EmbeddedResource Include="Forms\ClipboardUploadForm.nl-NL.resx">
       <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardUploadForm.pl.resx">
+      <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardUploadForm.pt-BR.resx">
       <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -956,6 +1105,9 @@
       <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardUploadForm.resx">
+      <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardUploadForm.ro.resx">
       <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardUploadForm.ru.resx">
@@ -1069,6 +1221,9 @@
     <EmbeddedResource Include="Forms\FileExistForm.nl-NL.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileExistForm.pl.resx">
+      <DependentUpon>FileExistForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.pt-BR.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1076,6 +1231,9 @@
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.resx">
+      <DependentUpon>FileExistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileExistForm.ro.resx">
       <DependentUpon>FileExistForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FileExistForm.ru.resx">
@@ -1123,10 +1281,16 @@
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.nl-NL.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeConfigForm.pl.resx">
+      <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.pt-BR.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.pt-PT.resx">
+      <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeConfigForm.ro.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.ru.resx">
@@ -1146,6 +1310,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.zh-TW.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.ja-JP.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.pl.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.ro.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.ru.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.tr.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.zh-CN.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.de.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
@@ -1180,10 +1365,16 @@
     <EmbeddedResource Include="Forms\HotkeySettingsForm.nl-NL.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HotkeySettingsForm.pl.resx">
+      <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.pt-BR.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.pt-PT.resx">
+      <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HotkeySettingsForm.ro.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.ru.resx">
@@ -1204,7 +1395,25 @@
     <EmbeddedResource Include="Forms\HotkeySettingsForm.zh-TW.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.ja-JP.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.pl.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InspectWindowForm.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.ro.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.ru.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.tr.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.zh-CN.resx">
       <DependentUpon>InspectWindowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.de.resx">
@@ -1240,10 +1449,16 @@
     <EmbeddedResource Include="Forms\MainForm.nl-NL.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.pl.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.pt-BR.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.pt-PT.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.ro.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.ru.resx">
@@ -1263,6 +1478,69 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.zh-TW.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.ja-JP.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.pt-BR.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.tr.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.vi-VN.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.ja-JP.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.pt-BR.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.tr.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.vi-VN.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenForm.resx">
+      <DependentUpon>PinToScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QRCodeForm.pl.resx">
+      <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QRCodeForm.ro.resx">
+      <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.pl.resx">
+      <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskInfoEditForm.ro.resx">
+      <DependentUpon>QuickTaskInfoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.pl.resx">
+      <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.ro.resx">
+      <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaskSettingsForm.pl.resx">
+      <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaskSettingsForm.ro.resx">
+      <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchFolderForm.pl.resx">
+      <DependentUpon>WatchFolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchFolderForm.ro.resx">
+      <DependentUpon>WatchFolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.pl.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.de.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
@@ -1427,77 +1705,18 @@
     <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.zh-TW.resx">
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.de.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.es-MX.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.es.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.fa-IR.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.fr.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.hu.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.id-ID.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.it-IT.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.ja-JP.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.ko-KR.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.nl-NL.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.pt-BR.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.pt-PT.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.ru.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.tr.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.uk.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.vi-VN.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.zh-CN.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsToolbarEditForm.resx">
       <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.zh-TW.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.de.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
@@ -1556,51 +1775,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.zh-TW.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.de.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.es-MX.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.fa-IR.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.fr.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.ja-JP.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.ko-KR.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.pt-PT.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.ru.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.tr.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.uk.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.vi-VN.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.zh-CN.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.zh-TW.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ThumbnailSizeForm.resx">
-      <DependentUpon>ThumbnailSizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.de.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
@@ -1671,6 +1845,39 @@
     <EmbeddedResource Include="Forms\WatchFolderForm.zh-TW.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.ro.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.ru.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\OCRForm.zh-CN.resx">
+      <DependentUpon>OCRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.pl.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.ro.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.ru.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.zh-CN.resx">
+      <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.ja-JP.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.pt-BR.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.es-MX.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
@@ -1682,6 +1889,7 @@
     <EmbeddedResource Include="Properties\Resources.ja-JP.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
+    <EmbeddedResource Include="Properties\Resources.pl.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -1697,6 +1905,7 @@
     <EmbeddedResource Include="Forms\HotkeySettingsForm.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ro.resx" />
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
     <EmbeddedResource Include="Properties\Resources.tr.resx">
       <SubType>Designer</SubType>
@@ -1705,6 +1914,18 @@
     <EmbeddedResource Include="Properties\Resources.vi-VN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
     <EmbeddedResource Include="Properties\Resources.zh-TW.resx" />
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.pl.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.ru.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.tr.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.vi-VN.resx">
+      <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HistoryLib\ShareX.HistoryLib.csproj">
@@ -1765,13 +1986,11 @@
     <None Include="Resources\monitor.png" />
     <None Include="Resources\application-blue.png" />
     <None Include="Resources\layer.png" />
-    <None Include="Resources\control-record.png" />
     <None Include="Resources\checkbox_uncheck.png" />
     <None Include="Resources\checkbox_check.png" />
     <None Include="Resources\network-ip.png" />
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\barcode-2d.png" />
-    <None Include="Resources\GitHub.png" />
     <None Include="Resources\folder.png" />
     <None Include="Resources\clipboard.png" />
     <None Include="Resources\drive.png" />
@@ -1791,15 +2010,12 @@
     <None Include="Resources\exclamation-button.png" />
     <None Include="Resources\folder-open-document.png" />
     <None Include="Resources\eraser.png" />
-    <None Include="Resources\layout-select-sidebar.png" />
-    <None Include="Resources\layout-select-content.png" />
     <None Include="Resources\bin.png" />
     <None Include="Resources\film.png" />
     <None Include="Resources\TaskCompletedSound.wav" />
     <None Include="Resources\ErrorSound.wav" />
     <None Include="Resources\CaptureSound.wav" />
     <None Include="Resources\tr.png" />
-    <None Include="Resources\au.png" />
     <None Include="Resources\cn.png" />
     <None Include="Resources\fr.png" />
     <None Include="Resources\de.png" />
@@ -1822,7 +2038,6 @@
     <None Include="Resources\ui-scroll-pane-image.png" />
     <None Include="Resources\document-break.png" />
     <None Include="Resources\vn.png" />
-    <None Include="Resources\layout-select.png" />
     <None Include="Resources\disk-black.png" />
     <None Include="Resources\control.png" />
     <None Include="Resources\information.png" />
@@ -1863,7 +2078,6 @@
     <None Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
-    <None Include="Resources\control-record-yellow.png" />
     <None Include="Resources\application-monitor.png" />
     <None Include="Resources\pencil.png" />
     <None Include="Resources\folder-tree.png" />
@@ -1876,11 +2090,14 @@
     <None Include="Resources\mx.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts">
+      <Version>10.0.22621.755</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
+      <Version>13.0.2</Version>
     </PackageReference>
     <PackageReference Include="ZXing.Net">
-      <Version>0.16.6</Version>
+      <Version>0.16.8</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -1893,28 +2110,7 @@
     <None Include="Resources\application-list.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ui-thumbnail-title.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ir.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Twitter-32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Discord-32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Patreon-32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Bitcoin-32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GitHub-White-32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GitHub-Black-32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image-split.png" />
@@ -1941,13 +2137,62 @@
     <None Include="Resources\uac.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\image-resize.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application-search-result.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Twitter-16x16.png" />
+    <None Include="Resources\Twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-tile-horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-tile-vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Discord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-resize-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camcorder--minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GitHub.png" />
+    <None Include="Resources\GitHubDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-flickr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status-busy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status-away.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closedhand.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openhand.cur" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

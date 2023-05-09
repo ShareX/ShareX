@@ -135,19 +135,10 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtro Data:</value>
   </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filtri</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Cronologia</value>
   </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Rimuovi Filtri</value>
-  </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nome File</value>
-  </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Applica Filtri</value>
   </data>
 </root>

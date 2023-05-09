@@ -118,22 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
-    <value>「キャプチャー後」設定を上書きする</value>
+    <value>「キャプチャー後」の設定を変更する</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
-    <value>「アップロード後」設定を上書きする</value>
+    <value>「アップロード後」の設定を変更する</value>
   </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
-    <value>「アップロード先」設定を上書きする</value>
+    <value>「アップロード先」の設定を変更する</value>
   </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>説明:</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>既定の「独自のアップローダー」を置き換える</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>既定の「FTPアカウント」を置き換える</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>キャプチャー後...</value>
@@ -189,26 +183,20 @@
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>URL共有サービス</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>タスク完了後:</value>
-  </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>タスク完了後に音を鳴らす</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>キャプチャー後に音を鳴らす</value>
   </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>全般設定を上書きする</value>
-  </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
-    <value>PNG ビットの深さ:</value>
+    <value>PNG のビット深度:</value>
   </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
-    <value>次の画像サイズより大きい時はJPEG画像形式を使用する:</value>
+    <value>次のファイルサイズより大きい時はJPEG画像形式を使用する:</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
-    <value>画像フォーマット:</value>
+    <value>画像形式:</value>
   </data>
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>ファイルが存在する場合:</value>
@@ -222,29 +210,23 @@
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG 画質:</value>
   </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>画像設定を上書きする</value>
-  </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>効果</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>「キャプチャー後のタスク→ 画像エフェクトの追加」から画像エフェクトの有効/無効の切り替えができます</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>キャプチャー後に画像エフェクトウィンドウを表示する</value>
+    <value>「キャプチャー後のタスク→ 画像エフェクトの追加」から画像エフェクトの有効/無効の切り替えができます。</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>領域キャプチャーにのみ画像エフェクトを適用する</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>画像エフェクトの構成...</value>
+    <value>画像エフェクトの設定...</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>サムネイル</value>
   </data>
   <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>サムネイルより大きな画像のみサムネイルを作成する</value>
+    <value>サムネイルより大きな画像のみサムネイルを作成</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>プレビュー</value>
@@ -262,7 +244,7 @@
     <value>領域の選択...</value>
   </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
-    <value>構成済み領域</value>
+    <value>構成済み領域:</value>
   </data>
   <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
     <value>幅</value>
@@ -290,9 +272,6 @@
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>ウィンドウ キャプチャーの時は、クライアント領域のみをキャプチャーする</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>キャプチャー設定を上書きする</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>領域キャプチャー</value>
@@ -328,7 +307,7 @@
     <value>位置と大きさの情報を表示する</value>
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
-    <value>"Alt" キー押下で表示する、スナップ可能な領域サイズ:</value>
+    <value>Alt キー押下で表示する、スナップ可能な領域サイズ:</value>
   </data>
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
     <value>カーソル付近に独自の情報テキストを表示する:</value>
@@ -340,16 +319,16 @@
     <value>ウィンドウ領域を検出し、マウスオーバーでキャプチャー可能にする</value>
   </data>
   <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
-    <value>第5ボタン クリック時の操作:</value>
+    <value>第5ボタン クリック時の動作:</value>
   </data>
   <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
-    <value>第4ボタン クリック時の操作:</value>
+    <value>第4ボタン クリック時の動作:</value>
   </data>
   <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
-    <value>中ボタン クリック時の操作:</value>
+    <value>中ボタン クリック時の動作:</value>
   </data>
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
-    <value>右ボタン クリック時の操作:</value>
+    <value>右ボタン クリック時の動作:</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>領域のリサイズ、移動が可能な複数領域選択モードを使用する</value>
@@ -381,9 +360,6 @@
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>秒</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>録画開始までの時間:</value>
-  </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>秒</value>
   </data>
@@ -393,26 +369,17 @@
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>録画時間を固定:</value>
   </data>
-  <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>GIF FPS:</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>アップロード設定を上書きする</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
-    <value>ファイルの名前</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>領域キャプチャーでウィンドウ名前規則を使用する (Share Xは選択範囲の背景のウィンドウの検出を試みます)</value>
+    <value>ファイル名の命名</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
-    <value>独自のタイム ゾーンを使用する:</value>
+    <value>タイム ゾーンを指定:</value>
   </data>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
     <value>プレビュー:</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>ウィンドウ キャプチャーの名前規則:</value>
+    <value>ウィンドウ キャプチャーの名前の規則:</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>プレビュー:</value>
@@ -421,7 +388,7 @@
     <value>ファイルのアップロードで実際の名前の代わりにアップロード名前規則を使用する</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>キャプチャー/クリップボード アップロード名前規則:</value>
+    <value>キャプチャー/クリップボード アップロード名の規則:</value>
   </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
     <value>クリップボードからアップロード</value>
@@ -433,7 +400,7 @@
     <value>クリップボードにURLがあれば、自動で短縮URLを作成する</value>
   </data>
   <data name="tpUploaderFilters.Text" xml:space="preserve">
-    <value>アップローダー フィルター:</value>
+    <value>アップローダー フィルター</value>
   </data>
   <data name="chUploaderFiltersName.Text" xml:space="preserve">
     <value>アップローダー</value>
@@ -463,7 +430,7 @@
     <value>複製</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>追加</value>
+    <value>追加...</value>
   </data>
   <data name="chActionsName.Text" xml:space="preserve">
     <value>名前</value>
@@ -478,13 +445,10 @@
     <value>拡張子</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>編集</value>
+    <value>編集...</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>削除</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>アクションを上書きする</value>
   </data>
   <data name="btnWatchFolderEdit.Text" xml:space="preserve">
     <value>編集...</value>
@@ -510,20 +474,14 @@
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>スクリーン カラーピッカーのコピー書式:</value>
   </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>ツール設定を上書きする</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>高度な設定を上書きする</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - タスクの設定</value>
   </data>
   <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
-    <value>規定の言語</value>
+    <value>規定の言語:</value>
   </data>
   <data name="lblScreenshotDelay.Text" xml:space="preserve">
-    <value>スクリーンショットを遅らせて起動</value>
+    <value>スクリーンショットを遅らせて起動:</value>
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
     <value>URLに使えない文字をアンダースコアに置き換える</value>
@@ -537,20 +495,17 @@
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>OCRの結果をクリップボードにコピーする</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>OCR開始時にダイアログを開く</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
-    <value>OCR開始時にダイアログを開かない</value>
+    <value>OCR実行時にダイアログを開かない（サイレント実行）</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>クリップボードにフォルダパスがあるときは、そのフォルダのindexを作ってアップロードする</value>
   </data>
   <data name="lblActionsNote.Text" xml:space="preserve">
-    <value>「キャプチャー後のタスク→アクションの実行」で有効/無効の切り替えができます</value>
+    <value>「キャプチャー後のタスク→アクションの実行」で有効/無効の切り替えができます。</value>
   </data>
   <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
-    <value>変更を確定</value>
+    <value>変更を適用</value>
   </data>
   <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
     <value>「スクリーンショットのフォルダ」を上書きする</value>
@@ -562,15 +517,123 @@
     <value>ファイル名で使う連番:</value>
   </data>
   <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
-    <value>正規表現パターン</value>
+    <value>正規表現パターン:</value>
   </data>
   <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
-    <value>置換パターン</value>
+    <value>置換パターン:</value>
   </data>
   <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
     <value>スクリーン カラーピッカーのコピー書式(Ctrl＋クリック):</value>
   </data>
   <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
     <value>マウスを乗せたときの色表示の形式:</value>
+  </data>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>通知を無効にする</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>全画面では通知を無効にする</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>タスク完了後に通知を表示する</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>トースター通知</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>キャプチャー時の音を指定:</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>エラー発生時の音を指定:</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>タスク完了時の音を指定:</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>表示時間:</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>フェードアウトの時間:</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>左クリック時の動作:</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>中クリック時の動作:</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>右クリック時の動作:</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>大きさ:</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>表示位置:</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="cbOverrideActions.Text" xml:space="preserve">
+    <value>「アクション」の設定を変更する</value>
+  </data>
+  <data name="cbOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>「高度な設定」の設定を変更する</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>「キャプチャー」の設定を変更する</value>
+  </data>
+  <data name="cbOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>「全般」の設定を上書きする</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>「画像」の設定を上書きする</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
+    <value>「デフォルトのアップローダー」を変更する</value>
+  </data>
+  <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
+    <value>「デフォルトのFTPアカウント」を変更する</value>
+  </data>
+  <data name="cbOverrideToolsSettings.Text" xml:space="preserve">
+    <value>「ツール」の設定を変更する</value>
+  </data>
+  <data name="cbOverrideUploadSettings.Text" xml:space="preserve">
+    <value>「アップロード」の設定を変更する</value>
+  </data>
+  <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>キャプチャー後に画像エフェクトのウィンドウを表示する</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>録画開始を遅らせる:</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>録画を中断するときに確認する</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>透明な領域選択を使う</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>指定のファイルサイズになるように画質を自動で調整する</value>
+  </data>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>説明を開く...</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>ロスレス・エンコーディングで録画した後、ユーザー・エンコーディング・オプションを適用する</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>キャプチャー時に自動で非表示</value>
+  </data>
+  <data name="lblRegionCaptureFPSLimit.Text" xml:space="preserve">
+    <value>FPS 上限:</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>タスク:</value>
   </data>
 </root>

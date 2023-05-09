@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -81,11 +81,11 @@ namespace ShareX
                     {
                         if (info.TaskSettings.TextDestination != TextDestination.FileUploader)
                         {
-                            x.Checked = x.Tag is TextDestination && (TextDestination)x.Tag == info.TaskSettings.TextDestination;
+                            x.Checked = x.Tag is TextDestination textDestination && textDestination == info.TaskSettings.TextDestination;
                         }
                         else
                         {
-                            x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == info.TaskSettings.TextFileDestination;
+                            x.Checked = x.Tag is FileDestination fileDestination && fileDestination == info.TaskSettings.TextFileDestination;
                         }
                     });
                     break;
@@ -104,7 +104,7 @@ namespace ShareX
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == info.TaskSettings.FileDestination;
+                        x.Checked = x.Tag is FileDestination fileDestination && fileDestination == info.TaskSettings.FileDestination;
                     });
                     break;
                 case EDataType.URL:
@@ -122,7 +122,7 @@ namespace ShareX
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
                     {
-                        x.Checked = x.Tag is UrlShortenerType && (UrlShortenerType)x.Tag == info.TaskSettings.URLShortenerDestination;
+                        x.Checked = x.Tag is UrlShortenerType urlShortenerType && urlShortenerType == info.TaskSettings.URLShortenerDestination;
                     });
 
                     break;
@@ -164,11 +164,11 @@ namespace ShareX
             {
                 if (taskSettings.ImageDestination != ImageDestination.FileUploader)
                 {
-                    x.Checked = x.Tag is ImageDestination && (ImageDestination)x.Tag == taskSettings.ImageDestination;
+                    x.Checked = x.Tag is ImageDestination imageDestination && imageDestination == taskSettings.ImageDestination;
                 }
                 else
                 {
-                    x.Checked = x.Tag is FileDestination && (FileDestination)x.Tag == taskSettings.ImageFileDestination;
+                    x.Checked = x.Tag is FileDestination fileDestination && fileDestination == taskSettings.ImageFileDestination;
                 }
             });
         }
@@ -211,39 +211,39 @@ namespace ShareX
             switch (dataType)
             {
                 case EDataType.Image:
-                    if (destination is ImageDestination)
+                    if (destination is ImageDestination imageDestination)
                     {
-                        taskSettings.ImageDestination = (ImageDestination)destination;
+                        taskSettings.ImageDestination = imageDestination;
                     }
-                    else if (destination is FileDestination)
+                    else if (destination is FileDestination imageFileDestination)
                     {
                         taskSettings.ImageDestination = ImageDestination.FileUploader;
-                        taskSettings.ImageFileDestination = (FileDestination)destination;
+                        taskSettings.ImageFileDestination = imageFileDestination;
                     }
                     break;
                 case EDataType.Text:
-                    if (destination is TextDestination)
+                    if (destination is TextDestination textDestination)
                     {
-                        taskSettings.TextDestination = (TextDestination)destination;
+                        taskSettings.TextDestination = textDestination;
                     }
-                    else if (destination is FileDestination)
+                    else if (destination is FileDestination textFileDestination)
                     {
                         taskSettings.TextDestination = TextDestination.FileUploader;
-                        taskSettings.TextFileDestination = (FileDestination)destination;
+                        taskSettings.TextFileDestination = textFileDestination;
                     }
                     break;
                 case EDataType.File:
-                    if (destination is FileDestination)
+                    if (destination is FileDestination fileDestination)
                     {
                         taskSettings.ImageDestination = ImageDestination.FileUploader;
                         taskSettings.TextDestination = TextDestination.FileUploader;
-                        taskSettings.ImageFileDestination = taskSettings.TextFileDestination = taskSettings.FileDestination = (FileDestination)destination;
+                        taskSettings.ImageFileDestination = taskSettings.TextFileDestination = taskSettings.FileDestination = fileDestination;
                     }
                     break;
                 case EDataType.URL:
-                    if (destination is UrlShortenerType)
+                    if (destination is UrlShortenerType urlShortenerDestination)
                     {
-                        taskSettings.URLShortenerDestination = (UrlShortenerType)destination;
+                        taskSettings.URLShortenerDestination = urlShortenerDestination;
                     }
                     break;
             }

@@ -142,13 +142,13 @@
     <value>阴影偏移:</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
-    <value>捕捉具有透明度的窗口</value>
+    <value>截图窗口带透明度</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
     <value>捕捉窗口时，如果窗口与任务栏重叠，则隐藏任务栏</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>捕捉窗口阴影（需要透明度）</value>
+    <value>截图窗口带阴影（需要透明度）</value>
   </data>
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>秒</value>
@@ -160,7 +160,7 @@
     <value>区域截图</value>
   </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
-    <value>屏幕记录</value>
+    <value>屏幕录制</value>
   </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>截图</value>
@@ -178,7 +178,7 @@
     <value>工具</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>高级设置</value>
+    <value>高级</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 任务设置</value>
@@ -193,7 +193,7 @@
     <value>包括子目录</value>
   </data>
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
-    <value>过滤器</value>
+    <value>筛选器</value>
   </data>
   <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
     <value>文件夹路径</value>
@@ -205,10 +205,10 @@
     <value>删除</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>编辑</value>
+    <value>编辑...</value>
   </data>
   <data name="chActionsExtensions.Text" xml:space="preserve">
-    <value>扩展</value>
+    <value>扩展名</value>
   </data>
   <data name="chActionsArgs.Text" xml:space="preserve">
     <value>参数</value>
@@ -220,10 +220,10 @@
     <value>名字</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>添加</value>
+    <value>添加...</value>
   </data>
   <data name="btnActionsDuplicate.Text" xml:space="preserve">
-    <value>复制</value>
+    <value>克隆</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
     <value>如果剪贴板包含一个网址，使用网址缩短服务</value>
@@ -255,9 +255,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>使用自定义时区：</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>使用窗口名称模式捕捉区域（ShareX 将尝试检测选择区域后面的窗口）</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>文件命名</value>
   </data>
@@ -272,9 +269,6 @@
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>秒</value>
-  </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>开始录制后:</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>秒</value>
@@ -304,19 +298,16 @@
     <value>缩略图</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>图像效果配置...</value>
+    <value>图像特效配置...</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>只适用于区域截图</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>截图后显示图像效果窗口</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>您可以在"截图后的动作 -&gt;添加图像效果"启用/禁用图像效果。</value>
+    <value>您可以在"截图后的动作 -&gt;添加图像特效"启用/禁用图像特效。</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
-    <value>效果</value>
+    <value>特效</value>
   </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>JPEG 质量：</value>
@@ -335,9 +326,6 @@
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>上传后声音提示</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>任务完成后：</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>任务...</value>
@@ -365,12 +353,6 @@
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>截图后...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>覆盖默认的 FTP 帐户</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>覆盖默认的自定义上传器</value>
   </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
     <value>如果图像大于指定大小，则使用 JPEG 格式:</value>
@@ -418,7 +400,7 @@
     <value>同时检测窗口内的控制区域</value>
   </data>
   <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
-    <value>检测窗口区域，并允许光标悬停捕获</value>
+    <value>检测窗口区域，并允许光标悬停决定截图区域</value>
   </data>
   <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
     <value>鼠标中键单击动作:</value>
@@ -459,17 +441,11 @@
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
     <value>覆盖“上传目标”设置</value>
   </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>覆盖一般设置</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>覆盖图片设置</value>
-  </data>
   <data name="chUploaderFiltersName.Text" xml:space="preserve">
     <value>上传到</value>
   </data>
   <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
-    <value>扩展</value>
+    <value>扩展名</value>
   </data>
   <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -487,25 +463,10 @@
     <value>例如：png, jpg, jpeg</value>
   </data>
   <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
-    <value>扩展筛选：</value>
+    <value>扩展名筛选：</value>
   </data>
   <data name="tpUploaderFilters.Text" xml:space="preserve">
     <value>上传筛选</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>覆盖动作</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>覆盖工具设定</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>覆盖进阶设定</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>覆盖捕捉设置</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>覆盖上传设置</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>PNG 位深:</value>
@@ -523,7 +484,7 @@
     <value>上传时使用下划线替换 URL 中的非法字符</value>
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>自增数：</value>
+    <value>自动递增编号：</value>
   </data>
   <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
@@ -550,13 +511,10 @@
     <value>使用无损编码录制，并应用用户编码选项</value>
   </data>
   <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
-    <value>中止时确认</value>
+    <value>取消时确认</value>
   </data>
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>自动复制结果至剪贴板</value>
-  </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>对话框打开时识别</value>
   </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>静默识别</value>
@@ -599,5 +557,119 @@
   </data>
   <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
     <value>屏幕拾色器格式 (Ctrl + 单击):</value>
+  </data>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>动作...</value>
+  </data>
+  <data name="btnCustomCaptureSoundPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnCustomErrorSoundPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnCustomTaskCompletedSoundPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>禁用通知</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>全屏时禁用通知</value>
+  </data>
+  <data name="cbOverrideActions.Text" xml:space="preserve">
+    <value>覆盖动作</value>
+  </data>
+  <data name="cbOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>覆盖高级设置</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>覆盖截图设置</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
+    <value>覆盖默认的自定义上传器</value>
+  </data>
+  <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
+    <value>覆盖默认的 FTP 账号</value>
+  </data>
+  <data name="cbOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>覆盖常规设置</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>覆盖图像设置</value>
+  </data>
+  <data name="cbOverrideToolsSettings.Text" xml:space="preserve">
+    <value>覆盖工具设置</value>
+  </data>
+  <data name="cbOverrideUploadSettings.Text" xml:space="preserve">
+    <value>覆盖上传设置</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Text" xml:space="preserve">
+    <value>截图区域及鼠标指针限制于当前显示器</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>开始录制于：</value>
+  </data>
+  <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>截图后显示图像效果窗口</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>任务完成后显示短暂通知</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>屏幕截图时自动隐藏</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>使用自定义截图音效：</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>使用自定义错误音效：</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>使用自定义任务完成音效：</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>短暂通知</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>大小：</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>右击动作：</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>鼠标中键动作：</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>位置：</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>任务：</value>
+  </data>
+  <data name="lblRegionCaptureFPSLimit.Text" xml:space="preserve">
+    <value>FPS 限制：</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>持续：</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>淡入淡出时间：</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>左击动作：</value>
+  </data>
+  <data name="lblToastWindowSizeX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>自动调整 JPEG 品质以使图像大小更接近指定大小</value>
   </data>
 </root>

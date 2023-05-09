@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -153,14 +153,14 @@ namespace ShareX.HelpersLib
 
         public override bool Equals(object obj)
         {
-            if (obj is RECT)
+            if (obj is RECT rect)
             {
-                return Equals((RECT)obj);
+                return Equals(rect);
             }
 
-            if (obj is Rectangle)
+            if (obj is Rectangle rectangle)
             {
-                return Equals(new RECT((Rectangle)obj));
+                return Equals(new RECT(rectangle));
             }
 
             return false;
@@ -242,9 +242,11 @@ namespace ShareX.HelpersLib
         public ushort atomWindowType;
         public ushort wCreatorVersion;
 
-        public WINDOWINFO(bool? filler) : this() // Allows automatic initialization of "cbSize" with "new WINDOWINFO(null/true/false)".
+        public static WINDOWINFO Create()
         {
-            cbSize = (uint)Marshal.SizeOf(typeof(WINDOWINFO));
+            WINDOWINFO wi = new WINDOWINFO();
+            wi.cbSize = (uint)Marshal.SizeOf(typeof(WINDOWINFO));
+            return wi;
         }
     }
 
@@ -1007,5 +1009,12 @@ namespace ShareX.HelpersLib
         public ushort bV5ProfileData;
         public ushort bV5ProfileSize;
         public ushort bV5Reserved;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct TimeCaps
+    {
+        public uint wPeriodMin;
+        public uint wPeriodMax;
     }
 }

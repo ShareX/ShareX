@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -33,11 +35,25 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true), Browsable(false)]
         public bool Enabled { get; set; }
 
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(""), Browsable(false)]
+        public string Name { get; set; }
+
         protected ImageEffect()
         {
             Enabled = true;
         }
 
         public abstract Bitmap Apply(Bitmap bmp);
+
+        public override string ToString()
+        {
+            if (!string.IsNullOrEmpty(Name))
+            {
+                return Name;
+            }
+
+            return GetType().GetDescription();
+        }
     }
 }

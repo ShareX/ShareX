@@ -127,7 +127,7 @@
     <value>ファイル一覧の作成</value>
   </data>
   <data name="btnSaveAs.Text" xml:space="preserve">
-    <value>ファイルを保存してウィンドウを閉じる</value>
+    <value>ファイルを保存してウィンドウを閉じる...</value>
   </data>
   <data name="btnUpload.Text" xml:space="preserve">
     <value>アップロードしてウィンドウを閉じる</value>

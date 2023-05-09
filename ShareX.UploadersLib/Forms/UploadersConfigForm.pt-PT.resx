@@ -125,32 +125,8 @@
 Se o campo de texto estiver vazio o nome será utilizado para a hiperligação.
 Por exemplo, se o teu nome for 'bucket.example.com' a hiperligação será http://bucket.example.com/...</value>
   </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Introduzir uma hiperligação personalizada aqui que irá substituir a hospedagem e o caminho que o BackBlaze devolve.</value>
-  </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Utilizar hiperligação personalizada (suporta o formato padrão):</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Se activado, a hiperligação que receber vai ser o caminho enviado junto á hiperligação recebida.
-
-Isto é útil em conjunto com um serviço tipo CloudFlare ou outro serviço que actue como "interface" para B2. Veja o artigo "Creating a Vanity URL with B2" na base de conhecimento do B2.
-
-Se desativado, a hiperligação recebida será determinada pelo Backblaze B2. </value>
-  </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>Onde guardar os seus ficheiros.
-
-Isto apenas têm efeito se não tiver permitido acesso ao B2.Bucket quando foi criada a chave da aplicação.</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>O caminho do ficheiro. Usa o formato de nome padrão.</value>
-  </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>A chave da aplicação. Em Alfanumérico.</value>
-  </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>O ID da chave da aplicação. É uma chave hexadecimal em minúsculas.</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Outras hospedagens</value>
@@ -617,18 +593,6 @@ Isto apenas têm efeito se não tiver permitido acesso ao B2.Bucket quando foi c
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Utilizador:</value>
   </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Necessário iniciar sessão.</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Palavra-passe:</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Iniciar sessão</value>
-  </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Utilizar hiperligação directa se disponível</value>
   </data>
@@ -780,9 +744,6 @@ Utilizar uma biblioteca encriptada desactiva compartilhamento.</value>
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Palavra-passe:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anônimo</value>
-  </data>
   <data name="btnSulGetAPIKey.Text" xml:space="preserve">
     <value>Obter chave da API...</value>
   </data>
@@ -818,18 +779,6 @@ Utilizar uma biblioteca encriptada desactiva compartilhamento.</value>
   </data>
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>Credenciais de início de sessão</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>dias</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>horas</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>minutos</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>nunca</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>Ficheiro serão automáticamente removidos em </value>

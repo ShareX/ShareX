@@ -136,9 +136,6 @@
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Tarihe:</value>
   </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Filtreleri uygula</value>
-  </data>
   <data name="cbFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 17</value>
   </data>
@@ -147,9 +144,6 @@
   </data>
   <data name="tsslStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 17</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Filtreleri kaldır</value>
   </data>
   <data name="cbHostFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 17</value>
@@ -162,9 +156,6 @@
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>Dosya türü filtresi:</value>
-  </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filtreler</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Tarih</value>
@@ -179,6 +170,36 @@
     <value>Adres</value>
   </data>
   <data name="lblFilenameFilter.Text" xml:space="preserve">
-    <value>Dosya ismi:</value>
+    <value>Dosya adı:</value>
+  </data>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>Sıfırla</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>Gelişmiş arama</value>
+  </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>Adres:</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>Gelişmiş arama...</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Ayarlar...</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>Daha fazla bilgi göster/gizle</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Ara:</value>
+  </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>İstatistikleri göster...</value>
   </data>
 </root>

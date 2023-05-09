@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -74,16 +74,19 @@ namespace ShareX
 
         private static void CleanupFolder(string folderPath, string fileNamePattern, int keepFileCount)
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(folderPath);
-
-            IEnumerable<FileInfo> files = directoryInfo.GetFiles(fileNamePattern).
-                OrderByDescending(f => f.LastWriteTime.Year <= 1601 ? f.CreationTime : f.LastWriteTime).Skip(keepFileCount);
-
-            foreach (FileInfo file in files)
+            if (Directory.Exists(folderPath))
             {
-                file.Delete();
+                DirectoryInfo directoryInfo = new DirectoryInfo(folderPath);
 
-                DebugHelper.WriteLine($"File deleted: {file.FullName}");
+                IEnumerable<FileInfo> files = directoryInfo.GetFiles(fileNamePattern).
+                    OrderByDescending(f => f.LastWriteTime.Year <= 1601 ? f.CreationTime : f.LastWriteTime).Skip(keepFileCount);
+
+                foreach (FileInfo file in files)
+                {
+                    file.Delete();
+
+                    DebugHelper.WriteLine($"File deleted: {file.FullName}");
+                }
             }
         }
 

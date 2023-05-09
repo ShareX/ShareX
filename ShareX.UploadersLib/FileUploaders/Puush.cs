@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -90,14 +90,9 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 string[] values = response.Split(',');
 
-                if (values.Length > 1)
+                if (values.Length > 1 && int.TryParse(values[0], out int status) && status >= 0)
                 {
-                    int status;
-
-                    if (int.TryParse(values[0], out status) && status >= 0)
-                    {
-                        return values[1];
-                    }
+                    return values[1];
                 }
             }
 
@@ -121,9 +116,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (lines.Length > 0)
                 {
-                    int status;
-
-                    return int.TryParse(lines[0], out status) && status >= 0;
+                    return int.TryParse(lines[0], out int status) && status >= 0;
                 }
             }
 
@@ -146,9 +139,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (values.Length > 0)
                 {
-                    int status;
-
-                    if (!int.TryParse(values[0], out status))
+                    if (!int.TryParse(values[0], out int status))
                     {
                         status = -2;
                     }

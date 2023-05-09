@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,7 +28,7 @@ using ShareX.MediaLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
@@ -57,7 +57,21 @@ namespace ShareX.MediaLib
 
             UpdateAlignmentComboBox();
             nudSpace.SetValue(Options.Space);
+            nudWrapAfter.SetValue(Options.WrapAfter);
             cbAutoFillBackground.Checked = Options.AutoFillBackground;
+        }
+
+        public ImageCombinerForm(ImageCombinerOptions options, IEnumerable<string> imageFiles) : this(options)
+        {
+            if (imageFiles != null)
+            {
+                foreach (string image in imageFiles)
+                {
+                    lvImages.Items.Add(image);
+                }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
+            }
         }
 
         private void UpdateOrientation()
@@ -92,17 +106,6 @@ namespace ShareX.MediaLib
             cbAlignment.SelectedIndex = (int)Options.Alignment;
         }
 
-        public ImageCombinerForm(ImageCombinerOptions options, IEnumerable<string> imageFiles) : this(options)
-        {
-            if (imageFiles != null)
-            {
-                foreach (string image in imageFiles)
-                {
-                    lvImages.Items.Add(image);
-                }
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string[] images = ImageHelpers.OpenImageFileDialog(true);
@@ -113,6 +116,8 @@ namespace ShareX.MediaLib
                 {
                     lvImages.Items.Add(image);
                 }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
             }
         }
 
@@ -124,6 +129,8 @@ namespace ShareX.MediaLib
                 {
                     lvImages.Items.Remove(lvi);
                 }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
             }
         }
 
@@ -165,6 +172,11 @@ namespace ShareX.MediaLib
             Options.Space = (int)nudSpace.Value;
         }
 
+        private void nudWrapAfter_ValueChanged(object sender, EventArgs e)
+        {
+            Options.WrapAfter = (int)nudWrapAfter.Value;
+        }
+
         private void cbAutoFillBackground_CheckedChanged(object sender, EventArgs e)
         {
             Options.AutoFillBackground = cbAutoFillBackground.Checked;
@@ -174,30 +186,19 @@ namespace ShareX.MediaLib
         {
             if (lvImages.Items.Count > 0)
             {
-                List<Bitmap> images = new List<Bitmap>();
-
                 try
                 {
-                    foreach (ListViewItem lvi in lvImages.Items)
-                    {
-                        string filePath = lvi.Text;
+                    List<string> imageFiles = lvImages.Items.Cast<ListViewItem>().Select(x => x.Text).ToList();
 
-                        if (File.Exists(filePath))
+                    if (imageFiles.Count > 1)
+                    {
+                        Bitmap output = ImageHelpers.CombineImages(imageFiles, Options.Orientation, Options.Alignment, Options.Space, Options.WrapAfter,
+                            Options.AutoFillBackground);
+
+                        if (output != null)
                         {
-                            Bitmap bmp = ImageHelpers.LoadImage(filePath);
-
-                            if (bmp != null)
-                            {
-                                images.Add(bmp);
-                            }
+                            OnProcessRequested(output);
                         }
-                    }
-
-                    if (images.Count > 1)
-                    {
-                        Bitmap output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Alignment, Options.Space, Options.AutoFillBackground);
-
-                        OnProcessRequested(output);
                     }
                 }
                 catch (Exception ex)
@@ -205,28 +206,12 @@ namespace ShareX.MediaLib
                     DebugHelper.WriteException(ex);
                     ex.ShowError();
                 }
-                finally
-                {
-                    if (images != null)
-                    {
-                        foreach (Bitmap image in images)
-                        {
-                            if (image != null)
-                            {
-                                image.Dispose();
-                            }
-                        }
-                    }
-                }
             }
         }
 
         protected void OnProcessRequested(Bitmap bmp)
         {
-            if (ProcessRequested != null)
-            {
-                ProcessRequested(bmp);
-            }
+            ProcessRequested?.Invoke(bmp);
         }
 
         private void ImageCombinerForm_DragEnter(object sender, DragEventArgs e)
@@ -243,17 +228,14 @@ namespace ShareX.MediaLib
 
         private void ImageCombinerForm_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files)
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null)
+                foreach (string file in files)
                 {
-                    foreach (string file in files)
-                    {
-                        lvImages.Items.Add(file);
-                    }
+                    lvImages.Items.Add(file);
                 }
+
+                lblImageCount.Text = lvImages.Items.Count.ToString();
             }
         }
     }

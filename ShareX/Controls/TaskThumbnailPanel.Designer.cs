@@ -36,7 +36,9 @@
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.lblTitle = new ShareX.HelpersLib.BlackStyleLabel();
             this.pThumbnail = new ShareX.TaskRoundedCornerPanel();
+            this.lblCombineVertical = new ShareX.HelpersLib.BlackStyleLabel();
             this.lblError = new ShareX.HelpersLib.BlackStyleLabel();
+            this.lblCombineHorizontal = new ShareX.HelpersLib.BlackStyleLabel();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.pbThumbnail = new System.Windows.Forms.PictureBox();
             this.pThumbnail.SuspendLayout();
@@ -63,8 +65,11 @@
             // 
             // pThumbnail
             // 
+            this.pThumbnail.AllowDrop = true;
             this.pThumbnail.BackColor = System.Drawing.Color.Transparent;
+            this.pThumbnail.Controls.Add(this.lblCombineVertical);
             this.pThumbnail.Controls.Add(this.lblError);
+            this.pThumbnail.Controls.Add(this.lblCombineHorizontal);
             this.pThumbnail.Controls.Add(this.pbProgress);
             this.pThumbnail.Controls.Add(this.pbThumbnail);
             resources.ApplyResources(this.pThumbnail, "pThumbnail");
@@ -73,6 +78,19 @@
             this.pThumbnail.Radius = 5F;
             this.pThumbnail.Selected = false;
             this.pThumbnail.StatusLocation = ShareX.ThumbnailTitleLocation.Top;
+            this.pThumbnail.DragDrop += new System.Windows.Forms.DragEventHandler(this.pThumbnail_DragDrop);
+            this.pThumbnail.DragEnter += new System.Windows.Forms.DragEventHandler(this.pThumbnail_DragEnter);
+            this.pThumbnail.DragLeave += new System.EventHandler(this.pThumbnail_DragLeave);
+            // 
+            // lblCombineVertical
+            // 
+            this.lblCombineVertical.BackColor = System.Drawing.Color.Transparent;
+            this.lblCombineVertical.BorderColor = System.Drawing.Color.Empty;
+            this.lblCombineVertical.DrawBorder = true;
+            resources.ApplyResources(this.lblCombineVertical, "lblCombineVertical");
+            this.lblCombineVertical.ForeColor = System.Drawing.Color.White;
+            this.lblCombineVertical.Name = "lblCombineVertical";
+            this.lblCombineVertical.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblError
             // 
@@ -83,6 +101,16 @@
             this.lblError.Name = "lblError";
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblError.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblError_MouseClick);
+            // 
+            // lblCombineHorizontal
+            // 
+            this.lblCombineHorizontal.BackColor = System.Drawing.Color.Transparent;
+            this.lblCombineHorizontal.BorderColor = System.Drawing.Color.Empty;
+            this.lblCombineHorizontal.DrawBorder = true;
+            resources.ApplyResources(this.lblCombineHorizontal, "lblCombineHorizontal");
+            this.lblCombineHorizontal.ForeColor = System.Drawing.Color.White;
+            this.lblCombineHorizontal.Name = "lblCombineHorizontal";
+            this.lblCombineHorizontal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbProgress
             // 
@@ -98,6 +126,7 @@
             this.pbThumbnail.Name = "pbThumbnail";
             this.pbThumbnail.TabStop = false;
             this.pbThumbnail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseClick);
+            this.pbThumbnail.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pbThumbnail_MouseDoubleClick);
             this.pbThumbnail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseDown);
             this.pbThumbnail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseMove);
             this.pbThumbnail.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseUp);
@@ -124,5 +153,7 @@
         private System.Windows.Forms.PictureBox pbThumbnail;
         private System.Windows.Forms.ToolTip ttMain;
         private HelpersLib.BlackStyleLabel lblError;
+        private HelpersLib.BlackStyleLabel lblCombineHorizontal;
+        private HelpersLib.BlackStyleLabel lblCombineVertical;
     }
 }

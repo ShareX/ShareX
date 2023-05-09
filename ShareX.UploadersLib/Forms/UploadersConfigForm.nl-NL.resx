@@ -378,18 +378,6 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Gebruik een directe link als hij bestaat</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Inloggen vereist.</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Gebruikersnaam:</value>
   </data>
@@ -654,20 +642,8 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>Wachtwoord:</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>nooit</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>dagen</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>minuten</value>
-  </data>
   <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
     <value>Open account pagina...</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>uren</value>
   </data>
   <data name="lblPuushPassword.Text" xml:space="preserve">
     <value>Wachtwoord:</value>

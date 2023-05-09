@@ -121,9 +121,6 @@
     <value>Stai cercando di caricare un file di grandi dimensioni.
 Sei sicuro di voler continuare?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Codifica</value>
-  </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Sei sicuro di voler caricare {0} file?</value>
   </data>
@@ -143,9 +140,6 @@ Premi "No" per annullare il caricamento e disabilitare il caricamento automatico
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Caricamento</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Errore FFmpeg</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Operazione completata</value>
   </data>
@@ -163,9 +157,6 @@ Premi "No" per annullare il caricamento e disabilitare il caricamento automatico
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Prova Caricamento Testo</value>
-  </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Collaboratori</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
     <value>Scegli il Percorso della Cartella Personale di ShareX</value>
@@ -192,14 +183,8 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
     <value>X: {0}, Y: {1}, Larghezza: {2}, Altezza: {3}</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Operazione: {0}</value>
-  </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Ripristinare tutte le scorciatoie alle impostazioni predefinite?</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Le sorgenti audo e video FFmpeg non possono essere entambe "Nessuna".</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Cambiamenti</value>
@@ -219,28 +204,11 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Avvio</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} non esiste.
-
-Vuoi scaricarlo automaticamente?</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Attendere...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Servizio di Caricamento Immagini: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Nascondi Menu</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Impossibile trovare un account Twitter valido.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Mostra Menu</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Mostra Colonne</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL da Scaricare e Caricare</value>
@@ -307,27 +275,15 @@ Esegui ShareX come amministratore per cambiare il percorso della cartella person
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>Cronologia</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Clicca per fermare la registrazione.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Puoi aggiungere Workflow da "Impostazioni Scorciatoie"</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Impossibile scrivere l'immagine nel percorso {0}</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX deve essere riavviato per cambiare lingua.
 Riavviare ShareX?</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Errore</value>
-  </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Usa un Nuovo Nome:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Mancante</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traduttori</value>
@@ -340,9 +296,6 @@ Riavviare ShareX?</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Carica Cartella</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Librerie Esterne</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Dopo la Cattura: {0}</value>
@@ -402,12 +355,6 @@ Riavviare ShareX?</value>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Anteprima:</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Nascondi Colonne</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg scaricato con successo.</value>
-  </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
     <value>Caricamento File</value>
   </data>
@@ -434,12 +381,6 @@ Riavviare ShareX?</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Ripristinare tutte le operazioni rapide alle impostazioni predefinite?</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Clicca per registrare.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Scaricamento FFmpeg fallito.</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Carica con ShareX</value>

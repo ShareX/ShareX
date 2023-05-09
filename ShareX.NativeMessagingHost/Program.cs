@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.IO;
@@ -40,7 +39,16 @@ namespace ShareX.NativeMessagingHost
             {
                 try
                 {
-                    Run();
+                    string input = GetNativeMessagingInput();
+
+                    if (!string.IsNullOrEmpty(input))
+                    {
+                        string filePath = FileHelpers.GetAbsolutePath("ShareX.exe");
+                        string tempFilePath = FileHelpers.GetTempFilePath("json");
+                        File.WriteAllText(tempFilePath, input, Encoding.UTF8);
+                        string argument = $"-NativeMessagingInput \"{tempFilePath}\"";
+                        NativeMethods.CreateProcess(filePath, argument, CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -54,40 +62,7 @@ namespace ShareX.NativeMessagingHost
             }
         }
 
-        private static void Run()
-        {
-            string input = GetInput();
-
-            if (!string.IsNullOrEmpty(input))
-            {
-                NativeMessagingInput nativeMessagingInput = JsonConvert.DeserializeObject<NativeMessagingInput>(input);
-
-                if (nativeMessagingInput != null)
-                {
-                    string argument = null;
-
-                    if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
-                    {
-                        argument = Helpers.EscapeCLIText(nativeMessagingInput.URL);
-                    }
-                    else if (!string.IsNullOrEmpty(nativeMessagingInput.Text))
-                    {
-                        string filepath = Helpers.GetTempPath("txt");
-                        File.WriteAllText(filepath, nativeMessagingInput.Text, Encoding.UTF8);
-                        argument = $"\"{filepath}\"";
-                    }
-
-                    if (!string.IsNullOrEmpty(argument))
-                    {
-                        string path = Helpers.GetAbsolutePath("ShareX.exe");
-
-                        NativeMethods.CreateProcess(path, argument, CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB);
-                    }
-                }
-            }
-        }
-
-        private static string GetInput()
+        private static string GetNativeMessagingInput()
         {
             Stream inputStream = Console.OpenStandardInput();
 

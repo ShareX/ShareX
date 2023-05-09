@@ -120,7 +120,4 @@
   <data name="btnHotkey.Text" xml:space="preserve">
     <value>Atajo de teclado</value>
   </data>
-  <data name="lblHotkeyDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
 </root>

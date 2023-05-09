@@ -1,0 +1,46 @@
+version: 1.0.0.{build}
+image: Visual Studio 2022
+configuration:
+  - Release
+  - Debug
+  - Steam
+  - MicrosoftStore
+platform: Any CPU
+shallow_clone: true
+environment:
+  APIKeys:
+    secure: oWmEefxkbok87VNVsrUuXKgNaM4+j+EW6FBLsXwCbv3OVHgFvT0M9k4891OvYXDsj0oLuEn0oZeaeV8RrRDHA87ap7oCyD5FQJaiZSTHgeE=
+install:
+  - ps: |
+      $content = Get-Content "GlobalAssemblyInfo.cs"
+      $match = [regex]::Match($content, 'AssemblyVersion\(\"(.+?)\"\)')
+      $env:AppVersion = $match.Groups[1].Value
+      Update-AppveyorBuild -Version "$env:AppVersion.$env:APPVEYOR_BUILD_NUMBER"
+before_build:
+  - ps: |
+      if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
+      {
+          Invoke-WebRequest "$env:APIKeys" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
+      }
+      nuget restore ShareX.sln -Verbosity quiet
+build:
+  project: ShareX.sln
+  parallel: true
+  verbosity: minimal
+after_build:
+  - ps: |
+      if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
+      {
+          & "ShareX.Setup\bin\$env:CONFIGURATION\ShareX.Setup.exe" -silent -appveyor -job "$env:CONFIGURATION"
+      }
+artifacts:
+  - path: ShareX-*-setup.exe
+    name: Setup
+  - path: ShareX-*-portable.zip
+    name: Portable
+  - path: ShareX-*-debug.zip
+    name: Debug
+  - path: ShareX-*-Steam.zip
+    name: Steam
+  - path: ShareX-*.appx
+    name: MicrosoftStore

@@ -126,9 +126,6 @@
   <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
     <value>Hapus</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Unduhan FFmpeg gagal.</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
@@ -182,9 +179,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Tampilkan garis bidik layar</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg berhasil diunduh.</value>
   </data>
   <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
     <value>Unggah gambar (Ctrl + U)</value>
@@ -242,9 +236,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>Menu anotasi</value>
-  </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Panah di kedua ujungnya</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>Ototmatis tutup editor pada tugas</value>
@@ -315,9 +306,6 @@
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Undo</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Gunakan huruf</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} L: {2} T: {3}</value>
   </data>
@@ -329,9 +317,6 @@
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>Kiat: Anda bisa menggeser gambar dengan menahan tombol tengah tetikus dan menyeretnya.</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Opsi bentuk</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Kaca pembesar bentuk persegi</value>

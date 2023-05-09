@@ -243,9 +243,6 @@
   <data name="lblMediaFireEmail.Text" xml:space="preserve">
     <value>Correo electrónico:</value>
   </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Correo electrónico:</value>
-  </data>
   <data name="lblMegaEmail.Text" xml:space="preserve">
     <value>Correo electrónico:</value>
   </data>
@@ -300,9 +297,6 @@
   <data name="btnPastebinLogin.Text" xml:space="preserve">
     <value>Acceder</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Acceder</value>
-  </data>
   <data name="btnImageShackLogin.Text" xml:space="preserve">
     <value>Acceder</value>
   </data>
@@ -318,12 +312,6 @@
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>Acceso requerido.</value>
   </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Acceso requerido.</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>minutos</value>
-  </data>
   <data name="colSeafileLibraryName.Text" xml:space="preserve">
     <value>Nombre</value>
   </data>
@@ -335,9 +323,6 @@
   </data>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
     <value>Nombre:</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>nunca</value>
   </data>
   <data name="lblSeafilePassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
@@ -358,9 +343,6 @@
     <value>Contraseña:</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
   </data>
   <data name="lblFTPPassword.Text" xml:space="preserve">
@@ -740,17 +722,8 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Ignorar certificado SSL inválido</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anónimo</value>
-  </data>
   <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
     <value>Ignorar cuadro para enviar mensaje</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>días</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>horas</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>Usar enlace acortado</value>
@@ -1061,9 +1034,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>
   </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
-  </data>
   <data name="tpGfycat.Text" xml:space="preserve">
     <value>Gfycat</value>
   </data>
@@ -1209,9 +1179,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
     <value>Enlace de la API de acortador de enlaces:</value>
   </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Introducir un enlace personalizado que remplazará el host y la ruta que BackBlaze devuelve.</value>
-  </data>
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>Crear</value>
   </data>
@@ -1220,11 +1187,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Usar enlace personalizado (se permiten patrones de formato):</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Al habilitarse, el enlace que reciba será la ruta de subida que se añada a tal enlace, lo cual resulta útil al emplearse con servicios como CloudFare o algún otro que actúe como interfaz de B2. Consulte la sección "Creating a Vanity URL with B2" en la base de conocimiento de B2. 
-
-Al deshabilitarse, el enlace recibido será determinado por Backblaze B2.</value>
   </data>
   <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
     <value>Conservar audio</value>
@@ -1303,21 +1265,5 @@ Al deshabilitarse, el enlace recibido será determinado por Backblaze B2.</value
   </data>
   <data name="tpTeknik.Text" xml:space="preserve">
     <value>Teknik</value>
-  </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>La clave de la aplicación. Es alfanumérica.</value>
-  </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>El ID de la clave de la aplicación. Es una cadena hexadecimal en minúscula.</value>
-  </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>Dónde almacenar los archivos.
-
-Esto solo resulta bien si "Permitir acceso a los buckets" 
-no se estableció para un bucket a la hora de crear 
-la clave de la aplicación.</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>La ruta del archivo. Usa un patrón de formato.</value>
   </data>
 </root>

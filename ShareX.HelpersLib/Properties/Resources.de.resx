@@ -293,9 +293,6 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Ordner hochladen</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP Gerät</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Hash-Überprüfung</value>
   </data>
@@ -528,9 +525,6 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Hochladen</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Werkzeuge</value>
   </data>
@@ -668,9 +662,6 @@ Soll sie heruntergeladen und installiert werden?</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Ziel</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Scroll-Aufnahme</value>
@@ -835,9 +826,6 @@ Soll sie heruntergeladen werden?</value>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Text erkennen (OCR)</value>
   </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Texterkennung (OCR)</value>
-  </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
     <value>Unkenntlich machen</value>
   </data>
@@ -924,9 +912,6 @@ Soll sie heruntergeladen werden?</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
     <value>Sonstiges</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Bildschirmaufzeichnung</value>
@@ -1059,9 +1044,6 @@ Soll sie heruntergeladen werden?</value>
   </data>
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 Monat</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Standardspeicherplatz</value>
   </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Textuploader</value>

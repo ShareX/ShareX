@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,18 +37,34 @@ namespace ShareX.HelpersLib
         public MyColor NewColor { get; private set; }
         public MyColor OldColor { get; private set; }
         public bool IsScreenColorPickerMode { get; private set; }
+        public ColorPickerOptions Options { get; private set; }
 
         private bool oldColorExist;
         private bool controlChangingColor;
         private ControlHider clipboardStatusHider;
 
-        public ColorPickerForm(Color currentColor, bool isScreenColorPickerMode = false, bool checkClipboard = true)
+        public ColorPickerForm(Color currentColor, bool isScreenColorPickerMode = false, bool checkClipboard = true, ColorPickerOptions options = null)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
             clipboardStatusHider = new ControlHider(btnClipboardStatus, 2000);
 
             IsScreenColorPickerMode = isScreenColorPickerMode;
+            Options = options;
+
+            if (Options == null)
+            {
+                Options = new ColorPickerOptions();
+            }
+
+            if (Options.RecentColorsSelected)
+            {
+                rbRecentColors.Checked = true;
+            }
+            else
+            {
+                rbStandardColors.Checked = true;
+            }
 
             PrepareColorPalette();
             SetCurrentColor(currentColor, !IsScreenColorPickerMode);
@@ -90,9 +106,9 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool PickColor(Color currentColor, out Color newColor, Form owner = null, Func<PointInfo> openScreenColorPicker = null)
+        public static bool PickColor(Color currentColor, out Color newColor, Form owner = null, Func<PointInfo> openScreenColorPicker = null, ColorPickerOptions options = null)
         {
-            using (ColorPickerForm dialog = new ColorPickerForm(currentColor))
+            using (ColorPickerForm dialog = new ColorPickerForm(currentColor, options: options))
             {
                 if (openScreenColorPicker != null)
                 {
@@ -116,7 +132,7 @@ namespace ShareX.HelpersLib
 
             Color[] colors;
 
-            if (rbRecentColors.Checked)
+            if (Options.RecentColorsSelected)
             {
                 colors = HelpersOptions.RecentColors.ToArray();
             }
@@ -296,6 +312,8 @@ namespace ShareX.HelpersLib
 
         private void rbRecentColors_CheckedChanged(object sender, EventArgs e)
         {
+            Options.RecentColorsSelected = rbRecentColors.Checked;
+
             PrepareColorPalette();
         }
 

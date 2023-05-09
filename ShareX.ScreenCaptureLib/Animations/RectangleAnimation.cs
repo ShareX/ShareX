@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,11 +31,11 @@ namespace ShareX.ScreenCaptureLib
 {
     internal class RectangleAnimation : BaseAnimation
     {
-        public Rectangle FromRectangle { get; set; }
-        public Rectangle ToRectangle { get; set; }
+        public RectangleF FromRectangle { get; set; }
+        public RectangleF ToRectangle { get; set; }
         public TimeSpan Duration { get; set; }
 
-        public Rectangle CurrentRectangle { get; private set; }
+        public RectangleF CurrentRectangle { get; private set; }
 
         public override bool Update()
         {
@@ -46,12 +46,12 @@ namespace ShareX.ScreenCaptureLib
                 float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
                 amount = Math.Min(amount, 1);
 
-                int x = (int)MathHelpers.Lerp(FromRectangle.X, ToRectangle.X, amount);
-                int y = (int)MathHelpers.Lerp(FromRectangle.Y, ToRectangle.Y, amount);
-                int width = (int)MathHelpers.Lerp(FromRectangle.Width, ToRectangle.Width, amount);
-                int height = (int)MathHelpers.Lerp(FromRectangle.Height, ToRectangle.Height, amount);
+                float x = MathHelpers.Lerp(FromRectangle.X, ToRectangle.X, amount);
+                float y = MathHelpers.Lerp(FromRectangle.Y, ToRectangle.Y, amount);
+                float width = MathHelpers.Lerp(FromRectangle.Width, ToRectangle.Width, amount);
+                float height = MathHelpers.Lerp(FromRectangle.Height, ToRectangle.Height, amount);
 
-                CurrentRectangle = new Rectangle(x, y, width, height);
+                CurrentRectangle = new RectangleF(x, y, width, height);
 
                 if (amount >= 1)
                 {

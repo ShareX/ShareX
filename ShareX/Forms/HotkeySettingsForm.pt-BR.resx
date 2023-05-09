@@ -132,7 +132,10 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Remover</value>
   </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>As teclas de atalho estão desativadas. Você pode clicar aqui para ativá-las.</value>
+  </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Restaurar atalhos padrões</value>
+    <value>Redefinir...</value>
   </data>
 </root>

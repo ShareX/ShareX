@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,14 +29,14 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class FirstTimeConfigForm : BlackStyleForm
+    public partial class FirstTimeConfigForm : Form
     {
         private bool loaded;
 
         public FirstTimeConfigForm()
         {
             InitializeComponent();
-            pbLogo.Image = ImageHelpers.ResizeImage(ShareXResources.Logo, 128, 128);
+            ShareXResources.ApplyTheme(this);
 
             StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
             cbRunStartup.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;

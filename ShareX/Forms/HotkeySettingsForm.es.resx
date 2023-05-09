@@ -132,7 +132,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configuración de teclas de acceso rápido</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Restaurar teclas de acceso rápido predeterminadas</value>
-  </data>
 </root>

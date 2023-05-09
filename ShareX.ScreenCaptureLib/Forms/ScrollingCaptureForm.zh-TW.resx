@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -130,9 +130,6 @@
   </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>擷取</value>
-  </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>根據擷取後設定上傳/儲存</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
     <value>請注意，雖然 ShareX 會盡可能呈現準確的捲動擷取，但不是每一個捲動內容都能被準確地擷取到。合併時可能出現問題的主要原因包含擷取時畫面中有動態元素（例如網頁中有 GIF 動圖），或捲動時畫面中有靜態元素（例如網頁中有不隨著畫面捲動而改變位置的選單或按鈕）。</value>

@@ -136,7 +136,7 @@
     <value>Загрузить изображение</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
-    <value>Имя:</value>
+    <value>Название шаблона:</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Закрыть</value>
@@ -144,14 +144,11 @@
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Загрузить изображение</value>
   </data>
-  <data name="lblEffect.Text" xml:space="preserve">
-    <value>Эффект:</value>
-  </data>
   <data name="lblEffects.Text" xml:space="preserve">
     <value>Эффекты:</value>
   </data>
   <data name="lblPresets.Text" xml:space="preserve">
-    <value>Шаблон:</value>
+    <value>Шаблоны:</value>
   </data>
   <data name="btnPackager.Text" xml:space="preserve">
     <value>Упаковщик...</value>
@@ -179,5 +176,11 @@
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>Эффекты изображений...</value>
+  </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>Новый</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>Название эффекта:</value>
   </data>
 </root>

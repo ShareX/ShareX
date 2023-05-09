@@ -135,9 +135,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Input Teks</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Baris baru: Ctrl + Enter</value>
-  </data>
   <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
     <value>Tengah</value>
   </data>

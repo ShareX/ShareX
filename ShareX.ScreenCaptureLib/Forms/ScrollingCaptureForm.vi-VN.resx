@@ -129,9 +129,6 @@
   <data name="btnStartTask.Text" xml:space="preserve">
     <value>Tải lên/lưu lại tùy thuộc vào tùy chỉnh sau khi tải lên</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Tự động tải lên/lưu lại tùy thuộc vào thiết lập sau khi chụp ảnh và đóng lại</value>
-  </data>
   <data name="btnCapture.Text" xml:space="preserve">
     <value>Bắt đầu chụp</value>
   </data>
@@ -227,5 +224,8 @@
   </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>Phương thức cuộn lên trên cùng trước khi chụp:</value>
+  </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>Tải lên / lưu tùy thuộc vào cài đặt sau khi chụp</value>
   </data>
 </root>

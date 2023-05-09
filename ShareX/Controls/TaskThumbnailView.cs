@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -118,6 +118,28 @@ namespace ShareX
             }
         }
 
+        private ThumbnailViewClickAction clickAction = ThumbnailViewClickAction.Default;
+
+        public ThumbnailViewClickAction ClickAction
+        {
+            get
+            {
+                return clickAction;
+            }
+            set
+            {
+                if (clickAction != value)
+                {
+                    clickAction = value;
+
+                    foreach (TaskThumbnailPanel panel in Panels)
+                    {
+                        panel.ClickAction = clickAction;
+                    }
+                }
+            }
+        }
+
         public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e);
         public event TaskViewMouseEventHandler ContextMenuRequested;
 
@@ -158,11 +180,13 @@ namespace ShareX
         {
             TaskThumbnailPanel panel = new TaskThumbnailPanel(task);
             panel.ThumbnailSize = ThumbnailSize;
+            panel.ClickAction = ClickAction;
             panel.TitleVisible = TitleVisible;
             panel.TitleLocation = TitleLocation;
             panel.MouseEnter += Panel_MouseEnter;
-            panel.MouseDown += (object sender, MouseEventArgs e) => Panel_MouseDown(sender, e, panel);
+            panel.MouseDown += (object sender, MouseEventArgs e) => Panel_MouseDown(e, panel);
             panel.MouseUp += Panel_MouseUp;
+            panel.ImagePreviewRequested += Panel_ImagePreviewRequested;
             return panel;
         }
 
@@ -240,10 +264,10 @@ namespace ShareX
 
         private void Panel_MouseDown(object sender, MouseEventArgs e)
         {
-            Panel_MouseDown(sender, e, null);
+            Panel_MouseDown(e, null);
         }
 
-        private void Panel_MouseDown(object sender, MouseEventArgs e, TaskThumbnailPanel panel)
+        private void Panel_MouseDown(MouseEventArgs e, TaskThumbnailPanel panel)
         {
             if (panel == null)
             {
@@ -304,6 +328,13 @@ namespace ShareX
             {
                 OnContextMenuRequested(sender, e);
             }
+        }
+
+        private void Panel_ImagePreviewRequested(TaskThumbnailPanel panel)
+        {
+            string[] images = Panels.Select(x => x.Task.Info.FilePath).Reverse().ToArray();
+            int currentImageIndex = Panels.Count - Panels.IndexOf(panel) - 1;
+            ImageViewer.ShowImage(images, currentImageIndex);
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

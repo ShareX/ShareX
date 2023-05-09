@@ -130,16 +130,16 @@
     <value>プレビュー...</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
-    <value>マージン:</value>
+    <value>余白:</value>
   </data>
   <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>画像の拡大を許可する</value>
+    <value>画像の拡大を許可</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>自動で画像を回転する</value>
+    <value>自動で画像を回転</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>自動で画像を伸縮する</value>
+    <value>自動で画像を伸縮</value>
   </data>
   <data name="cbCenterImage.Text" xml:space="preserve">
     <value>画像を中央に配置</value>

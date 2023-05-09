@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -70,7 +70,7 @@ namespace ShareX.ScreenCaptureLib
             cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
             cbRemoveDuplicates.Checked = Options.RemoveDuplicates;
             cbAutoCombine.Checked = Options.AfterCaptureAutomaticallyCombine;
-            chkAutoUpload.Checked = Options.AutoUpload;
+            cbAutoUpload.Checked = Options.AutoUpload;
 
             if (forceSelection || Options.StartSelectionAutomatically)
             {
@@ -100,10 +100,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected void OnImageProcessRequested(Bitmap bmp)
         {
-            if (ImageProcessRequested != null)
-            {
-                ImageProcessRequested(bmp);
-            }
+            ImageProcessRequested?.Invoke(bmp);
         }
 
         private void btnSelectHandle_Click(object sender, EventArgs e)
@@ -161,9 +158,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Thread.Sleep(250);
 
-                Rectangle rect;
-
-                if (RegionCaptureTasks.GetRectangleRegion(out rect, RegionCaptureOptions))
+                if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect, RegionCaptureOptions))
                 {
                     selectedRectangle = rect;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();
@@ -613,7 +608,7 @@ namespace ShareX.ScreenCaptureLib
                 output.Add(newImage);
             }
 
-            Bitmap bmpResult = ImageHelpers.CombineImages(output);
+            Bitmap bmpResult = ImageHelpers.CombineImages(output, Orientation.Vertical);
 
             foreach (Bitmap image in output)
             {
@@ -659,9 +654,9 @@ namespace ShareX.ScreenCaptureLib
             nudTrimBottom.SetValue(result.Bottom);
         }
 
-        private void chkAutoUpload_CheckedChanged(object sender, EventArgs e)
+        private void cbAutoUpload_CheckedChanged(object sender, EventArgs e)
         {
-            Options.AutoUpload = chkAutoUpload.Checked;
+            Options.AutoUpload = cbAutoUpload.Checked;
         }
 
         private Padding GuessEdges(Bitmap img1, Bitmap img2)

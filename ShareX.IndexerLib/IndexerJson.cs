@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -62,15 +62,15 @@ namespace ShareX.IndexerLib
         {
             if (settings.CreateParseableJson)
             {
-                IndexFolderParseable(dir, level);
+                IndexFolderParseable(dir);
             }
             else
             {
-                IndexFolderSimple(dir, level);
+                IndexFolderSimple(dir);
             }
         }
 
-        private void IndexFolderSimple(FolderInfo dir, int level)
+        private void IndexFolderSimple(FolderInfo dir)
         {
             jsonWriter.WritePropertyName(dir.FolderName);
             jsonWriter.WriteStartArray();
@@ -90,7 +90,7 @@ namespace ShareX.IndexerLib
             jsonWriter.WriteEnd();
         }
 
-        private void IndexFolderParseable(FolderInfo dir, int level)
+        private void IndexFolderParseable(FolderInfo dir)
         {
             jsonWriter.WritePropertyName("Name");
             jsonWriter.WriteValue(dir.FolderName);

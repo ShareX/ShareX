@@ -138,7 +138,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - フォルダーの監視</value>
   </data>
-  <data name="chkMoveToScreenshotsDir.Text" xml:space="preserve">
-    <value>スクリーンショット用のフォルダへ移動する</value>
+  <data name="cbMoveToScreenshotsFolder.Text" xml:space="preserve">
+    <value>スクリーンショットのフォルダにファイルを移動する</value>
   </data>
 </root>

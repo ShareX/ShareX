@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -77,19 +77,27 @@ namespace ShareX
                     taskSettings.WatchFolderList.Add(watchFolderSetting);
                 }
 
-                WatchFolder watchFolder = new WatchFolder { Settings = watchFolderSetting, TaskSettings = taskSettings };
+                WatchFolder watchFolder = new WatchFolder();
+                watchFolder.Settings = watchFolderSetting;
+                watchFolder.TaskSettings = taskSettings;
+
                 watchFolder.FileWatcherTrigger += origPath =>
                 {
                     TaskSettings taskSettingsCopy = TaskSettings.GetSafeTaskSettings(taskSettings);
                     string destPath = origPath;
+
                     if (watchFolderSetting.MoveFilesToScreenshotsFolder)
                     {
-                        destPath = Helpers.GetUniqueFilePath(Path.Combine(Program.ScreenshotsFolder, Path.GetFileName(origPath)));
-                        Helpers.CreateDirectoryFromFilePath(destPath);
+                        string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettingsCopy);
+                        string fileName = Path.GetFileName(origPath);
+                        destPath = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettingsCopy);
+                        FileHelpers.CreateDirectoryFromFilePath(destPath);
                         File.Move(origPath, destPath);
                     }
+
                     UploadManager.UploadFile(destPath, taskSettingsCopy);
                 };
+
                 WatchFolders.Add(watchFolder);
 
                 if (taskSettings.WatchFolderEnabled)

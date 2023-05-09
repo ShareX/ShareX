@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,15 +27,21 @@ namespace ShareX.HelpersLib
 {
     public static class NativeConstants
     {
+        public const int GWL_WNDPROC = -4;
+        public const int GWL_HINSTANCE = -6;
+        public const int GWL_HWNDPARENT = -8;
+        public const int GWL_STYLE = -16;
+        public const int GWL_EXSTYLE = -20;
+        public const int GWL_USERDATA = -21;
+        public const int GWL_ID = -12;
+
         public const int GCL_HICONSM = -34;
         public const int GCL_HICON = -14;
         public const int ICON_SMALL = 0;
         public const int ICON_BIG = 1;
         public const int ICON_SMALL2 = 2;
         public const int SC_MINIMIZE = 0xF020;
-        public const int HT_CAPTION = 2;
         public const int CURSOR_SHOWING = 1;
-        public const int GWL_STYLE = -16;
         public const int DWM_TNP_RECTDESTINATION = 0x1;
         public const int DWM_TNP_RECTSOURCE = 0x2;
         public const int DWM_TNP_OPACITY = 0x4;

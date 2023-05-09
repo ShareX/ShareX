@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,6 +25,7 @@
 
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib
@@ -33,6 +34,11 @@ namespace ShareX.HelpersLib
     {
         public IntPtr Handle { get; private set; }
         public Point Position { get; private set; }
+        public Size Size { get; private set; }
+        public float SizeMultiplier { get; private set; }
+        public bool IsDefaultSize => SizeMultiplier == 1f;
+        public Point Hotspot { get; private set; }
+        public Point DrawPosition => new Point(Position.X - Hotspot.X, Position.Y - Hotspot.Y);
         public bool IsVisible { get; private set; }
 
         public CursorData()
@@ -53,6 +59,8 @@ namespace ShareX.HelpersLib
             {
                 Handle = cursorInfo.hCursor;
                 Position = cursorInfo.ptScreenPos;
+                Size = Size.Empty;
+                SizeMultiplier = GetCursorSizeMultiplier();
                 IsVisible = cursorInfo.flags == NativeConstants.CURSOR_SHOWING;
 
                 if (IsVisible)
@@ -61,26 +69,71 @@ namespace ShareX.HelpersLib
 
                     if (iconHandle != IntPtr.Zero)
                     {
-                        IconInfo iconInfo;
-
-                        if (NativeMethods.GetIconInfo(iconHandle, out iconInfo))
+                        if (NativeMethods.GetIconInfo(iconHandle, out IconInfo iconInfo))
                         {
-                            Position = new Point(Position.X - iconInfo.xHotspot, Position.Y - iconInfo.yHotspot);
-
-                            if (iconInfo.hbmMask != IntPtr.Zero)
+                            if (IsDefaultSize)
                             {
-                                NativeMethods.DeleteObject(iconInfo.hbmMask);
+                                Hotspot = new Point(iconInfo.xHotspot, iconInfo.yHotspot);
+                            }
+                            else
+                            {
+                                Hotspot = new Point((int)Math.Round(iconInfo.xHotspot * SizeMultiplier), (int)Math.Round(iconInfo.yHotspot * SizeMultiplier));
                             }
 
                             if (iconInfo.hbmColor != IntPtr.Zero)
                             {
                                 NativeMethods.DeleteObject(iconInfo.hbmColor);
                             }
+
+                            if (iconInfo.hbmMask != IntPtr.Zero)
+                            {
+                                if (!IsDefaultSize)
+                                {
+                                    using (Bitmap bmpMask = Image.FromHbitmap(iconInfo.hbmMask))
+                                    {
+                                        int cursorWidth = bmpMask.Width;
+                                        int cursorHeight = iconInfo.hbmColor != IntPtr.Zero ? bmpMask.Height : bmpMask.Height / 2;
+                                        Size = new Size((int)Math.Round(cursorWidth * SizeMultiplier), (int)Math.Round(cursorHeight * SizeMultiplier));
+                                    }
+                                }
+
+                                NativeMethods.DeleteObject(iconInfo.hbmMask);
+                            }
                         }
 
                         NativeMethods.DestroyIcon(iconHandle);
                     }
                 }
+            }
+        }
+
+        public static float GetCursorSizeMultiplier()
+        {
+            float sizeMultiplier = 1f;
+
+            int? cursorSize = RegistryHelpers.GetValueDWord(@"SOFTWARE\Microsoft\Accessibility", "CursorSize");
+
+            if (cursorSize != null && cursorSize > 1)
+            {
+                sizeMultiplier = 1f + ((cursorSize.Value - 1) * 0.5f);
+            }
+
+            return sizeMultiplier;
+        }
+
+        public void DrawCursor(IntPtr hdcDest)
+        {
+            DrawCursor(hdcDest, Point.Empty);
+        }
+
+        public void DrawCursor(IntPtr hdcDest, Point offset)
+        {
+            if (IsVisible)
+            {
+                Point drawPosition = new Point(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y);
+                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
+
+                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
         }
 
@@ -93,31 +146,37 @@ namespace ShareX.HelpersLib
         {
             if (IsVisible)
             {
-                Point drawPosition = new Point(Position.X - offset.X, Position.Y - offset.Y);
-                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
-
                 using (Graphics g = Graphics.FromImage(img))
-                using (Icon icon = Icon.FromHandle(Handle))
                 {
-                    g.DrawIcon(icon, drawPosition.X, drawPosition.Y);
+                    IntPtr hdcDest = g.GetHdc();
+
+                    DrawCursor(hdcDest, offset);
+
+                    g.ReleaseHdc(hdcDest);
                 }
             }
         }
 
-        public void DrawCursor(IntPtr hdcDest)
+        public Bitmap ToBitmap()
         {
-            DrawCursor(hdcDest, Point.Empty);
-        }
-
-        public void DrawCursor(IntPtr hdcDest, Point offset)
-        {
-            if (IsVisible)
+            if (IsDefaultSize || Size.IsEmpty)
             {
-                Point drawPosition = new Point(Position.X - offset.X, Position.Y - offset.Y);
-                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
-
-                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, 0, 0, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
+                Icon icon = Icon.FromHandle(Handle);
+                return icon.ToBitmap();
             }
+
+            Bitmap bmp = new Bitmap(Size.Width, Size.Height, PixelFormat.Format32bppArgb);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                IntPtr hdcDest = g.GetHdc();
+
+                NativeMethods.DrawIconEx(hdcDest, 0, 0, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
+
+                g.ReleaseHdc(hdcDest);
+            }
+
+            return bmp;
         }
     }
 }

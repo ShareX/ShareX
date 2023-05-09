@@ -120,9 +120,6 @@
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Está intentando subir un archivo de gran tamaño. ¿Desea continuar?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Codificando...</value>
-  </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>¿Está seguro de que desea subir {0} archivos?</value>
   </data>
@@ -150,9 +147,6 @@
   <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
     <value>Neerlandés</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Error de FFmpeg</value>
-  </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>Editar...</value>
   </data>
@@ -164,9 +158,6 @@
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Introducir texto a codificar</value>
-  </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Colaboradores</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Tarea completada</value>
@@ -217,9 +208,6 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>¿Restablecer todos los atajos de teclado predefinidos?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Ni el video FFmpeg ni la fuente de audio pueden ser "Ninguno".</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Registro de cambios</value>
   </data>
@@ -235,16 +223,8 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Iniciando</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} no existe.
-
-¿Desea descargarlo automáticamente?</value>
-  </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Ejecutar ShareX al iniciar Windows</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Esperando...</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Servidor de imágenes: {0}</value>
@@ -252,17 +232,8 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado al portapapeles: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Ocultar menú</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>No se puede encontrar una cuenta de Twitter válida.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Mostrar menú</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Mostrar columnas</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Enlace para descargar y subir</value>
@@ -278,9 +249,6 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Cancelar</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tarea: {0}</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>No se pudo registrar el atajo de teclado</value>
@@ -347,24 +315,15 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
     <value>Turco</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Clic para detener la grabación.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Los flujos de trabajo pueden agregarse en la configuración de los atajos de teclado...</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
     <value>Ruso</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>No se pudo guardar la imagen en la ubicación {0}.</value>
-  </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX debe reiniciarse para que los cambios de idioma surtan efecto.
 ¿Desea reiniciar ShareX?</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Error</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
     <value>¿Está seguro de eliminar este archivo?</value>
@@ -372,14 +331,8 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Usar nuevo nombre:</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>¿Está seguro de que desea interrumpir esta grabación?</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>Italiano</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>No se encuentra</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traductores</value>
@@ -392,9 +345,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Subir carpeta</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliotecas externas</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Después de capturar: {0}</value>
@@ -471,12 +421,6 @@ Clic medio para cerrar</value>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Vista previa:</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Ocultar columnas</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpg descargado con éxito.</value>
-  </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Cerrar</value>
   </data>
@@ -510,12 +454,6 @@ Clic medio para cerrar</value>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Español</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Clic para iniciar la grabación.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>La descargar de FFmpeg falló.</value>
-  </data>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>Acortar enlace</value>
   </data>
@@ -524,9 +462,6 @@ Clic medio para cerrar</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Editar con ShareX</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Las versiones de desarrollo no son estables y solo deben usarse para realizar pruebas. ¿Desea instalar?</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>¿Desea restablecer la configuración de ShareX?</value>
@@ -561,9 +496,6 @@ Clic medio para cerrar</value>
   <data name="OCRForm_AutoProcessing" xml:space="preserve">
     <value>El OCR está en proceso.</value>
   </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Tome en cuenta que ShareX emplea la API pública de OCR.space para realizar el reconocimiento óptico de caracteres. ¿Desea otorgarle permiso a ShareX de subir imágenes a tal servicio?</value>
-  </data>
   <data name="ShareXConfirmation" xml:space="preserve">
     <value>ShareX - Confirmación</value>
   </data>
@@ -571,9 +503,6 @@ Clic medio para cerrar</value>
     <value>ShareX debe reiniciarse para que los cambios a la carpeta personal surtan efecto.
 
 ¿Desea reiniciar ShareX?</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - Reconocimiento óptico de caracteres (OCR)</value>
   </data>
   <data name="SwitchToListView" xml:space="preserve">
     <value>Cambiar a vista de lista</value>

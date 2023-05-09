@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -44,6 +44,8 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
+            btnHotkeysDisabled.Visible = Program.Settings.DisableHotkeys;
+
             PrepareHotkeys(hotkeyManager);
         }
 
@@ -71,9 +73,9 @@ namespace ShareX
         {
             flpHotkeys.Controls.Clear();
 
-            foreach (HotkeySettings hotkeySetting in manager.Hotkeys)
+            foreach (HotkeySettings hotkeySettings in manager.Hotkeys)
             {
-                AddHotkeySelectionControl(hotkeySetting);
+                AddHotkeySelectionControl(hotkeySettings);
             }
         }
 
@@ -85,7 +87,7 @@ namespace ShareX
 
         private HotkeySelectionControl FindSelectionControl(HotkeySettings hotkeySetting)
         {
-            return flpHotkeys.Controls.Cast<HotkeySelectionControl>().FirstOrDefault(hsc => hsc.Setting == hotkeySetting);
+            return flpHotkeys.Controls.Cast<HotkeySelectionControl>().FirstOrDefault(hsc => hsc.HotkeySettings == hotkeySetting);
         }
 
         private void control_SelectedChanged(object sender, EventArgs e)
@@ -124,14 +126,14 @@ namespace ShareX
         private void control_HotkeyChanged(object sender, EventArgs e)
         {
             HotkeySelectionControl control = (HotkeySelectionControl)sender;
-            manager.RegisterHotkey(control.Setting);
+            manager.RegisterHotkey(control.HotkeySettings);
             RegisterFailedHotkeys();
         }
 
-        private HotkeySelectionControl AddHotkeySelectionControl(HotkeySettings hotkeySetting)
+        private HotkeySelectionControl AddHotkeySelectionControl(HotkeySettings hotkeySettings)
         {
-            HotkeySelectionControl control = new HotkeySelectionControl(hotkeySetting);
-            control.Margin = new Padding(0, 0, 0, 2);
+            HotkeySelectionControl control = new HotkeySelectionControl(hotkeySettings);
+            control.Margin = new Padding(0, 0, 0, 4);
             control.SelectedChanged += control_SelectedChanged;
             control.HotkeyChanged += control_HotkeyChanged;
             control.EditRequested += control_EditRequested;
@@ -141,10 +143,10 @@ namespace ShareX
 
         private void Edit(HotkeySelectionControl selectionControl)
         {
-            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(selectionControl.Setting.TaskSettings))
+            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(selectionControl.HotkeySettings.TaskSettings))
             {
                 taskSettingsForm.ShowDialog();
-                selectionControl.UpdateDescription();
+                selectionControl.UpdateControls();
             }
         }
 
@@ -176,25 +178,25 @@ namespace ShareX
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            HotkeySettings hotkeySetting = new HotkeySettings();
-            hotkeySetting.TaskSettings = TaskSettings.GetDefaultTaskSettings();
-            manager.Hotkeys.Add(hotkeySetting);
-            HotkeySelectionControl control = AddHotkeySelectionControl(hotkeySetting);
+            HotkeySettings hotkeySettings = new HotkeySettings();
+            hotkeySettings.TaskSettings = TaskSettings.GetDefaultTaskSettings();
+            manager.Hotkeys.Add(hotkeySettings);
+            HotkeySelectionControl control = AddHotkeySelectionControl(hotkeySettings);
             control.Selected = true;
             Selected = control;
             UpdateButtons();
             UpdateCheckStates();
             control.Focus();
             Update();
-            EditSelected();
+            control.OpenTaskMenu();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (Selected != null)
             {
-                manager.UnregisterHotkey(Selected.Setting);
-                HotkeySelectionControl hsc = FindSelectionControl(Selected.Setting);
+                manager.UnregisterHotkey(Selected.HotkeySettings);
+                HotkeySelectionControl hsc = FindSelectionControl(Selected.HotkeySettings);
                 if (hsc != null) flpHotkeys.Controls.Remove(hsc);
                 Selected = null;
                 UpdateButtons();
@@ -210,12 +212,12 @@ namespace ShareX
         {
             if (Selected != null)
             {
-                HotkeySettings hotkeySetting = new HotkeySettings();
-                hotkeySetting.TaskSettings = Selected.Setting.TaskSettings.Copy();
-                hotkeySetting.TaskSettings.WatchFolderEnabled = false;
-                hotkeySetting.TaskSettings.WatchFolderList = new List<WatchFolderSettings>();
-                manager.Hotkeys.Add(hotkeySetting);
-                HotkeySelectionControl control = AddHotkeySelectionControl(hotkeySetting);
+                HotkeySettings hotkeySettings = new HotkeySettings();
+                hotkeySettings.TaskSettings = Selected.HotkeySettings.TaskSettings.Copy();
+                hotkeySettings.TaskSettings.WatchFolderEnabled = false;
+                hotkeySettings.TaskSettings.WatchFolderList = new List<WatchFolderSettings>();
+                manager.Hotkeys.Add(hotkeySettings);
+                HotkeySelectionControl control = AddHotkeySelectionControl(hotkeySettings);
                 control.Selected = true;
                 Selected = control;
                 UpdateCheckStates();
@@ -276,6 +278,12 @@ namespace ShareX
                 Selected = null;
                 UpdateButtons();
             }
+        }
+
+        private void btnHotkeysDisabled_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.ToggleHotkeys(false);
+            btnHotkeysDisabled.Visible = false;
         }
     }
 }

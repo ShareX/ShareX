@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,24 +30,44 @@ namespace ShareX.HelpersLib
 {
     public partial class OutputBox : Form
     {
-        public OutputBox(string text, string title)
+        private bool scrollToEnd;
+
+        public OutputBox(string text, string title, bool scrollToEnd = false)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
             Text = "ShareX - " + title;
             txtText.Text = text;
+            this.scrollToEnd = scrollToEnd;
+        }
+
+        public static void Show(string text, string title, bool scrollToEnd = false)
+        {
+            using (OutputBox outputBox = new OutputBox(text, title, scrollToEnd))
+            {
+                outputBox.ShowDialog();
+            }
         }
 
         private void OutputBox_Shown(object sender, EventArgs e)
         {
-            txtText.SelectionStart = txtText.TextLength;
-            txtText.ScrollToCaret();
+            this.ForceActivate();
+
+            if (scrollToEnd)
+            {
+                txtText.SelectionStart = txtText.TextLength;
+                txtText.ScrollToCaret();
+            }
+            else
+            {
+                txtText.Select(0, 0);
+            }
         }
 
         private void txtText_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 Close();
             }

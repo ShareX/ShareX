@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Kopieren</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Herunterladen</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Erneuern</value>
   </data>
@@ -134,18 +131,6 @@
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Eigene Befehle verwenden</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Ergänzende Befehlszeilenparameter</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Befehlszeilenvorschau</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Quellen</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bitrate:</value>
@@ -196,9 +181,6 @@ Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Angepassten Pfad verwenden</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg Pfad</value>
   </data>
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>Dithering Modus:</value>

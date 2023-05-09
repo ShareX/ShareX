@@ -126,12 +126,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Buscar ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>La descarga de FFmpeg falló.</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg descargado con éxito.</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Tasa de bits: {0}k</value>
   </data>
@@ -164,9 +158,6 @@
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Iniciar captura</value>
-  </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Flechas en ambos extremos</value>
   </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>Puntos medios:</value>
@@ -360,17 +351,11 @@
   <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
     <value>Enviar al fondo</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Opciones de forma</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Deshacer</value>
   </data>
   <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
     <value>Subir imagen (Ctrl+U)</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Usar letras</value>
   </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>Tipo de puntero:</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -38,7 +38,10 @@ namespace ShareX.HelpersLib
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+        }
 
+        private void ClipboardViewerForm_Load(object sender, EventArgs e)
+        {
             RefreshClipboardContentList();
         }
 
@@ -85,11 +88,7 @@ namespace ShareX.HelpersLib
                 {
                     object data = CurrentDataObject.GetData(format);
 
-                    if (data == null)
-                    {
-                        RefreshClipboardContentList();
-                    }
-                    else
+                    if (data != null)
                     {
                         try
                         {

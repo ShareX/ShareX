@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -113,16 +113,12 @@ namespace ShareX.UploadersLib
         Pushbullet,
         [Description("SendSpace")]
         SendSpace,
-        [Description("Ge.tt")]
-        Ge_tt,
         [Description("Hostr")]
         Localhostr,
         [Description("JIRA")]
         Jira,
         [Description("Lambda")]
         Lambda,
-        [Description("VideoBin")]
-        VideoBin,
         [Description("Teknik")]
         Teknik,
         [Description("Pomf")]
@@ -135,7 +131,7 @@ namespace ShareX.UploadersLib
         Streamable,
         [Description("s-ul")]
         Sul,
-        [Description("Lithiio")]
+        [Description("LobFile")]
         Lithiio,
         [Description("transfer.sh")]
         Transfersh,
@@ -143,6 +139,8 @@ namespace ShareX.UploadersLib
         Plik,
         [Description("YouTube")]
         YouTube,
+        [Description("Vault.ooo")]
+        Vault_ooo,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
@@ -209,6 +207,7 @@ namespace ShareX.UploadersLib
         [Description("Pushbullet")]
         Pushbullet,
         GoogleImageSearch, // Localized
+        BingVisualSearch, // Localized
         CustomURLSharingService // Localized
     }
 
@@ -338,14 +337,6 @@ namespace ShareX.UploadersLib
         LoginRequired,
         LoginSuccessful,
         LoginFailed
-    }
-
-    public enum CustomUploaderURLType
-    {
-        URL,
-        ThumbnailURL,
-        DeletionURL,
-        ErrorMessage
     }
 
     public enum YouTubeVideoPrivacy // Localized

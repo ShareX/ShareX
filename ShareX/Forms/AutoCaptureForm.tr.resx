@@ -133,7 +133,7 @@
     <value>Bölge</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>Bölge seç</value>
+    <value>Bölge seç...</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
     <value>Tekrar süresi:</value>

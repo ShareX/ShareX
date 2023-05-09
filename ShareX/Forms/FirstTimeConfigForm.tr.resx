@@ -136,6 +136,6 @@
     <value>Windows başladığında ShareX'i çalıştır</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>Bu ayarlara ayrıca buradan erişebilirsiniz: "Uygulama ayarları -&gt; Entegrasyon sekmesi"</value>
+    <value>Bu ayarlara ayrıca buradan erişebilirsiniz "Uygulama ayarları -&gt; Entegrasyon sekmesi".</value>
   </data>
 </root>

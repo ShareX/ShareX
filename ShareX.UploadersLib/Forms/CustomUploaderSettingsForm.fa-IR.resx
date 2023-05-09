@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>فرمت XML:</value>
-  </data>
   <data name="cArgumentsValue.HeaderText" xml:space="preserve">
     <value>مقدار</value>
   </data>
@@ -144,9 +141,6 @@
   <data name="lblParameters.Text" xml:space="preserve">
     <value>پارامترهای آدرس:</value>
   </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>آپلودکننده ها</value>
-  </data>
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
     <value>به روز رسانی پوشه...</value>
   </data>
@@ -162,9 +156,6 @@
   <data name="btnTextUploaderTest.Text" xml:space="preserve">
     <value>تست</value>
   </data>
-  <data name="tpTest.Text" xml:space="preserve">
-    <value>تست</value>
-  </data>
   <data name="btnFileUploaderTest.Text" xml:space="preserve">
     <value>تست</value>
   </data>
@@ -173,21 +164,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - تنظیمات آپلودکننده سفارشی</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>نتیجه</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>متن پاسخ</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>اطلاعات پاسخ</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>پاسخ</value>
-  </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>درخواست</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>حذف کردن</value>
@@ -215,17 +191,5 @@
   </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>؟</value>
-  </data>
-  <data name="btnXPathHelp.Text" xml:space="preserve">
-    <value>؟</value>
-  </data>
-  <data name="btnJsonPathHelp.Text" xml:space="preserve">
-    <value>؟</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>کپی کردن پاسخ</value>
-  </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>فرمت JSON:</value>
   </data>
 </root>

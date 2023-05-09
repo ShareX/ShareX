@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -84,7 +84,7 @@ namespace ShareX.ScreenCaptureLib
         public int StepBorderSize { get; set; } = 0;
         public Color StepFillColor { get; set; } = PrimaryColor;
         public int StepFontSize { get; set; } = 18;
-        public bool StepUseLetters { get; set; } = false;
+        public StepType StepType { get; set; } = StepType.Numbers;
 
         // Magnify drawing
         public int MagnifyStrength { get; set; } = 200;
@@ -106,5 +106,9 @@ namespace ShareX.ScreenCaptureLib
 
         // Highlight effect
         public Color HighlightColor { get; set; } = Color.Yellow;
+
+        // Cut out tool
+        public CutOutEffectType CutOutEffectType { get; set; } = CutOutEffectType.None;
+        public int CutOutEffectSize { get; set; } = 10;
     }
 }

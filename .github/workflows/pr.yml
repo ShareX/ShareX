@@ -1,0 +1,44 @@
+name: Build ShareX (PR)
+
+on:
+  pull_request:
+    branches:
+      - "**"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration:
+          - Release
+          - Debug
+          - Steam
+          - MicrosoftStore
+          - MicrosoftStoreDebug
+        platform:
+          - Any CPU
+
+    env:
+      SOLUTION_FILE_PATH: ShareX.sln
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+
+      - name: Restore NuGet packages
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: nuget restore ${{ env.SOLUTION_FILE_PATH }}
+
+      - name: Build
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: msbuild -m -p:Configuration="${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"

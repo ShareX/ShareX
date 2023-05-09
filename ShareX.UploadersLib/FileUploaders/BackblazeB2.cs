@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -46,9 +46,6 @@ namespace ShareX.UploadersLib.FileUploaders
     /// <summary>
     /// A <see cref="FileUploaderService"/> implementation for the Backblaze B2 Cloud Storage API.
     /// </summary>
-    /// <remarks>
-    /// Contributed by: <a href="https://github.com/tinybarks">@tinybarks</a>
-    /// </remarks>
     public class BackblazeB2UploaderService : FileUploaderService
     {
         public override FileDestination EnumValue => FileDestination.BackblazeB2;
@@ -76,9 +73,6 @@ namespace ShareX.UploadersLib.FileUploaders
     /// <summary>
     /// An <see cref="ImageUploader"/> implementation for the Backblaze B2 Cloud Storage API.
     /// </summary>
-    /// <remarks>
-    /// Contributed by: <a href="https://github.com/tinybarks">@tinybarks</a>
-    /// </remarks>
     [Localizable(false)]
     public sealed class BackblazeB2 : ImageUploader
     {
@@ -109,7 +103,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            string parsedUploadPath = NameParser.Parse(NameParserType.FolderPath, UploadPath);
+            string parsedUploadPath = NameParser.Parse(NameParserType.FilePath, UploadPath);
             string destinationPath = URLHelpers.CombineURL(parsedUploadPath, fileName);
 
             // docs: https://www.backblaze.com/b2/docs/
@@ -241,9 +235,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (UseCustomUrl)
                 {
-                    string parsedCustomUrl = NameParser.Parse(NameParserType.FolderPath, CustomUrl);
-                    remoteLocation = URLHelpers.CombineURL(parsedCustomUrl, encodedFileName);
-                    remoteLocation = URLHelpers.FixPrefix(remoteLocation, "https://");
+                    remoteLocation = URLHelpers.CombineURL(CustomUrl, encodedFileName);
+                    remoteLocation = URLHelpers.FixPrefix(remoteLocation);
 
                     DebugHelper.WriteLine($"B2 uploader: But user requested custom URL, which will be: {remoteLocation}");
                 }
@@ -574,10 +567,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region JSON responses
 
-        // we disable these IDE warnings here because this is effectively generated code
-#pragma warning disable IDE1006 // Naming Styles
-        // ReSharper disable ClassNeverInstantiated.Local, MemberCanBePrivate.Local, UnusedAutoPropertyAccessor.Local
-
         /// <summary>
         /// The b2_authorize_account API's optional 'allowed' field.
         /// </summary>
@@ -679,9 +668,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 this.fileInfo = fileInfo;
             }
         }
-
-        // ReSharper restore ClassNeverInstantiated.Local, MemberCanBePrivate.Local, UnusedAutoPropertyAccessor.Local
-#pragma warning restore IDE1006 // Naming Styles
 
         #endregion JSON responses
     }

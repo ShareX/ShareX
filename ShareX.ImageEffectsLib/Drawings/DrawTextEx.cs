@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -110,17 +110,14 @@ namespace ShareX.ImageEffectsLib
         public DrawTextEx()
         {
             this.ApplyDefaultPropertyValues();
-
-            Gradient = new GradientInfo();
-            AddDefaultGradient(Gradient);
-            OutlineGradient = new GradientInfo();
-            AddDefaultGradient(OutlineGradient);
-            ShadowGradient = new GradientInfo();
-            AddDefaultGradient(ShadowGradient);
+            Gradient = AddDefaultGradient();
+            OutlineGradient = AddDefaultGradient();
+            ShadowGradient = AddDefaultGradient();
         }
 
-        private void AddDefaultGradient(GradientInfo gradientInfo)
+        private GradientInfo AddDefaultGradient()
         {
+            GradientInfo gradientInfo = new GradientInfo();
             gradientInfo.Type = LinearGradientMode.Horizontal;
 
             switch (RandomFast.Next(0, 2))
@@ -138,6 +135,8 @@ namespace ShareX.ImageEffectsLib
                     gradientInfo.Colors.Add(new GradientStop(Color.FromArgb(98, 54, 255), 100f));
                     break;
             }
+
+            return gradientInfo;
         }
 
         public override Bitmap Apply(Bitmap bmp)

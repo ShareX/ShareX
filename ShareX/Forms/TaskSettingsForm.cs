@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -59,8 +58,8 @@ namespace ShareX
             if (IsDefault)
             {
                 tcTaskSettings.TabPages.Remove(tpTask);
-                chkOverrideGeneralSettings.Visible = chkOverrideImageSettings.Visible = chkOverrideCaptureSettings.Visible = chkOverrideActions.Visible =
-                    chkOverrideUploadSettings.Visible = chkOverrideToolsSettings.Visible = chkOverrideAdvancedSettings.Visible = false;
+                cbOverrideGeneralSettings.Visible = cbOverrideImageSettings.Visible = cbOverrideCaptureSettings.Visible = cbOverrideActions.Visible =
+                    cbOverrideUploadSettings.Visible = cbOverrideToolsSettings.Visible = cbOverrideAdvancedSettings.Visible = false;
             }
             else
             {
@@ -139,26 +138,26 @@ namespace ShareX
 
                 if (Program.UploadersConfig != null)
                 {
-                    chkOverrideFTP.Enabled = cboFTPaccounts.Enabled = Program.UploadersConfig.FTPAccountList.Count > 0;
+                    cbOverrideFTPAccount.Enabled = cbFTPAccounts.Enabled = Program.UploadersConfig.FTPAccountList.Count > 0;
 
                     if (Program.UploadersConfig.FTPAccountList.Count > 0)
                     {
-                        chkOverrideFTP.Checked = TaskSettings.OverrideFTP;
-                        cboFTPaccounts.Enabled = TaskSettings.OverrideFTP;
-                        cboFTPaccounts.Items.Clear();
-                        cboFTPaccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
-                        cboFTPaccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
+                        cbOverrideFTPAccount.Checked = TaskSettings.OverrideFTP;
+                        cbFTPAccounts.Enabled = TaskSettings.OverrideFTP;
+                        cbFTPAccounts.Items.Clear();
+                        cbFTPAccounts.Items.AddRange(Program.UploadersConfig.FTPAccountList.ToArray());
+                        cbFTPAccounts.SelectedIndex = TaskSettings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1);
                     }
 
-                    chkOverrideCustomUploader.Enabled = cbOverrideCustomUploader.Enabled = Program.UploadersConfig.CustomUploadersList.Count > 0;
+                    cbOverrideCustomUploader.Enabled = cbCustomUploaders.Enabled = Program.UploadersConfig.CustomUploadersList.Count > 0;
 
                     if (Program.UploadersConfig.CustomUploadersList.Count > 0)
                     {
-                        chkOverrideCustomUploader.Checked = TaskSettings.OverrideCustomUploader;
-                        cbOverrideCustomUploader.Enabled = TaskSettings.OverrideCustomUploader;
-                        cbOverrideCustomUploader.Items.Clear();
-                        cbOverrideCustomUploader.Items.AddRange(Program.UploadersConfig.CustomUploadersList.ToArray());
-                        cbOverrideCustomUploader.SelectedIndex = TaskSettings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1);
+                        cbOverrideCustomUploader.Checked = TaskSettings.OverrideCustomUploader;
+                        cbCustomUploaders.Enabled = TaskSettings.OverrideCustomUploader;
+                        cbCustomUploaders.Items.Clear();
+                        cbCustomUploaders.Items.AddRange(Program.UploadersConfig.CustomUploadersList.ToArray());
+                        cbCustomUploaders.SelectedIndex = TaskSettings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1);
                     }
                 }
 
@@ -173,13 +172,13 @@ namespace ShareX
 
                 #endregion Task
 
-                chkOverrideGeneralSettings.Checked = !TaskSettings.UseDefaultGeneralSettings;
-                chkOverrideImageSettings.Checked = !TaskSettings.UseDefaultImageSettings;
-                chkOverrideCaptureSettings.Checked = !TaskSettings.UseDefaultCaptureSettings;
-                chkOverrideActions.Checked = !TaskSettings.UseDefaultActions;
-                chkOverrideUploadSettings.Checked = !TaskSettings.UseDefaultUploadSettings;
-                chkOverrideToolsSettings.Checked = !TaskSettings.UseDefaultToolsSettings;
-                chkOverrideAdvancedSettings.Checked = !TaskSettings.UseDefaultAdvancedSettings;
+                cbOverrideGeneralSettings.Checked = !TaskSettings.UseDefaultGeneralSettings;
+                cbOverrideImageSettings.Checked = !TaskSettings.UseDefaultImageSettings;
+                cbOverrideCaptureSettings.Checked = !TaskSettings.UseDefaultCaptureSettings;
+                cbOverrideActions.Checked = !TaskSettings.UseDefaultActions;
+                cbOverrideUploadSettings.Checked = !TaskSettings.UseDefaultUploadSettings;
+                cbOverrideToolsSettings.Checked = !TaskSettings.UseDefaultToolsSettings;
+                cbOverrideAdvancedSettings.Checked = !TaskSettings.UseDefaultAdvancedSettings;
             }
 
             UpdateDefaultSettingVisibility();
@@ -196,7 +195,7 @@ namespace ShareX
             gbToastWindow.Enabled = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
             nudToastWindowDuration.SetValue((decimal)TaskSettings.GeneralSettings.ToastWindowDuration);
             nudToastWindowFadeDuration.SetValue((decimal)TaskSettings.GeneralSettings.ToastWindowFadeDuration);
-            cbToastWindowPlacement.Items.AddRange(Helpers.GetEnumNamesProper<ContentAlignment>());
+            cbToastWindowPlacement.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ContentAlignment>());
             cbToastWindowPlacement.SelectedIndex = TaskSettings.GeneralSettings.ToastWindowPlacement.GetIndex();
             nudToastWindowSizeWidth.SetValue(TaskSettings.GeneralSettings.ToastWindowSize.Width);
             nudToastWindowSizeHeight.SetValue(TaskSettings.GeneralSettings.ToastWindowSize.Height);
@@ -206,6 +205,7 @@ namespace ShareX
             cbToastWindowRightClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowRightClickAction;
             cbToastWindowMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ToastClickAction>());
             cbToastWindowMiddleClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowMiddleClickAction;
+            cbToastWindowAutoHide.Checked = TaskSettings.GeneralSettings.ToastWindowAutoHide;
             cbUseCustomCaptureSound.Checked = TaskSettings.GeneralSettings.UseCustomCaptureSound;
             txtCustomCaptureSoundPath.Enabled = btnCustomCaptureSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomCaptureSound;
             txtCustomCaptureSoundPath.Text = TaskSettings.GeneralSettings.CustomCaptureSoundPath;
@@ -235,7 +235,9 @@ namespace ShareX
             cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
             cbImageAutoUseJPEG.Checked = TaskSettings.ImageSettings.ImageAutoUseJPEG;
             nudImageAutoUseJPEGSize.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
+            cbImageAutoJPEGQuality.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
             nudImageAutoUseJPEGSize.SetValue(TaskSettings.ImageSettings.ImageAutoUseJPEGSize);
+            cbImageAutoJPEGQuality.Checked = TaskSettings.ImageSettings.ImageAutoJPEGQuality;
             cbImageFileExist.Items.Clear();
             cbImageFileExist.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<FileExistAction>());
             cbImageFileExist.SelectedIndex = (int)TaskSettings.ImageSettings.FileExistAction;
@@ -244,7 +246,7 @@ namespace ShareX
 
             #region Effects
 
-            chkShowImageEffectsWindowAfterCapture.Checked = TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture;
+            cbShowImageEffectsWindowAfterCapture.Checked = TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture;
             cbImageEffectOnlyRegionCapture.Checked = TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture;
 
             #endregion Effects
@@ -317,6 +319,8 @@ namespace ShareX
             nudRegionCaptureFixedSizeWidth.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FixedSize.Width);
             nudRegionCaptureFixedSizeHeight.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FixedSize.Height);
             cbRegionCaptureShowFPS.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowFPS;
+            nudRegionCaptureFPSLimit.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FPSLimit);
+            cbRegionCaptureActiveMonitorMode.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
 
             #endregion Region capture
 
@@ -326,7 +330,7 @@ namespace ShareX
             nudGIFFPS.SetValue(TaskSettings.CaptureSettings.GIFFPS);
             cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
-            chkScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
+            cbScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
             nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
             cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
             cbScreenRecordTwoPassEncoding.Checked = TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding;
@@ -339,15 +343,43 @@ namespace ShareX
 
             OCROptions ocrOptions = TaskSettings.CaptureSettings.OCROptions;
 
-            cbCaptureOCRDefaultLanguage.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
-            cbCaptureOCRDefaultLanguage.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+            try
+            {
+                OCRLanguage[] languages = OCRHelper.AvailableLanguages.OrderBy(x => x.DisplayName).ToArray();
+
+                if (languages.Length > 0)
+                {
+                    cbCaptureOCRDefaultLanguage.Items.AddRange(languages);
+
+                    if (ocrOptions.Language == null)
+                    {
+                        cbCaptureOCRDefaultLanguage.SelectedIndex = 0;
+                        ocrOptions.Language = languages[0].LanguageTag;
+                    }
+                    else
+                    {
+                        int index = Array.FindIndex(languages, x => x.LanguageTag.Equals(ocrOptions.Language, StringComparison.OrdinalIgnoreCase));
+
+                        if (index >= 0)
+                        {
+                            cbCaptureOCRDefaultLanguage.SelectedIndex = index;
+                        }
+                        else
+                        {
+                            cbCaptureOCRDefaultLanguage.SelectedIndex = 0;
+                            ocrOptions.Language = languages[0].LanguageTag;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                cbCaptureOCRDefaultLanguage.Enabled = false;
+            }
 
             cbCaptureOCRSilent.Checked = ocrOptions.Silent;
-            cbCaptureOCRProcessOnLoad.Checked = ocrOptions.ProcessOnLoad;
+            cbCaptureOCRAutoCopy.Enabled = !ocrOptions.Silent;
             cbCaptureOCRAutoCopy.Checked = ocrOptions.AutoCopy;
-
-            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
-            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
 
             #endregion OCR
 
@@ -361,7 +393,6 @@ namespace ShareX
             txtNameFormatPatternActiveWindow.Text = TaskSettings.UploadSettings.NameFormatPatternActiveWindow;
             CodeMenu.Create<CodeMenuEntryFilename>(txtNameFormatPattern, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtNameFormatPatternActiveWindow, CodeMenuEntryFilename.n);
-            cbRegionCaptureUseWindowPattern.Checked = TaskSettings.UploadSettings.RegionCaptureUseWindowPattern;
             cbFileUploadUseNamePattern.Checked = TaskSettings.UploadSettings.FileUploadUseNamePattern;
             nudAutoIncrementNumber.Value = Program.Settings.NameParserAutoIncrementNumber;
             UpdateNameFormatPreviews();
@@ -680,7 +711,8 @@ namespace ShareX
 
         private void UpdateTaskTabMenuNames()
         {
-            btnTask.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Task___0_, TaskSettings.Job.GetLocalizedDescription());
+            btnTask.Text = TaskSettings.Job.GetLocalizedDescription();
+            btnTask.Image = TaskHelpers.FindMenuIcon(TaskSettings.Job);
 
             btnAfterCapture.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_,
                 string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags().Select(x => x.GetLocalizedDescription())));
@@ -727,26 +759,26 @@ namespace ShareX
             btnDestinations.Enabled = !TaskSettings.UseDefaultDestinations;
         }
 
-        private void chkOverrideFTP_CheckedChanged(object sender, EventArgs e)
+        private void cbOverrideFTPAccount_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.OverrideFTP = chkOverrideFTP.Checked;
-            cboFTPaccounts.Enabled = TaskSettings.OverrideFTP;
+            TaskSettings.OverrideFTP = cbOverrideFTPAccount.Checked;
+            cbFTPAccounts.Enabled = TaskSettings.OverrideFTP;
         }
 
-        private void cboFTPaccounts_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbFTPAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.FTPIndex = cboFTPaccounts.SelectedIndex;
+            TaskSettings.FTPIndex = cbFTPAccounts.SelectedIndex;
         }
 
-        private void chkOverrideCustomUploader_CheckedChanged(object sender, EventArgs e)
+        private void cbOverrideCustomUploader_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.OverrideCustomUploader = chkOverrideCustomUploader.Checked;
-            cbOverrideCustomUploader.Enabled = TaskSettings.OverrideCustomUploader;
+            TaskSettings.OverrideCustomUploader = cbOverrideCustomUploader.Checked;
+            cbCustomUploaders.Enabled = TaskSettings.OverrideCustomUploader;
         }
 
-        private void cbOverrideCustomUploader_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbCustomUploaders_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.CustomUploaderIndex = cbOverrideCustomUploader.SelectedIndex;
+            TaskSettings.CustomUploaderIndex = cbCustomUploaders.SelectedIndex;
         }
 
         private void cbOverrideScreenshotsFolder_CheckedChanged(object sender, EventArgs e)
@@ -762,7 +794,7 @@ namespace ShareX
 
         private void btnScreenshotsFolderBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
+            FileHelpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
                 txtScreenshotsFolder, TaskSettings.ScreenshotsFolder, true);
         }
 
@@ -770,9 +802,9 @@ namespace ShareX
 
         #region General
 
-        private void chkUseDefaultGeneralSettings_CheckedChanged(object sender, EventArgs e)
+        private void cbUseDefaultGeneralSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultGeneralSettings = !chkOverrideGeneralSettings.Checked;
+            TaskSettings.UseDefaultGeneralSettings = !cbOverrideGeneralSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -832,6 +864,11 @@ namespace ShareX
             TaskSettings.GeneralSettings.ToastWindowMiddleClickAction = (ToastClickAction)cbToastWindowMiddleClickAction.SelectedIndex;
         }
 
+        private void cbToastWindowAutoHide_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowAutoHide = cbToastWindowAutoHide.Checked;
+        }
+
         private void cbUseCustomCaptureSound_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.UseCustomCaptureSound = cbUseCustomCaptureSound.Checked;
@@ -845,7 +882,7 @@ namespace ShareX
 
         private void btnCustomCaptureSoundPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtCustomCaptureSoundPath);
+            FileHelpers.BrowseFile(txtCustomCaptureSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbUseCustomTaskCompletedSound_CheckedChanged(object sender, EventArgs e)
@@ -861,7 +898,7 @@ namespace ShareX
 
         private void btnCustomTaskCompletedSoundPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtCustomTaskCompletedSoundPath);
+            FileHelpers.BrowseFile(txtCustomTaskCompletedSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbUseCustomErrorSound_CheckedChanged(object sender, EventArgs e)
@@ -877,7 +914,7 @@ namespace ShareX
 
         private void btnCustomErrorSoundPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtCustomErrorSoundPath);
+            FileHelpers.BrowseFile(txtCustomErrorSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbDisableNotifications_CheckedChanged(object sender, EventArgs e)
@@ -894,9 +931,9 @@ namespace ShareX
 
         #region Image
 
-        private void chkUseDefaultImageSettings_CheckedChanged(object sender, EventArgs e)
+        private void cbUseDefaultImageSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultImageSettings = !chkOverrideImageSettings.Checked;
+            TaskSettings.UseDefaultImageSettings = !cbOverrideImageSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -924,11 +961,17 @@ namespace ShareX
         {
             TaskSettings.ImageSettings.ImageAutoUseJPEG = cbImageAutoUseJPEG.Checked;
             nudImageAutoUseJPEGSize.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
+            cbImageAutoJPEGQuality.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
         }
 
         private void nudImageAutoUseJPEGSize_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageAutoUseJPEGSize = (int)nudImageAutoUseJPEGSize.Value;
+        }
+
+        private void cbImageAutoJPEGQuality_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ImageAutoJPEGQuality = cbImageAutoJPEGQuality.Checked;
         }
 
         private void cbImageFileExist_SelectedIndexChanged(object sender, EventArgs e)
@@ -941,9 +984,9 @@ namespace ShareX
             TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture = cbImageEffectOnlyRegionCapture.Checked;
         }
 
-        private void chkShowImageEffectsWindowAfterCapture_CheckedChanged(object sender, EventArgs e)
+        private void cbShowImageEffectsWindowAfterCapture_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture = chkShowImageEffectsWindowAfterCapture.Checked;
+            TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture = cbShowImageEffectsWindowAfterCapture.Checked;
         }
 
         private void btnImageEffects_Click(object sender, EventArgs e)
@@ -978,9 +1021,9 @@ namespace ShareX
 
         #region General
 
-        private void chkUseDefaultCaptureSettings_CheckedChanged(object sender, EventArgs e)
+        private void cbUseDefaultCaptureSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultCaptureSettings = !chkOverrideCaptureSettings.Checked;
+            TaskSettings.UseDefaultCaptureSettings = !cbOverrideCaptureSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -1042,9 +1085,7 @@ namespace ShareX
 
         private void btnCaptureCustomRegionSelectRectangle_Click(object sender, EventArgs e)
         {
-            Rectangle rect;
-
-            if (RegionCaptureTasks.GetRectangleRegion(out rect, TaskSettings.CaptureSettings.SurfaceOptions))
+            if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect, TaskSettings.CaptureSettings.SurfaceOptions))
             {
                 nudCaptureCustomRegionX.SetValue(rect.X);
                 nudCaptureCustomRegionY.SetValue(rect.Y);
@@ -1198,13 +1239,23 @@ namespace ShareX
             TaskSettings.CaptureSettings.SurfaceOptions.ShowFPS = cbRegionCaptureShowFPS.Checked;
         }
 
+        private void nudRegionCaptureFPSLimit_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.SurfaceOptions.FPSLimit = (int)nudRegionCaptureFPSLimit.Value;
+        }
+
+        private void cbRegionCaptureActiveMonitorMode_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode = cbRegionCaptureActiveMonitorMode.Checked;
+        }
+
         #endregion Region capture
 
         #region Screen recorder
 
         private void btnScreenRecorderFFmpegOptions_Click(object sender, EventArgs e)
         {
-            ScreencastOptions options = new ScreencastOptions
+            ScreenRecordingOptions options = new ScreenRecordingOptions
             {
                 IsRecording = true,
                 FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
@@ -1217,7 +1268,6 @@ namespace ShareX
 
             using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
             {
-                form.DefaultToolsFolder = Program.ToolsFolder;
                 form.ShowDialog();
 
                 TaskSettings.CaptureSettings.FFmpegOptions = form.Options.FFmpeg;
@@ -1245,10 +1295,10 @@ namespace ShareX
             TaskSettings.CaptureSettings.ScreenRecordDuration = (float)nudScreenRecorderDuration.Value;
         }
 
-        private void chkScreenRecordAutoStart_CheckedChanged(object sender, EventArgs e)
+        private void cbScreenRecordAutoStart_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.ScreenRecordAutoStart = chkScreenRecordAutoStart.Checked;
-            nudScreenRecorderStartDelay.Enabled = chkScreenRecordAutoStart.Checked;
+            TaskSettings.CaptureSettings.ScreenRecordAutoStart = cbScreenRecordAutoStart.Checked;
+            nudScreenRecorderStartDelay.Enabled = cbScreenRecordAutoStart.Checked;
         }
 
         private void nudScreenRecorderStartDelay_ValueChanged(object sender, EventArgs e)
@@ -1282,20 +1332,21 @@ namespace ShareX
 
         private void cbCaptureOCRDefaultLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.OCROptions.DefaultLanguage = (OCRSpaceLanguages)cbCaptureOCRDefaultLanguage.SelectedIndex;
+            if (loaded)
+            {
+                TaskSettings.CaptureSettings.OCROptions.Language = ((OCRLanguage)cbCaptureOCRDefaultLanguage.SelectedItem).LanguageTag;
+            }
+        }
+
+        private void btnCaptureOCRHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.DocsOCR);
         }
 
         private void cbCaptureOCRSilent_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.Silent = cbCaptureOCRSilent.Checked;
-
-            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
-            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
-        }
-
-        private void cbCaptureOCRProcessOnLoad_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.OCROptions.ProcessOnLoad = cbCaptureOCRProcessOnLoad.Checked;
+            cbCaptureOCRAutoCopy.Enabled = !TaskSettings.CaptureSettings.OCROptions.Silent;
         }
 
         private void cbCaptureOCRAutoCopy_CheckedChanged(object sender, EventArgs e)
@@ -1331,9 +1382,9 @@ namespace ShareX
                 nameParser.Parse(TaskSettings.UploadSettings.NameFormatPatternActiveWindow);
         }
 
-        private void chkUseDefaultUploadSettings_CheckedChanged(object sender, EventArgs e)
+        private void cbUseDefaultUploadSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultUploadSettings = !chkOverrideUploadSettings.Checked;
+            TaskSettings.UseDefaultUploadSettings = !cbOverrideUploadSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -1347,11 +1398,6 @@ namespace ShareX
         {
             TaskSettings.UploadSettings.NameFormatPatternActiveWindow = txtNameFormatPatternActiveWindow.Text;
             UpdateNameFormatPreviews();
-        }
-
-        private void cbRegionCaptureUseWindowPattern_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.UploadSettings.RegionCaptureUseWindowPattern = cbRegionCaptureUseWindowPattern.Checked;
         }
 
         private void cbFileUploadUseNamePattern_CheckedChanged(object sender, EventArgs e)
@@ -1374,9 +1420,7 @@ namespace ShareX
 
         private void cbNameFormatTimeZone_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TimeZoneInfo timeZoneInfo = cbNameFormatTimeZone.SelectedItem as TimeZoneInfo;
-
-            if (timeZoneInfo != null)
+            if (cbNameFormatTimeZone.SelectedItem is TimeZoneInfo timeZoneInfo)
             {
                 TaskSettings.UploadSettings.CustomTimeZone = timeZoneInfo;
             }
@@ -1428,9 +1472,7 @@ namespace ShareX
 
         private UploaderFilter GetUploaderFilterFromFields()
         {
-            IGenericUploaderService service = cbUploaderFiltersDestination.SelectedItem as IGenericUploaderService;
-
-            if (service != null)
+            if (cbUploaderFiltersDestination.SelectedItem is IGenericUploaderService service)
             {
                 UploaderFilter filter = new UploaderFilter();
                 filter.Uploader = service.ServiceIdentifier;
@@ -1462,9 +1504,8 @@ namespace ShareX
 
             for (int i = 0; i < cbUploaderFiltersDestination.Items.Count; i++)
             {
-                IGenericUploaderService service = cbUploaderFiltersDestination.Items[i] as IGenericUploaderService;
-
-                if (service != null && service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
+                if (cbUploaderFiltersDestination.Items[i] is IGenericUploaderService service &&
+                    service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.OrdinalIgnoreCase))
                 {
                     cbUploaderFiltersDestination.SelectedIndex = i;
                     break;
@@ -1536,9 +1577,9 @@ namespace ShareX
 
         #region Actions
 
-        private void chkUseDefaultActions_CheckedChanged(object sender, EventArgs e)
+        private void cbUseDefaultActions_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultActions = !chkOverrideActions.Checked;
+            TaskSettings.UseDefaultActions = !cbOverrideActions.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -1610,7 +1651,7 @@ namespace ShareX
 
         private void btnActions_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_ACTIONS);
+            URLHelpers.OpenURL(Links.Actions);
         }
 
         private void lvActions_SelectedIndexChanged(object sender, EventArgs e)
@@ -1717,9 +1758,9 @@ namespace ShareX
 
         #region Tools
 
-        private void chkUseDefaultToolsSettings_CheckedChanged(object sender, EventArgs e)
+        private void cbUseDefaultToolsSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultToolsSettings = !chkOverrideToolsSettings.Checked;
+            TaskSettings.UseDefaultToolsSettings = !cbOverrideToolsSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 
@@ -1742,9 +1783,9 @@ namespace ShareX
 
         #region Advanced
 
-        private void chkUseDefaultAdvancedSettings_CheckedChanged(object sender, EventArgs e)
+        private void cbUseDefaultAdvancedSettings_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.UseDefaultAdvancedSettings = !chkOverrideAdvancedSettings.Checked;
+            TaskSettings.UseDefaultAdvancedSettings = !cbOverrideAdvancedSettings.Checked;
             UpdateDefaultSettingVisibility();
         }
 

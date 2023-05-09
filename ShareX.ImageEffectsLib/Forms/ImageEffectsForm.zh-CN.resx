@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 图像效果</value>
+    <value>ShareX - 图像特效</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>确定</value>
@@ -171,13 +171,16 @@
   <data name="btnPresetRemove.ToolTip" xml:space="preserve">
     <value>移除</value>
   </data>
-  <data name="lblEffect.Text" xml:space="preserve">
-    <value>效果:</value>
-  </data>
   <data name="lblEffects.Text" xml:space="preserve">
     <value>效果:</value>
   </data>
   <data name="lblPresets.Text" xml:space="preserve">
     <value>预设:</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>图像特效...</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>特效名称：</value>
   </data>
 </root>

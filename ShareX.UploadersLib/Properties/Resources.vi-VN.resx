@@ -181,7 +181,7 @@
     <value>Đăng ký SendSpace</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>Lỗi: Kết quả trống</value>
+    <value>Lỗi: Kết quả trống.</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
     <value>Đã kết nối!</value>
@@ -191,7 +191,7 @@
 Các thư mục đã tạo:</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Đường dẫn tới album cha, v.d.</value>
+    <value>Đường dẫn tới album cha, v.d:</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>Nhấn nút làm mới</value>
@@ -203,10 +203,10 @@ Các thư mục đã tạo:</value>
     <value>"Tên biểu mẫu tệp" phải được thiết lập.</value>
   </data>
   <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>"URL yêu cầu" phải được thiết lập</value>
+    <value>"URL yêu cầu" phải được thiết lập.</value>
   </data>
   <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>"URL yêu cầu" phải được thiết lập</value>
+    <value>"URL yêu cầu" phải được thiết lập.</value>
   </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>Tệp key không tồn tại.</value>
@@ -232,13 +232,52 @@ Các thư mục đã tạo:</value>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>Xóa tất cả trình tải lên tùy chỉnh?</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Xử lý dữ liệu trả về gặp lỗi.</value>
-  </data>
   <data name="DuplicateNameNotAllowed" xml:space="preserve">
     <value>Không cho phép trùng tên.</value>
   </data>
   <data name="txtB2BucketWatermark" xml:space="preserve">
     <value>Tùy chọn, chỉ dùng nếu bạn không chọn một bucket khi tạo key</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>URL xóa</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Không xuất được.</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>Định dạng không thành công.</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>Định dạng không thành công.</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>Ổ đĩa của tôi</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>Đã đăng nhập với tên {0}.</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>URL phản hồi</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>Văn bản phản hồi</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>URL rút gọn</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>URL hình thu nhỏ</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Mã trạng thái</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
   </data>
 </root>

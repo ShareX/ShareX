@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>Chế độ xem:</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Cài đặt lịch sử hình ảnh</value>
   </data>
@@ -137,5 +134,8 @@
   </data>
   <data name="cbFilterMissingFiles.Text" xml:space="preserve">
     <value>Lọc các tệp bị thiếu</value>
+  </data>
+  <data name="cbRememberWindowState.Text" xml:space="preserve">
+    <value>Ghi nhớ trạng thái cửa sổ</value>
   </data>
 </root>

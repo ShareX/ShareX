@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,6 +30,8 @@ namespace ShareX.HelpersLib
 {
     public class AppVeyorUpdateChecker : UpdateChecker
     {
+        public string Branch { get; set; } = "master";
+
         public override void CheckUpdate()
         {
             try
@@ -37,22 +39,21 @@ namespace ShareX.HelpersLib
                 AppVeyor appveyor = new AppVeyor()
                 {
                     AccountName = "ShareX",
-                    ProjectSlug = "sharex",
-                    Proxy = Proxy
+                    ProjectSlug = "sharex"
                 };
 
-                AppVeyorProject project = appveyor.GetProjectByBranch("master");
+                AppVeyorProject project = appveyor.GetProjectByBranch(Branch);
 
-                if (!project.build.status.Equals("success", StringComparison.InvariantCultureIgnoreCase) &&
-                    !project.build.status.Equals("running", StringComparison.InvariantCultureIgnoreCase))
+                if (!project.build.status.Equals("success", StringComparison.OrdinalIgnoreCase) &&
+                    !project.build.status.Equals("running", StringComparison.OrdinalIgnoreCase))
                 {
                     throw new Exception("Latest project build is not successful.");
                 }
 
                 AppVeyorProjectJob job = project.build.jobs.FirstOrDefault(x =>
-                    x.name.Equals("Configuration: Release", StringComparison.InvariantCultureIgnoreCase) &&
-                    x.osType.Equals("Windows", StringComparison.InvariantCultureIgnoreCase) &&
-                    x.status.Equals("success", StringComparison.InvariantCultureIgnoreCase));
+                    x.name.Equals("Configuration: Release", StringComparison.OrdinalIgnoreCase) &&
+                    x.osType.Equals("Windows", StringComparison.OrdinalIgnoreCase) &&
+                    x.status.Equals("success", StringComparison.OrdinalIgnoreCase));
 
                 if (job == null)
                 {
@@ -61,14 +62,25 @@ namespace ShareX.HelpersLib
 
                 AppVeyorProjectArtifact[] artifacts = appveyor.GetArtifacts(job.jobId);
 
-                AppVeyorProjectArtifact artifact = artifacts.FirstOrDefault(x => x.name.Equals("Setup", StringComparison.InvariantCultureIgnoreCase));
+                string deploymentName;
+
+                if (IsPortable)
+                {
+                    deploymentName = "Portable";
+                }
+                else
+                {
+                    deploymentName = "Setup";
+                }
+
+                AppVeyorProjectArtifact artifact = artifacts.FirstOrDefault(x => x.name.Equals(deploymentName, StringComparison.OrdinalIgnoreCase));
 
                 if (artifact == null)
                 {
-                    throw new Exception("Unable to find setup file.");
+                    throw new Exception($"Unable to find \"{deploymentName}\" file.");
                 }
 
-                Filename = artifact.fileName;
+                FileName = artifact.fileName;
                 DownloadURL = appveyor.GetArtifactDownloadURL(job.jobId, artifact.fileName);
                 if (Version.TryParse(project.build.version, out Version version))
                 {

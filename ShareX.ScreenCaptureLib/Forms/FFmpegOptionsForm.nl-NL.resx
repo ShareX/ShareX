@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Kopieer</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Download</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Ververs</value>
   </data>
@@ -134,18 +131,6 @@
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Gebruik aangepaste commando's</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Extra command line argumenten</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Voorbeeld van command line</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Bronnen</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bitrate:</value>
@@ -202,9 +187,6 @@ Standaard: sierra2_4a.</value>
 verschil: Bereken de histogrammen enkel voor afwijkende delen tegenover het vorige frame. Dit kan belangrijk zijn om een grotere prioriteit te geven aan bewegende delen bij een statische achtergrond.
 
 Standaard: volledig.</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg pad</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>Een preset is een verzameling van opties die een bepaalde encoding snelheid en compressieratio opleveren. Een tragere preset zal meer compressie opleveren (compressie is kwaliteit tegenover bestandsgrootte).

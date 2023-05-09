@@ -124,19 +124,19 @@
     <value>削除</value>
   </data>
   <data name="btnMoveUp.Text" xml:space="preserve">
-    <value>一つ上に</value>
+    <value>上に移動</value>
   </data>
   <data name="btnMoveDown.Text" xml:space="preserve">
-    <value>一つ下に</value>
+    <value>下に移動</value>
   </data>
   <data name="chFilepath.Text" xml:space="preserve">
     <value>画像ファイルの場所</value>
   </data>
   <data name="btnCombine.Text" xml:space="preserve">
-    <value>画像を結合し、キャプチャー後の設定にしたがい、アップロード/保存を実行する</value>
+    <value>画像を結合し、キャプチャー後の設定に従い、保存/アップロード</value>
   </data>
   <data name="lblSpace.Text" xml:space="preserve">
-    <value>画像の間隔:</value>
+    <value>画像間の間隔:</value>
   </data>
   <data name="lblOrientation.Text" xml:space="preserve">
     <value>結合方向:</value>
@@ -146,5 +146,23 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 画像の結合</value>
+  </data>
+  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
+    <value>横方向</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>縦方向</value>
+  </data>
+  <data name="lblImageAlignment.Text" xml:space="preserve">
+    <value>画像の位置調整:</value>
+  </data>
+  <data name="cbAutoFillBackground.Text" xml:space="preserve">
+    <value>背景を自動で埋める</value>
+  </data>
+  <data name="lblWrapAfterImages.Text" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="lblWrapAfter.Text" xml:space="preserve">
+    <value>枚数ごとに折り返す:</value>
   </data>
 </root>

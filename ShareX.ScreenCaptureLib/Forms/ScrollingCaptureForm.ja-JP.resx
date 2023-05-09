@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnSelectHandle.Text" xml:space="preserve">
-    <value>スクロール ウィンドウまたはコントロールを選択...</value>
+    <value>スクロールするウィンドウまたはコントロールを選択...</value>
   </data>
   <data name="btnCapture.Text" xml:space="preserve">
     <value>キャプチャー開始</value>
@@ -145,7 +145,7 @@
     <value>キャプチャー前</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>注意: ShareXは正確なスクロール キャプチャーの描画に最大限の努力をしますが、それでもなおすべてのスクロール内容を完全には再現できません。特に結合時に問題となるものとして、ウェブページにあるアニメーションGIFなどの動きのある物が、スクロール時に問題となるものとして、スクロールで移動しない固定されたメニューやボタンなどがあります。</value>
+    <value>注意: ShareXは、正確なスクロール キャプチャーの描画に最善の努力をしますが、それでもスクロールされるすべての内容を正しく取り込めないことがあります。結合時に問題となる主な理由は、ウェブページ上のアニメーションGIFなどの動きや、スクロール時では、スクロールしても移動しない固定されたメニューなどです。</value>
   </data>
   <data name="tpCapture.Text" xml:space="preserve">
     <value>キャプチャー</value>
@@ -154,13 +154,13 @@
     <value>出力</value>
   </data>
   <data name="cbRemoveDuplicates.Text" xml:space="preserve">
-    <value>重複画像を削除する</value>
+    <value>重複画像を削除</value>
   </data>
   <data name="cbAutoCombine.Text" xml:space="preserve">
-    <value>キャプチャー後自動でオフセットを推測して結合する</value>
+    <value>自動で補正箇所を推測して画像を結合</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>キャプチャー後の設定にしたがい、アップロード/保存を実行する</value>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>キャプチャー後の設定に従い、保存/アップロード</value>
   </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>キャプチャー前に最上部にスクロールする方法:</value>
@@ -169,10 +169,10 @@
     <value>開始までの待ち時間 (ミリ秒):</value>
   </data>
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
-    <value>このウィンドウを開く前に自動でキャプチャー領域選択を開始する</value>
+    <value>このウィンドウを開く前に自動でキャプチャー領域の選択を開始</value>
   </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
-    <value>領域選択後すぐにスクロール キャプチャーを開始する</value>
+    <value>領域選択後すぐにスクロール キャプチャーを開始</value>
   </data>
   <data name="btnSelectRectangle.Text" xml:space="preserve">
     <value>(オプション) ウィンドウ内の独自の領域を選択...</value>
@@ -187,16 +187,16 @@
     <value>最後を削除:</value>
   </data>
   <data name="btnResetCombine.Text" xml:space="preserve">
-    <value>出力オプションをリセットする</value>
+    <value>出力オプションをリセット</value>
   </data>
   <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
-    <value>結合の調整量を推測して結合する</value>
+    <value>結合の調整量を推測して結合</value>
   </data>
   <data name="btnStartTask.Text" xml:space="preserve">
-    <value>キャプチャー後の設定にしたがい、アップロード/保存を実行する</value>
+    <value>キャプチャー後の設定に従い、保存/アップロードを実行</value>
   </data>
   <data name="btnGuessEdges.Text" xml:space="preserve">
-    <value>周囲のトリミング量を推測する</value>
+    <value>周囲のトリミング量を推測</value>
   </data>
   <data name="gbCombineAdjustments.Text" xml:space="preserve">
     <value>結合の調整</value>
@@ -223,7 +223,7 @@
     <value>左:</value>
   </data>
   <data name="lblProcessing.Text" xml:space="preserve">
-    <value>処理しています...</value>
+    <value>処理中...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - スクロール キャプチャー</value>

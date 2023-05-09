@@ -117,13 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>テキスト</value>
-  </data>
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Web ブラウザ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 応答</value>
+    <value>ShareX - レスポンス</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
+    <value>削除用URLをコピー</value>
+  </data>
+  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
+    <value>短縮URLをコピー</value>
+  </data>
+  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
+    <value>サムネイルのURLをコピー</value>
+  </data>
+  <data name="tsbCopyURL.Text" xml:space="preserve">
+    <value>URLをコピー</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>JSON形式</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>XML形式</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>レスポンス情報</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>レスポンス文字列</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>レスポンスをコピー</value>
   </data>
 </root>

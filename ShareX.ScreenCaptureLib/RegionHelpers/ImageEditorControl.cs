@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
 
         public bool Visible { get; set; }
         public bool HandleMouseInput { get; set; } = true;
-        public Rectangle Rectangle { get; set; }
+        public RectangleF Rectangle { get; set; }
 
         private bool isCursorHover;
 
@@ -85,38 +85,26 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnMouseEnter()
         {
-            if (MouseEnter != null)
-            {
-                MouseEnter();
-            }
+            MouseEnter?.Invoke();
         }
 
         public virtual void OnMouseLeave()
         {
-            if (MouseLeave != null)
-            {
-                MouseLeave();
-            }
+            MouseLeave?.Invoke();
         }
 
         public virtual void OnMouseDown(Point position)
         {
             IsDragging = true;
 
-            if (MouseDown != null)
-            {
-                MouseDown(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
-            }
+            MouseDown?.Invoke(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
         }
 
         public virtual void OnMouseUp(Point position)
         {
             IsDragging = false;
 
-            if (MouseUp != null)
-            {
-                MouseUp(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
-            }
+            MouseUp?.Invoke(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
         }
     }
 }

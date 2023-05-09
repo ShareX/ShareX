@@ -179,9 +179,6 @@ Par exemple, si votre bucket est appelé bucket.example.com alors l'URL sera htt
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Mot de passe :</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonyme</value>
-  </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>Dossier partagé</value>
   </data>
@@ -335,18 +332,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Utiliser l'URL directe si elle existe</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Connexion</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Adresse e-mail :</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Mot de passe :</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Connexion requise.</value>
   </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur :</value>
@@ -825,23 +810,11 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="lblGistCustomURLExample.Text" xml:space="preserve">
     <value>Exemple : https://api.github.com</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>jours</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>heures</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>minutes</value>
-  </data>
   <data name="cbPlikOneShot.Text" xml:space="preserve">
     <value>Détruire après le premier téléchargement</value>
   </data>
   <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>Autres paramètres</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>jamais</value>
   </data>
   <data name="lblPlikURL.Text" xml:space="preserve">
     <value>Hôte</value>
@@ -1041,9 +1014,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="cbAzureStorageEnvironment.Items1" xml:space="preserve">
     <value>blob.core.usgovcloudapi.net</value>
   </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
-  </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
   </data>
@@ -1110,9 +1080,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="lblLithiioEmail.Text" xml:space="preserve">
     <value>Adresse e-mail :</value>
   </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Entrer une URL personnalisée qui va remplacer l'hôte et le chemin que BackBlaze retourne.</value>
-  </data>
   <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
     <value>Exemple : google.page.link</value>
   </data>
@@ -1160,17 +1127,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   </data>
   <data name="cbKuttReuse.Text" xml:space="preserve">
     <value>Si une URL avec la cible spécifiée existe, la retourner</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Si activé, l'URL que vous recevrez sera le chemin de mise en ligne
-ajouté à l'URL donnée.
-
-Ceci est utile en conjonction avec un service comme CloudFlare ou
-un autre service agissant comme un frontal vers B2. Voir l'article
-"Créer une URL de vanité avec B2" dans la base de connaissance B2.
-
-Si désactivé, alors l'URL que vous recevrez sera déterminée
-par Backblaze B2. </value>
   </data>
   <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
     <value>Conserver l'audio</value>
@@ -1265,13 +1221,6 @@ par Backblaze B2. </value>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>Utiliser le lien raccourci</value>
   </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>Où stocker vos fichiers.
-
-Ceci ne prend effet que si vous n'avez pas mis
-"Autoriser l'accès au(x) bucket(s)" sur un bucket
-quand vous avez créé la clé d'application.</value>
-  </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Diffusable</value>
   </data>
@@ -1299,20 +1248,11 @@ quand vous avez créé la clé d'application.</value>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Utiliser une URL personnalisée (supporte le format de modèle) :</value>
   </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>La clé d'ID de l'application. Elle ressemble à une chaîne de minuscules et de nombres hexadécimaux.</value>
-  </data>
   <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
     <value>Utiliser l'extension de fichier pour la coloration syntaxique (excepté les .txt)</value>
   </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>La clé d'application. Ressemble à des caractères alphanumériques.</value>
-  </data>
   <data name="lblSFTPKeyPassphrase.Text" xml:space="preserve">
     <value>Clé de la phrase secrète :</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>Le chemin vers votre fichier. Utilise le format de modèle de nom.</value>
   </data>
   <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
     <value>Prévisualisation de l'URL :</value>

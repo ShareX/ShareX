@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -88,9 +88,7 @@ namespace ShareX.HelpersLib
                 // Clear the checked state for all siblings.
                 foreach (ToolStripItem item in Parent.Items)
                 {
-                    ToolStripRadioButtonMenuItem radioItem = item as ToolStripRadioButtonMenuItem;
-
-                    if (radioItem != null && radioItem != this && radioItem.Checked)
+                    if (item is ToolStripRadioButtonMenuItem radioItem && radioItem != this && radioItem.Checked)
                     {
                         radioItem.Checked = false;
 
@@ -210,11 +208,9 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                ToolStripMenuItem ownerMenuItem = OwnerItem as ToolStripMenuItem;
-
                 // Use the base value in design mode to prevent the designer
                 // from setting the base value to the calculated value.
-                if (!DesignMode && ownerMenuItem != null && ownerMenuItem.CheckOnClick)
+                if (!DesignMode && OwnerItem is ToolStripMenuItem ownerMenuItem && ownerMenuItem.CheckOnClick)
                 {
                     return base.Enabled && ownerMenuItem.Checked;
                 }
@@ -232,9 +228,7 @@ namespace ShareX.HelpersLib
         // CheckedChanged event.
         protected override void OnOwnerChanged(EventArgs e)
         {
-            ToolStripMenuItem ownerMenuItem = OwnerItem as ToolStripMenuItem;
-
-            if (ownerMenuItem != null && ownerMenuItem.CheckOnClick)
+            if (OwnerItem is ToolStripMenuItem ownerMenuItem && ownerMenuItem.CheckOnClick)
             {
                 ownerMenuItem.CheckedChanged += OwnerMenuItem_CheckedChanged;
             }

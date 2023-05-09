@@ -162,9 +162,6 @@
   <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
     <value>Alt</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Yeni satır: Ctrl + Enter</value>
-  </data>
   <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
     <value>Yatay</value>
   </data>
@@ -172,12 +169,27 @@
     <value>Dikey</value>
   </data>
   <data name="tsmiSecondColor.Text" xml:space="preserve">
-    <value>İkinci yazı rengi:</value>
+    <value>İkinci yazı rengi...</value>
   </data>
   <data name="lblFont.Text" xml:space="preserve">
     <value>Yazı tipi:</value>
   </data>
   <data name="lblTextSize.Text" xml:space="preserve">
     <value>Boyut:</value>
+  </data>
+  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
+    <value>İleri çapraz</value>
+  </data>
+  <data name="btnGradient.ToolTip" xml:space="preserve">
+    <value>Gradyan</value>
+  </data>
+  <data name="tsmiGradientMode.Text" xml:space="preserve">
+    <value>Gradyan modu</value>
+  </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
+    <value>Geriye çapraz</value>
+  </data>
+  <data name="tsmiEnableGradient.Text" xml:space="preserve">
+    <value>Gradyan etkinleştir</value>
   </data>
 </root>

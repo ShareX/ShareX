@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -96,9 +96,7 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                bool createdNew;
-
-                using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, EventName, out createdNew))
+                using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, EventName, out bool createdNew))
                 {
                     // Mixing single instance and multi instance (via command line parameter) copies of the program can
                     //  result in CreateFirstInstance being called if it isn't really the first one. Make sure this is
@@ -151,9 +149,7 @@ namespace ShareX.HelpersLib
             IpcClientChannel clientChannel = new IpcClientChannel();
             ChannelServices.RegisterChannel(clientChannel, true);
 
-            InstanceProxy proxy = Activator.GetObject(typeof(InstanceProxy), string.Format("ipc://{0}{1}{2}/{2}", Environment.MachineName, Environment.UserName, uri)) as InstanceProxy;
-
-            if (proxy != null)
+            if (Activator.GetObject(typeof(InstanceProxy), string.Format("ipc://{0}{1}{2}/{2}", Environment.MachineName, Environment.UserName, uri)) is InstanceProxy proxy)
             {
                 proxy.SetCommandLineArgs(InstanceProxy.CommandLineArgs);
             }
@@ -171,9 +167,7 @@ namespace ShareX.HelpersLib
 
         private void WaitOrTimerCallback(object state, bool timedOut)
         {
-            EventHandler<InstanceCallbackEventArgs> callback = state as EventHandler<InstanceCallbackEventArgs>;
-
-            if (callback != null)
+            if (state is EventHandler<InstanceCallbackEventArgs> callback)
             {
                 try
                 {

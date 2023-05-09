@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -78,12 +78,12 @@ namespace ShareX.ScreenCaptureLib
             DrawText(g, Text, TextOptions, Rectangle);
         }
 
-        protected void DrawText(Graphics g, string text, TextDrawingOptions options, Rectangle rect)
+        protected void DrawText(Graphics g, string text, TextDrawingOptions options, RectangleF rect)
         {
             DrawText(g, text, options.Color, options, rect);
         }
 
-        protected void DrawText(Graphics g, string text, Color textColor, TextDrawingOptions options, Rectangle rect)
+        protected void DrawText(Graphics g, string text, Color textColor, TextDrawingOptions options, RectangleF rect)
         {
             if (!string.IsNullOrEmpty(text) && rect.Width > 10 && rect.Height > 10)
             {
@@ -100,8 +100,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreating()
         {
-            Point pos = InputManager.ClientMousePosition;
-            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
+            PointF pos = Manager.Form.ScaledClientMousePosition;
+            Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
 
             if (ShowTextInputBox())
             {
@@ -115,7 +115,16 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreated()
         {
-            AutoSize(true);
+            OnCreated(true);
+        }
+
+        protected void OnCreated(bool autoSize)
+        {
+            if (autoSize)
+            {
+                AutoSize(true);
+            }
+
             base.OnCreated();
             ShowNodes();
         }
@@ -131,7 +140,7 @@ namespace ShareX.ScreenCaptureLib
 
             Manager.Form.Pause();
 
-            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions, SupportGradient))
+            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions, SupportGradient, Manager.Options.ColorPickerOptions))
             {
                 result = inputBox.ShowDialog(Manager.Form) == DialogResult.OK;
                 Text = inputBox.InputText;
@@ -159,18 +168,18 @@ namespace ShareX.ScreenCaptureLib
                 size = new Size(100, 60);
             }
 
-            Point location;
+            PointF location;
 
             if (center)
             {
-                location = new Point(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
+                location = new PointF(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
             }
             else
             {
                 location = Rectangle.Location;
             }
 
-            Rectangle = new Rectangle(location, size);
+            Rectangle = new RectangleF(location, size);
         }
     }
 }

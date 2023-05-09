@@ -186,9 +186,6 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>Enlace acortado</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Mostrar</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Texto</value>
   </data>
@@ -200,12 +197,6 @@
   </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Error</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>Ocultar estadísticas</value>
-  </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>Mostrar estadísticas</value>
   </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>Número de elementos del historial:</value>

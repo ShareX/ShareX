@@ -177,9 +177,6 @@
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>Automatisch die Auswahl des Aufnahmebereichs vor der Öffnung dieses Fensters starten</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Lade hoch / speichere abhängig von den Einstellungen nach der Aufnahme</value>
-  </data>
   <data name="lblMaximumScrollCount.Text" xml:space="preserve">
     <value>Maximale Scrollanzahl:</value>
   </data>

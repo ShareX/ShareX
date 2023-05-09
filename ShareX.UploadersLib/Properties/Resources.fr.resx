@@ -157,9 +157,6 @@ Dossiers créés :</value>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Dossier racine</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>L'analyse de la réponse a échoué.</value>
-  </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Erreur : Le résultat est vide.</value>
   </data>

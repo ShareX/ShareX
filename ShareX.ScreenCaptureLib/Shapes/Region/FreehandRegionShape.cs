@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,7 +34,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.RegionFreehand;
 
-        public Point LastPosition
+        public PointF LastPosition
         {
             get
             {
@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
                     return points[points.Count - 1];
                 }
 
-                return Point.Empty;
+                return PointF.Empty;
             }
             set
             {
@@ -54,7 +54,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private List<Point> points = new List<Point>();
+        private List<PointF> points = new List<PointF>();
         private bool isPolygonMode;
 
         protected override void UseLightResizeNodes()
@@ -68,11 +68,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (Manager.IsCornerMoving)
                 {
-                    Move(InputManager.MouseVelocity);
+                    Move(Manager.Form.ScaledClientMouseVelocity);
                 }
                 else
                 {
-                    Point pos = InputManager.ClientMousePosition;
+                    PointF pos = Manager.Form.ScaledClientMousePosition;
 
                     if (points.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
                     {
@@ -96,11 +96,11 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Manager.IsMoving)
             {
-                Move(InputManager.MouseVelocity);
+                Move(Manager.Form.ScaledClientMouseVelocity);
             }
         }
 
-        public override void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
         {
             if (points.Count > 2)
             {
@@ -112,7 +112,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void Move(int x, int y)
+        public override void Move(float x, float y)
         {
             for (int i = 0; i < points.Count; i++)
             {

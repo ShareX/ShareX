@@ -258,9 +258,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>segundos</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Iniciar la grabación después:</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>segundos</value>
   </data>
@@ -291,9 +288,6 @@
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Sólo aplicar efectos a región de captura</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Mostrar ventana de efectos de imagen después la captura</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Puede activar / desactivar los efectos de la imagen desde "Después de las tareas de captura -&gt; 
 Agregar efectos de imagen".</value>
@@ -318,9 +312,6 @@ Agregar efectos de imagen".</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Reproducir sonido después de que se complete la tarea</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Después de que se completó la tarea:</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tarea...</value>
@@ -348,11 +339,5 @@ Agregar efectos de imagen".</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Después de la captura...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Sobrescribir la configuración predeterminada del cuenta FTP</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Sobrescribir la configuración predeterminada del uploader personalizado</value>
   </data>
 </root>

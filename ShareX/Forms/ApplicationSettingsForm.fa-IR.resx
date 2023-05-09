@@ -343,9 +343,6 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>فرمت</value>
   </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>نتایج</value>
-  </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>دیگر آپلودکننده های فایل</value>
   </data>
@@ -360,9 +357,6 @@
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>تعداد سعی ها در صورتی که آپلود با مشکل مواجه شود.</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>دوباره سعی کن</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>آپلود</value>
@@ -474,9 +468,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - تنظیمات برنامه</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>در هنگام سعی مجدد از آپلودکننده های ثانویه استفاده کن.</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>

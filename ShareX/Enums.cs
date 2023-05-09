@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,7 +27,7 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 
-#if WindowsStore
+#if MicrosoftStore
 using Windows.ApplicationModel;
 #endif
 
@@ -67,10 +67,14 @@ namespace ShareX
         MexicanSpanish,
         [Description("فارسی (Persian)")]
         Persian,
+        [Description("Polski (Polish)")]
+        Polish,
         [Description("Português (Portuguese)")]
         Portuguese,
         [Description("Português-Brasil (Portuguese-Brazil)")]
         PortugueseBrazil,
+        [Description("Română (Romanian)")]
+        Romanian,
         [Description("Русский (Russian)")]
         Russian,
         [Description("简体中文 (Simplified Chinese)")]
@@ -120,19 +124,20 @@ namespace ShareX
         AddImageEffects = 1 << 2,
         AnnotateImage = 1 << 3,
         CopyImageToClipboard = 1 << 4,
-        SendImageToPrinter = 1 << 5,
-        SaveImageToFile = 1 << 6,
-        SaveImageToFileWithDialog = 1 << 7,
-        SaveThumbnailImageToFile = 1 << 8,
-        PerformActions = 1 << 9,
-        CopyFileToClipboard = 1 << 10,
-        CopyFilePathToClipboard = 1 << 11,
-        ShowInExplorer = 1 << 12,
-        ScanQRCode = 1 << 13,
-        DoOCR = 1 << 14,
-        ShowBeforeUploadWindow = 1 << 15,
-        UploadImageToHost = 1 << 16,
-        DeleteFile = 1 << 17
+        PinToScreen = 1 << 5,
+        SendImageToPrinter = 1 << 6,
+        SaveImageToFile = 1 << 7,
+        SaveImageToFileWithDialog = 1 << 8,
+        SaveThumbnailImageToFile = 1 << 9,
+        PerformActions = 1 << 10,
+        CopyFileToClipboard = 1 << 11,
+        CopyFilePathToClipboard = 1 << 12,
+        ShowInExplorer = 1 << 13,
+        ScanQRCode = 1 << 14,
+        DoOCR = 1 << 15,
+        ShowBeforeUploadWindow = 1 << 16,
+        UploadImageToHost = 1 << 17,
+        DeleteFile = 1 << 18
     }
 
     [Flags]
@@ -180,6 +185,7 @@ namespace ShareX
         UploadURL,
         DragDropUpload,
         ShortenURL,
+        TweetMessage,
         StopUploads,
         // Screen capture
         PrintScreen,
@@ -191,7 +197,6 @@ namespace ShareX
         CustomRegion,
         LastRegion,
         ScrollingCapture,
-        TextCapture,
         AutoCapture,
         StartAutoCapture,
         // Screen record
@@ -203,25 +208,35 @@ namespace ShareX
         ScreenRecorderGIFActiveWindow,
         ScreenRecorderGIFCustomRegion,
         StartScreenRecorderGIF,
+        StopScreenRecording,
+        PauseScreenRecording,
         AbortScreenRecording,
         // Tools
         ColorPicker,
         ScreenColorPicker,
+        Ruler,
+        PinToScreen,
+        PinToScreenFromScreen,
+        PinToScreenFromClipboard,
+        PinToScreenFromFile,
         ImageEditor,
         ImageEffects,
-        HashCheck,
-        DNSChanger,
-        QRCode,
-        QRCodeDecodeFromScreen,
-        Ruler,
-        IndexFolder,
+        ImageViewer,
         ImageCombiner,
         ImageSplitter,
         ImageThumbnailer,
         VideoConverter,
         VideoThumbnailer,
-        TweetMessage,
+        OCR,
+        QRCode,
+        QRCodeDecodeFromScreen,
+        HashCheck,
+        IndexFolder,
+        ClipboardViewer,
+        BorderlessWindow,
+        InspectWindow,
         MonitorTest,
+        DNSChanger,
         // Other
         DisableHotkeys,
         OpenMainWindow,
@@ -229,6 +244,7 @@ namespace ShareX
         OpenHistory,
         OpenImageHistory,
         ToggleActionsToolbar,
+        ToggleTrayMenu,
         ExitShareX
     }
 
@@ -239,28 +255,30 @@ namespace ShareX
         ToastNotification
     }
 
-    public enum ToastClickAction
+    public enum ToastClickAction // Localized
     {
-        [Description("Close notification")]
         CloseNotification,
-        [Description("Annotate image")]
         AnnotateImage,
-        [Description("Copy image")]
         CopyImageToClipboard,
-        [Description("Copy file")]
         CopyFile,
-        [Description("Copy file path")]
         CopyFilePath,
-        [Description("Copy link")]
         CopyUrl,
-        [Description("Open file")]
         OpenFile,
-        [Description("Open folder")]
         OpenFolder,
-        [Description("Open link")]
         OpenUrl,
-        [Description("Upload file")]
-        Upload
+        Upload,
+        PinToScreen
+    }
+
+    public enum ThumbnailViewClickAction // Localized
+    {
+        Default,
+        Select,
+        OpenImageViewer,
+        OpenFile,
+        OpenFolder,
+        OpenURL,
+        EditImage
     }
 
     public enum FileExistAction // Localized
@@ -271,24 +289,19 @@ namespace ShareX
         Cancel
     }
 
-    public enum ImagePreviewVisibility
+    public enum ImagePreviewVisibility // Localized
     {
         Show, Hide, Automatic
     }
 
-    public enum ImagePreviewLocation
+    public enum ImagePreviewLocation // Localized
     {
         Side, Bottom
     }
 
-    public enum ThumbnailTitleLocation
+    public enum ThumbnailTitleLocation // Localized
     {
         Top, Bottom
-    }
-
-    public enum ScreenRecordState
-    {
-        Waiting, BeforeStart, AfterStart, AfterRecordingStart, Encoding
     }
 
     public enum RegionCaptureType
@@ -296,7 +309,7 @@ namespace ShareX
         Default, Light, Transparent
     }
 
-#if !WindowsStore
+#if !MicrosoftStore
     public enum StartupState
     {
         Disabled,
@@ -323,7 +336,7 @@ namespace ShareX
         OpenDebugLog
     }
 
-    public enum TaskViewMode
+    public enum TaskViewMode // Localized
     {
         ListView,
         ThumbnailView

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,29 +33,18 @@ namespace ShareX.UploadersLib
         {
             Enum destination = (Enum)Enum.ToObject(typeof(T), index);
 
-            if (destination is ImageDestination)
+            switch (destination)
             {
-                return Validate((ImageDestination)destination, config);
-            }
-
-            if (destination is TextDestination)
-            {
-                return Validate((TextDestination)destination, config);
-            }
-
-            if (destination is FileDestination)
-            {
-                return Validate((FileDestination)destination, config);
-            }
-
-            if (destination is UrlShortenerType)
-            {
-                return Validate((UrlShortenerType)destination, config);
-            }
-
-            if (destination is URLSharingServices)
-            {
-                return Validate((URLSharingServices)destination, config);
+                case ImageDestination imageDestination:
+                    return Validate(imageDestination, config);
+                case TextDestination textDestination:
+                    return Validate(textDestination, config);
+                case FileDestination fileDestination:
+                    return Validate(fileDestination, config);
+                case UrlShortenerType urlShortenerType:
+                    return Validate(urlShortenerType, config);
+                case URLSharingServices urlSharingServices:
+                    return Validate(urlSharingServices, config);
             }
 
             return true;

@@ -120,12 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Tiempo restante: {0}s ({1}%) Total: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Colaboradores</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Haga clic para iniciar la grabación.</value>
-  </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} está a punto de ser subido a {1}. Usted puede seleccionar un destino distinto.</value>
   </data>
@@ -157,12 +151,6 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>No mostrar este mensaje de nuevo.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tarea: {0}</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Ambos FFmpeg video y fuente de audio no pueden ser "Ninguno".</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
     <value>Tecla de acceso rápido</value>
   </data>
@@ -178,20 +166,6 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Iniciando</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} no existe.
-
-¿Quieres descargar automáticamente?</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliotecas externas</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Haga clic para detener la grabación.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Puede agregar los flujos de trabajo desde configuración de tecla rápida...</value>
   </data>
@@ -201,9 +175,6 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Utilice un nuevo nombre:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Le falta</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traductores</value>
@@ -274,23 +245,11 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Elegir ruta de la carpeta imágenes</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Error en la descarga de FFmpeg.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Esperando...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Cargador de imágenes: {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado al portapapeles: {0}</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Ocultar menú</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Mostrar menú</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL para descargar desde y subir</value>
@@ -341,15 +300,6 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Carga de carpeta</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Error FFmpeg</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Cifrando...</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg descargado con éxito.</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>¿Está seguro de que desea cargar {0} archivos?</value>

@@ -135,4 +135,26 @@
   <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
     <value>İptal</value>
   </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Onay</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>Geçersiz varlık klasör yolu</value>
+  </data>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>Varlık klasörü ShareX resim efektleri klasörünün içinde olmalıdır.</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>Ön ayar ismi eksik</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>Bu dosya isminde paket zaten mevcut.
+Üzerine yazmak ister misiniz?</value>
+  </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>Ön ayar ismi boş olamaz.</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>Efektleri temizlemek ister misiniz?</value>
+  </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -64,19 +64,19 @@ namespace ShareX.ScreenCaptureLib
 
             if (Image != null)
             {
-                Point location;
+                PointF location;
                 Size size = Image.Size;
 
                 if (centerImage)
                 {
-                    location = new Point(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
+                    location = new PointF(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
                 }
                 else
                 {
                     location = Rectangle.Location;
                 }
 
-                Rectangle = new Rectangle(location, size);
+                Rectangle = new RectangleF(location, size);
             }
         }
 

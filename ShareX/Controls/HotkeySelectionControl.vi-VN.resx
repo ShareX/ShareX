@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblHotkeyDescription.Text" xml:space="preserve">
-    <value>Mô tả</value>
-  </data>
   <data name="btnHotkey.Text" xml:space="preserve">
     <value>Phím tắt</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Nhiệm vụ...</value>
   </data>
 </root>

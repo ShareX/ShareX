@@ -258,9 +258,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>초</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>다음 시간동안 기다린 뒤 녹화 시작:</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>초</value>
   </data>
@@ -291,9 +288,6 @@
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>영역 촬영시에만 효과 적용하기</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>창을 촬영한 뒤 이미지 효과 창 띄우기</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>이미지 효과는 "촬영 뒤 할 일 -&gt; 이미지 효과 추가"로 켜고 끌 수 있습니다.</value>
   </data>
@@ -321,9 +315,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>작업 완료 후 소리 재생하기</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>작업이 완료되었을 시:</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>작업...</value>
   </data>
@@ -350,12 +341,6 @@
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>촬영 뒤...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>기본 FTP 계정 덮어쓰기</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>기본 사용자 정의 업로더 덮어쓰기</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>녹화 중 커서 보이기</value>
@@ -435,9 +420,6 @@
   <data name="chUploaderFiltersName.Text" xml:space="preserve">
     <value>업로더</value>
   </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>업로드 설정 덮어쓰기</value>
-  </data>
   <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
     <value>창 내부 컨트롤 영역도 감지하기</value>
   </data>
@@ -471,12 +453,6 @@
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
     <value>마우스 우클릭 시 동작:</value>
   </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>기본 설정 덮어쓰기</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>동작 덮어쓰기</value>
-  </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
     <value>"촬영 뒤" 설정 덮어쓰기</value>
   </data>
@@ -489,9 +465,6 @@
   <data name="tpUploaderFilters.Text" xml:space="preserve">
     <value>업로더 필터</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>창 이름 패턴을 사용해 영역 촬영하기 (ShareX가 선택 영역 뒤에 있는 창 감지를 시도합니다)</value>
-  </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
     <value>배경을 어둡게 해서 선택 영역을 두드러지게 하기 (시작 속도에 영향을 줌)</value>
   </data>
@@ -500,18 +473,6 @@
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>PNG 비트 깊이:</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>이미지 설정 덮어쓰기</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>고급 설정 덮어쓰기</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>촬영 설정 덮어쓰기</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>도구 설정 덮어쓰기</value>
   </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
     <value>미리 설정된 영역:</value>
@@ -545,9 +506,6 @@
   </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>조용히 OCR을 진행</value>
-  </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>다이얼로그를 열어 OCR을 진행</value>
   </data>
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>자동으로 결과를 클립보드에 복사</value>

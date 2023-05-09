@@ -144,23 +144,11 @@
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>Экспортировать все...</value>
   </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Скопировать ответ</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Настройки пользовательских сервисов</value>
   </data>
   <data name="lblURLSharingService.Text" xml:space="preserve">
     <value>Сервис отправки ссылок:</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>Ответ</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Примеры:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
   </data>
   <data name="cArgumentsValue.HeaderText" xml:space="preserve">
     <value>Значение</value>
@@ -171,29 +159,11 @@
   <data name="cParametersValue.HeaderText" xml:space="preserve">
     <value>Значение</value>
   </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Текст ответа</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Информация об ответе</value>
-  </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>Запрос</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Примеры:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>Метод:</value>
   </data>
   <data name="lblParameters.Text" xml:space="preserve">
     <value>Параметры URL:</value>
-  </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Пользовательские сервисы...</value>
   </data>
   <data name="lblFileUploader.Text" xml:space="preserve">
     <value>Сервис загрузки файлов:</value>
@@ -201,28 +171,16 @@ store.book[0].title</value>
   <data name="lblTextUploader.Text" xml:space="preserve">
     <value>Сервис текстов:</value>
   </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Сервисы</value>
-  </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>Очистить сервисы...</value>
-  </data>
   <data name="btnFileUploaderTest.Text" xml:space="preserve">
     <value>Тест</value>
   </data>
   <data name="btnTextUploaderTest.Text" xml:space="preserve">
     <value>Тест</value>
   </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>XML формат</value>
-  </data>
   <data name="btnURLShortenerTest.Text" xml:space="preserve">
     <value>Тест</value>
   </data>
   <data name="btnImageUploaderTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
     <value>Тест</value>
   </data>
   <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
@@ -233,27 +191,6 @@ store.book[0].title</value>
   </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>URL удаления:</value>
-  </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>JSON формат</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>Результат</value>
-  </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Парсить ответ:</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Список regex:</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
   </data>
   <data name="lblFileFormName.Text" xml:space="preserve">
     <value>Имя файловой формы:</value>
@@ -287,5 +224,20 @@ store.book[0].title</value>
   </data>
   <data name="lblResultErrorMessage.Text" xml:space="preserve">
     <value>Ошибка:</value>
+  </data>
+  <data name="lblUploaders.Text" xml:space="preserve">
+    <value>Загрузчики:</value>
+  </data>
+  <data name="tsmiClearUploaders.Text" xml:space="preserve">
+    <value>Очистить загрузчики...</value>
+  </data>
+  <data name="lblRequestURL.Text" xml:space="preserve">
+    <value>URL запроса:</value>
+  </data>
+  <data name="lblResultURL.Text" xml:space="preserve">
+    <value>Ссылка:</value>
+  </data>
+  <data name="btnTestURLSyntax.Text" xml:space="preserve">
+    <value>Тест</value>
   </data>
 </root>

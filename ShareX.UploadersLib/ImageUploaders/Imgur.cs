@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -298,7 +298,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             string fileFormName;
 
-            if (Helpers.IsVideoFile(fileName))
+            if (FileHelpers.IsVideoFile(fileName))
             {
                 fileFormName = "video";
             }
@@ -329,7 +329,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 }
                                 else
                                 {
-                                    result.URL = imageData.link;
+                                    // webm uploads returns link with dot at the end
+                                    result.URL = imageData.link.TrimEnd('.');
                                 }
                             }
                             else
@@ -372,7 +373,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                         if (errorData != null)
                         {
                             if (UploadMethod == AccountType.User && refreshTokenOnError &&
-                                ((string)errorData.error).Equals("The access token provided is invalid.", StringComparison.InvariantCultureIgnoreCase) &&
+                                ((string)errorData.error).Equals("The access token provided is invalid.", StringComparison.OrdinalIgnoreCase) &&
                                 RefreshAccessToken())
                             {
                                 DebugHelper.WriteLine("Imgur access token refreshed, reuploading image.");
@@ -380,8 +381,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 return InternalUpload(stream, fileName, false);
                             }
 
-                            string errorMessage = $"Imgur upload failed: ({imgurResponse.status}) {errorData.error}";
-                            Errors.Insert(0, errorMessage);
+                            Errors.AddFirst($"Imgur upload failed: ({imgurResponse.status}) {errorData.error}");
                         }
                     }
                 }

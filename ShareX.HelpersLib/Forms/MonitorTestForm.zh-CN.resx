@@ -139,7 +139,7 @@
     <value>垂直线</value>
   </data>
   <data name="cbShapes.Items2" xml:space="preserve">
-    <value>网格</value>
+    <value>检查器</value>
   </data>
   <data name="lblShapeSize.Text" xml:space="preserve">
     <value>尺寸：</value>
@@ -170,20 +170,5 @@
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>B（蓝）：</value>
-  </data>
-  <data name="lblGreenValue.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblBlueValue.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblRedValue.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblShapeSizeValue.Text" xml:space="preserve">
-    <value>1</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,13 +25,13 @@
 
 using Manina.Windows.Forms;
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using View = Manina.Windows.Forms.View;
 
 namespace ShareX.HistoryLib
 {
@@ -40,12 +40,12 @@ namespace ShareX.HistoryLib
         public string HistoryPath { get; private set; }
         public ImageHistorySettings Settings { get; private set; }
         public string SearchText { get; set; }
+        public bool SearchInTags { get; set; } = true;
 
-        private HistoryManager history;
         private HistoryItemManager him;
         private string defaultTitle;
 
-        public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
+        public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
             InitializeComponent();
             tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
@@ -53,24 +53,21 @@ namespace ShareX.HistoryLib
             HistoryPath = historyPath;
             Settings = settings;
 
-            ilvImages.View = (View)Settings.ViewMode;
+            ilvImages.SetRenderer(new HistoryImageListViewRenderer());
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
 
             if (ShareXResources.UseCustomTheme)
             {
                 ilvImages.BorderStyle = BorderStyle.None;
-                ilvImages.Colors.BackColor = ShareXResources.Theme.DarkBackgroundColor;
-                ilvImages.Colors.BorderColor = ShareXResources.Theme.DarkBackgroundColor;
-                ilvImages.Colors.ForeColor = ShareXResources.Theme.TextColor;
-                ilvImages.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
-                ilvImages.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
             }
 
-            him = new HistoryItemManager(uploadFile, editImage);
+            him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
             him.GetHistoryItems += him_GetHistoryItems;
             ilvImages.ContextMenuStrip = him.cmsHistory;
 
             defaultTitle = Text;
+
+            tstbSearch.TextBox.HandleCreated += (sender, e) => tstbSearch.TextBox.SetWatermark(Resources.HistoryForm_Search_Watermark, true);
 
             if (Settings.RememberSearchText)
             {
@@ -79,19 +76,23 @@ namespace ShareX.HistoryLib
 
             ShareXResources.ApplyTheme(this);
 
-            Settings.WindowState.AutoHandleFormState(this);
+            if (Settings.RememberWindowState)
+            {
+                Settings.WindowState.ApplyFormState(this);
+            }
         }
 
         private void UpdateTitle(int total, int filtered)
         {
-            Text = $"{defaultTitle} (Total: {total:N0} - Filtered: {filtered:N0})";
+            Text = $"{defaultTitle} ({Resources.Total}: {total:N0} - {Resources.Filtered}: {filtered:N0})";
         }
 
-        private void RefreshHistoryItems()
+        private void RefreshHistoryItems(bool mockData = false)
         {
             UpdateSearchText();
             ilvImages.Items.Clear();
-            ImageListViewItem[] ilvItems = GetHistoryItems().Select(hi => new ImageListViewItem(hi.FilePath) { Tag = hi }).ToArray();
+            IEnumerable<HistoryItem> historyItems = GetHistoryItems(mockData);
+            ImageListViewItem[] ilvItems = historyItems.Select(hi => new ImageListViewItem(hi.FilePath) { Tag = hi }).ToArray();
             ilvImages.Items.AddRange(ilvItems);
         }
 
@@ -109,9 +110,15 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private IEnumerable<HistoryItem> GetHistoryItems()
+        private IEnumerable<HistoryItem> GetHistoryItems(bool mockData = false)
         {
-            if (history == null)
+            HistoryManager history;
+
+            if (mockData)
+            {
+                history = new HistoryManagerMock(HistoryPath);
+            }
+            else
             {
                 history = new HistoryManagerJSON(HistoryPath);
             }
@@ -124,15 +131,15 @@ namespace ShareX.HistoryLib
             if (!string.IsNullOrEmpty(SearchText))
             {
                 string pattern = Regex.Escape(SearchText).Replace("\\?", ".").Replace("\\*", ".*");
-                regex = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+                regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
             }
 
             for (int i = historyItems.Count - 1; i >= 0; i--)
             {
                 HistoryItem hi = historyItems[i];
 
-                if (!string.IsNullOrEmpty(hi.FilePath) && Helpers.IsImageFile(hi.FilePath) &&
-                    (regex == null || regex.IsMatch(hi.FileName)) &&
+                if (!string.IsNullOrEmpty(hi.FilePath) && FileHelpers.IsImageFile(hi.FilePath) &&
+                    (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null && hi.Tags.Any(tag => regex.IsMatch(tag.Value)))) &&
                     (!Settings.FilterMissingFiles || File.Exists(hi.FilePath)))
                 {
                     filteredHistoryItems.Add(hi);
@@ -164,12 +171,26 @@ namespace ShareX.HistoryLib
             RefreshHistoryItems();
         }
 
+        private void ImageHistoryForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Settings.RememberWindowState)
+            {
+                Settings.WindowState.UpdateFormState(this);
+            }
+        }
+
         private void ImageHistoryForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F5)
+            switch (e.KeyData)
             {
-                RefreshHistoryItems();
-                e.Handled = true;
+                case Keys.F5:
+                    RefreshHistoryItems();
+                    e.Handled = true;
+                    break;
+                case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
+                    RefreshHistoryItems(true);
+                    e.Handled = true;
+                    break;
             }
         }
 
@@ -180,7 +201,27 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_ItemDoubleClick(object sender, ItemClickEventArgs e)
         {
-            him.ShowImagePreview();
+            int currentImageIndex = ilvImages.SelectedItems[0].Index;
+            int modifiedImageIndex = 0;
+            int halfRange = 100;
+            int startIndex = Math.Max(currentImageIndex - halfRange, 0);
+            int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, ilvImages.Items.Count);
+
+            List<string> filteredImages = new List<string>();
+
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                string imageFilePath = ilvImages.Items[i].FileName;
+
+                if (i == currentImageIndex)
+                {
+                    modifiedImageIndex = filteredImages.Count;
+                }
+
+                filteredImages.Add(imageFilePath);
+            }
+
+            ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
         }
 
         private void tstbSearch_KeyDown(object sender, KeyEventArgs e)
@@ -205,29 +246,13 @@ namespace ShareX.HistoryLib
                 form.ShowDialog();
             }
 
-            ilvImages.View = (View)Settings.ViewMode;
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
             RefreshHistoryItems();
         }
 
         private void ilvImages_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyData)
-            {
-                default:
-                    return;
-                case Keys.Enter:
-                    him.OpenURL();
-                    break;
-                case Keys.Control | Keys.Enter:
-                    him.OpenFile();
-                    break;
-                case Keys.Control | Keys.C:
-                    him.CopyURL();
-                    break;
-            }
-
-            e.Handled = true;
+            e.Handled = e.SuppressKeyPress = him.HandleKeyInput(e);
         }
 
         #endregion Form events

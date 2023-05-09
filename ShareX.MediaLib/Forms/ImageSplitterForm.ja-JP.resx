@@ -121,18 +121,21 @@
     <value>ShareX - 画像の分割</value>
   </data>
   <data name="lblImageFilePath.Text" xml:space="preserve">
-    <value>画像パス</value>
+    <value>画像パス:</value>
   </data>
   <data name="lblRowCount.Text" xml:space="preserve">
-    <value>縦の分割数</value>
+    <value>縦の分割数:</value>
   </data>
   <data name="lblColumnCount.Text" xml:space="preserve">
-    <value>横の分割数</value>
+    <value>横の分割数:</value>
   </data>
   <data name="lblOutputFolder.Text" xml:space="preserve">
-    <value>出力先フォルダ</value>
+    <value>出力先フォルダ:</value>
   </data>
   <data name="btnSplitImage.Text" xml:space="preserve">
     <value>分割実行</value>
+  </data>
+  <data name="btnCopyChatEmoji.Text" xml:space="preserve">
+    <value>チャット絵文字構文でコピー</value>
   </data>
 </root>

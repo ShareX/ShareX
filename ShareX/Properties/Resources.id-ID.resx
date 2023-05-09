@@ -126,9 +126,6 @@
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Anda yakin ingin mengunggah {0} file?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Mengenkode...</value>
-  </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Anda mencoba mengunggah file besar.
 Apakah anda yakin ingin melanjutkan?</value>
@@ -151,9 +148,6 @@ Apakah anda yakin ingin melanjutkan?</value>
   <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
     <value>Bahasa Belanda</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg eror</value>
-  </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>Edit...</value>
   </data>
@@ -165,9 +159,6 @@ Apakah anda yakin ingin melanjutkan?</value>
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Input teks untuk dienkode</value>
-  </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Kontributor</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Tugas selesai</value>
@@ -233,19 +224,8 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Memulai</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Sumber audio dan video FFmpeg keduanya tidak boleh "Tidak ada".</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} tidak ada.
-
-Apakah Anda ingin mengunduhnya secara otomatis?</value>
-  </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Jalankan ShareX saat memulai Windows</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Menunggu...</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Pengunggah gambar: {0}</value>
@@ -253,17 +233,8 @@ Apakah Anda ingin mengunduhnya secara otomatis?</value>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Disalin ke papan klip: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Sembunyikan menu</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Gagal menemukan akun Twitter yang valid.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Tampilkan menu</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Tampilkan kolom</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL untuk mengunduh dan mengunggah</value>
@@ -279,9 +250,6 @@ Apakah Anda ingin mengunduhnya secara otomatis?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Batal</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tugas: {0}</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Pendaftaran tombol cepat gagal</value>
@@ -348,24 +316,15 @@ Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</valu
   <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
     <value>Bahasa Turki</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Klik untuk berhenti merekam.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Anda bisa menambahkan alur kerja dari pengaturan tombol cepat...</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
     <value>Bahasa Rusia</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Tidak dapat menulis gambar ke jalur {0}.</value>
-  </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX perlu dimulai ulang untuk menerapkan bahasa.
 Apakah Anda ingin memulai ulang ShareX?</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Eror</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
     <value>Anda yakin ingin menghapus file ini?</value>
@@ -373,14 +332,8 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Gunakan nama baru:</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Anda yakin ingin menggagalkan perekaman ini?</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>Bahasa Italia</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Hilang</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Penerjemah</value>
@@ -393,9 +346,6 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Unggahan folder</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Pustaka eksternal</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Setelah mengambil: {0}</value>
@@ -473,12 +423,6 @@ Klik tengah untuk menutup</value>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Pratinjau:</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Sembunyikan kolom</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg berhasil diunduh.</value>
-  </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Tutup</value>
   </data>
@@ -512,16 +456,28 @@ Klik tengah untuk menutup</value>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Bahasa Spanyol</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Klik untuk mulai merekam.</value>
-  </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>Persingkat</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>Persingkat URL</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Unduhan FFmpeg gagal.</value>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Bahasa Ukraina</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Bahasa Indonesia</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Bahasa Spanyol(Meksiko)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Bahasa Persia</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Bahasa Portugis</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Bahasa Jepang</value>
   </data>
 </root>

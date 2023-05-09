@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -65,9 +65,7 @@ namespace ShareX.HelpersLib
 
         private void cbAdapters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AdapterInfo adapter = cbAdapters.SelectedItem as AdapterInfo;
-
-            if (adapter != null)
+            if (cbAdapters.SelectedItem is AdapterInfo adapter)
             {
                 string[] dns = adapter.GetDNS();
 
@@ -105,15 +103,10 @@ namespace ShareX.HelpersLib
 
         private void cbDNSType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbDNSType.SelectedIndex > 0)
+            if (cbDNSType.SelectedIndex > 0 && cbDNSType.SelectedItem is DNSInfo dnsInfo)
             {
-                DNSInfo dnsInfo = cbDNSType.SelectedItem as DNSInfo;
-
-                if (dnsInfo != null)
-                {
-                    txtPreferredDNS.Text = dnsInfo.PrimaryDNS;
-                    txtAlternateDNS.Text = dnsInfo.SecondaryDNS;
-                }
+                txtPreferredDNS.Text = dnsInfo.PrimaryDNS;
+                txtAlternateDNS.Text = dnsInfo.SecondaryDNS;
             }
 
             UpdateControls();
@@ -154,9 +147,7 @@ namespace ShareX.HelpersLib
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            AdapterInfo adapter = cbAdapters.SelectedItem as AdapterInfo;
-
-            if (adapter != null)
+            if (cbAdapters.SelectedItem is AdapterInfo adapter)
             {
                 uint result;
 

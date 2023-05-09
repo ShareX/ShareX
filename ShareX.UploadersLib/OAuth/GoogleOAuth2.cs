@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,15 +30,16 @@ using System.Collections.Specialized;
 
 namespace ShareX.UploadersLib
 {
-    public class GoogleOAuth2 : IOAuth2
+    public class GoogleOAuth2 : IOAuth2Loopback
     {
         private const string AuthorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
         private const string TokenEndpoint = "https://oauth2.googleapis.com/token";
         private const string UserInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
-        private const string RedirectMethod = "urn:ietf:wg:oauth:2.0:oob"; // Manual copy-paste method
 
         public OAuth2Info AuthInfo { get; private set; }
         private Uploader GoogleUploader { get; set; }
+        public string RedirectURI { get; set; }
+        public string State { get; set; }
         public string Scope { get; set; }
 
         public GoogleOAuth2(OAuth2Info oauth, Uploader uploader)
@@ -52,7 +53,8 @@ namespace ShareX.UploadersLib
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("redirect_uri", RedirectMethod);
+            args.Add("redirect_uri", RedirectURI);
+            args.Add("state", State);
             args.Add("scope", Scope);
 
             return URLHelpers.CreateQueryString(AuthorizationEndpoint, args);
@@ -64,7 +66,7 @@ namespace ShareX.UploadersLib
             args.Add("code", code);
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
-            args.Add("redirect_uri", RedirectMethod);
+            args.Add("redirect_uri", RedirectURI);
             args.Add("grant_type", "authorization_code");
 
             string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);

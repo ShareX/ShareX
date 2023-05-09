@@ -180,9 +180,6 @@
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>재시도</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>업로드</value>
   </data>
@@ -234,17 +231,8 @@
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>추가...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>클립보드 형식</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>설명</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>재시도할 때 이차 업로더를 선호하는 순서대로 사용하기</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>결과</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>이차 이미지 업로더</value>

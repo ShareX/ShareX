@@ -123,9 +123,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Bilderchronikeinstellungen</value>
   </data>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>Anzeigemodus:</value>
-  </data>
   <data name="lblThumbnailSize.Text" xml:space="preserve">
     <value>Thumbnail-Größe:</value>
   </data>

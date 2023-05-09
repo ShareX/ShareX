@@ -117,29 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="tpRegexParse.Text" xml:space="preserve">
-    <value>Biểu thức chính quy</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>Kết quả</value>
-  </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
-  </data>
-  <data name="btnXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Thêm cú pháp vào trường URL</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Thêm cú pháp vào trường URL</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Thêm cú pháp vào trường URL</value>
   </data>
   <data name="btnDataBeautify.Text" xml:space="preserve">
     <value>Làm đẹp</value>
@@ -147,14 +126,8 @@
   <data name="lblBody.Text" xml:space="preserve">
     <value>Body - Thân:</value>
   </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>Xóa các dịch vụ tải lên...</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Sao chép dữ liệu trả về</value>
-  </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
-    <value>URL để xóa</value>
+    <value>URL xóa:</value>
   </data>
   <data name="lblDestinationType.Text" xml:space="preserve">
     <value>Loại dịch vụ tải lên:</value>
@@ -166,7 +139,7 @@
     <value>Xuất ra tất cả...</value>
   </data>
   <data name="lblFileUploader.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên tệp</value>
+    <value>Trình tải tệp lên:</value>
   </data>
   <data name="cHeadersName.HeaderText" xml:space="preserve">
     <value>Tên</value>
@@ -183,15 +156,6 @@
   <data name="btnNew.Text" xml:space="preserve">
     <value>Mới</value>
   </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Xử lí dữ liệu trả về:</value>
-  </data>
-  <data name="cRegex.HeaderText" xml:space="preserve">
-    <value>Biểu thức chính quy</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Danh sách biểu thức chính quy:</value>
-  </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Xóa bỏ</value>
   </data>
@@ -200,9 +164,6 @@
   </data>
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
     <value>Cập nhật thư mục...</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Các dịch vụ tải lên</value>
   </data>
   <data name="lblURLShortener.Text" xml:space="preserve">
     <value>Dịch vụ rút gọn URL:</value>
@@ -222,15 +183,6 @@
   <data name="cArgumentsValue.HeaderText" xml:space="preserve">
     <value>Giá trị</value>
   </data>
-  <data name="tpXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>Định dạng XML</value>
-  </data>
-  <data name="lblXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
-  </data>
   <data name="lblURLSharingService.Text" xml:space="preserve">
     <value>Dịch vụ chia sẻ URL:</value>
   </data>
@@ -249,29 +201,11 @@
   <data name="btnURLShortenerTest.Text" xml:space="preserve">
     <value>Kiểm tra</value>
   </data>
-  <data name="tpTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên tùy chọn...</value>
-  </data>
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Hướng dẫn dùng dịch vụ tải lên tùy chọn...</value>
   </data>
   <data name="mbDestinationType.ToolTip" xml:space="preserve">
     <value>Hiện tại loại dịch vụ tải lên được dùng khi người dùng đưa vào dịch vụ tải lên tùy chọn bằng cách nhấp đúp vào tệp .sxcu</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Ví dụ:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Ví dụ:
-
-Files[0].URL
-store.book[0].title</value>
   </data>
   <data name="lblFileFormName.Text" xml:space="preserve">
     <value>Tên dạng tệp:</value>
@@ -282,32 +216,11 @@ store.book[0].title</value>
   <data name="lblImageUploader.Text" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh:</value>
   </data>
-  <data name="tpJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>Định dạng JSON</value>
-  </data>
-  <data name="lblJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>Phương thức:</value>
   </data>
   <data name="btnDataMinify.Text" xml:space="preserve">
     <value>Thu gọn</value>
-  </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>Yêu cầu (Request)</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>Dữ liệu trả về</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Thông tin dữ liệu trả về</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Văn bản trả về</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Thiết lập dịch vụ tải lên</value>
@@ -318,7 +231,16 @@ store.book[0].title</value>
   <data name="lblParameters.Text" xml:space="preserve">
     <value>Các tham số trong URL:</value>
   </data>
-  <data name="tscResponseText.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
+  <data name="btnTestURLSyntax.Text" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
+  <data name="tsmiClearUploaders.Text" xml:space="preserve">
+    <value>Xóa người tải lên ...</value>
+  </data>
+  <data name="lblResultErrorMessage.Text" xml:space="preserve">
+    <value>Thông báo lỗi:</value>
+  </data>
+  <data name="lblUploaders.Text" xml:space="preserve">
+    <value>Người tải lên:</value>
   </data>
 </root>

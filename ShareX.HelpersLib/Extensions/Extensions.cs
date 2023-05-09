@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,7 +36,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Encoder = System.Drawing.Imaging.Encoder;
 
 namespace ShareX.HelpersLib
 {
@@ -50,19 +49,6 @@ namespace ShareX.HelpersLib
             foreach (T item in source)
             {
                 action(item);
-            }
-        }
-
-        public static IEnumerable<TResult> Zip<TFirst, TSecond, TResult>(this IEnumerable<TFirst> first,
-            IEnumerable<TSecond> second, Func<TFirst, TSecond, TResult> resultSelector)
-        {
-            using (IEnumerator<TFirst> e1 = first.GetEnumerator())
-            using (IEnumerator<TSecond> e2 = second.GetEnumerator())
-            {
-                while (e1.MoveNext() && e2.MoveNext())
-                {
-                    yield return resultSelector(e1.Current, e2.Current);
-                }
             }
         }
 
@@ -109,25 +95,25 @@ namespace ShareX.HelpersLib
         public static T ReturnIfValidIndex<T>(this T[] array, int index)
         {
             if (array.IsValidIndex(index)) return array[index];
-            return default(T);
+            return default;
         }
 
         public static T ReturnIfValidIndex<T>(this List<T> list, int index)
         {
             if (list.IsValidIndex(index)) return list[index];
-            return default(T);
+            return default;
         }
 
         public static T Last<T>(this T[] array, int index = 0)
         {
             if (array.Length > index) return array[array.Length - index - 1];
-            return default(T);
+            return default;
         }
 
         public static T Last<T>(this List<T> list, int index = 0)
         {
             if (list.Count > index) return list[list.Count - index - 1];
-            return default(T);
+            return default;
         }
 
         public static double ToDouble(this Version value)
@@ -143,9 +129,9 @@ namespace ShareX.HelpersLib
             return rect.Width > 0 && rect.Height > 0;
         }
 
-        public static Point Add(this Point point, int offset)
+        public static bool IsValid(this RectangleF rect)
         {
-            return point.Add(offset, offset);
+            return rect.Width > 0 && rect.Height > 0;
         }
 
         public static Point Add(this Point point, int offsetX, int offsetY)
@@ -156,6 +142,37 @@ namespace ShareX.HelpersLib
         public static Point Add(this Point point, Point offset)
         {
             return new Point(point.X + offset.X, point.Y + offset.Y);
+        }
+
+        public static PointF Add(this PointF point, float offsetX, float offsetY)
+        {
+            return new PointF(point.X + offsetX, point.Y + offsetY);
+        }
+
+        public static PointF Add(this PointF point, PointF offset)
+        {
+            return new PointF(point.X + offset.X, point.Y + offset.Y);
+        }
+
+        public static PointF Scale(this Point point, float scaleFactor)
+        {
+            return new PointF(point.X * scaleFactor, point.Y * scaleFactor);
+        }
+
+        public static PointF Scale(this PointF point, float scaleFactor)
+        {
+            return new PointF(point.X * scaleFactor, point.Y * scaleFactor);
+        }
+
+        public static Point Round(this PointF point)
+        {
+            return Point.Round(point);
+        }
+
+        public static void Offset(this PointF point, PointF offset)
+        {
+            point.X += offset.X;
+            point.Y += offset.Y;
         }
 
         public static Size Offset(this Size size, int offset)
@@ -173,9 +190,34 @@ namespace ShareX.HelpersLib
             return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + (offset * 2), rect.Height + (offset * 2));
         }
 
+        public static RectangleF Offset(this RectangleF rect, float offset)
+        {
+            return new RectangleF(rect.X - offset, rect.Y - offset, rect.Width + (offset * 2), rect.Height + (offset * 2));
+        }
+
+        public static RectangleF Scale(this RectangleF rect, float scaleFactor)
+        {
+            return new RectangleF(rect.X * scaleFactor, rect.Y * scaleFactor, rect.Width * scaleFactor, rect.Height * scaleFactor);
+        }
+
+        public static Rectangle Round(this RectangleF rect)
+        {
+            return Rectangle.Round(rect);
+        }
+
         public static Rectangle LocationOffset(this Rectangle rect, int x, int y)
         {
             return new Rectangle(rect.X + x, rect.Y + y, rect.Width, rect.Height);
+        }
+
+        public static RectangleF LocationOffset(this RectangleF rect, float x, float y)
+        {
+            return new RectangleF(rect.X + x, rect.Y + y, rect.Width, rect.Height);
+        }
+
+        public static RectangleF LocationOffset(this RectangleF rect, PointF offset)
+        {
+            return rect.LocationOffset(offset.X, offset.Y);
         }
 
         public static Rectangle LocationOffset(this Rectangle rect, Point offset)
@@ -193,7 +235,17 @@ namespace ShareX.HelpersLib
             return new Rectangle(rect.X, rect.Y, rect.Width + width, rect.Height + height);
         }
 
+        public static RectangleF SizeOffset(this RectangleF rect, float width, float height)
+        {
+            return new RectangleF(rect.X, rect.Y, rect.Width + width, rect.Height + height);
+        }
+
         public static Rectangle SizeOffset(this Rectangle rect, int offset)
+        {
+            return rect.SizeOffset(offset, offset);
+        }
+
+        public static RectangleF SizeOffset(this RectangleF rect, float offset)
         {
             return rect.SizeOffset(offset, offset);
         }
@@ -285,64 +337,13 @@ namespace ShareX.HelpersLib
         {
             tb.KeyDown += (sender, e) =>
             {
-                if (e.Control && e.KeyCode == Keys.A)
+                if (e.KeyData == (Keys.Control | Keys.A))
                 {
                     tb.SelectAll();
                     e.SuppressKeyPress = true;
                     e.Handled = true;
                 }
             };
-        }
-
-        public static void SaveJPG(this Image img, Stream stream, int quality)
-        {
-            quality = quality.Clamp(0, 100);
-            EncoderParameters encoderParameters = new EncoderParameters(1);
-            encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
-            img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
-        }
-
-        public static void SaveJPG(this Image img, string filepath, int quality)
-        {
-            using (FileStream fs = new FileStream(filepath, FileMode.Create, FileAccess.Write, FileShare.Read))
-            {
-                SaveJPG(img, fs, quality);
-            }
-        }
-
-        public static void SaveGIF(this Image img, Stream stream, GIFQuality quality)
-        {
-            if (quality == GIFQuality.Default)
-            {
-                img.Save(stream, ImageFormat.Gif);
-            }
-            else
-            {
-                Quantizer quantizer;
-                switch (quality)
-                {
-                    case GIFQuality.Grayscale:
-                        quantizer = new GrayscaleQuantizer();
-                        break;
-                    case GIFQuality.Bit4:
-                        quantizer = new OctreeQuantizer(15, 4);
-                        break;
-                    default:
-                    case GIFQuality.Bit8:
-                        quantizer = new OctreeQuantizer(255, 4);
-                        break;
-                }
-
-                using (Bitmap quantized = quantizer.Quantize(img))
-                {
-                    quantized.Save(stream, ImageFormat.Gif);
-                }
-            }
-        }
-
-        public static long ToUnix(this DateTime dateTime)
-        {
-            return Helpers.DateTimeToUnix(dateTime);
         }
 
         public static void AppendTextToSelection(this TextBoxBase tb, string text)
@@ -445,8 +446,10 @@ namespace ShareX.HelpersLib
         {
             foreach (PropertyDescriptor prop in TypeDescriptor.GetProperties(self))
             {
-                DefaultValueAttribute attr = prop.Attributes[typeof(DefaultValueAttribute)] as DefaultValueAttribute;
-                if (attr != null) prop.SetValue(self, attr.Value);
+                if (prop.Attributes[typeof(DefaultValueAttribute)] is DefaultValueAttribute attr)
+                {
+                    prop.SetValue(self, attr.Value);
+                }
             }
         }
 
@@ -627,20 +630,39 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        public static Rectangle AddPoint(this Rectangle rect, Point point)
+        public static RectangleF Combine(this IEnumerable<RectangleF> rects)
         {
-            return Rectangle.Union(rect, new Rectangle(point, new Size(1, 1)));
-        }
+            RectangleF result = RectangleF.Empty;
 
-        public static Rectangle CreateRectangle(this IEnumerable<Point> points)
-        {
-            Rectangle result = Rectangle.Empty;
-
-            foreach (Point point in points)
+            foreach (RectangleF rect in rects)
             {
                 if (result.IsEmpty)
                 {
-                    result = new Rectangle(point, new Size(1, 1));
+                    result = rect;
+                }
+                else
+                {
+                    result = RectangleF.Union(result, rect);
+                }
+            }
+
+            return result;
+        }
+
+        public static RectangleF AddPoint(this RectangleF rect, PointF point)
+        {
+            return RectangleF.Union(rect, new RectangleF(point, new SizeF(1, 1)));
+        }
+
+        public static RectangleF CreateRectangle(this IEnumerable<PointF> points)
+        {
+            RectangleF result = Rectangle.Empty;
+
+            foreach (PointF point in points)
+            {
+                if (result.IsEmpty)
+                {
+                    result = new RectangleF(point, new Size(1, 1));
                 }
                 else
                 {
@@ -656,17 +678,22 @@ namespace ShareX.HelpersLib
             return new Point(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
         }
 
-        public static int Area(this Rectangle rect)
+        public static PointF Center(this RectangleF rect)
+        {
+            return new PointF(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
+        }
+
+        public static float Area(this RectangleF rect)
         {
             return rect.Width * rect.Height;
         }
 
-        public static int Perimeter(this Rectangle rect)
+        public static float Perimeter(this RectangleF rect)
         {
             return 2 * (rect.Width + rect.Height);
         }
 
-        public static Point Restrict(this Point point, Rectangle rect)
+        public static PointF Restrict(this PointF point, RectangleF rect)
         {
             point.X = Math.Max(point.X, rect.X);
             point.Y = Math.Max(point.Y, rect.Y);
@@ -678,6 +705,21 @@ namespace ShareX.HelpersLib
         public static void RefreshItems(this ComboBox cb)
         {
             typeof(ComboBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, cb, new object[] { });
+        }
+
+        public static void AutoSizeDropDown(this ComboBox cb)
+        {
+            int maxWidth = 0;
+            int verticalScrollBarWidth = cb.Items.Count > cb.MaxDropDownItems ? SystemInformation.VerticalScrollBarWidth : 0;
+            foreach (object item in cb.Items)
+            {
+                int tempWidth = TextRenderer.MeasureText(cb.GetItemText(item), cb.Font).Width + verticalScrollBarWidth;
+                if (tempWidth > maxWidth)
+                {
+                    maxWidth = tempWidth;
+                }
+            }
+            cb.DropDownWidth = maxWidth;
         }
 
         public static void RefreshItem(this ListBox lb, int index)
@@ -716,11 +758,6 @@ namespace ShareX.HelpersLib
             pi.SetValue(dgv, value, null);
         }
 
-        public static void AppendLine(this RichTextBox rtb, string value = "")
-        {
-            rtb.AppendText(value + Environment.NewLine);
-        }
-
         public static void SetFontRegular(this RichTextBox rtb)
         {
             rtb.SelectionFont = new Font(rtb.Font, FontStyle.Regular);
@@ -729,6 +766,33 @@ namespace ShareX.HelpersLib
         public static void SetFontBold(this RichTextBox rtb)
         {
             rtb.SelectionFont = new Font(rtb.Font, FontStyle.Bold);
+        }
+
+        public static void AppendText(this RichTextBox rtb, string text, FontStyle fontStyle, float fontSize = 0)
+        {
+            Font font;
+
+            if (fontSize > 0)
+            {
+                font = new Font(rtb.Font.FontFamily, fontSize, fontStyle);
+            }
+            else
+            {
+                font = new Font(rtb.Font, fontStyle);
+            }
+
+            rtb.SelectionFont = font;
+            rtb.AppendText(text);
+        }
+
+        public static void AppendLine(this RichTextBox rtb, string text = "")
+        {
+            rtb.AppendText(text + Environment.NewLine);
+        }
+
+        public static void AppendLine(this RichTextBox rtb, string text, FontStyle fontStyle, float fontSize = 0)
+        {
+            rtb.AppendText(text + Environment.NewLine, fontStyle, fontSize);
         }
 
         public static void SupportCustomTheme(this ListView lv)
@@ -848,6 +912,11 @@ namespace ShareX.HelpersLib
         public static string ToStringProper(this Rectangle rect)
         {
             return $"X: {rect.X}, Y: {rect.Y}, Width: {rect.Width}, Height: {rect.Height}";
+        }
+
+        public static void ChangeFontStyle(this Control control, FontStyle fontStyle)
+        {
+            control.Font = new Font(control.Font, fontStyle);
         }
     }
 }

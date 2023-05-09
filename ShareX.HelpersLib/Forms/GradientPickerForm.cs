@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            cbGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
+            cbGradientType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
             UpdateGradientList(true);
             AddPresets();
@@ -298,8 +298,7 @@ namespace ShareX.HelpersLib
             if (isReady && lvPresets.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvPresets.SelectedItems[0];
-                GradientInfo gradientInfo = lvi.Tag as GradientInfo;
-                if (gradientInfo != null)
+                if (lvi.Tag is GradientInfo gradientInfo)
                 {
                     Gradient = gradientInfo.Copy();
                     UpdateGradientList(true);

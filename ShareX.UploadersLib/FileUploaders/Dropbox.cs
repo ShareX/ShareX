@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -149,24 +149,24 @@ namespace ShareX.UploadersLib.FileUploaders
             return headers;
         }
 
-        public static string VerifyPath(string path, string filename = null)
+        public static string VerifyPath(string path, string fileName = null)
         {
             if (!string.IsNullOrEmpty(path))
             {
                 path = path.Trim().Replace('\\', '/').Trim('/');
                 path = URLHelpers.AddSlash(path, SlashType.Prefix);
 
-                if (!string.IsNullOrEmpty(filename))
+                if (!string.IsNullOrEmpty(fileName))
                 {
-                    path = URLHelpers.CombineURL(path, filename);
+                    path = URLHelpers.CombineURL(path, fileName);
                 }
 
                 return path;
             }
 
-            if (!string.IsNullOrEmpty(filename))
+            if (!string.IsNullOrEmpty(fileName))
             {
-                return filename;
+                return fileName;
             }
 
             return "";
@@ -205,7 +205,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
-        public UploadResult UploadFile(Stream stream, string path, string filename, bool createShareableLink = false, bool useDirectLink = false)
+        public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableLink = false, bool useDirectLink = false)
         {
             if (stream.Length > 150000000)
             {
@@ -215,7 +215,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(new
             {
-                path = VerifyPath(path, filename),
+                path = VerifyPath(path, fileName),
                 mode = "overwrite",
                 autorename = false,
                 mute = true
@@ -279,7 +279,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             DropboxMetadata metadata = GetMetadata(path);
 
-            return metadata != null && !metadata.tag.Equals("deleted", StringComparison.InvariantCultureIgnoreCase);
+            return metadata != null && !metadata.tag.Equals("deleted", StringComparison.OrdinalIgnoreCase);
         }
 
         public string CreateShareableLink(string path, bool directLink)
@@ -303,7 +303,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     linkMetadata = JsonConvert.DeserializeObject<DropboxLinkMetadata>(response);
                 }
-                else if (IsError && Errors[Errors.Count - 1].Contains("\"shared_link_already_exists\"")) // Ugly workaround
+                else if (IsError && Errors.Errors[Errors.Count - 1].Text.Contains("\"shared_link_already_exists\"")) // Ugly workaround
                 {
                     DropboxListSharedLinksResult result = ListSharedLinks(path, true);
 

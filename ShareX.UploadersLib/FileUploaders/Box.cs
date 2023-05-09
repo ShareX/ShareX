@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -194,7 +194,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string CreateSharedLink(string id, BoxShareAccessLevel accessLevel)
         {
-            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"" + accessLevel.ToString().ToLower() +"\"}}", headers: GetAuthHeaders());
+            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"" + accessLevel.ToString().ToLower() + "\"}}", headers: GetAuthHeaders());
 
             if (!string.IsNullOrEmpty(response))
             {

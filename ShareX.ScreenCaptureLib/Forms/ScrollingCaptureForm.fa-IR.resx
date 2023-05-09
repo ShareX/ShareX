@@ -123,9 +123,6 @@
   <data name="btnStartTask.Text" xml:space="preserve">
     <value>آپلود/ذخیره کردن با توجه به تنظیمات بعد از ضبط</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>آپلود/ذخیره کردن با توجه به تنظیمات بعد از ضبط</value>
-  </data>
   <data name="lblTrimTop.Text" xml:space="preserve">
     <value>بالا:</value>
   </data>

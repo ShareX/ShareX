@@ -124,7 +124,7 @@
     <value>Старт</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>Выбрать область</value>
+    <value>Выбрать область...</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
     <value>Автоматически свернуть в трей</value>

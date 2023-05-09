@@ -118,12 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Cevap</value>
+    <value>ShareX - Yanıt</value>
   </data>
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>İnternet tarayıcı</value>
   </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>Yazı</value>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Yanıt içeriği</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Yanıt bilgisi</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>XML biçimi</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>JSON biçimi</value>
+  </data>
+  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
+    <value>Silme adresini kopyala</value>
+  </data>
+  <data name="tsbCopyURL.Text" xml:space="preserve">
+    <value>Adresi kopyala</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Yanıt içeriğini kopyala</value>
+  </data>
+  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
+    <value>Kısaltılmış adresi kopyala</value>
+  </data>
+  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
+    <value>Küçük resim adresini kopyala</value>
   </data>
 </root>

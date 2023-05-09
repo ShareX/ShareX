@@ -129,12 +129,6 @@
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Deskripsi:</value>
   </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Ganti akun FTP bawaan</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Ganti pengunggah khusus bawaan</value>
-  </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Setelah mengambil...</value>
   </data>
@@ -165,17 +159,11 @@
   <data name="tpTask.Text" xml:space="preserve">
     <value>Tugas</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Setelah tugas selesai:</value>
-  </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Putar suara setelah tugas selesai</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Putar suara setelah pengambilan dibuat</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Ganti pengaturan umum</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Umum</value>
@@ -204,14 +192,8 @@
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Kualitas JPEG:</value>
   </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Ganti pengaturan gambar</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Anda bisa aktif/nonaktifkan efek Gambar dari "Tugas setelah mengambil -&gt; Tambah efek gambar"</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Tampilkan jendela efek gambar setelah mengambil</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Hanya terapkan efek untuk pengambilan area</value>
@@ -282,9 +264,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Ambil area klien saat melakukan pengambilan jendela jendela yang aktif</value>
   </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Ganti pengaturan ambil</value>
-  </data>
   <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
     <value>Tampilkan FPS di pojok kiri atas</value>
   </data>
@@ -333,9 +312,6 @@
   <data name="tpCapture.Text" xml:space="preserve">
     <value>Ambil</value>
   </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Ganti pengaturan unggah</value>
-  </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
     <value>0</value>
   </data>
@@ -344,9 +320,6 @@
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Tampilkan penunjuk dalam perekaman</value>
-  </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Mulai merekam setelah:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>FPS perekaman layar:</value>
@@ -414,9 +387,6 @@
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Buang</value>
   </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Ganti tindakan</value>
-  </data>
   <data name="tpActions.Text" xml:space="preserve">
     <value>Tindakan</value>
   </data>
@@ -444,14 +414,8 @@
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>Format pemilih warna layar:</value>
   </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Ganti pengaturan alat</value>
-  </data>
   <data name="tpTools.Text" xml:space="preserve">
     <value>Alat</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Ganti pengaturan lanjutan</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Lanjutan</value>
@@ -518,9 +482,6 @@
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Ukuran area akan berubah saat menekan "Alt":</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Gunakan pola nama jendela untuk pengambilan area (ShareX akan coba mendeteksi jendela di belakang pemilihan)</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
     <value>Pola nama untuk pengambilan atau unggahan papan klip:</value>

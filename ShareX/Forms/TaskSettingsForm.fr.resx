@@ -255,9 +255,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Utiliser un fuseau horaire personnalisé :</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Utiliser le modèle du nom de la fenêtre pour la capture de région (ShareX essayera de détecter la fenêtre derrière la sélection)</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Nommage des fichiers</value>
   </data>
@@ -272,9 +269,6 @@
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>secondes</value>
-  </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Démarrer l'enregistrement après :</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>secondes</value>
@@ -309,9 +303,6 @@
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>N'appliquer les effets que sur la région capturée</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Afficher la fenêtre des effets d'image après la capture</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Remarque : Vous pouvez activer/désactiver les effets d'image grâce au menu « Après les tâches de capture » -&gt; « Ajouter des effets d'image ».</value>
   </data>
@@ -335,9 +326,6 @@
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Jouer un son quand la tâche est complétée</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Après que la tâche soit complétée :</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tâche...</value>
@@ -365,12 +353,6 @@
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Après la capture...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Remplacer le compte FTP par défaut</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Remplacer le service de mise en ligne personnalisé par défaut</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Séléctionner une région...</value>
@@ -480,32 +462,11 @@
   <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
     <value>Détecter des régions de la fenêtre et permettre l'apparition du curseur sur la capture</value>
   </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres de mise en ligne</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres des outils</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres des images</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres généraux</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres des captures</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Remplacer les actions</value>
-  </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
     <value>Remplacer les paramètres de destination</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
     <value>Remplacer les paramètres "Après la mise en ligne"</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Remplacer les paramètres avancés</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
     <value>Remplacer les paramètres "Après la capture"</value>
@@ -560,9 +521,6 @@
   </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Traitement OCR silencieux</value>
-  </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Traitement OCR lorsque la boîte de dialogue est ouverte</value>
   </data>
   <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
     <value>Remplacer le dossier des captures d'écran</value>

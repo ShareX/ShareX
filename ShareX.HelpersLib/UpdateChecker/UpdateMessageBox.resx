@@ -122,7 +122,7 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="lblText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>13, 16</value>
   </data>
   <data name="lblText.Size" type="System.Drawing.Size, System.Drawing">
     <value>368, 96</value>
@@ -135,7 +135,7 @@
     <value>lblText</value>
   </data>
   <data name="&gt;&gt;lblText.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblText.Parent" xml:space="preserve">
     <value>$this</value>
@@ -147,10 +147,10 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 200</value>
+    <value>272, 176</value>
   </data>
   <data name="btnNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 32</value>
+    <value>112, 32</value>
   </data>
   <data name="btnNo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -162,7 +162,7 @@
     <value>btnNo</value>
   </data>
   <data name="&gt;&gt;btnNo.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnNo.Parent" xml:space="preserve">
     <value>$this</value>
@@ -174,10 +174,10 @@
     <value>Arial, 12pt</value>
   </data>
   <data name="btnYes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 200</value>
+    <value>152, 176</value>
   </data>
   <data name="btnYes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 32</value>
+    <value>112, 32</value>
   </data>
   <data name="btnYes.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -189,7 +189,7 @@
     <value>btnYes</value>
   </data>
   <data name="&gt;&gt;btnYes.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnYes.Parent" xml:space="preserve">
     <value>$this</value>
@@ -197,44 +197,20 @@
   <data name="&gt;&gt;btnYes.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="cbDontShow.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt</value>
-  </data>
-  <data name="cbDontShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 168</value>
-  </data>
-  <data name="cbDontShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 32</value>
-  </data>
-  <data name="cbDontShow.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Do not prompt again until ShareX starts next time</value>
-  </data>
-  <data name="&gt;&gt;cbDontShow.Name" xml:space="preserve">
-    <value>cbDontShow</value>
-  </data>
-  <data name="&gt;&gt;cbDontShow.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleCheckBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cbDontShow.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbDontShow.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="lblViewChangelog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblViewChangelog.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt, style=Underline</value>
   </data>
   <data name="lblViewChangelog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
+    <value>13, 128</value>
   </data>
   <data name="lblViewChangelog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 24</value>
+    <value>119, 18</value>
   </data>
   <data name="lblViewChangelog.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>View changelog</value>
@@ -243,7 +219,7 @@
     <value>lblViewChangelog</value>
   </data>
   <data name="&gt;&gt;lblViewChangelog.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblViewChangelog.Parent" xml:space="preserve">
     <value>$this</value>
@@ -255,10 +231,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>394, 243</value>
+    <value>394, 217</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
@@ -268,6 +244,6 @@
     <value>UpdateMessageBox</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

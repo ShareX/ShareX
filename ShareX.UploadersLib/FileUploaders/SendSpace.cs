@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -548,7 +548,6 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Thread.Sleep(1000);
                 ProgressInfo progressInfo = new ProgressInfo();
-                int progress, elapsed;
                 DateTime time;
                 while (!ct.IsCancellationRequested)
                 {
@@ -561,7 +560,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         if (progressInfo.Status != "fail" && !string.IsNullOrEmpty(progressInfo.Meter))
                         {
-                            if (int.TryParse(progressInfo.Meter, out progress))
+                            if (int.TryParse(progressInfo.Meter, out int progress))
                             {
                                 //sendSpace.OnProgressChanged(0, 0);
                             }
@@ -570,7 +569,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     catch
                     {
                     }
-                    elapsed = (int)(DateTime.Now - time).TotalMilliseconds;
+                    int elapsed = (int)(DateTime.Now - time).TotalMilliseconds;
                     if (elapsed < interval)
                     {
                         Thread.Sleep(interval - elapsed);

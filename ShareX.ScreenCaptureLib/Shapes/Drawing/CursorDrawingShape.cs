@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 
@@ -34,11 +35,15 @@ namespace ShareX.ScreenCaptureLib
 
         public void UpdateCursor(IntPtr cursorHandle, Point position)
         {
-            Dispose();
-
             Icon icon = Icon.FromHandle(cursorHandle);
-            Image = icon.ToBitmap();
+            Bitmap bmpCursor = icon.ToBitmap();
+            UpdateCursor(bmpCursor, position);
+        }
 
+        public void UpdateCursor(Bitmap bmpCursor, Point position)
+        {
+            Dispose();
+            Image = bmpCursor;
             Rectangle = new Rectangle(position, Image.Size);
         }
 
@@ -49,8 +54,8 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreating()
         {
             Manager.IsMoving = true;
-
-            UpdateCursor(Manager.GetSelectedCursor().Handle, InputManager.ClientMousePosition);
+            UpdateCursor(Manager.GetSelectedCursor().Handle, Manager.Form.ScaledClientMousePosition.Round());
+            OnCreated();
         }
 
         public override void OnDraw(Graphics g)
@@ -61,7 +66,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!Manager.IsRenderingOutput && Manager.CurrentTool == ShapeType.DrawingCursor)
                 {
-                    Manager.DrawRegionArea(g, Rectangle, false);
+                    Manager.DrawRegionArea(g, Rectangle.Round(), false);
                 }
             }
         }

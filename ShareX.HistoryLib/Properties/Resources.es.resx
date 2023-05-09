@@ -156,9 +156,6 @@
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Abrir</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Mostrar</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Texto</value>
   </data>

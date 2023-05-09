@@ -264,14 +264,8 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>Formato</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Usar hospedagem alternativa por ordem de preferência</value>
-  </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Extensão Chrome</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos da área de transferência - Esses aparecem em baixo de "Copia" no menu de contexto da janela principal</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Extensão Firefox</value>
@@ -371,11 +365,5 @@
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Envio</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reenvio</value>
   </data>
 </root>

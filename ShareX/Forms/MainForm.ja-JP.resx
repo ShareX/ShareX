@@ -169,10 +169,7 @@
     <value>動画キャプチャー (GIF)</value>
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
-    <value>スクロール キャプチャー</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>テキスト キャプチャー (OCR)...</value>
+    <value>スクロール キャプチャー...</value>
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>自動キャプチャー...</value>
@@ -222,11 +219,14 @@
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>画像エフェクト...</value>
   </data>
+  <data name="tsmiImageViewer.Text" xml:space="preserve">
+    <value>画像ビューア...</value>
+  </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>ハッシュ値の照合...</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>DNS チェンジャー...</value>
+    <value>DNS 変更...</value>
   </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR コード...</value>
@@ -297,9 +297,6 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>画像の履歴...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>お知らせ</value>
-  </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>デバッグ</value>
   </data>
@@ -360,9 +357,6 @@
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>URLを共有</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google 画像検索...</value>
-  </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>QR コードを表示...</value>
   </data>
@@ -378,15 +372,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>一覧を消去</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>メニューを隠す</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>列を隠す</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>画像のプレビュー</value>
-  </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
@@ -397,7 +382,7 @@
     <value>サムネイルのURL</value>
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>削除URL</value>
+    <value>削除用URL</value>
   </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>ファイル</value>
@@ -418,7 +403,7 @@
     <value>サムネイルのURL</value>
   </data>
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
-    <value>削除URL</value>
+    <value>削除用URL</value>
   </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>ファイル</value>
@@ -474,21 +459,6 @@
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>フォルダー</value>
   </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>表示</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>隠す</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>自動</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>横</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>下</value>
-  </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>キャプチャー</value>
   </data>
@@ -521,9 +491,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>スクロール キャプチャー...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>テキスト キャプチャー (OCR)...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>自動キャプチャー...</value>
@@ -577,7 +544,7 @@
     <value>ハッシュ値の照合...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS チェンジャー...</value>
+    <value>DNS 変更...</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR コード...</value>
@@ -651,47 +618,17 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>画像の履歴...</value>
   </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>デバッグ</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>デバッグ ログ...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>画像アップロードのテスト</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>テキストアップロードのテスト</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>ファイルアップロードのテスト</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>短縮URL作成テスト</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>URL共有のテスト</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>寄付する...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>ShareXについて...</value>
-  </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>最近使用したリンク</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
-    <value>アクション ツールバーを表示/隠す</value>
+    <value>操作用ツールバーの表示切替</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>ShareX ウィンドウを表示</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>終了</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>閉じる</value>
   </data>
   <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
     <value>5秒</value>
@@ -739,31 +676,16 @@
     <value>動画の変換...</value>
   </data>
   <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>アップロード先を自分で設定</value>
+    <value>アップロード先を自分で設定...</value>
   </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
-    <value>画像エフェクトを追加</value>
+    <value>画像エフェクトを追加...</value>
   </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>アクションを実行</value>
   </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>サムネイルのタイトル</value>
-  </data>
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
-    <value>サムネイルビューに切り替える</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>表示する</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>表示しない</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>サムネイルの上に表示</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>サムネイルの下に表示</value>
+    <value>サムネイル表示に切り替え</value>
   </data>
   <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
     <value>キャプチャーを遅らせて起動</value>
@@ -775,10 +697,10 @@
     <value>動画の変換...</value>
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
-    <value>アップロード先を自分で設定</value>
+    <value>アップロード先を自分で設定...</value>
   </data>
   <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
-    <value>管理者権限で再起動する</value>
+    <value>管理者権限で再起動</value>
   </data>
   <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
     <value>クリップボードビューアー...</value>
@@ -786,7 +708,43 @@
   <data name="tsmiClipboardViewer.Text" xml:space="preserve">
     <value>クリップボードビューアー...</value>
   </data>
-  <data name="tsmiThumbnailSize.Text" xml:space="preserve">
-    <value>サムネイルサイズの変更...</value>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>画像のサイズ</value>
+  </data>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>ウィンドウの調査...</value>
+  </data>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>ウィンドウの調査...</value>
+  </data>
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
+    <value>Google画像検索...</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>横に並べて結合</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>縦に並べて結合</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>Bing画像検索でOCR...</value>
+  </data>
+  <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
+    <value>最前面に固定...</value>
+  </data>
+  <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
+    <value>画像ビューアー...</value>
+  </data>
+  <data name="tsmiPinSelectedFile.Text" xml:space="preserve">
+    <value>最前面に固定</value>
+  </data>
+  <data name="tsmiPinToScreen.Text" xml:space="preserve">
+    <value>最前面に固定...</value>
+  </data>
+  <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
+    <value>ボーダーレスウィンドウ...</value>
+  </data>
+  <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
+    <value>ボーダーレスウィンドウ...</value>
   </data>
 </root>

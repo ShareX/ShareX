@@ -29,77 +29,62 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateMessageBox));
-            this.lblText = new ShareX.HelpersLib.BlackStyleLabel();
-            this.btnNo = new ShareX.HelpersLib.BlackStyleButton();
-            this.btnYes = new ShareX.HelpersLib.BlackStyleButton();
-            this.cbDontShow = new ShareX.HelpersLib.BlackStyleCheckBox();
-            this.lblViewChangelog = new ShareX.HelpersLib.BlackStyleLabel();
+            this.lblText = new System.Windows.Forms.Label();
+            this.btnNo = new System.Windows.Forms.Button();
+            this.btnYes = new System.Windows.Forms.Button();
+            this.lblViewChangelog = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblText
             // 
-            this.lblText.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lblText, "lblText");
-            this.lblText.ForeColor = System.Drawing.Color.White;
             this.lblText.Name = "lblText";
             // 
             // btnNo
             // 
             resources.ApplyResources(this.btnNo, "btnNo");
-            this.btnNo.ForeColor = System.Drawing.Color.White;
             this.btnNo.Name = "btnNo";
+            this.btnNo.UseVisualStyleBackColor = true;
             this.btnNo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnNo_MouseClick);
             // 
             // btnYes
             // 
             resources.ApplyResources(this.btnYes, "btnYes");
-            this.btnYes.ForeColor = System.Drawing.Color.White;
             this.btnYes.Name = "btnYes";
+            this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnYes_MouseClick);
-            // 
-            // cbDontShow
-            // 
-            this.cbDontShow.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.cbDontShow, "cbDontShow");
-            this.cbDontShow.ForeColor = System.Drawing.Color.White;
-            this.cbDontShow.Name = "cbDontShow";
-            this.cbDontShow.SpaceAfterCheckBox = 3;
-            this.cbDontShow.CheckedChanged += new System.EventHandler(this.cbDontShow_CheckedChanged);
             // 
             // lblViewChangelog
             // 
-            this.lblViewChangelog.BackColor = System.Drawing.Color.Transparent;
-            this.lblViewChangelog.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.lblViewChangelog, "lblViewChangelog");
-            this.lblViewChangelog.ForeColor = System.Drawing.Color.White;
+            this.lblViewChangelog.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblViewChangelog.Name = "lblViewChangelog";
             this.lblViewChangelog.Click += new System.EventHandler(this.lblViewChangelog_Click);
             // 
             // UpdateMessageBox
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblViewChangelog);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.lblText);
-            this.Controls.Add(this.cbDontShow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "UpdateMessageBox";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateMessageBox_FormClosing);
             this.Shown += new System.EventHandler(this.UpdateMessageBox_Shown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private BlackStyleButton btnYes;
-        private BlackStyleButton btnNo;
-        private BlackStyleLabel lblText;
-        private BlackStyleCheckBox cbDontShow;
-        private BlackStyleLabel lblViewChangelog;
+        private System.Windows.Forms.Button btnYes;
+        private System.Windows.Forms.Button btnNo;
+        private System.Windows.Forms.Label lblText;
+        private System.Windows.Forms.Label lblViewChangelog;
     }
 }

@@ -117,29 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>追加</value>
-  </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>新規プリセット</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>クリア</value>
-  </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>閉じる</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>複製</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>削除</value>
-  </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>プリセット削除</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>画像を保存...</value>
@@ -162,20 +144,17 @@
   <data name="btnPresetRemove.ToolTip" xml:space="preserve">
     <value>削除</value>
   </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>再読み込み</value>
-  </data>
   <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
     <value>複製</value>
   </data>
   <data name="btnPackager.Text" xml:space="preserve">
-    <value>パッケージ...</value>
+    <value>パッケージ化...</value>
   </data>
   <data name="btnEffectAdd.ToolTip" xml:space="preserve">
     <value>追加</value>
   </data>
   <data name="btnEffectClear.ToolTip" xml:space="preserve">
-    <value>クリア</value>
+    <value>クリア...</value>
   </data>
   <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
     <value>複製</value>
@@ -193,15 +172,15 @@
     <value>アップロード</value>
   </data>
   <data name="lblEffects.Text" xml:space="preserve">
-    <value>画像エフェクト</value>
-  </data>
-  <data name="lblEffect.Text" xml:space="preserve">
-    <value>画像エフェクト</value>
+    <value>画像エフェクト:</value>
   </data>
   <data name="lblPresets.Text" xml:space="preserve">
     <value>プリセット:</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>画像エフェクト...</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>エフェクト名:</value>
   </data>
 </root>

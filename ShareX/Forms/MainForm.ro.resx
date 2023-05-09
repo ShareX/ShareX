@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
+    <value>Scurtați URL-ul</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>Comutați la vizualizare miniaturi</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>Dezactivați tastele rapide</value>
+  </data>
+  <data name="chElapsed.Text" xml:space="preserve">
+    <value>A trecut</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Numele fișierului</value>
+  </data>
+  <data name="chProgress.Text" xml:space="preserve">
+    <value>Progres</value>
+  </data>
+  <data name="chRemaining.Text" xml:space="preserve">
+    <value>Rămas</value>
+  </data>
+  <data name="chSpeed.Text" xml:space="preserve">
+    <value>Viteză</value>
+  </data>
+  <data name="chStatus.Text" xml:space="preserve">
+    <value>Stare</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>Cod QR...</value>
+  </data>
+  <data name="tsmiShowQRCode.Text" xml:space="preserve">
+    <value>Afișați codul QR...</value>
+  </data>
+  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
+    <value>Cod QR...</value>
+  </data>
+  <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
+    <value>Desfășurări</value>
+  </data>
+  <data name="tsddbWorkflows.Text" xml:space="preserve">
+    <value>Desfășurări</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 secundă</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 secundă</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 secunde</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 secunde</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 secunde</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 secunde</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 secunde</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 secunde</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 secunde</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 secunde</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>Despre...</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Adăugați efecte de imagine...</value>
+  </data>
+  <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
+    <value>Sarcini după captură</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
+    <value>Sarcini după captură</value>
+  </data>
+  <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
+    <value>Sarcini după încărcare</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
+    <value>Sarcini după încărcare</value>
+  </data>
+  <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+C</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>Setările aplicației...</value>
+  </data>
+  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
+    <value>Setările aplicației...</value>
+  </data>
+  <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
+    <value>Capturare automată...</value>
+  </data>
+  <data name="tsmiAutoCapture.Text" xml:space="preserve">
+    <value>Capturare automată...</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>Căutare vizuală Bing (OCR)...</value>
+  </data>
+  <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
+    <value>Fereastră fără borduri...</value>
+  </data>
+  <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
+    <value>Fereastră fără borduri...</value>
+  </data>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>Capturați</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Capturați</value>
+  </data>
+  <data name="tsmiClearList.Text" xml:space="preserve">
+    <value>Ștergeți lista de sarcini</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>Vizualizator de clipboard...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>Vizualizator de clipboard...</value>
+  </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>Selector de culori...</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>Selector de culori...</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>Combinare orizontală</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Combinare imagini...</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>Combinare verticală</value>
+  </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Copiați</value>
+  </data>
+  <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+D</value>
+  </data>
+  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Enter</value>
+  </data>
+  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Shift+C</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+U</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Setări destinație personalizată...</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Setări destinație personalizată...</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>Depanare</value>
+  </data>
+  <data name="tsmiShowDebugLog.Text" xml:space="preserve">
+    <value>Jurnal depanare...</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
+    <value>Ștergeți fișierul local...</value>
+  </data>
+  <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
+    <value>URL de ștergere</value>
+  </data>
+  <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
+    <value>URL de ștergere</value>
+  </data>
+  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
+    <value>Setări destinație...</value>
+  </data>
+  <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
+    <value>Setări destinație...</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Destinații</value>
+  </data>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Destinații</value>
+  </data>
+  <data name="tsmiIndexFolder.Text" xml:space="preserve">
+    <value>Indexator de dosare...</value>
+  </data>
+  <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
+    <value>Indexator de foldere...</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord...</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
+    <value>Schimbător DNS...</value>
+  </data>
+  <data name="tsmiDNSChanger.Text" xml:space="preserve">
+    <value>Schimbător DNS...</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Donați...</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>Descărcare</value>
+  </data>
+  <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
+    <value>Încărcați prin glisare și eliberare...</value>
+  </data>
+  <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
+    <value>Încărcați prin glisare și eliberare...</value>
+  </data>
+  <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
+    <value>Editați imaginea...</value>
+  </data>
+  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="tsmiTrayExit.Text" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="tsmiOpenFile.Text" xml:space="preserve">
+    <value>Fișier</value>
+  </data>
+  <data name="tsmiCopyFile.Text" xml:space="preserve">
+    <value>Fișier</value>
+  </data>
+  <data name="tsmiCopyFileName.Text" xml:space="preserve">
+    <value>Nume fișier</value>
+  </data>
+  <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
+    <value>Nume fișier cu extensie</value>
+  </data>
+  <data name="tsmiCopyFilePath.Text" xml:space="preserve">
+    <value>Cale fișier</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>Destinații fișiere</value>
+  </data>
+  <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
+    <value>Destinații fișiere</value>
+  </data>
+  <data name="tsmiOpenFolder.Text" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="tsmiCopyFolder.Text" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="tsmiCopyForumImage.Text" xml:space="preserve">
+    <value>Imagine Forum (BBCode)</value>
+  </data>
+  <data name="tsmiCopyForumLink.Text" xml:space="preserve">
+    <value>Link Forum (BBCode)</value>
+  </data>
+  <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
+    <value>Imagine la adresă Forum (BBCode)</value>
+  </data>
+  <data name="tsmiFullscreen.Text" xml:space="preserve">
+    <value>Ecran complet</value>
+  </data>
+  <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
+    <value>Ecran complet</value>
+  </data>
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
+    <value>Căutare imagine pe Google...</value>
+  </data>
+  <data name="tsmiHashCheck.Text" xml:space="preserve">
+    <value>Verificare hash...</value>
+  </data>
+  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
+    <value>Verificare hash...</value>
+  </data>
+  <data name="tsmiTrayHistory.Text" xml:space="preserve">
+    <value>Istoric...</value>
+  </data>
+  <data name="tsbHistory.Text" xml:space="preserve">
+    <value>Istoric...</value>
+  </data>
+  <data name="tsbHotkeySettings.Text" xml:space="preserve">
+    <value>Setări taste rapide...</value>
+  </data>
+  <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
+    <value>Setări taste rapide...</value>
+  </data>
+  <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
+    <value>Imagine HTML</value>
+  </data>
+  <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
+    <value>Link HTML</value>
+  </data>
+  <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
+    <value>Imagine la adresă HTML</value>
+  </data>
+  <data name="tsmiCopyImage.Text" xml:space="preserve">
+    <value>Imagine</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>Combinator de imagini...</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>Combinator de imagini...</value>
+  </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>Dimeniunile imaginii</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Editor de imagini...</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Editor de imagini...</value>
+  </data>
+  <data name="tsmiImageEffects.Text" xml:space="preserve">
+    <value>Efecte de imagine...</value>
+  </data>
+  <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
+    <value>Efecte de imagine...</value>
+  </data>
+  <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
+    <value>Istoricul imaginilor...</value>
+  </data>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>Istoricul imaginilor...</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Separator de imagine...</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>Separator de imagine...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Miniaturizator de imagini...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Miniaturizator de imagini...</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>Destinații imagini</value>
+  </data>
+  <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
+    <value>Destinații imagini</value>
+  </data>
+  <data name="tsmiImageViewer.Text" xml:space="preserve">
+    <value>Vizualizator de imagini...</value>
+  </data>
+  <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
+    <value>Vizualizator de imagini...</value>
+  </data>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>Inspectare fereastră...</value>
+  </data>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>Inspectare fereastră...</value>
+  </data>
+  <data name="tsmiLastRegion.Text" xml:space="preserve">
+    <value>Ultima regiune</value>
+  </data>
+  <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
+    <value>Ultima regiune</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Imagine Markdown</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Link Markdown</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Imagine la adresă Markdown</value>
+  </data>
+  <data name="tsmiMonitor.Text" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="tsmiTrayMonitor.Text" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
+    <value>Testare monitor...</value>
+  </data>
+  <data name="tsmiMonitorTest.Text" xml:space="preserve">
+    <value>Testare monitor...</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>Fără întârziere</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>Fără întârziere</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>Procesare OCR...</value>
+  </data>
+  <data name="tsmiOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiTrayOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiOpen.Text" xml:space="preserve">
+    <value>Deschideți</value>
+  </data>
+  <data name="tsmiTrayShow.Text" xml:space="preserve">
+    <value>Deschideți fereastra principală</value>
+  </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>Link-uri recente</value>
+  </data>
+  <data name="tsmiTrayRectangle.Text" xml:space="preserve">
+    <value>Regiune</value>
+  </data>
+  <data name="tsmiRectangle.Text" xml:space="preserve">
+    <value>Regiune</value>
+  </data>
+  <data name="tsmiRectangleLight.Text" xml:space="preserve">
+    <value>Regiune (Clară)</value>
+  </data>
+  <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
+    <value>Regiune (Clară)</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>Regiune (Transparentă)</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>Regiune (Transparentă)</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>Eliminați sarcina din listă</value>
+  </data>
+  <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
+    <value>Reporniți ShareX ca administrator</value>
+  </data>
+  <data name="tsmiTrayRuler.Text" xml:space="preserve">
+    <value>Riglă...</value>
+  </data>
+  <data name="tsmiRuler.Text" xml:space="preserve">
+    <value>Riglă...</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Rulați acțiunea</value>
+  </data>
+  <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
+    <value>Selector de culori de pe ecran...</value>
+  </data>
+  <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
+    <value>Selector de culori de pe ecran...</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>Înregistrare ecran</value>
+  </data>
+  <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>Înregistrare ecran</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
+    <value>Înregistrare ecran (GIF)</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
+    <value>Înregistrare ecran (GIF)</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>Întârziere captură</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>Întârziere captură</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
+    <value>Folderul de capturi...</value>
+  </data>
+  <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
+    <value>Folderul de capturi...</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>Captură în derulare...</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>Captură în derulare...</value>
+  </data>
+  <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
+    <value>Distribuire URL</value>
+  </data>
+  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+C</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Del</value>
+  </data>
+  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Enter</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Scurtare URL...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Scurtare URL...</value>
+  </data>
+  <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
+    <value>URL scurtat</value>
+  </data>
+  <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
+    <value>URL scurtat</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>Cursor vizibil</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>Cursor vizibil</value>
+  </data>
+  <data name="tsmiShowErrors.Text" xml:space="preserve">
+    <value>Afisați erorile</value>
+  </data>
+  <data name="tsmiShowResponse.Text" xml:space="preserve">
+    <value>Afișați răspusul...</value>
+  </data>
+  <data name="tsmiStopUpload.Text" xml:space="preserve">
+    <value>Opriți încărcarea</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>Setări sarcini...</value>
+  </data>
+  <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
+    <value>Setări sarcini...</value>
+  </data>
+  <data name="tsmiTestFileUpload.Text" xml:space="preserve">
+    <value>Test încărcare fișier</value>
+  </data>
+  <data name="tsmiTestImageUpload.Text" xml:space="preserve">
+    <value>Test încărcare imagine</value>
+  </data>
+  <data name="tsmiTestTextUpload.Text" xml:space="preserve">
+    <value>Test încărcare text</value>
+  </data>
+  <data name="tsmiTestURLSharing.Text" xml:space="preserve">
+    <value>Test distribuire URL</value>
+  </data>
+  <data name="tsmiTestURLShortener.Text" xml:space="preserve">
+    <value>Test scurtare URL</value>
+  </data>
+  <data name="tsmiCopyText.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
+    <value>Destinații Text</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>Destinații Text</value>
+  </data>
+  <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
+    <value>Fișier miniatură</value>
+  </data>
+  <data name="tsmiCopyThumbnailFile.Text" xml:space="preserve">
+    <value>Fișier miniatură</value>
+  </data>
+  <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
+    <value>Imagine miniatură</value>
+  </data>
+  <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
+    <value>URL miniatură</value>
+  </data>
+  <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
+    <value>URL miniatură</value>
+  </data>
+  <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
+    <value>Comutați bara de acțiuni</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Instrumente</value>
+  </data>
+  <data name="tsmiTrayTools.Text" xml:space="preserve">
+    <value>Instrumente</value>
+  </data>
+  <data name="tsmiTweetMessage.Text" xml:space="preserve">
+    <value>Dați Tweet cu mesajul...</value>
+  </data>
+  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
+    <value>Dați Tweet cu mesajul...</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter...</value>
+  </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>Încărcați</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
+    <value>Încărcați</value>
+  </data>
+  <data name="tsmiTrayUpload.Text" xml:space="preserve">
+    <value>Încărcați</value>
+  </data>
+  <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
+    <value>Încărcați fișierul...</value>
+  </data>
+  <data name="tsmiUploadFile.Text" xml:space="preserve">
+    <value>Încărcați fișierul...</value>
+  </data>
+  <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
+    <value>Încărcați folder...</value>
+  </data>
+  <data name="tsmiUploadFolder.Text" xml:space="preserve">
+    <value>Încărcați folder...</value>
+  </data>
+  <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
+    <value>Încărcați din clipboard...</value>
+  </data>
+  <data name="tsmiUploadClipboard.Text" xml:space="preserve">
+    <value>Încărcați din clipboard...</value>
+  </data>
+  <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
+    <value>Încărcați din URL...</value>
+  </data>
+  <data name="tsmiUploadURL.Text" xml:space="preserve">
+    <value>Încărcați din clipboard...</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Încărcați text...</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Încărcați text...</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
+    <value>Servicii de distribuire URL</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>Servicii de distribuire URL</value>
+  </data>
+  <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
+    <value>Scurtătoare de URL-uri</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>Scurtătoare de URL-uri</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Convertor video...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Convertor video...</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>Miniaturizator de videoclipuri...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>Miniaturizator de videoclipuri...</value>
+  </data>
+  <data name="tsmiTrayWindow.Text" xml:space="preserve">
+    <value>Fereastră</value>
+  </data>
+  <data name="tsmiWindow.Text" xml:space="preserve">
+    <value>Fereastră</value>
+  </data>
+</root>

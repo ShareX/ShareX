@@ -261,9 +261,6 @@
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
   <data name="lblMediaFireEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -402,9 +399,6 @@
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>Sandi:</value>
   </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Sandi:</value>
-  </data>
   <data name="lblLocalhostrPassword.Text" xml:space="preserve">
     <value>Sandi:</value>
   </data>
@@ -450,9 +444,6 @@
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Domain:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonim</value>
-  </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>UID API:</value>
   </data>
@@ -464,9 +455,6 @@
   </data>
   <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
     <value>Lanjutan</value>
-  </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
@@ -623,18 +611,6 @@
   </data>
   <data name="colSeafileLibrarySize.Text" xml:space="preserve">
     <value>Ukuran</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>hari</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>jam</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>menit</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>jangan pernah</value>
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Nama folder</value>
@@ -960,9 +936,6 @@
   <data name="btnImageShackLogin.Text" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
   <data name="btnMegaLogin.Text" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -1067,9 +1040,6 @@
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Tautan URL:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Login diperlukan.</value>
   </data>
   <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
     <value>Dapatkan token otentikasi</value>

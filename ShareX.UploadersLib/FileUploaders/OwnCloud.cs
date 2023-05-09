@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -55,6 +55,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 CreateShare = config.OwnCloudCreateShare,
                 DirectLink = config.OwnCloudDirectLink,
                 PreviewLink = config.OwnCloudUsePreviewLinks,
+                AppendFileNameToURL = config.OwnCloudAppendFileNameToURL,
                 IsCompatibility81 = config.OwnCloud81Compatibility,
                 AutoExpireTime = config.OwnCloudExpiryTime,
                 AutoExpire = config.OwnCloudAutoExpire
@@ -72,6 +73,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Path { get; set; }
         public int AutoExpireTime { get; set; }
         public bool CreateShare { get; set; }
+        public bool AppendFileNameToURL { get; set; }
         public bool DirectLink { get; set; }
         public bool PreviewLink { get; set; }
         public bool IsCompatibility81 { get; set; }
@@ -121,7 +123,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (CreateShare)
                 {
                     AllowReportProgress = false;
-                    result.URL = ShareFile(path);
+                    result.URL = ShareFile(path, fileName);
                 }
                 else
                 {
@@ -133,7 +135,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         // https://doc.owncloud.org/server/10.0/developer_manual/core/ocs-share-api.html#create-a-new-share
-        public string ShareFile(string path)
+        public string ShareFile(string path, string fileName)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("path", path); // path to the file/folder which should be shared
@@ -181,14 +183,28 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
                         string link = data.url;
-                        if (PreviewLink && Helpers.IsImageFile(path))
+
+                        if (PreviewLink && FileHelpers.IsImageFile(path))
                         {
                             link += "/preview";
                         }
                         else if (DirectLink)
                         {
-                            link += (IsCompatibility81 ? "/" : "&") + "download";
+                            if (IsCompatibility81)
+                            {
+                                link += "/download";
+                            }
+                            else
+                            {
+                                link += "&download";
+                            }
+
+                            if (AppendFileNameToURL)
+                            {
+                                link = URLHelpers.CombineURL(link, URLHelpers.URLEncode(fileName));
+                            }
                         }
+
                         return link;
                     }
                     else

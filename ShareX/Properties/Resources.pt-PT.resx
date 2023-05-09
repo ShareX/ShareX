@@ -120,12 +120,6 @@
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Registo de alterações nesta versão</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Contribuídores</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliotecas externas</value>
-  </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Página do projecto</value>
   </data>
@@ -169,9 +163,6 @@ Botão do meio (scroll) para fechar</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
     <value>Escolher caminho da pasta raiz do ShareX</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Versões de programador são instáveis e são usadas apenas para testes. Deseja continuar com a instalação?</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>Deseja repor as definições do ShareX?</value>
@@ -258,9 +249,6 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Repor todas as teclas de atalho?</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Não foi possível guardar a imagem no caminho {0}.</value>
-  </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Editar com ShareX</value>
   </data>
@@ -278,18 +266,6 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Teclas de atalho configuradas actualmente:</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Esconder colunas</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Mostrar colunas</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Esconder menu</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Mostrar menu</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Desactivar teclas de atalho</value>
@@ -311,12 +287,6 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="OCRForm_AutoProcessing" xml:space="preserve">
     <value>OCR está a procesar.</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Por favor note que ShareX está usando OCR.Space's online API para realizar reconhecimento óptico de caractéres. Deseja dar permissão ao ShareX para enviar imagens para este serviço?</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Erro</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Não foi possível criar pasta:</value>
@@ -343,41 +313,6 @@ Por favor execute o ShareX como administrador para mudar o caminho da pasta.</va
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Botão esquerdo para copiar hiperligação. Botão direito para abrir hiperligação.</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Têm a certeza que deseja cancelar esta gravação?</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Transferência do FFmpeg falhou.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>Transferido FFmpeg com sucesso.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Clique para começar a gravar.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Clique para parar de gravar.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} não existe.
-
-Deseja transferi-lo automáticamente?</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Codificando...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Erro do FFmpeg</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Ambas as fontes de vídeo/aúdio do FFmpeg não podem estar vazias.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Em falta</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Em espera...</value>
-  </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Atraso de captura: {0}s</value>
   </data>
@@ -388,9 +323,6 @@ Deseja transferi-lo automáticamente?</value>
     <value>ShareX precisa de ser reiniciado para as alterações de caminho serem alteradas.
 
 Deseja reiniciar agora?</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - OCR (reconhecimento óptico de caractéres)</value>
   </data>
   <data name="SwitchToListView" xml:space="preserve">
     <value>Mudar para vista de Lista</value>
@@ -439,9 +371,6 @@ Deseja reiniciar agora?</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Envio de imagens: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tarefa: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
     <value>Envio de texto: {0}</value>

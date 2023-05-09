@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,9 +37,9 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract ShapeType ShapeType { get; }
 
-        private Rectangle rectangle;
+        private RectangleF rectangle;
 
-        public Rectangle Rectangle
+        public RectangleF Rectangle
         {
             get
             {
@@ -49,19 +49,19 @@ namespace ShareX.ScreenCaptureLib
             {
                 rectangle = value;
                 startPosition = rectangle.Location;
-                endPosition = new Point(rectangle.X + rectangle.Width - 1, rectangle.Y + rectangle.Height - 1);
+                endPosition = new PointF(rectangle.X + rectangle.Width - 1, rectangle.Y + rectangle.Height - 1);
             }
         }
 
-        public Rectangle RectangleInsideCanvas => Rectangle.Intersect(Rectangle, Manager.Form.CanvasRectangle);
+        public RectangleF RectangleInsideCanvas => RectangleF.Intersect(Rectangle, Manager.Form.CanvasRectangle);
 
         public bool IsInsideCanvas => !RectangleInsideCanvas.IsEmpty;
 
         public virtual bool LimitRectangleToInsideCanvas { get; }
 
-        private Point startPosition;
+        private PointF startPosition;
 
-        public Point StartPosition
+        public PointF StartPosition
         {
             get
             {
@@ -74,9 +74,9 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private Point endPosition;
+        private PointF endPosition;
 
-        public Point EndPosition
+        public PointF EndPosition
         {
             get
             {
@@ -89,7 +89,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Size InitialSize { get; set; }
+        public SizeF InitialSize { get; set; }
 
         public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= Options.MinimumSize && Rectangle.Height >= Options.MinimumSize;
 
@@ -103,8 +103,8 @@ namespace ShareX.ScreenCaptureLib
         protected RegionCaptureOptions Options => Manager.Options;
         protected AnnotationOptions AnnotationOptions => Manager.Options.AnnotationOptions;
 
-        private Point tempNodePos, tempStartPos, tempEndPos;
-        private Rectangle tempRectangle;
+        private PointF tempNodePos, tempStartPos, tempEndPos;
+        private RectangleF tempRectangle;
 
         public bool IsHandledBySelectTool
         {
@@ -121,7 +121,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public virtual bool Intersects(Point position)
+        public virtual bool Intersects(PointF position)
         {
             return Rectangle.Contains(position);
         }
@@ -164,7 +164,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void AddShapePath(GraphicsPath gp, int sizeOffset = 0)
         {
-            Rectangle rect = Rectangle;
+            RectangleF rect = Rectangle;
 
             if (sizeOffset != 0)
             {
@@ -174,18 +174,18 @@ namespace ShareX.ScreenCaptureLib
             OnShapePathRequested(gp, rect);
         }
 
-        public virtual void Move(int x, int y)
+        public virtual void Move(float x, float y)
         {
             StartPosition = StartPosition.Add(x, y);
             EndPosition = EndPosition.Add(x, y);
         }
 
-        public void Move(Point offset)
+        public void Move(PointF offset)
         {
             Move(offset.X, offset.Y);
         }
 
-        public void MoveAbsolute(int x, int y, bool center = false)
+        public void MoveAbsolute(float x, float y, bool center = false)
         {
             if (center)
             {
@@ -196,7 +196,7 @@ namespace ShareX.ScreenCaptureLib
             Move(x - Rectangle.X, y - Rectangle.Y);
         }
 
-        public void MoveAbsolute(Point point, bool center = false)
+        public void MoveAbsolute(PointF point, bool center = false)
         {
             MoveAbsolute(point.X, point.Y, center);
         }
@@ -225,24 +225,29 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnCreating()
         {
-            Point pos = InputManager.ClientMousePosition;
+            PointF pos = Manager.Form.ScaledClientMousePosition;
 
             if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
             {
                 Manager.IsMoving = true;
-                Rectangle = new Rectangle(new Point(pos.X - (Options.FixedSize.Width / 2), pos.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
+                Rectangle = new RectangleF(new PointF(pos.X - (Options.FixedSize.Width / 2), pos.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
                 OnCreated();
             }
             else
             {
                 Manager.IsCreating = true;
-                Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
+                Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
             }
         }
 
         public virtual void OnCreated()
         {
             InitialSize = Rectangle.Size;
+
+            if (ShapeCategory == ShapeCategory.Drawing || ShapeCategory == ShapeCategory.Effect)
+            {
+                Manager.OnImageModified();
+            }
         }
 
         public virtual void OnMoving()
@@ -265,11 +270,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating)
             {
-                Point pos = InputManager.ClientMousePosition;
+                PointF pos = Manager.Form.ScaledClientMousePosition;
 
                 if (Manager.IsCornerMoving && !Manager.IsPanning)
                 {
-                    StartPosition = StartPosition.Add(InputManager.MouseVelocity);
+                    StartPosition = StartPosition.Add(Manager.Form.ScaledClientMouseVelocity);
                 }
 
                 if (Manager.IsProportionalResizing || ForceProportionalResizing)
@@ -287,7 +292,7 @@ namespace ShareX.ScreenCaptureLib
                         startDegree = 45;
                     }
 
-                    pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, degree, startDegree);
+                    pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, degree, startDegree).Round();
                 }
                 else if (Manager.IsSnapResizing)
                 {
@@ -298,7 +303,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Manager.IsMoving && !Manager.IsPanning)
             {
-                Move(InputManager.MouseVelocity);
+                Move(Manager.Form.ScaledClientMouseVelocity);
             }
 
             if (LimitRectangleToInsideCanvas)
@@ -308,7 +313,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public virtual void OnShapePathRequested(GraphicsPath gp, Rectangle rect)
+        public virtual void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
         {
             gp.AddRectangle(rect);
         }
@@ -348,7 +353,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         tempNodePos = node.Position;
                         tempStartPos = Rectangle.Location;
-                        tempEndPos = new Point(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
+                        tempEndPos = new PointF(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
                         tempRectangle = Rectangle;
 
                         OnResizing();
@@ -356,19 +361,19 @@ namespace ShareX.ScreenCaptureLib
 
                     if (Manager.IsCornerMoving || Manager.IsPanning)
                     {
-                        tempStartPos.Offset(InputManager.MouseVelocity);
-                        tempEndPos.Offset(InputManager.MouseVelocity);
-                        tempNodePos.Offset(InputManager.MouseVelocity);
-                        tempRectangle.LocationOffset(InputManager.MouseVelocity);
+                        tempStartPos.Offset(Manager.Form.ScaledClientMouseVelocity);
+                        tempEndPos.Offset(Manager.Form.ScaledClientMouseVelocity);
+                        tempNodePos.Offset(Manager.Form.ScaledClientMouseVelocity);
+                        tempRectangle.LocationOffset(Manager.Form.ScaledClientMouseVelocity);
                     }
 
-                    Point pos = InputManager.ClientMousePosition;
-                    Point startPos = tempStartPos;
-                    Point endPos = tempEndPos;
+                    PointF pos = Manager.Form.ScaledClientMousePosition;
+                    PointF startPos = tempStartPos;
+                    PointF endPos = tempEndPos;
 
                     NodePosition nodePosition = (NodePosition)i;
 
-                    int x = pos.X - tempNodePos.X;
+                    float x = pos.X - tempNodePos.X;
 
                     switch (nodePosition)
                     {
@@ -384,7 +389,7 @@ namespace ShareX.ScreenCaptureLib
                             break;
                     }
 
-                    int y = pos.Y - tempNodePos.Y;
+                    float y = pos.Y - tempNodePos.Y;
 
                     switch (nodePosition)
                     {
@@ -418,7 +423,7 @@ namespace ShareX.ScreenCaptureLib
                         int newWidth = (int)Math.Round(InitialSize.Width * ratio);
                         int newHeight = (int)Math.Round(InitialSize.Height * ratio);
 
-                        Point anchor = new Point();
+                        PointF anchor = new PointF();
 
                         switch (nodePosition)
                         {
@@ -448,7 +453,7 @@ namespace ShareX.ScreenCaptureLib
                                 break;
                         }
 
-                        Rectangle newRect = Rectangle;
+                        RectangleF newRect = Rectangle;
 
                         if (pos.X < anchor.X)
                         {
@@ -477,22 +482,22 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnNodePositionUpdate()
         {
-            int xStart = Rectangle.X;
-            int xMid = Rectangle.X + (Rectangle.Width / 2);
-            int xEnd = Rectangle.X + Rectangle.Width - 1;
+            float xStart = Rectangle.X;
+            float xMid = Rectangle.X + (Rectangle.Width / 2);
+            float xEnd = Rectangle.X + Rectangle.Width - 1;
 
-            int yStart = Rectangle.Y;
-            int yMid = Rectangle.Y + (Rectangle.Height / 2);
-            int yEnd = Rectangle.Y + Rectangle.Height - 1;
+            float yStart = Rectangle.Y;
+            float yMid = Rectangle.Y + (Rectangle.Height / 2);
+            float yEnd = Rectangle.Y + Rectangle.Height - 1;
 
-            Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = new Point(xStart, yStart);
-            Manager.ResizeNodes[(int)NodePosition.Top].Position = new Point(xMid, yStart);
-            Manager.ResizeNodes[(int)NodePosition.TopRight].Position = new Point(xEnd, yStart);
-            Manager.ResizeNodes[(int)NodePosition.Right].Position = new Point(xEnd, yMid);
-            Manager.ResizeNodes[(int)NodePosition.BottomRight].Position = new Point(xEnd, yEnd);
-            Manager.ResizeNodes[(int)NodePosition.Bottom].Position = new Point(xMid, yEnd);
-            Manager.ResizeNodes[(int)NodePosition.BottomLeft].Position = new Point(xStart, yEnd);
-            Manager.ResizeNodes[(int)NodePosition.Left].Position = new Point(xStart, yMid);
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = new PointF(xStart, yStart);
+            Manager.ResizeNodes[(int)NodePosition.Top].Position = new PointF(xMid, yStart);
+            Manager.ResizeNodes[(int)NodePosition.TopRight].Position = new PointF(xEnd, yStart);
+            Manager.ResizeNodes[(int)NodePosition.Right].Position = new PointF(xEnd, yMid);
+            Manager.ResizeNodes[(int)NodePosition.BottomRight].Position = new PointF(xEnd, yEnd);
+            Manager.ResizeNodes[(int)NodePosition.Bottom].Position = new PointF(xMid, yEnd);
+            Manager.ResizeNodes[(int)NodePosition.BottomLeft].Position = new PointF(xStart, yEnd);
+            Manager.ResizeNodes[(int)NodePosition.Left].Position = new PointF(xStart, yMid);
 
             for (int i = 0; i < 8; i++)
             {

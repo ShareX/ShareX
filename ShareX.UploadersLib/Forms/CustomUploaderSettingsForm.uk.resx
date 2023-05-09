@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>Формат JSON</value>
-  </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>Формат XML</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Скопіювати відповідь</value>
-  </data>
   <data name="btnTextUploaderTest.Text" xml:space="preserve">
     <value>Перевірка</value>
   </data>
@@ -141,9 +132,6 @@
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Довідник з вивантажувачів...</value>
   </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Нетипові вивантажувачі...</value>
-  </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>Експортувати все...</value>
   </data>
@@ -156,14 +144,8 @@
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Дублікат</value>
   </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>Очистити вивантажувачі...</value>
-  </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Вилучити</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Вивантажувачі</value>
   </data>
   <data name="btnImageUploaderTest.Text" xml:space="preserve">
     <value>Перевірка</value>
@@ -219,12 +201,6 @@
   <data name="btnDataMinify.Text" xml:space="preserve">
     <value>Скоротити</value>
   </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>Запит</value>
-  </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Обробити відповідь:</value>
-  </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>Посилання на видалення:</value>
   </data>
@@ -233,51 +209,6 @@
   </data>
   <data name="lblResultURL.Text" xml:space="preserve">
     <value>Посилання:</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Додати синтаксис до поля посилання</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Приклади:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Додати синтаксис до поля посилання</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Приклади:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Список регулярних виразів:</value>
-  </data>
-  <data name="cRegex.HeaderText" xml:space="preserve">
-    <value>Регулярний вираз</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Додати синтаксис до поля посилання</value>
-  </data>
-  <data name="tpRegexParse.Text" xml:space="preserve">
-    <value>Регулярний вираз</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>Відповідь</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>Результат</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Інформація про відповідь</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Текст відповіді</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
-    <value>Перевірка</value>
   </data>
   <data name="lblDestinationType.Text" xml:space="preserve">
     <value>Тип призначення:</value>

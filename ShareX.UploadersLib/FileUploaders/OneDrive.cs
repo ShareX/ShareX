@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -85,7 +85,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("scope", "offline_access files.readwrite");
             args.Add("response_type", "code");
-            args.Add("redirect_uri", Links.URL_CALLBACK);
+            args.Add("redirect_uri", Links.Callback);
             if (AuthInfo.Proof != null)
             {
                 args.Add("code_challenge", AuthInfo.Proof.CodeChallenge);
@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("redirect_uri", Links.URL_CALLBACK);
+            args.Add("redirect_uri", Links.Callback);
             args.Add("client_secret", AuthInfo.Client_Secret);
             args.Add("code", code);
             args.Add("grant_type", "authorization_code");
@@ -229,9 +229,9 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
+            UploadResult result;
             string sessionUrl = CreateSession(fileName);
             long position = 0;
-            UploadResult result = new UploadResult();
 
             do
             {
@@ -288,7 +288,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(new
             {
-                type = linkTypeValue
+                type = linkTypeValue,
+                scope = "anonymous"
             });
 
             string response = SendRequest(HttpMethod.POST, $"https://graph.microsoft.com/v1.0/me/drive/items/{id}/createLink", json, RequestHelpers.ContentTypeJSON,

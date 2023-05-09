@@ -136,24 +136,24 @@
     <value>調整</value>
   </data>
   <data name="WouldYouLikeToClearEffects" xml:space="preserve">
-    <value>画像エフェクトをクリアしてよいですか？</value>
+    <value>画像エフェクトをクリアしますか？</value>
   </data>
   <data name="PresetNameCannotBeEmpty" xml:space="preserve">
-    <value>プリセット名は空白にできません</value>
+    <value>プリセット名は空白にできません。</value>
   </data>
   <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
     <value>パッケージ名が既に使われています。上書きしますか？</value>
   </data>
   <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
-    <value>アセットフォルダはShareXの配下に置く必要があります</value>
-  </data>
-  <data name="Effect" xml:space="preserve">
-    <value>画像エフェクト:</value>
+    <value>アセットフォルダはShareXの配下に置く必要があります。</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
     <value>確認</value>
   </data>
   <data name="InvalidAssetsFolderPath" xml:space="preserve">
-    <value>アセットのフォルダパスが正しくありませｎ</value>
+    <value>アセットのフォルダパスが正しくありません</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>プリセット名がありません</value>
   </data>
 </root>

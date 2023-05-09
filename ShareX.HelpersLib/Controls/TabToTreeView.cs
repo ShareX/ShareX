@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -167,9 +167,7 @@ namespace ShareX.HelpersLib
 
         private void tvMain_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            TabPage tabPage = e.Node.Tag as TabPage;
-
-            if (tabPage != null)
+            if (e.Node.Tag is TabPage tabPage)
             {
                 if (AutoSelectChild && tabPage.Controls.Count == 1 && tabPage.Controls[0] is TabControl)
                 {
@@ -224,10 +222,7 @@ namespace ShareX.HelpersLib
 
         protected void OnTabChanged(TabPage tabPage)
         {
-            if (TabChanged != null)
-            {
-                TabChanged(tabPage);
-            }
+            TabChanged?.Invoke(tabPage);
         }
 
         protected override void ScaleControl(SizeF factor, BoundsSpecified specified)

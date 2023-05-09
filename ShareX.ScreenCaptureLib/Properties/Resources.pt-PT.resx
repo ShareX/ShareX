@@ -135,9 +135,6 @@
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Modo multi-região</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Usar letras</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>Valor do primeiro passo:</value>
   </data>
@@ -168,9 +165,6 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Captura de região</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Opções de 'Forma'</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>Modo de região de tamanho fixo</value>
   </data>
@@ -191,9 +185,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
     <value>Rodar 90º contrário ao relógio</value>
-  </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Setas em ambas as pontas</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Modo de interpolação</value>
@@ -297,9 +288,6 @@
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>Tamanho do ecrã...</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>Transferência do FFmpeg completada.</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
     <value>Inverter na vertical</value>
   </data>
@@ -348,9 +336,6 @@ Deseja fechar o editor de imagens?</value>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Captura de retângulo transparente</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Transferência do FFmpeg falhou.</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>Mostrar posição e tamanho</value>

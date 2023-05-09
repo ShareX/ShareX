@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -75,17 +75,6 @@ namespace ShareX
 
         public bool OverrideScreenshotsFolder = false;
         public string ScreenshotsFolder = "";
-
-        public string GetScreenshotsFolder()
-        {
-            if (OverrideScreenshotsFolder && !string.IsNullOrEmpty(ScreenshotsFolder))
-            {
-                string screenshotsFolderPath = NameParser.Parse(NameParserType.FolderPath, ScreenshotsFolder);
-                return Helpers.GetAbsolutePath(screenshotsFolderPath);
-            }
-
-            return Program.ScreenshotsFolder;
-        }
 
         public bool UseDefaultGeneralSettings = true;
         public TaskSettingsGeneral GeneralSettings = new TaskSettingsGeneral();
@@ -289,6 +278,7 @@ namespace ShareX
         public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
         public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;
         public ToastClickAction ToastWindowMiddleClickAction = ToastClickAction.AnnotateImage;
+        public bool ToastWindowAutoHide = true;
         public bool UseCustomCaptureSound = false;
         public string CustomCaptureSoundPath = "";
         public bool UseCustomTaskCompletedSound = false;
@@ -313,6 +303,7 @@ namespace ShareX
         public GIFQuality ImageGIFQuality = GIFQuality.Default;
         public bool ImageAutoUseJPEG = true;
         public int ImageAutoUseJPEGSize = 2048;
+        public bool ImageAutoJPEGQuality = false;
         public FileExistAction FileExistAction = FileExistAction.Ask;
 
         #endregion Image / General
@@ -345,7 +336,7 @@ namespace ShareX
         public decimal ScreenshotDelay = 0;
         public bool CaptureTransparent = false;
         public bool CaptureShadow = true;
-        public int CaptureShadowOffset = 20;
+        public int CaptureShadowOffset = 100;
         public bool CaptureClientArea = false;
         public bool CaptureAutoHideTaskbar = false;
         public Rectangle CaptureCustomRegion = new Rectangle(0, 0, 0, 0);
@@ -360,7 +351,7 @@ namespace ShareX
 
         #region Capture / Screen recorder
 
-        public FFmpegOptions FFmpegOptions = new FFmpegOptions(Program.DefaultFFmpegFilePath);
+        public FFmpegOptions FFmpegOptions = new FFmpegOptions();
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
@@ -395,7 +386,6 @@ namespace ShareX
         public TimeZoneInfo CustomTimeZone = TimeZoneInfo.Utc;
         public string NameFormatPattern = "%ra{10}";
         public string NameFormatPatternActiveWindow = "%pn_%ra{10}";
-        public bool RegionCaptureUseWindowPattern = true;
         public bool FileUploadUseNamePattern = false;
         public bool FileUploadReplaceProblematicCharacters = false;
         public bool URLRegexReplace = false;
@@ -429,6 +419,7 @@ namespace ShareX
         public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoConverterOptions VideoConverterOptions = new VideoConverterOptions();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
+        public BorderlessWindowSettings BorderlessWindowSettings = new BorderlessWindowSettings();
     }
 
     public class TaskSettingsAdvanced
@@ -455,12 +446,25 @@ namespace ShareX
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> ImageExtensions { get; set; }
 
-        [Category("Upload"), DefaultValue(false), Description("Copy URL before start upload. Only works for FTP, FTPS, SFTP, Amazon S3, Google Cloud Storage and Azure Storage.")]
-        public bool EarlyCopyURL { get; set; }
-
         [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader."),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> TextExtensions { get; set; }
+
+        [Category("Upload"), DefaultValue(false), Description("Copy URL before start upload. Only works for FTP, FTPS, SFTP, Amazon S3, Google Cloud Storage and Azure Storage.")]
+        public bool EarlyCopyURL { get; set; }
+
+        [Category("Upload text"), DefaultValue("txt"), Description("File extension when saving text to the local hard disk.")]
+        public string TextFileExtension { get; set; }
+
+        [Category("Upload text"), DefaultValue("text"), Description("Text format e.g. csharp, cpp, etc.")]
+        public string TextFormat { get; set; }
+
+        [Category("Upload text"), DefaultValue(""), Description("Custom text input. Use %input for text input. Example you can create web page with your text in it."),
+        Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+        public string TextCustom { get; set; }
+
+        [Category("Upload text"), DefaultValue(true), Description("HTML encode custom text input.")]
+        public bool TextCustomEncodeInput { get; set; }
 
         [Category("After upload"), DefaultValue(false), Description("If result URL starts with \"http://\" then replace it with \"https://\".")]
         public bool ResultForceHTTPS { get; set; }
@@ -481,19 +485,6 @@ namespace ShareX
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }
 
-        [Category("Upload text"), DefaultValue("txt"), Description("File extension when saving text to the local hard disk.")]
-        public string TextFileExtension { get; set; }
-
-        [Category("Upload text"), DefaultValue("text"), Description("Text format e.g. csharp, cpp, etc.")]
-        public string TextFormat { get; set; }
-
-        [Category("Upload text"), DefaultValue(""), Description("Custom text input. Use %input for text input. Example you can create web page with your text in it."),
-        Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
-        public string TextCustom { get; set; }
-
-        [Category("Upload text"), DefaultValue(true), Description("HTML encode custom text input.")]
-        public bool TextCustomEncodeInput { get; set; }
-
         [Category("Name pattern"), DefaultValue(100), Description("Maximum name pattern length for file name.")]
         public int NamePatternMaxLength { get; set; }
 
@@ -506,8 +497,8 @@ namespace ShareX
         public TaskSettingsAdvanced()
         {
             this.ApplyDefaultPropertyValues();
-            ImageExtensions = Helpers.ImageFileExtensions.ToList();
-            TextExtensions = Helpers.TextFileExtensions.ToList();
+            ImageExtensions = FileHelpers.ImageFileExtensions.ToList();
+            TextExtensions = FileHelpers.TextFileExtensions.ToList();
         }
     }
 }

@@ -139,22 +139,22 @@
     <value>URL</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>Config. do programa...</value>
+    <value>Configurações do programa...</value>
   </data>
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>Histórico...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>Config. de atalhos...</value>
+    <value>Configuração de atalhos...</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Histórico de imagens...</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
-    <value>Screenshots...</value>
+    <value>Pasta de capturas de tela...</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>Config. de tarefas...</value>
+    <value>Configuração de tarefas...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>Tarefas pós-captura</value>
@@ -177,14 +177,11 @@
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Enviar</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Doar...</value>
-  </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Sair</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>Config. de tarefas...</value>
+    <value>Configuração de tarefas...</value>
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Ferramentas</value>
@@ -270,20 +267,8 @@
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Tela cheia</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Esconder menu</value>
-  </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Efeitos de imagem...</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automático</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Esconder</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Mostrar</value>
   </data>
   <data name="tsmiOpen.Text" xml:space="preserve">
     <value>Abrir</value>
@@ -340,7 +325,7 @@
     <value>Encurtar URL</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
-    <value>Pasta de screenshots...</value>
+    <value>Pasta de capturas de tela...</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Registro de depuração...</value>
@@ -350,9 +335,6 @@
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Parar envio</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Sobre...</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
     <value>Testar encurtador de URL</value>
@@ -418,19 +400,19 @@
     <value>Desabilitar atalhos</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>Encurtadores de URL...</value>
+    <value>Encurtadores de URL</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
-    <value>Config. do programa...</value>
+    <value>Configurações do programa...</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>Config. de destinos...</value>
+    <value>Configuração de destinos...</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Tela cheia</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
-    <value>Config. de atalhos...</value>
+    <value>Configuração de atalhos...</value>
   </data>
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>Código QR...</value>
@@ -458,9 +440,6 @@
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Conferir hash...</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Prévia de imagem</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Envio de imagens</value>
@@ -514,7 +493,7 @@
     <value>Envio de arquivos</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Conferir hash</value>
+    <value>Conferir hash...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Efeitos de imagem...</value>
@@ -535,7 +514,7 @@
     <value>Monitor</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
-    <value>Teste de monitor</value>
+    <value>Teste de monitor...</value>
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
     <value>Região</value>
@@ -588,37 +567,229 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Captura rolante...</value>
   </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Testar encurtador de URL</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Testar compartilhamento de URL</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Testar envio de texto</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Testar envio de imagem</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Testar envio de arquivo</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Log de depuração...</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Depurar</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Esconder colunas</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Captura de texto (OCR)...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Captura de texto (OCR)...</value>
-  </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>Baixar</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>Sobre...</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>Mostrar cursor</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>Mostrar cursor</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>Atraso na captura de tela</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>Atraso na captura de tela</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>Pesquisa visual do Bing (OCR)...</value>
+  </data>
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
+    <value>Pesquisa de imagens do Google...</value>
+  </data>
+  <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
+    <value>Alternar barra de ferramentas de ações</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Configurações personalizadas de upload...</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Configurações personalizadas de upload...</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Adicionar efeitos de imagem...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>Visualizador da área de transferência...</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>Visualizador da área de transferência...</value>
+  </data>
+  <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
+    <value>Janela sem bordas...</value>
+  </data>
+  <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
+    <value>Janela sem bordas...</value>
+  </data>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>Inspecionar janela...</value>
+  </data>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>Inspecionar janela...</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 segundo</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 segundo</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 segundos</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 segundos</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 segundos</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 segundos</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 segundos</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 segundos</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 segundos</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 segundos</value>
+  </data>
+  <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+C</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>Combinar horizontalmente</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Combinar imagens...</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>Combinar verticalmente</value>
+  </data>
+  <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+D</value>
+  </data>
+  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Enter</value>
+  </data>
+  <data name="tsmiPinSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Shift+C</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+U</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord...</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Doar...</value>
+  </data>
+  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>Dimensões da imagem</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Editor de imagem...</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Editor de imagem...</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>Divisor de imagem...</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Divisor de imagem...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Miniatura de imagem...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Miniatura de imagem...</value>
+  </data>
+  <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
+    <value>Visualizador de imagem...</value>
+  </data>
+  <data name="tsmiImageViewer.Text" xml:space="preserve">
+    <value>Visualizador de imagem...</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>Sem atraso</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>Sem atraso</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>Imagem OCR...</value>
+  </data>
+  <data name="tsmiOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiTrayOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiPinSelectedFile.Text" xml:space="preserve">
+    <value>Fixar na tela</value>
+  </data>
+  <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
+    <value>Fixar na tela...</value>
+  </data>
+  <data name="tsmiPinToScreen.Text" xml:space="preserve">
+    <value>Fixar na tela...</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>Remover tarefa da lista</value>
+  </data>
+  <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
+    <value>Reiniciar o ShareX como administrador</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Executar ação</value>
+  </data>
+  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+C</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Del</value>
+  </data>
+  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Enter</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Encurtar URL...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Encurtar URL...</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>Alternar para exibição de miniaturas</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter...</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Upload de texto...</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Upload de texto...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Conversor de vídeo...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Conversor de vídeo...</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
   </data>
 </root>

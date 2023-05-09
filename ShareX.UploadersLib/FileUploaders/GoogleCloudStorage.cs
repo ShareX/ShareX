@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -62,6 +62,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class GoogleCloudStorage : FileUploader, IOAuth2
     {
+        public GoogleOAuth2 OAuth2 { get; private set; }
+        public OAuth2Info AuthInfo => OAuth2.AuthInfo;
         public string Bucket { get; set; }
         public string Domain { get; set; }
         public string Prefix { get; set; }
@@ -70,36 +72,32 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool RemoveExtensionVideo { get; set; }
         public bool SetPublicACL { get; set; }
 
-        public OAuth2Info AuthInfo => googleAuth.AuthInfo;
-
-        private GoogleOAuth2 googleAuth;
-
         public GoogleCloudStorage(OAuth2Info oauth)
         {
-            googleAuth = new GoogleOAuth2(oauth, this)
+            OAuth2 = new GoogleOAuth2(oauth, this)
             {
-                Scope = "https://www.googleapis.com/auth/devstorage.read_write"
+                Scope = "https://www.googleapis.com/auth/devstorage.read_write https://www.googleapis.com/auth/userinfo.profile"
             };
         }
 
         public bool RefreshAccessToken()
         {
-            return googleAuth.RefreshAccessToken();
+            return OAuth2.RefreshAccessToken();
         }
 
         public bool CheckAuthorization()
         {
-            return googleAuth.CheckAuthorization();
+            return OAuth2.CheckAuthorization();
         }
 
         public string GetAuthorizationURL()
         {
-            return googleAuth.GetAuthorizationURL();
+            return OAuth2.GetAuthorizationURL();
         }
 
         public bool GetAccessToken(string code)
         {
-            return googleAuth.GetAccessToken(code);
+            return OAuth2.GetAccessToken(code);
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -129,7 +127,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string serializedGoogleCloudStorageMetadata = JsonConvert.SerializeObject(googleCloudStorageMetadata);
 
-            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart&fields=name", stream, fileName, null, headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", relatedData: serializedGoogleCloudStorageMetadata);
+            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart&fields=name", stream, fileName, null, headers: OAuth2.GetAuthHeaders(), contentType: "multipart/related", relatedData: serializedGoogleCloudStorageMetadata);
 
             GoogleCloudStorageResponse googleCloudStorageResponse = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
 
@@ -140,11 +138,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetUploadPath(string fileName)
         {
-            string uploadPath = NameParser.Parse(NameParserType.FolderPath, Prefix.Trim('/'));
+            string uploadPath = NameParser.Parse(NameParserType.FilePath, Prefix.Trim('/'));
 
-            if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
-                (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
-                (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            if ((RemoveExtensionImage && FileHelpers.IsImageFile(fileName)) ||
+                (RemoveExtensionText && FileHelpers.IsTextFile(fileName)) ||
+                (RemoveExtensionVideo && FileHelpers.IsVideoFile(fileName)))
             {
                 fileName = Path.GetFileNameWithoutExtension(fileName);
             }
@@ -168,7 +166,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = URLHelpers.CombineURL(Domain, uploadPath);
 
-            return URLHelpers.FixPrefix(url, "https://");
+            return URLHelpers.FixPrefix(url);
         }
 
         public string GetPreviewURL()

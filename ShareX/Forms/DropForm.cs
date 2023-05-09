@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -109,7 +109,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Left)
             {
                 NativeMethods.ReleaseCapture();
-                NativeMethods.SendMessage(Handle, (uint)WindowsMessages.NCLBUTTONDOWN, (IntPtr)NativeConstants.HT_CAPTION, IntPtr.Zero);
+                NativeMethods.SendMessage(Handle, (uint)WindowsMessages.NCLBUTTONDOWN, (IntPtr)WindowHitTestRegions.HTCAPTION, IntPtr.Zero);
             }
         }
 
@@ -191,10 +191,12 @@ namespace ShareX
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            AllowDrop = true;
+            AutoScaleMode = AutoScaleMode.Font;
             Cursor = Cursors.SizeAll;
             Text = "DropForm";
-            AllowDrop = true;
+            TopMost = true;
 
             MouseDown += DropForm_MouseDown;
             MouseUp += DropForm_MouseUp;

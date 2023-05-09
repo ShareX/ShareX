@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -33,34 +34,28 @@ namespace ShareX
     public partial class AboutForm : Form
     {
         private EasterEggAboutAnimation easterEgg;
+        private bool checkUpdate = false;
 
         public AboutForm()
         {
             InitializeComponent();
-
             lblProductName.Text = Program.Title;
             pbLogo.Image = ShareXResources.Logo;
-
-            rtbShareXInfo.AddContextMenu();
-            rtbCredits.AddContextMenu();
-
             ShareXResources.ApplyTheme(this);
 
 #if STEAM
             uclUpdate.Visible = false;
             lblBuild.Text = "Steam build";
             lblBuild.Visible = true;
-#elif WindowsStore
+#elif MicrosoftStore
             uclUpdate.Visible = false;
             lblBuild.Text = "Microsoft Store build";
             lblBuild.Visible = true;
 #else
-            if (!Program.PortableApps)
+            if (!SystemOptions.DisableUpdateCheck)
             {
                 uclUpdate.UpdateLoadingImage();
-
-                UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
-                uclUpdate.CheckUpdate(updateChecker);
+                checkUpdate = true;
             }
             else
             {
@@ -68,21 +63,20 @@ namespace ShareX
             }
 #endif
 
-            lblTeam.Text = "ShareX Team:";
-            lblBerk.Text = "Jaex (Berk)";
-            lblMike.Text = "McoreD (Michael Delpach)";
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Links, FontStyle.Bold, 13);
+            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Website}: {Links.Website}
+{Resources.AboutForm_AboutForm_Project_page}: {Links.GitHub}
+{Resources.AboutForm_AboutForm_Changelog}: {Links.Changelog}
+{Resources.AboutForm_AboutForm_Privacy_policy}: {Links.PrivacyPolicy}
+", FontStyle.Regular);
 
-            rtbShareXInfo.Text = $@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
-{Resources.AboutForm_AboutForm_Project_page}: {Links.URL_GITHUB}
-{Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}";
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Team, FontStyle.Bold, 13);
+            rtbInfo.AppendLine($@"Jaex: {Links.Jaex}
+McoreD: {Links.McoreD}
+", FontStyle.Regular);
 
-            rtbCredits.Text = $@"{Resources.AboutForm_AboutForm_Contributors}:
-
-https://github.com/ShareX/ShareX/graphs/contributors
-
-{Resources.AboutForm_AboutForm_Translators}:
-
-{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex & https://github.com/muratmoon
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Translators, FontStyle.Bold, 13);
+            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex
 {Resources.AboutForm_AboutForm_Language_de}: https://github.com/Starbug2 & https://github.com/Kaeltis
 {Resources.AboutForm_AboutForm_Language_fr}: https://github.com/nwies & https://github.com/Shadorc
 {Resources.AboutForm_AboutForm_Language_zh_CH}: https://github.com/jiajiechan
@@ -101,51 +95,45 @@ https://github.com/ShareX/ShareX/graphs/contributors
 {Resources.AboutForm_AboutForm_Language_fa_IR}: https://github.com/pourmand1376
 {Resources.AboutForm_AboutForm_Language_pt_PT}: https://github.com/FarewellAngelina
 {Resources.AboutForm_AboutForm_Language_ja_JP}: https://github.com/kanaxx
+{Resources.AboutForm_AboutForm_Language_ro}: https://github.com/Edward205
+{Resources.AboutForm_AboutForm_Language_pl}: https://github.com/RikoDEV
+", FontStyle.Regular);
 
-{Resources.AboutForm_AboutForm_External_libraries}:
-
-Json.NET: https://github.com/JamesNK/Newtonsoft.Json
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Credits, FontStyle.Bold, 13);
+            rtbInfo.AppendLine(@"Json.NET: https://github.com/JamesNK/Newtonsoft.Json
 SSH.NET: https://github.com/sshnet/SSH.NET
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: https://www.ffmpeg.org
-DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
+Recorder devices: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 FluentFTP: https://github.com/robinrodricks/FluentFTP
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
-OCR Space: https://ocr.space
 ZXing.Net: https://github.com/micjahn/ZXing.Net
 MegaApiClient: https://github.com/gpailler/MegaApiClient
+Inno Setup Dependency Installer: https://github.com/DomGries/InnoDependencyInstaller
 Blob Emoji: http://blobs.gg
+", FontStyle.Regular);
 
-Copyright (c) 2007-2020 ShareX Team";
+            rtbInfo.AppendText("Copyright (c) 2007-2023 ShareX Team", FontStyle.Bold, 13);
 
             easterEgg = new EasterEggAboutAnimation(cLogo, this);
         }
 
-        private void AboutForm_Shown(object sender, EventArgs e)
+        private async void AboutForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+
+            if (checkUpdate)
+            {
+                UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
+                await uclUpdate.CheckUpdate(updateChecker);
+            }
         }
 
         private void pbLogo_MouseDown(object sender, MouseEventArgs e)
         {
             easterEgg.Start();
             pbLogo.Visible = false;
-        }
-
-        private void pbSteam_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_STEAM);
-        }
-
-        private void pbBerkURL_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_JAEX);
-        }
-
-        private void pbMikeURL_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_MCORED);
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
@@ -155,12 +143,12 @@ Copyright (c) 2007-2020 ShareX Team";
 
         private void btnShareXLicense_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFile(Helpers.GetAbsolutePath("Licenses\\ShareX_license.txt"));
+            FileHelpers.OpenFile(FileHelpers.GetAbsolutePath("Licenses\\ShareX_license.txt"));
         }
 
         private void btnLicenses_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFolder(Helpers.GetAbsolutePath("Licenses"));
+            FileHelpers.OpenFolder(FileHelpers.GetAbsolutePath("Licenses"));
         }
 
         private void btnClose_Click(object sender, EventArgs e)

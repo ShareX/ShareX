@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -78,8 +78,8 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ShellExtMenuFilesCmd, null, ShellExtPath) &&
-                    RegistryHelpers.CheckRegistry(ShellExtMenuDirectoryCmd, null, ShellExtPath);
+                return RegistryHelpers.CheckStringValue(ShellExtMenuFilesCmd, null, ShellExtPath) &&
+                    RegistryHelpers.CheckStringValue(ShellExtMenuDirectoryCmd, null, ShellExtPath);
             }
             catch (Exception e)
             {
@@ -130,7 +130,7 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ShellExtEditImageCmd, null, ShellExtEditPath);
+                return RegistryHelpers.CheckStringValue(ShellExtEditImageCmd, null, ShellExtEditPath);
             }
             catch (Exception e)
             {
@@ -176,8 +176,8 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ShellCustomUploaderExtensionPath, null, ShellCustomUploaderExtensionValue) &&
-                    RegistryHelpers.CheckRegistry(ShellCustomUploaderCommandPath, null, ShellCustomUploaderCommandValue);
+                return RegistryHelpers.CheckStringValue(ShellCustomUploaderExtensionPath, null, ShellCustomUploaderExtensionValue) &&
+                    RegistryHelpers.CheckStringValue(ShellCustomUploaderCommandPath, null, ShellCustomUploaderCommandValue);
             }
             catch (Exception e)
             {
@@ -227,8 +227,8 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ShellImageEffectExtensionPath, null, ShellImageEffectExtensionValue) &&
-                    RegistryHelpers.CheckRegistry(ShellImageEffectCommandPath, null, ShellImageEffectCommandValue);
+                return RegistryHelpers.CheckStringValue(ShellImageEffectExtensionPath, null, ShellImageEffectExtensionValue) &&
+                    RegistryHelpers.CheckStringValue(ShellImageEffectCommandPath, null, ShellImageEffectCommandValue);
             }
             catch (Exception e)
             {
@@ -278,7 +278,7 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ChromeNativeMessagingHosts, null, Program.ChromeHostManifestFilePath) &&
+                return RegistryHelpers.CheckStringValue(ChromeNativeMessagingHosts, null, Program.ChromeHostManifestFilePath) &&
                     File.Exists(Program.ChromeHostManifestFilePath);
             }
             catch (Exception e)
@@ -309,9 +309,9 @@ namespace ShareX
             }
         }
 
-        private static void CreateChromeHostManifest(string filepath)
+        private static void CreateChromeHostManifest(string filePath)
         {
-            Helpers.CreateDirectoryFromFilePath(filepath);
+            FileHelpers.CreateDirectoryFromFilePath(filePath);
 
             ChromeManifest manifest = new ChromeManifest()
             {
@@ -324,7 +324,7 @@ namespace ShareX
 
             string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
 
-            File.WriteAllText(filepath, json, Encoding.UTF8);
+            File.WriteAllText(filePath, json, Encoding.UTF8);
         }
 
         private static void RegisterChromeExtensionSupport()
@@ -348,7 +348,7 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(FirefoxNativeMessagingHosts, null, Program.FirefoxHostManifestFilePath) &&
+                return RegistryHelpers.CheckStringValue(FirefoxNativeMessagingHosts, null, Program.FirefoxHostManifestFilePath) &&
                     File.Exists(Program.FirefoxHostManifestFilePath);
             }
             catch (Exception e)
@@ -379,9 +379,9 @@ namespace ShareX
             }
         }
 
-        private static void CreateFirefoxHostManifest(string filepath)
+        private static void CreateFirefoxHostManifest(string filePath)
         {
-            Helpers.CreateDirectoryFromFilePath(filepath);
+            FileHelpers.CreateDirectoryFromFilePath(filePath);
 
             FirefoxManifest manifest = new FirefoxManifest()
             {
@@ -394,7 +394,7 @@ namespace ShareX
 
             string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
 
-            File.WriteAllText(filepath, json, Encoding.UTF8);
+            File.WriteAllText(filePath, json, Encoding.UTF8);
         }
 
         private static void RegisterFirefoxAddonSupport()
@@ -416,12 +416,12 @@ namespace ShareX
 
         public static bool CheckSendToMenuButton()
         {
-            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, Application.ExecutablePath);
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, "ShareX", Application.ExecutablePath);
         }
 
         public static bool CreateSendToMenuButton(bool create)
         {
-            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.SendTo, Application.ExecutablePath);
+            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.SendTo, "ShareX", Application.ExecutablePath);
         }
 
         public static bool CheckSteamShowInApp()
@@ -437,7 +437,7 @@ namespace ShareX
             {
                 if (showInApp)
                 {
-                    Helpers.CreateEmptyFile(path);
+                    FileHelpers.CreateEmptyFile(path);
                 }
                 else if (File.Exists(path))
                 {

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -122,11 +122,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (account.IsActive)
             {
-                client.DataConnectionType = FtpDataConnectionType.AutoActive;
+                client.Config.DataConnectionType = FtpDataConnectionType.AutoActive;
             }
             else
             {
-                client.DataConnectionType = FtpDataConnectionType.AutoPassive;
+                client.Config.DataConnectionType = FtpDataConnectionType.AutoPassive;
             }
 
             if (account.Protocol == FTPProtocol.FTPS)
@@ -135,20 +135,20 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     default:
                     case FTPSEncryption.Explicit:
-                        client.EncryptionMode = FtpEncryptionMode.Explicit;
+                        client.Config.EncryptionMode = FtpEncryptionMode.Explicit;
                         break;
                     case FTPSEncryption.Implicit:
-                        client.EncryptionMode = FtpEncryptionMode.Implicit;
+                        client.Config.EncryptionMode = FtpEncryptionMode.Implicit;
                         break;
                 }
 
-                client.SslProtocols = SslProtocols.Tls | SslProtocols.Tls11 | SslProtocols.Tls12;
-                client.DataConnectionEncryption = true;
+                client.Config.SslProtocols = SslProtocols.Tls | SslProtocols.Tls11 | SslProtocols.Tls12;
+                client.Config.DataConnectionEncryption = true;
 
                 if (!string.IsNullOrEmpty(account.FTPSCertificateLocation) && File.Exists(account.FTPSCertificateLocation))
                 {
                     X509Certificate cert = X509Certificate2.CreateFromSignedFile(Account.FTPSCertificateLocation);
-                    client.ClientCertificates.Add(cert);
+                    client.Config.ClientCertificates.Add(cert);
                 }
                 else
                 {
@@ -167,7 +167,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             UploadResult result = new UploadResult();
 
-            string subFolderPath = Account.GetSubFolderPath(null, NameParserType.FolderPath);
+            string subFolderPath = Account.GetSubFolderPath(null, NameParserType.FilePath);
             string path = URLHelpers.CombineURL(subFolderPath, fileName);
             string url = Account.GetUriPath(fileName, subFolderPath);
 
@@ -233,7 +233,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 try
                 {
-                    return UploadData2(localStream, remotePath);
+                    return UploadDataInternal(localStream, remotePath);
                 }
                 catch (FtpCommandException e)
                 {
@@ -242,7 +242,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         CreateMultiDirectory(URLHelpers.GetDirectoryPath(remotePath));
 
-                        return UploadData2(localStream, remotePath);
+                        return UploadDataInternal(localStream, remotePath);
                     }
 
                     throw e;
@@ -252,7 +252,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
-        private bool UploadData2(Stream localStream, string remotePath)
+        private bool UploadDataInternal(Stream localStream, string remotePath)
         {
             bool result;
             using (Stream remoteStream = client.OpenWrite(remotePath))
@@ -302,18 +302,18 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (!string.IsNullOrEmpty(file))
                 {
-                    string filename = Path.GetFileName(file);
+                    string fileName = Path.GetFileName(file);
 
                     if (File.Exists(file))
                     {
-                        UploadFile(file, URLHelpers.CombineURL(remotePath, filename));
+                        UploadFile(file, URLHelpers.CombineURL(remotePath, fileName));
                     }
                     else if (Directory.Exists(file))
                     {
                         List<string> filesList = new List<string>();
                         filesList.AddRange(Directory.GetFiles(file));
                         filesList.AddRange(Directory.GetDirectories(file));
-                        string path = URLHelpers.CombineURL(remotePath, filename);
+                        string path = URLHelpers.CombineURL(remotePath, fileName);
                         CreateDirectory(path);
                         UploadFiles(filesList.ToArray(), path);
                     }
@@ -347,7 +347,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (file != null && !string.IsNullOrEmpty(file.Name))
                 {
-                    if (recursive && file.Type == FtpFileSystemObjectType.Directory)
+                    if (recursive && file.Type == FtpObjectType.Directory)
                     {
                         FtpListItem[] newFiles = GetListing(file.FullName);
                         string directoryPath = Path.Combine(localPath, file.Name);
@@ -359,7 +359,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         DownloadFiles(newFiles, directoryPath);
                     }
-                    else if (file.Type == FtpFileSystemObjectType.File)
+                    else if (file.Type == FtpObjectType.File)
                     {
                         string filePath = Path.Combine(localPath, file.Name);
                         DownloadFile(file.FullName, filePath);
@@ -438,11 +438,11 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (file != null && !string.IsNullOrEmpty(file.Name))
                 {
-                    if (file.Type == FtpFileSystemObjectType.Directory)
+                    if (file.Type == FtpObjectType.Directory)
                     {
                         DeleteDirectory(file.FullName);
                     }
-                    else if (file.Type == FtpFileSystemObjectType.File)
+                    else if (file.Type == FtpObjectType.File)
                     {
                         DeleteFile(file.FullName);
                     }
@@ -454,8 +454,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (Connect())
             {
-                string filename = URLHelpers.GetFileName(remotePath);
-                if (filename == "." || filename == "..")
+                string fileName = URLHelpers.GetFileName(remotePath);
+                if (fileName == "." || fileName == "..")
                 {
                     return;
                 }

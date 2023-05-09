@@ -136,12 +136,51 @@
     <value>Dosyadan...</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
-    <value>İsim:</value>
+    <value>Ön ayar ismi:</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Kapat</value>
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Resimi yükle</value>
+  </data>
+  <data name="btnEffectAdd.ToolTip" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnEffectClear.ToolTip" xml:space="preserve">
+    <value>Temizle...</value>
+  </data>
+  <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
+    <value>Çoğalt</value>
+  </data>
+  <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="btnEffectRemove.ToolTip" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Resim efektleri...</value>
+  </data>
+  <data name="btnPackager.Text" xml:space="preserve">
+    <value>Paketleyici...</value>
+  </data>
+  <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
+    <value>Çoğalt</value>
+  </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>Yeni</value>
+  </data>
+  <data name="btnPresetRemove.ToolTip" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="lblEffects.Text" xml:space="preserve">
+    <value>Efektler:</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Ön ayarlar:</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>Efekt ismi:</value>
   </data>
 </root>

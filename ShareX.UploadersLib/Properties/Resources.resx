@@ -137,7 +137,7 @@
     <value>..\Favicons\GitHub.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Parent album path e.g.</value>
+    <value>Parent album path, for example:</value>
   </data>
   <data name="Pastebin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Pastebin.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -266,9 +266,6 @@ Created folders:</value>
   <data name="Pomf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Pomf.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lithiio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Lithiio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
     <value>Configured</value>
   </data>
@@ -283,9 +280,6 @@ Created folders:</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Invalid device name</value>
-  </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Response parse failed.</value>
   </data>
   <data name="GoogleDrive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\GoogleDrive.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -341,9 +335,6 @@ Created folders:</value>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Paste verification code here</value>
   </data>
-  <data name="GooglePhotos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\GooglePhotos.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>Key file does not exist.</value>
   </data>
@@ -390,7 +381,7 @@ Created folders:</value>
     <value>..\Favicons\Kutt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="txtB2BucketWatermark" xml:space="preserve">
-    <value>Optional, only used if you didn't set a bucket when you made the key</value>
+    <value>(Optional) Only used if you didn't set a bucket when you made the key</value>
   </data>
   <data name="Dropbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Dropbox.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -415,5 +406,53 @@ Created folders:</value>
   </data>
   <data name="ZeroWidthShortener" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\favicons\zerowidthshortener.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>Formatting failed.</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>Formatting failed.</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>Shortened URL</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>Thumbnail URL</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>Deletion URL</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Status code</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>Response URL</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>Response text</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Headers</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="GooglePhotos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\favicons\googlephotos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LobFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Favicons\LobFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OAuthCallbackPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\oauthcallbackpage.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect...</value>
   </data>
 </root>

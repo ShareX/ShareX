@@ -293,9 +293,6 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Upload map</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP programma</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Hash controle</value>
   </data>
@@ -525,9 +522,6 @@ Wil je deze downloaden en installeren?</value>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Uploaden</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Hulpmiddelen</value>
-  </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Hulpmiddelen</value>
   </data>
@@ -665,9 +659,6 @@ Wil je deze downloaden en installeren?</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Doel</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Scrollopname</value>

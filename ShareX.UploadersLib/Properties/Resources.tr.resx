@@ -184,14 +184,11 @@ Oluşturulmuş dizinler:</value>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Ana klasör</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Yanıt çözümleme başarısız oldu.</value>
-  </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Sertifika dosyası için gözat...</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Ana album yolu, örneğin:</value>
+    <value>Ana albüm yolu, örneğin:</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Klasörler isteniyor...</value>
@@ -210,5 +207,77 @@ Oluşturulmuş dizinler:</value>
   </data>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Doğrulama kodunu buraya yapıştır</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Dışarı aktarma başarısız.</value>
+  </data>
+  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
+    <value>Bütün özel yükleyicileri kaldır?</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>Giriş başarılı.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>Giriş yapılmadı.</value>
+  </data>
+  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
+    <value>"Dosya form ismi" ayarlanmalıdır.</value>
+  </data>
+  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"İstek adresi" ayarlanmalıdır.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"İstek adresi" ayarlanmalıdır.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
+    <value>"Hedef tipi" ayarlanmalıdır.</value>
+  </data>
+  <data name="DuplicateNameNotAllowed" xml:space="preserve">
+    <value>Yinelenen isim kullanılamaz.</value>
+  </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>Anahtar dosyası mevcut değil.</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>{0} olarak giriş yapıldı.</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>Drive'ım</value>
+  </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>(Opsiyonel) Yalnızca anahtarı yaratırken bir klasör ayarlamadıysanız kullanılır</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>Silme adresi</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Başlıklar</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>Biçimlendirme başarısız oldu.</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>Biçimlendirme başarısız oldu.</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>Kısaltılmış adres</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>Yanıt içeriği</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>Yanıt adresi</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>Küçük resim adresi</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Durum kodu</value>
   </data>
 </root>

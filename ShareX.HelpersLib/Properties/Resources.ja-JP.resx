@@ -199,7 +199,7 @@
     <value>スクロール キャプチャー</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>英数字連番 (大文字・小文字を区別) {n}でn桁ゼロ詰め</value>
+    <value>英数字連番 (大/小文字を区別) {n}でn桁ゼロ詰め</value>
   </data>
   <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
     <value>アクティブ ウィンドウのタイトル</value>
@@ -214,7 +214,7 @@
     <value>アップロード</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
-    <value>アクション ツールバーの表示切り替え</value>
+    <value>操作用ツールバーの表示切替</value>
   </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>アクションを実行</value>
@@ -247,7 +247,7 @@
     <value>その他</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>"Home" キーを送信後、スクロールトップ メッセージを送信</value>
+    <value>Home キーを送信後、スクロールトップ メッセージを送信</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>更新の確認に失敗しました</value>
@@ -307,7 +307,7 @@
     <value>切り取り</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
-    <value>動画キャプチャー</value>
+    <value>動画(GIF)キャプチャー</value>
   </data>
   <data name="FileExistAction_Cancel" xml:space="preserve">
     <value>保存しない</value>
@@ -368,7 +368,7 @@
     <value>ダウンロード失敗:</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>描画: 文字(縁取り)(O)</value>
+    <value>文字(縁取り)(O)</value>
   </data>
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
     <value>アクティブ モニターをキャプチャー</value>
@@ -449,7 +449,7 @@
     <value>.NET (低画質)</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>英数字連番 (大文字・小文字を区別しない) {n}でn桁ゼロ詰め</value>
+    <value>英数字連番 (大/小文字の区別なし) {n}でn桁ゼロ詰め</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
     <value>DNSの設定に失敗しました。</value>
@@ -497,19 +497,16 @@
     <value>領域: 楕円</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>"Page down" キーを送信</value>
+    <value>Page down キーを送信</value>
   </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>DNS チェンジャー</value>
+    <value>DNS 変更</value>
   </data>
   <data name="HotkeyType_Ruler_Category" xml:space="preserve">
     <value>ツール</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>独自領域の動画キャプチャー (GIF) を開始/停止</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>対象</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>定規</value>
@@ -539,7 +536,7 @@
     <value>動画キャプチャー</value>
   </data>
   <data name="ResponseType_Text" xml:space="preserve">
-    <value>応答内容</value>
+    <value>レスポンス内容</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>描画: カーソル</value>
@@ -567,9 +564,6 @@
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>独自領域の動画キャプチャーを開始/停止</value>
-  </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>ツール</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>その他</value>
@@ -614,13 +608,10 @@
     <value>アップロード</value>
   </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>画像の読み込み...</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>テキスト キャプチャー (OCR)</value>
+    <value>画像の読み込み中...</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>"Home" キーを送信</value>
+    <value>Home キーを送信</value>
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>進行状況: {0:0.0}%
@@ -653,7 +644,7 @@
     <value>動画キャプチャー</value>
   </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>サウンドファイルの参照...</value>
+    <value>音声ファイルの参照...</value>
   </data>
   <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
     <value>静止画キャプチャー</value>
@@ -782,7 +773,7 @@
     <value>アップロード</value>
   </data>
   <data name="ResponseType_Headers" xml:space="preserve">
-    <value>応答ヘッダー</value>
+    <value>レスポンスヘッダー</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>位取り記数法連番 {n}でn進数 (1 &lt; n &lt; 63)</value>
@@ -895,11 +886,8 @@
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>既定</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP クライアント</value>
-  </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
-    <value>ディレクトリの作成に失敗。</value>
+    <value>ディレクトリを作成できません。</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
     <value>DNS を設定しました。再起動が必要です。</value>
@@ -949,9 +937,6 @@
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>ファイル名: {0}</value>
   </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>静止画キャプチャー</value>
-  </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>描画: 楕円(E)</value>
   </data>
@@ -968,7 +953,7 @@
     <value>ファイル アップローダー</value>
   </data>
   <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>画像の読み込み: {0}%</value>
+    <value>画像の読み込み中: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>ランダムな英数字 {n}でn回繰り返し</value>
@@ -1039,11 +1024,8 @@
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1ヶ月</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>標準ストレージ</value>
-  </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>描画: 文字(背景)(T)</value>
+    <value>文字(背景)(T)</value>
   </data>
   <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
     <value>静止画キャプチャー</value>
@@ -1105,36 +1087,6 @@
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>ファイルをクリップボードにコピー</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>標準 – 低頻度アクセス ストレージ</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>クリップボードの内容: 画像 (サイズ: {0}x{1})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>クリップボードの内容: 文字列 (長さ: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>クリップボードの内容: ファイル(ファイル数: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>クリップボードが空または不明なデータです。</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>高画質バイキュービック</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>バイキュービック</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>バイリニア</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>高画質バイキュービック</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>ニアレストネイバー</value>
-  </data>
   <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
     <value>ツール</value>
   </data>
@@ -1148,13 +1100,13 @@
     <value>ツール</value>
   </data>
   <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>全て選択</value>
+    <value>すべて選択</value>
   </data>
   <data name="ShapeType_ToolSelect" xml:space="preserve">
     <value>選択・移動(M)</value>
   </data>
   <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
-    <value>描画: スマート イレイサー</value>
+    <value>スマート消しゴム</value>
   </data>
   <data name="ShapeType_DrawingMagnify" xml:space="preserve">
     <value>描画: 虫眼鏡</value>
@@ -1185,5 +1137,317 @@
   </data>
   <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
     <value>画像のサムネイル作成</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>クリップボードビューアー</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>ウィンドウの調査</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>実線</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>破線</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>点線</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>一点鎖線</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>二点鎖線</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>通知を閉じる</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>画像編集</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>画像をコピー</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>ファイルをコピー</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>ファイルパスをコピー</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>URLをコピー</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>ファイルを開く</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>フォルダを開く</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>URLを開く</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>ファイルをアップロード</value>
+  </data>
+  <data name="ContentAlignment_TopLeft" xml:space="preserve">
+    <value>左上</value>
+  </data>
+  <data name="ContentAlignment_TopCenter" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="ContentAlignment_TopRight" xml:space="preserve">
+    <value>右上</value>
+  </data>
+  <data name="ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>中央</value>
+  </data>
+  <data name="ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>左下</value>
+  </data>
+  <data name="ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="ContentAlignment_BottomRight" xml:space="preserve">
+    <value>右下</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>英字(小)</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>英字(大)</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>数字</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>ローマ数字(小)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>ローマ数字(大)</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>ウィンドウ</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Bing画像検索</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>1つ目のファイルの結果:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>2つ目のファイルの結果:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>ハッシュ値:</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>比較するハッシュ値:</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>動画キャプチャーを停止</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
+    <value>動画キャプチャー</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>トレイメニューを切り替え</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>横</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>表示しない</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>既定</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>画像エディタで編集</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>ファイルを開く</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>フォルダを開く</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>画像ビューアで開く</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>URLを開く</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>画像を選択（何もしない）</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>リスト表示</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>サムネイル表示</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>最前面に固定</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>非掲載(Unlisted)</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>公開(Public)</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>非公開(Private)</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>描画: フリーハンド矢印</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>ツール: 切り抜き削除(X)</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>名前をコピー</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>値をコピー</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>値</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
+    <value>その他</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>最前面に固定</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>波</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>のこぎり歯</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>破れ</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>固定サイズ</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>変更しない</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>キャンバスの比率</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>画像の比率</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>元に戻す</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>やり直し</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>画像ビューア</value>
+  </data>
+  <data name="HotkeyType_OCR_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>最前面に固定</value>
+  </data>
+  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>最前面に固定（クリップボードから）</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>最前面に固定（ファイルから）</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>最前面に固定（スクリーンから）</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording_Category" xml:space="preserve">
+    <value>動画キャプチャー</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>独自領域の動画キャプチャーを一時停止</value>
+  </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - 画像ビューア</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>ランダムな絵文字 {n}でn回繰り返し</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>ランダムな区別しやすい英数字 {n}でn回繰り返し</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>最近使用した領域をキャプチャー</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>ボーダーレスウィンドウ</value>
   </data>
 </root>

@@ -123,9 +123,6 @@
   <data name="btnYes.Text" xml:space="preserve">
     <value>Sim</value>
   </data>
-  <data name="cbDontShow.Text" xml:space="preserve">
-    <value>Não perguntar de novo até a próxima inicialização do programa</value>
-  </data>
   <data name="lblViewChangelog.Text" xml:space="preserve">
     <value>Ver registro de alterações</value>
   </data>

@@ -118,40 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="olvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="pgHistoryItem.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="olvMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="olvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 411</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="olvMain.TabIndex" type="System.Int32, mscorlib">
+  <data name="pgHistoryItem.HelpVisible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pgHistoryItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pgHistoryItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>578, 405</value>
+  </data>
+  <data name="pgHistoryItem.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;olvMain.Name" xml:space="preserve">
-    <value>olvMain</value>
+  <data name="&gt;&gt;pgHistoryItem.Name" xml:space="preserve">
+    <value>pgHistoryItem</value>
   </data>
-  <data name="&gt;&gt;olvMain.Type" xml:space="preserve">
-    <value>ShareX.HistoryLib.ObjectListView, ShareX.HistoryLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;pgHistoryItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;olvMain.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pgHistoryItem.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;olvMain.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pgHistoryItem.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>454, 411</value>
+    <value>584, 411</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

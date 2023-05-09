@@ -120,7 +120,4 @@
   <data name="btnHotkey.Text" xml:space="preserve">
     <value>단축키</value>
   </data>
-  <data name="lblHotkeyDescription.Text" xml:space="preserve">
-    <value>설명</value>
-  </data>
 </root>

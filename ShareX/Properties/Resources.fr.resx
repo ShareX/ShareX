@@ -136,20 +136,8 @@ Cliquez sur « Non » pour annuler la mise en ligne et désactiver la mise en li
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Mise en ligne en cours</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Encodage...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Erreur FFmpeg</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>Téléchargement de FFmpeg réussi.</value>
-  </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Temps restant : {0}s ({1}%) Total : {2}</value>
-  </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Contributeurs</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL à télécharger et à mettre en ligne</value>
@@ -216,26 +204,14 @@ Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du do
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Tâche terminée</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>En attente...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Mise en ligne d'images : {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copié dans le presse-papier : {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Cacher le menu</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Impossible de trouver un compte Twitter valide.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Afficher le menu</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Afficher les colonnes</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Annuler</value>
@@ -271,12 +247,6 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Ne plus afficher ce message.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tâche : {0}</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>les sources vidéo et audio FFmpeg ne peuvent être toutes les deux définies sur "Aucun".</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Historique des modifications</value>
   </data>
@@ -295,25 +265,8 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Démarrage</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} n'existe pas.
-
-Voulez-vous le télécharger automatiquement ?</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliothèques externes</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Erreur</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Cliquez sur l'icône de ShareX pour arrêter l'enregistrement.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Vous pouvez ajouter des workflows à partir des paramètres des raccourcis clavier...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Impossible d'enregistrer l'image pour le chemin {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX doit être redémarré pour que les changements de langue s'appliquent.
@@ -321,9 +274,6 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Utiliser un nouveau nom : </value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Manquant</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traducteurs</value>
@@ -392,9 +342,6 @@ Voulez-vous redémarrer ShareX ?</value>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Test de mise en ligne d'un texte</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Cacher les colonnes</value>
-  </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>Paramètres des tâches pour {0}</value>
   </data>
@@ -418,12 +365,6 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Choisir le chemin du dossier pour les captures</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Cliquez ici pour démarrer l'enregistrement.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Échec du téléchargement du FFmpeg.</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Dossier mis en ligne</value>
@@ -524,12 +465,6 @@ Clique de la molette pour fermer</value>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>Raccourcir URL</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Êtes-vous sûr de vouloir abandonner cet enregistrement ?</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Les versions de développement peuvent être instables et doivent être utilisées uniquement à des fins de test. Voulez-vous installer ?</value>
-  </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Modifier avec ShareX</value>
   </data>
@@ -541,9 +476,6 @@ Clique de la molette pour fermer</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
     <value>ShareX - Confirmation</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - Reconnaissance optique de caractères</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>Raccourcir</value>
@@ -573,9 +505,6 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
     <value>Espagnol mexicain</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Veuillez noter que ShareX utilise l'API en ligne OCR.Space pour effectuer la reconnaissance optique de caractères. Donnez-vous la permission à ShareX de mettre en ligne des images vers ce service ?</value>
   </data>
   <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
     <value>Rester sur le dessus</value>
@@ -633,8 +562,5 @@ Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
     <value>ShareX est réduit dans la zone de notification.</value>
-  </data>
-  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
-    <value>Votre antivirus ou la fonctionnalité d'accès contrôlé aux dossiers dans Windows 10 pourrait bloquer ShareX.</value>
   </data>
 </root>

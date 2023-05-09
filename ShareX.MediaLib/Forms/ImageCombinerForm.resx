@@ -122,7 +122,7 @@
     <value>8, 8</value>
   </data>
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
+    <value>120, 25</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
@@ -141,13 +141,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>136, 8</value>
   </data>
   <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
+    <value>120, 25</value>
   </data>
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -165,13 +165,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="btnMoveUp.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 8</value>
   </data>
   <data name="btnMoveUp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
+    <value>120, 25</value>
   </data>
   <data name="btnMoveUp.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -189,13 +189,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMoveUp.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="btnMoveDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>392, 8</value>
   </data>
   <data name="btnMoveDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
+    <value>120, 25</value>
   </data>
   <data name="btnMoveDown.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -213,7 +213,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMoveDown.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lvImages.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -223,7 +223,7 @@
     <value>8, 40</value>
   </data>
   <data name="lvImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>504, 344</value>
+    <value>504, 320</value>
   </data>
   <data name="lvImages.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -232,13 +232,13 @@
     <value>lvImages</value>
   </data>
   <data name="&gt;&gt;lvImages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvImages.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvImages.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="chFilepath.Text" xml:space="preserve">
     <value>Image file path</value>
@@ -256,7 +256,7 @@
     <value>504, 31</value>
   </data>
   <data name="btnCombine.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="btnCombine.Text" xml:space="preserve">
     <value>Combine images and save/upload depending on after capture settings</value>
@@ -271,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCombine.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="lblSpace.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -280,7 +280,7 @@
     <value>True</value>
   </data>
   <data name="lblSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 448</value>
+    <value>5, 424</value>
   </data>
   <data name="lblSpace.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 13</value>
@@ -301,13 +301,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblSpace.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="nudSpace.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="nudSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 444</value>
+    <value>200, 420</value>
   </data>
   <data name="nudSpace.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -328,7 +328,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudSpace.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="lblOrientation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -337,7 +337,7 @@
     <value>True</value>
   </data>
   <data name="lblOrientation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 400</value>
+    <value>5, 376</value>
   </data>
   <data name="lblOrientation.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -358,7 +358,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOrientation.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="lblSpacePixel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -367,7 +367,7 @@
     <value>True</value>
   </data>
   <data name="lblSpacePixel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 448</value>
+    <value>272, 424</value>
   </data>
   <data name="lblSpacePixel.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -388,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblSpacePixel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="lblImageAlignment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -397,7 +397,7 @@
     <value>True</value>
   </data>
   <data name="lblImageAlignment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 424</value>
+    <value>5, 400</value>
   </data>
   <data name="lblImageAlignment.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -418,13 +418,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblImageAlignment.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="cbAlignment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="cbAlignment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 420</value>
+    <value>200, 396</value>
   </data>
   <data name="cbAlignment.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 21</value>
@@ -442,7 +442,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAlignment.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="flpOrientation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -475,7 +475,7 @@
     <value>1</value>
   </data>
   <data name="flpOrientation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 395</value>
+    <value>200, 371</value>
   </data>
   <data name="flpOrientation.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>
@@ -493,7 +493,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flpOrientation.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="rbOrientationHorizontal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -552,6 +552,9 @@
   <data name="&gt;&gt;rbOrientationVertical.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cbAutoFillBackground.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="cbAutoFillBackground.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -562,7 +565,7 @@
     <value>120, 17</value>
   </data>
   <data name="cbAutoFillBackground.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="cbAutoFillBackground.Text" xml:space="preserve">
     <value>Auto fill background</value>
@@ -577,6 +580,123 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAutoFillBackground.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblWrapAfter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="lblWrapAfter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblWrapAfter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 448</value>
+  </data>
+  <data name="lblWrapAfter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="lblWrapAfter.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblWrapAfter.Text" xml:space="preserve">
+    <value>Wrap after:</value>
+  </data>
+  <data name="&gt;&gt;lblWrapAfter.Name" xml:space="preserve">
+    <value>lblWrapAfter</value>
+  </data>
+  <data name="&gt;&gt;lblWrapAfter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblWrapAfter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblWrapAfter.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="nudWrapAfter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="nudWrapAfter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 444</value>
+  </data>
+  <data name="nudWrapAfter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="nudWrapAfter.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="nudWrapAfter.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudWrapAfter.Name" xml:space="preserve">
+    <value>nudWrapAfter</value>
+  </data>
+  <data name="&gt;&gt;nudWrapAfter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudWrapAfter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudWrapAfter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblWrapAfterImages.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="lblWrapAfterImages.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblWrapAfterImages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 448</value>
+  </data>
+  <data name="lblWrapAfterImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblWrapAfterImages.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblWrapAfterImages.Text" xml:space="preserve">
+    <value>images</value>
+  </data>
+  <data name="&gt;&gt;lblWrapAfterImages.Name" xml:space="preserve">
+    <value>lblWrapAfterImages</value>
+  </data>
+  <data name="&gt;&gt;lblWrapAfterImages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblWrapAfterImages.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblWrapAfterImages.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblImageCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="lblImageCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>472, 368</value>
+  </data>
+  <data name="lblImageCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 24</value>
+  </data>
+  <data name="lblImageCount.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblImageCount.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;lblImageCount.Name" xml:space="preserve">
+    <value>lblImageCount</value>
+  </data>
+  <data name="&gt;&gt;lblImageCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageCount.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblImageCount.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -587,6 +707,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>521, 536</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>537, 400</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

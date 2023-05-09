@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>高级设置</value>
+    <value>高级</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 应用程序设置</value>
@@ -151,7 +151,7 @@
     <value>不显示 Windows 打印对话框</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>辅助文件上传程序</value>
+    <value>备用的文件上传程序</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>显示托盘图标</value>
@@ -174,20 +174,11 @@
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>添加...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>剪贴板格式</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>描述</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>重试时使用辅助上传程序优先级顺序</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>结果</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>辅助图像上传程序</value>
+    <value>备用的图像上传程序</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>同时上传限制：</value>
@@ -237,9 +228,6 @@
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>密码：</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>重试</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>上传</value>
   </data>
@@ -248,9 +236,6 @@
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>格式</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>辅助文本上传程序</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>当 ShareX 开启时，在 Steam 状态显示 ShareX</value>
@@ -386,5 +371,74 @@
   </data>
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>使用自定义主题</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>自动清理旧备份文件</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>自动清理旧日志文件</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>显示列</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>显示菜单</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>显示标题</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>重试时使用备用的上传器设置</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>备用的文本上传程序</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>缩略图视图</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>列表视图</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>缩略图大小：</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>单击缩略图操作：</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>任务视图模式：</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>图像预览可见性：</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>图像预览位置：</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>保留文件数量：</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>用于窗口的子文件夹模式：</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>标题位置：</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>剪贴板格式</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>主窗口</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSizeX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>这些格式会出现在主窗口的右键菜单中的“复制”菜单里面。</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>覆盖默认打印机：</value>
   </data>
 </root>

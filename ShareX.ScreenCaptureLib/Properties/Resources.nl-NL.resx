@@ -120,9 +120,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Selecteer ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>Download van FFmpeg geslaagd.</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Bitrate: {0}k</value>
   </data>
@@ -137,9 +134,6 @@
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Regio vastleggen</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Download van FFmpeg mislukt.</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Rechthoek vastleggen (snel)</value>
@@ -191,9 +185,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
     <value>Naar achteren sturen</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Vorm opties</value>
   </data>
   <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
     <value>Naar voren brengen</value>

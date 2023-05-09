@@ -363,21 +363,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Liste leeren</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Menü ausblenden</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Anzeigen</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Ausblenden</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automatisch</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Bildvorschau</value>
-  </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Vollbild</value>
   </data>
@@ -495,12 +480,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Bilderchronik...</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Spenden...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Über...</value>
-  </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Hauptfenster öffnen</value>
   </data>
@@ -588,30 +567,6 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video-Thumbnailer...</value>
   </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Debug</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>URL-Teilen testen</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>URL-Kürzen testen</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Dateiupload testen</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Textupload testen</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Bildupload testen</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Debugprotokoll...</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Spalten ausblenden</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Über...</value>
   </data>
@@ -660,26 +615,17 @@
   <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Umschalt+Entf</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google-Bildersuche...</value>
-  </data>
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>URL kürzen...</value>
   </data>
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>Text hochladen...</value>
   </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Schließen</value>
-  </data>
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Eingabe</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Aktionsleiste umschalten</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Neuigkeiten</value>
   </data>
   <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Alt+C</value>
@@ -688,12 +634,6 @@
     <value>Herunterladen</value>
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>Texterkennung (OCR)...</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Texterkennung (OCR)...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Texterkennung (OCR)...</value>
   </data>
   <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
@@ -719,12 +659,6 @@
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Bilder zusammenführen...</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Seitlich</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Unten</value>
   </data>
   <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
     <value>Bild-Thumbnailer...</value>
@@ -783,15 +717,6 @@
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Bildabmessungen</value>
   </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>Bitcoin</value>
-  </data>
-  <data name="tsbPatreon.Text" xml:space="preserve">
-    <value>Patreon</value>
-  </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
   </data>
@@ -804,38 +729,11 @@
   <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
     <value>Bildteiler...</value>
   </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>Titel der Bildvorschau</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>Unten</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>Oben</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>Ausblenden</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>Anzeigen</value>
-  </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>Aktion ausführen</value>
   </data>
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>Bildteiler...</value>
-  </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>Unterstützen Sie uns mit Kryptowährung</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>Unseren Discord-Server beitreten</value>
-  </data>
-  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
-    <value>Unterstützen Sie uns auf Patreon</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>Folgen Sie uns auf Twitter</value>
   </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>Bildeffekte hinzufügen...</value>

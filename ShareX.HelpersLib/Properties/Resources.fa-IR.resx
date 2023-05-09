@@ -210,9 +210,6 @@
   <data name="HotkeyType_QRCode_Category" xml:space="preserve">
     <value>ابزار</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>ابزار</value>
-  </data>
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>ابزار</value>
   </data>
@@ -245,9 +242,6 @@
   </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>آپلود کننده های متن</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>تشخیص متن از عکس (OCR) ...</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>توقف تمام آپلودهای جاری</value>
@@ -361,9 +355,6 @@
     <value>ضبط</value>
   </data>
   <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
-    <value>ضبط</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
     <value>ضبط</value>
   </data>
   <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
@@ -790,9 +781,6 @@
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>پیش فرض</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>کلاینت FTP</value>
-  </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>ایحاد پوشه با مشکل مواجه شد.</value>
   </data>
@@ -847,9 +835,6 @@
   <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
     <value>ارتفاع تصویر</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>فضای ذخیره سازی استاندار</value>
-  </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
     <value>بریدن عکس (C)</value>
   </data>
@@ -876,9 +861,6 @@
   </data>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>افزایشی</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>هدف</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>GUID تصادفی</value>

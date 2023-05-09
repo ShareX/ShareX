@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
         public event Action<string> EarlyURLCopyRequested;
 
         public bool IsUploading { get; protected set; }
-        public List<string> Errors { get; private set; } = new List<string>();
+        public UploaderErrorManager Errors { get; private set; } = new UploaderErrorManager();
         public bool IsError => !StopUploadRequested && Errors != null && Errors.Count > 0;
         public int BufferSize { get; set; } = 8192;
 
@@ -483,7 +483,7 @@ namespace ShareX.UploadersLib
 
                 string errorText = sb.ToString();
 
-                if (Errors == null) Errors = new List<string>();
+                if (Errors == null) Errors = new UploaderErrorManager();
                 Errors.Add(errorText);
 
                 DebugHelper.WriteLine("Error:\r\n" + errorText);

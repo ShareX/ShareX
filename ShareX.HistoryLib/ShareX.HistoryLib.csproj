@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShareX.HistoryLib</RootNamespace>
     <AssemblyName>ShareX.HistoryLib</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -53,8 +53,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStore|AnyCPU'">
-    <OutputPath>bin\WindowsStore\</OutputPath>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MicrosoftStore|AnyCPU' ">
+    <OutputPath>bin\MicrosoftStore\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -63,9 +63,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WindowsStoreDebug|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MicrosoftStoreDebug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\WindowsStoreDebug\</OutputPath>
+    <OutputPath>bin\MicrosoftStoreDebug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -83,9 +83,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SharedAssemblyInfo.cs">
-      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Forms\HistorySettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistorySettingsForm.Designer.cs">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryFilter.cs" />
+    <Compile Include="HistoryImageListViewRenderer.cs" />
     <Compile Include="HistoryItemManager_ContextMenu.cs" />
     <Compile Include="Forms\ImageHistoryForm.cs">
       <SubType>Form</SubType>
@@ -100,6 +108,7 @@
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HistoryManagerJSON.cs" />
+    <Compile Include="HistoryManagerMock.cs" />
     <Compile Include="HistoryManagerXML.cs" />
     <Compile Include="HistorySettings.cs" />
     <Compile Include="ImageHistorySettings.cs" />
@@ -162,6 +171,9 @@
     <EmbeddedResource Include="Forms\HistoryForm.nl-NL.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryForm.pl.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.pt-BR.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +181,9 @@
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryForm.ro.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.ru.resx">
@@ -228,6 +243,9 @@
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryItemInfoForm.ro.resx">
+      <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.ru.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +263,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.zh-TW.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.ja-JP.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.pt-BR.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.ro.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.ru.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.tr.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.vi-VN.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.zh-CN.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistoryForm.de.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
@@ -285,6 +327,9 @@
     <EmbeddedResource Include="Forms\ImageHistoryForm.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistoryForm.ro.resx">
+      <DependentUpon>ImageHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistoryForm.ru.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,10 +363,19 @@
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.ja-JP.resx">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistorySettingsForm.pl.resx">
+      <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistorySettingsForm.pt-BR.resx">
+      <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.pt-PT.resx">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.resx">
+      <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistorySettingsForm.ro.resx">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.ru.resx">
@@ -358,6 +412,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ro.resx" />
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.uk.resx" />
@@ -378,6 +433,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier--plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout-header-3-mix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

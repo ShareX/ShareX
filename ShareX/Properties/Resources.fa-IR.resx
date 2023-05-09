@@ -135,34 +135,17 @@
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>در حال آپلود کردن</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>فایل {0} وجود ندارد 
-
- آیا مایل به دانلود آن هستید؟</value>
-  </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>آیا از توقف ضبط اطمینان دارید؟</value>
-  </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>آیا میخواهید {0} فایل را آپلود کنید؟</value>
   </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>یک فولدر برای ذخیره کردن انتخاب کنید</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>برای شروع کلیک کنید</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>برای توقف کلیک کنید</value>
-  </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>بستن</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>ادامه دادن</value>
-  </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>مشارکت کنندگان</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>غیرفعال کردن کلیدهای سریع</value>
@@ -176,23 +159,14 @@
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>دیگر این پیام را نمایش نده</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>دانلود برنامه FFmpeg با مشکل مواجه شد.</value>
-  </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>در حال دانلود</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>خطا</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>خطا</value>
-  </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>ویرایش..</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>لطفا صبر کنید...</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>سایت</value>
@@ -250,9 +224,6 @@
   </data>
   <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
     <value>اسپانیایی - مکزیکی</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>کتابخانه های خارجی</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>مترجمین</value>
@@ -329,9 +300,6 @@
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>تست آپلود متن</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>وظیفه: {0}</value>
-  </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>تنظیمات وظیفه برای {0}</value>
   </data>
@@ -344,12 +312,6 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>در حال شروع</value>
   </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>نشان دادن منو</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>نمایش ستون ها</value>
-  </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
     <value>برای تغییر پوشه شخصی ShareX نیاز به راه اندازی مجدد دارد.
 
@@ -359,9 +321,6 @@
     <value>ShareX برای تغییر زبان نیاز به راه اندازی مجدد دارد.
 
 آیا می خواهید ShareX را مجددا راه اندازی کنید؟</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - شناسایی متن از تصویر</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
     <value>ShareX - تاییدیه</value>
@@ -384,15 +343,9 @@
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ویرایش با ShareX ...</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>در حال انکدکردن ...</value>
-  </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>شما در حال آپلود یک فایل بزرگ هستید. 
 آیا مایل به ادامه هستید؟</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>خطای FFmpeg</value>
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>متن ورودی برای انکد  کردن</value>
@@ -402,9 +355,6 @@
   </data>
   <data name="OCRForm_AutoComplete" xml:space="preserve">
     <value>خروجی OCR به کلیپ بورد شما کپی شد.</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>مخفی کردن ستون ها</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>نام نمی تواند خالی باشد</value>
@@ -435,9 +385,6 @@
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>به کلیپ بورد کپی شد: {0}</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>مخفی کردن منو</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>آدرس برای دانلود و آپلود</value>
@@ -492,15 +439,6 @@
   </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>برای کپی کردن آدرس به کلیپ بورد چپ کلیک کنید. برای بازکردن آدرس راست کلیک کنید.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>برنامه با موفقیت دانلود شد.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>نمیتوان منبع هم ویدیو و هم صوت را خالی گذاشت.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>فایل موجود نیست</value>
   </data>
   <data name="SwitchToListView" xml:space="preserve">
     <value>سوییچ کردن به حالت نمایش لیستی</value>

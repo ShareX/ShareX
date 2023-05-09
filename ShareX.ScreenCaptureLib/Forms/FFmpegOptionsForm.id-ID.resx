@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Pratinjau baris perintah</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Sumber</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Segarkan</value>
   </data>
@@ -140,9 +134,6 @@
   </data>
   <data name="lblNVENCBitrate.Text" xml:space="preserve">
     <value>Laju bit:</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Argumen baris perintah tambahan</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Instal sumber audio/video "perekam-gambar-layar" dan "perekam-audio-virtual"</value>
@@ -191,15 +182,6 @@
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Laju bit variabel:</value>
-  </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Unduh</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Kodek</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Jalur FFmpeg</value>
   </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
     <value>Kodek audio ini tidak didukung oleh wadah video terpilih.</value>

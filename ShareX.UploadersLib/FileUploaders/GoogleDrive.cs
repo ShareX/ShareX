@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -72,7 +72,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class GoogleDrive : FileUploader, IOAuth2
     {
-        private GoogleOAuth2 GoogleAuth { get; set; }
+        public GoogleOAuth2 OAuth2 { get; private set; }
+        public OAuth2Info AuthInfo => OAuth2.AuthInfo;
         public bool IsPublic { get; set; }
         public bool DirectLink { get; set; }
         public string FolderID { get; set; }
@@ -86,32 +87,30 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public GoogleDrive(OAuth2Info oauth)
         {
-            GoogleAuth = new GoogleOAuth2(oauth, this)
+            OAuth2 = new GoogleOAuth2(oauth, this)
             {
-                Scope = "https://www.googleapis.com/auth/drive"
+                Scope = "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/userinfo.profile"
             };
         }
 
-        public OAuth2Info AuthInfo => GoogleAuth.AuthInfo;
-
         public bool RefreshAccessToken()
         {
-            return GoogleAuth.RefreshAccessToken();
+            return OAuth2.RefreshAccessToken();
         }
 
         public bool CheckAuthorization()
         {
-            return GoogleAuth.CheckAuthorization();
+            return OAuth2.CheckAuthorization();
         }
 
         public string GetAuthorizationURL()
         {
-            return GoogleAuth.GetAuthorizationURL();
+            return OAuth2.GetAuthorizationURL();
         }
 
         public bool GetAccessToken(string code)
         {
-            return GoogleAuth.GetAccessToken(code);
+            return OAuth2.GetAccessToken(code);
         }
 
         private string GetMetadata(string name, string parentID, string driveID = "")
@@ -160,7 +159,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 allowFileDiscovery = allowFileDiscovery.ToString()
             });
 
-            string response = SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, GoogleAuth.GetAuthHeaders());
+            SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, OAuth2.GetAuthHeaders());
         }
 
         public List<GoogleDriveFile> GetFolders(string driveID = "", bool trashed = false, bool writer = true)
@@ -197,7 +196,7 @@ namespace ShareX.UploadersLib.FileUploaders
             do
             {
                 args["pageToken"] = pageToken;
-                string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v3/files", args, GoogleAuth.GetAuthHeaders());
+                string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v3/files", args, OAuth2.GetAuthHeaders());
                 pageToken = "";
 
                 if (!string.IsNullOrEmpty(response))
@@ -228,7 +227,7 @@ namespace ShareX.UploadersLib.FileUploaders
             do
             {
                 args["pageToken"] = pageToken;
-                string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v3/drives", args, GoogleAuth.GetAuthHeaders());
+                string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v3/drives", args, OAuth2.GetAuthHeaders());
                 pageToken = "";
 
                 if (!string.IsNullOrEmpty(response))
@@ -254,7 +253,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string metadata = GetMetadata(fileName, FolderID, DriveID);
 
             UploadResult result = SendRequestFile("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,webViewLink,webContentLink&supportsAllDrives=true",
-                stream, fileName, "file", headers: GoogleAuth.GetAuthHeaders(), contentType: "multipart/related", relatedData: metadata);
+                stream, fileName, "file", headers: OAuth2.GetAuthHeaders(), contentType: "multipart/related", relatedData: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

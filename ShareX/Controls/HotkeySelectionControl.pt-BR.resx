@@ -120,7 +120,7 @@
   <data name="btnHotkey.Text" xml:space="preserve">
     <value>Atalho</value>
   </data>
-  <data name="lblHotkeyDescription.Text" xml:space="preserve">
-    <value>Descrição</value>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Tarefa...</value>
   </data>
 </root>

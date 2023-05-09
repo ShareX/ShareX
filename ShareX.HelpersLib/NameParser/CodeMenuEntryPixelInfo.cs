@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -121,8 +121,7 @@ namespace ShareX.HelpersLib
                 int[] a = new int[o.Item2.Length];
                 for (int i = o.Item2.Length - 1; i >= 0; --i)
                 {
-                    int n = 0;
-                    if (int.TryParse(o.Item2[i], out n))
+                    if (int.TryParse(o.Item2[i], out int n))
                     {
                         a[i] = n;
                     }

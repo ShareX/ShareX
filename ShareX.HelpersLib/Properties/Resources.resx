@@ -133,7 +133,7 @@
     <value>Big square</value>
   </data>
   <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>Tools</value>
+    <value>Upload</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>Second</value>
@@ -202,16 +202,13 @@
     <value>Scrolling capture</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>Auto increment alphanumeric case-sensitive. 0 pad left using {n}</value>
+    <value>Auto increment alphanumeric case-sensitive (0 pad left using {n})</value>
   </data>
   <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
     <value>Title of window</value>
   </data>
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
     <value>Print image</value>
-  </data>
-  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
-    <value>Amazon S3 Intelligent-Tiering</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Rectangle region</value>
@@ -277,7 +274,7 @@
     <value>Upload image to host</value>
   </data>
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Auto increment hexadecimal. 0 pad left using {n}</value>
+    <value>Auto increment hexadecimal (0 pad left using {n})</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
     <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Yellow: {2:0.0}%, Key: {3:0.0}%</value>
@@ -441,7 +438,7 @@ Would you like to download it?</value>
     <value>Tools</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Random number 0 to 9. Repeat using {n}</value>
+    <value>Random number 0 to 9 (Repeat using {n})</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>Upload from clipboard with content viewer</value>
@@ -476,9 +473,6 @@ Would you like to download it?</value>
   <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
-  <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
-    <value>Amazon S3 Glacier Deep Archive</value>
-  </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
     <value>Octree quantizer 256 colors (Slow encoding but better quality)</value>
   </data>
@@ -489,7 +483,7 @@ Would you like to download it?</value>
     <value>.NET (Bad quality)</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>Auto increment alphanumeric case-insensitive. 0 pad left using {n}</value>
+    <value>Auto increment alphanumeric case-insensitive (0 pad left using {n})</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
     <value>Setting DNS failed.</value>
@@ -554,8 +548,8 @@ Would you like to download it?</value>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Target</value>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Window</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Ruler</value>
@@ -617,9 +611,6 @@ Would you like to download it?</value>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>Start/Stop screen recording</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Tools</value>
-  </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>Other</value>
   </data>
@@ -636,7 +627,7 @@ Would you like to download it?</value>
     <value>Screen capture</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
-    <value>Index folder</value>
+    <value>Directory indexer</value>
   </data>
   <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -670,9 +661,6 @@ Would you like to download it?</value>
   </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Loading image...</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Text capture (OCR)</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
     <value>Simulate pressing "Home" key</value>
@@ -756,13 +744,10 @@ Would you like to download and install it?</value>
     <value>Incremental</value>
   </data>
   <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
-    <value>Random emoji. Repeat using {n}</value>
+    <value>Random emoji (Repeat using {n})</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>Save thumbnail image to file</value>
-  </data>
-  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
-    <value>Amazon S3 One Zone-Infrequent Access</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
     <value>Downloading.</value>
@@ -816,7 +801,7 @@ Would you like to download and install it?</value>
     <value>Default .NET encoding (Fast encoding but average quality)</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
-    <value>Random hexadecimal char. Repeat using {n}</value>
+    <value>Random hexadecimal char (Repeat using {n})</value>
   </data>
   <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
     <value>Upload</value>
@@ -939,7 +924,7 @@ Would you like to download and install it?</value>
     <value>Step (I)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Auto increment number. 0 pad left using {n}</value>
+    <value>Auto increment number (0 pad left using {n})</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Upload from clipboard</value>
@@ -992,9 +977,6 @@ Would you like to download and install it?</value>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP client</value>
-  </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Could not create directory.</value>
   </data>
@@ -1023,7 +1005,7 @@ Would you like to download and install it?</value>
     <value>Shorten URL</value>
   </data>
   <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Random line from a file. Use {filepath} to determine the file</value>
+    <value>Random line from a file (Use {filepath} to determine the file)</value>
   </data>
   <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -1049,17 +1031,11 @@ Would you like to download and install it?</value>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Filename: {0}</value>
   </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Screen capture</value>
-  </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>Ellipse (E)</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Color picker</value>
-  </data>
-  <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
-    <value>Amazon S3 Glacier</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Screen record</value>
@@ -1074,7 +1050,7 @@ Would you like to download and install it?</value>
     <value>Loading image: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Random alphanumeric char. Repeat using {n}</value>
+    <value>Random alphanumeric char (Repeat using {n})</value>
   </data>
   <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -1160,14 +1136,11 @@ Would you like to download and install it?</value>
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 Month</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Amazon S3 Standard</value>
-  </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Text (Background) (T)</value>
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
-    <value>Random non ambiguous alphanumeric char. Repeat using {n}</value>
+    <value>Random non ambiguous alphanumeric char (Repeat using {n})</value>
   </data>
   <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -1244,9 +1217,6 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Amazon S3 Standard-Infrequent Access</value>
-  </data>
   <data name="tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1270,5 +1240,260 @@ Would you like to download and install it?</value>
   </data>
   <data name="ArrowHeadDirection_Both" xml:space="preserve">
     <value>Both</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>Letters (Lowercase)</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>Letters (Uppercase)</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>Numbers</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>Roman numerals (Lowercase)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>Roman numerals (Uppercase)</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>Clipboard viewer</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>Inspect window</value>
+  </data>
+  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>Solid</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>Dash</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>Dot</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>DashDot</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>DashDotDot</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>Close notification</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>Edit image</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>Copy image</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>Copy file</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>Copy file path</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>Copy link</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>Open file</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>Open folder</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>Open link</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>Upload file</value>
+  </data>
+  <data name="ContentAlignment_TopLeft" xml:space="preserve">
+    <value>Top left</value>
+  </data>
+  <data name="ContentAlignment_TopCenter" xml:space="preserve">
+    <value>Top center</value>
+  </data>
+  <data name="ContentAlignment_TopRight" xml:space="preserve">
+    <value>Top right</value>
+  </data>
+  <data name="ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>Middle left</value>
+  </data>
+  <data name="ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>Middle center</value>
+  </data>
+  <data name="ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>Middle right</value>
+  </data>
+  <data name="ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>Bottom left</value>
+  </data>
+  <data name="ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>Bottom center</value>
+  </data>
+  <data name="ContentAlignment_BottomRight" xml:space="preserve">
+    <value>Bottom right</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Bing visual search</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>Capture last region</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>Stop screen recording</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Toggle tray menu</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>Edit image</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>Open file</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>Open folder</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>Open image viewer</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>Open URL</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Side</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>List view</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Thumbnail view</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>Image viewer</value>
+  </data>
+  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="HotkeyType_OCR_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Borderless window</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - Image viewer</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
+  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>No effect</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>Torn edges</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>Wave</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Sawtooth</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>Cut out (X)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>Pin to screen (From clipboard)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>Pin to screen (From file)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>Pin to screen (From screen)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>Pause screen recording</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>Freehand arrow</value>
   </data>
 </root>

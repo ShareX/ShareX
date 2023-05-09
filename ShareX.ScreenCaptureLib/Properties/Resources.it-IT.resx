@@ -120,9 +120,6 @@
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Avvia Cattura</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg scaricato con successo.</value>
-  </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Ferma Cattura</value>
   </data>
@@ -140,9 +137,6 @@
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Qualità:</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Scaricamento FFmpeg fallito.</value>
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Cattura Ragionr</value>
@@ -263,9 +257,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Salva Immagine come...</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Opzioni Forma</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Annulla</value>

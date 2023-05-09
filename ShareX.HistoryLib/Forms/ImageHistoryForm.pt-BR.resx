@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="tsbSearch.ToolTipText" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Procurar:</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Configurações...</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Histórico de imagem</value>
+    <value>ShareX - Histórico de imagens</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -32,20 +32,20 @@ namespace ShareX.HelpersLib
     public partial class ErrorForm : Form
     {
         public bool IsUnhandledException { get; private set; }
-        public string LogPath { get; private set; }
+        public string LogFilePath { get; private set; }
         public string BugReportPath { get; private set; }
 
-        public ErrorForm(Exception error, string logPath, string bugReportPath) : this(error.Message, error.ToString(), logPath, bugReportPath)
+        public ErrorForm(Exception error, string logFilePath, string bugReportPath) : this(error.Message, error.ToString(), logFilePath, bugReportPath)
         {
         }
 
-        public ErrorForm(string errorTitle, string errorMessage, string logPath, string bugReportPath, bool unhandledException = true)
+        public ErrorForm(string errorTitle, string errorMessage, string logFilePath, string bugReportPath, bool unhandledException = true)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
             IsUnhandledException = unhandledException;
-            LogPath = logPath;
+            LogFilePath = logFilePath;
             BugReportPath = bugReportPath;
 
             if (IsUnhandledException)
@@ -58,7 +58,7 @@ namespace ShareX.HelpersLib
             txtException.SelectionStart = txtException.TextLength;
 
             btnSendBugReport.Visible = !string.IsNullOrEmpty(BugReportPath);
-            btnOpenLogFile.Visible = !string.IsNullOrEmpty(LogPath) && File.Exists(LogPath);
+            btnOpenLogFile.Visible = !string.IsNullOrEmpty(LogFilePath) && File.Exists(LogFilePath);
             btnContinue.Visible = IsUnhandledException;
             btnClose.Visible = IsUnhandledException;
             btnOK.Visible = !IsUnhandledException;
@@ -76,7 +76,7 @@ namespace ShareX.HelpersLib
 
         private void btnOpenLogFile_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFile(LogPath);
+            FileHelpers.OpenFile(LogFilePath);
         }
 
         private void btnContinue_Click(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -81,29 +81,47 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static string GetRegistryValue(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser)
+        public static object GetValue(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
         {
-            using (RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default).OpenSubKey(path))
+            try
             {
-                if (rk != null)
+                using (RegistryKey baseKey = RegistryKey.OpenBaseKey(root, view))
+                using (RegistryKey rk = baseKey.OpenSubKey(path))
                 {
-                    return rk.GetValue(name, null) as string;
+                    if (rk != null)
+                    {
+                        return rk.GetValue(name);
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
             }
 
             return null;
         }
 
-        public static bool CheckRegistry(string path, string name = null, string value = null, RegistryHive root = RegistryHive.CurrentUser)
+        public static string GetValueString(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
         {
-            string registryValue = GetRegistryValue(path, name, root);
+            return GetValue(path, name, root, view) as string;
+        }
 
-            return registryValue != null && (value == null || registryValue.Equals(value, StringComparison.InvariantCultureIgnoreCase));
+        public static int? GetValueDWord(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
+        {
+            return (int?)GetValue(path, name, root, view);
+        }
+
+        public static bool CheckStringValue(string path, string name = null, string value = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
+        {
+            string registryValue = GetValueString(path, name, root, view);
+
+            return registryValue != null && (value == null || registryValue.Equals(value, StringComparison.OrdinalIgnoreCase));
         }
 
         public static string SearchProgramPath(string fileName)
         {
-            // First method: HKEY_CLASSES_ROOT\Applications\{filename}\shell\{command}\command
+            // First method: HKEY_CLASSES_ROOT\Applications\{fileName}\shell\{command}\command
 
             string[] commands = new string[] { "open", "edit" };
 

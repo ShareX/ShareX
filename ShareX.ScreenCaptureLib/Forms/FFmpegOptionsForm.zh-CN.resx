@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>复制</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>下载</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>刷新</value>
   </data>
@@ -135,23 +132,11 @@
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>使用自定义命令</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>编解码器</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>额外的命令行参数</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>命令行预览</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>来源</value>
-  </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>比特率：</value>
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>音频编解码器：</value>
+    <value>音频解码器：</value>
   </data>
   <data name="lblAudioSource.Text" xml:space="preserve">
     <value>音频源：</value>
@@ -186,9 +171,6 @@
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>可变比特率：</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg 路径</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>使用自定义路径</value>
@@ -247,23 +229,8 @@
   <data name="lblAMFUsage.Text" xml:space="preserve">
     <value>使用量：</value>
   </data>
-  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="tpAAC.Text" xml:space="preserve">
-    <value>AAC</value>
-  </data>
-  <data name="tbAMF.Text" xml:space="preserve">
-    <value>AMF</value>
-  </data>
   <data name="lblOpusQuality.Text" xml:space="preserve">
-    <value>Bitrate:</value>
-  </data>
-  <data name="lblx264CRF.Text" xml:space="preserve">
-    <value>CRF:</value>
+    <value>比特率：</value>
   </data>
   <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
     <value>默认值为 128k。</value>
@@ -300,5 +267,26 @@
   </data>
   <data name="tpXvid.Text" xml:space="preserve">
     <value>Xvid</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>使用比特率</value>
+  </data>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>命令行额外参数：</value>
+  </data>
+  <data name="lblCommandLinePreview.Text" xml:space="preserve">
+    <value>命令行预览：</value>
+  </data>
+  <data name="lblFFmpegPath.Text" xml:space="preserve">
+    <value>FFmpeg 路径：</value>
+  </data>
+  <data name="lblNVENCBitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="lblQSVBitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="lblx264BitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
   </data>
 </root>

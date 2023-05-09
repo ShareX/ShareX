@@ -151,7 +151,7 @@
     <value>要求认证。</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>父相册路径，例如</value>
+    <value>父相册路径，例如：</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>所选文件夹：</value>
@@ -195,9 +195,6 @@
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>无法找到有效的 FTP 帐户。</value>
-  </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>响应解析失败。</value>
   </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>删除所有自定义上传？</value>
@@ -243,5 +240,44 @@
   </data>
   <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
     <value>我的云端硬盘</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>网址</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>缩略图网址</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>"删除网址"</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>导出失败。</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>格式失败。</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>格式失败。</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>已登录为 {0}。</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>响应正文</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>响应网址</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>短网址</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>状态码</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>头</value>
   </data>
 </root>

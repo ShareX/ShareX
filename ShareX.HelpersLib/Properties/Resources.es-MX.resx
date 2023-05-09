@@ -617,9 +617,6 @@
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Diagonal</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Cliente FTP</value>
-  </data>
   <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
     <value>Pantalla completa</value>
   </data>
@@ -661,9 +658,6 @@
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
     <value>Número aleatorio del 0 al 9. Repetir con {n}</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Destino</value>
   </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Marca de tiempo Unix</value>
@@ -724,12 +718,6 @@
   </data>
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>Acortar enlace</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Almacenamiento estándar</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Almacenamiento estándar de acceso poco frecuente</value>
   </data>
   <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
     <value>Adjetivo aleatorio (inglés)</value>
@@ -831,9 +819,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Subir archivo</value>
-  </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Herramientas</value>
   </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Herramientas</value>
@@ -1021,9 +1006,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
     <value>Capturar pantalla</value>
   </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Capturar pantalla</value>
-  </data>
   <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
     <value>Otro</value>
   </data>
@@ -1086,9 +1068,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Detener todas las subidas en curso</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Captura de texto (OCR)</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Alternar la barra de herramientas de acciones</value>

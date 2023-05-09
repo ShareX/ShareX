@@ -165,9 +165,6 @@
   <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
     <value>Fundo</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Parágrafo: Ctrl + Enter</value>
-  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>

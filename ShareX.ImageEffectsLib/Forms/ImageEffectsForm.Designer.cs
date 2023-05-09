@@ -52,15 +52,16 @@
             this.btnEffectClear = new System.Windows.Forms.Button();
             this.btnEffectRefresh = new System.Windows.Forms.Button();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
+            this.pgSettings = new System.Windows.Forms.PropertyGrid();
+            this.btnImageEffects = new System.Windows.Forms.Button();
+            this.lblEffectName = new System.Windows.Forms.Label();
+            this.txtEffectName = new System.Windows.Forms.TextBox();
+            this.pbResult = new ShareX.HelpersLib.MyPictureBox();
             this.lvPresets = new ShareX.HelpersLib.MyListView();
             this.chPreset = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.pbResult = new ShareX.HelpersLib.MyPictureBox();
             this.mbLoadImage = new ShareX.HelpersLib.MenuButton();
             this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblEffect = new System.Windows.Forms.Label();
-            this.btnImageEffects = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -226,6 +227,46 @@
             this.ttMain.InitialDelay = 200;
             this.ttMain.ReshowDelay = 100;
             // 
+            // pgSettings
+            // 
+            resources.ApplyResources(this.pgSettings, "pgSettings");
+            this.pgSettings.Name = "pgSettings";
+            this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgSettings.ToolbarVisible = false;
+            this.pgSettings.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgSettings_PropertyValueChanged);
+            // 
+            // btnImageEffects
+            // 
+            resources.ApplyResources(this.btnImageEffects, "btnImageEffects");
+            this.btnImageEffects.Name = "btnImageEffects";
+            this.btnImageEffects.UseVisualStyleBackColor = true;
+            this.btnImageEffects.Click += new System.EventHandler(this.btnImageEffects_Click);
+            // 
+            // lblEffectName
+            // 
+            resources.ApplyResources(this.lblEffectName, "lblEffectName");
+            this.lblEffectName.Name = "lblEffectName";
+            // 
+            // txtEffectName
+            // 
+            resources.ApplyResources(this.txtEffectName, "txtEffectName");
+            this.txtEffectName.Name = "txtEffectName";
+            this.txtEffectName.TextChanged += new System.EventHandler(this.txtEffectName_TextChanged);
+            // 
+            // pbResult
+            // 
+            resources.ApplyResources(this.pbResult, "pbResult");
+            this.pbResult.BackColor = System.Drawing.SystemColors.Window;
+            this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbResult.DrawCheckeredBackground = true;
+            this.pbResult.EnableRightClickMenu = true;
+            this.pbResult.FullscreenOnClick = true;
+            this.pbResult.Name = "pbResult";
+            this.pbResult.PictureBoxBackColor = System.Drawing.SystemColors.Control;
+            this.pbResult.ShowImageSizeLabel = true;
+            this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
+            this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
+            // 
             // lvPresets
             // 
             this.lvPresets.AllowDrop = true;
@@ -248,28 +289,6 @@
             // chPreset
             // 
             resources.ApplyResources(this.chPreset, "chPreset");
-            // 
-            // pgSettings
-            // 
-            resources.ApplyResources(this.pgSettings, "pgSettings");
-            this.pgSettings.Name = "pgSettings";
-            this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.pgSettings.ToolbarVisible = false;
-            this.pgSettings.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgSettings_PropertyValueChanged);
-            // 
-            // pbResult
-            // 
-            resources.ApplyResources(this.pbResult, "pbResult");
-            this.pbResult.BackColor = System.Drawing.SystemColors.Window;
-            this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbResult.DrawCheckeredBackground = true;
-            this.pbResult.EnableRightClickMenu = true;
-            this.pbResult.FullscreenOnClick = true;
-            this.pbResult.Name = "pbResult";
-            this.pbResult.PictureBoxBackColor = System.Drawing.SystemColors.Control;
-            this.pbResult.ShowImageSizeLabel = true;
-            this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
-            this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
             // 
             // mbLoadImage
             // 
@@ -304,18 +323,6 @@
             // 
             resources.ApplyResources(this.chEffect, "chEffect");
             // 
-            // lblEffect
-            // 
-            resources.ApplyResources(this.lblEffect, "lblEffect");
-            this.lblEffect.Name = "lblEffect";
-            // 
-            // btnImageEffects
-            // 
-            resources.ApplyResources(this.btnImageEffects, "btnImageEffects");
-            this.btnImageEffects.Name = "btnImageEffects";
-            this.btnImageEffects.UseVisualStyleBackColor = true;
-            this.btnImageEffects.Click += new System.EventHandler(this.btnImageEffects_Click);
-            // 
             // ImageEffectsForm
             // 
             this.AllowDrop = true;
@@ -323,8 +330,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.txtEffectName);
+            this.Controls.Add(this.lblEffectName);
             this.Controls.Add(this.btnImageEffects);
-            this.Controls.Add(this.lblEffect);
             this.Controls.Add(this.pbResult);
             this.Controls.Add(this.pgSettings);
             this.Controls.Add(this.btnEffectRefresh);
@@ -389,8 +397,9 @@
         private System.Windows.Forms.Button btnEffectRefresh;
         private System.Windows.Forms.ColumnHeader chPreset;
         private System.Windows.Forms.ToolTip ttMain;
-        private System.Windows.Forms.Label lblEffect;
         private System.Windows.Forms.Button btnImageEffects;
+        private System.Windows.Forms.Label lblEffectName;
+        private System.Windows.Forms.TextBox txtEffectName;
     }
 }
 

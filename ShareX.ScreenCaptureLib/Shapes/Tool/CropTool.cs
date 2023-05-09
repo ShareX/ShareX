@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -49,16 +49,16 @@ namespace ShareX.ScreenCaptureLib
                     Rectangle.Width > (buttonSize.Width * 2) + (buttonOffset * 3) &&
                     Rectangle.Height > buttonSize.Height + (buttonOffset * 2))
                 {
-                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - (buttonOffset * 2) - (buttonSize.Width * 2),
+                    confirmButton.Rectangle = new RectangleF(Rectangle.Right - (buttonOffset * 2) - (buttonSize.Width * 2),
                         Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
-                    cancelButton.Rectangle = new Rectangle(Rectangle.Right - buttonOffset - buttonSize.Width,
+                    cancelButton.Rectangle = new RectangleF(Rectangle.Right - buttonOffset - buttonSize.Width,
                         Rectangle.Bottom - buttonOffset - buttonSize.Height, buttonSize.Width, buttonSize.Height);
                 }
                 else
                 {
-                    confirmButton.Rectangle = new Rectangle(Rectangle.Right - (buttonSize.Width * 2) - buttonOffset,
+                    confirmButton.Rectangle = new RectangleF(Rectangle.Right - (buttonSize.Width * 2) - buttonOffset,
                         Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
-                    cancelButton.Rectangle = new Rectangle(Rectangle.Right - buttonSize.Width,
+                    cancelButton.Rectangle = new RectangleF(Rectangle.Right - buttonSize.Width,
                         Rectangle.Bottom + buttonOffset, buttonSize.Width, buttonSize.Height);
                 }
             }

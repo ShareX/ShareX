@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -119,9 +119,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>剩餘時間: {0}秒 ({1}%) 總計: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>開源貢獻</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>無法找到有效的 Twitter 帳戶。</value>
   </data>
@@ -153,12 +150,6 @@
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>不要再顯示此訊息。</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>任務：{0}</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg 的視訊和音訊源不能皆為「無」。</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>更新日誌</value>
   </data>
@@ -177,25 +168,8 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>開始中</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} 不存在。
-
-要自動下載嗎？</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>外部函式庫</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>錯誤</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>點擊以停止錄製。</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>你可以在快捷鍵設定中新增快捷動作...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>無法寫入圖片到路徑 {0}。</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>更改語言需要重新啟動 ShareX 才會生效。
@@ -204,9 +178,6 @@
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>使用新名稱：</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>缺少</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>翻譯</value>
@@ -293,26 +264,11 @@
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>選擇截圖資料夾路徑</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>點擊以開始錄製。</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg 下載失敗。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>等待中...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>圖片上傳工具：{0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>已複製到剪貼簿：{0}</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>隱藏選單</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>顯示選單</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>下載和上傳的網址</value>
@@ -382,15 +338,6 @@
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>資料夾上傳</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg 下載成功。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>編碼...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg 錯誤</value>
-  </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>確定要上傳 {0} 個檔案嗎？</value>
   </data>
@@ -417,9 +364,6 @@
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>重設所有快捷鍵為預設值？</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>顯示列</value>
-  </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
@@ -434,9 +378,6 @@
   </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>{0} 設定無效或不存在。請前往「目的地設定」視窗進行設定。</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>隱藏列</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>繼續</value>
@@ -515,9 +456,6 @@
   <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>分隔符</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>開發版可能不穩定，僅供測試用途。要安裝嗎？</value>
-  </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>要重設 ShareX 設定嗎？</value>
   </data>
@@ -548,14 +486,8 @@
   <data name="OCRForm_AutoProcessing" xml:space="preserve">
     <value>OCR 處理中。</value>
   </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>請註意，ShareX 將使用 OCR.Space 的線上 API 來執行光學字元辨識。是否允許 ShareX 上傳圖片到此線上服務？</value>
-  </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>輸入文字以產生二維碼</value>
-  </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>確定要停止錄製嗎？</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>截圖倒數計時：{0} 秒</value>
@@ -567,9 +499,6 @@
     <value>更改個人資料夾需要重新啟動 ShareX 才會生效。
 
 是否要重新啟動 ShareX？</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX -  光學字元辨識</value>
   </data>
   <data name="SwitchToListView" xml:space="preserve">
     <value>切換到清單模式</value>

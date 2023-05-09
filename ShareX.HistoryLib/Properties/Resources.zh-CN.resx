@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>过滤：{0}</value>
+    <value>已筛选：{0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>总计：{0}</value>
@@ -136,7 +136,7 @@
     <value>文件名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>文件扩展名</value>
+    <value>文件名（含扩展名）</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>文件路径</value>
@@ -166,7 +166,7 @@
     <value>图像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>图像预览</value>
+    <value>图像预览...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>更多信息...</value>
@@ -176,9 +176,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>URL 短链</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>显示</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>文本</value>
@@ -207,12 +204,6 @@
   <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
     <value>上传文件</value>
   </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>显示统计</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>隐藏统计</value>
-  </data>
   <data name="HistoryStats_Total" xml:space="preserve">
     <value>总计:</value>
   </data>
@@ -230,5 +221,20 @@
   </data>
   <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
     <value>读取历史记录文件出错:</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>文件名、窗口标题、进程名等。</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>已筛选</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>历史记录统计</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>进程名称：</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>总计</value>
   </data>
 </root>

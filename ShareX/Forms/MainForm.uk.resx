@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -167,9 +167,6 @@
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Захоплення з прокручуванням...</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Захоплення тексту (OCR)...</value>
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Автоматичне захоплення...</value>
@@ -327,9 +324,6 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Історія зображень...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Новини</value>
-  </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Журнал налагодження...</value>
   </data>
@@ -483,9 +477,6 @@
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Поділитися посиланням</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Зображення Google...</value>
-  </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Показати QR-код...</value>
   </data>
@@ -500,45 +491,6 @@
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Очистити список</value>
-  </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Приховати меню</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Приховати стовпці</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Показати</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Приховати</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Автоматично</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Сторона</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Знизу</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Попередній перегляд зображення</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>Показати</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>Приховати</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>Вгорі</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>Знизу</value>
-  </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>Заголовок мініатюри</value>
   </data>
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>Перемкнутись у режим мініатюр</value>
@@ -572,9 +524,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Захоплення з прокручуванням...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Захоплення тексту (OCR)...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Автоматичне захоплення...</value>
@@ -735,33 +684,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Історія зображень...</value>
   </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Журнал налагодження...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Перевірка вивантаження зображення</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Перевірити вивантаження тексту</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Перевірити вивантаження файла</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Перевірити скорочення посилання</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Перевірити обміну посиланням</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Налагодження</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Пожертвувати...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Про програму...</value>
-  </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>Останні посилання</value>
   </data>
@@ -773,23 +695,5 @@
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Вихід</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Закрити</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>Слідкуйте за нашим Twitter</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>Приєднуйтесь до нашого Discord</value>
-  </data>
-  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
-    <value>Підтримайте нас про Patreon</value>
-  </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>Підтримайте нас з допомогою криптовалют</value>
-  </data>
-  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
-    <value>Зірку нашому GitHub</value>
   </data>
 </root>

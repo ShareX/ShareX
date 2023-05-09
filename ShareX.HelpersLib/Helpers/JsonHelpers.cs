@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -47,7 +47,6 @@ namespace ShareX.HelpersLib
                     serializer.Converters.Add(new StringEnumConverter());
                     serializer.DefaultValueHandling = defaultValueHandling;
                     serializer.NullValueHandling = nullValueHandling;
-                    serializer.TypeNameHandling = TypeNameHandling.Auto;
                     if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
                     serializer.Serialize(jsonTextWriter, obj);
                 }
@@ -92,7 +91,7 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(filePath))
             {
-                Helpers.CreateDirectoryFromFilePath(filePath);
+                FileHelpers.CreateDirectoryFromFilePath(filePath);
 
                 using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
                 {
@@ -110,7 +109,6 @@ namespace ShareX.HelpersLib
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Converters.Add(new StringEnumConverter());
                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
-                    serializer.TypeNameHandling = TypeNameHandling.Auto;
                     if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
                     serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
                     return serializer.Deserialize<T>(jsonTextReader);

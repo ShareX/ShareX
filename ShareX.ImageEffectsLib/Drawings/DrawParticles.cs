@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -99,11 +99,11 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            string imageFolder = Helpers.ExpandFolderVariables(ImageFolder, true);
+            string imageFolder = FileHelpers.ExpandFolderVariables(ImageFolder, true);
 
             if (!string.IsNullOrEmpty(imageFolder) && Directory.Exists(imageFolder))
             {
-                string[] files = Helpers.GetFilesByExtensions(imageFolder, ".png", ".jpg").ToArray();
+                string[] files = FileHelpers.GetFilesByExtensions(imageFolder, ".png", ".jpg").ToArray();
 
                 if (files.Length > 0)
                 {
@@ -194,6 +194,8 @@ namespace ShareX.ImageEffectsLib
                 g.TranslateTransform(-moveX, -moveY);
             }
 
+            g.PixelOffsetMode = PixelOffsetMode.Half;
+
             if (RandomOpacity)
             {
                 float opacity = RandomFast.Next(Math.Min(RandomOpacityMin, RandomOpacityMax), Math.Max(RandomOpacityMin, RandomOpacityMax)).Clamp(0, 100) / 100f;
@@ -215,6 +217,8 @@ namespace ShareX.ImageEffectsLib
             {
                 g.ResetTransform();
             }
+
+            g.PixelOffsetMode = PixelOffsetMode.Default;
         }
     }
 }

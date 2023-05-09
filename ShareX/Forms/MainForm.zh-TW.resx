@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -266,23 +266,8 @@
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>雜湊檢查...</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>隱藏選單</value>
-  </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>圖片效果...</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>圖片預覽</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>自動</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>隱藏</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>顯示</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>圖片上傳工具</value>
@@ -386,9 +371,6 @@
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>文字上傳工具</value>
   </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>關於...</value>
-  </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>擷取後的任務</value>
   </data>
@@ -412,9 +394,6 @@
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>更換 DNS...</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>捐獻...</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>退出</value>
@@ -584,47 +563,14 @@
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>停用快捷鍵</value>
   </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>偵錯日誌...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>測試圖片上傳</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>測試文字上傳</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>測試檔案上傳</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>測試縮網址</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>測試網址分享</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>偵錯</value>
-  </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>最近的連結</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>文字擷取（OCR）</value>
   </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>下載</value>
   </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>文字擷取（OCR）...</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>隱藏列</value>
-  </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>從清單移除任務</value>
-  </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google 圖片搜尋...</value>
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>OCR 圖片...</value>
@@ -674,9 +620,6 @@
   <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
     <value>自訂上傳工具設定...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>新聞</value>
-  </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>捐獻...</value>
   </data>
@@ -697,27 +640,6 @@
   </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>執行動作</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>側邊</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>底部</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>顯示</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>隱藏</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>頂端</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>底部</value>
-  </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>縮圖標題</value>
   </data>
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>切換到縮圖模式</value>
@@ -760,8 +682,5 @@
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>自訂上傳工具設定...</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>關閉</value>
   </data>
 </root>

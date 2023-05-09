@@ -38,7 +38,7 @@
             this.cbIncludeSubdirectories = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
-            this.chkMoveToScreenshotsFolder = new System.Windows.Forms.CheckBox();
+            this.cbMoveToScreenshotsFolder = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnPathBrowse
@@ -94,11 +94,11 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // chkMoveToScreenshotsDir
+            // cbMoveToScreenshotsFolder
             // 
-            resources.ApplyResources(this.chkMoveToScreenshotsFolder, "chkMoveToScreenshotsDir");
-            this.chkMoveToScreenshotsFolder.Name = "chkMoveToScreenshotsDir";
-            this.chkMoveToScreenshotsFolder.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cbMoveToScreenshotsFolder, "cbMoveToScreenshotsFolder");
+            this.cbMoveToScreenshotsFolder.Name = "cbMoveToScreenshotsFolder";
+            this.cbMoveToScreenshotsFolder.UseVisualStyleBackColor = true;
             // 
             // WatchFolderForm
             // 
@@ -107,7 +107,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
-            this.Controls.Add(this.chkMoveToScreenshotsFolder);
+            this.Controls.Add(this.cbMoveToScreenshotsFolder);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cbIncludeSubdirectories);
@@ -136,6 +136,6 @@
         private System.Windows.Forms.CheckBox cbIncludeSubdirectories;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.CheckBox chkMoveToScreenshotsFolder;
+        private System.Windows.Forms.CheckBox cbMoveToScreenshotsFolder;
     }
 }

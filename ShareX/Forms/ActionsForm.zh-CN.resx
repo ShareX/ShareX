@@ -130,7 +130,7 @@
     <value>参数：</value>
   </data>
   <data name="lblExtensions.Text" xml:space="preserve">
-    <value>扩展名过滤：(例如：jpg png mp4)</value>
+    <value>扩展名筛选：（如 jpg png mp4)</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>名称:</value>

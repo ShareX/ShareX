@@ -189,9 +189,6 @@
   <data name="gbWhileCapturing.Text" xml:space="preserve">
     <value>Saat mengambil</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Unggah/simpan tergantung pada pengaturan setelah pengambilan</value>
-  </data>
   <data name="btnStartTask.Text" xml:space="preserve">
     <value>Unggah/simpan tergantung pada pengaturan setelah pengambilan</value>
   </data>

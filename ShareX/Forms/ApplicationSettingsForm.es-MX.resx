@@ -258,15 +258,6 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>Formato</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos del portapapeles: aparecen debajo de la opción Copiar en el menú contextual de la ventana principal </value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Usar orden de preferencia de servidores alternos al reintentar subir</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Servidores alternos para imágenes</value>
   </data>
@@ -278,9 +269,6 @@
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Reintentos si la subida falla:</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reintentar</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Subir</value>

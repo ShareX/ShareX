@@ -153,17 +153,8 @@
   <data name="tpTools.Text" xml:space="preserve">
     <value>Herramientas</value>
   </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración avanzada</value>
-  </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Avanzado</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Sobrescribir servidor personalizado predefinido</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de cuenta FTP predefinida</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Después de capturar...</value>
@@ -192,17 +183,11 @@
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tarea...</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Tras completar la tarea:</value>
-  </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Reproducir sonido al completar la tarea</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Reproducir sonido al realizar una captura</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Sobre escribir configuración general</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>Profundidad de bits de PNG:</value>
@@ -228,17 +213,11 @@
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Calidad de JPEG:</value>
   </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de imagen</value>
-  </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Efectos</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Los efectos se pueden activar o desactivar en "Tareas después de capturar -&gt; Agregar efectos a la imagen".</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Mostrar la ventana de efectos de imágenes después de capturar</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Aplicar efectos solamente a la captura de región</value>
@@ -296,9 +275,6 @@
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Capturar área del cliente al capturar una ventana</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de captura</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Captura de región</value>
@@ -387,9 +363,6 @@
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>segundos</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Iniciar la grabación después de:</value>
-  </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>segundos</value>
   </data>
@@ -402,9 +375,6 @@
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>FPS del GIF:</value>
   </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de subida:</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Nombres de archivos</value>
   </data>
@@ -413,9 +383,6 @@
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
     <value>Número de incremento automático:</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Usar el título de la ventana al capturar región (ShareX intentará detectar la ventana detrás de la selección)</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Usar zona horaria personalizada:</value>
@@ -499,9 +466,6 @@ en el portapapeles</value>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Eliminar</value>
   </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Sobrescribir acciones</value>
-  </data>
   <data name="btnWatchFolderEdit.Text" xml:space="preserve">
     <value>Editar...</value>
   </data>
@@ -526,9 +490,6 @@ en el portapapeles</value>
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>Formato de selector de color de pantalla:</value>
   </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Sobrescribir configuración de herramientas</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configuración de tarea</value>
   </data>
@@ -549,9 +510,6 @@ en el portapapeles</value>
   </data>
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>Copiar resultados al portapapeles automáticamente</value>
-  </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Procesar OCR al abrir el cuadro de diálogo</value>
   </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Procesar OCR silenciosamente</value>

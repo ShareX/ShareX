@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Copiar</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Descargar</value>
-  </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Instalar dispositivos de grabación</value>
   </data>
@@ -151,21 +148,6 @@
     <value>Preajuste más rápido: Codificación más rápida pero archivo más grande.
 Preajuste más lento: Codificación más lenta pero archivo más pequeño.
 El preajuste debe ser el más rápido para codificación en tiempo real (ej. grabación de pantalla).</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Códecs</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Argumentos de línea de comandos adicionales</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Vista previa de línea de comandos</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Ubicación del códec de FFmpeg</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Fuentes</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Tasa de bits:</value>

@@ -201,9 +201,6 @@
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Cargadores textos secundarios</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reintentar</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Subir</value>
   </data>
@@ -237,17 +234,8 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Mostrar "Subir con ShareX" botón en el menú contextual de shell</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos del portapapeles</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Cargadores de imágenes secundarias</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Utilice uploaders secundarias en orden de preferencia al reintentar</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Buscar...</value>

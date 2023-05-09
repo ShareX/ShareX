@@ -132,7 +132,10 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Xóa bỏ</value>
   </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Các phím nóng bị tắt. Bạn có thể nhấp vào đây để kích hoạt chúng.</value>
+  </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Khôi phục các phím tắt gốc...</value>
+    <value>Cài lại...</value>
   </data>
 </root>

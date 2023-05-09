@@ -135,7 +135,7 @@ Yeni dosya ismi veya aksiyon seçiniz:</value>
     <value>Benzersiz bir isim kullan: </value>
   </data>
   <data name="btnNewName.Text" xml:space="preserve">
-    <value>Yeni isim kullan:</value>
+    <value>Yeni ad kullan:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Nasıl kaydedilsin?</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -40,20 +40,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override Icon ServiceIcon => Resources.Streamable;
 
-        public override bool CheckConfig(UploadersConfig config) => true;
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return !string.IsNullOrEmpty(config.StreamableUsername) && !string.IsNullOrEmpty(config.StreamablePassword);
+        }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            string username = "";
-            string password = "";
-
-            if (!config.StreamableAnonymous)
-            {
-                username = config.StreamableUsername;
-                password = config.StreamablePassword;
-            }
-
-            return new Streamable(username, password)
+            return new Streamable(config.StreamableUsername, config.StreamablePassword)
             {
                 UseDirectURL = config.StreamableUseDirectURL
             };

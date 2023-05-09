@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -22,8 +22,6 @@
 */
 
 #endregion License Information (GPL v3)
-
-// Credits: https://github.com/michalx2
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
@@ -89,8 +87,11 @@ namespace ShareX.UploadersLib.FileUploaders
             AllowReportProgress = true;
             string key = SimpleUpload(stream, fileName);
             AllowReportProgress = false;
-            string url = null;
-            while ((url = PollUpload(key, fileName)) == null) Thread.Sleep(pollInterval);
+            string url;
+            while ((url = PollUpload(key, fileName)) == null)
+            {
+                Thread.Sleep(pollInterval);
+            }
             return new UploadResult() { IsSuccess = true, URL = url };
         }
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using System;
 using System.Windows.Forms;
@@ -33,22 +34,23 @@ namespace ShareX
     public partial class InspectWindowForm : Form
     {
         public WindowInfo SelectedWindow { get; private set; }
+        public bool IsWindow { get; private set; }
 
         public InspectWindowForm()
         {
             InitializeComponent();
             rtbInfo.AddContextMenu();
             ShareXResources.ApplyTheme(this);
-            SelectHandle();
+            SelectHandle(true);
         }
 
-        private bool SelectHandle()
+        private bool SelectHandle(bool isWindow)
         {
-            return SelectHandle(new RegionCaptureOptions());
-        }
+            RegionCaptureOptions options = new RegionCaptureOptions()
+            {
+                DetectControls = !isWindow
+            };
 
-        private bool SelectHandle(RegionCaptureOptions options)
-        {
             SelectedWindow = null;
 
             SimpleWindowInfo simpleWindowInfo = RegionCaptureTasks.GetWindowInfo(options);
@@ -56,6 +58,7 @@ namespace ShareX
             if (simpleWindowInfo != null)
             {
                 SelectedWindow = new WindowInfo(simpleWindowInfo.Handle);
+                IsWindow = isWindow;
                 UpdateWindowInfo();
                 return true;
             }
@@ -65,21 +68,23 @@ namespace ShareX
 
         private void UpdateWindowInfo()
         {
+            btnPinToTop.Enabled = SelectedWindow != null && IsWindow;
             rtbInfo.ResetText();
 
             if (SelectedWindow != null)
             {
                 try
                 {
-                    AddInfo("Window handle", SelectedWindow.Handle.ToString("X8"));
-                    AddInfo("Window title", SelectedWindow.Text);
-                    AddInfo("Class name", SelectedWindow.ClassName);
-                    AddInfo("Process name", SelectedWindow.ProcessName);
-                    AddInfo("Process file name", SelectedWindow.ProcessFileName);
-                    AddInfo("Process identifier", SelectedWindow.ProcessId.ToString());
-                    AddInfo("Window rectangle", SelectedWindow.Rectangle.ToStringProper());
-                    AddInfo("Client rectangle", SelectedWindow.ClientRectangle.ToStringProper());
-                    AddInfo("Window styles", SelectedWindow.Styles.ToString());
+                    AddInfo(Resources.InspectWindow_WindowHandle, SelectedWindow.Handle.ToString("X8"));
+                    AddInfo(Resources.InspectWindow_WindowTitle, SelectedWindow.Text);
+                    AddInfo(Resources.InspectWindow_ClassName, SelectedWindow.ClassName);
+                    AddInfo(Resources.InspectWindow_ProcessName, SelectedWindow.ProcessName);
+                    AddInfo(Resources.InspectWindow_ProcessFileName, SelectedWindow.ProcessFileName);
+                    AddInfo(Resources.InspectWindow_ProcessIdentifier, SelectedWindow.ProcessId.ToString());
+                    AddInfo(Resources.InspectWindow_WindowRectangle, SelectedWindow.Rectangle.ToStringProper());
+                    AddInfo(Resources.InspectWindow_ClientRectangle, SelectedWindow.ClientRectangle.ToStringProper());
+                    AddInfo(Resources.InspectWindow_WindowStyles, SelectedWindow.Style.ToString().Replace(", ", "\r\n"));
+                    AddInfo(Resources.InspectWindow_ExtendedWindowStyles, SelectedWindow.ExStyle.ToString().Replace(", ", "\r\n"));
                 }
                 catch
                 {
@@ -106,21 +111,26 @@ namespace ShareX
 
         private void btnInspectWindow_Click(object sender, EventArgs e)
         {
-            RegionCaptureOptions options = new RegionCaptureOptions()
-            {
-                DetectControls = false
-            };
-
-            SelectHandle(options);
+            SelectHandle(true);
         }
 
         private void btnInspectControl_Click(object sender, EventArgs e)
         {
-            SelectHandle();
+            SelectHandle(false);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            UpdateWindowInfo();
+        }
+
+        private void btnPinToTop_Click(object sender, EventArgs e)
+        {
+            if (SelectedWindow == null) return;
+
+            WindowInfo windowInfo = new WindowInfo(SelectedWindow.Handle);
+            windowInfo.TopMost = !windowInfo.TopMost;
+
             UpdateWindowInfo();
         }
     }

@@ -273,9 +273,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>seconden</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Start opname na:</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>seconden</value>
   </data>
@@ -310,9 +307,6 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Effecten alleen toepassen op vastgelegde regio</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Toon effectenvenster na vastleggen</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>De afbeeldingseffecten kunnen in-/uitgeschakeld worden via "Taken na vastleggen -&gt; Voeg afbeeldingseffecten toe"</value>
   </data>
@@ -336,9 +330,6 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Speel geluid af na voltooien taak</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Na vervolledigen van taak:</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Taak...</value>
@@ -366,12 +357,6 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Na vastleggen...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Vervang standaard FTP account:</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Vervang de standaard aangepaste uploader:</value>
   </data>
   <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
     <value>Verwijder</value>
@@ -418,14 +403,8 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
     <value>Gebruik vierkante vergrootglas in plaats van cirkel</value>
   </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Upload instellingen overschrijven</value>
-  </data>
   <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
     <value>Vergrootglas pixel grote:</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Afbeelding instellingen overschrijven</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Bestand benaming</value>

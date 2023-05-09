@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,9 +33,9 @@ namespace ShareX.ScreenCaptureLib
     {
         public const int DefaultSize = 13;
 
-        private Point position;
+        private PointF position;
 
-        public Point Position
+        public PointF Position
         {
             get
             {
@@ -45,7 +45,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 position = value;
 
-                Rectangle = new Rectangle(position.X - ((Size - 1) / 2), position.Y - ((Size - 1) / 2), Size, Size);
+                Rectangle = new RectangleF(position.X - ((Size - 1) / 2), position.Y - ((Size - 1) / 2), Size, Size);
             }
         }
 
@@ -81,10 +81,10 @@ namespace ShareX.ScreenCaptureLib
 
         public Image CustomNodeImage { get; private set; }
 
-        public ResizeNode(int x = 0, int y = 0)
+        public ResizeNode(float x = 0, float y = 0)
         {
             Shape = NodeShape.Square;
-            Position = new Point(x, y);
+            Position = new PointF(x, y);
         }
 
         public void SetCustomNode(Image customNodeImage)
@@ -95,13 +95,13 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            Rectangle rect = Rectangle.SizeOffset(-1);
+            RectangleF rect = Rectangle.SizeOffset(-1);
 
             switch (Shape)
             {
                 case NodeShape.Square:
-                    g.DrawRectangle(Pens.White, rect.Offset(-1));
-                    g.DrawRectangle(Pens.Black, rect);
+                    g.DrawRectangle(Pens.White, rect.Round().Offset(-1));
+                    g.DrawRectangle(Pens.Black, rect.Round());
                     break;
                 default:
                 case NodeShape.Circle:
@@ -109,8 +109,8 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawEllipse(Pens.Black, rect);
                     break;
                 case NodeShape.Diamond:
-                    g.DrawDiamond(Pens.White, rect.Offset(-1));
-                    g.DrawDiamond(Pens.Black, rect);
+                    g.DrawDiamond(Pens.White, rect.Round().Offset(-1));
+                    g.DrawDiamond(Pens.Black, rect.Round());
                     break;
                 case NodeShape.CustomNode when CustomNodeImage != null:
                     g.DrawImage(CustomNodeImage, Rectangle);

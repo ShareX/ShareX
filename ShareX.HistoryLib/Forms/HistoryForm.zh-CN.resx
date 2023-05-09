@@ -120,12 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 历史记录</value>
   </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>开始筛选</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>清除筛选器</value>
-  </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>日期筛选：</value>
   </data>
@@ -141,9 +135,6 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>文件名</value>
   </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>筛选</value>
-  </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>从：</value>
   </data>
@@ -153,16 +144,37 @@
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="btnShowStats.Text" xml:space="preserve">
-    <value>显示统计数据</value>
-  </data>
   <data name="lblURLFilter.Text" xml:space="preserve">
     <value>URL：</value>
   </data>
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>文件名：</value>
   </data>
-  <data name="lblMaxItemCount.Text" xml:space="preserve">
-    <value>项目数最大值:</value>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>高级搜索...</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>设置...</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>显示统计...</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>切换更多信息</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>搜索：</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>高级搜索</value>
   </data>
 </root>

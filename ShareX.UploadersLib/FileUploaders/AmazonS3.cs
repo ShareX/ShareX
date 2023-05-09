@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,6 +28,7 @@ using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -36,13 +37,19 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public enum AmazonS3StorageClass // Localized
+    public enum AmazonS3StorageClass
     {
+        [Description("Amazon S3 Standard")]
         STANDARD,
+        [Description("Amazon S3 Standard-Infrequent Access")]
         STANDARD_IA,
+        [Description("Amazon S3 One Zone-Infrequent Access")]
         ONEZONE_IA,
+        [Description("Amazon S3 Intelligent-Tiering")]
         INTELLIGENT_TIERING,
+        //[Description("Amazon S3 Glacier")]
         //GLACIER,
+        //[Description("Amazon S3 Glacier Deep Archive")]
         //DEEP_ARCHIVE
     }
 
@@ -118,6 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 isPathStyleRequest = true;
             }
 
+            string scheme = URLHelpers.GetPrefix(Settings.Endpoint);
             string endpoint = URLHelpers.RemovePrefixes(Settings.Endpoint);
             string host = isPathStyleRequest ? endpoint : $"{Settings.Bucket}.{endpoint}";
             string algorithm = "AWS4-HMAC-SHA256";
@@ -198,8 +206,8 @@ namespace ShareX.UploadersLib.FileUploaders
             headers.Remove("Host");
             headers.Remove("Content-Type");
 
-            string url = URLHelpers.CombineURL(host, canonicalURI);
-            url = URLHelpers.ForcePrefix(url, "https://");
+            string url = URLHelpers.CombineURL(scheme + host, canonicalURI);
+            url = URLHelpers.FixPrefix(url);
 
             SendRequest(HttpMethod.PUT, url, stream, contentType, null, headers);
 
@@ -259,11 +267,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetUploadPath(string fileName)
         {
-            string path = NameParser.Parse(NameParserType.FolderPath, Settings.ObjectPrefix.Trim('/'));
+            string path = NameParser.Parse(NameParserType.FilePath, Settings.ObjectPrefix.Trim('/'));
 
-            if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
-                (Settings.RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
-                (Settings.RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            if ((Settings.RemoveExtensionImage && FileHelpers.IsImageFile(fileName)) ||
+                (Settings.RemoveExtensionText && FileHelpers.IsTextFile(fileName)) ||
+                (Settings.RemoveExtensionVideo && FileHelpers.IsVideoFile(fileName)))
             {
                 fileName = Path.GetFileNameWithoutExtension(fileName);
             }
@@ -281,7 +289,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (Settings.UseCustomCNAME && !string.IsNullOrEmpty(Settings.CustomDomain))
                 {
-                    CustomUploaderParser parser = new CustomUploaderParser();
+                    ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser();
                     string parsedDomain = parser.Parse(Settings.CustomDomain);
                     url = URLHelpers.CombineURL(parsedDomain, uploadPath);
                 }
@@ -290,7 +298,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     url = URLHelpers.CombineURL(Settings.Endpoint, Settings.Bucket, uploadPath);
                 }
 
-                return URLHelpers.FixPrefix(url, "https://");
+                return URLHelpers.FixPrefix(url);
             }
 
             return "";

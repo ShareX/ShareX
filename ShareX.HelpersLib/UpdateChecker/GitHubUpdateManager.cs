@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,12 +31,12 @@ namespace ShareX.HelpersLib
 {
     public class GitHubUpdateManager : IDisposable
     {
-        public bool AutoUpdateEnabled { get; set; } // ConfigureAutoUpdate function must be called after change this
+        public bool AllowAutoUpdate { get; set; } // ConfigureAutoUpdate function must be called after change this
+        public bool AutoUpdateEnabled { get; set; } = true;
         public TimeSpan UpdateCheckInterval { get; private set; } = TimeSpan.FromHours(1);
-        public TimeSpan UpdateReCheckInterval { get; private set; } = TimeSpan.FromHours(24); // If "No" button pressed in update message box then this interval will be used
         public string GitHubOwner { get; set; }
         public string GitHubRepo { get; set; }
-        public bool IsBeta { get; set; } // If current build is beta and latest stable release is same version as current build then it will be downloaded
+        public bool IsDev { get; set; } // If current build is dev and latest stable release is same version as current build then it will be downloaded
         public bool IsPortable { get; set; } // If current build is portable then download URL will be opened in browser instead of downloading it
         public bool CheckPreReleaseUpdates { get; set; }
 
@@ -50,9 +50,9 @@ namespace ShareX.HelpersLib
             GitHubRepo = repo;
         }
 
-        public GitHubUpdateManager(string owner, string repo, bool beta, bool portable) : this(owner, repo)
+        public GitHubUpdateManager(string owner, string repo, bool dev, bool portable) : this(owner, repo)
         {
-            IsBeta = beta;
+            IsDev = dev;
             IsPortable = portable;
         }
 
@@ -60,7 +60,7 @@ namespace ShareX.HelpersLib
         {
             lock (updateTimerLock)
             {
-                if (AutoUpdateEnabled)
+                if (AllowAutoUpdate)
                 {
                     if (updateTimer == null)
                     {
@@ -76,14 +76,14 @@ namespace ShareX.HelpersLib
 
         private void CheckUpdate()
         {
-            if (!UpdateMessageBox.DontShow && !UpdateMessageBox.IsOpen)
+            if (AutoUpdateEnabled && !UpdateMessageBox.IsOpen)
             {
                 UpdateChecker updateChecker = CreateUpdateChecker();
                 updateChecker.CheckUpdate();
 
-                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) != DialogResult.Yes)
+                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
                 {
-                    updateTimer.Change(UpdateReCheckInterval, UpdateReCheckInterval);
+                    AutoUpdateEnabled = false;
                 }
 
                 firstUpdateCheck = false;
@@ -94,10 +94,9 @@ namespace ShareX.HelpersLib
         {
             return new GitHubUpdateChecker(GitHubOwner, GitHubRepo)
             {
-                IsBeta = IsBeta,
+                IsDev = IsDev,
                 IsPortable = IsPortable,
-                IncludePreRelease = CheckPreReleaseUpdates,
-                Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
+                IncludePreRelease = CheckPreReleaseUpdates
             };
         }
 

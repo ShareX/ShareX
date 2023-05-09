@@ -144,9 +144,6 @@
   <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
     <value>下揃え</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>改行: Ctrl + Enter</value>
-  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>
@@ -172,13 +169,13 @@
     <value>縦方向の文字揃え</value>
   </data>
   <data name="tsmiEnableGradient.Text" xml:space="preserve">
-    <value>グラデーションを有効にする</value>
+    <value>グラデーションを使用</value>
   </data>
   <data name="tsmiSecondColor.Text" xml:space="preserve">
-    <value>テキスト色の2色目</value>
+    <value>文字色の2色目...</value>
   </data>
   <data name="tsmiGradientMode.Text" xml:space="preserve">
-    <value>グラデーションのモード</value>
+    <value>グラデーションの方向</value>
   </data>
   <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
     <value>横方向</value>

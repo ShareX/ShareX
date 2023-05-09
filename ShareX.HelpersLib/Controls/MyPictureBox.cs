@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -150,6 +150,20 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public new event MouseEventHandler MouseMove
+        {
+            add
+            {
+                pbMain.MouseMove += value;
+                lblStatus.MouseMove += value;
+            }
+            remove
+            {
+                pbMain.MouseMove -= value;
+                lblStatus.MouseMove -= value;
+            }
+        }
+
         public bool IsValidImage
         {
             get
@@ -172,7 +186,11 @@ namespace ShareX.HelpersLib
 
         private void UpdateImageSizeLabel()
         {
-            lblImageSize.Location = new Point((ClientSize.Width - lblImageSize.Width) / 2, ClientSize.Height - lblImageSize.Height + 1);
+            if (IsValidImage)
+            {
+                lblImageSize.Text = $"{Image.Width} x {Image.Height}";
+                lblImageSize.Location = new Point((ClientSize.Width - lblImageSize.Width) / 2, ClientSize.Height - lblImageSize.Height + 1);
+            }
         }
 
         public void UpdateTheme()
@@ -225,9 +243,18 @@ namespace ShareX.HelpersLib
                 if (!isImageLoading)
                 {
                     Reset();
-                    isImageLoading = true;
-                    Image = (Image)img.Clone();
-                    isImageLoading = false;
+
+                    if (img != null)
+                    {
+                        isImageLoading = true;
+                        Image = (Image)img.Clone();
+                        isImageLoading = false;
+                    }
+                    else
+                    {
+                        Image = null;
+                    }
+
                     AutoSetSizeMode();
                 }
             }
@@ -274,7 +301,17 @@ namespace ShareX.HelpersLib
                     isImageLoading = true;
                     Text = Resources.MyPictureBox_LoadImageAsync_Loading_image___;
                     lblStatus.Visible = true;
-                    pbMain.LoadAsync(path);
+
+                    try
+                    {
+                        pbMain.LoadAsync(path);
+                    }
+                    catch
+                    {
+                        lblStatus.Visible = false;
+                        isImageLoading = false;
+                        Reset();
+                    }
                 }
             }
         }
@@ -310,8 +347,6 @@ namespace ShareX.HelpersLib
         {
             if (IsValidImage)
             {
-                lblImageSize.Text = $"{Image.Width} x {Image.Height}";
-
                 if (Image.Width > pbMain.ClientSize.Width || Image.Height > pbMain.ClientSize.Height)
                 {
                     pbMain.SizeMode = PictureBoxSizeMode.Zoom;

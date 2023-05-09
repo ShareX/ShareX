@@ -120,10 +120,37 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Phản hồi</value>
   </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>Văn bản</value>
-  </data>
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Trình duyệt Web</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Thông tin phản hồi</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Văn bản phản hồi</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Kết quả</value>
+  </data>
+  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
+    <value>Sao chép URL xóa</value>
+  </data>
+  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
+    <value>Sao chép URL rút gọn</value>
+  </data>
+  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
+    <value>Sao chép URL hình thu nhỏ</value>
+  </data>
+  <data name="tsbCopyURL.Text" xml:space="preserve">
+    <value>Sao chép URL</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Sao chép phản hồi</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>Định dạng XML</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>Định dạng JSON</value>
   </data>
 </root>

@@ -135,4 +135,7 @@
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Onay kodu (Yetki sayfasından onay kodu al):</value>
   </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Durum:</value>
+  </data>
 </root>

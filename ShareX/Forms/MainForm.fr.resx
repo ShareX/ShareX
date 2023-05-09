@@ -375,21 +375,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Vider la liste des tâches</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Cacher le menu</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Afficher</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Cacher</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automatique</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Prévisualisation de l'image</value>
-  </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Plein écran</value>
   </data>
@@ -504,12 +489,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Historique des images...</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Faire un don...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>À propos...</value>
-  </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Afficher la fenêtre de ShareX</value>
   </data>
@@ -588,36 +567,6 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Capture avec défilement...</value>
   </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Journal de débogage...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Tester la mise en ligne d'images</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Tester la mise en ligne de textes</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Tester la mise en ligne de fichiers</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Tester le raccourcisseur d'URL</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Tester le partage d'URL</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Déboguer</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Cacher les colonnes</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Capture de texte (OCR)...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Capture de texte (OCR)...</value>
-  </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>Télécharger</value>
   </data>
@@ -666,9 +615,6 @@
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Image OCR...</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Rechercher une image avec Google...</value>
-  </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Activer la barre d'outils des actions</value>
   </data>
@@ -677,12 +623,6 @@
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>À propos...</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Nouveautés</value>
   </data>
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>Mettre en ligne un texte...</value>
@@ -735,12 +675,6 @@
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Dimensions de l'image</value>
   </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Côté</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Bas</value>
-  </data>
   <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
     <value>Délai de capture d'écran</value>
   </data>
@@ -789,47 +723,8 @@
   <data name="tsbTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
   </data>
-  <data name="tsbPatreon.Text" xml:space="preserve">
-    <value>Patreon</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>Bitcoin</value>
-  </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>Nous soutenir en utilisant des cryptomonnaies</value>
-  </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>Suivez notre compte Twitter</value>
-  </data>
-  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
-    <value>Nous soutenir sur Patreon</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>Haut</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>Bas</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>Rejoindre notre serveur Discord</value>
-  </data>
-  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
-    <value>Mettre notre dépôt Github en favoris</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>Afficher</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>Cacher</value>
-  </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>Titre de la miniature</value>
   </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>Exécuter action</value>

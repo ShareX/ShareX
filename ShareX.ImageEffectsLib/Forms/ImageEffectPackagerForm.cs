@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -56,7 +56,7 @@ namespace ShareX.ImageEffectsLib
 
         private void btnOpenImageEffectsFolder_Click(object sender, EventArgs e)
         {
-            Helpers.OpenFolder(ShareXImageEffectsFolderPath);
+            FileHelpers.OpenFolder(ShareXImageEffectsFolderPath);
         }
 
         private void txtAssetsFolderPath_TextChanged(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace ShareX.ImageEffectsLib
 
         private void btnAssetsFolderPathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtAssetsFolderPath, ShareXImageEffectsFolderPath);
+            FileHelpers.BrowseFolder(txtAssetsFolderPath, ShareXImageEffectsFolderPath);
         }
 
         private void txtPackageFilePath_TextChanged(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace ShareX.ImageEffectsLib
 
                     if (!string.IsNullOrEmpty(outputFilePath) && File.Exists(outputFilePath))
                     {
-                        Helpers.OpenFolderWithFile(outputFilePath);
+                        FileHelpers.OpenFolderWithFile(outputFilePath);
                     }
                 }
             }

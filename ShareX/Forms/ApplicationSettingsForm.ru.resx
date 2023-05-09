@@ -136,7 +136,7 @@
     <value>При запуске сворачивать в трей</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Доп. настройки</value>
+    <value>Дополнительно</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Настройки приложения</value>
@@ -240,17 +240,8 @@
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Вторичные для файлов</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Форматы содержимого буфера - они появятся в контекстном меню в главном окне</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Результаты</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Вторичные для картинок</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>При повторе, пробовать вторичные сервисы в указанном порядке</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Общие</value>
@@ -269,9 +260,6 @@
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Экспорт...</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Повторы</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Загрузка</value>
@@ -374,5 +362,68 @@
   </data>
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Настройки</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Автоматически очищать старые логи</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Автоматически очищать старые бекапы</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Оставлять файлов:</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Пробовать вторичные загрузчики в заданном порядке</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>Главное окно</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Сбросить</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>Показывать меню</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Показывать заголовки</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>Режим миниатюр</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Режим списка</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Отображение задач:</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>Показывать колонки</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Размер миниатюры:</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Положение заголовка:</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>Положение миниатюры:</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>Показывать миниатюру:</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>Эти форматы появятся в главном окне, контекстное меню - "Скопировать".</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Форматы буфера</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Действие при нажатии:</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Шаблон имени подпапок для окна:</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Переназначить принтер по умолчанию:</value>
   </data>
 </root>

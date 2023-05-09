@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -60,16 +60,14 @@ namespace ShareX.ImageEffectsLib
 
             if (MarginMode == CanvasMarginMode.PercentageOfCanvas)
             {
-                // Calculate the amount of padding to add to the sides, based on canvas size.
                 canvasMargin = new Padding();
-                canvasMargin.Top = (int)Math.Round(Margin.Top / 100f * bmp.Height);
-                canvasMargin.Bottom = (int)Math.Round(Margin.Bottom / 100f * bmp.Height);
                 canvasMargin.Left = (int)Math.Round(Margin.Left / 100f * bmp.Width);
                 canvasMargin.Right = (int)Math.Round(Margin.Right / 100f * bmp.Width);
+                canvasMargin.Top = (int)Math.Round(Margin.Top / 100f * bmp.Height);
+                canvasMargin.Bottom = (int)Math.Round(Margin.Bottom / 100f * bmp.Height);
             }
             else
             {
-                // Use the margin as is (absolute size)
                 canvasMargin = Margin;
             }
 

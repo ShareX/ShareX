@@ -190,7 +190,7 @@
     <value>Host:</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>Thiết lập cho in ấn</value>
+    <value>Thiết lập cho in ấn...</value>
   </data>
   <data name="tpPrint.Text" xml:space="preserve">
     <value>In</value>
@@ -210,9 +210,6 @@
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Duyệt...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Định dạng cho vùng nhớ tạm - xuất hiện dưới mục Sao chép ở menu ngữ cảnh trong cửa sổ chính</value>
-  </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Tên người dùng:</value>
   </data>
@@ -223,7 +220,7 @@
     <value>Hiện nút "Tải lên với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>Định dạng tên thư mục phụ</value>
+    <value>Định dạng tên thư mục phụ:</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Đường dẫn</value>
@@ -233,9 +230,6 @@
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Mật khẩu:</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Thử lại</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Tải lên</value>
@@ -248,12 +242,6 @@
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên văn bản phụ</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Sử dụng các dịch vụ thứ cấp theo thứ tự trong danh sách khi thử lại</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Kết quả</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh phụ</value>
@@ -310,7 +298,7 @@
     <value>Lưu các tác vụ vào lịch sử</value>
   </data>
   <data name="gbRecentLinks.Text" xml:space="preserve">
-    <value>Tác vụ gần đây:</value>
+    <value>Tác vụ gần đây</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
     <value>Hiện tác vụ gần đây ở cửa sổ chính khi khởi động</value>
@@ -346,7 +334,7 @@
     <value>Dùng biểu tượng ShareX màu trắng</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Thiết lập lại</value>
+    <value>Thiết lập lại...</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>Xóa bỏ</value>
@@ -374,5 +362,80 @@
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>Lưu ý: Việc này sẽ xuất ra tất cả các tệp tin cài đặt và lịch sử</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Thiết lập lại</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Tự động dọn dẹp các tệp sao lưu cũ</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Tự động xóa các tệp nhật ký cũ</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Lịch sử</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Cài đặt</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>Hiển thị các cột</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>Hiển thị menu</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Hiển thị tiêu đề</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Sử dụng chủ đề tùy chỉnh</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Sử dụng thứ tự ưu tiên của người tải lên phụ khi thử lại</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>Chế độ xem danh sách</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Chế độ xem hình thu nhỏ</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Số lượng tệp cần giữ:</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>Các định dạng này sẽ xuất hiện trong menu phụ "Sao chép" trong menu ngữ cảnh của cửa sổ chính.</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Ghi đè máy in mặc định:</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>Image preview location:</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>Khả năng hiển thị xem trước hình ảnh:</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Chế độ xem tác vụ:</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Mẫu thư mục con cho cửa sổ:</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Vị trí tiêu đề:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Hành động nhấp vào hình thu nhỏ:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Kích thước thu nhỏ:</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Định dạng khay nhớ tạm</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>Cửa sổ chính</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Cài đặt</value>
   </data>
 </root>

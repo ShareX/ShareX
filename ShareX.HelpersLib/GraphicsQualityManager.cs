@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,19 +34,25 @@ namespace ShareX.HelpersLib
         private CompositingQuality previousCompositingQuality;
         private InterpolationMode previousInterpolationMode;
         private SmoothingMode previousSmoothingMode;
+        private PixelOffsetMode previousPixelOffsetMode;
         private Graphics g;
 
-        public GraphicsQualityManager(Graphics g, bool setHighQuality = true)
+        public GraphicsQualityManager(Graphics g, bool highQuality)
         {
             this.g = g;
 
             previousCompositingQuality = g.CompositingQuality;
             previousInterpolationMode = g.InterpolationMode;
             previousSmoothingMode = g.SmoothingMode;
+            previousPixelOffsetMode = g.PixelOffsetMode;
 
-            if (setHighQuality)
+            if (highQuality)
             {
                 SetHighQuality();
+            }
+            else
+            {
+                SetLowQuality();
             }
         }
 
@@ -60,6 +66,17 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void SetLowQuality()
+        {
+            if (g != null)
+            {
+                g.CompositingQuality = CompositingQuality.HighSpeed;
+                g.InterpolationMode = InterpolationMode.NearestNeighbor;
+                g.SmoothingMode = SmoothingMode.HighSpeed;
+                g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
+            }
+        }
+
         public void Dispose()
         {
             if (g != null)
@@ -67,6 +84,7 @@ namespace ShareX.HelpersLib
                 g.CompositingQuality = previousCompositingQuality;
                 g.InterpolationMode = previousInterpolationMode;
                 g.SmoothingMode = previousSmoothingMode;
+                g.PixelOffsetMode = previousPixelOffsetMode;
             }
         }
     }

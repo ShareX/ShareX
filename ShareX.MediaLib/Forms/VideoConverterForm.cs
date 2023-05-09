@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -136,7 +136,14 @@ namespace ShareX.MediaLib
 
             if (!Options.UseCustomArguments)
             {
-                txtArguments.Text = Options.GetFFmpegArgs();
+                try
+                {
+                    txtArguments.Text = Options.GetFFmpegArgs();
+                }
+                catch
+                {
+                    txtArguments.Text = "";
+                }
             }
 
             lblVideoCodec.Visible = cbVideoCodec.Visible = !Options.UseCustomArguments;
@@ -144,6 +151,21 @@ namespace ShareX.MediaLib
 
             btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
                 !string.IsNullOrEmpty(Options.OutputFileName);
+        }
+
+        private void UpdateInputFilePathTextBox(string filePath)
+        {
+            txtInputFilePath.Text = filePath;
+
+            if (string.IsNullOrEmpty(txtOutputFolder.Text))
+            {
+                txtOutputFolder.Text = Path.GetDirectoryName(filePath);
+            }
+
+            if (string.IsNullOrEmpty(txtOutputFileName.Text))
+            {
+                txtOutputFileName.Text = Path.GetFileNameWithoutExtension(filePath) + "-output";
+            }
         }
 
         private bool StartEncoding()
@@ -159,13 +181,20 @@ namespace ShareX.MediaLib
                     ffmpeg.TrackEncodeProgress = true;
                     ffmpeg.EncodeProgressChanged += Manager_EncodeProgressChanged;
 
-                    string outputFilePath = Options.OutputFilePath;
-                    string args = Options.Arguments;
-                    result = ffmpeg.Run(args);
-
-                    if (Options.AutoOpenFolder && result && !ffmpeg.StopRequested)
+                    try
                     {
-                        Helpers.OpenFolderWithFile(outputFilePath);
+                        string outputFilePath = Options.OutputFilePath;
+                        string args = Options.Arguments;
+                        result = ffmpeg.Run(args);
+
+                        if (Options.AutoOpenFolder && result && !ffmpeg.StopRequested)
+                        {
+                            FileHelpers.OpenFolderWithFile(outputFilePath);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        e.ShowError();
                     }
                 }
             }
@@ -198,17 +227,7 @@ namespace ShareX.MediaLib
                 if (ofd.ShowDialog(this) == DialogResult.OK)
                 {
                     string filePath = ofd.FileName;
-                    txtInputFilePath.Text = filePath;
-
-                    if (string.IsNullOrEmpty(txtOutputFolder.Text))
-                    {
-                        txtOutputFolder.Text = Path.GetDirectoryName(filePath);
-                    }
-
-                    if (string.IsNullOrEmpty(txtOutputFileName.Text))
-                    {
-                        txtOutputFileName.Text = Path.GetFileNameWithoutExtension(filePath) + "-output";
-                    }
+                    UpdateInputFilePathTextBox(filePath);
                 }
             }
         }
@@ -220,7 +239,7 @@ namespace ShareX.MediaLib
 
         private void btnOutputFolderBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtOutputFolder);
+            FileHelpers.BrowseFolder(txtOutputFolder);
         }
 
         private void txtOutputFileName_TextChanged(object sender, EventArgs e)
@@ -285,6 +304,27 @@ namespace ShareX.MediaLib
             else if (ffmpeg != null)
             {
                 ffmpeg.Close();
+            }
+        }
+
+        private void VideoConverterForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void VideoConverterForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
+            {
+                string filePath = files[0];
+                UpdateInputFilePathTextBox(filePath);
             }
         }
 

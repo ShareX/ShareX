@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tscResponseText.Text" xml:space="preserve">
-    <value>Corpo:</value>
-  </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>Formato JSON</value>
-  </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>Formato XML</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Copiar resposta</value>
-  </data>
   <data name="btnTextUploaderTest.Text" xml:space="preserve">
     <value>Teste</value>
   </data>
@@ -144,9 +132,6 @@
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Guia de envio personalizado...</value>
   </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>Hospedagem personalizada</value>
-  </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>Exportar tudo...</value>
   </data>
@@ -159,14 +144,8 @@
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Duplicar</value>
   </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>Limpar hospedagens...</value>
-  </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Remover</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Hospedagem</value>
   </data>
   <data name="btnImageUploaderTest.Text" xml:space="preserve">
     <value>Teste</value>
@@ -222,12 +201,6 @@
   <data name="btnDataMinify.Text" xml:space="preserve">
     <value>Reduzir</value>
   </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>Solicitação</value>
-  </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>Analisar resposta:</value>
-  </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>Hiperligação de remoção</value>
   </data>
@@ -236,51 +209,6 @@
   </data>
   <data name="lblResultURL.Text" xml:space="preserve">
     <value>Hiperligação:</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar syntax ao campo da hiperligação</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="lblJsonPath.Text" xml:space="preserve">
-    <value>Caminho do JSON:</value>
-  </data>
-  <data name="tpJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar syntax ao campo da hiperligação</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>Lista de regex:</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar syntax ao campo da hiperligação</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>Resposta</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>Resultado</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Detalhes da resposta</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Texto da resposta</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
-    <value>Teste</value>
   </data>
   <data name="lblDestinationType.Text" xml:space="preserve">
     <value>Tipo de destino:</value>

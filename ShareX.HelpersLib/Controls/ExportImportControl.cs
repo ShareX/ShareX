@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -157,11 +157,7 @@ namespace ShareX.HelpersLib
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Converters.Add(new StringEnumConverter());
                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
-                    serializer.TypeNameHandling = TypeNameHandling.Auto;
-                    if (SerializationBinder != null)
-                    {
-                        serializer.SerializationBinder = SerializationBinder;
-                    }
+                    if (SerializationBinder != null) serializer.SerializationBinder = SerializationBinder;
                     serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
                     return serializer.Deserialize(textReader, ObjectType);
                 }
@@ -194,10 +190,7 @@ namespace ShareX.HelpersLib
 
         private void OnImportCompleted()
         {
-            if (ImportCompleted != null)
-            {
-                ImportCompleted();
-            }
+            ImportCompleted?.Invoke();
         }
 
         private void ImportJson(string json)
@@ -234,9 +227,9 @@ namespace ShareX.HelpersLib
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (string filename in ofd.FileNames)
+                    foreach (string fileName in ofd.FileNames)
                     {
-                        ImportFile(filename);
+                        ImportFile(fileName);
                     }
 
                     OnImportCompleted();
@@ -256,7 +249,16 @@ namespace ShareX.HelpersLib
 
                 await Task.Run(() =>
                 {
-                    json = Helpers.DownloadString(url);
+                    try
+                    {
+                        json = URLHelpers.DownloadString(url);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugHelper.WriteException(ex);
+                        MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + ex, "ShareX - " + Resources.Error,
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 });
 
                 OnImportRequested(json);

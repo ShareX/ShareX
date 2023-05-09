@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -32,7 +33,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.EffectBlur;
 
-        public override string OverlayText => $"Blur [{BlurRadius}]";
+        public override string OverlayText => Resources.Blur + $" [{BlurRadius}]";
 
         public int BlurRadius { get; set; }
 
@@ -48,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void ApplyEffect(Bitmap bmp)
         {
-            ImageHelpers.BoxBlur(bmp, BlurRadius);
+            ImageHelpers.ApplyBoxBlur(bmp, BlurRadius);
         }
 
         public override void OnDrawFinal(Graphics g, Bitmap bmp)

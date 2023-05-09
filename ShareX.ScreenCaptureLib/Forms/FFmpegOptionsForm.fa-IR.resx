@@ -144,9 +144,6 @@
   <data name="lblAMFQuality.Text" xml:space="preserve">
     <value>کیفیت:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>دانلود (بارگذاری)</value>
-  </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>کپی</value>
   </data>
@@ -173,12 +170,6 @@
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
     <value>منبع صدا:</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>منابع</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>کدک ها</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>مقدار باید بین ۰ تا ۱۰ باشد که ۱۰ به معنای بالاترین کیفیت است. برای امتحان میتوانید رنج ۳ تا ۶ را انتخاب کنید. 

@@ -123,13 +123,13 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>如果你有用自定义域设置的存储桶，请使用此选项。
 如果文本字段为空，则存储桶名称将被用于 URL。
-例如，如果你的存储桶名称为 bucket.example.com，则URL将为 http://bucket.example.com/...</value>
+例如，如果你的存储桶名称为 bucket.example.com，则URL将为 “http://bucket.example.com/...”。</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
-    <value>其它上传</value>
+    <value>其他上传</value>
   </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
-    <value>URL 短链</value>
+    <value>网址缩短服务</value>
   </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>添加</value>
@@ -174,16 +174,13 @@
     <value>API 密钥：</value>
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>API 主机名：(例如 http://demo.polr.me/api/v2/action/shorten)</value>
+    <value>API URL：(例如 http://demo.polr.me/api/v2/action/shorten)</value>
   </data>
   <data name="lblStreamableUsername.Text" xml:space="preserve">
     <value>用户名：</value>
   </data>
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>密码：</value>
-  </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>匿名</value>
   </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>共享文件夹</value>
@@ -192,10 +189,10 @@
     <value>邮箱</value>
   </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>文件上载器</value>
+    <value>文件上传器</value>
   </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
-    <value>文本上载器</value>
+    <value>文本上传服务</value>
   </data>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
     <value>邮箱：</value>
@@ -378,18 +375,6 @@
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>如果存在则使用直链</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>登录</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>邮箱：</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>密码：</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>需要登录。</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>用户名：</value>
   </data>
@@ -520,7 +505,7 @@
     <value>创建共享网址</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
-    <value>图片上载器</value>
+    <value>图像上传器</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 上传目标设置</value>
@@ -703,7 +688,7 @@
     <value>帐户:</value>
   </data>
   <data name="btnFTPDuplicate.Text" xml:space="preserve">
-    <value>复制</value>
+    <value>克隆</value>
   </data>
   <data name="btnFTPRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -766,7 +751,7 @@
     <value>公共上传</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
-    <value>ownCloud 8.1 与兼容性</value>
+    <value>ownCloud 8.1+ 兼容性</value>
   </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>API 密钥：</value>
@@ -795,17 +780,8 @@
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>登录信息</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>天</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>小时</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>分钟</value>
-  </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>文件将被自动移除于 </value>
+    <value>文件将被自动移除于</value>
   </data>
   <data name="lblPlikURL.Text" xml:space="preserve">
     <value>主机</value>
@@ -814,7 +790,7 @@
     <value>需要用户名以及密码？</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>API 密钥: </value>
+    <value>API 密钥:</value>
   </data>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>密码：</value>
@@ -845,9 +821,6 @@
   </data>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>是否公开上传?</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>永不</value>
   </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>用户密钥：</value>
@@ -892,7 +865,7 @@
     <value>域名：</value>
   </data>
   <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
-    <value>复制</value>
+    <value>克隆</value>
   </data>
   <data name="lblLithiioEmail.Text" xml:space="preserve">
     <value>邮箱：</value>
@@ -1000,7 +973,7 @@
     <value>使用预览链接（仅 NextCloud）</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
-    <value>使用短链</value>
+    <value>使用短链接</value>
   </data>
   <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
     <value>视频</value>
@@ -1041,9 +1014,6 @@
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>创建</value>
   </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>在此输入一个自定义 URL，它将替换 BackBlaze 返回的主机和路径。</value>
-  </data>
   <data name="lblTeknikExpiration.Text" xml:space="preserve">
     <value>有效期：</value>
   </data>
@@ -1058,14 +1028,6 @@
   </data>
   <data name="cbKuttReuse.Text" xml:space="preserve">
     <value>如果存在具有指定目标的 URL，则返回该 URL</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>如果启用，您收到的 URL 将是附加到指定 URL 上的上传路径。
-
-这与 CloudFlare 等服务或作为 B2 前端的其他服务结合使用
-非常有用。 请参阅 B2 知识库中的文章“使用 B2 创建短链”。
-
-如果禁用，您收到的 URL 将由 Backblaze B2 确定。</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
     <value>图片</value>
@@ -1094,15 +1056,6 @@
   <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
     <value>文本</value>
   </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>应用程序密钥 ID，小写的十六进制字符串。</value>
-  </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>应用程序密钥，仅包含字母与数字。</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>文件路径，使用名称模板格式。</value>
-  </data>
   <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
     <value>上传 API URL：</value>
   </data>
@@ -1120,12 +1073,6 @@
   </data>
   <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
     <value>视频</value>
-  </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>文件存储位置。
-
-此选项仅当你创建应用程序密钥时
-未设置“允许访问存储桶”时有效。</value>
   </data>
   <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
     <value>URL 预览:</value>
@@ -1201,9 +1148,6 @@
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
   </data>
   <data name="tpGfycat.Text" xml:space="preserve">
     <value>Gfycat</value>
@@ -1315,5 +1259,47 @@
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>追加文件名到网址</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>天</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>小时</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>分钟</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>从不</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>显示视频选项对话框</value>
+  </data>
+  <data name="lblGfycatTitle.Text" xml:space="preserve">
+    <value>标题：</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>您随时可通过该链接撤销您的访问权限：</value>
+  </data>
+  <data name="lblZWSToken.Text" xml:space="preserve">
+    <value>令牌：</value>
+  </data>
+  <data name="lblZWSURL.Text" xml:space="preserve">
+    <value>网址：</value>
+  </data>
+  <data name="llYouTubePermissionsLink.Text" xml:space="preserve">
+    <value>https://security.google.com/settings/security/permissions</value>
+  </data>
+  <data name="rbFTPProtocolSFTP.Text" xml:space="preserve">
+    <value>SFTP</value>
+  </data>
+  <data name="tpMega.Text" xml:space="preserve">
+    <value>Mega</value>
+  </data>
+  <data name="tpZeroWidthShortener.Text" xml:space="preserve">
+    <value>Zero Width 缩短器</value>
   </data>
 </root>

@@ -132,4 +132,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - デバッグ ログ</value>
   </data>
+  <data name="btnUploadLog.Text" xml:space="preserve">
+    <value>ログをアップロード...</value>
+  </data>
 </root>

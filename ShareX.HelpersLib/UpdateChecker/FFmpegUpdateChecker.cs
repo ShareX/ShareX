@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,7 +33,7 @@ namespace ShareX.HelpersLib
 
         public FFmpegUpdateChecker(string owner, string repo) : base(owner, repo)
         {
-            if (NativeMethods.Is64Bit())
+            if (Environment.Is64BitOperatingSystem)
             {
                 Architecture = FFmpegArchitecture.win64;
             }
@@ -54,7 +54,7 @@ namespace ShareX.HelpersLib
             {
                 LatestVersion = new Version(release.tag_name.Substring(1));
 
-                if (release.assets != null && release.assets.Count > 0)
+                if (release.assets != null && release.assets.Length > 0)
                 {
                     string endsWith;
 
@@ -76,7 +76,7 @@ namespace ShareX.HelpersLib
                     {
                         if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.OrdinalIgnoreCase))
                         {
-                            Filename = asset.name;
+                            FileName = asset.name;
 
                             if (isBrowserDownloadURL)
                             {

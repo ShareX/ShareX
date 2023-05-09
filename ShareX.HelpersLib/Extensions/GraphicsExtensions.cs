@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,7 +31,7 @@ namespace ShareX.HelpersLib
 {
     public static class GraphicsExtensions
     {
-        public static void DrawRectangleProper(this Graphics g, Pen pen, Rectangle rect)
+        public static void DrawRectangleProper(this Graphics g, Pen pen, RectangleF rect)
         {
             if (pen.Width == 1)
             {
@@ -40,7 +40,7 @@ namespace ShareX.HelpersLib
 
             if (rect.Width > 0 && rect.Height > 0)
             {
-                g.DrawRectangle(pen, rect);
+                g.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
             }
         }
 
@@ -68,17 +68,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void DrawRoundedRectangle(this Graphics g, Pen pen, Rectangle rect, float radius)
+        public static void DrawRoundedRectangle(this Graphics g, Pen pen, RectangleF rect, float radius)
         {
             g.DrawRoundedRectangle(null, pen, rect, radius);
         }
 
-        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Rectangle rect, float radius)
+        public static void DrawRoundedRectangle(this Graphics g, Brush brush, RectangleF rect, float radius)
         {
             g.DrawRoundedRectangle(brush, null, rect, radius);
         }
 
-        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, Rectangle rect, float radius)
+        public static void DrawRoundedRectangle(this Graphics g, Brush brush, Pen pen, RectangleF rect, float radius)
         {
             using (GraphicsPath gp = new GraphicsPath())
             {
@@ -88,7 +88,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void DrawCapsule(this Graphics g, Brush brush, Rectangle rect)
+        public static void DrawCapsule(this Graphics g, Brush brush, RectangleF rect)
         {
             using (GraphicsPath gp = new GraphicsPath())
             {
@@ -111,7 +111,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void DrawCross(this Graphics g, Pen pen, Point center, int crossSize)
+        public static void DrawCross(this Graphics g, Pen pen, PointF center, int crossSize)
         {
             if (crossSize > 0)
             {
@@ -123,7 +123,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void DrawCrossRectangle(this Graphics g, Pen pen, Rectangle rect, int crossSize)
+        public static void DrawCrossRectangle(this Graphics g, Pen pen, RectangleF rect, int crossSize)
         {
             rect = rect.SizeOffset(-1);
 
@@ -143,7 +143,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void DrawCornerLines(this Graphics g, Rectangle rect, Pen pen, int lineSize)
+        public static void DrawCornerLines(this Graphics g, RectangleF rect, Pen pen, int lineSize)
         {
             if (rect.Width <= lineSize * 2)
             {

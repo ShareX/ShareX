@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -132,7 +132,7 @@ namespace ShareX.HelpersLib
                 {
                     lock (this)
                     {
-                        Helpers.CreateDirectoryFromFilePath(filePath);
+                        FileHelpers.CreateDirectoryFromFilePath(filePath);
 
                         string tempFilePath = filePath + ".temp";
 
@@ -154,10 +154,10 @@ namespace ShareX.HelpersLib
                             {
                                 string fileName = Path.GetFileName(filePath);
                                 backupFilePath = Path.Combine(BackupFolder, fileName);
-                                Helpers.CreateDirectory(BackupFolder);
+                                FileHelpers.CreateDirectory(BackupFolder);
                             }
 
-                            File.Replace(tempFilePath, filePath, backupFilePath);
+                            File.Replace(tempFilePath, filePath, backupFilePath, true);
                         }
                         else
                         {
@@ -166,7 +166,7 @@ namespace ShareX.HelpersLib
 
                         if (CreateWeeklyBackup && !string.IsNullOrEmpty(BackupFolder))
                         {
-                            Helpers.BackupFileWeekly(filePath, BackupFolder);
+                            FileHelpers.BackupFileWeekly(filePath, BackupFolder);
                         }
 
                         isSuccess = true;
@@ -212,11 +212,11 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static T Load(string filePath, string backupFolder = null)
+        public static T Load(string filePath, string backupFolder = null, bool fallbackSupport = true)
         {
             List<string> fallbackFilePaths = new List<string>();
 
-            if (!string.IsNullOrEmpty(filePath))
+            if (fallbackSupport && !string.IsNullOrEmpty(filePath))
             {
                 string tempFilePath = filePath + ".temp";
                 fallbackFilePaths.Add(tempFilePath);

@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - アプリの設定</value>
   </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>テーマ適用</value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>参照...</value>
   </data>
@@ -163,10 +160,10 @@
     <value>開く...</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
-    <value>適用する</value>
+    <value>適用</value>
   </data>
   <data name="btnResetSettings.Text" xml:space="preserve">
-    <value>設定をリセットする...</value>
+    <value>設定を初期化...</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
     <value>画像の印刷設定...</value>
@@ -178,28 +175,28 @@
     <value>削除</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>リセット</value>
+    <value>初期化...</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>プレリリース版の更新を確認する</value>
+    <value>プレリリース版の更新を確認</value>
   </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
-    <value>Chrome 拡張機能のサポートを有効にする</value>
+    <value>Chrome 拡張機能への対応を有効化</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
     <value>画像の印刷設定ダイアログを表示しない</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>エクスプローラのコンテキストメニューに「ShareXで画像編集」を表示する</value>
+    <value>エクスプローラのコンテキストメニューに「ShareXで画像編集」を表示</value>
   </data>
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
-    <value>Firefox アドオンのサポートを有効にする</value>
+    <value>Firefox アドオンへの対応を有効化</value>
   </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
-    <value>URLが空でない場合のみ保存する</value>
+    <value>URLが空でない場合のみ保存</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
-    <value>タスクを履歴に保存する</value>
+    <value>タスクを履歴に保存</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>アップロード失敗時に再試行する回数:</value>
@@ -208,61 +205,55 @@
     <value>Windowsの印刷ダイアログを表示しない</value>
   </data>
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
-    <value>最近使用したタスクを保存する</value>
+    <value>最近使用したタスクを保存</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
-    <value>起動時にメイン ウィンドウに最近使用したタスクを表示する</value>
+    <value>起動時にメイン ウィンドウに最近使用したタスクを表示</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
-    <value>最近使用したタスクをトレイメニューに表示する</value>
+    <value>最近使用したタスクをトレイメニューに表示</value>
   </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
-    <value>トレイメニューでは、新しい順で表示する</value>
+    <value>トレイメニューでは、新しい順で表示</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>メイン ウィンドウの位置を記憶する</value>
+    <value>メイン ウィンドウの位置を記憶</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>「送る」メニューにShareXを表示する</value>
+    <value>「送る」メニューにShareXを表示</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>メイン ウィンドウの大きさを記憶する</value>
+    <value>メイン ウィンドウの大きさを記憶</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>エクスプローラのコンテキストメニューに「ShareXでアップロード」を表示する</value>
+    <value>エクスプローラのコンテキストメニューに「ShareXでアップロード」を表示</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>システムトレイ アイコンを表示する</value>
+    <value>トレイアイコンを表示</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>起動時にシステムトレイに最小化する</value>
+    <value>起動時にシステムトレイに最小化</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>ShareX起動中は、Steamの「ゲーム中」に表示する</value>
+    <value>ShareX起動中は、Steamの「ゲーム中」に表示</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>進行状況をタスクバーに表示する</value>
+    <value>進行状況をタスクバーに表示</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>進行状況をシステムトレイ アイコンに表示する</value>
+    <value>進行状況をトレイアイコンに表示</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>独自の画像保存フォルダーを使用する:</value>
+    <value>独自の画像保存フォルダーを使用:</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>説明</value>
   </data>
   <data name="chFormat.Text" xml:space="preserve">
-    <value>フォーマット</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>再試行時に予備アップローダを上から順に使用する</value>
+    <value>書式</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome 拡張機能</value>
-  </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>クリップボードの書式 - メインウィンドウで右クリックメニューの「コピー」に表示される</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Firefox アドオン</value>
@@ -289,10 +280,10 @@
     <value>言語:</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
-    <value>エクスポートしたファイルにはアカウントの情報やアップロード履歴が含まれているため、他人にシェアしないようにしましょう。</value>
+    <value>エクスポートしたファイルには、アカウントの情報やアップロード履歴が含まれることがあるため他者に共有しないようにしましょう。</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX 個人フォルダー:</value>
+    <value>ShareX 用の個人フォルダー:</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>ホスト:</value>
@@ -313,7 +304,7 @@
     <value>保存するタスクの上限:</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>サブフォルダーのパターン:</value>
+    <value>サブフォルダー名の規則:</value>
   </data>
   <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
     <value>トレイアイコンの左クリック:</value>
@@ -332,9 +323,6 @@
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>高度な設定</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>エクスポート/インポート</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>全般</value>
@@ -357,12 +345,6 @@
   <data name="tpUpload.Text" xml:space="preserve">
     <value>アップロード</value>
   </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>結果</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>再試行</value>
-  </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>テーマ</value>
   </data>
@@ -376,24 +358,72 @@
     <value>設定をエクスポート</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>トレイアイコンで白いアイコンを使う</value>
+    <value>白いトレイアイコンを使用</value>
   </data>
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>独自のテーマを使う</value>
   </data>
-  <data name="gbSteam.Text" xml:space="preserve">
-    <value>Stream</value>
-  </data>
-  <data name="gbWindows.Text" xml:space="preserve">
-    <value>Windows</value>
-  </data>
   <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
-    <value>古いバックアップファイルを自動的に削除する</value>
+    <value>古いバックアップファイルを自動で削除</value>
   </data>
   <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
     <value>残しておくファイル数:</value>
   </data>
   <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
-    <value>古いログファイルを自動的に削除する</value>
+    <value>古いログファイルを自動で削除</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>アップロード再試行時に予備のアップローダーを使用</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>初期化</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>カラム名を表示</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>メニューを左側に表示</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>タイトルを表示</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>リスト表示</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>サムネイル表示</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>ここで設定した書式は、メインウィンドウの画像を右クリックした時のメニューの「コピー」内に表示されます。</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>画像プレビューの表示位置:</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>画像プレビューの表示設定:</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>タスクの表示方法:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>クリック時の動作:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>サムネイルのサイズ:</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>タイトルの表示位置:</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>クリップボードの書式</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>メインウィンドウ</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>ウィンドウキャプチャー時の保存先フォルダ名の規則:</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>既定のプリンターを上書き:</value>
   </data>
 </root>

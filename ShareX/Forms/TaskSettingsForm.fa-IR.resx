@@ -141,9 +141,6 @@
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>بعد از ضبط ...</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>بعد از اتمام وظیفه:</value>
-  </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>بعد از آپلود ...</value>
   </data>
@@ -321,9 +318,6 @@
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>کیفیت JPEG:</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>افکت های عکس را بعد از ضبط نشان بده</value>
-  </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>تنظیمات افکت های عکس ...</value>
   </data>
@@ -344,9 +338,6 @@
   </data>
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
     <value>عمل راست کلیک موس:</value>
-  </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>شروع کردن ضبط بعد از:</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>مدت ثابت:</value>

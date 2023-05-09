@@ -138,7 +138,7 @@
     <value>0, 0</value>
   </data>
   <data name="ilvImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>869, 636</value>
+    <value>994, 636</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ilvImages.TabIndex" type="System.Int32, mscorlib">
@@ -157,7 +157,7 @@
     <value>0</value>
   </data>
   <data name="tscMain.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>869, 636</value>
+    <value>994, 636</value>
   </data>
   <data name="&gt;&gt;tscMain.ContentPanel.Name" xml:space="preserve">
     <value>tscMain.ContentPanel</value>
@@ -202,7 +202,7 @@
     <value>2</value>
   </data>
   <data name="tscMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>869, 661</value>
+    <value>994, 661</value>
   </data>
   <data name="tscMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -244,7 +244,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
+    <value>23, 22</value>
   </data>
   <data name="tsbSettings.Text" xml:space="preserve">
     <value>Settings...</value>
@@ -253,7 +253,7 @@
     <value>3, 0</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 25</value>
+    <value>402, 25</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -298,10 +298,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>869, 661</value>
+    <value>994, 661</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

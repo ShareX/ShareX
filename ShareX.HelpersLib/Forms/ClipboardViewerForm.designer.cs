@@ -97,6 +97,7 @@
             this.Controls.Add(this.txtSelectedClipboardContent);
             this.DoubleBuffered = true;
             this.Name = "ClipboardViewerForm";
+            this.Load += new System.EventHandler(this.ClipboardViewerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

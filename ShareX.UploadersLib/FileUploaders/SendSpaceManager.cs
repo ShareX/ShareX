@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -39,7 +38,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public static string Password;
         public static SendSpace.UploadInfo UploadInfo;
 
-        public static List<string> PrepareUploadInfo(string apiKey, string username = null, string password = null)
+        public static UploaderErrorManager PrepareUploadInfo(string apiKey, string username = null, string password = null)
         {
             SendSpace sendSpace = new SendSpace(apiKey);
 

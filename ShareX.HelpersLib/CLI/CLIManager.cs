@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -150,9 +150,14 @@ namespace ShareX.HelpersLib
             return false;
         }
 
+        public CLICommand GetCommand(string command)
+        {
+            return Commands.Find(x => x.CheckCommand(command));
+        }
+
         public string GetParameter(string command)
         {
-            CLICommand cliCommand = Commands.Find(x => x.CheckCommand(command));
+            CLICommand cliCommand = GetCommand(command);
 
             if (cliCommand != null)
             {

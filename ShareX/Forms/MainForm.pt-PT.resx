@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Fechar</value>
-  </data>
   <data name="chElapsed.Text" xml:space="preserve">
     <value>Tempo decorrido</value>
   </data>
@@ -150,26 +147,11 @@
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>Definições da aplicação...</value>
   </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>Bitcoin</value>
-  </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>Suporte-nos usando crypto-moedas</value>
-  </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
   </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>Junte-se a nós no Discord</value>
-  </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Faça uma doação...</value>
-  </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
-  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
-    <value>Adicione o nosso repositório do GitHub aos favoritos</value>
   </data>
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>Histórico...</value>
@@ -180,15 +162,6 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Histórico de imagens...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Novidades</value>
-  </data>
-  <data name="tsbPatreon.Text" xml:space="preserve">
-    <value>Patreon</value>
-  </data>
-  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
-    <value>Suporte-nos usando o Patreon</value>
-  </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
     <value>Caminho das imagens...</value>
   </data>
@@ -197,9 +170,6 @@
   </data>
   <data name="tsbTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>Siga-nos no Twitter</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>Tarefas após captura</value>
@@ -342,12 +312,6 @@
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Verificar hash do ficheiro...</value>
   </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Esconder colunas</value>
-  </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Esconder menu</value>
-  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Juntar imagens...</value>
   </data>
@@ -356,24 +320,6 @@
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Efeitos de imagem...</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Pré-visualização de imagem</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automático</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Fundo</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Esconder</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Mostrar</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Lado</value>
   </data>
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>Dividir imagem...</value>
@@ -480,9 +426,6 @@
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Captura em acção...</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Pesquiza de imagem no Google...</value>
-  </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Partilhar hiperligação</value>
   </data>
@@ -528,29 +471,8 @@
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
     <value>Teste: Encurtar hiperligação</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Captura de texto (OCR) ...</value>
-  </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>Envio de texto</value>
-  </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>Titúlo da miniatura</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>Fundo</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>Esconde</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>Mostra</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>Topo</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Sobre...</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>Tarefa após captura</value>
@@ -573,9 +495,6 @@
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Definições personalizadas de envio...</value>
   </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Depuração</value>
-  </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>Destinos</value>
   </data>
@@ -584,9 +503,6 @@
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>Alterar DNS...</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Contribuir...</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Sair</value>
@@ -699,29 +615,8 @@
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>Mostrar o cursor</value>
   </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Registo de depuração...</value>
-  </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>Configuração de tarefas...</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Teste: Envio de ficheiro</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Teste: Envio de imagem</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Teste: Envio de texto</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Teste: Partilhar hiperligação</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Teste: Encurtar hiperligação</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Captura de texto (OCR) ...</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
     <value>Envio de ficheiros de texto</value>

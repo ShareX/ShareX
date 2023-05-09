@@ -147,9 +147,6 @@
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Copiar</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Mostrar</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>Imagem HTML</value>
   </data>
@@ -206,12 +203,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Editar imagem...</value>
-  </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>Mostrar detalhes</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>Esconder detalhes</value>
   </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>Contador de items no histórico:</value>

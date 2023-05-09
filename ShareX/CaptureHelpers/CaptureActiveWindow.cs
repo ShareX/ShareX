@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,20 +27,20 @@ namespace ShareX
 {
     public class CaptureActiveWindow : CaptureBase
     {
-        protected override ImageInfo Execute(TaskSettings taskSettings)
+        protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
-            ImageInfo imageInfo = CreateImageInfo();
+            TaskMetadata metadata = CreateMetadata();
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {
-                imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent();
+                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent();
             }
             else
             {
-                imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
+                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
             }
 
-            return imageInfo;
+            return metadata;
         }
     }
 }

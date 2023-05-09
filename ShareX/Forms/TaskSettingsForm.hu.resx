@@ -255,9 +255,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>másodperc</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Felvétel indítása ezután:</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>másodperc</value>
   </data>
@@ -285,9 +282,6 @@
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Csak a régió képlopásokhoz alkalmazzon effekteket</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Képeffektek ablak mutatása a képlopás után</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Engedélyezheted/letilthatod a képeffekteket a "Képlopás utáni feladatok -&gt; Képeffektek hozzáadása" résznél.</value>
   </data>
@@ -311,9 +305,6 @@
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Hang lejátszása a feladat befejeztekor</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Miután a feladat befejeződött:</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Feladat...</value>
@@ -341,11 +332,5 @@
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Képlopás után...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Alapértelmezett FTP fiók felülbírálása:</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Alapértelmezett egyedi feltöltő felülbírálása:</value>
   </data>
 </root>

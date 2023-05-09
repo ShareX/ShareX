@@ -124,10 +124,10 @@
     <value>フォルダーの選択:</value>
   </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>ログイン失敗</value>
+    <value>ログイン失敗。</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>親アルバムのパス たとえば</value>
+    <value>親アルバムのパス、例:</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>エラー: 結果が空です。</value>
@@ -136,7 +136,7 @@
     <value>エラー</value>
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
-    <value>接続に成功しました。</value>
+    <value>接続に成功！</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
     <value>未構成</value>
@@ -146,7 +146,7 @@
   </data>
   <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
     <value>接続に成功しました。
-フォルダーの作成:</value>
+作成されたフォルダ:</value>
   </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>証明書ファイルの参照...</value>
@@ -164,7 +164,7 @@
     <value>Issue が見つかりません</value>
   </data>
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>ログイン成功</value>
+    <value>ログイン成功。</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>認証が必要です。</value>
@@ -187,11 +187,8 @@
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>無効なデバイス名</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>応答の解析に失敗しました。</value>
-  </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Box フォルダー一覧の更新失敗</value>
+    <value>Box フォルダ一覧の更新失敗</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>更新ボタンをクリック</value>
@@ -236,9 +233,48 @@
     <value>ログイン失敗。</value>
   </data>
   <data name="DuplicateNameNotAllowed" xml:space="preserve">
-    <value>重複した名前は許可されません</value>
+    <value>重複した名前は許可されません。</value>
   </data>
   <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
     <value>マイドライブ</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>レスポンスURL</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>レスポンス テキスト</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>ステータスコード</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>削除用URL</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>サムネイルURL</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>短縮URL</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>エクスポートに失敗。</value>
+  </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>(任意) キー作成時にバケットを設定しなかった場合にのみ使用</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>{0} としてログインしました。</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>整形に失敗。</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>整形に失敗。</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>ヘッダー</value>
   </data>
 </root>

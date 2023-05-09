@@ -37,7 +37,7 @@ namespace ShareX.ScreenCaptureLib
             this.gbAfterCapture = new System.Windows.Forms.GroupBox();
             this.cbRemoveDuplicates = new System.Windows.Forms.CheckBox();
             this.cbAutoCombine = new System.Windows.Forms.CheckBox();
-            this.chkAutoUpload = new System.Windows.Forms.CheckBox();
+            this.cbAutoUpload = new System.Windows.Forms.CheckBox();
             this.gbWhileCapturing = new System.Windows.Forms.GroupBox();
             this.lblScrollMethod = new System.Windows.Forms.Label();
             this.cbScrollMethod = new System.Windows.Forms.ComboBox();
@@ -193,7 +193,7 @@ namespace ShareX.ScreenCaptureLib
             resources.ApplyResources(this.gbAfterCapture, "gbAfterCapture");
             this.gbAfterCapture.Controls.Add(this.cbRemoveDuplicates);
             this.gbAfterCapture.Controls.Add(this.cbAutoCombine);
-            this.gbAfterCapture.Controls.Add(this.chkAutoUpload);
+            this.gbAfterCapture.Controls.Add(this.cbAutoUpload);
             this.gbAfterCapture.Name = "gbAfterCapture";
             this.gbAfterCapture.TabStop = false;
             // 
@@ -211,12 +211,12 @@ namespace ShareX.ScreenCaptureLib
             this.cbAutoCombine.UseVisualStyleBackColor = true;
             this.cbAutoCombine.CheckedChanged += new System.EventHandler(this.cbAutoCombine_CheckedChanged);
             // 
-            // chkAutoUpload
+            // cbAutoUpload
             // 
-            resources.ApplyResources(this.chkAutoUpload, "chkAutoUpload");
-            this.chkAutoUpload.Name = "chkAutoUpload";
-            this.chkAutoUpload.UseVisualStyleBackColor = true;
-            this.chkAutoUpload.CheckedChanged += new System.EventHandler(this.chkAutoUpload_CheckedChanged);
+            resources.ApplyResources(this.cbAutoUpload, "cbAutoUpload");
+            this.cbAutoUpload.Name = "cbAutoUpload";
+            this.cbAutoUpload.UseVisualStyleBackColor = true;
+            this.cbAutoUpload.CheckedChanged += new System.EventHandler(this.cbAutoUpload_CheckedChanged);
             // 
             // gbWhileCapturing
             // 
@@ -646,7 +646,7 @@ namespace ShareX.ScreenCaptureLib
         private GroupBox gbImages;
         private TextBox txtImagesCount;
         private Label lblNote;
-        private CheckBox chkAutoUpload;
+        private CheckBox cbAutoUpload;
         private Label lblScrollTopMethodBeforeCapture;
         private ComboBox cbScrollTopMethodBeforeCapture;
         private GroupBox gbAfterCapture;

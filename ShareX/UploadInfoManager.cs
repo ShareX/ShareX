@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.VisualBasic.FileIO;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib;
 using System.Collections.Generic;
@@ -31,6 +30,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -115,17 +115,17 @@ namespace ShareX
 
         public void OpenFile()
         {
-            if (IsItemSelected && SelectedItem.IsFileExist) Helpers.OpenFile(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsFileExist) FileHelpers.OpenFile(SelectedItem.Info.FilePath);
         }
 
         public void OpenThumbnailFile()
         {
-            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) Helpers.OpenFile(SelectedItem.Info.ThumbnailFilePath);
+            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) FileHelpers.OpenFile(SelectedItem.Info.ThumbnailFilePath);
         }
 
         public void OpenFolder()
         {
-            if (IsItemSelected && SelectedItem.IsFileExist) Helpers.OpenFolderWithFile(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsFileExist) FileHelpers.OpenFolderWithFile(SelectedItem.Info.FilePath);
         }
 
         public void TryOpen()
@@ -144,7 +144,7 @@ namespace ShareX
                 }
                 else if (SelectedItem.IsFilePathValid)
                 {
-                    Helpers.OpenFile(SelectedItem.Info.FilePath);
+                    FileHelpers.OpenFile(SelectedItem.Info.FilePath);
                 }
             }
         }
@@ -347,16 +347,18 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEffects(SelectedItem.Info.FilePath);
         }
 
+        public void PinToScreen()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.PinToScreen(SelectedItem.Info.FilePath);
+        }
+
         public void DeleteFiles()
         {
             if (IsItemSelected)
             {
-                foreach (string filepath in SelectedItems.Select(x => x.Info.FilePath))
+                foreach (string filePath in SelectedItems.Select(x => x.Info.FilePath))
                 {
-                    if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
-                    {
-                        FileSystem.DeleteFile(filepath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
-                    }
+                    FileHelpers.DeleteFile(filePath, true);
                 }
             }
         }
@@ -371,9 +373,14 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShareURL(SelectedItem.Info.Result.ToString(), urlSharingService);
         }
 
-        public void SearchImage()
+        public void SearchImageUsingGoogle()
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImage(SelectedItem.Info.Result.URL);
+            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImageUsingGoogle(SelectedItem.Info.Result.URL);
+        }
+
+        public void SearchImageUsingBing()
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImageUsingBing(SelectedItem.Info.Result.URL);
         }
 
         public void ShowQRCode()
@@ -394,7 +401,20 @@ namespace ShareX
 
                 if (imageFiles.Count() > 1)
                 {
-                    TaskHelpers.OpenImageCombiner(null, imageFiles);
+                    TaskHelpers.OpenImageCombiner(imageFiles);
+                }
+            }
+        }
+
+        public void CombineImages(Orientation orientation)
+        {
+            if (IsItemSelected)
+            {
+                IEnumerable<string> imageFiles = SelectedItems.Where(x => x.IsImageFile).Select(x => x.Info.FilePath);
+
+                if (imageFiles.Count() > 1)
+                {
+                    TaskHelpers.CombineImages(imageFiles, orientation);
                 }
             }
         }

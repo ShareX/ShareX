@@ -167,26 +167,14 @@ Caso contrário é impossível acompanhar a gravação e irão ocorrer muitas fa
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Taxa de bitrate variável:</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Transferir</value>
-  </data>
   <data name="btnFFmpegBrowse.Text" xml:space="preserve">
     <value>...</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Caminho do FFmpeg</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Utilizar caminho personalizado</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Utilizador comandos personalizados</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Utilizar pré-visualização da linha de comandos</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Parâmetros adicionais na linha de comandos</value>
   </data>
   <data name="tpX264.Text" xml:space="preserve">
     <value>x264 / x265</value>
@@ -232,12 +220,6 @@ Caso contrário é impossível acompanhar a gravação e irão ocorrer muitas fa
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Actualizar</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Fontes</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Opções de gravação do ecrã</value>

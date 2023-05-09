@@ -127,13 +127,13 @@
     <value>削除</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>既定にリセット</value>
+    <value>既定に初期化...</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>閉じる</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>ヒント: 空のタスクを追加すると、メニューでは区切り線になります</value>
+    <value>ヒント: 空のタスクを追加すると、メニューでは区切り線になります。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - クイック タスク メニューの編集</value>

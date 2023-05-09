@@ -120,9 +120,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Выберите ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg успешно загружен.</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Битрейт: {0}k</value>
   </data>
@@ -131,9 +128,6 @@
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} Ш: {2} В: {3}</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Загрузка FFmpeg не удалась.</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Упрощенный захват области</value>
@@ -228,9 +222,6 @@
   <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
     <value>Помнить состояние меню</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Параметры фигур</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>Тень</value>
   </data>
@@ -306,9 +297,6 @@
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>Центральных точек:</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Стрелки на обоих концах</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
     <value>Изображение</value>
   </data>
@@ -340,7 +328,7 @@
     <value>Заметка: Изображение можно перемещать, удерживая среднюю кнопку мыши.</value>
   </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
-    <value>Буфер обмена не содержит изображений.</value>
+    <value>Буфер обмена не содержит изображение.</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
     <value>Вставить картинку/текст</value>
@@ -368,9 +356,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
     <value>Размер шрифта:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Использовать буквы</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Режим интерполяции:</value>
@@ -401,10 +386,10 @@
     <value>Это окно закроется перед тем, как открыть страницу с горячими клавишами. Хотите продолжить?</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
-    <value>Переключаться на инструмент рисования после выбора фигуры</value>
+    <value>Выбирать инструмент рисования после выбора фигуры</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
-    <value>Переключаться на инструмент выделения после рисования фигуры</value>
+    <value>Выбирать инструмент выделения после рисования</value>
   </data>
   <data name="MagnifyStrength" xml:space="preserve">
     <value>Степень увеличения:</value>
@@ -441,5 +426,71 @@
   </data>
   <data name="MenuIconSize" xml:space="preserve">
     <value>Размер иконок меню:</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Нажмите, чтобы остановить запись.</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Стиль рамки:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Тип шага:</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>Отменить эту запись?</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>Начать</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Нажмите, чтобы начать запись.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Ожидание...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Кодирование...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Настройки инструмента</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Обработка...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Размытие</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Подсвечивание</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Пикселизация</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Автоматически копировать изображение в буфер обмена</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>Лимит FPS:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Подогнать под размеры окна при открывании</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Эффект разрыва:</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Размер эффекта:</value>
   </data>
 </root>

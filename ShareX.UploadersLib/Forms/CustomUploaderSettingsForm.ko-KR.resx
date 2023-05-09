@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tpJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
   <data name="lblResultThumbnailURL.Text" xml:space="preserve">
     <value>썸네일 URL:</value>
   </data>
@@ -137,9 +134,6 @@
   </data>
   <data name="lblDestinationType.Text" xml:space="preserve">
     <value>목적지 타입:</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
-    <value>테스트</value>
   </data>
   <data name="lblURLSharingService.Text" xml:space="preserve">
     <value>URL 공유 서비스:</value>

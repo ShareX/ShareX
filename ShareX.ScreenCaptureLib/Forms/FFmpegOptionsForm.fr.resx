@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Arguments supplémentaires en ligne de commande</value>
-  </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
     <value>Codec audio :</value>
   </data>
@@ -128,12 +125,6 @@
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bitrate :</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Aperçu de la ligne de commande</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constante Rate Factor (CRF) : La valeur peut être comprise entre 0 à 51, 0 étant sans perte, 30 étant la valeur par défaut et 51 étant la pire possible.
@@ -144,9 +135,6 @@ Une valeur élevée signifie une mauvaise qualité d'image mais un fichier lége
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>Par défaut : 128k.</value>
-  </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Télécharger</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Qualité :</value>
@@ -175,17 +163,11 @@ Une valeur élevée signifie une mauvaise qualité d'image mais un fichier lége
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Options d'enregistrement de l'écran</value>
   </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Sources</value>
-  </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Utiliser des commandes personnalisées</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Bitrate variable :</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Chemin vers FFmpeg</value>
   </data>
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>Mode de tramage :</value>

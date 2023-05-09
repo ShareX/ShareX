@@ -129,10 +129,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - クリップボードからアップロード</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="lblQuestion.Text" xml:space="preserve">
-    <value>クリップボードには次のものがあります</value>
+    <value>クリップボードは以下の内容:</value>
   </data>
 </root>

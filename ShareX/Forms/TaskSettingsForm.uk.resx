@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -138,9 +138,6 @@
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Примітка: Ви можете увімкнути/вимкнути ефекти зображення з „Після завдання захоплення -&gt; Додати ефекти".</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Показати вікно ефектів зображення після захоплення</value>
-  </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Застосовувати ефекти лише при захопленні області</value>
   </data>
@@ -177,9 +174,6 @@
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Вилучити</value>
   </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Перевизначити дії</value>
-  </data>
   <data name="tpActions.Text" xml:space="preserve">
     <value>Дії</value>
   </data>
@@ -191,12 +185,6 @@
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Розширені</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Перевизначити типовий вивантажувач</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Перевизначити типовий обліковий запис FTP</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Після захоплення...</value>
@@ -225,17 +213,11 @@
   <data name="btnTask.Text" xml:space="preserve">
     <value>Завдання...</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Після завершення завдання:</value>
-  </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Відтворити звук після завершення завдання</value>
   </data>
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Відтворити звук після завершення захоплення</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Перевизначити загальні налаштування</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>Розрядність PNG:</value>
@@ -257,9 +239,6 @@
   </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Якість JPEG:</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Перевизначити налаштування зображень</value>
   </data>
   <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
     <value>Створювати мініатюри лише коли розмір зображення більше ніж розмір мініатюри</value>
@@ -311,9 +290,6 @@
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Захоплює клієнтську область при захопленні вікна чи активного вікна</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Перевизначити налаштування захоплення</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Захоплення області</value>
@@ -408,9 +384,6 @@
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>секунд</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Розпочати запис після:</value>
-  </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>секунд</value>
   </data>
@@ -429,17 +402,11 @@
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>Автоматично копіювати результати в буфер обміну</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Розпізнавати текст при відкритті вікна</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Тихе розпізнання тексту</value>
   </data>
   <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
     <value>Типова мова:</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Перевизначити налаштування вивантаження</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Назви файлів</value>
@@ -452,9 +419,6 @@
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
     <value>Замінювати проблемні символи у посиланнях на підкреслення при вивантаженні</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Використовувати шаблон назви вікна для захоплення області (ShareX виявляє вікно за виділенням)</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Власний часовий пояс:</value>
@@ -551,12 +515,6 @@
   </data>
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>Формат вибору кольору з екрана:</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Перевизначити налаштування інструментів</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Перевизначити розширені налаштування</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Налаштування завдань</value>

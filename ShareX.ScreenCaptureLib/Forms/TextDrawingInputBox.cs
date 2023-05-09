@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,16 +37,18 @@ namespace ShareX.ScreenCaptureLib
     {
         public string InputText { get; private set; }
         public TextDrawingOptions Options { get; private set; }
+        public ColorPickerOptions ColorPickerOptions { get; private set; }
 
         private int processKeyCount;
 
-        public TextDrawingInputBox(string text, TextDrawingOptions options, bool supportGradient)
+        public TextDrawingInputBox(string text, TextDrawingOptions options, bool supportGradient, ColorPickerOptions colorPickerOptions)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
             InputText = text;
             Options = options;
+            ColorPickerOptions = colorPickerOptions;
 
             if (InputText != null)
             {
@@ -67,6 +69,8 @@ namespace ShareX.ScreenCaptureLib
             }
 
             nudTextSize.SetValue(Options.Size);
+
+            btnTextColor.ColorPickerOptions = ColorPickerOptions;
             btnTextColor.Color = Options.Color;
 
             btnGradient.Visible = supportGradient;
@@ -163,7 +167,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void tsmiSecondColor_Click(object sender, EventArgs e)
         {
-            ColorPickerForm.PickColor(Options.Color2, out Color newColor, this);
+            ColorPickerForm.PickColor(Options.Color2, out Color newColor, this, null, ColorPickerOptions);
             Options.Color2 = newColor;
             if (tsmiSecondColor.Image != null) tsmiSecondColor.Image.Dispose();
             tsmiSecondColor.Image = ImageHelpers.CreateColorPickerIcon(Options.Color2, new Rectangle(0, 0, 16, 16));

@@ -129,7 +129,10 @@
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
     <value>Maksimum resim limiti:</value>
   </data>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>Görünüm modu:</value>
+  <data name="cbFilterMissingFiles.Text" xml:space="preserve">
+    <value>Eksik dosyaları filtrele</value>
+  </data>
+  <data name="cbRememberWindowState.Text" xml:space="preserve">
+    <value>Pencere durumunu hatırla</value>
   </data>
 </root>

@@ -132,14 +132,8 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Capturer une région</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg téléchargé avec succès.</value>
-  </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Capture rectangle transparent</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Échec du téléchargement de FFmpeg.</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Capture rectangulaire simple</value>
@@ -255,9 +249,6 @@
   <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
     <value>Avancer</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Options de forme</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>Capturer des régions</value>
   </data>
@@ -359,9 +350,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
     <value>Coller image/texte</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Utiliser des lettres</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>Menu annotations</value>

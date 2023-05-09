@@ -1,0 +1,227 @@
+name: Build ShareX
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration:
+          - Release
+          - Debug
+          - Steam
+          - MicrosoftStore
+          - MicrosoftStoreDebug
+        platform:
+          - Any CPU
+
+    env:
+      SOLUTION_FILE_PATH: ShareX.sln
+      ASSEMBLY_INFO_PATH: GlobalAssemblyInfo.cs
+
+    outputs:
+      APP_VERSION: ${{ steps.get_app_version.outputs.APP_VERSION }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+
+      - name: Get app version
+        id: get_app_version
+        run: |
+          $content = Get-Content "${{ env.ASSEMBLY_INFO_PATH }}" -Raw
+          $pattern = 'Version\("([0-9]+(?:\.[0-9]+){1,3})"\)'
+          $match = [regex]::Match($content, $pattern)
+          $version = $match.Groups[1].Value
+          if ($env:GITHUB_REF -eq "refs/heads/develop") {
+            $version = "$version.$env:GITHUB_RUN_NUMBER"
+            $content = [regex]::Replace($content, $pattern, "Version(`"$version`")")
+            Set-Content -Path "${{ env.ASSEMBLY_INFO_PATH }}" -Value "$content" -NoNewline
+          }
+          echo $version
+          echo "APP_VERSION=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Download API keys
+        env:
+          API_KEYS: ${{ secrets.API_KEYS }}
+        if: env.API_KEYS != ''
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
+
+      - name: Restore NuGet packages
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: nuget restore ${{ env.SOLUTION_FILE_PATH }}
+
+      - name: Build
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: msbuild -m -p:Configuration="${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
+
+      - name: Setup
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          & "ShareX.Setup\bin\${{ matrix.configuration }}\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}"
+
+      - name: Upload artifact (Setup)
+        if: matrix.configuration == 'Release'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Setup
+          path: Output\ShareX-*-setup.exe
+
+      - name: Upload artifact (Portable)
+        if: matrix.configuration == 'Release'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Portable
+          path: Output\ShareX-*-portable.zip
+
+      - name: Upload artifact (Debug)
+        if: matrix.configuration == 'Debug'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Debug
+          path: Output\ShareX-*-debug.zip
+
+      - name: Upload artifact (Steam)
+        if: matrix.configuration == 'Steam'
+        uses: actions/upload-artifact@v3
+        with:
+          name: Steam
+          path: Output\ShareX-*-Steam.zip
+
+      - name: Upload artifact (MicrosoftStore)
+        if: matrix.configuration == 'MicrosoftStore'
+        uses: actions/upload-artifact@v3
+        with:
+          name: MicrosoftStore
+          path: Output\ShareX-*.appx
+
+      - name: Upload artifact (MicrosoftStoreDebug)
+        if: matrix.configuration == 'MicrosoftStoreDebug'
+        uses: actions/upload-artifact@v3
+        with:
+          name: MicrosoftStoreDebug
+          path: Output\ShareX-*-debug.appx
+
+  release:
+    name: Release
+    needs: build
+    if: github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/tags/v')
+    runs-on: windows-latest
+
+    permissions:
+      contents: write
+
+    env:
+      REPO_DEV_BUILDS: ShareX/DevBuilds
+      RELEASE_BODY_PATH: RELEASE_BODY.md
+      APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
+
+    steps:
+      - name: Download artifact (Setup)
+        uses: actions/download-artifact@v3
+        with:
+          name: Setup
+          path: Output
+
+      - name: Download artifact (Portable)
+        uses: actions/download-artifact@v3
+        with:
+          name: Portable
+          path: Output
+
+      - name: Download artifact (Debug)
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/download-artifact@v3
+        with:
+          name: Debug
+          path: Output
+
+      - name: Download artifact (Steam)
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/download-artifact@v3
+        with:
+          name: Steam
+          path: Output
+
+      - name: Download artifact (MicrosoftStore)
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/download-artifact@v3
+        with:
+          name: MicrosoftStore
+          path: Output
+
+      - name: Download artifact (MicrosoftStoreDebug)
+        if: github.ref == 'refs/heads/develop'
+        uses: actions/download-artifact@v3
+        with:
+          name: MicrosoftStoreDebug
+          path: Output
+
+      - name: Create release body file
+        run: |
+          $checksums = Get-ChildItem -Path "Output\" -Recurse -File
+            | Sort-Object -Property Name
+            | ForEach-Object { "| $($_.Name) | ``$((Get-FileHash $_.FullName -Algorithm SHA256).Hash)`` |" }
+            | Out-String
+          $output = "| File | SHA256 |`r`n| --- | --- |`r`n$($checksums.Trim())"
+          echo $output >> $env:GITHUB_STEP_SUMMARY
+          if ($env:GITHUB_REF.StartsWith("refs/tags/v")) {
+            $output = "**Changelog:** https://getsharex.com/changelog`r`n`r`n$output"
+          }
+          echo $output
+          Set-Content -Path "${{ env.RELEASE_BODY_PATH }}" -Value "$output" -NoNewline
+
+      - name: Release (Dev)
+        env:
+          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        if: env.CUSTOM_GITHUB_TOKEN != '' && env.REPO_DEV_BUILDS != '' && github.ref == 'refs/heads/develop'
+        uses: softprops/action-gh-release@v1
+        with:
+          repository: ${{ env.REPO_DEV_BUILDS }}
+          token: ${{ env.CUSTOM_GITHUB_TOKEN }}
+          tag_name: v${{ env.APP_VERSION }}
+          name: ShareX ${{ env.APP_VERSION }} Dev
+          body_path: ${{ env.RELEASE_BODY_PATH }}
+          draft: false
+          prerelease: false
+          files: |
+            Output/ShareX-${{ env.APP_VERSION }}-setup.exe
+            Output/ShareX-${{ env.APP_VERSION }}-portable.zip
+            Output/ShareX-${{ env.APP_VERSION }}-debug.zip
+            Output/ShareX-${{ env.APP_VERSION }}-Steam.zip
+            Output/ShareX-${{ env.APP_VERSION }}.appx
+            Output/ShareX-${{ env.APP_VERSION }}-debug.appx
+
+      - name: Release (Stable)
+        env:
+          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        if: env.CUSTOM_GITHUB_TOKEN != '' && startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v1
+        with:
+          repository: ${{ github.repository }}
+          token: ${{ env.CUSTOM_GITHUB_TOKEN }}
+          tag_name: ${{ github.ref_name }}
+          name: ShareX ${{ env.APP_VERSION }}
+          body_path: ${{ env.RELEASE_BODY_PATH }}
+          draft: false
+          prerelease: true
+          files: |
+            Output/ShareX-${{ env.APP_VERSION }}-setup.exe
+            Output/ShareX-${{ env.APP_VERSION }}-portable.zip

@@ -117,32 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
-    <value>向 URL 字段添加规则</value>
-  </data>
-  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
-    <value>向 URL 字段添加规则</value>
-  </data>
-  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
-    <value>向 URL 字段添加规则</value>
-  </data>
   <data name="lblBody.Text" xml:space="preserve">
-    <value>请求体：</value>
-  </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>清除自定义上传...</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>复制响应</value>
+    <value>正文：</value>
   </data>
   <data name="mbDestinationType.ToolTip" xml:space="preserve">
     <value>目前，当用户双击 .sxcu 文件导入自定义上传目标时，上传目标类型将被使用。</value>
   </data>
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>自定义上传向导（英语）...</value>
-  </data>
-  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
-    <value>自定义上传（GitHub）...</value>
   </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>删除 URL：</value>
@@ -151,19 +133,7 @@
     <value>上传目标类型：</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>复制</value>
-  </data>
-  <data name="lblXPathExample.Text" xml:space="preserve">
-    <value>示例：
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblJsonPathExample.Text" xml:space="preserve">
-    <value>示例：
-
-Files[0].URL
-store.book[0].title</value>
+    <value>克隆</value>
   </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
     <value>导出全部...</value>
@@ -178,10 +148,7 @@ store.book[0].title</value>
     <value>头：</value>
   </data>
   <data name="lblImageUploader.Text" xml:space="preserve">
-    <value>图片上载器：</value>
-  </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>JSON 格式</value>
+    <value>图片上传器：</value>
   </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>方法：</value>
@@ -204,35 +171,8 @@ store.book[0].title</value>
   <data name="btnNew.Text" xml:space="preserve">
     <value>新增</value>
   </data>
-  <data name="lblParseResponse.Text" xml:space="preserve">
-    <value>解析响应：</value>
-  </data>
-  <data name="tpRegexParse.Text" xml:space="preserve">
-    <value>正则表达式</value>
-  </data>
-  <data name="cRegex.HeaderText" xml:space="preserve">
-    <value>正则表达式</value>
-  </data>
-  <data name="lblRegex.Text" xml:space="preserve">
-    <value>正则表达式列表:</value>
-  </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>删除</value>
-  </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>请求</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>响应</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>响应信息</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>响应文本</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>结果</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 自定义上传设置</value>
@@ -241,9 +181,6 @@ store.book[0].title</value>
     <value>测试</value>
   </data>
   <data name="btnURLShortenerTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
     <value>测试</value>
   </data>
   <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
@@ -256,7 +193,7 @@ store.book[0].title</value>
     <value>测试</value>
   </data>
   <data name="lblTextUploader.Text" xml:space="preserve">
-    <value>文本上载器：</value>
+    <value>文本上传器：</value>
   </data>
   <data name="lblResultThumbnailURL.Text" xml:space="preserve">
     <value>缩略图 URL：</value>
@@ -264,17 +201,14 @@ store.book[0].title</value>
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
     <value>更新文件夹...</value>
   </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>上载器</value>
-  </data>
   <data name="lblParameters.Text" xml:space="preserve">
     <value>URL 参数：</value>
   </data>
   <data name="lblURLSharingService.Text" xml:space="preserve">
-    <value>URL 共享服务：</value>
+    <value>网址分享服务：</value>
   </data>
   <data name="lblURLShortener.Text" xml:space="preserve">
-    <value>URL 短链：</value>
+    <value>网址缩短服务：</value>
   </data>
   <data name="cParametersValue.HeaderText" xml:space="preserve">
     <value>值</value>
@@ -285,20 +219,8 @@ store.book[0].title</value>
   <data name="cHeadersValue.HeaderText" xml:space="preserve">
     <value>值</value>
   </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>XML 格式</value>
-  </data>
-  <data name="lblXPath.Text" xml:space="preserve">
-    <value>XPath：</value>
-  </data>
   <data name="btnDataBeautify.Text" xml:space="preserve">
-    <value>格式化</value>
-  </data>
-  <data name="btnJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
+    <value>美化</value>
   </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
@@ -310,18 +232,15 @@ store.book[0].title</value>
     <value>URL:</value>
   </data>
   <data name="lblRequestURL.Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>请求 URL:</value>
   </data>
-  <data name="lblJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
+  <data name="btnTestURLSyntax.Text" xml:space="preserve">
+    <value>测试</value>
   </data>
-  <data name="tpJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
+  <data name="lblUploaders.Text" xml:space="preserve">
+    <value>上传器：</value>
   </data>
-  <data name="tpXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
-  <data name="tscResponseText.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
+  <data name="tsmiClearUploaders.Text" xml:space="preserve">
+    <value>清除上传器...</value>
   </data>
 </root>

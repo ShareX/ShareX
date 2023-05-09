@@ -174,17 +174,8 @@
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Hozzáadás...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Vágólap formátumok</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Leírás</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Másodlagos feltöltők használata a preferálási sorrendben újrapróbálkozáskor</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Eredmények</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Másodlagos kép feltöltők</value>
@@ -242,9 +233,6 @@
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Jelszó:</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Újra</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Feltöltés</value>

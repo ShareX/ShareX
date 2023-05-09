@@ -145,37 +145,34 @@
     <value>Папку</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>BB код с картинкой для форума</value>
+    <value>BBCode с картинкой для форума</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>BB код со ссылкой для форума</value>
+    <value>BBCode со ссылкой для форума</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>BB код с картинкой-ссылкой для форума</value>
+    <value>BBCode с картинкой-ссылкой для форума</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
-    <value>HTML код с картинкой</value>
+    <value>HTML-код с картинкой</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>HTML код со ссылкой</value>
+    <value>HTML-код со ссылкой</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>HTML код с картинкой-ссылкой</value>
+    <value>HTML-код с картинкой-ссылкой</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
     <value>Изображение</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Предпросмотр изображения</value>
+    <value>Предпросмотр изображения...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Больше информации...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Открыть</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Показать</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>Короткую ссылку</value>
@@ -207,12 +204,6 @@
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Редактировать изображение...</value>
   </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>Показать статистику</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>Спрятать статистику</value>
-  </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>Количество элементов истории:</value>
   </data>
@@ -230,5 +221,23 @@
   </data>
   <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
     <value>Ошибка при чтении файла истории:</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Имя файла, заголовок окна, название процесса и т.д.</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Всего</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Отфильтровано</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Имена процессов:</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Статистика истории</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Закрепить на экране</value>
   </data>
 </root>

@@ -362,9 +362,6 @@
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>폴더 업로드</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP 클라이언트</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>해시 검사</value>
   </data>
@@ -721,9 +718,6 @@
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>업로드</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>도구</value>
-  </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>도구</value>
   </data>
@@ -844,12 +838,6 @@
   <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
     <value>비공개</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>스탠다드 스토리지</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>스탠다드 Infrequent Access 스토리지</value>
-  </data>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>기본</value>
   </data>
@@ -967,9 +955,6 @@
   <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
     <value>이미지</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>타깃</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>이미지 취합기</value>
   </data>
@@ -987,12 +972,6 @@
   </data>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>히스토리 창 열기</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>텍스트 촬영 (OCR)</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>화면 촬영</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>미리 지정된 영역에서 화면 녹화 시작/중단</value>

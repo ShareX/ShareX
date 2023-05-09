@@ -373,7 +373,7 @@
     <value>Resim düzenle...</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Yerel dosya sil</value>
+    <value>Yerel dosya sil...</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
     <value>Adresi kısalt</value>
@@ -385,25 +385,10 @@
     <value>QR kod göster...</value>
   </data>
   <data name="tsmiShowResponse.Text" xml:space="preserve">
-    <value>Cevabı göster...</value>
+    <value>Yanıtı göster...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Listeyi temizle</value>
-  </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Menüyü gizle</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Resim ön izleme</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Göster</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Gizle</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Otomatik</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Yakala</value>
@@ -531,12 +516,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Resim geçmişi...</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Bağış...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Hakkında...</value>
-  </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>ShareX penceresini göster</value>
   </data>
@@ -559,7 +538,7 @@
     <value>Renk seçici...</value>
   </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
-    <value>Son adresler</value>
+    <value>Son bağlantılar</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Bölge (Saydam)</value>
@@ -588,36 +567,6 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Kaydırarak yakalama...</value>
   </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Hata ayıklama</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Hata ayıklama kütüğü...</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Dosya yükleme testi</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Resim yükleme testi</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Yazı yükleme testi</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Adres paylaşım testi</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Adres kısaltma testi</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Kolonları gizle</value>
-  </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>Yazı yakalama (OCR)...</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>Yazı yakalama (OCR)...</value>
-  </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>İmleç göster</value>
   </data>
@@ -632,9 +581,6 @@
   </data>
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>Küçük resim yapıcı...</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Haberler</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Bağış yap...</value>
@@ -657,20 +603,11 @@
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>Listeden sil</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google resim arama...</value>
-  </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Resimden yazı yakala (OCR)...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Resimleri birleştir...</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Yan</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Alt</value>
   </data>
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>İmleç göster</value>
@@ -690,7 +627,130 @@
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Aksiyonlar araç çubuğunu göster/sakla</value>
   </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Kapat</value>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Resim efekti ekle...</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>Bing görsel arama (OCR)...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>Pano görüntüleyici...</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>Yatay olarak birleştir</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>Dikey olarak birleştir</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>Ekran görüntüsü gecikmesi</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>Gecikme yok</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 saniye</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 saniye</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 saniye</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 saniye</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 saniye</value>
+  </data>
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
+    <value>Google resim arama...</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 saniye</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>Gecikme yok</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 saniye</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 saniye</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 saniye</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 saniye</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>Ekran görüntüsü gecikmesi</value>
+  </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>Resim boyutları</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Özel yükleyici ayarları...</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Resim ayırıcı...</value>
+  </data>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>Pencere incele...</value>
+  </data>
+  <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
+    <value>ShareX i yönetici olarak yeniden başlat</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Aksiyon çalıştır</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>Küçük resim görünümüne geç</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>Pano görüntüleyici...</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Özel yükleyici ayarları...</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>Resim ayırıcı...</value>
+  </data>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>Pencere incele...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Video çevirici...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Video çevirici...</value>
+  </data>
+  <data name="tsmiImageViewer.Text" xml:space="preserve">
+    <value>Resim görüntüleyici...</value>
+  </data>
+  <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
+    <value>Resim görüntüleyici...</value>
+  </data>
+  <data name="tsmiOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiTrayOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiPinSelectedFile.Text" xml:space="preserve">
+    <value>Ekrana sabitle</value>
+  </data>
+  <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
+    <value>Ekrana sabitle...</value>
+  </data>
+  <data name="tsmiPinToScreen.Text" xml:space="preserve">
+    <value>Ekrana sabitle...</value>
+  </data>
+  <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
+    <value>Kenarsız pencere...</value>
+  </data>
+  <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
+    <value>Kenarsız pencere...</value>
   </data>
 </root>

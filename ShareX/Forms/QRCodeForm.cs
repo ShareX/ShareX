@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,7 +33,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using ZXing;
-using ZXing.Common;
+using ZXing.QrCode;
 using ZXing.Rendering;
 
 namespace ShareX
@@ -214,15 +214,16 @@ namespace ShareX
                     {
                         string filePath = sfd.FileName;
 
-                        if (filePath.EndsWith("svg", StringComparison.InvariantCultureIgnoreCase))
+                        if (filePath.EndsWith("svg", StringComparison.OrdinalIgnoreCase))
                         {
-                            BarcodeWriterSvg writer = new BarcodeWriterSvg
+                            BarcodeWriterSvg writer = new BarcodeWriterSvg()
                             {
                                 Format = BarcodeFormat.QR_CODE,
-                                Options = new EncodingOptions
+                                Options = new QrCodeEncodingOptions()
                                 {
                                     Width = pbQRCode.Width,
-                                    Height = pbQRCode.Height
+                                    Height = pbQRCode.Height,
+                                    CharacterSet = "UTF-8"
                                 }
                             };
                             SvgRenderer.SvgImage svgImage = writer.Write(txtQRCode.Text);

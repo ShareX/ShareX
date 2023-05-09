@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -85,10 +85,7 @@ namespace ShareX
 
         protected void OnHotkeyTrigger(HotkeySettings hotkeySetting)
         {
-            if (HotkeyTrigger != null)
-            {
-                HotkeyTrigger(hotkeySetting);
-            }
+            HotkeyTrigger?.Invoke(hotkeySetting);
         }
 
         public void RegisterHotkey(HotkeySettings hotkeySetting)
@@ -109,6 +106,10 @@ namespace ShareX
                     {
                         DebugHelper.WriteLine("Hotkey register failed: " + hotkeySetting);
                     }
+                }
+                else
+                {
+                    hotkeySetting.HotkeyInfo.Status = HotkeyStatus.NotConfigured;
                 }
             }
 
@@ -173,10 +174,7 @@ namespace ShareX
                 UnregisterAllHotkeys(false, true);
             }
 
-            if (HotkeysToggledTrigger != null)
-            {
-                HotkeysToggledTrigger(hotkeysDisabled);
-            }
+            HotkeysToggledTrigger?.Invoke(hotkeysDisabled);
         }
 
         public void ShowFailedHotkeys()
@@ -192,8 +190,8 @@ namespace ShareX
                 string[] processNames = new string[] { "ShareX", "OneDrive", "Dropbox", "Greenshot", "ScreenshotCaptor", "FSCapture", "Snagit32", "puush", "Lightshot" };
                 int ignoreProcess = Process.GetCurrentProcess().Id;
                 List<string> conflictProcessNames = Process.GetProcesses().Where(x => x.Id != ignoreProcess && !string.IsNullOrEmpty(x.ProcessName) &&
-                    processNames.Any(x2 => x.ProcessName.Equals(x2, StringComparison.InvariantCultureIgnoreCase))).
-                    Select(x => string.Format("{0} ({1})", x.MainModule.FileVersionInfo.ProductName, x.MainModule.ModuleName)).ToList();
+                    processNames.Any(x2 => x.ProcessName.Equals(x2, StringComparison.OrdinalIgnoreCase))).
+                    Select(x => string.Format("{0} ({1})", x.MainModule.FileVersionInfo.ProductName, x.MainModule.ModuleName)).Distinct().ToList();
 
                 if (conflictProcessNames != null && conflictProcessNames.Count > 0)
                 {

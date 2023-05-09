@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -43,27 +43,15 @@ namespace ShareX
         public int NameParserAutoIncrementNumber = 0;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 
+        // Main window
+        public bool FirstTimeMinimizeToTray = true;
+        public List<int> TaskListViewColumnWidths = new List<int>();
+        public int PreviewSplitterDistance = 335;
+
         public ApplicationConfig()
         {
             this.ApplyDefaultPropertyValues();
         }
-
-        #region Main Form
-
-        public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
-        public bool ShowMenu = true;
-        public bool ShowColumns = true;
-        public bool ShowThumbnailTitle = true;
-        public ThumbnailTitleLocation ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
-        public Size ThumbnailSize = new Size(200, 150);
-        public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
-        public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
-        public int PreviewSplitterDistance = 335;
-        public List<int> TaskListViewColumnWidths = new List<int>();
-        public DateTime NewsLastReadDate;
-        public bool FirstTimeMinimizeToTray = true;
-
-        #endregion Main Form
 
         #region Settings Form
 
@@ -105,8 +93,27 @@ namespace ShareX
         public string CustomScreenshotsPath = "";
 
         public string SaveImageSubFolderPattern = "%y-%mo";
+        public string SaveImageSubFolderPatternWindow = "";
 
         #endregion Paths
+
+        #region Main window
+
+        public bool ShowMenu = true;
+        public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
+
+        // Thumbnail view
+        public bool ShowThumbnailTitle = true;
+        public ThumbnailTitleLocation ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
+        public Size ThumbnailSize = new Size(200, 150);
+        public ThumbnailViewClickAction ThumbnailClickAction = ThumbnailViewClickAction.Default;
+
+        // List view
+        public bool ShowColumns = true;
+        public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
+        public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
+
+        #endregion Main window
 
         #region Settings
 
@@ -163,7 +170,7 @@ namespace ShareX
         #region Advanced
 
         [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
-#if STEAM || WindowsStore
+#if STEAM || MicrosoftStore
         [Browsable(false)]
 #endif
         public bool AutoCheckUpdate { get; set; }
@@ -177,7 +184,7 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]
+        [Category("Application"), DefaultValue(false), Description("Automatically expand capture menu when you open the tray menu.")]
         public bool TrayAutoExpandCaptureMenu { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Show tips and hotkeys in main window when task list is empty.")]
@@ -204,7 +211,7 @@ namespace ShareX
 
         private int hotkeyRepeatLimit;
 
-        [Category("Hotkey"), DefaultValue(1000), Description("If you hold hotkeys then it will only trigger every this milliseconds.")]
+        [Category("Hotkey"), DefaultValue(500), Description("If you hold hotkeys then it will only trigger every this milliseconds.")]
         public int HotkeyRepeatLimit
         {
             get

@@ -356,18 +356,6 @@
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>존재한다면 핫링크 사용하기</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>이메일:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>로그인 필요.</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>사용자 ID:</value>
   </data>
@@ -830,9 +818,6 @@
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
   </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
-  </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
   </data>
@@ -1017,9 +1002,6 @@
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>익명</value>
-  </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
   </data>
@@ -1061,18 +1043,6 @@
   </data>
   <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>기타 설정</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>일</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>시</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>분</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>삭제되지 않음</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>다음 시간 뒤 파일 자동 삭제 </value>

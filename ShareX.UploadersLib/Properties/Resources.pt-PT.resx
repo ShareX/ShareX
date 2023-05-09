@@ -187,9 +187,6 @@ Pastas criadas:</value>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Nome de dispositivo inválido</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Falha ao analisar resposta.</value>
-  </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Actualização da lista de pastas do 'Box' falhou</value>
   </data>

@@ -127,10 +127,10 @@
     <value>Dùng tên mới:</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>Đè lên:</value>
+    <value>Ghi đè: </value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>Dùng tên duy nhất</value>
+    <value>Sử dụng một tên duy nhất: </value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Đã có một tệp cùng tên ở đây.

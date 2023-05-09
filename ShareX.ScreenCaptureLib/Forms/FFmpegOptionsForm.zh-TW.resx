@@ -122,9 +122,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>複製</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>下載</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>重新整理</value>
   </data>
@@ -133,18 +130,6 @@
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>使用自訂命令</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>編解碼器</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>額外的命令列參數</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>命令列預覽</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>來源</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>位元率：</value>
@@ -185,9 +170,6 @@
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>可變位元率：</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg 路徑</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>使用自訂路徑</value>

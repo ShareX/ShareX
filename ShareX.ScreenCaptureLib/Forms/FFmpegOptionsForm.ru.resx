@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>В буфер</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Скачать</value>
-  </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Установить устройства записи</value>
   </data>
@@ -154,24 +151,12 @@
     <value>Пользовательский путь</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
-    <value>Предустановка:</value>
+    <value>Установка:</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>Предустановка — это набор настроек, которые задают определенное соотношение скорости кодировки и сжатия. Более медленная предустановка задает лучшее сжатие (сжатие — это качество на размер файла).
 Значит при желании получить определенный размер файла при постоянном битрейте, лучшие результаты получаются на более медленных предустановках.
 Соответственно для кодирования с постоянным качеством вы можете попросту уменьшить битрейт, выбрав предустановку помедленнее.</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Кодеки</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Дополнительные аргументы</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Предпросмотр</value>
-  </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>Путь к FFmpeg</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Битрейт:</value>
@@ -190,9 +175,6 @@
   </data>
   <data name="lblGIFStatsMode.Text" xml:space="preserve">
     <value>Режим палитры:</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Источники</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Установит источники видео/аудио "screen-capture-recorder" и "virtual-audio-capturer".</value>
@@ -248,10 +230,31 @@
   <data name="lblAMFQuality.Text" xml:space="preserve">
     <value>Качество:</value>
   </data>
-  <data name="lblAMFUsage.Text" xml:space="preserve">
-    <value>Использование:</value>
-  </data>
   <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
     <value>По умолчанию 128k.</value>
+  </data>
+  <data name="lblOpusQuality.Text" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Usage:</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Настраивает индекс Bayer Scale, с большим значением больше бандинг. По умолчанию 2.</value>
+  </data>
+  <data name="lblFFmpegPath.Text" xml:space="preserve">
+    <value>Путь к FFmpeg:</value>
+  </data>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>Дополнительные аргументы:</value>
+  </data>
+  <data name="lblCommandLinePreview.Text" xml:space="preserve">
+    <value>Предпросмотр:</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>Битрейт</value>
+  </data>
+  <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
+    <value>Пользовательский путь к FFmpeg:</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -44,12 +44,15 @@ namespace ShareX.HelpersLib
 
             UpdateCompareControls();
             cbHashType.Items.AddRange(Helpers.GetEnumDescriptions<HashType>());
-            cbHashType.SelectedIndex = (int)HashType.SHA1;
+            cbHashType.SelectedIndex = (int)HashType.SHA256;
 
             hashCheck = new HashCheck();
             hashCheck.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
 
             translator = new Translator();
+
+            txtResult.SupportSelectAll();
+            txtTarget.SupportSelectAll();
         }
 
         #region File hash check
@@ -58,7 +61,7 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(txtResult.Text) && !string.IsNullOrEmpty(txtTarget.Text))
             {
-                if (txtResult.Text.Equals(txtTarget.Text, StringComparison.InvariantCultureIgnoreCase))
+                if (txtResult.Text.Equals(txtTarget.Text, StringComparison.OrdinalIgnoreCase))
                 {
                     txtTarget.BackColor = Color.FromArgb(200, 255, 200);
                 }
@@ -96,12 +99,12 @@ namespace ShareX.HelpersLib
 
         private void btnFilePathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtFilePath);
+            FileHelpers.BrowseFile(txtFilePath);
         }
 
         private void btnFilePathBrowse2_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtFilePath2);
+            FileHelpers.BrowseFile(txtFilePath2);
         }
 
         private void cbCompareTwoFiles_CheckedChanged(object sender, EventArgs e)
@@ -168,22 +171,6 @@ namespace ShareX.HelpersLib
             UpdateResult();
         }
 
-        private void txtResult_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.A)
-            {
-                txtResult.SelectAll();
-            }
-        }
-
-        private void txtTarget_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.A)
-            {
-                txtTarget.SelectAll();
-            }
-        }
-
         private void tpFileHashCheck_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
@@ -198,14 +185,29 @@ namespace ShareX.HelpersLib
 
         private void tpFileHashCheck_DragDrop(object sender, DragEventArgs e)
         {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
+            {
+                txtFilePath.Text = files[0];
+            }
+        }
+
+        private void txtFilePath2_DragEnter(object sender, DragEventArgs e)
+        {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
 
-                if (files != null && files.Length > 0)
-                {
-                    txtFilePath.Text = files[0];
-                }
+        private void txtFilePath2_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
+            {
+                txtFilePath2.Text = files[0];
             }
         }
 

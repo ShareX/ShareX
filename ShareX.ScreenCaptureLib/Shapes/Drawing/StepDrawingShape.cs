@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -39,13 +39,12 @@ namespace ShareX.ScreenCaptureLib
 
         public int FontSize { get; set; }
         public int Number { get; set; }
-        public bool UseLetters { get; set; }
-
+        public StepType StepType { get; set; } = StepType.Numbers;
         public bool IsTailActive { get; set; }
 
-        private Point tailPosition;
+        private PointF tailPosition;
 
-        public Point TailPosition
+        public PointF TailPosition
         {
             get
             {
@@ -72,10 +71,11 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreating()
         {
             Manager.IsMoving = true;
-            Point pos = InputManager.ClientMousePosition;
-            Rectangle = new Rectangle(new Point(pos.X - (Rectangle.Width / 2), pos.Y - (Rectangle.Height / 2)), Rectangle.Size);
+            PointF pos = Manager.Form.ScaledClientMousePosition;
+            Rectangle = new RectangleF(new PointF(pos.X - (Rectangle.Width / 2), pos.Y - (Rectangle.Height / 2)), Rectangle.Size);
             int tailOffset = 5;
             TailPosition = Rectangle.Location.Add(Rectangle.Width + tailOffset, Rectangle.Height + tailOffset);
+            OnCreated();
         }
 
         protected override void UseLightResizeNodes()
@@ -94,7 +94,7 @@ namespace ShareX.ScreenCaptureLib
             if (TailNode.IsDragging)
             {
                 IsTailActive = true;
-                TailPosition = InputManager.ClientMousePosition;
+                TailPosition = Manager.Form.ScaledClientMousePosition;
             }
         }
 
@@ -111,7 +111,7 @@ namespace ShareX.ScreenCaptureLib
             ShadowColor = AnnotationOptions.ShadowColor;
             ShadowOffset = AnnotationOptions.ShadowOffset;
             FontSize = AnnotationOptions.StepFontSize;
-            UseLetters = AnnotationOptions.StepUseLetters;
+            StepType = AnnotationOptions.StepType;
         }
 
         public override void OnConfigSave()
@@ -123,7 +123,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.ShadowColor = ShadowColor;
             AnnotationOptions.ShadowOffset = ShadowOffset;
             AnnotationOptions.StepFontSize = FontSize;
-            AnnotationOptions.StepUseLetters = UseLetters;
+            AnnotationOptions.StepType = StepType;
         }
 
         public override void OnDraw(Graphics g)
@@ -131,9 +131,26 @@ namespace ShareX.ScreenCaptureLib
             DrawNumber(g);
         }
 
+        private string GetText()
+        {
+            switch (StepType)
+            {
+                case StepType.LettersUppercase:
+                    return Helpers.NumberToLetters(Number);
+                case StepType.LettersLowercase:
+                    return Helpers.NumberToLetters(Number).ToLowerInvariant();
+                case StepType.RomanNumeralsUppercase:
+                    return Helpers.NumberToRomanNumeral(Number);
+                case StepType.RomanNumeralsLowercase:
+                    return Helpers.NumberToRomanNumeral(Number).ToLowerInvariant();
+                default:
+                    return Number.ToString();
+            }
+        }
+
         protected void DrawNumber(Graphics g)
         {
-            string text = UseLetters ? Helpers.NumberToLetters(Number) : Number.ToString();
+            string text = GetText();
 
             using (Font font = new Font(FontFamily.GenericSansSerif, FontSize, FontStyle.Bold))
             {
@@ -141,8 +158,8 @@ namespace ShareX.ScreenCaptureLib
                 int maxSize = Math.Max(textSize.Width, textSize.Height);
                 int padding = 3;
 
-                Point center = Rectangle.Center();
-                Rectangle = new Rectangle(center.X - (maxSize / 2) - padding, center.Y - (maxSize / 2) - padding, maxSize + (padding * 2), maxSize + (padding * 2));
+                PointF center = Rectangle.Center();
+                Rectangle = new RectangleF(center.X - (maxSize / 2f) - padding, center.Y - (maxSize / 2f) - padding, maxSize + (padding * 2), maxSize + (padding * 2));
 
                 if (Shadow)
                 {
@@ -188,7 +205,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected void DrawNumber(Graphics g, string text, Font font, Color textColor, Rectangle rect)
+        protected void DrawNumber(Graphics g, string text, Font font, Color textColor, RectangleF rect)
         {
             using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
             using (Brush textBrush = new SolidBrush(textColor))
@@ -200,7 +217,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DrawTail(Graphics g, Color tailColor, Rectangle rectangle, Point tailPosition)
+        private void DrawTail(Graphics g, Color tailColor, RectangleF rectangle, PointF tailPosition)
         {
             using (GraphicsPath gpTail = CreateTailPath(rectangle, tailPosition))
             {
@@ -218,7 +235,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public override void Move(int x, int y)
+        public override void Move(float x, float y)
         {
             base.Move(x, y);
 
@@ -230,15 +247,15 @@ namespace ShareX.ScreenCaptureLib
             Move(x, y);
         }
 
-        protected GraphicsPath CreateTailPath(Rectangle rect, Point tailPosition)
+        protected GraphicsPath CreateTailPath(RectangleF rect, PointF tailPosition)
         {
             GraphicsPath gpTail = new GraphicsPath();
-            Point center = rect.Center();
-            int rectAverageSize = (rect.Width + rect.Height) / 2;
-            int tailWidth = (int)(TailWidthMultiplier * rectAverageSize);
+            PointF center = rect.Center();
+            float rectAverageSize = (rect.Width + rect.Height) / 2;
+            float tailWidth = TailWidthMultiplier * rectAverageSize;
             tailWidth = Math.Min(Math.Min(tailWidth, rect.Width), rect.Height);
-            int tailOrigin = tailWidth / 2;
-            int tailLength = (int)MathHelpers.Distance(center, tailPosition);
+            float tailOrigin = tailWidth / 2;
+            float tailLength = MathHelpers.Distance(center, tailPosition);
             gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
             gpTail.AddLine(0, tailOrigin, tailLength, 0);
             gpTail.CloseFigure();

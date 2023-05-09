@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -94,6 +94,24 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void TryDefaultPrinterOverride()
+        {
+            string defaultPrinterName = printDocument.PrinterSettings.PrinterName;
+
+            if (!string.IsNullOrEmpty(Settings.DefaultPrinterOverride))
+            {
+                printDocument.PrinterSettings.PrinterName = Settings.DefaultPrinterOverride;
+            }
+
+            if (!printDocument.PrinterSettings.IsValid)
+            {
+                printDocument.PrinterSettings.PrinterName = defaultPrinterName;
+
+                MessageBox.Show("Printer \"" + Settings.DefaultPrinterOverride + "\" does not exist. Continuing with Windows default printer, you can set the default printer override in application settings.",
+                    "Invalid printer name", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         public bool Print()
         {
             if (Printable && (!Settings.ShowPrintDialog || printDialog.ShowDialog() == DialogResult.OK))
@@ -103,6 +121,7 @@ namespace ShareX.HelpersLib
                     printTextHelper.Font = Settings.TextFont;
                 }
 
+                TryDefaultPrinterOverride();
                 printDocument.Print();
                 return true;
             }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -66,14 +66,13 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool ManualButtonClick { get; set; }
 
+        public ColorPickerOptions ColorPickerOptions { get; set; }
+
         private bool isMouseHover;
 
         protected void OnColorChanged(Color color)
         {
-            if (ColorChanged != null)
-            {
-                ColorChanged(color);
-            }
+            ColorChanged?.Invoke(color);
         }
 
         protected override void OnMouseClick(MouseEventArgs mevent)
@@ -88,7 +87,7 @@ namespace ShareX.HelpersLib
 
         public void ShowColorDialog()
         {
-            if (ColorPickerForm.PickColor(Color, out Color newColor, FindForm()))
+            if (ColorPickerForm.PickColor(Color, out Color newColor, FindForm(), null, ColorPickerOptions))
             {
                 Color = newColor;
             }

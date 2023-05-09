@@ -144,9 +144,6 @@
   <data name="Confirmation" xml:space="preserve">
     <value>Confirmation</value>
   </data>
-  <data name="Effect" xml:space="preserve">
-    <value>Effet :</value>
-  </data>
   <data name="InvalidAssetsFolderPath" xml:space="preserve">
     <value>Chemin du dossier des ressources invalide</value>
   </data>

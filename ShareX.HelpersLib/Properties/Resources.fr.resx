@@ -293,9 +293,6 @@ Taille du fichier : {2:n0} / {3:n0} Ko</value>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Mise en ligne d'un dossier</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Client FTP</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Vérifier un hash</value>
   </data>
@@ -528,9 +525,6 @@ Voulez-vous la télécharger et l'installer ?</value>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Mise en ligne</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Outils</value>
-  </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Outils</value>
   </data>
@@ -668,9 +662,6 @@ Voulez-vous la télécharger et l'installer ?</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Ordinateur</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Cible</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Capture avec défilement</value>
@@ -820,9 +811,6 @@ Voulez-vous la télécharger ?</value>
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>Ouvrir la fenêtre principale</value>
   </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Capture d'écran</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Enregistrer l'écran</value>
   </data>
@@ -834,9 +822,6 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Démarrer l'enregistrement de l'écran (GIF) en utilisant la région personnalisée</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Capture de texte (OCR)</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Reconnaître un texte (OCR)</value>
@@ -1108,9 +1093,6 @@ Voulez-vous la télécharger ?</value>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>Non listés</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Stockage standard</value>
-  </data>
   <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
     <value>Non listés</value>
   </data>
@@ -1134,9 +1116,6 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Caractères alphanumériques aléatoires non ambigus. Répéter en utilisant {n}</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Stockage Standard infrequent access</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
     <value>Envoyer un message défiler en haut</value>
@@ -1165,9 +1144,6 @@ Voulez-vous la télécharger ?</value>
   <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
     <value>Ne pas redimensionner</value>
   </data>
-  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
-    <value>Amazon S3 Intelligent-Tiering</value>
-  </data>
   <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
     <value>Outils</value>
   </data>
@@ -1186,20 +1162,11 @@ Voulez-vous la télécharger ?</value>
   <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
     <value>Générateur de miniatures d'image</value>
   </data>
-  <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
-    <value>Amazon S3 Glacier Deep Archive</value>
-  </data>
   <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
     <value>Code QR (Décoder depuis l'écran)</value>
   </data>
   <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
     <value>Taille absolue</value>
-  </data>
-  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
-    <value>Amazon S3 One Zone-Infrequent Access</value>
-  </data>
-  <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
-    <value>Amazon S3 Glacier</value>
   </data>
   <data name="HotkeyType_VideoConverter" xml:space="preserve">
     <value>Convertisseur vidéo</value>

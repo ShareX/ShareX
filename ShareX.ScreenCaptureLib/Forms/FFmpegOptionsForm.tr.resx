@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Kopyala</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>İndir</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Yenile</value>
   </data>
@@ -134,9 +131,6 @@
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Özel komutları kullan</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Kaynaklar</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Kalite:</value>
@@ -150,20 +144,11 @@
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>Varsayılan 128k.</value>
   </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Çözücüler</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Komut satırı önizleme</value>
-  </data>
   <data name="lblCodec.Text" xml:space="preserve">
     <value>Video çözücü:</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bit hızı:</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Ek komut satırı parametreleri</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>0-10 arasında, 10 en yüksek kalite. 3-6 arası denenebilir. Varsayılan 3'dür.</value>
@@ -199,9 +184,6 @@ Kaliteyi arttırmak dosya boyutunu arttırır.</value>
 Yavaş ön ayar = Yavaş kodlama fakat düşük dosya boyutu.
 Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hızlı olmalıdır.</value>
   </data>
-  <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg yolu</value>
-  </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>"screen-capture-recorder" ve "virtual-audio-capturer" video/ses kaynaklarını yükler.</value>
   </data>
@@ -230,7 +212,43 @@ Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hı
     <value>Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hızlı olmalıdır.
 Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
   </data>
-  <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>Kalite:</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Kullanım:</value>
+  </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>Bit hızı:</value>
+  </data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Ön ayar:</value>
+  </data>
+  <data name="lblQSVPreset.Text" xml:space="preserve">
+    <value>Ön ayar:</value>
+  </data>
+  <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
+    <value>Varsayılan 128k.</value>
+  </data>
+  <data name="lblOpusQuality.Text" xml:space="preserve">
+    <value>Bit hızı:</value>
+  </data>
+  <data name="lblQSVBitrate.Text" xml:space="preserve">
+    <value>Bit hızı:</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Bayer ölçeği indeksini kontrol eder, daha yüksek bir ölçek daha fazla bantlama gösterecektir. Varsayılan değer 2.</value>
+  </data>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>Ek komut satırı parametreleri:</value>
+  </data>
+  <data name="lblFFmpegPath.Text" xml:space="preserve">
+    <value>FFmpeg yolu:</value>
+  </data>
+  <data name="lblCommandLinePreview.Text" xml:space="preserve">
+    <value>Komut satırı önizleme:</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>Bit hızı kullan</value>
   </data>
 </root>

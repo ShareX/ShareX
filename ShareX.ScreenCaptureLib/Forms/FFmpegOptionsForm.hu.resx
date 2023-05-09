@@ -123,9 +123,6 @@
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Másolás</value>
   </data>
-  <data name="btnDownload.Text" xml:space="preserve">
-    <value>Letöltés</value>
-  </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Frissítés</value>
   </data>
@@ -134,18 +131,6 @@
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Egyedi parancsok használata</value>
-  </data>
-  <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Kodekek</value>
-  </data>
-  <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>További parancssori paraméterek</value>
-  </data>
-  <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Parancssor előnézet</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>Források</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bitráta:</value>

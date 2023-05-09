@@ -132,9 +132,6 @@
   <data name="lblTextSize.Text" xml:space="preserve">
     <value>Tamaño:</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Nueva línea: Ctrl+Intro</value>
-  </data>
   <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
     <value>Inferior</value>
   </data>

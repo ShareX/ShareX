@@ -121,9 +121,9 @@
     <value>Пользовательский домен:</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
-    <value>Используйте эту опцию в случае, если у вас есть ведро с пользовательским доменом.
-Если текстовое поле пустое, имя ведра будет использовано в качестве ссылки.
-Например, если ваше ведро называется bucket.example.com, то ссылка будет http://bucket.example.com/...</value>
+    <value>Эта опция для ведра с пользовательским доменом.
+Если оставить текстовое поле пустым, имя ведра и будет ссылкой.
+Например, если ведро называется "bucket.example.com", то ссылка будет "http://bucket.example.com/...".</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Другие сервисы</value>
@@ -181,9 +181,6 @@
   </data>
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Пароль:</value>
-  </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Аноним</value>
   </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>Общая папка</value>
@@ -339,18 +336,6 @@
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Использовать прямой URL, если он существует</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Войти</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Необходимо войти.</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Имя пользователя:</value>
   </data>
@@ -397,7 +382,7 @@
     <value>Создать общественный URL</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Прямая ссылка (Добавить "&amp;&amp;download" к адресу)</value>
+    <value>Прямая ссылка</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Совместимость с ownCloud 8.1+</value>
@@ -742,19 +727,10 @@
     <value>Хост</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>Файлы автоматически удалятся через </value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>часов</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>минут</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>дней</value>
+    <value>Файлы автоматически удалятся через</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>Ключи API: </value>
+    <value>Ключ API:</value>
   </data>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
@@ -876,9 +852,6 @@
   <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
     <value>Использовать запрос в виде пути</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>никогда</value>
-  </data>
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>Пользовательский домен:</value>
   </data>
@@ -932,9 +905,6 @@
   </data>
   <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
     <value>Ключ веб API:</value>
-  </data>
-  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
-    <value>Firebase Dynamic Links</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
     <value>Путь:</value>
@@ -1035,39 +1005,8 @@
   <data name="lblB2ManageLink.Text" xml:space="preserve">
     <value>Нажмите здесь, чтобы создать ключ приложения или управлять вашими ведрами.</value>
   </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>ID ключа приложения. Похож на шестнадцатеричную строку в нижнем регистре.</value>
-  </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>Ключ приложения. Похож на буквенно-цифровой.</value>
-  </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Использовать пользовательский URL (поддерживает формат шаблонов):</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Если включено, URL, который вы получите, будет путем загрузки,
-добавленным к данному URL.
-
-Зто полезно в связке с сервисом вроде CloudFlare или
-другим сервисом в роли фронтенда B2.
-Ознакомьтесь со статьей "Creating a Vanity URL with B2"
-в базе знаний B2.
-
-Если выключено, URL, который вы получите, будет зависеть
-от Backblaze B2. </value>
-  </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>Где хранить ваши файлы.
-
-Это вступит в силу только если вы не задали
-свойство "Разрешить доступ к ведрам (ов)"
-при создании ключа приложения.</value>
-  </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Введите пользовательский URL, который заменит хост и путь, которые возвращает BackBlaze.</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>Путь к вашему файлу. Использует формат шаблонов.</value>
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
     <value>Предпросмотр</value>
@@ -1099,9 +1038,6 @@
   <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
     <value>URL для аутентификаци:</value>
   </data>
-  <data name="tpGoogleDrive.Text" xml:space="preserve">
-    <value>Google Диск</value>
-  </data>
   <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
     <value>Задавать файлам public-read ACL</value>
   </data>
@@ -1116,5 +1052,47 @@
   </data>
   <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
     <value>Уровень доступа ссылки:</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>дней</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>часов</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>минут</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>никогда</value>
+  </data>
+  <data name="lblGfycatTitle.Text" xml:space="preserve">
+    <value>Заголовок:</value>
+  </data>
+  <data name="lblZWSToken.Text" xml:space="preserve">
+    <value>Токен:</value>
+  </data>
+  <data name="lblZWSURL.Text" xml:space="preserve">
+    <value>Ссылка:</value>
+  </data>
+  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
+    <value>URL API Paste:</value>
+  </data>
+  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
+    <value>URL API для загрузки:</value>
+  </data>
+  <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
+    <value>Подписывать отправку</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>Показывать диалог параметров видео</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>Вы можете отозвать доступ в любое время по ссылке ниже:</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Добавлять имя файла в конец ссылки</value>
   </data>
 </root>

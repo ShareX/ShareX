@@ -120,9 +120,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Nach ffmpeg.exe suchen</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg erfolgreich heruntergeladen</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Bitrate: {0}k</value>
   </data>
@@ -134,9 +131,6 @@
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Bereichsaufnahme</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Herunterladen von FFmpeg ist fehlgeschlagen.</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Rechteckaufnahme einfach</value>
@@ -191,9 +185,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
     <value>Animationen aktivieren</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Formoptionen</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Bearbeiten</value>

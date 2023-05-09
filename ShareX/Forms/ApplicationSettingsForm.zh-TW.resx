@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -173,17 +173,8 @@
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>新增...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>剪貼簿格式 - 顯示於主視窗的右鍵選單的「複製」底下</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>描述</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>重試時使用次要上傳工具的優先順序</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>結果</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>次要圖片上傳工具</value>
@@ -235,9 +226,6 @@
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>密碼：</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>重試</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>上傳</value>

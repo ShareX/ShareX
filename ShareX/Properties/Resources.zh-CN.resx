@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>剩余时间：{0}秒 ({1}%) 总计：{2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>开源贡献</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>无法找到可用的 Twitter 账号。</value>
   </data>
@@ -154,12 +151,6 @@
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>不要再显示此消息。</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>任务：{0}</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg 的视频和音频信号源不可都为“空”。</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>更新日志</value>
   </data>
@@ -178,25 +169,8 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>开始</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} 不存在。
-
-要自动下载吗?</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>外部程序库</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>错误</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>单击托盘图标停止录制.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>您可以从快捷键设置添加快捷动作...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>无法写入图像到路径 {0}。</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>语言更改需要重新启动 ShareX。
@@ -204,9 +178,6 @@
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>使用新名称: </value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>丢失</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>语言翻译</value>
@@ -282,7 +253,7 @@
     <value>完成</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} 将上载至 {1}，您可以选择不同的上传目标。</value>
+    <value>{0} 将上传至 {1}，您可以选择不同的上传目标。</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>网站</value>
@@ -293,26 +264,11 @@
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>选择截图文件夹路径</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>单击托盘图标开始录制。</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg下载失败。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>等待...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>图片上传：{0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>已复制到剪贴板：{0}</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>隐藏菜单</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>显示菜单</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>下载和上传 URL</value>
@@ -382,15 +338,6 @@
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>文件上传</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg 下载成功。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>编码...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg错误</value>
-  </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>你确定你要上传 {0} 文件？</value>
   </data>
@@ -417,9 +364,6 @@
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>重置所有快捷键为默认值？</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>显示列</value>
-  </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
@@ -434,9 +378,6 @@
   </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>{0} 配置无效或丢失。请转到“上传至...”窗口中进行设置。</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>隐藏列</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>继续</value>
@@ -512,9 +453,6 @@
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>开机启动项已被任务管理器禁用</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>你确定要终止录制吗？</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>意大利语</value>
   </data>
@@ -526,9 +464,6 @@
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>使用ShareX编辑</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>开发版可能不稳定，仅用于测试目的。要安装吗？</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>要重置 ShareX 设置项吗？</value>
@@ -570,12 +505,6 @@
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>截图倒计时：{0} 秒</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>请注意，ShareX 使用 OCR.Space 的在线 API 来执行光学字符识别，是否允许 ShareX 上传图像至此在线服务？</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - 光学字符识别</value>
   </data>
   <data name="SwitchToThumbnailView" xml:space="preserve">
     <value>切换到缩略图视图</value>
@@ -628,12 +557,72 @@
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
     <value>ShareX 已最小化到系统托盘。</value>
   </data>
-  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
-    <value>您的防病毒软件或者 Windows 10 中的“受控制文件夹的访问”功能可能拦截了 ShareX。</value>
-  </data>
   <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
-    <value>您要启用图像效果吗？
+    <value>要启用图像效果吗？
 
-您以后可以从“捕获任务后”菜单中禁用它。</value>
+之后可以从“截图后”菜单中禁用。</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>鸣谢</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>链接</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>团队</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>隐私政策</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>类名称</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>客户端矩形区域</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>进程标识符</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>进程文件名</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>进程名称</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>窗口句柄</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>窗口矩形区域</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>窗口样式</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>窗口标题</value>
+  </data>
+  <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
+    <value>扩展窗口样式</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>图像无法写入路径：</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>您的防病毒软件或者 Windows 中的“受控制文件夹的访问”功能可能拦截了 ShareX。</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>您的系统管理员禁止了上传功能。</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>FFmpeg 错误</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>FFmpeg 音频和视频源不能同时设为“无”。</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>无法找到指定窗口标题的窗口。</value>
   </data>
 </root>

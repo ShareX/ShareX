@@ -141,7 +141,4 @@
   <data name="btnPathBrowse.Text" xml:space="preserve">
     <value>...</value>
   </data>
-  <data name="chkMoveToScreenshotsDir.Text" xml:space="preserve">
-    <value>Déplacer le fichier vers le dossier des captures d'écran</value>
-  </data>
 </root>

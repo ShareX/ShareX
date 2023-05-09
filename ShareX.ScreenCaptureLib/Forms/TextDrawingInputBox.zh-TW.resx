@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -169,9 +169,6 @@
   </data>
   <data name="cbUnderline.ToolTip" xml:space="preserve">
     <value>底線</value>
-  </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>換行：Ctrl + Enter</value>
   </data>
   <data name="tsmiEnableGradient.Text" xml:space="preserve">
     <value>啟用漸層</value>

@@ -118,45 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblViewMode.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblViewMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
-  </data>
-  <data name="lblViewMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 13</value>
-  </data>
-  <data name="lblViewMode.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>View mode:</value>
-  </data>
-  <data name="&gt;&gt;lblViewMode.Name" xml:space="preserve">
-    <value>lblViewMode</value>
-  </data>
-  <data name="&gt;&gt;lblViewMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblViewMode.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblViewMode.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="lblThumbnailSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 56</value>
+    <value>13, 16</value>
   </data>
   <data name="lblThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 13</value>
   </data>
   <data name="lblThumbnailSize.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="lblThumbnailSize.Text" xml:space="preserve">
     <value>Thumbnail size:</value>
@@ -177,13 +150,13 @@
     <value>True</value>
   </data>
   <data name="lblMaximumImageLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 104</value>
+    <value>13, 64</value>
   </data>
   <data name="lblMaximumImageLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 13</value>
   </data>
   <data name="lblMaximumImageLimit.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
     <value>Maximum image limit:</value>
@@ -200,35 +173,14 @@
   <data name="&gt;&gt;lblMaximumImageLimit.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="cbViewMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
-  </data>
-  <data name="cbViewMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
-  </data>
-  <data name="cbViewMode.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cbViewMode.Name" xml:space="preserve">
-    <value>cbViewMode</value>
-  </data>
-  <data name="&gt;&gt;cbViewMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbViewMode.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbViewMode.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="nudThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 72</value>
+    <value>16, 32</value>
   </data>
   <data name="nudThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
   <data name="nudThumbnailSize.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>1</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="nudThumbnailSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
@@ -244,16 +196,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudThumbnailSize.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="nudMaximumImageLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 120</value>
+    <value>16, 80</value>
   </data>
   <data name="nudMaximumImageLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
   <data name="nudMaximumImageLimit.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="nudMaximumImageLimit.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -268,22 +220,23 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudMaximumImageLimit.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblThumbnailSizeUnit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblThumbnailSizeUnit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 76</value>
+    <value>85, 36</value>
   </data>
   <data name="lblThumbnailSizeUnit.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 13</value>
   </data>
   <data name="lblThumbnailSizeUnit.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
     <value>px</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.Name" xml:space="preserve">
     <value>lblThumbnailSizeUnit</value>
@@ -295,7 +248,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbRememberSearchText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -304,13 +257,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberSearchText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 176</value>
+    <value>16, 136</value>
   </data>
   <data name="cbRememberSearchText.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
   </data>
   <data name="cbRememberSearchText.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="cbRememberSearchText.Text" xml:space="preserve">
     <value>Remember search input</value>
@@ -325,19 +278,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRememberSearchText.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbFilterMissingFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbFilterMissingFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 152</value>
+    <value>16, 112</value>
   </data>
   <data name="cbFilterMissingFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 17</value>
   </data>
   <data name="cbFilterMissingFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="cbFilterMissingFiles.Text" xml:space="preserve">
     <value>Filter missing files</value>
@@ -352,16 +305,43 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbFilterMissingFiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbRememberWindowState.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRememberWindowState.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 160</value>
+  </data>
+  <data name="cbRememberWindowState.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="cbRememberWindowState.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbRememberWindowState.Text" xml:space="preserve">
+    <value>Remember window state</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.Name" xml:space="preserve">
+    <value>cbRememberWindowState</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>344, 226</value>
+    <value>334, 211</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

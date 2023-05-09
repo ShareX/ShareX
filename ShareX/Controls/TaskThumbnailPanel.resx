@@ -134,15 +134,11 @@
   <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblTitle.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="&gt;&gt;lblTitle.Name" xml:space="preserve">
     <value>lblTitle</value>
   </data>
   <data name="&gt;&gt;lblTitle.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
     <value>$this</value>
@@ -150,6 +146,38 @@
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblCombineVertical.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="lblCombineVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 128</value>
+  </data>
+  <data name="lblCombineVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 80</value>
+  </data>
+  <data name="lblCombineVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Combine images
+(Vertical)</value>
+  </data>
+  <data name="lblCombineVertical.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblCombineVertical.Name" xml:space="preserve">
+    <value>lblCombineVertical</value>
+  </data>
+  <data name="&gt;&gt;lblCombineVertical.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblCombineVertical.Parent" xml:space="preserve">
+    <value>pThumbnail</value>
+  </data>
+  <data name="&gt;&gt;lblCombineVertical.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblError.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -175,13 +203,44 @@
     <value>lblError</value>
   </data>
   <data name="&gt;&gt;lblError.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblError.Parent" xml:space="preserve">
     <value>pThumbnail</value>
   </data>
   <data name="&gt;&gt;lblError.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="lblCombineHorizontal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="lblCombineHorizontal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 40</value>
+  </data>
+  <data name="lblCombineHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 80</value>
+  </data>
+  <data name="lblCombineHorizontal.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblCombineHorizontal.Text" xml:space="preserve">
+    <value>Combine images
+(Horizontal)</value>
+  </data>
+  <data name="lblCombineHorizontal.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblCombineHorizontal.Name" xml:space="preserve">
+    <value>lblCombineHorizontal</value>
+  </data>
+  <data name="&gt;&gt;lblCombineHorizontal.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblCombineHorizontal.Parent" xml:space="preserve">
+    <value>pThumbnail</value>
+  </data>
+  <data name="&gt;&gt;lblCombineHorizontal.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="pbProgress.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -208,16 +267,19 @@
     <value>pbProgress</value>
   </data>
   <data name="&gt;&gt;pbProgress.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbProgress.Parent" xml:space="preserve">
     <value>pThumbnail</value>
   </data>
   <data name="&gt;&gt;pbProgress.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="pbThumbnail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="pbThumbnail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="pbThumbnail.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 4</value>
@@ -238,7 +300,7 @@
     <value>pThumbnail</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="pThumbnail.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
@@ -256,7 +318,7 @@
     <value>pThumbnail</value>
   </data>
   <data name="&gt;&gt;pThumbnail.Type" xml:space="preserve">
-    <value>ShareX.TaskRoundedCornerPanel, ShareX, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.TaskRoundedCornerPanel, ShareX, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pThumbnail.Parent" xml:space="preserve">
     <value>$this</value>

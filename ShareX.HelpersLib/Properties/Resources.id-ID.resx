@@ -236,9 +236,6 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Unggah</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Alat</value>
-  </data>
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>Alat</value>
   </data>
@@ -283,12 +280,6 @@ Apakah anda ingin mengunduhnya?</value>
   </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Pengunggah teks</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Ambil teks (OCR)</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Target</value>
   </data>
   <data name="Stop" xml:space="preserve">
     <value>Hentikan</value>
@@ -355,9 +346,6 @@ Apakah anda ingin mengunduhnya?</value>
   </data>
   <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
     <value>Layar penuh</value>
-  </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Klien FTP</value>
   </data>
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
     <value>Jalur file</value>
@@ -884,9 +872,6 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
     <value>Jepret layar</value>
   </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Jepret layar</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Rekam layar</value>
   </data>
@@ -964,12 +949,6 @@ Apakah anda ingin mengunduhnya?</value>
   </data>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>Mulai pengambilan otomatis menggunakan area terakhir</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Penyimpanan steandar</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Penyimpanan akses standar yang jarang</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Area: Persegi panjang</value>

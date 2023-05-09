@@ -213,9 +213,6 @@
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>Iniciar seleção da região de captura automaticamente antes de abrir esta janela</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Enviar/salvar dependendo das configurações pós-captura</value>
-  </data>
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>Pós-captura</value>
   </data>
@@ -227,5 +224,8 @@
   </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>Método de rolagem do topo antes da captura:</value>
+  </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>Carregar/salvar dependendo das configurações após a captura</value>
   </data>
 </root>

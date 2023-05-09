@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Drawing;
 
 namespace ShareX.HelpersLib
 {
@@ -57,7 +58,7 @@ namespace ShareX.HelpersLib
             return num.CompareTo(min) >= 0 && num.CompareTo(max) <= 0;
         }
 
-        public static T BetweenOrDefault<T>(T num, T min, T max, T defaultValue = default(T)) where T : IComparable<T>
+        public static T BetweenOrDefault<T>(T num, T min, T max, T defaultValue = default) where T : IComparable<T>
         {
             if (num.CompareTo(min) >= 0 && num.CompareTo(max) <= 0) return num;
             return defaultValue;
@@ -135,6 +136,11 @@ namespace ShareX.HelpersLib
             return (float)Math.Atan2(pos2.Y - pos1.Y, pos2.X - pos1.X);
         }
 
+        public static float LookAtRadian(PointF pos1, PointF pos2)
+        {
+            return (float)Math.Atan2(pos2.Y - pos1.Y, pos2.X - pos1.X);
+        }
+
         public static Vector2 LookAtVector2(Vector2 pos1, Vector2 pos2)
         {
             return RadianToVector2(LookAtRadian(pos1, pos2));
@@ -145,7 +151,17 @@ namespace ShareX.HelpersLib
             return RadianToDegree(LookAtRadian(pos1, pos2));
         }
 
+        public static float LookAtDegree(PointF pos1, PointF pos2)
+        {
+            return RadianToDegree(LookAtRadian(pos1, pos2));
+        }
+
         public static float Distance(Vector2 pos1, Vector2 pos2)
+        {
+            return (float)Math.Sqrt(Math.Pow(pos2.X - pos1.X, 2) + Math.Pow(pos2.Y - pos1.Y, 2));
+        }
+
+        public static float Distance(PointF pos1, PointF pos2)
         {
             return (float)Math.Sqrt(Math.Pow(pos2.X - pos1.X, 2) + Math.Pow(pos2.Y - pos1.Y, 2));
         }

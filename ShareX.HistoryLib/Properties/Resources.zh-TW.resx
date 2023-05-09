@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -176,9 +176,6 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>縮網址</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>顯示</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>文字</value>
   </data>
@@ -190,12 +187,6 @@
   </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>錯誤</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>隱藏統計資料</value>
-  </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>顯示統計資料</value>
   </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>歷史項目總數：</value>

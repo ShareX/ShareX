@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2020 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -71,15 +71,16 @@ namespace ShareX.ScreenCaptureLib
         public bool IsFixedSize = false;
         public Size FixedSize = new Size(250, 250);
         public bool ShowFPS = false;
+        public int FPSLimit = 100;
         public int MenuIconSize = 0;
         public bool MenuLocked = false;
         public bool RememberMenuState = false;
         public bool MenuCollapsed = false;
         public Point MenuPosition = Point.Empty;
         public int InputDelay = 500;
-
         public bool SwitchToDrawingToolAfterSelection = false;
         public bool SwitchToSelectionToolAfterDrawing = false;
+        public bool ActiveMonitorMode = false;
 
         // Annotation
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
@@ -90,6 +91,8 @@ namespace ShareX.ScreenCaptureLib
         // Image editor
         public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.AutoSize;
         public WindowState ImageEditorWindowState = new WindowState();
+        public bool ZoomToFitOnOpen = false;
+        public bool EditorAutoCopyImage = false;
         public bool AutoCloseEditorOnTask = false;
         public bool ShowEditorPanTip = true;
         public ImageInterpolationMode ImageEditorResizeInterpolationMode = ImageInterpolationMode.Bicubic;
@@ -99,6 +102,9 @@ namespace ShareX.ScreenCaptureLib
         public Color EditorCanvasColor = Color.Transparent;
         public List<ImageEffectPreset> ImageEffectPresets = new List<ImageEffectPreset>();
         public int SelectedImageEffectPreset = 0;
+
+        // Color picker
+        public ColorPickerOptions ColorPickerOptions = new ColorPickerOptions();
 
         // Screen color picker
         public string ScreenColorPickerInfoText = "";

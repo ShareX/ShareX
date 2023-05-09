@@ -133,9 +133,12 @@
     <value>Khi ShareX đang chạy, hiện "In-App" trong Steam</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>Bạn có thể tìm thấy những thiết lập này ở "Thiết lập ứng dụng -&gt; Tích hợp"</value>
+    <value>Bạn có thể tìm thấy những thiết lập này ở "Thiết lập ứng dụng -&gt; Tích hợp".</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Thiết lập lần đầu cho ShareX</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX</value>
   </data>
 </root>

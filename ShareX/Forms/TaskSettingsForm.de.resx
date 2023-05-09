@@ -255,9 +255,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Benutzerdefinierte Zeitzone verwenden:</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Fenstertitel für Bereichsaufnahmen verwenden (ShareX versucht das Fenster hinter der Auswahl zu ermitteln)</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Dateibenennung</value>
   </data>
@@ -272,9 +269,6 @@
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Sekunden</value>
-  </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Starte Aufnahme nach:</value>
   </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>Sekunden</value>
@@ -309,9 +303,6 @@
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Effekte nur auf Bereichsaufnahme anwenden</value>
   </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Bildeffekte-Fenster nach der Aufnahme anzeigen</value>
-  </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Du kannst Bildeffekte über "Aufgaben nach der Aufnahme -&gt; Bildeffekte/Wasserzeichen hinzufügen" aktivieren/deaktivieren.</value>
   </data>
@@ -338,9 +329,6 @@
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Ton nach vollendeter Aufgabe abspielen</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Nachdem die Aufgabe fertig ist:</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Aufgabe...</value>
@@ -369,12 +357,6 @@
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Nach der Aufnahme...</value>
   </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Überschreibe das standardmäßige FTP-Konto</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Überschreibe den standardmäßigen eigenen Uploader</value>
-  </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Bereich auswählen...</value>
   </data>
@@ -392,12 +374,6 @@
   </data>
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>Bildschirmfarbauswähler-Format:</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Bildeinstellungen überschreiben</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Aufnahmeeinstellungen überschreiben</value>
   </data>
   <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
     <value>Höhe:</value>
@@ -441,9 +417,6 @@
   <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
     <value>kB</value>
   </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Allgemeine Einstellungen überschreiben</value>
-  </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
     <value>Ziele überschreiben</value>
   </data>
@@ -464,15 +437,6 @@
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>Verwenden des Mehrbereichs-Modus, welcher ebenfalls eine Größenänderung und das Verschieben von Bereichen ermöglicht</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Upload-Einstellungen überschreiben</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Aktionen überschreiben</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Erweiterte Einstellungen überschreiben</value>
   </data>
   <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
     <value>Aktion bei mittlerer Maustaste:</value>
@@ -519,9 +483,6 @@
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>OCR im Stillen verarbeiten</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>OCR beim öffnen des Dialogs verarbeiten</value>
-  </data>
   <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
     <value>Beim Abbrechen nach Bestätigung fragen</value>
   </data>
@@ -539,9 +500,6 @@
   </data>
   <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
     <value>Ändern</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Werkzeugeinstellungen überschreiben</value>
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Größen, zu denen der Bereich fixiert wird, während die Alt-Taste gedrückt ist:</value>

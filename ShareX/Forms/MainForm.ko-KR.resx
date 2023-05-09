@@ -264,15 +264,6 @@
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>파일 업로더</value>
   </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>자동</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>숨기기</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>보이기</value>
-  </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>이미지 업로더</value>
   </data>
@@ -348,9 +339,6 @@
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>텍스트 업로더</value>
   </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>ShareX에 대해...</value>
-  </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>촬영 뒤</value>
   </data>
@@ -378,9 +366,6 @@
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>DNS 변경기...</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>기부...</value>
-  </data>
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>끌어서 업로드...</value>
   </data>
@@ -405,9 +390,6 @@
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
     <value>해시 검사...</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>메뉴 숨기기</value>
-  </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>히스토리...</value>
   </data>
@@ -422,9 +404,6 @@
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>이미지 히스토리...</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>이미지 미리보기</value>
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
     <value>이미지 업로더</value>
@@ -567,9 +546,6 @@
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>직사각형 (투명)</value>
   </data>
-  <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>텍스트 촬영 (OCR)...</value>
-  </data>
   <data name="tsmiUploadText.Text" xml:space="preserve">
     <value>텍스트 업로드...</value>
   </data>
@@ -590,9 +566,6 @@
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>이미지 취합기...</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>소식</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>기부...</value>
@@ -648,23 +621,11 @@
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
     <value>마크다운 링크 걸린 이미지</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>구글 이미지 검색...</value>
-  </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>이미지에서 문자 추출 (OCR)...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>이미지 취합하기...</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>열 숨기기</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>측면</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>바닥</value>
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>스크롤 촬영...</value>
@@ -675,38 +636,11 @@
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>URL 단축...</value>
   </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>파일 업로드 테스트</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>이미지 업로드 테스트</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>텍스트 업로드 테스트</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>URL 공유 테스트</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>URL 단축 테스트</value>
-  </data>
-  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>텍스트 촬영 (OCR)...</value>
-  </data>
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>텍스트 업로드...</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>비디오 섬네일 생성기...</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>닫기</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>디버그</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>디버그 로그...</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>단축키 비활성화</value>
@@ -756,9 +690,6 @@
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>썸네일 뷰로 전환</value>
   </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>썸네일 제목</value>
-  </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>이미지 효과 추가...</value>
   </data>
@@ -771,29 +702,14 @@
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>이미지 분할기...</value>
   </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>깃헙</value>
-  </data>
   <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
     <value>스크린샷 지연</value>
   </data>
   <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
     <value>1 초</value>
   </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>암호화폐로 지원하기</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>비트코인</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>디스코드 서버에 참여해주세요</value>
-  </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>디스코드</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>트위터 계정을 팔로우해주세요</value>
   </data>
   <data name="tsbTwitter.Text" xml:space="preserve">
     <value>트위터</value>

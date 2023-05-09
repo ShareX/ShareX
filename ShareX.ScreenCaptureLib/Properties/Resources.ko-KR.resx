@@ -123,12 +123,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>품질:</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg를 성공적으로 다운로드 했습니다.</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg 다운로드에 실패하였습니다.</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>직사각형 어둡지 않게 촬영</value>
   </data>
@@ -231,9 +225,6 @@
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>영역 촬영</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>모양 설정</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
     <value>삭제</value>
   </data>
@@ -324,9 +315,6 @@
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>편집기 시작 상태:</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>양 끝에 화살표</value>
-  </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>중심점:</value>
   </data>
@@ -378,9 +366,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>작업 실행 시 편집기 자동 닫기</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>글자 사용</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>이 창은 keybinds 웹 페이지를 열기 전에 닫힙니다. 계속하시겠습니까?</value>

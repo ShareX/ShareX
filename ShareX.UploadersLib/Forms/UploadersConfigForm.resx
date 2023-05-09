@@ -159,7 +159,7 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Use this option if you have a bucket set up with a custom domain.
 If text field is empty then bucket name will be used for URL.
-For example, if your bucket is called bucket.example.com then URL will be http://bucket.example.com/...</value>
+For example, if your bucket is called "bucket.example.com" then URL will be "http://bucket.example.com/...".</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.Name" xml:space="preserve">
     <value>cbAmazonS3CustomCNAME</value>
@@ -181,9 +181,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   </data>
   <data name="txtB2CustomUrl.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Enter a custom URL here that will replace the host and path that BackBlaze returns.</value>
   </data>
   <data name="&gt;&gt;txtB2CustomUrl.Name" xml:space="preserve">
     <value>txtB2CustomUrl</value>
@@ -207,24 +204,13 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
     <value>16, 233</value>
   </data>
   <data name="cbB2CustomUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 17</value>
+    <value>110, 17</value>
   </data>
   <data name="cbB2CustomUrl.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
-    <value>Use custom URL (supports pattern format):</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>If enabled, the URL you receive will be the upload path
-appended to the given URL.
-
-This is useful in conjunction with a service like CloudFlare or
-another service acting as frontend to B2. See the article
-"Creating a Vanity URL with B2" in the B2 knowledge base.
-
-If disabled, then the URL you will receive will be determined
-by Backblaze B2. </value>
+    <value>Use custom URL:</value>
   </data>
   <data name="&gt;&gt;cbB2CustomUrl.Name" xml:space="preserve">
     <value>cbB2CustomUrl</value>
@@ -247,13 +233,6 @@ by Backblaze B2. </value>
   <data name="txtB2Bucket.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>Where to store your files.
-
-This only takes effect when you did not set
-"Allow access to bucket(s)" to a bucket
-when you made the application key.</value>
-  </data>
   <data name="&gt;&gt;txtB2Bucket.Name" xml:space="preserve">
     <value>txtB2Bucket</value>
   </data>
@@ -274,9 +253,6 @@ when you made the application key.</value>
   </data>
   <data name="txtB2UploadPath.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>The path for your file. Uses name pattern format.</value>
   </data>
   <data name="&gt;&gt;txtB2UploadPath.Name" xml:space="preserve">
     <value>txtB2UploadPath</value>
@@ -299,9 +275,6 @@ when you made the application key.</value>
   <data name="txtB2ApplicationKey.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>The application key. Looks alphanumeric.</value>
-  </data>
   <data name="&gt;&gt;txtB2ApplicationKey.Name" xml:space="preserve">
     <value>txtB2ApplicationKey</value>
   </data>
@@ -322,9 +295,6 @@ when you made the application key.</value>
   </data>
   <data name="txtB2ApplicationKeyId.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>The Application Key ID. Looks like a lowercase hexadecimal string.</value>
   </data>
   <data name="&gt;&gt;txtB2ApplicationKeyId.Name" xml:space="preserve">
     <value>txtB2ApplicationKeyId</value>
@@ -489,7 +459,7 @@ when you made the application key.</value>
     <value>oauthTwitter</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
     <value>tpTwitter</value>
@@ -744,7 +714,7 @@ when you made the application key.</value>
     <value>oauth2Bitly</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
     <value>tpBitly</value>
@@ -1020,7 +990,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpYourls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpYourls.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1179,7 +1149,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1365,7 +1335,7 @@ when you made the application key.</value>
     <value>4, 22</value>
   </data>
   <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1554,7 +1524,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpFirebaseDynamicLinks.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1815,7 +1785,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpKutt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpKutt.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1944,7 +1914,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpZeroWidthShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpZeroWidthShortener.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2379,7 +2349,7 @@ when you made the application key.</value>
     <value>eiFTP</value>
   </data>
   <data name="&gt;&gt;eiFTP.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
     <value>gbFTPAccount</value>
@@ -3435,13 +3405,13 @@ when you made the application key.</value>
     <value>11</value>
   </data>
   <data name="tpFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 58</value>
   </data>
   <data name="tpFTP.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>803, 507</value>
   </data>
   <data name="tpFTP.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3585,7 +3555,7 @@ when you made the application key.</value>
     <value>oauth2Dropbox</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
     <value>tpDropbox</value>
@@ -3594,13 +3564,13 @@ when you made the application key.</value>
     <value>4</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3717,7 +3687,7 @@ when you made the application key.</value>
     <value>oAuth2OneDrive</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
     <value>tpOneDrive</value>
@@ -3726,13 +3696,13 @@ when you made the application key.</value>
     <value>3</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -3752,8 +3722,29 @@ when you made the application key.</value>
   <data name="&gt;&gt;tpOneDrive.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 75</value>
+  </data>
+  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
+    <value>oauth2GoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbGoogleDriveSharedDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 16</value>
+    <value>16, 136</value>
   </data>
   <data name="cbGoogleDriveSharedDrive.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 21</value>
@@ -3771,7 +3762,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveSharedDrive.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbGoogleDriveDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3780,7 +3771,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 287</value>
+    <value>16, 111</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
@@ -3801,7 +3792,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveDirectLink.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbGoogleDriveUseFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3810,7 +3801,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 47</value>
+    <value>16, 167</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 17</value>
@@ -3831,10 +3822,10 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveUseFolder.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 88</value>
+    <value>16, 208</value>
   </data>
   <data name="txtGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 20</value>
@@ -3852,7 +3843,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblGoogleDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3861,7 +3852,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 71</value>
+    <value>13, 191</value>
   </data>
   <data name="lblGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -3882,7 +3873,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lblGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Title</value>
@@ -3897,10 +3888,10 @@ when you made the application key.</value>
     <value>228</value>
   </data>
   <data name="lvGoogleDriveFoldersList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 112</value>
+    <value>16, 232</value>
   </data>
   <data name="lvGoogleDriveFoldersList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 352</value>
+    <value>432, 296</value>
   </data>
   <data name="lvGoogleDriveFoldersList.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3909,13 +3900,13 @@ when you made the application key.</value>
     <value>lvGoogleDriveFoldersList</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3924,7 +3915,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 15</value>
+    <value>280, 135</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 23</value>
@@ -3945,7 +3936,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;btnGoogleDriveRefreshFolders.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbGoogleDriveIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3954,7 +3945,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 264</value>
+    <value>16, 88</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 17</value>
@@ -3975,37 +3966,16 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveIsPublic.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
-    <value>oauth2GoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
-    <value>tpGoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4236,13 +4206,13 @@ when you made the application key.</value>
     <value>7</value>
   </data>
   <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -4395,7 +4365,7 @@ when you made the application key.</value>
     <value>lvBoxFolders</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -4476,7 +4446,7 @@ when you made the application key.</value>
     <value>oauth2Box</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -4485,13 +4455,13 @@ when you made the application key.</value>
     <value>7</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5316,13 +5286,13 @@ when you made the application key.</value>
     <value>20</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -5342,6 +5312,27 @@ when you made the application key.</value>
   <data name="&gt;&gt;tpAmazonS3.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="oauth2GoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 75</value>
+  </data>
+  <data name="oauth2GoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Name" xml:space="preserve">
+    <value>oauth2GoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
+    <value>tpGoogleCloudStorage</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleCloudStorage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblGoogleCloudStorageStripExtension.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5355,7 +5346,7 @@ when you made the application key.</value>
     <value>129, 13</value>
   </data>
   <data name="lblGoogleCloudStorageStripExtension.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>1</value>
   </data>
   <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
     <value>Remove file extension on:</value>
@@ -5385,7 +5376,7 @@ when you made the application key.</value>
     <value>47, 17</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionText.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>4</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
     <value>Text</value>
@@ -5415,7 +5406,7 @@ when you made the application key.</value>
     <value>53, 17</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionVideo.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>3</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
     <value>Video</value>
@@ -5445,7 +5436,7 @@ when you made the application key.</value>
     <value>151, 17</value>
   </data>
   <data name="cbGoogleCloudStorageSetPublicACL.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>0</value>
   </data>
   <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
     <value>Set public-read ACL on file</value>
@@ -5475,7 +5466,7 @@ when you made the application key.</value>
     <value>55, 17</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionImage.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>2</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
     <value>Image</value>
@@ -5493,13 +5484,13 @@ when you made the application key.</value>
     <value>4</value>
   </data>
   <data name="gbGoogleCloudStorageAdvanced.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 450</value>
+    <value>16, 283</value>
   </data>
   <data name="gbGoogleCloudStorageAdvanced.Size" type="System.Drawing.Size, System.Drawing">
     <value>416, 98</value>
   </data>
   <data name="gbGoogleCloudStorageAdvanced.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
+    <value>9</value>
   </data>
   <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
     <value>Advanced</value>
@@ -5514,7 +5505,7 @@ when you made the application key.</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;gbGoogleCloudStorageAdvanced.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5523,7 +5514,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 419</value>
+    <value>13, 252</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -5544,7 +5535,7 @@ when you made the application key.</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStoragePathPreview.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreviewLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5553,7 +5544,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreviewLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 400</value>
+    <value>13, 233</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreviewLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -5574,16 +5565,16 @@ when you made the application key.</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStoragePathPreviewLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 320</value>
+    <value>16, 153</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
   </data>
   <data name="txtGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageObjectPrefix</value>
@@ -5595,7 +5586,7 @@ when you made the application key.</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5604,13 +5595,13 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 304</value>
+    <value>13, 137</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
     <value>Upload path:</value>
@@ -5625,7 +5616,7 @@ when you made the application key.</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageObjectPrefix.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5634,13 +5625,13 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 352</value>
+    <value>13, 185</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
     <value>Custom domain:</value>
@@ -5655,16 +5646,16 @@ when you made the application key.</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 368</value>
+    <value>16, 201</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
   </data>
   <data name="txtGoogleCloudStorageDomain.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageDomain.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageDomain</value>
@@ -5676,7 +5667,7 @@ when you made the application key.</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageDomain.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5685,13 +5676,13 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 255</value>
+    <value>13, 88</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
     <value>Bucket name:</value>
@@ -5706,16 +5697,16 @@ when you made the application key.</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;lblGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 271</value>
+    <value>16, 104</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
   </data>
   <data name="txtGoogleCloudStorageBucket.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageBucket.Name" xml:space="preserve">
     <value>txtGoogleCloudStorageBucket</value>
@@ -5727,37 +5718,16 @@ when you made the application key.</value>
     <value>tpGoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;txtGoogleCloudStorageBucket.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 238</value>
-  </data>
-  <data name="oauth2GoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Name" xml:space="preserve">
-    <value>oauth2GoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
-    <value>tpGoogleCloudStorage</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleCloudStorage.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="tpGoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpGoogleCloudStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -6189,13 +6159,13 @@ when you made the application key.</value>
     <value>14</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -6375,13 +6345,13 @@ when you made the application key.</value>
     <value>13, 64</value>
   </data>
   <data name="lblB2ApplicationKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 13</value>
+    <value>120, 13</value>
   </data>
   <data name="lblB2ApplicationKey.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
   <data name="lblB2ApplicationKey.Text" xml:space="preserve">
-    <value>Application Key (secret):</value>
+    <value>Application key (secret):</value>
   </data>
   <data name="&gt;&gt;lblB2ApplicationKey.Name" xml:space="preserve">
     <value>lblB2ApplicationKey</value>
@@ -6426,13 +6396,13 @@ when you made the application key.</value>
     <value>11</value>
   </data>
   <data name="tpBackblazeB2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpBackblazeB2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBackblazeB2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpBackblazeB2.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -6576,7 +6546,7 @@ when you made the application key.</value>
     <value>atcGfycatAccountType</value>
   </data>
   <data name="&gt;&gt;atcGfycatAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcGfycatAccountType.Parent" xml:space="preserve">
     <value>tpGfycat</value>
@@ -6597,7 +6567,7 @@ when you made the application key.</value>
     <value>oauth2Gfycat</value>
   </data>
   <data name="&gt;&gt;oauth2Gfycat.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Gfycat.Parent" xml:space="preserve">
     <value>tpGfycat</value>
@@ -6606,13 +6576,13 @@ when you made the application key.</value>
     <value>5</value>
   </data>
   <data name="tpGfycat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpGfycat.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGfycat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGfycat.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -6927,10 +6897,10 @@ when you made the application key.</value>
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 220</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 0</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -6949,6 +6919,36 @@ when you made the application key.</value>
   </data>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
     <value>11</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 304</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 17</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Append file name to URL</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudAppendFileNameToURL.Name" xml:space="preserve">
+    <value>cbOwnCloudAppendFileNameToURL</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudAppendFileNameToURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudAppendFileNameToURL.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudAppendFileNameToURL.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="txtOwnCloudExpiryTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 224</value>
@@ -6969,7 +6969,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudExpiryTime.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbOwnCloudAutoExpire.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6978,7 +6978,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloudAutoExpire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 334</value>
+    <value>16, 352</value>
   </data>
   <data name="cbOwnCloudAutoExpire.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
@@ -6999,7 +6999,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudAutoExpire.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblOwnCloudExpiryTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7011,13 +7011,13 @@ when you made the application key.</value>
     <value>13, 208</value>
   </data>
   <data name="lblOwnCloudExpiryTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 13</value>
+    <value>91, 13</value>
   </data>
   <data name="lblOwnCloudExpiryTime.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
-    <value>Expiry Time (days):</value>
+    <value>Expiry time (days):</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudExpiryTime.Name" xml:space="preserve">
     <value>lblOwnCloudExpiryTime</value>
@@ -7029,7 +7029,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudExpiryTime.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7038,7 +7038,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 357</value>
+    <value>16, 376</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 17</value>
@@ -7059,7 +7059,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudUsePreviewLinks.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblOwnCloudHostExample.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7089,7 +7089,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudHostExample.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbOwnCloud81Compatibility.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7098,7 +7098,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 311</value>
+    <value>16, 328</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 17</value>
@@ -7119,7 +7119,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloud81Compatibility.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbOwnCloudDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7128,7 +7128,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloudDirectLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 287</value>
+    <value>16, 280</value>
   </data>
   <data name="cbOwnCloudDirectLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 17</value>
@@ -7149,7 +7149,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudDirectLink.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbOwnCloudCreateShare.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7158,7 +7158,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloudCreateShare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 263</value>
+    <value>16, 256</value>
   </data>
   <data name="cbOwnCloudCreateShare.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 17</value>
@@ -7179,7 +7179,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudCreateShare.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtOwnCloudPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 176</value>
@@ -7200,7 +7200,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPath.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="txtOwnCloudPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -7221,7 +7221,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPassword.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="txtOwnCloudUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -7242,7 +7242,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudUsername.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtOwnCloudHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -7263,7 +7263,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudHost.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblOwnCloudPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7293,7 +7293,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPath.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lblOwnCloudPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7323,7 +7323,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPassword.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lblOwnCloudUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7353,7 +7353,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudUsername.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lblOwnCloudHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7383,16 +7383,16 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudHost.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -7596,13 +7596,13 @@ when you made the application key.</value>
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -7652,28 +7652,28 @@ when you made the application key.</value>
   <data name="&gt;&gt;lblPushbulletDevices.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cboPushbulletDevices.Enabled" type="System.Boolean, mscorlib">
+  <data name="cbPushbulletDevices.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="cboPushbulletDevices.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbPushbulletDevices.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
   </data>
-  <data name="cboPushbulletDevices.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbPushbulletDevices.Size" type="System.Drawing.Size, System.Drawing">
     <value>346, 21</value>
   </data>
-  <data name="cboPushbulletDevices.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbPushbulletDevices.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;cboPushbulletDevices.Name" xml:space="preserve">
-    <value>cboPushbulletDevices</value>
+  <data name="&gt;&gt;cbPushbulletDevices.Name" xml:space="preserve">
+    <value>cbPushbulletDevices</value>
   </data>
-  <data name="&gt;&gt;cboPushbulletDevices.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbPushbulletDevices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cboPushbulletDevices.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbPushbulletDevices.Parent" xml:space="preserve">
     <value>tpPushbullet</value>
   </data>
-  <data name="&gt;&gt;cboPushbulletDevices.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbPushbulletDevices.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="btnPushbulletGetDeviceList.Enabled" type="System.Boolean, mscorlib">
@@ -7758,13 +7758,13 @@ when you made the application key.</value>
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -7926,7 +7926,7 @@ when you made the application key.</value>
     <value>atcSendSpaceAccountType</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
     <value>tpSendSpace</value>
@@ -7935,13 +7935,13 @@ when you made the application key.</value>
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -7960,192 +7960,6 @@ when you made the application key.</value>
   </data>
   <data name="&gt;&gt;tpSendSpace.ZOrder" xml:space="preserve">
     <value>15</value>
-  </data>
-  <data name="lblGe_ttStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGe_ttStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGe_ttStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 117</value>
-  </data>
-  <data name="lblGe_ttStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 13</value>
-  </data>
-  <data name="lblGe_ttStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Login required.</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttStatus.Name" xml:space="preserve">
-    <value>lblGe_ttStatus</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttStatus.Parent" xml:space="preserve">
-    <value>tpGe_tt</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttStatus.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblGe_ttPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGe_ttPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGe_ttPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
-  </data>
-  <data name="lblGe_ttPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblGe_ttPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttPassword.Name" xml:space="preserve">
-    <value>lblGe_ttPassword</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttPassword.Parent" xml:space="preserve">
-    <value>tpGe_tt</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttPassword.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblGe_ttEmail.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGe_ttEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGe_ttEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblGe_ttEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
-  <data name="lblGe_ttEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttEmail.Name" xml:space="preserve">
-    <value>lblGe_ttEmail</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttEmail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttEmail.Parent" xml:space="preserve">
-    <value>tpGe_tt</value>
-  </data>
-  <data name="&gt;&gt;lblGe_ttEmail.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnGe_ttLogin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnGe_ttLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
-  </data>
-  <data name="btnGe_ttLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnGe_ttLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="&gt;&gt;btnGe_ttLogin.Name" xml:space="preserve">
-    <value>btnGe_ttLogin</value>
-  </data>
-  <data name="&gt;&gt;btnGe_ttLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGe_ttLogin.Parent" xml:space="preserve">
-    <value>tpGe_tt</value>
-  </data>
-  <data name="&gt;&gt;btnGe_ttLogin.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtGe_ttPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="txtGe_ttPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 20</value>
-  </data>
-  <data name="txtGe_ttPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtGe_ttPassword.Name" xml:space="preserve">
-    <value>txtGe_ttPassword</value>
-  </data>
-  <data name="&gt;&gt;txtGe_ttPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtGe_ttPassword.Parent" xml:space="preserve">
-    <value>tpGe_tt</value>
-  </data>
-  <data name="&gt;&gt;txtGe_ttPassword.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtGe_ttEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="txtGe_ttEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 20</value>
-  </data>
-  <data name="txtGe_ttEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtGe_ttEmail.Name" xml:space="preserve">
-    <value>txtGe_ttEmail</value>
-  </data>
-  <data name="&gt;&gt;txtGe_ttEmail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtGe_ttEmail.Parent" xml:space="preserve">
-    <value>tpGe_tt</value>
-  </data>
-  <data name="&gt;&gt;txtGe_ttEmail.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tpGe_tt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
-  </data>
-  <data name="tpGe_tt.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpGe_tt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
-  </data>
-  <data name="tpGe_tt.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
-  </data>
-  <data name="&gt;&gt;tpGe_tt.Name" xml:space="preserve">
-    <value>tpGe_tt</value>
-  </data>
-  <data name="&gt;&gt;tpGe_tt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpGe_tt.Parent" xml:space="preserve">
-    <value>tcFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpGe_tt.ZOrder" xml:space="preserve">
-    <value>16</value>
   </data>
   <data name="cbLocalhostrDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8280,13 +8094,13 @@ when you made the application key.</value>
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -8304,7 +8118,7 @@ when you made the application key.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpHostr.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="txtJiraIssuePrefix.Location" type="System.Drawing.Point, System.Drawing">
     <value>472, 277</value>
@@ -8481,7 +8295,7 @@ when you made the application key.</value>
     <value>oAuthJira</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
     <value>tpJira</value>
@@ -8490,10 +8304,10 @@ when you made the application key.</value>
     <value>3</value>
   </data>
   <data name="tpJira.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpJira.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -8511,7 +8325,7 @@ when you made the application key.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpJira.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="lblLambdaInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8646,13 +8460,13 @@ when you made the application key.</value>
     <value>4</value>
   </data>
   <data name="tpLambda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpLambda.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLambda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpLambda.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -8670,7 +8484,7 @@ when you made the application key.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLambda.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="nudTeknikExpirationLength.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 320</value>
@@ -9024,7 +8838,7 @@ when you made the application key.</value>
     <value>oauthTeknik</value>
   </data>
   <data name="&gt;&gt;oauthTeknik.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthTeknik.Parent" xml:space="preserve">
     <value>tpTeknik</value>
@@ -9033,13 +8847,13 @@ when you made the application key.</value>
     <value>13</value>
   </data>
   <data name="tpTeknik.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpTeknik.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTeknik.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpTeknik.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -9057,7 +8871,7 @@ when you made the application key.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpTeknik.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="txtPomfResultURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -9162,13 +8976,13 @@ when you made the application key.</value>
     <value>3</value>
   </data>
   <data name="tpPomf.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpPomf.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPomf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpPomf.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -9186,7 +9000,7 @@ when you made the application key.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPomf.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
@@ -9447,7 +9261,7 @@ when you made the application key.</value>
     <value>lvSeafileLibraries</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Parent" xml:space="preserve">
     <value>tpSeafile</value>
@@ -10153,13 +9967,13 @@ Using an encrypted library disables sharing.</value>
     <value>21</value>
   </data>
   <data name="tpSeafile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpSeafile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSeafile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpSeafile.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -10177,7 +9991,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSeafile.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="cbStreamableUseDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -10186,7 +10000,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbStreamableUseDirectURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>16, 112</value>
   </data>
   <data name="cbStreamableUseDirectURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
@@ -10210,7 +10024,7 @@ Using an encrypted library disables sharing.</value>
     <value>0</value>
   </data>
   <data name="txtStreamablePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
+    <value>16, 80</value>
   </data>
   <data name="txtStreamablePassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>
@@ -10234,7 +10048,7 @@ Using an encrypted library disables sharing.</value>
     <value>1</value>
   </data>
   <data name="txtStreamableUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>16, 32</value>
   </data>
   <data name="txtStreamableUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>
@@ -10264,7 +10078,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblStreamableUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 40</value>
+    <value>13, 16</value>
   </data>
   <data name="lblStreamableUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 6, 0</value>
@@ -10297,7 +10111,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblStreamablePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 88</value>
+    <value>13, 64</value>
   </data>
   <data name="lblStreamablePassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 0, 6, 0</value>
@@ -10323,44 +10137,11 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;lblStreamablePassword.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="cbStreamableAnonymous.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbStreamableAnonymous.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbStreamableAnonymous.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="cbStreamableAnonymous.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="cbStreamableAnonymous.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 17</value>
-  </data>
-  <data name="cbStreamableAnonymous.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Anonymous</value>
-  </data>
-  <data name="&gt;&gt;cbStreamableAnonymous.Name" xml:space="preserve">
-    <value>cbStreamableAnonymous</value>
-  </data>
-  <data name="&gt;&gt;cbStreamableAnonymous.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbStreamableAnonymous.Parent" xml:space="preserve">
-    <value>tpStreamable</value>
-  </data>
-  <data name="&gt;&gt;cbStreamableAnonymous.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="tpStreamable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpStreamable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpStreamable.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -10378,7 +10159,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpStreamable.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>22</value>
   </data>
   <data name="btnSulGetAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -10459,13 +10240,13 @@ Using an encrypted library disables sharing.</value>
     <value>2</value>
   </data>
   <data name="tpSul.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpSul.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSul.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpSul.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -10483,7 +10264,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSul.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>23</value>
   </data>
   <data name="btnLithiioFetchAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -10693,19 +10474,19 @@ Using an encrypted library disables sharing.</value>
     <value>7</value>
   </data>
   <data name="tpLithiio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 220</value>
   </data>
   <data name="tpLithiio.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLithiio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 525</value>
+    <value>178, 0</value>
   </data>
   <data name="tpLithiio.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="tpLithiio.Text" xml:space="preserve">
-    <value>Lithiio</value>
+    <value>LobFile</value>
   </data>
   <data name="&gt;&gt;tpLithiio.Name" xml:space="preserve">
     <value>tpLithiio</value>
@@ -10717,7 +10498,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLithiio.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>24</value>
   </data>
   <data name="cbPlikOneShot.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -10878,37 +10659,37 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;nudPlikTTL.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
     <value>days</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
     <value>hours</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
     <value>minutes</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
     <value>never</value>
   </data>
-  <data name="cbxPlikTTLUnit.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbPlikTTLUnit.Location" type="System.Drawing.Point, System.Drawing">
     <value>117, 217</value>
   </data>
-  <data name="cbxPlikTTLUnit.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbPlikTTLUnit.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 21</value>
   </data>
-  <data name="cbxPlikTTLUnit.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbPlikTTLUnit.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;cbxPlikTTLUnit.Name" xml:space="preserve">
-    <value>cbxPlikTTLUnit</value>
+  <data name="&gt;&gt;cbPlikTTLUnit.Name" xml:space="preserve">
+    <value>cbPlikTTLUnit</value>
   </data>
-  <data name="&gt;&gt;cbxPlikTTLUnit.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbPlikTTLUnit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbxPlikTTLUnit.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbPlikTTLUnit.Parent" xml:space="preserve">
     <value>gbPlikLoginCredentials</value>
   </data>
-  <data name="&gt;&gt;cbxPlikTTLUnit.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbPlikTTLUnit.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="lblPlikTTL.AutoSize" type="System.Boolean, mscorlib">
@@ -10921,13 +10702,13 @@ Using an encrypted library disables sharing.</value>
     <value>7, 202</value>
   </data>
   <data name="lblPlikTTL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 13</value>
+    <value>179, 13</value>
   </data>
   <data name="lblPlikTTL.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>Files will be automatically removed in </value>
+    <value>Files will be automatically removed in</value>
   </data>
   <data name="&gt;&gt;lblPlikTTL.Name" xml:space="preserve">
     <value>lblPlikTTL</value>
@@ -11032,13 +10813,13 @@ Using an encrypted library disables sharing.</value>
     <value>6, 58</value>
   </data>
   <data name="lblPlikAPIKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
+    <value>47, 13</value>
   </data>
   <data name="lblPlikAPIKey.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>API Key: </value>
+    <value>API key:</value>
   </data>
   <data name="&gt;&gt;lblPlikAPIKey.Name" xml:space="preserve">
     <value>lblPlikAPIKey</value>
@@ -11185,7 +10966,7 @@ Using an encrypted library disables sharing.</value>
     <value>13</value>
   </data>
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
-    <value>Login Credentials</value>
+    <value>Login credentials</value>
   </data>
   <data name="&gt;&gt;gbPlikLoginCredentials.Name" xml:space="preserve">
     <value>gbPlikLoginCredentials</value>
@@ -11200,13 +10981,13 @@ Using an encrypted library disables sharing.</value>
     <value>1</value>
   </data>
   <data name="tpPlik.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpPlik.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPlik.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpPlik.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -11224,7 +11005,118 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPlik.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>25</value>
+  </data>
+  <data name="oauth2YouTube.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2YouTube.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 72</value>
+  </data>
+  <data name="oauth2YouTube.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Name" xml:space="preserve">
+    <value>oauth2YouTube</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;oauth2YouTube.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="llYouTubePermissionsLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="llYouTubePermissionsLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="llYouTubePermissionsLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 105</value>
+  </data>
+  <data name="llYouTubePermissionsLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 13</value>
+  </data>
+  <data name="llYouTubePermissionsLink.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="llYouTubePermissionsLink.Text" xml:space="preserve">
+    <value>https://myaccount.google.com/permissions</value>
+  </data>
+  <data name="&gt;&gt;llYouTubePermissionsLink.Name" xml:space="preserve">
+    <value>llYouTubePermissionsLink</value>
+  </data>
+  <data name="&gt;&gt;llYouTubePermissionsLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;llYouTubePermissionsLink.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;llYouTubePermissionsLink.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 88</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 13</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>You may revoke your access at anytime using the link below:</value>
+  </data>
+  <data name="&gt;&gt;lblYouTubePermissionsTip.Name" xml:space="preserve">
+    <value>lblYouTubePermissionsTip</value>
+  </data>
+  <data name="&gt;&gt;lblYouTubePermissionsTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblYouTubePermissionsTip.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;lblYouTubePermissionsTip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbYouTubeShowDialog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbYouTubeShowDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 200</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 17</value>
+  </data>
+  <data name="cbYouTubeShowDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>Show video options dialog</value>
+  </data>
+  <data name="&gt;&gt;cbYouTubeShowDialog.Name" xml:space="preserve">
+    <value>cbYouTubeShowDialog</value>
+  </data>
+  <data name="&gt;&gt;cbYouTubeShowDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbYouTubeShowDialog.Parent" xml:space="preserve">
+    <value>tpYouTube</value>
+  </data>
+  <data name="&gt;&gt;cbYouTubeShowDialog.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11233,13 +11125,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 304</value>
+    <value>16, 176</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 17</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>Use shortened link</value>
@@ -11254,16 +11146,16 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;cbYouTubeUseShortenedLink.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="cbYouTubePrivacyType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 272</value>
+    <value>16, 144</value>
   </data>
   <data name="cbYouTubePrivacyType.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 21</value>
   </data>
   <data name="cbYouTubePrivacyType.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cbYouTubePrivacyType.Name" xml:space="preserve">
     <value>cbYouTubePrivacyType</value>
@@ -11275,7 +11167,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;cbYouTubePrivacyType.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="lblYouTubePrivacyType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11284,16 +11176,16 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblYouTubePrivacyType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 256</value>
+    <value>13, 128</value>
   </data>
   <data name="lblYouTubePrivacyType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
+    <value>46, 13</value>
   </data>
   <data name="lblYouTubePrivacyType.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
-    <value>Privacy type:</value>
+    <value>Visibility:</value>
   </data>
   <data name="&gt;&gt;lblYouTubePrivacyType.Name" xml:space="preserve">
     <value>lblYouTubePrivacyType</value>
@@ -11305,28 +11197,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpYouTube</value>
   </data>
   <data name="&gt;&gt;lblYouTubePrivacyType.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="oauth2YouTube.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2YouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 232</value>
-  </data>
-  <data name="oauth2YouTube.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Name" xml:space="preserve">
-    <value>oauth2YouTube</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
-    <value>tpYouTube</value>
-  </data>
-  <data name="&gt;&gt;oauth2YouTube.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="tpYouTube.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 58</value>
@@ -11350,7 +11221,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpYouTube.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>26</value>
   </data>
   <data name="lbSharedFolderAccounts.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -11538,25 +11409,25 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;lblSharedFolderText.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="cboSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbSharedFolderFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>608, 12</value>
   </data>
-  <data name="cboSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbSharedFolderFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
   </data>
-  <data name="cboSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbSharedFolderFiles.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.Name" xml:space="preserve">
-    <value>cboSharedFolderFiles</value>
+  <data name="&gt;&gt;cbSharedFolderFiles.Name" xml:space="preserve">
+    <value>cbSharedFolderFiles</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbSharedFolderFiles.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbSharedFolderFiles.Parent" xml:space="preserve">
     <value>tpSharedFolder</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderFiles.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbSharedFolderFiles.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="lblSharedFolderImages.AutoSize" type="System.Boolean, mscorlib">
@@ -11589,56 +11460,56 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;lblSharedFolderImages.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="cboSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbSharedFolderText.Location" type="System.Drawing.Point, System.Drawing">
     <value>344, 12</value>
   </data>
-  <data name="cboSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbSharedFolderText.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
   </data>
-  <data name="cboSharedFolderText.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbSharedFolderText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderText.Name" xml:space="preserve">
-    <value>cboSharedFolderText</value>
+  <data name="&gt;&gt;cbSharedFolderText.Name" xml:space="preserve">
+    <value>cbSharedFolderText</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderText.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbSharedFolderText.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderText.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbSharedFolderText.Parent" xml:space="preserve">
     <value>tpSharedFolder</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbSharedFolderText.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="cboSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbSharedFolderImages.Location" type="System.Drawing.Point, System.Drawing">
     <value>80, 12</value>
   </data>
-  <data name="cboSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbSharedFolderImages.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
   </data>
-  <data name="cboSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbSharedFolderImages.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderImages.Name" xml:space="preserve">
-    <value>cboSharedFolderImages</value>
+  <data name="&gt;&gt;cbSharedFolderImages.Name" xml:space="preserve">
+    <value>cbSharedFolderImages</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderImages.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbSharedFolderImages.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderImages.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbSharedFolderImages.Parent" xml:space="preserve">
     <value>tpSharedFolder</value>
   </data>
-  <data name="&gt;&gt;cboSharedFolderImages.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbSharedFolderImages.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="tpSharedFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpSharedFolder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSharedFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -11656,7 +11527,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>27</value>
   </data>
   <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 408</value>
@@ -12052,13 +11923,13 @@ Using an encrypted library disables sharing.</value>
     <value>14</value>
   </data>
   <data name="tpEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpEmail.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpEmail.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -12076,7 +11947,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>28</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -12679,7 +12550,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaste_ee.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpPaste_ee.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -12883,7 +12754,7 @@ Using an encrypted library disables sharing.</value>
     <value>oAuth2Gist</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
     <value>tpGist</value>
@@ -12895,7 +12766,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 22</value>
   </data>
   <data name="tpGist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpGist.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -13003,7 +12874,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpaste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpUpaste.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -13162,7 +13033,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHastebin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpHastebin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -13291,7 +13162,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneTimeSecret.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpOneTimeSecret.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -13348,7 +13219,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPastie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
+    <value>178, 42</value>
   </data>
   <data name="tpPastie.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -13522,7 +13393,7 @@ Using an encrypted library disables sharing.</value>
     <value>atcImgurAccountType</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13543,7 +13414,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2Imgur</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13579,7 +13450,7 @@ Using an encrypted library disables sharing.</value>
     <value>lvImgurAlbumList</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13978,7 +13849,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauthFlickr</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Parent" xml:space="preserve">
     <value>tpFlickr</value>
@@ -14067,25 +13938,25 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;btnPhotobucketRemoveAlbum.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cboPhotobucketAlbumPaths.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbPhotobucketAlbumPaths.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
   </data>
-  <data name="cboPhotobucketAlbumPaths.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbPhotobucketAlbumPaths.Size" type="System.Drawing.Size, System.Drawing">
     <value>440, 21</value>
   </data>
-  <data name="cboPhotobucketAlbumPaths.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbPhotobucketAlbumPaths.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;cboPhotobucketAlbumPaths.Name" xml:space="preserve">
-    <value>cboPhotobucketAlbumPaths</value>
+  <data name="&gt;&gt;cbPhotobucketAlbumPaths.Name" xml:space="preserve">
+    <value>cbPhotobucketAlbumPaths</value>
   </data>
-  <data name="&gt;&gt;cboPhotobucketAlbumPaths.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbPhotobucketAlbumPaths.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cboPhotobucketAlbumPaths.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbPhotobucketAlbumPaths.Parent" xml:space="preserve">
     <value>gbPhotobucketAlbumPath</value>
   </data>
-  <data name="&gt;&gt;cboPhotobucketAlbumPaths.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbPhotobucketAlbumPaths.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="gbPhotobucketAlbumPath.Location" type="System.Drawing.Point, System.Drawing">
@@ -14502,6 +14373,27 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPhotobucket.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="oauth2GooglePhotos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2GooglePhotos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 75</value>
+  </data>
+  <data name="oauth2GooglePhotos.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GooglePhotos.Name" xml:space="preserve">
+    <value>oauth2GooglePhotos</value>
+  </data>
+  <data name="&gt;&gt;oauth2GooglePhotos.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GooglePhotos.Parent" xml:space="preserve">
+    <value>tpGooglePhotos</value>
+  </data>
+  <data name="&gt;&gt;oauth2GooglePhotos.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblGooglePhotosCreateAlbumName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -14509,13 +14401,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblGooglePhotosCreateAlbumName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 472</value>
+    <value>13, 505</value>
   </data>
   <data name="lblGooglePhotosCreateAlbumName.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
   </data>
   <data name="lblGooglePhotosCreateAlbumName.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
     <value>Album name:</value>
@@ -14530,10 +14422,10 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lblGooglePhotosCreateAlbumName.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtGooglePhotosCreateAlbumName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 488</value>
+    <value>16, 521</value>
   </data>
   <data name="txtGooglePhotosCreateAlbumName.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 20</value>
@@ -14551,19 +14443,19 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;txtGooglePhotosCreateAlbumName.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>688, 487</value>
+    <value>352, 520</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>Create</value>
@@ -14578,7 +14470,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;btnGooglePhotosCreateAlbum.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbGooglePhotosIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -14587,13 +14479,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGooglePhotosIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 262</value>
+    <value>16, 88</value>
   </data>
   <data name="cbGooglePhotosIsPublic.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 17</value>
   </data>
   <data name="cbGooglePhotosIsPublic.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
     <value>Public upload</value>
@@ -14608,16 +14500,16 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;cbGooglePhotosIsPublic.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txtPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 64</value>
+    <value>16, 160</value>
   </data>
   <data name="txtPicasaAlbumID.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 20</value>
   </data>
   <data name="txtPicasaAlbumID.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtPicasaAlbumID.Name" xml:space="preserve">
     <value>txtPicasaAlbumID</value>
@@ -14629,7 +14521,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;txtPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblPicasaAlbumID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -14638,13 +14530,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 48</value>
+    <value>13, 144</value>
   </data>
   <data name="lblPicasaAlbumID.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 13</value>
   </data>
   <data name="lblPicasaAlbumID.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>Album ID for upload (Empty = No album upload):</value>
@@ -14659,7 +14551,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lblPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
@@ -14680,13 +14572,13 @@ Using an encrypted library disables sharing.</value>
     <value>143</value>
   </data>
   <data name="lvPicasaAlbumList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 96</value>
+    <value>16, 192</value>
   </data>
   <data name="lvPicasaAlbumList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 368</value>
+    <value>432, 304</value>
   </data>
   <data name="lvPicasaAlbumList.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lvPicasaAlbumList.Name" xml:space="preserve">
     <value>lvPicasaAlbumList</value>
@@ -14698,7 +14590,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lvPicasaAlbumList.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -14707,13 +14599,13 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 16</value>
+    <value>16, 112</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 23</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
     <value>Refresh album list</value>
@@ -14728,27 +14620,6 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;btnPicasaRefreshAlbumList.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="oauth2Picasa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauth2Picasa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Picasa.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Name" xml:space="preserve">
-    <value>oauth2Picasa</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="tpGooglePhotos.Location" type="System.Drawing.Point, System.Drawing">
@@ -15175,7 +15046,7 @@ Using an encrypted library disables sharing.</value>
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -15196,7 +15067,7 @@ Using an encrypted library disables sharing.</value>
     <value>actRapidShareAccountType</value>
   </data>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -15209,9 +15080,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1044, 601</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>
@@ -15227,42 +15095,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chPicasaID.Name" xml:space="preserve">
-    <value>chPicasaID</value>
-  </data>
-  <data name="&gt;&gt;chPicasaID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chPicasaName.Name" xml:space="preserve">
-    <value>chPicasaName</value>
-  </data>
-  <data name="&gt;&gt;chPicasaName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chPicasaDescription.Name" xml:space="preserve">
-    <value>chPicasaDescription</value>
-  </data>
-  <data name="&gt;&gt;chPicasaDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chImgurID.Name" xml:space="preserve">
-    <value>chImgurID</value>
-  </data>
-  <data name="&gt;&gt;chImgurID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chImgurTitle.Name" xml:space="preserve">
-    <value>chImgurTitle</value>
-  </data>
-  <data name="&gt;&gt;chImgurTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chImgurDescription.Name" xml:space="preserve">
-    <value>chImgurDescription</value>
-  </data>
-  <data name="&gt;&gt;chImgurDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chGoogleDriveTitle.Name" xml:space="preserve">
     <value>chGoogleDriveTitle</value>
@@ -15298,6 +15130,42 @@ Using an encrypted library disables sharing.</value>
     <value>colSeafileLibraryEncrypted</value>
   </data>
   <data name="&gt;&gt;colSeafileLibraryEncrypted.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chImgurID.Name" xml:space="preserve">
+    <value>chImgurID</value>
+  </data>
+  <data name="&gt;&gt;chImgurID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chImgurTitle.Name" xml:space="preserve">
+    <value>chImgurTitle</value>
+  </data>
+  <data name="&gt;&gt;chImgurTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chImgurDescription.Name" xml:space="preserve">
+    <value>chImgurDescription</value>
+  </data>
+  <data name="&gt;&gt;chImgurDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chPicasaID.Name" xml:space="preserve">
+    <value>chPicasaID</value>
+  </data>
+  <data name="&gt;&gt;chPicasaID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chPicasaName.Name" xml:space="preserve">
+    <value>chPicasaName</value>
+  </data>
+  <data name="&gt;&gt;chPicasaName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chPicasaDescription.Name" xml:space="preserve">
+    <value>chPicasaDescription</value>
+  </data>
+  <data name="&gt;&gt;chPicasaDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

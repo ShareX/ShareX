@@ -132,7 +132,4 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Eltávolítás</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Alapértelmezések visszaállítása</value>
-  </data>
 </root>

@@ -381,21 +381,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Lista törlése</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Menü elrejtése</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Kép előnézet</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Mutat</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Elrejtés</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automatikus</value>
-  </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Képlopás</value>
   </data>
@@ -518,12 +503,6 @@
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Kép előzmények...</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Adományozás...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Bővebben...</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>ShareX ablak mutatása</value>

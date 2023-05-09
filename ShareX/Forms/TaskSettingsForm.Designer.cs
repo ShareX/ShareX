@@ -40,23 +40,28 @@
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcTaskSettings = new System.Windows.Forms.TabControl();
             this.tpTask = new System.Windows.Forms.TabPage();
+            this.lblTask = new System.Windows.Forms.Label();
             this.btnScreenshotsFolderBrowse = new System.Windows.Forms.Button();
             this.txtScreenshotsFolder = new System.Windows.Forms.TextBox();
             this.cbOverrideScreenshotsFolder = new System.Windows.Forms.CheckBox();
-            this.cbOverrideCustomUploader = new System.Windows.Forms.ComboBox();
-            this.chkOverrideCustomUploader = new System.Windows.Forms.CheckBox();
-            this.chkOverrideFTP = new System.Windows.Forms.CheckBox();
-            this.cboFTPaccounts = new System.Windows.Forms.ComboBox();
+            this.cbCustomUploaders = new System.Windows.Forms.ComboBox();
+            this.cbOverrideCustomUploader = new System.Windows.Forms.CheckBox();
+            this.cbOverrideFTPAccount = new System.Windows.Forms.CheckBox();
+            this.cbFTPAccounts = new System.Windows.Forms.ComboBox();
+            this.btnAfterCapture = new ShareX.HelpersLib.MenuButton();
+            this.btnAfterUpload = new ShareX.HelpersLib.MenuButton();
+            this.btnDestinations = new ShareX.HelpersLib.MenuButton();
             this.cmsDestinations = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTask = new ShareX.HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.tcGeneral = new System.Windows.Forms.TabControl();
             this.tpGeneralMain = new System.Windows.Forms.TabPage();
-            this.chkOverrideGeneralSettings = new System.Windows.Forms.CheckBox();
+            this.cbOverrideGeneralSettings = new System.Windows.Forms.CheckBox();
             this.tpNotifications = new System.Windows.Forms.TabPage();
             this.cbShowToastNotificationAfterTaskCompleted = new System.Windows.Forms.CheckBox();
             this.btnCustomErrorSoundPath = new System.Windows.Forms.Button();
@@ -69,6 +74,7 @@
             this.cbUseCustomTaskCompletedSound = new System.Windows.Forms.CheckBox();
             this.cbUseCustomCaptureSound = new System.Windows.Forms.CheckBox();
             this.gbToastWindow = new System.Windows.Forms.GroupBox();
+            this.cbToastWindowAutoHide = new System.Windows.Forms.CheckBox();
             this.lblToastWindowFadeDurationSeconds = new System.Windows.Forms.Label();
             this.lblToastWindowDurationSeconds = new System.Windows.Forms.Label();
             this.lblToastWindowSizeX = new System.Windows.Forms.Label();
@@ -95,6 +101,7 @@
             this.tcImage = new System.Windows.Forms.TabControl();
             this.tpQuality = new System.Windows.Forms.TabPage();
             this.pImage = new System.Windows.Forms.Panel();
+            this.cbImageAutoJPEGQuality = new System.Windows.Forms.CheckBox();
             this.cbImagePNGBitDepth = new System.Windows.Forms.ComboBox();
             this.lblImagePNGBitDepth = new System.Windows.Forms.Label();
             this.cbImageAutoUseJPEG = new System.Windows.Forms.CheckBox();
@@ -109,10 +116,10 @@
             this.lblImageGIFQuality = new System.Windows.Forms.Label();
             this.lblImageJPEGQuality = new System.Windows.Forms.Label();
             this.cbImageGIFQuality = new System.Windows.Forms.ComboBox();
-            this.chkOverrideImageSettings = new System.Windows.Forms.CheckBox();
+            this.cbOverrideImageSettings = new System.Windows.Forms.CheckBox();
             this.tpEffects = new System.Windows.Forms.TabPage();
             this.lblImageEffectsNote = new System.Windows.Forms.Label();
-            this.chkShowImageEffectsWindowAfterCapture = new System.Windows.Forms.CheckBox();
+            this.cbShowImageEffectsWindowAfterCapture = new System.Windows.Forms.CheckBox();
             this.cbImageEffectOnlyRegionCapture = new System.Windows.Forms.CheckBox();
             this.btnImageEffects = new System.Windows.Forms.Button();
             this.tpThumbnail = new System.Windows.Forms.TabPage();
@@ -148,8 +155,11 @@
             this.cbCaptureClientArea = new System.Windows.Forms.CheckBox();
             this.nudScreenshotDelay = new System.Windows.Forms.NumericUpDown();
             this.nudCaptureShadowOffset = new System.Windows.Forms.NumericUpDown();
-            this.chkOverrideCaptureSettings = new System.Windows.Forms.CheckBox();
+            this.cbOverrideCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
+            this.cbRegionCaptureActiveMonitorMode = new System.Windows.Forms.CheckBox();
+            this.nudRegionCaptureFPSLimit = new System.Windows.Forms.NumericUpDown();
+            this.lblRegionCaptureFPSLimit = new System.Windows.Forms.Label();
             this.cbRegionCaptureShowFPS = new System.Windows.Forms.CheckBox();
             this.flpRegionCaptureFixedSize = new System.Windows.Forms.FlowLayoutPanel();
             this.lblRegionCaptureFixedSizeWidth = new System.Windows.Forms.Label();
@@ -197,7 +207,7 @@
             this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
             this.btnScreenRecorderFFmpegOptions = new System.Windows.Forms.Button();
             this.lblScreenRecorderStartDelay = new System.Windows.Forms.Label();
-            this.chkScreenRecordAutoStart = new System.Windows.Forms.CheckBox();
+            this.cbScreenRecordAutoStart = new System.Windows.Forms.CheckBox();
             this.lblScreenRecorderFixedDuration = new System.Windows.Forms.Label();
             this.nudScreenRecordFPS = new System.Windows.Forms.NumericUpDown();
             this.lblScreenRecordFPS = new System.Windows.Forms.Label();
@@ -207,15 +217,15 @@
             this.nudGIFFPS = new System.Windows.Forms.NumericUpDown();
             this.lblGIFFPS = new System.Windows.Forms.Label();
             this.tpOCR = new System.Windows.Forms.TabPage();
+            this.btnCaptureOCRHelp = new System.Windows.Forms.Button();
             this.cbCaptureOCRAutoCopy = new System.Windows.Forms.CheckBox();
-            this.cbCaptureOCRProcessOnLoad = new System.Windows.Forms.CheckBox();
             this.cbCaptureOCRSilent = new System.Windows.Forms.CheckBox();
             this.lblOCRDefaultLanguage = new System.Windows.Forms.Label();
             this.cbCaptureOCRDefaultLanguage = new System.Windows.Forms.ComboBox();
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpUploadMain = new System.Windows.Forms.TabPage();
-            this.chkOverrideUploadSettings = new System.Windows.Forms.CheckBox();
+            this.cbOverrideUploadSettings = new System.Windows.Forms.CheckBox();
             this.tpFileNaming = new System.Windows.Forms.TabPage();
             this.txtURLRegexReplaceReplacement = new System.Windows.Forms.TextBox();
             this.lblURLRegexReplaceReplacement = new System.Windows.Forms.Label();
@@ -226,7 +236,6 @@
             this.lblAutoIncrementNumber = new System.Windows.Forms.Label();
             this.nudAutoIncrementNumber = new System.Windows.Forms.NumericUpDown();
             this.cbFileUploadReplaceProblematicCharacters = new System.Windows.Forms.CheckBox();
-            this.cbRegionCaptureUseWindowPattern = new System.Windows.Forms.CheckBox();
             this.cbNameFormatCustomTimeZone = new System.Windows.Forms.CheckBox();
             this.lblNameFormatPatternPreview = new System.Windows.Forms.Label();
             this.lblNameFormatPatternActiveWindow = new System.Windows.Forms.Label();
@@ -242,6 +251,9 @@
             this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
             this.tpUploaderFilters = new System.Windows.Forms.TabPage();
+            this.lvUploaderFiltersList = new ShareX.HelpersLib.MyListView();
+            this.chUploaderFiltersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUploaderFiltersExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnUploaderFiltersRemove = new System.Windows.Forms.Button();
             this.btnUploaderFiltersUpdate = new System.Windows.Forms.Button();
             this.btnUploaderFiltersAdd = new System.Windows.Forms.Button();
@@ -252,15 +264,25 @@
             this.txtUploaderFiltersExtensions = new System.Windows.Forms.TextBox();
             this.tpActions = new System.Windows.Forms.TabPage();
             this.pActions = new System.Windows.Forms.Panel();
+            this.btnActions = new System.Windows.Forms.Button();
             this.lblActionsNote = new System.Windows.Forms.Label();
             this.btnActionsDuplicate = new System.Windows.Forms.Button();
             this.btnActionsAdd = new System.Windows.Forms.Button();
+            this.lvActions = new ShareX.HelpersLib.MyListView();
+            this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnActionsEdit = new System.Windows.Forms.Button();
             this.btnActionsRemove = new System.Windows.Forms.Button();
-            this.chkOverrideActions = new System.Windows.Forms.CheckBox();
+            this.cbOverrideActions = new System.Windows.Forms.CheckBox();
             this.tpWatchFolders = new System.Windows.Forms.TabPage();
             this.btnWatchFolderEdit = new System.Windows.Forms.Button();
             this.cbWatchFolderEnabled = new System.Windows.Forms.CheckBox();
+            this.lvWatchFolderList = new ShareX.HelpersLib.MyListView();
+            this.chWatchFolderFolderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWatchFolderFilter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWatchFolderIncludeSubdirectories = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnWatchFolderRemove = new System.Windows.Forms.Button();
             this.btnWatchFolderAdd = new System.Windows.Forms.Button();
             this.tpTools = new System.Windows.Forms.TabPage();
@@ -271,27 +293,10 @@
             this.lblToolsScreenColorPickerInfoText = new System.Windows.Forms.Label();
             this.txtToolsScreenColorPickerFormat = new System.Windows.Forms.TextBox();
             this.lblToolsScreenColorPickerFormat = new System.Windows.Forms.Label();
-            this.chkOverrideToolsSettings = new System.Windows.Forms.CheckBox();
+            this.cbOverrideToolsSettings = new System.Windows.Forms.CheckBox();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
-            this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.btnActions = new System.Windows.Forms.Button();
-            this.btnAfterCapture = new ShareX.HelpersLib.MenuButton();
-            this.btnAfterUpload = new ShareX.HelpersLib.MenuButton();
-            this.btnDestinations = new ShareX.HelpersLib.MenuButton();
-            this.btnTask = new ShareX.HelpersLib.MenuButton();
-            this.lvUploaderFiltersList = new ShareX.HelpersLib.MyListView();
-            this.chUploaderFiltersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chUploaderFiltersExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvActions = new ShareX.HelpersLib.MyListView();
-            this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvWatchFolderList = new ShareX.HelpersLib.MyListView();
-            this.chWatchFolderFolderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chWatchFolderFilter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chWatchFolderIncludeSubdirectories = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
@@ -326,6 +331,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpRegionCapture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).BeginInit();
             this.flpRegionCaptureFixedSize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeHeight)).BeginInit();
@@ -420,13 +426,14 @@
             // tpTask
             // 
             this.tpTask.BackColor = System.Drawing.SystemColors.Window;
+            this.tpTask.Controls.Add(this.lblTask);
             this.tpTask.Controls.Add(this.btnScreenshotsFolderBrowse);
             this.tpTask.Controls.Add(this.txtScreenshotsFolder);
             this.tpTask.Controls.Add(this.cbOverrideScreenshotsFolder);
+            this.tpTask.Controls.Add(this.cbCustomUploaders);
             this.tpTask.Controls.Add(this.cbOverrideCustomUploader);
-            this.tpTask.Controls.Add(this.chkOverrideCustomUploader);
-            this.tpTask.Controls.Add(this.chkOverrideFTP);
-            this.tpTask.Controls.Add(this.cboFTPaccounts);
+            this.tpTask.Controls.Add(this.cbOverrideFTPAccount);
+            this.tpTask.Controls.Add(this.cbFTPAccounts);
             this.tpTask.Controls.Add(this.tbDescription);
             this.tpTask.Controls.Add(this.btnAfterCapture);
             this.tpTask.Controls.Add(this.btnAfterUpload);
@@ -438,6 +445,11 @@
             this.tpTask.Controls.Add(this.lblDescription);
             resources.ApplyResources(this.tpTask, "tpTask");
             this.tpTask.Name = "tpTask";
+            // 
+            // lblTask
+            // 
+            resources.ApplyResources(this.lblTask, "lblTask");
+            this.lblTask.Name = "lblTask";
             // 
             // btnScreenshotsFolderBrowse
             // 
@@ -459,35 +471,59 @@
             this.cbOverrideScreenshotsFolder.UseVisualStyleBackColor = true;
             this.cbOverrideScreenshotsFolder.CheckedChanged += new System.EventHandler(this.cbOverrideScreenshotsFolder_CheckedChanged);
             // 
+            // cbCustomUploaders
+            // 
+            this.cbCustomUploaders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCustomUploaders.FormattingEnabled = true;
+            resources.ApplyResources(this.cbCustomUploaders, "cbCustomUploaders");
+            this.cbCustomUploaders.Name = "cbCustomUploaders";
+            this.cbCustomUploaders.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaders_SelectedIndexChanged);
+            // 
             // cbOverrideCustomUploader
             // 
-            this.cbOverrideCustomUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbOverrideCustomUploader.FormattingEnabled = true;
             resources.ApplyResources(this.cbOverrideCustomUploader, "cbOverrideCustomUploader");
             this.cbOverrideCustomUploader.Name = "cbOverrideCustomUploader";
-            this.cbOverrideCustomUploader.SelectedIndexChanged += new System.EventHandler(this.cbOverrideCustomUploader_SelectedIndexChanged);
+            this.cbOverrideCustomUploader.UseVisualStyleBackColor = true;
+            this.cbOverrideCustomUploader.CheckedChanged += new System.EventHandler(this.cbOverrideCustomUploader_CheckedChanged);
             // 
-            // chkOverrideCustomUploader
+            // cbOverrideFTPAccount
             // 
-            resources.ApplyResources(this.chkOverrideCustomUploader, "chkOverrideCustomUploader");
-            this.chkOverrideCustomUploader.Name = "chkOverrideCustomUploader";
-            this.chkOverrideCustomUploader.UseVisualStyleBackColor = true;
-            this.chkOverrideCustomUploader.CheckedChanged += new System.EventHandler(this.chkOverrideCustomUploader_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideFTPAccount, "cbOverrideFTPAccount");
+            this.cbOverrideFTPAccount.Name = "cbOverrideFTPAccount";
+            this.cbOverrideFTPAccount.UseVisualStyleBackColor = true;
+            this.cbOverrideFTPAccount.CheckedChanged += new System.EventHandler(this.cbOverrideFTPAccount_CheckedChanged);
             // 
-            // chkOverrideFTP
+            // cbFTPAccounts
             // 
-            resources.ApplyResources(this.chkOverrideFTP, "chkOverrideFTP");
-            this.chkOverrideFTP.Name = "chkOverrideFTP";
-            this.chkOverrideFTP.UseVisualStyleBackColor = true;
-            this.chkOverrideFTP.CheckedChanged += new System.EventHandler(this.chkOverrideFTP_CheckedChanged);
+            this.cbFTPAccounts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFTPAccounts.FormattingEnabled = true;
+            resources.ApplyResources(this.cbFTPAccounts, "cbFTPAccounts");
+            this.cbFTPAccounts.Name = "cbFTPAccounts";
+            this.cbFTPAccounts.SelectedIndexChanged += new System.EventHandler(this.cbFTPAccounts_SelectedIndexChanged);
             // 
-            // cboFTPaccounts
+            // btnAfterCapture
             // 
-            this.cboFTPaccounts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFTPaccounts.FormattingEnabled = true;
-            resources.ApplyResources(this.cboFTPaccounts, "cboFTPaccounts");
-            this.cboFTPaccounts.Name = "cboFTPaccounts";
-            this.cboFTPaccounts.SelectedIndexChanged += new System.EventHandler(this.cboFTPaccounts_SelectedIndexChanged);
+            resources.ApplyResources(this.btnAfterCapture, "btnAfterCapture");
+            this.btnAfterCapture.Menu = this.cmsAfterCapture;
+            this.btnAfterCapture.Name = "btnAfterCapture";
+            this.btnAfterCapture.UseMnemonic = false;
+            this.btnAfterCapture.UseVisualStyleBackColor = true;
+            // 
+            // btnAfterUpload
+            // 
+            resources.ApplyResources(this.btnAfterUpload, "btnAfterUpload");
+            this.btnAfterUpload.Menu = this.cmsAfterUpload;
+            this.btnAfterUpload.Name = "btnAfterUpload";
+            this.btnAfterUpload.UseMnemonic = false;
+            this.btnAfterUpload.UseVisualStyleBackColor = true;
+            // 
+            // btnDestinations
+            // 
+            resources.ApplyResources(this.btnDestinations, "btnDestinations");
+            this.btnDestinations.Menu = this.cmsDestinations;
+            this.btnDestinations.Name = "btnDestinations";
+            this.btnDestinations.UseMnemonic = false;
+            this.btnDestinations.UseVisualStyleBackColor = true;
             // 
             // cmsDestinations
             // 
@@ -530,6 +566,15 @@
             this.tsmiURLSharingServices.Name = "tsmiURLSharingServices";
             resources.ApplyResources(this.tsmiURLSharingServices, "tsmiURLSharingServices");
             // 
+            // btnTask
+            // 
+            this.btnTask.Image = global::ShareX.Properties.Resources.gear;
+            resources.ApplyResources(this.btnTask, "btnTask");
+            this.btnTask.Menu = this.cmsTask;
+            this.btnTask.Name = "btnTask";
+            this.btnTask.UseMnemonic = false;
+            this.btnTask.UseVisualStyleBackColor = true;
+            // 
             // tpGeneral
             // 
             this.tpGeneral.BackColor = System.Drawing.SystemColors.Window;
@@ -547,19 +592,19 @@
             // 
             // tpGeneralMain
             // 
-            this.tpGeneralMain.Controls.Add(this.chkOverrideGeneralSettings);
+            this.tpGeneralMain.Controls.Add(this.cbOverrideGeneralSettings);
             resources.ApplyResources(this.tpGeneralMain, "tpGeneralMain");
             this.tpGeneralMain.Name = "tpGeneralMain";
             this.tpGeneralMain.UseVisualStyleBackColor = true;
             // 
-            // chkOverrideGeneralSettings
+            // cbOverrideGeneralSettings
             // 
-            resources.ApplyResources(this.chkOverrideGeneralSettings, "chkOverrideGeneralSettings");
-            this.chkOverrideGeneralSettings.Checked = true;
-            this.chkOverrideGeneralSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOverrideGeneralSettings.Name = "chkOverrideGeneralSettings";
-            this.chkOverrideGeneralSettings.UseVisualStyleBackColor = true;
-            this.chkOverrideGeneralSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultGeneralSettings_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideGeneralSettings, "cbOverrideGeneralSettings");
+            this.cbOverrideGeneralSettings.Checked = true;
+            this.cbOverrideGeneralSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOverrideGeneralSettings.Name = "cbOverrideGeneralSettings";
+            this.cbOverrideGeneralSettings.UseVisualStyleBackColor = true;
+            this.cbOverrideGeneralSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultGeneralSettings_CheckedChanged);
             // 
             // tpNotifications
             // 
@@ -651,6 +696,7 @@
             // 
             // gbToastWindow
             // 
+            this.gbToastWindow.Controls.Add(this.cbToastWindowAutoHide);
             this.gbToastWindow.Controls.Add(this.lblToastWindowFadeDurationSeconds);
             this.gbToastWindow.Controls.Add(this.lblToastWindowDurationSeconds);
             this.gbToastWindow.Controls.Add(this.lblToastWindowSizeX);
@@ -672,6 +718,13 @@
             resources.ApplyResources(this.gbToastWindow, "gbToastWindow");
             this.gbToastWindow.Name = "gbToastWindow";
             this.gbToastWindow.TabStop = false;
+            // 
+            // cbToastWindowAutoHide
+            // 
+            resources.ApplyResources(this.cbToastWindowAutoHide, "cbToastWindowAutoHide");
+            this.cbToastWindowAutoHide.Name = "cbToastWindowAutoHide";
+            this.cbToastWindowAutoHide.UseVisualStyleBackColor = true;
+            this.cbToastWindowAutoHide.CheckedChanged += new System.EventHandler(this.cbToastWindowAutoHide_CheckedChanged);
             // 
             // lblToastWindowFadeDurationSeconds
             // 
@@ -764,6 +817,7 @@
             // 
             // nudToastWindowFadeDuration
             // 
+            this.nudToastWindowFadeDuration.DecimalPlaces = 1;
             resources.ApplyResources(this.nudToastWindowFadeDuration, "nudToastWindowFadeDuration");
             this.nudToastWindowFadeDuration.Maximum = new decimal(new int[] {
             30,
@@ -775,6 +829,7 @@
             // 
             // nudToastWindowDuration
             // 
+            this.nudToastWindowDuration.DecimalPlaces = 1;
             resources.ApplyResources(this.nudToastWindowDuration, "nudToastWindowDuration");
             this.nudToastWindowDuration.Maximum = new decimal(new int[] {
             30,
@@ -867,12 +922,13 @@
             // 
             this.tpQuality.BackColor = System.Drawing.SystemColors.Window;
             this.tpQuality.Controls.Add(this.pImage);
-            this.tpQuality.Controls.Add(this.chkOverrideImageSettings);
+            this.tpQuality.Controls.Add(this.cbOverrideImageSettings);
             resources.ApplyResources(this.tpQuality, "tpQuality");
             this.tpQuality.Name = "tpQuality";
             // 
             // pImage
             // 
+            this.pImage.Controls.Add(this.cbImageAutoJPEGQuality);
             this.pImage.Controls.Add(this.cbImagePNGBitDepth);
             this.pImage.Controls.Add(this.lblImagePNGBitDepth);
             this.pImage.Controls.Add(this.cbImageAutoUseJPEG);
@@ -889,6 +945,13 @@
             this.pImage.Controls.Add(this.cbImageGIFQuality);
             resources.ApplyResources(this.pImage, "pImage");
             this.pImage.Name = "pImage";
+            // 
+            // cbImageAutoJPEGQuality
+            // 
+            resources.ApplyResources(this.cbImageAutoJPEGQuality, "cbImageAutoJPEGQuality");
+            this.cbImageAutoJPEGQuality.Name = "cbImageAutoJPEGQuality";
+            this.cbImageAutoJPEGQuality.UseVisualStyleBackColor = true;
+            this.cbImageAutoJPEGQuality.CheckedChanged += new System.EventHandler(this.cbImageAutoJPEGQuality_CheckedChanged);
             // 
             // cbImagePNGBitDepth
             // 
@@ -996,20 +1059,20 @@
             this.cbImageGIFQuality.Name = "cbImageGIFQuality";
             this.cbImageGIFQuality.SelectedIndexChanged += new System.EventHandler(this.cbImageGIFQuality_SelectedIndexChanged);
             // 
-            // chkOverrideImageSettings
+            // cbOverrideImageSettings
             // 
-            resources.ApplyResources(this.chkOverrideImageSettings, "chkOverrideImageSettings");
-            this.chkOverrideImageSettings.Checked = true;
-            this.chkOverrideImageSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOverrideImageSettings.Name = "chkOverrideImageSettings";
-            this.chkOverrideImageSettings.UseVisualStyleBackColor = true;
-            this.chkOverrideImageSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultImageSettings_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideImageSettings, "cbOverrideImageSettings");
+            this.cbOverrideImageSettings.Checked = true;
+            this.cbOverrideImageSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOverrideImageSettings.Name = "cbOverrideImageSettings";
+            this.cbOverrideImageSettings.UseVisualStyleBackColor = true;
+            this.cbOverrideImageSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultImageSettings_CheckedChanged);
             // 
             // tpEffects
             // 
             this.tpEffects.BackColor = System.Drawing.SystemColors.Window;
             this.tpEffects.Controls.Add(this.lblImageEffectsNote);
-            this.tpEffects.Controls.Add(this.chkShowImageEffectsWindowAfterCapture);
+            this.tpEffects.Controls.Add(this.cbShowImageEffectsWindowAfterCapture);
             this.tpEffects.Controls.Add(this.cbImageEffectOnlyRegionCapture);
             this.tpEffects.Controls.Add(this.btnImageEffects);
             resources.ApplyResources(this.tpEffects, "tpEffects");
@@ -1020,12 +1083,12 @@
             resources.ApplyResources(this.lblImageEffectsNote, "lblImageEffectsNote");
             this.lblImageEffectsNote.Name = "lblImageEffectsNote";
             // 
-            // chkShowImageEffectsWindowAfterCapture
+            // cbShowImageEffectsWindowAfterCapture
             // 
-            resources.ApplyResources(this.chkShowImageEffectsWindowAfterCapture, "chkShowImageEffectsWindowAfterCapture");
-            this.chkShowImageEffectsWindowAfterCapture.Name = "chkShowImageEffectsWindowAfterCapture";
-            this.chkShowImageEffectsWindowAfterCapture.UseVisualStyleBackColor = true;
-            this.chkShowImageEffectsWindowAfterCapture.CheckedChanged += new System.EventHandler(this.chkShowImageEffectsWindowAfterCapture_CheckedChanged);
+            resources.ApplyResources(this.cbShowImageEffectsWindowAfterCapture, "cbShowImageEffectsWindowAfterCapture");
+            this.cbShowImageEffectsWindowAfterCapture.Name = "cbShowImageEffectsWindowAfterCapture";
+            this.cbShowImageEffectsWindowAfterCapture.UseVisualStyleBackColor = true;
+            this.cbShowImageEffectsWindowAfterCapture.CheckedChanged += new System.EventHandler(this.cbShowImageEffectsWindowAfterCapture_CheckedChanged);
             // 
             // cbImageEffectOnlyRegionCapture
             // 
@@ -1131,7 +1194,7 @@
             // 
             this.tpCaptureGeneral.BackColor = System.Drawing.SystemColors.Window;
             this.tpCaptureGeneral.Controls.Add(this.pCapture);
-            this.tpCaptureGeneral.Controls.Add(this.chkOverrideCaptureSettings);
+            this.tpCaptureGeneral.Controls.Add(this.cbOverrideCaptureSettings);
             resources.ApplyResources(this.tpCaptureGeneral, "tpCaptureGeneral");
             this.tpCaptureGeneral.Name = "tpCaptureGeneral";
             // 
@@ -1321,26 +1384,34 @@
             // nudCaptureShadowOffset
             // 
             resources.ApplyResources(this.nudCaptureShadowOffset, "nudCaptureShadowOffset");
+            this.nudCaptureShadowOffset.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.nudCaptureShadowOffset.Name = "nudCaptureShadowOffset";
             this.nudCaptureShadowOffset.Value = new decimal(new int[] {
-            20,
+            100,
             0,
             0,
             0});
             this.nudCaptureShadowOffset.ValueChanged += new System.EventHandler(this.nudCaptureShadowOffset_ValueChanged);
             // 
-            // chkOverrideCaptureSettings
+            // cbOverrideCaptureSettings
             // 
-            resources.ApplyResources(this.chkOverrideCaptureSettings, "chkOverrideCaptureSettings");
-            this.chkOverrideCaptureSettings.Checked = true;
-            this.chkOverrideCaptureSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOverrideCaptureSettings.Name = "chkOverrideCaptureSettings";
-            this.chkOverrideCaptureSettings.UseVisualStyleBackColor = true;
-            this.chkOverrideCaptureSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultCaptureSettings_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideCaptureSettings, "cbOverrideCaptureSettings");
+            this.cbOverrideCaptureSettings.Checked = true;
+            this.cbOverrideCaptureSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOverrideCaptureSettings.Name = "cbOverrideCaptureSettings";
+            this.cbOverrideCaptureSettings.UseVisualStyleBackColor = true;
+            this.cbOverrideCaptureSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultCaptureSettings_CheckedChanged);
             // 
             // tpRegionCapture
             // 
             this.tpRegionCapture.BackColor = System.Drawing.SystemColors.Window;
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureActiveMonitorMode);
+            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureFPSLimit);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureFPSLimit);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowFPS);
             this.tpRegionCapture.Controls.Add(this.flpRegionCaptureFixedSize);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureIsFixedSize);
@@ -1373,6 +1444,29 @@
             this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelSize);
             resources.ApplyResources(this.tpRegionCapture, "tpRegionCapture");
             this.tpRegionCapture.Name = "tpRegionCapture";
+            // 
+            // cbRegionCaptureActiveMonitorMode
+            // 
+            resources.ApplyResources(this.cbRegionCaptureActiveMonitorMode, "cbRegionCaptureActiveMonitorMode");
+            this.cbRegionCaptureActiveMonitorMode.Name = "cbRegionCaptureActiveMonitorMode";
+            this.cbRegionCaptureActiveMonitorMode.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureActiveMonitorMode.CheckedChanged += new System.EventHandler(this.cbRegionCaptureActiveMonitorMode_CheckedChanged);
+            // 
+            // nudRegionCaptureFPSLimit
+            // 
+            resources.ApplyResources(this.nudRegionCaptureFPSLimit, "nudRegionCaptureFPSLimit");
+            this.nudRegionCaptureFPSLimit.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureFPSLimit.Name = "nudRegionCaptureFPSLimit";
+            this.nudRegionCaptureFPSLimit.ValueChanged += new System.EventHandler(this.nudRegionCaptureFPSLimit_ValueChanged);
+            // 
+            // lblRegionCaptureFPSLimit
+            // 
+            resources.ApplyResources(this.lblRegionCaptureFPSLimit, "lblRegionCaptureFPSLimit");
+            this.lblRegionCaptureFPSLimit.Name = "lblRegionCaptureFPSLimit";
             // 
             // cbRegionCaptureShowFPS
             // 
@@ -1718,7 +1812,7 @@
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderShowCursor);
             this.tpScreenRecorder.Controls.Add(this.btnScreenRecorderFFmpegOptions);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderStartDelay);
-            this.tpScreenRecorder.Controls.Add(this.chkScreenRecordAutoStart);
+            this.tpScreenRecorder.Controls.Add(this.cbScreenRecordAutoStart);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecorderFixedDuration);
             this.tpScreenRecorder.Controls.Add(this.nudScreenRecordFPS);
             this.tpScreenRecorder.Controls.Add(this.lblScreenRecordFPS);
@@ -1770,12 +1864,12 @@
             resources.ApplyResources(this.lblScreenRecorderStartDelay, "lblScreenRecorderStartDelay");
             this.lblScreenRecorderStartDelay.Name = "lblScreenRecorderStartDelay";
             // 
-            // chkScreenRecordAutoStart
+            // cbScreenRecordAutoStart
             // 
-            resources.ApplyResources(this.chkScreenRecordAutoStart, "chkScreenRecordAutoStart");
-            this.chkScreenRecordAutoStart.Name = "chkScreenRecordAutoStart";
-            this.chkScreenRecordAutoStart.UseVisualStyleBackColor = true;
-            this.chkScreenRecordAutoStart.CheckedChanged += new System.EventHandler(this.chkScreenRecordAutoStart_CheckedChanged);
+            resources.ApplyResources(this.cbScreenRecordAutoStart, "cbScreenRecordAutoStart");
+            this.cbScreenRecordAutoStart.Name = "cbScreenRecordAutoStart";
+            this.cbScreenRecordAutoStart.UseVisualStyleBackColor = true;
+            this.cbScreenRecordAutoStart.CheckedChanged += new System.EventHandler(this.cbScreenRecordAutoStart_CheckedChanged);
             // 
             // lblScreenRecorderFixedDuration
             // 
@@ -1892,8 +1986,8 @@
             // 
             // tpOCR
             // 
+            this.tpOCR.Controls.Add(this.btnCaptureOCRHelp);
             this.tpOCR.Controls.Add(this.cbCaptureOCRAutoCopy);
-            this.tpOCR.Controls.Add(this.cbCaptureOCRProcessOnLoad);
             this.tpOCR.Controls.Add(this.cbCaptureOCRSilent);
             this.tpOCR.Controls.Add(this.lblOCRDefaultLanguage);
             this.tpOCR.Controls.Add(this.cbCaptureOCRDefaultLanguage);
@@ -1901,19 +1995,20 @@
             this.tpOCR.Name = "tpOCR";
             this.tpOCR.UseVisualStyleBackColor = true;
             // 
+            // btnCaptureOCRHelp
+            // 
+            this.btnCaptureOCRHelp.Image = global::ShareX.Properties.Resources.question;
+            resources.ApplyResources(this.btnCaptureOCRHelp, "btnCaptureOCRHelp");
+            this.btnCaptureOCRHelp.Name = "btnCaptureOCRHelp";
+            this.btnCaptureOCRHelp.UseVisualStyleBackColor = true;
+            this.btnCaptureOCRHelp.Click += new System.EventHandler(this.btnCaptureOCRHelp_Click);
+            // 
             // cbCaptureOCRAutoCopy
             // 
             resources.ApplyResources(this.cbCaptureOCRAutoCopy, "cbCaptureOCRAutoCopy");
             this.cbCaptureOCRAutoCopy.Name = "cbCaptureOCRAutoCopy";
             this.cbCaptureOCRAutoCopy.UseVisualStyleBackColor = true;
             this.cbCaptureOCRAutoCopy.CheckedChanged += new System.EventHandler(this.cbCaptureOCRAutoCopy_CheckedChanged);
-            // 
-            // cbCaptureOCRProcessOnLoad
-            // 
-            resources.ApplyResources(this.cbCaptureOCRProcessOnLoad, "cbCaptureOCRProcessOnLoad");
-            this.cbCaptureOCRProcessOnLoad.Name = "cbCaptureOCRProcessOnLoad";
-            this.cbCaptureOCRProcessOnLoad.UseVisualStyleBackColor = true;
-            this.cbCaptureOCRProcessOnLoad.CheckedChanged += new System.EventHandler(this.cbCaptureOCRProcessOnLoad_CheckedChanged);
             // 
             // cbCaptureOCRSilent
             // 
@@ -1955,18 +2050,18 @@
             // tpUploadMain
             // 
             this.tpUploadMain.BackColor = System.Drawing.SystemColors.Window;
-            this.tpUploadMain.Controls.Add(this.chkOverrideUploadSettings);
+            this.tpUploadMain.Controls.Add(this.cbOverrideUploadSettings);
             resources.ApplyResources(this.tpUploadMain, "tpUploadMain");
             this.tpUploadMain.Name = "tpUploadMain";
             // 
-            // chkOverrideUploadSettings
+            // cbOverrideUploadSettings
             // 
-            resources.ApplyResources(this.chkOverrideUploadSettings, "chkOverrideUploadSettings");
-            this.chkOverrideUploadSettings.Checked = true;
-            this.chkOverrideUploadSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOverrideUploadSettings.Name = "chkOverrideUploadSettings";
-            this.chkOverrideUploadSettings.UseVisualStyleBackColor = true;
-            this.chkOverrideUploadSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultUploadSettings_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideUploadSettings, "cbOverrideUploadSettings");
+            this.cbOverrideUploadSettings.Checked = true;
+            this.cbOverrideUploadSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOverrideUploadSettings.Name = "cbOverrideUploadSettings";
+            this.cbOverrideUploadSettings.UseVisualStyleBackColor = true;
+            this.cbOverrideUploadSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultUploadSettings_CheckedChanged);
             // 
             // tpFileNaming
             // 
@@ -1980,7 +2075,6 @@
             this.tpFileNaming.Controls.Add(this.lblAutoIncrementNumber);
             this.tpFileNaming.Controls.Add(this.nudAutoIncrementNumber);
             this.tpFileNaming.Controls.Add(this.cbFileUploadReplaceProblematicCharacters);
-            this.tpFileNaming.Controls.Add(this.cbRegionCaptureUseWindowPattern);
             this.tpFileNaming.Controls.Add(this.cbNameFormatCustomTimeZone);
             this.tpFileNaming.Controls.Add(this.lblNameFormatPatternPreview);
             this.tpFileNaming.Controls.Add(this.lblNameFormatPatternActiveWindow);
@@ -2050,13 +2144,6 @@
             this.cbFileUploadReplaceProblematicCharacters.Name = "cbFileUploadReplaceProblematicCharacters";
             this.cbFileUploadReplaceProblematicCharacters.UseVisualStyleBackColor = true;
             this.cbFileUploadReplaceProblematicCharacters.CheckedChanged += new System.EventHandler(this.cbFileUploadReplaceProblematicCharacters_CheckedChanged);
-            // 
-            // cbRegionCaptureUseWindowPattern
-            // 
-            resources.ApplyResources(this.cbRegionCaptureUseWindowPattern, "cbRegionCaptureUseWindowPattern");
-            this.cbRegionCaptureUseWindowPattern.Name = "cbRegionCaptureUseWindowPattern";
-            this.cbRegionCaptureUseWindowPattern.UseVisualStyleBackColor = true;
-            this.cbRegionCaptureUseWindowPattern.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseWindowPattern_CheckedChanged);
             // 
             // cbNameFormatCustomTimeZone
             // 
@@ -2165,6 +2252,28 @@
             resources.ApplyResources(this.tpUploaderFilters, "tpUploaderFilters");
             this.tpUploaderFilters.Name = "tpUploaderFilters";
             // 
+            // lvUploaderFiltersList
+            // 
+            resources.ApplyResources(this.lvUploaderFiltersList, "lvUploaderFiltersList");
+            this.lvUploaderFiltersList.AutoFillColumn = true;
+            this.lvUploaderFiltersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chUploaderFiltersName,
+            this.chUploaderFiltersExtension});
+            this.lvUploaderFiltersList.FullRowSelect = true;
+            this.lvUploaderFiltersList.HideSelection = false;
+            this.lvUploaderFiltersList.Name = "lvUploaderFiltersList";
+            this.lvUploaderFiltersList.UseCompatibleStateImageBehavior = false;
+            this.lvUploaderFiltersList.View = System.Windows.Forms.View.Details;
+            this.lvUploaderFiltersList.SelectedIndexChanged += new System.EventHandler(this.lvUploaderFiltersList_SelectedIndexChanged);
+            // 
+            // chUploaderFiltersName
+            // 
+            resources.ApplyResources(this.chUploaderFiltersName, "chUploaderFiltersName");
+            // 
+            // chUploaderFiltersExtension
+            // 
+            resources.ApplyResources(this.chUploaderFiltersExtension, "chUploaderFiltersExtension");
+            // 
             // btnUploaderFiltersRemove
             // 
             resources.ApplyResources(this.btnUploaderFiltersRemove, "btnUploaderFiltersRemove");
@@ -2217,7 +2326,7 @@
             // 
             this.tpActions.BackColor = System.Drawing.SystemColors.Window;
             this.tpActions.Controls.Add(this.pActions);
-            this.tpActions.Controls.Add(this.chkOverrideActions);
+            this.tpActions.Controls.Add(this.cbOverrideActions);
             resources.ApplyResources(this.tpActions, "tpActions");
             this.tpActions.Name = "tpActions";
             // 
@@ -2232,6 +2341,13 @@
             this.pActions.Controls.Add(this.btnActionsRemove);
             resources.ApplyResources(this.pActions, "pActions");
             this.pActions.Name = "pActions";
+            // 
+            // btnActions
+            // 
+            resources.ApplyResources(this.btnActions, "btnActions");
+            this.btnActions.Name = "btnActions";
+            this.btnActions.UseVisualStyleBackColor = true;
+            this.btnActions.Click += new System.EventHandler(this.btnActions_Click);
             // 
             // lblActionsNote
             // 
@@ -2252,6 +2368,45 @@
             this.btnActionsAdd.UseVisualStyleBackColor = true;
             this.btnActionsAdd.Click += new System.EventHandler(this.btnActionsAdd_Click);
             // 
+            // lvActions
+            // 
+            this.lvActions.AllowDrop = true;
+            this.lvActions.AllowItemDrag = true;
+            resources.ApplyResources(this.lvActions, "lvActions");
+            this.lvActions.AutoFillColumn = true;
+            this.lvActions.AutoFillColumnIndex = 2;
+            this.lvActions.CheckBoxes = true;
+            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chActionsName,
+            this.chActionsPath,
+            this.chActionsArgs,
+            this.chActionsExtensions});
+            this.lvActions.FullRowSelect = true;
+            this.lvActions.HideSelection = false;
+            this.lvActions.MultiSelect = false;
+            this.lvActions.Name = "lvActions";
+            this.lvActions.UseCompatibleStateImageBehavior = false;
+            this.lvActions.View = System.Windows.Forms.View.Details;
+            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
+            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
+            this.lvActions.SelectedIndexChanged += new System.EventHandler(this.lvActions_SelectedIndexChanged);
+            // 
+            // chActionsName
+            // 
+            resources.ApplyResources(this.chActionsName, "chActionsName");
+            // 
+            // chActionsPath
+            // 
+            resources.ApplyResources(this.chActionsPath, "chActionsPath");
+            // 
+            // chActionsArgs
+            // 
+            resources.ApplyResources(this.chActionsArgs, "chActionsArgs");
+            // 
+            // chActionsExtensions
+            // 
+            resources.ApplyResources(this.chActionsExtensions, "chActionsExtensions");
+            // 
             // btnActionsEdit
             // 
             resources.ApplyResources(this.btnActionsEdit, "btnActionsEdit");
@@ -2266,14 +2421,14 @@
             this.btnActionsRemove.UseVisualStyleBackColor = true;
             this.btnActionsRemove.Click += new System.EventHandler(this.btnActionsRemove_Click);
             // 
-            // chkOverrideActions
+            // cbOverrideActions
             // 
-            resources.ApplyResources(this.chkOverrideActions, "chkOverrideActions");
-            this.chkOverrideActions.Checked = true;
-            this.chkOverrideActions.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOverrideActions.Name = "chkOverrideActions";
-            this.chkOverrideActions.UseVisualStyleBackColor = true;
-            this.chkOverrideActions.CheckedChanged += new System.EventHandler(this.chkUseDefaultActions_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideActions, "cbOverrideActions");
+            this.cbOverrideActions.Checked = true;
+            this.cbOverrideActions.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOverrideActions.Name = "cbOverrideActions";
+            this.cbOverrideActions.UseVisualStyleBackColor = true;
+            this.cbOverrideActions.CheckedChanged += new System.EventHandler(this.cbUseDefaultActions_CheckedChanged);
             // 
             // tpWatchFolders
             // 
@@ -2300,6 +2455,33 @@
             this.cbWatchFolderEnabled.UseVisualStyleBackColor = true;
             this.cbWatchFolderEnabled.CheckedChanged += new System.EventHandler(this.cbWatchFolderEnabled_CheckedChanged);
             // 
+            // lvWatchFolderList
+            // 
+            resources.ApplyResources(this.lvWatchFolderList, "lvWatchFolderList");
+            this.lvWatchFolderList.AutoFillColumn = true;
+            this.lvWatchFolderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chWatchFolderFolderPath,
+            this.chWatchFolderFilter,
+            this.chWatchFolderIncludeSubdirectories});
+            this.lvWatchFolderList.FullRowSelect = true;
+            this.lvWatchFolderList.HideSelection = false;
+            this.lvWatchFolderList.Name = "lvWatchFolderList";
+            this.lvWatchFolderList.UseCompatibleStateImageBehavior = false;
+            this.lvWatchFolderList.View = System.Windows.Forms.View.Details;
+            this.lvWatchFolderList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvWatchFolderList_MouseDoubleClick);
+            // 
+            // chWatchFolderFolderPath
+            // 
+            resources.ApplyResources(this.chWatchFolderFolderPath, "chWatchFolderFolderPath");
+            // 
+            // chWatchFolderFilter
+            // 
+            resources.ApplyResources(this.chWatchFolderFilter, "chWatchFolderFilter");
+            // 
+            // chWatchFolderIncludeSubdirectories
+            // 
+            resources.ApplyResources(this.chWatchFolderIncludeSubdirectories, "chWatchFolderIncludeSubdirectories");
+            // 
             // btnWatchFolderRemove
             // 
             resources.ApplyResources(this.btnWatchFolderRemove, "btnWatchFolderRemove");
@@ -2318,7 +2500,7 @@
             // 
             this.tpTools.BackColor = System.Drawing.SystemColors.Window;
             this.tpTools.Controls.Add(this.pTools);
-            this.tpTools.Controls.Add(this.chkOverrideToolsSettings);
+            this.tpTools.Controls.Add(this.cbOverrideToolsSettings);
             resources.ApplyResources(this.tpTools, "tpTools");
             this.tpTools.Name = "tpTools";
             // 
@@ -2366,20 +2548,20 @@
             resources.ApplyResources(this.lblToolsScreenColorPickerFormat, "lblToolsScreenColorPickerFormat");
             this.lblToolsScreenColorPickerFormat.Name = "lblToolsScreenColorPickerFormat";
             // 
-            // chkOverrideToolsSettings
+            // cbOverrideToolsSettings
             // 
-            resources.ApplyResources(this.chkOverrideToolsSettings, "chkOverrideToolsSettings");
-            this.chkOverrideToolsSettings.Checked = true;
-            this.chkOverrideToolsSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOverrideToolsSettings.Name = "chkOverrideToolsSettings";
-            this.chkOverrideToolsSettings.UseVisualStyleBackColor = true;
-            this.chkOverrideToolsSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultToolsSettings_CheckedChanged);
+            resources.ApplyResources(this.cbOverrideToolsSettings, "cbOverrideToolsSettings");
+            this.cbOverrideToolsSettings.Checked = true;
+            this.cbOverrideToolsSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOverrideToolsSettings.Name = "cbOverrideToolsSettings";
+            this.cbOverrideToolsSettings.UseVisualStyleBackColor = true;
+            this.cbOverrideToolsSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultToolsSettings_CheckedChanged);
             // 
             // tpAdvanced
             // 
             this.tpAdvanced.BackColor = System.Drawing.SystemColors.Window;
             this.tpAdvanced.Controls.Add(this.pgTaskSettings);
-            this.tpAdvanced.Controls.Add(this.chkOverrideAdvancedSettings);
+            this.tpAdvanced.Controls.Add(this.cbOverrideAdvancedSettings);
             resources.ApplyResources(this.tpAdvanced, "tpAdvanced");
             this.tpAdvanced.Name = "tpAdvanced";
             // 
@@ -2390,141 +2572,14 @@
             this.pgTaskSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgTaskSettings.ToolbarVisible = false;
             // 
-            // chkOverrideAdvancedSettings
+            // cbOverrideAdvancedSettings
             // 
-            resources.ApplyResources(this.chkOverrideAdvancedSettings, "chkOverrideAdvancedSettings");
-            this.chkOverrideAdvancedSettings.Checked = true;
-            this.chkOverrideAdvancedSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOverrideAdvancedSettings.Name = "chkOverrideAdvancedSettings";
-            this.chkOverrideAdvancedSettings.UseVisualStyleBackColor = true;
-            this.chkOverrideAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
-            // 
-            // btnActions
-            // 
-            resources.ApplyResources(this.btnActions, "btnActions");
-            this.btnActions.Name = "btnActions";
-            this.btnActions.UseVisualStyleBackColor = true;
-            this.btnActions.Click += new System.EventHandler(this.btnActions_Click);
-            // 
-            // btnAfterCapture
-            // 
-            resources.ApplyResources(this.btnAfterCapture, "btnAfterCapture");
-            this.btnAfterCapture.Menu = this.cmsAfterCapture;
-            this.btnAfterCapture.Name = "btnAfterCapture";
-            this.btnAfterCapture.UseMnemonic = false;
-            this.btnAfterCapture.UseVisualStyleBackColor = true;
-            // 
-            // btnAfterUpload
-            // 
-            resources.ApplyResources(this.btnAfterUpload, "btnAfterUpload");
-            this.btnAfterUpload.Menu = this.cmsAfterUpload;
-            this.btnAfterUpload.Name = "btnAfterUpload";
-            this.btnAfterUpload.UseMnemonic = false;
-            this.btnAfterUpload.UseVisualStyleBackColor = true;
-            // 
-            // btnDestinations
-            // 
-            resources.ApplyResources(this.btnDestinations, "btnDestinations");
-            this.btnDestinations.Menu = this.cmsDestinations;
-            this.btnDestinations.Name = "btnDestinations";
-            this.btnDestinations.UseMnemonic = false;
-            this.btnDestinations.UseVisualStyleBackColor = true;
-            // 
-            // btnTask
-            // 
-            resources.ApplyResources(this.btnTask, "btnTask");
-            this.btnTask.Menu = this.cmsTask;
-            this.btnTask.Name = "btnTask";
-            this.btnTask.UseMnemonic = false;
-            this.btnTask.UseVisualStyleBackColor = true;
-            // 
-            // lvUploaderFiltersList
-            // 
-            resources.ApplyResources(this.lvUploaderFiltersList, "lvUploaderFiltersList");
-            this.lvUploaderFiltersList.AutoFillColumn = true;
-            this.lvUploaderFiltersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chUploaderFiltersName,
-            this.chUploaderFiltersExtension});
-            this.lvUploaderFiltersList.FullRowSelect = true;
-            this.lvUploaderFiltersList.HideSelection = false;
-            this.lvUploaderFiltersList.Name = "lvUploaderFiltersList";
-            this.lvUploaderFiltersList.UseCompatibleStateImageBehavior = false;
-            this.lvUploaderFiltersList.View = System.Windows.Forms.View.Details;
-            this.lvUploaderFiltersList.SelectedIndexChanged += new System.EventHandler(this.lvUploaderFiltersList_SelectedIndexChanged);
-            // 
-            // chUploaderFiltersName
-            // 
-            resources.ApplyResources(this.chUploaderFiltersName, "chUploaderFiltersName");
-            // 
-            // chUploaderFiltersExtension
-            // 
-            resources.ApplyResources(this.chUploaderFiltersExtension, "chUploaderFiltersExtension");
-            // 
-            // lvActions
-            // 
-            this.lvActions.AllowDrop = true;
-            this.lvActions.AllowItemDrag = true;
-            resources.ApplyResources(this.lvActions, "lvActions");
-            this.lvActions.AutoFillColumn = true;
-            this.lvActions.AutoFillColumnIndex = 2;
-            this.lvActions.CheckBoxes = true;
-            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chActionsName,
-            this.chActionsPath,
-            this.chActionsArgs,
-            this.chActionsExtensions});
-            this.lvActions.FullRowSelect = true;
-            this.lvActions.HideSelection = false;
-            this.lvActions.MultiSelect = false;
-            this.lvActions.Name = "lvActions";
-            this.lvActions.UseCompatibleStateImageBehavior = false;
-            this.lvActions.View = System.Windows.Forms.View.Details;
-            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
-            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
-            this.lvActions.SelectedIndexChanged += new System.EventHandler(this.lvActions_SelectedIndexChanged);
-            // 
-            // chActionsName
-            // 
-            resources.ApplyResources(this.chActionsName, "chActionsName");
-            // 
-            // chActionsPath
-            // 
-            resources.ApplyResources(this.chActionsPath, "chActionsPath");
-            // 
-            // chActionsArgs
-            // 
-            resources.ApplyResources(this.chActionsArgs, "chActionsArgs");
-            // 
-            // chActionsExtensions
-            // 
-            resources.ApplyResources(this.chActionsExtensions, "chActionsExtensions");
-            // 
-            // lvWatchFolderList
-            // 
-            resources.ApplyResources(this.lvWatchFolderList, "lvWatchFolderList");
-            this.lvWatchFolderList.AutoFillColumn = true;
-            this.lvWatchFolderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chWatchFolderFolderPath,
-            this.chWatchFolderFilter,
-            this.chWatchFolderIncludeSubdirectories});
-            this.lvWatchFolderList.FullRowSelect = true;
-            this.lvWatchFolderList.HideSelection = false;
-            this.lvWatchFolderList.Name = "lvWatchFolderList";
-            this.lvWatchFolderList.UseCompatibleStateImageBehavior = false;
-            this.lvWatchFolderList.View = System.Windows.Forms.View.Details;
-            this.lvWatchFolderList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvWatchFolderList_MouseDoubleClick);
-            // 
-            // chWatchFolderFolderPath
-            // 
-            resources.ApplyResources(this.chWatchFolderFolderPath, "chWatchFolderFolderPath");
-            // 
-            // chWatchFolderFilter
-            // 
-            resources.ApplyResources(this.chWatchFolderFilter, "chWatchFolderFilter");
-            // 
-            // chWatchFolderIncludeSubdirectories
-            // 
-            resources.ApplyResources(this.chWatchFolderIncludeSubdirectories, "chWatchFolderIncludeSubdirectories");
+            resources.ApplyResources(this.cbOverrideAdvancedSettings, "cbOverrideAdvancedSettings");
+            this.cbOverrideAdvancedSettings.Checked = true;
+            this.cbOverrideAdvancedSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOverrideAdvancedSettings.Name = "cbOverrideAdvancedSettings";
+            this.cbOverrideAdvancedSettings.UseVisualStyleBackColor = true;
+            this.cbOverrideAdvancedSettings.CheckedChanged += new System.EventHandler(this.cbUseDefaultAdvancedSettings_CheckedChanged);
             // 
             // tttvMain
             // 
@@ -2592,6 +2647,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
             this.tpRegionCapture.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).EndInit();
             this.flpRegionCaptureFixedSize.ResumeLayout(false);
             this.flpRegionCaptureFixedSize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).EndInit();
@@ -2701,12 +2757,12 @@
         private System.Windows.Forms.CheckBox cbClipboardUploadShortenURL;
         private System.Windows.Forms.TabPage tpAdvanced;
         private System.Windows.Forms.PropertyGrid pgTaskSettings;
-        private System.Windows.Forms.CheckBox chkOverrideImageSettings;
-        private System.Windows.Forms.CheckBox chkOverrideCaptureSettings;
-        private System.Windows.Forms.CheckBox chkOverrideActions;
-        private System.Windows.Forms.CheckBox chkOverrideUploadSettings;
+        private System.Windows.Forms.CheckBox cbOverrideImageSettings;
+        private System.Windows.Forms.CheckBox cbOverrideCaptureSettings;
+        private System.Windows.Forms.CheckBox cbOverrideActions;
+        private System.Windows.Forms.CheckBox cbOverrideUploadSettings;
         private System.Windows.Forms.Panel pActions;
-        private System.Windows.Forms.CheckBox chkOverrideAdvancedSettings;
+        private System.Windows.Forms.CheckBox cbOverrideAdvancedSettings;
         private System.Windows.Forms.CheckBox cbScreenRecorderFixedDuration;
         private System.Windows.Forms.NumericUpDown nudGIFFPS;
         private System.Windows.Forms.NumericUpDown nudScreenRecorderDuration;
@@ -2722,14 +2778,14 @@
         private System.Windows.Forms.TabPage tpGeneral;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterCapture;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterUpload;
-        private System.Windows.Forms.CheckBox chkOverrideGeneralSettings;
+        private System.Windows.Forms.CheckBox cbOverrideGeneralSettings;
         private System.Windows.Forms.TabPage tpTools;
         private System.Windows.Forms.NumericUpDown nudScreenRecorderStartDelay;
         private System.Windows.Forms.Button btnImageEffects;
         private System.Windows.Forms.CheckBox cbImageEffectOnlyRegionCapture;
-        private System.Windows.Forms.CheckBox chkShowImageEffectsWindowAfterCapture;
-        private System.Windows.Forms.CheckBox chkOverrideFTP;
-        private System.Windows.Forms.ComboBox cboFTPaccounts;
+        private System.Windows.Forms.CheckBox cbShowImageEffectsWindowAfterCapture;
+        private System.Windows.Forms.CheckBox cbOverrideFTPAccount;
+        private System.Windows.Forms.ComboBox cbFTPAccounts;
         private System.Windows.Forms.ContextMenuStrip cmsDestinations;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiTextUploaders;
@@ -2757,13 +2813,13 @@
         private System.Windows.Forms.Button btnActionsDuplicate;
         private System.Windows.Forms.Label lblImageEffectsNote;
         private System.Windows.Forms.Label lblCaptureShadowOffset;
-        private System.Windows.Forms.CheckBox chkScreenRecordAutoStart;
+        private System.Windows.Forms.CheckBox cbScreenRecordAutoStart;
         private System.Windows.Forms.Label lblScreenRecorderStartDelay;
         private HelpersLib.TabToTreeView tttvMain;
         private System.Windows.Forms.Panel pImage;
         private System.Windows.Forms.Panel pCapture;
-        private System.Windows.Forms.ComboBox cbOverrideCustomUploader;
-        private System.Windows.Forms.CheckBox chkOverrideCustomUploader;
+        private System.Windows.Forms.ComboBox cbCustomUploaders;
+        private System.Windows.Forms.CheckBox cbOverrideCustomUploader;
         private System.Windows.Forms.Button btnScreenRecorderFFmpegOptions;
         private System.Windows.Forms.ComboBox cbNameFormatTimeZone;
         private System.Windows.Forms.CheckBox cbNameFormatCustomTimeZone;
@@ -2776,8 +2832,7 @@
         private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionY;
         private System.Windows.Forms.NumericUpDown nudCaptureCustomRegionX;
         private System.Windows.Forms.CheckBox cbScreenRecorderShowCursor;
-        private System.Windows.Forms.CheckBox chkOverrideToolsSettings;
-        private System.Windows.Forms.CheckBox cbRegionCaptureUseWindowPattern;
+        private System.Windows.Forms.CheckBox cbOverrideToolsSettings;
         private System.Windows.Forms.TabPage tpFileNaming;
         private System.Windows.Forms.Label lblCaptureCustomRegion;
         private System.Windows.Forms.Button btnCaptureCustomRegionSelectRectangle;
@@ -2847,7 +2902,6 @@
         private System.Windows.Forms.Label lblOCRDefaultLanguage;
         private System.Windows.Forms.ComboBox cbCaptureOCRDefaultLanguage;
         private System.Windows.Forms.CheckBox cbCaptureOCRSilent;
-        private System.Windows.Forms.CheckBox cbCaptureOCRProcessOnLoad;
         private System.Windows.Forms.CheckBox cbCaptureOCRAutoCopy;
         private System.Windows.Forms.Label lblScreenshotDelay;
         private System.Windows.Forms.Label lblAutoIncrementNumber;
@@ -2902,5 +2956,12 @@
         private System.Windows.Forms.Label lblToastWindowFadeDurationSeconds;
         private System.Windows.Forms.Label lblToastWindowDurationSeconds;
         private System.Windows.Forms.Button btnActions;
+        private System.Windows.Forms.CheckBox cbImageAutoJPEGQuality;
+        private System.Windows.Forms.Label lblTask;
+        private System.Windows.Forms.CheckBox cbToastWindowAutoHide;
+        private System.Windows.Forms.NumericUpDown nudRegionCaptureFPSLimit;
+        private System.Windows.Forms.Label lblRegionCaptureFPSLimit;
+        private System.Windows.Forms.CheckBox cbRegionCaptureActiveMonitorMode;
+        private System.Windows.Forms.Button btnCaptureOCRHelp;
     }
 }
