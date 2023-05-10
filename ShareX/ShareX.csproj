@@ -297,7 +297,6 @@
     <Compile Include="Forms\ActionsToolbarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HotkeyTypeEnumConverter.cs" />
     <Compile Include="IntegrationHelpers.cs" />
     <Compile Include="QuickTaskInfo.cs" />
     <Compile Include="QuickTaskMenu.cs" />

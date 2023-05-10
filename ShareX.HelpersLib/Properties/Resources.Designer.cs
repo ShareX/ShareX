@@ -1426,6 +1426,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image beautifier.
+        /// </summary>
+        internal static string HotkeyType_ImageBeautifier {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageBeautifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image combiner.
         /// </summary>
         internal static string HotkeyType_ImageCombiner {

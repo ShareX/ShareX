@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.ComponentModel;
@@ -175,7 +174,6 @@ namespace ShareX
         LastRegion
     }
 
-    [JsonConverter(typeof(HotkeyTypeEnumConverter))]
     public enum HotkeyType // Localized
     {
         None,
@@ -263,6 +261,8 @@ namespace ShareX
         PinToScreenFromFile,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageEditor,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        ImageBeautifier,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageEffects,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
