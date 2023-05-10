@@ -513,29 +513,32 @@ namespace ShareX.HelpersLib
                 using (bmp)
                 using (backgroundImage)
                 {
-                    Bitmap result = new Bitmap(bmp.Width, bmp.Height);
+                    Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
                     float aspectRatio = (float)backgroundImage.Width / backgroundImage.Height;
 
-                    int width = result.Width;
+                    int width = bmpResult.Width;
                     int height = (int)(width / aspectRatio);
 
-                    if (height < result.Height)
+                    if (height < bmpResult.Height)
                     {
-                        height = result.Height;
+                        height = bmpResult.Height;
                         width = (int)(height * aspectRatio);
                     }
 
-                    int centerX = (result.Width - width) / 2;
-                    int centerY = (result.Height - height) / 2;
+                    int centerX = (bmpResult.Width - width) / 2;
+                    int centerY = (bmpResult.Height - height) / 2;
 
-                    using (Graphics graphics = Graphics.FromImage(result))
+                    using (Graphics g = Graphics.FromImage(bmpResult))
                     {
-                        graphics.DrawImage(backgroundImage, centerX, centerY, width, height);
-                        graphics.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
+                        g.SetHighQuality();
+                        g.PixelOffsetMode = PixelOffsetMode.Half;
+
+                        g.DrawImage(backgroundImage, centerX, centerY, width, height);
+                        g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
                     }
 
-                    return result;
+                    return bmpResult;
                 }
             }
 
