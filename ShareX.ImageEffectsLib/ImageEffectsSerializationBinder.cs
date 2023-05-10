@@ -25,7 +25,7 @@
 
 using ShareX.HelpersLib;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib  
 {
     public class ImageEffectsSerializationBinder : KnownTypesSerializationBinder
     {
