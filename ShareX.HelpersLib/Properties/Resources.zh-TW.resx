@@ -494,140 +494,38 @@
   <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
     <value>八元樹量化（中等品質）</value>
   </data>
-  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
+    <value>工具</value>
   </data>
-  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
-  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>上傳</value>
   </data>
-  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
-    <value>上傳</value>
-  </data>
-  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
     <value>螢幕擷取</value>
   </data>
-  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
-    <value>上傳</value>
-  </data>
-  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
-    <value>上傳</value>
-  </data>
-  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
-    <value>上傳</value>
-  </data>
-  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
-  <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
-    <value>其他</value>
-  </data>
-  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
-  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
-  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
-  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>螢幕錄製</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
-    <value>螢幕錄製</value>
-  </data>
-  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
-    <value>螢幕錄製</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
-    <value>螢幕錄製</value>
-  </data>
-  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
-    <value>上傳</value>
-  </data>
-  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
-    <value>上傳</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>開始/停止使用活動視窗錄製螢幕</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
-    <value>螢幕錄製</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
     <value>開始/停止使用活動視窗錄製螢幕（GIF）</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
-    <value>螢幕錄製</value>
   </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>圖片編輯器</value>
   </data>
-  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>更換 DNS</value>
-  </data>
-  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
-    <value>工具</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>顯示器測試</value>
   </data>
-  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
     <value>網頁擷取</value>
   </data>
-  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>停用/啟用快捷鍵</value>
-  </data>
-  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
-    <value>其他</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>隨機 GUID</value>
@@ -650,20 +548,11 @@
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>捲動擷取</value>
   </data>
-  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
-    <value>螢幕擷取</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>圖片合併工具</value>
   </data>
-  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>視訊縮圖工具</value>
-  </data>
-  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
-    <value>工具</value>
   </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>位置標頭</value>
@@ -774,12 +663,6 @@
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>開啟圖片歷史視窗</value>
   </data>
-  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
-    <value>其他</value>
-  </data>
-  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
-    <value>其他</value>
-  </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>檔案不存在：</value>
   </data>
@@ -792,20 +675,11 @@
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>開啟主視窗</value>
   </data>
-  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
-    <value>其他</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>螢幕錄製</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>開始/停止使用預先定義區域錄製螢幕</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>開始/停止使用預先定義區域錄製螢幕（GIF）</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>螢幕錄製</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>文字辨識（OCR）</value>
@@ -870,9 +744,6 @@
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
     <value>區域：鼠繪</value>
   </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>螢幕錄製</value>
-  </data>
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>停止螢幕錄製</value>
   </data>
@@ -924,13 +795,10 @@
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>繪圖：文字 (背景) (T)</value>
   </data>
-  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
-    <value>其他</value>
-  </data>
   <data name="HotkeyType_ExitShareX" xml:space="preserve">
     <value>退出 ShareX</value>
   </data>
-  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>其他</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
@@ -975,14 +843,8 @@
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>縮網址</value>
   </data>
-  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
-    <value>上傳</value>
-  </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>上傳文字</value>
-  </data>
-  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
-    <value>上傳</value>
   </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 天</value>

@@ -495,140 +495,38 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
     <value>Octree quantizer (Mittlere Qualität)</value>
   </data>
-  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
+    <value>Werkzeuge</value>
   </data>
-  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Hochladen</value>
   </data>
-  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
-    <value>Hochladen</value>
-  </data>
-  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
     <value>Bildschirmaufnahme</value>
   </data>
-  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
-    <value>Hochladen</value>
-  </data>
-  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
-    <value>Hochladen</value>
-  </data>
-  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
-    <value>Hochladen</value>
-  </data>
-  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
-    <value>Sonstiges</value>
-  </data>
-  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Bildschirmaufzeichnung</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
-  </data>
-  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
-  </data>
-  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
-    <value>Hochladen</value>
-  </data>
-  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
-    <value>Hochladen</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>Bildschirmaufzeichnung mit dem aktiven Fensterbereich starten</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
     <value>Bildschirmaufzeichnung (GIF) mit dem aktiven Fensterbereich starten/stoppen</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
   </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>Bildeditor</value>
   </data>
-  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>DNS-Wechsler</value>
-  </data>
-  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>Monitortest</value>
   </data>
-  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
     <value>Webpage Aufnahme</value>
   </data>
-  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Deaktiviere/Aktiviere Hotkeys</value>
-  </data>
-  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
-    <value>Sonstiges</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Automatisch alphanumerisch erhöhen. 0 pad left using {n}</value>
@@ -666,20 +564,11 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Scroll-Aufnahme</value>
   </data>
-  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Bildverbinder</value>
   </data>
-  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>Video-Thumbnailer</value>
-  </data>
-  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
-    <value>Werkzeuge</value>
   </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>Location header</value>
@@ -784,12 +673,6 @@ Soll sie heruntergeladen werden?</value>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>Schnellzugriffsmenü anzeigen</value>
   </data>
-  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
-    <value>Sonstiges</value>
-  </data>
-  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
-    <value>Sonstiges</value>
-  </data>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>Chronik-Fenster öffnen</value>
   </data>
@@ -807,9 +690,6 @@ Soll sie heruntergeladen werden?</value>
   </data>
   <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
     <value>Datei auswählen</value>
-  </data>
-  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
-    <value>Sonstiges</value>
   </data>
   <data name="PNGBitDepth_Automatic" xml:space="preserve">
     <value>Automatisch</value>
@@ -895,32 +775,17 @@ Soll sie heruntergeladen werden?</value>
   <data name="HotkeyType_ExitShareX" xml:space="preserve">
     <value>ShareX beenden</value>
   </data>
-  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
-    <value>Hochladen</value>
-  </data>
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>Bildschirmaufzeichnung abbrechen</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Aktionsleiste umschalten</value>
   </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
-  </data>
-  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>Sonstiges</value>
-  </data>
-  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
-    <value>Sonstiges</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
   </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>Bildschirmaufzeichnung mit vordefiniertem Bereich starten/stoppen</value>
-  </data>
-  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
-    <value>Hochladen</value>
   </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Text hochladen</value>
@@ -951,9 +816,6 @@ Soll sie heruntergeladen werden?</value>
   </data>
   <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
     <value>QR-Code scannen</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
   </data>
   <data name="PastebinExpiration_H1" xml:space="preserve">
     <value>1 Stunde</value>

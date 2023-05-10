@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System;
 using System.ComponentModel;
 
@@ -175,78 +176,143 @@ namespace ShareX
     }
 
     [JsonConverter(typeof(HotkeyTypeEnumConverter))]
-    public enum HotkeyType // Localized + Category
+    public enum HotkeyType // Localized
     {
         None,
         // Upload
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         FileUpload,
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         FolderUpload,
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         ClipboardUpload,
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         ClipboardUploadWithContentViewer,
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         UploadText,
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         UploadURL,
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         DragDropUpload,
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         ShortenURL,
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         TweetMessage,
+        [Category(EnumExtensions.HotkeyType_Category_Upload)]
         StopUploads,
         // Screen capture
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         PrintScreen,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         ActiveWindow,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         ActiveMonitor,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         RectangleRegion,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         RectangleLight,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         RectangleTransparent,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         CustomRegion,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         LastRegion,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         ScrollingCapture,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         AutoCapture,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         StartAutoCapture,
         // Screen record
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         ScreenRecorder,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         ScreenRecorderActiveWindow,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         ScreenRecorderCustomRegion,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         StartScreenRecorder,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         ScreenRecorderGIF,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         ScreenRecorderGIFActiveWindow,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         ScreenRecorderGIFCustomRegion,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         StartScreenRecorderGIF,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         StopScreenRecording,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         PauseScreenRecording,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenRecord)]
         AbortScreenRecording,
         // Tools
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ColorPicker,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ScreenColorPicker,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         Ruler,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         PinToScreen,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         PinToScreenFromScreen,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         PinToScreenFromClipboard,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         PinToScreenFromFile,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageEditor,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageEffects,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageViewer,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageCombiner,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageSplitter,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageThumbnailer,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         VideoConverter,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         VideoThumbnailer,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         OCR,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         QRCode,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         QRCodeDecodeFromScreen,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         HashCheck,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         IndexFolder,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ClipboardViewer,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         BorderlessWindow,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         InspectWindow,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         MonitorTest,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         DNSChanger,
         // Other
+        [Category(EnumExtensions.HotkeyType_Category_Other)]
         DisableHotkeys,
+        [Category(EnumExtensions.HotkeyType_Category_Other)]
         OpenMainWindow,
+        [Category(EnumExtensions.HotkeyType_Category_Other)]
         OpenScreenshotsFolder,
+        [Category(EnumExtensions.HotkeyType_Category_Other)]
         OpenHistory,
+        [Category(EnumExtensions.HotkeyType_Category_Other)]
         OpenImageHistory,
+        [Category(EnumExtensions.HotkeyType_Category_Other)]
         ToggleActionsToolbar,
+        [Category(EnumExtensions.HotkeyType_Category_Other)]
         ToggleTrayMenu,
+        [Category(EnumExtensions.HotkeyType_Category_Other)]
         ExitShareX
     }
 

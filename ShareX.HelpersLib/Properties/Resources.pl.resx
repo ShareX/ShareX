@@ -192,22 +192,10 @@
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>Skopiuj link do schowka</value>
   </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
-  </data>
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>O nagrywaniu ekranu</value>
   </data>
-  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
-    <value>Prześlij</value>
-  </data>
-  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
     <value>Narzędzia</value>
   </data>
   <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
@@ -216,82 +204,16 @@
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Selektor kolorów</value>
   </data>
-  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_OCR_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Linijka</value>
-  </data>
-  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
-    <value>Narzędzia</value>
   </data>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>Skróć link</value>
   </data>
-  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Przechwytywanie przy przewijaniu</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Nagrywanie ekranu</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
@@ -312,21 +234,6 @@
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Rozpocznij/Zatrzymaj nagrywanie ekranu (GIF) przy użyciu wstępnie skonfigurowanego regionu</value>
   </data>
-  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
-    <value>Prześlij</value>
-  </data>
-  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
-  </data>
   <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
     <value>Zatrzymaj nagrywanie ekranu</value>
   </data>
@@ -336,41 +243,20 @@
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Zatrzymaj wszystkie aktywne przesyłania</value>
   </data>
-  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
-    <value>Prześlij</value>
-  </data>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>Rozpocznij automatyczne przechwytywanie przy użyciu ostatniego regionu</value>
   </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
     <value>Rozpocznij/Zatrzymaj nagrywanie ekranu przy użyciu ostatniego regionu</value>
   </data>
-  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>Prześlij</value>
-  </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Prześlij tekst</value>
-  </data>
-  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
-    <value>Prześlij</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Prześlij z linku</value>
   </data>
-  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
-    <value>Prześlij</value>
-  </data>
-  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
   <data name="HotkeyType_VideoConverter" xml:space="preserve">
     <value>Konwerter wideo</value>
-  </data>
-  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Barwa: {0:0.0}°, Nasycenie: {1:0.0}%, Jasność: {2:0.0}%</value>
@@ -620,10 +506,7 @@ Czy chcesz ją pobrać?</value>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Drukuj</value>
   </data>
-  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
-    <value>Inne</value>
-  </data>
-  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>Inne</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
@@ -635,32 +518,17 @@ Czy chcesz ją pobrać?</value>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Efekty obrazu</value>
   </data>
-  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
-    <value>Prześlij</value>
-  </data>
   <data name="HotkeyType_ExitShareX" xml:space="preserve">
     <value>Zamknij ShareX</value>
-  </data>
-  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
-    <value>Inne</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Prześlij plik</value>
   </data>
-  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Przeslij</value>
   </data>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Prześlij folder</value>
-  </data>
-  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
-    <value>Przeslij</value>
-  </data>
-  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
-    <value>Inne</value>
-  </data>
-  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
-    <value>Prześlij</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Prześlij ze schowka</value>
@@ -671,20 +539,11 @@ Czy chcesz ją pobrać?</value>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Wyłącz/Włącz skróty klawiszowe</value>
   </data>
-  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
-  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Przechwytywanie wstępnie skonfigurowanego regionu</value>
   </data>
-  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
-  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatyczne przechwytywanie</value>
-  </data>
-  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
   </data>
   <data name="FileExistAction_Cancel" xml:space="preserve">
     <value>Nie zapisuj</value>
@@ -799,35 +658,11 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Selektor kolorów ekranu</value>
   </data>
-  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
-    <value>Inne</value>
-  </data>
-  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
-    <value>Inne</value>
-  </data>
-  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
-    <value>Inne</value>
-  </data>
-  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
-    <value>Inne</value>
-  </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>Test monitora</value>
   </data>
-  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Przechwytywanie ostatniego regionu</value>
-  </data>
-  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Przechwytywanie regionu</value>
@@ -844,7 +679,7 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>Kod QR</value>
   </data>
-  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
     <value>Przechwytywanie ekranu</value>
   </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
@@ -882,12 +717,6 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>Przeciągnij i upuść przesyłanie</value>
-  </data>
-  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
-    <value>Przechwytywanie ekranu</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
     <value>Obraz (plik)</value>
@@ -1402,9 +1231,6 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="ShareXImageViewer" xml:space="preserve">
     <value>ShareX - Przeglądarka obrazów</value>
   </data>
-  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Przypnij do ekranu</value>
   </data>
@@ -1413,15 +1239,6 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Przypnij do ekranu</value>
-  </data>
-  <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_PinToScreenFromFile_Category" xml:space="preserve">
-    <value>Narzędzia</value>
-  </data>
-  <data name="HotkeyType_PinToScreenFromClipboard_Category" xml:space="preserve">
-    <value>Narzędzia</value>
   </data>
   <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
     <value>Przypnij do ekranu (z pliku)</value>
@@ -1437,9 +1254,6 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Wstrzymaj nagrywanie ekranu</value>
-  </data>
-  <data name="HotkeyType_PauseScreenRecording_Category" xml:space="preserve">
-    <value>Nagrywanie ekranu</value>
   </data>
   <data name="CutOutEffectType_Wave" xml:space="preserve">
     <value>Fala</value>

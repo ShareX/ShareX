@@ -35,6 +35,12 @@ namespace ShareX.HelpersLib
 {
     public static class EnumExtensions
     {
+        public const string HotkeyType_Category_Upload = "Upload";
+        public const string HotkeyType_Category_ScreenCapture = "ScreenCapture";
+        public const string HotkeyType_Category_ScreenRecord = "ScreenRecord";
+        public const string HotkeyType_Category_Tools = "Tools";
+        public const string HotkeyType_Category_Other = "Other";
+
         public static string GetDescription(this Enum value)
         {
             FieldInfo fi = value.GetType().GetField(value.ToString());
@@ -77,10 +83,22 @@ namespace ShareX.HelpersLib
 
         public static string GetLocalizedCategory(this Enum value, ResourceManager resourceManager)
         {
-            string resourceName = value.GetType().Name + "_" + value + "_Category";
-            string description = resourceManager.GetString(resourceName);
+            string category = null;
 
-            return description;
+            FieldInfo fi = value.GetType().GetField(value.ToString());
+
+            if (fi != null)
+            {
+                CategoryAttribute[] attributes = (CategoryAttribute[])fi.GetCustomAttributes(typeof(CategoryAttribute), false);
+
+                if (attributes.Length > 0)
+                {
+                    string resourceName = $"{value.GetType().Name}_Category_{attributes[0].Category}";
+                    category = resourceManager.GetString(resourceName);
+                }
+            }
+
+            return category;
         }
 
         public static int GetIndex(this Enum value)

@@ -461,170 +461,92 @@
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>בטל את הקלטת המסך</value>
   </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>הקלטת מסך</value>
-  </data>
   <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
     <value>צלם מסך פעיל</value>
-  </data>
-  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_ActiveWindow" xml:space="preserve">
     <value>צלם חלון פעיל</value>
   </data>
-  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
-    <value>צלם מסך</value>
-  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>צילום מסך אוטומטי</value>
-  </data>
-  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
-    <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>חלון ללא מסגרת</value>
   </data>
-  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
     <value>צלם עמוד אינטרנט</value>
-  </data>
-  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>צילום מלוח הגזירה</value>
   </data>
-  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
-    <value>העלה</value>
-  </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>העלה מלוח הגזירה עם מציג התוכן</value>
-  </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
-    <value>העלה</value>
   </data>
   <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
     <value>מציג לוח הגזירה</value>
   </data>
-  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>בוחר הצבעים</value>
   </data>
-  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
     <value>כלים</value>
   </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>צילום אזור מוגדר מראש</value>
   </data>
-  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
-    <value>צלם מסך</value>
-  </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>השבת/הפעל מקשי קיצור</value>
-  </data>
-  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
-    <value>אחר</value>
   </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>משנה DNS</value>
   </data>
-  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_DragDropUpload" xml:space="preserve">
     <value>גרור ושחרר העלאה</value>
-  </data>
-  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
-    <value>העלה</value>
   </data>
   <data name="HotkeyType_ExitShareX" xml:space="preserve">
     <value>צא מ-ShareX</value>
   </data>
-  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
-    <value>אחר</value>
-  </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>העלה קובץ</value>
   </data>
-  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>העלה</value>
   </data>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>העלה תיקייה</value>
   </data>
-  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
-    <value>העלה</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>בדיקת Hash</value>
-  </data>
-  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>ממזג תמונות</value>
   </data>
-  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>עורך תמונה</value>
-  </data>
-  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>אפקטים לתמונה</value>
   </data>
-  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>מפצל תמונה</value>
-  </data>
-  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
     <value>מחולל תמונה ממוזערת</value>
   </data>
-  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>מציג תמונה</value>
-  </data>
-  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>מאנדקס תיקייה</value>
   </data>
-  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_InspectWindow" xml:space="preserve">
     <value>בודק חלונית</value>
-  </data>
-  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>צלם אזור אחרון</value>
   </data>
-  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
-    <value>צלם מסך</value>
-  </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>בדיקת מסך</value>
-  </data>
-  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_None" xml:space="preserve">
     <value>ללא</value>
@@ -632,137 +554,71 @@
   <data name="HotkeyType_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="HotkeyType_OCR_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>פתח חלון היסטורייה</value>
-  </data>
-  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
-    <value>אחר</value>
   </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>פתח חלון היסטוריית התמונות</value>
   </data>
-  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
-    <value>אחר</value>
-  </data>
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>פתח חלון מרכזי</value>
-  </data>
-  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
-    <value>אחר</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
     <value>פתח את תיקיית צילומי המסך</value>
   </data>
-  <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
-    <value>אחר</value>
-  </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>השהה את הקלטת המסך</value>
-  </data>
-  <data name="HotkeyType_PauseScreenRecording_Category" xml:space="preserve">
-    <value>הקלטת מסך</value>
   </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>הצמד למסך</value>
   </data>
-  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
     <value>הצמד למסך (מלוח הגזירה)</value>
-  </data>
-  <data name="HotkeyType_PinToScreenFromClipboard_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
     <value>הצמד למסך (מקובץ)</value>
   </data>
-  <data name="HotkeyType_PinToScreenFromFile_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>הצמד למסך (מהמסך)</value>
-  </data>
-  <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>צלם את כל המסך</value>
   </data>
-  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
     <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
     <value>קוד QR</value>
   </data>
-  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
     <value>קוד QR (פענח מהמסך)</value>
-  </data>
-  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>צלם אזור (בהיר)</value>
   </data>
-  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
-    <value>צלם מסך</value>
-  </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>צלם אזור</value>
-  </data>
-  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
-    <value>צלם מסך</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>צלם אזור (שקוף)</value>
   </data>
-  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
-    <value>צלם מסך</value>
-  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>סרגל</value>
-  </data>
-  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
-    <value>כלים</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>בוחר צבעי מסך</value>
   </data>
-  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>התחל/עצור הקלטת מסך</value>
   </data>
-  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>הקלט מסך</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>התחל/עצור הקלטת מסך באמצעות אזור חלון פעיל</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
-    <value>הקלטת מסך</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>התחל/עצור הקלטת מסך באמצעות אזור מוגדר מראש</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>הקלט מסך</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
-    <value>הקלט מסך</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
-    <value>הקלט מסך</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>הקלט מסך</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>התחל/עצור הקלטת מסך (GIF)</value>
@@ -776,35 +632,14 @@
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>צילום מסך נגלל</value>
   </data>
-  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
-    <value>צלם מסך</value>
-  </data>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>קצר קישור</value>
-  </data>
-  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
-    <value>העלה</value>
   </data>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>התחל צילום אוטומטי באמצעות האזור האחרון</value>
   </data>
-  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
-    <value>צלם מסך</value>
-  </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
     <value>התחל/עצור הקלטת מסך באמצעות האזור האחרון</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
-    <value>הקלט מסך</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
-    <value>הקלט מסך</value>
-  </data>
-  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
-    <value>הקלט מסך</value>
-  </data>
-  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
-    <value>העלה</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
     <value>התחל/עצור הקלטת מסך (GIF) באמצעות האזור האחרון</value>
@@ -818,47 +653,26 @@
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>הצג/הסתר את סרגל הכלים של הפעולות</value>
   </data>
-  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>אחר</value>
   </data>
   <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
     <value>הצג/הסתר את תפריט מגש המערכת</value>
   </data>
-  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
-    <value>אחר</value>
-  </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>צייץ הודעה</value>
-  </data>
-  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>העלה</value>
   </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>העלה טקסט</value>
   </data>
-  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
-    <value>העלה</value>
-  </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>העלה מקישור</value>
-  </data>
-  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
-    <value>העלה</value>
   </data>
   <data name="HotkeyType_VideoConverter" xml:space="preserve">
     <value>ממיר וידאו</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>וידאו תמונה ממוזערת</value>
-  </data>
-  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
-  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
-    <value>כלים</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
-    <value>צלם מסך</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>גוון: {0:0.0}°, רוויה: {1:0.0}%, בהירות: {2:0.0}%</value>

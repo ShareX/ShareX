@@ -126,14 +126,8 @@
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
     <value>Setări copiate în clipboard.</value>
   </data>
-  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>Pătrat mare</value>
-  </data>
-  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>Încărcați</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>Al doilea</value>
@@ -165,12 +159,6 @@
   <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
     <value>Scurtător URL</value>
   </data>
-  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
-  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
-    <value>Altele</value>
-  </data>
   <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
     <value>Numele de utilizator</value>
   </data>
@@ -192,7 +180,7 @@
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
     <value>{0} este la zi</value>
   </data>
-  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Înregistrare ecran</value>
   </data>
   <data name="PastebinExpiration_H1" xml:space="preserve">
@@ -213,9 +201,6 @@
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Regiune dreptunghiulară</value>
   </data>
-  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
-    <value>Încărcați</value>
-  </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Comutați bara de acțiuni</value>
   </data>
@@ -230,9 +215,6 @@
   </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Combinător de imagini</value>
-  </data>
-  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Capturare ecran (Transparent)</value>
@@ -251,9 +233,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Ora</value>
-  </data>
-  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
-    <value>Altele</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
     <value>Simulați mai întâi apăsarea tastei "Home", apoi trimiteți mesajul de derulare de sus</value>
@@ -306,10 +285,7 @@
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
     <value>Actualizare disponibilă</value>
   </data>
-  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>Captură de ecran</value>
-  </data>
-  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Încărcați</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
@@ -318,14 +294,8 @@
   <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
     <value>Tăiere</value>
   </data>
-  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
-    <value>Înregistrare ecran</value>
-  </data>
   <data name="FileExistAction_Cancel" xml:space="preserve">
     <value>Nu salvați</value>
-  </data>
-  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
   <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
     <value>Copierea imaginii în clipboard</value>
@@ -348,12 +318,6 @@
   <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
     <value>DNS setat cu succes.</value>
   </data>
-  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
-  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Capturați regiunea pre-configurată</value>
   </data>
@@ -362,9 +326,6 @@
   </data>
   <data name="PastebinExpiration_M10" xml:space="preserve">
     <value>10 minute</value>
-  </data>
-  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Schimbați tipul de instrument</value>
@@ -412,9 +373,6 @@ Doriți să o descărcați?</value>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Destinație de fișiere personalizată</value>
   </data>
-  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
   <data name="LinearGradientMode_Vertical" xml:space="preserve">
     <value>Vertical</value>
   </data>
@@ -429,9 +387,6 @@ Doriți să o descărcați?</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>Porniți/opriți înregistrarea ecranului utilizând regiunea activă a ferestrei</value>
-  </data>
-  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
     <value>Număr aleatoriu de la 0 la 9 (se repetă folosind {n})</value>
@@ -466,9 +421,6 @@ Doriți să o descărcați?</value>
   <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
     <value>Denumirea lunii (Limba locală)</value>
   </data>
-  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
-    <value>Captură ecran</value>
-  </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
     <value>Octree quantizer 256 culori (Codificare lentă, dar calitate mai bună)</value>
   </data>
@@ -499,17 +451,11 @@ Doriți să o descărcați?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>
-  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
-    <value>Captură de ecran</value>
-  </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>Adăugați un număr la numele fișierului</value>
   </data>
   <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
     <value>Miniatură mare</value>
-  </data>
-  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Anul (2 cifre)</value>
@@ -520,9 +466,6 @@ Doriți să o descărcați?</value>
   <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
     <value>Stare anterioară</value>
   </data>
-  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Regiune elipsă</value>
   </data>
@@ -531,9 +474,6 @@ Doriți să o descărcați?</value>
   </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>Schimbător DNS</value>
-  </data>
-  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Porniți/opriți înregistrarea ecranului (GIF)</value>
@@ -556,9 +496,6 @@ Doriți să o descărcați?</value>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
     <value>Mână liberă (F)</value>
   </data>
-  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
-    <value>Înregistrare ecran</value>
-  </data>
   <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
     <value>AM/PM</value>
   </data>
@@ -567,12 +504,6 @@ Doriți să o descărcați?</value>
   </data>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Diagonala inversă</value>
-  </data>
-  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
-    <value>Încărcați</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
-    <value>Înregistrare ecran</value>
   </data>
   <data name="ResponseType_Text" xml:space="preserve">
     <value>Text de răspuns</value>
@@ -604,9 +535,6 @@ Doriți să o descărcați?</value>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>Porniți/opriți înregistrarea ecranului</value>
   </data>
-  <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
-    <value>Altele</value>
-  </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
     <value>Salvați imaginea în fișier</value>
   </data>
@@ -616,14 +544,8 @@ Doriți să o descărcați?</value>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Căutarea imaginilor pe Google</value>
   </data>
-  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
-    <value>Capturare ecran</value>
-  </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>Indexer de directoare</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
-    <value>Captură de ecran</value>
   </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Timestamp Unix</value>
@@ -646,9 +568,6 @@ Doriți să o descărcați?</value>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Deschideți în editorul de imagini</value>
   </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
-    <value>Încărcați</value>
-  </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Se încarcă imaginea...</value>
   </data>
@@ -669,30 +588,15 @@ Dimensiunea fișierului: {2:n0} / {3:n0} KB</value>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Versiunea curentă</value>
   </data>
-  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>Captură de ecran</value>
-  </data>
   <data name="FileDestination_Email" xml:space="preserve">
     <value>Email</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
-    <value>Înregistrare ecran</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>Este disponibilă o versiune mai nouă a {0}.
 Doriți să o descărcați și să o instalați?</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
-    <value>Înregistrare ecran</value>
-  </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
     <value>Căutați un fișier de sunet...</value>
-  </data>
-  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
-    <value>Captură ecran</value>
-  </data>
-  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
-    <value>Captură de ecran</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>Fișierul nu există:</value>
@@ -745,9 +649,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
     <value>Numele utilizatorului</value>
   </data>
-  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
   <data name="ShapeType_DrawingMagnify" xml:space="preserve">
     <value>Mărire</value>
   </data>
@@ -762,9 +663,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="PastebinExpiration_W1" xml:space="preserve">
     <value>1 săptămână</value>
-  </data>
-  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
-    <value>Altele</value>
   </data>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>Serviciul de partajare a URL-urilor</value>
@@ -781,20 +679,11 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="GIFQuality_Grayscale" xml:space="preserve">
     <value>Palette quantizer în tonuri de gri 256 de culori</value>
   </data>
-  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
-    <value>Încărcați</value>
-  </data>
   <data name="GIFQuality_Default" xml:space="preserve">
     <value>Codificarea .NET implicită (codificare rapidă, dar calitate medie)</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Caractere hexazecimale aleatorii (se repetă folosind {n})</value>
-  </data>
-  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
-    <value>Încărcați</value>
-  </data>
-  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
-    <value>Altele</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
     <value>Simulează derularea roții mouse-ului</value>
@@ -829,9 +718,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>Deschideți fereastra de istoric</value>
   </data>
-  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
-    <value>Încărcați</value>
-  </data>
   <data name="ShapeType_ToolSelect" xml:space="preserve">
     <value>Selectare și deplasare (M)</value>
   </data>
@@ -840,9 +726,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Creștere automată cu baza {n} folosind alfanumeric (1 &lt; n &lt; 63)</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>Înregistrare ecran</value>
   </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
     <value>Capturarea paginii web</value>
@@ -859,9 +742,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="ProxyMethod_Automatic" xml:space="preserve">
     <value>Automat</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>Înregistrare ecran</value>
-  </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Încărcați fișierul</value>
   </data>
@@ -877,9 +757,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>Afișați fereastra "Înainte de încărcare"</value>
   </data>
-  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
-    <value>Încărcați</value>
-  </data>
   <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
     <value>Afișați notificarea de toast cu previzualizare</value>
   </data>
@@ -889,10 +766,7 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>Destinație de imagini personalizată</value>
   </data>
-  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
-    <value>Captură de ecran</value>
-  </data>
-  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
     <value>Captură de ecran</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
@@ -943,12 +817,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Dimensiune automată</value>
   </data>
-  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
-    <value>Altele</value>
-  </data>
-  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
-    <value>Captură de ecran</value>
-  </data>
   <data name="HotkeyType_None" xml:space="preserve">
     <value>Nici unul</value>
   </data>
@@ -988,7 +856,7 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
     <value>Anulați</value>
   </data>
-  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
     <value>Instrumente</value>
   </data>
   <data name="FileDestination_SharedFolder" xml:space="preserve">
@@ -1000,7 +868,7 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
     <value>Obținerea dimensiunii fișierului.</value>
   </data>
-  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>Altele</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
@@ -1011,9 +879,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Alegător de culori</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>Înregistrare ecran</value>
   </data>
   <data name="Stop" xml:space="preserve">
     <value>Stop</value>
@@ -1026,9 +891,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>Caractere alfanumerice aleatorii (se repetă folosind {n})</value>
-  </data>
-  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
-    <value>Captură ecran</value>
   </data>
   <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
     <value>Valoare</value>
@@ -1056,9 +918,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automat</value>
-  </data>
-  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
   <data name="HotkeyType_VideoConverter" xml:space="preserve">
     <value>Convertor video</value>
@@ -1108,9 +967,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Caractere alfanumerice aleatorii și neambigue (se repetă folosind {n})</value>
   </data>
-  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
-    <value>Captură de ecran</value>
-  </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Scurtător URL personalizat</value>
   </data>
@@ -1144,9 +1000,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
     <value>Afișați fereastra "După captură"</value>
   </data>
-  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
-    <value>Încărcați</value>
-  </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Încărcați text</value>
   </data>
@@ -1176,9 +1029,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>Copiați fișierul în clipboard</value>
-  </data>
-  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
   <data name="ResultOfFirstFile" xml:space="preserve">
     <value>Rezultatul primului fișier:</value>
@@ -1219,14 +1069,8 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
     <value>Vizualizator de clipboard</value>
   </data>
-  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
   <data name="HotkeyType_InspectWindow" xml:space="preserve">
     <value>Inspectare fereastră</value>
-  </data>
-  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
   <data name="BorderStyle_Solid" xml:space="preserve">
     <value>Solid</value>
@@ -1324,14 +1168,8 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
     <value>Opriți înregistrarea ecranului</value>
   </data>
-  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
-    <value>Înregistrare ecran</value>
-  </data>
   <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
     <value>Comutați meniul din bară</value>
-  </data>
-  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
-    <value>Altele</value>
   </data>
   <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
     <value>Implicit</value>
@@ -1384,19 +1222,10 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>Vizualizator de imagini</value>
   </data>
-  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
   <data name="HotkeyType_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="HotkeyType_OCR_Category" xml:space="preserve">
-    <value>Instrumente</value>
-  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Fereastră fără margini</value>
-  </data>
-  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
-    <value>Instrumente</value>
   </data>
 </root>

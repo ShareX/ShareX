@@ -495,140 +495,38 @@
   <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
     <value>八叉树色彩量化（中等质量）</value>
   </data>
-  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>屏幕截图</value>
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
+    <value>工具</value>
   </data>
-  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
-  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>上传</value>
   </data>
-  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
-    <value>上传</value>
-  </data>
-  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
     <value>屏幕截图</value>
   </data>
-  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
-    <value>上传</value>
-  </data>
-  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
-    <value>上传</value>
-  </data>
-  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
-    <value>上传</value>
-  </data>
-  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
-  <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
-    <value>其他</value>
-  </data>
-  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
-  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
-  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
-  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>屏幕录制</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
-    <value>屏幕录制</value>
-  </data>
-  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
-    <value>屏幕录制</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
-    <value>屏幕录制</value>
-  </data>
-  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
-    <value>上传</value>
-  </data>
-  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
-    <value>上传</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
-    <value>屏幕截图</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>使用活动窗口开始屏幕录制</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
-    <value>屏幕录制</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
     <value>使用活动窗口开始屏幕录制（GIF）</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
-    <value>屏幕录制</value>
   </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>图像编辑器</value>
   </data>
-  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>修改 DNS</value>
-  </data>
-  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
-    <value>工具</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>显示器测试</value>
   </data>
-  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
     <value>网页截图</value>
   </data>
-  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>禁用/启用快捷键</value>
-  </data>
-  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
-    <value>其他</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>随机 GUID</value>
@@ -651,20 +549,11 @@
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>滚动截图</value>
   </data>
-  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
-    <value>屏幕截图</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>图像合并</value>
   </data>
-  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>视频缩略图</value>
-  </data>
-  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
-    <value>工具</value>
   </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>位置头</value>
@@ -775,12 +664,6 @@
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>打开历史图片</value>
   </data>
-  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
-    <value>其它</value>
-  </data>
-  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
-    <value>其他</value>
-  </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>文件不存在:</value>
   </data>
@@ -793,20 +676,11 @@
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>打开主页面</value>
   </data>
-  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
-    <value>其他</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>屏幕录制</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>使用自定义区域开始屏幕录制</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>使用自定义区域开始屏幕录制（GIF）</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>屏幕录制</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>文字识别（OCR）</value>
@@ -871,9 +745,6 @@
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
     <value>区域：自由</value>
   </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>屏幕录制</value>
-  </data>
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>中止屏幕录制</value>
   </data>
@@ -922,14 +793,11 @@
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>切换工作栏</value>
   </data>
-  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>其它</value>
   </data>
   <data name="HotkeyType_ExitShareX" xml:space="preserve">
     <value>退出 ShareX</value>
-  </data>
-  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
-    <value>其它</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
     <value>绘图：文字（描边）（O)</value>
@@ -975,12 +843,6 @@
   </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>上传文本</value>
-  </data>
-  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
-    <value>上传</value>
-  </data>
-  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
-    <value>上传</value>
   </data>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>不公开</value>
@@ -1144,18 +1006,6 @@
   <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
     <value>图像缩略图工具</value>
   </data>
-  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
     <value>名称</value>
   </data>
@@ -1179,15 +1029,6 @@
   </data>
   <data name="HotkeyType_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="HotkeyType_OCR_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
-    <value>工具</value>
   </data>
   <data name="ToastClickAction_CopyFile" xml:space="preserve">
     <value>复制文件</value>
@@ -1264,14 +1105,8 @@
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>无边框窗口</value>
   </data>
-  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
-    <value>工具</value>
-  </data>
   <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
     <value>剪贴板查看器</value>
-  </data>
-  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
-    <value>工具</value>
   </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>图像查看器</value>
@@ -1282,14 +1117,8 @@
   <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
     <value>停止屏幕录制</value>
   </data>
-  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
-    <value>屏幕录制</value>
-  </data>
   <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
     <value>切换托盘菜单</value>
-  </data>
-  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
-    <value>其他</value>
   </data>
   <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
     <value>底边</value>

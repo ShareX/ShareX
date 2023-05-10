@@ -519,140 +519,38 @@ Você gostaria de transferi-la e instalá-la?</value>
   <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
     <value>Octree quantizer (qualidade média)</value>
   </data>
-  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
+    <value>Ferramentas</value>
   </data>
-  <data name="HotkeyType_ActiveWindow_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
-  </data>
-  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
-  </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Envio</value>
   </data>
-  <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
-    <value>Envio</value>
-  </data>
-  <data name="HotkeyType_ColorPicker_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
-  <data name="HotkeyType_CustomRegion_Category" xml:space="preserve">
-    <value>Gravar ecrã</value>
-  </data>
-  <data name="HotkeyType_DragDropUpload_Category" xml:space="preserve">
-    <value>Envio</value>
-  </data>
-  <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
-    <value>Envio</value>
-  </data>
-  <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
-    <value>Envio</value>
-  </data>
-  <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
-  <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
-  <data name="HotkeyType_IndexFolder_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
-  <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
     <value>Capturar ecrã</value>
   </data>
-  <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
-    <value>Outros</value>
-  </data>
-  <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
-  </data>
-  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
-  <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
-  </data>
-  <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
-  </data>
-  <data name="HotkeyType_Ruler_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
-  <data name="HotkeyType_ScreenColorPicker_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
     <value>Gravar ecrã</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
-    <value>Gravar ecrã</value>
-  </data>
-  <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
-    <value>Gravar ecrã</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorderGIF_Category" xml:space="preserve">
-    <value>Gravar ecrã</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorder_Category" xml:space="preserve">
-    <value>Gravar ecrã</value>
-  </data>
-  <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
-    <value>Enviar</value>
-  </data>
-  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>Feramentas</value>
-  </data>
-  <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
-    <value>Enviar</value>
-  </data>
-  <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>Iniciar/Parar gravação do ecrã utilizando a região de janela activa</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
     <value>Iniciar/Parar gravação do ecrã (GIF) utilizando a região de janela activa</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
-    <value>Gravar ecrã</value>
   </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>Editor de imagem</value>
   </data>
-  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>Modificar DNS</value>
-  </data>
-  <data name="HotkeyType_DNSChanger_Category" xml:space="preserve">
-    <value>Ferramentas</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>Teste de monitor</value>
   </data>
-  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
   <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
     <value>Capturar página da web</value>
   </data>
-  <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
-    <value>Capturar ecrã</value>
-  </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Desactivar/Activar teclas de atalho</value>
-  </data>
-  <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
-    <value>Outros</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Auto incrementar caracteres alfanuméricos maiúsculos e minúsculos. Acrescentar 0 à esquerda usando {n}</value>
@@ -690,20 +588,11 @@ Você gostaria de transferi-la e instalá-la?</value>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Captura com botão do meio</value>
   </data>
-  <data name="HotkeyType_ScrollingCapture_Category" xml:space="preserve">
-    <value>Gravar ecrã</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Juntar imagens</value>
   </data>
-  <data name="HotkeyType_ImageCombiner_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>Conversor de vídeo para miniatura</value>
-  </data>
-  <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
-    <value>Ferramentas</value>
   </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>Cabeçalho de localização</value>
@@ -784,14 +673,8 @@ Gostaria de transferí-la?</value>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>Abrir janela de histórico</value>
   </data>
-  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
-    <value>Outro</value>
-  </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Abrir janela de histórico de imagens</value>
-  </data>
-  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
-    <value>Outro</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>O ficheiro não existe:</value>
@@ -805,20 +688,11 @@ Gostaria de transferí-la?</value>
   <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
     <value>Abrir janela principal</value>
   </data>
-  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
-    <value>Outro</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>Iniciar/Parar gravação de ecrã utilizando uma região personalizada</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>Gravar ecrã</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
     <value>Iniciar/Parar gravação do ecrã (GIF) utilizando uma região personalizada</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>Gravação de ecrã</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Reconhecer texto (OCR)</value>
@@ -876,9 +750,6 @@ Gostaria de transferí-la?</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
     <value>Enviar mensagem de "scroll" para o topo</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
-    <value>Gravação de ecrã</value>
   </data>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
     <value>Região: Escolha livre</value>
@@ -988,9 +859,6 @@ Gostaria de transferí-la?</value>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Diagonal para trás</value>
   </data>
-  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
-    <value>Envio</value>
-  </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>Cursor</value>
   </data>
@@ -1042,9 +910,6 @@ Gostaria de transferí-la?</value>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Redimensionamento automático</value>
   </data>
-  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
-    <value>Outros</value>
-  </data>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Padrão</value>
   </data>
@@ -1060,7 +925,7 @@ Gostaria de transferí-la?</value>
   <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
     <value>Analisar código QR</value>
   </data>
-  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>Outro</value>
   </data>
   <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
@@ -1083,9 +948,6 @@ Gostaria de transferí-la?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
     <value>Última versão</value>
-  </data>
-  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
-    <value>Enviar</value>
   </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Enviar texto</value>
@@ -1126,19 +988,10 @@ Gostaria de transferí-la?</value>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Divisor de imagem</value>
   </data>
-  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
   <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
     <value>Conversor de imagem para miniatura</value>
   </data>
-  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
   <data name="HotkeyType_VideoConverter" xml:space="preserve">
     <value>Conversor de vídeo</value>
-  </data>
-  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
-    <value>Ferramentas</value>
   </data>
 </root>
