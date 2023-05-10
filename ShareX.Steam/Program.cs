@@ -37,5 +37,7 @@ namespace ShareX.Steam
 
             Launcher.Run(args);
         }
+
+        // Here are some changes  
     }
 }
