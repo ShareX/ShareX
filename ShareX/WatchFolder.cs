@@ -32,6 +32,7 @@ using System.Threading;
 
 namespace ShareX
 {
+    // Here are some changes
     public class WatchFolder : IDisposable
     {
         public WatchFolderSettings Settings { get; set; }

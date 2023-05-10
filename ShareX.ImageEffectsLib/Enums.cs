@@ -27,6 +27,7 @@ using System.ComponentModel;
 
 namespace ShareX.ImageEffectsLib
 {
+    // Here are some changes
     public enum WatermarkType
     {
         Text,

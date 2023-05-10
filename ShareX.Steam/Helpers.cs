@@ -32,6 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX.Steam
 {
+    // Here are some changes
     public static class Helpers
     {
         // Here are some changes
