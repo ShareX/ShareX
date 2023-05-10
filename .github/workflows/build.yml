@@ -69,7 +69,7 @@ jobs:
 
       - name: Restore NuGet packages
         working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: nuget restore "${{ env.SOLUTION_FILE_PATH }}" -Verbosity detailed
+        run: nuget restore "${{ env.SOLUTION_FILE_PATH }}" -Project2ProjectTimeOut 300000 -Verbosity detailed
 
       - name: Build
         working-directory: ${{ env.GITHUB_WORKSPACE }}
