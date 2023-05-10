@@ -27,7 +27,7 @@ using System.Windows.Forms;
 
 namespace ShareX.Steam
 {
-    // Here are some changes 
+    // Here are some changes  
     internal static class Program
     {
         private static void Main(string[] args)
