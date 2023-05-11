@@ -95,6 +95,8 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.x265:
                 case ConverterVideoCodecs.h264_nvenc:
                 case ConverterVideoCodecs.hevc_nvenc:
+                case ConverterVideoCodecs.h264_amf:
+                case ConverterVideoCodecs.hevc_amf:
                 case ConverterVideoCodecs.h264_qsv:
                 case ConverterVideoCodecs.hevc_qsv:
                 case ConverterVideoCodecs.vp8:
@@ -115,12 +117,14 @@ namespace ShareX.MediaLib
             {
                 case ConverterVideoCodecs.x264:
                 case ConverterVideoCodecs.h264_nvenc:
+                case ConverterVideoCodecs.h264_amf:
                 case ConverterVideoCodecs.h264_qsv:
                     tbVideoQuality.Minimum = FFmpegCLIManager.x264_min;
                     tbVideoQuality.Maximum = FFmpegCLIManager.x264_max;
                     break;
                 case ConverterVideoCodecs.x265:
                 case ConverterVideoCodecs.hevc_nvenc:
+                case ConverterVideoCodecs.hevc_amf:
                 case ConverterVideoCodecs.hevc_qsv:
                     tbVideoQuality.Minimum = FFmpegCLIManager.x265_min;
                     tbVideoQuality.Maximum = FFmpegCLIManager.x265_max;
