@@ -150,6 +150,30 @@ namespace ShareX.MediaLib
                         args.Append("-b:v 0 ");
                     }
                     break;
+                case ConverterVideoCodecs.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
+                    args.Append("-c:v h264_qsv ");
+                    args.Append("-preset medium ");
+                    if (VideoQualityUseBitrate)
+                    {
+                        args.Append($"-b:v {VideoQualityBitrate}k ");
+                    }
+                    else
+                    {
+                        args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.x264_min, FFmpegCLIManager.x264_max)} ");
+                    }
+                    break;
+                case ConverterVideoCodecs.hevc_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
+                    args.Append("-c:v hevc_qsv ");
+                    args.Append("-preset medium ");
+                    if (VideoQualityUseBitrate)
+                    {
+                        args.Append($"-b:v {VideoQualityBitrate}k ");
+                    }
+                    else
+                    {
+                        args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.x265_min, FFmpegCLIManager.x265_max)} ");
+                    }
+                    break;
                 case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/Encode/VP8
                     args.Append("-c:v libvpx ");
                     if (VideoQualityUseBitrate)
@@ -218,6 +242,8 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.x265:
                 case ConverterVideoCodecs.h264_nvenc:
                 case ConverterVideoCodecs.hevc_nvenc:
+                case ConverterVideoCodecs.h264_qsv:
+                case ConverterVideoCodecs.hevc_qsv:
                     args.Append("-c:a aac ");
                     args.Append("-b:a 128k ");
                     break;
@@ -254,6 +280,8 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.x265:
                 case ConverterVideoCodecs.h264_nvenc:
                 case ConverterVideoCodecs.hevc_nvenc:
+                case ConverterVideoCodecs.h264_qsv:
+                case ConverterVideoCodecs.hevc_qsv:
                     return "mp4";
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:

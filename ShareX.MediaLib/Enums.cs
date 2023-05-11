@@ -47,6 +47,10 @@ namespace ShareX.MediaLib
         h264_nvenc,
         [Description("HEVC / NVENC")]
         hevc_nvenc,
+        [Description("H.264 / Quick Sync")]
+        h264_qsv,
+        [Description("HEVC / Quick Sync")]
+        hevc_qsv,
         [Description("VP8")]
         vp8,
         [Description("VP9")]

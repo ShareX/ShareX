@@ -315,7 +315,7 @@
     <value>160, 84</value>
   </data>
   <data name="cbVideoEncoder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
+    <value>144, 21</value>
   </data>
   <data name="cbVideoEncoder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
