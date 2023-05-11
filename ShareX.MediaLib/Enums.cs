@@ -43,6 +43,10 @@ namespace ShareX.MediaLib
         x264,
         [Description("H.265 / x265")]
         x265,
+        [Description("H.264 / NVENC")]
+        h264_nvenc,
+        [Description("HEVC / NVENC")]
+        hevc_nvenc,
         [Description("VP8")]
         vp8,
         [Description("VP9")]

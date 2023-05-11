@@ -88,9 +88,9 @@ namespace ShareX.ScreenCaptureLib
         libx264,
         [Description("H.265 / x265")]
         libx265,
-        [Description("VP8 (WebM)")]
+        [Description("VP8")]
         libvpx,
-        [Description("VP9 (WebM)")]
+        [Description("VP9")]
         libvpx_vp9,
         [Description("MPEG-4 / Xvid")]
         libxvid,

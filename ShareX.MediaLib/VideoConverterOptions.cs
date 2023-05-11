@@ -118,6 +118,38 @@ namespace ShareX.MediaLib
                         args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.x265_min, FFmpegCLIManager.x265_max)} ");
                     }
                     break;
+                case ConverterVideoCodecs.h264_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
+                    args.Append("-c:v h264_nvenc ");
+                    args.Append("-preset p4 ");
+                    args.Append("-tune hq ");
+                    args.Append("-profile:v high ");
+                    if (VideoQualityUseBitrate)
+                    {
+                        args.Append($"-b:v {VideoQualityBitrate}k ");
+                    }
+                    else
+                    {
+                        args.Append("-rc vbr ");
+                        args.Append($"-cq {VideoQuality.Clamp(FFmpegCLIManager.x264_min, FFmpegCLIManager.x264_max)} ");
+                        args.Append("-b:v 0 ");
+                    }
+                    break;
+                case ConverterVideoCodecs.hevc_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
+                    args.Append("-c:v hevc_nvenc ");
+                    args.Append("-preset p4 ");
+                    args.Append("-tune hq ");
+                    args.Append("-profile:v main ");
+                    if (VideoQualityUseBitrate)
+                    {
+                        args.Append($"-b:v {VideoQualityBitrate}k ");
+                    }
+                    else
+                    {
+                        args.Append("-rc vbr ");
+                        args.Append($"-cq {VideoQuality.Clamp(FFmpegCLIManager.x265_min, FFmpegCLIManager.x265_max)} ");
+                        args.Append("-b:v 0 ");
+                    }
+                    break;
                 case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/Encode/VP8
                     args.Append("-c:v libvpx ");
                     if (VideoQualityUseBitrate)
@@ -184,6 +216,8 @@ namespace ShareX.MediaLib
             {
                 case ConverterVideoCodecs.x264: // https://trac.ffmpeg.org/wiki/Encode/AAC
                 case ConverterVideoCodecs.x265:
+                case ConverterVideoCodecs.h264_nvenc:
+                case ConverterVideoCodecs.hevc_nvenc:
                     args.Append("-c:a aac ");
                     args.Append("-b:a 128k ");
                     break;
@@ -218,6 +252,8 @@ namespace ShareX.MediaLib
                 default:
                 case ConverterVideoCodecs.x264:
                 case ConverterVideoCodecs.x265:
+                case ConverterVideoCodecs.h264_nvenc:
+                case ConverterVideoCodecs.hevc_nvenc:
                     return "mp4";
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:
