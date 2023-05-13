@@ -68,7 +68,6 @@ jobs:
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
       - name: Cache NuGet packages
-        id: cache
         uses: actions/cache@v3
         with:
           path: ~/.nuget/packages
@@ -77,7 +76,6 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Restore NuGet packages
-        if: steps.cache.outputs.cache-hit != 'true'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: nuget restore "${{ env.SOLUTION_FILE_PATH }}" -Project2ProjectTimeOut 300 -Verbosity detailed
 
