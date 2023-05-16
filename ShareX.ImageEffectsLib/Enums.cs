@@ -33,7 +33,7 @@ namespace ShareX.ImageEffectsLib
         Image
     }
 
-    public enum ResizeMode
+    public enum ResizeModeNew
     {
         [Description("Resizes all images to the specified size.")]
         ResizeAll,

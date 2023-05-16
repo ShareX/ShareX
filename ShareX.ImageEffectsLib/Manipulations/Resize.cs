@@ -37,8 +37,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(0), Description("Use height as 0 to automatically adjust height to maintain aspect ratio.")]
         public int Height { get; set; }
 
-        [DefaultValue(ResizeMode.ResizeAll)]
-        public ResizeMode Mode { get; set; }
+        [DefaultValue(ResizeModeNew.ResizeAll)]
+        public ResizeModeNew Mode { get; set; }
 
         public Resize()
         {
@@ -60,8 +60,8 @@ namespace ShareX.ImageEffectsLib
 
             Size size = ImageHelpers.ApplyAspectRatio(Width, Height, bmp);
 
-            if ((Mode == ResizeMode.ResizeIfBigger && bmp.Width <= size.Width && bmp.Height <= size.Height) ||
-                (Mode == ResizeMode.ResizeIfSmaller && bmp.Width >= size.Width && bmp.Height >= size.Height))
+            if ((Mode == ResizeModeNew.ResizeIfBigger && bmp.Width <= size.Width && bmp.Height <= size.Height) ||
+                (Mode == ResizeModeNew.ResizeIfSmaller && bmp.Width >= size.Width && bmp.Height >= size.Height))
             {
                 return bmp;
             }
