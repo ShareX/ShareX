@@ -39,6 +39,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true)]
         public bool Center { get; set; }
 
+        [DefaultValue(false)]
+        public bool Tile { get; set; }
+
         public DrawBackgroundImage()
         {
             this.ApplyDefaultPropertyValues();
@@ -46,7 +49,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.DrawBackgroundImage(bmp, ImageFilePath, Center);
+            return ImageHelpers.DrawBackgroundImage(bmp, ImageFilePath, Center, Tile);
         }
     }
 }

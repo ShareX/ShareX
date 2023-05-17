@@ -506,7 +506,7 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Bitmap DrawBackgroundImage(Bitmap bmp, Bitmap backgroundImage, bool center = true)
+        public static Bitmap DrawBackgroundImage(Bitmap bmp, Bitmap backgroundImage, bool center = true, bool tile = false)
         {
             if (bmp != null && backgroundImage != null)
             {
@@ -515,32 +515,53 @@ namespace ShareX.HelpersLib
                 {
                     Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
-                    float aspectRatio = (float)backgroundImage.Width / backgroundImage.Height;
-
-                    int width = bmpResult.Width;
-                    int height = (int)(width / aspectRatio);
-
-                    if (height < bmpResult.Height)
-                    {
-                        height = bmpResult.Height;
-                        width = (int)(height * aspectRatio);
-                    }
-
-                    int x = 0;
-                    int y = 0;
-
-                    if (center)
-                    {
-                        x = (bmpResult.Width - width) / 2;
-                        y = (bmpResult.Height - height) / 2;
-                    }
-
                     using (Graphics g = Graphics.FromImage(bmpResult))
                     {
                         g.SetHighQuality();
                         g.PixelOffsetMode = PixelOffsetMode.Half;
 
-                        g.DrawImage(backgroundImage, x, y, width, height);
+                        if (tile)
+                        {
+                            using (TextureBrush brush = new TextureBrush(backgroundImage))
+                            {
+                                brush.WrapMode = WrapMode.Tile;
+
+                                if (center)
+                                {
+                                    int tileX = (bmpResult.Width - backgroundImage.Width) / 2 % backgroundImage.Width;
+                                    int tileY = (bmpResult.Height - backgroundImage.Height) / 2 % backgroundImage.Height;
+
+                                    brush.TranslateTransform(tileX, tileY);
+                                }
+
+                                g.FillRectangle(brush, 0, 0, bmpResult.Width, bmpResult.Height);
+                            }
+                        }
+                        else
+                        {
+                            float aspectRatio = (float)backgroundImage.Width / backgroundImage.Height;
+
+                            int width = bmpResult.Width;
+                            int height = (int)(width / aspectRatio);
+
+                            if (height < bmpResult.Height)
+                            {
+                                height = bmpResult.Height;
+                                width = (int)(height * aspectRatio);
+                            }
+
+                            int x = 0;
+                            int y = 0;
+
+                            if (center)
+                            {
+                                x = (bmpResult.Width - width) / 2;
+                                y = (bmpResult.Height - height) / 2;
+                            }
+
+                            g.DrawImage(backgroundImage, x, y, width, height);
+                        }
+
                         g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
                     }
 
@@ -551,10 +572,10 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Bitmap DrawBackgroundImage(Bitmap bmp, string backgroundImageFilePath, bool center = true)
+        public static Bitmap DrawBackgroundImage(Bitmap bmp, string backgroundImageFilePath, bool center = true, bool tile = false)
         {
             Bitmap backgroundImage = LoadImage(backgroundImageFilePath);
-            return DrawBackgroundImage(bmp, backgroundImage, center);
+            return DrawBackgroundImage(bmp, backgroundImage, center, tile);
         }
 
         public static Bitmap RoundedCorners(Bitmap bmp, int cornerRadius)
