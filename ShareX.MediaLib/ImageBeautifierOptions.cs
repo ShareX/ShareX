@@ -95,11 +95,11 @@ namespace ShareX.MediaLib
                     }
                     break;
                 case ImageBeautifierBackgroundType.Image:
-                    resultImage = ImageHelpers.AddBackgroundImage(resultImage, BackgroundImageFilePath);
+                    resultImage = ImageHelpers.DrawBackgroundImage(resultImage, BackgroundImageFilePath);
                     break;
                 case ImageBeautifierBackgroundType.Desktop:
                     string desktopWallpaperFilePath = Helpers.GetDesktopWallpaperFilePath();
-                    resultImage = ImageHelpers.AddBackgroundImage(resultImage, desktopWallpaperFilePath);
+                    resultImage = ImageHelpers.DrawBackgroundImage(resultImage, desktopWallpaperFilePath);
                     break;
                 default:
                 case ImageBeautifierBackgroundType.Transparent:

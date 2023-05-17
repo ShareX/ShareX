@@ -506,9 +506,9 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Bitmap AddBackgroundImage(Bitmap bmp, Bitmap backgroundImage)
+        public static Bitmap DrawBackgroundImage(Bitmap bmp, Bitmap backgroundImage, bool center = true)
         {
-            if (backgroundImage != null)
+            if (bmp != null && backgroundImage != null)
             {
                 using (bmp)
                 using (backgroundImage)
@@ -526,15 +526,21 @@ namespace ShareX.HelpersLib
                         width = (int)(height * aspectRatio);
                     }
 
-                    int centerX = (bmpResult.Width - width) / 2;
-                    int centerY = (bmpResult.Height - height) / 2;
+                    int x = 0;
+                    int y = 0;
+
+                    if (center)
+                    {
+                        x = (bmpResult.Width - width) / 2;
+                        y = (bmpResult.Height - height) / 2;
+                    }
 
                     using (Graphics g = Graphics.FromImage(bmpResult))
                     {
                         g.SetHighQuality();
                         g.PixelOffsetMode = PixelOffsetMode.Half;
 
-                        g.DrawImage(backgroundImage, centerX, centerY, width, height);
+                        g.DrawImage(backgroundImage, x, y, width, height);
                         g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
                     }
 
@@ -545,10 +551,10 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Bitmap AddBackgroundImage(Bitmap bmp, string backgroundImageFilePath)
+        public static Bitmap DrawBackgroundImage(Bitmap bmp, string backgroundImageFilePath, bool center = true)
         {
             Bitmap backgroundImage = LoadImage(backgroundImageFilePath);
-            return AddBackgroundImage(bmp, backgroundImage);
+            return DrawBackgroundImage(bmp, backgroundImage, center);
         }
 
         public static Bitmap RoundedCorners(Bitmap bmp, int cornerRadius)

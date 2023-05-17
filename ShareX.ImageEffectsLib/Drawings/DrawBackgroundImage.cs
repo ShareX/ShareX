@@ -36,6 +36,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
         public string ImageFilePath { get; set; }
 
+        [DefaultValue(true)]
+        public bool Center { get; set; }
+
         public DrawBackgroundImage()
         {
             this.ApplyDefaultPropertyValues();
@@ -43,7 +46,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.AddBackgroundImage(bmp, ImageFilePath);
+            return ImageHelpers.DrawBackgroundImage(bmp, ImageFilePath, Center);
         }
     }
 }
