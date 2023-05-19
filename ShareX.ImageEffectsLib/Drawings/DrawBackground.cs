@@ -69,5 +69,15 @@ namespace ShareX.ImageEffectsLib
                 return ImageHelpers.FillBackground(bmp, Color);
             }
         }
+
+        protected override string GetSummary()
+        {
+            if (!UseGradient)
+            {
+                return $"{Color.R}, {Color.G}, {Color.B}";
+            }
+
+            return null;
+        }
     }
 }

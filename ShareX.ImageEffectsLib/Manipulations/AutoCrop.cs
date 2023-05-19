@@ -48,5 +48,15 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.AutoCropImage(bmp, true, Sides, Padding);
         }
+
+        protected override string GetSummary()
+        {
+            if (Padding > 0)
+            {
+                return Padding.ToString();
+            }
+
+            return null;
+        }
     }
 }

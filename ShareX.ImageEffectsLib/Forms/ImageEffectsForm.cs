@@ -335,6 +335,30 @@ namespace ShareX.ImageEffectsLib
             btnEffectRemove.Enabled = btnEffectDuplicate.Enabled = lvEffects.SelectedItems.Count > 0;
         }
 
+        private void UpdateEffectName()
+        {
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
+            {
+                if (lvEffects.SelectedItems.Count > 0)
+                {
+                    ListViewItem lvi = lvEffects.SelectedItems[0];
+
+                    if (lvi.Tag is ImageEffect imageEffect)
+                    {
+                        string text = imageEffect.ToString();
+
+                        if (lvi.Text != text)
+                        {
+                            lvi.Text = text;
+                            txtEffectName.SetWatermark(imageEffect.ToString());
+                        }
+                    }
+                }
+            }
+        }
+
         private void GeneratePreviewImage(int padding)
         {
             if (pbResult.ClientSize.Width > 0 && pbResult.ClientSize.Height > 0)
@@ -680,7 +704,7 @@ namespace ShareX.ImageEffectsLib
                 if (lvi.Tag is ImageEffect imageEffect)
                 {
                     txtEffectName.Text = imageEffect.Name;
-                    txtEffectName.SetWatermark(imageEffect.GetType().GetDescription());
+                    txtEffectName.SetWatermark(imageEffect.ToString());
                     pgSettings.SelectedObject = imageEffect;
                 }
             }
@@ -714,6 +738,7 @@ namespace ShareX.ImageEffectsLib
 
         private void pgSettings_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
+            UpdateEffectName();
             UpdatePreview();
         }
 

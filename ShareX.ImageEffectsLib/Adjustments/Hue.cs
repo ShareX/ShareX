@@ -46,5 +46,10 @@ namespace ShareX.ImageEffectsLib
                 return ColorMatrixManager.Hue(Angle).Apply(bmp);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return Angle + "°";
+        }
     }
 }

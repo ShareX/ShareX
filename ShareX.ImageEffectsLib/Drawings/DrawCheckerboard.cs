@@ -63,5 +63,10 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.DrawCheckers(bmp, Size, Color, Color2);
         }
+
+        protected override string GetSummary()
+        {
+            return $"{Size}x{Size}";
+        }
     }
 }

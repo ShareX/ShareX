@@ -174,5 +174,15 @@ namespace ShareX.ImageEffectsLib
 
             return bmp;
         }
+
+        protected override string GetSummary()
+        {
+            if (!string.IsNullOrEmpty(ImageLocation))
+            {
+                return FileHelpers.GetFileNameSafe(ImageLocation);
+            }
+
+            return null;
+        }
     }
 }

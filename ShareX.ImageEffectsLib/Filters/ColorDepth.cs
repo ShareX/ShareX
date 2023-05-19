@@ -57,5 +57,17 @@ namespace ShareX.ImageEffectsLib
             ImageHelpers.ColorDepth(bmp, BitsPerChannel);
             return bmp;
         }
+
+        protected override string GetSummary()
+        {
+            string summary = BitsPerChannel + " bit";
+
+            if (BitsPerChannel > 1)
+            {
+                summary += "s";
+            }
+
+            return summary;
+        }
     }
 }

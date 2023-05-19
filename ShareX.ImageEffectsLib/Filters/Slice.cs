@@ -86,5 +86,10 @@ namespace ShareX.ImageEffectsLib
                 return ImageHelpers.Slice(bmp, minSliceHeight, maxSliceHeight, minSliceShift, maxSliceShift);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return $"{MinSliceHeight}, {MaxSliceHeight}";
+        }
     }
 }

@@ -51,5 +51,10 @@ namespace ShareX.ImageEffectsLib
 
             return ImageHelpers.AddSkew(bmp, Horizontally, Vertically);
         }
+
+        protected override string GetSummary()
+        {
+            return $"{Horizontally}px, {Vertically}px";
+        }
     }
 }

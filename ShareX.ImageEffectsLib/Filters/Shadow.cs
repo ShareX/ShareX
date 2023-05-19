@@ -83,5 +83,10 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.AddShadow(bmp, Opacity, Size, Darkness + 1, Color, Offset, AutoResize);
         }
+
+        protected override string GetSummary()
+        {
+            return Size.ToString();
+        }
     }
 }

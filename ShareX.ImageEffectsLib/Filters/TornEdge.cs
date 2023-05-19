@@ -54,5 +54,10 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges, true);
         }
+
+        protected override string GetSummary()
+        {
+            return $"{Depth}, {Range}";
+        }
     }
 }

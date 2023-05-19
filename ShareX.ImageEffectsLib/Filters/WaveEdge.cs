@@ -51,5 +51,10 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.WavyEdges(bmp, Depth, Range, Sides);
         }
+
+        protected override string GetSummary()
+        {
+            return $"{Depth}, {Range}";
+        }
     }
 }

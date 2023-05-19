@@ -75,5 +75,10 @@ namespace ShareX.ImageEffectsLib
             ImageHelpers.Pixelate(bmp, Size, BorderSize, BorderColor);
             return bmp;
         }
+
+        protected override string GetSummary()
+        {
+            return Size.ToString();
+        }
     }
 }

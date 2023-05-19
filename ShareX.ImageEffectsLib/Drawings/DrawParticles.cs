@@ -220,5 +220,15 @@ namespace ShareX.ImageEffectsLib
 
             g.PixelOffsetMode = PixelOffsetMode.Default;
         }
+
+        protected override string GetSummary()
+        {
+            if (!string.IsNullOrEmpty(ImageFolder))
+            {
+                return FileHelpers.GetFileNameSafe(ImageFolder);
+            }
+
+            return null;
+        }
     }
 }

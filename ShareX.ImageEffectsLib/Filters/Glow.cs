@@ -110,5 +110,10 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.AddGlow(bmp, Size, Strength, Color, Offset, UseGradient ? Gradient : null);
         }
+
+        protected override string GetSummary()
+        {
+            return Size.ToString();
+        }
     }
 }

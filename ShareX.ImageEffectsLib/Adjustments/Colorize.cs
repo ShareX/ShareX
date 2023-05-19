@@ -50,5 +50,10 @@ namespace ShareX.ImageEffectsLib
                 return ColorMatrixManager.Colorize(Color, Value).Apply(bmp);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return $"{Color.R}, {Color.G}, {Color.B}";
+        }
     }
 }

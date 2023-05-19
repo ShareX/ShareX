@@ -68,5 +68,24 @@ namespace ShareX.ImageEffectsLib
 
             return ImageHelpers.ResizeImage(bmp, size);
         }
+
+        protected override string GetSummary()
+        {
+            string summary = Width.ToString();
+
+            if (Width > 0)
+            {
+                summary += "px";
+            }
+
+            summary += ", " + Height.ToString();
+
+            if (Height > 0)
+            {
+                summary += "px";
+            }
+
+            return summary;
+        }
     }
 }

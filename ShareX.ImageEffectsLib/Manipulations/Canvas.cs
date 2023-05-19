@@ -81,5 +81,15 @@ namespace ShareX.ImageEffectsLib
             bmp.Dispose();
             return bmpResult;
         }
+
+        protected override string GetSummary()
+        {
+            if (Margin.All == -1)
+            {
+                return $"{Margin.Left}, {Margin.Top}, {Margin.Right}, {Margin.Bottom}";
+            }
+
+            return Margin.All.ToString();
+        }
     }
 }

@@ -61,5 +61,10 @@ namespace ShareX.ImageEffectsLib
             ImageHelpers.ApplyBoxBlur(bmp, Radius);
             return bmp;
         }
+
+        protected override string GetSummary()
+        {
+            return Radius.ToString();
+        }
     }
 }

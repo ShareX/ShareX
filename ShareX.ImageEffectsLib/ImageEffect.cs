@@ -46,6 +46,11 @@ namespace ShareX.ImageEffectsLib
 
         public abstract Bitmap Apply(Bitmap bmp);
 
+        protected virtual string GetSummary()
+        {
+            return null;
+        }
+
         public override string ToString()
         {
             if (!string.IsNullOrEmpty(Name))
@@ -53,7 +58,15 @@ namespace ShareX.ImageEffectsLib
                 return Name;
             }
 
-            return GetType().GetDescription();
+            string name = GetType().GetDescription();
+            string summary = GetSummary();
+
+            if (!string.IsNullOrEmpty(summary))
+            {
+                name = $"{name}: {summary}";
+            }
+
+            return name;
         }
     }
 }

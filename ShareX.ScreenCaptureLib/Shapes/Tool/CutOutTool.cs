@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -135,7 +136,7 @@ namespace ShareX.ScreenCaptureLib
         public override void OnDraw(Graphics g)
         {
             using (Image selectionHighlightPattern = ImageHelpers.CreateCheckerPattern(1, 1, Color.FromArgb(128, Color.LightGray), Color.FromArgb(128, Color.Gray)))
-            using (Brush selectionHighlightBrush = new TextureBrush(selectionHighlightPattern, System.Drawing.Drawing2D.WrapMode.Tile))
+            using (Brush selectionHighlightBrush = new TextureBrush(selectionHighlightPattern, WrapMode.Tile))
             {
                 g.FillRectangle(selectionHighlightBrush, CutOutRectangle);
             }

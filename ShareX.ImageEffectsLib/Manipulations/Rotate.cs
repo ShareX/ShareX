@@ -57,5 +57,10 @@ namespace ShareX.ImageEffectsLib
                 return ImageHelpers.RotateImage(bmp, Angle, Upsize, Clip);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return Angle + "°";
+        }
     }
 }

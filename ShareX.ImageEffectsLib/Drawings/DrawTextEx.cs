@@ -298,5 +298,15 @@ namespace ShareX.ImageEffectsLib
                 return bmp;
             }
         }
+
+        protected override string GetSummary()
+        {
+            if (!string.IsNullOrEmpty(Text))
+            {
+                return Text.Truncate(20, "...");
+            }
+
+            return null;
+        }
     }
 }

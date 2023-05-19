@@ -171,6 +171,15 @@
   <metadata name="cmsLoadImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="cmsLoadImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 48</value>
+  </data>
+  <data name="&gt;&gt;cmsLoadImage.Name" xml:space="preserve">
+    <value>cmsLoadImage</value>
+  </data>
+  <data name="&gt;&gt;cmsLoadImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 22</value>
   </data>
@@ -182,15 +191,6 @@
   </data>
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
     <value>From clipboard</value>
-  </data>
-  <data name="cmsLoadImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 48</value>
-  </data>
-  <data name="&gt;&gt;cmsLoadImage.Name" xml:space="preserve">
-    <value>cmsLoadImage</value>
-  </data>
-  <data name="&gt;&gt;cmsLoadImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblPresetName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -226,7 +226,7 @@
     <value>184, 24</value>
   </data>
   <data name="txtPresetName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
+    <value>192, 20</value>
   </data>
   <data name="txtPresetName.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -250,7 +250,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>960, 552</value>
+    <value>1096, 552</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 24</value>
@@ -280,7 +280,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>832, 552</value>
+    <value>968, 552</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 24</value>
@@ -399,6 +399,9 @@
   <data name="&gt;&gt;btnPackager.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>260, 17</value>
+  </metadata>
   <data name="btnPresetNew.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -411,9 +414,6 @@
   <data name="btnPresetNew.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>260, 17</value>
-  </metadata>
   <data name="btnPresetNew.ToolTip" xml:space="preserve">
     <value>New</value>
   </data>
@@ -648,6 +648,9 @@
   <data name="&gt;&gt;btnEffectRefresh.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>260, 17</value>
+  </metadata>
   <data name="pgSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
@@ -655,7 +658,7 @@
     <value>False</value>
   </data>
   <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 56</value>
+    <value>384, 56</value>
   </data>
   <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 488</value>
@@ -712,7 +715,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblEffectName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 8</value>
+    <value>381, 8</value>
   </data>
   <data name="lblEffectName.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -736,7 +739,7 @@
     <value>3</value>
   </data>
   <data name="txtEffectName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 24</value>
+    <value>384, 24</value>
   </data>
   <data name="txtEffectName.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 20</value>
@@ -760,10 +763,10 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="pbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>632, 8</value>
+    <value>680, 8</value>
   </data>
   <data name="pbResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 536</value>
+    <value>536, 536</value>
   </data>
   <data name="pbResult.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -772,7 +775,7 @@
     <value>pbResult</value>
   </data>
   <data name="&gt;&gt;pbResult.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbResult.Parent" xml:space="preserve">
     <value>$this</value>
@@ -782,9 +785,6 @@
   </data>
   <data name="lvPresets.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
-  </data>
-  <data name="chPreset.Width" type="System.Int32, mscorlib">
-    <value>164</value>
   </data>
   <data name="lvPresets.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 53</value>
@@ -799,13 +799,16 @@
     <value>lvPresets</value>
   </data>
   <data name="&gt;&gt;lvPresets.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvPresets.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvPresets.ZOrder" xml:space="preserve">
     <value>13</value>
+  </data>
+  <data name="chPreset.Width" type="System.Int32, mscorlib">
+    <value>164</value>
   </data>
   <data name="mbLoadImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -832,7 +835,7 @@
     <value>mbLoadImage</value>
   </data>
   <data name="&gt;&gt;mbLoadImage.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbLoadImage.Parent" xml:space="preserve">
     <value>$this</value>
@@ -843,14 +846,11 @@
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
-  <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 101</value>
   </data>
   <data name="lvEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 443</value>
+    <value>192, 443</value>
   </data>
   <data name="lvEffects.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -859,13 +859,16 @@
     <value>lvEffects</value>
   </data>
   <data name="&gt;&gt;lvEffects.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvEffects.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
     <value>26</value>
+  </data>
+  <data name="chEffect.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -877,10 +880,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1089, 585</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>1224, 585</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>600, 400</value>

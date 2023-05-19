@@ -94,5 +94,10 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.DrawReflection(bmp, Percentage, MaxAlpha, MinAlpha, Offset, Skew, SkewSize);
         }
+
+        protected override string GetSummary()
+        {
+            return Percentage.ToString();
+        }
     }
 }

@@ -83,5 +83,10 @@ namespace ShareX.ImageEffectsLib
                 return kernelVert.Apply(horizPass);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return Size.ToString();
+        }
     }
 }

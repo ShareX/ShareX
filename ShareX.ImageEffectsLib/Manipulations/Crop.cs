@@ -61,5 +61,15 @@ namespace ShareX.ImageEffectsLib
 
             return ImageHelpers.CropBitmap(bmp, new Rectangle(Margin.Left, Margin.Top, bmp.Width - Margin.Horizontal, bmp.Height - Margin.Vertical));
         }
+
+        protected override string GetSummary()
+        {
+            if (Margin.All == -1)
+            {
+                return $"{Margin.Left}, {Margin.Top}, {Margin.Right}, {Margin.Bottom}";
+            }
+
+            return Margin.All.ToString();
+        }
     }
 }

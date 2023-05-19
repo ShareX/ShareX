@@ -56,5 +56,10 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.RoundedCorners(bmp, CornerRadius);
         }
+
+        protected override string GetSummary()
+        {
+            return CornerRadius.ToString();
+        }
     }
 }

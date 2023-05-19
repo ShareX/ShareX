@@ -46,5 +46,10 @@ namespace ShareX.ImageEffectsLib
                 return ColorMatrixManager.Grayscale(Value).Apply(bmp);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return Value.ToString();
+        }
     }
 }

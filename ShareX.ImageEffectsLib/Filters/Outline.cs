@@ -77,5 +77,10 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.Outline(bmp, Size, Color, Padding, OutlineOnly);
         }
+
+        protected override string GetSummary()
+        {
+            return Size.ToString();
+        }
     }
 }

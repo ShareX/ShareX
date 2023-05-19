@@ -522,10 +522,8 @@ namespace ShareX.HelpersLib
 
                         if (tile)
                         {
-                            using (TextureBrush brush = new TextureBrush(backgroundImage))
+                            using (TextureBrush brush = new TextureBrush(backgroundImage, WrapMode.Tile))
                             {
-                                brush.WrapMode = WrapMode.Tile;
-
                                 if (center)
                                 {
                                     int tileX = (bmpResult.Width - backgroundImage.Width) / 2 % backgroundImage.Width;

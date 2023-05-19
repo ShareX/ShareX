@@ -66,5 +66,10 @@ namespace ShareX.ImageEffectsLib
 
             return bmp;
         }
+
+        protected override string GetSummary()
+        {
+            return $"{Horizontally}, {Vertically}";
+        }
     }
 }

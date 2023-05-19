@@ -46,5 +46,10 @@ namespace ShareX.ImageEffectsLib
                 return ColorMatrixManager.Saturation(Value).Apply(bmp);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return Value.ToString();
+        }
     }
 }

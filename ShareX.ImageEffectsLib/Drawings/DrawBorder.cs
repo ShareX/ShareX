@@ -88,5 +88,10 @@ namespace ShareX.ImageEffectsLib
 
             return ImageHelpers.DrawBorder(bmp, Color, Size, Type, DashStyle);
         }
+
+        protected override string GetSummary()
+        {
+            return Size + "px";
+        }
     }
 }

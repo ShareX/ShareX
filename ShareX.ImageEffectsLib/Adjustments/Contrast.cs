@@ -46,5 +46,10 @@ namespace ShareX.ImageEffectsLib
                 return ColorMatrixManager.Contrast(Value).Apply(bmp);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return Value.ToString();
+        }
     }
 }

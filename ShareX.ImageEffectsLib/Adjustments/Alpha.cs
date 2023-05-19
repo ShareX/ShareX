@@ -49,5 +49,10 @@ namespace ShareX.ImageEffectsLib
                 return ColorMatrixManager.Alpha(Value, Addition).Apply(bmp);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return $"{Value}, {Addition}";
+        }
     }
 }

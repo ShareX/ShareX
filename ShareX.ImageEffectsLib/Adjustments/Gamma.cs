@@ -46,5 +46,10 @@ namespace ShareX.ImageEffectsLib
                 return ColorMatrixManager.ChangeGamma(bmp, Value);
             }
         }
+
+        protected override string GetSummary()
+        {
+            return Value.ToString();
+        }
     }
 }

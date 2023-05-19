@@ -51,5 +51,15 @@ namespace ShareX.ImageEffectsLib
         {
             return ImageHelpers.DrawBackgroundImage(bmp, ImageFilePath, Center, Tile);
         }
+
+        protected override string GetSummary()
+        {
+            if (!string.IsNullOrEmpty(ImageFilePath))
+            {
+                return FileHelpers.GetFileNameSafe(ImageFilePath);
+            }
+
+            return null;
+        }
     }
 }
