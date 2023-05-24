@@ -250,16 +250,16 @@
     <value>Отменить задачу (Esc)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
-    <value>Сохранить изображение</value>
+    <value>Сохранить изображение (Ctrl + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Сохранить изображение как... (Ctrl + Shift + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Скопировать изображение в буфер обмена</value>
+    <value>Скопировать изображение в буфер обмена (Ctrl + Shift + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
-    <value>Загрузить изображение</value>
+    <value>Загрузить изображение (Ctrl + U)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Распечатать изображение... (Ctrl + P)</value>
