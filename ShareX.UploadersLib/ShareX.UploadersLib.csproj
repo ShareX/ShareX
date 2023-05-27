@@ -175,7 +175,6 @@
     <Compile Include="FileUploaders\SFTP.cs" />
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
     <Compile Include="FileUploaders\Teknik.cs" />
-    <Compile Include="FileUploaders\Transfersh.cs" />
     <Compile Include="FileUploaders\Uguu.cs" />
     <Compile Include="FileUploaders\Vault_ooo.cs" />
     <Compile Include="FileUploaders\YouTube.cs" />
