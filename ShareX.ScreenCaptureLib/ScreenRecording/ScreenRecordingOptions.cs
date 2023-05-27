@@ -30,6 +30,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -97,22 +98,129 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (FFmpeg.IsVideoSourceSelected)
                 {
-                    if (FFmpeg.VideoSource.Equals(FFmpegCLIManager.SourceGDIGrab, StringComparison.OrdinalIgnoreCase))
+                    var isGdiGrab = FFmpeg.VideoSource.Equals(
+                        FFmpegCLIManager.SourceGDIGrab,
+                        StringComparison.OrdinalIgnoreCase
+                    );
+
+                    var isDxgi = FFmpeg.VideoSource.Equals(
+                        FFmpegCLIManager.SourceDxgi,
+                        StringComparison.OrdinalIgnoreCase
+                    );
+
+                    if (isDxgi || isGdiGrab)
                     {
+                        // We are doing a desktop capture using gdigrab or ddagrab.
+                        // These can crop and determine whether the hardware mouse cursor should be captured.
+
                         string x = isCustom ? "$area_x$" : CaptureArea.X.ToString();
                         string y = isCustom ? "$area_y$" : CaptureArea.Y.ToString();
                         string width = isCustom ? "$area_width$" : CaptureArea.Width.ToString();
                         string height = isCustom ? "$area_height$" : CaptureArea.Height.ToString();
                         string cursor = isCustom ? "$cursor$" : DrawCursor ? "1" : "0";
 
-                        // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
-                        AppendInputDevice(args, "gdigrab", false);
-                        args.Append($"-framerate {framerate} ");
-                        args.Append($"-offset_x {x} ");
-                        args.Append($"-offset_y {y} ");
-                        args.Append($"-video_size {width}x{height} ");
-                        args.Append($"-draw_mouse {cursor} ");
-                        args.Append("-i desktop ");
+                        if (isGdiGrab)
+                        {
+                            // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
+                            AppendInputDevice(args, "gdigrab", false);
+                            args.Append($"-framerate {framerate} ");
+                            args.Append($"-offset_x {x} ");
+                            args.Append($"-offset_y {y} ");
+                            args.Append($"-video_size {width}x{height} ");
+                            args.Append($"-draw_mouse {cursor} ");
+                            args.Append("-i desktop ");
+                        }
+                        else
+                        {
+                            // TODO: How the hell should custom parameters even work with this?
+
+                            // https://ffmpeg.org/ffmpeg-filters.html#toc-ddagrab
+                            AppendInputDevice(args, "lavfi", false);
+                            args.Append("-i ");
+
+                            // DXGI Desktop Duplication only records on a single monitor at once.
+                            // This is unlike the other recording options, which all take in whole-desktop coordinates.
+                            // This means that if the capture area spans more than one monitor,
+                            // we have to composite multiple monitors together with ffmpeg filters.
+
+                            // TODO: Looking at winforms screen list is probably not correct.
+                            // Need to check against DXGI directly.
+                            int singleScreen = -1;
+                            for (int i = 0; i < Screen.AllScreens.Length; i++)
+                            {
+                                Screen screen = Screen.AllScreens[i];
+                                if (screen.Bounds.Contains(CaptureArea))
+                                {
+                                    singleScreen = i;
+                                    break;
+                                }
+                            }
+
+                            if (singleScreen != -1)
+                            {
+                                // Capture area is contained inside a single monitor. Easy enough.
+                                Screen screen = Screen.AllScreens[singleScreen];
+
+                                int offsetX = CaptureArea.X - screen.Bounds.Left;
+                                int offsetY = CaptureArea.Y - screen.Bounds.Top;
+
+                                args.Append("ddagrab=");
+                                args.Append($"output_idx={singleScreen}:"); // TODO:
+                                args.Append($"draw_mouse={cursor}:");
+                                args.Append($"framerate={framerate}:");
+                                args.Append($"offset_x={offsetX}:");
+                                args.Append($"offset_y={offsetY}:");
+                                args.Append($"video_size={width}x{height}");
+                                args.Append(",hwdownload,format=bgra ");
+                            }
+                            else
+                            {
+                                // Capture area must be composited from multiple monitor.
+                                // We will do this with a chain of ffmpeg filters.
+
+                                // Start with a black background
+                                args.Append($"color=color=black:size={CaptureArea.Width}x{CaptureArea.Height}[bg]");
+
+                                string prevBg = "bg";
+                                for (int i = 0; i < Screen.AllScreens.Length; i++)
+                                {
+                                    Screen screen = Screen.AllScreens[i];
+
+                                    Rectangle intersection = Rectangle.Intersect(screen.Bounds, CaptureArea);
+
+                                    // Create a ddagrab for every monitor. Output it to "[screen{id}]"
+
+                                    int offsetX = intersection.X - screen.Bounds.Left;
+                                    int offsetY = intersection.Y - screen.Bounds.Top;
+
+                                    args.Append(",ddagrab=");
+                                    args.Append($"output_idx={i}:");
+                                    args.Append($"draw_mouse={cursor}:");
+                                    args.Append($"framerate={framerate}:");
+                                    args.Append($"offset_x={offsetX}:");
+                                    args.Append($"offset_y={offsetY}:");
+                                    args.Append($"video_size={width}x{height}");
+                                    args.Append(",hwdownload,format=bgra");
+                                    args.Append($"[screen{i}]");
+
+                                    // Overlay capture onto background.
+                                    int overlayX = intersection.X - CaptureArea.X;
+                                    int overlayY = intersection.Y - CaptureArea.Y;
+                                    args.Append($",[{prevBg}][screen{i}]overlay={overlayX}:{overlayY}");
+
+                                    if (i != Screen.AllScreens.Length - 1)
+                                    {
+                                        string name = $"overlay{i}";
+                                        args.Append($"[{name}]");
+                                        prevBg = name;
+                                    }
+                                    else
+                                    {
+                                        args.Append(" ");
+                                    }
+                                }
+                            }
+                        }
 
                         if (FFmpeg.IsAudioSourceSelected)
                         {

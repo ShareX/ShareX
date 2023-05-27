@@ -140,6 +140,7 @@ namespace ShareX.ScreenCaptureLib
         {
             btnRefreshSources.Enabled = false;
             DirectShowDevices devices = null;
+            var hasDdaGrab = false;
 
             await Task.Run(() =>
             {
@@ -149,6 +150,14 @@ namespace ShareX.ScreenCaptureLib
                     {
                         devices = ffmpeg.GetDirectShowDevices();
                     }
+
+                    if (Helpers.IsWindows8OrGreater())
+                    {
+                        using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(Options.FFmpeg.FFmpegPath))
+                        {
+                            hasDdaGrab = ffmpeg.GetHasDdaGrab();
+                        }
+                    }
                 }
             });
 
@@ -157,6 +166,12 @@ namespace ShareX.ScreenCaptureLib
                 cbVideoSource.Items.Clear();
                 cbVideoSource.Items.Add(FFmpegCLIManager.SourceNone);
                 cbVideoSource.Items.Add(FFmpegCLIManager.SourceGDIGrab);
+
+                if (hasDdaGrab)
+                {
+                    cbVideoSource.Items.Add(FFmpegCLIManager.SourceDxgi);
+                }
+
                 cbAudioSource.Items.Clear();
                 cbAudioSource.Items.Add(FFmpegCLIManager.SourceNone);
 

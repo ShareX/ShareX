@@ -43,6 +43,11 @@ namespace ShareX.MediaLib
         public const string SourceVideoDevice = "screen-capture-recorder";
         public const string SourceAudioDevice = "virtual-audio-capturer";
 
+        /// <summary>
+        /// Uses the <c>ddagrab</c> ffmpeg video source filter.
+        /// </summary>
+        public const string SourceDxgi = "DXGI";
+
         public const int x264_min = 0;
         public const int x264_max = 51;
         public const int x265_min = 0;
@@ -277,6 +282,14 @@ namespace ShareX.MediaLib
             }
 
             return devices;
+        }
+
+        public bool GetHasDdaGrab()
+        {
+            Run("-hide_banner -filters");
+
+            string output = Output.ToString();
+            return output.Contains("ddagrab");
         }
 
         public void ConcatenateVideos(string[] inputFiles, string outputFile, bool autoDeleteInputFiles = false)
