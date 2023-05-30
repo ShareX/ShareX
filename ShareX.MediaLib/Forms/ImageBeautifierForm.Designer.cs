@@ -46,6 +46,8 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             this.pOptions = new System.Windows.Forms.Panel();
+            this.lblBackgroundImageFilePath = new System.Windows.Forms.Label();
+            this.btnBackgroundImageFilePathBrowse = new System.Windows.Forms.Button();
             this.cbBackgroundType = new System.Windows.Forms.ComboBox();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -54,8 +56,7 @@
             this.btnCopy = new System.Windows.Forms.Button();
             this.pbBackground = new System.Windows.Forms.PictureBox();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
-            this.btnBackgroundImageFilePathBrowse = new System.Windows.Forms.Button();
-            this.lblBackgroundImageFilePath = new System.Windows.Forms.Label();
+            this.btnResetOptions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPadding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRoundedCorner)).BeginInit();
@@ -243,6 +244,7 @@
             // 
             // pOptions
             // 
+            this.pOptions.Controls.Add(this.btnResetOptions);
             this.pOptions.Controls.Add(this.lblBackgroundImageFilePath);
             this.pOptions.Controls.Add(this.btnBackgroundImageFilePathBrowse);
             this.pOptions.Controls.Add(this.cbBackgroundType);
@@ -271,6 +273,23 @@
             this.pOptions.Name = "pOptions";
             this.pOptions.Size = new System.Drawing.Size(329, 755);
             this.pOptions.TabIndex = 0;
+            // 
+            // lblBackgroundImageFilePath
+            // 
+            this.lblBackgroundImageFilePath.Location = new System.Drawing.Point(13, 432);
+            this.lblBackgroundImageFilePath.Name = "lblBackgroundImageFilePath";
+            this.lblBackgroundImageFilePath.Size = new System.Drawing.Size(296, 120);
+            this.lblBackgroundImageFilePath.TabIndex = 22;
+            // 
+            // btnBackgroundImageFilePathBrowse
+            // 
+            this.btnBackgroundImageFilePathBrowse.Location = new System.Drawing.Point(16, 392);
+            this.btnBackgroundImageFilePathBrowse.Name = "btnBackgroundImageFilePathBrowse";
+            this.btnBackgroundImageFilePathBrowse.Size = new System.Drawing.Size(296, 32);
+            this.btnBackgroundImageFilePathBrowse.TabIndex = 21;
+            this.btnBackgroundImageFilePathBrowse.Text = "Browse image file...";
+            this.btnBackgroundImageFilePathBrowse.UseVisualStyleBackColor = true;
+            this.btnBackgroundImageFilePathBrowse.Click += new System.EventHandler(this.btnBackgroundImageFilePathBrowse_Click);
             // 
             // cbBackgroundType
             // 
@@ -352,22 +371,15 @@
             this.pbBackground.TabStop = false;
             this.pbBackground.Click += new System.EventHandler(this.pbBackground_Click);
             // 
-            // btnBackgroundImageFilePathBrowse
+            // btnResetOptions
             // 
-            this.btnBackgroundImageFilePathBrowse.Location = new System.Drawing.Point(16, 392);
-            this.btnBackgroundImageFilePathBrowse.Name = "btnBackgroundImageFilePathBrowse";
-            this.btnBackgroundImageFilePathBrowse.Size = new System.Drawing.Size(296, 32);
-            this.btnBackgroundImageFilePathBrowse.TabIndex = 21;
-            this.btnBackgroundImageFilePathBrowse.Text = "Browse image file...";
-            this.btnBackgroundImageFilePathBrowse.UseVisualStyleBackColor = true;
-            this.btnBackgroundImageFilePathBrowse.Click += new System.EventHandler(this.btnBackgroundImageFilePathBrowse_Click);
-            // 
-            // lblBackgroundImageFilePath
-            // 
-            this.lblBackgroundImageFilePath.Location = new System.Drawing.Point(13, 432);
-            this.lblBackgroundImageFilePath.Name = "lblBackgroundImageFilePath";
-            this.lblBackgroundImageFilePath.Size = new System.Drawing.Size(296, 120);
-            this.lblBackgroundImageFilePath.TabIndex = 22;
+            this.btnResetOptions.Location = new System.Drawing.Point(8, 656);
+            this.btnResetOptions.Name = "btnResetOptions";
+            this.btnResetOptions.Size = new System.Drawing.Size(312, 32);
+            this.btnResetOptions.TabIndex = 23;
+            this.btnResetOptions.Text = "Reset options...";
+            this.btnResetOptions.UseVisualStyleBackColor = true;
+            this.btnResetOptions.Click += new System.EventHandler(this.btnResetOptions_Click);
             // 
             // ImageBeautifierForm
             // 
@@ -423,5 +435,6 @@
         private System.Windows.Forms.ComboBox cbBackgroundType;
         private System.Windows.Forms.Button btnBackgroundImageFilePathBrowse;
         private System.Windows.Forms.Label lblBackgroundImageFilePath;
+        private System.Windows.Forms.Button btnResetOptions;
     }
 }

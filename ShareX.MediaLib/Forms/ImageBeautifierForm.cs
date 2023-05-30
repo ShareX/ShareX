@@ -55,12 +55,22 @@ namespace ShareX.MediaLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
+            LoadOptions();
+        }
+
+        private void LoadOptions()
+        {
+            isReady = false;
+
             tbMargin.SetValue(Options.Margin);
             tbPadding.SetValue(Options.Padding);
             cbSmartPadding.Checked = Options.SmartPadding;
             tbRoundedCorner.SetValue(Options.RoundedCorner);
             tbShadowSize.SetValue(Options.ShadowSize);
-            cbBackgroundType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageBeautifierBackgroundType>());
+            if (cbBackgroundType.Items.Count == 0)
+            {
+                cbBackgroundType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageBeautifierBackgroundType>());
+            }
             cbBackgroundType.SelectedIndex = (int)Options.BackgroundType;
             lblBackgroundImageFilePath.Text = Options.BackgroundImageFilePath;
             UpdateUI();
@@ -140,6 +150,13 @@ namespace ShareX.MediaLib
                     UpdateOptions();
 
                     Bitmap resultImage = await Options.RenderAsync(SourceImage);
+
+                    if (IsDisposed)
+                    {
+                        resultImage?.Dispose();
+                        return;
+                    }
+
                     PreviewImage?.Dispose();
                     PreviewImage = resultImage;
                     pbPreview.LoadImage(PreviewImage);
@@ -200,51 +217,6 @@ namespace ShareX.MediaLib
             await UpdatePreview();
         }
 
-        private void btnCopy_Click(object sender, EventArgs e)
-        {
-            if (PreviewImage != null)
-            {
-                ClipboardHelpers.CopyImage(PreviewImage);
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (PreviewImage != null && !string.IsNullOrEmpty(FilePath))
-            {
-                ImageHelpers.SaveImage(PreviewImage, FilePath);
-            }
-        }
-
-        private void btnSaveAs_Click(object sender, EventArgs e)
-        {
-            if (PreviewImage != null)
-            {
-                string filePath = ImageHelpers.SaveImageFileDialog(PreviewImage, FilePath);
-
-                if (!string.IsNullOrEmpty(filePath))
-                {
-                    FilePath = filePath;
-                }
-            }
-        }
-
-        private void btnUpload_Click(object sender, EventArgs e)
-        {
-            if (PreviewImage != null)
-            {
-                OnUploadImageRequested();
-            }
-        }
-
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            if (PreviewImage != null)
-            {
-                OnPrintImageRequested();
-            }
-        }
-
         private async void tbShadowSize_Scroll(object sender, EventArgs e)
         {
             await UpdatePreview();
@@ -295,6 +267,63 @@ namespace ShareX.MediaLib
                 Options.BackgroundImageFilePath = filePath;
 
                 await UpdatePreview();
+            }
+        }
+
+        private async void btnResetOptions_Click(object sender, EventArgs e)
+        {
+            // TODO: Translate
+            if (MessageBox.Show("Would you like to reset options?", "ShareX - " + "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Options.ResetOptions();
+                LoadOptions();
+
+                await UpdatePreview();
+            }
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (PreviewImage != null)
+            {
+                ClipboardHelpers.CopyImage(PreviewImage);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (PreviewImage != null && !string.IsNullOrEmpty(FilePath))
+            {
+                ImageHelpers.SaveImage(PreviewImage, FilePath);
+            }
+        }
+
+        private void btnSaveAs_Click(object sender, EventArgs e)
+        {
+            if (PreviewImage != null)
+            {
+                string filePath = ImageHelpers.SaveImageFileDialog(PreviewImage, FilePath);
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    FilePath = filePath;
+                }
+            }
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            if (PreviewImage != null)
+            {
+                OnUploadImageRequested();
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (PreviewImage != null)
+            {
+                OnPrintImageRequested();
             }
         }
     }
