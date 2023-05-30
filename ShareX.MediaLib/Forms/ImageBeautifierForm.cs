@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,7 +42,8 @@ namespace ShareX.MediaLib
         public event Action<Bitmap> UploadImageRequested;
         public event Action<Bitmap> PrintImageRequested;
 
-        private bool isReady, isBusy, isPending;
+        private bool isReady, isBusy, isPending, pendingQuickRender;
+        private string title;
 
         private ImageBeautifierForm(ImageBeautifierOptions options = null)
         {
@@ -54,6 +56,7 @@ namespace ShareX.MediaLib
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            title = Text;
 
             LoadOptions();
         }
@@ -133,7 +136,7 @@ namespace ShareX.MediaLib
             }
         }
 
-        private async Task UpdatePreview()
+        private async Task UpdatePreview(bool quickRender = false)
         {
             if (isReady)
             {
@@ -142,6 +145,7 @@ namespace ShareX.MediaLib
                 if (isBusy)
                 {
                     isPending = true;
+                    pendingQuickRender = quickRender;
                 }
                 else
                 {
@@ -149,12 +153,26 @@ namespace ShareX.MediaLib
 
                     UpdateOptions();
 
-                    Bitmap resultImage = await Options.RenderAsync(SourceImage);
+                    ImageBeautifierOptions options = Options.Copy();
+
+                    if (quickRender)
+                    {
+                        options.ShadowSize = 0;
+                    }
+
+                    Stopwatch renderTime = Stopwatch.StartNew();
+                    Bitmap resultImage = await options.RenderAsync(SourceImage);
+                    renderTime.Stop();
 
                     if (IsDisposed)
                     {
                         resultImage?.Dispose();
                         return;
+                    }
+
+                    if (HelpersOptions.DevMode)
+                    {
+                        Text = $"{title} - Render time: {renderTime.ElapsedMilliseconds} ms";
                     }
 
                     PreviewImage?.Dispose();
@@ -167,7 +185,7 @@ namespace ShareX.MediaLib
                     {
                         isPending = false;
 
-                        await UpdatePreview();
+                        await UpdatePreview(pendingQuickRender);
                     }
                 }
             }
@@ -199,10 +217,20 @@ namespace ShareX.MediaLib
 
         private async void tbMargin_Scroll(object sender, EventArgs e)
         {
+            await UpdatePreview(true);
+        }
+
+        private async void tbMargin_MouseUp(object sender, MouseEventArgs e)
+        {
             await UpdatePreview();
         }
 
         private async void tbPadding_Scroll(object sender, EventArgs e)
+        {
+            await UpdatePreview(true);
+        }
+
+        private async void tbPadding_MouseUp(object sender, MouseEventArgs e)
         {
             await UpdatePreview();
         }
@@ -213,6 +241,11 @@ namespace ShareX.MediaLib
         }
 
         private async void tbRoundedCorner_Scroll(object sender, EventArgs e)
+        {
+            await UpdatePreview(true);
+        }
+
+        private async void tbRoundedCorner_MouseUp(object sender, MouseEventArgs e)
         {
             await UpdatePreview();
         }

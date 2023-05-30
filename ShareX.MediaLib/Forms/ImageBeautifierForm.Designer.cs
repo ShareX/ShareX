@@ -46,6 +46,7 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             this.pOptions = new System.Windows.Forms.Panel();
+            this.btnResetOptions = new System.Windows.Forms.Button();
             this.lblBackgroundImageFilePath = new System.Windows.Forms.Label();
             this.btnBackgroundImageFilePathBrowse = new System.Windows.Forms.Button();
             this.cbBackgroundType = new System.Windows.Forms.ComboBox();
@@ -56,7 +57,6 @@
             this.btnCopy = new System.Windows.Forms.Button();
             this.pbBackground = new System.Windows.Forms.PictureBox();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
-            this.btnResetOptions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPadding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRoundedCorner)).BeginInit();
@@ -86,6 +86,7 @@
             this.tbMargin.TabIndex = 1;
             this.tbMargin.TickFrequency = 10;
             this.tbMargin.Scroll += new System.EventHandler(this.tbMargin_Scroll);
+            this.tbMargin.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbMargin_MouseUp);
             // 
             // lblPadding
             // 
@@ -107,6 +108,7 @@
             this.tbPadding.TabIndex = 4;
             this.tbPadding.TickFrequency = 10;
             this.tbPadding.Scroll += new System.EventHandler(this.tbPadding_Scroll);
+            this.tbPadding.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbPadding_MouseUp);
             // 
             // cbSmartPadding
             // 
@@ -140,6 +142,7 @@
             this.tbRoundedCorner.TabIndex = 8;
             this.tbRoundedCorner.TickFrequency = 5;
             this.tbRoundedCorner.Scroll += new System.EventHandler(this.tbRoundedCorner_Scroll);
+            this.tbRoundedCorner.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbRoundedCorner_MouseUp);
             // 
             // lblShadowSize
             // 
@@ -274,6 +277,17 @@
             this.pOptions.Size = new System.Drawing.Size(329, 755);
             this.pOptions.TabIndex = 0;
             // 
+            // btnResetOptions
+            // 
+            this.btnResetOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnResetOptions.Location = new System.Drawing.Point(8, 656);
+            this.btnResetOptions.Name = "btnResetOptions";
+            this.btnResetOptions.Size = new System.Drawing.Size(312, 32);
+            this.btnResetOptions.TabIndex = 23;
+            this.btnResetOptions.Text = "Reset options...";
+            this.btnResetOptions.UseVisualStyleBackColor = true;
+            this.btnResetOptions.Click += new System.EventHandler(this.btnResetOptions_Click);
+            // 
             // lblBackgroundImageFilePath
             // 
             this.lblBackgroundImageFilePath.Location = new System.Drawing.Point(13, 432);
@@ -370,16 +384,6 @@
             this.pbBackground.TabIndex = 14;
             this.pbBackground.TabStop = false;
             this.pbBackground.Click += new System.EventHandler(this.pbBackground_Click);
-            // 
-            // btnResetOptions
-            // 
-            this.btnResetOptions.Location = new System.Drawing.Point(8, 656);
-            this.btnResetOptions.Name = "btnResetOptions";
-            this.btnResetOptions.Size = new System.Drawing.Size(312, 32);
-            this.btnResetOptions.TabIndex = 23;
-            this.btnResetOptions.Text = "Reset options...";
-            this.btnResetOptions.UseVisualStyleBackColor = true;
-            this.btnResetOptions.Click += new System.EventHandler(this.btnResetOptions_Click);
             // 
             // ImageBeautifierForm
             // 
