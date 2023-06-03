@@ -38,6 +38,7 @@ namespace ShareX.MediaLib
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
         }
 
         private void UpdateEnabled()

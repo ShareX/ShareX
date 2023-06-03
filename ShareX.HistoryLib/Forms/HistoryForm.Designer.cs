@@ -386,7 +386,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.scMain);
-            this.KeyPreview = true;
             this.Name = "HistoryForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HistoryForm_FormClosing);
             this.Shown += new System.EventHandler(this.HistoryForm_Shown);

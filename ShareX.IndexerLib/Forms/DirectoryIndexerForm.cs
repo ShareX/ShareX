@@ -44,6 +44,7 @@ namespace ShareX.IndexerLib
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
 
             Settings = settings;
             pgSettings.SelectedObject = Settings;

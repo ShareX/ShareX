@@ -36,6 +36,7 @@ namespace ShareX.HelpersLib
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
 
             AddDNS(Resources.DNSChangerForm_DNSChangerForm_Manual);
             AddDNS("Google Public DNS", "8.8.8.8", "8.8.4.4"); // https://developers.google.com/speed/public-dns/

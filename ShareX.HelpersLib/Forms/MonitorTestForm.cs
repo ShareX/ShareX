@@ -36,6 +36,7 @@ namespace ShareX.HelpersLib
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
 
             Rectangle screenBounds = CaptureHelpers.GetScreenBounds();
             Location = screenBounds.Location;
@@ -187,15 +188,7 @@ namespace ShareX.HelpersLib
 
         #region Form events
 
-        private void MainForm_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                Close();
-            }
-        }
-
-        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        private void MonitorTestForm_MouseDown(object sender, MouseEventArgs e)
         {
             bool visible = !pSettings.Visible;
             if (visible) pSettings.Location = e.Location;

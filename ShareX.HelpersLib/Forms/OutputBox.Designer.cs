@@ -42,7 +42,6 @@
             this.rtbText.Size = new System.Drawing.Size(968, 745);
             this.rtbText.TabIndex = 1;
             this.rtbText.Text = "";
-            this.rtbText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtbText_KeyUp);
             // 
             // OutputBox
             // 

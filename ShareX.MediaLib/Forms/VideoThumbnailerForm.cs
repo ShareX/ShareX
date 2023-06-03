@@ -47,6 +47,7 @@ namespace ShareX.MediaLib
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
 
             txtMediaPath.Text = Options.LastVideoPath ?? "";
             pgOptions.SelectedObject = Options;

@@ -279,16 +279,23 @@ namespace ShareX.HelpersLib
         {
             switch (e.KeyCode)
             {
-                case Keys.Escape:
-                case Keys.Enter:
-                case Keys.Space:
-                    Close();
-                    break;
                 case Keys.Left:
                     NavigateImage(-1);
                     break;
                 case Keys.Right:
                     NavigateImage(1);
+                    break;
+            }
+        }
+
+        private void pbPreview_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Escape:
+                case Keys.Enter:
+                case Keys.Space:
+                    Close();
                     break;
             }
         }
@@ -379,6 +386,7 @@ namespace ShareX.HelpersLib
             pbPreview.MouseMove += pbPreview_MouseMove;
             pbPreview.MouseWheel += pbPreview_MouseWheel;
             pbPreview.KeyDown += pbPreview_KeyDown;
+            pbPreview.KeyUp += pbPreview_KeyUp;
             pbPreview.PreviewKeyDown += pbPreview_PreviewKeyDown;
             lblStatus.MouseEnter += lblStatus_MouseEnter;
 

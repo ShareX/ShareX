@@ -148,6 +148,7 @@ namespace ShareX
             ShareXResources.ApplyTheme(this);
             TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
+            this.CloseOnEscape();
 
             tsMain.Cursor = Cursors.Arrow;
             openHandCursor = Helpers.CreateCursor(Resources.openhand);
@@ -484,9 +485,6 @@ namespace ShareX
         {
             switch (e.KeyData)
             {
-                case Keys.Escape:
-                    Close();
-                    break;
                 case Keys.Control | Keys.C:
                     ClipboardHelpers.CopyImage(Image);
                     break;

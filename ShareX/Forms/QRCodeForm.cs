@@ -62,6 +62,7 @@ namespace ShareX
             InitializeComponent();
             rtbDecodeResult.AddContextMenu();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
 
             if (!string.IsNullOrEmpty(text))
             {

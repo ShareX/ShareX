@@ -45,6 +45,7 @@ namespace ShareX.MediaLib
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
 
             if (Options.Orientation == Orientation.Horizontal)
             {

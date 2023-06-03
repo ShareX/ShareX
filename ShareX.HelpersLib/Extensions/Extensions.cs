@@ -923,5 +923,18 @@ namespace ShareX.HelpersLib
         {
             control.Font = new Font(control.Font, fontStyle);
         }
+
+        public static void CloseOnEscape(this Form form)
+        {
+            form.KeyPreview = true;
+
+            form.KeyUp += (sender, e) =>
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    form.Close();
+                }
+            };
+        }
     }
 }

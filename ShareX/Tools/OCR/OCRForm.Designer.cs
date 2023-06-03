@@ -164,11 +164,9 @@
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.cbLanguages);
             this.Controls.Add(this.lblLanguage);
-            this.KeyPreview = true;
             this.Name = "OCRForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.OCRForm_Shown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OCRForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.nudScaleFactor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

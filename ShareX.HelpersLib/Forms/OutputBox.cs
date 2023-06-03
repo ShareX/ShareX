@@ -37,6 +37,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
             rtbText.AddContextMenu();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
 
             Text = "ShareX - " + title;
             rtbText.Text = text;
@@ -64,14 +65,6 @@ namespace ShareX.HelpersLib
             else
             {
                 NativeMethods.SendMessage(rtbText.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
-            }
-        }
-
-        private void rtbText_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                Close();
             }
         }
     }

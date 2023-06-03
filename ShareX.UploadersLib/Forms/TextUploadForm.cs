@@ -37,6 +37,7 @@ namespace ShareX.UploadersLib
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
 
             if (string.IsNullOrEmpty(content) && ClipboardHelpers.ContainsText())
             {

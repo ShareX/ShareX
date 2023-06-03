@@ -91,6 +91,8 @@ namespace ShareX.HistoryLib
 
             ShareXResources.ApplyTheme(this);
 
+            this.CloseOnEscape();
+
             if (Settings.RememberWindowState)
             {
                 Settings.WindowState.ApplyFormState(this);

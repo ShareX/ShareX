@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader1 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "Name", 100, 0, true);
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader2 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "Size", 100, 1, true);
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader3 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "Dimensions", 100, 2, true);
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader4 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "Path", 100, 3, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader1 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "Name", 100, 0, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader2 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "Size", 100, 1, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader3 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "Dimensions", 100, 2, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader4 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "Path", 100, 3, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.ilvImages = new Manina.Windows.Forms.ImageListView();
@@ -68,31 +68,31 @@
             this.ilvImages.AllowItemReorder = false;
             this.ilvImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ilvImages.CacheLimit = "100MB";
-            ımageListViewColumnHeader1.Comparer = null;
-            ımageListViewColumnHeader1.DisplayIndex = 0;
-            ımageListViewColumnHeader1.Grouper = null;
-            ımageListViewColumnHeader1.Key = "";
-            ımageListViewColumnHeader1.Type = Manina.Windows.Forms.ColumnType.Name;
-            ımageListViewColumnHeader2.Comparer = null;
-            ımageListViewColumnHeader2.DisplayIndex = 1;
-            ımageListViewColumnHeader2.Grouper = null;
-            ımageListViewColumnHeader2.Key = "";
-            ımageListViewColumnHeader2.Type = Manina.Windows.Forms.ColumnType.FileSize;
-            ımageListViewColumnHeader3.Comparer = null;
-            ımageListViewColumnHeader3.DisplayIndex = 2;
-            ımageListViewColumnHeader3.Grouper = null;
-            ımageListViewColumnHeader3.Key = "";
-            ımageListViewColumnHeader3.Type = Manina.Windows.Forms.ColumnType.Dimensions;
-            ımageListViewColumnHeader4.Comparer = null;
-            ımageListViewColumnHeader4.DisplayIndex = 3;
-            ımageListViewColumnHeader4.Grouper = null;
-            ımageListViewColumnHeader4.Key = "";
-            ımageListViewColumnHeader4.Type = Manina.Windows.Forms.ColumnType.FilePath;
+            imageListViewColumnHeader1.Comparer = null;
+            imageListViewColumnHeader1.DisplayIndex = 0;
+            imageListViewColumnHeader1.Grouper = null;
+            imageListViewColumnHeader1.Key = "";
+            imageListViewColumnHeader1.Type = Manina.Windows.Forms.ColumnType.Name;
+            imageListViewColumnHeader2.Comparer = null;
+            imageListViewColumnHeader2.DisplayIndex = 1;
+            imageListViewColumnHeader2.Grouper = null;
+            imageListViewColumnHeader2.Key = "";
+            imageListViewColumnHeader2.Type = Manina.Windows.Forms.ColumnType.FileSize;
+            imageListViewColumnHeader3.Comparer = null;
+            imageListViewColumnHeader3.DisplayIndex = 2;
+            imageListViewColumnHeader3.Grouper = null;
+            imageListViewColumnHeader3.Key = "";
+            imageListViewColumnHeader3.Type = Manina.Windows.Forms.ColumnType.Dimensions;
+            imageListViewColumnHeader4.Comparer = null;
+            imageListViewColumnHeader4.DisplayIndex = 3;
+            imageListViewColumnHeader4.Grouper = null;
+            imageListViewColumnHeader4.Key = "";
+            imageListViewColumnHeader4.Type = Manina.Windows.Forms.ColumnType.FilePath;
             this.ilvImages.Columns.AddRange(new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader[] {
-            ımageListViewColumnHeader1,
-            ımageListViewColumnHeader2,
-            ımageListViewColumnHeader3,
-            ımageListViewColumnHeader4});
+            imageListViewColumnHeader1,
+            imageListViewColumnHeader2,
+            imageListViewColumnHeader3,
+            imageListViewColumnHeader4});
             resources.ApplyResources(this.ilvImages, "ilvImages");
             this.ilvImages.Name = "ilvImages";
             this.ilvImages.PersistentCacheDirectory = "";
@@ -154,7 +154,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tscMain);
-            this.KeyPreview = true;
             this.Name = "ImageHistoryForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImageHistoryForm_FormClosing);
             this.Shown += new System.EventHandler(this.ImageHistoryForm_Shown);

@@ -60,6 +60,8 @@ namespace ShareX.HelpersLib
 
             ResumeLayout(false);
 
+            this.CloseOnEscape();
+
             animationTime = Stopwatch.StartNew();
         }
 
@@ -68,18 +70,6 @@ namespace ShareX.HelpersLib
             this.ForceActivate();
 
             base.OnShown(e);
-        }
-
-        protected override void OnKeyUp(KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                Close();
-            }
-            else
-            {
-                base.OnKeyUp(e);
-            }
         }
 
         protected override void OnMouseUp(MouseEventArgs e)

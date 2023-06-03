@@ -107,6 +107,7 @@
             // btnGradientColor2
             // 
             this.btnGradientColor2.Color = System.Drawing.Color.Empty;
+            this.btnGradientColor2.ColorPickerOptions = null;
             resources.ApplyResources(this.btnGradientColor2, "btnGradientColor2");
             this.btnGradientColor2.Name = "btnGradientColor2";
             this.btnGradientColor2.UseVisualStyleBackColor = true;
@@ -115,6 +116,7 @@
             // btnGradientColor1
             // 
             this.btnGradientColor1.Color = System.Drawing.Color.Empty;
+            this.btnGradientColor1.ColorPickerOptions = null;
             resources.ApplyResources(this.btnGradientColor1, "btnGradientColor1");
             this.btnGradientColor1.Name = "btnGradientColor1";
             this.btnGradientColor1.UseVisualStyleBackColor = true;
@@ -278,18 +280,15 @@
             // MonitorTestForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pSettings);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.KeyPreview = true;
             this.Name = "MonitorTestForm";
             this.TopMost = true;
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MonitorTestForm_MouseDown);
             this.pSettings.ResumeLayout(false);
             this.pSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbShapeSize)).EndInit();

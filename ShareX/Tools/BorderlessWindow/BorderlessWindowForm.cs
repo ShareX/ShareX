@@ -41,6 +41,7 @@ namespace ShareX
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            this.CloseOnEscape();
 
             Settings = settings;
         }
