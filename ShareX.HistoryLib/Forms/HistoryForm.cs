@@ -89,9 +89,7 @@ namespace ShareX.HistoryLib
                 tstbSearch.Text = Settings.SearchText;
             }
 
-            ShareXResources.ApplyTheme(this);
-
-            this.CloseOnEscape();
+            ShareXResources.ApplyTheme(this, true);
 
             if (Settings.RememberWindowState)
             {
@@ -412,11 +410,11 @@ namespace ShareX.HistoryLib
             switch (e.KeyData)
             {
                 case Keys.F5:
-                    e.Handled = true;
+                    e.SuppressKeyPress = true;
                     await RefreshHistoryItems();
                     break;
                 case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
-                    e.Handled = true;
+                    e.SuppressKeyPress = true;
                     await RefreshHistoryItems(true);
                     break;
             }
@@ -521,7 +519,7 @@ namespace ShareX.HistoryLib
 
         private void lvHistory_KeyDown(object sender, KeyEventArgs e)
         {
-            e.Handled = e.SuppressKeyPress = him.HandleKeyInput(e);
+            e.SuppressKeyPress = him.HandleKeyInput(e);
         }
 
         private void lvHistory_ItemDrag(object sender, ItemDragEventArgs e)

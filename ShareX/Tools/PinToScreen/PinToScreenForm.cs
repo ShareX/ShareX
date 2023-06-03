@@ -145,10 +145,9 @@ namespace ShareX
             InitializeComponent();
             // TODO: Add options form
             tsbOptions.Visible = false;
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
             TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
-            this.CloseOnEscape();
 
             tsMain.Cursor = Cursors.Arrow;
             openHandCursor = Helpers.CreateCursor(Resources.openhand);

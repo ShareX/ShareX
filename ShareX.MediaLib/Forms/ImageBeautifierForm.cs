@@ -55,8 +55,7 @@ namespace ShareX.MediaLib
             }
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-            this.CloseOnEscape();
+            ShareXResources.ApplyTheme(this, true);
             title = Text;
 
             LoadOptions();

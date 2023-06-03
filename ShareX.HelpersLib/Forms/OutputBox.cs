@@ -36,8 +36,7 @@ namespace ShareX.HelpersLib
         {
             InitializeComponent();
             rtbText.AddContextMenu();
-            ShareXResources.ApplyTheme(this);
-            this.CloseOnEscape();
+            ShareXResources.ApplyTheme(this, true);
 
             Text = "ShareX - " + title;
             rtbText.Text = text;

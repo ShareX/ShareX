@@ -40,8 +40,7 @@ namespace ShareX
         public BorderlessWindowForm(BorderlessWindowSettings settings)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-            this.CloseOnEscape();
+            ShareXResources.ApplyTheme(this, true);
 
             Settings = settings;
         }

@@ -1465,7 +1465,7 @@ namespace ShareX
                     break;
             }
 
-            e.Handled = e.SuppressKeyPress = true;
+            e.SuppressKeyPress = true;
         }
 
         private void pbPreview_MouseDown(object sender, MouseEventArgs e)

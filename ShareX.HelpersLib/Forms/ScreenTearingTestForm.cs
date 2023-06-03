@@ -52,7 +52,6 @@ namespace ShareX.HelpersLib
             Bounds = screenRectangle;
             Cursor = Cursors.Hand;
             FormBorderStyle = FormBorderStyle.None;
-            Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             Text = "ShareX - Screen tearing test";
             ShowInTaskbar = false;
@@ -60,7 +59,7 @@ namespace ShareX.HelpersLib
 
             ResumeLayout(false);
 
-            this.CloseOnEscape();
+            ShareXResources.ApplyTheme(this, true);
 
             animationTime = Stopwatch.StartNew();
         }

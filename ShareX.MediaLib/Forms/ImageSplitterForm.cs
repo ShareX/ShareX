@@ -42,8 +42,7 @@ namespace ShareX.MediaLib
         public ImageSplitterForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-            this.CloseOnEscape();
+            ShareXResources.ApplyTheme(this, true);
             UpdateButtonStates();
         }
 

@@ -37,8 +37,7 @@ namespace ShareX.HelpersLib
         public ClipboardViewerForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-            this.CloseOnEscape();
+            ShareXResources.ApplyTheme(this, true);
         }
 
         private void ClipboardViewerForm_Load(object sender, EventArgs e)

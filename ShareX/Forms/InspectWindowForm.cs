@@ -40,8 +40,7 @@ namespace ShareX
         {
             InitializeComponent();
             rtbInfo.AddContextMenu();
-            ShareXResources.ApplyTheme(this);
-            this.CloseOnEscape();
+            ShareXResources.ApplyTheme(this, true);
             SelectHandle(true);
         }
 

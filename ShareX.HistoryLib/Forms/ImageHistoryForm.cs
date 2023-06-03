@@ -74,9 +74,7 @@ namespace ShareX.HistoryLib
                 tstbSearch.Text = Settings.SearchText;
             }
 
-            ShareXResources.ApplyTheme(this);
-
-            this.CloseOnEscape();
+            ShareXResources.ApplyTheme(this, true);
 
             if (Settings.RememberWindowState)
             {
@@ -187,11 +185,11 @@ namespace ShareX.HistoryLib
             {
                 case Keys.F5:
                     RefreshHistoryItems();
-                    e.Handled = true;
+                    e.SuppressKeyPress = true;
                     break;
                 case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
                     RefreshHistoryItems(true);
-                    e.Handled = true;
+                    e.SuppressKeyPress = true;
                     break;
             }
         }
@@ -231,7 +229,6 @@ namespace ShareX.HistoryLib
             if (e.KeyCode == Keys.Enter)
             {
                 RefreshHistoryItems();
-                e.Handled = true;
                 e.SuppressKeyPress = true;
             }
         }
@@ -254,7 +251,7 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_KeyDown(object sender, KeyEventArgs e)
         {
-            e.Handled = e.SuppressKeyPress = him.HandleKeyInput(e);
+            e.SuppressKeyPress = him.HandleKeyInput(e);
         }
 
         #endregion Form events

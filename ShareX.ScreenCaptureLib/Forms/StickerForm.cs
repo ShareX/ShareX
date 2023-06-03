@@ -149,7 +149,6 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.Handled = true;
                 e.SuppressKeyPress = true;
             }
         }
@@ -158,7 +157,6 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.Handled = true;
                 e.SuppressKeyPress = true;
 
                 if (ilvStickers.Items.Count > 0)

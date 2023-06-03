@@ -1162,7 +1162,7 @@ namespace ShareX.ScreenCaptureLib
             tsMain.PerformLayout();
             menuForm.ResumeLayout(false);
 
-            ShareXResources.ApplyTheme(menuForm, false);
+            ShareXResources.ApplyTheme(menuForm, false, false);
 
             menuForm.Show(Form);
 
@@ -1190,14 +1190,14 @@ namespace ShareX.ScreenCaptureLib
             form_KeyDown(sender, e);
             Form.RegionCaptureForm_KeyDown(sender, e);
 
-            e.Handled = true;
+            e.SuppressKeyPress = true;
         }
 
         private void MenuForm_KeyUp(object sender, KeyEventArgs e)
         {
             form_KeyUp(sender, e);
 
-            e.Handled = true;
+            e.SuppressKeyPress = true;
         }
 
         private void MenuForm_LocationChanged(object sender, EventArgs e)

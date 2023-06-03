@@ -123,8 +123,13 @@ namespace ShareX.HelpersLib
 
         public static ShareXTheme Theme { get; set; } = ShareXTheme.DarkTheme;
 
-        public static void ApplyTheme(Form form, bool setIcon = true)
+        public static void ApplyTheme(Form form, bool closeOnEscape = false, bool setIcon = true)
         {
+            if (closeOnEscape)
+            {
+                form.CloseOnEscape();
+            }
+
             if (setIcon)
             {
                 form.Icon = Icon;

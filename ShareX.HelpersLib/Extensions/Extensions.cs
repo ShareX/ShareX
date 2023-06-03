@@ -345,8 +345,8 @@ namespace ShareX.HelpersLib
                 if (e.KeyData == (Keys.Control | Keys.A))
                 {
                     tb.SelectAll();
+
                     e.SuppressKeyPress = true;
-                    e.Handled = true;
                 }
             };
         }
@@ -927,6 +927,14 @@ namespace ShareX.HelpersLib
         public static void CloseOnEscape(this Form form)
         {
             form.KeyPreview = true;
+
+            form.KeyDown += (sender, e) =>
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    e.SuppressKeyPress = true;
+                }
+            };
 
             form.KeyUp += (sender, e) =>
             {
