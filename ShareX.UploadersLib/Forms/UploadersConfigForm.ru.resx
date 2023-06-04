@@ -1095,4 +1095,7 @@
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>Добавлять имя файла в конец ссылки</value>
   </data>
+  <data name="lblAzureStorageCacheControl.Text" xml:space="preserve">
+    <value>Cache-Control заголовок:</value>
+  </data>
 </root>

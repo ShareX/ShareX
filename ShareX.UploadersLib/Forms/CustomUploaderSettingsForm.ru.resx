@@ -238,6 +238,6 @@
     <value>Ссылка:</value>
   </data>
   <data name="btnTestURLSyntax.Text" xml:space="preserve">
-    <value>Тест</value>
+    <value>Тест...</value>
   </data>
 </root>

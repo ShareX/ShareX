@@ -127,7 +127,7 @@
     <value>Отмена</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Содержимое буфера</value>
+    <value>ShareX - Загрузка из буфера</value>
   </data>
   <data name="btnUpload.Text" xml:space="preserve">
     <value>Загрузить</value>

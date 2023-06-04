@@ -1270,4 +1270,7 @@
   <data name="ShapeType_ToolCutOut" xml:space="preserve">
     <value>Разрыв (X)</value>
   </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>Украшатель изображений</value>
+  </data>
 </root>
