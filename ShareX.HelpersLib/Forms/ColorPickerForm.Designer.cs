@@ -70,6 +70,7 @@
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.btnScreenColorPicker = new System.Windows.Forms.Button();
             this.btnClipboardColorPicker = new System.Windows.Forms.Button();
+            this.cbTransparent = new ShareX.HelpersLib.ColorButton();
             this.cmsCopy = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCopyAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyRGB = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,7 +94,6 @@
             this.lblNameValue = new System.Windows.Forms.Label();
             this.btnClipboardStatus = new System.Windows.Forms.Button();
             this.mbCopy = new ShareX.HelpersLib.MenuButton();
-            this.cbTransparent = new ShareX.HelpersLib.ColorButton();
             this.pbColorPreview = new ShareX.HelpersLib.MyPictureBox();
             this.colorPicker = new ShareX.HelpersLib.ColorPicker();
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).BeginInit();
@@ -114,7 +114,6 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -437,6 +436,17 @@
             this.btnClipboardColorPicker.UseVisualStyleBackColor = true;
             this.btnClipboardColorPicker.Click += new System.EventHandler(this.btnClipboardColorPicker_Click);
             // 
+            // cbTransparent
+            // 
+            this.cbTransparent.Color = System.Drawing.Color.Transparent;
+            this.cbTransparent.ColorPickerOptions = null;
+            resources.ApplyResources(this.cbTransparent, "cbTransparent");
+            this.cbTransparent.ManualButtonClick = true;
+            this.cbTransparent.Name = "cbTransparent";
+            this.ttMain.SetToolTip(this.cbTransparent, resources.GetString("cbTransparent.ToolTip"));
+            this.cbTransparent.UseVisualStyleBackColor = true;
+            this.cbTransparent.Click += new System.EventHandler(this.cbTransparent_Click);
+            // 
             // cmsCopy
             // 
             this.cmsCopy.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -588,16 +598,6 @@
             this.mbCopy.Name = "mbCopy";
             this.mbCopy.UseVisualStyleBackColor = true;
             // 
-            // cbTransparent
-            // 
-            this.cbTransparent.Color = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.cbTransparent, "cbTransparent");
-            this.cbTransparent.ManualButtonClick = true;
-            this.cbTransparent.Name = "cbTransparent";
-            this.ttMain.SetToolTip(this.cbTransparent, resources.GetString("cbTransparent.ToolTip"));
-            this.cbTransparent.UseVisualStyleBackColor = true;
-            this.cbTransparent.Click += new System.EventHandler(this.cbTransparent_Click);
-            // 
             // pbColorPreview
             // 
             this.pbColorPreview.BackColor = System.Drawing.SystemColors.Window;
@@ -620,7 +620,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.btnClipboardStatus);
             this.Controls.Add(this.btnClipboardColorPicker);
             this.Controls.Add(this.lblName);

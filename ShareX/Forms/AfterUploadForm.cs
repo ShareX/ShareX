@@ -46,7 +46,7 @@ namespace ShareX
         public AfterUploadForm(TaskInfo info)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             Info = info;
 
@@ -190,6 +190,7 @@ namespace ShareX
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
 

@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib
         public EmailForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
         }
 
         public EmailForm(string toEmail, string subject, string body) : this()

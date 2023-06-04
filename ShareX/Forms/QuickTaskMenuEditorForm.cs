@@ -36,7 +36,7 @@ namespace ShareX
         public QuickTaskMenuEditorForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             if (Program.Settings.QuickTaskPresets == null)
             {
@@ -130,6 +130,7 @@ namespace ShareX
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
     }

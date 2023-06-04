@@ -79,7 +79,6 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -88,10 +87,8 @@
             // 
             this.AcceptButton = this.btnSend;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtMessage);

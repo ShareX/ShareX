@@ -38,7 +38,7 @@ namespace ShareX
         public FirstTimeUploadForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
             lblHeader.BackColor = Color.DarkRed;
             lblHeader.ForeColor = Color.WhiteSmoke;
 
@@ -60,6 +60,14 @@ namespace ShareX
             {
                 btnYes.Text = textYes + " (" + countdown + ")";
                 countdown--;
+            }
+        }
+
+        public static bool ShowForm()
+        {
+            using (FirstTimeUploadForm form = new FirstTimeUploadForm())
+            {
+                return form.ShowDialog() == DialogResult.Yes;
             }
         }
 
@@ -86,14 +94,6 @@ namespace ShareX
         {
             DialogResult = DialogResult.No;
             Close();
-        }
-
-        public static bool ShowForm()
-        {
-            using (FirstTimeUploadForm form = new FirstTimeUploadForm())
-            {
-                return form.ShowDialog() == DialogResult.Yes;
-            }
         }
     }
 }

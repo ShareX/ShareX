@@ -43,7 +43,7 @@ namespace ShareX
         public ClipboardUploadForm(TaskSettings taskSettings, bool showCheckBox = false)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
             this.taskSettings = taskSettings;
 
             if (ShareXResources.UseCustomTheme)
@@ -147,11 +147,14 @@ namespace ShareX
         private void btnUpload_Click(object sender, EventArgs e)
         {
             ClipboardUpload();
+
+            DialogResult = DialogResult.OK;
             Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
     }

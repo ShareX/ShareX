@@ -57,7 +57,7 @@ namespace ShareX.ImageEffectsLib
             pauseUpdate = true;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             PreviewImage = bmp;
             if (PreviewImage == null)
@@ -883,6 +883,7 @@ namespace ShareX.ImageEffectsLib
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
 

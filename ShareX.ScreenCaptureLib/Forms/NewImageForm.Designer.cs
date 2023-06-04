@@ -105,6 +105,7 @@
             // btnChangeColor
             // 
             this.btnChangeColor.Color = System.Drawing.Color.Empty;
+            this.btnChangeColor.ColorPickerOptions = null;
             resources.ApplyResources(this.btnChangeColor, "btnChangeColor");
             this.btnChangeColor.Name = "btnChangeColor";
             this.btnChangeColor.UseVisualStyleBackColor = true;
@@ -118,7 +119,6 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -138,7 +138,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.gbBackgroundColor);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);

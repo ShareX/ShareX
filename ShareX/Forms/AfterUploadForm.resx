@@ -136,7 +136,7 @@
     <value>pbPreview</value>
   </data>
   <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=14.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
     <value>$this</value>
@@ -367,7 +367,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>$this</value>

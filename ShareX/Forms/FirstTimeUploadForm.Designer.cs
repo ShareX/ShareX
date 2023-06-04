@@ -44,7 +44,6 @@
             // 
             // btnYes
             // 
-            this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
             resources.ApplyResources(this.btnYes, "btnYes");
             this.btnYes.Name = "btnYes";
             this.btnYes.UseVisualStyleBackColor = true;
@@ -52,7 +51,6 @@
             // 
             // btnNo
             // 
-            this.btnNo.DialogResult = System.Windows.Forms.DialogResult.No;
             resources.ApplyResources(this.btnNo, "btnNo");
             this.btnNo.Name = "btnNo";
             this.btnNo.UseVisualStyleBackColor = true;
@@ -72,7 +70,6 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnNo;
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);

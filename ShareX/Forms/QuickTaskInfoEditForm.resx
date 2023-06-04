@@ -147,7 +147,7 @@
     <value>mbAfterCaptureTasks</value>
   </data>
   <data name="&gt;&gt;mbAfterCaptureTasks.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbAfterCaptureTasks.Parent" xml:space="preserve">
     <value>$this</value>
@@ -183,7 +183,7 @@
     <value>mbAfterUploadTasks</value>
   </data>
   <data name="&gt;&gt;mbAfterUploadTasks.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbAfterUploadTasks.Parent" xml:space="preserve">
     <value>$this</value>

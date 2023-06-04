@@ -46,7 +46,6 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -59,11 +58,13 @@
             // pbPreview
             // 
             resources.ApplyResources(this.pbPreview, "pbPreview");
+            this.pbPreview.BackColor = System.Drawing.SystemColors.Window;
             this.pbPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.EnableRightClickMenu = true;
             this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Name = "pbPreview";
+            this.pbPreview.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             this.pbPreview.ShowImageSizeLabel = true;
             // 
             // ucBeforeUpload
@@ -75,10 +76,8 @@
             // 
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.pbPreview);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnCancel);

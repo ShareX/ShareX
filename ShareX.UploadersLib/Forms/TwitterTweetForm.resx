@@ -211,7 +211,7 @@
   </data>
   <data name="lblTweetLength.Text" xml:space="preserve">
     <value>140</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblTweetLength.Name" xml:space="preserve">
     <value>lblTweetLength</value>
   </data>
@@ -228,7 +228,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>400, 240</value>

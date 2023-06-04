@@ -41,7 +41,7 @@ namespace ShareX
             InitializeComponent();
             lblProductName.Text = Program.Title;
             pbLogo.Image = ShareXResources.Logo;
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
 #if STEAM
             uclUpdate.Visible = false;
@@ -154,6 +154,7 @@ Blob Emoji: http://blobs.gg
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
     }

@@ -41,7 +41,7 @@ namespace ShareX.ScreenCaptureLib
         public ImageSizeForm(Size size, ImageInterpolationMode interpolationMode)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             ImageSize = size;
             InterpolationMode = interpolationMode;

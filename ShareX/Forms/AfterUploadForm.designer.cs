@@ -98,7 +98,6 @@
             // btnClose
             // 
             resources.ApplyResources(this.btnClose, "btnClose");
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Name = "btnClose";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -132,7 +131,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnClose;
             this.Controls.Add(this.lvClipboardFormats);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOpenLink);

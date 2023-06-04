@@ -391,7 +391,7 @@
     <value>cbtnCanvasColor</value>
   </data>
   <data name="&gt;&gt;cbtnCanvasColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbtnCanvasColor.Parent" xml:space="preserve">
     <value>$this</value>

@@ -248,7 +248,6 @@
   </data>
   <data name="txtHex.Text" xml:space="preserve">
     <value>FF00FF00</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="txtHex.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -531,7 +530,6 @@
   </data>
   <data name="lblHue.Text" xml:space="preserve">
     <value>°</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblHue.Name" xml:space="preserve">
     <value>lblHue</value>
@@ -565,7 +563,6 @@
   </data>
   <data name="lblBrightnessPerc.Text" xml:space="preserve">
     <value>%</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblBrightnessPerc.Name" xml:space="preserve">
     <value>lblBrightnessPerc</value>
@@ -599,7 +596,6 @@
   </data>
   <data name="lblSaturationPerc.Text" xml:space="preserve">
     <value>%</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblSaturationPerc.Name" xml:space="preserve">
     <value>lblSaturationPerc</value>
@@ -978,7 +974,6 @@
   </data>
   <data name="txtDecimal.Text" xml:space="preserve">
     <value>12345678</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="txtDecimal.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -1015,7 +1010,6 @@
   </data>
   <data name="lblCyanPerc.Text" xml:space="preserve">
     <value>%</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblCyanPerc.Name" xml:space="preserve">
     <value>lblCyanPerc</value>
@@ -1049,7 +1043,6 @@
   </data>
   <data name="lblMagentaPerc.Text" xml:space="preserve">
     <value>%</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblMagentaPerc.Name" xml:space="preserve">
     <value>lblMagentaPerc</value>
@@ -1083,7 +1076,6 @@
   </data>
   <data name="lblYellowPerc.Text" xml:space="preserve">
     <value>%</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblYellowPerc.Name" xml:space="preserve">
     <value>lblYellowPerc</value>
@@ -1117,7 +1109,6 @@
   </data>
   <data name="lblKeyPerc.Text" xml:space="preserve">
     <value>%</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblKeyPerc.Name" xml:space="preserve">
     <value>lblKeyPerc</value>
@@ -1245,6 +1236,33 @@
   <data name="&gt;&gt;btnClipboardColorPicker.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cbTransparent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbTransparent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>652, 13</value>
+  </data>
+  <data name="cbTransparent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="cbTransparent.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="&gt;&gt;cbTransparent.Name" xml:space="preserve">
+    <value>cbTransparent</value>
+  </data>
+  <data name="&gt;&gt;cbTransparent.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cbTransparent.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbTransparent.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <metadata name="cmsCopy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>104, 17</value>
   </metadata>
@@ -1310,7 +1328,6 @@
   </data>
   <data name="txtY.Text" xml:space="preserve">
     <value>0</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="txtY.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -1338,7 +1355,6 @@
   </data>
   <data name="txtX.Text" xml:space="preserve">
     <value>0</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="txtX.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -1372,7 +1388,6 @@
   </data>
   <data name="lblY.Text" xml:space="preserve">
     <value>Y:</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblY.Name" xml:space="preserve">
     <value>lblY</value>
@@ -1403,7 +1418,6 @@
   </data>
   <data name="lblX.Text" xml:space="preserve">
     <value>X:</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblX.Name" xml:space="preserve">
     <value>lblX</value>
@@ -1721,40 +1735,13 @@
     <value>mbCopy</value>
   </data>
   <data name="&gt;&gt;mbCopy.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbCopy.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mbCopy.ZOrder" xml:space="preserve">
     <value>10</value>
-  </data>
-  <data name="cbTransparent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbTransparent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>652, 13</value>
-  </data>
-  <data name="cbTransparent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 23</value>
-  </data>
-  <data name="cbTransparent.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="cbTransparent.ToolTip" xml:space="preserve">
-    <value>Transparent</value>
-  </data>
-  <data name="&gt;&gt;cbTransparent.Name" xml:space="preserve">
-    <value>cbTransparent</value>
-  </data>
-  <data name="&gt;&gt;cbTransparent.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cbTransparent.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cbTransparent.ZOrder" xml:space="preserve">
-    <value>11</value>
   </data>
   <data name="pbColorPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>408, 232</value>
@@ -1769,7 +1756,7 @@
     <value>pbColorPreview</value>
   </data>
   <data name="&gt;&gt;pbColorPreview.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbColorPreview.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1793,7 +1780,7 @@
     <value>colorPicker</value>
   </data>
   <data name="&gt;&gt;colorPicker.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorPicker, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorPicker, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;colorPicker.Parent" xml:space="preserve">
     <value>$this</value>

@@ -39,7 +39,7 @@ namespace ShareX
             TaskInfo = taskInfo;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             txtName.Text = TaskInfo.Name;
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskInfo.AfterCaptureTasks = TaskInfo.AfterCaptureTasks.Swap(x), cmsAfterCapture);
@@ -47,11 +47,6 @@ namespace ShareX
             SetMultiEnumCheckedContextMenu(TaskInfo.AfterCaptureTasks, cmsAfterCapture);
             SetMultiEnumCheckedContextMenu(TaskInfo.AfterUploadTasks, cmsAfterUpload);
             UpdateUploaderMenuNames();
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            TaskInfo.Name = txtName.Text;
         }
 
         private void AddMultiEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents) where T : Enum
@@ -102,6 +97,17 @@ namespace ShareX
             txtName.SetWatermark(TaskInfo.ToString(), true);
             mbAfterCaptureTasks.Text = string.Join(", ", TaskInfo.AfterCaptureTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
             mbAfterUploadTasks.Text = string.Join(", ", TaskInfo.AfterUploadTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            TaskInfo.Name = txtName.Text;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }

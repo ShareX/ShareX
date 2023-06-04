@@ -38,7 +38,7 @@ namespace ShareX.ScreenCaptureLib
         public CanvasSizeForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
         }
 
         public CanvasSizeForm(Padding canvas, Color canvasColor) : this()
@@ -60,18 +60,16 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-
             Canvas = new Padding((int)nudLeft.Value, (int)nudTop.Value, (int)nudRight.Value, (int)nudBottom.Value);
             CanvasColor = cbtnCanvasColor.Color;
 
+            DialogResult = DialogResult.OK;
             Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
-
             Close();
         }
     }

@@ -42,7 +42,7 @@ namespace ShareX
             TaskSettings = taskSettings;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             ImageList imageList = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
             imageList.Images.Add(Resources.checkbox_uncheck);
@@ -235,6 +235,14 @@ namespace ShareX
         {
             TaskSettings.AfterCaptureJob = AfterCaptureTasks.CopyImageToClipboard;
             FileName = txtFileName.Text;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

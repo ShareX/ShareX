@@ -60,14 +60,13 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCopy
             // 
             resources.ApplyResources(this.btnCopy, "btnCopy");
-            this.btnCopy.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
@@ -169,10 +168,8 @@
             // AfterCaptureForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.lblFileName);
             this.Controls.Add(this.tcTasks);

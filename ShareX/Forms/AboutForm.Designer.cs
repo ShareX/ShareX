@@ -33,7 +33,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.lblProductName = new System.Windows.Forms.Label();
-            this.rtbInfo = new HelpersLib.ReadOnlyRichTextBox();
+            this.rtbInfo = new ShareX.HelpersLib.ReadOnlyRichTextBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnShareXLicense = new System.Windows.Forms.Button();
@@ -71,7 +71,6 @@
             // btnClose
             // 
             resources.ApplyResources(this.btnClose, "btnClose");
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Name = "btnClose";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -111,7 +110,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnClose;
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.cLogo);
             this.Controls.Add(this.lblProductName);

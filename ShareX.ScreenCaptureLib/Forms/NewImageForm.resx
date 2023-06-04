@@ -334,7 +334,7 @@
     <value>btnChangeColor</value>
   </data>
   <data name="&gt;&gt;btnChangeColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnChangeColor.Parent" xml:space="preserve">
     <value>gbBackgroundColor</value>

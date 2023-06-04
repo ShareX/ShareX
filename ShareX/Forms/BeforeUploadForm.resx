@@ -232,7 +232,7 @@
     <value>pbPreview</value>
   </data>
   <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
     <value>$this</value>
@@ -256,7 +256,7 @@
     <value>ucBeforeUpload</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Type" xml:space="preserve">
-    <value>ShareX.BeforeUploadControl, ShareX, Version=10.9.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.BeforeUploadControl, ShareX, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Parent" xml:space="preserve">
     <value>$this</value>
@@ -268,7 +268,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>774, 382</value>

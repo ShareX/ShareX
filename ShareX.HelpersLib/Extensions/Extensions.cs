@@ -940,6 +940,7 @@ namespace ShareX.HelpersLib
             {
                 if (e.KeyCode == Keys.Escape)
                 {
+                    form.DialogResult = DialogResult.Cancel;
                     form.Close();
                 }
             };

@@ -47,7 +47,7 @@
             // 
             resources.ApplyResources(this.txtIssueId, "txtIssueId");
             this.txtIssueId.Name = "txtIssueId";
-            this.txtIssueId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtIssueId.TextChanged += new System.EventHandler(this.txtIssueId_TextChanged);
             // 
             // lblSummary
             // 
@@ -64,7 +64,6 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -80,10 +79,8 @@
             // 
             this.AcceptButton = this.btnUpload;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.txtIssueId);
             this.Controls.Add(this.lblIssueId);
             this.Controls.Add(this.gpSummary);

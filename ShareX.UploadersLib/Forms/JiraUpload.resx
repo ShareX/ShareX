@@ -208,13 +208,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 98</value>
+    <value>8, 98</value>
   </data>
   <data name="btnUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 23</value>
   </data>
   <data name="btnUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btnUpload.Text" xml:space="preserve">
     <value>Upload</value>
@@ -235,13 +235,13 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 98</value>
+    <value>120, 98</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 23</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -289,13 +289,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>237, 127</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

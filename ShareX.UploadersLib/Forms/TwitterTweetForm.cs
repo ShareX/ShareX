@@ -97,7 +97,7 @@ namespace ShareX.UploadersLib
         public TwitterTweetForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             MediaMode = false;
         }
@@ -122,8 +122,9 @@ namespace ShareX.UploadersLib
         {
             if (IsValidMessage)
             {
-                DialogResult = DialogResult.OK;
                 SendTweet();
+
+                DialogResult = DialogResult.OK;
                 Close();
             }
         }

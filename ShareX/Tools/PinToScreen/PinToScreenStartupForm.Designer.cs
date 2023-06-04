@@ -61,7 +61,6 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Image = global::ShareX.Properties.Resources.cross;
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
@@ -72,7 +71,6 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnFromScreen);
             this.Controls.Add(this.btnFromClipboard);

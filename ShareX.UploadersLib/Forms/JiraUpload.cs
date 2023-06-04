@@ -49,7 +49,7 @@ namespace ShareX.UploadersLib
         public JiraUpload()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
         }
 
         public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()
@@ -66,15 +66,9 @@ namespace ShareX.UploadersLib
             txtIssueId.SelectionStart = txtIssueId.Text.Length;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtIssueId_TextChanged(object sender, EventArgs e)
         {
-            ValidateIssueId(((TextBox)sender).Text);
-        }
-
-        private void btnSend_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-            Close();
+            ValidateIssueId(txtIssueId.Text);
         }
 
         private void ValidateIssueId(string issueId)
@@ -95,8 +89,15 @@ namespace ShareX.UploadersLib
             lblSummary.Enabled = summary != null;
         }
 
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
     }

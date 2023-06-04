@@ -304,7 +304,7 @@
     <value>btnTextColor</value>
   </data>
   <data name="&gt;&gt;btnTextColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnTextColor.Parent" xml:space="preserve">
     <value>flpProperties</value>
@@ -823,25 +823,25 @@
     <value>tsrbmiGradientHorizontal</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientHorizontal.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientVertical.Name" xml:space="preserve">
     <value>tsrbmiGradientVertical</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientVertical.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientForwardDiagonal.Name" xml:space="preserve">
     <value>tsrbmiGradientForwardDiagonal</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientForwardDiagonal.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientBackwardDiagonal.Name" xml:space="preserve">
     <value>tsrbmiGradientBackwardDiagonal</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientBackwardDiagonal.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ttTextInput.Name" xml:space="preserve">
     <value>ttTextInput</value>

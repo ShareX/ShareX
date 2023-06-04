@@ -50,6 +50,7 @@
             this.lvPresets.FullRowSelect = true;
             this.lvPresets.GridLines = true;
             this.lvPresets.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvPresets.HideSelection = false;
             this.lvPresets.Name = "lvPresets";
             this.lvPresets.UseCompatibleStateImageBehavior = false;
             this.lvPresets.View = System.Windows.Forms.View.Details;
@@ -105,7 +106,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnClose;
             this.Controls.Add(this.lblTip);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnReset);

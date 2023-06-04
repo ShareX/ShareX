@@ -41,7 +41,7 @@ namespace ShareX
         public PinToScreenStartupForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
         }
 
         private void btnFromScreen_Click(object sender, EventArgs e)

@@ -42,7 +42,7 @@ namespace ShareX.HelpersLib
         public ErrorForm(string errorTitle, string errorMessage, string logFilePath, string bugReportPath, bool unhandledException = true)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             IsUnhandledException = unhandledException;
             LogFilePath = logFilePath;

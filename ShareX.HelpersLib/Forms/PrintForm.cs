@@ -38,7 +38,7 @@ namespace ShareX.HelpersLib
         public PrintForm(Image img, PrintSettings settings, bool previewOnly = false)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             printHelper = new PrintHelper(img);
             printHelper.Settings = printSettings = settings;

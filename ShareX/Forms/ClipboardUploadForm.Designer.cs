@@ -48,7 +48,6 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -87,7 +86,6 @@
             // btnUpload
             // 
             resources.ApplyResources(this.btnUpload, "btnUpload");
-            this.btnUpload.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
@@ -98,7 +96,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.btnCancel;
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.pbClipboard);
             this.Controls.Add(this.cbDontShowThisWindow);

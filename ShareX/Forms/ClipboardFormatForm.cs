@@ -41,7 +41,7 @@ namespace ShareX
         public ClipboardFormatForm(ClipboardFormat cbf)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             ClipboardFormat = cbf;
             txtDescription.Text = cbf.Description ?? "";

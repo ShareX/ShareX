@@ -142,7 +142,7 @@
     <value>lvPresets</value>
   </data>
   <data name="&gt;&gt;lvPresets.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvPresets.Parent" xml:space="preserve">
     <value>$this</value>

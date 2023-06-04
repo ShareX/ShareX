@@ -42,7 +42,7 @@ namespace ShareX
             WatchFolder = watchFolder;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             txtFolderPath.Text = watchFolder.FolderPath ?? "";
             txtFilter.Text = watchFolder.Filter ?? "";

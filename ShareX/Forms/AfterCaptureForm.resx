@@ -216,26 +216,68 @@
   <data name="tcTasks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
-  <data name="lvAfterCaptureTasks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;tpAfterCapture.Name" xml:space="preserve">
+    <value>tpAfterCapture</value>
   </data>
-  <data name="lvAfterCaptureTasks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+  <data name="&gt;&gt;tpAfterCapture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lvAfterCaptureTasks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
+  <data name="&gt;&gt;tpAfterCapture.Parent" xml:space="preserve">
+    <value>tcTasks</value>
   </data>
-  <data name="lvAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 305</value>
+  <data name="&gt;&gt;tpAfterCapture.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="lvAfterCaptureTasks.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;tpBeforeUpload.Name" xml:space="preserve">
+    <value>tpBeforeUpload</value>
+  </data>
+  <data name="&gt;&gt;tpBeforeUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpBeforeUpload.Parent" xml:space="preserve">
+    <value>tcTasks</value>
+  </data>
+  <data name="&gt;&gt;tpBeforeUpload.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;tpAfterUpload.Name" xml:space="preserve">
+    <value>tpAfterUpload</value>
+  </data>
+  <data name="&gt;&gt;tpAfterUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpAfterUpload.Parent" xml:space="preserve">
+    <value>tcTasks</value>
+  </data>
+  <data name="&gt;&gt;tpAfterUpload.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tcTasks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="tcTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 339</value>
+  </data>
+  <data name="tcTasks.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tcTasks.Name" xml:space="preserve">
+    <value>tcTasks</value>
+  </data>
+  <data name="&gt;&gt;tcTasks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcTasks.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcTasks.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lvAfterCaptureTasks.Name" xml:space="preserve">
     <value>lvAfterCaptureTasks</value>
   </data>
   <data name="&gt;&gt;lvAfterCaptureTasks.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvAfterCaptureTasks.Parent" xml:space="preserve">
     <value>tpAfterCapture</value>
@@ -270,23 +312,38 @@
   <data name="&gt;&gt;tpAfterCapture.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ucBeforeUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="lvAfterCaptureTasks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="ucBeforeUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="lvAfterCaptureTasks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
-  <data name="ucBeforeUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 307</value>
+  <data name="lvAfterCaptureTasks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
   </data>
-  <data name="ucBeforeUpload.TabIndex" type="System.Int32, mscorlib">
+  <data name="lvAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 305</value>
+  </data>
+  <data name="lvAfterCaptureTasks.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lvAfterCaptureTasks.Name" xml:space="preserve">
+    <value>lvAfterCaptureTasks</value>
+  </data>
+  <data name="&gt;&gt;lvAfterCaptureTasks.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvAfterCaptureTasks.Parent" xml:space="preserve">
+    <value>tpAfterCapture</value>
+  </data>
+  <data name="&gt;&gt;lvAfterCaptureTasks.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Name" xml:space="preserve">
     <value>ucBeforeUpload</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Type" xml:space="preserve">
-    <value>ShareX.BeforeUploadControl, ShareX, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.BeforeUploadControl, ShareX, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Parent" xml:space="preserve">
     <value>tpBeforeUpload</value>
@@ -321,26 +378,35 @@
   <data name="&gt;&gt;tpBeforeUpload.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lvAfterUploadTasks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="ucBeforeUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="lvAfterUploadTasks.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+  <data name="ucBeforeUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="lvAfterUploadTasks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
+  <data name="ucBeforeUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 307</value>
   </data>
-  <data name="lvAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 305</value>
+  <data name="ucBeforeUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="lvAfterUploadTasks.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;ucBeforeUpload.Name" xml:space="preserve">
+    <value>ucBeforeUpload</value>
+  </data>
+  <data name="&gt;&gt;ucBeforeUpload.Type" xml:space="preserve">
+    <value>ShareX.BeforeUploadControl, ShareX, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucBeforeUpload.Parent" xml:space="preserve">
+    <value>tpBeforeUpload</value>
+  </data>
+  <data name="&gt;&gt;ucBeforeUpload.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lvAfterUploadTasks.Name" xml:space="preserve">
     <value>lvAfterUploadTasks</value>
   </data>
   <data name="&gt;&gt;lvAfterUploadTasks.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvAfterUploadTasks.Parent" xml:space="preserve">
     <value>tpAfterUpload</value>
@@ -375,26 +441,32 @@
   <data name="&gt;&gt;tpAfterUpload.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tcTasks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+  <data name="lvAfterUploadTasks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="tcTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 339</value>
+  <data name="lvAfterUploadTasks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
-  <data name="tcTasks.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="lvAfterUploadTasks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
   </data>
-  <data name="&gt;&gt;tcTasks.Name" xml:space="preserve">
-    <value>tcTasks</value>
+  <data name="lvAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 305</value>
   </data>
-  <data name="&gt;&gt;tcTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcTasks.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tcTasks.ZOrder" xml:space="preserve">
+  <data name="lvAfterUploadTasks.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;lvAfterUploadTasks.Name" xml:space="preserve">
+    <value>lvAfterUploadTasks</value>
+  </data>
+  <data name="&gt;&gt;lvAfterUploadTasks.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvAfterUploadTasks.Parent" xml:space="preserve">
+    <value>tpAfterUpload</value>
+  </data>
+  <data name="&gt;&gt;lvAfterUploadTasks.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblFileName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -469,7 +541,7 @@
     <value>pbImage</value>
   </data>
   <data name="&gt;&gt;pbImage.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbImage.Parent" xml:space="preserve">
     <value>$this</value>
@@ -481,7 +553,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>784, 441</value>

@@ -289,7 +289,7 @@
     <value>pbClipboard</value>
   </data>
   <data name="&gt;&gt;pbClipboard.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbClipboard.Parent" xml:space="preserve">
     <value>$this</value>
