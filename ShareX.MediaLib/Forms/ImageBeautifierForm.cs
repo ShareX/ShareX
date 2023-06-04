@@ -29,6 +29,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShareX.MediaLib.Properties;
 
 namespace ShareX.MediaLib
 {
@@ -305,8 +306,7 @@ namespace ShareX.MediaLib
 
         private async void btnResetOptions_Click(object sender, EventArgs e)
         {
-            // TODO: Translate
-            if (MessageBox.Show("Would you like to reset options?", "ShareX - " + "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.WouldYouLikeToResetOptions, "ShareX - " + Resources.Confirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 Options.ResetOptions();
                 LoadOptions();

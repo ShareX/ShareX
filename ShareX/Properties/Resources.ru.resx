@@ -650,4 +650,21 @@
   <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
     <value>FFmpeg отсутствует по следующему пути:</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>Иврит</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>ShareX не закроется пока идет запись экрана.
+
+Хотите отменить текущую запись?</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX обновлен!</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>Загрузка из буфера</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>Хотите еще раз попробовать загрузить из буфера?</value>
+  </data>
 </root>

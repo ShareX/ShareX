@@ -1248,8 +1248,7 @@ namespace ShareX
         {
             if (ScreenRecordManager.IsRecording)
             {
-                // TODO: Translate
-                if (MessageBox.Show("ShareX cannot be closed while screen recording is active.\r\n\r\nDo you want to abort the active screen recording?", "ShareX",
+                if (MessageBox.Show(Resources.ShareXCannotBeClosedWhileScreenRecordingIsActive, "ShareX",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     ScreenRecordManager.AbortRecording();

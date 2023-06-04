@@ -753,4 +753,13 @@
   <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
     <value>Закрепить на экране...</value>
   </data>
+  <data name="tsmiImageBeautifier.Text" xml:space="preserve">
+    <value>Украшатель изображений...</value>
+  </data>
+  <data name="tsmiTrayImageBeautifier.Text" xml:space="preserve">
+    <value>Украшатель изображений...</value>
+  </data>
+  <data name="tsmiBeautifyImage.Text" xml:space="preserve">
+    <value>Украсить изображение...</value>
+  </data>
 </root>

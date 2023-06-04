@@ -1040,6 +1040,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clipboard upload.
+        /// </summary>
+        public static string ClipboardUpload {
+            get {
+                return ResourceManager.GetString("ClipboardUpload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap clock {
@@ -2521,6 +2530,17 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ShareX cannot be closed while screen recording is active.
+        ///
+        ///Do you want to abort the active screen recording?.
+        /// </summary>
+        public static string ShareXCannotBeClosedWhileScreenRecordingIsActive {
+            get {
+                return ResourceManager.GetString("ShareXCannotBeClosedWhileScreenRecordingIsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ShareX - Confirmation.
         /// </summary>
         public static string ShareXConfirmation {
@@ -2535,6 +2555,15 @@ namespace ShareX.Properties {
         public static string ShareXIsMinimizedToTheSystemTray {
             get {
                 return ResourceManager.GetString("ShareXIsMinimizedToTheSystemTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX is up to date!.
+        /// </summary>
+        public static string ShareXIsUpToDate {
+            get {
+                return ResourceManager.GetString("ShareXIsUpToDate", resourceCulture);
             }
         }
         
@@ -3191,6 +3220,15 @@ namespace ShareX.Properties {
         public static string WouldYouLikeToResetThemes {
             get {
                 return ResourceManager.GetString("WouldYouLikeToResetThemes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to retry clipboard upload?.
+        /// </summary>
+        public static string WouldYouLikeToRetryClipboardUpload {
+            get {
+                return ResourceManager.GetString("WouldYouLikeToRetryClipboardUpload", resourceCulture);
             }
         }
         

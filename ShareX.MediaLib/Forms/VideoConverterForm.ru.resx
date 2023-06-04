@@ -121,7 +121,7 @@
     <value>ShareX - Конвертер видео</value>
   </data>
   <data name="cbUseCustomArguments.Text" xml:space="preserve">
-    <value>Использовать свои аргументы</value>
+    <value>Использовать свои аргументы:</value>
   </data>
   <data name="cbAutoOpenFolder.Text" xml:space="preserve">
     <value>Открыть папку после кодирования</value>
@@ -143,5 +143,11 @@
   </data>
   <data name="lblOutputFolder.Text" xml:space="preserve">
     <value>Папка для вывода:</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.Text" xml:space="preserve">
+    <value>Использовать битрейт</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Энкодер видео:</value>
   </data>
 </root>

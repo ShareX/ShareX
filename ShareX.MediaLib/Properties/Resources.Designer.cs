@@ -115,6 +115,15 @@ namespace ShareX.MediaLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirmation.
+        /// </summary>
+        internal static string Confirmation {
+            get {
+                return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap disk_black {
@@ -224,6 +233,15 @@ namespace ShareX.MediaLib.Properties {
         internal static string VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file {
             get {
                 return ResourceManager.GetString("VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to reset options?.
+        /// </summary>
+        internal static string WouldYouLikeToResetOptions {
+            get {
+                return ResourceManager.GetString("WouldYouLikeToResetOptions", resourceCulture);
             }
         }
     }
