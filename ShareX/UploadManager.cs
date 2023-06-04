@@ -241,8 +241,7 @@ namespace ShareX
             {
                 DebugHelper.WriteException(e);
 
-                // TODO: Translate
-                if (MessageBox.Show("\"" + e.Message + "\"\r\n\r\n" + "Would you like to retry clipboard upload?", "ShareX - " + "Clipboard upload",
+                if (MessageBox.Show("\"" + e.Message + "\"\r\n\r\n" + Resources.WouldYouLikeToRetryClipboardUpload, "ShareX - " + Resources.ClipboardUpload,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     ClipboardUpload(taskSettings);

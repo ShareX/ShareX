@@ -1936,8 +1936,7 @@ namespace ShareX
             }
             else if (updateChecker.Status == UpdateStatus.UpToDate)
             {
-                // TODO: Translate
-                MessageBox.Show("ShareX is up to date!", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.ShareXIsUpToDate, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
