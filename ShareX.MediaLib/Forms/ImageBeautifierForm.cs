@@ -24,12 +24,12 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShareX.MediaLib.Properties;
 
 namespace ShareX.MediaLib
 {
@@ -269,15 +269,27 @@ namespace ShareX.MediaLib
             switch (Options.BackgroundType)
             {
                 case ImageBeautifierBackgroundType.Gradient:
-                    using (GradientPickerForm gradientPickerForm = new GradientPickerForm(Options.BackgroundGradient.Copy()))
+                    GradientInfo currentGradient = Options.BackgroundGradient;
+
+                    using (GradientPickerForm gradientPickerForm = new GradientPickerForm(currentGradient.Copy()))
                     {
+                        gradientPickerForm.GradientChanged += async () =>
+                        {
+                            Options.BackgroundGradient = gradientPickerForm.Gradient;
+                            await UpdatePreview(true);
+                        };
+
                         if (gradientPickerForm.ShowDialog() == DialogResult.OK)
                         {
                             Options.BackgroundGradient = gradientPickerForm.Gradient;
                             UpdateBackgroundPreview();
-
-                            await UpdatePreview();
                         }
+                        else
+                        {
+                            Options.BackgroundGradient = currentGradient;
+                        }
+
+                        await UpdatePreview();
                     }
                     break;
                 case ImageBeautifierBackgroundType.Color:

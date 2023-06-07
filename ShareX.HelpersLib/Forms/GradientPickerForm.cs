@@ -32,6 +32,9 @@ namespace ShareX.HelpersLib
 {
     public partial class GradientPickerForm : Form
     {
+        public delegate void GradientChangedEventHandler();
+        public event GradientChangedEventHandler GradientChanged;
+
         public GradientInfo Gradient { get; private set; }
 
         private bool isReady;
@@ -46,6 +49,11 @@ namespace ShareX.HelpersLib
             cbGradientType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
             UpdateGradientList(true);
+        }
+
+        protected virtual void OnGradientChanged()
+        {
+            GradientChanged?.Invoke();
         }
 
         private void AddPresets()
@@ -497,6 +505,8 @@ namespace ShareX.HelpersLib
                 Bitmap bmp = Gradient.CreateGradientPreview(pbPreview.ClientRectangle.Width, pbPreview.ClientRectangle.Height, true);
                 pbPreview.Image?.Dispose();
                 pbPreview.Image = bmp;
+
+                OnGradientChanged();
             }
         }
 
