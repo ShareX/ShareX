@@ -36,13 +36,13 @@
             this.cbSmartPadding = new System.Windows.Forms.CheckBox();
             this.lblRoundedCorner = new System.Windows.Forms.Label();
             this.tbRoundedCorner = new System.Windows.Forms.TrackBar();
-            this.lblShadowSize = new System.Windows.Forms.Label();
-            this.tbShadowSize = new System.Windows.Forms.TrackBar();
+            this.lblShadowRadius = new System.Windows.Forms.Label();
+            this.tbShadowRadius = new System.Windows.Forms.TrackBar();
             this.lblBackground = new System.Windows.Forms.Label();
             this.lblMarginValue = new System.Windows.Forms.Label();
             this.lblPaddingValue = new System.Windows.Forms.Label();
             this.lblRoundedCornerValue = new System.Windows.Forms.Label();
-            this.lblShadowSizeValue = new System.Windows.Forms.Label();
+            this.lblShadowRadiusValue = new System.Windows.Forms.Label();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             this.pOptions = new System.Windows.Forms.Panel();
@@ -72,7 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPadding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRoundedCorner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbShadowSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbShadowRadius)).BeginInit();
             this.tlpMain.SuspendLayout();
             this.pOptions.SuspendLayout();
             this.gbShadow.SuspendLayout();
@@ -160,27 +160,27 @@
             this.tbRoundedCorner.Scroll += new System.EventHandler(this.tbRoundedCorner_Scroll);
             this.tbRoundedCorner.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbRoundedCorner_MouseUp);
             // 
-            // lblShadowSize
+            // lblShadowRadius
             // 
-            this.lblShadowSize.AutoSize = true;
-            this.lblShadowSize.Location = new System.Drawing.Point(16, 32);
-            this.lblShadowSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblShadowSize.Name = "lblShadowSize";
-            this.lblShadowSize.Size = new System.Drawing.Size(34, 17);
-            this.lblShadowSize.TabIndex = 10;
-            this.lblShadowSize.Text = "Size:";
+            this.lblShadowRadius.AutoSize = true;
+            this.lblShadowRadius.Location = new System.Drawing.Point(16, 32);
+            this.lblShadowRadius.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShadowRadius.Name = "lblShadowRadius";
+            this.lblShadowRadius.Size = new System.Drawing.Size(50, 17);
+            this.lblShadowRadius.TabIndex = 10;
+            this.lblShadowRadius.Text = "Radius:";
             // 
-            // tbShadowSize
+            // tbShadowRadius
             // 
-            this.tbShadowSize.AutoSize = false;
-            this.tbShadowSize.Location = new System.Drawing.Point(16, 56);
-            this.tbShadowSize.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbShadowSize.Maximum = 100;
-            this.tbShadowSize.Name = "tbShadowSize";
-            this.tbShadowSize.Size = new System.Drawing.Size(280, 32);
-            this.tbShadowSize.TabIndex = 11;
-            this.tbShadowSize.TickFrequency = 5;
-            this.tbShadowSize.Scroll += new System.EventHandler(this.tbShadowSize_Scroll);
+            this.tbShadowRadius.AutoSize = false;
+            this.tbShadowRadius.Location = new System.Drawing.Point(16, 56);
+            this.tbShadowRadius.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbShadowRadius.Maximum = 100;
+            this.tbShadowRadius.Name = "tbShadowRadius";
+            this.tbShadowRadius.Size = new System.Drawing.Size(280, 32);
+            this.tbShadowRadius.TabIndex = 11;
+            this.tbShadowRadius.TickFrequency = 5;
+            this.tbShadowRadius.Scroll += new System.EventHandler(this.tbShadowRadius_Scroll);
             // 
             // lblBackground
             // 
@@ -222,15 +222,15 @@
             this.lblRoundedCornerValue.Text = "0";
             this.lblRoundedCornerValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblShadowSizeValue
+            // lblShadowRadiusValue
             // 
-            this.lblShadowSizeValue.Location = new System.Drawing.Point(256, 32);
-            this.lblShadowSizeValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblShadowSizeValue.Name = "lblShadowSizeValue";
-            this.lblShadowSizeValue.Size = new System.Drawing.Size(40, 24);
-            this.lblShadowSizeValue.TabIndex = 12;
-            this.lblShadowSizeValue.Text = "0";
-            this.lblShadowSizeValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblShadowRadiusValue.Location = new System.Drawing.Point(256, 32);
+            this.lblShadowRadiusValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShadowRadiusValue.Name = "lblShadowRadiusValue";
+            this.lblShadowRadiusValue.Size = new System.Drawing.Size(40, 24);
+            this.lblShadowRadiusValue.TabIndex = 12;
+            this.lblShadowRadiusValue.Text = "0";
+            this.lblShadowRadiusValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tlpMain
             // 
@@ -299,11 +299,11 @@
             this.gbShadow.Controls.Add(this.lblShadowDistanceValue);
             this.gbShadow.Controls.Add(this.lblShadowOpacityValue);
             this.gbShadow.Controls.Add(this.btnShadowColor);
-            this.gbShadow.Controls.Add(this.tbShadowSize);
+            this.gbShadow.Controls.Add(this.tbShadowRadius);
             this.gbShadow.Controls.Add(this.tbShadowAngle);
-            this.gbShadow.Controls.Add(this.lblShadowSizeValue);
+            this.gbShadow.Controls.Add(this.lblShadowRadiusValue);
             this.gbShadow.Controls.Add(this.lblShadowAngle);
-            this.gbShadow.Controls.Add(this.lblShadowSize);
+            this.gbShadow.Controls.Add(this.lblShadowRadius);
             this.gbShadow.Controls.Add(this.tbShadowDistance);
             this.gbShadow.Controls.Add(this.lblShadowOpacity);
             this.gbShadow.Controls.Add(this.lblShadowDistance);
@@ -553,7 +553,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbMargin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPadding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRoundedCorner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbShadowSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbShadowRadius)).EndInit();
             this.tlpMain.ResumeLayout(false);
             this.pOptions.ResumeLayout(false);
             this.pOptions.PerformLayout();
@@ -575,13 +575,13 @@
         private System.Windows.Forms.CheckBox cbSmartPadding;
         private System.Windows.Forms.Label lblRoundedCorner;
         private System.Windows.Forms.TrackBar tbRoundedCorner;
-        private System.Windows.Forms.Label lblShadowSize;
-        private System.Windows.Forms.TrackBar tbShadowSize;
+        private System.Windows.Forms.Label lblShadowRadius;
+        private System.Windows.Forms.TrackBar tbShadowRadius;
         private System.Windows.Forms.Label lblBackground;
         private System.Windows.Forms.Label lblMarginValue;
         private System.Windows.Forms.Label lblPaddingValue;
         private System.Windows.Forms.Label lblRoundedCornerValue;
-        private System.Windows.Forms.Label lblShadowSizeValue;
+        private System.Windows.Forms.Label lblShadowRadiusValue;
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.Panel pOptions;
         private HelpersLib.MyPictureBox pbPreview;

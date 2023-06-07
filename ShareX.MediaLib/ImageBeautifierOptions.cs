@@ -37,7 +37,7 @@ namespace ShareX.MediaLib
         public int Padding { get; set; }
         public bool SmartPadding { get; set; }
         public int RoundedCorner { get; set; }
-        public int ShadowSize { get; set; }
+        public int ShadowRadius { get; set; }
         public int ShadowOpacity { get; set; }
         public int ShadowDistance { get; set; }
         public int ShadowAngle { get; set; }
@@ -58,7 +58,7 @@ namespace ShareX.MediaLib
             Padding = 40;
             SmartPadding = true;
             RoundedCorner = 20;
-            ShadowSize = 30;
+            ShadowRadius = 30;
             ShadowOpacity = 100;
             ShadowDistance = 0;
             ShadowAngle = -90;
@@ -97,11 +97,11 @@ namespace ShareX.MediaLib
                 resultImage = resultImageNew;
             }
 
-            if (ShadowOpacity > 0 && (ShadowSize > 0 || ShadowDistance > 0))
+            if (ShadowOpacity > 0 && (ShadowRadius > 0 || ShadowDistance > 0))
             {
                 float shadowOpacity = ShadowOpacity / 100f;
                 Point shadowOffset = (Point)MathHelpers.DegreeToVector2(ShadowAngle, ShadowDistance);
-                resultImage = ImageHelpers.AddShadow(resultImage, shadowOpacity, ShadowSize, 0f, ShadowColor, shadowOffset, false);
+                resultImage = ImageHelpers.AddShadow(resultImage, shadowOpacity, ShadowRadius, 0f, ShadowColor, shadowOffset, false);
             }
 
             switch (BackgroundType)

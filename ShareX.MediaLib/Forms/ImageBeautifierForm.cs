@@ -81,7 +81,7 @@ namespace ShareX.MediaLib
             tbPadding.SetValue(Options.Padding);
             cbSmartPadding.Checked = Options.SmartPadding;
             tbRoundedCorner.SetValue(Options.RoundedCorner);
-            tbShadowSize.SetValue(Options.ShadowSize);
+            tbShadowRadius.SetValue(Options.ShadowRadius);
             tbShadowOpacity.SetValue(Options.ShadowOpacity);
             tbShadowDistance.SetValue(Options.ShadowDistance);
             tbShadowAngle.SetValue(Options.ShadowAngle);
@@ -100,13 +100,13 @@ namespace ShareX.MediaLib
 
         private void UpdateUI()
         {
-            lblMarginValue.Text = tbMargin.Value.ToString();
-            lblPaddingValue.Text = tbPadding.Value.ToString();
+            lblMarginValue.Text = tbMargin.Value.ToString() + " px";
+            lblPaddingValue.Text = tbPadding.Value.ToString() + " px";
             lblRoundedCornerValue.Text = tbRoundedCorner.Value.ToString();
-            lblShadowSizeValue.Text = tbShadowSize.Value.ToString();
-            lblShadowOpacityValue.Text = tbShadowOpacity.Value.ToString();
-            lblShadowDistanceValue.Text = tbShadowDistance.Value.ToString();
-            lblShadowAngleValue.Text = tbShadowAngle.Value.ToString();
+            lblShadowRadiusValue.Text = tbShadowRadius.Value.ToString();
+            lblShadowOpacityValue.Text = tbShadowOpacity.Value.ToString() + "%";
+            lblShadowDistanceValue.Text = tbShadowDistance.Value.ToString() + " px";
+            lblShadowAngleValue.Text = tbShadowAngle.Value.ToString() + "°";
             lblBackgroundImageFilePath.Text = Options.BackgroundImageFilePath;
         }
 
@@ -165,7 +165,7 @@ namespace ShareX.MediaLib
 
                     if (quickRender)
                     {
-                        options.ShadowSize = 0;
+                        options.ShadowRadius = 0;
                     }
 
                     Stopwatch renderTime = Stopwatch.StartNew();
@@ -205,7 +205,7 @@ namespace ShareX.MediaLib
             Options.Padding = tbPadding.Value;
             Options.SmartPadding = cbSmartPadding.Checked;
             Options.RoundedCorner = tbRoundedCorner.Value;
-            Options.ShadowSize = tbShadowSize.Value;
+            Options.ShadowRadius = tbShadowRadius.Value;
             Options.ShadowOpacity = tbShadowOpacity.Value;
             Options.ShadowDistance = tbShadowDistance.Value;
             Options.ShadowAngle = tbShadowAngle.Value;
@@ -278,7 +278,7 @@ namespace ShareX.MediaLib
             }
         }
 
-        private async void tbShadowSize_Scroll(object sender, EventArgs e)
+        private async void tbShadowRadius_Scroll(object sender, EventArgs e)
         {
             await UpdatePreview();
         }
