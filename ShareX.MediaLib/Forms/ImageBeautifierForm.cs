@@ -62,6 +62,17 @@ namespace ShareX.MediaLib
             LoadOptions();
         }
 
+        public ImageBeautifierForm(Bitmap sourceImage, ImageBeautifierOptions options = null) : this(options)
+        {
+            SourceImage = sourceImage;
+        }
+
+        public ImageBeautifierForm(string filePath, ImageBeautifierOptions options = null) : this(options)
+        {
+            FilePath = filePath;
+            SourceImage = ImageHelpers.LoadImage(filePath);
+        }
+
         private void LoadOptions()
         {
             isReady = false;
@@ -71,6 +82,10 @@ namespace ShareX.MediaLib
             cbSmartPadding.Checked = Options.SmartPadding;
             tbRoundedCorner.SetValue(Options.RoundedCorner);
             tbShadowSize.SetValue(Options.ShadowSize);
+            tbShadowOpacity.SetValue(Options.ShadowOpacity);
+            tbShadowDistance.SetValue(Options.ShadowDistance);
+            tbShadowAngle.SetValue(Options.ShadowAngle);
+            btnShadowColor.Color = Options.ShadowColor;
             if (cbBackgroundType.Items.Count == 0)
             {
                 cbBackgroundType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageBeautifierBackgroundType>());
@@ -83,23 +98,15 @@ namespace ShareX.MediaLib
             isReady = true;
         }
 
-        public ImageBeautifierForm(Bitmap sourceImage, ImageBeautifierOptions options = null) : this(options)
-        {
-            SourceImage = sourceImage;
-        }
-
-        public ImageBeautifierForm(string filePath, ImageBeautifierOptions options = null) : this(options)
-        {
-            FilePath = filePath;
-            SourceImage = ImageHelpers.LoadImage(filePath);
-        }
-
         private void UpdateUI()
         {
             lblMarginValue.Text = tbMargin.Value.ToString();
             lblPaddingValue.Text = tbPadding.Value.ToString();
             lblRoundedCornerValue.Text = tbRoundedCorner.Value.ToString();
             lblShadowSizeValue.Text = tbShadowSize.Value.ToString();
+            lblShadowOpacityValue.Text = tbShadowOpacity.Value.ToString();
+            lblShadowDistanceValue.Text = tbShadowDistance.Value.ToString();
+            lblShadowAngleValue.Text = tbShadowAngle.Value.ToString();
             lblBackgroundImageFilePath.Text = Options.BackgroundImageFilePath;
         }
 
@@ -199,6 +206,10 @@ namespace ShareX.MediaLib
             Options.SmartPadding = cbSmartPadding.Checked;
             Options.RoundedCorner = tbRoundedCorner.Value;
             Options.ShadowSize = tbShadowSize.Value;
+            Options.ShadowOpacity = tbShadowOpacity.Value;
+            Options.ShadowDistance = tbShadowDistance.Value;
+            Options.ShadowAngle = tbShadowAngle.Value;
+            Options.ShadowColor = btnShadowColor.Color;
         }
 
         private void OnUploadImageRequested()
@@ -251,7 +262,43 @@ namespace ShareX.MediaLib
             await UpdatePreview();
         }
 
+        private void btnShadowExpand_Click(object sender, EventArgs e)
+        {
+            if (btnShadowExpand.Tag is "+")
+            {
+                gbShadow.Size = new Size(gbShadow.Width, 368);
+                btnShadowExpand.Image = Resources.minus_white;
+                btnShadowExpand.Tag = "-";
+            }
+            else
+            {
+                gbShadow.Size = new Size(gbShadow.Width, 104);
+                btnShadowExpand.Image = Resources.plus_white;
+                btnShadowExpand.Tag = "+";
+            }
+        }
+
         private async void tbShadowSize_Scroll(object sender, EventArgs e)
+        {
+            await UpdatePreview();
+        }
+
+        private async void tbShadowOpacity_Scroll(object sender, EventArgs e)
+        {
+            await UpdatePreview();
+        }
+
+        private async void tbShadowDistance_Scroll(object sender, EventArgs e)
+        {
+            await UpdatePreview();
+        }
+
+        private async void tbShadowAngle_Scroll(object sender, EventArgs e)
+        {
+            await UpdatePreview();
+        }
+
+        private async void btnShadowColor_ColorChanged(Color color)
         {
             await UpdatePreview();
         }

@@ -38,6 +38,10 @@ namespace ShareX.MediaLib
         public bool SmartPadding { get; set; }
         public int RoundedCorner { get; set; }
         public int ShadowSize { get; set; }
+        public int ShadowOpacity { get; set; }
+        public int ShadowDistance { get; set; }
+        public int ShadowAngle { get; set; }
+        public Color ShadowColor { get; set; }
         public ImageBeautifierBackgroundType BackgroundType { get; set; }
         public GradientInfo BackgroundGradient { get; set; }
         public Color BackgroundColor { get; set; }
@@ -55,6 +59,10 @@ namespace ShareX.MediaLib
             SmartPadding = true;
             RoundedCorner = 20;
             ShadowSize = 30;
+            ShadowOpacity = 100;
+            ShadowDistance = 0;
+            ShadowAngle = -90;
+            ShadowColor = Color.Black;
             BackgroundType = ImageBeautifierBackgroundType.Gradient;
             BackgroundGradient = new GradientInfo(LinearGradientMode.ForwardDiagonal, Color.FromArgb(255, 81, 47), Color.FromArgb(221, 36, 118));
             BackgroundColor = Color.FromArgb(34, 34, 34);
@@ -89,9 +97,11 @@ namespace ShareX.MediaLib
                 resultImage = resultImageNew;
             }
 
-            if (ShadowSize > 0)
+            if (ShadowOpacity > 0 && (ShadowSize > 0 || ShadowDistance > 0))
             {
-                resultImage = ImageHelpers.AddShadow(resultImage, 1f, ShadowSize, 0f, Color.Black, new Point(0, 0), false);
+                float shadowOpacity = ShadowOpacity / 100f;
+                Point shadowOffset = (Point)MathHelpers.DegreeToVector2(ShadowAngle, ShadowDistance);
+                resultImage = ImageHelpers.AddShadow(resultImage, shadowOpacity, ShadowSize, 0f, ShadowColor, shadowOffset, false);
             }
 
             switch (BackgroundType)

@@ -1191,7 +1191,7 @@ namespace ShareX.HelpersLib
                     using (Graphics g = Graphics.FromImage(bmpResult))
                     {
                         g.SetHighQuality();
-                        g.DrawImage(bmpShadow, -size + Math.Max(0, offset.X), -size + Math.Max(0, offset.Y), bmpShadow.Width, bmpShadow.Height);
+                        g.DrawImage(bmpShadow, -size + offset.X, -size + offset.Y, bmpShadow.Width, bmpShadow.Height);
                         g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
                     }
                 }

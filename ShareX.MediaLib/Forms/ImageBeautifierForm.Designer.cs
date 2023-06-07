@@ -46,6 +46,18 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             this.pOptions = new System.Windows.Forms.Panel();
+            this.gbShadow = new System.Windows.Forms.GroupBox();
+            this.btnShadowExpand = new System.Windows.Forms.Button();
+            this.lblShadowAngleValue = new System.Windows.Forms.Label();
+            this.lblShadowDistanceValue = new System.Windows.Forms.Label();
+            this.lblShadowOpacityValue = new System.Windows.Forms.Label();
+            this.btnShadowColor = new ShareX.HelpersLib.ColorButton();
+            this.tbShadowAngle = new System.Windows.Forms.TrackBar();
+            this.lblShadowAngle = new System.Windows.Forms.Label();
+            this.tbShadowDistance = new System.Windows.Forms.TrackBar();
+            this.lblShadowOpacity = new System.Windows.Forms.Label();
+            this.lblShadowDistance = new System.Windows.Forms.Label();
+            this.tbShadowOpacity = new System.Windows.Forms.TrackBar();
             this.btnResetOptions = new System.Windows.Forms.Button();
             this.lblBackgroundImageFilePath = new System.Windows.Forms.Label();
             this.btnBackgroundImageFilePathBrowse = new System.Windows.Forms.Button();
@@ -63,6 +75,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbShadowSize)).BeginInit();
             this.tlpMain.SuspendLayout();
             this.pOptions.SuspendLayout();
+            this.gbShadow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbShadowAngle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbShadowDistance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbShadowOpacity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackground)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,20 +163,21 @@
             // lblShadowSize
             // 
             this.lblShadowSize.AutoSize = true;
-            this.lblShadowSize.Location = new System.Drawing.Point(13, 264);
+            this.lblShadowSize.Location = new System.Drawing.Point(16, 32);
             this.lblShadowSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShadowSize.Name = "lblShadowSize";
-            this.lblShadowSize.Size = new System.Drawing.Size(83, 17);
+            this.lblShadowSize.Size = new System.Drawing.Size(34, 17);
             this.lblShadowSize.TabIndex = 10;
-            this.lblShadowSize.Text = "Shadow size:";
+            this.lblShadowSize.Text = "Size:";
             // 
             // tbShadowSize
             // 
-            this.tbShadowSize.Location = new System.Drawing.Point(16, 288);
+            this.tbShadowSize.AutoSize = false;
+            this.tbShadowSize.Location = new System.Drawing.Point(16, 56);
             this.tbShadowSize.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbShadowSize.Maximum = 100;
             this.tbShadowSize.Name = "tbShadowSize";
-            this.tbShadowSize.Size = new System.Drawing.Size(296, 45);
+            this.tbShadowSize.Size = new System.Drawing.Size(280, 32);
             this.tbShadowSize.TabIndex = 11;
             this.tbShadowSize.TickFrequency = 5;
             this.tbShadowSize.Scroll += new System.EventHandler(this.tbShadowSize_Scroll);
@@ -168,7 +185,7 @@
             // lblBackground
             // 
             this.lblBackground.AutoSize = true;
-            this.lblBackground.Location = new System.Drawing.Point(13, 336);
+            this.lblBackground.Location = new System.Drawing.Point(13, 376);
             this.lblBackground.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBackground.Name = "lblBackground";
             this.lblBackground.Size = new System.Drawing.Size(80, 17);
@@ -207,7 +224,7 @@
             // 
             // lblShadowSizeValue
             // 
-            this.lblShadowSizeValue.Location = new System.Drawing.Point(272, 264);
+            this.lblShadowSizeValue.Location = new System.Drawing.Point(256, 32);
             this.lblShadowSizeValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShadowSizeValue.Name = "lblShadowSizeValue";
             this.lblShadowSizeValue.Size = new System.Drawing.Size(40, 24);
@@ -247,6 +264,8 @@
             // 
             // pOptions
             // 
+            this.pOptions.Controls.Add(this.btnShadowExpand);
+            this.pOptions.Controls.Add(this.gbShadow);
             this.pOptions.Controls.Add(this.btnResetOptions);
             this.pOptions.Controls.Add(this.lblBackgroundImageFilePath);
             this.pOptions.Controls.Add(this.btnBackgroundImageFilePathBrowse);
@@ -258,7 +277,6 @@
             this.pOptions.Controls.Add(this.btnCopy);
             this.pOptions.Controls.Add(this.pbBackground);
             this.pOptions.Controls.Add(this.lblMargin);
-            this.pOptions.Controls.Add(this.lblShadowSizeValue);
             this.pOptions.Controls.Add(this.tbMargin);
             this.pOptions.Controls.Add(this.lblRoundedCornerValue);
             this.pOptions.Controls.Add(this.lblPadding);
@@ -269,13 +287,146 @@
             this.pOptions.Controls.Add(this.lblRoundedCorner);
             this.pOptions.Controls.Add(this.lblBackground);
             this.pOptions.Controls.Add(this.tbRoundedCorner);
-            this.pOptions.Controls.Add(this.tbShadowSize);
-            this.pOptions.Controls.Add(this.lblShadowSize);
             this.pOptions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pOptions.Location = new System.Drawing.Point(3, 3);
             this.pOptions.Name = "pOptions";
             this.pOptions.Size = new System.Drawing.Size(329, 755);
             this.pOptions.TabIndex = 0;
+            // 
+            // gbShadow
+            // 
+            this.gbShadow.Controls.Add(this.lblShadowAngleValue);
+            this.gbShadow.Controls.Add(this.lblShadowDistanceValue);
+            this.gbShadow.Controls.Add(this.lblShadowOpacityValue);
+            this.gbShadow.Controls.Add(this.btnShadowColor);
+            this.gbShadow.Controls.Add(this.tbShadowSize);
+            this.gbShadow.Controls.Add(this.tbShadowAngle);
+            this.gbShadow.Controls.Add(this.lblShadowSizeValue);
+            this.gbShadow.Controls.Add(this.lblShadowAngle);
+            this.gbShadow.Controls.Add(this.lblShadowSize);
+            this.gbShadow.Controls.Add(this.tbShadowDistance);
+            this.gbShadow.Controls.Add(this.lblShadowOpacity);
+            this.gbShadow.Controls.Add(this.lblShadowDistance);
+            this.gbShadow.Controls.Add(this.tbShadowOpacity);
+            this.gbShadow.Location = new System.Drawing.Point(8, 264);
+            this.gbShadow.Name = "gbShadow";
+            this.gbShadow.Size = new System.Drawing.Size(312, 104);
+            this.gbShadow.TabIndex = 25;
+            this.gbShadow.TabStop = false;
+            this.gbShadow.Text = "Shadow";
+            // 
+            // btnShadowExpand
+            // 
+            this.btnShadowExpand.Image = global::ShareX.MediaLib.Properties.Resources.plus_white;
+            this.btnShadowExpand.Location = new System.Drawing.Point(280, 260);
+            this.btnShadowExpand.Name = "btnShadowExpand";
+            this.btnShadowExpand.Size = new System.Drawing.Size(30, 30);
+            this.btnShadowExpand.TabIndex = 16;
+            this.btnShadowExpand.Tag = "+";
+            this.btnShadowExpand.UseVisualStyleBackColor = true;
+            this.btnShadowExpand.Click += new System.EventHandler(this.btnShadowExpand_Click);
+            // 
+            // lblShadowAngleValue
+            // 
+            this.lblShadowAngleValue.Location = new System.Drawing.Point(256, 248);
+            this.lblShadowAngleValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShadowAngleValue.Name = "lblShadowAngleValue";
+            this.lblShadowAngleValue.Size = new System.Drawing.Size(40, 24);
+            this.lblShadowAngleValue.TabIndex = 15;
+            this.lblShadowAngleValue.Text = "0";
+            this.lblShadowAngleValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblShadowDistanceValue
+            // 
+            this.lblShadowDistanceValue.Location = new System.Drawing.Point(256, 176);
+            this.lblShadowDistanceValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShadowDistanceValue.Name = "lblShadowDistanceValue";
+            this.lblShadowDistanceValue.Size = new System.Drawing.Size(40, 24);
+            this.lblShadowDistanceValue.TabIndex = 14;
+            this.lblShadowDistanceValue.Text = "0";
+            this.lblShadowDistanceValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblShadowOpacityValue
+            // 
+            this.lblShadowOpacityValue.Location = new System.Drawing.Point(256, 104);
+            this.lblShadowOpacityValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShadowOpacityValue.Name = "lblShadowOpacityValue";
+            this.lblShadowOpacityValue.Size = new System.Drawing.Size(40, 24);
+            this.lblShadowOpacityValue.TabIndex = 13;
+            this.lblShadowOpacityValue.Text = "0";
+            this.lblShadowOpacityValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnShadowColor
+            // 
+            this.btnShadowColor.Color = System.Drawing.Color.Empty;
+            this.btnShadowColor.ColorPickerOptions = null;
+            this.btnShadowColor.Location = new System.Drawing.Point(16, 320);
+            this.btnShadowColor.Name = "btnShadowColor";
+            this.btnShadowColor.Size = new System.Drawing.Size(280, 32);
+            this.btnShadowColor.TabIndex = 6;
+            this.btnShadowColor.Text = "Color...";
+            this.btnShadowColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShadowColor.UseVisualStyleBackColor = true;
+            this.btnShadowColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnShadowColor_ColorChanged);
+            // 
+            // tbShadowAngle
+            // 
+            this.tbShadowAngle.Location = new System.Drawing.Point(16, 272);
+            this.tbShadowAngle.Maximum = 180;
+            this.tbShadowAngle.Minimum = -180;
+            this.tbShadowAngle.Name = "tbShadowAngle";
+            this.tbShadowAngle.Size = new System.Drawing.Size(280, 45);
+            this.tbShadowAngle.TabIndex = 5;
+            this.tbShadowAngle.TickFrequency = 45;
+            this.tbShadowAngle.Scroll += new System.EventHandler(this.tbShadowAngle_Scroll);
+            // 
+            // lblShadowAngle
+            // 
+            this.lblShadowAngle.AutoSize = true;
+            this.lblShadowAngle.Location = new System.Drawing.Point(16, 248);
+            this.lblShadowAngle.Name = "lblShadowAngle";
+            this.lblShadowAngle.Size = new System.Drawing.Size(44, 17);
+            this.lblShadowAngle.TabIndex = 4;
+            this.lblShadowAngle.Text = "Angle:";
+            // 
+            // tbShadowDistance
+            // 
+            this.tbShadowDistance.Location = new System.Drawing.Point(16, 200);
+            this.tbShadowDistance.Maximum = 100;
+            this.tbShadowDistance.Name = "tbShadowDistance";
+            this.tbShadowDistance.Size = new System.Drawing.Size(280, 45);
+            this.tbShadowDistance.TabIndex = 3;
+            this.tbShadowDistance.TickFrequency = 10;
+            this.tbShadowDistance.Scroll += new System.EventHandler(this.tbShadowDistance_Scroll);
+            // 
+            // lblShadowOpacity
+            // 
+            this.lblShadowOpacity.AutoSize = true;
+            this.lblShadowOpacity.Location = new System.Drawing.Point(16, 104);
+            this.lblShadowOpacity.Name = "lblShadowOpacity";
+            this.lblShadowOpacity.Size = new System.Drawing.Size(55, 17);
+            this.lblShadowOpacity.TabIndex = 0;
+            this.lblShadowOpacity.Text = "Opacity:";
+            // 
+            // lblShadowDistance
+            // 
+            this.lblShadowDistance.AutoSize = true;
+            this.lblShadowDistance.Location = new System.Drawing.Point(16, 176);
+            this.lblShadowDistance.Name = "lblShadowDistance";
+            this.lblShadowDistance.Size = new System.Drawing.Size(60, 17);
+            this.lblShadowDistance.TabIndex = 2;
+            this.lblShadowDistance.Text = "Distance:";
+            // 
+            // tbShadowOpacity
+            // 
+            this.tbShadowOpacity.Location = new System.Drawing.Point(16, 128);
+            this.tbShadowOpacity.Maximum = 100;
+            this.tbShadowOpacity.Name = "tbShadowOpacity";
+            this.tbShadowOpacity.Size = new System.Drawing.Size(280, 45);
+            this.tbShadowOpacity.SmallChange = 10;
+            this.tbShadowOpacity.TabIndex = 1;
+            this.tbShadowOpacity.TickFrequency = 10;
+            this.tbShadowOpacity.Scroll += new System.EventHandler(this.tbShadowOpacity_Scroll);
             // 
             // btnResetOptions
             // 
@@ -290,14 +441,14 @@
             // 
             // lblBackgroundImageFilePath
             // 
-            this.lblBackgroundImageFilePath.Location = new System.Drawing.Point(13, 432);
+            this.lblBackgroundImageFilePath.Location = new System.Drawing.Point(13, 472);
             this.lblBackgroundImageFilePath.Name = "lblBackgroundImageFilePath";
             this.lblBackgroundImageFilePath.Size = new System.Drawing.Size(296, 120);
             this.lblBackgroundImageFilePath.TabIndex = 22;
             // 
             // btnBackgroundImageFilePathBrowse
             // 
-            this.btnBackgroundImageFilePathBrowse.Location = new System.Drawing.Point(16, 392);
+            this.btnBackgroundImageFilePathBrowse.Location = new System.Drawing.Point(16, 432);
             this.btnBackgroundImageFilePathBrowse.Name = "btnBackgroundImageFilePathBrowse";
             this.btnBackgroundImageFilePathBrowse.Size = new System.Drawing.Size(296, 32);
             this.btnBackgroundImageFilePathBrowse.TabIndex = 21;
@@ -309,7 +460,7 @@
             // 
             this.cbBackgroundType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBackgroundType.FormattingEnabled = true;
-            this.cbBackgroundType.Location = new System.Drawing.Point(16, 360);
+            this.cbBackgroundType.Location = new System.Drawing.Point(16, 400);
             this.cbBackgroundType.Name = "cbBackgroundType";
             this.cbBackgroundType.Size = new System.Drawing.Size(296, 25);
             this.cbBackgroundType.TabIndex = 19;
@@ -378,7 +529,7 @@
             // pbBackground
             // 
             this.pbBackground.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBackground.Location = new System.Drawing.Point(16, 392);
+            this.pbBackground.Location = new System.Drawing.Point(16, 432);
             this.pbBackground.Name = "pbBackground";
             this.pbBackground.Size = new System.Drawing.Size(296, 40);
             this.pbBackground.TabIndex = 14;
@@ -406,6 +557,11 @@
             this.tlpMain.ResumeLayout(false);
             this.pOptions.ResumeLayout(false);
             this.pOptions.PerformLayout();
+            this.gbShadow.ResumeLayout(false);
+            this.gbShadow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbShadowAngle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbShadowDistance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbShadowOpacity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackground)).EndInit();
             this.ResumeLayout(false);
 
@@ -440,5 +596,17 @@
         private System.Windows.Forms.Button btnBackgroundImageFilePathBrowse;
         private System.Windows.Forms.Label lblBackgroundImageFilePath;
         private System.Windows.Forms.Button btnResetOptions;
+        private System.Windows.Forms.TrackBar tbShadowOpacity;
+        private System.Windows.Forms.Label lblShadowOpacity;
+        private HelpersLib.ColorButton btnShadowColor;
+        private System.Windows.Forms.TrackBar tbShadowAngle;
+        private System.Windows.Forms.Label lblShadowAngle;
+        private System.Windows.Forms.TrackBar tbShadowDistance;
+        private System.Windows.Forms.Label lblShadowDistance;
+        private System.Windows.Forms.GroupBox gbShadow;
+        private System.Windows.Forms.Label lblShadowAngleValue;
+        private System.Windows.Forms.Label lblShadowDistanceValue;
+        private System.Windows.Forms.Label lblShadowOpacityValue;
+        private System.Windows.Forms.Button btnShadowExpand;
     }
 }
