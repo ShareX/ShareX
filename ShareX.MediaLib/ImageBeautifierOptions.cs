@@ -26,8 +26,6 @@
 using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ShareX.MediaLib
 {
@@ -67,79 +65,6 @@ namespace ShareX.MediaLib
             BackgroundGradient = new GradientInfo(LinearGradientMode.ForwardDiagonal, Color.FromArgb(255, 81, 47), Color.FromArgb(221, 36, 118));
             BackgroundColor = Color.FromArgb(34, 34, 34);
             BackgroundImageFilePath = "";
-        }
-
-        public Bitmap Render(Bitmap image)
-        {
-            Bitmap resultImage = (Bitmap)image.Clone();
-
-            if (SmartPadding)
-            {
-                resultImage = ImageHelpers.AutoCropImage(resultImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, Padding);
-            }
-            else if (Padding > 0)
-            {
-                Color color = resultImage.GetPixel(0, 0);
-                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Padding, color);
-                resultImage.Dispose();
-                resultImage = resultImageNew;
-            }
-
-            if (RoundedCorner > 0)
-            {
-                resultImage = ImageHelpers.RoundedCorners(resultImage, RoundedCorner);
-            }
-
-            if (Margin > 0)
-            {
-                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Margin);
-                resultImage.Dispose();
-                resultImage = resultImageNew;
-            }
-
-            if (ShadowOpacity > 0 && (ShadowRadius > 0 || ShadowDistance > 0))
-            {
-                float shadowOpacity = ShadowOpacity / 100f;
-                Point shadowOffset = (Point)MathHelpers.DegreeToVector2(ShadowAngle, ShadowDistance);
-                resultImage = ImageHelpers.AddShadow(resultImage, shadowOpacity, ShadowRadius, 0f, ShadowColor, shadowOffset, false);
-            }
-
-            switch (BackgroundType)
-            {
-                case ImageBeautifierBackgroundType.Gradient:
-                    if (BackgroundGradient != null && BackgroundGradient.IsVisible)
-                    {
-                        Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, BackgroundGradient);
-                        resultImage.Dispose();
-                        resultImage = resultImageNew;
-                    }
-                    break;
-                case ImageBeautifierBackgroundType.Color:
-                    if (!BackgroundColor.IsTransparent())
-                    {
-                        Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, BackgroundColor);
-                        resultImage.Dispose();
-                        resultImage = resultImageNew;
-                    }
-                    break;
-                case ImageBeautifierBackgroundType.Image:
-                    resultImage = ImageHelpers.DrawBackgroundImage(resultImage, BackgroundImageFilePath);
-                    break;
-                case ImageBeautifierBackgroundType.Desktop:
-                    string desktopWallpaperFilePath = Helpers.GetDesktopWallpaperFilePath();
-                    resultImage = ImageHelpers.DrawBackgroundImage(resultImage, desktopWallpaperFilePath);
-                    break;
-                default:
-                case ImageBeautifierBackgroundType.Transparent:
-                    break;
-            }
-
-            return resultImage;
-        }
-
-        public async Task<Bitmap> RenderAsync(Bitmap image)
-        {
-            return await Task.Run(() => Render(image));
         }
     }
 }

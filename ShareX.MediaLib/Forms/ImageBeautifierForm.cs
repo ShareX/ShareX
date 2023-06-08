@@ -45,6 +45,7 @@ namespace ShareX.MediaLib
 
         private bool isReady, isBusy, isPending, pendingQuickRender;
         private string title;
+        private ImageBeautifier imageBeautifier;
 
         private ImageBeautifierForm(ImageBeautifierOptions options = null)
         {
@@ -58,6 +59,7 @@ namespace ShareX.MediaLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
             title = Text;
+            imageBeautifier = new ImageBeautifier(Options);
 
             LoadOptions();
         }
@@ -169,7 +171,7 @@ namespace ShareX.MediaLib
                     }
 
                     Stopwatch renderTime = Stopwatch.StartNew();
-                    Bitmap resultImage = await options.RenderAsync(SourceImage);
+                    Bitmap resultImage = await imageBeautifier.RenderAsync(SourceImage);
                     renderTime.Stop();
 
                     if (IsDisposed)

@@ -123,6 +123,7 @@
     <Compile Include="Forms\VideoThumbnailerForm.Designer.cs">
       <DependentUpon>VideoThumbnailerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageBeautifier.cs" />
     <Compile Include="ImageBeautifierOptions.cs" />
     <Compile Include="ImageCombinerOptions.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
