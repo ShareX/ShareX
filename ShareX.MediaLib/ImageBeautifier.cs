@@ -24,33 +24,68 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
 {
-    public class ImageBeautifier
+    public class ImageBeautifier : IDisposable
     {
         public ImageBeautifierOptions Options { get; private set; }
+        public Bitmap SourceImage { get; private set; }
+        public Bitmap SourceImageCropped { get; private set; }
+        public Color PaddingColor { get; private set; }
 
         public ImageBeautifier(ImageBeautifierOptions options)
         {
             Options = options;
         }
 
-        public Bitmap Render(Bitmap image)
+        public ImageBeautifier(Bitmap image, ImageBeautifierOptions options) : this(options)
         {
-            Bitmap resultImage = (Bitmap)image.Clone();
+            LoadImage(image);
+        }
 
-            if (Options.SmartPadding)
+        public void Dispose()
+        {
+            SourceImage?.Dispose();
+            SourceImageCropped?.Dispose();
+        }
+
+        public void LoadImage(Bitmap image)
+        {
+            SourceImage = (Bitmap)image.Clone();
+            SourceImageCropped = null;
+
+            Rectangle source = new Rectangle(0, 0, image.Width, image.Height);
+            Rectangle rect = ImageHelpers.FindAutoCropRectangle(image, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+
+            if (source != rect)
             {
-                resultImage = ImageHelpers.AutoCropImage(resultImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, Options.Padding);
+                SourceImageCropped = ImageHelpers.CropBitmap(image, rect);
             }
-            else if (Options.Padding > 0)
+
+            PaddingColor = image.GetPixel(0, 0);
+        }
+
+        public Bitmap Render()
+        {
+            Bitmap resultImage;
+
+            if (Options.SmartPadding && SourceImageCropped != null)
             {
-                Color color = resultImage.GetPixel(0, 0);
-                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Options.Padding, color);
+                resultImage = (Bitmap)SourceImageCropped.Clone();
+            }
+            else
+            {
+                resultImage = (Bitmap)SourceImage.Clone();
+            }
+
+            if (Options.Padding > 0)
+            {
+                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Options.Padding, PaddingColor);
                 resultImage.Dispose();
                 resultImage = resultImageNew;
             }
@@ -107,9 +142,9 @@ namespace ShareX.MediaLib
             return resultImage;
         }
 
-        public async Task<Bitmap> RenderAsync(Bitmap image)
+        public async Task<Bitmap> RenderAsync()
         {
-            return await Task.Run(() => Render(image));
+            return await Task.Run(Render);
         }
     }
 }

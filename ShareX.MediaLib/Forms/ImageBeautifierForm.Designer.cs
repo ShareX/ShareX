@@ -7,19 +7,6 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -46,8 +33,8 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.pbPreview = new ShareX.HelpersLib.MyPictureBox();
             this.pOptions = new System.Windows.Forms.Panel();
-            this.gbShadow = new System.Windows.Forms.GroupBox();
             this.btnShadowExpand = new System.Windows.Forms.Button();
+            this.gbShadow = new System.Windows.Forms.GroupBox();
             this.lblShadowAngleValue = new System.Windows.Forms.Label();
             this.lblShadowDistanceValue = new System.Windows.Forms.Label();
             this.lblShadowOpacityValue = new System.Windows.Forms.Label();
@@ -185,7 +172,7 @@
             // lblBackground
             // 
             this.lblBackground.AutoSize = true;
-            this.lblBackground.Location = new System.Drawing.Point(13, 376);
+            this.lblBackground.Location = new System.Drawing.Point(13, 384);
             this.lblBackground.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBackground.Name = "lblBackground";
             this.lblBackground.Size = new System.Drawing.Size(80, 17);
@@ -194,40 +181,40 @@
             // 
             // lblMarginValue
             // 
-            this.lblMarginValue.Location = new System.Drawing.Point(272, 16);
+            this.lblMarginValue.Location = new System.Drawing.Point(256, 16);
             this.lblMarginValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMarginValue.Name = "lblMarginValue";
-            this.lblMarginValue.Size = new System.Drawing.Size(40, 24);
+            this.lblMarginValue.Size = new System.Drawing.Size(56, 24);
             this.lblMarginValue.TabIndex = 2;
             this.lblMarginValue.Text = "0";
             this.lblMarginValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblPaddingValue
             // 
-            this.lblPaddingValue.Location = new System.Drawing.Point(272, 88);
+            this.lblPaddingValue.Location = new System.Drawing.Point(256, 88);
             this.lblPaddingValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPaddingValue.Name = "lblPaddingValue";
-            this.lblPaddingValue.Size = new System.Drawing.Size(40, 24);
+            this.lblPaddingValue.Size = new System.Drawing.Size(56, 24);
             this.lblPaddingValue.TabIndex = 5;
             this.lblPaddingValue.Text = "0";
             this.lblPaddingValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblRoundedCornerValue
             // 
-            this.lblRoundedCornerValue.Location = new System.Drawing.Point(272, 192);
+            this.lblRoundedCornerValue.Location = new System.Drawing.Point(256, 192);
             this.lblRoundedCornerValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRoundedCornerValue.Name = "lblRoundedCornerValue";
-            this.lblRoundedCornerValue.Size = new System.Drawing.Size(40, 24);
+            this.lblRoundedCornerValue.Size = new System.Drawing.Size(56, 24);
             this.lblRoundedCornerValue.TabIndex = 9;
             this.lblRoundedCornerValue.Text = "0";
             this.lblRoundedCornerValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblShadowRadiusValue
             // 
-            this.lblShadowRadiusValue.Location = new System.Drawing.Point(256, 32);
+            this.lblShadowRadiusValue.Location = new System.Drawing.Point(240, 32);
             this.lblShadowRadiusValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShadowRadiusValue.Name = "lblShadowRadiusValue";
-            this.lblShadowRadiusValue.Size = new System.Drawing.Size(40, 24);
+            this.lblShadowRadiusValue.Size = new System.Drawing.Size(56, 24);
             this.lblShadowRadiusValue.TabIndex = 12;
             this.lblShadowRadiusValue.Text = "0";
             this.lblShadowRadiusValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -293,6 +280,17 @@
             this.pOptions.Size = new System.Drawing.Size(329, 755);
             this.pOptions.TabIndex = 0;
             // 
+            // btnShadowExpand
+            // 
+            this.btnShadowExpand.Image = global::ShareX.MediaLib.Properties.Resources.plus_white;
+            this.btnShadowExpand.Location = new System.Drawing.Point(280, 260);
+            this.btnShadowExpand.Name = "btnShadowExpand";
+            this.btnShadowExpand.Size = new System.Drawing.Size(30, 30);
+            this.btnShadowExpand.TabIndex = 16;
+            this.btnShadowExpand.Tag = "+";
+            this.btnShadowExpand.UseVisualStyleBackColor = true;
+            this.btnShadowExpand.Click += new System.EventHandler(this.btnShadowExpand_Click);
+            // 
             // gbShadow
             // 
             this.gbShadow.Controls.Add(this.lblShadowAngleValue);
@@ -315,43 +313,32 @@
             this.gbShadow.TabStop = false;
             this.gbShadow.Text = "Shadow";
             // 
-            // btnShadowExpand
-            // 
-            this.btnShadowExpand.Image = global::ShareX.MediaLib.Properties.Resources.plus_white;
-            this.btnShadowExpand.Location = new System.Drawing.Point(280, 260);
-            this.btnShadowExpand.Name = "btnShadowExpand";
-            this.btnShadowExpand.Size = new System.Drawing.Size(30, 30);
-            this.btnShadowExpand.TabIndex = 16;
-            this.btnShadowExpand.Tag = "+";
-            this.btnShadowExpand.UseVisualStyleBackColor = true;
-            this.btnShadowExpand.Click += new System.EventHandler(this.btnShadowExpand_Click);
-            // 
             // lblShadowAngleValue
             // 
-            this.lblShadowAngleValue.Location = new System.Drawing.Point(256, 248);
+            this.lblShadowAngleValue.Location = new System.Drawing.Point(240, 248);
             this.lblShadowAngleValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShadowAngleValue.Name = "lblShadowAngleValue";
-            this.lblShadowAngleValue.Size = new System.Drawing.Size(40, 24);
+            this.lblShadowAngleValue.Size = new System.Drawing.Size(56, 24);
             this.lblShadowAngleValue.TabIndex = 15;
             this.lblShadowAngleValue.Text = "0";
             this.lblShadowAngleValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblShadowDistanceValue
             // 
-            this.lblShadowDistanceValue.Location = new System.Drawing.Point(256, 176);
+            this.lblShadowDistanceValue.Location = new System.Drawing.Point(240, 176);
             this.lblShadowDistanceValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShadowDistanceValue.Name = "lblShadowDistanceValue";
-            this.lblShadowDistanceValue.Size = new System.Drawing.Size(40, 24);
+            this.lblShadowDistanceValue.Size = new System.Drawing.Size(56, 24);
             this.lblShadowDistanceValue.TabIndex = 14;
             this.lblShadowDistanceValue.Text = "0";
             this.lblShadowDistanceValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblShadowOpacityValue
             // 
-            this.lblShadowOpacityValue.Location = new System.Drawing.Point(256, 104);
+            this.lblShadowOpacityValue.Location = new System.Drawing.Point(240, 104);
             this.lblShadowOpacityValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShadowOpacityValue.Name = "lblShadowOpacityValue";
-            this.lblShadowOpacityValue.Size = new System.Drawing.Size(40, 24);
+            this.lblShadowOpacityValue.Size = new System.Drawing.Size(56, 24);
             this.lblShadowOpacityValue.TabIndex = 13;
             this.lblShadowOpacityValue.Text = "0";
             this.lblShadowOpacityValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -441,14 +428,14 @@
             // 
             // lblBackgroundImageFilePath
             // 
-            this.lblBackgroundImageFilePath.Location = new System.Drawing.Point(13, 472);
+            this.lblBackgroundImageFilePath.Location = new System.Drawing.Point(13, 480);
             this.lblBackgroundImageFilePath.Name = "lblBackgroundImageFilePath";
             this.lblBackgroundImageFilePath.Size = new System.Drawing.Size(296, 120);
             this.lblBackgroundImageFilePath.TabIndex = 22;
             // 
             // btnBackgroundImageFilePathBrowse
             // 
-            this.btnBackgroundImageFilePathBrowse.Location = new System.Drawing.Point(16, 432);
+            this.btnBackgroundImageFilePathBrowse.Location = new System.Drawing.Point(16, 440);
             this.btnBackgroundImageFilePathBrowse.Name = "btnBackgroundImageFilePathBrowse";
             this.btnBackgroundImageFilePathBrowse.Size = new System.Drawing.Size(296, 32);
             this.btnBackgroundImageFilePathBrowse.TabIndex = 21;
@@ -460,7 +447,7 @@
             // 
             this.cbBackgroundType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBackgroundType.FormattingEnabled = true;
-            this.cbBackgroundType.Location = new System.Drawing.Point(16, 400);
+            this.cbBackgroundType.Location = new System.Drawing.Point(16, 408);
             this.cbBackgroundType.Name = "cbBackgroundType";
             this.cbBackgroundType.Size = new System.Drawing.Size(296, 25);
             this.cbBackgroundType.TabIndex = 19;
@@ -529,7 +516,7 @@
             // pbBackground
             // 
             this.pbBackground.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBackground.Location = new System.Drawing.Point(16, 432);
+            this.pbBackground.Location = new System.Drawing.Point(16, 440);
             this.pbBackground.Name = "pbBackground";
             this.pbBackground.Size = new System.Drawing.Size(296, 40);
             this.pbBackground.TabIndex = 14;

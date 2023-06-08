@@ -59,7 +59,6 @@ namespace ShareX.MediaLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
             title = Text;
-            imageBeautifier = new ImageBeautifier(Options);
 
             LoadOptions();
         }
@@ -73,6 +72,19 @@ namespace ShareX.MediaLib
         {
             FilePath = filePath;
             SourceImage = ImageHelpers.LoadImage(filePath);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                components?.Dispose();
+                SourceImage?.Dispose();
+                PreviewImage?.Dispose();
+                imageBeautifier?.Dispose();
+            }
+
+            base.Dispose(disposing);
         }
 
         private void LoadOptions()
@@ -170,8 +182,18 @@ namespace ShareX.MediaLib
                         options.ShadowRadius = 0;
                     }
 
+                    if (imageBeautifier == null)
+                    {
+                        imageBeautifier = new ImageBeautifier(SourceImage, Options);
+
+                        if (imageBeautifier.SourceImageCropped == null)
+                        {
+                            cbSmartPadding.Enabled = false;
+                        }
+                    }
+
                     Stopwatch renderTime = Stopwatch.StartNew();
-                    Bitmap resultImage = await imageBeautifier.RenderAsync(SourceImage);
+                    Bitmap resultImage = await imageBeautifier.RenderAsync();
                     renderTime.Stop();
 
                     if (IsDisposed)
