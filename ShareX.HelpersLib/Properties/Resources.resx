@@ -1313,4 +1313,7 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
     <value>Image beautifier</value>
   </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>Beautify image</value>
+  </data>
 </root>

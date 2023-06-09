@@ -614,6 +614,16 @@ namespace ShareX
                 return true;
             }
 
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.BeautifyImage))
+            {
+                Image = TaskHelpers.BeautifyImage(Image, Info.TaskSettings);
+
+                if (Image == null)
+                {
+                    return false;
+                }
+            }
+
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
                 Image = TaskHelpers.ApplyImageEffects(Image, Info.TaskSettings.ImageSettingsReference);

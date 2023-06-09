@@ -1107,6 +1107,36 @@ namespace ShareX
             }
         }
 
+        public static Bitmap BeautifyImage(Bitmap bmp, TaskSettings taskSettings = null)
+        {
+            if (bmp != null)
+            {
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                using (ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(bmp, taskSettings.ToolsSettingsReference.ImageBeautifierOptions))
+                {
+                    imageBeautifierForm.UploadImageRequested += output =>
+                    {
+                        UploadManager.UploadImage(output, taskSettings);
+                    };
+
+                    imageBeautifierForm.PrintImageRequested += output =>
+                    {
+                        using (output)
+                        {
+                            PrintImage(output);
+                        }
+                    };
+
+                    imageBeautifierForm.ShowDialog();
+
+                    return (Bitmap)imageBeautifierForm.PreviewImage.Clone();
+                }
+            }
+
+            return null;
+        }
+
         public static void OpenImageEffects(TaskSettings taskSettings = null)
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
@@ -1601,6 +1631,7 @@ namespace ShareX
                     default: throw new Exception("Icon missing for after capture task: " + afterCaptureTask);
                     case AfterCaptureTasks.ShowQuickTaskMenu: return Resources.ui_menu_blue;
                     case AfterCaptureTasks.ShowAfterCaptureWindow: return Resources.application_text_image;
+                    case AfterCaptureTasks.BeautifyImage: return Resources.picture_sunset;
                     case AfterCaptureTasks.AddImageEffects: return Resources.image_saturation;
                     case AfterCaptureTasks.AnnotateImage: return Resources.image_pencil;
                     case AfterCaptureTasks.CopyImageToClipboard: return Resources.clipboard_paste_image;

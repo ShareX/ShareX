@@ -164,6 +164,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Beautify image.
+        /// </summary>
+        internal static string AfterCaptureTasks_BeautifyImage {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_BeautifyImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy file path to clipboard.
         /// </summary>
         internal static string AfterCaptureTasks_CopyFilePathToClipboard {

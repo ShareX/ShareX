@@ -176,6 +176,7 @@
             this.tsmiUploadSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDownloadSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBeautifyImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAddImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPinSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRunAction = new System.Windows.Forms.ToolStripMenuItem();
@@ -286,7 +287,6 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
-            this.tsmiBeautifyImage = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1421,6 +1421,13 @@
             resources.ApplyResources(this.tsmiEditSelectedFile, "tsmiEditSelectedFile");
             this.tsmiEditSelectedFile.Click += new System.EventHandler(this.tsmiEditSelectedFile_Click);
             // 
+            // tsmiBeautifyImage
+            // 
+            this.tsmiBeautifyImage.Image = global::ShareX.Properties.Resources.picture_sunset;
+            this.tsmiBeautifyImage.Name = "tsmiBeautifyImage";
+            resources.ApplyResources(this.tsmiBeautifyImage, "tsmiBeautifyImage");
+            this.tsmiBeautifyImage.Click += new System.EventHandler(this.tsmiBeautifyImage_Click);
+            // 
             // tsmiAddImageEffects
             // 
             this.tsmiAddImageEffects.Image = global::ShareX.Properties.Resources.image_saturation;
@@ -2247,13 +2254,6 @@
             resources.ApplyResources(this.pToolbars, "pToolbars");
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
-            // 
-            // tsmiBeautifyImage
-            // 
-            this.tsmiBeautifyImage.Image = global::ShareX.Properties.Resources.picture_sunset;
-            this.tsmiBeautifyImage.Name = "tsmiBeautifyImage";
-            resources.ApplyResources(this.tsmiBeautifyImage, "tsmiBeautifyImage");
-            this.tsmiBeautifyImage.Click += new System.EventHandler(this.tsmiBeautifyImage_Click);
             // 
             // MainForm
             // 
