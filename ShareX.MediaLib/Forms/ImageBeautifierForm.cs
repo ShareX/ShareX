@@ -179,18 +179,21 @@ namespace ShareX.MediaLib
 
                     if (quickRender)
                     {
-                        options.ShadowRadius = 0;
+                        options.ShadowOpacity = 0;
                     }
 
                     if (imageBeautifier == null)
                     {
-                        imageBeautifier = new ImageBeautifier(SourceImage, Options);
+                        imageBeautifier = new ImageBeautifier();
+                        imageBeautifier.LoadImage(SourceImage);
 
                         if (imageBeautifier.SourceImageCropped == null)
                         {
                             cbSmartPadding.Enabled = false;
                         }
                     }
+
+                    imageBeautifier.Options = options;
 
                     Stopwatch renderTime = Stopwatch.StartNew();
                     Bitmap resultImage = await imageBeautifier.RenderAsync();

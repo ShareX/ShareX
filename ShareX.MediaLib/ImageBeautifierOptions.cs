@@ -57,9 +57,9 @@ namespace ShareX.MediaLib
             SmartPadding = true;
             RoundedCorner = 20;
             ShadowRadius = 30;
-            ShadowOpacity = 100;
-            ShadowDistance = 0;
-            ShadowAngle = -90;
+            ShadowOpacity = 80;
+            ShadowDistance = 10;
+            ShadowAngle = 90;
             ShadowColor = Color.Black;
             BackgroundType = ImageBeautifierBackgroundType.Gradient;
             BackgroundGradient = new GradientInfo(LinearGradientMode.ForwardDiagonal, Color.FromArgb(255, 81, 47), Color.FromArgb(221, 36, 118));

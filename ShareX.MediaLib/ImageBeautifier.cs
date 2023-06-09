@@ -33,10 +33,14 @@ namespace ShareX.MediaLib
 {
     public class ImageBeautifier : IDisposable
     {
-        public ImageBeautifierOptions Options { get; private set; }
+        public ImageBeautifierOptions Options { get; set; }
         public Bitmap SourceImage { get; private set; }
         public Bitmap SourceImageCropped { get; private set; }
         public Color PaddingColor { get; private set; }
+
+        public ImageBeautifier()
+        {
+        }
 
         public ImageBeautifier(ImageBeautifierOptions options)
         {
