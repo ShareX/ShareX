@@ -121,15 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cmsQR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 98</value>
-  </data>
-  <data name="&gt;&gt;cmsQR.Name" xml:space="preserve">
-    <value>cmsQR</value>
-  </data>
-  <data name="&gt;&gt;cmsQR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -157,6 +148,15 @@
   <data name="tsmiDecode.Text" xml:space="preserve">
     <value>Decode</value>
   </data>
+  <data name="cmsQR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 98</value>
+  </data>
+  <data name="&gt;&gt;cmsQR.Name" xml:space="preserve">
+    <value>cmsQR</value>
+  </data>
+  <data name="&gt;&gt;cmsQR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtQRCode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -172,7 +172,7 @@
     <value>Both</value>
   </data>
   <data name="txtQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 56</value>
+    <value>560, 56</value>
   </data>
   <data name="txtQRCode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -187,34 +187,109 @@
     <value>tpEncode</value>
   </data>
   <data name="&gt;&gt;txtQRCode.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblQRCodeSizeHint.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblQRCodeSizeHint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>221, 72</value>
+  </data>
+  <data name="lblQRCodeSizeHint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 13</value>
+  </data>
+  <data name="lblQRCodeSizeHint.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblQRCodeSizeHint.Text" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="&gt;&gt;lblQRCodeSizeHint.Name" xml:space="preserve">
+    <value>lblQRCodeSizeHint</value>
+  </data>
+  <data name="&gt;&gt;lblQRCodeSizeHint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblQRCodeSizeHint.Parent" xml:space="preserve">
+    <value>tpEncode</value>
+  </data>
+  <data name="&gt;&gt;lblQRCodeSizeHint.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lblQRCodeSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblQRCodeSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 72</value>
+  </data>
+  <data name="lblQRCodeSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblQRCodeSize.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblQRCodeSize.Text" xml:space="preserve">
+    <value>QR code size:</value>
+  </data>
+  <data name="&gt;&gt;lblQRCodeSize.Name" xml:space="preserve">
+    <value>lblQRCodeSize</value>
+  </data>
+  <data name="&gt;&gt;lblQRCodeSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblQRCodeSize.Parent" xml:space="preserve">
+    <value>tpEncode</value>
+  </data>
+  <data name="&gt;&gt;lblQRCodeSize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudQRCodeSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 68</value>
+  </data>
+  <data name="nudQRCodeSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="nudQRCodeSize.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="nudQRCodeSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudQRCodeSize.Name" xml:space="preserve">
+    <value>nudQRCodeSize</value>
+  </data>
+  <data name="&gt;&gt;nudQRCodeSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudQRCodeSize.Parent" xml:space="preserve">
+    <value>tpEncode</value>
+  </data>
+  <data name="&gt;&gt;nudQRCodeSize.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="pbQRCode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="pbQRCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 72</value>
+    <value>8, 96</value>
   </data>
   <data name="pbQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 404</value>
-  </data>
-  <data name="pbQRCode.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>CenterImage</value>
+    <value>560, 430</value>
   </data>
   <data name="pbQRCode.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;pbQRCode.Name" xml:space="preserve">
     <value>pbQRCode</value>
   </data>
   <data name="&gt;&gt;pbQRCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbQRCode.Parent" xml:space="preserve">
     <value>tpEncode</value>
   </data>
   <data name="&gt;&gt;pbQRCode.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="tpEncode.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -223,7 +298,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="tpEncode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 485</value>
+    <value>576, 535</value>
   </data>
   <data name="tpEncode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -253,10 +328,13 @@
     <value>2, 2</value>
   </data>
   <data name="rtbDecodeResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 406</value>
+    <value>554, 456</value>
   </data>
   <data name="rtbDecodeResult.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="rtbDecodeResult.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rtbDecodeResult.Name" xml:space="preserve">
     <value>rtbDecodeResult</value>
@@ -277,7 +355,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="pDecodeResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 412</value>
+    <value>560, 462</value>
   </data>
   <data name="pDecodeResult.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -376,7 +454,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDecode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>476, 485</value>
+    <value>576, 535</value>
   </data>
   <data name="tpDecode.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -403,7 +481,7 @@
     <value>0, 0</value>
   </data>
   <data name="tcMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>484, 511</value>
+    <value>584, 561</value>
   </data>
   <data name="tcMain.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -427,7 +505,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>484, 511</value>
+    <value>584, 561</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>300, 300</value>

@@ -1985,7 +1985,7 @@ namespace ShareX
             UpdateMessageBox.Start(updateChecker);
         }
 
-        public static Image CreateQRCode(string text, int width, int height)
+        public static Image CreateQRCode(string text, int size)
         {
             if (CheckQRCodeContent(text))
             {
@@ -1996,9 +1996,12 @@ namespace ShareX
                         Format = BarcodeFormat.QR_CODE,
                         Options = new QrCodeEncodingOptions
                         {
-                            Width = width,
-                            Height = height,
-                            CharacterSet = "UTF-8"
+                            Width = size,
+                            Height = size,
+                            CharacterSet = "UTF-8",
+                            PureBarcode = true,
+                            NoPadding = false,
+                            Margin = 1
                         },
                         Renderer = new BitmapRenderer()
                     };
@@ -2012,11 +2015,6 @@ namespace ShareX
             }
 
             return null;
-        }
-
-        public static Image CreateQRCode(string text, int size)
-        {
-            return CreateQRCode(text, size, size);
         }
 
         public static string[] BarcodeScan(Bitmap bmp, bool scanQRCodeOnly = false)

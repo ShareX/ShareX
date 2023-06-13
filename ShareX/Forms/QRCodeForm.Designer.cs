@@ -37,19 +37,22 @@
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiDecode = new System.Windows.Forms.ToolStripMenuItem();
             this.txtQRCode = new System.Windows.Forms.TextBox();
-            this.pbQRCode = new System.Windows.Forms.PictureBox();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpEncode = new System.Windows.Forms.TabPage();
+            this.nudQRCodeSize = new System.Windows.Forms.NumericUpDown();
             this.tpDecode = new System.Windows.Forms.TabPage();
+            this.pDecodeResult = new System.Windows.Forms.Panel();
+            this.rtbDecodeResult = new System.Windows.Forms.RichTextBox();
             this.btnDecodeFromFile = new System.Windows.Forms.Button();
             this.lblDecodeResult = new System.Windows.Forms.Label();
             this.btnDecodeFromScreen = new System.Windows.Forms.Button();
-            this.rtbDecodeResult = new System.Windows.Forms.RichTextBox();
-            this.pDecodeResult = new System.Windows.Forms.Panel();
+            this.pbQRCode = new ShareX.HelpersLib.MyPictureBox();
+            this.lblQRCodeSize = new System.Windows.Forms.Label();
+            this.lblQRCodeSizeHint = new System.Windows.Forms.Label();
             this.cmsQR.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).BeginInit();
             this.tcMain.SuspendLayout();
             this.tpEncode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQRCodeSize)).BeginInit();
             this.tpDecode.SuspendLayout();
             this.pDecodeResult.SuspendLayout();
             this.SuspendLayout();
@@ -102,13 +105,6 @@
             this.txtQRCode.Name = "txtQRCode";
             this.txtQRCode.TextChanged += new System.EventHandler(this.txtQRCode_TextChanged);
             // 
-            // pbQRCode
-            // 
-            resources.ApplyResources(this.pbQRCode, "pbQRCode");
-            this.pbQRCode.ContextMenuStrip = this.cmsQR;
-            this.pbQRCode.Name = "pbQRCode";
-            this.pbQRCode.TabStop = false;
-            // 
             // tcMain
             // 
             this.tcMain.Controls.Add(this.tpEncode);
@@ -120,10 +116,29 @@
             // tpEncode
             // 
             this.tpEncode.BackColor = System.Drawing.SystemColors.Window;
-            this.tpEncode.Controls.Add(this.txtQRCode);
+            this.tpEncode.Controls.Add(this.lblQRCodeSizeHint);
+            this.tpEncode.Controls.Add(this.lblQRCodeSize);
+            this.tpEncode.Controls.Add(this.nudQRCodeSize);
             this.tpEncode.Controls.Add(this.pbQRCode);
+            this.tpEncode.Controls.Add(this.txtQRCode);
             resources.ApplyResources(this.tpEncode, "tpEncode");
             this.tpEncode.Name = "tpEncode";
+            // 
+            // nudQRCodeSize
+            // 
+            this.nudQRCodeSize.Increment = new decimal(new int[] {
+            64,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.nudQRCodeSize, "nudQRCodeSize");
+            this.nudQRCodeSize.Maximum = new decimal(new int[] {
+            2048,
+            0,
+            0,
+            0});
+            this.nudQRCodeSize.Name = "nudQRCodeSize";
+            this.nudQRCodeSize.ValueChanged += new System.EventHandler(this.nudQRCodeSize_ValueChanged);
             // 
             // tpDecode
             // 
@@ -134,6 +149,20 @@
             this.tpDecode.Controls.Add(this.btnDecodeFromScreen);
             resources.ApplyResources(this.tpDecode, "tpDecode");
             this.tpDecode.Name = "tpDecode";
+            // 
+            // pDecodeResult
+            // 
+            resources.ApplyResources(this.pDecodeResult, "pDecodeResult");
+            this.pDecodeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pDecodeResult.Controls.Add(this.rtbDecodeResult);
+            this.pDecodeResult.Name = "pDecodeResult";
+            // 
+            // rtbDecodeResult
+            // 
+            this.rtbDecodeResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.rtbDecodeResult, "rtbDecodeResult");
+            this.rtbDecodeResult.Name = "rtbDecodeResult";
+            this.rtbDecodeResult.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbDecodeResult_LinkClicked);
             // 
             // btnDecodeFromFile
             // 
@@ -154,19 +183,23 @@
             this.btnDecodeFromScreen.UseVisualStyleBackColor = true;
             this.btnDecodeFromScreen.Click += new System.EventHandler(this.btnDecodeFromScreen_Click);
             // 
-            // rtbDecodeResult
+            // pbQRCode
             // 
-            this.rtbDecodeResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.rtbDecodeResult, "rtbDecodeResult");
-            this.rtbDecodeResult.Name = "rtbDecodeResult";
-            this.rtbDecodeResult.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbDecodeResult_LinkClicked);
+            resources.ApplyResources(this.pbQRCode, "pbQRCode");
+            this.pbQRCode.BackColor = System.Drawing.SystemColors.Window;
+            this.pbQRCode.ContextMenuStrip = this.cmsQR;
+            this.pbQRCode.Name = "pbQRCode";
+            this.pbQRCode.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             // 
-            // pDecodeResult
+            // lblQRCodeSize
             // 
-            resources.ApplyResources(this.pDecodeResult, "pDecodeResult");
-            this.pDecodeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pDecodeResult.Controls.Add(this.rtbDecodeResult);
-            this.pDecodeResult.Name = "pDecodeResult";
+            resources.ApplyResources(this.lblQRCodeSize, "lblQRCodeSize");
+            this.lblQRCodeSize.Name = "lblQRCodeSize";
+            // 
+            // lblQRCodeSizeHint
+            // 
+            resources.ApplyResources(this.lblQRCodeSizeHint, "lblQRCodeSizeHint");
+            this.lblQRCodeSizeHint.Name = "lblQRCodeSizeHint";
             // 
             // QRCodeForm
             // 
@@ -178,10 +211,10 @@
             this.Shown += new System.EventHandler(this.QRCodeForm_Shown);
             this.Resize += new System.EventHandler(this.QRCodeForm_Resize);
             this.cmsQR.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbQRCode)).EndInit();
             this.tcMain.ResumeLayout(false);
             this.tpEncode.ResumeLayout(false);
             this.tpEncode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQRCodeSize)).EndInit();
             this.tpDecode.ResumeLayout(false);
             this.tpDecode.PerformLayout();
             this.pDecodeResult.ResumeLayout(false);
@@ -195,7 +228,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsQR;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopy;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveAs;
-        private System.Windows.Forms.PictureBox pbQRCode;
         private System.Windows.Forms.TabControl tcMain;
         private System.Windows.Forms.TabPage tpEncode;
         private System.Windows.Forms.TabPage tpDecode;
@@ -207,5 +239,9 @@
         private System.Windows.Forms.ToolStripSeparator tss1;
         private System.Windows.Forms.RichTextBox rtbDecodeResult;
         private System.Windows.Forms.Panel pDecodeResult;
+        private System.Windows.Forms.NumericUpDown nudQRCodeSize;
+        private HelpersLib.MyPictureBox pbQRCode;
+        private System.Windows.Forms.Label lblQRCodeSize;
+        private System.Windows.Forms.Label lblQRCodeSizeHint;
     }
 }

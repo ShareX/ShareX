@@ -111,7 +111,7 @@ namespace ShareX
             if (pbQRCode.Image != null)
             {
                 Image temp = pbQRCode.Image;
-                pbQRCode.Image = null;
+                pbQRCode.Reset();
                 temp.Dispose();
             }
         }
@@ -122,9 +122,21 @@ namespace ShareX
             {
                 ClearQRCode();
 
-                int size = Math.Min(pbQRCode.Width, pbQRCode.Height);
-                pbQRCode.Image = TaskHelpers.CreateQRCode(text, size);
-                pbQRCode.BackColor = Color.White;
+                int size;
+
+                if (nudQRCodeSize.Value > 0)
+                {
+                    size = (int)nudQRCodeSize.Value;
+                }
+                else
+                {
+                    size = Math.Min(pbQRCode.Width, pbQRCode.Height);
+                }
+
+                size = Math.Max(size, 64);
+
+                Image qrCode = TaskHelpers.CreateQRCode(text, size);
+                pbQRCode.LoadImage(qrCode);
             }
         }
 
@@ -184,10 +196,18 @@ namespace ShareX
 
         private void QRCodeForm_Resize(object sender, EventArgs e)
         {
-            EncodeText(txtQRCode.Text);
+            if (nudQRCodeSize.Value == 0)
+            {
+                EncodeText(txtQRCode.Text);
+            }
         }
 
         private void txtQRCode_TextChanged(object sender, EventArgs e)
+        {
+            EncodeText(txtQRCode.Text);
+        }
+
+        private void nudQRCodeSize_ValueChanged(object sender, EventArgs e)
         {
             EncodeText(txtQRCode.Text);
         }
