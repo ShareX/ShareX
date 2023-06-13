@@ -109,7 +109,7 @@ namespace ShareX.MediaLib
             if (Options.ShadowOpacity > 0 && (Options.ShadowRadius > 0 || Options.ShadowDistance > 0))
             {
                 float shadowOpacity = Options.ShadowOpacity / 100f;
-                Point shadowOffset = (Point)MathHelpers.DegreeToVector2(Options.ShadowAngle, Options.ShadowDistance);
+                Point shadowOffset = (Point)MathHelpers.DegreeToVector2(Options.ShadowAngle - 90, Options.ShadowDistance);
                 resultImage = ImageHelpers.AddShadow(resultImage, shadowOpacity, Options.ShadowRadius, 0f, Options.ShadowColor, shadowOffset, false);
             }
 

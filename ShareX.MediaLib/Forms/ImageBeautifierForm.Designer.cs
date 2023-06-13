@@ -359,8 +359,7 @@
             // tbShadowAngle
             // 
             this.tbShadowAngle.Location = new System.Drawing.Point(16, 272);
-            this.tbShadowAngle.Maximum = 180;
-            this.tbShadowAngle.Minimum = -180;
+            this.tbShadowAngle.Maximum = 360;
             this.tbShadowAngle.Name = "tbShadowAngle";
             this.tbShadowAngle.Size = new System.Drawing.Size(280, 45);
             this.tbShadowAngle.TabIndex = 5;
