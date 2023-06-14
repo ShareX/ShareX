@@ -1259,12 +1259,12 @@ namespace ShareX
 
         public static void OpenQRCode()
         {
-            QRCodeForm.EncodeClipboard().Show();
+            QRCodeForm.GenerateQRCodeFromClipboard().Show();
         }
 
         public static void OpenQRCodeDecodeFromScreen()
         {
-            QRCodeForm.OpenFormDecodeFromScreen();
+            QRCodeForm.OpenFormScanFromScreen();
         }
 
         public static void OpenRuler(TaskSettings taskSettings = null)
@@ -1985,7 +1985,7 @@ namespace ShareX
             UpdateMessageBox.Start(updateChecker);
         }
 
-        public static Image CreateQRCode(string text, int size)
+        public static Image GenerateQRCode(string text, int size)
         {
             if (CheckQRCodeContent(text))
             {
