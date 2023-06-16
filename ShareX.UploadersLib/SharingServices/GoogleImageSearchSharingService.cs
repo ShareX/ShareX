@@ -29,6 +29,6 @@ namespace ShareX.UploadersLib.SharingServices
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.GoogleImageSearch;
 
-        protected override string URLFormatString { get; } = "https://www.google.com/searchbyimage?image_url={0}";
+        protected override string URLFormatString { get; } = "https://lens.google.com/uploadbyurl?url={0}";
     }
 }
