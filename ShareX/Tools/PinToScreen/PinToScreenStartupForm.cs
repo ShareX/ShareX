@@ -49,21 +49,19 @@ namespace ShareX
             Hide();
             Thread.Sleep(250);
 
-            if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect))
+            Image = RegionCaptureTasks.GetRegionImage(out Rectangle rect);
+
+            if (Image != null)
             {
-                Image = new Screenshot().CaptureRectangle(rect);
+                PinToScreenLocation = rect.Location;
 
-                if (Image != null)
-                {
-                    PinToScreenLocation = rect.Location;
-
-                    DialogResult = DialogResult.OK;
-                    Close();
-                    return;
-                }
+                DialogResult = DialogResult.OK;
+                Close();
             }
-
-            Show();
+            else
+            {
+                Show();
+            }
         }
 
         private void btnFromClipboard_Click(object sender, EventArgs e)

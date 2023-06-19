@@ -1576,6 +1576,39 @@ namespace ShareX.ScreenCaptureLib
             return bmp;
         }
 
+        public Rectangle GetSelectedRectangle()
+        {
+            Rectangle rect = Rectangle.Empty;
+
+            if (Result == RegionResult.Region)
+            {
+                if (ShapeManager.IsCurrentShapeValid)
+                {
+                    rect = CaptureHelpers.ClientToScreen(ShapeManager.CurrentRectangle.Round());
+                }
+            }
+            else if (Result == RegionResult.Fullscreen)
+            {
+                rect = CaptureHelpers.GetScreenBounds();
+            }
+            else if (Result == RegionResult.Monitor)
+            {
+                Screen[] screens = Screen.AllScreens;
+
+                if (MonitorIndex < screens.Length)
+                {
+                    Screen screen = screens[MonitorIndex];
+                    rect = screen.Bounds;
+                }
+            }
+            else if (Result == RegionResult.ActiveMonitor)
+            {
+                rect = CaptureHelpers.GetActiveScreenBounds();
+            }
+
+            return rect;
+        }
+
         internal void OnSaveImageRequested()
         {
             if (SaveImageRequested != null)

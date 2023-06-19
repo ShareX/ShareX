@@ -44,12 +44,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options = null)
-        {
-            return GetRectangleRegion(out rect, out _, options);
-        }
-
-        public static bool GetRectangleRegion(out Rectangle rect, out WindowInfo windowInfo, RegionCaptureOptions options)
+        public static Bitmap GetRegionImage(out Rectangle rect, RegionCaptureOptions options = null)
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
 
@@ -57,41 +52,38 @@ namespace ShareX.ScreenCaptureLib
             {
                 form.ShowDialog();
 
-                windowInfo = form.GetWindowInfo();
+                rect = form.GetSelectedRectangle();
+                return form.GetResultImage();
+            }
+        }
 
-                if (form.Result == RegionResult.Region)
-                {
-                    if (form.ShapeManager.IsCurrentShapeValid)
-                    {
-                        rect = CaptureHelpers.ClientToScreen(form.ShapeManager.CurrentRectangle.Round());
-                        return true;
-                    }
-                }
-                else if (form.Result == RegionResult.Fullscreen)
-                {
-                    rect = CaptureHelpers.GetScreenBounds();
-                    return true;
-                }
-                else if (form.Result == RegionResult.Monitor)
-                {
-                    Screen[] screens = Screen.AllScreens;
+        public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options = null)
+        {
+            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
 
-                    if (form.MonitorIndex < screens.Length)
-                    {
-                        Screen screen = screens[form.MonitorIndex];
-                        rect = screen.Bounds;
-                        return true;
-                    }
-                }
-                else if (form.Result == RegionResult.ActiveMonitor)
-                {
-                    rect = CaptureHelpers.GetActiveScreenBounds();
-                    return true;
-                }
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
+            {
+                form.ShowDialog();
+
+                rect = form.GetSelectedRectangle();
             }
 
-            rect = Rectangle.Empty;
-            return false;
+            return !rect.IsEmpty;
+        }
+
+        public static bool GetRectangleRegion(out Rectangle rect, out WindowInfo windowInfo, RegionCaptureOptions options = null)
+        {
+            RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
+
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
+            {
+                form.ShowDialog();
+
+                rect = form.GetSelectedRectangle();
+                windowInfo = form.GetWindowInfo();
+            }
+
+            return !rect.IsEmpty;
         }
 
         public static bool GetRectangleRegionTransparent(out Rectangle rect)

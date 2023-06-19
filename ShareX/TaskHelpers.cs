@@ -1408,20 +1408,15 @@ namespace ShareX
         public static void PinToScreen(string filePath)
         {
             Image image = ImageHelpers.LoadImage(filePath);
+
             PinToScreen(image);
         }
 
         public static void PinToScreenFromScreen()
         {
-            if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect))
-            {
-                Image image = new Screenshot().CaptureRectangle(rect);
+            Image image = RegionCaptureTasks.GetRegionImage(out Rectangle rect);
 
-                if (image != null)
-                {
-                    PinToScreen(image, rect.Location);
-                }
-            }
+            PinToScreen(image, rect.Location);
         }
 
         public static void PinToScreenFromClipboard()
