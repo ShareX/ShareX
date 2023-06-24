@@ -120,16 +120,19 @@ namespace ShareX
             cbTrayMiddleClickAction.SelectedIndex = (int)Program.Settings.TrayMiddleClickAction;
 
 #if STEAM || MicrosoftStore
+            cbAutoCheckUpdate.Visible = false;
             cbCheckPreReleaseUpdates.Visible = false;
             btnCheckDevBuild.Visible = false;
 #else
             if (SystemOptions.DisableUpdateCheck)
             {
+                cbAutoCheckUpdate.Visible = false;
                 cbCheckPreReleaseUpdates.Visible = false;
                 btnCheckDevBuild.Visible = false;
             }
             else
             {
+                cbAutoCheckUpdate.Checked = Program.Settings.AutoCheckUpdate;
                 cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
             }
 #endif
@@ -441,6 +444,11 @@ namespace ShareX
         private void btnEditQuickTaskMenu_Click(object sender, EventArgs e)
         {
             new QuickTaskMenuEditorForm().ShowDialog();
+        }
+
+        private void cbAutoCheckUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.AutoCheckUpdate = cbAutoCheckUpdate.Checked;
         }
 
         private void cbCheckPreReleaseUpdates_CheckedChanged(object sender, EventArgs e)

@@ -75,6 +75,8 @@ namespace ShareX
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
             this.cbShellContextMenu = new System.Windows.Forms.CheckBox();
             this.tpPaths = new System.Windows.Forms.TabPage();
+            this.txtSaveImageSubFolderPatternWindow = new System.Windows.Forms.TextBox();
+            this.lblSaveImageSubFolderPatternWindow = new System.Windows.Forms.Label();
             this.btnPersonalFolderPathApply = new System.Windows.Forms.Button();
             this.btnOpenScreenshotsFolder = new System.Windows.Forms.Button();
             this.lblPreviewPersonalFolderPath = new System.Windows.Forms.Label();
@@ -179,8 +181,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblSaveImageSubFolderPatternWindow = new System.Windows.Forms.Label();
-            this.txtSaveImageSubFolderPatternWindow = new System.Windows.Forms.TextBox();
+            this.cbAutoCheckUpdate = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -236,6 +237,7 @@ namespace ShareX
             // tpGeneral
             // 
             this.tpGeneral.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGeneral.Controls.Add(this.cbAutoCheckUpdate);
             this.tpGeneral.Controls.Add(this.cbUseWhiteShareXIcon);
             this.tpGeneral.Controls.Add(this.btnCheckDevBuild);
             this.tpGeneral.Controls.Add(this.cbCheckPreReleaseUpdates);
@@ -576,6 +578,17 @@ namespace ShareX
             this.tpPaths.Controls.Add(this.txtSaveImageSubFolderPattern);
             resources.ApplyResources(this.tpPaths, "tpPaths");
             this.tpPaths.Name = "tpPaths";
+            // 
+            // txtSaveImageSubFolderPatternWindow
+            // 
+            resources.ApplyResources(this.txtSaveImageSubFolderPatternWindow, "txtSaveImageSubFolderPatternWindow");
+            this.txtSaveImageSubFolderPatternWindow.Name = "txtSaveImageSubFolderPatternWindow";
+            this.txtSaveImageSubFolderPatternWindow.TextChanged += new System.EventHandler(this.txtSaveImageSubFolderPatternWindow_TextChanged);
+            // 
+            // lblSaveImageSubFolderPatternWindow
+            // 
+            resources.ApplyResources(this.lblSaveImageSubFolderPatternWindow, "lblSaveImageSubFolderPatternWindow");
+            this.lblSaveImageSubFolderPatternWindow.Name = "lblSaveImageSubFolderPatternWindow";
             // 
             // btnPersonalFolderPathApply
             // 
@@ -1403,16 +1416,12 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // lblSaveImageSubFolderPatternWindow
+            // cbAutoCheckUpdate
             // 
-            resources.ApplyResources(this.lblSaveImageSubFolderPatternWindow, "lblSaveImageSubFolderPatternWindow");
-            this.lblSaveImageSubFolderPatternWindow.Name = "lblSaveImageSubFolderPatternWindow";
-            // 
-            // txtSaveImageSubFolderPatternWindow
-            // 
-            resources.ApplyResources(this.txtSaveImageSubFolderPatternWindow, "txtSaveImageSubFolderPatternWindow");
-            this.txtSaveImageSubFolderPatternWindow.Name = "txtSaveImageSubFolderPatternWindow";
-            this.txtSaveImageSubFolderPatternWindow.TextChanged += new System.EventHandler(this.txtSaveImageSubFolderPatternWindow_TextChanged);
+            resources.ApplyResources(this.cbAutoCheckUpdate, "cbAutoCheckUpdate");
+            this.cbAutoCheckUpdate.Name = "cbAutoCheckUpdate";
+            this.cbAutoCheckUpdate.UseVisualStyleBackColor = true;
+            this.cbAutoCheckUpdate.CheckedChanged += new System.EventHandler(this.cbAutoCheckUpdate_CheckedChanged);
             // 
             // ApplicationSettingsForm
             // 
@@ -1632,5 +1641,6 @@ namespace ShareX
         private System.Windows.Forms.Label lblClipboardFormatsTip;
         private System.Windows.Forms.TextBox txtSaveImageSubFolderPatternWindow;
         private System.Windows.Forms.Label lblSaveImageSubFolderPatternWindow;
+        private System.Windows.Forms.CheckBox cbAutoCheckUpdate;
     }
 }

@@ -72,6 +72,7 @@ namespace ShareX
         public HotkeyType TrayLeftDoubleClickAction = HotkeyType.OpenMainWindow;
         public HotkeyType TrayMiddleClickAction = HotkeyType.ClipboardUploadWithContentViewer;
 
+        public bool AutoCheckUpdate = true;
         public bool CheckPreReleaseUpdates = false;
 
         #endregion General
@@ -168,12 +169,6 @@ namespace ShareX
         #endregion Print
 
         #region Advanced
-
-        [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
-#if STEAM || MicrosoftStore
-        [Browsable(false)]
-#endif
-        public bool AutoCheckUpdate { get; set; }
 
         [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]
         public bool BinaryUnits { get; set; }
