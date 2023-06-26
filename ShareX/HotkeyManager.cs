@@ -127,6 +127,14 @@ namespace ShareX
             }
         }
 
+        public void RegisterFailedHotkeys()
+        {
+            foreach (HotkeySettings hotkeySetting in Hotkeys.Where(x => x.HotkeyInfo.Status == HotkeyStatus.Failed))
+            {
+                RegisterHotkey(hotkeySetting);
+            }
+        }
+
         public void UnregisterHotkey(HotkeySettings hotkeySetting, bool removeFromList = true)
         {
             if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Registered)

@@ -64,6 +64,7 @@ namespace ShareX
             {
                 manager = hotkeyManager;
                 manager.HotkeysToggledTrigger += HandleHotkeysToggle;
+                manager.RegisterFailedHotkeys();
 
                 AddControls();
             }
@@ -113,21 +114,12 @@ namespace ShareX
             }
         }
 
-        private void RegisterFailedHotkeys()
-        {
-            foreach (HotkeySettings hotkeySettings in manager.Hotkeys.Where(x => x.HotkeyInfo.Status == HotkeyStatus.Failed))
-            {
-                manager.RegisterHotkey(hotkeySettings);
-            }
-
-            UpdateHotkeyStatus();
-        }
-
         private void control_HotkeyChanged(object sender, EventArgs e)
         {
             HotkeySelectionControl control = (HotkeySelectionControl)sender;
             manager.RegisterHotkey(control.HotkeySettings);
-            RegisterFailedHotkeys();
+            manager.RegisterFailedHotkeys();
+            UpdateHotkeyStatus();
         }
 
         private HotkeySelectionControl AddHotkeySelectionControl(HotkeySettings hotkeySettings)
