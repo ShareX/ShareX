@@ -262,9 +262,6 @@ Qui</value>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
     <value>Seleziona una Scorciatoia...</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Potrebbe esserci un conflitto tra applicazioni:</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Impossibile accedere al file "{0}".
 Esegui ShareX come amministratore per cambiare il percorso della cartella personale.</value>

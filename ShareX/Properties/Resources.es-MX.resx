@@ -265,9 +265,6 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
     <value>Coreano</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Alguna aplicación podría estar interfiriendo:</value>
-  </data>
   <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>Separador</value>
   </data>

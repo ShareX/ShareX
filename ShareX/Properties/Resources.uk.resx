@@ -290,9 +290,6 @@
   <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
     <value>Корейська</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Можливий конфлікт програми:</value>
-  </data>
   <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>Роздільник</value>
   </data>

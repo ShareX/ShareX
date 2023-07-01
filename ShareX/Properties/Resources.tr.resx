@@ -160,9 +160,6 @@
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>Dosyaları yükle</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Bu uygulamalar çakışıyor olabilir:</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Hata</value>
   </data>

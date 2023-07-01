@@ -404,9 +404,6 @@ ShareX를 재시작할까요?</value>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>편집...</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>다른 어플리케이션과 단축키가 충돌하는 것 같습니다:</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
     <value>포르투갈어 (브라질)</value>
   </data>

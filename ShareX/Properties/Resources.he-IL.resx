@@ -577,9 +577,6 @@
 לחץ מקש ימני בעכבר כדי לפתוח את התפריט
 לחץ אמצעי לסגירה</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>ייתכן שיש התנגשות באפליקציה:</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>רישום מקשי קיצור נכשל</value>
   </data>

@@ -1684,15 +1684,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There may be an application conflict:.
-        /// </summary>
-        public static string HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_ {
-            get {
-                return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Unable to register {0}:
         ///
         ///{1}

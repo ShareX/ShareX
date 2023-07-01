@@ -145,9 +145,6 @@
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>Загрузить файлы</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Эти приложения могут быть причиной конфликта:</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Ошибка</value>
   </data>

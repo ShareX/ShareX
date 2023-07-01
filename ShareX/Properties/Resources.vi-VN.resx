@@ -457,9 +457,6 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Tự khởi động đã bị vô hiệu trong Task Manager</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Có thể đã có mâu thuẫn với một ứng dụng:</value>
-  </data>
   <data name="ActionsToolbar_Tip" xml:space="preserve">
     <value>Nhấn chuột trái để kéo
 Nhấn chuột phải để mở menu

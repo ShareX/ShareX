@@ -291,9 +291,6 @@
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>上传文件</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>可能存在程序冲突：</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>错误</value>
   </data>

@@ -542,9 +542,6 @@ Czy chcesz ponownie uruchomić ShareX?</value>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
     <value>ShareX jest zminimalizowany do zasobnika systemowego.</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Może wystąpić konflikt aplikacji:</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tweet pomyślnie wysłany.</value>
   </data>

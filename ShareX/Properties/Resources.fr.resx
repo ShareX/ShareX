@@ -160,9 +160,6 @@ Cliquez sur « Non » pour annuler la mise en ligne et désactiver la mise en li
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>Mise en ligne de fichiers</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Ces applications pourraient être en conflit :</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Erreur</value>
   </data>

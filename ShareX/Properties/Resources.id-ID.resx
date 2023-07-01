@@ -266,9 +266,6 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
     <value>Bahasa Korea</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Mungkin ada konflik aplikasi:</value>
-  </data>
   <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>Pemisah</value>
   </data>

@@ -141,9 +141,6 @@
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>Dateien hochladen</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
-    <value>Diese Anwendungen könnten die Benutzung vom ShareX stören:</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Fehler</value>
   </data>
