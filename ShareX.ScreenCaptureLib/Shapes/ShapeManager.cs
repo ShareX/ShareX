@@ -691,6 +691,9 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.NumPad9:
                             CurrentTool = ShapeType.EffectPixelate;
                             break;
+                        case Keys.Q:
+                            CurrentTool = ShapeType.DrawingFreehandArrow;
+                            break;
                         case Keys.H:
                             CurrentTool = ShapeType.EffectHighlight;
                             break;
