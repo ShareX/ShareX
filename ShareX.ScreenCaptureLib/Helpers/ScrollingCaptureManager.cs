@@ -34,9 +34,9 @@ using System.Threading.Tasks;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ScrollingCaptureManager : IDisposable
+    internal sealed class ScrollingCaptureManager : IDisposable
     {
-        public ScrollingCaptureOptions Options { get; private set; }
+        public ScrollingCaptureOptions Options { get; }
         public Bitmap Result { get; private set; }
         public bool IsCapturing { get; private set; }
 
@@ -48,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
 
         public ScrollingCaptureManager(ScrollingCaptureOptions options)
         {
-            Options = options;
+            Options = options ?? throw new ArgumentNullException(nameof(options));
         }
 
         public void Dispose()
@@ -77,93 +77,87 @@ namespace ShareX.ScreenCaptureLib
 
         public async Task StartCapture()
         {
-            if (!IsCapturing && selectedWindow != null && !selectedRectangle.IsEmpty)
+            if (IsCapturing || selectedWindow == null || selectedRectangle.IsEmpty) return;
+            
+            IsCapturing = true;
+            stopRequested = false;
+            bestMatchCount = 0;
+            bestMatchIndex = 0;
+            Reset();
+
+            ScrollingCaptureRegionForm regionForm = null;
+
+            if (Options.ShowRegion)
             {
-                IsCapturing = true;
-                stopRequested = false;
-                bestMatchCount = 0;
-                bestMatchIndex = 0;
-                Reset();
+                regionForm = new ScrollingCaptureRegionForm(selectedRectangle);
+                regionForm.Show();
+            }
 
-                ScrollingCaptureRegionForm regionForm = null;
+            try
+            {
+                selectedWindow.Activate();
 
-                if (Options.ShowRegion)
+                await Task.Delay(Options.StartDelay);
+
+                if (Options.AutoScrollTop)
                 {
-                    regionForm = new ScrollingCaptureRegionForm(selectedRectangle);
-                    regionForm.Show();
+                    InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
+                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+
+                    await Task.Delay(Options.ScrollDelay);
                 }
 
-                try
+                while (!stopRequested)
                 {
-                    selectedWindow.Activate();
+                    var screenshot = new Screenshot { CaptureCursor = false };
 
-                    await Task.Delay(Options.StartDelay);
+                    Bitmap bmp = screenshot.CaptureRectangle(selectedRectangle);
 
-                    if (Options.AutoScrollTop)
+                    if (bmp != null)
                     {
-                        InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
-                        NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
-
-                        await Task.Delay(Options.ScrollDelay);
+                        images.Add(bmp);
                     }
 
-                    while (!stopRequested)
+                    if (CompareLastTwoImages())
                     {
-                        Screenshot screenshot = new Screenshot()
-                        {
-                            CaptureCursor = false
-                        };
+                        break;
+                    }
 
-                        Bitmap bmp = screenshot.CaptureRectangle(selectedRectangle);
+                    InputHelpers.SendMouseWheel(-120 * Options.ScrollAmount);
 
-                        if (bmp != null)
-                        {
-                            images.Add(bmp);
-                        }
+                    Stopwatch timer = Stopwatch.StartNew();
 
-                        if (CompareLastTwoImages())
-                        {
-                            break;
-                        }
+                    if (images.Count > 0)
+                    {
+                        Result = await CombineImagesAsync(Result, images[images.Count - 1]);
+                    }
 
-                        InputHelpers.SendMouseWheel(-120 * Options.ScrollAmount);
+                    if (stopRequested)
+                    {
+                        break;
+                    }
 
-                        Stopwatch timer = Stopwatch.StartNew();
+                    int delay = Options.ScrollDelay - (int)timer.ElapsedMilliseconds;
 
-                        if (images.Count > 0)
-                        {
-                            Result = await CombineImagesAsync(Result, images[images.Count - 1]);
-                        }
-
-                        if (stopRequested)
-                        {
-                            break;
-                        }
-
-                        int delay = Options.ScrollDelay - (int)timer.ElapsedMilliseconds;
-
-                        if (delay > 0)
-                        {
-                            await Task.Delay(delay);
-                        }
+                    if (delay > 0)
+                    {
+                        await Task.Delay(delay);
                     }
                 }
-                finally
-                {
-                    regionForm?.Close();
+            }
+            finally
+            {
+                regionForm?.Close();
 
-                    Reset(true);
-                    IsCapturing = false;
-                }
+                Reset(true);
+                IsCapturing = false;
             }
         }
 
         public void StopCapture()
         {
-            if (IsCapturing)
-            {
-                stopRequested = true;
-            }
+            if (!IsCapturing) return;
+            stopRequested = true;
         }
 
         public bool SelectWindow()

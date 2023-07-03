@@ -25,10 +25,10 @@
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class LocationInfo
+    public sealed class LocationInfo
     {
-        public long Location { get; set; }
-        public long Length { get; set; }
+        public long Location { get; }
+        public long Length { get; }
 
         public LocationInfo(long location, long length)
         {

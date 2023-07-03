@@ -36,14 +36,14 @@ namespace ShareX.ScreenCaptureLib
     {
         public event Action<Bitmap> UploadRequested;
 
-        public ScrollingCaptureOptions Options { get; private set; }
+        public ScrollingCaptureOptions Options { get; }
 
         private ScrollingCaptureManager manager;
         private Point dragStartPosition;
 
         public ScrollingCaptureForm(ScrollingCaptureOptions options)
         {
-            Options = options;
+            Options = options ?? throw new ArgumentNullException(nameof(options));
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);

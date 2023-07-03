@@ -29,23 +29,25 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ResizeNode : ImageEditorControl
+    internal sealed class ResizeNode : ImageEditorControl
     {
         public const int DefaultSize = 13;
 
-        private PointF position;
+        private PointF _position;
 
         public PointF Position
         {
             get
             {
-                return position;
+                return _position;
             }
             set
             {
-                position = value;
-
-                Rectangle = new RectangleF(position.X - ((Size - 1) / 2), position.Y - ((Size - 1) / 2), Size, Size);
+                var positionX = value.X - ((Size - 1) / 2);
+                var positionY = value.Y - ((Size - 1) / 2);
+                var sideLength = Size;
+                _position = value;
+                Rectangle = new RectangleF(positionX, positionY, sideLength, sideLength);
             }
         }
 
@@ -53,21 +55,21 @@ namespace ShareX.ScreenCaptureLib
 
         public bool AutoSetSize { get; set; } = true;
 
-        private NodeShape shape;
+        private NodeShape _shape;
 
         public NodeShape Shape
         {
             get
             {
-                return shape;
+                return _shape;
             }
             set
             {
-                shape = value;
+                _shape = value;
 
                 if (AutoSetSize)
                 {
-                    if (shape == NodeShape.CustomNode && CustomNodeImage != null)
+                    if (value == NodeShape.CustomNode && CustomNodeImage != null)
                     {
                         Size = Math.Max(CustomNodeImage.Width, CustomNodeImage.Height);
                     }

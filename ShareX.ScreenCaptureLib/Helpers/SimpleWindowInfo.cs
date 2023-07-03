@@ -29,9 +29,9 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class SimpleWindowInfo
+    public sealed class SimpleWindowInfo
     {
-        public IntPtr Handle { get; set; }
+        public IntPtr Handle { get; }
         public Rectangle Rectangle { get; set; }
         public bool IsWindow { get; set; }
 
