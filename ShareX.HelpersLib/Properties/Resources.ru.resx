@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -166,7 +166,7 @@
     <value>Ошибка</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
-    <value>Настройки скопированы в буфер.</value>
+    <value>Настройки скопированы в буфер обмена.</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Имя файла: {0}</value>
@@ -184,7 +184,7 @@
     <value>Нет</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
-    <value>Тон: {0:0.0}°, Насыщение: {1:0.0}%, Яркость: {2:0.0}%</value>
+    <value>Тон: {0:0.0}°, Насыщенность: {1:0.0}%, Яркость: {2:0.0}%</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
     <value>Голубой: {0:0.0}%, Пурпурный: {1:0.0}%, Жёлтый: {2:0.0}%, Ключ: {3:0.0}%</value>
@@ -209,8 +209,8 @@
   </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>Прогресс: {0:0.0}%
-Скорость загрузки: {1:0.0} KB/s
-Размер файла: {2:n0} / {3:n0} KB</value>
+Скорость загрузки: {1:0.0} КБ/с
+Размер файла: {2:n0} / {3:n0} КБ</value>
   </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Загрузка изображения...</value>
@@ -318,7 +318,7 @@
     <value>Захват всего экрана</value>
   </data>
   <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR код</value>
+    <value>QR-код</value>
   </data>
   <data name="HotkeyType_RectangleLight" xml:space="preserve">
     <value>Захват области (Облегченный)</value>
@@ -429,7 +429,7 @@
     <value>Отправить ссылку</value>
   </data>
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
-    <value>Показать окно с QR кодом</value>
+    <value>Показать окно с QR-кодом</value>
   </data>
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>Сократить ссылку</value>
@@ -602,7 +602,7 @@
     <value>Сегодняшний день</value>
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
-    <value>Текущий Час</value>
+    <value>Текущий час</value>
   </data>
   <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
     <value>Высота картинки</value>
@@ -755,7 +755,7 @@
     <value>Убрать фигуру</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Автоматически пробовать все методы пока один не сработает</value>
+    <value>Автоматически пробовать все методы, пока один не сработает</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
     <value>Симулировать нажатие клавиши "Page down"</value>
@@ -947,7 +947,7 @@
     <value>Случайная строка из файла. Используйте {filepath}, чтобы указать файл</value>
   </data>
   <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
-    <value>Сканировать QR код</value>
+    <value>Сканировать QR-код</value>
   </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>Ограниченный доступ</value>
@@ -1037,7 +1037,7 @@
     <value>Цель:</value>
   </data>
   <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
-    <value>QR код (Считать с экрана)</value>
+    <value>QR-код (Считать с экрана)</value>
   </data>
   <data name="ArrowHeadDirection_End" xml:space="preserve">
     <value>Конец</value>
@@ -1259,7 +1259,7 @@
     <value>Стрелка от руки</value>
   </data>
   <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
-    <value>Закрепить на экране (из буффера обмена)</value>
+    <value>Закрепить на экране (из буфера обмена)</value>
   </data>
   <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
     <value>Закрепить на экране (из файла)</value>
@@ -1272,5 +1272,8 @@
   </data>
   <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
     <value>Украшатель изображений</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>Украсить изображение</value>
   </data>
 </root>
