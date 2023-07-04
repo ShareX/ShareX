@@ -1259,7 +1259,7 @@
     <value>Стрелка от руки</value>
   </data>
   <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
-    <value>Закрепить на экране (из буффера обмена)</value>
+    <value>Закрепить на экране (из буфера обмена)</value>
   </data>
   <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
     <value>Закрепить на экране (из файла)</value>
