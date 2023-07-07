@@ -139,6 +139,11 @@ namespace ShareX.ScreenCaptureLib
 
                                 monitorIndex = i;
                                 captureArea = new Rectangle(intersection.X - screen.Bounds.X, intersection.Y - screen.Bounds.Y, intersection.Width, intersection.Height);
+
+                                if (FFmpeg.IsEvenSizeRequired)
+                                {
+                                    captureArea = CaptureHelpers.EvenRectangleSize(captureArea);
+                                }
                             }
                         }
 
