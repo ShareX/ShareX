@@ -30,6 +30,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -119,6 +120,46 @@ namespace ShareX.ScreenCaptureLib
                             AppendInputDevice(args, "dshow", true);
                             args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
                         }
+                    }
+                    else if (FFmpeg.VideoSource.Equals(FFmpegCLIManager.SourceDDAGrab, StringComparison.OrdinalIgnoreCase))
+                    {
+                        int monitorIndex = 0;
+                        Rectangle captureArea = Screen.AllScreens[0].Bounds;
+                        int maxIntersectionArea = 0;
+
+                        for (int i = 0; i < Screen.AllScreens.Length; i++)
+                        {
+                            Screen screen = Screen.AllScreens[i];
+                            Rectangle intersection = Rectangle.Intersect(screen.Bounds, CaptureArea);
+                            int intersectionArea = intersection.Width * intersection.Height;
+
+                            if (intersectionArea > maxIntersectionArea)
+                            {
+                                maxIntersectionArea = intersectionArea;
+
+                                monitorIndex = i;
+                                captureArea = new Rectangle(intersection.X - screen.Bounds.X, intersection.Y - screen.Bounds.Y, intersection.Width, intersection.Height);
+                            }
+                        }
+
+                        // https://ffmpeg.org/ffmpeg-filters.html#ddagrab
+                        AppendInputDevice(args, "lavfi", FFmpeg.IsAudioSourceSelected);
+                        args.Append("-i ddagrab=");
+                        args.Append($"output_idx={monitorIndex}:"); // DXGI Output Index to capture.
+                        args.Append($"draw_mouse={DrawCursor.ToString().ToLowerInvariant()}:"); // Whether to draw the mouse cursor.
+                        args.Append($"framerate={framerate}:"); // Framerate at which the desktop will be captured.
+                        args.Append($"offset_x={captureArea.X}:"); // Horizontal offset of the captured video.
+                        args.Append($"offset_y={captureArea.Y}:"); // Vertical offset of the captured video.
+                        args.Append($"video_size={captureArea.Width}x{captureArea.Height}:"); // Specify the size of the captured video.
+                        args.Append("output_fmt=bgra"); // Desired filter output format.
+
+                        if (FFmpeg.VideoCodec != FFmpegVideoCodec.h264_nvenc && FFmpeg.VideoCodec != FFmpegVideoCodec.hevc_nvenc)
+                        {
+                            args.Append(",hwdownload");
+                            args.Append(",format=bgra");
+                        }
+
+                        args.Append(" ");
                     }
                     else
                     {
@@ -213,7 +254,6 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.hevc_nvenc:
                             args.Append($"-preset {FFmpeg.NVENC_Preset} ");
                             args.Append($"-b:v {FFmpeg.NVENC_Bitrate}k ");
-                            args.Append("-pix_fmt yuv420p ");
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.h264_amf:

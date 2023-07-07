@@ -40,6 +40,7 @@ namespace ShareX.MediaLib
     {
         public const string SourceNone = "None";
         public const string SourceGDIGrab = "GDI grab";
+        public const string SourceDDAGrab = "Desktop Duplication API";
         public const string SourceVideoDevice = "screen-capture-recorder";
         public const string SourceAudioDevice = "virtual-audio-capturer";
 
