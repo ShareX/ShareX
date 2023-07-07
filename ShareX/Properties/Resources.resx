@@ -1196,7 +1196,7 @@ Do you want to abort the active screen recording?</value>
   <data name="HotkeyInfo_Key_Combo_Name_Plus_Empty" xml:space="preserve">
     <value>...</value>
   </data>
-  <data name="HotkeyInfo_Key_Name_Numpad_X" xml:space="preserve">
-    <value>Numpad {0}</value>
+  <data name="HotkeyInfo_Key_Name_Numpad_" xml:space="preserve">
+    <value>Numpad </value>
   </data>
 </root>

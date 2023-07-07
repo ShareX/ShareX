@@ -175,7 +175,7 @@ namespace ShareX.HelpersLib
             }
             else if (KeyCode >= Keys.NumPad0 && KeyCode <= Keys.NumPad9)
             {
-                text += string.Format(Resources.HotkeyInfo_Key_Name_Numpad_X, (KeyCode - Keys.NumPad0).ToString());
+                text += (Resources.HotkeyInfo_Key_Name_Numpad_) + (KeyCode - Keys.NumPad0).ToString();
             }
             else
             {
