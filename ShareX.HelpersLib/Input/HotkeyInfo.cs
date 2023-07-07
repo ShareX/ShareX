@@ -91,47 +91,83 @@ namespace ShareX.HelpersLib
 
             if (Control)
             {
-                text += "Ctrl + ";
+                text += (Resources.HotkeyInfo_Key_Combo_Name_Control_Plus_X);
             }
 
             if (Shift)
             {
-                text += "Shift + ";
+                text += (Resources.HotkeyInfo_Key_Combo_Name_Shift_Plus_X);
             }
 
             if (Alt)
             {
-                text += "Alt + ";
+                text += (Resources.HotkeyInfo_Key_Combo_Name_Alternate_Plus_X);
             }
 
             if (Win)
             {
-                text += "Win + ";
+                text += (Resources.HotkeyInfo_Key_Combo_Name_Windows_Plus_X);
             }
 
             if (IsOnlyModifiers)
             {
-                text += "...";
+                text += (Resources.HotkeyInfo_Key_Combo_Name_Plus_Empty);
             }
             else if (KeyCode == Keys.Back)
             {
-                text += "Backspace";
+                text += (Resources.HotkeyInfo_Key_Name_Backspace);
             }
             else if (KeyCode == Keys.Return)
             {
-                text += "Enter";
+                text += (Resources.HotkeyInfo_Key_Name_Enter);
             }
             else if (KeyCode == Keys.Capital)
             {
-                text += "Caps Lock";
+                text += (Resources.HotkeyInfo_Key_Name_Caps_Lock);
             }
             else if (KeyCode == Keys.Next)
             {
-                text += "Page Down";
+                text += (Resources.HotkeyInfo_Key_Name_Page_Down);
+            }
+            else if (KeyCode == Keys.Prior)
+            {
+                text += (Resources.HotkeyInfo_Key_Name_Page_Up);
             }
             else if (KeyCode == Keys.Scroll)
             {
-                text += "Scroll Lock";
+                text += (Resources.HotkeyInfo_Key_Name_Scroll_Lock);
+            }
+            else if (KeyCode == Keys.Space)
+            {
+                text += (Resources.HotkeyInfo_Key_Name_Spacebar);
+            }
+            else if (KeyCode == Keys.Left)
+            {
+                text += (Resources.HotkeyInfo_Key_Name_Left_Arrow);
+            }
+            else if (KeyCode == Keys.Up)
+            {
+                text += (Resources.HotkeyInfo_Key_Name_Up_Arrow);
+            }
+            else if (KeyCode == Keys.Right)
+            {
+                text += (Resources.HotkeyInfo_Key_Name_Right_Arrow);
+            }
+            else if (KeyCode == Keys.Down)
+            {
+                text += (Resources.HotkeyInfo_Key_Name_Down_Arrow);
+            }
+            else if (KeyCode == Keys.Insert)
+            {
+                text += (Resources.HotkeyInfo_Key_Name_Insert);
+            }
+            else if (KeyCode == Keys.Delete)
+            {
+                text += (Resources.HotkeyInfo_Key_Name_Delete);
+            }
+            else if (KeyCode == Keys.None)
+            {
+                text += (Resources.HotkeyInfo_Key_Name_Nothing_Bound);
             }
             else if (KeyCode >= Keys.D0 && KeyCode <= Keys.D9)
             {
@@ -139,7 +175,7 @@ namespace ShareX.HelpersLib
             }
             else if (KeyCode >= Keys.NumPad0 && KeyCode <= Keys.NumPad9)
             {
-                text += "Numpad " + (KeyCode - Keys.NumPad0).ToString();
+                text += string.Format(Resources.HotkeyInfo_Key_Name_Numpad_X, (KeyCode - Keys.NumPad0).ToString());
             }
             else
             {

@@ -1139,4 +1139,64 @@ Do you want to abort the active screen recording?</value>
   <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
     <value>Would you like to retry clipboard upload?</value>
   </data>
+  <data name="HotkeyInfo_Key_Name_Backspace" xml:space="preserve">
+    <value>Backspace</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Caps_Lock" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Page_Down" xml:space="preserve">
+    <value>Page Down</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Page_Up" xml:space="preserve">
+    <value>Page Up</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Scroll_Lock" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Spacebar" xml:space="preserve">
+    <value>Space</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Left_Arrow" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Up_Arrow" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Right_Arrow" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Down_Arrow" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Insert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Nothing_Bound" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="HotkeyInfo_Key_Combo_Name_Control_Plus_X" xml:space="preserve">
+    <value>Ctrl + </value>
+  </data>
+  <data name="HotkeyInfo_Key_Combo_Name_Shift_Plus_X" xml:space="preserve">
+    <value>Shift + </value>
+  </data>
+  <data name="HotkeyInfo_Key_Combo_Name_Alternate_Plus_X" xml:space="preserve">
+    <value>Alt + </value>
+  </data>
+  <data name="HotkeyInfo_Key_Combo_Name_Windows_Plus_X" xml:space="preserve">
+    <value>Win + </value>
+  </data>
+  <data name="HotkeyInfo_Key_Combo_Name_Plus_Empty" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="HotkeyInfo_Key_Name_Numpad_X" xml:space="preserve">
+    <value>Numpad {0}</value>
+  </data>
 </root>
