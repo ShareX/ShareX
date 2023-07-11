@@ -63,11 +63,10 @@ namespace ShareX.IndexerLib
             if (settings.CreateParseableJson)
             {
                 IndexFolderParseable(dir);
+                return;
             }
-            else
-            {
-                IndexFolderSimple(dir);
-            }
+
+            IndexFolderSimple(dir);
         }
 
         private void IndexFolderSimple(FolderInfo dir)
