@@ -128,15 +128,11 @@ namespace ShareX.IndexerLib
                 folderNameRow = " " + HtmlHelper.Tag("span", folderNameRow, "", "class=\"FolderInfo\"");
             }
 
-            string pathTitle;
+            string pathTitle = dir.FolderName;
 
             if (settings.DisplayPath)
             {
                 pathTitle = settings.DisplayPathLimited ? dir.FolderPath.Substring(prePathTrim) : dir.FolderPath;
-            }
-            else
-            {
-                pathTitle = dir.FolderName;
             }
 
             int heading = (level + 1).Clamp(1, 6);
@@ -165,15 +161,11 @@ namespace ShareX.IndexerLib
 
         private string GetCssStyle()
         {
-            string css;
+            string css = Resources.IndexerDefault;
 
             if (settings.UseCustomCSSFile && !string.IsNullOrEmpty(settings.CustomCSSFilePath) && File.Exists(settings.CustomCSSFilePath))
             {
                 css = File.ReadAllText(settings.CustomCSSFilePath, Encoding.UTF8);
-            }
-            else
-            {
-                css = Resources.IndexerDefault;
             }
 
             return $"<style type=\"text/css\">\r\n{css}\r\n</style>";
