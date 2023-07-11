@@ -31,19 +31,8 @@ namespace ShareX.IndexerLib
     {
         public static string StartTag(string tag, string style = "", string otherFields = "")
         {
-            string css = "";
-
-            if (!string.IsNullOrEmpty(style))
-            {
-                css = $" style=\"{style}\"";
-            }
-
-            string fields = "";
-
-            if (!string.IsNullOrEmpty(otherFields))
-            {
-                fields = $" {otherFields}";
-            }
+            string css = string.IsNullOrEmpty(style) ? "" : $" style=\"{style}\"";
+            string fields = string.IsNullOrEmpty(otherFields) ? "" : $" {otherFields}";
 
             return $"<{tag}{css}{fields}>";
         }
