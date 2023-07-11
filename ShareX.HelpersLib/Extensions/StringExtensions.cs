@@ -314,7 +314,7 @@ namespace ShareX.HelpersLib
             radix = Math.Abs(radix);
             if (radix > digits.Length || radix < 2)
             {
-                throw new ArgumentOutOfRangeException("radix", radix, string.Format("Radix has to be > 2 and < {0}", digits.Length));
+                throw new ArgumentOutOfRangeException(nameof(radix), radix, string.Format("Radix has to be > 2 and < {0}", digits.Length));
             }
 
             // Convert to Base 10
