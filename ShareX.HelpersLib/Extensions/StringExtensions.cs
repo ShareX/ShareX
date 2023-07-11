@@ -308,7 +308,7 @@ namespace ShareX.HelpersLib
         {
             if (string.IsNullOrEmpty(digits))
             {
-                throw new ArgumentNullException("digits", string.Format("Digits must contain character value representations"));
+                throw new ArgumentNullException(nameof(digits), string.Format("Digits must contain character value representations"));
             }
 
             radix = Math.Abs(radix);
