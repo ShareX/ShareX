@@ -29,6 +29,7 @@ using System;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -123,13 +124,14 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else if (FFmpeg.VideoSource.Equals(FFmpegCLIManager.SourceDDAGrab, StringComparison.OrdinalIgnoreCase))
                     {
+                        Screen[] screens = Screen.AllScreens.OrderBy(x => !x.Primary).ToArray();
                         int monitorIndex = 0;
-                        Rectangle captureArea = Screen.AllScreens[0].Bounds;
+                        Rectangle captureArea = screens[0].Bounds;
                         int maxIntersectionArea = 0;
 
-                        for (int i = 0; i < Screen.AllScreens.Length; i++)
+                        for (int i = 0; i < screens.Length; i++)
                         {
-                            Screen screen = Screen.AllScreens[i];
+                            Screen screen = screens[i];
                             Rectangle intersection = Rectangle.Intersect(screen.Bounds, CaptureArea);
                             int intersectionArea = intersection.Width * intersection.Height;
 
@@ -139,12 +141,12 @@ namespace ShareX.ScreenCaptureLib
 
                                 monitorIndex = i;
                                 captureArea = new Rectangle(intersection.X - screen.Bounds.X, intersection.Y - screen.Bounds.Y, intersection.Width, intersection.Height);
-
-                                if (FFmpeg.IsEvenSizeRequired)
-                                {
-                                    captureArea = CaptureHelpers.EvenRectangleSize(captureArea);
-                                }
                             }
+                        }
+
+                        if (FFmpeg.IsEvenSizeRequired)
+                        {
+                            captureArea = CaptureHelpers.EvenRectangleSize(captureArea);
                         }
 
                         // https://ffmpeg.org/ffmpeg-filters.html#ddagrab
