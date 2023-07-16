@@ -98,12 +98,18 @@ namespace ShareX.IndexerLib
                     {
                         tcMain.SelectedTab = tpPreview;
 
-                        bool isReadyForWebPreview = Settings.Output == IndexerOutput.Html;
-
-                        txtPreview.Visible = !isReadyForWebPreview;
-                        wbPreview.Visible = isReadyForWebPreview;
-
-                        (isReadyForWebPreview ? wbPreview.DocumentText : txtPreview.Text) = Source;
+                        if (Settings.Output == IndexerOutput.Html)
+                        {
+                            txtPreview.Visible = false;
+                            wbPreview.Visible = true;
+                            wbPreview.DocumentText = Source;
+                        }
+                        else
+                        {
+                            wbPreview.Visible = false;
+                            txtPreview.Visible = true;
+                            txtPreview.Text = Source;
+                        }
 
                         btnUpload.Enabled = true;
                     }
