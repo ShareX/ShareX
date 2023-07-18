@@ -157,6 +157,12 @@ namespace ShareX.ScreenCaptureLib
                 cbVideoSource.Items.Clear();
                 cbVideoSource.Items.Add(FFmpegCLIManager.SourceNone);
                 cbVideoSource.Items.Add(FFmpegCLIManager.SourceGDIGrab);
+
+                if (Helpers.IsWindows10OrGreater())
+                {
+                    cbVideoSource.Items.Add(FFmpegCLIManager.SourceDDAGrab);
+                }
+
                 cbAudioSource.Items.Clear();
                 cbAudioSource.Items.Add(FFmpegCLIManager.SourceNone);
 
