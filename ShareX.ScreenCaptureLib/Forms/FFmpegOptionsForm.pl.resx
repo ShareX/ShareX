@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnTest.Text" xml:space="preserve">
-    <value>Testuj z CMD</value>
+    <value>Testuj z CMD...</value>
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Odśwież</value>
@@ -136,7 +136,7 @@
     <value>Jakość:</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Zainstaluj urządzenia nagrywające</value>
+    <value>Zainstaluj urządzenia nagrywające...</value>
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Jakość:</value>
@@ -252,5 +252,11 @@ Wyższa wartość oznacza złą jakość, ale niski rozmiar pliku.</value>
   </data>
   <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
     <value>Użyj własnej ścieżki FFmpeg:</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>Enkoder audio:</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Enkoder wideo:</value>
   </data>
 </root>

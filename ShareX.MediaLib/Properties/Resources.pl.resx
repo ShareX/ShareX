@@ -156,4 +156,10 @@
   <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
     <value>Miniatury zostały pomyślnie wygenerowane.</value>
   </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>Czy chcesz zresetować opcje?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
 </root>

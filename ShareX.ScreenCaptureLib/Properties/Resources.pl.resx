@@ -487,4 +487,7 @@ Czy chcesz zamknąć edytor obrazów?</value>
   <data name="Resume" xml:space="preserve">
     <value>Ponów</value>
   </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
 </root>

@@ -277,4 +277,10 @@ Utworzone foldery:</value>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Przeszukiwanie folderów...</value>
   </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Połącz...</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Rozłącz</value>
+  </data>
 </root>

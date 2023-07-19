@@ -237,4 +237,7 @@
   <data name="Total" xml:space="preserve">
     <value>Razem</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Przypnij do ekranu</value>
+  </data>
 </root>

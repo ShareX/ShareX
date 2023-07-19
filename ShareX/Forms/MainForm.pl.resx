@@ -574,7 +574,7 @@
     <value>Przełącz pasek akcji</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
-    <value>Historia obrazu...</value>
+    <value>Historia obrazów...</value>
   </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>Operacje</value>
@@ -752,5 +752,14 @@
   </data>
   <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
     <value>Przypnij do ekranu...</value>
+  </data>
+  <data name="tsmiBeautifyImage.Text" xml:space="preserve">
+    <value>Upiększ obraz...</value>
+  </data>
+  <data name="tsmiImageBeautifier.Text" xml:space="preserve">
+    <value>Upiększanie obrazu...</value>
+  </data>
+  <data name="tsmiTrayImageBeautifier.Text" xml:space="preserve">
+    <value>Upiększacz obrazu...</value>
   </data>
 </root>

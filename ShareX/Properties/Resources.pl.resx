@@ -647,4 +647,21 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
     <value>FFmpeg, który jest dostarczany z ShareX, obsługuje tylko 64-bitowe systemy operacyjne.</value>
   </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX jest aktualny!</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>Czy chcesz ponowić próbę przesłania schowka?</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>ShareX nie może zostać zamknięty, gdy aktywne jest nagrywanie ekranu.
+
+Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>Przesyłanie schowka</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>Hebrajski</value>
+  </data>
 </root>

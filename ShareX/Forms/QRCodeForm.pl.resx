@@ -147,4 +147,28 @@
   <data name="tsmiDecode.Text" xml:space="preserve">
     <value>Dekoduj</value>
   </data>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>Kopiuj obraz</value>
+  </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>Prześlij obraz</value>
+  </data>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>Tekst:</value>
+  </data>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>Zapisz obraz...</value>
+  </data>
+  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
+    <value>Skanuj kod QR z pliku obrazu...</value>
+  </data>
+  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
+    <value>Skanuj kod QR z ekranu...</value>
+  </data>
+  <data name="lblQRCode.Text" xml:space="preserve">
+    <value>Kod QR:</value>
+  </data>
+  <data name="lblQRCodeSize.Text" xml:space="preserve">
+    <value>Rozmiar kodu QR:</value>
+  </data>
 </root>
