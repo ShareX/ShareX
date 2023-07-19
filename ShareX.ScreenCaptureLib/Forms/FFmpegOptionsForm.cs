@@ -171,11 +171,12 @@ namespace ShareX.ScreenCaptureLib
                     cbAudioSource.Items.AddRange(devices.AudioDevices.Select(x => new FFmpegCaptureDevice(x, $"dshow ({x})")).ToArray());
                 }
 
-                if (selectDevices && cbVideoSource.Items.Contains(FFmpegCaptureDevice.ScreenCaptureRecorder))
+                if (selectDevices && cbVideoSource.Items.Cast<FFmpegCaptureDevice>().
+                    Any(x => x.Value.Equals(FFmpegCaptureDevice.ScreenCaptureRecorder.Value, StringComparison.OrdinalIgnoreCase)))
                 {
                     Options.FFmpeg.VideoSource = FFmpegCaptureDevice.ScreenCaptureRecorder.Value;
                 }
-                else if (cbVideoSource.Items.Cast<FFmpegCaptureDevice>().All(x => !x.Value.Equals(Options.FFmpeg.VideoSource, StringComparison.OrdinalIgnoreCase)))
+                else if (!cbVideoSource.Items.Cast<FFmpegCaptureDevice>().Any(x => x.Value.Equals(Options.FFmpeg.VideoSource, StringComparison.OrdinalIgnoreCase)))
                 {
                     Options.FFmpeg.VideoSource = FFmpegCaptureDevice.GDIGrab.Value;
                 }
@@ -189,11 +190,12 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                if (selectDevices && cbAudioSource.Items.Contains(FFmpegCaptureDevice.VirtualAudioCapturer))
+                if (selectDevices && cbAudioSource.Items.Cast<FFmpegCaptureDevice>().
+                    Any(x => x.Value.Equals(FFmpegCaptureDevice.VirtualAudioCapturer.Value, StringComparison.OrdinalIgnoreCase)))
                 {
                     Options.FFmpeg.AudioSource = FFmpegCaptureDevice.VirtualAudioCapturer.Value;
                 }
-                else if (cbAudioSource.Items.Cast<FFmpegCaptureDevice>().All(x => !x.Value.Equals(Options.FFmpeg.AudioSource, StringComparison.OrdinalIgnoreCase)))
+                else if (!cbAudioSource.Items.Cast<FFmpegCaptureDevice>().Any(x => x.Value.Equals(Options.FFmpeg.AudioSource, StringComparison.OrdinalIgnoreCase)))
                 {
                     Options.FFmpeg.AudioSource = FFmpegCaptureDevice.None.Value;
                 }
@@ -258,13 +260,15 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbVideoSource_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.VideoSource = cbVideoSource.Text;
+            FFmpegCaptureDevice device = cbVideoSource.SelectedItem as FFmpegCaptureDevice;
+            Options.FFmpeg.VideoSource = device?.Value;
             UpdateUI();
         }
 
         private void cbAudioSource_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.AudioSource = cbAudioSource.Text;
+            FFmpegCaptureDevice device = cbAudioSource.SelectedItem as FFmpegCaptureDevice;
+            Options.FFmpeg.AudioSource = device?.Value;
             UpdateUI();
         }
 
@@ -347,6 +351,11 @@ namespace ShareX.ScreenCaptureLib
                         tcFFmpegVideoCodecs.SelectedIndex = 6;
                         break;
                 }
+
+                if (settingsLoaded)
+                {
+                    cbVideoCodec.Focus();
+                }
             }
 
             UpdateUI();
@@ -373,6 +382,11 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegAudioCodec.libmp3lame:
                         tcFFmpegAudioCodecs.SelectedIndex = 3;
                         break;
+                }
+
+                if (settingsLoaded)
+                {
+                    cbAudioCodec.Focus();
                 }
             }
 

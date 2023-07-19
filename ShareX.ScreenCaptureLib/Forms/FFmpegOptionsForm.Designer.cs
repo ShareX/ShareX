@@ -51,7 +51,7 @@
             this.cbCustomCommands = new System.Windows.Forms.CheckBox();
             this.txtCommandLinePreview = new System.Windows.Forms.TextBox();
             this.txtUserArgs = new System.Windows.Forms.TextBox();
-            this.tcFFmpegVideoCodecs = new System.Windows.Forms.TabControl();
+            this.tcFFmpegVideoCodecs = new ShareX.HelpersLib.TablessControl();
             this.tpX264 = new System.Windows.Forms.TabPage();
             this.lblx264BitrateK = new System.Windows.Forms.Label();
             this.cbx264UseBitrate = new System.Windows.Forms.CheckBox();
@@ -83,7 +83,7 @@
             this.lblQSVBitrate = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnCopyPreview = new System.Windows.Forms.Button();
-            this.tcFFmpegAudioCodecs = new System.Windows.Forms.TabControl();
+            this.tcFFmpegAudioCodecs = new ShareX.HelpersLib.TablessControl();
             this.tpAAC = new System.Windows.Forms.TabPage();
             this.lblAACQuality = new System.Windows.Forms.Label();
             this.tpOpus = new System.Windows.Forms.TabPage();
@@ -198,36 +198,33 @@
             // 
             // tbVorbis_qscale
             // 
-            this.tbVorbis_qscale.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbVorbis_qscale, "tbVorbis_qscale");
+            this.tbVorbis_qscale.BackColor = System.Drawing.SystemColors.Window;
             this.tbVorbis_qscale.LargeChange = 1;
             this.tbVorbis_qscale.Name = "tbVorbis_qscale";
-            this.tbVorbis_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.ttHelpTip.SetToolTip(this.tbVorbis_qscale, resources.GetString("tbVorbis_qscale.ToolTip"));
             this.tbVorbis_qscale.Value = 3;
             this.tbVorbis_qscale.ValueChanged += new System.EventHandler(this.tbVorbis_qscale_ValueChanged);
             // 
             // tbMP3_qscale
             // 
-            this.tbMP3_qscale.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbMP3_qscale, "tbMP3_qscale");
+            this.tbMP3_qscale.BackColor = System.Drawing.SystemColors.Window;
             this.tbMP3_qscale.LargeChange = 1;
             this.tbMP3_qscale.Maximum = 9;
             this.tbMP3_qscale.Name = "tbMP3_qscale";
-            this.tbMP3_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.ttHelpTip.SetToolTip(this.tbMP3_qscale, resources.GetString("tbMP3_qscale.ToolTip"));
             this.tbMP3_qscale.Value = 5;
             this.tbMP3_qscale.ValueChanged += new System.EventHandler(this.tbMP3_qscale_ValueChanged);
             // 
             // tbAACBitrate
             // 
-            this.tbAACBitrate.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbAACBitrate, "tbAACBitrate");
+            this.tbAACBitrate.BackColor = System.Drawing.SystemColors.Window;
             this.tbAACBitrate.LargeChange = 1;
             this.tbAACBitrate.Maximum = 16;
             this.tbAACBitrate.Minimum = 1;
             this.tbAACBitrate.Name = "tbAACBitrate";
-            this.tbAACBitrate.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.ttHelpTip.SetToolTip(this.tbAACBitrate, resources.GetString("tbAACBitrate.ToolTip"));
             this.tbAACBitrate.Value = 4;
             this.tbAACBitrate.ValueChanged += new System.EventHandler(this.tbAACBitrate_ValueChanged);
@@ -260,13 +257,12 @@
             // 
             // tbOpusBitrate
             // 
-            this.tbOpusBitrate.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbOpusBitrate, "tbOpusBitrate");
+            this.tbOpusBitrate.BackColor = System.Drawing.SystemColors.Window;
             this.tbOpusBitrate.LargeChange = 1;
             this.tbOpusBitrate.Maximum = 16;
             this.tbOpusBitrate.Minimum = 1;
             this.tbOpusBitrate.Name = "tbOpusBitrate";
-            this.tbOpusBitrate.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.ttHelpTip.SetToolTip(this.tbOpusBitrate, resources.GetString("tbOpusBitrate.ToolTip"));
             this.tbOpusBitrate.Value = 4;
             this.tbOpusBitrate.ValueChanged += new System.EventHandler(this.tbOpusBirate_ValueChanged);
@@ -351,6 +347,7 @@
             this.tcFFmpegVideoCodecs.Controls.Add(this.tbAMF);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tbQSV);
             resources.ApplyResources(this.tcFFmpegVideoCodecs, "tcFFmpegVideoCodecs");
+            this.tcFFmpegVideoCodecs.Multiline = true;
             this.tcFFmpegVideoCodecs.Name = "tcFFmpegVideoCodecs";
             this.tcFFmpegVideoCodecs.SelectedIndex = 0;
             // 
@@ -642,6 +639,7 @@
             this.tcFFmpegAudioCodecs.Controls.Add(this.tpVorbis);
             this.tcFFmpegAudioCodecs.Controls.Add(this.tpMP3);
             resources.ApplyResources(this.tcFFmpegAudioCodecs, "tcFFmpegAudioCodecs");
+            this.tcFFmpegAudioCodecs.Multiline = true;
             this.tcFFmpegAudioCodecs.Name = "tcFFmpegAudioCodecs";
             this.tcFFmpegAudioCodecs.SelectedIndex = 0;
             // 
@@ -877,13 +875,13 @@
         private System.Windows.Forms.TextBox txtFFmpegPath;
         private System.Windows.Forms.TextBox txtCommandLinePreview;
         private System.Windows.Forms.TextBox txtUserArgs;
-        private System.Windows.Forms.TabControl tcFFmpegVideoCodecs;
+        private HelpersLib.TablessControl tcFFmpegVideoCodecs;
         private System.Windows.Forms.TabPage tpX264;
         private System.Windows.Forms.TabPage tpVpx;
         private System.Windows.Forms.TabPage tpXvid;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnCopyPreview;
-        private System.Windows.Forms.TabControl tcFFmpegAudioCodecs;
+        private HelpersLib.TablessControl tcFFmpegAudioCodecs;
         private System.Windows.Forms.TabPage tpVorbis;
         private System.Windows.Forms.TabPage tpMP3;
         private System.Windows.Forms.ComboBox cbVideoSource;
