@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (IsActive)
             {
-            base.Update();
+                base.Update();
     
                 float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
     
@@ -67,6 +67,7 @@ namespace ShareX.ScreenCaptureLib
     
                 CurrentColor = ColorHelpers.Lerp(FromColor, ToColor, amount);
             }
+            
             return IsActive;
         }
     }
