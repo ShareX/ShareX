@@ -67,7 +67,7 @@ namespace ShareX.ScreenCaptureLib
 
                 CurrentColor = ColorHelpers.Lerp(FromColor, ToColor, amount);
             }
-            
+
             return IsActive;
         }
     }
