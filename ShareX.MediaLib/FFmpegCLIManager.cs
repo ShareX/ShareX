@@ -38,12 +38,6 @@ namespace ShareX.MediaLib
 {
     public class FFmpegCLIManager : ExternalCLIManager
     {
-        public const string SourceNone = "None";
-        public const string SourceGDIGrab = "GDI grab";
-        public const string SourceDDAGrab = "Desktop Duplication API";
-        public const string SourceVideoDevice = "screen-capture-recorder";
-        public const string SourceAudioDevice = "virtual-audio-capturer";
-
         public const int x264_min = 0;
         public const int x264_max = 51;
         public const int x265_min = 0;

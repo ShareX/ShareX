@@ -138,7 +138,6 @@ namespace ShareX.ScreenCaptureLib
 
         private async Task RefreshSourcesAsync(bool selectDevices = false)
         {
-            btnRefreshSources.Enabled = false;
             DirectShowDevices devices = null;
 
             await Task.Run(() =>
@@ -155,46 +154,58 @@ namespace ShareX.ScreenCaptureLib
             if (!IsDisposed)
             {
                 cbVideoSource.Items.Clear();
-                cbVideoSource.Items.Add(FFmpegCLIManager.SourceNone);
-                cbVideoSource.Items.Add(FFmpegCLIManager.SourceGDIGrab);
+                cbVideoSource.Items.Add(FFmpegCaptureDevice.None);
+                cbVideoSource.Items.Add(FFmpegCaptureDevice.GDIGrab);
 
                 if (Helpers.IsWindows10OrGreater())
                 {
-                    cbVideoSource.Items.Add(FFmpegCLIManager.SourceDDAGrab);
+                    cbVideoSource.Items.Add(FFmpegCaptureDevice.DDAGrab);
                 }
 
                 cbAudioSource.Items.Clear();
-                cbAudioSource.Items.Add(FFmpegCLIManager.SourceNone);
+                cbAudioSource.Items.Add(FFmpegCaptureDevice.None);
 
                 if (devices != null)
                 {
-                    cbVideoSource.Items.AddRange(devices.VideoDevices.ToArray());
-                    cbAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
+                    cbVideoSource.Items.AddRange(devices.VideoDevices.Select(x => new FFmpegCaptureDevice(x, $"dshow ({x})")).ToArray());
+                    cbAudioSource.Items.AddRange(devices.AudioDevices.Select(x => new FFmpegCaptureDevice(x, $"dshow ({x})")).ToArray());
                 }
 
-                if (selectDevices && cbVideoSource.Items.Contains(FFmpegCLIManager.SourceVideoDevice))
+                if (selectDevices && cbVideoSource.Items.Contains(FFmpegCaptureDevice.ScreenCaptureRecorder))
                 {
-                    Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceVideoDevice;
+                    Options.FFmpeg.VideoSource = FFmpegCaptureDevice.ScreenCaptureRecorder.Value;
                 }
-                else if (!cbVideoSource.Items.Contains(Options.FFmpeg.VideoSource))
+                else if (cbVideoSource.Items.Cast<FFmpegCaptureDevice>().All(x => !x.Value.Equals(Options.FFmpeg.VideoSource, StringComparison.OrdinalIgnoreCase)))
                 {
-                    Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceGDIGrab;
+                    Options.FFmpeg.VideoSource = FFmpegCaptureDevice.GDIGrab.Value;
                 }
 
-                cbVideoSource.Text = Options.FFmpeg.VideoSource;
-
-                if (selectDevices && cbAudioSource.Items.Contains(FFmpegCLIManager.SourceAudioDevice))
+                foreach (FFmpegCaptureDevice device in cbVideoSource.Items)
                 {
-                    Options.FFmpeg.AudioSource = FFmpegCLIManager.SourceAudioDevice;
+                    if (device.Value.Equals(Options.FFmpeg.VideoSource, StringComparison.OrdinalIgnoreCase))
+                    {
+                        cbVideoSource.SelectedItem = device;
+                        break;
+                    }
                 }
-                else if (!cbAudioSource.Items.Contains(Options.FFmpeg.AudioSource))
+
+                if (selectDevices && cbAudioSource.Items.Contains(FFmpegCaptureDevice.VirtualAudioCapturer))
                 {
-                    Options.FFmpeg.AudioSource = FFmpegCLIManager.SourceNone;
+                    Options.FFmpeg.AudioSource = FFmpegCaptureDevice.VirtualAudioCapturer.Value;
+                }
+                else if (cbAudioSource.Items.Cast<FFmpegCaptureDevice>().All(x => !x.Value.Equals(Options.FFmpeg.AudioSource, StringComparison.OrdinalIgnoreCase)))
+                {
+                    Options.FFmpeg.AudioSource = FFmpegCaptureDevice.None.Value;
                 }
 
-                cbAudioSource.Text = Options.FFmpeg.AudioSource;
-
-                btnRefreshSources.Enabled = true;
+                foreach (FFmpegCaptureDevice device in cbAudioSource.Items)
+                {
+                    if (device.Value.Equals(Options.FFmpeg.AudioSource, StringComparison.OrdinalIgnoreCase))
+                    {
+                        cbAudioSource.SelectedItem = device;
+                        break;
+                    }
+                }
             }
         }
 
@@ -210,21 +221,6 @@ namespace ShareX.ScreenCaptureLib
                 lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_QScale;
                 lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_QScale;
                 lblOpusQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.Opus_Bitrate);
-
-                bool isValidAudioCodec = true;
-                FFmpegVideoCodec videoCodec = (FFmpegVideoCodec)cbVideoCodec.SelectedIndex;
-
-                if (videoCodec == FFmpegVideoCodec.libvpx)
-                {
-                    FFmpegAudioCodec audioCodec = (FFmpegAudioCodec)cbAudioCodec.SelectedIndex;
-
-                    if (audioCodec != FFmpegAudioCodec.libvorbis && audioCodec != FFmpegAudioCodec.libopus)
-                    {
-                        isValidAudioCodec = false;
-                    }
-                }
-
-                pbAudioCodecWarning.Visible = !isValidAudioCodec;
                 pbx264PresetWarning.Visible = (FFmpegPreset)cbx264Preset.SelectedIndex > FFmpegPreset.fast;
 
                 if (!Options.FFmpeg.UseCustomCommands)
@@ -258,11 +254,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 await RefreshSourcesAsync();
             }
-        }
-
-        private async void btnRefreshSources_Click(object sender, EventArgs e)
-        {
-            await RefreshSourcesAsync();
         }
 
         private void cbVideoSource_SelectedIndexChanged(object sender, EventArgs e)

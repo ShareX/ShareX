@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.MediaLib;
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -51,7 +50,8 @@ namespace ShareX.ScreenCaptureLib
         {
             string commands;
 
-            if (IsRecording && !string.IsNullOrEmpty(FFmpeg.VideoSource) && FFmpeg.VideoSource.Equals("screen-capture-recorder", StringComparison.OrdinalIgnoreCase))
+            if (IsRecording && !string.IsNullOrEmpty(FFmpeg.VideoSource) &&
+                FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.ScreenCaptureRecorder.Value, StringComparison.OrdinalIgnoreCase))
             {
                 // https://github.com/rdp/screen-capture-recorder-to-video-windows-free
                 string registryPath = "Software\\screen-capture-recorder";
@@ -99,7 +99,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (FFmpeg.IsVideoSourceSelected)
                 {
-                    if (FFmpeg.VideoSource.Equals(FFmpegCLIManager.SourceGDIGrab, StringComparison.OrdinalIgnoreCase))
+                    if (FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.GDIGrab.Value, StringComparison.OrdinalIgnoreCase))
                     {
                         string x = isCustom ? "$area_x$" : CaptureArea.X.ToString();
                         string y = isCustom ? "$area_y$" : CaptureArea.Y.ToString();
@@ -107,7 +107,7 @@ namespace ShareX.ScreenCaptureLib
                         string height = isCustom ? "$area_height$" : CaptureArea.Height.ToString();
                         string cursor = isCustom ? "$cursor$" : DrawCursor ? "1" : "0";
 
-                        // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
+                        // https://ffmpeg.org/ffmpeg-devices.html#gdigrab
                         AppendInputDevice(args, "gdigrab", false);
                         args.Append($"-framerate {framerate} ");
                         args.Append($"-offset_x {x} ");
@@ -122,7 +122,7 @@ namespace ShareX.ScreenCaptureLib
                             args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
                         }
                     }
-                    else if (FFmpeg.VideoSource.Equals(FFmpegCLIManager.SourceDDAGrab, StringComparison.OrdinalIgnoreCase))
+                    else if (FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.DDAGrab.Value, StringComparison.OrdinalIgnoreCase))
                     {
                         Screen[] screens = Screen.AllScreens.OrderBy(x => !x.Primary).ToArray();
                         int monitorIndex = 0;
@@ -170,6 +170,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                     else
                     {
+                        // https://ffmpeg.org/ffmpeg-devices.html#dshow
                         AppendInputDevice(args, "dshow", FFmpeg.IsAudioSourceSelected);
                         args.Append($"-framerate {framerate} ");
                         args.Append($"-i video={Helpers.EscapeCLIText(FFmpeg.VideoSource)}");
