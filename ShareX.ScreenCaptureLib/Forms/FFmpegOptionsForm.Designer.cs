@@ -40,11 +40,9 @@
             this.tbAACBitrate = new System.Windows.Forms.TrackBar();
             this.cbGIFStatsMode = new System.Windows.Forms.ComboBox();
             this.cbGIFDither = new System.Windows.Forms.ComboBox();
-            this.pbAudioCodecWarning = new System.Windows.Forms.PictureBox();
             this.pbx264PresetWarning = new System.Windows.Forms.PictureBox();
             this.tbOpusBitrate = new System.Windows.Forms.TrackBar();
             this.nudGIFBayerScale = new System.Windows.Forms.NumericUpDown();
-            this.lblCodec = new System.Windows.Forms.Label();
             this.cbVideoCodec = new System.Windows.Forms.ComboBox();
             this.lblx264Preset = new System.Windows.Forms.Label();
             this.lblXvidQscale = new System.Windows.Forms.Label();
@@ -53,7 +51,7 @@
             this.cbCustomCommands = new System.Windows.Forms.CheckBox();
             this.txtCommandLinePreview = new System.Windows.Forms.TextBox();
             this.txtUserArgs = new System.Windows.Forms.TextBox();
-            this.tcFFmpegVideoCodecs = new System.Windows.Forms.TabControl();
+            this.tcFFmpegVideoCodecs = new ShareX.HelpersLib.TablessControl();
             this.tpX264 = new System.Windows.Forms.TabPage();
             this.lblx264BitrateK = new System.Windows.Forms.Label();
             this.cbx264UseBitrate = new System.Windows.Forms.CheckBox();
@@ -85,7 +83,7 @@
             this.lblQSVBitrate = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnCopyPreview = new System.Windows.Forms.Button();
-            this.tcFFmpegAudioCodecs = new System.Windows.Forms.TabControl();
+            this.tcFFmpegAudioCodecs = new ShareX.HelpersLib.TablessControl();
             this.tpAAC = new System.Windows.Forms.TabPage();
             this.lblAACQuality = new System.Windows.Forms.Label();
             this.tpOpus = new System.Windows.Forms.TabPage();
@@ -99,21 +97,20 @@
             this.cbAudioSource = new System.Windows.Forms.ComboBox();
             this.lblAudioSource = new System.Windows.Forms.Label();
             this.cbAudioCodec = new System.Windows.Forms.ComboBox();
-            this.lblAudioCodec = new System.Windows.Forms.Label();
             this.btnHelperDevicesHelp = new System.Windows.Forms.Button();
             this.lblHelperDevices = new System.Windows.Forms.Label();
             this.btnInstallHelperDevices = new System.Windows.Forms.Button();
-            this.btnRefreshSources = new System.Windows.Forms.Button();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
             this.lblCommandLineArgs = new System.Windows.Forms.Label();
             this.lblCommandLinePreview = new System.Windows.Forms.Label();
             this.cbUseCustomFFmpegPath = new System.Windows.Forms.CheckBox();
+            this.lblVideoEncoder = new System.Windows.Forms.Label();
+            this.lblAudioEncoder = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAudioCodecWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpusBitrate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFBayerScale)).BeginInit();
@@ -201,36 +198,33 @@
             // 
             // tbVorbis_qscale
             // 
-            this.tbVorbis_qscale.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbVorbis_qscale, "tbVorbis_qscale");
+            this.tbVorbis_qscale.BackColor = System.Drawing.SystemColors.Window;
             this.tbVorbis_qscale.LargeChange = 1;
             this.tbVorbis_qscale.Name = "tbVorbis_qscale";
-            this.tbVorbis_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.ttHelpTip.SetToolTip(this.tbVorbis_qscale, resources.GetString("tbVorbis_qscale.ToolTip"));
             this.tbVorbis_qscale.Value = 3;
             this.tbVorbis_qscale.ValueChanged += new System.EventHandler(this.tbVorbis_qscale_ValueChanged);
             // 
             // tbMP3_qscale
             // 
-            this.tbMP3_qscale.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbMP3_qscale, "tbMP3_qscale");
+            this.tbMP3_qscale.BackColor = System.Drawing.SystemColors.Window;
             this.tbMP3_qscale.LargeChange = 1;
             this.tbMP3_qscale.Maximum = 9;
             this.tbMP3_qscale.Name = "tbMP3_qscale";
-            this.tbMP3_qscale.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.ttHelpTip.SetToolTip(this.tbMP3_qscale, resources.GetString("tbMP3_qscale.ToolTip"));
             this.tbMP3_qscale.Value = 5;
             this.tbMP3_qscale.ValueChanged += new System.EventHandler(this.tbMP3_qscale_ValueChanged);
             // 
             // tbAACBitrate
             // 
-            this.tbAACBitrate.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbAACBitrate, "tbAACBitrate");
+            this.tbAACBitrate.BackColor = System.Drawing.SystemColors.Window;
             this.tbAACBitrate.LargeChange = 1;
             this.tbAACBitrate.Maximum = 16;
             this.tbAACBitrate.Minimum = 1;
             this.tbAACBitrate.Name = "tbAACBitrate";
-            this.tbAACBitrate.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.ttHelpTip.SetToolTip(this.tbAACBitrate, resources.GetString("tbAACBitrate.ToolTip"));
             this.tbAACBitrate.Value = 4;
             this.tbAACBitrate.ValueChanged += new System.EventHandler(this.tbAACBitrate_ValueChanged);
@@ -253,14 +247,6 @@
             this.ttHelpTip.SetToolTip(this.cbGIFDither, resources.GetString("cbGIFDither.ToolTip"));
             this.cbGIFDither.SelectedIndexChanged += new System.EventHandler(this.cbGIFDither_SelectedIndexChanged);
             // 
-            // pbAudioCodecWarning
-            // 
-            this.pbAudioCodecWarning.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.exclamation_button;
-            resources.ApplyResources(this.pbAudioCodecWarning, "pbAudioCodecWarning");
-            this.pbAudioCodecWarning.Name = "pbAudioCodecWarning";
-            this.pbAudioCodecWarning.TabStop = false;
-            this.ttHelpTip.SetToolTip(this.pbAudioCodecWarning, resources.GetString("pbAudioCodecWarning.ToolTip"));
-            // 
             // pbx264PresetWarning
             // 
             this.pbx264PresetWarning.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.exclamation_button;
@@ -271,13 +257,12 @@
             // 
             // tbOpusBitrate
             // 
-            this.tbOpusBitrate.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tbOpusBitrate, "tbOpusBitrate");
+            this.tbOpusBitrate.BackColor = System.Drawing.SystemColors.Window;
             this.tbOpusBitrate.LargeChange = 1;
             this.tbOpusBitrate.Maximum = 16;
             this.tbOpusBitrate.Minimum = 1;
             this.tbOpusBitrate.Name = "tbOpusBitrate";
-            this.tbOpusBitrate.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.ttHelpTip.SetToolTip(this.tbOpusBitrate, resources.GetString("tbOpusBitrate.ToolTip"));
             this.tbOpusBitrate.Value = 4;
             this.tbOpusBitrate.ValueChanged += new System.EventHandler(this.tbOpusBirate_ValueChanged);
@@ -298,11 +283,6 @@
             0,
             0});
             this.nudGIFBayerScale.ValueChanged += new System.EventHandler(this.nudGIFBayerScale_SelectedIndexChanged);
-            // 
-            // lblCodec
-            // 
-            resources.ApplyResources(this.lblCodec, "lblCodec");
-            this.lblCodec.Name = "lblCodec";
             // 
             // cbVideoCodec
             // 
@@ -367,6 +347,7 @@
             this.tcFFmpegVideoCodecs.Controls.Add(this.tbAMF);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tbQSV);
             resources.ApplyResources(this.tcFFmpegVideoCodecs, "tcFFmpegVideoCodecs");
+            this.tcFFmpegVideoCodecs.Multiline = true;
             this.tcFFmpegVideoCodecs.Name = "tcFFmpegVideoCodecs";
             this.tcFFmpegVideoCodecs.SelectedIndex = 0;
             // 
@@ -658,6 +639,7 @@
             this.tcFFmpegAudioCodecs.Controls.Add(this.tpVorbis);
             this.tcFFmpegAudioCodecs.Controls.Add(this.tpMP3);
             resources.ApplyResources(this.tcFFmpegAudioCodecs, "tcFFmpegAudioCodecs");
+            this.tcFFmpegAudioCodecs.Multiline = true;
             this.tcFFmpegAudioCodecs.Name = "tcFFmpegAudioCodecs";
             this.tcFFmpegAudioCodecs.SelectedIndex = 0;
             // 
@@ -747,11 +729,6 @@
             this.cbAudioCodec.Name = "cbAudioCodec";
             this.cbAudioCodec.SelectedIndexChanged += new System.EventHandler(this.cbAudioCodec_SelectedIndexChanged);
             // 
-            // lblAudioCodec
-            // 
-            resources.ApplyResources(this.lblAudioCodec, "lblAudioCodec");
-            this.lblAudioCodec.Name = "lblAudioCodec";
-            // 
             // btnHelperDevicesHelp
             // 
             resources.ApplyResources(this.btnHelperDevicesHelp, "btnHelperDevicesHelp");
@@ -770,13 +747,6 @@
             this.btnInstallHelperDevices.Name = "btnInstallHelperDevices";
             this.btnInstallHelperDevices.UseVisualStyleBackColor = true;
             this.btnInstallHelperDevices.Click += new System.EventHandler(this.btnInstallHelperDevices_Click);
-            // 
-            // btnRefreshSources
-            // 
-            resources.ApplyResources(this.btnRefreshSources, "btnRefreshSources");
-            this.btnRefreshSources.Name = "btnRefreshSources";
-            this.btnRefreshSources.UseVisualStyleBackColor = true;
-            this.btnRefreshSources.Click += new System.EventHandler(this.btnRefreshSources_Click);
             // 
             // eiFFmpeg
             // 
@@ -805,24 +775,33 @@
             this.cbUseCustomFFmpegPath.UseVisualStyleBackColor = true;
             this.cbUseCustomFFmpegPath.CheckedChanged += new System.EventHandler(this.cbUseCustomFFmpegPath_CheckedChanged);
             // 
+            // lblVideoEncoder
+            // 
+            resources.ApplyResources(this.lblVideoEncoder, "lblVideoEncoder");
+            this.lblVideoEncoder.Name = "lblVideoEncoder";
+            // 
+            // lblAudioEncoder
+            // 
+            resources.ApplyResources(this.lblAudioEncoder, "lblAudioEncoder");
+            this.lblAudioEncoder.Name = "lblAudioEncoder";
+            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.lblAudioEncoder);
+            this.Controls.Add(this.lblVideoEncoder);
             this.Controls.Add(this.cbUseCustomFFmpegPath);
             this.Controls.Add(this.cbCustomCommands);
             this.Controls.Add(this.lblCommandLinePreview);
             this.Controls.Add(this.txtCommandLinePreview);
             this.Controls.Add(this.txtUserArgs);
             this.Controls.Add(this.lblCommandLineArgs);
-            this.Controls.Add(this.pbAudioCodecWarning);
             this.Controls.Add(this.btnHelperDevicesHelp);
             this.Controls.Add(this.cbAudioCodec);
-            this.Controls.Add(this.lblAudioCodec);
             this.Controls.Add(this.lblHelperDevices);
             this.Controls.Add(this.cbVideoCodec);
-            this.Controls.Add(this.lblCodec);
             this.Controls.Add(this.tcFFmpegAudioCodecs);
             this.Controls.Add(this.btnInstallHelperDevices);
             this.Controls.Add(this.tcFFmpegVideoCodecs);
@@ -833,7 +812,6 @@
             this.Controls.Add(this.cbAudioSource);
             this.Controls.Add(this.txtFFmpegPath);
             this.Controls.Add(this.lblAudioSource);
-            this.Controls.Add(this.btnRefreshSources);
             this.Controls.Add(this.btnCopyPreview);
             this.Controls.Add(this.btnTest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -847,7 +825,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAACBitrate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAudioCodecWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpusBitrate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFBayerScale)).EndInit();
@@ -889,7 +866,6 @@
         private System.Windows.Forms.Label lblx264CRF;
         private System.Windows.Forms.NumericUpDown nudx264CRF;
         private System.Windows.Forms.ToolTip ttHelpTip;
-        private System.Windows.Forms.Label lblCodec;
         private System.Windows.Forms.ComboBox cbVideoCodec;
         private System.Windows.Forms.ComboBox cbx264Preset;
         private System.Windows.Forms.Label lblx264Preset;
@@ -899,13 +875,13 @@
         private System.Windows.Forms.TextBox txtFFmpegPath;
         private System.Windows.Forms.TextBox txtCommandLinePreview;
         private System.Windows.Forms.TextBox txtUserArgs;
-        private System.Windows.Forms.TabControl tcFFmpegVideoCodecs;
+        private HelpersLib.TablessControl tcFFmpegVideoCodecs;
         private System.Windows.Forms.TabPage tpX264;
         private System.Windows.Forms.TabPage tpVpx;
         private System.Windows.Forms.TabPage tpXvid;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnCopyPreview;
-        private System.Windows.Forms.TabControl tcFFmpegAudioCodecs;
+        private HelpersLib.TablessControl tcFFmpegAudioCodecs;
         private System.Windows.Forms.TabPage tpVorbis;
         private System.Windows.Forms.TabPage tpMP3;
         private System.Windows.Forms.ComboBox cbVideoSource;
@@ -913,8 +889,6 @@
         private System.Windows.Forms.ComboBox cbAudioSource;
         private System.Windows.Forms.Label lblAudioSource;
         private System.Windows.Forms.ComboBox cbAudioCodec;
-        private System.Windows.Forms.Label lblAudioCodec;
-        private System.Windows.Forms.Button btnRefreshSources;
         private System.Windows.Forms.TrackBar tbVorbis_qscale;
         private System.Windows.Forms.Label lblVorbisQuality;
         private System.Windows.Forms.TrackBar tbMP3_qscale;
@@ -935,7 +909,6 @@
         private System.Windows.Forms.Button btnHelperDevicesHelp;
         private System.Windows.Forms.Label lblHelperDevices;
         private System.Windows.Forms.Button btnInstallHelperDevices;
-        private System.Windows.Forms.PictureBox pbAudioCodecWarning;
         private System.Windows.Forms.PictureBox pbx264PresetWarning;
         private System.Windows.Forms.TabPage tpNVENC;
         private System.Windows.Forms.ComboBox cbNVENCPreset;
@@ -964,5 +937,7 @@
         private System.Windows.Forms.Label lblCommandLineArgs;
         private System.Windows.Forms.Label lblCommandLinePreview;
         private System.Windows.Forms.CheckBox cbUseCustomFFmpegPath;
+        private System.Windows.Forms.Label lblVideoEncoder;
+        private System.Windows.Forms.Label lblAudioEncoder;
     }
 }
