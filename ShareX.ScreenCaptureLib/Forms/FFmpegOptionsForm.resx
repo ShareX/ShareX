@@ -185,7 +185,7 @@ A higher value means bad quality, but a low file size.</value>
     <value>128, 4</value>
   </data>
   <data name="nudXvidQscale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+    <value>56, 20</value>
   </data>
   <data name="nudXvidQscale.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -212,7 +212,7 @@ A higher value means bad quality, but a low file size.</value>
     <value>72, 28</value>
   </data>
   <data name="cbx264Preset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+    <value>144, 21</value>
   </data>
   <data name="cbx264Preset.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -238,10 +238,10 @@ For real time encoding (e.g. screen recording), the preset must be as fast as po
     <value>False</value>
   </data>
   <data name="tbVorbis_qscale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 0</value>
+    <value>80, 0</value>
   </data>
   <data name="tbVorbis_qscale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>232, 32</value>
   </data>
   <data name="tbVorbis_qscale.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -265,10 +265,10 @@ For real time encoding (e.g. screen recording), the preset must be as fast as po
     <value>False</value>
   </data>
   <data name="tbMP3_qscale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 0</value>
+    <value>80, 0</value>
   </data>
   <data name="tbMP3_qscale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>232, 32</value>
   </data>
   <data name="tbMP3_qscale.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -295,10 +295,10 @@ For real time encoding (e.g. screen recording), the preset must be as fast as po
     <value>NoControl</value>
   </data>
   <data name="tbAACBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 0</value>
+    <value>80, 0</value>
   </data>
   <data name="tbAACBitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>232, 32</value>
   </data>
   <data name="tbAACBitrate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -370,7 +370,7 @@ For real time encoding (e.g. screen recording), the preset must be as fast as po
     <value>NoControl</value>
   </data>
   <data name="pbx264PresetWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 30</value>
+    <value>224, 30</value>
   </data>
   <data name="pbx264PresetWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -407,10 +407,10 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>NoControl</value>
   </data>
   <data name="tbOpusBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 0</value>
+    <value>80, 0</value>
   </data>
   <data name="tbOpusBitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>232, 32</value>
   </data>
   <data name="tbOpusBitrate.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -461,7 +461,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>312, 21</value>
   </data>
   <data name="cbVideoCodec.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;cbVideoCodec.Name" xml:space="preserve">
     <value>cbVideoCodec</value>
@@ -587,7 +587,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>136, 17</value>
   </data>
   <data name="cbCustomCommands.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>Use custom commands</value>
@@ -620,7 +620,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>632, 67</value>
   </data>
   <data name="txtCommandLinePreview.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;txtCommandLinePreview.Name" xml:space="preserve">
     <value>txtCommandLinePreview</value>
@@ -641,7 +641,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>632, 20</value>
   </data>
   <data name="txtUserArgs.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;txtUserArgs.Name" xml:space="preserve">
     <value>txtUserArgs</value>
@@ -654,111 +654,6 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;txtUserArgs.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="&gt;&gt;tpX264.Name" xml:space="preserve">
-    <value>tpX264</value>
-  </data>
-  <data name="&gt;&gt;tpX264.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpX264.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpX264.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tpVpx.Name" xml:space="preserve">
-    <value>tpVpx</value>
-  </data>
-  <data name="&gt;&gt;tpVpx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpVpx.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpVpx.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.Name" xml:space="preserve">
-    <value>tpXvid</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpXvid.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tpNVENC.Name" xml:space="preserve">
-    <value>tpNVENC</value>
-  </data>
-  <data name="&gt;&gt;tpNVENC.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpNVENC.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpNVENC.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.Name" xml:space="preserve">
-    <value>tpGIF</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpGIF.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tbAMF.Name" xml:space="preserve">
-    <value>tbAMF</value>
-  </data>
-  <data name="&gt;&gt;tbAMF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbAMF.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tbAMF.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tbQSV.Name" xml:space="preserve">
-    <value>tbQSV</value>
-  </data>
-  <data name="&gt;&gt;tbQSV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbQSV.Parent" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tbQSV.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tcFFmpegVideoCodecs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 184</value>
-  </data>
-  <data name="tcFFmpegVideoCodecs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 112</value>
-  </data>
-  <data name="tcFFmpegVideoCodecs.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegVideoCodecs.Name" xml:space="preserve">
-    <value>tcFFmpegVideoCodecs</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegVideoCodecs.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TablessControl, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegVideoCodecs.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegVideoCodecs.ZOrder" xml:space="preserve">
-    <value>14</value>
   </data>
   <data name="&gt;&gt;lblx264BitrateK.Name" xml:space="preserve">
     <value>lblx264BitrateK</value>
@@ -823,84 +718,6 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tpX264.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblx264BitrateK.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblx264BitrateK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 8</value>
-  </data>
-  <data name="lblx264BitrateK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
-  </data>
-  <data name="lblx264BitrateK.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblx264BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
-  </data>
-  <data name="&gt;&gt;lblx264BitrateK.Name" xml:space="preserve">
-    <value>lblx264BitrateK</value>
-  </data>
-  <data name="&gt;&gt;lblx264BitrateK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblx264BitrateK.Parent" xml:space="preserve">
-    <value>tpX264</value>
-  </data>
-  <data name="&gt;&gt;lblx264BitrateK.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbx264UseBitrate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbx264UseBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 6</value>
-  </data>
-  <data name="cbx264UseBitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 17</value>
-  </data>
-  <data name="cbx264UseBitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cbx264UseBitrate.Text" xml:space="preserve">
-    <value>Use bitrate</value>
-  </data>
-  <data name="&gt;&gt;cbx264UseBitrate.Name" xml:space="preserve">
-    <value>cbx264UseBitrate</value>
-  </data>
-  <data name="&gt;&gt;cbx264UseBitrate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbx264UseBitrate.Parent" xml:space="preserve">
-    <value>tpX264</value>
-  </data>
-  <data name="&gt;&gt;cbx264UseBitrate.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="nudx264Bitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 4</value>
-  </data>
-  <data name="nudx264Bitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
-  </data>
-  <data name="nudx264Bitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="nudx264Bitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudx264Bitrate.Name" xml:space="preserve">
-    <value>nudx264Bitrate</value>
-  </data>
-  <data name="&gt;&gt;nudx264Bitrate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudx264Bitrate.Parent" xml:space="preserve">
-    <value>tpX264</value>
-  </data>
-  <data name="&gt;&gt;nudx264Bitrate.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="&gt;&gt;lblVP8BitrateK.Name" xml:space="preserve">
     <value>lblVP8BitrateK</value>
   </data>
@@ -960,87 +777,6 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;tpVpx.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="lblVP8BitrateK.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblVP8BitrateK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblVP8BitrateK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 8</value>
-  </data>
-  <data name="lblVP8BitrateK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
-  </data>
-  <data name="lblVP8BitrateK.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
-  </data>
-  <data name="&gt;&gt;lblVP8BitrateK.Name" xml:space="preserve">
-    <value>lblVP8BitrateK</value>
-  </data>
-  <data name="&gt;&gt;lblVP8BitrateK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblVP8BitrateK.Parent" xml:space="preserve">
-    <value>tpVpx</value>
-  </data>
-  <data name="&gt;&gt;lblVP8BitrateK.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="nudVP8Bitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 4</value>
-  </data>
-  <data name="nudVP8Bitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
-  </data>
-  <data name="nudVP8Bitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="nudVP8Bitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudVP8Bitrate.Name" xml:space="preserve">
-    <value>nudVP8Bitrate</value>
-  </data>
-  <data name="&gt;&gt;nudVP8Bitrate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudVP8Bitrate.Parent" xml:space="preserve">
-    <value>tpVpx</value>
-  </data>
-  <data name="&gt;&gt;nudVP8Bitrate.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblVP8Bitrate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblVP8Bitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="lblVP8Bitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="lblVP8Bitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>Bitrate:</value>
-  </data>
-  <data name="&gt;&gt;lblVP8Bitrate.Name" xml:space="preserve">
-    <value>lblVP8Bitrate</value>
-  </data>
-  <data name="&gt;&gt;lblVP8Bitrate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblVP8Bitrate.Parent" xml:space="preserve">
-    <value>tpVpx</value>
-  </data>
-  <data name="&gt;&gt;lblVP8Bitrate.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="tpXvid.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
@@ -1153,132 +889,6 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tpNVENC.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lblNVENCBitrateK.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblNVENCBitrateK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 32</value>
-  </data>
-  <data name="lblNVENCBitrateK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
-  </data>
-  <data name="lblNVENCBitrateK.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblNVENCBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCBitrateK.Name" xml:space="preserve">
-    <value>lblNVENCBitrateK</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCBitrateK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCBitrateK.Parent" xml:space="preserve">
-    <value>tpNVENC</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCBitrateK.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbNVENCPreset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 4</value>
-  </data>
-  <data name="cbNVENCPreset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 21</value>
-  </data>
-  <data name="cbNVENCPreset.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cbNVENCPreset.Name" xml:space="preserve">
-    <value>cbNVENCPreset</value>
-  </data>
-  <data name="&gt;&gt;cbNVENCPreset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbNVENCPreset.Parent" xml:space="preserve">
-    <value>tpNVENC</value>
-  </data>
-  <data name="&gt;&gt;cbNVENCPreset.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblNVENCPreset.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblNVENCPreset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="lblNVENCPreset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="lblNVENCPreset.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblNVENCPreset.Text" xml:space="preserve">
-    <value>Preset:</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCPreset.Name" xml:space="preserve">
-    <value>lblNVENCPreset</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCPreset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCPreset.Parent" xml:space="preserve">
-    <value>tpNVENC</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCPreset.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="nudNVENCBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 28</value>
-  </data>
-  <data name="nudNVENCBitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
-  </data>
-  <data name="nudNVENCBitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="nudNVENCBitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudNVENCBitrate.Name" xml:space="preserve">
-    <value>nudNVENCBitrate</value>
-  </data>
-  <data name="&gt;&gt;nudNVENCBitrate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudNVENCBitrate.Parent" xml:space="preserve">
-    <value>tpNVENC</value>
-  </data>
-  <data name="&gt;&gt;nudNVENCBitrate.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblNVENCBitrate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblNVENCBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 32</value>
-  </data>
-  <data name="lblNVENCBitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="lblNVENCBitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblNVENCBitrate.Text" xml:space="preserve">
-    <value>Bitrate:</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCBitrate.Name" xml:space="preserve">
-    <value>lblNVENCBitrate</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCBitrate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCBitrate.Parent" xml:space="preserve">
-    <value>tpNVENC</value>
-  </data>
-  <data name="&gt;&gt;lblNVENCBitrate.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;lblGIFDither.Name" xml:space="preserve">
     <value>lblGIFDither</value>
   </data>
@@ -1328,63 +938,6 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>tcFFmpegVideoCodecs</value>
   </data>
   <data name="&gt;&gt;tpGIF.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblGIFDither.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGIFDither.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGIFDither.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 32</value>
-  </data>
-  <data name="lblGIFDither.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="lblGIFDither.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblGIFDither.Text" xml:space="preserve">
-    <value>Dithering mode:</value>
-  </data>
-  <data name="&gt;&gt;lblGIFDither.Name" xml:space="preserve">
-    <value>lblGIFDither</value>
-  </data>
-  <data name="&gt;&gt;lblGIFDither.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGIFDither.Parent" xml:space="preserve">
-    <value>tpGIF</value>
-  </data>
-  <data name="&gt;&gt;lblGIFDither.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblGIFStatsMode.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGIFStatsMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="lblGIFStatsMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
-  </data>
-  <data name="lblGIFStatsMode.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblGIFStatsMode.Text" xml:space="preserve">
-    <value>Palette mode:</value>
-  </data>
-  <data name="&gt;&gt;lblGIFStatsMode.Name" xml:space="preserve">
-    <value>lblGIFStatsMode</value>
-  </data>
-  <data name="&gt;&gt;lblGIFStatsMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGIFStatsMode.Parent" xml:space="preserve">
-    <value>tpGIF</value>
-  </data>
-  <data name="&gt;&gt;lblGIFStatsMode.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="&gt;&gt;cbAMFQuality.Name" xml:space="preserve">
@@ -1461,108 +1014,6 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;tbAMF.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="cbAMFQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 32</value>
-  </data>
-  <data name="cbAMFQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 21</value>
-  </data>
-  <data name="cbAMFQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;cbAMFQuality.Name" xml:space="preserve">
-    <value>cbAMFQuality</value>
-  </data>
-  <data name="&gt;&gt;cbAMFQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAMFQuality.Parent" xml:space="preserve">
-    <value>tbAMF</value>
-  </data>
-  <data name="&gt;&gt;cbAMFQuality.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblAMFQuality.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAMFQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAMFQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 32</value>
-  </data>
-  <data name="lblAMFQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="lblAMFQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblAMFQuality.Text" xml:space="preserve">
-    <value>Quality:</value>
-  </data>
-  <data name="&gt;&gt;lblAMFQuality.Name" xml:space="preserve">
-    <value>lblAMFQuality</value>
-  </data>
-  <data name="&gt;&gt;lblAMFQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAMFQuality.Parent" xml:space="preserve">
-    <value>tbAMF</value>
-  </data>
-  <data name="&gt;&gt;lblAMFQuality.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbAMFUsage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 5</value>
-  </data>
-  <data name="cbAMFUsage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 21</value>
-  </data>
-  <data name="cbAMFUsage.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cbAMFUsage.Name" xml:space="preserve">
-    <value>cbAMFUsage</value>
-  </data>
-  <data name="&gt;&gt;cbAMFUsage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAMFUsage.Parent" xml:space="preserve">
-    <value>tbAMF</value>
-  </data>
-  <data name="&gt;&gt;cbAMFUsage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblAMFUsage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAMFUsage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAMFUsage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="lblAMFUsage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="lblAMFUsage.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblAMFUsage.Text" xml:space="preserve">
-    <value>Usage:</value>
-  </data>
-  <data name="&gt;&gt;lblAMFUsage.Name" xml:space="preserve">
-    <value>lblAMFUsage</value>
-  </data>
-  <data name="&gt;&gt;lblAMFUsage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAMFUsage.Parent" xml:space="preserve">
-    <value>tbAMF</value>
-  </data>
-  <data name="&gt;&gt;lblAMFUsage.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;lblQSVBitrateK.Name" xml:space="preserve">
     <value>lblQSVBitrateK</value>
@@ -1651,11 +1102,476 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tbQSV.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="tcFFmpegVideoCodecs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 184</value>
+  </data>
+  <data name="tcFFmpegVideoCodecs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 112</value>
+  </data>
+  <data name="tcFFmpegVideoCodecs.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.Name" xml:space="preserve">
+    <value>tcFFmpegVideoCodecs</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.TablessControl, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="lblx264BitrateK.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblx264BitrateK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 8</value>
+  </data>
+  <data name="lblx264BitrateK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblx264BitrateK.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblx264BitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="&gt;&gt;lblx264BitrateK.Name" xml:space="preserve">
+    <value>lblx264BitrateK</value>
+  </data>
+  <data name="&gt;&gt;lblx264BitrateK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblx264BitrateK.Parent" xml:space="preserve">
+    <value>tpX264</value>
+  </data>
+  <data name="&gt;&gt;lblx264BitrateK.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbx264UseBitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbx264UseBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 6</value>
+  </data>
+  <data name="cbx264UseBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 17</value>
+  </data>
+  <data name="cbx264UseBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>Use bitrate</value>
+  </data>
+  <data name="&gt;&gt;cbx264UseBitrate.Name" xml:space="preserve">
+    <value>cbx264UseBitrate</value>
+  </data>
+  <data name="&gt;&gt;cbx264UseBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbx264UseBitrate.Parent" xml:space="preserve">
+    <value>tpX264</value>
+  </data>
+  <data name="&gt;&gt;cbx264UseBitrate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudx264Bitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 4</value>
+  </data>
+  <data name="nudx264Bitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="nudx264Bitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="nudx264Bitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudx264Bitrate.Name" xml:space="preserve">
+    <value>nudx264Bitrate</value>
+  </data>
+  <data name="&gt;&gt;nudx264Bitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudx264Bitrate.Parent" xml:space="preserve">
+    <value>tpX264</value>
+  </data>
+  <data name="&gt;&gt;nudx264Bitrate.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblVP8BitrateK.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVP8BitrateK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblVP8BitrateK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 8</value>
+  </data>
+  <data name="lblVP8BitrateK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblVP8BitrateK.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblVP8BitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="&gt;&gt;lblVP8BitrateK.Name" xml:space="preserve">
+    <value>lblVP8BitrateK</value>
+  </data>
+  <data name="&gt;&gt;lblVP8BitrateK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVP8BitrateK.Parent" xml:space="preserve">
+    <value>tpVpx</value>
+  </data>
+  <data name="&gt;&gt;lblVP8BitrateK.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudVP8Bitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 4</value>
+  </data>
+  <data name="nudVP8Bitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="nudVP8Bitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nudVP8Bitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudVP8Bitrate.Name" xml:space="preserve">
+    <value>nudVP8Bitrate</value>
+  </data>
+  <data name="&gt;&gt;nudVP8Bitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudVP8Bitrate.Parent" xml:space="preserve">
+    <value>tpVpx</value>
+  </data>
+  <data name="&gt;&gt;nudVP8Bitrate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblVP8Bitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVP8Bitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblVP8Bitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblVP8Bitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="&gt;&gt;lblVP8Bitrate.Name" xml:space="preserve">
+    <value>lblVP8Bitrate</value>
+  </data>
+  <data name="&gt;&gt;lblVP8Bitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVP8Bitrate.Parent" xml:space="preserve">
+    <value>tpVpx</value>
+  </data>
+  <data name="&gt;&gt;lblVP8Bitrate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblNVENCBitrateK.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNVENCBitrateK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 32</value>
+  </data>
+  <data name="lblNVENCBitrateK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblNVENCBitrateK.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblNVENCBitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCBitrateK.Name" xml:space="preserve">
+    <value>lblNVENCBitrateK</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCBitrateK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCBitrateK.Parent" xml:space="preserve">
+    <value>tpNVENC</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCBitrateK.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbNVENCPreset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 4</value>
+  </data>
+  <data name="cbNVENCPreset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 21</value>
+  </data>
+  <data name="cbNVENCPreset.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbNVENCPreset.Name" xml:space="preserve">
+    <value>cbNVENCPreset</value>
+  </data>
+  <data name="&gt;&gt;cbNVENCPreset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbNVENCPreset.Parent" xml:space="preserve">
+    <value>tpNVENC</value>
+  </data>
+  <data name="&gt;&gt;cbNVENCPreset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblNVENCPreset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNVENCPreset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblNVENCPreset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblNVENCPreset.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Preset:</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCPreset.Name" xml:space="preserve">
+    <value>lblNVENCPreset</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCPreset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCPreset.Parent" xml:space="preserve">
+    <value>tpNVENC</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCPreset.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="nudNVENCBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 28</value>
+  </data>
+  <data name="nudNVENCBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="nudNVENCBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nudNVENCBitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudNVENCBitrate.Name" xml:space="preserve">
+    <value>nudNVENCBitrate</value>
+  </data>
+  <data name="&gt;&gt;nudNVENCBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudNVENCBitrate.Parent" xml:space="preserve">
+    <value>tpNVENC</value>
+  </data>
+  <data name="&gt;&gt;nudNVENCBitrate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblNVENCBitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNVENCBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 32</value>
+  </data>
+  <data name="lblNVENCBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblNVENCBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCBitrate.Name" xml:space="preserve">
+    <value>lblNVENCBitrate</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCBitrate.Parent" xml:space="preserve">
+    <value>tpNVENC</value>
+  </data>
+  <data name="&gt;&gt;lblNVENCBitrate.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblGIFDither.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGIFDither.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGIFDither.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 32</value>
+  </data>
+  <data name="lblGIFDither.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="lblGIFDither.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Dithering mode:</value>
+  </data>
+  <data name="&gt;&gt;lblGIFDither.Name" xml:space="preserve">
+    <value>lblGIFDither</value>
+  </data>
+  <data name="&gt;&gt;lblGIFDither.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGIFDither.Parent" xml:space="preserve">
+    <value>tpGIF</value>
+  </data>
+  <data name="&gt;&gt;lblGIFDither.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblGIFStatsMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGIFStatsMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblGIFStatsMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="lblGIFStatsMode.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Palette mode:</value>
+  </data>
+  <data name="&gt;&gt;lblGIFStatsMode.Name" xml:space="preserve">
+    <value>lblGIFStatsMode</value>
+  </data>
+  <data name="&gt;&gt;lblGIFStatsMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGIFStatsMode.Parent" xml:space="preserve">
+    <value>tpGIF</value>
+  </data>
+  <data name="&gt;&gt;lblGIFStatsMode.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbAMFQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 28</value>
+  </data>
+  <data name="cbAMFQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 21</value>
+  </data>
+  <data name="cbAMFQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbAMFQuality.Name" xml:space="preserve">
+    <value>cbAMFQuality</value>
+  </data>
+  <data name="&gt;&gt;cbAMFQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAMFQuality.Parent" xml:space="preserve">
+    <value>tbAMF</value>
+  </data>
+  <data name="&gt;&gt;cbAMFQuality.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblAMFQuality.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAMFQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAMFQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 32</value>
+  </data>
+  <data name="lblAMFQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lblAMFQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>Quality:</value>
+  </data>
+  <data name="&gt;&gt;lblAMFQuality.Name" xml:space="preserve">
+    <value>lblAMFQuality</value>
+  </data>
+  <data name="&gt;&gt;lblAMFQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAMFQuality.Parent" xml:space="preserve">
+    <value>tbAMF</value>
+  </data>
+  <data name="&gt;&gt;lblAMFQuality.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbAMFUsage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 4</value>
+  </data>
+  <data name="cbAMFUsage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 21</value>
+  </data>
+  <data name="cbAMFUsage.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbAMFUsage.Name" xml:space="preserve">
+    <value>cbAMFUsage</value>
+  </data>
+  <data name="&gt;&gt;cbAMFUsage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAMFUsage.Parent" xml:space="preserve">
+    <value>tbAMF</value>
+  </data>
+  <data name="&gt;&gt;cbAMFUsage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblAMFUsage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAMFUsage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAMFUsage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblAMFUsage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="lblAMFUsage.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Usage:</value>
+  </data>
+  <data name="&gt;&gt;lblAMFUsage.Name" xml:space="preserve">
+    <value>lblAMFUsage</value>
+  </data>
+  <data name="&gt;&gt;lblAMFUsage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAMFUsage.Parent" xml:space="preserve">
+    <value>tbAMF</value>
+  </data>
+  <data name="&gt;&gt;lblAMFUsage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="lblQSVBitrateK.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblQSVBitrateK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 32</value>
+    <value>157, 32</value>
   </data>
   <data name="lblQSVBitrateK.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -1679,10 +1595,10 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>0</value>
   </data>
   <data name="cbQSVPreset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 4</value>
+    <value>80, 4</value>
   </data>
   <data name="cbQSVPreset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 21</value>
+    <value>232, 21</value>
   </data>
   <data name="cbQSVPreset.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1730,7 +1646,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>2</value>
   </data>
   <data name="nudQSVBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 28</value>
+    <value>80, 28</value>
   </data>
   <data name="nudQSVBitrate.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -1790,7 +1706,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>128, 24</value>
   </data>
   <data name="btnTest.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
     <value>Test with CMD...</value>
@@ -1814,7 +1730,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>80, 24</value>
   </data>
   <data name="btnCopyPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>22</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Copy</value>
@@ -1830,6 +1746,75 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;btnCopyPreview.ZOrder" xml:space="preserve">
     <value>22</value>
+  </data>
+  <data name="&gt;&gt;tpAAC.Name" xml:space="preserve">
+    <value>tpAAC</value>
+  </data>
+  <data name="&gt;&gt;tpAAC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpAAC.Parent" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpAAC.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpOpus.Name" xml:space="preserve">
+    <value>tpOpus</value>
+  </data>
+  <data name="&gt;&gt;tpOpus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpOpus.Parent" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpOpus.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.Name" xml:space="preserve">
+    <value>tpVorbis</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.Parent" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.Name" xml:space="preserve">
+    <value>tpMP3</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.Parent" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tcFFmpegAudioCodecs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 184</value>
+  </data>
+  <data name="tcFFmpegAudioCodecs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 112</value>
+  </data>
+  <data name="tcFFmpegAudioCodecs.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegAudioCodecs.Name" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegAudioCodecs.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.TablessControl, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegAudioCodecs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegAudioCodecs.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="&gt;&gt;lblAACQuality.Name" xml:space="preserve">
     <value>lblAACQuality</value>
@@ -1870,23 +1855,32 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tpAAC.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblOpusQuality.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblAACQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblOpusQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblOpusQuality.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblAACQuality.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 8</value>
   </data>
-  <data name="lblOpusQuality.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblAACQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
   </data>
-  <data name="lblOpusQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="lblAACQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="lblOpusQuality.Text" xml:space="preserve">
+  <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bitrate:</value>
+  </data>
+  <data name="&gt;&gt;lblAACQuality.Name" xml:space="preserve">
+    <value>lblAACQuality</value>
+  </data>
+  <data name="&gt;&gt;lblAACQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAACQuality.Parent" xml:space="preserve">
+    <value>tpAAC</value>
+  </data>
+  <data name="&gt;&gt;lblAACQuality.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblOpusQuality.Name" xml:space="preserve">
     <value>lblOpusQuality</value>
@@ -1927,20 +1921,35 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tpOpus.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblVorbisQuality.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblOpusQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblVorbisQuality.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblOpusQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOpusQuality.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 8</value>
   </data>
-  <data name="lblVorbisQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
+  <data name="lblOpusQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
   </data>
-  <data name="lblVorbisQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblOpusQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Quality:</value>
+  <data name="lblOpusQuality.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="&gt;&gt;lblOpusQuality.Name" xml:space="preserve">
+    <value>lblOpusQuality</value>
+  </data>
+  <data name="&gt;&gt;lblOpusQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpusQuality.Parent" xml:space="preserve">
+    <value>tpOpus</value>
+  </data>
+  <data name="&gt;&gt;lblOpusQuality.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblVorbisQuality.Name" xml:space="preserve">
     <value>lblVorbisQuality</value>
@@ -1981,20 +1990,32 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tpVorbis.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblMP3Quality.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblVorbisQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblMP3Quality.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblVorbisQuality.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 8</value>
   </data>
-  <data name="lblMP3Quality.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblVorbisQuality.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
   </data>
-  <data name="lblMP3Quality.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblVorbisQuality.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Quality:</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.Name" xml:space="preserve">
+    <value>lblVorbisQuality</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.Parent" xml:space="preserve">
+    <value>tpVorbis</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblMP3Quality.Name" xml:space="preserve">
     <value>lblMP3Quality</value>
@@ -2035,52 +2056,31 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tpMP3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tcFFmpegAudioCodecs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 184</value>
-  </data>
-  <data name="tcFFmpegAudioCodecs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 112</value>
-  </data>
-  <data name="tcFFmpegAudioCodecs.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegAudioCodecs.Name" xml:space="preserve">
-    <value>tcFFmpegAudioCodecs</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegAudioCodecs.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TablessControl, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegAudioCodecs.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tcFFmpegAudioCodecs.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblAACQuality.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblMP3Quality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblAACQuality.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblMP3Quality.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 8</value>
   </data>
-  <data name="lblAACQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+  <data name="lblMP3Quality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
   </data>
-  <data name="lblAACQuality.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblMP3Quality.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>Bitrate:</value>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Quality:</value>
   </data>
-  <data name="&gt;&gt;lblAACQuality.Name" xml:space="preserve">
-    <value>lblAACQuality</value>
+  <data name="&gt;&gt;lblMP3Quality.Name" xml:space="preserve">
+    <value>lblMP3Quality</value>
   </data>
-  <data name="&gt;&gt;lblAACQuality.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblMP3Quality.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblAACQuality.Parent" xml:space="preserve">
-    <value>tpAAC</value>
+  <data name="&gt;&gt;lblMP3Quality.Parent" xml:space="preserve">
+    <value>tpMP3</value>
   </data>
-  <data name="&gt;&gt;lblAACQuality.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblMP3Quality.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="cbVideoSource.Location" type="System.Drawing.Point, System.Drawing">
@@ -2090,7 +2090,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>312, 21</value>
   </data>
   <data name="cbVideoSource.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cbVideoSource.Name" xml:space="preserve">
     <value>cbVideoSource</value>
@@ -2114,7 +2114,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>72, 13</value>
   </data>
   <data name="lblVideoSource.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
     <value>Video source:</value>
@@ -2138,7 +2138,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>312, 21</value>
   </data>
   <data name="cbAudioSource.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;cbAudioSource.Name" xml:space="preserve">
     <value>cbAudioSource</value>
@@ -2162,7 +2162,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>72, 13</value>
   </data>
   <data name="lblAudioSource.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="lblAudioSource.Text" xml:space="preserve">
     <value>Audio source:</value>
@@ -2186,7 +2186,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>312, 21</value>
   </data>
   <data name="cbAudioCodec.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;cbAudioCodec.Name" xml:space="preserve">
     <value>cbAudioCodec</value>
@@ -2207,7 +2207,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>24, 24</value>
   </data>
   <data name="btnHelperDevicesHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
     <value>?</value>
@@ -2234,7 +2234,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>396, 13</value>
   </data>
   <data name="lblHelperDevices.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Installs "screen-capture-recorder" and "virtual-audio-capturer" video/audio source.</value>
@@ -2258,7 +2258,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>160, 24</value>
   </data>
   <data name="btnInstallHelperDevices.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
     <value>Install recorder devices...</value>
@@ -2282,7 +2282,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>184, 24</value>
   </data>
   <data name="eiFFmpeg.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>23</value>
   </data>
   <data name="&gt;&gt;eiFFmpeg.Name" xml:space="preserve">
     <value>eiFFmpeg</value>
@@ -2306,7 +2306,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>176, 13</value>
   </data>
   <data name="lblCommandLineArgs.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="lblCommandLineArgs.Text" xml:space="preserve">
     <value>Additional command line arguments:</value>
@@ -2333,7 +2333,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>116, 13</value>
   </data>
   <data name="lblCommandLinePreview.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="lblCommandLinePreview.Text" xml:space="preserve">
     <value>Command line preview:</value>
@@ -2387,7 +2387,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>79, 13</value>
   </data>
   <data name="lblVideoEncoder.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>10</value>
   </data>
   <data name="lblVideoEncoder.Text" xml:space="preserve">
     <value>Video encoder:</value>
@@ -2414,7 +2414,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>79, 13</value>
   </data>
   <data name="lblAudioEncoder.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>12</value>
   </data>
   <data name="lblAudioEncoder.Text" xml:space="preserve">
     <value>Audio encoder:</value>

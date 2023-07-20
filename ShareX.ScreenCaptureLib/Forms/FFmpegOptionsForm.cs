@@ -319,11 +319,12 @@ namespace ShareX.ScreenCaptureLib
         {
             Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cbVideoCodec.SelectedIndex;
 
+            tcFFmpegVideoCodecs.Visible = Options.FFmpeg.VideoCodec != FFmpegVideoCodec.libwebp && Options.FFmpeg.VideoCodec != FFmpegVideoCodec.apng;
+
             if (cbVideoCodec.SelectedIndex >= 0)
             {
                 switch (Options.FFmpeg.VideoCodec)
                 {
-                    default:
                     case FFmpegVideoCodec.libx264:
                     case FFmpegVideoCodec.libx265:
                         tcFFmpegVideoCodecs.SelectedIndex = 0;
@@ -369,7 +370,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 switch (Options.FFmpeg.AudioCodec)
                 {
-                    default:
                     case FFmpegAudioCodec.libvoaacenc:
                         tcFFmpegAudioCodecs.SelectedIndex = 0;
                         break;
