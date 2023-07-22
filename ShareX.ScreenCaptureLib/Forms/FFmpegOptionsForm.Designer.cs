@@ -106,6 +106,9 @@
             this.cbUseCustomFFmpegPath = new System.Windows.Forms.CheckBox();
             this.lblVideoEncoder = new System.Windows.Forms.Label();
             this.lblAudioEncoder = new System.Windows.Forms.Label();
+            this.lblAMFBitrateK = new System.Windows.Forms.Label();
+            this.nudAMFBitrate = new System.Windows.Forms.NumericUpDown();
+            this.lblAMFBitrate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -131,6 +134,7 @@
             this.tpOpus.SuspendLayout();
             this.tpVorbis.SuspendLayout();
             this.tpMP3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAMFBitrate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblx264CRF
@@ -529,6 +533,9 @@
             // 
             // tbAMF
             // 
+            this.tbAMF.Controls.Add(this.lblAMFBitrateK);
+            this.tbAMF.Controls.Add(this.nudAMFBitrate);
+            this.tbAMF.Controls.Add(this.lblAMFBitrate);
             this.tbAMF.Controls.Add(this.cbAMFQuality);
             this.tbAMF.Controls.Add(this.lblAMFQuality);
             this.tbAMF.Controls.Add(this.cbAMFUsage);
@@ -785,6 +792,37 @@
             resources.ApplyResources(this.lblAudioEncoder, "lblAudioEncoder");
             this.lblAudioEncoder.Name = "lblAudioEncoder";
             // 
+            // lblAMFBitrateK
+            // 
+            resources.ApplyResources(this.lblAMFBitrateK, "lblAMFBitrateK");
+            this.lblAMFBitrateK.Name = "lblAMFBitrateK";
+            // 
+            // nudAMFBitrate
+            // 
+            resources.ApplyResources(this.nudAMFBitrate, "nudAMFBitrate");
+            this.nudAMFBitrate.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudAMFBitrate.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudAMFBitrate.Name = "nudAMFBitrate";
+            this.nudAMFBitrate.Value = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.nudAMFBitrate.ValueChanged += new System.EventHandler(this.nudAMFBitrate_ValueChanged);
+            // 
+            // lblAMFBitrate
+            // 
+            resources.ApplyResources(this.lblAMFBitrate, "lblAMFBitrate");
+            this.lblAMFBitrate.Name = "lblAMFBitrate";
+            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -856,6 +894,7 @@
             this.tpVorbis.PerformLayout();
             this.tpMP3.ResumeLayout(false);
             this.tpMP3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAMFBitrate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -939,5 +978,8 @@
         private System.Windows.Forms.CheckBox cbUseCustomFFmpegPath;
         private System.Windows.Forms.Label lblVideoEncoder;
         private System.Windows.Forms.Label lblAudioEncoder;
+        private System.Windows.Forms.Label lblAMFBitrateK;
+        private System.Windows.Forms.NumericUpDown nudAMFBitrate;
+        private System.Windows.Forms.Label lblAMFBitrate;
     }
 }

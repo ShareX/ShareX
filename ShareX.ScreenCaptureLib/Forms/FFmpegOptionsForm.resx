@@ -940,6 +940,99 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tpGIF.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="lblAMFBitrateK.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAMFBitrateK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAMFBitrateK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 56</value>
+  </data>
+  <data name="lblAMFBitrateK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblAMFBitrateK.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblAMFBitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="&gt;&gt;lblAMFBitrateK.Name" xml:space="preserve">
+    <value>lblAMFBitrateK</value>
+  </data>
+  <data name="&gt;&gt;lblAMFBitrateK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAMFBitrateK.Parent" xml:space="preserve">
+    <value>tbAMF</value>
+  </data>
+  <data name="&gt;&gt;lblAMFBitrateK.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudAMFBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 52</value>
+  </data>
+  <data name="nudAMFBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="nudAMFBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="nudAMFBitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudAMFBitrate.Name" xml:space="preserve">
+    <value>nudAMFBitrate</value>
+  </data>
+  <data name="&gt;&gt;nudAMFBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudAMFBitrate.Parent" xml:space="preserve">
+    <value>tbAMF</value>
+  </data>
+  <data name="&gt;&gt;nudAMFBitrate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblAMFBitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAMFBitrate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAMFBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 56</value>
+  </data>
+  <data name="lblAMFBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblAMFBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblAMFBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="&gt;&gt;lblAMFBitrate.Name" xml:space="preserve">
+    <value>lblAMFBitrate</value>
+  </data>
+  <data name="&gt;&gt;lblAMFBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAMFBitrate.Parent" xml:space="preserve">
+    <value>tbAMF</value>
+  </data>
+  <data name="&gt;&gt;lblAMFBitrate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbAMFQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 28</value>
+  </data>
+  <data name="cbAMFQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 21</value>
+  </data>
+  <data name="cbAMFQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
   <data name="&gt;&gt;cbAMFQuality.Name" xml:space="preserve">
     <value>cbAMFQuality</value>
   </data>
@@ -950,7 +1043,25 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>tbAMF</value>
   </data>
   <data name="&gt;&gt;cbAMFQuality.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
+  </data>
+  <data name="lblAMFQuality.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAMFQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAMFQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 32</value>
+  </data>
+  <data name="lblAMFQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lblAMFQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>Quality:</value>
   </data>
   <data name="&gt;&gt;lblAMFQuality.Name" xml:space="preserve">
     <value>lblAMFQuality</value>
@@ -962,7 +1073,16 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>tbAMF</value>
   </data>
   <data name="&gt;&gt;lblAMFQuality.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
+  </data>
+  <data name="cbAMFUsage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 4</value>
+  </data>
+  <data name="cbAMFUsage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 21</value>
+  </data>
+  <data name="cbAMFUsage.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;cbAMFUsage.Name" xml:space="preserve">
     <value>cbAMFUsage</value>
@@ -974,7 +1094,25 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>tbAMF</value>
   </data>
   <data name="&gt;&gt;cbAMFUsage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
+  </data>
+  <data name="lblAMFUsage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAMFUsage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAMFUsage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblAMFUsage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="lblAMFUsage.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Usage:</value>
   </data>
   <data name="&gt;&gt;lblAMFUsage.Name" xml:space="preserve">
     <value>lblAMFUsage</value>
@@ -986,7 +1124,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>tbAMF</value>
   </data>
   <data name="&gt;&gt;lblAMFUsage.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="tbAMF.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 40</value>
@@ -1464,108 +1602,6 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;lblGIFStatsMode.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="cbAMFQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 28</value>
-  </data>
-  <data name="cbAMFQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 21</value>
-  </data>
-  <data name="cbAMFQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;cbAMFQuality.Name" xml:space="preserve">
-    <value>cbAMFQuality</value>
-  </data>
-  <data name="&gt;&gt;cbAMFQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAMFQuality.Parent" xml:space="preserve">
-    <value>tbAMF</value>
-  </data>
-  <data name="&gt;&gt;cbAMFQuality.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblAMFQuality.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAMFQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAMFQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 32</value>
-  </data>
-  <data name="lblAMFQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="lblAMFQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblAMFQuality.Text" xml:space="preserve">
-    <value>Quality:</value>
-  </data>
-  <data name="&gt;&gt;lblAMFQuality.Name" xml:space="preserve">
-    <value>lblAMFQuality</value>
-  </data>
-  <data name="&gt;&gt;lblAMFQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAMFQuality.Parent" xml:space="preserve">
-    <value>tbAMF</value>
-  </data>
-  <data name="&gt;&gt;lblAMFQuality.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbAMFUsage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 4</value>
-  </data>
-  <data name="cbAMFUsage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 21</value>
-  </data>
-  <data name="cbAMFUsage.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cbAMFUsage.Name" xml:space="preserve">
-    <value>cbAMFUsage</value>
-  </data>
-  <data name="&gt;&gt;cbAMFUsage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAMFUsage.Parent" xml:space="preserve">
-    <value>tbAMF</value>
-  </data>
-  <data name="&gt;&gt;cbAMFUsage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblAMFUsage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAMFUsage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAMFUsage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="lblAMFUsage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="lblAMFUsage.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblAMFUsage.Text" xml:space="preserve">
-    <value>Usage:</value>
-  </data>
-  <data name="&gt;&gt;lblAMFUsage.Name" xml:space="preserve">
-    <value>lblAMFUsage</value>
-  </data>
-  <data name="&gt;&gt;lblAMFUsage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAMFUsage.Parent" xml:space="preserve">
-    <value>tbAMF</value>
-  </data>
-  <data name="&gt;&gt;lblAMFUsage.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="lblQSVBitrateK.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

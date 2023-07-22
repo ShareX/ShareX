@@ -106,10 +106,11 @@ namespace ShareX.ScreenCaptureLib
             // AMF
             cbAMFUsage.SelectedIndex = (int)Options.FFmpeg.AMF_Usage;
             cbAMFQuality.SelectedIndex = (int)Options.FFmpeg.AMF_Quality;
+            nudAMFBitrate.SetValue(Options.FFmpeg.AMF_Bitrate);
 
             // QuickSync
-            nudQSVBitrate.SetValue(Options.FFmpeg.QSV_Bitrate);
             cbQSVPreset.SelectedIndex = (int)Options.FFmpeg.QSV_Preset;
+            nudQSVBitrate.SetValue(Options.FFmpeg.QSV_Bitrate);
 
             // AAC
             tbAACBitrate.Value = Options.FFmpeg.AAC_Bitrate / 32;
@@ -468,6 +469,12 @@ namespace ShareX.ScreenCaptureLib
         private void cbAMFQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.AMF_Quality = (FFmpegAMFQuality)cbAMFQuality.SelectedIndex;
+            UpdateUI();
+        }
+
+        private void nudAMFBitrate_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.AMF_Bitrate = (int)nudAMFBitrate.Value;
             UpdateUI();
         }
 

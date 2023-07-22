@@ -268,6 +268,7 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.hevc_amf:
                             args.Append($"-usage {FFmpeg.AMF_Usage} ");
                             args.Append($"-quality {FFmpeg.AMF_Quality} ");
+                            args.Append($"-b:v {FFmpeg.AMF_Bitrate}k ");
                             args.Append("-pix_fmt yuv420p ");
                             break;
                         case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
