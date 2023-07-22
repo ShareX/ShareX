@@ -29,7 +29,7 @@ using System.Drawing;
 
 namespace ShareX.HelpersLib
 {
-    public class WindowInfo
+    public sealed class WindowInfo
     {
         public IntPtr Handle { get; }
 

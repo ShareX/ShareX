@@ -28,50 +28,21 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class SnapSize
+    public sealed class SnapSize
     {
-        private const int MinimumWidth = 2;
+        private const int MINIMUM_WIDTH = 2;
+        public int Width { get; }
 
-        private int width;
+        private const int MINIMUM_HEIGHT = 2;
+        public int Height { get; }
 
-        public int Width
-        {
-            get
-            {
-                return width;
-            }
-            set
-            {
-                width = Math.Max(value, MinimumWidth);
-            }
-        }
-
-        private const int MinimumHeight = 2;
-
-        private int height;
-
-        public int Height
-        {
-            get
-            {
-                return height;
-            }
-            set
-            {
-                height = Math.Max(value, MinimumHeight);
-            }
-        }
-
-        public SnapSize()
-        {
-            width = MinimumWidth;
-            height = MinimumHeight;
-        }
+        private static int CoerceWidth (int desired) => Math.Max(desired, MINIMUM_WIDTH);
+        private static int CoerceHeight(int desired) => Math.Max(desired, MINIMUM_HEIGHT);
 
         public SnapSize(int width, int height)
         {
-            Width = width;
-            Height = height;
+            Width = CoerceWidth(width);
+            Height = CoerceHeight(height);
         }
 
         public static implicit operator Size(SnapSize size)

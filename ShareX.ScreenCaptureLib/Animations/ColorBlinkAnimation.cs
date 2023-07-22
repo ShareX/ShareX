@@ -29,7 +29,7 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ColorBlinkAnimation : BaseAnimation
+    internal sealed class ColorBlinkAnimation : BaseAnimation
     {
         public Color FromColor { get; set; }
         public Color ToColor { get; set; }
