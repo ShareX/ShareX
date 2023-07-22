@@ -71,6 +71,9 @@
             this.lblGIFDither = new System.Windows.Forms.Label();
             this.lblGIFStatsMode = new System.Windows.Forms.Label();
             this.tpAMF = new System.Windows.Forms.TabPage();
+            this.lblAMFBitrateK = new System.Windows.Forms.Label();
+            this.nudAMFBitrate = new System.Windows.Forms.NumericUpDown();
+            this.lblAMFBitrate = new System.Windows.Forms.Label();
             this.cbAMFQuality = new System.Windows.Forms.ComboBox();
             this.lblAMFQuality = new System.Windows.Forms.Label();
             this.cbAMFUsage = new System.Windows.Forms.ComboBox();
@@ -81,8 +84,6 @@
             this.lblQSVPreset = new System.Windows.Forms.Label();
             this.nudQSVBitrate = new System.Windows.Forms.NumericUpDown();
             this.lblQSVBitrate = new System.Windows.Forms.Label();
-            this.btnTest = new System.Windows.Forms.Button();
-            this.btnCopyPreview = new System.Windows.Forms.Button();
             this.tcFFmpegAudioCodecs = new ShareX.HelpersLib.TablessControl();
             this.tpAAC = new System.Windows.Forms.TabPage();
             this.lblAACQuality = new System.Windows.Forms.Label();
@@ -100,15 +101,11 @@
             this.btnHelperDevicesHelp = new System.Windows.Forms.Button();
             this.lblHelperDevices = new System.Windows.Forms.Label();
             this.btnInstallHelperDevices = new System.Windows.Forms.Button();
-            this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
             this.lblCommandLineArgs = new System.Windows.Forms.Label();
             this.lblCommandLinePreview = new System.Windows.Forms.Label();
             this.cbUseCustomFFmpegPath = new System.Windows.Forms.CheckBox();
             this.lblVideoEncoder = new System.Windows.Forms.Label();
             this.lblAudioEncoder = new System.Windows.Forms.Label();
-            this.lblAMFBitrateK = new System.Windows.Forms.Label();
-            this.nudAMFBitrate = new System.Windows.Forms.NumericUpDown();
-            this.lblAMFBitrate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -127,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudNVENCBitrate)).BeginInit();
             this.tpGIF.SuspendLayout();
             this.tpAMF.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAMFBitrate)).BeginInit();
             this.tpQSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQSVBitrate)).BeginInit();
             this.tcFFmpegAudioCodecs.SuspendLayout();
@@ -134,7 +132,6 @@
             this.tpOpus.SuspendLayout();
             this.tpVorbis.SuspendLayout();
             this.tpMP3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAMFBitrate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblx264CRF
@@ -544,6 +541,37 @@
             this.tpAMF.Name = "tpAMF";
             this.tpAMF.UseVisualStyleBackColor = true;
             // 
+            // lblAMFBitrateK
+            // 
+            resources.ApplyResources(this.lblAMFBitrateK, "lblAMFBitrateK");
+            this.lblAMFBitrateK.Name = "lblAMFBitrateK";
+            // 
+            // nudAMFBitrate
+            // 
+            resources.ApplyResources(this.nudAMFBitrate, "nudAMFBitrate");
+            this.nudAMFBitrate.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudAMFBitrate.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudAMFBitrate.Name = "nudAMFBitrate";
+            this.nudAMFBitrate.Value = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.nudAMFBitrate.ValueChanged += new System.EventHandler(this.nudAMFBitrate_ValueChanged);
+            // 
+            // lblAMFBitrate
+            // 
+            resources.ApplyResources(this.lblAMFBitrate, "lblAMFBitrate");
+            this.lblAMFBitrate.Name = "lblAMFBitrate";
+            // 
             // cbAMFQuality
             // 
             this.cbAMFQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -624,20 +652,6 @@
             // 
             resources.ApplyResources(this.lblQSVBitrate, "lblQSVBitrate");
             this.lblQSVBitrate.Name = "lblQSVBitrate";
-            // 
-            // btnTest
-            // 
-            resources.ApplyResources(this.btnTest, "btnTest");
-            this.btnTest.Name = "btnTest";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
-            // btnCopyPreview
-            // 
-            resources.ApplyResources(this.btnCopyPreview, "btnCopyPreview");
-            this.btnCopyPreview.Name = "btnCopyPreview";
-            this.btnCopyPreview.UseVisualStyleBackColor = true;
-            this.btnCopyPreview.Click += new System.EventHandler(this.btnCopyPreview_Click);
             // 
             // tcFFmpegAudioCodecs
             // 
@@ -755,16 +769,6 @@
             this.btnInstallHelperDevices.UseVisualStyleBackColor = true;
             this.btnInstallHelperDevices.Click += new System.EventHandler(this.btnInstallHelperDevices_Click);
             // 
-            // eiFFmpeg
-            // 
-            this.eiFFmpeg.DefaultFileName = null;
-            resources.ApplyResources(this.eiFFmpeg, "eiFFmpeg");
-            this.eiFFmpeg.Name = "eiFFmpeg";
-            this.eiFFmpeg.ObjectType = null;
-            this.eiFFmpeg.SerializationBinder = null;
-            this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
-            this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
-            // 
             // lblCommandLineArgs
             // 
             resources.ApplyResources(this.lblCommandLineArgs, "lblCommandLineArgs");
@@ -792,37 +796,6 @@
             resources.ApplyResources(this.lblAudioEncoder, "lblAudioEncoder");
             this.lblAudioEncoder.Name = "lblAudioEncoder";
             // 
-            // lblAMFBitrateK
-            // 
-            resources.ApplyResources(this.lblAMFBitrateK, "lblAMFBitrateK");
-            this.lblAMFBitrateK.Name = "lblAMFBitrateK";
-            // 
-            // nudAMFBitrate
-            // 
-            resources.ApplyResources(this.nudAMFBitrate, "nudAMFBitrate");
-            this.nudAMFBitrate.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nudAMFBitrate.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.nudAMFBitrate.Name = "nudAMFBitrate";
-            this.nudAMFBitrate.Value = new decimal(new int[] {
-            3000,
-            0,
-            0,
-            0});
-            this.nudAMFBitrate.ValueChanged += new System.EventHandler(this.nudAMFBitrate_ValueChanged);
-            // 
-            // lblAMFBitrate
-            // 
-            resources.ApplyResources(this.lblAMFBitrate, "lblAMFBitrate");
-            this.lblAMFBitrate.Name = "lblAMFBitrate";
-            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -846,12 +819,9 @@
             this.Controls.Add(this.cbVideoSource);
             this.Controls.Add(this.btnFFmpegBrowse);
             this.Controls.Add(this.lblVideoSource);
-            this.Controls.Add(this.eiFFmpeg);
             this.Controls.Add(this.cbAudioSource);
             this.Controls.Add(this.txtFFmpegPath);
             this.Controls.Add(this.lblAudioSource);
-            this.Controls.Add(this.btnCopyPreview);
-            this.Controls.Add(this.btnTest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -882,6 +852,7 @@
             this.tpGIF.PerformLayout();
             this.tpAMF.ResumeLayout(false);
             this.tpAMF.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAMFBitrate)).EndInit();
             this.tpQSV.ResumeLayout(false);
             this.tpQSV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQSVBitrate)).EndInit();
@@ -894,7 +865,6 @@
             this.tpVorbis.PerformLayout();
             this.tpMP3.ResumeLayout(false);
             this.tpMP3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAMFBitrate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -918,8 +888,6 @@
         private System.Windows.Forms.TabPage tpX264;
         private System.Windows.Forms.TabPage tpVpx;
         private System.Windows.Forms.TabPage tpXvid;
-        private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.Button btnCopyPreview;
         private HelpersLib.TablessControl tcFFmpegAudioCodecs;
         private System.Windows.Forms.TabPage tpVorbis;
         private System.Windows.Forms.TabPage tpMP3;
@@ -936,7 +904,6 @@
         private System.Windows.Forms.TrackBar tbAACBitrate;
         private System.Windows.Forms.Label lblAACQuality;
         private System.Windows.Forms.CheckBox cbCustomCommands;
-        private ShareX.HelpersLib.ExportImportControl eiFFmpeg;
         private System.Windows.Forms.Label lblVP8BitrateK;
         private System.Windows.Forms.NumericUpDown nudVP8Bitrate;
         private System.Windows.Forms.Label lblVP8Bitrate;

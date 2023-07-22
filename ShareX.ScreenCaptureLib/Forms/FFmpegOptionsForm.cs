@@ -48,7 +48,6 @@ namespace ShareX.ScreenCaptureLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            eiFFmpeg.ObjectType = typeof(FFmpegOptions);
             cbVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
             cbAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
             cbx264Preset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
@@ -510,38 +509,6 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(Options.FFmpeg.FFmpegPath))
-            {
-                try
-                {
-                    using (Process process = new Process())
-                    {
-                        ProcessStartInfo psi = new ProcessStartInfo()
-                        {
-                            FileName = "cmd.exe",
-                            WorkingDirectory = Path.GetTempPath(),
-                            Arguments = $"/k {Path.GetFileName(Options.FFmpeg.FFmpegPath)} {Options.GetFFmpegCommands()}",
-                            UseShellExecute = true
-                        };
-
-                        process.StartInfo = psi;
-                        process.Start();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    DebugHelper.WriteException(ex);
-                }
-            }
-        }
-
-        private void btnCopyPreview_Click(object sender, EventArgs e)
-        {
-            ClipboardHelpers.CopyText($"{Path.GetFileName(Options.FFmpeg.FFmpegPath)} {Options.GetFFmpegCommands()}");
-        }
-
         private void cbCustomCommands_CheckedChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.UseCustomCommands = cbCustomCommands.Checked;
@@ -563,22 +530,6 @@ namespace ShareX.ScreenCaptureLib
         private void txtCommandLinePreview_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.CustomCommands = txtCommandLinePreview.Text;
-        }
-
-        private object eiFFmpeg_ExportRequested()
-        {
-            return Options.FFmpeg;
-        }
-
-        private async void eiFFmpeg_ImportRequested(object obj)
-        {
-            if (obj is FFmpegOptions ffmpegOptions)
-            {
-                string tempFFmpegPath = Options.FFmpeg.CLIPath;
-                Options.FFmpeg = ffmpegOptions;
-                Options.FFmpeg.CLIPath = tempFFmpegPath;
-                await SettingsLoad();
-            }
         }
     }
 }
