@@ -213,6 +213,16 @@ namespace ShareX
             ScanFromScreen();
         }
 
+        private void btnScanQRCodeFromClipboard_Click(object sender, EventArgs e)
+        {
+            if (ClipboardHelpers.ContainsImage())
+            {
+                Bitmap bmp = ClipboardHelpers.GetImage();
+
+                ScanImage(bmp);
+            }
+        }
+
         private void btnScanQRCodeFromImageFile_Click(object sender, EventArgs e)
         {
             txtText.ResetText();

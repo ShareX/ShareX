@@ -41,6 +41,7 @@
             this.btnUploadImage = new System.Windows.Forms.Button();
             this.btnScanQRCodeFromScreen = new System.Windows.Forms.Button();
             this.btnScanQRCodeFromImageFile = new System.Windows.Forms.Button();
+            this.btnScanQRCodeFromClipboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudQRCodeSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,11 +131,19 @@
             this.btnScanQRCodeFromImageFile.UseVisualStyleBackColor = true;
             this.btnScanQRCodeFromImageFile.Click += new System.EventHandler(this.btnScanQRCodeFromImageFile_Click);
             // 
+            // btnScanQRCodeFromClipboard
+            // 
+            resources.ApplyResources(this.btnScanQRCodeFromClipboard, "btnScanQRCodeFromClipboard");
+            this.btnScanQRCodeFromClipboard.Name = "btnScanQRCodeFromClipboard";
+            this.btnScanQRCodeFromClipboard.UseVisualStyleBackColor = true;
+            this.btnScanQRCodeFromClipboard.Click += new System.EventHandler(this.btnScanQRCodeFromClipboard_Click);
+            // 
             // QRCodeForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnScanQRCodeFromClipboard);
             this.Controls.Add(this.btnScanQRCodeFromImageFile);
             this.Controls.Add(this.btnScanQRCodeFromScreen);
             this.Controls.Add(this.btnUploadImage);
@@ -170,5 +179,6 @@
         private System.Windows.Forms.Button btnUploadImage;
         private System.Windows.Forms.Button btnScanQRCodeFromScreen;
         private System.Windows.Forms.Button btnScanQRCodeFromImageFile;
+        private System.Windows.Forms.Button btnScanQRCodeFromClipboard;
     }
 }
