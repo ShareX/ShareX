@@ -52,8 +52,9 @@ namespace ShareX.ScreenCaptureLib
         public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; } = FFmpegPaletteGenStatsMode.full;
         public FFmpegPaletteUseDither GIFDither { get; set; } = FFmpegPaletteUseDither.sierra2_4a;
         public int GIFBayerScale { get; set; } = 2;
-        public FFmpegAMFUsage AMF_Usage { get; set; } = FFmpegAMFUsage.transcoding;
+        public FFmpegAMFUsage AMF_Usage { get; set; } = FFmpegAMFUsage.lowlatency;
         public FFmpegAMFQuality AMF_Quality { get; set; } = FFmpegAMFQuality.speed;
+        public int AMF_Bitrate { get; set; } = 3000; // kbit/s
         public FFmpegQSVPreset QSV_Preset { get; set; } = FFmpegQSVPreset.fast;
         public int QSV_Bitrate { get; set; } = 3000; // kbit/s
 
