@@ -328,35 +328,30 @@ namespace ShareX.ScreenCaptureLib
                 {
                     case FFmpegVideoCodec.libx264:
                     case FFmpegVideoCodec.libx265:
-                        tcFFmpegVideoCodecs.SelectedIndex = 0;
+                        tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpX264);
                         break;
                     case FFmpegVideoCodec.libvpx:
                     case FFmpegVideoCodec.libvpx_vp9:
-                        tcFFmpegVideoCodecs.SelectedIndex = 1;
+                        tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpVpx);
                         break;
                     case FFmpegVideoCodec.libxvid:
-                        tcFFmpegVideoCodecs.SelectedIndex = 2;
+                        tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpXvid);
                         break;
                     case FFmpegVideoCodec.h264_nvenc:
                     case FFmpegVideoCodec.hevc_nvenc:
-                        tcFFmpegVideoCodecs.SelectedIndex = 3;
+                        tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpNVENC);
                         break;
                     case FFmpegVideoCodec.gif:
-                        tcFFmpegVideoCodecs.SelectedIndex = 4;
+                        tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpGIF);
                         break;
                     case FFmpegVideoCodec.h264_amf:
                     case FFmpegVideoCodec.hevc_amf:
-                        tcFFmpegVideoCodecs.SelectedIndex = 5;
+                        tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpAMF);
                         break;
                     case FFmpegVideoCodec.h264_qsv:
                     case FFmpegVideoCodec.hevc_qsv:
-                        tcFFmpegVideoCodecs.SelectedIndex = 6;
+                        tcFFmpegVideoCodecs.SelectTabWithoutFocus(tpQSV);
                         break;
-                }
-
-                if (settingsLoaded)
-                {
-                    cbVideoCodec.Focus();
                 }
             }
 
@@ -372,22 +367,17 @@ namespace ShareX.ScreenCaptureLib
                 switch (Options.FFmpeg.AudioCodec)
                 {
                     case FFmpegAudioCodec.libvoaacenc:
-                        tcFFmpegAudioCodecs.SelectedIndex = 0;
+                        tcFFmpegAudioCodecs.SelectTabWithoutFocus(tpAAC);
                         break;
                     case FFmpegAudioCodec.libopus:
-                        tcFFmpegAudioCodecs.SelectedIndex = 1;
+                        tcFFmpegAudioCodecs.SelectTabWithoutFocus(tpOpus);
                         break;
                     case FFmpegAudioCodec.libvorbis:
-                        tcFFmpegAudioCodecs.SelectedIndex = 2;
+                        tcFFmpegAudioCodecs.SelectTabWithoutFocus(tpVorbis);
                         break;
                     case FFmpegAudioCodec.libmp3lame:
-                        tcFFmpegAudioCodecs.SelectedIndex = 3;
+                        tcFFmpegAudioCodecs.SelectTabWithoutFocus(tpMP3);
                         break;
-                }
-
-                if (settingsLoaded)
-                {
-                    cbAudioCodec.Focus();
                 }
             }
 

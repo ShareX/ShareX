@@ -70,12 +70,12 @@
             this.tpGIF = new System.Windows.Forms.TabPage();
             this.lblGIFDither = new System.Windows.Forms.Label();
             this.lblGIFStatsMode = new System.Windows.Forms.Label();
-            this.tbAMF = new System.Windows.Forms.TabPage();
+            this.tpAMF = new System.Windows.Forms.TabPage();
             this.cbAMFQuality = new System.Windows.Forms.ComboBox();
             this.lblAMFQuality = new System.Windows.Forms.Label();
             this.cbAMFUsage = new System.Windows.Forms.ComboBox();
             this.lblAMFUsage = new System.Windows.Forms.Label();
-            this.tbQSV = new System.Windows.Forms.TabPage();
+            this.tpQSV = new System.Windows.Forms.TabPage();
             this.lblQSVBitrateK = new System.Windows.Forms.Label();
             this.cbQSVPreset = new System.Windows.Forms.ComboBox();
             this.lblQSVPreset = new System.Windows.Forms.Label();
@@ -126,8 +126,8 @@
             this.tpNVENC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNVENCBitrate)).BeginInit();
             this.tpGIF.SuspendLayout();
-            this.tbAMF.SuspendLayout();
-            this.tbQSV.SuspendLayout();
+            this.tpAMF.SuspendLayout();
+            this.tpQSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQSVBitrate)).BeginInit();
             this.tcFFmpegAudioCodecs.SuspendLayout();
             this.tpAAC.SuspendLayout();
@@ -348,8 +348,8 @@
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpXvid);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpNVENC);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpGIF);
-            this.tcFFmpegVideoCodecs.Controls.Add(this.tbAMF);
-            this.tcFFmpegVideoCodecs.Controls.Add(this.tbQSV);
+            this.tcFFmpegVideoCodecs.Controls.Add(this.tpAMF);
+            this.tcFFmpegVideoCodecs.Controls.Add(this.tpQSV);
             resources.ApplyResources(this.tcFFmpegVideoCodecs, "tcFFmpegVideoCodecs");
             this.tcFFmpegVideoCodecs.Multiline = true;
             this.tcFFmpegVideoCodecs.Name = "tcFFmpegVideoCodecs";
@@ -531,18 +531,18 @@
             resources.ApplyResources(this.lblGIFStatsMode, "lblGIFStatsMode");
             this.lblGIFStatsMode.Name = "lblGIFStatsMode";
             // 
-            // tbAMF
+            // tpAMF
             // 
-            this.tbAMF.Controls.Add(this.lblAMFBitrateK);
-            this.tbAMF.Controls.Add(this.nudAMFBitrate);
-            this.tbAMF.Controls.Add(this.lblAMFBitrate);
-            this.tbAMF.Controls.Add(this.cbAMFQuality);
-            this.tbAMF.Controls.Add(this.lblAMFQuality);
-            this.tbAMF.Controls.Add(this.cbAMFUsage);
-            this.tbAMF.Controls.Add(this.lblAMFUsage);
-            resources.ApplyResources(this.tbAMF, "tbAMF");
-            this.tbAMF.Name = "tbAMF";
-            this.tbAMF.UseVisualStyleBackColor = true;
+            this.tpAMF.Controls.Add(this.lblAMFBitrateK);
+            this.tpAMF.Controls.Add(this.nudAMFBitrate);
+            this.tpAMF.Controls.Add(this.lblAMFBitrate);
+            this.tpAMF.Controls.Add(this.cbAMFQuality);
+            this.tpAMF.Controls.Add(this.lblAMFQuality);
+            this.tpAMF.Controls.Add(this.cbAMFUsage);
+            this.tpAMF.Controls.Add(this.lblAMFUsage);
+            resources.ApplyResources(this.tpAMF, "tpAMF");
+            this.tpAMF.Name = "tpAMF";
+            this.tpAMF.UseVisualStyleBackColor = true;
             // 
             // cbAMFQuality
             // 
@@ -570,16 +570,16 @@
             resources.ApplyResources(this.lblAMFUsage, "lblAMFUsage");
             this.lblAMFUsage.Name = "lblAMFUsage";
             // 
-            // tbQSV
+            // tpQSV
             // 
-            this.tbQSV.Controls.Add(this.lblQSVBitrateK);
-            this.tbQSV.Controls.Add(this.cbQSVPreset);
-            this.tbQSV.Controls.Add(this.lblQSVPreset);
-            this.tbQSV.Controls.Add(this.nudQSVBitrate);
-            this.tbQSV.Controls.Add(this.lblQSVBitrate);
-            resources.ApplyResources(this.tbQSV, "tbQSV");
-            this.tbQSV.Name = "tbQSV";
-            this.tbQSV.UseVisualStyleBackColor = true;
+            this.tpQSV.Controls.Add(this.lblQSVBitrateK);
+            this.tpQSV.Controls.Add(this.cbQSVPreset);
+            this.tpQSV.Controls.Add(this.lblQSVPreset);
+            this.tpQSV.Controls.Add(this.nudQSVBitrate);
+            this.tpQSV.Controls.Add(this.lblQSVBitrate);
+            resources.ApplyResources(this.tpQSV, "tpQSV");
+            this.tpQSV.Name = "tpQSV";
+            this.tpQSV.UseVisualStyleBackColor = true;
             // 
             // lblQSVBitrateK
             // 
@@ -880,10 +880,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudNVENCBitrate)).EndInit();
             this.tpGIF.ResumeLayout(false);
             this.tpGIF.PerformLayout();
-            this.tbAMF.ResumeLayout(false);
-            this.tbAMF.PerformLayout();
-            this.tbQSV.ResumeLayout(false);
-            this.tbQSV.PerformLayout();
+            this.tpAMF.ResumeLayout(false);
+            this.tpAMF.PerformLayout();
+            this.tpQSV.ResumeLayout(false);
+            this.tpQSV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQSVBitrate)).EndInit();
             this.tcFFmpegAudioCodecs.ResumeLayout(false);
             this.tpAAC.ResumeLayout(false);
@@ -954,12 +954,12 @@
         private System.Windows.Forms.Label lblNVENCPreset;
         private System.Windows.Forms.NumericUpDown nudNVENCBitrate;
         private System.Windows.Forms.Label lblNVENCBitrate;
-        private System.Windows.Forms.TabPage tbAMF;
+        private System.Windows.Forms.TabPage tpAMF;
         private System.Windows.Forms.ComboBox cbAMFUsage;
         private System.Windows.Forms.Label lblAMFUsage;
         private System.Windows.Forms.ComboBox cbAMFQuality;
         private System.Windows.Forms.Label lblAMFQuality;
-        private System.Windows.Forms.TabPage tbQSV;
+        private System.Windows.Forms.TabPage tpQSV;
         private System.Windows.Forms.ComboBox cbQSVPreset;
         private System.Windows.Forms.Label lblQSVPreset;
         private System.Windows.Forms.NumericUpDown nudQSVBitrate;
