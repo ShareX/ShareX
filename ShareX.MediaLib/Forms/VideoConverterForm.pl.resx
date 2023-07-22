@@ -142,6 +142,12 @@
     <value>Otwórz folder po enkodowaniu</value>
   </data>
   <data name="cbUseCustomArguments.Text" xml:space="preserve">
-    <value>Użyj niestandardowych argumentów</value>
+    <value>Użyj niestandardowych argumentów:</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Enkoder wideo:</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.Text" xml:space="preserve">
+    <value>Użyj bitrate</value>
   </data>
 </root>

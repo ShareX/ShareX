@@ -130,7 +130,7 @@
     <value>Wartość</value>
   </data>
   <data name="btnTestURLSyntax.Text" xml:space="preserve">
-    <value>Test</value>
+    <value>Test...</value>
   </data>
   <data name="btnTextUploaderTest.Text" xml:space="preserve">
     <value>Test</value>

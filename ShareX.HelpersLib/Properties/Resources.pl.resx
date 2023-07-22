@@ -1264,4 +1264,13 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="ShapeType_ToolCutOut" xml:space="preserve">
     <value>Wycięcie (X)</value>
   </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>Upiększanie obrazu</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>Strzałka odręczna</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>Upiększ obraz</value>
+  </data>
 </root>

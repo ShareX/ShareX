@@ -426,4 +426,7 @@
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
     <value>Maksymalna liczba zadań do zapisania:</value>
   </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Automatycznie sprawdzaj aktualizacje</value>
+  </data>
 </root>

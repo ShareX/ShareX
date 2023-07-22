@@ -120,4 +120,7 @@
   <data name="btnConnect.Text" xml:space="preserve">
     <value>Połącz...</value>
   </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
 </root>

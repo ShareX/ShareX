@@ -1086,4 +1086,10 @@ Używanie zaszyfrowanej biblioteki wyłącza udostępnianie.</value>
   <data name="lblSeafileAuthToken.Text" xml:space="preserve">
     <value>Token uwierzytelniania:</value>
   </data>
+  <data name="lblAzureStorageCacheControl.Text" xml:space="preserve">
+    <value>Nagłówek Cache-Control:</value>
+  </data>
+  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
+    <value>Wklej URL API:</value>
+  </data>
 </root>
