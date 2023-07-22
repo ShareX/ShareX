@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Cryptographic\DPAPI.cs" />
     <Compile Include="Emoji.cs" />
+    <Compile Include="Extensions\FormExtensions.cs" />
     <Compile Include="Forms\DebugForm.cs">
       <SubType>Form</SubType>
     </Compile>
