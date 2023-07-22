@@ -945,5 +945,12 @@ namespace ShareX.HelpersLib
                 }
             };
         }
+
+        public static void SelectTabWithoutFocus(this TabControl tabControl, TabPage tabPage)
+        {
+            tabControl.Enabled = false;
+            tabControl.SelectedTab = tabPage;
+            tabControl.Enabled = true;
+        }
     }
 }

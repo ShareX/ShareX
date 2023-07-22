@@ -146,9 +146,6 @@
   <data name="&gt;&gt;lblx264CRF.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="nudx264CRF.Location" type="System.Drawing.Point, System.Drawing">
     <value>72, 4</value>
   </data>
@@ -162,6 +159,9 @@
   <data name="nudx264CRF.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
+  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
     <value>Constant Rate Factor (CRF): The value can be between 0-51, where 0 is lossless, 30 is default, and 51 is the worst possible.
 A higher value means bad quality, but a low file size.</value>
@@ -178,9 +178,6 @@ A higher value means bad quality, but a low file size.</value>
   <data name="&gt;&gt;nudx264CRF.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="nudXvidQscale.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 4</value>
   </data>
@@ -772,6 +769,21 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;lblx264BitrateK.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbx264UseBitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbx264UseBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 6</value>
+  </data>
+  <data name="cbx264UseBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 17</value>
+  </data>
+  <data name="cbx264UseBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>Use bitrate</value>
+  </data>
   <data name="&gt;&gt;cbx264UseBitrate.Name" xml:space="preserve">
     <value>cbx264UseBitrate</value>
   </data>
@@ -783,6 +795,18 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;cbx264UseBitrate.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="nudx264Bitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 4</value>
+  </data>
+  <data name="nudx264Bitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="nudx264Bitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="nudx264Bitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;nudx264Bitrate.Name" xml:space="preserve">
     <value>nudx264Bitrate</value>
@@ -913,6 +937,18 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;lblVP8BitrateK.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="nudVP8Bitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 4</value>
+  </data>
+  <data name="nudVP8Bitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="nudVP8Bitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nudVP8Bitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="&gt;&gt;nudVP8Bitrate.Name" xml:space="preserve">
     <value>nudVP8Bitrate</value>
   </data>
@@ -924,6 +960,21 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;nudVP8Bitrate.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="lblVP8Bitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVP8Bitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblVP8Bitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblVP8Bitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
   </data>
   <data name="&gt;&gt;lblVP8Bitrate.Name" xml:space="preserve">
     <value>lblVP8Bitrate</value>
@@ -1066,6 +1117,21 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tpXvid.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lblNVENCBitrateK.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNVENCBitrateK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 32</value>
+  </data>
+  <data name="lblNVENCBitrateK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblNVENCBitrateK.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblNVENCBitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
   <data name="&gt;&gt;lblNVENCBitrateK.Name" xml:space="preserve">
     <value>lblNVENCBitrateK</value>
   </data>
@@ -1077,6 +1143,15 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;lblNVENCBitrateK.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="cbNVENCPreset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 4</value>
+  </data>
+  <data name="cbNVENCPreset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 21</value>
+  </data>
+  <data name="cbNVENCPreset.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;cbNVENCPreset.Name" xml:space="preserve">
     <value>cbNVENCPreset</value>
@@ -1090,6 +1165,21 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;cbNVENCPreset.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblNVENCPreset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNVENCPreset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblNVENCPreset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblNVENCPreset.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Preset:</value>
+  </data>
   <data name="&gt;&gt;lblNVENCPreset.Name" xml:space="preserve">
     <value>lblNVENCPreset</value>
   </data>
@@ -1102,6 +1192,18 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;lblNVENCPreset.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="nudNVENCBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 28</value>
+  </data>
+  <data name="nudNVENCBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="nudNVENCBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nudNVENCBitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="&gt;&gt;nudNVENCBitrate.Name" xml:space="preserve">
     <value>nudNVENCBitrate</value>
   </data>
@@ -1113,6 +1215,21 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;nudNVENCBitrate.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="lblNVENCBitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNVENCBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 32</value>
+  </data>
+  <data name="lblNVENCBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblNVENCBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
   </data>
   <data name="&gt;&gt;lblNVENCBitrate.Name" xml:space="preserve">
     <value>lblNVENCBitrate</value>
@@ -1290,6 +1407,21 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="&gt;&gt;lblGIFDither.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="lblGIFStatsMode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGIFStatsMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblGIFStatsMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="lblGIFStatsMode.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Palette mode:</value>
   </data>
   <data name="&gt;&gt;lblGIFStatsMode.Name" xml:space="preserve">
     <value>lblGIFStatsMode</value>
@@ -1478,7 +1610,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbAMFQuality.Parent" xml:space="preserve">
-    <value>tbAMF</value>
+    <value>tpAMF</value>
   </data>
   <data name="&gt;&gt;cbAMFQuality.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1508,7 +1640,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblAMFQuality.Parent" xml:space="preserve">
-    <value>tbAMF</value>
+    <value>tpAMF</value>
   </data>
   <data name="&gt;&gt;lblAMFQuality.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1529,7 +1661,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbAMFUsage.Parent" xml:space="preserve">
-    <value>tbAMF</value>
+    <value>tpAMF</value>
   </data>
   <data name="&gt;&gt;cbAMFUsage.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1559,7 +1691,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblAMFUsage.Parent" xml:space="preserve">
-    <value>tbAMF</value>
+    <value>tpAMF</value>
   </data>
   <data name="&gt;&gt;lblAMFUsage.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -1673,7 +1805,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblQSVBitrateK.Parent" xml:space="preserve">
-    <value>tbQSV</value>
+    <value>tpQSV</value>
   </data>
   <data name="&gt;&gt;lblQSVBitrateK.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1694,7 +1826,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbQSVPreset.Parent" xml:space="preserve">
-    <value>tbQSV</value>
+    <value>tpQSV</value>
   </data>
   <data name="&gt;&gt;cbQSVPreset.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1724,7 +1856,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblQSVPreset.Parent" xml:space="preserve">
-    <value>tbQSV</value>
+    <value>tpQSV</value>
   </data>
   <data name="&gt;&gt;lblQSVPreset.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1748,7 +1880,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nudQSVBitrate.Parent" xml:space="preserve">
-    <value>tbQSV</value>
+    <value>tpQSV</value>
   </data>
   <data name="&gt;&gt;nudQSVBitrate.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -1778,10 +1910,58 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblQSVBitrate.Parent" xml:space="preserve">
-    <value>tbQSV</value>
+    <value>tpQSV</value>
   </data>
   <data name="&gt;&gt;lblQSVBitrate.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="tpQSV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 40</value>
+  </data>
+  <data name="tpQSV.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpQSV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 68</value>
+  </data>
+  <data name="tpQSV.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tpQSV.Text" xml:space="preserve">
+    <value>QuickSync</value>
+  </data>
+  <data name="&gt;&gt;tpQSV.Name" xml:space="preserve">
+    <value>tpQSV</value>
+  </data>
+  <data name="&gt;&gt;tpQSV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpQSV.Parent" xml:space="preserve">
+    <value>tcFFmpegVideoCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpQSV.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tcFFmpegVideoCodecs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 184</value>
+  </data>
+  <data name="tcFFmpegVideoCodecs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 112</value>
+  </data>
+  <data name="tcFFmpegVideoCodecs.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.Name" xml:space="preserve">
+    <value>tcFFmpegVideoCodecs</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.TablessControl, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcFFmpegVideoCodecs.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="btnTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 442</value>
