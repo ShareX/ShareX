@@ -801,6 +801,8 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.tcFFmpegAudioCodecs);
+            this.Controls.Add(this.tcFFmpegVideoCodecs);
             this.Controls.Add(this.lblAudioEncoder);
             this.Controls.Add(this.lblVideoEncoder);
             this.Controls.Add(this.cbUseCustomFFmpegPath);
@@ -813,9 +815,7 @@
             this.Controls.Add(this.cbAudioCodec);
             this.Controls.Add(this.lblHelperDevices);
             this.Controls.Add(this.cbVideoCodec);
-            this.Controls.Add(this.tcFFmpegAudioCodecs);
             this.Controls.Add(this.btnInstallHelperDevices);
-            this.Controls.Add(this.tcFFmpegVideoCodecs);
             this.Controls.Add(this.cbVideoSource);
             this.Controls.Add(this.btnFFmpegBrowse);
             this.Controls.Add(this.lblVideoSource);

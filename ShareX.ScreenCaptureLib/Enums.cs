@@ -79,7 +79,10 @@ namespace ShareX.ScreenCaptureLib
 
     internal enum NodeShape
     {
-        Square, Circle, Diamond, CustomNode
+        Square,
+        Circle,
+        Diamond,
+        CustomNode
     }
 
     public enum FFmpegVideoCodec
@@ -145,7 +148,21 @@ namespace ShareX.ScreenCaptureLib
         [Description("Slower")]
         slower,
         [Description("Very slow")]
-        veryslow
+        veryslow,
+        [Description("Placebo")]
+        placebo
+    }
+
+    public enum FFmpegTune
+    {
+        film,
+        animation,
+        grain,
+        stillimage,
+        psnr,
+        ssim,
+        fastdecode,
+        zerolatency
     }
 
     public enum FFmpegNVENCPreset
@@ -216,14 +233,10 @@ namespace ShareX.ScreenCaptureLib
         veryslow
     }
 
-    public enum FFmpegTune
-    {
-        film, animation, grain, stillimage, psnr, ssim, fastdecode, zerolatency
-    }
-
     public enum FFmpegPaletteGenStatsMode
     {
-        full, diff
+        full,
+        diff
     }
 
     public enum FFmpegPaletteUseDither
@@ -340,11 +353,21 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ScreenRecordState
     {
-        Waiting, BeforeStart, AfterStart, AfterRecordingStart, RecordingEnd, Encoding
+        Waiting,
+        BeforeStart,
+        AfterStart,
+        AfterRecordingStart,
+        RecordingEnd,
+        Encoding
     }
 
     public enum ScreenRecordingStatus
     {
-        Waiting, Working, Recording, Paused, Stopped, Aborted
+        Waiting,
+        Working,
+        Recording,
+        Paused,
+        Stopped,
+        Aborted
     }
 }
