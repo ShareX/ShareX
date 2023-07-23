@@ -150,7 +150,7 @@ namespace ShareX.ScreenCaptureLib
                         }
 
                         // https://ffmpeg.org/ffmpeg-filters.html#ddagrab
-                        AppendInputDevice(args, "lavfi", FFmpeg.IsAudioSourceSelected);
+                        AppendInputDevice(args, "lavfi", false);
                         args.Append("-i ddagrab=");
                         args.Append($"output_idx={monitorIndex}:"); // DXGI Output Index to capture.
                         args.Append($"draw_mouse={DrawCursor.ToString().ToLowerInvariant()}:"); // Whether to draw the mouse cursor.
@@ -167,6 +167,12 @@ namespace ShareX.ScreenCaptureLib
                         }
 
                         args.Append(" ");
+
+                        if (FFmpeg.IsAudioSourceSelected)
+                        {
+                            AppendInputDevice(args, "dshow", true);
+                            args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
+                        }
                     }
                     else
                     {
