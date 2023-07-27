@@ -32,7 +32,7 @@ namespace ShareX.HelpersLib
     public unsafe class UnsafeBitmap : IDisposable
     {
         public ColorBgra* Pointer { get; private set; }
-        public bool IsLocked { get; private set; }
+        public bool IsLocked { get; private set; }// changes
         public int Width { get; private set; }
         public int Height { get; private set; }
 

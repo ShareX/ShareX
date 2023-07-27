@@ -34,6 +34,7 @@ namespace ShareX.Steam
 {
     public static class Helpers
     {
+        // Here are some changes
         [DllImport("kernel32.dll")]
         public static extern uint WinExec(string lpCmdLine, uint uCmdShow);
 

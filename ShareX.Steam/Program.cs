@@ -27,6 +27,8 @@ using System.Windows.Forms;
 
 namespace ShareX.Steam
 {
+    // Here are some changes  
+
     internal static class Program 
     {
         private static void Main(string[] args)
@@ -36,5 +38,7 @@ namespace ShareX.Steam
 
             Launcher.Run(args);
         }
+
+        // Here are some changes  
     }
 }
