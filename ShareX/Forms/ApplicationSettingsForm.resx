@@ -130,13 +130,13 @@
     <value>16, 248</value>
   </data>
   <data name="cbAutoCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 17</value>
+    <value>177, 17</value>
   </data>
   <data name="cbAutoCheckUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>16</value>
   </data>
   <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
-    <value>Automatically check updates</value>
+    <value>Automatically check for updates</value>
   </data>
   <data name="&gt;&gt;cbAutoCheckUpdate.Name" xml:space="preserve">
     <value>cbAutoCheckUpdate</value>
@@ -163,7 +163,7 @@
     <value>134, 17</value>
   </data>
   <data name="cbUseWhiteShareXIcon.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>8</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>Use white ShareX icon</value>
@@ -190,7 +190,7 @@
     <value>288, 23</value>
   </data>
   <data name="btnCheckDevBuild.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Install dev build...</value>
@@ -220,7 +220,7 @@
     <value>168, 17</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>Check for pre-release updates</value>
@@ -244,7 +244,7 @@
     <value>288, 21</value>
   </data>
   <data name="cbTrayMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;cbTrayMiddleClickAction.Name" xml:space="preserve">
     <value>cbTrayMiddleClickAction</value>
@@ -271,7 +271,7 @@
     <value>125, 13</value>
   </data>
   <data name="lblTrayMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>On tray icon middle click:</value>
@@ -295,7 +295,7 @@
     <value>288, 21</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftDoubleClickAction.Name" xml:space="preserve">
     <value>cbTrayLeftDoubleClickAction</value>
@@ -346,7 +346,7 @@
     <value>288, 21</value>
   </data>
   <data name="cbTrayLeftClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftClickAction.Name" xml:space="preserve">
     <value>cbTrayLeftClickAction</value>
@@ -373,7 +373,7 @@
     <value>109, 13</value>
   </data>
   <data name="lblTrayLeftClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
     <value>On tray icon left click:</value>
@@ -400,7 +400,7 @@
     <value>288, 23</value>
   </data>
   <data name="btnEditQuickTaskMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>15</value>
   </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Edit quick task menu...</value>
@@ -430,7 +430,7 @@
     <value>96, 17</value>
   </data>
   <data name="cbShowTray.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Show tray icon</value>
@@ -460,7 +460,7 @@
     <value>150, 17</value>
   </data>
   <data name="cbTrayIconProgressEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
     <value>Show progress in tray icon</value>
@@ -535,7 +535,7 @@
     <value>180, 17</value>
   </data>
   <data name="cbRememberMainFormPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Remember main window position</value>
@@ -565,7 +565,7 @@
     <value>136, 17</value>
   </data>
   <data name="cbSilentRun.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>Minimize to tray on start</value>
@@ -595,7 +595,7 @@
     <value>178, 17</value>
   </data>
   <data name="cbTaskbarProgressEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Show progress in taskbar button</value>
@@ -625,7 +625,7 @@
     <value>162, 17</value>
   </data>
   <data name="cbRememberMainFormSize.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Remember main window size</value>
