@@ -33,6 +33,7 @@ namespace ShareX
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationSettingsForm));
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.cbAutoCheckUpdate = new System.Windows.Forms.CheckBox();
             this.cbUseWhiteShareXIcon = new System.Windows.Forms.CheckBox();
             this.btnCheckDevBuild = new System.Windows.Forms.Button();
             this.cbCheckPreReleaseUpdates = new System.Windows.Forms.CheckBox();
@@ -181,7 +182,6 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbAutoCheckUpdate = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -258,6 +258,13 @@ namespace ShareX
             this.tpGeneral.Controls.Add(this.lblLanguage);
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
+            // 
+            // cbAutoCheckUpdate
+            // 
+            resources.ApplyResources(this.cbAutoCheckUpdate, "cbAutoCheckUpdate");
+            this.cbAutoCheckUpdate.Name = "cbAutoCheckUpdate";
+            this.cbAutoCheckUpdate.UseVisualStyleBackColor = true;
+            this.cbAutoCheckUpdate.CheckedChanged += new System.EventHandler(this.cbAutoCheckUpdate_CheckedChanged);
             // 
             // cbUseWhiteShareXIcon
             // 
@@ -1415,13 +1422,6 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // cbAutoCheckUpdate
-            // 
-            resources.ApplyResources(this.cbAutoCheckUpdate, "cbAutoCheckUpdate");
-            this.cbAutoCheckUpdate.Name = "cbAutoCheckUpdate";
-            this.cbAutoCheckUpdate.UseVisualStyleBackColor = true;
-            this.cbAutoCheckUpdate.CheckedChanged += new System.EventHandler(this.cbAutoCheckUpdate_CheckedChanged);
             // 
             // ApplicationSettingsForm
             // 

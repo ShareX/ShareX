@@ -133,6 +133,7 @@ namespace ShareX
             else
             {
                 cbAutoCheckUpdate.Checked = Program.Settings.AutoCheckUpdate;
+                cbCheckPreReleaseUpdates.Enabled = Program.Settings.AutoCheckUpdate;
                 cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
             }
 #endif
@@ -449,6 +450,7 @@ namespace ShareX
         private void cbAutoCheckUpdate_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.AutoCheckUpdate = cbAutoCheckUpdate.Checked;
+            cbCheckPreReleaseUpdates.Enabled = Program.Settings.AutoCheckUpdate;
         }
 
         private void cbCheckPreReleaseUpdates_CheckedChanged(object sender, EventArgs e)
