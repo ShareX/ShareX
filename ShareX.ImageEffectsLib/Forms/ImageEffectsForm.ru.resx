@@ -130,7 +130,7 @@
     <value>Из файла...</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>Сохранить изображение...</value>
+    <value>Сохранить</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Загрузить изображение</value>
