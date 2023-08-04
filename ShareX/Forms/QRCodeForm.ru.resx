@@ -160,7 +160,7 @@
     <value>Сканировать QR-код с экрана...</value>
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
-    <value>Загрузить изображение</value>
+    <value>Загрузить</value>
   </data>
   <data name="lblQRCode.Text" xml:space="preserve">
     <value>QR-код:</value>
