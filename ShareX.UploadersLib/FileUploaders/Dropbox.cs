@@ -59,14 +59,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpDropbox;
     }
 
-    // TEMP: For backward compatibility
-    public enum DropboxURLType
-    {
-        Default,
-        Shortened,
-        Direct
-    }
-
     public sealed class Dropbox : FileUploader, IOAuth2Basic
     {
         private const string APIVersion = "2";
@@ -91,8 +83,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private const string URLDelete = URLAPI + "/files/delete";
         private const string URLMove = URLAPI + "/files/move";
 
-        private const string URLShareDirect = "https://dl.dropboxusercontent.com/s";
-        private const string URLPublicDirect = "https://dl.dropboxusercontent.com/u";
+        private const string URLShareDirect = "https://dl.dropboxusercontent.com/scl/fi/";
 
         public OAuth2Info AuthInfo { get; set; }
         public string UploadPath { get; set; }
@@ -444,18 +435,12 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private static string GetDirectShareableURL(string url)
         {
-            string find = "dropbox.com/s/";
+            string find = "dropbox.com/scl/fi/";
             int index = url.IndexOf(find);
 
             if (index > -1)
             {
-                string path = url.Substring(index + find.Length);
-                index = path.LastIndexOf('?');
-
-                if (index > -1)
-                {
-                    path = path.Remove(index);
-                }
+                string path = url.Remove(0, index + find.Length);
 
                 if (!string.IsNullOrEmpty(path))
                 {

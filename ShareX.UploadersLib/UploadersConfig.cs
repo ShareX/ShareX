@@ -160,9 +160,6 @@ namespace ShareX.UploadersLib
         public bool DropboxAutoCreateShareableLink { get; set; } = true;
         public bool DropboxUseDirectLink { get; set; } = false;
 
-        // TEMP: For backward compatibility
-        public DropboxURLType DropboxURLType = DropboxURLType.Default;
-
         #endregion Dropbox
 
         #region FTP
