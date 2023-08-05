@@ -133,8 +133,6 @@ namespace ShareX.UploadersLib
         Sul,
         [Description("LobFile")]
         Lithiio,
-        [Description("transfer.sh")]
-        Transfersh,
         [Description("Plik")]
         Plik,
         [Description("YouTube")]
