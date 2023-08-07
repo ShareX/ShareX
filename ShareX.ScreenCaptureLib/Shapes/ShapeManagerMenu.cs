@@ -594,7 +594,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudStepFontSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateToolbar_FontSize);
             tslnudStepFontSize.Content.Minimum = 10;
-            tslnudStepFontSize.Content.Maximum = 100;
+            tslnudStepFontSize.Content.Maximum = 300;
             tslnudStepFontSize.Content.ValueChanged = (sender, e) =>
             {
                 AnnotationOptions.StepFontSize = (int)tslnudStepFontSize.Content.Value;
