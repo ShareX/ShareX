@@ -329,20 +329,6 @@ namespace ShareX.UploadersLib
 
         #endregion
 
-        #region Teknik
-
-        public OAuth2Info TeknikOAuth2Info { get; set; } = null;
-        public string TeknikUploadAPIUrl { get; set; } = Teknik.DefaultUploadAPIURL;
-        public string TeknikPasteAPIUrl { get; set; } = Teknik.DefaultPasteAPIURL;
-        public string TeknikUrlShortenerAPIUrl { get; set; } = Teknik.DefaultUrlShortenerAPIURL;
-        public string TeknikAuthUrl { get; set; } = Teknik.DefaultAuthURL;
-        public TeknikExpirationUnit TeknikExpirationUnit { get; set; } = TeknikExpirationUnit.Never;
-        public int TeknikExpirationLength { get; set; } = 1;
-        public bool TeknikEncryption { get; set; } = false;
-        public bool TeknikGenerateDeletionKey { get; set; } = false;
-
-        #endregion Teknik
-
         #region Pomf
 
         public PomfUploader PomfUploader { get; set; } = new PomfUploader();

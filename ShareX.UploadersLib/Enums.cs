@@ -64,8 +64,6 @@ namespace ShareX.UploadersLib
         Paste_ee,
         [Description("GitHub Gist")]
         Gist,
-        [Description("Teknik")]
-        Teknik,
         [Description("uPaste")]
         Upaste,
         [Description("Hastebin")]
@@ -119,8 +117,6 @@ namespace ShareX.UploadersLib
         Jira,
         [Description("Lambda")]
         Lambda,
-        [Description("Teknik")]
-        Teknik,
         [Description("Pomf")]
         Pomf,
         [Description("Uguu")]
@@ -165,8 +161,6 @@ namespace ShareX.UploadersLib
         AdFly,
         [Description("qr.net")]
         QRnet,
-        [Description("tknk.io")]
-        Teknik,
         [Description("vurl.com")]
         VURL,
         [Description("2.gp")]

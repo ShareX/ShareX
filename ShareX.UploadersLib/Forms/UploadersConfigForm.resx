@@ -459,7 +459,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauthTwitter</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
     <value>tpTwitter</value>
@@ -714,7 +714,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Bitly</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
     <value>tpBitly</value>
@@ -2349,7 +2349,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>eiFTP</value>
   </data>
   <data name="&gt;&gt;eiFTP.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
     <value>gbFTPAccount</value>
@@ -3555,7 +3555,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Dropbox</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
     <value>tpDropbox</value>
@@ -3687,7 +3687,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oAuth2OneDrive</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
     <value>tpOneDrive</value>
@@ -3735,7 +3735,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2GoogleDrive</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
@@ -3900,7 +3900,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvGoogleDriveFoldersList</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
@@ -4365,7 +4365,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvBoxFolders</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -4446,7 +4446,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Box</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -5325,7 +5325,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2GoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
     <value>tpGoogleCloudStorage</value>
@@ -6210,13 +6210,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>16</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -6597,7 +6597,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>atcGfycatAccountType</value>
   </data>
   <data name="&gt;&gt;atcGfycatAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcGfycatAccountType.Parent" xml:space="preserve">
     <value>tpGfycat</value>
@@ -6618,7 +6618,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Gfycat</value>
   </data>
   <data name="&gt;&gt;oauth2Gfycat.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Gfycat.Parent" xml:space="preserve">
     <value>tpGfycat</value>
@@ -7977,7 +7977,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>atcSendSpaceAccountType</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
     <value>tpSendSpace</value>
@@ -8346,7 +8346,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oAuthJira</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
     <value>tpJira</value>
@@ -8537,393 +8537,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;tpLambda.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="nudTeknikExpirationLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 320</value>
-  </data>
-  <data name="nudTeknikExpirationLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="nudTeknikExpirationLength.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="nudTeknikExpirationLength.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudTeknikExpirationLength.Name" xml:space="preserve">
-    <value>nudTeknikExpirationLength</value>
-  </data>
-  <data name="&gt;&gt;nudTeknikExpirationLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudTeknikExpirationLength.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;nudTeknikExpirationLength.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbTeknikExpirationUnit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 320</value>
-  </data>
-  <data name="cbTeknikExpirationUnit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
-  </data>
-  <data name="cbTeknikExpirationUnit.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikExpirationUnit.Name" xml:space="preserve">
-    <value>cbTeknikExpirationUnit</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikExpirationUnit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikExpirationUnit.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikExpirationUnit.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblTeknikExpiration.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblTeknikExpiration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTeknikExpiration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 304</value>
-  </data>
-  <data name="lblTeknikExpiration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="lblTeknikExpiration.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Expiration:</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikExpiration.Name" xml:space="preserve">
-    <value>lblTeknikExpiration</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikExpiration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikExpiration.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikExpiration.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 160</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 13</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>URL Shortener API URL:</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikUrlShortenerAPIUrl.Name" xml:space="preserve">
-    <value>lblTeknikUrlShortenerAPIUrl</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikUrlShortenerAPIUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikUrlShortenerAPIUrl.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikUrlShortenerAPIUrl.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tbTeknikUrlShortenerAPIUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 176</value>
-  </data>
-  <data name="tbTeknikUrlShortenerAPIUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="tbTeknikUrlShortenerAPIUrl.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikUrlShortenerAPIUrl.Name" xml:space="preserve">
-    <value>tbTeknikUrlShortenerAPIUrl</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikUrlShortenerAPIUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikUrlShortenerAPIUrl.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikUrlShortenerAPIUrl.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 112</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>Paste API URL:</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikPasteAPIUrl.Name" xml:space="preserve">
-    <value>lblTeknikPasteAPIUrl</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikPasteAPIUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikPasteAPIUrl.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikPasteAPIUrl.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tbTeknikPasteAPIUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 128</value>
-  </data>
-  <data name="tbTeknikPasteAPIUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="tbTeknikPasteAPIUrl.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikPasteAPIUrl.Name" xml:space="preserve">
-    <value>tbTeknikPasteAPIUrl</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikPasteAPIUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikPasteAPIUrl.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikPasteAPIUrl.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lblTeknikAuthUrl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblTeknikAuthUrl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 16</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 13</value>
-  </data>
-  <data name="lblTeknikAuthUrl.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>Authentication URL:</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikAuthUrl.Name" xml:space="preserve">
-    <value>lblTeknikAuthUrl</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikAuthUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikAuthUrl.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikAuthUrl.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tbTeknikAuthUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 32</value>
-  </data>
-  <data name="tbTeknikAuthUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="tbTeknikAuthUrl.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikAuthUrl.Name" xml:space="preserve">
-    <value>tbTeknikAuthUrl</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikAuthUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikAuthUrl.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikAuthUrl.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 280</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 17</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>Generate deletion key</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikGenDeleteKey.Name" xml:space="preserve">
-    <value>cbTeknikGenDeleteKey</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikGenDeleteKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikGenDeleteKey.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikGenDeleteKey.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="cbTeknikEncrypt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbTeknikEncrypt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbTeknikEncrypt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 256</value>
-  </data>
-  <data name="cbTeknikEncrypt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
-  </data>
-  <data name="cbTeknikEncrypt.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>Client side encryption</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikEncrypt.Name" xml:space="preserve">
-    <value>cbTeknikEncrypt</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikEncrypt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikEncrypt.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;cbTeknikEncrypt.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 64</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>Upload API URL:</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikUploadAPIUrl.Name" xml:space="preserve">
-    <value>lblTeknikUploadAPIUrl</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikUploadAPIUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikUploadAPIUrl.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;lblTeknikUploadAPIUrl.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="tbTeknikUploadAPIUrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 80</value>
-  </data>
-  <data name="tbTeknikUploadAPIUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="tbTeknikUploadAPIUrl.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikUploadAPIUrl.Name" xml:space="preserve">
-    <value>tbTeknikUploadAPIUrl</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikUploadAPIUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikUploadAPIUrl.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;tbTeknikUploadAPIUrl.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="oauthTeknik.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="oauthTeknik.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 232</value>
-  </data>
-  <data name="oauthTeknik.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;oauthTeknik.Name" xml:space="preserve">
-    <value>oauthTeknik</value>
-  </data>
-  <data name="&gt;&gt;oauthTeknik.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauthTeknik.Parent" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;oauthTeknik.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="tpTeknik.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
-  </data>
-  <data name="tpTeknik.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpTeknik.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
-  </data>
-  <data name="tpTeknik.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="tpTeknik.Text" xml:space="preserve">
-    <value>Teknik</value>
-  </data>
-  <data name="&gt;&gt;tpTeknik.Name" xml:space="preserve">
-    <value>tpTeknik</value>
-  </data>
-  <data name="&gt;&gt;tpTeknik.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpTeknik.Parent" xml:space="preserve">
-    <value>tcFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpTeknik.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
   <data name="txtPomfResultURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
   </data>
@@ -9051,7 +8664,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPomf.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
@@ -9312,7 +8925,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvSeafileLibraries</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Parent" xml:space="preserve">
     <value>tpSeafile</value>
@@ -10042,7 +9655,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSeafile.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="cbStreamableUseDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -10210,7 +9823,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpStreamable.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="btnSulGetAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -10315,7 +9928,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSul.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>22</value>
   </data>
   <data name="btnLithiioFetchAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -10549,7 +10162,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLithiio.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>23</value>
   </data>
   <data name="cbPlikOneShot.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -11056,7 +10669,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPlik.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>24</value>
   </data>
   <data name="oauth2YouTube.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -11071,7 +10684,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2YouTube</value>
   </data>
   <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
     <value>tpYouTube</value>
@@ -11251,10 +10864,10 @@ Using an encrypted library disables sharing.</value>
     <value>6</value>
   </data>
   <data name="tpYouTube.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpYouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpYouTube.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -11272,7 +10885,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpYouTube.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>25</value>
   </data>
   <data name="lbSharedFolderAccounts.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -11578,7 +11191,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>26</value>
   </data>
   <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 408</value>
@@ -11998,7 +11611,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>27</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -12805,7 +12418,7 @@ Using an encrypted library disables sharing.</value>
     <value>oAuth2Gist</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
     <value>tpGist</value>
@@ -13444,7 +13057,7 @@ Using an encrypted library disables sharing.</value>
     <value>atcImgurAccountType</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13465,7 +13078,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2Imgur</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13501,7 +13114,7 @@ Using an encrypted library disables sharing.</value>
     <value>lvImgurAlbumList</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13900,7 +13513,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauthFlickr</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Parent" xml:space="preserve">
     <value>tpFlickr</value>
@@ -14437,7 +14050,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2GooglePhotos</value>
   </data>
   <data name="&gt;&gt;oauth2GooglePhotos.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GooglePhotos.Parent" xml:space="preserve">
     <value>tpGooglePhotos</value>
@@ -15097,7 +14710,7 @@ Using an encrypted library disables sharing.</value>
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -15118,7 +14731,7 @@ Using an encrypted library disables sharing.</value>
     <value>actRapidShareAccountType</value>
   </data>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=14.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

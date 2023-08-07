@@ -601,26 +601,6 @@ namespace ShareX.UploadersLib
 
             #endregion
 
-            #region Teknik
-
-            if (OAuth2Info.CheckOAuth(Config.TeknikOAuth2Info))
-            {
-                oauthTeknik.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
-            tbTeknikUploadAPIUrl.Text = Config.TeknikUploadAPIUrl;
-            tbTeknikPasteAPIUrl.Text = Config.TeknikPasteAPIUrl;
-            tbTeknikUrlShortenerAPIUrl.Text = Config.TeknikUrlShortenerAPIUrl;
-            tbTeknikAuthUrl.Text = Config.TeknikAuthUrl;
-            cbTeknikEncrypt.Checked = Config.TeknikEncryption;
-            cbTeknikGenDeleteKey.Checked = Config.TeknikGenerateDeletionKey;
-            cbTeknikExpirationUnit.Items.AddRange(Enum.GetNames(typeof(TeknikExpirationUnit)));
-            cbTeknikExpirationUnit.SelectedIndex = (int)Config.TeknikExpirationUnit;
-            nudTeknikExpirationLength.SetValue(Config.TeknikExpirationLength);
-            nudTeknikExpirationLength.Visible = Config.TeknikExpirationUnit != TeknikExpirationUnit.Never;
-
-            #endregion Teknik
-
             #region Pomf
 
             if (Config.PomfUploader == null) Config.PomfUploader = new PomfUploader();
@@ -2420,72 +2400,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Lambda
-
-        #region Teknik
-
-        private void oauthTeknik_OpenButtonClicked()
-        {
-            OAuth2Info oauth = new OAuth2Info(APIKeys.TeknikClientID, APIKeys.TeknikClientSecret);
-            Config.TeknikOAuth2Info = OAuth2Open(new TeknikUploader(oauth, Config.TeknikAuthUrl));
-        }
-
-        private void oauthTeknik_CompleteButtonClicked(string code)
-        {
-            OAuth2Complete(new TeknikUploader(Config.TeknikOAuth2Info, Config.TeknikAuthUrl), code, oauthTeknik);
-        }
-
-        private void oauthTeknik_ClearButtonClicked()
-        {
-            Config.TeknikOAuth2Info = null;
-        }
-
-        private void oauthTeknik_RefreshButtonClicked()
-        {
-            OAuth2Refresh(new TeknikUploader(Config.TeknikOAuth2Info, Config.TeknikAuthUrl), oauthTeknik);
-        }
-
-        private void tbTeknikAuthUrl_TextChanged(object sender, EventArgs e)
-        {
-            Config.TeknikAuthUrl = tbTeknikAuthUrl.Text;
-        }
-
-        private void tbTeknikUploadAPIUrl_TextChanged(object sender, EventArgs e)
-        {
-            Config.TeknikUploadAPIUrl = tbTeknikUploadAPIUrl.Text;
-        }
-
-        private void tbTeknikPasteAPIUrl_TextChanged(object sender, EventArgs e)
-        {
-            Config.TeknikPasteAPIUrl = tbTeknikPasteAPIUrl.Text;
-        }
-
-        private void tbTeknikUrlShortenerAPIUrl_TextChanged(object sender, EventArgs e)
-        {
-            Config.TeknikUrlShortenerAPIUrl = tbTeknikUrlShortenerAPIUrl.Text;
-        }
-
-        private void cbTeknikEncrypt_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.TeknikEncryption = cbTeknikEncrypt.Checked;
-        }
-
-        private void cbTeknikGenDeleteKey_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.TeknikGenerateDeletionKey = cbTeknikGenDeleteKey.Checked;
-        }
-
-        private void cbTeknikExpirationUnit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Config.TeknikExpirationUnit = (TeknikExpirationUnit)cbTeknikExpirationUnit.SelectedIndex;
-            nudTeknikExpirationLength.Visible = Config.TeknikExpirationUnit != TeknikExpirationUnit.Never;
-        }
-
-        private void nudTeknikExpirationLength_ValueChanged(object sender, EventArgs e)
-        {
-            Config.TeknikExpirationLength = (int)nudTeknikExpirationLength.Value;
-        }
-
-        #endregion Teknik
 
         #region Pomf
 
