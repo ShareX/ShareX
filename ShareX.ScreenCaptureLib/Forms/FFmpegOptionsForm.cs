@@ -38,6 +38,7 @@ namespace ShareX.ScreenCaptureLib
     public partial class FFmpegOptionsForm : Form
     {
         public ScreenRecordingOptions Options { get; private set; }
+        public ScreenRecordingOptions Options2 { get; private set; }
 
         private bool settingsLoaded;
 
