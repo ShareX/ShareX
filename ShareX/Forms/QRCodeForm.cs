@@ -40,7 +40,7 @@ namespace ShareX
 {
     public partial class QRCodeForm : Form
     {
-        private static QRCodeForm instance;
+        private static QRCodeForm1 instance;
 
         public static QRCodeForm Instance
         {
