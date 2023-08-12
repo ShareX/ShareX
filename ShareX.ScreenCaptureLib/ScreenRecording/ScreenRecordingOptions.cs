@@ -267,6 +267,7 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.h264_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
                         case FFmpegVideoCodec.hevc_nvenc:
                             args.Append($"-preset {FFmpeg.NVENC_Preset} ");
+                            args.Append($"-tune {FFmpeg.NVENC_Tune} ");
                             args.Append($"-b:v {FFmpeg.NVENC_Bitrate}k ");
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;

@@ -52,10 +52,11 @@ namespace ShareX.ScreenCaptureLib
             cbAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
             cbx264Preset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
             cbGIFStatsMode.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteGenStatsMode>());
-            cbNVENCPreset.Items.AddRange(Helpers.GetEnums<FFmpegNVENCPreset>().Select(x => $"{x} ({x.GetDescription()})").ToArray());
+            cbNVENCPreset.Items.AddRange(Helpers.GetEnums<FFmpegNVENCPreset>().Select(x => $"{x} - {x.GetDescription()}").ToArray());
+            cbNVENCTune.Items.AddRange(Helpers.GetEnums<FFmpegNVENCTune>().Select(x => $"{x} - {x.GetDescription()}").ToArray());
             cbGIFDither.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteUseDither>());
-            cbAMFUsage.Items.AddRange(Helpers.GetEnums<FFmpegAMFUsage>().Select(x => $"{x} ({x.GetDescription()})").ToArray());
-            cbAMFQuality.Items.AddRange(Helpers.GetEnums<FFmpegAMFQuality>().Select(x => $"{x} ({x.GetDescription()})").ToArray());
+            cbAMFUsage.Items.AddRange(Helpers.GetEnums<FFmpegAMFUsage>().Select(x => $"{x} - {x.GetDescription()}").ToArray());
+            cbAMFQuality.Items.AddRange(Helpers.GetEnums<FFmpegAMFQuality>().Select(x => $"{x} - {x.GetDescription()}").ToArray());
             cbQSVPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegQSVPreset>());
         }
 
@@ -96,6 +97,7 @@ namespace ShareX.ScreenCaptureLib
             // NVENC
             nudNVENCBitrate.SetValue(Options.FFmpeg.NVENC_Bitrate);
             cbNVENCPreset.SelectedIndex = (int)Options.FFmpeg.NVENC_Preset;
+            cbNVENCTune.SelectedIndex = (int)Options.FFmpeg.NVENC_Tune;
 
             // GIF
             cbGIFStatsMode.SelectedIndex = (int)Options.FFmpeg.GIFStatsMode;
@@ -415,15 +417,21 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
+        private void nudNVENCBitrate_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.NVENC_Bitrate = (int)nudNVENCBitrate.Value;
+            UpdateUI();
+        }
+
         private void cbNVENCPreset_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.NVENC_Preset = (FFmpegNVENCPreset)cbNVENCPreset.SelectedIndex;
             UpdateUI();
         }
 
-        private void nudNVENCBitrate_ValueChanged(object sender, EventArgs e)
+        private void cbNVENCTune_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.NVENC_Bitrate = (int)nudNVENCBitrate.Value;
+            Options.FFmpeg.NVENC_Tune = (FFmpegNVENCTune)cbNVENCTune.SelectedIndex;
             UpdateUI();
         }
 

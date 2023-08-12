@@ -106,6 +106,8 @@
             this.cbUseCustomFFmpegPath = new System.Windows.Forms.CheckBox();
             this.lblVideoEncoder = new System.Windows.Forms.Label();
             this.lblAudioEncoder = new System.Windows.Forms.Label();
+            this.lblNVENCTune = new System.Windows.Forms.Label();
+            this.cbNVENCTune = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -455,6 +457,8 @@
             // tpNVENC
             // 
             this.tpNVENC.BackColor = System.Drawing.SystemColors.Window;
+            this.tpNVENC.Controls.Add(this.cbNVENCTune);
+            this.tpNVENC.Controls.Add(this.lblNVENCTune);
             this.tpNVENC.Controls.Add(this.lblNVENCBitrateK);
             this.tpNVENC.Controls.Add(this.cbNVENCPreset);
             this.tpNVENC.Controls.Add(this.lblNVENCPreset);
@@ -796,6 +800,19 @@
             resources.ApplyResources(this.lblAudioEncoder, "lblAudioEncoder");
             this.lblAudioEncoder.Name = "lblAudioEncoder";
             // 
+            // lblNVENCTune
+            // 
+            resources.ApplyResources(this.lblNVENCTune, "lblNVENCTune");
+            this.lblNVENCTune.Name = "lblNVENCTune";
+            // 
+            // cbNVENCTune
+            // 
+            this.cbNVENCTune.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNVENCTune.FormattingEnabled = true;
+            resources.ApplyResources(this.cbNVENCTune, "cbNVENCTune");
+            this.cbNVENCTune.Name = "cbNVENCTune";
+            this.cbNVENCTune.SelectedIndexChanged += new System.EventHandler(this.cbNVENCTune_SelectedIndexChanged);
+            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -948,5 +965,7 @@
         private System.Windows.Forms.Label lblAMFBitrateK;
         private System.Windows.Forms.NumericUpDown nudAMFBitrate;
         private System.Windows.Forms.Label lblAMFBitrate;
+        private System.Windows.Forms.ComboBox cbNVENCTune;
+        private System.Windows.Forms.Label lblNVENCTune;
     }
 }

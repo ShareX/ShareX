@@ -167,30 +167,32 @@ namespace ShareX.ScreenCaptureLib
 
     public enum FFmpegNVENCPreset
     {
-        [Description("Default")]
-        @default,
-        [Description("High quality 2 passes")]
-        slow,
-        [Description("High quality 1 pass")]
-        medium,
-        [Description("High performance 1 pass")]
-        fast,
-        [Description("High performance")]
-        hp,
+        [Description("Fastest (Lowest quality)")]
+        p1,
+        [Description("Faster (Lower quality)")]
+        p2,
+        [Description("Fast (Low quality)")]
+        p3,
+        [Description("Medium (Medium quality)")]
+        p4,
+        [Description("Slow (Good quality)")]
+        p5,
+        [Description("Slower (Better quality)")]
+        p6,
+        [Description("Slowest (Best quality)")]
+        p7
+    }
+
+    public enum FFmpegNVENCTune
+    {
         [Description("High quality")]
         hq,
-        [Description("Bluray disk")]
-        bd,
         [Description("Low latency")]
         ll,
-        [Description("Low latency high quality")]
-        llhq,
-        [Description("Low latency high performance")]
-        llhp,
+        [Description("Ultra low latency")]
+        ull,
         [Description("Lossless")]
-        lossless,
-        [Description("Lossless high performance")]
-        losslesshp
+        lossless
     }
 
     public enum FFmpegAMFUsage

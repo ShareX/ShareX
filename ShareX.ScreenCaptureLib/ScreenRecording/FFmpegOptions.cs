@@ -47,7 +47,8 @@ namespace ShareX.ScreenCaptureLib
         public int x264_Bitrate { get; set; } = 3000; // kbit/s
         public int VPx_Bitrate { get; set; } = 3000; // kbit/s
         public int XviD_QScale { get; set; } = 10;
-        public FFmpegNVENCPreset NVENC_Preset { get; set; } = FFmpegNVENCPreset.llhp;
+        public FFmpegNVENCPreset NVENC_Preset { get; set; } = FFmpegNVENCPreset.p4;
+        public FFmpegNVENCTune NVENC_Tune { get; set; } = FFmpegNVENCTune.ll;
         public int NVENC_Bitrate { get; set; } = 3000; // kbit/s
         public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; } = FFmpegPaletteGenStatsMode.full;
         public FFmpegPaletteUseDither GIFDither { get; set; } = FFmpegPaletteUseDither.sierra2_4a;
