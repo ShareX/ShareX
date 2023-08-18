@@ -46,7 +46,7 @@ namespace ShareX
         {
             get
             {
-                if (instance == null || instance.IsDisposed)
+                if (instance == null || instance.IsDisposed || instance.AllowDrop)
                 {
                     instance = new QRCodeForm();
                 }
