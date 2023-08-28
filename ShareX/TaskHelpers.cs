@@ -39,6 +39,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -182,10 +183,10 @@ namespace ShareX
                     OpenRuler(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreen:
-                    PinToScreen();
+                    PinToScreen(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreenFromScreen:
-                    PinToScreenFromScreen();
+                    PinToScreenFromScreen(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreenFromClipboard:
                     PinToScreenFromClipboard();
@@ -1267,7 +1268,7 @@ namespace ShareX
             QRCodeForm.OpenFormScanFromScreen();
         }
 
-        public static void OpenRuler(TaskSettings taskSettings = null)
+        public static void  OpenRuler(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
@@ -1379,9 +1380,11 @@ namespace ShareX
             }
         }
 
-        public static void PinToScreen()
+        public static void PinToScreen(TaskSettings taskSettings = null)
         {
-            using (PinToScreenStartupForm form = new PinToScreenStartupForm())
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            using (PinToScreenStartupForm form = new PinToScreenStartupForm(taskSettings.CaptureSettings.SurfaceOptions))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -1412,9 +1415,11 @@ namespace ShareX
             PinToScreen(image);
         }
 
-        public static void PinToScreenFromScreen()
+        public static void PinToScreenFromScreen(TaskSettings taskSettings = null)
         {
-            Image image = RegionCaptureTasks.GetRegionImage(out Rectangle rect);
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            Image image = RegionCaptureTasks.GetRegionImage(out Rectangle rect,taskSettings.CaptureSettings.SurfaceOptions);
 
             PinToScreen(image, rect.Location);
         }
