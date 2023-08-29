@@ -1805,7 +1805,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.es-MX.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.es.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
@@ -1905,7 +1904,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterUploadForm.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>
@@ -1964,9 +1962,7 @@
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.resx">
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.de.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.es-MX.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
     <EmbeddedResource Include="Properties\Resources.fa-IR.resx" />
