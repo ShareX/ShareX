@@ -197,24 +197,28 @@ namespace ShareX.ScreenCaptureLib
 
     public enum FFmpegAMFUsage
     {
-        [Description("Generic Transcoding")]
-        transcoding = 0,
-        [Description("Ultra Low Latency")]
-        ultralowlatency = 1,
-        [Description("Low Latency")]
-        lowlatency = 2,
+        [Description("Generic transcoding")]
+        transcoding,
+        [Description("Ultra low latency transcoding")]
+        ultralowlatency,
+        [Description("Low latency transcoding")]
+        lowlatency,
         [Description("Webcam")]
-        webcam = 3
+        webcam,
+        [Description("High quality transcoding")]
+        high_quality,
+        [Description("Low latency yet high quality transcoding")]
+        lowlatency_high_quality
     }
 
     public enum FFmpegAMFQuality
     {
-        [Description("Prefer Speed")]
-        speed = 0,
+        [Description("Prefer speed")]
+        speed,
         [Description("Balanced")]
-        balanced = 1,
-        [Description("Prefer Quality")]
-        quality = 2
+        balanced,
+        [Description("Prefer quality")]
+        quality
     }
 
     public enum FFmpegQSVPreset

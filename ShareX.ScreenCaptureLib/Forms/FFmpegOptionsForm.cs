@@ -52,11 +52,11 @@ namespace ShareX.ScreenCaptureLib
             cbAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
             cbx264Preset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
             cbGIFStatsMode.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteGenStatsMode>());
-            cbNVENCPreset.Items.AddRange(Helpers.GetEnums<FFmpegNVENCPreset>().Select(x => $"{x} - {x.GetDescription()}").ToArray());
-            cbNVENCTune.Items.AddRange(Helpers.GetEnums<FFmpegNVENCTune>().Select(x => $"{x} - {x.GetDescription()}").ToArray());
+            cbNVENCPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegNVENCPreset>());
+            cbNVENCTune.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegNVENCTune>());
             cbGIFDither.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteUseDither>());
-            cbAMFUsage.Items.AddRange(Helpers.GetEnums<FFmpegAMFUsage>().Select(x => $"{x} - {x.GetDescription()}").ToArray());
-            cbAMFQuality.Items.AddRange(Helpers.GetEnums<FFmpegAMFQuality>().Select(x => $"{x} - {x.GetDescription()}").ToArray());
+            cbAMFUsage.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAMFUsage>());
+            cbAMFQuality.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAMFQuality>());
             cbQSVPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegQSVPreset>());
         }
 
