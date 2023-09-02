@@ -67,14 +67,6 @@ jobs:
         run: |
           Invoke-WebRequest -Uri "$env:API_KEYS" -OutFile "ShareX.UploadersLib\APIKeys\APIKeysLocal.cs"
 
-      - name: Cache NuGet packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-
-
       - name: Restore NuGet packages
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: nuget restore "${{ env.SOLUTION_FILE_PATH }}" -Project2ProjectTimeOut 300
