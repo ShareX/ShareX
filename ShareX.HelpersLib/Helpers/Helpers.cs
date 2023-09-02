@@ -368,6 +368,12 @@ namespace ShareX.HelpersLib
             return OSVersion.Major >= 10 && OSVersion.Build >= build;
         }
 
+        public static bool IsWindows11OrGreater(int build = -1)
+        {
+            build = Math.Max(22000, build);
+            return OSVersion.Major >= 10 && OSVersion.Build >= build;
+        }
+
         public static bool IsDefaultInstallDir()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);

@@ -90,18 +90,20 @@ namespace ShareX.ScreenCaptureLib
                             return CaptureWindow(handle);
                         }
 
-                        Thread.Sleep(10);
                         Application.DoEvents();
+                        Thread.Sleep(10);
 
                         whiteBackground = CaptureRectangleNative(rect);
 
                         form.BackColor = Color.Black;
                         Application.DoEvents();
+                        Thread.Sleep(10);
 
                         blackBackground = CaptureRectangleNative(rect);
 
                         form.BackColor = Color.White;
                         Application.DoEvents();
+                        Thread.Sleep(10);
 
                         whiteBackground2 = CaptureRectangleNative(rect);
 
@@ -204,20 +206,20 @@ namespace ShareX.ScreenCaptureLib
 
         private void TrimShadow(Bitmap bitmap)
         {
-            int sizeLimit = 10;
-            int alphaLimit = 200;
+            int cornerSize = 10;
+            int alphaOffset = Helpers.IsWindows11OrGreater() ? 50 : 200;
 
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bitmap, true))
             {
-                for (int i = 0; i < sizeLimit; i++)
+                for (int i = 0; i < cornerSize; i++)
                 {
                     int y = i;
                     int width = bitmap.Width;
 
                     // Left top
-                    for (int x = 0; x < sizeLimit; x++)
+                    for (int x = 0; x < cornerSize; x++)
                     {
-                        if (unsafeBitmap.GetPixel(x, y).Alpha < alphaLimit)
+                        if (unsafeBitmap.GetPixel(x, y).Alpha < alphaOffset)
                         {
                             unsafeBitmap.ClearPixel(x, y);
                         }
@@ -228,9 +230,9 @@ namespace ShareX.ScreenCaptureLib
                     }
 
                     // Right top
-                    for (int x = width - 1; x > width - sizeLimit - 1; x--)
+                    for (int x = width - 1; x > width - cornerSize - 1; x--)
                     {
-                        if (unsafeBitmap.GetPixel(x, y).Alpha < alphaLimit)
+                        if (unsafeBitmap.GetPixel(x, y).Alpha < alphaOffset)
                         {
                             unsafeBitmap.ClearPixel(x, y);
                         }
@@ -243,9 +245,9 @@ namespace ShareX.ScreenCaptureLib
                     y = bitmap.Height - i - 1;
 
                     // Left bottom
-                    for (int x = 0; x < sizeLimit; x++)
+                    for (int x = 0; x < cornerSize; x++)
                     {
-                        if (unsafeBitmap.GetPixel(x, y).Alpha < alphaLimit)
+                        if (unsafeBitmap.GetPixel(x, y).Alpha < alphaOffset)
                         {
                             unsafeBitmap.ClearPixel(x, y);
                         }
@@ -256,9 +258,9 @@ namespace ShareX.ScreenCaptureLib
                     }
 
                     // Right bottom
-                    for (int x = width - 1; x > width - sizeLimit - 1; x--)
+                    for (int x = width - 1; x > width - cornerSize - 1; x--)
                     {
-                        if (unsafeBitmap.GetPixel(x, y).Alpha < alphaLimit)
+                        if (unsafeBitmap.GetPixel(x, y).Alpha < alphaOffset)
                         {
                             unsafeBitmap.ClearPixel(x, y);
                         }
