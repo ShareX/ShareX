@@ -60,7 +60,7 @@ namespace ShareX.ScreenCaptureLib
             cbQSVPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegQSVPreset>());
         }
 
-        private async Task SettingsLoad()
+        private async Task LoadSettings()
         {
             settingsLoaded = false;
 
@@ -234,7 +234,7 @@ namespace ShareX.ScreenCaptureLib
 
         private async void FFmpegOptionsForm_Load(object sender, EventArgs e)
         {
-            await SettingsLoad();
+            await LoadSettings();
         }
 
         private void cbUseCustomFFmpegPath_CheckedChanged(object sender, EventArgs e)
@@ -523,6 +523,10 @@ namespace ShareX.ScreenCaptureLib
                 if (Options.FFmpeg.UseCustomCommands)
                 {
                     txtCommandLinePreview.Text = Options.GetFFmpegArgs(true);
+
+                    txtCommandLinePreview.Focus();
+                    txtCommandLinePreview.SelectionStart = txtCommandLinePreview.TextLength;
+                    txtCommandLinePreview.ScrollToCaret();
                 }
                 else
                 {
@@ -534,6 +538,22 @@ namespace ShareX.ScreenCaptureLib
         private void txtCommandLinePreview_TextChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.CustomCommands = txtCommandLinePreview.Text;
+        }
+
+        private async void btnResetOptions_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(Resources.WouldYouLikeToResetOptions, "ShareX - " + Resources.Confirmation, MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                bool overrideCLIPath = Options.FFmpeg.OverrideCLIPath;
+                string cliPath = Options.FFmpeg.CLIPath;
+
+                Options.FFmpeg = new FFmpegOptions();
+                Options.FFmpeg.OverrideCLIPath = overrideCLIPath;
+                Options.FFmpeg.CLIPath = cliPath;
+
+                await LoadSettings();
+            }
         }
     }
 }

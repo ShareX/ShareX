@@ -206,6 +206,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirmation.
+        /// </summary>
+        internal static string Confirmation {
+            get {
+                return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap control {
@@ -2233,6 +2242,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string WebpageCaptureForm_UpdateControls_Stop {
             get {
                 return ResourceManager.GetString("WebpageCaptureForm_UpdateControls_Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to reset options?.
+        /// </summary>
+        internal static string WouldYouLikeToResetOptions {
+            get {
+                return ResourceManager.GetString("WouldYouLikeToResetOptions", resourceCulture);
             }
         }
         
