@@ -298,6 +298,8 @@ namespace ShareX
         MonitorTest,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         DNSChanger,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        OpacityWindow,
         // Other
         [Category(EnumExtensions.HotkeyType_Category_Other)]
         DisableHotkeys,

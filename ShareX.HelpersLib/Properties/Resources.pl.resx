@@ -1273,4 +1273,7 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
     <value>Upiększ obraz</value>
   </data>
+  <data name="HotkeyType_OpacityWindow" xml:space="preserve">
+    <value>Przezroczystość okna</value>
+  </data>
 </root>

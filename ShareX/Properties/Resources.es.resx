@@ -320,4 +320,7 @@ Pulse "No" para cancelar la subida y desactivar la función de captura de pantal
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Ejecutar ShareX al iniciar Windows</value>
   </data>
+  <data name="HotkeyType_OpacityWindow" xml:space="preserve">
+    <value>Transparencia de la ventana</value>
+  </data>
 </root>

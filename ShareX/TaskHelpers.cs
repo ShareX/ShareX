@@ -278,6 +278,9 @@ namespace ShareX
                 case HotkeyType.DNSChanger:
                     OpenDNSChanger();
                     break;
+                case HotkeyType.OpacityWindow:
+                    OpenWindowOpacity();
+                    break;
                 // Other
                 case HotkeyType.DisableHotkeys:
                     ToggleHotkeys();
@@ -1218,6 +1221,14 @@ namespace ShareX
             }
         }
 
+        public static void OpenWindowOpacity()
+        {
+            using (WindowOpacityForm windowOpacityForm = new WindowOpacityForm())
+            {
+                windowOpacityForm.ShowDialog();
+            }
+        }
+
         public static void OpenDNSChanger()
         {
 #if MicrosoftStore
@@ -1727,6 +1738,7 @@ namespace ShareX
                     case HotkeyType.InspectWindow: return Resources.application_search_result;
                     case HotkeyType.MonitorTest: return Resources.monitor;
                     case HotkeyType.DNSChanger: return Resources.network_ip;
+                    case HotkeyType.OpacityWindow: return Resources.layer_transparent;
                     // Other
                     case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;
                     case HotkeyType.OpenMainWindow: return Resources.application_home;

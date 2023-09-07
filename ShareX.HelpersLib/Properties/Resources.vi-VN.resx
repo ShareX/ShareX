@@ -1270,4 +1270,7 @@ Bạn có muốn tải về không?</value>
   <data name="HotkeyType_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
+  <data name="HotkeyType_OpacityWindow" xml:space="preserve">
+    <value>Độ trong suốt của cửa sổ</value>
+  </data>
 </root>

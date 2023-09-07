@@ -59,7 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -957,5 +957,8 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
     <value>Значення</value>
+  </data>
+  <data name="HotkeyType_OpacityWindow" xml:space="preserve">
+    <value>Прозорість вікна</value>
   </data>
 </root>

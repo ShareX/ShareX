@@ -52,6 +52,7 @@ namespace ShareX.HelpersLib
         public const int ULW_ALPHA = 0x02;
         public const byte AC_SRC_OVER = 0x00;
         public const byte AC_SRC_ALPHA = 0x01;
+        public const int LWA_ALPHA = 0x2;
 
         /// <summary>
         /// Draws the icon or cursor using the mask.

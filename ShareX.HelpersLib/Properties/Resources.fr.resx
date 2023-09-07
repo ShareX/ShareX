@@ -1048,4 +1048,7 @@ Voulez-vous la télécharger ?</value>
   <data name="ResultOfSecondFile" xml:space="preserve">
     <value>Résultat du second fichier :</value>
   </data>
+  <data name="HotkeyType_OpacityWindow" xml:space="preserve">
+    <value>Transparence de la fenêtre</value>
+  </data>
 </root>

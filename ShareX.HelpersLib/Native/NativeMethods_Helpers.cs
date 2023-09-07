@@ -585,5 +585,26 @@ namespace ShareX.HelpersLib
 
             return scalingFactor;
         }
+
+        public static void SetWindowOpacity(IntPtr hwnd, uint opacityPercent)
+        {
+            byte alpha = (byte)(255 * (opacityPercent / 100.0));
+
+            SetWindowLong(hwnd, NativeConstants.GWL_EXSTYLE, (IntPtr)WindowStyles.WS_EX_LAYERED);
+            SetLayeredWindowAttributes(hwnd, 0, alpha, NativeConstants.LWA_ALPHA);
+        }
+
+        public static uint GetWindowOpacity(IntPtr hwnd)
+        {
+            uint opacityPercent = 100;
+            if (GetLayeredWindowAttributes(hwnd, out uint pcrKey, out byte alpha, out uint flags))
+            {
+                if ((flags & NativeConstants.LWA_ALPHA) != 0)
+                {
+                    opacityPercent = (uint)((alpha / 255.0) * 100);
+                }
+            }
+            return opacityPercent;
+        }
     }
 }

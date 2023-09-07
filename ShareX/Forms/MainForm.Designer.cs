@@ -97,6 +97,7 @@
             this.tssTools4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiClipboardViewer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBorderlessWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOpacityWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInspectWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
@@ -287,6 +288,7 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
+            this.tsmiTrayOpacityWindow = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -687,6 +689,7 @@
             this.tssTools4,
             this.tsmiClipboardViewer,
             this.tsmiBorderlessWindow,
+            this.tsmiOpacityWindow,
             this.tsmiInspectWindow,
             this.tsmiMonitorTest,
             this.tsmiDNSChanger});
@@ -846,6 +849,13 @@
             this.tsmiBorderlessWindow.Name = "tsmiBorderlessWindow";
             resources.ApplyResources(this.tsmiBorderlessWindow, "tsmiBorderlessWindow");
             this.tsmiBorderlessWindow.Click += new System.EventHandler(this.tsmiBorderlessWindow_Click);
+            // 
+            // tsmiOpacityWindow
+            // 
+            this.tsmiOpacityWindow.Image = global::ShareX.Properties.Resources.layer_transparent;
+            this.tsmiOpacityWindow.Name = "tsmiOpacityWindow";
+            resources.ApplyResources(this.tsmiOpacityWindow, "tsmiOpacityWindow");
+            this.tsmiOpacityWindow.Click += new System.EventHandler(this.tsmiOpacityWindow_Click);
             // 
             // tsmiInspectWindow
             // 
@@ -1850,6 +1860,7 @@
             this.tssTrayTools4,
             this.tsmiTrayClipboardViewer,
             this.tsmiTrayBorderlessWindow,
+            this.tsmiTrayOpacityWindow,
             this.tsmiTrayInspectWindow,
             this.tsmiTrayMonitorTest,
             this.tsmiTrayDNSChanger});
@@ -2255,6 +2266,13 @@
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
             // 
+            // tsmiTrayOpacityWindow
+            // 
+            this.tsmiTrayOpacityWindow.Image = global::ShareX.Properties.Resources.layer_transparent;
+            this.tsmiTrayOpacityWindow.Name = "tsmiTrayOpacityWindow";
+            resources.ApplyResources(this.tsmiTrayOpacityWindow, "tsmiTrayOpacityWindow");
+            this.tsmiTrayOpacityWindow.Click += new System.EventHandler(this.tsmiOpacityWindow_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2551,5 +2569,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiImageBeautifier;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageBeautifier;
         private System.Windows.Forms.ToolStripMenuItem tsmiBeautifyImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOpacityWindow;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayOpacityWindow;
     }
 }

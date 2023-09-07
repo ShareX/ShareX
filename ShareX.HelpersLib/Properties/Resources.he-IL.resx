@@ -1270,4 +1270,7 @@
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>לא רשום</value>
   </data>
+  <data name="HotkeyType_OpacityWindow" xml:space="preserve">
+    <value>שקיפות החלון</value>
+  </data>
 </root>

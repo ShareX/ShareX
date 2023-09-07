@@ -1228,4 +1228,7 @@
   <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
     <value>必应可视化搜索</value>
   </data>
+  <data name="HotkeyType_OpacityWindow" xml:space="preserve">
+    <value>窗口透明度</value>
+  </data>
 </root>

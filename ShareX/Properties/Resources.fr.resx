@@ -532,7 +532,6 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>Le presse-papier est vide ou contient des données inconnues.</value>
-    
   </data>
   <data name="WouldYouLikeToResetThemes" xml:space="preserve">
     <value>Voulez-vous réinitialiser les thèmes ?</value>

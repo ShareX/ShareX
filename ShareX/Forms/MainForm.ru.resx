@@ -762,4 +762,10 @@
   <data name="tsmiBeautifyImage.Text" xml:space="preserve">
     <value>Украсить изображение...</value>
   </data>
+  <data name="tsmiOpacityWindow.Text" xml:space="preserve">
+    <value>Прозрачность окна...</value>
+  </data>
+  <data name="tsmiTrayOpacityWindow.Text" xml:space="preserve">
+    <value>Прозрачность окна...</value>
+  </data>
 </root>

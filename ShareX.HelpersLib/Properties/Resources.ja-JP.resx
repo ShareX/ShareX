@@ -1264,4 +1264,7 @@
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>ボーダーレスウィンドウ</value>
   </data>
+  <data name="HotkeyType_OpacityWindow" xml:space="preserve">
+    <value>ウィンドウの透明度</value>
+  </data>
 </root>

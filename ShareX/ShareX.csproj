@@ -108,6 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BalloonTipAction.cs" />
+    <Compile Include="Forms\WindowOpacityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WindowOpacityForm.Designer.cs">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\BorderlessWindow\BorderlessWindowManager.cs" />
     <Compile Include="Tools\BorderlessWindow\BorderlessWindowSettings.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
@@ -1066,6 +1072,45 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.he-IL.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.es.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.fr.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.he-IL.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.ja-JP.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.pl.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.pt-BR.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.ro.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.ru.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.tr.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.uk.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.vi-VN.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowOpacityForm.zh-CN.resx">
+      <DependentUpon>WindowOpacityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.he-IL.resx" />
     <EmbeddedResource Include="Tools\BorderlessWindow\BorderlessWindowForm.he-IL.resx">

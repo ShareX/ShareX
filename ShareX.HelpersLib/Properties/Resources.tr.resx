@@ -1264,4 +1264,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="CutOutEffectType_ZigZag" xml:space="preserve">
     <value>Testere dişi</value>
   </data>
+  <data name="HotkeyType_OpacityWindow" xml:space="preserve">
+    <value>Pencere Saydamlığı</value>
+  </data>
 </root>

@@ -2389,6 +2389,11 @@ namespace ShareX
             uim.CombineImages(Orientation.Horizontal);
         }
 
+        private void tsmiOpacityWindow_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenWindowOpacity();
+        }
+
         private void tsmiCombineImagesVertically_Click(object sender, EventArgs e)
         {
             uim.CombineImages(Orientation.Vertical);
