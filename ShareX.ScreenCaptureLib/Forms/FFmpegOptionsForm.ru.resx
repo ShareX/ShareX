@@ -124,7 +124,7 @@
     <value>В буфер</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Установить устройства записи</value>
+    <value>Установить устройства записи...</value>
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Обновить</value>
@@ -256,5 +256,11 @@
   </data>
   <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
     <value>Пользовательский путь к FFmpeg:</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>Аудио энкодер:</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Видео энкодер:</value>
   </data>
 </root>
