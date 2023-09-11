@@ -176,7 +176,7 @@ namespace ShareX
             }
         }
 
-        private void ScanFromImageFile(string filePath)
+        private void ScanFromImageFile(string filePath) // new changes
         {
             if (!string.IsNullOrEmpty(filePath))
             {
