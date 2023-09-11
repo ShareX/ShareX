@@ -56,6 +56,7 @@ namespace ShareX
         }
 
         private bool isReady;
+        private bool isNotReady;
 
         public QRCodeForm(string text = null)
         {
@@ -108,7 +109,7 @@ namespace ShareX
 
         private void GenerateQRCode(string text)
         {
-            if (isReady)
+            if (isReady && !isNotReady)
             {
                 ClearQRCode();
 
@@ -192,6 +193,7 @@ namespace ShareX
         private void QRCodeForm_Shown(object sender, EventArgs e)
         {
             isReady = true;
+            isNotReady = false; // new change
 
             txtText.SetWatermark(Resources.QRCodeForm_InputTextToEncode);
 
