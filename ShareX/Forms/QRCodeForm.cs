@@ -254,7 +254,7 @@ namespace ShareX
 
                     if (sfd.ShowDialog() == DialogResult.OK)
                     {
-                        string filePath = sfd.FileName;
+                        string filePath = sfd.FileName; // new comment
 
                         if (filePath.EndsWith("svg", StringComparison.OrdinalIgnoreCase))
                         {
