@@ -252,7 +252,7 @@ namespace ShareX
                     sfd.FileName = txtText.Text;
                     sfd.DefaultExt = "png";
 
-                    if (sfd.ShowDialog() == DialogResult.OK) // new changes
+                    if (sfd.ShowDialog() == DialogResult.OK)
                     {
                         string filePath = sfd.FileName;
 
