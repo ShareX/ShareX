@@ -101,6 +101,12 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.GDIGrab.Value, StringComparison.OrdinalIgnoreCase))
                     {
+                        if (FFmpeg.IsAudioSourceSelected)
+                        {
+                            AppendInputDevice(args, "dshow", true);
+                            args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
+                        }
+
                         string x = isCustom ? "$area_x$" : CaptureArea.X.ToString();
                         string y = isCustom ? "$area_y$" : CaptureArea.Y.ToString();
                         string width = isCustom ? "$area_width$" : CaptureArea.Width.ToString();
@@ -115,15 +121,15 @@ namespace ShareX.ScreenCaptureLib
                         args.Append($"-video_size {width}x{height} ");
                         args.Append($"-draw_mouse {cursor} ");
                         args.Append("-i desktop ");
-
+                    }
+                    else if (FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.DDAGrab.Value, StringComparison.OrdinalIgnoreCase))
+                    {
                         if (FFmpeg.IsAudioSourceSelected)
                         {
                             AppendInputDevice(args, "dshow", true);
                             args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
                         }
-                    }
-                    else if (FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.DDAGrab.Value, StringComparison.OrdinalIgnoreCase))
-                    {
+
                         Screen[] screens = Screen.AllScreens.OrderBy(x => !x.Primary).ToArray();
                         int monitorIndex = 0;
                         Rectangle captureArea = screens[0].Bounds;
@@ -167,12 +173,6 @@ namespace ShareX.ScreenCaptureLib
                         }
 
                         args.Append(" ");
-
-                        if (FFmpeg.IsAudioSourceSelected)
-                        {
-                            AppendInputDevice(args, "dshow", true);
-                            args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
-                        }
                     }
                     else
                     {
