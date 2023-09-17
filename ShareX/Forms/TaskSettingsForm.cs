@@ -326,6 +326,12 @@ namespace ShareX
 
             #region Screen recorder
 
+            if (HelpersOptions.DevMode)
+            {
+                nudScreenRecordFPS.Maximum = 300;
+                nudGIFFPS.Maximum = 60;
+            }
+
             nudScreenRecordFPS.SetValue(TaskSettings.CaptureSettings.ScreenRecordFPS);
             nudGIFFPS.SetValue(TaskSettings.CaptureSettings.GIFFPS);
             cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
