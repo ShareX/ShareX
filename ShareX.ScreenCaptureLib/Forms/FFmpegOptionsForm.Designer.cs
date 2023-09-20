@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegOptionsForm));
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tbOpusBitrate = new System.Windows.Forms.TrackBar();
             this.tbVorbis_qscale = new System.Windows.Forms.TrackBar();
             this.tbMP3_qscale = new System.Windows.Forms.TrackBar();
             this.pbx264PresetWarning = new System.Windows.Forms.PictureBox();
@@ -63,7 +62,7 @@
             this.tpAAC = new System.Windows.Forms.TabPage();
             this.lblAACBitrate = new System.Windows.Forms.Label();
             this.tpOpus = new System.Windows.Forms.TabPage();
-            this.lblOpusQuality = new System.Windows.Forms.Label();
+            this.lblOpusBitrate = new System.Windows.Forms.Label();
             this.tpVorbis = new System.Windows.Forms.TabPage();
             this.lblVorbisQuality = new System.Windows.Forms.Label();
             this.tpMP3 = new System.Windows.Forms.TabPage();
@@ -109,7 +108,8 @@
             this.btnResetOptions = new System.Windows.Forms.Button();
             this.cbAACBitrate = new System.Windows.Forms.ComboBox();
             this.lblAACBitrateK = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOpusBitrate)).BeginInit();
+            this.cbOpusBitrate = new System.Windows.Forms.ComboBox();
+            this.lblOpusBitrateK = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).BeginInit();
@@ -145,18 +145,6 @@
             this.ttHelpTip.ReshowDelay = 100;
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
-            // 
-            // tbOpusBitrate
-            // 
-            resources.ApplyResources(this.tbOpusBitrate, "tbOpusBitrate");
-            this.tbOpusBitrate.BackColor = System.Drawing.SystemColors.Window;
-            this.tbOpusBitrate.LargeChange = 1;
-            this.tbOpusBitrate.Maximum = 16;
-            this.tbOpusBitrate.Minimum = 1;
-            this.tbOpusBitrate.Name = "tbOpusBitrate";
-            this.ttHelpTip.SetToolTip(this.tbOpusBitrate, resources.GetString("tbOpusBitrate.ToolTip"));
-            this.tbOpusBitrate.Value = 4;
-            this.tbOpusBitrate.ValueChanged += new System.EventHandler(this.tbOpusBirate_ValueChanged);
             // 
             // tbVorbis_qscale
             // 
@@ -415,16 +403,17 @@
             // 
             // tpOpus
             // 
-            this.tpOpus.Controls.Add(this.tbOpusBitrate);
-            this.tpOpus.Controls.Add(this.lblOpusQuality);
+            this.tpOpus.Controls.Add(this.lblOpusBitrateK);
+            this.tpOpus.Controls.Add(this.cbOpusBitrate);
+            this.tpOpus.Controls.Add(this.lblOpusBitrate);
             resources.ApplyResources(this.tpOpus, "tpOpus");
             this.tpOpus.Name = "tpOpus";
             this.tpOpus.UseVisualStyleBackColor = true;
             // 
-            // lblOpusQuality
+            // lblOpusBitrate
             // 
-            resources.ApplyResources(this.lblOpusQuality, "lblOpusQuality");
-            this.lblOpusQuality.Name = "lblOpusQuality";
+            resources.ApplyResources(this.lblOpusBitrate, "lblOpusBitrate");
+            this.lblOpusBitrate.Name = "lblOpusBitrate";
             // 
             // tpVorbis
             // 
@@ -817,6 +806,19 @@
             resources.ApplyResources(this.lblAACBitrateK, "lblAACBitrateK");
             this.lblAACBitrateK.Name = "lblAACBitrateK";
             // 
+            // cbOpusBitrate
+            // 
+            this.cbOpusBitrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOpusBitrate.FormattingEnabled = true;
+            resources.ApplyResources(this.cbOpusBitrate, "cbOpusBitrate");
+            this.cbOpusBitrate.Name = "cbOpusBitrate";
+            this.cbOpusBitrate.SelectedIndexChanged += new System.EventHandler(this.cbOpusBitrate_SelectedIndexChanged);
+            // 
+            // lblOpusBitrateK
+            // 
+            resources.ApplyResources(this.lblOpusBitrateK, "lblOpusBitrateK");
+            this.lblOpusBitrateK.Name = "lblOpusBitrateK";
+            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -849,7 +851,6 @@
             this.Name = "FFmpegOptionsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.FFmpegOptionsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbOpusBitrate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).EndInit();
@@ -951,8 +952,7 @@
         private System.Windows.Forms.NumericUpDown nudQSVBitrate;
         private System.Windows.Forms.Label lblQSVBitrate;
         private System.Windows.Forms.TabPage tpOpus;
-        private System.Windows.Forms.TrackBar tbOpusBitrate;
-        private System.Windows.Forms.Label lblOpusQuality;
+        private System.Windows.Forms.Label lblOpusBitrate;
         private System.Windows.Forms.NumericUpDown nudGIFBayerScale;
         private System.Windows.Forms.NumericUpDown nudx264Bitrate;
         private System.Windows.Forms.CheckBox cbx264UseBitrate;
@@ -971,5 +971,7 @@
         private System.Windows.Forms.Button btnResetOptions;
         private System.Windows.Forms.ComboBox cbAACBitrate;
         private System.Windows.Forms.Label lblAACBitrateK;
+        private System.Windows.Forms.ComboBox cbOpusBitrate;
+        private System.Windows.Forms.Label lblOpusBitrateK;
     }
 }

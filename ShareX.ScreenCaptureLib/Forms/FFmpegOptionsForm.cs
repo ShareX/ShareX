@@ -60,6 +60,7 @@ namespace ShareX.ScreenCaptureLib
             cbQSVPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegQSVPreset>());
 
             cbAACBitrate.Items.AddRange(Enumerable.Range(1, 16).Select(i => (i * 32).ToString()).ToArray());
+            cbOpusBitrate.Items.AddRange(Enumerable.Range(1, 16).Select(i => (i * 32).ToString()).ToArray());
         }
 
         private async Task LoadSettings()
@@ -117,6 +118,9 @@ namespace ShareX.ScreenCaptureLib
 
             // AAC
             cbAACBitrate.SelectedIndex = (Options.FFmpeg.AAC_Bitrate / 32) - 1;
+
+            // Opus
+            cbOpusBitrate.SelectedIndex = (Options.FFmpeg.Opus_Bitrate / 32) - 1;
 
             // Vorbis
             tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_QScale;
@@ -489,9 +493,9 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void tbOpusBirate_ValueChanged(object sender, EventArgs e)
+        private void cbOpusBitrate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Opus_Bitrate = tbOpusBitrate.Value * 32;
+            Options.FFmpeg.Opus_Bitrate = (cbOpusBitrate.SelectedIndex + 1) * 32;
             UpdateUI();
         }
 
