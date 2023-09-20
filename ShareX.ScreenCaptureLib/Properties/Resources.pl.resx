@@ -150,9 +150,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Jakość:</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>Bitrate: {0}k</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Obraz zapisany</value>
   </data>

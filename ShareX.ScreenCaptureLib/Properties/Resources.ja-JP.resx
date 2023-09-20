@@ -231,9 +231,6 @@
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>四角形ルーペ</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>ビットレート: {0}k</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>エディターの起動モード:</value>
   </data>

@@ -58,6 +58,8 @@ namespace ShareX.ScreenCaptureLib
             cbAMFUsage.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAMFUsage>());
             cbAMFQuality.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAMFQuality>());
             cbQSVPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegQSVPreset>());
+
+            cbAACBitrate.Items.AddRange(Enumerable.Range(1, 16).Select(i => (i * 32).ToString()).ToArray());
         }
 
         private async Task LoadSettings()
@@ -114,7 +116,7 @@ namespace ShareX.ScreenCaptureLib
             nudQSVBitrate.SetValue(Options.FFmpeg.QSV_Bitrate);
 
             // AAC
-            tbAACBitrate.Value = Options.FFmpeg.AAC_Bitrate / 32;
+            cbAACBitrate.SelectedIndex = (Options.FFmpeg.AAC_Bitrate / 32) - 1;
 
             // Vorbis
             tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_QScale;
@@ -217,8 +219,6 @@ namespace ShareX.ScreenCaptureLib
                 nudx264CRF.Visible = !Options.FFmpeg.x264_Use_Bitrate;
                 nudx264Bitrate.Visible = lblx264BitrateK.Visible = Options.FFmpeg.x264_Use_Bitrate;
 
-                lblAACQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.AAC_Bitrate);
-                lblOpusQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.Opus_Bitrate);
                 lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_QScale;
                 lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_QScale;
                 pbx264PresetWarning.Visible = (FFmpegPreset)cbx264Preset.SelectedIndex > FFmpegPreset.fast;
@@ -483,9 +483,9 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void tbAACBitrate_ValueChanged(object sender, EventArgs e)
+        private void cbAACBitrate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.AAC_Bitrate = tbAACBitrate.Value * 32;
+            Options.FFmpeg.AAC_Bitrate = (cbAACBitrate.SelectedIndex + 1) * 32;
             UpdateUI();
         }
 
