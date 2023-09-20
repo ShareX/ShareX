@@ -1787,7 +1787,7 @@ A higher value means bad quality, but a low file size.</value>
     <value>3</value>
   </data>
   <data name="lblx264BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="&gt;&gt;lblx264BitrateK.Name" xml:space="preserve">
     <value>lblx264BitrateK</value>
@@ -1931,7 +1931,7 @@ A higher value means bad quality, but a low file size.</value>
     <value>2</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="&gt;&gt;lblVP8BitrateK.Name" xml:space="preserve">
     <value>lblVP8BitrateK</value>
@@ -2096,7 +2096,7 @@ A higher value means bad quality, but a low file size.</value>
     <value>2</value>
   </data>
   <data name="lblNVENCBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="&gt;&gt;lblNVENCBitrateK.Name" xml:space="preserve">
     <value>lblNVENCBitrateK</value>
@@ -2291,7 +2291,7 @@ A higher value means bad quality, but a low file size.</value>
     <value>2</value>
   </data>
   <data name="lblAMFBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="&gt;&gt;lblAMFBitrateK.Name" xml:space="preserve">
     <value>lblAMFBitrateK</value>
@@ -2477,7 +2477,7 @@ A higher value means bad quality, but a low file size.</value>
     <value>8</value>
   </data>
   <data name="lblQSVBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="&gt;&gt;lblQSVBitrateK.Name" xml:space="preserve">
     <value>lblQSVBitrateK</value>

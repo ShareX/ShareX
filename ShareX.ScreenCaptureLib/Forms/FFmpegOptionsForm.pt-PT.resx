@@ -180,7 +180,7 @@ Caso contrário é impossível acompanhar a gravação e irão ocorrer muitas fa
     <value>x264 / x265</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Taxa de bitrate variável:</value>

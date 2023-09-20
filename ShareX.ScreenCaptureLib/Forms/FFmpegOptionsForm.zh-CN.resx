@@ -242,7 +242,7 @@
     <value>GIF</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="tpOpus.Text" xml:space="preserve">
     <value>Opus</value>
@@ -281,12 +281,12 @@
     <value>FFmpeg 路径：</value>
   </data>
   <data name="lblNVENCBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="lblQSVBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="lblx264BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
 </root>

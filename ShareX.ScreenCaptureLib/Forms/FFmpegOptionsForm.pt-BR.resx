@@ -202,7 +202,7 @@ Da mesma forma, para qualidade de encoding constante, você irá simplesmente ec
     <value>Padrão está cheio.</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
     <value>Este codec de áudio não é suportado pelo conteiner de vídeo selecionado.</value>
@@ -251,7 +251,7 @@ Caso contrário a gravação não conseguirá continuar e várias quedas de quad
     <value>Argumentos de linha de comando adicionais:</value>
   </data>
   <data name="lblQSVBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="tbQSV.Text" xml:space="preserve">
     <value>QuickSync</value>
@@ -263,7 +263,7 @@ Caso contrário a gravação não conseguirá continuar e várias quedas de quad
     <value>AMF</value>
   </data>
   <data name="lblx264BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="tpX264.Text" xml:space="preserve">
     <value>x264 / x265</value>
@@ -272,7 +272,7 @@ Caso contrário a gravação não conseguirá continuar e várias quedas de quad
     <value>VP8</value>
   </data>
   <data name="lblNVENCBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="btnFFmpegBrowse.Text" xml:space="preserve">
     <value>...</value>

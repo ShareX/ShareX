@@ -209,16 +209,16 @@ Pentru codificarea în timp real (de exemplu, înregistrarea ecranului), preseta
     <value>Instalează sursa video/audio "screen-capture-recorder" și "virtual-audio-capturer".</value>
   </data>
   <data name="lblQSVBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="lblNVENCBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="lblx264BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="tpMP3.Text" xml:space="preserve">
     <value>MP3</value>

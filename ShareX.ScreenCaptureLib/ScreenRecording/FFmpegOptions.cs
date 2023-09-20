@@ -44,24 +44,24 @@ namespace ShareX.ScreenCaptureLib
         public FFmpegPreset x264_Preset { get; set; } = FFmpegPreset.ultrafast;
         public int x264_CRF { get; set; } = 28;
         public bool x264_Use_Bitrate { get; set; } = false;
-        public int x264_Bitrate { get; set; } = 3000; // kbit/s
-        public int VPx_Bitrate { get; set; } = 3000; // kbit/s
+        public int x264_Bitrate { get; set; } = 3000; // kbps
+        public int VPx_Bitrate { get; set; } = 3000; // kbps
         public int XviD_QScale { get; set; } = 10;
         public FFmpegNVENCPreset NVENC_Preset { get; set; } = FFmpegNVENCPreset.p4;
         public FFmpegNVENCTune NVENC_Tune { get; set; } = FFmpegNVENCTune.ll;
-        public int NVENC_Bitrate { get; set; } = 3000; // kbit/s
+        public int NVENC_Bitrate { get; set; } = 3000; // kbps
         public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; } = FFmpegPaletteGenStatsMode.full;
         public FFmpegPaletteUseDither GIFDither { get; set; } = FFmpegPaletteUseDither.sierra2_4a;
         public int GIFBayerScale { get; set; } = 2;
         public FFmpegAMFUsage AMF_Usage { get; set; } = FFmpegAMFUsage.lowlatency;
         public FFmpegAMFQuality AMF_Quality { get; set; } = FFmpegAMFQuality.speed;
-        public int AMF_Bitrate { get; set; } = 3000; // kbit/s
+        public int AMF_Bitrate { get; set; } = 3000; // kbps
         public FFmpegQSVPreset QSV_Preset { get; set; } = FFmpegQSVPreset.fast;
-        public int QSV_Bitrate { get; set; } = 3000; // kbit/s
+        public int QSV_Bitrate { get; set; } = 3000; // kbps
 
         // Audio
-        public int AAC_Bitrate { get; set; } = 128; // kbit/s
-        public int Opus_Bitrate { get; set; } = 128; // kbit/s
+        public int AAC_Bitrate { get; set; } = 128; // kbps
+        public int Opus_Bitrate { get; set; } = 128; // kbps
         public int Vorbis_QScale { get; set; } = 3;
         public int MP3_QScale { get; set; } = 4;
 

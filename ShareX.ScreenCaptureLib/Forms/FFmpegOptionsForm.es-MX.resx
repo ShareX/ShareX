@@ -245,7 +245,7 @@ De lo contrario, la grabación se desfasará y se perderán fotogramas.</value>
     <value>x264 / x265</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="tpVpx.Text" xml:space="preserve">
     <value>VP8</value>

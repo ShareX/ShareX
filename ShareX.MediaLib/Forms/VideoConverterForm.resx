@@ -676,7 +676,7 @@
     <value>16</value>
   </data>
   <data name="lblVideoQualityBitrateHint.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="&gt;&gt;lblVideoQualityBitrateHint.Name" xml:space="preserve">
     <value>lblVideoQualityBitrateHint</value>
