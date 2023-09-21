@@ -171,9 +171,6 @@
   <data name="AutoCopyImageToClipboard" xml:space="preserve">
     <value>Copiați automat imaginea în clipboard</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>Rata de biți: {0}k</value>
-  </data>
   <data name="Blur" xml:space="preserve">
     <value>Încețoșare</value>
   </data>

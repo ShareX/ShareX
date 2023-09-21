@@ -123,9 +123,6 @@
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Téglalap lopása finoman</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>Bitráta: {0}k</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Minőség:</value>
   </data>

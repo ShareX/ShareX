@@ -287,16 +287,16 @@
     <value>Xvid</value>
   </data>
   <data name="lblx264BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="lblQSVBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="lblNVENCBitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
     <value>?</value>

@@ -126,9 +126,6 @@
   <data name="Bitrate" xml:space="preserve">
     <value>קצב סיביות:</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>קצב סיביות: {0}k</value>
-  </data>
   <data name="Blur" xml:space="preserve">
     <value>טשטש</value>
   </data>

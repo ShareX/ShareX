@@ -228,9 +228,6 @@
   <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
     <value>Radius blur:</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>Laju bit: {0}k</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
     <value>Terapkan perubahan &amp; lanjutkan tugas (Enter)</value>
   </data>

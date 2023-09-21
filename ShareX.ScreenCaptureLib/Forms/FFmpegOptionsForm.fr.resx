@@ -242,7 +242,7 @@ Autrement, il ne pourra pas suivre l'enregistrement : il y aura donc beaucoup de
     <value>Utilisation :</value>
   </data>
   <data name="lblVP8BitrateK.Text" xml:space="preserve">
-    <value>kbit/s</value>
+    <value>kbps</value>
   </data>
   <data name="tpAAC.Text" xml:space="preserve">
     <value>AAC</value>

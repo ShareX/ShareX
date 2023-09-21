@@ -638,15 +638,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitrate: {0}k.
-        /// </summary>
-        internal static string FFmpegOptionsForm_UpdateUI_Bitrate___0_k {
-            get {
-                return ResourceManager.GetString("FFmpegOptionsForm_UpdateUI_Bitrate___0_k", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Quality:.
         /// </summary>
         internal static string FFmpegOptionsForm_UpdateUI_Quality_ {

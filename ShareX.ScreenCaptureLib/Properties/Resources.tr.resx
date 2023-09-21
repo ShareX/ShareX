@@ -126,9 +126,6 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Yakalama bölgesi</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
-    <value>Bit hızı: {0}k</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} G: {2} Y: {3}</value>
   </data>
