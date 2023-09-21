@@ -59,8 +59,8 @@ namespace ShareX.ScreenCaptureLib
             cbAMFQuality.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAMFQuality>());
             cbQSVPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegQSVPreset>());
 
-            cbAACBitrate.Items.AddRange(Enumerable.Range(1, 16).Select(i => (i * 32).ToString()).ToArray());
-            cbOpusBitrate.Items.AddRange(Enumerable.Range(1, 16).Select(i => (i * 32).ToString()).ToArray());
+            cbAACBitrate.Items.AddRange(Enumerable.Range(2, 9).Select(i => (object)(i * 32)).ToArray()); // 64 -> 320
+            cbOpusBitrate.Items.AddRange(Enumerable.Range(1, 16).Select(i => (object)(i * 32)).ToArray()); // 32 -> 512
         }
 
         private async Task LoadSettings()
@@ -117,10 +117,28 @@ namespace ShareX.ScreenCaptureLib
             nudQSVBitrate.SetValue(Options.FFmpeg.QSV_Bitrate);
 
             // AAC
-            cbAACBitrate.SelectedIndex = (Options.FFmpeg.AAC_Bitrate / 32) - 1;
+            int indexAACBitrate = cbAACBitrate.Items.IndexOf(Options.FFmpeg.AAC_Bitrate);
+
+            if (indexAACBitrate > -1)
+            {
+                cbAACBitrate.SelectedIndex = indexAACBitrate;
+            }
+            else
+            {
+                cbAACBitrate.SelectedIndex = cbAACBitrate.Items.IndexOf(128);
+            }
 
             // Opus
-            cbOpusBitrate.SelectedIndex = (Options.FFmpeg.Opus_Bitrate / 32) - 1;
+            int indexOpusBitrate = cbOpusBitrate.Items.IndexOf(Options.FFmpeg.Opus_Bitrate);
+
+            if (indexOpusBitrate > -1)
+            {
+                cbOpusBitrate.SelectedIndex = indexOpusBitrate;
+            }
+            else
+            {
+                cbOpusBitrate.SelectedIndex = cbOpusBitrate.Items.IndexOf(128);
+            }
 
             // Vorbis
             tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_QScale;
@@ -489,13 +507,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbAACBitrate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.AAC_Bitrate = (cbAACBitrate.SelectedIndex + 1) * 32;
+            Options.FFmpeg.AAC_Bitrate = (int)cbAACBitrate.SelectedItem;
             UpdateUI();
         }
 
         private void cbOpusBitrate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Opus_Bitrate = (cbOpusBitrate.SelectedIndex + 1) * 32;
+            Options.FFmpeg.Opus_Bitrate = (int)cbOpusBitrate.SelectedItem;
             UpdateUI();
         }
 
