@@ -366,9 +366,6 @@
   <data name="Processing" xml:space="preserve">
     <value>Se procesează...</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Calitate:</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Captură dreptunghiulară clară</value>
   </data>

@@ -1036,5 +1036,36 @@ namespace ShareX.HelpersLib
             string wallpaperFilePath = Encoding.Unicode.GetString(transcodedImageCacheDest);
             return wallpaperFilePath.TrimEnd('\0');
         }
+
+        public static IEnumerable<int> Range(int from, int to, int increment = 1)
+        {
+            if (increment == 0)
+            {
+                throw new ArgumentException("Increment cannot be zero.", nameof(increment));
+            }
+
+            if (from == to)
+            {
+                yield return from;
+                yield break;
+            }
+
+            increment = Math.Abs(increment);
+
+            if (from < to)
+            {
+                for (int i = from; i <= to; i += increment)
+                {
+                    yield return i;
+                }
+            }
+            else
+            {
+                for (int i = from; i >= to; i -= increment)
+                {
+                    yield return i;
+                }
+            }
+        }
     }
 }

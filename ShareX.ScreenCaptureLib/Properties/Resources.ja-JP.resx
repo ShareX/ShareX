@@ -216,9 +216,6 @@
   <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
     <value>FPSを表示</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>品質:</value>
-  </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>カーソルの種類:</value>
   </data>

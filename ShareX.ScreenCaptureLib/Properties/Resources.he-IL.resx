@@ -150,9 +150,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>חפש את ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>איכות:</value>
-  </data>
   <data name="FPSLimit" xml:space="preserve">
     <value>הגבלת FPS:</value>
   </data>

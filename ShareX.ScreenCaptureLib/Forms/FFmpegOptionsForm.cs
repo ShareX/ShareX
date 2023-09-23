@@ -59,8 +59,9 @@ namespace ShareX.ScreenCaptureLib
             cbAMFQuality.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAMFQuality>());
             cbQSVPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegQSVPreset>());
 
-            cbAACBitrate.Items.AddRange(Enumerable.Range(2, 9).Select(i => (object)(i * 32)).ToArray()); // 64 -> 320
-            cbOpusBitrate.Items.AddRange(Enumerable.Range(1, 16).Select(i => (object)(i * 32)).ToArray()); // 32 -> 512
+            cbAACBitrate.Items.AddRange(Helpers.Range(64, 320, 32).Cast<object>().ToArray());
+            cbOpusBitrate.Items.AddRange(Helpers.Range(32, 512, 32).Cast<object>().ToArray());
+            cbVorbisQuality.Items.AddRange(Helpers.Range(0, 10).Cast<object>().ToArray());
         }
 
         private async Task LoadSettings()
@@ -141,7 +142,16 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // Vorbis
-            tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_QScale;
+            int indexVorbisQuality = cbVorbisQuality.Items.IndexOf(Options.FFmpeg.Vorbis_QScale);
+
+            if (indexVorbisQuality > -1)
+            {
+                cbVorbisQuality.SelectedIndex = indexVorbisQuality;
+            }
+            else
+            {
+                cbVorbisQuality.SelectedIndex = cbVorbisQuality.Items.IndexOf(3);
+            }
 
             // MP3
             tbMP3_qscale.Value = FFmpegCLIManager.mp3_max - Options.FFmpeg.MP3_QScale;
@@ -240,9 +250,6 @@ namespace ShareX.ScreenCaptureLib
                 lblx264CRF.Text = Options.FFmpeg.x264_Use_Bitrate ? Resources.Bitrate : Resources.CRF;
                 nudx264CRF.Visible = !Options.FFmpeg.x264_Use_Bitrate;
                 nudx264Bitrate.Visible = lblx264BitrateK.Visible = Options.FFmpeg.x264_Use_Bitrate;
-
-                lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_QScale;
-                lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_QScale;
                 pbx264PresetWarning.Visible = (FFmpegPreset)cbx264Preset.SelectedIndex > FFmpegPreset.fast;
 
                 if (!Options.FFmpeg.UseCustomCommands)
@@ -517,9 +524,9 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void tbVorbis_qscale_ValueChanged(object sender, EventArgs e)
+        private void cbVorbisQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Vorbis_QScale = tbVorbis_qscale.Value;
+            Options.FFmpeg.Vorbis_QScale = (int)cbVorbisQuality.SelectedItem;
             UpdateUI();
         }
 

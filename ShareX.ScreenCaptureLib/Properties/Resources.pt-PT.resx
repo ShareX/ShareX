@@ -225,9 +225,6 @@
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
     <value>Mudar para a ferramenta da forma depois do desenho</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Qualidade:</value>
-  </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>Tipo de cursor:</value>
   </data>

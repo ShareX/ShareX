@@ -150,9 +150,6 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>ناحیه ضبط</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>کیفیت:</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>تنظیمات</value>
   </data>

@@ -132,9 +132,6 @@
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Hentikan</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Kualitas:</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
     <value>Buka file gambar...</value>
   </data>

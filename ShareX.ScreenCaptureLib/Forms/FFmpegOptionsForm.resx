@@ -121,44 +121,14 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tbVorbis_qscale.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tbVorbis_qscale.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tbVorbis_qscale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 32</value>
-  </data>
-  <data name="tbVorbis_qscale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 32</value>
-  </data>
-  <data name="tbVorbis_qscale.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>Range is 0–10, where 10 is highest quality. 3–6 is a good range to try. Default is 3.</value>
-  </data>
-  <data name="&gt;&gt;tbVorbis_qscale.Name" xml:space="preserve">
-    <value>tbVorbis_qscale</value>
-  </data>
-  <data name="&gt;&gt;tbVorbis_qscale.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbVorbis_qscale.Parent" xml:space="preserve">
-    <value>tpVorbis</value>
-  </data>
-  <data name="&gt;&gt;tbVorbis_qscale.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="tbMP3_qscale.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tbMP3_qscale.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tbMP3_qscale.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 32</value>
   </data>
@@ -913,21 +883,6 @@ A higher value means bad quality, but a low file size.</value>
   <data name="&gt;&gt;tpAAC.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblOpusBitrateK.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblOpusBitrateK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 8</value>
-  </data>
-  <data name="lblOpusBitrateK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 13</value>
-  </data>
-  <data name="lblOpusBitrateK.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblOpusBitrateK.Text" xml:space="preserve">
-    <value>kbps</value>
-  </data>
   <data name="&gt;&gt;lblOpusBitrateK.Name" xml:space="preserve">
     <value>lblOpusBitrateK</value>
   </data>
@@ -940,15 +895,6 @@ A higher value means bad quality, but a low file size.</value>
   <data name="&gt;&gt;lblOpusBitrateK.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbOpusBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 4</value>
-  </data>
-  <data name="cbOpusBitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 21</value>
-  </data>
-  <data name="cbOpusBitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;cbOpusBitrate.Name" xml:space="preserve">
     <value>cbOpusBitrate</value>
   </data>
@@ -960,24 +906,6 @@ A higher value means bad quality, but a low file size.</value>
   </data>
   <data name="&gt;&gt;cbOpusBitrate.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="lblOpusBitrate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblOpusBitrate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblOpusBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="lblOpusBitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="lblOpusBitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblOpusBitrate.Text" xml:space="preserve">
-    <value>Bitrate:</value>
   </data>
   <data name="&gt;&gt;lblOpusBitrate.Name" xml:space="preserve">
     <value>lblOpusBitrate</value>
@@ -1017,6 +945,45 @@ A higher value means bad quality, but a low file size.</value>
   </data>
   <data name="&gt;&gt;tpOpus.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="cbVorbisQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 4</value>
+  </data>
+  <data name="cbVorbisQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 21</value>
+  </data>
+  <data name="cbVorbisQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbVorbisQuality.Name" xml:space="preserve">
+    <value>cbVorbisQuality</value>
+  </data>
+  <data name="&gt;&gt;cbVorbisQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbVorbisQuality.Parent" xml:space="preserve">
+    <value>tpVorbis</value>
+  </data>
+  <data name="&gt;&gt;cbVorbisQuality.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblVorbisQuality.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVorbisQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblVorbisQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblVorbisQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lblVorbisQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Quality:</value>
   </data>
   <data name="&gt;&gt;lblVorbisQuality.Name" xml:space="preserve">
     <value>lblVorbisQuality</value>
@@ -1117,6 +1084,54 @@ A higher value means bad quality, but a low file size.</value>
   <data name="&gt;&gt;tcFFmpegAudioCodecs.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblAACBitrateK.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAACBitrateK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 8</value>
+  </data>
+  <data name="lblAACBitrateK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="lblAACBitrateK.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblAACBitrateK.Text" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="&gt;&gt;lblAACBitrateK.Name" xml:space="preserve">
+    <value>lblAACBitrateK</value>
+  </data>
+  <data name="&gt;&gt;lblAACBitrateK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAACBitrateK.Parent" xml:space="preserve">
+    <value>tpAAC</value>
+  </data>
+  <data name="&gt;&gt;lblAACBitrateK.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbAACBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 4</value>
+  </data>
+  <data name="cbAACBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 21</value>
+  </data>
+  <data name="cbAACBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbAACBitrate.Name" xml:space="preserve">
+    <value>cbAACBitrate</value>
+  </data>
+  <data name="&gt;&gt;cbAACBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAACBitrate.Parent" xml:space="preserve">
+    <value>tpAAC</value>
+  </data>
+  <data name="&gt;&gt;cbAACBitrate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblAACBitrate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1147,35 +1162,83 @@ A higher value means bad quality, but a low file size.</value>
   <data name="&gt;&gt;lblAACBitrate.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblVorbisQuality.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblOpusBitrateK.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblVorbisQuality.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblOpusBitrateK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 8</value>
   </data>
-  <data name="lblVorbisQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
+  <data name="lblOpusBitrateK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
   </data>
-  <data name="lblVorbisQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
+  <data name="lblOpusBitrateK.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="lblVorbisQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblOpusBitrateK.Text" xml:space="preserve">
+    <value>kbps</value>
   </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Quality:</value>
+  <data name="&gt;&gt;lblOpusBitrateK.Name" xml:space="preserve">
+    <value>lblOpusBitrateK</value>
   </data>
-  <data name="&gt;&gt;lblVorbisQuality.Name" xml:space="preserve">
-    <value>lblVorbisQuality</value>
-  </data>
-  <data name="&gt;&gt;lblVorbisQuality.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblOpusBitrateK.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblVorbisQuality.Parent" xml:space="preserve">
-    <value>tpVorbis</value>
+  <data name="&gt;&gt;lblOpusBitrateK.Parent" xml:space="preserve">
+    <value>tpOpus</value>
   </data>
-  <data name="&gt;&gt;lblVorbisQuality.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblOpusBitrateK.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbOpusBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 4</value>
+  </data>
+  <data name="cbOpusBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 21</value>
+  </data>
+  <data name="cbOpusBitrate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbOpusBitrate.Name" xml:space="preserve">
+    <value>cbOpusBitrate</value>
+  </data>
+  <data name="&gt;&gt;cbOpusBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOpusBitrate.Parent" xml:space="preserve">
+    <value>tpOpus</value>
+  </data>
+  <data name="&gt;&gt;cbOpusBitrate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblOpusBitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpusBitrate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOpusBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="lblOpusBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblOpusBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblOpusBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="&gt;&gt;lblOpusBitrate.Name" xml:space="preserve">
+    <value>lblOpusBitrate</value>
+  </data>
+  <data name="&gt;&gt;lblOpusBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpusBitrate.Parent" xml:space="preserve">
+    <value>tpOpus</value>
+  </data>
+  <data name="&gt;&gt;lblOpusBitrate.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lblMP3Quality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2702,54 +2765,6 @@ A higher value means bad quality, but a low file size.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnResetOptions.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbAACBitrate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 4</value>
-  </data>
-  <data name="cbAACBitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 21</value>
-  </data>
-  <data name="cbAACBitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbAACBitrate.Name" xml:space="preserve">
-    <value>cbAACBitrate</value>
-  </data>
-  <data name="&gt;&gt;cbAACBitrate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAACBitrate.Parent" xml:space="preserve">
-    <value>tpAAC</value>
-  </data>
-  <data name="&gt;&gt;cbAACBitrate.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblAACBitrateK.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAACBitrateK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 8</value>
-  </data>
-  <data name="lblAACBitrateK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 13</value>
-  </data>
-  <data name="lblAACBitrateK.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblAACBitrateK.Text" xml:space="preserve">
-    <value>kbps</value>
-  </data>
-  <data name="&gt;&gt;lblAACBitrateK.Name" xml:space="preserve">
-    <value>lblAACBitrateK</value>
-  </data>
-  <data name="&gt;&gt;lblAACBitrateK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAACBitrateK.Parent" xml:space="preserve">
-    <value>tpAAC</value>
-  </data>
-  <data name="&gt;&gt;lblAACBitrateK.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -391,9 +391,6 @@
   <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
     <value>Show FPS</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Quality:</value>
-  </data>
   <data name="edit_underline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-underline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

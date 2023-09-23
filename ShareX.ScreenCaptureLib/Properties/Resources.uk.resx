@@ -180,9 +180,6 @@
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Захопити</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Якість:</value>
-  </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>Тип курсора:</value>
   </data>

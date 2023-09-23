@@ -147,9 +147,6 @@
   <data name="FPSLimit" xml:space="preserve">
     <value>Limit FPS:</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Jakość:</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Obraz zapisany</value>
   </data>

@@ -638,15 +638,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quality:.
-        /// </summary>
-        internal static string FFmpegOptionsForm_UpdateUI_Quality_ {
-            get {
-                return ResourceManager.GetString("FFmpegOptionsForm_UpdateUI_Quality_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap folder_open_image {
