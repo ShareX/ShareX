@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FFmpegOptionsForm));
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tbMP3_qscale = new System.Windows.Forms.TrackBar();
             this.pbx264PresetWarning = new System.Windows.Forms.PictureBox();
             this.cbx264Preset = new System.Windows.Forms.ComboBox();
             this.nudx264CRF = new System.Windows.Forms.NumericUpDown();
@@ -67,6 +66,7 @@
             this.cbOpusBitrate = new System.Windows.Forms.ComboBox();
             this.lblOpusBitrate = new System.Windows.Forms.Label();
             this.tpVorbis = new System.Windows.Forms.TabPage();
+            this.cbVorbisQuality = new System.Windows.Forms.ComboBox();
             this.lblVorbisQuality = new System.Windows.Forms.Label();
             this.tpMP3 = new System.Windows.Forms.TabPage();
             this.lblMP3Quality = new System.Windows.Forms.Label();
@@ -109,8 +109,7 @@
             this.nudQSVBitrate = new System.Windows.Forms.NumericUpDown();
             this.lblQSVBitrate = new System.Windows.Forms.Label();
             this.btnResetOptions = new System.Windows.Forms.Button();
-            this.cbVorbisQuality = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).BeginInit();
+            this.cbMP3Quality = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
@@ -144,17 +143,6 @@
             this.ttHelpTip.ReshowDelay = 100;
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
-            // 
-            // tbMP3_qscale
-            // 
-            resources.ApplyResources(this.tbMP3_qscale, "tbMP3_qscale");
-            this.tbMP3_qscale.BackColor = System.Drawing.SystemColors.Window;
-            this.tbMP3_qscale.LargeChange = 1;
-            this.tbMP3_qscale.Maximum = 9;
-            this.tbMP3_qscale.Name = "tbMP3_qscale";
-            this.ttHelpTip.SetToolTip(this.tbMP3_qscale, resources.GetString("tbMP3_qscale.ToolTip"));
-            this.tbMP3_qscale.Value = 5;
-            this.tbMP3_qscale.ValueChanged += new System.EventHandler(this.tbMP3_qscale_ValueChanged);
             // 
             // pbx264PresetWarning
             // 
@@ -438,6 +426,14 @@
             resources.ApplyResources(this.tpVorbis, "tpVorbis");
             this.tpVorbis.Name = "tpVorbis";
             // 
+            // cbVorbisQuality
+            // 
+            this.cbVorbisQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVorbisQuality.FormattingEnabled = true;
+            resources.ApplyResources(this.cbVorbisQuality, "cbVorbisQuality");
+            this.cbVorbisQuality.Name = "cbVorbisQuality";
+            this.cbVorbisQuality.SelectedIndexChanged += new System.EventHandler(this.cbVorbisQuality_SelectedIndexChanged);
+            // 
             // lblVorbisQuality
             // 
             resources.ApplyResources(this.lblVorbisQuality, "lblVorbisQuality");
@@ -446,7 +442,7 @@
             // tpMP3
             // 
             this.tpMP3.BackColor = System.Drawing.SystemColors.Window;
-            this.tpMP3.Controls.Add(this.tbMP3_qscale);
+            this.tpMP3.Controls.Add(this.cbMP3Quality);
             this.tpMP3.Controls.Add(this.lblMP3Quality);
             resources.ApplyResources(this.tpMP3, "tpMP3");
             this.tpMP3.Name = "tpMP3";
@@ -808,13 +804,13 @@
             this.btnResetOptions.UseVisualStyleBackColor = true;
             this.btnResetOptions.Click += new System.EventHandler(this.btnResetOptions_Click);
             // 
-            // cbVorbisQuality
+            // cbMP3Quality
             // 
-            this.cbVorbisQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVorbisQuality.FormattingEnabled = true;
-            resources.ApplyResources(this.cbVorbisQuality, "cbVorbisQuality");
-            this.cbVorbisQuality.Name = "cbVorbisQuality";
-            this.cbVorbisQuality.SelectedIndexChanged += new System.EventHandler(this.cbVorbisQuality_SelectedIndexChanged);
+            this.cbMP3Quality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMP3Quality.FormattingEnabled = true;
+            resources.ApplyResources(this.cbMP3Quality, "cbMP3Quality");
+            this.cbMP3Quality.Name = "cbMP3Quality";
+            this.cbMP3Quality.SelectedIndexChanged += new System.EventHandler(this.cbMP3Quality_SelectedIndexChanged);
             // 
             // FFmpegOptionsForm
             // 
@@ -848,7 +844,6 @@
             this.Name = "FFmpegOptionsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.FFmpegOptionsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbMP3_qscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).EndInit();
@@ -914,7 +909,6 @@
         private System.Windows.Forms.Label lblAudioSource;
         private System.Windows.Forms.ComboBox cbAudioCodec;
         private System.Windows.Forms.Label lblVorbisQuality;
-        private System.Windows.Forms.TrackBar tbMP3_qscale;
         private System.Windows.Forms.Label lblMP3Quality;
         private System.Windows.Forms.TabPage tpAAC;
         private System.Windows.Forms.Label lblAACBitrate;
@@ -969,5 +963,6 @@
         private System.Windows.Forms.ComboBox cbOpusBitrate;
         private System.Windows.Forms.Label lblOpusBitrateK;
         private System.Windows.Forms.ComboBox cbVorbisQuality;
+        private System.Windows.Forms.ComboBox cbMP3Quality;
     }
 }

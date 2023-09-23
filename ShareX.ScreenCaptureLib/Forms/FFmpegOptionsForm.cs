@@ -62,6 +62,7 @@ namespace ShareX.ScreenCaptureLib
             cbAACBitrate.Items.AddRange(Helpers.Range(64, 320, 32).Cast<object>().ToArray());
             cbOpusBitrate.Items.AddRange(Helpers.Range(32, 512, 32).Cast<object>().ToArray());
             cbVorbisQuality.Items.AddRange(Helpers.Range(0, 10).Cast<object>().ToArray());
+            cbMP3Quality.Items.AddRange(Helpers.Range(9, 0).Cast<object>().ToArray());
         }
 
         private async Task LoadSettings()
@@ -154,7 +155,16 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // MP3
-            tbMP3_qscale.Value = FFmpegCLIManager.mp3_max - Options.FFmpeg.MP3_QScale;
+            int indexMP3Quality = cbMP3Quality.Items.IndexOf(Options.FFmpeg.MP3_QScale);
+
+            if (indexMP3Quality > -1)
+            {
+                cbMP3Quality.SelectedIndex = indexMP3Quality;
+            }
+            else
+            {
+                cbMP3Quality.SelectedIndex = cbMP3Quality.Items.IndexOf(4);
+            }
 
             cbCustomCommands.Checked = Options.FFmpeg.UseCustomCommands;
 
@@ -530,9 +540,9 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void tbMP3_qscale_ValueChanged(object sender, EventArgs e)
+        private void cbMP3Quality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.MP3_QScale = FFmpegCLIManager.mp3_max - tbMP3_qscale.Value;
+            Options.FFmpeg.MP3_QScale = (int)cbMP3Quality.SelectedItem;
             UpdateUI();
         }
 
