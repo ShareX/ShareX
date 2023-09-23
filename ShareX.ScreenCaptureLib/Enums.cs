@@ -242,7 +242,8 @@ namespace ShareX.ScreenCaptureLib
     public enum FFmpegPaletteGenStatsMode
     {
         full,
-        diff
+        diff,
+        single
     }
 
     public enum FFmpegPaletteUseDither
@@ -252,7 +253,10 @@ namespace ShareX.ScreenCaptureLib
         heckbert,
         floyd_steinberg,
         sierra2,
-        sierra2_4a
+        sierra2_4a,
+        sierra3,
+        burkes,
+        atkinson
     }
 
     public enum RegionCaptureMode

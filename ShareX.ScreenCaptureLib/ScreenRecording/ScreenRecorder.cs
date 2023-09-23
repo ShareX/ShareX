@@ -28,6 +28,7 @@ using ShareX.MediaLib;
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Text;
 using System.Threading;
 
 namespace ShareX.ScreenCaptureLib
@@ -262,12 +263,31 @@ namespace ShareX.ScreenCaptureLib
             {
                 ffmpeg.TrackEncodeProgress = true;
 
+                StringBuilder args = new StringBuilder();
+                args.Append("-hide_banner ");
+                args.Append($"-i \"{input}\" ");
+
                 // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
+                args.Append($"-lavfi \"palettegen=stats_mode={Options.FFmpeg.GIFStatsMode}[palette],");
+
                 // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
-                return ffmpeg.Run($"-hide_banner -i \"{input}\" -lavfi \"palettegen=stats_mode={Options.FFmpeg.GIFStatsMode}[palette]," +
-                    $"[0:v][palette]paletteuse=dither={Options.FFmpeg.GIFDither}" +
-                    $"{(Options.FFmpeg.GIFDither == FFmpegPaletteUseDither.bayer ? ":bayer_scale=" + Options.FFmpeg.GIFBayerScale : "")}\"" +
-                    $" -y \"{output}\"");
+                args.Append($"[0:v][palette]paletteuse=dither={Options.FFmpeg.GIFDither}");
+
+                if (Options.FFmpeg.GIFDither == FFmpegPaletteUseDither.bayer)
+                {
+                    args.Append($":bayer_scale={Options.FFmpeg.GIFBayerScale}");
+                }
+
+                if (Options.FFmpeg.GIFStatsMode == FFmpegPaletteGenStatsMode.single)
+                {
+                    args.Append(":new=1");
+                }
+
+                args.Append("\" ");
+                args.Append("-y ");
+                args.Append($"\"{output}\"");
+
+                return ffmpeg.Run(args.ToString());
             }
             finally
             {
