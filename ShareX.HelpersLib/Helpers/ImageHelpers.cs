@@ -34,7 +34,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using Encoder = System.Drawing.Imaging.Encoder;
+using System.Windows.Media.Imaging;
 
 namespace ShareX.HelpersLib
 {
@@ -74,6 +74,42 @@ namespace ShareX.HelpersLib
         public static Bitmap ResizeImage(Bitmap bmp, Size size, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
             return ResizeImage(bmp, size.Width, size.Height, interpolationMode);
+        }
+
+        public static Bitmap ScaleImageFast(Bitmap bmp, double scale)
+        {
+            return ScaleImageFast(bmp, scale, scale);
+        }
+
+        public static Bitmap ScaleImageFast(Bitmap bmp, double scaleX, double scaleY)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                bmp.Save(memoryStream, ImageFormat.Bmp);
+
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.StreamSource = memoryStream;
+                bitmapImage.EndInit();
+
+                TransformedBitmap transformedBitmap = new TransformedBitmap();
+                transformedBitmap.BeginInit();
+                transformedBitmap.Source = bitmapImage;
+                transformedBitmap.Transform = new System.Windows.Media.ScaleTransform(scaleX, scaleY);
+                transformedBitmap.EndInit();
+
+                return GetBitmap(transformedBitmap, bmp.PixelFormat);
+            }
+        }
+
+        private static Bitmap GetBitmap(BitmapSource bitmapSource, PixelFormat pixelFormat = PixelFormat.Format32bppArgb)
+        {
+            Bitmap bmp = new Bitmap(bitmapSource.PixelWidth, bitmapSource.PixelHeight, pixelFormat);
+            BitmapData data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.WriteOnly, pixelFormat);
+            bitmapSource.CopyPixels(System.Windows.Int32Rect.Empty, data.Scan0, data.Height * data.Stride, data.Stride);
+            bmp.UnlockBits(data);
+            return bmp;
         }
 
         public static Bitmap ResizeImage(Bitmap bmp, Size size, bool allowEnlarge, bool centerImage = true)
@@ -2917,7 +2953,7 @@ namespace ShareX.HelpersLib
 
             using (EncoderParameters encoderParameters = new EncoderParameters(1))
             {
-                encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
+                encoderParameters.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, quality);
                 img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
             }
         }

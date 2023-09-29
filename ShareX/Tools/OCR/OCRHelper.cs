@@ -64,8 +64,7 @@ namespace ShareX
         {
             if (!IsSupported)
             {
-                throw new Exception(string.Format(Resources.OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer,
-                    SupportedVersion));
+                throw new Exception(string.Format(Resources.OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer, SupportedVersion));
             }
         }
 
@@ -77,8 +76,7 @@ namespace ShareX
 
             return await Task.Run(async () =>
             {
-                using (Bitmap bmpClone = (Bitmap)bmp.Clone())
-                using (Bitmap bmpScaled = ImageHelpers.ResizeImage(bmpClone, (int)(bmpClone.Width * scaleFactor), (int)(bmpClone.Height * scaleFactor)))
+                using (Bitmap bmpScaled = ImageHelpers.ScaleImageFast(bmp, scaleFactor))
                 {
                     return await OCRInternal(bmpScaled, languageTag, singleLine);
                 }
