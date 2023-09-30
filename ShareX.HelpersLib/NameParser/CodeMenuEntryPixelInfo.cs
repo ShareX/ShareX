@@ -45,13 +45,13 @@ namespace ShareX.HelpersLib
         public static readonly CodeMenuEntryPixelInfo g1 = new CodeMenuEntryPixelInfo("g1", "Green color (0-1). Specify decimal precision with {n}, defaults to 3.");
         public static readonly CodeMenuEntryPixelInfo b1 = new CodeMenuEntryPixelInfo("b1", "Blue color (0-1). Specify decimal precision with {n}, defaults to 3.");
         public static readonly CodeMenuEntryPixelInfo hex = new CodeMenuEntryPixelInfo("hex", "Hex color value (Lowercase)");
-        public static readonly CodeMenuEntryPixelInfo hR = new CodeMenuEntryPixelInfo("hR", "Red hex color value (00-ff)");
-        public static readonly CodeMenuEntryPixelInfo hG = new CodeMenuEntryPixelInfo("hG", "Green hex color value (00-ff)");
-        public static readonly CodeMenuEntryPixelInfo hB = new CodeMenuEntryPixelInfo("hB", "Blue hex color value (00-ff)");
+        public static readonly CodeMenuEntryPixelInfo rhex = new CodeMenuEntryPixelInfo("rhex", "Red hex color value (00-ff)");
+        public static readonly CodeMenuEntryPixelInfo ghex = new CodeMenuEntryPixelInfo("ghex", "Green hex color value (00-ff)");
+        public static readonly CodeMenuEntryPixelInfo bhex = new CodeMenuEntryPixelInfo("bhex", "Blue hex color value (00-ff)");
         public static readonly CodeMenuEntryPixelInfo HEX = new CodeMenuEntryPixelInfo("HEX", "Hex color value (Uppercase)");
-        public static readonly CodeMenuEntryPixelInfo HR = new CodeMenuEntryPixelInfo("HR", "Red hex color value (00-FF)");
-        public static readonly CodeMenuEntryPixelInfo HG = new CodeMenuEntryPixelInfo("HG", "Green hex color value (00-FF)");
-        public static readonly CodeMenuEntryPixelInfo HB = new CodeMenuEntryPixelInfo("HB", "Blue hex color value (00-FF)");
+        public static readonly CodeMenuEntryPixelInfo rHEX = new CodeMenuEntryPixelInfo("rHEX", "Red hex color value (00-FF)");
+        public static readonly CodeMenuEntryPixelInfo gHEX = new CodeMenuEntryPixelInfo("gHEX", "Green hex color value (00-FF)");
+        public static readonly CodeMenuEntryPixelInfo bHEX = new CodeMenuEntryPixelInfo("bHEX", "Blue hex color value (00-FF)");
         public static readonly CodeMenuEntryPixelInfo c100 = new CodeMenuEntryPixelInfo("c100", "Cyan color (0-100)");
         public static readonly CodeMenuEntryPixelInfo m100 = new CodeMenuEntryPixelInfo("m100", "Magenta color (0-100)");
         public static readonly CodeMenuEntryPixelInfo y100 = new CodeMenuEntryPixelInfo("y100", "Yellow color (0-100)");
@@ -70,12 +70,12 @@ namespace ShareX.HelpersLib
             input = input.Replace(r255.ToPrefixString(), color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
                 Replace(g255.ToPrefixString(), color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).
                 Replace(b255.ToPrefixString(), color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                Replace(HR.ToPrefixString(), color.R.ToString("X2"), StringComparison.InvariantCulture).
-                Replace(HG.ToPrefixString(), color.G.ToString("X2"), StringComparison.InvariantCulture).
-                Replace(HB.ToPrefixString(), color.B.ToString("X2"), StringComparison.InvariantCulture).
-                Replace(hR.ToPrefixString(), color.R.ToString("X2").ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
-                Replace(hG.ToPrefixString(), color.G.ToString("X2").ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
-                Replace(hB.ToPrefixString(), color.B.ToString("X2").ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
+                Replace(rHEX.ToPrefixString(), color.R.ToString("X2"), StringComparison.InvariantCulture).
+                Replace(gHEX.ToPrefixString(), color.G.ToString("X2"), StringComparison.InvariantCulture).
+                Replace(bHEX.ToPrefixString(), color.B.ToString("X2"), StringComparison.InvariantCulture).
+                Replace(rhex.ToPrefixString(), color.R.ToString("X2").ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
+                Replace(ghex.ToPrefixString(), color.G.ToString("X2").ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
+                Replace(bhex.ToPrefixString(), color.B.ToString("X2").ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
                 Replace(HEX.ToPrefixString(), ColorHelpers.ColorToHex(color), StringComparison.InvariantCulture).
                 Replace(hex.ToPrefixString(), ColorHelpers.ColorToHex(color).ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
                 Replace(c100.ToPrefixString(), Math.Round(ColorHelpers.ColorToCMYK(color).Cyan100, 2, MidpointRounding.AwayFromZero).ToString(), StringComparison.InvariantCultureIgnoreCase).
