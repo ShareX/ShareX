@@ -123,84 +123,38 @@ namespace ShareX.MediaLib
                     args.Append("-preset p4 ");
                     args.Append("-tune hq ");
                     args.Append("-profile:v high ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        args.Append("-rc vbr ");
-                        args.Append($"-cq {VideoQuality.Clamp(FFmpegCLIManager.x264_min, FFmpegCLIManager.x264_max)} ");
-                        args.Append("-b:v 0 ");
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.hevc_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
                     args.Append("-c:v hevc_nvenc ");
                     args.Append("-preset p4 ");
                     args.Append("-tune hq ");
                     args.Append("-profile:v main ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        args.Append("-rc vbr ");
-                        args.Append($"-cq {VideoQuality.Clamp(FFmpegCLIManager.x265_min, FFmpegCLIManager.x265_max)} ");
-                        args.Append("-b:v 0 ");
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.h264_amf:
                     args.Append("-c:v h264_amf ");
                     args.Append("-usage transcoding ");
                     args.Append("-profile main ");
                     args.Append("-quality balanced ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        // TODO: CRF?
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.hevc_amf:
                     args.Append("-c:v hevc_amf ");
                     args.Append("-usage transcoding ");
                     args.Append("-profile main ");
                     args.Append("-quality balanced ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        // TODO: CRF?
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                     args.Append("-c:v h264_qsv ");
                     args.Append("-preset medium ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.x264_min, FFmpegCLIManager.x264_max)} ");
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.hevc_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                     args.Append("-c:v hevc_qsv ");
                     args.Append("-preset medium ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.x265_min, FFmpegCLIManager.x265_max)} ");
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/Encode/VP8
                     args.Append("-c:v libvpx ");

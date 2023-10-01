@@ -93,12 +93,6 @@ namespace ShareX.MediaLib
             {
                 case ConverterVideoCodecs.x264:
                 case ConverterVideoCodecs.x265:
-                case ConverterVideoCodecs.h264_nvenc:
-                case ConverterVideoCodecs.hevc_nvenc:
-                case ConverterVideoCodecs.h264_amf:
-                case ConverterVideoCodecs.hevc_amf:
-                case ConverterVideoCodecs.h264_qsv:
-                case ConverterVideoCodecs.hevc_qsv:
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:
                 case ConverterVideoCodecs.av1:
@@ -106,6 +100,16 @@ namespace ShareX.MediaLib
                     cbVideoQualityUseBitrate.Visible = true;
                     tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible = !Options.VideoQualityUseBitrate;
                     nudVideoQualityBitrate.Visible = lblVideoQualityBitrateHint.Visible = Options.VideoQualityUseBitrate;
+                    break;
+                case ConverterVideoCodecs.h264_nvenc:
+                case ConverterVideoCodecs.hevc_nvenc:
+                case ConverterVideoCodecs.h264_amf:
+                case ConverterVideoCodecs.hevc_amf:
+                case ConverterVideoCodecs.h264_qsv:
+                case ConverterVideoCodecs.hevc_qsv:
+                    cbVideoQualityUseBitrate.Visible = false;
+                    tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible = false;
+                    nudVideoQualityBitrate.Visible = lblVideoQualityBitrateHint.Visible = true;
                     break;
                 default:
                     cbVideoQualityUseBitrate.Visible = tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible =
@@ -116,16 +120,10 @@ namespace ShareX.MediaLib
             switch (Options.VideoCodec)
             {
                 case ConverterVideoCodecs.x264:
-                case ConverterVideoCodecs.h264_nvenc:
-                case ConverterVideoCodecs.h264_amf:
-                case ConverterVideoCodecs.h264_qsv:
                     tbVideoQuality.Minimum = FFmpegCLIManager.x264_min;
                     tbVideoQuality.Maximum = FFmpegCLIManager.x264_max;
                     break;
                 case ConverterVideoCodecs.x265:
-                case ConverterVideoCodecs.hevc_nvenc:
-                case ConverterVideoCodecs.hevc_amf:
-                case ConverterVideoCodecs.hevc_qsv:
                     tbVideoQuality.Minimum = FFmpegCLIManager.x265_min;
                     tbVideoQuality.Maximum = FFmpegCLIManager.x265_max;
                     break;
