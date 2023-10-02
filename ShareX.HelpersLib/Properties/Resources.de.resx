@@ -871,9 +871,6 @@ Soll sie heruntergeladen werden?</value>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Automatische Größe</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Nach oben scrollen deaktivieren</value>
-  </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>Aufnahme abbrechen</value>
   </data>
@@ -882,9 +879,6 @@ Soll sie heruntergeladen werden?</value>
   </data>
   <data name="PastebinPrivacy_Private" xml:space="preserve">
     <value>Privat (nur Mitglieder)</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Drehen des Mausrads simulieren</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Öffentlich</value>
@@ -940,14 +934,8 @@ Soll sie heruntergeladen werden?</value>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Momentane Version</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Automatisch alle Methoden ausprobieren, bis eine funktioniert</value>
-  </data>
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
     <value>Aktiven Monitor aufnehmen</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Bild-Ab-Tastendruck simulieren</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Sticker</value>

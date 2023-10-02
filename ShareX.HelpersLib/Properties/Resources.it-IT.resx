@@ -721,12 +721,6 @@ Vuoi scaricarla ora?</value>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Auto Incremento Alfanumerico in Base {n} (1 &lt; n &lt; 63)</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Prova automaticamento tutti i metodi finché uno non funziona</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Disattiva lo Scorrimento in Cima</value>
-  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Niente</value>
   </data>
@@ -795,24 +789,6 @@ Vuoi scaricarla ora?</value>
   </data>
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
     <value>Servizio Caricamento Immagine</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Simula la pressione del tasto "Inizio"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Prima simula la pressione del tasto "Inizio", poi invia il messaggio di scorrimento in cima</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Invia Messaggio di Scorrimento in Cima</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Invia Messaggio di Scorrimento alla Finestra o al Controllo</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simula Scorrimento della Rotella del Mouse</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simula Pressione del Tasto "Pagina Giù"</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
     <value>Disegna: Punti</value>

@@ -234,9 +234,6 @@
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Ora</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Simulați mai întâi apăsarea tastei "Home", apoi trimiteți mesajul de derulare de sus</value>
-  </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>Verificarea actualizării a eșuat</value>
   </data>
@@ -469,9 +466,6 @@ Doriți să o descărcați?</value>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Regiune elipsă</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simulează apăsarea tastei "Page down"</value>
-  </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>Schimbător DNS</value>
   </data>
@@ -571,9 +565,6 @@ Doriți să o descărcați?</value>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Se încarcă imaginea...</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Simulați apăsării tastei "Home"</value>
-  </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>Progres: {0:0.0}%
 Viteza de descărcare: {1:0.0} KB/s
@@ -667,9 +658,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>Serviciul de partajare a URL-urilor</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Încercați automat toate metodele până când una funcționează</value>
-  </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>Antet de locație</value>
   </data>
@@ -684,9 +672,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Caractere hexazecimale aleatorii (se repetă folosind {n})</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simulează derularea roții mouse-ului</value>
   </data>
   <data name="PastebinPrivacy_Private" xml:space="preserve">
     <value>Privat (numai pentru membri)</value>
@@ -786,9 +771,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
     <value>Linie nouă</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Dezactivați derularea în partea de sus</value>
   </data>
   <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
     <value>Numele lunii (în engleză)</value>
@@ -904,9 +886,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
     <value>Salvați imaginea în fișier ca...</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Trimiteți un mesaj de derulare de sus</value>
-  </data>
   <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
     <value>Nume de copiere</value>
   </data>
@@ -975,9 +954,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Public</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Trimiterea unui mesaj de derulare către fereastră sau control</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
     <value>Suprascrieți fișierul</value>

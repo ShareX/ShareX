@@ -473,9 +473,6 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="PNGBitDepth_Automatic" xml:space="preserve">
     <value>Deteksi secara otomatis</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Secara otomatis mencoba semua metode sampai berhasil</value>
-  </data>
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>Persegi besar</value>
   </data>
@@ -604,9 +601,6 @@ Apakah anda ingin mengunduhnya?</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
     <value>Hapus file secara lokal</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Nonaktifkan bergulir ke atas</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
     <value>DNS berhasil ditetapkan.</value>
@@ -909,24 +903,6 @@ Ukuran file: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Mundur diagonal</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Kirim pesan gulir ke atas</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Kirim pesan gulir ke jendela atau kendali</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simulasikan gulir roda tetikus</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simulasikan menekan tombol "Page down"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Simulasikan menekan tombol "Home"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Pertama simulasikan menekan tombol "Home" lalu kirim pesan gulir ke atas</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Acak karakter heksadesimal. Ulangi menggunakan {n}</value>

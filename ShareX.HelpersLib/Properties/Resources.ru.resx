@@ -754,35 +754,11 @@
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Убрать фигуру</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Автоматически пробовать все методы, пока один не сработает</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Симулировать нажатие клавиши "Page down"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Симулировать нажатие клавиши "Home"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Симулировать прокрутку мыши</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Сначала симулировать нажатие клавиши "Home", потом отправить сообщение "scroll top"</value>
-  </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Сменить тип инструмента</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Отправить сообщение "scroll top"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Отправлять окну или элементу сообщение "scroll"</value>
-  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Ничего не делать</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Отключить прокрутку вверх</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
     <value>Картинка из файла</value>

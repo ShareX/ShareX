@@ -234,9 +234,6 @@
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Hour</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>First simulate pressing "Home" key then send scroll top message</value>
-  </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>Update check failed</value>
   </data>
@@ -473,9 +470,6 @@ Would you like to download it?</value>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Ellipse region</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simulate pressing "Page down" key</value>
-  </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>DNS changer</value>
   </data>
@@ -581,9 +575,6 @@ Would you like to download it?</value>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Loading image...</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Simulate pressing "Home" key</value>
-  </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>Progress: {0:0.0}%
 Download speed: {1:0.0} KB/s
@@ -680,9 +671,6 @@ Would you like to download and install it?</value>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>URL sharing service</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Automatically try all methods until one works</value>
-  </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>Location header</value>
   </data>
@@ -697,9 +685,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Random hexadecimal char (Repeat using {n})</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simulate mouse wheel scrolling</value>
   </data>
   <data name="PastebinPrivacy_Private" xml:space="preserve">
     <value>Private (members only)</value>
@@ -805,9 +790,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
     <value>New line</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Disable scrolling to top</value>
   </data>
   <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
     <value>Month name (English)</value>
@@ -932,9 +914,6 @@ Would you like to download and install it?</value>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
     <value>Save image to file as...</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Send scroll top message</value>
-  </data>
   <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
     <value>Copy name</value>
   </data>
@@ -1009,9 +988,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Public</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Send scroll message to window or control</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
     <value>Overwrite file</value>

@@ -739,18 +739,6 @@ Gostaria de baixá-la?</value>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>Desenho: Linha</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Primeiro simular apertando "Home" depois mandar mensagem de rolar para o topo</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Simular apertando "Home"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Desabilitar rolagem ao topo</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Enviar mensagem de rolagem ao topo</value>
-  </data>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
     <value>Região: Mão livre</value>
   </data>
@@ -762,18 +750,6 @@ Gostaria de baixá-la?</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Desenho: Balão de fala</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simular rolagem com scroll do mouse</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Enviar mensagem de rolagem à janela ou ao controle</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Tentar todos os métodos até que um funcione</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simular pressionando "Page Down"</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Fazer nada</value>

@@ -733,9 +733,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="PNGBitDepth_Automatic" xml:space="preserve">
     <value>Otomatik olarak tespit et</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Otomatik olarak bütün yöntemleri dene biri çalışana dek</value>
-  </data>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Geriye çapraz</value>
   </data>
@@ -877,12 +874,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>Adresi kısalt</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Üste kaydırmayı devre dışı bırak</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>İlk "Home" tuşuna bas sonra yukarı kaydırma mesajı gönder</value>
-  </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>İleri çapraz</value>
   </data>
@@ -921,21 +912,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
     <value>Rastgele satır dosyadan (Dosya adresi için {filepath} kullan)</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>"Page down" tuşuna bas</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Fare tekerleği ile kaydır</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Pencere veya kontrol e kaydırma mesajı yolla</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>"Home" tuşuna bas</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Yukarı kaydırma mesajı yolla</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Elips bölge</value>

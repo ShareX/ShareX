@@ -240,9 +240,6 @@
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
     <value>Servidor de archivos</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Presionar "Inicio" para simular primero, luego mandar mensaje de desplazamiento superior</value>
-  </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>La comprobación de actualizaciones falló</value>
   </data>
@@ -355,9 +352,6 @@
   </data>
   <data name="PNGBitDepth_Automatic" xml:space="preserve">
     <value>Detectar automáticamente</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Probar con todos los métodos hasta que uno funcione</value>
   </data>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Diagonal inversa</value>
@@ -481,9 +475,6 @@
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
     <value>Eliminar archivo localmente</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Deshabilitar desplazamiento superior</value>
   </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Habilitar o deshabilitar atajos de teclado</value>
@@ -882,21 +873,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
     <value>Cuantificador Octree (calidad media)</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simular acción de tecla "Av Pág"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simular acción de giro de rueda del ratón</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Enviar mensaje de desplazamiento la venta o control</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Simular acción de tecla "Inicio"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Enviar mensaje de desplazamiento superior</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Elipse</value>

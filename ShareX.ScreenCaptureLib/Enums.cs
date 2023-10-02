@@ -319,22 +319,6 @@ namespace ShareX.ScreenCaptureLib
         ToolCutOut
     }
 
-    public enum ScrollingCaptureScrollMethod // Localized
-    {
-        Automatic,
-        SendMessageScroll,
-        KeyPressPageDown,
-        MouseWheel
-    }
-
-    public enum ScrollingCaptureScrollTopMethod // Localized
-    {
-        All,
-        SendMessageTop,
-        KeyPressHome,
-        None
-    }
-
     public enum ImageEditorStartMode // Localized
     {
         AutoSize,

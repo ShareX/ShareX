@@ -747,15 +747,6 @@
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>停止螢幕錄製</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>模擬滑鼠滾輪捲動</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>模擬按下「Page Down」鍵</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>模擬按下「Home」鍵</value>
-  </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>隨機十六進制字元（用 {n} 來重複）</value>
   </data>
@@ -770,21 +761,6 @@
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>自動遞增 {n} 進制文數字元（1 &lt; n &lt; 63）</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>傳送捲動訊息到視窗或控制項</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>先模擬按下「Home」鍵，然後傳送捲動到頂端訊息</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>停用捲動到頂端</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>傳送捲動到頂端訊息</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>自動嘗試所有方法，直到有可使用的</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>繪圖：對話氣球 (S)</value>

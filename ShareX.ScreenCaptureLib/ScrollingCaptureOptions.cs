@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System.ComponentModel;
-
 namespace ShareX.ScreenCaptureLib
 {
     public class ScrollingCaptureOptions
@@ -35,13 +33,5 @@ namespace ShareX.ScreenCaptureLib
         public int ScrollAmount { get; set; } = 2;
         public bool AutoUpload { get; set; } = false;
         public bool ShowRegion { get; set; } = true;
-
-        // TODO: Cleanup
-
-        [DefaultValue(ScrollingCaptureScrollMethod.Automatic)]
-        public ScrollingCaptureScrollMethod ScrollMethod { get; set; } = ScrollingCaptureScrollMethod.Automatic;
-
-        [DefaultValue(ScrollingCaptureScrollTopMethod.All)]
-        public ScrollingCaptureScrollTopMethod ScrollTopMethodBeforeCapture { get; set; } = ScrollingCaptureScrollTopMethod.All;
     }
 }

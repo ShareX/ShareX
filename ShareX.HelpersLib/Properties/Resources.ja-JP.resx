@@ -225,9 +225,6 @@
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>時</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Home キーを送信後、スクロールトップ メッセージを送信</value>
-  </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>更新の確認に失敗しました</value>
   </data>
@@ -448,9 +445,6 @@
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>領域: 楕円</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Page down キーを送信</value>
-  </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>DNS 変更</value>
   </data>
@@ -538,9 +532,6 @@
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>画像の読み込み中...</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Home キーを送信</value>
-  </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>進行状況: {0:0.0}%
 ダウンロード速度: {1:0.0} KB/s
@@ -616,9 +607,6 @@
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>URL共有サービス</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>どれかが動作するまですべての方法を自動で試みる</value>
-  </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>Location ヘッダー</value>
   </data>
@@ -633,9 +621,6 @@
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>ランダムな16進法数値 {n}でn回繰り返し</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>マウスホイール回転を送信</value>
   </data>
   <data name="PastebinPrivacy_Private" xml:space="preserve">
     <value>プライベート (メンバーのみ)</value>
@@ -726,9 +711,6 @@
   </data>
   <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
     <value>改行</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>最上部にスクロールしない</value>
   </data>
   <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
     <value>月の名前 (英語)</value>
@@ -841,9 +823,6 @@
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
     <value>名前を付けて画像を保存...</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>スクロールトップ メッセージを送信</value>
-  </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>図形の削除</value>
   </data>
@@ -903,9 +882,6 @@
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>公開</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>スクロール メッセージをウィンドウ/コントロールに送信</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
     <value>ファイルを上書き</value>

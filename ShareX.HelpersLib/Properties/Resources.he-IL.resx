@@ -1016,30 +1016,6 @@
   <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
     <value>מכונן Octree (איכות בינונית)</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>נסה אוטומטית את כל השיטות עד שאחת עובדת</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>הדמיית לחיצה על מקש "עמוד למטה"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>הדמיית גלילה של גלגל עכבר</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>תחילה בצע הדמיה של לחיצה על מקש "Home" ואז שלח הודעת גלילה מעלה</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>שלח הודעת גלילה לחלון או לפקד</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>השבת את הגלילה למעלה</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>הדמיית לחיצה על מקש "Home"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>שלח הודעת גלילה מעלה</value>
-  </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>חץ (A)</value>
   </data>

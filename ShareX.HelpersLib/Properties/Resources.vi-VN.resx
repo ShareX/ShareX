@@ -688,9 +688,6 @@ Bạn có muốn tải về không?</value>
   <data name="PNGBitDepth_Automatic" xml:space="preserve">
     <value>Tự động phát hiện</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Tự động thử tất cả các phương thức tới khi một cái làm được</value>
-  </data>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Kẻ chéo về phía sau</value>
   </data>
@@ -723,9 +720,6 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Mặc định</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Vô hiệu hóa cuộn lên trên cùng</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Không làm gì</value>
@@ -786,9 +780,6 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
     <value>Dịch vụ tải lên tệp</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Đầu tiên mô phỏng nhấn phím"Home" sau đó gửi thông báo cuộn lên trên cùng</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Kẻ chéo về phía trước</value>
@@ -889,9 +880,6 @@ Bạn có muốn tải về không?</value>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Bật/Tắt thanh công cụ tác vụ</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Mô phỏng cuộn chuột</value>
-  </data>
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh</value>
   </data>
@@ -901,26 +889,17 @@ Bạn có muốn tải về không?</value>
   <data name="LinearGradientMode_Horizontal" xml:space="preserve">
     <value>Chiều ngang</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Gửi thông báo cuộn lên trên cùng</value>
-  </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>Vị trí header</value>
   </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Xóa bỏ hình</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Mô phỏng nhấn phím "Page down"</value>
-  </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
     <value>Công cụ: Cắt ảnh (C)</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Tìm kiếm hình ảnh trên Google</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Mô phỏng nhấn phím "Home"</value>
   </data>
   <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
     <value>Hình vuông nhỏ</value>
@@ -948,9 +927,6 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Vùng: Chữ nhật</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Gửi thông báo cuộn trang tới cửa sổ hoặc bảng điều khiển</value>
   </data>
   <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
     <value>Hình thu nhỏ/thumbnail cỡ nhỏ</value>

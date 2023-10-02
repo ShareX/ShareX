@@ -706,12 +706,6 @@ Voulez-vous la télécharger ?</value>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>Supprimer une forme ou annuler la capture</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simuler un défilement à la souris</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Désactiver le défilement jusqu'en haut</value>
-  </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>Annuler la capture</value>
   </data>
@@ -769,12 +763,6 @@ Voulez-vous la télécharger ?</value>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
     <value>Effet : Surligner</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Simuler un appui de la touche "Début"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Automatiquement essayer toutes les méthodes jusqu'à ce qu'une fonctionne</value>
-  </data>
   <data name="HotkeyType_ExitShareX" xml:space="preserve">
     <value>Quitter ShareX</value>
   </data>
@@ -783,9 +771,6 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Changer le type d'outil</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simuler un appui sur la touche "Page suivante"</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Activer la barre d'outils des actions</value>
@@ -961,26 +946,17 @@ Voulez-vous la télécharger ?</value>
   <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
     <value>Adjectif aléatoire</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Envoyer les messages de défilement à la fenêtre ou le contrôle</value>
-  </data>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Dimensionnement automatique</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Autocollant</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Simule d'abord une pression sur la touche "Accueil" puis envoie un message pour défiler vers le haut</value>
-  </data>
   <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
     <value>Agrandi</value>
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Caractères alphanumériques aléatoires non ambigus. Répéter en utilisant {n}</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Envoyer un message défiler en haut</value>
   </data>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
     <value>Nom</value>

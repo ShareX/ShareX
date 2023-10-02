@@ -532,9 +532,6 @@
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Завантаження зображення...</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Імітувати натискання клавіші «Home»</value>
-  </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>Progress: {0:0.0}%
 Download speed: {1:0.0} KB/s
@@ -610,9 +607,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>Служба обміну посиланнями</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Автоматично спробувати всі методи, поки один не запрацює</value>
-  </data>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>Показати вікно „Перед захопленням“</value>
   </data>
@@ -627,9 +621,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Random hexadecimal char. Repeat using {n}</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Імітувати прокручування коліщатка миші</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Помилка</value>
@@ -711,9 +702,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
     <value>Новий рядок</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Вимкнути прокручування вгору</value>
   </data>
   <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
     <value>Назва процесу вікна</value>
@@ -939,9 +927,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>Копіювати файл у буфер обміну</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Імітувати натискання клавіші «Page Down»</value>
   </data>
   <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
     <value>Тиждень року</value>
