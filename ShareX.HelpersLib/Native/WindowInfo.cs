@@ -114,7 +114,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                SetWindowPos(value ? SpecialWindowHandles.HWND_TOPMOST : SpecialWindowHandles.HWND_NOTOPMOST,
+                SetWindowPos(value ? (IntPtr)NativeConstants.HWND_TOPMOST : (IntPtr)NativeConstants.HWND_NOTOPMOST,
                     SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE);
             }
         }
@@ -162,22 +162,22 @@ namespace ShareX.HelpersLib
 
         public void SetWindowPos(SetWindowPosFlags flags)
         {
-            SetWindowPos(SpecialWindowHandles.HWND_TOP, 0, 0, 0, 0, flags);
+            SetWindowPos((IntPtr)NativeConstants.HWND_TOP, 0, 0, 0, 0, flags);
         }
 
         public void SetWindowPos(Rectangle rect, SetWindowPosFlags flags)
         {
-            SetWindowPos(SpecialWindowHandles.HWND_TOP, rect.X, rect.Y, rect.Width, rect.Height, flags);
+            SetWindowPos((IntPtr)NativeConstants.HWND_TOP, rect.X, rect.Y, rect.Width, rect.Height, flags);
         }
 
-        public void SetWindowPos(SpecialWindowHandles specialWindowHandles, SetWindowPosFlags flags)
+        public void SetWindowPos(IntPtr insertAfter, SetWindowPosFlags flags)
         {
-            SetWindowPos(specialWindowHandles, 0, 0, 0, 0, flags);
+            SetWindowPos(insertAfter, 0, 0, 0, 0, flags);
         }
 
-        public void SetWindowPos(SpecialWindowHandles specialWindowHandles, int x, int y, int width, int height, SetWindowPosFlags flags)
+        public void SetWindowPos(IntPtr insertAfter, int x, int y, int width, int height, SetWindowPosFlags flags)
         {
-            NativeMethods.SetWindowPos(Handle, (IntPtr)specialWindowHandles, x, y, width, height, flags);
+            NativeMethods.SetWindowPos(Handle, insertAfter, x, y, width, height, flags);
         }
 
         public override string ToString()

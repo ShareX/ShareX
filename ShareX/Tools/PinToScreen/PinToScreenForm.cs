@@ -250,7 +250,7 @@ namespace ShareX
             Size newSize = FormSize;
 
             Point newLocation = Location;
-            SpecialWindowHandles insertAfter = Options.TopMost ? SpecialWindowHandles.HWND_TOPMOST : SpecialWindowHandles.HWND_TOP;
+            IntPtr insertAfter = Options.TopMost ? (IntPtr)NativeConstants.HWND_TOPMOST : (IntPtr)NativeConstants.HWND_TOP;
             SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE | SetWindowPosFlags.SWP_NOSENDCHANGING;
 
             if (Options.KeepCenterLocation)
@@ -263,7 +263,7 @@ namespace ShareX
                 flags |= SetWindowPosFlags.SWP_NOMOVE;
             }
 
-            NativeMethods.SetWindowPos(Handle, (IntPtr)insertAfter, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
+            NativeMethods.SetWindowPos(Handle, insertAfter, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
 
             Refresh();
         }
