@@ -143,8 +143,6 @@ namespace ShareX
             ImageOpacity = Options.InitialOpacity;
 
             InitializeComponent();
-            // TODO: Add options form
-            tsbOptions.Visible = false;
             ShareXResources.ApplyTheme(this, true);
             TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
@@ -304,7 +302,20 @@ namespace ShareX
 
         private void tsbOptions_Click(object sender, EventArgs e)
         {
+            tsMain.Visible = false;
 
+            using (PinToScreenOptionsForm pinToScreenOptionsForm = new PinToScreenOptionsForm(Options))
+            {
+                if (pinToScreenOptionsForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    if (TopMost != Options.TopMost)
+                    {
+                        TopMost = Options.TopMost;
+                    }
+
+                    AutoSizeForm();
+                }
+            }
         }
 
         private void tsbClose_Click(object sender, EventArgs e)

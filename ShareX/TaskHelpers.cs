@@ -1390,13 +1390,18 @@ namespace ShareX
             }
         }
 
-        public static void PinToScreen(Image image, Point? location = null, PinToScreenOptions options = null)
+        public static void PinToScreen(Image image, PinToScreenOptions options = null)
+        {
+            PinToScreen(image, null, options);
+        }
+
+        public static void PinToScreen(Image image, Point? location, PinToScreenOptions options = null)
         {
             if (image != null)
             {
                 if (options == null)
                 {
-                    options = new PinToScreenOptions();
+                    options = Program.DefaultTaskSettings.ToolsSettings.PinToScreenOptions;
                 }
 
                 options.BackgroundColor = ShareXResources.Theme.LightBackgroundColor;

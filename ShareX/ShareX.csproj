@@ -211,6 +211,12 @@
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\PinToScreen\PinToScreenOptions.cs" />
+    <Compile Include="Tools\PinToScreen\PinToScreenOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\PinToScreen\PinToScreenOptionsForm.Designer.cs">
+      <DependentUpon>PinToScreenOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\PinToScreen\PinToScreenStartupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1949,6 +1955,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.zh-CN.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenOptionsForm.resx">
+      <DependentUpon>PinToScreenOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenStartupForm.he-IL.resx">
       <DependentUpon>PinToScreenStartupForm.cs</DependentUpon>
