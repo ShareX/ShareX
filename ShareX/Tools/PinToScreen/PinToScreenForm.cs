@@ -214,9 +214,8 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            bool isCursorInside = ClientRectangle.Contains(PointToClient(MousePosition));
-
-            tsMain.Visible = isCursorInside;
+            tsMain.Visible = ClientRectangle.Contains(PointToClient(MousePosition)) &&
+                ClientRectangle.Contains(tsMain.Bounds.SizeOffset(tsMain.Location.X, tsMain.Location.Y));
             tslScale.Text = ImageScale + "%";
         }
 
@@ -264,6 +263,8 @@ namespace ShareX
             }
 
             NativeMethods.SetWindowPos(Handle, insertAfter, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
+
+            UpdateControls();
 
             Refresh();
         }
