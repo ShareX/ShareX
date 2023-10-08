@@ -53,7 +53,7 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                NativeMethods.DwmEnableComposition(enable ? CompositionAction.DWM_EC_ENABLECOMPOSITION : CompositionAction.DWM_EC_DISABLECOMPOSITION);
+                NativeMethods.DwmEnableComposition(enable ? DWM_EC.DWM_EC_ENABLECOMPOSITION : DWM_EC.DWM_EC_DISABLECOMPOSITION);
             }
             catch (Exception e)
             {

@@ -332,7 +332,12 @@ namespace ShareX
         {
             if (Options.Shadow && m.Msg == (int)WindowsMessages.NCPAINT && isDWMEnabled)
             {
-                NativeMethods.SetNCRenderingPolicy(Handle, DwmNCRenderingPolicy.Enabled);
+                NativeMethods.SetNCRenderingPolicy(Handle, DWMNCRENDERINGPOLICY.DWMNCRP_ENABLED);
+
+                if (Helpers.IsWindows11OrGreater())
+                {
+                    NativeMethods.SetWindowCornerPreference(Handle, DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_DONOTROUND);
+                }
 
                 MARGINS margins = new MARGINS()
                 {

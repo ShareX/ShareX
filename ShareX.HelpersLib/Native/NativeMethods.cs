@@ -432,7 +432,7 @@ namespace ShareX.HelpersLib
         public static extern void DwmEnableBlurBehindWindow(IntPtr hwnd, ref DWM_BLURBEHIND blurBehind);
 
         [DllImport("dwmapi.dll", PreserveSig = false)]
-        public static extern void DwmEnableComposition(CompositionAction uCompositionAction);
+        public static extern void DwmEnableComposition(DWM_EC uCompositionAction);
 
         [DllImport("dwmapi.dll")]
         public static extern int DwmExtendFrameIntoClientArea(IntPtr hwnd, ref MARGINS margins);
