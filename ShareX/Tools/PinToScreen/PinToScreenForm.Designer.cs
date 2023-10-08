@@ -16,7 +16,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PinToScreenForm));
-            this.tsMain = new System.Windows.Forms.ToolStrip();
+            this.tsMain = new ShareX.HelpersLib.ToolStripEx();
             this.tsbCopy = new System.Windows.Forms.ToolStripButton();
             this.tslScale = new System.Windows.Forms.ToolStripLabel();
             this.tsbOptions = new System.Windows.Forms.ToolStripButton();
@@ -26,6 +26,7 @@
             // 
             // tsMain
             // 
+            this.tsMain.ClickThrough = true;
             resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -92,7 +93,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ToolStrip tsMain;
+        private HelpersLib.ToolStripEx tsMain;
         private System.Windows.Forms.ToolStripButton tsbOptions;
         private System.Windows.Forms.ToolStripButton tsbClose;
         private System.Windows.Forms.ToolStripLabel tslScale;
