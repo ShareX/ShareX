@@ -214,9 +214,39 @@ namespace ShareX
 
         private void UpdateControls()
         {
+            int toolbarMargin = 10;
             tsMain.Visible = ClientRectangle.Contains(PointToClient(MousePosition)) &&
-                ClientRectangle.Contains(tsMain.Bounds.SizeOffset(tsMain.Location.X, tsMain.Location.Y));
+                ClientRectangle.Contains(new Rectangle(0, 0, (Options.Border ? Options.BorderSize * 2 : 0) + tsMain.Width + toolbarMargin * 2,
+                (Options.Border ? Options.BorderSize * 2 : 0) + tsMain.Height + toolbarMargin));
             tslScale.Text = ImageScale + "%";
+        }
+
+        private void AutoSizeForm()
+        {
+            Size previousSize = Size;
+            Size newSize = FormSize;
+
+            Point newLocation = Location;
+            IntPtr insertAfter = Options.TopMost ? (IntPtr)NativeConstants.HWND_TOPMOST : (IntPtr)NativeConstants.HWND_TOP;
+            SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE | SetWindowPosFlags.SWP_NOSENDCHANGING;
+
+            if (Options.KeepCenterLocation)
+            {
+                Point locationOffset = new Point((previousSize.Width - newSize.Width) / 2, (previousSize.Height - newSize.Height) / 2);
+                newLocation = new Point(newLocation.X + locationOffset.X, newLocation.Y + locationOffset.Y);
+            }
+            else
+            {
+                flags |= SetWindowPosFlags.SWP_NOMOVE;
+            }
+
+            NativeMethods.SetWindowPos(Handle, insertAfter, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
+
+            tsMain.Location = new Point(Width / 2 - tsMain.Width / 2, Options.Border ? Options.BorderSize : 0);
+
+            UpdateControls();
+
+            Refresh();
         }
 
         private void SetHandCursor(bool grabbing)
@@ -241,32 +271,6 @@ namespace ShareX
         {
             ImageScale = 100;
             ImageOpacity = 100;
-        }
-
-        private void AutoSizeForm()
-        {
-            Size previousSize = Size;
-            Size newSize = FormSize;
-
-            Point newLocation = Location;
-            IntPtr insertAfter = Options.TopMost ? (IntPtr)NativeConstants.HWND_TOPMOST : (IntPtr)NativeConstants.HWND_TOP;
-            SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE | SetWindowPosFlags.SWP_NOSENDCHANGING;
-
-            if (Options.KeepCenterLocation)
-            {
-                Point locationOffset = new Point((previousSize.Width - newSize.Width) / 2, (previousSize.Height - newSize.Height) / 2);
-                newLocation = new Point(newLocation.X + locationOffset.X, newLocation.Y + locationOffset.Y);
-            }
-            else
-            {
-                flags |= SetWindowPosFlags.SWP_NOMOVE;
-            }
-
-            NativeMethods.SetWindowPos(Handle, insertAfter, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
-
-            UpdateControls();
-
-            Refresh();
         }
 
         private void ToggleMinimize()
