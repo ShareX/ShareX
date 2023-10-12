@@ -1056,4 +1056,7 @@ Utilizar uma biblioteca encriptada desactiva compartilhamento.</value>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Definições de destino</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Usar hiperligação directa</value>
+  </data>
 </root>

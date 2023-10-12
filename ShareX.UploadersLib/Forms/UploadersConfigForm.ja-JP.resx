@@ -1065,4 +1065,7 @@
   <data name="lblB2ManageLink.Text" xml:space="preserve">
     <value>ここをクリックし、アプリケーションキーを作成、またはバケットを管理</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>ダイレクト リンクを使用</value>
+  </data>
 </root>

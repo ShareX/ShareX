@@ -51,7 +51,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return new OneDrive(config.OneDriveV2OAuth2Info)
             {
                 FolderID = config.OneDriveV2SelectedFolder.id,
-                AutoCreateShareableLink = config.OneDriveAutoCreateShareableLink
+                AutoCreateShareableLink = config.OneDriveAutoCreateShareableLink,
+                UseDirectLink = config.OneDriveUseDirectLink,
             };
         }
 
@@ -67,6 +68,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public OAuth2Info AuthInfo { get; set; }
         public string FolderID { get; set; }
         public bool AutoCreateShareableLink { get; set; }
+        public bool UseDirectLink { get; set; }
 
         public static OneDriveFileInfo RootFolder = new OneDriveFileInfo
         {
@@ -257,7 +259,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     AllowReportProgress = false;
 
-                    result.URL = CreateShareableLink(uploadInfo.id);
+                    result.URL = CreateShareableLink(uploadInfo.id, UseDirectLink ? OneDriveLinkType.Embed : OneDriveLinkType.Read);
                 }
                 else
                 {

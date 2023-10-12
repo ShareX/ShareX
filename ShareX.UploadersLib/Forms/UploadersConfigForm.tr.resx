@@ -1086,4 +1086,7 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
     <value>Video seçenekleri penceresini göster</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Direkt link kullan</value>
+  </data>
 </root>

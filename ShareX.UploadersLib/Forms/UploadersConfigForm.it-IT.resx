@@ -909,4 +909,7 @@ Ad esempio, se il bucket si chiama "bucket.example.com", l'URL sarà "http://buc
   <data name="cbFlickrDirectLink.Text" xml:space="preserve">
     <value>Usa Collegamento Diretto</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Usa Collegamento Diretto</value>
+  </data>
 </root>

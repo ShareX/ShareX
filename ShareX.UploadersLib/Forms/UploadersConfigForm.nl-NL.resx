@@ -660,4 +660,7 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>Gebruik directe link</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Gebruik directe link</value>
+  </data>
 </root>

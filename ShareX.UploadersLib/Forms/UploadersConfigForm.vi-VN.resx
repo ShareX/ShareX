@@ -1284,4 +1284,7 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="lblZWSToken.Text" xml:space="preserve">
     <value>Token:</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Dùng liên kết trực tiếp</value>
+  </data>
 </root>

@@ -1101,4 +1101,7 @@
   <data name="lblZWSToken.Text" xml:space="preserve">
     <value>טוקן:</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>השתמש בקישור ישיר</value>
+  </data>
 </root>

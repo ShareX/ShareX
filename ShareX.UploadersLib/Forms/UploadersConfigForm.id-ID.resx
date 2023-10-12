@@ -1105,4 +1105,7 @@ Menggunakan pustaka terenkripsi menonaktifkan berbagi.</value>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Gunakan tautan langsung</value>
+  </data>
 </root>

@@ -375,6 +375,8 @@ namespace ShareX.UploadersLib
             }
 
             cbOneDriveCreateShareableLink.Checked = Config.OneDriveAutoCreateShareableLink;
+            cbOneDriveUseDirectLink.Checked = Config.OneDriveUseDirectLink;
+            cbOneDriveUseDirectLink.Enabled = Config.OneDriveAutoCreateShareableLink;
             lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.OneDriveV2SelectedFolder.name;
             tvOneDrive.CollapseAll();
 
@@ -1635,6 +1637,12 @@ namespace ShareX.UploadersLib
         private void cbOneDriveCreateShareableLink_CheckedChanged(object sender, EventArgs e)
         {
             Config.OneDriveAutoCreateShareableLink = cbOneDriveCreateShareableLink.Checked;
+            cbOneDriveUseDirectLink.Enabled = cbOneDriveCreateShareableLink.Checked;
+        }
+
+        private void cbOneDriveUseDirectLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OneDriveUseDirectLink = cbOneDriveUseDirectLink.Checked;
         }
 
         private void tvOneDrive_AfterSelect(object sender, TreeViewEventArgs e)
