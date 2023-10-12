@@ -688,23 +688,6 @@ namespace ShareX.UploadersLib
 
             #endregion Plik
 
-            #region Gfycat
-
-            atcGfycatAccountType.SelectedAccountType = Config.GfycatAccountType;
-
-            oauth2Gfycat.Enabled = Config.GfycatAccountType == AccountType.User;
-
-            if (OAuth2Info.CheckOAuth(Config.GfycatOAuth2Info))
-            {
-                oauth2Gfycat.Status = OAuthLoginStatus.LoginSuccessful;
-            }
-
-            cbGfycatIsPublic.Checked = Config.GfycatIsPublic;
-            cbGfycatKeepAudio.Checked = Config.GfycatKeepAudio;
-            txtGfycatTitle.Text = Config.GfycatTitle;
-
-            #endregion Gfycat
-
             #region YouTube
 
             oauth2YouTube.UpdateStatus(Config.YouTubeOAuth2Info, Config.YouTubeUserInfo);
@@ -2891,52 +2874,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Plik
-
-        #region Gfycat
-
-        private void atcGfycatAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.GfycatAccountType = accountType;
-            oauth2Gfycat.Enabled = Config.GfycatAccountType == AccountType.User;
-        }
-
-        private void oauth2Gfycat_OpenButtonClicked()
-        {
-            OAuth2Info oauth = new OAuth2Info(APIKeys.GfycatClientID, APIKeys.GfycatClientSecret);
-            Config.GfycatOAuth2Info = OAuth2Open(new GfycatUploader(oauth));
-        }
-
-        private void oauth2Gfycat_CompleteButtonClicked(string code)
-        {
-            OAuth2Complete(new GfycatUploader(Config.GfycatOAuth2Info), code, oauth2Gfycat);
-        }
-
-        private void oauth2Gfycat_ClearButtonClicked()
-        {
-            Config.GfycatOAuth2Info = null;
-        }
-
-        private void oauth2Gfycat_RefreshButtonClicked()
-        {
-            OAuth2Refresh(new GfycatUploader(Config.GfycatOAuth2Info), oauth2Gfycat);
-        }
-
-        private void cbGfycatIsPublic_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.GfycatIsPublic = cbGfycatIsPublic.Checked;
-        }
-
-        private void cbGfycatKeepAudio_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.GfycatKeepAudio = cbGfycatKeepAudio.Checked;
-        }
-
-        private void txtGfycatTitle_TextChanged(object sender, EventArgs e)
-        {
-            Config.GfycatTitle = txtGfycatTitle.Text;
-        }
-
-        #endregion Gfycat
 
         #region YouTube
 

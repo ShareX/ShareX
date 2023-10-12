@@ -200,20 +200,12 @@ namespace ShareX
                 if (lvi != null)
                 {
                     lvi.SubItems[1].Text = string.Format("{0:0.0}%", info.Progress.Percentage);
+                    lvi.SubItems[2].Text = string.Format("{0} / {1}", info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits),
+                        info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
 
-                    if (info.Progress.CustomProgressText != null)
+                    if (info.Progress.Speed > 0)
                     {
-                        lvi.SubItems[2].Text = info.Progress.CustomProgressText;
-                        lvi.SubItems[3].Text = "";
-                    }
-                    else
-                    {
-                        lvi.SubItems[2].Text = string.Format("{0} / {1}", info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits), info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
-
-                        if (info.Progress.Speed > 0)
-                        {
-                            lvi.SubItems[3].Text = ((long)info.Progress.Speed).ToSizeString(Program.Settings.BinaryUnits) + "/s";
-                        }
+                        lvi.SubItems[3].Text = ((long)info.Progress.Speed).ToSizeString(Program.Settings.BinaryUnits) + "/s";
                     }
 
                     lvi.SubItems[4].Text = Helpers.ProperTimeSpan(info.Progress.Elapsed);

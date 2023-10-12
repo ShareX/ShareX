@@ -179,16 +179,6 @@ namespace ShareX.UploadersLib
 
         #endregion OneDrive
 
-        #region Gfycat
-
-        public OAuth2Info GfycatOAuth2Info { get; set; } = null;
-        public AccountType GfycatAccountType { get; set; } = AccountType.Anonymous;
-        public bool GfycatIsPublic { get; set; } = false;
-        public bool GfycatKeepAudio { get; set; } = true;
-        public string GfycatTitle { get; set; } = "ShareX";
-
-        #endregion Gfycat
-
         #region Google Drive
 
         public OAuth2Info GoogleDriveOAuth2Info { get; set; } = null;

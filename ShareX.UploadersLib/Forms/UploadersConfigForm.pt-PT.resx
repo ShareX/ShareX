@@ -500,12 +500,6 @@ Por exemplo, se o teu nome for 'bucket.example.com' a hiperligação será http:
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
     <value>ID da chave secreta:</value>
   </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>Manter o aúdio</value>
-  </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Upload público</value>
-  </data>
   <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
     <value>Actualizar</value>
   </data>

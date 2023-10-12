@@ -435,9 +435,6 @@
   <data name="lblB2UploadPath.Text" xml:space="preserve">
     <value>Шлях вивантаження:</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Публічне вивантаження</value>
-  </data>
   <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
     <value>Оновити</value>
   </data>

@@ -299,13 +299,6 @@ namespace ShareX.UploadersLib
             this.lblB2UploadPath = new System.Windows.Forms.Label();
             this.lblB2ApplicationKey = new System.Windows.Forms.Label();
             this.lblB2ApplicationKeyId = new System.Windows.Forms.Label();
-            this.tpGfycat = new System.Windows.Forms.TabPage();
-            this.txtGfycatTitle = new System.Windows.Forms.TextBox();
-            this.lblGfycatTitle = new System.Windows.Forms.Label();
-            this.cbGfycatKeepAudio = new System.Windows.Forms.CheckBox();
-            this.cbGfycatIsPublic = new System.Windows.Forms.CheckBox();
-            this.atcGfycatAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.oauth2Gfycat = new ShareX.UploadersLib.OAuthControl();
             this.tpMega = new System.Windows.Forms.TabPage();
             this.btnMegaRefreshFolders = new System.Windows.Forms.Button();
             this.lblMegaStatus = new System.Windows.Forms.Label();
@@ -650,7 +643,6 @@ namespace ShareX.UploadersLib
             this.gbGoogleCloudStorageAdvanced.SuspendLayout();
             this.tpAzureStorage.SuspendLayout();
             this.tpBackblazeB2.SuspendLayout();
-            this.tpGfycat.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOwnCloudExpiryTime)).BeginInit();
@@ -1232,7 +1224,6 @@ namespace ShareX.UploadersLib
             this.tcFileUploaders.Controls.Add(this.tpGoogleCloudStorage);
             this.tcFileUploaders.Controls.Add(this.tpAzureStorage);
             this.tcFileUploaders.Controls.Add(this.tpBackblazeB2);
-            this.tcFileUploaders.Controls.Add(this.tpGfycat);
             this.tcFileUploaders.Controls.Add(this.tpMega);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
             this.tcFileUploaders.Controls.Add(this.tpMediaFire);
@@ -2495,60 +2486,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblB2ApplicationKeyId, "lblB2ApplicationKeyId");
             this.lblB2ApplicationKeyId.Name = "lblB2ApplicationKeyId";
-            // 
-            // tpGfycat
-            // 
-            this.tpGfycat.BackColor = System.Drawing.SystemColors.Window;
-            this.tpGfycat.Controls.Add(this.txtGfycatTitle);
-            this.tpGfycat.Controls.Add(this.lblGfycatTitle);
-            this.tpGfycat.Controls.Add(this.cbGfycatKeepAudio);
-            this.tpGfycat.Controls.Add(this.cbGfycatIsPublic);
-            this.tpGfycat.Controls.Add(this.atcGfycatAccountType);
-            this.tpGfycat.Controls.Add(this.oauth2Gfycat);
-            resources.ApplyResources(this.tpGfycat, "tpGfycat");
-            this.tpGfycat.Name = "tpGfycat";
-            // 
-            // txtGfycatTitle
-            // 
-            resources.ApplyResources(this.txtGfycatTitle, "txtGfycatTitle");
-            this.txtGfycatTitle.Name = "txtGfycatTitle";
-            this.txtGfycatTitle.TextChanged += new System.EventHandler(this.txtGfycatTitle_TextChanged);
-            // 
-            // lblGfycatTitle
-            // 
-            resources.ApplyResources(this.lblGfycatTitle, "lblGfycatTitle");
-            this.lblGfycatTitle.Name = "lblGfycatTitle";
-            // 
-            // cbGfycatKeepAudio
-            // 
-            resources.ApplyResources(this.cbGfycatKeepAudio, "cbGfycatKeepAudio");
-            this.cbGfycatKeepAudio.Name = "cbGfycatKeepAudio";
-            this.cbGfycatKeepAudio.UseVisualStyleBackColor = true;
-            this.cbGfycatKeepAudio.CheckedChanged += new System.EventHandler(this.cbGfycatKeepAudio_CheckedChanged);
-            // 
-            // cbGfycatIsPublic
-            // 
-            resources.ApplyResources(this.cbGfycatIsPublic, "cbGfycatIsPublic");
-            this.cbGfycatIsPublic.Name = "cbGfycatIsPublic";
-            this.cbGfycatIsPublic.UseVisualStyleBackColor = true;
-            this.cbGfycatIsPublic.CheckedChanged += new System.EventHandler(this.cbGfycatIsPublic_CheckedChanged);
-            // 
-            // atcGfycatAccountType
-            // 
-            resources.ApplyResources(this.atcGfycatAccountType, "atcGfycatAccountType");
-            this.atcGfycatAccountType.Name = "atcGfycatAccountType";
-            this.atcGfycatAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            this.atcGfycatAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcGfycatAccountType_AccountTypeChanged);
-            // 
-            // oauth2Gfycat
-            // 
-            resources.ApplyResources(this.oauth2Gfycat, "oauth2Gfycat");
-            this.oauth2Gfycat.Name = "oauth2Gfycat";
-            this.oauth2Gfycat.UserInfo = null;
-            this.oauth2Gfycat.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauth2Gfycat_OpenButtonClicked);
-            this.oauth2Gfycat.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauth2Gfycat_CompleteButtonClicked);
-            this.oauth2Gfycat.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Gfycat_ClearButtonClicked);
-            this.oauth2Gfycat.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Gfycat_RefreshButtonClicked);
             // 
             // tpMega
             // 
@@ -4899,8 +4836,6 @@ namespace ShareX.UploadersLib
             this.tpAzureStorage.PerformLayout();
             this.tpBackblazeB2.ResumeLayout(false);
             this.tpBackblazeB2.PerformLayout();
-            this.tpGfycat.ResumeLayout(false);
-            this.tpGfycat.PerformLayout();
             this.tpMega.ResumeLayout(false);
             this.tpMega.PerformLayout();
             this.tpOwnCloud.ResumeLayout(false);
@@ -5400,10 +5335,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblAmazonS3Endpoint;
         private System.Windows.Forms.CheckBox cbDropboxUseDirectLink;
         private System.Windows.Forms.CheckBox cbAmazonS3UsePathStyle;
-        private OAuthControl oauth2Gfycat;
-        private AccountTypeControl atcGfycatAccountType;
-        private System.Windows.Forms.CheckBox cbGfycatIsPublic;
-        internal System.Windows.Forms.TabPage tpGfycat;
         private System.Windows.Forms.Panel pFTPTransferMode;
         private System.Windows.Forms.RadioButton rbFTPTransferModeActive;
         private System.Windows.Forms.RadioButton rbFTPTransferModePassive;
@@ -5528,7 +5459,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblGooglePhotosCreateAlbumName;
         private System.Windows.Forms.TextBox txtGooglePhotosCreateAlbumName;
         private System.Windows.Forms.Button btnGooglePhotosCreateAlbum;
-        private System.Windows.Forms.CheckBox cbGfycatKeepAudio;
         private System.Windows.Forms.GroupBox gbGoogleCloudStorageAdvanced;
         private System.Windows.Forms.Label lblGoogleCloudStorageStripExtension;
         private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionText;
@@ -5540,8 +5470,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ComboBox cbGoogleDriveSharedDrive;
         private System.Windows.Forms.TextBox txtKuttDomain;
         private System.Windows.Forms.Label lblKuttDomain;
-        private System.Windows.Forms.TextBox txtGfycatTitle;
-        private System.Windows.Forms.Label lblGfycatTitle;
         internal System.Windows.Forms.TabPage tpZeroWidthShortener;
         private System.Windows.Forms.TextBox txtZWSToken;
         private System.Windows.Forms.TextBox txtZWSURL;

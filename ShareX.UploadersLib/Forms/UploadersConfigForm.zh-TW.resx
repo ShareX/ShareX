@@ -791,12 +791,6 @@
   <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
     <value>從網址路徑移除檔案副檔名</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>公開上傳</value>
-  </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>保留音訊</value>
-  </data>
   <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
     <value>在檔案中設定公開 ACL</value>
   </data>

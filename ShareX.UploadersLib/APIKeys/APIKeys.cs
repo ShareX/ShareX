@@ -53,8 +53,6 @@ namespace ShareX.UploadersLib
         public static readonly string MediaFireApiKey = "";
         public static readonly string OneDriveClientID = "";
         public static readonly string OneDriveClientSecret = "";
-        public static readonly string GfycatClientID = "";
-        public static readonly string GfycatClientSecret = "";
 
         // URL shorteners
         public static readonly string BitlyClientID = "";

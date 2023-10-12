@@ -6473,186 +6473,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;tpBackblazeB2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="txtGfycatTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 368</value>
-  </data>
-  <data name="txtGfycatTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 20</value>
-  </data>
-  <data name="txtGfycatTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;txtGfycatTitle.Name" xml:space="preserve">
-    <value>txtGfycatTitle</value>
-  </data>
-  <data name="&gt;&gt;txtGfycatTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtGfycatTitle.Parent" xml:space="preserve">
-    <value>tpGfycat</value>
-  </data>
-  <data name="&gt;&gt;txtGfycatTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblGfycatTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGfycatTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGfycatTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 352</value>
-  </data>
-  <data name="lblGfycatTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 13</value>
-  </data>
-  <data name="lblGfycatTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblGfycatTitle.Text" xml:space="preserve">
-    <value>Title:</value>
-  </data>
-  <data name="&gt;&gt;lblGfycatTitle.Name" xml:space="preserve">
-    <value>lblGfycatTitle</value>
-  </data>
-  <data name="&gt;&gt;lblGfycatTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGfycatTitle.Parent" xml:space="preserve">
-    <value>tpGfycat</value>
-  </data>
-  <data name="&gt;&gt;lblGfycatTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbGfycatKeepAudio.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGfycatKeepAudio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGfycatKeepAudio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 328</value>
-  </data>
-  <data name="cbGfycatKeepAudio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 17</value>
-  </data>
-  <data name="cbGfycatKeepAudio.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>Keep audio</value>
-  </data>
-  <data name="&gt;&gt;cbGfycatKeepAudio.Name" xml:space="preserve">
-    <value>cbGfycatKeepAudio</value>
-  </data>
-  <data name="&gt;&gt;cbGfycatKeepAudio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGfycatKeepAudio.Parent" xml:space="preserve">
-    <value>tpGfycat</value>
-  </data>
-  <data name="&gt;&gt;cbGfycatKeepAudio.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbGfycatIsPublic.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGfycatIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGfycatIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 304</value>
-  </data>
-  <data name="cbGfycatIsPublic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 17</value>
-  </data>
-  <data name="cbGfycatIsPublic.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Public upload</value>
-  </data>
-  <data name="&gt;&gt;cbGfycatIsPublic.Name" xml:space="preserve">
-    <value>cbGfycatIsPublic</value>
-  </data>
-  <data name="&gt;&gt;cbGfycatIsPublic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGfycatIsPublic.Parent" xml:space="preserve">
-    <value>tpGfycat</value>
-  </data>
-  <data name="&gt;&gt;cbGfycatIsPublic.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="atcGfycatAccountType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="atcGfycatAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 40</value>
-  </data>
-  <data name="atcGfycatAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;atcGfycatAccountType.Name" xml:space="preserve">
-    <value>atcGfycatAccountType</value>
-  </data>
-  <data name="&gt;&gt;atcGfycatAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;atcGfycatAccountType.Parent" xml:space="preserve">
-    <value>tpGfycat</value>
-  </data>
-  <data name="&gt;&gt;atcGfycatAccountType.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="oauth2Gfycat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="oauth2Gfycat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 240</value>
-  </data>
-  <data name="oauth2Gfycat.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;oauth2Gfycat.Name" xml:space="preserve">
-    <value>oauth2Gfycat</value>
-  </data>
-  <data name="&gt;&gt;oauth2Gfycat.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2Gfycat.Parent" xml:space="preserve">
-    <value>tpGfycat</value>
-  </data>
-  <data name="&gt;&gt;oauth2Gfycat.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tpGfycat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
-  </data>
-  <data name="tpGfycat.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpGfycat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
-  </data>
-  <data name="tpGfycat.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="tpGfycat.Text" xml:space="preserve">
-    <value>Gfycat</value>
-  </data>
-  <data name="&gt;&gt;tpGfycat.Name" xml:space="preserve">
-    <value>tpGfycat</value>
-  </data>
-  <data name="&gt;&gt;tpGfycat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpGfycat.Parent" xml:space="preserve">
-    <value>tcFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpGfycat.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="btnMegaRefreshFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -6969,7 +6789,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="cbOwnCloudAppendFileNameToURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7461,7 +7281,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpOwnCloud.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="cbMediaFireUseLongLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7671,7 +7491,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpMediaFire.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="lblPushbulletDevices.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7833,7 +7653,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPushbullet.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="btnSendSpaceRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8010,7 +7830,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSendSpace.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="cbLocalhostrDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8169,7 +7989,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpHostr.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="txtJiraIssuePrefix.Location" type="System.Drawing.Point, System.Drawing">
     <value>472, 277</value>
@@ -8376,7 +8196,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpJira.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="lblLambdaInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8535,7 +8355,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLambda.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="txtPomfResultURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -8664,7 +8484,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPomf.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
@@ -9655,7 +9475,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSeafile.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="cbStreamableUseDirectURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9823,7 +9643,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpStreamable.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="btnSulGetAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9928,7 +9748,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSul.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="btnLithiioFetchAPIKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -10162,7 +9982,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpLithiio.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>22</value>
   </data>
   <data name="cbPlikOneShot.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -10669,7 +10489,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpPlik.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>23</value>
   </data>
   <data name="oauth2YouTube.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -10885,7 +10705,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpYouTube.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>24</value>
   </data>
   <data name="lbSharedFolderAccounts.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -11191,7 +11011,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpSharedFolder.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>25</value>
   </data>
   <data name="txtEmailAutomaticSendTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 408</value>
@@ -11611,7 +11431,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcFileUploaders</value>
   </data>
   <data name="&gt;&gt;tpEmail.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>26</value>
   </data>
   <data name="tcFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

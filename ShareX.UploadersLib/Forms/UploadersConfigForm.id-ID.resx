@@ -459,9 +459,6 @@
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
   </data>
-  <data name="tpGfycat.Text" xml:space="preserve">
-    <value>Gfycat</value>
-  </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
   </data>
@@ -904,9 +901,6 @@
     <value>Apakah unggah publik?</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Apakah unggah publik?</value>
-  </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
     <value>Apakah unggah publik?</value>
   </data>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">

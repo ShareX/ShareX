@@ -248,7 +248,6 @@
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FileUploaders\Pushbullet.cs" />
-    <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="CustomUploader\CustomUploaderInput.cs" />
     <Compile Include="Forms\YouTubeVideoOptionsForm.cs">
       <SubType>Form</SubType>
@@ -1248,7 +1247,6 @@
     <None Include="Favicons\Pastie.png" />
     <None Include="Favicons\AzureStorage.png" />
     <None Include="Favicons\Plik.ico" />
-    <None Include="Favicons\Gfycat.png" />
     <None Include="Favicons\BackblazeB2.ico" />
     <None Include="Favicons\Firebase.ico" />
     <None Include="Favicons\YouTube.ico" />
