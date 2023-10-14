@@ -1263,7 +1263,7 @@
       <Version>13.0.3</Version>
     </PackageReference>
     <PackageReference Include="SSH.NET">
-      <Version>2020.0.2</Version>
+      <Version>2023.0.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
