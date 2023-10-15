@@ -1257,4 +1257,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
     <value>Utiliser l'URL brute</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Utiliser les liens directs</value>
+  </data>
 </root>

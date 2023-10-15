@@ -1083,4 +1083,7 @@ Używanie zaszyfrowanej biblioteki wyłącza udostępnianie.</value>
   <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
     <value>Wklej URL API:</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Użyj bezpośredniego linku</value>
+  </data>
 </root>

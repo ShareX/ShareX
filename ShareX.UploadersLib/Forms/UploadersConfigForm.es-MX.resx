@@ -1257,4 +1257,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="tpTeknik.Text" xml:space="preserve">
     <value>Teknik</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Utilizar enlace directo</value>
+  </data>
 </root>

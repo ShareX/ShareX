@@ -1290,4 +1290,7 @@
   <data name="tpZeroWidthShortener.Text" xml:space="preserve">
     <value>Zero Width 缩短器</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>使用直链</value>
+  </data>
 </root>

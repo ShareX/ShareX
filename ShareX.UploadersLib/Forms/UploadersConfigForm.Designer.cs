@@ -194,6 +194,7 @@ namespace ShareX.UploadersLib
             this.tvOneDrive = new System.Windows.Forms.TreeView();
             this.lblOneDriveFolderID = new System.Windows.Forms.Label();
             this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
+            this.cbOneDriveUseDirectLink = new System.Windows.Forms.CheckBox();
             this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
             this.oauth2GoogleDrive = new ShareX.UploadersLib.OAuthLoopbackControl();
@@ -1711,6 +1712,7 @@ namespace ShareX.UploadersLib
             this.tpOneDrive.Controls.Add(this.tvOneDrive);
             this.tpOneDrive.Controls.Add(this.lblOneDriveFolderID);
             this.tpOneDrive.Controls.Add(this.cbOneDriveCreateShareableLink);
+            this.tpOneDrive.Controls.Add(this.cbOneDriveUseDirectLink);
             this.tpOneDrive.Controls.Add(this.oAuth2OneDrive);
             resources.ApplyResources(this.tpOneDrive, "tpOneDrive");
             this.tpOneDrive.Name = "tpOneDrive";
@@ -1733,6 +1735,13 @@ namespace ShareX.UploadersLib
             this.cbOneDriveCreateShareableLink.Name = "cbOneDriveCreateShareableLink";
             this.cbOneDriveCreateShareableLink.UseVisualStyleBackColor = true;
             this.cbOneDriveCreateShareableLink.CheckedChanged += new System.EventHandler(this.cbOneDriveCreateShareableLink_CheckedChanged);
+            // 
+            // cbOneDriveUseDirectLink
+            // 
+            resources.ApplyResources(this.cbOneDriveUseDirectLink, "cbOneDriveUseDirectLink");
+            this.cbOneDriveUseDirectLink.Name = "cbOneDriveUseDirectLink";
+            this.cbOneDriveUseDirectLink.UseVisualStyleBackColor = true;
+            this.cbOneDriveUseDirectLink.CheckedChanged += new System.EventHandler(this.cbOneDriveUseDirectLink_CheckedChanged);
             // 
             // oAuth2OneDrive
             // 
@@ -5152,6 +5161,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblHastebinSyntaxHighlighting;
         private System.Windows.Forms.Label lblHastebinCustomDomain;
         private System.Windows.Forms.CheckBox cbOneDriveCreateShareableLink;
+        private System.Windows.Forms.CheckBox cbOneDriveUseDirectLink;
         private System.Windows.Forms.Label lblOneDriveFolderID;
         private System.Windows.Forms.TreeView tvOneDrive;
         private System.Windows.Forms.Label lblLambdaApiKey;

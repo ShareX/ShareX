@@ -1089,4 +1089,7 @@
   <data name="lblAzureStorageCacheControl.Text" xml:space="preserve">
     <value>Cache-Control заголовок:</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Использовать прямую ссылку</value>
+  </data>
 </root>
