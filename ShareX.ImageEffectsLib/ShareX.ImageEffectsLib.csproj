@@ -113,6 +113,7 @@
     <Compile Include="Drawings\DrawCheckerboard.cs" />
     <Compile Include="Drawings\DrawImage.cs" />
     <Compile Include="Drawings\DrawParticles.cs" />
+    <Compile Include="Drawings\DrawSourceImage.cs" />
     <Compile Include="Drawings\DrawText.cs" />
     <Compile Include="Drawings\DrawTextEx.cs" />
     <Compile Include="Enums.cs" />

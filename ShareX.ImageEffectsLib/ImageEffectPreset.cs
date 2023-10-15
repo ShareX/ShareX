@@ -40,13 +40,25 @@ namespace ShareX.ImageEffectsLib
 
         public Bitmap ApplyEffects(Bitmap bmp)
         {
+            Bitmap sourceBmp = new Bitmap(bmp);
             Bitmap result = (Bitmap)bmp.Clone();
+            sourceBmp.SetResolution(96f, 96f);
             result.SetResolution(96f, 96f);
 
             if (Effects != null && Effects.Count > 0)
             {
                 foreach (ImageEffect effect in Effects.Where(x => x.Enabled))
                 {
+                    if (effect is DrawSourceImage drawSourceImage)
+                    {
+                        result = drawSourceImage.Apply(result, sourceBmp);
+                        if (result == null)
+                        {
+                            break;
+                        }
+
+                        continue;
+                    }
                     result = effect.Apply(result);
 
                     if (result == null)
