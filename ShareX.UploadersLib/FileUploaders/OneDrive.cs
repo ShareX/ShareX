@@ -52,7 +52,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 FolderID = config.OneDriveV2SelectedFolder.id,
                 AutoCreateShareableLink = config.OneDriveAutoCreateShareableLink,
-                UseDirectLink = config.OneDriveUseDirectLink,
+                UseDirectLink = config.OneDriveUseDirectLink
             };
         }
 
