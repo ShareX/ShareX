@@ -1286,13 +1286,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>
-      cd $(ProjectDir)APIKeys\
-
-      if not exist APIKeysLocal.cs (
-      type nul &gt; APIKeysLocal.cs
-      )
-    </PreBuildEvent>
+    <PreBuildEvent>if not exist "$(ProjectDir)APIKeys\APIKeysLocal.cs" (
+    type nul &gt; "$(ProjectDir)APIKeys\APIKeysLocal.cs"
+)</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

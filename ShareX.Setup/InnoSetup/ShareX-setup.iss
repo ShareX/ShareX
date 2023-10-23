@@ -48,7 +48,7 @@ Source: "{#MyAppReleaseDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppRootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
 Source: "{#MyAppOutputDirectory}\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppOutputDirectory}\ffmpeg.exe"; DestDir: {app}; Flags: ignoreversion
-Source: "{#MyAppRootDirectory}\ShareX.NativeMessagingHost\bin\Release\ShareX_NativeMessagingHost.exe"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\ShareX_NativeMessagingHost.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\de\*.resources.dll"; DestDir: {app}\Languages\de; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\es\*.resources.dll"; DestDir: {app}\Languages\es; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\es-MX\*.resources.dll"; DestDir: {app}\Languages\es-MX; Flags: ignoreversion

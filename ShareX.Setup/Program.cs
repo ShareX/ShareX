@@ -67,7 +67,6 @@ namespace ShareX.Setup
 
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
-        private static string NativeMessagingHostDir => Path.Combine(ParentDir, "ShareX.NativeMessagingHost", "bin", Configuration);
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
@@ -378,7 +377,7 @@ namespace ShareX.Setup
 
                 FileHelpers.CopyFiles(RecorderDevicesSetupPath, destination);
 
-                FileHelpers.CopyFiles(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
+                FileHelpers.CopyFiles(Path.Combine(source, "ShareX_NativeMessagingHost.exe"), destination);
             }
 
             foreach (string directory in Directory.GetDirectories(source))
