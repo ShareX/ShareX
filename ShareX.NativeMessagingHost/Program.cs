@@ -39,10 +39,13 @@ namespace ShareX.NativeMessagingHost
             {
                 try
                 {
-                    string input = GetNativeMessagingInput();
+                    HelpersLib.NativeMessagingHost host = new HelpersLib.NativeMessagingHost();
+                    string input = host.Read();
 
                     if (!string.IsNullOrEmpty(input))
                     {
+                        host.Write(input);
+
                         string filePath = FileHelpers.GetAbsolutePath("ShareX.exe");
                         string tempFilePath = FileHelpers.GetTempFilePath("json");
                         File.WriteAllText(tempFilePath, input, Encoding.UTF8);
@@ -60,19 +63,6 @@ namespace ShareX.NativeMessagingHost
                 MessageBox.Show("This executable is used to receive data from browser addon and send it to ShareX.",
                     "ShareX NativeMessagingHost", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private static string GetNativeMessagingInput()
-        {
-            Stream inputStream = Console.OpenStandardInput();
-
-            byte[] bytesLength = new byte[4];
-            inputStream.Read(bytesLength, 0, bytesLength.Length);
-            int inputLength = BitConverter.ToInt32(bytesLength, 0);
-
-            byte[] bytesInput = new byte[inputLength];
-            inputStream.Read(bytesInput, 0, bytesInput.Length);
-            return Encoding.UTF8.GetString(bytesInput);
         }
     }
 }

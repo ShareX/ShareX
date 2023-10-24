@@ -169,6 +169,7 @@
     <Compile Include="Helpers\ClipboardHelpersEx.cs" />
     <Compile Include="Helpers\FileHelpers.cs" />
     <Compile Include="Helpers\JsonHelpers.cs" />
+    <Compile Include="NativeMessagingHost.cs" />
     <Compile Include="TimerResolutionManager.cs" />
     <Compile Include="ImageFilesCache.cs" />
     <Compile Include="MaxLengthStream.cs" />
