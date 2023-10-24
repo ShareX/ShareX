@@ -142,7 +142,7 @@
     <value>Dziennik zmian</value>
   </data>
   <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
-    <value>Niemiekci</value>
+    <value>Niemiecki</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Hiszpański</value>
@@ -254,7 +254,7 @@ Czy chcesz ponownie uruchomić ShareX?</value>
     <value>Uruchamianie zostało wyłączone w menedżerze zadań</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
-    <value>Uruchomienie zostało wyłączone przez Twoją organizację</value>
+    <value>Uruchomienie zostało włączone przez Twoją organizację</value>
   </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Zresetować wszystkie skróty klawiszowe do ustawień domyślnych?</value>
