@@ -1926,6 +1926,17 @@ namespace ShareX
                 {
                     switch (nativeMessagingInput.ContentType)
                     {
+                        // TEMP: For backward compatibility
+                        default:
+                            if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
+                            {
+                                UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL);
+                            }
+                            else if (!string.IsNullOrEmpty(nativeMessagingInput.Text))
+                            {
+                                UploadManager.UploadText(nativeMessagingInput.Text);
+                            }
+                            break;
                         case NativeMessagingContentType.Image:
                         case NativeMessagingContentType.Video:
                         case NativeMessagingContentType.Audio:
