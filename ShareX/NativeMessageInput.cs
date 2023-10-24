@@ -27,6 +27,7 @@ namespace ShareX
 {
     public class NativeMessagingInput
     {
+        public NativeMessagingContentType ContentType { get; set; }
         public string URL { get; set; }
         public string Text { get; set; }
     }

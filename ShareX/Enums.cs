@@ -410,4 +410,14 @@ namespace ShareX
         ListView,
         ThumbnailView
     }
+
+    public enum NativeMessagingContentType
+    {
+        None,
+        Image,
+        Video,
+        Audio,
+        Text,
+        Link
+    }
 }

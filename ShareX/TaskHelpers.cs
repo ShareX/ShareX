@@ -1912,23 +1912,40 @@ namespace ShareX
                 try
                 {
                     nativeMessagingInput = JsonHelpers.DeserializeFromFile<NativeMessagingInput>(filePath);
-
-                    File.Delete(filePath);
                 }
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
                 }
+                finally
+                {
+                    File.Delete(filePath);
+                }
 
                 if (nativeMessagingInput != null)
                 {
-                    if (!string.IsNullOrEmpty(nativeMessagingInput.URL) && URLHelpers.IsValidURL(nativeMessagingInput.URL))
+                    switch (nativeMessagingInput.ContentType)
                     {
-                        UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL);
-                    }
-                    else if (!string.IsNullOrEmpty(nativeMessagingInput.Text))
-                    {
-                        UploadManager.UploadText(nativeMessagingInput.Text);
+                        case NativeMessagingContentType.Image:
+                        case NativeMessagingContentType.Video:
+                        case NativeMessagingContentType.Audio:
+                            if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
+                            {
+                                UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL);
+                            }
+                            break;
+                        case NativeMessagingContentType.Text:
+                            if (!string.IsNullOrEmpty(nativeMessagingInput.Text))
+                            {
+                                UploadManager.UploadText(nativeMessagingInput.Text);
+                            }
+                            break;
+                        case NativeMessagingContentType.Link:
+                            if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
+                            {
+                                UploadManager.ShortenURL(nativeMessagingInput.URL);
+                            }
+                            break;
                     }
                 }
             }
