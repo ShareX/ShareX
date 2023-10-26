@@ -1948,7 +1948,7 @@ namespace ShareX
                                 {
                                     try
                                     {
-                                        bmp = await URLHelpers.DownloadBitmapAsync(nativeMessagingInput.URL);
+                                        bmp = await URLHelpers.DownloadImageAsync(nativeMessagingInput.URL);
                                     }
                                     catch
                                     {

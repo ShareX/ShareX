@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Cache;
+using System.Net.Http;
 using System.Net.Sockets;
 using System.Security;
 using System.Text;
@@ -666,31 +667,43 @@ namespace ShareX.HelpersLib
             return await Task.Run(() => DownloadString(url, noCache));
         }
 
-        public static Bitmap DownloadBitmap(string url)
+        public static async Task<Bitmap> DownloadImageAsync(string url)
         {
-            using (WebClient wc = new WebClient())
-            {
-                wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
-                wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                byte[] data = wc.DownloadData(url);
-                MemoryStream ms = new MemoryStream(data);
+            HttpClient client = HttpClientFactory.Create();
 
-                try
+            using (HttpResponseMessage response = await client.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode && response.Content.Headers.ContentType != null)
                 {
-                    return new Bitmap(ms);
-                }
-                catch
-                {
-                    ms.Dispose();
+                    string mediaType = response.Content.Headers.ContentType.MediaType;
+
+                    string[] supportedImageTypes = new string[]
+                    {
+                            "image/png",
+                            "image/jpeg",
+                            "image/gif",
+                            "image/bmp",
+                            "image/tiff"
+                    };
+
+                    if (supportedImageTypes.Contains(mediaType, StringComparer.OrdinalIgnoreCase))
+                    {
+                        byte[] data = await response.Content.ReadAsByteArrayAsync();
+                        MemoryStream ms = new MemoryStream(data);
+
+                        try
+                        {
+                            return new Bitmap(ms);
+                        }
+                        catch
+                        {
+                            ms.Dispose();
+                        }
+                    }
                 }
             }
 
             return null;
-        }
-
-        public static async Task<Bitmap> DownloadBitmapAsync(string url)
-        {
-            return await Task.Run(() => DownloadBitmap(url));
         }
 
         public static int GetRandomUnusedPort()

@@ -77,7 +77,7 @@ namespace ShareX.HelpersLib
             }
             catch (Exception e)
             {
-                DebugHelper.WriteException(e, "GetWebProxy failed");
+                DebugHelper.WriteException(e, "GetWebProxy failed.");
             }
 
             return null;
@@ -93,7 +93,7 @@ namespace ShareX.HelpersLib
             }
             catch (Exception e)
             {
-                DebugHelper.WriteException(e, "Reflection failed");
+                DebugHelper.WriteException(e, "Reflection failed.");
             }
 
             return null;

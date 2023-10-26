@@ -93,6 +93,7 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
@@ -169,6 +170,7 @@
     <Compile Include="Helpers\ClipboardHelpersEx.cs" />
     <Compile Include="Helpers\FileHelpers.cs" />
     <Compile Include="Helpers\JsonHelpers.cs" />
+    <Compile Include="HttpClientFactory.cs" />
     <Compile Include="NativeMessagingHost.cs" />
     <Compile Include="TimerResolutionManager.cs" />
     <Compile Include="ImageFilesCache.cs" />
