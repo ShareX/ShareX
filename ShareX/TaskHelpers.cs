@@ -1903,7 +1903,7 @@ namespace ShareX
             }
         }
 
-        public static void HandleNativeMessagingInput(string filePath)
+        public static async Task HandleNativeMessagingInput(string filePath, TaskSettings taskSettings = null)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
@@ -1924,37 +1924,64 @@ namespace ShareX
 
                 if (nativeMessagingInput != null)
                 {
+                    if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
                     switch (nativeMessagingInput.ContentType)
                     {
                         // TEMP: For backward compatibility
                         default:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
                             {
-                                UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL);
+                                UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL, taskSettings);
                             }
                             else if (!string.IsNullOrEmpty(nativeMessagingInput.Text))
                             {
-                                UploadManager.UploadText(nativeMessagingInput.Text);
+                                UploadManager.UploadText(nativeMessagingInput.Text, taskSettings);
                             }
                             break;
                         case NativeMessagingContentType.Image:
+                            if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
+                            {
+                                Bitmap bmp = null;
+
+                                if (taskSettings.AdvancedSettings.ProcessImagesDuringExtensionUpload)
+                                {
+                                    try
+                                    {
+                                        bmp = await URLHelpers.DownloadBitmapAsync(nativeMessagingInput.URL);
+                                    }
+                                    catch
+                                    {
+                                    }
+                                }
+
+                                if (bmp != null)
+                                {
+                                    UploadManager.RunImageTask(bmp, taskSettings);
+                                }
+                                else
+                                {
+                                    UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL, taskSettings);
+                                }
+                            }
+                            break;
                         case NativeMessagingContentType.Video:
                         case NativeMessagingContentType.Audio:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
                             {
-                                UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL);
+                                UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL, taskSettings);
                             }
                             break;
                         case NativeMessagingContentType.Text:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.Text))
                             {
-                                UploadManager.UploadText(nativeMessagingInput.Text);
+                                UploadManager.UploadText(nativeMessagingInput.Text, taskSettings);
                             }
                             break;
                         case NativeMessagingContentType.Link:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
                             {
-                                UploadManager.ShortenURL(nativeMessagingInput.URL);
+                                UploadManager.ShortenURL(nativeMessagingInput.URL, taskSettings);
                             }
                             break;
                     }

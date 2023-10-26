@@ -28,7 +28,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Cache;
@@ -631,6 +633,11 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static async Task DownloadFileAsync(string url, string filePath)
+        {
+            await Task.Run(() => DownloadFile(url, filePath));
+        }
+
         public static string DownloadString(string url, bool noCache = true)
         {
             string response = null;
@@ -652,6 +659,38 @@ namespace ShareX.HelpersLib
             }
 
             return response;
+        }
+
+        public static async Task<string> DownloadStringAsync(string url, bool noCache = true)
+        {
+            return await Task.Run(() => DownloadString(url, noCache));
+        }
+
+        public static Bitmap DownloadBitmap(string url)
+        {
+            using (WebClient wc = new WebClient())
+            {
+                wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
+                wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+                byte[] data = wc.DownloadData(url);
+                MemoryStream ms = new MemoryStream(data);
+
+                try
+                {
+                    return new Bitmap(ms);
+                }
+                catch
+                {
+                    ms.Dispose();
+                }
+            }
+
+            return null;
+        }
+
+        public static async Task<Bitmap> DownloadBitmapAsync(string url)
+        {
+            return await Task.Run(() => DownloadBitmap(url));
         }
 
         public static int GetRandomUnusedPort()

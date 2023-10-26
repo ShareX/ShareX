@@ -53,7 +53,7 @@ namespace ShareX
                 if (command.IsCommand)
                 {
                     if (CheckCustomUploader(command) || CheckImageEffect(command) || await CheckCLIHotkey(command) || await CheckCLIWorkflow(command) ||
-                        CheckNativeMessagingInput(command))
+                        await CheckNativeMessagingInput(command))
                     {
                     }
 
@@ -158,13 +158,13 @@ namespace ShareX
             return false;
         }
 
-        private bool CheckNativeMessagingInput(CLICommand command)
+        private async Task<bool> CheckNativeMessagingInput(CLICommand command)
         {
             if (command.Command.Equals("NativeMessagingInput", StringComparison.OrdinalIgnoreCase))
             {
                 if (!string.IsNullOrEmpty(command.Parameter) && command.Parameter.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
                 {
-                    TaskHelpers.HandleNativeMessagingInput(command.Parameter);
+                    await TaskHelpers.HandleNativeMessagingInput(command.Parameter);
                 }
 
                 return true;

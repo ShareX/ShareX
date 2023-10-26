@@ -429,8 +429,11 @@ namespace ShareX
         [Category("General"), DefaultValue(false), Description("Allow after capture tasks for image files by loading them as bitmap when files are handled during file upload, clipboard file upload, drag && drop file upload, watch folder and other image file tasks.")]
         public bool ProcessImagesDuringFileUpload { get; set; }
 
-        [Category("General"), DefaultValue(false), Description("Use after capture tasks for clipboard image upload.")]
+        [Category("General"), DefaultValue(false), Description("Use after capture tasks for clipboard image uploads.")]
         public bool ProcessImagesDuringClipboardUpload { get; set; }
+
+        [Category("General"), DefaultValue(false), Description("Use after capture tasks for browser extension image uploads.")]
+        public bool ProcessImagesDuringExtensionUpload { get; set; }
 
         [Category("General"), DefaultValue(true), Description("Allows file related after capture tasks (\"Perform actions\", \"Copy file to clipboard\" etc.) to be used when doing file upload.")]
         public bool UseAfterCaptureTasksDuringFileUpload { get; set; }
