@@ -411,13 +411,13 @@ namespace ShareX
         ThumbnailView
     }
 
-    public enum NativeMessagingContentType
+    public enum NativeMessagingAction
     {
         None,
-        Image,
-        Video,
-        Audio,
-        Text,
-        Link
+        UploadImage,
+        UploadVideo,
+        UploadAudio,
+        UploadText,
+        ShortenURL
     }
 }

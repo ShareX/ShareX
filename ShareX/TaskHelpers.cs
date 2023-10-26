@@ -1926,7 +1926,7 @@ namespace ShareX
                 {
                     if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                    switch (nativeMessagingInput.ContentType)
+                    switch (nativeMessagingInput.Action)
                     {
                         // TEMP: For backward compatibility
                         default:
@@ -1939,7 +1939,7 @@ namespace ShareX
                                 UploadManager.UploadText(nativeMessagingInput.Text, taskSettings);
                             }
                             break;
-                        case NativeMessagingContentType.Image:
+                        case NativeMessagingAction.UploadImage:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
                             {
                                 Bitmap bmp = null;
@@ -1965,20 +1965,20 @@ namespace ShareX
                                 }
                             }
                             break;
-                        case NativeMessagingContentType.Video:
-                        case NativeMessagingContentType.Audio:
+                        case NativeMessagingAction.UploadVideo:
+                        case NativeMessagingAction.UploadAudio:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
                             {
                                 UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL, taskSettings);
                             }
                             break;
-                        case NativeMessagingContentType.Text:
+                        case NativeMessagingAction.UploadText:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.Text))
                             {
                                 UploadManager.UploadText(nativeMessagingInput.Text, taskSettings);
                             }
                             break;
-                        case NativeMessagingContentType.Link:
+                        case NativeMessagingAction.ShortenURL:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
                             {
                                 UploadManager.ShortenURL(nativeMessagingInput.URL, taskSettings);
