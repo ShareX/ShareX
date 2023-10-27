@@ -618,24 +618,26 @@ namespace ShareX.HelpersLib
             return fileName;
         }
 
-        public static void DownloadFile(string url, string filePath)
+        public static async Task DownloadFileAsync(string url, string filePath)
         {
             if (!string.IsNullOrEmpty(url) && !string.IsNullOrEmpty(filePath))
             {
                 FileHelpers.CreateDirectoryFromFilePath(filePath);
 
-                using (WebClient wc = new WebClient())
+                HttpClient client = HttpClientFactory.Create();
+
+                using (HttpResponseMessage responseMessage = await client.GetAsync(url))
                 {
-                    wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
-                    wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                    wc.DownloadFile(url, filePath);
+                    if (responseMessage.IsSuccessStatusCode)
+                    {
+                        using (Stream stream = await responseMessage.Content.ReadAsStreamAsync())
+                        using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                        {
+                            await stream.CopyToAsync(fileStream);
+                        }
+                    }
                 }
             }
-        }
-
-        public static async Task DownloadFileAsync(string url, string filePath)
-        {
-            await Task.Run(() => DownloadFile(url, filePath));
         }
 
         public static async Task<string> DownloadStringAsync(string url)
@@ -662,35 +664,38 @@ namespace ShareX.HelpersLib
         {
             Bitmap bmp = null;
 
-            HttpClient client = HttpClientFactory.Create();
-
-            using (HttpResponseMessage responseMessage = await client.GetAsync(url))
+            if (!string.IsNullOrEmpty(url))
             {
-                if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType != null)
-                {
-                    string mediaType = responseMessage.Content.Headers.ContentType.MediaType;
+                HttpClient client = HttpClientFactory.Create();
 
-                    string[] supportedImageTypes = new string[]
+                using (HttpResponseMessage responseMessage = await client.GetAsync(url))
+                {
+                    if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType != null)
                     {
+                        string mediaType = responseMessage.Content.Headers.ContentType.MediaType;
+
+                        string[] supportedImageTypes = new string[]
+                        {
                             "image/png",
                             "image/jpeg",
                             "image/gif",
                             "image/bmp",
                             "image/tiff"
-                    };
+                        };
 
-                    if (supportedImageTypes.Contains(mediaType, StringComparer.OrdinalIgnoreCase))
-                    {
-                        byte[] data = await responseMessage.Content.ReadAsByteArrayAsync();
-                        MemoryStream ms = new MemoryStream(data);
+                        if (supportedImageTypes.Contains(mediaType, StringComparer.OrdinalIgnoreCase))
+                        {
+                            byte[] data = await responseMessage.Content.ReadAsByteArrayAsync();
+                            MemoryStream memoryStream = new MemoryStream(data);
 
-                        try
-                        {
-                            bmp = new Bitmap(ms);
-                        }
-                        catch
-                        {
-                            ms.Dispose();
+                            try
+                            {
+                                bmp = new Bitmap(memoryStream);
+                            }
+                            catch
+                            {
+                                memoryStream.Dispose();
+                            }
                         }
                     }
                 }

@@ -1092,7 +1092,7 @@ namespace ShareX
 
                 try
                 {
-                    URLHelpers.DownloadFile(url, Info.FilePath);
+                    URLHelpers.DownloadFileAsync(url, Info.FilePath).GetAwaiter().GetResult();
 
                     if (upload)
                     {
