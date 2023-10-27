@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace ShareX.HelpersLib
 {
@@ -41,7 +42,11 @@ namespace ShareX.HelpersLib
                 };
 
                 client = new HttpClient(clientHandler);
-                client.DefaultRequestHeaders.Add("User-Agent", ShareXResources.UserAgent);
+                client.DefaultRequestHeaders.UserAgent.ParseAdd(ShareXResources.UserAgent);
+                client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue()
+                {
+                    NoCache = true
+                };
             }
 
             return client;

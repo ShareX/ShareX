@@ -31,7 +31,6 @@ using System;
 using System.ComponentModel;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -247,19 +246,16 @@ namespace ShareX.HelpersLib
 
                 string json = null;
 
-                await Task.Run(() =>
+                try
                 {
-                    try
-                    {
-                        json = URLHelpers.DownloadString(url);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugHelper.WriteException(ex);
-                        MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + ex, "ShareX - " + Resources.Error,
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                });
+                    json = await URLHelpers.DownloadStringAsync(url);
+                }
+                catch (Exception ex)
+                {
+                    DebugHelper.WriteException(ex);
+                    MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + ex, "ShareX - " + Resources.Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 OnImportRequested(json);
                 OnImportCompleted();

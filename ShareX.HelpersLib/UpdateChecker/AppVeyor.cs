@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
@@ -34,10 +35,10 @@ namespace ShareX.HelpersLib
 
         private const string APIURL = "https://ci.appveyor.com/api";
 
-        public AppVeyorProject GetProjectByBranch(string branch = "master")
+        public async Task<AppVeyorProject> GetProjectByBranch(string branch = "master")
         {
             string url = $"{APIURL}/projects/{AccountName}/{ProjectSlug}/branch/{branch}";
-            string response = URLHelpers.DownloadString(url);
+            string response = await URLHelpers.DownloadStringAsync(url);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -47,10 +48,10 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public AppVeyorProjectArtifact[] GetArtifacts(string jobId)
+        public async Task<AppVeyorProjectArtifact[]> GetArtifacts(string jobId)
         {
             string url = $"{APIURL}/buildjobs/{jobId}/artifacts";
-            string response = URLHelpers.DownloadString(url);
+            string response = await URLHelpers.DownloadStringAsync(url);
 
             if (!string.IsNullOrEmpty(response))
             {

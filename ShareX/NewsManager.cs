@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
@@ -39,11 +40,11 @@ namespace ShareX
         public bool IsUnread => UnreadCount > 0;
         public int UnreadCount => NewsItems != null ? NewsItems.Count(x => x.IsUnread) : 0;
 
-        public void UpdateNews()
+        public async Task UpdateNews()
         {
             try
             {
-                NewsItems = GetNews();
+                NewsItems = await GetNews();
             }
             catch (Exception e)
             {
@@ -62,10 +63,10 @@ namespace ShareX
             }
         }
 
-        private List<NewsItem> GetNews()
+        private async Task<List<NewsItem>> GetNews()
         {
             string url = URLHelpers.CombineURL(Links.Website, "news.json");
-            string response = URLHelpers.DownloadString(url);
+            string response = await URLHelpers.DownloadStringAsync(url);
 
             if (!string.IsNullOrEmpty(response))
             {

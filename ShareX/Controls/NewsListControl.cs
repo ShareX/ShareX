@@ -73,35 +73,31 @@ namespace ShareX
             }
         }
 
-        public void Start()
+        public async Task Start()
         {
-            Task.Run(() =>
+            NewsManager = new NewsManager();
+            //NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
+            await NewsManager.UpdateNews();
+            NewsManager.UpdateUnread();
+
+            if (NewsManager != null && NewsManager.NewsItems != null)
             {
-                NewsManager = new NewsManager();
-                //NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
-                NewsManager.UpdateNews();
-                NewsManager.UpdateUnread();
-            }).ContinueInCurrentContext(() =>
-            {
-                if (NewsManager != null && NewsManager.NewsItems != null)
+                SuspendLayout();
+
+                foreach (NewsItem item in NewsManager.NewsItems)
                 {
-                    SuspendLayout();
-
-                    foreach (NewsItem item in NewsManager.NewsItems)
+                    if (item != null)
                     {
-                        if (item != null)
-                        {
-                            AddNewsItem(item);
-                        }
+                        AddNewsItem(item);
                     }
-
-                    UpdateUnreadStatus();
-
-                    ResumeLayout();
-
-                    OnNewsLoaded();
                 }
-            });
+
+                UpdateUnreadStatus();
+
+                ResumeLayout();
+
+                OnNewsLoaded();
+            }
         }
 
         protected void OnNewsLoaded()

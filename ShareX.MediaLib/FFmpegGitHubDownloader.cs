@@ -25,16 +25,17 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
 {
     public static class FFmpegGitHubDownloader
     {
-        public static DialogResult DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
+        public static async Task<DialogResult> DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
         {
             FFmpegUpdateChecker updateChecker = new FFmpegUpdateChecker("ShareX", "FFmpeg");
-            string url = updateChecker.GetLatestDownloadURL(true);
+            string url = await updateChecker.GetLatestDownloadURL(true);
 
             using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
             {

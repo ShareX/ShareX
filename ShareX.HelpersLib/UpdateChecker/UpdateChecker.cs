@@ -81,12 +81,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public abstract void CheckUpdate();
-
-        public Task CheckUpdateAsync()
-        {
-            return Task.Run(CheckUpdate);
-        }
+        public abstract Task CheckUpdateAsync();
 
         public void DownloadUpdate()
         {

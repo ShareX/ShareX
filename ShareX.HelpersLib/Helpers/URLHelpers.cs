@@ -33,7 +33,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Cache;
 using System.Net.Http;
 using System.Net.Sockets;
 using System.Security;
@@ -639,43 +638,37 @@ namespace ShareX.HelpersLib
             await Task.Run(() => DownloadFile(url, filePath));
         }
 
-        public static string DownloadString(string url, bool noCache = true)
+        public static async Task<string> DownloadStringAsync(string url)
         {
             string response = null;
 
             if (!string.IsNullOrEmpty(url))
             {
-                using (WebClient wc = new WebClient())
-                {
-                    if (noCache)
-                    {
-                        wc.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-                    }
+                HttpClient client = HttpClientFactory.Create();
 
-                    wc.Encoding = Encoding.UTF8;
-                    wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
-                    wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                    response = wc.DownloadString(url);
+                using (HttpResponseMessage responseMessage = await client.GetAsync(url))
+                {
+                    if (responseMessage.IsSuccessStatusCode)
+                    {
+                        response = await responseMessage.Content.ReadAsStringAsync();
+                    }
                 }
             }
 
             return response;
         }
 
-        public static async Task<string> DownloadStringAsync(string url, bool noCache = true)
-        {
-            return await Task.Run(() => DownloadString(url, noCache));
-        }
-
         public static async Task<Bitmap> DownloadImageAsync(string url)
         {
+            Bitmap bmp = null;
+
             HttpClient client = HttpClientFactory.Create();
 
-            using (HttpResponseMessage response = await client.GetAsync(url))
+            using (HttpResponseMessage responseMessage = await client.GetAsync(url))
             {
-                if (response.IsSuccessStatusCode && response.Content.Headers.ContentType != null)
+                if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType != null)
                 {
-                    string mediaType = response.Content.Headers.ContentType.MediaType;
+                    string mediaType = responseMessage.Content.Headers.ContentType.MediaType;
 
                     string[] supportedImageTypes = new string[]
                     {
@@ -688,12 +681,12 @@ namespace ShareX.HelpersLib
 
                     if (supportedImageTypes.Contains(mediaType, StringComparer.OrdinalIgnoreCase))
                     {
-                        byte[] data = await response.Content.ReadAsByteArrayAsync();
+                        byte[] data = await responseMessage.Content.ReadAsByteArrayAsync();
                         MemoryStream ms = new MemoryStream(data);
 
                         try
                         {
-                            return new Bitmap(ms);
+                            bmp = new Bitmap(ms);
                         }
                         catch
                         {
@@ -703,7 +696,7 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            return null;
+            return bmp;
         }
 
         public static int GetRandomUnusedPort()

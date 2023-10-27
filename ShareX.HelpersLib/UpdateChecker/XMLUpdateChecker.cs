@@ -25,6 +25,7 @@
 
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -41,11 +42,11 @@ namespace ShareX.HelpersLib
             ApplicationName = applicationName;
         }
 
-        public override void CheckUpdate()
+        public override async Task CheckUpdateAsync()
         {
             try
             {
-                string response = URLHelpers.DownloadString(URL);
+                string response = await URLHelpers.DownloadStringAsync(URL);
 
                 using (StringReader sr = new StringReader(response))
                 using (XmlTextReader xml = new XmlTextReader(sr))

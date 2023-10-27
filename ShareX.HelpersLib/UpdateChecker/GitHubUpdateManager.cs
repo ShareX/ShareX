@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Timer = System.Threading.Timer;
 
@@ -58,7 +59,7 @@ namespace ShareX.HelpersLib
                 {
                     if (updateTimer == null)
                     {
-                        updateTimer = new Timer(state => CheckUpdate(), null, TimeSpan.Zero, UpdateCheckInterval);
+                        updateTimer = new Timer(TimerCallback, null, TimeSpan.Zero, UpdateCheckInterval);
                     }
                 }
                 else
@@ -68,12 +69,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void CheckUpdate()
+        private async void TimerCallback(object state)
+        {
+            await CheckUpdate();
+        }
+
+        private async Task CheckUpdate()
         {
             if (AutoUpdateEnabled && !UpdateMessageBox.IsOpen)
             {
                 UpdateChecker updateChecker = CreateUpdateChecker();
-                updateChecker.CheckUpdate();
+                await updateChecker.CheckUpdateAsync();
 
                 if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
                 {
