@@ -582,42 +582,6 @@ namespace ShareX.HelpersLib
             return builder.Uri.AbsoluteUri;
         }
 
-        public static string GetFileNameFromWebServer(string url)
-        {
-            string fileName = null;
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                try
-                {
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                    request.Method = "HEAD";
-                    IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
-                    if (proxy != null) request.Proxy = proxy;
-                    request.UserAgent = ShareXResources.UserAgent;
-
-                    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                    {
-                        string contentDisposition = response.Headers["Content-Disposition"];
-
-                        if (!string.IsNullOrEmpty(contentDisposition))
-                        {
-                            string fileNameMarker = "filename=\"";
-                            int beginIndex = contentDisposition.IndexOf(fileNameMarker, StringComparison.OrdinalIgnoreCase);
-                            contentDisposition = contentDisposition.Substring(beginIndex + fileNameMarker.Length);
-                            int fileNameLength = contentDisposition.IndexOf("\"");
-                            fileName = contentDisposition.Substring(0, fileNameLength);
-                        }
-                    }
-                }
-                catch
-                {
-                }
-            }
-
-            return fileName;
-        }
-
         public static async Task DownloadFileAsync(string url, string filePath)
         {
             if (!string.IsNullOrEmpty(url) && !string.IsNullOrEmpty(filePath))
@@ -702,6 +666,35 @@ namespace ShareX.HelpersLib
             }
 
             return bmp;
+        }
+
+        public static async Task<string> GetFileNameFromWebServerAsync(string url)
+        {
+            string fileName = null;
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                HttpClient client = HttpClientFactory.Create();
+
+                using (HttpResponseMessage responseMessage = await client.SendAsync(new HttpRequestMessage(HttpMethod.Head, url)))
+                {
+                    if (responseMessage.Content.Headers.ContentDisposition != null)
+                    {
+                        string contentDisposition = responseMessage.Content.Headers.ContentDisposition.ToString();
+
+                        if (!string.IsNullOrEmpty(contentDisposition))
+                        {
+                            string fileNameMarker = "filename=\"";
+                            int beginIndex = contentDisposition.IndexOf(fileNameMarker, StringComparison.OrdinalIgnoreCase);
+                            contentDisposition = contentDisposition.Substring(beginIndex + fileNameMarker.Length);
+                            int fileNameLength = contentDisposition.IndexOf("\"");
+                            fileName = contentDisposition.Substring(0, fileNameLength);
+                        }
+                    }
+                }
+            }
+
+            return fileName;
         }
 
         public static int GetRandomUnusedPort()

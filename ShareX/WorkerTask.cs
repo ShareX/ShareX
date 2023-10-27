@@ -1074,11 +1074,18 @@ namespace ShareX
 
             if (!Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string fileName = URLHelpers.GetFileNameFromWebServer(url);
-
-                if (!string.IsNullOrEmpty(fileName))
+                try
                 {
-                    Info.FileName = FileHelpers.SanitizeFileName(fileName);
+                    string fileName = URLHelpers.GetFileNameFromWebServerAsync(url).GetAwaiter().GetResult();
+
+                    if (!string.IsNullOrEmpty(fileName))
+                    {
+                        Info.FileName = FileHelpers.SanitizeFileName(fileName);
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
                 }
             }
 
