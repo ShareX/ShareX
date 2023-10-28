@@ -30,26 +30,46 @@ namespace ShareX.HelpersLib
 {
     public static class HttpClientFactory
     {
+        private static readonly object lockObject = new object();
+
         private static HttpClient client;
 
         public static HttpClient Create()
         {
             if (client == null)
             {
-                HttpClientHandler clientHandler = new HttpClientHandler()
+                lock (lockObject)
                 {
-                    Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
-                };
+                    if (client == null)
+                    {
+                        HttpClientHandler clientHandler = new HttpClientHandler()
+                        {
+                            Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
+                        };
 
-                client = new HttpClient(clientHandler);
-                client.DefaultRequestHeaders.UserAgent.ParseAdd(ShareXResources.UserAgent);
-                client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue()
-                {
-                    NoCache = true
-                };
+                        client = new HttpClient(clientHandler);
+                        client.DefaultRequestHeaders.UserAgent.ParseAdd(ShareXResources.UserAgent);
+                        client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue()
+                        {
+                            NoCache = true
+                        };
+                    }
+                }
             }
 
             return client;
+        }
+
+        public static void Reset()
+        {
+            lock (lockObject)
+            {
+                if (client != null)
+                {
+                    client.Dispose();
+                    client = null;
+                }
+            }
         }
     }
 }
