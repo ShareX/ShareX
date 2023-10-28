@@ -594,10 +594,10 @@ namespace ShareX.HelpersLib
                 {
                     if (responseMessage.IsSuccessStatusCode)
                     {
-                        using (Stream stream = await responseMessage.Content.ReadAsStreamAsync())
+                        using (Stream responseStream = await responseMessage.Content.ReadAsStreamAsync())
                         using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
                         {
-                            await stream.CopyToAsync(fileStream);
+                            await responseStream.CopyToAsync(fileStream);
                         }
                     }
                 }
@@ -632,7 +632,7 @@ namespace ShareX.HelpersLib
             {
                 HttpClient client = HttpClientFactory.Create();
 
-                using (HttpResponseMessage responseMessage = await client.GetAsync(url))
+                using (HttpResponseMessage responseMessage = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
                 {
                     if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType != null)
                     {
@@ -676,7 +676,8 @@ namespace ShareX.HelpersLib
             {
                 HttpClient client = HttpClientFactory.Create();
 
-                using (HttpResponseMessage responseMessage = await client.SendAsync(new HttpRequestMessage(HttpMethod.Head, url)))
+                using (HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Head, url))
+                using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
                 {
                     if (responseMessage.Content.Headers.ContentDisposition != null)
                     {
