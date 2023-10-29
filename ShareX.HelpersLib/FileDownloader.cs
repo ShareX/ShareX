@@ -33,10 +33,12 @@ namespace ShareX.HelpersLib
 {
     public class FileDownloader
     {
-        public event Action FileSizeReceived, DownloadStarted, ProgressChanged, DownloadCompleted, ExceptionThrown;
+        public event Action FileSizeReceived, DownloadStarted, ProgressChanged, DownloadCompleted;
 
-        public string URL { get; private set; }
-        public string DownloadLocation { get; private set; }
+        public string URL { get; set; }
+        public string DownloadLocation { get; set; }
+        public string AcceptHeader { get; set; }
+
         public bool IsDownloading { get; private set; }
         public bool IsCanceled { get; private set; }
         public long FileSize { get; private set; }
@@ -56,10 +58,11 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public string AcceptHeader { get; set; }
-        public Exception LastException { get; private set; }
-
         private const int bufferSize = 32768;
+
+        public FileDownloader()
+        {
+        }
 
         public FileDownloader(string url, string downloadLocation)
         {
@@ -73,6 +76,9 @@ namespace ShareX.HelpersLib
             {
                 IsDownloading = true;
                 IsCanceled = false;
+                FileSize = 0;
+                DownloadedSize = 0;
+                DownloadSpeed = 0;
 
                 await DoWork();
             }
@@ -100,7 +106,7 @@ namespace ShareX.HelpersLib
                     {
                         responseMessage.EnsureSuccessStatusCode();
 
-                        FileSize = responseMessage.Content.Headers.ContentLength ?? -1;
+                        FileSize = responseMessage.Content.Headers.ContentLength ?? 0;
 
                         FileSizeReceived?.Invoke();
 
@@ -162,9 +168,7 @@ namespace ShareX.HelpersLib
             {
                 if (!IsCanceled)
                 {
-                    LastException = e;
-
-                    ExceptionThrown?.Invoke();
+                    throw e;
                 }
             }
             finally

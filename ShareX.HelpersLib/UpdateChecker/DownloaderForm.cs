@@ -215,8 +215,15 @@ namespace ShareX.HelpersLib
                 fileDownloader.DownloadStarted += FileDownloader_DownloadStarted;
                 fileDownloader.ProgressChanged += FileDownloader_ProgressChanged;
                 fileDownloader.DownloadCompleted += FileDownloader_DownloadCompleted;
-                fileDownloader.ExceptionThrown += FileDownloader_ExceptionThrown;
-                await fileDownloader.StartDownload();
+
+                try
+                {
+                    await fileDownloader.StartDownload();
+                }
+                catch (Exception e)
+                {
+                    ChangeStatus(e.Message);
+                }
 
                 ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);
             }
@@ -247,11 +254,6 @@ namespace ShareX.HelpersLib
             {
                 Install();
             }
-        }
-
-        private void FileDownloader_ExceptionThrown()
-        {
-            ChangeStatus(fileDownloader.LastException.Message);
         }
 
         private void DownloaderForm_FormClosing(object sender, FormClosingEventArgs e)
