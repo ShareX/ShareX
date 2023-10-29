@@ -33,7 +33,8 @@ namespace ShareX.HelpersLib
 {
     public class FileDownloader
     {
-        public event Action FileSizeReceived, DownloadStarted, ProgressChanged, DownloadCompleted;
+        public event Action FileSizeReceived;
+        public event Action ProgressChanged;
 
         public string URL { get; set; }
         public string DownloadLocation { get; set; }
@@ -41,7 +42,7 @@ namespace ShareX.HelpersLib
 
         public bool IsDownloading { get; private set; }
         public bool IsCanceled { get; private set; }
-        public long FileSize { get; private set; }
+        public long FileSize { get; private set; } = -1;
         public long DownloadedSize { get; private set; }
         public double DownloadSpeed { get; private set; }
 
@@ -70,18 +71,20 @@ namespace ShareX.HelpersLib
             DownloadLocation = downloadLocation;
         }
 
-        public async Task StartDownload()
+        public async Task<bool> StartDownload()
         {
             if (!IsDownloading && !string.IsNullOrEmpty(URL))
             {
                 IsDownloading = true;
                 IsCanceled = false;
-                FileSize = 0;
+                FileSize = -1;
                 DownloadedSize = 0;
                 DownloadSpeed = 0;
 
-                await DoWork();
+                return await DoWork();
             }
+
+            return false;
         }
 
         public void StopDownload()
@@ -89,7 +92,7 @@ namespace ShareX.HelpersLib
             IsCanceled = true;
         }
 
-        private async Task DoWork()
+        private async Task<bool> DoWork()
         {
             try
             {
@@ -106,7 +109,7 @@ namespace ShareX.HelpersLib
                     {
                         responseMessage.EnsureSuccessStatusCode();
 
-                        FileSize = responseMessage.Content.Headers.ContentLength ?? 0;
+                        FileSize = responseMessage.Content.Headers.ContentLength ?? -1;
 
                         FileSizeReceived?.Invoke();
 
@@ -122,8 +125,6 @@ namespace ShareX.HelpersLib
                             using (Stream responseStream = await responseMessage.Content.ReadAsStreamAsync())
                             using (FileStream fileStream = new FileStream(DownloadLocation, FileMode.Create, FileAccess.Write, FileShare.Read))
                             {
-                                DownloadStarted?.Invoke();
-
                                 while (DownloadedSize < FileSize && !IsCanceled)
                                 {
                                     if (!timer.IsRunning)
@@ -156,10 +157,11 @@ namespace ShareX.HelpersLib
                                         progressEventTimer.Reset();
                                     }
                                 }
+
+                                ProgressChanged?.Invoke();
                             }
 
-                            ProgressChanged?.Invoke();
-                            DownloadCompleted?.Invoke();
+                            return true;
                         }
                     }
                 }
@@ -189,6 +191,8 @@ namespace ShareX.HelpersLib
 
                 IsDownloading = false;
             }
+
+            return false;
         }
     }
 }

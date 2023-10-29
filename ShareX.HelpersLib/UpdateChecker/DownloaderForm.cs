@@ -211,27 +211,39 @@ namespace ShareX.HelpersLib
 
                 fileDownloader = new FileDownloader(URL, DownloadLocation);
                 fileDownloader.AcceptHeader = AcceptHeader;
-                fileDownloader.FileSizeReceived += FileDownloader_ProgressChanged;
-                fileDownloader.DownloadStarted += FileDownloader_DownloadStarted;
+                fileDownloader.FileSizeReceived += FileDownloader_FileSizeReceived;
                 fileDownloader.ProgressChanged += FileDownloader_ProgressChanged;
-                fileDownloader.DownloadCompleted += FileDownloader_DownloadCompleted;
+
+                ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);
 
                 try
                 {
-                    await fileDownloader.StartDownload();
+                    bool downloadStatus = await fileDownloader.StartDownload();
+
+                    if (downloadStatus)
+                    {
+                        ChangeStatus(Resources.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
+                        Status = DownloaderFormStatus.DownloadCompleted;
+                        btnAction.Text = Resources.DownloaderForm_fileDownloader_DownloadCompleted_Install;
+
+                        if (AutoStartInstall)
+                        {
+                            Install();
+                        }
+                    }
                 }
                 catch (Exception e)
                 {
                     ChangeStatus(e.Message);
                 }
-
-                ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);
             }
         }
 
-        private void FileDownloader_DownloadStarted()
+        private void FileDownloader_FileSizeReceived()
         {
             ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);
+
+            FileDownloader_ProgressChanged();
         }
 
         private void FileDownloader_ProgressChanged()
@@ -241,18 +253,6 @@ namespace ShareX.HelpersLib
                 pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
                 lblProgress.Text = Helpers.SafeStringFormat(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress,
                     fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1024, fileDownloader.DownloadedSize / 1024, fileDownloader.FileSize / 1024);
-            }
-        }
-
-        private void FileDownloader_DownloadCompleted()
-        {
-            ChangeStatus(Resources.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
-            Status = DownloaderFormStatus.DownloadCompleted;
-            btnAction.Text = Resources.DownloaderForm_fileDownloader_DownloadCompleted_Install;
-
-            if (AutoStartInstall)
-            {
-                Install();
             }
         }
 
