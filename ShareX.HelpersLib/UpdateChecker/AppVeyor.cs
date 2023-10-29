@@ -38,7 +38,7 @@ namespace ShareX.HelpersLib
         public async Task<AppVeyorProject> GetProjectByBranch(string branch = "master")
         {
             string url = $"{APIURL}/projects/{AccountName}/{ProjectSlug}/branch/{branch}";
-            string response = await URLHelpers.DownloadStringAsync(url);
+            string response = await WebHelpers.DownloadStringAsync(url);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -51,7 +51,7 @@ namespace ShareX.HelpersLib
         public async Task<AppVeyorProjectArtifact[]> GetArtifacts(string jobId)
         {
             string url = $"{APIURL}/buildjobs/{jobId}/artifacts";
-            string response = await URLHelpers.DownloadStringAsync(url);
+            string response = await WebHelpers.DownloadStringAsync(url);
 
             if (!string.IsNullOrEmpty(response))
             {

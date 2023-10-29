@@ -425,7 +425,7 @@ namespace ShareX.Setup
                 string filePath = Path.Combine(OutputDir, fileName);
 
                 Console.WriteLine("Downloading: " + FFmpegDownloadURL);
-                URLHelpers.DownloadFileAsync(FFmpegDownloadURL, filePath).GetAwaiter().GetResult();
+                WebHelpers.DownloadFileAsync(FFmpegDownloadURL, filePath).GetAwaiter().GetResult();
 
                 Console.WriteLine("Extracting: " + filePath);
                 ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));

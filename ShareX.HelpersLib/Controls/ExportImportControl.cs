@@ -248,7 +248,7 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    json = await URLHelpers.DownloadStringAsync(url);
+                    json = await WebHelpers.DownloadStringAsync(url);
                 }
                 catch (Exception ex)
                 {

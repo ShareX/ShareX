@@ -46,7 +46,7 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                string response = await URLHelpers.DownloadStringAsync(URL);
+                string response = await WebHelpers.DownloadStringAsync(URL);
 
                 using (StringReader sr = new StringReader(response))
                 using (XmlTextReader xml = new XmlTextReader(sr))

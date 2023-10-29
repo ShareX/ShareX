@@ -58,7 +58,7 @@ namespace ShareX.UploadersLib
             Dispose();
 
             IPAddress ip = IPAddress.Loopback;
-            int port = URLHelpers.GetRandomUnusedPort();
+            int port = WebHelpers.GetRandomUnusedPort();
             string redirectURI = string.Format($"http://{ip}:{port}/");
             string state = Helpers.GetRandomAlphanumeric(32);
 

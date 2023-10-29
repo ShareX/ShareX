@@ -170,6 +170,7 @@
     <Compile Include="Helpers\ClipboardHelpersEx.cs" />
     <Compile Include="Helpers\FileHelpers.cs" />
     <Compile Include="Helpers\JsonHelpers.cs" />
+    <Compile Include="Helpers\WebHelpers.cs" />
     <Compile Include="HttpClientFactory.cs" />
     <Compile Include="NativeMessagingHost.cs" />
     <Compile Include="TimerResolutionManager.cs" />

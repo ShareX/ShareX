@@ -91,7 +91,7 @@ namespace ShareX.HelpersLib
         {
             List<GitHubRelease> releases = null;
 
-            string response = await URLHelpers.DownloadStringAsync(ReleasesURL);
+            string response = await WebHelpers.DownloadStringAsync(ReleasesURL);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -110,7 +110,7 @@ namespace ShareX.HelpersLib
         {
             GitHubRelease latestRelease = null;
 
-            string response = await URLHelpers.DownloadStringAsync(LatestReleaseURL);
+            string response = await WebHelpers.DownloadStringAsync(LatestReleaseURL);
 
             if (!string.IsNullOrEmpty(response))
             {

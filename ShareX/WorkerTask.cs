@@ -1076,7 +1076,7 @@ namespace ShareX
             {
                 try
                 {
-                    string fileName = URLHelpers.GetFileNameFromWebServerAsync(url).GetAwaiter().GetResult();
+                    string fileName = WebHelpers.GetFileNameFromWebServerAsync(url).GetAwaiter().GetResult();
 
                     if (!string.IsNullOrEmpty(fileName))
                     {
@@ -1099,7 +1099,7 @@ namespace ShareX
 
                 try
                 {
-                    URLHelpers.DownloadFileAsync(url, Info.FilePath).GetAwaiter().GetResult();
+                    WebHelpers.DownloadFileAsync(url, Info.FilePath).GetAwaiter().GetResult();
 
                     if (upload)
                     {

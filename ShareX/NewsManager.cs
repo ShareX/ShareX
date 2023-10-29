@@ -66,7 +66,7 @@ namespace ShareX
         private async Task<List<NewsItem>> GetNews()
         {
             string url = URLHelpers.CombineURL(Links.Website, "news.json");
-            string response = await URLHelpers.DownloadStringAsync(url);
+            string response = await WebHelpers.DownloadStringAsync(url);
 
             if (!string.IsNullOrEmpty(response))
             {
