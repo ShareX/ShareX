@@ -1759,7 +1759,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scrolling capture.
+        ///   Looks up a localized string similar to Start/Stop scrolling capture.
         /// </summary>
         internal static string HotkeyType_ScrollingCapture {
             get {

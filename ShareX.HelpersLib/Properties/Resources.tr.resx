@@ -646,7 +646,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Bilgisayar</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
-    <value>Kaydırarak yakalama</value>
+    <value>Kaydırarak yakalamayı başlat/durdur</value>
   </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Resim birleştirici</value>

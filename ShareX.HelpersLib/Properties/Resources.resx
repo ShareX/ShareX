@@ -187,7 +187,7 @@
     <value>1 Hour</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
-    <value>Scrolling capture</value>
+    <value>Start/Stop scrolling capture</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
     <value>Auto increment alphanumeric case-sensitive (0 pad left using {n})</value>

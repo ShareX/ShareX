@@ -34,6 +34,10 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class ScrollingCaptureForm : Form
     {
+        private static readonly object lockObject = new object();
+
+        private static ScrollingCaptureForm instance;
+
         public event Action<Bitmap> UploadRequested;
 
         public ScrollingCaptureOptions Options { get; private set; }
@@ -41,7 +45,7 @@ namespace ShareX.ScreenCaptureLib
         private ScrollingCaptureManager manager;
         private Point dragStartPosition;
 
-        public ScrollingCaptureForm(ScrollingCaptureOptions options)
+        private ScrollingCaptureForm(ScrollingCaptureOptions options)
         {
             Options = options;
 
@@ -49,6 +53,43 @@ namespace ShareX.ScreenCaptureLib
             ShareXResources.ApplyTheme(this);
 
             manager = new ScrollingCaptureManager(Options);
+        }
+
+        public static async Task StartStopScrollingCapture(ScrollingCaptureOptions options, Action<Bitmap> uploadRequested = null)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                lock (lockObject)
+                {
+                    if (instance == null || instance.IsDisposed)
+                    {
+                        instance = new ScrollingCaptureForm(options);
+
+                        if (uploadRequested != null)
+                        {
+                            instance.UploadRequested += uploadRequested;
+                        }
+
+                        instance.Show();
+                    }
+                }
+            }
+            else
+            {
+                await instance.StartStopScrollingCapture();
+            }
+        }
+
+        public async Task StartStopScrollingCapture()
+        {
+            if (manager.IsCapturing)
+            {
+                manager.StopCapture();
+            }
+            else
+            {
+                await SelectWindow();
+            }
         }
 
         protected override void Dispose(bool disposing)
