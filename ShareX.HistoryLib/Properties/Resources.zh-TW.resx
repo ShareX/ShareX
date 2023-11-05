@@ -144,13 +144,13 @@
     <value>資料夾</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>論壇（BBCode）圖片</value>
+    <value>論壇 (BBCode) 圖片</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>論壇（BBCode）連結</value>
+    <value>論壇 (BBCode) 連結</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>論壇（BBCode）連結的圖片</value>
+    <value>論壇 (BBCode) 圖片連結</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML 圖片</value>
@@ -159,16 +159,16 @@
     <value>HTML 連結</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>HTML 連結的圖片</value>
+    <value>HTML 圖片連結</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
     <value>圖片</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>圖片預覽</value>
+    <value>圖片預覽...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>更多資訊</value>
+    <value>更多資訊...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>開啟</value>
@@ -201,7 +201,7 @@
     <value>Markdown 連結</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
-    <value>Markdown 連結的圖片</value>
+    <value>Markdown 圖片連結</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
     <value>上傳檔案</value>
@@ -217,5 +217,26 @@
   </data>
   <data name="HistoryStats_YearlyUsages" xml:space="preserve">
     <value>年用量：</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>讀取歷史記錄檔時發生錯誤：</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>已篩選</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>檔名、視窗標題、程序名稱等</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>歷史記錄統計資料</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>釘選至螢幕</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>程序名稱：</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>總計</value>
   </data>
 </root>

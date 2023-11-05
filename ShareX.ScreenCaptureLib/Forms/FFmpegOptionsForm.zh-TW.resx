@@ -119,29 +119,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 螢幕錄製選項</value>
   </data>
-  <data name="btnCopyPreview.Text" xml:space="preserve">
-    <value>複製</value>
-  </data>
-  <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>重新整理</value>
-  </data>
-  <data name="btnTest.Text" xml:space="preserve">
-    <value>使用 CMD 測試</value>
-  </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>使用自訂命令</value>
-  </data>
-  <data name="lblAACQuality.Text" xml:space="preserve">
-    <value>位元率：</value>
-  </data>
-  <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>音訊編解碼器：</value>
+    <value>使用自訂命令：</value>
   </data>
   <data name="lblAudioSource.Text" xml:space="preserve">
     <value>音訊源：</value>
-  </data>
-  <data name="lblCodec.Text" xml:space="preserve">
-    <value>視訊編解碼器：</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>品質：</value>
@@ -156,23 +138,11 @@
     <value>CRF：範圍為 0-51，其中 0 為無損，30 為預設值，51 為最差品質。
 值越高品質越差，但檔案越小。</value>
   </data>
-  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>預設為 128k</value>
-  </data>
-  <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>範圍為 0-9，值越低品質越高。0-3 通常會產生透明效果，4（預設）接近感知透明度，而 6 會產生可接受的品質。</value>
-  </data>
-  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>範圍為 0-10，其中 10 為最高品質。3-6 為推薦測試範圍，預設值為 3。</value>
-  </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
     <value>預設：</value>
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>可變位元率：</value>
-  </data>
-  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
-    <value>使用自訂路徑</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>可變位元率：</value>
@@ -187,7 +157,7 @@
     <value>將會安裝「螢幕擷取器」和「虛擬音訊擷取器」視訊/音訊源。</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>安裝錄製裝置</value>
+    <value>安裝錄製裝置...</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>較快的預設 = 編碼時間較快但檔案較大。
@@ -197,18 +167,15 @@
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">
     <value>1 為最高品質/檔案最大；31 為最低品質/檔案最小。</value>
   </data>
-  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
-    <value>所選的視訊封裝格式不支援此音訊解碼器。</value>
-  </data>
   <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
     <value>如要即時編碼（例如錄製螢幕），建議選擇較快的預設。
 否則可能會因為無法跟上錄製而產生大量掉幀。</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>預設為 full</value>
+    <value>預設為 full。</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>預設為 sierra2_4a</value>
+    <value>預設為 sierra2_4a。</value>
   </data>
   <data name="lblAMFQuality.Text" xml:space="preserve">
     <value>品質：</value>
@@ -230,5 +197,98 @@
   </data>
   <data name="lblx264CRF.Text" xml:space="preserve">
     <value>CRF：</value>
+  </data>
+  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>重設選項...</value>
+  </data>
+  <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
+    <value>使用自訂 FFmpeg 路徑：</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>使用位元率</value>
+  </data>
+  <data name="lblAACBitrate.Text" xml:space="preserve">
+    <value>位元率：</value>
+  </data>
+  <data name="lblAACBitrateK.Text" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="lblAMFBitrate.Text" xml:space="preserve">
+    <value>位元率：</value>
+  </data>
+  <data name="lblAMFBitrateK.Text" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>音訊編碼器：</value>
+  </data>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>額外命令列參數：</value>
+  </data>
+  <data name="lblNVENCBitrateK.Text" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="lblOpusBitrate.Text" xml:space="preserve">
+    <value>位元率：</value>
+  </data>
+  <data name="lblOpusBitrateK.Text" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="lblQSVBitrateK.Text" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>視訊編碼器：</value>
+  </data>
+  <data name="lblVP8BitrateK.Text" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="lblx264BitrateK.Text" xml:space="preserve">
+    <value>kbps</value>
+  </data>
+  <data name="lblNVENCTune.Text" xml:space="preserve">
+    <value>調整：</value>
+  </data>
+  <data name="tpAAC.Text" xml:space="preserve">
+    <value>AAC</value>
+  </data>
+  <data name="tpAMF.Text" xml:space="preserve">
+    <value>AMF</value>
+  </data>
+  <data name="tpGIF.Text" xml:space="preserve">
+    <value>GIF</value>
+  </data>
+  <data name="tpMP3.Text" xml:space="preserve">
+    <value>MP3</value>
+  </data>
+  <data name="tpNVENC.Text" xml:space="preserve">
+    <value>NVENC</value>
+  </data>
+  <data name="tpOpus.Text" xml:space="preserve">
+    <value>Opus</value>
+  </data>
+  <data name="tpQSV.Text" xml:space="preserve">
+    <value>QuickSync</value>
+  </data>
+  <data name="tpVorbis.Text" xml:space="preserve">
+    <value>Vorbis</value>
+  </data>
+  <data name="tpVpx.Text" xml:space="preserve">
+    <value>VP8</value>
+  </data>
+  <data name="tpX264.Text" xml:space="preserve">
+    <value>x264 / x265</value>
+  </data>
+  <data name="tpXvid.Text" xml:space="preserve">
+    <value>Xvid</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>調整 Bayer Scale 指數。值越高將有更明顯的年輪現象。預設為 2。</value>
   </data>
 </root>

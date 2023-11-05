@@ -207,13 +207,13 @@
     <value>資料夾</value>
   </data>
   <data name="tsmiCopyForumImage.Text" xml:space="preserve">
-    <value>論壇（BBCode）圖片</value>
+    <value>論壇 (BBCode) 圖片</value>
   </data>
   <data name="tsmiCopyForumLink.Text" xml:space="preserve">
-    <value>論壇（BBCode）連結</value>
+    <value>論壇 (BBCode) 連結</value>
   </data>
   <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
-    <value>論壇（BBCode）連結的圖片</value>
+    <value>論壇 (BBCode) 圖片連結</value>
   </data>
   <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
     <value>HTML 圖片</value>
@@ -222,7 +222,7 @@
     <value>HTML 連結</value>
   </data>
   <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
-    <value>HTML 連結的圖片</value>
+    <value>HTML 圖片連結</value>
   </data>
   <data name="tsmiCopyImage.Text" xml:space="preserve">
     <value>圖片</value>
@@ -273,7 +273,7 @@
     <value>圖片上傳工具</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
-    <value>索引資料夾...</value>
+    <value>目錄索引工具...</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>上個區域</value>
@@ -315,7 +315,7 @@
     <value>區域</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>區域（高亮）</value>
+    <value>區域 (高亮)</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>標尺...</value>
@@ -327,7 +327,7 @@
     <value>螢幕錄製</value>
   </data>
   <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
-    <value>螢幕錄製（GIF）</value>
+    <value>螢幕錄製 (GIF)</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
     <value>截圖資料夾...</value>
@@ -423,7 +423,7 @@
     <value>圖片上傳工具</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>索引資料夾...</value>
+    <value>目錄索引工具...</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
     <value>上個區域</value>
@@ -441,7 +441,7 @@
     <value>區域</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>區域（高亮）</value>
+    <value>區域 (高亮)</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>標尺...</value>
@@ -453,7 +453,7 @@
     <value>螢幕錄製</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
-    <value>螢幕錄製（GIF）</value>
+    <value>螢幕錄製 (GIF)</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>開啟主視窗</value>
@@ -468,7 +468,7 @@
     <value>工具</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>推特訊息...</value>
+    <value>推特發文...</value>
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>上傳</value>
@@ -501,7 +501,7 @@
     <value>快捷動作</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>推特訊息...</value>
+    <value>推特發文...</value>
   </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>從剪貼簿上傳...</value>
@@ -531,7 +531,7 @@
     <value>視窗</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>區域（透明）</value>
+    <value>區域 (透明)</value>
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>捲動擷取...</value>
@@ -543,10 +543,10 @@
     <value>圖片合併工具...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
-    <value>視訊縮圖工具...</value>
+    <value>影片縮圖工具...</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
-    <value>區域（透明）</value>
+    <value>區域 (透明)</value>
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>捲動擷取...</value>
@@ -558,7 +558,7 @@
     <value>圖片合併工具...</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
-    <value>視訊縮圖工具...</value>
+    <value>影片縮圖工具...</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>停用快捷鍵</value>
@@ -636,7 +636,7 @@
     <value>Markdown 圖片</value>
   </data>
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
-    <value>Markdown 連結的圖片</value>
+    <value>Markdown 圖片連結</value>
   </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>執行動作</value>
@@ -682,5 +682,131 @@
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>自訂上傳工具設定...</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord...</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter...</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>新增圖片特效...</value>
+  </data>
+  <data name="tsmiBeautifyImage.Text" xml:space="preserve">
+    <value>美化圖片...</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>Bing 圖像式搜尋 (OCR)...</value>
+  </data>
+  <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
+    <value>無邊框視窗...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>剪貼簿檢視器...</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>水平合併</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>垂直合併</value>
+  </data>
+  <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+C</value>
+  </data>
+  <data name="tsmiCopyFilePath.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Shift+C</value>
+  </data>
+  <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+C</value>
+  </data>
+  <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Del</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+D</value>
+  </data>
+  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
+    <value>Google 圖片搜尋...</value>
+  </data>
+  <data name="tsmiImageBeautifier.Text" xml:space="preserve">
+    <value>圖片美化工具...</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>圖片分割工具...</value>
+  </data>
+  <data name="tsmiImageViewer.Text" xml:space="preserve">
+    <value>圖片檢視器...</value>
+  </data>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>檢視視窗...</value>
+  </data>
+  <data name="tsmiOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Enter</value>
+  </data>
+  <data name="tsmiOpenFolder.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Enter</value>
+  </data>
+  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="tsmiPinSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="tsmiPinSelectedFile.Text" xml:space="preserve">
+    <value>釘選至螢幕</value>
+  </data>
+  <data name="tsmiPinToScreen.Text" xml:space="preserve">
+    <value>釘選至螢幕...</value>
+  </data>
+  <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
+    <value>以系統管理員身分重啟 ShareX</value>
+  </data>
+  <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
+    <value>無邊框視窗...</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>剪貼簿檢視器...</value>
+  </data>
+  <data name="tsmiTrayImageBeautifier.Text" xml:space="preserve">
+    <value>圖片美化工具...</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>圖片分割工具...</value>
+  </data>
+  <data name="tsmiTrayImageViewer.Text" xml:space="preserve">
+    <value>圖片檢視器...</value>
+  </data>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>檢視視窗...</value>
+  </data>
+  <data name="tsmiTrayOCR.Text" xml:space="preserve">
+    <value>OCR...</value>
+  </data>
+  <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
+    <value>釘選至螢幕...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>影片轉檔工具...</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+U</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>影片轉檔工具...</value>
   </data>
 </root>

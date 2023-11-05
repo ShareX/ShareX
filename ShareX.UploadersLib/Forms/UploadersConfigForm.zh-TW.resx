@@ -123,7 +123,7 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>如果你有設定自訂域名的儲存桶，請使用此選項。
 如果文字欄位為空，網址將為儲存桶名稱。
-舉例來說，如果你的儲存桶名稱為 bucket.example.com，網址將為 http://bucket.example.com/...</value>
+舉例來說，如果你的儲存桶名稱為「bucket.example.com」，網址將為「http://bucket.example.com/...」。</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>其他上傳工具</value>
@@ -144,7 +144,7 @@
     <value>跳過推特訊息框</value>
   </data>
   <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
-    <value>預設推特訊息：</value>
+    <value>預設推文訊息：</value>
   </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>更新</value>
@@ -376,7 +376,7 @@
     <value>密碼：</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>如果存在則使用直接網址</value>
+    <value>如果存在則使用直連網址</value>
   </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>使用者名稱：</value>
@@ -424,7 +424,7 @@
     <value>建立可分享網址</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>直接連結</value>
+    <value>直連連結</value>
   </data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>密碼：</value>
@@ -520,7 +520,7 @@
     <value>API 金鑰：</value>
   </data>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
-    <value>直接網址</value>
+    <value>直連網址</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
     <value>重新整理相簿清單</value>
@@ -532,7 +532,7 @@
     <value>名稱</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>上傳相簿 ID（空 = 無相簿上傳）:</value>
+    <value>上傳相簿 ID (留白 = 無相簿上傳)：</value>
   </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>需要登入。</value>
@@ -541,7 +541,7 @@
     <value>第二步：完成授權</value>
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>驗證碼（從授權頁面獲取驗證碼）:</value>
+    <value>驗證碼 (從授權頁面獲取驗證碼)：</value>
   </data>
   <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
     <value>第一步：開啟授權頁面...</value>
@@ -559,7 +559,7 @@
     <value>母相簿路徑</value>
   </data>
   <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
-    <value>新相簿名稱（必須在 2-50 個字元之間，有效字元為字母、數字、底線 (_)、連字號 (-) 和空格）</value>
+    <value>新相簿名稱 (必須在 2-50 個字元之間，有效字元為字母、數字、底線 (_)、連字號 (-) 和空格)</value>
   </data>
   <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
     <value>刪除相簿</value>
@@ -577,13 +577,13 @@
     <value>使用者名稱：</value>
   </data>
   <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>開啟我的圖片網頁...</value>
+    <value>開啟我的圖片頁面...</value>
   </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
     <value>是否公開上傳？</value>
   </data>
   <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
-    <value>開啟公開資料頁面...</value>
+    <value>開啟公開個人資料頁面...</value>
   </data>
   <data name="btnImageShackLogin.Text" xml:space="preserve">
     <value>登入</value>
@@ -601,13 +601,13 @@
     <value>標題</value>
   </data>
   <data name="cbImgurDirectLink.Text" xml:space="preserve">
-    <value>使用直接連結</value>
+    <value>使用直連連結</value>
   </data>
   <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
     <value>上傳圖片到選定的相簿</value>
   </data>
   <data name="cbImgurUseGIFV.Text" xml:space="preserve">
-    <value>使用 GIF 而非 GIFV 連結</value>
+    <value>使用 GIFV 而非 GIF 連結</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>建立新相簿</value>
@@ -625,7 +625,7 @@
     <value>忘記密碼？</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
-    <value>使用直接連結</value>
+    <value>使用直連連結</value>
   </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>範例：http://example.com/owncloud</value>
@@ -640,7 +640,7 @@
     <value>範例：http://example.com/api/1/upload</value>
   </data>
   <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
-    <value>使用語法高亮顯示副檔名（.txt 除外）</value>
+    <value>使用語法高亮顯示副檔名 (.txt 除外)</value>
   </data>
   <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
     <value>開啟帳戶頁面...</value>
@@ -673,13 +673,13 @@
     <value>可移除</value>
   </data>
   <data name="cbPolrIsSecret.Text" xml:space="preserve">
-    <value>是否私密網址</value>
+    <value>是否為私密網址</value>
   </data>
   <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
     <value>使用已棄用的 API v1</value>
   </data>
   <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
-    <value>使用直接連結</value>
+    <value>使用直連連結</value>
   </data>
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
     <value>存取金鑰 ID：</value>
@@ -769,22 +769,22 @@
     <value>文字</value>
   </data>
   <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
-    <value>視訊</value>
+    <value>影片</value>
   </data>
   <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
     <value>使用路徑樣式請求</value>
   </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
-    <value>使用自訂網址（支援模式格式）：</value>
+    <value>使用自訂網址：</value>
   </data>
   <data name="cbDropboxUseDirectLink.Text" xml:space="preserve">
-    <value>使用直接連結</value>
+    <value>使用直連連結</value>
   </data>
   <data name="cbFirebaseIsShort.Text" xml:space="preserve">
     <value>短連結</value>
   </data>
   <data name="cbFlickrDirectLink.Text" xml:space="preserve">
-    <value>使用直接連結</value>
+    <value>使用直連連結</value>
   </data>
   <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
     <value>附加遠端資料夾到網址路徑</value>
@@ -802,7 +802,7 @@
     <value>文字</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
-    <value>視訊</value>
+    <value>影片</value>
   </data>
   <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
     <value>公開上傳</value>
@@ -817,13 +817,7 @@
     <value>自動使分享連結過期</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
-    <value>使用預覽連結（僅限 NextCloud）</value>
-  </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>客戶端加密</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>產生刪除金鑰</value>
+    <value>使用預覽連結 (僅限 NextCloud)</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>使用短連結</value>
@@ -877,7 +871,7 @@
     <value>網址預覽：</value>
   </data>
   <data name="lblB2ApplicationKey.Text" xml:space="preserve">
-    <value>應用程式金鑰（私密）：</value>
+    <value>應用程式金鑰 (私密)：</value>
   </data>
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
     <value>應用程式金鑰 ID：</value>
@@ -886,7 +880,7 @@
     <value>儲存桶名稱：</value>
   </data>
   <data name="lblB2ManageLink.Text" xml:space="preserve">
-    <value>點擊此處以建立應用程式金鑰或管理你的儲存桶。</value>
+    <value>按此建立應用程式金鑰或管理你的儲存桶。</value>
   </data>
   <data name="lblB2UploadPath.Text" xml:space="preserve">
     <value>上傳路徑：</value>
@@ -1014,21 +1008,6 @@
   <data name="lblSFTPKeyPassphrase.Text" xml:space="preserve">
     <value>金鑰密語：</value>
   </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>驗證網址：</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>有效期限：</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>貼上 API 網址：</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>上傳 API 網址：</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>縮網址服務 API 網址：</value>
-  </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>API 網址：</value>
   </data>
@@ -1060,6 +1039,237 @@
     <value>Google 相簿</value>
   </data>
   <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
-    <value>使用直接連結</value>
+    <value>使用直連連結</value>
+  </data>
+  <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnAzureStoragePortal.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnFTPSCertificateLocationBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnSFTPKeyLocationBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="cbAzureStorageEnvironment.Items" xml:space="preserve">
+    <value>blob.core.windows.net</value>
+  </data>
+  <data name="cbAzureStorageEnvironment.Items1" xml:space="preserve">
+    <value>blob.core.usgovcloudapi.net</value>
+  </data>
+  <data name="cbAzureStorageEnvironment.Items2" xml:space="preserve">
+    <value>blob.core.chinacloudapi.cn</value>
+  </data>
+  <data name="cbAzureStorageEnvironment.Items3" xml:space="preserve">
+    <value>blob.core.cloudapi.de</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>附加檔案名稱至網址</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>天</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>小時</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>分鐘</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>從不</value>
+  </data>
+  <data name="cbSeafileAPIURL.Items" xml:space="preserve">
+    <value>https://seacloud.cc/api2/</value>
+  </data>
+  <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
+    <value>https://cloud.mein-seafile.de/api2/</value>
+  </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>使用原始網址</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>顯示影片選項對話框</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="gbFTPS.Text" xml:space="preserve">
+    <value>FTPS</value>
+  </data>
+  <data name="gbSFTP.Text" xml:space="preserve">
+    <value>SFTP</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.Text" xml:space="preserve">
+    <value>Cache-Control 標頭：</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>分享連結訪問級別：</value>
+  </data>
+  <data name="lblKuttDomain.Text" xml:space="preserve">
+    <value>域名：</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>你隨時可以使用下方的連結撤銷存取權：</value>
+  </data>
+  <data name="lblZWSToken.Text" xml:space="preserve">
+    <value>權杖：</value>
+  </data>
+  <data name="lblZWSURL.Text" xml:space="preserve">
+    <value>網址：</value>
+  </data>
+  <data name="llYouTubePermissionsLink.Text" xml:space="preserve">
+    <value>https://myaccount.google.com/permissions</value>
+  </data>
+  <data name="rbFTPProtocolFTP.Text" xml:space="preserve">
+    <value>FTP</value>
+  </data>
+  <data name="rbFTPProtocolFTPS.Text" xml:space="preserve">
+    <value>FTPS</value>
+  </data>
+  <data name="rbFTPProtocolSFTP.Text" xml:space="preserve">
+    <value>SFTP</value>
+  </data>
+  <data name="tpAdFly.Text" xml:space="preserve">
+    <value>adf.ly</value>
+  </data>
+  <data name="tpAmazonS3.Text" xml:space="preserve">
+    <value>Amazon S3</value>
+  </data>
+  <data name="tpBackblazeB2.Text" xml:space="preserve">
+    <value>Backblaze B2</value>
+  </data>
+  <data name="tpBitly.Text" xml:space="preserve">
+    <value>bit.ly</value>
+  </data>
+  <data name="tpBox.Text" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="tpChevereto.Text" xml:space="preserve">
+    <value>Chevereto</value>
+  </data>
+  <data name="tpDropbox.Text" xml:space="preserve">
+    <value>Dropbox</value>
+  </data>
+  <data name="tpFlickr.Text" xml:space="preserve">
+    <value>Flickr</value>
+  </data>
+  <data name="tpFTP.Text" xml:space="preserve">
+    <value>FTP / FTPS / SFTP</value>
+  </data>
+  <data name="tpGist.Text" xml:space="preserve">
+    <value>GitHub Gist</value>
+  </data>
+  <data name="tpHastebin.Text" xml:space="preserve">
+    <value>Hastebin</value>
+  </data>
+  <data name="tpHostr.Text" xml:space="preserve">
+    <value>Hostr</value>
+  </data>
+  <data name="tpImageShack.Text" xml:space="preserve">
+    <value>ImageShack</value>
+  </data>
+  <data name="tpImgur.Text" xml:space="preserve">
+    <value>Imgur</value>
+  </data>
+  <data name="tpJira.Text" xml:space="preserve">
+    <value>Atlassian Jira</value>
+  </data>
+  <data name="tpKutt.Text" xml:space="preserve">
+    <value>Kutt</value>
+  </data>
+  <data name="tpLambda.Text" xml:space="preserve">
+    <value>Lambda</value>
+  </data>
+  <data name="tpLithiio.Text" xml:space="preserve">
+    <value>LobFile</value>
+  </data>
+  <data name="tpMediaFire.Text" xml:space="preserve">
+    <value>MediaFire</value>
+  </data>
+  <data name="tpMega.Text" xml:space="preserve">
+    <value>Mega</value>
+  </data>
+  <data name="tpOneDrive.Text" xml:space="preserve">
+    <value>OneDrive</value>
+  </data>
+  <data name="tpOneTimeSecret.Text" xml:space="preserve">
+    <value>OneTimeSecret</value>
+  </data>
+  <data name="tpOwnCloud.Text" xml:space="preserve">
+    <value>ownCloud / Nextcloud</value>
+  </data>
+  <data name="tpPaste_ee.Text" xml:space="preserve">
+    <value>Paste.ee</value>
+  </data>
+  <data name="tpPastebin.Text" xml:space="preserve">
+    <value>Pastebin</value>
+  </data>
+  <data name="tpPastie.Text" xml:space="preserve">
+    <value>Pastie</value>
+  </data>
+  <data name="tpPhotobucket.Text" xml:space="preserve">
+    <value>Photobucket</value>
+  </data>
+  <data name="tpPlik.Text" xml:space="preserve">
+    <value>Plik</value>
+  </data>
+  <data name="tpPolr.Text" xml:space="preserve">
+    <value>Polr</value>
+  </data>
+  <data name="tpPomf.Text" xml:space="preserve">
+    <value>Pomf</value>
+  </data>
+  <data name="tpPushbullet.Text" xml:space="preserve">
+    <value>Pushbullet</value>
+  </data>
+  <data name="tpPuush.Text" xml:space="preserve">
+    <value>puush</value>
+  </data>
+  <data name="tpSeafile.Text" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="tpSendSpace.Text" xml:space="preserve">
+    <value>SendSpace</value>
+  </data>
+  <data name="tpStreamable.Text" xml:space="preserve">
+    <value>Streamable</value>
+  </data>
+  <data name="tpSul.Text" xml:space="preserve">
+    <value>s-ul</value>
+  </data>
+  <data name="tpTwitter.Text" xml:space="preserve">
+    <value>推特</value>
+  </data>
+  <data name="tpUpaste.Text" xml:space="preserve">
+    <value>uPaste</value>
+  </data>
+  <data name="tpVgyme.Text" xml:space="preserve">
+    <value>vgy.me</value>
+  </data>
+  <data name="tpYourls.Text" xml:space="preserve">
+    <value>YOURLS</value>
+  </data>
+  <data name="tpYouTube.Text" xml:space="preserve">
+    <value>YouTube</value>
+  </data>
+  <data name="tpZeroWidthShortener.Text" xml:space="preserve">
+    <value>Zero Width Shortener</value>
+  </data>
+  <data name="txtJiraHost.Text" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
+    <value>PROJECT-</value>
   </data>
 </root>

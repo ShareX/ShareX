@@ -132,4 +132,10 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>移除</value>
   </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>重設...</value>
+  </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>快捷鍵已停用。按此啟用快捷鍵。</value>
+  </data>
 </root>

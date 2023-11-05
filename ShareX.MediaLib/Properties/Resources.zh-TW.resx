@@ -120,7 +120,46 @@
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>瀏覽媒體檔案</value>
   </data>
-    <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
+  <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
     <value>縮圖產生成功。</value>
+  </data>
+  <data name="AlignmentBottom" xml:space="preserve">
+    <value>底部</value>
+  </data>
+  <data name="AlignmentHorizontalCenter" xml:space="preserve">
+    <value>置中</value>
+  </data>
+  <data name="AlignmentLeft" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="AlignmentRight" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="AlignmentTop" xml:space="preserve">
+    <value>頂端</value>
+  </data>
+  <data name="AlignmentVerticalCenter" xml:space="preserve">
+    <value>置中</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="FFmpegError" xml:space="preserve">
+    <value>FFmpeg 錯誤</value>
+  </data>
+  <data name="HigherQualitySize" xml:space="preserve">
+    <value>較高品質/大小</value>
+  </data>
+  <data name="LowerQualitySize" xml:space="preserve">
+    <value>較低品質/大小</value>
+  </data>
+  <data name="StartEncoding" xml:space="preserve">
+    <value>開始轉檔</value>
+  </data>
+  <data name="StopEncoding" xml:space="preserve">
+    <value>停止轉檔</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>是否要重設選項？</value>
   </data>
 </root>

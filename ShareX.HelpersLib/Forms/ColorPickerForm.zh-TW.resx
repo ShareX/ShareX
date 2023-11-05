@@ -210,12 +210,51 @@
     <value>關閉</value>
   </data>
   <data name="lblAlpha.Text" xml:space="preserve">
-    <value>Alpha：</value>
+    <value>透明度：</value>
   </data>
   <data name="rbRecentColors.Text" xml:space="preserve">
     <value>最近顏色</value>
   </data>
   <data name="rbStandardColors.Text" xml:space="preserve">
     <value>標準顏色</value>
+  </data>
+  <data name="btnClipboardColorPicker.ToolTip" xml:space="preserve">
+    <value>從剪貼簿選取顏色</value>
+  </data>
+  <data name="lblBrightnessPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblCyanPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblHue.Text" xml:space="preserve">
+    <value>°</value>
+  </data>
+  <data name="lblKeyPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblMagentaPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>名稱：</value>
+  </data>
+  <data name="lblSaturationPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblYellowPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="txtDecimal.Text" xml:space="preserve">
+    <value>12345678</value>
+  </data>
+  <data name="txtHex.Text" xml:space="preserve">
+    <value>FF00FF00</value>
+  </data>
+  <data name="txtX.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtY.Text" xml:space="preserve">
+    <value>0</value>
   </data>
 </root>

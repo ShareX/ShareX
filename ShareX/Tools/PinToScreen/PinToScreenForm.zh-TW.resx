@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,63 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 歷史記錄</value>
+    <value>ShareX - 釘選至螢幕</value>
   </data>
-  <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>日期：</value>
-  </data>
-  <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>主機：</value>
-  </data>
-  <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>類型：</value>
-  </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>日期</value>
-  </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>檔名</value>
-  </data>
-  <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>從：</value>
-  </data>
-  <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>到：</value>
-  </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>網址</value>
-  </data>
-  <data name="lblURLFilter.Text" xml:space="preserve">
-    <value>網址：</value>
-  </data>
-  <data name="lblFilenameFilter.Text" xml:space="preserve">
-    <value>檔名：</value>
-  </data>
-  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+  <data name="tsbClose.Text" xml:space="preserve">
     <value>關閉</value>
   </data>
-  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
-    <value>重設</value>
+  <data name="tsbCopy.Text" xml:space="preserve">
+    <value>複製</value>
   </data>
-  <data name="gbAdvancedSearch.Text" xml:space="preserve">
-    <value>進階搜尋</value>
+  <data name="tsbOptions.Text" xml:space="preserve">
+    <value>選項...</value>
   </data>
-  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
-    <value>進階搜尋...</value>
+  <data name="tslScale.Text" xml:space="preserve">
+    <value>100%</value>
   </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>搜尋</value>
-  </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>設定...</value>
-  </data>
-  <data name="tsbShowStats.Text" xml:space="preserve">
-    <value>顯示統計資料...</value>
-  </data>
-  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
-    <value>切換顯示更多資訊</value>
-  </data>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>搜尋：</value>
+  <data name="tslScale.ToolTipText" xml:space="preserve">
+    <value>縮放</value>
   </data>
 </root>

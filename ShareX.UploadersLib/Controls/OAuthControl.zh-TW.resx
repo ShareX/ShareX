@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnClearAuthorization.Text" xml:space="preserve">
-    <value>清除授權</value>
+    <value>斷線</value>
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>第二步：完成授權</value>
+    <value>完成授權</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>第一步：開啟授權頁面...</value>
+    <value>連線...</value>
   </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>重新整理授權</value>
