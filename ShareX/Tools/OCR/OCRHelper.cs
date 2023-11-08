@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -114,22 +115,25 @@ namespace ShareX
                         separator = Environment.NewLine;
                     }
 
+                    IEnumerable<string> lines;
+
                     if (language.LanguageTag.StartsWith("zh", StringComparison.OrdinalIgnoreCase) || // Chinese
-                        language.LanguageTag.StartsWith("ja", StringComparison.OrdinalIgnoreCase) || // Japanese
-                        language.LanguageTag.StartsWith("ko", StringComparison.OrdinalIgnoreCase)) // Korean
+                        language.LanguageTag.StartsWith("ja", StringComparison.OrdinalIgnoreCase)) // Japanese
                     {
                         // If CJK language then remove spaces between words.
-                        return string.Join(separator, ocrResult.Lines.Select(line => string.Concat(line.Words.Select(word => word.Text))));
+                        lines = ocrResult.Lines.Select(line => string.Concat(line.Words.Select(word => word.Text)));
                     }
                     else if (language.LayoutDirection == LanguageLayoutDirection.Rtl)
                     {
                         // If RTL language then reverse order of words.
-                        return string.Join(separator, ocrResult.Lines.Select(line => string.Join(" ", line.Words.Reverse().Select(word => word.Text))));
+                        lines = ocrResult.Lines.Select(line => string.Join(" ", line.Words.Reverse().Select(word => word.Text)));
                     }
                     else
                     {
-                        return string.Join(separator, ocrResult.Lines.Select(line => line.Text));
+                        lines = ocrResult.Lines.Select(line => line.Text);
                     }
+
+                    return string.Join(separator, lines);
                 }
             }
         }
