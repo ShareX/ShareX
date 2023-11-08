@@ -95,6 +95,52 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private async void btnLoadImageFromURL_Click(object sender, EventArgs e)
+        {
+            string inputText = null;
+
+            string text = ClipboardHelpers.GetText(true);
+
+            if (URLHelpers.IsValidURL(text))
+            {
+                inputText = text;
+            }
+
+            string url = InputBox.Show(Resources.ImageURL, inputText);
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                btnOpenImageFile.Enabled = btnLoadImageFromClipboard.Enabled = btnLoadImageFromURL.Enabled = btnCreateNewImage.Enabled = false;
+                Cursor = Cursors.WaitCursor;
+
+                try
+                {
+                    Image = await WebHelpers.DownloadImageAsync(url);
+
+                    if (IsDisposed)
+                    {
+                        Image?.Dispose();
+
+                        return;
+                    }
+                    else if (Image != null)
+                    {
+                        DialogResult = DialogResult.OK;
+                        Close();
+
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ex.ShowError();
+                }
+
+                Cursor = Cursors.Default;
+                btnOpenImageFile.Enabled = btnLoadImageFromClipboard.Enabled = btnLoadImageFromURL.Enabled = btnCreateNewImage.Enabled = true;
+            }
+        }
+
         private void btnCreateNewImage_Click(object sender, EventArgs e)
         {
             Image = NewImageForm.CreateNewImage(Options, this);
