@@ -141,4 +141,10 @@
   <data name="lblPreferredDNS.Text" xml:space="preserve">
     <value>首選 DNS 伺服器：</value>
   </data>
+  <data name="btnPingPrimary.Text" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="btnPingSecondary.Text" xml:space="preserve">
+    <value>Ping</value>
+  </data>
 </root>

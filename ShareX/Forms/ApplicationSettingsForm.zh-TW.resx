@@ -135,7 +135,7 @@
     <value>編輯...</value>
   </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25（0 為停用）</value>
+    <value>0 - 25 (0 為停用)</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>緩衝區大小：</value>
@@ -150,7 +150,7 @@
     <value>不顯示 Windows 列印對話框</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>次要檔案上傳工具</value>
+    <value>備用的檔案上傳工具</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>顯示系統匣圖示</value>
@@ -177,7 +177,7 @@
     <value>描述</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>次要圖片上傳工具</value>
+    <value>備用的圖片上傳工具</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>同時上傳限制：</value>
@@ -216,7 +216,7 @@
     <value>記住主視窗尺寸</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
-    <value>子資料夾模式：</value>
+    <value>子資料夾格式：</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>路徑</value>
@@ -237,7 +237,7 @@
     <value>格式</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>次要文字上傳工具</value>
+    <value>備用的文字上傳工具</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>當 ShareX 開啟時，在 Steam 狀態顯示 ShareX</value>
@@ -267,13 +267,13 @@
     <value>編輯快速任務選單...</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>匯出設定...</value>
+    <value>匯出...</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>匯入設定...</value>
+    <value>匯入...</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
-    <value>儲存任務歷史</value>
+    <value>儲存任務至歷史記錄</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
     <value>儲存的最大任務數量：</value>
@@ -324,7 +324,7 @@
     <value>安裝開發版...</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>重設</value>
+    <value>重設...</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>移除</value>
@@ -346,5 +346,101 @@
   </data>
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>重設設定...</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>重設</value>
+  </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>自動檢查更新</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>自動清理舊備份檔案</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>自動清理舊日誌檔案</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>歷史記錄</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>顯示列</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>顯示功能表</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>顯示標題</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>使用自訂主題</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>重試時使用備用的上傳工具設定</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>清單模式</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>縮圖模式</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>保留檔案數量：</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>主視窗</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>剪貼簿格式</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>標題位置：</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSizeX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>縮圖大小：</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>點擊縮圖的操作：</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>視窗的子資料夾格式：</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>任務檢視模式：</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>圖片預覽可見度：</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>圖片預覽位置：</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>預設印表機覆寫：</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>這些格式會出現在主視窗的右鍵選單中的「複製」子選單中。</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>注意：請勿與他人分享匯出的檔案，因為其可能含有帳號資料、上傳歷史等個人資訊。</value>
   </data>
 </root>

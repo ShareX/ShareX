@@ -136,7 +136,7 @@
     <value>根據擷取後設定合併圖片並儲存/上傳</value>
   </data>
   <data name="lblSpace.Text" xml:space="preserve">
-    <value>圖片之間的空隙：</value>
+    <value>圖片間距：</value>
   </data>
   <data name="lblOrientation.Text" xml:space="preserve">
     <value>合併方向：</value>
@@ -146,5 +146,23 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 圖片合併工具</value>
+  </data>
+  <data name="cbAutoFillBackground.Text" xml:space="preserve">
+    <value>自動填滿背景</value>
+  </data>
+  <data name="lblImageAlignment.Text" xml:space="preserve">
+    <value>圖片對齊：</value>
+  </data>
+  <data name="lblWrapAfter.Text" xml:space="preserve">
+    <value>換行於：</value>
+  </data>
+  <data name="lblWrapAfterImages.Text" xml:space="preserve">
+    <value>圖片</value>
+  </data>
+  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
+    <value>水平</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>垂直</value>
   </data>
 </root>

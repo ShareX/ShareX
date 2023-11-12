@@ -127,7 +127,7 @@
     <value>在「傳送到」選單中顯示 ShareX</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>你可以在「應用程式設定 -> 整合分頁」中找到這些設定。</value>
+    <value>你可以在「應用程式設定 -&gt; 整合分頁」中找到這些設定。</value>
   </data>
   <data name="cbSteamInApp.Text" xml:space="preserve">
     <value>當 ShareX 開啟時，在 Steam 狀態顯示 ShareX</value>
@@ -137,5 +137,8 @@
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>確定</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX</value>
   </data>
 </root>

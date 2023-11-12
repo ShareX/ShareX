@@ -162,4 +162,28 @@
   <data name="btnScreenTearingTest.Text" xml:space="preserve">
     <value>開始測試動畫</value>
   </data>
+  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBlue.Text" xml:space="preserve">
+    <value>B:</value>
+  </data>
+  <data name="lblBlueValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblGreen.Text" xml:space="preserve">
+    <value>G:</value>
+  </data>
+  <data name="lblGreenValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>R:</value>
+  </data>
+  <data name="lblRedValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShapeSizeValue.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
 </root>

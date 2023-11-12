@@ -136,7 +136,7 @@
     <value>名稱：</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>輸出檔案的副檔名：(空 = 使用相同的檔名)</value>
+    <value>輸出檔案的副檔名：(留白 = 使用相同的檔名)</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
     <value>檔案路徑：</value>
@@ -146,5 +146,8 @@
   </data>
   <data name="cbDeleteInputFile.Text" xml:space="preserve">
     <value>刪除輸入檔案</value>
+  </data>
+  <data name="btnPathBrowse.Text" xml:space="preserve">
+    <value>...</value>
   </data>
 </root>

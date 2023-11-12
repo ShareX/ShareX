@@ -144,13 +144,13 @@
     <value>新帳戶</value>
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>推文錯誤</value>
+    <value>推文發送錯誤</value>
   </data>
   <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
     <value>需要驗證。</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>母相簿路徑，例如</value>
+    <value>母相簿路徑，例如：</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>所選資料夾：</value>
@@ -236,5 +236,53 @@
   </data>
   <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
     <value>未登入。</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>網址</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>連線...</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>刪除網址</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>斷線</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>匯出失敗。</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>轉檔失敗。</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>轉檔失敗。</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>我的硬碟</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>標頭</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>已登入為 {0}。</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>縮圖網址</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>狀態代碼</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>縮網址</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>回應文字</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>回應網址</value>
   </data>
 </root>

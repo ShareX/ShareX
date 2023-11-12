@@ -129,9 +129,12 @@
     <value>設定</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 目錄索引</value>
+    <value>ShareX - 目錄索引工具</value>
   </data>
   <data name="btnUpload.Text" xml:space="preserve">
     <value>上傳並關閉此視窗</value>
+  </data>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>另存為並關閉此視窗...</value>
   </data>
 </root>

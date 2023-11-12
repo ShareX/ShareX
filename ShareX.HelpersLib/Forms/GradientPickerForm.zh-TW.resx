@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 漸層</value>
+    <value>ShareX - 漸層選擇器</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>新增</value>
@@ -146,5 +146,17 @@
   </data>
   <data name="lblPreview.Text" xml:space="preserve">
     <value>預覽：</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="btnReverse.Text" xml:space="preserve">
+    <value>反轉</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>預設：</value>
+  </data>
+  <data name="chGradient.Text" xml:space="preserve">
+    <value>漸層</value>
   </data>
 </root>

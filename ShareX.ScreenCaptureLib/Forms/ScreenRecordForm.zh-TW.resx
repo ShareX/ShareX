@@ -132,4 +132,16 @@
   <data name="tsmiAbort.Text" xml:space="preserve">
     <value>停止</value>
   </data>
+  <data name="btnPause.Text" xml:space="preserve">
+    <value>暫停</value>
+  </data>
+  <data name="lblTimer.Text" xml:space="preserve">
+    <value>00:00:00</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
+  <data name="tsmiPause.Text" xml:space="preserve">
+    <value>暫停</value>
+  </data>
 </root>
