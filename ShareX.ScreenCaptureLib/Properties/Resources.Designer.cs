@@ -1979,6 +1979,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Magnify shape.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_MagnifyShape {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_MagnifyShape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New image....
         /// </summary>
         internal static string ShapeManager_CreateToolbar_NewImage {

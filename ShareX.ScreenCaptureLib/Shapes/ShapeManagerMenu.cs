@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
-        private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes, tscbStepType, tscbCutOutEffectType;
+        private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbMagnifyShape, tscbCursorTypes, tscbStepType, tscbCutOutEffectType;
 
         internal void CreateToolbar()
         {
@@ -457,6 +457,16 @@ namespace ShareX.ScreenCaptureLib
             tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
             tsddbShapeOptions.Image = Resources.layer__pencil;
             tsMain.Items.Add(tsddbShapeOptions);
+
+            tscbMagnifyShape = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_MagnifyShape);
+            tscbMagnifyShape.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<MagnifyShape>());
+            tscbMagnifyShape.Content.SelectedIndexChanged += (sender, e) =>
+            {
+                AnnotationOptions.MagnifyShape = (MagnifyShape)tscbMagnifyShape.Content.SelectedIndex;
+                tscbMagnifyShape.Invalidate();
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tscbMagnifyShape);
 
             tslnudMagnifyStrength = new ToolStripLabeledNumericUpDown(Resources.MagnifyStrength);
             tslnudMagnifyStrength.Content.Text2 = "%";
@@ -1458,6 +1468,8 @@ namespace ShareX.ScreenCaptureLib
 
             tscbBorderStyle.Content.SelectedIndex = (int)AnnotationOptions.BorderStyle;
 
+            tscbMagnifyShape.Content.SelectedIndex = (int)AnnotationOptions.MagnifyShape;
+
             tscbImageInterpolationMode.Content.SelectedIndex = (int)AnnotationOptions.ImageInterpolationMode;
 
             tslnudBlurRadius.Content.Value = AnnotationOptions.BlurRadius;
@@ -1587,6 +1599,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
             tscbArrowHeadDirection.Visible = shapeType == ShapeType.DrawingArrow || shapeType == ShapeType.DrawingFreehandArrow;
+            tscbMagnifyShape.Visible = shapeType == ShapeType.DrawingMagnify;
             tscbImageInterpolationMode.Visible = shapeType == ShapeType.DrawingImage || shapeType == ShapeType.DrawingImageScreen || shapeType == ShapeType.DrawingMagnify;
             tslnudStartingStepValue.Visible = shapeType == ShapeType.DrawingStep;
             tslnudStepFontSize.Visible = tscbStepType.Visible = shapeType == ShapeType.DrawingStep;

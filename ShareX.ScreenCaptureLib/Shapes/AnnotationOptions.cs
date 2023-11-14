@@ -88,6 +88,7 @@ namespace ShareX.ScreenCaptureLib
 
         // Magnify drawing
         public int MagnifyStrength { get; set; } = 200;
+        public MagnifyShape MagnifyShape { get; set; } = MagnifyShape.Ellipse;
 
         // Sticker drawing
         public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>()

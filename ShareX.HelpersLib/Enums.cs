@@ -213,6 +213,12 @@ namespace ShareX.HelpersLib
         RomanNumeralsLowercase
     }
 
+    public enum MagnifyShape
+    {
+        Ellipse,
+        Rectangle
+    }
+
     public enum CutOutEffectType // Localized
     {
         None,

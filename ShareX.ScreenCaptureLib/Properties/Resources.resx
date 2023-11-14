@@ -299,6 +299,9 @@
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Interpolation mode:</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_MagnifyShape" xml:space="preserve">
+    <value>Magnify shape</value>
+  </data> 
   <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
     <value>Width:</value>
   </data>
