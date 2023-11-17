@@ -410,9 +410,6 @@ Jesteś pewien, że chcesz kontynuować?</value>
     <value>Upuść
 tutaj</value>
   </data>
-  <data name="Description" xml:space="preserve">
-    <value>Opis</value>
-  </data>
   <data name="Confirmation" xml:space="preserve">
     <value>Potwierdzenie</value>
   </data>
@@ -449,17 +446,11 @@ tutaj</value>
   <data name="SwitchToThumbnailView" xml:space="preserve">
     <value>Przełącz na widok miniatur</value>
   </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>Skrót klawiszowy</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
     <value>skrót klawiszowy</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>skróty klawiszowe</value>
-  </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Aktualnie skonfigurowane skróty:</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>Skróty klawiszowe wyłączone.</value>

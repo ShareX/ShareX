@@ -125,43 +125,10 @@
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 0</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblListViewTip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblListViewTip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 9.75pt</value>
-  </data>
-  <data name="lblListViewTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblListViewTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 20</value>
-  </data>
-  <data name="lblListViewTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="lblListViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 35</value>
-  </data>
-  <data name="lblListViewTip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblListViewTip.Name" xml:space="preserve">
-    <value>lblListViewTip</value>
-  </data>
-  <data name="&gt;&gt;lblListViewTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblListViewTip.Parent" xml:space="preserve">
-    <value>scMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;lblListViewTip.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="chFilename.Width" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
@@ -220,7 +187,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lvUploads.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -292,7 +259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -1854,42 +1821,6 @@
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
-  <data name="lblThumbnailViewTip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblThumbnailViewTip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lblThumbnailViewTip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 9.75pt</value>
-  </data>
-  <data name="lblThumbnailViewTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblThumbnailViewTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lblThumbnailViewTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="lblThumbnailViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 35</value>
-  </data>
-  <data name="lblThumbnailViewTip.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailViewTip.Name" xml:space="preserve">
-    <value>lblThumbnailViewTip</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailViewTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailViewTip.Parent" xml:space="preserve">
-    <value>pThumbnailView</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailViewTip.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ucTaskThumbnailView.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1915,7 +1846,7 @@
     <value>pThumbnailView</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="pThumbnailView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1939,7 +1870,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pThumbnailView.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>567, 17</value>
@@ -1969,7 +1900,61 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pToolbars.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
+  </data>
+  <data name="dgvHotkeys.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <metadata name="cHotkeyStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cHotkeyStatus.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cHotkeyStatus.Width" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <metadata name="cHotkey.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="cHotkey.Width" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <metadata name="cDescription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cDescription.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="cDescription.Width" type="System.Int32, mscorlib">
+    <value>111</value>
+  </data>
+  <data name="dgvHotkeys.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 16</value>
+  </data>
+  <data name="dgvHotkeys.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="dgvHotkeys.Size" type="System.Drawing.Size, System.Drawing">
+    <value>663, 455</value>
+  </data>
+  <data name="dgvHotkeys.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;dgvHotkeys.Name" xml:space="preserve">
+    <value>dgvHotkeys</value>
+  </data>
+  <data name="&gt;&gt;dgvHotkeys.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvHotkeys.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvHotkeys.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3464,6 +3449,24 @@
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cHotkeyStatus.Name" xml:space="preserve">
+    <value>cHotkeyStatus</value>
+  </data>
+  <data name="&gt;&gt;cHotkeyStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cHotkey.Name" xml:space="preserve">
+    <value>cHotkey</value>
+  </data>
+  <data name="&gt;&gt;cHotkey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cDescription.Name" xml:space="preserve">
+    <value>cDescription</value>
+  </data>
+  <data name="&gt;&gt;cDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

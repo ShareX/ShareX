@@ -261,9 +261,6 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Teste de envio de texto</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Teclas de atalho configuradas actualmente:</value>
-  </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Desactivar teclas de atalho</value>
   </data>

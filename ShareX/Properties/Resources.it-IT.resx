@@ -309,9 +309,6 @@ Riavviare ShareX?</value>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Scegli il Percorso della Cartella delgi Screenshot</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Scorciatoie Configurate:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Click Sinistro per Copiare URL negli Appunti. Click Destro per Aprire URL</value>
   </data>

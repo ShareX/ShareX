@@ -33,7 +33,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -175,9 +174,6 @@ namespace ShareX
             TaskManager.TaskListView = new TaskListView(lvUploads);
             TaskManager.TaskThumbnailView = ucTaskThumbnailView;
             uim = new UploadInfoManager();
-
-            // Required for BackColor Transparent to work
-            lblListViewTip.Parent = lvUploads;
 
             foreach (ToolStripDropDownItem dropDownItem in new ToolStripDropDownItem[]
             {
@@ -390,38 +386,16 @@ namespace ShareX
         {
             TaskManager.UpdateMainFormTip();
 
-            List<HotkeySettings> hotkeys = Program.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey).ToList();
+            dgvHotkeys.Rows.Clear();
 
-            if (hotkeys.Count > 0)
+            foreach (HotkeySettings hotkey in Program.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey))
             {
-                StringBuilder sb = new StringBuilder();
-
-                //sb.AppendLine(Resources.MainForm_UpdateMainFormTip_Currently_configured_hotkeys_);
-                //sb.AppendLine();
-
-                int maxHotkeyLength = hotkeys.Max(x => x.HotkeyInfo.ToString().Length);
-                int maxDescriptionLength = hotkeys.Max(x => x.TaskSettings.ToString().Length);
-
-                sb.AppendFormat("┌{0}┬{1}┐\r\n", Resources.Hotkey.PadCenter(maxHotkeyLength + 2, '─'), Resources.Description.PadCenter(maxDescriptionLength + 2, '─'));
-
-                for (int i = 0; i < hotkeys.Count; i++)
-                {
-                    sb.AppendFormat("│ {0} │ {1} │\r\n", hotkeys[i].HotkeyInfo.ToString().PadRight(maxHotkeyLength),
-                        hotkeys[i].TaskSettings.ToString().PadRight(maxDescriptionLength));
-
-                    if (i + 1 < hotkeys.Count)
-                    {
-                        sb.AppendFormat("├{0}┼{1}┤\r\n", new string('─', maxHotkeyLength + 2), new string('─', maxDescriptionLength + 2));
-                    }
-                }
-
-                sb.AppendFormat("└{0}┴{1}┘", new string('─', maxHotkeyLength + 2), new string('─', maxDescriptionLength + 2));
-
-                lblListViewTip.Text = lblThumbnailViewTip.Text = sb.ToString();
-            }
-            else
-            {
-                lblListViewTip.Text = lblThumbnailViewTip.Text = "";
+                int index = dgvHotkeys.Rows.Add();
+                DataGridViewRow row = dgvHotkeys.Rows[index];
+                row.Cells[0].Style.BackColor = row.Cells[0].Style.SelectionBackColor =
+                    hotkey.HotkeyInfo.Status == HotkeyStatus.Registered ? Color.FromArgb(80, 160, 80) : Color.FromArgb(200, 80, 80);
+                row.Cells[1].Value = hotkey.HotkeyInfo.ToString();
+                row.Cells[2].Value = hotkey.TaskSettings.ToString();
             }
         }
 
@@ -817,11 +791,12 @@ namespace ShareX
                 ttMain.ForeColor = ShareXResources.Theme.TextColor;
                 lvUploads.BackColor = ShareXResources.Theme.BackgroundColor;
                 lvUploads.ForeColor = ShareXResources.Theme.TextColor;
-                lblListViewTip.ForeColor = ShareXResources.Theme.TextColor;
+                scMain.BackColor = ShareXResources.Theme.BackgroundColor;
                 scMain.SplitterColor = ShareXResources.Theme.BackgroundColor;
                 scMain.SplitterLineColor = ShareXResources.Theme.BorderColor;
                 pThumbnailView.BackColor = ShareXResources.Theme.BackgroundColor;
-                lblThumbnailViewTip.ForeColor = ShareXResources.Theme.TextColor;
+                ShareXResources.ApplyCustomThemeToControl(dgvHotkeys);
+                dgvHotkeys.BackgroundColor = ShareXResources.Theme.BackgroundColor;
             }
             else
             {
@@ -835,11 +810,11 @@ namespace ShareX
                 ttMain.ForeColor = SystemColors.ControlText;
                 lvUploads.BackColor = SystemColors.Window;
                 lvUploads.ForeColor = SystemColors.ControlText;
-                lblListViewTip.ForeColor = Color.Silver;
+                scMain.BackColor = SystemColors.Window;
                 scMain.SplitterColor = Color.White;
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
                 pThumbnailView.BackColor = SystemColors.Window;
-                lblThumbnailViewTip.ForeColor = Color.Silver;
+                dgvHotkeys.BackgroundColor = SystemColors.Window;
             }
 
             if (ShareXResources.IsDarkTheme)
@@ -1358,16 +1333,34 @@ namespace ShareX
             e.DrawText();
         }
 
-        private void lblListViewTip_MouseUp(object sender, MouseEventArgs e)
+        private void dgvHotkeys_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    lvUploads.Focus();
+                }
+                else if (e.Button == MouseButtons.Right)
+                {
+                    UpdateInfoManager();
+                    cmsTaskInfo.Show((Control)sender, e.X + 1, e.Y + 1);
+                }
+            }
+            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    UcTaskView_ContextMenuRequested(sender, e);
+                }
+            }
+        }
+
+        private void dgvHotkeys_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                lvUploads.Focus();
-            }
-            else if (e.Button == MouseButtons.Right)
-            {
-                UpdateInfoManager();
-                cmsTaskInfo.Show((Control)sender, e.X + 1, e.Y + 1);
+                tsbHotkeySettings_Click(sender, e);
             }
         }
 
@@ -1485,14 +1478,6 @@ namespace ShareX
         private void UcTaskView_ContextMenuRequested(object sender, MouseEventArgs e)
         {
             cmsTaskInfo.Show(sender as Control, e.X + 1, e.Y + 1);
-        }
-
-        private void LblThumbnailViewTip_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                UcTaskView_ContextMenuRequested(lblThumbnailViewTip, e);
-            }
         }
 
         private void cmsTaskInfo_Closing(object sender, ToolStripDropDownClosingEventArgs e)

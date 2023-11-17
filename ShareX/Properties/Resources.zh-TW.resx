@@ -200,9 +200,6 @@
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>無法建立資料夾：</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>目前設定的快捷鍵：</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>點擊滑鼠左鍵以將網址複製到剪貼簿。點擊滑鼠右鍵以開啟網址。</value>
   </data>
@@ -539,9 +536,6 @@
   <data name="AboutForm_AboutForm_Team" xml:space="preserve">
     <value>團隊</value>
   </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>快捷鍵</value>
-  </data>
   <data name="Error" xml:space="preserve">
     <value>錯誤</value>
   </data>
@@ -568,9 +562,6 @@
   </data>
   <data name="Confirmation" xml:space="preserve">
     <value>確認</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>描述</value>
   </data>
   <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg 錯誤</value>

@@ -131,7 +131,10 @@ namespace ShareX
 
         public static void UpdateMainFormTip()
         {
-            Program.MainForm.lblListViewTip.Visible = Program.MainForm.lblThumbnailViewTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
+            bool showHotkeys = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
+
+            Program.MainForm.dgvHotkeys.Visible = showHotkeys;
+            Program.MainForm.lvUploads.Visible = !showHotkeys;
         }
 
         private static void Task_StatusChanged(WorkerTask task)

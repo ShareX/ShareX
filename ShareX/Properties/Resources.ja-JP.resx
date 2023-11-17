@@ -347,9 +347,6 @@ ShareX を再起動しますか？</value>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>画像保存フォルダー パスの選択</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>現在構成済みのホットキー:</value>
-  </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>処理待ち</value>
   </data>
@@ -522,14 +519,8 @@ ShareX を再起動しますか？</value>
   <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
     <value>日本語</value>
   </data>
-  <data name="Description" xml:space="preserve">
-    <value>複製</value>
-  </data>
   <data name="Confirmation" xml:space="preserve">
     <value>確認</value>
-  </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>ホットキー</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>デバッグのログには詳細な情報が含まれます。続行しますか？</value>

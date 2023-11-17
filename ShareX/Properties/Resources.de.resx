@@ -274,9 +274,6 @@ Soll ShareX neu gestartet werden?</value>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Konnte Ordner nicht erstellen:</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Derzeit konfigurierte Tastenkürzel:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Linksklick um den URL zu kopieren. Rechtsklick um den URL zu öffnen.</value>
   </data>

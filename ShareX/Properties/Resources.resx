@@ -282,9 +282,6 @@ Would you like to restart ShareX?</value>
   <data name="InspectWindow_ClassName" xml:space="preserve">
     <value>Class name</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Currently configured hotkeys:</value>
-  </data>
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>History</value>
   </data>
@@ -495,9 +492,6 @@ Are you sure you want to continue?</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Are you sure you want to upload {0} files?</value>
-  </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>Hotkey</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Translators</value>
@@ -1063,9 +1057,6 @@ Middle click to close</value>
   </data>
   <data name="openhand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openhand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Description</value>
   </data>
   <data name="application_icon_large" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-icon-large.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -293,9 +293,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Dizin yaratılamadı:</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Şu anda ayarlı olan kısayollar:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Adresi kopyalamak için sol tıklayın. Adresi açmak için sağ tıklayın.</value>
   </data>
@@ -480,9 +477,6 @@ Orta fare tuşu kapatmak için</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
     <value>Başlangıç, kuruluşunuz tarafından devre dışı bırakıldı</value>
   </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>Kısayol</value>
-  </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Başlangıç, kuruluşunuz tarafından etkinleştirildi</value>
   </data>
@@ -525,9 +519,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
     <value>OCR işlemi sırasında hata oluştu veya metin döndürülmedi.</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Açıklama</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>Pano boş veya bilinmeyen veriler içeriyor.</value>

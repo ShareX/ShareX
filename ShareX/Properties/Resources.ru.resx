@@ -279,9 +279,6 @@
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Не удалось создать папку:</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Текущие горячие клавиши:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Левая кнопка мыши скопирует ссылку в буфер. Правая кнопка откроет ссылку.</value>
   </data>
@@ -556,12 +553,6 @@
     <value>Хотите включить эффекты изображений?
 
 Их можно выключить из меню "После захвата".</value>
-  </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>Горячая клавиша</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Описание</value>
   </data>
   <data name="InspectWindow_WindowTitle" xml:space="preserve">
     <value>Заголовок окна</value>

@@ -194,9 +194,6 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Hiba a mappa létrehozásakor:</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Jelenleg konfigurált gyorsbillentyűk:</value>
-  </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>Várakozik</value>
   </data>

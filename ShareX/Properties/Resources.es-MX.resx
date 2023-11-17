@@ -358,9 +358,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Elegir ubicación de la carpeta de capturas</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Atajos de teclado configurados actualmente:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Clic izq. para copiar el enlace al portapapeles. Clic derecho para abrirlo.</value>
   </data>

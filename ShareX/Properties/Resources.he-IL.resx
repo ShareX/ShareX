@@ -194,9 +194,6 @@
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>קישור ריק.</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>מקשי קיצור המוגדרים כעת:</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>מקצר קישורים: {0}</value>
   </data>
@@ -305,9 +302,6 @@
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>האם אתה בטוח שברצונך להעלות {0} קבצים?</value>
-  </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>מקש קיצור</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>מתרגמים</value>
@@ -579,9 +573,6 @@
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>רישום מקשי קיצור נכשל</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>תיאור</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>לוח הגזירה ריק או מכיל נתונים לא ידועים.</value>

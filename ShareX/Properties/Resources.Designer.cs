@@ -1178,15 +1178,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Description.
-        /// </summary>
-        public static string Description {
-            get {
-                return ResourceManager.GetString("Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Discord {
@@ -1648,15 +1639,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hotkey.
-        /// </summary>
-        public static string Hotkey {
-            get {
-                return ResourceManager.GetString("Hotkey", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to hotkey.
         /// </summary>
         public static string HotkeyManager_ShowFailedHotkeys_hotkey {
@@ -2105,15 +2087,6 @@ namespace ShareX.Properties {
         public static string MainForm_tsmiTestTextUpload_Click_Text_upload_test {
             get {
                 return ResourceManager.GetString("MainForm_tsmiTestTextUpload_Click_Text_upload_test", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Currently configured hotkeys:.
-        /// </summary>
-        public static string MainForm_UpdateMainFormTip_Currently_configured_hotkeys_ {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateMainFormTip_Currently_configured_hotkeys_", resourceCulture);
             }
         }
         
