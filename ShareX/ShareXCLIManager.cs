@@ -44,29 +44,32 @@ namespace ShareX
 
         public async Task UseCommandLineArgs(List<CLICommand> commands)
         {
-            TaskSettings taskSettings = FindCLITask(commands);
-
-            foreach (CLICommand command in commands)
+            if (commands != null && commands.Count > 0)
             {
-                DebugHelper.WriteLine("CommandLine: " + command);
+                TaskSettings taskSettings = FindCLITask(commands);
 
-                if (command.IsCommand)
+                foreach (CLICommand command in commands)
                 {
-                    if (CheckCustomUploader(command) || CheckImageEffect(command) || await CheckCLIHotkey(command) || await CheckCLIWorkflow(command) ||
-                        await CheckNativeMessagingInput(command))
+                    DebugHelper.WriteLine("CommandLine: " + command);
+
+                    if (command.IsCommand)
                     {
+                        if (CheckCustomUploader(command) || CheckImageEffect(command) || await CheckCLIHotkey(command) || await CheckCLIWorkflow(command) ||
+                            await CheckNativeMessagingInput(command))
+                        {
+                        }
+
+                        continue;
                     }
 
-                    continue;
-                }
-
-                if (URLHelpers.IsValidURL(command.Command))
-                {
-                    UploadManager.DownloadAndUploadFile(command.Command, taskSettings);
-                }
-                else
-                {
-                    UploadManager.UploadFile(command.Command, taskSettings);
+                    if (URLHelpers.IsValidURL(command.Command))
+                    {
+                        UploadManager.DownloadAndUploadFile(command.Command, taskSettings);
+                    }
+                    else
+                    {
+                        UploadManager.UploadFile(command.Command, taskSettings);
+                    }
                 }
             }
         }
@@ -83,7 +86,7 @@ namespace ShareX
                     {
                         if (command.Parameter == hotkeySetting.TaskSettings.ToString())
                         {
-                            return hotkeySetting.TaskSettings;
+                            return TaskSettings.GetSafeTaskSettings(hotkeySetting.TaskSettings);
                         }
                     }
                 }

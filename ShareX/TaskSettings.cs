@@ -185,7 +185,7 @@ namespace ShareX
             return safeTaskSettings;
         }
 
-        private void SetDefaultSettings()
+        public void SetDefaultSettings()
         {
             if (Program.DefaultTaskSettings != null)
             {
@@ -246,6 +246,44 @@ namespace ShareX
                 {
                     AdvancedSettings = defaultTaskSettings.AdvancedSettings;
                 }
+            }
+        }
+
+        public void Cleanup()
+        {
+            if (UseDefaultGeneralSettings)
+            {
+                GeneralSettings = null;
+            }
+
+            if (UseDefaultImageSettings)
+            {
+                ImageSettings = null;
+            }
+
+            if (UseDefaultCaptureSettings)
+            {
+                CaptureSettings = null;
+            }
+
+            if (UseDefaultUploadSettings)
+            {
+                UploadSettings = null;
+            }
+
+            if (UseDefaultActions)
+            {
+                ExternalPrograms = null;
+            }
+
+            if (UseDefaultToolsSettings)
+            {
+                ToolsSettings = null;
+            }
+
+            if (UseDefaultAdvancedSettings)
+            {
+                AdvancedSettings = null;
             }
         }
 
@@ -495,9 +533,6 @@ namespace ShareX
 
         [Category("Name pattern"), DefaultValue(50), Description("Maximum name pattern title (%t) length for file name.")]
         public int NamePatternMaxTitleLength { get; set; }
-
-        // TEMP: For backward compatibility
-        public string CapturePath;
 
         public TaskSettingsAdvanced()
         {

@@ -402,15 +402,19 @@ namespace ShareX
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)
         {
             ToolStripMenuItem tsmi = new ToolStripMenuItem(hotkeySetting.TaskSettings.ToString().Replace("&", "&&"));
+
             if (hotkeySetting.HotkeyInfo.IsValidHotkey)
             {
                 tsmi.ShortcutKeyDisplayString = "  " + hotkeySetting.HotkeyInfo;
             }
+
             if (!hotkeySetting.TaskSettings.IsUsingDefaultSettings)
             {
                 tsmi.Font = new Font(tsmi.Font, FontStyle.Bold);
             }
+
             tsmi.Click += async (sender, e) => await TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
+
             return tsmi;
         }
 

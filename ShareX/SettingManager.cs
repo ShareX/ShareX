@@ -179,7 +179,6 @@ namespace ShareX
             HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath, BackupFolder, fallbackSupport);
             HotkeysConfig.CreateBackup = true;
             HotkeysConfig.CreateWeeklyBackup = true;
-            HotkeysConfigBackwardCompatibilityTasks();
         }
 
         public static void LoadAllSettings()
@@ -280,42 +279,56 @@ namespace ShareX
             }
         }
 
-        private static void HotkeysConfigBackwardCompatibilityTasks()
+        public static void CleanupHotkeysConfig()
         {
-            if (HotkeysConfig.IsUpgradeFrom("13.1.1"))
+            foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))
             {
-                foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))
-                {
-                    if (taskSettings != null && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CapturePath))
-                    {
-                        taskSettings.OverrideScreenshotsFolder = true;
-                        taskSettings.ScreenshotsFolder = taskSettings.AdvancedSettings.CapturePath;
-                        taskSettings.AdvancedSettings.CapturePath = "";
-                    }
-                }
+                taskSettings.Cleanup();
             }
         }
 
         public static void SaveAllSettings()
         {
-            if (Settings != null) Settings.Save(ApplicationConfigFilePath);
-            if (UploadersConfig != null) UploadersConfig.Save(UploadersConfigFilePath);
-            if (HotkeysConfig != null) HotkeysConfig.Save(HotkeysConfigFilePath);
+            if (Settings != null)
+            {
+                Settings.Save(ApplicationConfigFilePath);
+            }
+
+            if (UploadersConfig != null)
+            {
+                UploadersConfig.Save(UploadersConfigFilePath);
+            }
+
+            if (HotkeysConfig != null)
+            {
+                CleanupHotkeysConfig();
+                HotkeysConfig.Save(HotkeysConfigFilePath);
+            }
         }
 
         public static void SaveApplicationConfigAsync()
         {
-            if (Settings != null) Settings.SaveAsync(ApplicationConfigFilePath);
+            if (Settings != null)
+            {
+                Settings.SaveAsync(ApplicationConfigFilePath);
+            }
         }
 
         public static void SaveUploadersConfigAsync()
         {
-            if (UploadersConfig != null) UploadersConfig.SaveAsync(UploadersConfigFilePath);
+            if (UploadersConfig != null)
+            {
+                UploadersConfig.SaveAsync(UploadersConfigFilePath);
+            }
         }
 
         public static void SaveHotkeysConfigAsync()
         {
-            if (HotkeysConfig != null) HotkeysConfig.SaveAsync(HotkeysConfigFilePath);
+            if (HotkeysConfig != null)
+            {
+                CleanupHotkeysConfig();
+                HotkeysConfig.SaveAsync(HotkeysConfigFilePath);
+            }
         }
 
         public static void SaveAllSettingsAsync()
