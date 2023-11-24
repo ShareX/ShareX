@@ -135,7 +135,10 @@ namespace ShareX
 
         private void Edit(HotkeySelectionControl selectionControl)
         {
-            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(selectionControl.HotkeySettings.TaskSettings))
+            TaskSettings taskSettings = selectionControl.HotkeySettings.TaskSettings;
+            taskSettings.SetDefaultSettings();
+
+            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(taskSettings))
             {
                 taskSettingsForm.ShowDialog();
                 selectionControl.UpdateControls();

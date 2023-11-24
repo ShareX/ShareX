@@ -285,10 +285,10 @@
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.pThumbnailView = new System.Windows.Forms.Panel();
+            this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
             this.dgvHotkeys = new System.Windows.Forms.DataGridView();
-            this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.cHotkeyStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cHotkey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -2214,6 +2214,19 @@
             resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
             this.pThumbnailView.Name = "pThumbnailView";
             // 
+            // ucTaskThumbnailView
+            // 
+            resources.ApplyResources(this.ucTaskThumbnailView, "ucTaskThumbnailView");
+            this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
+            this.ucTaskThumbnailView.ClickAction = ShareX.ThumbnailViewClickAction.Default;
+            this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
+            this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
+            this.ucTaskThumbnailView.TitleLocation = ShareX.ThumbnailTitleLocation.Top;
+            this.ucTaskThumbnailView.TitleVisible = true;
+            this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
+            this.ucTaskThumbnailView.SelectedPanelChanged += new System.EventHandler(this.ucTaskThumbnailView_SelectedPanelChanged);
+            this.ucTaskThumbnailView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvUploads_KeyDown);
+            // 
             // ttMain
             // 
             this.ttMain.AutoPopDelay = 5000;
@@ -2231,6 +2244,9 @@
             // dgvHotkeys
             // 
             this.dgvHotkeys.AllowUserToAddRows = false;
+            this.dgvHotkeys.AllowUserToDeleteRows = false;
+            this.dgvHotkeys.AllowUserToResizeColumns = false;
+            this.dgvHotkeys.AllowUserToResizeRows = false;
             resources.ApplyResources(this.dgvHotkeys, "dgvHotkeys");
             this.dgvHotkeys.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvHotkeys.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -2264,19 +2280,6 @@
             this.dgvHotkeys.RowHeadersVisible = false;
             this.dgvHotkeys.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvHotkeys_MouseDoubleClick);
             this.dgvHotkeys.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvHotkeys_MouseUp);
-            // 
-            // ucTaskThumbnailView
-            // 
-            resources.ApplyResources(this.ucTaskThumbnailView, "ucTaskThumbnailView");
-            this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
-            this.ucTaskThumbnailView.ClickAction = ShareX.ThumbnailViewClickAction.Default;
-            this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
-            this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
-            this.ucTaskThumbnailView.TitleLocation = ShareX.ThumbnailTitleLocation.Top;
-            this.ucTaskThumbnailView.TitleVisible = true;
-            this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
-            this.ucTaskThumbnailView.SelectedPanelChanged += new System.EventHandler(this.ucTaskThumbnailView_SelectedPanelChanged);
-            this.ucTaskThumbnailView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvUploads_KeyDown);
             // 
             // cHotkeyStatus
             // 

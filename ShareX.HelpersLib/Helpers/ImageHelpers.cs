@@ -86,6 +86,7 @@ namespace ShareX.HelpersLib
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 bmp.Save(memoryStream, ImageFormat.Bmp);
+                memoryStream.Position = 0;
 
                 BitmapImage bitmapImage = new BitmapImage();
                 bitmapImage.BeginInit();
@@ -99,7 +100,7 @@ namespace ShareX.HelpersLib
                 transformedBitmap.Transform = new System.Windows.Media.ScaleTransform(scaleX, scaleY);
                 transformedBitmap.EndInit();
 
-                return GetBitmap(transformedBitmap, bmp.PixelFormat);
+                return GetBitmap(transformedBitmap);
             }
         }
 
