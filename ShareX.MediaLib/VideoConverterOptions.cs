@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.IO;
 using System.Text;
 
@@ -53,6 +54,16 @@ namespace ShareX.MediaLib
                 }
 
                 return path;
+            }
+        }
+
+        public bool IsInputFileAnimationOnly
+        {
+            get
+            {
+                return InputFilePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                    InputFilePath.EndsWith(".apng", StringComparison.OrdinalIgnoreCase) ||
+                    InputFilePath.EndsWith(".webp", StringComparison.OrdinalIgnoreCase);
             }
         }
 
@@ -217,33 +228,36 @@ namespace ShareX.MediaLib
                     break;
             }
 
-            // Audio encoder
-            switch (VideoCodec)
+            if (!IsInputFileAnimationOnly)
             {
-                case ConverterVideoCodecs.x264: // https://trac.ffmpeg.org/wiki/Encode/AAC
-                case ConverterVideoCodecs.x265:
-                case ConverterVideoCodecs.h264_nvenc:
-                case ConverterVideoCodecs.hevc_nvenc:
-                case ConverterVideoCodecs.h264_amf:
-                case ConverterVideoCodecs.hevc_amf:
-                case ConverterVideoCodecs.h264_qsv:
-                case ConverterVideoCodecs.hevc_qsv:
-                    args.Append("-c:a aac ");
-                    args.Append("-b:a 128k ");
-                    break;
-                case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
-                case ConverterVideoCodecs.vp9:
-                    args.Append("-c:a libvorbis ");
-                    args.Append("-q:a 3 ");
-                    break;
-                case ConverterVideoCodecs.av1: // https://ffmpeg.org/ffmpeg-codecs.html#libopus-1
-                    args.Append("-c:a libopus ");
-                    args.Append("-b:a 128k ");
-                    break;
-                case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MP3
-                    args.Append("-c:a libmp3lame ");
-                    args.Append("-q:a 4 ");
-                    break;
+                // Audio encoder
+                switch (VideoCodec)
+                {
+                    case ConverterVideoCodecs.x264: // https://trac.ffmpeg.org/wiki/Encode/AAC
+                    case ConverterVideoCodecs.x265:
+                    case ConverterVideoCodecs.h264_nvenc:
+                    case ConverterVideoCodecs.hevc_nvenc:
+                    case ConverterVideoCodecs.h264_amf:
+                    case ConverterVideoCodecs.hevc_amf:
+                    case ConverterVideoCodecs.h264_qsv:
+                    case ConverterVideoCodecs.hevc_qsv:
+                        args.Append("-c:a aac ");
+                        args.Append("-b:a 128k ");
+                        break;
+                    case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
+                    case ConverterVideoCodecs.vp9:
+                        args.Append("-c:a libvorbis ");
+                        args.Append("-q:a 3 ");
+                        break;
+                    case ConverterVideoCodecs.av1: // https://ffmpeg.org/ffmpeg-codecs.html#libopus-1
+                        args.Append("-c:a libopus ");
+                        args.Append("-b:a 128k ");
+                        break;
+                    case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MP3
+                        args.Append("-c:a libmp3lame ");
+                        args.Append("-q:a 4 ");
+                        break;
+                }
             }
 
             // Overwrite output files without asking
