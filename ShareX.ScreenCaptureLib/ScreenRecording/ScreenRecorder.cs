@@ -264,7 +264,7 @@ namespace ShareX.ScreenCaptureLib
                 ffmpeg.TrackEncodeProgress = true;
 
                 StringBuilder args = new StringBuilder();
-                args.Append("-hide_banner ");
+
                 args.Append($"-i \"{input}\" ");
 
                 // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1

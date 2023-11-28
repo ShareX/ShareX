@@ -91,7 +91,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             StringBuilder args = new StringBuilder();
-            args.Append("-hide_banner "); // All FFmpeg tools will normally show a copyright notice, build options and library versions. This option can be used to suppress printing this information.
 
             string framerate = isCustom ? "$fps$" : FPS.ToString();
 

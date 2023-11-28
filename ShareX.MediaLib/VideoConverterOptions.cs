@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace ShareX.MediaLib
@@ -57,13 +58,13 @@ namespace ShareX.MediaLib
             }
         }
 
+        private static readonly string[] AnimationOnlyFiles = new string[] { "gif", "webp", "png", "apng" };
+
         public bool IsInputFileAnimationOnly
         {
             get
             {
-                return InputFilePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
-                    InputFilePath.EndsWith(".apng", StringComparison.OrdinalIgnoreCase) ||
-                    InputFilePath.EndsWith(".webp", StringComparison.OrdinalIgnoreCase);
+                return AnimationOnlyFiles.Any(x => InputFilePath.EndsWith("." + x, StringComparison.OrdinalIgnoreCase));
             }
         }
 
@@ -93,9 +94,6 @@ namespace ShareX.MediaLib
         public string GetFFmpegArgs()
         {
             StringBuilder args = new StringBuilder();
-
-            // Hide FFmpeg banner
-            args.Append("-hide_banner ");
 
             // Input file path
             args.Append($"-i \"{InputFilePath}\" ");
