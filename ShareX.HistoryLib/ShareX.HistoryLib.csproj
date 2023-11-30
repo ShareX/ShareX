@@ -303,6 +303,9 @@
     <EmbeddedResource Include="Forms\HistorySettingsForm.zh-CN.resx">
       <DependentUpon>HistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.zh-TW.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistoryForm.de.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
