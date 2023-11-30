@@ -1269,7 +1269,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>48.0.1</Version>
+      <Version>48.0.3</Version>
     </PackageReference>
     <PackageReference Include="MegaApiClient">
       <Version>1.10.3</Version>
