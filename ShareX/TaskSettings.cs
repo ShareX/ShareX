@@ -353,6 +353,7 @@ namespace ShareX
 
         public bool ShowImageEffectsWindowAfterCapture = false;
         public bool ImageEffectOnlyRegionCapture = false;
+        public bool UseRandomImageEffect = false;
 
         #endregion Image / Effects
 

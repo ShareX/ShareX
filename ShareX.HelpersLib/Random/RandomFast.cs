@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 
 namespace ShareX.HelpersLib
 {
@@ -118,6 +119,21 @@ namespace ShareX.HelpersLib
             }
 
             return array[Next(array.Length - 1)];
+        }
+
+        public static T Pick<T>(List<T> list)
+        {
+            if (list == null)
+            {
+                throw new ArgumentNullException(nameof(list));
+            }
+
+            if (list.Count == 0)
+            {
+                throw new ArgumentException(nameof(list));
+            }
+
+            return list[Next(list.Count - 1)];
         }
 
         public static void Run(params Action[] actions)

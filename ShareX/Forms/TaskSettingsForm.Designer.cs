@@ -298,6 +298,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbUseRandomImageEffect = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1071,6 +1072,7 @@
             // tpEffects
             // 
             this.tpEffects.BackColor = System.Drawing.SystemColors.Window;
+            this.tpEffects.Controls.Add(this.cbUseRandomImageEffect);
             this.tpEffects.Controls.Add(this.lblImageEffectsNote);
             this.tpEffects.Controls.Add(this.cbShowImageEffectsWindowAfterCapture);
             this.tpEffects.Controls.Add(this.cbImageEffectOnlyRegionCapture);
@@ -2593,6 +2595,13 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbUseRandomImageEffect
+            // 
+            resources.ApplyResources(this.cbUseRandomImageEffect, "cbUseRandomImageEffect");
+            this.cbUseRandomImageEffect.Name = "cbUseRandomImageEffect";
+            this.cbUseRandomImageEffect.UseVisualStyleBackColor = true;
+            this.cbUseRandomImageEffect.CheckedChanged += new System.EventHandler(this.cbUseRandomImageEffect_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2963,5 +2972,6 @@
         private System.Windows.Forms.Label lblRegionCaptureFPSLimit;
         private System.Windows.Forms.CheckBox cbRegionCaptureActiveMonitorMode;
         private System.Windows.Forms.Button btnCaptureOCRHelp;
+        private System.Windows.Forms.CheckBox cbUseRandomImageEffect;
     }
 }

@@ -248,6 +248,7 @@ namespace ShareX
 
             cbShowImageEffectsWindowAfterCapture.Checked = TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture;
             cbImageEffectOnlyRegionCapture.Checked = TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture;
+            cbUseRandomImageEffect.Checked = TaskSettings.ImageSettings.UseRandomImageEffect;
 
             #endregion Effects
 
@@ -985,14 +986,19 @@ namespace ShareX
             TaskSettings.ImageSettings.FileExistAction = (FileExistAction)cbImageFileExist.SelectedIndex;
         }
 
+        private void cbShowImageEffectsWindowAfterCapture_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture = cbShowImageEffectsWindowAfterCapture.Checked;
+        }
+
         private void cbImageEffectOnlyRegionCapture_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture = cbImageEffectOnlyRegionCapture.Checked;
         }
 
-        private void cbShowImageEffectsWindowAfterCapture_CheckedChanged(object sender, EventArgs e)
+        private void cbUseRandomImageEffect_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture = cbShowImageEffectsWindowAfterCapture.Checked;
+            TaskSettings.ImageSettings.UseRandomImageEffect = cbUseRandomImageEffect.Checked;
         }
 
         private void btnImageEffects_Click(object sender, EventArgs e)
