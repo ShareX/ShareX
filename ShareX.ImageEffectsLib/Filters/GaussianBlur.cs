@@ -33,28 +33,18 @@ namespace ShareX.ImageEffectsLib
     [Description("Gaussian blur")]
     internal class GaussianBlur : ImageEffect
     {
-        private double sigma;
-        private int size;
+        private int radius;
 
-        [DefaultValue(0.7955555)]
-        public double Sigma
+        [DefaultValue(15)]
+        public int Radius
         {
-            get => sigma;
-            set => sigma = Math.Max(value, 0.1);
-        }
-
-        [DefaultValue(3)]
-        public int Size
-        {
-            get => size;
+            get
+            {
+                return radius;
+            }
             set
             {
-                size = value.Max(1);
-
-                if (size.IsEvenNumber())
-                {
-                    size++;
-                }
+                radius = Math.Max(value, 1);
             }
         }
 
@@ -65,28 +55,31 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            ConvolutionMatrix kernelHoriz = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
+            int size = Radius * 2 + 1;
+            double sigma = Radius / 3.0;
 
-            ConvolutionMatrix kernelVert = new ConvolutionMatrix(size, 1)
+            ConvolutionMatrix kernelHorizontal = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
+
+            ConvolutionMatrix kernelVertical = new ConvolutionMatrix(size, 1)
             {
-                ConsiderAlpha = kernelHoriz.ConsiderAlpha
+                ConsiderAlpha = kernelHorizontal.ConsiderAlpha
             };
 
             for (int i = 0; i < size; i++)
             {
-                kernelVert[i, 0] = kernelHoriz[0, i];
+                kernelVertical[i, 0] = kernelHorizontal[0, i];
             }
 
             using (bmp)
-            using (Bitmap horizPass = kernelHoriz.Apply(bmp))
+            using (Bitmap horizontalPass = kernelHorizontal.Apply(bmp))
             {
-                return kernelVert.Apply(horizPass);
+                return kernelVertical.Apply(horizontalPass);
             }
         }
 
         protected override string GetSummary()
         {
-            return Size.ToString();
+            return Radius.ToString();
         }
     }
 }
