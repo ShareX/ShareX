@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void ApplyEffect(Bitmap bmp)
         {
-            ImageHelpers.ApplyBoxBlur(bmp, BlurRadius);
+            ImageHelpers.BoxBlur(bmp, BlurRadius);
         }
 
         public override void OnDrawFinal(Graphics g, Bitmap bmp)

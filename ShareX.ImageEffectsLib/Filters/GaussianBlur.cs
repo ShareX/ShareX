@@ -55,25 +55,9 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            int size = Radius * 2 + 1;
-            double sigma = Radius / 3.0;
-
-            ConvolutionMatrix kernelHorizontal = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
-
-            ConvolutionMatrix kernelVertical = new ConvolutionMatrix(size, 1)
-            {
-                ConsiderAlpha = kernelHorizontal.ConsiderAlpha
-            };
-
-            for (int i = 0; i < size; i++)
-            {
-                kernelVertical[i, 0] = kernelHorizontal[0, i];
-            }
-
             using (bmp)
-            using (Bitmap horizontalPass = kernelHorizontal.Apply(bmp))
             {
-                return kernelVertical.Apply(horizontalPass);
+                return ImageHelpers.GaussianBlur(bmp, Radius);
             }
         }
 

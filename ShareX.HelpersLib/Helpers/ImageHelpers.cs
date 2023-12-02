@@ -1198,7 +1198,7 @@ namespace ShareX.HelpersLib
 
                 if (size > 0)
                 {
-                    ApplyBoxBlur(bmpShadow, size);
+                    BoxBlur(bmpShadow, size);
                 }
 
                 if (darkness > 1)
@@ -1256,7 +1256,7 @@ namespace ShareX.HelpersLib
                 if (size > 0)
                 {
                     bmpBlur = AddCanvas(bmp, size);
-                    ApplyBoxBlur(bmpBlur, size);
+                    BoxBlur(bmpBlur, size);
                 }
                 else
                 {
@@ -1520,7 +1520,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void ApplyBoxBlur(Bitmap bmp, int range)
+        public static void BoxBlur(Bitmap bmp, int range)
         {
             BoxBlur(bmp, range, new Rectangle(0, 0, bmp.Width, bmp.Height));
         }
@@ -1670,6 +1670,29 @@ namespace ShareX.HelpersLib
                 {
                     unsafeBitmap.SetPixel(x, y, newColors[y]);
                 }
+            }
+        }
+
+        public static Bitmap GaussianBlur(Bitmap bmp, int radius)
+        {
+            int size = radius * 2 + 1;
+            double sigma = radius / 3.0;
+
+            ConvolutionMatrix kernelHorizontal = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
+
+            ConvolutionMatrix kernelVertical = new ConvolutionMatrix(size, 1)
+            {
+                ConsiderAlpha = kernelHorizontal.ConsiderAlpha
+            };
+
+            for (int i = 0; i < size; i++)
+            {
+                kernelVertical[i, 0] = kernelHorizontal[0, i];
+            }
+
+            using (Bitmap horizontalPass = kernelHorizontal.Apply(bmp))
+            {
+                return kernelVertical.Apply(horizontalPass);
             }
         }
 
