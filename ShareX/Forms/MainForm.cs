@@ -1072,6 +1072,8 @@ namespace ShareX
         {
             tsMain.Visible = Program.Settings.ShowMenu;
 
+            dgvHotkeys.Location = new Point(tsMain.Width + 16, 16);
+
             ucTaskThumbnailView.TitleVisible = Program.Settings.ShowThumbnailTitle;
             ucTaskThumbnailView.TitleLocation = Program.Settings.ThumbnailTitleLocation;
             ucTaskThumbnailView.ThumbnailSize = Program.Settings.ThumbnailSize;
