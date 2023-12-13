@@ -399,6 +399,12 @@ namespace ShareX
             if (Task.Info != null)
             {
                 Progress = (int)Task.Info.Progress.Percentage;
+
+                if (HelpersOptions.DevMode)
+                {
+                    pbProgress.Text = string.Format("{0} / {1}", Task.Info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits),
+                        Task.Info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
+                }
             }
         }
 

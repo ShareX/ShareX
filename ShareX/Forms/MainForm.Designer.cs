@@ -284,7 +284,6 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
-            this.pThumbnailView = new System.Windows.Forms.Panel();
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
@@ -292,6 +291,8 @@
             this.cHotkeyStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cHotkey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pMain = new System.Windows.Forms.Panel();
+            this.pHotkeys = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -299,9 +300,10 @@
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
-            this.pThumbnailView.SuspendLayout();
             this.pToolbars.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHotkeys)).BeginInit();
+            this.pMain.SuspendLayout();
+            this.pHotkeys.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -378,7 +380,6 @@
             // 
             // pbPreview
             // 
-            this.pbPreview.BackColor = System.Drawing.SystemColors.Window;
             this.pbPreview.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.DrawCheckeredBackground = true;
@@ -2207,17 +2208,9 @@
             // 
             this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
             // 
-            // pThumbnailView
-            // 
-            this.pThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
-            this.pThumbnailView.Controls.Add(this.ucTaskThumbnailView);
-            resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
-            this.pThumbnailView.Name = "pThumbnailView";
-            // 
             // ucTaskThumbnailView
             // 
             resources.ApplyResources(this.ucTaskThumbnailView, "ucTaskThumbnailView");
-            this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
             this.ucTaskThumbnailView.ClickAction = ShareX.ThumbnailViewClickAction.Default;
             this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
             this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
@@ -2247,7 +2240,6 @@
             this.dgvHotkeys.AllowUserToDeleteRows = false;
             this.dgvHotkeys.AllowUserToResizeColumns = false;
             this.dgvHotkeys.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.dgvHotkeys, "dgvHotkeys");
             this.dgvHotkeys.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvHotkeys.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHotkeys.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -2274,6 +2266,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHotkeys.DefaultCellStyle = dataGridViewCellStyle3;
+            resources.ApplyResources(this.dgvHotkeys, "dgvHotkeys");
             this.dgvHotkeys.MultiSelect = false;
             this.dgvHotkeys.Name = "dgvHotkeys";
             this.dgvHotkeys.ReadOnly = true;
@@ -2305,15 +2298,27 @@
             this.cDescription.ReadOnly = true;
             this.cDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // pMain
+            // 
+            this.pMain.Controls.Add(this.pHotkeys);
+            this.pMain.Controls.Add(this.ucTaskThumbnailView);
+            this.pMain.Controls.Add(this.scMain);
+            resources.ApplyResources(this.pMain, "pMain");
+            this.pMain.Name = "pMain";
+            // 
+            // pHotkeys
+            // 
+            this.pHotkeys.Controls.Add(this.dgvHotkeys);
+            resources.ApplyResources(this.pHotkeys, "pHotkeys");
+            this.pHotkeys.Name = "pHotkeys";
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.dgvHotkeys);
-            this.Controls.Add(this.pThumbnailView);
-            this.Controls.Add(this.scMain);
+            this.Controls.Add(this.pMain);
             this.Controls.Add(this.pToolbars);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
@@ -2333,10 +2338,11 @@
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
-            this.pThumbnailView.ResumeLayout(false);
             this.pToolbars.ResumeLayout(false);
             this.pToolbars.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHotkeys)).EndInit();
+            this.pMain.ResumeLayout(false);
+            this.pHotkeys.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2552,7 +2558,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenshotDelay5;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderSettings;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayCustomUploaderSettings;
-        private System.Windows.Forms.Panel pThumbnailView;
         private TaskThumbnailView ucTaskThumbnailView;
         private System.Windows.Forms.ToolStripMenuItem tsmiSwitchTaskViewMode;
         private System.Windows.Forms.ToolTip ttMain;
@@ -2597,10 +2602,12 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiImageBeautifier;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageBeautifier;
         private System.Windows.Forms.ToolStripMenuItem tsmiBeautifyImage;
-        internal System.Windows.Forms.DataGridView dgvHotkeys;
-        internal HelpersLib.MyListView lvUploads;
         private System.Windows.Forms.DataGridViewTextBoxColumn cHotkeyStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn cHotkey;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDescription;
+        private System.Windows.Forms.Panel pMain;
+        private System.Windows.Forms.DataGridView dgvHotkeys;
+        internal System.Windows.Forms.Panel pHotkeys;
+        private HelpersLib.MyListView lvUploads;
     }
 }

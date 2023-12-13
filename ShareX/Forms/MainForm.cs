@@ -750,16 +750,16 @@ namespace ShareX
                 tsmiSwitchTaskViewMode.Text = Resources.SwitchToThumbnailView;
                 tsmiSwitchTaskViewMode.Image = Resources.application_icon_large;
                 scMain.Visible = true;
-                pThumbnailView.Visible = false;
+                ucTaskThumbnailView.Visible = false;
                 scMain.Focus();
             }
             else
             {
                 tsmiSwitchTaskViewMode.Text = Resources.SwitchToListView;
                 tsmiSwitchTaskViewMode.Image = Resources.application_list;
-                pThumbnailView.Visible = true;
+                ucTaskThumbnailView.Visible = true;
                 scMain.Visible = false;
-                pThumbnailView.Focus();
+                ucTaskThumbnailView.Focus();
             }
         }
 
@@ -786,6 +786,7 @@ namespace ShareX
 
             if (ShareXResources.UseCustomTheme)
             {
+                BackColor = ShareXResources.Theme.BackgroundColor;
                 tsMain.Font = ShareXResources.Theme.MenuFont;
                 tsMain.Renderer = new ToolStripDarkRenderer();
                 tsMain.DrawCustomBorder = false;
@@ -795,15 +796,14 @@ namespace ShareX
                 ttMain.ForeColor = ShareXResources.Theme.TextColor;
                 lvUploads.BackColor = ShareXResources.Theme.BackgroundColor;
                 lvUploads.ForeColor = ShareXResources.Theme.TextColor;
-                scMain.BackColor = ShareXResources.Theme.BackgroundColor;
                 scMain.SplitterColor = ShareXResources.Theme.BackgroundColor;
                 scMain.SplitterLineColor = ShareXResources.Theme.BorderColor;
-                pThumbnailView.BackColor = ShareXResources.Theme.BackgroundColor;
                 ShareXResources.ApplyCustomThemeToControl(dgvHotkeys);
                 dgvHotkeys.BackgroundColor = ShareXResources.Theme.BackgroundColor;
             }
             else
             {
+                BackColor = SystemColors.Window;
                 tsMain.Renderer = new ToolStripCustomRenderer();
                 tsMain.DrawCustomBorder = true;
                 cmsTray.Renderer = new ToolStripCustomRenderer();
@@ -814,10 +814,8 @@ namespace ShareX
                 ttMain.ForeColor = SystemColors.ControlText;
                 lvUploads.BackColor = SystemColors.Window;
                 lvUploads.ForeColor = SystemColors.ControlText;
-                scMain.BackColor = SystemColors.Window;
                 scMain.SplitterColor = Color.White;
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
-                pThumbnailView.BackColor = SystemColors.Window;
                 dgvHotkeys.BackgroundColor = SystemColors.Window;
             }
 
@@ -1071,8 +1069,6 @@ namespace ShareX
         private void UpdateMainWindowLayout()
         {
             tsMain.Visible = Program.Settings.ShowMenu;
-
-            dgvHotkeys.Location = new Point(tsMain.Width + 16, 16);
 
             ucTaskThumbnailView.TitleVisible = Program.Settings.ShowThumbnailTitle;
             ucTaskThumbnailView.TitleLocation = Program.Settings.ThumbnailTitleLocation;
