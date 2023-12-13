@@ -132,4 +132,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Configuración de atajos de teclado</value>
   </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Las teclas de acceso rápido están desactivadas. Puedes hacer click aquí para activarlas.</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Restablecer</value>
+  </data>
 </root>

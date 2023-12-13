@@ -135,4 +135,26 @@
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
     <value>Efectos de imágenes - Ancho: {0}, Alto: {1}, Tiempo de procesamiento: {2} ms</value>
   </data>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>La carpeta de recursos debe estar dentro de la carpeta de efectos de imagen de ShareX.</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>Ruta de carpeta de recursos inválida</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>Ya existe un paquete con este nombre de archivo.
+¿Quieres sobreescribirlo?</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>¿Quieres limpiar los efectos?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmación</value>
+  </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>El nombre del preajuste no puede estar vacío.</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>Nombre del preajuste no encontrado</value>
+  </data>
 </root>
