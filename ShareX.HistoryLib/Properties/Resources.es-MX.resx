@@ -219,4 +219,25 @@
   <data name="HistoryStats_YearlyUsages" xml:space="preserve">
     <value>Usos al año:</value>
   </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Filtrado</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Ocurrió un error al leer el archivo de historial:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Nombre de archivo, título de ventana, nombre de proceso, etc.</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Nombres de procesos:</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Estadísticas de historial</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Fijar a pantalla</value>
+  </data>
 </root>

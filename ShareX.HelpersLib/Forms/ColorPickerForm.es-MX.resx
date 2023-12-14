@@ -163,7 +163,7 @@
     <value>Verde:</value>
   </data>
   <data name="rbRed.Text" xml:space="preserve">
-    <value>Rojo</value>
+    <value>Rojo:</value>
   </data>
   <data name="rbBrightness.Text" xml:space="preserve">
     <value>Brillo:</value>
@@ -235,7 +235,7 @@
     <value>Cerrar</value>
   </data>
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
-    <value>Elegir color de la pantalla</value>
+    <value>Elegir color desde la pantalla</value>
   </data>
   <data name="mbCopy.Text" xml:space="preserve">
     <value>Copiar</value>
@@ -254,5 +254,8 @@
   </data>
   <data name="rbStandardColors.Text" xml:space="preserve">
     <value>Colores estándar</value>
+  </data>
+  <data name="btnClipboardColorPicker.ToolTip" xml:space="preserve">
+    <value>Elegir color desde el portapapeles</value>
   </data>
 </root>

@@ -147,4 +147,28 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Código QR</value>
   </data>
+  <data name="lblQRCodeSize.Text" xml:space="preserve">
+    <value>Tamaño del código QR:</value>
+  </data>
+  <data name="lblQRCode.Text" xml:space="preserve">
+    <value>Código QR:</value>
+  </data>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>Texto:</value>
+  </data>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>Copiar imagen</value>
+  </data>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>Guardar imagen...</value>
+  </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>Subir imagen</value>
+  </data>
+  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
+    <value>Escanear código QR desde la pantalla...</value>
+  </data>
+  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
+    <value>Escanear código QR desde un archivo de imagen...</value>
+  </data>
 </root>

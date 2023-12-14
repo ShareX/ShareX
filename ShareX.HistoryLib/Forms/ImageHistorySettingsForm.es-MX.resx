@@ -135,4 +135,7 @@
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
     <value> px</value>
   </data>
+  <data name="cbRememberWindowState.Text" xml:space="preserve">
+    <value>Recordar estado de ventana</value>
+  </data>
 </root>

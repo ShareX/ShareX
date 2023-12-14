@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,31 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Share X - Separador de imágenes</value>
-  </data>
-  <data name="btnImageFilePathBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="btnOutputFolderBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="btnSplitImage.Text" xml:space="preserve">
-    <value>Separar imagen</value>
-  </data>
-  <data name="lblColumnCount.Text" xml:space="preserve">
-    <value>Número de columnas:</value>
-  </data>
-  <data name="lblImageFilePath.Text" xml:space="preserve">
-    <value>Ubicación de imagen:</value>
+  <data name="lblInputFilePath.Text" xml:space="preserve">
+    <value>Ruta de archivo de entrada:</value>
   </data>
   <data name="lblOutputFolder.Text" xml:space="preserve">
-    <value>Guardar en:</value>
+    <value>Carpeta de salida:</value>
   </data>
-  <data name="lblRowCount.Text" xml:space="preserve">
-    <value>Número de filas:</value>
+  <data name="lblOutputFileName.Text" xml:space="preserve">
+    <value>Nombre de archivo de salida:</value>
   </data>
-  <data name="btnCopyChatEmoji.Text" xml:space="preserve">
-    <value>Copiar sintaxis de emojis de chat</value>
+  <data name="lblVideoQuality.Text" xml:space="preserve">
+    <value>Calidad de video:</value>
+  </data>
+  <data name="btnEncode.Text" xml:space="preserve">
+    <value>Iniciar codificación</value>
+  </data>
+  <data name="cbAutoOpenFolder.Text" xml:space="preserve">
+    <value>Abrir carpeta luego de codificar</value>
+  </data>
+  <data name="cbUseCustomArguments.Text" xml:space="preserve">
+    <value>Usar argumentos personalizados:</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Codificador de video:</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.Text" xml:space="preserve">
+    <value>Usar bitrate</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Conversor de video</value>
   </data>
 </root>

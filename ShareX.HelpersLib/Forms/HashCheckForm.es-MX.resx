@@ -181,4 +181,19 @@
     <value></value>
     <comment>@Invariant</comment>
   </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>Ruta del archivo:</value>
+  </data>
+  <data name="lblFilePath2.Text" xml:space="preserve">
+    <value>Ruta del archivo:</value>
+  </data>
+  <data name="btnFilePathBrowse2.Text" xml:space="preserve">
+    <value>Examinar</value>
+  </data>
+  <data name="cbCompareTwoFiles.Text" xml:space="preserve">
+    <value>Comparar dos archivos</value>
+  </data>
+  <data name="lblHashCheckASCII.Text" xml:space="preserve">
+    <value>ASCII:</value>
+  </data>
 </root>

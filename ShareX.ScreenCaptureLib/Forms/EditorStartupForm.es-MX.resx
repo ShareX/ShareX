@@ -132,4 +132,7 @@
   <data name="btnOpenImageFile.Text" xml:space="preserve">
     <value>Abrir archivo de imagen...</value>
   </data>
+  <data name="btnLoadImageFromURL.Text" xml:space="preserve">
+    <value>Cargar imagen desde URL</value>
+  </data>
 </root>
