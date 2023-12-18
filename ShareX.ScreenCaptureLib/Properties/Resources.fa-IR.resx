@@ -215,7 +215,7 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>تغییرات ذخیره نشده اند.
-آیا میخواهید پنجره ویرایش عکس را ببندید؟</value>
+آیا می خواهید تغییرات را قبل از بستن ویرایشگر ذخیره کنید؟</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
     <value>ضبط صفحه نمایش جاری</value>

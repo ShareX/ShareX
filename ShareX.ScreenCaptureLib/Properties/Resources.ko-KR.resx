@@ -329,7 +329,7 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>저장되지 않은 변경사항이 있습니다.
-이미지 편집기를 닫으시겠습니까?</value>
+편집기를 닫기 전에 변경 사항을 저장하시겠습니까?</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - 이미지 편집기</value>

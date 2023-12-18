@@ -356,7 +356,7 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>Есть несохраненные изменения.
-Хотите закрыть редактор изображений?</value>
+Хотите сохранить изменения перед закрытием редактора??</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - Редактор изображений</value>

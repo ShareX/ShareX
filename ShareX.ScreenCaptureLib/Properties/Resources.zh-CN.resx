@@ -356,7 +356,7 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>有未保存的更改。
-要关闭图像编辑器吗？</value>
+您想在关闭编辑器之前保存更改吗？</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>提示：按住鼠标中键并拖拽可以平移图像。</value>

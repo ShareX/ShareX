@@ -290,7 +290,7 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>Existem alterações pendentes!
-Deseja fechar o editor de imagens?</value>
+Deseja salvar as alterações antes de fechar o editor?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>Trazer para a frente</value>

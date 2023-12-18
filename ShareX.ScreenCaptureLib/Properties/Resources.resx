@@ -742,7 +742,7 @@ X: {4} Y: {5}</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>There are unsaved changes.
-Would you like to close image editor?</value>
+Would you like to save the changes before closing the editor?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
     <value>Run after capture tasks (Enter)</value>

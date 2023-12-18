@@ -142,7 +142,7 @@
     <value>ShareX - Editor de imágenes</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Hay cambios sin guardar. ¿Desea salir del editor de imágenes?</value>
+    <value>Hay cambios sin guardar. ¿Desea guardar antes de salir del editor de imágenes?</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>Consejo: para desplazarse por la imagen, mantener pulsado el botón medio del ratón y arrastrar.</value>

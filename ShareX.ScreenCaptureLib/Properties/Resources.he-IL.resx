@@ -215,7 +215,7 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>יש שינויים שלא נשמרו.
-האם ברצונך לסגור את עורך התמונה?</value>
+האם תרצה לשמור את השינויים לפני סגירת העורך?</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>טיפ: ניתן להזיז תמונה על ידי החזקת הלחצן האמצעי של העכבר וגרירתו.</value>

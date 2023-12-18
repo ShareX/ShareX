@@ -368,7 +368,7 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>Il y a des changements non sauvegardés.
-Voulez-vous fermer l'éditeur d'image ?</value>
+Voulez-vous enregistrer les modifications avant de fermer l'éditeur d'image ?</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Cette fenêtre va se fermer avant d'ouvrir la page web des raccourcis clavier. Voulez-vous continuer ?</value>

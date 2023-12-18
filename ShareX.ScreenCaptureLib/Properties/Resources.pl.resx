@@ -266,7 +266,7 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>Zmiany nie zostały zapisane.
-Czy chcesz zamknąć edytor obrazów?</value>
+Czy chcesz zapisać zmiany przed zamknięciem  edytor obrazów?</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>Wskazówka: Możesz przesuwać obraz przytrzymując środkowy przycisk myszy i przeciągając.</value>
