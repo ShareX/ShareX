@@ -27,6 +27,9 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -44,6 +47,54 @@ namespace ShareX
             SelectHandle(true);
         }
 
+        private void UpdateWindowListMenu()
+        {
+            cmsWindowList.Items.Clear();
+
+            WindowsList windowsList = new WindowsList();
+            List<WindowInfo> windows = windowsList.GetVisibleWindowsList();
+
+            if (windows != null && windows.Count > 0)
+            {
+                List<ToolStripMenuItem> items = new List<ToolStripMenuItem>();
+
+                foreach (WindowInfo window in windows)
+                {
+                    try
+                    {
+                        string title = window.Text;
+                        string shortTitle = title.Truncate(50, "...");
+                        ToolStripMenuItem tsmi = new ToolStripMenuItem(shortTitle);
+                        tsmi.Click += (sender, e) => SelectWindow(window.Handle, true);
+
+                        using (Icon icon = window.Icon)
+                        {
+                            if (icon != null && icon.Width > 0 && icon.Height > 0)
+                            {
+                                tsmi.Image = icon.ToBitmap();
+                            }
+                        }
+
+                        items.Add(tsmi);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                    }
+                }
+
+                cmsWindowList.Items.AddRange(items.OrderBy(x => x.Text).ToArray());
+            }
+        }
+
+        private void SelectWindow(IntPtr handle, bool isWindow)
+        {
+            SelectedWindow = new WindowInfo(handle);
+            IsWindow = isWindow;
+
+            UpdateWindowInfo();
+        }
+
         private bool SelectHandle(bool isWindow)
         {
             RegionCaptureOptions options = new RegionCaptureOptions()
@@ -57,18 +108,31 @@ namespace ShareX
 
             if (simpleWindowInfo != null)
             {
-                SelectedWindow = new WindowInfo(simpleWindowInfo.Handle);
-                IsWindow = isWindow;
-                UpdateWindowInfo();
+                SelectWindow(simpleWindowInfo.Handle, isWindow);
+
                 return true;
             }
+
+            UpdateWindowInfo();
 
             return false;
         }
 
         private void UpdateWindowInfo()
         {
-            btnPinToTop.Enabled = SelectedWindow != null && IsWindow;
+            btnRefresh.Enabled = SelectedWindow != null;
+
+            if (SelectedWindow != null && IsWindow)
+            {
+                cbTopMost.Enabled = true;
+                cbTopMost.Checked = SelectedWindow.TopMost;
+            }
+            else
+            {
+                cbTopMost.Enabled = false;
+                cbTopMost.Checked = false;
+            }
+
             rtbInfo.ResetText();
 
             if (SelectedWindow != null)
@@ -109,6 +173,11 @@ namespace ShareX
             }
         }
 
+        private void mbWindowList_MouseDown(object sender, MouseEventArgs e)
+        {
+            UpdateWindowListMenu();
+        }
+
         private void btnInspectWindow_Click(object sender, EventArgs e)
         {
             SelectHandle(true);
@@ -124,14 +193,15 @@ namespace ShareX
             UpdateWindowInfo();
         }
 
-        private void btnPinToTop_Click(object sender, EventArgs e)
+        private void cbTopMost_Click(object sender, EventArgs e)
         {
-            if (SelectedWindow == null) return;
+            if (SelectedWindow != null)
+            {
+                WindowInfo windowInfo = new WindowInfo(SelectedWindow.Handle);
+                windowInfo.TopMost = cbTopMost.Checked;
 
-            WindowInfo windowInfo = new WindowInfo(SelectedWindow.Handle);
-            windowInfo.TopMost = !windowInfo.TopMost;
-
-            UpdateWindowInfo();
+                UpdateWindowInfo();
+            }
         }
     }
 }

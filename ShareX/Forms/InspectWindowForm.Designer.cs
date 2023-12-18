@@ -29,13 +29,16 @@ namespace ShareX
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InspectWindowForm));
             this.rtbInfo = new System.Windows.Forms.RichTextBox();
             this.pInfo = new System.Windows.Forms.Panel();
             this.btnInspectWindow = new System.Windows.Forms.Button();
             this.btnInspectControl = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnPinToTop = new System.Windows.Forms.Button();
+            this.cmsWindowList = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mbWindowList = new ShareX.HelpersLib.MenuButton();
+            this.cbTopMost = new System.Windows.Forms.CheckBox();
             this.pInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,18 +78,32 @@ namespace ShareX
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnPinToTop
+            // cmsWindowList
             // 
-            resources.ApplyResources(this.btnPinToTop, "btnPinToTop");
-            this.btnPinToTop.Name = "btnPinToTop";
-            this.btnPinToTop.UseVisualStyleBackColor = true;
-            this.btnPinToTop.Click += new System.EventHandler(this.btnPinToTop_Click);
+            this.cmsWindowList.Name = "cmsWindowList";
+            resources.ApplyResources(this.cmsWindowList, "cmsWindowList");
+            // 
+            // mbWindowList
+            // 
+            resources.ApplyResources(this.mbWindowList, "mbWindowList");
+            this.mbWindowList.Menu = this.cmsWindowList;
+            this.mbWindowList.Name = "mbWindowList";
+            this.mbWindowList.UseVisualStyleBackColor = true;
+            this.mbWindowList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mbWindowList_MouseDown);
+            // 
+            // cbTopMost
+            // 
+            resources.ApplyResources(this.cbTopMost, "cbTopMost");
+            this.cbTopMost.Name = "cbTopMost";
+            this.cbTopMost.UseVisualStyleBackColor = true;
+            this.cbTopMost.Click += new System.EventHandler(this.cbTopMost_Click);
             // 
             // InspectWindowForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnPinToTop);
+            this.Controls.Add(this.cbTopMost);
+            this.Controls.Add(this.mbWindowList);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnInspectControl);
             this.Controls.Add(this.btnInspectWindow);
@@ -94,6 +111,7 @@ namespace ShareX
             this.Name = "InspectWindowForm";
             this.pInfo.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -104,6 +122,8 @@ namespace ShareX
         private System.Windows.Forms.Button btnInspectWindow;
         private System.Windows.Forms.Button btnInspectControl;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnPinToTop;
+        private HelpersLib.MenuButton mbWindowList;
+        private System.Windows.Forms.ContextMenuStrip cmsWindowList;
+        private System.Windows.Forms.CheckBox cbTopMost;
     }
 }
