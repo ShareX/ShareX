@@ -89,7 +89,11 @@ namespace ShareX.HelpersLib
                 try
                 {
                     GetWindowThreadProcessId(hwnd, out uint processID);
-                    return Process.GetProcessById((int)processID);
+
+                    if (processID != 0)
+                    {
+                        return Process.GetProcessById((int)processID);
+                    }
                 }
                 catch (Exception e)
                 {

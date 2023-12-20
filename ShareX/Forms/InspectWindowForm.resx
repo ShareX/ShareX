@@ -169,7 +169,7 @@
     <value>696, 640</value>
   </data>
   <data name="pInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;pInfo.Name" xml:space="preserve">
     <value>pInfo</value>
@@ -181,7 +181,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pInfo.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="btnInspectWindow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -211,7 +211,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnInspectWindow.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="btnInspectControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -241,7 +241,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnInspectControl.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="btnRefresh.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -271,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRefresh.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <metadata name="cmsWindowList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -285,38 +285,14 @@
   <data name="&gt;&gt;cmsWindowList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="mbWindowList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="mbWindowList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="mbWindowList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 32</value>
-  </data>
-  <data name="mbWindowList.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mbWindowList.Text" xml:space="preserve">
-    <value>Select a window</value>
-  </data>
-  <data name="&gt;&gt;mbWindowList.Name" xml:space="preserve">
-    <value>mbWindowList</value>
-  </data>
-  <data name="&gt;&gt;mbWindowList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;mbWindowList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mbWindowList.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="cbTopMost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbTopMost.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbTopMost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 169</value>
+    <value>8, 176</value>
   </data>
   <data name="cbTopMost.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 20</value>
@@ -337,7 +313,118 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbTopMost.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblOpacity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpacity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOpacity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 208</value>
+  </data>
+  <data name="lblOpacity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="lblOpacity.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblOpacity.Text" xml:space="preserve">
+    <value>Opacity:</value>
+  </data>
+  <data name="&gt;&gt;lblOpacity.Name" xml:space="preserve">
+    <value>lblOpacity</value>
+  </data>
+  <data name="&gt;&gt;lblOpacity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpacity.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblOpacity.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="nudOpacity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 205</value>
+  </data>
+  <data name="nudOpacity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 22</value>
+  </data>
+  <data name="nudOpacity.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="nudOpacity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudOpacity.Name" xml:space="preserve">
+    <value>nudOpacity</value>
+  </data>
+  <data name="&gt;&gt;nudOpacity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudOpacity.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudOpacity.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblOpacityTip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOpacityTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOpacityTip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 208</value>
+  </data>
+  <data name="lblOpacityTip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 16</value>
+  </data>
+  <data name="lblOpacityTip.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblOpacityTip.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="&gt;&gt;lblOpacityTip.Name" xml:space="preserve">
+    <value>lblOpacityTip</value>
+  </data>
+  <data name="&gt;&gt;lblOpacityTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOpacityTip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblOpacityTip.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="mbWindowList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mbWindowList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="mbWindowList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 32</value>
+  </data>
+  <data name="mbWindowList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="mbWindowList.Text" xml:space="preserve">
+    <value>Window list</value>
+  </data>
+  <data name="&gt;&gt;mbWindowList.Name" xml:space="preserve">
+    <value>mbWindowList</value>
+  </data>
+  <data name="&gt;&gt;mbWindowList.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mbWindowList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mbWindowList.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

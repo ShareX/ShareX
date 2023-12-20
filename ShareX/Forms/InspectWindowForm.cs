@@ -39,6 +39,8 @@ namespace ShareX
         public WindowInfo SelectedWindow { get; private set; }
         public bool IsWindow { get; private set; }
 
+        private bool updating;
+
         public InspectWindowForm()
         {
             InitializeComponent();
@@ -120,17 +122,26 @@ namespace ShareX
 
         private void UpdateWindowInfo()
         {
+            updating = true;
+
             btnRefresh.Enabled = SelectedWindow != null;
 
             if (SelectedWindow != null && IsWindow)
             {
-                cbTopMost.Enabled = true;
+                cbTopMost.Visible = true;
                 cbTopMost.Checked = SelectedWindow.TopMost;
+
+                nudOpacity.Visible = true;
+                nudOpacity.SetValue((int)Math.Round(SelectedWindow.Opacity / 255.0 * 100));
+                lblOpacity.Visible = true;
+                lblOpacityTip.Visible = true;
             }
             else
             {
-                cbTopMost.Enabled = false;
-                cbTopMost.Checked = false;
+                cbTopMost.Visible = false;
+                nudOpacity.Visible = false;
+                lblOpacity.Visible = false;
+                lblOpacityTip.Visible = false;
             }
 
             rtbInfo.ResetText();
@@ -154,6 +165,8 @@ namespace ShareX
                 {
                 }
             }
+
+            updating = false;
         }
 
         private void AddInfo(string name, string value)
@@ -193,14 +206,37 @@ namespace ShareX
             UpdateWindowInfo();
         }
 
-        private void cbTopMost_Click(object sender, EventArgs e)
+        private void cbTopMost_CheckedChanged(object sender, EventArgs e)
         {
-            if (SelectedWindow != null)
+            if (!updating && SelectedWindow != null)
             {
-                WindowInfo windowInfo = new WindowInfo(SelectedWindow.Handle);
-                windowInfo.TopMost = cbTopMost.Checked;
+                try
+                {
+                    WindowInfo windowInfo = new WindowInfo(SelectedWindow.Handle);
+                    windowInfo.TopMost = cbTopMost.Checked;
 
-                UpdateWindowInfo();
+                    UpdateWindowInfo();
+                }
+                catch
+                {
+                }
+            }
+        }
+
+        private void nudOpacity_ValueChanged(object sender, EventArgs e)
+        {
+            if (!updating && SelectedWindow != null)
+            {
+                try
+                {
+                    WindowInfo windowInfo = new WindowInfo(SelectedWindow.Handle);
+                    windowInfo.Opacity = (byte)Math.Round(nudOpacity.Value / 100 * 255);
+
+                    UpdateWindowInfo();
+                }
+                catch
+                {
+                }
             }
         }
     }

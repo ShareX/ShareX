@@ -128,5 +128,8 @@ namespace ShareX.HelpersLib
 
         public const int ILD_TRANSPARENT = 0x00000001;
         public const int ILD_IMAGE = 0x00000020;
+
+        public const int LWA_COLORKEY = 0x1;
+        public const int LWA_ALPHA = 0x2;
     }
 }

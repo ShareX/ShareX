@@ -106,6 +106,25 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public bool Layered
+        {
+            get
+            {
+                return ExStyle.HasFlag(WindowStyles.WS_EX_LAYERED);
+            }
+            set
+            {
+                if (value)
+                {
+                    ExStyle |= WindowStyles.WS_EX_LAYERED;
+                }
+                else
+                {
+                    ExStyle &= ~WindowStyles.WS_EX_LAYERED;
+                }
+            }
+        }
+
         public bool TopMost
         {
             get
@@ -116,6 +135,32 @@ namespace ShareX.HelpersLib
             {
                 SetWindowPos(value ? (IntPtr)NativeConstants.HWND_TOPMOST : (IntPtr)NativeConstants.HWND_NOTOPMOST,
                     SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE);
+            }
+        }
+
+        public byte Opacity
+        {
+            get
+            {
+                if (Layered)
+                {
+                    NativeMethods.GetLayeredWindowAttributes(Handle, out _, out byte alpha, out _);
+                    return alpha;
+                }
+
+                return 255;
+            }
+            set
+            {
+                if (value < 255)
+                {
+                    Layered = true;
+                    NativeMethods.SetLayeredWindowAttributes(Handle, 0, value, NativeConstants.LWA_ALPHA);
+                }
+                else
+                {
+                    Layered = false;
+                }
             }
         }
 
