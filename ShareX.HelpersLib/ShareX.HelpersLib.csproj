@@ -541,6 +541,9 @@
     <EmbeddedResource Include="Controls\TabToTreeView.resx">
       <DependentUpon>TabToTreeView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardViewerForm.es-MX.resx">
+      <DependentUpon>ClipboardViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardViewerForm.fr.resx">
       <DependentUpon>ClipboardViewerForm.cs</DependentUpon>
     </EmbeddedResource>
