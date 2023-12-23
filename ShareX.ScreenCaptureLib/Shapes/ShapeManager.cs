@@ -39,6 +39,9 @@ namespace ShareX.ScreenCaptureLib
     {
         public List<BaseShape> Shapes { get; private set; } = new List<BaseShape>();
 
+        private Stack<ImageEditorMemento> mementoStack = new Stack<ImageEditorMemento>();
+        private Stack<ImageEditorMemento> redoMementoStack = new Stack<ImageEditorMemento>();
+
         private BaseShape currentShape;
 
         public BaseShape CurrentShape
@@ -701,7 +704,10 @@ namespace ShareX.ScreenCaptureLib
                             PasteFromClipboard(true);
                             break;
                         case Keys.Control | Keys.Z:
-                            UndoShape();
+                            Undo();
+                            break;
+                        case Keys.Control | Keys.Y:
+                            Redo();
                             break;
                         case Keys.Home:
                             MoveCurrentShapeTop();
@@ -966,6 +972,8 @@ namespace ShareX.ScreenCaptureLib
                 DeselectCurrentShape();
 
                 shape = AddShape();
+                CreateShapesMemento();
+
                 shape.OnCreating();
             }
         }
@@ -1532,11 +1540,84 @@ namespace ShareX.ScreenCaptureLib
             return GetIntersectShape() != null;
         }
 
-        public void UndoShape()
+        private void CreateShapesMemento()
         {
-            if (Shapes.Count > 0)
+            var shapes = Shapes.Select(x => x.Duplicate()).ToList();
+            AddMemento(new ImageEditorMemento(shapes));
+        }
+
+        private void CreateCanvasMemento()
+        {
+            AddMemento(GetCurrentCanvasMemento());
+        }
+        private ImageEditorMemento GetCurrentCanvasMemento()
+        {
+            Rectangle rectClone = new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height);
+            Bitmap currentCanvas = Form.Canvas.Clone(rectClone, Form.Canvas.PixelFormat);
+            var shapes = Shapes.Select(x => x.Duplicate()).ToList();
+
+            return new ImageEditorMemento(shapes, currentCanvas);
+        }
+        private void AddMemento(ImageEditorMemento memento)
+        {
+            mementoStack.Push(memento);
+            redoMementoStack.Clear();
+        }
+
+        public void Undo()
+        {
+            if(mementoStack.Count > 0)
             {
-                DeleteShape(Shapes[Shapes.Count - 1]);
+                ImageEditorMemento redoMemento;
+                var memento = mementoStack.Pop();
+
+                if(memento.Shapes != null)
+                {
+                    if(memento.Canvas == null)
+                    {
+                        redoMemento = new ImageEditorMemento(Shapes.Select(x => x.Duplicate()).ToList());
+                        redoMementoStack.Push(redoMemento);
+                        Shapes = memento.Shapes;
+                    }
+                    else
+                    {
+                        redoMemento = GetCurrentCanvasMemento();
+                        redoMementoStack.Push(redoMemento);
+
+                        UpdateCanvas(memento.Canvas);
+                        Shapes = memento.Shapes;
+                    }
+
+                    UpdateMenu();
+                }
+            }
+        }
+
+        public void Redo()
+        {
+            if (redoMementoStack.Count > 0)
+            {
+                var redoMemento = redoMementoStack.Pop();
+                if(redoMemento.Shapes != null)
+                {
+                    if (redoMemento.Canvas == null)
+                    {
+                        var shapes = Shapes.Select(x => x.Duplicate()).ToList();
+                        var memento = new ImageEditorMemento(shapes);
+                        mementoStack.Push(memento);
+                        Shapes = redoMemento.Shapes;
+                    }
+                    else
+                    {
+                        var memento = GetCurrentCanvasMemento();
+                        mementoStack.Push(memento);
+
+                        UpdateCanvas(redoMemento.Canvas);
+                        Shapes = redoMemento.Shapes;
+                    }
+
+                    UpdateMenu();
+                }
             }
         }
 
@@ -1817,6 +1898,7 @@ namespace ShareX.ScreenCaptureLib
 
                     shapeCopy.OnMoved();
                     AddShape(shapeCopy);
+                    CreateShapesMemento();
                     SelectCurrentShape();
                 }
             }
@@ -1867,6 +1949,8 @@ namespace ShareX.ScreenCaptureLib
                     shape.Text = text.Trim();
                     shape.OnCreated();
                     AddShape(shape);
+                    CreateShapesMemento();
+
                     SelectCurrentShape();
                 }
             }
@@ -1908,6 +1992,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (bmp != null)
             {
+                CreateCanvasMemento();
                 MoveAll(Form.CanvasRectangle.X - rect.X, Form.CanvasRectangle.Y - rect.Y);
                 UpdateCanvas(bmp);
             }
@@ -1939,6 +2024,7 @@ namespace ShareX.ScreenCaptureLib
             adjustedRect.Y -= offset.Y;
             Rectangle cropRect = Rectangle.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height), adjustedRect.Round());
 
+            CreateCanvasMemento();
             if (isHorizontal && cropRect.Width > 0)
             {
                 CollapseAllHorizontal(rect.X, rect.Width);
@@ -1991,6 +2077,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Form.ImageFilePath = "";
                 DeleteAllShapes();
+                CreateCanvasMemento();
                 UpdateMenu();
                 UpdateCanvas(bmp);
             }
@@ -2017,6 +2104,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Form.ImageFilePath = filePath;
                     DeleteAllShapes();
+                    CreateCanvasMemento();
                     UpdateMenu();
                     UpdateCanvas(bmp);
                 }
@@ -2100,6 +2188,8 @@ namespace ShareX.ScreenCaptureLib
                 shape.SetImage(img, centerImage);
                 shape.OnCreated();
                 AddShape(shape);
+                CreateShapesMemento();
+
                 SelectCurrentShape();
             }
         }
@@ -2119,6 +2209,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (size != oldSize)
                     {
+                        CreateCanvasMemento();
                         InterpolationMode interpolationMode = ImageHelpers.GetInterpolationMode(Options.ImageEditorResizeInterpolationMode);
                         Bitmap bmp = ImageHelpers.ResizeImage(Form.Canvas, size, interpolationMode);
 
@@ -2148,6 +2239,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (bmp != null)
                     {
+                        CreateCanvasMemento();
                         MoveAll(canvas.Left, canvas.Top);
                         UpdateCanvas(bmp);
                     }
@@ -2176,6 +2268,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (bmp != null)
             {
+                CreateCanvasMemento();
                 Form.CanvasRectangle = Form.CanvasRectangle.LocationOffset(-margin.Left, -margin.Top);
                 UpdateCanvas(bmp, false);
             }
@@ -2214,6 +2307,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void RotateImage(RotateFlipType type)
         {
+            CreateCanvasMemento();
             Bitmap bmp = (Bitmap)Form.Canvas.Clone();
             bmp.RotateFlip(type);
             UpdateCanvas(bmp);
@@ -2241,6 +2335,7 @@ namespace ShareX.ScreenCaptureLib
 
                         if (bmp != null)
                         {
+                            CreateCanvasMemento();
                             UpdateCanvas(bmp);
                         }
                     }
