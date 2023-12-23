@@ -35,7 +35,6 @@ namespace ShareX.HelpersLib
         public bool CompareTwoFiles { get; private set; }
 
         private HashChecker hashChecker;
-        private Translator translator;
 
         public HashCheckerForm()
         {
@@ -49,13 +48,27 @@ namespace ShareX.HelpersLib
             hashChecker = new HashChecker();
             hashChecker.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
 
-            translator = new Translator();
-
             txtResult.SupportSelectAll();
             txtTarget.SupportSelectAll();
         }
 
-        #region File hash check
+        private void UpdateCompareControls()
+        {
+            lblFilePath2.Enabled = txtFilePath2.Enabled = btnFilePathBrowse2.Enabled = CompareTwoFiles;
+
+            if (CompareTwoFiles)
+            {
+                lblResult.Text = Resources.ResultOfFirstFile;
+                lblTarget.Text = Resources.ResultOfSecondFile;
+            }
+            else
+            {
+                lblResult.Text = Resources.Result;
+                lblTarget.Text = Resources.Target;
+            }
+
+            txtTarget.ReadOnly = CompareTwoFiles;
+        }
 
         private void UpdateResult()
         {
@@ -79,22 +92,24 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void UpdateCompareControls()
+        private void HashCheckerForm_DragEnter(object sender, DragEventArgs e)
         {
-            lblFilePath2.Enabled = txtFilePath2.Enabled = btnFilePathBrowse2.Enabled = CompareTwoFiles;
-
-            if (CompareTwoFiles)
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {
-                lblResult.Text = Resources.ResultOfFirstFile;
-                lblTarget.Text = Resources.ResultOfSecondFile;
+                e.Effect = DragDropEffects.Copy;
             }
             else
             {
-                lblResult.Text = Resources.Result;
-                lblTarget.Text = Resources.Target;
+                e.Effect = DragDropEffects.None;
             }
+        }
 
-            txtTarget.ReadOnly = CompareTwoFiles;
+        private void HashCheckerForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
+            {
+                txtFilePath.Text = files[0];
+            }
         }
 
         private void btnFilePathBrowse_Click(object sender, EventArgs e)
@@ -102,15 +117,35 @@ namespace ShareX.HelpersLib
             FileHelpers.BrowseFile(txtFilePath);
         }
 
-        private void btnFilePathBrowse2_Click(object sender, EventArgs e)
-        {
-            FileHelpers.BrowseFile(txtFilePath2);
-        }
-
         private void cbCompareTwoFiles_CheckedChanged(object sender, EventArgs e)
         {
             CompareTwoFiles = cbCompareTwoFiles.Checked;
             UpdateCompareControls();
+        }
+
+        private void txtFilePath2_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void txtFilePath2_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
+            {
+                txtFilePath2.Text = files[0];
+            }
+        }
+
+        private void btnFilePathBrowse2_Click(object sender, EventArgs e)
+        {
+            FileHelpers.BrowseFile(txtFilePath2);
         }
 
         private async void btnStartHashCheck_Click(object sender, EventArgs e)
@@ -157,8 +192,7 @@ namespace ShareX.HelpersLib
 
         private void fileCheck_FileCheckProgressChanged(float progress)
         {
-            pbProgress.Value = (int)progress;
-            lblProgressPercentage.Text = (int)progress + "%";
+            pbProgress.Value = (int)Math.Round(progress);
         }
 
         private void txtResult_TextChanged(object sender, EventArgs e)
@@ -170,128 +204,5 @@ namespace ShareX.HelpersLib
         {
             UpdateResult();
         }
-
-        private void tpFileHashCheck_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
-            {
-                e.Effect = DragDropEffects.Copy;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
-            }
-        }
-
-        private void tpFileHashCheck_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
-            {
-                txtFilePath.Text = files[0];
-            }
-        }
-
-        private void txtFilePath2_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
-            {
-                e.Effect = DragDropEffects.Copy;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
-            }
-        }
-
-        private void txtFilePath2_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
-            {
-                txtFilePath2.Text = files[0];
-            }
-        }
-
-        #endregion File hash check
-
-        #region Text conversions
-
-        private void FillConversionInfo()
-        {
-            FillConversionInfo(translator.Text);
-        }
-
-        private void FillConversionInfo(string text)
-        {
-            if (translator != null)
-            {
-                if (!string.IsNullOrEmpty(text))
-                {
-                    translator.EncodeText(text);
-                    txtHashCheckText.Text = translator.Text;
-                    txtHashCheckBinary.Text = translator.BinaryText;
-                    txtHashCheckHex.Text = translator.HexadecimalText;
-                    txtHashCheckASCII.Text = translator.ASCIIText;
-                    txtHashCheckBase64.Text = translator.Base64;
-                    txtHashCheckHash.Text = translator.HashToString();
-                }
-                else
-                {
-                    translator.Clear();
-                    txtHashCheckText.Text = txtHashCheckBinary.Text = txtHashCheckHex.Text = txtHashCheckASCII.Text = txtHashCheckBase64.Text = txtHashCheckHash.Text = "";
-                }
-            }
-        }
-
-        private void btnHashCheckCopyAll_Click(object sender, EventArgs e)
-        {
-            if (translator != null)
-            {
-                string text = translator.ToString();
-
-                if (!string.IsNullOrEmpty(text))
-                {
-                    ClipboardHelpers.CopyText(text);
-                }
-            }
-        }
-
-        private void btnHashCheckEncodeText_Click(object sender, EventArgs e)
-        {
-            FillConversionInfo(txtHashCheckText.Text);
-        }
-
-        private void btnHashCheckDecodeBinary_Click(object sender, EventArgs e)
-        {
-            string binary = txtHashCheckBinary.Text;
-            translator.DecodeBinary(binary);
-            FillConversionInfo();
-            txtHashCheckBinary.Text = binary;
-        }
-
-        private void btnHashCheckDecodeHex_Click(object sender, EventArgs e)
-        {
-            string hex = txtHashCheckHex.Text;
-            translator.DecodeHex(hex);
-            FillConversionInfo();
-            txtHashCheckHex.Text = hex;
-        }
-
-        private void btnHashCheckDecodeASCII_Click(object sender, EventArgs e)
-        {
-            string ascii = txtHashCheckASCII.Text;
-            translator.DecodeASCII(ascii);
-            FillConversionInfo();
-            txtHashCheckASCII.Text = ascii;
-        }
-
-        private void btnHashCheckDecodeBase64_Click(object sender, EventArgs e)
-        {
-            string base64 = txtHashCheckBase64.Text;
-            translator.DecodeBase64(base64);
-            FillConversionInfo();
-            txtHashCheckBase64.Text = base64;
-        }
-
-        #endregion Text conversions
     }
 }
