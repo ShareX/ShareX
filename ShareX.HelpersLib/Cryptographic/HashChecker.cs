@@ -32,7 +32,7 @@ using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
-    public class HashCheck
+    public class HashChecker
     {
         public bool IsWorking { get; private set; }
 

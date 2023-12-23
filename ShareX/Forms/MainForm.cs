@@ -1783,7 +1783,7 @@ namespace ShareX
             TaskHelpers.OpenQRCode();
         }
 
-        private void tsmiHashCheck_Click(object sender, EventArgs e)
+        private void tsmiHashChecker_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenHashCheck();
         }

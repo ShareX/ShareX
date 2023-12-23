@@ -30,14 +30,14 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class HashCheckForm : Form
+    public partial class HashCheckerForm : Form
     {
         public bool CompareTwoFiles { get; private set; }
 
-        private HashCheck hashCheck;
+        private HashChecker hashChecker;
         private Translator translator;
 
-        public HashCheckForm()
+        public HashCheckerForm()
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
@@ -46,8 +46,8 @@ namespace ShareX.HelpersLib
             cbHashType.Items.AddRange(Helpers.GetEnumDescriptions<HashType>());
             cbHashType.SelectedIndex = (int)HashType.SHA256;
 
-            hashCheck = new HashCheck();
-            hashCheck.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
+            hashChecker = new HashChecker();
+            hashChecker.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
 
             translator = new Translator();
 
@@ -115,9 +115,9 @@ namespace ShareX.HelpersLib
 
         private async void btnStartHashCheck_Click(object sender, EventArgs e)
         {
-            if (hashCheck.IsWorking)
+            if (hashChecker.IsWorking)
             {
-                hashCheck.Stop();
+                hashChecker.Stop();
             }
             else
             {
@@ -133,7 +133,7 @@ namespace ShareX.HelpersLib
                 HashType hashType = (HashType)cbHashType.SelectedIndex;
 
                 string filePath = txtFilePath.Text;
-                string result = await hashCheck.Start(filePath, hashType);
+                string result = await hashChecker.Start(filePath, hashType);
 
                 if (!string.IsNullOrEmpty(result))
                 {
@@ -142,7 +142,7 @@ namespace ShareX.HelpersLib
                     if (CompareTwoFiles)
                     {
                         string filePath2 = txtFilePath2.Text;
-                        string result2 = await hashCheck.Start(filePath2, hashType);
+                        string result2 = await hashChecker.Start(filePath2, hashType);
 
                         if (!string.IsNullOrEmpty(result2))
                         {

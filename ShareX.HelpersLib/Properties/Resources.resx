@@ -384,7 +384,7 @@ Would you like to download it?</value>
     <value>Image uploader</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>Hash check</value>
+    <value>Hash checker</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>Start/Stop screen recording using active window region</value>

@@ -1,6 +1,6 @@
 ﻿namespace ShareX.HelpersLib
 {
-    partial class HashCheckForm
+    partial class HashCheckerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HashCheckForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HashCheckerForm));
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.btnFilePathBrowse = new System.Windows.Forms.Button();
             this.lblHashType = new System.Windows.Forms.Label();
@@ -330,7 +330,7 @@
             resources.ApplyResources(this.lblHashCheckText, "lblHashCheckText");
             this.lblHashCheckText.Name = "lblHashCheckText";
             // 
-            // HashCheckForm
+            // HashCheckerForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,7 +338,7 @@
             this.Controls.Add(this.tcMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "HashCheckForm";
+            this.Name = "HashCheckerForm";
             this.tcMain.ResumeLayout(false);
             this.tpFileHashCheck.ResumeLayout(false);
             this.tpFileHashCheck.PerformLayout();

@@ -324,11 +324,11 @@
     <Compile Include="UITypeEditors\ExeFileNameEditor.cs" />
     <Compile Include="DebugTimer.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
-    <Compile Include="Forms\HashCheckForm.cs">
+    <Compile Include="Forms\HashCheckerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HashCheckForm.Designer.cs">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <Compile Include="Forms\HashCheckerForm.Designer.cs">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MyMessageBox.cs">
       <SubType>Form</SubType>
@@ -387,7 +387,7 @@
     <Compile Include="StringLineReader.cs" />
     <Compile Include="Native\TaskbarManager.cs" />
     <Compile Include="ThreadWorker.cs" />
-    <Compile Include="Cryptographic\HashCheck.cs" />
+    <Compile Include="Cryptographic\HashChecker.cs" />
     <Compile Include="Cryptographic\Translator.cs" />
     <Compile Include="Cryptographic\TranslatorHelper.cs" />
     <Compile Include="UITypeEditors\NameParserEditor.cs" />
@@ -1027,74 +1027,74 @@
     <EmbeddedResource Include="Forms\ErrorForm.zh-TW.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.de.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.de.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.es-MX.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.es-MX.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.es.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.es.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.fa-IR.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.fa-IR.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.fr.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.fr.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.he-IL.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.he-IL.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.hu.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.hu.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.id-ID.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.id-ID.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.it-IT.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.it-IT.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.ja-JP.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.ja-JP.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.ko-KR.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.ko-KR.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.nl-NL.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.nl-NL.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.pl.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.pl.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.pt-BR.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.pt-BR.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.pt-PT.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.pt-PT.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.ro.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.ro.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.ru.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.ru.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.tr.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.tr.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.uk.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.uk.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.vi-VN.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.vi-VN.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.zh-CN.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.zh-CN.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HashCheckForm.zh-TW.resx">
-      <DependentUpon>HashCheckForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HashCheckerForm.zh-TW.resx">
+      <DependentUpon>HashCheckerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InputBox.de.resx">
       <DependentUpon>InputBox.cs</DependentUpon>

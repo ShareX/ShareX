@@ -825,7 +825,7 @@ namespace ShareX
 
         public static void OpenHashCheck()
         {
-            new HashCheckForm().Show();
+            new HashCheckerForm().Show();
         }
 
         public static void OpenDirectoryIndexer(TaskSettings taskSettings = null)

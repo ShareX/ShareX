@@ -65,7 +65,7 @@ namespace ShareX.HelpersLib
 
         public static string TextToHash(string text, HashType hashType, bool uppercase = false)
         {
-            using (HashAlgorithm hash = HashCheck.GetHashAlgorithm(hashType))
+            using (HashAlgorithm hash = HashChecker.GetHashAlgorithm(hashType))
             {
                 byte[] bytes = hash.ComputeHash(Encoding.UTF8.GetBytes(text));
                 string[] hex = BytesToHexadecimal(bytes);

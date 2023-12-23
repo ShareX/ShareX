@@ -1426,7 +1426,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hash check.
+        ///   Looks up a localized string similar to Hash checker.
         /// </summary>
         internal static string HotkeyType_HashCheck {
             get {
