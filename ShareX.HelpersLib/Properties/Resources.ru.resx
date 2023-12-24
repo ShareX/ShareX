@@ -153,9 +153,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Выберите папку</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Старт</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Печать</value>
   </data>

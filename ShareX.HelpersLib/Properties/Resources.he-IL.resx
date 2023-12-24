@@ -1094,9 +1094,6 @@
   <data name="ShareXImageViewer" xml:space="preserve">
     <value>ShareX - מציג תמונה</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>התחל</value>
-  </data>
   <data name="StepType_LettersLowercase" xml:space="preserve">
     <value>אותיות (קטנות)</value>
   </data>

@@ -485,9 +485,6 @@
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
     <value>دانلود با مشکل مواجه شد:</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>شروع</value>
-  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>تصادفی</value>
   </data>

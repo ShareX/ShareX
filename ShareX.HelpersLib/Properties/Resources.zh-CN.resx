@@ -150,9 +150,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>选择一个文件夹</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>开始</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>打印</value>
   </data>

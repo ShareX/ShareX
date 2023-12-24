@@ -221,9 +221,6 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Status: {0}</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Mulai</value>
-  </data>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>Persingkat URL</value>
   </data>

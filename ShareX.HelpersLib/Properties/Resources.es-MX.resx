@@ -880,9 +880,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
     <value>Recortar (C)</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Iniciar</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
     <value>Público</value>
   </data>

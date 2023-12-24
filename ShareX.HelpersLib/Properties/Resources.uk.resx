@@ -337,9 +337,6 @@
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>Показати вікно „Після вивантаження“</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Почати</value>
-  </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Custom file uploader</value>
   </data>

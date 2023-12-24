@@ -156,9 +156,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Chọn một thư mục</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Bắt đầu</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>In</value>
   </data>

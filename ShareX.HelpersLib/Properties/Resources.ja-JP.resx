@@ -721,9 +721,6 @@
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>画像の幅</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>開始</value>
-  </data>
   <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
     <value>バルーン通知を表示</value>
   </data>

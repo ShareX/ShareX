@@ -150,9 +150,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Válassz egy mappát</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Indítás</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Nyomtatás</value>
   </data>

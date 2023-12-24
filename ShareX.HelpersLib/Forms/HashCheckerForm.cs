@@ -42,6 +42,7 @@ namespace ShareX.HelpersLib
             ShareXResources.ApplyTheme(this, true);
 
             UpdateCompareControls();
+            UpdateCheckButton();
             cbHashType.Items.AddRange(Helpers.GetEnumDescriptions<HashType>());
             cbHashType.SelectedIndex = (int)HashType.SHA256;
 
@@ -68,6 +69,11 @@ namespace ShareX.HelpersLib
             }
 
             txtTarget.ReadOnly = CompareTwoFiles;
+        }
+
+        private void UpdateCheckButton()
+        {
+            btnStartHashCheck.Enabled = !string.IsNullOrEmpty(txtFilePath.Text) && (!CompareTwoFiles || !string.IsNullOrEmpty(txtFilePath2.Text));
         }
 
         private void UpdateResult()
@@ -112,6 +118,11 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void txtFilePath_TextChanged(object sender, EventArgs e)
+        {
+            UpdateCheckButton();
+        }
+
         private void btnFilePathBrowse_Click(object sender, EventArgs e)
         {
             FileHelpers.BrowseFile(txtFilePath);
@@ -121,6 +132,12 @@ namespace ShareX.HelpersLib
         {
             CompareTwoFiles = cbCompareTwoFiles.Checked;
             UpdateCompareControls();
+            UpdateCheckButton();
+        }
+
+        private void txtFilePath2_TextChanged(object sender, EventArgs e)
+        {
+            UpdateCheckButton();
         }
 
         private void txtFilePath2_DragEnter(object sender, DragEventArgs e)
@@ -186,7 +203,7 @@ namespace ShareX.HelpersLib
                     }
                 }
 
-                btnStartHashCheck.Text = Resources.Start;
+                btnStartHashCheck.Text = Resources.Check;
             }
         }
 

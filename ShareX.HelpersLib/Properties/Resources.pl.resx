@@ -772,9 +772,6 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="Stop" xml:space="preserve">
     <value>Zatrzymaj</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Rozpocznij</value>
-  </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatycznie</value>
   </data>

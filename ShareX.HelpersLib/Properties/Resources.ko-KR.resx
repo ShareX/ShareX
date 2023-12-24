@@ -219,9 +219,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>폴더 선택</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>시작</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>인쇄</value>
   </data>

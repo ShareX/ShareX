@@ -800,9 +800,6 @@ Would you like to download and install it?</value>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>Image width</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
   <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
     <value>Show tray balloon tip</value>
   </data>
@@ -1291,5 +1288,8 @@ Would you like to download and install it?</value>
   </data>
   <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
     <value>Beautify image</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Check</value>
   </data>
 </root>

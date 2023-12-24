@@ -180,9 +180,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Selecionar uma pasta</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Iniciar</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Imprimir</value>
   </data>

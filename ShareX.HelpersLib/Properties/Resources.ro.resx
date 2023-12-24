@@ -781,9 +781,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>Lățimea imaginii</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
   <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
     <value>Afișați balon în bară</value>
   </data>
