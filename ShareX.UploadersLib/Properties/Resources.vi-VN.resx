@@ -280,4 +280,10 @@ Các thư mục đã tạo:</value>
   <data name="URL" xml:space="preserve">
     <value>URL</value>
   </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Xóa ủy quyền</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Bước 1: Mở trang ủy quyền...</value>
+  </data>
 </root>

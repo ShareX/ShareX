@@ -1243,4 +1243,13 @@ Bạn có muốn tải về không?</value>
   <data name="HotkeyType_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>Làm đẹp hình ảnh</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>Làm đẹp hình ảnh</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Kiểm tra</value>
+  </data>
 </root>

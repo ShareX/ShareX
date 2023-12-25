@@ -487,4 +487,13 @@ Bạn có muốn đóng trình chỉnh sửa ảnh không?</value>
   <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
     <value>Thu phóng để vừa mở</value>
   </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>Bạn có muốn đặt lại các tùy chọn không?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>URL hình ảnh</value>
+  </data>
 </root>

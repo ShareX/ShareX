@@ -789,4 +789,37 @@
   <data name="tsmiTrayOCR.Text" xml:space="preserve">
     <value>OCR...</value>
   </data>
+  <data name="tsmiImageBeautifier.Text" xml:space="preserve">
+    <value>Làm đẹp hình ảnh...</value>
+  </data>
+  <data name="tsmiHashChecker.Text" xml:space="preserve">
+    <value>Trình kiểm tra hàm băm...</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter...</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Bất hòa...</value>
+  </data>
+  <data name="tsmiBeautifyImage.Text" xml:space="preserve">
+    <value>Làm đẹp hình ảnh...</value>
+  </data>
+  <data name="tsmiPinSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
+  <data name="tsmiTrayImageBeautifier.Text" xml:space="preserve">
+    <value>Làm đẹp hình ảnh...</value>
+  </data>
+  <data name="tsmiTrayHashChecker.Text" xml:space="preserve">
+    <value>Trình kiểm tra hàm băm...</value>
+  </data>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>Phím tắt</value>
+  </data>
+  <data name="cDescription.HeaderText" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
 </root>

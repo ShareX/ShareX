@@ -132,4 +132,7 @@
   <data name="btnOpenImageFile.Text" xml:space="preserve">
     <value>Mở tệp ảnh...</value>
   </data>
+  <data name="btnLoadImageFromURL.Text" xml:space="preserve">
+    <value>Tải hình ảnh từ URL</value>
+  </data>
 </root>

@@ -637,4 +637,19 @@ Sau đó, bạn có thể tắt nó từ menu "Sau khi chụp tác vụ".</value
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Quản trị viên hệ thống của bạn đã tắt tính năng tải lên.</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>tiếng Do Thái</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>Không thể đóng ShareX khi tính năng ghi màn hình đang hoạt động.</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX đã được cập nhật!</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>Tải lên từ vùng nhớ tạm</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>Bạn có muốn thử tải lên bảng nhớ tạm lần nữa không?</value>
+  </data>
 </root>
