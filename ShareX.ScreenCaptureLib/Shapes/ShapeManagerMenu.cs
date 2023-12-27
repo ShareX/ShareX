@@ -48,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
+        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiRedo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
             tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize;
@@ -683,8 +683,14 @@ namespace ShareX.ScreenCaptureLib
             tsmiUndo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Undo);
             tsmiUndo.Image = Resources.arrow_circle_225_left;
             tsmiUndo.ShortcutKeyDisplayString = "Ctrl+Z";
-            tsmiUndo.Click += (sender, e) => UndoShape();
+            tsmiUndo.Click += (sender, e) => history.Undo();
             tsddbEdit.DropDownItems.Add(tsmiUndo);
+
+            tsmiRedo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Redo);
+            tsmiRedo.Image = Resources.arrow_circle;
+            tsmiRedo.ShortcutKeyDisplayString = "Ctrl+Y";
+            tsmiRedo.Click += (sender, e) => history.Redo();
+            tsddbEdit.DropDownItems.Add(tsmiRedo);
 
             ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_PasteImageText);
             tsmiPaste.Image = Resources.clipboard;
@@ -1513,7 +1519,8 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            tsmiUndo.Enabled = tsmiDeleteAll.Enabled = Shapes.Count > 0;
+            tsmiUndo.Enabled = tsmiDeleteAll.Enabled = history.HasMementos();
+            tsmiRedo.Enabled = tsmiDeleteAll.Enabled = history.HasRedoMementos();
             tsmiDuplicate.Enabled = tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
 
             switch (shapeType)

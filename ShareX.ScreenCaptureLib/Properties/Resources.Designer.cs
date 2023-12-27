@@ -2015,6 +2015,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Redo.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Redo {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Redo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rotate 180°.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_Rotate180 {
