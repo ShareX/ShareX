@@ -191,6 +191,9 @@ namespace ShareX.ScreenCaptureLib
         public bool IsCurrentHoverShapeValid => CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
 
         public bool IsCurrentShapeTypeRegion => IsShapeTypeRegion(CurrentTool);
+
+        public bool IsCurrentShapeTypeTool => IsShapeTypeTool(CurrentTool);
+
         public int StartingStepNumber { get; set; } = 1;
 
         public bool IsCreating { get; set; }
@@ -956,10 +959,12 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null && shape.IsSelectable) // Select shape
             {
                 DeselectCurrentShape();
+
                 if (!IsMoving)
                 {
                     history.CreateShapesMemento();
                 }
+
                 IsMoving = true;
                 shape.OnMoving();
                 CurrentShape = shape;
@@ -974,7 +979,12 @@ namespace ShareX.ScreenCaptureLib
             {
                 ClearTools();
                 DeselectCurrentShape();
-                history.CreateShapesMemento();
+
+                if (!IsCurrentShapeTypeRegion && !IsCurrentShapeTypeTool)
+                {
+                    history.CreateShapesMemento();
+                }
+
                 shape = AddShape();
                 shape.OnCreating();
             }
@@ -1558,6 +1568,8 @@ namespace ShareX.ScreenCaptureLib
                     effect.OnMoved();
                 }
 
+                ClearTools();
+                DeselectCurrentShape();
                 OnImageModified();
                 UpdateMenu();
             }
@@ -1783,6 +1795,19 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.RegionRectangle:
                 case ShapeType.RegionEllipse:
                 case ShapeType.RegionFreehand:
+                    return true;
+            }
+
+            return false;
+        }
+
+        private bool IsShapeTypeTool(ShapeType shapeType)
+        {
+            switch (shapeType)
+            {
+                case ShapeType.ToolSelect:
+                case ShapeType.ToolCrop:
+                case ShapeType.ToolCutOut:
                     return true;
             }
 
