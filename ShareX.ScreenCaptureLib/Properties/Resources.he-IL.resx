@@ -213,10 +213,6 @@
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - עורך תמונה</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>יש שינויים שלא נשמרו.
-האם תרצה לשמור את השינויים לפני סגירת העורך?</value>
-  </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>טיפ: ניתן להזיז תמונה על ידי החזקת הלחצן האמצעי של העכבר וגרירתו.</value>
   </data>

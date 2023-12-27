@@ -233,10 +233,6 @@
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - 圖片編輯器</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>有未儲存的變更。
-您想在關閉編輯器之前儲存變更嗎？</value>
-  </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>提示：點擊滑鼠中鍵並拖曳即可平移圖片。</value>
   </data>

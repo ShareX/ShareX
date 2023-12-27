@@ -366,10 +366,6 @@
   <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
     <value>Basculer vers l'outil de dessin après avoir sélectionné la forme</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Il y a des changements non sauvegardés.
-Voulez-vous enregistrer les modifications avant de fermer l'éditeur d'image ?</value>
-  </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Cette fenêtre va se fermer avant d'ouvrir la page web des raccourcis clavier. Voulez-vous continuer ?</value>
   </data>
