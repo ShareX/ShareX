@@ -1572,6 +1572,7 @@ namespace ShareX.ScreenCaptureLib
 
                 ClearTools();
                 DeselectCurrentShape();
+                MoveAll(Form.CanvasRectangle.X - memento.CanvasRectangle.X, Form.CanvasRectangle.Y - memento.CanvasRectangle.Y);
                 OnImageModified();
                 UpdateMenu();
             }

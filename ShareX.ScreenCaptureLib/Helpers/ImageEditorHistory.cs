@@ -60,13 +60,13 @@ namespace ShareX.ScreenCaptureLib
         {
             List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
             Bitmap canvas = (Bitmap)shapeManager.Form.Canvas.Clone();
-            return new ImageEditorMemento(shapes, canvas);
+            return new ImageEditorMemento(shapes, shapeManager.Form.CanvasRectangle, canvas);
         }
 
         private ImageEditorMemento GetMementoFromShapes()
         {
             List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
-            return new ImageEditorMemento(shapes);
+            return new ImageEditorMemento(shapes, shapeManager.Form.CanvasRectangle);
         }
 
         public void CreateCanvasMemento()

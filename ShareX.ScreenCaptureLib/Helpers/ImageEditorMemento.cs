@@ -32,16 +32,13 @@ namespace ShareX.ScreenCaptureLib
     internal class ImageEditorMemento : IDisposable
     {
         public List<BaseShape> Shapes { get; private set; }
+        public RectangleF CanvasRectangle { get; private set; }
         public Bitmap Canvas { get; private set; }
 
-        public ImageEditorMemento(List<BaseShape> shapes)
+        public ImageEditorMemento(List<BaseShape> shapes, RectangleF canvasRectangle, Bitmap canvas = null)
         {
             Shapes = shapes;
-        }
-
-        public ImageEditorMemento(List<BaseShape> shapes, Bitmap canvas)
-        {
-            Shapes = shapes;
+            CanvasRectangle = canvasRectangle;
             Canvas = canvas;
         }
 
