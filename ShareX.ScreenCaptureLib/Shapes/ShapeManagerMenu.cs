@@ -687,7 +687,7 @@ namespace ShareX.ScreenCaptureLib
             tsddbEdit.DropDownItems.Add(tsmiUndo);
 
             tsmiRedo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Redo);
-            tsmiRedo.Image = Resources.arrow_circle;
+            tsmiRedo.Image = Resources.arrow_circle_315;
             tsmiRedo.ShortcutKeyDisplayString = "Ctrl+Y";
             tsmiRedo.Click += (sender, e) => history.Redo();
             tsddbEdit.DropDownItems.Add(tsmiRedo);
@@ -715,7 +715,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiDeleteAll = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DeleteAll);
             tsmiDeleteAll.Image = Resources.eraser;
             tsmiDeleteAll.ShortcutKeyDisplayString = "Shift+Del";
-            tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes();
+            tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes(true);
             tsddbEdit.DropDownItems.Add(tsmiDeleteAll);
 
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());

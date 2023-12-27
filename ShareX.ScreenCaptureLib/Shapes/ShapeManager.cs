@@ -192,8 +192,6 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsCurrentShapeTypeRegion => IsShapeTypeRegion(CurrentTool);
 
-        public bool IsCurrentShapeTypeTool => IsShapeTypeTool(CurrentTool);
-
         public int StartingStepNumber { get; set; } = 1;
 
         public bool IsCreating { get; set; }
@@ -629,7 +627,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                     break;
                 case Keys.Shift | Keys.Delete:
-                    DeleteAllShapes();
+                    DeleteAllShapes(true);
                     break;
             }
 
@@ -980,11 +978,6 @@ namespace ShareX.ScreenCaptureLib
                 ClearTools();
                 DeselectCurrentShape();
 
-                if (!IsCurrentShapeTypeRegion && !IsCurrentShapeTypeTool)
-                {
-                    history.CreateShapesMemento();
-                }
-
                 shape = AddShape();
                 shape.OnCreating();
             }
@@ -1141,6 +1134,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void AddShape(BaseShape shape)
         {
+            history.CreateShapesMemento();
+
             Shapes.Add(shape);
             CurrentShape = shape;
         }
@@ -1472,6 +1467,8 @@ namespace ShareX.ScreenCaptureLib
         {
             if (shape != null)
             {
+                history.CreateShapesMemento();
+
                 shape.Dispose();
                 Shapes.Remove(shape);
                 DeselectShape(shape);
@@ -1495,10 +1492,15 @@ namespace ShareX.ScreenCaptureLib
             DeleteShape(GetIntersectShape());
         }
 
-        private void DeleteAllShapes()
+        private void DeleteAllShapes(bool takeSnapshot = false)
         {
             if (Shapes.Count > 0)
             {
+                if (takeSnapshot)
+                {
+                    history.CreateShapesMemento();
+                }
+
                 foreach (BaseShape shape in Shapes)
                 {
                     shape.Dispose();
@@ -1674,6 +1676,7 @@ namespace ShareX.ScreenCaptureLib
         public void CollapseAllHorizontal(float x, float width)
         {
             float x2 = x + width;
+
             if (width <= 0) return;
 
             List<BaseShape> toDelete = new List<BaseShape>();
@@ -1681,6 +1684,7 @@ namespace ShareX.ScreenCaptureLib
             foreach (BaseShape shape in Shapes)
             {
                 RectangleF sr = shape.Rectangle;
+
                 if (sr.Left < x)
                 {
                     if (sr.Right <= x)
@@ -1727,6 +1731,7 @@ namespace ShareX.ScreenCaptureLib
         public void CollapseAllVertical(float y, float height)
         {
             float y2 = y + height;
+
             if (height <= 0) return;
 
             List<BaseShape> toDelete = new List<BaseShape>();
@@ -1734,6 +1739,7 @@ namespace ShareX.ScreenCaptureLib
             foreach (BaseShape shape in Shapes)
             {
                 RectangleF sr = shape.Rectangle;
+
                 if (sr.Top < y)
                 {
                     if (sr.Bottom <= y)
@@ -1801,19 +1807,6 @@ namespace ShareX.ScreenCaptureLib
             return false;
         }
 
-        private bool IsShapeTypeTool(ShapeType shapeType)
-        {
-            switch (shapeType)
-            {
-                case ShapeType.ToolSelect:
-                case ShapeType.ToolCrop:
-                case ShapeType.ToolCutOut:
-                    return true;
-            }
-
-            return false;
-        }
-
         private void UpdateNodes()
         {
             BaseShape shape = CurrentShape;
@@ -1865,7 +1858,6 @@ namespace ShareX.ScreenCaptureLib
                     }
 
                     shapeCopy.OnMoved();
-                    history.CreateShapesMemento();
                     AddShape(shapeCopy);
                     SelectCurrentShape();
                 }
@@ -1916,7 +1908,6 @@ namespace ShareX.ScreenCaptureLib
                     shape.Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
                     shape.Text = text.Trim();
                     shape.OnCreated();
-                    history.CreateShapesMemento();
                     AddShape(shape);
                     SelectCurrentShape();
                 }
@@ -2043,8 +2034,8 @@ namespace ShareX.ScreenCaptureLib
             if (bmp != null)
             {
                 Form.ImageFilePath = "";
-                DeleteAllShapes();
                 history.CreateCanvasMemento();
+                DeleteAllShapes();
                 UpdateMenu();
                 UpdateCanvas(bmp);
             }
@@ -2070,8 +2061,8 @@ namespace ShareX.ScreenCaptureLib
                 if (bmp != null)
                 {
                     Form.ImageFilePath = filePath;
-                    DeleteAllShapes();
                     history.CreateCanvasMemento();
+                    DeleteAllShapes();
                     UpdateMenu();
                     UpdateCanvas(bmp);
                 }
@@ -2154,7 +2145,6 @@ namespace ShareX.ScreenCaptureLib
                 shape.Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
                 shape.SetImage(img, centerImage);
                 shape.OnCreated();
-                history.CreateShapesMemento();
                 AddShape(shape);
                 SelectCurrentShape();
             }
