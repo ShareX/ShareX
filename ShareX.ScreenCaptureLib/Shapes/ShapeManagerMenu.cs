@@ -683,13 +683,13 @@ namespace ShareX.ScreenCaptureLib
             tsmiUndo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Undo);
             tsmiUndo.Image = Resources.arrow_circle_225_left;
             tsmiUndo.ShortcutKeyDisplayString = "Ctrl+Z";
-            tsmiUndo.Click += (sender, e) => Undo();
+            tsmiUndo.Click += (sender, e) => history.Undo();
             tsddbEdit.DropDownItems.Add(tsmiUndo);
 
             tsmiRedo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Redo);
             tsmiRedo.Image = Resources.arrow_circle;
             tsmiRedo.ShortcutKeyDisplayString = "Ctrl+Y";
-            tsmiRedo.Click += (sender, e) => Redo();
+            tsmiRedo.Click += (sender, e) => history.Redo();
             tsddbEdit.DropDownItems.Add(tsmiRedo);
 
             ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_PasteImageText);
@@ -1519,8 +1519,8 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            tsmiUndo.Enabled = tsmiDeleteAll.Enabled = mementoStack.Count > 0;
-            tsmiRedo.Enabled = tsmiDeleteAll.Enabled = redoMementoStack.Count > 0;
+            tsmiUndo.Enabled = tsmiDeleteAll.Enabled = history.HasMementos();
+            tsmiRedo.Enabled = tsmiDeleteAll.Enabled = history.HasRedoMementos();
             tsmiDuplicate.Enabled = tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
 
             switch (shapeType)
