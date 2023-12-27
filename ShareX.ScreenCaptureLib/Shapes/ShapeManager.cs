@@ -1552,6 +1552,13 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 Shapes = memento.Shapes;
+
+                foreach (BaseEffectShape effect in EffectShapes)
+                {
+                    effect.OnMoved();
+                }
+
+                OnImageModified();
                 UpdateMenu();
             }
         }
@@ -1820,6 +1827,7 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null && shape.IsHandledBySelectTool)
             {
                 BaseShape shapeCopy = shape.Duplicate();
+
                 if (shapeCopy != null)
                 {
                     if (insertMousePosition)
