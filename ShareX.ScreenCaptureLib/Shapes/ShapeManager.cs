@@ -1542,17 +1542,18 @@ namespace ShareX.ScreenCaptureLib
             return GetIntersectShape() != null;
         }
 
-        public void RestoreState(List<BaseShape> shapes)
+        public void RestoreState(ImageEditorMemento memento)
         {
-            Shapes = shapes;
-            UpdateMenu();
-        }
+            if (memento != null)
+            {
+                if (memento.Canvas != null)
+                {
+                    UpdateCanvas(memento.Canvas);
+                }
 
-        public void RestoreState(List<BaseShape> shapes, Bitmap canvas)
-        {
-            UpdateCanvas(canvas);
-            Shapes = shapes;
-            UpdateMenu();
+                Shapes = memento.Shapes;
+                UpdateMenu();
+            }
         }
 
         public void MoveShapeBottom(BaseShape shape)

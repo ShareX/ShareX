@@ -32,11 +32,10 @@ namespace ShareX.ScreenCaptureLib
 {
     internal class ImageEditorHistory : IDisposable
     {
-        public bool HasMementos => mementoStack.Count > 0;
+        public bool CanUndo => undoMementoStack.Count > 0;
+        public bool CanRedo => redoMementoStack.Count > 0;
 
-        public bool HasRedoMementos => redoMementoStack.Count > 0;
-
-        private Stack<ImageEditorMemento> mementoStack = new Stack<ImageEditorMemento>();
+        private Stack<ImageEditorMemento> undoMementoStack = new Stack<ImageEditorMemento>();
         private Stack<ImageEditorMemento> redoMementoStack = new Stack<ImageEditorMemento>();
         private readonly ShapeManager shapeManager;
 
@@ -45,9 +44,9 @@ namespace ShareX.ScreenCaptureLib
             this.shapeManager = shapeManager;
         }
 
-        public void AddMemento(ImageEditorMemento memento)
+        private void AddMemento(ImageEditorMemento memento)
         {
-            mementoStack.Push(memento);
+            undoMementoStack.Push(memento);
 
             foreach (ImageEditorMemento redoMemento in redoMementoStack)
             {
@@ -59,47 +58,51 @@ namespace ShareX.ScreenCaptureLib
 
         private ImageEditorMemento GetMementoFromCanvas()
         {
-            Bitmap canvas = shapeManager.Form.Canvas;
-            Rectangle rectClone = new Rectangle(0, 0, canvas.Width, canvas.Height);
-            Bitmap currentCanvas = canvas.Clone(rectClone, canvas.PixelFormat);
             List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
+            Bitmap canvas = (Bitmap)shapeManager.Form.Canvas.Clone();
+            return new ImageEditorMemento(shapes, canvas);
+        }
 
-            return new ImageEditorMemento(shapes, currentCanvas);
+        private ImageEditorMemento GetMementoFromShapes()
+        {
+            List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
+            return new ImageEditorMemento(shapes);
         }
 
         public void CreateCanvasMemento()
         {
-            AddMemento(GetMementoFromCanvas());
+            ImageEditorMemento memento = GetMementoFromCanvas();
+            AddMemento(memento);
         }
 
         public void CreateShapesMemento()
         {
-            List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
-            AddMemento(new ImageEditorMemento(shapes));
+            ImageEditorMemento memento = GetMementoFromShapes();
+            AddMemento(memento);
         }
 
         public void Undo()
         {
-            if (mementoStack.Count > 0)
+            if (CanUndo)
             {
                 ImageEditorMemento redoMemento;
-                ImageEditorMemento memento = mementoStack.Pop();
+                ImageEditorMemento memento = undoMementoStack.Pop();
 
                 if (memento.Shapes != null)
                 {
                     if (memento.Canvas == null)
                     {
-                        redoMemento = new ImageEditorMemento(shapeManager.Shapes.Select(x => x.Duplicate()).ToList());
+                        redoMemento = GetMementoFromShapes();
                         redoMementoStack.Push(redoMemento);
 
-                        shapeManager.RestoreState(memento.Shapes);
+                        shapeManager.RestoreState(memento);
                     }
                     else
                     {
                         redoMemento = GetMementoFromCanvas();
                         redoMementoStack.Push(redoMemento);
 
-                        shapeManager.RestoreState(memento.Shapes, memento.Canvas);
+                        shapeManager.RestoreState(memento);
                     }
                 }
             }
@@ -107,7 +110,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void Redo()
         {
-            if (redoMementoStack.Count > 0)
+            if (CanRedo)
             {
                 ImageEditorMemento redoMemento = redoMementoStack.Pop();
 
@@ -115,18 +118,17 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (redoMemento.Canvas == null)
                     {
-                        List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
-                        ImageEditorMemento memento = new ImageEditorMemento(shapes);
-                        mementoStack.Push(memento);
+                        ImageEditorMemento memento = GetMementoFromShapes();
+                        undoMementoStack.Push(memento);
 
-                        shapeManager.RestoreState(redoMemento.Shapes);
+                        shapeManager.RestoreState(redoMemento);
                     }
                     else
                     {
                         ImageEditorMemento memento = GetMementoFromCanvas();
-                        mementoStack.Push(memento);
+                        undoMementoStack.Push(memento);
 
-                        shapeManager.RestoreState(redoMemento.Shapes, redoMemento.Canvas);
+                        shapeManager.RestoreState(redoMemento);
                     }
                 }
             }
@@ -134,12 +136,12 @@ namespace ShareX.ScreenCaptureLib
 
         public void Dispose()
         {
-            foreach (ImageEditorMemento memento in mementoStack)
+            foreach (ImageEditorMemento memento in undoMementoStack)
             {
                 memento.Dispose();
             }
 
-            mementoStack.Clear();
+            undoMementoStack.Clear();
 
             foreach (ImageEditorMemento redoMemento in redoMementoStack)
             {

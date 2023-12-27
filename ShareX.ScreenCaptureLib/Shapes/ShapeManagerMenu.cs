@@ -1519,8 +1519,8 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            tsmiUndo.Enabled = history.HasMementos;
-            tsmiRedo.Enabled = history.HasRedoMementos;
+            tsmiUndo.Enabled = history.CanUndo;
+            tsmiRedo.Enabled = history.CanRedo;
             tsmiDeleteAll.Enabled = Shapes.Count > 0;
             tsmiDuplicate.Enabled = tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
 

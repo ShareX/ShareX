@@ -47,14 +47,14 @@ namespace ShareX.ScreenCaptureLib
 
         public void Dispose()
         {
-            Canvas?.Dispose();
-
             foreach (BaseShape shape in Shapes)
             {
                 shape.Dispose();
             }
 
             Shapes.Clear();
+
+            Canvas?.Dispose();
         }
     }
 }
