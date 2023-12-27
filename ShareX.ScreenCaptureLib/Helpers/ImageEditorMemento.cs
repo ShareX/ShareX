@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         {
             foreach (BaseShape shape in Shapes)
             {
-                shape.Dispose();
+                shape?.Dispose();
             }
 
             Shapes.Clear();
