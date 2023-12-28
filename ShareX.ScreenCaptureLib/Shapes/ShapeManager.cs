@@ -1565,14 +1565,15 @@ namespace ShareX.ScreenCaptureLib
 
                 Shapes = memento.Shapes;
 
+                ClearTools();
+                DeselectCurrentShape();
+                MoveAll(Form.CanvasRectangle.X - memento.CanvasRectangle.X, Form.CanvasRectangle.Y - memento.CanvasRectangle.Y);
+
                 foreach (BaseEffectShape effect in EffectShapes)
                 {
                     effect.OnMoved();
                 }
 
-                ClearTools();
-                DeselectCurrentShape();
-                MoveAll(Form.CanvasRectangle.X - memento.CanvasRectangle.X, Form.CanvasRectangle.Y - memento.CanvasRectangle.Y);
                 OnImageModified();
                 UpdateMenu();
             }
