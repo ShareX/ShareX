@@ -79,9 +79,6 @@ namespace ShareX
 
         #region Theme
 
-        // TEMP: For backward compatibility
-        public bool UseDarkTheme = true;
-
         public bool UseCustomTheme = true;
         public List<ShareXTheme> Themes = ShareXTheme.GetDefaultThemes();
         public int SelectedTheme = 0;

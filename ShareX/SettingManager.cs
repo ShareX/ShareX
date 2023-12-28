@@ -195,17 +195,6 @@ namespace ShareX
                 DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
             }
 
-            if (Settings.IsUpgradeFrom("13.0.2"))
-            {
-                Settings.UseCustomTheme = Settings.UseDarkTheme;
-            }
-
-            if (Settings.IsUpgradeFrom("13.4.0"))
-            {
-                DefaultTaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted =
-                    DefaultTaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None;
-            }
-
             if (Settings.IsUpgradeFrom("14.1.1"))
             {
                 if (Helpers.IsDefaultSettings(Settings.Themes, ShareXTheme.GetDefaultThemes(), (x, y) => x.Name == y.Name))

@@ -326,8 +326,6 @@ namespace ShareX
         public bool DisableNotifications = false;
         public bool DisableNotificationsOnFullscreen = false;
 
-        public PopUpNotificationType PopUpNotification = PopUpNotificationType.ToastNotification;
-
         #endregion
     }
 

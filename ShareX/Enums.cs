@@ -317,13 +317,6 @@ namespace ShareX
         ExitShareX
     }
 
-    public enum PopUpNotificationType // Localized
-    {
-        None,
-        BalloonTip,
-        ToastNotification
-    }
-
     public enum ToastClickAction // Localized
     {
         CloseNotification,

@@ -440,15 +440,6 @@
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>附加数字到文件名</value>
   </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>显示托盘气球提示</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>不显示任何内容</value>
-  </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>显示并预览 Toast 通知</value>
-  </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>自动</value>
   </data>
