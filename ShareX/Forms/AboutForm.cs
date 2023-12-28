@@ -108,7 +108,6 @@ ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: https://www.ffmpeg.org
 Recorder devices: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 FluentFTP: https://github.com/robinrodricks/FluentFTP
-Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 ZXing.Net: https://github.com/micjahn/ZXing.Net
 MegaApiClient: https://github.com/gpailler/MegaApiClient
 Inno Setup Dependency Installer: https://github.com/DomGries/InnoDependencyInstaller

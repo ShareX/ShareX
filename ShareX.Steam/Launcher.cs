@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Steamworks;
 using System;
 using System.Diagnostics;
 using System.IO;
