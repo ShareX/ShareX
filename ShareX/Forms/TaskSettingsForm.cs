@@ -387,6 +387,7 @@ namespace ShareX
             cbCaptureOCRSilent.Checked = ocrOptions.Silent;
             cbCaptureOCRAutoCopy.Enabled = !ocrOptions.Silent;
             cbCaptureOCRAutoCopy.Checked = ocrOptions.AutoCopy;
+            cbCloseWindowAfterOpenServiceLink.Checked = ocrOptions.CloseWindowAfterOpeningServiceLink;
 
             #endregion OCR
 
@@ -1364,6 +1365,10 @@ namespace ShareX
         private void cbCaptureOCRAutoCopy_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.AutoCopy = cbCaptureOCRAutoCopy.Checked;
+        }
+        private void cbCloseWindowAfterOpenServiceLink_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.CloseWindowAfterOpeningServiceLink = cbCloseWindowAfterOpenServiceLink.Checked;
         }
 
         #endregion OCR
