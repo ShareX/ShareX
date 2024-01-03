@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -128,5 +128,8 @@ namespace ShareX.HelpersLib
 
         public const int ILD_TRANSPARENT = 0x00000001;
         public const int ILD_IMAGE = 0x00000020;
+
+        public const int LWA_COLORKEY = 0x1;
+        public const int LWA_ALPHA = 0x2;
     }
 }

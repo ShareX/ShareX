@@ -337,9 +337,6 @@
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>Показати вікно „Після вивантаження“</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Почати</value>
-  </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Custom file uploader</value>
   </data>
@@ -673,9 +670,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>Лінія (L)</value>
   </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Показати сповіщення з попереднім переглядом</value>
-  </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Показати файл у провіднику</value>
   </data>
@@ -714,9 +708,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>Ширина зображення</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Показати зринаючу підказку</value>
   </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
     <value>Назва дня тижня (англійською)</value>
@@ -876,9 +867,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Custom URL shortener</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Нічого не показувати</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Загальне</value>

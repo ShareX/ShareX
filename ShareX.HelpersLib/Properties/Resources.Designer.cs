@@ -494,6 +494,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check.
+        /// </summary>
+        internal static string Check {
+            get {
+                return ResourceManager.GetString("Check", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap clipboard_block {
@@ -1426,7 +1435,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hash check.
+        ///   Looks up a localized string similar to Hash checker.
         /// </summary>
         internal static string HotkeyType_HashCheck {
             get {
@@ -2348,33 +2357,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show tray balloon tip.
-        /// </summary>
-        internal static string PopUpNotificationType_BalloonTip {
-            get {
-                return ResourceManager.GetString("PopUpNotificationType_BalloonTip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show nothing.
-        /// </summary>
-        internal static string PopUpNotificationType_None {
-            get {
-                return ResourceManager.GetString("PopUpNotificationType_None", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show toast notification with preview.
-        /// </summary>
-        internal static string PopUpNotificationType_ToastNotification {
-            get {
-                return ResourceManager.GetString("PopUpNotificationType_ToastNotification", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Print.
         /// </summary>
         internal static string PrintForm_LoadSettings_Print {
@@ -3211,15 +3193,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ShareXImageViewer {
             get {
                 return ResourceManager.GetString("ShareXImageViewer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start.
-        /// </summary>
-        internal static string Start {
-            get {
-                return ResourceManager.GetString("Start", resourceCulture);
             }
         }
         
