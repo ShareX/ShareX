@@ -149,9 +149,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>選擇資料夾</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>開始</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>列印</value>
   </data>
@@ -441,15 +438,6 @@
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>附加數字到檔名</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>顯示系統匣氣球提示</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>不顯示任何內容</value>
-  </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>顯示彈出通知和預覽</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>自動</value>
