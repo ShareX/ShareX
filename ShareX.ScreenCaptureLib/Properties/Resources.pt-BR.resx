@@ -246,6 +246,9 @@
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Desfazer</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>Refazer</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>Sombra projetada</value>
   </data>

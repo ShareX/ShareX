@@ -150,9 +150,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Selecteer een map</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Afdrukken</value>
   </data>
@@ -439,15 +436,6 @@ Bestandsgrootte: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>Voeg nummer toe aan bestandsnaam</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Toon ballon tip in tray</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Toon niks</value>
-  </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Toon toast notificatie met voorbeeld</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatisch</value>

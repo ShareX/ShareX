@@ -156,6 +156,8 @@
     <Compile Include="Helpers\ImageEditorScrollbar.cs" />
     <Compile Include="Helpers\ScrollbarManager.cs" />
     <Compile Include="Helpers\ScrollingCaptureManager.cs" />
+    <Compile Include="Helpers\ImageEditorHistory.cs" />
+    <Compile Include="Helpers\ImageEditorMemento.cs" />
     <Compile Include="ScreenRecording\FFmpegCaptureDevice.cs" />
     <Compile Include="Shapes\AnnotationOptions.cs" />
     <Compile Include="Enums.cs" />
@@ -1006,6 +1008,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\control-pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-circle-315.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
