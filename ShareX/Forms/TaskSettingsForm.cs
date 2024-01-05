@@ -1366,6 +1366,7 @@ namespace ShareX
         {
             TaskSettings.CaptureSettings.OCROptions.AutoCopy = cbCaptureOCRAutoCopy.Checked;
         }
+
         private void cbCloseWindowAfterOpenServiceLink_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.CloseWindowAfterOpeningServiceLink = cbCloseWindowAfterOpenServiceLink.Checked;

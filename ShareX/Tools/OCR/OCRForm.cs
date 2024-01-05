@@ -222,7 +222,7 @@ namespace ShareX
                 await OCR(bmpSource);
             }
         }
-        
+
         private void cbServices_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.SelectedServiceLink = cbServices.SelectedIndex;
@@ -233,7 +233,7 @@ namespace ShareX
             if (!string.IsNullOrEmpty(Result) && cbServices.SelectedItem is ServiceLink serviceLink)
             {
                 serviceLink.OpenLink(Result);
-                if(Options.CloseWindowAfterOpeningServiceLink)
+                if (Options.CloseWindowAfterOpeningServiceLink)
                 {
                     this.Close();
                 }
