@@ -825,6 +825,6 @@ Would you like to close image editor?</value>
   </data>
   <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
     <value>There are unsaved changes.
-Would you like to save the changes before closing the editor</value>
+Would you like to save the changes before closing the editor?</value>
   </data>
 </root>
