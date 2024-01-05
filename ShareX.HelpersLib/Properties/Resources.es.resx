@@ -156,9 +156,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Seleccione una carpeta</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Iniciar</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Imprimir</value>
   </data>
@@ -445,15 +442,6 @@ Tamaño de archivo: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>Anexar número al nombre de archivo</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Mostrar tooltip en la bandeja</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Mostrar nada</value>
-  </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Mostrar notificación toast con vista previa</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automático</value>

@@ -219,9 +219,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>폴더 선택</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>시작</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>인쇄</value>
   </data>
@@ -508,15 +505,6 @@
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>파일 이름에 숫자 덧붙이기</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>트레이 풍선 팁 표시</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>아무것도 표시하지 않기</value>
-  </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>알림 메시지를 미리보기와 함께 표시</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>자동</value>
