@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public sealed class TwoGPURLShortener : URLShortener
     {
-        private const string API_ENDPOINT = "http://2.gp/api/short";
+        private const string API_ENDPOINT = "https://2.gp/api/short";
 
         public override UploadResult ShortenURL(string url)
         {

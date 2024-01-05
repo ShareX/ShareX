@@ -50,13 +50,13 @@ namespace ShareX.UploadersLib.URLShorteners
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("url", url);
 
-                result.Response = SendRequest(HttpMethod.GET, "http://turl.ca/api.php", arguments);
+                result.Response = SendRequest(HttpMethod.GET, "https://turl.ca/api.php", arguments);
 
                 if (!string.IsNullOrEmpty(result.Response))
                 {
                     if (result.Response.StartsWith("SUCCESS:"))
                     {
-                        result.ShortenedURL = "http://turl.ca/" + result.Response.Substring(8);
+                        result.ShortenedURL = "https://turl.ca/" + result.Response.Substring(8);
                     }
 
                     if (result.Response.StartsWith("ERROR:"))

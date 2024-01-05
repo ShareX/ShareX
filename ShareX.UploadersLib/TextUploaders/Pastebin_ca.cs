@@ -30,7 +30,7 @@ namespace ShareX.UploadersLib.TextUploaders
 {
     public sealed class Pastebin_ca : TextUploader
     {
-        private const string APIURL = "http://pastebin.ca/quiet-paste.php";
+        private const string APIURL = "https://pastebin.ca/quiet-paste.php";
 
         private string APIKey;
 
@@ -77,7 +77,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 {
                     if (ur.Response.StartsWith("SUCCESS:"))
                     {
-                        ur.URL = "http://pastebin.ca/" + ur.Response.Substring(8);
+                        ur.URL = "https://pastebin.ca/" + ur.Response.Substring(8);
                     }
                     else if (ur.Response.StartsWith("FAIL:"))
                     {

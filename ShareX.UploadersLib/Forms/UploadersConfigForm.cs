@@ -1098,7 +1098,7 @@ namespace ShareX.UploadersLib
 
         private void llVgymeAccountDetailsPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            URLHelpers.OpenURL("http://vgy.me/account/details");
+            URLHelpers.OpenURL("https://vgy.me/account/details");
         }
 
         #endregion vgy.me
@@ -1121,7 +1121,7 @@ namespace ShareX.UploadersLib
 
         private void btnPastebinRegister_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("http://pastebin.com/signup");
+            URLHelpers.OpenURL("https://pastebin.com/signup");
         }
 
         private void btnPastebinLogin_Click(object sender, EventArgs e)

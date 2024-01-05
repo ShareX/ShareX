@@ -69,8 +69,8 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         private YfrogOptions Options;
 
-        private const string UploadLink = "http://yfrog.com/api/upload";
-        private const string UploadAndPostLink = "http://yfrog.com/api/uploadAndPost";
+        private const string UploadLink = "https://yfrog.com/api/upload";
+        private const string UploadAndPostLink = "https://yfrog.com/api/uploadAndPost";
 
         public YfrogUploader(YfrogOptions options)
         {

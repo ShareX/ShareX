@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         private string APIKey;
 
-        private const string APIURL = "http://api.sendspace.com/rest/";
+        private const string APIURL = "https://api.sendspace.com/rest/";
         private const string APIVersion = "1.0";
 
         public AccountType AccountType { get; set; }
@@ -255,7 +255,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         /// <summary>
         /// Creates a new user account. An activation/validation email will be sent automatically to the user.
-        /// http://www.sendspace.com/dev_method.html?method=auth.register
+        /// https://www.sendspace.com/dev_method.html?method=auth.register
         /// </summary>
         /// <param name="username">a-z/A-Z/0-9, 3-20 chars</param>
         /// <param name="fullname">a-z/A-Z/space, 3-20 chars</param>
@@ -284,7 +284,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         /// <summary>
         /// Obtains a new and random token per session. Required for login.
-        /// http://www.sendspace.com/dev_method.html?method=auth.createToken
+        /// https://www.sendspace.com/dev_method.html?method=auth.createToken
         /// </summary>
         /// <returns>A token to be used with the auth.login method</returns>
         public string AuthCreateToken()
@@ -313,7 +313,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         /// <summary>
         /// Starts a session and returns user API method capabilities -- which features the given user can and cannot use.
-        /// http://www.sendspace.com/dev_method.html?method=auth.login
+        /// https://www.sendspace.com/dev_method.html?method=auth.login
         /// </summary>
         /// <param name="token">Received on create token</param>
         /// <param name="username">Registered user name</param>
@@ -347,7 +347,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         /// <summary>
         /// Checks if a session is valid or not.
-        /// http://www.sendspace.com/dev_method.html?method=auth.checksession
+        /// https://www.sendspace.com/dev_method.html?method=auth.checksession
         /// </summary>
         /// <param name="sessionKey">Received from auth.login</param>
         /// <returns>true = success, false = error</returns>
@@ -379,7 +379,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         /// <summary>
         /// Logs out from a session.
-        /// http://www.sendspace.com/dev_method.html?method=auth.logout
+        /// https://www.sendspace.com/dev_method.html?method=auth.logout
         /// </summary>
         /// <param name="sessionKey">Received from auth.login</param>
         /// <returns>true = success, false = error</returns>
@@ -405,7 +405,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         /// <summary>
         /// Obtains the information needed to perform an upload.
-        /// http://www.sendspace.com/dev_method.html?method=upload.getInfo
+        /// https://www.sendspace.com/dev_method.html?method=upload.getInfo
         /// </summary>
         /// <param name="sessionKey">Received from auth.login</param>
         /// <returns>URL to upload the file to, progress_url for real-time progress information, max_file_size for max size current user can upload, upload_identifier & extra_info to be passed with the upload form</returns>
@@ -462,7 +462,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         /// <summary>
-        /// http://www.sendspace.com/dev_method.html?method=upload.getInfo
+        /// https://www.sendspace.com/dev_method.html?method=upload.getInfo
         /// </summary>
         /// <param name="max_file_size">max_file_size value received in UploadGetInfo response</param>
         /// <param name="upload_identifier">upload_identifier value received in UploadGetInfo response</param>
@@ -514,7 +514,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     if (result.Response.StartsWith("upload_status=ok")) // User
                     {
                         string fileid = Regex.Match(result.Response, @"file_id=(\w+)").Groups[1].Value;
-                        result.URL = "http://www.sendspace.com/file/" + fileid;
+                        result.URL = "https://www.sendspace.com/file/" + fileid;
                     }
                     else // Anonymous
                     {

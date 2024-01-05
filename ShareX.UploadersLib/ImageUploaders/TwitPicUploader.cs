@@ -55,8 +55,8 @@ namespace ShareX.UploadersLib.ImageUploaders
         public bool ShowFull { get; set; }
         public TwitPicThumbnailType TwitPicThumbnailMode { get; set; }
 
-        private const string UploadLink = "http://api.twitpic.com/1/upload.json";
-        private const string UploadAndPostLink = "http://api.twitpic.com/1/uploadAndPost.json";
+        private const string UploadLink = "https://api.twitpic.com/1/upload.json";
+        private const string UploadAndPostLink = "https://api.twitpic.com/1/uploadAndPost.json";
 
         public TwitPicUploader(string key, OAuthInfo oauth)
         {
@@ -108,7 +108,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             {
                 result.URL = response.URL;
                 if (ShowFull) result.URL += "/full";
-                result.ThumbnailURL = string.Format("http://twitpic.com/show/{0}/{1}.{2}", TwitPicThumbnailMode.ToString().ToLowerInvariant(), response.ID, response.Type);
+                result.ThumbnailURL = string.Format("https://twitpic.com/show/{0}/{1}.{2}", TwitPicThumbnailMode.ToString().ToLowerInvariant(), response.ID, response.Type);
             }
 
             return result;

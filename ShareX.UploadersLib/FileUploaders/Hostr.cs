@@ -83,7 +83,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         if (DirectURL && response.direct != null)
                         {
-                            result.URL = string.Format("http://hostr.co/file/{0}/{1}", response.id, response.name);
+                            result.URL = string.Format("https://hostr.co/file/{0}/{1}", response.id, response.name);
                             result.ThumbnailURL = response.direct.direct_150x;
                         }
                         else

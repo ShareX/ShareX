@@ -34,7 +34,7 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public OAuthInfo AuthInfo { get; set; }
 
-        private const string APIURL = "http://twitsnaps.com/dev/image/upload.xml";
+        private const string APIURL = "https://twitsnaps.com/dev/image/upload.xml";
 
         private string APIKey;
 
@@ -83,8 +83,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                 if (xe != null)
                 {
                     string id = xe.GetElementValue("id");
-                    result.URL = "http://twitsnaps.com/snap/" + id;
-                    result.ThumbnailURL = "http://twitsnaps.com/thumb/" + id;
+                    result.URL = "https://twitsnaps.com/snap/" + id;
+                    result.ThumbnailURL = "https://twitsnaps.com/thumb/" + id;
                 }
                 else
                 {

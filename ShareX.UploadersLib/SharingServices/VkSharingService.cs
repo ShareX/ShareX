@@ -29,6 +29,6 @@ namespace ShareX.UploadersLib.SharingServices
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.VK;
 
-        protected override string URLFormatString { get; } = "http://vk.com/share.php?url={0}";
+        protected override string URLFormatString { get; } = "https://vk.com/share.php?url={0}";
     }
 }

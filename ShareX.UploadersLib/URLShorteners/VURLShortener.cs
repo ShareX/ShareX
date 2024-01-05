@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public sealed class VURLShortener : URLShortener
     {
-        private const string API_ENDPOINT = "http://vurl.com/api.php";
+        private const string API_ENDPOINT = "https://vurl.com/api.php";
 
         public override UploadResult ShortenURL(string url)
         {

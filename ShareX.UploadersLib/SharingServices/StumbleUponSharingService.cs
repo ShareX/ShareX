@@ -29,6 +29,6 @@ namespace ShareX.UploadersLib.SharingServices
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.StumbleUpon;
 
-        protected override string URLFormatString { get; } = "http://www.stumbleupon.com/submit?url={0}";
+        protected override string URLFormatString { get; } = "https://www.stumbleupon.com/submit?url={0}";
     }
 }

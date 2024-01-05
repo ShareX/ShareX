@@ -32,11 +32,11 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            UploadResult result = SendRequestFile("http://file1.share.cx/cgi-bin/upload.cgi", stream, fileName, "file_0");
+            UploadResult result = SendRequestFile("https://file1.share.cx/cgi-bin/upload.cgi", stream, fileName, "file_0");
 
             if (result.IsSuccess)
             {
-                MatchCollection matches = Regex.Matches(result.Response, "(?<=value=\")http:.+?(?=\".*></td>)");
+                MatchCollection matches = Regex.Matches(result.Response, "(?<=value=\")https:.+?(?=\".*></td>)");
 
                 if (matches.Count == 2)
                 {
