@@ -490,4 +490,8 @@ Você gostaria de fechar o editor de imagens?</value>
   <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
     <value>Zoom para caber em aberto</value>
   </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>Existem alterações não salvas.
+Deseja salvar as alterações antes de fechar o editor?</value>
+  </data>
 </root>

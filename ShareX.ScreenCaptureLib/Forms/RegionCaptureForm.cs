@@ -605,8 +605,15 @@ namespace ShareX.ScreenCaptureLib
             if (IsImageModified)
             {
                 Pause();
-                result = MessageBox.Show(this, Resources.RegionCaptureForm_ShowExitConfirmation_Text, Resources.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor,
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+                DialogResult dialogResult = MessageBox.Show(this, Resources.RegionCaptureForm_SaveChangesBeforeClosingEditor, Resources.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor,
+                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    OnSaveImageRequested();
+                }
+
+                result = dialogResult != DialogResult.Cancel;
                 Resume();
             }
 

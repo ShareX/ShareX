@@ -826,6 +826,10 @@ Would you like to close image editor?</value>
   <data name="ImageURL" xml:space="preserve">
     <value>Image URL</value>
   </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>There are unsaved changes.
+Would you like to save the changes before closing the editor?</value>
+  </data>
   <data name="arrow_circle_315" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-circle-315.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
