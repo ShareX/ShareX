@@ -35,6 +35,7 @@ namespace ShareX
         public bool Silent { get; set; } = false;
         public bool AutoCopy { get; set; } = false;
         public List<ServiceLink> ServiceLinks { get; set; } = DefaultServiceLinks;
+        public bool CloseWindowAfterOpeningServiceLink { get; set; } = false;
         public int SelectedServiceLink { get; set; } = 0;
 
         public static List<ServiceLink> DefaultServiceLinks => new List<ServiceLink>()

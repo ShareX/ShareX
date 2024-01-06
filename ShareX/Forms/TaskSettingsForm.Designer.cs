@@ -118,6 +118,7 @@
             this.cbImageGIFQuality = new System.Windows.Forms.ComboBox();
             this.cbOverrideImageSettings = new System.Windows.Forms.CheckBox();
             this.tpEffects = new System.Windows.Forms.TabPage();
+            this.cbUseRandomImageEffect = new System.Windows.Forms.CheckBox();
             this.lblImageEffectsNote = new System.Windows.Forms.Label();
             this.cbShowImageEffectsWindowAfterCapture = new System.Windows.Forms.CheckBox();
             this.cbImageEffectOnlyRegionCapture = new System.Windows.Forms.CheckBox();
@@ -219,6 +220,7 @@
             this.tpOCR = new System.Windows.Forms.TabPage();
             this.btnCaptureOCRHelp = new System.Windows.Forms.Button();
             this.cbCaptureOCRAutoCopy = new System.Windows.Forms.CheckBox();
+            this.cbCloseWindowAfterOpenServiceLink = new System.Windows.Forms.CheckBox();
             this.cbCaptureOCRSilent = new System.Windows.Forms.CheckBox();
             this.lblOCRDefaultLanguage = new System.Windows.Forms.Label();
             this.cbCaptureOCRDefaultLanguage = new System.Windows.Forms.ComboBox();
@@ -298,7 +300,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbUseRandomImageEffect = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1079,6 +1080,13 @@
             this.tpEffects.Controls.Add(this.btnImageEffects);
             resources.ApplyResources(this.tpEffects, "tpEffects");
             this.tpEffects.Name = "tpEffects";
+            // 
+            // cbUseRandomImageEffect
+            // 
+            resources.ApplyResources(this.cbUseRandomImageEffect, "cbUseRandomImageEffect");
+            this.cbUseRandomImageEffect.Name = "cbUseRandomImageEffect";
+            this.cbUseRandomImageEffect.UseVisualStyleBackColor = true;
+            this.cbUseRandomImageEffect.CheckedChanged += new System.EventHandler(this.cbUseRandomImageEffect_CheckedChanged);
             // 
             // lblImageEffectsNote
             // 
@@ -1990,6 +1998,7 @@
             // 
             this.tpOCR.Controls.Add(this.btnCaptureOCRHelp);
             this.tpOCR.Controls.Add(this.cbCaptureOCRAutoCopy);
+            this.tpOCR.Controls.Add(this.cbCloseWindowAfterOpenServiceLink);
             this.tpOCR.Controls.Add(this.cbCaptureOCRSilent);
             this.tpOCR.Controls.Add(this.lblOCRDefaultLanguage);
             this.tpOCR.Controls.Add(this.cbCaptureOCRDefaultLanguage);
@@ -2011,6 +2020,13 @@
             this.cbCaptureOCRAutoCopy.Name = "cbCaptureOCRAutoCopy";
             this.cbCaptureOCRAutoCopy.UseVisualStyleBackColor = true;
             this.cbCaptureOCRAutoCopy.CheckedChanged += new System.EventHandler(this.cbCaptureOCRAutoCopy_CheckedChanged);
+            // 
+            // cbCloseWindowAfterOpenServiceLink
+            // 
+            resources.ApplyResources(this.cbCloseWindowAfterOpenServiceLink, "cbCloseWindowAfterOpenServiceLink");
+            this.cbCloseWindowAfterOpenServiceLink.Name = "cbCloseWindowAfterOpenServiceLink";
+            this.cbCloseWindowAfterOpenServiceLink.UseVisualStyleBackColor = true;
+            this.cbCloseWindowAfterOpenServiceLink.CheckedChanged += new System.EventHandler(this.cbCloseWindowAfterOpenServiceLink_CheckedChanged);
             // 
             // cbCaptureOCRSilent
             // 
@@ -2595,13 +2611,6 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // cbUseRandomImageEffect
-            // 
-            resources.ApplyResources(this.cbUseRandomImageEffect, "cbUseRandomImageEffect");
-            this.cbUseRandomImageEffect.Name = "cbUseRandomImageEffect";
-            this.cbUseRandomImageEffect.UseVisualStyleBackColor = true;
-            this.cbUseRandomImageEffect.CheckedChanged += new System.EventHandler(this.cbUseRandomImageEffect_CheckedChanged);
-            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2912,6 +2921,7 @@
         private System.Windows.Forms.ComboBox cbCaptureOCRDefaultLanguage;
         private System.Windows.Forms.CheckBox cbCaptureOCRSilent;
         private System.Windows.Forms.CheckBox cbCaptureOCRAutoCopy;
+        private System.Windows.Forms.CheckBox cbCloseWindowAfterOpenServiceLink;
         private System.Windows.Forms.Label lblScreenshotDelay;
         private System.Windows.Forms.Label lblAutoIncrementNumber;
         private System.Windows.Forms.NumericUpDown nudAutoIncrementNumber;

@@ -233,6 +233,10 @@ namespace ShareX
             if (!string.IsNullOrEmpty(Result) && cbServices.SelectedItem is ServiceLink serviceLink)
             {
                 serviceLink.OpenLink(Result);
+                if (Options.CloseWindowAfterOpeningServiceLink)
+                {
+                    this.Close();
+                }
             }
         }
 
