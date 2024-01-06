@@ -492,6 +492,7 @@ Você gostaria de fechar o editor de imagens?</value>
   </data>
   <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
     <value>Existem alterações não salvas.
+
 Deseja salvar as alterações antes de fechar o editor?</value>
   </data>
 </root>

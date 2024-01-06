@@ -1368,7 +1368,8 @@ namespace ShareX.ScreenCaptureLib.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to There are unsaved changes.
-        ///Would you like to save the changes before closing the editor?.
+        ///
+        ///Would you like to save the changes before closing the image editor?.
         /// </summary>
         internal static string RegionCaptureForm_SaveChangesBeforeClosingEditor {
             get {

@@ -1071,6 +1071,11 @@ namespace ShareX.ScreenCaptureLib
                         {
                             if (InputManager.IsMousePressed(MouseButtons.Left))
                             {
+                                if (obj is ResizeNode)
+                                {
+                                    history.CreateShapesMemento();
+                                }
+
                                 obj.OnMouseDown(mousePosition.Round());
                             }
 
