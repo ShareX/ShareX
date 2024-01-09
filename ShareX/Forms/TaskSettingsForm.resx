@@ -5047,13 +5047,13 @@
     <value>8, 103</value>
   </data>
   <data name="cbCloseWindowAfterOpenServiceLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 17</value>
+    <value>238, 17</value>
   </data>
   <data name="cbCloseWindowAfterOpenServiceLink.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="cbCloseWindowAfterOpenServiceLink.Text" xml:space="preserve">
-    <value>Close this window after opening service link</value>
+    <value>Close OCR window after opening service link</value>
   </data>
   <data name="&gt;&gt;cbCloseWindowAfterOpenServiceLink.Name" xml:space="preserve">
     <value>cbCloseWindowAfterOpenServiceLink</value>
