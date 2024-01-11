@@ -443,10 +443,6 @@ X: {4} Y: {5}</value>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
     <value>Comutare la instrumentul de selecție după desenarea formei</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Există schimbări nesalvate.
-Doriți să închideți editorul de imagini?</value>
-  </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Această fereastră se va închide înainte de a deschide pagina web de scurtături. Doriți să continuați?</value>
   </data>

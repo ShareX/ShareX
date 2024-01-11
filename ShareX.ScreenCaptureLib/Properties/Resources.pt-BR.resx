@@ -330,10 +330,6 @@
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Cortar imagem automaticamente ...</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Existem alterações não salvas.
-Você gostaria de fechar o editor de imagens?</value>
-  </data>
   <data name="DropShadowColor" xml:space="preserve">
     <value>Cor da sombra projetada ...</value>
   </data>

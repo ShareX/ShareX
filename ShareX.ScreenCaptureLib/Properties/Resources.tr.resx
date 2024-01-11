@@ -381,10 +381,6 @@
   <data name="OpenKeybindsPage" xml:space="preserve">
     <value>Tuşlar web sayfasını aç...</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Kaydedilmemiş değişiklikler var.
-Resim düzenleyiciyi kapatmak ister misiniz?</value>
-  </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>İpucu: Farenin orta düğmesini basılı tutup sürükleyerek resmi kaydırabilirsiniz.</value>
   </data>
