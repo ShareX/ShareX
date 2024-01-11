@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -191,6 +191,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsCurrentHoverShapeValid => CurrentHoverShape != null && CurrentHoverShape.IsValidShape;
 
         public bool IsCurrentShapeTypeRegion => IsShapeTypeRegion(CurrentTool);
+
         public int StartingStepNumber { get; set; } = 1;
 
         public bool IsCreating { get; set; }
@@ -312,6 +313,7 @@ namespace ShareX.ScreenCaptureLib
 
         internal RegionCaptureForm Form { get; private set; }
 
+        private readonly ImageEditorHistory history;
         private bool isLeftPressed, isRightPressed, isUpPressed, isDownPressed;
         private ScrollbarManager scrollbarManager;
 
@@ -379,6 +381,8 @@ namespace ShareX.ScreenCaptureLib
                 control.MouseEnter += () => Form.SetHandCursor(false);
                 control.MouseLeave += () => Form.SetDefaultCursor();
             }
+
+            history = new ImageEditorHistory(this);
         }
 
         private void OnCurrentShapeChanged(BaseShape shape)
@@ -623,7 +627,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                     break;
                 case Keys.Shift | Keys.Delete:
-                    DeleteAllShapes();
+                    DeleteAllShapes(true);
                     break;
             }
 
@@ -701,7 +705,10 @@ namespace ShareX.ScreenCaptureLib
                             PasteFromClipboard(true);
                             break;
                         case Keys.Control | Keys.Z:
-                            UndoShape();
+                            history.Undo();
+                            break;
+                        case Keys.Control | Keys.Y:
+                            history.Redo();
                             break;
                         case Keys.Home:
                             MoveCurrentShapeTop();
@@ -950,6 +957,12 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null && shape.IsSelectable) // Select shape
             {
                 DeselectCurrentShape();
+
+                if (!IsMoving)
+                {
+                    history.CreateShapesMemento();
+                }
+
                 IsMoving = true;
                 shape.OnMoving();
                 CurrentShape = shape;
@@ -1058,6 +1071,11 @@ namespace ShareX.ScreenCaptureLib
                         {
                             if (InputManager.IsMousePressed(MouseButtons.Left))
                             {
+                                if (obj is ResizeNode)
+                                {
+                                    history.CreateShapesMemento();
+                                }
+
                                 obj.OnMouseDown(mousePosition.Round());
                             }
 
@@ -1121,6 +1139,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void AddShape(BaseShape shape)
         {
+            history.CreateShapesMemento();
+
             Shapes.Add(shape);
             CurrentShape = shape;
         }
@@ -1452,6 +1472,8 @@ namespace ShareX.ScreenCaptureLib
         {
             if (shape != null)
             {
+                history.CreateShapesMemento();
+
                 shape.Dispose();
                 Shapes.Remove(shape);
                 DeselectShape(shape);
@@ -1475,10 +1497,15 @@ namespace ShareX.ScreenCaptureLib
             DeleteShape(GetIntersectShape());
         }
 
-        private void DeleteAllShapes()
+        private void DeleteAllShapes(bool takeSnapshot = false)
         {
             if (Shapes.Count > 0)
             {
+                if (takeSnapshot)
+                {
+                    history.CreateShapesMemento();
+                }
+
                 foreach (BaseShape shape in Shapes)
                 {
                     shape.Dispose();
@@ -1532,11 +1559,28 @@ namespace ShareX.ScreenCaptureLib
             return GetIntersectShape() != null;
         }
 
-        public void UndoShape()
+        public void RestoreState(ImageEditorMemento memento)
         {
-            if (Shapes.Count > 0)
+            if (memento != null)
             {
-                DeleteShape(Shapes[Shapes.Count - 1]);
+                if (memento.Canvas != null)
+                {
+                    UpdateCanvas(memento.Canvas);
+                }
+
+                Shapes = memento.Shapes;
+
+                ClearTools();
+                DeselectCurrentShape();
+                MoveAll(Form.CanvasRectangle.X - memento.CanvasRectangle.X, Form.CanvasRectangle.Y - memento.CanvasRectangle.Y);
+
+                foreach (BaseEffectShape effect in EffectShapes)
+                {
+                    effect.OnMoved();
+                }
+
+                OnImageModified();
+                UpdateMenu();
             }
         }
 
@@ -1639,6 +1683,7 @@ namespace ShareX.ScreenCaptureLib
         public void CollapseAllHorizontal(float x, float width)
         {
             float x2 = x + width;
+
             if (width <= 0) return;
 
             List<BaseShape> toDelete = new List<BaseShape>();
@@ -1646,6 +1691,7 @@ namespace ShareX.ScreenCaptureLib
             foreach (BaseShape shape in Shapes)
             {
                 RectangleF sr = shape.Rectangle;
+
                 if (sr.Left < x)
                 {
                     if (sr.Right <= x)
@@ -1692,6 +1738,7 @@ namespace ShareX.ScreenCaptureLib
         public void CollapseAllVertical(float y, float height)
         {
             float y2 = y + height;
+
             if (height <= 0) return;
 
             List<BaseShape> toDelete = new List<BaseShape>();
@@ -1699,6 +1746,7 @@ namespace ShareX.ScreenCaptureLib
             foreach (BaseShape shape in Shapes)
             {
                 RectangleF sr = shape.Rectangle;
+
                 if (sr.Top < y)
                 {
                     if (sr.Bottom <= y)
@@ -1804,6 +1852,7 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null && shape.IsHandledBySelectTool)
             {
                 BaseShape shapeCopy = shape.Duplicate();
+
                 if (shapeCopy != null)
                 {
                     if (insertMousePosition)
@@ -1908,6 +1957,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (bmp != null)
             {
+                history.CreateCanvasMemento();
                 MoveAll(Form.CanvasRectangle.X - rect.X, Form.CanvasRectangle.Y - rect.Y);
                 UpdateCanvas(bmp);
             }
@@ -1931,8 +1981,9 @@ namespace ShareX.ScreenCaptureLib
 
         public void CutOut(RectangleF rect)
         {
-            bool isHorizontal = rect.Width > rect.Height;
+            history.CreateCanvasMemento();
 
+            bool isHorizontal = rect.Width > rect.Height;
             RectangleF adjustedRect = CaptureHelpers.ScreenToClient(rect.Round());
             PointF offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location.Round());
             adjustedRect.X -= offset.X;
@@ -1990,6 +2041,7 @@ namespace ShareX.ScreenCaptureLib
             if (bmp != null)
             {
                 Form.ImageFilePath = "";
+                history.CreateCanvasMemento();
                 DeleteAllShapes();
                 UpdateMenu();
                 UpdateCanvas(bmp);
@@ -2016,6 +2068,7 @@ namespace ShareX.ScreenCaptureLib
                 if (bmp != null)
                 {
                     Form.ImageFilePath = filePath;
+                    history.CreateCanvasMemento();
                     DeleteAllShapes();
                     UpdateMenu();
                     UpdateCanvas(bmp);
@@ -2119,6 +2172,8 @@ namespace ShareX.ScreenCaptureLib
 
                     if (size != oldSize)
                     {
+                        history.CreateCanvasMemento();
+
                         InterpolationMode interpolationMode = ImageHelpers.GetInterpolationMode(Options.ImageEditorResizeInterpolationMode);
                         Bitmap bmp = ImageHelpers.ResizeImage(Form.Canvas, size, interpolationMode);
 
@@ -2148,6 +2203,8 @@ namespace ShareX.ScreenCaptureLib
 
                     if (bmp != null)
                     {
+                        history.CreateCanvasMemento();
+
                         MoveAll(canvas.Left, canvas.Top);
                         UpdateCanvas(bmp);
                     }
@@ -2176,6 +2233,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (bmp != null)
             {
+                history.CreateCanvasMemento();
+
                 Form.CanvasRectangle = Form.CanvasRectangle.LocationOffset(-margin.Left, -margin.Top);
                 UpdateCanvas(bmp, false);
             }
@@ -2214,6 +2273,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void RotateImage(RotateFlipType type)
         {
+            history.CreateCanvasMemento();
+
             Bitmap bmp = (Bitmap)Form.Canvas.Clone();
             bmp.RotateFlip(type);
             UpdateCanvas(bmp);
@@ -2241,6 +2302,8 @@ namespace ShareX.ScreenCaptureLib
 
                         if (bmp != null)
                         {
+                            history.CreateCanvasMemento();
+
                             UpdateCanvas(bmp);
                         }
                     }
@@ -2275,6 +2338,8 @@ namespace ShareX.ScreenCaptureLib
         public void Dispose()
         {
             DeleteAllShapes();
+
+            history.Dispose();
         }
     }
 }

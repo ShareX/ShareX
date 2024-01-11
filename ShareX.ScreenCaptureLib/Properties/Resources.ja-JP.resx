@@ -354,9 +354,6 @@
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
     <value>ピクセルの大きさ:</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>保存されていませんが、画像エディタを閉じていいですか？</value>
-  </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - 画像エディタ</value>
   </data>

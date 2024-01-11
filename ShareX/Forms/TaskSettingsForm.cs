@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -387,6 +387,7 @@ namespace ShareX
             cbCaptureOCRSilent.Checked = ocrOptions.Silent;
             cbCaptureOCRAutoCopy.Enabled = !ocrOptions.Silent;
             cbCaptureOCRAutoCopy.Checked = ocrOptions.AutoCopy;
+            cbCloseWindowAfterOpenServiceLink.Checked = ocrOptions.CloseWindowAfterOpeningServiceLink;
 
             #endregion OCR
 
@@ -1364,6 +1365,11 @@ namespace ShareX
         private void cbCaptureOCRAutoCopy_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.AutoCopy = cbCaptureOCRAutoCopy.Checked;
+        }
+
+        private void cbCloseWindowAfterOpenServiceLink_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.CloseWindowAfterOpeningServiceLink = cbCloseWindowAfterOpenServiceLink.Checked;
         }
 
         #endregion OCR

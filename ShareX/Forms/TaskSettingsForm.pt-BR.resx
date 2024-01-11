@@ -645,4 +645,7 @@
   <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
     <value>kB</value>
   </data>
+  <data name="cbCloseWindowAfterOpenServiceLink.Text" xml:space="preserve">
+    <value>Fechar janela após abrir link de serviço</value>
+  </data>
 </root>

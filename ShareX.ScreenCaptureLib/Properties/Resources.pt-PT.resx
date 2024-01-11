@@ -288,10 +288,6 @@
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Redimensionar imagem automáticamente...</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Existem alterações pendentes!
-Deseja fechar o editor de imagens?</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>Trazer para a frente</value>
   </data>

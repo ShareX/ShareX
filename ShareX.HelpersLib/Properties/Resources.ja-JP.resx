@@ -682,9 +682,6 @@
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>「アップロード前」ウィンドウを表示</value>
   </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>画像プレビューをトースト通知</value>
-  </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>エクスプローラでファイルを表示</value>
   </data>
@@ -720,9 +717,6 @@
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>画像の幅</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>バルーン通知を表示</value>
   </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
     <value>曜日 (英語)</value>
@@ -873,9 +867,6 @@
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>独自のURL短縮サービス</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>何も表示しない</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>公開</value>

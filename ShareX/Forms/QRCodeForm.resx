@@ -139,7 +139,7 @@
     <value>Both</value>
   </data>
   <data name="txtText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 408</value>
+    <value>552, 464</value>
   </data>
   <data name="txtText.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -163,7 +163,7 @@
     <value>True</value>
   </data>
   <data name="lblQRCodeSizeHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 531</value>
+    <value>245, 568</value>
   </data>
   <data name="lblQRCodeSizeHint.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -196,7 +196,7 @@
     <value>True</value>
   </data>
   <data name="lblQRCodeSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 504</value>
+    <value>13, 568</value>
   </data>
   <data name="lblQRCodeSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -226,13 +226,13 @@
     <value>Bottom, Left</value>
   </data>
   <data name="nudQRCodeSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 528</value>
+    <value>160, 565</value>
   </data>
   <data name="nudQRCodeSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="nudQRCodeSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 22</value>
+    <value>80, 22</value>
   </data>
   <data name="nudQRCodeSize.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -256,13 +256,13 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="pbQRCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 39</value>
+    <value>584, 40</value>
   </data>
   <data name="pbQRCode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
   <data name="pbQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 465</value>
+    <value>512, 512</value>
   </data>
   <data name="pbQRCode.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -340,10 +340,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnCopyImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 512</value>
+    <value>584, 560</value>
   </data>
   <data name="btnCopyImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 40</value>
+    <value>160, 32</value>
   </data>
   <data name="btnCopyImage.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -367,10 +367,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnSaveImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>752, 512</value>
+    <value>752, 560</value>
   </data>
   <data name="btnSaveImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 40</value>
+    <value>160, 32</value>
   </data>
   <data name="btnSaveImage.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -394,10 +394,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnUploadImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>920, 512</value>
+    <value>920, 560</value>
   </data>
   <data name="btnUploadImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 40</value>
+    <value>160, 32</value>
   </data>
   <data name="btnUploadImage.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -472,7 +472,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1111, 567</value>
+    <value>1111, 607</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>

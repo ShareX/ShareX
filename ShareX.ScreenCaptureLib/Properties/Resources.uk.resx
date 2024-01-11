@@ -219,10 +219,6 @@
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Автообрізання...</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Є незбережені зміни.
-Хочете закрити редактор зображень?</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>На передній план</value>
   </data>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -48,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
+        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiRedo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
             tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize;
@@ -683,8 +683,14 @@ namespace ShareX.ScreenCaptureLib
             tsmiUndo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Undo);
             tsmiUndo.Image = Resources.arrow_circle_225_left;
             tsmiUndo.ShortcutKeyDisplayString = "Ctrl+Z";
-            tsmiUndo.Click += (sender, e) => UndoShape();
+            tsmiUndo.Click += (sender, e) => history.Undo();
             tsddbEdit.DropDownItems.Add(tsmiUndo);
+
+            tsmiRedo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Redo);
+            tsmiRedo.Image = Resources.arrow_circle_315;
+            tsmiRedo.ShortcutKeyDisplayString = "Ctrl+Y";
+            tsmiRedo.Click += (sender, e) => history.Redo();
+            tsddbEdit.DropDownItems.Add(tsmiRedo);
 
             ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_PasteImageText);
             tsmiPaste.Image = Resources.clipboard;
@@ -709,7 +715,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiDeleteAll = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DeleteAll);
             tsmiDeleteAll.Image = Resources.eraser;
             tsmiDeleteAll.ShortcutKeyDisplayString = "Shift+Del";
-            tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes();
+            tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes(true);
             tsddbEdit.DropDownItems.Add(tsmiDeleteAll);
 
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
@@ -1513,7 +1519,9 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            tsmiUndo.Enabled = tsmiDeleteAll.Enabled = Shapes.Count > 0;
+            tsmiUndo.Enabled = history.CanUndo;
+            tsmiRedo.Enabled = history.CanRedo;
+            tsmiDeleteAll.Enabled = Shapes.Count > 0;
             tsmiDuplicate.Enabled = tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
 
             switch (shapeType)

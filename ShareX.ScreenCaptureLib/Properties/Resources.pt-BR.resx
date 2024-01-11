@@ -246,6 +246,9 @@
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Desfazer</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>Refazer</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>Sombra projetada</value>
   </data>
@@ -326,10 +329,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Cortar imagem automaticamente ...</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Existem alterações não salvas.
-Você gostaria de fechar o editor de imagens?</value>
   </data>
   <data name="DropShadowColor" xml:space="preserve">
     <value>Cor da sombra projetada ...</value>
@@ -486,5 +485,10 @@ Você gostaria de fechar o editor de imagens?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
     <value>Zoom para caber em aberto</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>Existem alterações não salvas.
+
+Deseja salvar as alterações antes de fechar o editor?</value>
   </data>
 </root>
