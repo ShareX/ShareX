@@ -584,5 +584,23 @@ namespace ShareX.HelpersLib
 
             return scalingFactor;
         }
+
+        public static IntPtr SearchWindow(string windowTitle)
+        {
+            IntPtr hWnd = FindWindow(null, windowTitle);
+
+            if (hWnd == IntPtr.Zero)
+            {
+                foreach (Process process in Process.GetProcesses())
+                {
+                    if (process.MainWindowTitle.Contains(windowTitle, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return process.MainWindowHandle;
+                    }
+                }
+            }
+
+            return hWnd;
+        }
     }
 }

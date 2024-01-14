@@ -125,6 +125,9 @@ namespace ShareX
                 case HotkeyType.CustomRegion:
                     new CaptureCustomRegion().Capture(safeTaskSettings);
                     break;
+                case HotkeyType.CustomWindow:
+                    new CaptureCustomWindow().Capture(safeTaskSettings);
+                    break;
                 case HotkeyType.LastRegion:
                     new CaptureLastRegion().Capture(safeTaskSettings);
                     break;
@@ -1699,6 +1702,7 @@ namespace ShareX
                     case HotkeyType.RectangleLight: return Resources.Rectangle;
                     case HotkeyType.RectangleTransparent: return Resources.layer_transparent;
                     case HotkeyType.CustomRegion: return Resources.layer__arrow;
+                    case HotkeyType.CustomWindow: return Resources.application__arrow;
                     case HotkeyType.LastRegion: return Resources.layers;
                     case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
                     case HotkeyType.AutoCapture: return Resources.clock;

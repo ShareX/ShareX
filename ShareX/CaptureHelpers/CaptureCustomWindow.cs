@@ -24,52 +24,35 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
-using System.Threading;
+using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class CaptureWindow : CaptureBase
+    public class CaptureCustomWindow : CaptureWindow
     {
-        public IntPtr WindowHandle { get; protected set; }
-
-        public CaptureWindow()
-        {
-        }
-
-        public CaptureWindow(IntPtr windowHandle)
-        {
-            WindowHandle = windowHandle;
-
-            AllowAutoHideForm = WindowHandle != Program.MainForm.Handle;
-        }
-
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
-            WindowInfo windowInfo = new WindowInfo(WindowHandle);
+            string windowTitle = taskSettings.CaptureSettings.CaptureCustomWindow;
 
-            if (windowInfo.IsMinimized)
+            if (!string.IsNullOrEmpty(windowTitle))
             {
-                windowInfo.Restore();
+                IntPtr hWnd = NativeMethods.SearchWindow(windowTitle);
+
+                if (hWnd == IntPtr.Zero)
+                {
+                    MessageBox.Show(Resources.UnableToFindAWindowWithSpecifiedWindowTitle, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    WindowHandle = hWnd;
+
+                    return base.Execute(taskSettings);
+                }
             }
 
-            windowInfo.Activate();
-
-            Thread.Sleep(250);
-
-            TaskMetadata metadata = new TaskMetadata();
-            metadata.UpdateInfo(windowInfo);
-
-            if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
-            {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindowTransparent(WindowHandle);
-            }
-            else
-            {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindow(WindowHandle);
-            }
-
-            return metadata;
+            return null;
         }
     }
 }

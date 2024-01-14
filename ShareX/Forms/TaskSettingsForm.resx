@@ -2700,6 +2700,54 @@
   <data name="&gt;&gt;tpImage.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="txtCaptureCustomWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 304</value>
+  </data>
+  <data name="txtCaptureCustomWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 20</value>
+  </data>
+  <data name="txtCaptureCustomWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;txtCaptureCustomWindow.Name" xml:space="preserve">
+    <value>txtCaptureCustomWindow</value>
+  </data>
+  <data name="&gt;&gt;txtCaptureCustomWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCaptureCustomWindow.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;txtCaptureCustomWindow.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblCaptureCustomWindow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 288</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 13</value>
+  </data>
+  <data name="lblCaptureCustomWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Text" xml:space="preserve">
+    <value>Pre configured window title:</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureCustomWindow.Name" xml:space="preserve">
+    <value>lblCaptureCustomWindow</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureCustomWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureCustomWindow.Parent" xml:space="preserve">
+    <value>pCapture</value>
+  </data>
+  <data name="&gt;&gt;lblCaptureCustomWindow.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblScreenshotDelay.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2713,7 +2761,7 @@
     <value>92, 13</value>
   </data>
   <data name="lblScreenshotDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>1</value>
   </data>
   <data name="lblScreenshotDelay.Text" xml:space="preserve">
     <value>Screenshot delay:</value>
@@ -2728,7 +2776,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;lblScreenshotDelay.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2740,7 +2788,7 @@
     <value>136, 23</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>19</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Select region...</value>
@@ -2755,7 +2803,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;btnCaptureCustomRegionSelectRectangle.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblCaptureCustomRegion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2770,7 +2818,7 @@
     <value>111, 13</value>
   </data>
   <data name="lblCaptureCustomRegion.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>10</value>
   </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
     <value>Pre configured region:</value>
@@ -2785,7 +2833,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;lblCaptureCustomRegion.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblCaptureCustomRegionWidth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2800,7 +2848,7 @@
     <value>35, 13</value>
   </data>
   <data name="lblCaptureCustomRegionWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
     <value>Width</value>
@@ -2815,7 +2863,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;lblCaptureCustomRegionWidth.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="lblCaptureCustomRegionHeight.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2830,7 +2878,7 @@
     <value>38, 13</value>
   </data>
   <data name="lblCaptureCustomRegionHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
     <value>Height</value>
@@ -2845,7 +2893,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;lblCaptureCustomRegionHeight.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="lblCaptureCustomRegionY.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2860,7 +2908,7 @@
     <value>14, 13</value>
   </data>
   <data name="lblCaptureCustomRegionY.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
     <value>Y</value>
@@ -2875,7 +2923,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;lblCaptureCustomRegionY.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="lblCaptureCustomRegionX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2905,7 +2953,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;lblCaptureCustomRegionX.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="nudCaptureCustomRegionHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 256</value>
@@ -2914,7 +2962,7 @@
     <value>50, 20</value>
   </data>
   <data name="nudCaptureCustomRegionHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionHeight.Name" xml:space="preserve">
     <value>nudCaptureCustomRegionHeight</value>
@@ -2926,7 +2974,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionHeight.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="nudCaptureCustomRegionWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 256</value>
@@ -2935,7 +2983,7 @@
     <value>50, 20</value>
   </data>
   <data name="nudCaptureCustomRegionWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionWidth.Name" xml:space="preserve">
     <value>nudCaptureCustomRegionWidth</value>
@@ -2947,7 +2995,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionWidth.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="nudCaptureCustomRegionY.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 256</value>
@@ -2956,7 +3004,7 @@
     <value>50, 20</value>
   </data>
   <data name="nudCaptureCustomRegionY.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionY.Name" xml:space="preserve">
     <value>nudCaptureCustomRegionY</value>
@@ -2968,7 +3016,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionY.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="nudCaptureCustomRegionX.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 256</value>
@@ -2977,7 +3025,7 @@
     <value>50, 20</value>
   </data>
   <data name="nudCaptureCustomRegionX.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionX.Name" xml:space="preserve">
     <value>nudCaptureCustomRegionX</value>
@@ -2989,7 +3037,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;nudCaptureCustomRegionX.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="cbShowCursor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3019,7 +3067,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;cbShowCursor.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="lblCaptureShadowOffset.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3034,7 +3082,7 @@
     <value>78, 13</value>
   </data>
   <data name="lblCaptureShadowOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
     <value>Shadow offset:</value>
@@ -3049,7 +3097,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;lblCaptureShadowOffset.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="cbCaptureTransparent.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3064,7 +3112,7 @@
     <value>188, 17</value>
   </data>
   <data name="cbCaptureTransparent.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>Capture window with transparency</value>
@@ -3079,7 +3127,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;cbCaptureTransparent.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3109,7 +3157,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;cbCaptureAutoHideTaskbar.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="cbCaptureShadow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3124,7 +3172,7 @@
     <value>274, 17</value>
   </data>
   <data name="cbCaptureShadow.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
     <value>Capture window with shadow (requires transparency)</value>
@@ -3139,7 +3187,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;cbCaptureShadow.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="lblScreenshotDelayInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3154,7 +3202,7 @@
     <value>47, 13</value>
   </data>
   <data name="lblScreenshotDelayInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>3</value>
   </data>
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>seconds</value>
@@ -3169,7 +3217,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;lblScreenshotDelayInfo.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="cbCaptureClientArea.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3184,7 +3232,7 @@
     <value>334, 17</value>
   </data>
   <data name="cbCaptureClientArea.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Capture client area when doing window or active window capture</value>
@@ -3199,7 +3247,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;cbCaptureClientArea.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="nudScreenshotDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 48</value>
@@ -3208,7 +3256,7 @@
     <value>56, 20</value>
   </data>
   <data name="nudScreenshotDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="nudScreenshotDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -3223,7 +3271,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;nudScreenshotDelay.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <data name="nudCaptureShadowOffset.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 144</value>
@@ -3232,7 +3280,7 @@
     <value>56, 20</value>
   </data>
   <data name="nudCaptureShadowOffset.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="nudCaptureShadowOffset.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -3247,7 +3295,7 @@
     <value>pCapture</value>
   </data>
   <data name="&gt;&gt;nudCaptureShadowOffset.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <data name="pCapture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

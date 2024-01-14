@@ -377,6 +377,7 @@ namespace ShareX
         public bool CaptureClientArea = false;
         public bool CaptureAutoHideTaskbar = false;
         public Rectangle CaptureCustomRegion = new Rectangle(0, 0, 0, 0);
+        public string CaptureCustomWindow = "";
 
         #endregion Capture / General
 
