@@ -28,7 +28,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -288,16 +287,6 @@ namespace ShareX.HelpersLib
             }
 
             return windowRect;
-        }
-
-        public static void ActivateWindowRepeat(IntPtr handle, int count)
-        {
-            for (int i = 0; GetForegroundWindow() != handle && i < count; i++)
-            {
-                BringWindowToTop(handle);
-                Thread.Sleep(1);
-                Application.DoEvents();
-            }
         }
 
         public static Rectangle GetTaskbarRectangle()

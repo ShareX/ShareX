@@ -51,11 +51,14 @@ namespace ShareX
             if (windowInfo.IsMinimized)
             {
                 windowInfo.Restore();
+                Thread.Sleep(250);
             }
 
-            windowInfo.Activate();
-
-            Thread.Sleep(250);
+            if (!windowInfo.IsActive)
+            {
+                windowInfo.Activate();
+                Thread.Sleep(100);
+            }
 
             TaskMetadata metadata = new TaskMetadata();
             metadata.UpdateInfo(windowInfo);
