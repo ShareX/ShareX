@@ -280,6 +280,7 @@ namespace ShareX
             nudCaptureCustomRegionY.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Y);
             nudCaptureCustomRegionWidth.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Width);
             nudCaptureCustomRegionHeight.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Height);
+            txtCaptureCustomWindow.Text = TaskSettings.CaptureSettings.CaptureCustomWindow;
 
             #endregion General
 
@@ -1105,6 +1106,11 @@ namespace ShareX
                 nudCaptureCustomRegionWidth.SetValue(rect.Width);
                 nudCaptureCustomRegionHeight.SetValue(rect.Height);
             }
+        }
+
+        private void txtCaptureCustomWindow_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.CaptureCustomWindow = txtCaptureCustomWindow.Text;
         }
 
         #endregion General

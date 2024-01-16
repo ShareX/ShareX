@@ -136,6 +136,8 @@
             this.tcCapture = new System.Windows.Forms.TabControl();
             this.tpCaptureGeneral = new System.Windows.Forms.TabPage();
             this.pCapture = new System.Windows.Forms.Panel();
+            this.txtCaptureCustomWindow = new System.Windows.Forms.TextBox();
+            this.lblCaptureCustomWindow = new System.Windows.Forms.Label();
             this.lblScreenshotDelay = new System.Windows.Forms.Label();
             this.btnCaptureCustomRegionSelectRectangle = new System.Windows.Forms.Button();
             this.lblCaptureCustomRegion = new System.Windows.Forms.Label();
@@ -1210,6 +1212,8 @@
             // 
             // pCapture
             // 
+            this.pCapture.Controls.Add(this.txtCaptureCustomWindow);
+            this.pCapture.Controls.Add(this.lblCaptureCustomWindow);
             this.pCapture.Controls.Add(this.lblScreenshotDelay);
             this.pCapture.Controls.Add(this.btnCaptureCustomRegionSelectRectangle);
             this.pCapture.Controls.Add(this.lblCaptureCustomRegion);
@@ -1232,6 +1236,17 @@
             this.pCapture.Controls.Add(this.nudCaptureShadowOffset);
             resources.ApplyResources(this.pCapture, "pCapture");
             this.pCapture.Name = "pCapture";
+            // 
+            // txtCaptureCustomWindow
+            // 
+            resources.ApplyResources(this.txtCaptureCustomWindow, "txtCaptureCustomWindow");
+            this.txtCaptureCustomWindow.Name = "txtCaptureCustomWindow";
+            this.txtCaptureCustomWindow.TextChanged += new System.EventHandler(this.txtCaptureCustomWindow_TextChanged);
+            // 
+            // lblCaptureCustomWindow
+            // 
+            resources.ApplyResources(this.lblCaptureCustomWindow, "lblCaptureCustomWindow");
+            this.lblCaptureCustomWindow.Name = "lblCaptureCustomWindow";
             // 
             // lblScreenshotDelay
             // 
@@ -2983,5 +2998,7 @@
         private System.Windows.Forms.CheckBox cbRegionCaptureActiveMonitorMode;
         private System.Windows.Forms.Button btnCaptureOCRHelp;
         private System.Windows.Forms.CheckBox cbUseRandomImageEffect;
+        private System.Windows.Forms.Label lblCaptureCustomWindow;
+        private System.Windows.Forms.TextBox txtCaptureCustomWindow;
     }
 }

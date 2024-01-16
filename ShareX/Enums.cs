@@ -205,6 +205,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         ActiveWindow,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
+        CustomWindow,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         ActiveMonitor,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         RectangleRegion,

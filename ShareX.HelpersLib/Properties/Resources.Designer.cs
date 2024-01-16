@@ -1381,6 +1381,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Capture pre configured window.
+        /// </summary>
+        internal static string HotkeyType_CustomWindow {
+            get {
+                return ResourceManager.GetString("HotkeyType_CustomWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disable/Enable hotkeys.
         /// </summary>
         internal static string HotkeyType_DisableHotkeys {
