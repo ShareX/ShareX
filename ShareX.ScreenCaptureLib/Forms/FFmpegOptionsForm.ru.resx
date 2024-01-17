@@ -124,7 +124,7 @@
     <value>В буфер</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Установить устройства записи</value>
+    <value>Установить устройства...</value>
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>Обновить</value>
@@ -133,7 +133,7 @@
     <value>Тест в консоли</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Пользовательские команды</value>
+    <value>Использовать команды:</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
     <value>По умолчанию sierra2_4a.</value>
@@ -189,7 +189,7 @@
     <value>Качество:</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
-    <value>Переменный битрейт:</value>
+    <value>Bitrate:</value>
   </data>
   <data name="lblXvidQscale.Text" xml:space="preserve">
     <value>Переменный битрейт:</value>
@@ -256,5 +256,23 @@
   </data>
   <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
     <value>Пользовательский путь к FFmpeg:</value>
+  </data>
+  <data name="lblAACBitrate.Text" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
+  <data name="lblAMFBitrate.Text" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
+  <data name="lblOpusBitrate.Text" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Сбросить настройки...</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>Энкодер звука:</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Энкодер видео:</value>
   </data>
 </root>

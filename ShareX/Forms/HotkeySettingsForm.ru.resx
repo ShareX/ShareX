@@ -124,7 +124,7 @@
     <value>Добавить...</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Дублировать</value>
+    <value>Копировать</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Изменить...</value>

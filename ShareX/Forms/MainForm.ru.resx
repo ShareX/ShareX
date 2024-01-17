@@ -762,4 +762,16 @@
   <data name="tsmiBeautifyImage.Text" xml:space="preserve">
     <value>Украсить изображение...</value>
   </data>
+  <data name="tsmiTrayHashChecker.Text" xml:space="preserve">
+    <value>Проверка хеша...</value>
+  </data>
+  <data name="tsmiHashChecker.Text" xml:space="preserve">
+    <value>Проверка хеша...</value>
+  </data>
+  <data name="cDescription.HeaderText" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>Клавиши</value>
+  </data>
 </root>

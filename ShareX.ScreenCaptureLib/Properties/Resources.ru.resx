@@ -483,4 +483,18 @@
   <data name="CutOutEffectSize" xml:space="preserve">
     <value>Размер эффекта:</value>
   </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>Хотите сбросить настройки?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>Есть несохраненные изменения.
+
+Хотите сохранить изменения перед тем, как закрыть редактор?</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>Повторить</value>
+  </data>
 </root>
