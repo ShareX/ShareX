@@ -1844,6 +1844,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
@@ -2002,6 +2003,9 @@
     <EmbeddedResource Include="Tools\OCR\ServiceLinksForm.zh-CN.resx">
       <DependentUpon>ServiceLinksForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenForm.ru.resx">
+      <DependentUpon>PinToScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenForm.zh-TW.resx">
       <DependentUpon>PinToScreenForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2009,6 +2013,9 @@
       <DependentUpon>PinToScreenOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenOptionsForm.resx">
+      <DependentUpon>PinToScreenOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PinToScreen\PinToScreenOptionsForm.ru.resx">
       <DependentUpon>PinToScreenOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\PinToScreen\PinToScreenOptionsForm.zh-TW.resx">

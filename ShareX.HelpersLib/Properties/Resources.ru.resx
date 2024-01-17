@@ -1240,4 +1240,10 @@
   <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
     <value>Украсить изображение</value>
   </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>Захват подготовленного окна</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Проверить</value>
+  </data>
 </root>

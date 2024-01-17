@@ -148,6 +148,9 @@
     <EmbeddedResource Include="Forms\ImageBeautifierForm.resx">
       <DependentUpon>ImageBeautifierForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageBeautifierForm.ru.resx">
+      <DependentUpon>ImageBeautifierForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageCombinerForm.de.resx">
       <DependentUpon>ImageCombinerForm.cs</DependentUpon>
     </EmbeddedResource>

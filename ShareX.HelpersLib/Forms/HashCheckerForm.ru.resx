@@ -124,7 +124,7 @@
     <value>Обзор...</value>
   </data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>Старт</value>
+    <value>Проверить</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Тип хеша:</value>
