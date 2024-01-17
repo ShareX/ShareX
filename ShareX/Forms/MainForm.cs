@@ -343,6 +343,11 @@ namespace ShareX
                 DebugHelper.WriteLine("WatchFolderManager started.");
 
                 UpdateWorkflowsMenu();
+
+                if (pHotkeys.Visible)
+                {
+                    pHotkeys.Focus();
+                }
             });
         }
 
