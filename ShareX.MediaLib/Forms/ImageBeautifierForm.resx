@@ -117,10 +117,1087 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblMargin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblMargin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 17</value>
+  </data>
+  <data name="lblMargin.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>Margin:</value>
+  </data>
+  <data name="&gt;&gt;lblMargin.Name" xml:space="preserve">
+    <value>lblMargin</value>
+  </data>
+  <data name="&gt;&gt;lblMargin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMargin.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;lblMargin.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="tbMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="tbMargin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tbMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 45</value>
+  </data>
+  <data name="tbMargin.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tbMargin.Name" xml:space="preserve">
+    <value>tbMargin</value>
+  </data>
+  <data name="&gt;&gt;tbMargin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbMargin.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;tbMargin.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lblPadding.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPadding.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 88</value>
+  </data>
+  <data name="lblPadding.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblPadding.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 17</value>
+  </data>
+  <data name="lblPadding.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblPadding.Text" xml:space="preserve">
+    <value>Padding:</value>
+  </data>
+  <data name="&gt;&gt;lblPadding.Name" xml:space="preserve">
+    <value>lblPadding</value>
+  </data>
+  <data name="&gt;&gt;lblPadding.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPadding.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;lblPadding.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="tbPadding.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 112</value>
+  </data>
+  <data name="tbPadding.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tbPadding.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 45</value>
+  </data>
+  <data name="tbPadding.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbPadding.Name" xml:space="preserve">
+    <value>tbPadding</value>
+  </data>
+  <data name="&gt;&gt;tbPadding.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbPadding.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;tbPadding.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="cbSmartPadding.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbSmartPadding.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 160</value>
+  </data>
+  <data name="cbSmartPadding.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="cbSmartPadding.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 21</value>
+  </data>
+  <data name="cbSmartPadding.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cbSmartPadding.Text" xml:space="preserve">
+    <value>Smart padding</value>
+  </data>
+  <data name="&gt;&gt;cbSmartPadding.Name" xml:space="preserve">
+    <value>cbSmartPadding</value>
+  </data>
+  <data name="&gt;&gt;cbSmartPadding.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbSmartPadding.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;cbSmartPadding.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="lblRoundedCorner.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRoundedCorner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 192</value>
+  </data>
+  <data name="lblRoundedCorner.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblRoundedCorner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="lblRoundedCorner.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblRoundedCorner.Text" xml:space="preserve">
+    <value>Rounded corner:</value>
+  </data>
+  <data name="&gt;&gt;lblRoundedCorner.Name" xml:space="preserve">
+    <value>lblRoundedCorner</value>
+  </data>
+  <data name="&gt;&gt;lblRoundedCorner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRoundedCorner.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;lblRoundedCorner.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="tbRoundedCorner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 216</value>
+  </data>
+  <data name="tbRoundedCorner.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tbRoundedCorner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 45</value>
+  </data>
+  <data name="tbRoundedCorner.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;tbRoundedCorner.Name" xml:space="preserve">
+    <value>tbRoundedCorner</value>
+  </data>
+  <data name="&gt;&gt;tbRoundedCorner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbRoundedCorner.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;tbRoundedCorner.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="lblShadowRadius.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblShadowRadius.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 32</value>
+  </data>
+  <data name="lblShadowRadius.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblShadowRadius.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 17</value>
+  </data>
+  <data name="lblShadowRadius.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblShadowRadius.Text" xml:space="preserve">
+    <value>Radius:</value>
+  </data>
+  <data name="&gt;&gt;lblShadowRadius.Name" xml:space="preserve">
+    <value>lblShadowRadius</value>
+  </data>
+  <data name="&gt;&gt;lblShadowRadius.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblShadowRadius.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;lblShadowRadius.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tbShadowRadius.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tbShadowRadius.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 56</value>
+  </data>
+  <data name="tbShadowRadius.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="tbShadowRadius.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 32</value>
+  </data>
+  <data name="tbShadowRadius.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;tbShadowRadius.Name" xml:space="preserve">
+    <value>tbShadowRadius</value>
+  </data>
+  <data name="&gt;&gt;tbShadowRadius.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbShadowRadius.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;tbShadowRadius.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblBackground.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBackground.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 384</value>
+  </data>
+  <data name="lblBackground.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblBackground.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 17</value>
+  </data>
+  <data name="lblBackground.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblBackground.Text" xml:space="preserve">
+    <value>Background:</value>
+  </data>
+  <data name="&gt;&gt;lblBackground.Name" xml:space="preserve">
+    <value>lblBackground</value>
+  </data>
+  <data name="&gt;&gt;lblBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBackground.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;lblBackground.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="lblMarginValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 16</value>
+  </data>
+  <data name="lblMarginValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblMarginValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 24</value>
+  </data>
+  <data name="lblMarginValue.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblMarginValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblMarginValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblMarginValue.Name" xml:space="preserve">
+    <value>lblMarginValue</value>
+  </data>
+  <data name="&gt;&gt;lblMarginValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMarginValue.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;lblMarginValue.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="lblPaddingValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 88</value>
+  </data>
+  <data name="lblPaddingValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblPaddingValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 24</value>
+  </data>
+  <data name="lblPaddingValue.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblPaddingValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblPaddingValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblPaddingValue.Name" xml:space="preserve">
+    <value>lblPaddingValue</value>
+  </data>
+  <data name="&gt;&gt;lblPaddingValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPaddingValue.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;lblPaddingValue.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="lblRoundedCornerValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 192</value>
+  </data>
+  <data name="lblRoundedCornerValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblRoundedCornerValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 24</value>
+  </data>
+  <data name="lblRoundedCornerValue.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblRoundedCornerValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRoundedCornerValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblRoundedCornerValue.Name" xml:space="preserve">
+    <value>lblRoundedCornerValue</value>
+  </data>
+  <data name="&gt;&gt;lblRoundedCornerValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRoundedCornerValue.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;lblRoundedCornerValue.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="lblShadowRadiusValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 32</value>
+  </data>
+  <data name="lblShadowRadiusValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblShadowRadiusValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 24</value>
+  </data>
+  <data name="lblShadowRadiusValue.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblShadowRadiusValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowRadiusValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblShadowRadiusValue.Name" xml:space="preserve">
+    <value>lblShadowRadiusValue</value>
+  </data>
+  <data name="&gt;&gt;lblShadowRadiusValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblShadowRadiusValue.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;lblShadowRadiusValue.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tlpMain.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="pbPreview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pbPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>335, 0</value>
+  </data>
+  <data name="pbPreview.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1049, 761</value>
+  </data>
+  <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pbPreview.Name" xml:space="preserve">
+    <value>pbPreview</value>
+  </data>
+  <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;pbPreview.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnShadowExpand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 260</value>
+  </data>
+  <data name="btnShadowExpand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="btnShadowExpand.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;btnShadowExpand.Name" xml:space="preserve">
+    <value>btnShadowExpand</value>
+  </data>
+  <data name="&gt;&gt;btnShadowExpand.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnShadowExpand.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;btnShadowExpand.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowAngleValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 248</value>
+  </data>
+  <data name="lblShadowAngleValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblShadowAngleValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 24</value>
+  </data>
+  <data name="lblShadowAngleValue.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblShadowAngleValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowAngleValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblShadowAngleValue.Name" xml:space="preserve">
+    <value>lblShadowAngleValue</value>
+  </data>
+  <data name="&gt;&gt;lblShadowAngleValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblShadowAngleValue.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;lblShadowAngleValue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowDistanceValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 176</value>
+  </data>
+  <data name="lblShadowDistanceValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblShadowDistanceValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 24</value>
+  </data>
+  <data name="lblShadowDistanceValue.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblShadowDistanceValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowDistanceValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblShadowDistanceValue.Name" xml:space="preserve">
+    <value>lblShadowDistanceValue</value>
+  </data>
+  <data name="&gt;&gt;lblShadowDistanceValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblShadowDistanceValue.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;lblShadowDistanceValue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblShadowOpacityValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 104</value>
+  </data>
+  <data name="lblShadowOpacityValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblShadowOpacityValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 24</value>
+  </data>
+  <data name="lblShadowOpacityValue.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblShadowOpacityValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowOpacityValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblShadowOpacityValue.Name" xml:space="preserve">
+    <value>lblShadowOpacityValue</value>
+  </data>
+  <data name="&gt;&gt;lblShadowOpacityValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblShadowOpacityValue.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;lblShadowOpacityValue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnShadowColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 320</value>
+  </data>
+  <data name="btnShadowColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 32</value>
+  </data>
+  <data name="btnShadowColor.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnShadowColor.Text" xml:space="preserve">
+    <value>Color...</value>
+  </data>
+  <data name="btnShadowColor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnShadowColor.Name" xml:space="preserve">
+    <value>btnShadowColor</value>
+  </data>
+  <data name="&gt;&gt;btnShadowColor.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnShadowColor.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;btnShadowColor.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbShadowAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 272</value>
+  </data>
+  <data name="tbShadowAngle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 45</value>
+  </data>
+  <data name="tbShadowAngle.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tbShadowAngle.Name" xml:space="preserve">
+    <value>tbShadowAngle</value>
+  </data>
+  <data name="&gt;&gt;tbShadowAngle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbShadowAngle.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;tbShadowAngle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblShadowAngle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblShadowAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 248</value>
+  </data>
+  <data name="lblShadowAngle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 17</value>
+  </data>
+  <data name="lblShadowAngle.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblShadowAngle.Text" xml:space="preserve">
+    <value>Angle:</value>
+  </data>
+  <data name="&gt;&gt;lblShadowAngle.Name" xml:space="preserve">
+    <value>lblShadowAngle</value>
+  </data>
+  <data name="&gt;&gt;lblShadowAngle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblShadowAngle.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;lblShadowAngle.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tbShadowDistance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 200</value>
+  </data>
+  <data name="tbShadowDistance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 45</value>
+  </data>
+  <data name="tbShadowDistance.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbShadowDistance.Name" xml:space="preserve">
+    <value>tbShadowDistance</value>
+  </data>
+  <data name="&gt;&gt;tbShadowDistance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbShadowDistance.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;tbShadowDistance.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblShadowOpacity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblShadowOpacity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 104</value>
+  </data>
+  <data name="lblShadowOpacity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 17</value>
+  </data>
+  <data name="lblShadowOpacity.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblShadowOpacity.Text" xml:space="preserve">
+    <value>Opacity:</value>
+  </data>
+  <data name="&gt;&gt;lblShadowOpacity.Name" xml:space="preserve">
+    <value>lblShadowOpacity</value>
+  </data>
+  <data name="&gt;&gt;lblShadowOpacity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblShadowOpacity.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;lblShadowOpacity.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblShadowDistance.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblShadowDistance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 176</value>
+  </data>
+  <data name="lblShadowDistance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 17</value>
+  </data>
+  <data name="lblShadowDistance.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblShadowDistance.Text" xml:space="preserve">
+    <value>Distance:</value>
+  </data>
+  <data name="&gt;&gt;lblShadowDistance.Name" xml:space="preserve">
+    <value>lblShadowDistance</value>
+  </data>
+  <data name="&gt;&gt;lblShadowDistance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblShadowDistance.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;lblShadowDistance.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="tbShadowOpacity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 128</value>
+  </data>
+  <data name="tbShadowOpacity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 45</value>
+  </data>
+  <data name="tbShadowOpacity.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tbShadowOpacity.Name" xml:space="preserve">
+    <value>tbShadowOpacity</value>
+  </data>
+  <data name="&gt;&gt;tbShadowOpacity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbShadowOpacity.Parent" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;tbShadowOpacity.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="gbShadow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 264</value>
+  </data>
+  <data name="gbShadow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 104</value>
+  </data>
+  <data name="gbShadow.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="gbShadow.Text" xml:space="preserve">
+    <value>Shadow</value>
+  </data>
+  <data name="&gt;&gt;gbShadow.Name" xml:space="preserve">
+    <value>gbShadow</value>
+  </data>
+  <data name="&gt;&gt;gbShadow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbShadow.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;gbShadow.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnResetOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnResetOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 656</value>
+  </data>
+  <data name="btnResetOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 32</value>
+  </data>
+  <data name="btnResetOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Reset options...</value>
+  </data>
+  <data name="&gt;&gt;btnResetOptions.Name" xml:space="preserve">
+    <value>btnResetOptions</value>
+  </data>
+  <data name="&gt;&gt;btnResetOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnResetOptions.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;btnResetOptions.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblBackgroundImageFilePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 480</value>
+  </data>
+  <data name="lblBackgroundImageFilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 120</value>
+  </data>
+  <data name="lblBackgroundImageFilePath.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;lblBackgroundImageFilePath.Name" xml:space="preserve">
+    <value>lblBackgroundImageFilePath</value>
+  </data>
+  <data name="&gt;&gt;lblBackgroundImageFilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBackgroundImageFilePath.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;lblBackgroundImageFilePath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnBackgroundImageFilePathBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 440</value>
+  </data>
+  <data name="btnBackgroundImageFilePathBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 32</value>
+  </data>
+  <data name="btnBackgroundImageFilePathBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="btnBackgroundImageFilePathBrowse.Text" xml:space="preserve">
+    <value>Browse image file...</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundImageFilePathBrowse.Name" xml:space="preserve">
+    <value>btnBackgroundImageFilePathBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundImageFilePathBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundImageFilePathBrowse.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;btnBackgroundImageFilePathBrowse.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbBackgroundType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 408</value>
+  </data>
+  <data name="cbBackgroundType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 25</value>
+  </data>
+  <data name="cbBackgroundType.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;cbBackgroundType.Name" xml:space="preserve">
+    <value>cbBackgroundType</value>
+  </data>
+  <data name="&gt;&gt;cbBackgroundType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbBackgroundType.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;cbBackgroundType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnPrint.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnPrint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 696</value>
+  </data>
+  <data name="btnPrint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 48</value>
+  </data>
+  <data name="btnPrint.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
   <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <data name="btnPrint.ToolTip" xml:space="preserve">
+    <value>Print...</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.Name" xml:space="preserve">
+    <value>btnPrint</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 696</value>
+  </data>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 48</value>
+  </data>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="btnSave.ToolTip" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnUpload.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 696</value>
+  </data>
+  <data name="btnUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 48</value>
+  </data>
+  <data name="btnUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btnUpload.ToolTip" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="&gt;&gt;btnUpload.Name" xml:space="preserve">
+    <value>btnUpload</value>
+  </data>
+  <data name="&gt;&gt;btnUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUpload.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;btnUpload.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnSaveAs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnSaveAs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 696</value>
+  </data>
+  <data name="btnSaveAs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 48</value>
+  </data>
+  <data name="btnSaveAs.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="btnSaveAs.ToolTip" xml:space="preserve">
+    <value>Save as...</value>
+  </data>
+  <data name="&gt;&gt;btnSaveAs.Name" xml:space="preserve">
+    <value>btnSaveAs</value>
+  </data>
+  <data name="&gt;&gt;btnSaveAs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSaveAs.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;btnSaveAs.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 696</value>
+  </data>
+  <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 48</value>
+  </data>
+  <data name="btnCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btnCopy.ToolTip" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Name" xml:space="preserve">
+    <value>btnCopy</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="pbBackground.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 440</value>
+  </data>
+  <data name="pbBackground.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 40</value>
+  </data>
+  <data name="pbBackground.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;pbBackground.Name" xml:space="preserve">
+    <value>pbBackground</value>
+  </data>
+  <data name="&gt;&gt;pbBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbBackground.Parent" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;pbBackground.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="pOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 755</value>
+  </data>
+  <data name="pOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pOptions.Name" xml:space="preserve">
+    <value>pOptions</value>
+  </data>
+  <data name="&gt;&gt;pOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pOptions.Parent" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;pOptions.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlpMain.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1384, 761</value>
+  </data>
+  <data name="tlpMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Name" xml:space="preserve">
+    <value>tlpMain</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlpMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpMain.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pbPreview" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pOptions" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,335,Percent,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>58</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 17</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1384, 761</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1000, 700</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Image beautifier</value>
+  </data>
+  <data name="&gt;&gt;ttMain.Name" xml:space="preserve">
+    <value>ttMain</value>
+  </data>
+  <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ImageBeautifierForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
