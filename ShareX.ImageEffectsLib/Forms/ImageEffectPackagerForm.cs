@@ -46,7 +46,7 @@ namespace ShareX.ImageEffectsLib
             ShareXImageEffectsFolderPath = imageEffectsFolderPath;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             AssetsFolderPath = Path.Combine(ShareXImageEffectsFolderPath, ImageEffectName);
             txtAssetsFolderPath.Text = AssetsFolderPath;

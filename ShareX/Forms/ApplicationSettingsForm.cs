@@ -42,7 +42,7 @@ namespace ShareX
         public ApplicationSettingsForm()
         {
             InitializeControls();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)

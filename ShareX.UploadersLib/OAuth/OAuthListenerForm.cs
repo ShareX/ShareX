@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
         public OAuthListenerForm(IOAuth2Loopback oauth)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             OAuth = oauth;
         }

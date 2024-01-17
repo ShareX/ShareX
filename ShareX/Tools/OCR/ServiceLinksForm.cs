@@ -37,7 +37,7 @@ namespace ShareX
         public ServiceLinksForm(List<ServiceLink> serviceLinks)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             ServiceLinks = serviceLinks;
 

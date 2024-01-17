@@ -36,7 +36,7 @@ namespace ShareX
         public BorderlessWindowSettingsForm(BorderlessWindowSettings settings)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             Settings = settings;
             cbRememberWindowTitle.Checked = Settings.RememberWindowTitle;

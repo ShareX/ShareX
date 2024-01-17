@@ -47,7 +47,7 @@ namespace ShareX.ScreenCaptureLib
         public ScrollingCaptureRegionForm(Rectangle regionRectangle)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, false, false);
 
             borderRectangle = regionRectangle.Offset(1);
             borderRectangle0Based = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
