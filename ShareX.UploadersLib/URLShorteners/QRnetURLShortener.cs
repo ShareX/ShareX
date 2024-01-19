@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public sealed class QRnetURLShortener : URLShortener
     {
-        private const string API_ENDPOINT = "http://qr.net/api/short";
+        private const string API_ENDPOINT = "https://qr.net/api/short";
 
         public override UploadResult ShortenURL(string url)
         {

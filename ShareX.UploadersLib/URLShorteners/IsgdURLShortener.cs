@@ -42,7 +42,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public class IsgdURLShortener : URLShortener
     {
-        protected virtual string APIURL { get { return "http://is.gd/create.php"; } }
+        protected virtual string APIURL { get { return "https://is.gd/create.php"; } }
 
         public override UploadResult ShortenURL(string url)
         {

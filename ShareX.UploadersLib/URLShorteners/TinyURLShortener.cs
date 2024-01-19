@@ -50,7 +50,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("url", url);
 
-                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://tinyurl.com/api-create.php", arguments);
+                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "https://tinyurl.com/api-create.php", arguments);
             }
 
             return result;

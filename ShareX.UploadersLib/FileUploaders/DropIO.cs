@@ -67,12 +67,12 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("token", drop.AdminToken);
             args.Add("drop_name", drop.Name);
 
-            UploadResult result = SendRequestFile("http://assets.drop.io/upload", stream, fileName, "file", args);
+            UploadResult result = SendRequestFile("https://assets.drop.io/upload", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
                 Asset asset = ParseAsset(result.Response);
-                result.URL = string.Format("http://drop.io/{0}/asset/{1}", drop.Name, asset.Name);
+                result.URL = string.Format("https://drop.io/{0}/asset/{1}", drop.Name, asset.Name);
             }
 
             return result;
@@ -110,7 +110,7 @@ namespace ShareX.UploadersLib.FileUploaders
             // determines whether guests can delete assets
             args.Add("guests_can_delete", guests_can_delete.ToString());
 
-            string response = SendRequestMultiPart("http://api.drop.io/drops", args);
+            string response = SendRequestMultiPart("https://api.drop.io/drops", args);
 
             XDocument doc = XDocument.Parse(response);
             XElement root = doc.Element("drop");

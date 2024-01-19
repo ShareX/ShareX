@@ -253,7 +253,7 @@ namespace ShareX.UploadersLib
 
         #region Jira
 
-        public string JiraHost { get; set; } = "http://";
+        public string JiraHost { get; set; } = "https://";
         public string JiraIssuePrefix { get; set; } = "PROJECT-";
         public OAuthInfo JiraOAuthInfo { get; set; } = null;
 
@@ -431,7 +431,7 @@ namespace ShareX.UploadersLib
 
         #region yourls.org
 
-        public string YourlsAPIURL { get; set; } = "http://yoursite.com/yourls-api.php";
+        public string YourlsAPIURL { get; set; } = "https://yoursite.com/yourls-api.php";
         [JsonEncrypt]
         public string YourlsSignature { get; set; } = "";
         public string YourlsUsername { get; set; } = "";

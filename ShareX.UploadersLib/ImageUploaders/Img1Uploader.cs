@@ -29,7 +29,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 {
     public sealed class Img1Uploader : ImageUploader
     {
-        private const string uploadURL = "http://img1.us/?app";
+        private const string uploadURL = "https://img1.us/?app";
 
         public override UploadResult Upload(Stream stream, string fileName)
         {

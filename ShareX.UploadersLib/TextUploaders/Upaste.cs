@@ -53,7 +53,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
     public sealed class Upaste : TextUploader
     {
-        private const string APIURL = "http://upaste.me/api";
+        private const string APIURL = "https://upaste.me/api";
 
         public string UserKey { get; private set; }
         public bool IsPublic { get; set; }

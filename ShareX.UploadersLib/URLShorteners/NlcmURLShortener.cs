@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("url", url);
 
-                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://nl.cm/api/", arguments);
+                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "https://nl.cm/api/", arguments);
             }
 
             return result;

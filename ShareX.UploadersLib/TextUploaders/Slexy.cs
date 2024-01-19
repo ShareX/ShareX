@@ -47,7 +47,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
     public sealed class Slexy : TextUploader
     {
-        private const string APIURL = "http://slexy.org/index.php/submit";
+        private const string APIURL = "https://slexy.org/index.php/submit";
 
         private SlexySettings settings;
 

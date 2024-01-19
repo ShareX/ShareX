@@ -29,6 +29,6 @@ namespace ShareX.UploadersLib.SharingServices
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.Pinterest;
 
-        protected override string URLFormatString { get; } = "http://pinterest.com/pin/create/button/?url={0}&media={0}";
+        protected override string URLFormatString { get; } = "https://pinterest.com/pin/create/button/?url={0}&media={0}";
     }
 }
