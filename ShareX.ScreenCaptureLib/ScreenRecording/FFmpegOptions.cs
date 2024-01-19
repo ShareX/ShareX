@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -136,5 +137,23 @@ namespace ShareX.ScreenCaptureLib
         public bool IsAnimatedImage => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp || VideoCodec == FFmpegVideoCodec.apng;
 
         public bool IsEvenSizeRequired => !IsAnimatedImage;
+
+        // TEMP: For backward compatibility
+        public void FixSources()
+        {
+            if (VideoSource.Equals("None", StringComparison.OrdinalIgnoreCase))
+            {
+                VideoSource = FFmpegCaptureDevice.None.Value;
+            }
+            else if (VideoSource.Equals("GDI grab", StringComparison.OrdinalIgnoreCase))
+            {
+                VideoSource = FFmpegCaptureDevice.GDIGrab.Value;
+            }
+
+            if (AudioSource.Equals("None", StringComparison.OrdinalIgnoreCase))
+            {
+                AudioSource = FFmpegCaptureDevice.None.Value;
+            }
+        }
     }
 }
