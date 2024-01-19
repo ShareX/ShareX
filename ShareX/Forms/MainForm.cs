@@ -825,36 +825,26 @@ namespace ShareX
                 dgvHotkeys.BackgroundColor = SystemColors.Window;
             }
 
-            if (ShareXResources.IsDarkTheme)
-            {
-                tsmiQRCode.Image = Resources.barcode_2d_white;
-                tsmiTrayQRCode.Image = Resources.barcode_2d_white;
-                tsmiShowQRCode.Image = Resources.barcode_2d_white;
-                tsmiOCR.Image = Resources.edit_drop_cap_white;
-                tsmiTrayOCR.Image = Resources.edit_drop_cap_white;
-                tsmiOCRImage.Image = Resources.edit_drop_cap_white;
-                tsmiShortenURL.Image = Resources.edit_scale_white;
-                tsmiTrayShortenURL.Image = Resources.edit_scale_white;
-                tsmiURLShorteners.Image = Resources.edit_scale_white;
-                tsmiTrayURLShorteners.Image = Resources.edit_scale_white;
-                tsmiTestURLShortener.Image = Resources.edit_scale_white;
-                tsmiShortenSelectedURL.Image = Resources.edit_scale_white;
-            }
-            else
-            {
-                tsmiQRCode.Image = Resources.barcode_2d;
-                tsmiTrayQRCode.Image = Resources.barcode_2d;
-                tsmiShowQRCode.Image = Resources.barcode_2d;
-                tsmiOCR.Image = Resources.edit_drop_cap;
-                tsmiTrayOCR.Image = Resources.edit_drop_cap;
-                tsmiOCRImage.Image = Resources.edit_drop_cap;
-                tsmiShortenURL.Image = Resources.edit_scale;
-                tsmiTrayShortenURL.Image = Resources.edit_scale;
-                tsmiURLShorteners.Image = Resources.edit_scale;
-                tsmiTrayURLShorteners.Image = Resources.edit_scale;
-                tsmiTestURLShortener.Image = Resources.edit_scale;
-                tsmiShortenSelectedURL.Image = Resources.edit_scale;
-            }
+            tsmiTweetMessage.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
+            tsmiTrayTweetMessage.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
+            tsbX.Image = TaskHelpers.FindMenuIcon(HotkeyType.TweetMessage);
+
+            tsbDiscord.Image = ShareXResources.IsDarkTheme ? Resources.Discord_white : Resources.Discord_black;
+
+            tsmiQRCode.Image = TaskHelpers.FindMenuIcon(HotkeyType.QRCode);
+            tsmiTrayQRCode.Image = TaskHelpers.FindMenuIcon(HotkeyType.QRCode);
+            tsmiShowQRCode.Image = TaskHelpers.FindMenuIcon(HotkeyType.QRCode);
+
+            tsmiOCR.Image = TaskHelpers.FindMenuIcon(HotkeyType.OCR);
+            tsmiTrayOCR.Image = TaskHelpers.FindMenuIcon(HotkeyType.OCR);
+            tsmiOCRImage.Image = TaskHelpers.FindMenuIcon(HotkeyType.OCR);
+
+            tsmiShortenURL.Image = TaskHelpers.FindMenuIcon(HotkeyType.ShortenURL);
+            tsmiTrayShortenURL.Image = TaskHelpers.FindMenuIcon(HotkeyType.ShortenURL);
+            tsmiURLShorteners.Image = TaskHelpers.FindMenuIcon(HotkeyType.ShortenURL);
+            tsmiTrayURLShorteners.Image = TaskHelpers.FindMenuIcon(HotkeyType.ShortenURL);
+            tsmiTestURLShortener.Image = TaskHelpers.FindMenuIcon(HotkeyType.ShortenURL);
+            tsmiShortenSelectedURL.Image = TaskHelpers.FindMenuIcon(HotkeyType.ShortenURL);
 
             pbPreview.UpdateTheme();
             pbPreview.UpdateCheckers(true);
@@ -1934,9 +1924,9 @@ namespace ShareX
             URLHelpers.OpenURL(Links.Donate);
         }
 
-        private void tsbTwitter_Click(object sender, EventArgs e)
+        private void tsbX_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.Twitter);
+            URLHelpers.OpenURL(Links.XFollow);
         }
 
         private void tsbDiscord_Click(object sender, EventArgs e)

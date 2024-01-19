@@ -109,6 +109,11 @@
   <ItemGroup>
     <Compile Include="BalloonTipAction.cs" />
     <Compile Include="CaptureHelpers\CaptureCustomWindow.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Tools\BorderlessWindow\BorderlessWindowManager.cs" />
     <Compile Include="Tools\BorderlessWindow\BorderlessWindowSettings.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
@@ -353,11 +358,6 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TaskMetadata.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="LanguageHelper.cs" />
     <Compile Include="RecentTaskManager.cs" />
     <Compile Include="ShareXCLIManager.cs" />
@@ -1527,6 +1527,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.de.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.es-MX.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -2301,9 +2302,6 @@
     <None Include="Resources\application-search-result.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Twitter.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application-tile-horizontal.png" />
   </ItemGroup>
   <ItemGroup>
@@ -2313,17 +2311,10 @@
     <None Include="Resources\Bing.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Discord.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application-resize-full.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\camcorder--minus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GitHub.png" />
-    <None Include="Resources\GitHubDark.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images-flickr.png" />
@@ -2360,6 +2351,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\picture-sunset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Discord-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Discord-black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
