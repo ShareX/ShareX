@@ -41,4 +41,7 @@
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
   </ItemGroup>
   <PropertyGroup />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)ShareX\$(OutDir)&quot;" />
+  </Target>
 </Project>
