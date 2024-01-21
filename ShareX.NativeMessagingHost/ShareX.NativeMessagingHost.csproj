@@ -14,9 +14,6 @@
     <DebugType>none</DebugType>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Steam|AnyCPU'">
     <OutputPath>bin\Steam\</OutputPath>
     <Optimize>true</Optimize>
@@ -40,7 +37,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
   </ItemGroup>
-  <PropertyGroup />
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy /y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)ShareX\$(OutDir)&quot;" />
   </Target>

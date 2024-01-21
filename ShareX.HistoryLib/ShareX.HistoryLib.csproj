@@ -49,5 +49,4 @@
       <Version>13.8.2</Version>
     </PackageReference>
   </ItemGroup>
-  <PropertyGroup />
 </Project>

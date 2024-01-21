@@ -2,7 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
-    <StartupObject></StartupObject>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
@@ -55,126 +54,6 @@
   <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Update="Controls\ImageLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ObjectListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ReadOnlyRichTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\HotkeySelectionButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\LabeledComboBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\RoundedCornerPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripBorderRight.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripButtonCounter.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripButtonExtraImage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripEx.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripLabeledComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripNumericUpDown.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="NameParser\CodeMenu.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\DoubleLabeledNumericUpDown.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\LabeledNumericUpDown.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\LabelNoCopy.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripButtonColorAnimation.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripDoubleLabeledNumericUpDown.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripLabeledNumericUpDown.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ExportImportControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\TablessControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\TabToListView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\TabToTreeView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Colors\ColorBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Colors\ColorPicker.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Colors\ColorSlider.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Colors\ColorUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\BlackStyle\BlackStyleButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\BlackStyle\BlackStyleCheckBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\BlackStyle\BlackStyleLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\BlackStyle\BlackStyleProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\Canvas.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\ColorButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\MenuButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\NoFocusBorderButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="UpdateChecker\UpdateCheckerLabel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Controls\SplitContainerCustomSplitter.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\ToolStripRadioButtonMenuItem.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\MyListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\MyPictureBox.cs">
-      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
