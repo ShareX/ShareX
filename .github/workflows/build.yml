@@ -33,7 +33,7 @@ jobs:
 
     env:
       SOLUTION_FILE_PATH: ShareX.sln
-      ASSEMBLY_INFO_PATH: GlobalAssemblyInfo.cs
+      ASSEMBLY_INFO_PATH: Directory.build.props
 
     outputs:
       APP_VERSION: ${{ env.APP_VERSION }}
@@ -48,12 +48,12 @@ jobs:
       - name: Set APP_VERSION
         run: |
           $content = Get-Content "${{ env.ASSEMBLY_INFO_PATH }}" -Raw
-          $pattern = 'Version\("([0-9]+(?:\.[0-9]+){1,3})"\)'
+          $pattern = '<Version>([0-9]+(?:\.[0-9]+){1,3})</Version>'
           $match = [regex]::Match($content, $pattern)
           $version = $match.Groups[1].Value
           if ($env:GITHUB_REF -eq "refs/heads/develop") {
             $version = "$version.$env:GITHUB_RUN_NUMBER"
-            $content = [regex]::Replace($content, $pattern, "Version(`"$version`")")
+            $content = [regex]::Replace($content, $pattern, "<Version>$version</Version>")
             Set-Content -Path "${{ env.ASSEMBLY_INFO_PATH }}" -Value "$content" -NoNewline
           }
           echo $version
