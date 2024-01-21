@@ -116,7 +116,6 @@ begin
   else
     installDir := ExpandConstant('{userpf}\{#MyAppName}');
 
-  ForceDirectories(installDir);
   WizardForm.DirEdit.Text := installDir;
 
   Dependency_InitializeWizard;
