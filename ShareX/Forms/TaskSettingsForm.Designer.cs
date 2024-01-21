@@ -97,6 +97,8 @@
             this.cbDisableNotifications = new System.Windows.Forms.CheckBox();
             this.cbPlaySoundAfterCapture = new System.Windows.Forms.CheckBox();
             this.cbPlaySoundAfterUpload = new System.Windows.Forms.CheckBox();
+            this.nudSoundAfterUploadVolume = new System.Windows.Forms.NumericUpDown();
+            this.lblSoundAfterUploadVolume = new System.Windows.Forms.Label();
             this.tpImage = new System.Windows.Forms.TabPage();
             this.tcImage = new System.Windows.Forms.TabControl();
             this.tpQuality = new System.Windows.Forms.TabPage();
@@ -314,6 +316,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowFadeDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoundAfterUploadVolume)).BeginInit();
             this.tpImage.SuspendLayout();
             this.tcImage.SuspendLayout();
             this.tpQuality.SuspendLayout();
@@ -627,6 +630,8 @@
             this.tpNotifications.Controls.Add(this.cbDisableNotifications);
             this.tpNotifications.Controls.Add(this.cbPlaySoundAfterCapture);
             this.tpNotifications.Controls.Add(this.cbPlaySoundAfterUpload);
+            this.tpNotifications.Controls.Add(this.nudSoundAfterUploadVolume);
+            this.tpNotifications.Controls.Add(this.lblSoundAfterUploadVolume);
             resources.ApplyResources(this.tpNotifications, "tpNotifications");
             this.tpNotifications.Name = "tpNotifications";
             this.tpNotifications.UseVisualStyleBackColor = true;
@@ -905,7 +910,20 @@
             this.cbPlaySoundAfterUpload.Name = "cbPlaySoundAfterUpload";
             this.cbPlaySoundAfterUpload.UseVisualStyleBackColor = true;
             this.cbPlaySoundAfterUpload.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterUpload_CheckedChanged);
-            // 
+            //
+            // nudSoundAfterUploadVolume
+            //
+            resources.ApplyResources(this.nudSoundAfterUploadVolume, "nudSoundAfterUploadVolume");
+            this.nudSoundAfterUploadVolume.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
+            this.nudSoundAfterUploadVolume.Name = "nudSoundAfterUploadVolume";
+            this.nudSoundAfterUploadVolume.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            this.nudSoundAfterUploadVolume.ValueChanged += new System.EventHandler(this.nudSoundAfterUploadVolume_ValueChanged);
+            //
+            // lblSoundAfterUploadVolume
+            //
+            resources.ApplyResources(this.lblSoundAfterUploadVolume, "lblSoundAfterUploadVolume");
+            this.lblSoundAfterUploadVolume.Name = "lblSoundAfterUploadVolume";
+            //
             // tpImage
             // 
             this.tpImage.BackColor = System.Drawing.SystemColors.Window;
@@ -2652,6 +2670,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowFadeDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoundAfterUploadVolume)).EndInit();
             this.tpImage.ResumeLayout(false);
             this.tcImage.ResumeLayout(false);
             this.tpQuality.ResumeLayout(false);
@@ -2811,6 +2830,8 @@
         private System.Windows.Forms.TabPage tpGeneral;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterCapture;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterUpload;
+        private System.Windows.Forms.NumericUpDown nudSoundAfterUploadVolume;
+        private System.Windows.Forms.Label lblSoundAfterUploadVolume;
         private System.Windows.Forms.CheckBox cbOverrideGeneralSettings;
         private System.Windows.Forms.TabPage tpTools;
         private System.Windows.Forms.NumericUpDown nudScreenRecorderStartDelay;

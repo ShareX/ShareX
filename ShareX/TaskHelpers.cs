@@ -1562,13 +1562,35 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
+            var volume = taskSettings.GeneralSettings.SoundAfterUploadVolume;
+
             if (taskSettings.GeneralSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath))
             {
-                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath);
+                switch (volume)
+                {
+                    case var i when volume <= 0:
+                        return;
+                    case 100:
+                        Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath);
+                        break;
+                    default:
+                        Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath, volume / 100f);
+                        break;
+                }
             }
             else
             {
-                Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
+                switch (volume)
+                {
+                    case var i when volume <= 0:
+                        return;
+                    case 100:
+                        Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
+                        break;
+                    default:
+                        Helpers.PlaySoundAsync(Resources.TaskCompletedSound, volume / 100f);
+                        break;
+                }
             }
         }
 

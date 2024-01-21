@@ -190,7 +190,10 @@ namespace ShareX
             #region Notifications
 
             cbPlaySoundAfterCapture.Checked = TaskSettings.GeneralSettings.PlaySoundAfterCapture;
-            cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
+            nudSoundAfterUploadVolume.Enabled = cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
+            nudSoundAfterUploadVolume.SetValue(TaskSettings.GeneralSettings.SoundAfterUploadVolume);
+            nudSoundAfterUploadVolume.Maximum = 200;
+            nudSoundAfterUploadVolume.Minimum = 0;
             cbShowToastNotificationAfterTaskCompleted.Checked = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
             gbToastWindow.Enabled = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
             nudToastWindowDuration.SetValue((decimal)TaskSettings.GeneralSettings.ToastWindowDuration);
@@ -825,6 +828,12 @@ namespace ShareX
         private void cbPlaySoundAfterUpload_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.PlaySoundAfterUpload = cbPlaySoundAfterUpload.Checked;
+            nudSoundAfterUploadVolume.Enabled = cbPlaySoundAfterUpload.Checked;
+        }
+
+        private void nudSoundAfterUploadVolume_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.SoundAfterUploadVolume = (int)nudSoundAfterUploadVolume.Value;
         }
 
         private void cbShowToastNotificationAfterTaskCompleted_CheckedChanged(object sender, EventArgs e)

@@ -50,6 +50,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 using System.Xml;
+using ShareX.HelpersLib.Audio;
 
 namespace ShareX.HelpersLib
 {
@@ -423,6 +424,21 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void PlaySoundAsync(Stream stream, float factor)
+        {
+            if (stream != null)
+            {
+                Task.Run(() =>
+                {
+                    using (stream)
+                    using (SoundPlayer soundPlayer = new SoundPlayer(new Wav(stream).ChangeVolume(factor).ToStream()))
+                    {
+                        soundPlayer.PlaySync();
+                    }
+                });
+            }
+        }
+
         public static void PlaySoundAsync(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
@@ -430,6 +446,21 @@ namespace ShareX.HelpersLib
                 Task.Run(() =>
                 {
                     using (SoundPlayer soundPlayer = new SoundPlayer(filePath))
+                    {
+                        soundPlayer.PlaySync();
+                    }
+                });
+            }
+        }
+
+        public static void PlaySoundAsync(string filePath, float factor)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                Task.Run(() =>
+                {
+                    using (StreamReader reader = new StreamReader(filePath))
+                    using (SoundPlayer soundPlayer = new SoundPlayer(new Wav(reader.BaseStream).ChangeVolume(factor).ToStream()))
                     {
                         soundPlayer.PlaySync();
                     }
