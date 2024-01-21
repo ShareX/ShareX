@@ -4,6 +4,7 @@
     <Product>ShareX</Product>
     <Copyright>Copyright (c) 2007-2024 ShareX Team</Copyright>
     <Version>15.0.2</Version>
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
     <EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>

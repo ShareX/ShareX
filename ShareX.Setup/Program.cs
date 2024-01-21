@@ -87,8 +87,8 @@ namespace ShareX.Setup
         private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.zip");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam.zip");
-        private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.appx");
-        private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.appx");
+        private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}.msixbundle");
+        private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug.msixbundle");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
         private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
@@ -145,21 +145,21 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
             {
-                CreateFolder(BinDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreFolder);
+                CreateMicrosoftStoreFolder(SetupJobs.CreateMicrosoftStoreFolder);
 
                 if (Job.HasFlag(SetupJobs.CompileAppx))
                 {
-                    CompileAppx(MicrosoftStoreOutputDir, MicrosoftStoreAppxPath);
+                    CompileAppxBundle(MicrosoftStoreOutputDir, MicrosoftStoreAppxPath);
                 }
             }
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
             {
-                CreateFolder(BinDir, MicrosoftStoreDebugOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
+                CreateMicrosoftStoreFolder(SetupJobs.CreateMicrosoftStoreDebugFolder);
 
                 if (Job.HasFlag(SetupJobs.CompileAppx))
                 {
-                    CompileAppx(MicrosoftStoreDebugOutputDir, MicrosoftStoreDebugAppxPath);
+                    CompileAppxBundle(MicrosoftStoreDebugOutputDir, MicrosoftStoreDebugAppxPath);
                 }
             }
 
@@ -325,6 +325,46 @@ namespace ShareX.Setup
             Console.WriteLine("Appx file compiled: " + outputPackageName);
 
             CreateChecksumFile(outputPackageName);
+        }
+
+        private static void CompileAppxBundle(string contentDirectoryRoot, string outputPackageName)
+        {
+            string intermediateMsixDir = Path.Combine(MicrosoftStoreOutputDir, "msix");
+
+            CompileAppx(Path.Combine(contentDirectoryRoot, "x64"), Path.Combine(intermediateMsixDir, $"ShareX-{AppVersion}-x64.msix"));
+            CompileAppx(Path.Combine(contentDirectoryRoot, "arm64"), Path.Combine(intermediateMsixDir, $"ShareX-{AppVersion}-arm64.msix"));
+
+            using (Process process = new Process())
+            {
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = MakeAppxPath,
+                    Arguments = $"bundle /d \"{intermediateMsixDir}\" /p \"{outputPackageName}\" /o",
+                    UseShellExecute = false
+                };
+
+                process.StartInfo = psi;
+                process.Start();
+                process.WaitForExit();
+            }
+        }
+
+        private static void CreateMicrosoftStoreFolder(SetupJobs microsoftStoreJob)
+        {
+            string x64Destination = Path.Combine(MicrosoftStoreOutputDir, "x64");
+            CreateFolder(Path.Combine(BinDir, "win-x64"), x64Destination, microsoftStoreJob);
+            CopyAppxManifestWithReplacedArch(x64Destination, "x64");
+
+            string arm64Destination = Path.Combine(MicrosoftStoreOutputDir, "arm64");
+            CreateFolder(Path.Combine(BinDir, "win-arm64"), arm64Destination, microsoftStoreJob);
+            CopyAppxManifestWithReplacedArch(arm64Destination, "arm64");
+        }
+
+        private static void CopyAppxManifestWithReplacedArch(string destination, string architecture)
+        {
+            string manifest = File.ReadAllText(Path.Combine(MicrosoftStorePackageFilesDir, "AppxManifest.xml"));
+            string updatedManifest = manifest.Replace("{{Architecture}}", architecture);
+            File.WriteAllText(Path.Combine(destination, "AppxManifest.xml"), updatedManifest);
         }
 
         private static void CreateSteamFolder()

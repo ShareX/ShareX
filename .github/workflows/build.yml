@@ -28,8 +28,6 @@ jobs:
           - Steam
           - MicrosoftStore
           - MicrosoftStoreDebug
-        platform:
-          - Any CPU
 
     env:
       SOLUTION_FILE_PATH: ShareX.sln
@@ -69,11 +67,19 @@ jobs:
 
       - name: Restore NuGet packages
         working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: nuget restore "${{ env.SOLUTION_FILE_PATH }}" -Project2ProjectTimeOut 300
+        run: msbuild -t:Restore "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Build
+        if: matrix.configuration != 'MicrosoftStore' && matrix.configuration != 'MicrosoftStoreDebug'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: msbuild -m -p:Configuration="${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" "${{ env.SOLUTION_FILE_PATH }}"
+        run: msbuild -m -p:Configuration="${{ matrix.configuration }}" -p:Platform="Any CPU" "${{ env.SOLUTION_FILE_PATH }}"
+
+      - name: Build for Microsoft Store
+        if: matrix.configuration == 'MicrosoftStore' || matrix.configuration == 'MicrosoftStoreDebug'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+            msbuild -m -p:Configuration="${{ matrix.configuration }}" -p:RuntimeIdentifier=win-arm64 "${{ env.SOLUTION_FILE_PATH }}"
+            msbuild -m -p:Configuration="${{ matrix.configuration }}" -p:RuntimeIdentifier=win-x64 "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Setup
         working-directory: ${{ env.GITHUB_WORKSPACE }}
@@ -113,14 +119,14 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: MicrosoftStore
-          path: Output\ShareX-${{ env.APP_VERSION }}.appx
+          path: Output\ShareX-${{ env.APP_VERSION }}.msixbundle
 
       - name: Upload artifact (MicrosoftStoreDebug)
         if: matrix.configuration == 'MicrosoftStoreDebug'
         uses: actions/upload-artifact@v3
         with:
           name: MicrosoftStoreDebug
-          path: Output\ShareX-${{ env.APP_VERSION }}-debug.appx
+          path: Output\ShareX-${{ env.APP_VERSION }}-debug.msixbundle
 
   release:
     name: Release
