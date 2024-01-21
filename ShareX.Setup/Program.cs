@@ -64,11 +64,11 @@ namespace ShareX.Setup
         private static string Configuration;
         private static string AppVersion;
         private static string WindowsKitsDir;
+        private static string ExecutablePath;
 
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
-        private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
@@ -247,6 +247,15 @@ namespace ShareX.Setup
             else
             {
                 Configuration = "Release";
+            }
+
+            if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder) || Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
+            {
+                ExecutablePath = Path.Combine(Path.Combine(BinDir, "win-x64", "ShareX.exe"));
+            }
+            else
+            {
+                ExecutablePath = Path.Combine(Path.Combine(BinDir, "ShareX.exe"));
             }
 
             Console.WriteLine("Configuration: " + Configuration);
