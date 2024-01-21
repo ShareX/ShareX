@@ -2,7 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <OutputType>Exe</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -27,11 +26,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.IO.Compression" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\GlobalAssemblyInfo.cs">
-      <Link>Properties\GlobalAssemblyInfo.cs</Link>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />

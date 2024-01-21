@@ -3,9 +3,7 @@
     <TargetFramework>net48</TargetFramework>
     <OutputType>WinExe</OutputType>
     <AssemblyName>ShareX_NativeMessagingHost</AssemblyName>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -29,11 +27,6 @@
     <OutputPath>bin\MicrosoftStoreDebug\</OutputPath>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="..\GlobalAssemblyInfo.cs">
-      <Link>Properties\GlobalAssemblyInfo.cs</Link>
-    </Compile>
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
   </ItemGroup>
