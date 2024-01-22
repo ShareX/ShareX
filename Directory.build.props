@@ -15,11 +15,11 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'MicrosoftStore'">
-    <DefineConstants>$(DefineConstants);RELEASE;MICROSOFTSTORE</DefineConstants>
+    <DefineConstants>$(DefineConstants);MicrosoftStore</DefineConstants>
     <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'MicrosoftStoreDebug'">
-    <DefineConstants>$(DefineConstants);DEBUG;MICROSOFTSTORE</DefineConstants>
+    <DefineConstants>$(DefineConstants);DEBUG;MicrosoftStore</DefineConstants>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
   </PropertyGroup>
