@@ -145,7 +145,7 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
             {
-                CreateMicrosoftStoreFolder(SetupJobs.CreateMicrosoftStoreFolder);
+                CreateMicrosoftStoreFolder(MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreFolder);
 
                 if (Job.HasFlag(SetupJobs.CompileAppx))
                 {
@@ -155,7 +155,7 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
             {
-                CreateMicrosoftStoreFolder(SetupJobs.CreateMicrosoftStoreDebugFolder);
+                CreateMicrosoftStoreFolder(MicrosoftStoreDebugOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
 
                 if (Job.HasFlag(SetupJobs.CompileAppx))
                 {
@@ -338,7 +338,7 @@ namespace ShareX.Setup
 
         private static void CompileAppxBundle(string contentDirectoryRoot, string outputPackageName)
         {
-            string intermediateMsixDir = Path.Combine(MicrosoftStoreOutputDir, "msix");
+            string intermediateMsixDir = Path.Combine(contentDirectoryRoot, "msix");
 
             CompileAppx(Path.Combine(contentDirectoryRoot, "x64"), Path.Combine(intermediateMsixDir, $"ShareX-{AppVersion}-x64.msix"));
             CompileAppx(Path.Combine(contentDirectoryRoot, "arm64"), Path.Combine(intermediateMsixDir, $"ShareX-{AppVersion}-arm64.msix"));
@@ -358,13 +358,13 @@ namespace ShareX.Setup
             }
         }
 
-        private static void CreateMicrosoftStoreFolder(SetupJobs microsoftStoreJob)
+        private static void CreateMicrosoftStoreFolder(string outputDir, SetupJobs microsoftStoreJob)
         {
-            string x64Destination = Path.Combine(MicrosoftStoreOutputDir, "x64");
+            string x64Destination = Path.Combine(outputDir, "x64");
             CreateFolder(Path.Combine(BinDir, "win-x64"), x64Destination, microsoftStoreJob);
             CopyAppxManifestWithReplacedArch(x64Destination, "x64");
 
-            string arm64Destination = Path.Combine(MicrosoftStoreOutputDir, "arm64");
+            string arm64Destination = Path.Combine(outputDir, "arm64");
             CreateFolder(Path.Combine(BinDir, "win-arm64"), arm64Destination, microsoftStoreJob);
             CopyAppxManifestWithReplacedArch(arm64Destination, "arm64");
         }
