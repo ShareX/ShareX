@@ -105,8 +105,22 @@ Root: "HKLM"; Subkey: "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File E
 #include "CodeDependencies.iss"
 
 [Code]
-procedure InitializeWizard;
+function IsAdmin(): Boolean;
 begin
+  Result := (IsAdminLoggedOn or IsPowerUserLoggedOn);
+end;
+
+procedure InitializeWizard();
+var
+  installDir: String;
+begin
+  if IsAdmin() then
+    installDir := ExpandConstant('{pf}\{#MyAppName}')
+  else
+    installDir := ExpandConstant('{userpf}\{#MyAppName}');
+
+  WizardForm.DirEdit.Text := installDir;
+
   Dependency_InitializeWizard;
 end;
 
