@@ -102,21 +102,17 @@ Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\Share
 #include "CodeDependencies.iss"
 
 [Code]
-function IsAdmin(): Boolean;
+function IsAdmin: Boolean;
 begin
   Result := (IsAdminLoggedOn or IsPowerUserLoggedOn);
 end;
 
-procedure InitializeWizard();
-var
-  installDir: String;
+procedure InitializeWizard;
 begin
-  if IsAdmin() then
-    installDir := ExpandConstant('{pf}\{#MyAppName}')
-  else
-    installDir := ExpandConstant('{userpf}\{#MyAppName}');
-
-  WizardForm.DirEdit.Text := installDir;
+  if not IsAdmin then
+  begin
+    WizardForm.DirEdit.Text := ExpandConstant('{userpf}\{#MyAppName}');
+  end;
 
   Dependency_InitializeWizard;
 end;
