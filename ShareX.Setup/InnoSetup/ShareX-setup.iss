@@ -98,9 +98,9 @@ Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxcu"; Flags: dontcreatekey unins
 Root: "HKCU"; Subkey: "Software\Classes\.sxie"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxie"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\ShareXImageEditor"; Flags: dontcreatekey uninsdeletekey
-Root: "HKLM"; Subkey: "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ShareX.exe"; ValueType: dword; ValueName: "UseFilter"; ValueData: 1; Flags: uninsdeletekey; Check: IsARM64
-Root: "HKLM"; Subkey: "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ShareX.exe\ShareX"; ValueType: string; ValueName: "FilterFullPath"; ValueData: "{app}\{#MyAppFileName}"; Flags: uninsdeletekey; Check: IsARM64
-Root: "HKLM"; Subkey: "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ShareX.exe\ShareX"; ValueType: dword; ValueName: "PreferredMachine"; ValueData: 0xAA64; Flags: uninsdeletekey; Check: IsARM64
+Root: "HKLM"; Subkey: "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ShareX.exe"; ValueType: dword; ValueName: "UseFilter"; ValueData: 1; Flags: noerror uninsdeletekey; Check: IsARM64
+Root: "HKLM"; Subkey: "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ShareX.exe\ShareX"; ValueType: string; ValueName: "FilterFullPath"; ValueData: "{app}\{#MyAppFileName}"; Flags: noerror uninsdeletekey; Check: IsARM64
+Root: "HKLM"; Subkey: "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ShareX.exe\ShareX"; ValueType: dword; ValueName: "PreferredMachine"; ValueData: 0xAA64; Flags: noerror uninsdeletekey; Check: IsARM64
  
 #include "CodeDependencies.iss"
 
