@@ -38,9 +38,10 @@ namespace ShareX.HelpersLib
         public const string Actions = Website + "/actions";
         public const string Jaex = "https://github.com/Jaex";
         public const string McoreD = "https://github.com/McoreD";
-        public const string Steam = "http://store.steampowered.com/app/400040/";
+        public const string Steam = "https://store.steampowered.com/app/400040/ShareX/";
         public const string Discord = "https://discord.gg/ShareX";
-        public const string Twitter = "https://twitter.com/ShareX";
+        public const string X = "https://twitter.com/ShareX";
+        public const string XFollow = "https://twitter.com/intent/follow?screen_name=ShareX";
         private const string Docs = Website + "/docs";
         public const string DocsCustomUploader = Docs + "/custom-uploader";
         public const string DocsKeybinds = Docs + "/keybinds";

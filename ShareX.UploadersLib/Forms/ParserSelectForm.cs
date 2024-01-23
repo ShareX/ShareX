@@ -82,7 +82,7 @@ namespace ShareX.UploadersLib
 
             ResumeLayout();
 
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
         }
 
         private void ParserSelectForm_Shown(object sender, EventArgs e)

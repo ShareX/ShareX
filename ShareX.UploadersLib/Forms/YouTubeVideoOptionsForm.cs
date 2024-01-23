@@ -38,7 +38,7 @@ namespace ShareX.UploadersLib
         public YouTubeVideoOptionsForm(string title = "", string description = "", YouTubeVideoPrivacy visibility = YouTubeVideoPrivacy.Private)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             Title = title;
             Description = description;

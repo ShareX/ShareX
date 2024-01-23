@@ -33,7 +33,7 @@ namespace ShareX.HistoryLib
         public HistoryItemInfoForm(HistoryItem hi)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
             pgHistoryItem.SelectedObject = hi;
         }
     }

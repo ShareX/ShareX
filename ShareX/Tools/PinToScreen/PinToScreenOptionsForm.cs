@@ -39,7 +39,7 @@ namespace ShareX
             Options = options;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             InitOptions();
             LoadOptions();

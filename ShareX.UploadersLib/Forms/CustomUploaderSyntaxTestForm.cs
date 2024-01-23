@@ -84,7 +84,7 @@ namespace ShareX.UploadersLib
 
             rtbURLSyntax.AddContextMenu();
 
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             CustomUploaderSyntaxHighlight(rtbURLSyntax);
             UpdatePreview();

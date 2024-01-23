@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
         Photobucket,
         [Description("Google Photos")]
         Picasa,
-        [Description("Twitter")]
+        [Description("X")]
         Twitter,
         [Description("Chevereto")]
         Chevereto,
@@ -178,7 +178,7 @@ namespace ShareX.UploadersLib
     public enum URLSharingServices
     {
         Email, // Localized
-        [Description("Twitter")]
+        [Description("X")]
         Twitter,
         [Description("Facebook")]
         Facebook,

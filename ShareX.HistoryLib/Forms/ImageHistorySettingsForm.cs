@@ -37,7 +37,7 @@ namespace ShareX.HistoryLib
         public ImageHistorySettingsForm(ImageHistorySettings settings)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             Settings = settings;
             nudThumbnailSize.SetValue(Settings.ThumbnailSize.Width);

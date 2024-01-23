@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,21 +118,60 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Редактор изображений</value>
+    <value>ShareX - Украшатель изображений</value>
   </data>
-  <data name="btnOpenImageFile.Text" xml:space="preserve">
-    <value>Открыть файл изображения...</value>
+  <data name="btnBackgroundImageFilePathBrowse.Text" xml:space="preserve">
+    <value>Открыть файл картинки...</value>
   </data>
-  <data name="btnCreateNewImage.Text" xml:space="preserve">
-    <value>Создать новое изображение...</value>
+  <data name="btnPrint.ToolTip" xml:space="preserve">
+    <value>Распечатать...</value>
   </data>
-  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>Загрузить из буфера обмена</value>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Сбросить настройки...</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Отменить</value>
+  <data name="btnSave.ToolTip" xml:space="preserve">
+    <value>Сохранить</value>
   </data>
-  <data name="btnLoadImageFromURL.Text" xml:space="preserve">
-    <value>Загрузить изображение из ссылки</value>
+  <data name="btnSaveAs.ToolTip" xml:space="preserve">
+    <value>Сохранить как...</value>
+  </data>
+  <data name="btnShadowColor.Text" xml:space="preserve">
+    <value>Цвет...</value>
+  </data>
+  <data name="btnUpload.ToolTip" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="cbSmartPadding.Text" xml:space="preserve">
+    <value>Умные отступы</value>
+  </data>
+  <data name="gbShadow.Text" xml:space="preserve">
+    <value>Тень</value>
+  </data>
+  <data name="lblBackground.Text" xml:space="preserve">
+    <value>Фон:</value>
+  </data>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>Внешний отсуп:</value>
+  </data>
+  <data name="lblPadding.Text" xml:space="preserve">
+    <value>Внутренний отступ:</value>
+  </data>
+  <data name="lblRoundedCorner.Text" xml:space="preserve">
+    <value>Скругленный угол:</value>
+  </data>
+  <data name="lblShadowAngle.Text" xml:space="preserve">
+    <value>Угол:</value>
+  </data>
+  <data name="lblShadowDistance.Text" xml:space="preserve">
+    <value>Расстояние:</value>
+  </data>
+  <data name="lblShadowOpacity.Text" xml:space="preserve">
+    <value>Нерозрачность:</value>
+  </data>
+  <data name="lblShadowRadius.Text" xml:space="preserve">
+    <value>Радиус:</value>
+  </data>
+  <data name="btnCopy.ToolTip" xml:space="preserve">
+    <value>Скопировать</value>
   </data>
 </root>

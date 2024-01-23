@@ -702,16 +702,18 @@ namespace ShareX.UploadersLib
         public UserPassBox SendSpaceRegister()
         {
             UserPassBox upb = new UserPassBox(Resources.UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___, "John Doe", "john.doe@gmail.com", "JohnDoe", "");
-            upb.ShowDialog();
-            if (upb.DialogResult == DialogResult.OK)
+
+            if (upb.ShowDialog() == DialogResult.OK)
             {
                 SendSpace sendSpace = new SendSpace(APIKeys.SendSpaceKey);
                 upb.Success = sendSpace.AuthRegister(upb.UserName, upb.FullName, upb.Email, upb.Password);
+
                 if (!upb.Success && sendSpace.Errors.Count > 0)
                 {
                     MessageBox.Show(sendSpace.ToErrorString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
             return upb;
         }
 

@@ -102,8 +102,18 @@ Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\Share
 #include "CodeDependencies.iss"
 
 [Code]
+function IsAdmin: Boolean;
+begin
+  Result := (IsAdminLoggedOn or IsPowerUserLoggedOn);
+end;
+
 procedure InitializeWizard;
 begin
+  if not IsAdmin then
+  begin
+    WizardForm.DirEdit.Text := ExpandConstant('{userpf}\{#MyAppName}');
+  end;
+
   Dependency_InitializeWizard;
 end;
 

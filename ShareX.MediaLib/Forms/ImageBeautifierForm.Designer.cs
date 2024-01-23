@@ -16,6 +16,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageBeautifierForm));
             this.lblMargin = new System.Windows.Forms.Label();
             this.tbMargin = new System.Windows.Forms.TrackBar();
             this.lblPadding = new System.Windows.Forms.Label();
@@ -71,183 +72,108 @@
             // 
             // lblMargin
             // 
-            this.lblMargin.AutoSize = true;
-            this.lblMargin.Location = new System.Drawing.Point(13, 16);
-            this.lblMargin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblMargin, "lblMargin");
             this.lblMargin.Name = "lblMargin";
-            this.lblMargin.Size = new System.Drawing.Size(53, 17);
-            this.lblMargin.TabIndex = 0;
-            this.lblMargin.Text = "Margin:";
             // 
             // tbMargin
             // 
-            this.tbMargin.Location = new System.Drawing.Point(16, 40);
-            this.tbMargin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            resources.ApplyResources(this.tbMargin, "tbMargin");
             this.tbMargin.Maximum = 300;
             this.tbMargin.Name = "tbMargin";
-            this.tbMargin.Size = new System.Drawing.Size(296, 45);
-            this.tbMargin.TabIndex = 1;
             this.tbMargin.TickFrequency = 10;
             this.tbMargin.Scroll += new System.EventHandler(this.tbMargin_Scroll);
             this.tbMargin.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbMargin_MouseUp);
             // 
             // lblPadding
             // 
-            this.lblPadding.AutoSize = true;
-            this.lblPadding.Location = new System.Drawing.Point(13, 88);
-            this.lblPadding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblPadding, "lblPadding");
             this.lblPadding.Name = "lblPadding";
-            this.lblPadding.Size = new System.Drawing.Size(59, 17);
-            this.lblPadding.TabIndex = 3;
-            this.lblPadding.Text = "Padding:";
             // 
             // tbPadding
             // 
-            this.tbPadding.Location = new System.Drawing.Point(16, 112);
-            this.tbPadding.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            resources.ApplyResources(this.tbPadding, "tbPadding");
             this.tbPadding.Maximum = 200;
             this.tbPadding.Name = "tbPadding";
-            this.tbPadding.Size = new System.Drawing.Size(296, 45);
-            this.tbPadding.TabIndex = 4;
             this.tbPadding.TickFrequency = 10;
             this.tbPadding.Scroll += new System.EventHandler(this.tbPadding_Scroll);
             this.tbPadding.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbPadding_MouseUp);
             // 
             // cbSmartPadding
             // 
-            this.cbSmartPadding.AutoSize = true;
-            this.cbSmartPadding.Location = new System.Drawing.Point(16, 160);
-            this.cbSmartPadding.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            resources.ApplyResources(this.cbSmartPadding, "cbSmartPadding");
             this.cbSmartPadding.Name = "cbSmartPadding";
-            this.cbSmartPadding.Size = new System.Drawing.Size(114, 21);
-            this.cbSmartPadding.TabIndex = 6;
-            this.cbSmartPadding.Text = "Smart padding";
             this.cbSmartPadding.UseVisualStyleBackColor = true;
             this.cbSmartPadding.CheckedChanged += new System.EventHandler(this.cbSmartPadding_CheckedChanged);
             // 
             // lblRoundedCorner
             // 
-            this.lblRoundedCorner.AutoSize = true;
-            this.lblRoundedCorner.Location = new System.Drawing.Point(13, 192);
-            this.lblRoundedCorner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblRoundedCorner, "lblRoundedCorner");
             this.lblRoundedCorner.Name = "lblRoundedCorner";
-            this.lblRoundedCorner.Size = new System.Drawing.Size(106, 17);
-            this.lblRoundedCorner.TabIndex = 7;
-            this.lblRoundedCorner.Text = "Rounded corner:";
             // 
             // tbRoundedCorner
             // 
-            this.tbRoundedCorner.Location = new System.Drawing.Point(16, 216);
-            this.tbRoundedCorner.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            resources.ApplyResources(this.tbRoundedCorner, "tbRoundedCorner");
             this.tbRoundedCorner.Maximum = 50;
             this.tbRoundedCorner.Name = "tbRoundedCorner";
-            this.tbRoundedCorner.Size = new System.Drawing.Size(296, 45);
-            this.tbRoundedCorner.TabIndex = 8;
             this.tbRoundedCorner.TickFrequency = 5;
             this.tbRoundedCorner.Scroll += new System.EventHandler(this.tbRoundedCorner_Scroll);
             this.tbRoundedCorner.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbRoundedCorner_MouseUp);
             // 
             // lblShadowRadius
             // 
-            this.lblShadowRadius.AutoSize = true;
-            this.lblShadowRadius.Location = new System.Drawing.Point(16, 32);
-            this.lblShadowRadius.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblShadowRadius, "lblShadowRadius");
             this.lblShadowRadius.Name = "lblShadowRadius";
-            this.lblShadowRadius.Size = new System.Drawing.Size(50, 17);
-            this.lblShadowRadius.TabIndex = 10;
-            this.lblShadowRadius.Text = "Radius:";
             // 
             // tbShadowRadius
             // 
-            this.tbShadowRadius.AutoSize = false;
-            this.tbShadowRadius.Location = new System.Drawing.Point(16, 56);
-            this.tbShadowRadius.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            resources.ApplyResources(this.tbShadowRadius, "tbShadowRadius");
             this.tbShadowRadius.Maximum = 100;
             this.tbShadowRadius.Name = "tbShadowRadius";
-            this.tbShadowRadius.Size = new System.Drawing.Size(280, 32);
-            this.tbShadowRadius.TabIndex = 11;
             this.tbShadowRadius.TickFrequency = 5;
             this.tbShadowRadius.Scroll += new System.EventHandler(this.tbShadowRadius_Scroll);
             // 
             // lblBackground
             // 
-            this.lblBackground.AutoSize = true;
-            this.lblBackground.Location = new System.Drawing.Point(13, 384);
-            this.lblBackground.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblBackground, "lblBackground");
             this.lblBackground.Name = "lblBackground";
-            this.lblBackground.Size = new System.Drawing.Size(80, 17);
-            this.lblBackground.TabIndex = 13;
-            this.lblBackground.Text = "Background:";
             // 
             // lblMarginValue
             // 
-            this.lblMarginValue.Location = new System.Drawing.Point(256, 16);
-            this.lblMarginValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblMarginValue, "lblMarginValue");
             this.lblMarginValue.Name = "lblMarginValue";
-            this.lblMarginValue.Size = new System.Drawing.Size(56, 24);
-            this.lblMarginValue.TabIndex = 2;
-            this.lblMarginValue.Text = "0";
-            this.lblMarginValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblPaddingValue
             // 
-            this.lblPaddingValue.Location = new System.Drawing.Point(256, 88);
-            this.lblPaddingValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblPaddingValue, "lblPaddingValue");
             this.lblPaddingValue.Name = "lblPaddingValue";
-            this.lblPaddingValue.Size = new System.Drawing.Size(56, 24);
-            this.lblPaddingValue.TabIndex = 5;
-            this.lblPaddingValue.Text = "0";
-            this.lblPaddingValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblRoundedCornerValue
             // 
-            this.lblRoundedCornerValue.Location = new System.Drawing.Point(256, 192);
-            this.lblRoundedCornerValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblRoundedCornerValue, "lblRoundedCornerValue");
             this.lblRoundedCornerValue.Name = "lblRoundedCornerValue";
-            this.lblRoundedCornerValue.Size = new System.Drawing.Size(56, 24);
-            this.lblRoundedCornerValue.TabIndex = 9;
-            this.lblRoundedCornerValue.Text = "0";
-            this.lblRoundedCornerValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblShadowRadiusValue
             // 
-            this.lblShadowRadiusValue.Location = new System.Drawing.Point(240, 32);
-            this.lblShadowRadiusValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblShadowRadiusValue, "lblShadowRadiusValue");
             this.lblShadowRadiusValue.Name = "lblShadowRadiusValue";
-            this.lblShadowRadiusValue.Size = new System.Drawing.Size(56, 24);
-            this.lblShadowRadiusValue.TabIndex = 12;
-            this.lblShadowRadiusValue.Text = "0";
-            this.lblShadowRadiusValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tlpMain
             // 
-            this.tlpMain.ColumnCount = 2;
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            resources.ApplyResources(this.tlpMain, "tlpMain");
             this.tlpMain.Controls.Add(this.pbPreview, 1, 0);
             this.tlpMain.Controls.Add(this.pOptions, 0, 0);
-            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 1;
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Size = new System.Drawing.Size(1384, 761);
-            this.tlpMain.TabIndex = 0;
             // 
             // pbPreview
             // 
             this.pbPreview.BackColor = System.Drawing.SystemColors.Window;
-            this.pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.EnableRightClickMenu = true;
             this.pbPreview.FullscreenOnClick = true;
-            this.pbPreview.Location = new System.Drawing.Point(335, 0);
-            this.pbPreview.Margin = new System.Windows.Forms.Padding(0);
             this.pbPreview.Name = "pbPreview";
             this.pbPreview.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             this.pbPreview.ShowImageSizeLabel = true;
-            this.pbPreview.Size = new System.Drawing.Size(1049, 761);
-            this.pbPreview.TabIndex = 1;
             // 
             // pOptions
             // 
@@ -274,19 +200,14 @@
             this.pOptions.Controls.Add(this.lblRoundedCorner);
             this.pOptions.Controls.Add(this.lblBackground);
             this.pOptions.Controls.Add(this.tbRoundedCorner);
-            this.pOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pOptions.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.pOptions, "pOptions");
             this.pOptions.Name = "pOptions";
-            this.pOptions.Size = new System.Drawing.Size(329, 755);
-            this.pOptions.TabIndex = 0;
             // 
             // btnShadowExpand
             // 
             this.btnShadowExpand.Image = global::ShareX.MediaLib.Properties.Resources.plus_white;
-            this.btnShadowExpand.Location = new System.Drawing.Point(280, 260);
+            resources.ApplyResources(this.btnShadowExpand, "btnShadowExpand");
             this.btnShadowExpand.Name = "btnShadowExpand";
-            this.btnShadowExpand.Size = new System.Drawing.Size(30, 30);
-            this.btnShadowExpand.TabIndex = 16;
             this.btnShadowExpand.Tag = "+";
             this.btnShadowExpand.UseVisualStyleBackColor = true;
             this.btnShadowExpand.Click += new System.EventHandler(this.btnShadowExpand_Click);
@@ -306,139 +227,90 @@
             this.gbShadow.Controls.Add(this.lblShadowOpacity);
             this.gbShadow.Controls.Add(this.lblShadowDistance);
             this.gbShadow.Controls.Add(this.tbShadowOpacity);
-            this.gbShadow.Location = new System.Drawing.Point(8, 264);
+            resources.ApplyResources(this.gbShadow, "gbShadow");
             this.gbShadow.Name = "gbShadow";
-            this.gbShadow.Size = new System.Drawing.Size(312, 104);
-            this.gbShadow.TabIndex = 25;
             this.gbShadow.TabStop = false;
-            this.gbShadow.Text = "Shadow";
             // 
             // lblShadowAngleValue
             // 
-            this.lblShadowAngleValue.Location = new System.Drawing.Point(240, 248);
-            this.lblShadowAngleValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblShadowAngleValue, "lblShadowAngleValue");
             this.lblShadowAngleValue.Name = "lblShadowAngleValue";
-            this.lblShadowAngleValue.Size = new System.Drawing.Size(56, 24);
-            this.lblShadowAngleValue.TabIndex = 15;
-            this.lblShadowAngleValue.Text = "0";
-            this.lblShadowAngleValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblShadowDistanceValue
             // 
-            this.lblShadowDistanceValue.Location = new System.Drawing.Point(240, 176);
-            this.lblShadowDistanceValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblShadowDistanceValue, "lblShadowDistanceValue");
             this.lblShadowDistanceValue.Name = "lblShadowDistanceValue";
-            this.lblShadowDistanceValue.Size = new System.Drawing.Size(56, 24);
-            this.lblShadowDistanceValue.TabIndex = 14;
-            this.lblShadowDistanceValue.Text = "0";
-            this.lblShadowDistanceValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblShadowOpacityValue
             // 
-            this.lblShadowOpacityValue.Location = new System.Drawing.Point(240, 104);
-            this.lblShadowOpacityValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblShadowOpacityValue, "lblShadowOpacityValue");
             this.lblShadowOpacityValue.Name = "lblShadowOpacityValue";
-            this.lblShadowOpacityValue.Size = new System.Drawing.Size(56, 24);
-            this.lblShadowOpacityValue.TabIndex = 13;
-            this.lblShadowOpacityValue.Text = "0";
-            this.lblShadowOpacityValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnShadowColor
             // 
             this.btnShadowColor.Color = System.Drawing.Color.Empty;
             this.btnShadowColor.ColorPickerOptions = null;
-            this.btnShadowColor.Location = new System.Drawing.Point(16, 320);
+            resources.ApplyResources(this.btnShadowColor, "btnShadowColor");
             this.btnShadowColor.Name = "btnShadowColor";
-            this.btnShadowColor.Size = new System.Drawing.Size(280, 32);
-            this.btnShadowColor.TabIndex = 6;
-            this.btnShadowColor.Text = "Color...";
-            this.btnShadowColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShadowColor.UseVisualStyleBackColor = true;
             this.btnShadowColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnShadowColor_ColorChanged);
             // 
             // tbShadowAngle
             // 
-            this.tbShadowAngle.Location = new System.Drawing.Point(16, 272);
+            resources.ApplyResources(this.tbShadowAngle, "tbShadowAngle");
             this.tbShadowAngle.Maximum = 360;
             this.tbShadowAngle.Name = "tbShadowAngle";
-            this.tbShadowAngle.Size = new System.Drawing.Size(280, 45);
-            this.tbShadowAngle.TabIndex = 5;
             this.tbShadowAngle.TickFrequency = 45;
             this.tbShadowAngle.Scroll += new System.EventHandler(this.tbShadowAngle_Scroll);
             // 
             // lblShadowAngle
             // 
-            this.lblShadowAngle.AutoSize = true;
-            this.lblShadowAngle.Location = new System.Drawing.Point(16, 248);
+            resources.ApplyResources(this.lblShadowAngle, "lblShadowAngle");
             this.lblShadowAngle.Name = "lblShadowAngle";
-            this.lblShadowAngle.Size = new System.Drawing.Size(44, 17);
-            this.lblShadowAngle.TabIndex = 4;
-            this.lblShadowAngle.Text = "Angle:";
             // 
             // tbShadowDistance
             // 
-            this.tbShadowDistance.Location = new System.Drawing.Point(16, 200);
+            resources.ApplyResources(this.tbShadowDistance, "tbShadowDistance");
             this.tbShadowDistance.Maximum = 100;
             this.tbShadowDistance.Name = "tbShadowDistance";
-            this.tbShadowDistance.Size = new System.Drawing.Size(280, 45);
-            this.tbShadowDistance.TabIndex = 3;
             this.tbShadowDistance.TickFrequency = 10;
             this.tbShadowDistance.Scroll += new System.EventHandler(this.tbShadowDistance_Scroll);
             // 
             // lblShadowOpacity
             // 
-            this.lblShadowOpacity.AutoSize = true;
-            this.lblShadowOpacity.Location = new System.Drawing.Point(16, 104);
+            resources.ApplyResources(this.lblShadowOpacity, "lblShadowOpacity");
             this.lblShadowOpacity.Name = "lblShadowOpacity";
-            this.lblShadowOpacity.Size = new System.Drawing.Size(55, 17);
-            this.lblShadowOpacity.TabIndex = 0;
-            this.lblShadowOpacity.Text = "Opacity:";
             // 
             // lblShadowDistance
             // 
-            this.lblShadowDistance.AutoSize = true;
-            this.lblShadowDistance.Location = new System.Drawing.Point(16, 176);
+            resources.ApplyResources(this.lblShadowDistance, "lblShadowDistance");
             this.lblShadowDistance.Name = "lblShadowDistance";
-            this.lblShadowDistance.Size = new System.Drawing.Size(60, 17);
-            this.lblShadowDistance.TabIndex = 2;
-            this.lblShadowDistance.Text = "Distance:";
             // 
             // tbShadowOpacity
             // 
-            this.tbShadowOpacity.Location = new System.Drawing.Point(16, 128);
+            resources.ApplyResources(this.tbShadowOpacity, "tbShadowOpacity");
             this.tbShadowOpacity.Maximum = 100;
             this.tbShadowOpacity.Name = "tbShadowOpacity";
-            this.tbShadowOpacity.Size = new System.Drawing.Size(280, 45);
             this.tbShadowOpacity.SmallChange = 10;
-            this.tbShadowOpacity.TabIndex = 1;
             this.tbShadowOpacity.TickFrequency = 10;
             this.tbShadowOpacity.Scroll += new System.EventHandler(this.tbShadowOpacity_Scroll);
             // 
             // btnResetOptions
             // 
-            this.btnResetOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnResetOptions.Location = new System.Drawing.Point(8, 656);
+            resources.ApplyResources(this.btnResetOptions, "btnResetOptions");
             this.btnResetOptions.Name = "btnResetOptions";
-            this.btnResetOptions.Size = new System.Drawing.Size(312, 32);
-            this.btnResetOptions.TabIndex = 23;
-            this.btnResetOptions.Text = "Reset options...";
             this.btnResetOptions.UseVisualStyleBackColor = true;
             this.btnResetOptions.Click += new System.EventHandler(this.btnResetOptions_Click);
             // 
             // lblBackgroundImageFilePath
             // 
-            this.lblBackgroundImageFilePath.Location = new System.Drawing.Point(13, 480);
+            resources.ApplyResources(this.lblBackgroundImageFilePath, "lblBackgroundImageFilePath");
             this.lblBackgroundImageFilePath.Name = "lblBackgroundImageFilePath";
-            this.lblBackgroundImageFilePath.Size = new System.Drawing.Size(296, 120);
-            this.lblBackgroundImageFilePath.TabIndex = 22;
             // 
             // btnBackgroundImageFilePathBrowse
             // 
-            this.btnBackgroundImageFilePathBrowse.Location = new System.Drawing.Point(16, 440);
+            resources.ApplyResources(this.btnBackgroundImageFilePathBrowse, "btnBackgroundImageFilePathBrowse");
             this.btnBackgroundImageFilePathBrowse.Name = "btnBackgroundImageFilePathBrowse";
-            this.btnBackgroundImageFilePathBrowse.Size = new System.Drawing.Size(296, 32);
-            this.btnBackgroundImageFilePathBrowse.TabIndex = 21;
-            this.btnBackgroundImageFilePathBrowse.Text = "Browse image file...";
             this.btnBackgroundImageFilePathBrowse.UseVisualStyleBackColor = true;
             this.btnBackgroundImageFilePathBrowse.Click += new System.EventHandler(this.btnBackgroundImageFilePathBrowse_Click);
             // 
@@ -446,95 +318,70 @@
             // 
             this.cbBackgroundType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBackgroundType.FormattingEnabled = true;
-            this.cbBackgroundType.Location = new System.Drawing.Point(16, 408);
+            resources.ApplyResources(this.cbBackgroundType, "cbBackgroundType");
             this.cbBackgroundType.Name = "cbBackgroundType";
-            this.cbBackgroundType.Size = new System.Drawing.Size(296, 25);
-            this.cbBackgroundType.TabIndex = 19;
             this.cbBackgroundType.SelectedIndexChanged += new System.EventHandler(this.cbBackgroundType_SelectedIndexChanged);
             // 
             // btnPrint
             // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.btnPrint, "btnPrint");
             this.btnPrint.Image = global::ShareX.MediaLib.Properties.Resources.printer;
-            this.btnPrint.Location = new System.Drawing.Point(264, 696);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(56, 48);
-            this.btnPrint.TabIndex = 18;
-            this.ttMain.SetToolTip(this.btnPrint, "Print...");
+            this.ttMain.SetToolTip(this.btnPrint, resources.GetString("btnPrint.ToolTip"));
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.Image = global::ShareX.MediaLib.Properties.Resources.disk_black;
-            this.btnSave.Location = new System.Drawing.Point(72, 696);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(56, 48);
-            this.btnSave.TabIndex = 15;
-            this.ttMain.SetToolTip(this.btnSave, "Save");
+            this.ttMain.SetToolTip(this.btnSave, resources.GetString("btnSave.ToolTip"));
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpload
             // 
-            this.btnUpload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.btnUpload, "btnUpload");
             this.btnUpload.Image = global::ShareX.MediaLib.Properties.Resources.upload_cloud;
-            this.btnUpload.Location = new System.Drawing.Point(200, 696);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(56, 48);
-            this.btnUpload.TabIndex = 17;
-            this.ttMain.SetToolTip(this.btnUpload, "Upload");
+            this.ttMain.SetToolTip(this.btnUpload, resources.GetString("btnUpload.ToolTip"));
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // btnSaveAs
             // 
-            this.btnSaveAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.btnSaveAs, "btnSaveAs");
             this.btnSaveAs.Image = global::ShareX.MediaLib.Properties.Resources.disks_black;
-            this.btnSaveAs.Location = new System.Drawing.Point(136, 696);
             this.btnSaveAs.Name = "btnSaveAs";
-            this.btnSaveAs.Size = new System.Drawing.Size(56, 48);
-            this.btnSaveAs.TabIndex = 16;
-            this.ttMain.SetToolTip(this.btnSaveAs, "Save as...");
+            this.ttMain.SetToolTip(this.btnSaveAs, resources.GetString("btnSaveAs.ToolTip"));
             this.btnSaveAs.UseVisualStyleBackColor = true;
             this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
             // 
             // btnCopy
             // 
-            this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.btnCopy, "btnCopy");
             this.btnCopy.Image = global::ShareX.MediaLib.Properties.Resources.document_copy;
-            this.btnCopy.Location = new System.Drawing.Point(8, 696);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(56, 48);
-            this.btnCopy.TabIndex = 14;
-            this.ttMain.SetToolTip(this.btnCopy, "Copy");
+            this.ttMain.SetToolTip(this.btnCopy, resources.GetString("btnCopy.ToolTip"));
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // pbBackground
             // 
             this.pbBackground.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBackground.Location = new System.Drawing.Point(16, 440);
+            resources.ApplyResources(this.pbBackground, "pbBackground");
             this.pbBackground.Name = "pbBackground";
-            this.pbBackground.Size = new System.Drawing.Size(296, 40);
-            this.pbBackground.TabIndex = 14;
             this.pbBackground.TabStop = false;
             this.pbBackground.Click += new System.EventHandler(this.pbBackground_Click);
             // 
             // ImageBeautifierForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 761);
             this.Controls.Add(this.tlpMain);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "ImageBeautifierForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Image beautifier";
             this.Shown += new System.EventHandler(this.ImageBeautifierForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.tbMargin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPadding)).EndInit();

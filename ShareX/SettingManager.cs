@@ -179,6 +179,7 @@ namespace ShareX
             HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath, BackupFolder, fallbackSupport);
             HotkeysConfig.CreateBackup = true;
             HotkeysConfig.CreateWeeklyBackup = true;
+            HotkeysConfigBackwardCompatibilityTasks();
         }
 
         public static void LoadAllSettings()
@@ -229,9 +230,10 @@ namespace ShareX
                 }
             }
 
-            if (Settings.IsUpgradeFrom("15.0.0"))
+            if (Settings.IsUpgradeFrom("15.0.1"))
             {
                 DefaultTaskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
+                DefaultTaskSettings.CaptureSettings.FFmpegOptions.FixSources();
             }
         }
 
@@ -264,6 +266,21 @@ namespace ShareX
                 foreach (CustomUploaderItem cui in UploadersConfig.CustomUploadersList)
                 {
                     cui.CheckBackwardCompatibility();
+                }
+            }
+        }
+
+        private static void HotkeysConfigBackwardCompatibilityTasks()
+        {
+            if (Settings.IsUpgradeFrom("15.0.1"))
+            {
+                foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))
+                {
+                    if (taskSettings != null && taskSettings.CaptureSettings != null)
+                    {
+                        taskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
+                        taskSettings.CaptureSettings.FFmpegOptions.FixSources();
+                    }
                 }
             }
         }

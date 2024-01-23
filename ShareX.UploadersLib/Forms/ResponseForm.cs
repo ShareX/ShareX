@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib
             rtbResponseInfo.AddContextMenu();
             rtbResponseText.AddContextMenu();
 
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             UpdateResult(result);
         }

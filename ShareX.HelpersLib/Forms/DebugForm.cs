@@ -55,7 +55,7 @@ namespace ShareX.HelpersLib
 
             btnOpenLogFile.Enabled = !string.IsNullOrEmpty(Logger.LogFilePath);
 
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             string startupPath = AppDomain.CurrentDomain.BaseDirectory;
             llRunningFrom.Text = startupPath;
