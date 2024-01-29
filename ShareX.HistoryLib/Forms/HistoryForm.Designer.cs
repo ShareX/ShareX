@@ -159,6 +159,8 @@
             // 
             // tstbSearch
             // 
+            this.tstbSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tstbSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.tstbSearch, "tstbSearch");
             this.tstbSearch.Name = "tstbSearch";
