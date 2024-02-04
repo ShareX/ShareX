@@ -1287,9 +1287,9 @@ namespace ShareX
             RegionCaptureTasks.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
         }
 
-        public static void SearchImageUsingGoogle(string url)
+        public static void SearchImageUsingGoogleLens(string url)
         {
-            new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
+            new GoogleLensSharingService().CreateSharer(null, null).ShareURL(url);
         }
 
         public static void SearchImageUsingBing(string url)

@@ -600,7 +600,7 @@ namespace ShareX
             cmsTaskInfo.SuspendLayout();
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible =
-                tsmiGoogleImageSearch.Visible = tsmiBingVisualSearch.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible =
+                tsmiGoogleLens.Visible = tsmiBingVisualSearch.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible =
                 tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible =
                 tsmiBeautifyImage.Visible = tsmiAddImageEffects.Visible = tsmiPinSelectedFile.Visible = tsmiRunAction.Visible =
                 tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = false;
@@ -718,7 +718,7 @@ namespace ShareX
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShareSelectedURL.Visible = uim.SelectedItem.IsURLExist;
-                    tsmiGoogleImageSearch.Visible = uim.SelectedItem.IsURLExist;
+                    tsmiGoogleLens.Visible = uim.SelectedItem.IsURLExist;
                     tsmiBingVisualSearch.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
                     tsmiOCRImage.Visible = uim.SelectedItem.IsImageFile;
@@ -2331,9 +2331,9 @@ namespace ShareX
             uim.PinToScreen();
         }
 
-        private void tsmiGoogleImageSearch_Click(object sender, EventArgs e)
+        private void tsmiGoogleLens_Click(object sender, EventArgs e)
         {
-            uim.SearchImageUsingGoogle();
+            uim.SearchImageUsingGoogleLens();
         }
 
         private void tsmiBingVisualSearch_Click(object sender, EventArgs e)

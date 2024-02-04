@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.lvUploads = new ShareX.HelpersLib.MyListView();
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -130,6 +130,7 @@
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbDonate = new System.Windows.Forms.ToolStripButton();
+            this.tsbX = new System.Windows.Forms.ToolStripButton();
             this.tsbDiscord = new System.Windows.Forms.ToolStripButton();
             this.tsbAbout = new System.Windows.Forms.ToolStripButton();
             this.cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -185,7 +186,7 @@
             this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiGoogleImageSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGoogleLens = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBingVisualSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOCRImage = new System.Windows.Forms.ToolStripMenuItem();
@@ -292,7 +293,6 @@
             this.cDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pMain = new System.Windows.Forms.Panel();
             this.pHotkeys = new System.Windows.Forms.Panel();
-            this.tsbX = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1065,6 +1065,13 @@
             this.tsbDonate.Name = "tsbDonate";
             this.tsbDonate.Click += new System.EventHandler(this.tsbDonate_Click);
             // 
+            // tsbX
+            // 
+            this.tsbX.Image = global::ShareX.Properties.Resources.X_black;
+            resources.ApplyResources(this.tsbX, "tsbX");
+            this.tsbX.Name = "tsbX";
+            this.tsbX.Click += new System.EventHandler(this.tsbX_Click);
+            // 
             // tsbDiscord
             // 
             this.tsbDiscord.Image = global::ShareX.Properties.Resources.Discord_black;
@@ -1097,7 +1104,7 @@
             this.tsmiDeleteSelectedFile,
             this.tsmiShortenSelectedURL,
             this.tsmiShareSelectedURL,
-            this.tsmiGoogleImageSearch,
+            this.tsmiGoogleLens,
             this.tsmiBingVisualSearch,
             this.tsmiShowQRCode,
             this.tsmiOCRImage,
@@ -1465,12 +1472,12 @@
             this.tsmiShareSelectedURL.Name = "tsmiShareSelectedURL";
             resources.ApplyResources(this.tsmiShareSelectedURL, "tsmiShareSelectedURL");
             // 
-            // tsmiGoogleImageSearch
+            // tsmiGoogleLens
             // 
-            this.tsmiGoogleImageSearch.Image = global::ShareX.Properties.Resources.Google;
-            this.tsmiGoogleImageSearch.Name = "tsmiGoogleImageSearch";
-            resources.ApplyResources(this.tsmiGoogleImageSearch, "tsmiGoogleImageSearch");
-            this.tsmiGoogleImageSearch.Click += new System.EventHandler(this.tsmiGoogleImageSearch_Click);
+            this.tsmiGoogleLens.Image = global::ShareX.Properties.Resources.Google_Lens;
+            this.tsmiGoogleLens.Name = "tsmiGoogleLens";
+            resources.ApplyResources(this.tsmiGoogleLens, "tsmiGoogleLens");
+            this.tsmiGoogleLens.Click += new System.EventHandler(this.tsmiGoogleLens_Click);
             // 
             // tsmiBingVisualSearch
             // 
@@ -2238,29 +2245,29 @@
             this.dgvHotkeys.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvHotkeys.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHotkeys.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHotkeys.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHotkeys.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHotkeys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHotkeys.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cHotkeyStatus,
             this.cHotkey,
             this.cDescription});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHotkeys.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHotkeys.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.dgvHotkeys, "dgvHotkeys");
             this.dgvHotkeys.MultiSelect = false;
             this.dgvHotkeys.Name = "dgvHotkeys";
@@ -2279,8 +2286,8 @@
             // cHotkey
             // 
             this.cHotkey.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cHotkey.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cHotkey.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.cHotkey, "cHotkey");
             this.cHotkey.Name = "cHotkey";
             this.cHotkey.ReadOnly = true;
@@ -2307,13 +2314,6 @@
             this.pHotkeys.Controls.Add(this.dgvHotkeys);
             resources.ApplyResources(this.pHotkeys, "pHotkeys");
             this.pHotkeys.Name = "pHotkeys";
-            // 
-            // tsbX
-            // 
-            this.tsbX.Image = global::ShareX.Properties.Resources.X_black;
-            resources.ApplyResources(this.tsbX, "tsbX");
-            this.tsbX.Name = "tsbX";
-            this.tsbX.Click += new System.EventHandler(this.tsbX_Click);
             // 
             // MainForm
             // 
@@ -2529,7 +2529,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImages;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenActionsToolbar;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGoogleImageSearch;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageThumbnailer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageThumbnailer;
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadText;
@@ -2612,5 +2611,6 @@
         internal System.Windows.Forms.Panel pHotkeys;
         private HelpersLib.MyListView lvUploads;
         private System.Windows.Forms.ToolStripButton tsbX;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGoogleLens;
     }
 }
