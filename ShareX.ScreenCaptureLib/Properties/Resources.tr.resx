@@ -304,7 +304,7 @@
     <value>Son bölgeyi yakala</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Resimi panoya kopyala (Ctrl + Shift + C)</value>
+    <value>Resimi panoya kopyala (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>Resimi kırp...</value>

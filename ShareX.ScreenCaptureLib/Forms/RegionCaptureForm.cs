@@ -661,9 +661,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Oemtilde:
                     CloseWindow(RegionResult.ActiveMonitor);
                     break;
-                case Keys.Control | Keys.C:
-                    CopyAreaInfo();
-                    break;
             }
 
             if (IsEditorMode)
@@ -691,7 +688,11 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                if (e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
+                if (e.KeyData == (Keys.Control | Keys.C))
+                {
+                    CopyAreaInfo();
+                }
+                else if (e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
                 {
                     MonitorKey(e.KeyData - Keys.D0);
                     return;

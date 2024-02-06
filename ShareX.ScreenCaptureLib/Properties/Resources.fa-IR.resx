@@ -241,13 +241,13 @@
     <value>اوردن به جلو</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
-    <value>انصراف از وظیفه (ESC)</value>
+    <value>انصراف از وظیفه (Esc)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>ادامه دادن وظیفه (کلید space یا راست کلیک)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>کپی کردن تصویر به کلیپ بورد (CTRL + SHIFT + C)</value>
+    <value>کپی کردن تصویر به کلیپ بورد (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>بریدن عکس ...</value>

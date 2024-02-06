@@ -696,7 +696,7 @@
     <value>Step type:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Copy image to clipboard (Ctrl + Shift + C)</value>
+    <value>Copy image to clipboard (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Show screen wide crosshair</value>
