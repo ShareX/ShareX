@@ -44,7 +44,7 @@ namespace ShareX.HelpersLib
         private static readonly string PipeName = $"{Environment.MachineName}-{Environment.UserName}-{AppName}";
 
         private readonly Mutex mutex;
-        private CancellationTokenSource cancellationSource;
+        private CancellationTokenSource cts;
 
         public SingleInstanceManager(bool isSingleInstance, string[] args)
         {
@@ -60,7 +60,9 @@ namespace ShareX.HelpersLib
 
                     if (IsFirstInstance)
                     {
-                        Task.Run(() => ListenForConnectionsAsync());
+                        cts = new CancellationTokenSource();
+
+                        Task.Run(() => ListenForConnectionsAsync(), cts.Token);
                     }
                     else
                     {
@@ -89,15 +91,13 @@ namespace ShareX.HelpersLib
 
         private async Task ListenForConnectionsAsync()
         {
-            cancellationSource = new CancellationTokenSource();
-
-            while (!cancellationSource.IsCancellationRequested)
+            while (!cts.IsCancellationRequested)
             {
                 try
                 {
                     using (NamedPipeServerStream serverPipe = new NamedPipeServerStream(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous))
                     {
-                        await serverPipe.WaitForConnectionAsync(cancellationSource.Token);
+                        await serverPipe.WaitForConnectionAsync(cts.Token);
 
                         using (BinaryReader reader = new BinaryReader(serverPipe, Encoding.UTF8))
                         {
@@ -114,7 +114,7 @@ namespace ShareX.HelpersLib
                         }
                     }
                 }
-                catch (Exception e) when (cancellationSource.IsCancellationRequested)
+                catch when (cts.IsCancellationRequested)
                 {
                 }
                 catch (Exception e)
@@ -144,7 +144,8 @@ namespace ShareX.HelpersLib
 
         public void Dispose()
         {
-            cancellationSource?.Cancel();
+            cts?.Cancel();
+            cts?.Dispose();
             mutex?.ReleaseMutex();
         }
     }
