@@ -297,9 +297,11 @@ namespace ShareX
 
             MultiInstance = CLI.IsCommandExist("multi", "m");
 
-            using (ApplicationInstanceManager instanceManager = new ApplicationInstanceManager(!MultiInstance, args, SingleInstanceCallback))
+            using (SingleInstanceManager singleInstanceManager = new SingleInstanceManager(!MultiInstance, args))
             using (TimerResolutionManager timerResolutionManager = new TimerResolutionManager())
             {
+                singleInstanceManager.ArgumentsReceived += SingleInstanceManager_ArgumentsReceived;
+
                 Run();
             }
 
@@ -392,13 +394,13 @@ namespace ShareX
             Application.Exit();
         }
 
-        private static void SingleInstanceCallback(object sender, InstanceCallbackEventArgs args)
+        private static void SingleInstanceManager_ArgumentsReceived(object sender, ArgumentsReceivedEventArgs e)
         {
             if (WaitFormLoad(5000))
             {
                 MainForm.InvokeSafe(async () =>
                 {
-                    await UseCommandLineArgs(args.CommandLineArgs);
+                    await UseCommandLineArgs(e.Arguments);
                 });
             }
         }

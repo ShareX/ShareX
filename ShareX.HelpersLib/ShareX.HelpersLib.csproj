@@ -13,7 +13,6 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
   </ItemGroup>
