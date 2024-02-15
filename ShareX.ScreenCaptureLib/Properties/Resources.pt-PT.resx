@@ -211,7 +211,7 @@
     <value>Capturar</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Copiar imagem para a área de transferência (Ctrl + Shift + C)</value>
+    <value>Copiar imagem para a área de transferência (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Imprimir imagem... (Ctrl + P)</value>
@@ -253,7 +253,7 @@
     <value>Captura de retângulo leve</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
-    <value>Guardar Imagem (Ctrl +S)</value>
+    <value>Guardar Imagem (Ctrl + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
     <value>Nova imagem...</value>

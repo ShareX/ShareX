@@ -1846,7 +1846,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy image to clipboard (Ctrl + Shift + C).
+        ///   Looks up a localized string similar to Copy image to clipboard (Ctrl + C).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_CopyImageToClipboard {
             get {

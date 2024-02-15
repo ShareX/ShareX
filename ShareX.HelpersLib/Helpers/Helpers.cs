@@ -38,8 +38,6 @@ using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Security.Permissions;
 using System.Security.Principal;
@@ -395,17 +393,6 @@ namespace ShareX.HelpersLib
             int hours = (int)ts.TotalHours;
             if (hours > 0) time = hours + ":" + time;
             return time;
-        }
-
-        public static object Clone(object obj)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                BinaryFormatter binaryFormatter = new BinaryFormatter(null, new StreamingContext(StreamingContextStates.Clone));
-                binaryFormatter.Serialize(ms, obj);
-                ms.Seek(0, SeekOrigin.Begin);
-                return binaryFormatter.Deserialize(ms);
-            }
         }
 
         public static void PlaySoundAsync(Stream stream)

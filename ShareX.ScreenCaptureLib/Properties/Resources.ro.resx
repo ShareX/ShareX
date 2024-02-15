@@ -223,7 +223,7 @@
     <value>Continuați sarcina (Spațiu sau click dreapta)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Copiați imaginea în clipboard (Ctrl + Shift + C)</value>
+    <value>Copiați imaginea în clipboard (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
     <value>Raza colțului:</value>

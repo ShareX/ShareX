@@ -364,7 +364,7 @@
     <value>המשך משימה (רווח או לחיצה ימנית בעכבר)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>העתק תמונה ללוח הגזירה (Ctrl + Shift + C)</value>
+    <value>העתק תמונה ללוח הגזירה (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>חתוך תמונה...</value>

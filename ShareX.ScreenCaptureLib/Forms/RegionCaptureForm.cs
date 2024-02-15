@@ -335,10 +335,14 @@ namespace ShareX.ScreenCaptureLib
 
                 Task.Run(() =>
                 {
-                    WindowsRectangleList wla = new WindowsRectangleList();
-                    wla.IgnoreHandle = handle;
-                    wla.IncludeChildWindows = ShapeManager.IncludeControls;
-                    ShapeManager.Windows = wla.GetWindowInfoListAsync(5000);
+                    WindowsRectangleList wla = new WindowsRectangleList()
+                    {
+                        IgnoreHandle = handle,
+                        IncludeChildWindows = ShapeManager.IncludeControls,
+                        Timeout = 5000
+                    };
+
+                    ShapeManager.Windows = wla.GetWindowInfoList();
                 });
             }
         }
@@ -661,9 +665,6 @@ namespace ShareX.ScreenCaptureLib
                 case Keys.Oemtilde:
                     CloseWindow(RegionResult.ActiveMonitor);
                     break;
-                case Keys.Control | Keys.C:
-                    CopyAreaInfo();
-                    break;
             }
 
             if (IsEditorMode)
@@ -691,7 +692,11 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                if (e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
+                if (e.KeyData == (Keys.Control | Keys.C))
+                {
+                    CopyAreaInfo();
+                }
+                else if (e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
                 {
                     MonitorKey(e.KeyData - Keys.D0);
                     return;

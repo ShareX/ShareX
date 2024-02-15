@@ -2,6 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <OutputType>WinExe</OutputType>
+    <PlatformTarget>x86</PlatformTarget>
     <AssemblyName>ShareX_Launcher</AssemblyName>
     <ApplicationIcon>ShareX_Icon.ico</ApplicationIcon>
     <UseWindowsForms>true</UseWindowsForms>

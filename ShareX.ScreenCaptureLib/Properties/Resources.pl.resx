@@ -388,7 +388,7 @@
     <value>Kontynuuj zadanie (spacja lub prawy przycisk myszy)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Skopiuj obraz do schowka (Ctrl + Shift + C)</value>
+    <value>Skopiuj obraz do schowka (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>Przesuń na wierzch</value>

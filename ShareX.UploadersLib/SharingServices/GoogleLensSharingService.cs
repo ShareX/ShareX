@@ -25,7 +25,7 @@
 
 namespace ShareX.UploadersLib.SharingServices
 {
-    public class GoogleImageSearchSharingService : SimpleURLSharingService
+    public class GoogleLensSharingService : SimpleURLSharingService
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.GoogleImageSearch;
 

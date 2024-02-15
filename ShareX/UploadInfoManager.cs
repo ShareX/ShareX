@@ -378,9 +378,9 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShareURL(SelectedItem.Info.Result.ToString(), urlSharingService);
         }
 
-        public void SearchImageUsingGoogle()
+        public void SearchImageUsingGoogleLens()
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImageUsingGoogle(SelectedItem.Info.Result.URL);
+            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImageUsingGoogleLens(SelectedItem.Info.Result.URL);
         }
 
         public void SearchImageUsingBing()

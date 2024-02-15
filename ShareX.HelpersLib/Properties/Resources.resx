@@ -543,7 +543,7 @@ Would you like to download it?</value>
     <value>File path with output file name extension</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>Google image search</value>
+    <value>Google Lens</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>Directory indexer</value>

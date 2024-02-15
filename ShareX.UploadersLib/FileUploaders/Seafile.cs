@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
+using System.Web;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -453,8 +454,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         if (CreateShareableURLRaw)
                         {
-                            var uriBuilder = new UriBuilder(result.URL);
-                            var query = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
+                            UriBuilder uriBuilder = new UriBuilder(result.URL);
+                            NameValueCollection query = HttpUtility.ParseQueryString(uriBuilder.Query);
                             query["raw"] = "1";
                             uriBuilder.Query = query.ToString();
                             result.URL = $"{uriBuilder.Scheme}://{uriBuilder.Host}{uriBuilder.Path}{uriBuilder.Query}";

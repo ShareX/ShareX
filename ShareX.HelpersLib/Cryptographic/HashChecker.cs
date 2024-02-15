@@ -55,19 +55,22 @@ namespace ShareX.HelpersLib
                 IsWorking = true;
 
                 Progress<float> progress = new Progress<float>(OnProgressChanged);
-                cts = new CancellationTokenSource();
-                result = await Task.Run(() =>
-                {
-                    try
-                    {
-                        return HashCheckThread(filePath, hashType, progress, cts.Token);
-                    }
-                    catch (OperationCanceledException)
-                    {
-                    }
 
-                    return null;
-                }, cts.Token);
+                using (cts = new CancellationTokenSource())
+                {
+                    result = await Task.Run(() =>
+                    {
+                        try
+                        {
+                            return HashCheckThread(filePath, hashType, progress, cts.Token);
+                        }
+                        catch (OperationCanceledException)
+                        {
+                        }
+
+                        return null;
+                    }, cts.Token);
+                }
 
                 IsWorking = false;
             }
@@ -77,10 +80,7 @@ namespace ShareX.HelpersLib
 
         public void Stop()
         {
-            if (cts != null)
-            {
-                cts.Cancel();
-            }
+            cts?.Cancel();
         }
 
         private string HashCheckThread(string filePath, HashType hashType, IProgress<float> progress, CancellationToken ct)

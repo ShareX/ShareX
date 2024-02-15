@@ -619,10 +619,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             public void Dispose()
             {
-                if (cts != null)
-                {
-                    cts.Cancel();
-                }
+                cts?.Cancel();
+                cts?.Dispose();
             }
         }
 

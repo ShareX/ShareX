@@ -285,7 +285,7 @@
     <value>繼續任務 (空白鍵或滑鼠右鍵)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>將圖片複製到剪貼簿 (Ctrl + Shift + C)</value>
+    <value>將圖片複製到剪貼簿 (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>裁切圖片...</value>
