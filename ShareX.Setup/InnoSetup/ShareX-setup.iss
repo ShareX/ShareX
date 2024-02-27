@@ -104,11 +104,6 @@ Root: "HKCU"; Subkey: "Control Panel\Keyboard"; ValueType: dword; ValueName: "Pr
 #include "CodeDependencies.iss"
 
 [Code]
-function IsAdmin: Boolean;
-begin
-  Result := (IsAdminLoggedOn or IsPowerUserLoggedOn);
-end;
-
 procedure InitializeWizard;
 begin
   if not IsAdmin then

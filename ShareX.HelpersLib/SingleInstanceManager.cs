@@ -63,7 +63,7 @@ namespace ShareX.HelpersLib
                     {
                         cts = new CancellationTokenSource();
 
-                        Task.Run(() => ListenForConnectionsAsync(), cts.Token);
+                        Task.Run(ListenForConnectionsAsync, cts.Token);
                     }
                     else
                     {
