@@ -431,6 +431,12 @@ namespace ShareX
 
                 if (!cancelUpload)
                 {
+                    if (Info.TaskSettings.OverrideFTP)
+                    {
+                        taskReferenceHelper.OverrideFTP = true;
+                        taskReferenceHelper.FTPIndex = Info.TaskSettings.FTPIndex;
+                    }
+
                     OnUploadStarted();
 
                     bool isError = DoUpload(Data, Info.FileName);

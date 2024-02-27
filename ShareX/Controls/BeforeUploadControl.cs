@@ -47,7 +47,7 @@ namespace ShareX
             switch (info.DataType)
             {
                 case EDataType.Image:
-                    InitCapture(info.TaskSettings);
+                    InitCapture(info.TaskSettings, info.DataType);
                     break;
                 case EDataType.Text:
                     Helpers.GetEnums<TextDestination>().ForEach(x =>
@@ -61,7 +61,7 @@ namespace ShareX
                                 overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomTextUploaderSelected, info.TaskSettings);
                             }
 
-                            AddDestination<TextDestination>((int)x, EDataType.Text, info.TaskSettings, overrideText);
+                            AddDestination<TextDestination>((int)x, EDataType.Text, info.TaskSettings, overrideText, info.DataType);
                         }
                     });
 
@@ -74,7 +74,7 @@ namespace ShareX
                             overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomFileUploaderSelected, info.TaskSettings);
                         }
 
-                        AddDestination<FileDestination>((int)x, EDataType.Text, info.TaskSettings, overrideText);
+                        AddDestination<FileDestination>((int)x, EDataType.Text, info.TaskSettings, overrideText, info.DataType);
                     });
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
@@ -99,7 +99,7 @@ namespace ShareX
                             overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomFileUploaderSelected, info.TaskSettings);
                         }
 
-                        AddDestination<FileDestination>((int)x, EDataType.File, info.TaskSettings, overrideText);
+                        AddDestination<FileDestination>((int)x, EDataType.File, info.TaskSettings, overrideText, info.DataType);
                     });
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
@@ -117,7 +117,7 @@ namespace ShareX
                             overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomURLShortenerSelected, info.TaskSettings);
                         }
 
-                        AddDestination<UrlShortenerType>((int)x, EDataType.URL, info.TaskSettings, overrideText);
+                        AddDestination<UrlShortenerType>((int)x, EDataType.URL, info.TaskSettings, overrideText, info.DataType);
                     });
 
                     flp.Controls.OfType<RadioButton>().ForEach(x =>
@@ -131,7 +131,7 @@ namespace ShareX
             OnInitCompleted();
         }
 
-        public void InitCapture(TaskSettings taskSettings)
+        public void InitCapture(TaskSettings taskSettings, EDataType trueDateType = EDataType.Default)
         {
             Helpers.GetEnums<ImageDestination>().ForEach(x =>
             {
@@ -144,7 +144,7 @@ namespace ShareX
                         overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomImageUploaderSelected, taskSettings);
                     }
 
-                    AddDestination<ImageDestination>((int)x, EDataType.Image, taskSettings, overrideText);
+                    AddDestination<ImageDestination>((int)x, EDataType.Image, taskSettings, overrideText, trueDateType);
                 }
             });
 
@@ -157,7 +157,7 @@ namespace ShareX
                     overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomFileUploaderSelected, taskSettings);
                 }
 
-                AddDestination<FileDestination>((int)x, EDataType.File, taskSettings, overrideText);
+                AddDestination<FileDestination>((int)x, EDataType.File, taskSettings, overrideText, trueDateType);
             });
 
             flp.Controls.OfType<RadioButton>().ForEach(x =>
@@ -187,21 +187,65 @@ namespace ShareX
             }
         }
 
-        private void AddDestination<T>(int index, EDataType dataType, TaskSettings taskSettings, string overrideText = null)
+        private void AddDestination<T>(int index, EDataType dataType, TaskSettings taskSettings, string overrideText = null, EDataType trueDataType = EDataType.Default)
         {
             Enum destination = (Enum)Enum.ToObject(typeof(T), index);
-
-            if (UploadersConfigValidator.Validate<T>(index, Program.UploadersConfig))
+            if (destination.Equals(FileDestination.FTP))
             {
                 RadioButton rb = new RadioButton() { AutoSize = true };
 
-                rb.Text = string.IsNullOrEmpty(overrideText) ? destination.GetLocalizedDescription() :
-                    string.Format("{0} [{1}]", Resources.BeforeUploadControl_AddDestination_Custom, overrideText);
+                rb.Text = string.Format("FTP");
                 rb.Tag = destination;
-                rb.CheckedChanged += (sender, e) => SetDestinations(rb.Checked, dataType, rb.Tag, taskSettings);
 
+                ComboBox ftpComboBox = new ComboBox() { Size = new System.Drawing.Size(250, 100) };
+                Program.UploadersConfig.FTPAccountList.ForEach(ftpAcc => { ftpComboBox.Items.Add(ftpAcc.Name); });
+                ftpComboBox.SelectedIndexChanged += (sender, e) => SetFTPOverrideIndex(ftpComboBox.SelectedIndex, taskSettings);
+                switch (trueDataType)
+                {
+                    case EDataType.Image:
+                        ftpComboBox.SelectedIndex = Program.UploadersConfig.FTPSelectedImage;
+                        break;
+                    case EDataType.Text:
+                        ftpComboBox.SelectedIndex = Program.UploadersConfig.FTPSelectedText;
+                        break;
+                    default:
+                    case EDataType.File:
+                        ftpComboBox.SelectedIndex = Program.UploadersConfig.FTPSelectedFile;
+                        break;
+                }
+                rb.CheckedChanged += (sender, e) => SetFTPOverride(rb.Checked, ftpComboBox.SelectedIndex, taskSettings);
                 flp.Controls.Add(rb);
+                flp.Controls.Add(ftpComboBox);
+            } else { 
+                if (UploadersConfigValidator.Validate<T>(index, Program.UploadersConfig))
+                {
+                    RadioButton rb = new RadioButton() { AutoSize = true };
+
+                    rb.Text = string.IsNullOrEmpty(overrideText) ? destination.GetLocalizedDescription() :
+                        string.Format("{0} [{1}]", Resources.BeforeUploadControl_AddDestination_Custom, overrideText);
+                    rb.Tag = destination;
+                    rb.CheckedChanged += (sender, e) => SetDestinations(rb.Checked, dataType, rb.Tag, taskSettings);
+
+                    flp.Controls.Add(rb);
+                }
             }
+        }
+
+        private void SetFTPOverrideIndex(int ftpAccIndex, TaskSettings taskSettings)
+        {
+            DebugHelper.WriteLine(ftpAccIndex.ToString());
+            taskSettings.FTPIndex = ftpAccIndex;
+        }
+
+        private void SetFTPOverride(bool isActive, int ftpAccIndex, TaskSettings taskSettings)
+        {
+            if (!isActive) return;
+            DebugHelper.WriteLine(ftpAccIndex.ToString());
+            taskSettings.OverrideFTP = true;
+            taskSettings.FTPIndex = ftpAccIndex;
+            taskSettings.ImageDestination = ImageDestination.FileUploader;
+            taskSettings.TextDestination = TextDestination.FileUploader;
+            taskSettings.ImageFileDestination = taskSettings.TextFileDestination = taskSettings.FileDestination = FileDestination.FTP;
         }
 
         private void SetDestinations(bool isActive, EDataType dataType, object destination, TaskSettings taskSettings)
