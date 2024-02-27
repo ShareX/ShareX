@@ -1151,7 +1151,7 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
     <value>Wyszukiwanie wizualne Bing</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>Wyszukiwarka grafiki Google</value>
+    <value>Google Lens</value>
   </data>
   <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
     <value>Nazwa procesu okna</value>
