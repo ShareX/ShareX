@@ -174,9 +174,36 @@ namespace ShareX.HistoryLib
             ilvImages.Items.AddRange(ilvItems);
         }
 
+        private void RemoveSelectedItems()
+        {
+            List<ImageListViewItem> selectedItems = GetSelectedItemsList();
+            if (selectedItems.Any())
+            {
+                foreach (ImageListViewItem selectedItem in selectedItems)
+                {
+                    allHistoryItems.Remove(selectedItem.Tag as HistoryItem);
+                    ilvImages.Items.Remove(selectedItem);
+                }
+                // Reverse back to normal order, without effecting current list instance
+                var allHistoryItemsClone = allHistoryItems.Copy();
+                allHistoryItemsClone.Reverse();
+                UpdateHistoryItemsFile(allHistoryItemsClone);
+            }
+        }
+        private bool UpdateHistoryItemsFile(List<HistoryItem> updatedHistoryItems)
+        {
+            HistoryManager history = new HistoryManagerJSON(HistoryPath);
+            return history.UpdateHistoryItemsFile(updatedHistoryItems);
+        }
+
         private HistoryItem[] him_GetHistoryItems()
         {
             return ilvImages.SelectedItems.Select(x => x.Tag as HistoryItem).ToArray();
+        }
+
+        private List<ImageListViewItem> GetSelectedItemsList()
+        {
+            return ilvImages.SelectedItems.Select(item => item).ToList();
         }
 
         #region Form events
@@ -204,6 +231,13 @@ namespace ShareX.HistoryLib
                 case Keys.F5:
                     await RefreshHistoryItems();
                     e.SuppressKeyPress = true;
+                    break;
+                case Keys.Delete:
+                    RemoveSelectedItems();
+                    break;
+                case Keys.Shift | Keys.Delete:
+                    him.DeleteFiles();
+                    RemoveSelectedItems();
                     break;
                 case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
                     await RefreshHistoryItems(true);

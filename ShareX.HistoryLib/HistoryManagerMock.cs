@@ -74,5 +74,10 @@ namespace ShareX.HistoryLib
         {
             return true;
         }
+
+        protected override bool StoreHistoryItemsBack(string filePath, List<HistoryItem> historyItems)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

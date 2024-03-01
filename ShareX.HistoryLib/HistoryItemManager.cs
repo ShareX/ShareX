@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -38,6 +39,7 @@ namespace ShareX.HistoryLib
         public event GetHistoryItemsEventHandler GetHistoryItems;
 
         public HistoryItem HistoryItem { get; private set; }
+        public List<HistoryItem> HistoryItems { get; private set; }
 
         public bool IsURLExist { get; private set; }
         public bool IsShortenedURLExist { get; private set; }
@@ -57,6 +59,7 @@ namespace ShareX.HistoryLib
             this.uploadFile = uploadFile;
             this.editImage = editImage;
             this.pinToScreen = pinToScreen;
+            HistoryItems = new List<HistoryItem>();
 
             InitializeComponent();
 
@@ -75,10 +78,12 @@ namespace ShareX.HistoryLib
             if (historyItems != null && historyItems.Length > 0)
             {
                 HistoryItem = historyItems[0];
+                HistoryItems = historyItems.ToList();
             }
             else
             {
                 HistoryItem = null;
+                HistoryItems = new List<HistoryItem>();
             }
 
             if (HistoryItem != null)
@@ -99,6 +104,10 @@ namespace ShareX.HistoryLib
             else
             {
                 cmsHistory.Enabled = false;
+            }
+            if (HistoryItems != null)
+            {
+
             }
 
             return HistoryItem;
@@ -587,6 +596,17 @@ namespace ShareX.HistoryLib
         public void ShowMoreInfo()
         {
             new HistoryItemInfoForm(HistoryItem).Show();
+        }
+
+        public void DeleteFiles()
+        {
+            if (HistoryItems.Any())
+            {
+                foreach (string filePath in HistoryItems.Select(x => x.FilePath))
+                {
+                    FileHelpers.DeleteFile(filePath, true);
+                }
+            }
         }
     }
 }

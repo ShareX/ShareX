@@ -68,6 +68,25 @@ namespace ShareX.HistoryLib
             return await Task.Run(() => GetHistoryItems());
         }
 
+        /// <summary>
+        /// Stores any changes made to the history items. It fully replaces the content of the file.
+        /// </summary>
+        /// <param name="historyItems">History items list to save</param>
+        /// <returns>success: true</returns>
+        public bool UpdateHistoryItemsFile(List<HistoryItem> historyItems)
+        {
+            try
+            {
+                return StoreHistoryItemsBack(historyItems);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
         public bool AppendHistoryItem(HistoryItem historyItem)
         {
             return AppendHistoryItems(new HistoryItem[] { historyItem });
@@ -99,6 +118,13 @@ namespace ShareX.HistoryLib
         }
 
         protected abstract List<HistoryItem> Load(string filePath);
+
+        protected bool StoreHistoryItemsBack(List<HistoryItem> historyItems)
+        {
+            return StoreHistoryItemsBack(FilePath, historyItems);
+        }
+
+        protected abstract bool StoreHistoryItemsBack(string filePath, List<HistoryItem> historyItems);
 
         protected bool Append(IEnumerable<HistoryItem> historyItems)
         {
