@@ -152,6 +152,12 @@ namespace ShareX.HelpersLib
             return fileName;
         }
 
+        public static bool IsSuccessStatusCode(HttpStatusCode statusCode)
+        {
+            int statusCodeNum = (int)statusCode;
+            return statusCodeNum >= 200 && statusCodeNum <= 299;
+        }
+
         public static int GetRandomUnusedPort()
         {
             TcpListener listener = new TcpListener(IPAddress.Loopback, 0);

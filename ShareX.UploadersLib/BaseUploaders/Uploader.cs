@@ -273,7 +273,7 @@ namespace ShareX.UploadersLib
                 }
                 contentLength = Math.Min(contentLength, data.Length - contentPosition);
 
-                string contentType = RequestHelpers.GetMimeType(fileName);
+                string contentType = MimeTypes.GetMimeTypeFromFileName(fileName);
 
                 if (headers == null)
                 {

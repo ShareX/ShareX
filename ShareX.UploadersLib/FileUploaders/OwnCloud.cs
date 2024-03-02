@@ -114,7 +114,7 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, Password);
             headers["OCS-APIREQUEST"] = "true";
 
-            string response = SendRequest(HttpMethod.PUT, url, stream, RequestHelpers.GetMimeType(fileName), null, headers);
+            string response = SendRequest(HttpMethod.PUT, url, stream, MimeTypes.GetMimeTypeFromFileName(fileName), null, headers);
 
             UploadResult result = new UploadResult(response);
 

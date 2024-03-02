@@ -100,7 +100,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             OnEarlyURLCopyRequested(resultURL);
 
-            string contentType = RequestHelpers.GetMimeType(fileName);
+            string contentType = MimeTypes.GetMimeTypeFromFileName(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
             requestHeaders["x-ms-date"] = date;

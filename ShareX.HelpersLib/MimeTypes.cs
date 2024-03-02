@@ -23,31 +23,60 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
-namespace ShareX.UploadersLib
+namespace ShareX.HelpersLib
 {
     public static class MimeTypes
     {
         public static readonly string DefaultMimeType = "application/octet-stream";
 
-        public static string GetMimeType(string ext)
+        public static string GetMimeTypeFromExtension(string extension)
         {
-            if (!string.IsNullOrEmpty(ext))
+            if (!string.IsNullOrEmpty(extension))
             {
-                if (ext[0] == '.')
+                if (extension[0] == '.')
                 {
-                    ext = ext.Substring(1);
+                    extension = extension.Substring(1);
                 }
 
-                if (Mappings.TryGetValue(ext, out string mime))
+                if (Mappings.TryGetValue(extension, out string mime))
                 {
                     return mime;
                 }
             }
 
             return null;
+        }
+
+        public static string GetMimeTypeFromFileName(string fileName)
+        {
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                string extension = Path.GetExtension(fileName).ToLowerInvariant();
+
+                if (!string.IsNullOrEmpty(extension))
+                {
+                    string mimeType = GetMimeTypeFromExtension(extension);
+
+                    if (!string.IsNullOrEmpty(mimeType))
+                    {
+                        return mimeType;
+                    }
+
+                    mimeType = RegistryHelpers.GetValueString(extension, "Content Type", RegistryHive.ClassesRoot);
+
+                    if (!string.IsNullOrEmpty(mimeType))
+                    {
+                        return mimeType;
+                    }
+                }
+            }
+
+            return DefaultMimeType;
         }
 
         // http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types

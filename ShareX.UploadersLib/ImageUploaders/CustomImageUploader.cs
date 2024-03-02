@@ -83,7 +83,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             }
             else if (uploader.Body == CustomUploaderBody.Binary)
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, RequestHelpers.GetMimeType(fileName),
+                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, MimeTypes.GetMimeTypeFromFileName(fileName),
                     null, uploader.GetHeaders(input));
             }
             else
