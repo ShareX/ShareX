@@ -127,9 +127,24 @@
     <value>檢視視窗...</value>
   </data>
   <data name="btnPinToTop.Text" xml:space="preserve">
-    <value>置頂</value>
+    <value>一律在最上層</value>
   </data>
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>重新整理</value>
+  </data>
+  <data name="rtbInfo.Text" xml:space="preserve">
+    <value>資訊</value>
+  </data>
+  <data name="lblOpacityTip.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="mbWindowList.Text" xml:space="preserve">
+    <value>視窗列表</value>
+  </data>
+  <data name="lblOpacity.Text" xml:space="preserve">
+    <value>不透明度：</value>
+  </data>
+  <data name="cbTopMost.Text" xml:space="preserve">
+    <value>常駐最上層</value>
   </data>
 </root>
