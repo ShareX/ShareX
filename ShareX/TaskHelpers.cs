@@ -1956,9 +1956,9 @@ namespace ShareX
                         case NativeMessagingAction.UploadImage:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
                             {
-                                Bitmap bmp = null;
+                                Bitmap bmp = WebHelpers.DataURLToImage(nativeMessagingInput.URL);
 
-                                if (taskSettings.AdvancedSettings.ProcessImagesDuringExtensionUpload)
+                                if (bmp == null && taskSettings.AdvancedSettings.ProcessImagesDuringExtensionUpload)
                                 {
                                     try
                                     {

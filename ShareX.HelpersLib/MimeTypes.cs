@@ -79,8 +79,18 @@ namespace ShareX.HelpersLib
             return DefaultMimeType;
         }
 
+        public static bool IsImageMimeType(string mimeType)
+        {
+            return !string.IsNullOrEmpty(mimeType) &&
+                (mimeType.Equals(Mappings["png"], StringComparison.OrdinalIgnoreCase) ||
+                mimeType.Equals(Mappings["jpeg"], StringComparison.OrdinalIgnoreCase) ||
+                mimeType.Equals(Mappings["gif"], StringComparison.OrdinalIgnoreCase) ||
+                mimeType.Equals(Mappings["bmp"], StringComparison.OrdinalIgnoreCase) ||
+                mimeType.Equals(Mappings["tiff"], StringComparison.OrdinalIgnoreCase));
+        }
+
         // http://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types
-        private static Dictionary<string, string> Mappings = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase)
+        private static Dictionary<string, string> Mappings = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {
             { "123", "application/vnd.lotus-1-2-3" },
             { "3dml", "text/vnd.in3d.3dml" },
