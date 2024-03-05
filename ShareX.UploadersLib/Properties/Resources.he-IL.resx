@@ -277,4 +277,13 @@
   <data name="ThumbnailURL" xml:space="preserve">
     <value>קישור תמונה ממוזערת</value>
   </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>הדרייב שלי</value>
+  </data>
+  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
+    <value>בעיה לא נמצאה</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>יש להגדיר "קישור בקשה".</value>
+  </data>
 </root>

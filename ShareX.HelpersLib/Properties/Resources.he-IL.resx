@@ -1216,9 +1216,6 @@
   <data name="URLSharingServices_Email" xml:space="preserve">
     <value>דוא"ל</value>
   </data>
-  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>חיפוש תמונות בגוגל</value>
-  </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>שירות מקצר קישורים מותאם אישית</value>
   </data>

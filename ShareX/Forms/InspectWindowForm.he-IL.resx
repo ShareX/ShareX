@@ -132,4 +132,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - חלון בדיקה</value>
   </data>
+  <data name="lblOpacity.Text" xml:space="preserve">
+    <value>שקיפות:</value>
+  </data>
+  <data name="cbTopMost.Text" xml:space="preserve">
+    <value>הכי גבוה</value>
+  </data>
+  <data name="mbWindowList.Text" xml:space="preserve">
+    <value>רשימת חלונות</value>
+  </data>
 </root>

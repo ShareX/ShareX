@@ -145,7 +145,7 @@
     <value>העתק</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>התקן מכשירי הקלטה</value>
+    <value>התקן מכשירי הקלטה...</value>
   </data>
   <data name="btnRefreshSources.Text" xml:space="preserve">
     <value>רענן</value>
@@ -154,7 +154,7 @@
     <value>בדיקה עם CMD</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>השתמש בפקודות מותאמות אישית</value>
+    <value>השתמש בפקודות מותאמות אישית:</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
     <value>ברירת המחדל היא sierra2_4a.</value>
@@ -300,5 +300,26 @@
   </data>
   <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
     <value>?</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>מקודד וידאו:</value>
+  </data>
+  <data name="lblNVENCTune.Text" xml:space="preserve">
+    <value>מנגינה:</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>איפוס אפשרויות...</value>
+  </data>
+  <data name="lblAMFBitrate.Text" xml:space="preserve">
+    <value>קצב סיביות:</value>
+  </data>
+  <data name="lblOpusBitrate.Text" xml:space="preserve">
+    <value>קצב סיביות:</value>
+  </data>
+  <data name="lblAACBitrate.Text" xml:space="preserve">
+    <value>קצב סיביות:</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>מקודד שמע:</value>
   </data>
 </root>
