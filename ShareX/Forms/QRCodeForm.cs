@@ -286,7 +286,7 @@ namespace ShareX
             if (pbQRCode.Image != null)
             {
                 Bitmap bmp = (Bitmap)pbQRCode.Image.Clone();
-                UploadManager.UploadImage(bmp);
+                TaskHelpers.MainFormUploadImage(bmp);
             }
         }
     }

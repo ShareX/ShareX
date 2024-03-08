@@ -158,7 +158,7 @@ namespace ShareX.HelpersLib
             Image img;
 
             if (Settings.AutoRotateImage && ((rect.Width > rect.Height && Image.Width < Image.Height) ||
-                                             (rect.Width < rect.Height && Image.Width > Image.Height)))
+                (rect.Width < rect.Height && Image.Width > Image.Height)))
             {
                 img = (Image)Image.Clone();
                 img.RotateFlip(RotateFlipType.Rotate90FlipNone);
