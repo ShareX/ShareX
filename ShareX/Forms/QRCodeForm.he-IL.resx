@@ -147,4 +147,31 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - קוד QR</value>
   </data>
+  <data name="lblQRCodeSizeHint.Text" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="lblQRCodeSize.Text" xml:space="preserve">
+    <value>גודל קוד QR:</value>
+  </data>
+  <data name="lblQRCode.Text" xml:space="preserve">
+    <value>קוד QR:</value>
+  </data>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>טקסט:</value>
+  </data>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>העתק תמונה</value>
+  </data>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>שמור תמונה...</value>
+  </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>העלה תמונה</value>
+  </data>
+  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
+    <value>סרוק קוד QR מהמסך...</value>
+  </data>
+  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
+    <value>סרוק קוד QR מקובץ תמונה...</value>
+  </data>
 </root>

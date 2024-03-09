@@ -133,7 +133,7 @@
     <value>הצג את כפתור "העלה עם ShareX" בתפריט ההקשר של סייר הקבצים</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>ניתן למצוא את ההגדרות הללו ב"הגדרות אפליקציה -&gt; לשונית אינטגרציה".</value>
+    <value>ניתן למצוא את ההגדרות הללו ב"הגדרות יישום -&gt; לשונית אינטגרציה".</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>הגדרה ראשונית של ShareX</value>

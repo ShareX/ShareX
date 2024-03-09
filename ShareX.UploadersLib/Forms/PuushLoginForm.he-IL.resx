@@ -129,4 +129,7 @@
   <data name="llForgottenPassword.Text" xml:space="preserve">
     <value>שכחת סיסמה?</value>
   </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>דוא"ל:</value>
+  </data>
 </root>

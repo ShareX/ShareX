@@ -403,7 +403,7 @@
     <value>תיקיה אישית של ShareX:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - הגדרות אפליקציה</value>
+    <value>ShareX - הגדרות יישום</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>תוסף Firefox</value>
@@ -425,5 +425,8 @@
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>מזער למגש בעליית התוכנית</value>
+  </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>בדוק עדכונים אוטומטית</value>
   </data>
 </root>
