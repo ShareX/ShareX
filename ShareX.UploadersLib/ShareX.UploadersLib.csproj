@@ -19,7 +19,7 @@
     <PackageReference Include="FluentFTP" Version="49.0.2" />
     <PackageReference Include="MegaApiClient" Version="1.10.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SSH.NET" Version="2023.0.1" />
+    <PackageReference Include="SSH.NET" Version="2024.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\OAuthCallbackPage.html" />
