@@ -69,6 +69,7 @@ namespace ShareX.HelpersLib
                     {
                         RedirectArgumentsToFirstInstance(args);
 
+                        DebugHelper.Logger.ProcessMessageQueue();
                         Environment.Exit(0);
                     }
                 }
@@ -125,26 +126,33 @@ namespace ShareX.HelpersLib
                 }
                 catch (Exception e)
                 {
-                    DebugHelper.WriteLine("Error in named pipe communication: {0}", e.Message);
+                    DebugHelper.WriteException(e);
                 }
             }
         }
 
         private void RedirectArgumentsToFirstInstance(string[] args)
         {
-            using (NamedPipeClientStream clientPipe = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
+            try
             {
-                clientPipe.Connect();
-
-                using (BinaryWriter writer = new BinaryWriter(clientPipe, Encoding.UTF8))
+                using (NamedPipeClientStream clientPipe = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
                 {
-                    writer.Write(args.Length);
+                    clientPipe.Connect();
 
-                    foreach (string argument in args)
+                    using (BinaryWriter writer = new BinaryWriter(clientPipe, Encoding.UTF8))
                     {
-                        writer.Write(argument);
+                        writer.Write(args.Length);
+
+                        foreach (string argument in args)
+                        {
+                            writer.Write(argument);
+                        }
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
             }
         }
 

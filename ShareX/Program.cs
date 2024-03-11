@@ -377,13 +377,13 @@ namespace ShareX
             {
                 closeSequenceStarted = true;
 
-                DebugHelper.Logger.AsyncWrite = false;
                 DebugHelper.WriteLine("ShareX closing.");
 
-                if (WatchFolderManager != null) WatchFolderManager.Dispose();
+                WatchFolderManager?.Dispose();
                 SettingManager.SaveAllSettings();
 
                 DebugHelper.WriteLine("ShareX closed.");
+                DebugHelper.Logger.ProcessMessageQueue();
             }
         }
 
