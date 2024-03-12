@@ -298,26 +298,33 @@ namespace ShareX
             MultiInstance = CLI.IsCommandExist("multi", "m");
 
             using (SingleInstanceManager singleInstanceManager = new SingleInstanceManager(!MultiInstance, args))
-            using (TimerResolutionManager timerResolutionManager = new TimerResolutionManager())
             {
-                singleInstanceManager.ArgumentsReceived += SingleInstanceManager_ArgumentsReceived;
+                if (singleInstanceManager.IsFirstInstance)
+                {
+                    singleInstanceManager.ArgumentsReceived += SingleInstanceManager_ArgumentsReceived;
 
-                Run();
+                    using (TimerResolutionManager timerResolutionManager = new TimerResolutionManager())
+                    {
+                        Run();
+                    }
+
+                    if (restartRequested)
+                    {
+                        DebugHelper.WriteLine("ShareX restarting.");
+
+                        if (restartAsAdmin)
+                        {
+                            TaskHelpers.RunShareXAsAdmin("-silent");
+                        }
+                        else
+                        {
+                            Process.Start(Application.ExecutablePath);
+                        }
+                    }
+                }
             }
 
-            if (restartRequested)
-            {
-                DebugHelper.WriteLine("ShareX restarting.");
-
-                if (restartAsAdmin)
-                {
-                    TaskHelpers.RunShareXAsAdmin("-silent");
-                }
-                else
-                {
-                    Process.Start(Application.ExecutablePath);
-                }
-            }
+            DebugHelper.Flush();
         }
 
         private static void Run()
@@ -383,7 +390,6 @@ namespace ShareX
                 SettingManager.SaveAllSettings();
 
                 DebugHelper.WriteLine("ShareX closed.");
-                DebugHelper.Logger.ProcessMessageQueue();
             }
         }
 

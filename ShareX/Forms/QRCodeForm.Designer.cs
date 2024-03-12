@@ -148,6 +148,7 @@
             this.Controls.Add(this.nudQRCodeSize);
             this.Controls.Add(this.txtText);
             this.Name = "QRCodeForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.QRCodeForm_Shown);
             this.Resize += new System.EventHandler(this.QRCodeForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.nudQRCodeSize)).EndInit();

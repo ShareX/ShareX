@@ -68,9 +68,6 @@ namespace ShareX.HelpersLib
                     else
                     {
                         RedirectArgumentsToFirstInstance(args);
-
-                        DebugHelper.Logger.ProcessMessageQueue();
-                        Environment.Exit(0);
                     }
                 }
                 catch (AbandonedMutexException)
