@@ -34,7 +34,7 @@ namespace ShareX.HelpersLib
 {
     public class SingleInstanceManager : IDisposable
     {
-        public event EventHandler<ArgumentsReceivedEventArgs> ArgumentsReceived;
+        public event Action<string[]> ArgumentsReceived;
 
         public bool IsSingleInstance { get; private set; }
         public bool IsFirstInstance { get; private set; }
@@ -47,18 +47,22 @@ namespace ShareX.HelpersLib
         private readonly Mutex mutex;
         private CancellationTokenSource cts;
 
+        public SingleInstanceManager(string[] args) : this(true, args)
+        {
+        }
+
         public SingleInstanceManager(bool isSingleInstance, string[] args)
         {
             IsSingleInstance = isSingleInstance;
 
             mutex = new Mutex(false, MutexName);
 
-            if (IsSingleInstance)
+            try
             {
-                try
-                {
-                    IsFirstInstance = mutex.WaitOne(100, false);
+                IsFirstInstance = mutex.WaitOne(100, false);
 
+                if (IsSingleInstance)
+                {
                     if (IsFirstInstance)
                     {
                         cts = new CancellationTokenSource();
@@ -70,22 +74,18 @@ namespace ShareX.HelpersLib
                         RedirectArgumentsToFirstInstance(args);
                     }
                 }
-                catch (AbandonedMutexException)
-                {
-                    DebugHelper.WriteLine("Single instance mutex found abandoned from another process.");
-
-                    IsFirstInstance = true;
-                }
             }
-            else
+            catch (AbandonedMutexException)
             {
+                DebugHelper.WriteLine("Single instance mutex found abandoned from another process.");
+
                 IsFirstInstance = true;
             }
         }
 
         protected virtual void OnArgumentsReceived(string[] arguments)
         {
-            ArgumentsReceived?.Invoke(this, new ArgumentsReceivedEventArgs(arguments));
+            ArgumentsReceived?.Invoke(arguments);
         }
 
         private async Task ListenForConnectionsAsync()
@@ -155,19 +155,21 @@ namespace ShareX.HelpersLib
 
         public void Dispose()
         {
-            cts?.Cancel();
-            cts?.Dispose();
-            mutex?.ReleaseMutex();
-        }
-    }
+            if (cts != null)
+            {
+                cts.Cancel();
+                cts.Dispose();
+            }
 
-    public class ArgumentsReceivedEventArgs : EventArgs
-    {
-        public string[] Arguments { get; private set; }
+            if (mutex != null)
+            {
+                if (IsFirstInstance)
+                {
+                    mutex.ReleaseMutex();
+                }
 
-        public ArgumentsReceivedEventArgs(string[] arguments)
-        {
-            Arguments = arguments;
+                mutex.Dispose();
+            }
         }
     }
 }

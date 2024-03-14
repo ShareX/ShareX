@@ -289,7 +289,7 @@ namespace ShareX
 
             using (SingleInstanceManager singleInstanceManager = new SingleInstanceManager(!MultiInstance, args))
             {
-                if (singleInstanceManager.IsFirstInstance)
+                if (!singleInstanceManager.IsSingleInstance || singleInstanceManager.IsFirstInstance)
                 {
                     singleInstanceManager.ArgumentsReceived += SingleInstanceManager_ArgumentsReceived;
 
@@ -390,13 +390,13 @@ namespace ShareX
             Application.Exit();
         }
 
-        private static void SingleInstanceManager_ArgumentsReceived(object sender, ArgumentsReceivedEventArgs e)
+        private static void SingleInstanceManager_ArgumentsReceived(string[] arguments)
         {
             if (WaitFormLoad(5000))
             {
                 MainForm.InvokeSafe(async () =>
                 {
-                    await UseCommandLineArgs(e.Arguments);
+                    await UseCommandLineArgs(arguments);
                 });
             }
         }
