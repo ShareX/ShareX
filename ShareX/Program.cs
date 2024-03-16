@@ -44,7 +44,9 @@ namespace ShareX
 {
     internal static class Program
     {
-        public const string Name = "ShareX";
+        public const string AppName = "ShareX";
+        public const string MutexName = "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC";
+        public static readonly string PipeName = $"{Environment.MachineName}-{Environment.UserName}-{AppName}";
 
         public const ShareXBuild Build =
 #if RELEASE
@@ -78,7 +80,7 @@ namespace ShareX
         {
             get
             {
-                string title = $"{Name} {VersionText}";
+                string title = $"{AppName} {VersionText}";
 
                 if (Settings != null && Settings.DevMode)
                 {
@@ -105,7 +107,7 @@ namespace ShareX
                     return Title;
                 }
 
-                return Name;
+                return AppName;
             }
         }
 
@@ -135,8 +137,8 @@ namespace ShareX
 
         private const string PersonalPathConfigFileName = "PersonalPath.cfg";
 
-        public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), Name);
-        public static readonly string PortablePersonalFolder = FileHelpers.GetAbsolutePath(Name);
+        public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), AppName);
+        public static readonly string PortablePersonalFolder = FileHelpers.GetAbsolutePath(AppName);
 
         private static string PersonalPathConfigFilePath
         {
@@ -156,7 +158,7 @@ namespace ShareX
         private static readonly string CurrentPersonalPathConfigFilePath = Path.Combine(DefaultPersonalFolder, PersonalPathConfigFileName);
 
         private static readonly string PreviousPersonalPathConfigFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            Name, PersonalPathConfigFileName);
+            AppName, PersonalPathConfigFileName);
 
         private static readonly string PortableCheckFilePath = FileHelpers.GetAbsolutePath("Portable");
         public static readonly string NativeMessagingHostFilePath = FileHelpers.GetAbsolutePath("ShareX_NativeMessagingHost.exe");
@@ -287,7 +289,7 @@ namespace ShareX
 
             MultiInstance = CLI.IsCommandExist("multi", "m");
 
-            using (SingleInstanceManager singleInstanceManager = new SingleInstanceManager(!MultiInstance, args))
+            using (SingleInstanceManager singleInstanceManager = new SingleInstanceManager(MutexName, PipeName, !MultiInstance, args))
             {
                 if (!singleInstanceManager.IsSingleInstance || singleInstanceManager.IsFirstInstance)
                 {

@@ -36,23 +36,24 @@ namespace ShareX.HelpersLib
     {
         public event Action<string[]> ArgumentsReceived;
 
+        public string MutexName { get; private set; }
+        public string PipeName { get; private set; }
         public bool IsSingleInstance { get; private set; }
         public bool IsFirstInstance { get; private set; }
 
-        private const string MutexName = "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC";
-        private const string AppName = "ShareX";
-        private static readonly string PipeName = $"{Environment.MachineName}-{Environment.UserName}-{AppName}";
         private const int MaxArgumentsLength = 100;
 
         private readonly Mutex mutex;
         private CancellationTokenSource cts;
 
-        public SingleInstanceManager(string[] args) : this(true, args)
+        public SingleInstanceManager(string mutexName, string pipeName, string[] args) : this(mutexName, pipeName, true, args)
         {
         }
 
-        public SingleInstanceManager(bool isSingleInstance, string[] args)
+        public SingleInstanceManager(string mutexName, string pipeName, bool isSingleInstance, string[] args)
         {
+            MutexName = mutexName;
+            PipeName = pipeName;
             IsSingleInstance = isSingleInstance;
 
             mutex = new Mutex(false, MutexName);
