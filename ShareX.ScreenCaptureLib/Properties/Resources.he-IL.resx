@@ -483,4 +483,21 @@
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>הצג כוונת בגודל המסך</value>
   </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>עשה מחדש</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>יש שינויים שלא נשמרו.
+
+האם ברצונך לשמור את השינויים לפני סגירת עורך התמונות?</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>קישור התמונה</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>האם ברצונך לאפס את האפשרויות?</value>
+  </data>
 </root>

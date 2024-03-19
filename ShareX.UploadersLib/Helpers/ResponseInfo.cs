@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Net;
 using System.Text;
 
@@ -32,7 +33,7 @@ namespace ShareX.UploadersLib
     {
         public HttpStatusCode StatusCode { get; set; }
         public string StatusDescription { get; set; }
-        public bool IsSuccess => RequestHelpers.IsSuccessStatusCode(StatusCode);
+        public bool IsSuccess => WebHelpers.IsSuccessStatusCode(StatusCode);
         public string ResponseURL { get; set; }
         public WebHeaderCollection Headers { get; set; }
         public string ResponseText { get; set; }

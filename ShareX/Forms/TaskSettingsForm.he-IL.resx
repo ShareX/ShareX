@@ -321,9 +321,6 @@
   <data name="cbShowCursor.Text" xml:space="preserve">
     <value>הצג את סמן העכבר בצילומי מסך</value>
   </data>
-  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
-    <value>היסט צל:</value>
-  </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>צלם חלון עם שקיפות</value>
   </data>
@@ -640,9 +637,21 @@
     <value>מתקדם</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - הגדרות משימות</value>
+    <value>ShareX - הגדרות למטלות</value>
   </data>
   <data name="cbDisableNotifications.Text" xml:space="preserve">
     <value>השבת התראות</value>
+  </data>
+  <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
+    <value>השתמש באפקט תמונה אקראי</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Text" xml:space="preserve">
+    <value>כותרת חלון מוגדרת מראש:</value>
+  </data>
+  <data name="cbCloseWindowAfterOpenServiceLink.Text" xml:space="preserve">
+    <value>סגור חלון OCR לאחר פתיחת קישור השירות</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>היסט צל:</value>
   </data>
 </root>

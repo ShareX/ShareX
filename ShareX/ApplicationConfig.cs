@@ -147,7 +147,7 @@ namespace ShareX
         public bool HistoryCheckURL = false;
 
         public RecentTask[] RecentTasks = null;
-        public bool RecentTasksSave = true;
+        public bool RecentTasksSave = false;
         public int RecentTasksMaxCount = 10;
         public bool RecentTasksShowInMainWindow = true;
         public bool RecentTasksShowInTrayMenu = true;

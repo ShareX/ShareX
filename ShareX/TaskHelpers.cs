@@ -1040,33 +1040,9 @@ namespace ShareX
                             return newFilePath;
                         };
 
-                        form.CopyImageRequested += output =>
-                        {
-                            Program.MainForm.InvokeSafe(() =>
-                            {
-                                ClipboardHelpers.CopyImage(output);
-                            });
-                        };
-
-                        form.UploadImageRequested += output =>
-                        {
-                            Program.MainForm.InvokeSafe(() =>
-                            {
-                                UploadManager.UploadImage(output, taskSettings);
-                            });
-                        };
-
-                        form.PrintImageRequested += output =>
-                        {
-                            Program.MainForm.InvokeSafe(() =>
-                            {
-                                using (output)
-                                {
-                                    PrintImage(output);
-                                }
-                            });
-                        };
-
+                        form.CopyImageRequested += MainFormCopyImage;
+                        form.UploadImageRequested += output => MainFormUploadImage(output, taskSettings);
+                        form.PrintImageRequested += MainFormPrintImage;
                         form.ShowDialog();
 
                         switch (form.Result)
@@ -1088,6 +1064,33 @@ namespace ShareX
             return null;
         }
 
+        public static void MainFormCopyImage(Bitmap bmp)
+        {
+            Program.MainForm.InvokeSafe(() =>
+            {
+                ClipboardHelpers.CopyImage(bmp);
+            });
+        }
+
+        public static void MainFormUploadImage(Bitmap bmp, TaskSettings taskSettings = null)
+        {
+            Program.MainForm.InvokeSafe(() =>
+            {
+                UploadManager.UploadImage(bmp, taskSettings);
+            });
+        }
+
+        public static void MainFormPrintImage(Bitmap bmp)
+        {
+            Program.MainForm.InvokeSafe(() =>
+            {
+                using (bmp)
+                {
+                    PrintImage(bmp);
+                }
+            });
+        }
+
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
@@ -1102,20 +1105,8 @@ namespace ShareX
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
                 ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(filePath, taskSettings.ToolsSettingsReference.ImageBeautifierOptions);
-
-                imageBeautifierForm.UploadImageRequested += output =>
-                {
-                    UploadManager.UploadImage(output, taskSettings);
-                };
-
-                imageBeautifierForm.PrintImageRequested += output =>
-                {
-                    using (output)
-                    {
-                        PrintImage(output);
-                    }
-                };
-
+                imageBeautifierForm.UploadImageRequested += output => MainFormUploadImage(output, taskSettings);
+                imageBeautifierForm.PrintImageRequested += MainFormPrintImage;
                 imageBeautifierForm.Show();
             }
         }
@@ -1128,19 +1119,8 @@ namespace ShareX
 
                 using (ImageBeautifierForm imageBeautifierForm = new ImageBeautifierForm(bmp, taskSettings.ToolsSettingsReference.ImageBeautifierOptions))
                 {
-                    imageBeautifierForm.UploadImageRequested += output =>
-                    {
-                        UploadManager.UploadImage(output, taskSettings);
-                    };
-
-                    imageBeautifierForm.PrintImageRequested += output =>
-                    {
-                        using (output)
-                        {
-                            PrintImage(output);
-                        }
-                    };
-
+                    imageBeautifierForm.UploadImageRequested += output => MainFormUploadImage(output, taskSettings);
+                    imageBeautifierForm.PrintImageRequested += MainFormPrintImage;
                     imageBeautifierForm.ShowDialog();
 
                     return (Bitmap)imageBeautifierForm.PreviewImage.Clone();
@@ -1956,9 +1936,9 @@ namespace ShareX
                         case NativeMessagingAction.UploadImage:
                             if (!string.IsNullOrEmpty(nativeMessagingInput.URL))
                             {
-                                Bitmap bmp = null;
+                                Bitmap bmp = WebHelpers.DataURLToImage(nativeMessagingInput.URL);
 
-                                if (taskSettings.AdvancedSettings.ProcessImagesDuringExtensionUpload)
+                                if (bmp == null && taskSettings.AdvancedSettings.ProcessImagesDuringExtensionUpload)
                                 {
                                     try
                                     {

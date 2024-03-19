@@ -214,9 +214,9 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            int toolbarMargin = 10;
+            int toolbarMargin = 20;
             tsMain.Visible = ClientRectangle.Contains(PointToClient(MousePosition)) &&
-                ClientRectangle.Contains(new Rectangle(0, 0, (Options.Border ? Options.BorderSize * 2 : 0) + tsMain.Width + toolbarMargin * 2,
+                ClientRectangle.Contains(new Rectangle(0, 0, (Options.Border ? Options.BorderSize * 2 : 0) + tsMain.Width + toolbarMargin,
                 (Options.Border ? Options.BorderSize * 2 : 0) + tsMain.Height + toolbarMargin));
             tslScale.Text = ImageScale + "%";
         }
@@ -497,6 +497,11 @@ namespace ShareX
         }
 
         private void PinToScreenForm_MouseLeave(object sender, EventArgs e)
+        {
+            UpdateControls();
+        }
+
+        private void tsMain_MouseLeave(object sender, EventArgs e)
         {
             UpdateControls();
         }

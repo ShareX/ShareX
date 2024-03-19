@@ -35,6 +35,7 @@
             this.tsbOptions,
             this.tsbClose});
             this.tsMain.Name = "tsMain";
+            this.tsMain.MouseLeave += new System.EventHandler(this.tsMain_MouseLeave);
             // 
             // tsbCopy
             // 

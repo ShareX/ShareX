@@ -26,10 +26,10 @@
 using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
@@ -92,16 +92,7 @@ namespace ShareX.HelpersLib
                     {
                         string mediaType = responseMessage.Content.Headers.ContentType.MediaType;
 
-                        string[] supportedImageTypes = new string[]
-                        {
-                            "image/png",
-                            "image/jpeg",
-                            "image/gif",
-                            "image/bmp",
-                            "image/tiff"
-                        };
-
-                        if (supportedImageTypes.Contains(mediaType, StringComparer.OrdinalIgnoreCase))
+                        if (MimeTypes.IsImageMimeType(mediaType))
                         {
                             byte[] data = await responseMessage.Content.ReadAsByteArrayAsync();
                             MemoryStream memoryStream = new MemoryStream(data);
@@ -150,6 +141,49 @@ namespace ShareX.HelpersLib
             }
 
             return fileName;
+        }
+
+        // https://en.wikipedia.org/wiki/Data_URI_scheme
+        public static Bitmap DataURLToImage(string url)
+        {
+            if (!string.IsNullOrEmpty(url) && url.StartsWith("data:", StringComparison.OrdinalIgnoreCase))
+            {
+                Match match = Regex.Match(url, @"^data:(?<mediaType>[\w\/]+);base64,(?<data>.+)$", RegexOptions.IgnoreCase);
+
+                if (match.Success)
+                {
+                    string mediaType = match.Groups["mediaType"].Value;
+
+                    if (MimeTypes.IsImageMimeType(mediaType))
+                    {
+                        string data = match.Groups["data"].Value;
+
+                        if (!string.IsNullOrEmpty(data))
+                        {
+                            try
+                            {
+                                byte[] dataBytes = Convert.FromBase64String(data);
+
+                                using (MemoryStream ms = new MemoryStream(dataBytes))
+                                {
+                                    return new Bitmap(ms);
+                                }
+                            }
+                            catch
+                            {
+                            }
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public static bool IsSuccessStatusCode(HttpStatusCode statusCode)
+        {
+            int statusCodeNum = (int)statusCode;
+            return statusCodeNum >= 200 && statusCodeNum <= 299;
         }
 
         public static int GetRandomUnusedPort()

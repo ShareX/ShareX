@@ -241,12 +241,12 @@ namespace ShareX.MediaLib
 
         private void OnUploadImageRequested()
         {
-            UploadImageRequested?.Invoke(PreviewImage);
+            UploadImageRequested?.Invoke(PreviewImage.CloneSafe());
         }
 
         private void OnPrintImageRequested()
         {
-            PrintImageRequested?.Invoke(PreviewImage);
+            PrintImageRequested?.Invoke(PreviewImage.CloneSafe());
         }
 
         private async void ImageBeautifierForm_Shown(object sender, EventArgs e)

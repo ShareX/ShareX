@@ -121,7 +121,7 @@
     <value>נקה שירותי העלאה...</value>
   </data>
   <data name="btnTestURLSyntax.Text" xml:space="preserve">
-    <value>בדיקה</value>
+    <value>בדיקה...</value>
   </data>
   <data name="lblUploaders.Text" xml:space="preserve">
     <value>שירותי העלאה:</value>
@@ -151,7 +151,7 @@
     <value>שיטה:</value>
   </data>
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
-    <value>עדכן תיקייה</value>
+    <value>עדכן תיקייה...</value>
   </data>
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>מדריך להעלאה מותאמת אישית...</value>
@@ -233,5 +233,11 @@
   </data>
   <data name="cParametersValue.HeaderText" xml:space="preserve">
     <value>ערך</value>
+  </data>
+  <data name="btnDataMinify.Text" xml:space="preserve">
+    <value>מזער</value>
+  </data>
+  <data name="btnDataBeautify.Text" xml:space="preserve">
+    <value>לייפות</value>
   </data>
 </root>

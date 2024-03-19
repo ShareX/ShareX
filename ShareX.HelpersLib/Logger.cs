@@ -68,7 +68,7 @@ namespace ShareX.HelpersLib
             MessageAdded?.Invoke(message);
         }
 
-        private void ProcessMessageQueue()
+        public void ProcessMessageQueue()
         {
             lock (loggerLock)
             {

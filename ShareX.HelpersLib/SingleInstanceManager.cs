@@ -34,31 +34,36 @@ namespace ShareX.HelpersLib
 {
     public class SingleInstanceManager : IDisposable
     {
-        public event EventHandler<ArgumentsReceivedEventArgs> ArgumentsReceived;
+        public event Action<string[]> ArgumentsReceived;
 
+        public string MutexName { get; private set; }
+        public string PipeName { get; private set; }
         public bool IsSingleInstance { get; private set; }
         public bool IsFirstInstance { get; private set; }
 
-        private const string MutexName = "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC";
-        private const string AppName = "ShareX";
-        private static readonly string PipeName = $"{Environment.MachineName}-{Environment.UserName}-{AppName}";
         private const int MaxArgumentsLength = 100;
 
         private readonly Mutex mutex;
         private CancellationTokenSource cts;
 
-        public SingleInstanceManager(bool isSingleInstance, string[] args)
+        public SingleInstanceManager(string mutexName, string pipeName, string[] args) : this(mutexName, pipeName, true, args)
         {
+        }
+
+        public SingleInstanceManager(string mutexName, string pipeName, bool isSingleInstance, string[] args)
+        {
+            MutexName = mutexName;
+            PipeName = pipeName;
             IsSingleInstance = isSingleInstance;
 
             mutex = new Mutex(false, MutexName);
 
-            if (IsSingleInstance)
+            try
             {
-                try
-                {
-                    IsFirstInstance = mutex.WaitOne(100, false);
+                IsFirstInstance = mutex.WaitOne(100, false);
 
+                if (IsSingleInstance)
+                {
                     if (IsFirstInstance)
                     {
                         cts = new CancellationTokenSource();
@@ -68,26 +73,20 @@ namespace ShareX.HelpersLib
                     else
                     {
                         RedirectArgumentsToFirstInstance(args);
-
-                        Environment.Exit(0);
                     }
                 }
-                catch (AbandonedMutexException)
-                {
-                    DebugHelper.WriteLine("Single instance mutex found abandoned from another process.");
-
-                    IsFirstInstance = true;
-                }
             }
-            else
+            catch (AbandonedMutexException)
             {
+                DebugHelper.WriteLine("Single instance mutex found abandoned from another process.");
+
                 IsFirstInstance = true;
             }
         }
 
         protected virtual void OnArgumentsReceived(string[] arguments)
         {
-            ArgumentsReceived?.Invoke(this, new ArgumentsReceivedEventArgs(arguments));
+            ArgumentsReceived?.Invoke(arguments);
         }
 
         private async Task ListenForConnectionsAsync()
@@ -125,44 +124,53 @@ namespace ShareX.HelpersLib
                 }
                 catch (Exception e)
                 {
-                    DebugHelper.WriteLine("Error in named pipe communication: {0}", e.Message);
+                    DebugHelper.WriteException(e);
                 }
             }
         }
 
         private void RedirectArgumentsToFirstInstance(string[] args)
         {
-            using (NamedPipeClientStream clientPipe = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
+            try
             {
-                clientPipe.Connect();
-
-                using (BinaryWriter writer = new BinaryWriter(clientPipe, Encoding.UTF8))
+                using (NamedPipeClientStream clientPipe = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
                 {
-                    writer.Write(args.Length);
+                    clientPipe.Connect();
 
-                    foreach (string argument in args)
+                    using (BinaryWriter writer = new BinaryWriter(clientPipe, Encoding.UTF8))
                     {
-                        writer.Write(argument);
+                        writer.Write(args.Length);
+
+                        foreach (string argument in args)
+                        {
+                            writer.Write(argument);
+                        }
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
             }
         }
 
         public void Dispose()
         {
-            cts?.Cancel();
-            cts?.Dispose();
-            mutex?.ReleaseMutex();
-        }
-    }
+            if (cts != null)
+            {
+                cts.Cancel();
+                cts.Dispose();
+            }
 
-    public class ArgumentsReceivedEventArgs : EventArgs
-    {
-        public string[] Arguments { get; private set; }
+            if (mutex != null)
+            {
+                if (IsFirstInstance)
+                {
+                    mutex.ReleaseMutex();
+                }
 
-        public ArgumentsReceivedEventArgs(string[] arguments)
-        {
-            Arguments = arguments;
+                mutex.Dispose();
+            }
         }
     }
 }

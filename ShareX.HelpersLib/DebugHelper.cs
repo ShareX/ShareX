@@ -70,5 +70,10 @@ namespace ShareX.HelpersLib
         {
             WriteException(exception.ToString(), message);
         }
+
+        public static void Flush()
+        {
+            Logger?.ProcessMessageQueue();
+        }
     }
 }

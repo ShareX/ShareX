@@ -134,7 +134,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string scope = URLHelpers.CombineURL(credentialDate, region, "s3", "aws4_request");
             string credential = URLHelpers.CombineURL(Settings.AccessKeyID, scope);
             string timeStamp = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
-            string contentType = RequestHelpers.GetMimeType(fileName);
+            string contentType = MimeTypes.GetMimeTypeFromFileName(fileName);
             string hashedPayload;
 
             if (Settings.SignedPayload)

@@ -553,7 +553,7 @@
     <value>מזהה</value>
   </data>
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
-    <value>מזהה מפתח אפליקציה:</value>
+    <value>מזהה מפתח יישום:</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>מזהה אלבום להעלאה (ריק = ללא העלאת אלבום):</value>
@@ -1103,5 +1103,8 @@
   </data>
   <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
     <value>השתמש בקישור ישיר</value>
+  </data>
+  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
+    <value>ניתן לקבל מפתח משתמש מדף פרטי החשבון.</value>
   </data>
 </root>
