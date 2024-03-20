@@ -187,13 +187,8 @@ namespace ShareX.HistoryLib
                 // Reverse back to normal order, without effecting current list instance
                 var allHistoryItemsClone = allHistoryItems.Copy();
                 allHistoryItemsClone.Reverse();
-                UpdateHistoryItemsFile(allHistoryItemsClone);
+                him.UpdateHistoryItemsFile(HistoryPath, allHistoryItemsClone);
             }
-        }
-        private bool UpdateHistoryItemsFile(List<HistoryItem> updatedHistoryItems)
-        {
-            HistoryManager history = new HistoryManagerJSON(HistoryPath);
-            return history.UpdateHistoryItemsFile(updatedHistoryItems);
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -232,16 +227,16 @@ namespace ShareX.HistoryLib
                     await RefreshHistoryItems();
                     e.SuppressKeyPress = true;
                     break;
+                case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
+                    await RefreshHistoryItems(true);
+                    e.SuppressKeyPress = true;
+                    break;
                 case Keys.Delete:
                     RemoveSelectedItems();
                     break;
                 case Keys.Shift | Keys.Delete:
                     him.DeleteFiles();
                     RemoveSelectedItems();
-                    break;
-                case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
-                    await RefreshHistoryItems(true);
-                    e.SuppressKeyPress = true;
                     break;
             }
         }
