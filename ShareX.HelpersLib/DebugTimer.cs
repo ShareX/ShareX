@@ -33,6 +33,8 @@ namespace ShareX.HelpersLib
     {
         public string Text { get; set; }
 
+        public TimeSpan Elapsed => timer.Elapsed;
+
         private Stopwatch timer;
 
         public DebugTimer(string text = null)
@@ -60,12 +62,12 @@ namespace ShareX.HelpersLib
 
         public void WriteElapsedMilliseconds(string text = null)
         {
-            Write(timer.Elapsed.TotalMilliseconds.ToString("0.000", CultureInfo.InvariantCulture) + " milliseconds.", text);
+            Write(Elapsed.TotalMilliseconds.ToString("0.000", CultureInfo.InvariantCulture) + " milliseconds.", text);
         }
 
         public void WriteElapsedSeconds(string text = null)
         {
-            Write(timer.Elapsed.TotalSeconds.ToString("0.000", CultureInfo.InvariantCulture) + " seconds.", text);
+            Write(Elapsed.TotalSeconds.ToString("0.000", CultureInfo.InvariantCulture) + " seconds.", text);
         }
 
         public void Dispose()

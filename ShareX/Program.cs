@@ -394,6 +394,19 @@ namespace ShareX
 
         private static void SingleInstanceManager_ArgumentsReceived(string[] arguments)
         {
+            string message = "Arguments received: ";
+
+            if (arguments == null)
+            {
+                message += "null";
+            }
+            else
+            {
+                message += "\"" + string.Join(" ", arguments) + "\"";
+            }
+
+            DebugHelper.WriteLine(message);
+
             if (WaitFormLoad(5000))
             {
                 MainForm.InvokeSafe(async () =>

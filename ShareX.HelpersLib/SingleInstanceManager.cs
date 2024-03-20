@@ -42,6 +42,7 @@ namespace ShareX.HelpersLib
         public bool IsFirstInstance { get; private set; }
 
         private const int MaxArgumentsLength = 100;
+        private const int ConnectTimeout = 5000;
 
         private readonly Mutex mutex;
         private CancellationTokenSource cts;
@@ -86,7 +87,10 @@ namespace ShareX.HelpersLib
 
         protected virtual void OnArgumentsReceived(string[] arguments)
         {
-            ArgumentsReceived?.Invoke(arguments);
+            if (ArgumentsReceived != null)
+            {
+                Task.Run(() => ArgumentsReceived?.Invoke(arguments));
+            }
         }
 
         private async Task ListenForConnectionsAsync()
@@ -97,7 +101,7 @@ namespace ShareX.HelpersLib
                 {
                     using (NamedPipeServerStream serverPipe = new NamedPipeServerStream(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous))
                     {
-                        await serverPipe.WaitForConnectionAsync(cts.Token);
+                        await serverPipe.WaitForConnectionAsync(cts.Token).ConfigureAwait(false);
 
                         using (BinaryReader reader = new BinaryReader(serverPipe, Encoding.UTF8))
                         {
@@ -122,6 +126,12 @@ namespace ShareX.HelpersLib
                 catch when (cts.IsCancellationRequested)
                 {
                 }
+                catch (UnauthorizedAccessException e)
+                {
+                    DebugHelper.WriteException(e);
+
+                    break;
+                }
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
@@ -135,7 +145,7 @@ namespace ShareX.HelpersLib
             {
                 using (NamedPipeClientStream clientPipe = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
                 {
-                    clientPipe.Connect();
+                    clientPipe.Connect(ConnectTimeout);
 
                     using (BinaryWriter writer = new BinaryWriter(clientPipe, Encoding.UTF8))
                     {
