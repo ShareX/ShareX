@@ -123,6 +123,18 @@ namespace ShareX.HistoryLib
             return null;
         }
 
+        /// <summary>
+        /// Use this method to store changes to history items back to the JSON file
+        /// </summary>
+        /// <param name="historyPath">History file path</param>
+        /// <param name="updatedHistoryItems">Items to be saved back to JSON File</param>
+        /// <returns>Success bool</returns>
+        public bool UpdateHistoryItemsFile(string historyPath, List<HistoryItem> updatedHistoryItems)
+        {
+            HistoryManager history = new HistoryManagerJSON(historyPath);
+            return history.UpdateHistoryItemsFile(updatedHistoryItems);
+        }
+
         public bool HandleKeyInput(KeyEventArgs e)
         {
             switch (e.KeyData)
