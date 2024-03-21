@@ -47,6 +47,8 @@ namespace ShareX
         Automatic, // Localized
         [Description("Nederlands (Dutch)")]
         Dutch,
+        [Description("العربية (Arabic)")]
+        Arabic,
         [Description("English")]
         English,
         [Description("Français (French)")]
