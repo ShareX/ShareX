@@ -149,6 +149,8 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será "h
   <data name="tpMega.Text" xml:space="preserve">
     <value>MEGA</value>
   </data>
+  <data name="tpNextcloud.Text" xml:space="preserve">
+    <value>Nextcloud</value>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
   </data>
@@ -443,6 +445,27 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Usar link longo o qual inclui o nome do arquivo</value>
+  </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Hospedagem:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Usuário:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Senha:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Local:</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Criar URL compartilhável</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Link direto (Adiciona "&amp;download" ao URL)</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Compatibilidade com ownCloud 8.1+</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Hospedagem:</value>
