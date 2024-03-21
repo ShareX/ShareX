@@ -36,36 +36,36 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public class OwnCloudFileUploaderService : FileUploaderService
+    public class NextCloudFileUploaderService : FileUploaderService
     {
-        public override FileDestination EnumValue { get; } = FileDestination.OwnCloud;
+        public override FileDestination EnumValue { get; } = FileDestination.NextCloud;
 
-        public override Image ServiceImage => Resources.OwnCloud;
+        public override Image ServiceImage => Resources.NextCloud;
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(config.OwnCloudHost) && !string.IsNullOrEmpty(config.OwnCloudUsername) && !string.IsNullOrEmpty(config.OwnCloudPassword);
+            return !string.IsNullOrEmpty(config.NextCloudHost) && !string.IsNullOrEmpty(config.NextCloudUsername) && !string.IsNullOrEmpty(config.NextCloudPassword);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new OwnCloud(config.OwnCloudHost, config.OwnCloudUsername, config.OwnCloudPassword)
+            return new NextCloud(config.NextCloudHost, config.NextCloudUsername, config.NextCloudPassword)
             {
-                Path = config.OwnCloudPath,
-                CreateShare = config.OwnCloudCreateShare,
-                DirectLink = config.OwnCloudDirectLink,
-                PreviewLink = config.OwnCloudUsePreviewLinks,
-                AppendFileNameToURL = config.OwnCloudAppendFileNameToURL,
-                IsCompatibility81 = config.OwnCloud81Compatibility,
-                AutoExpireTime = config.OwnCloudExpiryTime,
-                AutoExpire = config.OwnCloudAutoExpire
+                Path = config.NextCloudPath,
+                CreateShare = config.NextCloudCreateShare,
+                DirectLink = config.NextCloudDirectLink,
+                PreviewLink = config.NextCloudUsePreviewLinks,
+                AppendFileNameToURL = config.NextCloudAppendFileNameToURL,
+                IsCompatibility81 = config.NextCloud81Compatibility,
+                AutoExpireTime = config.NextCloudExpiryTime,
+                AutoExpire = config.NextCloudAutoExpire
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOwnCloud;
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpNextCloud;
     }
 
-    public sealed class OwnCloud : FileUploader
+    public sealed class NextCloud : FileUploader
     {
         public string Host { get; set; }
         public string Username { get; set; }
@@ -79,7 +79,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool IsCompatibility81 { get; set; }
         public bool AutoExpire { get; set; }
 
-        public OwnCloud(string host, string username, string password)
+        public NextCloud(string host, string username, string password)
         {
             Host = host;
             Username = username;
@@ -90,12 +90,12 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (string.IsNullOrEmpty(Host))
             {
-                throw new Exception("ownCloud Host is empty.");
+                throw new Exception("nextCloud Host is empty.");
             }
 
             if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
             {
-                throw new Exception("ownCloud Username or Password is empty.");
+                throw new Exception("nextCloud Username or Password is empty.");
             }
 
             if (string.IsNullOrEmpty(Path))
@@ -134,7 +134,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        // https://doc.owncloud.org/server/10.0/developer_manual/core/ocs-share-api.html#create-a-new-share
         public string ShareFile(string path, string fileName)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
@@ -149,7 +148,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (AutoExpireTime == 0)
                 {
-                    throw new Exception("ownCloud Auto Epxire Time is not valid.");
+                    throw new Exception("nextCloud Auto Epxire Time is not valid.");
                 }
                 else
                 {
@@ -160,7 +159,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                     catch
                     {
-                        throw new Exception("ownCloud Auto Expire time is invalid");
+                        throw new Exception("nextCloud Auto Expire time is invalid");
                     }
                 }
             }
@@ -175,13 +174,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(response))
             {
-                OwnCloudShareResponse result = JsonConvert.DeserializeObject<OwnCloudShareResponse>(response);
+                NextCloudShareResponse result = JsonConvert.DeserializeObject<NextCloudShareResponse>(response);
 
                 if (result != null && result.ocs != null && result.ocs.meta != null)
                 {
                     if (result.ocs.data != null && result.ocs.meta.statuscode == 100)
                     {
-                        OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
+                        NextCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<NextCloudShareResponseData>();
                         string link = data.url;
 
                         if (PreviewLink && FileHelpers.IsImageFile(path))
@@ -217,25 +216,25 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public class OwnCloudShareResponse
+        public class NextCloudShareResponse
         {
-            public OwnCloudShareResponseOcs ocs { get; set; }
+            public NextCloudShareResponseOcs ocs { get; set; }
         }
 
-        public class OwnCloudShareResponseOcs
+        public class NextCloudShareResponseOcs
         {
-            public OwnCloudShareResponseMeta meta { get; set; }
+            public NextCloudShareResponseMeta meta { get; set; }
             public object data { get; set; }
         }
 
-        public class OwnCloudShareResponseMeta
+        public class NextCloudShareResponseMeta
         {
             public string status { get; set; }
             public int statuscode { get; set; }
             public string message { get; set; }
         }
 
-        public class OwnCloudShareResponseData
+        public class NextCloudShareResponseData
         {
             public int id { get; set; }
             public string url { get; set; }
