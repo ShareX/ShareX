@@ -332,6 +332,27 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Dùng liên kết dài có cả tên tệp</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Tên người dùng:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Đường dẫn:</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Tạo URL để chia sẻ</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Liên kết trực tiếp</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Tương thích ownCloud 8.1+</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
