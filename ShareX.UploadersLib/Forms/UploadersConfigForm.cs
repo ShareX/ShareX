@@ -564,7 +564,23 @@ namespace ShareX.UploadersLib
 
             #endregion Amazon S3
 
-            #region ownCloud / Nextcloud
+            #region Nextcloud
+
+            txtNextcloudHost.Text = Config.NextcloudHost;
+            txtNextcloudUsername.Text = Config.NextcloudUsername;
+            txtNextcloudPassword.Text = Config.NextcloudPassword;
+            txtNextcloudPath.Text = Config.NextcloudPath;
+            txtNextcloudExpiryTime.Value = Config.NextcloudExpiryTime;
+            cbNextcloudCreateShare.Checked = Config.NextcloudCreateShare;
+            cbNextcloudDirectLink.Checked = Config.NextcloudDirectLink;
+            cbNextcloudAppendFileNameToURL.Checked = Config.NextcloudAppendFileNameToURL;
+            cbNextcloud81Compatibility.Checked = Config.Nextcloud81Compatibility;
+            cbNextcloudUsePreviewLinks.Checked = Config.NextcloudUsePreviewLinks;
+            cbNextcloudAutoExpire.Checked = Config.NextcloudAutoExpire;
+
+            #endregion Nextcloud
+
+            #region ownCloud
 
             txtOwnCloudHost.Text = Config.OwnCloudHost;
             txtOwnCloudUsername.Text = Config.OwnCloudUsername;
@@ -578,7 +594,7 @@ namespace ShareX.UploadersLib
             cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
             cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
 
-            #endregion ownCloud / Nextcloud
+            #endregion ownCloud
 
             #region MediaFire
 
@@ -2205,7 +2221,66 @@ namespace ShareX.UploadersLib
 
         #endregion Amazon S3
 
-        #region ownCloud / Nextcloud
+        #region Nextcloud
+
+        private void txtNextcloudHost_TextChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudHost = txtNextcloudHost.Text;
+        }
+
+        private void txtNextcloudUsername_TextChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudUsername = txtNextcloudUsername.Text;
+        }
+
+        private void txtNextcloudPassword_TextChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudPassword = txtNextcloudPassword.Text;
+        }
+
+        private void txtNextcloudPath_TextChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudPath = txtNextcloudPath.Text;
+        }
+
+        private void txtOwnExpiryTime_TextChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudExpiryTime = Convert.ToInt32(txtNextcloudExpiryTime.Value);
+        }
+
+        private void cbNextcloudCreateShare_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudCreateShare = cbNextcloudCreateShare.Checked;
+        }
+
+        private void cbNextcloudDirectLink_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudDirectLink = cbNextcloudDirectLink.Checked;
+        }
+
+        private void cbNextcloudAppendFileNameToURL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudAppendFileNameToURL = cbNextcloudAppendFileNameToURL.Checked;
+        }
+
+        private void cbNextcloud81Compatibility_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.Nextcloud81Compatibility = cbNextcloud81Compatibility.Checked;
+        }
+
+        private void cbNextcloudUsePreviewLinks_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudUsePreviewLinks = cbNextcloudUsePreviewLinks.Checked;
+        }
+
+        private void cbNextcloudAutoExpire_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.NextcloudAutoExpire = cbNextcloudAutoExpire.Checked;
+        }
+
+        #endregion Nextcloud
+
+        #region ownCloud
 
         private void txtOwnCloudHost_TextChanged(object sender, EventArgs e)
         {
@@ -2262,7 +2337,7 @@ namespace ShareX.UploadersLib
             Config.OwnCloudAutoExpire = cbOwnCloudAutoExpire.Checked;
         }
 
-        #endregion ownCloud / Nextcloud
+        #endregion ownCloud
 
         #region Pushbullet
 
