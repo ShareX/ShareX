@@ -277,18 +277,18 @@ namespace ShareX.UploadersLib
 
         #region Nextcloud
 
-        public string NextCloudHost { get; set; } = "";
-        public string NextCloudUsername { get; set; } = "";
+        public string NextcloudHost { get; set; } = "";
+        public string NextcloudUsername { get; set; } = "";
         [JsonEncrypt]
-        public string NextCloudPassword { get; set; } = "";
-        public string NextCloudPath { get; set; } = "/";
-        public int NextCloudExpiryTime { get; set; } = 7;
-        public bool NextCloudCreateShare { get; set; } = true;
-        public bool NextCloudDirectLink { get; set; } = false;
-        public bool NextCloud81Compatibility { get; set; } = true;
-        public bool NextCloudUsePreviewLinks { get; set; } = false;
-        public bool NextCloudAppendFileNameToURL { get; set; } = false;
-        public bool NextCloudAutoExpire { get; set; } = false;
+        public string NextcloudPassword { get; set; } = "";
+        public string NextcloudPath { get; set; } = "/";
+        public int NextcloudExpiryTime { get; set; } = 7;
+        public bool NextcloudCreateShare { get; set; } = true;
+        public bool NextcloudDirectLink { get; set; } = false;
+        public bool Nextcloud81Compatibility { get; set; } = true;
+        public bool NextcloudUsePreviewLinks { get; set; } = false;
+        public bool NextcloudAppendFileNameToURL { get; set; } = false;
+        public bool NextcloudAutoExpire { get; set; } = false;
 
         #endregion Nextcloud
 
