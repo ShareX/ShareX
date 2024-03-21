@@ -101,7 +101,9 @@ namespace ShareX.UploadersLib
         AzureStorage,
         [Description("Backblaze B2")]
         BackblazeB2,
-        [Description("ownCloud / Nextcloud")]
+        [Description("Nextcloud")]
+        Nextcloud,
+        [Description("ownCloud")]
         OwnCloud,
         [Description("MediaFire")]
         MediaFire,
