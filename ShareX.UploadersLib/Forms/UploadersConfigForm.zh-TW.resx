@@ -425,6 +425,7 @@
   </data>
   <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
     <value>直連連結</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>網址：</value>
   </data>
