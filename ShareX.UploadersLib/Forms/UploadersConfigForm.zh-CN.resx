@@ -405,6 +405,21 @@
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>使用其中包括文件名较长的链接</value>
   </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>用户名：</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>密码：</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>路径：</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>创建共享 URL</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>直接链接</value>
+  </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
     <value>用户名：</value>
   </data>
@@ -621,6 +636,9 @@
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>使用直链</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>示例：http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>示例：http://example.com/owncloud</value>
   </data>
@@ -746,6 +764,9 @@
   </data>
   <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
     <value>账户名称：</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>ownCloud 8.1+ 兼容性</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>ownCloud 8.1+ 兼容性</value>
@@ -966,6 +987,9 @@
   <data name="cbFlickrDirectLink.Text" xml:space="preserve">
     <value>使用直链</value>
   </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>使用预览链接（仅 NextCloud）</value>
+  </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>使用预览链接（仅 NextCloud）</value>
   </data>
@@ -996,6 +1020,9 @@
   <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
     <value>认证 URL：</value>
   </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>共享连接自动过期</value>
+  </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>共享连接自动过期</value>
   </data>
@@ -1013,6 +1040,9 @@
   </data>
   <data name="lblTeknikExpiration.Text" xml:space="preserve">
     <value>有效期：</value>
+  </data>
+  <data name="lblNextloudExpiryTime.Text" xml:space="preserve">
+    <value>有效期（天）：</value>
   </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>有效期（天）：</value>
@@ -1158,6 +1188,9 @@
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
@@ -1173,8 +1206,11 @@
   <data name="tpKutt.Text" xml:space="preserve">
     <value>Kutt</value>
   </data>
+  <data name="tpNextcloud.Text" xml:space="preserve">
+    <value>Nextcloud</value>
+  </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
-    <value>ownCloud / Nextcloud</value>
+    <value>ownCloud</value>
   </data>
   <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
     <value>分享链接访问级别:</value>
@@ -1250,6 +1286,9 @@
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
+  </data>
+  <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>追加文件名到网址</value>
   </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>追加文件名到网址</value>
