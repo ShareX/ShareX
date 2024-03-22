@@ -386,11 +386,23 @@
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>파일 이름을 포함하는 긴 링크 사용하기</value>
   </data>
-  <data name="lblOwnCloudHost.Text" xml:space="preserve">
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
     <value>호스트:</value>
   </data>
-  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
     <value>사용자 ID:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>비밀번호:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>경로:</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>공유 가능한 URL 생성하기</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>핫링크 (URL에 "&amp;download"를 덧붙임)</value>
   </data>
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
@@ -794,6 +806,15 @@
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>예시: http://example.com/nextcloud</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>ownCloud 8.1+ 호환</value>
+  </data>
+  <data name="tpNextcloud.Text" xml:space="preserve">
+    <value>Nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>예시: http://example.com/owncloud</value>
   </data>
@@ -1101,6 +1122,9 @@
   <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
     <value>개인 맞춤 도메인:</value>
   </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>미리보기 링크 사용(NextCloud만)</value>
+  </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>미리보기 링크 사용(NextCloud만)</value>
   </data>
@@ -1196,6 +1220,12 @@
   </data>
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
     <value>어플리케이션 키 ID:</value>
+  </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>만료 예정일:</value>
+  </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>자동으로 공유된 링크 만료</value>
   </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>만료 예정일:</value>
