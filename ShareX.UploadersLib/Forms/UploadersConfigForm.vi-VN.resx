@@ -772,6 +772,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="lblNextcloudHostExample.Text" xml:space="preserve">
     <value>Ví dụ: http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Ví dụ: http://example.com/owncloud</value>
   </data>
@@ -780,6 +781,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
     <value>Thời gian hết hiệu lực (ngày)</value>
+  </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Thời gian hết hiệu lực (ngày)</value>
   </data>
@@ -953,6 +955,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="tpNextcloud.Text" xml:space="preserve">
     <value>Nextcloud</value>
+  </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
   </data>
@@ -1196,6 +1199,7 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   </data>
   <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Dùng liên kết xem trước (chỉ cho NextCloud)</value>
+  </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Dùng liên kết xem trước (chỉ cho NextCloud)</value>
   </data>
@@ -1282,6 +1286,7 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   </data>
   <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>Nối tên tệp vào URL</value>
+  </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>Nối tên tệp vào URL</value>
   </data>
