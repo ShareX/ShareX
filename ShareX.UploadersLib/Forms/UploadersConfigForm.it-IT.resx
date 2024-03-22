@@ -252,6 +252,9 @@
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>Esampio: http://example.com/api/1/upload</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>Esempio: http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Esempio: http://example.com/owncloud</value>
   </data>
@@ -396,6 +399,9 @@
   <data name="lblLocalhostrPassword.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
@@ -421,6 +427,9 @@
     <value>Titolo:</value>
   </data>
   <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>Percorso:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
     <value>Percorso:</value>
   </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
@@ -594,6 +603,9 @@
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Accorciamento URL</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
@@ -625,6 +637,9 @@
     <value>Nome Utente:</value>
   </data>
   <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Nome Utente:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
     <value>Nome Utente:</value>
   </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
@@ -723,6 +738,9 @@
   <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
     <value>Ricorda Indirizzo Ultimo Destinatario</value>
   </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Compatibilità ownCloud 8.1+</value>
+  </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Compatibilità ownCloud 8.1+</value>
   </data>
@@ -768,6 +786,9 @@ Usare una library criptata disabilita la condivisione.</value>
   </data>
   <data name="lblAzureStorageEnvironment.Text" xml:space="preserve">
     <value>Environment:</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Collegamento Diretto (aggiunge "&amp;download" all'URL)</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Collegamento Diretto (aggiunge "&amp;download" all'URL)</value>
@@ -824,6 +845,9 @@ Usare una library criptata disabilita la condivisione.</value>
     <value>Crea URL Condivisibile</value>
   </data>
   <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
+    <value>Crea URL Condivisibile</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
     <value>Crea URL Condivisibile</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
