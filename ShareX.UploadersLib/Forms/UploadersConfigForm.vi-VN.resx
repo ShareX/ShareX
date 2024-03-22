@@ -952,9 +952,9 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
     <value>OneTimeSecret</value>
   </data>
   <data name="tpNextcloud.Text" xml:space="preserve">
-    <value>Nextcloud / Nextcloud</value>
+    <value>Nextcloud</value>
   <data name="tpOwnCloud.Text" xml:space="preserve">
-    <value>ownCloud / Nextcloud</value>
+    <value>ownCloud</value>
   </data>
   <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
     <value>Bị động</value>
