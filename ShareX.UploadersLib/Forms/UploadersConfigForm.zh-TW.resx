@@ -408,6 +408,23 @@
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>使用包含檔名的長連結</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>網址：</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>使用者名稱：</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>密碼：</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>路徑：</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>建立可分享網址</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>直連連結</value>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>網址：</value>
   </data>
@@ -627,6 +644,9 @@
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>使用直連連結</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>範例：http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>範例：http://example.com/owncloud</value>
   </data>
@@ -810,11 +830,20 @@
   <data name="cbKuttReuse.Text" xml:space="preserve">
     <value>如果存在具指定目標的網址，則回傳該網址</value>
   </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>ownCloud 8.1+ 相容性</value>
+  </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>ownCloud 8.1+ 相容性</value>
   </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>自動使分享連結過期</value>
+  </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>自動使分享連結過期</value>
+  </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>使用預覽連結 (僅限 NextCloud)</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>使用預覽連結 (僅限 NextCloud)</value>
@@ -990,6 +1019,9 @@
   <data name="lblLithiioPassword.Text" xml:space="preserve">
     <value>密碼：</value>
   </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>到期時間（天）：</value>
+  </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>到期時間（天）：</value>
   </data>
@@ -1070,6 +1102,9 @@
   </data>
   <data name="cbAzureStorageEnvironment.Items3" xml:space="preserve">
     <value>blob.core.cloudapi.de</value>
+  </data>
+  <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>附加檔案名稱至網址</value>
   </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>附加檔案名稱至網址</value>
@@ -1206,8 +1241,11 @@
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
   </data>
+  <data name="tpNextcloud.Text" xml:space="preserve">
+    <value>Nextcloud</value>
+  </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
-    <value>ownCloud / Nextcloud</value>
+    <value>ownCloud</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
