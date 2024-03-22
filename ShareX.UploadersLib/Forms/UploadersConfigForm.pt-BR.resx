@@ -151,6 +151,7 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será "h
   </data>
   <data name="tpNextcloud.Text" xml:space="preserve">
     <value>Nextcloud</value>
+  </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud</value>
   </data>
@@ -469,26 +470,31 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="lblNextcloudHost.Text" xml:space="preserve">
     <value>Hospedagem:</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Hospedagem:</value>
   </data>
   <data name="lblNextcloudUsername.Text" xml:space="preserve">
     <value>Usuário:</value>
+  </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
     <value>Usuário:</value>
   </data>
   <data name="lblNextcloudPassword.Text" xml:space="preserve">
     <value>Senha:</value>
+  </data>
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">
     <value>Senha:</value>
   </data>
   <data name="lblNextcloudPath.Text" xml:space="preserve">
     <value>Local:</value>
+  </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
     <value>Local:</value>
   </data>
   <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
     <value>Criar URL compartilhável</value>
+  </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
     <value>Criar URL compartilhável</value>
   </data>
@@ -500,6 +506,7 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
     <value>Compatibilidade com ownCloud 8.1+</value>
+  </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Compatibilidade com ownCloud 8.1+</value>
   </data>
@@ -859,6 +866,7 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="lblNextcloudHostExample.Text" xml:space="preserve">
     <value>Exemplo: http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Exemplo: http://example.com/owncloud</value>
   </data>
@@ -1128,11 +1136,13 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
     <value>Tempo de expiração (dias):</value>
+  </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Tempo de expiração (dias):</value>
   </data>
   <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Usar prévia de links (somente NextCloud)</value>
+  </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Usar prévia de links (somente NextCloud)</value>
   </data>
@@ -1255,6 +1265,7 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>Anexar o nome do arquivo à URL</value>
+  </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>Anexar o nome do arquivo à URL</value>
   </data>
