@@ -656,6 +656,9 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblSeafileAuthToken.Text" xml:space="preserve">
     <value>Token xác thực:</value>
   </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>Tự hết hạn các liên kết đã chia sẻ</value>
+  </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>Tự hết hạn các liên kết đã chia sẻ</value>
   </data>
@@ -767,12 +770,16 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>Ví dụ: http://example.com/api/1/upload</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>Ví dụ: http://example.com/nextcloud</value>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Ví dụ: http://example.com/owncloud</value>
   </data>
   <data name="lblGistCustomURLExample.Text" xml:space="preserve">
     <value>Ví dụ: https://api.github.com</value>
   </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>Thời gian hết hiệu lực (ngày)</value>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Thời gian hết hiệu lực (ngày)</value>
   </data>
@@ -944,6 +951,8 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
   </data>
+  <data name="tpNextcloud.Text" xml:space="preserve">
+    <value>Nextcloud / Nextcloud</value>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud / Nextcloud</value>
   </data>
@@ -1185,6 +1194,8 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Dùng URL tùy chọn (hỗ trợ định dạng theo mẫu):</value>
   </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Dùng liên kết xem trước (chỉ cho NextCloud)</value>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Dùng liên kết xem trước (chỉ cho NextCloud)</value>
   </data>
@@ -1269,6 +1280,8 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
     <value>Nâng cao</value>
   </data>
+  <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Nối tên tệp vào URL</value>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>Nối tên tệp vào URL</value>
   </data>
