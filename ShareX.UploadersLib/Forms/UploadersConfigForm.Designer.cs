@@ -2651,7 +2651,7 @@ namespace ShareX.UploadersLib
             0,
             0,
             0});
-            this.txtNextcloudExpiryTime.ValueChanged += new System.EventHandler(this.txtOwnExpiryTime_TextChanged);
+            this.txtNextcloudExpiryTime.ValueChanged += new System.EventHandler(this.txtNextcloudExpiryTime_TextChanged);
             // 
             // cbNextcloudAutoExpire
             // 
