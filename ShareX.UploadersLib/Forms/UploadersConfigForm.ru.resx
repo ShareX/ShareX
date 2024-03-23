@@ -366,6 +366,27 @@
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Использовать длинную ссылку с именем файла</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Хост:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Путь:</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Создать общественный URL</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Прямая ссылка</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Совместимость с ownCloud 8.1+</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Хост:</value>
   </data>
@@ -684,6 +705,9 @@
   <data name="lblPuushAPIKey.Text" xml:space="preserve">
     <value>Ключ API:</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>Пример: http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Пример: http://example.com/owncloud</value>
   </data>
@@ -912,6 +936,9 @@
   <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
     <value>Имя ведра:</value>
   </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Использовать ссылки на предпросмотр (только NextCloud)</value>
+  </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Использовать ссылки на предпросмотр (только NextCloud)</value>
   </data>
@@ -956,6 +983,12 @@
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
+  </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>Автоматически устаревать публичные ссылки</value>
+  </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>Время устаревания (дней):</value>
   </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>Автоматически устаревать публичные ссылки</value>
@@ -1082,6 +1115,9 @@
   </data>
   <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
     <value>Вы можете отозвать доступ в любое время по ссылке ниже:</value>
+  </data>
+  <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Добавлять имя файла в конец ссылки</value>
   </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>Добавлять имя файла в конец ссылки</value>
