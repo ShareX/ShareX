@@ -312,6 +312,24 @@ namespace ShareX.UploadersLib
             this.txtMegaEmail = new System.Windows.Forms.TextBox();
             this.txtMegaPassword = new System.Windows.Forms.TextBox();
             this.lblMegaPassword = new System.Windows.Forms.Label();
+            this.tpNextcloud = new System.Windows.Forms.TabPage();
+            this.cbNextcloudAppendFileNameToURL = new System.Windows.Forms.CheckBox();
+            this.txtNextcloudExpiryTime = new System.Windows.Forms.NumericUpDown();
+            this.cbNextcloudAutoExpire = new System.Windows.Forms.CheckBox();
+            this.lblNextcloudExpiryTime = new System.Windows.Forms.Label();
+            this.cbNextcloudUsePreviewLinks = new System.Windows.Forms.CheckBox();
+            this.lblNextcloudHostExample = new System.Windows.Forms.Label();
+            this.cbNextcloud81Compatibility = new System.Windows.Forms.CheckBox();
+            this.cbNextcloudDirectLink = new System.Windows.Forms.CheckBox();
+            this.cbNextcloudCreateShare = new System.Windows.Forms.CheckBox();
+            this.txtNextcloudPath = new System.Windows.Forms.TextBox();
+            this.txtNextcloudPassword = new System.Windows.Forms.TextBox();
+            this.txtNextcloudUsername = new System.Windows.Forms.TextBox();
+            this.txtNextcloudHost = new System.Windows.Forms.TextBox();
+            this.lblNextcloudPath = new System.Windows.Forms.Label();
+            this.lblNextcloudPassword = new System.Windows.Forms.Label();
+            this.lblNextcloudUsername = new System.Windows.Forms.Label();
+            this.lblNextcloudHost = new System.Windows.Forms.Label();
             this.tpOwnCloud = new System.Windows.Forms.TabPage();
             this.cbOwnCloudAppendFileNameToURL = new System.Windows.Forms.CheckBox();
             this.txtOwnCloudExpiryTime = new System.Windows.Forms.NumericUpDown();
@@ -645,6 +663,8 @@ namespace ShareX.UploadersLib
             this.tpAzureStorage.SuspendLayout();
             this.tpBackblazeB2.SuspendLayout();
             this.tpMega.SuspendLayout();
+            this.tpNextcloud.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNextcloudExpiryTime)).BeginInit();
             this.tpOwnCloud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOwnCloudExpiryTime)).BeginInit();
             this.tpMediaFire.SuspendLayout();
@@ -1226,6 +1246,7 @@ namespace ShareX.UploadersLib
             this.tcFileUploaders.Controls.Add(this.tpAzureStorage);
             this.tcFileUploaders.Controls.Add(this.tpBackblazeB2);
             this.tcFileUploaders.Controls.Add(this.tpMega);
+            this.tcFileUploaders.Controls.Add(this.tpNextcloud);
             this.tcFileUploaders.Controls.Add(this.tpOwnCloud);
             this.tcFileUploaders.Controls.Add(this.tpMediaFire);
             this.tcFileUploaders.Controls.Add(this.tpPushbullet);
@@ -2579,6 +2600,149 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblMegaPassword, "lblMegaPassword");
             this.lblMegaPassword.Name = "lblMegaPassword";
+            // 
+            // tpNextcloud
+            // 
+            this.tpNextcloud.BackColor = System.Drawing.SystemColors.Window;
+            this.tpNextcloud.Controls.Add(this.cbNextcloudAppendFileNameToURL);
+            this.tpNextcloud.Controls.Add(this.txtNextcloudExpiryTime);
+            this.tpNextcloud.Controls.Add(this.cbNextcloudAutoExpire);
+            this.tpNextcloud.Controls.Add(this.lblNextcloudExpiryTime);
+            this.tpNextcloud.Controls.Add(this.cbNextcloudUsePreviewLinks);
+            this.tpNextcloud.Controls.Add(this.lblNextcloudHostExample);
+            this.tpNextcloud.Controls.Add(this.cbNextcloud81Compatibility);
+            this.tpNextcloud.Controls.Add(this.cbNextcloudDirectLink);
+            this.tpNextcloud.Controls.Add(this.cbNextcloudCreateShare);
+            this.tpNextcloud.Controls.Add(this.txtNextcloudPath);
+            this.tpNextcloud.Controls.Add(this.txtNextcloudPassword);
+            this.tpNextcloud.Controls.Add(this.txtNextcloudUsername);
+            this.tpNextcloud.Controls.Add(this.txtNextcloudHost);
+            this.tpNextcloud.Controls.Add(this.lblNextcloudPath);
+            this.tpNextcloud.Controls.Add(this.lblNextcloudPassword);
+            this.tpNextcloud.Controls.Add(this.lblNextcloudUsername);
+            this.tpNextcloud.Controls.Add(this.lblNextcloudHost);
+            resources.ApplyResources(this.tpNextcloud, "tpNextcloud");
+            this.tpNextcloud.Name = "tpNextcloud";
+            // 
+            // cbNextcloudAppendFileNameToURL
+            // 
+            resources.ApplyResources(this.cbNextcloudAppendFileNameToURL, "cbNextcloudAppendFileNameToURL");
+            this.cbNextcloudAppendFileNameToURL.Name = "cbNextcloudAppendFileNameToURL";
+            this.cbNextcloudAppendFileNameToURL.UseMnemonic = false;
+            this.cbNextcloudAppendFileNameToURL.UseVisualStyleBackColor = true;
+            this.cbNextcloudAppendFileNameToURL.CheckedChanged += new System.EventHandler(this.cbNextcloudAppendFileNameToURL_CheckedChanged);
+            // 
+            // txtNextcloudExpiryTime
+            // 
+            resources.ApplyResources(this.txtNextcloudExpiryTime, "txtNextcloudExpiryTime");
+            this.txtNextcloudExpiryTime.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.txtNextcloudExpiryTime.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtNextcloudExpiryTime.Name = "txtNextcloudExpiryTime";
+            this.txtNextcloudExpiryTime.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtNextcloudExpiryTime.ValueChanged += new System.EventHandler(this.txtOwnExpiryTime_TextChanged);
+            // 
+            // cbNextcloudAutoExpire
+            // 
+            resources.ApplyResources(this.cbNextcloudAutoExpire, "cbNextcloudAutoExpire");
+            this.cbNextcloudAutoExpire.Name = "cbNextcloudAutoExpire";
+            this.cbNextcloudAutoExpire.UseVisualStyleBackColor = true;
+            this.cbNextcloudAutoExpire.CheckedChanged += new System.EventHandler(this.cbNextcloudAutoExpire_CheckedChanged);
+            // 
+            // lblNextcloudExpiryTime
+            // 
+            resources.ApplyResources(this.lblNextcloudExpiryTime, "lblNextcloudExpiryTime");
+            this.lblNextcloudExpiryTime.Name = "lblNextcloudExpiryTime";
+            // 
+            // cbNextcloudUsePreviewLinks
+            // 
+            resources.ApplyResources(this.cbNextcloudUsePreviewLinks, "cbNextcloudUsePreviewLinks");
+            this.cbNextcloudUsePreviewLinks.Name = "cbNextcloudUsePreviewLinks";
+            this.cbNextcloudUsePreviewLinks.UseVisualStyleBackColor = true;
+            this.cbNextcloudUsePreviewLinks.CheckedChanged += new System.EventHandler(this.cbNextcloudUsePreviewLinks_CheckedChanged);
+            // 
+            // lblNextcloudHostExample
+            // 
+            resources.ApplyResources(this.lblNextcloudHostExample, "lblNextcloudHostExample");
+            this.lblNextcloudHostExample.Name = "lblNextcloudHostExample";
+            // 
+            // cbNextcloud81Compatibility
+            // 
+            resources.ApplyResources(this.cbNextcloud81Compatibility, "cbNextcloud81Compatibility");
+            this.cbNextcloud81Compatibility.Name = "cbNextcloud81Compatibility";
+            this.cbNextcloud81Compatibility.UseVisualStyleBackColor = true;
+            this.cbNextcloud81Compatibility.CheckedChanged += new System.EventHandler(this.cbNextcloud81Compatibility_CheckedChanged);
+            // 
+            // cbNextcloudDirectLink
+            // 
+            resources.ApplyResources(this.cbNextcloudDirectLink, "cbNextcloudDirectLink");
+            this.cbNextcloudDirectLink.Name = "cbNextcloudDirectLink";
+            this.cbNextcloudDirectLink.UseMnemonic = false;
+            this.cbNextcloudDirectLink.UseVisualStyleBackColor = true;
+            this.cbNextcloudDirectLink.CheckedChanged += new System.EventHandler(this.cbNextcloudDirectLink_CheckedChanged);
+            // 
+            // cbNextcloudCreateShare
+            // 
+            resources.ApplyResources(this.cbNextcloudCreateShare, "cbNextcloudCreateShare");
+            this.cbNextcloudCreateShare.Name = "cbNextcloudCreateShare";
+            this.cbNextcloudCreateShare.UseVisualStyleBackColor = true;
+            this.cbNextcloudCreateShare.CheckedChanged += new System.EventHandler(this.cbNextcloudCreateShare_CheckedChanged);
+            // 
+            // txtNextcloudPath
+            // 
+            resources.ApplyResources(this.txtNextcloudPath, "txtNextcloudPath");
+            this.txtNextcloudPath.Name = "txtNextcloudPath";
+            this.txtNextcloudPath.TextChanged += new System.EventHandler(this.txtNextcloudPath_TextChanged);
+            // 
+            // txtNextcloudPassword
+            // 
+            resources.ApplyResources(this.txtNextcloudPassword, "txtNextcloudPassword");
+            this.txtNextcloudPassword.Name = "txtNextcloudPassword";
+            this.txtNextcloudPassword.UseSystemPasswordChar = true;
+            this.txtNextcloudPassword.TextChanged += new System.EventHandler(this.txtNextcloudPassword_TextChanged);
+            // 
+            // txtNextcloudUsername
+            // 
+            resources.ApplyResources(this.txtNextcloudUsername, "txtNextcloudUsername");
+            this.txtNextcloudUsername.Name = "txtNextcloudUsername";
+            this.txtNextcloudUsername.TextChanged += new System.EventHandler(this.txtNextcloudUsername_TextChanged);
+            // 
+            // txtNextcloudHost
+            // 
+            resources.ApplyResources(this.txtNextcloudHost, "txtNextcloudHost");
+            this.txtNextcloudHost.Name = "txtNextcloudHost";
+            this.txtNextcloudHost.TextChanged += new System.EventHandler(this.txtNextcloudHost_TextChanged);
+            // 
+            // lblNextcloudPath
+            // 
+            resources.ApplyResources(this.lblNextcloudPath, "lblNextcloudPath");
+            this.lblNextcloudPath.Name = "lblNextcloudPath";
+            // 
+            // lblNextcloudPassword
+            // 
+            resources.ApplyResources(this.lblNextcloudPassword, "lblNextcloudPassword");
+            this.lblNextcloudPassword.Name = "lblNextcloudPassword";
+            // 
+            // lblNextcloudUsername
+            // 
+            resources.ApplyResources(this.lblNextcloudUsername, "lblNextcloudUsername");
+            this.lblNextcloudUsername.Name = "lblNextcloudUsername";
+            // 
+            // lblNextcloudHost
+            // 
+            resources.ApplyResources(this.lblNextcloudHost, "lblNextcloudHost");
+            this.lblNextcloudHost.Name = "lblNextcloudHost";
             // 
             // tpOwnCloud
             // 
@@ -4847,6 +5011,9 @@ namespace ShareX.UploadersLib
             this.tpBackblazeB2.PerformLayout();
             this.tpMega.ResumeLayout(false);
             this.tpMega.PerformLayout();
+            this.tpNextcloud.ResumeLayout(false);
+            this.tpNextcloud.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNextcloudExpiryTime)).EndInit();
             this.tpOwnCloud.ResumeLayout(false);
             this.tpOwnCloud.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOwnCloudExpiryTime)).EndInit();
@@ -5112,6 +5279,16 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnGoogleDriveRefreshFolders;
         private System.Windows.Forms.ColumnHeader chGoogleDriveDescription;
         private System.Windows.Forms.CheckBox cbGoogleDriveUseFolder;
+        private System.Windows.Forms.TextBox txtNextcloudPath;
+        private System.Windows.Forms.TextBox txtNextcloudPassword;
+        private System.Windows.Forms.TextBox txtNextcloudUsername;
+        private System.Windows.Forms.TextBox txtNextcloudHost;
+        private System.Windows.Forms.Label lblNextcloudPath;
+        private System.Windows.Forms.Label lblNextcloudPassword;
+        private System.Windows.Forms.Label lblNextcloudUsername;
+        private System.Windows.Forms.Label lblNextcloudHost;
+        private System.Windows.Forms.CheckBox cbNextcloudCreateShare;
+        private System.Windows.Forms.CheckBox cbNextcloudDirectLink;
         private System.Windows.Forms.TextBox txtOwnCloudPath;
         private System.Windows.Forms.TextBox txtOwnCloudPassword;
         private System.Windows.Forms.TextBox txtOwnCloudUsername;
@@ -5179,6 +5356,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblTwitterDefaultMessage;
         private System.Windows.Forms.TextBox txtTwitterDefaultMessage;
         private System.Windows.Forms.CheckBox cbTwitterSkipMessageBox;
+        private System.Windows.Forms.CheckBox cbNextcloud81Compatibility;
         private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
         private System.Windows.Forms.Label lblOneTimeSecretAPIKey;
         private System.Windows.Forms.Label lblOneTimeSecretEmail;
@@ -5266,6 +5444,7 @@ namespace ShareX.UploadersLib
         internal System.Windows.Forms.TabPage tpBox;
         internal System.Windows.Forms.TabPage tpAmazonS3;
         internal System.Windows.Forms.TabPage tpMega;
+        internal System.Windows.Forms.TabPage tpNextcloud;
         internal System.Windows.Forms.TabPage tpOwnCloud;
         internal System.Windows.Forms.TabPage tpMediaFire;
         internal System.Windows.Forms.TabPage tpPushbullet;
@@ -5299,6 +5478,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblPuushPassword;
         internal System.Windows.Forms.TabPage tpPuush;
         private System.Windows.Forms.CheckBox cbHastebinUseFileExtension;
+        private System.Windows.Forms.Label lblNextcloudHostExample;
         private System.Windows.Forms.Label lblOwnCloudHostExample;
         internal System.Windows.Forms.TabPage tpPastie;
         private System.Windows.Forms.CheckBox cbPastieIsPublic;
@@ -5410,6 +5590,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionText;
         private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionVideo;
         private System.Windows.Forms.CheckBox cbAmazonS3StripExtensionImage;
+        private System.Windows.Forms.CheckBox cbNextcloudUsePreviewLinks;
         private System.Windows.Forms.CheckBox cbOwnCloudUsePreviewLinks;
         internal System.Windows.Forms.TabPage tpFirebaseDynamicLinks;
         private System.Windows.Forms.CheckBox cbFirebaseIsShort;
@@ -5440,6 +5621,10 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblAzureStorageURLPreview;
         private System.Windows.Forms.Label lblAzureStorageURLPreviewLabel;
         private System.Windows.Forms.Label lblFirebaseDomainExample;
+
+        private System.Windows.Forms.Label lblNextcloudExpiryTime;
+        private System.Windows.Forms.CheckBox cbNextcloudAutoExpire;
+        private System.Windows.Forms.NumericUpDown txtNextcloudExpiryTime;
         private System.Windows.Forms.Label lblOwnCloudExpiryTime;
         private System.Windows.Forms.CheckBox cbOwnCloudAutoExpire;
         private System.Windows.Forms.NumericUpDown txtOwnCloudExpiryTime;
@@ -5485,6 +5670,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtZWSURL;
         private System.Windows.Forms.Label lblZWSToken;
         private System.Windows.Forms.Label lblZWSURL;
+        private System.Windows.Forms.CheckBox cbNextcloudAppendFileNameToURL;
         private System.Windows.Forms.CheckBox cbOwnCloudAppendFileNameToURL;
         private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
         private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
