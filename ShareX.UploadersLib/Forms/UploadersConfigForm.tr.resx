@@ -366,6 +366,27 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Dosya adı içeren uzun link kullan</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Sunucu:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Kullanıcı adı:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Yol:</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Paylaşılabilir adres oluştur</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Direkt link (Adrese "&amp;download" ekler)</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>ownCloud 8.1+ uyumluluk</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Sunucu:</value>
   </data>
@@ -771,6 +792,9 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
     <value>Örnek: google.page.link</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>Örnek: http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Örnek: http://example.com/owncloud</value>
   </data>
@@ -981,6 +1005,9 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
     <value>Uzak dizin:</value>
   </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>Süre sonu (gün):</value>
+  </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Süre sonu (gün):</value>
   </data>
@@ -1029,6 +1056,9 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="cbPlikOneShot.Text" xml:space="preserve">
     <value>İlk indirmeden sonra imha et</value>
   </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Ön izleme bağlantısı kullan (sadece NextCloud)</value>
+  </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Ön izleme bağlantısı kullan (sadece NextCloud)</value>
   </data>
@@ -1037,6 +1067,9 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   </data>
   <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
     <value>Adres yoluna uzak dizini ekle</value>
+  </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>Paylaşılan bağlantıları otomatik süre aşımına uğrat</value>
   </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>Paylaşılan bağlantıları otomatik süre aşımına uğrat</value>
@@ -1079,6 +1112,9 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   </data>
   <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
     <value>Aşağıdaki bağlantıyı kullanarak erişiminizi istediğiniz zaman iptal edebilirsiniz:</value>
+  </data>
+  <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>URL'ye dosya adı ekle</value>
   </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>URL'ye dosya adı ekle</value>
