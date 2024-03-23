@@ -126,6 +126,9 @@
   <data name="cbPlikTTLUnit.Items" xml:space="preserve">
     <value>ימים</value>
   </data>
+  <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>הוסף את שם הקובץ לקישור</value>
+  </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>הוסף את שם הקובץ לקישור</value>
   </data>
@@ -241,6 +244,9 @@
     <value>מטען חתום</value>
   </data>
   <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>נתיב:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
     <value>נתיב:</value>
   </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
@@ -363,6 +369,9 @@
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>הערה (Markdown)</value>
   </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>תאימות ownCloud 8.1+</value>
+  </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>תאימות ownCloud 8.1+</value>
   </data>
@@ -419,6 +428,12 @@
   </data>
   <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
     <value>צור קישור שניתן לשתף</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>צור קישור שניתן לשתף</value>
+  </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>זמן תפוגה (ימים):</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
     <value>צור קישור שניתן לשתף</value>
@@ -522,6 +537,9 @@
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>דוגמה: http://example.com/api/1/upload</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>דוגמה: http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>דוגמה: http://example.com/owncloud</value>
   </data>
@@ -533,6 +551,9 @@
   </data>
   <data name="lblTeknikExpiration.Text" xml:space="preserve">
     <value>תפוגה:</value>
+  </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>תוקף אוטומטי של קישורים משותפים</value>
   </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>תוקף אוטומטי של קישורים משותפים</value>
@@ -594,6 +615,9 @@
   </data>
   <data name="cbFirebaseIsShort.Text" xml:space="preserve">
     <value>קישור קצר</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>קישור ישיר</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>קישור ישיר</value>
@@ -664,6 +688,9 @@
   <data name="lblFTPPassword.Text" xml:space="preserve">
     <value>סיסמה:</value>
   </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>סיסמה:</value>
+  </data>
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">
     <value>סיסמה:</value>
   </data>
@@ -713,6 +740,9 @@
     <value>שם תיקייה</value>
   </data>
   <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>שם משתמש:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
     <value>שם משתמש:</value>
   </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
@@ -955,6 +985,9 @@
   <data name="lblImgurThumbnailType.Text" xml:space="preserve">
     <value>סוג תמונה ממוזערת:</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>קישור:</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>קישור:</value>
   </data>
@@ -990,6 +1023,9 @@
   </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>שימוש:</value>
+  </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>השתמש בקישורי תצוגה מקדימה (NextCloud בלבד)</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>השתמש בקישורי תצוגה מקדימה (NextCloud בלבד)</value>
