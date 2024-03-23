@@ -524,6 +524,39 @@ Por exemplo, se o teu nome for 'bucket.example.com' a hiperligação será http:
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Palavra-passe:</value>
   </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>Expirar automaticamente hiperligações partilhadas</value>
+  </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>Tempo de expiração (dias):</value>
+  </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Utilizar Pré-visualização de hiperligações (NextCloud apenas)</value>
+  </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>Exemplo: http://example.com/nextcloud</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Compatibilidade com ownCloud 8.1+</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Hiperligação directa</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Criar hiperligação compartilhável</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Caminho:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Palavra-passe:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Utilizador:</value>
+  </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Hospedagem:</value>
+  </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>Expirar automaticamente hiperligações partilhadas</value>
   </data>
