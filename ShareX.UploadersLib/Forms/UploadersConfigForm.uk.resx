@@ -459,6 +459,30 @@
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>Приклад: http://example.com/nextcloud</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Сумісність з ownCloud 8.1+</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Пряме посилання</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Створити посилання для поширення</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Шлях:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Ім’я користувача:</value>
+  </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Посилання:</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Приклад: http://example.com/owncloud</value>
   </data>
