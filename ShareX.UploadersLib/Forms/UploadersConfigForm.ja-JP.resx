@@ -419,6 +419,30 @@
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>パスワード:</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>例: http://example.com/nextcloud</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>ownCloud 8.1+ 互換</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>ダイレクト リンク (「&amp;download」をURLに追加)</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>共有可能なリンクを作成する</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>パス:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>パスワード:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>ユーザー名:</value>
+  </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>例: http://example.com/owncloud</value>
   </data>
@@ -1014,6 +1038,15 @@
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
     <value>アプリケーション キー ID:</value>
   </data>
+  <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>URLにファイル名を付与</value>
+  </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>有効期限(日):</value>
+  </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>共有リンクを自動で期限切れにする</value>
+  </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>URLにファイル名を付与</value>
   </data>
@@ -1052,6 +1085,9 @@
   </data>
   <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
     <value>アルバム名:</value>
+  </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>プレビューできるリンクを使用 (NextCloudのみ)</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>プレビューできるリンクを使用 (NextCloudのみ)</value>
