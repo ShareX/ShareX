@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -36,36 +36,36 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public class NextCloudFileUploaderService : FileUploaderService
+    public class NextcloudFileUploaderService : FileUploaderService
     {
-        public override FileDestination EnumValue { get; } = FileDestination.NextCloud;
+        public override FileDestination EnumValue { get; } = FileDestination.Nextcloud;
 
-        public override Image ServiceImage => Resources.NextCloud;
+        public override Image ServiceImage => Resources.Nextcloud;
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(config.NextCloudHost) && !string.IsNullOrEmpty(config.NextCloudUsername) && !string.IsNullOrEmpty(config.NextCloudPassword);
+            return !string.IsNullOrEmpty(config.NextcloudHost) && !string.IsNullOrEmpty(config.NextcloudUsername) && !string.IsNullOrEmpty(config.NextcloudPassword);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new NextCloud(config.NextCloudHost, config.NextCloudUsername, config.NextCloudPassword)
+            return new Nextcloud(config.NextcloudHost, config.NextcloudUsername, config.NextcloudPassword)
             {
-                Path = config.NextCloudPath,
-                CreateShare = config.NextCloudCreateShare,
-                DirectLink = config.NextCloudDirectLink,
-                PreviewLink = config.NextCloudUsePreviewLinks,
-                AppendFileNameToURL = config.NextCloudAppendFileNameToURL,
-                IsCompatibility81 = config.NextCloud81Compatibility,
-                AutoExpireTime = config.NextCloudExpiryTime,
-                AutoExpire = config.NextCloudAutoExpire
+                Path = config.NextcloudPath,
+                CreateShare = config.NextcloudCreateShare,
+                DirectLink = config.NextcloudDirectLink,
+                PreviewLink = config.NextcloudUsePreviewLinks,
+                AppendFileNameToURL = config.NextcloudAppendFileNameToURL,
+                IsCompatibility81 = config.Nextcloud81Compatibility,
+                AutoExpireTime = config.NextcloudExpiryTime,
+                AutoExpire = config.NextcloudAutoExpire
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpNextCloud;
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpNextcloud;
     }
 
-    public sealed class NextCloud : FileUploader
+    public sealed class Nextcloud : FileUploader
     {
         public string Host { get; set; }
         public string Username { get; set; }
@@ -79,7 +79,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool IsCompatibility81 { get; set; }
         public bool AutoExpire { get; set; }
 
-        public NextCloud(string host, string username, string password)
+        public Nextcloud(string host, string username, string password)
         {
             Host = host;
             Username = username;
@@ -90,12 +90,12 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (string.IsNullOrEmpty(Host))
             {
-                throw new Exception("nextCloud Host is empty.");
+                throw new Exception("Nextcloud Host is empty.");
             }
 
             if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
             {
-                throw new Exception("nextCloud Username or Password is empty.");
+                throw new Exception("Nextcloud Username or Password is empty.");
             }
 
             if (string.IsNullOrEmpty(Path))
@@ -148,7 +148,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (AutoExpireTime == 0)
                 {
-                    throw new Exception("nextCloud Auto Epxire Time is not valid.");
+                    throw new Exception("Nextcloud Auto Epxire Time is not valid.");
                 }
                 else
                 {
@@ -159,7 +159,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                     catch
                     {
-                        throw new Exception("nextCloud Auto Expire time is invalid");
+                        throw new Exception("Nextcloud Auto Expire time is invalid");
                     }
                 }
             }
@@ -174,13 +174,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(response))
             {
-                NextCloudShareResponse result = JsonConvert.DeserializeObject<NextCloudShareResponse>(response);
+                NextcloudShareResponse result = JsonConvert.DeserializeObject<NextcloudShareResponse>(response);
 
                 if (result != null && result.ocs != null && result.ocs.meta != null)
                 {
                     if (result.ocs.data != null && result.ocs.meta.statuscode == 100)
                     {
-                        NextCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<NextCloudShareResponseData>();
+                        NextcloudShareResponseData data = ((JObject)result.ocs.data).ToObject<NextcloudShareResponseData>();
                         string link = data.url;
 
                         if (PreviewLink && FileHelpers.IsImageFile(path))
@@ -216,25 +216,25 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        public class NextCloudShareResponse
+        public class NextcloudShareResponse
         {
-            public NextCloudShareResponseOcs ocs { get; set; }
+            public NextcloudShareResponseOcs ocs { get; set; }
         }
 
-        public class NextCloudShareResponseOcs
+        public class NextcloudShareResponseOcs
         {
-            public NextCloudShareResponseMeta meta { get; set; }
+            public NextcloudShareResponseMeta meta { get; set; }
             public object data { get; set; }
         }
 
-        public class NextCloudShareResponseMeta
+        public class NextcloudShareResponseMeta
         {
             public string status { get; set; }
             public int statuscode { get; set; }
             public string message { get; set; }
         }
 
-        public class NextCloudShareResponseData
+        public class NextcloudShareResponseData
         {
             public int id { get; set; }
             public string url { get; set; }
