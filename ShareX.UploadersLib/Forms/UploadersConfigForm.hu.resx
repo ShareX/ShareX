@@ -380,6 +380,24 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Hosszú link használata, amely a fájlnevet is tartalmazza</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Hoszt:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Felhasználónév:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Elérési út:</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Megosztható URL létrehozása</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Közvetlen link (hozzáadja a &amp;download-ot az URL-hez)</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Hoszt:</value>
   </data>
