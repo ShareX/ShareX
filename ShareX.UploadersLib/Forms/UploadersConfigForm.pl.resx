@@ -297,6 +297,21 @@
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Hasło:</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Link:</value>
+  </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>Przykład: http://example.com/nextcloud</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Hasło:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Ścieżka:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Nazwa użytkownika:</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Link:</value>
   </data>
@@ -534,6 +549,9 @@
   <data name="lblPastebinExpiration.Text" xml:space="preserve">
     <value>Wygasa:</value>
   </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>Czas wygaśnięcia (dni):</value>
+  </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Czas wygaśnięcia (dni):</value>
   </data>
@@ -672,6 +690,9 @@
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>Komentarz (Markdown)</value>
   </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Bezpośredni link</value>
+  </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Bezpośredni link</value>
   </data>
@@ -771,6 +792,9 @@
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
     <value>Prześlij pliki do wybranego folderu</value>
   </data>
+  <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Dodaj nazwę pliku do linku</value>
+  </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>Dodaj nazwę pliku do linku</value>
   </data>
@@ -809,6 +833,9 @@
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
     <value>Podgląd linku:</value>
+  </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Użyj linków podglądu (tylko NextCloud)</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Użyj linków podglądu (tylko NextCloud)</value>
@@ -1009,6 +1036,15 @@ Na przykład, jeśli Twój bucket nazywa się "bucket.example.com" to URL będzi
   </data>
   <data name="cbKuttReuse.Text" xml:space="preserve">
     <value>Jeśli istnieje link z określonym celem, zwróć go</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>kompatybilność z ownCloud 8.1+</value>
+  </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>Automatycznie wygasaj udostępnione linki</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Utwórz link do udostępniania</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>kompatybilność z ownCloud 8.1+</value>
