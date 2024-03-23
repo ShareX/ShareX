@@ -408,6 +408,27 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Gebruik een lange link die de bestandsnaam omvat</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Gebruikersnaam:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Pad:</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Creëer een deelbare link</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Directe link (Voegt &amp;download toe aan de URL)</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Compatibiliteit met ownCloud 8.1+</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
