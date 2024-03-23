@@ -63,15 +63,15 @@ namespace ShareX.MediaLib
             SourceImage = (Bitmap)image.Clone();
             SourceImageCropped = null;
 
-            Rectangle source = new Rectangle(0, 0, image.Width, image.Height);
-            Rectangle rect = ImageHelpers.FindAutoCropRectangle(image, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+            Rectangle source = new Rectangle(0, 0, SourceImage.Width, SourceImage.Height);
+            Rectangle rect = ImageHelpers.FindAutoCropRectangle(SourceImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
 
             if (source != rect)
             {
-                SourceImageCropped = ImageHelpers.CropBitmap(image, rect);
+                SourceImageCropped = ImageHelpers.CropBitmap(SourceImage, rect);
             }
 
-            PaddingColor = image.GetPixel(0, 0);
+            PaddingColor = SourceImage.GetPixel(0, 0);
         }
 
         public Bitmap Render()
