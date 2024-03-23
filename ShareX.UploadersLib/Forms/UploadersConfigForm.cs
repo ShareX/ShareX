@@ -2243,7 +2243,7 @@ namespace ShareX.UploadersLib
             Config.NextcloudPath = txtNextcloudPath.Text;
         }
 
-        private void txtOwnExpiryTime_TextChanged(object sender, EventArgs e)
+        private void txtNextcloudExpiryTime_TextChanged(object sender, EventArgs e)
         {
             Config.NextcloudExpiryTime = Convert.ToInt32(txtNextcloudExpiryTime.Value);
         }
