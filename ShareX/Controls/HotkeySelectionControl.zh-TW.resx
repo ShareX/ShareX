@@ -121,6 +121,6 @@
     <value>快捷鍵</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
-    <value>任務...</value>
+    <value>排程...</value>
   </data>
 </root>

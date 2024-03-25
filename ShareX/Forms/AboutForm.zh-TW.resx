@@ -135,4 +135,7 @@
   <data name="lblProductName.Text" xml:space="preserve">
     <value>ShareX</value>
   </data>
+  <data name="rtbInfo.Text" xml:space="preserve">
+    <value>資訊</value>
+  </data>
 </root>

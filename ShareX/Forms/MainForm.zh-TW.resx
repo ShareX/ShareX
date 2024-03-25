@@ -153,13 +153,13 @@
     <value>截圖資料夾...</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>任務設定...</value>
+    <value>排程設定...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>擷取後的任務</value>
+    <value>擷取後的排程</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>上傳後的任務</value>
+    <value>上傳後的排程</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
     <value>擷取</value>
@@ -183,7 +183,7 @@
     <value>自動擷取...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
-    <value>清除任務清單</value>
+    <value>清除排程清單</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>複製</value>
@@ -372,10 +372,10 @@
     <value>文字上傳工具</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
-    <value>擷取後的任務</value>
+    <value>擷取後的排程</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
-    <value>上傳後的任務</value>
+    <value>上傳後的排程</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
     <value>應用程式設定...</value>
@@ -459,7 +459,7 @@
     <value>開啟主視窗</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>任務設定...</value>
+    <value>排程設定...</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
     <value>文字上傳工具</value>
@@ -570,10 +570,10 @@
     <value>下載</value>
   </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
-    <value>從清單移除任務</value>
+    <value>從清單移除排程</value>
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>OCR 圖片...</value>
+    <value>光學辨識圖片...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>合併圖片...</value>
@@ -699,7 +699,7 @@
     <value>美化圖片...</value>
   </data>
   <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
-    <value>Bing 圖像式搜尋 (OCR)...</value>
+    <value>Bing 圖像式搜尋...</value>
   </data>
   <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
     <value>無邊框視窗...</value>
@@ -753,7 +753,7 @@
     <value>檢視視窗...</value>
   </data>
   <data name="tsmiOCR.Text" xml:space="preserve">
-    <value>OCR...</value>
+    <value>光學辨識...</value>
   </data>
   <data name="tsmiOpenFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+Enter</value>
@@ -795,7 +795,7 @@
     <value>檢視視窗...</value>
   </data>
   <data name="tsmiTrayOCR.Text" xml:space="preserve">
-    <value>OCR...</value>
+    <value>光學辨識...</value>
   </data>
   <data name="tsmiTrayPinToScreen.Text" xml:space="preserve">
     <value>釘選至螢幕...</value>
@@ -808,5 +808,26 @@
   </data>
   <data name="tsmiVideoConverter.Text" xml:space="preserve">
     <value>影片轉檔工具...</value>
+  </data>
+  <data name="tsmiTrayHashChecker.Text" xml:space="preserve">
+    <value>雜湊檢查器...</value>
+  </data>
+  <data name="tsmiHashChecker.Text" xml:space="preserve">
+    <value>雜湊檢查器...</value>
+  </data>
+  <data name="cHotkeyStatus.HeaderText" xml:space="preserve">
+    <value>快速鍵狀態</value>
+  </data>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>快速鍵</value>
+  </data>
+  <data name="cDescription.HeaderText" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="tsbX.Text" xml:space="preserve">
+    <value>Follow @ShareX...</value>
+  </data>
+  <data name="tsmiGoogleLens.Text" xml:space="preserve">
+    <value>Google 智慧鏡頭...</value>
   </data>
 </root>

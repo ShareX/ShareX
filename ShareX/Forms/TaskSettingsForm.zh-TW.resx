@@ -120,7 +120,7 @@
     <value>描述：</value>
   </data>
   <data name="tpTask.Text" xml:space="preserve">
-    <value>任務</value>
+    <value>排程</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>一般</value>
@@ -180,7 +180,7 @@
     <value>進階</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 任務設定</value>
+    <value>ShareX - 排程設定</value>
   </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>新增...</value>
@@ -300,7 +300,7 @@
     <value>只在區域擷取時套用效果</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>備註：你可以在「擷取後的任務 -&gt; 新增圖片效果」啟用/停用圖片效果。</value>
+    <value>備註：你可以在「擷取後的排程 -&gt; 新增圖片效果」啟用/停用圖片效果。</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>效果</value>
@@ -321,10 +321,10 @@
     <value>擷取完畢後播放提示音</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
-    <value>任務完成後播放提示音</value>
+    <value>排程完成後播放提示音</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
-    <value>任務...</value>
+    <value>排程...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>網址分享服務</value>
@@ -471,7 +471,7 @@
     <value>副檔名篩選條件：</value>
   </data>
   <data name="lblActionsNote.Text" xml:space="preserve">
-    <value>備註：你可以在「擷取後的任務 -&gt; 執行動作」啟用/停用動作。</value>
+    <value>備註：你可以在「擷取後的排程 -&gt; 執行動作」啟用/停用動作。</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>PNG 位元深度：</value>
@@ -585,7 +585,7 @@
     <value>擷取後顯示圖片效果視窗</value>
   </data>
   <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
-    <value>任務完成後顯示彈出通知</value>
+    <value>排程完成後顯示彈出通知</value>
   </data>
   <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
     <value>螢幕擷取時自動隱藏</value>
@@ -600,7 +600,7 @@
     <value>使用自訂錯誤音效：</value>
   </data>
   <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
-    <value>使用自訂任務完成音效：</value>
+    <value>使用自訂排程完成音效：</value>
   </data>
   <data name="gbToastWindow.Text" xml:space="preserve">
     <value>彈出通知</value>
@@ -621,7 +621,7 @@
     <value>幀率限制：</value>
   </data>
   <data name="lblTask.Text" xml:space="preserve">
-    <value>任務：</value>
+    <value>排程：</value>
   </data>
   <data name="lblToastWindowDuration.Text" xml:space="preserve">
     <value>持續時間：</value>
@@ -669,6 +669,15 @@
     <value>通知</value>
   </data>
   <data name="tpOCR.Text" xml:space="preserve">
-    <value>OCR</value>
+    <value>光學辨識</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Text" xml:space="preserve">
+    <value>預配置的視窗標題：</value>
+  </data>
+  <data name="cbCloseWindowAfterOpenServiceLink.Text" xml:space="preserve">
+    <value>開啟服務連結後關閉 OCR 視窗</value>
+  </data>
+  <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
+    <value>使用隨機圖片效果</value>
   </data>
 </root>

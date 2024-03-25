@@ -130,7 +130,7 @@
     <value>覆寫：</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>使用唯一名稱：</value>
+    <value>使用唯一名稱： </value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>該位置已存在具有相同名稱的檔案。
