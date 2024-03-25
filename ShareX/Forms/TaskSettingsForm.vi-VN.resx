@@ -660,4 +660,19 @@
   <data name="tpNotifications.Text" xml:space="preserve">
     <value>Thông báo</value>
   </data>
+  <data name="btnCustomErrorSoundPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnCustomTaskCompletedSoundPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnCustomCaptureSoundPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblToastWindowSizeX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
+    <value>Sử dụng hiệu ứng hình ảnh ngẫu nhiên</value>
+  </data>
 </root>

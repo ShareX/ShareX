@@ -237,4 +237,7 @@
   <data name="Total" xml:space="preserve">
     <value>Tổng</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Ghim vào màn hình</value>
+  </data>
 </root>

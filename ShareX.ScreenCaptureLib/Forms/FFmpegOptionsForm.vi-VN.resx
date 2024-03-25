@@ -301,4 +301,43 @@ Nếu không bộ thiết lập không thể theo kịp đoạn ghi hình và t�
   <data name="lblx264BitrateK.Text" xml:space="preserve">
     <value>kbit/giây</value>
   </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Bộ mã hóa video:</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>Bộ mã hóa âm thanh:</value>
+  </data>
+  <data name="lblAACBitrateK.Text" xml:space="preserve">
+    <value>kbit/giây</value>
+  </data>
+  <data name="lblAACBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="lblOpusBitrateK.Text" xml:space="preserve">
+    <value>kbit/giây</value>
+  </data>
+  <data name="lblOpusBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="tpOpus.Text" xml:space="preserve">
+    <value>tác phẩm</value>
+  </data>
+  <data name="lblNVENCTune.Text" xml:space="preserve">
+    <value>Điều chỉnh:</value>
+  </data>
+  <data name="tpAMF.Text" xml:space="preserve">
+    <value>AMF</value>
+  </data>
+  <data name="lblAMFBitrateK.Text" xml:space="preserve">
+    <value>kbit/giây</value>
+  </data>
+  <data name="lblAMFBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="tpQSV.Text" xml:space="preserve">
+    <value>Đồng bộ hóa nhanh</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Đặt lại tùy chọn...</value>
+  </data>
 </root>

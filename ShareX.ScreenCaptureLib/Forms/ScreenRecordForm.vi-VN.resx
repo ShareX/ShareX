@@ -141,4 +141,7 @@
   <data name="lblTimer.Text" xml:space="preserve">
     <value>00:00:00</value>
   </data>
+  <data name="tsmiPause.Text" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
 </root>

@@ -438,4 +438,10 @@
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Cài đặt</value>
   </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Tự động kiểm tra cập nhật</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSizeX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
 </root>

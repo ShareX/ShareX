@@ -1287,4 +1287,13 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
     <value>Dùng liên kết trực tiếp</value>
   </data>
+  <data name="tpZeroWidthShortener.Text" xml:space="preserve">
+    <value>Bộ rút ngắn chiều rộng bằng không</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.Text" xml:space="preserve">
+    <value>Tiêu đề kiểm soát bộ đệm:</value>
+  </data>
+  <data name="llYouTubePermissionsLink.Text" xml:space="preserve">
+    <value>https://myaccount.google.com/permissions</value>
+  </data>
 </root>
