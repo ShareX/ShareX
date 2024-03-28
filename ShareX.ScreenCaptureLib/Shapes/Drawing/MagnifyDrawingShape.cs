@@ -30,16 +30,20 @@ using System.Drawing.Drawing2D;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class MagnifyDrawingShape : EllipseDrawingShape
+    public class MagnifyDrawingShape : BaseDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingMagnify;
 
         public int MagnifyStrength { get; set; } = 200;
         public ImageInterpolationMode ImageInterpolationMode { get; set; }
+        public MagnifyShape MagnifyShape { get; set; } = MagnifyShape.Rectangle;
+
+        private EllipseDrawingShape EllipseDrawingShape { get; } = new EllipseDrawingShape();
+        private RectangleDrawingShape RectangleDrawingShape { get; } = new RectangleDrawingShape();
 
         public MagnifyDrawingShape()
         {
-            ForceProportionalResizing = true;
+            ForceProportionalResizing = MagnifyShape == MagnifyShape.Ellipse ? true : false;  // Keep previous behavior
         }
 
         public override void OnConfigLoad()
@@ -47,6 +51,23 @@ namespace ShareX.ScreenCaptureLib
             base.OnConfigLoad();
             MagnifyStrength = AnnotationOptions.MagnifyStrength;
             ImageInterpolationMode = AnnotationOptions.ImageInterpolationMode;
+            MagnifyShape = AnnotationOptions.MagnifyShape;
+
+            RectangleDrawingShape.BorderColor = AnnotationOptions.BorderColor;
+            RectangleDrawingShape.BorderSize = AnnotationOptions.BorderSize;
+            RectangleDrawingShape.BorderStyle = AnnotationOptions.BorderStyle;
+            RectangleDrawingShape.FillColor = AnnotationOptions.FillColor;
+            RectangleDrawingShape.Shadow = AnnotationOptions.Shadow;
+            RectangleDrawingShape.ShadowColor = AnnotationOptions.ShadowColor;
+            RectangleDrawingShape.ShadowOffset = AnnotationOptions.ShadowOffset;
+
+            EllipseDrawingShape.BorderColor = AnnotationOptions.BorderColor;
+            EllipseDrawingShape.BorderSize = AnnotationOptions.BorderSize;
+            EllipseDrawingShape.BorderStyle = AnnotationOptions.BorderStyle;
+            EllipseDrawingShape.FillColor = AnnotationOptions.FillColor;
+            EllipseDrawingShape.Shadow = AnnotationOptions.Shadow;
+            EllipseDrawingShape.ShadowColor = AnnotationOptions.ShadowColor;
+            EllipseDrawingShape.ShadowOffset = AnnotationOptions.ShadowOffset;
         }
 
         public override void OnConfigSave()
@@ -54,6 +75,7 @@ namespace ShareX.ScreenCaptureLib
             base.OnConfigSave();
             AnnotationOptions.MagnifyStrength = MagnifyStrength;
             AnnotationOptions.ImageInterpolationMode = ImageInterpolationMode;
+            AnnotationOptions.MagnifyShape = MagnifyShape;
         }
 
         public override void OnDraw(Graphics g)
@@ -63,7 +85,11 @@ namespace ShareX.ScreenCaptureLib
 
             using (GraphicsPath gp = new GraphicsPath())
             {
-                gp.AddEllipse(Rectangle);
+                if (MagnifyShape == MagnifyShape.Ellipse)
+                    gp.AddEllipse(Rectangle);
+                else
+                    gp.AddRectangle(Rectangle);
+
                 g.SetClip(gp);
 
                 float magnify = Math.Max(MagnifyStrength, 100) / 100f;
@@ -81,7 +107,23 @@ namespace ShareX.ScreenCaptureLib
             g.PixelOffsetMode = PixelOffsetMode.Default;
             g.InterpolationMode = InterpolationMode.Bilinear;
 
-            DrawEllipse(g);
+            if (MagnifyShape == MagnifyShape.Ellipse)
+            {
+                EllipseDrawingShape.Rectangle = Rectangle;
+                EllipseDrawingShape.OnDraw(g);
+            }
+            else
+            {
+                RectangleDrawingShape.Rectangle = Rectangle;
+                RectangleDrawingShape.OnDraw(g);
+            }
+        }
+        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
+        {
+            if (MagnifyShape == MagnifyShape.Ellipse)
+                gp.AddEllipse(rect);
+            else
+                gp.AddRectangle(rect);
         }
     }
 }
