@@ -133,19 +133,24 @@ namespace ShareX.ScreenCaptureLib
             btnCapture.Enabled = true;
             btnOptions.Enabled = true;
 
-            if (manager.Result != null)
-            {
-                btnUpload.Enabled = true;
-                pbOutput.Image = manager.Result;
-                pOutput.AutoScrollPosition = new Point(0, 0);
-                lblResultSize.Text = $"{manager.Result.Width}x{manager.Result.Height}";
-            }
+            LoadImage(manager.Result);
 
             this.ForceActivate();
 
             if (Options.AutoUpload)
             {
                 UploadResult();
+            }
+        }
+
+        private void LoadImage(Bitmap bmp)
+        {
+            if (bmp != null)
+            {
+                btnUpload.Enabled = true;
+                pbOutput.Image = bmp;
+                pOutput.AutoScrollPosition = new Point(0, 0);
+                lblResultSize.Text = $"{bmp.Width}x{bmp.Height}";
             }
         }
 

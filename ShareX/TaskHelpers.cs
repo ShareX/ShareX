@@ -372,34 +372,42 @@ namespace ShareX
         {
             MemoryStream ms = new MemoryStream();
 
-            switch (imageFormat)
+            try
             {
-                case EImageFormat.PNG:
-                    ImageHelpers.SavePNG(img, ms, pngBitDepth);
+                switch (imageFormat)
+                {
+                    case EImageFormat.PNG:
+                        ImageHelpers.SavePNG(img, ms, pngBitDepth);
 
-                    if (Program.Settings.PNGStripColorSpaceInformation)
-                    {
-                        using (ms)
+                        if (Program.Settings.PNGStripColorSpaceInformation)
                         {
-                            return ImageHelpers.PNGStripColorSpaceInformation(ms);
+                            using (ms)
+                            {
+                                return ImageHelpers.PNGStripColorSpaceInformation(ms);
+                            }
                         }
-                    }
-                    break;
-                case EImageFormat.JPEG:
-                    using (Bitmap newImage = ImageHelpers.FillBackground(img, Color.White))
-                    {
-                        ImageHelpers.SaveJPEG(newImage, ms, jpegQuality);
-                    }
-                    break;
-                case EImageFormat.GIF:
-                    ImageHelpers.SaveGIF(img, ms, gifQuality);
-                    break;
-                case EImageFormat.BMP:
-                    img.Save(ms, ImageFormat.Bmp);
-                    break;
-                case EImageFormat.TIFF:
-                    img.Save(ms, ImageFormat.Tiff);
-                    break;
+                        break;
+                    case EImageFormat.JPEG:
+                        using (Bitmap newImage = ImageHelpers.FillBackground(img, Color.White))
+                        {
+                            ImageHelpers.SaveJPEG(newImage, ms, jpegQuality);
+                        }
+                        break;
+                    case EImageFormat.GIF:
+                        ImageHelpers.SaveGIF(img, ms, gifQuality);
+                        break;
+                    case EImageFormat.BMP:
+                        img.Save(ms, ImageFormat.Bmp);
+                        break;
+                    case EImageFormat.TIFF:
+                        img.Save(ms, ImageFormat.Tiff);
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                e.ShowError();
             }
 
             return ms;
