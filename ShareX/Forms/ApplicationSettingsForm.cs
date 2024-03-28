@@ -822,14 +822,14 @@ namespace ShareX
 
                     LanguageHelper.ChangeLanguage(Program.Settings.Language);
 
-                    Program.MainForm.UpdateControls();
+                    await Program.MainForm.UpdateControls();
 
                     DebugHelper.WriteLine($"Import completed: {importPath}");
                 }
             }
         }
 
-        private void btnResetSettings_Click(object sender, EventArgs e)
+        private async void btnResetSettings_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings, "ShareX - " + Resources.Confirmation,
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
@@ -841,7 +841,7 @@ namespace ShareX
 
                 LanguageHelper.ChangeLanguage(Program.Settings.Language);
 
-                Program.MainForm.UpdateControls();
+                await Program.MainForm.UpdateControls();
 
                 DebugHelper.WriteLine("Settings reset.");
             }

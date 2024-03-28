@@ -58,7 +58,8 @@ namespace ShareX
             RunPuushTasks();
 
             NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.IsDarkTheme);
-            UpdateControls();
+
+            await UpdateControls();
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
@@ -197,7 +198,7 @@ namespace ShareX
             HandleCreated += MainForm_HandleCreated;
         }
 
-        public void UpdateControls()
+        public async Task UpdateControls()
         {
             IsReady = false;
 
@@ -260,7 +261,7 @@ namespace ShareX
             AfterTaskSettingsJobs();
             AfterApplicationSettingsJobs();
 
-            InitHotkeys();
+            await InitHotkeys();
 
             IsReady = true;
         }
@@ -317,39 +318,35 @@ namespace ShareX
             }
         }
 
-        private void InitHotkeys()
+        private async Task InitHotkeys()
         {
-            Task.Run(() =>
+            await Task.Run(() => SettingManager.WaitHotkeysConfig());
+
+            if (Program.HotkeyManager == null)
             {
-                SettingManager.WaitHotkeysConfig();
-            }).ContinueInCurrentContext(() =>
+                Program.HotkeyManager = new HotkeyManager(this);
+                Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
+            }
+
+            Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
+
+            DebugHelper.WriteLine("HotkeyManager started.");
+
+            if (Program.WatchFolderManager == null)
             {
-                if (Program.HotkeyManager == null)
-                {
-                    Program.HotkeyManager = new HotkeyManager(this);
-                    Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
-                }
+                Program.WatchFolderManager = new WatchFolderManager();
+            }
 
-                Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
+            Program.WatchFolderManager.UpdateWatchFolders();
 
-                DebugHelper.WriteLine("HotkeyManager started.");
+            DebugHelper.WriteLine("WatchFolderManager started.");
 
-                if (Program.WatchFolderManager == null)
-                {
-                    Program.WatchFolderManager = new WatchFolderManager();
-                }
+            UpdateWorkflowsMenu();
 
-                Program.WatchFolderManager.UpdateWatchFolders();
-
-                DebugHelper.WriteLine("WatchFolderManager started.");
-
-                UpdateWorkflowsMenu();
-
-                if (pHotkeys.Visible)
-                {
-                    pHotkeys.Focus();
-                }
-            });
+            if (pHotkeys.Visible)
+            {
+                pHotkeys.Focus();
+            }
         }
 
         private async void HandleHotkeys(HotkeySettings hotkeySetting)
