@@ -1671,6 +1671,57 @@
   <data name="&gt;&gt;cbPlaySoundAfterUpload.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <data name="nudSoundAfterUploadVolume.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 29</value>
+  </data>
+  <data name="nudSoundAfterUploadVolume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="nudSoundAfterUploadVolume.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;nudSoundAfterUploadVolume.Name" xml:space="preserve">
+    <value>nudSoundAfterUploadVolume</value>
+  </data>
+  <data name="&gt;&gt;nudSoundAfterUploadVolume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudSoundAfterUploadVolume.Parent" xml:space="preserve">
+    <value>tpNotifications</value>
+  </data>
+  <data name="&gt;&gt;nudSoundAfterUploadVolume.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblSoundAfterUploadVolume.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSoundAfterUploadVolume.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSoundAfterUploadVolume.Location" type="System.Drawing.Point, System.Drawing">
+    <value>308, 33</value>
+  </data>
+  <data name="lblSoundAfterUploadVolume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 13</value>
+  </data>
+  <data name="lblSoundAfterUploadVolume.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblSoundAfterUploadVolume.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="&gt;&gt;lblSoundAfterUploadVolume.Name" xml:space="preserve">
+    <value>lblSoundAfterUploadVolume</value>
+  </data>
+  <data name="&gt;&gt;lblSoundAfterUploadVolume.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSoundAfterUploadVolume.Parent" xml:space="preserve">
+    <value>tpNotifications</value>
+  </data>
+  <data name="&gt;&gt;lblSoundAfterUploadVolume.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
   <data name="tpNotifications.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>

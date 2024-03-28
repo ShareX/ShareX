@@ -308,6 +308,7 @@ namespace ShareX
 
         public bool PlaySoundAfterCapture = true;
         public bool PlaySoundAfterUpload = true;
+        public int SoundAfterUploadVolume = 100;
         public bool ShowToastNotificationAfterTaskCompleted = true;
         public float ToastWindowDuration = 3f;
         public float ToastWindowFadeDuration = 1f;
