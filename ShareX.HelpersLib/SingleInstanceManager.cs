@@ -97,13 +97,17 @@ namespace ShareX.HelpersLib
         {
             while (!cts.IsCancellationRequested)
             {
+                bool namedPipeServerCreated = false;
+
                 try
                 {
-                    using (NamedPipeServerStream serverPipe = new NamedPipeServerStream(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous))
+                    using (NamedPipeServerStream namedPipeServer = new NamedPipeServerStream(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous))
                     {
-                        await serverPipe.WaitForConnectionAsync(cts.Token).ConfigureAwait(false);
+                        namedPipeServerCreated = true;
 
-                        using (BinaryReader reader = new BinaryReader(serverPipe, Encoding.UTF8))
+                        await namedPipeServer.WaitForConnectionAsync(cts.Token).ConfigureAwait(false);
+
+                        using (BinaryReader reader = new BinaryReader(namedPipeServer, Encoding.UTF8))
                         {
                             int length = reader.ReadInt32();
 
@@ -123,18 +127,17 @@ namespace ShareX.HelpersLib
                         }
                     }
                 }
-                catch when (cts.IsCancellationRequested)
+                catch (OperationCanceledException)
                 {
-                }
-                catch (UnauthorizedAccessException e)
-                {
-                    DebugHelper.WriteException(e);
-
-                    break;
                 }
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
+
+                    if (!namedPipeServerCreated)
+                    {
+                        break;
+                    }
                 }
             }
         }
@@ -143,11 +146,11 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                using (NamedPipeClientStream clientPipe = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
+                using (NamedPipeClientStream namedPipeClient = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
                 {
-                    clientPipe.Connect(ConnectTimeout);
+                    namedPipeClient.Connect(ConnectTimeout);
 
-                    using (BinaryWriter writer = new BinaryWriter(clientPipe, Encoding.UTF8))
+                    using (BinaryWriter writer = new BinaryWriter(namedPipeClient, Encoding.UTF8))
                     {
                         writer.Write(args.Length);
 
