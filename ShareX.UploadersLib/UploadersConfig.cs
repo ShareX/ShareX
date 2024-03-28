@@ -275,7 +275,24 @@ namespace ShareX.UploadersLib
 
         #endregion Amazon S3
 
-        #region ownCloud / Nextcloud
+        #region Nextcloud
+
+        public string NextcloudHost { get; set; } = "";
+        public string NextcloudUsername { get; set; } = "";
+        [JsonEncrypt]
+        public string NextcloudPassword { get; set; } = "";
+        public string NextcloudPath { get; set; } = "/";
+        public int NextcloudExpiryTime { get; set; } = 7;
+        public bool NextcloudCreateShare { get; set; } = true;
+        public bool NextcloudDirectLink { get; set; } = false;
+        public bool Nextcloud81Compatibility { get; set; } = true;
+        public bool NextcloudUsePreviewLinks { get; set; } = false;
+        public bool NextcloudAppendFileNameToURL { get; set; } = false;
+        public bool NextcloudAutoExpire { get; set; } = false;
+
+        #endregion Nextcloud
+
+        #region ownCloud
 
         public string OwnCloudHost { get; set; } = "";
         public string OwnCloudUsername { get; set; } = "";
@@ -290,7 +307,7 @@ namespace ShareX.UploadersLib
         public bool OwnCloudAppendFileNameToURL { get; set; } = false;
         public bool OwnCloudAutoExpire { get; set; } = false;
 
-        #endregion ownCloud / Nextcloud
+        #endregion ownCloud
 
         #region MediaFire
 

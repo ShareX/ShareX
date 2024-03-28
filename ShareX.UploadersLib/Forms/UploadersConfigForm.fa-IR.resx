@@ -144,6 +144,9 @@
   <data name="lblPlikUsername.Text" xml:space="preserve">
     <value>نام کاربری:</value>
   </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>نام کاربری:</value>
+  </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
     <value>نام کاربری:</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
     <value>از لینک مستقیم استفاده کن</value>
+  </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>آدرس:</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>آدرس:</value>
@@ -372,6 +378,9 @@
   <data name="lblSeafilePath.Text" xml:space="preserve">
     <value>مسیر:</value>
   </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>مسیر:</value>
+  </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
     <value>مسیر:</value>
   </data>
@@ -397,6 +406,9 @@
     <value>کلمه عبور:</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>کلمه عبور:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
     <value>کلمه عبور:</value>
   </data>
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">

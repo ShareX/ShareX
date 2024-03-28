@@ -198,6 +198,9 @@
   <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
     <value>Crear enlace para compartir</value>
   </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Crear enlace para compartir</value>
+  </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
     <value>Crear enlace para compartir</value>
   </data>
@@ -363,6 +366,9 @@
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
   </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
   </data>
@@ -371,6 +377,9 @@
   </data>
   <data name="lblSeafilePath.Text" xml:space="preserve">
     <value>Ruta:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Ubicación:</value>
   </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
     <value>Ubicación:</value>
@@ -498,6 +507,9 @@
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Acortadores de enlaces</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Enlace:</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Enlace:</value>
   </data>
@@ -544,6 +556,9 @@
     <value>Nombre de usuario:</value>
   </data>
   <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
     <value>Nombre de usuario:</value>
   </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
@@ -684,11 +699,20 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Utilizar enlace largo que incluya el nombre del archivo</value>
   </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Compatibilidad con ownCloud 8.1 y superior</value>
+  </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Compatibilidad con ownCloud 8.1 y superior</value>
   </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Enlace directo</value>
+  </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Enlace directo</value>
+  </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Utilizar enlaces de vista previa (solo NextCloud)</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Utilizar enlaces de vista previa (solo NextCloud)</value>
@@ -917,6 +941,9 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>Ejemplo: http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Ejemplo: http://example.com/owncloud</value>
   </data>
@@ -1076,8 +1103,11 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Otros servidores</value>
   </data>
+  <data name="tpNextcloud.Text" xml:space="preserve">
+    <value>Nextcloud</value>
+  </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
-    <value>ownCloud/Nextcloud</value>
+    <value>ownCloud</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
@@ -1197,6 +1227,9 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
     <value>Subida pública</value>
   </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>Vida limitada a enlaces compartidos</value>
+  </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>Vida limitada a enlaces compartidos</value>
   </data>
@@ -1241,6 +1274,9 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   </data>
   <data name="lblKuttPassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
+  </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>Caducidad (días):</value>
   </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Caducidad (días):</value>

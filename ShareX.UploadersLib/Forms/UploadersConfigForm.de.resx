@@ -417,6 +417,27 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Benutze einen langen Link, der den Dateinamen beinhaltet</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Benutzername:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Pfad:</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Erstelle teilbare URL</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Direkter Link (Fügt "&amp;download" zur URL hinzu)</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Nextcloud 8.1+ Unterstützung</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
@@ -665,6 +686,9 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
     <value>URL-Vorschau:</value>
+  </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Vorschaulinks verwenden (nur NextCloud)</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Vorschaulinks verwenden (nur NextCloud)</value>

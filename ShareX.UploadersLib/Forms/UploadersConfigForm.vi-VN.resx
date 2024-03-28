@@ -332,6 +332,27 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
     <value>Dùng liên kết dài có cả tên tệp</value>
   </data>
+  <data name="lblNextcloudHost.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblNextcloudUsername.Text" xml:space="preserve">
+    <value>Tên người dùng:</value>
+  </data>
+  <data name="lblNextcloudPassword.Text" xml:space="preserve">
+    <value>Mật khẩu:</value>
+  </data>
+  <data name="lblNextcloudPath.Text" xml:space="preserve">
+    <value>Đường dẫn:</value>
+  </data>
+  <data name="cbNextcloudCreateShare.Text" xml:space="preserve">
+    <value>Tạo URL để chia sẻ</value>
+  </data>
+  <data name="cbNextcloudDirectLink.Text" xml:space="preserve">
+    <value>Liên kết trực tiếp</value>
+  </data>
+  <data name="cbNextcloud81Compatibility.Text" xml:space="preserve">
+    <value>Tương thích ownCloud 8.1+</value>
+  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
@@ -635,6 +656,9 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblSeafileAuthToken.Text" xml:space="preserve">
     <value>Token xác thực:</value>
   </data>
+  <data name="cbNextcloudAutoExpire.Text" xml:space="preserve">
+    <value>Tự hết hạn các liên kết đã chia sẻ</value>
+  </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>Tự hết hạn các liên kết đã chia sẻ</value>
   </data>
@@ -746,11 +770,17 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>Ví dụ: http://example.com/api/1/upload</value>
   </data>
+  <data name="lblNextcloudHostExample.Text" xml:space="preserve">
+    <value>Ví dụ: http://example.com/nextcloud</value>
+  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Ví dụ: http://example.com/owncloud</value>
   </data>
   <data name="lblGistCustomURLExample.Text" xml:space="preserve">
     <value>Ví dụ: https://api.github.com</value>
+  </data>
+  <data name="lblNextcloudExpiryTime.Text" xml:space="preserve">
+    <value>Thời gian hết hiệu lực (ngày)</value>
   </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Thời gian hết hiệu lực (ngày)</value>
@@ -923,8 +953,11 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
   </data>
+  <data name="tpNextcloud.Text" xml:space="preserve">
+    <value>Nextcloud</value>
+  </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
-    <value>ownCloud / Nextcloud</value>
+    <value>ownCloud</value>
   </data>
   <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
     <value>Bị động</value>
@@ -1164,6 +1197,9 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Dùng URL tùy chọn (hỗ trợ định dạng theo mẫu):</value>
   </data>
+  <data name="cbNextcloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Dùng liên kết xem trước (chỉ cho NextCloud)</value>
+  </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Dùng liên kết xem trước (chỉ cho NextCloud)</value>
   </data>
@@ -1247,6 +1283,9 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   </data>
   <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
     <value>Nâng cao</value>
+  </data>
+  <data name="cbNextcloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Nối tên tệp vào URL</value>
   </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>Nối tên tệp vào URL</value>
