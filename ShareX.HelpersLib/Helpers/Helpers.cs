@@ -291,9 +291,9 @@ namespace ShareX.HelpersLib
         /// If version1 equal to version2 = 0
         /// If version1 older than version2 = -1
         /// </summary>
-        public static int CompareVersion(string version1, string version2)
+        public static int CompareVersion(string version1, string version2, bool ignoreRevision = false)
         {
-            return NormalizeVersion(version1).CompareTo(NormalizeVersion(version2));
+            return NormalizeVersion(version1, ignoreRevision).CompareTo(NormalizeVersion(version2, ignoreRevision));
         }
 
         /// <summary>
@@ -301,9 +301,9 @@ namespace ShareX.HelpersLib
         /// If version1 equal to version2 = 0
         /// If version1 older than version2 = -1
         /// </summary>
-        public static int CompareVersion(Version version1, Version version2)
+        public static int CompareVersion(Version version1, Version version2, bool ignoreRevision = false)
         {
-            return version1.Normalize().CompareTo(version2.Normalize());
+            return version1.Normalize(ignoreRevision).CompareTo(version2.Normalize(ignoreRevision));
         }
 
         /// <summary>
@@ -316,9 +316,9 @@ namespace ShareX.HelpersLib
             return CompareVersion(version, GetApplicationVersion(includeRevision));
         }
 
-        public static Version NormalizeVersion(string version)
+        public static Version NormalizeVersion(string version, bool ignoreRevision = false)
         {
-            return Version.Parse(version).Normalize();
+            return Version.Parse(version).Normalize(ignoreRevision);
         }
 
         public static bool IsWindowsXP()

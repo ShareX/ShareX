@@ -130,7 +130,7 @@ namespace ShareX
         internal static Stopwatch StartTimer { get; private set; }
         internal static HotkeyManager HotkeyManager { get; set; }
         internal static WatchFolderManager WatchFolderManager { get; set; }
-        internal static GitHubUpdateManager UpdateManager { get; private set; }
+        internal static ShareXUpdateManager UpdateManager { get; private set; }
         internal static ShareXCLIManager CLI { get; private set; }
 
         #region Paths
@@ -356,7 +356,7 @@ namespace ShareX
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
-            UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Portable);
+            UpdateManager = new ShareXUpdateManager();
             LanguageHelper.ChangeLanguage(Settings.Language);
             CleanupManager.CleanupAsync();
             Helpers.TryFixHandCursor();

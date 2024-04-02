@@ -44,6 +44,10 @@ namespace ShareX.HelpersLib
         private Timer updateTimer = null;
         private readonly object updateTimerLock = new object();
 
+        public GitHubUpdateManager()
+        {
+        }
+
         public GitHubUpdateManager(string owner, string repo, bool portable = false)
         {
             GitHubOwner = owner;
@@ -90,7 +94,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public GitHubUpdateChecker CreateUpdateChecker()
+        public virtual GitHubUpdateChecker CreateUpdateChecker()
         {
             return new GitHubUpdateChecker(GitHubOwner, GitHubRepo)
             {

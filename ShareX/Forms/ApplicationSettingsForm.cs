@@ -80,7 +80,7 @@ namespace ShareX
             cbTrayLeftDoubleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
             cbTrayLeftClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
             cbTrayMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
-
+            cbUpdateChannel.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<UpdateChannel>());
             cbMainWindowTaskViewMode.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<TaskViewMode>());
             cbThumbnailViewTitleLocation.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ThumbnailTitleLocation>());
             cbThumbnailViewThumbnailClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ThumbnailViewClickAction>());
@@ -121,20 +121,22 @@ namespace ShareX
 
 #if STEAM || MicrosoftStore
             cbAutoCheckUpdate.Visible = false;
-            cbCheckPreReleaseUpdates.Visible = false;
+            lblUpdateChannel.Visible = false;
+            cbUpdateChannel.Visible = false;
             btnCheckDevBuild.Visible = false;
 #else
             if (SystemOptions.DisableUpdateCheck)
             {
                 cbAutoCheckUpdate.Visible = false;
-                cbCheckPreReleaseUpdates.Visible = false;
+                lblUpdateChannel.Visible = false;
+                cbUpdateChannel.Visible = false;
                 btnCheckDevBuild.Visible = false;
             }
             else
             {
                 cbAutoCheckUpdate.Checked = Program.Settings.AutoCheckUpdate;
-                cbCheckPreReleaseUpdates.Enabled = Program.Settings.AutoCheckUpdate;
-                cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
+                cbUpdateChannel.Enabled = Program.Settings.AutoCheckUpdate;
+                cbUpdateChannel.SelectedIndex = (int)Program.Settings.UpdateChannel;
             }
 #endif
 
@@ -450,12 +452,12 @@ namespace ShareX
         private void cbAutoCheckUpdate_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.AutoCheckUpdate = cbAutoCheckUpdate.Checked;
-            cbCheckPreReleaseUpdates.Enabled = Program.Settings.AutoCheckUpdate;
+            cbUpdateChannel.Enabled = Program.Settings.AutoCheckUpdate;
         }
 
-        private void cbCheckPreReleaseUpdates_CheckedChanged(object sender, EventArgs e)
+        private void cbUpdateChannel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
+            Program.Settings.UpdateChannel = (UpdateChannel)cbUpdateChannel.SelectedIndex;
         }
 
         private async void btnCheckDevBuild_Click(object sender, EventArgs e)

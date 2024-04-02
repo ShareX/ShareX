@@ -41,6 +41,7 @@ namespace ShareX.HelpersLib
         public ReleaseChannelType ReleaseType { get; set; }
         public bool IsDev { get; set; }
         public bool IsPortable { get; set; }
+        public bool IgnoreRevision { get; set; }
 
         private string fileName;
 
@@ -71,7 +72,7 @@ namespace ShareX.HelpersLib
             }
 
             if (Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null && !string.IsNullOrEmpty(DownloadURL) &&
-                (ForceUpdate || Helpers.CompareVersion(CurrentVersion, LatestVersion) < 0))
+                (ForceUpdate || Helpers.CompareVersion(CurrentVersion, LatestVersion, IgnoreRevision) < 0))
             {
                 Status = UpdateStatus.UpdateAvailable;
             }

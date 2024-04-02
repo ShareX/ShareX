@@ -235,6 +235,14 @@ namespace ShareX
                 DefaultTaskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
                 DefaultTaskSettings.CaptureSettings.FFmpegOptions.FixSources();
             }
+
+            if (Settings.IsUpgradeFrom("16.0.2"))
+            {
+                if (Settings.CheckPreReleaseUpdates)
+                {
+                    Settings.UpdateChannel = UpdateChannel.PreRelease;
+                }
+            }
         }
 
         private static void MigrateHistoryFile()

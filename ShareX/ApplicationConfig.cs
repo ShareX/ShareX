@@ -73,6 +73,8 @@ namespace ShareX
         public HotkeyType TrayMiddleClickAction = HotkeyType.ClipboardUploadWithContentViewer;
 
         public bool AutoCheckUpdate = true;
+        public UpdateChannel UpdateChannel = UpdateChannel.Release;
+        // TEMP: For backward compatibility
         public bool CheckPreReleaseUpdates = false;
 
         #endregion General

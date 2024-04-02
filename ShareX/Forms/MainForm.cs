@@ -948,7 +948,7 @@ namespace ShareX
         private void ConfigureAutoUpdate()
         {
             Program.UpdateManager.AllowAutoUpdate = !SystemOptions.DisableUpdateCheck && Program.Settings.AutoCheckUpdate;
-            Program.UpdateManager.CheckPreReleaseUpdates = Program.Settings.CheckPreReleaseUpdates;
+            Program.UpdateManager.UpdateChannel = Program.Settings.UpdateChannel;
             Program.UpdateManager.ConfigureAutoUpdate();
         }
 

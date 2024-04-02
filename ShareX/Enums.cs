@@ -42,6 +42,13 @@ namespace ShareX
         Unknown
     }
 
+    public enum UpdateChannel // Localized
+    {
+        Release,
+        PreRelease,
+        Dev
+    }
+
     public enum SupportedLanguage
     {
         Automatic, // Localized
