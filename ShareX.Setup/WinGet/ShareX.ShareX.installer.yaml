@@ -1,0 +1,18 @@
+# Created using wingetcreate 1.6.1.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.6.0.schema.json
+
+PackageIdentifier: ShareX.ShareX
+PackageVersion: {PackageVersion}
+MinimumOSVersion: 6.1.7601.0
+InstallerType: inno
+InstallerSwitches:
+  Silent: /VERYSILENT /NORUN
+  SilentWithProgress: /SILENT /NORUN
+UpgradeBehavior: install
+Installers:
+- Architecture: neutral
+  Scope: machine
+  InstallerUrl: {InstallerUrl}
+  InstallerSha256: {InstallerSha256}
+ManifestType: installer
+ManifestVersion: 1.6.0
