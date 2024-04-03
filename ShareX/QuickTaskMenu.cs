@@ -25,9 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -71,11 +69,11 @@ namespace ShareX
                     if (taskInfo.IsValid)
                     {
                         ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = taskInfo.ToString().Replace("&", "&&"), Tag = taskInfo };
-                        tsmi.Image = FindSuitableIcon(taskInfo);
+                        tsmi.Image = taskInfo.Icon;
                         tsmi.Click += (sender, e) =>
                         {
-                            QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
                             cms.Close();
+                            QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
                             OnTaskInfoSelected(selectedTaskInfo);
                         };
                         cms.Items.Add(tsmi);
@@ -121,20 +119,6 @@ namespace ShareX
         protected void OnTaskInfoSelected(QuickTaskInfo taskInfo)
         {
             TaskInfoSelected?.Invoke(taskInfo);
-        }
-
-        public Image FindSuitableIcon(QuickTaskInfo taskInfo)
-        {
-            IEnumerable<AfterCaptureTasks> afterCaptureTasks = taskInfo.AfterCaptureTasks.GetFlags();
-
-            if (afterCaptureTasks.Count() > 0)
-            {
-                AfterCaptureTasks last = afterCaptureTasks.Last();
-
-                return TaskHelpers.FindMenuIcon(last);
-            }
-
-            return null;
         }
     }
 }
