@@ -25,7 +25,9 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -123,20 +125,16 @@ namespace ShareX
 
         public Image FindSuitableIcon(QuickTaskInfo taskInfo)
         {
-            if (taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.UploadImageToHost))
+            IEnumerable<AfterCaptureTasks> afterCaptureTasks = taskInfo.AfterCaptureTasks.GetFlags();
+
+            if (afterCaptureTasks.Count() > 0)
             {
-                return Resources.upload_cloud;
-            }
-            else if (taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.CopyImageToClipboard) || taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.CopyFileToClipboard))
-            {
-                return Resources.clipboard;
-            }
-            else if (taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.SaveImageToFile) || taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.SaveImageToFileWithDialog))
-            {
-                return Resources.disk_black;
+                AfterCaptureTasks last = afterCaptureTasks.Last();
+
+                return TaskHelpers.FindMenuIcon(last);
             }
 
-            return Resources.image;
+            return null;
         }
     }
 }
