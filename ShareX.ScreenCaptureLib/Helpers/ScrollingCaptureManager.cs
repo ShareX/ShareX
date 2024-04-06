@@ -25,9 +25,9 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -40,7 +40,8 @@ namespace ShareX.ScreenCaptureLib
         public Bitmap Result { get; private set; }
         public bool IsCapturing { get; private set; }
 
-        private List<Bitmap> images = new List<Bitmap>();
+        private Bitmap lastScreenshot;
+        private Bitmap previousScreenshot;
         private bool stopRequested;
         private int bestMatchCount, bestMatchIndex;
         private WindowInfo selectedWindow;
@@ -58,14 +59,16 @@ namespace ShareX.ScreenCaptureLib
 
         private void Reset(bool keepResult = false)
         {
-            if (images != null)
+            if (lastScreenshot != null)
             {
-                foreach (Bitmap bmp in images)
-                {
-                    bmp?.Dispose();
-                }
+                lastScreenshot.Dispose();
+                lastScreenshot = null;
+            }
 
-                images.Clear();
+            if (previousScreenshot != null)
+            {
+                previousScreenshot.Dispose();
+                previousScreenshot = null;
             }
 
             if (!keepResult && Result != null)
@@ -107,19 +110,14 @@ namespace ShareX.ScreenCaptureLib
                         await Task.Delay(Options.ScrollDelay);
                     }
 
+                    Screenshot screenshot = new Screenshot()
+                    {
+                        CaptureCursor = false
+                    };
+
                     while (!stopRequested)
                     {
-                        Screenshot screenshot = new Screenshot()
-                        {
-                            CaptureCursor = false
-                        };
-
-                        Bitmap bmp = screenshot.CaptureRectangle(selectedRectangle);
-
-                        if (bmp != null)
-                        {
-                            images.Add(bmp);
-                        }
+                        lastScreenshot = screenshot.CaptureRectangle(selectedRectangle);
 
                         if (CompareLastTwoImages())
                         {
@@ -130,14 +128,25 @@ namespace ShareX.ScreenCaptureLib
 
                         Stopwatch timer = Stopwatch.StartNew();
 
-                        if (images.Count > 0)
+                        if (lastScreenshot != null)
                         {
-                            Result = await CombineImagesAsync(Result, images[images.Count - 1]);
+                            Result = await CombineImagesAsync(Result, lastScreenshot);
                         }
 
                         if (stopRequested)
                         {
                             break;
+                        }
+
+                        if (lastScreenshot != null)
+                        {
+                            if (previousScreenshot != null)
+                            {
+                                previousScreenshot.Dispose();
+                            }
+
+                            previousScreenshot = lastScreenshot;
+                            lastScreenshot = null;
                         }
 
                         int delay = Options.ScrollDelay - (int)timer.ElapsedMilliseconds;
@@ -187,9 +196,9 @@ namespace ShareX.ScreenCaptureLib
 
         private bool CompareLastTwoImages()
         {
-            if (images.Count > 1)
+            if (lastScreenshot != null && previousScreenshot != null)
             {
-                return ImageHelpers.CompareImages(images[images.Count - 1], images[images.Count - 2]);
+                return ImageHelpers.CompareImages(lastScreenshot, previousScreenshot);
             }
 
             return false;
@@ -276,6 +285,9 @@ namespace ShareX.ScreenCaptureLib
 
                     using (Graphics g = Graphics.FromImage(newResult))
                     {
+                        g.CompositingMode = CompositingMode.SourceCopy;
+                        g.InterpolationMode = InterpolationMode.NearestNeighbor;
+
                         g.DrawImage(result, new Rectangle(0, 0, result.Width, result.Height),
                             new Rectangle(0, 0, result.Width, result.Height), GraphicsUnit.Pixel);
                         g.DrawImage(currentImage, new Rectangle(0, result.Height, currentImage.Width, matchHeight),
