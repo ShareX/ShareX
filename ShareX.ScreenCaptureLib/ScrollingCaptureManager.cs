@@ -130,7 +130,17 @@ namespace ShareX.ScreenCaptureLib
 
                         if (lastScreenshot != null)
                         {
-                            Result = await CombineImagesAsync(Result, lastScreenshot);
+                            Bitmap newResult = await CombineImagesAsync(Result, lastScreenshot);
+
+                            if (newResult != null)
+                            {
+                                Result?.Dispose();
+                                Result = newResult;
+                            }
+                            else
+                            {
+                                break;
+                            }
                         }
 
                         if (stopRequested)
@@ -294,12 +304,11 @@ namespace ShareX.ScreenCaptureLib
                             new Rectangle(0, matchIndex + 1, currentImage.Width, matchHeight), GraphicsUnit.Pixel);
                     }
 
-                    result.Dispose();
-                    result = newResult;
+                    return newResult;
                 }
             }
 
-            return result;
+            return null;
         }
     }
 }
