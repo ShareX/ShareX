@@ -3504,6 +3504,33 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dev.
+        /// </summary>
+        internal static string UpdateChannel_Dev {
+            get {
+                return ResourceManager.GetString("UpdateChannel_Dev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pre-release.
+        /// </summary>
+        internal static string UpdateChannel_PreRelease {
+            get {
+                return ResourceManager.GetString("UpdateChannel_PreRelease", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Release.
+        /// </summary>
+        internal static string UpdateChannel_Release {
+            get {
+                return ResourceManager.GetString("UpdateChannel_Release", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A newer version of {0} is available.
         /// </summary>
         internal static string UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available {
@@ -3605,7 +3632,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Google image search.
+        ///   Looks up a localized string similar to Google Lens.
         /// </summary>
         internal static string URLSharingServices_GoogleImageSearch {
             get {
