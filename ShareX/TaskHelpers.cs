@@ -1312,7 +1312,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            bool notificationsEnabled = taskSettings.GeneralSettings.ShowToastNotificationAfterTaskComplete;
+            bool notificationsEnabled = taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
             await OCRImage(bmp, taskSettings.CaptureSettingsReference.OCROptions, filePath, notificationsEnabled);
         }
 
