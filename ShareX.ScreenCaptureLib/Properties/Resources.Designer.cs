@@ -239,7 +239,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap control_pause {
             get {
-                object obj = ResourceManager.GetObject("control-pause", resourceCulture);
+                object obj = ResourceManager.GetObject("control_pause", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -250,6 +250,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap control_record {
             get {
                 object obj = ResourceManager.GetObject("control_record", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap control_record_green {
+            get {
+                object obj = ResourceManager.GetObject("control_record_green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -864,7 +874,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap keyboard_enter {
             get {
-                object obj = ResourceManager.GetObject("keyboard-enter", resourceCulture);
+                object obj = ResourceManager.GetObject("keyboard_enter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2205,16 +2215,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap table_delete_column {
             get {
                 object obj = ResourceManager.GetObject("table_delete_column", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap test_32 {
-            get {
-                object obj = ResourceManager.GetObject("test_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

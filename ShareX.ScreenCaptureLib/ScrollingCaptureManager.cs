@@ -43,6 +43,7 @@ namespace ShareX.ScreenCaptureLib
         private Bitmap lastScreenshot;
         private Bitmap previousScreenshot;
         private bool stopRequested;
+        private ScrollingCaptureStatus status;
         private int bestMatchCount, bestMatchIndex;
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
@@ -78,12 +79,13 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public async Task StartCapture()
+        public async Task<ScrollingCaptureStatus> StartCapture()
         {
             if (!IsCapturing && selectedWindow != null && !selectedRectangle.IsEmpty)
             {
                 IsCapturing = true;
                 stopRequested = false;
+                status = ScrollingCaptureStatus.Failed;
                 bestMatchCount = 0;
                 bestMatchIndex = 0;
                 Reset();
@@ -175,6 +177,8 @@ namespace ShareX.ScreenCaptureLib
                     IsCapturing = false;
                 }
             }
+
+            return status;
         }
 
         public void StopCapture()
@@ -223,6 +227,8 @@ namespace ShareX.ScreenCaptureLib
         {
             if (result == null)
             {
+                status = ScrollingCaptureStatus.Successful;
+
                 return (Bitmap)currentImage.Clone();
             }
 
@@ -273,10 +279,13 @@ namespace ShareX.ScreenCaptureLib
             result.UnlockBits(bdResult);
             currentImage.UnlockBits(bdCurrentImage);
 
+            bool bestGuess = false;
+
             if (matchCount == 0 && bestMatchCount > 0)
             {
                 matchCount = bestMatchCount;
                 matchIndex = bestMatchIndex;
+                bestGuess = true;
             }
 
             if (matchCount > 0)
@@ -304,9 +313,20 @@ namespace ShareX.ScreenCaptureLib
                             new Rectangle(0, matchIndex + 1, currentImage.Width, matchHeight), GraphicsUnit.Pixel);
                     }
 
+                    if (bestGuess)
+                    {
+                        status = ScrollingCaptureStatus.PartiallySuccessful;
+                    }
+                    else if (status != ScrollingCaptureStatus.PartiallySuccessful)
+                    {
+                        status = ScrollingCaptureStatus.Successful;
+                    }
+
                     return newResult;
                 }
             }
+
+            status = ScrollingCaptureStatus.Failed;
 
             return null;
         }

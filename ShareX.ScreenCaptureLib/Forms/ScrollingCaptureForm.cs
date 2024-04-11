@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Drawing;
 using System.Threading;
@@ -121,7 +122,20 @@ namespace ShareX.ScreenCaptureLib
 
             try
             {
-                await manager.StartCapture();
+                ScrollingCaptureStatus status = await manager.StartCapture();
+
+                switch (status)
+                {
+                    case ScrollingCaptureStatus.Failed:
+                        pbStatus.Image = Resources.control_record;
+                        break;
+                    case ScrollingCaptureStatus.PartiallySuccessful:
+                        pbStatus.Image = Resources.control_record_yellow;
+                        break;
+                    case ScrollingCaptureStatus.Successful:
+                        pbStatus.Image = Resources.control_record_green;
+                        break;
+                }
             }
             catch (Exception e)
             {

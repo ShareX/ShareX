@@ -367,9 +367,6 @@
   <data name="Highlight" xml:space="preserve">
     <value>Highlight</value>
   </data>
-  <data name="test_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\test_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -569,7 +566,7 @@
   <data name="Pixelate" xml:space="preserve">
     <value>Pixelate</value>
   </data>
-  <data name="keyboard-enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="keyboard_enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyboard-enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="layer_shape_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -810,7 +807,7 @@ X: {4} Y: {5}</value>
   <data name="smiley_cool" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\smiley-cool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="control-pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="control_pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control-pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WouldYouLikeToResetOptions" xml:space="preserve">
@@ -829,5 +826,8 @@ Would you like to save the changes before closing the image editor?</value>
   </data>
   <data name="arrow_circle_315" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-circle-315.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="control_record_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\control-record-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

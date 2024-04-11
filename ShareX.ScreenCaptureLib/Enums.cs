@@ -364,4 +364,11 @@ namespace ShareX.ScreenCaptureLib
         Stopped,
         Aborted
     }
+
+    public enum ScrollingCaptureStatus
+    {
+        Failed,
+        PartiallySuccessful,
+        Successful
+    }
 }

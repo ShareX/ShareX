@@ -21,8 +21,10 @@
             this.btnOptions = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.lblResultSize = new System.Windows.Forms.Label();
+            this.pbStatus = new System.Windows.Forms.PictureBox();
             this.pOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCapture
@@ -84,17 +86,27 @@
             // lblResultSize
             // 
             this.lblResultSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblResultSize.Location = new System.Drawing.Point(872, 18);
+            this.lblResultSize.Location = new System.Drawing.Point(848, 18);
             this.lblResultSize.Name = "lblResultSize";
             this.lblResultSize.Size = new System.Drawing.Size(108, 24);
             this.lblResultSize.TabIndex = 4;
-            this.lblResultSize.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lblResultSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pbStatus
+            // 
+            this.pbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbStatus.Location = new System.Drawing.Point(959, 23);
+            this.pbStatus.Name = "pbStatus";
+            this.pbStatus.Size = new System.Drawing.Size(16, 16);
+            this.pbStatus.TabIndex = 5;
+            this.pbStatus.TabStop = false;
             // 
             // ScrollingCaptureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.lblResultSize);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnOptions);
@@ -111,6 +123,7 @@
             this.pOutput.ResumeLayout(false);
             this.pOutput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -123,5 +136,6 @@
         private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Label lblResultSize;
+        private System.Windows.Forms.PictureBox pbStatus;
     }
 }
