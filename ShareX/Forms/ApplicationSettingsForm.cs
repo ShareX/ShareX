@@ -291,7 +291,7 @@ namespace ShareX
 
             try
             {
-                StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
+                StartupState state = StartupManager.State;
                 cbStartWithWindows.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
 
                 if (state == StartupState.DisabledByUser)
@@ -592,7 +592,7 @@ namespace ShareX
             {
                 try
                 {
-                    StartupManagerSingletonProvider.CurrentStartupManager.State = cbStartWithWindows.Checked ? StartupState.Enabled : StartupState.Disabled;
+                    StartupManager.State = cbStartWithWindows.Checked ? StartupState.Enabled : StartupState.Disabled;
                     UpdateStartWithWindows();
                 }
                 catch (Exception ex)

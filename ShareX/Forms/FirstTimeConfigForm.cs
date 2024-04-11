@@ -38,7 +38,7 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
+            StartupState state = StartupManager.State;
             cbRunStartup.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
             cbRunStartup.Enabled = state != StartupState.DisabledByUser && state != StartupState.DisabledByPolicy && state != StartupState.EnabledByPolicy;
 
@@ -63,7 +63,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                StartupManagerSingletonProvider.CurrentStartupManager.State = cbRunStartup.Checked ? StartupState.Enabled : StartupState.Disabled;
+                StartupManager.State = cbRunStartup.Checked ? StartupState.Enabled : StartupState.Disabled;
             }
         }
 
