@@ -1934,7 +1934,10 @@ namespace ShareX.HelpersLib
             {
                 g.SetHighQuality();
                 g.PixelOffsetMode = PixelOffsetMode.Half;
-                g.Clear(cutOutBackgroundColor);
+                if (cutOutBackgroundColor.A > 0)
+                {
+                    g.Clear(cutOutBackgroundColor);
+                }
                 g.FillPolygon(brush, points.ToArray());
             }
             return bmpResult;
@@ -2029,7 +2032,10 @@ namespace ShareX.HelpersLib
             {
                 g.SetHighQuality();
                 g.PixelOffsetMode = PixelOffsetMode.Half;
-                g.Clear(cutOutBackgroundColor);
+                if (cutOutBackgroundColor.A > 0)
+                {
+                    g.Clear(cutOutBackgroundColor);
+                }
 
                 Point[] fillPoints = points.Distinct().ToArray();
 

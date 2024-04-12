@@ -56,7 +56,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges, true, this.CutOutBackgroundColor);
+            return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges, true, CutOutBackgroundColor);
         }
 
         protected override string GetSummary()

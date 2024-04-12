@@ -53,7 +53,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.WavyEdges(bmp, Depth, Range, Sides, this.CutOutBackgroundColor);
+            return ImageHelpers.WavyEdges(bmp, Depth, Range, Sides, CutOutBackgroundColor);
         }
 
         protected override string GetSummary()

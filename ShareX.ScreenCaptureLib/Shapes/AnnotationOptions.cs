@@ -47,7 +47,6 @@ namespace ShareX.ScreenCaptureLib
         public int DrawingCornerRadius { get; set; } = 3;
         public bool Shadow { get; set; } = true;
         public Color ShadowColor { get; set; } = Color.FromArgb(125, 0, 0, 0);
-        public Color CutOutBackgroundColor { get; set; } = Color.Transparent;
         public Point ShadowOffset { get; set; } = new Point(0, 1);
 
         // Line, arrow drawing
@@ -111,5 +110,6 @@ namespace ShareX.ScreenCaptureLib
         // Cut out tool
         public CutOutEffectType CutOutEffectType { get; set; } = CutOutEffectType.None;
         public int CutOutEffectSize { get; set; } = 10;
+        public Color CutOutBackgroundColor { get; set; } = Color.Transparent;
     }
 }

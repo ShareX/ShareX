@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiRedo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
-            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiCutoutBackgroundColor;
+            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiCutOutBackgroundColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
@@ -668,8 +668,8 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCutOutEffectSize);
 
-            tsmiCutoutBackgroundColor = new ToolStripMenuItem(Resources.CutOutBackgroundColor);
-            tsmiCutoutBackgroundColor.Click += (sender, e) =>
+            tsmiCutOutBackgroundColor = new ToolStripMenuItem(Resources.CutOutBackgroundColor);
+            tsmiCutOutBackgroundColor.Click += (sender, e) =>
             {
                 Form.Pause();
 
@@ -682,7 +682,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Form.Resume();
             };
-            tsddbShapeOptions.DropDownItems.Add(tsmiCutoutBackgroundColor);
+            tsddbShapeOptions.DropDownItems.Add(tsmiCutOutBackgroundColor);
 
             // In dropdown menu if only last item is visible then menu opens at 0, 0 position on first open, so need to add dummy item to solve this weird bug...
             tsddbShapeOptions.DropDownItems.Add(new ToolStripSeparator() { Visible = false });
@@ -1508,8 +1508,8 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCutOutEffectSize.Content.Value = AnnotationOptions.CutOutEffectSize;
 
-            if (tsmiCutoutBackgroundColor.Image != null) tsmiCutoutBackgroundColor.Image.Dispose();
-            tsmiCutoutBackgroundColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.CutOutBackgroundColor, new Rectangle(0, 0, 16, 16));
+            if (tsmiCutOutBackgroundColor.Image != null) tsmiCutOutBackgroundColor.Image.Dispose();
+            tsmiCutOutBackgroundColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.CutOutBackgroundColor, new Rectangle(0, 0, 16, 16));
 
             switch (shapeType)
             {
@@ -1565,6 +1565,7 @@ namespace ShareX.ScreenCaptureLib
                     tsbBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
                     tsmiShadow.Visible = true;
+                    tsmiShadowColor.Visible = true;
                     break;
             }
 
@@ -1623,7 +1624,7 @@ namespace ShareX.ScreenCaptureLib
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
             tscbCutOutEffectType.Visible = shapeType == ShapeType.ToolCutOut;
             tslnudCutOutEffectSize.Visible = shapeType == ShapeType.ToolCutOut;
-            tsmiCutoutBackgroundColor.Visible = shapeType == ShapeType.ToolCutOut;
+            tsmiCutOutBackgroundColor.Visible = shapeType == ShapeType.ToolCutOut;
 
             if (tsmiRegionCapture != null)
             {
