@@ -1648,4 +1648,3 @@ namespace ShareX.ScreenCaptureLib
         }
     }
 }
-}
