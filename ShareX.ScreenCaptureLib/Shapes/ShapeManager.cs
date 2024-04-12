@@ -1993,12 +1993,12 @@ namespace ShareX.ScreenCaptureLib
             if (isHorizontal && cropRect.Width > 0)
             {
                 CollapseAllHorizontal(rect.X, rect.Width);
-                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Horizontal, cropRect.X, cropRect.Width, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Horizontal, cropRect.X, cropRect.Width, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
             }
             else if (!isHorizontal && cropRect.Height > 0)
             {
                 CollapseAllVertical(rect.Y, rect.Height);
-                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Vertical, cropRect.Y, cropRect.Height, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize));
+                UpdateCanvas(ImageHelpers.CutOutBitmapMiddle(Form.Canvas, Orientation.Vertical, cropRect.Y, cropRect.Height, AnnotationOptions.CutOutEffectType, AnnotationOptions.CutOutEffectSize, AnnotationOptions.CutOutBackgroundColor));
             }
         }
 

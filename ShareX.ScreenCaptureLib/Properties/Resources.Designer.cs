@@ -324,6 +324,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cut out background color.
+        /// </summary>
+        internal static string CutOutBackgroundColor {
+            get {
+                return ResourceManager.GetString("CutOutBackgroundColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cut out effect size:.
         /// </summary>
         internal static string CutOutEffectSize {

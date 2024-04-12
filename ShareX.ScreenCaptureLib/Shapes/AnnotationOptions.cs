@@ -47,6 +47,7 @@ namespace ShareX.ScreenCaptureLib
         public int DrawingCornerRadius { get; set; } = 3;
         public bool Shadow { get; set; } = true;
         public Color ShadowColor { get; set; } = Color.FromArgb(125, 0, 0, 0);
+        public Color CutOutBackgroundColor { get; set; } = Color.Transparent;
         public Point ShadowOffset { get; set; } = new Point(0, 1);
 
         // Line, arrow drawing
