@@ -22,6 +22,7 @@
             this.btnUpload = new System.Windows.Forms.Button();
             this.lblResultSize = new System.Windows.Forms.Label();
             this.pbStatus = new System.Windows.Forms.PictureBox();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.pOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).BeginInit();
@@ -48,7 +49,7 @@
             this.pOutput.Location = new System.Drawing.Point(8, 48);
             this.pOutput.Name = "pOutput";
             this.pOutput.Size = new System.Drawing.Size(968, 605);
-            this.pOutput.TabIndex = 3;
+            this.pOutput.TabIndex = 5;
             // 
             // pbOutput
             // 
@@ -101,11 +102,22 @@
             this.pbStatus.TabIndex = 5;
             this.pbStatus.TabStop = false;
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(512, 8);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(32, 32);
+            this.btnHelp.TabIndex = 3;
+            this.btnHelp.Text = "?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // ScrollingCaptureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.lblResultSize);
             this.Controls.Add(this.btnUpload);
@@ -137,5 +149,6 @@
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Label lblResultSize;
         private System.Windows.Forms.PictureBox pbStatus;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

@@ -224,6 +224,11 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.DocsScrollingScreenshot);
+        }
+
         private void pbOutput_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && (pOutput.HorizontalScroll.Visible || pOutput.VerticalScroll.Visible))
