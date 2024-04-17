@@ -378,6 +378,8 @@ namespace ShareX.Setup
                 FileHelpers.CopyFiles(RecorderDevicesSetupPath, destination);
 
                 FileHelpers.CopyFiles(Path.Combine(source, "ShareX_NativeMessagingHost.exe"), destination);
+                FileHelpers.CopyFiles(Path.Combine(source, "host-manifest-chrome.json"), destination);
+                FileHelpers.CopyFiles(Path.Combine(source, "host-manifest-firefox.json"), destination);
             }
 
             foreach (string directory in Directory.GetDirectories(source))

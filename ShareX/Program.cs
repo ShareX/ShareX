@@ -161,7 +161,6 @@ namespace ShareX
             AppName, PersonalPathConfigFileName);
 
         private static readonly string PortableCheckFilePath = FileHelpers.GetAbsolutePath("Portable");
-        public static readonly string NativeMessagingHostFilePath = FileHelpers.GetAbsolutePath("ShareX_NativeMessagingHost.exe");
         public static readonly string SteamInAppFilePath = FileHelpers.GetAbsolutePath("Steam");
 
         private static string CustomPersonalPath { get; set; }
@@ -255,10 +254,7 @@ namespace ShareX
             }
         }
 
-        public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
         public static string ImageEffectsFolder => Path.Combine(PersonalFolder, "ImageEffects");
-        public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
-        public static string FirefoxHostManifestFilePath => Path.Combine(ToolsFolder, "Firefox-host-manifest.json");
 
         private static string PersonalPathDetectionMethod;
 
@@ -527,7 +523,6 @@ namespace ShareX
                 FileHelpers.CreateDirectory(SettingManager.BackupFolder);
                 FileHelpers.CreateDirectory(ImageEffectsFolder);
                 FileHelpers.CreateDirectory(ScreenshotsParentFolder);
-                FileHelpers.CreateDirectory(ToolsFolder);
             }
         }
 
