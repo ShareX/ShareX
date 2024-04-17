@@ -110,5 +110,6 @@ namespace ShareX.ScreenCaptureLib
         // Cut out tool
         public CutOutEffectType CutOutEffectType { get; set; } = CutOutEffectType.None;
         public int CutOutEffectSize { get; set; } = 10;
+        public Color CutOutBackgroundColor { get; set; } = Color.Transparent;
     }
 }

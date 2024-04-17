@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -45,6 +46,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true)]
         public bool CurvedEdges { get; set; }
 
+        [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color CutOutBackgroundColor { get; set; }
+
         public TornEdge()
         {
             this.ApplyDefaultPropertyValues();
@@ -52,7 +56,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges, true);
+            return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges, true, CutOutBackgroundColor);
         }
 
         protected override string GetSummary()
