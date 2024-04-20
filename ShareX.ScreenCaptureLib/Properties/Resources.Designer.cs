@@ -324,7 +324,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cut out background color.
+        ///   Looks up a localized string similar to Cut out background color....
         /// </summary>
         internal static string CutOutBackgroundColor {
             get {

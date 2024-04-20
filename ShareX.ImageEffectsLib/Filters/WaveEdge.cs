@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -48,12 +47,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color CutOutBackgroundColor { get; set; }
-
         public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.WavyEdges(bmp, Depth, Range, Sides, CutOutBackgroundColor);
+            return ImageHelpers.WavyEdges(bmp, Depth, Range, Sides);
         }
 
         protected override string GetSummary()

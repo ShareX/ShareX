@@ -260,24 +260,24 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        private static Bitmap ApplyCutOutEffect(Bitmap bmp, AnchorStyles effectEdge, CutOutEffectType effectType, int effectSize, Color cutOutBackgroundColor)
+        private static Bitmap ApplyCutOutEffect(Bitmap bmp, AnchorStyles effectEdge, CutOutEffectType effectType, int effectSize, Color backgroundColor)
         {
             switch (effectType)
             {
                 case CutOutEffectType.None:
                     return bmp;
                 case CutOutEffectType.ZigZag:
-                    return TornEdges(bmp, effectSize, effectSize, effectEdge, false, false, cutOutBackgroundColor);
+                    return TornEdges(bmp, effectSize, effectSize, effectEdge, false, false, backgroundColor);
                 case CutOutEffectType.TornEdge:
-                    return TornEdges(bmp, effectSize, effectSize * 2, effectEdge, false, true, cutOutBackgroundColor);
+                    return TornEdges(bmp, effectSize, effectSize * 2, effectEdge, false, true, backgroundColor);
                 case CutOutEffectType.Wave:
-                    return WavyEdges(bmp, effectSize, effectSize * 5, effectEdge, cutOutBackgroundColor);
+                    return WavyEdges(bmp, effectSize, effectSize * 5, effectEdge, backgroundColor);
             }
 
             throw new NotImplementedException();
         }
 
-        public static Bitmap CutOutBitmapMiddle(Bitmap bmp, Orientation orientation, int start, int size, CutOutEffectType effectType, int effectSize, Color cutOutBackgroundColor)
+        public static Bitmap CutOutBitmapMiddle(Bitmap bmp, Orientation orientation, int start, int size, CutOutEffectType effectType, int effectSize, Color backgroundColor)
         {
             if (bmp != null && size > 0)
             {
@@ -290,7 +290,7 @@ namespace ShareX.HelpersLib
                         : new Rectangle(0, 0, bmp.Width, Math.Min(start, bmp.Height));
                     firstPart = CropBitmap(bmp, r);
                     AnchorStyles effectEdge = orientation == Orientation.Horizontal ? AnchorStyles.Right : AnchorStyles.Bottom;
-                    firstPart = ApplyCutOutEffect(firstPart, effectEdge, effectType, effectSize, cutOutBackgroundColor);
+                    firstPart = ApplyCutOutEffect(firstPart, effectEdge, effectType, effectSize, backgroundColor);
                 }
 
                 int cutDimension = orientation == Orientation.Horizontal ? bmp.Width : bmp.Height;
@@ -302,7 +302,7 @@ namespace ShareX.HelpersLib
                         : new Rectangle(0, end, bmp.Width, bmp.Height - end);
                     secondPart = CropBitmap(bmp, r);
                     AnchorStyles effectEdge = orientation == Orientation.Horizontal ? AnchorStyles.Left : AnchorStyles.Top;
-                    secondPart = ApplyCutOutEffect(secondPart, effectEdge, effectType, effectSize, cutOutBackgroundColor);
+                    secondPart = ApplyCutOutEffect(secondPart, effectEdge, effectType, effectSize, backgroundColor);
                 }
 
                 if (firstPart != null && secondPart != null)
@@ -1844,7 +1844,12 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Bitmap WavyEdges(Bitmap bmp, int waveDepth, int waveRange, AnchorStyles sides, Color cutOutBackgroundColor)
+        public static Bitmap WavyEdges(Bitmap bmp, int waveDepth, int waveRange, AnchorStyles sides)
+        {
+            return WavyEdges(bmp, waveDepth, waveRange, sides, Color.Transparent);
+        }
+
+        public static Bitmap WavyEdges(Bitmap bmp, int waveDepth, int waveRange, AnchorStyles sides, Color backgroundColor)
         {
             if (waveDepth < 1 || waveRange < 1 || sides == AnchorStyles.None)
             {
@@ -1928,22 +1933,31 @@ namespace ShareX.HelpersLib
             }
 
             Bitmap bmpResult = bmp.CreateEmptyBitmap();
+
             using (bmp)
             using (Graphics g = Graphics.FromImage(bmpResult))
             using (TextureBrush brush = new TextureBrush(bmp))
             {
+                if (backgroundColor.A > 0)
+                {
+                    g.Clear(backgroundColor);
+                }
+
                 g.SetHighQuality();
                 g.PixelOffsetMode = PixelOffsetMode.Half;
-                if (cutOutBackgroundColor.A > 0)
-                {
-                    g.Clear(cutOutBackgroundColor);
-                }
+
                 g.FillPolygon(brush, points.ToArray());
             }
+
             return bmpResult;
         }
 
-        public static Bitmap TornEdges(Bitmap bmp, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges, bool random, Color cutOutBackgroundColor)
+        public static Bitmap TornEdges(Bitmap bmp, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges, bool random)
+        {
+            return TornEdges(bmp, tornDepth, tornRange, sides, curvedEdges, random, Color.Transparent);
+        }
+
+        public static Bitmap TornEdges(Bitmap bmp, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges, bool random, Color backgroundColor)
         {
             if (tornDepth < 1 || tornRange < 1 || sides == AnchorStyles.None)
             {
@@ -2030,12 +2044,13 @@ namespace ShareX.HelpersLib
             using (Graphics g = Graphics.FromImage(bmpResult))
             using (TextureBrush brush = new TextureBrush(bmp))
             {
+                if (backgroundColor.A > 0)
+                {
+                    g.Clear(backgroundColor);
+                }
+
                 g.SetHighQuality();
                 g.PixelOffsetMode = PixelOffsetMode.Half;
-                if (cutOutBackgroundColor.A > 0)
-                {
-                    g.Clear(cutOutBackgroundColor);
-                }
 
                 Point[] fillPoints = points.Distinct().ToArray();
 
