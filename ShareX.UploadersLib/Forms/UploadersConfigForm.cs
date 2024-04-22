@@ -385,22 +385,25 @@ namespace ShareX.UploadersLib
             #region Google Drive
 
             oauth2GoogleDrive.UpdateStatus(Config.GoogleDriveOAuth2Info, Config.GoogleDriveUserInfo);
-            btnGoogleDriveRefreshFolders.Enabled = oauth2GoogleDrive.Connected;
+            //btnGoogleDriveRefreshFolders.Enabled = oauth2GoogleDrive.Connected;
 
             cbGoogleDriveIsPublic.Checked = Config.GoogleDriveIsPublic;
             cbGoogleDriveDirectLink.Checked = Config.GoogleDriveDirectLink;
 
+            /*
             cbGoogleDriveSharedDrive.Items.Clear();
             cbGoogleDriveSharedDrive.Items.Add(GoogleDrive.MyDrive);
             if (Config.GoogleDriveSelectedDrive?.id != GoogleDrive.MyDrive.id)
             {
                 cbGoogleDriveSharedDrive.Items.Add(Config.GoogleDriveSelectedDrive);
             }
+            */
 
             cbGoogleDriveUseFolder.Checked = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
+            btnGoogleDriveFolderIDHelp.Enabled = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
-            GoogleDriveSelectConfigDrive();
+            //GoogleDriveSelectConfigDrive();
 
             #endregion Google Drive
 
@@ -1679,7 +1682,7 @@ namespace ShareX.UploadersLib
             }
 
             oauth2GoogleDrive.UpdateStatus(Config.GoogleDriveOAuth2Info, Config.GoogleDriveUserInfo);
-            btnGoogleDriveRefreshFolders.Enabled = oauth2GoogleDrive.Connected;
+            //btnGoogleDriveRefreshFolders.Enabled = oauth2GoogleDrive.Connected;
 
             this.ForceActivate();
         }
@@ -1704,11 +1707,20 @@ namespace ShareX.UploadersLib
         {
             Config.GoogleDriveUseFolder = cbGoogleDriveUseFolder.Checked;
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
+            btnGoogleDriveFolderIDHelp.Enabled = Config.GoogleDriveUseFolder;
         }
 
         private void txtGoogleDriveFolderID_TextChanged(object sender, EventArgs e)
         {
             Config.GoogleDriveFolderID = txtGoogleDriveFolderID.Text;
+        }
+
+        private void btnGoogleDriveFolderIDHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(@"Unfortunately, Google has forced us to use a more restrictive API scope, which does not allow us to see files or folders anymore. Because of this, we cannot provide folder listing and selection anymore.
+
+However, there is a workaround. You can navigate to the Google Drive website in your browser, open the folder you want to upload to, and then copy the folder ID from the browser's address bar to here.",
+"ShareX - Google Drive", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         private void btnGoogleDriveRefreshFolders_Click(object sender, EventArgs e)

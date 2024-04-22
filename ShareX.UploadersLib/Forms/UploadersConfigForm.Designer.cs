@@ -197,6 +197,7 @@ namespace ShareX.UploadersLib
             this.cbOneDriveUseDirectLink = new System.Windows.Forms.CheckBox();
             this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
+            this.btnGoogleDriveFolderIDHelp = new System.Windows.Forms.Button();
             this.oauth2GoogleDrive = new ShareX.UploadersLib.OAuthLoopbackControl();
             this.cbGoogleDriveSharedDrive = new System.Windows.Forms.ComboBox();
             this.cbGoogleDriveDirectLink = new System.Windows.Forms.CheckBox();
@@ -1756,6 +1757,7 @@ namespace ShareX.UploadersLib
             // tpGoogleDrive
             // 
             this.tpGoogleDrive.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGoogleDrive.Controls.Add(this.btnGoogleDriveFolderIDHelp);
             this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveSharedDrive);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveDirectLink);
@@ -1767,6 +1769,13 @@ namespace ShareX.UploadersLib
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveIsPublic);
             resources.ApplyResources(this.tpGoogleDrive, "tpGoogleDrive");
             this.tpGoogleDrive.Name = "tpGoogleDrive";
+            // 
+            // btnGoogleDriveFolderIDHelp
+            // 
+            resources.ApplyResources(this.btnGoogleDriveFolderIDHelp, "btnGoogleDriveFolderIDHelp");
+            this.btnGoogleDriveFolderIDHelp.Name = "btnGoogleDriveFolderIDHelp";
+            this.btnGoogleDriveFolderIDHelp.UseVisualStyleBackColor = true;
+            this.btnGoogleDriveFolderIDHelp.Click += new System.EventHandler(this.btnGoogleDriveFolderIDHelp_Click);
             // 
             // oauth2GoogleDrive
             // 
@@ -5495,5 +5504,6 @@ namespace ShareX.UploadersLib
         private OAuthLoopbackControl oauth2GoogleCloudStorage;
         private System.Windows.Forms.TextBox txtAzureStorageCacheControl;
         private System.Windows.Forms.Label lblAzureStorageCacheControl;
+        private System.Windows.Forms.Button btnGoogleDriveFolderIDHelp;
     }
 }

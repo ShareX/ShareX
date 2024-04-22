@@ -89,7 +89,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             OAuth2 = new GoogleOAuth2(oauth, this)
             {
-                Scope = "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/userinfo.profile"
+                Scope = "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/userinfo.profile"
             };
         }
 

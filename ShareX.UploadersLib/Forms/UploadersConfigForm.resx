@@ -459,7 +459,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauthTwitter</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
     <value>tpTwitter</value>
@@ -714,7 +714,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Bitly</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
     <value>tpBitly</value>
@@ -2349,7 +2349,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>eiFTP</value>
   </data>
   <data name="&gt;&gt;eiFTP.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
     <value>gbFTPAccount</value>
@@ -3555,7 +3555,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Dropbox</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
     <value>tpDropbox</value>
@@ -3714,7 +3714,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oAuth2OneDrive</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
     <value>tpOneDrive</value>
@@ -3723,13 +3723,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>4</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -3749,6 +3749,30 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;tpOneDrive.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="btnGoogleDriveFolderIDHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>424, 174</value>
+  </data>
+  <data name="btnGoogleDriveFolderIDHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnGoogleDriveFolderIDHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnGoogleDriveFolderIDHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;btnGoogleDriveFolderIDHelp.Name" xml:space="preserve">
+    <value>btnGoogleDriveFolderIDHelp</value>
+  </data>
+  <data name="&gt;&gt;btnGoogleDriveFolderIDHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGoogleDriveFolderIDHelp.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;btnGoogleDriveFolderIDHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
@@ -3762,22 +3786,25 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2GoogleDrive</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbGoogleDriveSharedDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>16, 208</value>
   </data>
   <data name="cbGoogleDriveSharedDrive.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 21</value>
   </data>
   <data name="cbGoogleDriveSharedDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>7</value>
+  </data>
+  <data name="cbGoogleDriveSharedDrive.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveSharedDrive.Name" xml:space="preserve">
     <value>cbGoogleDriveSharedDrive</value>
@@ -3789,7 +3816,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveSharedDrive.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbGoogleDriveDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3798,7 +3825,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 111</value>
+    <value>16, 112</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
@@ -3819,7 +3846,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveDirectLink.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbGoogleDriveUseFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3828,13 +3855,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 167</value>
+    <value>16, 136</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 17</value>
   </data>
   <data name="cbGoogleDriveUseFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
     <value>Upload files to selected folder</value>
@@ -3849,16 +3876,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveUseFolder.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txtGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 208</value>
+    <value>16, 176</value>
   </data>
   <data name="txtGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 20</value>
+    <value>400, 20</value>
   </data>
   <data name="txtGoogleDriveFolderID.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.Name" xml:space="preserve">
     <value>txtGoogleDriveFolderID</value>
@@ -3870,7 +3897,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblGoogleDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3879,13 +3906,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 191</value>
+    <value>13, 160</value>
   </data>
   <data name="lblGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
   </data>
   <data name="lblGoogleDriveFolderID.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
     <value>Folder ID:</value>
@@ -3900,7 +3927,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lblGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Title</value>
@@ -3915,25 +3942,28 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>228</value>
   </data>
   <data name="lvGoogleDriveFoldersList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 232</value>
+    <value>16, 240</value>
   </data>
   <data name="lvGoogleDriveFoldersList.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 296</value>
   </data>
   <data name="lvGoogleDriveFoldersList.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
+  </data>
+  <data name="lvGoogleDriveFoldersList.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Name" xml:space="preserve">
     <value>lvGoogleDriveFoldersList</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3942,16 +3972,19 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 135</value>
+    <value>280, 208</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 23</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Refresh folders list</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;btnGoogleDriveRefreshFolders.Name" xml:space="preserve">
     <value>btnGoogleDriveRefreshFolders</value>
@@ -3963,7 +3996,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;btnGoogleDriveRefreshFolders.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbGoogleDriveIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3975,13 +4008,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>16, 88</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 17</value>
+    <value>90, 17</value>
   </data>
   <data name="cbGoogleDriveIsPublic.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Is public upload?</value>
+    <value>Public upload</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveIsPublic.Name" xml:space="preserve">
     <value>cbGoogleDriveIsPublic</value>
@@ -3993,16 +4026,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveIsPublic.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4392,7 +4425,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvBoxFolders</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -4473,7 +4506,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Box</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -5352,7 +5385,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2GoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
     <value>tpGoogleCloudStorage</value>
@@ -7824,7 +7857,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>atcSendSpaceAccountType</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
     <value>tpSendSpace</value>
@@ -8193,7 +8226,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oAuthJira</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
     <value>tpJira</value>
@@ -8772,7 +8805,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvSeafileLibraries</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Parent" xml:space="preserve">
     <value>tpSeafile</value>
@@ -10531,7 +10564,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2YouTube</value>
   </data>
   <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
     <value>tpYouTube</value>
@@ -12265,7 +12298,7 @@ Using an encrypted library disables sharing.</value>
     <value>oAuth2Gist</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
     <value>tpGist</value>
@@ -12904,7 +12937,7 @@ Using an encrypted library disables sharing.</value>
     <value>atcImgurAccountType</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -12925,7 +12958,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2Imgur</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -12961,7 +12994,7 @@ Using an encrypted library disables sharing.</value>
     <value>lvImgurAlbumList</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13360,7 +13393,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauthFlickr</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Parent" xml:space="preserve">
     <value>tpFlickr</value>
@@ -13897,7 +13930,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2GooglePhotos</value>
   </data>
   <data name="&gt;&gt;oauth2GooglePhotos.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GooglePhotos.Parent" xml:space="preserve">
     <value>tpGooglePhotos</value>
@@ -14557,7 +14590,7 @@ Using an encrypted library disables sharing.</value>
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -14578,7 +14611,7 @@ Using an encrypted library disables sharing.</value>
     <value>actRapidShareAccountType</value>
   </data>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
