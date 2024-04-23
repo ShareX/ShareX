@@ -93,7 +93,7 @@ namespace ShareX.Setup
         private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
-        private const string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v6.1/ffmpeg-6.1-win64.zip";
+        private const string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v7.0/ffmpeg-7.0-win64.zip";
 
         private static void Main(string[] args)
         {
