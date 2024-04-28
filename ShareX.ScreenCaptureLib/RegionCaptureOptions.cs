@@ -49,7 +49,9 @@ namespace ShareX.ScreenCaptureLib
         public RegionCaptureAction RegionCaptureActionX2Click = RegionCaptureAction.CaptureActiveMonitor;
         public bool DetectWindows = true;
         public bool DetectControls = true;
+        // TEMP: For backward compatibility
         public bool UseDimming = true;
+        public int BackgroundDimStrength = 10;
         public bool UseCustomInfoText = false;
         public string CustomInfoText = "X: $x, Y: $y$nR: $r, G: $g, B: $b$nHex: $hex"; // Formats: $x, $y, $r, $g, $b, $hex, $HEX, $n
         public List<SnapSize> SnapSizes = new List<SnapSize>()

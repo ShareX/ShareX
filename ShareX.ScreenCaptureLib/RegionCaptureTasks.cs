@@ -105,7 +105,7 @@ namespace ShareX.ScreenCaptureLib
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
             newOptions.DetectWindows = false;
-            newOptions.UseDimming = false;
+            newOptions.BackgroundDimStrength = 0;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker, newOptions, canvas))
             {
@@ -126,7 +126,7 @@ namespace ShareX.ScreenCaptureLib
         public static SimpleWindowInfo GetWindowInfo(RegionCaptureOptions options)
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-            newOptions.UseDimming = false;
+            newOptions.BackgroundDimStrength = 0;
             newOptions.ShowMagnifier = false;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.OneClick, newOptions))

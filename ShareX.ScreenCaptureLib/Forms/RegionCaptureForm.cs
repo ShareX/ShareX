@@ -360,9 +360,9 @@ namespace ShareX.ScreenCaptureLib
 
         internal void InitBackground(Bitmap canvas, bool centerCanvas = true)
         {
-            if (Canvas != null) Canvas.Dispose();
-            if (backgroundBrush != null) backgroundBrush.Dispose();
-            if (backgroundHighlightBrush != null) backgroundHighlightBrush.Dispose();
+            Canvas?.Dispose();
+            backgroundBrush?.Dispose();
+            backgroundHighlightBrush?.Dispose();
 
             Canvas = canvas;
 
@@ -404,13 +404,15 @@ namespace ShareX.ScreenCaptureLib
                     CenterCanvas();
                 }
             }
-            else if (Options.UseDimming)
+            else if (Options.BackgroundDimStrength > 0)
             {
                 DimmedCanvas?.Dispose();
                 DimmedCanvas = (Bitmap)Canvas.Clone();
 
+                int alpha = (int)Math.Round(255 * (Options.BackgroundDimStrength / 100f));
+
                 using (Graphics g = Graphics.FromImage(DimmedCanvas))
-                using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
+                using (Brush brush = new SolidBrush(Color.FromArgb(alpha, Color.Black)))
                 {
                     g.FillRectangle(brush, 0, 0, DimmedCanvas.Width, DimmedCanvas.Height);
 
@@ -956,7 +958,7 @@ namespace ShareX.ScreenCaptureLib
                 UpdateRegionPath();
 
                 // If background is dimmed then draw non dimmed background to region selections
-                if (!IsEditorMode && Options.UseDimming)
+                if (!IsEditorMode && Options.BackgroundDimStrength > 0 && backgroundHighlightBrush != null)
                 {
                     using (Region region = new Region(regionDrawPath))
                     {

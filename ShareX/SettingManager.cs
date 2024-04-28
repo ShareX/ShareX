@@ -242,6 +242,11 @@ namespace ShareX
                 {
                     Settings.UpdateChannel = UpdateChannel.PreRelease;
                 }
+
+                if (!DefaultTaskSettings.CaptureSettings.SurfaceOptions.UseDimming)
+                {
+                    DefaultTaskSettings.CaptureSettings.SurfaceOptions.BackgroundDimStrength = 0;
+                }
             }
         }
 

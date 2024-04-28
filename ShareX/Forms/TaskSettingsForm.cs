@@ -298,7 +298,7 @@ namespace ShareX
             cbRegionCaptureDetectWindows.Checked = TaskSettings.CaptureSettings.SurfaceOptions.DetectWindows;
             cbRegionCaptureDetectControls.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.DetectWindows;
             cbRegionCaptureDetectControls.Checked = TaskSettings.CaptureSettings.SurfaceOptions.DetectControls;
-            cbRegionCaptureUseDimming.Checked = TaskSettings.CaptureSettings.SurfaceOptions.UseDimming;
+            nudRegionCaptureBackgroundDimStrength.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.BackgroundDimStrength);
             cbRegionCaptureUseCustomInfoText.Checked = TaskSettings.CaptureSettings.SurfaceOptions.UseCustomInfoText;
             txtRegionCaptureCustomInfoText.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.UseCustomInfoText;
             TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText = TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText.Replace("\r\n", "$n").Replace("\n", "$n");
@@ -1153,9 +1153,9 @@ namespace ShareX
             TaskSettings.CaptureSettings.SurfaceOptions.DetectControls = cbRegionCaptureDetectControls.Checked;
         }
 
-        private void cbRegionCaptureUseDimming_CheckedChanged(object sender, EventArgs e)
+        private void nudRegionCaptureBackgroundDimStrength_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.SurfaceOptions.UseDimming = cbRegionCaptureUseDimming.Checked;
+            TaskSettings.CaptureSettings.SurfaceOptions.BackgroundDimStrength = (int)nudRegionCaptureBackgroundDimStrength.Value;
         }
 
         private void cbRegionCaptureUseCustomInfoText_CheckedChanged(object sender, EventArgs e)
