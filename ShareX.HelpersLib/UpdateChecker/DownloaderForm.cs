@@ -26,7 +26,6 @@
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -251,8 +250,10 @@ namespace ShareX.HelpersLib
             if (fileDownloader != null)
             {
                 pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
-                lblProgress.Text = Helpers.SafeStringFormat(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress,
-                    fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1024, fileDownloader.DownloadedSize / 1024, fileDownloader.FileSize / 1024);
+
+                lblProgress.Text = $@"{Resources.DownloaderForm_FileDownloader_ProgressChanged_Progress}: {fileDownloader.DownloadPercentage:0.0}%
+{Resources.DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed}: {((long)fileDownloader.DownloadSpeed).ToSizeString()}/s
+{Resources.DownloaderForm_FileDownloader_ProgressChanged_FileSize}: {fileDownloader.DownloadedSize.ToSizeString()} / {fileDownloader.FileSize.ToSizeString()}";
             }
         }
 

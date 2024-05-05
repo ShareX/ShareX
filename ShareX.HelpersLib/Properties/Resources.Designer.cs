@@ -794,17 +794,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Progress: {0:0.0}%
-        ///Download speed: {1:0.0} KB/s
-        ///File size: {2:n0} / {3:n0} KB.
-        /// </summary>
-        internal static string DownloaderForm_ChangeProgress_Progress {
-            get {
-                return ResourceManager.GetString("DownloaderForm_ChangeProgress_Progress", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Status: {0}.
         /// </summary>
         internal static string DownloaderForm_ChangeStatus_Status___0_ {
@@ -823,7 +812,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Waiting..
+        ///   Looks up a localized string similar to Waiting....
         /// </summary>
         internal static string DownloaderForm_DownloaderForm_Waiting_ {
             get {
@@ -850,6 +839,33 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download speed.
+        /// </summary>
+        internal static string DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed {
+            get {
+                return ResourceManager.GetString("DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File size.
+        /// </summary>
+        internal static string DownloaderForm_FileDownloader_ProgressChanged_FileSize {
+            get {
+                return ResourceManager.GetString("DownloaderForm_FileDownloader_ProgressChanged_FileSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Progress.
+        /// </summary>
+        internal static string DownloaderForm_FileDownloader_ProgressChanged_Progress {
+            get {
+                return ResourceManager.GetString("DownloaderForm_FileDownloader_ProgressChanged_Progress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string DownloaderForm_StartDownload_Cancel {
@@ -859,7 +875,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Downloading..
+        ///   Looks up a localized string similar to Downloading....
         /// </summary>
         internal static string DownloaderForm_StartDownload_Downloading_ {
             get {
@@ -868,7 +884,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Getting file size..
+        ///   Looks up a localized string similar to Getting file size....
         /// </summary>
         internal static string DownloaderForm_StartDownload_Getting_file_size_ {
             get {

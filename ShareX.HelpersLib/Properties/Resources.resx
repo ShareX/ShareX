@@ -575,11 +575,6 @@ Would you like to download it?</value>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Loading image...</value>
   </data>
-  <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>Progress: {0:0.0}%
-Download speed: {1:0.0} KB/s
-File size: {2:n0} / {3:n0} KB</value>
-  </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Capture last region</value>
   </data>
@@ -645,7 +640,7 @@ Would you like to download and install it?</value>
     <value>Save thumbnail image to file</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>Downloading.</value>
+    <value>Downloading...</value>
   </data>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>Remove shape or cancel capture</value>
@@ -705,7 +700,7 @@ Would you like to download and install it?</value>
     <value>Process name of window</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
-    <value>Waiting.</value>
+    <value>Waiting...</value>
   </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>Image editor</value>
@@ -861,7 +856,7 @@ Would you like to download and install it?</value>
     <value>Capture active monitor</value>
   </data>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>Getting file size.</value>
+    <value>Getting file size...</value>
   </data>
   <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>Other</value>
@@ -1294,5 +1289,14 @@ Would you like to download and install it?</value>
   </data>
   <data name="UpdateChannel_Release" xml:space="preserve">
     <value>Release</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>Download speed</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>File size</value>
   </data>
 </root>
