@@ -81,6 +81,8 @@ namespace ShareX.HelpersLib
 
         private Color textColor;
 
+        public Font MainWindowFont { get; set; } = new Font("Segoe UI", 9.75f);
+
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextColor
         {
