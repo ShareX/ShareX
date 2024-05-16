@@ -236,13 +236,20 @@ namespace ShareX.ScreenCaptureLib
             int matchIndex = 0;
             int matchLimit = currentImage.Height / 2;
             int ignoreSideOffset = Math.Max(50, currentImage.Width / 20);
+            int ignoreBottomOffset = Math.Max(50, currentImage.Height / 20);
 
             if (currentImage.Width < ignoreSideOffset * 3)
             {
                 ignoreSideOffset = 0;
             }
 
-            Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height, currentImage.Width - ignoreSideOffset * 2, currentImage.Height);
+            if (currentImage.Height < ignoreBottomOffset * 3)
+            {
+                ignoreBottomOffset = 0;
+            }
+
+            Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height,
+                currentImage.Width - ignoreSideOffset * 2, currentImage.Height - ignoreBottomOffset);
 
             BitmapData bdResult = result.LockBits(new Rectangle(0, 0, result.Width, result.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
             BitmapData bdCurrentImage = currentImage.LockBits(new Rectangle(0, 0, currentImage.Width, currentImage.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
@@ -300,16 +307,16 @@ namespace ShareX.ScreenCaptureLib
                         bestMatchIndex = matchIndex;
                     }
 
-                    Bitmap newResult = new Bitmap(result.Width, result.Height + matchHeight);
+                    Bitmap newResult = new Bitmap(result.Width, result.Height - ignoreBottomOffset + matchHeight);
 
                     using (Graphics g = Graphics.FromImage(newResult))
                     {
                         g.CompositingMode = CompositingMode.SourceCopy;
                         g.InterpolationMode = InterpolationMode.NearestNeighbor;
 
-                        g.DrawImage(result, new Rectangle(0, 0, result.Width, result.Height),
-                            new Rectangle(0, 0, result.Width, result.Height), GraphicsUnit.Pixel);
-                        g.DrawImage(currentImage, new Rectangle(0, result.Height, currentImage.Width, matchHeight),
+                        g.DrawImage(result, new Rectangle(0, 0, result.Width, result.Height - ignoreBottomOffset),
+                            new Rectangle(0, 0, result.Width, result.Height - ignoreBottomOffset), GraphicsUnit.Pixel);
+                        g.DrawImage(currentImage, new Rectangle(0, result.Height - ignoreBottomOffset, currentImage.Width, matchHeight),
                             new Rectangle(0, matchIndex + 1, currentImage.Width, matchHeight), GraphicsUnit.Pixel);
                     }
 
