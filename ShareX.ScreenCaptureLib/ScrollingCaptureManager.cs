@@ -88,6 +88,8 @@ namespace ShareX.ScreenCaptureLib
                 status = ScrollingCaptureStatus.Failed;
                 bestMatchCount = 0;
                 bestMatchIndex = 0;
+                int ignoreSideOffset = 50;
+                int ignoreBottomOffset = 50;
                 Reset();
 
                 ScrollingCaptureRegionForm regionForm = null;
@@ -132,7 +134,13 @@ namespace ShareX.ScreenCaptureLib
 
                         if (lastScreenshot != null)
                         {
-                            Bitmap newResult = await CombineImagesAsync(Result, lastScreenshot);
+                            if (Options.AutoIgnoreBottomEdge && previousScreenshot != null)
+                            {
+                                int autoIgnoreBottomOffset = GuessBottomEdge(previousScreenshot, lastScreenshot, ignoreSideOffset);
+                                ignoreBottomOffset = Math.Max(ignoreBottomOffset, autoIgnoreBottomOffset + 50);
+                            }
+
+                            Bitmap newResult = await CombineImagesAsync(Result, lastScreenshot, ignoreSideOffset, ignoreBottomOffset);
 
                             if (newResult != null)
                             {
@@ -218,12 +226,12 @@ namespace ShareX.ScreenCaptureLib
             return false;
         }
 
-        private async Task<Bitmap> CombineImagesAsync(Bitmap result, Bitmap currentImage)
+        private async Task<Bitmap> CombineImagesAsync(Bitmap result, Bitmap currentImage, int ignoreSideOffset = 50, int ignoreBottomOffset = 50)
         {
-            return await Task.Run(() => CombineImages(result, currentImage));
+            return await Task.Run(() => CombineImages(result, currentImage, ignoreSideOffset, ignoreBottomOffset));
         }
 
-        private Bitmap CombineImages(Bitmap result, Bitmap currentImage)
+        private Bitmap CombineImages(Bitmap result, Bitmap currentImage, int ignoreSideOffset = 50, int ignoreBottomOffset = 50)
         {
             if (result == null)
             {
@@ -235,18 +243,12 @@ namespace ShareX.ScreenCaptureLib
             int matchCount = 0;
             int matchIndex = 0;
             int matchLimit = currentImage.Height / 2;
-            int ignoreSideOffset = Math.Max(50, currentImage.Width / 20);
-            int ignoreBottomOffset = Math.Max(50, currentImage.Height / 20);
 
-            if (currentImage.Width < ignoreSideOffset * 3)
-            {
-                ignoreSideOffset = 0;
-            }
+            ignoreSideOffset = Math.Max(ignoreSideOffset, currentImage.Width / 20);
+            ignoreSideOffset = Math.Min(ignoreSideOffset, currentImage.Width / 3);
 
-            if (currentImage.Height < ignoreBottomOffset * 3)
-            {
-                ignoreBottomOffset = 0;
-            }
+            ignoreBottomOffset = Math.Max(ignoreBottomOffset, currentImage.Height / 20);
+            ignoreBottomOffset = Math.Min(ignoreBottomOffset, currentImage.Height / 3);
 
             Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height,
                 currentImage.Width - ignoreSideOffset * 2, currentImage.Height - ignoreBottomOffset);
@@ -336,6 +338,28 @@ namespace ShareX.ScreenCaptureLib
             status = ScrollingCaptureStatus.Failed;
 
             return null;
+        }
+
+        private int GuessBottomEdge(Bitmap img1, Bitmap img2, int ignoreSideOffset)
+        {
+            Rectangle rect = new Rectangle(ignoreSideOffset, 0, img1.Width - ignoreSideOffset * 2, img1.Height);
+
+            using (UnsafeBitmap bmp1 = new UnsafeBitmap(img1, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmp2 = new UnsafeBitmap(img2, true, ImageLockMode.ReadOnly))
+            {
+                for (int y = rect.Height - 1; y >= rect.X; y--)
+                {
+                    for (int x = rect.X; x < rect.Width; x++)
+                    {
+                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                        {
+                            return rect.Height - y - 1;
+                        }
+                    }
+                }
+            }
+
+            return 0;
         }
     }
 }

@@ -51,6 +51,7 @@ namespace ShareX.ScreenCaptureLib
             nudScrollAmount.SetValue(Options.ScrollAmount);
             cbAutoUpload.Checked = Options.AutoUpload;
             cbShowRegion.Checked = Options.ShowRegion;
+            cbAutoIgnoreBottomEdge.Checked = Options.AutoIgnoreBottomEdge;
         }
 
         private void SaveOptions()
@@ -61,6 +62,7 @@ namespace ShareX.ScreenCaptureLib
             Options.ScrollAmount = (int)nudScrollAmount.Value;
             Options.AutoUpload = cbAutoUpload.Checked;
             Options.ShowRegion = cbShowRegion.Checked;
+            Options.AutoIgnoreBottomEdge = cbAutoIgnoreBottomEdge.Checked;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
