@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
         private Bitmap previousScreenshot;
         private bool stopRequested;
         private ScrollingCaptureStatus status;
-        private int bestMatchCount, bestMatchIndex;
+        private int bestMatchCount, bestMatchIndex, bestIgnoreBottomOffset;
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
 
@@ -88,6 +88,7 @@ namespace ShareX.ScreenCaptureLib
                 status = ScrollingCaptureStatus.Failed;
                 bestMatchCount = 0;
                 bestMatchIndex = 0;
+                bestIgnoreBottomOffset = 0;
                 int ignoreSideOffset = 50;
                 int ignoreBottomOffset = 50;
                 Reset();
@@ -247,7 +248,7 @@ namespace ShareX.ScreenCaptureLib
             ignoreSideOffset = Math.Max(ignoreSideOffset, currentImage.Width / 20);
             ignoreSideOffset = Math.Min(ignoreSideOffset, currentImage.Width / 3);
 
-            ignoreBottomOffset = Math.Max(ignoreBottomOffset, currentImage.Height / 20);
+            ignoreBottomOffset = Math.Max(ignoreBottomOffset, currentImage.Height / 10);
             ignoreBottomOffset = Math.Min(ignoreBottomOffset, currentImage.Height / 3);
 
             Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height,
@@ -294,6 +295,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 matchCount = bestMatchCount;
                 matchIndex = bestMatchIndex;
+                ignoreBottomOffset = bestIgnoreBottomOffset;
                 bestGuess = true;
             }
 
@@ -307,6 +309,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         bestMatchCount = matchCount;
                         bestMatchIndex = matchIndex;
+                        bestIgnoreBottomOffset = ignoreBottomOffset;
                     }
 
                     Bitmap newResult = new Bitmap(result.Width, result.Height - ignoreBottomOffset + matchHeight);

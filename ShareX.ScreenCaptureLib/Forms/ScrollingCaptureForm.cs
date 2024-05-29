@@ -116,6 +116,7 @@ namespace ShareX.ScreenCaptureLib
             WindowState = FormWindowState.Minimized;
             btnCapture.Enabled = false;
             btnUpload.Enabled = false;
+            btnCopy.Enabled = false;
             btnOptions.Enabled = false;
             lblResultSize.Text = "";
             ResetPictureBox();
@@ -162,6 +163,7 @@ namespace ShareX.ScreenCaptureLib
             if (bmp != null)
             {
                 btnUpload.Enabled = true;
+                btnCopy.Enabled = true;
                 pbOutput.Image = bmp;
                 pOutput.AutoScrollPosition = new Point(0, 0);
                 lblResultSize.Text = $"{bmp.Width}x{bmp.Height}";
@@ -191,6 +193,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void CopyResult()
+        {
+            if (manager.Result != null)
+            {
+                ClipboardHelpers.CopyImage(manager.Result);
+            }
+        }
+
         protected void OnUploadRequested(Bitmap bmp)
         {
             UploadRequested?.Invoke(bmp);
@@ -214,6 +224,11 @@ namespace ShareX.ScreenCaptureLib
         private void btnUpload_Click(object sender, EventArgs e)
         {
             UploadResult();
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            CopyResult();
         }
 
         private void btnOptions_Click(object sender, EventArgs e)
