@@ -1310,42 +1310,45 @@ namespace ShareX.ScreenCaptureLib
 
         private void CheckMenuPosition()
         {
-            Rectangle rectMenu = menuForm.Bounds;
-            Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
-            Point pos = rectMenu.Location;
-
-            if (rectMenu.Width < rectScreen.Width)
+            if (!Form.IsEditorMode)
             {
-                if (rectMenu.X < rectScreen.X)
-                {
-                    pos.X = rectScreen.X;
-                }
-                else if (rectMenu.Right > rectScreen.Right)
-                {
-                    pos.X = rectScreen.Right - rectMenu.Width;
-                }
-            }
+                Rectangle rectMenu = menuForm.Bounds;
+                Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
+                Point pos = rectMenu.Location;
 
-            if (rectMenu.Height < rectScreen.Height)
-            {
-                if (rectMenu.Y < rectScreen.Y)
+                if (rectMenu.Width < rectScreen.Width)
                 {
-                    pos.Y = rectScreen.Y;
+                    if (rectMenu.X < rectScreen.X)
+                    {
+                        pos.X = rectScreen.X;
+                    }
+                    else if (rectMenu.Right > rectScreen.Right)
+                    {
+                        pos.X = rectScreen.Right - rectMenu.Width;
+                    }
                 }
-                else if (rectMenu.Bottom > rectScreen.Bottom)
+
+                if (rectMenu.Height < rectScreen.Height)
                 {
-                    pos.Y = rectScreen.Bottom - rectMenu.Height;
+                    if (rectMenu.Y < rectScreen.Y)
+                    {
+                        pos.Y = rectScreen.Y;
+                    }
+                    else if (rectMenu.Bottom > rectScreen.Bottom)
+                    {
+                        pos.Y = rectScreen.Bottom - rectMenu.Height;
+                    }
                 }
-            }
 
-            if (pos != rectMenu.Location)
-            {
-                menuForm.Location = pos;
-            }
+                if (pos != rectMenu.Location)
+                {
+                    menuForm.Location = pos;
+                }
 
-            if (!Form.IsEditorMode && Options.RememberMenuState)
-            {
-                Options.MenuPosition = pos;
+                if (Options.RememberMenuState)
+                {
+                    Options.MenuPosition = pos;
+                }
             }
         }
 
