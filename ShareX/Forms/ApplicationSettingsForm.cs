@@ -503,26 +503,32 @@ namespace ShareX
 
         private void CbUseCustomTheme_CheckedChanged(object sender, EventArgs e)
         {
-            Program.Settings.UseCustomTheme = cbUseCustomTheme.Checked;
-            UpdateThemeControls();
-            ApplySelectedTheme();
+            if (ready)
+            {
+                Program.Settings.UseCustomTheme = cbUseCustomTheme.Checked;
+                UpdateThemeControls();
+                ApplySelectedTheme();
+            }
         }
 
         private void CbThemes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.Settings.SelectedTheme = cbThemes.SelectedIndex;
-
-            if (cbThemes.SelectedItem != null)
+            if (ready)
             {
-                pgTheme.SelectedObject = cbThemes.SelectedItem;
-            }
-            else
-            {
-                pgTheme.SelectedObject = null;
-            }
+                Program.Settings.SelectedTheme = cbThemes.SelectedIndex;
 
-            UpdateThemeControls();
-            ApplySelectedTheme();
+                if (cbThemes.SelectedItem != null)
+                {
+                    pgTheme.SelectedObject = cbThemes.SelectedItem;
+                }
+                else
+                {
+                    pgTheme.SelectedObject = null;
+                }
+
+                UpdateThemeControls();
+                ApplySelectedTheme();
+            }
         }
 
         private void BtnThemeAdd_Click(object sender, EventArgs e)
