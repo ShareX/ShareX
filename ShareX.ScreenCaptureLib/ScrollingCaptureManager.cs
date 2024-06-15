@@ -89,8 +89,6 @@ namespace ShareX.ScreenCaptureLib
                 bestMatchCount = 0;
                 bestMatchIndex = 0;
                 bestIgnoreBottomOffset = 0;
-                int ignoreSideOffset = 50;
-                int ignoreBottomOffset = 50;
                 Reset();
 
                 ScrollingCaptureRegionForm regionForm = null;
@@ -135,13 +133,7 @@ namespace ShareX.ScreenCaptureLib
 
                         if (lastScreenshot != null)
                         {
-                            if (Options.AutoIgnoreBottomEdge && previousScreenshot != null)
-                            {
-                                int autoIgnoreBottomOffset = GuessBottomEdge(previousScreenshot, lastScreenshot, ignoreSideOffset);
-                                ignoreBottomOffset = Math.Max(ignoreBottomOffset, autoIgnoreBottomOffset + 50);
-                            }
-
-                            Bitmap newResult = await CombineImagesAsync(Result, lastScreenshot, ignoreSideOffset, ignoreBottomOffset);
+                            Bitmap newResult = await CombineImagesAsync(Result, lastScreenshot);
 
                             if (newResult != null)
                             {
@@ -227,12 +219,12 @@ namespace ShareX.ScreenCaptureLib
             return false;
         }
 
-        private async Task<Bitmap> CombineImagesAsync(Bitmap result, Bitmap currentImage, int ignoreSideOffset = 50, int ignoreBottomOffset = 50)
+        private async Task<Bitmap> CombineImagesAsync(Bitmap result, Bitmap currentImage)
         {
-            return await Task.Run(() => CombineImages(result, currentImage, ignoreSideOffset, ignoreBottomOffset));
+            return await Task.Run(() => CombineImages(result, currentImage));
         }
 
-        private Bitmap CombineImages(Bitmap result, Bitmap currentImage, int ignoreSideOffset = 50, int ignoreBottomOffset = 50)
+        private Bitmap CombineImages(Bitmap result, Bitmap currentImage)
         {
             if (result == null)
             {
@@ -245,14 +237,10 @@ namespace ShareX.ScreenCaptureLib
             int matchIndex = 0;
             int matchLimit = currentImage.Height / 2;
 
-            ignoreSideOffset = Math.Max(ignoreSideOffset, currentImage.Width / 20);
+            int ignoreSideOffset = Math.Max(50, currentImage.Width / 20);
             ignoreSideOffset = Math.Min(ignoreSideOffset, currentImage.Width / 3);
 
-            ignoreBottomOffset = Math.Max(ignoreBottomOffset, currentImage.Height / 10);
-            ignoreBottomOffset = Math.Min(ignoreBottomOffset, currentImage.Height / 3);
-
-            Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height,
-                currentImage.Width - ignoreSideOffset * 2, currentImage.Height - ignoreBottomOffset);
+            Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height, currentImage.Width - ignoreSideOffset * 2, currentImage.Height);
 
             BitmapData bdResult = result.LockBits(new Rectangle(0, 0, result.Width, result.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
             BitmapData bdCurrentImage = currentImage.LockBits(new Rectangle(0, 0, currentImage.Width, currentImage.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
@@ -260,8 +248,31 @@ namespace ShareX.ScreenCaptureLib
             int pixelSize = stride / result.Width;
             IntPtr resultScan0 = bdResult.Scan0 + pixelSize * ignoreSideOffset;
             IntPtr currentImageScan0 = bdCurrentImage.Scan0 + pixelSize * ignoreSideOffset;
-            int rectBottom = rect.Bottom - 1;
             int compareLength = pixelSize * rect.Width;
+
+            int ignoreBottomOffsetMax = currentImage.Height / 3;
+            int ignoreBottomOffset = Math.Max(50, currentImage.Height / 10);
+
+            if (Options.AutoIgnoreBottomEdge)
+            {
+                IntPtr resultScan0Last = resultScan0 + (result.Height - 1) * stride;
+                IntPtr currentImageScan0Last = currentImageScan0 + (currentImage.Height - 1) * stride;
+
+                for (int i = 0; i <= ignoreBottomOffsetMax; i++)
+                {
+                    if (NativeMethods.memcmp(resultScan0Last - i * stride, currentImageScan0Last - i * stride, compareLength) != 0)
+                    {
+                        ignoreBottomOffset += i;
+                        break;
+                    }
+                }
+
+                ignoreBottomOffset = Math.Max(ignoreBottomOffset, bestIgnoreBottomOffset);
+            }
+
+            ignoreBottomOffset = Math.Min(ignoreBottomOffset, ignoreBottomOffsetMax);
+
+            int rectBottom = rect.Bottom - ignoreBottomOffset - 1;
 
             for (int currentImageY = currentImage.Height - 1; currentImageY >= 0 && matchCount < matchLimit; currentImageY--)
             {
@@ -341,28 +352,6 @@ namespace ShareX.ScreenCaptureLib
             status = ScrollingCaptureStatus.Failed;
 
             return null;
-        }
-
-        private int GuessBottomEdge(Bitmap img1, Bitmap img2, int ignoreSideOffset)
-        {
-            Rectangle rect = new Rectangle(ignoreSideOffset, 0, img1.Width - ignoreSideOffset * 2, img1.Height);
-
-            using (UnsafeBitmap bmp1 = new UnsafeBitmap(img1, true, ImageLockMode.ReadOnly))
-            using (UnsafeBitmap bmp2 = new UnsafeBitmap(img2, true, ImageLockMode.ReadOnly))
-            {
-                for (int y = rect.Height - 1; y >= rect.X; y--)
-                {
-                    for (int x = rect.X; x < rect.Width; x++)
-                    {
-                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
-                        {
-                            return rect.Height - y - 1;
-                        }
-                    }
-                }
-            }
-
-            return 0;
         }
     }
 }
