@@ -413,7 +413,7 @@ Devam etmek istediğinizden emin misiniz?</value>
     <value>Korece</value>
   </data>
   <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
-    <value>Hollandaca</value>
+    <value>Felemenkçe</value>
   </data>
   <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
     <value>Portekizce (Brezilya)</value>
@@ -425,10 +425,10 @@ Devam etmek istediğinizden emin misiniz?</value>
     <value>Vietnamca</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
-    <value>Basitleştirilmiş çince</value>
+    <value>Basitleştirilmiş Çince</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
-    <value>Geleneksel çince</value>
+    <value>Geleneksel Çince</value>
   </data>
   <data name="ActionsToolbar__LockPosition" xml:space="preserve">
     <value>Konumu kitle</value>
@@ -530,7 +530,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Ekran görüntüsü gecikmesi: {0}sn</value>
   </data>
   <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
-    <value>Endonezyaca</value>
+    <value>Endonezce</value>
   </data>
   <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
     <value>Portekizce</value>
