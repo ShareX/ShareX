@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -58,6 +58,9 @@ namespace ShareX.ImageEffectsLib
         }
 
         [DefaultValue(false)]
+        public bool Background { get; set; }
+
+        [DefaultValue(false)]
         public bool RandomSize { get; set; }
 
         [DefaultValue(64)]
@@ -90,6 +93,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(0)]
         public int NoOverlapOffset { get; set; }
 
+        [DefaultValue(false)]
+        public bool EdgeOverlap { get; set; }
+
         private List<Rectangle> imageRectangles = new List<Rectangle>();
 
         public DrawParticles()
@@ -99,7 +105,32 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            string imageFolder = FileHelpers.ExpandFolderVariables(ImageFolder, true);
+            if (Background)
+            {
+                Bitmap result = bmp.CreateEmptyBitmap();
+
+                DrawParticlesFromFolder(result, ImageFolder);
+
+                using (Graphics g = Graphics.FromImage(result))
+                {
+                    g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
+                }
+
+                bmp.Dispose();
+
+                return result;
+            }
+            else
+            {
+                DrawParticlesFromFolder(bmp, ImageFolder);
+
+                return bmp;
+            }
+        }
+
+        private void DrawParticlesFromFolder(Bitmap bmp, string imageFolder)
+        {
+            imageFolder = FileHelpers.ExpandFolderVariables(imageFolder, true);
 
             if (!string.IsNullOrEmpty(imageFolder) && Directory.Exists(imageFolder))
             {
@@ -127,8 +158,6 @@ namespace ShareX.ImageEffectsLib
                     }
                 }
             }
-
-            return bmp;
         }
 
         private void DrawImage(Image img, Image img2, Graphics g)
@@ -161,8 +190,10 @@ namespace ShareX.ImageEffectsLib
                 return;
             }
 
-            int xOffset = img.Width - width - 1;
-            int yOffset = img.Height - height - 1;
+            int minOffsetX = EdgeOverlap ? -width + 1 : 0;
+            int minOffsetY = EdgeOverlap ? -height + 1 : 0;
+            int maxOffsetX = img.Width - (EdgeOverlap ? 0 : width) - 1;
+            int maxOffsetY = img.Height - (EdgeOverlap ? 0 : height) - 1;
 
             Rectangle rect, overlapRect;
             int attemptCount = 0;
@@ -170,13 +201,15 @@ namespace ShareX.ImageEffectsLib
             do
             {
                 attemptCount++;
+
                 if (attemptCount > 1000)
                 {
                     return;
                 }
 
-                rect = new Rectangle(RandomFast.Next(Math.Min(0, xOffset), Math.Max(0, xOffset)),
-                    RandomFast.Next(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
+                int x = RandomFast.Next(Math.Min(minOffsetX, maxOffsetX), Math.Max(minOffsetX, maxOffsetX));
+                int y = RandomFast.Next(Math.Min(minOffsetY, maxOffsetY), Math.Max(minOffsetY, maxOffsetY));
+                rect = new Rectangle(x, y, width, height);
 
                 overlapRect = rect.Offset(NoOverlapOffset);
             } while (NoOverlap && imageRectangles.Any(x => x.IntersectsWith(overlapRect)));

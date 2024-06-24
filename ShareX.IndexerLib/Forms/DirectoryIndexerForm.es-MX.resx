@@ -135,4 +135,7 @@
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Configuración</value>
   </data>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>Guardar como y cerrar esta ventana...</value>
+  </data>
 </root>

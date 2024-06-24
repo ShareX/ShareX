@@ -122,7 +122,7 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 11.25pt</value>
+    <value>Segoe UI, 9pt, style=Bold</value>
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -138,7 +138,7 @@
     <value>lblTitle</value>
   </data>
   <data name="&gt;&gt;lblTitle.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
     <value>$this</value>
@@ -169,7 +169,7 @@
     <value>lblCombineVertical</value>
   </data>
   <data name="&gt;&gt;lblCombineVertical.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblCombineVertical.Parent" xml:space="preserve">
     <value>pThumbnail</value>
@@ -182,7 +182,7 @@
     <value>Top</value>
   </data>
   <data name="lblError.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 12pt</value>
+    <value>Segoe UI, 11.25pt, style=Bold</value>
   </data>
   <data name="lblError.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 7</value>
@@ -203,7 +203,7 @@
     <value>lblError</value>
   </data>
   <data name="&gt;&gt;lblError.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblError.Parent" xml:space="preserve">
     <value>pThumbnail</value>
@@ -234,7 +234,7 @@
     <value>lblCombineHorizontal</value>
   </data>
   <data name="&gt;&gt;lblCombineHorizontal.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblCombineHorizontal.Parent" xml:space="preserve">
     <value>pThumbnail</value>
@@ -246,7 +246,7 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="pbProgress.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 11.25pt</value>
+    <value>Segoe UI, 9pt, style=Bold</value>
   </data>
   <data name="pbProgress.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 217</value>
@@ -267,7 +267,7 @@
     <value>pbProgress</value>
   </data>
   <data name="&gt;&gt;pbProgress.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbProgress.Parent" xml:space="preserve">
     <value>pThumbnail</value>
@@ -318,7 +318,7 @@
     <value>pThumbnail</value>
   </data>
   <data name="&gt;&gt;pThumbnail.Type" xml:space="preserve">
-    <value>ShareX.TaskRoundedCornerPanel, ShareX, Version=14.1.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.TaskRoundedCornerPanel, ShareX, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pThumbnail.Parent" xml:space="preserve">
     <value>$this</value>

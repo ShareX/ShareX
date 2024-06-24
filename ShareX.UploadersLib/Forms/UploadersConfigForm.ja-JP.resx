@@ -395,9 +395,6 @@
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>独自のドメイン:</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>公開する</value>
-  </data>
   <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
     <value>更新</value>
   </data>
@@ -1017,12 +1014,6 @@
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
     <value>アプリケーション キー ID:</value>
   </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>音声を維持</value>
-  </data>
-  <data name="lblGfycatTitle.Text" xml:space="preserve">
-    <value>題:</value>
-  </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>URLにファイル名を付与</value>
   </data>
@@ -1073,5 +1064,8 @@
   </data>
   <data name="lblB2ManageLink.Text" xml:space="preserve">
     <value>ここをクリックし、アプリケーションキーを作成、またはバケットを管理</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>ダイレクト リンクを使用</value>
   </data>
 </root>

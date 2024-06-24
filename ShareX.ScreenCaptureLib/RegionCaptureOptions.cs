@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -49,7 +49,9 @@ namespace ShareX.ScreenCaptureLib
         public RegionCaptureAction RegionCaptureActionX2Click = RegionCaptureAction.CaptureActiveMonitor;
         public bool DetectWindows = true;
         public bool DetectControls = true;
+        // TEMP: For backward compatibility
         public bool UseDimming = true;
+        public int BackgroundDimStrength = 10;
         public bool UseCustomInfoText = false;
         public string CustomInfoText = "X: $x, Y: $y$nR: $r, G: $g, B: $b$nHex: $hex"; // Formats: $x, $y, $r, $g, $b, $hex, $HEX, $n
         public List<SnapSize> SnapSizes = new List<SnapSize>()

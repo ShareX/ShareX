@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -69,11 +69,11 @@ namespace ShareX
                     if (taskInfo.IsValid)
                     {
                         ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = taskInfo.ToString().Replace("&", "&&"), Tag = taskInfo };
-                        tsmi.Image = FindSuitableIcon(taskInfo);
+                        tsmi.Image = taskInfo.Icon;
                         tsmi.Click += (sender, e) =>
                         {
-                            QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
                             cms.Close();
+                            QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
                             OnTaskInfoSelected(selectedTaskInfo);
                         };
                         cms.Items.Add(tsmi);
@@ -119,24 +119,6 @@ namespace ShareX
         protected void OnTaskInfoSelected(QuickTaskInfo taskInfo)
         {
             TaskInfoSelected?.Invoke(taskInfo);
-        }
-
-        public Image FindSuitableIcon(QuickTaskInfo taskInfo)
-        {
-            if (taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.UploadImageToHost))
-            {
-                return Resources.upload_cloud;
-            }
-            else if (taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.CopyImageToClipboard) || taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.CopyFileToClipboard))
-            {
-                return Resources.clipboard;
-            }
-            else if (taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.SaveImageToFile) || taskInfo.AfterCaptureTasks.HasFlag(AfterCaptureTasks.SaveImageToFileWithDialog))
-            {
-                return Resources.disk_black;
-            }
-
-            return Resources.image;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,6 +25,7 @@
 
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
@@ -32,7 +33,7 @@ namespace ShareX.HelpersLib
     {
         public string Branch { get; set; } = "master";
 
-        public override void CheckUpdate()
+        public override async Task CheckUpdateAsync()
         {
             try
             {
@@ -42,7 +43,7 @@ namespace ShareX.HelpersLib
                     ProjectSlug = "sharex"
                 };
 
-                AppVeyorProject project = appveyor.GetProjectByBranch(Branch);
+                AppVeyorProject project = await appveyor.GetProjectByBranch(Branch);
 
                 if (!project.build.status.Equals("success", StringComparison.OrdinalIgnoreCase) &&
                     !project.build.status.Equals("running", StringComparison.OrdinalIgnoreCase))
@@ -60,7 +61,7 @@ namespace ShareX.HelpersLib
                     throw new Exception("Unable to find successful release build.");
                 }
 
-                AppVeyorProjectArtifact[] artifacts = appveyor.GetArtifacts(job.jobId);
+                AppVeyorProjectArtifact[] artifacts = await appveyor.GetArtifacts(job.jobId);
 
                 string deploymentName;
 

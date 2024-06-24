@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -63,15 +63,15 @@ namespace ShareX.MediaLib
             SourceImage = (Bitmap)image.Clone();
             SourceImageCropped = null;
 
-            Rectangle source = new Rectangle(0, 0, image.Width, image.Height);
-            Rectangle rect = ImageHelpers.FindAutoCropRectangle(image, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+            Rectangle source = new Rectangle(0, 0, SourceImage.Width, SourceImage.Height);
+            Rectangle rect = ImageHelpers.FindAutoCropRectangle(SourceImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
 
             if (source != rect)
             {
-                SourceImageCropped = ImageHelpers.CropBitmap(image, rect);
+                SourceImageCropped = ImageHelpers.CropBitmap(SourceImage, rect);
             }
 
-            PaddingColor = image.GetPixel(0, 0);
+            PaddingColor = SourceImage.GetPixel(0, 0);
         }
 
         public Bitmap Render()

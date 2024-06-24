@@ -126,9 +126,6 @@
   <data name="cbPlikTTLUnit.Items" xml:space="preserve">
     <value>ימים</value>
   </data>
-  <data name="lblGfycatTitle.Text" xml:space="preserve">
-    <value>כותרת:</value>
-  </data>
   <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
     <value>הוסף את שם הקובץ לקישור</value>
   </data>
@@ -399,9 +396,6 @@
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>נדרשת התחברות.</value>
   </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>שמור על שמע</value>
-  </data>
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>צור</value>
   </data>
@@ -559,7 +553,7 @@
     <value>מזהה</value>
   </data>
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
-    <value>מזהה מפתח אפליקציה:</value>
+    <value>מזהה מפתח יישום:</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>מזהה אלבום להעלאה (ריק = ללא העלאת אלבום):</value>
@@ -626,9 +620,6 @@
     <value>העלה תמונות לאלבום שנבחר</value>
   </data>
   <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
-    <value>העלאה ציבורית</value>
-  </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
     <value>העלאה ציבורית</value>
   </data>
   <data name="lblFTPTransferMode.Text" xml:space="preserve">
@@ -1109,5 +1100,11 @@
   </data>
   <data name="lblZWSToken.Text" xml:space="preserve">
     <value>טוקן:</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>השתמש בקישור ישיר</value>
+  </data>
+  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
+    <value>ניתן לקבל מפתח משתמש מדף פרטי החשבון.</value>
   </data>
 </root>

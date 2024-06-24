@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -242,7 +242,8 @@ namespace ShareX.ScreenCaptureLib
     public enum FFmpegPaletteGenStatsMode
     {
         full,
-        diff
+        diff,
+        single
     }
 
     public enum FFmpegPaletteUseDither
@@ -252,7 +253,10 @@ namespace ShareX.ScreenCaptureLib
         heckbert,
         floyd_steinberg,
         sierra2,
-        sierra2_4a
+        sierra2_4a,
+        sierra3,
+        burkes,
+        atkinson
     }
 
     public enum RegionCaptureMode
@@ -315,22 +319,6 @@ namespace ShareX.ScreenCaptureLib
         ToolCutOut
     }
 
-    public enum ScrollingCaptureScrollMethod // Localized
-    {
-        Automatic,
-        SendMessageScroll,
-        KeyPressPageDown,
-        MouseWheel
-    }
-
-    public enum ScrollingCaptureScrollTopMethod // Localized
-    {
-        All,
-        SendMessageTop,
-        KeyPressHome,
-        None
-    }
-
     public enum ImageEditorStartMode // Localized
     {
         AutoSize,
@@ -375,5 +363,12 @@ namespace ShareX.ScreenCaptureLib
         Paused,
         Stopped,
         Aborted
+    }
+
+    public enum ScrollingCaptureStatus
+    {
+        Failed,
+        PartiallySuccessful,
+        Successful
     }
 }

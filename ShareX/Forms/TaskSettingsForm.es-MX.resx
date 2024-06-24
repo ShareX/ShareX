@@ -523,4 +523,133 @@ en el portapapeles</value>
   <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
     <value>Idioma predefinido:</value>
   </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>Tarea:</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>Buscar...</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>Sobreescribir carpeta de capturas de pantalla</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Sobreescribir servidor de carga predeterminado</value>
+  </data>
+  <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
+    <value>Sobreescribir cuenta FTP predeterminada</value>
+  </data>
+  <data name="cbOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Sobreescribir ajustes generales</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>Mostrar notificación emergente después de que la tarea se haya completado</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>Usar sonido de error personalizado:</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>Usar sonido de tarea completada personalizado:</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>Usar sonido de captura personalizado:</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>Ocultar automáticamente al capturar pantalla</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>Acción al hacer click con la rueda del ratón:</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>Acción al hacer click derecho:</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>Notificación emergente</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>Acción al hacer click izquierdo:</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>Tamaño:</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>Posición:</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>Duración de la transición:</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>Duración:</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>Desactivar notificaciones en pantalla completa</value>
+  </data>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>Desactivar notificaciones</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>Notificaciones</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>Ajustar calidad de JPEG automáticamente para mantener el tamaño de la imagen más cerca al tamaño especificado</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>Sobreescribir ajustes de imagen</value>
+  </data>
+  <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
+    <value>Usar efecto de imagen aleatorio</value>
+  </data>
+  <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Mostrar ventana de efectos de imagen luego de capturar</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Sobreescribir ajustes de captura</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Text" xml:space="preserve">
+    <value>Restringir región de captura y cursor al monitor activo</value>
+  </data>
+  <data name="lblRegionCaptureFPSLimit.Text" xml:space="preserve">
+    <value>Límite de FPS:</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>Usar región de selección transparente</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Iniciar grabación luego de:</value>
+  </data>
+  <data name="cbOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Sobreescribir ajustes de carga</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>Reemplazo:</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>Patrón:</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>Reemplazar URL resultante utilizando sustituciones con expresiones regulares</value>
+  </data>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>Acciones...</value>
+  </data>
+  <data name="cbOverrideActions.Text" xml:space="preserve">
+    <value>Sobreescribir acciones</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>Formato del selector de color de pantalla (Ctrl + click):</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>Texto de información del selector de color de pantalla:</value>
+  </data>
+  <data name="cbOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Sobreescribir ajustes de herramientas</value>
+  </data>
+  <data name="cbOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Sobreescribir ajustes avanzados</value>
+  </data>
 </root>

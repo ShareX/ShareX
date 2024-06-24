@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -40,6 +40,13 @@ namespace ShareX
         Steam,
         MicrosoftStore,
         Unknown
+    }
+
+    public enum UpdateChannel // Localized
+    {
+        Release,
+        PreRelease,
+        Dev
     }
 
     public enum SupportedLanguage
@@ -205,6 +212,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         ActiveWindow,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
+        CustomWindow,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         ActiveMonitor,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         RectangleRegion,
@@ -317,13 +326,6 @@ namespace ShareX
         ExitShareX
     }
 
-    public enum PopUpNotificationType // Localized
-    {
-        None,
-        BalloonTip,
-        ToastNotification
-    }
-
     public enum ToastClickAction // Localized
     {
         CloseNotification,
@@ -409,5 +411,15 @@ namespace ShareX
     {
         ListView,
         ThumbnailView
+    }
+
+    public enum NativeMessagingAction
+    {
+        None,
+        UploadImage,
+        UploadVideo,
+        UploadAudio,
+        UploadText,
+        ShortenURL
     }
 }

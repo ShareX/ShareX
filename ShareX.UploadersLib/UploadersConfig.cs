@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -176,18 +176,9 @@ namespace ShareX.UploadersLib
         public OAuth2Info OneDriveV2OAuth2Info { get; set; } = null;
         public OneDriveFileInfo OneDriveV2SelectedFolder { get; set; } = OneDrive.RootFolder;
         public bool OneDriveAutoCreateShareableLink { get; set; } = true;
+        public bool OneDriveUseDirectLink { get; set; } = false;
 
         #endregion OneDrive
-
-        #region Gfycat
-
-        public OAuth2Info GfycatOAuth2Info { get; set; } = null;
-        public AccountType GfycatAccountType { get; set; } = AccountType.Anonymous;
-        public bool GfycatIsPublic { get; set; } = false;
-        public bool GfycatKeepAudio { get; set; } = true;
-        public string GfycatTitle { get; set; } = "ShareX";
-
-        #endregion Gfycat
 
         #region Google Drive
 

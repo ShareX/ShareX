@@ -211,7 +211,7 @@
     <value>Capturar</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Copiar imagem para a área de transferência (Ctrl + Shift + C)</value>
+    <value>Copiar imagem para a área de transferência (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Imprimir imagem... (Ctrl + P)</value>
@@ -224,9 +224,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
     <value>Mudar para a ferramenta da forma depois do desenho</value>
-  </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Qualidade:</value>
   </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>Tipo de cursor:</value>
@@ -256,7 +253,7 @@
     <value>Captura de retângulo leve</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
-    <value>Guardar Imagem (Ctrl +S)</value>
+    <value>Guardar Imagem (Ctrl + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
     <value>Nova imagem...</value>
@@ -290,10 +287,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Redimensionar imagem automáticamente...</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Existem alterações pendentes!
-Deseja fechar o editor de imagens?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>Trazer para a frente</value>

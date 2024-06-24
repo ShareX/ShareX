@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -196,17 +196,6 @@ namespace ShareX
                 DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
             }
 
-            if (Settings.IsUpgradeFrom("13.0.2"))
-            {
-                Settings.UseCustomTheme = Settings.UseDarkTheme;
-            }
-
-            if (Settings.IsUpgradeFrom("13.4.0"))
-            {
-                DefaultTaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted =
-                    DefaultTaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None;
-            }
-
             if (Settings.IsUpgradeFrom("14.1.1"))
             {
                 if (Helpers.IsDefaultSettings(Settings.Themes, ShareXTheme.GetDefaultThemes(), (x, y) => x.Name == y.Name))
@@ -241,9 +230,23 @@ namespace ShareX
                 }
             }
 
-            if (Settings.IsUpgradeFrom("15.0.0"))
+            if (Settings.IsUpgradeFrom("15.0.1"))
             {
                 DefaultTaskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
+                DefaultTaskSettings.CaptureSettings.FFmpegOptions.FixSources();
+            }
+
+            if (Settings.IsUpgradeFrom("16.0.2"))
+            {
+                if (Settings.CheckPreReleaseUpdates)
+                {
+                    Settings.UpdateChannel = UpdateChannel.PreRelease;
+                }
+
+                if (!DefaultTaskSettings.CaptureSettings.SurfaceOptions.UseDimming)
+                {
+                    DefaultTaskSettings.CaptureSettings.SurfaceOptions.BackgroundDimStrength = 0;
+                }
             }
         }
 
@@ -282,40 +285,69 @@ namespace ShareX
 
         private static void HotkeysConfigBackwardCompatibilityTasks()
         {
-            if (HotkeysConfig.IsUpgradeFrom("13.1.1"))
+            if (Settings.IsUpgradeFrom("15.0.1"))
             {
                 foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))
                 {
-                    if (taskSettings != null && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CapturePath))
+                    if (taskSettings != null && taskSettings.CaptureSettings != null)
                     {
-                        taskSettings.OverrideScreenshotsFolder = true;
-                        taskSettings.ScreenshotsFolder = taskSettings.AdvancedSettings.CapturePath;
-                        taskSettings.AdvancedSettings.CapturePath = "";
+                        taskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
+                        taskSettings.CaptureSettings.FFmpegOptions.FixSources();
                     }
                 }
             }
         }
 
+        public static void CleanupHotkeysConfig()
+        {
+            foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))
+            {
+                taskSettings.Cleanup();
+            }
+        }
+
         public static void SaveAllSettings()
         {
-            if (Settings != null) Settings.Save(ApplicationConfigFilePath);
-            if (UploadersConfig != null) UploadersConfig.Save(UploadersConfigFilePath);
-            if (HotkeysConfig != null) HotkeysConfig.Save(HotkeysConfigFilePath);
+            if (Settings != null)
+            {
+                Settings.Save(ApplicationConfigFilePath);
+            }
+
+            if (UploadersConfig != null)
+            {
+                UploadersConfig.Save(UploadersConfigFilePath);
+            }
+
+            if (HotkeysConfig != null)
+            {
+                CleanupHotkeysConfig();
+                HotkeysConfig.Save(HotkeysConfigFilePath);
+            }
         }
 
         public static void SaveApplicationConfigAsync()
         {
-            if (Settings != null) Settings.SaveAsync(ApplicationConfigFilePath);
+            if (Settings != null)
+            {
+                Settings.SaveAsync(ApplicationConfigFilePath);
+            }
         }
 
         public static void SaveUploadersConfigAsync()
         {
-            if (UploadersConfig != null) UploadersConfig.SaveAsync(UploadersConfigFilePath);
+            if (UploadersConfig != null)
+            {
+                UploadersConfig.SaveAsync(UploadersConfigFilePath);
+            }
         }
 
         public static void SaveHotkeysConfigAsync()
         {
-            if (HotkeysConfig != null) HotkeysConfig.SaveAsync(HotkeysConfigFilePath);
+            if (HotkeysConfig != null)
+            {
+                CleanupHotkeysConfig();
+                HotkeysConfig.SaveAsync(HotkeysConfigFilePath);
+            }
         }
 
         public static void SaveAllSettingsAsync()

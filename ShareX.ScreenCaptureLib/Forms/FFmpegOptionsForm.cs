@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -46,7 +46,7 @@ namespace ShareX.ScreenCaptureLib
             Options = options;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             cbVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
             cbAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
@@ -59,8 +59,10 @@ namespace ShareX.ScreenCaptureLib
             cbAMFQuality.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAMFQuality>());
             cbQSVPreset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegQSVPreset>());
 
-            cbAACBitrate.Items.AddRange(Enumerable.Range(1, 16).Select(i => (i * 32).ToString()).ToArray());
-            cbOpusBitrate.Items.AddRange(Enumerable.Range(1, 16).Select(i => (i * 32).ToString()).ToArray());
+            cbAACBitrate.Items.AddRange(Helpers.Range(64, 320, 32).Cast<object>().ToArray());
+            cbOpusBitrate.Items.AddRange(Helpers.Range(32, 512, 32).Cast<object>().ToArray());
+            cbVorbisQuality.Items.AddRange(Helpers.Range(0, 10).Cast<object>().ToArray());
+            cbMP3Quality.Items.AddRange(Helpers.Range(9, 0).Cast<object>().ToArray());
         }
 
         private async Task LoadSettings()
@@ -117,16 +119,52 @@ namespace ShareX.ScreenCaptureLib
             nudQSVBitrate.SetValue(Options.FFmpeg.QSV_Bitrate);
 
             // AAC
-            cbAACBitrate.SelectedIndex = (Options.FFmpeg.AAC_Bitrate / 32) - 1;
+            int indexAACBitrate = cbAACBitrate.Items.IndexOf(Options.FFmpeg.AAC_Bitrate);
+
+            if (indexAACBitrate > -1)
+            {
+                cbAACBitrate.SelectedIndex = indexAACBitrate;
+            }
+            else
+            {
+                cbAACBitrate.SelectedIndex = cbAACBitrate.Items.IndexOf(128);
+            }
 
             // Opus
-            cbOpusBitrate.SelectedIndex = (Options.FFmpeg.Opus_Bitrate / 32) - 1;
+            int indexOpusBitrate = cbOpusBitrate.Items.IndexOf(Options.FFmpeg.Opus_Bitrate);
+
+            if (indexOpusBitrate > -1)
+            {
+                cbOpusBitrate.SelectedIndex = indexOpusBitrate;
+            }
+            else
+            {
+                cbOpusBitrate.SelectedIndex = cbOpusBitrate.Items.IndexOf(128);
+            }
 
             // Vorbis
-            tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_QScale;
+            int indexVorbisQuality = cbVorbisQuality.Items.IndexOf(Options.FFmpeg.Vorbis_QScale);
+
+            if (indexVorbisQuality > -1)
+            {
+                cbVorbisQuality.SelectedIndex = indexVorbisQuality;
+            }
+            else
+            {
+                cbVorbisQuality.SelectedIndex = cbVorbisQuality.Items.IndexOf(3);
+            }
 
             // MP3
-            tbMP3_qscale.Value = FFmpegCLIManager.mp3_max - Options.FFmpeg.MP3_QScale;
+            int indexMP3Quality = cbMP3Quality.Items.IndexOf(Options.FFmpeg.MP3_QScale);
+
+            if (indexMP3Quality > -1)
+            {
+                cbMP3Quality.SelectedIndex = indexMP3Quality;
+            }
+            else
+            {
+                cbMP3Quality.SelectedIndex = cbMP3Quality.Items.IndexOf(4);
+            }
 
             cbCustomCommands.Checked = Options.FFmpeg.UseCustomCommands;
 
@@ -222,9 +260,6 @@ namespace ShareX.ScreenCaptureLib
                 lblx264CRF.Text = Options.FFmpeg.x264_Use_Bitrate ? Resources.Bitrate : Resources.CRF;
                 nudx264CRF.Visible = !Options.FFmpeg.x264_Use_Bitrate;
                 nudx264Bitrate.Visible = lblx264BitrateK.Visible = Options.FFmpeg.x264_Use_Bitrate;
-
-                lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_QScale;
-                lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_QScale;
                 pbx264PresetWarning.Visible = (FFmpegPreset)cbx264Preset.SelectedIndex > FFmpegPreset.fast;
 
                 if (!Options.FFmpeg.UseCustomCommands)
@@ -489,25 +524,25 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbAACBitrate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.AAC_Bitrate = (cbAACBitrate.SelectedIndex + 1) * 32;
+            Options.FFmpeg.AAC_Bitrate = (int)cbAACBitrate.SelectedItem;
             UpdateUI();
         }
 
         private void cbOpusBitrate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Opus_Bitrate = (cbOpusBitrate.SelectedIndex + 1) * 32;
+            Options.FFmpeg.Opus_Bitrate = (int)cbOpusBitrate.SelectedItem;
             UpdateUI();
         }
 
-        private void tbVorbis_qscale_ValueChanged(object sender, EventArgs e)
+        private void cbVorbisQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Vorbis_QScale = tbVorbis_qscale.Value;
+            Options.FFmpeg.Vorbis_QScale = (int)cbVorbisQuality.SelectedItem;
             UpdateUI();
         }
 
-        private void tbMP3_qscale_ValueChanged(object sender, EventArgs e)
+        private void cbMP3Quality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.MP3_QScale = FFmpegCLIManager.mp3_max - tbMP3_qscale.Value;
+            Options.FFmpeg.MP3_QScale = (int)cbMP3Quality.SelectedItem;
             UpdateUI();
         }
 

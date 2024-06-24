@@ -150,4 +150,31 @@
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>檔名：</value>
   </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>重設</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>進階搜尋</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>進階搜尋...</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>搜尋</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>設定...</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>顯示統計資料...</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>切換顯示更多資訊</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>搜尋：</value>
+  </data>
 </root>

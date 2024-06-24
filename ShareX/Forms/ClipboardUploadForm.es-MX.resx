@@ -129,4 +129,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Visor de contenido del portapapeles</value>
   </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Subir</value>
+  </data>
 </root>

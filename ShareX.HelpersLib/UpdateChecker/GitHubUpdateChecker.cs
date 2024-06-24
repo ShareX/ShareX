@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
@@ -47,11 +48,11 @@ namespace ShareX.HelpersLib
             Repo = repo;
         }
 
-        public override void CheckUpdate()
+        public override async Task CheckUpdateAsync()
         {
             try
             {
-                GitHubRelease latestRelease = GetLatestRelease(IncludePreRelease);
+                GitHubRelease latestRelease = await GetLatestRelease(IncludePreRelease);
 
                 if (UpdateReleaseInfo(latestRelease, IsPortable, IsPortable))
                 {
@@ -67,11 +68,11 @@ namespace ShareX.HelpersLib
             Status = UpdateStatus.UpdateCheckFailed;
         }
 
-        public virtual string GetLatestDownloadURL(bool isBrowserDownloadURL)
+        public virtual async Task<string> GetLatestDownloadURL(bool isBrowserDownloadURL)
         {
             try
             {
-                GitHubRelease latestRelease = GetLatestRelease(IncludePreRelease);
+                GitHubRelease latestRelease = await GetLatestRelease(IncludePreRelease);
 
                 if (UpdateReleaseInfo(latestRelease, IsPortable, isBrowserDownloadURL))
                 {
@@ -86,11 +87,11 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        protected List<GitHubRelease> GetReleases()
+        protected async Task<List<GitHubRelease>> GetReleases()
         {
             List<GitHubRelease> releases = null;
 
-            string response = URLHelpers.DownloadString(ReleasesURL);
+            string response = await WebHelpers.DownloadStringAsync(ReleasesURL);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -105,11 +106,11 @@ namespace ShareX.HelpersLib
             return releases;
         }
 
-        protected GitHubRelease GetLatestRelease()
+        protected async Task<GitHubRelease> GetLatestRelease()
         {
             GitHubRelease latestRelease = null;
 
-            string response = URLHelpers.DownloadString(LatestReleaseURL);
+            string response = await WebHelpers.DownloadStringAsync(LatestReleaseURL);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -119,13 +120,13 @@ namespace ShareX.HelpersLib
             return latestRelease;
         }
 
-        protected GitHubRelease GetLatestRelease(bool includePreRelease)
+        protected async Task<GitHubRelease> GetLatestRelease(bool includePreRelease)
         {
             GitHubRelease latestRelease = null;
 
             if (includePreRelease)
             {
-                List<GitHubRelease> releases = GetReleases();
+                List<GitHubRelease> releases = await GetReleases();
 
                 if (releases != null && releases.Count > 0)
                 {
@@ -134,7 +135,7 @@ namespace ShareX.HelpersLib
             }
             else
             {
-                latestRelease = GetLatestRelease();
+                latestRelease = await GetLatestRelease();
             }
 
             return latestRelease;

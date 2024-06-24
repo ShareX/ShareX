@@ -187,7 +187,7 @@
     <value>1 Hour</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
-    <value>Scrolling capture</value>
+    <value>Start/Stop scrolling capture</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
     <value>Auto increment alphanumeric case-sensitive (0 pad left using {n})</value>
@@ -233,9 +233,6 @@
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>Hour</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>First simulate pressing "Home" key then send scroll top message</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>Update check failed</value>
@@ -387,7 +384,7 @@ Would you like to download it?</value>
     <value>Image uploader</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>Hash check</value>
+    <value>Hash checker</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>Start/Stop screen recording using active window region</value>
@@ -473,9 +470,6 @@ Would you like to download it?</value>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Ellipse region</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simulate pressing "Page down" key</value>
-  </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>DNS changer</value>
   </data>
@@ -549,7 +543,7 @@ Would you like to download it?</value>
     <value>File path with output file name extension</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>Google image search</value>
+    <value>Google Lens</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>Directory indexer</value>
@@ -580,14 +574,6 @@ Would you like to download it?</value>
   </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Loading image...</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Simulate pressing "Home" key</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>Progress: {0:0.0}%
-Download speed: {1:0.0} KB/s
-File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Capture last region</value>
@@ -654,7 +640,7 @@ Would you like to download and install it?</value>
     <value>Save thumbnail image to file</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>Downloading.</value>
+    <value>Downloading...</value>
   </data>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>Remove shape or cancel capture</value>
@@ -680,9 +666,6 @@ Would you like to download and install it?</value>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>URL sharing service</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Automatically try all methods until one works</value>
-  </data>
   <data name="ResponseType_LocationHeader" xml:space="preserve">
     <value>Location header</value>
   </data>
@@ -697,9 +680,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Random hexadecimal char (Repeat using {n})</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simulate mouse wheel scrolling</value>
   </data>
   <data name="PastebinPrivacy_Private" xml:space="preserve">
     <value>Private (members only)</value>
@@ -720,7 +700,7 @@ Would you like to download and install it?</value>
     <value>Process name of window</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
-    <value>Waiting.</value>
+    <value>Waiting...</value>
   </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>Image editor</value>
@@ -776,9 +756,6 @@ Would you like to download and install it?</value>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>Show "Before upload" window</value>
   </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Show toast notification with preview</value>
-  </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Show file in explorer</value>
   </data>
@@ -806,9 +783,6 @@ Would you like to download and install it?</value>
   <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
     <value>New line</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Disable scrolling to top</value>
-  </data>
   <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
     <value>Month name (English)</value>
   </data>
@@ -817,12 +791,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>Image width</value>
-  </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Show tray balloon tip</value>
   </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
     <value>Week name (English)</value>
@@ -888,7 +856,7 @@ Would you like to download and install it?</value>
     <value>Capture active monitor</value>
   </data>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>Getting file size.</value>
+    <value>Getting file size...</value>
   </data>
   <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>Other</value>
@@ -931,9 +899,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
     <value>Save image to file as...</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Send scroll top message</value>
   </data>
   <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
     <value>Copy name</value>
@@ -1004,14 +969,8 @@ Would you like to download and install it?</value>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Custom URL shortener</value>
   </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Show nothing</value>
-  </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Public</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Send scroll message to window or control</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
     <value>Overwrite file</value>
@@ -1315,5 +1274,29 @@ Would you like to download and install it?</value>
   </data>
   <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
     <value>Beautify image</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>Capture pre configured window</value>
+  </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>Dev</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>Pre-release</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>Release</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>Download speed</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>File size</value>
   </data>
 </root>

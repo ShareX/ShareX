@@ -123,45 +123,12 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 0</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblListViewTip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblListViewTip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 9.75pt</value>
-  </data>
-  <data name="lblListViewTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblListViewTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 20</value>
-  </data>
-  <data name="lblListViewTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="lblListViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 35</value>
-  </data>
-  <data name="lblListViewTip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblListViewTip.Name" xml:space="preserve">
-    <value>lblListViewTip</value>
-  </data>
-  <data name="&gt;&gt;lblListViewTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblListViewTip.Parent" xml:space="preserve">
-    <value>scMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;lblListViewTip.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>0, 0</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="chFilename.Width" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
@@ -214,13 +181,13 @@
     <value>lvUploads</value>
   </data>
   <data name="&gt;&gt;lvUploads.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvUploads.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lvUploads.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -250,7 +217,7 @@
     <value>pbPreview</value>
   </data>
   <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=16.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
     <value>scMain.Panel2</value>
@@ -286,13 +253,13 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=16.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pMain</value>
   </data>
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -600,11 +567,11 @@
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>QR code...</value>
   </data>
-  <data name="tsmiHashCheck.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiHashChecker.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Hash check...</value>
+  <data name="tsmiHashChecker.Text" xml:space="preserve">
+    <value>Hash checker...</value>
   </data>
   <data name="tsmiIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -879,17 +846,17 @@
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Donate...</value>
   </data>
-  <data name="tsbTwitter.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="tsbX.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="tsbTwitter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="tsbX.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="tsbTwitter.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsbX.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 20</value>
   </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter...</value>
+  <data name="tsbX.Text" xml:space="preserve">
+    <value>Follow @ShareX...</value>
   </data>
   <data name="tsbDiscord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -934,7 +901,7 @@
     <value>tsMain</value>
   </data>
   <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=16.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
     <value>pToolbars</value>
@@ -1278,17 +1245,17 @@
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Share URL</value>
   </data>
-  <data name="tsmiGoogleImageSearch.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiGoogleLens.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
-  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
-    <value>Google image search...</value>
+  <data name="tsmiGoogleLens.Text" xml:space="preserve">
+    <value>Google Lens...</value>
   </data>
   <data name="tsmiBingVisualSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
   <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
-    <value>Bing visual search (OCR)...</value>
+    <value>Bing visual search...</value>
   </data>
   <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1638,11 +1605,11 @@
   <data name="tsmiTrayQRCode.Text" xml:space="preserve">
     <value>QR code...</value>
   </data>
-  <data name="tsmiTrayHashCheck.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiTrayHashChecker.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Hash check...</value>
+  <data name="tsmiTrayHashChecker.Text" xml:space="preserve">
+    <value>Hash checker...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1854,42 +1821,6 @@
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
-  <data name="lblThumbnailViewTip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblThumbnailViewTip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lblThumbnailViewTip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 9.75pt</value>
-  </data>
-  <data name="lblThumbnailViewTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblThumbnailViewTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lblThumbnailViewTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="lblThumbnailViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 35</value>
-  </data>
-  <data name="lblThumbnailViewTip.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailViewTip.Name" xml:space="preserve">
-    <value>lblThumbnailViewTip</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailViewTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailViewTip.Parent" xml:space="preserve">
-    <value>pThumbnailView</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailViewTip.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ucTaskThumbnailView.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1909,37 +1840,13 @@
     <value>ucTaskThumbnailView</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.Type" xml:space="preserve">
-    <value>ShareX.TaskThumbnailView, ShareX, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.TaskThumbnailView, ShareX, Version=16.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.Parent" xml:space="preserve">
-    <value>pThumbnailView</value>
+    <value>pMain</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="pThumbnailView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pThumbnailView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 0</value>
-  </data>
-  <data name="pThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>679, 471</value>
-  </data>
-  <data name="pThumbnailView.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;pThumbnailView.Name" xml:space="preserve">
-    <value>pThumbnailView</value>
-  </data>
-  <data name="&gt;&gt;pThumbnailView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pThumbnailView.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pThumbnailView.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>567, 17</value>
@@ -1969,7 +1876,112 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pToolbars.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="cHotkeyStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cHotkeyStatus.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cHotkeyStatus.Width" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <metadata name="cHotkey.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="cHotkey.Width" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <metadata name="cDescription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cDescription.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="cDescription.Width" type="System.Int32, mscorlib">
+    <value>111</value>
+  </data>
+  <data name="dgvHotkeys.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dgvHotkeys.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="dgvHotkeys.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="dgvHotkeys.Size" type="System.Drawing.Size, System.Drawing">
+    <value>663, 455</value>
+  </data>
+  <data name="dgvHotkeys.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;dgvHotkeys.Name" xml:space="preserve">
+    <value>dgvHotkeys</value>
+  </data>
+  <data name="&gt;&gt;dgvHotkeys.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvHotkeys.Parent" xml:space="preserve">
+    <value>pHotkeys</value>
+  </data>
+  <data name="&gt;&gt;dgvHotkeys.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pHotkeys.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pHotkeys.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pHotkeys.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>16, 16, 0, 0</value>
+  </data>
+  <data name="pHotkeys.Size" type="System.Drawing.Size, System.Drawing">
+    <value>679, 471</value>
+  </data>
+  <data name="pHotkeys.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;pHotkeys.Name" xml:space="preserve">
+    <value>pHotkeys</value>
+  </data>
+  <data name="&gt;&gt;pHotkeys.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pHotkeys.Parent" xml:space="preserve">
+    <value>pMain</value>
+  </data>
+  <data name="&gt;&gt;pHotkeys.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 0</value>
+  </data>
+  <data name="pMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>679, 471</value>
+  </data>
+  <data name="pMain.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;pMain.Name" xml:space="preserve">
+    <value>pMain</value>
+  </data>
+  <data name="&gt;&gt;pMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pMain.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2331,10 +2343,10 @@
   <data name="&gt;&gt;tsmiQRCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiHashCheck.Name" xml:space="preserve">
-    <value>tsmiHashCheck</value>
+  <data name="&gt;&gt;tsmiHashChecker.Name" xml:space="preserve">
+    <value>tsmiHashChecker</value>
   </data>
-  <data name="&gt;&gt;tsmiHashCheck.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiHashChecker.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiIndexFolder.Name" xml:space="preserve">
@@ -2547,10 +2559,10 @@
   <data name="&gt;&gt;tsbDonate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbTwitter.Name" xml:space="preserve">
-    <value>tsbTwitter</value>
+  <data name="&gt;&gt;tsbX.Name" xml:space="preserve">
+    <value>tsbX</value>
   </data>
-  <data name="&gt;&gt;tsbTwitter.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsbX.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbDiscord.Name" xml:space="preserve">
@@ -2877,10 +2889,10 @@
   <data name="&gt;&gt;tsmiShareSelectedURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiGoogleImageSearch.Name" xml:space="preserve">
-    <value>tsmiGoogleImageSearch</value>
+  <data name="&gt;&gt;tsmiGoogleLens.Name" xml:space="preserve">
+    <value>tsmiGoogleLens</value>
   </data>
-  <data name="&gt;&gt;tsmiGoogleImageSearch.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiGoogleLens.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiBingVisualSearch.Name" xml:space="preserve">
@@ -3249,10 +3261,10 @@
   <data name="&gt;&gt;tsmiTrayQRCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayHashCheck.Name" xml:space="preserve">
-    <value>tsmiTrayHashCheck</value>
+  <data name="&gt;&gt;tsmiTrayHashChecker.Name" xml:space="preserve">
+    <value>tsmiTrayHashChecker</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayHashCheck.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiTrayHashChecker.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayIndexFolder.Name" xml:space="preserve">
@@ -3465,10 +3477,28 @@
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;cHotkeyStatus.Name" xml:space="preserve">
+    <value>cHotkeyStatus</value>
+  </data>
+  <data name="&gt;&gt;cHotkeyStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cHotkey.Name" xml:space="preserve">
+    <value>cHotkey</value>
+  </data>
+  <data name="&gt;&gt;cHotkey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cDescription.Name" xml:space="preserve">
+    <value>cDescription</value>
+  </data>
+  <data name="&gt;&gt;cDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.HotkeyForm, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.HotkeyForm, ShareX.HelpersLib, Version=16.0.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

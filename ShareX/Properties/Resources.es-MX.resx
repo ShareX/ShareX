@@ -279,7 +279,7 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
 aquí</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
-    <value>Atajos de teclado habilitados</value>
+    <value>Atajos de teclado habilitados.</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>atajos de teclado</value>
@@ -357,9 +357,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Elegir ubicación de la carpeta de capturas</value>
-  </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Atajos de teclado configurados actualmente:</value>
   </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Clic izq. para copiar el enlace al portapapeles. Clic derecho para abrirlo.</value>
@@ -506,5 +503,153 @@ Clic medio para cerrar</value>
   </data>
   <data name="SwitchToThumbnailView" xml:space="preserve">
     <value>Cambiar a vista de miniaturas</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX está minimizado en la bandeja del sistema.</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Fijar a la pantalla</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Portugués</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>Procesar nombre</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Nombre de clase</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Contenido del portapapeles: Archivo (Cantidad: {0})</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>FFmpeg que incluye ShareX solo soporta sistemas operativos de 64 bits.</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Contenido del portapapeles: Texto (Longitud: {0})</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Nombre de proceso del archivo</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg no encontrado</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pl" xml:space="preserve">
+    <value>Polaco</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>Política de privacidad</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ro" xml:space="preserve">
+    <value>Rumano</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>Hebreo</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>¡Esta característica no funcionará cuando la opción "DesactivarCarga" esté activada!</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Rectángulo de ventana</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>¿Te gustaría activar los efectos de imagen?
+
+Puedes desactivarlo más adelante desde el menú "Tareas después de capturar".</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Persa</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>Enlaces</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>El portapapeles no contiene una imagen.</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>Tu antivirus o la característica de control de carpetas en Windows podría estar bloqueando ShareX.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Japonés</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>Error de FFmpeg</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>¿Te gustaría restablecer los temas?</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Selector de colores de pantalla</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Estilos de ventana</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>La característica de reconocimiento óptico de caracteres (OCR) solo está disponible en la versión de Windows {0} o superior.</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmación</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Título de ventana</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Contenido del portapapeles: Imagen (Tamaño: {0}x{1})</value>
+  </data>
+  <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
+    <value>Estilos de ventana extendidos</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>La fuente de audio y video FFmpeg no pueden ser ambos "Ninguno".</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Identificador de procesos</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>No se pudo encontrar una ventana con el título de ventana especificado.</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Error al guardar los ajustes</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Identificador de ventana</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>Rectángulo del cliente</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>Equipo</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>El FFmpeg no existe en la siguiente ruta:</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>No se pudo escribir la imagen en la ruta:</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>El portapapeles está vacío o contiene datos desconocidos.</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>El administrador de tu sistema desactivó la característica de carga.</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>ShareX no se puede cerrar mientras la grabación de pantalla está activa.
+
+¿Quieres detener la grabación de pantalla?</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>¡ShareX está actualizado!</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>Carga de portapapeles</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>¿Te gustaría reintentar la carga del portapapeles?</value>
   </data>
 </root>

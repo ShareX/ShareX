@@ -150,4 +150,31 @@
   <data name="lblURLFilter.Text" xml:space="preserve">
     <value>Enlace:</value>
   </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Buscar:</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>Búsqueda avanzada...</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>Activar/Desactivar más información</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Mostrar estadísticas...</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Ajustes...</value>
+  </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>Restablecer</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>Búsqueda avanzada</value>
+  </data>
 </root>

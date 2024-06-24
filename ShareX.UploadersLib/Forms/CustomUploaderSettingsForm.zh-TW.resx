@@ -195,7 +195,7 @@
     <value>方法：</value>
   </data>
   <data name="lblRequestURL.Text" xml:space="preserve">
-    <value>網址：</value>
+    <value>請求網址：</value>
   </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>刪除網址：</value>
@@ -226,5 +226,20 @@
   </data>
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
     <value>更新資料夾...</value>
+  </data>
+  <data name="btnTestURLSyntax.Text" xml:space="preserve">
+    <value>測試...</value>
+  </data>
+  <data name="lblResultErrorMessage.Text" xml:space="preserve">
+    <value>錯誤訊息：</value>
+  </data>
+  <data name="lblUploaders.Text" xml:space="preserve">
+    <value>上傳工具：</value>
+  </data>
+  <data name="mbHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="tsmiClearUploaders.Text" xml:space="preserve">
+    <value>清除上傳工具...</value>
   </data>
 </root>

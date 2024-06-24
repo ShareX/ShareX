@@ -279,9 +279,6 @@
   <data name="lblFTPTransferMode.Text" xml:space="preserve">
     <value>Tryb transferu:</value>
   </data>
-  <data name="lblGfycatTitle.Text" xml:space="preserve">
-    <value>Tytuł:</value>
-  </data>
   <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
     <value>Podgląd</value>
   </data>
@@ -410,12 +407,6 @@
   </data>
   <data name="cbGistPublishPublic.Text" xml:space="preserve">
     <value>Utwórz publiczny Gist</value>
-  </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>Zachowaj dźwięk</value>
-  </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Publiczne przesyłanie</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
     <value>Przesyłanie publiczne?</value>
@@ -1091,5 +1082,8 @@ Używanie zaszyfrowanej biblioteki wyłącza udostępnianie.</value>
   </data>
   <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
     <value>Wklej URL API:</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Użyj bezpośredniego linku</value>
   </data>
 </root>

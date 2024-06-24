@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -241,12 +241,12 @@ namespace ShareX.MediaLib
 
         private void OnUploadImageRequested()
         {
-            UploadImageRequested?.Invoke(PreviewImage);
+            UploadImageRequested?.Invoke(PreviewImage.CloneSafe());
         }
 
         private void OnPrintImageRequested()
         {
-            PrintImageRequested?.Invoke(PreviewImage);
+            PrintImageRequested?.Invoke(PreviewImage.CloneSafe());
         }
 
         private async void ImageBeautifierForm_Shown(object sender, EventArgs e)
@@ -293,13 +293,13 @@ namespace ShareX.MediaLib
         {
             if (btnShadowExpand.Tag is "+")
             {
-                gbShadow.Size = new Size(gbShadow.Width, 368);
+                gbShadow.Size = new Size(gbShadow.Width, btnShadowColor.Bottom + 16);
                 btnShadowExpand.Image = Resources.minus_white;
                 btnShadowExpand.Tag = "-";
             }
             else
             {
-                gbShadow.Size = new Size(gbShadow.Width, 104);
+                gbShadow.Size = new Size(gbShadow.Width, tbShadowRadius.Bottom + 16);
                 btnShadowExpand.Image = Resources.plus_white;
                 btnShadowExpand.Tag = "+";
             }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -56,20 +56,24 @@ namespace ShareX.HelpersLib
 
         public static void CloseOnEscape(this Form form)
         {
+            bool escapePressed = false;
+
             form.KeyPreview = true;
 
             form.KeyDown += (sender, e) =>
             {
                 if (e.KeyCode == Keys.Escape)
                 {
+                    escapePressed = true;
                     e.SuppressKeyPress = true;
                 }
             };
 
             form.KeyUp += (sender, e) =>
             {
-                if (e.KeyCode == Keys.Escape)
+                if (e.KeyCode == Keys.Escape && escapePressed)
                 {
+                    escapePressed = false;
                     form.DialogResult = DialogResult.Cancel;
                     form.Close();
                 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -702,16 +702,18 @@ namespace ShareX.UploadersLib
         public UserPassBox SendSpaceRegister()
         {
             UserPassBox upb = new UserPassBox(Resources.UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___, "John Doe", "john.doe@gmail.com", "JohnDoe", "");
-            upb.ShowDialog();
-            if (upb.DialogResult == DialogResult.OK)
+
+            if (upb.ShowDialog() == DialogResult.OK)
             {
                 SendSpace sendSpace = new SendSpace(APIKeys.SendSpaceKey);
                 upb.Success = sendSpace.AuthRegister(upb.UserName, upb.FullName, upb.Email, upb.Password);
+
                 if (!upb.Success && sendSpace.Errors.Count > 0)
                 {
                     MessageBox.Show(sendSpace.ToErrorString(), Resources.UploadersConfigForm_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
             return upb;
         }
 

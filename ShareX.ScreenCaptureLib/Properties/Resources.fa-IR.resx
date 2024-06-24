@@ -150,9 +150,6 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>ناحیه ضبط</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>کیفیت:</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>تنظیمات</value>
   </data>
@@ -216,10 +213,6 @@
   <data name="ImageEffects" xml:space="preserve">
     <value>اضافه کردن افکت های عکس...</value>
   </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>تغییرات ذخیره نشده اند.
-آیا میخواهید پنجره ویرایش عکس را ببندید؟</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
     <value>ضبط صفحه نمایش جاری</value>
   </data>
@@ -248,13 +241,13 @@
     <value>اوردن به جلو</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
-    <value>انصراف از وظیفه (ESC)</value>
+    <value>انصراف از وظیفه (Esc)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>ادامه دادن وظیفه (کلید space یا راست کلیک)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>کپی کردن تصویر به کلیپ بورد (CTRL + SHIFT + C)</value>
+    <value>کپی کردن تصویر به کلیپ بورد (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>بریدن عکس ...</value>

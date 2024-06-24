@@ -763,23 +763,14 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="TaskViewMode_ListView" xml:space="preserve">
     <value>Widok listy</value>
   </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Pokaż wyskakujące powiadomienie z podglądem</value>
-  </data>
   <data name="Target" xml:space="preserve">
     <value>Cel:</value>
   </data>
   <data name="Stop" xml:space="preserve">
     <value>Zatrzymaj</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Rozpocznij</value>
-  </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatycznie</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Automatycznie wypróbuj wszystkie metody, aż jedna zadziała</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Prześlij plik</value>
@@ -961,12 +952,6 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
     <value>Niepubliczny</value>
   </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Pokaż wskazówki w zasobniku systemowym</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Nie pokazuj niczego</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Nazwa: {0}, Rozmiar: {1}</value>
   </data>
@@ -1126,15 +1111,6 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   <data name="ToastClickAction_OpenUrl" xml:space="preserve">
     <value>Otwórz link</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Najpierw zasymuluj naciśnięcie klawisza "Home", a następnie wyślij wiadomość "scroll top"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Wyłącz przewijanie w górę</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Wyślij wiadomość "scroll top"</value>
-  </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Przeglądaj w poszukiwaniu kaskadowego arkusza stylów...</value>
   </data>
@@ -1175,22 +1151,13 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
     <value>Wyszukiwanie wizualne Bing</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>Wyszukiwarka grafiki Google</value>
+    <value>Google Lens</value>
   </data>
   <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
     <value>Nazwa procesu okna</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Losowy GUID</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Symuluj naciśnięcie klawisza "Home"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Symuluj naciśnięcie klawisza "Page down"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Symuluj przewijanie kółkiem myszy</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
     <value>Liczba losowa od 0 do 9 (powtarzaj za pomocą {n})</value>
@@ -1224,9 +1191,6 @@ Rozmiar pliku: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Automatyczne zwiększanie o podstawę {n} za pomocą znaków alfanumerycznych (1 &lt; n &lt; 63)</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Wyślij wiadomość przewijania do okna/kontroli</value>
   </data>
   <data name="ShareXImageViewer" xml:space="preserve">
     <value>ShareX - Przeglądarka obrazów</value>

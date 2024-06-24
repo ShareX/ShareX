@@ -643,6 +643,15 @@
     <value>Задача:</value>
   </data>
   <data name="tpOCR.Text" xml:space="preserve">
-    <value>Распознавание текста (OCR)</value>
+    <value>Распознавание текста</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Text" xml:space="preserve">
+    <value>Заголовок подготовленного окна:</value>
+  </data>
+  <data name="cbCloseWindowAfterOpenServiceLink.Text" xml:space="preserve">
+    <value>Закрывать окно OCR после отрывания ссылки сервиса</value>
+  </data>
+  <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
+    <value>Применять случайный эффект изображения</value>
   </data>
 </root>

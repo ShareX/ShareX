@@ -791,12 +791,6 @@
   <data name="tpAzureStorage.Text" xml:space="preserve">
     <value>Azure Storage</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>공개 업로드</value>
-  </data>
-  <data name="tpGfycat.Text" xml:space="preserve">
-    <value>Gfycat</value>
-  </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
   </data>
@@ -1208,5 +1202,8 @@
   </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>자동으로 공유된 링크 만료</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>핫링크 사용하기</value>
   </data>
 </root>

@@ -216,9 +216,6 @@
   <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
     <value>FPSを表示</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>品質:</value>
-  </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>カーソルの種類:</value>
   </data>
@@ -356,9 +353,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
     <value>ピクセルの大きさ:</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>保存されていませんが、画像エディタを閉じていいですか？</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - 画像エディタ</value>

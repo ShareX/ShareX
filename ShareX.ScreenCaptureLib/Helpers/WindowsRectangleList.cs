@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -35,42 +35,35 @@ namespace ShareX.ScreenCaptureLib
     {
         public IntPtr IgnoreHandle { get; set; }
         public bool IncludeChildWindows { get; set; }
+        public int Timeout { get; set; }
 
         private List<SimpleWindowInfo> windows;
         private HashSet<IntPtr> parentHandles;
-
-        public List<SimpleWindowInfo> GetWindowInfoListAsync(int timeout)
-        {
-            List<SimpleWindowInfo> windowInfoList = null;
-
-            Thread t = new Thread(() =>
-            {
-                try
-                {
-                    windowInfoList = GetWindowInfoList();
-                }
-                catch
-                {
-                }
-            });
-
-            t.Start();
-
-            if (!t.Join(timeout))
-            {
-                t.Abort();
-            }
-
-            return windowInfoList;
-        }
+        private CancellationTokenSource cts;
 
         public List<SimpleWindowInfo> GetWindowInfoList()
         {
             windows = new List<SimpleWindowInfo>();
             parentHandles = new HashSet<IntPtr>();
 
-            EnumWindowsProc ewp = EvalWindow;
-            NativeMethods.EnumWindows(ewp, IntPtr.Zero);
+            try
+            {
+                if (Timeout > 0)
+                {
+                    cts = new CancellationTokenSource();
+                    cts.CancelAfter(Timeout);
+                }
+
+                EnumWindowsProc ewp = EvalWindow;
+                NativeMethods.EnumWindows(ewp, IntPtr.Zero);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                cts?.Dispose();
+            }
 
             List<SimpleWindowInfo> result = new List<SimpleWindowInfo>();
 
@@ -111,6 +104,11 @@ namespace ShareX.ScreenCaptureLib
 
         private bool CheckHandle(IntPtr handle, bool isWindow)
         {
+            if (cts != null && cts.IsCancellationRequested)
+            {
+                return false;
+            }
+
             if (handle == IgnoreHandle || !NativeMethods.IsWindowVisible(handle) || (isWindow && NativeMethods.IsWindowCloaked(handle)))
             {
                 return true;

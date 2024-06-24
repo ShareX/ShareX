@@ -863,9 +863,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="btnPaste_eeGetUserKey.Text" xml:space="preserve">
     <value>Lấy key user...</value>
   </data>
-  <data name="tpGfycat.Text" xml:space="preserve">
-    <value>Gfycat</value>
-  </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
   </data>
@@ -1082,9 +1079,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>Tải lên công khai?</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Tải lên công khai?</value>
-  </data>
   <data name="cbPolrIsSecret.Text" xml:space="preserve">
     <value>Là URL bí mật</value>
   </data>
@@ -1221,9 +1215,6 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
     <value>Ảnh</value>
   </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>Giữ lại âm thanh</value>
-  </data>
   <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
     <value>Đặt quyền công khai cho tệp (public-read ACL)</value>
   </data>
@@ -1281,9 +1272,6 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
     <value>Cấp truy cập liên kết được chia sẻ:</value>
   </data>
-  <data name="lblGfycatTitle.Text" xml:space="preserve">
-    <value>Tiêu đề:</value>
-  </data>
   <data name="lblKuttDomain.Text" xml:space="preserve">
     <value>Tên miền:</value>
   </data>
@@ -1295,5 +1283,8 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   </data>
   <data name="lblZWSToken.Text" xml:space="preserve">
     <value>Token:</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Dùng liên kết trực tiếp</value>
   </data>
 </root>

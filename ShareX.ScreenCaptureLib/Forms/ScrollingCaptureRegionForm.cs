@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,28 +36,26 @@ namespace ShareX.ScreenCaptureLib
             get
             {
                 CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= (int)(WindowStyles.WS_EX_TOPMOST | WindowStyles.WS_EX_TOOLWINDOW);
+                createParams.ExStyle |= (int)(WindowStyles.WS_EX_TOPMOST | WindowStyles.WS_EX_TRANSPARENT | WindowStyles.WS_EX_TOOLWINDOW);
                 return createParams;
             }
         }
 
         private Rectangle borderRectangle;
-        private Rectangle borderRectangle0Based;
+        private Rectangle borderRectangleClient;
 
         public ScrollingCaptureRegionForm(Rectangle regionRectangle)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
 
             borderRectangle = regionRectangle.Offset(1);
-            borderRectangle0Based = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
+            borderRectangleClient = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
 
             Location = borderRectangle.Location;
             Size = borderRectangle.Size;
 
-            Region region = new Region(ClientRectangle);
-            region.Exclude(borderRectangle0Based.Offset(-1));
-            Region = region;
+            BackColor = Color.Magenta;
+            TransparencyKey = Color.Magenta;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -65,8 +63,8 @@ namespace ShareX.ScreenCaptureLib
             using (Pen pen1 = new Pen(ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : Color.Black) { DashPattern = new float[] { 5, 5 } })
             using (Pen pen2 = new Pen(Color.Lime) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
             {
-                e.Graphics.DrawRectangleProper(pen1, borderRectangle0Based);
-                e.Graphics.DrawRectangleProper(pen2, borderRectangle0Based);
+                e.Graphics.DrawRectangleProper(pen1, borderRectangleClient);
+                e.Graphics.DrawRectangleProper(pen2, borderRectangleClient);
             }
 
             base.OnPaint(e);

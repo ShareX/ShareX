@@ -359,9 +359,6 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Pilih jalur folder screenshot</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Tombol cepat yang dikonfigurasi saat ini:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Klik kiri untuk menyalin URL ke papan klip. Klik kanan untuk membuka URL.</value>
   </data>

@@ -123,9 +123,6 @@
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X : {0} Y : {1} L : {2} H : {3}</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Qualité :</value>
-  </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Capturer une région</value>
   </data>
@@ -368,10 +365,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
     <value>Basculer vers l'outil de dessin après avoir sélectionné la forme</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Il y a des changements non sauvegardés.
-Voulez-vous fermer l'éditeur d'image ?</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Cette fenêtre va se fermer avant d'ouvrir la page web des raccourcis clavier. Voulez-vous continuer ?</value>

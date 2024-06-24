@@ -543,4 +543,7 @@
   <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
     <value>غیرفعال</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>از لینک مستقیم استفاده کن</value>
+  </data>
 </root>

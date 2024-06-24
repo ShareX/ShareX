@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,10 +26,9 @@
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
-using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -42,7 +41,6 @@ namespace ShareX.HelpersLib
         public string URL { get; set; }
         public string FileName { get; set; }
         public string DownloadLocation { get; private set; }
-        public IWebProxy Proxy { get; set; }
         public string AcceptHeader { get; set; }
         public bool AutoStartDownload { get; set; }
         public InstallType InstallType { get; set; }
@@ -57,7 +55,6 @@ namespace ShareX.HelpersLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
             ChangeStatus(Resources.DownloaderForm_DownloaderForm_Waiting_);
             Status = DownloaderFormStatus.Waiting;
             AutoStartDownload = true;
@@ -81,21 +78,21 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void DownloaderForm_Shown(object sender, EventArgs e)
+        private async void DownloaderForm_Shown(object sender, EventArgs e)
         {
             if (AutoStartDownload)
             {
-                StartDownload();
+                await StartDownload();
             }
         }
 
-        private void btnAction_MouseClick(object sender, MouseEventArgs e)
+        private async void btnAction_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 if (Status == DownloaderFormStatus.Waiting)
                 {
-                    StartDownload();
+                    await StartDownload();
                 }
                 else if (Status == DownloaderFormStatus.DownloadCompleted)
                 {
@@ -131,6 +128,7 @@ namespace ShareX.HelpersLib
                     Thread.Sleep(delay);
                     RunInstaller();
                 });
+
                 thread.Start();
             }
             else
@@ -197,17 +195,7 @@ namespace ShareX.HelpersLib
             lblStatus.Text = Helpers.SafeStringFormat(Resources.DownloaderForm_ChangeStatus_Status___0_, status);
         }
 
-        private void ChangeProgress()
-        {
-            if (fileDownloader != null)
-            {
-                pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
-                lblProgress.Text = Helpers.SafeStringFormat(CultureInfo.CurrentCulture, Resources.DownloaderForm_ChangeProgress_Progress,
-                    fileDownloader.DownloadPercentage, fileDownloader.DownloadSpeed / 1024, fileDownloader.DownloadedSize / 1024, fileDownloader.FileSize / 1024);
-            }
-        }
-
-        private void StartDownload()
+        private async Task StartDownload()
         {
             if (!string.IsNullOrEmpty(URL) && Status == DownloaderFormStatus.Waiting)
             {
@@ -220,27 +208,52 @@ namespace ShareX.HelpersLib
 
                 DebugHelper.WriteLine($"Downloading: \"{URL}\" -> \"{DownloadLocation}\"");
 
-                fileDownloader = new FileDownloader(URL, DownloadLocation, Proxy, AcceptHeader);
-                fileDownloader.FileSizeReceived += (v1, v2) => ChangeProgress();
-                fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);
-                fileDownloader.ProgressChanged += (v1, v2) => ChangeProgress();
-                fileDownloader.DownloadCompleted += fileDownloader_DownloadCompleted;
-                fileDownloader.ExceptionThrown += (v1, v2) => ChangeStatus(fileDownloader.LastException.Message);
-                fileDownloader.StartDownload();
+                fileDownloader = new FileDownloader(URL, DownloadLocation);
+                fileDownloader.AcceptHeader = AcceptHeader;
+                fileDownloader.FileSizeReceived += FileDownloader_FileSizeReceived;
+                fileDownloader.ProgressChanged += FileDownloader_ProgressChanged;
 
                 ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);
+
+                try
+                {
+                    bool downloadStatus = await fileDownloader.StartDownload();
+
+                    if (downloadStatus)
+                    {
+                        ChangeStatus(Resources.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
+                        Status = DownloaderFormStatus.DownloadCompleted;
+                        btnAction.Text = Resources.DownloaderForm_fileDownloader_DownloadCompleted_Install;
+
+                        if (AutoStartInstall)
+                        {
+                            Install();
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    ChangeStatus(e.Message);
+                }
             }
         }
 
-        private void fileDownloader_DownloadCompleted(object sender, EventArgs e)
+        private void FileDownloader_FileSizeReceived()
         {
-            ChangeStatus(Resources.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
-            Status = DownloaderFormStatus.DownloadCompleted;
-            btnAction.Text = Resources.DownloaderForm_fileDownloader_DownloadCompleted_Install;
+            ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);
 
-            if (AutoStartInstall)
+            FileDownloader_ProgressChanged();
+        }
+
+        private void FileDownloader_ProgressChanged()
+        {
+            if (fileDownloader != null)
             {
-                Install();
+                pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
+
+                lblProgress.Text = $@"{Resources.DownloaderForm_FileDownloader_ProgressChanged_Progress}: {fileDownloader.DownloadPercentage:0.0}%
+{Resources.DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed}: {((long)fileDownloader.DownloadSpeed).ToSizeString()}/s
+{Resources.DownloaderForm_FileDownloader_ProgressChanged_FileSize}: {fileDownloader.DownloadedSize.ToSizeString()} / {fileDownloader.FileSize.ToSizeString()}";
             }
         }
 

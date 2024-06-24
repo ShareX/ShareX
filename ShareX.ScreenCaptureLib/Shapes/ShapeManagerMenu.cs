@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -48,8 +48,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
-            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
+        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiRedo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
+            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiCutOutBackgroundColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
@@ -668,6 +668,22 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCutOutEffectSize);
 
+            tsmiCutOutBackgroundColor = new ToolStripMenuItem(Resources.CutOutBackgroundColor);
+            tsmiCutOutBackgroundColor.Click += (sender, e) =>
+            {
+                Form.Pause();
+
+                if (PickColor(AnnotationOptions.CutOutBackgroundColor, out Color newColor))
+                {
+                    AnnotationOptions.CutOutBackgroundColor = newColor;
+                    UpdateMenu();
+                    UpdateCurrentShape();
+                }
+
+                Form.Resume();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tsmiCutOutBackgroundColor);
+
             // In dropdown menu if only last item is visible then menu opens at 0, 0 position on first open, so need to add dummy item to solve this weird bug...
             tsddbShapeOptions.DropDownItems.Add(new ToolStripSeparator() { Visible = false });
 
@@ -683,8 +699,14 @@ namespace ShareX.ScreenCaptureLib
             tsmiUndo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Undo);
             tsmiUndo.Image = Resources.arrow_circle_225_left;
             tsmiUndo.ShortcutKeyDisplayString = "Ctrl+Z";
-            tsmiUndo.Click += (sender, e) => UndoShape();
+            tsmiUndo.Click += (sender, e) => history.Undo();
             tsddbEdit.DropDownItems.Add(tsmiUndo);
+
+            tsmiRedo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Redo);
+            tsmiRedo.Image = Resources.arrow_circle_315;
+            tsmiRedo.ShortcutKeyDisplayString = "Ctrl+Y";
+            tsmiRedo.Click += (sender, e) => history.Redo();
+            tsddbEdit.DropDownItems.Add(tsmiRedo);
 
             ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_PasteImageText);
             tsmiPaste.Image = Resources.clipboard;
@@ -709,7 +731,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiDeleteAll = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DeleteAll);
             tsmiDeleteAll.Image = Resources.eraser;
             tsmiDeleteAll.ShortcutKeyDisplayString = "Shift+Del";
-            tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes();
+            tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes(true);
             tsddbEdit.DropDownItems.Add(tsmiDeleteAll);
 
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
@@ -1288,42 +1310,45 @@ namespace ShareX.ScreenCaptureLib
 
         private void CheckMenuPosition()
         {
-            Rectangle rectMenu = menuForm.Bounds;
-            Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
-            Point pos = rectMenu.Location;
-
-            if (rectMenu.Width < rectScreen.Width)
+            if (!Form.IsEditorMode)
             {
-                if (rectMenu.X < rectScreen.X)
-                {
-                    pos.X = rectScreen.X;
-                }
-                else if (rectMenu.Right > rectScreen.Right)
-                {
-                    pos.X = rectScreen.Right - rectMenu.Width;
-                }
-            }
+                Rectangle rectMenu = menuForm.Bounds;
+                Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
+                Point pos = rectMenu.Location;
 
-            if (rectMenu.Height < rectScreen.Height)
-            {
-                if (rectMenu.Y < rectScreen.Y)
+                if (rectMenu.Width < rectScreen.Width)
                 {
-                    pos.Y = rectScreen.Y;
+                    if (rectMenu.X < rectScreen.X)
+                    {
+                        pos.X = rectScreen.X;
+                    }
+                    else if (rectMenu.Right > rectScreen.Right)
+                    {
+                        pos.X = rectScreen.Right - rectMenu.Width;
+                    }
                 }
-                else if (rectMenu.Bottom > rectScreen.Bottom)
+
+                if (rectMenu.Height < rectScreen.Height)
                 {
-                    pos.Y = rectScreen.Bottom - rectMenu.Height;
+                    if (rectMenu.Y < rectScreen.Y)
+                    {
+                        pos.Y = rectScreen.Y;
+                    }
+                    else if (rectMenu.Bottom > rectScreen.Bottom)
+                    {
+                        pos.Y = rectScreen.Bottom - rectMenu.Height;
+                    }
                 }
-            }
 
-            if (pos != rectMenu.Location)
-            {
-                menuForm.Location = pos;
-            }
+                if (pos != rectMenu.Location)
+                {
+                    menuForm.Location = pos;
+                }
 
-            if (!Form.IsEditorMode && Options.RememberMenuState)
-            {
-                Options.MenuPosition = pos;
+                if (Options.RememberMenuState)
+                {
+                    Options.MenuPosition = pos;
+                }
             }
         }
 
@@ -1486,6 +1511,9 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCutOutEffectSize.Content.Value = AnnotationOptions.CutOutEffectSize;
 
+            if (tsmiCutOutBackgroundColor.Image != null) tsmiCutOutBackgroundColor.Image.Dispose();
+            tsmiCutOutBackgroundColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.CutOutBackgroundColor, new Rectangle(0, 0, 16, 16));
+
             switch (shapeType)
             {
                 default:
@@ -1513,7 +1541,9 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            tsmiUndo.Enabled = tsmiDeleteAll.Enabled = Shapes.Count > 0;
+            tsmiUndo.Enabled = history.CanUndo;
+            tsmiRedo.Enabled = history.CanRedo;
+            tsmiDeleteAll.Enabled = Shapes.Count > 0;
             tsmiDuplicate.Enabled = tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
 
             switch (shapeType)
@@ -1597,6 +1627,7 @@ namespace ShareX.ScreenCaptureLib
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
             tscbCutOutEffectType.Visible = shapeType == ShapeType.ToolCutOut;
             tslnudCutOutEffectSize.Visible = shapeType == ShapeType.ToolCutOut;
+            tsmiCutOutBackgroundColor.Visible = shapeType == ShapeType.ToolCutOut;
 
             if (tsmiRegionCapture != null)
             {

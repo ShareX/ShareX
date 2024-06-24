@@ -129,4 +129,7 @@
   <data name="lblQuestion.Text" xml:space="preserve">
     <value>剪貼簿包含以下內容：</value>
   </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>上傳</value>
+  </data>
 </root>

@@ -3,34 +3,36 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX", "ShareX\ShareX.csproj", "{C5AE4585-E9EC-4FA3-B75A-E1210635ACB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX", "ShareX\ShareX.csproj", "{C5AE4585-E9EC-4FA3-B75A-E1210635ACB6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564} = {254E398D-F7F5-4B2A-9024-5C121EA6C564}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.HistoryLib", "ShareX.HistoryLib\ShareX.HistoryLib.csproj", "{E7DE6237-AEA2-498B-8F56-9B392472C490}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.HistoryLib", "ShareX.HistoryLib\ShareX.HistoryLib.csproj", "{E7DE6237-AEA2-498B-8F56-9B392472C490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.ScreenCaptureLib", "ShareX.ScreenCaptureLib\ShareX.ScreenCaptureLib.csproj", "{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.ScreenCaptureLib", "ShareX.ScreenCaptureLib\ShareX.ScreenCaptureLib.csproj", "{DBDB0DAA-B3AE-4CC4-A8C2-20550B7F32E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.HelpersLib", "ShareX.HelpersLib\ShareX.HelpersLib.csproj", "{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.HelpersLib", "ShareX.HelpersLib\ShareX.HelpersLib.csproj", "{327750E1-9FB7-4CC3-8AEA-9BC42180CAD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.UploadersLib", "ShareX.UploadersLib\ShareX.UploadersLib.csproj", "{E1C94415-3424-4517-A2A1-B2FDD1F59C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.UploadersLib", "ShareX.UploadersLib\ShareX.UploadersLib.csproj", "{E1C94415-3424-4517-A2A1-B2FDD1F59C67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.IndexerLib", "ShareX.IndexerLib\ShareX.IndexerLib.csproj", "{750C6F46-2C5A-4488-81D3-3B35CA50F3EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.IndexerLib", "ShareX.IndexerLib\ShareX.IndexerLib.csproj", "{750C6F46-2C5A-4488-81D3-3B35CA50F3EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj", "{D13441B6-96E1-4D1B-8A95-58A7D6CB1E24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj", "{D13441B6-96E1-4D1B-8A95-58A7D6CB1E24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Setup", "ShareX.Setup\ShareX.Setup.csproj", "{3D19A94A-7A58-4451-A686-EE70B471C206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.Setup", "ShareX.Setup\ShareX.Setup.csproj", "{3D19A94A-7A58-4451-A686-EE70B471C206}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.MediaLib", "ShareX.MediaLib\ShareX.MediaLib.csproj", "{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.MediaLib", "ShareX.MediaLib\ShareX.MediaLib.csproj", "{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Steam", "ShareX.Steam\ShareX.Steam.csproj", "{7F6ADFC5-2563-4A5F-B202-93B553578719}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.Steam", "ShareX.Steam\ShareX.Steam.csproj", "{7F6ADFC5-2563-4A5F-B202-93B553578719}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.NativeMessagingHost", "ShareX.NativeMessagingHost\ShareX.NativeMessagingHost.csproj", "{254E398D-F7F5-4B2A-9024-5C121EA6C564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.NativeMessagingHost", "ShareX.NativeMessagingHost\ShareX.NativeMessagingHost.csproj", "{254E398D-F7F5-4B2A-9024-5C121EA6C564}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{515655AC-4716-420E-BBA9-318680DBF355}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		Directory.build.props = Directory.build.props
+		Directory.build.targets = Directory.build.targets
 	EndProjectSection
 EndProject
 Global

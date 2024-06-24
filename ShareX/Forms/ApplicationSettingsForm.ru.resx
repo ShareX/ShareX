@@ -426,4 +426,7 @@
   <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
     <value>Переназначить принтер по умолчанию:</value>
   </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Автоматически проверять обновления</value>
+  </data>
 </root>

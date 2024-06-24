@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,7 +31,6 @@ using System;
 using System.ComponentModel;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -247,19 +246,16 @@ namespace ShareX.HelpersLib
 
                 string json = null;
 
-                await Task.Run(() =>
+                try
                 {
-                    try
-                    {
-                        json = URLHelpers.DownloadString(url);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugHelper.WriteException(ex);
-                        MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + ex, "ShareX - " + Resources.Error,
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                });
+                    json = await WebHelpers.DownloadStringAsync(url);
+                }
+                catch (Exception ex)
+                {
+                    DebugHelper.WriteException(ex);
+                    MessageBox.Show(Resources.Helpers_DownloadString_Download_failed_ + "\r\n" + ex, "ShareX - " + Resources.Error,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 OnImportRequested(json);
                 OnImportCompleted();

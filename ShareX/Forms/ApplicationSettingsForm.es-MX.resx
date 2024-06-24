@@ -211,7 +211,7 @@
     <value>Examinar...</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Abrir:</value>
+    <value>Abrir...</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Usar carpeta de captura de imágenes personalizada:</value>
@@ -244,7 +244,7 @@
     <value>Tamaño del búfer:</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Editar:</value>
+    <value>Editar...</value>
   </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
     <value>Eliminar</value>
@@ -346,7 +346,7 @@
     <value>Usar icono blanco de ShareX</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Restablecer</value>
+    <value>Restablecer...</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>Quitar</value>
@@ -368,5 +368,77 @@
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>Nota: No comparta con nadie el archivo exportado ya que podría contener información privada, como los detalles de su cuenta y su historial de subidas.</value>
+  </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Comprobar actualizaciones automáticamente</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Usar tema personalizado</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Patrón de subcarpeta para ventana:</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Eliminar automáticamente archivos de registro antiguos</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Número de archivos a mantener:</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Eliminar automáticamente archivos de respaldo antiguos</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>Ubicación de previsualización de imagen:</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>Visibilidad de previsualización de imagen:</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>Mostrar columnas</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>Vista de lista</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Restablecer</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Acción al hacer click en la miniatura:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Tamaño de la miniatura:</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Ubicación del título:</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Mostrar título</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Vista de miniatura</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>Mostrar menú</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Modo vista de tarea:</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>Ventana principal</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>Estos formatos aparecerán bajo el submenú "Copiar" en el menú contextual de la ventana principal.</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Formatos de portapapeles</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Usar el orden de preferencia de los servidores secundarios al reintentar</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Sobrescribir impresora predeterminada:</value>
   </data>
 </root>

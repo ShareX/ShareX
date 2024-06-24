@@ -153,9 +153,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Выберите папку</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Старт</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Печать</value>
   </data>
@@ -445,15 +442,6 @@
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>Добавить номер к имени файла</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Всплывающее уведомление</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Ничего</value>
-  </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Уведомление с предпросмотром</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Автоматически</value>
@@ -754,35 +742,11 @@
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Убрать фигуру</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Автоматически пробовать все методы, пока один не сработает</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Симулировать нажатие клавиши "Page down"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Симулировать нажатие клавиши "Home"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Симулировать прокрутку мыши</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Сначала симулировать нажатие клавиши "Home", потом отправить сообщение "scroll top"</value>
-  </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Сменить тип инструмента</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>Отправить сообщение "scroll top"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Отправлять окну или элементу сообщение "scroll"</value>
-  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Ничего не делать</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Отключить прокрутку вверх</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
     <value>Картинка из файла</value>
@@ -1275,5 +1239,11 @@
   </data>
   <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
     <value>Украсить изображение</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>Захват подготовленного окна</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Проверить</value>
   </data>
 </root>

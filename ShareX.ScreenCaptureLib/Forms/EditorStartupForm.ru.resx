@@ -132,4 +132,7 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Отменить</value>
   </data>
+  <data name="btnLoadImageFromURL.Text" xml:space="preserve">
+    <value>Загрузить изображение из ссылки</value>
+  </data>
 </root>

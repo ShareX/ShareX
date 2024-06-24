@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,7 +28,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -89,7 +88,11 @@ namespace ShareX.HelpersLib
                 try
                 {
                     GetWindowThreadProcessId(hwnd, out uint processID);
-                    return Process.GetProcessById((int)processID);
+
+                    if (processID != 0)
+                    {
+                        return Process.GetProcessById((int)processID);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -228,43 +231,38 @@ namespace ShareX.HelpersLib
 
         public static bool GetExtendedFrameBounds(IntPtr handle, out Rectangle rectangle)
         {
-            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_EXTENDED_FRAME_BOUNDS, out RECT rect, Marshal.SizeOf(typeof(RECT)));
+            int result = DwmGetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_EXTENDED_FRAME_BOUNDS, out RECT rect, Marshal.SizeOf(typeof(RECT)));
             rectangle = rect;
             return result == 0;
         }
 
         public static bool GetNCRenderingEnabled(IntPtr handle)
         {
-            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_NCRENDERING_ENABLED, out bool enabled, sizeof(bool));
+            int result = DwmGetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_NCRENDERING_ENABLED, out bool enabled, sizeof(bool));
             return result == 0 && enabled;
         }
 
-        public static void SetNCRenderingPolicy(IntPtr handle, DwmNCRenderingPolicy renderingPolicy)
+        public static void SetNCRenderingPolicy(IntPtr handle, DWMNCRENDERINGPOLICY renderingPolicy)
         {
-            int renderPolicy = (int)renderingPolicy;
-            DwmSetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_NCRENDERING_POLICY, ref renderPolicy, sizeof(int));
+            int attrValue = (int)renderingPolicy;
+            DwmSetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_NCRENDERING_POLICY, ref attrValue, sizeof(int));
         }
 
         public static bool UseImmersiveDarkMode(IntPtr handle, bool enabled)
         {
-            if (Helpers.IsWindows10OrGreater(17763))
+            if (Helpers.IsWindows10OrGreater(18985))
             {
-                DwmWindowAttribute attribute;
-
-                if (Helpers.IsWindows10OrGreater(18985))
-                {
-                    attribute = DwmWindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE;
-                }
-                else
-                {
-                    attribute = DwmWindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1;
-                }
-
                 int useImmersiveDarkMode = enabled ? 1 : 0;
-                return DwmSetWindowAttribute(handle, (int)attribute, ref useImmersiveDarkMode, sizeof(int)) == 0;
+                return DwmSetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE, ref useImmersiveDarkMode, sizeof(int)) == 0;
             }
 
             return false;
+        }
+
+        public static void SetWindowCornerPreference(IntPtr handle, DWM_WINDOW_CORNER_PREFERENCE cornerPreference)
+        {
+            int attrValue = (int)cornerPreference;
+            DwmSetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE, ref attrValue, sizeof(int));
         }
 
         public static Rectangle GetWindowRect(IntPtr handle)
@@ -289,16 +287,6 @@ namespace ShareX.HelpersLib
             }
 
             return windowRect;
-        }
-
-        public static void ActivateWindowRepeat(IntPtr handle, int count)
-        {
-            for (int i = 0; GetForegroundWindow() != handle && i < count; i++)
-            {
-                BringWindowToTop(handle);
-                Thread.Sleep(1);
-                Application.DoEvents();
-            }
         }
 
         public static Rectangle GetTaskbarRectangle()
@@ -379,7 +367,7 @@ namespace ShareX.HelpersLib
         {
             if (IsDWMEnabled())
             {
-                int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_CLOAKED, out int cloaked, sizeof(int));
+                int result = DwmGetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_CLOAKED, out int cloaked, sizeof(int));
                 return result == 0 && cloaked != 0;
             }
 
@@ -584,6 +572,24 @@ namespace ShareX.HelpersLib
             }
 
             return scalingFactor;
+        }
+
+        public static IntPtr SearchWindow(string windowTitle)
+        {
+            IntPtr hWnd = FindWindow(null, windowTitle);
+
+            if (hWnd == IntPtr.Zero)
+            {
+                foreach (Process process in Process.GetProcesses())
+                {
+                    if (process.MainWindowTitle.Contains(windowTitle, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return process.MainWindowHandle;
+                    }
+                }
+            }
+
+            return hWnd;
         }
     }
 }

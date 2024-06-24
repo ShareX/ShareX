@@ -198,9 +198,6 @@
   <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
     <value>نمایش پنجره کد QR </value>
   </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>هیچ چیزی نمایش نده</value>
-  </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>نشان دادن فایل در Explorer</value>
   </data>
@@ -485,9 +482,6 @@
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
     <value>دانلود با مشکل مواجه شد:</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>شروع</value>
-  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>تصادفی</value>
   </data>
@@ -591,9 +585,6 @@
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>بستن</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>بصورت خودکار تمام روش ها را امتحان کن تا یکی جواب دهد</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>عمومی</value>
@@ -750,27 +741,6 @@
   </data>
   <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
     <value>.NET (کیفیت بد)</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>فشردن کلید PageDown را شبیه سازی کن.</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>اسکرول کردن موس را شبیه سازی کن.</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>به پنجره یا کنترل پیام اسکرول را بفرست.</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>فشردن کلید Home را شبیه سازی کن سپس پیام اسکرول به بالا را بفرست.</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>فشردن کلید Home را شبیه سازی کن.</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>اسکرول کردن به بالا را غیرفعال کن.</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>پیام اسکرول به بالا را بفرست.</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>جهت نما (A)</value>

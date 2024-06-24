@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -131,7 +131,7 @@ namespace ShareX
 
         public static void UpdateMainFormTip()
         {
-            Program.MainForm.lblListViewTip.Visible = Program.MainForm.lblThumbnailViewTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
+            Program.MainForm.pHotkeys.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
         }
 
         private static void Task_StatusChanged(WorkerTask task)
@@ -200,20 +200,12 @@ namespace ShareX
                 if (lvi != null)
                 {
                     lvi.SubItems[1].Text = string.Format("{0:0.0}%", info.Progress.Percentage);
+                    lvi.SubItems[2].Text = string.Format("{0} / {1}", info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits),
+                        info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
 
-                    if (info.Progress.CustomProgressText != null)
+                    if (info.Progress.Speed > 0)
                     {
-                        lvi.SubItems[2].Text = info.Progress.CustomProgressText;
-                        lvi.SubItems[3].Text = "";
-                    }
-                    else
-                    {
-                        lvi.SubItems[2].Text = string.Format("{0} / {1}", info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits), info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
-
-                        if (info.Progress.Speed > 0)
-                        {
-                            lvi.SubItems[3].Text = ((long)info.Progress.Speed).ToSizeString(Program.Settings.BinaryUnits) + "/s";
-                        }
+                        lvi.SubItems[3].Text = ((long)info.Progress.Speed).ToSizeString(Program.Settings.BinaryUnits) + "/s";
                     }
 
                     lvi.SubItems[4].Text = Helpers.ProperTimeSpan(info.Progress.Elapsed);

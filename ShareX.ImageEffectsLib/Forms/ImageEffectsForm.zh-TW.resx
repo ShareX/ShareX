@@ -141,6 +141,45 @@
     <value>上傳圖片</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
-    <value>名稱：</value>
+    <value>預設名稱：</value>
+  </data>
+  <data name="btnEffectAdd.ToolTip" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="btnEffectClear.ToolTip" xml:space="preserve">
+    <value>清除...</value>
+  </data>
+  <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
+    <value>重新整理</value>
+  </data>
+  <data name="btnEffectRemove.ToolTip" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>圖片效果...</value>
+  </data>
+  <data name="btnPackager.Text" xml:space="preserve">
+    <value>打包工具...</value>
+  </data>
+  <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="btnPresetRemove.ToolTip" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>效果名稱：</value>
+  </data>
+  <data name="lblEffects.Text" xml:space="preserve">
+    <value>效果：</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>預設：</value>
   </data>
 </root>

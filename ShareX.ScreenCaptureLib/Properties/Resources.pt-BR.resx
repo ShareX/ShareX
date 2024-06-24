@@ -120,9 +120,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Procurar por ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Qualidade:</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} L: {2} A: {3}</value>
   </data>
@@ -249,6 +246,9 @@
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Desfazer</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>Refazer</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>Sombra projetada</value>
   </data>
@@ -286,7 +286,7 @@
     <value>Força de ampliação:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Copiar imagem para a área de transferência (Ctrl + Shift + C)</value>
+    <value>Copiar imagem para a área de transferência (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Imprimir imagem ... (Ctrl + P)</value>
@@ -329,10 +329,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Cortar imagem automaticamente ...</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Existem alterações não salvas.
-Você gostaria de fechar o editor de imagens?</value>
   </data>
   <data name="DropShadowColor" xml:space="preserve">
     <value>Cor da sombra projetada ...</value>
@@ -489,5 +485,10 @@ Você gostaria de fechar o editor de imagens?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
     <value>Zoom para caber em aberto</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>Existem alterações não salvas.
+
+Deseja salvar as alterações antes de fechar o editor?</value>
   </data>
 </root>

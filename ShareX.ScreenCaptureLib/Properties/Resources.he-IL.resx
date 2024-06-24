@@ -150,9 +150,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>חפש את ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>איכות:</value>
-  </data>
   <data name="FPSLimit" xml:space="preserve">
     <value>הגבלת FPS:</value>
   </data>
@@ -215,10 +212,6 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - עורך תמונה</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>יש שינויים שלא נשמרו.
-האם ברצונך לסגור את עורך התמונה?</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>טיפ: ניתן להזיז תמונה על ידי החזקת הלחצן האמצעי של העכבר וגרירתו.</value>
@@ -371,7 +364,7 @@
     <value>המשך משימה (רווח או לחיצה ימנית בעכבר)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>העתק תמונה ללוח הגזירה (Ctrl + Shift + C)</value>
+    <value>העתק תמונה ללוח הגזירה (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>חתוך תמונה...</value>
@@ -489,5 +482,22 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>הצג כוונת בגודל המסך</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>עשה מחדש</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>יש שינויים שלא נשמרו.
+
+האם ברצונך לשמור את השינויים לפני סגירת עורך התמונות?</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>קישור התמונה</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>האם ברצונך לאפס את האפשרויות?</value>
   </data>
 </root>

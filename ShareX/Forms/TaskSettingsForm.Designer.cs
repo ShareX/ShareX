@@ -118,6 +118,7 @@
             this.cbImageGIFQuality = new System.Windows.Forms.ComboBox();
             this.cbOverrideImageSettings = new System.Windows.Forms.CheckBox();
             this.tpEffects = new System.Windows.Forms.TabPage();
+            this.cbUseRandomImageEffect = new System.Windows.Forms.CheckBox();
             this.lblImageEffectsNote = new System.Windows.Forms.Label();
             this.cbShowImageEffectsWindowAfterCapture = new System.Windows.Forms.CheckBox();
             this.cbImageEffectOnlyRegionCapture = new System.Windows.Forms.CheckBox();
@@ -135,6 +136,8 @@
             this.tcCapture = new System.Windows.Forms.TabControl();
             this.tpCaptureGeneral = new System.Windows.Forms.TabPage();
             this.pCapture = new System.Windows.Forms.Panel();
+            this.txtCaptureCustomWindow = new System.Windows.Forms.TextBox();
+            this.lblCaptureCustomWindow = new System.Windows.Forms.Label();
             this.lblScreenshotDelay = new System.Windows.Forms.Label();
             this.btnCaptureCustomRegionSelectRectangle = new System.Windows.Forms.Button();
             this.lblCaptureCustomRegion = new System.Windows.Forms.Label();
@@ -196,7 +199,6 @@
             this.RegionCaptureSnapSizesHeight = new System.Windows.Forms.Label();
             this.nudRegionCaptureSnapSizesWidth = new System.Windows.Forms.NumericUpDown();
             this.lblRegionCaptureSnapSizesWidth = new System.Windows.Forms.Label();
-            this.cbRegionCaptureUseDimming = new System.Windows.Forms.CheckBox();
             this.txtRegionCaptureCustomInfoText = new System.Windows.Forms.TextBox();
             this.nudRegionCaptureMagnifierPixelCount = new System.Windows.Forms.NumericUpDown();
             this.nudRegionCaptureMagnifierPixelSize = new System.Windows.Forms.NumericUpDown();
@@ -219,6 +221,7 @@
             this.tpOCR = new System.Windows.Forms.TabPage();
             this.btnCaptureOCRHelp = new System.Windows.Forms.Button();
             this.cbCaptureOCRAutoCopy = new System.Windows.Forms.CheckBox();
+            this.cbCloseWindowAfterOpenServiceLink = new System.Windows.Forms.CheckBox();
             this.cbCaptureOCRSilent = new System.Windows.Forms.CheckBox();
             this.lblOCRDefaultLanguage = new System.Windows.Forms.Label();
             this.cbCaptureOCRDefaultLanguage = new System.Windows.Forms.ComboBox();
@@ -298,6 +301,9 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.lblRegionCaptureBackgroundDimStrength = new System.Windows.Forms.Label();
+            this.nudRegionCaptureBackgroundDimStrength = new System.Windows.Forms.NumericUpDown();
+            this.lblRegionCaptureBackgroundDimStrengthHint = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -359,6 +365,7 @@
             this.tpTools.SuspendLayout();
             this.pTools.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureBackgroundDimStrength)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -1071,12 +1078,20 @@
             // tpEffects
             // 
             this.tpEffects.BackColor = System.Drawing.SystemColors.Window;
+            this.tpEffects.Controls.Add(this.cbUseRandomImageEffect);
             this.tpEffects.Controls.Add(this.lblImageEffectsNote);
             this.tpEffects.Controls.Add(this.cbShowImageEffectsWindowAfterCapture);
             this.tpEffects.Controls.Add(this.cbImageEffectOnlyRegionCapture);
             this.tpEffects.Controls.Add(this.btnImageEffects);
             resources.ApplyResources(this.tpEffects, "tpEffects");
             this.tpEffects.Name = "tpEffects";
+            // 
+            // cbUseRandomImageEffect
+            // 
+            resources.ApplyResources(this.cbUseRandomImageEffect, "cbUseRandomImageEffect");
+            this.cbUseRandomImageEffect.Name = "cbUseRandomImageEffect";
+            this.cbUseRandomImageEffect.UseVisualStyleBackColor = true;
+            this.cbUseRandomImageEffect.CheckedChanged += new System.EventHandler(this.cbUseRandomImageEffect_CheckedChanged);
             // 
             // lblImageEffectsNote
             // 
@@ -1200,6 +1215,8 @@
             // 
             // pCapture
             // 
+            this.pCapture.Controls.Add(this.txtCaptureCustomWindow);
+            this.pCapture.Controls.Add(this.lblCaptureCustomWindow);
             this.pCapture.Controls.Add(this.lblScreenshotDelay);
             this.pCapture.Controls.Add(this.btnCaptureCustomRegionSelectRectangle);
             this.pCapture.Controls.Add(this.lblCaptureCustomRegion);
@@ -1222,6 +1239,17 @@
             this.pCapture.Controls.Add(this.nudCaptureShadowOffset);
             resources.ApplyResources(this.pCapture, "pCapture");
             this.pCapture.Name = "pCapture";
+            // 
+            // txtCaptureCustomWindow
+            // 
+            resources.ApplyResources(this.txtCaptureCustomWindow, "txtCaptureCustomWindow");
+            this.txtCaptureCustomWindow.Name = "txtCaptureCustomWindow";
+            this.txtCaptureCustomWindow.TextChanged += new System.EventHandler(this.txtCaptureCustomWindow_TextChanged);
+            // 
+            // lblCaptureCustomWindow
+            // 
+            resources.ApplyResources(this.lblCaptureCustomWindow, "lblCaptureCustomWindow");
+            this.lblCaptureCustomWindow.Name = "lblCaptureCustomWindow";
             // 
             // lblScreenshotDelay
             // 
@@ -1409,6 +1437,9 @@
             // tpRegionCapture
             // 
             this.tpRegionCapture.BackColor = System.Drawing.SystemColors.Window;
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureBackgroundDimStrengthHint);
+            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureBackgroundDimStrength);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureBackgroundDimStrength);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureActiveMonitorMode);
             this.tpRegionCapture.Controls.Add(this.nudRegionCaptureFPSLimit);
             this.tpRegionCapture.Controls.Add(this.lblRegionCaptureFPSLimit);
@@ -1438,7 +1469,6 @@
             this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMouseRightClickAction);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureMultiRegionMode);
             this.tpRegionCapture.Controls.Add(this.pRegionCaptureSnapSizes);
-            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureUseDimming);
             this.tpRegionCapture.Controls.Add(this.txtRegionCaptureCustomInfoText);
             this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelCount);
             this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelSize);
@@ -1773,13 +1803,6 @@
             resources.ApplyResources(this.lblRegionCaptureSnapSizesWidth, "lblRegionCaptureSnapSizesWidth");
             this.lblRegionCaptureSnapSizesWidth.Name = "lblRegionCaptureSnapSizesWidth";
             // 
-            // cbRegionCaptureUseDimming
-            // 
-            resources.ApplyResources(this.cbRegionCaptureUseDimming, "cbRegionCaptureUseDimming");
-            this.cbRegionCaptureUseDimming.Name = "cbRegionCaptureUseDimming";
-            this.cbRegionCaptureUseDimming.UseVisualStyleBackColor = true;
-            this.cbRegionCaptureUseDimming.CheckedChanged += new System.EventHandler(this.cbRegionCaptureUseDimming_CheckedChanged);
-            // 
             // txtRegionCaptureCustomInfoText
             // 
             resources.ApplyResources(this.txtRegionCaptureCustomInfoText, "txtRegionCaptureCustomInfoText");
@@ -1988,6 +2011,7 @@
             // 
             this.tpOCR.Controls.Add(this.btnCaptureOCRHelp);
             this.tpOCR.Controls.Add(this.cbCaptureOCRAutoCopy);
+            this.tpOCR.Controls.Add(this.cbCloseWindowAfterOpenServiceLink);
             this.tpOCR.Controls.Add(this.cbCaptureOCRSilent);
             this.tpOCR.Controls.Add(this.lblOCRDefaultLanguage);
             this.tpOCR.Controls.Add(this.cbCaptureOCRDefaultLanguage);
@@ -2009,6 +2033,13 @@
             this.cbCaptureOCRAutoCopy.Name = "cbCaptureOCRAutoCopy";
             this.cbCaptureOCRAutoCopy.UseVisualStyleBackColor = true;
             this.cbCaptureOCRAutoCopy.CheckedChanged += new System.EventHandler(this.cbCaptureOCRAutoCopy_CheckedChanged);
+            // 
+            // cbCloseWindowAfterOpenServiceLink
+            // 
+            resources.ApplyResources(this.cbCloseWindowAfterOpenServiceLink, "cbCloseWindowAfterOpenServiceLink");
+            this.cbCloseWindowAfterOpenServiceLink.Name = "cbCloseWindowAfterOpenServiceLink";
+            this.cbCloseWindowAfterOpenServiceLink.UseVisualStyleBackColor = true;
+            this.cbCloseWindowAfterOpenServiceLink.CheckedChanged += new System.EventHandler(this.cbCloseWindowAfterOpenServiceLink_CheckedChanged);
             // 
             // cbCaptureOCRSilent
             // 
@@ -2593,6 +2624,27 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // lblRegionCaptureBackgroundDimStrength
+            // 
+            resources.ApplyResources(this.lblRegionCaptureBackgroundDimStrength, "lblRegionCaptureBackgroundDimStrength");
+            this.lblRegionCaptureBackgroundDimStrength.Name = "lblRegionCaptureBackgroundDimStrength";
+            // 
+            // nudRegionCaptureBackgroundDimStrength
+            // 
+            resources.ApplyResources(this.nudRegionCaptureBackgroundDimStrength, "nudRegionCaptureBackgroundDimStrength");
+            this.nudRegionCaptureBackgroundDimStrength.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureBackgroundDimStrength.Name = "nudRegionCaptureBackgroundDimStrength";
+            this.nudRegionCaptureBackgroundDimStrength.ValueChanged += new System.EventHandler(this.nudRegionCaptureBackgroundDimStrength_ValueChanged);
+            // 
+            // lblRegionCaptureBackgroundDimStrengthHint
+            // 
+            resources.ApplyResources(this.lblRegionCaptureBackgroundDimStrengthHint, "lblRegionCaptureBackgroundDimStrengthHint");
+            this.lblRegionCaptureBackgroundDimStrengthHint.Name = "lblRegionCaptureBackgroundDimStrengthHint";
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2689,6 +2741,7 @@
             this.pTools.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureBackgroundDimStrength)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2847,7 +2900,6 @@
         private System.Windows.Forms.ComboBox cbRegionCaptureMouseRightClickAction;
         private System.Windows.Forms.CheckBox cbRegionCaptureDetectWindows;
         private System.Windows.Forms.CheckBox cbRegionCaptureDetectControls;
-        private System.Windows.Forms.CheckBox cbRegionCaptureUseDimming;
         private System.Windows.Forms.CheckBox cbRegionCaptureUseCustomInfoText;
         private System.Windows.Forms.TextBox txtRegionCaptureCustomInfoText;
         private System.Windows.Forms.Label lblRegionCaptureSnapSizes;
@@ -2903,6 +2955,7 @@
         private System.Windows.Forms.ComboBox cbCaptureOCRDefaultLanguage;
         private System.Windows.Forms.CheckBox cbCaptureOCRSilent;
         private System.Windows.Forms.CheckBox cbCaptureOCRAutoCopy;
+        private System.Windows.Forms.CheckBox cbCloseWindowAfterOpenServiceLink;
         private System.Windows.Forms.Label lblScreenshotDelay;
         private System.Windows.Forms.Label lblAutoIncrementNumber;
         private System.Windows.Forms.NumericUpDown nudAutoIncrementNumber;
@@ -2963,5 +3016,11 @@
         private System.Windows.Forms.Label lblRegionCaptureFPSLimit;
         private System.Windows.Forms.CheckBox cbRegionCaptureActiveMonitorMode;
         private System.Windows.Forms.Button btnCaptureOCRHelp;
+        private System.Windows.Forms.CheckBox cbUseRandomImageEffect;
+        private System.Windows.Forms.Label lblCaptureCustomWindow;
+        private System.Windows.Forms.TextBox txtCaptureCustomWindow;
+        private System.Windows.Forms.NumericUpDown nudRegionCaptureBackgroundDimStrength;
+        private System.Windows.Forms.Label lblRegionCaptureBackgroundDimStrength;
+        private System.Windows.Forms.Label lblRegionCaptureBackgroundDimStrengthHint;
     }
 }

@@ -194,9 +194,6 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>No se puede crear la carpeta:</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Teclas de acceso rápido configurados actualmente:</value>
-  </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>En linea</value>
   </data>

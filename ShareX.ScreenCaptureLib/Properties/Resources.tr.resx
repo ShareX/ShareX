@@ -120,9 +120,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>ffmpeg.exe için gözat</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Kalite:</value>
-  </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Yakalama bölgesi</value>
   </data>
@@ -307,7 +304,7 @@
     <value>Son bölgeyi yakala</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Resimi panoya kopyala (Ctrl + Shift + C)</value>
+    <value>Resimi panoya kopyala (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>Resimi kırp...</value>
@@ -383,10 +380,6 @@
   </data>
   <data name="OpenKeybindsPage" xml:space="preserve">
     <value>Tuşlar web sayfasını aç...</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Kaydedilmemiş değişiklikler var.
-Resim düzenleyiciyi kapatmak ister misiniz?</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>İpucu: Farenin orta düğmesini basılı tutup sürükleyerek resmi kaydırabilirsiniz.</value>

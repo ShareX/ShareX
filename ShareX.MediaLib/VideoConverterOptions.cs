@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace ShareX.MediaLib
@@ -56,6 +58,16 @@ namespace ShareX.MediaLib
             }
         }
 
+        private static readonly string[] AnimationOnlyFiles = new string[] { "gif", "webp", "png", "apng" };
+
+        public bool IsInputFileAnimationOnly
+        {
+            get
+            {
+                return AnimationOnlyFiles.Any(x => InputFilePath.EndsWith("." + x, StringComparison.OrdinalIgnoreCase));
+            }
+        }
+
         public ConverterVideoCodecs VideoCodec { get; set; } = ConverterVideoCodecs.x264;
         public int VideoQuality { get; set; } = 23;
         public bool VideoQualityUseBitrate { get; set; } = false;
@@ -82,9 +94,6 @@ namespace ShareX.MediaLib
         public string GetFFmpegArgs()
         {
             StringBuilder args = new StringBuilder();
-
-            // Hide FFmpeg banner
-            args.Append("-hide_banner ");
 
             // Input file path
             args.Append($"-i \"{InputFilePath}\" ");
@@ -123,84 +132,38 @@ namespace ShareX.MediaLib
                     args.Append("-preset p4 ");
                     args.Append("-tune hq ");
                     args.Append("-profile:v high ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        args.Append("-rc vbr ");
-                        args.Append($"-cq {VideoQuality.Clamp(FFmpegCLIManager.x264_min, FFmpegCLIManager.x264_max)} ");
-                        args.Append("-b:v 0 ");
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.hevc_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
                     args.Append("-c:v hevc_nvenc ");
                     args.Append("-preset p4 ");
                     args.Append("-tune hq ");
                     args.Append("-profile:v main ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        args.Append("-rc vbr ");
-                        args.Append($"-cq {VideoQuality.Clamp(FFmpegCLIManager.x265_min, FFmpegCLIManager.x265_max)} ");
-                        args.Append("-b:v 0 ");
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.h264_amf:
                     args.Append("-c:v h264_amf ");
                     args.Append("-usage transcoding ");
                     args.Append("-profile main ");
                     args.Append("-quality balanced ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        // TODO: CRF?
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.hevc_amf:
                     args.Append("-c:v hevc_amf ");
                     args.Append("-usage transcoding ");
                     args.Append("-profile main ");
                     args.Append("-quality balanced ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        // TODO: CRF?
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                     args.Append("-c:v h264_qsv ");
                     args.Append("-preset medium ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.x264_min, FFmpegCLIManager.x264_max)} ");
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.hevc_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                     args.Append("-c:v hevc_qsv ");
                     args.Append("-preset medium ");
-                    if (VideoQualityUseBitrate)
-                    {
-                        args.Append($"-b:v {VideoQualityBitrate}k ");
-                    }
-                    else
-                    {
-                        args.Append($"-crf {VideoQuality.Clamp(FFmpegCLIManager.x265_min, FFmpegCLIManager.x265_max)} ");
-                    }
+                    args.Append($"-b:v {VideoQualityBitrate}k ");
                     break;
                 case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/Encode/VP8
                     args.Append("-c:v libvpx ");
@@ -263,33 +226,36 @@ namespace ShareX.MediaLib
                     break;
             }
 
-            // Audio encoder
-            switch (VideoCodec)
+            if (!IsInputFileAnimationOnly)
             {
-                case ConverterVideoCodecs.x264: // https://trac.ffmpeg.org/wiki/Encode/AAC
-                case ConverterVideoCodecs.x265:
-                case ConverterVideoCodecs.h264_nvenc:
-                case ConverterVideoCodecs.hevc_nvenc:
-                case ConverterVideoCodecs.h264_amf:
-                case ConverterVideoCodecs.hevc_amf:
-                case ConverterVideoCodecs.h264_qsv:
-                case ConverterVideoCodecs.hevc_qsv:
-                    args.Append("-c:a aac ");
-                    args.Append("-b:a 128k ");
-                    break;
-                case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
-                case ConverterVideoCodecs.vp9:
-                    args.Append("-c:a libvorbis ");
-                    args.Append("-q:a 3 ");
-                    break;
-                case ConverterVideoCodecs.av1: // https://ffmpeg.org/ffmpeg-codecs.html#libopus-1
-                    args.Append("-c:a libopus ");
-                    args.Append("-b:a 128k ");
-                    break;
-                case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MP3
-                    args.Append("-c:a libmp3lame ");
-                    args.Append("-q:a 4 ");
-                    break;
+                // Audio encoder
+                switch (VideoCodec)
+                {
+                    case ConverterVideoCodecs.x264: // https://trac.ffmpeg.org/wiki/Encode/AAC
+                    case ConverterVideoCodecs.x265:
+                    case ConverterVideoCodecs.h264_nvenc:
+                    case ConverterVideoCodecs.hevc_nvenc:
+                    case ConverterVideoCodecs.h264_amf:
+                    case ConverterVideoCodecs.hevc_amf:
+                    case ConverterVideoCodecs.h264_qsv:
+                    case ConverterVideoCodecs.hevc_qsv:
+                        args.Append("-c:a aac ");
+                        args.Append("-b:a 128k ");
+                        break;
+                    case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
+                    case ConverterVideoCodecs.vp9:
+                        args.Append("-c:a libvorbis ");
+                        args.Append("-q:a 3 ");
+                        break;
+                    case ConverterVideoCodecs.av1: // https://ffmpeg.org/ffmpeg-codecs.html#libopus-1
+                        args.Append("-c:a libopus ");
+                        args.Append("-b:a 128k ");
+                        break;
+                    case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MP3
+                        args.Append("-c:a libmp3lame ");
+                        args.Append("-q:a 4 ");
+                        break;
+                }
             }
 
             // Overwrite output files without asking

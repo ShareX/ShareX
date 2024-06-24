@@ -293,9 +293,6 @@ Voulez-vous redémarrer ShareX ?</value>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Impossible de créer le dossier :</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Raccourcis clavier actuellement définis :</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Clic gauche pour copier l'URL dans le presse-papier. Clic droit pour l'ouvrir.</value>
   </data>
@@ -547,12 +544,6 @@ Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Échec de l'enregistrement des paramètres</value>
-  </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>Raccourci clavier</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Description</value>
   </data>
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran</value>

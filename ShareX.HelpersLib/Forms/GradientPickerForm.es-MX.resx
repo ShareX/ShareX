@@ -147,4 +147,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Degradado</value>
   </data>
+  <data name="btnReverse.Text" xml:space="preserve">
+    <value>Reversa</value>
+  </data>
+  <data name="chGradient.Text" xml:space="preserve">
+    <value>Gradiente</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Preajustes:</value>
+  </data>
 </root>

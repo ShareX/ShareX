@@ -127,7 +127,7 @@
     <value>פתח תיקייה לאחר הקידוד</value>
   </data>
   <data name="cbUseCustomArguments.Text" xml:space="preserve">
-    <value>השתמש בארגומנטים מותאמים אישית</value>
+    <value>השתמש בארגומנטים מותאמים אישית:</value>
   </data>
   <data name="lblInputFilePath.Text" xml:space="preserve">
     <value>נתיב קובץ קלט:</value>
@@ -143,5 +143,11 @@
   </data>
   <data name="lblVideoQuality.Text" xml:space="preserve">
     <value>איכות וידאו:</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>מקודד וידאו:</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.Text" xml:space="preserve">
+    <value>השתמש בקצב סיביות</value>
   </data>
 </root>

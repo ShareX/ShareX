@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -53,8 +53,6 @@ namespace ShareX.UploadersLib
         public static readonly string MediaFireApiKey = "";
         public static readonly string OneDriveClientID = "";
         public static readonly string OneDriveClientSecret = "";
-        public static readonly string GfycatClientID = "";
-        public static readonly string GfycatClientSecret = "";
 
         // URL shorteners
         public static readonly string BitlyClientID = "";

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Timer = System.Threading.Timer;
 
@@ -43,6 +44,10 @@ namespace ShareX.HelpersLib
         private Timer updateTimer = null;
         private readonly object updateTimerLock = new object();
 
+        public GitHubUpdateManager()
+        {
+        }
+
         public GitHubUpdateManager(string owner, string repo, bool portable = false)
         {
             GitHubOwner = owner;
@@ -58,7 +63,7 @@ namespace ShareX.HelpersLib
                 {
                     if (updateTimer == null)
                     {
-                        updateTimer = new Timer(state => CheckUpdate(), null, TimeSpan.Zero, UpdateCheckInterval);
+                        updateTimer = new Timer(TimerCallback, null, TimeSpan.Zero, UpdateCheckInterval);
                     }
                 }
                 else
@@ -68,12 +73,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void CheckUpdate()
+        private async void TimerCallback(object state)
+        {
+            await CheckUpdate();
+        }
+
+        private async Task CheckUpdate()
         {
             if (AutoUpdateEnabled && !UpdateMessageBox.IsOpen)
             {
                 UpdateChecker updateChecker = CreateUpdateChecker();
-                updateChecker.CheckUpdate();
+                await updateChecker.CheckUpdateAsync();
 
                 if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
                 {
@@ -84,7 +94,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public GitHubUpdateChecker CreateUpdateChecker()
+        public virtual GitHubUpdateChecker CreateUpdateChecker()
         {
             return new GitHubUpdateChecker(GitHubOwner, GitHubRepo)
             {

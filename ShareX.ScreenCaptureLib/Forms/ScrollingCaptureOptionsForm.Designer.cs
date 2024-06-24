@@ -42,6 +42,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cbShowRegion = new System.Windows.Forms.CheckBox();
+            this.cbAutoIgnoreBottomEdge = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollAmount)).BeginInit();
@@ -202,20 +203,20 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(152, 312);
+            this.btnOK.Location = new System.Drawing.Point(152, 336);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(104, 32);
-            this.btnOK.TabIndex = 11;
+            this.btnOK.TabIndex = 13;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(264, 312);
+            this.btnCancel.Location = new System.Drawing.Point(264, 336);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 32);
-            this.btnCancel.TabIndex = 12;
+            this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -226,15 +227,26 @@
             this.cbShowRegion.Location = new System.Drawing.Point(16, 272);
             this.cbShowRegion.Name = "cbShowRegion";
             this.cbShowRegion.Size = new System.Drawing.Size(201, 20);
-            this.cbShowRegion.TabIndex = 13;
+            this.cbShowRegion.TabIndex = 11;
             this.cbShowRegion.Text = "Show scrolling capture region";
             this.cbShowRegion.UseVisualStyleBackColor = true;
+            // 
+            // cbAutoIgnoreBottomEdge
+            // 
+            this.cbAutoIgnoreBottomEdge.AutoSize = true;
+            this.cbAutoIgnoreBottomEdge.Location = new System.Drawing.Point(16, 304);
+            this.cbAutoIgnoreBottomEdge.Name = "cbAutoIgnoreBottomEdge";
+            this.cbAutoIgnoreBottomEdge.Size = new System.Drawing.Size(173, 20);
+            this.cbAutoIgnoreBottomEdge.TabIndex = 12;
+            this.cbAutoIgnoreBottomEdge.Text = "Auto ignore bottom edge";
+            this.cbAutoIgnoreBottomEdge.UseVisualStyleBackColor = true;
             // 
             // ScrollingCaptureOptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.ClientSize = new System.Drawing.Size(384, 385);
+            this.Controls.Add(this.cbAutoIgnoreBottomEdge);
             this.Controls.Add(this.cbShowRegion);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
@@ -279,5 +291,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.CheckBox cbShowRegion;
+        private System.Windows.Forms.CheckBox cbAutoIgnoreBottomEdge;
     }
 }

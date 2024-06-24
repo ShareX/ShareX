@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -44,7 +44,9 @@ namespace ShareX
 {
     internal static class Program
     {
-        public const string Name = "ShareX";
+        public const string AppName = "ShareX";
+        public const string MutexName = "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC";
+        public static readonly string PipeName = $"{Environment.MachineName}-{Environment.UserName}-{AppName}";
 
         public const ShareXBuild Build =
 #if RELEASE
@@ -78,7 +80,7 @@ namespace ShareX
         {
             get
             {
-                string title = $"{Name} {VersionText}";
+                string title = $"{AppName} {VersionText}";
 
                 if (Settings != null && Settings.DevMode)
                 {
@@ -105,7 +107,7 @@ namespace ShareX
                     return Title;
                 }
 
-                return Name;
+                return AppName;
             }
         }
 
@@ -128,15 +130,15 @@ namespace ShareX
         internal static Stopwatch StartTimer { get; private set; }
         internal static HotkeyManager HotkeyManager { get; set; }
         internal static WatchFolderManager WatchFolderManager { get; set; }
-        internal static GitHubUpdateManager UpdateManager { get; private set; }
+        internal static ShareXUpdateManager UpdateManager { get; private set; }
         internal static ShareXCLIManager CLI { get; private set; }
 
         #region Paths
 
         private const string PersonalPathConfigFileName = "PersonalPath.cfg";
 
-        public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), Name);
-        public static readonly string PortablePersonalFolder = FileHelpers.GetAbsolutePath(Name);
+        public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), AppName);
+        public static readonly string PortablePersonalFolder = FileHelpers.GetAbsolutePath(AppName);
 
         private static string PersonalPathConfigFilePath
         {
@@ -156,10 +158,9 @@ namespace ShareX
         private static readonly string CurrentPersonalPathConfigFilePath = Path.Combine(DefaultPersonalFolder, PersonalPathConfigFileName);
 
         private static readonly string PreviousPersonalPathConfigFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            Name, PersonalPathConfigFileName);
+            AppName, PersonalPathConfigFileName);
 
         private static readonly string PortableCheckFilePath = FileHelpers.GetAbsolutePath("Portable");
-        public static readonly string NativeMessagingHostFilePath = FileHelpers.GetAbsolutePath("ShareX_NativeMessagingHost.exe");
         public static readonly string SteamInAppFilePath = FileHelpers.GetAbsolutePath("Steam");
 
         private static string CustomPersonalPath { get; set; }
@@ -253,10 +254,7 @@ namespace ShareX
             }
         }
 
-        public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
         public static string ImageEffectsFolder => Path.Combine(PersonalFolder, "ImageEffects");
-        public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
-        public static string FirefoxHostManifestFilePath => Path.Combine(ToolsFolder, "Firefox-host-manifest.json");
 
         private static string PersonalPathDetectionMethod;
 
@@ -267,19 +265,9 @@ namespace ShareX
         [STAThread]
         private static void Main(string[] args)
         {
-            // Allow Visual Studio to break on exceptions in Debug builds
-#if !DEBUG
-            // Add the event handler for handling UI thread exceptions to the event
-            Application.ThreadException += Application_ThreadException;
+            HandleExceptions();
 
-            // Set the unhandled exception mode to force all Windows Forms errors to go through our handler
-            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-
-            // Add the event handler for handling non-UI thread exceptions to the event
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-#endif
-
-            StartTimer = Stopwatch.StartNew(); // For be able to show startup time
+            StartTimer = Stopwatch.StartNew();
 
             CLI = new ShareXCLIManager(args);
             CLI.ParseCommands();
@@ -297,25 +285,34 @@ namespace ShareX
 
             MultiInstance = CLI.IsCommandExist("multi", "m");
 
-            using (ApplicationInstanceManager instanceManager = new ApplicationInstanceManager(!MultiInstance, args, SingleInstanceCallback))
-            using (TimerResolutionManager timerResolutionManager = new TimerResolutionManager())
+            using (SingleInstanceManager singleInstanceManager = new SingleInstanceManager(MutexName, PipeName, !MultiInstance, args))
             {
-                Run();
+                if (!singleInstanceManager.IsSingleInstance || singleInstanceManager.IsFirstInstance)
+                {
+                    singleInstanceManager.ArgumentsReceived += SingleInstanceManager_ArgumentsReceived;
+
+                    using (TimerResolutionManager timerResolutionManager = new TimerResolutionManager())
+                    {
+                        Run();
+                    }
+
+                    if (restartRequested)
+                    {
+                        DebugHelper.WriteLine("ShareX restarting.");
+
+                        if (restartAsAdmin)
+                        {
+                            TaskHelpers.RunShareXAsAdmin("-silent");
+                        }
+                        else
+                        {
+                            Process.Start(Application.ExecutablePath);
+                        }
+                    }
+                }
             }
 
-            if (restartRequested)
-            {
-                DebugHelper.WriteLine("ShareX restarting.");
-
-                if (restartAsAdmin)
-                {
-                    TaskHelpers.RunShareXAsAdmin("-silent");
-                }
-                else
-                {
-                    Process.Start(Application.ExecutablePath);
-                }
-            }
+            DebugHelper.Flush();
         }
 
         private static void Run()
@@ -355,7 +352,7 @@ namespace ShareX
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
-            UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Portable);
+            UpdateManager = new ShareXUpdateManager();
             LanguageHelper.ChangeLanguage(Settings.Language);
             CleanupManager.CleanupAsync();
             Helpers.TryFixHandCursor();
@@ -375,10 +372,9 @@ namespace ShareX
             {
                 closeSequenceStarted = true;
 
-                DebugHelper.Logger.AsyncWrite = false;
                 DebugHelper.WriteLine("ShareX closing.");
 
-                if (WatchFolderManager != null) WatchFolderManager.Dispose();
+                WatchFolderManager?.Dispose();
                 SettingManager.SaveAllSettings();
 
                 DebugHelper.WriteLine("ShareX closed.");
@@ -392,13 +388,26 @@ namespace ShareX
             Application.Exit();
         }
 
-        private static void SingleInstanceCallback(object sender, InstanceCallbackEventArgs args)
+        private static void SingleInstanceManager_ArgumentsReceived(string[] arguments)
         {
+            string message = "Arguments received: ";
+
+            if (arguments == null)
+            {
+                message += "null";
+            }
+            else
+            {
+                message += "\"" + string.Join(" ", arguments) + "\"";
+            }
+
+            DebugHelper.WriteLine(message);
+
             if (WaitFormLoad(5000))
             {
                 MainForm.InvokeSafe(async () =>
                 {
-                    await UseCommandLineArgs(args.CommandLineArgs);
+                    await UseCommandLineArgs(arguments);
                 });
             }
         }
@@ -514,7 +523,6 @@ namespace ShareX
                 FileHelpers.CreateDirectory(SettingManager.BackupFolder);
                 FileHelpers.CreateDirectory(ImageEffectsFolder);
                 FileHelpers.CreateDirectory(ScreenshotsParentFolder);
-                FileHelpers.CreateDirectory(ToolsFolder);
             }
         }
 
@@ -615,6 +623,25 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        private static void HandleExceptions()
+        {
+#if DEBUG
+            if (Debugger.IsAttached)
+            {
+                return;
+            }
+#endif
+
+            // Add the event handler for handling UI thread exceptions to the event
+            Application.ThreadException += Application_ThreadException;
+
+            // Set the unhandled exception mode to force all Windows Forms errors to go through our handler
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+
+            // Add the event handler for handling non-UI thread exceptions to the event
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)

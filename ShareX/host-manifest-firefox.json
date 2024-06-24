@@ -1,0 +1,9 @@
+﻿{
+  "name": "ShareX",
+  "description": "ShareX",
+  "path": "ShareX_NativeMessagingHost.exe",
+  "type": "stdio",
+  "allowed_extensions": [
+    "firefox@getsharex.com"
+  ]
+}

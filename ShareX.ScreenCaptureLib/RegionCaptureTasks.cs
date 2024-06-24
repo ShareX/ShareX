@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -105,7 +105,7 @@ namespace ShareX.ScreenCaptureLib
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
             newOptions.DetectWindows = false;
-            newOptions.UseDimming = false;
+            newOptions.BackgroundDimStrength = 0;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker, newOptions, canvas))
             {
@@ -126,7 +126,7 @@ namespace ShareX.ScreenCaptureLib
         public static SimpleWindowInfo GetWindowInfo(RegionCaptureOptions options)
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
-            newOptions.UseDimming = false;
+            newOptions.BackgroundDimStrength = 0;
             newOptions.ShowMagnifier = false;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.OneClick, newOptions))

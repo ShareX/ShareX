@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -138,7 +138,7 @@ namespace ShareX
 
             Point position = Helpers.GetPosition(Config.Placement, Config.Offset, Screen.PrimaryScreen.WorkingArea, Config.Size);
 
-            NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X, position.Y, Config.Size.Width, Config.Size.Height,
+            NativeMethods.SetWindowPos(Handle, (IntPtr)NativeConstants.HWND_TOPMOST, position.X, position.Y, Config.Size.Width, Config.Size.Height,
                 SetWindowPosFlags.SWP_NOACTIVATE);
 
             tDuration.Stop();

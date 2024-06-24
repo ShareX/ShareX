@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HistoryLib
@@ -44,6 +45,7 @@ namespace ShareX.HistoryLib
 
         private HistoryItemManager him;
         private string defaultTitle;
+        private List<HistoryItem> allHistoryItems;
 
         public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
@@ -87,13 +89,18 @@ namespace ShareX.HistoryLib
             Text = $"{defaultTitle} ({Resources.Total}: {total:N0} - {Resources.Filtered}: {filtered:N0})";
         }
 
-        private void RefreshHistoryItems(bool mockData = false)
+        private async Task RefreshHistoryItems(bool mockData = false)
         {
-            UpdateSearchText();
-            ilvImages.Items.Clear();
-            IEnumerable<HistoryItem> historyItems = GetHistoryItems(mockData);
-            ImageListViewItem[] ilvItems = historyItems.Select(hi => new ImageListViewItem(hi.FilePath) { Tag = hi }).ToArray();
-            ilvImages.Items.AddRange(ilvItems);
+            allHistoryItems = await GetHistoryItems(mockData);
+
+            tstbSearch.AutoCompleteCustomSource.Clear();
+
+            if (allHistoryItems.Count > 0)
+            {
+                tstbSearch.AutoCompleteCustomSource.AddRange(allHistoryItems.Select(x => x.TagsProcessName).Where(x => !string.IsNullOrWhiteSpace(x)).Distinct().ToArray());
+            }
+
+            ApplyFilter();
         }
 
         private void UpdateSearchText()
@@ -110,7 +117,7 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private IEnumerable<HistoryItem> GetHistoryItems(bool mockData = false)
+        private async Task<List<HistoryItem>> GetHistoryItems(bool mockData = false)
         {
             HistoryManager history;
 
@@ -123,7 +130,17 @@ namespace ShareX.HistoryLib
                 history = new HistoryManagerJSON(HistoryPath);
             }
 
-            List<HistoryItem> historyItems = history.GetHistoryItems();
+            List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();
+            historyItems.Reverse();
+            return historyItems;
+        }
+
+        private void ApplyFilter()
+        {
+            UpdateSearchText();
+
+            ilvImages.Items.Clear();
+
             List<HistoryItem> filteredHistoryItems = new List<HistoryItem>();
 
             Regex regex = null;
@@ -134,9 +151,9 @@ namespace ShareX.HistoryLib
                 regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
             }
 
-            for (int i = historyItems.Count - 1; i >= 0; i--)
+            for (int i = 0; i < allHistoryItems.Count; i++)
             {
-                HistoryItem hi = historyItems[i];
+                HistoryItem hi = allHistoryItems[i];
 
                 if (!string.IsNullOrEmpty(hi.FilePath) && FileHelpers.IsImageFile(hi.FilePath) &&
                     (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null && hi.Tags.Any(tag => regex.IsMatch(tag.Value)))) &&
@@ -151,9 +168,10 @@ namespace ShareX.HistoryLib
                 }
             }
 
-            UpdateTitle(historyItems.Count, filteredHistoryItems.Count);
+            UpdateTitle(allHistoryItems.Count, filteredHistoryItems.Count);
 
-            return filteredHistoryItems;
+            ImageListViewItem[] ilvItems = filteredHistoryItems.Select(hi => new ImageListViewItem(hi.FilePath) { Tag = hi }).ToArray();
+            ilvImages.Items.AddRange(ilvItems);
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -163,12 +181,12 @@ namespace ShareX.HistoryLib
 
         #region Form events
 
-        private void ImageHistoryForm_Shown(object sender, EventArgs e)
+        private async void ImageHistoryForm_Shown(object sender, EventArgs e)
         {
             tstbSearch.Focus();
-            Application.DoEvents();
             this.ForceActivate();
-            RefreshHistoryItems();
+
+            await RefreshHistoryItems();
         }
 
         private void ImageHistoryForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -179,16 +197,16 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private void ImageHistoryForm_KeyDown(object sender, KeyEventArgs e)
+        private async void ImageHistoryForm_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyData)
             {
                 case Keys.F5:
-                    RefreshHistoryItems();
+                    await RefreshHistoryItems();
                     e.SuppressKeyPress = true;
                     break;
                 case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
-                    RefreshHistoryItems(true);
+                    await RefreshHistoryItems(true);
                     e.SuppressKeyPress = true;
                     break;
             }
@@ -228,14 +246,15 @@ namespace ShareX.HistoryLib
         {
             if (e.KeyCode == Keys.Enter)
             {
-                RefreshHistoryItems();
+                ApplyFilter();
+
                 e.SuppressKeyPress = true;
             }
         }
 
         private void tsbSearch_Click(object sender, EventArgs e)
         {
-            RefreshHistoryItems();
+            ApplyFilter();
         }
 
         private void tsbSettings_Click(object sender, EventArgs e)
@@ -246,7 +265,8 @@ namespace ShareX.HistoryLib
             }
 
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
-            RefreshHistoryItems();
+
+            ApplyFilter();
         }
 
         private void ilvImages_KeyDown(object sender, KeyEventArgs e)

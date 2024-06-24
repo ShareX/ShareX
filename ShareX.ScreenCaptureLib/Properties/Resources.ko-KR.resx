@@ -120,9 +120,6 @@
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>품질:</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>직사각형 어둡지 않게 촬영</value>
   </data>
@@ -329,10 +326,6 @@
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>팁: 가운데 마우스 버튼을 누르고 드래그하면 이미지를 이동시킬 수 있습니다.</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>저장되지 않은 변경사항이 있습니다.
-이미지 편집기를 닫으시겠습니까?</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - 이미지 편집기</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -182,23 +182,6 @@ namespace ShareX.HelpersLib
         Top,
         Left,
         Right
-    }
-
-    [Flags]
-    public enum DWM_BB
-    {
-        Enable = 1,
-        BlurRegion = 2,
-        TransitionMaximized = 4
-    }
-
-    [Flags]
-    public enum DwmNCRenderingPolicy
-    {
-        UseWindowStyle,
-        Disabled,
-        Enabled,
-        Last
     }
 
     public enum SystemMetric
@@ -1912,29 +1895,6 @@ namespace ShareX.HelpersLib
         Reopen = 0x00008000
     }
 
-    /// <summary>
-    /// Special window handles
-    /// </summary>
-    public enum SpecialWindowHandles
-    {
-        /// <summary>
-        /// Places the window at the bottom of the Z order. If the hWnd parameter identifies a topmost window, the window loses its topmost status and is placed at the bottom of all other windows.
-        /// </summary>
-        HWND_TOP = 0,
-        /// <summary>
-        /// Places the window above all non-topmost windows (that is, behind all topmost windows). This flag has no effect if the window is already a non-topmost window.
-        /// </summary>
-        HWND_BOTTOM = 1,
-        /// <summary>
-        /// Places the window at the top of the Z order.
-        /// </summary>
-        HWND_TOPMOST = -1,
-        /// <summary>
-        /// Places the window above all non-topmost windows. The window maintains its topmost position even when it is deactivated.
-        /// </summary>
-        HWND_NOTOPMOST = -2
-    }
-
     [Flags]
     public enum SetWindowPosFlags : uint
     {
@@ -2010,83 +1970,63 @@ namespace ShareX.HelpersLib
         BI_PNG = 5
     }
 
-    [Flags]
-    public enum CompositionAction : uint
+    public enum DWMWINDOWATTRIBUTE : uint
+    {
+        DWMWA_NCRENDERING_ENABLED = 1,
+        DWMWA_NCRENDERING_POLICY,
+        DWMWA_TRANSITIONS_FORCEDISABLED,
+        DWMWA_ALLOW_NCPAINT,
+        DWMWA_CAPTION_BUTTON_BOUNDS,
+        DWMWA_NONCLIENT_RTL_LAYOUT,
+        DWMWA_FORCE_ICONIC_REPRESENTATION,
+        DWMWA_FLIP3D_POLICY,
+        DWMWA_EXTENDED_FRAME_BOUNDS,
+        DWMWA_HAS_ICONIC_BITMAP,
+        DWMWA_DISALLOW_PEEK,
+        DWMWA_EXCLUDED_FROM_PEEK,
+        DWMWA_CLOAK,
+        DWMWA_CLOAKED,
+        DWMWA_FREEZE_REPRESENTATION,
+        DWMWA_PASSIVE_UPDATE_MODE,
+        DWMWA_USE_HOSTBACKDROPBRUSH,
+        DWMWA_USE_IMMERSIVE_DARK_MODE = 20,
+        DWMWA_WINDOW_CORNER_PREFERENCE = 33,
+        DWMWA_BORDER_COLOR,
+        DWMWA_CAPTION_COLOR,
+        DWMWA_TEXT_COLOR,
+        DWMWA_VISIBLE_FRAME_BORDER_THICKNESS,
+        DWMWA_SYSTEMBACKDROP_TYPE,
+        DWMWA_LAST
+    }
+
+    public enum DWMNCRENDERINGPOLICY
+    {
+        DWMNCRP_USEWINDOWSTYLE,
+        DWMNCRP_DISABLED,
+        DWMNCRP_ENABLED,
+        DWMNCRP_LAST
+    }
+
+    public enum DWM_WINDOW_CORNER_PREFERENCE
+    {
+        DWMWCP_DEFAULT,
+        DWMWCP_DONOTROUND,
+        DWMWCP_ROUND,
+        DWMWCP_ROUNDSMALL
+    }
+
+    public enum DWM_EC : uint
     {
         DWM_EC_DISABLECOMPOSITION = 0,
         DWM_EC_ENABLECOMPOSITION = 1
     }
 
-    public enum DwmWindowAttribute : uint
+    [Flags]
+    public enum DWM_BB
     {
-        /// <summary>
-        /// Use with DwmGetWindowAttribute. Discovers whether non-client rendering is enabled. The retrieved value is of type BOOL. TRUE if non-client rendering is enabled; otherwise, FALSE.
-        /// </summary>
-        DWMWA_NCRENDERING_ENABLED = 1,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Sets the non-client rendering policy. The pvAttribute parameter points to a value from the DWMNCRENDERINGPOLICY enumeration.
-        /// </summary>
-        DWMWA_NCRENDERING_POLICY,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Enables or forcibly disables DWM transitions. The pvAttribute parameter points to a value of TRUE to disable transitions or FALSE to enable transitions.
-        /// </summary>
-        DWMWA_TRANSITIONS_FORCEDISABLED,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Enables content rendered in the non-client area to be visible on the frame drawn by DWM. The pvAttribute parameter points to a value of TRUE to enable content rendered in the non-client area to be visible on the frame; otherwise, it points to FALSE.
-        /// </summary>
-        DWMWA_ALLOW_NCPAINT,
-        /// <summary>
-        /// Use with DwmGetWindowAttribute. Retrieves the bounds of the caption button area in the window-relative space. The retrieved value is of type RECT.
-        /// </summary>
-        DWMWA_CAPTION_BUTTON_BOUNDS,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Specifies whether non-client content is right-to-left (RTL) mirrored. The pvAttribute parameter points to a value of TRUE if the non-client content is right-to-left (RTL) mirrored; otherwise, it points to FALSE.
-        /// </summary>
-        DWMWA_NONCLIENT_RTL_LAYOUT,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Forces the window to display an iconic thumbnail or peek representation (a static bitmap), even if a live or snapshot representation of the window is available. This value normally is set during a window's creation and not changed throughout the window's lifetime. Some scenarios, however, might require the value to change over time. The pvAttribute parameter points to a value of TRUE to require a iconic thumbnail or peek representation; otherwise, it points to FALSE.
-        /// </summary>
-        DWMWA_FORCE_ICONIC_REPRESENTATION,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Sets how Flip3D treats the window. The pvAttribute parameter points to a value from the DWMFLIP3DWINDOWPOLICY enumeration.
-        /// </summary>
-        DWMWA_FLIP3D_POLICY,
-        /// <summary>
-        /// Use with DwmGetWindowAttribute. Retrieves the extended frame bounds rectangle in screen space. The retrieved value is of type RECT.
-        /// </summary>
-        DWMWA_EXTENDED_FRAME_BOUNDS,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. The window will provide a bitmap for use by DWM as an iconic thumbnail or peek representation (a static bitmap) for the window. DWMWA_HAS_ICONIC_BITMAP can be specified with DWMWA_FORCE_ICONIC_REPRESENTATION. DWMWA_HAS_ICONIC_BITMAP normally is set during a window's creation and not changed throughout the window's lifetime. Some scenarios, however, might require the value to change over time. The pvAttribute parameter points to a value of TRUE to inform DWM that the window will provide an iconic thumbnail or peek representation; otherwise, it points to FALSE.
-        /// </summary>
-        DWMWA_HAS_ICONIC_BITMAP,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Do not show peek preview for the window. The peek view shows a full-sized preview of the window when the mouse hovers over the window's thumbnail in the taskbar. If this attribute is set, hovering the mouse pointer over the window's thumbnail dismisses peek (in case another window in the group has a peek preview showing). The pvAttribute parameter points to a value of TRUE to prevent peek functionality or FALSE to allow it.
-        /// </summary>
-        DWMWA_DISALLOW_PEEK,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Prevents a window from fading to a glass sheet when peek is invoked. The pvAttribute parameter points to a value of TRUE to prevent the window from fading during another window's peek or FALSE for normal behavior.
-        /// </summary>
-        DWMWA_EXCLUDED_FROM_PEEK,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Cloaks the window such that it is not visible to the user. The window is still composed by DWM.
-        /// </summary>
-        DWMWA_CLOAK,
-        /// <summary>
-        /// Use with DwmGetWindowAttribute.
-        /// </summary>
-        DWMWA_CLOAKED,
-        /// <summary>
-        /// Use with DwmSetWindowAttribute. Freeze the window's thumbnail image with its current visuals. Do no further live updates on the thumbnail image to match the window's contents.
-        /// </summary>
-        DWMWA_FREEZE_REPRESENTATION,
-        /// <summary>
-        /// The maximum recognized DWMWINDOWATTRIBUTE value, used for validation purposes.
-        /// </summary>
-        DWMWA_LAST,
-        // Undocumented, available since October 2018 update (build 17763)
-        DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1 = 19,
-        // Windows 10 20H1 changed the value of the constant
-        DWMWA_USE_IMMERSIVE_DARK_MODE = 20
+        DWM_BB_ENABLE = 1,
+        DWM_BB_BLURREGION = 2,
+        DWM_BB_TRANSITIONONMAXIMIZED = 4
     }
 
     public enum InputType : int

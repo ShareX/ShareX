@@ -1080,15 +1080,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
     <value>ID da chave do aplicativo:</value>
   </data>
-  <data name="lblGfycatTitle.Text" xml:space="preserve">
-    <value>Título:</value>
-  </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>Manter áudio</value>
-  </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Upload público</value>
-  </data>
   <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
     <value>Links compartilhados com expiração automática</value>
   </data>
@@ -1272,9 +1263,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="tpTeknik.Text" xml:space="preserve">
     <value>Teknik</value>
   </data>
-  <data name="tpGfycat.Text" xml:space="preserve">
-    <value>Gfycat</value>
-  </data>
   <data name="tpKutt.Text" xml:space="preserve">
     <value>Kutt</value>
   </data>
@@ -1301,5 +1289,8 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="tpPlik.Text" xml:space="preserve">
     <value>Plik</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Usar link direto</value>
   </data>
 </root>

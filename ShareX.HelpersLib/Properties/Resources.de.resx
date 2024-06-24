@@ -150,9 +150,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>Ordner auswählen</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Drucken</value>
   </data>
@@ -442,15 +439,6 @@ Dateigröße: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>Nummer zum Dateinamen hinzufügen</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Sprechblase im Infobereich/Tray anzeigen</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Nichts anzeigen</value>
-  </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Benachrichtigung mit Vorschau anzeigen</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatisch</value>
@@ -871,9 +859,6 @@ Soll sie heruntergeladen werden?</value>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Automatische Größe</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Nach oben scrollen deaktivieren</value>
-  </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>Aufnahme abbrechen</value>
   </data>
@@ -882,9 +867,6 @@ Soll sie heruntergeladen werden?</value>
   </data>
   <data name="PastebinPrivacy_Private" xml:space="preserve">
     <value>Privat (nur Mitglieder)</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Drehen des Mausrads simulieren</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Öffentlich</value>
@@ -940,14 +922,8 @@ Soll sie heruntergeladen werden?</value>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Momentane Version</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Automatisch alle Methoden ausprobieren, bis eine funktioniert</value>
-  </data>
   <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
     <value>Aktiven Monitor aufnehmen</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Bild-Ab-Tastendruck simulieren</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Sticker</value>

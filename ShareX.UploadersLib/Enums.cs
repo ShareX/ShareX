@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
         Photobucket,
         [Description("Google Photos")]
         Picasa,
-        [Description("Twitter")]
+        [Description("X")]
         Twitter,
         [Description("Chevereto")]
         Chevereto,
@@ -101,8 +101,6 @@ namespace ShareX.UploadersLib
         AzureStorage,
         [Description("Backblaze B2")]
         BackblazeB2,
-        [Description("Gfycat")]
-        Gfycat,
         [Description("ownCloud / Nextcloud")]
         OwnCloud,
         [Description("MediaFire")]
@@ -180,7 +178,7 @@ namespace ShareX.UploadersLib
     public enum URLSharingServices
     {
         Email, // Localized
-        [Description("Twitter")]
+        [Description("X")]
         Twitter,
         [Description("Facebook")]
         Facebook,

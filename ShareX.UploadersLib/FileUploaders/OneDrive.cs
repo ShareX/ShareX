@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -51,7 +51,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return new OneDrive(config.OneDriveV2OAuth2Info)
             {
                 FolderID = config.OneDriveV2SelectedFolder.id,
-                AutoCreateShareableLink = config.OneDriveAutoCreateShareableLink
+                AutoCreateShareableLink = config.OneDriveAutoCreateShareableLink,
+                UseDirectLink = config.OneDriveUseDirectLink
             };
         }
 
@@ -67,6 +68,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public OAuth2Info AuthInfo { get; set; }
         public string FolderID { get; set; }
         public bool AutoCreateShareableLink { get; set; }
+        public bool UseDirectLink { get; set; }
 
         public static OneDriveFileInfo RootFolder = new OneDriveFileInfo
         {
@@ -257,7 +259,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     AllowReportProgress = false;
 
-                    result.URL = CreateShareableLink(uploadInfo.id);
+                    result.URL = CreateShareableLink(uploadInfo.id, UseDirectLink ? OneDriveLinkType.Embed : OneDriveLinkType.Read);
                 }
                 else
                 {

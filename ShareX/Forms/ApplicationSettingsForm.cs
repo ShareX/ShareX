@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -42,7 +42,7 @@ namespace ShareX
         public ApplicationSettingsForm()
         {
             InitializeControls();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace ShareX
             cbTrayLeftDoubleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
             cbTrayLeftClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
             cbTrayMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
-
+            cbUpdateChannel.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<UpdateChannel>());
             cbMainWindowTaskViewMode.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<TaskViewMode>());
             cbThumbnailViewTitleLocation.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ThumbnailTitleLocation>());
             cbThumbnailViewThumbnailClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ThumbnailViewClickAction>());
@@ -121,20 +121,22 @@ namespace ShareX
 
 #if STEAM || MicrosoftStore
             cbAutoCheckUpdate.Visible = false;
-            cbCheckPreReleaseUpdates.Visible = false;
+            lblUpdateChannel.Visible = false;
+            cbUpdateChannel.Visible = false;
             btnCheckDevBuild.Visible = false;
 #else
             if (SystemOptions.DisableUpdateCheck)
             {
                 cbAutoCheckUpdate.Visible = false;
-                cbCheckPreReleaseUpdates.Visible = false;
+                lblUpdateChannel.Visible = false;
+                cbUpdateChannel.Visible = false;
                 btnCheckDevBuild.Visible = false;
             }
             else
             {
                 cbAutoCheckUpdate.Checked = Program.Settings.AutoCheckUpdate;
-                cbCheckPreReleaseUpdates.Enabled = Program.Settings.AutoCheckUpdate;
-                cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
+                cbUpdateChannel.Enabled = Program.Settings.AutoCheckUpdate;
+                cbUpdateChannel.SelectedIndex = (int)Program.Settings.UpdateChannel;
             }
 #endif
 
@@ -289,7 +291,7 @@ namespace ShareX
 
             try
             {
-                StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
+                StartupState state = StartupManager.State;
                 cbStartWithWindows.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
 
                 if (state == StartupState.DisabledByUser)
@@ -450,12 +452,12 @@ namespace ShareX
         private void cbAutoCheckUpdate_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.AutoCheckUpdate = cbAutoCheckUpdate.Checked;
-            cbCheckPreReleaseUpdates.Enabled = Program.Settings.AutoCheckUpdate;
+            cbUpdateChannel.Enabled = Program.Settings.AutoCheckUpdate;
         }
 
-        private void cbCheckPreReleaseUpdates_CheckedChanged(object sender, EventArgs e)
+        private void cbUpdateChannel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
+            Program.Settings.UpdateChannel = (UpdateChannel)cbUpdateChannel.SelectedIndex;
         }
 
         private async void btnCheckDevBuild_Click(object sender, EventArgs e)
@@ -501,26 +503,32 @@ namespace ShareX
 
         private void CbUseCustomTheme_CheckedChanged(object sender, EventArgs e)
         {
-            Program.Settings.UseCustomTheme = cbUseCustomTheme.Checked;
-            UpdateThemeControls();
-            ApplySelectedTheme();
+            if (ready)
+            {
+                Program.Settings.UseCustomTheme = cbUseCustomTheme.Checked;
+                UpdateThemeControls();
+                ApplySelectedTheme();
+            }
         }
 
         private void CbThemes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.Settings.SelectedTheme = cbThemes.SelectedIndex;
-
-            if (cbThemes.SelectedItem != null)
+            if (ready)
             {
-                pgTheme.SelectedObject = cbThemes.SelectedItem;
-            }
-            else
-            {
-                pgTheme.SelectedObject = null;
-            }
+                Program.Settings.SelectedTheme = cbThemes.SelectedIndex;
 
-            UpdateThemeControls();
-            ApplySelectedTheme();
+                if (cbThemes.SelectedItem != null)
+                {
+                    pgTheme.SelectedObject = cbThemes.SelectedItem;
+                }
+                else
+                {
+                    pgTheme.SelectedObject = null;
+                }
+
+                UpdateThemeControls();
+                ApplySelectedTheme();
+            }
         }
 
         private void BtnThemeAdd_Click(object sender, EventArgs e)
@@ -590,7 +598,7 @@ namespace ShareX
             {
                 try
                 {
-                    StartupManagerSingletonProvider.CurrentStartupManager.State = cbStartWithWindows.Checked ? StartupState.Enabled : StartupState.Disabled;
+                    StartupManager.State = cbStartWithWindows.Checked ? StartupState.Enabled : StartupState.Disabled;
                     UpdateStartWithWindows();
                 }
                 catch (Exception ex)
@@ -822,14 +830,14 @@ namespace ShareX
 
                     LanguageHelper.ChangeLanguage(Program.Settings.Language);
 
-                    Program.MainForm.UpdateControls();
+                    await Program.MainForm.UpdateControls();
 
                     DebugHelper.WriteLine($"Import completed: {importPath}");
                 }
             }
         }
 
-        private void btnResetSettings_Click(object sender, EventArgs e)
+        private async void btnResetSettings_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings, "ShareX - " + Resources.Confirmation,
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
@@ -841,7 +849,7 @@ namespace ShareX
 
                 LanguageHelper.ChangeLanguage(Program.Settings.Language);
 
-                Program.MainForm.UpdateControls();
+                await Program.MainForm.UpdateControls();
 
                 DebugHelper.WriteLine("Settings reset.");
             }

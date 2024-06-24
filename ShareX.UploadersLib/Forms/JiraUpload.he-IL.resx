@@ -129,4 +129,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - העלאת קובץ אל Jira</value>
   </data>
+  <data name="lblIssueId.Text" xml:space="preserve">
+    <value>מזהה בעיה:</value>
+  </data>
 </root>

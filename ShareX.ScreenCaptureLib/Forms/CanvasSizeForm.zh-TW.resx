@@ -137,4 +137,7 @@
   <data name="lblBottom.Text" xml:space="preserve">
     <value>底部：</value>
   </data>
+  <data name="cbtnCanvasColor.Text" xml:space="preserve">
+    <value>畫布顏色...</value>
+  </data>
 </root>

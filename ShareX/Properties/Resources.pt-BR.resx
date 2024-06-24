@@ -200,9 +200,6 @@ Gostaria de reiniciar agora?</value>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Não foi possivel criar pasta:</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Atalhos configurados atualmente:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Botão esquerdo para copiar URL. Botão direito para abrir URL.</value>
   </data>
@@ -591,14 +588,8 @@ Você pode desativar posteriormente no menu "Tarefas após a captura".</value>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Insira o texto para codificar</value>
   </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>Tecla de atalho</value>
-  </data>
   <data name="Error" xml:space="preserve">
     <value>Erro</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Descrição</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
     <value>Confirmação</value>

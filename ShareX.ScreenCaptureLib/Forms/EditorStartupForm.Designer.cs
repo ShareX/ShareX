@@ -33,6 +33,7 @@
             this.btnCreateNewImage = new System.Windows.Forms.Button();
             this.btnLoadImageFromClipboard = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnLoadImageFromURL = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnOpenImageFile
@@ -67,11 +68,20 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnLoadImageFromURL
+            // 
+            resources.ApplyResources(this.btnLoadImageFromURL, "btnLoadImageFromURL");
+            this.btnLoadImageFromURL.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.drive_globe;
+            this.btnLoadImageFromURL.Name = "btnLoadImageFromURL";
+            this.btnLoadImageFromURL.UseVisualStyleBackColor = true;
+            this.btnLoadImageFromURL.Click += new System.EventHandler(this.btnLoadImageFromURL_Click);
+            // 
             // EditorStartupForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnLoadImageFromURL);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLoadImageFromClipboard);
             this.Controls.Add(this.btnCreateNewImage);
@@ -90,5 +100,6 @@
         private System.Windows.Forms.Button btnCreateNewImage;
         private System.Windows.Forms.Button btnLoadImageFromClipboard;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnLoadImageFromURL;
     }
 }

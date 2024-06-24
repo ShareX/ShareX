@@ -219,9 +219,6 @@
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
     <value>폴더 선택</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>시작</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>인쇄</value>
   </data>
@@ -508,15 +505,6 @@
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>파일 이름에 숫자 덧붙이기</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>트레이 풍선 팁 표시</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>아무것도 표시하지 않기</value>
-  </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>알림 메시지를 미리보기와 함께 표시</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>자동</value>
@@ -900,30 +888,6 @@
   </data>
   <data name="LinearGradientMode_Vertical" xml:space="preserve">
     <value>세로</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>최상단으로 스크롤하지 않기</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>"Home" 키 누르기</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>"Page Down" 키 누르기</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>마우스 휠로 스크롤하기</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>될 때 까지 자동으로 모든 방법을 시험해 보기</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>창이나 컨트롤에 스크롤 메세지 보내기</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>최상단으로 스크롤 메세지 보내기</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>"Home" 키를 누른 다음 최상단으로 스크롤 메세지 보내기</value>
   </data>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>간편 작업 메뉴 보이기</value>

@@ -223,7 +223,7 @@
     <value>Continuați sarcina (Spațiu sau click dreapta)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Copiați imaginea în clipboard (Ctrl + Shift + C)</value>
+    <value>Copiați imaginea în clipboard (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
     <value>Raza colțului:</value>
@@ -366,9 +366,6 @@
   <data name="Processing" xml:space="preserve">
     <value>Se procesează...</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Calitate:</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Captură dreptunghiulară clară</value>
   </data>
@@ -445,10 +442,6 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
     <value>Comutare la instrumentul de selecție după desenarea formei</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Există schimbări nesalvate.
-Doriți să închideți editorul de imagini?</value>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Această fereastră se va închide înainte de a deschide pagina web de scurtături. Doriți să continuați?</value>

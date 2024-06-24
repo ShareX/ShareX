@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -38,8 +38,6 @@ using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Security.Permissions;
 using System.Security.Principal;
@@ -293,9 +291,9 @@ namespace ShareX.HelpersLib
         /// If version1 equal to version2 = 0
         /// If version1 older than version2 = -1
         /// </summary>
-        public static int CompareVersion(string version1, string version2)
+        public static int CompareVersion(string version1, string version2, bool ignoreRevision = false)
         {
-            return NormalizeVersion(version1).CompareTo(NormalizeVersion(version2));
+            return NormalizeVersion(version1, ignoreRevision).CompareTo(NormalizeVersion(version2, ignoreRevision));
         }
 
         /// <summary>
@@ -303,9 +301,9 @@ namespace ShareX.HelpersLib
         /// If version1 equal to version2 = 0
         /// If version1 older than version2 = -1
         /// </summary>
-        public static int CompareVersion(Version version1, Version version2)
+        public static int CompareVersion(Version version1, Version version2, bool ignoreRevision = false)
         {
-            return version1.Normalize().CompareTo(version2.Normalize());
+            return version1.Normalize(ignoreRevision).CompareTo(version2.Normalize(ignoreRevision));
         }
 
         /// <summary>
@@ -318,9 +316,9 @@ namespace ShareX.HelpersLib
             return CompareVersion(version, GetApplicationVersion(includeRevision));
         }
 
-        public static Version NormalizeVersion(string version)
+        public static Version NormalizeVersion(string version, bool ignoreRevision = false)
         {
-            return Version.Parse(version).Normalize();
+            return Version.Parse(version).Normalize(ignoreRevision);
         }
 
         public static bool IsWindowsXP()
@@ -395,17 +393,6 @@ namespace ShareX.HelpersLib
             int hours = (int)ts.TotalHours;
             if (hours > 0) time = hours + ":" + time;
             return time;
-        }
-
-        public static object Clone(object obj)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                BinaryFormatter binaryFormatter = new BinaryFormatter(null, new StreamingContext(StreamingContextStates.Clone));
-                binaryFormatter.Serialize(ms, obj);
-                ms.Seek(0, SeekOrigin.Begin);
-                return binaryFormatter.Deserialize(ms);
-            }
         }
 
         public static void PlaySoundAsync(Stream stream)
@@ -1035,6 +1022,37 @@ namespace ShareX.HelpersLib
             Array.Copy(transcodedImageCache, 24, transcodedImageCacheDest, 0, transcodedImageCacheDest.Length);
             string wallpaperFilePath = Encoding.Unicode.GetString(transcodedImageCacheDest);
             return wallpaperFilePath.TrimEnd('\0');
+        }
+
+        public static IEnumerable<int> Range(int from, int to, int increment = 1)
+        {
+            if (increment == 0)
+            {
+                throw new ArgumentException("Increment cannot be zero.", nameof(increment));
+            }
+
+            if (from == to)
+            {
+                yield return from;
+                yield break;
+            }
+
+            increment = Math.Abs(increment);
+
+            if (from < to)
+            {
+                for (int i = from; i <= to; i += increment)
+                {
+                    yield return i;
+                }
+            }
+            else
+            {
+                for (int i = from; i >= to; i -= increment)
+                {
+                    yield return i;
+                }
+            }
         }
     }
 }

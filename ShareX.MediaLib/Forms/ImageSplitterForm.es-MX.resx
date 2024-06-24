@@ -141,4 +141,7 @@
   <data name="lblRowCount.Text" xml:space="preserve">
     <value>Número de filas:</value>
   </data>
+  <data name="btnCopyChatEmoji.Text" xml:space="preserve">
+    <value>Copiar sintaxis de emojis de chat</value>
+  </data>
 </root>

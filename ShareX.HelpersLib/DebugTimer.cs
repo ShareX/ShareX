@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,6 +33,8 @@ namespace ShareX.HelpersLib
     {
         public string Text { get; set; }
 
+        public TimeSpan Elapsed => timer.Elapsed;
+
         private Stopwatch timer;
 
         public DebugTimer(string text = null)
@@ -60,12 +62,12 @@ namespace ShareX.HelpersLib
 
         public void WriteElapsedMilliseconds(string text = null)
         {
-            Write(timer.Elapsed.TotalMilliseconds.ToString("0.000", CultureInfo.InvariantCulture) + " milliseconds.", text);
+            Write(Elapsed.TotalMilliseconds.ToString("0.000", CultureInfo.InvariantCulture) + " milliseconds.", text);
         }
 
         public void WriteElapsedSeconds(string text = null)
         {
-            Write(timer.Elapsed.TotalSeconds.ToString("0.000", CultureInfo.InvariantCulture) + " seconds.", text);
+            Write(Elapsed.TotalSeconds.ToString("0.000", CultureInfo.InvariantCulture) + " seconds.", text);
         }
 
         public void Dispose()

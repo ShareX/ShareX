@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -143,8 +143,6 @@ namespace ShareX
             ImageOpacity = Options.InitialOpacity;
 
             InitializeComponent();
-            // TODO: Add options form
-            tsbOptions.Visible = false;
             ShareXResources.ApplyTheme(this, true);
             TopMost = Options.TopMost;
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
@@ -216,10 +214,39 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            bool isCursorInside = ClientRectangle.Contains(PointToClient(MousePosition));
-
-            tsMain.Visible = isCursorInside;
+            int toolbarMargin = 20;
+            tsMain.Visible = ClientRectangle.Contains(PointToClient(MousePosition)) &&
+                ClientRectangle.Contains(new Rectangle(0, 0, (Options.Border ? Options.BorderSize * 2 : 0) + tsMain.Width + toolbarMargin,
+                (Options.Border ? Options.BorderSize * 2 : 0) + tsMain.Height + toolbarMargin));
             tslScale.Text = ImageScale + "%";
+        }
+
+        private void AutoSizeForm()
+        {
+            Size previousSize = Size;
+            Size newSize = FormSize;
+
+            Point newLocation = Location;
+            IntPtr insertAfter = Options.TopMost ? (IntPtr)NativeConstants.HWND_TOPMOST : (IntPtr)NativeConstants.HWND_TOP;
+            SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE | SetWindowPosFlags.SWP_NOSENDCHANGING;
+
+            if (Options.KeepCenterLocation)
+            {
+                Point locationOffset = new Point((previousSize.Width - newSize.Width) / 2, (previousSize.Height - newSize.Height) / 2);
+                newLocation = new Point(newLocation.X + locationOffset.X, newLocation.Y + locationOffset.Y);
+            }
+            else
+            {
+                flags |= SetWindowPosFlags.SWP_NOMOVE;
+            }
+
+            NativeMethods.SetWindowPos(Handle, insertAfter, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
+
+            tsMain.Location = new Point(Width / 2 - tsMain.Width / 2, Options.Border ? Options.BorderSize : 0);
+
+            UpdateControls();
+
+            Refresh();
         }
 
         private void SetHandCursor(bool grabbing)
@@ -244,30 +271,6 @@ namespace ShareX
         {
             ImageScale = 100;
             ImageOpacity = 100;
-        }
-
-        private void AutoSizeForm()
-        {
-            Size previousSize = Size;
-            Size newSize = FormSize;
-
-            Point newLocation = Location;
-            SpecialWindowHandles insertAfter = Options.TopMost ? SpecialWindowHandles.HWND_TOPMOST : SpecialWindowHandles.HWND_TOP;
-            SetWindowPosFlags flags = SetWindowPosFlags.SWP_NOACTIVATE | SetWindowPosFlags.SWP_NOSENDCHANGING;
-
-            if (Options.KeepCenterLocation)
-            {
-                Point locationOffset = new Point((previousSize.Width - newSize.Width) / 2, (previousSize.Height - newSize.Height) / 2);
-                newLocation = new Point(newLocation.X + locationOffset.X, newLocation.Y + locationOffset.Y);
-            }
-            else
-            {
-                flags |= SetWindowPosFlags.SWP_NOMOVE;
-            }
-
-            NativeMethods.SetWindowPos(Handle, (IntPtr)insertAfter, newLocation.X, newLocation.Y, newSize.Width, newSize.Height, flags);
-
-            Refresh();
         }
 
         private void ToggleMinimize()
@@ -304,7 +307,20 @@ namespace ShareX
 
         private void tsbOptions_Click(object sender, EventArgs e)
         {
+            tsMain.Visible = false;
 
+            using (PinToScreenOptionsForm pinToScreenOptionsForm = new PinToScreenOptionsForm(Options))
+            {
+                if (pinToScreenOptionsForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    if (TopMost != Options.TopMost)
+                    {
+                        TopMost = Options.TopMost;
+                    }
+
+                    AutoSizeForm();
+                }
+            }
         }
 
         private void tsbClose_Click(object sender, EventArgs e)
@@ -316,7 +332,12 @@ namespace ShareX
         {
             if (Options.Shadow && m.Msg == (int)WindowsMessages.NCPAINT && isDWMEnabled)
             {
-                NativeMethods.SetNCRenderingPolicy(Handle, DwmNCRenderingPolicy.Enabled);
+                NativeMethods.SetNCRenderingPolicy(Handle, DWMNCRENDERINGPOLICY.DWMNCRP_ENABLED);
+
+                if (Helpers.IsWindows11OrGreater())
+                {
+                    NativeMethods.SetWindowCornerPreference(Handle, DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_DONOTROUND);
+                }
 
                 MARGINS margins = new MARGINS()
                 {
@@ -476,6 +497,11 @@ namespace ShareX
         }
 
         private void PinToScreenForm_MouseLeave(object sender, EventArgs e)
+        {
+            UpdateControls();
+        }
+
+        private void tsMain_MouseLeave(object sender, EventArgs e)
         {
             UpdateControls();
         }

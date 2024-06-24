@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -44,29 +44,32 @@ namespace ShareX
 
         public async Task UseCommandLineArgs(List<CLICommand> commands)
         {
-            TaskSettings taskSettings = FindCLITask(commands);
-
-            foreach (CLICommand command in commands)
+            if (commands != null && commands.Count > 0)
             {
-                DebugHelper.WriteLine("CommandLine: " + command);
+                TaskSettings taskSettings = FindCLITask(commands);
 
-                if (command.IsCommand)
+                foreach (CLICommand command in commands)
                 {
-                    if (CheckCustomUploader(command) || CheckImageEffect(command) || await CheckCLIHotkey(command) || await CheckCLIWorkflow(command) ||
-                        CheckNativeMessagingInput(command))
+                    DebugHelper.WriteLine("CommandLine: " + command);
+
+                    if (command.IsCommand)
                     {
+                        if (CheckCustomUploader(command) || CheckImageEffect(command) || await CheckCLIHotkey(command) || await CheckCLIWorkflow(command) ||
+                            await CheckNativeMessagingInput(command))
+                        {
+                        }
+
+                        continue;
                     }
 
-                    continue;
-                }
-
-                if (URLHelpers.IsValidURL(command.Command))
-                {
-                    UploadManager.DownloadAndUploadFile(command.Command, taskSettings);
-                }
-                else
-                {
-                    UploadManager.UploadFile(command.Command, taskSettings);
+                    if (URLHelpers.IsValidURL(command.Command))
+                    {
+                        UploadManager.DownloadAndUploadFile(command.Command, taskSettings);
+                    }
+                    else
+                    {
+                        UploadManager.UploadFile(command.Command, taskSettings);
+                    }
                 }
             }
         }
@@ -83,7 +86,7 @@ namespace ShareX
                     {
                         if (command.Parameter == hotkeySetting.TaskSettings.ToString())
                         {
-                            return hotkeySetting.TaskSettings;
+                            return TaskSettings.GetSafeTaskSettings(hotkeySetting.TaskSettings);
                         }
                     }
                 }
@@ -158,13 +161,13 @@ namespace ShareX
             return false;
         }
 
-        private bool CheckNativeMessagingInput(CLICommand command)
+        private async Task<bool> CheckNativeMessagingInput(CLICommand command)
         {
             if (command.Command.Equals("NativeMessagingInput", StringComparison.OrdinalIgnoreCase))
             {
                 if (!string.IsNullOrEmpty(command.Parameter) && command.Parameter.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
                 {
-                    TaskHelpers.HandleNativeMessagingInput(command.Parameter);
+                    await TaskHelpers.HandleNativeMessagingInput(command.Parameter);
                 }
 
                 return true;

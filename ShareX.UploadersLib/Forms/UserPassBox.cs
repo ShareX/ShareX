@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -40,23 +40,29 @@ namespace ShareX.UploadersLib
         public UserPassBox(string title, string userName, string password)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             Text = title;
             txtUserName.Text = userName;
             txtPassword.Text = password;
         }
 
-        public UserPassBox(string q, string fullName, string userName, string password) : this(q, userName, password)
+        public UserPassBox(string title, string fullName, string userName, string password) : this(title, userName, password)
         {
             txtFullName.Text = fullName;
             txtFullName.Enabled = true;
         }
 
-        public UserPassBox(string q, string fullName, string email, string userName, string password) : this(q, fullName, userName, password)
+        public UserPassBox(string title, string fullName, string email, string userName, string password) : this(title, fullName, userName, password)
         {
             txtEmail.Text = email;
             txtEmail.Enabled = true;
+        }
+
+        private void InputBox_Shown(object sender, EventArgs e)
+        {
+            txtUserName.Focus();
+            txtUserName.SelectionLength = txtUserName.Text.Length;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -67,8 +73,8 @@ namespace ShareX.UploadersLib
                 Password = txtPassword.Text;
                 Email = txtEmail.Text;
                 FullName = txtFullName.Text;
+
                 DialogResult = DialogResult.OK;
-                Hide();
                 Close();
             }
         }
@@ -76,14 +82,7 @@ namespace ShareX.UploadersLib
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
-            Hide();
             Close();
-        }
-
-        private void InputBox_Shown(object sender, EventArgs e)
-        {
-            txtUserName.Focus();
-            txtUserName.SelectionLength = txtUserName.Text.Length;
         }
     }
 }

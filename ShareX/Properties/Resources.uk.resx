@@ -384,9 +384,6 @@
   <data name="SwitchToThumbnailView" xml:space="preserve">
     <value>Перемкнутись у режим мініатюр</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Поточні параметри гарячих клавіш:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Лівий притиск — для копіювання у буфер обміну. Правий — для відкриття посилання.</value>
   </data>

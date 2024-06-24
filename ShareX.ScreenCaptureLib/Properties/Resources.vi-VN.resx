@@ -129,9 +129,6 @@
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Chụp hình chữ nhật (Bản nhẹ)</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Chất lượng:</value>
-  </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Duyệt đến ffmpeg.exe</value>
   </data>
@@ -205,7 +202,7 @@
     <value>Tiếp tục tác vụ (Phím cách hoặc chuột phải)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Chép ảnh vào vùng nhớ tạm (Ctrl + Shift + C)</value>
+    <value>Chép ảnh vào vùng nhớ tạm (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
     <value>Bán kính góc:</value>
@@ -320,10 +317,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Lưu ảnh thành... (Ctrl + Shift + S)</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Có những thay đổi chưa được lưu.
-Bạn có muốn đóng trình chỉnh sửa ảnh không?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Kích thước ảnh...</value>

@@ -459,9 +459,6 @@
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
   </data>
-  <data name="tpGfycat.Text" xml:space="preserve">
-    <value>Gfycat</value>
-  </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
   </data>
@@ -906,9 +903,6 @@
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
     <value>Apakah unggah publik?</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Apakah unggah publik?</value>
-  </data>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>Apakah unggah publik?</value>
   </data>
@@ -1110,5 +1104,8 @@ Menggunakan pustaka terenkripsi menonaktifkan berbagi.</value>
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Gunakan tautan langsung</value>
   </data>
 </root>

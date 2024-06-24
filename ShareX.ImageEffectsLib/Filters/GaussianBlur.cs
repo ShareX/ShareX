@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,28 +33,18 @@ namespace ShareX.ImageEffectsLib
     [Description("Gaussian blur")]
     internal class GaussianBlur : ImageEffect
     {
-        private double sigma;
-        private int size;
+        private int radius;
 
-        [DefaultValue(0.7955555)]
-        public double Sigma
+        [DefaultValue(15)]
+        public int Radius
         {
-            get => sigma;
-            set => sigma = Math.Max(value, 0.1);
-        }
-
-        [DefaultValue(3)]
-        public int Size
-        {
-            get => size;
+            get
+            {
+                return radius;
+            }
             set
             {
-                size = value.Max(1);
-
-                if (size.IsEvenNumber())
-                {
-                    size++;
-                }
+                radius = Math.Max(value, 1);
             }
         }
 
@@ -65,28 +55,15 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            ConvolutionMatrix kernelHoriz = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
-
-            ConvolutionMatrix kernelVert = new ConvolutionMatrix(size, 1)
-            {
-                ConsiderAlpha = kernelHoriz.ConsiderAlpha
-            };
-
-            for (int i = 0; i < size; i++)
-            {
-                kernelVert[i, 0] = kernelHoriz[0, i];
-            }
-
             using (bmp)
-            using (Bitmap horizPass = kernelHoriz.Apply(bmp))
             {
-                return kernelVert.Apply(horizPass);
+                return ImageHelpers.GaussianBlur(bmp, Radius);
             }
         }
 
         protected override string GetSummary()
         {
-            return Size.ToString();
+            return Radius.ToString();
         }
     }
 }

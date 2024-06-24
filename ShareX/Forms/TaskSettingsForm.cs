@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -46,7 +46,7 @@ namespace ShareX
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyTheme(this, true);
 
             tsmiURLShorteners.Image = ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
 
@@ -248,6 +248,7 @@ namespace ShareX
 
             cbShowImageEffectsWindowAfterCapture.Checked = TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture;
             cbImageEffectOnlyRegionCapture.Checked = TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture;
+            cbUseRandomImageEffect.Checked = TaskSettings.ImageSettings.UseRandomImageEffect;
 
             #endregion Effects
 
@@ -279,6 +280,7 @@ namespace ShareX
             nudCaptureCustomRegionY.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Y);
             nudCaptureCustomRegionWidth.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Width);
             nudCaptureCustomRegionHeight.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Height);
+            txtCaptureCustomWindow.Text = TaskSettings.CaptureSettings.CaptureCustomWindow;
 
             #endregion General
 
@@ -296,7 +298,7 @@ namespace ShareX
             cbRegionCaptureDetectWindows.Checked = TaskSettings.CaptureSettings.SurfaceOptions.DetectWindows;
             cbRegionCaptureDetectControls.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.DetectWindows;
             cbRegionCaptureDetectControls.Checked = TaskSettings.CaptureSettings.SurfaceOptions.DetectControls;
-            cbRegionCaptureUseDimming.Checked = TaskSettings.CaptureSettings.SurfaceOptions.UseDimming;
+            nudRegionCaptureBackgroundDimStrength.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.BackgroundDimStrength);
             cbRegionCaptureUseCustomInfoText.Checked = TaskSettings.CaptureSettings.SurfaceOptions.UseCustomInfoText;
             txtRegionCaptureCustomInfoText.Enabled = TaskSettings.CaptureSettings.SurfaceOptions.UseCustomInfoText;
             TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText = TaskSettings.CaptureSettings.SurfaceOptions.CustomInfoText.Replace("\r\n", "$n").Replace("\n", "$n");
@@ -386,6 +388,7 @@ namespace ShareX
             cbCaptureOCRSilent.Checked = ocrOptions.Silent;
             cbCaptureOCRAutoCopy.Enabled = !ocrOptions.Silent;
             cbCaptureOCRAutoCopy.Checked = ocrOptions.AutoCopy;
+            cbCloseWindowAfterOpenServiceLink.Checked = ocrOptions.CloseWindowAfterOpeningServiceLink;
 
             #endregion OCR
 
@@ -985,14 +988,19 @@ namespace ShareX
             TaskSettings.ImageSettings.FileExistAction = (FileExistAction)cbImageFileExist.SelectedIndex;
         }
 
+        private void cbShowImageEffectsWindowAfterCapture_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture = cbShowImageEffectsWindowAfterCapture.Checked;
+        }
+
         private void cbImageEffectOnlyRegionCapture_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageEffectOnlyRegionCapture = cbImageEffectOnlyRegionCapture.Checked;
         }
 
-        private void cbShowImageEffectsWindowAfterCapture_CheckedChanged(object sender, EventArgs e)
+        private void cbUseRandomImageEffect_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture = cbShowImageEffectsWindowAfterCapture.Checked;
+            TaskSettings.ImageSettings.UseRandomImageEffect = cbUseRandomImageEffect.Checked;
         }
 
         private void btnImageEffects_Click(object sender, EventArgs e)
@@ -1100,6 +1108,11 @@ namespace ShareX
             }
         }
 
+        private void txtCaptureCustomWindow_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.CaptureCustomWindow = txtCaptureCustomWindow.Text;
+        }
+
         #endregion General
 
         #region Region capture
@@ -1140,9 +1153,9 @@ namespace ShareX
             TaskSettings.CaptureSettings.SurfaceOptions.DetectControls = cbRegionCaptureDetectControls.Checked;
         }
 
-        private void cbRegionCaptureUseDimming_CheckedChanged(object sender, EventArgs e)
+        private void nudRegionCaptureBackgroundDimStrength_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.SurfaceOptions.UseDimming = cbRegionCaptureUseDimming.Checked;
+            TaskSettings.CaptureSettings.SurfaceOptions.BackgroundDimStrength = (int)nudRegionCaptureBackgroundDimStrength.Value;
         }
 
         private void cbRegionCaptureUseCustomInfoText_CheckedChanged(object sender, EventArgs e)
@@ -1358,6 +1371,11 @@ namespace ShareX
         private void cbCaptureOCRAutoCopy_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.AutoCopy = cbCaptureOCRAutoCopy.Checked;
+        }
+
+        private void cbCloseWindowAfterOpenServiceLink_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.CloseWindowAfterOpeningServiceLink = cbCloseWindowAfterOpenServiceLink.Checked;
         }
 
         #endregion OCR

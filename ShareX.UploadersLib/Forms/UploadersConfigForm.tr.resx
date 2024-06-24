@@ -654,9 +654,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>Yükleme halka açık mı?</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Halka açık karşıya yükle</value>
-  </data>
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>Yorum (Markdown)</value>
   </data>
@@ -840,9 +837,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
     <value>API adresini yapıştır:</value>
   </data>
-  <data name="lblGfycatTitle.Text" xml:space="preserve">
-    <value>Başlık:</value>
-  </data>
   <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
     <value>Yükleme API adresi:</value>
   </data>
@@ -950,9 +944,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   </data>
   <data name="cbFirebaseIsShort.Text" xml:space="preserve">
     <value>Kısa bağlantı</value>
-  </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>Sesi koru</value>
   </data>
   <data name="cbPlikRemovable.Text" xml:space="preserve">
     <value>Silinebilir</value>
@@ -1094,5 +1085,8 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   </data>
   <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
     <value>Video seçenekleri penceresini göster</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Direkt link kullan</value>
   </data>
 </root>

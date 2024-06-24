@@ -815,15 +815,6 @@
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>ברירת מחדל</value>
   </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>הצג בלון מגש המערכת</value>
-  </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>אל תציג דבר</value>
-  </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>הצג הודעת טוסט עם תצוגה מקדימה</value>
-  </data>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>הדפס</value>
   </data>
@@ -1016,30 +1007,6 @@
   <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
     <value>מכונן Octree (איכות בינונית)</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>נסה אוטומטית את כל השיטות עד שאחת עובדת</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>הדמיית לחיצה על מקש "עמוד למטה"</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>הדמיית גלילה של גלגל עכבר</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>תחילה בצע הדמיה של לחיצה על מקש "Home" ואז שלח הודעת גלילה מעלה</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>שלח הודעת גלילה לחלון או לפקד</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>השבת את הגלילה למעלה</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>הדמיית לחיצה על מקש "Home"</value>
-  </data>
-  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>שלח הודעת גלילה מעלה</value>
-  </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>חץ (A)</value>
   </data>
@@ -1117,9 +1084,6 @@
   </data>
   <data name="ShareXImageViewer" xml:space="preserve">
     <value>ShareX - מציג תמונה</value>
-  </data>
-  <data name="Start" xml:space="preserve">
-    <value>התחל</value>
   </data>
   <data name="StepType_LettersLowercase" xml:space="preserve">
     <value>אותיות (קטנות)</value>
@@ -1251,9 +1215,6 @@
   </data>
   <data name="URLSharingServices_Email" xml:space="preserve">
     <value>דוא"ל</value>
-  </data>
-  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>חיפוש תמונות בגוגל</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>שירות מקצר קישורים מותאם אישית</value>

@@ -156,4 +156,10 @@
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>חפש קובץ מדיה</value>
   </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>האם ברצונך לאפס את האפשרויות?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>אישור</value>
+  </data>
 </root>

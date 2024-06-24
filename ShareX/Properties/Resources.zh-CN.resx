@@ -200,9 +200,6 @@
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>无法创建文件夹:</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>当前配置的快捷键:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>左键点击复制网址到剪贴板，右键点击打开网址。</value>
   </data>
@@ -539,14 +536,8 @@
   <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
     <value>日语</value>
   </data>
-  <data name="Description" xml:space="preserve">
-    <value>描述</value>
-  </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>保存设置失败</value>
-  </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>热键</value>
   </data>
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>屏幕拾色器</value>

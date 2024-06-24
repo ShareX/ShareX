@@ -119,31 +119,31 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 二維碼</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>複製到剪貼簿</value>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>複製圖片</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>儲存為圖片檔案...</value>
+  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
+    <value>掃描圖片檔案中的二維碼...</value>
   </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
+  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
+    <value>掃描螢幕上的二維碼...</value>
+  </data>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>儲存圖片...</value>
+  </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
     <value>上傳圖片</value>
   </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>識別</value>
+  <data name="lblQRCode.Text" xml:space="preserve">
+    <value>二維碼：</value>
   </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>產生</value>
+  <data name="lblQRCodeSize.Text" xml:space="preserve">
+    <value>二維碼大小：</value>
   </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>識別圖片檔案中的二維碼...</value>
+  <data name="lblQRCodeSizeHint.Text" xml:space="preserve">
+    <value>px</value>
   </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>結果：</value>
-  </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>識別</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>掃描螢幕上的二維碼...</value>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>文字：</value>
   </data>
 </root>

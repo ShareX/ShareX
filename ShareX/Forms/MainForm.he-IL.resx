@@ -427,10 +427,10 @@
     <value>חיפוש חזותי של בינג (OCR)...</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
-    <value>הגדרות אפליקציה...</value>
+    <value>הגדרות יישום...</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>הגדרות אפליקציה...</value>
+    <value>הגדרות יישום...</value>
   </data>
   <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
     <value>שם קובץ עם סיומת</value>
@@ -595,7 +595,7 @@
     <value>הגדרות יעד...</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>הגדרות משימות...</value>
+    <value>הגדרות למטלות...</value>
   </data>
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>היסטוריה...</value>
@@ -790,7 +790,7 @@
     <value>שירותי שיתוף קישורים</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>הגדרות משימות...</value>
+    <value>הגדרות למטלות...</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>היסטוריה...</value>
@@ -800,5 +800,29 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
+  </data>
+  <data name="tsmiHashChecker.Text" xml:space="preserve">
+    <value>בודק Hash...</value>
+  </data>
+  <data name="tsmiImageBeautifier.Text" xml:space="preserve">
+    <value>מייפה תמונות...</value>
+  </data>
+  <data name="tsbX.Text" xml:space="preserve">
+    <value>עקוב אחר @ShareX...</value>
+  </data>
+  <data name="tsmiBeautifyImage.Text" xml:space="preserve">
+    <value>לייפות תמונה...</value>
+  </data>
+  <data name="tsmiTrayImageBeautifier.Text" xml:space="preserve">
+    <value>מייפה תמונה...</value>
+  </data>
+  <data name="tsmiTrayHashChecker.Text" xml:space="preserve">
+    <value>בודק Hash...</value>
+  </data>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>קיצור מקלדת</value>
+  </data>
+  <data name="cDescription.HeaderText" xml:space="preserve">
+    <value>תיאור</value>
   </data>
 </root>

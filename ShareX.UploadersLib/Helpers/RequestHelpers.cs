@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
@@ -187,14 +186,14 @@ namespace ShareX.UploadersLib
 
         public static byte[] MakeFileInputContentOpen(string boundary, string fileFormName, string fileName)
         {
-            string mimeType = GetMimeType(fileName);
+            string mimeType = MimeTypes.GetMimeTypeFromFileName(fileName);
             string content = $"--{boundary}\r\nContent-Disposition: form-data; name=\"{fileFormName}\"; filename=\"{fileName}\"\r\nContent-Type: {mimeType}\r\n\r\n";
             return Encoding.UTF8.GetBytes(content);
         }
 
         public static byte[] MakeRelatedFileInputContentOpen(string boundary, string contentType, string relatedData, string fileName)
         {
-            string mimeType = GetMimeType(fileName);
+            string mimeType = MimeTypes.GetMimeTypeFromFileName(fileName);
             string content = $"--{boundary}\r\nContent-Type: {contentType}\r\n\r\n{relatedData}\r\n\r\n";
             content += $"--{boundary}\r\nContent-Type: {mimeType}\r\n\r\n";
             return Encoding.UTF8.GetBytes(content);
@@ -225,39 +224,6 @@ namespace ShareX.UploadersLib
             NameValueCollection headers = new NameValueCollection();
             headers["Authorization"] = "Basic " + authorization;
             return headers;
-        }
-
-        public static string GetMimeType(string fileName)
-        {
-            if (!string.IsNullOrEmpty(fileName))
-            {
-                string ext = Path.GetExtension(fileName).ToLowerInvariant();
-
-                if (!string.IsNullOrEmpty(ext))
-                {
-                    string mimeType = MimeTypes.GetMimeType(ext);
-
-                    if (!string.IsNullOrEmpty(mimeType))
-                    {
-                        return mimeType;
-                    }
-
-                    mimeType = RegistryHelpers.GetValueString(ext, "Content Type", RegistryHive.ClassesRoot);
-
-                    if (!string.IsNullOrEmpty(mimeType))
-                    {
-                        return mimeType;
-                    }
-                }
-            }
-
-            return MimeTypes.DefaultMimeType;
-        }
-
-        public static bool IsSuccessStatusCode(HttpStatusCode statusCode)
-        {
-            int statusCodeNum = (int)statusCode;
-            return statusCodeNum >= 200 && statusCodeNum <= 299;
         }
     }
 }

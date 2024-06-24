@@ -147,9 +147,6 @@
   <data name="FPSLimit" xml:space="preserve">
     <value>Limit FPS:</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Jakość:</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Obraz zapisany</value>
   </data>
@@ -266,10 +263,6 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - Edytor obrazów</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Zmiany nie zostały zapisane.
-Czy chcesz zamknąć edytor obrazów?</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>Wskazówka: Możesz przesuwać obraz przytrzymując środkowy przycisk myszy i przeciągając.</value>
@@ -395,7 +388,7 @@ Czy chcesz zamknąć edytor obrazów?</value>
     <value>Kontynuuj zadanie (spacja lub prawy przycisk myszy)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Skopiuj obraz do schowka (Ctrl + Shift + C)</value>
+    <value>Skopiuj obraz do schowka (Ctrl + C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>Przesuń na wierzch</value>

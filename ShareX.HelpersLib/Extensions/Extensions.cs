@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -323,9 +323,12 @@ namespace ShareX.HelpersLib
             return source.Reverse().Take(count).Reverse();
         }
 
-        public static Version Normalize(this Version version)
+        public static Version Normalize(this Version version, bool ignoreRevision = false, bool ignoreBuild = false, bool ignoreMinor = false)
         {
-            return new Version(Math.Max(version.Major, 0), Math.Max(version.Minor, 0), Math.Max(version.Build, 0), Math.Max(version.Revision, 0));
+            return new Version(Math.Max(version.Major, 0),
+                ignoreMinor ? 0 : Math.Max(version.Minor, 0),
+                ignoreBuild ? 0 : Math.Max(version.Build, 0),
+                ignoreRevision ? 0 : Math.Max(version.Revision, 0));
         }
 
         public static void Move<T>(this List<T> list, int oldIndex, int newIndex)

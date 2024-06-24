@@ -200,9 +200,6 @@ Wil je ShareX opnieuw opstarten?</value>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Kan de map niet aanmaken:</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Huidige geconfigureerde sneltoetsen:</value>
-  </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Links klikken om de link naar het klembord te kopiëren. Rechtsklikken om de link te openen.</value>
   </data>

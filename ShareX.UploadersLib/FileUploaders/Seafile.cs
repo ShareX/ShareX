@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
+using System.Web;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -453,8 +454,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         if (CreateShareableURLRaw)
                         {
-                            var uriBuilder = new UriBuilder(result.URL);
-                            var query = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
+                            UriBuilder uriBuilder = new UriBuilder(result.URL);
+                            NameValueCollection query = HttpUtility.ParseQueryString(uriBuilder.Query);
                             query["raw"] = "1";
                             uriBuilder.Query = query.ToString();
                             result.URL = $"{uriBuilder.Scheme}://{uriBuilder.Host}{uriBuilder.Path}{uriBuilder.Query}";

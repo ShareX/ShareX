@@ -337,9 +337,6 @@
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>Показати вікно „Після вивантаження“</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Почати</value>
-  </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Custom file uploader</value>
   </data>
@@ -532,9 +529,6 @@
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Завантаження зображення...</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
-    <value>Імітувати натискання клавіші «Home»</value>
-  </data>
   <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
     <value>Progress: {0:0.0}%
 Download speed: {1:0.0} KB/s
@@ -610,9 +604,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>Служба обміну посиланнями</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
-    <value>Автоматично спробувати всі методи, поки один не запрацює</value>
-  </data>
   <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
     <value>Показати вікно „Перед захопленням“</value>
   </data>
@@ -627,9 +618,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Random hexadecimal char. Repeat using {n}</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Імітувати прокручування коліщатка миші</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Помилка</value>
@@ -682,9 +670,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>Лінія (L)</value>
   </data>
-  <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
-    <value>Показати сповіщення з попереднім переглядом</value>
-  </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Показати файл у провіднику</value>
   </data>
@@ -712,9 +697,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
     <value>Новий рядок</value>
   </data>
-  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>Вимкнути прокручування вгору</value>
-  </data>
   <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
     <value>Назва процесу вікна</value>
   </data>
@@ -726,9 +708,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
     <value>Ширина зображення</value>
-  </data>
-  <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Показати зринаючу підказку</value>
   </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
     <value>Назва дня тижня (англійською)</value>
@@ -889,9 +868,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
     <value>Custom URL shortener</value>
   </data>
-  <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Нічого не показувати</value>
-  </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Загальне</value>
   </data>
@@ -939,9 +915,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>Копіювати файл у буфер обміну</value>
-  </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Імітувати натискання клавіші «Page Down»</value>
   </data>
   <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
     <value>Тиждень року</value>

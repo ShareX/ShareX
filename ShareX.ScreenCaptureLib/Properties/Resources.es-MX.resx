@@ -126,9 +126,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Buscar ffmpeg.exe</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Calidad:</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Captura de rectángulo simple</value>
   </data>
@@ -143,9 +140,6 @@
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - Editor de imágenes</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Hay cambios sin guardar. ¿Desea salir del editor de imágenes?</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>Consejo: para desplazarse por la imagen, mantener pulsado el botón medio del ratón y arrastrar.</value>
@@ -265,7 +259,7 @@
     <value>Continuar tarea (Espacio o clic derecho)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
-    <value>Copiar imagen al portapapeles (Ctrl+Mayús+C)</value>
+    <value>Copiar imagen al portapapeles (Ctrl+C)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>Recortar imagen...</value>

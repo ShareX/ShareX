@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -47,8 +47,29 @@ namespace ShareX
         public HotkeyManager(HotkeyForm form)
         {
             hotkeyForm = form;
-            hotkeyForm.HotkeyPress += hotkeyForm_HotkeyPress;
-            hotkeyForm.FormClosed += (sender, e) => hotkeyForm.InvokeSafe(() => UnregisterAllHotkeys(false));
+            hotkeyForm.HotkeyPress += HotkeyForm_HotkeyPress;
+            hotkeyForm.FormClosed += HotkeyForm_FormClosed;
+        }
+
+        private void HotkeyForm_HotkeyPress(ushort id, Keys key, Modifiers modifier)
+        {
+            if (!IgnoreHotkeys && (!Program.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+            {
+                HotkeySettings hotkeySetting = Hotkeys.Find(x => x.HotkeyInfo.ID == id);
+
+                if (hotkeySetting != null)
+                {
+                    OnHotkeyTrigger(hotkeySetting);
+                }
+            }
+        }
+
+        private void HotkeyForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (hotkeyForm != null && !hotkeyForm.IsDisposed)
+            {
+                UnregisterAllHotkeys(false);
+            }
         }
 
         public void UpdateHotkeys(List<HotkeySettings> hotkeys, bool showFailedHotkeys)
@@ -65,19 +86,6 @@ namespace ShareX
             if (showFailedHotkeys)
             {
                 ShowFailedHotkeys();
-            }
-        }
-
-        private void hotkeyForm_HotkeyPress(ushort id, Keys key, Modifiers modifier)
-        {
-            if (!IgnoreHotkeys && (!Program.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
-            {
-                HotkeySettings hotkeySetting = Hotkeys.Find(x => x.HotkeyInfo.ID == id);
-
-                if (hotkeySetting != null)
-                {
-                    OnHotkeyTrigger(hotkeySetting);
-                }
             }
         }
 

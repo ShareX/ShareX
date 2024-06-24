@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib
         [DefaultValue(HttpMethod.POST), JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
         public HttpMethod RequestMethod { get; set; } = HttpMethod.POST;
 
-        // For backward compatibility
+        // TEMP: For backward compatibility
         [JsonProperty]
         private HttpMethod RequestType { set => RequestMethod = value; }
 
@@ -87,7 +87,7 @@ namespace ShareX.UploadersLib
 
         public bool ShouldSerializeData() => (Body == CustomUploaderBody.JSON || Body == CustomUploaderBody.XML) && !string.IsNullOrEmpty(Data);
 
-        // For backward compatibility
+        // TEMP: For backward compatibility
         public ResponseType ResponseType { private get; set; }
 
         [DefaultValue("")]

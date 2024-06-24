@@ -180,9 +180,6 @@
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Захопити</value>
   </data>
-  <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
-    <value>Якість:</value>
-  </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>Тип курсора:</value>
   </data>
@@ -221,10 +218,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Автообрізання...</value>
-  </data>
-  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
-    <value>Є незбережені зміни.
-Хочете закрити редактор зображень?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>На передній план</value>

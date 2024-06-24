@@ -194,9 +194,6 @@
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>קישור ריק.</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>מקשי קיצור המוגדרים כעת:</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>מקצר קישורים: {0}</value>
   </data>
@@ -306,9 +303,6 @@
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>האם אתה בטוח שברצונך להעלות {0} קבצים?</value>
   </data>
-  <data name="Hotkey" xml:space="preserve">
-    <value>מקש קיצור</value>
-  </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>מתרגמים</value>
   </data>
@@ -396,7 +390,7 @@
     <value>משימה הושלמה</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>הגדרות משימה עבור {0}</value>
+    <value>הגדרות מטלה עבור {0}</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>קיצורי מקשים</value>
@@ -580,9 +574,6 @@
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>רישום מקשי קיצור נכשל</value>
   </data>
-  <data name="Description" xml:space="preserve">
-    <value>תיאור</value>
-  </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>לוח הגזירה ריק או מכיל נתונים לא ידועים.</value>
   </data>
@@ -630,7 +621,7 @@
     <value>FFmpeg אינו קיים בנתיב הבא:</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>הגדרות משימות</value>
+    <value>הגדרות למטלות</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>ניתן להוסיף תהליכי עבודה מהגדרות מקשי קיצור...</value>
@@ -649,5 +640,19 @@
   </data>
   <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
     <value>עברית</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>העלאה מלוח הגזירה</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>האם תרצה לנסות להעלות את לוח הגזירה שוב?</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>לא ניתן לסגור את ShareX בזמן שהקלטת מסך פעילה.
+
+האם ברצונך לבטל את הקלטת המסך הפעילה?</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX מעודכן עם הגרסה החדשה ביותר!</value>
   </data>
 </root>

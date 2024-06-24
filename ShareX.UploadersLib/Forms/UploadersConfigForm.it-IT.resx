@@ -309,9 +309,6 @@
   <data name="lblFTPImage.Text" xml:space="preserve">
     <value>Immagine:</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Caricamento Pubblico?</value>
-  </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
     <value>Caricamento Pubblico?</value>
   </data>
@@ -910,6 +907,9 @@ Ad esempio, se il bucket si chiama "bucket.example.com", l'URL sarà "http://buc
     <value>Classe Storage:</value>
   </data>
   <data name="cbFlickrDirectLink.Text" xml:space="preserve">
+    <value>Usa Collegamento Diretto</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
     <value>Usa Collegamento Diretto</value>
   </data>
 </root>

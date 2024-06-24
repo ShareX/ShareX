@@ -124,13 +124,13 @@
     <value>開始</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>選擇區域</value>
+    <value>選擇區域...</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
     <value>自動最小化到系統匣</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>等待工作完成</value>
+    <value>等待任務完成</value>
   </data>
   <data name="gbRegion.Text" xml:space="preserve">
     <value>區域</value>

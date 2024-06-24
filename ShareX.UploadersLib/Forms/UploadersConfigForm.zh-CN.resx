@@ -747,9 +747,6 @@
   <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
     <value>账户名称：</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>公共上传</value>
-  </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>ownCloud 8.1+ 兼容性</value>
   </data>
@@ -1032,9 +1029,6 @@
   <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
     <value>图片</value>
   </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>保持声音</value>
-  </data>
   <data name="lblKuttPassword.Text" xml:space="preserve">
     <value>密码：</value>
   </data>
@@ -1148,9 +1142,6 @@
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  </data>
-  <data name="tpGfycat.Text" xml:space="preserve">
-    <value>Gfycat</value>
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
@@ -1278,9 +1269,6 @@
   <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
     <value>显示视频选项对话框</value>
   </data>
-  <data name="lblGfycatTitle.Text" xml:space="preserve">
-    <value>标题：</value>
-  </data>
   <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
     <value>您随时可通过该链接撤销您的访问权限：</value>
   </data>
@@ -1301,5 +1289,8 @@
   </data>
   <data name="tpZeroWidthShortener.Text" xml:space="preserve">
     <value>Zero Width 缩短器</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>使用直链</value>
   </data>
 </root>

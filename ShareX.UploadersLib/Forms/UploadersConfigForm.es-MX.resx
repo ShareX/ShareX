@@ -279,9 +279,6 @@
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
     <value>¿Es enlace público?</value>
   </data>
-  <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Subida pública</value>
-  </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
     <value>¿Es enlace público?</value>
   </data>
@@ -1034,9 +1031,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>
   </data>
-  <data name="tpGfycat.Text" xml:space="preserve">
-    <value>Gfycat</value>
-  </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
   </data>
@@ -1188,9 +1182,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Usar enlace personalizado (se permiten patrones de formato):</value>
   </data>
-  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
-    <value>Conservar audio</value>
-  </data>
   <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
     <value>Definir permiso de lectura pública al archivo</value>
   </data>
@@ -1265,5 +1256,8 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   </data>
   <data name="tpTeknik.Text" xml:space="preserve">
     <value>Teknik</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Utilizar enlace directo</value>
   </data>
 </root>

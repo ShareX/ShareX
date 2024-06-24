@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2023 ShareX Team
+    Copyright (c) 2007-2024 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -67,7 +67,6 @@ namespace ShareX.Setup
 
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration);
-        private static string NativeMessagingHostDir => Path.Combine(ParentDir, "ShareX.NativeMessagingHost", "bin", Configuration);
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
 
@@ -94,7 +93,7 @@ namespace ShareX.Setup
         private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
-        private const string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg-Builds/releases/download/latest/ffmpeg-latest-win64.zip";
+        private const string FFmpegDownloadURL = "https://github.com/ShareX/FFmpeg/releases/download/v7.0/ffmpeg-7.0-win64.zip";
 
         private static void Main(string[] args)
         {
@@ -378,7 +377,9 @@ namespace ShareX.Setup
 
                 FileHelpers.CopyFiles(RecorderDevicesSetupPath, destination);
 
-                FileHelpers.CopyFiles(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
+                FileHelpers.CopyFiles(Path.Combine(source, "ShareX_NativeMessagingHost.exe"), destination);
+                FileHelpers.CopyFiles(Path.Combine(source, "host-manifest-chrome.json"), destination);
+                FileHelpers.CopyFiles(Path.Combine(source, "host-manifest-firefox.json"), destination);
             }
 
             foreach (string directory in Directory.GetDirectories(source))
@@ -426,7 +427,7 @@ namespace ShareX.Setup
                 string filePath = Path.Combine(OutputDir, fileName);
 
                 Console.WriteLine("Downloading: " + FFmpegDownloadURL);
-                URLHelpers.DownloadFile(FFmpegDownloadURL, filePath);
+                WebHelpers.DownloadFileAsync(FFmpegDownloadURL, filePath).GetAwaiter().GetResult();
 
                 Console.WriteLine("Extracting: " + filePath);
                 ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));

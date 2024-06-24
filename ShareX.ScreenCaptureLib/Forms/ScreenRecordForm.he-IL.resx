@@ -135,4 +135,7 @@
   <data name="tsmiStart.Text" xml:space="preserve">
     <value>התחל</value>
   </data>
+  <data name="tsmiPause.Text" xml:space="preserve">
+    <value>השהה</value>
+  </data>
 </root>
