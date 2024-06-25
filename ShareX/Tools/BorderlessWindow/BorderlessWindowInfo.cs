@@ -23,27 +23,25 @@
 
 #endregion License Information (GPL v3)
 
-using System.Collections.Generic;
+using ShareX.HelpersLib;
+using System;
+using System.Drawing;
 
-namespace ShareX.HelpersLib
+namespace ShareX
 {
-    public class FixedSizedQueue<T> : Queue<T>
+    public class BorderlessWindowInfo
     {
-        public int Size { get; private set; }
+        public IntPtr Handle { get; set; }
+        public Rectangle Rectangle { get; set; }
+        public WindowStyles Style { get; set; }
+        public WindowStyles ExStyle { get; set; }
 
-        public FixedSizedQueue(int size)
+        public BorderlessWindowInfo(WindowInfo windowInfo)
         {
-            Size = size;
-        }
-
-        public new void Enqueue(T obj)
-        {
-            base.Enqueue(obj);
-
-            while (Count > Size)
-            {
-                Dequeue();
-            }
+            Handle = windowInfo.Handle;
+            Rectangle = NativeMethods.GetWindowRect(windowInfo.Handle);
+            Style = windowInfo.Style;
+            ExStyle = windowInfo.ExStyle;
         }
     }
 }
