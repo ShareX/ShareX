@@ -1280,6 +1280,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make active window borderless.
+        /// </summary>
+        internal static string HotkeyType_ActiveWindowBorderless {
+            get {
+                return ResourceManager.GetString("HotkeyType_ActiveWindowBorderless", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto capture.
         /// </summary>
         internal static string HotkeyType_AutoCapture {

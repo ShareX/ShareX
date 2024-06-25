@@ -270,7 +270,10 @@ namespace ShareX
                     OpenClipboardViewer();
                     break;
                 case HotkeyType.BorderlessWindow:
-                    OpenBorderlessWindow();
+                    OpenBorderlessWindow(safeTaskSettings);
+                    break;
+                case HotkeyType.ActiveWindowBorderless:
+                    MakeActiveWindowBorderless(safeTaskSettings);
                     break;
                 case HotkeyType.InspectWindow:
                     OpenInspectWindow();
@@ -936,6 +939,14 @@ namespace ShareX
             BorderlessWindowSettings settings = taskSettings.ToolsSettingsReference.BorderlessWindowSettings;
             BorderlessWindowForm borderlessWindowForm = new BorderlessWindowForm(settings);
             borderlessWindowForm.Show();
+        }
+
+        public static void MakeActiveWindowBorderless(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            IntPtr handle = NativeMethods.GetForegroundWindow();
+            BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
         }
 
         public static void OpenInspectWindow()
@@ -1731,6 +1742,7 @@ namespace ShareX
                     case HotkeyType.IndexFolder: return Resources.folder_tree;
                     case HotkeyType.ClipboardViewer: return Resources.clipboard_block;
                     case HotkeyType.BorderlessWindow: return Resources.application_resize_full;
+                    case HotkeyType.ActiveWindowBorderless: return Resources.application_resize_full;
                     case HotkeyType.InspectWindow: return Resources.application_search_result;
                     case HotkeyType.MonitorTest: return Resources.monitor;
                     case HotkeyType.DNSChanger: return Resources.network_ip;
