@@ -945,8 +945,20 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-            BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
+            try
+            {
+                IntPtr handle = NativeMethods.GetForegroundWindow();
+                BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
+
+                if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+                {
+                    Helpers.PlaySoundAsync(Resources.PopSound);
+                }
+            }
+            catch (Exception e)
+            {
+                e.ShowError();
+            }
         }
 
         public static void OpenInspectWindow()
