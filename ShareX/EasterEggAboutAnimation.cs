@@ -79,6 +79,8 @@ namespace ShareX
             {
                 easterEggBounce.Stop();
             }
+
+            TaskHelpers.PlayPopSound();
         }
 
         private void Canvas_Draw(Graphics g)

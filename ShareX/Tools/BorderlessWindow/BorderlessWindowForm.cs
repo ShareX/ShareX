@@ -123,9 +123,14 @@ namespace ShareX
 
                 bool result = BorderlessWindowManager.ToggleBorderlessWindow(windowTitle, Settings.ExcludeTaskbarArea);
 
-                if (result && Settings.AutoCloseWindow)
+                if (result)
                 {
-                    Close();
+                    TaskHelpers.PlayPopSound();
+
+                    if (Settings.AutoCloseWindow)
+                    {
+                        Close();
+                    }
                 }
             }
             catch (Exception ex)

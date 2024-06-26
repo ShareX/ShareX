@@ -134,6 +134,7 @@ Blob Emoji: http://blobs.gg
         {
             easterEgg.Start();
             pbLogo.Visible = false;
+            TaskHelpers.PlayPopSound();
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
