@@ -831,8 +831,13 @@ namespace ShareX
                     string text = CodeMenuEntryPixelInfo.Parse(input, pointInfo.Color, pointInfo.Position);
                     ClipboardHelpers.CopyText(text);
 
-                    ShowNotificationTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
-                        "ShareX - " + Resources.ScreenColorPicker);
+                    PlayPopSound(taskSettings);
+
+                    if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
+                    {
+                        ShowNotificationTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
+                            "ShareX - " + Resources.ScreenColorPicker);
+                    }
                 }
             }
         }
@@ -1586,7 +1591,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+            if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.PlaySoundAfterUpload)
             {
                 Helpers.PlaySoundAsync(Resources.PopSound);
             }
