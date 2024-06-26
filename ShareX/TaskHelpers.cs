@@ -950,10 +950,7 @@ namespace ShareX
                 IntPtr handle = NativeMethods.GetForegroundWindow();
                 BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
 
-                if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
-                {
-                    Helpers.PlaySoundAsync(Resources.PopSound);
-                }
+                PlayPopSound(taskSettings);
             }
             catch (Exception e)
             {
@@ -1431,6 +1428,8 @@ namespace ShareX
                 options.BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
 
                 PinToScreenForm.PinToScreenAsync(image, options, location);
+
+                PlayPopSound();
             }
         }
 
@@ -1580,6 +1579,16 @@ namespace ShareX
             else
             {
                 Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
+            }
+        }
+
+        public static void PlayPopSound(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+            {
+                Helpers.PlaySoundAsync(Resources.PopSound);
             }
         }
 
