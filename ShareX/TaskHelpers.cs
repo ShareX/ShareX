@@ -1337,10 +1337,11 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            await OCRImage(bmp, taskSettings.CaptureSettingsReference.OCROptions, filePath);
+            bool notificationsEnabled = taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
+            await OCRImage(bmp, taskSettings.CaptureSettingsReference.OCROptions, filePath, notificationsEnabled);
         }
 
-        private static async Task OCRImage(Bitmap bmp, OCROptions options, string filePath = null)
+        private static async Task OCRImage(Bitmap bmp, OCROptions options, string filePath = null, bool notificationsEnabled = true)
         {
             try
             {
@@ -1350,7 +1351,7 @@ namespace ShareX
                 {
                     if (options.Silent)
                     {
-                        await AsyncOCRImage(bmp, options, filePath);
+                        await AsyncOCRImage(bmp, options, filePath, notificationsEnabled);
                     }
                     else
                     {
@@ -1373,9 +1374,9 @@ namespace ShareX
             }
         }
 
-        private static async Task AsyncOCRImage(Bitmap bmp, OCROptions options, string filePath = null)
+        private static async Task AsyncOCRImage(Bitmap bmp, OCROptions options, string filePath = null, bool notificationsEnabled = true)
         {
-            ShowNotificationTip(Resources.OCRForm_AutoProcessing);
+            if (notificationsEnabled) ShowNotificationTip(Resources.OCRForm_AutoProcessing);
 
             string result = null;
 
@@ -1397,11 +1398,11 @@ namespace ShareX
                     File.WriteAllText(textFilePath, result, Encoding.UTF8);
                 }
 
-                ShowNotificationTip(Resources.OCRForm_AutoComplete);
+                if (notificationsEnabled) ShowNotificationTip(Resources.OCRForm_AutoComplete);
             }
             else
             {
-                ShowNotificationTip(Resources.OCRForm_AutoCompleteFail);
+                if (notificationsEnabled) ShowNotificationTip(Resources.OCRForm_AutoCompleteFail);
             }
         }
 
