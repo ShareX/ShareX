@@ -953,9 +953,13 @@ namespace ShareX
             try
             {
                 IntPtr handle = NativeMethods.GetForegroundWindow();
-                BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
 
-                PlayPopSound(taskSettings);
+                if (handle.ToInt32() > 0)
+                {
+                    BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
+
+                    PlayPopSound(taskSettings);
+                }
             }
             catch (Exception e)
             {
@@ -1964,6 +1968,8 @@ namespace ShareX
 
                 if (nativeMessagingInput != null)
                 {
+                    PlayPopSound();
+
                     if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
                     switch (nativeMessagingInput.Action)
