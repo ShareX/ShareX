@@ -1289,6 +1289,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make active window top most.
+        /// </summary>
+        internal static string HotkeyType_ActiveWindowTopMost {
+            get {
+                return ResourceManager.GetString("HotkeyType_ActiveWindowTopMost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto capture.
         /// </summary>
         internal static string HotkeyType_AutoCapture {

@@ -1302,4 +1302,7 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
     <value>Make active window borderless</value>
   </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>Make active window top most</value>
+  </data>
 </root>

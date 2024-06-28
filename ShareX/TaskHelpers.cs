@@ -275,6 +275,9 @@ namespace ShareX
                 case HotkeyType.ActiveWindowBorderless:
                     MakeActiveWindowBorderless(safeTaskSettings);
                     break;
+                case HotkeyType.ActiveWindowTopMost:
+                    MakeActiveWindowTopMost(safeTaskSettings);
+                    break;
                 case HotkeyType.InspectWindow:
                     OpenInspectWindow();
                     break;
@@ -957,6 +960,28 @@ namespace ShareX
                 if (handle.ToInt32() > 0)
                 {
                     BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
+
+                    PlayPopSound(taskSettings);
+                }
+            }
+            catch (Exception e)
+            {
+                e.ShowError();
+            }
+        }
+
+        public static void MakeActiveWindowTopMost(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            try
+            {
+                IntPtr handle = NativeMethods.GetForegroundWindow();
+
+                if (handle.ToInt32() > 0)
+                {
+                    WindowInfo windowInfo = new WindowInfo(handle);
+                    windowInfo.TopMost = !windowInfo.TopMost;
 
                     PlayPopSound(taskSettings);
                 }
@@ -1773,6 +1798,7 @@ namespace ShareX
                     case HotkeyType.ClipboardViewer: return Resources.clipboard_block;
                     case HotkeyType.BorderlessWindow: return Resources.application_resize_full;
                     case HotkeyType.ActiveWindowBorderless: return Resources.application_resize_full;
+                    case HotkeyType.ActiveWindowTopMost: return Resources.pin;
                     case HotkeyType.InspectWindow: return Resources.application_search_result;
                     case HotkeyType.MonitorTest: return Resources.monitor;
                     case HotkeyType.DNSChanger: return Resources.network_ip;
@@ -1968,9 +1994,9 @@ namespace ShareX
 
                 if (nativeMessagingInput != null)
                 {
-                    PlayPopSound();
-
                     if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                    PlayPopSound(taskSettings);
 
                     switch (nativeMessagingInput.Action)
                     {

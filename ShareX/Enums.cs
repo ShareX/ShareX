@@ -304,6 +304,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ActiveWindowBorderless,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        ActiveWindowTopMost,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         InspectWindow,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         MonitorTest,
