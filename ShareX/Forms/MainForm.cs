@@ -797,6 +797,7 @@ namespace ShareX
                 ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTaskInfo);
                 ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
                 ttMain.ForeColor = ShareXResources.Theme.TextColor;
+                lvUploads.Font = ShareXResources.Theme.MainWindowFont;
                 lvUploads.BackColor = ShareXResources.Theme.BackgroundColor;
                 lvUploads.ForeColor = ShareXResources.Theme.TextColor;
                 scMain.SplitterColor = ShareXResources.Theme.BackgroundColor;
