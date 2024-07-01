@@ -183,6 +183,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.lblSettingsControlled = new System.Windows.Forms.Label();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -238,6 +239,7 @@ namespace ShareX
             // tpGeneral
             // 
             this.tpGeneral.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGeneral.Controls.Add(this.lblSettingsControlled);
             this.tpGeneral.Controls.Add(this.cbUpdateChannel);
             this.tpGeneral.Controls.Add(this.lblUpdateChannel);
             this.tpGeneral.Controls.Add(this.cbAutoCheckUpdate);
@@ -1431,6 +1433,11 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // lblSettingsControlled
+            // 
+            resources.ApplyResources(this.lblSettingsControlled, "lblSettingsControlled");
+            this.lblSettingsControlled.Name = "lblSettingsControlled";
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1651,5 +1658,6 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbAutoCheckUpdate;
         private System.Windows.Forms.ComboBox cbUpdateChannel;
         private System.Windows.Forms.Label lblUpdateChannel;
+        private System.Windows.Forms.Label lblSettingsControlled;
     }
 }
