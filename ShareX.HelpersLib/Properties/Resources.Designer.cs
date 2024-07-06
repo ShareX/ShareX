@@ -1658,6 +1658,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pin to screen (Close all).
+        /// </summary>
+        internal static string HotkeyType_PinToScreenCloseAll {
+            get {
+                return ResourceManager.GetString("HotkeyType_PinToScreenCloseAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pin to screen (From clipboard).
         /// </summary>
         internal static string HotkeyType_PinToScreenFromClipboard {

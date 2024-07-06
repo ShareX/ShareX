@@ -1305,4 +1305,7 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
     <value>Make active window top most</value>
   </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>Pin to screen (Close all)</value>
+  </data>
 </root>

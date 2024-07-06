@@ -196,6 +196,9 @@ namespace ShareX
                 case HotkeyType.PinToScreenFromFile:
                     PinToScreenFromFile();
                     break;
+                case HotkeyType.PinToScreenCloseAll:
+                    PinToScreenCloseAll();
+                    break;
                 case HotkeyType.ImageEditor:
                     if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
                     {
@@ -1505,6 +1508,13 @@ namespace ShareX
             }
         }
 
+        public static void PinToScreenCloseAll()
+        {
+            PinToScreenForm.CloseAll();
+
+            PlayPopSound();
+        }
+
         public static void TweetMessage()
         {
             if (IsUploadAllowed())
@@ -1781,6 +1791,7 @@ namespace ShareX
                     case HotkeyType.PinToScreenFromScreen: return Resources.pin;
                     case HotkeyType.PinToScreenFromClipboard: return Resources.pin;
                     case HotkeyType.PinToScreenFromFile: return Resources.pin;
+                    case HotkeyType.PinToScreenCloseAll: return Resources.pin__minus;
                     case HotkeyType.ImageEditor: return Resources.image_pencil;
                     case HotkeyType.ImageBeautifier: return Resources.picture_sunset;
                     case HotkeyType.ImageEffects: return Resources.image_saturation;
