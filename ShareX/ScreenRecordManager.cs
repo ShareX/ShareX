@@ -290,6 +290,8 @@ namespace ShareX
                             }
                         }
 
+                        TaskHelpers.PlayPopSound();
+
                         if (File.Exists(concatPath))
                         {
                             using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath))
