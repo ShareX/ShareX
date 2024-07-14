@@ -191,7 +191,7 @@ namespace ShareX
 
         private static void ApplicationConfigBackwardCompatibilityTasks()
         {
-            if (Settings.IsFirstTimeRun && SystemOptions.DisableUpload)
+            if (SystemOptions.DisableUpload)
             {
                 DefaultTaskSettings.AfterCaptureJob = DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
             }
@@ -285,6 +285,17 @@ namespace ShareX
 
         private static void HotkeysConfigBackwardCompatibilityTasks()
         {
+            if (SystemOptions.DisableUpload)
+            {
+                foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))
+                {
+                    if (taskSettings != null)
+                    {
+                        taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                    }
+                }
+            }
+
             if (Settings.IsUpgradeFrom("15.0.1"))
             {
                 foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))
