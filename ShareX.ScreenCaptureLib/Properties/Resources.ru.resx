@@ -497,4 +497,7 @@
   <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
     <value>Повторить</value>
   </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>Цвет фона разрыва...</value>
+  </data>
 </root>
