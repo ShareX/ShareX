@@ -207,7 +207,7 @@ namespace ShareX.ScreenCaptureLib
         private void TrimShadow(Bitmap bitmap)
         {
             int cornerSize = 10;
-            int alphaOffset = Helpers.IsWindows11OrGreater() ? 50 : 200;
+            int alphaOffset = 200;
 
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bitmap, true))
             {
@@ -215,6 +215,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     int y = i;
                     int width = bitmap.Width;
+
+                    if (Helpers.IsWindows11OrGreater())
+                    {
+                        alphaOffset = 75;
+                    }
 
                     // Left top
                     for (int x = 0; x < cornerSize; x++)
@@ -240,6 +245,11 @@ namespace ShareX.ScreenCaptureLib
                         {
                             break;
                         }
+                    }
+
+                    if (Helpers.IsWindows11OrGreater())
+                    {
+                        alphaOffset = 123;
                     }
 
                     y = bitmap.Height - i - 1;
