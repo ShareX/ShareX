@@ -774,4 +774,7 @@
   <data name="cHotkey.HeaderText" xml:space="preserve">
     <value>Клавиши</value>
   </data>
+  <data name="tsbX.Text" xml:space="preserve">
+    <value>Читать @ShareX...</value>
+  </data>
 </root>

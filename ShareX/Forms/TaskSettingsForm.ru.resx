@@ -654,4 +654,7 @@
   <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
     <value>Применять случайный эффект изображения</value>
   </data>
+  <data name="lblRegionCaptureBackgroundDimStrength.Text" xml:space="preserve">
+    <value>Степень затенения фона:</value>
+  </data>
 </root>

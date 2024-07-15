@@ -145,7 +145,7 @@
     <value>{0} в актуальном состоянии</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
-    <value>Ожидание.</value>
+    <value>Ожидание...</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Закрыть</value>
@@ -228,10 +228,10 @@
     <value>Отменить</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>Загрузка.</value>
+    <value>Загрузка...</value>
   </data>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>Получение размера файла.</value>
+    <value>Получение размера файла...</value>
   </data>
   <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
     <value>Загрузка изображения: {0}%</value>
@@ -1245,5 +1245,23 @@
   </data>
   <data name="Check" xml:space="preserve">
     <value>Проверить</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>Скорость загрузки</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>Размер файла</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>Прогресс</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>Сделать активное окно безрамочным</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>Поместить активное окно поверх остальных</value>
+  </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>Закрепить на экране (Закрыть все)</value>
   </data>
 </root>
