@@ -331,6 +331,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ActionCompletedSound {
+            get {
+                return ResourceManager.GetStream("ActionCompletedSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File path can&apos;t be empty..
         /// </summary>
         internal static string ActionsForm_btnOK_Click_File_path_can_t_be_empty_ {
@@ -2318,15 +2327,6 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("pl", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream PopSound {
-            get {
-                return ResourceManager.GetStream("PopSound", resourceCulture);
             }
         }
         

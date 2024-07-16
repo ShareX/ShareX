@@ -191,6 +191,7 @@ namespace ShareX
 
             cbPlaySoundAfterCapture.Checked = TaskSettings.GeneralSettings.PlaySoundAfterCapture;
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
+            cbPlaySoundAfterAction.Checked = TaskSettings.GeneralSettings.PlaySoundAfterAction;
             cbShowToastNotificationAfterTaskCompleted.Checked = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
             gbToastWindow.Enabled = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
             nudToastWindowDuration.SetValue((decimal)TaskSettings.GeneralSettings.ToastWindowDuration);
@@ -212,6 +213,9 @@ namespace ShareX
             cbUseCustomTaskCompletedSound.Checked = TaskSettings.GeneralSettings.UseCustomTaskCompletedSound;
             txtCustomTaskCompletedSoundPath.Enabled = btnCustomTaskCompletedSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomTaskCompletedSound;
             txtCustomTaskCompletedSoundPath.Text = TaskSettings.GeneralSettings.CustomTaskCompletedSoundPath;
+            cbUseCustomActionCompletedSound.Checked = TaskSettings.GeneralSettings.UseCustomActionCompletedSound;
+            txtCustomActionCompletedSoundPath.Enabled = btnCustomActionCompletedSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomActionCompletedSound;
+            txtCustomActionCompletedSoundPath.Text = TaskSettings.GeneralSettings.CustomActionCompletedSoundPath;
             cbUseCustomErrorSound.Checked = TaskSettings.GeneralSettings.UseCustomErrorSound;
             txtCustomErrorSoundPath.Enabled = btnCustomErrorSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomErrorSound;
             txtCustomErrorSoundPath.Text = TaskSettings.GeneralSettings.CustomErrorSoundPath;
@@ -827,6 +831,11 @@ namespace ShareX
             TaskSettings.GeneralSettings.PlaySoundAfterUpload = cbPlaySoundAfterUpload.Checked;
         }
 
+        private void cbPlaySoundAfterAction_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.PlaySoundAfterAction = cbPlaySoundAfterAction.Checked;
+        }
+
         private void cbShowToastNotificationAfterTaskCompleted_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted = cbShowToastNotificationAfterTaskCompleted.Checked;
@@ -908,6 +917,22 @@ namespace ShareX
         private void btnCustomTaskCompletedSoundPath_Click(object sender, EventArgs e)
         {
             FileHelpers.BrowseFile(txtCustomTaskCompletedSoundPath, filter: "Audio file (*.wav)|*.wav");
+        }
+
+        private void cbUseCustomActionCompletedSound_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.UseCustomActionCompletedSound = cbUseCustomActionCompletedSound.Checked;
+            txtCustomActionCompletedSoundPath.Enabled = btnCustomActionCompletedSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomActionCompletedSound;
+        }
+
+        private void txtCustomActionCompletedSoundPath_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.CustomActionCompletedSoundPath = txtCustomActionCompletedSoundPath.Text;
+        }
+
+        private void btnCustomActionCompletedSoundPath_Click(object sender, EventArgs e)
+        {
+            FileHelpers.BrowseFile(txtCustomActionCompletedSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbUseCustomErrorSound_CheckedChanged(object sender, EventArgs e)

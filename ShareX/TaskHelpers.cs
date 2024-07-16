@@ -1633,9 +1633,16 @@ namespace ShareX
                         }
                         break;
                     case NotificationSound.ActionCompleted:
-                        if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+                        if (taskSettings.GeneralSettings.PlaySoundAfterAction)
                         {
-                            Helpers.PlaySoundAsync(Resources.PopSound);
+                            if (taskSettings.GeneralSettings.UseCustomActionCompletedSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomActionCompletedSoundPath))
+                            {
+                                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomActionCompletedSoundPath);
+                            }
+                            else
+                            {
+                                Helpers.PlaySoundAsync(Resources.ActionCompletedSound);
+                            }
                         }
                         break;
                     case NotificationSound.Error:
