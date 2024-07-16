@@ -290,7 +290,7 @@ namespace ShareX
                             }
                         }
 
-                        TaskHelpers.PlayPopSound();
+                        TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
 
                         if (File.Exists(concatPath))
                         {

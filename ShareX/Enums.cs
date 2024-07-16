@@ -428,4 +428,12 @@ namespace ShareX
         UploadText,
         ShortenURL
     }
+
+    public enum NotificationSound
+    {
+        Capture,
+        TaskCompleted,
+        ActionCompleted,
+        Error
+    }
 }

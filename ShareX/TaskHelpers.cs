@@ -185,19 +185,19 @@ namespace ShareX
                     OpenRuler(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreen:
-                    PinToScreen();
+                    PinToScreen(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreenFromScreen:
-                    PinToScreenFromScreen();
+                    PinToScreenFromScreen(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreenFromClipboard:
-                    PinToScreenFromClipboard();
+                    PinToScreenFromClipboard(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreenFromFile:
-                    PinToScreenFromFile();
+                    PinToScreenFromFile(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreenCloseAll:
-                    PinToScreenCloseAll();
+                    PinToScreenCloseAll(safeTaskSettings);
                     break;
                 case HotkeyType.ImageEditor:
                     if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
@@ -837,7 +837,7 @@ namespace ShareX
                     string text = CodeMenuEntryPixelInfo.Parse(input, pointInfo.Color, pointInfo.Position);
                     ClipboardHelpers.CopyText(text);
 
-                    PlayPopSound(taskSettings);
+                    PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
 
                     if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
                     {
@@ -964,7 +964,7 @@ namespace ShareX
                 {
                     BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
 
-                    PlayPopSound(taskSettings);
+                    PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
                 }
             }
             catch (Exception e)
@@ -986,7 +986,7 @@ namespace ShareX
                     WindowInfo windowInfo = new WindowInfo(handle);
                     windowInfo.TopMost = !windowInfo.TopMost;
 
-                    PlayPopSound(taskSettings);
+                    PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
                 }
             }
             catch (Exception e)
@@ -1437,60 +1437,58 @@ namespace ShareX
             }
         }
 
-        public static void PinToScreen()
+        public static void PinToScreen(TaskSettings taskSettings = null)
         {
             using (PinToScreenStartupForm form = new PinToScreenStartupForm())
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    PinToScreen(form.Image, form.PinToScreenLocation);
+                    PinToScreen(form.Image, form.PinToScreenLocation, taskSettings);
                 }
             }
         }
 
-        public static void PinToScreen(Image image, PinToScreenOptions options = null)
+        public static void PinToScreen(Image image, TaskSettings taskSettings = null)
         {
-            PinToScreen(image, null, options);
+            PinToScreen(image, null, taskSettings);
         }
 
-        public static void PinToScreen(Image image, Point? location, PinToScreenOptions options = null)
+        public static void PinToScreen(Image image, Point? location, TaskSettings taskSettings = null)
         {
             if (image != null)
             {
-                if (options == null)
-                {
-                    options = Program.DefaultTaskSettings.ToolsSettings.PinToScreenOptions;
-                }
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
+                PinToScreenOptions options = taskSettings.ToolsSettingsReference.PinToScreenOptions;
                 options.BackgroundColor = ShareXResources.Theme.LightBackgroundColor;
 
                 PinToScreenForm.PinToScreenAsync(image, options, location);
 
-                PlayPopSound();
+                PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
             }
         }
 
-        public static void PinToScreen(string filePath)
+        public static void PinToScreen(string filePath, TaskSettings taskSettings = null)
         {
             Image image = ImageHelpers.LoadImage(filePath);
 
-            PinToScreen(image);
+            PinToScreen(image, taskSettings);
         }
 
-        public static void PinToScreenFromScreen()
+        public static void PinToScreenFromScreen(TaskSettings taskSettings = null)
         {
             Image image = RegionCaptureTasks.GetRegionImage(out Rectangle rect);
 
-            PinToScreen(image, rect.Location);
+            PinToScreen(image, rect.Location, taskSettings);
         }
 
-        public static void PinToScreenFromClipboard()
+        public static void PinToScreenFromClipboard(TaskSettings taskSettings = null)
         {
             Image image = ClipboardHelpers.TryGetImage();
 
             if (image != null)
             {
-                PinToScreen(image);
+                PinToScreen(image, taskSettings);
             }
             else
             {
@@ -1498,21 +1496,23 @@ namespace ShareX
             }
         }
 
-        public static void PinToScreenFromFile()
+        public static void PinToScreenFromFile(TaskSettings taskSettings = null)
         {
             Image image = ImageHelpers.LoadImageWithFileDialog();
 
             if (image != null)
             {
-                PinToScreen(image);
+                PinToScreen(image, taskSettings);
             }
         }
 
-        public static void PinToScreenCloseAll()
+        public static void PinToScreenCloseAll(TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             PinToScreenForm.CloseAll();
 
-            PlayPopSound();
+            PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
         }
 
         public static void TweetMessage()
@@ -1598,55 +1598,60 @@ namespace ShareX
             return true;
         }
 
-        public static void PlayCaptureSound(TaskSettings taskSettings)
+        public static void PlayNotificationSoundAsync(NotificationSound notificationSound, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.GeneralSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomCaptureSoundPath))
+            if (!taskSettings.GeneralSettings.DisableNotifications)
             {
-                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomCaptureSoundPath);
-            }
-            else
-            {
-                Helpers.PlaySoundAsync(Resources.CaptureSound);
-            }
-        }
-
-        public static void PlayTaskCompleteSound(TaskSettings taskSettings)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (taskSettings.GeneralSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath))
-            {
-                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath);
-            }
-            else
-            {
-                Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
-            }
-        }
-
-        public static void PlayPopSound(TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.PlaySoundAfterUpload)
-            {
-                Helpers.PlaySoundAsync(Resources.PopSound);
-            }
-        }
-
-        public static void PlayErrorSound(TaskSettings taskSettings)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (taskSettings.GeneralSettings.UseCustomErrorSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomErrorSoundPath))
-            {
-                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomErrorSoundPath);
-            }
-            else
-            {
-                Helpers.PlaySoundAsync(Resources.ErrorSound);
+                switch (notificationSound)
+                {
+                    case NotificationSound.Capture:
+                        if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
+                        {
+                            if (taskSettings.GeneralSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomCaptureSoundPath))
+                            {
+                                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomCaptureSoundPath);
+                            }
+                            else
+                            {
+                                Helpers.PlaySoundAsync(Resources.CaptureSound);
+                            }
+                        }
+                        break;
+                    case NotificationSound.TaskCompleted:
+                        if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+                        {
+                            if (taskSettings.GeneralSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath))
+                            {
+                                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath);
+                            }
+                            else
+                            {
+                                Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
+                            }
+                        }
+                        break;
+                    case NotificationSound.ActionCompleted:
+                        if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+                        {
+                            Helpers.PlaySoundAsync(Resources.PopSound);
+                        }
+                        break;
+                    case NotificationSound.Error:
+                        if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+                        {
+                            if (taskSettings.GeneralSettings.UseCustomErrorSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomErrorSoundPath))
+                            {
+                                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomErrorSoundPath);
+                            }
+                            else
+                            {
+                                Helpers.PlaySoundAsync(Resources.ErrorSound);
+                            }
+                        }
+                        break;
+                }
             }
         }
 
@@ -2007,7 +2012,7 @@ namespace ShareX
                 {
                     if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                    PlayPopSound(taskSettings);
+                    PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
 
                     switch (nativeMessagingInput.Action)
                     {
