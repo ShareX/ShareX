@@ -1354,26 +1354,26 @@ namespace ShareX
 
         public static async Task OCRImage(string filePath, TaskSettings taskSettings = null)
         {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
                 {
-                    await OCRImage(bmp, taskSettings, filePath);
+                    await OCRImage(bmp, filePath, taskSettings);
                 }
             }
         }
 
-        public static async Task OCRImage(Bitmap bmp, TaskSettings taskSettings = null, string filePath = null)
+        public static async Task OCRImage(Bitmap bmp, TaskSettings taskSettings = null)
+        {
+            await OCRImage(bmp, null, taskSettings);
+        }
+
+        public static async Task OCRImage(Bitmap bmp, string filePath = null, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            await OCRImage(bmp, taskSettings.CaptureSettingsReference.OCROptions, filePath);
-        }
+            OCROptions options = taskSettings.CaptureSettingsReference.OCROptions;
 
-        private static async Task OCRImage(Bitmap bmp, OCROptions options, string filePath = null)
-        {
             try
             {
                 OCRHelper.ThrowIfNotSupported();
@@ -1382,7 +1382,7 @@ namespace ShareX
                 {
                     if (options.Silent)
                     {
-                        await AsyncOCRImage(bmp, options, filePath);
+                        await AsyncOCRImage(bmp, filePath, taskSettings);
                     }
                     else
                     {
@@ -1405,35 +1405,41 @@ namespace ShareX
             }
         }
 
-        private static async Task AsyncOCRImage(Bitmap bmp, OCROptions options, string filePath = null)
+        private static async Task AsyncOCRImage(Bitmap bmp, string filePath = null, TaskSettings taskSettings = null)
         {
-            ShowNotificationTip(Resources.OCRForm_AutoProcessing);
-
-            string result = null;
-
             if (bmp != null)
             {
-                result = await OCRHelper.OCR(bmp, options.Language, options.ScaleFactor, options.SingleLine);
-            }
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (!string.IsNullOrEmpty(result))
-            {
-                Program.MainForm.InvokeSafe(() =>
-                {
-                    ClipboardHelpers.CopyText(result);
-                });
+                OCROptions options = taskSettings.CaptureSettingsReference.OCROptions;
 
-                if (!string.IsNullOrEmpty(filePath))
+                string result = await OCRHelper.OCR(bmp, options.Language, options.ScaleFactor, options.SingleLine);
+
+                if (!string.IsNullOrEmpty(result))
                 {
-                    string textFilePath = Path.ChangeExtension(filePath, "txt");
-                    File.WriteAllText(textFilePath, result, Encoding.UTF8);
+                    Program.MainForm.InvokeSafe(() =>
+                    {
+                        ClipboardHelpers.CopyText(result);
+                    });
+
+                    if (!string.IsNullOrEmpty(filePath))
+                    {
+                        string textFilePath = Path.ChangeExtension(filePath, "txt");
+                        File.WriteAllText(textFilePath, result, Encoding.UTF8);
+                    }
+
+                    if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
+                    {
+                        ShowNotificationTip(Resources.OCRForm_AutoComplete);
+                    }
                 }
-
-                ShowNotificationTip(Resources.OCRForm_AutoComplete);
-            }
-            else
-            {
-                ShowNotificationTip(Resources.OCRForm_AutoCompleteFail);
+                else
+                {
+                    if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
+                    {
+                        ShowNotificationTip(Resources.OCRForm_AutoCompleteFail);
+                    }
+                }
             }
         }
 

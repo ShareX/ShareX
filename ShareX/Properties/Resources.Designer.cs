@@ -2234,15 +2234,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OCR is processing..
-        /// </summary>
-        internal static string OCRForm_AutoProcessing {
-            get {
-                return ResourceManager.GetString("OCRForm_AutoProcessing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] openhand {
