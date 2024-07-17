@@ -931,4 +931,10 @@ Soll sie heruntergeladen werden?</value>
   <data name="LinearGradientMode_Horizontal" xml:space="preserve">
     <value>Horizontal</value>
   </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Zufälliges Emoji (Wiederholung mit {n})</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Zufälliges, nicht mehrdeutiges alphanumerisches Zeichen (Wiederholung mit {n})</value>
+  </data>
 </root>
