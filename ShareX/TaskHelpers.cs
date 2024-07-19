@@ -1435,11 +1435,18 @@ namespace ShareX
                 }
                 else
                 {
+                    Program.MainForm.InvokeSafe(() =>
+                    {
+                        ClipboardHelpers.Clear();
+                    });
+
                     if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
                     {
                         ShowNotificationTip(Resources.OCRForm_AutoCompleteFail);
                     }
                 }
+
+                PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
             }
         }
 
