@@ -1427,11 +1427,6 @@ namespace ShareX
                         string textFilePath = Path.ChangeExtension(filePath, "txt");
                         File.WriteAllText(textFilePath, result, Encoding.UTF8);
                     }
-
-                    if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
-                    {
-                        ShowNotificationTip(Resources.OCRForm_AutoComplete);
-                    }
                 }
                 else
                 {
@@ -1439,11 +1434,6 @@ namespace ShareX
                     {
                         ClipboardHelpers.Clear();
                     });
-
-                    if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
-                    {
-                        ShowNotificationTip(Resources.OCRForm_AutoCompleteFail);
-                    }
                 }
 
                 PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
