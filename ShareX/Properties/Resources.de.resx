@@ -551,7 +551,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>FFmpeg Fehler</value>
   </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
-    <value>Konnte das Bild nicht in den Pfad schreiben</value>
+    <value>Konnte das Bild nicht in den Pfad schreiben:</value>
   </data>
   <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
     <value>FFmpeg existiert nicht unter dem folgenden Pfad:</value>
@@ -597,9 +597,6 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="InspectWindow_WindowStyles" xml:space="preserve">
     <value>Fensterstile</value>
   </data>
-  <data name="PinToScreen" xml:space="preserve">
-    <value>An Bildschirm anheften</value>
-  </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
     <value>ShareX ist aktuell!</value>
   </data>
@@ -611,5 +608,28 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
     <value>Hebräisch</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Name der Prozessdatei</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg fehlt</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>Möchten Sie die Themen zurücksetzen?</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Fensterrechteck</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Möchten Sie die Bildeffekte aktivieren?
+
+Sie können sie später im Menü „Aufgaben nach der Aufnahme“ deaktivieren.</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Die Zwischenablage enthält kein Bild.</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Prozesskennzeichen</value>
   </data>
 </root>

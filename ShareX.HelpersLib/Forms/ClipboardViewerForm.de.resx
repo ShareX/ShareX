@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Zwischenanlagenanzeige</value>
+    <value>ShareX - Zwischenablage-Betrachter</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="btnClearClipboard.Text" xml:space="preserve">
+    <value>Zwischenablage leeren</value>
   </data>
 </root>

@@ -120,4 +120,34 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - An Bildschirm anheften Optionen</value>
   </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="lblPlacement.Text" xml:space="preserve">
+    <value>Platzierung:</value>
+  </data>
+  <data name="lblPlacementOffset.Text" xml:space="preserve">
+    <value>Platzierungsversatz:</value>
+  </data>
+  <data name="cbKeepCenterLocation.Text" xml:space="preserve">
+    <value>Zentrale Position beibehalten</value>
+  </data>
+  <data name="cbShadow.Text" xml:space="preserve">
+    <value>Schatten</value>
+  </data>
+  <data name="cbBorder.Text" xml:space="preserve">
+    <value>Rand</value>
+  </data>
+  <data name="lblBorderSize.Text" xml:space="preserve">
+    <value>Randgröße:</value>
+  </data>
+  <data name="btnBorderColor.Text" xml:space="preserve">
+    <value>Randfarbe</value>
+  </data>
+  <data name="lblMinimizeSize.Text" xml:space="preserve">
+    <value>Größe minimieren:</value>
+  </data>
+  <data name="cbTopMost.Text" xml:space="preserve">
+    <value>Vordergrund</value>
+  </data>
 </root>

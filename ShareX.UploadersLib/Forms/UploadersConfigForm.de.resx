@@ -123,7 +123,7 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Benutze diese Option wenn du Bucket mit einer eigenen Domain benutzt.
 Wenn das Textfeld leer ist, dann wird der Bucketname für die URL benutzt.
-z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.example.com/... sein</value>
+z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.example.com/... sein.</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Andere Uploader</value>
@@ -153,7 +153,7 @@ z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.ex
     <value>Domain:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Anmerkung: Wenn du eine Signatur hast brauchst du keinen Benutzernamen/Passwort</value>
+    <value>Anmerkung: Wenn du eine Signatur hast brauchst du keinen Benutzernamen/Passwort.</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>Passwort:</value>
@@ -496,10 +496,10 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Erstelle teilbaren Link</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Anmerkung: Du kannst auf den Ordner doppelt klicken um in ihn zu gehen</value>
+    <value>Anmerkung: Du kannst auf den Ordner doppelt klicken um in ihn zu gehen.</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Ist es ein öffentlicher Upload?</value>
+    <value>Öffentlicher Upload</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Aktualisiere Ordnerliste</value>
@@ -520,13 +520,13 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Teilbaren Link erstellen</value>
   </data>
   <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>ausgewählter Ordner</value>
+    <value>ausgewählter Ordner:</value>
   </data>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Uploadpfad:</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Erstelle teilbare URL:</value>
+    <value>Erstelle teilbare URL</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Bilduploader</value>
@@ -698,5 +698,101 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   </data>
   <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
     <value>Dateierweiterung vom URL-Pfad entfernen</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>Benutzerdefinierte URL verwenden:</value>
+  </data>
+  <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
+    <value>Veraltetes API v1 verwenden</value>
+  </data>
+  <data name="cbPolrIsSecret.Text" xml:space="preserve">
+    <value>Geheime URL</value>
+  </data>
+  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
+    <value>Kurzer Link</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>Web API Schlüssel:</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
+    <value>Firebase dynamische Links</value>
+  </data>
+  <data name="lblKuttPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>Wenn eine URL mit dem angegebenen Ziel existiert, wird sie zurückgegeben</value>
+  </data>
+  <data name="lblKuttAPIKey.Text" xml:space="preserve">
+    <value>API Schlüssel:</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.Text" xml:space="preserve">
+    <value>Schlüssel-Passphrase:</value>
+  </data>
+  <data name="lblSFTPKeyLocation.Text" xml:space="preserve">
+    <value>Schlüsselort:</value>
+  </data>
+  <data name="lblFTPProtocol.Text" xml:space="preserve">
+    <value>Protokoll:</value>
+  </data>
+  <data name="rbFTPTransferModeActive.Text" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
+    <value>Passiv</value>
+  </data>
+  <data name="lblFTPTransferMode.Text" xml:space="preserve">
+    <value>Transfermodus:</value>
+  </data>
+  <data name="lblFTPUsername.Text" xml:space="preserve">
+    <value>Benutzername:</value>
+  </data>
+  <data name="lblFTPPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="lblFTPURLPath.Text" xml:space="preserve">
+    <value>URL-Pfad:</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.Text" xml:space="preserve">
+    <value>Zertifikatsort:</value>
+  </data>
+  <data name="lblFTPSEncryption.Text" xml:space="preserve">
+    <value>Verschlüsselung:</value>
+  </data>
+  <data name="btnFTPDuplicate.Text" xml:space="preserve">
+    <value>Duplizieren</value>
+  </data>
+  <data name="btnFTPRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnFTPAdd.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="lblFTPFile.Text" xml:space="preserve">
+    <value>Datei:</value>
+  </data>
+  <data name="lblFTPImage.Text" xml:space="preserve">
+    <value>Bild:</value>
+  </data>
+  <data name="cbDropboxUseDirectLink.Text" xml:space="preserve">
+    <value>Direktlink verwenden</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Direktlink verwenden</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
+    <value>Direktlink verwenden</value>
+  </data>
+  <data name="lblPuushAPIKey.Text" xml:space="preserve">
+    <value>API Schlüssel:</value>
+  </data>
+  <data name="llPuushForgottenPassword.Text" xml:space="preserve">
+    <value>Passwort vergessen?</value>
+  </data>
+  <data name="lblPuushPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Zugriffseben des geteilten Links:</value>
   </data>
 </root>

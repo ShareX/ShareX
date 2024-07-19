@@ -120,4 +120,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Service Links</value>
   </data>
+  <data name="lblServices.Text" xml:space="preserve">
+    <value>Services:</value>
+  </data>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
 </root>

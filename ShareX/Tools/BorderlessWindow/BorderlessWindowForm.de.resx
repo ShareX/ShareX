@@ -120,4 +120,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Randloses Fenster</value>
   </data>
+  <data name="lblWindowTitle.Text" xml:space="preserve">
+    <value>Fenstertitel:</value>
+  </data>
+  <data name="btnMakeWindowBorderless.Text" xml:space="preserve">
+    <value>Fenster randlos machen</value>
+  </data>
+  <data name="mbWindowList.Text" xml:space="preserve">
+    <value>Wählen Sie ein Fenster</value>
+  </data>
 </root>

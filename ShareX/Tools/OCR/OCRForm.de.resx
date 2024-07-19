@@ -120,4 +120,28 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Optische Zeichenerkennung</value>
   </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Sprache:</value>
+  </data>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Ergebnis:</value>
+  </data>
+  <data name="lblScaleFactor.Text" xml:space="preserve">
+    <value>Skalierungsfaktor:</value>
+  </data>
+  <data name="btnOpenServiceLink.Text" xml:space="preserve">
+    <value>Service-Link öffnen...</value>
+  </data>
+  <data name="lblService.Text" xml:space="preserve">
+    <value>Service:</value>
+  </data>
+  <data name="btnSelectRegion.Text" xml:space="preserve">
+    <value>Region für OCR wählen...</value>
+  </data>
+  <data name="cbSingleLine.Text" xml:space="preserve">
+    <value>Einzelne Linie</value>
+  </data>
+  <data name="btnCopyAll.Text" xml:space="preserve">
+    <value>Alles kopieren</value>
+  </data>
 </root>

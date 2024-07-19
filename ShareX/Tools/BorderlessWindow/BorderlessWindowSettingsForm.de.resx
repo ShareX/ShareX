@@ -120,4 +120,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Einstellungen für randlose Fenster</value>
   </data>
+  <data name="cbRememberWindowTitle.Text" xml:space="preserve">
+    <value>Fenstertitel merken</value>
+  </data>
+  <data name="cbAutoCloseWindow.Text" xml:space="preserve">
+    <value>Fenster automatisch schließen</value>
+  </data>
+  <data name="cbExcludeTaskbarArea.Text" xml:space="preserve">
+    <value>Taskleistenbereich ausschließen</value>
+  </data>
 </root>

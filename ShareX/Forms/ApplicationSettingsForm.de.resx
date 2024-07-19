@@ -418,7 +418,7 @@
     <value>Ort der Bildvorschau:</value>
   </data>
   <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
-    <value>Standarddrucker überschreiben</value>
+    <value>Standarddrucker überschreiben:</value>
   </data>
   <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
     <value>Automatisch nach Updates suchen</value>

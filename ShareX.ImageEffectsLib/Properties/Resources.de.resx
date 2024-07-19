@@ -135,4 +135,26 @@
   <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>Der Ordner Assets muss sich im ShareX-Ordner für Bildeffekte befinden.</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>Ungültiger Pfad zum Asset-Ordner</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>Ein Paket mit diesem Dateinamen existiert bereits.
+Möchten Sie es überschreiben?</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>Möchten Sie Effekte löschen?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Bestätigung</value>
+  </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>Der Name der Voreinstellung darf nicht leer sein.</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>Fehlender Name der Voreinstellung</value>
+  </data>
 </root>

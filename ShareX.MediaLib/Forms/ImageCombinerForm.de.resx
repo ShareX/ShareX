@@ -133,7 +133,7 @@
     <value>Entfernen</value>
   </data>
   <data name="chFilepath.Text" xml:space="preserve">
-    <value>Bildpfad</value>
+    <value>Pfad der Bilddatei</value>
   </data>
   <data name="lblSpace.Text" xml:space="preserve">
     <value>Platz zwischen Bildern:</value>
@@ -142,9 +142,24 @@
     <value>Pixel</value>
   </data>
   <data name="lblOrientation.Text" xml:space="preserve">
-    <value>Verbindungs-Ausrichtung:</value>
+    <value>Ausrichtung kombinieren:</value>
   </data>
   <data name="btnCombine.Text" xml:space="preserve">
     <value>Verbinde Bilder und speichere/lade hoch, abhängig von den Aufgaben nach der Aufnahme</value>
+  </data>
+  <data name="lblImageAlignment.Text" xml:space="preserve">
+    <value>Bildausrichtung:</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>Vertikal</value>
+  </data>
+  <data name="cbAutoFillBackground.Text" xml:space="preserve">
+    <value>Hintergrund automatisch füllen</value>
+  </data>
+  <data name="lblWrapAfter.Text" xml:space="preserve">
+    <value>Umbrechen nach:</value>
+  </data>
+  <data name="lblWrapAfterImages.Text" xml:space="preserve">
+    <value>Bilder</value>
   </data>
 </root>

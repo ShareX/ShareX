@@ -139,7 +139,7 @@
     <value>Mauszeiger in Screenshots anzeigen</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
-    <value>Schattenversetzung:</value>
+    <value>Schattenversatz:</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>Nimm Fenster mit Transparenz auf</value>

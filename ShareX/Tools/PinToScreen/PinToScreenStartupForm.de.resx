@@ -120,4 +120,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - An Bildschirm anheften</value>
   </data>
+  <data name="btnFromFile.Text" xml:space="preserve">
+    <value>Anheften an Bildschirm von Datei...</value>
+  </data>
+  <data name="btnFromClipboard.Text" xml:space="preserve">
+    <value>Anheften an Bildschirm von Zwischenablage</value>
+  </data>
+  <data name="btnFromScreen.Text" xml:space="preserve">
+    <value>Anheften an Bildschirm von Bildschirm...</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
 </root>
