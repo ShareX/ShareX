@@ -80,7 +80,7 @@ namespace ShareX
                 easterEggBounce.Stop();
             }
 
-            TaskHelpers.PlayPopSound();
+            TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
         }
 
         private void Canvas_Draw(Graphics g)

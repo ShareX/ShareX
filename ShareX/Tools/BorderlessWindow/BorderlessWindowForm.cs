@@ -125,7 +125,7 @@ namespace ShareX
 
                 if (result)
                 {
-                    TaskHelpers.PlayPopSound();
+                    TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
 
                     if (Settings.AutoCloseWindow)
                     {

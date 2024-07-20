@@ -101,10 +101,7 @@ namespace ShareX
         {
             if (metadata != null && metadata.Image != null)
             {
-                if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
-                {
-                    TaskHelpers.PlayCaptureSound(taskSettings);
-                }
+                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.Capture, taskSettings);
 
                 if (taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage) && !AllowAnnotation)
                 {

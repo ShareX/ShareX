@@ -308,6 +308,7 @@ namespace ShareX
 
         public bool PlaySoundAfterCapture = true;
         public bool PlaySoundAfterUpload = true;
+        public bool PlaySoundAfterAction = true;
         public bool ShowToastNotificationAfterTaskCompleted = true;
         public float ToastWindowDuration = 3f;
         public float ToastWindowFadeDuration = 1f;
@@ -321,6 +322,8 @@ namespace ShareX
         public string CustomCaptureSoundPath = "";
         public bool UseCustomTaskCompletedSound = false;
         public string CustomTaskCompletedSoundPath = "";
+        public bool UseCustomActionCompletedSound = false;
+        public string CustomActionCompletedSoundPath = "";
         public bool UseCustomErrorSound = false;
         public string CustomErrorSoundPath = "";
         public bool DisableNotifications = false;
