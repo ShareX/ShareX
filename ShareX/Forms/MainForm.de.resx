@@ -813,4 +813,7 @@
   <data name="tsbX.Text" xml:space="preserve">
     <value>Folge @ShareX...</value>
   </data>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>Tastenkürzel</value>
+  </data>
 </root>

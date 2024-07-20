@@ -126,4 +126,7 @@
   <data name="tslSize.Text" xml:space="preserve">
     <value>Größe:</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Sticker Picker</value>
+  </data>
 </root>

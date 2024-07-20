@@ -1249,4 +1249,7 @@ Soll sie heruntergeladen werden?</value>
   <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
     <value>Aktives Fenster in den Vordergrund</value>
   </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>An Bildschirm anheften (Alles schließen)</value>
+  </data>
 </root>

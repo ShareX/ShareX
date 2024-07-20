@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnHotkey.Text" xml:space="preserve">
-    <value>Hotkey</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Warten bis die Autorisierung im Browser erledigt ist...</value>
   </data>
-  <data name="btnTask.Text" xml:space="preserve">
-    <value>Aufgabe...</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Autorisierung</value>
   </data>
 </root>
