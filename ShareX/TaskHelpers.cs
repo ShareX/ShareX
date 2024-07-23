@@ -839,7 +839,7 @@ namespace ShareX
 
                     PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
 
-                    if (!taskSettings.GeneralSettings.DisableNotifications && taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
+                    if (taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
                     {
                         ShowNotificationTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
                             "ShareX - " + Resources.ScreenColorPicker);
@@ -1605,63 +1605,60 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (!taskSettings.GeneralSettings.DisableNotifications)
+            switch (notificationSound)
             {
-                switch (notificationSound)
-                {
-                    case NotificationSound.Capture:
-                        if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
+                case NotificationSound.Capture:
+                    if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
+                    {
+                        if (taskSettings.GeneralSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomCaptureSoundPath))
                         {
-                            if (taskSettings.GeneralSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomCaptureSoundPath))
-                            {
-                                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomCaptureSoundPath);
-                            }
-                            else
-                            {
-                                Helpers.PlaySoundAsync(Resources.CaptureSound);
-                            }
+                            Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomCaptureSoundPath);
                         }
-                        break;
-                    case NotificationSound.TaskCompleted:
-                        if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+                        else
                         {
-                            if (taskSettings.GeneralSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath))
-                            {
-                                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath);
-                            }
-                            else
-                            {
-                                Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
-                            }
+                            Helpers.PlaySoundAsync(Resources.CaptureSound);
                         }
-                        break;
-                    case NotificationSound.ActionCompleted:
-                        if (taskSettings.GeneralSettings.PlaySoundAfterAction)
+                    }
+                    break;
+                case NotificationSound.TaskCompleted:
+                    if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+                    {
+                        if (taskSettings.GeneralSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath))
                         {
-                            if (taskSettings.GeneralSettings.UseCustomActionCompletedSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomActionCompletedSoundPath))
-                            {
-                                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomActionCompletedSoundPath);
-                            }
-                            else
-                            {
-                                Helpers.PlaySoundAsync(Resources.ActionCompletedSound);
-                            }
+                            Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath);
                         }
-                        break;
-                    case NotificationSound.Error:
-                        if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+                        else
                         {
-                            if (taskSettings.GeneralSettings.UseCustomErrorSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomErrorSoundPath))
-                            {
-                                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomErrorSoundPath);
-                            }
-                            else
-                            {
-                                Helpers.PlaySoundAsync(Resources.ErrorSound);
-                            }
+                            Helpers.PlaySoundAsync(Resources.TaskCompletedSound);
                         }
-                        break;
-                }
+                    }
+                    break;
+                case NotificationSound.ActionCompleted:
+                    if (taskSettings.GeneralSettings.PlaySoundAfterAction)
+                    {
+                        if (taskSettings.GeneralSettings.UseCustomActionCompletedSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomActionCompletedSoundPath))
+                        {
+                            Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomActionCompletedSoundPath);
+                        }
+                        else
+                        {
+                            Helpers.PlaySoundAsync(Resources.ActionCompletedSound);
+                        }
+                    }
+                    break;
+                case NotificationSound.Error:
+                    if (taskSettings.GeneralSettings.PlaySoundAfterUpload)
+                    {
+                        if (taskSettings.GeneralSettings.UseCustomErrorSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomErrorSoundPath))
+                        {
+                            Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomErrorSoundPath);
+                        }
+                        else
+                        {
+                            Helpers.PlaySoundAsync(Resources.ErrorSound);
+                        }
+                    }
+                    break;
             }
         }
 

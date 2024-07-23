@@ -112,10 +112,10 @@ namespace ShareX
 
                 if (bmp != null)
                 {
-                    TaskSettings.UseDefaultAfterCaptureJob = false;
                     TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
-                    TaskSettings.UseDefaultAdvancedSettings = false;
-                    TaskSettings.GeneralSettings.DisableNotifications = true;
+                    TaskSettings.GeneralSettings.PlaySoundAfterUpload = false;
+                    TaskSettings.GeneralSettings.PlaySoundAfterAction = false;
+                    TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted = false;
 
                     UploadManager.RunImageTask(bmp, TaskSettings, true, true);
                 }

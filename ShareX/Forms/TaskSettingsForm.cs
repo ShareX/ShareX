@@ -207,6 +207,7 @@ namespace ShareX
             cbToastWindowMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ToastClickAction>());
             cbToastWindowMiddleClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowMiddleClickAction;
             cbToastWindowAutoHide.Checked = TaskSettings.GeneralSettings.ToastWindowAutoHide;
+            cbDisableNotificationsOnFullscreen.Checked = TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen;
             cbUseCustomCaptureSound.Checked = TaskSettings.GeneralSettings.UseCustomCaptureSound;
             txtCustomCaptureSoundPath.Enabled = btnCustomCaptureSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomCaptureSound;
             txtCustomCaptureSoundPath.Text = TaskSettings.GeneralSettings.CustomCaptureSoundPath;
@@ -219,8 +220,6 @@ namespace ShareX
             cbUseCustomErrorSound.Checked = TaskSettings.GeneralSettings.UseCustomErrorSound;
             txtCustomErrorSoundPath.Enabled = btnCustomErrorSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomErrorSound;
             txtCustomErrorSoundPath.Text = TaskSettings.GeneralSettings.CustomErrorSoundPath;
-            cbDisableNotifications.Checked = TaskSettings.GeneralSettings.DisableNotifications;
-            cbDisableNotificationsOnFullscreen.Checked = TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen;
 
             #endregion
 
@@ -887,6 +886,11 @@ namespace ShareX
             TaskSettings.GeneralSettings.ToastWindowAutoHide = cbToastWindowAutoHide.Checked;
         }
 
+        private void cbDisableNotificationsOnFullscreen_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen = cbDisableNotificationsOnFullscreen.Checked;
+        }
+
         private void cbUseCustomCaptureSound_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.UseCustomCaptureSound = cbUseCustomCaptureSound.Checked;
@@ -949,16 +953,6 @@ namespace ShareX
         private void btnCustomErrorSoundPath_Click(object sender, EventArgs e)
         {
             FileHelpers.BrowseFile(txtCustomErrorSoundPath, filter: "Audio file (*.wav)|*.wav");
-        }
-
-        private void cbDisableNotifications_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.GeneralSettings.DisableNotifications = cbDisableNotifications.Checked;
-        }
-
-        private void cbDisableNotificationsOnFullscreen_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen = cbDisableNotificationsOnFullscreen.Checked;
         }
 
         #endregion General

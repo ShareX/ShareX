@@ -63,6 +63,10 @@
             this.tpGeneralMain = new System.Windows.Forms.TabPage();
             this.cbOverrideGeneralSettings = new System.Windows.Forms.CheckBox();
             this.tpNotifications = new System.Windows.Forms.TabPage();
+            this.btnCustomActionCompletedSoundPath = new System.Windows.Forms.Button();
+            this.txtCustomActionCompletedSoundPath = new System.Windows.Forms.TextBox();
+            this.cbUseCustomActionCompletedSound = new System.Windows.Forms.CheckBox();
+            this.cbPlaySoundAfterAction = new System.Windows.Forms.CheckBox();
             this.cbShowToastNotificationAfterTaskCompleted = new System.Windows.Forms.CheckBox();
             this.btnCustomErrorSoundPath = new System.Windows.Forms.Button();
             this.btnCustomTaskCompletedSoundPath = new System.Windows.Forms.Button();
@@ -85,6 +89,7 @@
             this.nudToastWindowSizeWidth = new System.Windows.Forms.NumericUpDown();
             this.cbToastWindowPlacement = new System.Windows.Forms.ComboBox();
             this.nudToastWindowFadeDuration = new System.Windows.Forms.NumericUpDown();
+            this.cbDisableNotificationsOnFullscreen = new System.Windows.Forms.CheckBox();
             this.nudToastWindowDuration = new System.Windows.Forms.NumericUpDown();
             this.lblToastWindowMiddleClickAction = new System.Windows.Forms.Label();
             this.lblToastWindowRightClickAction = new System.Windows.Forms.Label();
@@ -93,8 +98,6 @@
             this.lblToastWindowPlacement = new System.Windows.Forms.Label();
             this.lblToastWindowFadeDuration = new System.Windows.Forms.Label();
             this.lblToastWindowDuration = new System.Windows.Forms.Label();
-            this.cbDisableNotificationsOnFullscreen = new System.Windows.Forms.CheckBox();
-            this.cbDisableNotifications = new System.Windows.Forms.CheckBox();
             this.cbPlaySoundAfterCapture = new System.Windows.Forms.CheckBox();
             this.cbPlaySoundAfterUpload = new System.Windows.Forms.CheckBox();
             this.tpImage = new System.Windows.Forms.TabPage();
@@ -304,10 +307,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbPlaySoundAfterAction = new System.Windows.Forms.CheckBox();
-            this.btnCustomActionCompletedSoundPath = new System.Windows.Forms.Button();
-            this.txtCustomActionCompletedSoundPath = new System.Windows.Forms.TextBox();
-            this.cbUseCustomActionCompletedSound = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -634,12 +633,38 @@
             this.tpNotifications.Controls.Add(this.cbUseCustomTaskCompletedSound);
             this.tpNotifications.Controls.Add(this.cbUseCustomCaptureSound);
             this.tpNotifications.Controls.Add(this.gbToastWindow);
-            this.tpNotifications.Controls.Add(this.cbDisableNotifications);
             this.tpNotifications.Controls.Add(this.cbPlaySoundAfterCapture);
             this.tpNotifications.Controls.Add(this.cbPlaySoundAfterUpload);
             resources.ApplyResources(this.tpNotifications, "tpNotifications");
             this.tpNotifications.Name = "tpNotifications";
             this.tpNotifications.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomActionCompletedSoundPath
+            // 
+            resources.ApplyResources(this.btnCustomActionCompletedSoundPath, "btnCustomActionCompletedSoundPath");
+            this.btnCustomActionCompletedSoundPath.Name = "btnCustomActionCompletedSoundPath";
+            this.btnCustomActionCompletedSoundPath.UseVisualStyleBackColor = true;
+            this.btnCustomActionCompletedSoundPath.Click += new System.EventHandler(this.btnCustomActionCompletedSoundPath_Click);
+            // 
+            // txtCustomActionCompletedSoundPath
+            // 
+            resources.ApplyResources(this.txtCustomActionCompletedSoundPath, "txtCustomActionCompletedSoundPath");
+            this.txtCustomActionCompletedSoundPath.Name = "txtCustomActionCompletedSoundPath";
+            this.txtCustomActionCompletedSoundPath.TextChanged += new System.EventHandler(this.txtCustomActionCompletedSoundPath_TextChanged);
+            // 
+            // cbUseCustomActionCompletedSound
+            // 
+            resources.ApplyResources(this.cbUseCustomActionCompletedSound, "cbUseCustomActionCompletedSound");
+            this.cbUseCustomActionCompletedSound.Name = "cbUseCustomActionCompletedSound";
+            this.cbUseCustomActionCompletedSound.UseVisualStyleBackColor = true;
+            this.cbUseCustomActionCompletedSound.CheckedChanged += new System.EventHandler(this.cbUseCustomActionCompletedSound_CheckedChanged);
+            // 
+            // cbPlaySoundAfterAction
+            // 
+            resources.ApplyResources(this.cbPlaySoundAfterAction, "cbPlaySoundAfterAction");
+            this.cbPlaySoundAfterAction.Name = "cbPlaySoundAfterAction";
+            this.cbPlaySoundAfterAction.UseVisualStyleBackColor = true;
+            this.cbPlaySoundAfterAction.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterAction_CheckedChanged);
             // 
             // cbShowToastNotificationAfterTaskCompleted
             // 
@@ -842,6 +867,13 @@
             this.nudToastWindowFadeDuration.Name = "nudToastWindowFadeDuration";
             this.nudToastWindowFadeDuration.ValueChanged += new System.EventHandler(this.nudToastWindowFadeDuration_ValueChanged);
             // 
+            // cbDisableNotificationsOnFullscreen
+            // 
+            resources.ApplyResources(this.cbDisableNotificationsOnFullscreen, "cbDisableNotificationsOnFullscreen");
+            this.cbDisableNotificationsOnFullscreen.Name = "cbDisableNotificationsOnFullscreen";
+            this.cbDisableNotificationsOnFullscreen.UseVisualStyleBackColor = true;
+            this.cbDisableNotificationsOnFullscreen.CheckedChanged += new System.EventHandler(this.cbDisableNotificationsOnFullscreen_CheckedChanged);
+            // 
             // nudToastWindowDuration
             // 
             this.nudToastWindowDuration.DecimalPlaces = 1;
@@ -888,20 +920,6 @@
             // 
             resources.ApplyResources(this.lblToastWindowDuration, "lblToastWindowDuration");
             this.lblToastWindowDuration.Name = "lblToastWindowDuration";
-            // 
-            // cbDisableNotificationsOnFullscreen
-            // 
-            resources.ApplyResources(this.cbDisableNotificationsOnFullscreen, "cbDisableNotificationsOnFullscreen");
-            this.cbDisableNotificationsOnFullscreen.Name = "cbDisableNotificationsOnFullscreen";
-            this.cbDisableNotificationsOnFullscreen.UseVisualStyleBackColor = true;
-            this.cbDisableNotificationsOnFullscreen.CheckedChanged += new System.EventHandler(this.cbDisableNotificationsOnFullscreen_CheckedChanged);
-            // 
-            // cbDisableNotifications
-            // 
-            resources.ApplyResources(this.cbDisableNotifications, "cbDisableNotifications");
-            this.cbDisableNotifications.Name = "cbDisableNotifications";
-            this.cbDisableNotifications.UseVisualStyleBackColor = true;
-            this.cbDisableNotifications.CheckedChanged += new System.EventHandler(this.cbDisableNotifications_CheckedChanged);
             // 
             // cbPlaySoundAfterCapture
             // 
@@ -2653,33 +2671,6 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // cbPlaySoundAfterAction
-            // 
-            resources.ApplyResources(this.cbPlaySoundAfterAction, "cbPlaySoundAfterAction");
-            this.cbPlaySoundAfterAction.Name = "cbPlaySoundAfterAction";
-            this.cbPlaySoundAfterAction.UseVisualStyleBackColor = true;
-            this.cbPlaySoundAfterAction.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterAction_CheckedChanged);
-            // 
-            // btnCustomActionCompletedSoundPath
-            // 
-            resources.ApplyResources(this.btnCustomActionCompletedSoundPath, "btnCustomActionCompletedSoundPath");
-            this.btnCustomActionCompletedSoundPath.Name = "btnCustomActionCompletedSoundPath";
-            this.btnCustomActionCompletedSoundPath.UseVisualStyleBackColor = true;
-            this.btnCustomActionCompletedSoundPath.Click += new System.EventHandler(this.btnCustomActionCompletedSoundPath_Click);
-            // 
-            // txtCustomActionCompletedSoundPath
-            // 
-            resources.ApplyResources(this.txtCustomActionCompletedSoundPath, "txtCustomActionCompletedSoundPath");
-            this.txtCustomActionCompletedSoundPath.Name = "txtCustomActionCompletedSoundPath";
-            this.txtCustomActionCompletedSoundPath.TextChanged += new System.EventHandler(this.txtCustomActionCompletedSoundPath_TextChanged);
-            // 
-            // cbUseCustomActionCompletedSound
-            // 
-            resources.ApplyResources(this.cbUseCustomActionCompletedSound, "cbUseCustomActionCompletedSound");
-            this.cbUseCustomActionCompletedSound.Name = "cbUseCustomActionCompletedSound";
-            this.cbUseCustomActionCompletedSound.UseVisualStyleBackColor = true;
-            this.cbUseCustomActionCompletedSound.CheckedChanged += new System.EventHandler(this.cbUseCustomActionCompletedSound_CheckedChanged);
-            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -3013,7 +3004,6 @@
         private System.Windows.Forms.TabPage tpGeneralMain;
         private System.Windows.Forms.TabPage tpNotifications;
         private System.Windows.Forms.CheckBox cbDisableNotificationsOnFullscreen;
-        private System.Windows.Forms.CheckBox cbDisableNotifications;
         private System.Windows.Forms.GroupBox gbToastWindow;
         private System.Windows.Forms.Label lblToastWindowLeftClickAction;
         private System.Windows.Forms.Label lblToastWindowSize;
