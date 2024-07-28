@@ -130,7 +130,7 @@
     <value>Mit CMD austesten</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Eigene Befehle verwenden</value>
+    <value>Eigene Befehle verwenden:</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bitrate:</value>
@@ -148,7 +148,7 @@
     <value>Qualität:</value>
   </data>
   <data name="lblVideoSource.Text" xml:space="preserve">
-    <value>Videoquelle</value>
+    <value>Videoquelle:</value>
   </data>
   <data name="lblVorbisQuality.Text" xml:space="preserve">
     <value>Qualität:</value>
@@ -171,7 +171,7 @@ Wenn der Output gut aussieht, dann versuche einen höheren Wert und wenn es dann
     <value>Die Spanne ist 0-10, wobei 10 die höchste Qualität ist. 3-6 ist eine gute Spanne zum Versuchen. Standard ist 3</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Aufnahmegeräte Installieren</value>
+    <value>Aufnahmegeräte Installieren...</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
     <value>Standard ist "full".</value>
@@ -214,5 +214,41 @@ Für Echtzeitencodierung (z. B. Bildschirmaufzeichnungen) muss die Voreinstellun
   <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
     <value>Für Echtzeitencodierungen wie Bildschirmaufnahmen sollte die Voreinstellung so schnell wie möglich sein.
 Ansonsten kann es zu vielen Framedrops kommen.</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Steuert den Index der Bayer-Skala. Je höher die Skala, desto mehr Streifen werden angezeigt. Standard ist 2.</value>
+  </data>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>Zusätzliche Befehlszeilenargumente:</value>
+  </data>
+  <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
+    <value>Benutzerdefinierten FFmpeg-Pfad verwenden:</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Videokodierer:</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>Audiokodierer:</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>Bitrate verwenden</value>
+  </data>
+  <data name="lblNVENCTune.Text" xml:space="preserve">
+    <value>Abstimmung:</value>
+  </data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Voreinstellung:</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>Qualität:</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Verwendung:</value>
+  </data>
+  <data name="lblQSVPreset.Text" xml:space="preserve">
+    <value>Voreinstellung:</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Optionen zurücksetzen...</value>
   </data>
 </root>

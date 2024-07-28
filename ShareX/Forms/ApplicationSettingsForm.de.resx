@@ -369,4 +369,73 @@
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Einstellungen</value>
   </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Zwischenablagenformate</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>Hauptfenster</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>Menü anzeigen</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Miniaturansicht</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Titel anzeigen</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Ort des Titels:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Thumbnail-Größe:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Thumbnail-Klickaktion:</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>Listenansicht</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>Spalten anzeigen</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>Sichtbarkeit der Bildvorschau:</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Bevorzugte Reihenfolge der sekundären Uploader beim erneuten Versuch verwenden</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>Diese Formate werden im Untermenü „Kopieren“ im Kontextmenü des Hauptfensters angezeigt.</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Aufgabenansichtsmodus:</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>Ort der Bildvorschau:</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Standarddrucker überschreiben:</value>
+  </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Automatisch nach Updates suchen</value>
+  </data>
+  <data name="lblUpdateChannel.Text" xml:space="preserve">
+    <value>Updatekanal:</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Automatisches Bereinigen alter Sicherungsdateien</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Anzahl der zu speichernden Dateien:</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Alte Protokolldateien automatisch bereinigen</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Unterordnermuster für Fenster:</value>
+  </data>
 </root>

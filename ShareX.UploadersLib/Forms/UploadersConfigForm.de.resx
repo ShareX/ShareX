@@ -123,7 +123,7 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Benutze diese Option wenn du Bucket mit einer eigenen Domain benutzt.
 Wenn das Textfeld leer ist, dann wird der Bucketname für die URL benutzt.
-z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.example.com/... sein</value>
+z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.example.com/... sein.</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Andere Uploader</value>
@@ -153,7 +153,7 @@ z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.ex
     <value>Domain:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Anmerkung: Wenn du eine Signatur hast brauchst du keinen Benutzernamen/Passwort</value>
+    <value>Anmerkung: Wenn du eine Signatur hast brauchst du keinen Benutzernamen/Passwort.</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>Passwort:</value>
@@ -168,10 +168,10 @@ z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.ex
     <value>Du kannst deinen API Schlüssel und UID hier finden</value>
   </data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API Schlüssel:</value>
+    <value>API-Schlüssel:</value>
   </data>
   <data name="lblPolrAPIKey.Text" xml:space="preserve">
-    <value>API Schlüssel:</value>
+    <value>API-Schlüssel:</value>
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
     <value>API Hostname: (z. B. http://beispiel.de/api.php, Leer lassen um polr.me zu benutzen)</value>
@@ -198,7 +198,7 @@ z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.ex
     <value>E-Mail:</value>
   </data>
   <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
-    <value>API Schlüssel:</value>
+    <value>API-Schlüssel:</value>
   </data>
   <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
     <value>Eigene Domain:</value>
@@ -213,7 +213,7 @@ z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.ex
     <value>Ist es ein öffentlicher Upload?</value>
   </data>
   <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
-    <value>Benutzer API Schlüssel:</value>
+    <value>Benutzerschlüssel:</value>
   </data>
   <data name="btnPastebinLogin.Text" xml:space="preserve">
     <value>Einloggen</value>
@@ -273,7 +273,7 @@ z. B.: wenn dein Bucket bucket.example.com heißt, wird die URL http://bucket.ex
     <value>Datei:</value>
   </data>
   <data name="lblSulAPIKey.Text" xml:space="preserve">
-    <value>API Schlüssel:</value>
+    <value>API-Schlüssel:</value>
   </data>
   <data name="lblSeafileAuthToken.Text" xml:space="preserve">
     <value>Auth-Token:</value>
@@ -352,7 +352,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>"Teilen" Passwort:</value>
   </data>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
-    <value>Seafile "Teilen" Einstellungen:</value>
+    <value>Seafile "Teilen" Einstellungen</value>
   </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>Upload-URL:</value>
@@ -364,7 +364,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Link URL:</value>
   </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
-    <value>API Schlüssel:</value>
+    <value>API-Schlüssel:</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Melde dich bei Lambda unter https://lambda.sx/ an und klicke auf deinen Nutzernamen und "Manage Account", um einen API-Schlüssel zu bekommen.</value>
@@ -385,7 +385,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Passwort:</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>Benutze direkte URL, wenn sie existiert </value>
+    <value>Benutze direkte URL, wenn sie existiert</value>
   </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Benutzername:</value>
@@ -397,7 +397,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>&amp;Registrieren...</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>Benutzer API Schlüssel:</value>
+    <value>Benutzer API-Schlüssel:</value>
   </data>
   <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
     <value>Bekomme Geräteliste</value>
@@ -496,10 +496,10 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Erstelle teilbaren Link</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Anmerkung: Du kannst auf den Ordner doppelt klicken um in ihn zu gehen</value>
+    <value>Anmerkung: Du kannst auf den Ordner doppelt klicken um in ihn zu gehen.</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Ist es ein öffentlicher Upload?</value>
+    <value>Öffentlicher Upload</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Aktualisiere Ordnerliste</value>
@@ -520,13 +520,13 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Teilbaren Link erstellen</value>
   </data>
   <data name="lblOneDriveFolderID.Text" xml:space="preserve">
-    <value>ausgewählter Ordner</value>
+    <value>ausgewählter Ordner:</value>
   </data>
   <data name="lblDropboxPath.Text" xml:space="preserve">
     <value>Uploadpfad:</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Erstelle teilbare URL:</value>
+    <value>Erstelle teilbare URL</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Bilduploader</value>
@@ -535,7 +535,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>ShareX - Zieleinstellungen</value>
   </data>
   <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
-    <value>API Schlüssel:</value>
+    <value>API-Schlüssel:</value>
   </data>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
     <value>Direkte URL</value>
@@ -550,10 +550,10 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Name</value>
   </data>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>Album ID für Upload (Leer = Kein Albumupload)</value>
+    <value>Album ID für Upload (Leer = Kein Albumupload):</value>
   </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Login erforderlich</value>
+    <value>Login erforderlich.</value>
   </data>
   <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
     <value>2. Schritt: Schließe die Autorisierung ab</value>
@@ -664,7 +664,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>URL-Vorschau:</value>
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
-    <value>URL-Vorschau:</value>
+    <value>Vorschau</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
     <value>Vorschaulinks verwenden (nur NextCloud)</value>
@@ -682,7 +682,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Kontoname:</value>
   </data>
   <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
-    <value>Kontoseite öffnen</value>
+    <value>Kontoseite öffnen...</value>
   </data>
   <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
     <value>Du bekommst den Nutzerschlüssel von der Kontodetails-Seite.</value>
@@ -698,5 +698,296 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   </data>
   <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
     <value>Dateierweiterung vom URL-Pfad entfernen</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>Benutzerdefinierte URL verwenden:</value>
+  </data>
+  <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
+    <value>Veraltetes API v1 verwenden</value>
+  </data>
+  <data name="cbPolrIsSecret.Text" xml:space="preserve">
+    <value>Geheime URL</value>
+  </data>
+  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
+    <value>Kurzer Link</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>Web API Schlüssel:</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
+    <value>Firebase dynamische Links</value>
+  </data>
+  <data name="lblKuttPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>Wenn eine URL mit dem angegebenen Ziel existiert, wird sie zurückgegeben</value>
+  </data>
+  <data name="lblKuttAPIKey.Text" xml:space="preserve">
+    <value>API-Schlüssel:</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.Text" xml:space="preserve">
+    <value>Schlüssel-Passphrase:</value>
+  </data>
+  <data name="lblSFTPKeyLocation.Text" xml:space="preserve">
+    <value>Schlüsselort:</value>
+  </data>
+  <data name="lblFTPProtocol.Text" xml:space="preserve">
+    <value>Protokoll:</value>
+  </data>
+  <data name="rbFTPTransferModeActive.Text" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
+    <value>Passiv</value>
+  </data>
+  <data name="lblFTPTransferMode.Text" xml:space="preserve">
+    <value>Transfermodus:</value>
+  </data>
+  <data name="lblFTPUsername.Text" xml:space="preserve">
+    <value>Benutzername:</value>
+  </data>
+  <data name="lblFTPPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="lblFTPURLPath.Text" xml:space="preserve">
+    <value>URL-Pfad:</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.Text" xml:space="preserve">
+    <value>Zertifikatsort:</value>
+  </data>
+  <data name="lblFTPSEncryption.Text" xml:space="preserve">
+    <value>Verschlüsselung:</value>
+  </data>
+  <data name="btnFTPDuplicate.Text" xml:space="preserve">
+    <value>Duplizieren</value>
+  </data>
+  <data name="btnFTPRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnFTPAdd.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="lblFTPFile.Text" xml:space="preserve">
+    <value>Datei:</value>
+  </data>
+  <data name="lblFTPImage.Text" xml:space="preserve">
+    <value>Bild:</value>
+  </data>
+  <data name="cbDropboxUseDirectLink.Text" xml:space="preserve">
+    <value>Direktlink verwenden</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Direktlink verwenden</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
+    <value>Direktlink verwenden</value>
+  </data>
+  <data name="lblPuushAPIKey.Text" xml:space="preserve">
+    <value>API-Schlüssel:</value>
+  </data>
+  <data name="llPuushForgottenPassword.Text" xml:space="preserve">
+    <value>Passwort vergessen?</value>
+  </data>
+  <data name="lblPuushPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Zugriffseben des geteilten Links:</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>Setze "public-read ACL" auf Datei</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Text" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
+    <value>Anfrage im Pfadstil verwenden</value>
+  </data>
+  <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="lblAmazonS3Endpoints.Text" xml:space="preserve">
+    <value>Endpunkte:</value>
+  </data>
+  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
+    <value>Setze "public-read ACL" auf Datei</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>Upload-Pfad:</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>Benutzerdefinierte Domäne:</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
+    <value>Bucket Name:</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
+    <value>Upload-Pfad:</value>
+  </data>
+  <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
+    <value>Zugriffsschlüssel:</value>
+  </data>
+  <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
+    <value>Benutzerdefinierte Domäne:</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>Klicken Sie hier, um einen Anwendungsschlüssel zu erstellen oder Ihre Buckets zu verwalten.</value>
+  </data>
+  <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
+    <value>URL-Vorschau:</value>
+  </data>
+  <data name="lblB2Bucket.Text" xml:space="preserve">
+    <value>Bucket Name:</value>
+  </data>
+  <data name="lblB2UploadPath.Text" xml:space="preserve">
+    <value>Upload-Pfad:</value>
+  </data>
+  <data name="lblB2ApplicationKey.Text" xml:space="preserve">
+    <value>Anwendungsschlüssel (Secret):</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
+    <value>Anwendungsschlüssel-ID:</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Dateinamen an URL anhängen</value>
+  </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>Geteilte Links automatisch ablaufen lassen</value>
+  </data>
+  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
+    <value>Verfallsdauert (Tage):</value>
+  </data>
+  <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
+    <value>Beispiel: http://example.com/owncloud</value>
+  </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>Original-URL verwenden</value>
+  </data>
+  <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
+    <value>Direktlink verwenden</value>
+  </data>
+  <data name="btnSulGetAPIKey.Text" xml:space="preserve">
+    <value>API-Schlüssel holen...</value>
+  </data>
+  <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
+    <value>API-Schlüssel abrufen</value>
+  </data>
+  <data name="lblLithiioPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="lblLithiioApiKey.Text" xml:space="preserve">
+    <value>API-Schlüssel:</value>
+  </data>
+  <data name="cbPlikOneShot.Text" xml:space="preserve">
+    <value>Nach dem ersten Download zerstören</value>
+  </data>
+  <data name="cbPlikComment.Text" xml:space="preserve">
+    <value>Kommentar (Markdown)</value>
+  </data>
+  <data name="cbPlikRemovable.Text" xml:space="preserve">
+    <value>Entfernbar</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>Tage</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>Stunden</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>Minuten</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>Niemals</value>
+  </data>
+  <data name="lblPlikTTL.Text" xml:space="preserve">
+    <value>Die Dateien werden automatisch entfernt in</value>
+  </data>
+  <data name="cbPlikIsSecured.Text" xml:space="preserve">
+    <value>Benutzername und Passwort benötigt?</value>
+  </data>
+  <data name="lblPlikAPIKey.Text" xml:space="preserve">
+    <value>API-Schlüssel:</value>
+  </data>
+  <data name="lblPlikPassword.Text" xml:space="preserve">
+    <value>Passwort:</value>
+  </data>
+  <data name="lblPlikUsername.Text" xml:space="preserve">
+    <value>Benutzername:</value>
+  </data>
+  <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
+    <value>Anmeldedaten</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>Sie können Ihren Zugang jederzeit über den unten stehenden Link widerrufen:</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>Dialog für Videooptionen anzeigen</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>Sichtbarkeit:</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>Duplizieren</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
+    <value>Senden Sie eine E-Mail ohne Anzeige des Dialogs an diese E-Mail-Adresse:</value>
+  </data>
+  <data name="cbPastebinRaw.Text" xml:space="preserve">
+    <value>Original-URL verwenden</value>
+  </data>
+  <data name="btnPaste_eeGetUserKey.Text" xml:space="preserve">
+    <value>Benutzerschlüssel holen...</value>
+  </data>
+  <data name="lblGistCustomURLExample.Text" xml:space="preserve">
+    <value>Beispiel: https://api.github.com</value>
+  </data>
+  <data name="lblGistOAuthInfo.Text" xml:space="preserve">
+    <value>Hinweis: GitHub Enterprise wird nicht unterstützt.</value>
+  </data>
+  <data name="lblGistCustomURL.Text" xml:space="preserve">
+    <value>Benutzerdefinierte Domäne:</value>
+  </data>
+  <data name="cbGistUseRawURL.Text" xml:space="preserve">
+    <value>Original-URL verwenden</value>
+  </data>
+  <data name="cbGistPublishPublic.Text" xml:space="preserve">
+    <value>Öffentliches Gist erstellen</value>
+  </data>
+  <data name="cbPastieIsPublic.Text" xml:space="preserve">
+    <value>Ist es ein öffentlicher Upload?</value>
+  </data>
+  <data name="cbFlickrDirectLink.Text" xml:space="preserve">
+    <value>Direktlink verwenden</value>
+  </data>
+  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
+    <value>Albumname:</value>
+  </data>
+  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
+    <value>Erstellen</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
+    <value>Öffentlicher Upload</value>
+  </data>
+  <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
+    <value>Beispiel: http://example.com/api/1/upload</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
+    <value>Upload-URL:</value>
+  </data>
+  <data name="lvlVgymeUserKey.Text" xml:space="preserve">
+    <value>Benutzerschlüssel:</value>
   </data>
 </root>

@@ -120,4 +120,19 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX- Bildeditor</value>
   </data>
+  <data name="btnOpenImageFile.Text" xml:space="preserve">
+    <value>Bilddatei öffnen...</value>
+  </data>
+  <data name="btnCreateNewImage.Text" xml:space="preserve">
+    <value>Neues Bild erstellen...</value>
+  </data>
+  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Bild von Zwischenablage öffnen</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="btnLoadImageFromURL.Text" xml:space="preserve">
+    <value>Bild von URL laden</value>
+  </data>
 </root>

@@ -121,7 +121,7 @@
     <value>Durchsuche für eine Zertifikatdatei...</value>
   </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Aktualisiere Autorisierung ist nicht unterstüzt</value>
+    <value>Aktualisiere Autorisierung ist nicht unterstützt.</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Ungültiger Gerätename</value>
@@ -145,19 +145,19 @@
     <value>Neues Konto</value>
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Tweet-Fehler:</value>
+    <value>Tweet-Fehler</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Ursprünglicher Albumpfad z. B.</value>
+    <value>Übergeordneter Albumpfad, zum Beispiel:</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Ausgewählter Ordner:</value>
   </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>Einloggen fehlgeschlagen</value>
+    <value>Einloggen fehlgeschlagen.</value>
   </data>
   <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>Einloggen erfolgreich</value>
+    <value>Einloggen erfolgreich.</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>Klicke Aktualisierungsknopf</value>
@@ -172,7 +172,7 @@
     <value>Nicht konfiguriert</value>
   </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>{0} erfolgreich erstellt</value>
+    <value>{0} erfolgreich erstellt.</value>
   </data>
   <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
     <value>SendSpace Registrierung</value>
@@ -210,5 +210,74 @@ Hergestellte Ordner:</value>
   </data>
   <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
     <value>Nicht angemeldet.</value>
+  </data>
+  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
+    <value>Alle benutzerdefinierten Uploader entfernen?</value>
+  </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>Verifizierungscode hier einfügen</value>
+  </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>Die Schlüsseldatei ist nicht vorhanden.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>Die „Anfragen-URL“ muss konfiguriert werden.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
+    <value>Der „Zieltyp“ muss konfiguriert werden.</value>
+  </data>
+  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>Die „Anfragen-URL“ muss konfiguriert werden.</value>
+  </data>
+  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
+    <value>„Dateiformatname“ muss konfiguriert werden.</value>
+  </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>(Optional) Wird nur verwendet, wenn Sie beim Erstellen des Schlüssels keinen Bucket festgelegt haben</value>
+  </data>
+  <data name="DuplicateNameNotAllowed" xml:space="preserve">
+    <value>Doppelte Namen sind nicht erlaubt.</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>Mein Laufwerk</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Export fehlgeschlagen.</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>Eingeloggt als {0}.</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>Formatierung fehlgeschlagen.</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>Formatierung fehlgeschlagen.</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>Gekürzte URL</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>Thumbnail-URL</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>Löschungs-URL</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Statuscode</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>Antwort-URL</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>Antworttext</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Trennen</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Verbinden...</value>
   </data>
 </root>

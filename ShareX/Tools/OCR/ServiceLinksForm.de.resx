@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,54 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR-Code</value>
+    <value>ShareX - Service Links</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>In Zwischenablage kopieren</value>
+  <data name="lblServices.Text" xml:space="preserve">
+    <value>Services:</value>
   </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Als Bilddatei speichern...</value>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>Neu</value>
   </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>Kodieren</value>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
   </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Ergebnis:</value>
-  </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>Dekodieren</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>Vom Bildschirm dekodieren...</value>
-  </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>Dekodieren</value>
-  </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>Aus Bild dekodieren...</value>
-  </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>Bild hochladen</value>
-  </data>
-  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
-    <value>QR-Code von Bilddatei scannen...</value>
-  </data>
-  <data name="lblQRCodeSize.Text" xml:space="preserve">
-    <value>Größe QR-Code:</value>
-  </data>
-  <data name="lblQRCode.Text" xml:space="preserve">
-    <value>QR-Code:</value>
-  </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>Bild speichern...</value>
-  </data>
-  <data name="btnUploadImage.Text" xml:space="preserve">
-    <value>Bild hochladen</value>
-  </data>
-  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
-    <value>QR-Code vom Bildschirm scannen...</value>
-  </data>
-  <data name="btnCopyImage.Text" xml:space="preserve">
-    <value>Bild kopieren</value>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Zurücksetzen</value>
   </data>
 </root>

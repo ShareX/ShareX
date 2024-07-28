@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,55 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>Grenze:</value>
+  </data>
+  <data name="lblPadding.Text" xml:space="preserve">
+    <value>Füllung:</value>
+  </data>
+  <data name="cbSmartPadding.Text" xml:space="preserve">
+    <value>Intelligente Füllung</value>
+  </data>
+  <data name="lblRoundedCorner.Text" xml:space="preserve">
+    <value>Abgerundete Ecke:</value>
+  </data>
+  <data name="lblShadowRadius.Text" xml:space="preserve">
+    <value>Radius:</value>
+  </data>
+  <data name="lblBackground.Text" xml:space="preserve">
+    <value>Hintergrund:</value>
+  </data>
+  <data name="btnShadowColor.Text" xml:space="preserve">
+    <value>Farbe...</value>
+  </data>
+  <data name="lblShadowAngle.Text" xml:space="preserve">
+    <value>Winkel:</value>
+  </data>
+  <data name="lblShadowOpacity.Text" xml:space="preserve">
+    <value>Deckkraft:</value>
+  </data>
+  <data name="lblShadowDistance.Text" xml:space="preserve">
+    <value>Distanz:</value>
+  </data>
+  <data name="gbShadow.Text" xml:space="preserve">
+    <value>Schatten</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Optionen zurücksetzen...</value>
+  </data>
+  <data name="btnBackgroundImageFilePathBrowse.Text" xml:space="preserve">
+    <value>Bilddatei suchen...</value>
+  </data>
+  <data name="btnPrint.ToolTip" xml:space="preserve">
+    <value>Drucken...</value>
+  </data>
+  <data name="btnSave.ToolTip" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="btnUpload.ToolTip" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="btnSaveAs.ToolTip" xml:space="preserve">
+    <value>Speichern als...</value>
+  </data>
+  <data name="btnCopy.ToolTip" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - QR-Code</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>In Zwischenablage kopieren</value>
-  </data>
-  <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Als Bilddatei speichern...</value>
-  </data>
-  <data name="tpEncode.Text" xml:space="preserve">
-    <value>Kodieren</value>
-  </data>
-  <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Ergebnis:</value>
-  </data>
-  <data name="tpDecode.Text" xml:space="preserve">
-    <value>Dekodieren</value>
-  </data>
-  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
-    <value>Vom Bildschirm dekodieren...</value>
-  </data>
-  <data name="tsmiDecode.Text" xml:space="preserve">
-    <value>Dekodieren</value>
-  </data>
-  <data name="btnDecodeFromFile.Text" xml:space="preserve">
-    <value>Aus Bild dekodieren...</value>
-  </data>
-  <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>Bild hochladen</value>
-  </data>
-  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
-    <value>QR-Code von Bilddatei scannen...</value>
-  </data>
-  <data name="lblQRCodeSize.Text" xml:space="preserve">
-    <value>Größe QR-Code:</value>
-  </data>
-  <data name="lblQRCode.Text" xml:space="preserve">
-    <value>QR-Code:</value>
-  </data>
-  <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>Bild speichern...</value>
-  </data>
-  <data name="btnUploadImage.Text" xml:space="preserve">
-    <value>Bild hochladen</value>
-  </data>
-  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
-    <value>QR-Code vom Bildschirm scannen...</value>
-  </data>
-  <data name="btnCopyImage.Text" xml:space="preserve">
-    <value>Bild kopieren</value>
+    <value>ShareX - Bildverschönerung</value>
   </data>
 </root>

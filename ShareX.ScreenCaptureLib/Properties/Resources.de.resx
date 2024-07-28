@@ -151,7 +151,7 @@
     <value>Füllfarbe...</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
-    <value>Eckenradius</value>
+    <value>Eckenradius:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
     <value>Pixelgröße:</value>
@@ -208,7 +208,7 @@
     <value>Bild speichern</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>Bild speichern unter...</value>
+    <value>Bild speichern unter... (Strg + Umschalt + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
     <value>Bild in Zwischenablage kopieren</value>
@@ -217,7 +217,7 @@
     <value>Bild hochladen</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>Bild drucken...</value>
+    <value>Bild drucken... (Strg + P)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
     <value>Letzten Bereich aufnehmen</value>
@@ -278,5 +278,211 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Mehrbereichs-Modus</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>Aufgabe abbrechen (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Wechsel zum Zeichenwerkzeug nach der Formauswahl</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Effektgröße ausschneiden:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>Änderungen übernehmen &amp; Aufgabe fortsetzen (Enter)</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Tastenkürzel-Webseite öffnen...</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Duplikat</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Bild gespeichert</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Editor bei Aufgabe automatisch schließen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>Wiederherstellen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>Modus Bereich mit fester Größe</value>
+  </data>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Die Zwischenablage enthält kein Bild.</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Neue Zeile: Strg + Enter, OK: Enter</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>Monitor aufnehmen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>Aktiven Monitor aufnehmen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>Interpolationsmodus:</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Klicken Sie, um die Aufnahme zu beenden.</value>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>Punkte zentrieren:</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Randstil:</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie diese Aufnahme abbrechen möchten?</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>Öffne Bilddatei...</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Verarbeitung...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Warten...</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Schließen (Esc)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>Wert des ersten Schritts:</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Hervorheben</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Stärke vergrößern:</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Neue Zeile: Enter, OK: Strg + Enter</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>Cursor-Typ:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>Schlagschatten</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>Lupe in quadratischer Form</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Fortsetzen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>Editor-Startmodus:</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>Bild gespeichert</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>Richtung der Pfeilspitze:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>Vollbild aufnehmen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>Bereiche aufnehmen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>Neues Bild...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Unschärfe</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Kodierung...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>Stärke der Unschärfe:</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>Bild hochladen</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>Bild kopiert</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>Aufgabe fortsetzen (Leertaste oder Rechtsklick)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>Schriftgröße:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>Leinwandgröße...</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>Größe der Menüsymbole:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>Bild automatisch zuschneiden...</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Verpixeln</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>Menü sperren</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>Bild vom Bildschirm einfügen...</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Bild automatisch in die Zwischenablage kopieren</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>Editormenü</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>Bild zuschneiden...</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Farbe des Schlagschattens...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Nach dem Zeichnen einer Form zum Auswahlwerkzeug wechseln</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Schritttyp:</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>Dieses Fenster wird geschlossen, bevor die Tastenkürzel-Webseite geöffnet wird. Möchten Sie fortfahren?</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>Bilddatei einfügen...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Zoom beim Öffnen anpassen</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>Tipp: Sie können das Bild schwenken, indem Sie die mittlere Maustaste gedrückt halten und die Maus ziehen.</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Ausschneide-Effekt:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Werkzeugoptionen</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Klicken um Aufnahme zu beenden.</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>Möchten Sie die Optionen zurücksetzen?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Bestätigung</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>Bild-URL</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>Es gibt ungespeicherte Änderungen.
+
+Möchten Sie die Änderungen speichern, bevor Sie den Bildeditor schließen?</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>Hintergrundfarbe ausschneiden...</value>
   </data>
 </root>

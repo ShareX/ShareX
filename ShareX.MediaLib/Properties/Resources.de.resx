@@ -123,4 +123,43 @@
   <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
     <value>Thumbnail wurde erfolgreich generiert.</value>
   </data>
+  <data name="StopEncoding" xml:space="preserve">
+    <value>Kodierung beenden</value>
+  </data>
+  <data name="HigherQualitySize" xml:space="preserve">
+    <value>Höhere Qualität/Größe</value>
+  </data>
+  <data name="AlignmentBottom" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="AlignmentTop" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>Wollen Sie die Optionen zurücksetzen?</value>
+  </data>
+  <data name="AlignmentRight" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="StartEncoding" xml:space="preserve">
+    <value>Kodierung starten</value>
+  </data>
+  <data name="FFmpegError" xml:space="preserve">
+    <value>FFmpeg Fehler</value>
+  </data>
+  <data name="AlignmentVerticalCenter" xml:space="preserve">
+    <value>Mittig</value>
+  </data>
+  <data name="AlignmentLeft" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="AlignmentHorizontalCenter" xml:space="preserve">
+    <value>Mittig</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Bestätigung</value>
+  </data>
+  <data name="LowerQualitySize" xml:space="preserve">
+    <value>Niedrigere Qualität/Größe</value>
+  </data>
 </root>

@@ -144,4 +144,43 @@
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Name:</value>
   </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Voreinstellungen:</value>
+  </data>
+  <data name="btnPackager.Text" xml:space="preserve">
+    <value>Paketierer...</value>
+  </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="btnPresetRemove.ToolTip" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
+    <value>Duplizieren</value>
+  </data>
+  <data name="lblEffects.Text" xml:space="preserve">
+    <value>Effekte:</value>
+  </data>
+  <data name="btnEffectAdd.ToolTip" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="btnEffectRemove.ToolTip" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
+    <value>Duplizieren</value>
+  </data>
+  <data name="btnEffectClear.ToolTip" xml:space="preserve">
+    <value>Löschen...</value>
+  </data>
+  <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Bildeffekte...</value>
+  </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>Effektname:</value>
+  </data>
 </root>

@@ -138,4 +138,7 @@
   <data name="lblFolderPath.Text" xml:space="preserve">
     <value>Ordnerpfad:</value>
   </data>
+  <data name="cbMoveToScreenshotsFolder.Text" xml:space="preserve">
+    <value>Zum Screenshots-Ordner verschieben</value>
+  </data>
 </root>

@@ -532,4 +532,104 @@ Soll ShareX neu gestartet werden?</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Ihr Systemadministrator hat diese Funktion ausgeschaltet.</value>
   </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Bildschirm-Farbwähler</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>Die Funktion der optischen Zeichenerkennung ist nur unter Windows Version {0} oder neuer verfügbar.</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Fenstertitel</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
+    <value>Erweiterte Fensterstile</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>FFmpeg Fehler</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>Konnte das Bild nicht in den Pfad schreiben:</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg existiert nicht unter dem folgenden Pfad:</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>Möchten Sie das Hochladen der Zwischenablage wiederholen?</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>FFmpeg Video- und Audioquelle können nicht beide „Keins“ sein.</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>ShareX kann nicht geschlossen werden, während die Bildschirmaufnahme aktiv ist.
+
+Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>Ein Fenster mit dem angegebenen Fenstertitel kann nicht gefunden werden.</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>Hochladen der Zwischenablage</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Fensteridentifikator</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Einstellungen speichern fehlgeschlagen</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>Client-Rechteck</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>Ihre Antiviren-Software oder die Funktion für kontrollierten Ordnerzugriff in Windows könnte ShareX blockieren.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>Danksagung</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Klassenname</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>FFmpeg, das mit ShareX geliefert wird, unterstützt nur 64-Bit-Betriebssysteme.</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Fensterstile</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX ist aktuell!</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>Prozessname</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX wird in die Taskleiste minimiert.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>Hebräisch</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Name der Prozessdatei</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg fehlt</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>Möchten Sie die Themen zurücksetzen?</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Fensterrechteck</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Möchten Sie die Bildeffekte aktivieren?
+
+Sie können sie später im Menü „Aufgaben nach der Aufnahme“ deaktivieren.</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Die Zwischenablage enthält kein Bild.</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Prozesskennzeichen</value>
+  </data>
 </root>

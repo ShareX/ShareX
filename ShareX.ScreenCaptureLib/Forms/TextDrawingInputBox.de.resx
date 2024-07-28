@@ -165,4 +165,28 @@
   <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
     <value>Mittig</value>
   </data>
+  <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="tsmiEnableGradient.Text" xml:space="preserve">
+    <value>Verlauf aktivieren</value>
+  </data>
+  <data name="tsmiSecondColor.Text" xml:space="preserve">
+    <value>Sekundäre Textfarbe...</value>
+  </data>
+  <data name="tsrbmiGradientVertical.Text" xml:space="preserve">
+    <value>Vertikal</value>
+  </data>
+  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
+    <value>Vorwärtsdiagonale</value>
+  </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
+    <value>Rückwärtsdiagonale</value>
+  </data>
+  <data name="tsmiGradientMode.Text" xml:space="preserve">
+    <value>Verlaufsmodus</value>
+  </data>
 </root>

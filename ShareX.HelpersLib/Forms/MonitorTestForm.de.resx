@@ -154,7 +154,7 @@
     <value>Größe:</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>Du kannst außerhalb klicken um dieses Feld zu zeigen/verstecken</value>
+    <value>Tipp: Du kannst außerhalb klicken, um dieses Feld zu zeigen/verstecken.</value>
   </data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
     <value>Schwarz, Weiß:</value>

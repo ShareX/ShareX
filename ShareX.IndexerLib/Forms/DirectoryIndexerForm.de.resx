@@ -135,4 +135,7 @@
   <data name="btnIndexFolder.Text" xml:space="preserve">
     <value>Ausgewählten Ordner indizieren</value>
   </data>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>Speichern unter und dieses Fenster schließen...</value>
+  </data>
 </root>
