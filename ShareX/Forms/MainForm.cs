@@ -96,12 +96,21 @@ namespace ShareX
             tsmiShareSelectedURL.HideImageMargin();
             tsmiTrayRecentItems.HideImageMargin();
 
+            AfterCaptureTasks[] ignoreAfterCaptureTasks = null;
+
+            if (SystemOptions.DisableUpload)
+            {
+                ignoreAfterCaptureTasks = new AfterCaptureTasks[] { AfterCaptureTasks.ShowBeforeUploadWindow, AfterCaptureTasks.UploadImageToHost };
+            }
+
             AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
-                tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
+                new ToolStripDropDownItem[] { tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks }, ignoreAfterCaptureTasks);
             tsddbAfterCaptureTasks.DropDownOpening += TsddbAfterCaptureTasks_DropDownOpening;
             tsmiTrayAfterCaptureTasks.DropDownOpening += TsmiTrayAfterCaptureTasks_DropDownOpening;
+
             AddMultiEnumItems<AfterUploadTasks>(x => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(x),
-                tsddbAfterUploadTasks, tsmiTrayAfterUploadTasks);
+                new ToolStripDropDownItem[] { tsddbAfterUploadTasks, tsmiTrayAfterUploadTasks });
+
             AddEnumItems<ImageDestination>(x =>
             {
                 Program.DefaultTaskSettings.ImageDestination = x;
@@ -123,6 +132,7 @@ namespace ShareX
                 tsmiImageFileUploaders.PerformClick();
                 tsmiTrayImageFileUploaders.PerformClick();
             }, tsmiImageFileUploaders, tsmiTrayImageFileUploaders);
+
             AddEnumItems<TextDestination>(x =>
             {
                 Program.DefaultTaskSettings.TextDestination = x;
@@ -138,14 +148,18 @@ namespace ShareX
             }, tsmiTextUploaders, tsmiTrayTextUploaders);
             tsmiTextFileUploaders = (ToolStripDropDownItem)tsmiTextUploaders.DropDownItems[tsmiTextUploaders.DropDownItems.Count - 1];
             tsmiTrayTextFileUploaders = (ToolStripDropDownItem)tsmiTrayTextUploaders.DropDownItems[tsmiTrayTextUploaders.DropDownItems.Count - 1];
+
             AddEnumItems<FileDestination>(x =>
             {
                 Program.DefaultTaskSettings.TextFileDestination = x;
                 tsmiTextFileUploaders.PerformClick();
                 tsmiTrayTextFileUploaders.PerformClick();
             }, tsmiTextFileUploaders, tsmiTrayTextFileUploaders);
+
             AddEnumItems<FileDestination>(x => Program.DefaultTaskSettings.FileDestination = x, tsmiFileUploaders, tsmiTrayFileUploaders);
+
             AddEnumItems<UrlShortenerType>(x => Program.DefaultTaskSettings.URLShortenerDestination = x, tsmiURLShorteners, tsmiTrayURLShorteners);
+
             AddEnumItems<URLSharingServices>(x => Program.DefaultTaskSettings.URLSharingServiceDestination = x, tsmiURLSharingServices, tsmiTrayURLSharingServices);
 
             foreach (UrlShortenerType urlShortener in Helpers.GetEnums<UrlShortenerType>())
@@ -515,9 +529,14 @@ namespace ShareX
             }
         }
 
-        private void AddMultiEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents) where T : Enum
+        private void AddMultiEnumItems<T>(Action<T> selectedEnum, ToolStripDropDownItem[] parents, T[] ignoreEnums = null) where T : Enum
         {
-            T[] enums = Helpers.GetEnums<T>().Skip(1).ToArray();
+            if (ignoreEnums == null)
+            {
+                ignoreEnums = new T[0];
+            }
+
+            T[] enums = Helpers.GetEnums<T>().Skip(1).Except(ignoreEnums).ToArray();
 
             foreach (ToolStripDropDownItem parent in parents)
             {
@@ -525,6 +544,7 @@ namespace ShareX
                 {
                     T currentEnum = enums[i];
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(currentEnum.GetLocalizedDescription());
+                    tsmi.Tag = currentEnum;
                     tsmi.Image = TaskHelpers.FindMenuIcon(currentEnum);
 
                     int index = i;
@@ -538,8 +558,6 @@ namespace ShareX
                         }
 
                         selectedEnum(currentEnum);
-
-                        UpdateUploaderMenuNames();
                     };
 
                     parent.DropDownItems.Add(tsmi);
