@@ -122,8 +122,8 @@ namespace ShareX
 
         private static void UnregisterShellContextMenuButton()
         {
-            RegistryHelpers.RemoveRegistry(ShellExtMenuFiles, true);
-            RegistryHelpers.RemoveRegistry(ShellExtMenuDirectory, true);
+            RegistryHelpers.RemoveRegistry(ShellExtMenuFiles);
+            RegistryHelpers.RemoveRegistry(ShellExtMenuDirectory);
         }
 
         public static bool CheckEditShellContextMenuButton()
@@ -169,7 +169,7 @@ namespace ShareX
 
         private static void UnregisterEditShellContextMenuButton()
         {
-            RegistryHelpers.RemoveRegistry(ShellExtEditImage, true);
+            RegistryHelpers.RemoveRegistry(ShellExtEditImage);
         }
 
         public static bool CheckCustomUploaderExtension()
@@ -220,7 +220,7 @@ namespace ShareX
         private static void UnregisterCustomUploaderExtension()
         {
             RegistryHelpers.RemoveRegistry(ShellCustomUploaderExtensionPath);
-            RegistryHelpers.RemoveRegistry(ShellCustomUploaderAssociatePath, true);
+            RegistryHelpers.RemoveRegistry(ShellCustomUploaderAssociatePath);
         }
 
         public static bool CheckImageEffectExtension()
@@ -271,7 +271,7 @@ namespace ShareX
         private static void UnregisterImageEffectExtension()
         {
             RegistryHelpers.RemoveRegistry(ShellImageEffectExtensionPath);
-            RegistryHelpers.RemoveRegistry(ShellImageEffectAssociatePath, true);
+            RegistryHelpers.RemoveRegistry(ShellImageEffectAssociatePath);
         }
 
         public static bool CheckChromeExtensionSupport()

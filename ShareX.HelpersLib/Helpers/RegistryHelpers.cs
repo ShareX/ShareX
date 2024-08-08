@@ -63,20 +63,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void RemoveRegistry(string path, bool recursive = false, RegistryHive root = RegistryHive.CurrentUser)
+        public static void RemoveRegistry(string path, RegistryHive root = RegistryHive.CurrentUser)
         {
             if (!string.IsNullOrEmpty(path))
             {
                 using (RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default))
                 {
-                    if (recursive)
-                    {
-                        rk.DeleteSubKeyTree(path, false);
-                    }
-                    else
-                    {
-                        rk.DeleteSubKey(path, false);
-                    }
+                    rk.DeleteSubKeyTree(path, false);
                 }
             }
         }
