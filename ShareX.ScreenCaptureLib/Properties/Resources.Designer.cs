@@ -1928,6 +1928,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fixed Aspect Ratio (width:height).
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FixedAspectRatio {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FixedAspectRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flip horizontal.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_FlipHorizontal {

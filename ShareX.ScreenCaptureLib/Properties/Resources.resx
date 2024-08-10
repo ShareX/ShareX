@@ -833,4 +833,7 @@ Would you like to save the changes before closing the image editor?</value>
   <data name="CutOutBackgroundColor" xml:space="preserve">
     <value>Cut out background color...</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_FixedAspectRatio" xml:space="preserve">
+    <value>Fixed Aspect Ratio (width:height)</value>
+  </data>
 </root>

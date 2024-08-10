@@ -1033,6 +1033,8 @@ namespace ShareX.ScreenCaptureLib
                 tsddbOptions.DropDownItems.Add(tslnudFixedSize);
             }
 
+
+
             ToolStripMenuItem tsmiShowFPS = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Show_FPS);
             tsmiShowFPS.Checked = Options.ShowFPS;
             tsmiShowFPS.CheckOnClick = true;
@@ -1113,6 +1115,19 @@ namespace ShareX.ScreenCaptureLib
                 };
                 tsddbOptions.DropDownItems.Add(tsmiRememberMenuState);
             }
+
+            ToolStripLabel lblAspectRatio = new ToolStripLabel(Resources.ShapeManager_CreateToolbar_FixedAspectRatio);
+            tsddbOptions.DropDownItems.Add(lblAspectRatio);
+            ToolStripDoubleLabeledNumericUpDown tslnudAspectRatio = new ToolStripDoubleLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Width_,
+                   Resources.ShapeManager_CreateContextMenu_Height_);
+            tslnudAspectRatio.Content.Minimum = 1;
+            tslnudAspectRatio.Content.Maximum = 50;
+            tslnudAspectRatio.Content.Increment = 1;
+            tslnudAspectRatio.Content.Value = Options.AspectRatio.Width;
+            tslnudAspectRatio.Content.Value2 = Options.AspectRatio.Height;
+            tslnudAspectRatio.Content.ValueChanged = (sender, e) => Options.AspectRatio = new Size((int)tslnudAspectRatio.Content.Value, (int)tslnudAspectRatio.Content.Value2);
+
+            tsddbOptions.DropDownItems.Add(tslnudAspectRatio);
 
             tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
 
