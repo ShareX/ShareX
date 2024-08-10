@@ -279,20 +279,19 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Manager.IsProportionalResizing || ForceProportionalResizing)
                 {
-                    float degree, startDegree;
+                    float aspectRatio = (float)Manager.Options.AspectRatio.Width / (float)Manager.Options.AspectRatio.Height;
 
-                    if (ShapeType == ShapeType.DrawingLine || ShapeType == ShapeType.DrawingArrow)
+                    float width = Math.Abs(pos.X - StartPosition.X);
+                    float height = Math.Abs(pos.Y - StartPosition.Y);
+
+                    if (width / height > aspectRatio)
                     {
-                        degree = 45;
-                        startDegree = 0;
+                        pos.X = StartPosition.X + (height * aspectRatio) * Math.Sign(pos.X - StartPosition.X);
                     }
                     else
                     {
-                        degree = 90;
-                        startDegree = 45;
+                        pos.Y = StartPosition.Y + (width / aspectRatio) * Math.Sign(pos.Y - StartPosition.Y);
                     }
-
-                    pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, degree, startDegree).Round();
                 }
                 else if (Manager.IsSnapResizing)
                 {

@@ -40,7 +40,7 @@ namespace ShareX.ScreenCaptureLib
         public const int SnapDistance = 30;
         public const int MoveSpeedMinimum = 1;
         public const int MoveSpeedMaximum = 10;
-
+        public Size AspectRatio = new Size(1,1); // Initially set to square or 1:1 fixed aspect ratio.
         public bool QuickCrop = true;
         public int MinimumSize = DefaultMinimumSize;
         public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;
