@@ -141,7 +141,7 @@
     <value>{0} 是最新版</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
-    <value>等待中。</value>
+    <value>等待中...</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>關閉</value>
@@ -200,11 +200,6 @@
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>狀態: {0}</value>
   </data>
-  <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>進度: {0:0.0}%
-下載速度: {1:0.0} KB/s
-檔案大小: {2:n0} / {3:n0} KB</value>
-  </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>載入圖片中...</value>
   </data>
@@ -224,10 +219,10 @@
     <value>取消</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>下載中。</value>
+    <value>下載中...</value>
   </data>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>獲取檔案大小中。</value>
+    <value>獲取檔案大小中...</value>
   </data>
   <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
     <value>載入圖片中: {0}%</value>
@@ -604,7 +599,7 @@
     <value>上午/下午</value>
   </data>
   <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>視窗的程序名</value>
+    <value>視窗的處理程序名稱</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
     <value>隨機文數字元 (用 {n} 來重複)</value>
@@ -643,7 +638,7 @@
     <value>目前年份 (2 位數字)</value>
   </data>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
-    <value>顯示快速任務選單</value>
+    <value>顯示快速排程選單</value>
   </data>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>開啟歷史記錄視窗</value>
@@ -733,7 +728,7 @@
     <value>鼠繪區域</value>
   </data>
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
-    <value>中止螢幕錄製</value>
+    <value>取消螢幕錄製</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>隨機十六進制字元 (用 {n} 來重複)</value>
@@ -796,7 +791,7 @@
     <value>刪除</value>
   </data>
   <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>重作</value>
+    <value>重做</value>
   </data>
   <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
     <value>全選</value>
@@ -1150,7 +1145,7 @@
     <value>ShareX - 圖片檢視器</value>
   </data>
   <data name="ShapeType_ToolCutOut" xml:space="preserve">
-    <value>剪裁效果 (X)</value>
+    <value>剪紙效果 (X)</value>
   </data>
   <data name="StepType_LettersLowercase" xml:space="preserve">
     <value>字母 (小寫)</value>
@@ -1238,5 +1233,38 @@
   </data>
   <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
     <value>Bing 圖像式搜尋</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>檢查</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>擷取預設的視窗</value>
+  </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>開發版</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>預覽版</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>正式版</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>進度</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>下載速度</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>檔案大小</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>將目前視窗無邊框化</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>將目前視窗置於最上層</value>
+  </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>釘選至螢幕 (關閉所有視窗)</value>
   </data>
 </root>

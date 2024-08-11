@@ -142,6 +142,6 @@
     <value>圖片置中</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
-    <value>邊距：</value>
+    <value>外距：</value>
   </data>
 </root>

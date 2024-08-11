@@ -222,7 +222,7 @@
     <value>路徑</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
-    <value>不顯示圖片的列印設定對話框</value>
+    <value>不顯示圖片列印設定對話框</value>
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>密碼：</value>
@@ -251,9 +251,6 @@
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>語言：</value>
   </data>
-  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
-    <value>檢查預覽版更新</value>
-  </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>滑鼠中鍵單擊系統匣圖示：</value>
   </data>
@@ -264,7 +261,7 @@
     <value>滑鼠左鍵單擊系統匣圖示：</value>
   </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
-    <value>編輯快速任務選單...</value>
+    <value>編輯快速排程選單...</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>匯出...</value>
@@ -273,10 +270,10 @@
     <value>匯入...</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
-    <value>儲存任務至歷史記錄</value>
+    <value>儲存排程至歷史記錄</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
-    <value>儲存的最大任務數量：</value>
+    <value>儲存的最大排程數量：</value>
   </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
     <value>僅在有網址時儲存</value>
@@ -285,22 +282,22 @@
     <value>歷史</value>
   </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
-    <value>在系統匣選單優先顯示最近的任務</value>
+    <value>在系統匣選單優先顯示最近的排程</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
-    <value>在系統匣選單顯示最近的任務</value>
+    <value>在系統匣選單顯示最近的排程</value>
   </data>
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
-    <value>儲存最近的任務</value>
+    <value>儲存最近的排程</value>
   </data>
   <data name="gbRecentLinks.Text" xml:space="preserve">
-    <value>最近的任務</value>
+    <value>最近的排程</value>
   </data>
   <data name="tpHistory.Text" xml:space="preserve">
     <value>歷史</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
-    <value>啟動時在主視窗中顯示最近的任務</value>
+    <value>啟動時在主視窗中顯示最近的排程</value>
   </data>
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
     <value>啟用 Firefox 附加元件支援</value>
@@ -333,7 +330,7 @@
     <value>新增</value>
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
-    <value>主題</value>
+    <value>佈景主題</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Firefox 附加元件</value>
@@ -375,7 +372,7 @@
     <value>顯示標題</value>
   </data>
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
-    <value>使用自訂主題</value>
+    <value>使用自訂的佈景主題</value>
   </data>
   <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
     <value>重試時使用備用的上傳工具設定</value>
@@ -426,7 +423,7 @@
     <value>...</value>
   </data>
   <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
-    <value>任務檢視模式：</value>
+    <value>排程檢視模式：</value>
   </data>
   <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
     <value>圖片預覽可見度：</value>
@@ -442,5 +439,8 @@
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>注意：請勿與他人分享匯出的檔案，因為其可能含有帳號資料、上傳歷史等個人資訊。</value>
+  </data>
+  <data name="lblUpdateChannel.Text" xml:space="preserve">
+    <value>更新通道：</value>
   </data>
 </root>
