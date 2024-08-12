@@ -117,4 +117,421 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblStartDelay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblStartDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblStartDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 16</value>
+  </data>
+  <data name="lblStartDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Start delay:</value>
+  </data>
+  <data name="&gt;&gt;lblStartDelay.Name" xml:space="preserve">
+    <value>lblStartDelay</value>
+  </data>
+  <data name="&gt;&gt;lblStartDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStartDelay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblStartDelay.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="nudStartDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="nudStartDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="nudStartDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="nudStartDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudStartDelay.Name" xml:space="preserve">
+    <value>nudStartDelay</value>
+  </data>
+  <data name="&gt;&gt;nudStartDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudStartDelay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudStartDelay.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lblScrollDelay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblScrollDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 112</value>
+  </data>
+  <data name="lblScrollDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 16</value>
+  </data>
+  <data name="lblScrollDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Scroll delay:</value>
+  </data>
+  <data name="&gt;&gt;lblScrollDelay.Name" xml:space="preserve">
+    <value>lblScrollDelay</value>
+  </data>
+  <data name="&gt;&gt;lblScrollDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScrollDelay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblScrollDelay.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="nudScrollDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 136</value>
+  </data>
+  <data name="nudScrollDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="nudScrollDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="nudScrollDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudScrollDelay.Name" xml:space="preserve">
+    <value>nudScrollDelay</value>
+  </data>
+  <data name="&gt;&gt;nudScrollDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudScrollDelay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudScrollDelay.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="cbAutoScrollTop.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoScrollTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="cbAutoScrollTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 20</value>
+  </data>
+  <data name="cbAutoScrollTop.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbAutoScrollTop.Text" xml:space="preserve">
+    <value>Automatically scroll to top</value>
+  </data>
+  <data name="&gt;&gt;cbAutoScrollTop.Name" xml:space="preserve">
+    <value>cbAutoScrollTop</value>
+  </data>
+  <data name="&gt;&gt;cbAutoScrollTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutoScrollTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAutoScrollTop.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblScrollAmount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblScrollAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 176</value>
+  </data>
+  <data name="lblScrollAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 16</value>
+  </data>
+  <data name="lblScrollAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblScrollAmount.Text" xml:space="preserve">
+    <value>Scroll amount:</value>
+  </data>
+  <data name="&gt;&gt;lblScrollAmount.Name" xml:space="preserve">
+    <value>lblScrollAmount</value>
+  </data>
+  <data name="&gt;&gt;lblScrollAmount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScrollAmount.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblScrollAmount.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="nudScrollAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 200</value>
+  </data>
+  <data name="nudScrollAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="nudScrollAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="nudScrollAmount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudScrollAmount.Name" xml:space="preserve">
+    <value>nudScrollAmount</value>
+  </data>
+  <data name="&gt;&gt;nudScrollAmount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudScrollAmount.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudScrollAmount.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="cbAutoUpload.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 240</value>
+  </data>
+  <data name="cbAutoUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 20</value>
+  </data>
+  <data name="cbAutoUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>Automatically upload / save</value>
+  </data>
+  <data name="&gt;&gt;cbAutoUpload.Name" xml:space="preserve">
+    <value>cbAutoUpload</value>
+  </data>
+  <data name="&gt;&gt;cbAutoUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutoUpload.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAutoUpload.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblStartDelayHint.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStartDelayHint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 43</value>
+  </data>
+  <data name="lblStartDelayHint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 16</value>
+  </data>
+  <data name="lblStartDelayHint.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblStartDelayHint.Text" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="&gt;&gt;lblStartDelayHint.Name" xml:space="preserve">
+    <value>lblStartDelayHint</value>
+  </data>
+  <data name="&gt;&gt;lblStartDelayHint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStartDelayHint.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblStartDelayHint.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblScrollDelayHint.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblScrollDelayHint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 139</value>
+  </data>
+  <data name="lblScrollDelayHint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 16</value>
+  </data>
+  <data name="lblScrollDelayHint.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblScrollDelayHint.Text" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="&gt;&gt;lblScrollDelayHint.Name" xml:space="preserve">
+    <value>lblScrollDelayHint</value>
+  </data>
+  <data name="&gt;&gt;lblScrollDelayHint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScrollDelayHint.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblScrollDelayHint.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblScrollAmountHint.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblScrollAmountHint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 203</value>
+  </data>
+  <data name="lblScrollAmountHint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 16</value>
+  </data>
+  <data name="lblScrollAmountHint.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblScrollAmountHint.Text" xml:space="preserve">
+    <value>times</value>
+  </data>
+  <data name="&gt;&gt;lblScrollAmountHint.Name" xml:space="preserve">
+    <value>lblScrollAmountHint</value>
+  </data>
+  <data name="&gt;&gt;lblScrollAmountHint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScrollAmountHint.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblScrollAmountHint.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 336</value>
+  </data>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 336</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbShowRegion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbShowRegion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 272</value>
+  </data>
+  <data name="cbShowRegion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 20</value>
+  </data>
+  <data name="cbShowRegion.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="cbShowRegion.Text" xml:space="preserve">
+    <value>Show scrolling capture region</value>
+  </data>
+  <data name="&gt;&gt;cbShowRegion.Name" xml:space="preserve">
+    <value>cbShowRegion</value>
+  </data>
+  <data name="&gt;&gt;cbShowRegion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbShowRegion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbShowRegion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbAutoIgnoreBottomEdge.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutoIgnoreBottomEdge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 304</value>
+  </data>
+  <data name="cbAutoIgnoreBottomEdge.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 20</value>
+  </data>
+  <data name="cbAutoIgnoreBottomEdge.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="cbAutoIgnoreBottomEdge.Text" xml:space="preserve">
+    <value>Auto ignore bottom edge</value>
+  </data>
+  <data name="&gt;&gt;cbAutoIgnoreBottomEdge.Name" xml:space="preserve">
+    <value>cbAutoIgnoreBottomEdge</value>
+  </data>
+  <data name="&gt;&gt;cbAutoIgnoreBottomEdge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutoIgnoreBottomEdge.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAutoIgnoreBottomEdge.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>384, 385</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Scrolling capture options</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ScrollingCaptureOptionsForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

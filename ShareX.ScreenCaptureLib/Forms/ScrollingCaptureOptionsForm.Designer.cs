@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScrollingCaptureOptionsForm));
             this.lblStartDelay = new System.Windows.Forms.Label();
             this.nudStartDelay = new System.Windows.Forms.NumericUpDown();
             this.lblScrollDelay = new System.Windows.Forms.Label();
@@ -50,12 +51,8 @@
             // 
             // lblStartDelay
             // 
-            this.lblStartDelay.AutoSize = true;
-            this.lblStartDelay.Location = new System.Drawing.Point(13, 16);
+            resources.ApplyResources(this.lblStartDelay, "lblStartDelay");
             this.lblStartDelay.Name = "lblStartDelay";
-            this.lblStartDelay.Size = new System.Drawing.Size(74, 16);
-            this.lblStartDelay.TabIndex = 0;
-            this.lblStartDelay.Text = "Start delay:";
             // 
             // nudStartDelay
             // 
@@ -64,7 +61,7 @@
             0,
             0,
             0});
-            this.nudStartDelay.Location = new System.Drawing.Point(16, 40);
+            resources.ApplyResources(this.nudStartDelay, "nudStartDelay");
             this.nudStartDelay.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -76,9 +73,6 @@
             0,
             0});
             this.nudStartDelay.Name = "nudStartDelay";
-            this.nudStartDelay.Size = new System.Drawing.Size(80, 22);
-            this.nudStartDelay.TabIndex = 1;
-            this.nudStartDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudStartDelay.Value = new decimal(new int[] {
             500,
             0,
@@ -87,12 +81,8 @@
             // 
             // lblScrollDelay
             // 
-            this.lblScrollDelay.AutoSize = true;
-            this.lblScrollDelay.Location = new System.Drawing.Point(13, 112);
+            resources.ApplyResources(this.lblScrollDelay, "lblScrollDelay");
             this.lblScrollDelay.Name = "lblScrollDelay";
-            this.lblScrollDelay.Size = new System.Drawing.Size(81, 16);
-            this.lblScrollDelay.TabIndex = 4;
-            this.lblScrollDelay.Text = "Scroll delay:";
             // 
             // nudScrollDelay
             // 
@@ -101,7 +91,7 @@
             0,
             0,
             0});
-            this.nudScrollDelay.Location = new System.Drawing.Point(16, 136);
+            resources.ApplyResources(this.nudScrollDelay, "nudScrollDelay");
             this.nudScrollDelay.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -113,9 +103,6 @@
             0,
             0});
             this.nudScrollDelay.Name = "nudScrollDelay";
-            this.nudScrollDelay.Size = new System.Drawing.Size(80, 22);
-            this.nudScrollDelay.TabIndex = 5;
-            this.nudScrollDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudScrollDelay.Value = new decimal(new int[] {
             500,
             0,
@@ -124,26 +111,18 @@
             // 
             // cbAutoScrollTop
             // 
-            this.cbAutoScrollTop.AutoSize = true;
-            this.cbAutoScrollTop.Location = new System.Drawing.Point(16, 80);
+            resources.ApplyResources(this.cbAutoScrollTop, "cbAutoScrollTop");
             this.cbAutoScrollTop.Name = "cbAutoScrollTop";
-            this.cbAutoScrollTop.Size = new System.Drawing.Size(177, 20);
-            this.cbAutoScrollTop.TabIndex = 3;
-            this.cbAutoScrollTop.Text = "Automatically scroll to top";
             this.cbAutoScrollTop.UseVisualStyleBackColor = true;
             // 
             // lblScrollAmount
             // 
-            this.lblScrollAmount.AutoSize = true;
-            this.lblScrollAmount.Location = new System.Drawing.Point(13, 176);
+            resources.ApplyResources(this.lblScrollAmount, "lblScrollAmount");
             this.lblScrollAmount.Name = "lblScrollAmount";
-            this.lblScrollAmount.Size = new System.Drawing.Size(91, 16);
-            this.lblScrollAmount.TabIndex = 7;
-            this.lblScrollAmount.Text = "Scroll amount:";
             // 
             // nudScrollAmount
             // 
-            this.nudScrollAmount.Location = new System.Drawing.Point(16, 200);
+            resources.ApplyResources(this.nudScrollAmount, "nudScrollAmount");
             this.nudScrollAmount.Maximum = new decimal(new int[] {
             5,
             0,
@@ -155,9 +134,6 @@
             0,
             0});
             this.nudScrollAmount.Name = "nudScrollAmount";
-            this.nudScrollAmount.Size = new System.Drawing.Size(80, 22);
-            this.nudScrollAmount.TabIndex = 8;
-            this.nudScrollAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudScrollAmount.Value = new decimal(new int[] {
             1,
             0,
@@ -166,86 +142,55 @@
             // 
             // cbAutoUpload
             // 
-            this.cbAutoUpload.AutoSize = true;
-            this.cbAutoUpload.Location = new System.Drawing.Point(16, 240);
+            resources.ApplyResources(this.cbAutoUpload, "cbAutoUpload");
             this.cbAutoUpload.Name = "cbAutoUpload";
-            this.cbAutoUpload.Size = new System.Drawing.Size(191, 20);
-            this.cbAutoUpload.TabIndex = 10;
-            this.cbAutoUpload.Text = "Automatically upload / save";
             this.cbAutoUpload.UseVisualStyleBackColor = true;
             // 
             // lblStartDelayHint
             // 
-            this.lblStartDelayHint.AutoSize = true;
-            this.lblStartDelayHint.Location = new System.Drawing.Point(101, 43);
+            resources.ApplyResources(this.lblStartDelayHint, "lblStartDelayHint");
             this.lblStartDelayHint.Name = "lblStartDelayHint";
-            this.lblStartDelayHint.Size = new System.Drawing.Size(25, 16);
-            this.lblStartDelayHint.TabIndex = 2;
-            this.lblStartDelayHint.Text = "ms";
             // 
             // lblScrollDelayHint
             // 
-            this.lblScrollDelayHint.AutoSize = true;
-            this.lblScrollDelayHint.Location = new System.Drawing.Point(101, 139);
+            resources.ApplyResources(this.lblScrollDelayHint, "lblScrollDelayHint");
             this.lblScrollDelayHint.Name = "lblScrollDelayHint";
-            this.lblScrollDelayHint.Size = new System.Drawing.Size(25, 16);
-            this.lblScrollDelayHint.TabIndex = 6;
-            this.lblScrollDelayHint.Text = "ms";
             // 
             // lblScrollAmountHint
             // 
-            this.lblScrollAmountHint.AutoSize = true;
-            this.lblScrollAmountHint.Location = new System.Drawing.Point(101, 203);
+            resources.ApplyResources(this.lblScrollAmountHint, "lblScrollAmountHint");
             this.lblScrollAmountHint.Name = "lblScrollAmountHint";
-            this.lblScrollAmountHint.Size = new System.Drawing.Size(39, 16);
-            this.lblScrollAmountHint.TabIndex = 9;
-            this.lblScrollAmountHint.Text = "times";
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(152, 336);
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(104, 32);
-            this.btnOK.TabIndex = 13;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(264, 336);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(104, 32);
-            this.btnCancel.TabIndex = 14;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // cbShowRegion
             // 
-            this.cbShowRegion.AutoSize = true;
-            this.cbShowRegion.Location = new System.Drawing.Point(16, 272);
+            resources.ApplyResources(this.cbShowRegion, "cbShowRegion");
             this.cbShowRegion.Name = "cbShowRegion";
-            this.cbShowRegion.Size = new System.Drawing.Size(201, 20);
-            this.cbShowRegion.TabIndex = 11;
-            this.cbShowRegion.Text = "Show scrolling capture region";
             this.cbShowRegion.UseVisualStyleBackColor = true;
             // 
             // cbAutoIgnoreBottomEdge
             // 
-            this.cbAutoIgnoreBottomEdge.AutoSize = true;
-            this.cbAutoIgnoreBottomEdge.Location = new System.Drawing.Point(16, 304);
+            resources.ApplyResources(this.cbAutoIgnoreBottomEdge, "cbAutoIgnoreBottomEdge");
             this.cbAutoIgnoreBottomEdge.Name = "cbAutoIgnoreBottomEdge";
-            this.cbAutoIgnoreBottomEdge.Size = new System.Drawing.Size(173, 20);
-            this.cbAutoIgnoreBottomEdge.TabIndex = 12;
-            this.cbAutoIgnoreBottomEdge.Text = "Auto ignore bottom edge";
             this.cbAutoIgnoreBottomEdge.UseVisualStyleBackColor = true;
             // 
             // ScrollingCaptureOptionsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(384, 385);
             this.Controls.Add(this.cbAutoIgnoreBottomEdge);
             this.Controls.Add(this.cbShowRegion);
             this.Controls.Add(this.btnCancel);
@@ -261,12 +206,9 @@
             this.Controls.Add(this.lblScrollDelay);
             this.Controls.Add(this.nudStartDelay);
             this.Controls.Add(this.lblStartDelay);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ScrollingCaptureOptionsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Scrolling capture options";
             ((System.ComponentModel.ISupportInitialize)(this.nudStartDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScrollAmount)).EndInit();
