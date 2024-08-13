@@ -292,7 +292,7 @@ namespace ShareX
                     break;
                 // Other
                 case HotkeyType.DisableHotkeys:
-                    ToggleHotkeys();
+                    ToggleHotkeys(safeTaskSettings);
                     break;
                 case HotkeyType.OpenMainWindow:
                     Program.MainForm.ForceActivate();
@@ -1562,20 +1562,27 @@ namespace ShareX
             return EDataType.File;
         }
 
-        public static bool ToggleHotkeys()
+        public static bool ToggleHotkeys(TaskSettings taskSettings = null)
         {
             bool disableHotkeys = !Program.Settings.DisableHotkeys;
-            ToggleHotkeys(disableHotkeys);
+            ToggleHotkeys(disableHotkeys, taskSettings);
             return disableHotkeys;
         }
 
-        public static void ToggleHotkeys(bool disableHotkeys)
+        public static void ToggleHotkeys(bool disableHotkeys, TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             Program.Settings.DisableHotkeys = disableHotkeys;
             Program.HotkeyManager.ToggleHotkeys(disableHotkeys);
             Program.MainForm.UpdateToggleHotkeyButton();
 
-            ShowNotificationTip(disableHotkeys ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
+            PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
+
+            if (taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
+            {
+                ShowNotificationTip(disableHotkeys ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
+            }
         }
 
         public static bool CheckFFmpeg(TaskSettings taskSettings)
