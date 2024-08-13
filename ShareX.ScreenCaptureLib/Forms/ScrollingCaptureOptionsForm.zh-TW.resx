@@ -117,19 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
-    <value>擷取後的排程：</value>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>起始延遲：</value>
   </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>選單文字：</value>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>捲動延遲：</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 編輯快速排程選單</value>
+  <data name="cbAutoScrollTop.Text" xml:space="preserve">
+    <value>自動捲動至頂端</value>
   </data>
-  <data name="lblAfterUploadTasks.Text" xml:space="preserve">
-    <value>上傳後的排程：</value>
+  <data name="lblStartDelayHint.Text" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="lblScrollDelayHint.Text" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="lblScrollAmountHint.Text" xml:space="preserve">
+    <value>次</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>確定</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="cbShowRegion.Text" xml:space="preserve">
+    <value>顯示捲動擷取範圍</value>
+  </data>
+  <data name="cbAutoIgnoreBottomEdge.Text" xml:space="preserve">
+    <value>自動忽略底部邊界</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - 捲動擷取選項</value>
+  </data>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>自動上傳 / 儲存</value>
+  </data>
+  <data name="lblScrollAmount.Text" xml:space="preserve">
+    <value>捲動次數：</value>
   </data>
 </root>

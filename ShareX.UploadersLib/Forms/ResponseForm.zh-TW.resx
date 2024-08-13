@@ -133,7 +133,7 @@
     <value>結果</value>
   </data>
   <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
-    <value>複製刪除連結</value>
+    <value>複製刪除網址</value>
   </data>
   <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
     <value>複製縮網址</value>

@@ -139,7 +139,7 @@
     <value>陰影</value>
   </data>
   <data name="cbTopMost.Text" xml:space="preserve">
-    <value>最前端</value>
+    <value>最上層</value>
   </data>
   <data name="lblBorderSize.Text" xml:space="preserve">
     <value>邊框大小：</value>

@@ -133,9 +133,9 @@
     <value>關閉</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>提示：空的任務將會轉換為選單中的分隔線。</value>
+    <value>提示：空的排程將會轉換為選單中的分隔線。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 快速任務選單編輯器</value>
+    <value>ShareX - 快速排程選單編輯器</value>
   </data>
 </root>

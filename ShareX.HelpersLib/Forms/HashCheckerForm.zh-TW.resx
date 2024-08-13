@@ -135,42 +135,6 @@
   <data name="lblTarget.Text" xml:space="preserve">
     <value>目標：</value>
   </data>
-  <data name="tpFileHashCheck.Text" xml:space="preserve">
-    <value>檔案雜湊檢查</value>
-  </data>
-  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
-    <value>複製全部</value>
-  </data>
-  <data name="tpTextConversions.Text" xml:space="preserve">
-    <value>文字轉換</value>
-  </data>
-  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
-    <value>解碼</value>
-  </data>
-  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
-    <value>解碼</value>
-  </data>
-  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
-    <value>編碼</value>
-  </data>
-  <data name="lblHashCheckText.Text" xml:space="preserve">
-    <value>文字：</value>
-  </data>
-  <data name="lblHashCheckBinary.Text" xml:space="preserve">
-    <value>二進制：</value>
-  </data>
-  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
-    <value>解碼</value>
-  </data>
-  <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>十六進制：</value>
-  </data>
-  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
-    <value>解碼</value>
-  </data>
-  <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value>雜湊：</value>
-  </data>
   <data name="btnFilePathBrowse2.Text" xml:space="preserve">
     <value>瀏覽...</value>
   </data>
@@ -182,14 +146,5 @@
   </data>
   <data name="lblFilePath2.Text" xml:space="preserve">
     <value>檔案路徑：</value>
-  </data>
-  <data name="lblHashCheckASCII.Text" xml:space="preserve">
-    <value>ASCII:</value>
-  </data>
-  <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value>Base64:</value>
-  </data>
-  <data name="lblProgressPercentage.Text" xml:space="preserve">
-    <value>0%</value>
   </data>
 </root>

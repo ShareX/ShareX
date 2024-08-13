@@ -117,19 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
-    <value>擷取後的排程：</value>
-  </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>選單文字：</value>
+  <data name="lblShadowRadius.Text" xml:space="preserve">
+    <value>半徑：</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 編輯快速排程選單</value>
+    <value>ShareX - 圖片美化工具</value>
   </data>
-  <data name="lblAfterUploadTasks.Text" xml:space="preserve">
-    <value>上傳後的排程：</value>
+  <data name="btnBackgroundImageFilePathBrowse.Text" xml:space="preserve">
+    <value>瀏覽圖片檔案...</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>確定</value>
+  <data name="btnCopy.ToolTip" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="btnPrint.ToolTip" xml:space="preserve">
+    <value>列印...</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>重設選項...</value>
+  </data>
+  <data name="btnSave.ToolTip" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="btnSaveAs.ToolTip" xml:space="preserve">
+    <value>另存為...</value>
+  </data>
+  <data name="btnShadowColor.Text" xml:space="preserve">
+    <value>顏色...</value>
+  </data>
+  <data name="btnUpload.ToolTip" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="cbSmartPadding.Text" xml:space="preserve">
+    <value>智慧內距</value>
+  </data>
+  <data name="gbShadow.Text" xml:space="preserve">
+    <value>陰影</value>
+  </data>
+  <data name="lblBackground.Text" xml:space="preserve">
+    <value>背景：</value>
+  </data>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>外距：</value>
+  </data>
+  <data name="lblMarginValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblPadding.Text" xml:space="preserve">
+    <value>內距：</value>
+  </data>
+  <data name="lblPaddingValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRoundedCornerValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowAngleValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowDistanceValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowOpacityValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowRadiusValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowAngle.Text" xml:space="preserve">
+    <value>角度：</value>
+  </data>
+  <data name="lblShadowDistance.Text" xml:space="preserve">
+    <value>距離：</value>
+  </data>
+  <data name="lblShadowOpacity.Text" xml:space="preserve">
+    <value>不透明度：</value>
+  </data>
+  <data name="lblRoundedCorner.Text" xml:space="preserve">
+    <value>圓角：</value>
   </data>
 </root>

@@ -258,10 +258,10 @@
     <value>編輯器選單</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
-    <value>套用變更並繼續任務 (Enter)</value>
+    <value>套用變更並繼續排程 (Enter)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>在任務中自動關閉編輯器</value>
+    <value>在排程中自動關閉編輯器</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>自動裁切圖片...</value>
@@ -270,10 +270,10 @@
     <value>上移一層</value>
   </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
-    <value>置於頂層</value>
+    <value>置於最上層</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
-    <value>取消任務 (Esc)</value>
+    <value>取消排程 (Esc)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>畫布尺寸...</value>
@@ -282,7 +282,7 @@
     <value>擷取區域</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
-    <value>繼續任務 (空白鍵或滑鼠右鍵)</value>
+    <value>繼續排程 (空白鍵或滑鼠右鍵)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
     <value>將圖片複製到剪貼簿 (Ctrl + C)</value>
@@ -354,7 +354,7 @@
     <value>逆時針旋轉 90°</value>
   </data>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
-    <value>完成擷取任務後執行 (Enter)</value>
+    <value>執行擷取後的排程 (Enter)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
     <value>儲存圖片 (Ctrl + S)</value>
@@ -456,7 +456,7 @@
     <value>打開時縮放到適當大小</value>
   </data>
   <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
-    <value>確定要中止這次錄製嗎？</value>
+    <value>確定要取消這次錄製嗎？</value>
   </data>
   <data name="ScreenRecordForm_Start" xml:space="preserve">
     <value>開始</value>
@@ -483,9 +483,23 @@
     <value>箭頭頭部方向：</value>
   </data>
   <data name="CutOutEffectSize" xml:space="preserve">
-    <value>裁剪效果大小：</value>
+    <value>剪紙效果大小：</value>
   </data>
   <data name="CutOutEffectType" xml:space="preserve">
-    <value>裁剪效果：</value>
+    <value>剪紙效果：</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>重做</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>圖片網址</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>剪紙背景顏色...</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>有尚未儲存的變更。
+
+是否要在關閉圖片編輯器前儲存變更？</value>
   </data>
 </root>
