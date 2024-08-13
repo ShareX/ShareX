@@ -269,6 +269,20 @@ namespace ShareX
 
                     if (info != null && info.Result != null)
                     {
+                        string result = info.ToString();
+
+                        if (!string.IsNullOrEmpty(result))
+                        {
+                            if (Program.Settings.HistorySaveTasks && (!Program.Settings.HistoryCheckURL ||
+                                !string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL)))
+                            {
+                                HistoryItem historyItem = info.GetHistoryItem();
+                                AppendHistoryItemAsync(historyItem);
+                            }
+
+                            RecentManager.Add(task);
+                        }
+
                         TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
 
                         if (panel != null)
@@ -310,6 +324,7 @@ namespace ShareX
                                 UploaderErrorInfo error = info.Result.Errors.Errors[0];
 
                                 string title = error.Title;
+
                                 if (string.IsNullOrEmpty(title))
                                 {
                                     title = Resources.TaskManager_task_UploadCompleted_Error;
@@ -326,8 +341,6 @@ namespace ShareX
                         {
                             DebugHelper.WriteLine($"Task completed. File name: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
 
-                            string result = info.ToString();
-
                             if (lvi != null)
                             {
                                 lvi.Text = info.FileName;
@@ -340,54 +353,42 @@ namespace ShareX
                                 }
                             }
 
-                            if (!task.StopRequested && !string.IsNullOrEmpty(result))
+                            if (!task.StopRequested && info.Job != TaskJob.ShareURL && !string.IsNullOrEmpty(result))
                             {
-                                if (Program.Settings.HistorySaveTasks && (!Program.Settings.HistoryCheckURL ||
-                                   (!string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL))))
+                                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.TaskCompleted, info.TaskSettings);
+
+                                if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
                                 {
-                                    HistoryItem historyItem = info.GetHistoryItem();
-                                    AppendHistoryItemAsync(historyItem);
+                                    result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                 }
 
-                                RecentManager.Add(task);
-
-                                if (info.Job != TaskJob.ShareURL)
+                                if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(result) &&
+                                    (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                 {
-                                    TaskHelpers.PlayNotificationSoundAsync(NotificationSound.TaskCompleted, info.TaskSettings);
+                                    task.KeepImage = true;
 
-                                    if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
+                                    NotificationFormConfig toastConfig = new NotificationFormConfig()
                                     {
-                                        result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
-                                    }
+                                        Duration = (int)(info.TaskSettings.GeneralSettings.ToastWindowDuration * 1000),
+                                        FadeDuration = (int)(info.TaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
+                                        Placement = info.TaskSettings.GeneralSettings.ToastWindowPlacement,
+                                        Size = info.TaskSettings.GeneralSettings.ToastWindowSize,
+                                        LeftClickAction = info.TaskSettings.GeneralSettings.ToastWindowLeftClickAction,
+                                        RightClickAction = info.TaskSettings.GeneralSettings.ToastWindowRightClickAction,
+                                        MiddleClickAction = info.TaskSettings.GeneralSettings.ToastWindowMiddleClickAction,
+                                        FilePath = info.FilePath,
+                                        Image = task.Image,
+                                        Title = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
+                                        Text = result,
+                                        URL = result
+                                    };
 
-                                    if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(result) &&
-                                        (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+                                    NotificationForm.Show(toastConfig);
+
+                                    if (info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowAfterUploadWindow) && info.IsUploadJob)
                                     {
-                                        task.KeepImage = true;
-
-                                        NotificationFormConfig toastConfig = new NotificationFormConfig()
-                                        {
-                                            Duration = (int)(info.TaskSettings.GeneralSettings.ToastWindowDuration * 1000),
-                                            FadeDuration = (int)(info.TaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
-                                            Placement = info.TaskSettings.GeneralSettings.ToastWindowPlacement,
-                                            Size = info.TaskSettings.GeneralSettings.ToastWindowSize,
-                                            LeftClickAction = info.TaskSettings.GeneralSettings.ToastWindowLeftClickAction,
-                                            RightClickAction = info.TaskSettings.GeneralSettings.ToastWindowRightClickAction,
-                                            MiddleClickAction = info.TaskSettings.GeneralSettings.ToastWindowMiddleClickAction,
-                                            FilePath = info.FilePath,
-                                            Image = task.Image,
-                                            Title = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
-                                            Text = result,
-                                            URL = result
-                                        };
-
-                                        NotificationForm.Show(toastConfig);
-
-                                        if (info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowAfterUploadWindow) && info.IsUploadJob)
-                                        {
-                                            AfterUploadForm dlg = new AfterUploadForm(info);
-                                            NativeMethods.ShowWindow(dlg.Handle, (int)WindowShowStyle.ShowNoActivate);
-                                        }
+                                        AfterUploadForm dlg = new AfterUploadForm(info);
+                                        NativeMethods.ShowWindow(dlg.Handle, (int)WindowShowStyle.ShowNoActivate);
                                     }
                                 }
                             }
