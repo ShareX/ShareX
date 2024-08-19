@@ -33,6 +33,7 @@ namespace ShareX
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationSettingsForm));
             this.tcSettings = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.lblSettingsControlled = new System.Windows.Forms.Label();
             this.cbUpdateChannel = new System.Windows.Forms.ComboBox();
             this.lblUpdateChannel = new System.Windows.Forms.Label();
             this.cbAutoCheckUpdate = new System.Windows.Forms.CheckBox();
@@ -183,7 +184,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblSettingsControlled = new System.Windows.Forms.Label();
+            this.lblProxySettingsHidden = new System.Windows.Forms.Label();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -262,6 +263,11 @@ namespace ShareX
             this.tpGeneral.Controls.Add(this.lblLanguage);
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
+            // 
+            // lblSettingsControlled
+            // 
+            resources.ApplyResources(this.lblSettingsControlled, "lblSettingsControlled");
+            this.lblSettingsControlled.Name = "lblSettingsControlled";
             // 
             // cbUpdateChannel
             // 
@@ -1331,6 +1337,7 @@ namespace ShareX
             // tpProxy
             // 
             this.tpProxy.BackColor = System.Drawing.SystemColors.Window;
+            this.tpProxy.Controls.Add(this.lblProxySettingsHidden);
             this.tpProxy.Controls.Add(this.cbProxyMethod);
             this.tpProxy.Controls.Add(this.lblProxyMethod);
             this.tpProxy.Controls.Add(this.lblProxyHost);
@@ -1433,10 +1440,10 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // lblSettingsControlled
+            // lblProxySettingsHidden
             // 
-            resources.ApplyResources(this.lblSettingsControlled, "lblSettingsControlled");
-            this.lblSettingsControlled.Name = "lblSettingsControlled";
+            resources.ApplyResources(this.lblProxySettingsHidden, "lblProxySettingsHidden");
+            this.lblProxySettingsHidden.Name = "lblProxySettingsHidden";
             // 
             // ApplicationSettingsForm
             // 
@@ -1659,5 +1666,6 @@ namespace ShareX
         private System.Windows.Forms.ComboBox cbUpdateChannel;
         private System.Windows.Forms.Label lblUpdateChannel;
         private System.Windows.Forms.Label lblSettingsControlled;
+        private System.Windows.Forms.Label lblProxySettingsHidden;
     }
 }

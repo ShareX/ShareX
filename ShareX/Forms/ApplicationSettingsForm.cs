@@ -285,12 +285,29 @@ namespace ShareX
             lblDefaultPrinterOverride.Visible = txtDefaultPrinterOverride.Visible = !Program.Settings.PrintSettings.ShowPrintDialog;
 
             // Proxy
-            cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
-            txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
-            txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
-            txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? "";
-            nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
-            UpdateProxyControls();
+            if (SystemOptions.HideProxySettings)
+            {
+                lblProxyMethod.Visible = false;
+                cbProxyMethod.Visible = false;
+                lblProxyHost.Visible = false;
+                txtProxyHost.Visible = false;
+                lblProxyPort.Visible = false;
+                nudProxyPort.Visible = false;
+                lblProxyUsername.Visible = false;
+                txtProxyUsername.Visible = false;
+                lblProxyPassword.Visible = false;
+                txtProxyPassword.Visible = false;
+                lblProxySettingsHidden.Visible = true;
+            }
+            else
+            {
+                cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
+                txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
+                txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
+                txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? "";
+                nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
+                UpdateProxyControls();
+            }
 
             // Advanced
             pgSettings.SelectedObject = Program.Settings;

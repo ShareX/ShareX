@@ -3729,6 +3729,42 @@
   <data name="&gt;&gt;tpPrint.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="lblProxySettingsHidden.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProxySettingsHidden.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
+  </data>
+  <data name="lblProxySettingsHidden.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblProxySettingsHidden.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 16</value>
+  </data>
+  <data name="lblProxySettingsHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>485, 24</value>
+  </data>
+  <data name="lblProxySettingsHidden.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblProxySettingsHidden.Text" xml:space="preserve">
+    <value>* Proxy settings has been hidden by your IT administrator</value>
+  </data>
+  <data name="lblProxySettingsHidden.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblProxySettingsHidden.Name" xml:space="preserve">
+    <value>lblProxySettingsHidden</value>
+  </data>
+  <data name="&gt;&gt;lblProxySettingsHidden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProxySettingsHidden.Parent" xml:space="preserve">
+    <value>tpProxy</value>
+  </data>
+  <data name="&gt;&gt;lblProxySettingsHidden.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
@@ -3748,7 +3784,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;cbProxyMethod.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblProxyMethod.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3778,7 +3814,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;lblProxyMethod.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblProxyHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3808,7 +3844,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;lblProxyHost.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtProxyHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -3829,7 +3865,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;txtProxyHost.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="nudProxyPort.Location" type="System.Drawing.Point, System.Drawing">
     <value>256, 80</value>
@@ -3853,7 +3889,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;nudProxyPort.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblProxyPort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3883,7 +3919,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;lblProxyPort.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblProxyPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3913,7 +3949,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;lblProxyPassword.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="txtProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 176</value>
@@ -3934,7 +3970,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;txtProxyPassword.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblProxyUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3964,7 +4000,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;lblProxyUsername.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="txtProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -3985,7 +4021,7 @@
     <value>tpProxy</value>
   </data>
   <data name="&gt;&gt;txtProxyUsername.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="tpProxy.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

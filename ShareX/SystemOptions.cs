@@ -37,6 +37,7 @@ namespace ShareX
         public static bool DisableUpload { get; private set; }
         public static bool DisableLogging { get; private set; }
         public static bool DisableLanguageChange { get; private set; }
+        public static bool HideProxySettings { get; private set; }
         public static string PersonalPath { get; private set; }
         public static string ScreenshotsPath { get; private set; }
         public static string UpdateChannel { get; private set; }
@@ -47,6 +48,7 @@ namespace ShareX
             DisableUpload = GetSystemOptionBoolean("DisableUpload");
             DisableLogging = GetSystemOptionBoolean("DisableLogging");
             DisableLanguageChange = GetSystemOptionBoolean("DisableLanguageChange");
+            HideProxySettings = GetSystemOptionBoolean("HideProxySettings");
             PersonalPath = GetSystemOptionString("PersonalPath");
             ScreenshotsPath = GetSystemOptionString("ScreenshotsPath");
             UpdateChannel = GetSystemOptionString("UpdateChannel");
