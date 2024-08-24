@@ -117,22 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbClose.Text" xml:space="preserve">
-    <value>إغلاق</value>
-  </data>
-  <data name="tsbCopy.Text" xml:space="preserve">
-    <value>نسخ</value>
-  </data>
-  <data name="tsbOptions.Text" xml:space="preserve">
-    <value>خيارات...</value>
-  </data>
-  <data name="tslScale.Text" xml:space="preserve">
-    <value>100%</value>
-  </data>
-  <data name="tslScale.ToolTipText" xml:space="preserve">
-    <value>مقياس</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>شاريكس - تثبيت على الشاشة</value>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>نسخ الصورة</value>
   </data>
 </root>

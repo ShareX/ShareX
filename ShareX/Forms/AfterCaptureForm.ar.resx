@@ -117,22 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbClose.Text" xml:space="preserve">
-    <value>إغلاق</value>
+  <data name="btnContinue.Text" xml:space="preserve">
+    <value>متابعة</value>
   </data>
-  <data name="tsbCopy.Text" xml:space="preserve">
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
     <value>نسخ</value>
   </data>
-  <data name="tsbOptions.Text" xml:space="preserve">
-    <value>خيارات...</value>
+  <data name="tpAfterCapture.Text" xml:space="preserve">
+    <value>بعد الالتقاط</value>
   </data>
-  <data name="tslScale.Text" xml:space="preserve">
-    <value>100%</value>
+  <data name="tpBeforeUpload.Text" xml:space="preserve">
+    <value>الوجهات</value>
   </data>
-  <data name="tslScale.ToolTipText" xml:space="preserve">
-    <value>مقياس</value>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>بعد التحميل</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>اسم الملف:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>شاريكس - تثبيت على الشاشة</value>
+    <value>شاريكس - بعد الالتقاط</value>
   </data>
 </root>

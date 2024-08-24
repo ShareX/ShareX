@@ -117,22 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbClose.Text" xml:space="preserve">
-    <value>إغلاق</value>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>الاسم:</value>
   </data>
-  <data name="tsbCopy.Text" xml:space="preserve">
-    <value>نسخ</value>
+  <data name="lblPath.Text" xml:space="preserve">
+    <value>مسار الملف:</value>
   </data>
-  <data name="tsbOptions.Text" xml:space="preserve">
-    <value>خيارات...</value>
+  <data name="lblArgs.Text" xml:space="preserve">
+    <value>المعلمات:</value>
   </data>
-  <data name="tslScale.Text" xml:space="preserve">
-    <value>100%</value>
+  <data name="btnPathBrowse.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="tslScale.ToolTipText" xml:space="preserve">
-    <value>مقياس</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="lblExtensions.Text" xml:space="preserve">
+    <value>مرشح الامتداد: (مثال: jpg png mp4)</value>
+  </data>
+  <data name="lblOutputExtension.Text" xml:space="preserve">
+    <value>امتداد اسم ملف الإخراج: (فارغ = استخدام نفس اسم الملف)</value>
+  </data>
+  <data name="cbDeleteInputFile.Text" xml:space="preserve">
+    <value>حذف ملف الإدخال</value>
+  </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>نافذة مخفية</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>شاريكس - تثبيت على الشاشة</value>
+    <value>شاريكس - الإجراءات</value>
   </data>
 </root>

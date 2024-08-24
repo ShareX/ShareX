@@ -117,22 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbClose.Text" xml:space="preserve">
-    <value>إغلاق</value>
+  <data name="lblMarginValue.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="tsbCopy.Text" xml:space="preserve">
+  <data name="lblPaddingValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRoundedCornerValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowRadiusValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowAngleValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowDistanceValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShadowOpacityValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>الهامش:</value>
+  </data>
+  <data name="lblPadding.Text" xml:space="preserve">
+    <value>الحشو:</value>
+  </data>
+  <data name="cbSmartPadding.Text" xml:space="preserve">
+    <value>الحشو الذكي</value>
+  </data>
+  <data name="lblRoundedCorner.Text" xml:space="preserve">
+    <value>الزاوية المستديرة:</value>
+  </data>
+  <data name="lblShadowRadius.Text" xml:space="preserve">
+    <value>الشعاع</value>
+  </data>
+  <data name="lblBackground.Text" xml:space="preserve">
+    <value>الخلفية:</value>
+  </data>
+  <data name="lblShadowAngle.Text" xml:space="preserve">
+    <value>الزاوية:</value>
+  </data>
+  <data name="btnShadowColor.Text" xml:space="preserve">
+    <value>اللون...</value>
+  </data>
+  <data name="gbShadow.Text" xml:space="preserve">
+    <value>الظل</value>
+  </data>
+  <data name="btnBackgroundImageFilePathBrowse.Text" xml:space="preserve">
+    <value>استعراض ملف الصورة...</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>إعادة تعيين الخيارات...</value>
+  </data>
+  <data name="btnPrint.ToolTip" xml:space="preserve">
+    <value>طباعة...</value>
+  </data>
+  <data name="btnSave.ToolTip" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="btnUpload.ToolTip" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="btnSaveAs.ToolTip" xml:space="preserve">
+    <value>حفظ باسم...</value>
+  </data>
+  <data name="btnCopy.ToolTip" xml:space="preserve">
     <value>نسخ</value>
-  </data>
-  <data name="tsbOptions.Text" xml:space="preserve">
-    <value>خيارات...</value>
-  </data>
-  <data name="tslScale.Text" xml:space="preserve">
-    <value>100%</value>
-  </data>
-  <data name="tslScale.ToolTipText" xml:space="preserve">
-    <value>مقياس</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>شاريكس - تثبيت على الشاشة</value>
   </data>
 </root>

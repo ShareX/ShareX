@@ -117,22 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbClose.Text" xml:space="preserve">
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>تحرير</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>إزالة</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>إعادة التعيين إلى الافتراضي...</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
     <value>إغلاق</value>
   </data>
-  <data name="tsbCopy.Text" xml:space="preserve">
-    <value>نسخ</value>
-  </data>
-  <data name="tsbOptions.Text" xml:space="preserve">
-    <value>خيارات...</value>
-  </data>
-  <data name="tslScale.Text" xml:space="preserve">
-    <value>100%</value>
-  </data>
-  <data name="tslScale.ToolTipText" xml:space="preserve">
-    <value>مقياس</value>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>نصيحة: إذا أضفت مهمة فارغة، فسيتم تحويلها إلى خط فاصل في القائمة.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>شاريكس - تثبيت على الشاشة</value>
+    <value>شاريكس - محرر قائمة المهام السريعة</value>
   </data>
 </root>

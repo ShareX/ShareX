@@ -117,22 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbClose.Text" xml:space="preserve">
-    <value>إغلاق</value>
+  <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
+    <value>مهام بعد الالتقاط:</value>
   </data>
-  <data name="tsbCopy.Text" xml:space="preserve">
-    <value>نسخ</value>
+  <data name="lblAfterUploadTasks.Text" xml:space="preserve">
+    <value>مهام بعد التحميل:</value>
   </data>
-  <data name="tsbOptions.Text" xml:space="preserve">
-    <value>خيارات...</value>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>نص القائمة:</value>
   </data>
-  <data name="tslScale.Text" xml:space="preserve">
-    <value>100%</value>
-  </data>
-  <data name="tslScale.ToolTipText" xml:space="preserve">
-    <value>مقياس</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>موافق</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>شاريكس - تثبيت على الشاشة</value>
+    <value>شاريكس - تحرير عنصر قائمة المهام السريعة</value>
   </data>
 </root>

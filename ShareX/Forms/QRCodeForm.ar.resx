@@ -117,22 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbClose.Text" xml:space="preserve">
-    <value>إغلاق</value>
+  <data name="lblQRCodeSizeHint.Text" xml:space="preserve">
+    <value>بكسل</value>
   </data>
-  <data name="tsbCopy.Text" xml:space="preserve">
-    <value>نسخ</value>
+  <data name="lblQRCodeSize.Text" xml:space="preserve">
+    <value>حجم رمز QR:</value>
   </data>
-  <data name="tsbOptions.Text" xml:space="preserve">
-    <value>خيارات...</value>
+  <data name="lblQRCode.Text" xml:space="preserve">
+    <value>رمز QR:</value>
   </data>
-  <data name="tslScale.Text" xml:space="preserve">
-    <value>100%</value>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>نص:</value>
   </data>
-  <data name="tslScale.ToolTipText" xml:space="preserve">
-    <value>مقياس</value>
+  <data name="btnCopyImage.Text" xml:space="preserve">
+    <value>نسخ الصورة</value>
+  </data>
+  <data name="btnSaveImage.Text" xml:space="preserve">
+    <value>حفظ الصورة...</value>
+  </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>تحميل الصورة</value>
+  </data>
+  <data name="btnScanQRCodeFromScreen.Text" xml:space="preserve">
+    <value>مسح رمز QR من الشاشة...</value>
+  </data>
+  <data name="btnScanQRCodeFromImageFile.Text" xml:space="preserve">
+    <value>مسح رمز QR من ملف صورة...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>شاريكس - تثبيت على الشاشة</value>
+    <value>شاريكس - رمز QR</value>
   </data>
 </root>

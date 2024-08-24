@@ -117,22 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbClose.Text" xml:space="preserve">
-    <value>إغلاق</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>اللغة:</value>
   </data>
-  <data name="tsbCopy.Text" xml:space="preserve">
-    <value>نسخ</value>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>النتيجة:</value>
   </data>
-  <data name="tsbOptions.Text" xml:space="preserve">
-    <value>خيارات...</value>
+  <data name="lblScaleFactor.Text" xml:space="preserve">
+    <value>معامل القياس:</value>
   </data>
-  <data name="tslScale.Text" xml:space="preserve">
-    <value>100%</value>
+  <data name="btnOpenServiceLink.Text" xml:space="preserve">
+    <value>افتح رابط الخدمة...</value>
   </data>
-  <data name="tslScale.ToolTipText" xml:space="preserve">
-    <value>مقياس</value>
+  <data name="lblService.Text" xml:space="preserve">
+    <value>الخدمة:</value>
+  </data>
+  <data name="btnSelectRegion.Text" xml:space="preserve">
+    <value>اختر المنطقة للتعرف الضوئي على الحروف (OCR)...</value>
+  </data>
+  <data name="cbSingleLine.Text" xml:space="preserve">
+    <value>سطر واحد</value>
+  </data>
+  <data name="btnCopyAll.Text" xml:space="preserve">
+    <value>نسخ الكل</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>شاريكس - تثبيت على الشاشة</value>
+    <value>شاريكس - التعرف الضوئي على الحروف</value>
   </data>
 </root>
