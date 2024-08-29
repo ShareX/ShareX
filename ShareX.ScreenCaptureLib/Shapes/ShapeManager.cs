@@ -2131,7 +2131,7 @@ namespace ShareX.ScreenCaptureLib
                             img.Dispose();
                             return;
                         case ImageInsertMethod.Center:
-                            pos = Form.ClientArea.Center();
+                            pos = Form.CanvasRectangle.Center();
                             centerImage = true;
                             break;
                         case ImageInsertMethod.CanvasExpandDown:
