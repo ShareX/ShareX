@@ -35,7 +35,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.YouTube;
 
-        public override Icon ServiceIcon => Resources.YouTube;
+        public override Image ServiceImage => Resources.YouTube;
 
         public override bool CheckConfig(UploadersConfig config)
         {
