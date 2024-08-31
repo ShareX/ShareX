@@ -1,5 +1,6 @@
 using System;
 using ShareX.ScreenCaptureLib.AdvancedGraphics.GDI;
+using DXGI = SharpDX.DXGI;
 
 namespace ShareX.ScreenCaptureLib.AdvancedGraphics
 {
@@ -13,7 +14,6 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics
         public static ShaderHdrMetadata GetHdrMetadataForMonitor(string deviceName)
         {
             var err = BetterWin32Errors.Win32Error.ERROR_SUCCESS;
-            // TODO: also query monitor HDR white point brightness (currently hardcoded to 800.0f)
             var hdrMetadata = new ShaderHdrMetadata { EnableHdrProcessing = false, MonSdrDispNits = 80.0f, ExposureLevel = 1.0f, MonHdrDispNits = 800.0f };
             var monAdvColorInfo = DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO.CreateGet();
             var monSdrWhiteLevel = DISPLAYCONFIG_SDR_WHITE_LEVEL.CreateGet();
@@ -81,6 +81,32 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics
                     }
 
                     break;
+                }
+            }
+
+            using (var factory = new DXGI.Factory1())
+            {
+                for (int i = 0; i < factory.GetAdapterCount1(); i++)
+                {
+                    using (var adapter = factory.GetAdapter1(i))
+                    {
+                        for (int j = 0; j < adapter.GetOutputCount(); j++)
+                        {
+                            using (var output = adapter.GetOutput(j))
+                            {
+                                if (output.Description.DeviceName != deviceName)
+                                {
+                                    continue;
+                                }
+
+                                var output6 = output.QueryInterface<DXGI.Output6>();
+                                if (output6 != null)
+                                {
+                                    hdrMetadata.MonHdrDispNits = output6.Description1.MaxFullFrameLuminance;
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
