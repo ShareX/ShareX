@@ -535,9 +535,33 @@ namespace ShareX
         {
             switch (e.KeyData)
             {
+                case Keys.W:
+                case Keys.Up:
+                    Location = new Point(Location.X, Location.Y - 1);
+                    Update();
+                    break;
+                case Keys.A:
+                case Keys.Left:
+                    Location = new Point(Location.X - 1, Location.Y);
+                    Update();
+                    break;
+                case Keys.S:
+                case Keys.Down:
+                    Location = new Point(Location.X, Location.Y + 1);
+                    Update();
+                    break;
+                case Keys.D:
+                case Keys.Right:
+                    Location = new Point(Location.X + 1, Location.Y);
+                    Update();
+                    break;
                 case Keys.Control | Keys.C:
                     ClipboardHelpers.CopyImage(Image);
                     break;
+                case Keys.R: // Remove
+                case Keys.Delete:
+                    Close();
+                    return;
             }
 
             if (!Minimized)
