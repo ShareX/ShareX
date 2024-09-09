@@ -125,7 +125,7 @@ namespace ShareX
 
         public PinToScreenOptions Options { get; private set; }
 
-        private bool isDWMEnabled, loaded, dragging;
+        private bool isDWMEnabled, loaded, dragging, imageHovered;
         private Point initialLocation;
         private Cursor openHandCursor, closedHandCursor;
 
@@ -239,11 +239,28 @@ namespace ShareX
 
         private void UpdateControls()
         {
-            int toolbarMargin = 20;
-            tsMain.Visible = ClientRectangle.Contains(PointToClient(MousePosition)) &&
-                ClientRectangle.Contains(new Rectangle(0, 0, (Options.Border ? Options.BorderSize * 2 : 0) + tsMain.Width + toolbarMargin,
-                (Options.Border ? Options.BorderSize * 2 : 0) + tsMain.Height + toolbarMargin));
             tslScale.Text = ImageScale + "%";
+
+            int toolbarMargin = 20 + (Options.Border ? Options.BorderSize * 2 : 0);
+            bool hasSpace = ClientRectangle.Width >= tsMain.Width + toolbarMargin
+                && ClientRectangle.Height >= tsMain.Height + toolbarMargin;
+            if (!hasSpace)
+            {
+                tsMain.Visible = false;
+                return;
+            }
+            if (imageHovered)
+            {
+                tsMain.Visible = true;
+                return;
+            }
+            Point clientCursor = PointToClient(MousePosition);
+            tsMain.Visible = ClientRectangle.Contains(clientCursor) && new Rectangle(
+                (base.ClientRectangle.Width - tsMain.Width) / 2,
+                Options.Border ? Options.BorderSize : 0,
+                tsMain.Width,
+                tsMain.Height
+            ).Contains(clientCursor);
         }
 
         private void AutoSizeForm()
@@ -518,17 +535,20 @@ namespace ShareX
 
         private void PinToScreenForm_MouseEnter(object sender, EventArgs e)
         {
+            imageHovered = true;
             UpdateControls();
         }
 
         private void PinToScreenForm_MouseLeave(object sender, EventArgs e)
         {
+            imageHovered = false;
             UpdateControls();
         }
 
         private void tsMain_MouseLeave(object sender, EventArgs e)
         {
             UpdateControls();
+			tsMain.Visible = false;
         }
 
         private void PinToScreenForm_KeyUp(object sender, KeyEventArgs e)
