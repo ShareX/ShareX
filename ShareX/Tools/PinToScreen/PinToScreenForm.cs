@@ -61,9 +61,8 @@ namespace ShareX
                     if (loaded)
                     {
                         AutoSizeForm();
+                        UpdateControls();
                     }
-
-                    UpdateControls();
                 }
             }
         }
