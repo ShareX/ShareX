@@ -625,21 +625,6 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        public static bool IsRunning(string name)
-        {
-            try
-            {
-                Mutex mutex = Mutex.OpenExisting(name);
-                mutex.ReleaseMutex();
-            }
-            catch
-            {
-                return false;
-            }
-
-            return true;
-        }
-
         public static T ByteArrayToStructure<T>(byte[] bytes) where T : struct
         {
             GCHandle handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);

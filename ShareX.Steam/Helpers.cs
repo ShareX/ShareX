@@ -47,21 +47,20 @@ namespace ShareX.Steam
             return Path.GetFullPath(path);
         }
 
-        public static bool IsRunning(string name)
+        public static bool IsRunning(string mutexName)
         {
-            bool createdNew = true;
-
             try
             {
-                using (Mutex mutex = new Mutex(false, name, out createdNew))
+                using (Mutex mutex = new Mutex(false, mutexName, out bool createdNew))
                 {
+                    return !createdNew;
                 }
             }
             catch
             {
             }
 
-            return !createdNew;
+            return false;
         }
 
         /// <summary>

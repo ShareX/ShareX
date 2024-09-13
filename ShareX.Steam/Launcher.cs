@@ -34,7 +34,7 @@ namespace ShareX.Steam
 {
     public static class Launcher
     {
-        private static string ContentFolderPath = GetContentFolderPath();
+        private static string ContentFolderPath = Helpers.GetAbsolutePath("ShareX");
         private static string ContentExecutablePath = Path.Combine(ContentFolderPath, "ShareX.exe");
         private static string ContentSteamFilePath = Path.Combine(ContentFolderPath, "Steam");
         private static string UpdatingTempFilePath = Path.Combine(ContentFolderPath, "Updating");
@@ -55,11 +55,7 @@ namespace ShareX.Steam
 
             IsStartupRun = Helpers.IsCommandExist(args, "-silent");
 
-#if DEBUG
-            ShowInApp = true;
-#else
             ShowInApp = File.Exists(ContentSteamFilePath);
-#endif
 
             if (!IsShareXRunning())
             {
@@ -134,20 +130,6 @@ namespace ShareX.Steam
                     }
                 }
             }
-        }
-
-        private static string GetContentFolderPath()
-        {
-#if DEBUG
-            string path = Helpers.GetAbsolutePath(@"..\..\..\ShareX\bin\Debug");
-
-            if (Directory.Exists(path))
-            {
-                return path;
-            }
-#endif
-
-            return Helpers.GetAbsolutePath("ShareX");
         }
 
         private static bool IsShareXRunning()

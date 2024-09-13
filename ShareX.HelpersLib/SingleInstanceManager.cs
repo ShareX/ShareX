@@ -44,7 +44,7 @@ namespace ShareX.HelpersLib
         private const int MaxArgumentsLength = 100;
         private const int ConnectTimeout = 5000;
 
-        private readonly Mutex mutex;
+        private readonly MutexManager mutex;
         private CancellationTokenSource cts;
 
         public SingleInstanceManager(string mutexName, string pipeName, string[] args) : this(mutexName, pipeName, true, args)
@@ -57,31 +57,21 @@ namespace ShareX.HelpersLib
             PipeName = pipeName;
             IsSingleInstance = isSingleInstance;
 
-            mutex = new Mutex(false, MutexName);
+            mutex = new MutexManager(MutexName, 0);
+            IsFirstInstance = mutex.HasHandle;
 
-            try
+            if (IsSingleInstance)
             {
-                IsFirstInstance = mutex.WaitOne(100, false);
-
-                if (IsSingleInstance)
+                if (IsFirstInstance)
                 {
-                    if (IsFirstInstance)
-                    {
-                        cts = new CancellationTokenSource();
+                    cts = new CancellationTokenSource();
 
-                        Task.Run(ListenForConnectionsAsync, cts.Token);
-                    }
-                    else
-                    {
-                        RedirectArgumentsToFirstInstance(args);
-                    }
+                    Task.Run(ListenForConnectionsAsync, cts.Token);
                 }
-            }
-            catch (AbandonedMutexException)
-            {
-                DebugHelper.WriteLine("Single instance mutex found abandoned from another process.");
-
-                IsFirstInstance = true;
+                else
+                {
+                    RedirectArgumentsToFirstInstance(args);
+                }
             }
         }
 
@@ -175,15 +165,7 @@ namespace ShareX.HelpersLib
                 cts.Dispose();
             }
 
-            if (mutex != null)
-            {
-                if (IsFirstInstance)
-                {
-                    mutex.ReleaseMutex();
-                }
-
-                mutex.Dispose();
-            }
+            mutex?.Dispose();
         }
     }
 }
