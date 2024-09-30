@@ -355,7 +355,6 @@ namespace ShareX
             UpdateManager = new ShareXUpdateManager();
             LanguageHelper.ChangeLanguage(Settings.Language);
             CleanupManager.CleanupAsync();
-            Helpers.TryFixHandCursor();
 
             DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
@@ -668,7 +667,6 @@ namespace ShareX
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Helpers.TryFixHandCursor();
                 Application.Run(new DNSChangerForm());
                 return true;
             }
