@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net80-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
     <PlatformTarget>x86</PlatformTarget>
     <AssemblyName>ShareX_Launcher</AssemblyName>
@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Management" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="steam_appid.txt">
