@@ -225,7 +225,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private static byte[] EncryptBytes(Vault_oooCryptoData crypto, byte[] bytes)
         {
-            using (AesManaged aes = new AesManaged())
+            using (var aes = Aes.Create())
             {
                 aes.Mode = CipherMode.CBC;
                 aes.KeySize = AES_KEY_SIZE;

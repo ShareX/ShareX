@@ -708,20 +708,14 @@ namespace ShareX.HelpersLib
 
         public static byte[] ComputeSHA256(byte[] data)
         {
-            using (SHA256Managed hashAlgorithm = new SHA256Managed())
-            {
-                return hashAlgorithm.ComputeHash(data);
-            }
+            return SHA256.HashData(data);
         }
 
         public static byte[] ComputeSHA256(Stream stream, int bufferSize = 1024 * 32)
         {
             BufferedStream bufferedStream = new BufferedStream(stream, bufferSize);
 
-            using (SHA256Managed hashAlgorithm = new SHA256Managed())
-            {
-                return hashAlgorithm.ComputeHash(bufferedStream);
-            }
+            return SHA256.HashData(bufferedStream);
         }
 
         public static byte[] ComputeSHA256(string data)
@@ -731,10 +725,7 @@ namespace ShareX.HelpersLib
 
         public static byte[] ComputeHMACSHA256(byte[] data, byte[] key)
         {
-            using (HMACSHA256 hashAlgorithm = new HMACSHA256(key))
-            {
-                return hashAlgorithm.ComputeHash(data);
-            }
+            return HMACSHA256.HashData(key, data);
         }
 
         public static byte[] ComputeHMACSHA256(string data, string key)
@@ -913,7 +904,7 @@ namespace ShareX.HelpersLib
 
         public static string GetChecksum(string filePath)
         {
-            using (SHA256Managed hashAlgorithm = new SHA256Managed())
+            using (var hashAlgorithm = SHA256.Create())
             {
                 return GetChecksum(filePath, hashAlgorithm);
             }
