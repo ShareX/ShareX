@@ -63,8 +63,7 @@ namespace ShareX.HistoryLib
                 ilvImages.BorderStyle = BorderStyle.None;
             }
 
-            him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
-            him.GetHistoryItems += him_GetHistoryItems;
+            him = new HistoryItemManager(uploadFile, editImage, pinToScreen, him_GetHistoryItems);
             ilvImages.ContextMenuStrip = him.cmsHistory;
 
             defaultTitle = Text;

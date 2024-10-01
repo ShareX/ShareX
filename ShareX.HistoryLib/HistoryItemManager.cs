@@ -33,9 +33,7 @@ namespace ShareX.HistoryLib
 {
     public partial class HistoryItemManager
     {
-        public delegate HistoryItem[] GetHistoryItemsEventHandler();
-
-        public event GetHistoryItemsEventHandler GetHistoryItems;
+        private readonly Func<HistoryItem[]> getHistoryItems;
 
         public HistoryItem HistoryItem { get; private set; }
 
@@ -52,11 +50,12 @@ namespace ShareX.HistoryLib
 
         private Action<string> uploadFile, editImage, pinToScreen;
 
-        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage, Action<string> pinToScreen, bool hideShowMoreInfoButton = false)
+        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage, Action<string> pinToScreen, Func<HistoryItem[]> getHistoryItems, bool hideShowMoreInfoButton = false)
         {
             this.uploadFile = uploadFile;
             this.editImage = editImage;
             this.pinToScreen = pinToScreen;
+            this.getHistoryItems = getHistoryItems;
 
             InitializeComponent();
 
@@ -70,7 +69,7 @@ namespace ShareX.HistoryLib
 
         public HistoryItem UpdateSelectedHistoryItem()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
 
             if (historyItems != null && historyItems.Length > 0)
             {
@@ -102,16 +101,6 @@ namespace ShareX.HistoryLib
             }
 
             return HistoryItem;
-        }
-
-        public HistoryItem[] OnGetHistoryItems()
-        {
-            if (GetHistoryItems != null)
-            {
-                return GetHistoryItems();
-            }
-
-            return null;
         }
 
         public bool HandleKeyInput(KeyEventArgs e)
@@ -206,7 +195,7 @@ namespace ShareX.HistoryLib
 
         public void CopyURL()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL)).Select(x => x.URL).ToArray();
@@ -225,7 +214,7 @@ namespace ShareX.HistoryLib
 
         public void CopyShortenedURL()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.ShortenedURL)).Select(x => x.ShortenedURL).ToArray();
@@ -244,7 +233,7 @@ namespace ShareX.HistoryLib
 
         public void CopyThumbnailURL()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.ThumbnailURL)).Select(x => x.ThumbnailURL).ToArray();
@@ -263,7 +252,7 @@ namespace ShareX.HistoryLib
 
         public void CopyDeletionURL()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.DeletionURL)).Select(x => x.DeletionURL).ToArray();
@@ -282,7 +271,7 @@ namespace ShareX.HistoryLib
 
         public void CopyFile()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.FilePath) && Path.HasExtension(x.FilePath) &&
@@ -307,7 +296,7 @@ namespace ShareX.HistoryLib
 
         public void CopyHTMLLink()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL)).
@@ -327,7 +316,7 @@ namespace ShareX.HistoryLib
 
         public void CopyHTMLImage()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL) && FileHelpers.IsImageFile(x.URL)).
@@ -347,7 +336,7 @@ namespace ShareX.HistoryLib
 
         public void CopyHTMLLinkedImage()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL) && FileHelpers.IsImageFile(x.URL) &&
@@ -367,7 +356,7 @@ namespace ShareX.HistoryLib
 
         public void CopyForumLink()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL)).Select(x => string.Format("[url]{0}[/url]", x.URL)).ToArray();
@@ -386,7 +375,7 @@ namespace ShareX.HistoryLib
 
         public void CopyForumImage()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL) && FileHelpers.IsImageFile(x.URL)).
@@ -406,7 +395,7 @@ namespace ShareX.HistoryLib
 
         public void CopyForumLinkedImage()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL) && FileHelpers.IsImageFile(x.URL) &&
@@ -426,7 +415,7 @@ namespace ShareX.HistoryLib
 
         public void CopyMarkdownLink()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL)).
@@ -446,7 +435,7 @@ namespace ShareX.HistoryLib
 
         public void CopyMarkdownImage()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL) && FileHelpers.IsImageFile(x.URL)).
@@ -466,7 +455,7 @@ namespace ShareX.HistoryLib
 
         public void CopyMarkdownLinkedImage()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.URL) && FileHelpers.IsImageFile(x.URL) &&
@@ -486,7 +475,7 @@ namespace ShareX.HistoryLib
 
         public void CopyFilePath()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.FilePath) && Path.HasExtension(x.FilePath) &&
@@ -506,7 +495,7 @@ namespace ShareX.HistoryLib
 
         public void CopyFileName()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.FilePath) && Path.HasExtension(x.FilePath)).
@@ -526,7 +515,7 @@ namespace ShareX.HistoryLib
 
         public void CopyFileNameWithExtension()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.FilePath) && Path.HasExtension(x.FilePath)).
@@ -546,7 +535,7 @@ namespace ShareX.HistoryLib
 
         public void CopyFolder()
         {
-            HistoryItem[] historyItems = OnGetHistoryItems();
+            HistoryItem[] historyItems = getHistoryItems();
             if (historyItems != null)
             {
                 string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.FilePath) && Path.HasExtension(x.FilePath)).

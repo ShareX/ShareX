@@ -73,8 +73,7 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.globe);
             lvHistory.SmallImageList = il;
 
-            him = new HistoryItemManager(uploadFile, editImage, pinToScreen, true);
-            him.GetHistoryItems += him_GetHistoryItems;
+            him = new HistoryItemManager(uploadFile, editImage, pinToScreen, him_GetHistoryItems, true);
             lvHistory.ContextMenuStrip = him.cmsHistory;
 
             pbThumbnail.Reset();
