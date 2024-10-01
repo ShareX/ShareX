@@ -176,7 +176,15 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] him_GetHistoryItems()
         {
-            return ilvImages.SelectedItems.Select(x => x.Tag as HistoryItem).ToArray();
+            // We have to do this manually as ImageListViewSelectedItemCollection doesn't support several methods it claims to implement
+            // and some of those methods are used by modern LINQ.
+            // Would be fixed by https://github.com/oozcitak/imagelistview/pull/234
+            var result = new List<HistoryItem>();
+            foreach (var item in ilvImages.SelectedItems)
+            {
+                result.Add(item.Tag as HistoryItem);
+            }
+            return result.ToArray();
         }
 
         #region Form events
