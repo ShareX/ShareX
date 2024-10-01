@@ -300,18 +300,6 @@
   <data name="tpAfterCapture.Text" xml:space="preserve">
     <value>After capture</value>
   </data>
-  <data name="&gt;&gt;tpAfterCapture.Name" xml:space="preserve">
-    <value>tpAfterCapture</value>
-  </data>
-  <data name="&gt;&gt;tpAfterCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpAfterCapture.Parent" xml:space="preserve">
-    <value>tcTasks</value>
-  </data>
-  <data name="&gt;&gt;tpAfterCapture.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="lvAfterCaptureTasks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -326,18 +314,6 @@
   </data>
   <data name="lvAfterCaptureTasks.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;lvAfterCaptureTasks.Name" xml:space="preserve">
-    <value>lvAfterCaptureTasks</value>
-  </data>
-  <data name="&gt;&gt;lvAfterCaptureTasks.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvAfterCaptureTasks.Parent" xml:space="preserve">
-    <value>tpAfterCapture</value>
-  </data>
-  <data name="&gt;&gt;lvAfterCaptureTasks.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;ucBeforeUpload.Name" xml:space="preserve">
     <value>ucBeforeUpload</value>
@@ -366,18 +342,6 @@
   <data name="tpBeforeUpload.Text" xml:space="preserve">
     <value>Destinations</value>
   </data>
-  <data name="&gt;&gt;tpBeforeUpload.Name" xml:space="preserve">
-    <value>tpBeforeUpload</value>
-  </data>
-  <data name="&gt;&gt;tpBeforeUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpBeforeUpload.Parent" xml:space="preserve">
-    <value>tcTasks</value>
-  </data>
-  <data name="&gt;&gt;tpBeforeUpload.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="ucBeforeUpload.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -388,18 +352,6 @@
     <value>290, 307</value>
   </data>
   <data name="ucBeforeUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ucBeforeUpload.Name" xml:space="preserve">
-    <value>ucBeforeUpload</value>
-  </data>
-  <data name="&gt;&gt;ucBeforeUpload.Type" xml:space="preserve">
-    <value>ShareX.BeforeUploadControl, ShareX, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucBeforeUpload.Parent" xml:space="preserve">
-    <value>tpBeforeUpload</value>
-  </data>
-  <data name="&gt;&gt;ucBeforeUpload.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;lvAfterUploadTasks.Name" xml:space="preserve">
@@ -429,18 +381,6 @@
   <data name="tpAfterUpload.Text" xml:space="preserve">
     <value>After upload</value>
   </data>
-  <data name="&gt;&gt;tpAfterUpload.Name" xml:space="preserve">
-    <value>tpAfterUpload</value>
-  </data>
-  <data name="&gt;&gt;tpAfterUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpAfterUpload.Parent" xml:space="preserve">
-    <value>tcTasks</value>
-  </data>
-  <data name="&gt;&gt;tpAfterUpload.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lvAfterUploadTasks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -455,18 +395,6 @@
   </data>
   <data name="lvAfterUploadTasks.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;lvAfterUploadTasks.Name" xml:space="preserve">
-    <value>lvAfterUploadTasks</value>
-  </data>
-  <data name="&gt;&gt;lvAfterUploadTasks.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvAfterUploadTasks.Parent" xml:space="preserve">
-    <value>tpAfterUpload</value>
-  </data>
-  <data name="&gt;&gt;lvAfterUploadTasks.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="lblFileName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
