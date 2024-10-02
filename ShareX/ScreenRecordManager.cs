@@ -40,6 +40,7 @@ namespace ShareX
         public static bool IsRecording { get; private set; }
 
         private static ScreenRecorder screenRecorder;
+        private static MouseClickEffectManager mouseClickEffectManager;
         private static ScreenRecordForm recordForm;
 
         public static void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
@@ -63,6 +64,11 @@ namespace ShareX
             {
                 screenRecorder.StopRecording();
             }
+
+            if (IsRecording && mouseClickEffectManager != null)
+            {
+                mouseClickEffectManager.Stop();
+            }
         }
 
         public static void PauseScreenRecording()
@@ -78,6 +84,11 @@ namespace ShareX
             if (IsRecording && recordForm != null && !recordForm.IsDisposed)
             {
                 recordForm.AbortRecording();
+            }
+
+            if (IsRecording && mouseClickEffectManager != null)
+            {
+                mouseClickEffectManager.Stop();
             }
         }
 
@@ -271,11 +282,18 @@ namespace ShareX
                                 Duration = duration,
                                 OutputPath = path,
                                 CaptureArea = captureRectangle,
-                                DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor
+                                DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor,
+                                ShowCursorEffect = taskSettings.CaptureSettings.ScreenRecordShowCursorEffect
                             };
 
                             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
                             screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
+
+                            if (options.ShowCursorEffect)
+                            {
+                                mouseClickEffectManager = new MouseClickEffectManager();
+                                mouseClickEffectManager.Start();
+                            }
 
                             screenRecorder?.Dispose();
                             screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
@@ -329,6 +347,12 @@ namespace ShareX
                 {
                     screenRecorder.Dispose();
                     screenRecorder = null;
+                }
+
+                if(mouseClickEffectManager != null)
+                {
+                    mouseClickEffectManager.Dispose();
+                    mouseClickEffectManager = null;
                 }
 
                 if (abortRequested)

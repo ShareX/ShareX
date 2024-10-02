@@ -44,6 +44,7 @@ namespace ShareX.ScreenCaptureLib
         public Rectangle CaptureArea { get; set; }
         public float Duration { get; set; }
         public bool DrawCursor { get; set; }
+        public bool ShowCursorEffect { get; set; }
         public FFmpegOptions FFmpeg { get; set; } = new FFmpegOptions();
 
         public string GetFFmpegCommands()

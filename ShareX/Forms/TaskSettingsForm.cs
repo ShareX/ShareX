@@ -344,6 +344,7 @@ namespace ShareX
             cbScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
             nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
             cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
+            cbScreenRecorderShowCursorEffect.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursorEffect;
             cbScreenRecordTwoPassEncoding.Checked = TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding;
             cbScreenRecordTransparentRegion.Checked = TaskSettings.CaptureSettings.ScreenRecordTransparentRegion;
             cbScreenRecordConfirmAbort.Checked = TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort;
@@ -1301,7 +1302,8 @@ namespace ShareX
                 Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
                 OutputPath = "output.mp4",
                 CaptureArea = Screen.PrimaryScreen.Bounds,
-                DrawCursor = TaskSettings.CaptureSettings.ScreenRecordShowCursor
+                DrawCursor = TaskSettings.CaptureSettings.ScreenRecordShowCursor,
+                ShowCursorEffect = TaskSettings.CaptureSettings.ScreenRecordShowCursorEffect,
             };
 
             using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
@@ -1347,6 +1349,11 @@ namespace ShareX
         private void cbScreenRecorderShowCursor_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ScreenRecordShowCursor = cbScreenRecorderShowCursor.Checked;
+        }
+
+        private void cbScreenRecorderShowCursorEffect_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.ScreenRecordShowCursorEffect = cbScreenRecorderShowCursorEffect.Checked;
         }
 
         private void cbScreenRecordTwoPassEncoding_CheckedChanged(object sender, EventArgs e)
