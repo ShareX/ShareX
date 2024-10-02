@@ -18,6 +18,7 @@ namespace ShareX.HelpersLib
             AllowTransparency = true;
             BackColor = Color.White; // Set a key color for transparency
             TransparencyKey = Color.White; // Make that color transparent
+            Opacity = 0.3;
         }
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace ShareX.HelpersLib
         }
 
         /// <summary>
-        /// Draw a hollow circle as an mouse effect
+        /// Draw a circle as an mouse effect
         /// </summary>
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -48,16 +49,16 @@ namespace ShareX.HelpersLib
             {
                 Graphics g = e.Graphics;
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                // Define a pen to draw hollow circle
-                Pen pen = new Pen(Color.Red, 3);
-                int diameter = 10;
+                // Define a brush to draw circle
+                Brush brush = new SolidBrush(Color.Red);
+                int diameter = 20;
 
                 // Calculate the top-left corner to center the circle
                 int x = (ClientSize.Width - diameter) / 2;
                 int y = (ClientSize.Height - diameter) / 2;
 
                 // .NET GDI+ is not precise when drawign circles this would be better off with WPF/vector-based drawing
-                g.DrawEllipse(pen, x, y, diameter, diameter);
+                g.FillEllipse(brush, x, y, diameter, diameter);
             }
 
             base.OnPaint(e);
