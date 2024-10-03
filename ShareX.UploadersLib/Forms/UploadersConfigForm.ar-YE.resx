@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>أمكانية الرؤية:</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
+    <value>فيديو</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
+    <value>فيديو</value>
+  </data>
+  <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
+    <value>رمز التحقق(احصل على رمز التحقق من صفحة المصادقة):</value>
+  </data>
+  <data name="btnSeafileLibraryPasswordValidate.Text" xml:space="preserve">
+    <value>التحقّق</value>
+  </data>
+  <data name="btnSeafileCheckAPIURL.Text" xml:space="preserve">
+    <value>التحقّق</value>
+  </data>
+  <data name="btnSeafileCheckAuthToken.Text" xml:space="preserve">
+    <value>التحقّق</value>
+  </data>
+  <data name="btnSeafilePathValidate.Text" xml:space="preserve">
+    <value>التحقّق</value>
+  </data>
+  <data name="lblImageShackUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="lblYourlsUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="lblOwnCloudUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="lblPastebinUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="lblFTPUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="lblStreamableUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="lblPlikUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="lblSendSpaceUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="cbPlikIsSecured.Text" xml:space="preserve">
+    <value>تعيين اسم المستخدم وكلمة المرور</value>
+  </data>
+  <data name="lblUpasteUserKey.Text" xml:space="preserve">
+    <value>مفتاح المستخدم:</value>
+  </data>
+  <data name="lblPaste_eeUserAPIKey.Text" xml:space="preserve">
+    <value>مفتاح المستخدم:</value>
+  </data>
+  <data name="lvlVgymeUserKey.Text" xml:space="preserve">
+    <value>مفتاح المستخدم:</value>
+  </data>
+  <data name="lblPushbulletUserKey.Text" xml:space="preserve">
+    <value>مفتاح API الخاص بالمستخدم:</value>
+  </data>
+  <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
+    <value>حساب المستخدم</value>
+  </data>
+  <data name="llAdflyLink.Text" xml:space="preserve">
+    <value>يمكنك إيجاد المعرٍّف UID و مفتاح API الخاصّين بك هنا</value>
+  </data>
+  <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
+    <value>اذهب إلى صفحة تفاصيل الحساب للحصول على مفتاح المستخدم.</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>لسحب القدرة على الوصول استخدم الرابط التالي متى شئت:</value>
+  </data>
+  <data name="btnTwitterAdd.Text" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="btnFTPAdd.Text" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>إضافة ألبوم</value>
+  </data>
+  <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
+    <value>متقدّم</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
+    <value>متقدّم</value>
+  </data>
+  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
+    <value>اسم الألبوم:</value>
+  </data>
+  <data name="lblSulAPIKey.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblLithiioApiKey.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblPlikAPIKey.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblPuushAPIKey.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblPolrAPIKey.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblLambdaApiKey.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblOneTimeSecretAPIKey.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblCheveretoAPIKey.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>معّرف API:</value>
+  </data>
+  <data name="lblKuttAPIKey.Text" xml:space="preserve">
+    <value>مفتاح API:</value>
+  </data>
+  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
+    <value>عنوان API:</value>
+  </data>
+  <data name="lblSeafileAPIURL.Text" xml:space="preserve">
+    <value>عنوان API:</value>
+  </data>
+  <data name="lblPolrAPIHostname.Text" xml:space="preserve">
+    <value>عنوان API: (مثلًا: http://demo.polr.me/api/v/action/shorten)</value>
+  </data>
+  <data name="cbPlikComment.Text" xml:space="preserve">
+    <value>تعليق (Markdown)</value>
+  </data>
+  <data name="lblMegaStatus.Text" xml:space="preserve">
+    <value>تم الإعداد / لم يتم الإعداد</value>
+  </data>
+  <data name="lblAzureStorageContainer.Text" xml:space="preserve">
+    <value>الحاوية:</value>
+  </data>
+  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
+    <value>إنشاء ألبوم</value>
+  </data>
+  <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
+    <value>إنشاء ألبوم جديد</value>
+  </data>
+  <data name="cbGistPublishPublic.Text" xml:space="preserve">
+    <value>إنشاء ملف عمومي على Gist</value>
+  </data>
+  <data name="cbBoxShare.Text" xml:space="preserve">
+    <value>إنشاء رابط قابل للمشاركة</value>
+  </data>
+  <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
+    <value>إنشاء رابط قابل للمشاركة</value>
+  </data>
+  <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
+    <value>إنشاء رابط قابل للمشاركة</value>
+  </data>
+  <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
+    <value>إنشاء عنوان قابل للمشاركة</value>
+  </data>
+  <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
+    <value>إنشاء عنوان قابل للمشاركة</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>اسم النطاق المخصص:</value>
+  </data>
+  <data name="lblHastebinCustomDomain.Text" xml:space="preserve">
+    <value>اسم النطاق المخصص:</value>
+  </data>
+  <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
+    <value>اسم النطاق المخصص:</value>
+  </data>
+  <data name="lblGistCustomURL.Text" xml:space="preserve">
+    <value>اسم النطاق المخصص:</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>الأيام</value>
+  </data>
+  <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
+    <value>عدد الأيام حتى انتهاء الصلاحية:</value>
+  </data>
+  <data name="lblPhotobucketDefaultAlbumName.Text" xml:space="preserve">
+    <value>الاسم الافتراضي للألبوم</value>
+  </data>
+  <data name="lblEmailDefaultBody.Text" xml:space="preserve">
+    <value>الرسالة الافتراضية:</value>
+  </data>
+  <data name="lblEmailDefaultSubject.Text" xml:space="preserve">
+    <value>العنوان الافتراضي:</value>
+  </data>
+  <data name="lblTwitterDefaultMessage.Text" xml:space="preserve">
+    <value>الرسالة الافتراضية للتغريدة:</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="chImgurDescription.Text" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="chGoogleDriveDescription.Text" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="lblPushbulletDevices.Text" xml:space="preserve">
+    <value>الجهاز:</value>
+  </data>
+  <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
+    <value>الرابط المباشر</value>
+  </data>
+  <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
+    <value>العنوان المباشر</value>
+  </data>
+  <data name="lblBitlyDomain.Text" xml:space="preserve">
+    <value>اسم النطاق:</value>
+  </data>
+  <data name="lblKuttDomain.Text" xml:space="preserve">
+    <value>اسم النطاق:</value>
+  </data>
+  <data name="lblFirebaseDomain.Text" xml:space="preserve">
+    <value>اسم النطاق:</value>
+  </data>
+  <data name="btnFTPDuplicate.Text" xml:space="preserve">
+    <value>تكرار</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>تكرار</value>
+  </data>
+  <data name="tpEmail.Text" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="lblPuushEmail.Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="lblEmailFrom.Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="lblLocalhostrEmail.Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="lblLithiioEmail.Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="lblSeafileAccInfoEmail.Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="lblMediaFireEmail.Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="lblSeafileUsername.Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="lblMegaEmail.Text" xml:space="preserve">
+    <value>البريد الإلكتروني:</value>
+  </data>
+  <data name="colSeafileLibraryEncrypted.Text" xml:space="preserve">
+    <value>تم التشفير</value>
+  </data>
+  <data name="lblFTPSEncryption.Text" xml:space="preserve">
+    <value>التشفير:</value>
+  </data>
+  <data name="tpFileUploaders.Text" xml:space="preserve">
+    <value>رافعو الملفات</value>
+  </data>
+  <data name="lblSharedFolderFiles.Text" xml:space="preserve">
+    <value>الملف:</value>
+  </data>
+  <data name="lblFTPFile.Text" xml:space="preserve">
+    <value>الملف:</value>
+  </data>
+  <data name="lblPlikTTL.Text" xml:space="preserve">
+    <value>حذف الملف تلقائيًا في غضون</value>
+  </data>
+  <data name="chBoxFoldersName.Text" xml:space="preserve">
+    <value>اسم المجلد</value>
+  </data>
+  <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
+    <value>استخدام رابط مختصر</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>تخصيص العنوان URL:</value>
+  </data>
+  <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
+    <value>استخدام API v1 غير المدعوم</value>
+  </data>
+  <data name="cbDropboxUseDirectLink.Text" xml:space="preserve">
+    <value>استخدام رابط مباشر</value>
+  </data>
+  <data name="cbImgurDirectLink.Text" xml:space="preserve">
+    <value>استخدام رابط مباشر</value>
+  </data>
+  <data name="cbFlickrDirectLink.Text" xml:space="preserve">
+    <value>استخدام رابط مباشر</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>استخدام رابط مباشر</value>
+  </data>
+  <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
+    <value>استخدام رابط مباشر</value>
+  </data>
+  <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
+    <value>استخدام رابط مباشر</value>
+  </data>
+  <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
+    <value>استخدام رابط مباشر إذا وجد</value>
+  </data>
+  <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
+    <value>استخدام الامتداد للتظليل (باستثناء txt.)</value>
+  </data>
+  <data name="cbImgurUseGIFV.Text" xml:space="preserve">
+    <value>استخدام GIFV بدلًا عن GIF</value>
+  </data>
+  <data name="cbMediaFireUseLongLink.Text" xml:space="preserve">
+    <value>استخدام رابط طويل يتضمن اسم الملف</value>
+  </data>
+  <data name="grpSeafileShareSettings.Text" xml:space="preserve">
+    <value>إعدادات المشاركة لـ Seafile</value>
+  </data>
+  <data name="tpSeafile.Text" xml:space="preserve">
+    <value>Seafile</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="btnTwitterRemove.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="btnFTPRemove.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="cbPlikRemovable.Text" xml:space="preserve">
+    <value>متحرّك</value>
+  </data>
+  <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
+    <value>مجلد بعيد:</value>
+  </data>
+  <data name="btnPastebinRegister.Text" xml:space="preserve">
+    <value>تسجيل...</value>
+  </data>
+  <data name="btnMegaRegister.Text" xml:space="preserve">
+    <value>تسجيل...</value>
+  </data>
+  <data name="btnSendSpaceRegister.Text" xml:space="preserve">
+    <value>تسجيل...</value>
+  </data>
+  <data name="cbEmailRememberLastTo.Text" xml:space="preserve">
+    <value>تذكّر عنوان آخر مستلم</value>
+  </data>
+  <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>تحديث قائمة الألبومات</value>
+  </data>
+  <data name="btnImgurRefreshAlbumList.Text" xml:space="preserve">
+    <value>تحديث قائمة الألبومات</value>
+  </data>
+  <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
+    <value>تحديث قائمة المجلدات</value>
+  </data>
+  <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
+    <value>تحديث قائمة المجلدات</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
+    <value>رفع عمومي</value>
+  </data>
+  <data name="lblFTPProtocol.Text" xml:space="preserve">
+    <value>البروتوكول:</value>
+  </data>
+  <data name="lblPastebinPrivacy.Text" xml:space="preserve">
+    <value>الخصوصية:</value>
+  </data>
+  <data name="lblPhotobucketParentAlbumPath.Text" xml:space="preserve">
+    <value>مسار الألبوم الأب</value>
+  </data>
+  <data name="lblLithiioPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblLocalhostrPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblPuushPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblImageShackPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblStreamablePassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblPlikPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblSeafilePassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblKuttPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblFTPPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblSendSpacePassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblEmailPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblMegaPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblYourlsPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblPastebinPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblMediaFirePassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="lblOwnCloudPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="cbGistUseRawURL.Text" xml:space="preserve">
+    <value>استخدام عنوان URL الأصلي</value>
+  </data>
+  <data name="cbPastebinRaw.Text" xml:space="preserve">
+    <value>استخدام عنوان URL الأصلي</value>
+  </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>استخدام عنوان URL الأصلي</value>
+  </data>
+  <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>استخدام رابط مع المعاينة (NextCloud فقط)</value>
+  </data>
+  <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
+    <value>استخدام طلب - Request بأسلوب المسار</value>
+  </data>
+  <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
+    <value>تخصيص اسم النطاق:</value>
+  </data>
+  <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
+    <value>الاستخدام:</value>
+  </data>
+  <data name="lblOwnCloudHost.Text" xml:space="preserve">
+    <value>عنوان URL:</value>
+  </data>
+  <data name="lblZWSURL.Text" xml:space="preserve">
+    <value>عنوان URL:</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>مفتاح Web API:</value>
+  </data>
+  <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
+    <value>استخدم هذا الخيار فقط إذا كان لديك مجموعة تم إعدادها بنطاق مخصص.
+إذا كان حقل النص فارغًا، فسيتم استخدام اسم المجموعة في عنوان URL.
+على سبيل المثال، إذا كانت الحاوية الخاصة بك تسمى "bucket.example.com"، فسيكون عنوان URL هو "http://bucket.example.com/...".</value>
+  </data>
+  <data name="tpURLShorteners.Text" xml:space="preserve">
+    <value>خدمات اختصار عناوين URL</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
+    <value>معاينة عنوان URL:</value>
+  </data>
+  <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
+    <value>معاينة عنوان URL:</value>
+  </data>
+  <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
+    <value>معاينة عنوان URL:</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
+    <value>معاينة عنوان URL:</value>
+  </data>
+  <data name="lblFTPURLPreview.Text" xml:space="preserve">
+    <value>معاينة عنوان URL:</value>
+  </data>
+  <data name="lblFTPURLPath.Text" xml:space="preserve">
+    <value>مسار عنوان URL:</value>
+  </data>
+  <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
+    <value>رابط الرفع:</value>
+  </data>
+  <data name="lblPomfUploadURL.Text" xml:space="preserve">
+    <value>رابط الرفع:</value>
+  </data>
+  <data name="lblMediaFirePath.Text" xml:space="preserve">
+    <value>مسار الرفع:</value>
+  </data>
+  <data name="lblAmazonS3ObjectPrefix.Text" xml:space="preserve">
+    <value>مسار الرفع:</value>
+  </data>
+  <data name="lblB2UploadPath.Text" xml:space="preserve">
+    <value>مسار الرفع:</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
+    <value>مسار الرفع:</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>مسار الرفع:</value>
+  </data>
+  <data name="lblDropboxPath.Text" xml:space="preserve">
+    <value>مسار الرفع:</value>
+  </data>
+  <data name="cbImgurUploadSelectedAlbum.Text" xml:space="preserve">
+    <value>رفع الصور إلى الألبوم المحدد</value>
+  </data>
+  <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
+    <value>رفع الصور إلى</value>
+  </data>
+  <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
+    <value>رفع الملفات إلى المجلد المحدد</value>
+  </data>
+  <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="lblFTPTransferMode.Text" xml:space="preserve">
+    <value>أسلوب النقل:</value>
+  </data>
+  <data name="lblLambdaInfo.Text" xml:space="preserve">
+    <value>للحصول على مفتاح API، قم بتسجيل الدخول إلى Lambda على https://lambda.sx/ ثم انقر فوق اسم المستخدم الخاص بك، ثم انقر فوق إدارة الحساب.</value>
+  </data>
+  <data name="chImgurTitle.Text" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="chGoogleDriveTitle.Text" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="lblImgurThumbnailType.Text" xml:space="preserve">
+    <value>نوع الصورة المصغرة:</value>
+  </data>
+  <data name="lblFTPText.Text" xml:space="preserve">
+    <value>النص:</value>
+  </data>
+  <data name="lblSharedFolderText.Text" xml:space="preserve">
+    <value>النص:</value>
+  </data>
+  <data name="tpTextUploaders.Text" xml:space="preserve">
+    <value>رافعو النصوص</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
+    <value>النص</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
+    <value>النص</value>
+  </data>
+  <data name="btnFTPTest.Text" xml:space="preserve">
+    <value>اختبار</value>
+  </data>
+  <data name="txtJiraConfigHelp.Text" xml:space="preserve">
+    <value>القالب</value>
+  </data>
+  <data name="lblHastebinSyntaxHighlighting.Text" xml:space="preserve">
+    <value>تمييز النصوص:</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
+    <value>صنف التخزين:</value>
+  </data>
+  <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
+    <value>الخطوة 1: افتح صفحة المصادقة...</value>
+  </data>
+  <data name="btnPhotobucketAuthComplete.Text" xml:space="preserve">
+    <value>الخطوة 2: أكمل المصادقة</value>
+  </data>
+  <data name="lblMegaStatusTitle.Text" xml:space="preserve">
+    <value>الحالة: </value>
+  </data>
+  <data name="lblPastebinLoginStatus.Text" xml:space="preserve">
+    <value>الحالة:</value>
+  </data>
+  <data name="lblEmailSmtpServer.Text" xml:space="preserve">
+    <value>عنوان خادوم SMTP:</value>
+  </data>
+  <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
+    <value>تخطي مربع التغريدة</value>
+  </data>
+  <data name="colSeafileLibrarySize.Text" xml:space="preserve">
+    <value>الحجم</value>
+  </data>
+  <data name="lblYourlsSignature.Text" xml:space="preserve">
+    <value>التوقيع:</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>عرض مربع خيارات الفيديو</value>
+  </data>
+  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
+    <value>الرابط المختصر</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - إعدادات الوجهة</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>مستوى الوصول للرابط المشترك:</value>
+  </data>
+  <data name="tpSharedFolder.Text" xml:space="preserve">
+    <value>مجلد المشاركة</value>
+  </data>
+  <data name="lblSeafileSharePassword.Text" xml:space="preserve">
+    <value>مشاركة كلمة المرور:</value>
+  </data>
+  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
+    <value>قم بتعيين قائمة عمومية للتحكم بالوصول (ACL) على الملف</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>قم بتعيين قائمة عمومية للتحكم بالوصول (ACL) على الملف</value>
+  </data>
+  <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
+    <value>تجاهل مربع الحوار عند إرسال بريد إلكتروني إلى العنوان هذا:</value>
+  </data>
+  <data name="lblBoxFolderID.Text" xml:space="preserve">
+    <value>المجلد المحدد:</value>
+  </data>
+  <data name="lblOneDriveFolderID.Text" xml:space="preserve">
+    <value>المجلد المحدد:</value>
+  </data>
+  <data name="lblSeafileSelectLibrary.Text" xml:space="preserve">
+    <value>تحديد مكتية:</value>
+  </data>
+  <data name="lblPomfResultURL.Text" xml:space="preserve">
+    <value>رابط النتيجة:</value>
+  </data>
+  <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
+    <value>حذف امتداد الملف في:</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.Text" xml:space="preserve">
+    <value>حذف امتداد الملف في:</value>
+  </data>
+  <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
+    <value>حذف امتداد الملف من مسار عنوان URL</value>
+  </data>
+  <data name="btnPhotobucketRemoveAlbum.Text" xml:space="preserve">
+    <value>حذف الألبوم</value>
+  </data>
+  <data name="lblAmazonS3Region.Text" xml:space="preserve">
+    <value>المنطقة:</value>
+  </data>
+  <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
+    <value>رفع عمومي - غير خاص</value>
+  </data>
+  <data name="lblAmazonS3PathPreview.Text" xml:space="preserve">
+    <value>المعاينة</value>
+  </data>
+  <data name="lblB2UrlPreview.Text" xml:space="preserve">
+    <value>المعاينة</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
+    <value>المعاينة</value>
+  </data>
+  <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
+    <value>المعاينة</value>
+  </data>
+  <data name="lblEmailSmtpPort.Text" xml:space="preserve">
+    <value>المنفذ:</value>
+  </data>
+  <data name="lblFTPPort.Text" xml:space="preserve">
+    <value>المنفذ:</value>
+  </data>
+  <data name="lblSeafilePath.Text" xml:space="preserve">
+    <value>المسار:</value>
+  </data>
+  <data name="lblOwnCloudPath.Text" xml:space="preserve">
+    <value>المسار:</value>
+  </data>
+  <data name="lblPastebinTitle.Text" xml:space="preserve">
+    <value>عنوان الملصقة:</value>
+  </data>
+  <data name="lblPastebinSyntax.Text" xml:space="preserve">
+    <value>نوع تهجئة الملصقة:</value>
+  </data>
+  <data name="tpOtherUploaders.Text" xml:space="preserve">
+    <value>الرافعون الآخرون</value>
+  </data>
+  <data name="gbPlikSettings.Text" xml:space="preserve">
+    <value>الإعدادت الأخرى</value>
+  </data>
+  <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
+    <value>فتح الصفحة الشخصية العمومية...</value>
+  </data>
+  <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
+    <value>فتح صفحة الخاصة بصوري...</value>
+  </data>
+  <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
+    <value>فتح صفحة الحساب...</value>
+  </data>
+  <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
+    <value>الحصول على رمز المصادقة - auth token</value>
+  </data>
+  <data name="lblBoxFolderTip.Text" xml:space="preserve">
+    <value>ملاحظة: يمكنك النقر نقرًا مزدوجًا فوق اسم المجلد للانتقال إلى داخل هذا المجلد.</value>
+  </data>
+  <data name="lblYourlsNote.Text" xml:space="preserve">
+    <value>ملاحظة: إذا كان لديك توقيع، فلن تحتاج إلى اسم مستخدم/كلمة مرور.</value>
+  </data>
+  <data name="lblGistOAuthInfo.Text" xml:space="preserve">
+    <value>ملاحظة: GitHub Enterprise غير مدعوم.</value>
+  </data>
+  <data name="lblPhotobucketNewAlbumName.Text" xml:space="preserve">
+    <value>اسم الألبوم الجديد (يجب أن يتراوح طوله بين 2 و50 حرفًا. الأحرف الصالحة هي الأحرف والأرقام والشرطة السفلية ( _ ) والوصلة (-) والمسافة)</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>أبدًا</value>
+  </data>
+  <data name="lblFTPName.Text" xml:space="preserve">
+    <value>الاسم:</value>
+  </data>
+  <data name="lblTwitterDescription.Text" xml:space="preserve">
+    <value>الاسم:</value>
+  </data>
+  <data name="colSeafileLibraryName.Text" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>دقائق</value>
+  </data>
+  <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
+    <value>يجب تسجيل الدخول أولًا.</value>
+  </data>
+  <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
+    <value>بيانات المصادقة وتسجيل الدخول</value>
+  </data>
+  <data name="btnPuushLogin.Text" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="btnImageShackLogin.Text" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="btnMegaLogin.Text" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="btnPastebinLogin.Text" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="lblLambdaUploadURL.Text" xml:space="preserve">
+    <value>رابط عنوان URL:</value>
+  </data>
+  <data name="lblSeafileLibraryPassword.Text" xml:space="preserve">
+    <value>كلمة مرور المكتبة:</value>
+  </data>
+  <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
+    <value>المكتبات التي لا تحتوي على أذونات الكتابة مخفية.
+يؤدي استخدام مكتبة مشفرة إلى تعطيل المشاركة.</value>
+  </data>
+  <data name="lblSFTPKeyLocation.Text" xml:space="preserve">
+    <value>مكان المفتاح:</value>
+  </data>
+  <data name="cbPastieIsPublic.Text" xml:space="preserve">
+    <value>ضبط عملية رفع عمومية - غير خاصة</value>
+  </data>
+  <data name="cbImageShackIsPublic.Text" xml:space="preserve">
+    <value>ضبط عملية رفع عمومية - غير خاصة</value>
+  </data>
+  <data name="cbUpasteIsPublic.Text" xml:space="preserve">
+    <value>ضبط عملية رفع عمومية - غير خاصة</value>
+  </data>
+  <data name="cbPolrIsSecret.Text" xml:space="preserve">
+    <value>هل الرابط سرّي</value>
+  </data>
+  <data name="lblSharedFolderImages.Text" xml:space="preserve">
+    <value>الصورة:</value>
+  </data>
+  <data name="lblFTPImage.Text" xml:space="preserve">
+    <value>الصورة:</value>
+  </data>
+  <data name="tpImageUploaders.Text" xml:space="preserve">
+    <value>رافعو الصور</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Text" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
+    <value>تجاهل شهادات SSL غير الصالحة</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>في حالة وجود عنوان URL بالهدف المحدد، قم بإرجاعه</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>ساعات</value>
+  </data>
+  <data name="lblKuttHost.Text" xml:space="preserve">
+    <value>المضيف:</value>
+  </data>
+  <data name="lblFTPHost.Text" xml:space="preserve">
+    <value>المضيف:</value>
+  </data>
+  <data name="lblPlikURL.Text" xml:space="preserve">
+    <value>المضيف</value>
+  </data>
+  <data name="btnPaste_eeGetUserKey.Text" xml:space="preserve">
+    <value>الحصول على مفتاح المستخدم...</value>
+  </data>
+  <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
+    <value>الحصول على قائمة الأجهزة</value>
+  </data>
+  <data name="btnSeafileGetAuthToken.Text" xml:space="preserve">
+    <value>جلب</value>
+  </data>
+  <data name="btnSulGetAPIKey.Text" xml:space="preserve">
+    <value>الحصول على مفتاح API...</value>
+  </data>
+  <data name="llPuushForgottenPassword.Text" xml:space="preserve">
+    <value>هل نسيت كلمة المرور؟</value>
+  </data>
+  <data name="lblMegaFolder.Text" xml:space="preserve">
+    <value>المجلد:</value>
+  </data>
+  <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
+    <value>جلب مفتاح API</value>
+  </data>
+  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
+    <value>مدة الصلاحية بالأيام:</value>
+  </data>
+  <data name="lblPastebinExpiration.Text" xml:space="preserve">
+    <value>الانتهاء:</value>
+  </data>
+  <data name="lblGistCustomURLExample.Text" xml:space="preserve">
+    <value>مثال: https://api.github.com</value>
+  </data>
+  <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
+    <value>مثال: http://example.com/owncloud</value>
+  </data>
+  <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
+    <value>مثال: google.page.link</value>
+  </data>
+  <data name="lblAzureStorageEnvironment.Text" xml:space="preserve">
+    <value>البيئة:</value>
+  </data>
+  <data name="cbPlikOneShot.Text" xml:space="preserve">
+    <value>تدمير بعد التنزيل مرة واحدة</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>انقر هنا لإنشاء مفتاح التطبيق أو إدارة مجموعاتك.</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.Text" xml:space="preserve">
+    <value>موقع الشهادة:</value>
+  </data>
+  <data name="lblB2Bucket.Text" xml:space="preserve">
+    <value>اسم المجموعة:</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
+    <value>اسم المجموعة:</value>
+  </data>
+  <data name="lblAmazonS3BucketName.Text" xml:space="preserve">
+    <value>اسم المجموعة:</value>
+  </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>انهاء صلاحية الروابط المشاركة تلقائيًا</value>
+  </data>
+  <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
+    <value>إلحاق الدليل البعيد بمسار URL</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>إلحاق اسم الملف بعنوان URL</value>
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>معرف الألبوم الخاص بالرفع (فارغ = لا يوجد ألبوم رفع):</value>
+  </data>
+  <data name="lblFTPAccounts.Text" xml:space="preserve">
+    <value>الحسابات:</value>
+  </data>
+  <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
+    <value>اسم الحساب:</value>
+  </data>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>معلومات الحساب</value>
+  </data>
+  <data name="gbFTPAccount.Text" xml:space="preserve">
+    <value>الحساب</value>
+  </data>
+  <data name="btnGoogleDriveFolderIDHelp.Text" xml:space="preserve">
+    <value>؟</value>
+  </data>
+  <data name="btnAmazonS3StorageClassHelp.Text" xml:space="preserve">
+    <value>؟</value>
+  </data>
+</root>

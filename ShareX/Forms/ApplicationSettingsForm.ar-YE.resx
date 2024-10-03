@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - الإعدادات</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>استعراض...</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
+    <value>استعراض...</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>إضافة...</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>متقدّم</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>بحث تلقائي عن التحديثات</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>تنظيف تلقائي للنسخ الاحتياطية القديمة</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>تنظيف تلقائي لملفات السجلات القديمة</value>
+  </data>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>حجم المخزن المؤقت:</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>إضافة متصفح Chrome</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>صيغة الحافظة</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>تخصيص الطابعة الافتراضية:</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 معطلة)</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>طباعة تلقائية بدون نافذة إعدادات طباعة الصور</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>لا تعرض نافذة الطباعة الخاصة بـ Windows</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>تعديل قائمة المهام السريعة...</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+    <value>تعديل...</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>تفعيل دعم متصفح Goolge Chrome</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>تفعيل دعم متصفح Mozilla Firefox</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>تصدير...</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>إضافة Firefox</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>الصيغة</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>تصدير السجل</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>السجل</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>السجل</value>
+  </data>
+  <data name="lblProxyHost.Text" xml:space="preserve">
+    <value>المضيف:</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>مكان معاينة الصورة:</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>معاينة الصورة بعد الالتقاط:</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>إعدادات طباعة الصورة...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>استيراد...</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>عرض المهم الأخيرة أولًا في أيقونة الإشعارات</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>تثبيت إصدار التطوير...</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>تثبيت إضافة Chrome...</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>تثبيت إضافة Firefox...</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>الاندماج مع النظام</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>اللغة:</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>عرض كقائمة</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>النافذة الرئيسية</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>أقصى عدد للمهام التي سيتم حفظها:</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>تصغير إلى الإشعارات عند البدء</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>ملاحظة: لا تشارك الملفات التي تم تصديرها، لأنها قد تحتوي بيانات خاصة، مثل تفاصيل الحسابات وتأريخ المرفوعات.</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>عدد الملفات التي سيتم الاحتفاظ بها:</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>عدد المحاولات عند فشل الرفع:</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>عند النقر المزدوج على أيقونة الإشعارات:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>عند النقر بالزر الأيسر على أيقونة الإشعارات:</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>عند النقر بالزر الأوسط على أيقونة الإشعارات:</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>حفظ الروابط فقط عندما لا تكون فارغة</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>فتح...</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>فتح...</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>المسارات</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>المنفذ:</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>طباعة</value>
+  </data>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>الخادوم الوكيل</value>
+  </data>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>إعدادات الخادوم الوكيل:</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>المهام المنجزة مؤخرًا</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>تذكّر مكان النافذة الرئيسية</value>
+  </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>تذكّر حجم النافذة الرئيسية</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>إعادة تعيين</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>إعادة تعيين الإعدادات...</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>إعادة تعيين...</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>حفظ المهام الأخيرة</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>حفظ المهام إلى السجل</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>الرافع الثانوي للملفات</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>الرافع الثانوي للصور</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>الرافع الثانوي للنصوص</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>تصدير الإعدادات</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>بيانات التطبيق</value>
+  </data>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>المجلد الشخصي الخاص بـShareX:</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>عرض الخيار "تعديل باستخدام ShareX" على قائمة خيارات الملفات</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>عرض الخيار "رفع باستخدام ShareX" على قائمة خيارات الملفات</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>عرض الأعمدة</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>عرض القائمة</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>عرض مستوى التقدم في شريط المهام</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>عرض مستوى التقدم في أيقونة الإشعارات</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>عرض المهام الأخيرة على النافذة الرئيسية عند البدء</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>عرض المهام الأخيرة على قائمة أيقونة الإشعارات</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>عرض ShareX في قائمة "إرسال إلى"</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>عرض العنوان</value>
+  </data>
+  <data name="cbShowTray.Text" xml:space="preserve">
+    <value>عرض أيقونة الإشعارات</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>عدد المرفوعات في الوقت نفسه:</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>نمط المجلدات الفرعية للنافذة:</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+    <value>نمط المجلدات الفرعية:</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>طريقة عرض المهام:</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>المظهر</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>هذه الصيغ ستظهر تحت البند "نسخ" في القائمة الفرعية الخاصة بقائمة خيارات النافذة الرئيسية.</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>عند النقر على الصور المصغرة:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>حجم الصورة المصغرة:</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>عرض كـ شبكة</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>مكان العنوان:</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>استخدام مجلد مخصص للقطات الشاشة:</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>تخصيص المظهر</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>استخدام ترتيب الرافع الثانوي للتفضيلات عند إعادة المحاولة</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>استخدام أيقونة بيضاء للتطبيق</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>عندما يكون ShareX قيد التشغيل، قم بعرضه من خلال "In-App" في Steam</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>نظام التشغيل Windows</value>
+  </data>
+  <data name="lblUpdateChannel.Text" xml:space="preserve">
+    <value>قناة التحديثات:</value>
+  </data>
+</root>
