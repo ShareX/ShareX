@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    // transparent form where mouse effect will be drawn
-    public class MouseClickEffectForm : Form
+    // transparent form where mouse click effect will be drawn
+    public class MouseClickEffectForm : LayeredForm
     {
-        private bool _drawEffect = false;
-        public MouseClickEffectForm()
+
+        protected override CreateParams CreateParams
         {
-            Size = new Size(40, 40);
-            FormBorderStyle = FormBorderStyle.None;
-            ShowIcon = false;
-            ShowInTaskbar = false;
-            TopMost = true;
-            AllowTransparency = true;
-            BackColor = Color.White; // Set a key color for transparency
-            TransparencyKey = Color.White; // Make that color transparent
-            Opacity = 0.3;
+            get
+            {
+                // set style to layered topmost transparent
+                var createParams = base.CreateParams;
+                createParams.ExStyle |= (int)(WindowStyles.WS_EX_TOPMOST | WindowStyles.WS_EX_TRANSPARENT);
+                return createParams;
+            }
         }
 
         /// <summary>
@@ -26,9 +25,8 @@ namespace ShareX.HelpersLib
         /// </summary>
         public void DrawMouseEffect(Point cursorPosition)
         {
-            _drawEffect = true;
             CenterFormToCursorPosition(cursorPosition);
-            Invalidate(); // redraw form
+            SelectBitmap(GetCircleImage(Color.Red), 100);
         }
 
         /// <summary>
@@ -36,32 +34,40 @@ namespace ShareX.HelpersLib
         /// </summary>
         public void ClearMouseEffect()
         {
-            _drawEffect = false;
-            Invalidate(); // redraw form
+            SelectBitmap(GetEmptyImage(), 1);
         }
 
-        /// <summary>
-        /// Draw a circle as an mouse effect
-        /// </summary>
-        protected override void OnPaint(PaintEventArgs e)
+        private Bitmap GetCircleImage(Color color)
         {
-            if (_drawEffect)
-            {
-                Graphics g = e.Graphics;
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                // Define a brush to draw circle
-                Brush brush = new SolidBrush(Color.Red);
-                int diameter = 20;
+            var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
 
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                Brush brush = new SolidBrush(Color.FromArgb(100, color));
+                var diameter = 20;
                 // Calculate the top-left corner to center the circle
-                int x = (ClientSize.Width - diameter) / 2;
-                int y = (ClientSize.Height - diameter) / 2;
+                var x = (ClientSize.Width - diameter) / 2;
+                var y = (ClientSize.Height - diameter) / 2;
 
                 // .NET GDI+ is not precise when drawign circles this would be better off with WPF/vector-based drawing
                 g.FillEllipse(brush, x, y, diameter, diameter);
             }
 
-            base.OnPaint(e);
+            return bmp;
+        }
+
+        private Bitmap GetEmptyImage()
+        {
+            var backgroundImage = new Bitmap(ClientSize.Width, ClientSize.Height);
+            var gBackgroundImage = Graphics.FromImage(backgroundImage);
+
+            gBackgroundImage.InterpolationMode = InterpolationMode.NearestNeighbor;
+            gBackgroundImage.SmoothingMode = SmoothingMode.HighSpeed;
+            gBackgroundImage.CompositingMode = CompositingMode.SourceCopy;
+            gBackgroundImage.CompositingQuality = CompositingQuality.HighSpeed;
+            gBackgroundImage.Clear(Color.FromArgb(0, 0, 0, 0));
+
+            return backgroundImage;
         }
 
         private void CenterFormToCursorPosition(Point cursorPosition)
@@ -75,6 +81,5 @@ namespace ShareX.HelpersLib
             // Center the form/circle at the current mouse cursor position
             NativeMethods.SetWindowPos(Handle, (IntPtr)NativeConstants.HWND_TOPMOST, x, y, 0, 0, flags);
         }
-
     }
 }
