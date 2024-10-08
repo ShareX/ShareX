@@ -98,6 +98,7 @@ McoreD: {Links.McoreD}
 {Resources.AboutForm_AboutForm_Language_ro}: https://github.com/Edward205
 {Resources.AboutForm_AboutForm_Language_pl}: https://github.com/RikoDEV
 {Resources.AboutForm_AboutForm_Language_he_IL}: https://github.com/erelado
+{Resources.AboutForm_AboutForm_Language_ar_YE}: https://github.com/OthmanAliModaes
 ", FontStyle.Regular);
 
             rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Credits, FontStyle.Bold, 13);

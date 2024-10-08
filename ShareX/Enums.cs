@@ -52,6 +52,8 @@ namespace ShareX
     public enum SupportedLanguage
     {
         Automatic, // Localized
+        [Description("العربية (Arabic)")]
+        Arabic,
         [Description("Nederlands (Dutch)")]
         Dutch,
         [Description("English")]
