@@ -4,16 +4,16 @@ namespace ShareX.HelpersLib
 {
     public class MouseHook : IDisposable
     {
-        private HookProc _proc;
-        private static IntPtr _hookID = IntPtr.Zero;
+        private HookProc proc;
+        private static IntPtr hookID = IntPtr.Zero;
 
         public delegate void MouseEventHandler(MouseEventInfo eventInfo);
         public event MouseEventHandler OnMouseEvent;
 
         public MouseHook()
         {
-            _proc = HookCallback;
-            _hookID = SetHook(_proc); // Set up global mouse hook
+            proc = HookCallback;
+            hookID = SetHook(proc); // Set up global mouse hook
         }
 
         ~MouseHook()
@@ -53,13 +53,13 @@ namespace ShareX.HelpersLib
                         break;
                 }
             }
-            
-            return NativeMethods.CallNextHookEx(_hookID, nCode, wParam, lParam);
+
+            return NativeMethods.CallNextHookEx(hookID, nCode, wParam, lParam);
         }
 
         public void Dispose()
         {
-            NativeMethods.UnhookWindowsHookEx(_hookID); // Clean up hook on exit
+            NativeMethods.UnhookWindowsHookEx(hookID); // Clean up hook on exit
         }
     }
 }

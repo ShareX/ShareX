@@ -8,7 +8,6 @@ namespace ShareX.HelpersLib
     // transparent form where mouse click effect will be drawn
     public class MouseClickEffectForm : LayeredForm
     {
-
         protected override CreateParams CreateParams
         {
             get
