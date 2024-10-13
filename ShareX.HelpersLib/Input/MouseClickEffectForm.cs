@@ -22,10 +22,13 @@ namespace ShareX.HelpersLib
         /// <summary>
         /// Draw mouse effect on given mouse position
         /// </summary>
-        public void DrawMouseEffect(Point cursorPosition)
+        public void DrawMouseEffect(MouseEventInfo eventInfo)
         {
-            CenterFormToCursorPosition(cursorPosition);
-            SelectBitmap(GetCircleImage(Color.Red), 100);
+            // color will come from customizable color setting when implemented
+            var color = eventInfo.ButtonState == ButtonState.LeftButtonDown ? Color.Red : Color.Blue;
+
+            CenterFormToCursorPosition(eventInfo.CursorPosition);
+            SelectBitmap(GetCircleImage(color), 100);
         }
 
         /// <summary>

@@ -43,8 +43,21 @@ namespace ShareX.HelpersLib
                             CursorPosition = CaptureHelpers.GetCursorPosition()
                         });
                         break;
-
+                    case WindowsMessages.RBUTTONDOWN:
+                        OnMouseEvent(new MouseEventInfo
+                        {
+                            ButtonState = ButtonState.RightButtonDown,
+                            CursorPosition = CaptureHelpers.GetCursorPosition()
+                        });
+                        break;
                     case WindowsMessages.LBUTTONUP:
+                        OnMouseEvent(new MouseEventInfo
+                        {
+                            ButtonState = ButtonState.ButtonUp,
+                            CursorPosition = CaptureHelpers.GetCursorPosition()
+                        });
+                        break;
+                    case WindowsMessages.RBUTTONUP:
                         OnMouseEvent(new MouseEventInfo
                         {
                             ButtonState = ButtonState.ButtonUp,

@@ -31,7 +31,10 @@ namespace ShareX.HelpersLib
             switch (eventInfo.ButtonState)
             {
                 case ButtonState.LeftButtonDown:
-                    clickEffectForm.DrawMouseEffect(eventInfo.CursorPosition);
+                    clickEffectForm.DrawMouseEffect(eventInfo);
+                    break;
+                case ButtonState.RightButtonDown:
+                    clickEffectForm.DrawMouseEffect(eventInfo);
                     break;
                 default:
                     clickEffectForm.ClearMouseEffect();
