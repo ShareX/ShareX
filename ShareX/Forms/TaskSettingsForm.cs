@@ -1303,7 +1303,6 @@ namespace ShareX
                 OutputPath = "output.mp4",
                 CaptureArea = Screen.PrimaryScreen.Bounds,
                 DrawCursor = TaskSettings.CaptureSettings.ScreenRecordShowCursor,
-                ShowCursorEffect = TaskSettings.CaptureSettings.ScreenRecordShowCursorEffect,
             };
 
             using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))

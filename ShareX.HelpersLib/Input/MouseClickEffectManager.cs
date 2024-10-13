@@ -1,34 +1,23 @@
 ﻿using System;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
     public class MouseClickEffectManager : IDisposable
     {
+        private bool disposed;
+        private bool showEffect;
         private MouseHook mouseHook;
         private MouseClickEffectForm clickEffectForm;
-        private bool _disposed;
+
 
         // start click mouse effects
         public void Start()
         {
-            var action = new Action(() =>
-            {
-                clickEffectForm = new MouseClickEffectForm();
-                mouseHook = new MouseHook();
-                mouseHook.OnMouseEvent += OnMouseEvent;
-                clickEffectForm.Show();
-            });
-
-            // form needs to be running on main UI thread otherwise it will not show up
-            if (Application.OpenForms[0].InvokeRequired)
-            {
-                Application.OpenForms[0].Invoke(action);
-            }
-            else
-            {
-                action();
-            }
+            showEffect = true;
+            clickEffectForm = new MouseClickEffectForm();
+            mouseHook = new MouseHook();
+            mouseHook.OnMouseEvent += OnMouseEvent;
+            clickEffectForm.Show();
         }
 
         /// <summary>
@@ -36,6 +25,9 @@ namespace ShareX.HelpersLib
         /// </summary>
         private void OnMouseEvent(MouseEventInfo eventInfo)
         {
+            if (!showEffect)
+                return;
+
             switch (eventInfo.ButtonState)
             {
                 case ButtonState.LeftButtonDown:
@@ -47,8 +39,19 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void Pause()
+        {
+            showEffect = false;
+        }
+
+        public void Resume()
+        {
+            showEffect = true;
+        }
+
         public void Stop()
         {
+            showEffect = false;
             Dispose();
         }
 
@@ -59,7 +62,7 @@ namespace ShareX.HelpersLib
 
         protected virtual void Dispose(bool disposing)
         {
-            if (_disposed)
+            if (disposed)
             {
                 return;
             }
@@ -75,7 +78,7 @@ namespace ShareX.HelpersLib
             mouseHook = null;
             clickEffectForm = null;
 
-            _disposed = true;
+            disposed = true;
         }
     }
 }
