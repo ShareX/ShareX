@@ -285,18 +285,6 @@
   <data name="btnPause.Text" xml:space="preserve">
     <value>Pause</value>
   </data>
-  <data name="&gt;&gt;btnPause.Name" xml:space="preserve">
-    <value>btnPause</value>
-  </data>
-  <data name="&gt;&gt;btnPause.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.NoFocusBorderButton, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnPause.Parent" xml:space="preserve">
-    <value>pInfo</value>
-  </data>
-  <data name="&gt;&gt;btnPause.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="cmsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>138, 17</value>
   </metadata>

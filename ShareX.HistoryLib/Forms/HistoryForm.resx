@@ -564,18 +564,6 @@
   <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="&gt;&gt;btnAdvancedSearchClose.Name" xml:space="preserve">
-    <value>btnAdvancedSearchClose</value>
-  </data>
-  <data name="&gt;&gt;btnAdvancedSearchClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAdvancedSearchClose.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;btnAdvancedSearchClose.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="btnAdvancedSearchReset.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 176</value>
   </data>
@@ -587,18 +575,6 @@
   </data>
   <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
     <value>Reset</value>
-  </data>
-  <data name="&gt;&gt;btnAdvancedSearchReset.Name" xml:space="preserve">
-    <value>btnAdvancedSearchReset</value>
-  </data>
-  <data name="&gt;&gt;btnAdvancedSearchReset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAdvancedSearchReset.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;btnAdvancedSearchReset.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="lblURLFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -618,18 +594,6 @@
   <data name="lblURLFilter.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
-  <data name="&gt;&gt;lblURLFilter.Name" xml:space="preserve">
-    <value>lblURLFilter</value>
-  </data>
-  <data name="&gt;&gt;lblURLFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblURLFilter.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;lblURLFilter.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="txtURLFilter.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 44</value>
   </data>
@@ -637,18 +601,6 @@
     <value>296, 20</value>
   </data>
   <data name="txtURLFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtURLFilter.Name" xml:space="preserve">
-    <value>txtURLFilter</value>
-  </data>
-  <data name="&gt;&gt;txtURLFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtURLFilter.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;txtURLFilter.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="lblFilenameFilter.AutoSize" type="System.Boolean, mscorlib">
@@ -669,18 +621,6 @@
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>Filename:</value>
   </data>
-  <data name="&gt;&gt;lblFilenameFilter.Name" xml:space="preserve">
-    <value>lblFilenameFilter</value>
-  </data>
-  <data name="&gt;&gt;lblFilenameFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFilenameFilter.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;lblFilenameFilter.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="cbHostFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 142</value>
   </data>
@@ -690,18 +630,6 @@
   <data name="cbHostFilterSelection.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;cbHostFilterSelection.Name" xml:space="preserve">
-    <value>cbHostFilterSelection</value>
-  </data>
-  <data name="&gt;&gt;cbHostFilterSelection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbHostFilterSelection.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;cbHostFilterSelection.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="cbTypeFilterSelection.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 118</value>
   </data>
@@ -710,18 +638,6 @@
   </data>
   <data name="cbTypeFilterSelection.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
-  </data>
-  <data name="&gt;&gt;cbTypeFilterSelection.Name" xml:space="preserve">
-    <value>cbTypeFilterSelection</value>
-  </data>
-  <data name="&gt;&gt;cbTypeFilterSelection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTypeFilterSelection.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;cbTypeFilterSelection.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="cbHostFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -741,18 +657,6 @@
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
-  <data name="&gt;&gt;cbHostFilter.Name" xml:space="preserve">
-    <value>cbHostFilter</value>
-  </data>
-  <data name="&gt;&gt;cbHostFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbHostFilter.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;cbHostFilter.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="cbTypeFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -771,18 +675,6 @@
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>Type:</value>
   </data>
-  <data name="&gt;&gt;cbTypeFilter.Name" xml:space="preserve">
-    <value>cbTypeFilter</value>
-  </data>
-  <data name="&gt;&gt;cbTypeFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTypeFilter.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;cbTypeFilter.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="dtpFilterFrom.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 70</value>
   </data>
@@ -791,18 +683,6 @@
   </data>
   <data name="dtpFilterFrom.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterFrom.Name" xml:space="preserve">
-    <value>dtpFilterFrom</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterFrom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterFrom.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterFrom.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="lblFilterFrom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -822,18 +702,6 @@
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>From:</value>
   </data>
-  <data name="&gt;&gt;lblFilterFrom.Name" xml:space="preserve">
-    <value>lblFilterFrom</value>
-  </data>
-  <data name="&gt;&gt;lblFilterFrom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFilterFrom.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;lblFilterFrom.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="lblFilterTo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -851,18 +719,6 @@
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>To:</value>
-  </data>
-  <data name="&gt;&gt;lblFilterTo.Name" xml:space="preserve">
-    <value>lblFilterTo</value>
-  </data>
-  <data name="&gt;&gt;lblFilterTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFilterTo.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;lblFilterTo.ZOrder" xml:space="preserve">
-    <value>11</value>
   </data>
   <data name="cbDateFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -882,18 +738,6 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Date:</value>
   </data>
-  <data name="&gt;&gt;cbDateFilter.Name" xml:space="preserve">
-    <value>cbDateFilter</value>
-  </data>
-  <data name="&gt;&gt;cbDateFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbDateFilter.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;cbDateFilter.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="dtpFilterTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 94</value>
   </data>
@@ -903,18 +747,6 @@
   <data name="dtpFilterTo.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;dtpFilterTo.Name" xml:space="preserve">
-    <value>dtpFilterTo</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterTo.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;dtpFilterTo.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <data name="txtFilenameFilter.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 20</value>
   </data>
@@ -923,18 +755,6 @@
   </data>
   <data name="txtFilenameFilter.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtFilenameFilter.Name" xml:space="preserve">
-    <value>txtFilenameFilter</value>
-  </data>
-  <data name="&gt;&gt;txtFilenameFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtFilenameFilter.Parent" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;txtFilenameFilter.ZOrder" xml:space="preserve">
-    <value>14</value>
   </data>
   <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

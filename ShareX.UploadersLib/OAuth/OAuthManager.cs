@@ -202,7 +202,7 @@ namespace ShareX.UploadersLib
         {
             byte[] dataBuffer = Encoding.ASCII.GetBytes(signatureBase);
 
-            using (SHA1CryptoServiceProvider sha1 = GenerateSha1Hash(dataBuffer))
+            using (var sha1 = GenerateSha1Hash(dataBuffer))
             using (AsymmetricAlgorithm algorithm = new RSACryptoServiceProvider())
             {
                 algorithm.FromXmlString(privateKey);
@@ -212,9 +212,9 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private static SHA1CryptoServiceProvider GenerateSha1Hash(byte[] dataBuffer)
+        private static SHA1 GenerateSha1Hash(byte[] dataBuffer)
         {
-            SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
+            var sha1 = SHA1.Create();
 
             using (CryptoStream cs = new CryptoStream(Stream.Null, sha1, CryptoStreamMode.Write))
             {

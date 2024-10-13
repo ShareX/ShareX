@@ -132,15 +132,15 @@ namespace ShareX.HelpersLib
                 case HashType.CRC32:
                     return new Crc32();
                 case HashType.MD5:
-                    return new MD5CryptoServiceProvider();
+                    return MD5.Create();
                 case HashType.SHA1:
-                    return new SHA1CryptoServiceProvider();
+                    return SHA1.Create();
                 case HashType.SHA256:
-                    return new SHA256CryptoServiceProvider();
+                    return SHA256.Create();
                 case HashType.SHA384:
-                    return new SHA384CryptoServiceProvider();
+                    return SHA384.Create();
                 case HashType.SHA512:
-                    return new SHA512CryptoServiceProvider();
+                    return SHA512.Create();
             }
 
             return null;

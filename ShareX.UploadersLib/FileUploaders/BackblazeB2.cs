@@ -397,13 +397,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
             // compute SHA1 hash without loading the file fully into memory
             string sha1Hash;
-            using (SHA1CryptoServiceProvider cryptoProvider = new SHA1CryptoServiceProvider())
-            {
-                file.Seek(0, SeekOrigin.Begin);
-                byte[] bytes = cryptoProvider.ComputeHash(file);
-                sha1Hash = BitConverter.ToString(bytes).Replace("-", "").ToLower();
-                file.Seek(0, SeekOrigin.Begin);
-            }
+            file.Seek(0, SeekOrigin.Begin);
+            byte[] bytes = SHA1.HashData(file);
+            sha1Hash = BitConverter.ToString(bytes).Replace("-", "").ToLower();
+            file.Seek(0, SeekOrigin.Begin);
             DebugHelper.WriteLine($"B2 uploader: SHA1 hash is '{sha1Hash}'.");
 
             // it's showtime

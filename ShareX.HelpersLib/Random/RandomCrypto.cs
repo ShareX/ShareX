@@ -33,7 +33,7 @@ namespace ShareX.HelpersLib
     public static class RandomCrypto
     {
         private static readonly object randomLock = new object();
-        private static readonly RNGCryptoServiceProvider random = new RNGCryptoServiceProvider();
+        private static readonly RandomNumberGenerator random = RandomNumberGenerator.Create();
         private static byte[] uint32Buffer = new byte[4];
 
         /// <summary>Returns a non-negative random integer.</summary>

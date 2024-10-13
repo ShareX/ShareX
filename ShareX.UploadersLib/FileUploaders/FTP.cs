@@ -246,7 +246,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return UploadDataInternal(localStream, remotePath);
                     }
 
-                    throw e;
+                    throw;
                 }
             }
 
