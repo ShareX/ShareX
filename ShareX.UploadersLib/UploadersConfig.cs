@@ -69,15 +69,6 @@ namespace ShareX.UploadersLib
 
         #endregion Photobucket
 
-        #region Google Photos
-
-        public OAuth2Info GooglePhotosOAuth2Info { get; set; } = null;
-        public OAuthUserInfo GooglePhotosUserInfo { get; set; } = null;
-        public string GooglePhotosAlbumID { get; set; } = "";
-        public bool GooglePhotosIsPublic { get; set; } = false;
-
-        #endregion Google Photos
-
         #region Chevereto
 
         public CheveretoUploader CheveretoUploader { get; set; } = new CheveretoUploader();

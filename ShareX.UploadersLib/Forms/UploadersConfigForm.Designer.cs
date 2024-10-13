@@ -586,19 +586,6 @@ namespace ShareX.UploadersLib
             this.btnPhotobucketAuthComplete = new System.Windows.Forms.Button();
             this.txtPhotobucketVerificationCode = new System.Windows.Forms.TextBox();
             this.lblPhotobucketAccountStatus = new System.Windows.Forms.Label();
-            this.tpGooglePhotos = new System.Windows.Forms.TabPage();
-            this.oauth2GooglePhotos = new ShareX.UploadersLib.OAuthLoopbackControl();
-            this.lblGooglePhotosCreateAlbumName = new System.Windows.Forms.Label();
-            this.txtGooglePhotosCreateAlbumName = new System.Windows.Forms.TextBox();
-            this.btnGooglePhotosCreateAlbum = new System.Windows.Forms.Button();
-            this.cbGooglePhotosIsPublic = new System.Windows.Forms.CheckBox();
-            this.txtPicasaAlbumID = new System.Windows.Forms.TextBox();
-            this.lblPicasaAlbumID = new System.Windows.Forms.Label();
-            this.lvPicasaAlbumList = new System.Windows.Forms.ListView();
-            this.chPicasaID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chPicasaName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chPicasaDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnPicasaRefreshAlbumList = new System.Windows.Forms.Button();
             this.tpChevereto = new System.Windows.Forms.TabPage();
             this.lblCheveretoUploadURLExample = new System.Windows.Forms.Label();
             this.cbCheveretoDirectURL = new System.Windows.Forms.CheckBox();
@@ -690,7 +677,6 @@ namespace ShareX.UploadersLib
             this.gbPhotobucketAlbumPath.SuspendLayout();
             this.gbPhotobucketAlbums.SuspendLayout();
             this.gbPhotobucketUserAccount.SuspendLayout();
-            this.tpGooglePhotos.SuspendLayout();
             this.tpChevereto.SuspendLayout();
             this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
@@ -4263,7 +4249,6 @@ namespace ShareX.UploadersLib
             this.tcImageUploaders.Controls.Add(this.tpImageShack);
             this.tcImageUploaders.Controls.Add(this.tpFlickr);
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
-            this.tcImageUploaders.Controls.Add(this.tpGooglePhotos);
             this.tcImageUploaders.Controls.Add(this.tpChevereto);
             this.tcImageUploaders.Controls.Add(this.tpVgyme);
             resources.ApplyResources(this.tcImageUploaders, "tcImageUploaders");
@@ -4592,97 +4577,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.lblPhotobucketAccountStatus, "lblPhotobucketAccountStatus");
             this.lblPhotobucketAccountStatus.Name = "lblPhotobucketAccountStatus";
             // 
-            // tpGooglePhotos
-            // 
-            this.tpGooglePhotos.BackColor = System.Drawing.SystemColors.Window;
-            this.tpGooglePhotos.Controls.Add(this.oauth2GooglePhotos);
-            this.tpGooglePhotos.Controls.Add(this.lblGooglePhotosCreateAlbumName);
-            this.tpGooglePhotos.Controls.Add(this.txtGooglePhotosCreateAlbumName);
-            this.tpGooglePhotos.Controls.Add(this.btnGooglePhotosCreateAlbum);
-            this.tpGooglePhotos.Controls.Add(this.cbGooglePhotosIsPublic);
-            this.tpGooglePhotos.Controls.Add(this.txtPicasaAlbumID);
-            this.tpGooglePhotos.Controls.Add(this.lblPicasaAlbumID);
-            this.tpGooglePhotos.Controls.Add(this.lvPicasaAlbumList);
-            this.tpGooglePhotos.Controls.Add(this.btnPicasaRefreshAlbumList);
-            resources.ApplyResources(this.tpGooglePhotos, "tpGooglePhotos");
-            this.tpGooglePhotos.Name = "tpGooglePhotos";
-            // 
-            // oauth2GooglePhotos
-            // 
-            resources.ApplyResources(this.oauth2GooglePhotos, "oauth2GooglePhotos");
-            this.oauth2GooglePhotos.Name = "oauth2GooglePhotos";
-            this.oauth2GooglePhotos.ConnectButtonClicked += new System.Action(this.oauth2GooglePhotos_ConnectButtonClicked);
-            this.oauth2GooglePhotos.DisconnectButtonClicked += new System.Action(this.oauth2GooglePhotos_DisconnectButtonClicked);
-            // 
-            // lblGooglePhotosCreateAlbumName
-            // 
-            resources.ApplyResources(this.lblGooglePhotosCreateAlbumName, "lblGooglePhotosCreateAlbumName");
-            this.lblGooglePhotosCreateAlbumName.Name = "lblGooglePhotosCreateAlbumName";
-            // 
-            // txtGooglePhotosCreateAlbumName
-            // 
-            resources.ApplyResources(this.txtGooglePhotosCreateAlbumName, "txtGooglePhotosCreateAlbumName");
-            this.txtGooglePhotosCreateAlbumName.Name = "txtGooglePhotosCreateAlbumName";
-            // 
-            // btnGooglePhotosCreateAlbum
-            // 
-            resources.ApplyResources(this.btnGooglePhotosCreateAlbum, "btnGooglePhotosCreateAlbum");
-            this.btnGooglePhotosCreateAlbum.Name = "btnGooglePhotosCreateAlbum";
-            this.btnGooglePhotosCreateAlbum.UseVisualStyleBackColor = true;
-            this.btnGooglePhotosCreateAlbum.Click += new System.EventHandler(this.btnGooglePhotosCreateAlbum_Click);
-            // 
-            // cbGooglePhotosIsPublic
-            // 
-            resources.ApplyResources(this.cbGooglePhotosIsPublic, "cbGooglePhotosIsPublic");
-            this.cbGooglePhotosIsPublic.Name = "cbGooglePhotosIsPublic";
-            this.cbGooglePhotosIsPublic.UseVisualStyleBackColor = true;
-            this.cbGooglePhotosIsPublic.CheckedChanged += new System.EventHandler(this.cbGooglePhotosIsPublic_CheckedChanged);
-            // 
-            // txtPicasaAlbumID
-            // 
-            resources.ApplyResources(this.txtPicasaAlbumID, "txtPicasaAlbumID");
-            this.txtPicasaAlbumID.Name = "txtPicasaAlbumID";
-            this.txtPicasaAlbumID.TextChanged += new System.EventHandler(this.txtPicasaAlbumID_TextChanged);
-            // 
-            // lblPicasaAlbumID
-            // 
-            resources.ApplyResources(this.lblPicasaAlbumID, "lblPicasaAlbumID");
-            this.lblPicasaAlbumID.Name = "lblPicasaAlbumID";
-            // 
-            // lvPicasaAlbumList
-            // 
-            this.lvPicasaAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chPicasaID,
-            this.chPicasaName,
-            this.chPicasaDescription});
-            this.lvPicasaAlbumList.FullRowSelect = true;
-            this.lvPicasaAlbumList.HideSelection = false;
-            resources.ApplyResources(this.lvPicasaAlbumList, "lvPicasaAlbumList");
-            this.lvPicasaAlbumList.MultiSelect = false;
-            this.lvPicasaAlbumList.Name = "lvPicasaAlbumList";
-            this.lvPicasaAlbumList.UseCompatibleStateImageBehavior = false;
-            this.lvPicasaAlbumList.View = System.Windows.Forms.View.Details;
-            this.lvPicasaAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvPicasaAlbumList_SelectedIndexChanged);
-            // 
-            // chPicasaID
-            // 
-            resources.ApplyResources(this.chPicasaID, "chPicasaID");
-            // 
-            // chPicasaName
-            // 
-            resources.ApplyResources(this.chPicasaName, "chPicasaName");
-            // 
-            // chPicasaDescription
-            // 
-            resources.ApplyResources(this.chPicasaDescription, "chPicasaDescription");
-            // 
-            // btnPicasaRefreshAlbumList
-            // 
-            resources.ApplyResources(this.btnPicasaRefreshAlbumList, "btnPicasaRefreshAlbumList");
-            this.btnPicasaRefreshAlbumList.Name = "btnPicasaRefreshAlbumList";
-            this.btnPicasaRefreshAlbumList.UseVisualStyleBackColor = true;
-            this.btnPicasaRefreshAlbumList.Click += new System.EventHandler(this.btnPicasaRefreshAlbumList_Click);
-            // 
             // tpChevereto
             // 
             this.tpChevereto.BackColor = System.Drawing.SystemColors.Window;
@@ -4933,8 +4827,6 @@ namespace ShareX.UploadersLib
             this.gbPhotobucketAlbums.PerformLayout();
             this.gbPhotobucketUserAccount.ResumeLayout(false);
             this.gbPhotobucketUserAccount.PerformLayout();
-            this.tpGooglePhotos.ResumeLayout(false);
-            this.tpGooglePhotos.PerformLayout();
             this.tpChevereto.ResumeLayout(false);
             this.tpChevereto.PerformLayout();
             this.tpVgyme.ResumeLayout(false);
@@ -5102,13 +4994,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnPhotobucketAuthComplete;
         private System.Windows.Forms.TextBox txtPhotobucketVerificationCode;
         private System.Windows.Forms.Label lblPhotobucketAccountStatus;
-        private System.Windows.Forms.TextBox txtPicasaAlbumID;
-        private System.Windows.Forms.Label lblPicasaAlbumID;
-        private System.Windows.Forms.ListView lvPicasaAlbumList;
-        private System.Windows.Forms.ColumnHeader chPicasaID;
-        private System.Windows.Forms.ColumnHeader chPicasaName;
-        private System.Windows.Forms.ColumnHeader chPicasaDescription;
-        private System.Windows.Forms.Button btnPicasaRefreshAlbumList;
         private System.Windows.Forms.TabControl tcUploaders;
         private ShareX.HelpersLib.ExportImportControl eiFTP;
         private OAuthControl oauth2Dropbox;
@@ -5260,7 +5145,6 @@ namespace ShareX.UploadersLib
         internal System.Windows.Forms.TabPage tpImageShack;
         internal System.Windows.Forms.TabPage tpFlickr;
         internal System.Windows.Forms.TabPage tpPhotobucket;
-        internal System.Windows.Forms.TabPage tpGooglePhotos;
         internal System.Windows.Forms.TabPage tpChevereto;
         internal System.Windows.Forms.TabPage tpVgyme;
         internal System.Windows.Forms.TabPage tpPastebin;
@@ -5474,10 +5358,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtKuttPassword;
         internal System.Windows.Forms.TabPage tpKutt;
         private System.Windows.Forms.CheckBox cbAmazonS3SignedPayload;
-        private System.Windows.Forms.CheckBox cbGooglePhotosIsPublic;
-        private System.Windows.Forms.Label lblGooglePhotosCreateAlbumName;
-        private System.Windows.Forms.TextBox txtGooglePhotosCreateAlbumName;
-        private System.Windows.Forms.Button btnGooglePhotosCreateAlbum;
         private System.Windows.Forms.GroupBox gbGoogleCloudStorageAdvanced;
         private System.Windows.Forms.Label lblGoogleCloudStorageStripExtension;
         private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionText;
@@ -5499,7 +5379,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.LinkLabel llYouTubePermissionsLink;
         private System.Windows.Forms.Label lblYouTubePermissionsTip;
         private OAuthLoopbackControl oauth2YouTube;
-        private OAuthLoopbackControl oauth2GooglePhotos;
         private OAuthLoopbackControl oauth2GoogleDrive;
         private OAuthLoopbackControl oauth2GoogleCloudStorage;
         private System.Windows.Forms.TextBox txtAzureStorageCacheControl;

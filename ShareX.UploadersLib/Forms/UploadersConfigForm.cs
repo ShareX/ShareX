@@ -224,16 +224,6 @@ namespace ShareX.UploadersLib
 
             #endregion Photobucket
 
-            #region Google Photos
-
-            oauth2GooglePhotos.UpdateStatus(Config.GooglePhotosOAuth2Info, Config.GooglePhotosUserInfo);
-            btnPicasaRefreshAlbumList.Enabled = oauth2GooglePhotos.Connected;
-
-            cbGooglePhotosIsPublic.Checked = Config.GooglePhotosIsPublic;
-            txtPicasaAlbumID.Text = Config.GooglePhotosAlbumID;
-
-            #endregion Google Photos
-
             #region Chevereto
 
             if (Config.CheveretoUploader == null) Config.CheveretoUploader = new CheveretoUploader();
@@ -1011,67 +1001,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Photobucket
-
-        #region Google Photos
-
-        private void oauth2GooglePhotos_ConnectButtonClicked()
-        {
-            OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            IOAuth2Loopback oauthLoopback = new GooglePhotos(oauth).OAuth2;
-
-            using (OAuthListenerForm form = new OAuthListenerForm(oauthLoopback))
-            {
-                form.ShowDialog();
-                Config.GooglePhotosOAuth2Info = form.OAuth2Info;
-                Config.GooglePhotosUserInfo = form.UserInfo;
-            }
-
-            oauth2GooglePhotos.UpdateStatus(Config.GooglePhotosOAuth2Info, Config.GooglePhotosUserInfo);
-            btnPicasaRefreshAlbumList.Enabled = oauth2GooglePhotos.Connected;
-
-            this.ForceActivate();
-        }
-
-        private void oauth2GooglePhotos_DisconnectButtonClicked()
-        {
-            Config.GooglePhotosOAuth2Info = null;
-            Config.GooglePhotosUserInfo = null;
-        }
-
-        private void txtPicasaAlbumID_TextChanged(object sender, EventArgs e)
-        {
-            Config.GooglePhotosAlbumID = txtPicasaAlbumID.Text;
-        }
-
-        private void btnPicasaRefreshAlbumList_Click(object sender, EventArgs e)
-        {
-            GooglePhotosRefreshAlbumList();
-        }
-
-        private void lvPicasaAlbumList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvPicasaAlbumList.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvPicasaAlbumList.SelectedItems[0];
-                if (lvi.Tag is GooglePhotosAlbumInfo album)
-                {
-                    txtPicasaAlbumID.Text = album.ID;
-                }
-            }
-        }
-
-        private void cbGooglePhotosIsPublic_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.GooglePhotosIsPublic = cbGooglePhotosIsPublic.Checked;
-        }
-
-        private void btnGooglePhotosCreateAlbum_Click(object sender, EventArgs e)
-        {
-            GooglePhotosCreateAlbum(txtGooglePhotosCreateAlbumName.Text);
-            GooglePhotosRefreshAlbumList();
-        }
-
-        #endregion Google Photos
 
         #region Chevereto
 

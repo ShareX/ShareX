@@ -459,7 +459,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauthTwitter</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthTwitter.Parent" xml:space="preserve">
     <value>tpTwitter</value>
@@ -714,7 +714,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Bitly</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Bitly.Parent" xml:space="preserve">
     <value>tpBitly</value>
@@ -2349,7 +2349,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>eiFTP</value>
   </data>
   <data name="&gt;&gt;eiFTP.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
     <value>gbFTPAccount</value>
@@ -3555,7 +3555,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Dropbox</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Dropbox.Parent" xml:space="preserve">
     <value>tpDropbox</value>
@@ -3714,7 +3714,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oAuth2OneDrive</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2OneDrive.Parent" xml:space="preserve">
     <value>tpOneDrive</value>
@@ -3786,7 +3786,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2GoogleDrive</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
@@ -3957,7 +3957,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvGoogleDriveFoldersList</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Parent" xml:space="preserve">
     <value>tpGoogleDrive</value>
@@ -4029,13 +4029,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>9</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>4, 220</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 507</value>
+    <value>178, 0</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4425,7 +4425,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvBoxFolders</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvBoxFolders.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -4506,7 +4506,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2Box</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Box.Parent" xml:space="preserve">
     <value>tpBox</value>
@@ -5385,7 +5385,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oauth2GoogleCloudStorage</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleCloudStorage.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleCloudStorage.Parent" xml:space="preserve">
     <value>tpGoogleCloudStorage</value>
@@ -7857,7 +7857,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>atcSendSpaceAccountType</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcSendSpaceAccountType.Parent" xml:space="preserve">
     <value>tpSendSpace</value>
@@ -8226,7 +8226,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>oAuthJira</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuthJira.Parent" xml:space="preserve">
     <value>tpJira</value>
@@ -8805,7 +8805,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>lvSeafileLibraries</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSeafileLibraries.Parent" xml:space="preserve">
     <value>tpSeafile</value>
@@ -10564,7 +10564,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2YouTube</value>
   </data>
   <data name="&gt;&gt;oauth2YouTube.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2YouTube.Parent" xml:space="preserve">
     <value>tpYouTube</value>
@@ -12298,7 +12298,7 @@ Using an encrypted library disables sharing.</value>
     <value>oAuth2Gist</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oAuth2Gist.Parent" xml:space="preserve">
     <value>tpGist</value>
@@ -12937,7 +12937,7 @@ Using an encrypted library disables sharing.</value>
     <value>atcImgurAccountType</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;atcImgurAccountType.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -12958,7 +12958,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauth2Imgur</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauth2Imgur.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -12994,7 +12994,7 @@ Using an encrypted library disables sharing.</value>
     <value>lvImgurAlbumList</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvImgurAlbumList.Parent" xml:space="preserve">
     <value>tpImgur</value>
@@ -13393,7 +13393,7 @@ Using an encrypted library disables sharing.</value>
     <value>oauthFlickr</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.OAuthControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oauthFlickr.Parent" xml:space="preserve">
     <value>tpFlickr</value>
@@ -13917,282 +13917,6 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPhotobucket.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="oauth2GooglePhotos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="oauth2GooglePhotos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>448, 75</value>
-  </data>
-  <data name="oauth2GooglePhotos.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2GooglePhotos.Name" xml:space="preserve">
-    <value>oauth2GooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;oauth2GooglePhotos.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GooglePhotos.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;oauth2GooglePhotos.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblGooglePhotosCreateAlbumName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGooglePhotosCreateAlbumName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGooglePhotosCreateAlbumName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 505</value>
-  </data>
-  <data name="lblGooglePhotosCreateAlbumName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="lblGooglePhotosCreateAlbumName.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
-    <value>Album name:</value>
-  </data>
-  <data name="&gt;&gt;lblGooglePhotosCreateAlbumName.Name" xml:space="preserve">
-    <value>lblGooglePhotosCreateAlbumName</value>
-  </data>
-  <data name="&gt;&gt;lblGooglePhotosCreateAlbumName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGooglePhotosCreateAlbumName.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;lblGooglePhotosCreateAlbumName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtGooglePhotosCreateAlbumName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 521</value>
-  </data>
-  <data name="txtGooglePhotosCreateAlbumName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 20</value>
-  </data>
-  <data name="txtGooglePhotosCreateAlbumName.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;txtGooglePhotosCreateAlbumName.Name" xml:space="preserve">
-    <value>txtGooglePhotosCreateAlbumName</value>
-  </data>
-  <data name="&gt;&gt;txtGooglePhotosCreateAlbumName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtGooglePhotosCreateAlbumName.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;txtGooglePhotosCreateAlbumName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnGooglePhotosCreateAlbum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnGooglePhotosCreateAlbum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 520</value>
-  </data>
-  <data name="btnGooglePhotosCreateAlbum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
-  </data>
-  <data name="btnGooglePhotosCreateAlbum.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
-    <value>Create</value>
-  </data>
-  <data name="&gt;&gt;btnGooglePhotosCreateAlbum.Name" xml:space="preserve">
-    <value>btnGooglePhotosCreateAlbum</value>
-  </data>
-  <data name="&gt;&gt;btnGooglePhotosCreateAlbum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGooglePhotosCreateAlbum.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;btnGooglePhotosCreateAlbum.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cbGooglePhotosIsPublic.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGooglePhotosIsPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGooglePhotosIsPublic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
-  </data>
-  <data name="cbGooglePhotosIsPublic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 17</value>
-  </data>
-  <data name="cbGooglePhotosIsPublic.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
-    <value>Public upload</value>
-  </data>
-  <data name="&gt;&gt;cbGooglePhotosIsPublic.Name" xml:space="preserve">
-    <value>cbGooglePhotosIsPublic</value>
-  </data>
-  <data name="&gt;&gt;cbGooglePhotosIsPublic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGooglePhotosIsPublic.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;cbGooglePhotosIsPublic.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
-  </data>
-  <data name="txtPicasaAlbumID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 20</value>
-  </data>
-  <data name="txtPicasaAlbumID.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtPicasaAlbumID.Name" xml:space="preserve">
-    <value>txtPicasaAlbumID</value>
-  </data>
-  <data name="&gt;&gt;txtPicasaAlbumID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPicasaAlbumID.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;txtPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblPicasaAlbumID.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblPicasaAlbumID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 144</value>
-  </data>
-  <data name="lblPicasaAlbumID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 13</value>
-  </data>
-  <data name="lblPicasaAlbumID.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>Album ID for upload (Empty = No album upload):</value>
-  </data>
-  <data name="&gt;&gt;lblPicasaAlbumID.Name" xml:space="preserve">
-    <value>lblPicasaAlbumID</value>
-  </data>
-  <data name="&gt;&gt;lblPicasaAlbumID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPicasaAlbumID.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;lblPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="chPicasaID.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="chPicasaID.Width" type="System.Int32, mscorlib">
-    <value>135</value>
-  </data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chPicasaName.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="chPicasaDescription.Width" type="System.Int32, mscorlib">
-    <value>143</value>
-  </data>
-  <data name="lvPicasaAlbumList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 192</value>
-  </data>
-  <data name="lvPicasaAlbumList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 304</value>
-  </data>
-  <data name="lvPicasaAlbumList.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lvPicasaAlbumList.Name" xml:space="preserve">
-    <value>lvPicasaAlbumList</value>
-  </data>
-  <data name="&gt;&gt;lvPicasaAlbumList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvPicasaAlbumList.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;lvPicasaAlbumList.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>Refresh album list</value>
-  </data>
-  <data name="&gt;&gt;btnPicasaRefreshAlbumList.Name" xml:space="preserve">
-    <value>btnPicasaRefreshAlbumList</value>
-  </data>
-  <data name="&gt;&gt;btnPicasaRefreshAlbumList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnPicasaRefreshAlbumList.Parent" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;btnPicasaRefreshAlbumList.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="tpGooglePhotos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpGooglePhotos.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpGooglePhotos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 543</value>
-  </data>
-  <data name="tpGooglePhotos.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="tpGooglePhotos.Text" xml:space="preserve">
-    <value>Google Photos</value>
-  </data>
-  <data name="&gt;&gt;tpGooglePhotos.Name" xml:space="preserve">
-    <value>tpGooglePhotos</value>
-  </data>
-  <data name="&gt;&gt;tpGooglePhotos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpGooglePhotos.Parent" xml:space="preserve">
-    <value>tcImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;tpGooglePhotos.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="lblCheveretoUploadURLExample.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -14380,7 +14104,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcImageUploaders</value>
   </data>
   <data name="&gt;&gt;tpChevereto.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="llVgymeAccountDetailsPage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -14488,7 +14212,7 @@ Using an encrypted library disables sharing.</value>
     <value>tcImageUploaders</value>
   </data>
   <data name="&gt;&gt;tpVgyme.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="tcImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -14590,7 +14314,7 @@ Using an encrypted library disables sharing.</value>
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -14611,7 +14335,7 @@ Using an encrypted library disables sharing.</value>
     <value>actRapidShareAccountType</value>
   </data>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.0.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -14692,24 +14416,6 @@ Using an encrypted library disables sharing.</value>
     <value>chImgurDescription</value>
   </data>
   <data name="&gt;&gt;chImgurDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chPicasaID.Name" xml:space="preserve">
-    <value>chPicasaID</value>
-  </data>
-  <data name="&gt;&gt;chPicasaID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chPicasaName.Name" xml:space="preserve">
-    <value>chPicasaName</value>
-  </data>
-  <data name="&gt;&gt;chPicasaName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chPicasaDescription.Name" xml:space="preserve">
-    <value>chPicasaDescription</value>
-  </data>
-  <data name="&gt;&gt;chPicasaDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

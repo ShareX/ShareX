@@ -341,16 +341,6 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GooglePhotos {
-            get {
-                object obj = ResourceManager.GetObject("GooglePhotos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Hastebin {
             get {
                 object obj = ResourceManager.GetObject("Hastebin", resourceCulture);
