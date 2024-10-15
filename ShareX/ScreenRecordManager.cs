@@ -87,9 +87,9 @@ namespace ShareX
                 recordForm.AbortRecording();
             }
 
-            if (IsRecording && mouseClickEffectManager != null)
+            if (IsRecording)
             {
-                mouseClickEffectManager.Stop();
+                mouseClickEffectManager?.Stop();
             }
         }
 
@@ -277,7 +277,7 @@ namespace ShareX
                             }
 
                             recordForm.ChangeState(ScreenRecordState.AfterStart);
-                            mouseClickEffectManager.Resume();
+                            mouseClickEffectManager?.Resume();
 
                             captureRectangle = recordForm.RecordingRegion;
 
@@ -350,7 +350,7 @@ namespace ShareX
                     screenRecorder = null;
                 }
 
-                if(mouseClickEffectManager != null)
+                if (mouseClickEffectManager != null)
                 {
                     mouseClickEffectManager.Stop();
                     mouseClickEffectManager = null;
