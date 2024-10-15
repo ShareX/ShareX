@@ -9,7 +9,6 @@ namespace ShareX.HelpersLib
         private MouseHook mouseHook;
         private MouseClickEffectForm clickEffectForm;
 
-
         // start click mouse effects
         public void Start()
         {

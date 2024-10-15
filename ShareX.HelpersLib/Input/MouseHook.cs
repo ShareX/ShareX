@@ -6,7 +6,6 @@ namespace ShareX.HelpersLib
     {
         private HookProc proc;
         private static IntPtr hookID = IntPtr.Zero;
-
         public delegate void MouseEventHandler(MouseEventInfo eventInfo);
         public event MouseEventHandler OnMouseEvent;
 
