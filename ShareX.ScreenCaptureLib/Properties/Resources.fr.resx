@@ -417,4 +417,84 @@
   <data name="LockMenu" xml:space="preserve">
     <value>Verrouiller le menu</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>Rétablir</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Taille de l'effet de découpe :</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Cliquer pour arrêter l'enregistrement.</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Style de bord :</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>Voulez-vous vraiment annuler cet enregistrement ?</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Traitement...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Attente...</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Surligner</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Bitrate :</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Reprendre</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Flouter</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Encodage...</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Pixelliser</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Copier automatiquement l'image du presse-papier</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>Démarrer</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Type de pas :</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>Limite IPS :</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Zoomer pour ajuster à l'ouverture</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Effet de découpe :</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Options de l'outil</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>Arrêter</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Cliquer pour commencer l'enregistrement.</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>Voulez-vous réinitialiser les options ?</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>URL de l'image</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>Il y a des modifications non enregistrées.
+
+Voulez-vous enregistrer les modifications avant de fermer l'éditeur d'image ?</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>Couleur de l'arrière-plan de découpe...</value>
+  </data>
 </root>

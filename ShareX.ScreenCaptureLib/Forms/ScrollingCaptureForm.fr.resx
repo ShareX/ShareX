@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,22 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Capturer...</value>
   </data>
-  <data name="btnCreateNewImage.Text" xml:space="preserve">
-    <value>Créer une nouvelle image...</value>
+  <data name="btnOptions.Text" xml:space="preserve">
+    <value>Options...</value>
   </data>
-  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>Charger l'image depuis le presse-papier</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Mettre en ligne / Enregistrer</value>
   </data>
-  <data name="btnOpenImageFile.Text" xml:space="preserve">
-    <value>Ouvrir un fichier image...</value>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Copier</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Éditeur d'image</value>
-  </data>
-  <data name="btnLoadImageFromURL.Text" xml:space="preserve">
-    <value>Charger l'image depuis l'URL</value>
+    <value>ShareX - Capture par défilement</value>
   </data>
 </root>
