@@ -551,4 +551,93 @@ Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
     <value>ShareX est réduit dans la zone de notification.</value>
   </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Epingler à l'écran</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>Nom du processus</value>
+  </data>
+  <data name="ShareXIsUpToDate" xml:space="preserve">
+    <value>ShareX est à jour !</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Nom de classe</value>
+  </data>
+  <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
+    <value>FFmpeg inclus dans ShareX ne support que les systèmes d'exploitation 64-bits.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
+    <value>Hébreu</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Nom de fichier du processus</value>
+  </data>
+  <data name="FFmpegIsMissing" xml:space="preserve">
+    <value>FFmpeg est manquant</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pl" xml:space="preserve">
+    <value>Polonais</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>Politique de confidentialité</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>Liens</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Le presse-papier ne contient pas d'image.</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Style des fenêtres</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>Votre logiciel anti-virus ou le control des répertoires Windows pourrait bloquer ShareX.</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>Erreur FFmpeg</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>La reconnaissance optique de caractères est uniquement disponible avec Windows version {0} ou plus récent.</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Titre de la fenêtre</value>
+  </data>
+  <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
+    <value>Voulez-vous réessayer la mise en ligne depuis le presse-papier ?</value>
+  </data>
+  <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
+    <value>ShareX ne peut être fermé lorsqu'un enregistrement d'écran est en cours.
+
+Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Identifiant du processus</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>Impossible de trouver une fenêtre correspondant au titre indiqué.</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Poignée de fenêtre</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>Equipe</value>
+  </data>
+  <data name="ClipboardUpload" xml:space="preserve">
+    <value>Mise en ligne du presse-papier</value>
+  </data>
+  <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
+    <value>FFmpeg est introuvable à l'emplacement spécifié :</value>
+  </data>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>Impossible d'écrire l'image à l'emplacement spécifié :</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>Votre administrateur système a désactivé la fonctionnalité de mise en ligne.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
+    <value>Arabe</value>
+  </data>
 </root>
