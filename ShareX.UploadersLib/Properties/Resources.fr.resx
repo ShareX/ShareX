@@ -179,7 +179,7 @@ Dossiers créés :</value>
     <value>Non configuré</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Chemin de l'album parent p. ex.</value>
+    <value>Chemin de l'album parent p. ex. :</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Demande des dossiers...</value>
@@ -247,5 +247,44 @@ Dossiers créés :</value>
   </data>
   <data name="LoggedInAs0" xml:space="preserve">
     <value>Connecté en tant que {0}.</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>Erreur de formatage.</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>Erreur de formatage.</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>URL raccourci</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>URL de la miniature</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>URL de suppression</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Code de statut</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>URL de la réponse</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>Texte de la réponse</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Entêtes</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Déconnecter</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connecter...</value>
   </data>
 </root>

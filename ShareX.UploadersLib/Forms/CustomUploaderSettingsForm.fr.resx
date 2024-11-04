@@ -234,4 +234,10 @@
   <data name="lblResultErrorMessage.Text" xml:space="preserve">
     <value>Message d'erreur :</value>
   </data>
+  <data name="tsmiClearUploaders.Text" xml:space="preserve">
+    <value>Effacer les hébergeurs...</value>
+  </data>
+  <data name="lblUploaders.Text" xml:space="preserve">
+    <value>Hébergeurs :</value>
+  </data>
 </root>
