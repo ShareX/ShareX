@@ -123,14 +123,8 @@
   <data name="lblVideoQualityValue.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblVideoQualityHigher.Text" xml:space="preserve">
-    <value>-&gt;</value>
-  </data>
-  <data name="lblVideoQualityLower.Text" xml:space="preserve">
-    <value>&lt;-</value>
-  </data>
   <data name="cbUseCustomArguments.Text" xml:space="preserve">
-    <value>Utiliser des arguments personnalisés</value>
+    <value>Utiliser des arguments personnalisés :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Convertisseur vidéo</value>
@@ -158,5 +152,11 @@
   </data>
   <data name="lblInputFilePath.Text" xml:space="preserve">
     <value>Chemin du fichier d'entrée :</value>
+  </data>
+  <data name="cbVideoQualityUseBitrate.Text" xml:space="preserve">
+    <value>Utiliser le bitrate</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Encodeur vidéo :</value>
   </data>
 </root>

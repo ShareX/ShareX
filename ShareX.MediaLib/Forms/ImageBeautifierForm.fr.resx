@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,31 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ajouter...</value>
+  <data name="lblMargin.Text" xml:space="preserve">
+    <value>Marge extérieure :</value>
   </data>
-  <data name="lblWidth.Text" xml:space="preserve">
-    <value>Largeur :</value>
+  <data name="lblPadding.Text" xml:space="preserve">
+    <value>Marge intérieure :</value>
   </data>
-  <data name="btnGenerate.Text" xml:space="preserve">
-    <value>Générer des miniatures</value>
+  <data name="cbSmartPadding.Text" xml:space="preserve">
+    <value>Marge intelligente</value>
+  </data>
+  <data name="lblRoundedCorner.Text" xml:space="preserve">
+    <value>Bords arrondis :</value>
+  </data>
+  <data name="lblShadowRadius.Text" xml:space="preserve">
+    <value>Rayon :</value>
+  </data>
+  <data name="lblBackground.Text" xml:space="preserve">
+    <value>Arrière-plan :</value>
+  </data>
+  <data name="btnShadowColor.Text" xml:space="preserve">
+    <value>Couleur...</value>
+  </data>
+  <data name="lblShadowAngle.Text" xml:space="preserve">
+    <value>Angle :</value>
+  </data>
+  <data name="lblShadowOpacity.Text" xml:space="preserve">
+    <value>Opacité :</value>
+  </data>
+  <data name="lblShadowDistance.Text" xml:space="preserve">
+    <value>Distance :</value>
+  </data>
+  <data name="gbShadow.Text" xml:space="preserve">
+    <value>Ombre</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Réinitialiser les options...</value>
+  </data>
+  <data name="btnBackgroundImageFilePathBrowse.Text" xml:space="preserve">
+    <value>Parcourir les fichiers image...</value>
+  </data>
+  <data name="btnPrint.ToolTip" xml:space="preserve">
+    <value>Imprimer...</value>
+  </data>
+  <data name="btnSave.ToolTip" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="btnUpload.ToolTip" xml:space="preserve">
+    <value>Mettre en ligne</value>
+  </data>
+  <data name="btnSaveAs.ToolTip" xml:space="preserve">
+    <value>Enregistrer sous...</value>
+  </data>
+  <data name="btnCopy.ToolTip" xml:space="preserve">
+    <value>Copier</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Générateur de miniatures d'image</value>
-  </data>
-  <data name="lblHeight.Text" xml:space="preserve">
-    <value>Hauteur :</value>
-  </data>
-  <data name="lblOutputFolder.Text" xml:space="preserve">
-    <value>Dossier de sortie :</value>
-  </data>
-  <data name="lblOutputFilename.Text" xml:space="preserve">
-    <value>Nom du fichier de sortie :</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Supprimer</value>
-  </data>
-  <data name="lblQuality.Text" xml:space="preserve">
-    <value>Qualité :</value>
+    <value>ShareX - Embellisseur d'image</value>
   </data>
 </root>
