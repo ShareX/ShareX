@@ -132,4 +132,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Paramètres des raccourcis clavier</value>
   </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Les raccourcis sont désactivés. Vous pouvez cliquer ici pour les réactiver.</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Réinitialiser...</value>
+  </data>
 </root>
