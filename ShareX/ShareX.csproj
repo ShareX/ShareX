@@ -22,7 +22,7 @@
     <ProjectReference Include="..\ShareX.UploadersLib\ShareX.UploadersLib.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.26100.1" />
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.26100.1742" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="ZXing.Net" Version="0.16.9" />
   </ItemGroup>
