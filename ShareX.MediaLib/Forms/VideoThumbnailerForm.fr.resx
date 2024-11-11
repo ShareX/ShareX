@@ -123,7 +123,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Générateur de miniatures de vidéo</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
 </root>

@@ -120,4 +120,10 @@
   <data name="lblError.Text" xml:space="preserve">
     <value>Erreur</value>
   </data>
+  <data name="lblCombineVertical.Text" xml:space="preserve">
+    <value>Combiner les images (Vertical)</value>
+  </data>
+  <data name="lblCombineHorizontal.Text" xml:space="preserve">
+    <value>Combiner les images (Horizontal)</value>
+  </data>
 </root>

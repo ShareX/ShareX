@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,25 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ajouter...</value>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Langue :</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Dupliquer</value>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Résultat :</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Modifier...</value>
+  <data name="lblScaleFactor.Text" xml:space="preserve">
+    <value>Echelle :</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Supprimer</value>
+  <data name="btnOpenServiceLink.Text" xml:space="preserve">
+    <value>Ouvrir le lien du service...</value>
+  </data>
+  <data name="lblService.Text" xml:space="preserve">
+    <value>Service :</value>
+  </data>
+  <data name="btnSelectRegion.Text" xml:space="preserve">
+    <value>Sélectionner la région pour l'OCR...</value>
+  </data>
+  <data name="cbSingleLine.Text" xml:space="preserve">
+    <value>Ligne simple</value>
+  </data>
+  <data name="btnCopyAll.Text" xml:space="preserve">
+    <value>Copier tout</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Paramètres des raccourcis clavier</value>
-  </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Les raccourcis sont désactivés. Vous pouvez cliquer ici pour les réactiver.</value>
-  </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Réinitialiser...</value>
+    <value>ShareX - Reconnaissance optique de caractères</value>
   </data>
 </root>

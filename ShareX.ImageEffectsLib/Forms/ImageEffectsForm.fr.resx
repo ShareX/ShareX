@@ -181,4 +181,7 @@
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>Effets d'image...</value>
   </data>
+  <data name="lblEffectName.Text" xml:space="preserve">
+    <value>Nom de l'effet :</value>
+  </data>
 </root>

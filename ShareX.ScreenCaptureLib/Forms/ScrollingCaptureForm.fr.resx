@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,25 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ajouter...</value>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>Capturer...</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Dupliquer</value>
+  <data name="btnOptions.Text" xml:space="preserve">
+    <value>Options...</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Modifier...</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Mettre en ligne / Enregistrer</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Supprimer</value>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>Copier</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Paramètres des raccourcis clavier</value>
-  </data>
-  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
-    <value>Les raccourcis sont désactivés. Vous pouvez cliquer ici pour les réactiver.</value>
-  </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Réinitialiser...</value>
+    <value>ShareX - Capture par défilement</value>
   </data>
 </root>

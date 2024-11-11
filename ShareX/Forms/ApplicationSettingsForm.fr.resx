@@ -375,4 +375,73 @@
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Paramètres</value>
   </data>
+  <data name="lblUpdateChannel.Text" xml:space="preserve">
+    <value>Canal de mise à jour :</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Schéma de sous-dossier pour fenêtre :</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Nettoyer automatiquement les anciens fichiers de journaux</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Nombre de fichiers à conserver :</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Nettoyer automatiquement les anciens fichiers de sauvegarde</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>Emplacement de l'aperçu d'une image :</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>Visibilité de l'aperçu d'une image :</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>Afficher les colonnes</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>Aspect de la liste</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Action du clic sur la miniature :</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Taille de la miniature :</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Emplacement du titre :</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Afficher le titre</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Aspect de la miniature</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>Afficher le menu</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Mode d'affichage d'une tâche :</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>Fenêtre principale</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>Ces formats apparaîtrons dans le sous-menu "Copier" du menu contextuel de la fenêtre principale.</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Format du presse-papier</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Utiliser l'ordre de préférence secondaire des hébergeurs lors d'une nouvelle tentative</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Valeur forcée d'impression par défaut :</value>
+  </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Vérifier automatiquement les mises à jour</value>
+  </data>
 </root>

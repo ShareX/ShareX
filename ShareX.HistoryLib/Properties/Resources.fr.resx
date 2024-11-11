@@ -163,7 +163,7 @@
     <value>Image</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Prévisualisation de l'image</value>
+    <value>Prévisualisation de l'image...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Plus d'infos...</value>
@@ -221,5 +221,20 @@
   </data>
   <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
     <value>Erreur lors de la lecture du fichier d'historique :</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Filtré</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Nom du fichier, titre de la fenêtre, nom du processus, etc.</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Noms des processus :</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Historique des statistiques</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Epingler à l'écran</value>
   </data>
 </root>

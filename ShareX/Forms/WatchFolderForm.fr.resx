@@ -141,4 +141,7 @@
   <data name="btnPathBrowse.Text" xml:space="preserve">
     <value>...</value>
   </data>
+  <data name="cbMoveToScreenshotsFolder.Text" xml:space="preserve">
+    <value>Déplacer le fichier dans le répertoire des captures d'écran</value>
+  </data>
 </root>
