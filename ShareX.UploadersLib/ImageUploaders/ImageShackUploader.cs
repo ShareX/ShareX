@@ -118,8 +118,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                         if (uploadResult != null && uploadResult.images.Count > 0)
                         {
                             ImageShackImage image = uploadResult.images[0];
-                            result.URL = string.Format("http://imageshack.com/a/img{0}/{1}/{2}", image.server, image.bucket, image.filename);
-                            result.ThumbnailURL = string.Format("http://imagizer.imageshack.us/v2/{0}x{1}q90/{2}/{3}",
+                            result.URL = string.Format("https://imagizer.imageshack.com/a/img{0}/{1}/{2}", image.server, image.bucket, image.filename);
+                            result.ThumbnailURL = string.Format("https://imagizer.imageshack.us/v2/{0}x{1}q90/{2}/{3}",
                                 Config.ThumbnailWidth, Config.ThumbnailHeight, image.server, image.filename);
                         }
                     }
