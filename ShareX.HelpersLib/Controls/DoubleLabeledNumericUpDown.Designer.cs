@@ -1,4 +1,4 @@
-﻿namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib
 {
     partial class DoubleLabeledNumericUpDown
     {
@@ -13,9 +13,13 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+                // Dispose other disposable objects here if any
             }
             base.Dispose(disposing);
         }
