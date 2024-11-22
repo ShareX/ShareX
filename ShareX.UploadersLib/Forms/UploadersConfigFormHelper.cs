@@ -522,7 +522,7 @@ namespace ShareX.UploadersLib
             }
 
             txtFTPHost.Text = account.Host;
-            nudFTPPort.Value = account.Port;
+            nudFTPPort.SetValue(account.Port);
             txtFTPUsername.Text = account.Username;
             txtFTPPassword.Text = account.Password;
 

@@ -315,7 +315,7 @@ namespace ShareX.UploadersLib
             this.lblMegaPassword = new System.Windows.Forms.Label();
             this.tpOwnCloud = new System.Windows.Forms.TabPage();
             this.cbOwnCloudAppendFileNameToURL = new System.Windows.Forms.CheckBox();
-            this.txtOwnCloudExpiryTime = new System.Windows.Forms.NumericUpDown();
+            this.nudOwnCloudExpiryTime = new System.Windows.Forms.NumericUpDown();
             this.cbOwnCloudAutoExpire = new System.Windows.Forms.CheckBox();
             this.lblOwnCloudExpiryTime = new System.Windows.Forms.Label();
             this.cbOwnCloudUsePreviewLinks = new System.Windows.Forms.CheckBox();
@@ -634,7 +634,7 @@ namespace ShareX.UploadersLib
             this.tpBackblazeB2.SuspendLayout();
             this.tpMega.SuspendLayout();
             this.tpOwnCloud.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOwnCloudExpiryTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOwnCloudExpiryTime)).BeginInit();
             this.tpMediaFire.SuspendLayout();
             this.tpPushbullet.SuspendLayout();
             this.tpSendSpace.SuspendLayout();
@@ -2579,7 +2579,7 @@ namespace ShareX.UploadersLib
             // 
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudAppendFileNameToURL);
-            this.tpOwnCloud.Controls.Add(this.txtOwnCloudExpiryTime);
+            this.tpOwnCloud.Controls.Add(this.nudOwnCloudExpiryTime);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudAutoExpire);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudExpiryTime);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudUsePreviewLinks);
@@ -2606,26 +2606,26 @@ namespace ShareX.UploadersLib
             this.cbOwnCloudAppendFileNameToURL.UseVisualStyleBackColor = true;
             this.cbOwnCloudAppendFileNameToURL.CheckedChanged += new System.EventHandler(this.cbOwnCloudAppendFileNameToURL_CheckedChanged);
             // 
-            // txtOwnCloudExpiryTime
+            // nudOwnCloudExpiryTime
             // 
-            resources.ApplyResources(this.txtOwnCloudExpiryTime, "txtOwnCloudExpiryTime");
-            this.txtOwnCloudExpiryTime.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.nudOwnCloudExpiryTime, "nudOwnCloudExpiryTime");
+            this.nudOwnCloudExpiryTime.Maximum = new decimal(new int[] {
             1410065407,
             2,
             0,
             0});
-            this.txtOwnCloudExpiryTime.Minimum = new decimal(new int[] {
+            this.nudOwnCloudExpiryTime.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.txtOwnCloudExpiryTime.Name = "txtOwnCloudExpiryTime";
-            this.txtOwnCloudExpiryTime.Value = new decimal(new int[] {
+            this.nudOwnCloudExpiryTime.Name = "nudOwnCloudExpiryTime";
+            this.nudOwnCloudExpiryTime.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.txtOwnCloudExpiryTime.ValueChanged += new System.EventHandler(this.txtOwnExpiryTime_TextChanged);
+            this.nudOwnCloudExpiryTime.ValueChanged += new System.EventHandler(this.nudOwnExpiryTime_TextChanged);
             // 
             // cbOwnCloudAutoExpire
             // 
@@ -4752,7 +4752,7 @@ namespace ShareX.UploadersLib
             this.tpMega.PerformLayout();
             this.tpOwnCloud.ResumeLayout(false);
             this.tpOwnCloud.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtOwnCloudExpiryTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOwnCloudExpiryTime)).EndInit();
             this.tpMediaFire.ResumeLayout(false);
             this.tpMediaFire.PerformLayout();
             this.tpPushbullet.ResumeLayout(false);
@@ -5335,7 +5335,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblFirebaseDomainExample;
         private System.Windows.Forms.Label lblOwnCloudExpiryTime;
         private System.Windows.Forms.CheckBox cbOwnCloudAutoExpire;
-        private System.Windows.Forms.NumericUpDown txtOwnCloudExpiryTime;
+        private System.Windows.Forms.NumericUpDown nudOwnCloudExpiryTime;
         internal System.Windows.Forms.TabPage tpBackblazeB2;
         private System.Windows.Forms.TextBox txtB2CustomUrl;
         private System.Windows.Forms.Label lblB2UrlPreviewLabel;

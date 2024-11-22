@@ -563,7 +563,7 @@ namespace ShareX.UploadersLib
             txtOwnCloudUsername.Text = Config.OwnCloudUsername;
             txtOwnCloudPassword.Text = Config.OwnCloudPassword;
             txtOwnCloudPath.Text = Config.OwnCloudPath;
-            txtOwnCloudExpiryTime.Value = Config.OwnCloudExpiryTime;
+            nudOwnCloudExpiryTime.SetValue(Config.OwnCloudExpiryTime);
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
             cbOwnCloudAppendFileNameToURL.Checked = Config.OwnCloudAppendFileNameToURL;
@@ -675,7 +675,7 @@ namespace ShareX.UploadersLib
             cbPlikIsSecured.Checked = Config.PlikSettings.IsSecured;
             cbPlikRemovable.Checked = Config.PlikSettings.Removable;
             cbPlikOneShot.Checked = Config.PlikSettings.OneShot;
-            nudPlikTTL.Value = Config.PlikSettings.TTL;
+            nudPlikTTL.SetValue(Config.PlikSettings.TTL);
             cbPlikTTLUnit.SelectedIndex = Config.PlikSettings.TTLUnit;
             txtPlikComment.ReadOnly = !cbPlikComment.Checked;
             txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
@@ -2168,9 +2168,9 @@ However, there is a workaround. You can navigate to the Google Drive website in 
             Config.OwnCloudPath = txtOwnCloudPath.Text;
         }
 
-        private void txtOwnExpiryTime_TextChanged(object sender, EventArgs e)
+        private void nudOwnExpiryTime_TextChanged(object sender, EventArgs e)
         {
-            Config.OwnCloudExpiryTime = Convert.ToInt32(txtOwnCloudExpiryTime.Value);
+            Config.OwnCloudExpiryTime = Convert.ToInt32(nudOwnCloudExpiryTime.Value);
         }
 
         private void cbOwnCloudCreateShare_CheckedChanged(object sender, EventArgs e)

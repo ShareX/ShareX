@@ -375,11 +375,11 @@ namespace ShareX.HelpersLib
         {
             if (nudAlpha.Value == 0)
             {
-                nudAlpha.Value = 255;
+                nudAlpha.SetValue(255);
             }
             else
             {
-                nudAlpha.Value = 0;
+                nudAlpha.SetValue(0);
             }
         }
 

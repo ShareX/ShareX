@@ -6881,25 +6881,25 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;cbOwnCloudAppendFileNameToURL.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="txtOwnCloudExpiryTime.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="nudOwnCloudExpiryTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 224</value>
   </data>
-  <data name="txtOwnCloudExpiryTime.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="nudOwnCloudExpiryTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 20</value>
   </data>
-  <data name="txtOwnCloudExpiryTime.TabIndex" type="System.Int32, mscorlib">
+  <data name="nudOwnCloudExpiryTime.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="&gt;&gt;txtOwnCloudExpiryTime.Name" xml:space="preserve">
-    <value>txtOwnCloudExpiryTime</value>
+  <data name="&gt;&gt;nudOwnCloudExpiryTime.Name" xml:space="preserve">
+    <value>nudOwnCloudExpiryTime</value>
   </data>
-  <data name="&gt;&gt;txtOwnCloudExpiryTime.Type" xml:space="preserve">
+  <data name="&gt;&gt;nudOwnCloudExpiryTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtOwnCloudExpiryTime.Parent" xml:space="preserve">
+  <data name="&gt;&gt;nudOwnCloudExpiryTime.Parent" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
-  <data name="&gt;&gt;txtOwnCloudExpiryTime.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;nudOwnCloudExpiryTime.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="cbOwnCloudAutoExpire.AutoSize" type="System.Boolean, mscorlib">
@@ -7317,13 +7317,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>16</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>

@@ -74,7 +74,7 @@ namespace ShareX.ScreenCaptureLib
                 if (cbAspectRatio.Checked)
                 {
                     ignoreValueChanged = true;
-                    nudHeight.Value = (int)Math.Round((double)nudWidth.Value * heightRatio);
+                    nudHeight.SetValue((int)Math.Round((double)nudWidth.Value * heightRatio));
                     ignoreValueChanged = false;
                 }
 
@@ -89,7 +89,7 @@ namespace ShareX.ScreenCaptureLib
                 if (cbAspectRatio.Checked)
                 {
                     ignoreValueChanged = true;
-                    nudWidth.Value = (int)Math.Round((double)nudHeight.Value * widthRatio);
+                    nudWidth.SetValue((int)Math.Round((double)nudHeight.Value * widthRatio));
                     ignoreValueChanged = false;
                 }
 
