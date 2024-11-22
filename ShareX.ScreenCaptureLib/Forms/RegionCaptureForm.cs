@@ -1226,7 +1226,8 @@ namespace ShareX.ScreenCaptureLib
                 return text;
             }
 
-            return string.Format(Resources.RectangleRegion_GetAreaText_Area, rect.X, rect.Y, rect.Width, rect.Height);
+            Rectangle area = rect.Round();
+            return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
         }
 
         private string GetInfoText()
