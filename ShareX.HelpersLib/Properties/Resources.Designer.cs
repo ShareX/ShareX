@@ -2895,42 +2895,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Response headers.
-        /// </summary>
-        internal static string ResponseType_Headers {
-            get {
-                return ResourceManager.GetString("ResponseType_Headers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Location header.
-        /// </summary>
-        internal static string ResponseType_LocationHeader {
-            get {
-                return ResourceManager.GetString("ResponseType_LocationHeader", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Redirection URL.
-        /// </summary>
-        internal static string ResponseType_RedirectionURL {
-            get {
-                return ResourceManager.GetString("ResponseType_RedirectionURL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Response text.
-        /// </summary>
-        internal static string ResponseType_Text {
-            get {
-                return ResourceManager.GetString("ResponseType_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Result:.
         /// </summary>
         internal static string Result {

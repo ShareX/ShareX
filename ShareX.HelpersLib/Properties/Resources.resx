@@ -240,9 +240,6 @@
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Millisecond</value>
   </data>
-  <data name="ResponseType_RedirectionURL" xml:space="preserve">
-    <value>Redirection URL</value>
-  </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
     <value>Install</value>
   </data>
@@ -506,9 +503,6 @@ Would you like to download it?</value>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Backward diagonal</value>
   </data>
-  <data name="ResponseType_Text" xml:space="preserve">
-    <value>Response text</value>
-  </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>Cursor</value>
   </data>
@@ -588,7 +582,7 @@ Would you like to download it?</value>
     <value>Email</value>
   </data>
   <data name="adjectives" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adjectives.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\Resources\adjectives.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>A newer version of {0} is available.
@@ -666,9 +660,6 @@ Would you like to download and install it?</value>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>URL sharing service</value>
   </data>
-  <data name="ResponseType_LocationHeader" xml:space="preserve">
-    <value>Location header</value>
-  </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
     <value>Highlight (H)</value>
   </data>
@@ -713,9 +704,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="ShapeType_ToolSelect" xml:space="preserve">
     <value>Select and move (M)</value>
-  </data>
-  <data name="ResponseType_Headers" xml:space="preserve">
-    <value>Response headers</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Auto increment by base {n} using alphanumeric (1 &lt; n &lt; 63)</value>

@@ -240,9 +240,6 @@
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
     <value>Milisecundă</value>
   </data>
-  <data name="ResponseType_RedirectionURL" xml:space="preserve">
-    <value>Redirecționare URL</value>
-  </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
     <value>Instalați</value>
   </data>
@@ -499,9 +496,6 @@ Doriți să o descărcați?</value>
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Diagonala inversă</value>
   </data>
-  <data name="ResponseType_Text" xml:space="preserve">
-    <value>Text de răspuns</value>
-  </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>Cursor</value>
   </data>
@@ -564,11 +558,6 @@ Doriți să o descărcați?</value>
   </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Se încarcă imaginea...</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>Progres: {0:0.0}%
-Viteza de descărcare: {1:0.0} KB/s
-Dimensiunea fișierului: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Capturarea ultimei regiuni</value>
@@ -658,9 +647,6 @@ Doriți să o descărcați și să o instalați?</value>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>Serviciul de partajare a URL-urilor</value>
   </data>
-  <data name="ResponseType_LocationHeader" xml:space="preserve">
-    <value>Antet de locație</value>
-  </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
     <value>Evidențiere (H)</value>
   </data>
@@ -705,9 +691,6 @@ Doriți să o descărcați și să o instalați?</value>
   </data>
   <data name="ShapeType_ToolSelect" xml:space="preserve">
     <value>Selectare și deplasare (M)</value>
-  </data>
-  <data name="ResponseType_Headers" xml:space="preserve">
-    <value>Capetele de răspuns</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Creștere automată cu baza {n} folosind alfanumeric (1 &lt; n &lt; 63)</value>

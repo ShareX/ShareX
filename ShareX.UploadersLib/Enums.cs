@@ -210,14 +210,6 @@ namespace ShareX.UploadersLib
         DELETE
     }
 
-    public enum ResponseType // Localized
-    {
-        Text,
-        RedirectionURL,
-        Headers,
-        LocationHeader
-    }
-
     public enum FTPProtocol
     {
         [Description("FTP")]

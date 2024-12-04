@@ -278,7 +278,13 @@ namespace ShareX
             {
                 foreach (CustomUploaderItem cui in UploadersConfig.CustomUploadersList)
                 {
-                    cui.CheckBackwardCompatibility();
+                    try
+                    {
+                        cui.CheckBackwardCompatibility();
+                    }
+                    catch
+                    {
+                    }
                 }
             }
         }
