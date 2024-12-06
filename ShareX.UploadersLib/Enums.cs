@@ -109,7 +109,7 @@ namespace ShareX.UploadersLib
         SendSpace,
         [Description("Hostr")]
         Localhostr,
-        [Description("JIRA")]
+        [Description("Jira")]
         Jira,
         [Description("Lambda")]
         Lambda,
