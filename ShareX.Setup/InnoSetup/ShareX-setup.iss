@@ -23,7 +23,6 @@ ArchitecturesInstallIn64BitMode=x64os
 DefaultDirName={commonpf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile={#MyAppRootDirectory}\LICENSE.txt
 MinVersion=6.1sp1
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 OutputDir={#MyAppOutputDirectory}
@@ -34,7 +33,6 @@ UninstallDisplayName={#MyAppName}
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoTextVersion={#MyAppVersion}
 VersionInfoVersion={#MyAppVersion}
-DisableLicensePage=yes
 
 [Tasks]
 Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating and not DesktopIconExists
