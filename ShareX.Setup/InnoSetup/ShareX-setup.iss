@@ -34,6 +34,7 @@ UninstallDisplayName={#MyAppName}
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoTextVersion={#MyAppVersion}
 VersionInfoVersion={#MyAppVersion}
+DisableLicensePage=yes
 
 [Tasks]
 Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating and not DesktopIconExists
@@ -163,7 +164,7 @@ end;
 
 function CmdLineParamExists(const value: string): Boolean;
 var
-  i: Integer;  
+  i: Integer;
 begin
   Result := False;
   for i := 1 to ParamCount do
