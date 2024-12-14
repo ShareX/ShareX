@@ -163,7 +163,7 @@ end;
 
 function CmdLineParamExists(const value: string): Boolean;
 var
-  i: Integer;  
+  i: Integer;
 begin
   Result := False;
   for i := 1 to ParamCount do
