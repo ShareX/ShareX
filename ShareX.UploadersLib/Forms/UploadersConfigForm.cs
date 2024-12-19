@@ -734,13 +734,6 @@ namespace ShareX.UploadersLib
 
             #endregion yourls.org
 
-            #region adf.ly
-
-            txtAdflyAPIKEY.Text = Config.AdFlyAPIKEY;
-            txtAdflyAPIUID.Text = Config.AdFlyAPIUID;
-
-            #endregion adf.ly
-
             #region Polr
 
             txtPolrAPIHostname.Text = Config.PolrAPIHostname;
@@ -2993,25 +2986,6 @@ However, there is a workaround. You can navigate to the Google Drive website in 
         }
 
         #endregion yourls.org
-
-        #region adf.ly
-
-        private void txtAdflyAPIKEY_TextChanged(object sender, EventArgs e)
-        {
-            Config.AdFlyAPIKEY = txtAdflyAPIKEY.Text;
-        }
-
-        private void txtAdflyAPIUID_TextChanged(object sender, EventArgs e)
-        {
-            Config.AdFlyAPIUID = txtAdflyAPIUID.Text;
-        }
-
-        private void llAdflyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL("https://adf.ly/publisher/tools#tools-api");
-        }
-
-        #endregion adf.ly
 
         #region Polr
 
