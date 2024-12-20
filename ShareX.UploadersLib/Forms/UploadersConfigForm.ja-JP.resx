@@ -125,6 +125,9 @@
 フィールドが空の場合は、バケット名をURLとして使用します。
 たとえば、バケット名が「bucket.example.com」であれば、URLは「http://bucket.example.com/...」となります。</value>
   </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>独自URLを使用:</value>
+  </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>更新</value>
   </data>
@@ -161,12 +164,6 @@
   <data name="lblYourlsSignature.Text" xml:space="preserve">
     <value>シグネチャ:</value>
   </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>自分の API キーと UID をここで確認</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API キー:</value>
-  </data>
   <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
     <value>旧式のAPI v1を使用</value>
   </data>
@@ -178,6 +175,36 @@
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
     <value>API ホスト名: (例 http://example.com/api.php, polr.me を使用する場合は空白にする)</value>
+  </data>
+  <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
+    <value>例: google.page.link</value>
+  </data>
+  <data name="lblFirebaseDomain.Text" xml:space="preserve">
+    <value>ドメイン:</value>
+  </data>
+  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
+    <value>短縮リンク(短縮URL)</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>ウェブ API キー:</value>
+  </data>
+  <data name="lblKuttDomain.Text" xml:space="preserve">
+    <value>ドメイン:</value>
+  </data>
+  <data name="lblKuttPassword.Text" xml:space="preserve">
+    <value>パスワード:</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>指定した対象URLがあればそれを返す</value>
+  </data>
+  <data name="lblKuttAPIKey.Text" xml:space="preserve">
+    <value>API キー:</value>
+  </data>
+  <data name="lblKuttHost.Text" xml:space="preserve">
+    <value>ホスト:</value>
+  </data>
+  <data name="lblZWSToken.Text" xml:space="preserve">
+    <value>トークン:</value>
   </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>URL短縮サービス</value>
@@ -278,6 +305,9 @@
   <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
     <value>共有可能なリンクを作成する</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>ダイレクト リンクを使用</value>
+  </data>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>ダイレクト リンクを使用</value>
   </data>
@@ -319,6 +349,9 @@
   </data>
   <data name="cbBoxShare.Text" xml:space="preserve">
     <value>共有可能なリンクを作成する</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>共有リンクのアクセス制限:</value>
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>フォルダー名</value>
@@ -380,6 +413,48 @@
   <data name="lblAmazonS3AccessKey.Text" xml:space="preserve">
     <value>アクセス キー:</value>
   </data>
+  <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
+    <value>以下のファイル拡張子を除去:</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
+    <value>動画</value>
+  </data>
+  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
+    <value>public-read のアクセス権限を設定</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
+    <value>高度</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
+    <value>プレビュー</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
+    <value>URL プレビュー:</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>アップロードするパス:</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>独自ドメイン:</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
+    <value>バケット名:</value>
+  </data>
+  <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
+    <value>プレビュー</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
+    <value>URL プレビュー:</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
+    <value>アップロードするパス:</value>
+  </data>
   <data name="lblAzureStorageEnvironment.Text" xml:space="preserve">
     <value>環境:</value>
   </data>
@@ -394,6 +469,27 @@
   </data>
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>独自のドメイン:</value>
+  </data>
+  <data name="lblB2UrlPreview.Text" xml:space="preserve">
+    <value>プレビュー</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>ここをクリックし、アプリケーションキーを作成、またはバケットを管理</value>
+  </data>
+  <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
+    <value>URL プレビュー:</value>
+  </data>
+  <data name="lblB2Bucket.Text" xml:space="preserve">
+    <value>バケット名:</value>
+  </data>
+  <data name="lblB2UploadPath.Text" xml:space="preserve">
+    <value>アップロードするパス:</value>
+  </data>
+  <data name="lblB2ApplicationKey.Text" xml:space="preserve">
+    <value>アプリケーション キー (秘密):</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
+    <value>アプリケーション キー ID:</value>
   </data>
   <data name="btnMegaRefreshFolders.Text" xml:space="preserve">
     <value>更新</value>
@@ -418,6 +514,18 @@
   </data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>パスワード:</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>URLにファイル名を付与</value>
+  </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>共有リンクを自動で期限切れにする</value>
+  </data>
+  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
+    <value>有効期限(日):</value>
+  </data>
+  <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>プレビューできるリンクを使用 (NextCloudのみ)</value>
   </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>例: http://example.com/owncloud</value>
@@ -585,6 +693,9 @@
   <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
     <value>共有可能なリンクを作成する</value>
   </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>生のURLを使用</value>
+  </data>
   <data name="lblSeafileAuthToken.Text" xml:space="preserve">
     <value>認証トークン:</value>
   </data>
@@ -630,6 +741,18 @@
   <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>その他の設定</value>
   </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>なし</value>
+  </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>ファイル自動削除までの期間</value>
   </data>
@@ -650,6 +773,27 @@
   </data>
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>ログイン資格情報</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>以下のリンクからいつでもアクセスを無効にできます:</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>動画のオプション用ダイアログを表示</value>
+  </data>
+  <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
+    <value>短縮リンクを使用</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>公開範囲:</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>除去</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>追加</value>
   </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>ファイル:</value>
@@ -852,18 +996,6 @@
   <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
     <value>ユーザー アカウント</value>
   </data>
-  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
-    <value>アップロードするアルバム ID (空白 = アルバム アップロードなし):</value>
-  </data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>名前</value>
-  </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
-    <value>説明</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>アルバム一覧の更新</value>
-  </data>
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>例: http://example.com/api/1/upload</value>
   </data>
@@ -888,184 +1020,46 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - アップロード先の設定</value>
   </data>
-  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
-    <value>作成</value>
-  </data>
-  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
-    <value>追加</value>
-  </data>
-  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
-    <value>複製</value>
-  </data>
-  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
-    <value>除去</value>
-  </data>
-  <data name="cbB2CustomUrl.Text" xml:space="preserve">
-    <value>独自URLを使用:</value>
-  </data>
-  <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
-    <value>画像</value>
-  </data>
-  <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
-    <value>テキスト</value>
-  </data>
-  <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
-    <value>動画</value>
-  </data>
-  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
-    <value>日</value>
-  </data>
-  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
-    <value>時間</value>
-  </data>
-  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
-    <value>分</value>
-  </data>
-  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
-    <value>高度</value>
-  </data>
-  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
-    <value>生のURLを使用</value>
-  </data>
-  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
-    <value>削除キーを生成</value>
-  </data>
-  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
-    <value>クライアント側で暗号化</value>
-  </data>
-  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
-    <value>なし</value>
-  </data>
-  <data name="lblFirebaseDomain.Text" xml:space="preserve">
-    <value>ドメイン:</value>
-  </data>
-  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
-    <value>短縮リンク(短縮URL)</value>
-  </data>
-  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
-    <value>ウェブ API キー:</value>
-  </data>
-  <data name="lblKuttDomain.Text" xml:space="preserve">
-    <value>ドメイン:</value>
-  </data>
-  <data name="lblKuttPassword.Text" xml:space="preserve">
-    <value>パスワード:</value>
-  </data>
-  <data name="cbKuttReuse.Text" xml:space="preserve">
-    <value>指定した対象URLがあればそれを返す</value>
-  </data>
-  <data name="lblKuttAPIKey.Text" xml:space="preserve">
-    <value>API キー:</value>
-  </data>
-  <data name="lblKuttHost.Text" xml:space="preserve">
-    <value>ホスト:</value>
-  </data>
-  <data name="lblZWSToken.Text" xml:space="preserve">
-    <value>トークン:</value>
-  </data>
-  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
-    <value>共有リンクのアクセス制限:</value>
-  </data>
-  <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
-    <value>以下のファイル拡張子を除去:</value>
-  </data>
-  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
-    <value>public-read のアクセス権限を設定</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
-    <value>プレビュー</value>
-  </data>
-  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
-    <value>URL プレビュー:</value>
-  </data>
-  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
-    <value>アップロードするパス:</value>
-  </data>
-  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
-    <value>独自ドメイン:</value>
-  </data>
-  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
-    <value>バケット名:</value>
-  </data>
-  <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
-    <value>アップロードするパス:</value>
-  </data>
-  <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
-    <value>URL プレビュー:</value>
-  </data>
-  <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
-    <value>プレビュー</value>
-  </data>
-  <data name="lblB2UrlPreview.Text" xml:space="preserve">
-    <value>プレビュー</value>
-  </data>
-  <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
-    <value>URL プレビュー:</value>
-  </data>
-  <data name="lblB2Bucket.Text" xml:space="preserve">
-    <value>バケット名:</value>
-  </data>
-  <data name="lblB2UploadPath.Text" xml:space="preserve">
-    <value>アップロードするパス:</value>
-  </data>
-  <data name="lblB2ApplicationKey.Text" xml:space="preserve">
-    <value>アプリケーション キー (秘密):</value>
-  </data>
-  <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
-    <value>アプリケーション キー ID:</value>
-  </data>
-  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
-    <value>URLにファイル名を付与</value>
-  </data>
-  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
-    <value>有効期限(日):</value>
-  </data>
-  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
-    <value>共有リンクを自動で期限切れにする</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>有効期限:</value>
-  </data>
-  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
-    <value>認証URL:</value>
-  </data>
-  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>アップロード API の URL:</value>
-  </data>
-  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
-    <value>貼り付け API の URL:</value>
-  </data>
-  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
-    <value>URL 短縮 API の URL:</value>
-  </data>
-  <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
-    <value>短縮リンクを使用</value>
-  </data>
-  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
-    <value>公開範囲:</value>
-  </data>
-  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
-    <value>以下のリンクからいつでもアクセスを無効にできます:</value>
-  </data>
-  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
-    <value>動画のオプション用ダイアログを表示</value>
-  </data>
   <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
     <value>アルバム名:</value>
   </data>
-  <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
-    <value>プレビューできるリンクを使用 (NextCloudのみ)</value>
+  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>説明</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>アルバム一覧の更新</value>
   </data>
   <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
     <value>公開する</value>
   </data>
-  <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
-    <value>例: google.page.link</value>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>名前</value>
   </data>
-  <data name="lblB2ManageLink.Text" xml:space="preserve">
-    <value>ここをクリックし、アプリケーションキーを作成、またはバケットを管理</value>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value>アップロードするアルバム ID (空白 = アルバム アップロードなし):</value>
   </data>
-  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
-    <value>ダイレクト リンクを使用</value>
+  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
+    <value>URL 短縮 API の URL:</value>
+  </data>
+  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
+    <value>認証URL:</value>
+  </data>
+  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
+    <value>貼り付け API の URL:</value>
+  </data>
+  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
+    <value>アップロード API の URL:</value>
+  </data>
+  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
+    <value>クライアント側で暗号化</value>
+  </data>
+  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
+    <value>削除キーを生成</value>
+  </data>
+  <data name="lblTeknikExpiration.Text" xml:space="preserve">
+    <value>有効期限:</value>
   </data>
 </root>

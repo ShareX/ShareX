@@ -134,9 +134,9 @@
   <data name="&gt;&gt;txtRapidSharePremiumUserName.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
+  </data>
   <data name="cbAmazonS3CustomCNAME.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1009,165 +1009,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="&gt;&gt;tpYourls.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="llAdflyLink.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="llAdflyLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="llAdflyLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 15</value>
-  </data>
-  <data name="llAdflyLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 13</value>
-  </data>
-  <data name="llAdflyLink.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="llAdflyLink.Text" xml:space="preserve">
-    <value>You can find your UID and API key in here</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.Name" xml:space="preserve">
-    <value>llAdflyLink</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;llAdflyLink.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtAdflyAPIUID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
-  </data>
-  <data name="txtAdflyAPIUID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
-  </data>
-  <data name="txtAdflyAPIUID.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.Name" xml:space="preserve">
-    <value>txtAdflyAPIUID</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIUID.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblAdflyAPIUID.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAdflyAPIUID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAdflyAPIUID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 40</value>
-  </data>
-  <data name="lblAdflyAPIUID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
-  </data>
-  <data name="lblAdflyAPIUID.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
-    <value>API UID:</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.Name" xml:space="preserve">
-    <value>lblAdflyAPIUID</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIUID.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txtAdflyAPIKEY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
-  </data>
-  <data name="txtAdflyAPIKEY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
-  </data>
-  <data name="txtAdflyAPIKEY.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.Name" xml:space="preserve">
-    <value>txtAdflyAPIKEY</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;txtAdflyAPIKEY.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblAdflyAPIKEY.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAdflyAPIKEY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 88</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="lblAdflyAPIKEY.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>API key:</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.Name" xml:space="preserve">
-    <value>lblAdflyAPIKEY</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.Parent" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;lblAdflyAPIKEY.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tpAdFly.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpAdFly.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
-  </data>
-  <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tpAdFly.Text" xml:space="preserve">
-    <value>adf.ly</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
-    <value>tpAdFly</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.Parent" xml:space="preserve">
-    <value>tcURLShorteners</value>
-  </data>
-  <data name="&gt;&gt;tpAdFly.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="cbPolrUseAPIv1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -14337,12 +14178,12 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;actRapidShareAccountType.Type" xml:space="preserve">
     <value>ShareX.UploadersLib.AccountTypeControl, ShareX.UploadersLib, Version=16.1.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
     <value>61</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
   </data>
@@ -14423,5 +14264,56 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPicasaAlbumID.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpGooglePhotos.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTeknikExpiration.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpTeknik.Text" xml:space="preserve">
+    <value />
   </data>
 </root>

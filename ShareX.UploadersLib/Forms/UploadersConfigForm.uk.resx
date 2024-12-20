@@ -59,7 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -155,9 +155,6 @@
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
     <value>Посилання API:</value>
-  </data>
-  <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
-    <value>Ключ API:</value>
   </data>
   <data name="cbPolrIsSecret.Text" xml:space="preserve">
     <value>Секретне посилання</value>
@@ -284,6 +281,9 @@
   </data>
   <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
     <value>Створити посилання для поширення</value>
+  </data>
+  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
+    <value>Використовувати пряме посилання</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>Використовувати пряме посилання</value>
@@ -530,9 +530,6 @@
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Посилання:</value>
-  </data>
-  <data name="lblTeknikExpiration.Text" xml:space="preserve">
-    <value>Термін дії:</value>
   </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>Посилання вивантаження:</value>
@@ -873,30 +870,6 @@
   <data name="gbPhotobucketUserAccount.Text" xml:space="preserve">
     <value>Обліковий запис користувача</value>
   </data>
-  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
-    <value>Назва альбому:</value>
-  </data>
-  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
-    <value>Створити</value>
-  </data>
-  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
-    <value>Публічне вивантаження</value>
-  </data>
-  <data name="chPicasaID.Text" xml:space="preserve">
-    <value>Ідентифікатор</value>
-  </data>
-  <data name="chPicasaName.Text" xml:space="preserve">
-    <value>Назва</value>
-  </data>
-  <data name="chPicasaDescription.Text" xml:space="preserve">
-    <value>Опис</value>
-  </data>
-  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
-    <value>Оновити список альбомів</value>
-  </data>
-  <data name="tpGooglePhotos.Text" xml:space="preserve">
-    <value>Google Фото</value>
-  </data>
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>Приклад: http://example.com/api/1/upload</value>
   </data>
@@ -921,7 +894,31 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Налаштування призначень</value>
   </data>
-  <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
-    <value>Використовувати пряме посилання</value>
+  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
+    <value>Назва альбому:</value>
+  </data>
+  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
+    <value>Створити</value>
+  </data>
+  <data name="chPicasaDescription.Text" xml:space="preserve">
+    <value>Опис</value>
+  </data>
+  <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
+    <value>Оновити список альбомів</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
+    <value>Публічне вивантаження</value>
+  </data>
+  <data name="chPicasaName.Text" xml:space="preserve">
+    <value>Назва</value>
+  </data>
+  <data name="tpGooglePhotos.Text" xml:space="preserve">
+    <value>Google Фото</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>Ідентифікатор</value>
+  </data>
+  <data name="lblTeknikExpiration.Text" xml:space="preserve">
+    <value>Термін дії:</value>
   </data>
 </root>
