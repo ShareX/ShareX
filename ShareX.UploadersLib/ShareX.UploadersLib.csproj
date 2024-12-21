@@ -16,10 +16,10 @@
     <EmbeddedResource Include="APIKeys\jira_sharex.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="51.1.0" />
+    <PackageReference Include="FluentFTP" Version="52.0.0" />
     <PackageReference Include="MegaApiClient" Version="1.10.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SSH.NET" Version="2024.1.0" />
+    <PackageReference Include="SSH.NET" Version="2024.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\OAuthCallbackPage.html" />
