@@ -500,4 +500,31 @@
   <data name="CutOutBackgroundColor" xml:space="preserve">
     <value>Цвет фона разрыва...</value>
   </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>URL изображения</value>
+  </data>
+  <data name="RulerAngle" xml:space="preserve">
+    <value>Угол</value>
+  </data>
+  <data name="RulerArea" xml:space="preserve">
+    <value>Площадь</value>
+  </data>
+  <data name="RulerDistance" xml:space="preserve">
+    <value>Расстояние</value>
+  </data>
+  <data name="RulerHeight" xml:space="preserve">
+    <value>Высота</value>
+  </data>
+  <data name="RulerPerimeter" xml:space="preserve">
+    <value>Периметр</value>
+  </data>
+  <data name="RulerWidth" xml:space="preserve">
+    <value>Ширина</value>
+  </data>
+  <data name="RulerBottom" xml:space="preserve">
+    <value>Низ</value>
+  </data>
+  <data name="RulerRight" xml:space="preserve">
+    <value>Право</value>
+  </data>
 </root>
