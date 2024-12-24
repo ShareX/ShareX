@@ -1424,6 +1424,78 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Angle.
+        /// </summary>
+        internal static string RulerAngle {
+            get {
+                return ResourceManager.GetString("RulerAngle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Area.
+        /// </summary>
+        internal static string RulerArea {
+            get {
+                return ResourceManager.GetString("RulerArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        internal static string RulerBottom {
+            get {
+                return ResourceManager.GetString("RulerBottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance.
+        /// </summary>
+        internal static string RulerDistance {
+            get {
+                return ResourceManager.GetString("RulerDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Height.
+        /// </summary>
+        internal static string RulerHeight {
+            get {
+                return ResourceManager.GetString("RulerHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Perimeter.
+        /// </summary>
+        internal static string RulerPerimeter {
+            get {
+                return ResourceManager.GetString("RulerPerimeter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        internal static string RulerRight {
+            get {
+                return ResourceManager.GetString("RulerRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width.
+        /// </summary>
+        internal static string RulerWidth {
+            get {
+                return ResourceManager.GetString("RulerWidth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to abort this recording?.
         /// </summary>
         internal static string ScreenRecordForm_ConfirmCancel {

@@ -833,4 +833,28 @@ Would you like to save the changes before closing the image editor?</value>
   <data name="CutOutBackgroundColor" xml:space="preserve">
     <value>Cut out background color...</value>
   </data>
+  <data name="RulerAngle" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="RulerPerimeter" xml:space="preserve">
+    <value>Perimeter</value>
+  </data>
+  <data name="RulerArea" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="RulerWidth" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="RulerHeight" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="RulerDistance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="RulerRight" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="RulerBottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
 </root>

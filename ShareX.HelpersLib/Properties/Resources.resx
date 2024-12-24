@@ -1296,4 +1296,19 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
     <value>Pin to screen (Close all)</value>
   </data>
+  <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Desktop" xml:space="preserve">
+    <value>Desktop</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Gradient" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
 </root>
