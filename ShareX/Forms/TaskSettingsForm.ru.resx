@@ -657,4 +657,10 @@
   <data name="lblRegionCaptureBackgroundDimStrength.Text" xml:space="preserve">
     <value>Степень затенения фона:</value>
   </data>
+  <data name="cbPlaySoundAfterAction.Text" xml:space="preserve">
+    <value>Проиграть звук после выполнения действия</value>
+  </data>
+  <data name="cbUseCustomActionCompletedSound.Text" xml:space="preserve">
+    <value>Пользовательский звук выполнения действия:</value>
+  </data>
 </root>

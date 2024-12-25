@@ -1247,4 +1247,19 @@
   <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
     <value>Закрепить на экране (Закрыть все)</value>
   </data>
+  <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Desktop" xml:space="preserve">
+    <value>Рабочий стол</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Gradient" xml:space="preserve">
+    <value>Градиент</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Image" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
+    <value>Прозрачность</value>
+  </data>
 </root>
