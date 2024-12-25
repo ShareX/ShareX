@@ -431,14 +431,6 @@ namespace ShareX.UploadersLib
 
         #endregion yourls.org
 
-        #region adf.ly
-
-        public string AdFlyAPIUID { get; set; } = "";
-        [JsonEncrypt]
-        public string AdFlyAPIKEY { get; set; } = "";
-
-        #endregion adf.ly
-
         #region polr
 
         public string PolrAPIHostname { get; set; } = "";

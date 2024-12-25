@@ -63,16 +63,6 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon AdFly {
-            get {
-                object obj = ResourceManager.GetObject("AdFly", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
         internal static System.Drawing.Icon AmazonS3 {
             get {
                 object obj = ResourceManager.GetObject("AmazonS3", resourceCulture);

@@ -92,12 +92,6 @@ namespace ShareX.UploadersLib
             this.lblYourlsSignature = new System.Windows.Forms.Label();
             this.txtYourlsAPIURL = new System.Windows.Forms.TextBox();
             this.lblYourlsAPIURL = new System.Windows.Forms.Label();
-            this.tpAdFly = new System.Windows.Forms.TabPage();
-            this.llAdflyLink = new System.Windows.Forms.LinkLabel();
-            this.txtAdflyAPIUID = new System.Windows.Forms.TextBox();
-            this.lblAdflyAPIUID = new System.Windows.Forms.Label();
-            this.txtAdflyAPIKEY = new System.Windows.Forms.TextBox();
-            this.lblAdflyAPIKEY = new System.Windows.Forms.Label();
             this.tpPolr = new System.Windows.Forms.TabPage();
             this.cbPolrUseAPIv1 = new System.Windows.Forms.CheckBox();
             this.cbPolrIsSecret = new System.Windows.Forms.CheckBox();
@@ -607,7 +601,6 @@ namespace ShareX.UploadersLib
             this.tcURLShorteners.SuspendLayout();
             this.tpBitly.SuspendLayout();
             this.tpYourls.SuspendLayout();
-            this.tpAdFly.SuspendLayout();
             this.tpPolr.SuspendLayout();
             this.tpFirebaseDynamicLinks.SuspendLayout();
             this.tpKutt.SuspendLayout();
@@ -850,7 +843,6 @@ namespace ShareX.UploadersLib
             // 
             this.tcURLShorteners.Controls.Add(this.tpBitly);
             this.tcURLShorteners.Controls.Add(this.tpYourls);
-            this.tcURLShorteners.Controls.Add(this.tpAdFly);
             this.tcURLShorteners.Controls.Add(this.tpPolr);
             this.tcURLShorteners.Controls.Add(this.tpFirebaseDynamicLinks);
             this.tcURLShorteners.Controls.Add(this.tpKutt);
@@ -954,47 +946,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblYourlsAPIURL, "lblYourlsAPIURL");
             this.lblYourlsAPIURL.Name = "lblYourlsAPIURL";
-            // 
-            // tpAdFly
-            // 
-            this.tpAdFly.BackColor = System.Drawing.SystemColors.Window;
-            this.tpAdFly.Controls.Add(this.llAdflyLink);
-            this.tpAdFly.Controls.Add(this.txtAdflyAPIUID);
-            this.tpAdFly.Controls.Add(this.lblAdflyAPIUID);
-            this.tpAdFly.Controls.Add(this.txtAdflyAPIKEY);
-            this.tpAdFly.Controls.Add(this.lblAdflyAPIKEY);
-            resources.ApplyResources(this.tpAdFly, "tpAdFly");
-            this.tpAdFly.Name = "tpAdFly";
-            // 
-            // llAdflyLink
-            // 
-            resources.ApplyResources(this.llAdflyLink, "llAdflyLink");
-            this.llAdflyLink.Name = "llAdflyLink";
-            this.llAdflyLink.TabStop = true;
-            this.llAdflyLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAdflyLink_LinkClicked);
-            // 
-            // txtAdflyAPIUID
-            // 
-            resources.ApplyResources(this.txtAdflyAPIUID, "txtAdflyAPIUID");
-            this.txtAdflyAPIUID.Name = "txtAdflyAPIUID";
-            this.txtAdflyAPIUID.TextChanged += new System.EventHandler(this.txtAdflyAPIUID_TextChanged);
-            // 
-            // lblAdflyAPIUID
-            // 
-            resources.ApplyResources(this.lblAdflyAPIUID, "lblAdflyAPIUID");
-            this.lblAdflyAPIUID.Name = "lblAdflyAPIUID";
-            // 
-            // txtAdflyAPIKEY
-            // 
-            resources.ApplyResources(this.txtAdflyAPIKEY, "txtAdflyAPIKEY");
-            this.txtAdflyAPIKEY.Name = "txtAdflyAPIKEY";
-            this.txtAdflyAPIKEY.UseSystemPasswordChar = true;
-            this.txtAdflyAPIKEY.TextChanged += new System.EventHandler(this.txtAdflyAPIKEY_TextChanged);
-            // 
-            // lblAdflyAPIKEY
-            // 
-            resources.ApplyResources(this.lblAdflyAPIKEY, "lblAdflyAPIKEY");
-            this.lblAdflyAPIKEY.Name = "lblAdflyAPIKEY";
             // 
             // tpPolr
             // 
@@ -4701,8 +4652,6 @@ namespace ShareX.UploadersLib
             this.tpBitly.PerformLayout();
             this.tpYourls.ResumeLayout(false);
             this.tpYourls.PerformLayout();
-            this.tpAdFly.ResumeLayout(false);
-            this.tpAdFly.PerformLayout();
             this.tpPolr.ResumeLayout(false);
             this.tpPolr.PerformLayout();
             this.tpFirebaseDynamicLinks.ResumeLayout(false);
@@ -5016,11 +4965,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblOwnCloudHost;
         private System.Windows.Forms.CheckBox cbOwnCloudCreateShare;
         private System.Windows.Forms.CheckBox cbOwnCloudDirectLink;
-        private System.Windows.Forms.TextBox txtAdflyAPIUID;
-        private System.Windows.Forms.Label lblAdflyAPIUID;
-        private System.Windows.Forms.TextBox txtAdflyAPIKEY;
-        private System.Windows.Forms.Label lblAdflyAPIKEY;
-        private System.Windows.Forms.LinkLabel llAdflyLink;
         private System.Windows.Forms.CheckBox cbImgurDirectLink;
         private System.Windows.Forms.TextBox txtMediaFirePassword;
         private System.Windows.Forms.TextBox txtMediaFireEmail;
@@ -5175,7 +5119,6 @@ namespace ShareX.UploadersLib
         internal System.Windows.Forms.TabPage tpEmail;
         internal System.Windows.Forms.TabPage tpBitly;
         internal System.Windows.Forms.TabPage tpYourls;
-        internal System.Windows.Forms.TabPage tpAdFly;
         internal System.Windows.Forms.TabPage tpPolr;
         internal System.Windows.Forms.TabPage tpTwitter;
         private System.Windows.Forms.TextBox txtEmailAutomaticSendTo;
