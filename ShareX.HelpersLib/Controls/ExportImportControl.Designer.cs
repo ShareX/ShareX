@@ -1,4 +1,6 @@
-﻿namespace ShareX.HelpersLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.HelpersLib
 {
     partial class ExportImportControl
     {
@@ -38,8 +40,8 @@
             this.tsmiImportClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImportFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImportURL = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnImport = new HelpersLib.MenuButton();
-            this.btnExport = new HelpersLib.MenuButton();
+            this.btnImport = new HelpersLib.Controls.MenuButton();
+            this.btnExport = new HelpersLib.Controls.MenuButton();
             this.cmsExport.SuspendLayout();
             this.cmsImport.SuspendLayout();
             this.SuspendLayout();

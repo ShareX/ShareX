@@ -23,30 +23,30 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.UploadersLib.BaseServices;
+
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public static class UploaderFactory
 {
-    public static class UploaderFactory
+    public static List<IUploaderService> AllServices { get; } = new List<IUploaderService>();
+    public static List<IGenericUploaderService> AllGenericUploaderServices { get; } = new List<IGenericUploaderService>();
+    public static Dictionary<ImageDestination, ImageUploaderService> ImageUploaderServices { get; } = CacheServices<ImageDestination, ImageUploaderService>();
+    public static Dictionary<TextDestination, TextUploaderService> TextUploaderServices { get; } = CacheServices<TextDestination, TextUploaderService>();
+    public static Dictionary<FileDestination, FileUploaderService> FileUploaderServices { get; } = CacheServices<FileDestination, FileUploaderService>();
+    public static Dictionary<UrlShortenerType, URLShortenerService> URLShortenerServices { get; } = CacheServices<UrlShortenerType, URLShortenerService>();
+    public static Dictionary<URLSharingServices, URLSharingService> URLSharingServices { get; } = CacheServices<URLSharingServices, URLSharingService>();
+
+    private static Dictionary<T, T2> CacheServices<T, T2>() where T2 : UploaderService<T>
     {
-        public static List<IUploaderService> AllServices { get; } = new List<IUploaderService>();
-        public static List<IGenericUploaderService> AllGenericUploaderServices { get; } = new List<IGenericUploaderService>();
-        public static Dictionary<ImageDestination, ImageUploaderService> ImageUploaderServices { get; } = CacheServices<ImageDestination, ImageUploaderService>();
-        public static Dictionary<TextDestination, TextUploaderService> TextUploaderServices { get; } = CacheServices<TextDestination, TextUploaderService>();
-        public static Dictionary<FileDestination, FileUploaderService> FileUploaderServices { get; } = CacheServices<FileDestination, FileUploaderService>();
-        public static Dictionary<UrlShortenerType, URLShortenerService> URLShortenerServices { get; } = CacheServices<UrlShortenerType, URLShortenerService>();
-        public static Dictionary<URLSharingServices, URLSharingService> URLSharingServices { get; } = CacheServices<URLSharingServices, URLSharingService>();
+        IEnumerable<T2> instances = HelpersLib.Helpers.Helpers.GetInstances<T2>();
 
-        private static Dictionary<T, T2> CacheServices<T, T2>() where T2 : UploaderService<T>
-        {
-            IEnumerable<T2> instances = Helpers.GetInstances<T2>();
+        AllServices.AddRange(instances.OfType<IUploaderService>());
+        AllGenericUploaderServices.AddRange(instances.OfType<IGenericUploaderService>());
 
-            AllServices.AddRange(instances.OfType<IUploaderService>());
-            AllGenericUploaderServices.AddRange(instances.OfType<IGenericUploaderService>());
-
-            return instances.ToDictionary(x => x.EnumValue, x => x);
-        }
+        return instances.ToDictionary(x => x.EnumValue, x => x);
     }
 }

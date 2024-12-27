@@ -23,86 +23,85 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class ImageFilesCache : IDisposable
 {
-    public class ImageFilesCache : IDisposable
+    private Dictionary<string, Bitmap> images = new();
+
+    public Bitmap GetImage(string filePath)
     {
-        private Dictionary<string, Bitmap> images = new Dictionary<string, Bitmap>();
+        Bitmap bmp = null;
 
-        public Bitmap GetImage(string filePath)
+        if (!string.IsNullOrEmpty(filePath))
         {
-            Bitmap bmp = null;
-
-            if (!string.IsNullOrEmpty(filePath))
+            if (images.ContainsKey(filePath))
             {
-                if (images.ContainsKey(filePath))
-                {
-                    return images[filePath];
-                }
+                return images[filePath];
+            }
 
-                bmp = ImageHelpers.LoadImage(filePath);
+            bmp = ImageHelpers.LoadImage(filePath);
+
+            if (bmp != null)
+            {
+                images.Add(filePath, bmp);
+            }
+        }
+
+        return bmp;
+    }
+
+    public Bitmap GetFileIconAsImage(string filePath, bool isSmallIcon = true)
+    {
+        Bitmap bmp = null;
+
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            if (images.ContainsKey(filePath))
+            {
+                return images[filePath];
+            }
+
+            using Icon icon = NativeMethods.GetFileIcon(filePath, isSmallIcon);
+            if (icon != null && icon.Width > 0 && icon.Height > 0)
+            {
+                bmp = icon.ToBitmap();
 
                 if (bmp != null)
                 {
                     images.Add(filePath, bmp);
                 }
             }
-
-            return bmp;
         }
 
-        public Bitmap GetFileIconAsImage(string filePath, bool isSmallIcon = true)
+        return bmp;
+    }
+
+    public void Clear()
+    {
+        if (images != null)
         {
-            Bitmap bmp = null;
+            Dispose();
 
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                if (images.ContainsKey(filePath))
-                {
-                    return images[filePath];
-                }
-
-                using (Icon icon = NativeMethods.GetFileIcon(filePath, isSmallIcon))
-                {
-                    if (icon != null && icon.Width > 0 && icon.Height > 0)
-                    {
-                        bmp = icon.ToBitmap();
-
-                        if (bmp != null)
-                        {
-                            images.Add(filePath, bmp);
-                        }
-                    }
-                }
-            }
-
-            return bmp;
+            images.Clear();
         }
+    }
 
-        public void Clear()
+    public void Dispose()
+    {
+        if (images != null)
         {
-            if (images != null)
+            foreach (Bitmap bmp in images.Values)
             {
-                Dispose();
-
-                images.Clear();
-            }
-        }
-
-        public void Dispose()
-        {
-            if (images != null)
-            {
-                foreach (Bitmap bmp in images.Values)
+                if (bmp != null)
                 {
-                    if (bmp != null)
-                    {
-                        bmp.Dispose();
-                    }
+                    bmp.Dispose();
                 }
             }
         }

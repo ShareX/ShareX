@@ -22,6 +22,8 @@
 */
 
 #endregion License Information (GPL v3)
+using ShareX.HelpersLib.Controls;
+
 namespace ShareX.UploadersLib
 {
     partial class UploadersConfigForm
@@ -204,7 +206,7 @@ namespace ShareX.UploadersLib
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
             this.lblGoogleDriveFolderID = new System.Windows.Forms.Label();
-            this.lvGoogleDriveFoldersList = new ShareX.HelpersLib.MyListView();
+            this.lvGoogleDriveFoldersList = new ShareX.HelpersLib.Controls.MyListView();
             this.chGoogleDriveTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chGoogleDriveDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnGoogleDriveRefreshFolders = new System.Windows.Forms.Button();
@@ -223,7 +225,7 @@ namespace ShareX.UploadersLib
             this.cbBoxShare = new System.Windows.Forms.CheckBox();
             this.cbBoxShareAccessLevel = new System.Windows.Forms.ComboBox();
             this.lblBoxShareAccessLevel = new System.Windows.Forms.Label();
-            this.lvBoxFolders = new ShareX.HelpersLib.MyListView();
+            this.lvBoxFolders = new ShareX.HelpersLib.Controls.MyListView();
             this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblBoxFolderID = new System.Windows.Forms.Label();
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
@@ -387,7 +389,7 @@ namespace ShareX.UploadersLib
             this.btnSeafileLibraryPasswordValidate = new System.Windows.Forms.Button();
             this.txtSeafileLibraryPassword = new System.Windows.Forms.TextBox();
             this.lblSeafileLibraryPassword = new System.Windows.Forms.Label();
-            this.lvSeafileLibraries = new ShareX.HelpersLib.MyListView();
+            this.lvSeafileLibraries = new ShareX.HelpersLib.Controls.MyListView();
             this.colSeafileLibraryName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSeafileLibrarySize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSeafileLibraryEncrypted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -548,7 +550,7 @@ namespace ShareX.UploadersLib
             this.cbImgurDirectLink = new System.Windows.Forms.CheckBox();
             this.atcImgurAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new ShareX.UploadersLib.OAuthControl();
-            this.lvImgurAlbumList = new ShareX.HelpersLib.MyListView();
+            this.lvImgurAlbumList = new ShareX.HelpersLib.Controls.MyListView();
             this.chImgurID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chImgurTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chImgurDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -4905,7 +4907,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbBoxShare;
         private System.Windows.Forms.ComboBox cbBoxShareAccessLevel;
         private System.Windows.Forms.Label lblBoxShareAccessLevel;
-        private ShareX.HelpersLib.MyListView lvBoxFolders;
+        private MyListView lvBoxFolders;
         private System.Windows.Forms.ColumnHeader chBoxFoldersName;
         private System.Windows.Forms.Label lblBoxFolderID;
         private System.Windows.Forms.Button btnBoxRefreshFolders;
@@ -4960,7 +4962,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TabPage tpImageUploaders;
         private System.Windows.Forms.TabControl tcImageUploaders;
         private OAuthControl oauth2Imgur;
-        private ShareX.HelpersLib.MyListView lvImgurAlbumList;
+        private MyListView lvImgurAlbumList;
         private System.Windows.Forms.ColumnHeader chImgurID;
         private System.Windows.Forms.ColumnHeader chImgurTitle;
         private System.Windows.Forms.ColumnHeader chImgurDescription;
@@ -5001,7 +5003,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblBitlyDomain;
         private System.Windows.Forms.TextBox txtGoogleDriveFolderID;
         private System.Windows.Forms.Label lblGoogleDriveFolderID;
-        private ShareX.HelpersLib.MyListView lvGoogleDriveFoldersList;
+        private MyListView lvGoogleDriveFoldersList;
         private System.Windows.Forms.ColumnHeader chGoogleDriveTitle;
         private System.Windows.Forms.Button btnGoogleDriveRefreshFolders;
         private System.Windows.Forms.ColumnHeader chGoogleDriveDescription;
@@ -5112,7 +5114,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button txtSeafileUploadLocationRefresh;
         private System.Windows.Forms.Label lblSeafileSelectLibrary;
         private System.Windows.Forms.Label lblSeafileWritePermNotif;
-        private HelpersLib.MyListView lvSeafileLibraries;
+        private MyListView lvSeafileLibraries;
         private System.Windows.Forms.ColumnHeader colSeafileLibraryName;
         private System.Windows.Forms.Button btnSeafilePathValidate;
         private System.Windows.Forms.TextBox txtSeafileDirectoryPath;

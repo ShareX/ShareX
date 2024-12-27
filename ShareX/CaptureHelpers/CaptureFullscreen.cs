@@ -23,19 +23,17 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System.Drawing;
 
-namespace ShareX
+namespace ShareX.CaptureHelpers;
+
+public class CaptureFullscreen : CaptureBase
 {
-    public class CaptureFullscreen : CaptureBase
+    protected override TaskMetadata Execute(TaskSettings taskSettings)
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
-        {
-            Rectangle rect = CaptureHelpers.GetScreenWorkingArea();
-            TaskMetadata metadata = CreateMetadata(rect);
-            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
-            return metadata;
-        }
+        Rectangle rect = HelpersLib.Helpers.CaptureHelpers.GetScreenWorkingArea();
+        TaskMetadata metadata = CreateMetadata(rect);
+        metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
+        return metadata;
     }
 }

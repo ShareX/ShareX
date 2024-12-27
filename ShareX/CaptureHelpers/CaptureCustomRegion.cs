@@ -25,16 +25,15 @@
 
 using System.Drawing;
 
-namespace ShareX
+namespace ShareX.CaptureHelpers;
+
+public class CaptureCustomRegion : CaptureBase
 {
-    public class CaptureCustomRegion : CaptureBase
+    protected override TaskMetadata Execute(TaskSettings taskSettings)
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
-        {
-            Rectangle rect = taskSettings.CaptureSettings.CaptureCustomRegion;
-            TaskMetadata metadata = CreateMetadata(rect);
-            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
-            return metadata;
-        }
+        Rectangle rect = taskSettings.CaptureSettings.CaptureCustomRegion;
+        TaskMetadata metadata = CreateMetadata(rect);
+        metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
+        return metadata;
     }
 }

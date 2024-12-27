@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class QuickTaskMenuEditorForm
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuickTaskMenuEditorForm));
-            this.lvPresets = new ShareX.HelpersLib.MyListView();
+            this.lvPresets = new ShareX.HelpersLib.Controls.MyListView();
             this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -54,7 +56,7 @@
             this.lvPresets.Name = "lvPresets";
             this.lvPresets.UseCompatibleStateImageBehavior = false;
             this.lvPresets.View = System.Windows.Forms.View.Details;
-            this.lvPresets.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvPresets_ItemMoved);
+            this.lvPresets.ItemMoved += new MyListView.ListViewItemMovedEventHandler(this.lvPresets_ItemMoved);
             this.lvPresets.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvPresets_MouseDoubleClick);
             // 
             // chName
@@ -122,7 +124,7 @@
 
         #endregion
 
-        private HelpersLib.MyListView lvPresets;
+        private MyListView lvPresets;
         private System.Windows.Forms.ColumnHeader chName;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;

@@ -24,32 +24,33 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+internal class Sepia : ImageEffect
 {
-    internal class Sepia : ImageEffect
+    [DefaultValue(1f)]
+    public float Value { get; set; }
+
+    public Sepia()
     {
-        [DefaultValue(1f)]
-        public float Value { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        public Sepia()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        using (bmp)
         {
-            this.ApplyDefaultPropertyValues();
+            return ColorMatrixManager.Sepia(Value).Apply(bmp);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            using (bmp)
-            {
-                return ColorMatrixManager.Sepia(Value).Apply(bmp);
-            }
-        }
-
-        protected override string GetSummary()
-        {
-            return Value.ToString();
-        }
+    protected override string GetSummary()
+    {
+        return Value.ToString();
     }
 }

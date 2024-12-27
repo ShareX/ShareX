@@ -23,128 +23,102 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Colors;
+
+public class ColorSlider : ColorUserControl
 {
-    public class ColorSlider : ColorUserControl
+    public ColorSlider()
     {
-        public ColorSlider()
+        Initialize();
+    }
+
+    protected override void Initialize()
+    {
+        Name = "ColorSlider";
+        ClientSize = new Size(30, 256);
+        base.Initialize();
+    }
+
+    protected override void DrawCrosshair(Graphics g)
+    {
+        DrawCrosshair(g, Pens.Black, 3, 11);
+        DrawCrosshair(g, Pens.White, 4, 9);
+    }
+
+    private void DrawCrosshair(Graphics g, Pen pen, int offset, int height) => g.DrawRectangleProper(pen, new Rectangle(offset, lastPos.Y - height / 2, clientWidth - offset * 2, height));
+
+    // Y = Hue 360 -> 0
+    protected override void DrawHue()
+    {
+        using Graphics g = Graphics.FromImage(bmp);
+        HSB color = new(0.0, 1.0, 1.0, SelectedColor.RGBA.Alpha);
+
+        for (int y = 0; y < clientHeight; y++)
         {
-            Initialize();
+            color.Hue = 1.0 - (double)y / (clientHeight - 1);
+
+            using Pen pen = new(color);
+            g.DrawLine(pen, 0, y, clientWidth, y);
         }
+    }
 
-        protected override void Initialize()
-        {
-            Name = "ColorSlider";
-            ClientSize = new Size(30, 256);
-            base.Initialize();
-        }
+    // Y = Saturation 100 -> 0
+    protected override void DrawSaturation()
+    {
+        using Graphics g = Graphics.FromImage(bmp);
+        HSB start = new(SelectedColor.HSB.Hue, 1.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
+        HSB end = new(SelectedColor.HSB.Hue, 0.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
 
-        protected override void DrawCrosshair(Graphics g)
-        {
-            DrawCrosshair(g, Pens.Black, 3, 11);
-            DrawCrosshair(g, Pens.White, 4, 9);
-        }
+        using LinearGradientBrush brush = new(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical);
+        g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
+    }
 
-        private void DrawCrosshair(Graphics g, Pen pen, int offset, int height)
-        {
-            g.DrawRectangleProper(pen, new Rectangle(offset, lastPos.Y - (height / 2), clientWidth - (offset * 2), height));
-        }
+    // Y = Brightness 100 -> 0
+    protected override void DrawBrightness()
+    {
+        using Graphics g = Graphics.FromImage(bmp);
+        HSB start = new(SelectedColor.HSB.Hue, SelectedColor.HSB.Saturation, 1.0, SelectedColor.RGBA.Alpha);
+        HSB end = new(SelectedColor.HSB.Hue, SelectedColor.HSB.Saturation, 0.0, SelectedColor.RGBA.Alpha);
 
-        // Y = Hue 360 -> 0
-        protected override void DrawHue()
-        {
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                HSB color = new HSB(0.0, 1.0, 1.0, SelectedColor.RGBA.Alpha);
+        using LinearGradientBrush brush = new(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical);
+        g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
+    }
 
-                for (int y = 0; y < clientHeight; y++)
-                {
-                    color.Hue = 1.0 - ((double)y / (clientHeight - 1));
+    // Y = Red 255 -> 0
+    protected override void DrawRed()
+    {
+        using Graphics g = Graphics.FromImage(bmp);
+        RGBA start = new(255, SelectedColor.RGBA.Green, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
+        RGBA end = new(0, SelectedColor.RGBA.Green, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
 
-                    using (Pen pen = new Pen(color))
-                    {
-                        g.DrawLine(pen, 0, y, clientWidth, y);
-                    }
-                }
-            }
-        }
+        using LinearGradientBrush brush = new(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical);
+        g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
+    }
 
-        // Y = Saturation 100 -> 0
-        protected override void DrawSaturation()
-        {
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                HSB start = new HSB(SelectedColor.HSB.Hue, 1.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
-                HSB end = new HSB(SelectedColor.HSB.Hue, 0.0, SelectedColor.HSB.Brightness, SelectedColor.RGBA.Alpha);
+    // Y = Green 255 -> 0
+    protected override void DrawGreen()
+    {
+        using Graphics g = Graphics.FromImage(bmp);
+        RGBA start = new(SelectedColor.RGBA.Red, 255, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
+        RGBA end = new(SelectedColor.RGBA.Red, 0, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
 
-                using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical))
-                {
-                    g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
-                }
-            }
-        }
+        using LinearGradientBrush brush = new(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical);
+        g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
+    }
 
-        // Y = Brightness 100 -> 0
-        protected override void DrawBrightness()
-        {
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                HSB start = new HSB(SelectedColor.HSB.Hue, SelectedColor.HSB.Saturation, 1.0, SelectedColor.RGBA.Alpha);
-                HSB end = new HSB(SelectedColor.HSB.Hue, SelectedColor.HSB.Saturation, 0.0, SelectedColor.RGBA.Alpha);
+    // Y = Blue 255 -> 0
+    protected override void DrawBlue()
+    {
+        using Graphics g = Graphics.FromImage(bmp);
+        RGBA start = new(SelectedColor.RGBA.Red, SelectedColor.RGBA.Green, 255, SelectedColor.RGBA.Alpha);
+        RGBA end = new(SelectedColor.RGBA.Red, SelectedColor.RGBA.Green, 0, SelectedColor.RGBA.Alpha);
 
-                using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical))
-                {
-                    g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
-                }
-            }
-        }
-
-        // Y = Red 255 -> 0
-        protected override void DrawRed()
-        {
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                RGBA start = new RGBA(255, SelectedColor.RGBA.Green, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
-                RGBA end = new RGBA(0, SelectedColor.RGBA.Green, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
-
-                using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical))
-                {
-                    g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
-                }
-            }
-        }
-
-        // Y = Green 255 -> 0
-        protected override void DrawGreen()
-        {
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                RGBA start = new RGBA(SelectedColor.RGBA.Red, 255, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
-                RGBA end = new RGBA(SelectedColor.RGBA.Red, 0, SelectedColor.RGBA.Blue, SelectedColor.RGBA.Alpha);
-
-                using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical))
-                {
-                    g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
-                }
-            }
-        }
-
-        // Y = Blue 255 -> 0
-        protected override void DrawBlue()
-        {
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                RGBA start = new RGBA(SelectedColor.RGBA.Red, SelectedColor.RGBA.Green, 255, SelectedColor.RGBA.Alpha);
-                RGBA end = new RGBA(SelectedColor.RGBA.Red, SelectedColor.RGBA.Green, 0, SelectedColor.RGBA.Alpha);
-
-                using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical))
-                {
-                    g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
-                }
-            }
-        }
+        using LinearGradientBrush brush = new(new Rectangle(0, 0, clientWidth, clientHeight), start, end, LinearGradientMode.Vertical);
+        g.FillRectangle(brush, new Rectangle(0, 0, clientWidth, clientHeight));
     }
 }

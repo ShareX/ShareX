@@ -23,83 +23,83 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class ToolStripButtonColorAnimation : ToolStripButton
 {
-    public class ToolStripButtonColorAnimation : ToolStripButton
+    [DefaultValue(typeof(Color), "ControlText")]
+    public Color FromColor { get; set; }
+
+    [DefaultValue(typeof(Color), "Red")]
+    public Color ToColor { get; set; }
+
+    [DefaultValue(1f)]
+    public float AnimationSpeed { get; set; }
+
+    private Timer timer;
+    private float progress;
+    private float direction = 1;
+    private float speed;
+
+    public ToolStripButtonColorAnimation()
     {
-        [DefaultValue(typeof(Color), "ControlText")]
-        public Color FromColor { get; set; }
+        timer = new Timer();
+        timer.Interval = 100;
+        timer.Tick += timer_Tick;
 
-        [DefaultValue(typeof(Color), "Red")]
-        public Color ToColor { get; set; }
+        FromColor = SystemColors.ControlText;
+        ToColor = Color.Red;
+        AnimationSpeed = 1f;
+    }
 
-        [DefaultValue(1f)]
-        public float AnimationSpeed { get; set; }
+    public void StartAnimation()
+    {
+        speed = AnimationSpeed / (1000f / timer.Interval);
+        timer.Start();
+    }
 
-        private Timer timer;
-        private float progress;
-        private float direction = 1;
-        private float speed;
+    public void StopAnimation()
+    {
+        timer.Stop();
+    }
 
-        public ToolStripButtonColorAnimation()
+    public void ResetAnimation()
+    {
+        StopAnimation();
+        ForeColor = FromColor;
+    }
+
+    private void timer_Tick(object sender, EventArgs e)
+    {
+        progress += direction * speed;
+
+        if (progress < 0)
         {
-            timer = new Timer();
-            timer.Interval = 100;
-            timer.Tick += timer_Tick;
-
-            FromColor = SystemColors.ControlText;
-            ToColor = Color.Red;
-            AnimationSpeed = 1f;
+            progress = 0;
+            direction = -direction;
+        } else if (progress > 1)
+        {
+            progress = 1;
+            direction = -direction;
         }
 
-        public void StartAnimation()
+        ForeColor = ColorHelpers.Lerp(FromColor, ToColor, progress);
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (timer != null)
         {
-            speed = AnimationSpeed / (1000f / timer.Interval);
-            timer.Start();
+            timer.Dispose();
         }
 
-        public void StopAnimation()
-        {
-            timer.Stop();
-        }
-
-        public void ResetAnimation()
-        {
-            StopAnimation();
-            ForeColor = FromColor;
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            progress += direction * speed;
-
-            if (progress < 0)
-            {
-                progress = 0;
-                direction = -direction;
-            }
-            else if (progress > 1)
-            {
-                progress = 1;
-                direction = -direction;
-            }
-
-            ForeColor = ColorHelpers.Lerp(FromColor, ToColor, progress);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (timer != null)
-            {
-                timer.Dispose();
-            }
-
-            base.Dispose(disposing);
-        }
+        base.Dispose(disposing);
     }
 }

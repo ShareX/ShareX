@@ -234,18 +234,6 @@
   <data name="tcMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;tpPreview.Name" xml:space="preserve">
-    <value>tpPreview</value>
-  </data>
-  <data name="&gt;&gt;tpPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpPreview.Parent" xml:space="preserve">
-    <value>tcMain</value>
-  </data>
-  <data name="&gt;&gt;tpPreview.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;tpSettings.Name" xml:space="preserve">
     <value>tpSettings</value>
   </data>
@@ -291,18 +279,6 @@
   <data name="&gt;&gt;txtPreview.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;wbPreview.Name" xml:space="preserve">
-    <value>wbPreview</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.Parent" xml:space="preserve">
-    <value>tpPreview</value>
-  </data>
-  <data name="&gt;&gt;wbPreview.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="tpPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
@@ -345,30 +321,6 @@
   <data name="txtPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtPreview.Name" xml:space="preserve">
-    <value>txtPreview</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.Parent" xml:space="preserve">
-    <value>tpPreview</value>
-  </data>
-  <data name="&gt;&gt;txtPreview.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
-    <value>pgSettings</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.Parent" xml:space="preserve">
-    <value>tpSettings</value>
-  </data>
-  <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="tpSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
@@ -380,18 +332,6 @@
   </data>
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Settings</value>
-  </data>
-  <data name="&gt;&gt;tpSettings.Name" xml:space="preserve">
-    <value>tpSettings</value>
-  </data>
-  <data name="&gt;&gt;tpSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpSettings.Parent" xml:space="preserve">
-    <value>tcMain</value>
-  </data>
-  <data name="&gt;&gt;tpSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

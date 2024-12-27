@@ -23,6 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Colors;
+using ShareX.HelpersLib.Extensions;
+
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -30,54 +33,48 @@ using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class GradientEditor : UITypeEditor
 {
-    public class GradientEditor : UITypeEditor
+    public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
     {
-        public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
+        return UITypeEditorEditStyle.Modal;
+    }
+
+    public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+    {
+        if (value.GetType() != typeof(GradientInfo))
         {
-            return UITypeEditorEditStyle.Modal;
-        }
-
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
-        {
-            if (value.GetType() != typeof(GradientInfo))
-            {
-                return value;
-            }
-
-            IWindowsFormsEditorService svc = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
-
-            if (svc != null)
-            {
-                GradientInfo gradient = (GradientInfo)value;
-
-                using (GradientPickerForm form = new GradientPickerForm(gradient.Copy()))
-                {
-                    if (svc.ShowDialog(form) == DialogResult.OK)
-                    {
-                        return form.Gradient;
-                    }
-                }
-            }
-
             return value;
         }
 
-        public override bool GetPaintValueSupported(ITypeDescriptorContext context)
+        IWindowsFormsEditorService svc = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
+
+        if (svc != null)
         {
-            return true;
+            GradientInfo gradient = (GradientInfo)value;
+
+            using GradientPickerForm form = new(gradient.Copy());
+            if (svc.ShowDialog(form) == DialogResult.OK)
+            {
+                return form.Gradient;
+            }
         }
 
-        public override void PaintValue(PaintValueEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            GradientInfo gradient = (GradientInfo)e.Value;
-            if (gradient != null)
-            {
-                gradient.Draw(g, e.Bounds);
-            }
-            g.DrawRectangleProper(Pens.Black, e.Bounds);
-        }
+        return value;
+    }
+
+    public override bool GetPaintValueSupported(ITypeDescriptorContext context)
+    {
+        return true;
+    }
+
+    public override void PaintValue(PaintValueEventArgs e)
+    {
+        Graphics g = e.Graphics;
+        GradientInfo gradient = (GradientInfo)e.Value;
+        gradient?.Draw(g, e.Bounds);
+        g.DrawRectangleProper(Pens.Black, e.Bounds);
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace ShareX.ScreenCaptureLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.ScreenCaptureLib
 {
     partial class TextDrawingInputBox
     {
@@ -36,7 +38,7 @@
             this.cbFonts = new System.Windows.Forms.ComboBox();
             this.lblTextSize = new System.Windows.Forms.Label();
             this.nudTextSize = new System.Windows.Forms.NumericUpDown();
-            this.btnTextColor = new ShareX.HelpersLib.ColorButton();
+            this.btnTextColor = new ShareX.HelpersLib.Controls.ColorButton();
             this.btnGradient = new System.Windows.Forms.Button();
             this.cbBold = new System.Windows.Forms.CheckBox();
             this.cbItalic = new System.Windows.Forms.CheckBox();
@@ -58,10 +60,10 @@
             this.tsmiEnableGradient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSecondColor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGradientMode = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsrbmiGradientHorizontal = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
-            this.tsrbmiGradientVertical = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
-            this.tsrbmiGradientForwardDiagonal = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
-            this.tsrbmiGradientBackwardDiagonal = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
+            this.tsrbmiGradientHorizontal = new ShareX.HelpersLib.Controls.ToolStripRadioButtonMenuItem();
+            this.tsrbmiGradientVertical = new ShareX.HelpersLib.Controls.ToolStripRadioButtonMenuItem();
+            this.tsrbmiGradientForwardDiagonal = new ShareX.HelpersLib.Controls.ToolStripRadioButtonMenuItem();
+            this.tsrbmiGradientBackwardDiagonal = new ShareX.HelpersLib.Controls.ToolStripRadioButtonMenuItem();
             this.ttTextInput = new System.Windows.Forms.ToolTip(this.components);
             this.btnSwapEnterKey = new System.Windows.Forms.Button();
             this.flpProperties.SuspendLayout();
@@ -142,7 +144,7 @@
             this.btnTextColor.Name = "btnTextColor";
             this.ttTextInput.SetToolTip(this.btnTextColor, resources.GetString("btnTextColor.ToolTip"));
             this.btnTextColor.UseVisualStyleBackColor = true;
-            this.btnTextColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnTextColor_ColorChanged);
+            this.btnTextColor.ColorChanged += new ColorButton.ColorChangedEventHandler(this.btnTextColor_ColorChanged);
             // 
             // btnGradient
             // 
@@ -381,7 +383,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtInput;
-        private HelpersLib.ColorButton btnTextColor;
+        private ColorButton btnTextColor;
         private System.Windows.Forms.FlowLayoutPanel flpProperties;
         private System.Windows.Forms.Label lblTextSize;
         private System.Windows.Forms.NumericUpDown nudTextSize;
@@ -408,10 +410,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiEnableGradient;
         private System.Windows.Forms.ToolStripMenuItem tsmiSecondColor;
         private System.Windows.Forms.ToolStripMenuItem tsmiGradientMode;
-        private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientHorizontal;
-        private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientVertical;
-        private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientForwardDiagonal;
-        private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientBackwardDiagonal;
+        private ToolStripRadioButtonMenuItem tsrbmiGradientHorizontal;
+        private ToolStripRadioButtonMenuItem tsrbmiGradientVertical;
+        private ToolStripRadioButtonMenuItem tsrbmiGradientForwardDiagonal;
+        private ToolStripRadioButtonMenuItem tsrbmiGradientBackwardDiagonal;
         private System.Windows.Forms.ToolTip ttTextInput;
         private System.Windows.Forms.Button btnSwapEnterKey;
     }

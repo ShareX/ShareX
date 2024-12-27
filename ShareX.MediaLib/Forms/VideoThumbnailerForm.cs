@@ -24,86 +24,90 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.MediaLib.Properties;
+
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public partial class VideoThumbnailerForm : Form
 {
-    public partial class VideoThumbnailerForm : Form
+    public event Action<List<VideoThumbnailInfo>> ThumbnailsTaken;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string FFmpegPath { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public VideoThumbnailOptions Options { get; set; }
+
+    public VideoThumbnailerForm(string ffmpegPath, VideoThumbnailOptions options)
     {
-        public event Action<List<VideoThumbnailInfo>> ThumbnailsTaken;
+        FFmpegPath = ffmpegPath;
+        Options = options;
 
-        public string FFmpegPath { get; set; }
-        public VideoThumbnailOptions Options { get; set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public VideoThumbnailerForm(string ffmpegPath, VideoThumbnailOptions options)
+        txtMediaPath.Text = Options.LastVideoPath ?? "";
+        pgOptions.SelectedObject = Options;
+    }
+
+    private async void btnStart_Click(object sender, EventArgs e)
+    {
+        string mediaPath = txtMediaPath.Text;
+
+        if (File.Exists(mediaPath) && File.Exists(FFmpegPath))
         {
-            FFmpegPath = ffmpegPath;
-            Options = options;
+            Options.LastVideoPath = mediaPath;
 
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+            pbProgress.Value = 0;
+            pbProgress.Maximum = Options.ThumbnailCount;
+            pbProgress.Visible = true;
+            btnStart.Visible = false;
 
-            txtMediaPath.Text = Options.LastVideoPath ?? "";
-            pgOptions.SelectedObject = Options;
-        }
+            List<VideoThumbnailInfo> thumbnails = null;
 
-        private async void btnStart_Click(object sender, EventArgs e)
-        {
-            string mediaPath = txtMediaPath.Text;
-
-            if (File.Exists(mediaPath) && File.Exists(FFmpegPath))
+            await Task.Run(() =>
             {
-                Options.LastVideoPath = mediaPath;
-
-                pbProgress.Value = 0;
-                pbProgress.Maximum = Options.ThumbnailCount;
-                pbProgress.Visible = true;
-                btnStart.Visible = false;
-
-                List<VideoThumbnailInfo> thumbnails = null;
-
-                await Task.Run(() =>
+                try
                 {
-                    try
-                    {
-                        VideoThumbnailer thumbnailer = new VideoThumbnailer(FFmpegPath, Options);
-                        thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
-                        thumbnails = thumbnailer.TakeThumbnails(mediaPath);
-                    }
-                    catch (Exception ex)
-                    {
-                        ex.ShowError();
-                    }
-                });
-
-                if (thumbnails != null)
+                    VideoThumbnailer thumbnailer = new(FFmpegPath, Options);
+                    thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
+                    thumbnails = thumbnailer.TakeThumbnails(mediaPath);
+                } catch (Exception ex)
                 {
-                    OnThumbnailsTaken(thumbnails);
+                    ex.ShowError();
                 }
+            });
 
-                btnStart.Visible = true;
-                pbProgress.Visible = false;
+            if (thumbnails != null)
+            {
+                OnThumbnailsTaken(thumbnails);
             }
-        }
 
-        private void Thumbnailer_ProgressChanged(int current, int length)
-        {
-            this.InvokeSafe(() => pbProgress.Value = current);
+            btnStart.Visible = true;
+            pbProgress.Visible = false;
         }
+    }
 
-        protected void OnThumbnailsTaken(List<VideoThumbnailInfo> thumbnails)
-        {
-            ThumbnailsTaken?.Invoke(thumbnails);
-        }
+    private void Thumbnailer_ProgressChanged(int current, int length)
+    {
+        this.InvokeSafe(() => pbProgress.Value = current);
+    }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            FileHelpers.BrowseFile(Resources.VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file, txtMediaPath);
-        }
+    protected void OnThumbnailsTaken(List<VideoThumbnailInfo> thumbnails)
+    {
+        ThumbnailsTaken?.Invoke(thumbnails);
+    }
+
+    private void btnBrowse_Click(object sender, EventArgs e)
+    {
+        FileHelpers.BrowseFile(Resources.VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file, txtMediaPath);
     }
 }

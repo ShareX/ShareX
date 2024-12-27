@@ -24,126 +24,124 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.Settings;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Specialized;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class KuttURLShortenerService : URLShortenerService
 {
-    public class KuttURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Kutt;
+
+    public override Image ServiceImage => Resources.Kutt;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Kutt;
-
-        public override Image ServiceImage => Resources.Kutt;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return !string.IsNullOrEmpty(config.KuttSettings.APIKey);
-        }
-
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new KuttURLShortener(config.KuttSettings);
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpKutt;
+        return !string.IsNullOrEmpty(config.KuttSettings.APIKey);
     }
 
-    public sealed class KuttURLShortener : URLShortener
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public KuttSettings Settings { get; set; }
-
-        public KuttURLShortener(KuttSettings settings)
-        {
-            Settings = settings;
-        }
-
-        public override UploadResult ShortenURL(string url)
-        {
-            UploadResult result = new UploadResult { URL = url };
-            result.ShortenedURL = Submit(url);
-            return result;
-        }
-
-        public string Submit(string url)
-        {
-            if (string.IsNullOrEmpty(Settings.Host))
-            {
-                Settings.Host = "https://kutt.it";
-            }
-            else
-            {
-                Settings.Host = URLHelpers.FixPrefix(Settings.Host);
-            }
-
-            string requestURL = URLHelpers.CombineURL(Settings.Host, "/api/v2/links");
-
-            KuttShortenLinkBody body = new KuttShortenLinkBody()
-            {
-                target = url,
-                password = Settings.Password,
-                customurl = null,
-                reuse = Settings.Reuse,
-                domain = Settings.Domain
-            };
-
-            string json = JsonConvert.SerializeObject(body);
-
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("X-API-KEY", Settings.APIKey);
-
-            string response = SendRequest(HttpMethod.POST, requestURL, json, RequestHelpers.ContentTypeJSON, headers: headers);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                KuttShortenLinkResponse shortenLinkResponse = JsonConvert.DeserializeObject<KuttShortenLinkResponse>(response);
-
-                if (shortenLinkResponse != null)
-                {
-                    return shortenLinkResponse.link;
-                }
-            }
-
-            return null;
-        }
-
-        private class KuttShortenLinkBody
-        {
-            /// <summary>Original long URL to be shortened.</summary>
-            public string target { get; set; }
-
-            /// <summary>(optional) Set a password.</summary>
-            public string password { get; set; }
-
-            /// <summary>(optional) Set a custom URL.</summary>
-            public string customurl { get; set; }
-
-            /// <summary>(optional) If a URL with the specified target exists returns it, otherwise will send a new shortened URL.</summary>
-            public bool reuse { get; set; }
-
-            public string domain { get; set; }
-        }
-
-        private class KuttShortenLinkResponse
-        {
-            /// <summary>Unique ID of the URL</summary>
-            public string id { get; set; }
-
-            /// <summary>The shortened link</summary>
-            public string link { get; set; }
-        }
+        return new KuttURLShortener(config.KuttSettings);
     }
 
-    public class KuttSettings
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpKutt;
+}
+
+public sealed class KuttURLShortener : URLShortener
+{
+    public KuttSettings Settings { get; set; }
+
+    public KuttURLShortener(KuttSettings settings)
     {
-        public string Host { get; set; } = "https://kutt.it";
-        [JsonEncrypt]
-        public string APIKey { get; set; }
-        [JsonEncrypt]
-        public string Password { get; set; }
-        public bool Reuse { get; set; }
-        public string Domain { get; set; }
+        Settings = settings;
     }
+
+    public override UploadResult ShortenURL(string url)
+    {
+        UploadResult result = new() { URL = url };
+        result.ShortenedURL = Submit(url);
+        return result;
+    }
+
+    public string Submit(string url)
+    {
+        Settings.Host = string.IsNullOrEmpty(Settings.Host) ? "https://kutt.it" : URLHelpers.FixPrefix(Settings.Host);
+
+        string requestURL = URLHelpers.CombineURL(Settings.Host, "/api/v2/links");
+
+        KuttShortenLinkBody body = new()
+        {
+            target = url,
+            password = Settings.Password,
+            customurl = null,
+            reuse = Settings.Reuse,
+            domain = Settings.Domain
+        };
+
+        string json = JsonConvert.SerializeObject(body);
+
+        NameValueCollection headers = new();
+        headers.Add("X-API-KEY", Settings.APIKey);
+
+        string response = SendRequest(HttpMethod.POST, requestURL, json, RequestHelpers.ContentTypeJSON, headers: headers);
+
+        if (!string.IsNullOrEmpty(response))
+        {
+            KuttShortenLinkResponse shortenLinkResponse = JsonConvert.DeserializeObject<KuttShortenLinkResponse>(response);
+
+            if (shortenLinkResponse != null)
+            {
+                return shortenLinkResponse.link;
+            }
+        }
+
+        return null;
+    }
+
+    private class KuttShortenLinkBody
+    {
+        /// <summary>Original long URL to be shortened.</summary>
+        public string target { get; set; }
+
+        /// <summary>(optional) Set a password.</summary>
+        public string password { get; set; }
+
+        /// <summary>(optional) Set a custom URL.</summary>
+        public string customurl { get; set; }
+
+        /// <summary>(optional) If a URL with the specified target exists returns it, otherwise will send a new shortened URL.</summary>
+        public bool reuse { get; set; }
+
+        public string domain { get; set; }
+    }
+
+    private class KuttShortenLinkResponse
+    {
+        /// <summary>Unique ID of the URL</summary>
+        public string id { get; set; }
+
+        /// <summary>The shortened link</summary>
+        public string link { get; set; }
+    }
+}
+
+public class KuttSettings
+{
+    public string Host { get; set; } = "https://kutt.it";
+    [JsonEncrypt]
+    public string APIKey { get; set; }
+    [JsonEncrypt]
+    public string Password { get; set; }
+    public bool Reuse { get; set; }
+    public string Domain { get; set; }
 }

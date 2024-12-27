@@ -24,59 +24,62 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UpdateChecker;
 using ShareX.Properties;
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX
-{
-    public partial class AboutForm : Form
-    {
-        private EasterEggAboutAnimation easterEgg;
-        private bool checkUpdate = false;
+namespace ShareX;
 
-        public AboutForm()
-        {
-            InitializeComponent();
-            lblProductName.Text = Program.Title;
-            pbLogo.Image = ShareXResources.Logo;
-            ShareXResources.ApplyTheme(this, true);
+public partial class AboutForm : Form
+{
+    private EasterEggAboutAnimation easterEgg;
+    private bool checkUpdate = false;
+
+    public AboutForm()
+    {
+        InitializeComponent();
+        lblProductName.Text = Program.Title;
+        pbLogo.Image = ShareXResources.Logo;
+        ShareXResources.ApplyTheme(this, true);
 
 #if STEAM
-            uclUpdate.Visible = false;
-            lblBuild.Text = "Steam build";
-            lblBuild.Visible = true;
+        uclUpdate.Visible = false;
+        lblBuild.Text = "Steam build";
+        lblBuild.Visible = true;
 #elif MicrosoftStore
-            uclUpdate.Visible = false;
-            lblBuild.Text = "Microsoft Store build";
-            lblBuild.Visible = true;
+        uclUpdate.Visible = false;
+        lblBuild.Text = "Microsoft Store build";
+        lblBuild.Visible = true;
 #else
-            if (!SystemOptions.DisableUpdateCheck)
-            {
-                uclUpdate.UpdateLoadingImage();
-                checkUpdate = true;
-            }
-            else
-            {
-                uclUpdate.Visible = false;
-            }
+        if (!SystemOptions.DisableUpdateCheck)
+        {
+            uclUpdate.UpdateLoadingImage();
+            checkUpdate = true;
+        } else
+        {
+            uclUpdate.Visible = false;
+        }
 #endif
 
-            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Links, FontStyle.Bold, 13);
-            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Website}: {Links.Website}
+        rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Links, FontStyle.Bold, 13);
+        rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Website}: {Links.Website}
 {Resources.AboutForm_AboutForm_Project_page}: {Links.GitHub}
 {Resources.AboutForm_AboutForm_Changelog}: {Links.Changelog}
 {Resources.AboutForm_AboutForm_Privacy_policy}: {Links.PrivacyPolicy}
 ", FontStyle.Regular);
 
-            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Team, FontStyle.Bold, 13);
-            rtbInfo.AppendLine($@"Jaex: {Links.Jaex}
+        rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Team, FontStyle.Bold, 13);
+        rtbInfo.AppendLine($@"Jaex: {Links.Jaex}
 McoreD: {Links.McoreD}
 ", FontStyle.Regular);
 
-            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Translators, FontStyle.Bold, 13);
-            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex
+        rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Translators, FontStyle.Bold, 13);
+        rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex
 {Resources.AboutForm_AboutForm_Language_de}: https://github.com/Starbug2 & https://github.com/Kaeltis
 {Resources.AboutForm_AboutForm_Language_fr}: https://github.com/nwies & https://github.com/Shadorc
 {Resources.AboutForm_AboutForm_Language_zh_CH}: https://github.com/jiajiechan
@@ -101,8 +104,8 @@ McoreD: {Links.McoreD}
 {Resources.AboutForm_AboutForm_Language_ar_YE}: https://github.com/OthmanAliModaes
 ", FontStyle.Regular);
 
-            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Credits, FontStyle.Bold, 13);
-            rtbInfo.AppendLine(@"Json.NET: https://github.com/JamesNK/Newtonsoft.Json
+        rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Credits, FontStyle.Bold, 13);
+        rtbInfo.AppendLine(@"Json.NET: https://github.com/JamesNK/Newtonsoft.Json
 SSH.NET: https://github.com/sshnet/SSH.NET
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
@@ -115,48 +118,47 @@ Inno Setup Dependency Installer: https://github.com/DomGries/InnoDependencyInsta
 Blob Emoji: http://blobs.gg
 ", FontStyle.Regular);
 
-            rtbInfo.AppendText("Copyright (c) 2007-2024 ShareX Team", FontStyle.Bold, 13);
+        rtbInfo.AppendText("Copyright (c) 2007-2024 ShareX Team", FontStyle.Bold, 13);
 
-            easterEgg = new EasterEggAboutAnimation(cLogo, this);
-        }
+        easterEgg = new EasterEggAboutAnimation(cLogo, this);
+    }
 
-        private async void AboutForm_Shown(object sender, EventArgs e)
+    private async void AboutForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+
+        if (checkUpdate)
         {
-            this.ForceActivate();
-
-            if (checkUpdate)
-            {
-                UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
-                await uclUpdate.CheckUpdate(updateChecker);
-            }
+            UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
+            await uclUpdate.CheckUpdate(updateChecker);
         }
+    }
 
-        private void pbLogo_MouseDown(object sender, MouseEventArgs e)
-        {
-            easterEgg.Start();
-            pbLogo.Visible = false;
-            TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
-        }
+    private void pbLogo_MouseDown(object sender, MouseEventArgs e)
+    {
+        easterEgg.Start();
+        pbLogo.Visible = false;
+        TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
+    }
 
-        private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL(e.LinkText);
-        }
+    private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
+    {
+        URLHelpers.OpenURL(e.LinkText);
+    }
 
-        private void btnShareXLicense_Click(object sender, EventArgs e)
-        {
-            FileHelpers.OpenFile(FileHelpers.GetAbsolutePath("Licenses\\ShareX_license.txt"));
-        }
+    private void btnShareXLicense_Click(object sender, EventArgs e)
+    {
+        FileHelpers.OpenFile(FileHelpers.GetAbsolutePath("Licenses\\ShareX_license.txt"));
+    }
 
-        private void btnLicenses_Click(object sender, EventArgs e)
-        {
-            FileHelpers.OpenFolder(FileHelpers.GetAbsolutePath("Licenses"));
-        }
+    private void btnLicenses_Click(object sender, EventArgs e)
+    {
+        FileHelpers.OpenFolder(FileHelpers.GetAbsolutePath("Licenses"));
+    }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnClose_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

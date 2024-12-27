@@ -24,33 +24,35 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.HistoryLib
+namespace ShareX.HistoryLib;
+
+public partial class HistorySettingsForm : Form
 {
-    public partial class HistorySettingsForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public HistorySettings Settings { get; private set; }
+
+    public HistorySettingsForm(HistorySettings settings)
     {
-        public HistorySettings Settings { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this);
 
-        public HistorySettingsForm(HistorySettings settings)
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+        Settings = settings;
+        cbRememberSearchText.Checked = Settings.RememberSearchText;
+        cbRememberWindowState.Checked = Settings.RememberWindowState;
+    }
 
-            Settings = settings;
-            cbRememberSearchText.Checked = Settings.RememberSearchText;
-            cbRememberWindowState.Checked = Settings.RememberWindowState;
-        }
+    private void CbRememberSearchText_CheckedChanged(object sender, EventArgs e)
+    {
+        Settings.RememberSearchText = cbRememberSearchText.Checked;
+    }
 
-        private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.RememberSearchText = cbRememberSearchText.Checked;
-        }
-
-        private void cbRememberWindowState_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.RememberWindowState = cbRememberWindowState.Checked;
-        }
+    private void CbRememberWindowState_CheckedChanged(object sender, EventArgs e)
+    {
+        Settings.RememberWindowState = cbRememberWindowState.Checked;
     }
 }

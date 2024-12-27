@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class TaskSettingsForm
     {
@@ -48,16 +50,16 @@
             this.cbOverrideCustomUploader = new System.Windows.Forms.CheckBox();
             this.cbOverrideFTPAccount = new System.Windows.Forms.CheckBox();
             this.cbFTPAccounts = new System.Windows.Forms.ComboBox();
-            this.btnAfterCapture = new ShareX.HelpersLib.MenuButton();
-            this.btnAfterUpload = new ShareX.HelpersLib.MenuButton();
-            this.btnDestinations = new ShareX.HelpersLib.MenuButton();
+            this.btnAfterCapture = new ShareX.HelpersLib.Controls.MenuButton();
+            this.btnAfterUpload = new ShareX.HelpersLib.Controls.MenuButton();
+            this.btnDestinations = new ShareX.HelpersLib.Controls.MenuButton();
             this.cmsDestinations = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnTask = new ShareX.HelpersLib.MenuButton();
+            this.btnTask = new ShareX.HelpersLib.Controls.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.tcGeneral = new System.Windows.Forms.TabControl();
             this.tpGeneralMain = new System.Windows.Forms.TabPage();
@@ -260,7 +262,7 @@
             this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
             this.tpUploaderFilters = new System.Windows.Forms.TabPage();
-            this.lvUploaderFiltersList = new ShareX.HelpersLib.MyListView();
+            this.lvUploaderFiltersList = new ShareX.HelpersLib.Controls.MyListView();
             this.chUploaderFiltersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chUploaderFiltersExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnUploaderFiltersRemove = new System.Windows.Forms.Button();
@@ -277,7 +279,7 @@
             this.lblActionsNote = new System.Windows.Forms.Label();
             this.btnActionsDuplicate = new System.Windows.Forms.Button();
             this.btnActionsAdd = new System.Windows.Forms.Button();
-            this.lvActions = new ShareX.HelpersLib.MyListView();
+            this.lvActions = new ShareX.HelpersLib.Controls.MyListView();
             this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -288,7 +290,7 @@
             this.tpWatchFolders = new System.Windows.Forms.TabPage();
             this.btnWatchFolderEdit = new System.Windows.Forms.Button();
             this.cbWatchFolderEnabled = new System.Windows.Forms.CheckBox();
-            this.lvWatchFolderList = new ShareX.HelpersLib.MyListView();
+            this.lvWatchFolderList = new ShareX.HelpersLib.Controls.MyListView();
             this.chWatchFolderFolderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chWatchFolderFilter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chWatchFolderIncludeSubdirectories = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -2465,7 +2467,7 @@
             this.lvActions.Name = "lvActions";
             this.lvActions.UseCompatibleStateImageBehavior = false;
             this.lvActions.View = System.Windows.Forms.View.Details;
-            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
+            this.lvActions.ItemMoved += new MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
             this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
             this.lvActions.SelectedIndexChanged += new System.EventHandler(this.lvActions_SelectedIndexChanged);
             // 
@@ -2774,17 +2776,17 @@
 
         #endregion
 
-        private HelpersLib.MenuButton btnAfterCapture;
+        private MenuButton btnAfterCapture;
         private System.Windows.Forms.ContextMenuStrip cmsAfterCapture;
-        private HelpersLib.MenuButton btnAfterUpload;
-        private HelpersLib.MenuButton btnDestinations;
+        private MenuButton btnAfterUpload;
+        private MenuButton btnDestinations;
         private System.Windows.Forms.ContextMenuStrip cmsAfterUpload;
         private System.Windows.Forms.CheckBox cbOverrideAfterCaptureSettings;
         private System.Windows.Forms.CheckBox cbOverrideAfterUploadSettings;
         private System.Windows.Forms.CheckBox cbOverrideDestinationSettings;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox tbDescription;
-        private HelpersLib.MenuButton btnTask;
+        private MenuButton btnTask;
         private System.Windows.Forms.ContextMenuStrip cmsTask;
         private System.Windows.Forms.TabControl tcTaskSettings;
         private System.Windows.Forms.TabPage tpImage;
@@ -2818,7 +2820,7 @@
         private System.Windows.Forms.Button btnActionsEdit;
         private System.Windows.Forms.Button btnActionsRemove;
         private System.Windows.Forms.Button btnActionsAdd;
-        private HelpersLib.MyListView lvActions;
+        private MyListView lvActions;
         private System.Windows.Forms.ColumnHeader chActionsName;
         private System.Windows.Forms.ColumnHeader chActionsPath;
         private System.Windows.Forms.ColumnHeader chActionsArgs;
@@ -2848,7 +2850,7 @@
         private System.Windows.Forms.Label lblGIFFPS;
         private System.Windows.Forms.TabPage tpWatchFolders;
         private System.Windows.Forms.CheckBox cbWatchFolderEnabled;
-        private HelpersLib.MyListView lvWatchFolderList;
+        private MyListView lvWatchFolderList;
         private System.Windows.Forms.ColumnHeader chWatchFolderFolderPath;
         private System.Windows.Forms.ColumnHeader chWatchFolderFilter;
         private System.Windows.Forms.ColumnHeader chWatchFolderIncludeSubdirectories;
@@ -2959,7 +2961,7 @@
         private System.Windows.Forms.TextBox txtToolsScreenColorPickerFormat;
         private System.Windows.Forms.Label lblToolsScreenColorPickerFormat;
         private System.Windows.Forms.TabPage tpUploaderFilters;
-        private HelpersLib.MyListView lvUploaderFiltersList;
+        private MyListView lvUploaderFiltersList;
         private System.Windows.Forms.ColumnHeader chUploaderFiltersName;
         private System.Windows.Forms.ColumnHeader chUploaderFiltersExtension;
         private System.Windows.Forms.Button btnUploaderFiltersRemove;

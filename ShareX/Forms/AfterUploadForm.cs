@@ -24,238 +24,228 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.UploadersLib;
+
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class AfterUploadForm : Form
 {
-    public partial class AfterUploadForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public TaskInfo Info { get; private set; }
+
+    private UploadInfoParser parser = new();
+
+    private ListViewGroup lvgForums = new("Forums");
+    private ListViewGroup lvgHtml = new("HTML");
+    private ListViewGroup lvgWiki = new("Wiki");
+    private ListViewGroup lvgLocal = new("Local");
+    private ListViewGroup lvgCustom = new("Custom");
+
+    public AfterUploadForm(TaskInfo info)
     {
-        public TaskInfo Info { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        private UploadInfoParser parser = new UploadInfoParser();
+        Info = info;
 
-        private ListViewGroup lvgForums = new ListViewGroup("Forums");
-        private ListViewGroup lvgHtml = new ListViewGroup("HTML");
-        private ListViewGroup lvgWiki = new ListViewGroup("Wiki");
-        private ListViewGroup lvgLocal = new ListViewGroup("Local");
-        private ListViewGroup lvgCustom = new ListViewGroup("Custom");
-
-        public AfterUploadForm(TaskInfo info)
+        if (Info.TaskSettings.AdvancedSettings.AutoCloseAfterUploadForm)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+            tmrClose.Start();
+        }
 
-            Info = info;
+        bool isFileExist = !string.IsNullOrEmpty(info.FilePath) && File.Exists(info.FilePath);
 
-            if (Info.TaskSettings.AdvancedSettings.AutoCloseAfterUploadForm)
+        if (info.DataType == EDataType.Image)
+        {
+            if (isFileExist)
             {
-                tmrClose.Start();
-            }
-
-            bool isFileExist = !string.IsNullOrEmpty(info.FilePath) && File.Exists(info.FilePath);
-
-            if (info.DataType == EDataType.Image)
+                pbPreview.LoadImageFromFileAsync(info.FilePath);
+            } else
             {
-                if (isFileExist)
-                {
-                    pbPreview.LoadImageFromFileAsync(info.FilePath);
-                }
-                else
-                {
-                    pbPreview.LoadImageFromURLAsync(info.Result.URL);
-                }
-            }
-
-            Text = "ShareX - " + (isFileExist ? info.FilePath : info.FileName);
-
-            lvClipboardFormats.Groups.Add(lvgForums);
-            lvClipboardFormats.Groups.Add(lvgHtml);
-            lvClipboardFormats.Groups.Add(lvgWiki);
-            lvClipboardFormats.Groups.Add(lvgLocal);
-            lvClipboardFormats.Groups.Add(lvgCustom);
-
-            foreach (LinkFormatEnum type in Helpers.GetEnums<LinkFormatEnum>())
-            {
-                if (!FileHelpers.IsImageFile(Info.Result.URL) &&
-                    (type == LinkFormatEnum.HTMLImage || type == LinkFormatEnum.HTMLLinkedImage ||
-                    type == LinkFormatEnum.ForumImage || type == LinkFormatEnum.ForumLinkedImage ||
-                    type == LinkFormatEnum.WikiImage || type == LinkFormatEnum.WikiLinkedImage))
-                    continue;
-
-                AddFormat(type.GetLocalizedDescription(), GetUrlByType(type));
-            }
-
-            if (FileHelpers.IsImageFile(Info.Result.URL))
-            {
-                foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
-                {
-                    AddFormat(cf.Description, parser.Parse(Info, cf.Format), lvgCustom);
-                }
+                pbPreview.LoadImageFromURLAsync(info.Result.URL);
             }
         }
 
-        private void AddFormat(string description, string text, ListViewGroup group = null)
+        Text = "ShareX - " + (isFileExist ? info.FilePath : info.FileName);
+
+        lvClipboardFormats.Groups.Add(lvgForums);
+        lvClipboardFormats.Groups.Add(lvgHtml);
+        lvClipboardFormats.Groups.Add(lvgWiki);
+        lvClipboardFormats.Groups.Add(lvgLocal);
+        lvClipboardFormats.Groups.Add(lvgCustom);
+
+        foreach (LinkFormatEnum type in Helpers.GetEnums<LinkFormatEnum>())
         {
-            if (!string.IsNullOrEmpty(text))
+            if (!FileHelpers.IsImageFile(Info.Result.URL) &&
+                (type == LinkFormatEnum.HTMLImage || type == LinkFormatEnum.HTMLLinkedImage ||
+                type == LinkFormatEnum.ForumImage || type == LinkFormatEnum.ForumLinkedImage ||
+                type == LinkFormatEnum.WikiImage || type == LinkFormatEnum.WikiLinkedImage))
+                continue;
+
+            AddFormat(type.GetLocalizedDescription(), GetUrlByType(type));
+        }
+
+        if (FileHelpers.IsImageFile(Info.Result.URL))
+        {
+            foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
             {
-                ListViewItem lvi = new ListViewItem(description);
-
-                if (group == null)
-                {
-                    if (description.Contains("HTML"))
-                    {
-                        lvi.Group = lvgHtml;
-                    }
-                    else if (description.Contains("Forums"))
-                    {
-                        lvi.Group = lvgForums;
-                    }
-                    else if (description.Contains("Local"))
-                    {
-                        lvi.Group = lvgLocal;
-                    }
-                    else if (description.Contains("Wiki"))
-                    {
-                        lvi.Group = lvgWiki;
-                    }
-                }
-                else
-                {
-                    lvi.Group = group;
-                }
-
-                lvi.SubItems.Add(text);
-                lvClipboardFormats.Items.Add(lvi);
-                lvClipboardFormats.FillLastColumn();
+                AddFormat(cf.Description, parser.Parse(Info, cf.Format), lvgCustom);
             }
         }
+    }
 
-        private void tmrClose_Tick(object sender, EventArgs e)
+    private void AddFormat(string description, string text, ListViewGroup group = null)
+    {
+        if (!string.IsNullOrEmpty(text))
         {
-            Close();
-        }
+            ListViewItem lvi = new(description);
 
-        private void btnCopyImage_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(Info.FilePath) && FileHelpers.IsImageFile(Info.FilePath) && File.Exists(Info.FilePath))
+            if (group == null)
             {
-                ClipboardHelpers.CopyImageFromFile(Info.FilePath);
-            }
-        }
-
-        private void btnCopyLink_Click(object sender, EventArgs e)
-        {
-            if (lvClipboardFormats.Items.Count > 0)
+                if (description.Contains("HTML"))
+                {
+                    lvi.Group = lvgHtml;
+                } else if (description.Contains("Forums"))
+                {
+                    lvi.Group = lvgForums;
+                } else if (description.Contains("Local"))
+                {
+                    lvi.Group = lvgLocal;
+                } else if (description.Contains("Wiki"))
+                {
+                    lvi.Group = lvgWiki;
+                }
+            } else
             {
-                string url;
-
-                if (lvClipboardFormats.SelectedItems.Count == 0)
-                {
-                    url = lvClipboardFormats.Items[0].SubItems[1].Text;
-                }
-                else
-                {
-                    url = lvClipboardFormats.SelectedItems[0].SubItems[1].Text;
-                }
-
-                if (!string.IsNullOrEmpty(url))
-                {
-                    ClipboardHelpers.CopyText(url);
-                }
+                lvi.Group = group;
             }
+
+            lvi.SubItems.Add(text);
+            lvClipboardFormats.Items.Add(lvi);
+            lvClipboardFormats.FillLastColumn();
         }
+    }
 
-        private void btnOpenLink_Click(object sender, EventArgs e)
+    private void tmrClose_Tick(object sender, EventArgs e)
+    {
+        Close();
+    }
+
+    private void btnCopyImage_Click(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrEmpty(Info.FilePath) && FileHelpers.IsImageFile(Info.FilePath) && File.Exists(Info.FilePath))
         {
-            string url = Info.Result.URL;
+            ClipboardHelpers.CopyImageFromFile(Info.FilePath);
+        }
+    }
 
+    private void btnCopyLink_Click(object sender, EventArgs e)
+    {
+        if (lvClipboardFormats.Items.Count > 0)
+        {
+            string url = lvClipboardFormats.SelectedItems.Count == 0
+                ? lvClipboardFormats.Items[0].SubItems[1].Text
+                : lvClipboardFormats.SelectedItems[0].SubItems[1].Text;
             if (!string.IsNullOrEmpty(url))
             {
-                URLHelpers.OpenURL(url);
+                ClipboardHelpers.CopyText(url);
+            }
+        }
+    }
+
+    private void btnOpenLink_Click(object sender, EventArgs e)
+    {
+        string url = Info.Result.URL;
+
+        if (!string.IsNullOrEmpty(url))
+        {
+            URLHelpers.OpenURL(url);
+        }
+    }
+
+    private void btnOpenFile_Click(object sender, EventArgs e)
+    {
+        FileHelpers.OpenFile(Info.FilePath);
+    }
+
+    private void btnFolderOpen_Click(object sender, EventArgs e)
+    {
+        FileHelpers.OpenFolderWithFile(Info.FilePath);
+    }
+
+    private void btnClose_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
+    }
+
+    #region TaskInfo helper methods
+
+    public string GetUrlByType(LinkFormatEnum type)
+    {
+        switch (type)
+        {
+            case LinkFormatEnum.URL:
+                return Info.Result.URL;
+            case LinkFormatEnum.ShortenedURL:
+                return Info.Result.ShortenedURL;
+            case LinkFormatEnum.ForumImage:
+                return parser.Parse(Info, UploadInfoParser.ForumImage);
+            case LinkFormatEnum.HTMLImage:
+                return parser.Parse(Info, UploadInfoParser.HTMLImage);
+            case LinkFormatEnum.WikiImage:
+                return parser.Parse(Info, UploadInfoParser.WikiImage);
+            case LinkFormatEnum.ForumLinkedImage:
+                return parser.Parse(Info, UploadInfoParser.ForumLinkedImage);
+            case LinkFormatEnum.HTMLLinkedImage:
+                return parser.Parse(Info, UploadInfoParser.HTMLLinkedImage);
+            case LinkFormatEnum.WikiLinkedImage:
+                return parser.Parse(Info, UploadInfoParser.WikiLinkedImage);
+            case LinkFormatEnum.ThumbnailURL:
+                return Info.Result.ThumbnailURL;
+            case LinkFormatEnum.LocalFilePath:
+                return Info.FilePath;
+            case LinkFormatEnum.LocalFilePathUri:
+                return GetLocalFilePathAsUri(Info.FilePath);
+        }
+
+        return Info.Result.URL;
+    }
+
+    public string GetLocalFilePathAsUri(string fp)
+    {
+        if (!string.IsNullOrEmpty(fp) && File.Exists(fp))
+        {
+            try
+            {
+                return new Uri(fp).AbsoluteUri;
+            } catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
             }
         }
 
-        private void btnOpenFile_Click(object sender, EventArgs e)
-        {
-            FileHelpers.OpenFile(Info.FilePath);
-        }
+        return "";
+    }
 
-        private void btnFolderOpen_Click(object sender, EventArgs e)
-        {
-            FileHelpers.OpenFolderWithFile(Info.FilePath);
-        }
+    #endregion TaskInfo helper methods
 
-        private void btnClose_Click(object sender, EventArgs e)
+    private void lvClipboardFormats_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left && lvClipboardFormats.SelectedItems.Count > 0)
         {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
-
-        #region TaskInfo helper methods
-
-        public string GetUrlByType(LinkFormatEnum type)
-        {
-            switch (type)
+            ListViewItem lvi = lvClipboardFormats.SelectedItems[0];
+            string txt = lvi.SubItems[1].Text;
+            if (!string.IsNullOrEmpty(txt))
             {
-                case LinkFormatEnum.URL:
-                    return Info.Result.URL;
-                case LinkFormatEnum.ShortenedURL:
-                    return Info.Result.ShortenedURL;
-                case LinkFormatEnum.ForumImage:
-                    return parser.Parse(Info, UploadInfoParser.ForumImage);
-                case LinkFormatEnum.HTMLImage:
-                    return parser.Parse(Info, UploadInfoParser.HTMLImage);
-                case LinkFormatEnum.WikiImage:
-                    return parser.Parse(Info, UploadInfoParser.WikiImage);
-                case LinkFormatEnum.ForumLinkedImage:
-                    return parser.Parse(Info, UploadInfoParser.ForumLinkedImage);
-                case LinkFormatEnum.HTMLLinkedImage:
-                    return parser.Parse(Info, UploadInfoParser.HTMLLinkedImage);
-                case LinkFormatEnum.WikiLinkedImage:
-                    return parser.Parse(Info, UploadInfoParser.WikiLinkedImage);
-                case LinkFormatEnum.ThumbnailURL:
-                    return Info.Result.ThumbnailURL;
-                case LinkFormatEnum.LocalFilePath:
-                    return Info.FilePath;
-                case LinkFormatEnum.LocalFilePathUri:
-                    return GetLocalFilePathAsUri(Info.FilePath);
-            }
-
-            return Info.Result.URL;
-        }
-
-        public string GetLocalFilePathAsUri(string fp)
-        {
-            if (!string.IsNullOrEmpty(fp) && File.Exists(fp))
-            {
-                try
-                {
-                    return new Uri(fp).AbsoluteUri;
-                }
-                catch (Exception ex)
-                {
-                    DebugHelper.WriteException(ex);
-                }
-            }
-
-            return "";
-        }
-
-        #endregion TaskInfo helper methods
-
-        private void lvClipboardFormats_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left && lvClipboardFormats.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvClipboardFormats.SelectedItems[0];
-                string txt = lvi.SubItems[1].Text;
-                if (!string.IsNullOrEmpty(txt))
-                {
-                    ClipboardHelpers.CopyText(txt);
-                }
+                ClipboardHelpers.CopyText(txt);
             }
         }
     }

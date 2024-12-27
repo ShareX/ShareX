@@ -1,4 +1,6 @@
-﻿namespace ShareX.ScreenCaptureLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.ScreenCaptureLib
 {
     partial class FFmpegOptionsForm
     {
@@ -56,7 +58,7 @@
             this.cbUseCustomFFmpegPath = new System.Windows.Forms.CheckBox();
             this.lblVideoEncoder = new System.Windows.Forms.Label();
             this.lblAudioEncoder = new System.Windows.Forms.Label();
-            this.tcFFmpegAudioCodecs = new ShareX.HelpersLib.TablessControl();
+            this.tcFFmpegAudioCodecs = new ShareX.HelpersLib.Controls.TablessControl();
             this.tpAAC = new System.Windows.Forms.TabPage();
             this.lblAACBitrateK = new System.Windows.Forms.Label();
             this.cbAACBitrate = new System.Windows.Forms.ComboBox();
@@ -70,7 +72,7 @@
             this.lblVorbisQuality = new System.Windows.Forms.Label();
             this.tpMP3 = new System.Windows.Forms.TabPage();
             this.lblMP3Quality = new System.Windows.Forms.Label();
-            this.tcFFmpegVideoCodecs = new ShareX.HelpersLib.TablessControl();
+            this.tcFFmpegVideoCodecs = new ShareX.HelpersLib.Controls.TablessControl();
             this.tpX264 = new System.Windows.Forms.TabPage();
             this.lblx264BitrateK = new System.Windows.Forms.Label();
             this.cbx264UseBitrate = new System.Windows.Forms.CheckBox();
@@ -896,11 +898,11 @@
         private System.Windows.Forms.TextBox txtFFmpegPath;
         private System.Windows.Forms.TextBox txtCommandLinePreview;
         private System.Windows.Forms.TextBox txtUserArgs;
-        private HelpersLib.TablessControl tcFFmpegVideoCodecs;
+        private TablessControl tcFFmpegVideoCodecs;
         private System.Windows.Forms.TabPage tpX264;
         private System.Windows.Forms.TabPage tpVpx;
         private System.Windows.Forms.TabPage tpXvid;
-        private HelpersLib.TablessControl tcFFmpegAudioCodecs;
+        private TablessControl tcFFmpegAudioCodecs;
         private System.Windows.Forms.TabPage tpVorbis;
         private System.Windows.Forms.TabPage tpMP3;
         private System.Windows.Forms.ComboBox cbVideoSource;

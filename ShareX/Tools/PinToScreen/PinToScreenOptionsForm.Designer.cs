@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class PinToScreenOptionsForm
     {
@@ -41,7 +43,7 @@
             this.cbBorder = new System.Windows.Forms.CheckBox();
             this.lblBorderSize = new System.Windows.Forms.Label();
             this.nudBorderSize = new System.Windows.Forms.NumericUpDown();
-            this.btnBorderColor = new ShareX.HelpersLib.ColorButton();
+            this.btnBorderColor = new ShareX.HelpersLib.Controls.ColorButton();
             this.lblMinimizeSize = new System.Windows.Forms.Label();
             this.nudMinimizeSizeWidth = new System.Windows.Forms.NumericUpDown();
             this.nudMinimizeSizeHeight = new System.Windows.Forms.NumericUpDown();
@@ -227,7 +229,7 @@
         private System.Windows.Forms.CheckBox cbBorder;
         private System.Windows.Forms.Label lblBorderSize;
         private System.Windows.Forms.NumericUpDown nudBorderSize;
-        private HelpersLib.ColorButton btnBorderColor;
+        private ColorButton btnBorderColor;
         private System.Windows.Forms.Label lblMinimizeSize;
         private System.Windows.Forms.NumericUpDown nudMinimizeSizeWidth;
         private System.Windows.Forms.NumericUpDown nudMinimizeSizeHeight;

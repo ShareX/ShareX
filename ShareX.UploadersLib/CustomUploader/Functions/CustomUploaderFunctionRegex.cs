@@ -25,65 +25,53 @@
 
 using System.Text.RegularExpressions;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.CustomUploader.Functions;
+
+// Example: {regex:(?<=href=").+(?=")}
+// Example: {regex:href="(.+)"|1}
+// Example: {regex:href="(?<url>.+)"|url}
+// Example: {regex:{response}|href="(.+)"|1}
+internal class CustomUploaderFunctionRegex : CustomUploaderFunction
 {
-    // Example: {regex:(?<=href=").+(?=")}
-    // Example: {regex:href="(.+)"|1}
-    // Example: {regex:href="(?<url>.+)"|url}
-    // Example: {regex:{response}|href="(.+)"|1}
-    internal class CustomUploaderFunctionRegex : CustomUploaderFunction
+    public override string Name { get; } = "regex";
+
+    public override int MinParameterCount { get; } = 1;
+
+    public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
     {
-        public override string Name { get; } = "regex";
+        string input, pattern, group = "";
 
-        public override int MinParameterCount { get; } = 1;
-
-        public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
+        if (parameters.Length > 2)
         {
-            string input, pattern, group = "";
+            // {regex:input|pattern|group}
+            input = parameters[0];
+            pattern = parameters[1];
+            group = parameters[2];
+        } else
+        {
+            // {regex:pattern}
+            input = parser.ResponseInfo.ResponseText;
+            pattern = parameters[0];
 
-            if (parameters.Length > 2)
+            if (parameters.Length > 1)
             {
-                // {regex:input|pattern|group}
-                input = parameters[0];
-                pattern = parameters[1];
-                group = parameters[2];
+                // {regex:pattern|group}
+                group = parameters[1];
             }
-            else
-            {
-                // {regex:pattern}
-                input = parser.ResponseInfo.ResponseText;
-                pattern = parameters[0];
-
-                if (parameters.Length > 1)
-                {
-                    // {regex:pattern|group}
-                    group = parameters[1];
-                }
-            }
-
-            if (!string.IsNullOrEmpty(input) && !string.IsNullOrEmpty(pattern))
-            {
-                Match match = Regex.Match(input, pattern);
-
-                if (match.Success)
-                {
-                    if (!string.IsNullOrEmpty(group))
-                    {
-                        if (int.TryParse(group, out int groupNumber))
-                        {
-                            return match.Groups[groupNumber].Value;
-                        }
-                        else
-                        {
-                            return match.Groups[group].Value;
-                        }
-                    }
-
-                    return match.Value;
-                }
-            }
-
-            return null;
         }
+
+        if (!string.IsNullOrEmpty(input) && !string.IsNullOrEmpty(pattern))
+        {
+            Match match = Regex.Match(input, pattern);
+
+            if (match.Success)
+            {
+                return !string.IsNullOrEmpty(group)
+                    ? int.TryParse(group, out int groupNumber) ? match.Groups[groupNumber].Value : match.Groups[group].Value
+                    : match.Value;
+            }
+        }
+
+        return null;
     }
 }

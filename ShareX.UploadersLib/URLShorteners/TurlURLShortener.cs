@@ -23,50 +23,53 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
 using System.Collections.Generic;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class TurlURLShortenerService : URLShortenerService
 {
-    public class TurlURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TURL;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TURL;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new TurlURLShortener();
-        }
+        return new TurlURLShortener();
     }
+}
 
-    public sealed class TurlURLShortener : URLShortener
+public sealed class TurlURLShortener : URLShortener
+{
+    public override UploadResult ShortenURL(string url)
     {
-        public override UploadResult ShortenURL(string url)
+        UploadResult result = new() { URL = url };
+
+        if (!string.IsNullOrEmpty(url))
         {
-            UploadResult result = new UploadResult { URL = url };
+            Dictionary<string, string> arguments = new();
+            arguments.Add("url", url);
 
-            if (!string.IsNullOrEmpty(url))
+            result.Response = SendRequest(HttpMethod.GET, "http://turl.ca/api.php", arguments);
+
+            if (!string.IsNullOrEmpty(result.Response))
             {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("url", url);
-
-                result.Response = SendRequest(HttpMethod.GET, "http://turl.ca/api.php", arguments);
-
-                if (!string.IsNullOrEmpty(result.Response))
+                if (result.Response.StartsWith("SUCCESS:"))
                 {
-                    if (result.Response.StartsWith("SUCCESS:"))
-                    {
-                        result.ShortenedURL = "http://turl.ca/" + result.Response.Substring(8);
-                    }
+                    result.ShortenedURL = "http://turl.ca/" + result.Response.Substring(8);
+                }
 
-                    if (result.Response.StartsWith("ERROR:"))
-                    {
-                        Errors.Add(result.Response.Substring(6));
-                    }
+                if (result.Response.StartsWith("ERROR:"))
+                {
+                    Errors.Add(result.Response.Substring(6));
                 }
             }
-
-            return result;
         }
+
+        return result;
     }
 }

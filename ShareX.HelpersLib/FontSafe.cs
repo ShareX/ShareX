@@ -25,34 +25,28 @@
 
 using System.Drawing;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class FontSafe
 {
-    public class FontSafe
+    public string Font { get; set; }
+
+    public FontSafe()
     {
-        public string Font { get; set; }
+    }
 
-        public FontSafe()
-        {
-        }
+    public FontSafe(Font font)
+    {
+        SetFont(font);
+    }
 
-        public FontSafe(Font font)
-        {
-            SetFont(font);
-        }
+    public void SetFont(Font font)
+    {
+        Font = new FontConverter().ConvertToInvariantString(font);
+    }
 
-        public void SetFont(Font font)
-        {
-            Font = new FontConverter().ConvertToInvariantString(font);
-        }
-
-        public Font GetFont()
-        {
-            if (!string.IsNullOrEmpty(Font))
-            {
-                return new FontConverter().ConvertFromInvariantString(Font) as Font;
-            }
-
-            return null;
-        }
+    public Font GetFont()
+    {
+        return !string.IsNullOrEmpty(Font) ? new FontConverter().ConvertFromInvariantString(Font) as Font : null;
     }
 }

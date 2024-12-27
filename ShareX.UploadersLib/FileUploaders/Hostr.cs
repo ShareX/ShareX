@@ -24,97 +24,100 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class HostrFileUploaderService : FileUploaderService
 {
-    public class HostrFileUploaderService : FileUploaderService
+    public override FileDestination EnumValue { get; } = FileDestination.Localhostr;
+
+    public override Icon ServiceIcon => Resources.Hostr;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Localhostr;
-
-        public override Icon ServiceIcon => Resources.Hostr;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return !string.IsNullOrEmpty(config.LocalhostrEmail) && !string.IsNullOrEmpty(config.LocalhostrPassword);
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new Hostr(config.LocalhostrEmail, config.LocalhostrPassword)
-            {
-                DirectURL = config.LocalhostrDirectURL
-            };
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpHostr;
+        return !string.IsNullOrEmpty(config.LocalhostrEmail) && !string.IsNullOrEmpty(config.LocalhostrPassword);
     }
 
-    public sealed class Hostr : FileUploader
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public bool DirectURL { get; set; }
-
-        public Hostr(string email, string password)
+        return new Hostr(config.LocalhostrEmail, config.LocalhostrPassword)
         {
-            Email = email;
-            Password = password;
-        }
+            DirectURL = config.LocalhostrDirectURL
+        };
+    }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpHostr;
+}
+
+public sealed class Hostr : FileUploader
+{
+    public string Email { get; set; }
+    public string Password { get; set; }
+    public bool DirectURL { get; set; }
+
+    public Hostr(string email, string password)
+    {
+        Email = email;
+        Password = password;
+    }
+
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        UploadResult result = null;
+
+        if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
         {
-            UploadResult result = null;
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Email, Password);
+            result = SendRequestFile("https://api.hostr.co/file", stream, fileName, "file", headers: headers);
 
-            if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
+            if (result.IsSuccess)
             {
-                NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Email, Password);
-                result = SendRequestFile("https://api.hostr.co/file", stream, fileName, "file", headers: headers);
+                HostrFileUploadResponse response = JsonConvert.DeserializeObject<HostrFileUploadResponse>(result.Response);
 
-                if (result.IsSuccess)
+                if (response != null)
                 {
-                    HostrFileUploadResponse response = JsonConvert.DeserializeObject<HostrFileUploadResponse>(result.Response);
-
-                    if (response != null)
+                    if (DirectURL && response.direct != null)
                     {
-                        if (DirectURL && response.direct != null)
-                        {
-                            result.URL = string.Format("http://hostr.co/file/{0}/{1}", response.id, response.name);
-                            result.ThumbnailURL = response.direct.direct_150x;
-                        }
-                        else
-                        {
-                            result.URL = response.href;
-                        }
+                        result.URL = string.Format("http://hostr.co/file/{0}/{1}", response.id, response.name);
+                        result.ThumbnailURL = response.direct.direct_150x;
+                    } else
+                    {
+                        result.URL = response.href;
                     }
                 }
             }
-
-            return result;
         }
 
-        public class HostrFileUploadResponse
-        {
-            public string added { get; set; }
-            public string name { get; set; }
-            public string href { get; set; }
-            public int size { get; set; }
-            public string type { get; set; }
-            public HostrFileUploadResponseDirect direct { get; set; }
-            public string id { get; set; }
-        }
+        return result;
+    }
 
-        public class HostrFileUploadResponseDirect
-        {
-            [JsonProperty("150x")]
-            public string direct_150x { get; set; }
+    public class HostrFileUploadResponse
+    {
+        public string added { get; set; }
+        public string name { get; set; }
+        public string href { get; set; }
+        public int size { get; set; }
+        public string type { get; set; }
+        public HostrFileUploadResponseDirect direct { get; set; }
+        public string id { get; set; }
+    }
 
-            [JsonProperty("930x")]
-            public string direct_930x { get; set; }
-        }
+    public class HostrFileUploadResponseDirect
+    {
+        [JsonProperty("150x")]
+        public string direct_150x { get; set; }
+
+        [JsonProperty("930x")]
+        public string direct_930x { get; set; }
     }
 }

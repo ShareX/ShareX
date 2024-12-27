@@ -23,80 +23,81 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class YourlsURLShortenerService : URLShortenerService
 {
-    public class YourlsURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.YOURLS;
+
+    public override Icon ServiceIcon => Resources.Yourls;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.YOURLS;
-
-        public override Icon ServiceIcon => Resources.Yourls;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return !string.IsNullOrEmpty(config.YourlsAPIURL) && (!string.IsNullOrEmpty(config.YourlsSignature) ||
-                (!string.IsNullOrEmpty(config.YourlsUsername) && !string.IsNullOrEmpty(config.YourlsPassword)));
-        }
-
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new YourlsURLShortener
-            {
-                APIURL = config.YourlsAPIURL,
-                Signature = config.YourlsSignature,
-                Username = config.YourlsUsername,
-                Password = config.YourlsPassword
-            };
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpYourls;
+        return !string.IsNullOrEmpty(config.YourlsAPIURL) && (!string.IsNullOrEmpty(config.YourlsSignature) ||
+            (!string.IsNullOrEmpty(config.YourlsUsername) && !string.IsNullOrEmpty(config.YourlsPassword)));
     }
 
-    public sealed class YourlsURLShortener : URLShortener
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public string APIURL { get; set; }
-        public string Signature { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-
-        public override UploadResult ShortenURL(string url)
+        return new YourlsURLShortener
         {
-            UploadResult result = new UploadResult { URL = url };
+            APIURL = config.YourlsAPIURL,
+            Signature = config.YourlsSignature,
+            Username = config.YourlsUsername,
+            Password = config.YourlsPassword
+        };
+    }
 
-            if (!string.IsNullOrEmpty(url))
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpYourls;
+}
+
+public sealed class YourlsURLShortener : URLShortener
+{
+    public string APIURL { get; set; }
+    public string Signature { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+
+    public override UploadResult ShortenURL(string url)
+    {
+        UploadResult result = new() { URL = url };
+
+        if (!string.IsNullOrEmpty(url))
+        {
+            Dictionary<string, string> arguments = new();
+
+            if (!string.IsNullOrEmpty(Signature))
             {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-
-                if (!string.IsNullOrEmpty(Signature))
-                {
-                    arguments.Add("signature", Signature);
-                }
-                else if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
-                {
-                    arguments.Add("username", Username);
-                    arguments.Add("password", Password);
-                }
-                else
-                {
-                    throw new Exception("Signature or Username/Password is missing.");
-                }
-
-                arguments.Add("action", "shorturl");
-                arguments.Add("url", url);
-                //arguments.Add("keyword", "");
-                //arguments.Add("title", "");
-                arguments.Add("format", "simple");
-
-                result.Response = SendRequestMultiPart(APIURL, arguments);
-                result.ShortenedURL = result.Response;
+                arguments.Add("signature", Signature);
+            } else if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
+            {
+                arguments.Add("username", Username);
+                arguments.Add("password", Password);
+            } else
+            {
+                throw new Exception("Signature or Username/Password is missing.");
             }
 
-            return result;
+            arguments.Add("action", "shorturl");
+            arguments.Add("url", url);
+            //arguments.Add("keyword", "");
+            //arguments.Add("title", "");
+            arguments.Add("format", "simple");
+
+            result.Response = SendRequestMultiPart(APIURL, arguments);
+            result.ShortenedURL = result.Response;
         }
+
+        return result;
     }
 }

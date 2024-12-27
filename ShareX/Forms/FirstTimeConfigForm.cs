@@ -24,71 +24,71 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class FirstTimeConfigForm : Form
 {
-    public partial class FirstTimeConfigForm : Form
+    private bool loaded;
+
+    public FirstTimeConfigForm()
     {
-        private bool loaded;
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this);
 
-        public FirstTimeConfigForm()
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+        StartupState state = StartupManager.State;
+        cbRunStartup.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
+        cbRunStartup.Enabled = state != StartupState.DisabledByUser && state != StartupState.DisabledByPolicy && state != StartupState.EnabledByPolicy;
 
-            StartupState state = StartupManager.State;
-            cbRunStartup.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
-            cbRunStartup.Enabled = state != StartupState.DisabledByUser && state != StartupState.DisabledByPolicy && state != StartupState.EnabledByPolicy;
-
-            cbShellContextMenuButton.Checked = IntegrationHelpers.CheckShellContextMenuButton();
-            cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
+        cbShellContextMenuButton.Checked = IntegrationHelpers.CheckShellContextMenuButton();
+        cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
 
 #if STEAM
-            cbSteamInApp.Checked = IntegrationHelpers.CheckSteamShowInApp();
+        cbSteamInApp.Checked = IntegrationHelpers.CheckSteamShowInApp();
 #else
-            cbSteamInApp.Visible = false;
+        cbSteamInApp.Visible = false;
 #endif
 
-            loaded = true;
-        }
+        loaded = true;
+    }
 
-        private void btnOK_MouseClick(object sender, MouseEventArgs e)
-        {
-            Close();
-        }
+    private void btnOK_MouseClick(object sender, MouseEventArgs e)
+    {
+        Close();
+    }
 
-        private void cbRunStartup_CheckedChanged(object sender, EventArgs e)
+    private void cbRunStartup_CheckedChanged(object sender, EventArgs e)
+    {
+        if (loaded)
         {
-            if (loaded)
-            {
-                StartupManager.State = cbRunStartup.Checked ? StartupState.Enabled : StartupState.Disabled;
-            }
+            StartupManager.State = cbRunStartup.Checked ? StartupState.Enabled : StartupState.Disabled;
         }
+    }
 
-        private void cbShellContextMenuButton_CheckedChanged(object sender, EventArgs e)
+    private void cbShellContextMenuButton_CheckedChanged(object sender, EventArgs e)
+    {
+        if (loaded)
         {
-            if (loaded)
-            {
-                IntegrationHelpers.CreateShellContextMenuButton(cbShellContextMenuButton.Checked);
-            }
+            IntegrationHelpers.CreateShellContextMenuButton(cbShellContextMenuButton.Checked);
         }
+    }
 
-        private void cbSendToMenu_CheckedChanged(object sender, EventArgs e)
+    private void cbSendToMenu_CheckedChanged(object sender, EventArgs e)
+    {
+        if (loaded)
         {
-            if (loaded)
-            {
-                IntegrationHelpers.CreateSendToMenuButton(cbSendToMenu.Checked);
-            }
+            IntegrationHelpers.CreateSendToMenuButton(cbSendToMenu.Checked);
         }
+    }
 
-        private void cbSteamInApp_CheckedChanged(object sender, EventArgs e)
+    private void cbSteamInApp_CheckedChanged(object sender, EventArgs e)
+    {
+        if (loaded)
         {
-            if (loaded)
-            {
-                IntegrationHelpers.SteamShowInApp(cbSteamInApp.Checked);
-            }
+            IntegrationHelpers.SteamShowInApp(cbSteamInApp.Checked);
         }
     }
 }

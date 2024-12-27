@@ -23,33 +23,33 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
 using ShareX.ScreenCaptureLib.Properties;
+
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes.Effect;
+
+public class HighlightEffectShape : BaseEffectShape
 {
-    public class HighlightEffectShape : BaseEffectShape
+    public override ShapeType ShapeType { get; } = ShapeType.EffectHighlight;
+
+    public override string OverlayText => Resources.Highlight;
+
+    public Color HighlightColor { get; set; }
+
+    public override void OnConfigLoad()
     {
-        public override ShapeType ShapeType { get; } = ShapeType.EffectHighlight;
+        HighlightColor = AnnotationOptions.HighlightColor;
+    }
 
-        public override string OverlayText => Resources.Highlight;
+    public override void OnConfigSave()
+    {
+        AnnotationOptions.HighlightColor = HighlightColor;
+    }
 
-        public Color HighlightColor { get; set; }
-
-        public override void OnConfigLoad()
-        {
-            HighlightColor = AnnotationOptions.HighlightColor;
-        }
-
-        public override void OnConfigSave()
-        {
-            AnnotationOptions.HighlightColor = HighlightColor;
-        }
-
-        public override void ApplyEffect(Bitmap bmp)
-        {
-            ImageHelpers.HighlightImage(bmp, HighlightColor);
-        }
+    public override void ApplyEffect(Bitmap bmp)
+    {
+        ImageHelpers.HighlightImage(bmp, HighlightColor);
     }
 }

@@ -24,31 +24,31 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
+
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class WavFileNameEditor : FileNameEditor
 {
-    public class WavFileNameEditor : FileNameEditor
+    public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
     {
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        if (context == null || provider == null)
         {
-            if (context == null || provider == null)
-            {
-                return base.EditValue(context, provider, value);
-            }
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                dlg.Title = Resources.WavFileNameEditor_EditValue_Browse_for_a_sound_file___;
-                dlg.Filter = "Sound file (*.wav)|*.wav";
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    value = dlg.FileName;
-                }
-            }
-            return value;
+            return base.EditValue(context, provider, value);
         }
+        using (OpenFileDialog dlg = new())
+        {
+            dlg.Title = Resources.WavFileNameEditor_EditValue_Browse_for_a_sound_file___;
+            dlg.Filter = "Sound file (*.wav)|*.wav";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                value = dlg.FileName;
+            }
+        }
+        return value;
     }
 }

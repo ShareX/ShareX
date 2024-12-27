@@ -28,43 +28,37 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class EnumProperNameKeepCaseConverter(Type type) : EnumConverter(type)
 {
-    public class EnumProperNameKeepCaseConverter : EnumConverter
+    private Type enumType = type;
+
+    public override bool CanConvertTo(ITypeDescriptorContext context, Type destType)
     {
-        private Type enumType;
+        return destType == typeof(string);
+    }
 
-        public EnumProperNameKeepCaseConverter(Type type) : base(type)
-        {
-            enumType = type;
-        }
+    public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destType)
+    {
+        return Helpers.Helpers.GetProperName(value.ToString(), true);
+    }
 
-        public override bool CanConvertTo(ITypeDescriptorContext context, Type destType)
-        {
-            return destType == typeof(string);
-        }
+    public override bool CanConvertFrom(ITypeDescriptorContext context, Type srcType)
+    {
+        return srcType == typeof(string);
+    }
 
-        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destType)
+    public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+    {
+        foreach (Enum e in Enum.GetValues(enumType).OfType<Enum>())
         {
-            return Helpers.GetProperName(value.ToString(), true);
-        }
-
-        public override bool CanConvertFrom(ITypeDescriptorContext context, Type srcType)
-        {
-            return srcType == typeof(string);
-        }
-
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
-        {
-            foreach (Enum e in Enum.GetValues(enumType).OfType<Enum>())
+            if (Helpers.Helpers.GetProperName(e.ToString(), true) == (string)value)
             {
-                if (Helpers.GetProperName(e.ToString(), true) == (string)value)
-                {
-                    return e;
-                }
+                return e;
             }
-
-            return Enum.Parse(enumType, (string)value);
         }
+
+        return Enum.Parse(enumType, (string)value);
     }
 }

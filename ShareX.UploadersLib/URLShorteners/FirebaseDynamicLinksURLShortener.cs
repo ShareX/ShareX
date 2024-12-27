@@ -24,105 +24,109 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Helpers;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class FirebaseDynamicLinksURLShortenerService : URLShortenerService
 {
-    public class FirebaseDynamicLinksURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.FirebaseDynamicLinks;
+
+    public override Icon ServiceIcon => Resources.Firebase;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.FirebaseDynamicLinks;
+        return !string.IsNullOrEmpty(config.FirebaseWebAPIKey) && !string.IsNullOrEmpty(config.FirebaseDynamicLinkDomain);
+    }
 
-        public override Icon ServiceIcon => Resources.Firebase;
-
-        public override bool CheckConfig(UploadersConfig config)
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+    {
+        return new FirebaseDynamicLinksURLShortener
         {
-            return !string.IsNullOrEmpty(config.FirebaseWebAPIKey) && !string.IsNullOrEmpty(config.FirebaseDynamicLinkDomain);
-        }
+            WebAPIKey = config.FirebaseWebAPIKey,
+            DynamicLinkDomain = config.FirebaseDynamicLinkDomain,
+            IsShort = config.FirebaseIsShort
+        };
+    }
 
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFirebaseDynamicLinks;
+}
+
+public class FirebaseRequest
+{
+    public DynamicLinkInfo dynamicLinkInfo { get; set; }
+    public FirebaseSuffix suffix { get; set; }
+}
+
+public class DynamicLinkInfo
+{
+    public string dynamicLinkDomain { get; set; }
+    public string link { get; set; }
+}
+
+public class FirebaseSuffix
+{
+    public string option { get; set; }
+}
+
+public class FirebaseResponse
+{
+    public string shortLink { get; set; }
+    public string previewLink { get; set; }
+}
+
+public sealed class FirebaseDynamicLinksURLShortener : URLShortener
+{
+    public string WebAPIKey { get; set; }
+    public string DynamicLinkDomain { get; set; }
+    public bool IsShort { get; set; }
+
+    public override UploadResult ShortenURL(string url)
+    {
+        UploadResult result = new() { URL = url };
+
+        FirebaseRequest requestOptions = new()
         {
-            return new FirebaseDynamicLinksURLShortener
+            dynamicLinkInfo = new DynamicLinkInfo
             {
-                WebAPIKey = config.FirebaseWebAPIKey,
-                DynamicLinkDomain = config.FirebaseDynamicLinkDomain,
-                IsShort = config.FirebaseIsShort
-            };
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpFirebaseDynamicLinks;
-    }
-
-    public class FirebaseRequest
-    {
-        public DynamicLinkInfo dynamicLinkInfo { get; set; }
-        public FirebaseSuffix suffix { get; set; }
-    }
-
-    public class DynamicLinkInfo
-    {
-        public string dynamicLinkDomain { get; set; }
-        public string link { get; set; }
-    }
-
-    public class FirebaseSuffix
-    {
-        public string option { get; set; }
-    }
-
-    public class FirebaseResponse
-    {
-        public string shortLink { get; set; }
-        public string previewLink { get; set; }
-    }
-
-    public sealed class FirebaseDynamicLinksURLShortener : URLShortener
-    {
-        public string WebAPIKey { get; set; }
-        public string DynamicLinkDomain { get; set; }
-        public bool IsShort { get; set; }
-
-        public override UploadResult ShortenURL(string url)
-        {
-            UploadResult result = new UploadResult { URL = url };
-
-            FirebaseRequest requestOptions = new FirebaseRequest
-            {
-                dynamicLinkInfo = new DynamicLinkInfo
-                {
-                    dynamicLinkDomain = URLHelpers.RemovePrefixes(DynamicLinkDomain),
-                    link = url
-                }
-            };
-
-            if (IsShort)
-            {
-                requestOptions.suffix = new FirebaseSuffix
-                {
-                    option = "SHORT"
-                };
+                dynamicLinkDomain = URLHelpers.RemovePrefixes(DynamicLinkDomain),
+                link = url
             }
+        };
 
-            Dictionary<string, string> args = new Dictionary<string, string>
+        if (IsShort)
+        {
+            requestOptions.suffix = new FirebaseSuffix
             {
-                { "key", WebAPIKey },
-                { "fields", "shortLink" }
+                option = "SHORT"
             };
-
-            string serializedRequestOptions = JsonConvert.SerializeObject(requestOptions);
-            result.Response = SendRequest(HttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", serializedRequestOptions, RequestHelpers.ContentTypeJSON, args);
-
-            FirebaseResponse firebaseResponse = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response);
-
-            if (firebaseResponse != null)
-            {
-                result.ShortenedURL = firebaseResponse.shortLink;
-            }
-
-            return result;
         }
+
+        Dictionary<string, string> args = new()
+        {
+            { "key", WebAPIKey },
+            { "fields", "shortLink" }
+        };
+
+        string serializedRequestOptions = JsonConvert.SerializeObject(requestOptions);
+        result.Response = SendRequest(HttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", serializedRequestOptions, RequestHelpers.ContentTypeJSON, args);
+
+        FirebaseResponse firebaseResponse = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response);
+
+        if (firebaseResponse != null)
+        {
+            result.ShortenedURL = firebaseResponse.shortLink;
+        }
+
+        return result;
     }
 }

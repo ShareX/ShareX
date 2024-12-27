@@ -24,130 +24,127 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.Properties;
+
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class FileExistForm : Form
 {
-    public partial class FileExistForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string FilePath { get; private set; }
+
+    private string fileName;
+    private string uniqueFilePath;
+
+    public FileExistForm(string filePath)
     {
-        public string FilePath { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this);
 
-        private string fileName;
-        private string uniqueFilePath;
+        FilePath = filePath;
+        fileName = Path.GetFileNameWithoutExtension(FilePath);
+        txtNewName.Text = fileName;
+        btnOverwrite.Text += Path.GetFileName(FilePath);
+        uniqueFilePath = FileHelpers.GetUniqueFilePath(FilePath);
+        btnUniqueName.Text += Path.GetFileName(uniqueFilePath);
+    }
 
-        public FileExistForm(string filePath)
+    private void FileExistForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+    }
+
+    private string GetNewFileName()
+    {
+        string newFileName = txtNewName.Text;
+
+        return !string.IsNullOrEmpty(newFileName) ? newFileName + Path.GetExtension(FilePath) : "";
+    }
+
+    private void UseNewFileName()
+    {
+        string newFileName = GetNewFileName();
+
+        if (!string.IsNullOrEmpty(newFileName))
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-
-            FilePath = filePath;
-            fileName = Path.GetFileNameWithoutExtension(FilePath);
-            txtNewName.Text = fileName;
-            btnOverwrite.Text += Path.GetFileName(FilePath);
-            uniqueFilePath = FileHelpers.GetUniqueFilePath(FilePath);
-            btnUniqueName.Text += Path.GetFileName(uniqueFilePath);
+            FilePath = Path.Combine(Path.GetDirectoryName(FilePath), newFileName);
+            Close();
         }
+    }
 
-        private void FileExistForm_Shown(object sender, EventArgs e)
+    private void UseUniqueFileName()
+    {
+        FilePath = uniqueFilePath;
+        Close();
+    }
+
+    private void Cancel()
+    {
+        FilePath = "";
+        Close();
+    }
+
+    private void txtNewName_TextChanged(object sender, EventArgs e)
+    {
+        string newFileName = txtNewName.Text;
+        btnNewName.Enabled = !string.IsNullOrEmpty(newFileName) && !newFileName.Equals(fileName, StringComparison.OrdinalIgnoreCase);
+        btnNewName.Text = Resources.FileExistForm_txtNewName_TextChanged_Use_new_name__ + GetNewFileName();
+    }
+
+    private void txtNewName_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyData == Keys.Enter || e.KeyData == Keys.Escape)
         {
-            this.ForceActivate();
+            e.SuppressKeyPress = true;
         }
+    }
 
-        private string GetNewFileName()
+    private void txtNewName_KeyUp(object sender, KeyEventArgs e)
+    {
+        if (e.KeyData == Keys.Enter)
         {
             string newFileName = txtNewName.Text;
 
             if (!string.IsNullOrEmpty(newFileName))
             {
-                return newFileName + Path.GetExtension(FilePath);
-            }
-
-            return "";
-        }
-
-        private void UseNewFileName()
-        {
-            string newFileName = GetNewFileName();
-
-            if (!string.IsNullOrEmpty(newFileName))
-            {
-                FilePath = Path.Combine(Path.GetDirectoryName(FilePath), newFileName);
-                Close();
-            }
-        }
-
-        private void UseUniqueFileName()
-        {
-            FilePath = uniqueFilePath;
-            Close();
-        }
-
-        private void Cancel()
-        {
-            FilePath = "";
-            Close();
-        }
-
-        private void txtNewName_TextChanged(object sender, EventArgs e)
-        {
-            string newFileName = txtNewName.Text;
-            btnNewName.Enabled = !string.IsNullOrEmpty(newFileName) && !newFileName.Equals(fileName, StringComparison.OrdinalIgnoreCase);
-            btnNewName.Text = Resources.FileExistForm_txtNewName_TextChanged_Use_new_name__ + GetNewFileName();
-        }
-
-        private void txtNewName_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter || e.KeyData == Keys.Escape)
-            {
-                e.SuppressKeyPress = true;
-            }
-        }
-
-        private void txtNewName_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                string newFileName = txtNewName.Text;
-
-                if (!string.IsNullOrEmpty(newFileName))
+                if (newFileName.Equals(fileName, StringComparison.OrdinalIgnoreCase))
                 {
-                    if (newFileName.Equals(fileName, StringComparison.OrdinalIgnoreCase))
-                    {
-                        Close();
-                    }
-                    else
-                    {
-                        UseNewFileName();
-                    }
+                    Close();
+                } else
+                {
+                    UseNewFileName();
                 }
             }
-            else if (e.KeyData == Keys.Escape)
-            {
-                Cancel();
-            }
-        }
-
-        private void btnNewName_Click(object sender, EventArgs e)
-        {
-            UseNewFileName();
-        }
-
-        private void btnOverwrite_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnUniqueName_Click(object sender, EventArgs e)
-        {
-            UseUniqueFileName();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
+        } else if (e.KeyData == Keys.Escape)
         {
             Cancel();
         }
+    }
+
+    private void btnNewName_Click(object sender, EventArgs e)
+    {
+        UseNewFileName();
+    }
+
+    private void btnOverwrite_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+
+    private void btnUniqueName_Click(object sender, EventArgs e)
+    {
+        UseUniqueFileName();
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        Cancel();
     }
 }

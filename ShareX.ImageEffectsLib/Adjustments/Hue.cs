@@ -24,32 +24,33 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+internal class Hue : ImageEffect
 {
-    internal class Hue : ImageEffect
+    [DefaultValue(0f), Description("From 0 to 360")]
+    public float Angle { get; set; }
+
+    public Hue()
     {
-        [DefaultValue(0f), Description("From 0 to 360")]
-        public float Angle { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        public Hue()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        using (bmp)
         {
-            this.ApplyDefaultPropertyValues();
+            return ColorMatrixManager.Hue(Angle).Apply(bmp);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            using (bmp)
-            {
-                return ColorMatrixManager.Hue(Angle).Apply(bmp);
-            }
-        }
-
-        protected override string GetSummary()
-        {
-            return Angle + "°";
-        }
+    protected override string GetSummary()
+    {
+        return Angle + "°";
     }
 }

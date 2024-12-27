@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class AfterUploadForm
     {
@@ -38,7 +40,7 @@
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.tmrClose = new System.Windows.Forms.Timer(this.components);
             this.btnClose = new System.Windows.Forms.Button();
-            this.lvClipboardFormats = new ShareX.HelpersLib.MyListView();
+            this.lvClipboardFormats = new ShareX.HelpersLib.Controls.MyListView();
             this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
@@ -155,7 +157,7 @@
         private System.Windows.Forms.Button btnCopyLink;
         private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.Button btnClose;
-        private HelpersLib.MyListView lvClipboardFormats;
+        private MyListView lvClipboardFormats;
         private System.Windows.Forms.ColumnHeader chDescription;
         private System.Windows.Forms.ColumnHeader chFormat;
     }

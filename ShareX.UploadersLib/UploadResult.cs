@@ -23,99 +23,85 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+using ShareX.UploadersLib.Helpers;
+
 using System.Text;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public class UploadResult
 {
-    public class UploadResult
+    public string URL { get; set; }
+    public string ThumbnailURL { get; set; }
+    public string DeletionURL { get; set; }
+    public string ShortenedURL { get; set; }
+
+    private bool isSuccess;
+
+    public bool IsSuccess
     {
-        public string URL { get; set; }
-        public string ThumbnailURL { get; set; }
-        public string DeletionURL { get; set; }
-        public string ShortenedURL { get; set; }
-
-        private bool isSuccess;
-
-        public bool IsSuccess
+        get
         {
-            get
-            {
-                return isSuccess && !string.IsNullOrEmpty(Response);
-            }
-            set
-            {
-                isSuccess = value;
-            }
+            return isSuccess && !string.IsNullOrEmpty(Response);
         }
-
-        public string Response { get; set; }
-        public UploaderErrorManager Errors { get; set; }
-        public bool IsURLExpected { get; set; }
-
-        public bool IsError
+        set
         {
-            get
-            {
-                return Errors != null && Errors.Count > 0 && (!IsURLExpected || string.IsNullOrEmpty(URL));
-            }
+            isSuccess = value;
         }
+    }
 
-        public ResponseInfo ResponseInfo { get; set; }
+    public string Response { get; set; }
+    public UploaderErrorManager Errors { get; set; }
+    public bool IsURLExpected { get; set; }
 
-        public UploadResult()
+    public bool IsError
+    {
+        get
         {
-            Errors = new UploaderErrorManager();
-            IsURLExpected = true;
+            return Errors != null && Errors.Count > 0 && (!IsURLExpected || string.IsNullOrEmpty(URL));
         }
+    }
 
-        public UploadResult(string source, string url = null) : this()
-        {
-            Response = source;
-            URL = url;
-        }
+    public ResponseInfo ResponseInfo { get; set; }
 
-        public void ForceHTTPS()
-        {
-            URL = URLHelpers.ForcePrefix(URL);
-            ThumbnailURL = URLHelpers.ForcePrefix(ThumbnailURL);
-            DeletionURL = URLHelpers.ForcePrefix(DeletionURL);
-            ShortenedURL = URLHelpers.ForcePrefix(ShortenedURL);
-        }
+    public UploadResult()
+    {
+        Errors = new UploaderErrorManager();
+        IsURLExpected = true;
+    }
 
-        public override string ToString()
-        {
-            if (!string.IsNullOrEmpty(ShortenedURL))
-            {
-                return ShortenedURL;
-            }
+    public UploadResult(string source, string url = null) : this()
+    {
+        Response = source;
+        URL = url;
+    }
 
-            if (!string.IsNullOrEmpty(URL))
-            {
-                return URL;
-            }
+    public void ForceHTTPS()
+    {
+        URL = URLHelpers.ForcePrefix(URL);
+        ThumbnailURL = URLHelpers.ForcePrefix(ThumbnailURL);
+        DeletionURL = URLHelpers.ForcePrefix(DeletionURL);
+        ShortenedURL = URLHelpers.ForcePrefix(ShortenedURL);
+    }
 
-            return "";
-        }
+    public override string ToString()
+    {
+        return !string.IsNullOrEmpty(ShortenedURL) ? ShortenedURL : !string.IsNullOrEmpty(URL) ? URL : "";
+    }
 
-        public string ErrorsToString()
-        {
-            if (IsError)
-            {
-                return Errors.ToString();
-            }
+    public string ErrorsToString()
+    {
+        return IsError ? Errors.ToString() : null;
+    }
 
-            return null;
-        }
-
-        public string ToSummaryString()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("URL: " + URL);
-            sb.AppendLine("Thumbnail URL: " + ThumbnailURL);
-            sb.AppendLine("Shortened URL: " + ShortenedURL);
-            sb.AppendLine("Deletion URL: " + DeletionURL);
-            return sb.ToString();
-        }
+    public string ToSummaryString()
+    {
+        StringBuilder sb = new();
+        sb.AppendLine("URL: " + URL);
+        sb.AppendLine("Thumbnail URL: " + ThumbnailURL);
+        sb.AppendLine("Shortened URL: " + ShortenedURL);
+        sb.AppendLine("Deletion URL: " + DeletionURL);
+        return sb.ToString();
     }
 }

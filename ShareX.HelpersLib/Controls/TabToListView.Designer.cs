@@ -1,4 +1,6 @@
-﻿namespace ShareX.HelpersLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.HelpersLib
 {
     partial class TabToListView
     {
@@ -30,7 +32,7 @@
         {
             this.scMain = new System.Windows.Forms.SplitContainer();
             this.tcMain = new System.Windows.Forms.TabControl();
-            this.lvMain = new HelpersLib.MyListView();
+            this.lvMain = new HelpersLib.Controls.MyListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();

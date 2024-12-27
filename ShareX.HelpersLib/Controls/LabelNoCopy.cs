@@ -24,35 +24,36 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class LabelNoCopy : Label
 {
-    public class LabelNoCopy : Label
+    private string text;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public override string Text
     {
-        private string text;
-
-        public override string Text
+        get
         {
-            get
+            return text;
+        }
+        set
+        {
+            if (value == null)
             {
-                return text;
+                value = "";
             }
-            set
+
+            if (text != value)
             {
-                if (value == null)
-                {
-                    value = "";
-                }
+                text = value;
 
-                if (text != value)
-                {
-                    text = value;
+                OnTextChanged(EventArgs.Empty);
 
-                    OnTextChanged(EventArgs.Empty);
-
-                    Invalidate();
-                }
+                Invalidate();
             }
         }
     }

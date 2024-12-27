@@ -24,134 +24,133 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+public class WindowsRectangleList
 {
-    public class WindowsRectangleList
+    public IntPtr IgnoreHandle { get; set; }
+    public bool IncludeChildWindows { get; set; }
+    public int Timeout { get; set; }
+
+    private List<SimpleWindowInfo> windows;
+    private HashSet<IntPtr> parentHandles;
+    private CancellationTokenSource cts;
+
+    public List<SimpleWindowInfo> GetWindowInfoList()
     {
-        public IntPtr IgnoreHandle { get; set; }
-        public bool IncludeChildWindows { get; set; }
-        public int Timeout { get; set; }
+        windows = new List<SimpleWindowInfo>();
+        parentHandles = new HashSet<IntPtr>();
 
-        private List<SimpleWindowInfo> windows;
-        private HashSet<IntPtr> parentHandles;
-        private CancellationTokenSource cts;
-
-        public List<SimpleWindowInfo> GetWindowInfoList()
+        try
         {
-            windows = new List<SimpleWindowInfo>();
-            parentHandles = new HashSet<IntPtr>();
-
-            try
+            if (Timeout > 0)
             {
-                if (Timeout > 0)
+                cts = new CancellationTokenSource();
+                cts.CancelAfter(Timeout);
+            }
+
+            EnumWindowsProc ewp = EvalWindow;
+            NativeMethods.EnumWindows(ewp, IntPtr.Zero);
+        } catch
+        {
+        } finally
+        {
+            cts?.Dispose();
+        }
+
+        List<SimpleWindowInfo> result = new();
+
+        foreach (SimpleWindowInfo window in windows)
+        {
+            bool rectVisible = true;
+
+            if (!window.IsWindow)
+            {
+                foreach (SimpleWindowInfo window2 in result)
                 {
-                    cts = new CancellationTokenSource();
-                    cts.CancelAfter(Timeout);
-                }
-
-                EnumWindowsProc ewp = EvalWindow;
-                NativeMethods.EnumWindows(ewp, IntPtr.Zero);
-            }
-            catch
-            {
-            }
-            finally
-            {
-                cts?.Dispose();
-            }
-
-            List<SimpleWindowInfo> result = new List<SimpleWindowInfo>();
-
-            foreach (SimpleWindowInfo window in windows)
-            {
-                bool rectVisible = true;
-
-                if (!window.IsWindow)
-                {
-                    foreach (SimpleWindowInfo window2 in result)
+                    if (window2.Rectangle.Contains(window.Rectangle))
                     {
-                        if (window2.Rectangle.Contains(window.Rectangle))
-                        {
-                            rectVisible = false;
-                            break;
-                        }
+                        rectVisible = false;
+                        break;
                     }
                 }
-
-                if (rectVisible)
-                {
-                    result.Add(window);
-                }
             }
 
-            return result;
+            if (rectVisible)
+            {
+                result.Add(window);
+            }
         }
 
-        private bool EvalWindow(IntPtr hWnd, IntPtr lParam)
+        return result;
+    }
+
+    private bool EvalWindow(IntPtr hWnd, IntPtr lParam)
+    {
+        return CheckHandle(hWnd, true);
+    }
+
+    private bool EvalControl(IntPtr hWnd, IntPtr lParam)
+    {
+        return CheckHandle(hWnd, false);
+    }
+
+    private bool CheckHandle(IntPtr handle, bool isWindow)
+    {
+        if (cts != null && cts.IsCancellationRequested)
         {
-            return CheckHandle(hWnd, true);
+            return false;
         }
 
-        private bool EvalControl(IntPtr hWnd, IntPtr lParam)
+        if (handle == IgnoreHandle || !NativeMethods.IsWindowVisible(handle) || isWindow && NativeMethods.IsWindowCloaked(handle))
         {
-            return CheckHandle(hWnd, false);
-        }
-
-        private bool CheckHandle(IntPtr handle, bool isWindow)
-        {
-            if (cts != null && cts.IsCancellationRequested)
-            {
-                return false;
-            }
-
-            if (handle == IgnoreHandle || !NativeMethods.IsWindowVisible(handle) || (isWindow && NativeMethods.IsWindowCloaked(handle)))
-            {
-                return true;
-            }
-
-            SimpleWindowInfo windowInfo = new SimpleWindowInfo(handle);
-
-            if (isWindow)
-            {
-                windowInfo.IsWindow = true;
-                windowInfo.Rectangle = CaptureHelpers.GetWindowRectangle(handle);
-            }
-            else
-            {
-                windowInfo.Rectangle = NativeMethods.GetWindowRect(handle);
-            }
-
-            if (!windowInfo.Rectangle.IsValid())
-            {
-                return true;
-            }
-
-            if (IncludeChildWindows && !parentHandles.Contains(handle))
-            {
-                parentHandles.Add(handle);
-
-                EnumWindowsProc ewp = EvalControl;
-                NativeMethods.EnumChildWindows(handle, ewp, IntPtr.Zero);
-            }
-
-            if (isWindow)
-            {
-                Rectangle clientRect = NativeMethods.GetClientRect(handle);
-
-                if (clientRect.IsValid() && clientRect != windowInfo.Rectangle)
-                {
-                    windows.Add(new SimpleWindowInfo(handle, clientRect));
-                }
-            }
-
-            windows.Add(windowInfo);
-
             return true;
         }
+
+        SimpleWindowInfo windowInfo = new(handle);
+
+        if (isWindow)
+        {
+            windowInfo.IsWindow = true;
+            windowInfo.Rectangle = CaptureHelpers.GetWindowRectangle(handle);
+        } else
+        {
+            windowInfo.Rectangle = NativeMethods.GetWindowRect(handle);
+        }
+
+        if (!windowInfo.Rectangle.IsValid())
+        {
+            return true;
+        }
+
+        if (IncludeChildWindows && !parentHandles.Contains(handle))
+        {
+            parentHandles.Add(handle);
+
+            EnumWindowsProc ewp = EvalControl;
+            NativeMethods.EnumChildWindows(handle, ewp, IntPtr.Zero);
+        }
+
+        if (isWindow)
+        {
+            Rectangle clientRect = NativeMethods.GetClientRect(handle);
+
+            if (clientRect.IsValid() && clientRect != windowInfo.Rectangle)
+            {
+                windows.Add(new SimpleWindowInfo(handle, clientRect));
+            }
+        }
+
+        windows.Add(windowInfo);
+
+        return true;
     }
 }

@@ -26,23 +26,22 @@
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
-{
-    [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
-    public class ToolStripDoubleLabeledNumericUpDown : ToolStripControlHost
-    {
-        public DoubleLabeledNumericUpDown Content
-        {
-            get
-            {
-                return Control as DoubleLabeledNumericUpDown;
-            }
-        }
+namespace ShareX.HelpersLib.Controls;
 
-        public ToolStripDoubleLabeledNumericUpDown(string text, string text2) : base(new DoubleLabeledNumericUpDown())
+[ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
+public class ToolStripDoubleLabeledNumericUpDown : ToolStripControlHost
+{
+    public DoubleLabeledNumericUpDown Content
+    {
+        get
         {
-            Content.Text = text;
-            Content.Text2 = text2;
+            return Control as DoubleLabeledNumericUpDown;
         }
+    }
+
+    public ToolStripDoubleLabeledNumericUpDown(string text, string text2) : base(new DoubleLabeledNumericUpDown())
+    {
+        Content.Text = text;
+        Content.Text2 = text2;
     }
 }

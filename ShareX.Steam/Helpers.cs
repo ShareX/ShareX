@@ -30,104 +30,97 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace ShareX.Steam
+namespace ShareX.Steam;
+
+public static class Helpers
 {
-    public static class Helpers
+    [DllImport("kernel32.dll")]
+    public static extern uint WinExec(string lpCmdLine, uint uCmdShow);
+
+    public static string GetAbsolutePath(string path)
     {
-        [DllImport("kernel32.dll")]
-        public static extern uint WinExec(string lpCmdLine, uint uCmdShow);
-
-        public static string GetAbsolutePath(string path)
+        if (!Path.IsPathRooted(path)) // Is relative path?
         {
-            if (!Path.IsPathRooted(path)) // Is relative path?
-            {
-                path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
-            }
-
-            return Path.GetFullPath(path);
+            path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
         }
 
-        public static bool IsRunning(string mutexName)
-        {
-            try
-            {
-                using (Mutex mutex = new Mutex(false, mutexName, out bool createdNew))
-                {
-                    return !createdNew;
-                }
-            }
-            catch
-            {
-            }
+        return Path.GetFullPath(path);
+    }
 
-            return false;
+    public static bool IsRunning(string mutexName)
+    {
+        try
+        {
+            using Mutex mutex = new(false, mutexName, out bool createdNew);
+            return !createdNew;
+        } catch
+        {
         }
 
-        /// <summary>
-        /// If version1 newer than version2 = 1
-        /// If version1 equal to version2 = 0
-        /// If version1 older than version2 = -1
-        /// </summary>
-        public static int CompareVersion(string version1, string version2)
+        return false;
+    }
+
+    /// <summary>
+    /// If version1 newer than version2 = 1
+    /// If version1 equal to version2 = 0
+    /// If version1 older than version2 = -1
+    /// </summary>
+    public static int CompareVersion(string version1, string version2)
+    {
+        return ParseVersion(version1).CompareTo(ParseVersion(version2));
+    }
+
+    private static Version ParseVersion(string version)
+    {
+        return NormalizeVersion(Version.Parse(version));
+    }
+
+    private static Version NormalizeVersion(Version version)
+    {
+        return new Version(Math.Max(version.Major, 0), Math.Max(version.Minor, 0), Math.Max(version.Build, 0), Math.Max(version.Revision, 0));
+    }
+
+    public static void ShowError(Exception e)
+    {
+        MessageBox.Show(e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+
+    public static void CopyAll(string sourceDirectory, string targetDirectory)
+    {
+        DirectoryInfo diSource = new(sourceDirectory);
+        DirectoryInfo diTarget = new(targetDirectory);
+
+        CopyAll(diSource, diTarget);
+    }
+
+    public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
+    {
+        if (!Directory.Exists(target.FullName))
         {
-            return ParseVersion(version1).CompareTo(ParseVersion(version2));
+            Directory.CreateDirectory(target.FullName);
         }
 
-        private static Version ParseVersion(string version)
+        foreach (FileInfo fi in source.GetFiles())
         {
-            return NormalizeVersion(Version.Parse(version));
+            fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
         }
 
-        private static Version NormalizeVersion(Version version)
+        foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
         {
-            return new Version(Math.Max(version.Major, 0), Math.Max(version.Minor, 0), Math.Max(version.Build, 0), Math.Max(version.Revision, 0));
+            DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(diSourceSubDir.Name);
+            CopyAll(diSourceSubDir, nextTargetSubDir);
         }
+    }
 
-        public static void ShowError(Exception e)
-        {
-            MessageBox.Show(e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+    public static bool IsCommandExist(string[] args, string command)
+    {
+        return args != null && !string.IsNullOrEmpty(command)
+            ? args.Any(arg => !string.IsNullOrEmpty(arg) && arg.Equals(command, StringComparison.OrdinalIgnoreCase))
+            : false;
+    }
 
-        public static void CopyAll(string sourceDirectory, string targetDirectory)
-        {
-            DirectoryInfo diSource = new DirectoryInfo(sourceDirectory);
-            DirectoryInfo diTarget = new DirectoryInfo(targetDirectory);
-
-            CopyAll(diSource, diTarget);
-        }
-
-        public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
-        {
-            if (!Directory.Exists(target.FullName))
-            {
-                Directory.CreateDirectory(target.FullName);
-            }
-
-            foreach (FileInfo fi in source.GetFiles())
-            {
-                fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
-            }
-
-            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
-            {
-                DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(diSourceSubDir.Name);
-                CopyAll(diSourceSubDir, nextTargetSubDir);
-            }
-        }
-
-        public static bool IsCommandExist(string[] args, string command)
-        {
-            if (args != null && !string.IsNullOrEmpty(command))
-            {
-                return args.Any(arg => !string.IsNullOrEmpty(arg) && arg.Equals(command, StringComparison.OrdinalIgnoreCase));
-            }
-
-            return false;
-        }
-
-        public static void CreateEmptyFile(string path)
-        {
-            File.Create(path).Dispose();
-        }
+    public static void CreateEmptyFile(string path)
+    {
+        File.Create(path).Dispose();
     }
 }

@@ -24,76 +24,78 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class PinToScreenStartupForm : Form
 {
-    public partial class PinToScreenStartupForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Bitmap Image { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Point? PinToScreenLocation { get; private set; }
+
+    public PinToScreenStartupForm()
     {
-        public Bitmap Image { get; private set; }
-        public Point? PinToScreenLocation { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+    }
 
-        public PinToScreenStartupForm()
+    private void btnFromScreen_Click(object sender, EventArgs e)
+    {
+        Hide();
+        Thread.Sleep(250);
+
+        Image = RegionCaptureTasks.GetRegionImage(out Rectangle rect);
+
+        if (Image != null)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+            PinToScreenLocation = rect.Location;
+
+            DialogResult = DialogResult.OK;
+            Close();
+        } else
+        {
+            Show();
         }
+    }
 
-        private void btnFromScreen_Click(object sender, EventArgs e)
+    private void btnFromClipboard_Click(object sender, EventArgs e)
+    {
+        Image = ClipboardHelpers.TryGetImage();
+
+        if (Image == null)
         {
-            Hide();
-            Thread.Sleep(250);
-
-            Image = RegionCaptureTasks.GetRegionImage(out Rectangle rect);
-
-            if (Image != null)
-            {
-                PinToScreenLocation = rect.Location;
-
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-            else
-            {
-                Show();
-            }
-        }
-
-        private void btnFromClipboard_Click(object sender, EventArgs e)
+            MessageBox.Show(Resources.ClipboardDoesNotContainAnImage, "ShareX - " + Resources.PinToScreen, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        } else
         {
-            Image = ClipboardHelpers.TryGetImage();
-
-            if (Image == null)
-            {
-                MessageBox.Show(Resources.ClipboardDoesNotContainAnImage, "ShareX - " + Resources.PinToScreen, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-        }
-
-        private void btnFromFile_Click(object sender, EventArgs e)
-        {
-            Image = ImageHelpers.LoadImageWithFileDialog(this);
-
-            if (Image != null)
-            {
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.OK;
             Close();
         }
+    }
+
+    private void btnFromFile_Click(object sender, EventArgs e)
+    {
+        Image = ImageHelpers.LoadImageWithFileDialog(this);
+
+        if (Image != null)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

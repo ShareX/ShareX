@@ -23,37 +23,36 @@
 
 #endregion License Information (GPL v3)
 
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class SplitContainerCustomSplitter : SplitContainer
 {
-    public class SplitContainerCustomSplitter : SplitContainer
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Color SplitterColor { get; set; } = Color.White;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Color SplitterLineColor { get; set; } = ProfessionalColors.SeparatorDark;
+
+    protected override void OnPaint(PaintEventArgs pevent)
     {
-        public Color SplitterColor { get; set; } = Color.White;
-        public Color SplitterLineColor { get; set; } = ProfessionalColors.SeparatorDark;
+        Graphics g = pevent.Graphics;
+        Rectangle rect = SplitterRectangle;
 
-        protected override void OnPaint(PaintEventArgs pevent)
+        using Brush brush = new SolidBrush(SplitterColor);
+        using Pen pen = new(SplitterLineColor);
+        g.FillRectangle(brush, rect);
+
+        if (Orientation == Orientation.Horizontal)
         {
-            Graphics g = pevent.Graphics;
-            Rectangle rect = SplitterRectangle;
-
-            using (Brush brush = new SolidBrush(SplitterColor))
-            using (Pen pen = new Pen(SplitterLineColor))
-            {
-                g.FillRectangle(brush, rect);
-
-                if (Orientation == Orientation.Horizontal)
-                {
-                    g.DrawLine(pen, rect.Left, rect.Top, rect.Right - 1, rect.Top);
-                    g.DrawLine(pen, rect.Left, rect.Bottom - 1, rect.Right - 1, rect.Bottom - 1);
-                }
-                else if (Orientation == Orientation.Vertical)
-                {
-                    g.DrawLine(pen, rect.Left, rect.Top, rect.Left, rect.Bottom - 1);
-                    g.DrawLine(pen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1);
-                }
-            }
+            g.DrawLine(pen, rect.Left, rect.Top, rect.Right - 1, rect.Top);
+            g.DrawLine(pen, rect.Left, rect.Bottom - 1, rect.Right - 1, rect.Bottom - 1);
+        } else if (Orientation == Orientation.Vertical)
+        {
+            g.DrawLine(pen, rect.Left, rect.Top, rect.Left, rect.Bottom - 1);
+            g.DrawLine(pen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1);
         }
     }
 }

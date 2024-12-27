@@ -23,87 +23,86 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Printer;
 using ShareX.HelpersLib.Properties;
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class PrintTextForm : Form
 {
-    public partial class PrintTextForm : Form
+    private PrintHelper printHelper;
+    private PrintSettings printSettings;
+
+    public PrintTextForm(string text, PrintSettings settings)
     {
-        private PrintHelper printHelper;
-        private PrintSettings printSettings;
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this);
 
-        public PrintTextForm(string text, PrintSettings settings)
+        printHelper = new PrintHelper(text);
+        printHelper.Settings = printSettings = settings;
+        LoadSettings();
+    }
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this);
+            if (components != null)
+            {
+                components.Dispose();
+            }
 
-            printHelper = new PrintHelper(text);
-            printHelper.Settings = printSettings = settings;
+            if (printHelper != null)
+            {
+                printHelper.Dispose();
+            }
+        }
+
+        base.Dispose(disposing);
+    }
+
+    private void LoadSettings()
+    {
+        Font font = printSettings.TextFont;
+        lblFont.Text = string.Format(Resources.PrintTextForm_LoadSettings_Name___0___Size___1_, font.Name, font.Size);
+    }
+
+    private void btnPrint_Click(object sender, EventArgs e)
+    {
+        printHelper.Print();
+
+        DialogResult = DialogResult.OK;
+        Close();
+    }
+
+    private void btnShowPreview_Click(object sender, EventArgs e)
+    {
+        printHelper.ShowPreview();
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
+    }
+
+    private void btnChangeFont_Click(object sender, EventArgs e)
+    {
+        using FontDialog fd = new();
+        fd.Font = printSettings.TextFont;
+
+        if (fd.ShowDialog() == DialogResult.OK)
+        {
+            printSettings.TextFont = fd.Font;
             LoadSettings();
-        }
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                if (components != null)
-                {
-                    components.Dispose();
-                }
-
-                if (printHelper != null)
-                {
-                    printHelper.Dispose();
-                }
-            }
-
-            base.Dispose(disposing);
-        }
-
-        private void LoadSettings()
-        {
-            Font font = printSettings.TextFont;
-            lblFont.Text = string.Format(Resources.PrintTextForm_LoadSettings_Name___0___Size___1_, font.Name, font.Size);
-        }
-
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            printHelper.Print();
-
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnShowPreview_Click(object sender, EventArgs e)
-        {
-            printHelper.ShowPreview();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
-
-        private void btnChangeFont_Click(object sender, EventArgs e)
-        {
-            using (FontDialog fd = new FontDialog())
-            {
-                fd.Font = printSettings.TextFont;
-
-                if (fd.ShowDialog() == DialogResult.OK)
-                {
-                    printSettings.TextFont = fd.Font;
-                    LoadSettings();
-                }
-            }
         }
     }
 }

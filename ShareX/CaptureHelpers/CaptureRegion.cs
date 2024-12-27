@@ -24,164 +24,140 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Native;
 using ShareX.ScreenCaptureLib;
+using ShareX.ScreenCaptureLib.Forms;
+
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.CaptureHelpers;
+
+public class CaptureRegion : CaptureBase
 {
-    public class CaptureRegion : CaptureBase
+    protected static RegionCaptureType lastRegionCaptureType = RegionCaptureType.Default;
+
+    public RegionCaptureType RegionCaptureType { get; protected set; }
+
+    public CaptureRegion()
     {
-        protected static RegionCaptureType lastRegionCaptureType = RegionCaptureType.Default;
+    }
 
-        public RegionCaptureType RegionCaptureType { get; protected set; }
+    public CaptureRegion(RegionCaptureType regionCaptureType)
+    {
+        RegionCaptureType = regionCaptureType;
+    }
 
-        public CaptureRegion()
+    protected override TaskMetadata Execute(TaskSettings taskSettings)
+    {
+        switch (RegionCaptureType)
         {
+            default:
+            case RegionCaptureType.Default:
+                return ExecuteRegionCapture(taskSettings);
+            case RegionCaptureType.Light:
+                return ExecuteRegionCaptureLight(taskSettings);
+            case RegionCaptureType.Transparent:
+                return ExecuteRegionCaptureTransparent(taskSettings);
+        }
+    }
+
+    protected TaskMetadata ExecuteRegionCapture(TaskSettings taskSettings)
+    {
+        RegionCaptureMode mode = taskSettings.AdvancedSettings.RegionCaptureDisableAnnotation ? RegionCaptureMode.Default : RegionCaptureMode.Annotation;
+        Bitmap canvas;
+        Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+        screenshot.CaptureCursor = false;
+
+        canvas = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode
+            ? screenshot.CaptureActiveMonitor()
+            : screenshot.CaptureFullscreen();
+
+        CursorData cursorData = null;
+
+        if (taskSettings.CaptureSettings.ShowCursor)
+        {
+            cursorData = new CursorData();
         }
 
-        public CaptureRegion(RegionCaptureType regionCaptureType)
+        using RegionCaptureForm form = new(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, canvas);
+        if (cursorData != null && cursorData.IsVisible)
         {
-            RegionCaptureType = regionCaptureType;
+            form.AddCursor(cursorData.ToBitmap(), form.PointToClient(cursorData.DrawPosition));
         }
 
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
+        form.ShowDialog();
+
+        Bitmap result = form.GetResultImage();
+
+        if (result != null)
         {
-            switch (RegionCaptureType)
+            TaskMetadata metadata = new(result);
+
+            if (form.IsImageModified)
             {
-                default:
-                case RegionCaptureType.Default:
-                    return ExecuteRegionCapture(taskSettings);
-                case RegionCaptureType.Light:
-                    return ExecuteRegionCaptureLight(taskSettings);
-                case RegionCaptureType.Transparent:
-                    return ExecuteRegionCaptureTransparent(taskSettings);
+                AllowAnnotation = false;
+            }
+
+            if (form.Result == RegionResult.Region)
+            {
+                WindowInfo windowInfo = form.GetWindowInfo();
+                metadata.UpdateInfo(windowInfo);
+            }
+
+            lastRegionCaptureType = RegionCaptureType.Default;
+
+            return metadata;
+        }
+
+        return null;
+    }
+
+    protected TaskMetadata ExecuteRegionCaptureLight(TaskSettings taskSettings)
+    {
+        Bitmap canvas;
+        Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+
+        canvas = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode
+            ? screenshot.CaptureActiveMonitor()
+            : screenshot.CaptureFullscreen();
+
+        bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
+
+        using RegionCaptureLightForm rectangleLight = new(canvas, activeMonitorMode);
+        if (rectangleLight.ShowDialog() == DialogResult.OK)
+        {
+            Bitmap result = rectangleLight.GetAreaImage();
+
+            if (result != null)
+            {
+                lastRegionCaptureType = RegionCaptureType.Light;
+
+                return new TaskMetadata(result);
             }
         }
 
-        protected TaskMetadata ExecuteRegionCapture(TaskSettings taskSettings)
+        return null;
+    }
+
+    protected TaskMetadata ExecuteRegionCaptureTransparent(TaskSettings taskSettings)
+    {
+        bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
+
+        using RegionCaptureTransparentForm rectangleTransparent = new(activeMonitorMode);
+        if (rectangleTransparent.ShowDialog() == DialogResult.OK)
         {
-            RegionCaptureMode mode;
-
-            if (taskSettings.AdvancedSettings.RegionCaptureDisableAnnotation)
-            {
-                mode = RegionCaptureMode.Default;
-            }
-            else
-            {
-                mode = RegionCaptureMode.Annotation;
-            }
-
-            Bitmap canvas;
             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
-            screenshot.CaptureCursor = false;
+            Bitmap result = rectangleTransparent.GetAreaImage(screenshot);
 
-            if (taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode)
+            if (result != null)
             {
-                canvas = screenshot.CaptureActiveMonitor();
+                lastRegionCaptureType = RegionCaptureType.Transparent;
+
+                return new TaskMetadata(result);
             }
-            else
-            {
-                canvas = screenshot.CaptureFullscreen();
-            }
-
-            CursorData cursorData = null;
-
-            if (taskSettings.CaptureSettings.ShowCursor)
-            {
-                cursorData = new CursorData();
-            }
-
-            using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, canvas))
-            {
-                if (cursorData != null && cursorData.IsVisible)
-                {
-                    form.AddCursor(cursorData.ToBitmap(), form.PointToClient(cursorData.DrawPosition));
-                }
-
-                form.ShowDialog();
-
-                Bitmap result = form.GetResultImage();
-
-                if (result != null)
-                {
-                    TaskMetadata metadata = new TaskMetadata(result);
-
-                    if (form.IsImageModified)
-                    {
-                        AllowAnnotation = false;
-                    }
-
-                    if (form.Result == RegionResult.Region)
-                    {
-                        WindowInfo windowInfo = form.GetWindowInfo();
-                        metadata.UpdateInfo(windowInfo);
-                    }
-
-                    lastRegionCaptureType = RegionCaptureType.Default;
-
-                    return metadata;
-                }
-            }
-
-            return null;
         }
 
-        protected TaskMetadata ExecuteRegionCaptureLight(TaskSettings taskSettings)
-        {
-            Bitmap canvas;
-            Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
-
-            if (taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode)
-            {
-                canvas = screenshot.CaptureActiveMonitor();
-            }
-            else
-            {
-                canvas = screenshot.CaptureFullscreen();
-            }
-
-            bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
-
-            using (RegionCaptureLightForm rectangleLight = new RegionCaptureLightForm(canvas, activeMonitorMode))
-            {
-                if (rectangleLight.ShowDialog() == DialogResult.OK)
-                {
-                    Bitmap result = rectangleLight.GetAreaImage();
-
-                    if (result != null)
-                    {
-                        lastRegionCaptureType = RegionCaptureType.Light;
-
-                        return new TaskMetadata(result);
-                    }
-                }
-            }
-
-            return null;
-        }
-
-        protected TaskMetadata ExecuteRegionCaptureTransparent(TaskSettings taskSettings)
-        {
-            bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
-
-            using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm(activeMonitorMode))
-            {
-                if (rectangleTransparent.ShowDialog() == DialogResult.OK)
-                {
-                    Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
-                    Bitmap result = rectangleTransparent.GetAreaImage(screenshot);
-
-                    if (result != null)
-                    {
-                        lastRegionCaptureType = RegionCaptureType.Transparent;
-
-                        return new TaskMetadata(result);
-                    }
-                }
-            }
-
-            return null;
-        }
+        return null;
     }
 }

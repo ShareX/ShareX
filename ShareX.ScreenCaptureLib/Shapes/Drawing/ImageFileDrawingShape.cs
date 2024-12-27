@@ -23,65 +23,63 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes.Drawing;
+
+public class ImageFileDrawingShape : ImageDrawingShape
 {
-    public class ImageFileDrawingShape : ImageDrawingShape
+    public override void OnCreating()
     {
-        public override void OnCreating()
-        {
-            PointF pos = Manager.Form.ScaledClientMousePosition;
-            Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
+        PointF pos = Manager.Form.ScaledClientMousePosition;
+        Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
 
-            if (Manager.IsCtrlModifier && LoadImageFile(AnnotationOptions.LastImageFilePath, true))
+        if (Manager.IsCtrlModifier && LoadImageFile(AnnotationOptions.LastImageFilePath, true))
+        {
+            OnCreated();
+            Manager.IsMoving = true;
+        } else if (OpenImageDialog(true))
+        {
+            OnCreated();
+            ShowNodes();
+        } else
+        {
+            Remove();
+        }
+    }
+
+    public override void OnDoubleClicked()
+    {
+        OpenImageDialog(false);
+    }
+
+    private bool OpenImageDialog(bool centerImage)
+    {
+        Manager.IsMoving = false;
+        Manager.Form.Pause();
+        string filePath = ImageHelpers.OpenImageFileDialog(Manager.Form);
+        Manager.Form.Resume();
+        return LoadImageFile(filePath, centerImage);
+    }
+
+    private bool LoadImageFile(string filePath, bool centerImage)
+    {
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            Bitmap bmp = ImageHelpers.LoadImage(filePath);
+
+            if (bmp != null)
             {
-                OnCreated();
-                Manager.IsMoving = true;
-            }
-            else if (OpenImageDialog(true))
-            {
-                OnCreated();
-                ShowNodes();
-            }
-            else
-            {
-                Remove();
+                AnnotationOptions.LastImageFilePath = filePath;
+
+                SetImage(bmp, centerImage);
+
+                return true;
             }
         }
 
-        public override void OnDoubleClicked()
-        {
-            OpenImageDialog(false);
-        }
-
-        private bool OpenImageDialog(bool centerImage)
-        {
-            Manager.IsMoving = false;
-            Manager.Form.Pause();
-            string filePath = ImageHelpers.OpenImageFileDialog(Manager.Form);
-            Manager.Form.Resume();
-            return LoadImageFile(filePath, centerImage);
-        }
-
-        private bool LoadImageFile(string filePath, bool centerImage)
-        {
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                Bitmap bmp = ImageHelpers.LoadImage(filePath);
-
-                if (bmp != null)
-                {
-                    AnnotationOptions.LastImageFilePath = filePath;
-
-                    SetImage(bmp, centerImage);
-
-                    return true;
-                }
-            }
-
-            return false;
-        }
+        return false;
     }
 }

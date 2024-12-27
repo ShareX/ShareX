@@ -24,76 +24,74 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class FirstTimeUploadForm : Form
 {
-    public partial class FirstTimeUploadForm : Form
+    private int countdown = 5;
+    private string textYes;
+
+    public FirstTimeUploadForm()
     {
-        private int countdown = 5;
-        private string textYes;
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+        lblHeader.BackColor = Color.DarkRed;
+        lblHeader.ForeColor = Color.WhiteSmoke;
 
-        public FirstTimeUploadForm()
+        btnYes.Enabled = false;
+        textYes = btnYes.Text;
+        UpdateCountdown();
+        tCountdown.Start();
+    }
+
+    private void UpdateCountdown()
+    {
+        if (countdown < 1)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-            lblHeader.BackColor = Color.DarkRed;
-            lblHeader.ForeColor = Color.WhiteSmoke;
+            btnYes.Text = textYes;
+            btnYes.Enabled = true;
+            tCountdown.Stop();
+        } else
+        {
+            btnYes.Text = textYes + " (" + countdown + ")";
+            countdown--;
+        }
+    }
 
-            btnYes.Enabled = false;
-            textYes = btnYes.Text;
+    public static bool ShowForm()
+    {
+        using FirstTimeUploadForm form = new();
+        return form.ShowDialog() == DialogResult.Yes;
+    }
+
+    private void FirstTimeUploadForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+    }
+
+    private void tCountdown_Tick(object sender, EventArgs e)
+    {
+        if (!IsDisposed && NativeMethods.IsActive(Handle))
+        {
             UpdateCountdown();
-            tCountdown.Start();
         }
+    }
 
-        private void UpdateCountdown()
-        {
-            if (countdown < 1)
-            {
-                btnYes.Text = textYes;
-                btnYes.Enabled = true;
-                tCountdown.Stop();
-            }
-            else
-            {
-                btnYes.Text = textYes + " (" + countdown + ")";
-                countdown--;
-            }
-        }
+    private void btnYes_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Yes;
+        Close();
+    }
 
-        public static bool ShowForm()
-        {
-            using (FirstTimeUploadForm form = new FirstTimeUploadForm())
-            {
-                return form.ShowDialog() == DialogResult.Yes;
-            }
-        }
-
-        private void FirstTimeUploadForm_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
-        }
-
-        private void tCountdown_Tick(object sender, EventArgs e)
-        {
-            if (!IsDisposed && NativeMethods.IsActive(Handle))
-            {
-                UpdateCountdown();
-            }
-        }
-
-        private void btnYes_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Yes;
-            Close();
-        }
-
-        private void btnNo_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.No;
-            Close();
-        }
+    private void btnNo_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.No;
+        Close();
     }
 }

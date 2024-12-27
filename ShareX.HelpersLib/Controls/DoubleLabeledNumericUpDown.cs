@@ -23,109 +23,112 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class DoubleLabeledNumericUpDown : UserControl
 {
-    public partial class DoubleLabeledNumericUpDown : UserControl
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public new string Text
     {
-        public new string Text
-        {
-            get
-            {
-                return lblText.Text;
-            }
-            set
-            {
-                lblText.Text = value;
-            }
-        }
+        get => lblText.Text;
+        set => lblText.Text = value;
+    }
 
-        public string Text2
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Text2
+    {
+        get
         {
-            get
-            {
-                return lblText2.Text;
-            }
-            set
-            {
-                lblText2.Text = value;
-            }
+            return lblText2.Text;
         }
-
-        public decimal Value
+        set
         {
-            get
-            {
-                return nudValue.Value;
-            }
-            set
-            {
-                nudValue.SetValue(value);
-            }
+            lblText2.Text = value;
         }
+    }
 
-        public decimal Value2
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public decimal Value
+    {
+        get
         {
-            get
-            {
-                return nudValue2.Value;
-            }
-            set
-            {
-                nudValue2.SetValue(value);
-            }
+            return nudValue.Value;
         }
-
-        public decimal Maximum
+        set
         {
-            get
-            {
-                return nudValue.Maximum;
-            }
-            set
-            {
-                nudValue.Maximum = nudValue2.Maximum = value;
-            }
+            nudValue.SetValue(value);
         }
+    }
 
-        public decimal Minimum
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public decimal Value2
+    {
+        get
         {
-            get
-            {
-                return nudValue.Minimum;
-            }
-            set
-            {
-                nudValue.Minimum = nudValue2.Minimum = value;
-            }
+            return nudValue2.Value;
         }
-
-        public decimal Increment
+        set
         {
-            get
-            {
-                return nudValue.Increment;
-            }
-            set
-            {
-                nudValue.Increment = nudValue2.Increment = value;
-            }
+            nudValue2.SetValue(value);
         }
+    }
 
-        public EventHandler ValueChanged;
-
-        public DoubleLabeledNumericUpDown()
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public decimal Maximum
+    {
+        get
         {
-            InitializeComponent();
-            nudValue.ValueChanged += OnValueChanged;
-            nudValue2.ValueChanged += OnValueChanged;
+            return nudValue.Maximum;
         }
-
-        private void OnValueChanged(object sender, EventArgs e)
+        set
         {
-            ValueChanged?.Invoke(sender, e);
+            nudValue.Maximum = nudValue2.Maximum = value;
         }
+    }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public decimal Minimum
+    {
+        get
+        {
+            return nudValue.Minimum;
+        }
+        set
+        {
+            nudValue.Minimum = nudValue2.Minimum = value;
+        }
+    }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public decimal Increment
+    {
+        get
+        {
+            return nudValue.Increment;
+        }
+        set
+        {
+            nudValue.Increment = nudValue2.Increment = value;
+        }
+    }
+
+    public EventHandler ValueChanged;
+
+    public DoubleLabeledNumericUpDown()
+    {
+        InitializeComponent();
+        nudValue.ValueChanged += OnValueChanged;
+        nudValue2.ValueChanged += OnValueChanged;
+    }
+
+    private void OnValueChanged(object sender, EventArgs e)
+    {
+        ValueChanged?.Invoke(sender, e);
     }
 }

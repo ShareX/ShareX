@@ -1,4 +1,6 @@
-﻿namespace ShareX.ImageEffectsLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.ImageEffectsLib
 {
     partial class ImageEffectsForm
     {
@@ -57,10 +59,10 @@
             this.lblEffectName = new System.Windows.Forms.Label();
             this.txtEffectName = new System.Windows.Forms.TextBox();
             this.pbResult = new ShareX.HelpersLib.MyPictureBox();
-            this.lvPresets = new ShareX.HelpersLib.MyListView();
+            this.lvPresets = new ShareX.HelpersLib.Controls.MyListView();
             this.chPreset = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mbLoadImage = new ShareX.HelpersLib.MenuButton();
-            this.lvEffects = new ShareX.HelpersLib.MyListView();
+            this.mbLoadImage = new ShareX.HelpersLib.Controls.MenuButton();
+            this.lvEffects = new ShareX.HelpersLib.Controls.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
@@ -282,7 +284,7 @@
             this.lvPresets.Name = "lvPresets";
             this.lvPresets.UseCompatibleStateImageBehavior = false;
             this.lvPresets.View = System.Windows.Forms.View.Details;
-            this.lvPresets.ItemMoving += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvPresets_ItemMoving);
+            this.lvPresets.ItemMoving += new MyListView.ListViewItemMovedEventHandler(this.lvPresets_ItemMoving);
             this.lvPresets.SelectedIndexChanged += new System.EventHandler(this.lvPresets_SelectedIndexChanged);
             // 
             // chPreset
@@ -313,7 +315,7 @@
             this.lvEffects.Name = "lvEffects";
             this.lvEffects.UseCompatibleStateImageBehavior = false;
             this.lvEffects.View = System.Windows.Forms.View.Details;
-            this.lvEffects.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvEffects_ItemMoved);
+            this.lvEffects.ItemMoved += new MyListView.ListViewItemMovedEventHandler(this.lvEffects_ItemMoved);
             this.lvEffects.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvEffects_ItemChecked);
             this.lvEffects.SelectedIndexChanged += new System.EventHandler(this.lvEffects_SelectedIndexChanged);
             this.lvEffects.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvEffects_KeyDown);
@@ -367,12 +369,12 @@
         #endregion
 
         private System.Windows.Forms.PropertyGrid pgSettings;
-        private ShareX.HelpersLib.MyListView lvEffects;
+        private MyListView lvEffects;
         private System.Windows.Forms.ColumnHeader chEffect;
         private ShareX.HelpersLib.MyPictureBox pbResult;
         private System.Windows.Forms.Button btnSaveImage;
         private System.Windows.Forms.ContextMenuStrip cmsEffects;
-        private HelpersLib.MenuButton mbLoadImage;
+        private MenuButton mbLoadImage;
         private System.Windows.Forms.ContextMenuStrip cmsLoadImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromClipboard;
@@ -386,7 +388,7 @@
         private System.Windows.Forms.Button btnPresetNew;
         private System.Windows.Forms.Button btnPresetRemove;
         private System.Windows.Forms.Button btnPresetDuplicate;
-        private HelpersLib.MyListView lvPresets;
+        private MyListView lvPresets;
         private System.Windows.Forms.Label lblEffects;
         private System.Windows.Forms.Button btnEffectAdd;
         private System.Windows.Forms.Button btnEffectRemove;

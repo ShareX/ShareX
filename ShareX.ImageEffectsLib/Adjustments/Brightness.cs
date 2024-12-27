@@ -24,32 +24,33 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+internal class Brightness : ImageEffect
 {
-    internal class Brightness : ImageEffect
+    [DefaultValue(0f), Description("Pixel color = Pixel color + Value\r\nExample 0.5 will increase color of pixel 127.5")]
+    public float Value { get; set; }
+
+    public Brightness()
     {
-        [DefaultValue(0f), Description("Pixel color = Pixel color + Value\r\nExample 0.5 will increase color of pixel 127.5")]
-        public float Value { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        public Brightness()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        using (bmp)
         {
-            this.ApplyDefaultPropertyValues();
+            return ColorMatrixManager.Brightness(Value).Apply(bmp);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            using (bmp)
-            {
-                return ColorMatrixManager.Brightness(Value).Apply(bmp);
-            }
-        }
-
-        protected override string GetSummary()
-        {
-            return Value.ToString();
-        }
+    protected override string GetSummary()
+    {
+        return Value.ToString();
     }
 }

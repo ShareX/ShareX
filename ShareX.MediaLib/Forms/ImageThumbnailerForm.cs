@@ -24,172 +24,160 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.MediaLib.Properties;
+
 using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public partial class ImageThumbnailerForm : Form
 {
-    public partial class ImageThumbnailerForm : Form
+    public ImageThumbnailerForm()
     {
-        public ImageThumbnailerForm()
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-        }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+    }
 
-        private void UpdateEnabled()
-        {
-            btnRemove.Enabled = lvImages.SelectedItems.Count > 0;
-            btnGenerate.Enabled = lvImages.Items.Count > 0 && nudWidth.Value > 0 && nudHeight.Value > 0 && !string.IsNullOrEmpty(txtOutputFolder.Text) &&
-                !string.IsNullOrEmpty(txtOutputFilename.Text);
-        }
+    private void UpdateEnabled()
+    {
+        btnRemove.Enabled = lvImages.SelectedItems.Count > 0;
+        btnGenerate.Enabled = lvImages.Items.Count > 0 && nudWidth.Value > 0 && nudHeight.Value > 0 && !string.IsNullOrEmpty(txtOutputFolder.Text) &&
+            !string.IsNullOrEmpty(txtOutputFilename.Text);
+    }
 
-        private void AddFile(string filePath)
+    private void AddFile(string filePath)
+    {
+        if (!string.IsNullOrEmpty(filePath))
         {
-            if (!string.IsNullOrEmpty(filePath))
+            lvImages.Items.Add(filePath);
+
+            if (string.IsNullOrEmpty(txtOutputFolder.Text))
             {
-                lvImages.Items.Add(filePath);
-
-                if (string.IsNullOrEmpty(txtOutputFolder.Text))
-                {
-                    txtOutputFolder.Text = Path.GetDirectoryName(filePath);
-                }
+                txtOutputFolder.Text = Path.GetDirectoryName(filePath);
             }
         }
+    }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+    private void btnAdd_Click(object sender, EventArgs e)
+    {
+        string[] images = ImageHelpers.OpenImageFileDialog(true);
+
+        if (images != null)
         {
-            string[] images = ImageHelpers.OpenImageFileDialog(true);
-
-            if (images != null)
+            foreach (string image in images)
             {
-                foreach (string image in images)
-                {
-                    AddFile(image);
-                }
-
-                UpdateEnabled();
+                AddFile(image);
             }
-        }
 
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-            if (lvImages.SelectedItems.Count > 0)
-            {
-                foreach (ListViewItem lvi in lvImages.SelectedItems)
-                {
-                    lvImages.Items.Remove(lvi);
-                }
-            }
-        }
-
-        private void lvImages_SelectedIndexChanged(object sender, EventArgs e)
-        {
             UpdateEnabled();
         }
+    }
 
-        private void lvImages_DragEnter(object sender, DragEventArgs e)
+    private void btnRemove_Click(object sender, EventArgs e)
+    {
+        if (lvImages.SelectedItems.Count > 0)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            foreach (ListViewItem lvi in lvImages.SelectedItems)
             {
-                e.Effect = DragDropEffects.Copy;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
+                lvImages.Items.Remove(lvi);
             }
         }
+    }
 
-        private void lvImages_DragDrop(object sender, DragEventArgs e)
+    private void lvImages_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        UpdateEnabled();
+    }
+
+    private void lvImages_DragEnter(object sender, DragEventArgs e)
+    {
+        e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop, false) ? DragDropEffects.Copy : DragDropEffects.None;
+    }
+
+    private void lvImages_DragDrop(object sender, DragEventArgs e)
+    {
+        if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files)
+            foreach (string file in files)
             {
-                foreach (string file in files)
+                AddFile(file);
+            }
+
+            UpdateEnabled();
+        }
+    }
+
+    private void nudWidth_ValueChanged(object sender, EventArgs e)
+    {
+        UpdateEnabled();
+    }
+
+    private void nudHeight_ValueChanged(object sender, EventArgs e)
+    {
+        UpdateEnabled();
+    }
+
+    private void txtOutputFolder_TextChanged(object sender, EventArgs e)
+    {
+        UpdateEnabled();
+    }
+
+    private void btnOutputFolder_Click(object sender, EventArgs e)
+    {
+        FileHelpers.BrowseFolder(txtOutputFolder);
+    }
+
+    private void txtOutputFilename_TextChanged(object sender, EventArgs e)
+    {
+        UpdateEnabled();
+    }
+
+    private void btnGenerate_Click(object sender, EventArgs e)
+    {
+        if (lvImages.Items.Count > 0)
+        {
+            int width = (int)nudWidth.Value;
+            int height = (int)nudHeight.Value;
+            int quality = (int)nudQuality.Value;
+            string outputFolder = txtOutputFolder.Text;
+            string outputFileName = txtOutputFilename.Text;
+
+            Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                foreach (ListViewItem lvi in lvImages.Items)
                 {
-                    AddFile(file);
-                }
+                    string filePath = lvi.Text;
 
-                UpdateEnabled();
-            }
-        }
-
-        private void nudWidth_ValueChanged(object sender, EventArgs e)
-        {
-            UpdateEnabled();
-        }
-
-        private void nudHeight_ValueChanged(object sender, EventArgs e)
-        {
-            UpdateEnabled();
-        }
-
-        private void txtOutputFolder_TextChanged(object sender, EventArgs e)
-        {
-            UpdateEnabled();
-        }
-
-        private void btnOutputFolder_Click(object sender, EventArgs e)
-        {
-            FileHelpers.BrowseFolder(txtOutputFolder);
-        }
-
-        private void txtOutputFilename_TextChanged(object sender, EventArgs e)
-        {
-            UpdateEnabled();
-        }
-
-        private void btnGenerate_Click(object sender, EventArgs e)
-        {
-            if (lvImages.Items.Count > 0)
-            {
-                int width = (int)nudWidth.Value;
-                int height = (int)nudHeight.Value;
-                int quality = (int)nudQuality.Value;
-                string outputFolder = txtOutputFolder.Text;
-                string outputFileName = txtOutputFilename.Text;
-
-                Cursor = Cursors.WaitCursor;
-
-                try
-                {
-                    foreach (ListViewItem lvi in lvImages.Items)
+                    if (File.Exists(filePath))
                     {
-                        string filePath = lvi.Text;
-
-                        if (File.Exists(filePath))
+                        using Bitmap bmp = ImageHelpers.LoadImage(filePath);
+                        if (bmp != null)
                         {
-                            using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
-                            {
-                                if (bmp != null)
-                                {
-                                    using (Bitmap thumbnail = ImageHelpers.CreateThumbnail(bmp, width, height))
-                                    {
-                                        string fileName = Path.GetFileNameWithoutExtension(filePath);
-                                        string outputPath = Path.Combine(outputFolder, outputFileName.Replace("$filename", fileName));
-                                        outputPath = Path.ChangeExtension(outputPath, "jpg");
+                            using Bitmap thumbnail = ImageHelpers.CreateThumbnail(bmp, width, height);
+                            string fileName = Path.GetFileNameWithoutExtension(filePath);
+                            string outputPath = Path.Combine(outputFolder, outputFileName.Replace("$filename", fileName));
+                            outputPath = Path.ChangeExtension(outputPath, "jpg");
 
-                                        using (Bitmap newImage = ImageHelpers.FillBackground(thumbnail, Color.White))
-                                        {
-                                            ImageHelpers.SaveJPEG(newImage, outputPath, quality);
-                                        }
-                                    }
-                                }
-                            }
+                            using Bitmap newImage = ImageHelpers.FillBackground(thumbnail, Color.White);
+                            ImageHelpers.SaveJPEG(newImage, outputPath, quality);
                         }
                     }
+                }
 
-                    Cursor = Cursors.Default;
-                    MessageBox.Show(Resources.ThumbnailsSuccessfullyGenerated, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    DebugHelper.WriteException(ex);
-                    Cursor = Cursors.Default;
-                    ex.ShowError();
-                }
+                Cursor = Cursors.Default;
+                MessageBox.Show(Resources.ThumbnailsSuccessfullyGenerated, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+                Cursor = Cursors.Default;
+                ex.ShowError();
             }
         }
     }

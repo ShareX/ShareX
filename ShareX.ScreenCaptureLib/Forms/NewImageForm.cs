@@ -24,91 +24,83 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public partial class NewImageForm : Form
 {
-    public partial class NewImageForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public RegionCaptureOptions Options { get; private set; }
+
+    public NewImageForm(RegionCaptureOptions options)
     {
-        public RegionCaptureOptions Options { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public NewImageForm(RegionCaptureOptions options)
+        Options = options;
+
+        nudWidth.TextChanged += NudWidth_TextChanged;
+        nudHeight.TextChanged += NudHeight_TextChanged;
+
+        nudWidth.SetValue(Options.EditorNewImageSize.Width);
+        nudHeight.SetValue(Options.EditorNewImageSize.Height);
+        cbTransparent.Checked = Options.EditorNewImageTransparent;
+        btnChangeColor.ColorPickerOptions = options.ColorPickerOptions;
+        btnChangeColor.Color = options.EditorNewImageBackgroundColor;
+    }
+
+    public static Bitmap CreateNewImage(RegionCaptureOptions options, Form form = null)
+    {
+        using NewImageForm newImageForm = new(options);
+        if (newImageForm.ShowDialog(form) == DialogResult.OK)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            Options = options;
-
-            nudWidth.TextChanged += NudWidth_TextChanged;
-            nudHeight.TextChanged += NudHeight_TextChanged;
-
-            nudWidth.SetValue(Options.EditorNewImageSize.Width);
-            nudHeight.SetValue(Options.EditorNewImageSize.Height);
-            cbTransparent.Checked = Options.EditorNewImageTransparent;
-            btnChangeColor.ColorPickerOptions = options.ColorPickerOptions;
-            btnChangeColor.Color = options.EditorNewImageBackgroundColor;
+            Color backgroundColor = options.EditorNewImageTransparent ? Color.Transparent : options.EditorNewImageBackgroundColor;
+            return ImageHelpers.CreateBitmap(options.EditorNewImageSize.Width, options.EditorNewImageSize.Height, backgroundColor);
         }
 
-        public static Bitmap CreateNewImage(RegionCaptureOptions options, Form form = null)
-        {
-            using (NewImageForm newImageForm = new NewImageForm(options))
-            {
-                if (newImageForm.ShowDialog(form) == DialogResult.OK)
-                {
-                    Color backgroundColor;
+        return null;
+    }
 
-                    if (options.EditorNewImageTransparent)
-                    {
-                        backgroundColor = Color.Transparent;
-                    }
-                    else
-                    {
-                        backgroundColor = options.EditorNewImageBackgroundColor;
-                    }
+    private void CheckSize()
+    {
+        btnOK.Enabled = nudWidth.Value > 0 && nudHeight.Value > 0;
+    }
 
-                    return ImageHelpers.CreateBitmap(options.EditorNewImageSize.Width, options.EditorNewImageSize.Height, backgroundColor);
-                }
-            }
+    private void NudWidth_TextChanged(object sender, EventArgs e)
+    {
+        CheckSize();
+    }
 
-            return null;
-        }
+    private void NudHeight_TextChanged(object sender, EventArgs e)
+    {
+        CheckSize();
+    }
 
-        private void CheckSize()
-        {
-            btnOK.Enabled = nudWidth.Value > 0 && nudHeight.Value > 0;
-        }
+    private void cbTransparent_CheckedChanged(object sender, EventArgs e)
+    {
+        btnChangeColor.Enabled = !cbTransparent.Checked;
+    }
 
-        private void NudWidth_TextChanged(object sender, EventArgs e)
-        {
-            CheckSize();
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        Options.EditorNewImageSize = new Size((int)nudWidth.Value, (int)nudHeight.Value);
+        Options.EditorNewImageTransparent = cbTransparent.Checked;
+        Options.EditorNewImageBackgroundColor = btnChangeColor.Color;
 
-        private void NudHeight_TextChanged(object sender, EventArgs e)
-        {
-            CheckSize();
-        }
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-        private void cbTransparent_CheckedChanged(object sender, EventArgs e)
-        {
-            btnChangeColor.Enabled = !cbTransparent.Checked;
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            Options.EditorNewImageSize = new Size((int)nudWidth.Value, (int)nudHeight.Value);
-            Options.EditorNewImageTransparent = cbTransparent.Checked;
-            Options.EditorNewImageBackgroundColor = btnChangeColor.Color;
-
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

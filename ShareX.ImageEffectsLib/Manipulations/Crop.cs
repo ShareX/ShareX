@@ -23,53 +23,49 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Manipulations;
+
+internal class Crop : ImageEffect
 {
-    internal class Crop : ImageEffect
+    private Padding margin;
+
+    [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
+    public Padding Margin
     {
-        private Padding margin;
-
-        [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
-        public Padding Margin
+        get
         {
-            get
+            return margin;
+        }
+        set
+        {
+            if (value.Top >= 0 && value.Right >= 0 && value.Bottom >= 0 && value.Left >= 0)
             {
-                return margin;
-            }
-            set
-            {
-                if (value.Top >= 0 && value.Right >= 0 && value.Bottom >= 0 && value.Left >= 0)
-                {
-                    margin = value;
-                }
+                margin = value;
             }
         }
+    }
 
-        public Crop()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
+    public Crop()
+    {
+        this.ApplyDefaultPropertyValues();
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            if (Margin.All == 0) return bmp;
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        return Margin.All == 0
+            ? bmp
+            : ImageHelpers.CropBitmap(bmp, new Rectangle(Margin.Left, Margin.Top, bmp.Width - Margin.Horizontal, bmp.Height - Margin.Vertical));
+    }
 
-            return ImageHelpers.CropBitmap(bmp, new Rectangle(Margin.Left, Margin.Top, bmp.Width - Margin.Horizontal, bmp.Height - Margin.Vertical));
-        }
-
-        protected override string GetSummary()
-        {
-            if (Margin.All == -1)
-            {
-                return $"{Margin.Left}, {Margin.Top}, {Margin.Right}, {Margin.Bottom}";
-            }
-
-            return Margin.All.ToString();
-        }
+    protected override string GetSummary()
+    {
+        return Margin.All == -1 ? $"{Margin.Left}, {Margin.Top}, {Margin.Right}, {Margin.Bottom}" : Margin.All.ToString();
     }
 }

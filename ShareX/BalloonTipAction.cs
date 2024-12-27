@@ -23,11 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX
+namespace ShareX;
+
+public class BalloonTipAction
 {
-    public class BalloonTipAction
-    {
-        public BalloonTipClickAction ClickAction { get; set; }
-        public string Text { get; set; }
-    }
+    public BalloonTipClickAction ClickAction { get; set; }
+    public string Text { get; set; }
 }

@@ -24,40 +24,41 @@
 #endregion License Information (GPL v3)
 
 using CG.Web.MegaApiClient;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Settings;
+
 using System;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class MegaAuthInfos
 {
-    public class MegaAuthInfos
+    public string Email { get; set; }
+    [JsonEncrypt]
+    public string Hash { get; set; }
+    [JsonEncrypt]
+    public string PasswordAesKey { get; set; }
+
+    public MegaAuthInfos()
     {
-        public string Email { get; set; }
-        [JsonEncrypt]
-        public string Hash { get; set; }
-        [JsonEncrypt]
-        public string PasswordAesKey { get; set; }
+    }
 
-        public MegaAuthInfos()
+    public MegaAuthInfos(MegaApiClient.AuthInfos authInfos)
+    {
+        Email = authInfos.Email;
+        Hash = authInfos.Hash;
+        PasswordAesKey = Convert.ToBase64String(authInfos.PasswordAesKey);
+    }
+
+    public MegaApiClient.AuthInfos GetMegaApiClientAuthInfos()
+    {
+        byte[] passwordAesKey = null;
+
+        if (!string.IsNullOrEmpty(PasswordAesKey))
         {
+            passwordAesKey = Convert.FromBase64String(PasswordAesKey);
         }
 
-        public MegaAuthInfos(MegaApiClient.AuthInfos authInfos)
-        {
-            Email = authInfos.Email;
-            Hash = authInfos.Hash;
-            PasswordAesKey = Convert.ToBase64String(authInfos.PasswordAesKey);
-        }
-
-        public MegaApiClient.AuthInfos GetMegaApiClientAuthInfos()
-        {
-            byte[] passwordAesKey = null;
-
-            if (!string.IsNullOrEmpty(PasswordAesKey))
-            {
-                passwordAesKey = Convert.FromBase64String(PasswordAesKey);
-            }
-
-            return new MegaApiClient.AuthInfos(Email, Hash, passwordAesKey);
-        }
+        return new MegaApiClient.AuthInfos(Email, Hash, passwordAesKey);
     }
 }

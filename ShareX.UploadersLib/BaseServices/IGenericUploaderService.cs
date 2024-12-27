@@ -23,10 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
+namespace ShareX.UploadersLib.BaseServices;
+
+public interface IGenericUploaderService : IUploaderService
 {
-    public interface IGenericUploaderService : IUploaderService
-    {
-        GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo);
-    }
+    GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo);
 }

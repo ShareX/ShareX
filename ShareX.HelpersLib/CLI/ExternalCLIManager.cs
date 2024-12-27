@@ -28,103 +28,99 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.CLI;
+
+public abstract class ExternalCLIManager : IDisposable
 {
-    public abstract class ExternalCLIManager : IDisposable
+    public event DataReceivedEventHandler OutputDataReceived;
+    public event DataReceivedEventHandler ErrorDataReceived;
+
+    public bool IsProcessRunning { get; private set; }
+
+    protected Process process;
+
+    public virtual int Open(string path, string args = null)
     {
-        public event DataReceivedEventHandler OutputDataReceived;
-        public event DataReceivedEventHandler ErrorDataReceived;
-
-        public bool IsProcessRunning { get; private set; }
-
-        protected Process process;
-
-        public virtual int Open(string path, string args = null)
+        if (File.Exists(path))
         {
-            if (File.Exists(path))
+            using (process = new Process())
             {
-                using (process = new Process())
+                ProcessStartInfo psi = new()
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo()
-                    {
-                        FileName = path,
-                        WorkingDirectory = Path.GetDirectoryName(path),
-                        Arguments = args,
-                        UseShellExecute = false,
-                        CreateNoWindow = true,
-                        RedirectStandardInput = true,
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true,
-                        StandardOutputEncoding = Encoding.UTF8,
-                        StandardErrorEncoding = Encoding.UTF8
-                    };
+                    FileName = path,
+                    WorkingDirectory = Path.GetDirectoryName(path),
+                    Arguments = args,
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    StandardOutputEncoding = Encoding.UTF8,
+                    StandardErrorEncoding = Encoding.UTF8
+                };
 
-                    process.EnableRaisingEvents = true;
-                    if (psi.RedirectStandardOutput) process.OutputDataReceived += cli_OutputDataReceived;
-                    if (psi.RedirectStandardError) process.ErrorDataReceived += cli_ErrorDataReceived;
-                    process.StartInfo = psi;
+                process.EnableRaisingEvents = true;
+                if (psi.RedirectStandardOutput) process.OutputDataReceived += Cli_OutputDataReceived;
+                if (psi.RedirectStandardError) process.ErrorDataReceived += Cli_ErrorDataReceived;
+                process.StartInfo = psi;
 
-                    DebugHelper.WriteLine($"CLI: \"{psi.FileName}\" {psi.Arguments}");
-                    process.Start();
+                DebugHelper.WriteLine($"CLI: \"{psi.FileName}\" {psi.Arguments}");
+                process.Start();
 
-                    if (psi.RedirectStandardOutput) process.BeginOutputReadLine();
-                    if (psi.RedirectStandardError) process.BeginErrorReadLine();
+                if (psi.RedirectStandardOutput) process.BeginOutputReadLine();
+                if (psi.RedirectStandardError) process.BeginErrorReadLine();
 
-                    try
-                    {
-                        IsProcessRunning = true;
-                        process.WaitForExit();
-                    }
-                    finally
-                    {
-                        IsProcessRunning = false;
-                    }
-
-                    return process.ExitCode;
+                try
+                {
+                    IsProcessRunning = true;
+                    process.WaitForExit();
+                } finally
+                {
+                    IsProcessRunning = false;
                 }
-            }
 
-            return -1;
+                return process.ExitCode;
+            }
         }
 
-        private void cli_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        return -1;
+    }
+
+    private void Cli_OutputDataReceived(object sender, DataReceivedEventArgs e)
+    {
+        if (e.Data != null)
         {
-            if (e.Data != null)
-            {
-                OutputDataReceived?.Invoke(sender, e);
-            }
+            OutputDataReceived?.Invoke(sender, e);
         }
+    }
 
-        private void cli_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+    private void Cli_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+    {
+        if (e.Data != null)
         {
-            if (e.Data != null)
-            {
-                ErrorDataReceived?.Invoke(sender, e);
-            }
+            ErrorDataReceived?.Invoke(sender, e);
         }
+    }
 
-        public void WriteInput(string input)
+    public void WriteInput(string input)
+    {
+        if (IsProcessRunning && process != null && process.StartInfo != null && process.StartInfo.RedirectStandardInput)
         {
-            if (IsProcessRunning && process != null && process.StartInfo != null && process.StartInfo.RedirectStandardInput)
-            {
-                process.StandardInput.WriteLine(input);
-            }
+            process.StandardInput.WriteLine(input);
         }
+    }
 
-        public virtual void Close()
+    public virtual void Close()
+    {
+        if (IsProcessRunning && process != null)
         {
-            if (IsProcessRunning && process != null)
-            {
-                process.CloseMainWindow();
-            }
+            process.CloseMainWindow();
         }
+    }
 
-        public void Dispose()
-        {
-            if (process != null)
-            {
-                process.Dispose();
-            }
-        }
+    public void Dispose()
+    {
+        process?.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

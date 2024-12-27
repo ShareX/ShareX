@@ -24,117 +24,113 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Settings;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class LobFileFileUploaderService : FileUploaderService
 {
-    public class LobFileFileUploaderService : FileUploaderService
+    public override FileDestination EnumValue { get; } = FileDestination.Lithiio;
+
+    public override Image ServiceImage => Resources.LobFile;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Lithiio;
-
-        public override Image ServiceImage => Resources.LobFile;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return config.LithiioSettings != null && !string.IsNullOrEmpty(config.LithiioSettings.UserAPIKey);
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new LobFile(config.LithiioSettings);
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLithiio;
+        return config.LithiioSettings != null && !string.IsNullOrEmpty(config.LithiioSettings.UserAPIKey);
     }
 
-    public sealed class LobFile : FileUploader
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public LobFileSettings Config { get; private set; }
+        return new LobFile(config.LithiioSettings);
+    }
 
-        public LobFile()
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLithiio;
+}
+
+public sealed class LobFile : FileUploader
+{
+    public LobFileSettings Config { get; private set; }
+
+    public LobFile()
+    {
+    }
+
+    public LobFile(LobFileSettings config)
+    {
+        Config = config;
+    }
+
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        Dictionary<string, string> args = new();
+        args.Add("api_key", Config.UserAPIKey);
+
+        UploadResult result = SendRequestFile("https://lobfile.com/api/v3/upload", stream, fileName, "file", args);
+
+        if (result.IsSuccess)
         {
-        }
+            LobFileUploadResponse uploadResponse = JsonConvert.DeserializeObject<LobFileUploadResponse>(result.Response);
 
-        public LobFile(LobFileSettings config)
-        {
-            Config = config;
-        }
-
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("api_key", Config.UserAPIKey);
-
-            UploadResult result = SendRequestFile("https://lobfile.com/api/v3/upload", stream, fileName, "file", args);
-
-            if (result.IsSuccess)
+            if (uploadResponse.Success)
             {
-                LobFileUploadResponse uploadResponse = JsonConvert.DeserializeObject<LobFileUploadResponse>(result.Response);
-
-                if (uploadResponse.Success)
-                {
-                    result.URL = uploadResponse.URL;
-                }
-                else
-                {
-                    Errors.Add(uploadResponse.Error);
-                }
-            }
-
-            return result;
-        }
-
-        public string FetchAPIKey(string email, string password)
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("email", email);
-            args.Add("password", password);
-
-            string response = SendRequestMultiPart("https://lobfile.com/api/v3/fetch-api-key", args);
-
-            if (!string.IsNullOrEmpty(response))
+                result.URL = uploadResponse.URL;
+            } else
             {
-                LobFileFetchAPIKeyResponse apiKeyResponse = JsonConvert.DeserializeObject<LobFileFetchAPIKeyResponse>(response);
-
-                if (apiKeyResponse.Success)
-                {
-                    return apiKeyResponse.API_Key;
-                }
-                else
-                {
-                    throw new Exception(apiKeyResponse.Error);
-                }
+                Errors.Add(uploadResponse.Error);
             }
-
-            return null;
         }
 
-        private class LobFileResponse
-        {
-            public bool Success { get; set; }
-            public string Error { get; set; }
-        }
-
-        private class LobFileUploadResponse : LobFileResponse
-        {
-            public string URL { get; set; }
-        }
-
-        private class LobFileFetchAPIKeyResponse : LobFileResponse
-        {
-            public string API_Key { get; set; }
-        }
+        return result;
     }
 
-    public class LobFileSettings
+    public string FetchAPIKey(string email, string password)
     {
-        [JsonEncrypt]
-        public string UserAPIKey { get; set; } = "";
+        Dictionary<string, string> args = new();
+        args.Add("email", email);
+        args.Add("password", password);
+
+        string response = SendRequestMultiPart("https://lobfile.com/api/v3/fetch-api-key", args);
+
+        if (!string.IsNullOrEmpty(response))
+        {
+            LobFileFetchAPIKeyResponse apiKeyResponse = JsonConvert.DeserializeObject<LobFileFetchAPIKeyResponse>(response);
+
+            return apiKeyResponse.Success ? apiKeyResponse.API_Key : throw new Exception(apiKeyResponse.Error);
+        }
+
+        return null;
     }
+
+    private class LobFileResponse
+    {
+        public bool Success { get; set; }
+        public string Error { get; set; }
+    }
+
+    private class LobFileUploadResponse : LobFileResponse
+    {
+        public string URL { get; set; }
+    }
+
+    private class LobFileFetchAPIKeyResponse : LobFileResponse
+    {
+        public string API_Key { get; set; }
+    }
+}
+
+public class LobFileSettings
+{
+    [JsonEncrypt]
+    public string UserAPIKey { get; set; } = "";
 }

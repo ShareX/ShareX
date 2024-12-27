@@ -26,62 +26,61 @@
 using System;
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+public class SnapSize
 {
-    public class SnapSize
+    private const int MinimumWidth = 2;
+
+    private int width;
+
+    public int Width
     {
-        private const int MinimumWidth = 2;
-
-        private int width;
-
-        public int Width
+        get
         {
-            get
-            {
-                return width;
-            }
-            set
-            {
-                width = Math.Max(value, MinimumWidth);
-            }
+            return width;
         }
-
-        private const int MinimumHeight = 2;
-
-        private int height;
-
-        public int Height
+        set
         {
-            get
-            {
-                return height;
-            }
-            set
-            {
-                height = Math.Max(value, MinimumHeight);
-            }
+            width = Math.Max(value, MinimumWidth);
         }
+    }
 
-        public SnapSize()
-        {
-            width = MinimumWidth;
-            height = MinimumHeight;
-        }
+    private const int MinimumHeight = 2;
 
-        public SnapSize(int width, int height)
-        {
-            Width = width;
-            Height = height;
-        }
+    private int height;
 
-        public static implicit operator Size(SnapSize size)
+    public int Height
+    {
+        get
         {
-            return new Size(size.Width, size.Height);
+            return height;
         }
+        set
+        {
+            height = Math.Max(value, MinimumHeight);
+        }
+    }
 
-        public override string ToString()
-        {
-            return $"{Width}x{Height}";
-        }
+    public SnapSize()
+    {
+        width = MinimumWidth;
+        height = MinimumHeight;
+    }
+
+    public SnapSize(int width, int height)
+    {
+        Width = width;
+        Height = height;
+    }
+
+    public static implicit operator Size(SnapSize size)
+    {
+        return new Size(size.Width, size.Height);
+    }
+
+    public override string ToString()
+    {
+        return $"{Width}x{Height}";
     }
 }

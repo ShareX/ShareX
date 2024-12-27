@@ -23,53 +23,51 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Manipulations;
+
+internal class Flip : ImageEffect
 {
-    internal class Flip : ImageEffect
+    [DefaultValue(false)]
+    public bool Horizontally { get; set; }
+
+    [DefaultValue(false)]
+    public bool Vertically { get; set; }
+
+    public Flip()
     {
-        [DefaultValue(false)]
-        public bool Horizontally { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(false)]
-        public bool Vertically { get; set; }
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        RotateFlipType flipType = RotateFlipType.RotateNoneFlipNone;
 
-        public Flip()
+        if (Horizontally && Vertically)
         {
-            this.ApplyDefaultPropertyValues();
+            flipType = RotateFlipType.RotateNoneFlipXY;
+        } else if (Horizontally)
+        {
+            flipType = RotateFlipType.RotateNoneFlipX;
+        } else if (Vertically)
+        {
+            flipType = RotateFlipType.RotateNoneFlipY;
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        if (flipType != RotateFlipType.RotateNoneFlipNone)
         {
-            RotateFlipType flipType = RotateFlipType.RotateNoneFlipNone;
-
-            if (Horizontally && Vertically)
-            {
-                flipType = RotateFlipType.RotateNoneFlipXY;
-            }
-            else if (Horizontally)
-            {
-                flipType = RotateFlipType.RotateNoneFlipX;
-            }
-            else if (Vertically)
-            {
-                flipType = RotateFlipType.RotateNoneFlipY;
-            }
-
-            if (flipType != RotateFlipType.RotateNoneFlipNone)
-            {
-                bmp.RotateFlip(flipType);
-            }
-
-            return bmp;
+            bmp.RotateFlip(flipType);
         }
 
-        protected override string GetSummary()
-        {
-            return $"{Horizontally}, {Vertically}";
-        }
+        return bmp;
+    }
+
+    protected override string GetSummary()
+    {
+        return $"{Horizontally}, {Vertically}";
     }
 }

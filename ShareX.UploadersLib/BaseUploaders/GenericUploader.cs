@@ -25,10 +25,9 @@
 
 using System.IO;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.BaseUploaders;
+
+public abstract class GenericUploader : Uploader
 {
-    public abstract class GenericUploader : Uploader
-    {
-        public abstract UploadResult Upload(Stream stream, string fileName);
-    }
+    public abstract UploadResult Upload(Stream stream, string fileName);
 }

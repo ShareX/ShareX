@@ -23,28 +23,27 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class PomfUploader
 {
-    public class PomfUploader
+    public string UploadURL { get; set; }
+    public string ResultURL { get; set; }
+
+    public PomfUploader()
     {
-        public string UploadURL { get; set; }
-        public string ResultURL { get; set; }
+    }
 
-        public PomfUploader()
-        {
-        }
+    public PomfUploader(string uploadURL, string resultURL = null)
+    {
+        UploadURL = uploadURL;
+        ResultURL = resultURL;
+    }
 
-        public PomfUploader(string uploadURL, string resultURL = null)
-        {
-            UploadURL = uploadURL;
-            ResultURL = resultURL;
-        }
-
-        public override string ToString()
-        {
-            return URLHelpers.GetHostName(UploadURL);
-        }
+    public override string ToString()
+    {
+        return URLHelpers.GetHostName(UploadURL);
     }
 }

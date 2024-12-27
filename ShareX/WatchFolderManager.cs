@@ -23,135 +23,132 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ShareX
+namespace ShareX;
+
+public class WatchFolderManager : IDisposable
 {
-    public class WatchFolderManager : IDisposable
+    public List<WatchFolder> WatchFolders { get; private set; }
+
+    public void UpdateWatchFolders()
     {
-        public List<WatchFolder> WatchFolders { get; private set; }
-
-        public void UpdateWatchFolders()
+        if (WatchFolders != null)
         {
-            if (WatchFolders != null)
+            UnregisterAllWatchFolders();
+        }
+
+        WatchFolders = new List<WatchFolder>();
+
+        foreach (WatchFolderSettings defaultWatchFolderSetting in Program.DefaultTaskSettings.WatchFolderList)
+        {
+            AddWatchFolder(defaultWatchFolderSetting, Program.DefaultTaskSettings);
+        }
+
+        foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
+        {
+            foreach (WatchFolderSettings watchFolderSetting in hotkeySetting.TaskSettings.WatchFolderList)
             {
-                UnregisterAllWatchFolders();
+                AddWatchFolder(watchFolderSetting, hotkeySetting.TaskSettings);
+            }
+        }
+    }
+
+    private WatchFolder FindWatchFolder(WatchFolderSettings watchFolderSetting)
+    {
+        return WatchFolders.FirstOrDefault(watchFolder => watchFolder.Settings == watchFolderSetting);
+    }
+
+    private bool IsExist(WatchFolderSettings watchFolderSetting)
+    {
+        return FindWatchFolder(watchFolderSetting) != null;
+    }
+
+    public void AddWatchFolder(WatchFolderSettings watchFolderSetting, TaskSettings taskSettings)
+    {
+        if (!IsExist(watchFolderSetting))
+        {
+            if (!taskSettings.WatchFolderList.Contains(watchFolderSetting))
+            {
+                taskSettings.WatchFolderList.Add(watchFolderSetting);
             }
 
-            WatchFolders = new List<WatchFolder>();
+            WatchFolder watchFolder = new();
+            watchFolder.Settings = watchFolderSetting;
+            watchFolder.TaskSettings = taskSettings;
 
-            foreach (WatchFolderSettings defaultWatchFolderSetting in Program.DefaultTaskSettings.WatchFolderList)
+            watchFolder.FileWatcherTrigger += origPath =>
             {
-                AddWatchFolder(defaultWatchFolderSetting, Program.DefaultTaskSettings);
-            }
+                TaskSettings taskSettingsCopy = TaskSettings.GetSafeTaskSettings(taskSettings);
+                string destPath = origPath;
 
-            foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
-            {
-                foreach (WatchFolderSettings watchFolderSetting in hotkeySetting.TaskSettings.WatchFolderList)
+                if (watchFolderSetting.MoveFilesToScreenshotsFolder)
                 {
-                    AddWatchFolder(watchFolderSetting, hotkeySetting.TaskSettings);
+                    string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettingsCopy);
+                    string fileName = Path.GetFileName(origPath);
+                    destPath = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettingsCopy);
+                    FileHelpers.CreateDirectoryFromFilePath(destPath);
+                    File.Move(origPath, destPath);
                 }
-            }
-        }
 
-        private WatchFolder FindWatchFolder(WatchFolderSettings watchFolderSetting)
-        {
-            return WatchFolders.FirstOrDefault(watchFolder => watchFolder.Settings == watchFolderSetting);
-        }
+                UploadManager.UploadFile(destPath, taskSettingsCopy);
+            };
 
-        private bool IsExist(WatchFolderSettings watchFolderSetting)
-        {
-            return FindWatchFolder(watchFolderSetting) != null;
-        }
+            WatchFolders.Add(watchFolder);
 
-        public void AddWatchFolder(WatchFolderSettings watchFolderSetting, TaskSettings taskSettings)
-        {
-            if (!IsExist(watchFolderSetting))
+            if (taskSettings.WatchFolderEnabled)
             {
-                if (!taskSettings.WatchFolderList.Contains(watchFolderSetting))
-                {
-                    taskSettings.WatchFolderList.Add(watchFolderSetting);
-                }
-
-                WatchFolder watchFolder = new WatchFolder();
-                watchFolder.Settings = watchFolderSetting;
-                watchFolder.TaskSettings = taskSettings;
-
-                watchFolder.FileWatcherTrigger += origPath =>
-                {
-                    TaskSettings taskSettingsCopy = TaskSettings.GetSafeTaskSettings(taskSettings);
-                    string destPath = origPath;
-
-                    if (watchFolderSetting.MoveFilesToScreenshotsFolder)
-                    {
-                        string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettingsCopy);
-                        string fileName = Path.GetFileName(origPath);
-                        destPath = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettingsCopy);
-                        FileHelpers.CreateDirectoryFromFilePath(destPath);
-                        File.Move(origPath, destPath);
-                    }
-
-                    UploadManager.UploadFile(destPath, taskSettingsCopy);
-                };
-
-                WatchFolders.Add(watchFolder);
-
-                if (taskSettings.WatchFolderEnabled)
-                {
-                    watchFolder.Enable();
-                }
+                watchFolder.Enable();
             }
         }
+    }
 
-        public void RemoveWatchFolder(WatchFolderSettings watchFolderSetting)
+    public void RemoveWatchFolder(WatchFolderSettings watchFolderSetting)
+    {
+        using WatchFolder watchFolder = FindWatchFolder(watchFolderSetting);
+        if (watchFolder != null)
         {
-            using (WatchFolder watchFolder = FindWatchFolder(watchFolderSetting))
+            watchFolder.TaskSettings.WatchFolderList.Remove(watchFolderSetting);
+            WatchFolders.Remove(watchFolder);
+        }
+    }
+
+    public void UpdateWatchFolderState(WatchFolderSettings watchFolderSetting)
+    {
+        WatchFolder watchFolder = FindWatchFolder(watchFolderSetting);
+        if (watchFolder != null)
+        {
+            if (watchFolder.TaskSettings.WatchFolderEnabled)
+            {
+                watchFolder.Enable();
+            } else
+            {
+                watchFolder.Dispose();
+            }
+        }
+    }
+
+    public void UnregisterAllWatchFolders()
+    {
+        if (WatchFolders != null)
+        {
+            foreach (WatchFolder watchFolder in WatchFolders)
             {
                 if (watchFolder != null)
-                {
-                    watchFolder.TaskSettings.WatchFolderList.Remove(watchFolderSetting);
-                    WatchFolders.Remove(watchFolder);
-                }
-            }
-        }
-
-        public void UpdateWatchFolderState(WatchFolderSettings watchFolderSetting)
-        {
-            WatchFolder watchFolder = FindWatchFolder(watchFolderSetting);
-            if (watchFolder != null)
-            {
-                if (watchFolder.TaskSettings.WatchFolderEnabled)
-                {
-                    watchFolder.Enable();
-                }
-                else
                 {
                     watchFolder.Dispose();
                 }
             }
         }
+    }
 
-        public void UnregisterAllWatchFolders()
-        {
-            if (WatchFolders != null)
-            {
-                foreach (WatchFolder watchFolder in WatchFolders)
-                {
-                    if (watchFolder != null)
-                    {
-                        watchFolder.Dispose();
-                    }
-                }
-            }
-        }
-
-        public void Dispose()
-        {
-            UnregisterAllWatchFolders();
-        }
+    public void Dispose()
+    {
+        UnregisterAllWatchFolders();
     }
 }

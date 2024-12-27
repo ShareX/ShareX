@@ -23,111 +23,111 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseUploaders;
+
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace ShareX.UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders;
+
+public sealed class Pastebin_ca : TextUploader
 {
-    public sealed class Pastebin_ca : TextUploader
+    private const string APIURL = "http://pastebin.ca/quiet-paste.php";
+
+    private string APIKey;
+
+    private PastebinCaSettings settings;
+
+    public Pastebin_ca(string apiKey)
     {
-        private const string APIURL = "http://pastebin.ca/quiet-paste.php";
-
-        private string APIKey;
-
-        private PastebinCaSettings settings;
-
-        public Pastebin_ca(string apiKey)
-        {
-            APIKey = apiKey;
-            settings = new PastebinCaSettings();
-        }
-
-        public Pastebin_ca(string apiKey, PastebinCaSettings settings)
-        {
-            APIKey = apiKey;
-            this.settings = settings;
-        }
-
-        public override UploadResult UploadText(string text, string fileName)
-        {
-            UploadResult ur = new UploadResult();
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("api", APIKey);
-                arguments.Add("content", text);
-                arguments.Add("description", settings.Description);
-
-                if (settings.Encrypt)
-                {
-                    arguments.Add("encrypt", "true");
-                }
-
-                arguments.Add("encryptpw", settings.EncryptPassword);
-                arguments.Add("expiry", settings.ExpireTime);
-                arguments.Add("name", settings.Author);
-                arguments.Add("s", "Submit Post");
-                arguments.Add("tags", settings.Tags);
-                arguments.Add("type", settings.TextFormat);
-
-                ur.Response = SendRequestMultiPart(APIURL, arguments);
-
-                if (!string.IsNullOrEmpty(ur.Response))
-                {
-                    if (ur.Response.StartsWith("SUCCESS:"))
-                    {
-                        ur.URL = "http://pastebin.ca/" + ur.Response.Substring(8);
-                    }
-                    else if (ur.Response.StartsWith("FAIL:"))
-                    {
-                        Errors.Add(ur.Response.Substring(5));
-                    }
-                }
-            }
-
-            return ur;
-        }
+        APIKey = apiKey;
+        settings = new PastebinCaSettings();
     }
 
-    public class PastebinCaSettings
+    public Pastebin_ca(string apiKey, PastebinCaSettings settings)
     {
-        /// <summary>name</summary>
-        [Description("Name / Title")]
-        public string Author { get; set; }
+        APIKey = apiKey;
+        this.settings = settings;
+    }
 
-        /// <summary>description</summary>
-        [Description("Description / Question")]
-        public string Description { get; set; }
+    public override UploadResult UploadText(string text, string fileName)
+    {
+        UploadResult ur = new();
 
-        /// <summary>tags</summary>
-        [Description("Tags (space separated, optional)")]
-        public string Tags { get; set; }
-
-        /// <summary>type</summary>
-        [Description("Content Type"), DefaultValue("1")]
-        public string TextFormat { get; set; }
-
-        /// <summary>expiry</summary>
-        [Description("Expire this post in ..."), DefaultValue("1 month")]
-        public string ExpireTime { get; set; }
-
-        /// <summary>encrypt</summary>
-        [Description("Encrypt this paste")]
-        public bool Encrypt { get; set; }
-
-        /// <summary>encryptpw</summary>
-        public string EncryptPassword { get; set; }
-
-        public PastebinCaSettings()
+        if (!string.IsNullOrEmpty(text))
         {
-            Author = "";
-            Description = "";
-            Tags = "";
-            TextFormat = "1";
-            ExpireTime = "1 month";
-            Encrypt = false;
-            EncryptPassword = "";
+            Dictionary<string, string> arguments = new();
+            arguments.Add("api", APIKey);
+            arguments.Add("content", text);
+            arguments.Add("description", settings.Description);
+
+            if (settings.Encrypt)
+            {
+                arguments.Add("encrypt", "true");
+            }
+
+            arguments.Add("encryptpw", settings.EncryptPassword);
+            arguments.Add("expiry", settings.ExpireTime);
+            arguments.Add("name", settings.Author);
+            arguments.Add("s", "Submit Post");
+            arguments.Add("tags", settings.Tags);
+            arguments.Add("type", settings.TextFormat);
+
+            ur.Response = SendRequestMultiPart(APIURL, arguments);
+
+            if (!string.IsNullOrEmpty(ur.Response))
+            {
+                if (ur.Response.StartsWith("SUCCESS:"))
+                {
+                    ur.URL = "http://pastebin.ca/" + ur.Response.Substring(8);
+                } else if (ur.Response.StartsWith("FAIL:"))
+                {
+                    Errors.Add(ur.Response.Substring(5));
+                }
+            }
         }
+
+        return ur;
+    }
+}
+
+public class PastebinCaSettings
+{
+    /// <summary>name</summary>
+    [Description("Name / Title")]
+    public string Author { get; set; }
+
+    /// <summary>description</summary>
+    [Description("Description / Question")]
+    public string Description { get; set; }
+
+    /// <summary>tags</summary>
+    [Description("Tags (space separated, optional)")]
+    public string Tags { get; set; }
+
+    /// <summary>type</summary>
+    [Description("Content Type"), DefaultValue("1")]
+    public string TextFormat { get; set; }
+
+    /// <summary>expiry</summary>
+    [Description("Expire this post in ..."), DefaultValue("1 month")]
+    public string ExpireTime { get; set; }
+
+    /// <summary>encrypt</summary>
+    [Description("Encrypt this paste")]
+    public bool Encrypt { get; set; }
+
+    /// <summary>encryptpw</summary>
+    public string EncryptPassword { get; set; }
+
+    public PastebinCaSettings()
+    {
+        Author = "";
+        Description = "";
+        Tags = "";
+        TextFormat = "1";
+        ExpireTime = "1 month";
+        Encrypt = false;
+        EncryptPassword = "";
     }
 }

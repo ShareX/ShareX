@@ -23,47 +23,48 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+[Description("Gaussian blur")]
+internal class GaussianBlur : ImageEffect
 {
-    [Description("Gaussian blur")]
-    internal class GaussianBlur : ImageEffect
+    private int radius;
+
+    [DefaultValue(15)]
+    public int Radius
     {
-        private int radius;
-
-        [DefaultValue(15)]
-        public int Radius
+        get
         {
-            get
-            {
-                return radius;
-            }
-            set
-            {
-                radius = Math.Max(value, 1);
-            }
+            return radius;
         }
-
-        public GaussianBlur()
+        set
         {
-            this.ApplyDefaultPropertyValues();
+            radius = Math.Max(value, 1);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            using (bmp)
-            {
-                return ImageHelpers.GaussianBlur(bmp, Radius);
-            }
-        }
+    public GaussianBlur()
+    {
+        this.ApplyDefaultPropertyValues();
+    }
 
-        protected override string GetSummary()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        using (bmp)
         {
-            return Radius.ToString();
+            return ImageHelpers.GaussianBlur(bmp, Radius);
         }
+    }
+
+    protected override string GetSummary()
+    {
+        return Radius.ToString();
     }
 }

@@ -23,81 +23,80 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.OAuth;
+
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 
-namespace ShareX.UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders;
+
+public sealed class TwitSnapsUploader : ImageUploader
 {
-    public sealed class TwitSnapsUploader : ImageUploader
+    public OAuthInfo AuthInfo { get; set; }
+
+    private const string APIURL = "http://twitsnaps.com/dev/image/upload.xml";
+
+    private string APIKey;
+
+    public TwitSnapsUploader(string apiKey, OAuthInfo oauth)
     {
-        public OAuthInfo AuthInfo { get; set; }
+        APIKey = apiKey;
+        AuthInfo = oauth;
+    }
 
-        private const string APIURL = "http://twitsnaps.com/dev/image/upload.xml";
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        using TwitterTweetForm msgBox = new();
+        msgBox.ShowDialog();
+        return Upload(stream, fileName, msgBox.Message);
+    }
 
-        private string APIKey;
+    private UploadResult Upload(Stream stream, string fileName, string msg)
+    {
+        Dictionary<string, string> args = new();
+        args.Add("appKey", APIKey);
+        args.Add("consumerKey", AuthInfo.ConsumerKey);
+        args.Add("consumerSecret", AuthInfo.ConsumerSecret);
+        args.Add("oauthToken", AuthInfo.UserToken);
+        args.Add("oauthSecret", AuthInfo.UserSecret);
 
-        public TwitSnapsUploader(string apiKey, OAuthInfo oauth)
+        if (!string.IsNullOrEmpty(msg))
         {
-            APIKey = apiKey;
-            AuthInfo = oauth;
+            args.Add("message", msg);
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        UploadResult result = SendRequestFile(APIURL, stream, fileName, "media", args);
+
+        return ParseResult(result);
+    }
+
+    private UploadResult ParseResult(UploadResult result)
+    {
+        if (result.IsSuccess)
         {
-            using (TwitterTweetForm msgBox = new TwitterTweetForm())
+            XDocument xd = XDocument.Parse(result.Response);
+
+            XElement xe = xd.Element("image");
+
+            if (xe != null)
             {
-                msgBox.ShowDialog();
-                return Upload(stream, fileName, msgBox.Message);
-            }
-        }
-
-        private UploadResult Upload(Stream stream, string fileName, string msg)
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("appKey", APIKey);
-            args.Add("consumerKey", AuthInfo.ConsumerKey);
-            args.Add("consumerSecret", AuthInfo.ConsumerSecret);
-            args.Add("oauthToken", AuthInfo.UserToken);
-            args.Add("oauthSecret", AuthInfo.UserSecret);
-
-            if (!string.IsNullOrEmpty(msg))
+                string id = xe.GetElementValue("id");
+                result.URL = "http://twitsnaps.com/snap/" + id;
+                result.ThumbnailURL = "http://twitsnaps.com/thumb/" + id;
+            } else
             {
-                args.Add("message", msg);
-            }
-
-            UploadResult result = SendRequestFile(APIURL, stream, fileName, "media", args);
-
-            return ParseResult(result);
-        }
-
-        private UploadResult ParseResult(UploadResult result)
-        {
-            if (result.IsSuccess)
-            {
-                XDocument xd = XDocument.Parse(result.Response);
-
-                XElement xe = xd.Element("image");
+                xe = xd.Element("error");
 
                 if (xe != null)
                 {
-                    string id = xe.GetElementValue("id");
-                    result.URL = "http://twitsnaps.com/snap/" + id;
-                    result.ThumbnailURL = "http://twitsnaps.com/thumb/" + id;
-                }
-                else
-                {
-                    xe = xd.Element("error");
-
-                    if (xe != null)
-                    {
-                        Errors.Add("Error: " + xe.GetElementValue("description"));
-                    }
+                    Errors.Add("Error: " + xe.GetElementValue("description"));
                 }
             }
-
-            return result;
         }
+
+        return result;
     }
 }

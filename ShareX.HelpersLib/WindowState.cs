@@ -23,50 +23,52 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.Native;
+
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class WindowState
 {
-    public class WindowState
+    public Point Location { get; set; }
+    public Size Size { get; set; }
+    public bool IsMaximized { get; set; }
+
+    public void ApplyFormState(Form form)
     {
-        public Point Location { get; set; }
-        public Size Size { get; set; }
-        public bool IsMaximized { get; set; }
-
-        public void ApplyFormState(Form form)
+        if (!Location.IsEmpty && !Size.IsEmpty && CaptureHelpers.GetScreenWorkingArea().Contains(new Rectangle(Location, Size)))
         {
-            if (!Location.IsEmpty && !Size.IsEmpty && CaptureHelpers.GetScreenWorkingArea().Contains(new Rectangle(Location, Size)))
-            {
-                form.StartPosition = FormStartPosition.Manual;
-                form.Location = Location;
-                form.Size = Size;
-            }
-
-            if (IsMaximized)
-            {
-                form.WindowState = FormWindowState.Maximized;
-            }
+            form.StartPosition = FormStartPosition.Manual;
+            form.Location = Location;
+            form.Size = Size;
         }
 
-        public void UpdateFormState(Form form)
+        if (IsMaximized)
         {
-            WINDOWPLACEMENT wp = new WINDOWPLACEMENT();
-            wp.length = Marshal.SizeOf(wp);
-
-            if (NativeMethods.GetWindowPlacement(form.Handle, ref wp))
-            {
-                Location = wp.rcNormalPosition.Location;
-                Size = wp.rcNormalPosition.Size;
-                IsMaximized = wp.showCmd == WindowShowStyle.Maximize;
-            }
+            form.WindowState = FormWindowState.Maximized;
         }
+    }
 
-        public void AutoHandleFormState(Form form)
+    public void UpdateFormState(Form form)
+    {
+        WINDOWPLACEMENT wp = new();
+        wp.length = Marshal.SizeOf(wp);
+
+        if (NativeMethods.GetWindowPlacement(form.Handle, ref wp))
         {
-            ApplyFormState(form);
-            form.FormClosing += (sender, e) => UpdateFormState(form);
+            Location = wp.rcNormalPosition.Location;
+            Size = wp.rcNormalPosition.Size;
+            IsMaximized = wp.showCmd == WindowShowStyle.Maximize;
         }
+    }
+
+    public void AutoHandleFormState(Form form)
+    {
+        ApplyFormState(form);
+        form.FormClosing += (sender, e) => UpdateFormState(form);
     }
 }

@@ -23,111 +23,113 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Printer;
 using ShareX.HelpersLib.Properties;
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class PrintForm : Form
 {
-    public partial class PrintForm : Form
+    private PrintHelper printHelper;
+    private PrintSettings printSettings;
+
+    public PrintForm(Image img, PrintSettings settings, bool previewOnly = false)
     {
-        private PrintHelper printHelper;
-        private PrintSettings printSettings;
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public PrintForm(Image img, PrintSettings settings, bool previewOnly = false)
+        printHelper = new PrintHelper(img);
+        printHelper.Settings = printSettings = settings;
+        btnPrint.Enabled = !previewOnly;
+        LoadSettings();
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            printHelper = new PrintHelper(img);
-            printHelper.Settings = printSettings = settings;
-            btnPrint.Enabled = !previewOnly;
-            LoadSettings();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
+            if (components != null)
             {
-                if (components != null)
-                {
-                    components.Dispose();
-                }
-
-                if (printHelper != null)
-                {
-                    printHelper.Dispose();
-                }
+                components.Dispose();
             }
 
-            base.Dispose(disposing);
+            if (printHelper != null)
+            {
+                printHelper.Dispose();
+            }
         }
 
-        private void PrintForm_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
-        }
+        base.Dispose(disposing);
+    }
 
-        private void LoadSettings()
-        {
-            nudMargin.SetValue(printSettings.Margin);
-            cbAutoRotate.Checked = printSettings.AutoRotateImage;
-            cbAutoScale.Checked = printSettings.AutoScaleImage;
-            cbAllowEnlarge.Checked = printSettings.AllowEnlargeImage;
-            cbCenterImage.Checked = printSettings.CenterImage;
-            cbAllowEnlarge.Enabled = printSettings.AutoScaleImage;
-            cbCenterImage.Enabled = printSettings.AutoScaleImage;
+    private void PrintForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+    }
 
-            string printText = Resources.PrintForm_LoadSettings_Print;
-            if (printSettings.ShowPrintDialog) printText += "...";
-            btnPrint.Text = printText;
-        }
+    private void LoadSettings()
+    {
+        nudMargin.SetValue(printSettings.Margin);
+        cbAutoRotate.Checked = printSettings.AutoRotateImage;
+        cbAutoScale.Checked = printSettings.AutoScaleImage;
+        cbAllowEnlarge.Checked = printSettings.AllowEnlargeImage;
+        cbCenterImage.Checked = printSettings.CenterImage;
+        cbAllowEnlarge.Enabled = printSettings.AutoScaleImage;
+        cbCenterImage.Enabled = printSettings.AutoScaleImage;
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            printHelper.Print();
+        string printText = Resources.PrintForm_LoadSettings_Print;
+        if (printSettings.ShowPrintDialog) printText += "...";
+        btnPrint.Text = printText;
+    }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
+    private void btnPrint_Click(object sender, EventArgs e)
+    {
+        printHelper.Print();
 
-        private void btnShowPreview_Click(object sender, EventArgs e)
-        {
-            printHelper.ShowPreview();
-        }
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnShowPreview_Click(object sender, EventArgs e)
+    {
+        printHelper.ShowPreview();
+    }
 
-        private void nudMargin_ValueChanged(object sender, EventArgs e)
-        {
-            printSettings.Margin = (int)nudMargin.Value;
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
+    }
 
-        private void cbAutoRotate_CheckedChanged(object sender, EventArgs e)
-        {
-            printSettings.AutoRotateImage = cbAutoRotate.Checked;
-        }
+    private void nudMargin_ValueChanged(object sender, EventArgs e)
+    {
+        printSettings.Margin = (int)nudMargin.Value;
+    }
 
-        private void cbAutoScale_CheckedChanged(object sender, EventArgs e)
-        {
-            printSettings.AutoScaleImage = cbAutoScale.Checked;
-            cbAllowEnlarge.Enabled = printSettings.AutoScaleImage;
-            cbCenterImage.Enabled = printSettings.AutoScaleImage;
-        }
+    private void cbAutoRotate_CheckedChanged(object sender, EventArgs e)
+    {
+        printSettings.AutoRotateImage = cbAutoRotate.Checked;
+    }
 
-        private void cbAllowEnlarge_CheckedChanged(object sender, EventArgs e)
-        {
-            printSettings.AllowEnlargeImage = cbAllowEnlarge.Checked;
-        }
+    private void cbAutoScale_CheckedChanged(object sender, EventArgs e)
+    {
+        printSettings.AutoScaleImage = cbAutoScale.Checked;
+        cbAllowEnlarge.Enabled = printSettings.AutoScaleImage;
+        cbCenterImage.Enabled = printSettings.AutoScaleImage;
+    }
 
-        private void cbCenterImage_CheckedChanged(object sender, EventArgs e)
-        {
-            printSettings.CenterImage = cbCenterImage.Checked;
-        }
+    private void cbAllowEnlarge_CheckedChanged(object sender, EventArgs e)
+    {
+        printSettings.AllowEnlargeImage = cbAllowEnlarge.Checked;
+    }
+
+    private void cbCenterImage_CheckedChanged(object sender, EventArgs e)
+    {
+        printSettings.CenterImage = cbCenterImage.Checked;
     }
 }

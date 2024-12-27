@@ -23,34 +23,28 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.UpdateChecker;
 
-namespace ShareX
+namespace ShareX;
+
+internal class ShareXUpdateManager : GitHubUpdateManager
 {
-    internal class ShareXUpdateManager : GitHubUpdateManager
-    {
-        public UpdateChannel UpdateChannel { get; set; }
+    public UpdateChannel UpdateChannel { get; set; }
 
-        public override GitHubUpdateChecker CreateUpdateChecker()
-        {
-            if (UpdateChannel == UpdateChannel.Dev)
+    public override GitHubUpdateChecker CreateUpdateChecker()
+    {
+        return UpdateChannel == UpdateChannel.Dev
+            ? new GitHubUpdateChecker("ShareX", "DevBuilds")
             {
-                return new GitHubUpdateChecker("ShareX", "DevBuilds")
-                {
-                    IsDev = true,
-                    IsPortable = Program.Portable,
-                    IgnoreRevision = true
-                };
+                IsDev = true,
+                IsPortable = Program.Portable,
+                IgnoreRevision = true
             }
-            else
+            : new GitHubUpdateChecker("ShareX", "ShareX")
             {
-                return new GitHubUpdateChecker("ShareX", "ShareX")
-                {
-                    IsPortable = Program.Portable,
-                    IncludePreRelease = UpdateChannel == UpdateChannel.PreRelease,
-                    IgnoreRevision = true
-                };
-            }
-        }
+                IsPortable = Program.Portable,
+                IncludePreRelease = UpdateChannel == UpdateChannel.PreRelease,
+                IgnoreRevision = true
+            };
     }
 }

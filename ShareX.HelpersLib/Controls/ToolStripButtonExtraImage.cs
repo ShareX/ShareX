@@ -27,53 +27,52 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class ToolStripButtonExtraImage : ToolStripButton
 {
-    public class ToolStripButtonExtraImage : ToolStripButton
+    [DefaultValue(false)]
+    public bool ShowExtraImage { get; set; }
+
+    private Image extraImage;
+
+    [DefaultValue(null)]
+    public Image ExtraImage
     {
-        [DefaultValue(false)]
-        public bool ShowExtraImage { get; set; }
-
-        private Image extraImage;
-
-        [DefaultValue(null)]
-        public Image ExtraImage
+        get
         {
-            get
+            return extraImage;
+        }
+        set
+        {
+            extraImage = value;
+            Invalidate();
+        }
+    }
+
+    [DefaultValue(2)]
+    public int ExtraImagePadding { get; set; } = 2;
+
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        base.OnPaint(e);
+
+        if (ShowExtraImage && ExtraImage != null)
+        {
+            e.Graphics.DrawImage(ExtraImage, new Point(Width - ExtraImage.Width - ExtraImagePadding, ExtraImagePadding));
+        }
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            if (ExtraImage != null)
             {
-                return extraImage;
-            }
-            set
-            {
-                extraImage = value;
-                Invalidate();
+                ExtraImage.Dispose();
             }
         }
 
-        [DefaultValue(2)]
-        public int ExtraImagePadding { get; set; } = 2;
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-
-            if (ShowExtraImage && ExtraImage != null)
-            {
-                e.Graphics.DrawImage(ExtraImage, new Point(Width - ExtraImage.Width - ExtraImagePadding, ExtraImagePadding));
-            }
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                if (ExtraImage != null)
-                {
-                    ExtraImage.Dispose();
-                }
-            }
-
-            base.Dispose(disposing);
-        }
+        base.Dispose(disposing);
     }
 }

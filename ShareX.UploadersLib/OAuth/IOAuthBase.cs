@@ -23,12 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
-{
-    public interface IOAuthBase
-    {
-        string GetAuthorizationURL();
+namespace ShareX.UploadersLib.OAuth;
 
-        bool GetAccessToken(string code);
-    }
+public interface IOAuthBase
+{
+    string GetAuthorizationURL();
+
+    bool GetAccessToken(string code);
 }

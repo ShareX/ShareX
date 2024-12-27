@@ -24,65 +24,63 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+
+using ShareX.ImageEffectsLib.Drawings;
+using ShareX.ImageEffectsLib.Manipulations;
+
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib;
+
+public class ImageEffectPreset
 {
-    public class ImageEffectPreset
+    public string Name { get; set; } = "";
+
+    [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
+    public List<ImageEffect> Effects { get; set; } = new List<ImageEffect>();
+
+    public Bitmap ApplyEffects(Bitmap bmp)
     {
-        public string Name { get; set; } = "";
+        Bitmap result = (Bitmap)bmp.Clone();
+        result.SetResolution(96f, 96f);
 
-        [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
-        public List<ImageEffect> Effects { get; set; } = new List<ImageEffect>();
-
-        public Bitmap ApplyEffects(Bitmap bmp)
+        if (Effects != null && Effects.Count > 0)
         {
-            Bitmap result = (Bitmap)bmp.Clone();
-            result.SetResolution(96f, 96f);
-
-            if (Effects != null && Effects.Count > 0)
+            foreach (ImageEffect effect in Effects.Where(x => x.Enabled))
             {
-                foreach (ImageEffect effect in Effects.Where(x => x.Enabled))
-                {
-                    result = effect.Apply(result);
+                result = effect.Apply(result);
 
-                    if (result == null)
-                    {
-                        break;
-                    }
+                if (result == null)
+                {
+                    break;
                 }
             }
-
-            return result;
         }
 
-        public override string ToString()
-        {
-            if (!string.IsNullOrEmpty(Name))
-            {
-                return Name;
-            }
+        return result;
+    }
 
-            return "Name";
-        }
+    public override string ToString()
+    {
+        return !string.IsNullOrEmpty(Name) ? Name : "Name";
+    }
 
-        public static ImageEffectPreset GetDefaultPreset()
-        {
-            ImageEffectPreset preset = new ImageEffectPreset();
+    public static ImageEffectPreset GetDefaultPreset()
+    {
+        ImageEffectPreset preset = new();
 
-            Canvas canvas = new Canvas();
-            canvas.Margin = new Padding(0, 0, 0, 30);
-            preset.Effects.Add(canvas);
+        Canvas canvas = new();
+        canvas.Margin = new Padding(0, 0, 0, 30);
+        preset.Effects.Add(canvas);
 
-            DrawText text = new DrawText();
-            text.Offset = new Point(0, 0);
-            text.UseGradient = true;
-            preset.Effects.Add(text);
+        DrawText text = new();
+        text.Offset = new Point(0, 0);
+        text.UseGradient = true;
+        preset.Effects.Add(text);
 
-            return preset;
-        }
+        return preset;
     }
 }

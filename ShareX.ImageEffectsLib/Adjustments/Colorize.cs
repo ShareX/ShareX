@@ -24,36 +24,38 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+internal class Colorize : ImageEffect
 {
-    internal class Colorize : ImageEffect
+    [DefaultValue(typeof(Color), "Red"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color Color { get; set; }
+
+    [DefaultValue(0f)]
+    public float Value { get; set; }
+
+    public Colorize()
     {
-        [DefaultValue(typeof(Color), "Red"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(0f)]
-        public float Value { get; set; }
-
-        public Colorize()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        using (bmp)
         {
-            this.ApplyDefaultPropertyValues();
+            return ColorMatrixManager.Colorize(Color, Value).Apply(bmp);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            using (bmp)
-            {
-                return ColorMatrixManager.Colorize(Color, Value).Apply(bmp);
-            }
-        }
-
-        protected override string GetSummary()
-        {
-            return $"{Color.R}, {Color.G}, {Color.B}";
-        }
+    protected override string GetSummary()
+    {
+        return $"{Color.R}, {Color.G}, {Color.B}";
     }
 }

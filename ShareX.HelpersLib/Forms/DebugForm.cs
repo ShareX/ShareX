@@ -23,119 +23,123 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class DebugForm : Form
 {
-    public partial class DebugForm : Form
+    private static DebugForm instance;
+
+    public delegate void EventHandler(string log);
+    public event EventHandler UploadRequested;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Logger Logger { get; private set; }
+
+    public bool HasUploadRequested => UploadRequested != null;
+
+    private DebugForm(Logger logger)
     {
-        private static DebugForm instance;
+        Logger = logger;
 
-        public delegate void EventHandler(string log);
-        public event EventHandler UploadRequested;
+        InitializeComponent();
 
-        public Logger Logger { get; private set; }
+        rtbDebug.Text = Logger.ToString();
+        rtbDebug.SelectionStart = rtbDebug.TextLength;
+        rtbDebug.ScrollToCaret();
+        rtbDebug.AddContextMenu();
 
-        public bool HasUploadRequested => UploadRequested != null;
+        btnOpenLogFile.Enabled = !string.IsNullOrEmpty(Logger.LogFilePath);
 
-        private DebugForm(Logger logger)
+        ShareXResources.ApplyTheme(this, true);
+
+        string startupPath = AppDomain.CurrentDomain.BaseDirectory;
+        llRunningFrom.Text = startupPath;
+        llRunningFrom.LinkClicked += (sender, e) => FileHelpers.OpenFolder(startupPath);
+
+        Logger.MessageAdded += logger_MessageAdded;
+        Activated += (sender, e) => btnUploadLog.Visible = HasUploadRequested;
+        FormClosing += (sender, e) => Logger.MessageAdded -= logger_MessageAdded;
+    }
+
+    public static DebugForm GetFormInstance(Logger logger)
+    {
+        if (instance == null || instance.IsDisposed)
         {
-            Logger = logger;
-
-            InitializeComponent();
-
-            rtbDebug.Text = Logger.ToString();
-            rtbDebug.SelectionStart = rtbDebug.TextLength;
-            rtbDebug.ScrollToCaret();
-            rtbDebug.AddContextMenu();
-
-            btnOpenLogFile.Enabled = !string.IsNullOrEmpty(Logger.LogFilePath);
-
-            ShareXResources.ApplyTheme(this, true);
-
-            string startupPath = AppDomain.CurrentDomain.BaseDirectory;
-            llRunningFrom.Text = startupPath;
-            llRunningFrom.LinkClicked += (sender, e) => FileHelpers.OpenFolder(startupPath);
-
-            Logger.MessageAdded += logger_MessageAdded;
-            Activated += (sender, e) => btnUploadLog.Visible = HasUploadRequested;
-            FormClosing += (sender, e) => Logger.MessageAdded -= logger_MessageAdded;
+            instance = new DebugForm(logger);
         }
 
-        public static DebugForm GetFormInstance(Logger logger)
+        return instance;
+    }
+
+    private void logger_MessageAdded(string message)
+    {
+        this.InvokeSafe(() => AppendMessage(message));
+    }
+
+    private void AppendMessage(string message)
+    {
+        if (!string.IsNullOrEmpty(message))
         {
-            if (instance == null || instance.IsDisposed)
+            int start = rtbDebug.SelectionStart;
+            int len = rtbDebug.SelectionLength;
+            rtbDebug.AppendText(message);
+            if (len > 0)
             {
-                instance = new DebugForm(logger);
-            }
-
-            return instance;
-        }
-
-        private void logger_MessageAdded(string message)
-        {
-            this.InvokeSafe(() => AppendMessage(message));
-        }
-
-        private void AppendMessage(string message)
-        {
-            if (!string.IsNullOrEmpty(message))
-            {
-                int start = rtbDebug.SelectionStart;
-                int len = rtbDebug.SelectionLength;
-                rtbDebug.AppendText(message);
-                if (len > 0)
-                {
-                    rtbDebug.Select(start, len);
-                }
+                rtbDebug.Select(start, len);
             }
         }
+    }
 
-        private void btnCopyAll_Click(object sender, EventArgs e)
-        {
-            string text = rtbDebug.Text.Trim();
-            ClipboardHelpers.CopyText(text);
-        }
+    private void btnCopyAll_Click(object sender, EventArgs e)
+    {
+        string text = rtbDebug.Text.Trim();
+        ClipboardHelpers.CopyText(text);
+    }
 
-        private void btnOpenLogFile_Click(object sender, EventArgs e)
-        {
-            FileHelpers.OpenFile(Logger.LogFilePath);
-        }
+    private void btnOpenLogFile_Click(object sender, EventArgs e)
+    {
+        FileHelpers.OpenFile(Logger.LogFilePath);
+    }
 
-        private void btnLoadedAssemblies_Click(object sender, EventArgs e)
+    private void btnLoadedAssemblies_Click(object sender, EventArgs e)
+    {
+        StringBuilder sb = new();
+        string directoryPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
         {
-            StringBuilder sb = new StringBuilder();
-            string directoryPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            if (!assembly.IsDynamic && assembly.Location.StartsWith(directoryPath, StringComparison.OrdinalIgnoreCase))
             {
-                if (!assembly.IsDynamic && assembly.Location.StartsWith(directoryPath, StringComparison.OrdinalIgnoreCase))
-                {
-                    sb.AppendLine(assembly.ManifestModule.Name);
-                }
-            }
-            string assemblies = sb.ToString().Trim();
-
-            DebugHelper.WriteLine($"Loaded assemblies:\r\n{assemblies}");
-        }
-
-        private void btnUploadLog_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(rtbDebug.Text))
-            {
-                this.InvokeSafe(() =>
-                {
-                    UploadRequested?.Invoke(rtbDebug.Text);
-                });
+                sb.AppendLine(assembly.ManifestModule.Name);
             }
         }
+        string assemblies = sb.ToString().Trim();
 
-        private void rtbDebug_LinkClicked(object sender, LinkClickedEventArgs e)
+        DebugHelper.WriteLine($"Loaded assemblies:\r\n{assemblies}");
+    }
+
+    private void btnUploadLog_Click(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrEmpty(rtbDebug.Text))
         {
-            URLHelpers.OpenURL(e.LinkText);
+            this.InvokeSafe(() =>
+            {
+                UploadRequested?.Invoke(rtbDebug.Text);
+            });
         }
+    }
+
+    private void rtbDebug_LinkClicked(object sender, LinkClickedEventArgs e)
+    {
+        URLHelpers.OpenURL(e.LinkText);
     }
 }

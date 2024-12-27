@@ -23,43 +23,40 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Drawings;
+
+[Description("Background image")]
+public class DrawBackgroundImage : ImageEffect
 {
-    [Description("Background image")]
-    public class DrawBackgroundImage : ImageEffect
+    [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
+    public string ImageFilePath { get; set; }
+
+    [DefaultValue(true)]
+    public bool Center { get; set; }
+
+    [DefaultValue(false)]
+    public bool Tile { get; set; }
+
+    public DrawBackgroundImage()
     {
-        [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
-        public string ImageFilePath { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(true)]
-        public bool Center { get; set; }
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        return ImageHelpers.DrawBackgroundImage(bmp, ImageFilePath, Center, Tile);
+    }
 
-        [DefaultValue(false)]
-        public bool Tile { get; set; }
-
-        public DrawBackgroundImage()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            return ImageHelpers.DrawBackgroundImage(bmp, ImageFilePath, Center, Tile);
-        }
-
-        protected override string GetSummary()
-        {
-            if (!string.IsNullOrEmpty(ImageFilePath))
-            {
-                return FileHelpers.GetFileNameSafe(ImageFilePath);
-            }
-
-            return null;
-        }
+    protected override string GetSummary()
+    {
+        return !string.IsNullOrEmpty(ImageFilePath) ? FileHelpers.GetFileNameSafe(ImageFilePath) : null;
     }
 }

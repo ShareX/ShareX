@@ -24,96 +24,99 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Tools.OCR;
+
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class ServiceLinksForm : Form
 {
-    public partial class ServiceLinksForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public List<ServiceLink> ServiceLinks { get; private set; }
+
+    public ServiceLinksForm(List<ServiceLink> serviceLinks)
     {
-        public List<ServiceLink> ServiceLinks { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public ServiceLinksForm(List<ServiceLink> serviceLinks)
+        ServiceLinks = serviceLinks;
+
+        if (ServiceLinks != null && ServiceLinks.Count > 0)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            ServiceLinks = serviceLinks;
-
-            if (ServiceLinks != null && ServiceLinks.Count > 0)
-            {
-                cbServices.Items.AddRange(ServiceLinks.ToArray());
-                cbServices.SelectedIndex = 0;
-            }
-
-            UpdateControls();
+            cbServices.Items.AddRange(ServiceLinks.ToArray());
+            cbServices.SelectedIndex = 0;
         }
 
-        private void UpdateControls()
+        UpdateControls();
+    }
+
+    private void UpdateControls()
+    {
+        btnRemove.Enabled = cbServices.Enabled = txtName.Enabled = txtURL.Enabled = cbServices.SelectedItem != null;
+    }
+
+    private void cbServices_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (cbServices.SelectedItem is ServiceLink serviceLink)
         {
-            btnRemove.Enabled = cbServices.Enabled = txtName.Enabled = txtURL.Enabled = cbServices.SelectedItem != null;
+            txtName.Text = serviceLink.Name;
+            txtURL.Text = serviceLink.URL;
         }
+    }
 
-        private void cbServices_SelectedIndexChanged(object sender, EventArgs e)
+    private void btnNew_Click(object sender, EventArgs e)
+    {
+        ServiceLink serviceLink = new("Name", "https://example.com/search?q={0}");
+        ServiceLinks.Add(serviceLink);
+
+        cbServices.Items.Add(serviceLink);
+        cbServices.SelectedIndex = cbServices.Items.Count - 1;
+        UpdateControls();
+    }
+
+    private void btnRemove_Click(object sender, EventArgs e)
+    {
+        if (cbServices.SelectedItem is ServiceLink serviceLink)
         {
-            if (cbServices.SelectedItem is ServiceLink serviceLink)
-            {
-                txtName.Text = serviceLink.Name;
-                txtURL.Text = serviceLink.URL;
-            }
-        }
+            ServiceLinks.Remove(serviceLink);
 
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-            ServiceLink serviceLink = new ServiceLink("Name", "https://example.com/search?q={0}");
-            ServiceLinks.Add(serviceLink);
-
-            cbServices.Items.Add(serviceLink);
+            cbServices.Items.Remove(serviceLink);
             cbServices.SelectedIndex = cbServices.Items.Count - 1;
             UpdateControls();
         }
+    }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+    private void btnReset_Click(object sender, EventArgs e)
+    {
+        ServiceLinks.Clear();
+        ServiceLinks.AddRange(OCROptions.DefaultServiceLinks);
+
+        cbServices.Items.Clear();
+        cbServices.Items.AddRange(ServiceLinks.ToArray());
+        cbServices.SelectedIndex = 0;
+        UpdateControls();
+    }
+
+    private void txtName_TextChanged(object sender, EventArgs e)
+    {
+        if (cbServices.SelectedItem is ServiceLink serviceLink)
         {
-            if (cbServices.SelectedItem is ServiceLink serviceLink)
-            {
-                ServiceLinks.Remove(serviceLink);
+            serviceLink.Name = txtName.Text;
 
-                cbServices.Items.Remove(serviceLink);
-                cbServices.SelectedIndex = cbServices.Items.Count - 1;
-                UpdateControls();
-            }
+            int index = cbServices.SelectedIndex;
+            cbServices.Items[index] = cbServices.Items[index];
         }
+    }
 
-        private void btnReset_Click(object sender, EventArgs e)
+    private void txtURL_TextChanged(object sender, EventArgs e)
+    {
+        if (cbServices.SelectedItem is ServiceLink serviceLink)
         {
-            ServiceLinks.Clear();
-            ServiceLinks.AddRange(OCROptions.DefaultServiceLinks);
-
-            cbServices.Items.Clear();
-            cbServices.Items.AddRange(ServiceLinks.ToArray());
-            cbServices.SelectedIndex = 0;
-            UpdateControls();
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            if (cbServices.SelectedItem is ServiceLink serviceLink)
-            {
-                serviceLink.Name = txtName.Text;
-
-                int index = cbServices.SelectedIndex;
-                cbServices.Items[index] = cbServices.Items[index];
-            }
-        }
-
-        private void txtURL_TextChanged(object sender, EventArgs e)
-        {
-            if (cbServices.SelectedItem is ServiceLink serviceLink)
-            {
-                serviceLink.URL = txtURL.Text;
-            }
+            serviceLink.URL = txtURL.Text;
         }
     }
 }

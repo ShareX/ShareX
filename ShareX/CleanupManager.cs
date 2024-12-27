@@ -24,86 +24,85 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShareX
+namespace ShareX;
+
+public static class CleanupManager
 {
-    public static class CleanupManager
+    public static void Cleanup()
     {
-        public static void Cleanup()
+        try
         {
-            try
+            CleanupAppTempFolder();
+
+            if (Program.Settings != null)
             {
-                CleanupAppTempFolder();
+                int keepFileCount = Math.Max(Program.Settings.CleanupKeepFileCount, 0);
 
-                if (Program.Settings != null)
+                if (Program.Settings.AutoCleanupBackupFiles)
                 {
-                    int keepFileCount = Math.Max(Program.Settings.CleanupKeepFileCount, 0);
+                    CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
+                    CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
+                    CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
+                    CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
+                }
 
-                    if (Program.Settings.AutoCleanupBackupFiles)
-                    {
-                        CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
-                        CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
-                        CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
-                        CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
-                    }
-
-                    if (Program.Settings.AutoCleanupLogFiles)
-                    {
-                        CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
-                    }
+                if (Program.Settings.AutoCleanupLogFiles)
+                {
+                    CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
                 }
             }
-            catch (Exception e)
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
+        }
+    }
+
+    public static void CleanupAsync()
+    {
+        Task.Run(() =>
+        {
+            Cleanup();
+        });
+    }
+
+    private static void CleanupFolder(string folderPath, string fileNamePattern, int keepFileCount)
+    {
+        if (Directory.Exists(folderPath))
+        {
+            DirectoryInfo directoryInfo = new(folderPath);
+
+            IEnumerable<FileInfo> files = directoryInfo.GetFiles(fileNamePattern).
+                OrderByDescending(f => f.LastWriteTime.Year <= 1601 ? f.CreationTime : f.LastWriteTime).Skip(keepFileCount);
+
+            foreach (FileInfo file in files)
             {
-                DebugHelper.WriteException(e);
+                file.Delete();
+
+                DebugHelper.WriteLine($"File deleted: {file.FullName}");
             }
         }
+    }
 
-        public static void CleanupAsync()
-        {
-            Task.Run(() =>
-            {
-                Cleanup();
-            });
-        }
+    private static void CleanupAppTempFolder()
+    {
+        string tempFolder = Path.GetTempPath();
 
-        private static void CleanupFolder(string folderPath, string fileNamePattern, int keepFileCount)
+        if (!string.IsNullOrEmpty(tempFolder))
         {
+            string folderPath = Path.Combine(tempFolder, "ShareX");
+
             if (Directory.Exists(folderPath))
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(folderPath);
+                Directory.Delete(folderPath, true);
 
-                IEnumerable<FileInfo> files = directoryInfo.GetFiles(fileNamePattern).
-                    OrderByDescending(f => f.LastWriteTime.Year <= 1601 ? f.CreationTime : f.LastWriteTime).Skip(keepFileCount);
-
-                foreach (FileInfo file in files)
-                {
-                    file.Delete();
-
-                    DebugHelper.WriteLine($"File deleted: {file.FullName}");
-                }
-            }
-        }
-
-        private static void CleanupAppTempFolder()
-        {
-            string tempFolder = Path.GetTempPath();
-
-            if (!string.IsNullOrEmpty(tempFolder))
-            {
-                string folderPath = Path.Combine(tempFolder, "ShareX");
-
-                if (Directory.Exists(folderPath))
-                {
-                    Directory.Delete(folderPath, true);
-
-                    DebugHelper.WriteLine($"ShareX temp folder cleaned: {folderPath}");
-                }
+                DebugHelper.WriteLine($"ShareX temp folder cleaned: {folderPath}");
             }
         }
     }

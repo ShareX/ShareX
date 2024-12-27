@@ -23,10 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.BaseUploaders;
+
+public abstract class URLShortener : Uploader
 {
-    public abstract class URLShortener : Uploader
-    {
-        public abstract UploadResult ShortenURL(string url);
-    }
+    public abstract UploadResult ShortenURL(string url);
 }

@@ -25,32 +25,21 @@
 
 using System.IO;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes;
+
+public class StickerPackInfo
 {
-    public class StickerPackInfo
+    public string FolderPath { get; set; }
+    public string Name { get; set; }
+
+    public StickerPackInfo(string folderPath = "", string name = "")
     {
-        public string FolderPath { get; set; }
-        public string Name { get; set; }
+        FolderPath = folderPath;
+        Name = name;
+    }
 
-        public StickerPackInfo(string folderPath = "", string name = "")
-        {
-            FolderPath = folderPath;
-            Name = name;
-        }
-
-        public override string ToString()
-        {
-            if (!string.IsNullOrEmpty(Name))
-            {
-                return Name;
-            }
-
-            if (!string.IsNullOrEmpty(FolderPath))
-            {
-                return Path.GetFileName(FolderPath);
-            }
-
-            return "";
-        }
+    public override string ToString()
+    {
+        return !string.IsNullOrEmpty(Name) ? Name : !string.IsNullOrEmpty(FolderPath) ? Path.GetFileName(FolderPath) : "";
     }
 }

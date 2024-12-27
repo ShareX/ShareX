@@ -23,81 +23,60 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.CustomUploader;
+using ShareX.UploadersLib.Helpers;
+
 using System;
 
-namespace ShareX.UploadersLib.SharingServices
+namespace ShareX.UploadersLib.SharingServices;
+
+public class CustomURLSharingService : URLSharingService
 {
-    public class CustomURLSharingService : URLSharingService
+    public override URLSharingServices EnumValue { get; } = URLSharingServices.CustomURLSharingService;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override URLSharingServices EnumValue { get; } = URLSharingServices.CustomURLSharingService;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomURLSharingServiceSelected);
-        }
-
-        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            int index;
-
-            if (taskInfo.OverrideCustomUploader)
-            {
-                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1);
-            }
-            else
-            {
-                index = config.CustomURLSharingServiceSelected;
-            }
-
-            CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
-
-            if (customUploader != null)
-            {
-                return new CustomURLSharer(customUploader);
-            }
-
-            return null;
-        }
+        return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomURLSharingServiceSelected);
     }
 
-    public sealed class CustomURLSharer : URLSharer
+    public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        private CustomUploaderItem uploader;
+        int index = taskInfo.OverrideCustomUploader
+            ? taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1)
+            : config.CustomURLSharingServiceSelected;
+        CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
 
-        public CustomURLSharer(CustomUploaderItem customUploaderItem)
-        {
-            uploader = customUploaderItem;
-        }
+        return customUploader != null ? new CustomURLSharer(customUploader) : (URLSharer)null;
+    }
+}
 
-        public override UploadResult ShareURL(string url)
-        {
-            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
-            CustomUploaderInput input = new CustomUploaderInput("", url);
+public sealed class CustomURLSharer : URLSharer
+{
+    private CustomUploaderItem uploader;
 
-            if (uploader.Body == CustomUploaderBody.None)
-            {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input));
-            }
-            else if (uploader.Body == CustomUploaderBody.MultipartFormData)
-            {
-                result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.RequestMethod);
-            }
-            else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
-            {
-                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input));
-            }
-            else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
-            {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(), null,
-                    uploader.GetHeaders(input));
-            }
-            else
-            {
-                throw new Exception("Unsupported request format: " + uploader.Body);
-            }
+    public CustomURLSharer(CustomUploaderItem customUploaderItem)
+    {
+        uploader = customUploaderItem;
+    }
 
-            return result;
-        }
+    public override UploadResult ShareURL(string url)
+    {
+        UploadResult result = new() { URL = url, IsURLExpected = false };
+        CustomUploaderInput input = new("", url);
+
+        result.Response = uploader.Body == CustomUploaderBody.None
+            ? SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input))
+            : uploader.Body == CustomUploaderBody.MultipartFormData
+                ? SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.RequestMethod)
+                : uploader.Body == CustomUploaderBody.FormURLEncoded
+                            ? SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input))
+                            : uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML
+                                        ? SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(), null,
+                                                        uploader.GetHeaders(input))
+                                        : throw new Exception("Unsupported request format: " + uploader.Body);
+        return result;
     }
 }

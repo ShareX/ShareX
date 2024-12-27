@@ -24,76 +24,65 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.CustomUploader;
+using ShareX.UploadersLib.Helpers;
+
 using System;
 using System.IO;
 
-namespace ShareX.UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders;
+
+public class CustomImageUploaderService : ImageUploaderService
 {
-    public class CustomImageUploaderService : ImageUploaderService
+    public override ImageDestination EnumValue { get; } = ImageDestination.CustomImageUploader;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override ImageDestination EnumValue { get; } = ImageDestination.CustomImageUploader;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomImageUploaderSelected);
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            int index;
-
-            if (taskInfo.OverrideCustomUploader)
-            {
-                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1);
-            }
-            else
-            {
-                index = config.CustomImageUploaderSelected;
-            }
-
-            CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
-
-            if (customUploader != null)
-            {
-                return new CustomImageUploader(customUploader);
-            }
-
-            return null;
-        }
+        return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomImageUploaderSelected);
     }
 
-    public sealed class CustomImageUploader : ImageUploader
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        private CustomUploaderItem uploader;
+        int index = taskInfo.OverrideCustomUploader
+            ? taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1)
+            : config.CustomImageUploaderSelected;
+        CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
 
-        public CustomImageUploader(CustomUploaderItem customUploaderItem)
+        return customUploader != null ? new CustomImageUploader(customUploader) : (GenericUploader)null;
+    }
+}
+
+public sealed class CustomImageUploader : ImageUploader
+{
+    private CustomUploaderItem uploader;
+
+    public CustomImageUploader(CustomUploaderItem customUploaderItem)
+    {
+        uploader = customUploaderItem;
+    }
+
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        UploadResult result = new();
+        CustomUploaderInput input = new(fileName, "");
+
+        if (uploader.Body == CustomUploaderBody.MultipartFormData)
         {
-            uploader = customUploaderItem;
+            result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(), uploader.GetArguments(input),
+                uploader.GetHeaders(input), null, uploader.RequestMethod);
+        } else
+        {
+            result.Response = uploader.Body == CustomUploaderBody.Binary
+                ? SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, MimeTypes.GetMimeTypeFromFileName(fileName),
+                                null, uploader.GetHeaders(input))
+                : throw new Exception("Unsupported request format: " + uploader.Body);
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            UploadResult result = new UploadResult();
-            CustomUploaderInput input = new CustomUploaderInput(fileName, "");
+        uploader.TryParseResponse(result, LastResponseInfo, Errors, input);
 
-            if (uploader.Body == CustomUploaderBody.MultipartFormData)
-            {
-                result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(), uploader.GetArguments(input),
-                    uploader.GetHeaders(input), null, uploader.RequestMethod);
-            }
-            else if (uploader.Body == CustomUploaderBody.Binary)
-            {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, MimeTypes.GetMimeTypeFromFileName(fileName),
-                    null, uploader.GetHeaders(input));
-            }
-            else
-            {
-                throw new Exception("Unsupported request format: " + uploader.Body);
-            }
-
-            uploader.TryParseResponse(result, LastResponseInfo, Errors, input);
-
-            return result;
-        }
+        return result;
     }
 }

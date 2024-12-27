@@ -25,11 +25,10 @@
 
 using System.Collections.Generic;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public class DirectShowDevices
 {
-    public class DirectShowDevices
-    {
-        public List<string> VideoDevices = new List<string>();
-        public List<string> AudioDevices = new List<string>();
-    }
+    public List<string> VideoDevices = new();
+    public List<string> AudioDevices = new();
 }

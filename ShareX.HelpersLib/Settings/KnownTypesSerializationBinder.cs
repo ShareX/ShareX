@@ -24,25 +24,22 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json.Serialization;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Settings;
+
+public class KnownTypesSerializationBinder : ISerializationBinder
 {
-    public class KnownTypesSerializationBinder : ISerializationBinder
+    public IEnumerable<Type> KnownTypes { get; set; }
+
+    public void BindToName(Type serializedType, out string assemblyName, out string typeName)
     {
-        public IEnumerable<Type> KnownTypes { get; set; }
-
-        public void BindToName(Type serializedType, out string assemblyName, out string typeName)
-        {
-            assemblyName = null;
-            typeName = serializedType.Name;
-        }
-
-        public Type BindToType(string assemblyName, string typeName)
-        {
-            return KnownTypes.SingleOrDefault(t => t.Name == typeName);
-        }
+        assemblyName = null;
+        typeName = serializedType.Name;
     }
+
+    public Type BindToType(string assemblyName, string typeName) => KnownTypes.SingleOrDefault(t => t.Name == typeName);
 }

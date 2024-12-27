@@ -23,72 +23,71 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.Properties;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class PuushLoginForm : Form
 {
-    public partial class PuushLoginForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string APIKey { get; set; }
+
+    public PuushLoginForm()
     {
-        public string APIKey { get; set; }
+        InitializeComponent();
+        Icon = Resources.puush;
+    }
 
-        public PuushLoginForm()
+    private bool ValidationCheck()
+    {
+        bool result = true;
+
+        if (string.IsNullOrEmpty(txtEmail.Text))
         {
-            InitializeComponent();
-            Icon = Resources.puush;
+            txtEmail.BackColor = Color.FromArgb(255, 200, 200);
+            result = false;
+        } else
+        {
+            txtEmail.BackColor = SystemColors.Window;
         }
 
-        private bool ValidationCheck()
+        if (string.IsNullOrEmpty(txtPassword.Text))
         {
-            bool result = true;
-
-            if (string.IsNullOrEmpty(txtEmail.Text))
-            {
-                txtEmail.BackColor = Color.FromArgb(255, 200, 200);
-                result = false;
-            }
-            else
-            {
-                txtEmail.BackColor = SystemColors.Window;
-            }
-
-            if (string.IsNullOrEmpty(txtPassword.Text))
-            {
-                txtPassword.BackColor = Color.FromArgb(255, 200, 200);
-                result = false;
-            }
-            else
-            {
-                txtPassword.BackColor = SystemColors.Window;
-            }
-
-            return result;
+            txtPassword.BackColor = Color.FromArgb(255, 200, 200);
+            result = false;
+        } else
+        {
+            txtPassword.BackColor = SystemColors.Window;
         }
 
-        private void llForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL(Puush.PuushResetPasswordURL);
-        }
+        return result;
+    }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+    private void llForgottenPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        URLHelpers.OpenURL(Puush.PuushResetPasswordURL);
+    }
+
+    private void btnLogin_Click(object sender, EventArgs e)
+    {
+        if (ValidationCheck())
         {
-            if (ValidationCheck())
+            APIKey = new Puush().Login(txtEmail.Text, txtPassword.Text);
+
+            if (!string.IsNullOrEmpty(APIKey))
             {
-                APIKey = new Puush().Login(txtEmail.Text, txtPassword.Text);
-
-                if (!string.IsNullOrEmpty(APIKey))
-                {
-                    DialogResult = DialogResult.OK;
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Login failed.", "Authentication failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                DialogResult = DialogResult.OK;
+                Close();
+            } else
+            {
+                MessageBox.Show("Login failed.", "Authentication failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

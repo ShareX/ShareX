@@ -23,17 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
-{
-    public class CustomUploaderInput
-    {
-        public string FileName { get; set; }
-        public string Input { get; set; }
+namespace ShareX.UploadersLib.CustomUploader;
 
-        public CustomUploaderInput(string fileName, string input)
-        {
-            FileName = fileName;
-            Input = input;
-        }
+public class CustomUploaderInput
+{
+    public string FileName { get; set; }
+    public string Input { get; set; }
+
+    public CustomUploaderInput(string fileName, string input)
+    {
+        FileName = fileName;
+        Input = input;
     }
 }

@@ -25,11 +25,10 @@
 
 using System.Drawing;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class PointInfo
 {
-    public class PointInfo
-    {
-        public Point Position { get; set; }
-        public Color Color { get; set; }
-    }
+    public Point Position { get; set; }
+    public Color Color { get; set; }
 }

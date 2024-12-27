@@ -23,33 +23,35 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.Native;
 using ShareX.HelpersLib.Properties;
+
 using System;
 using System.ComponentModel;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class DirectoryNameEditor : FileNameEditor
 {
-    public class DirectoryNameEditor : FileNameEditor
+    public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
     {
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        if (context == null || provider == null)
         {
-            if (context == null || provider == null)
-            {
-                return base.EditValue(context, provider, value);
-            }
-
-            using (FolderSelectDialog dlg = new FolderSelectDialog())
-            {
-                dlg.Title = Resources.DirectoryNameEditor_EditValue_Browse_for_a_folder___;
-
-                if (dlg.ShowDialog())
-                {
-                    value = FileHelpers.GetVariableFolderPath(dlg.FileName, true);
-                }
-            }
-
-            return value;
+            return base.EditValue(context, provider, value);
         }
+
+        using (FolderSelectDialog dlg = new())
+        {
+            dlg.Title = Resources.DirectoryNameEditor_EditValue_Browse_for_a_folder___;
+
+            if (dlg.ShowDialog())
+            {
+                value = FileHelpers.GetVariableFolderPath(dlg.FileName, true);
+            }
+        }
+
+        return value;
     }
 }

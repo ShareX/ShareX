@@ -26,84 +26,82 @@
 using System;
 using System.IO;
 
-namespace ShareX.IndexerLib
+namespace ShareX.IndexerLib;
+
+public abstract class Indexer
 {
-    public abstract class Indexer
+    protected IndexerSettings settings = null;
+
+    protected Indexer(IndexerSettings indexerSettings)
     {
-        protected IndexerSettings settings = null;
+        settings = indexerSettings;
+    }
 
-        protected Indexer(IndexerSettings indexerSettings)
+    public static string Index(string folderPath, IndexerSettings settings)
+    {
+        Indexer indexer = null;
+
+        switch (settings.Output)
         {
-            settings = indexerSettings;
+            case IndexerOutput.Html:
+                indexer = new IndexerHtml(settings);
+                break;
+            case IndexerOutput.Txt:
+                indexer = new IndexerText(settings);
+                break;
+            case IndexerOutput.Xml:
+                indexer = new IndexerXml(settings);
+                break;
+            case IndexerOutput.Json:
+                indexer = new IndexerJson(settings);
+                break;
         }
 
-        public static string Index(string folderPath, IndexerSettings settings)
+        return indexer.Index(folderPath);
+    }
+
+    public abstract string Index(string folderPath);
+
+    protected abstract void IndexFolder(FolderInfo dir, int level = 0);
+
+    protected FolderInfo GetFolderInfo(string folderPath, int level = 0)
+    {
+        FolderInfo folderInfo = new(folderPath);
+
+        if (settings.MaxDepthLevel == 0 || level < settings.MaxDepthLevel)
         {
-            Indexer indexer = null;
-
-            switch (settings.Output)
+            try
             {
-                case IndexerOutput.Html:
-                    indexer = new IndexerHtml(settings);
-                    break;
-                case IndexerOutput.Txt:
-                    indexer = new IndexerText(settings);
-                    break;
-                case IndexerOutput.Xml:
-                    indexer = new IndexerXml(settings);
-                    break;
-                case IndexerOutput.Json:
-                    indexer = new IndexerJson(settings);
-                    break;
-            }
+                DirectoryInfo currentDirectoryInfo = new(folderPath);
 
-            return indexer.Index(folderPath);
-        }
-
-        public abstract string Index(string folderPath);
-
-        protected abstract void IndexFolder(FolderInfo dir, int level = 0);
-
-        protected FolderInfo GetFolderInfo(string folderPath, int level = 0)
-        {
-            FolderInfo folderInfo = new FolderInfo(folderPath);
-
-            if (settings.MaxDepthLevel == 0 || level < settings.MaxDepthLevel)
-            {
-                try
+                foreach (DirectoryInfo directoryInfo in currentDirectoryInfo.EnumerateDirectories())
                 {
-                    DirectoryInfo currentDirectoryInfo = new DirectoryInfo(folderPath);
-
-                    foreach (DirectoryInfo directoryInfo in currentDirectoryInfo.EnumerateDirectories())
+                    if (settings.SkipHiddenFolders && directoryInfo.Attributes.HasFlag(FileAttributes.Hidden))
                     {
-                        if (settings.SkipHiddenFolders && directoryInfo.Attributes.HasFlag(FileAttributes.Hidden))
-                        {
-                            continue;
-                        }
-
-                        FolderInfo subFolderInfo = GetFolderInfo(directoryInfo.FullName, level + 1);
-                        folderInfo.Folders.Add(subFolderInfo);
-                        subFolderInfo.Parent = folderInfo;
+                        continue;
                     }
 
-                    foreach (FileInfo fileInfo in currentDirectoryInfo.EnumerateFiles())
-                    {
-                        if (settings.SkipHiddenFiles && fileInfo.Attributes.HasFlag(FileAttributes.Hidden))
-                        {
-                            continue;
-                        }
+                    FolderInfo subFolderInfo = GetFolderInfo(directoryInfo.FullName, level + 1);
+                    folderInfo.Folders.Add(subFolderInfo);
+                    subFolderInfo.Parent = folderInfo;
+                }
 
-                        folderInfo.Files.Add(fileInfo);
+                foreach (FileInfo fileInfo in currentDirectoryInfo.EnumerateFiles())
+                {
+                    if (settings.SkipHiddenFiles && fileInfo.Attributes.HasFlag(FileAttributes.Hidden))
+                    {
+                        continue;
                     }
 
-                    folderInfo.Files.Sort((x, y) => x.Name.CompareTo(y.Name));
+                    folderInfo.Files.Add(fileInfo);
                 }
-                catch (UnauthorizedAccessException)
-                {
-                }
-            }
 
-            return folderInfo;
+                folderInfo.Files.Sort((x, y) => x.Name.CompareTo(y.Name));
+            } catch (UnauthorizedAccessException)
+            {
+            }
         }
+
+        return folderInfo;
     }
 }

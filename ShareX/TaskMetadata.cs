@@ -23,67 +23,56 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Native;
+
 using System;
 using System.Drawing;
 
-namespace ShareX
+namespace ShareX;
+
+public class TaskMetadata : IDisposable
 {
-    public class TaskMetadata : IDisposable
+    private const int WindowInfoMaxLength = 255;
+
+    public Bitmap Image { get; set; }
+
+    private string windowTitle;
+
+    public string WindowTitle
     {
-        private const int WindowInfoMaxLength = 255;
+        get => windowTitle;
+        set => windowTitle = value.Truncate(WindowInfoMaxLength);
+    }
 
-        public Bitmap Image { get; set; }
+    private string processName;
 
-        private string windowTitle;
+    public string ProcessName
+    {
+        get => processName;
+        set => processName = value.Truncate(WindowInfoMaxLength);
+    }
 
-        public string WindowTitle
+    public TaskMetadata()
+    {
+    }
+
+    public TaskMetadata(Bitmap image)
+    {
+        Image = image;
+    }
+
+    public void UpdateInfo(WindowInfo windowInfo)
+    {
+        if (windowInfo != null)
         {
-            get
-            {
-                return windowTitle;
-            }
-            set
-            {
-                windowTitle = value.Truncate(WindowInfoMaxLength);
-            }
+            WindowTitle = windowInfo.Text;
+            ProcessName = windowInfo.ProcessName;
         }
+    }
 
-        private string processName;
-
-        public string ProcessName
-        {
-            get
-            {
-                return processName;
-            }
-            set
-            {
-                processName = value.Truncate(WindowInfoMaxLength);
-            }
-        }
-
-        public TaskMetadata()
-        {
-        }
-
-        public TaskMetadata(Bitmap image)
-        {
-            Image = image;
-        }
-
-        public void UpdateInfo(WindowInfo windowInfo)
-        {
-            if (windowInfo != null)
-            {
-                WindowTitle = windowInfo.Text;
-                ProcessName = windowInfo.ProcessName;
-            }
-        }
-
-        public void Dispose()
-        {
-            Image?.Dispose();
-        }
+    public void Dispose()
+    {
+        Image?.Dispose();
     }
 }

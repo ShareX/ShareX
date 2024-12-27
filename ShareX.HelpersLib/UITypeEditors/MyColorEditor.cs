@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -30,50 +32,47 @@ using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class MyColorEditor : UITypeEditor
 {
-    public class MyColorEditor : UITypeEditor
+    public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
     {
-        public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
+        return UITypeEditorEditStyle.Modal;
+    }
+
+    public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+    {
+        if (value.GetType() != typeof(Color))
         {
-            return UITypeEditorEditStyle.Modal;
-        }
-
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
-        {
-            if (value.GetType() != typeof(Color))
-            {
-                return value;
-            }
-
-            IWindowsFormsEditorService svc = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
-
-            if (svc != null)
-            {
-                Color color = (Color)value;
-
-                using (ColorPickerForm form = new ColorPickerForm(color))
-                {
-                    if (svc.ShowDialog(form) == DialogResult.OK)
-                    {
-                        return (Color)form.NewColor;
-                    }
-                }
-            }
-
             return value;
         }
 
-        public override bool GetPaintValueSupported(ITypeDescriptorContext context)
+        IWindowsFormsEditorService svc = (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
+
+        if (svc != null)
         {
-            return true;
+            Color color = (Color)value;
+
+            using ColorPickerForm form = new(color);
+            if (svc.ShowDialog(form) == DialogResult.OK)
+            {
+                return (Color)form.NewColor;
+            }
         }
 
-        public override void PaintValue(PaintValueEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            Color color = (Color)e.Value;
-            ImageHelpers.DrawColorPickerIcon(g, color, e.Bounds);
-        }
+        return value;
+    }
+
+    public override bool GetPaintValueSupported(ITypeDescriptorContext context)
+    {
+        return true;
+    }
+
+    public override void PaintValue(PaintValueEventArgs e)
+    {
+        Graphics g = e.Graphics;
+        Color color = (Color)e.Value;
+        ImageHelpers.DrawColorPickerIcon(g, color, e.Bounds);
     }
 }

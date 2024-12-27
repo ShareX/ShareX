@@ -24,74 +24,75 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Colors;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Drawings;
+
+[Description("Border")]
+public class DrawBorder : ImageEffect
 {
-    [Description("Border")]
-    public class DrawBorder : ImageEffect
+    [DefaultValue(BorderType.Outside)]
+    public BorderType Type { get; set; }
+
+    private int size;
+
+    [DefaultValue(1)]
+    public int Size
     {
-        [DefaultValue(BorderType.Outside)]
-        public BorderType Type { get; set; }
-
-        private int size;
-
-        [DefaultValue(1)]
-        public int Size
+        get
         {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value.Max(1);
-            }
+            return size;
         }
-
-        [DefaultValue(DashStyle.Solid), TypeConverter(typeof(EnumProperNameConverter))]
-        public DashStyle DashStyle { get; set; }
-
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
-
-        [DefaultValue(false)]
-        public bool UseGradient { get; set; }
-
-        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
-        public GradientInfo Gradient { get; set; }
-
-        public DrawBorder()
+        set
         {
-            this.ApplyDefaultPropertyValues();
-            AddDefaultGradient();
+            size = value.Max(1);
         }
+    }
 
-        private void AddDefaultGradient()
-        {
-            Gradient = new GradientInfo();
-            Gradient.Colors.Add(new GradientStop(Color.FromArgb(68, 120, 194), 0f));
-            Gradient.Colors.Add(new GradientStop(Color.FromArgb(13, 58, 122), 50f));
-            Gradient.Colors.Add(new GradientStop(Color.FromArgb(6, 36, 78), 50f));
-            Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
-        }
+    [DefaultValue(DashStyle.Solid), TypeConverter(typeof(EnumProperNameConverter))]
+    public DashStyle DashStyle { get; set; }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            if (UseGradient && Gradient != null && Gradient.IsValid)
-            {
-                return ImageHelpers.DrawBorder(bmp, Gradient, Size, Type, DashStyle);
-            }
+    [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color Color { get; set; }
 
-            return ImageHelpers.DrawBorder(bmp, Color, Size, Type, DashStyle);
-        }
+    [DefaultValue(false)]
+    public bool UseGradient { get; set; }
 
-        protected override string GetSummary()
-        {
-            return Size + "px";
-        }
+    [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
+    public GradientInfo Gradient { get; set; }
+
+    public DrawBorder()
+    {
+        this.ApplyDefaultPropertyValues();
+        AddDefaultGradient();
+    }
+
+    private void AddDefaultGradient()
+    {
+        Gradient = new GradientInfo();
+        Gradient.Colors.Add(new GradientStop(Color.FromArgb(68, 120, 194), 0f));
+        Gradient.Colors.Add(new GradientStop(Color.FromArgb(13, 58, 122), 50f));
+        Gradient.Colors.Add(new GradientStop(Color.FromArgb(6, 36, 78), 50f));
+        Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
+    }
+
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        return UseGradient && Gradient != null && Gradient.IsValid
+            ? ImageHelpers.DrawBorder(bmp, Gradient, Size, Type, DashStyle)
+            : ImageHelpers.DrawBorder(bmp, Color, Size, Type, DashStyle);
+    }
+
+    protected override string GetSummary()
+    {
+        return Size + "px";
     }
 }

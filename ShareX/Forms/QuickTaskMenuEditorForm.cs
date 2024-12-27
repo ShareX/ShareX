@@ -24,114 +24,115 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
 using ShareX.Properties;
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class QuickTaskMenuEditorForm : Form
 {
-    public partial class QuickTaskMenuEditorForm : Form
+    public QuickTaskMenuEditorForm()
     {
-        public QuickTaskMenuEditorForm()
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+
+        if (Program.Settings.QuickTaskPresets == null)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            if (Program.Settings.QuickTaskPresets == null)
-            {
-                Program.Settings.QuickTaskPresets = new List<QuickTaskInfo>();
-            }
-
-            UpdateItems();
+            Program.Settings.QuickTaskPresets = new List<QuickTaskInfo>();
         }
 
-        private void UpdateItem(ListViewItem lvi, QuickTaskInfo taskInfo)
+        UpdateItems();
+    }
+
+    private void UpdateItem(ListViewItem lvi, QuickTaskInfo taskInfo)
+    {
+        lvi.Tag = taskInfo;
+        lvi.Text = taskInfo.ToString();
+    }
+
+    private void UpdateItems()
+    {
+        lvPresets.Items.Clear();
+
+        foreach (QuickTaskInfo taskInfo in Program.Settings.QuickTaskPresets)
         {
-            lvi.Tag = taskInfo;
-            lvi.Text = taskInfo.ToString();
-        }
-
-        private void UpdateItems()
-        {
-            lvPresets.Items.Clear();
-
-            foreach (QuickTaskInfo taskInfo in Program.Settings.QuickTaskPresets)
-            {
-                ListViewItem lvi = new ListViewItem();
-                UpdateItem(lvi, taskInfo);
-                lvPresets.Items.Add(lvi);
-            }
-        }
-
-        private void Edit(ListViewItem lvi, QuickTaskInfo taskInfo)
-        {
-            new QuickTaskInfoEditForm(taskInfo).ShowDialog();
-
+            ListViewItem lvi = new();
             UpdateItem(lvi, taskInfo);
-        }
-
-        private void EditSelectedItem()
-        {
-            if (lvPresets.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvPresets.SelectedItems[0];
-                QuickTaskInfo taskInfo = lvi.Tag as QuickTaskInfo;
-                Edit(lvi, taskInfo);
-            }
-        }
-
-        private void lvPresets_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                EditSelectedItem();
-            }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            QuickTaskInfo taskInfo = new QuickTaskInfo();
-            ListViewItem lvi = new ListViewItem();
-            Program.Settings.QuickTaskPresets.Add(taskInfo);
             lvPresets.Items.Add(lvi);
+        }
+    }
+
+    private void Edit(ListViewItem lvi, QuickTaskInfo taskInfo)
+    {
+        new QuickTaskInfoEditForm(taskInfo).ShowDialog();
+
+        UpdateItem(lvi, taskInfo);
+    }
+
+    private void EditSelectedItem()
+    {
+        if (lvPresets.SelectedItems.Count > 0)
+        {
+            ListViewItem lvi = lvPresets.SelectedItems[0];
+            QuickTaskInfo taskInfo = lvi.Tag as QuickTaskInfo;
             Edit(lvi, taskInfo);
         }
+    }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+    private void lvPresets_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left)
         {
             EditSelectedItem();
         }
+    }
 
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-            if (lvPresets.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvPresets.SelectedItems[0];
-                QuickTaskInfo taskInfo = lvi.Tag as QuickTaskInfo;
-                Program.Settings.QuickTaskPresets.Remove(taskInfo);
-                lvPresets.Items.Remove(lvi);
-            }
-        }
+    private void btnAdd_Click(object sender, EventArgs e)
+    {
+        QuickTaskInfo taskInfo = new();
+        ListViewItem lvi = new();
+        Program.Settings.QuickTaskPresets.Add(taskInfo);
+        lvPresets.Items.Add(lvi);
+        Edit(lvi, taskInfo);
+    }
 
-        private void lvPresets_ItemMoved(object sender, int oldIndex, int newIndex)
-        {
-            Program.Settings.QuickTaskPresets.Move(oldIndex, newIndex);
-        }
+    private void btnEdit_Click(object sender, EventArgs e)
+    {
+        EditSelectedItem();
+    }
 
-        private void btnReset_Click(object sender, EventArgs e)
+    private void btnRemove_Click(object sender, EventArgs e)
+    {
+        if (lvPresets.SelectedItems.Count > 0)
         {
-            if (MessageBox.Show(Resources.QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Program.Settings.QuickTaskPresets = QuickTaskInfo.DefaultPresets;
-                UpdateItems();
-            }
+            ListViewItem lvi = lvPresets.SelectedItems[0];
+            QuickTaskInfo taskInfo = lvi.Tag as QuickTaskInfo;
+            Program.Settings.QuickTaskPresets.Remove(taskInfo);
+            lvPresets.Items.Remove(lvi);
         }
+    }
 
-        private void btnClose_Click(object sender, EventArgs e)
+    private void lvPresets_ItemMoved(object sender, int oldIndex, int newIndex)
+    {
+        Program.Settings.QuickTaskPresets.Move(oldIndex, newIndex);
+    }
+
+    private void btnReset_Click(object sender, EventArgs e)
+    {
+        if (MessageBox.Show(Resources.QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
         {
-            DialogResult = DialogResult.Cancel;
-            Close();
+            Program.Settings.QuickTaskPresets = QuickTaskInfo.DefaultPresets;
+            UpdateItems();
         }
+    }
+
+    private void btnClose_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

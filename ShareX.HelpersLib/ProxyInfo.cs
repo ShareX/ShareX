@@ -27,81 +27,78 @@ using System;
 using System.Net;
 using System.Reflection;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class ProxyInfo
 {
-    public class ProxyInfo
+    public ProxyMethod ProxyMethod { get; set; }
+    public string Host { get; set; }
+    public int Port { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+
+    public ProxyInfo()
     {
-        public ProxyMethod ProxyMethod { get; set; }
-        public string Host { get; set; }
-        public int Port { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        ProxyMethod = ProxyMethod.Manual;
+    }
 
-        public ProxyInfo()
+    public bool IsValidProxy()
+    {
+        if (ProxyMethod == ProxyMethod.Manual)
         {
-            ProxyMethod = ProxyMethod.Manual;
+            return !string.IsNullOrEmpty(Host) && Port > 0;
         }
 
-        public bool IsValidProxy()
+        if (ProxyMethod == ProxyMethod.Automatic)
         {
-            if (ProxyMethod == ProxyMethod.Manual)
+            WebProxy systemProxy = GetDefaultWebProxy();
+
+            if (systemProxy != null && systemProxy.Address != null && !string.IsNullOrEmpty(systemProxy.Address.Host) && systemProxy.Address.Port > 0)
             {
-                return !string.IsNullOrEmpty(Host) && Port > 0;
+                Host = systemProxy.Address.Host;
+                Port = systemProxy.Address.Port;
+                return true;
             }
-
-            if (ProxyMethod == ProxyMethod.Automatic)
-            {
-                WebProxy systemProxy = GetDefaultWebProxy();
-
-                if (systemProxy != null && systemProxy.Address != null && !string.IsNullOrEmpty(systemProxy.Address.Host) && systemProxy.Address.Port > 0)
-                {
-                    Host = systemProxy.Address.Host;
-                    Port = systemProxy.Address.Port;
-                    return true;
-                }
-            }
-
-            return false;
         }
 
-        public IWebProxy GetWebProxy()
-        {
-            try
-            {
-                if (IsValidProxy())
-                {
-                    NetworkCredential credentials = new NetworkCredential(Username, Password);
-                    string address = string.Format("{0}:{1}", Host, Port);
-                    return new WebProxy(address, true, null, credentials);
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "GetWebProxy failed.");
-            }
+        return false;
+    }
 
-            return null;
+    public IWebProxy GetWebProxy()
+    {
+        try
+        {
+            if (IsValidProxy())
+            {
+                NetworkCredential credentials = new(Username, Password);
+                string address = string.Format("{0}:{1}", Host, Port);
+                return new WebProxy(address, true, null, credentials);
+            }
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "GetWebProxy failed.");
         }
 
-        private WebProxy GetDefaultWebProxy()
-        {
-            try
-            {
-                // Need better solution
-                return (WebProxy)typeof(WebProxy).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic,
-                    null, new Type[] { typeof(bool) }, null).Invoke(new object[] { true });
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "Reflection failed.");
-            }
+        return null;
+    }
 
-            return null;
+    private WebProxy GetDefaultWebProxy()
+    {
+        try
+        {
+            // Need better solution
+            return (WebProxy)typeof(WebProxy).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic,
+                null, new Type[] { typeof(bool) }, null).Invoke(new object[] { true });
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "Reflection failed.");
         }
 
-        public override string ToString()
-        {
-            return string.Format("{0} - {1}:{2}", Username, Host, Port);
-        }
+        return null;
+    }
+
+    public override string ToString()
+    {
+        return string.Format("{0} - {1}:{2}", Username, Host, Port);
     }
 }

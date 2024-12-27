@@ -24,76 +24,80 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.NameParser;
 using ShareX.Properties;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class ActionsForm : Form
 {
-    public partial class ActionsForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ExternalProgram FileAction { get; private set; }
+
+    public ActionsForm() : this(new ExternalProgram())
     {
-        public ExternalProgram FileAction { get; private set; }
+    }
 
-        public ActionsForm() : this(new ExternalProgram())
+    public ActionsForm(ExternalProgram fileAction)
+    {
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+
+        FileAction = fileAction;
+        txtName.Text = fileAction.Name ?? "";
+        txtPath.Text = fileAction.Path ?? "";
+        txtArguments.Text = fileAction.Args ?? "";
+        CodeMenu.Create<CodeMenuEntryActions>(txtArguments);
+        txtOutputExtension.Text = fileAction.OutputExtension ?? "";
+        txtExtensions.Text = fileAction.Extensions ?? "";
+        cbHiddenWindow.Checked = fileAction.HiddenWindow;
+        cbDeleteInputFile.Checked = fileAction.DeleteInputFile;
+    }
+
+    private void btnPathBrowse_Click(object sender, EventArgs e)
+    {
+        FileHelpers.BrowseFile(txtPath, "", true);
+    }
+
+    private void txtOutputExtension_TextChanged(object sender, EventArgs e)
+    {
+        cbDeleteInputFile.Enabled = txtOutputExtension.TextLength > 0;
+    }
+
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        if (string.IsNullOrEmpty(txtName.Text))
         {
+            MessageBox.Show(Resources.ActionsForm_btnOK_Click_Name_can_t_be_empty_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
         }
 
-        public ActionsForm(ExternalProgram fileAction)
+        if (string.IsNullOrEmpty(txtPath.Text))
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            FileAction = fileAction;
-            txtName.Text = fileAction.Name ?? "";
-            txtPath.Text = fileAction.Path ?? "";
-            txtArguments.Text = fileAction.Args ?? "";
-            CodeMenu.Create<CodeMenuEntryActions>(txtArguments);
-            txtOutputExtension.Text = fileAction.OutputExtension ?? "";
-            txtExtensions.Text = fileAction.Extensions ?? "";
-            cbHiddenWindow.Checked = fileAction.HiddenWindow;
-            cbDeleteInputFile.Checked = fileAction.DeleteInputFile;
+            MessageBox.Show(Resources.ActionsForm_btnOK_Click_File_path_can_t_be_empty_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
         }
 
-        private void btnPathBrowse_Click(object sender, EventArgs e)
-        {
-            FileHelpers.BrowseFile(txtPath, "", true);
-        }
+        FileAction.Name = txtName.Text;
+        FileAction.Path = txtPath.Text;
+        FileAction.Args = txtArguments.Text;
+        FileAction.Extensions = txtExtensions.Text;
+        FileAction.OutputExtension = txtOutputExtension.Text;
+        FileAction.HiddenWindow = cbHiddenWindow.Checked;
+        FileAction.DeleteInputFile = cbDeleteInputFile.Checked;
 
-        private void txtOutputExtension_TextChanged(object sender, EventArgs e)
-        {
-            cbDeleteInputFile.Enabled = txtOutputExtension.TextLength > 0;
-        }
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtName.Text))
-            {
-                MessageBox.Show(Resources.ActionsForm_btnOK_Click_Name_can_t_be_empty_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(txtPath.Text))
-            {
-                MessageBox.Show(Resources.ActionsForm_btnOK_Click_File_path_can_t_be_empty_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            FileAction.Name = txtName.Text;
-            FileAction.Path = txtPath.Text;
-            FileAction.Args = txtArguments.Text;
-            FileAction.Extensions = txtExtensions.Text;
-            FileAction.OutputExtension = txtOutputExtension.Text;
-            FileAction.HiddenWindow = cbHiddenWindow.Checked;
-            FileAction.DeleteInputFile = cbDeleteInputFile.Checked;
-
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

@@ -23,10 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.OAuth;
+
+public interface IOAuth : IOAuthBase
 {
-    public interface IOAuth : IOAuthBase
-    {
-        OAuthInfo AuthInfo { get; }
-    }
+    OAuthInfo AuthInfo { get; }
 }

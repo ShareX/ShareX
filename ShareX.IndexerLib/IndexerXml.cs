@@ -23,108 +23,90 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace ShareX.IndexerLib
+namespace ShareX.IndexerLib;
+
+public class IndexerXml : Indexer
 {
-    public class IndexerXml : Indexer
+    protected XmlWriter xmlWriter;
+
+    public IndexerXml(IndexerSettings indexerSettings) : base(indexerSettings)
     {
-        protected XmlWriter xmlWriter;
+    }
 
-        public IndexerXml(IndexerSettings indexerSettings) : base(indexerSettings)
+    public override string Index(string folderPath)
+    {
+        FolderInfo folderInfo = GetFolderInfo(folderPath);
+        folderInfo.Update();
+
+        XmlWriterSettings xmlWriterSettings = new();
+        xmlWriterSettings.Encoding = new UTF8Encoding(false);
+        xmlWriterSettings.ConformanceLevel = ConformanceLevel.Document;
+        xmlWriterSettings.Indent = true;
+
+        using MemoryStream ms = new();
+        using (xmlWriter = XmlWriter.Create(ms, xmlWriterSettings))
         {
+            xmlWriter.WriteStartDocument();
+            IndexFolder(folderInfo);
+            xmlWriter.WriteEndDocument();
+            xmlWriter.Flush();
         }
 
-        public override string Index(string folderPath)
+        return Encoding.UTF8.GetString(ms.ToArray());
+    }
+
+    protected override void IndexFolder(FolderInfo dir, int level = 0)
+    {
+        xmlWriter.WriteStartElement("Folder");
+
+        if (settings.UseAttribute)
         {
-            FolderInfo folderInfo = GetFolderInfo(folderPath);
-            folderInfo.Update();
+            xmlWriter.WriteAttributeString("Name", dir.FolderName);
 
-            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
-            xmlWriterSettings.Encoding = new UTF8Encoding(false);
-            xmlWriterSettings.ConformanceLevel = ConformanceLevel.Document;
-            xmlWriterSettings.Indent = true;
-
-            using (MemoryStream ms = new MemoryStream())
+            if (settings.ShowSizeInfo && !dir.IsEmpty)
             {
-                using (xmlWriter = XmlWriter.Create(ms, xmlWriterSettings))
-                {
-                    xmlWriter.WriteStartDocument();
-                    IndexFolder(folderInfo);
-                    xmlWriter.WriteEndDocument();
-                    xmlWriter.Flush();
-                }
+                xmlWriter.WriteAttributeString("Size", dir.Size.ToSizeString(settings.BinaryUnits));
+            }
+        } else
+        {
+            xmlWriter.WriteElementString("Name", dir.FolderName);
 
-                return Encoding.UTF8.GetString(ms.ToArray());
+            if (settings.ShowSizeInfo && !dir.IsEmpty)
+            {
+                xmlWriter.WriteElementString("Size", dir.Size.ToSizeString(settings.BinaryUnits));
             }
         }
 
-        protected override void IndexFolder(FolderInfo dir, int level = 0)
+        if (dir.Files.Count > 0)
         {
-            xmlWriter.WriteStartElement("Folder");
+            xmlWriter.WriteStartElement("Files");
 
-            if (settings.UseAttribute)
+            foreach (FileInfo fi in dir.Files)
             {
-                xmlWriter.WriteAttributeString("Name", dir.FolderName);
+                xmlWriter.WriteStartElement("File");
 
-                if (settings.ShowSizeInfo && !dir.IsEmpty)
+                if (settings.UseAttribute)
                 {
-                    xmlWriter.WriteAttributeString("Size", dir.Size.ToSizeString(settings.BinaryUnits));
-                }
-            }
-            else
-            {
-                xmlWriter.WriteElementString("Name", dir.FolderName);
+                    xmlWriter.WriteAttributeString("Name", fi.Name);
 
-                if (settings.ShowSizeInfo && !dir.IsEmpty)
-                {
-                    xmlWriter.WriteElementString("Size", dir.Size.ToSizeString(settings.BinaryUnits));
-                }
-            }
-
-            if (dir.Files.Count > 0)
-            {
-                xmlWriter.WriteStartElement("Files");
-
-                foreach (FileInfo fi in dir.Files)
-                {
-                    xmlWriter.WriteStartElement("File");
-
-                    if (settings.UseAttribute)
+                    if (settings.ShowSizeInfo)
                     {
-                        xmlWriter.WriteAttributeString("Name", fi.Name);
-
-                        if (settings.ShowSizeInfo)
-                        {
-                            xmlWriter.WriteAttributeString("Size", fi.Length.ToSizeString(settings.BinaryUnits));
-                        }
+                        xmlWriter.WriteAttributeString("Size", fi.Length.ToSizeString(settings.BinaryUnits));
                     }
-                    else
-                    {
-                        xmlWriter.WriteElementString("Name", fi.Name);
-
-                        if (settings.ShowSizeInfo)
-                        {
-                            xmlWriter.WriteElementString("Size", fi.Length.ToSizeString(settings.BinaryUnits));
-                        }
-                    }
-
-                    xmlWriter.WriteEndElement();
-                }
-
-                xmlWriter.WriteEndElement();
-            }
-
-            if (dir.Folders.Count > 0)
-            {
-                xmlWriter.WriteStartElement("Folders");
-
-                foreach (FolderInfo subdir in dir.Folders)
+                } else
                 {
-                    IndexFolder(subdir);
+                    xmlWriter.WriteElementString("Name", fi.Name);
+
+                    if (settings.ShowSizeInfo)
+                    {
+                        xmlWriter.WriteElementString("Size", fi.Length.ToSizeString(settings.BinaryUnits));
+                    }
                 }
 
                 xmlWriter.WriteEndElement();
@@ -132,5 +114,19 @@ namespace ShareX.IndexerLib
 
             xmlWriter.WriteEndElement();
         }
+
+        if (dir.Folders.Count > 0)
+        {
+            xmlWriter.WriteStartElement("Folders");
+
+            foreach (FolderInfo subdir in dir.Folders)
+            {
+                IndexFolder(subdir);
+            }
+
+            xmlWriter.WriteEndElement();
+        }
+
+        xmlWriter.WriteEndElement();
     }
 }

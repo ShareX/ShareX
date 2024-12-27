@@ -23,203 +23,186 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Cryptographic;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.HelpersLib.Properties;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class HashCheckerForm : Form
 {
-    public partial class HashCheckerForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool CompareTwoFiles { get; private set; }
+
+    private HashChecker hashChecker;
+
+    public HashCheckerForm()
     {
-        public bool CompareTwoFiles { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        private HashChecker hashChecker;
+        UpdateCompareControls();
+        UpdateCheckButton();
+        cbHashType.Items.AddRange(Helpers.Helpers.GetEnumDescriptions<HashType>());
+        cbHashType.SelectedIndex = (int)HashType.SHA256;
 
-        public HashCheckerForm()
+        hashChecker = new HashChecker();
+        hashChecker.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
+
+        txtResult.SupportSelectAll();
+        txtTarget.SupportSelectAll();
+    }
+
+    private void UpdateCompareControls()
+    {
+        lblFilePath2.Enabled = txtFilePath2.Enabled = btnFilePathBrowse2.Enabled = CompareTwoFiles;
+
+        if (CompareTwoFiles)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            UpdateCompareControls();
-            UpdateCheckButton();
-            cbHashType.Items.AddRange(Helpers.GetEnumDescriptions<HashType>());
-            cbHashType.SelectedIndex = (int)HashType.SHA256;
-
-            hashChecker = new HashChecker();
-            hashChecker.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
-
-            txtResult.SupportSelectAll();
-            txtTarget.SupportSelectAll();
+            lblResult.Text = Resources.ResultOfFirstFile;
+            lblTarget.Text = Resources.ResultOfSecondFile;
+        } else
+        {
+            lblResult.Text = Resources.Result;
+            lblTarget.Text = Resources.Target;
         }
 
-        private void UpdateCompareControls()
+        txtTarget.ReadOnly = CompareTwoFiles;
+    }
+
+    private void UpdateCheckButton()
+    {
+        btnStartHashCheck.Enabled = !string.IsNullOrEmpty(txtFilePath.Text) && (!CompareTwoFiles || !string.IsNullOrEmpty(txtFilePath2.Text));
+    }
+
+    private void UpdateResult()
+    {
+        if (!string.IsNullOrEmpty(txtResult.Text) && !string.IsNullOrEmpty(txtTarget.Text))
         {
-            lblFilePath2.Enabled = txtFilePath2.Enabled = btnFilePathBrowse2.Enabled = CompareTwoFiles;
+            txtTarget.BackColor = txtResult.Text.Equals(txtTarget.Text, StringComparison.OrdinalIgnoreCase)
+                ? Color.FromArgb(200, 255, 200)
+                : Color.FromArgb(255, 200, 200);
+
+            txtTarget.ForeColor = SystemColors.ControlText;
+        } else
+        {
+            txtTarget.BackColor = txtResult.BackColor;
+            txtTarget.ForeColor = txtResult.ForeColor;
+        }
+    }
+
+    private void HashCheckerForm_DragEnter(object sender, DragEventArgs e)
+    {
+        e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop, false) ? DragDropEffects.Copy : DragDropEffects.None;
+    }
+
+    private void HashCheckerForm_DragDrop(object sender, DragEventArgs e)
+    {
+        if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
+        {
+            txtFilePath.Text = files[0];
+        }
+    }
+
+    private void txtFilePath_TextChanged(object sender, EventArgs e)
+    {
+        UpdateCheckButton();
+    }
+
+    private void btnFilePathBrowse_Click(object sender, EventArgs e)
+    {
+        FileHelpers.BrowseFile(txtFilePath);
+    }
+
+    private void cbCompareTwoFiles_CheckedChanged(object sender, EventArgs e)
+    {
+        CompareTwoFiles = cbCompareTwoFiles.Checked;
+        UpdateCompareControls();
+        UpdateCheckButton();
+    }
+
+    private void txtFilePath2_TextChanged(object sender, EventArgs e)
+    {
+        UpdateCheckButton();
+    }
+
+    private void txtFilePath2_DragEnter(object sender, DragEventArgs e)
+    {
+        e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop, false) ? DragDropEffects.Copy : DragDropEffects.None;
+    }
+
+    private void txtFilePath2_DragDrop(object sender, DragEventArgs e)
+    {
+        if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
+        {
+            txtFilePath2.Text = files[0];
+        }
+    }
+
+    private void btnFilePathBrowse2_Click(object sender, EventArgs e)
+    {
+        FileHelpers.BrowseFile(txtFilePath2);
+    }
+
+    private async void btnStartHashCheck_Click(object sender, EventArgs e)
+    {
+        if (hashChecker.IsWorking)
+        {
+            hashChecker.Stop();
+        } else
+        {
+            btnStartHashCheck.Text = Resources.Stop;
+            pbProgress.Value = 0;
+            txtResult.Text = "";
 
             if (CompareTwoFiles)
             {
-                lblResult.Text = Resources.ResultOfFirstFile;
-                lblTarget.Text = Resources.ResultOfSecondFile;
-            }
-            else
-            {
-                lblResult.Text = Resources.Result;
-                lblTarget.Text = Resources.Target;
+                txtTarget.Text = "";
             }
 
-            txtTarget.ReadOnly = CompareTwoFiles;
-        }
+            HashType hashType = (HashType)cbHashType.SelectedIndex;
 
-        private void UpdateCheckButton()
-        {
-            btnStartHashCheck.Enabled = !string.IsNullOrEmpty(txtFilePath.Text) && (!CompareTwoFiles || !string.IsNullOrEmpty(txtFilePath2.Text));
-        }
+            string filePath = txtFilePath.Text;
+            string result = await hashChecker.Start(filePath, hashType);
 
-        private void UpdateResult()
-        {
-            if (!string.IsNullOrEmpty(txtResult.Text) && !string.IsNullOrEmpty(txtTarget.Text))
+            if (!string.IsNullOrEmpty(result))
             {
-                if (txtResult.Text.Equals(txtTarget.Text, StringComparison.OrdinalIgnoreCase))
-                {
-                    txtTarget.BackColor = Color.FromArgb(200, 255, 200);
-                }
-                else
-                {
-                    txtTarget.BackColor = Color.FromArgb(255, 200, 200);
-                }
-
-                txtTarget.ForeColor = SystemColors.ControlText;
-            }
-            else
-            {
-                txtTarget.BackColor = txtResult.BackColor;
-                txtTarget.ForeColor = txtResult.ForeColor;
-            }
-        }
-
-        private void HashCheckerForm_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
-            {
-                e.Effect = DragDropEffects.Copy;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
-            }
-        }
-
-        private void HashCheckerForm_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
-            {
-                txtFilePath.Text = files[0];
-            }
-        }
-
-        private void txtFilePath_TextChanged(object sender, EventArgs e)
-        {
-            UpdateCheckButton();
-        }
-
-        private void btnFilePathBrowse_Click(object sender, EventArgs e)
-        {
-            FileHelpers.BrowseFile(txtFilePath);
-        }
-
-        private void cbCompareTwoFiles_CheckedChanged(object sender, EventArgs e)
-        {
-            CompareTwoFiles = cbCompareTwoFiles.Checked;
-            UpdateCompareControls();
-            UpdateCheckButton();
-        }
-
-        private void txtFilePath2_TextChanged(object sender, EventArgs e)
-        {
-            UpdateCheckButton();
-        }
-
-        private void txtFilePath2_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
-            {
-                e.Effect = DragDropEffects.Copy;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
-            }
-        }
-
-        private void txtFilePath2_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
-            {
-                txtFilePath2.Text = files[0];
-            }
-        }
-
-        private void btnFilePathBrowse2_Click(object sender, EventArgs e)
-        {
-            FileHelpers.BrowseFile(txtFilePath2);
-        }
-
-        private async void btnStartHashCheck_Click(object sender, EventArgs e)
-        {
-            if (hashChecker.IsWorking)
-            {
-                hashChecker.Stop();
-            }
-            else
-            {
-                btnStartHashCheck.Text = Resources.Stop;
-                pbProgress.Value = 0;
-                txtResult.Text = "";
+                txtResult.Text = result.ToUpperInvariant();
 
                 if (CompareTwoFiles)
                 {
-                    txtTarget.Text = "";
-                }
+                    string filePath2 = txtFilePath2.Text;
+                    string result2 = await hashChecker.Start(filePath2, hashType);
 
-                HashType hashType = (HashType)cbHashType.SelectedIndex;
-
-                string filePath = txtFilePath.Text;
-                string result = await hashChecker.Start(filePath, hashType);
-
-                if (!string.IsNullOrEmpty(result))
-                {
-                    txtResult.Text = result.ToUpperInvariant();
-
-                    if (CompareTwoFiles)
+                    if (!string.IsNullOrEmpty(result2))
                     {
-                        string filePath2 = txtFilePath2.Text;
-                        string result2 = await hashChecker.Start(filePath2, hashType);
-
-                        if (!string.IsNullOrEmpty(result2))
-                        {
-                            txtTarget.Text = result2.ToUpperInvariant();
-                        }
+                        txtTarget.Text = result2.ToUpperInvariant();
                     }
                 }
-
-                btnStartHashCheck.Text = Resources.Check;
             }
-        }
 
-        private void fileCheck_FileCheckProgressChanged(float progress)
-        {
-            pbProgress.Value = (int)Math.Round(progress);
+            btnStartHashCheck.Text = Resources.Check;
         }
+    }
 
-        private void txtResult_TextChanged(object sender, EventArgs e)
-        {
-            UpdateResult();
-        }
+    private void fileCheck_FileCheckProgressChanged(float progress)
+    {
+        pbProgress.Value = (int)Math.Round(progress);
+    }
 
-        private void txtTarget_TextChanged(object sender, EventArgs e)
-        {
-            UpdateResult();
-        }
+    private void txtResult_TextChanged(object sender, EventArgs e)
+    {
+        UpdateResult();
+    }
+
+    private void txtTarget_TextChanged(object sender, EventArgs e)
+    {
+        UpdateResult();
     }
 }

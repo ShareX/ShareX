@@ -23,48 +23,44 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
 using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class EnumDescriptionConverter(Type type) : EnumConverter(type)
 {
-    public class EnumDescriptionConverter : EnumConverter
+    private Type enumType = type;
+
+    public override bool CanConvertTo(ITypeDescriptorContext context, Type destType)
     {
-        private Type enumType;
+        return destType == typeof(string);
+    }
 
-        public EnumDescriptionConverter(Type type) : base(type)
-        {
-            enumType = type;
-        }
+    public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destType)
+    {
+        return ((Enum)value).GetLocalizedDescription();
+    }
 
-        public override bool CanConvertTo(ITypeDescriptorContext context, Type destType)
-        {
-            return destType == typeof(string);
-        }
+    public override bool CanConvertFrom(ITypeDescriptorContext context, Type srcType)
+    {
+        return srcType == typeof(string);
+    }
 
-        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destType)
+    public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+    {
+        foreach (Enum e in Enum.GetValues(enumType).OfType<Enum>())
         {
-            return ((Enum)value).GetLocalizedDescription();
-        }
-
-        public override bool CanConvertFrom(ITypeDescriptorContext context, Type srcType)
-        {
-            return srcType == typeof(string);
-        }
-
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
-        {
-            foreach (Enum e in Enum.GetValues(enumType).OfType<Enum>())
+            if (e.GetLocalizedDescription() == (string)value)
             {
-                if (e.GetLocalizedDescription() == (string)value)
-                {
-                    return e;
-                }
+                return e;
             }
-
-            return Enum.Parse(enumType, (string)value);
         }
+
+        return Enum.Parse(enumType, (string)value);
     }
 }

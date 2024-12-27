@@ -23,6 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Native;
+
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -32,547 +35,477 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Helpers;
+
+public static class ClipboardHelpers
 {
-    public static class ClipboardHelpers
+    public const string FORMAT_PNG = "PNG";
+    public const string FORMAT_17 = "Format17";
+
+    private const int RetryTimes = 20;
+    private const int RetryDelay = 100;
+
+    private static readonly object ClipboardLock = new();
+
+    private static bool CopyData(IDataObject data, bool copy = true)
     {
-        public const string FORMAT_PNG = "PNG";
-        public const string FORMAT_17 = "Format17";
-
-        private const int RetryTimes = 20;
-        private const int RetryDelay = 100;
-
-        private static readonly object ClipboardLock = new object();
-
-        private static bool CopyData(IDataObject data, bool copy = true)
+        if (data != null)
         {
-            if (data != null)
+            lock (ClipboardLock)
             {
-                lock (ClipboardLock)
-                {
-                    Clipboard.SetDataObject(data, copy, RetryTimes, RetryDelay);
-                }
-
-                return true;
+                Clipboard.SetDataObject(data, copy, RetryTimes, RetryDelay);
             }
 
-            return false;
+            return true;
         }
 
-        public static bool Clear()
+        return false;
+    }
+
+    public static bool Clear()
+    {
+        try
+        {
+            IDataObject data = new DataObject();
+            CopyData(data, false);
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "Clipboard clear failed.");
+        }
+
+        return false;
+    }
+
+    public static bool CopyText(string text)
+    {
+        if (!string.IsNullOrEmpty(text))
         {
             try
             {
                 IDataObject data = new DataObject();
-                CopyData(data, false);
-            }
-            catch (Exception e)
+                string dataFormat = Environment.OSVersion.Platform != PlatformID.Win32NT || Environment.OSVersion.Version.Major < 5
+                    ? DataFormats.Text
+                    : DataFormats.UnicodeText;
+                data.SetData(dataFormat, false, text);
+                return CopyData(data);
+            } catch (Exception e)
             {
-                DebugHelper.WriteException(e, "Clipboard clear failed.");
-            }
-
-            return false;
-        }
-
-        public static bool CopyText(string text)
-        {
-            if (!string.IsNullOrEmpty(text))
-            {
-                try
-                {
-                    IDataObject data = new DataObject();
-                    string dataFormat;
-
-                    if (Environment.OSVersion.Platform != PlatformID.Win32NT || Environment.OSVersion.Version.Major < 5)
-                    {
-                        dataFormat = DataFormats.Text;
-                    }
-                    else
-                    {
-                        dataFormat = DataFormats.UnicodeText;
-                    }
-
-                    data.SetData(dataFormat, false, text);
-                    return CopyData(data);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Clipboard copy text failed.");
-                }
-            }
-
-            return false;
-        }
-
-        public static bool CopyImage(Image img, string fileName = null)
-        {
-            if (img != null)
-            {
-                try
-                {
-                    if (HelpersOptions.UseAlternativeClipboardCopyImage)
-                    {
-                        return CopyImageAlternative2(img, fileName);
-                    }
-
-                    if (HelpersOptions.DefaultCopyImageFillBackground)
-                    {
-                        return CopyImageDefaultFillBackground(img, Color.White);
-                    }
-
-                    return CopyImageDefault(img);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Clipboard copy image failed.");
-                }
-            }
-
-            return false;
-        }
-
-        private static bool CopyImageDefault(Image img)
-        {
-            IDataObject dataObject = new DataObject();
-            dataObject.SetData(DataFormats.Bitmap, true, img);
-
-            return CopyData(dataObject);
-        }
-
-        private static bool CopyImageDefaultFillBackground(Image img, Color background)
-        {
-            using (Bitmap bmp = img.CreateEmptyBitmap(PixelFormat.Format24bppRgb))
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                g.Clear(background);
-                g.DrawImage(img, 0, 0, img.Width, img.Height);
-
-                IDataObject dataObject = new DataObject();
-                dataObject.SetData(DataFormats.Bitmap, true, bmp);
-
-                return CopyData(dataObject);
+                DebugHelper.WriteException(e, "Clipboard copy text failed.");
             }
         }
 
-        private static bool CopyImageAlternative(Image img)
-        {
-            using (MemoryStream msPNG = new MemoryStream())
-            using (MemoryStream msBMP = new MemoryStream())
-            using (MemoryStream msDIB = new MemoryStream())
-            {
-                IDataObject dataObject = new DataObject();
+        return false;
+    }
 
-                img.Save(msPNG, ImageFormat.Png);
-                dataObject.SetData(FORMAT_PNG, false, msPNG);
-
-                img.Save(msBMP, ImageFormat.Bmp);
-                msBMP.CopyStreamTo(msDIB, 14, (int)msBMP.Length - 14);
-                dataObject.SetData(DataFormats.Dib, true, msDIB);
-
-                return CopyData(dataObject);
-            }
-        }
-
-        private static bool CopyImageAlternative2(Image img, string fileName = null)
-        {
-            using (Bitmap bmpNonTransparent = img.CreateEmptyBitmap(PixelFormat.Format24bppRgb))
-            using (MemoryStream msPNG = new MemoryStream())
-            using (MemoryStream msDIB = new MemoryStream())
-            {
-                IDataObject dataObject = new DataObject();
-
-                using (Graphics g = Graphics.FromImage(bmpNonTransparent))
-                {
-                    g.Clear(Color.White);
-                    g.DrawImage(img, 0, 0, img.Width, img.Height);
-                }
-
-                dataObject.SetData(DataFormats.Bitmap, true, bmpNonTransparent);
-
-                img.Save(msPNG, ImageFormat.Png);
-                dataObject.SetData(FORMAT_PNG, false, msPNG);
-
-                byte[] dibData = ClipboardHelpersEx.ConvertToDib(img);
-                msDIB.Write(dibData, 0, dibData.Length);
-                dataObject.SetData(DataFormats.Dib, false, msDIB);
-
-                if (!string.IsNullOrEmpty(fileName))
-                {
-                    string htmlFragment = GenerateHTMLFragment($"<img src=\"{fileName}\"/>");
-                    dataObject.SetData(DataFormats.Html, htmlFragment);
-                }
-
-                return CopyData(dataObject);
-            }
-        }
-
-        public static bool CopyFile(string path)
-        {
-            if (!string.IsNullOrEmpty(path))
-            {
-                return CopyFile(new string[] { path });
-            }
-
-            return false;
-        }
-
-        public static bool CopyFile(string[] paths)
-        {
-            if (paths != null && paths.Length > 0)
-            {
-                try
-                {
-                    IDataObject dataObject = new DataObject();
-                    dataObject.SetData(DataFormats.FileDrop, true, paths);
-
-                    return CopyData(dataObject);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Clipboard copy file failed.");
-                }
-            }
-
-            return false;
-        }
-
-        public static bool CopyImageFromFile(string path)
-        {
-            if (!string.IsNullOrEmpty(path) && File.Exists(path))
-            {
-                try
-                {
-                    using (Bitmap bmp = ImageHelpers.LoadImage(path))
-                    {
-                        string fileName = Path.GetFileName(path);
-                        return CopyImage(bmp, fileName);
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Clipboard copy image from file failed.");
-                }
-            }
-
-            return false;
-        }
-
-        public static bool CopyTextFromFile(string path)
-        {
-            if (!string.IsNullOrEmpty(path) && File.Exists(path))
-            {
-                try
-                {
-                    string text = File.ReadAllText(path, Encoding.UTF8);
-                    return CopyText(text);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Clipboard copy text from file failed.");
-                }
-            }
-
-            return false;
-        }
-
-        public static Bitmap GetImage(bool checkContainsImage = false)
+    public static bool CopyImage(Image img, string fileName = null)
+    {
+        if (img != null)
         {
             try
             {
-                lock (ClipboardLock)
-                {
-                    if (!checkContainsImage || Clipboard.ContainsImage())
-                    {
-                        if (HelpersOptions.UseAlternativeClipboardGetImage)
-                        {
-                            return GetImageAlternative2();
-                        }
-
-                        return (Bitmap)Clipboard.GetImage();
-                    }
-                }
-            }
-            catch (Exception e)
+                return HelpersOptions.UseAlternativeClipboardCopyImage
+                    ? CopyImageAlternative2(img, fileName)
+                    : HelpersOptions.DefaultCopyImageFillBackground ? CopyImageDefaultFillBackground(img, Color.White) : CopyImageDefault(img);
+            } catch (Exception e)
             {
-                DebugHelper.WriteException(e, "Clipboard get image failed.");
+                DebugHelper.WriteException(e, "Clipboard copy image failed.");
             }
-
-            return null;
         }
 
-        private static Image GetImageAlternative()
+        return false;
+    }
+
+    private static bool CopyImageDefault(Image img)
+    {
+        IDataObject dataObject = new DataObject();
+        dataObject.SetData(DataFormats.Bitmap, true, img);
+
+        return CopyData(dataObject);
+    }
+
+    private static bool CopyImageDefaultFillBackground(Image img, Color background)
+    {
+        using Bitmap bmp = img.CreateEmptyBitmap(PixelFormat.Format24bppRgb);
+        using Graphics g = Graphics.FromImage(bmp);
+        g.Clear(background);
+        g.DrawImage(img, 0, 0, img.Width, img.Height);
+
+        IDataObject dataObject = new DataObject();
+        dataObject.SetData(DataFormats.Bitmap, true, bmp);
+
+        return CopyData(dataObject);
+    }
+
+    private static bool CopyImageAlternative(Image img)
+    {
+        using MemoryStream msPNG = new();
+        using MemoryStream msBMP = new();
+        using MemoryStream msDIB = new();
+        IDataObject dataObject = new DataObject();
+
+        img.Save(msPNG, ImageFormat.Png);
+        dataObject.SetData(FORMAT_PNG, false, msPNG);
+
+        img.Save(msBMP, ImageFormat.Bmp);
+        msBMP.CopyStreamTo(msDIB, 14, (int)msBMP.Length - 14);
+        dataObject.SetData(DataFormats.Dib, true, msDIB);
+
+        return CopyData(dataObject);
+    }
+
+    private static bool CopyImageAlternative2(Image img, string fileName = null)
+    {
+        using Bitmap bmpNonTransparent = img.CreateEmptyBitmap(PixelFormat.Format24bppRgb);
+        using MemoryStream msPNG = new();
+        using MemoryStream msDIB = new();
+        IDataObject dataObject = new DataObject();
+
+        using (Graphics g = Graphics.FromImage(bmpNonTransparent))
         {
-            IDataObject dataObject = Clipboard.GetDataObject();
+            g.Clear(Color.White);
+            g.DrawImage(img, 0, 0, img.Width, img.Height);
+        }
 
-            if (dataObject != null)
+        dataObject.SetData(DataFormats.Bitmap, true, bmpNonTransparent);
+
+        img.Save(msPNG, ImageFormat.Png);
+        dataObject.SetData(FORMAT_PNG, false, msPNG);
+
+        byte[] dibData = ClipboardHelpersEx.ConvertToDib(img);
+        msDIB.Write(dibData, 0, dibData.Length);
+        dataObject.SetData(DataFormats.Dib, false, msDIB);
+
+        if (!string.IsNullOrEmpty(fileName))
+        {
+            string htmlFragment = GenerateHTMLFragment($"<img src=\"{fileName}\"/>");
+            dataObject.SetData(DataFormats.Html, htmlFragment);
+        }
+
+        return CopyData(dataObject);
+    }
+
+    public static bool CopyFile(string path)
+    {
+        return !string.IsNullOrEmpty(path) && CopyFile([path]);
+    }
+
+    public static bool CopyFile(string[] paths)
+    {
+        if (paths != null && paths.Length > 0)
+        {
+            try
             {
-                string[] dataFormats = dataObject.GetFormats(false);
+                IDataObject dataObject = new DataObject();
+                dataObject.SetData(DataFormats.FileDrop, true, paths);
 
-                if (dataFormats.Contains(FORMAT_PNG))
+                return CopyData(dataObject);
+            } catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Clipboard copy file failed.");
+            }
+        }
+
+        return false;
+    }
+
+    public static bool CopyImageFromFile(string path)
+    {
+        if (!string.IsNullOrEmpty(path) && File.Exists(path))
+        {
+            try
+            {
+                using Bitmap bmp = ImageHelpers.LoadImage(path);
+                string fileName = Path.GetFileName(path);
+                return CopyImage(bmp, fileName);
+            } catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Clipboard copy image from file failed.");
+            }
+        }
+
+        return false;
+    }
+
+    public static bool CopyTextFromFile(string path)
+    {
+        if (!string.IsNullOrEmpty(path) && File.Exists(path))
+        {
+            try
+            {
+                string text = File.ReadAllText(path, Encoding.UTF8);
+                return CopyText(text);
+            } catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Clipboard copy text from file failed.");
+            }
+        }
+
+        return false;
+    }
+
+    public static Bitmap GetImage(bool checkContainsImage = false)
+    {
+        try
+        {
+            lock (ClipboardLock)
+            {
+                if (!checkContainsImage || Clipboard.ContainsImage())
                 {
-                    using (MemoryStream ms = dataObject.GetData(FORMAT_PNG) as MemoryStream)
+                    return HelpersOptions.UseAlternativeClipboardGetImage ? GetImageAlternative2() : (Bitmap)Clipboard.GetImage();
+                }
+            }
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "Clipboard get image failed.");
+        }
+
+        return null;
+    }
+
+    private static Image GetImageAlternative()
+    {
+        IDataObject dataObject = Clipboard.GetDataObject();
+
+        if (dataObject != null)
+        {
+            string[] dataFormats = dataObject.GetFormats(false);
+
+            if (dataFormats.Contains(FORMAT_PNG))
+            {
+                using MemoryStream ms = dataObject.GetData(FORMAT_PNG) as MemoryStream;
+                if (ms != null)
+                {
+                    using Image img = Image.FromStream(ms);
+                    return (Image)img.Clone();
+                }
+            } else
+            {
+                foreach (string format in new[] { DataFormats.Dib, FORMAT_17 })
+                {
+                    if (dataFormats.Contains(format))
                     {
+                        using MemoryStream ms = dataObject.GetData(format) as MemoryStream;
                         if (ms != null)
                         {
-                            using (Image img = Image.FromStream(ms))
+                            try
                             {
-                                return (Image)img.Clone();
+                                return GetDIBImage(ms);
+                            } catch (Exception e)
+                            {
+                                DebugHelper.WriteException(e);
                             }
                         }
                     }
                 }
-                else
-                {
-                    foreach (string format in new[] { DataFormats.Dib, FORMAT_17 })
-                    {
-                        if (dataFormats.Contains(format))
-                        {
-                            using (MemoryStream ms = dataObject.GetData(format) as MemoryStream)
-                            {
-                                if (ms != null)
-                                {
-                                    try
-                                    {
-                                        return GetDIBImage(ms);
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        DebugHelper.WriteException(e);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (dataObject.GetDataPresent(DataFormats.Bitmap, true))
-                {
-                    return dataObject.GetData(DataFormats.Bitmap, true) as Image;
-                }
             }
 
-            return null;
+            if (dataObject.GetDataPresent(DataFormats.Bitmap, true))
+            {
+                return dataObject.GetData(DataFormats.Bitmap, true) as Image;
+            }
         }
 
-        public static Bitmap GetImageAlternative2()
+        return null;
+    }
+
+    public static Bitmap GetImageAlternative2()
+    {
+        IDataObject dataObject = Clipboard.GetDataObject();
+
+        if (dataObject != null)
         {
-            IDataObject dataObject = Clipboard.GetDataObject();
+            string[] dataFormats = dataObject.GetFormats(false);
 
-            if (dataObject != null)
+            if (dataFormats.Contains(FORMAT_PNG))
             {
-                string[] dataFormats = dataObject.GetFormats(false);
-
-                if (dataFormats.Contains(FORMAT_PNG))
+                using MemoryStream ms = dataObject.GetData(FORMAT_PNG) as MemoryStream;
+                if (ms != null)
                 {
-                    using (MemoryStream ms = dataObject.GetData(FORMAT_PNG) as MemoryStream)
-                    {
-                        if (ms != null)
-                        {
-                            using (Bitmap bmp = new Bitmap(ms))
-                            {
-                                return ClipboardHelpersEx.CloneImage(bmp);
-                            }
-                        }
-                    }
+                    using Bitmap bmp = new(ms);
+                    return ClipboardHelpersEx.CloneImage(bmp);
                 }
-                else if (dataFormats.Contains(DataFormats.Dib))
+            } else if (dataFormats.Contains(DataFormats.Dib))
+            {
+                using MemoryStream ms = dataObject.GetData(DataFormats.Dib) as MemoryStream;
+                if (ms != null)
                 {
-                    using (MemoryStream ms = dataObject.GetData(DataFormats.Dib) as MemoryStream)
-                    {
-                        if (ms != null)
-                        {
-                            return ClipboardHelpersEx.ImageFromClipboardDib(ms.ToArray());
-                        }
-                    }
+                    return ClipboardHelpersEx.ImageFromClipboardDib(ms.ToArray());
                 }
-                else if (dataFormats.Contains(FORMAT_17))
+            } else if (dataFormats.Contains(FORMAT_17))
+            {
+                using MemoryStream ms = dataObject.GetData(FORMAT_17) as MemoryStream;
+                if (ms != null)
                 {
-                    using (MemoryStream ms = dataObject.GetData(FORMAT_17) as MemoryStream)
-                    {
-                        if (ms != null)
-                        {
-                            return ClipboardHelpersEx.DIBV5ToBitmap(ms.ToArray());
-                        }
-                    }
+                    return ClipboardHelpersEx.DIBV5ToBitmap(ms.ToArray());
                 }
-                else if (dataFormats.Contains(DataFormats.Bitmap))
-                {
-                    return dataObject.GetData(DataFormats.Bitmap, true) as Bitmap;
-                }
+            } else if (dataFormats.Contains(DataFormats.Bitmap))
+            {
+                return dataObject.GetData(DataFormats.Bitmap, true) as Bitmap;
             }
-
-            return null;
         }
 
-        private static Image GetDIBImage(MemoryStream ms)
+        return null;
+    }
+
+    private static Image GetDIBImage(MemoryStream ms)
+    {
+        byte[] dib = ms.ToArray();
+
+        BITMAPINFOHEADER infoHeader = Helpers.ByteArrayToStructure<BITMAPINFOHEADER>(dib);
+
+        IntPtr gcHandle = IntPtr.Zero;
+
+        try
         {
-            byte[] dib = ms.ToArray();
+            GCHandle handle = GCHandle.Alloc(dib, GCHandleType.Pinned);
+            gcHandle = GCHandle.ToIntPtr(handle);
 
-            BITMAPINFOHEADER infoHeader = Helpers.ByteArrayToStructure<BITMAPINFOHEADER>(dib);
-
-            IntPtr gcHandle = IntPtr.Zero;
-
-            try
+            if (infoHeader.biSizeImage == 0)
             {
-                GCHandle handle = GCHandle.Alloc(dib, GCHandleType.Pinned);
-                gcHandle = GCHandle.ToIntPtr(handle);
-
-                if (infoHeader.biSizeImage == 0)
-                {
-                    infoHeader.biSizeImage = (uint)(infoHeader.biWidth * infoHeader.biHeight * (infoHeader.biBitCount >> 3));
-                }
-
-                using (Bitmap bmp = new Bitmap(infoHeader.biWidth, infoHeader.biHeight, -(int)(infoHeader.biSizeImage / infoHeader.biHeight),
-                    infoHeader.biBitCount == 32 ? PixelFormat.Format32bppArgb : PixelFormat.Format24bppRgb,
-                    new IntPtr((long)handle.AddrOfPinnedObject() + infoHeader.OffsetToPixels + ((infoHeader.biHeight - 1) * (int)(infoHeader.biSizeImage / infoHeader.biHeight)))))
-                {
-                    return new Bitmap(bmp);
-                }
+                infoHeader.biSizeImage = (uint)(infoHeader.biWidth * infoHeader.biHeight * (infoHeader.biBitCount >> 3));
             }
-            finally
+
+            using Bitmap bmp = new(infoHeader.biWidth, infoHeader.biHeight, -(int)(infoHeader.biSizeImage / infoHeader.biHeight),
+                infoHeader.biBitCount == 32 ? PixelFormat.Format32bppArgb : PixelFormat.Format24bppRgb,
+                new IntPtr((long)handle.AddrOfPinnedObject() + infoHeader.OffsetToPixels + (infoHeader.biHeight - 1) * (int)(infoHeader.biSizeImage / infoHeader.biHeight)));
+            return new Bitmap(bmp);
+        } finally
+        {
+            if (gcHandle != IntPtr.Zero)
             {
-                if (gcHandle != IntPtr.Zero)
-                {
-                    GCHandle.FromIntPtr(gcHandle).Free();
-                }
+                GCHandle.FromIntPtr(gcHandle).Free();
             }
         }
+    }
 
-        public static string GetText(bool checkContainsText = false)
+    public static string GetText(bool checkContainsText = false)
+    {
+        try
         {
-            try
+            lock (ClipboardLock)
             {
-                lock (ClipboardLock)
+                if (!checkContainsText || Clipboard.ContainsText())
                 {
-                    if (!checkContainsText || Clipboard.ContainsText())
-                    {
-                        return Clipboard.GetText();
-                    }
+                    return Clipboard.GetText();
                 }
             }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "Clipboard get text failed.");
-            }
-
-            return null;
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "Clipboard get text failed.");
         }
 
-        public static string[] GetFileDropList(bool checkContainsFileDropList = false)
+        return null;
+    }
+
+    public static string[] GetFileDropList(bool checkContainsFileDropList = false)
+    {
+        try
         {
-            try
+            lock (ClipboardLock)
             {
-                lock (ClipboardLock)
+                if (!checkContainsFileDropList || Clipboard.ContainsFileDropList())
                 {
-                    if (!checkContainsFileDropList || Clipboard.ContainsFileDropList())
-                    {
-                        return Clipboard.GetFileDropList().Cast<string>().ToArray();
-                    }
+                    return [.. Clipboard.GetFileDropList().Cast<string>()];
                 }
             }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "Clipboard get file drop list failed.");
-            }
-
-            return null;
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "Clipboard get file drop list failed.");
         }
 
-        public static Bitmap TryGetImage()
+        return null;
+    }
+
+    public static Bitmap TryGetImage()
+    {
+        if (ContainsImage())
         {
-            if (ContainsImage())
-            {
-                return GetImage();
-            }
-            else if (ContainsFileDropList())
-            {
-                string[] files = GetFileDropList();
+            return GetImage();
+        } else if (ContainsFileDropList())
+        {
+            string[] files = GetFileDropList();
 
-                if (files != null)
+            if (files != null)
+            {
+                string imageFilePath = files.FirstOrDefault(x => FileHelpers.IsImageFile(x));
+
+                if (!string.IsNullOrEmpty(imageFilePath))
                 {
-                    string imageFilePath = files.FirstOrDefault(x => FileHelpers.IsImageFile(x));
-
-                    if (!string.IsNullOrEmpty(imageFilePath))
-                    {
-                        return ImageHelpers.LoadImage(imageFilePath);
-                    }
+                    return ImageHelpers.LoadImage(imageFilePath);
                 }
             }
-
-            return null;
         }
 
-        private static string GenerateHTMLFragment(string html)
+        return null;
+    }
+
+    private static string GenerateHTMLFragment(string html)
+    {
+        StringBuilder sb = new();
+
+        string header = "Version:0.9\r\nStartHTML:<<<<<<<<<1\r\nEndHTML:<<<<<<<<<2\r\nStartFragment:<<<<<<<<<3\r\nEndFragment:<<<<<<<<<4\r\n";
+        string startHTML = "<html>\r\n<body>\r\n";
+        string startFragment = "<!--StartFragment-->";
+        string endFragment = "<!--EndFragment-->";
+        string endHTML = "\r\n</body>\r\n</html>";
+
+        sb.Append(header);
+
+        int startHTMLLength = header.Length;
+        int startFragmentLength = startHTMLLength + startHTML.Length + startFragment.Length;
+        int endFragmentLength = startFragmentLength + Encoding.UTF8.GetByteCount(html);
+        int endHTMLLength = endFragmentLength + endFragment.Length + endHTML.Length;
+
+        sb.Replace("<<<<<<<<<1", startHTMLLength.ToString("D10"));
+        sb.Replace("<<<<<<<<<2", endHTMLLength.ToString("D10"));
+        sb.Replace("<<<<<<<<<3", startFragmentLength.ToString("D10"));
+        sb.Replace("<<<<<<<<<4", endFragmentLength.ToString("D10"));
+
+        sb.Append(startHTML);
+        sb.Append(startFragment);
+        sb.Append(html);
+        sb.Append(endFragment);
+        sb.Append(endHTML);
+
+        return sb.ToString();
+    }
+
+    public static bool ContainsImage()
+    {
+        try
         {
-            StringBuilder sb = new StringBuilder();
-
-            string header = "Version:0.9\r\nStartHTML:<<<<<<<<<1\r\nEndHTML:<<<<<<<<<2\r\nStartFragment:<<<<<<<<<3\r\nEndFragment:<<<<<<<<<4\r\n";
-            string startHTML = "<html>\r\n<body>\r\n";
-            string startFragment = "<!--StartFragment-->";
-            string endFragment = "<!--EndFragment-->";
-            string endHTML = "\r\n</body>\r\n</html>";
-
-            sb.Append(header);
-
-            int startHTMLLength = header.Length;
-            int startFragmentLength = startHTMLLength + startHTML.Length + startFragment.Length;
-            int endFragmentLength = startFragmentLength + Encoding.UTF8.GetByteCount(html);
-            int endHTMLLength = endFragmentLength + endFragment.Length + endHTML.Length;
-
-            sb.Replace("<<<<<<<<<1", startHTMLLength.ToString("D10"));
-            sb.Replace("<<<<<<<<<2", endHTMLLength.ToString("D10"));
-            sb.Replace("<<<<<<<<<3", startFragmentLength.ToString("D10"));
-            sb.Replace("<<<<<<<<<4", endFragmentLength.ToString("D10"));
-
-            sb.Append(startHTML);
-            sb.Append(startFragment);
-            sb.Append(html);
-            sb.Append(endFragment);
-            sb.Append(endHTML);
-
-            return sb.ToString();
-        }
-
-        public static bool ContainsImage()
+            return Clipboard.ContainsImage();
+        } catch (Exception e)
         {
-            try
-            {
-                return Clipboard.ContainsImage();
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
+            DebugHelper.WriteException(e);
         }
 
-        public static bool ContainsText()
+        return false;
+    }
+
+    public static bool ContainsText()
+    {
+        try
         {
-            try
-            {
-                return Clipboard.ContainsText();
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
-        }
-
-        public static bool ContainsFileDropList()
+            return Clipboard.ContainsText();
+        } catch (Exception e)
         {
-            try
-            {
-                return Clipboard.ContainsFileDropList();
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
+            DebugHelper.WriteException(e);
         }
+
+        return false;
+    }
+
+    public static bool ContainsFileDropList()
+    {
+        try
+        {
+            return Clipboard.ContainsFileDropList();
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
+        }
+
+        return false;
     }
 }

@@ -23,70 +23,71 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Native;
+
 using System;
 using System.Runtime.InteropServices;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class TimerResolutionManager : IDisposable
 {
-    public class TimerResolutionManager : IDisposable
+    private static readonly object thisLock = new();
+
+    private static bool enabled;
+    private static uint lastPeriod;
+
+    public TimerResolutionManager(uint period = 1)
     {
-        private static readonly object thisLock = new object();
+        Enable(period);
+    }
 
-        private static bool enabled;
-        private static uint lastPeriod;
+    public void Dispose()
+    {
+        Disable();
+    }
 
-        public TimerResolutionManager(uint period = 1)
+    public static bool Enable(uint period = 1)
+    {
+        lock (thisLock)
         {
-            Enable(period);
-        }
-
-        public void Dispose()
-        {
-            Disable();
-        }
-
-        public static bool Enable(uint period = 1)
-        {
-            lock (thisLock)
+            if (!enabled)
             {
-                if (!enabled)
+                TimeCaps timeCaps = new();
+                uint result = NativeMethods.TimeGetDevCaps(ref timeCaps, (uint)Marshal.SizeOf(typeof(TimeCaps)));
+
+                if (result == 0)
                 {
-                    TimeCaps timeCaps = new TimeCaps();
-                    uint result = NativeMethods.TimeGetDevCaps(ref timeCaps, (uint)Marshal.SizeOf(typeof(TimeCaps)));
+                    period = Math.Max(period, timeCaps.wPeriodMin);
+                    result = NativeMethods.TimeBeginPeriod(period);
 
                     if (result == 0)
                     {
-                        period = Math.Max(period, timeCaps.wPeriodMin);
-                        result = NativeMethods.TimeBeginPeriod(period);
-
-                        if (result == 0)
-                        {
-                            lastPeriod = period;
-                            enabled = true;
-                        }
+                        lastPeriod = period;
+                        enabled = true;
                     }
                 }
-
-                return enabled;
             }
+
+            return enabled;
         }
+    }
 
-        public static bool Disable()
+    public static bool Disable()
+    {
+        lock (thisLock)
         {
-            lock (thisLock)
+            if (enabled)
             {
-                if (enabled)
+                uint result = NativeMethods.TimeEndPeriod(lastPeriod);
+
+                if (result == 0)
                 {
-                    uint result = NativeMethods.TimeEndPeriod(lastPeriod);
-
-                    if (result == 0)
-                    {
-                        enabled = false;
-                    }
+                    enabled = false;
                 }
-
-                return !enabled;
             }
+
+            return !enabled;
         }
     }
 }

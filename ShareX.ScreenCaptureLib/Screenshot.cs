@@ -24,148 +24,137 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public partial class Screenshot
 {
-    public partial class Screenshot
+    public bool CaptureCursor { get; set; } = false;
+    public bool CaptureClientArea { get; set; } = false;
+    public bool RemoveOutsideScreenArea { get; set; } = true;
+    public bool CaptureShadow { get; set; } = false;
+    public int ShadowOffset { get; set; } = 20;
+    public bool AutoHideTaskbar { get; set; } = false;
+
+    public Bitmap CaptureRectangle(Rectangle rect)
     {
-        public bool CaptureCursor { get; set; } = false;
-        public bool CaptureClientArea { get; set; } = false;
-        public bool RemoveOutsideScreenArea { get; set; } = true;
-        public bool CaptureShadow { get; set; } = false;
-        public int ShadowOffset { get; set; } = 20;
-        public bool AutoHideTaskbar { get; set; } = false;
-
-        public Bitmap CaptureRectangle(Rectangle rect)
-        {
-            if (RemoveOutsideScreenArea)
-            {
-                Rectangle bounds = CaptureHelpers.GetScreenBounds();
-                rect = Rectangle.Intersect(bounds, rect);
-            }
-
-            return CaptureRectangleNative(rect, CaptureCursor);
-        }
-
-        public Bitmap CaptureFullscreen()
+        if (RemoveOutsideScreenArea)
         {
             Rectangle bounds = CaptureHelpers.GetScreenBounds();
-
-            return CaptureRectangle(bounds);
+            rect = Rectangle.Intersect(bounds, rect);
         }
 
-        public Bitmap CaptureWindow(IntPtr handle)
+        return CaptureRectangleNative(rect, CaptureCursor);
+    }
+
+    public Bitmap CaptureFullscreen()
+    {
+        Rectangle bounds = CaptureHelpers.GetScreenBounds();
+
+        return CaptureRectangle(bounds);
+    }
+
+    public Bitmap CaptureWindow(IntPtr handle)
+    {
+        if (handle.ToInt32() > 0)
         {
-            if (handle.ToInt32() > 0)
+            Rectangle rect = CaptureClientArea ? NativeMethods.GetClientRect(handle) : CaptureHelpers.GetWindowRectangle(handle);
+            bool isTaskbarHide = false;
+
+            try
             {
-                Rectangle rect;
-
-                if (CaptureClientArea)
+                if (AutoHideTaskbar)
                 {
-                    rect = NativeMethods.GetClientRect(handle);
-                }
-                else
-                {
-                    rect = CaptureHelpers.GetWindowRectangle(handle);
+                    isTaskbarHide = NativeMethods.SetTaskbarVisibilityIfIntersect(false, rect);
                 }
 
-                bool isTaskbarHide = false;
-
-                try
+                return CaptureRectangle(rect);
+            } finally
+            {
+                if (isTaskbarHide)
                 {
-                    if (AutoHideTaskbar)
-                    {
-                        isTaskbarHide = NativeMethods.SetTaskbarVisibilityIfIntersect(false, rect);
-                    }
-
-                    return CaptureRectangle(rect);
-                }
-                finally
-                {
-                    if (isTaskbarHide)
-                    {
-                        NativeMethods.SetTaskbarVisibility(true);
-                    }
+                    NativeMethods.SetTaskbarVisibility(true);
                 }
             }
+        }
 
+        return null;
+    }
+
+    public Bitmap CaptureActiveWindow()
+    {
+        IntPtr handle = NativeMethods.GetForegroundWindow();
+
+        return CaptureWindow(handle);
+    }
+
+    public Bitmap CaptureActiveMonitor()
+    {
+        Rectangle bounds = CaptureHelpers.GetActiveScreenBounds();
+
+        return CaptureRectangle(bounds);
+    }
+
+    private Bitmap CaptureRectangleNative(Rectangle rect, bool captureCursor = false)
+    {
+        IntPtr handle = NativeMethods.GetDesktopWindow();
+        return CaptureRectangleNative(handle, rect, captureCursor);
+    }
+
+    private Bitmap CaptureRectangleNative(IntPtr handle, Rectangle rect, bool captureCursor = false)
+    {
+        if (rect.Width == 0 || rect.Height == 0)
+        {
             return null;
         }
 
-        public Bitmap CaptureActiveWindow()
+        IntPtr hdcSrc = NativeMethods.GetWindowDC(handle);
+        IntPtr hdcDest = NativeMethods.CreateCompatibleDC(hdcSrc);
+        IntPtr hBitmap = NativeMethods.CreateCompatibleBitmap(hdcSrc, rect.Width, rect.Height);
+        IntPtr hOld = NativeMethods.SelectObject(hdcDest, hBitmap);
+        NativeMethods.BitBlt(hdcDest, 0, 0, rect.Width, rect.Height, hdcSrc, rect.X, rect.Y, CopyPixelOperation.SourceCopy | CopyPixelOperation.CaptureBlt);
+
+        if (captureCursor)
         {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-
-            return CaptureWindow(handle);
-        }
-
-        public Bitmap CaptureActiveMonitor()
-        {
-            Rectangle bounds = CaptureHelpers.GetActiveScreenBounds();
-
-            return CaptureRectangle(bounds);
-        }
-
-        private Bitmap CaptureRectangleNative(Rectangle rect, bool captureCursor = false)
-        {
-            IntPtr handle = NativeMethods.GetDesktopWindow();
-            return CaptureRectangleNative(handle, rect, captureCursor);
-        }
-
-        private Bitmap CaptureRectangleNative(IntPtr handle, Rectangle rect, bool captureCursor = false)
-        {
-            if (rect.Width == 0 || rect.Height == 0)
+            try
             {
-                return null;
-            }
-
-            IntPtr hdcSrc = NativeMethods.GetWindowDC(handle);
-            IntPtr hdcDest = NativeMethods.CreateCompatibleDC(hdcSrc);
-            IntPtr hBitmap = NativeMethods.CreateCompatibleBitmap(hdcSrc, rect.Width, rect.Height);
-            IntPtr hOld = NativeMethods.SelectObject(hdcDest, hBitmap);
-            NativeMethods.BitBlt(hdcDest, 0, 0, rect.Width, rect.Height, hdcSrc, rect.X, rect.Y, CopyPixelOperation.SourceCopy | CopyPixelOperation.CaptureBlt);
-
-            if (captureCursor)
+                CursorData cursorData = new();
+                cursorData.DrawCursor(hdcDest, rect.Location);
+            } catch (Exception e)
             {
-                try
-                {
-                    CursorData cursorData = new CursorData();
-                    cursorData.DrawCursor(hdcDest, rect.Location);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Cursor capture failed.");
-                }
+                DebugHelper.WriteException(e, "Cursor capture failed.");
             }
-
-            NativeMethods.SelectObject(hdcDest, hOld);
-            NativeMethods.DeleteDC(hdcDest);
-            NativeMethods.ReleaseDC(handle, hdcSrc);
-            Bitmap bmp = Image.FromHbitmap(hBitmap);
-            NativeMethods.DeleteObject(hBitmap);
-
-            return bmp;
         }
 
-        private Bitmap CaptureRectangleManaged(Rectangle rect)
+        NativeMethods.SelectObject(hdcDest, hOld);
+        NativeMethods.DeleteDC(hdcDest);
+        NativeMethods.ReleaseDC(handle, hdcSrc);
+        Bitmap bmp = Image.FromHbitmap(hBitmap);
+        NativeMethods.DeleteObject(hBitmap);
+
+        return bmp;
+    }
+
+    private Bitmap CaptureRectangleManaged(Rectangle rect)
+    {
+        if (rect.Width == 0 || rect.Height == 0)
         {
-            if (rect.Width == 0 || rect.Height == 0)
-            {
-                return null;
-            }
-
-            Bitmap bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format24bppRgb);
-
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                // Managed can't use SourceCopy | CaptureBlt because of .NET bug
-                g.CopyFromScreen(rect.Location, Point.Empty, rect.Size, CopyPixelOperation.SourceCopy);
-            }
-
-            return bmp;
+            return null;
         }
+
+        Bitmap bmp = new(rect.Width, rect.Height, PixelFormat.Format24bppRgb);
+
+        using (Graphics g = Graphics.FromImage(bmp))
+        {
+            // Managed can't use SourceCopy | CaptureBlt because of .NET bug
+            g.CopyFromScreen(rect.Location, Point.Empty, rect.Size, CopyPixelOperation.SourceCopy);
+        }
+
+        return bmp;
     }
 }

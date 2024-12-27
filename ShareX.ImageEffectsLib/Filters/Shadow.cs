@@ -23,70 +23,72 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+internal class Shadow : ImageEffect
 {
-    internal class Shadow : ImageEffect
+    private float opacity;
+
+    [DefaultValue(0.6f), Description("Choose a value between 0.1 and 1.0")]
+    public float Opacity
     {
-        private float opacity;
-
-        [DefaultValue(0.6f), Description("Choose a value between 0.1 and 1.0")]
-        public float Opacity
+        get
         {
-            get
-            {
-                return opacity;
-            }
-            set
-            {
-                opacity = value.Clamp(0.1f, 1.0f);
-            }
+            return opacity;
         }
-
-        private int size;
-
-        [DefaultValue(10)]
-        public int Size
+        set
         {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value.Max(0);
-            }
+            opacity = value.Clamp(0.1f, 1.0f);
         }
+    }
 
-        [DefaultValue(0f)]
-        public float Darkness { get; set; }
+    private int size;
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
-
-        [DefaultValue(typeof(Point), "0, 0")]
-        public Point Offset { get; set; }
-
-        [DefaultValue(true)]
-        public bool AutoResize { get; set; }
-
-        public Shadow()
+    [DefaultValue(10)]
+    public int Size
+    {
+        get
         {
-            this.ApplyDefaultPropertyValues();
+            return size;
         }
-
-        public override Bitmap Apply(Bitmap bmp)
+        set
         {
-            return ImageHelpers.AddShadow(bmp, Opacity, Size, Darkness + 1, Color, Offset, AutoResize);
+            size = value.Max(0);
         }
+    }
 
-        protected override string GetSummary()
-        {
-            return Size.ToString();
-        }
+    [DefaultValue(0f)]
+    public float Darkness { get; set; }
+
+    [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color Color { get; set; }
+
+    [DefaultValue(typeof(Point), "0, 0")]
+    public Point Offset { get; set; }
+
+    [DefaultValue(true)]
+    public bool AutoResize { get; set; }
+
+    public Shadow()
+    {
+        this.ApplyDefaultPropertyValues();
+    }
+
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        return ImageHelpers.AddShadow(bmp, Opacity, Size, Darkness + 1, Color, Offset, AutoResize);
+    }
+
+    protected override string GetSummary()
+    {
+        return Size.ToString();
     }
 }

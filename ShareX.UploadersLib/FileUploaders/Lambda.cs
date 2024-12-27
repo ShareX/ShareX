@@ -24,97 +24,100 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Settings;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class LambdaFileUploaderService : FileUploaderService
 {
-    public class LambdaFileUploaderService : FileUploaderService
+    public override FileDestination EnumValue { get; } = FileDestination.Lambda;
+
+    public override Icon ServiceIcon => Resources.Lambda;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Lambda;
-
-        public override Icon ServiceIcon => Resources.Lambda;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return config.LambdaSettings != null && !string.IsNullOrEmpty(config.LambdaSettings.UserAPIKey);
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            // Correct old URLs
-            if (config.LambdaSettings != null && config.LambdaSettings.UploadURL == "https://λ.pw/")
-            {
-                config.LambdaSettings.UploadURL = "https://lbda.net/";
-            }
-
-            return new Lambda(config.LambdaSettings);
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLambda;
+        return config.LambdaSettings != null && !string.IsNullOrEmpty(config.LambdaSettings.UserAPIKey);
     }
 
-    public sealed class Lambda : FileUploader
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public LambdaSettings Config { get; private set; }
-
-        public Lambda(LambdaSettings config)
+        // Correct old URLs
+        if (config.LambdaSettings != null && config.LambdaSettings.UploadURL == "https://λ.pw/")
         {
-            Config = config;
+            config.LambdaSettings.UploadURL = "https://lbda.net/";
         }
 
-        private const string uploadUrl = "https://lbda.net/api/upload";
+        return new Lambda(config.LambdaSettings);
+    }
 
-        public static string[] UploadURLs = new string[] { "https://lbda.net/", "https://lambda.sx/" };
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLambda;
+}
 
-        public override UploadResult Upload(Stream stream, string fileName)
+public sealed class Lambda : FileUploader
+{
+    public LambdaSettings Config { get; private set; }
+
+    public Lambda(LambdaSettings config)
+    {
+        Config = config;
+    }
+
+    private const string uploadUrl = "https://lbda.net/api/upload";
+
+    public static string[] UploadURLs = new string[] { "https://lbda.net/", "https://lambda.sx/" };
+
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        Dictionary<string, string> arguments = new();
+        arguments.Add("api_key", Config.UserAPIKey);
+        UploadResult result = SendRequestFile(uploadUrl, stream, fileName, "file", arguments, method: HttpMethod.PUT);
+
+        if (result.Response == null)
         {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("api_key", Config.UserAPIKey);
-            UploadResult result = SendRequestFile(uploadUrl, stream, fileName, "file", arguments, method: HttpMethod.PUT);
-
-            if (result.Response == null)
-            {
-                Errors.Add("Upload failed for unknown reason. Check your API key.");
-                return result;
-            }
-
-            LambdaResponse response = JsonConvert.DeserializeObject<LambdaResponse>(result.Response);
-            if (result.IsSuccess)
-            {
-                result.URL = Config.UploadURL + response.url;
-            }
-            else
-            {
-                foreach (string e in response.errors)
-                {
-                    Errors.Add(e);
-                }
-            }
-
+            Errors.Add("Upload failed for unknown reason. Check your API key.");
             return result;
         }
 
-        internal class LambdaResponse
+        LambdaResponse response = JsonConvert.DeserializeObject<LambdaResponse>(result.Response);
+        if (result.IsSuccess)
         {
-            public string url { get; set; }
-            public List<string> errors { get; set; }
+            result.URL = Config.UploadURL + response.url;
+        } else
+        {
+            foreach (string e in response.errors)
+            {
+                Errors.Add(e);
+            }
         }
 
-        internal class LambdaFile
-        {
-            public string url { get; set; }
-        }
+        return result;
     }
 
-    public class LambdaSettings
+    internal class LambdaResponse
     {
-        [JsonEncrypt]
-        public string UserAPIKey { get; set; } = "";
-        public string UploadURL { get; set; } = "https://lbda.net/";
+        public string url { get; set; }
+        public List<string> errors { get; set; }
     }
+
+    internal class LambdaFile
+    {
+        public string url { get; set; }
+    }
+}
+
+public class LambdaSettings
+{
+    [JsonEncrypt]
+    public string UserAPIKey { get; set; } = "";
+    public string UploadURL { get; set; } = "https://lbda.net/";
 }

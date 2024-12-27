@@ -26,49 +26,48 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public static class HttpClientFactory
 {
-    public static class HttpClientFactory
+    private static readonly object lockObject = new();
+
+    private static HttpClient client;
+
+    public static HttpClient Create()
     {
-        private static readonly object lockObject = new object();
-
-        private static HttpClient client;
-
-        public static HttpClient Create()
-        {
-            if (client == null)
-            {
-                lock (lockObject)
-                {
-                    if (client == null)
-                    {
-                        HttpClientHandler clientHandler = new HttpClientHandler()
-                        {
-                            Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
-                        };
-
-                        client = new HttpClient(clientHandler);
-                        client.DefaultRequestHeaders.UserAgent.ParseAdd(ShareXResources.UserAgent);
-                        client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue()
-                        {
-                            NoCache = true
-                        };
-                    }
-                }
-            }
-
-            return client;
-        }
-
-        public static void Reset()
+        if (client == null)
         {
             lock (lockObject)
             {
-                if (client != null)
+                if (client == null)
                 {
-                    client.Dispose();
-                    client = null;
+                    HttpClientHandler clientHandler = new()
+                    {
+                        Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
+                    };
+
+                    client = new HttpClient(clientHandler);
+                    client.DefaultRequestHeaders.UserAgent.ParseAdd(ShareXResources.UserAgent);
+                    client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue()
+                    {
+                        NoCache = true
+                    };
                 }
+            }
+        }
+
+        return client;
+    }
+
+    public static void Reset()
+    {
+        lock (lockObject)
+        {
+            if (client != null)
+            {
+                client.Dispose();
+                client = null;
             }
         }
     }

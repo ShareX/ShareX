@@ -30,120 +30,108 @@ using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Cryptographic;
+
+public class HashChecker
 {
-    public class HashChecker
+    public bool IsWorking { get; private set; }
+
+    public delegate void ProgressChanged(float progress);
+    public event ProgressChanged FileCheckProgressChanged;
+
+    private CancellationTokenSource cts;
+
+    private void OnProgressChanged(float percentage)
     {
-        public bool IsWorking { get; private set; }
+        FileCheckProgressChanged?.Invoke(percentage);
+    }
 
-        public delegate void ProgressChanged(float progress);
-        public event ProgressChanged FileCheckProgressChanged;
+    public async Task<string> Start(string filePath, HashType hashType)
+    {
+        string result = null;
 
-        private CancellationTokenSource cts;
-
-        private void OnProgressChanged(float percentage)
+        if (!IsWorking && !string.IsNullOrEmpty(filePath) && File.Exists(filePath))
         {
-            FileCheckProgressChanged?.Invoke(percentage);
-        }
+            IsWorking = true;
 
-        public async Task<string> Start(string filePath, HashType hashType)
-        {
-            string result = null;
+            Progress<float> progress = new(OnProgressChanged);
 
-            if (!IsWorking && !string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            using (cts = new CancellationTokenSource())
             {
-                IsWorking = true;
-
-                Progress<float> progress = new Progress<float>(OnProgressChanged);
-
-                using (cts = new CancellationTokenSource())
+                result = await Task.Run(() =>
                 {
-                    result = await Task.Run(() =>
+                    try
                     {
-                        try
-                        {
-                            return HashCheckThread(filePath, hashType, progress, cts.Token);
-                        }
-                        catch (OperationCanceledException)
-                        {
-                        }
-
-                        return null;
-                    }, cts.Token);
-                }
-
-                IsWorking = false;
-            }
-
-            return result;
-        }
-
-        public void Stop()
-        {
-            cts?.Cancel();
-        }
-
-        private string HashCheckThread(string filePath, HashType hashType, IProgress<float> progress, CancellationToken ct)
-        {
-            using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
-            using (HashAlgorithm hash = GetHashAlgorithm(hashType))
-            using (CryptoStream cs = new CryptoStream(stream, hash, CryptoStreamMode.Read))
-            {
-                long bytesRead, totalRead = 0;
-                byte[] buffer = new byte[8192];
-                Stopwatch timer = Stopwatch.StartNew();
-
-                while ((bytesRead = cs.Read(buffer, 0, buffer.Length)) > 0 && !ct.IsCancellationRequested)
-                {
-                    totalRead += bytesRead;
-
-                    if (timer.ElapsedMilliseconds > 200)
+                        return HashCheckThread(filePath, hashType, progress, cts.Token);
+                    } catch (OperationCanceledException)
                     {
-                        float percentage = (float)totalRead / stream.Length * 100;
-                        progress.Report(percentage);
-
-                        timer.Reset();
-                        timer.Start();
                     }
-                }
 
-                if (ct.IsCancellationRequested)
-                {
-                    progress.Report(0);
-
-                    ct.ThrowIfCancellationRequested();
-                }
-                else
-                {
-                    progress.Report(100);
-
-                    string[] hex = TranslatorHelper.BytesToHexadecimal(hash.Hash);
-                    return string.Concat(hex);
-                }
+                    return null;
+                }, cts.Token);
             }
 
-            return null;
+            IsWorking = false;
         }
 
-        public static HashAlgorithm GetHashAlgorithm(HashType hashType)
+        return result;
+    }
+
+    public void Stop()
+    {
+        cts?.Cancel();
+    }
+
+    private static string HashCheckThread(string filePath, HashType hashType, IProgress<float> progress, CancellationToken ct)
+    {
+        using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+        using HashAlgorithm hash = GetHashAlgorithm(hashType);
+        using CryptoStream cs = new(stream, hash, CryptoStreamMode.Read);
+        long bytesRead, totalRead = 0;
+        byte[] buffer = new byte[8192];
+        Stopwatch timer = Stopwatch.StartNew();
+
+        while ((bytesRead = cs.Read(buffer, 0, buffer.Length)) > 0 && !ct.IsCancellationRequested)
         {
-            switch (hashType)
-            {
-                case HashType.CRC32:
-                    return new Crc32();
-                case HashType.MD5:
-                    return new MD5CryptoServiceProvider();
-                case HashType.SHA1:
-                    return new SHA1CryptoServiceProvider();
-                case HashType.SHA256:
-                    return new SHA256CryptoServiceProvider();
-                case HashType.SHA384:
-                    return new SHA384CryptoServiceProvider();
-                case HashType.SHA512:
-                    return new SHA512CryptoServiceProvider();
-            }
+            totalRead += bytesRead;
 
-            return null;
+            if (timer.ElapsedMilliseconds > 200)
+            {
+                float percentage = (float)totalRead / stream.Length * 100;
+                progress.Report(percentage);
+
+                timer.Reset();
+                timer.Start();
+            }
         }
+
+        if (ct.IsCancellationRequested)
+        {
+            progress.Report(0);
+
+            ct.ThrowIfCancellationRequested();
+        } else
+        {
+            progress.Report(100);
+
+            string[] hex = TranslatorHelper.BytesToHexadecimal(hash.Hash);
+            return string.Concat(hex);
+        }
+
+        return null;
+    }
+
+    public static HashAlgorithm GetHashAlgorithm(HashType hashType)
+    {
+        return hashType switch
+        {
+            HashType.CRC32 => new Crc32(),
+            HashType.MD5 => MD5.Create(),
+            HashType.SHA1 => SHA1.Create(),
+            HashType.SHA256 => SHA256.Create(),
+            HashType.SHA384 => SHA384.Create(),
+            HashType.SHA512 => SHA512.Create(),
+            _ => null,
+        };
     }
 }

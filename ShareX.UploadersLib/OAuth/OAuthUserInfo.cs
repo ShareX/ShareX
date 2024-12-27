@@ -23,14 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.OAuth;
+
+public class OAuthUserInfo
 {
-    public class OAuthUserInfo
-    {
-        public string sub { get; set; }
-        public string name { get; set; }
-        public string given_name { get; set; }
-        public string picture { get; set; }
-        public string locale { get; set; }
-    }
+    public string sub { get; set; }
+    public string name { get; set; }
+    public string given_name { get; set; }
+    public string picture { get; set; }
+    public string locale { get; set; }
 }

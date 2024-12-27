@@ -23,69 +23,67 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Manipulations;
+
+public class Resize : ImageEffect
 {
-    public class Resize : ImageEffect
+    [DefaultValue(250), Description("Use width as 0 to automatically adjust width to maintain aspect ratio.")]
+    public int Width { get; set; }
+
+    [DefaultValue(0), Description("Use height as 0 to automatically adjust height to maintain aspect ratio.")]
+    public int Height { get; set; }
+
+    [DefaultValue(ResizeMode.ResizeAll)]
+    public ResizeMode Mode { get; set; }
+
+    public Resize()
     {
-        [DefaultValue(250), Description("Use width as 0 to automatically adjust width to maintain aspect ratio.")]
-        public int Width { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(0), Description("Use height as 0 to automatically adjust height to maintain aspect ratio.")]
-        public int Height { get; set; }
+    public Resize(int width, int height)
+    {
+        Width = width;
+        Height = height;
+    }
 
-        [DefaultValue(ResizeMode.ResizeAll)]
-        public ResizeMode Mode { get; set; }
-
-        public Resize()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        if (Width <= 0 && Height <= 0)
         {
-            this.ApplyDefaultPropertyValues();
+            return bmp;
         }
 
-        public Resize(int width, int height)
+        Size size = ImageHelpers.ApplyAspectRatio(Width, Height, bmp);
+
+        return Mode == ResizeMode.ResizeIfBigger && bmp.Width <= size.Width && bmp.Height <= size.Height ||
+            Mode == ResizeMode.ResizeIfSmaller && bmp.Width >= size.Width && bmp.Height >= size.Height
+            ? bmp
+            : ImageHelpers.ResizeImage(bmp, size);
+    }
+
+    protected override string GetSummary()
+    {
+        string summary = Width.ToString();
+
+        if (Width > 0)
         {
-            Width = width;
-            Height = height;
+            summary += "px";
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        summary += ", " + Height.ToString();
+
+        if (Height > 0)
         {
-            if (Width <= 0 && Height <= 0)
-            {
-                return bmp;
-            }
-
-            Size size = ImageHelpers.ApplyAspectRatio(Width, Height, bmp);
-
-            if ((Mode == ResizeMode.ResizeIfBigger && bmp.Width <= size.Width && bmp.Height <= size.Height) ||
-                (Mode == ResizeMode.ResizeIfSmaller && bmp.Width >= size.Width && bmp.Height >= size.Height))
-            {
-                return bmp;
-            }
-
-            return ImageHelpers.ResizeImage(bmp, size);
+            summary += "px";
         }
 
-        protected override string GetSummary()
-        {
-            string summary = Width.ToString();
-
-            if (Width > 0)
-            {
-                summary += "px";
-            }
-
-            summary += ", " + Height.ToString();
-
-            if (Height > 0)
-            {
-                summary += "px";
-            }
-
-            return summary;
-        }
+        return summary;
     }
 }

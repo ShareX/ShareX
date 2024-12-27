@@ -23,60 +23,63 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class AdFlyURLShortenerService : URLShortenerService
 {
-    public class AdFlyURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.AdFly;
+
+    public override Icon ServiceIcon => Resources.AdFly;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.AdFly;
-
-        public override Icon ServiceIcon => Resources.AdFly;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return !string.IsNullOrEmpty(config.AdFlyAPIKEY) && !string.IsNullOrEmpty(config.AdFlyAPIUID);
-        }
-
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new AdFlyURLShortener
-            {
-                APIKEY = config.AdFlyAPIKEY,
-                APIUID = config.AdFlyAPIUID
-            };
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAdFly;
+        return !string.IsNullOrEmpty(config.AdFlyAPIKEY) && !string.IsNullOrEmpty(config.AdFlyAPIUID);
     }
 
-    public class AdFlyURLShortener : URLShortener
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public string APIKEY { get; set; }
-        public string APIUID { get; set; }
-
-        public override UploadResult ShortenURL(string url)
+        return new AdFlyURLShortener
         {
-            UploadResult result = new UploadResult { URL = url };
+            APIKEY = config.AdFlyAPIKEY,
+            APIUID = config.AdFlyAPIUID
+        };
+    }
 
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("key", APIKEY);
-            args.Add("uid", APIUID);
-            args.Add("advert_type", "int");
-            args.Add("domain", "adf.ly");
-            args.Add("url", url);
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpAdFly;
+}
 
-            string response = SendRequest(HttpMethod.GET, "http://api.adf.ly/api.php", args);
+public class AdFlyURLShortener : URLShortener
+{
+    public string APIKEY { get; set; }
+    public string APIUID { get; set; }
 
-            if (!string.IsNullOrEmpty(response) && response != "error")
-            {
-                result.ShortenedURL = response;
-            }
+    public override UploadResult ShortenURL(string url)
+    {
+        UploadResult result = new() { URL = url };
 
-            return result;
+        Dictionary<string, string> args = new();
+        args.Add("key", APIKEY);
+        args.Add("uid", APIUID);
+        args.Add("advert_type", "int");
+        args.Add("domain", "adf.ly");
+        args.Add("url", url);
+
+        string response = SendRequest(HttpMethod.GET, "http://api.adf.ly/api.php", args);
+
+        if (!string.IsNullOrEmpty(response) && response != "error")
+        {
+            result.ShortenedURL = response;
         }
+
+        return result;
     }
 }

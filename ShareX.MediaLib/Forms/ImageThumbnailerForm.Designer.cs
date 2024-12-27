@@ -1,4 +1,6 @@
-﻿namespace ShareX.MediaLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.MediaLib
 {
     partial class ImageThumbnailerForm
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageThumbnailerForm));
-            this.lvImages = new ShareX.HelpersLib.MyListView();
+            this.lvImages = new ShareX.HelpersLib.Controls.MyListView();
             this.chImages = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -216,7 +218,7 @@
 
         #endregion
 
-        private HelpersLib.MyListView lvImages;
+        private MyListView lvImages;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label lblWidth;

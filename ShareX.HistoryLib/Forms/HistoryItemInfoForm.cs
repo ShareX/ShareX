@@ -24,17 +24,17 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System.Windows.Forms;
 
-namespace ShareX.HistoryLib
+namespace ShareX.HistoryLib;
+
+public partial class HistoryItemInfoForm : Form
 {
-    public partial class HistoryItemInfoForm : Form
+    public HistoryItemInfoForm(HistoryItem hi)
     {
-        public HistoryItemInfoForm(HistoryItem hi)
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-            pgHistoryItem.SelectedObject = hi;
-        }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+        pgHistoryItem.SelectedObject = hi;
     }
 }

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -125,16 +125,65 @@
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="scMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chFilename.Width" type="System.Int32, mscorlib">
+    <value>175</value>
+  </data>
+  <data name="chStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="chStatus.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="chProgress.Text" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="chProgress.Width" type="System.Int32, mscorlib">
+    <value>146</value>
+  </data>
+  <data name="chSpeed.Text" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="chSpeed.Width" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="chElapsed.Text" xml:space="preserve">
+    <value>Elapsed</value>
+  </data>
+  <data name="chElapsed.Width" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="chRemaining.Text" xml:space="preserve">
+    <value>Remaining</value>
+  </data>
+  <data name="chRemaining.Width" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="chURL.Width" type="System.Int32, mscorlib">
+    <value>169</value>
+  </data>
   <data name="lvUploads.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="lvUploads.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="lvUploads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 471</value>
+  <data name="lvUploads.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lvUploads.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 543</value>
+  </data>
   <data name="lvUploads.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -142,7 +191,7 @@
     <value>lvUploads</value>
   </data>
   <data name="&gt;&gt;lvUploads.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.1.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.Controls.MyListView, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvUploads.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -154,7 +203,7 @@
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;scMain.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;scMain.Panel1.Parent" xml:space="preserve">
     <value>scMain</value>
@@ -168,8 +217,11 @@
   <data name="pbPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="pbPreview.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
   <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>338, 471</value>
+    <value>395, 543</value>
   </data>
   <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -178,7 +230,7 @@
     <value>pbPreview</value>
   </data>
   <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=16.1.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
     <value>scMain.Panel2</value>
@@ -190,7 +242,7 @@
     <value>scMain.Panel2</value>
   </data>
   <data name="&gt;&gt;scMain.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;scMain.Panel2.Parent" xml:space="preserve">
     <value>scMain</value>
@@ -199,13 +251,13 @@
     <value>1</value>
   </data>
   <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>679, 471</value>
+    <value>793, 543</value>
   </data>
   <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
-    <value>335</value>
+    <value>391</value>
   </data>
   <data name="scMain.SplitterWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="scMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -214,7 +266,7 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=16.1.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.Controls.SplitContainerCustomSplitter, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>pMain</value>
@@ -222,89 +274,11 @@
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Filename</value>
-  </data>
-  <data name="chFilename.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="chStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="chProgress.Text" xml:space="preserve">
-    <value>Progress</value>
-  </data>
-  <data name="chProgress.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
-  <data name="chSpeed.Text" xml:space="preserve">
-    <value>Speed</value>
-  </data>
-  <data name="chSpeed.Width" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
-  <data name="chElapsed.Text" xml:space="preserve">
-    <value>Elapsed</value>
-  </data>
-  <data name="chElapsed.Width" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="chRemaining.Text" xml:space="preserve">
-    <value>Remaining</value>
-  </data>
-  <data name="chRemaining.Width" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="chURL.Width" type="System.Int32, mscorlib">
-    <value>145</value>
-  </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="tsMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tsMain.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>165, 0</value>
-  </data>
-  <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 5, 6, 2</value>
-  </data>
-  <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 471</value>
-  </data>
-  <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tsMain.Name" xml:space="preserve">
-    <value>tsMain</value>
-  </data>
-  <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=16.1.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
-    <value>pToolbars</value>
-  </data>
-  <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tsddbCapture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbCapture.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
-  </data>
-  <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>Capture</value>
   </data>
   <data name="tsmiFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
@@ -381,12 +355,6 @@
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>Show cursor</value>
   </data>
-  <data name="tsmiScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
-    <value>Screenshot delay</value>
-  </data>
   <data name="tsmiScreenshotDelay0.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -423,17 +391,23 @@
   <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
     <value>5 seconds</value>
   </data>
-  <data name="tsddbUpload.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="tsmiScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>Screenshot delay</value>
+  </data>
+  <data name="tsddbCapture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="tsddbUpload.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="tsddbCapture.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+  <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 20</value>
   </data>
-  <data name="tsddbUpload.Text" xml:space="preserve">
-    <value>Upload</value>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Capture</value>
   </data>
   <data name="tsmiUploadFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
@@ -483,6 +457,18 @@
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet message...</value>
   </data>
+  <data name="tsddbUpload.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbUpload.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 20</value>
+  </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
   <data name="tsddbWorkflows.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomLeft</value>
   </data>
@@ -490,22 +476,10 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbWorkflows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
-  </data>
-  <data name="tsddbTools.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
-  </data>
-  <data name="tsddbTools.Text" xml:space="preserve">
-    <value>Tools</value>
   </data>
   <data name="tsmiColorPicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -651,8 +625,20 @@
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>DNS changer...</value>
   </data>
+  <data name="tsddbTools.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 20</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
   <data name="tssMain1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="tsddbAfterCaptureTasks.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -661,7 +647,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>After capture tasks</value>
@@ -673,22 +659,10 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
     <value>After upload tasks</value>
-  </data>
-  <data name="tsddbDestinations.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbDestinations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
-  </data>
-  <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>Destinations</value>
   </data>
   <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>219, 22</value>
@@ -735,6 +709,18 @@
   <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
     <value>Custom uploader settings...</value>
   </data>
+  <data name="tsddbDestinations.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbDestinations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 20</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Destinations</value>
+  </data>
   <data name="tsbApplicationSettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -742,7 +728,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>Application settings...</value>
@@ -754,7 +740,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>Task settings...</value>
@@ -766,13 +752,13 @@
     <value>Magenta</value>
   </data>
   <data name="tsbHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
     <value>Hotkey settings...</value>
   </data>
   <data name="tssMain2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="tsbScreenshotsFolder.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -781,7 +767,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
     <value>Screenshots folder...</value>
@@ -793,7 +779,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>History...</value>
@@ -805,13 +791,49 @@
     <value>Magenta</value>
   </data>
   <data name="tsbImageHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Image history...</value>
   </data>
   <data name="tssMain3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 6</value>
+    <value>177, 6</value>
+  </data>
+  <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiShowDebugLog.Text" xml:space="preserve">
+    <value>Debug log...</value>
+  </data>
+  <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTestImageUpload.Text" xml:space="preserve">
+    <value>Test image upload</value>
+  </data>
+  <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTestTextUpload.Text" xml:space="preserve">
+    <value>Test text upload</value>
+  </data>
+  <data name="tsmiTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTestFileUpload.Text" xml:space="preserve">
+    <value>Test file upload</value>
+  </data>
+  <data name="tsmiTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTestURLShortener.Text" xml:space="preserve">
+    <value>Test URL shortener</value>
+  </data>
+  <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiTestURLSharing.Text" xml:space="preserve">
+    <value>Test URL sharing</value>
   </data>
   <data name="tsddbDebug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -820,46 +842,10 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbDebug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Debug</value>
-  </data>
-  <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
-  </data>
-  <data name="tsmiShowDebugLog.Text" xml:space="preserve">
-    <value>Debug log...</value>
-  </data>
-  <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
-  </data>
-  <data name="tsmiTestImageUpload.Text" xml:space="preserve">
-    <value>Test image upload</value>
-  </data>
-  <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
-  </data>
-  <data name="tsmiTestTextUpload.Text" xml:space="preserve">
-    <value>Test text upload</value>
-  </data>
-  <data name="tsmiTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
-  </data>
-  <data name="tsmiTestFileUpload.Text" xml:space="preserve">
-    <value>Test file upload</value>
-  </data>
-  <data name="tsmiTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
-  </data>
-  <data name="tsmiTestURLShortener.Text" xml:space="preserve">
-    <value>Test URL shortener</value>
-  </data>
-  <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
-  </data>
-  <data name="tsmiTestURLSharing.Text" xml:space="preserve">
-    <value>Test URL sharing</value>
   </data>
   <data name="tsbDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -868,7 +854,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Donate...</value>
@@ -880,7 +866,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbX.Text" xml:space="preserve">
     <value>Follow @ShareX...</value>
@@ -892,7 +878,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbDiscord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord...</value>
@@ -904,23 +890,41 @@
     <value>Magenta</value>
   </data>
   <data name="tsbAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>177, 20</value>
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>About...</value>
   </data>
+  <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tsMain.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>192, 0</value>
+  </data>
+  <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>7, 6, 7, 2</value>
+  </data>
+  <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 543</value>
+  </data>
+  <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Name" xml:space="preserve">
+    <value>tsMain</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.Controls.ToolStripBorderRight, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
+    <value>pToolbars</value>
+  </data>
+  <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="cmsTaskInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>286, 17</value>
   </metadata>
-  <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 516</value>
-  </data>
-  <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
-    <value>cmsTaskInfo</value>
-  </data>
-  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiShowErrors.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -932,12 +936,6 @@
   </data>
   <data name="tsmiStopUpload.Text" xml:space="preserve">
     <value>Stop upload</value>
-  </data>
-  <data name="tsmiOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiOpen.Text" xml:space="preserve">
-    <value>Open</value>
   </data>
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Enter</value>
@@ -993,11 +991,11 @@
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
     <value>Thumbnail file</value>
   </data>
-  <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copy</value>
+  <data name="tsmiOpen.Text" xml:space="preserve">
+    <value>Open</value>
   </data>
   <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+C</value>
@@ -1170,6 +1168,12 @@
   <data name="tssCopy6.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
   <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+U</value>
   </data>
@@ -1278,12 +1282,6 @@
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>OCR image...</value>
   </data>
-  <data name="tsmiCombineImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiCombineImages.Text" xml:space="preserve">
-    <value>Combine images...</value>
-  </data>
   <data name="tsmiCombineImagesHorizontally.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 22</value>
   </data>
@@ -1295,6 +1293,12 @@
   </data>
   <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
     <value>Combine vertically</value>
+  </data>
+  <data name="tsmiCombineImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Combine images...</value>
   </data>
   <data name="tsmiShowResponse.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1317,30 +1321,21 @@
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>Switch to thumbnail view</value>
   </data>
+  <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 516</value>
+  </data>
+  <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
+    <value>cmsTaskInfo</value>
+  </data>
+  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="niTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
   </metadata>
   <metadata name="cmsTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>190, 17</value>
   </metadata>
-  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 440</value>
-  </data>
-  <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
-    <value>cmsTray</value>
-  </data>
-  <data name="&gt;&gt;cmsTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX</value>
-  </data>
-  <data name="tsmiTrayCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
-  </data>
-  <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>Capture</value>
-  </data>
   <data name="tsmiTrayFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
   </data>
@@ -1416,12 +1411,6 @@
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>Show cursor</value>
   </data>
-  <data name="tsmiTrayScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 22</value>
-  </data>
-  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
-    <value>Screenshot delay</value>
-  </data>
   <data name="tsmiTrayScreenshotDelay0.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -1458,11 +1447,17 @@
   <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
     <value>5 seconds</value>
   </data>
-  <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiTrayScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>Screenshot delay</value>
+  </data>
+  <data name="tsmiTrayCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
   </data>
-  <data name="tsmiTrayUpload.Text" xml:space="preserve">
-    <value>Upload</value>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>Capture</value>
   </data>
   <data name="tsmiTrayUploadFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
@@ -1512,17 +1507,17 @@
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet message...</value>
   </data>
+  <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 22</value>
+  </data>
+  <data name="tsmiTrayUpload.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
   <data name="tsmiTrayWorkflows.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
-  </data>
-  <data name="tsmiTrayTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
-  </data>
-  <data name="tsmiTrayTools.Text" xml:space="preserve">
-    <value>Tools</value>
   </data>
   <data name="tsmiTrayColorPicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1668,6 +1663,12 @@
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>DNS changer...</value>
   </data>
+  <data name="tsmiTrayTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 22</value>
+  </data>
+  <data name="tsmiTrayTools.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
   <data name="tssTray1.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 6</value>
   </data>
@@ -1682,12 +1683,6 @@
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>After upload tasks</value>
-  </data>
-  <data name="tsmiTrayDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
-  </data>
-  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>Destinations</value>
   </data>
   <data name="tsmiTrayImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>219, 22</value>
@@ -1733,6 +1728,12 @@
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>Custom uploader settings...</value>
+  </data>
+  <data name="tsmiTrayDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 22</value>
+  </data>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>Destinations</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
@@ -1818,6 +1819,18 @@
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 440</value>
+  </data>
+  <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
+    <value>cmsTray</value>
+  </data>
+  <data name="&gt;&gt;cmsTray.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
@@ -1833,8 +1846,11 @@
   <data name="pToolbars.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="pToolbars.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="pToolbars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 471</value>
+    <value>192, 543</value>
   </data>
   <data name="pToolbars.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1843,7 +1859,7 @@
     <value>pToolbars</value>
   </data>
   <data name="&gt;&gt;pToolbars.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pToolbars.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1882,13 +1898,16 @@
     <value>Fill</value>
   </data>
   <data name="dgvHotkeys.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>19, 18</value>
+  </data>
+  <data name="dgvHotkeys.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="dgvHotkeys.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="dgvHotkeys.Size" type="System.Drawing.Size, System.Drawing">
-    <value>663, 455</value>
+    <value>774, 525</value>
   </data>
   <data name="dgvHotkeys.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1897,7 +1916,7 @@
     <value>dgvHotkeys</value>
   </data>
   <data name="&gt;&gt;dgvHotkeys.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dgvHotkeys.Parent" xml:space="preserve">
     <value>pHotkeys</value>
@@ -1905,65 +1924,20 @@
   <data name="&gt;&gt;dgvHotkeys.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;pHotkeys.Name" xml:space="preserve">
-    <value>pHotkeys</value>
-  </data>
-  <data name="&gt;&gt;pHotkeys.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pHotkeys.Parent" xml:space="preserve">
-    <value>pMain</value>
-  </data>
-  <data name="&gt;&gt;pHotkeys.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ucTaskThumbnailView.Name" xml:space="preserve">
-    <value>ucTaskThumbnailView</value>
-  </data>
-  <data name="&gt;&gt;ucTaskThumbnailView.Type" xml:space="preserve">
-    <value>ShareX.TaskThumbnailView, ShareX, Version=16.1.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucTaskThumbnailView.Parent" xml:space="preserve">
-    <value>pMain</value>
-  </data>
-  <data name="&gt;&gt;ucTaskThumbnailView.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 0</value>
-  </data>
-  <data name="pMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>679, 471</value>
-  </data>
-  <data name="pMain.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;pMain.Name" xml:space="preserve">
-    <value>pMain</value>
-  </data>
-  <data name="&gt;&gt;pMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pMain.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="pHotkeys.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="pHotkeys.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="pHotkeys.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="pHotkeys.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>16, 16, 0, 0</value>
+    <value>19, 18, 0, 0</value>
   </data>
   <data name="pHotkeys.Size" type="System.Drawing.Size, System.Drawing">
-    <value>679, 471</value>
+    <value>793, 543</value>
   </data>
   <data name="pHotkeys.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1972,7 +1946,7 @@
     <value>pHotkeys</value>
   </data>
   <data name="&gt;&gt;pHotkeys.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pHotkeys.Parent" xml:space="preserve">
     <value>pMain</value>
@@ -1989,8 +1963,11 @@
   <data name="ucTaskThumbnailView.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="ucTaskThumbnailView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 3, 5, 3</value>
+  </data>
   <data name="ucTaskThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>679, 471</value>
+    <value>793, 543</value>
   </data>
   <data name="ucTaskThumbnailView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1999,13 +1976,40 @@
     <value>ucTaskThumbnailView</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.Type" xml:space="preserve">
-    <value>ShareX.TaskThumbnailView, ShareX, Version=16.1.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.TaskThumbnailView, ShareX, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.Parent" xml:space="preserve">
     <value>pMain</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="pMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 0</value>
+  </data>
+  <data name="pMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="pMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>793, 543</value>
+  </data>
+  <data name="pMain.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;pMain.Name" xml:space="preserve">
+    <value>pMain</value>
+  </data>
+  <data name="&gt;&gt;pMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pMain.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2014,16 +2018,16 @@
     <value>59</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>844, 471</value>
+    <value>985, 543</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>650, 500</value>
+    <value>756, 571</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -2032,1500 +2036,1500 @@
     <value>chFilename</value>
   </data>
   <data name="&gt;&gt;chFilename.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chStatus.Name" xml:space="preserve">
     <value>chStatus</value>
   </data>
   <data name="&gt;&gt;chStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chProgress.Name" xml:space="preserve">
     <value>chProgress</value>
   </data>
   <data name="&gt;&gt;chProgress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chSpeed.Name" xml:space="preserve">
     <value>chSpeed</value>
   </data>
   <data name="&gt;&gt;chSpeed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chElapsed.Name" xml:space="preserve">
     <value>chElapsed</value>
   </data>
   <data name="&gt;&gt;chElapsed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chRemaining.Name" xml:space="preserve">
     <value>chRemaining</value>
   </data>
   <data name="&gt;&gt;chRemaining.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chURL.Name" xml:space="preserve">
     <value>chURL</value>
   </data>
   <data name="&gt;&gt;chURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbCapture.Name" xml:space="preserve">
     <value>tsddbCapture</value>
   </data>
   <data name="&gt;&gt;tsddbCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiFullscreen.Name" xml:space="preserve">
     <value>tsmiFullscreen</value>
   </data>
   <data name="&gt;&gt;tsmiFullscreen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiWindow.Name" xml:space="preserve">
     <value>tsmiWindow</value>
   </data>
   <data name="&gt;&gt;tsmiWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiMonitor.Name" xml:space="preserve">
     <value>tsmiMonitor</value>
   </data>
   <data name="&gt;&gt;tsmiMonitor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiRectangle.Name" xml:space="preserve">
     <value>tsmiRectangle</value>
   </data>
   <data name="&gt;&gt;tsmiRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiRectangleLight.Name" xml:space="preserve">
     <value>tsmiRectangleLight</value>
   </data>
   <data name="&gt;&gt;tsmiRectangleLight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiRectangleTransparent.Name" xml:space="preserve">
     <value>tsmiRectangleTransparent</value>
   </data>
   <data name="&gt;&gt;tsmiRectangleTransparent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiLastRegion.Name" xml:space="preserve">
     <value>tsmiLastRegion</value>
   </data>
   <data name="&gt;&gt;tsmiLastRegion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenRecordingFFmpeg.Name" xml:space="preserve">
     <value>tsmiScreenRecordingFFmpeg</value>
   </data>
   <data name="&gt;&gt;tsmiScreenRecordingFFmpeg.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenRecordingGIF.Name" xml:space="preserve">
     <value>tsmiScreenRecordingGIF</value>
   </data>
   <data name="&gt;&gt;tsmiScreenRecordingGIF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScrollingCapture.Name" xml:space="preserve">
     <value>tsmiScrollingCapture</value>
   </data>
   <data name="&gt;&gt;tsmiScrollingCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiAutoCapture.Name" xml:space="preserve">
     <value>tsmiAutoCapture</value>
   </data>
   <data name="&gt;&gt;tsmiAutoCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssCapture1.Name" xml:space="preserve">
     <value>tssCapture1</value>
   </data>
   <data name="&gt;&gt;tssCapture1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowCursor.Name" xml:space="preserve">
     <value>tsmiShowCursor</value>
   </data>
   <data name="&gt;&gt;tsmiShowCursor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay.Name" xml:space="preserve">
     <value>tsmiScreenshotDelay</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay0.Name" xml:space="preserve">
     <value>tsmiScreenshotDelay0</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay1.Name" xml:space="preserve">
     <value>tsmiScreenshotDelay1</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay2.Name" xml:space="preserve">
     <value>tsmiScreenshotDelay2</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay3.Name" xml:space="preserve">
     <value>tsmiScreenshotDelay3</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay4.Name" xml:space="preserve">
     <value>tsmiScreenshotDelay4</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay5.Name" xml:space="preserve">
     <value>tsmiScreenshotDelay5</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotDelay5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbUpload.Name" xml:space="preserve">
     <value>tsddbUpload</value>
   </data>
   <data name="&gt;&gt;tsddbUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiUploadFile.Name" xml:space="preserve">
     <value>tsmiUploadFile</value>
   </data>
   <data name="&gt;&gt;tsmiUploadFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiUploadFolder.Name" xml:space="preserve">
     <value>tsmiUploadFolder</value>
   </data>
   <data name="&gt;&gt;tsmiUploadFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiUploadClipboard.Name" xml:space="preserve">
     <value>tsmiUploadClipboard</value>
   </data>
   <data name="&gt;&gt;tsmiUploadClipboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiUploadText.Name" xml:space="preserve">
     <value>tsmiUploadText</value>
   </data>
   <data name="&gt;&gt;tsmiUploadText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiUploadURL.Name" xml:space="preserve">
     <value>tsmiUploadURL</value>
   </data>
   <data name="&gt;&gt;tsmiUploadURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiUploadDragDrop.Name" xml:space="preserve">
     <value>tsmiUploadDragDrop</value>
   </data>
   <data name="&gt;&gt;tsmiUploadDragDrop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShortenURL.Name" xml:space="preserve">
     <value>tsmiShortenURL</value>
   </data>
   <data name="&gt;&gt;tsmiShortenURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTweetMessage.Name" xml:space="preserve">
     <value>tsmiTweetMessage</value>
   </data>
   <data name="&gt;&gt;tsmiTweetMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbWorkflows.Name" xml:space="preserve">
     <value>tsddbWorkflows</value>
   </data>
   <data name="&gt;&gt;tsddbWorkflows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbTools.Name" xml:space="preserve">
     <value>tsddbTools</value>
   </data>
   <data name="&gt;&gt;tsddbTools.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiColorPicker.Name" xml:space="preserve">
     <value>tsmiColorPicker</value>
   </data>
   <data name="&gt;&gt;tsmiColorPicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenColorPicker.Name" xml:space="preserve">
     <value>tsmiScreenColorPicker</value>
   </data>
   <data name="&gt;&gt;tsmiScreenColorPicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiRuler.Name" xml:space="preserve">
     <value>tsmiRuler</value>
   </data>
   <data name="&gt;&gt;tsmiRuler.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiPinToScreen.Name" xml:space="preserve">
     <value>tsmiPinToScreen</value>
   </data>
   <data name="&gt;&gt;tsmiPinToScreen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTools1.Name" xml:space="preserve">
     <value>tssTools1</value>
   </data>
   <data name="&gt;&gt;tssTools1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageEditor.Name" xml:space="preserve">
     <value>tsmiImageEditor</value>
   </data>
   <data name="&gt;&gt;tsmiImageEditor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageBeautifier.Name" xml:space="preserve">
     <value>tsmiImageBeautifier</value>
   </data>
   <data name="&gt;&gt;tsmiImageBeautifier.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageEffects.Name" xml:space="preserve">
     <value>tsmiImageEffects</value>
   </data>
   <data name="&gt;&gt;tsmiImageEffects.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageViewer.Name" xml:space="preserve">
     <value>tsmiImageViewer</value>
   </data>
   <data name="&gt;&gt;tsmiImageViewer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageCombiner.Name" xml:space="preserve">
     <value>tsmiImageCombiner</value>
   </data>
   <data name="&gt;&gt;tsmiImageCombiner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageSplitter.Name" xml:space="preserve">
     <value>tsmiImageSplitter</value>
   </data>
   <data name="&gt;&gt;tsmiImageSplitter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageThumbnailer.Name" xml:space="preserve">
     <value>tsmiImageThumbnailer</value>
   </data>
   <data name="&gt;&gt;tsmiImageThumbnailer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTools2.Name" xml:space="preserve">
     <value>tssTools2</value>
   </data>
   <data name="&gt;&gt;tssTools2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiVideoConverter.Name" xml:space="preserve">
     <value>tsmiVideoConverter</value>
   </data>
   <data name="&gt;&gt;tsmiVideoConverter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiVideoThumbnailer.Name" xml:space="preserve">
     <value>tsmiVideoThumbnailer</value>
   </data>
   <data name="&gt;&gt;tsmiVideoThumbnailer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTools3.Name" xml:space="preserve">
     <value>tssTools3</value>
   </data>
   <data name="&gt;&gt;tssTools3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOCR.Name" xml:space="preserve">
     <value>tsmiOCR</value>
   </data>
   <data name="&gt;&gt;tsmiOCR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiQRCode.Name" xml:space="preserve">
     <value>tsmiQRCode</value>
   </data>
   <data name="&gt;&gt;tsmiQRCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiHashChecker.Name" xml:space="preserve">
     <value>tsmiHashChecker</value>
   </data>
   <data name="&gt;&gt;tsmiHashChecker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiIndexFolder.Name" xml:space="preserve">
     <value>tsmiIndexFolder</value>
   </data>
   <data name="&gt;&gt;tsmiIndexFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTools4.Name" xml:space="preserve">
     <value>tssTools4</value>
   </data>
   <data name="&gt;&gt;tssTools4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiClipboardViewer.Name" xml:space="preserve">
     <value>tsmiClipboardViewer</value>
   </data>
   <data name="&gt;&gt;tsmiClipboardViewer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiBorderlessWindow.Name" xml:space="preserve">
     <value>tsmiBorderlessWindow</value>
   </data>
   <data name="&gt;&gt;tsmiBorderlessWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiInspectWindow.Name" xml:space="preserve">
     <value>tsmiInspectWindow</value>
   </data>
   <data name="&gt;&gt;tsmiInspectWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiMonitorTest.Name" xml:space="preserve">
     <value>tsmiMonitorTest</value>
   </data>
   <data name="&gt;&gt;tsmiMonitorTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiDNSChanger.Name" xml:space="preserve">
     <value>tsmiDNSChanger</value>
   </data>
   <data name="&gt;&gt;tsmiDNSChanger.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssMain1.Name" xml:space="preserve">
     <value>tssMain1</value>
   </data>
   <data name="&gt;&gt;tssMain1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbAfterCaptureTasks.Name" xml:space="preserve">
     <value>tsddbAfterCaptureTasks</value>
   </data>
   <data name="&gt;&gt;tsddbAfterCaptureTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbAfterUploadTasks.Name" xml:space="preserve">
     <value>tsddbAfterUploadTasks</value>
   </data>
   <data name="&gt;&gt;tsddbAfterUploadTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbDestinations.Name" xml:space="preserve">
     <value>tsddbDestinations</value>
   </data>
   <data name="&gt;&gt;tsddbDestinations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageUploaders.Name" xml:space="preserve">
     <value>tsmiImageUploaders</value>
   </data>
   <data name="&gt;&gt;tsmiImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTextUploaders.Name" xml:space="preserve">
     <value>tsmiTextUploaders</value>
   </data>
   <data name="&gt;&gt;tsmiTextUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiFileUploaders.Name" xml:space="preserve">
     <value>tsmiFileUploaders</value>
   </data>
   <data name="&gt;&gt;tsmiFileUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiURLShorteners.Name" xml:space="preserve">
     <value>tsmiURLShorteners</value>
   </data>
   <data name="&gt;&gt;tsmiURLShorteners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiURLSharingServices.Name" xml:space="preserve">
     <value>tsmiURLSharingServices</value>
   </data>
   <data name="&gt;&gt;tsmiURLSharingServices.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssDestinations1.Name" xml:space="preserve">
     <value>tssDestinations1</value>
   </data>
   <data name="&gt;&gt;tssDestinations1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiDestinationSettings.Name" xml:space="preserve">
     <value>tsmiDestinationSettings</value>
   </data>
   <data name="&gt;&gt;tsmiDestinationSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCustomUploaderSettings.Name" xml:space="preserve">
     <value>tsmiCustomUploaderSettings</value>
   </data>
   <data name="&gt;&gt;tsmiCustomUploaderSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbApplicationSettings.Name" xml:space="preserve">
     <value>tsbApplicationSettings</value>
   </data>
   <data name="&gt;&gt;tsbApplicationSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbTaskSettings.Name" xml:space="preserve">
     <value>tsbTaskSettings</value>
   </data>
   <data name="&gt;&gt;tsbTaskSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbHotkeySettings.Name" xml:space="preserve">
     <value>tsbHotkeySettings</value>
   </data>
   <data name="&gt;&gt;tsbHotkeySettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssMain2.Name" xml:space="preserve">
     <value>tssMain2</value>
   </data>
   <data name="&gt;&gt;tssMain2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbScreenshotsFolder.Name" xml:space="preserve">
     <value>tsbScreenshotsFolder</value>
   </data>
   <data name="&gt;&gt;tsbScreenshotsFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbHistory.Name" xml:space="preserve">
     <value>tsbHistory</value>
   </data>
   <data name="&gt;&gt;tsbHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbImageHistory.Name" xml:space="preserve">
     <value>tsbImageHistory</value>
   </data>
   <data name="&gt;&gt;tsbImageHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssMain3.Name" xml:space="preserve">
     <value>tssMain3</value>
   </data>
   <data name="&gt;&gt;tssMain3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsddbDebug.Name" xml:space="preserve">
     <value>tsddbDebug</value>
   </data>
   <data name="&gt;&gt;tsddbDebug.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowDebugLog.Name" xml:space="preserve">
     <value>tsmiShowDebugLog</value>
   </data>
   <data name="&gt;&gt;tsmiShowDebugLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTestImageUpload.Name" xml:space="preserve">
     <value>tsmiTestImageUpload</value>
   </data>
   <data name="&gt;&gt;tsmiTestImageUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTestTextUpload.Name" xml:space="preserve">
     <value>tsmiTestTextUpload</value>
   </data>
   <data name="&gt;&gt;tsmiTestTextUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTestFileUpload.Name" xml:space="preserve">
     <value>tsmiTestFileUpload</value>
   </data>
   <data name="&gt;&gt;tsmiTestFileUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTestURLShortener.Name" xml:space="preserve">
     <value>tsmiTestURLShortener</value>
   </data>
   <data name="&gt;&gt;tsmiTestURLShortener.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTestURLSharing.Name" xml:space="preserve">
     <value>tsmiTestURLSharing</value>
   </data>
   <data name="&gt;&gt;tsmiTestURLSharing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbDonate.Name" xml:space="preserve">
     <value>tsbDonate</value>
   </data>
   <data name="&gt;&gt;tsbDonate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbX.Name" xml:space="preserve">
     <value>tsbX</value>
   </data>
   <data name="&gt;&gt;tsbX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbDiscord.Name" xml:space="preserve">
     <value>tsbDiscord</value>
   </data>
   <data name="&gt;&gt;tsbDiscord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbAbout.Name" xml:space="preserve">
     <value>tsbAbout</value>
   </data>
   <data name="&gt;&gt;tsbAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowErrors.Name" xml:space="preserve">
     <value>tsmiShowErrors</value>
   </data>
   <data name="&gt;&gt;tsmiShowErrors.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiStopUpload.Name" xml:space="preserve">
     <value>tsmiStopUpload</value>
   </data>
   <data name="&gt;&gt;tsmiStopUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOpen.Name" xml:space="preserve">
     <value>tsmiOpen</value>
   </data>
   <data name="&gt;&gt;tsmiOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOpenURL.Name" xml:space="preserve">
     <value>tsmiOpenURL</value>
   </data>
   <data name="&gt;&gt;tsmiOpenURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOpenShortenedURL.Name" xml:space="preserve">
     <value>tsmiOpenShortenedURL</value>
   </data>
   <data name="&gt;&gt;tsmiOpenShortenedURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOpenThumbnailURL.Name" xml:space="preserve">
     <value>tsmiOpenThumbnailURL</value>
   </data>
   <data name="&gt;&gt;tsmiOpenThumbnailURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOpenDeletionURL.Name" xml:space="preserve">
     <value>tsmiOpenDeletionURL</value>
   </data>
   <data name="&gt;&gt;tsmiOpenDeletionURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssOpen1.Name" xml:space="preserve">
     <value>tssOpen1</value>
   </data>
   <data name="&gt;&gt;tssOpen1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOpenFile.Name" xml:space="preserve">
     <value>tsmiOpenFile</value>
   </data>
   <data name="&gt;&gt;tsmiOpenFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOpenFolder.Name" xml:space="preserve">
     <value>tsmiOpenFolder</value>
   </data>
   <data name="&gt;&gt;tsmiOpenFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOpenThumbnailFile.Name" xml:space="preserve">
     <value>tsmiOpenThumbnailFile</value>
   </data>
   <data name="&gt;&gt;tsmiOpenThumbnailFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopy.Name" xml:space="preserve">
     <value>tsmiCopy</value>
   </data>
   <data name="&gt;&gt;tsmiCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyURL.Name" xml:space="preserve">
     <value>tsmiCopyURL</value>
   </data>
   <data name="&gt;&gt;tsmiCopyURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyShortenedURL.Name" xml:space="preserve">
     <value>tsmiCopyShortenedURL</value>
   </data>
   <data name="&gt;&gt;tsmiCopyShortenedURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyThumbnailURL.Name" xml:space="preserve">
     <value>tsmiCopyThumbnailURL</value>
   </data>
   <data name="&gt;&gt;tsmiCopyThumbnailURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyDeletionURL.Name" xml:space="preserve">
     <value>tsmiCopyDeletionURL</value>
   </data>
   <data name="&gt;&gt;tsmiCopyDeletionURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssCopy1.Name" xml:space="preserve">
     <value>tssCopy1</value>
   </data>
   <data name="&gt;&gt;tssCopy1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFile.Name" xml:space="preserve">
     <value>tsmiCopyFile</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyImage.Name" xml:space="preserve">
     <value>tsmiCopyImage</value>
   </data>
   <data name="&gt;&gt;tsmiCopyImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyImageDimensions.Name" xml:space="preserve">
     <value>tsmiCopyImageDimensions</value>
   </data>
   <data name="&gt;&gt;tsmiCopyImageDimensions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyText.Name" xml:space="preserve">
     <value>tsmiCopyText</value>
   </data>
   <data name="&gt;&gt;tsmiCopyText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyThumbnailFile.Name" xml:space="preserve">
     <value>tsmiCopyThumbnailFile</value>
   </data>
   <data name="&gt;&gt;tsmiCopyThumbnailFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyThumbnailImage.Name" xml:space="preserve">
     <value>tsmiCopyThumbnailImage</value>
   </data>
   <data name="&gt;&gt;tsmiCopyThumbnailImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssCopy2.Name" xml:space="preserve">
     <value>tssCopy2</value>
   </data>
   <data name="&gt;&gt;tssCopy2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyHTMLLink.Name" xml:space="preserve">
     <value>tsmiCopyHTMLLink</value>
   </data>
   <data name="&gt;&gt;tsmiCopyHTMLLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyHTMLImage.Name" xml:space="preserve">
     <value>tsmiCopyHTMLImage</value>
   </data>
   <data name="&gt;&gt;tsmiCopyHTMLImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyHTMLLinkedImage.Name" xml:space="preserve">
     <value>tsmiCopyHTMLLinkedImage</value>
   </data>
   <data name="&gt;&gt;tsmiCopyHTMLLinkedImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssCopy3.Name" xml:space="preserve">
     <value>tssCopy3</value>
   </data>
   <data name="&gt;&gt;tssCopy3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyForumLink.Name" xml:space="preserve">
     <value>tsmiCopyForumLink</value>
   </data>
   <data name="&gt;&gt;tsmiCopyForumLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyForumImage.Name" xml:space="preserve">
     <value>tsmiCopyForumImage</value>
   </data>
   <data name="&gt;&gt;tsmiCopyForumImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyForumLinkedImage.Name" xml:space="preserve">
     <value>tsmiCopyForumLinkedImage</value>
   </data>
   <data name="&gt;&gt;tsmiCopyForumLinkedImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssCopy4.Name" xml:space="preserve">
     <value>tssCopy4</value>
   </data>
   <data name="&gt;&gt;tssCopy4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyMarkdownLink.Name" xml:space="preserve">
     <value>tsmiCopyMarkdownLink</value>
   </data>
   <data name="&gt;&gt;tsmiCopyMarkdownLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyMarkdownImage.Name" xml:space="preserve">
     <value>tsmiCopyMarkdownImage</value>
   </data>
   <data name="&gt;&gt;tsmiCopyMarkdownImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyMarkdownLinkedImage.Name" xml:space="preserve">
     <value>tsmiCopyMarkdownLinkedImage</value>
   </data>
   <data name="&gt;&gt;tsmiCopyMarkdownLinkedImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssCopy5.Name" xml:space="preserve">
     <value>tssCopy5</value>
   </data>
   <data name="&gt;&gt;tssCopy5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFilePath.Name" xml:space="preserve">
     <value>tsmiCopyFilePath</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFilePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFileName.Name" xml:space="preserve">
     <value>tsmiCopyFileName</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFileNameWithExtension.Name" xml:space="preserve">
     <value>tsmiCopyFileNameWithExtension</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFileNameWithExtension.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFolder.Name" xml:space="preserve">
     <value>tsmiCopyFolder</value>
   </data>
   <data name="&gt;&gt;tsmiCopyFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssCopy6.Name" xml:space="preserve">
     <value>tssCopy6</value>
   </data>
   <data name="&gt;&gt;tssCopy6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiUploadSelectedFile.Name" xml:space="preserve">
     <value>tsmiUploadSelectedFile</value>
   </data>
   <data name="&gt;&gt;tsmiUploadSelectedFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiDownloadSelectedURL.Name" xml:space="preserve">
     <value>tsmiDownloadSelectedURL</value>
   </data>
   <data name="&gt;&gt;tsmiDownloadSelectedURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiEditSelectedFile.Name" xml:space="preserve">
     <value>tsmiEditSelectedFile</value>
   </data>
   <data name="&gt;&gt;tsmiEditSelectedFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiBeautifyImage.Name" xml:space="preserve">
     <value>tsmiBeautifyImage</value>
   </data>
   <data name="&gt;&gt;tsmiBeautifyImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiAddImageEffects.Name" xml:space="preserve">
     <value>tsmiAddImageEffects</value>
   </data>
   <data name="&gt;&gt;tsmiAddImageEffects.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiPinSelectedFile.Name" xml:space="preserve">
     <value>tsmiPinSelectedFile</value>
   </data>
   <data name="&gt;&gt;tsmiPinSelectedFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiRunAction.Name" xml:space="preserve">
     <value>tsmiRunAction</value>
   </data>
   <data name="&gt;&gt;tsmiRunAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiDeleteSelectedItem.Name" xml:space="preserve">
     <value>tsmiDeleteSelectedItem</value>
   </data>
   <data name="&gt;&gt;tsmiDeleteSelectedItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiDeleteSelectedFile.Name" xml:space="preserve">
     <value>tsmiDeleteSelectedFile</value>
   </data>
   <data name="&gt;&gt;tsmiDeleteSelectedFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShortenSelectedURL.Name" xml:space="preserve">
     <value>tsmiShortenSelectedURL</value>
   </data>
   <data name="&gt;&gt;tsmiShortenSelectedURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShareSelectedURL.Name" xml:space="preserve">
     <value>tsmiShareSelectedURL</value>
   </data>
   <data name="&gt;&gt;tsmiShareSelectedURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiGoogleLens.Name" xml:space="preserve">
     <value>tsmiGoogleLens</value>
   </data>
   <data name="&gt;&gt;tsmiGoogleLens.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiBingVisualSearch.Name" xml:space="preserve">
     <value>tsmiBingVisualSearch</value>
   </data>
   <data name="&gt;&gt;tsmiBingVisualSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowQRCode.Name" xml:space="preserve">
     <value>tsmiShowQRCode</value>
   </data>
   <data name="&gt;&gt;tsmiShowQRCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOCRImage.Name" xml:space="preserve">
     <value>tsmiOCRImage</value>
   </data>
   <data name="&gt;&gt;tsmiOCRImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCombineImages.Name" xml:space="preserve">
     <value>tsmiCombineImages</value>
   </data>
   <data name="&gt;&gt;tsmiCombineImages.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCombineImagesHorizontally.Name" xml:space="preserve">
     <value>tsmiCombineImagesHorizontally</value>
   </data>
   <data name="&gt;&gt;tsmiCombineImagesHorizontally.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiCombineImagesVertically.Name" xml:space="preserve">
     <value>tsmiCombineImagesVertically</value>
   </data>
   <data name="&gt;&gt;tsmiCombineImagesVertically.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowResponse.Name" xml:space="preserve">
     <value>tsmiShowResponse</value>
   </data>
   <data name="&gt;&gt;tsmiShowResponse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiClearList.Name" xml:space="preserve">
     <value>tsmiClearList</value>
   </data>
   <data name="&gt;&gt;tsmiClearList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssUploadInfo1.Name" xml:space="preserve">
     <value>tssUploadInfo1</value>
   </data>
   <data name="&gt;&gt;tssUploadInfo1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiSwitchTaskViewMode.Name" xml:space="preserve">
     <value>tsmiSwitchTaskViewMode</value>
   </data>
   <data name="&gt;&gt;tsmiSwitchTaskViewMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;niTray.Name" xml:space="preserve">
     <value>niTray</value>
   </data>
   <data name="&gt;&gt;niTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayCapture.Name" xml:space="preserve">
     <value>tsmiTrayCapture</value>
   </data>
   <data name="&gt;&gt;tsmiTrayCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayFullscreen.Name" xml:space="preserve">
     <value>tsmiTrayFullscreen</value>
   </data>
   <data name="&gt;&gt;tsmiTrayFullscreen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayWindow.Name" xml:space="preserve">
     <value>tsmiTrayWindow</value>
   </data>
   <data name="&gt;&gt;tsmiTrayWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayMonitor.Name" xml:space="preserve">
     <value>tsmiTrayMonitor</value>
   </data>
   <data name="&gt;&gt;tsmiTrayMonitor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRectangle.Name" xml:space="preserve">
     <value>tsmiTrayRectangle</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRectangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRectangleLight.Name" xml:space="preserve">
     <value>tsmiTrayRectangleLight</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRectangleLight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRectangleTransparent.Name" xml:space="preserve">
     <value>tsmiTrayRectangleTransparent</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRectangleTransparent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayLastRegion.Name" xml:space="preserve">
     <value>tsmiTrayLastRegion</value>
   </data>
   <data name="&gt;&gt;tsmiTrayLastRegion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenRecordingFFmpeg.Name" xml:space="preserve">
     <value>tsmiTrayScreenRecordingFFmpeg</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenRecordingFFmpeg.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenRecordingGIF.Name" xml:space="preserve">
     <value>tsmiTrayScreenRecordingGIF</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenRecordingGIF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScrollingCapture.Name" xml:space="preserve">
     <value>tsmiTrayScrollingCapture</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScrollingCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayAutoCapture.Name" xml:space="preserve">
     <value>tsmiTrayAutoCapture</value>
   </data>
   <data name="&gt;&gt;tsmiTrayAutoCapture.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTrayCapture1.Name" xml:space="preserve">
     <value>tssTrayCapture1</value>
   </data>
   <data name="&gt;&gt;tssTrayCapture1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayShowCursor.Name" xml:space="preserve">
     <value>tsmiTrayShowCursor</value>
   </data>
   <data name="&gt;&gt;tsmiTrayShowCursor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay.Name" xml:space="preserve">
     <value>tsmiTrayScreenshotDelay</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay0.Name" xml:space="preserve">
     <value>tsmiTrayScreenshotDelay0</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay1.Name" xml:space="preserve">
     <value>tsmiTrayScreenshotDelay1</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay2.Name" xml:space="preserve">
     <value>tsmiTrayScreenshotDelay2</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay3.Name" xml:space="preserve">
     <value>tsmiTrayScreenshotDelay3</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay4.Name" xml:space="preserve">
     <value>tsmiTrayScreenshotDelay4</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay5.Name" xml:space="preserve">
     <value>tsmiTrayScreenshotDelay5</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenshotDelay5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUpload.Name" xml:space="preserve">
     <value>tsmiTrayUpload</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadFile.Name" xml:space="preserve">
     <value>tsmiTrayUploadFile</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadFolder.Name" xml:space="preserve">
     <value>tsmiTrayUploadFolder</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadClipboard.Name" xml:space="preserve">
     <value>tsmiTrayUploadClipboard</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadClipboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadText.Name" xml:space="preserve">
     <value>tsmiTrayUploadText</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadURL.Name" xml:space="preserve">
     <value>tsmiTrayUploadURL</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadDragDrop.Name" xml:space="preserve">
     <value>tsmiTrayUploadDragDrop</value>
   </data>
   <data name="&gt;&gt;tsmiTrayUploadDragDrop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayShortenURL.Name" xml:space="preserve">
     <value>tsmiTrayShortenURL</value>
   </data>
   <data name="&gt;&gt;tsmiTrayShortenURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTweetMessage.Name" xml:space="preserve">
     <value>tsmiTrayTweetMessage</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTweetMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayWorkflows.Name" xml:space="preserve">
     <value>tsmiTrayWorkflows</value>
   </data>
   <data name="&gt;&gt;tsmiTrayWorkflows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTools.Name" xml:space="preserve">
     <value>tsmiTrayTools</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTools.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayColorPicker.Name" xml:space="preserve">
     <value>tsmiTrayColorPicker</value>
   </data>
   <data name="&gt;&gt;tsmiTrayColorPicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenColorPicker.Name" xml:space="preserve">
     <value>tsmiTrayScreenColorPicker</value>
   </data>
   <data name="&gt;&gt;tsmiTrayScreenColorPicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRuler.Name" xml:space="preserve">
     <value>tsmiTrayRuler</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRuler.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayPinToScreen.Name" xml:space="preserve">
     <value>tsmiTrayPinToScreen</value>
   </data>
   <data name="&gt;&gt;tsmiTrayPinToScreen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTrayTools1.Name" xml:space="preserve">
     <value>tssTrayTools1</value>
   </data>
   <data name="&gt;&gt;tssTrayTools1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageEditor.Name" xml:space="preserve">
     <value>tsmiTrayImageEditor</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageEditor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageBeautifier.Name" xml:space="preserve">
     <value>tsmiTrayImageBeautifier</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageBeautifier.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageEffects.Name" xml:space="preserve">
     <value>tsmiTrayImageEffects</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageEffects.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageViewer.Name" xml:space="preserve">
     <value>tsmiTrayImageViewer</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageViewer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageCombiner.Name" xml:space="preserve">
     <value>tsmiTrayImageCombiner</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageCombiner.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageSplitter.Name" xml:space="preserve">
     <value>tsmiTrayImageSplitter</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageSplitter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageThumbnailer.Name" xml:space="preserve">
     <value>tsmiTrayImageThumbnailer</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageThumbnailer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTrayTools2.Name" xml:space="preserve">
     <value>tssTrayTools2</value>
   </data>
   <data name="&gt;&gt;tssTrayTools2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayVideoConverter.Name" xml:space="preserve">
     <value>tsmiTrayVideoConverter</value>
   </data>
   <data name="&gt;&gt;tsmiTrayVideoConverter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Name" xml:space="preserve">
     <value>tsmiTrayVideoThumbnailer</value>
   </data>
   <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTrayTools3.Name" xml:space="preserve">
     <value>tssTrayTools3</value>
   </data>
   <data name="&gt;&gt;tssTrayTools3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayOCR.Name" xml:space="preserve">
     <value>tsmiTrayOCR</value>
   </data>
   <data name="&gt;&gt;tsmiTrayOCR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayQRCode.Name" xml:space="preserve">
     <value>tsmiTrayQRCode</value>
   </data>
   <data name="&gt;&gt;tsmiTrayQRCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHashChecker.Name" xml:space="preserve">
     <value>tsmiTrayHashChecker</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHashChecker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayIndexFolder.Name" xml:space="preserve">
     <value>tsmiTrayIndexFolder</value>
   </data>
   <data name="&gt;&gt;tsmiTrayIndexFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTrayTools4.Name" xml:space="preserve">
     <value>tssTrayTools4</value>
   </data>
   <data name="&gt;&gt;tssTrayTools4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayClipboardViewer.Name" xml:space="preserve">
     <value>tsmiTrayClipboardViewer</value>
   </data>
   <data name="&gt;&gt;tsmiTrayClipboardViewer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayBorderlessWindow.Name" xml:space="preserve">
     <value>tsmiTrayBorderlessWindow</value>
   </data>
   <data name="&gt;&gt;tsmiTrayBorderlessWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayInspectWindow.Name" xml:space="preserve">
     <value>tsmiTrayInspectWindow</value>
   </data>
   <data name="&gt;&gt;tsmiTrayInspectWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayMonitorTest.Name" xml:space="preserve">
     <value>tsmiTrayMonitorTest</value>
   </data>
   <data name="&gt;&gt;tsmiTrayMonitorTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayDNSChanger.Name" xml:space="preserve">
     <value>tsmiTrayDNSChanger</value>
   </data>
   <data name="&gt;&gt;tsmiTrayDNSChanger.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTray1.Name" xml:space="preserve">
     <value>tssTray1</value>
   </data>
   <data name="&gt;&gt;tssTray1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayAfterCaptureTasks.Name" xml:space="preserve">
     <value>tsmiTrayAfterCaptureTasks</value>
   </data>
   <data name="&gt;&gt;tsmiTrayAfterCaptureTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayAfterUploadTasks.Name" xml:space="preserve">
     <value>tsmiTrayAfterUploadTasks</value>
   </data>
   <data name="&gt;&gt;tsmiTrayAfterUploadTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayDestinations.Name" xml:space="preserve">
     <value>tsmiTrayDestinations</value>
   </data>
   <data name="&gt;&gt;tsmiTrayDestinations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageUploaders.Name" xml:space="preserve">
     <value>tsmiTrayImageUploaders</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTextUploaders.Name" xml:space="preserve">
     <value>tsmiTrayTextUploaders</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTextUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayFileUploaders.Name" xml:space="preserve">
     <value>tsmiTrayFileUploaders</value>
   </data>
   <data name="&gt;&gt;tsmiTrayFileUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayURLShorteners.Name" xml:space="preserve">
     <value>tsmiTrayURLShorteners</value>
   </data>
   <data name="&gt;&gt;tsmiTrayURLShorteners.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayURLSharingServices.Name" xml:space="preserve">
     <value>tsmiTrayURLSharingServices</value>
   </data>
   <data name="&gt;&gt;tsmiTrayURLSharingServices.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTrayDestinations1.Name" xml:space="preserve">
     <value>tssTrayDestinations1</value>
   </data>
   <data name="&gt;&gt;tssTrayDestinations1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayDestinationSettings.Name" xml:space="preserve">
     <value>tsmiTrayDestinationSettings</value>
   </data>
   <data name="&gt;&gt;tsmiTrayDestinationSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Name" xml:space="preserve">
     <value>tsmiTrayCustomUploaderSettings</value>
   </data>
   <data name="&gt;&gt;tsmiTrayCustomUploaderSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayApplicationSettings.Name" xml:space="preserve">
     <value>tsmiTrayApplicationSettings</value>
   </data>
   <data name="&gt;&gt;tsmiTrayApplicationSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTaskSettings.Name" xml:space="preserve">
     <value>tsmiTrayTaskSettings</value>
   </data>
   <data name="&gt;&gt;tsmiTrayTaskSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHotkeySettings.Name" xml:space="preserve">
     <value>tsmiTrayHotkeySettings</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHotkeySettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayToggleHotkeys.Name" xml:space="preserve">
     <value>tsmiTrayToggleHotkeys</value>
   </data>
   <data name="&gt;&gt;tsmiTrayToggleHotkeys.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTray2.Name" xml:space="preserve">
     <value>tssTray2</value>
   </data>
   <data name="&gt;&gt;tssTray2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotsFolder.Name" xml:space="preserve">
     <value>tsmiScreenshotsFolder</value>
   </data>
   <data name="&gt;&gt;tsmiScreenshotsFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHistory.Name" xml:space="preserve">
     <value>tsmiTrayHistory</value>
   </data>
   <data name="&gt;&gt;tsmiTrayHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageHistory.Name" xml:space="preserve">
     <value>tsmiTrayImageHistory</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTray3.Name" xml:space="preserve">
     <value>tssTray3</value>
   </data>
   <data name="&gt;&gt;tssTray3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiRestartAsAdmin.Name" xml:space="preserve">
     <value>tsmiRestartAsAdmin</value>
   </data>
   <data name="&gt;&gt;tsmiRestartAsAdmin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRecentItems.Name" xml:space="preserve">
     <value>tsmiTrayRecentItems</value>
   </data>
   <data name="&gt;&gt;tsmiTrayRecentItems.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiOpenActionsToolbar.Name" xml:space="preserve">
     <value>tsmiOpenActionsToolbar</value>
   </data>
   <data name="&gt;&gt;tsmiOpenActionsToolbar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayShow.Name" xml:space="preserve">
     <value>tsmiTrayShow</value>
   </data>
   <data name="&gt;&gt;tsmiTrayShow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayExit.Name" xml:space="preserve">
     <value>tsmiTrayExit</value>
   </data>
   <data name="&gt;&gt;tsmiTrayExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;timerTraySingleClick.Name" xml:space="preserve">
     <value>timerTraySingleClick</value>
   </data>
   <data name="&gt;&gt;timerTraySingleClick.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ttMain.Name" xml:space="preserve">
     <value>ttMain</value>
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cHotkeyStatus.Name" xml:space="preserve">
     <value>cHotkeyStatus</value>
   </data>
   <data name="&gt;&gt;cHotkeyStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cHotkey.Name" xml:space="preserve">
     <value>cHotkey</value>
   </data>
   <data name="&gt;&gt;cHotkey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cDescription.Name" xml:space="preserve">
     <value>cDescription</value>
   </data>
   <data name="&gt;&gt;cDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.HotkeyForm, ShareX.HelpersLib, Version=16.1.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.Input.HotkeyForm, ShareX.HelpersLib, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

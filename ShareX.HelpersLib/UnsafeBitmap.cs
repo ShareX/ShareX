@@ -27,164 +27,163 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public unsafe class UnsafeBitmap : IDisposable
 {
-    public unsafe class UnsafeBitmap : IDisposable
+    public ColorBgra* Pointer { get; private set; }
+    public bool IsLocked { get; private set; }
+    public int Width { get; private set; }
+    public int Height { get; private set; }
+
+    public int PixelCount => Width * Height;
+
+    private Bitmap bitmap;
+    private BitmapData bitmapData;
+
+    public UnsafeBitmap(Bitmap bitmap, bool lockBitmap = false, ImageLockMode imageLockMode = ImageLockMode.ReadWrite)
     {
-        public ColorBgra* Pointer { get; private set; }
-        public bool IsLocked { get; private set; }
-        public int Width { get; private set; }
-        public int Height { get; private set; }
+        this.bitmap = bitmap;
+        Width = bitmap.Width;
+        Height = bitmap.Height;
 
-        public int PixelCount => Width * Height;
-
-        private Bitmap bitmap;
-        private BitmapData bitmapData;
-
-        public UnsafeBitmap(Bitmap bitmap, bool lockBitmap = false, ImageLockMode imageLockMode = ImageLockMode.ReadWrite)
+        if (lockBitmap)
         {
-            this.bitmap = bitmap;
-            Width = bitmap.Width;
-            Height = bitmap.Height;
+            Lock(imageLockMode);
+        }
+    }
 
-            if (lockBitmap)
-            {
-                Lock(imageLockMode);
-            }
+    public void Lock(ImageLockMode imageLockMode = ImageLockMode.ReadWrite)
+    {
+        if (!IsLocked)
+        {
+            IsLocked = true;
+            bitmapData = bitmap.LockBits(new Rectangle(0, 0, Width, Height), imageLockMode, PixelFormat.Format32bppArgb);
+            Pointer = (ColorBgra*)bitmapData.Scan0.ToPointer();
+        }
+    }
+
+    public void Unlock()
+    {
+        if (IsLocked)
+        {
+            bitmap.UnlockBits(bitmapData);
+            bitmapData = null;
+            Pointer = null;
+            IsLocked = false;
+        }
+    }
+
+    public static bool operator ==(UnsafeBitmap bmp1, UnsafeBitmap bmp2)
+    {
+        return ReferenceEquals(bmp1, bmp2) || bmp1.Equals(bmp2);
+    }
+
+    public static bool operator !=(UnsafeBitmap bmp1, UnsafeBitmap bmp2)
+    {
+        return !(bmp1 == bmp2);
+    }
+
+    public override bool Equals(object obj)
+    {
+        return obj is UnsafeBitmap unsafeBitmap && Compare(unsafeBitmap, this);
+    }
+
+    public override int GetHashCode()
+    {
+        return PixelCount;
+    }
+
+    public static bool Compare(UnsafeBitmap bmp1, UnsafeBitmap bmp2)
+    {
+        int pixelCount = bmp1.PixelCount;
+
+        if (pixelCount != bmp2.PixelCount)
+        {
+            return false;
         }
 
-        public void Lock(ImageLockMode imageLockMode = ImageLockMode.ReadWrite)
-        {
-            if (!IsLocked)
-            {
-                IsLocked = true;
-                bitmapData = bitmap.LockBits(new Rectangle(0, 0, Width, Height), imageLockMode, PixelFormat.Format32bppArgb);
-                Pointer = (ColorBgra*)bitmapData.Scan0.ToPointer();
-            }
-        }
+        bmp1.Lock(ImageLockMode.ReadOnly);
+        bmp2.Lock(ImageLockMode.ReadOnly);
 
-        public void Unlock()
-        {
-            if (IsLocked)
-            {
-                bitmap.UnlockBits(bitmapData);
-                bitmapData = null;
-                Pointer = null;
-                IsLocked = false;
-            }
-        }
+        ColorBgra* pointer1 = bmp1.Pointer;
+        ColorBgra* pointer2 = bmp2.Pointer;
 
-        public static bool operator ==(UnsafeBitmap bmp1, UnsafeBitmap bmp2)
+        for (int i = 0; i < pixelCount; i++)
         {
-            return ReferenceEquals(bmp1, bmp2) || bmp1.Equals(bmp2);
-        }
-
-        public static bool operator !=(UnsafeBitmap bmp1, UnsafeBitmap bmp2)
-        {
-            return !(bmp1 == bmp2);
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is UnsafeBitmap unsafeBitmap && Compare(unsafeBitmap, this);
-        }
-
-        public override int GetHashCode()
-        {
-            return PixelCount;
-        }
-
-        public static bool Compare(UnsafeBitmap bmp1, UnsafeBitmap bmp2)
-        {
-            int pixelCount = bmp1.PixelCount;
-
-            if (pixelCount != bmp2.PixelCount)
+            if (pointer1->Bgra != pointer2->Bgra)
             {
                 return false;
             }
 
-            bmp1.Lock(ImageLockMode.ReadOnly);
-            bmp2.Lock(ImageLockMode.ReadOnly);
+            pointer1++;
+            pointer2++;
+        }
 
-            ColorBgra* pointer1 = bmp1.Pointer;
-            ColorBgra* pointer2 = bmp2.Pointer;
+        return true;
+    }
 
-            for (int i = 0; i < pixelCount; i++)
+    public bool IsTransparent()
+    {
+        int pixelCount = PixelCount;
+
+        ColorBgra* pointer = Pointer;
+
+        for (int i = 0; i < pixelCount; i++)
+        {
+            if (pointer->Alpha < 255)
             {
-                if (pointer1->Bgra != pointer2->Bgra)
-                {
-                    return false;
-                }
-
-                pointer1++;
-                pointer2++;
+                return true;
             }
 
-            return true;
+            pointer++;
         }
 
-        public bool IsTransparent()
-        {
-            int pixelCount = PixelCount;
+        return false;
+    }
 
-            ColorBgra* pointer = Pointer;
+    public ColorBgra GetPixel(int i)
+    {
+        return Pointer[i];
+    }
 
-            for (int i = 0; i < pixelCount; i++)
-            {
-                if (pointer->Alpha < 255)
-                {
-                    return true;
-                }
+    public ColorBgra GetPixel(int x, int y)
+    {
+        return Pointer[x + (y * Width)];
+    }
 
-                pointer++;
-            }
+    public void SetPixel(int i, ColorBgra color)
+    {
+        Pointer[i] = color;
+    }
 
-            return false;
-        }
+    public void SetPixel(int i, uint color)
+    {
+        Pointer[i] = color;
+    }
 
-        public ColorBgra GetPixel(int i)
-        {
-            return Pointer[i];
-        }
+    public void SetPixel(int x, int y, ColorBgra color)
+    {
+        Pointer[x + (y * Width)] = color;
+    }
 
-        public ColorBgra GetPixel(int x, int y)
-        {
-            return Pointer[x + (y * Width)];
-        }
+    public void SetPixel(int x, int y, uint color)
+    {
+        Pointer[x + (y * Width)] = color;
+    }
 
-        public void SetPixel(int i, ColorBgra color)
-        {
-            Pointer[i] = color;
-        }
+    public void ClearPixel(int i)
+    {
+        Pointer[i] = 0;
+    }
 
-        public void SetPixel(int i, uint color)
-        {
-            Pointer[i] = color;
-        }
+    public void ClearPixel(int x, int y)
+    {
+        Pointer[x + (y * Width)] = 0;
+    }
 
-        public void SetPixel(int x, int y, ColorBgra color)
-        {
-            Pointer[x + (y * Width)] = color;
-        }
-
-        public void SetPixel(int x, int y, uint color)
-        {
-            Pointer[x + (y * Width)] = color;
-        }
-
-        public void ClearPixel(int i)
-        {
-            Pointer[i] = 0;
-        }
-
-        public void ClearPixel(int x, int y)
-        {
-            Pointer[x + (y * Width)] = 0;
-        }
-
-        public void Dispose()
-        {
-            Unlock();
-        }
+    public void Dispose()
+    {
+        Unlock();
     }
 }

@@ -26,16 +26,15 @@
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
-{
-    [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
-    public class ToolStripLabeledComboBox : ToolStripControlHost
-    {
-        public LabeledComboBox Content => Control as LabeledComboBox;
+namespace ShareX.HelpersLib.Controls;
 
-        public ToolStripLabeledComboBox(string text) : base(new LabeledComboBox())
-        {
-            Content.Text = text;
-        }
+[ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
+public class ToolStripLabeledComboBox : ToolStripControlHost
+{
+    public LabeledComboBox Content => Control as LabeledComboBox;
+
+    public ToolStripLabeledComboBox(string text) : base(new LabeledComboBox())
+    {
+        Content.Text = text;
     }
 }

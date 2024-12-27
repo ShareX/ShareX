@@ -23,30 +23,29 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class AmazonS3Endpoint
 {
-    public class AmazonS3Endpoint
+    public string Name { get; set; }
+    public string Endpoint { get; set; }
+    public string Region { get; set; }
+
+    public AmazonS3Endpoint(string name, string endpoint)
     {
-        public string Name { get; set; }
-        public string Endpoint { get; set; }
-        public string Region { get; set; }
+        Name = name;
+        Endpoint = endpoint;
+    }
 
-        public AmazonS3Endpoint(string name, string endpoint)
-        {
-            Name = name;
-            Endpoint = endpoint;
-        }
+    public AmazonS3Endpoint(string name, string endpoint, string region)
+    {
+        Name = name;
+        Endpoint = endpoint;
+        Region = region;
+    }
 
-        public AmazonS3Endpoint(string name, string endpoint, string region)
-        {
-            Name = name;
-            Endpoint = endpoint;
-            Region = region;
-        }
-
-        public override string ToString()
-        {
-            return Name;
-        }
+    public override string ToString()
+    {
+        return Name;
     }
 }

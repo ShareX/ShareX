@@ -24,67 +24,68 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.ImageUploaders;
+using ShareX.UploadersLib.OAuth;
+
 using System;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.SharingServices
+namespace ShareX.UploadersLib.SharingServices;
+
+public class TwitterSharingService : URLSharingService
 {
-    public class TwitterSharingService : URLSharingService
+    public override URLSharingServices EnumValue { get; } = URLSharingServices.Twitter;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override URLSharingServices EnumValue { get; } = URLSharingServices.Twitter;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return config.TwitterOAuthInfoList != null && config.TwitterOAuthInfoList.IsValidIndex(config.TwitterSelectedAccount) &&
-                OAuthInfo.CheckOAuth(config.TwitterOAuthInfoList[config.TwitterSelectedAccount]);
-        }
-
-        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new TwitterSharer(config);
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTwitter;
+        return config.TwitterOAuthInfoList != null && config.TwitterOAuthInfoList.IsValidIndex(config.TwitterSelectedAccount) &&
+            OAuthInfo.CheckOAuth(config.TwitterOAuthInfoList[config.TwitterSelectedAccount]);
     }
 
-    public sealed class TwitterSharer : URLSharer
+    public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        private UploadersConfig config;
+        return new TwitterSharer(config);
+    }
 
-        public TwitterSharer(UploadersConfig config)
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTwitter;
+}
+
+public sealed class TwitterSharer : URLSharer
+{
+    private UploadersConfig config;
+
+    public TwitterSharer(UploadersConfig config)
+    {
+        this.config = config;
+    }
+
+    public override UploadResult ShareURL(string url)
+    {
+        UploadResult result = new() { URL = url, IsURLExpected = false };
+
+        OAuthInfo twitterOAuth = config.TwitterOAuthInfoList[config.TwitterSelectedAccount];
+
+        if (config.TwitterSkipMessageBox)
         {
-            this.config = config;
+            try
+            {
+                new Twitter(twitterOAuth).TweetMessage(url);
+            } catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+        } else
+        {
+            using TwitterTweetForm twitter = new(twitterOAuth, url);
+            twitter.ShowDialog();
         }
 
-        public override UploadResult ShareURL(string url)
-        {
-            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
+        //URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
 
-            OAuthInfo twitterOAuth = config.TwitterOAuthInfoList[config.TwitterSelectedAccount];
-
-            if (config.TwitterSkipMessageBox)
-            {
-                try
-                {
-                    new Twitter(twitterOAuth).TweetMessage(url);
-                }
-                catch (Exception ex)
-                {
-                    DebugHelper.WriteException(ex);
-                }
-            }
-            else
-            {
-                using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth, url))
-                {
-                    twitter.ShowDialog();
-                }
-            }
-
-            //URLHelpers.OpenURL("https://twitter.com/intent/tweet?text=" + encodedUrl);
-
-            return result;
-        }
+        return result;
     }
 }

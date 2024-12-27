@@ -24,62 +24,59 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes.Drawing;
+
+public class FreehandArrowDrawingShape : FreehandDrawingShape
 {
-    public class FreehandArrowDrawingShape : FreehandDrawingShape
+    public override ShapeType ShapeType { get; } = ShapeType.DrawingFreehandArrow;
+
+    public ArrowHeadDirection ArrowHeadDirection { get; set; }
+
+    public override void OnConfigLoad()
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingFreehandArrow;
+        base.OnConfigLoad();
+        ArrowHeadDirection = AnnotationOptions.ArrowHeadDirection;
+    }
 
-        public ArrowHeadDirection ArrowHeadDirection { get; set; }
+    public override void OnConfigSave()
+    {
+        base.OnConfigSave();
+        AnnotationOptions.ArrowHeadDirection = ArrowHeadDirection;
+    }
 
-        public override void OnConfigLoad()
+    protected override Pen CreatePen(Color borderColor, int borderSize, BorderStyle borderStyle)
+    {
+        using GraphicsPath gp = new();
+        int arrowWidth = 2, arrowHeight = 6, arrowCurve = 1;
+        gp.AddLine(new Point(0, 0), new Point(-arrowWidth, -arrowHeight));
+        gp.AddCurve(new Point[] { new(-arrowWidth, -arrowHeight), new(0, -arrowHeight + arrowCurve), new(arrowWidth, -arrowHeight) });
+        gp.CloseFigure();
+
+        CustomLineCap lineCap = new(gp, null)
         {
-            base.OnConfigLoad();
-            ArrowHeadDirection = AnnotationOptions.ArrowHeadDirection;
+            BaseInset = arrowHeight - arrowCurve
+        };
+
+        Pen pen = new(borderColor, borderSize);
+
+        if (ArrowHeadDirection == ArrowHeadDirection.Both && MathHelpers.Distance(positions[0], positions[positions.Count - 1]) > arrowHeight * borderSize * 2)
+        {
+            pen.CustomEndCap = pen.CustomStartCap = lineCap;
+        } else if (ArrowHeadDirection == ArrowHeadDirection.Start)
+        {
+            pen.CustomStartCap = lineCap;
+        } else
+        {
+            pen.CustomEndCap = lineCap;
         }
 
-        public override void OnConfigSave()
-        {
-            base.OnConfigSave();
-            AnnotationOptions.ArrowHeadDirection = ArrowHeadDirection;
-        }
-
-        protected override Pen CreatePen(Color borderColor, int borderSize, BorderStyle borderStyle)
-        {
-            using (GraphicsPath gp = new GraphicsPath())
-            {
-                int arrowWidth = 2, arrowHeight = 6, arrowCurve = 1;
-                gp.AddLine(new Point(0, 0), new Point(-arrowWidth, -arrowHeight));
-                gp.AddCurve(new Point[] { new Point(-arrowWidth, -arrowHeight), new Point(0, -arrowHeight + arrowCurve), new Point(arrowWidth, -arrowHeight) });
-                gp.CloseFigure();
-
-                CustomLineCap lineCap = new CustomLineCap(gp, null)
-                {
-                    BaseInset = arrowHeight - arrowCurve
-                };
-
-                Pen pen = new Pen(borderColor, borderSize);
-
-                if (ArrowHeadDirection == ArrowHeadDirection.Both && MathHelpers.Distance(positions[0], positions[positions.Count - 1]) > arrowHeight * borderSize * 2)
-                {
-                    pen.CustomEndCap = pen.CustomStartCap = lineCap;
-                }
-                else if (ArrowHeadDirection == ArrowHeadDirection.Start)
-                {
-                    pen.CustomStartCap = lineCap;
-                }
-                else
-                {
-                    pen.CustomEndCap = lineCap;
-                }
-
-                pen.LineJoin = LineJoin.Round;
-                pen.DashStyle = (DashStyle)borderStyle;
-                return pen;
-            }
-        }
+        pen.LineJoin = LineJoin.Round;
+        pen.DashStyle = (DashStyle)borderStyle;
+        return pen;
     }
 }

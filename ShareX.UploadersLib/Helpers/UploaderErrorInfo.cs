@@ -25,18 +25,17 @@
 
 using System;
 
-namespace ShareX.UploadersLib
-{
-    public class UploaderErrorInfo
-    {
-        public string Title { get; set; }
-        public string Text { get; set; }
-        public Exception Exception { get; set; }
+namespace ShareX.UploadersLib.Helpers;
 
-        public UploaderErrorInfo(string title, string text)
-        {
-            Title = title;
-            Text = text;
-        }
+public class UploaderErrorInfo
+{
+    public string Title { get; set; }
+    public string Text { get; set; }
+    public Exception Exception { get; set; }
+
+    public UploaderErrorInfo(string title, string text)
+    {
+        Title = title;
+        Text = text;
     }
 }

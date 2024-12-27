@@ -23,56 +23,53 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.Random;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShareX.HistoryLib
+namespace ShareX.HistoryLib;
+
+public class HistoryManagerMock(string filePath) : HistoryManager(filePath)
 {
-    public class HistoryManagerMock : HistoryManager
+    private int itemCount = 10000;
+
+    protected override List<HistoryItem> Load(string filePath)
     {
-        private int itemCount = 10000;
+        List<HistoryItem> items = new();
 
-        public HistoryManagerMock(string filePath) : base(filePath)
+        for (int i = 0; i < itemCount; i++)
         {
+            items.Add(CreateMockHistoryItem());
         }
 
-        protected override List<HistoryItem> Load(string filePath)
+        return items.OrderBy(x => x.DateTime).ToList();
+    }
+
+    private HistoryItem CreateMockHistoryItem()
+    {
+        string fileName = $"ShareX_{Helpers.GetRandomAlphanumeric(10)}.png";
+
+        HistoryItem historyItem = new()
         {
-            List<HistoryItem> items = new List<HistoryItem>();
+            FileName = fileName,
+            FilePath = @"..\..\..\ShareX.HelpersLib\Resources\ShareX_Logo.png",
+            DateTime = DateTime.Now.AddSeconds(-RandomFast.Next(0, 1000000)),
+            Type = "Image",
+            Host = "Amazon S3",
+            URL = "https://i.example.com/" + fileName,
+            ThumbnailURL = "https://t.example.com/" + fileName,
+            DeletionURL = "https://d.example.com/" + fileName,
+            ShortenedURL = "https://s.example.com/" + fileName
+        };
 
-            for (int i = 0; i < itemCount; i++)
-            {
-                items.Add(CreateMockHistoryItem());
-            }
+        return historyItem;
+    }
 
-            return items.OrderBy(x => x.DateTime).ToList();
-        }
-
-        private HistoryItem CreateMockHistoryItem()
-        {
-            string fileName = $"ShareX_{Helpers.GetRandomAlphanumeric(10)}.png";
-
-            HistoryItem historyItem = new HistoryItem()
-            {
-                FileName = fileName,
-                FilePath = @"..\..\..\ShareX.HelpersLib\Resources\ShareX_Logo.png",
-                DateTime = DateTime.Now.AddSeconds(-RandomFast.Next(0, 1000000)),
-                Type = "Image",
-                Host = "Amazon S3",
-                URL = "https://i.example.com/" + fileName,
-                ThumbnailURL = "https://t.example.com/" + fileName,
-                DeletionURL = "https://d.example.com/" + fileName,
-                ShortenedURL = "https://s.example.com/" + fileName
-            };
-
-            return historyItem;
-        }
-
-        protected override bool Append(string filePath, IEnumerable<HistoryItem> historyItems)
-        {
-            return true;
-        }
+    protected override bool Append(string filePath, IEnumerable<HistoryItem> historyItems)
+    {
+        return true;
     }
 }

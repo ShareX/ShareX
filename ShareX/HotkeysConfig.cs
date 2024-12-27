@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Settings;
+
 using System.Collections.Generic;
 
-namespace ShareX
+namespace ShareX;
+
+public class HotkeysConfig : SettingsBase<HotkeysConfig>
 {
-    public class HotkeysConfig : SettingsBase<HotkeysConfig>
-    {
-        public List<HotkeySettings> Hotkeys = HotkeyManager.GetDefaultHotkeyList();
-    }
+    public List<HotkeySettings> Hotkeys = HotkeyManager.GetDefaultHotkeyList();
 }

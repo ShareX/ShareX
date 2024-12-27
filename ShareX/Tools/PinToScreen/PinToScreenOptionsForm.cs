@@ -24,71 +24,76 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.Tools.PinToScreen;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class PinToScreenOptionsForm : Form
 {
-    public partial class PinToScreenOptionsForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public PinToScreenOptions Options { get; private set; }
+
+    public PinToScreenOptionsForm(PinToScreenOptions options)
     {
-        public PinToScreenOptions Options { get; private set; }
+        Options = options;
 
-        public PinToScreenOptionsForm(PinToScreenOptions options)
-        {
-            Options = options;
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+        InitOptions();
+        LoadOptions();
+    }
 
-            InitOptions();
-            LoadOptions();
-        }
+    private void InitOptions()
+    {
+        cbPlacement.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ContentAlignment>());
+    }
 
-        private void InitOptions()
-        {
-            cbPlacement.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ContentAlignment>());
-        }
+    private void LoadOptions()
+    {
+        cbPlacement.SelectedIndex = Options.Placement.GetIndex();
+        nudPlacementOffset.SetValue(Options.PlacementOffset);
+        cbTopMost.Checked = Options.TopMost;
+        cbKeepCenterLocation.Checked = Options.KeepCenterLocation;
+        cbShadow.Checked = Options.Shadow;
+        cbBorder.Checked = Options.Border;
+        nudBorderSize.SetValue(Options.BorderSize);
+        btnBorderColor.Color = Options.BorderColor;
+        nudMinimizeSizeWidth.SetValue(Options.MinimizeSize.Width);
+        nudMinimizeSizeHeight.SetValue(Options.MinimizeSize.Height);
+    }
 
-        private void LoadOptions()
-        {
-            cbPlacement.SelectedIndex = Options.Placement.GetIndex();
-            nudPlacementOffset.SetValue(Options.PlacementOffset);
-            cbTopMost.Checked = Options.TopMost;
-            cbKeepCenterLocation.Checked = Options.KeepCenterLocation;
-            cbShadow.Checked = Options.Shadow;
-            cbBorder.Checked = Options.Border;
-            nudBorderSize.SetValue(Options.BorderSize);
-            btnBorderColor.Color = Options.BorderColor;
-            nudMinimizeSizeWidth.SetValue(Options.MinimizeSize.Width);
-            nudMinimizeSizeHeight.SetValue(Options.MinimizeSize.Height);
-        }
+    private void SaveOptions()
+    {
+        Options.Placement = Helpers.GetEnumFromIndex<ContentAlignment>(cbPlacement.SelectedIndex);
+        Options.PlacementOffset = (int)nudPlacementOffset.Value;
+        Options.TopMost = cbTopMost.Checked;
+        Options.KeepCenterLocation = cbKeepCenterLocation.Checked;
+        Options.Shadow = cbShadow.Checked;
+        Options.Border = cbBorder.Checked;
+        Options.BorderSize = (int)nudBorderSize.Value;
+        Options.BorderColor = btnBorderColor.Color;
+        Options.MinimizeSize = new Size((int)nudMinimizeSizeWidth.Value, (int)nudMinimizeSizeHeight.Value);
+    }
 
-        private void SaveOptions()
-        {
-            Options.Placement = Helpers.GetEnumFromIndex<ContentAlignment>(cbPlacement.SelectedIndex);
-            Options.PlacementOffset = (int)nudPlacementOffset.Value;
-            Options.TopMost = cbTopMost.Checked;
-            Options.KeepCenterLocation = cbKeepCenterLocation.Checked;
-            Options.Shadow = cbShadow.Checked;
-            Options.Border = cbBorder.Checked;
-            Options.BorderSize = (int)nudBorderSize.Value;
-            Options.BorderColor = btnBorderColor.Color;
-            Options.MinimizeSize = new Size((int)nudMinimizeSizeWidth.Value, (int)nudMinimizeSizeHeight.Value);
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        SaveOptions();
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            SaveOptions();
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

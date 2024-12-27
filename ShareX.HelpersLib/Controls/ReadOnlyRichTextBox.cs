@@ -23,23 +23,24 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Native;
+
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
-{
-    public class ReadOnlyRichTextBox : RichTextBox
-    {
-        public ReadOnlyRichTextBox()
-        {
-            ReadOnly = true;
-        }
+namespace ShareX.HelpersLib.Controls;
 
-        protected override void WndProc(ref Message m)
+public class ReadOnlyRichTextBox : RichTextBox
+{
+    public ReadOnlyRichTextBox()
+    {
+        ReadOnly = true;
+    }
+
+    protected override void WndProc(ref Message m)
+    {
+        if (m.Msg != (int)WindowsMessages.SETFOCUS)
         {
-            if (m.Msg != (int)WindowsMessages.SETFOCUS)
-            {
-                base.WndProc(ref m);
-            }
+            base.WndProc(ref m);
         }
     }
 }

@@ -24,24 +24,25 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Native;
+
 using System;
 using System.Drawing;
 
-namespace ShareX
-{
-    public class BorderlessWindowInfo
-    {
-        public IntPtr Handle { get; set; }
-        public Rectangle Rectangle { get; set; }
-        public WindowStyles Style { get; set; }
-        public WindowStyles ExStyle { get; set; }
+namespace ShareX.Tools.BorderlessWindow;
 
-        public BorderlessWindowInfo(WindowInfo windowInfo)
-        {
-            Handle = windowInfo.Handle;
-            Rectangle = NativeMethods.GetWindowRect(windowInfo.Handle);
-            Style = windowInfo.Style;
-            ExStyle = windowInfo.ExStyle;
-        }
+public class BorderlessWindowInfo
+{
+    public IntPtr Handle { get; set; }
+    public Rectangle Rectangle { get; set; }
+    public WindowStyles Style { get; set; }
+    public WindowStyles ExStyle { get; set; }
+
+    public BorderlessWindowInfo(WindowInfo windowInfo)
+    {
+        Handle = windowInfo.Handle;
+        Rectangle = NativeMethods.GetWindowRect(windowInfo.Handle);
+        Style = windowInfo.Style;
+        ExStyle = windowInfo.ExStyle;
     }
 }

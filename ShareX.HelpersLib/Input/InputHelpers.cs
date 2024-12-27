@@ -23,98 +23,99 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Native;
+
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Input;
+
+public static class InputHelpers
 {
-    public static class InputHelpers
+    public static bool SendKeyDown(VirtualKeyCode keyCode)
     {
-        public static bool SendKeyDown(VirtualKeyCode keyCode)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddKeyDown(keyCode);
-            return inputManager.SendInputs();
-        }
+        InputManager inputManager = new();
+        inputManager.AddKeyDown(keyCode);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendKeyUp(VirtualKeyCode keyCode)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddKeyUp(keyCode);
-            return inputManager.SendInputs();
-        }
+    public static bool SendKeyUp(VirtualKeyCode keyCode)
+    {
+        InputManager inputManager = new();
+        inputManager.AddKeyUp(keyCode);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendKeyPress(VirtualKeyCode keyCode)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddKeyPress(keyCode);
-            return inputManager.SendInputs();
-        }
+    public static bool SendKeyPress(VirtualKeyCode keyCode)
+    {
+        InputManager inputManager = new();
+        inputManager.AddKeyPress(keyCode);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendKeyPressModifiers(VirtualKeyCode keyCode, params VirtualKeyCode[] modifiers)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddKeyPressModifiers(keyCode, modifiers);
-            return inputManager.SendInputs();
-        }
+    public static bool SendKeyPressModifiers(VirtualKeyCode keyCode, params VirtualKeyCode[] modifiers)
+    {
+        InputManager inputManager = new();
+        inputManager.AddKeyPressModifiers(keyCode, modifiers);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendKeyPressText(string text)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddKeyPressText(text);
-            return inputManager.SendInputs();
-        }
+    public static bool SendKeyPressText(string text)
+    {
+        InputManager inputManager = new();
+        inputManager.AddKeyPressText(text);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendMouseDown(MouseButtons button = MouseButtons.Left)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddMouseDown(button);
-            return inputManager.SendInputs();
-        }
+    public static bool SendMouseDown(MouseButtons button = MouseButtons.Left)
+    {
+        InputManager inputManager = new();
+        inputManager.AddMouseDown(button);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendMouseUp(MouseButtons button = MouseButtons.Left)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddMouseUp(button);
-            return inputManager.SendInputs();
-        }
+    public static bool SendMouseUp(MouseButtons button = MouseButtons.Left)
+    {
+        InputManager inputManager = new();
+        inputManager.AddMouseUp(button);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendMouseClick(MouseButtons button = MouseButtons.Left)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddMouseClick(button);
-            return inputManager.SendInputs();
-        }
+    public static bool SendMouseClick(MouseButtons button = MouseButtons.Left)
+    {
+        InputManager inputManager = new();
+        inputManager.AddMouseClick(button);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendMouseClick(int x, int y, MouseButtons button = MouseButtons.Left)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddMouseClick(x, y, button);
-            return inputManager.SendInputs();
-        }
+    public static bool SendMouseClick(int x, int y, MouseButtons button = MouseButtons.Left)
+    {
+        InputManager inputManager = new();
+        inputManager.AddMouseClick(x, y, button);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendMouseClick(Point position, MouseButtons button = MouseButtons.Left)
-        {
-            return SendMouseClick(position.X, position.Y, button);
-        }
+    public static bool SendMouseClick(Point position, MouseButtons button = MouseButtons.Left)
+    {
+        return SendMouseClick(position.X, position.Y, button);
+    }
 
-        public static bool SendMouseMove(int x, int y)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddMouseMove(x, y);
-            return inputManager.SendInputs();
-        }
+    public static bool SendMouseMove(int x, int y)
+    {
+        InputManager inputManager = new();
+        inputManager.AddMouseMove(x, y);
+        return inputManager.SendInputs();
+    }
 
-        public static bool SendMouseMove(Point position)
-        {
-            return SendMouseMove(position.X, position.Y);
-        }
+    public static bool SendMouseMove(Point position)
+    {
+        return SendMouseMove(position.X, position.Y);
+    }
 
-        public static bool SendMouseWheel(int delta)
-        {
-            InputManager inputManager = new InputManager();
-            inputManager.AddMouseWheel(delta);
-            return inputManager.SendInputs();
-        }
+    public static bool SendMouseWheel(int delta)
+    {
+        InputManager inputManager = new();
+        inputManager.AddMouseWheel(delta);
+        return inputManager.SendInputs();
     }
 }

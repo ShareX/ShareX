@@ -24,174 +24,182 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Controls;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.ImageListView;
+using ShareX.ScreenCaptureLib.Helpers;
+using ShareX.ScreenCaptureLib.Shapes;
+
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public partial class StickerForm : Form
 {
-    public partial class StickerForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public List<StickerPackInfo> StickerPacks { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public int SelectedStickerPack { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public int StickerSize { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string SelectedImageFile { get; set; }
+
+    private string[] imageFiles;
+
+    public StickerForm(List<StickerPackInfo> stickerPacks, int selectedStickerPack, int stickerSize = 64)
     {
-        public List<StickerPackInfo> StickerPacks { get; set; }
-        public int SelectedStickerPack { get; set; }
-        public int StickerSize { get; set; }
-        public string SelectedImageFile { get; set; }
+        StickerPacks = stickerPacks;
+        SelectedStickerPack = selectedStickerPack;
+        StickerSize = stickerSize;
 
-        private string[] imageFiles;
+        InitializeComponent();
+        tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
+        ShareXResources.ApplyTheme(this, true);
 
-        public StickerForm(List<StickerPackInfo> stickerPacks, int selectedStickerPack, int stickerSize = 64)
+        tsnudSize.NumericUpDownControl.Minimum = 16;
+        tsnudSize.NumericUpDownControl.Maximum = 256;
+        tsnudSize.NumericUpDownControl.Increment = 16;
+        tsnudSize.NumericUpDownControl.TextAlign = HorizontalAlignment.Center;
+        tsnudSize.NumericUpDownControl.SetValue(StickerSize);
+        ilvStickers.SetRenderer(new StickerImageListViewRenderer());
+        ilvStickers.ThumbnailSize = new Size(StickerSize, StickerSize);
+        UpdateStickerPacks();
+        tstbSearch.Focus();
+    }
+
+    private void UpdateStickerPacks()
+    {
+        imageFiles = null;
+        ilvStickers.Items.Clear();
+        tscbStickers.Items.Clear();
+
+        foreach (StickerPackInfo stickerPackInfo in StickerPacks)
         {
-            StickerPacks = stickerPacks;
-            SelectedStickerPack = selectedStickerPack;
-            StickerSize = stickerSize;
-
-            InitializeComponent();
-            tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
-            ShareXResources.ApplyTheme(this, true);
-
-            tsnudSize.NumericUpDownControl.Minimum = 16;
-            tsnudSize.NumericUpDownControl.Maximum = 256;
-            tsnudSize.NumericUpDownControl.Increment = 16;
-            tsnudSize.NumericUpDownControl.TextAlign = HorizontalAlignment.Center;
-            tsnudSize.NumericUpDownControl.SetValue(StickerSize);
-            ilvStickers.SetRenderer(new StickerImageListViewRenderer());
-            ilvStickers.ThumbnailSize = new Size(StickerSize, StickerSize);
-            UpdateStickerPacks();
-            tstbSearch.Focus();
+            tscbStickers.Items.Add(stickerPackInfo);
         }
 
-        private void UpdateStickerPacks()
+        if (tscbStickers.Items.Count > SelectedStickerPack)
         {
-            imageFiles = null;
-            ilvStickers.Items.Clear();
-            tscbStickers.Items.Clear();
-
-            foreach (StickerPackInfo stickerPackInfo in StickerPacks)
-            {
-                tscbStickers.Items.Add(stickerPackInfo);
-            }
-
-            if (tscbStickers.Items.Count > SelectedStickerPack)
-            {
-                tscbStickers.SelectedIndex = SelectedStickerPack;
-            }
-            else if (tscbStickers.Items.Count > 0)
-            {
-                tscbStickers.SelectedIndex = 0;
-            }
+            tscbStickers.SelectedIndex = SelectedStickerPack;
+        } else if (tscbStickers.Items.Count > 0)
+        {
+            tscbStickers.SelectedIndex = 0;
         }
+    }
 
-        private void LoadImageFiles()
+    private void LoadImageFiles()
+    {
+        imageFiles = null;
+        ilvStickers.Items.Clear();
+
+        if (tscbStickers.SelectedItem is StickerPackInfo stickerPack && !string.IsNullOrEmpty(stickerPack.FolderPath))
         {
-            imageFiles = null;
-            ilvStickers.Items.Clear();
+            string folderPath = FileHelpers.GetAbsolutePath(stickerPack.FolderPath);
 
-            if (tscbStickers.SelectedItem is StickerPackInfo stickerPack && !string.IsNullOrEmpty(stickerPack.FolderPath))
+            if (Directory.Exists(folderPath))
             {
-                string folderPath = FileHelpers.GetAbsolutePath(stickerPack.FolderPath);
+                imageFiles = Directory.GetFiles(folderPath).Where(x => FileHelpers.IsImageFile(x)).ToArray();
 
-                if (Directory.Exists(folderPath))
-                {
-                    imageFiles = Directory.GetFiles(folderPath).Where(x => FileHelpers.IsImageFile(x)).ToArray();
-
-                    UpdateImageFiles();
-                }
+                UpdateImageFiles();
             }
         }
+    }
 
-        private void UpdateImageFiles()
+    private void UpdateImageFiles()
+    {
+        ilvStickers.Items.Clear();
+
+        if (imageFiles != null && imageFiles.Length > 0)
         {
-            ilvStickers.Items.Clear();
+            string[] currentImageFiles = imageFiles;
 
-            if (imageFiles != null && imageFiles.Length > 0)
+            string search = tstbSearch.Text;
+
+            if (!string.IsNullOrEmpty(search))
             {
-                string[] currentImageFiles = imageFiles;
+                currentImageFiles = imageFiles.Where(x => x.Contains(search, StringComparison.InvariantCultureIgnoreCase)).ToArray();
+            }
 
-                string search = tstbSearch.Text;
+            ilvStickers.Items.AddRange(currentImageFiles);
+        }
+    }
 
-                if (!string.IsNullOrEmpty(search))
-                {
-                    currentImageFiles = imageFiles.Where(x => x.Contains(search, StringComparison.InvariantCultureIgnoreCase)).ToArray();
-                }
+    private void Close(string filePath)
+    {
+        SelectedImageFile = filePath;
+        StickerSize = (int)tsnudSize.NumericUpDownControl.Value;
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-                ilvStickers.Items.AddRange(currentImageFiles);
+    private void StickerForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+        tstbSearch.Focus();
+    }
+
+    private void tstbSearch_TextChanged(object sender, EventArgs e)
+    {
+        UpdateImageFiles();
+
+        if (ilvStickers.Items.Count > 0 && !string.IsNullOrEmpty(tstbSearch.Text))
+        {
+            ilvStickers.Items[0].Selected = true;
+        }
+    }
+
+    private void tstbSearch_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Enter)
+        {
+            e.SuppressKeyPress = true;
+        }
+    }
+
+    private void tstbSearch_KeyUp(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Enter)
+        {
+            e.SuppressKeyPress = true;
+
+            if (ilvStickers.Items.Count > 0)
+            {
+                Close(ilvStickers.Items[0].FileName);
             }
         }
+    }
 
-        private void Close(string filePath)
-        {
-            SelectedImageFile = filePath;
-            StickerSize = (int)tsnudSize.NumericUpDownControl.Value;
-            DialogResult = DialogResult.OK;
-            Close();
-        }
+    private void TscbStickers_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        LoadImageFiles();
 
-        private void StickerForm_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
-            tstbSearch.Focus();
-        }
+        SelectedStickerPack = tscbStickers.SelectedIndex;
+    }
 
-        private void tstbSearch_TextChanged(object sender, EventArgs e)
-        {
-            UpdateImageFiles();
+    private void TsbEditStickers_Click(object sender, EventArgs e)
+    {
+        using StickerPackForm stickerPackForm = new(StickerPacks);
+        stickerPackForm.ShowDialog(this);
 
-            if (ilvStickers.Items.Count > 0 && !string.IsNullOrEmpty(tstbSearch.Text))
-            {
-                ilvStickers.Items[0].Selected = true;
-            }
-        }
+        UpdateStickerPacks();
+    }
 
-        private void tstbSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-            }
-        }
+    private void TsnudSize_ValueChanged(object sender, EventArgs e)
+    {
+        int size = (int)tsnudSize.NumericUpDownControl.Value;
+        ilvStickers.ThumbnailSize = new Size(size, size);
+    }
 
-        private void tstbSearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-
-                if (ilvStickers.Items.Count > 0)
-                {
-                    Close(ilvStickers.Items[0].FileName);
-                }
-            }
-        }
-
-        private void tscbStickers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadImageFiles();
-
-            SelectedStickerPack = tscbStickers.SelectedIndex;
-        }
-
-        private void tsbEditStickers_Click(object sender, EventArgs e)
-        {
-            using (StickerPackForm stickerPackForm = new StickerPackForm(StickerPacks))
-            {
-                stickerPackForm.ShowDialog(this);
-
-                UpdateStickerPacks();
-            }
-        }
-
-        private void tsnudSize_ValueChanged(object sender, EventArgs e)
-        {
-            int size = (int)tsnudSize.NumericUpDownControl.Value;
-            ilvStickers.ThumbnailSize = new Size(size, size);
-        }
-
-        private void ilvStickers_ItemClick(object sender, Manina.Windows.Forms.ItemClickEventArgs e)
-        {
-            Close(e.Item.FileName);
-        }
+    private void IlvStickers_ItemClick(object sender, ItemClickEventArgs e)
+    {
+        Close(e.Item.FileName);
     }
 }

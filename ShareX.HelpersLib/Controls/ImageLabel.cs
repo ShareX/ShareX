@@ -23,51 +23,52 @@
 
 #endregion License Information (GPL v3)
 
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class ImageLabel : LabelNoCopy
 {
-    public class ImageLabel : LabelNoCopy
+    private Image image;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public new Image Image
     {
-        private Image image;
+        get { return image; }
 
-        public new Image Image
+        set
         {
-            get { return image; }
+            int spacing = 2;
 
-            set
+            if (image != null)
             {
-                int spacing = 2;
-
-                if (image != null)
-                {
-                    Padding = new Padding(Padding.Left - spacing - image.Width, Padding.Top, Padding.Right, Padding.Bottom);
-                }
-
-                if (value != null)
-                {
-                    Padding = new Padding(Padding.Left + spacing + value.Width, Padding.Top, Padding.Right, Padding.Bottom);
-                }
-
-                image = value;
-            }
-        }
-
-        public ImageLabel()
-        {
-            ImageAlign = ContentAlignment.MiddleLeft;
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            if (Image != null)
-            {
-                Rectangle r = CalcImageRenderBounds(Image, ClientRectangle, ImageAlign);
-                e.Graphics.DrawImage(Image, r);
+                Padding = new Padding(Padding.Left - spacing - image.Width, Padding.Top, Padding.Right, Padding.Bottom);
             }
 
-            base.OnPaint(e);
+            if (value != null)
+            {
+                Padding = new Padding(Padding.Left + spacing + value.Width, Padding.Top, Padding.Right, Padding.Bottom);
+            }
+
+            image = value;
         }
+    }
+
+    public ImageLabel()
+    {
+        ImageAlign = ContentAlignment.MiddleLeft;
+    }
+
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        if (Image != null)
+        {
+            Rectangle r = CalcImageRenderBounds(Image, ClientRectangle, ImageAlign);
+            e.Graphics.DrawImage(Image, r);
+        }
+
+        base.OnPaint(e);
     }
 }

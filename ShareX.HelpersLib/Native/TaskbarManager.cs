@@ -23,169 +23,155 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Native;
+
+public enum TaskbarProgressBarStatus
 {
-    public enum TaskbarProgressBarStatus
+    NoProgress = 0,
+    Indeterminate = 0x1,
+    Normal = 0x2,
+    Error = 0x4,
+    Paused = 0x8
+}
+
+public static class TaskbarManager
+{
+    [ComImport, Guid("c43dc798-95d1-4bea-9030-bb99e2983a1a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    private interface ITaskbarList4
     {
-        NoProgress = 0,
-        Indeterminate = 0x1,
-        Normal = 0x2,
-        Error = 0x4,
-        Paused = 0x8
+        // ITaskbarList
+        [PreserveSig]
+        void HrInit();
+
+        [PreserveSig]
+        void AddTab(IntPtr hwnd);
+
+        [PreserveSig]
+        void DeleteTab(IntPtr hwnd);
+
+        [PreserveSig]
+        void ActivateTab(IntPtr hwnd);
+
+        [PreserveSig]
+        void SetActiveAlt(IntPtr hwnd);
+
+        // ITaskbarList2
+        [PreserveSig]
+        void MarkFullscreenWindow(IntPtr hwnd, [MarshalAs(UnmanagedType.Bool)] bool fFullscreen);
+
+        // ITaskbarList3
+        [PreserveSig]
+        void SetProgressValue(IntPtr hwnd, ulong ullCompleted, ulong ullTotal);
+
+        [PreserveSig]
+        void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus tbpFlags);
     }
 
-    public static class TaskbarManager
+    [ComImport, Guid("56FDF344-FD6D-11d0-958A-006097C9A090"), ClassInterface(ClassInterfaceType.None)]
+    private class CTaskbarList
     {
-        [ComImport, Guid("c43dc798-95d1-4bea-9030-bb99e2983a1a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-        private interface ITaskbarList4
+    }
+
+    private static readonly object syncLock = new();
+
+    private static ITaskbarList4 taskbarList;
+
+    private static ITaskbarList4 TaskbarList
+    {
+        get
         {
-            // ITaskbarList
-            [PreserveSig]
-            void HrInit();
-
-            [PreserveSig]
-            void AddTab(IntPtr hwnd);
-
-            [PreserveSig]
-            void DeleteTab(IntPtr hwnd);
-
-            [PreserveSig]
-            void ActivateTab(IntPtr hwnd);
-
-            [PreserveSig]
-            void SetActiveAlt(IntPtr hwnd);
-
-            // ITaskbarList2
-            [PreserveSig]
-            void MarkFullscreenWindow(IntPtr hwnd, [MarshalAs(UnmanagedType.Bool)] bool fFullscreen);
-
-            // ITaskbarList3
-            [PreserveSig]
-            void SetProgressValue(IntPtr hwnd, ulong ullCompleted, ulong ullTotal);
-
-            [PreserveSig]
-            void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus tbpFlags);
-        }
-
-        [ComImport, Guid("56FDF344-FD6D-11d0-958A-006097C9A090"), ClassInterface(ClassInterfaceType.None)]
-        private class CTaskbarList
-        {
-        }
-
-        private static readonly object syncLock = new object();
-
-        private static ITaskbarList4 taskbarList;
-
-        private static ITaskbarList4 TaskbarList
-        {
-            get
+            if (taskbarList == null)
             {
-                if (taskbarList == null)
+                lock (syncLock)
                 {
-                    lock (syncLock)
+                    if (taskbarList == null)
                     {
-                        if (taskbarList == null)
-                        {
-                            taskbarList = (ITaskbarList4)new CTaskbarList();
-                            taskbarList.HrInit();
-                        }
+                        taskbarList = (ITaskbarList4)new CTaskbarList();
+                        taskbarList.HrInit();
                     }
                 }
-
-                return taskbarList;
             }
+
+            return taskbarList;
         }
+    }
 
-        private static IntPtr mainWindowHandle;
+    private static IntPtr mainWindowHandle;
 
-        private static IntPtr MainWindowHandle
+    private static IntPtr MainWindowHandle
+    {
+        get
         {
-            get
+            if (mainWindowHandle == IntPtr.Zero)
             {
-                if (mainWindowHandle == IntPtr.Zero)
-                {
-                    Process currentProcess = Process.GetCurrentProcess();
+                Process currentProcess = Process.GetCurrentProcess();
 
-                    if (currentProcess == null || currentProcess.MainWindowHandle == IntPtr.Zero)
-                    {
-                        mainWindowHandle = IntPtr.Zero;
-                    }
-                    else
-                    {
-                        mainWindowHandle = currentProcess.MainWindowHandle;
-                    }
-                }
-
-                return mainWindowHandle;
+                mainWindowHandle = currentProcess == null || currentProcess.MainWindowHandle == IntPtr.Zero ? nint.Zero : currentProcess.MainWindowHandle;
             }
+
+            return mainWindowHandle;
         }
+    }
 
-        public static bool Enabled { get; set; }
+    public static bool Enabled { get; set; }
 
-        public static bool IsPlatformSupported
+    public static bool IsPlatformSupported => Helpers.Helpers.IsWindows7OrGreater();
+
+    private static void SetProgressValue(IntPtr hwnd, int currentValue, int maximumValue = 100)
+    {
+        if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
         {
-            get
+            currentValue = currentValue.Clamp(0, maximumValue);
+
+            try
             {
-                return Helpers.IsWindows7OrGreater();
-            }
-        }
-
-        private static void SetProgressValue(IntPtr hwnd, int currentValue, int maximumValue = 100)
-        {
-            if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
+                TaskbarList.SetProgressValue(hwnd, Convert.ToUInt32(currentValue), Convert.ToUInt32(maximumValue));
+            } catch (FileNotFoundException)
             {
-                currentValue = currentValue.Clamp(0, maximumValue);
-
-                try
-                {
-                    TaskbarList.SetProgressValue(hwnd, Convert.ToUInt32(currentValue), Convert.ToUInt32(maximumValue));
-                }
-                catch (FileNotFoundException)
-                {
-                    Enabled = false;
-                }
+                Enabled = false;
             }
         }
+    }
 
-        public static void SetProgressValue(int currentValue, int maximumValue = 100)
-        {
-            SetProgressValue(MainWindowHandle, currentValue, maximumValue);
-        }
+    public static void SetProgressValue(int currentValue, int maximumValue = 100)
+    {
+        SetProgressValue(MainWindowHandle, currentValue, maximumValue);
+    }
 
-        public static void SetProgressValue(Form form, int currentValue, int maximumValue = 100)
-        {
-            form.InvokeSafe(() => SetProgressValue(form.Handle, currentValue, maximumValue));
-        }
+    public static void SetProgressValue(Form form, int currentValue, int maximumValue = 100)
+    {
+        form.InvokeSafe(() => SetProgressValue(form.Handle, currentValue, maximumValue));
+    }
 
-        private static void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus state)
+    private static void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus state)
+    {
+        if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
         {
-            if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
+            try
             {
-                try
-                {
-                    TaskbarList.SetProgressState(hwnd, state);
-                }
-                catch (FileNotFoundException)
-                {
-                    Enabled = false;
-                }
+                TaskbarList.SetProgressState(hwnd, state);
+            } catch (FileNotFoundException)
+            {
+                Enabled = false;
             }
         }
+    }
 
-        public static void SetProgressState(TaskbarProgressBarStatus state)
-        {
-            SetProgressState(MainWindowHandle, state);
-        }
+    public static void SetProgressState(TaskbarProgressBarStatus state)
+    {
+        SetProgressState(MainWindowHandle, state);
+    }
 
-        public static void SetProgressState(Form form, TaskbarProgressBarStatus state)
-        {
-            form.InvokeSafe(() => SetProgressState(form.Handle, state));
-        }
+    public static void SetProgressState(Form form, TaskbarProgressBarStatus state)
+    {
+        form.InvokeSafe(() => SetProgressState(form.Handle, state));
     }
 }

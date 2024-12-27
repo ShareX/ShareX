@@ -24,76 +24,109 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Helpers;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+using ShareX.UploadersLib.OAuth;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class BoxFileUploaderService : FileUploaderService
 {
-    public class BoxFileUploaderService : FileUploaderService
+    public override FileDestination EnumValue { get; } = FileDestination.Box;
+
+    public override Icon ServiceIcon => Resources.Box;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Box;
-
-        public override Icon ServiceIcon => Resources.Box;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return OAuth2Info.CheckOAuth(config.BoxOAuth2Info);
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new Box(config.BoxOAuth2Info)
-            {
-                FolderID = config.BoxSelectedFolder.id,
-                Share = config.BoxShare,
-                ShareAccessLevel = config.BoxShareAccessLevel
-            };
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBox;
+        return OAuth2Info.CheckOAuth(config.BoxOAuth2Info);
     }
 
-    public sealed class Box : FileUploader, IOAuth2
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public static BoxFileEntry RootFolder = new BoxFileEntry
+        return new Box(config.BoxOAuth2Info)
         {
-            type = "folder",
-            id = "0",
-            name = "Root folder"
+            FolderID = config.BoxSelectedFolder.id,
+            Share = config.BoxShare,
+            ShareAccessLevel = config.BoxShareAccessLevel
         };
+    }
 
-        public OAuth2Info AuthInfo { get; set; }
-        public string FolderID { get; set; }
-        public bool Share { get; set; }
-        public BoxShareAccessLevel ShareAccessLevel { get; set; }
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpBox;
+}
 
-        public Box(OAuth2Info oauth)
+public sealed class Box : FileUploader, IOAuth2
+{
+    public static BoxFileEntry RootFolder = new()
+    {
+        type = "folder",
+        id = "0",
+        name = "Root folder"
+    };
+
+    public OAuth2Info AuthInfo { get; set; }
+    public string FolderID { get; set; }
+    public bool Share { get; set; }
+    public BoxShareAccessLevel ShareAccessLevel { get; set; }
+
+    public Box(OAuth2Info oauth)
+    {
+        AuthInfo = oauth;
+        FolderID = "0";
+        Share = true;
+        ShareAccessLevel = BoxShareAccessLevel.Open;
+    }
+
+    public string GetAuthorizationURL()
+    {
+        Dictionary<string, string> args = new();
+        args.Add("response_type", "code");
+        args.Add("client_id", AuthInfo.Client_ID);
+
+        return URLHelpers.CreateQueryString("https://www.box.com/api/oauth2/authorize", args);
+    }
+
+    public bool GetAccessToken(string pin)
+    {
+        Dictionary<string, string> args = new();
+        args.Add("grant_type", "authorization_code");
+        args.Add("code", pin);
+        args.Add("client_id", AuthInfo.Client_ID);
+        args.Add("client_secret", AuthInfo.Client_Secret);
+
+        string response = SendRequestMultiPart("https://www.box.com/api/oauth2/token", args);
+
+        if (!string.IsNullOrEmpty(response))
         {
-            AuthInfo = oauth;
-            FolderID = "0";
-            Share = true;
-            ShareAccessLevel = BoxShareAccessLevel.Open;
+            OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
+
+            if (token != null && !string.IsNullOrEmpty(token.access_token))
+            {
+                token.UpdateExpireDate();
+                AuthInfo.Token = token;
+                return true;
+            }
         }
 
-        public string GetAuthorizationURL()
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("response_type", "code");
-            args.Add("client_id", AuthInfo.Client_ID);
+        return false;
+    }
 
-            return URLHelpers.CreateQueryString("https://www.box.com/api/oauth2/authorize", args);
-        }
-
-        public bool GetAccessToken(string pin)
+    public bool RefreshAccessToken()
+    {
+        if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("grant_type", "authorization_code");
-            args.Add("code", pin);
+            Dictionary<string, string> args = new();
+            args.Add("grant_type", "refresh_token");
+            args.Add("refresh_token", AuthInfo.Token.refresh_token);
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
 
@@ -110,179 +143,144 @@ namespace ShareX.UploadersLib.FileUploaders
                     return true;
                 }
             }
-
-            return false;
         }
 
-        public bool RefreshAccessToken()
+        return false;
+    }
+
+    private NameValueCollection GetAuthHeaders()
+    {
+        NameValueCollection headers = new();
+        headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+        return headers;
+    }
+
+    public bool CheckAuthorization()
+    {
+        if (OAuth2Info.CheckOAuth(AuthInfo))
         {
-            if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
+            if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
             {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("grant_type", "refresh_token");
-                args.Add("refresh_token", AuthInfo.Token.refresh_token);
-                args.Add("client_id", AuthInfo.Client_ID);
-                args.Add("client_secret", AuthInfo.Client_Secret);
-
-                string response = SendRequestMultiPart("https://www.box.com/api/oauth2/token", args);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-                    if (token != null && !string.IsNullOrEmpty(token.access_token))
-                    {
-                        token.UpdateExpireDate();
-                        AuthInfo.Token = token;
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        private NameValueCollection GetAuthHeaders()
-        {
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-            return headers;
-        }
-
-        public bool CheckAuthorization()
-        {
-            if (OAuth2Info.CheckOAuth(AuthInfo))
-            {
-                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
-                {
-                    Errors.Add("Refresh access token failed.");
-                    return false;
-                }
-            }
-            else
-            {
-                Errors.Add("Box login is required.");
+                Errors.Add("Refresh access token failed.");
                 return false;
             }
-
-            return true;
+        } else
+        {
+            Errors.Add("Box login is required.");
+            return false;
         }
 
-        public BoxFileInfo GetFiles(BoxFileEntry folder)
+        return true;
+    }
+
+    public BoxFileInfo GetFiles(BoxFileEntry folder)
+    {
+        return GetFiles(folder.id);
+    }
+
+    public BoxFileInfo GetFiles(string id)
+    {
+        if (!CheckAuthorization())
         {
-            return GetFiles(folder.id);
-        }
-
-        public BoxFileInfo GetFiles(string id)
-        {
-            if (!CheckAuthorization())
-            {
-                return null;
-            }
-
-            string url = string.Format("https://api.box.com/2.0/folders/{0}/items", id);
-
-            string response = SendRequest(HttpMethod.GET, url, headers: GetAuthHeaders());
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonConvert.DeserializeObject<BoxFileInfo>(response);
-            }
-
             return null;
         }
 
-        public string CreateSharedLink(string id, BoxShareAccessLevel accessLevel)
+        string url = string.Format("https://api.box.com/2.0/folders/{0}/items", id);
+
+        string response = SendRequest(HttpMethod.GET, url, headers: GetAuthHeaders());
+
+        return !string.IsNullOrEmpty(response) ? JsonConvert.DeserializeObject<BoxFileInfo>(response) : null;
+    }
+
+    public string CreateSharedLink(string id, BoxShareAccessLevel accessLevel)
+    {
+        string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"" + accessLevel.ToString().ToLower() + "\"}}", headers: GetAuthHeaders());
+
+        if (!string.IsNullOrEmpty(response))
         {
-            string response = SendRequest(HttpMethod.PUT, "https://api.box.com/2.0/files/" + id, "{\"shared_link\": {\"access\": \"" + accessLevel.ToString().ToLower() + "\"}}", headers: GetAuthHeaders());
+            BoxFileEntry fileEntry = JsonConvert.DeserializeObject<BoxFileEntry>(response);
 
-            if (!string.IsNullOrEmpty(response))
+            if (fileEntry != null && fileEntry.shared_link != null)
             {
-                BoxFileEntry fileEntry = JsonConvert.DeserializeObject<BoxFileEntry>(response);
-
-                if (fileEntry != null && fileEntry.shared_link != null)
-                {
-                    return fileEntry.shared_link.url;
-                }
+                return fileEntry.shared_link.url;
             }
+        }
 
+        return null;
+    }
+
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        if (!CheckAuthorization())
+        {
             return null;
         }
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        if (string.IsNullOrEmpty(FolderID))
         {
-            if (!CheckAuthorization())
+            FolderID = "0";
+        }
+
+        Dictionary<string, string> args = new();
+        args.Add("parent_id", FolderID);
+
+        UploadResult result = SendRequestFile("https://upload.box.com/api/2.0/files/content", stream, fileName, "filename", args, GetAuthHeaders());
+
+        if (result.IsSuccess)
+        {
+            BoxFileInfo fileInfo = JsonConvert.DeserializeObject<BoxFileInfo>(result.Response);
+
+            if (fileInfo != null && fileInfo.entries != null && fileInfo.entries.Length > 0)
             {
-                return null;
-            }
+                BoxFileEntry fileEntry = fileInfo.entries[0];
 
-            if (string.IsNullOrEmpty(FolderID))
-            {
-                FolderID = "0";
-            }
-
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("parent_id", FolderID);
-
-            UploadResult result = SendRequestFile("https://upload.box.com/api/2.0/files/content", stream, fileName, "filename", args, GetAuthHeaders());
-
-            if (result.IsSuccess)
-            {
-                BoxFileInfo fileInfo = JsonConvert.DeserializeObject<BoxFileInfo>(result.Response);
-
-                if (fileInfo != null && fileInfo.entries != null && fileInfo.entries.Length > 0)
+                if (Share)
                 {
-                    BoxFileEntry fileEntry = fileInfo.entries[0];
-
-                    if (Share)
-                    {
-                        AllowReportProgress = false;
-                        result.URL = CreateSharedLink(fileEntry.id, ShareAccessLevel);
-                    }
-                    else
-                    {
-                        result.URL = string.Format("https://app.box.com/files/0/f/{0}/1/f_{1}", fileEntry.parent.id, fileEntry.id);
-                    }
+                    AllowReportProgress = false;
+                    result.URL = CreateSharedLink(fileEntry.id, ShareAccessLevel);
+                } else
+                {
+                    result.URL = string.Format("https://app.box.com/files/0/f/{0}/1/f_{1}", fileEntry.parent.id, fileEntry.id);
                 }
             }
-
-            return result;
         }
-    }
 
-    public class BoxFileInfo
-    {
-        public BoxFileEntry[] entries { get; set; }
+        return result;
     }
+}
 
-    public class BoxFileEntry
-    {
-        public string type { get; set; }
-        public string id { get; set; }
-        public string sequence_id { get; set; }
-        public string etag { get; set; }
-        public string name { get; set; }
-        public BoxFileSharedLink shared_link { get; set; }
-        public BoxFileEntry parent { get; set; }
-    }
+public class BoxFileInfo
+{
+    public BoxFileEntry[] entries { get; set; }
+}
 
-    public class BoxFileSharedLink
-    {
-        public string url { get; set; }
-    }
+public class BoxFileEntry
+{
+    public string type { get; set; }
+    public string id { get; set; }
+    public string sequence_id { get; set; }
+    public string etag { get; set; }
+    public string name { get; set; }
+    public BoxFileSharedLink shared_link { get; set; }
+    public BoxFileEntry parent { get; set; }
+}
 
-    public class BoxFolder
-    {
-        public string ID;
-        public string Name;
-        public string User_id;
-        public string Description;
-        public string Shared;
-        public string Shared_link;
-        public string Permissions;
+public class BoxFileSharedLink
+{
+    public string url { get; set; }
+}
 
-        //public List<BoxTag> Tags;
-        //public List<BoxFile> Files;
-        public List<BoxFolder> Folders = new List<BoxFolder>();
-    }
+public class BoxFolder
+{
+    public string ID;
+    public string Name;
+    public string User_id;
+    public string Description;
+    public string Shared;
+    public string Shared_link;
+    public string Permissions;
+
+    //public List<BoxTag> Tags;
+    //public List<BoxFile> Files;
+    public List<BoxFolder> Folders = new();
 }

@@ -24,72 +24,77 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.UploadersLib.OAuth;
+
 using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class OAuthListenerForm : Form
 {
-    public partial class OAuthListenerForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public IOAuth2Loopback OAuth { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public OAuth2Info OAuth2Info { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public OAuthUserInfo UserInfo { get; private set; }
+
+    private OAuthListener listener;
+
+    public OAuthListenerForm(IOAuth2Loopback oauth)
     {
-        public IOAuth2Loopback OAuth { get; private set; }
-        public OAuth2Info OAuth2Info { get; private set; }
-        public OAuthUserInfo UserInfo { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        private OAuthListener listener;
+        OAuth = oauth;
+    }
 
-        public OAuthListenerForm(IOAuth2Loopback oauth)
+    private async void OAuthListenerForm_Load(object sender, EventArgs e)
+    {
+        await ConnectAsync(OAuth);
+
+        Close();
+    }
+
+    private void OAuthListenerForm_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        listener?.Dispose();
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+
+    private async Task<bool> ConnectAsync(IOAuth2Loopback oauth)
+    {
+        OAuth2Info = null;
+        UserInfo = null;
+
+        try
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            OAuth = oauth;
-        }
-
-        private async void OAuthListenerForm_Load(object sender, EventArgs e)
-        {
-            await ConnectAsync(OAuth);
-
-            Close();
-        }
-
-        private void OAuthListenerForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            listener?.Dispose();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private async Task<bool> ConnectAsync(IOAuth2Loopback oauth)
-        {
-            OAuth2Info = null;
-            UserInfo = null;
-
-            try
+            using (listener = new OAuthListener(oauth))
             {
-                using (listener = new OAuthListener(oauth))
+                bool result = await listener.ConnectAsync();
+
+                if (result)
                 {
-                    bool result = await listener.ConnectAsync();
+                    OAuth2Info = listener.OAuth.AuthInfo;
+                    UserInfo = await Task.Run(() => oauth.GetUserInfo());
 
-                    if (result)
-                    {
-                        OAuth2Info = listener.OAuth.AuthInfo;
-                        UserInfo = await Task.Run(() => oauth.GetUserInfo());
-
-                        return true;
-                    }
+                    return true;
                 }
             }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-                e.ShowError();
-            }
-
-            return false;
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
+            e.ShowError();
         }
+
+        return false;
     }
 }

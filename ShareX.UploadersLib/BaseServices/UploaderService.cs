@@ -23,36 +23,36 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.BaseServices;
+
+public abstract class UploaderService<T> : IUploaderService
 {
-    public abstract class UploaderService<T> : IUploaderService
+    public abstract T EnumValue { get; }
+
+    // Unique identifier
+    public string ServiceIdentifier => EnumValue.ToString();
+
+    public string ServiceName => ((Enum)(object)EnumValue).GetLocalizedDescription();
+
+    public virtual Icon ServiceIcon { get; }
+
+    public virtual Image ServiceImage { get; }
+
+    public abstract bool CheckConfig(UploadersConfig config);
+
+    public virtual TabPage GetUploadersConfigTabPage(UploadersConfigForm form)
     {
-        public abstract T EnumValue { get; }
+        return null;
+    }
 
-        // Unique identifier
-        public string ServiceIdentifier => EnumValue.ToString();
-
-        public string ServiceName => ((Enum)(object)EnumValue).GetLocalizedDescription();
-
-        public virtual Icon ServiceIcon { get; }
-
-        public virtual Image ServiceImage { get; }
-
-        public abstract bool CheckConfig(UploadersConfig config);
-
-        public virtual TabPage GetUploadersConfigTabPage(UploadersConfigForm form)
-        {
-            return null;
-        }
-
-        public override string ToString()
-        {
-            return ServiceName;
-        }
+    public override string ToString()
+    {
+        return ServiceName;
     }
 }

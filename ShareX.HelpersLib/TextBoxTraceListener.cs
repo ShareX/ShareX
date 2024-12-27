@@ -23,33 +23,34 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class TextBoxTraceListener : TraceListener
 {
-    public class TextBoxTraceListener : TraceListener
+    private TextBox textBox;
+
+    public TextBoxTraceListener(TextBox textBox)
     {
-        private TextBox textBox;
+        this.textBox = textBox;
+    }
 
-        public TextBoxTraceListener(TextBox textBox)
+    public override void Write(string message)
+    {
+        textBox.InvokeSafe(() =>
         {
-            this.textBox = textBox;
-        }
+            string text = string.Format("{0} - {1}", DateTime.Now.ToLongTimeString(), message);
+            textBox.AppendText(text);
+        });
+    }
 
-        public override void Write(string message)
-        {
-            textBox.InvokeSafe(() =>
-            {
-                string text = string.Format("{0} - {1}", DateTime.Now.ToLongTimeString(), message);
-                textBox.AppendText(text);
-            });
-        }
-
-        public override void WriteLine(string message)
-        {
-            Write(message + "\r\n");
-        }
+    public override void WriteLine(string message)
+    {
+        Write(message + "\r\n");
     }
 }

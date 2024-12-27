@@ -23,12 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.SharingServices
-{
-    public class TumblrSharingService : SimpleURLSharingService
-    {
-        public override URLSharingServices EnumValue { get; } = URLSharingServices.Tumblr;
+namespace ShareX.UploadersLib.SharingServices;
 
-        protected override string URLFormatString { get; } = "https://www.tumblr.com/share?v=3&u={0}";
-    }
+public class TumblrSharingService : SimpleURLSharingService
+{
+    public override URLSharingServices EnumValue { get; } = URLSharingServices.Tumblr;
+
+    protected override string URLFormatString { get; } = "https://www.tumblr.com/share?v=3&u={0}";
 }

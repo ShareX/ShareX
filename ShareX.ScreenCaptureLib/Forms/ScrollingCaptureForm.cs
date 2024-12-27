@@ -24,251 +24,249 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.ScreenCaptureLib.Properties;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public partial class ScrollingCaptureForm : Form
 {
-    public partial class ScrollingCaptureForm : Form
+    private static readonly object lockObject = new();
+
+    private static ScrollingCaptureForm instance;
+
+    public event Action<Bitmap> UploadRequested;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ScrollingCaptureOptions Options { get; private set; }
+
+    private ScrollingCaptureManager manager;
+    private Point dragStartPosition;
+
+    private ScrollingCaptureForm(ScrollingCaptureOptions options)
     {
-        private static readonly object lockObject = new object();
+        Options = options;
 
-        private static ScrollingCaptureForm instance;
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public event Action<Bitmap> UploadRequested;
+        manager = new ScrollingCaptureManager(Options);
+    }
 
-        public ScrollingCaptureOptions Options { get; private set; }
-
-        private ScrollingCaptureManager manager;
-        private Point dragStartPosition;
-
-        private ScrollingCaptureForm(ScrollingCaptureOptions options)
+    public static async Task StartStopScrollingCapture(ScrollingCaptureOptions options, Action<Bitmap> uploadRequested = null)
+    {
+        if (instance == null || instance.IsDisposed)
         {
-            Options = options;
-
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            manager = new ScrollingCaptureManager(Options);
-        }
-
-        public static async Task StartStopScrollingCapture(ScrollingCaptureOptions options, Action<Bitmap> uploadRequested = null)
-        {
-            if (instance == null || instance.IsDisposed)
+            lock (lockObject)
             {
-                lock (lockObject)
+                if (instance == null || instance.IsDisposed)
                 {
-                    if (instance == null || instance.IsDisposed)
+                    instance = new ScrollingCaptureForm(options);
+
+                    if (uploadRequested != null)
                     {
-                        instance = new ScrollingCaptureForm(options);
-
-                        if (uploadRequested != null)
-                        {
-                            instance.UploadRequested += uploadRequested;
-                        }
-
-                        instance.Show();
+                        instance.UploadRequested += uploadRequested;
                     }
+
+                    instance.Show();
                 }
             }
-            else
-            {
-                await instance.StartStopScrollingCapture();
-            }
-        }
-
-        public async Task StartStopScrollingCapture()
+        } else
         {
-            if (manager.IsCapturing)
-            {
-                manager.StopCapture();
-            }
-            else
-            {
-                await SelectWindow();
-            }
+            await instance.StartStopScrollingCapture();
         }
+    }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                components?.Dispose();
-                manager?.Dispose();
-            }
-
-            base.Dispose(disposing);
-        }
-
-        private void ResetPictureBox()
-        {
-            Image temp = pbOutput.Image;
-            pbOutput.Image = null;
-            temp?.Dispose();
-        }
-
-        private async Task StartCapture()
-        {
-            WindowState = FormWindowState.Minimized;
-            btnCapture.Enabled = false;
-            btnUpload.Enabled = false;
-            btnCopy.Enabled = false;
-            btnOptions.Enabled = false;
-            lblResultSize.Text = "";
-            ResetPictureBox();
-
-            try
-            {
-                ScrollingCaptureStatus status = await manager.StartCapture();
-
-                switch (status)
-                {
-                    case ScrollingCaptureStatus.Failed:
-                        pbStatus.Image = Resources.control_record;
-                        break;
-                    case ScrollingCaptureStatus.PartiallySuccessful:
-                        pbStatus.Image = Resources.control_record_yellow;
-                        break;
-                    case ScrollingCaptureStatus.Successful:
-                        pbStatus.Image = Resources.control_record_green;
-                        break;
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-
-                e.ShowError();
-            }
-
-            btnCapture.Enabled = true;
-            btnOptions.Enabled = true;
-
-            LoadImage(manager.Result);
-
-            this.ForceActivate();
-
-            if (Options.AutoUpload)
-            {
-                UploadResult();
-            }
-        }
-
-        private void LoadImage(Bitmap bmp)
-        {
-            if (bmp != null)
-            {
-                btnUpload.Enabled = true;
-                btnCopy.Enabled = true;
-                pbOutput.Image = bmp;
-                pOutput.AutoScrollPosition = new Point(0, 0);
-                lblResultSize.Text = $"{bmp.Width}x{bmp.Height}";
-            }
-        }
-
-        private async Task SelectWindow()
-        {
-            WindowState = FormWindowState.Minimized;
-            Thread.Sleep(250);
-
-            if (manager.SelectWindow())
-            {
-                await StartCapture();
-            }
-            else
-            {
-                this.ForceActivate();
-            }
-        }
-
-        private void UploadResult()
-        {
-            if (manager.Result != null)
-            {
-                OnUploadRequested((Bitmap)manager.Result.Clone());
-            }
-        }
-
-        private void CopyResult()
-        {
-            if (manager.Result != null)
-            {
-                ClipboardHelpers.CopyImage(manager.Result);
-            }
-        }
-
-        protected void OnUploadRequested(Bitmap bmp)
-        {
-            UploadRequested?.Invoke(bmp);
-        }
-
-        private async void ScrollingCaptureForm_Load(object sender, EventArgs e)
-        {
-            await SelectWindow();
-        }
-
-        private void ScrollingCaptureForm_Activated(object sender, EventArgs e)
+    public async Task StartStopScrollingCapture()
+    {
+        if (manager.IsCapturing)
         {
             manager.StopCapture();
-        }
-
-        private async void btnCapture_Click(object sender, EventArgs e)
+        } else
         {
             await SelectWindow();
         }
+    }
 
-        private void btnUpload_Click(object sender, EventArgs e)
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            components?.Dispose();
+            manager?.Dispose();
+        }
+
+        base.Dispose(disposing);
+    }
+
+    private void ResetPictureBox()
+    {
+        Image temp = pbOutput.Image;
+        pbOutput.Image = null;
+        temp?.Dispose();
+    }
+
+    private async Task StartCapture()
+    {
+        WindowState = FormWindowState.Minimized;
+        btnCapture.Enabled = false;
+        btnUpload.Enabled = false;
+        btnCopy.Enabled = false;
+        btnOptions.Enabled = false;
+        lblResultSize.Text = "";
+        ResetPictureBox();
+
+        try
+        {
+            ScrollingCaptureStatus status = await manager.StartCapture();
+
+            switch (status)
+            {
+                case ScrollingCaptureStatus.Failed:
+                    pbStatus.Image = Resources.control_record;
+                    break;
+                case ScrollingCaptureStatus.PartiallySuccessful:
+                    pbStatus.Image = Resources.control_record_yellow;
+                    break;
+                case ScrollingCaptureStatus.Successful:
+                    pbStatus.Image = Resources.control_record_green;
+                    break;
+            }
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
+
+            e.ShowError();
+        }
+
+        btnCapture.Enabled = true;
+        btnOptions.Enabled = true;
+
+        LoadImage(manager.Result);
+
+        this.ForceActivate();
+
+        if (Options.AutoUpload)
         {
             UploadResult();
         }
+    }
 
-        private void btnCopy_Click(object sender, EventArgs e)
+    private void LoadImage(Bitmap bmp)
+    {
+        if (bmp != null)
         {
-            CopyResult();
+            btnUpload.Enabled = true;
+            btnCopy.Enabled = true;
+            pbOutput.Image = bmp;
+            pOutput.AutoScrollPosition = new Point(0, 0);
+            lblResultSize.Text = $"{bmp.Width}x{bmp.Height}";
         }
+    }
 
-        private void btnOptions_Click(object sender, EventArgs e)
+    private async Task SelectWindow()
+    {
+        WindowState = FormWindowState.Minimized;
+        Thread.Sleep(250);
+
+        if (manager.SelectWindow())
         {
-            using (ScrollingCaptureOptionsForm scrollingCaptureOptionsForm = new ScrollingCaptureOptionsForm(Options))
-            {
-                scrollingCaptureOptionsForm.ShowDialog();
-            }
+            await StartCapture();
+        } else
+        {
+            this.ForceActivate();
         }
+    }
 
-        private void btnHelp_Click(object sender, EventArgs e)
+    private void UploadResult()
+    {
+        if (manager.Result != null)
         {
-            URLHelpers.OpenURL(Links.DocsScrollingScreenshot);
+            OnUploadRequested((Bitmap)manager.Result.Clone());
         }
+    }
 
-        private void pbOutput_MouseDown(object sender, MouseEventArgs e)
+    private void CopyResult()
+    {
+        if (manager.Result != null)
         {
-            if (e.Button == MouseButtons.Left && (pOutput.HorizontalScroll.Visible || pOutput.VerticalScroll.Visible))
-            {
-                pOutput.Cursor = Cursors.SizeAll;
-                dragStartPosition = e.Location;
-            }
+            ClipboardHelpers.CopyImage(manager.Result);
         }
+    }
 
-        private void pbOutput_MouseMove(object sender, MouseEventArgs e)
+    protected void OnUploadRequested(Bitmap bmp)
+    {
+        UploadRequested?.Invoke(bmp);
+    }
+
+    private async void ScrollingCaptureForm_Load(object sender, EventArgs e)
+    {
+        await SelectWindow();
+    }
+
+    private void ScrollingCaptureForm_Activated(object sender, EventArgs e)
+    {
+        manager.StopCapture();
+    }
+
+    private async void btnCapture_Click(object sender, EventArgs e)
+    {
+        await SelectWindow();
+    }
+
+    private void btnUpload_Click(object sender, EventArgs e)
+    {
+        UploadResult();
+    }
+
+    private void btnCopy_Click(object sender, EventArgs e)
+    {
+        CopyResult();
+    }
+
+    private void btnOptions_Click(object sender, EventArgs e)
+    {
+        using ScrollingCaptureOptionsForm scrollingCaptureOptionsForm = new(Options);
+        scrollingCaptureOptionsForm.ShowDialog();
+    }
+
+    private void btnHelp_Click(object sender, EventArgs e)
+    {
+        URLHelpers.OpenURL(Links.DocsScrollingScreenshot);
+    }
+
+    private void pbOutput_MouseDown(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left && (pOutput.HorizontalScroll.Visible || pOutput.VerticalScroll.Visible))
         {
-            if (e.Button == MouseButtons.Left && (pOutput.HorizontalScroll.Visible || pOutput.VerticalScroll.Visible))
-            {
-                Point scrollOffset = new Point(e.X - dragStartPosition.X, e.Y - dragStartPosition.Y);
-                pOutput.AutoScrollPosition = new Point(-pOutput.AutoScrollPosition.X - scrollOffset.X, -pOutput.AutoScrollPosition.Y - scrollOffset.Y);
-                pOutput.Update();
-            }
+            pOutput.Cursor = Cursors.SizeAll;
+            dragStartPosition = e.Location;
         }
+    }
 
-        private void pbOutput_MouseUp(object sender, MouseEventArgs e)
+    private void pbOutput_MouseMove(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left && (pOutput.HorizontalScroll.Visible || pOutput.VerticalScroll.Visible))
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                pOutput.Cursor = Cursors.Default;
-            }
+            Point scrollOffset = new(e.X - dragStartPosition.X, e.Y - dragStartPosition.Y);
+            pOutput.AutoScrollPosition = new Point(-pOutput.AutoScrollPosition.X - scrollOffset.X, -pOutput.AutoScrollPosition.Y - scrollOffset.Y);
+            pOutput.Update();
+        }
+    }
+
+    private void pbOutput_MouseUp(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left)
+        {
+            pOutput.Cursor = Cursors.Default;
         }
     }
 }

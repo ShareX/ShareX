@@ -23,26 +23,27 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.NameParser;
+
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
-{
-    public class NameParserEditor : UITypeEditor
-    {
-        public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
-        {
-            return UITypeEditorEditStyle.Modal;
-        }
+namespace ShareX.HelpersLib.UITypeEditors;
 
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
-        {
-            Point pos = Cursor.Position;
-            CodeMenu.Create<CodeMenuEntryFilename>(null, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn).Show(pos.X, pos.Y);
-            return value;
-        }
+public class NameParserEditor : UITypeEditor
+{
+    public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
+    {
+        return UITypeEditorEditStyle.Modal;
+    }
+
+    public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+    {
+        Point pos = Cursor.Position;
+        CodeMenu.Create<CodeMenuEntryFilename>(null, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn).Show(pos.X, pos.Y);
+        return value;
     }
 }

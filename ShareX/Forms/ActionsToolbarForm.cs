@@ -24,401 +24,377 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Controls;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Native;
 using ShareX.Properties;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.Forms;
+
+public partial class ActionsToolbarForm : Form
 {
-    public partial class ActionsToolbarForm : Form
+    private static ActionsToolbarForm instance;
+
+    public static ActionsToolbarForm Instance
     {
-        private static ActionsToolbarForm instance;
-
-        public static ActionsToolbarForm Instance
+        get
         {
-            get
+            if (!IsInstanceActive)
             {
-                if (!IsInstanceActive)
-                {
-                    instance = new ActionsToolbarForm();
-                }
+                instance = new ActionsToolbarForm();
+            }
 
-                return instance;
+            return instance;
+        }
+    }
+
+    public static bool IsInstanceActive => instance != null && !instance.IsDisposed;
+
+    private IContainer components;
+    private ToolStripEx tsMain;
+    private ToolTip ttMain;
+    private ContextMenuStrip cmsTitle;
+
+    private ActionsToolbarForm()
+    {
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this);
+    }
+
+    private void InitializeComponent()
+    {
+        SuspendLayout();
+
+        AllowDrop = true;
+        AutoScaleDimensions = new SizeF(96F, 96F);
+        AutoScaleMode = AutoScaleMode.Dpi;
+        AutoSize = true;
+        AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        BackColor = SystemColors.ActiveBorder;
+        ClientSize = new Size(284, 261);
+        FormBorderStyle = FormBorderStyle.None;
+        ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
+        Text = "ShareX - Actions toolbar";
+        TopMost = Program.Settings.ActionsToolbarStayTopMost;
+
+        Shown += ActionsToolbarForm_Shown;
+        LocationChanged += ActionsToolbarForm_LocationChanged;
+        DragEnter += ActionsToolbarForm_DragEnter;
+        DragDrop += ActionsToolbarForm_DragDrop;
+
+        tsMain = new ToolStripEx()
+        {
+            AutoSize = true,
+            CanOverflow = false,
+            ClickThrough = true,
+            Dock = DockStyle.None,
+            GripStyle = ToolStripGripStyle.Hidden,
+            Location = new Point(1, 1),
+            Margin = new Padding(1),
+            MinimumSize = new Size(10, 30),
+            Padding = new Padding(0, 1, 0, 0),
+            Renderer = new ToolStripRoundedEdgeRenderer(),
+            TabIndex = 0,
+            ShowItemToolTips = false
+        };
+
+        tsMain.MouseLeave += tsMain_MouseLeave;
+
+        Controls.Add(tsMain);
+
+        components = new Container();
+
+        ttMain = new ToolTip(components)
+        {
+            AutoPopDelay = 15000,
+            InitialDelay = 300,
+            ReshowDelay = 100,
+            ShowAlways = true
+        };
+
+        cmsTitle = new ContextMenuStrip(components);
+
+        ToolStripMenuItem tsmiClose = new(Resources.ActionsToolbar_Close);
+        tsmiClose.Click += TsmiClose_Click;
+        cmsTitle.Items.Add(tsmiClose);
+
+        cmsTitle.Items.Add(new ToolStripSeparator());
+
+        ToolStripMenuItem tsmiLock = new(Resources.ActionsToolbar__LockPosition);
+        tsmiLock.CheckOnClick = true;
+        tsmiLock.Checked = Program.Settings.ActionsToolbarLockPosition;
+        tsmiLock.Click += TsmiLock_Click;
+        cmsTitle.Items.Add(tsmiLock);
+
+        ToolStripMenuItem tsmiTopMost = new(Resources.ActionsToolbar_StayTopMost);
+        tsmiTopMost.CheckOnClick = true;
+        tsmiTopMost.Checked = Program.Settings.ActionsToolbarStayTopMost;
+        tsmiTopMost.Click += TsmiTopMost_Click;
+        cmsTitle.Items.Add(tsmiTopMost);
+
+        ToolStripMenuItem tsmiRunAtStartup = new(Resources.ActionsToolbar_OpenAtShareXStartup);
+        tsmiRunAtStartup.CheckOnClick = true;
+        tsmiRunAtStartup.Checked = Program.Settings.ActionsToolbarRunAtStartup;
+        tsmiRunAtStartup.Click += TsmiRunAtStartup_Click;
+        cmsTitle.Items.Add(tsmiRunAtStartup);
+
+        cmsTitle.Items.Add(new ToolStripSeparator());
+
+        ToolStripMenuItem tsmiEdit = new(Resources.ActionsToolbar_Edit);
+        tsmiEdit.Click += TsmiEdit_Click;
+        cmsTitle.Items.Add(tsmiEdit);
+
+        UpdateToolbar(Program.Settings.ActionsToolbarList);
+
+        ResumeLayout(false);
+        PerformLayout();
+
+        UpdatePosition();
+    }
+
+    private void ActionsToolbarForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+    }
+
+    private void ActionsToolbarForm_LocationChanged(object sender, EventArgs e)
+    {
+        CheckToolbarPosition();
+    }
+
+    private void ActionsToolbarForm_DragEnter(object sender, DragEventArgs e)
+    {
+        e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop, false) ||
+            e.Data.GetDataPresent(DataFormats.Bitmap, false) ||
+            e.Data.GetDataPresent(DataFormats.Text, false)
+            ? DragDropEffects.Copy
+            : DragDropEffects.None;
+    }
+
+    private void ActionsToolbarForm_DragDrop(object sender, DragEventArgs e)
+    {
+        UploadManager.DragDropUpload(e.Data);
+    }
+
+    private void CheckToolbarPosition()
+    {
+        Rectangle rectToolbar = Bounds;
+        Rectangle rectScreen = HelpersLib.Helpers.CaptureHelpers.GetScreenWorkingArea();
+        Point pos = rectToolbar.Location;
+
+        if (rectToolbar.Width < rectScreen.Width)
+        {
+            if (rectToolbar.X < rectScreen.X)
+            {
+                pos.X = rectScreen.X;
+            } else if (rectToolbar.Right > rectScreen.Right)
+            {
+                pos.X = rectScreen.Right - rectToolbar.Width;
             }
         }
 
-        public static bool IsInstanceActive => instance != null && !instance.IsDisposed;
-
-        private IContainer components;
-        private ToolStripEx tsMain;
-        private ToolTip ttMain;
-        private ContextMenuStrip cmsTitle;
-
-        private ActionsToolbarForm()
+        if (rectToolbar.Height < rectScreen.Height)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-        }
-
-        private void InitializeComponent()
-        {
-            SuspendLayout();
-
-            AllowDrop = true;
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(284, 261);
-            FormBorderStyle = FormBorderStyle.None;
-            ShowInTaskbar = false;
-            StartPosition = FormStartPosition.Manual;
-            Text = "ShareX - Actions toolbar";
-            TopMost = Program.Settings.ActionsToolbarStayTopMost;
-
-            Shown += ActionsToolbarForm_Shown;
-            LocationChanged += ActionsToolbarForm_LocationChanged;
-            DragEnter += ActionsToolbarForm_DragEnter;
-            DragDrop += ActionsToolbarForm_DragDrop;
-
-            tsMain = new ToolStripEx()
+            if (rectToolbar.Y < rectScreen.Y)
             {
-                AutoSize = true,
-                CanOverflow = false,
-                ClickThrough = true,
-                Dock = DockStyle.None,
-                GripStyle = ToolStripGripStyle.Hidden,
-                Location = new Point(1, 1),
-                Margin = new Padding(1),
-                MinimumSize = new Size(10, 30),
-                Padding = new Padding(0, 1, 0, 0),
-                Renderer = new ToolStripRoundedEdgeRenderer(),
-                TabIndex = 0,
-                ShowItemToolTips = false
-            };
-
-            tsMain.MouseLeave += tsMain_MouseLeave;
-
-            Controls.Add(tsMain);
-
-            components = new Container();
-
-            ttMain = new ToolTip(components)
+                pos.Y = rectScreen.Y;
+            } else if (rectToolbar.Bottom > rectScreen.Bottom)
             {
-                AutoPopDelay = 15000,
-                InitialDelay = 300,
-                ReshowDelay = 100,
-                ShowAlways = true
-            };
-
-            cmsTitle = new ContextMenuStrip(components);
-
-            ToolStripMenuItem tsmiClose = new ToolStripMenuItem(Resources.ActionsToolbar_Close);
-            tsmiClose.Click += TsmiClose_Click;
-            cmsTitle.Items.Add(tsmiClose);
-
-            cmsTitle.Items.Add(new ToolStripSeparator());
-
-            ToolStripMenuItem tsmiLock = new ToolStripMenuItem(Resources.ActionsToolbar__LockPosition);
-            tsmiLock.CheckOnClick = true;
-            tsmiLock.Checked = Program.Settings.ActionsToolbarLockPosition;
-            tsmiLock.Click += TsmiLock_Click;
-            cmsTitle.Items.Add(tsmiLock);
-
-            ToolStripMenuItem tsmiTopMost = new ToolStripMenuItem(Resources.ActionsToolbar_StayTopMost);
-            tsmiTopMost.CheckOnClick = true;
-            tsmiTopMost.Checked = Program.Settings.ActionsToolbarStayTopMost;
-            tsmiTopMost.Click += TsmiTopMost_Click;
-            cmsTitle.Items.Add(tsmiTopMost);
-
-            ToolStripMenuItem tsmiRunAtStartup = new ToolStripMenuItem(Resources.ActionsToolbar_OpenAtShareXStartup);
-            tsmiRunAtStartup.CheckOnClick = true;
-            tsmiRunAtStartup.Checked = Program.Settings.ActionsToolbarRunAtStartup;
-            tsmiRunAtStartup.Click += TsmiRunAtStartup_Click;
-            cmsTitle.Items.Add(tsmiRunAtStartup);
-
-            cmsTitle.Items.Add(new ToolStripSeparator());
-
-            ToolStripMenuItem tsmiEdit = new ToolStripMenuItem(Resources.ActionsToolbar_Edit);
-            tsmiEdit.Click += TsmiEdit_Click;
-            cmsTitle.Items.Add(tsmiEdit);
-
-            UpdateToolbar(Program.Settings.ActionsToolbarList);
-
-            ResumeLayout(false);
-            PerformLayout();
-
-            UpdatePosition();
-        }
-
-        private void ActionsToolbarForm_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
-        }
-
-        private void ActionsToolbarForm_LocationChanged(object sender, EventArgs e)
-        {
-            CheckToolbarPosition();
-        }
-
-        private void ActionsToolbarForm_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) ||
-                e.Data.GetDataPresent(DataFormats.Bitmap, false) ||
-                e.Data.GetDataPresent(DataFormats.Text, false))
-            {
-                e.Effect = DragDropEffects.Copy;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
+                pos.Y = rectScreen.Bottom - rectToolbar.Height;
             }
         }
 
-        private void ActionsToolbarForm_DragDrop(object sender, DragEventArgs e)
+        if (pos != rectToolbar.Location)
         {
-            UploadManager.DragDropUpload(e.Data);
+            Location = pos;
         }
 
-        private void CheckToolbarPosition()
+        Program.Settings.ActionsToolbarPosition = pos;
+    }
+
+    private void UpdatePosition()
+    {
+        Rectangle rectScreen = HelpersLib.Helpers.CaptureHelpers.GetScreenWorkingArea();
+
+        if (!Program.Settings.ActionsToolbarPosition.IsEmpty && rectScreen.Contains(Program.Settings.ActionsToolbarPosition))
         {
-            Rectangle rectToolbar = Bounds;
-            Rectangle rectScreen = CaptureHelpers.GetScreenWorkingArea();
-            Point pos = rectToolbar.Location;
+            Location = Program.Settings.ActionsToolbarPosition;
+        } else
+        {
+            Rectangle rectActiveScreen = HelpersLib.Helpers.CaptureHelpers.GetActiveScreenWorkingArea();
 
-            if (rectToolbar.Width < rectScreen.Width)
-            {
-                if (rectToolbar.X < rectScreen.X)
-                {
-                    pos.X = rectScreen.X;
-                }
-                else if (rectToolbar.Right > rectScreen.Right)
-                {
-                    pos.X = rectScreen.Right - rectToolbar.Width;
-                }
-            }
+            Location = Width < rectActiveScreen.Width
+                ? new Point(rectActiveScreen.X + rectActiveScreen.Width - Width, rectActiveScreen.Y + rectActiveScreen.Height - Height)
+                : rectActiveScreen.Location;
+        }
+    }
 
-            if (rectToolbar.Height < rectScreen.Height)
-            {
-                if (rectToolbar.Y < rectScreen.Y)
-                {
-                    pos.Y = rectScreen.Y;
-                }
-                else if (rectToolbar.Bottom > rectScreen.Bottom)
-                {
-                    pos.Y = rectScreen.Bottom - rectToolbar.Height;
-                }
-            }
+    private void TsmiClose_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
 
-            if (pos != rectToolbar.Location)
-            {
-                Location = pos;
-            }
+    private void TsmiLock_Click(object sender, EventArgs e)
+    {
+        Program.Settings.ActionsToolbarLockPosition = ((ToolStripMenuItem)sender).Checked;
+    }
 
-            Program.Settings.ActionsToolbarPosition = pos;
+    private void TsmiTopMost_Click(object sender, EventArgs e)
+    {
+        Program.Settings.ActionsToolbarStayTopMost = ((ToolStripMenuItem)sender).Checked;
+        TopMost = Program.Settings.ActionsToolbarStayTopMost;
+    }
+
+    private void TsmiRunAtStartup_Click(object sender, EventArgs e)
+    {
+        Program.Settings.ActionsToolbarRunAtStartup = ((ToolStripMenuItem)sender).Checked;
+    }
+
+    private void TsmiEdit_Click(object sender, EventArgs e)
+    {
+        using ActionsToolbarEditForm form = new(Program.Settings.ActionsToolbarList);
+        if (Program.Settings.ActionsToolbarStayTopMost)
+        {
+            TopMost = false;
         }
 
-        private void UpdatePosition()
+        form.ShowDialog();
+
+        if (Program.Settings.ActionsToolbarStayTopMost)
         {
-            Rectangle rectScreen = CaptureHelpers.GetScreenWorkingArea();
-
-            if (!Program.Settings.ActionsToolbarPosition.IsEmpty && rectScreen.Contains(Program.Settings.ActionsToolbarPosition))
-            {
-                Location = Program.Settings.ActionsToolbarPosition;
-            }
-            else
-            {
-                Rectangle rectActiveScreen = CaptureHelpers.GetActiveScreenWorkingArea();
-
-                if (Width < rectActiveScreen.Width)
-                {
-                    Location = new Point(rectActiveScreen.X + rectActiveScreen.Width - Width, rectActiveScreen.Y + rectActiveScreen.Height - Height);
-                }
-                else
-                {
-                    Location = rectActiveScreen.Location;
-                }
-            }
+            TopMost = true;
         }
 
-        private void TsmiClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        UpdateToolbar(Program.Settings.ActionsToolbarList);
+        CheckToolbarPosition();
+    }
 
-        private void TsmiLock_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ActionsToolbarLockPosition = ((ToolStripMenuItem)sender).Checked;
-        }
+    private void UpdateToolbar(List<HotkeyType> actions)
+    {
+        tsMain.SuspendLayout();
 
-        private void TsmiTopMost_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ActionsToolbarStayTopMost = ((ToolStripMenuItem)sender).Checked;
-            TopMost = Program.Settings.ActionsToolbarStayTopMost;
-        }
+        tsMain.Items.Clear();
 
-        private void TsmiRunAtStartup_Click(object sender, EventArgs e)
+        ToolStripLabel tslTitle = new()
         {
-            Program.Settings.ActionsToolbarRunAtStartup = ((ToolStripMenuItem)sender).Checked;
-        }
+            Margin = new Padding(4, 0, 3, 0),
+            Text = "ShareX",
+            ToolTipText = Resources.ActionsToolbar_Tip
+        };
 
-        private void TsmiEdit_Click(object sender, EventArgs e)
+        tslTitle.MouseDown += tslTitle_MouseDown;
+        tslTitle.MouseEnter += tslTitle_MouseEnter;
+        tslTitle.MouseLeave += tslTitle_MouseLeave;
+        tslTitle.MouseUp += tslTitle_MouseUp;
+
+        tsMain.Items.Add(tslTitle);
+
+        foreach (HotkeyType action in actions)
         {
-            using (ActionsToolbarEditForm form = new ActionsToolbarEditForm(Program.Settings.ActionsToolbarList))
+            if (action == HotkeyType.None)
             {
-                if (Program.Settings.ActionsToolbarStayTopMost)
+                ToolStripSeparator tss = new()
                 {
-                    TopMost = false;
-                }
-
-                form.ShowDialog();
-
-                if (Program.Settings.ActionsToolbarStayTopMost)
-                {
-                    TopMost = true;
-                }
-
-                UpdateToolbar(Program.Settings.ActionsToolbarList);
-                CheckToolbarPosition();
-            }
-        }
-
-        private void UpdateToolbar(List<HotkeyType> actions)
-        {
-            tsMain.SuspendLayout();
-
-            tsMain.Items.Clear();
-
-            ToolStripLabel tslTitle = new ToolStripLabel()
-            {
-                Margin = new Padding(4, 0, 3, 0),
-                Text = "ShareX",
-                ToolTipText = Resources.ActionsToolbar_Tip
-            };
-
-            tslTitle.MouseDown += tslTitle_MouseDown;
-            tslTitle.MouseEnter += tslTitle_MouseEnter;
-            tslTitle.MouseLeave += tslTitle_MouseLeave;
-            tslTitle.MouseUp += tslTitle_MouseUp;
-
-            tsMain.Items.Add(tslTitle);
-
-            foreach (HotkeyType action in actions)
-            {
-                if (action == HotkeyType.None)
-                {
-                    ToolStripSeparator tss = new ToolStripSeparator()
-                    {
-                        Margin = new Padding(0)
-                    };
-
-                    tsMain.Items.Add(tss);
-                }
-                else
-                {
-                    ToolStripButton tsb = new ToolStripButton()
-                    {
-                        Text = action.GetLocalizedDescription(),
-                        DisplayStyle = ToolStripItemDisplayStyle.Image,
-                        Image = TaskHelpers.FindMenuIcon(action)
-                    };
-
-                    tsb.Click += async (sender, e) =>
-                    {
-                        if (Program.Settings.ActionsToolbarStayTopMost)
-                        {
-                            TopMost = false;
-                        }
-
-                        await TaskHelpers.ExecuteJob(action);
-
-                        if (Program.Settings.ActionsToolbarStayTopMost)
-                        {
-                            TopMost = true;
-                        }
-                    };
-
-                    tsMain.Items.Add(tsb);
-                }
-            }
-
-            foreach (ToolStripItem tsi in tsMain.Items)
-            {
-                tsi.MouseEnter += (sender, e) =>
-                {
-                    string text;
-
-                    if (!string.IsNullOrEmpty(tsi.ToolTipText))
-                    {
-                        text = tsi.ToolTipText;
-                    }
-                    else
-                    {
-                        text = tsi.Text;
-                    }
-
-                    ttMain.SetToolTip(tsMain, text);
+                    Margin = new Padding(0)
                 };
 
-                tsi.MouseLeave += tsMain_MouseLeave;
-            }
-
-            tsMain.ResumeLayout(false);
-            tsMain.PerformLayout();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
+                tsMain.Items.Add(tss);
+            } else
             {
-                components.Dispose();
+                ToolStripButton tsb = new()
+                {
+                    Text = action.GetLocalizedDescription(),
+                    DisplayStyle = ToolStripItemDisplayStyle.Image,
+                    Image = TaskHelpers.FindMenuIcon(action)
+                };
+
+                tsb.Click += async (sender, e) =>
+                {
+                    if (Program.Settings.ActionsToolbarStayTopMost)
+                    {
+                        TopMost = false;
+                    }
+
+                    await TaskHelpers.ExecuteJob(action);
+
+                    if (Program.Settings.ActionsToolbarStayTopMost)
+                    {
+                        TopMost = true;
+                    }
+                };
+
+                tsMain.Items.Add(tsb);
             }
-
-            base.Dispose(disposing);
         }
 
-        private void tsMain_MouseLeave(object sender, EventArgs e)
+        foreach (ToolStripItem tsi in tsMain.Items)
         {
-            ttMain.RemoveAll();
-        }
-
-        private void tslTitle_MouseEnter(object sender, EventArgs e)
-        {
-            if (!Program.Settings.ActionsToolbarLockPosition)
+            tsi.MouseEnter += (sender, e) =>
             {
-                Cursor = Cursors.SizeAll;
-            }
+                string text = !string.IsNullOrEmpty(tsi.ToolTipText) ? tsi.ToolTipText : tsi.Text;
+                ttMain.SetToolTip(tsMain, text);
+            };
+
+            tsi.MouseLeave += tsMain_MouseLeave;
         }
 
-        private void tslTitle_MouseLeave(object sender, EventArgs e)
+        tsMain.ResumeLayout(false);
+        tsMain.PerformLayout();
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing && components != null)
         {
-            Cursor = Cursors.Default;
+            components.Dispose();
         }
 
-        private void tslTitle_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left && !Program.Settings.ActionsToolbarLockPosition)
-            {
-                NativeMethods.ReleaseCapture();
-                Message message = Message.Create(Handle, (int)WindowsMessages.SYSCOMMAND, new IntPtr(NativeConstants.MOUSE_MOVE), IntPtr.Zero);
-                DefWndProc(ref message);
-            }
-        }
+        base.Dispose(disposing);
+    }
 
-        private void tslTitle_MouseUp(object sender, MouseEventArgs e)
+    private void tsMain_MouseLeave(object sender, EventArgs e)
+    {
+        ttMain.RemoveAll();
+    }
+
+    private void tslTitle_MouseEnter(object sender, EventArgs e)
+    {
+        if (!Program.Settings.ActionsToolbarLockPosition)
         {
-            if (e.Button == MouseButtons.Right)
-            {
-                cmsTitle.Show(Location.X, Location.Y + Size.Height - 1);
-            }
-            else if (e.Button == MouseButtons.Middle)
-            {
-                Close();
-            }
+            Cursor = Cursors.SizeAll;
+        }
+    }
+
+    private void tslTitle_MouseLeave(object sender, EventArgs e)
+    {
+        Cursor = Cursors.Default;
+    }
+
+    private void tslTitle_MouseDown(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left && !Program.Settings.ActionsToolbarLockPosition)
+        {
+            NativeMethods.ReleaseCapture();
+            Message message = Message.Create(Handle, (int)WindowsMessages.SYSCOMMAND, new IntPtr(NativeConstants.MOUSE_MOVE), IntPtr.Zero);
+            DefWndProc(ref message);
+        }
+    }
+
+    private void tslTitle_MouseUp(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Right)
+        {
+            cmsTitle.Show(Location.X, Location.Y + Size.Height - 1);
+        } else if (e.Button == MouseButtons.Middle)
+        {
+            Close();
         }
     }
 }

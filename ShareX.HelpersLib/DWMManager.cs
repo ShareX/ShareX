@@ -23,51 +23,51 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Native;
+
 using System;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class DWMManager : IDisposable
 {
-    public class DWMManager : IDisposable
+    private bool isDWMEnabled;
+    private bool autoEnable;
+
+    public DWMManager()
     {
-        private bool isDWMEnabled;
-        private bool autoEnable;
+        isDWMEnabled = NativeMethods.IsDWMEnabled();
+    }
 
-        public DWMManager()
+    public bool AutoDisable()
+    {
+        if (isDWMEnabled)
         {
-            isDWMEnabled = NativeMethods.IsDWMEnabled();
+            ChangeComposition(false);
+            autoEnable = true;
+            return true;
         }
 
-        public bool AutoDisable()
-        {
-            if (isDWMEnabled)
-            {
-                ChangeComposition(false);
-                autoEnable = true;
-                return true;
-            }
+        return false;
+    }
 
-            return false;
+    public void ChangeComposition(bool enable)
+    {
+        try
+        {
+            NativeMethods.DwmEnableComposition(enable ? DWM_EC.DWM_EC_ENABLECOMPOSITION : DWM_EC.DWM_EC_DISABLECOMPOSITION);
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
         }
+    }
 
-        public void ChangeComposition(bool enable)
+    public void Dispose()
+    {
+        if (isDWMEnabled && autoEnable)
         {
-            try
-            {
-                NativeMethods.DwmEnableComposition(enable ? DWM_EC.DWM_EC_ENABLECOMPOSITION : DWM_EC.DWM_EC_DISABLECOMPOSITION);
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-        }
-
-        public void Dispose()
-        {
-            if (isDWMEnabled && autoEnable)
-            {
-                ChangeComposition(true);
-                autoEnable = false;
-            }
+            ChangeComposition(true);
+            autoEnable = false;
         }
     }
 }

@@ -24,158 +24,158 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
 using ShareX.UploadersLib.ImageUploaders;
+using ShareX.UploadersLib.OAuth;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class TwitterTweetForm : Form
 {
-    public partial class TwitterTweetForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Message
     {
-        public string Message
+        get
         {
-            get
-            {
-                return txtTweet.Text;
-            }
-            set
-            {
-                txtTweet.Text = value;
-            }
+            return txtTweet.Text;
         }
-
-        private int length;
-
-        public int Length
+        set
         {
-            get
-            {
-                return length;
-            }
-            set
-            {
-                length = value;
-                UpdateLength();
-            }
+            txtTweet.Text = value;
         }
+    }
 
-        public bool IsValidMessage
+    private int length;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public int Length
+    {
+        get
         {
-            get
-            {
-                return Message != null && (MediaMode || Message.Length > 0) && Message.Length <= Length;
-            }
+            return length;
         }
-
-        private bool mediaMode;
-
-        public bool MediaMode
+        set
         {
-            get
-            {
-                return mediaMode;
-            }
-            set
-            {
-                mediaMode = value;
-
-                if (mediaMode)
-                {
-                    Length = Twitter.MessageMediaLimit;
-                }
-                else
-                {
-                    Length = Twitter.MessageLimit;
-                }
-            }
-        }
-
-        public bool IsTweetSent { get; private set; }
-
-        public OAuthInfo AuthInfo { get; set; }
-
-        public TwitterTweetForm()
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            MediaMode = false;
-        }
-
-        public TwitterTweetForm(OAuthInfo oauth) : this()
-        {
-            AuthInfo = oauth;
-        }
-
-        public TwitterTweetForm(OAuthInfo oauth, string message) : this(oauth)
-        {
-            Message = message;
-        }
-
-        private void UpdateLength()
-        {
-            lblTweetLength.Text = (Length - Message.Length).ToString();
-            btnOK.Enabled = IsValidMessage;
-        }
-
-        private void OK()
-        {
-            if (IsValidMessage)
-            {
-                SendTweet();
-
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-        }
-
-        private void SendTweet()
-        {
-            if (AuthInfo != null)
-            {
-                Hide();
-
-                try
-                {
-                    TwitterStatusResponse status = new Twitter(AuthInfo).TweetMessage(Message);
-                    IsTweetSent = status != null;
-                }
-                catch (Exception ex)
-                {
-                    DebugHelper.WriteException(ex);
-                    ex.ShowError();
-                }
-            }
-        }
-
-        private void TwitterMsg_Shown(object sender, EventArgs e)
-        {
-            txtTweet.Select(txtTweet.TextLength, 0);
-            this.ForceActivate();
-        }
-
-        private void txtTweet_TextChanged(object sender, EventArgs e)
-        {
+            length = value;
             UpdateLength();
         }
+    }
 
-        private void txtTweet_KeyDown(object sender, KeyEventArgs e)
+    public bool IsValidMessage
+    {
+        get
         {
-            if (e.KeyData == (Keys.Control | Keys.Enter))
+            return Message != null && (MediaMode || Message.Length > 0) && Message.Length <= Length;
+        }
+    }
+
+    private bool mediaMode;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool MediaMode
+    {
+        get
+        {
+            return mediaMode;
+        }
+        set
+        {
+            mediaMode = value;
+
+            Length = mediaMode ? Twitter.MessageMediaLimit : Twitter.MessageLimit;
+        }
+    }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool IsTweetSent { get; private set; }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public OAuthInfo AuthInfo { get; set; }
+
+    public TwitterTweetForm()
+    {
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+
+        MediaMode = false;
+    }
+
+    public TwitterTweetForm(OAuthInfo oauth) : this()
+    {
+        AuthInfo = oauth;
+    }
+
+    public TwitterTweetForm(OAuthInfo oauth, string message) : this(oauth)
+    {
+        Message = message;
+    }
+
+    private void UpdateLength()
+    {
+        lblTweetLength.Text = (Length - Message.Length).ToString();
+        btnOK.Enabled = IsValidMessage;
+    }
+
+    private void OK()
+    {
+        if (IsValidMessage)
+        {
+            SendTweet();
+
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+    }
+
+    private void SendTweet()
+    {
+        if (AuthInfo != null)
+        {
+            Hide();
+
+            try
             {
-                OK();
+                TwitterStatusResponse status = new Twitter(AuthInfo).TweetMessage(Message);
+                IsTweetSent = status != null;
+            } catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+                ex.ShowError();
             }
         }
+    }
 
-        private void btnOK_Click(object sender, EventArgs e)
+    private void TwitterMsg_Shown(object sender, EventArgs e)
+    {
+        txtTweet.Select(txtTweet.TextLength, 0);
+        this.ForceActivate();
+    }
+
+    private void txtTweet_TextChanged(object sender, EventArgs e)
+    {
+        UpdateLength();
+    }
+
+    private void txtTweet_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyData == (Keys.Control | Keys.Enter))
         {
             OK();
         }
+    }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        OK();
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

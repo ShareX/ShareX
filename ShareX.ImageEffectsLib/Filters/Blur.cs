@@ -23,48 +23,49 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+internal class Blur : ImageEffect
 {
-    internal class Blur : ImageEffect
+    private int radius;
+
+    [DefaultValue(15)]
+    public int Radius
     {
-        private int radius;
-
-        [DefaultValue(15)]
-        public int Radius
+        get
         {
-            get
-            {
-                return radius;
-            }
-            set
-            {
-                radius = value.Max(3);
+            return radius;
+        }
+        set
+        {
+            radius = value.Max(3);
 
-                if (radius.IsEvenNumber())
-                {
-                    radius++;
-                }
+            if (radius.IsEvenNumber())
+            {
+                radius++;
             }
         }
+    }
 
-        public Blur()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
+    public Blur()
+    {
+        this.ApplyDefaultPropertyValues();
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            ImageHelpers.BoxBlur(bmp, Radius);
-            return bmp;
-        }
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        ImageHelpers.BoxBlur(bmp, Radius);
+        return bmp;
+    }
 
-        protected override string GetSummary()
-        {
-            return Radius.ToString();
-        }
+    protected override string GetSummary()
+    {
+        return Radius.ToString();
     }
 }

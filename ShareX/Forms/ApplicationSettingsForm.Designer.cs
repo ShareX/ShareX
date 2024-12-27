@@ -1,4 +1,5 @@
 ﻿using ShareX.HelpersLib;
+using ShareX.HelpersLib.Controls;
 namespace ShareX
 {
     partial class ApplicationSettingsForm
@@ -47,7 +48,7 @@ namespace ShareX
             this.btnEditQuickTaskMenu = new System.Windows.Forms.Button();
             this.cbShowTray = new System.Windows.Forms.CheckBox();
             this.cbTrayIconProgressEnabled = new System.Windows.Forms.CheckBox();
-            this.btnLanguages = new ShareX.HelpersLib.MenuButton();
+            this.btnLanguages = new ShareX.HelpersLib.Controls.MenuButton();
             this.cmsLanguages = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cbRememberMainFormPosition = new System.Windows.Forms.CheckBox();
             this.cbSilentRun = new System.Windows.Forms.CheckBox();
@@ -131,19 +132,19 @@ namespace ShareX
             this.btnClipboardFormatEdit = new System.Windows.Forms.Button();
             this.btnClipboardFormatRemove = new System.Windows.Forms.Button();
             this.btnClipboardFormatAdd = new System.Windows.Forms.Button();
-            this.lvClipboardFormats = new ShareX.HelpersLib.MyListView();
+            this.lvClipboardFormats = new ShareX.HelpersLib.Controls.MyListView();
             this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.gbSecondaryFileUploaders = new System.Windows.Forms.GroupBox();
-            this.lvSecondaryFileUploaders = new ShareX.HelpersLib.MyListView();
+            this.lvSecondaryFileUploaders = new ShareX.HelpersLib.Controls.MyListView();
             this.chSecondaryFileUploaders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblUploadLimit = new System.Windows.Forms.Label();
             this.gbSecondaryImageUploaders = new System.Windows.Forms.GroupBox();
-            this.lvSecondaryImageUploaders = new ShareX.HelpersLib.MyListView();
+            this.lvSecondaryImageUploaders = new ShareX.HelpersLib.Controls.MyListView();
             this.chSecondaryImageUploaders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbSecondaryTextUploaders = new System.Windows.Forms.GroupBox();
-            this.lvSecondaryTextUploaders = new ShareX.HelpersLib.MyListView();
+            this.lvSecondaryTextUploaders = new ShareX.HelpersLib.Controls.MyListView();
             this.chSecondaryTextUploaders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nudUploadLimit = new System.Windows.Forms.NumericUpDown();
             this.cbUseSecondaryUploaders = new System.Windows.Forms.CheckBox();
@@ -1533,7 +1534,7 @@ namespace ShareX
         private System.Windows.Forms.NumericUpDown nudUploadLimit;
         private System.Windows.Forms.Button btnClipboardFormatRemove;
         private System.Windows.Forms.Button btnClipboardFormatAdd;
-        private HelpersLib.MyListView lvClipboardFormats;
+        private MyListView lvClipboardFormats;
         private System.Windows.Forms.ColumnHeader chDescription;
         private System.Windows.Forms.ColumnHeader chFormat;
         private System.Windows.Forms.Button btnClipboardFormatEdit;

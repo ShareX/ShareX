@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.build.targets = Directory.build.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageListView", "ImageListView\ImageListView.csproj", "{AB303D16-D19C-4E2F-83D5-895B7403CD2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -154,6 +156,16 @@ Global
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Release|Any CPU.Build.0 = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.ActiveCfg = Steam|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.Build.0 = Steam|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.MicrosoftStore|Any CPU.ActiveCfg = MicrosoftStore|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.MicrosoftStore|Any CPU.Build.0 = MicrosoftStore|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.MicrosoftStoreDebug|Any CPU.ActiveCfg = MicrosoftStoreDebug|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.MicrosoftStoreDebug|Any CPU.Build.0 = MicrosoftStoreDebug|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.Steam|Any CPU.ActiveCfg = Steam|Any CPU
+		{AB303D16-D19C-4E2F-83D5-895B7403CD2A}.Steam|Any CPU.Build.0 = Steam|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

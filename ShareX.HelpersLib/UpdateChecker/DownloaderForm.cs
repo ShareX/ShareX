@@ -23,246 +23,250 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.HelpersLib.Properties;
+using ShareX.HelpersLib.UpdateChecker;
+
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class DownloaderForm : Form
 {
-    public partial class DownloaderForm : Form
+    public delegate void DownloaderInstallEventHandler(string filePath);
+    public event DownloaderInstallEventHandler InstallRequested;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string URL { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string FileName { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string DownloadLocation { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string AcceptHeader { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool AutoStartDownload { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public InstallType InstallType { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool AutoStartInstall { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public DownloaderFormStatus Status { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool RunInstallerInBackground { get; set; }
+
+    private FileDownloader fileDownloader;
+
+    private DownloaderForm()
     {
-        public delegate void DownloaderInstallEventHandler(string filePath);
-        public event DownloaderInstallEventHandler InstallRequested;
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this);
 
-        public string URL { get; set; }
-        public string FileName { get; set; }
-        public string DownloadLocation { get; private set; }
-        public string AcceptHeader { get; set; }
-        public bool AutoStartDownload { get; set; }
-        public InstallType InstallType { get; set; }
-        public bool AutoStartInstall { get; set; }
-        public DownloaderFormStatus Status { get; private set; }
-        public bool RunInstallerInBackground { get; set; }
+        ChangeStatus(Resources.DownloaderForm_DownloaderForm_Waiting_);
+        Status = DownloaderFormStatus.Waiting;
+        AutoStartDownload = true;
+        InstallType = InstallType.Silent;
+        AutoStartInstall = true;
+        RunInstallerInBackground = true;
+    }
 
-        private FileDownloader fileDownloader;
+    public DownloaderForm(string url, string fileName) : this()
+    {
+        URL = url;
+        FileName = fileName;
+        lblFilename.Text = Helpers.Helpers.SafeStringFormat(Resources.DownloaderForm_DownloaderForm_Filename___0_, FileName);
+    }
 
-        private DownloaderForm()
+    public DownloaderForm(UpdateChecker.UpdateChecker updateChecker) : this(updateChecker.DownloadURL, updateChecker.FileName)
+    {
+        if (updateChecker is GitHubUpdateChecker)
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-
-            ChangeStatus(Resources.DownloaderForm_DownloaderForm_Waiting_);
-            Status = DownloaderFormStatus.Waiting;
-            AutoStartDownload = true;
-            InstallType = InstallType.Silent;
-            AutoStartInstall = true;
-            RunInstallerInBackground = true;
+            AcceptHeader = "application/octet-stream";
         }
+    }
 
-        public DownloaderForm(string url, string fileName) : this()
+    private async void DownloaderForm_Shown(object sender, EventArgs e)
+    {
+        if (AutoStartDownload)
         {
-            URL = url;
-            FileName = fileName;
-            lblFilename.Text = Helpers.SafeStringFormat(Resources.DownloaderForm_DownloaderForm_Filename___0_, FileName);
+            await StartDownload();
         }
+    }
 
-        public DownloaderForm(UpdateChecker updateChecker) : this(updateChecker.DownloadURL, updateChecker.FileName)
+    private async void btnAction_MouseClick(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left)
         {
-            if (updateChecker is GitHubUpdateChecker)
-            {
-                AcceptHeader = "application/octet-stream";
-            }
-        }
-
-        private async void DownloaderForm_Shown(object sender, EventArgs e)
-        {
-            if (AutoStartDownload)
+            if (Status == DownloaderFormStatus.Waiting)
             {
                 await StartDownload();
-            }
-        }
-
-        private async void btnAction_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
+            } else if (Status == DownloaderFormStatus.DownloadCompleted)
             {
-                if (Status == DownloaderFormStatus.Waiting)
-                {
-                    await StartDownload();
-                }
-                else if (Status == DownloaderFormStatus.DownloadCompleted)
-                {
-                    DialogResult = DialogResult.OK;
-                    Install();
-                }
-                else
-                {
-                    DialogResult = DialogResult.Cancel;
-                    Close();
-                }
-            }
-        }
-
-        public void Install()
-        {
-            if (Status == DownloaderFormStatus.DownloadCompleted)
+                DialogResult = DialogResult.OK;
+                Install();
+            } else
             {
-                Status = DownloaderFormStatus.InstallStarted;
-                btnAction.Enabled = false;
-                RunInstallerWithDelay();
+                DialogResult = DialogResult.Cancel;
                 Close();
             }
         }
+    }
 
-        // This function will give time for ShareX to close so installer won't tell ShareX is already running
-        private void RunInstallerWithDelay(int delay = 1000)
+    public void Install()
+    {
+        if (Status == DownloaderFormStatus.DownloadCompleted)
         {
-            if (RunInstallerInBackground)
-            {
-                Thread thread = new Thread(() =>
-                {
-                    Thread.Sleep(delay);
-                    RunInstaller();
-                });
+            Status = DownloaderFormStatus.InstallStarted;
+            btnAction.Enabled = false;
+            RunInstallerWithDelay();
+            Close();
+        }
+    }
 
-                thread.Start();
-            }
-            else
+    // This function will give time for ShareX to close so installer won't tell ShareX is already running
+    private void RunInstallerWithDelay(int delay = 1000)
+    {
+        if (RunInstallerInBackground)
+        {
+            Thread thread = new(() =>
             {
-                Hide();
+                Thread.Sleep(delay);
                 RunInstaller();
+            });
+
+            thread.Start();
+        } else
+        {
+            Hide();
+            RunInstaller();
+        }
+    }
+
+    private void RunInstaller()
+    {
+        if (InstallType == InstallType.Event)
+        {
+            OnInstallRequested();
+        } else
+        {
+            try
+            {
+                using Process process = new();
+                ProcessStartInfo psi = new()
+                {
+                    FileName = DownloadLocation,
+                    Arguments = "/UPDATE",
+                    UseShellExecute = true
+                };
+
+                if (InstallType == InstallType.Silent)
+                {
+                    psi.Arguments += " /SILENT";
+                } else if (InstallType == InstallType.VerySilent)
+                {
+                    psi.Arguments += " /VERYSILENT";
+                }
+
+                if (Helpers.Helpers.IsDefaultInstallDir() && !Helpers.Helpers.IsMemberOfAdministratorsGroup())
+                {
+                    psi.Verb = "runas";
+                }
+
+                process.StartInfo = psi;
+                process.Start();
+            } catch
+            {
             }
         }
+    }
 
-        private void RunInstaller()
+    protected void OnInstallRequested()
+    {
+        if (InstallRequested != null)
         {
-            if (InstallType == InstallType.Event)
+            DialogResult = DialogResult.OK;
+            InstallRequested(DownloadLocation);
+        }
+    }
+
+    private void ChangeStatus(string status)
+    {
+        lblStatus.Text = Helpers.Helpers.SafeStringFormat(Resources.DownloaderForm_ChangeStatus_Status___0_, status);
+    }
+
+    private async Task StartDownload()
+    {
+        if (!string.IsNullOrEmpty(URL) && Status == DownloaderFormStatus.Waiting)
+        {
+            Status = DownloaderFormStatus.DownloadStarted;
+            btnAction.Text = Resources.DownloaderForm_StartDownload_Cancel;
+
+            string folderPath = Path.Combine(Path.GetTempPath(), "ShareX");
+            FileHelpers.CreateDirectory(folderPath);
+            DownloadLocation = Path.Combine(folderPath, FileName);
+
+            DebugHelper.WriteLine($"Downloading: \"{URL}\" -> \"{DownloadLocation}\"");
+
+            fileDownloader = new FileDownloader(URL, DownloadLocation);
+            fileDownloader.AcceptHeader = AcceptHeader;
+            fileDownloader.FileSizeReceived += FileDownloader_FileSizeReceived;
+            fileDownloader.ProgressChanged += FileDownloader_ProgressChanged;
+
+            ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);
+
+            try
             {
-                OnInstallRequested();
-            }
-            else
-            {
-                try
+                bool downloadStatus = await fileDownloader.StartDownload();
+
+                if (downloadStatus)
                 {
-                    using (Process process = new Process())
+                    ChangeStatus(Resources.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
+                    Status = DownloaderFormStatus.DownloadCompleted;
+                    btnAction.Text = Resources.DownloaderForm_fileDownloader_DownloadCompleted_Install;
+
+                    if (AutoStartInstall)
                     {
-                        ProcessStartInfo psi = new ProcessStartInfo()
-                        {
-                            FileName = DownloadLocation,
-                            Arguments = "/UPDATE",
-                            UseShellExecute = true
-                        };
-
-                        if (InstallType == InstallType.Silent)
-                        {
-                            psi.Arguments += " /SILENT";
-                        }
-                        else if (InstallType == InstallType.VerySilent)
-                        {
-                            psi.Arguments += " /VERYSILENT";
-                        }
-
-                        if (Helpers.IsDefaultInstallDir() && !Helpers.IsMemberOfAdministratorsGroup())
-                        {
-                            psi.Verb = "runas";
-                        }
-
-                        process.StartInfo = psi;
-                        process.Start();
+                        Install();
                     }
                 }
-                catch
-                {
-                }
+            } catch (Exception e)
+            {
+                ChangeStatus(e.Message);
             }
         }
+    }
 
-        protected void OnInstallRequested()
+    private void FileDownloader_FileSizeReceived()
+    {
+        ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);
+
+        FileDownloader_ProgressChanged();
+    }
+
+    private void FileDownloader_ProgressChanged()
+    {
+        if (fileDownloader != null)
         {
-            if (InstallRequested != null)
-            {
-                DialogResult = DialogResult.OK;
-                InstallRequested(DownloadLocation);
-            }
-        }
+            pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
 
-        private void ChangeStatus(string status)
-        {
-            lblStatus.Text = Helpers.SafeStringFormat(Resources.DownloaderForm_ChangeStatus_Status___0_, status);
-        }
-
-        private async Task StartDownload()
-        {
-            if (!string.IsNullOrEmpty(URL) && Status == DownloaderFormStatus.Waiting)
-            {
-                Status = DownloaderFormStatus.DownloadStarted;
-                btnAction.Text = Resources.DownloaderForm_StartDownload_Cancel;
-
-                string folderPath = Path.Combine(Path.GetTempPath(), "ShareX");
-                FileHelpers.CreateDirectory(folderPath);
-                DownloadLocation = Path.Combine(folderPath, FileName);
-
-                DebugHelper.WriteLine($"Downloading: \"{URL}\" -> \"{DownloadLocation}\"");
-
-                fileDownloader = new FileDownloader(URL, DownloadLocation);
-                fileDownloader.AcceptHeader = AcceptHeader;
-                fileDownloader.FileSizeReceived += FileDownloader_FileSizeReceived;
-                fileDownloader.ProgressChanged += FileDownloader_ProgressChanged;
-
-                ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);
-
-                try
-                {
-                    bool downloadStatus = await fileDownloader.StartDownload();
-
-                    if (downloadStatus)
-                    {
-                        ChangeStatus(Resources.DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_);
-                        Status = DownloaderFormStatus.DownloadCompleted;
-                        btnAction.Text = Resources.DownloaderForm_fileDownloader_DownloadCompleted_Install;
-
-                        if (AutoStartInstall)
-                        {
-                            Install();
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    ChangeStatus(e.Message);
-                }
-            }
-        }
-
-        private void FileDownloader_FileSizeReceived()
-        {
-            ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);
-
-            FileDownloader_ProgressChanged();
-        }
-
-        private void FileDownloader_ProgressChanged()
-        {
-            if (fileDownloader != null)
-            {
-                pbProgress.Value = (int)Math.Round(fileDownloader.DownloadPercentage);
-
-                lblProgress.Text = $@"{Resources.DownloaderForm_FileDownloader_ProgressChanged_Progress}: {fileDownloader.DownloadPercentage:0.0}%
+            lblProgress.Text = $@"{Resources.DownloaderForm_FileDownloader_ProgressChanged_Progress}: {fileDownloader.DownloadPercentage:0.0}%
 {Resources.DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed}: {((long)fileDownloader.DownloadSpeed).ToSizeString()}/s
 {Resources.DownloaderForm_FileDownloader_ProgressChanged_FileSize}: {fileDownloader.DownloadedSize.ToSizeString()} / {fileDownloader.FileSize.ToSizeString()}";
-            }
         }
+    }
 
-        private void DownloaderForm_FormClosing(object sender, FormClosingEventArgs e)
+    private void DownloaderForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (Status == DownloaderFormStatus.DownloadStarted && fileDownloader != null)
         {
-            if (Status == DownloaderFormStatus.DownloadStarted && fileDownloader != null)
-            {
-                fileDownloader.StopDownload();
-            }
+            fileDownloader.StopDownload();
         }
     }
 }

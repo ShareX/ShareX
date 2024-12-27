@@ -1,4 +1,6 @@
-﻿namespace ShareX.HelpersLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.HelpersLib
 {
     partial class TabToTreeView
     {
@@ -31,7 +33,7 @@
             this.tvMain = new System.Windows.Forms.TreeView();
             this.scMain = new System.Windows.Forms.SplitContainer();
             this.pSeparator = new System.Windows.Forms.Panel();
-            this.tcMain = new ShareX.HelpersLib.TablessControl();
+            this.tcMain = new ShareX.HelpersLib.Controls.TablessControl();
             this.pLeft = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();

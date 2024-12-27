@@ -26,62 +26,61 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class StringLineReader
 {
-    public class StringLineReader
+    public string Text { get; private set; }
+    public int Position { get; private set; }
+    public int Length { get; private set; }
+
+    public StringLineReader(string text)
     {
-        public string Text { get; private set; }
-        public int Position { get; private set; }
-        public int Length { get; private set; }
+        Text = text;
+        Length = Text.Length;
+    }
 
-        public StringLineReader(string text)
+    public string ReadLine()
+    {
+        StringBuilder builder = new();
+
+        while (!string.IsNullOrEmpty(Text) && Position < Length)
         {
-            Text = text;
-            Length = Text.Length;
-        }
+            char ch = Text[Position];
+            builder.Append(ch);
+            Position++;
 
-        public string ReadLine()
-        {
-            StringBuilder builder = new StringBuilder();
-
-            while (!string.IsNullOrEmpty(Text) && Position < Length)
+            if (ch == '\r' || ch == '\n' || Position == Length)
             {
-                char ch = Text[Position];
-                builder.Append(ch);
-                Position++;
-
-                if (ch == '\r' || ch == '\n' || Position == Length)
+                if (ch == '\r' && Position < Length && Text[Position] == '\n')
                 {
-                    if (ch == '\r' && Position < Length && Text[Position] == '\n')
-                    {
-                        continue;
-                    }
-
-                    return builder.ToString();
+                    continue;
                 }
+
+                return builder.ToString();
             }
-
-            return null;
         }
 
-        public string[] ReadAllLines(bool autoTrim = true)
+        return null;
+    }
+
+    public string[] ReadAllLines(bool autoTrim = true)
+    {
+        List<string> lines = new();
+
+        string line;
+
+        while ((line = ReadLine()) != null)
         {
-            List<string> lines = new List<string>();
-
-            string line;
-
-            while ((line = ReadLine()) != null)
-            {
-                if (autoTrim) line = line.Trim();
-                lines.Add(line);
-            }
-
-            return lines.ToArray();
+            if (autoTrim) line = line.Trim();
+            lines.Add(line);
         }
 
-        public void Reset()
-        {
-            Position = 0;
-        }
+        return lines.ToArray();
+    }
+
+    public void Reset()
+    {
+        Position = 0;
     }
 }

@@ -23,50 +23,52 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Drawings;
+
+[Description("Checkerboard")]
+public class DrawCheckerboard : ImageEffect
 {
-    [Description("Checkerboard")]
-    public class DrawCheckerboard : ImageEffect
+    private int size;
+
+    [DefaultValue(10)]
+    public int Size
     {
-        private int size;
-
-        [DefaultValue(10)]
-        public int Size
+        get
         {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value.Max(1);
-            }
+            return size;
         }
-
-        [DefaultValue(typeof(Color), "LightGray"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
-
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color2 { get; set; }
-
-        public DrawCheckerboard()
+        set
         {
-            this.ApplyDefaultPropertyValues();
+            size = value.Max(1);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            return ImageHelpers.DrawCheckers(bmp, Size, Color, Color2);
-        }
+    [DefaultValue(typeof(Color), "LightGray"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color Color { get; set; }
 
-        protected override string GetSummary()
-        {
-            return $"{Size}x{Size}";
-        }
+    [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color Color2 { get; set; }
+
+    public DrawCheckerboard()
+    {
+        this.ApplyDefaultPropertyValues();
+    }
+
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        return ImageHelpers.DrawCheckers(bmp, Size, Color, Color2);
+    }
+
+    protected override string GetSummary()
+    {
+        return $"{Size}x{Size}";
     }
 }

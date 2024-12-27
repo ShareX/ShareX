@@ -23,24 +23,18 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX
+namespace ShareX.CaptureHelpers;
+
+public class CaptureActiveWindow : CaptureBase
 {
-    public class CaptureActiveWindow : CaptureBase
+    protected override TaskMetadata Execute(TaskSettings taskSettings)
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
-        {
-            TaskMetadata metadata = CreateMetadata();
+        TaskMetadata metadata = CreateMetadata();
 
-            if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
-            {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent();
-            }
-            else
-            {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
-            }
+        metadata.Image = taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea
+            ? TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent()
+            : TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
 
-            return metadata;
-        }
+        return metadata;
     }
 }

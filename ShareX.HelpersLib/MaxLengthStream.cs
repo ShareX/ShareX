@@ -26,53 +26,47 @@
 using System;
 using System.IO;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+internal sealed class MaxLengthStream : Stream
 {
-    internal sealed class MaxLengthStream : Stream
+    private readonly Stream stream;
+    private long length = 0L;
+
+    public MaxLengthStream(Stream stream, long maxLength)
     {
-        private readonly Stream stream;
-        private long length = 0L;
+        this.stream = stream ?? throw new ArgumentNullException(nameof(stream));
+        MaxLength = maxLength;
+    }
 
-        public MaxLengthStream(Stream stream, long maxLength)
-        {
-            this.stream = stream ?? throw new ArgumentNullException(nameof(stream));
-            MaxLength = maxLength;
-        }
+    public long MaxLength { get; }
 
-        public long MaxLength { get; }
+    public override bool CanRead => stream.CanRead;
+    public override bool CanSeek => false;
+    public override bool CanWrite => false;
+    public override long Length => stream.Length;
 
-        public override bool CanRead => stream.CanRead;
-        public override bool CanSeek => false;
-        public override bool CanWrite => false;
-        public override long Length => stream.Length;
+    public override long Position
+    {
+        get => stream.Position;
+        set => throw new NotSupportedException();
+    }
 
-        public override long Position
-        {
-            get => stream.Position;
-            set => throw new NotSupportedException();
-        }
+    public override int Read(byte[] buffer, int offset, int count)
+    {
+        int result = stream.Read(buffer, offset, count);
+        length += result;
+        return length > MaxLength ? throw new Exception("Stream is larger than the maximum allowed size.") : result;
+    }
 
-        public override int Read(byte[] buffer, int offset, int count)
-        {
-            int result = stream.Read(buffer, offset, count);
-            length += result;
-            if (length > MaxLength)
-            {
-                throw new Exception("Stream is larger than the maximum allowed size.");
-            }
+    public override void Flush() => throw new NotSupportedException();
+    public override long Seek(long offset, SeekOrigin origin) => throw new NotSupportedException();
+    public override void SetLength(long value) => throw new NotSupportedException();
+    public override void Write(byte[] buffer, int offset, int count) => throw new NotSupportedException();
 
-            return result;
-        }
-
-        public override void Flush() => throw new NotSupportedException();
-        public override long Seek(long offset, SeekOrigin origin) => throw new NotSupportedException();
-        public override void SetLength(long value) => throw new NotSupportedException();
-        public override void Write(byte[] buffer, int offset, int count) => throw new NotSupportedException();
-
-        protected override void Dispose(bool disposing)
-        {
-            stream.Dispose();
-            base.Dispose(disposing);
-        }
+    protected override void Dispose(bool disposing)
+    {
+        stream.Dispose();
+        base.Dispose(disposing);
     }
 }

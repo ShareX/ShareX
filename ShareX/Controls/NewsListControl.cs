@@ -24,191 +24,181 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class NewsListControl : UserControl
 {
-    public partial class NewsListControl : UserControl
+    public event EventHandler NewsLoaded;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public NewsManager NewsManager { get; private set; }
+
+    public NewsListControl()
     {
-        public event EventHandler NewsLoaded;
+        InitializeComponent();
+        dgvNews.DoubleBuffered(true);
+        UpdateTheme();
+    }
 
-        public NewsManager NewsManager { get; private set; }
-
-        public NewsListControl()
+    public void UpdateTheme()
+    {
+        if (ShareXResources.UseCustomTheme)
         {
-            InitializeComponent();
-            dgvNews.DoubleBuffered(true);
-            UpdateTheme();
+            dgvNews.BackgroundColor = ShareXResources.Theme.BackgroundColor;
+            dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = ShareXResources.Theme.BackgroundColor;
+            dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = ShareXResources.Theme.TextColor;
+            dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
+                ColorHelpers.LighterColor(ShareXResources.Theme.BackgroundColor, 0.02f);
+            dgvNews.GridColor = ShareXResources.Theme.BorderColor;
+        } else
+        {
+            dgvNews.BackgroundColor = SystemColors.Window;
+            dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = SystemColors.Window;
+            dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
+            dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
+                ColorHelpers.DarkerColor(SystemColors.Window, 0.02f);
+            dgvNews.GridColor = ProfessionalColors.SeparatorDark;
         }
 
-        public void UpdateTheme()
+        foreach (DataGridViewRow row in dgvNews.Rows)
         {
-            if (ShareXResources.UseCustomTheme)
-            {
-                dgvNews.BackgroundColor = ShareXResources.Theme.BackgroundColor;
-                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = ShareXResources.Theme.BackgroundColor;
-                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = ShareXResources.Theme.TextColor;
-                dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
-                    ColorHelpers.LighterColor(ShareXResources.Theme.BackgroundColor, 0.02f);
-                dgvNews.GridColor = ShareXResources.Theme.BorderColor;
-            }
-            else
-            {
-                dgvNews.BackgroundColor = SystemColors.Window;
-                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = SystemColors.Window;
-                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
-                dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
-                    ColorHelpers.DarkerColor(SystemColors.Window, 0.02f);
-                dgvNews.GridColor = ProfessionalColors.SeparatorDark;
-            }
-
-            foreach (DataGridViewRow row in dgvNews.Rows)
-            {
-                row.Cells[2].Style.ForeColor = row.Cells[2].Style.SelectionForeColor =
-                    ShareXResources.UseCustomTheme ? ShareXResources.Theme.TextColor : SystemColors.ControlText;
-            }
+            row.Cells[2].Style.ForeColor = row.Cells[2].Style.SelectionForeColor =
+                ShareXResources.UseCustomTheme ? ShareXResources.Theme.TextColor : SystemColors.ControlText;
         }
+    }
 
-        public async Task Start()
+    public async Task Start()
+    {
+        NewsManager = new NewsManager();
+        //NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
+        await NewsManager.UpdateNews();
+        NewsManager.UpdateUnread();
+
+        if (NewsManager != null && NewsManager.NewsItems != null)
         {
-            NewsManager = new NewsManager();
-            //NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
-            await NewsManager.UpdateNews();
-            NewsManager.UpdateUnread();
+            SuspendLayout();
 
-            if (NewsManager != null && NewsManager.NewsItems != null)
+            foreach (NewsItem item in NewsManager.NewsItems)
             {
-                SuspendLayout();
-
-                foreach (NewsItem item in NewsManager.NewsItems)
+                if (item != null)
                 {
-                    if (item != null)
-                    {
-                        AddNewsItem(item);
-                    }
-                }
-
-                UpdateUnreadStatus();
-
-                ResumeLayout();
-
-                OnNewsLoaded();
-            }
-        }
-
-        protected void OnNewsLoaded()
-        {
-            NewsLoaded?.Invoke(this, EventArgs.Empty);
-        }
-
-        public void MarkRead()
-        {
-            if (NewsManager != null && NewsManager.NewsItems != null && NewsManager.NewsItems.Count > 0)
-            {
-                DateTime latestDate = NewsManager.NewsItems.OrderByDescending(x => x.DateTime).First().DateTime;
-                DateTime futureDate = DateTime.Now.AddMonths(1);
-
-                if (latestDate < futureDate)
-                {
-                    //Program.Settings.NewsLastReadDate = NewsManager.LastReadDate = latestDate;
-                    NewsManager.UpdateUnread();
+                    AddNewsItem(item);
                 }
             }
 
             UpdateUnreadStatus();
+
+            ResumeLayout();
+
+            OnNewsLoaded();
         }
+    }
 
-        public void AddNewsItem(NewsItem item)
+    protected void OnNewsLoaded()
+    {
+        NewsLoaded?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void MarkRead()
+    {
+        if (NewsManager != null && NewsManager.NewsItems != null && NewsManager.NewsItems.Count > 0)
         {
-            int index = dgvNews.Rows.Add();
-            DataGridViewRow row = dgvNews.Rows[index];
-            row.Tag = item;
+            DateTime latestDate = NewsManager.NewsItems.OrderByDescending(x => x.DateTime).First().DateTime;
+            DateTime futureDate = DateTime.Now.AddMonths(1);
 
-            row.Cells[1].Value = item.DateTime.ToShortDateString();
-
-            string dateTimeTooltip;
-            double days = (DateTime.Now - item.DateTime).TotalDays;
-
-            if (days < 1)
+            if (latestDate < futureDate)
             {
-                dateTimeTooltip = "Today.";
-            }
-            else if (days < 2)
-            {
-                dateTimeTooltip = "Yesterday.";
-            }
-            else
-            {
-                dateTimeTooltip = (int)days + " days ago.";
-            }
-
-            row.Cells[1].ToolTipText = dateTimeTooltip;
-
-            row.Cells[2].Value = item.Text;
-
-            if (URLHelpers.IsValidURL(item.URL))
-            {
-                row.Cells[2].ToolTipText = item.URL;
+                //Program.Settings.NewsLastReadDate = NewsManager.LastReadDate = latestDate;
+                NewsManager.UpdateUnread();
             }
         }
 
-        private void UpdateUnreadStatus()
+        UpdateUnreadStatus();
+    }
+
+    public void AddNewsItem(NewsItem item)
+    {
+        int index = dgvNews.Rows.Add();
+        DataGridViewRow row = dgvNews.Rows[index];
+        row.Tag = item;
+
+        row.Cells[1].Value = item.DateTime.ToShortDateString();
+
+        string dateTimeTooltip;
+        double days = (DateTime.Now - item.DateTime).TotalDays;
+
+        dateTimeTooltip = days < 1 ? "Today." : days < 2 ? "Yesterday." : (int)days + " days ago.";
+        row.Cells[1].ToolTipText = dateTimeTooltip;
+
+        row.Cells[2].Value = item.Text;
+
+        if (URLHelpers.IsValidURL(item.URL))
         {
-            foreach (DataGridViewRow row in dgvNews.Rows)
+            row.Cells[2].ToolTipText = item.URL;
+        }
+    }
+
+    private void UpdateUnreadStatus()
+    {
+        foreach (DataGridViewRow row in dgvNews.Rows)
+        {
+            if (row.Tag is NewsItem newsItem && newsItem.IsUnread)
             {
-                if (row.Tag is NewsItem newsItem && newsItem.IsUnread)
-                {
-                    row.Cells[0].Style.BackColor = row.Cells[0].Style.SelectionBackColor = Color.LimeGreen;
-                }
-                else
-                {
-                    row.Cells[0].Style = null;
-                }
+                row.Cells[0].Style.BackColor = row.Cells[0].Style.SelectionBackColor = Color.LimeGreen;
+            } else
+            {
+                row.Cells[0].Style = null;
+            }
+        }
+    }
+
+    private void dgvNews_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.ColumnIndex == 2)
+        {
+            DataGridViewRow row = dgvNews.Rows[e.RowIndex];
+            if (row.Tag is NewsItem newsItem && !string.IsNullOrEmpty(newsItem.URL))
+            {
+                dgvNews.Cursor = Cursors.Hand;
+                row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
+                    ShareXResources.UseCustomTheme ? Color.White : SystemColors.HotTrack;
+            }
+        }
+    }
+
+    private void dgvNews_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.ColumnIndex == 2)
+        {
+            DataGridViewRow row = dgvNews.Rows[e.RowIndex];
+            if (row.Tag is NewsItem newsItem && !string.IsNullOrEmpty(newsItem.URL))
+            {
+                row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
+                    ShareXResources.UseCustomTheme ? ShareXResources.Theme.TextColor : SystemColors.ControlText;
             }
         }
 
-        private void dgvNews_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 2)
-            {
-                DataGridViewRow row = dgvNews.Rows[e.RowIndex];
-                if (row.Tag is NewsItem newsItem && !string.IsNullOrEmpty(newsItem.URL))
-                {
-                    dgvNews.Cursor = Cursors.Hand;
-                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
-                        ShareXResources.UseCustomTheme ? Color.White : SystemColors.HotTrack;
-                }
-            }
-        }
+        dgvNews.Cursor = Cursors.Default;
+    }
 
-        private void dgvNews_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+    private void dgvNews_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Left && e.ColumnIndex == 2)
         {
-            if (e.ColumnIndex == 2)
+            DataGridViewRow row = dgvNews.Rows[e.RowIndex];
+            if (row.Tag is NewsItem newsItem && URLHelpers.IsValidURL(newsItem.URL))
             {
-                DataGridViewRow row = dgvNews.Rows[e.RowIndex];
-                if (row.Tag is NewsItem newsItem && !string.IsNullOrEmpty(newsItem.URL))
-                {
-                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
-                        ShareXResources.UseCustomTheme ? ShareXResources.Theme.TextColor : SystemColors.ControlText;
-                }
-            }
-
-            dgvNews.Cursor = Cursors.Default;
-        }
-
-        private void dgvNews_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left && e.ColumnIndex == 2)
-            {
-                DataGridViewRow row = dgvNews.Rows[e.RowIndex];
-                if (row.Tag is NewsItem newsItem && URLHelpers.IsValidURL(newsItem.URL))
-                {
-                    URLHelpers.OpenURL(newsItem.URL);
-                }
+                URLHelpers.OpenURL(newsItem.URL);
             }
         }
     }

@@ -1,4 +1,6 @@
 ﻿
+using ShareX.HelpersLib.Controls;
+
 namespace ShareX
 {
     partial class BorderlessWindowForm
@@ -36,7 +38,7 @@ namespace ShareX
             this.btnMakeWindowBorderless = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.cmsWindowList = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mbWindowList = new ShareX.HelpersLib.MenuButton();
+            this.mbWindowList = new ShareX.HelpersLib.Controls.MenuButton();
             this.SuspendLayout();
             // 
             // lblWindowTitle
@@ -103,7 +105,7 @@ namespace ShareX
         private System.Windows.Forms.TextBox txtWindowTitle;
         private System.Windows.Forms.Button btnMakeWindowBorderless;
         private System.Windows.Forms.Button btnSettings;
-        private HelpersLib.MenuButton mbWindowList;
+        private MenuButton mbWindowList;
         private System.Windows.Forms.ContextMenuStrip cmsWindowList;
     }
 }

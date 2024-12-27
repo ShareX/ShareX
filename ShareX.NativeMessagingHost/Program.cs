@@ -24,45 +24,46 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.Native;
+
 using System;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ShareX.NativeMessagingHost
+namespace ShareX.NativeMessagingHost;
+
+internal class Program
 {
-    internal class Program
+    private static void Main(string[] args)
     {
-        private static void Main(string[] args)
+        if (args.Length > 0)
         {
-            if (args.Length > 0)
+            try
             {
-                try
-                {
-                    HelpersLib.NativeMessagingHost host = new HelpersLib.NativeMessagingHost();
-                    string input = host.Read();
+                HelpersLib.NativeMessagingHost host = new();
+                string input = host.Read();
 
-                    if (!string.IsNullOrEmpty(input))
-                    {
-                        host.Write(input);
-
-                        string filePath = FileHelpers.GetAbsolutePath("ShareX.exe");
-                        string tempFilePath = FileHelpers.GetTempFilePath("json");
-                        File.WriteAllText(tempFilePath, input, Encoding.UTF8);
-                        string argument = $"-NativeMessagingInput \"{tempFilePath}\"";
-                        NativeMethods.CreateProcess(filePath, argument, CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB);
-                    }
-                }
-                catch (Exception e)
+                if (!string.IsNullOrEmpty(input))
                 {
-                    e.ShowError();
+                    host.Write(input);
+
+                    string filePath = FileHelpers.GetAbsolutePath("ShareX.exe");
+                    string tempFilePath = FileHelpers.GetTempFilePath("json");
+                    File.WriteAllText(tempFilePath, input, Encoding.UTF8);
+                    string argument = $"-NativeMessagingInput \"{tempFilePath}\"";
+                    NativeMethods.CreateProcess(filePath, argument, CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB);
                 }
-            }
-            else
+            } catch (Exception e)
             {
-                MessageBox.Show("This executable is used to receive data from browser addon and send it to ShareX.",
-                    "ShareX NativeMessagingHost", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.ShowError();
             }
+        } else
+        {
+            MessageBox.Show("This executable is used to receive data from browser addon and send it to ShareX.",
+                "ShareX NativeMessagingHost", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -24,64 +24,65 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes.Drawing;
+
+public class MagnifyDrawingShape : EllipseDrawingShape
 {
-    public class MagnifyDrawingShape : EllipseDrawingShape
+    public override ShapeType ShapeType { get; } = ShapeType.DrawingMagnify;
+
+    public int MagnifyStrength { get; set; } = 200;
+    public ImageInterpolationMode ImageInterpolationMode { get; set; }
+
+    public MagnifyDrawingShape()
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingMagnify;
+        ForceProportionalResizing = true;
+    }
 
-        public int MagnifyStrength { get; set; } = 200;
-        public ImageInterpolationMode ImageInterpolationMode { get; set; }
+    public override void OnConfigLoad()
+    {
+        base.OnConfigLoad();
+        MagnifyStrength = AnnotationOptions.MagnifyStrength;
+        ImageInterpolationMode = AnnotationOptions.ImageInterpolationMode;
+    }
 
-        public MagnifyDrawingShape()
+    public override void OnConfigSave()
+    {
+        base.OnConfigSave();
+        AnnotationOptions.MagnifyStrength = MagnifyStrength;
+        AnnotationOptions.ImageInterpolationMode = ImageInterpolationMode;
+    }
+
+    public override void OnDraw(Graphics g)
+    {
+        g.PixelOffsetMode = PixelOffsetMode.Half;
+        g.InterpolationMode = ImageHelpers.GetInterpolationMode(ImageInterpolationMode);
+
+        using (GraphicsPath gp = new())
         {
-            ForceProportionalResizing = true;
+            gp.AddEllipse(Rectangle);
+            g.SetClip(gp);
+
+            float magnify = Math.Max(MagnifyStrength, 100) / 100f;
+            int newWidth = (int)(Rectangle.Width / magnify);
+            int newHeight = (int)(Rectangle.Height / magnify);
+
+            g.DrawImage(Manager.Form.Canvas, Rectangle,
+                new RectangleF(Rectangle.X + Rectangle.Width / 2 - newWidth / 2 - Manager.Form.CanvasRectangle.X + Manager.RenderOffset.X,
+                Rectangle.Y + Rectangle.Height / 2 - newHeight / 2 - Manager.Form.CanvasRectangle.Y + Manager.RenderOffset.Y,
+                newWidth, newHeight), GraphicsUnit.Pixel);
+
+            g.ResetClip();
         }
 
-        public override void OnConfigLoad()
-        {
-            base.OnConfigLoad();
-            MagnifyStrength = AnnotationOptions.MagnifyStrength;
-            ImageInterpolationMode = AnnotationOptions.ImageInterpolationMode;
-        }
+        g.PixelOffsetMode = PixelOffsetMode.Default;
+        g.InterpolationMode = InterpolationMode.Bilinear;
 
-        public override void OnConfigSave()
-        {
-            base.OnConfigSave();
-            AnnotationOptions.MagnifyStrength = MagnifyStrength;
-            AnnotationOptions.ImageInterpolationMode = ImageInterpolationMode;
-        }
-
-        public override void OnDraw(Graphics g)
-        {
-            g.PixelOffsetMode = PixelOffsetMode.Half;
-            g.InterpolationMode = ImageHelpers.GetInterpolationMode(ImageInterpolationMode);
-
-            using (GraphicsPath gp = new GraphicsPath())
-            {
-                gp.AddEllipse(Rectangle);
-                g.SetClip(gp);
-
-                float magnify = Math.Max(MagnifyStrength, 100) / 100f;
-                int newWidth = (int)(Rectangle.Width / magnify);
-                int newHeight = (int)(Rectangle.Height / magnify);
-
-                g.DrawImage(Manager.Form.Canvas, Rectangle,
-                    new RectangleF(Rectangle.X + (Rectangle.Width / 2) - (newWidth / 2) - Manager.Form.CanvasRectangle.X + Manager.RenderOffset.X,
-                    Rectangle.Y + (Rectangle.Height / 2) - (newHeight / 2) - Manager.Form.CanvasRectangle.Y + Manager.RenderOffset.Y,
-                    newWidth, newHeight), GraphicsUnit.Pixel);
-
-                g.ResetClip();
-            }
-
-            g.PixelOffsetMode = PixelOffsetMode.Default;
-            g.InterpolationMode = InterpolationMode.Bilinear;
-
-            DrawEllipse(g);
-        }
+        DrawEllipse(g);
     }
 }

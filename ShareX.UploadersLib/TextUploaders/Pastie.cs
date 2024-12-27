@@ -23,52 +23,55 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders;
+
+internal class PastieTextUploaderService : TextUploaderService
 {
-    internal class PastieTextUploaderService : TextUploaderService
+    public override TextDestination EnumValue { get; } = TextDestination.Pastie;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override Image ServiceImage => Resources.Pastie;
+
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override TextDestination EnumValue { get; } = TextDestination.Pastie;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override Image ServiceImage => Resources.Pastie;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        return new Pastie()
         {
-            return new Pastie()
-            {
-                IsPublic = config.PastieIsPublic
-            };
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPastie;
+            IsPublic = config.PastieIsPublic
+        };
     }
 
-    public sealed class Pastie : TextUploader
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPastie;
+}
+
+public sealed class Pastie : TextUploader
+{
+    public bool IsPublic { get; set; }
+
+    public override UploadResult UploadText(string text, string fileName)
     {
-        public bool IsPublic { get; set; }
+        UploadResult ur = new();
 
-        public override UploadResult UploadText(string text, string fileName)
+        if (!string.IsNullOrEmpty(text))
         {
-            UploadResult ur = new UploadResult();
+            Dictionary<string, string> arguments = new();
+            arguments.Add("paste[body]", text);
+            arguments.Add("paste[restricted]", IsPublic ? "0" : "1");
+            arguments.Add("paste[authorization]", "burger");
 
-            if (!string.IsNullOrEmpty(text))
-            {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("paste[body]", text);
-                arguments.Add("paste[restricted]", IsPublic ? "0" : "1");
-                arguments.Add("paste[authorization]", "burger");
-
-                SendRequestURLEncoded(HttpMethod.POST, "http://pastie.org/pastes", arguments);
-                ur.URL = LastResponseInfo.ResponseURL;
-            }
-
-            return ur;
+            SendRequestURLEncoded(HttpMethod.POST, "http://pastie.org/pastes", arguments);
+            ur.URL = LastResponseInfo.ResponseURL;
         }
+
+        return ur;
     }
 }

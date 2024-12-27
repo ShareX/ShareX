@@ -1,4 +1,6 @@
-﻿namespace ShareX.HelpersLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.HelpersLib
 {
     partial class GradientPickerForm
     {
@@ -47,8 +49,8 @@
             this.lvPresets = new System.Windows.Forms.ListView();
             this.chGradient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnClear = new System.Windows.Forms.Button();
-            this.cbtnCurrentColor = new ShareX.HelpersLib.ColorButton();
-            this.lvGradientPoints = new ShareX.HelpersLib.MyListView();
+            this.cbtnCurrentColor = new ShareX.HelpersLib.Controls.ColorButton();
+            this.lvGradientPoints = new ShareX.HelpersLib.Controls.MyListView();
             this.chLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.nudLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
@@ -175,7 +177,7 @@
             resources.ApplyResources(this.cbtnCurrentColor, "cbtnCurrentColor");
             this.cbtnCurrentColor.Name = "cbtnCurrentColor";
             this.cbtnCurrentColor.UseVisualStyleBackColor = true;
-            this.cbtnCurrentColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.cbtnCurrentColor_ColorChanged);
+            this.cbtnCurrentColor.ColorChanged += new ColorButton.ColorChangedEventHandler(this.cbtnCurrentColor_ColorChanged);
             // 
             // lvGradientPoints
             // 

@@ -23,41 +23,41 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
 using ShareX.ScreenCaptureLib.Properties;
+
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes.Effect;
+
+public class BlurEffectShape : BaseEffectShape
 {
-    public class BlurEffectShape : BaseEffectShape
+    public override ShapeType ShapeType { get; } = ShapeType.EffectBlur;
+
+    public override string OverlayText => Resources.Blur + $" [{BlurRadius}]";
+
+    public int BlurRadius { get; set; }
+
+    public override void OnConfigLoad()
     {
-        public override ShapeType ShapeType { get; } = ShapeType.EffectBlur;
+        BlurRadius = AnnotationOptions.BlurRadius;
+    }
 
-        public override string OverlayText => Resources.Blur + $" [{BlurRadius}]";
+    public override void OnConfigSave()
+    {
+        AnnotationOptions.BlurRadius = BlurRadius;
+    }
 
-        public int BlurRadius { get; set; }
+    public override void ApplyEffect(Bitmap bmp)
+    {
+        ImageHelpers.BoxBlur(bmp, BlurRadius);
+    }
 
-        public override void OnConfigLoad()
+    public override void OnDrawFinal(Graphics g, Bitmap bmp)
+    {
+        if (BlurRadius > 1)
         {
-            BlurRadius = AnnotationOptions.BlurRadius;
-        }
-
-        public override void OnConfigSave()
-        {
-            AnnotationOptions.BlurRadius = BlurRadius;
-        }
-
-        public override void ApplyEffect(Bitmap bmp)
-        {
-            ImageHelpers.BoxBlur(bmp, BlurRadius);
-        }
-
-        public override void OnDrawFinal(Graphics g, Bitmap bmp)
-        {
-            if (BlurRadius > 1)
-            {
-                base.OnDrawFinal(g, bmp);
-            }
+            base.OnDrawFinal(g, bmp);
         }
     }
 }

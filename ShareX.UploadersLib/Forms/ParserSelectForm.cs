@@ -24,70 +24,74 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class ParserSelectForm : Form
 {
-    public partial class ParserSelectForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string[] Texts { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string SelectedText { get; private set; }
+
+    public ParserSelectForm(string[] texts)
     {
-        public string[] Texts { get; private set; }
-        public string SelectedText { get; private set; }
+        InitializeComponent();
 
-        public ParserSelectForm(string[] texts)
+        Texts = texts;
+        SelectedText = Texts[0];
+
+        SuspendLayout();
+
+        int maxButtonWidth = 0;
+        int rowSize = 10;
+
+        for (int i = 0; i < Texts.Length; i++)
         {
-            InitializeComponent();
+            string text = Texts[i];
 
-            Texts = texts;
-            SelectedText = Texts[0];
-
-            SuspendLayout();
-
-            int maxButtonWidth = 0;
-            int rowSize = 10;
-
-            for (int i = 0; i < Texts.Length; i++)
+            if (!string.IsNullOrEmpty(text))
             {
-                string text = Texts[i];
-
-                if (!string.IsNullOrEmpty(text))
+                Button button = new()
                 {
-                    Button button = new Button()
-                    {
-                        AutoSize = true,
-                        Margin = new Padding(i < rowSize ? 5 : 0, i % rowSize == 0 ? 5 : 0, 5, 5),
-                        Padding = new Padding(5),
-                        Font = new Font(Font.FontFamily, 12),
-                        Text = text,
-                        UseVisualStyleBackColor = true
-                    };
+                    AutoSize = true,
+                    Margin = new Padding(i < rowSize ? 5 : 0, i % rowSize == 0 ? 5 : 0, 5, 5),
+                    Padding = new Padding(5),
+                    Font = new Font(Font.FontFamily, 12),
+                    Text = text,
+                    UseVisualStyleBackColor = true
+                };
 
-                    button.Click += (sender, e) =>
-                    {
-                        SelectedText = text;
-                        Close();
-                    };
+                button.Click += (sender, e) =>
+                {
+                    SelectedText = text;
+                    Close();
+                };
 
-                    flpMain.Controls.Add(button);
-                    if ((i + 1) % rowSize == 0) flpMain.SetFlowBreak(button, true);
-                    maxButtonWidth = Math.Max(button.Width, maxButtonWidth);
-                }
+                flpMain.Controls.Add(button);
+                if ((i + 1) % rowSize == 0) flpMain.SetFlowBreak(button, true);
+                maxButtonWidth = Math.Max(button.Width, maxButtonWidth);
             }
-
-            foreach (Control control in flpMain.Controls)
-            {
-                control.Width = maxButtonWidth;
-            }
-
-            ResumeLayout();
-
-            ShareXResources.ApplyTheme(this, true);
         }
 
-        private void ParserSelectForm_Shown(object sender, EventArgs e)
+        foreach (Control control in flpMain.Controls)
         {
-            this.ForceActivate();
+            control.Width = maxButtonWidth;
         }
+
+        ResumeLayout();
+
+        ShareXResources.ApplyTheme(this, true);
+    }
+
+    private void ParserSelectForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
     }
 }

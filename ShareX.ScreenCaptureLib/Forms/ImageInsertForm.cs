@@ -24,40 +24,42 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public partial class ImageInsertForm : Form
 {
-    public partial class ImageInsertForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ImageInsertMethod ImageInsertMethod { get; private set; }
+
+    public ImageInsertForm()
     {
-        public ImageInsertMethod ImageInsertMethod { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this);
+    }
 
-        public ImageInsertForm()
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-        }
+    private void Close(ImageInsertMethod insertMethod)
+    {
+        ImageInsertMethod = insertMethod;
+        Close();
+    }
 
-        private void Close(ImageInsertMethod insertMethod)
-        {
-            ImageInsertMethod = insertMethod;
-            Close();
-        }
+    private void btnCenter_Click(object sender, EventArgs e)
+    {
+        Close(ImageInsertMethod.Center);
+    }
 
-        private void btnCenter_Click(object sender, EventArgs e)
-        {
-            Close(ImageInsertMethod.Center);
-        }
+    private void btnCanvasExpandDown_Click(object sender, EventArgs e)
+    {
+        Close(ImageInsertMethod.CanvasExpandDown);
+    }
 
-        private void btnCanvasExpandDown_Click(object sender, EventArgs e)
-        {
-            Close(ImageInsertMethod.CanvasExpandDown);
-        }
-
-        private void btnCanvasExpandRight_Click(object sender, EventArgs e)
-        {
-            Close(ImageInsertMethod.CanvasExpandRight);
-        }
+    private void btnCanvasExpandRight_Click(object sender, EventArgs e)
+    {
+        Close(ImageInsertMethod.CanvasExpandRight);
     }
 }

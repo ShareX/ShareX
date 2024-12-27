@@ -23,62 +23,64 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+internal class Pixelate : ImageEffect
 {
-    internal class Pixelate : ImageEffect
+    private int size;
+
+    [DefaultValue(10)]
+    public int Size
     {
-        private int size;
-
-        [DefaultValue(10)]
-        public int Size
+        get
         {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value.Max(2);
-            }
+            return size;
         }
-
-        private int borderSize;
-
-        [DefaultValue(0)]
-        public int BorderSize
+        set
         {
-            get
-            {
-                return borderSize;
-            }
-            set
-            {
-                borderSize = value.Max(0);
-            }
+            size = value.Max(2);
         }
+    }
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BorderColor { get; set; }
+    private int borderSize;
 
-        public Pixelate()
+    [DefaultValue(0)]
+    public int BorderSize
+    {
+        get
         {
-            this.ApplyDefaultPropertyValues();
+            return borderSize;
         }
-
-        public override Bitmap Apply(Bitmap bmp)
+        set
         {
-            ImageHelpers.Pixelate(bmp, Size, BorderSize, BorderColor);
-            return bmp;
+            borderSize = value.Max(0);
         }
+    }
 
-        protected override string GetSummary()
-        {
-            return Size.ToString();
-        }
+    [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color BorderColor { get; set; }
+
+    public Pixelate()
+    {
+        this.ApplyDefaultPropertyValues();
+    }
+
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        ImageHelpers.Pixelate(bmp, Size, BorderSize, BorderColor);
+        return bmp;
+    }
+
+    protected override string GetSummary()
+    {
+        return Size.ToString();
     }
 }

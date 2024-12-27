@@ -23,21 +23,20 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class ClipboardFormat
 {
-    public class ClipboardFormat
+    public string Description { get; set; }
+    public string Format { get; set; }
+
+    public ClipboardFormat()
     {
-        public string Description { get; set; }
-        public string Format { get; set; }
+    }
 
-        public ClipboardFormat()
-        {
-        }
-
-        public ClipboardFormat(string description, string format)
-        {
-            Description = description;
-            Format = format;
-        }
+    public ClipboardFormat(string description, string format)
+    {
+        Description = description;
+        Format = format;
     }
 }

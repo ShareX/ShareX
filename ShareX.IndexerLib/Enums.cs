@@ -25,17 +25,16 @@
 
 using System.ComponentModel;
 
-namespace ShareX.IndexerLib
+namespace ShareX.IndexerLib;
+
+public enum IndexerOutput
 {
-    public enum IndexerOutput
-    {
-        [Description("Text")]
-        Txt,
-        [Description("HTML")]
-        Html,
-        [Description("XML")]
-        Xml,
-        [Description("JSON")]
-        Json
-    }
+    [Description("Text")]
+    Txt,
+    [Description("HTML")]
+    Html,
+    [Description("XML")]
+    Xml,
+    [Description("JSON")]
+    Json
 }

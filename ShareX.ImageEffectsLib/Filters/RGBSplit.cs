@@ -24,49 +24,51 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+[Description("RGB split")]
+internal class RGBSplit : ImageEffect
 {
-    [Description("RGB split")]
-    internal class RGBSplit : ImageEffect
+    [DefaultValue(typeof(Point), "-5, 0")]
+    public Point OffsetRed { get; set; } = new Point(-5, 0);
+
+    [DefaultValue(typeof(Point), "0, 0")]
+    public Point OffsetGreen { get; set; }
+
+    [DefaultValue(typeof(Point), "5, 0")]
+    public Point OffsetBlue { get; set; } = new Point(5, 0);
+
+    public override Bitmap Apply(Bitmap bmp)
     {
-        [DefaultValue(typeof(Point), "-5, 0")]
-        public Point OffsetRed { get; set; } = new Point(-5, 0);
+        Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
-        [DefaultValue(typeof(Point), "0, 0")]
-        public Point OffsetGreen { get; set; }
-
-        [DefaultValue(typeof(Point), "5, 0")]
-        public Point OffsetBlue { get; set; } = new Point(5, 0);
-
-        public override Bitmap Apply(Bitmap bmp)
+        using (UnsafeBitmap source = new(bmp, true, ImageLockMode.ReadOnly))
+        using (UnsafeBitmap dest = new(bmpResult, true, ImageLockMode.WriteOnly))
         {
-            Bitmap bmpResult = bmp.CreateEmptyBitmap();
+            int right = source.Width - 1;
+            int bottom = source.Height - 1;
 
-            using (UnsafeBitmap source = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
-            using (UnsafeBitmap dest = new UnsafeBitmap(bmpResult, true, ImageLockMode.WriteOnly))
+            for (int y = 0; y < source.Height; y++)
             {
-                int right = source.Width - 1;
-                int bottom = source.Height - 1;
-
-                for (int y = 0; y < source.Height; y++)
+                for (int x = 0; x < source.Width; x++)
                 {
-                    for (int x = 0; x < source.Width; x++)
-                    {
-                        ColorBgra colorR = source.GetPixel(MathHelpers.Clamp(x - OffsetRed.X, 0, right), MathHelpers.Clamp(y - OffsetRed.Y, 0, bottom));
-                        ColorBgra colorG = source.GetPixel(MathHelpers.Clamp(x - OffsetGreen.X, 0, right), MathHelpers.Clamp(y - OffsetGreen.Y, 0, bottom));
-                        ColorBgra colorB = source.GetPixel(MathHelpers.Clamp(x - OffsetBlue.X, 0, right), MathHelpers.Clamp(y - OffsetBlue.Y, 0, bottom));
-                        ColorBgra shiftedColor = new ColorBgra((byte)(colorB.Blue * colorB.Alpha / 255), (byte)(colorG.Green * colorG.Alpha / 255),
-                            (byte)(colorR.Red * colorR.Alpha / 255), (byte)((colorR.Alpha + colorG.Alpha + colorB.Alpha) / 3));
-                        dest.SetPixel(x, y, shiftedColor);
-                    }
+                    ColorBgra colorR = source.GetPixel(MathHelpers.Clamp(x - OffsetRed.X, 0, right), MathHelpers.Clamp(y - OffsetRed.Y, 0, bottom));
+                    ColorBgra colorG = source.GetPixel(MathHelpers.Clamp(x - OffsetGreen.X, 0, right), MathHelpers.Clamp(y - OffsetGreen.Y, 0, bottom));
+                    ColorBgra colorB = source.GetPixel(MathHelpers.Clamp(x - OffsetBlue.X, 0, right), MathHelpers.Clamp(y - OffsetBlue.Y, 0, bottom));
+                    ColorBgra shiftedColor = new((byte)(colorB.Blue * colorB.Alpha / 255), (byte)(colorG.Green * colorG.Alpha / 255),
+                        (byte)(colorR.Red * colorR.Alpha / 255), (byte)((colorR.Alpha + colorG.Alpha + colorB.Alpha) / 3));
+                    dest.SetPixel(x, y, shiftedColor);
                 }
             }
-
-            return bmpResult;
         }
+
+        return bmpResult;
     }
 }

@@ -23,76 +23,67 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.ScreenCaptureLib.Helpers;
+
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.ScreenRecording;
+
+public class HardDiskCache : ImageCache
 {
-    public class HardDiskCache : ImageCache
+    public int Count
     {
-        public int Count
+        get
         {
-            get
-            {
-                if (indexList != null)
-                {
-                    return indexList.Count;
-                }
+            return indexList != null ? indexList.Count : 0;
+        }
+    }
 
-                return 0;
-            }
+    private FileStream fsCache;
+    private List<LocationInfo> indexList;
+
+    public HardDiskCache(ScreenRecordingOptions options)
+    {
+        Options = options;
+        FileHelpers.CreateDirectoryFromFilePath(Options.OutputPath);
+        fsCache = new FileStream(Options.OutputPath, FileMode.Create, FileAccess.Write, FileShare.Read);
+        indexList = new List<LocationInfo>();
+    }
+
+    protected override void WriteFrame(Image img)
+    {
+        using MemoryStream ms = new();
+        img.Save(ms, ImageFormat.Bmp);
+        long position = fsCache.Position;
+        ms.CopyStreamTo(fsCache);
+        indexList.Add(new LocationInfo(position, fsCache.Length - position));
+    }
+
+    public override void Dispose()
+    {
+        if (fsCache != null)
+        {
+            fsCache.Dispose();
         }
 
-        private FileStream fsCache;
-        private List<LocationInfo> indexList;
+        base.Dispose();
+    }
 
-        public HardDiskCache(ScreenRecordingOptions options)
+    public IEnumerable<Image> GetImageEnumerator()
+    {
+        if (!IsWorking && File.Exists(Options.OutputPath) && indexList != null && indexList.Count > 0)
         {
-            Options = options;
-            FileHelpers.CreateDirectoryFromFilePath(Options.OutputPath);
-            fsCache = new FileStream(Options.OutputPath, FileMode.Create, FileAccess.Write, FileShare.Read);
-            indexList = new List<LocationInfo>();
-        }
-
-        protected override void WriteFrame(Image img)
-        {
-            using (MemoryStream ms = new MemoryStream())
+            using FileStream fsCache = new(Options.OutputPath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            foreach (LocationInfo index in indexList)
             {
-                img.Save(ms, ImageFormat.Bmp);
-                long position = fsCache.Position;
-                ms.CopyStreamTo(fsCache);
-                indexList.Add(new LocationInfo(position, fsCache.Length - position));
-            }
-        }
-
-        public override void Dispose()
-        {
-            if (fsCache != null)
-            {
-                fsCache.Dispose();
-            }
-
-            base.Dispose();
-        }
-
-        public IEnumerable<Image> GetImageEnumerator()
-        {
-            if (!IsWorking && File.Exists(Options.OutputPath) && indexList != null && indexList.Count > 0)
-            {
-                using (FileStream fsCache = new FileStream(Options.OutputPath, FileMode.Open, FileAccess.Read, FileShare.Read))
-                {
-                    foreach (LocationInfo index in indexList)
-                    {
-                        using (MemoryStream ms = new MemoryStream())
-                        {
-                            fsCache.CopyStreamTo64(ms, index.Location, (int)index.Length);
-                            yield return Image.FromStream(ms);
-                        }
-                    }
-                }
+                using MemoryStream ms = new();
+                fsCache.CopyStreamTo64(ms, index.Location, (int)index.Length);
+                yield return Image.FromStream(ms);
             }
         }
     }

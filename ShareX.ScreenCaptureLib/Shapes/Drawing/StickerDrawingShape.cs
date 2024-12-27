@@ -24,102 +24,98 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes.Drawing;
+
+public class StickerDrawingShape : ImageDrawingShape
 {
-    public class StickerDrawingShape : ImageDrawingShape
+    public override ShapeType ShapeType { get; } = ShapeType.DrawingSticker;
+
+    public override void OnConfigLoad()
     {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingSticker;
+        ImageInterpolationMode = ImageInterpolationMode.NearestNeighbor;
+    }
 
-        public override void OnConfigLoad()
+    public override void OnConfigSave()
+    {
+    }
+
+    public override void ShowNodes()
+    {
+    }
+
+    public override void OnCreating()
+    {
+        PointF pos = Manager.Form.ScaledClientMousePosition;
+        Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
+
+        if (Manager.IsCtrlModifier && LoadSticker(AnnotationOptions.LastStickerPath, AnnotationOptions.StickerSize))
         {
-            ImageInterpolationMode = ImageInterpolationMode.NearestNeighbor;
+            OnCreated();
+            Manager.IsMoving = true;
+        } else if (OpenStickerForm())
+        {
+            OnCreated();
+        } else
+        {
+            Remove();
         }
+    }
 
-        public override void OnConfigSave()
+    public override void OnDoubleClicked()
+    {
+        OpenStickerForm();
+    }
+
+    public override void Resize(int x, int y, bool fromBottomRight)
+    {
+        Move(x, y);
+    }
+
+    private bool OpenStickerForm()
+    {
+        Manager.Form.Pause();
+
+        try
         {
-        }
-
-        public override void ShowNodes()
-        {
-        }
-
-        public override void OnCreating()
-        {
-            PointF pos = Manager.Form.ScaledClientMousePosition;
-            Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
-
-            if (Manager.IsCtrlModifier && LoadSticker(AnnotationOptions.LastStickerPath, AnnotationOptions.StickerSize))
+            using StickerForm stickerForm = new(AnnotationOptions.StickerPacks, AnnotationOptions.SelectedStickerPack, AnnotationOptions.StickerSize);
+            if (stickerForm.ShowDialog(Manager.Form) == DialogResult.OK)
             {
-                OnCreated();
-                Manager.IsMoving = true;
-            }
-            else if (OpenStickerForm())
-            {
-                OnCreated();
-            }
-            else
-            {
-                Remove();
-            }
-        }
+                AnnotationOptions.SelectedStickerPack = stickerForm.SelectedStickerPack;
+                AnnotationOptions.StickerSize = stickerForm.StickerSize;
 
-        public override void OnDoubleClicked()
+                return LoadSticker(stickerForm.SelectedImageFile, stickerForm.StickerSize);
+            }
+        } finally
         {
-            OpenStickerForm();
+            Manager.Form.Resume();
         }
 
-        public override void Resize(int x, int y, bool fromBottomRight)
+        return false;
+    }
+
+    private bool LoadSticker(string filePath, int stickerSize)
+    {
+        if (!string.IsNullOrEmpty(filePath))
         {
-            Move(x, y);
+            Bitmap bmp = ImageHelpers.LoadImage(filePath);
+
+            if (bmp != null)
+            {
+                AnnotationOptions.LastStickerPath = filePath;
+
+                bmp = ImageHelpers.ResizeImageLimit(bmp, stickerSize);
+
+                SetImage(bmp, true);
+
+                return true;
+            }
         }
 
-        private bool OpenStickerForm()
-        {
-            Manager.Form.Pause();
-
-            try
-            {
-                using (StickerForm stickerForm = new StickerForm(AnnotationOptions.StickerPacks, AnnotationOptions.SelectedStickerPack, AnnotationOptions.StickerSize))
-                {
-                    if (stickerForm.ShowDialog(Manager.Form) == DialogResult.OK)
-                    {
-                        AnnotationOptions.SelectedStickerPack = stickerForm.SelectedStickerPack;
-                        AnnotationOptions.StickerSize = stickerForm.StickerSize;
-
-                        return LoadSticker(stickerForm.SelectedImageFile, stickerForm.StickerSize);
-                    }
-                }
-            }
-            finally
-            {
-                Manager.Form.Resume();
-            }
-
-            return false;
-        }
-
-        private bool LoadSticker(string filePath, int stickerSize)
-        {
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                Bitmap bmp = ImageHelpers.LoadImage(filePath);
-
-                if (bmp != null)
-                {
-                    AnnotationOptions.LastStickerPath = filePath;
-
-                    bmp = ImageHelpers.ResizeImageLimit(bmp, stickerSize);
-
-                    SetImage(bmp, true);
-
-                    return true;
-                }
-            }
-
-            return false;
-        }
+        return false;
     }
 }

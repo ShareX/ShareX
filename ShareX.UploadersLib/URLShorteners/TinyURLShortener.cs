@@ -23,37 +23,40 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
 using System.Collections.Generic;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class TinyURLShortenerService : URLShortenerService
 {
-    public class TinyURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TINYURL;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TINYURL;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new TinyURLShortener();
-        }
+        return new TinyURLShortener();
     }
+}
 
-    public sealed class TinyURLShortener : URLShortener
+public sealed class TinyURLShortener : URLShortener
+{
+    public override UploadResult ShortenURL(string url)
     {
-        public override UploadResult ShortenURL(string url)
+        UploadResult result = new() { URL = url };
+
+        if (!string.IsNullOrEmpty(url))
         {
-            UploadResult result = new UploadResult { URL = url };
+            Dictionary<string, string> arguments = new();
+            arguments.Add("url", url);
 
-            if (!string.IsNullOrEmpty(url))
-            {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("url", url);
-
-                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://tinyurl.com/api-create.php", arguments);
-            }
-
-            return result;
+            result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://tinyurl.com/api-create.php", arguments);
         }
+
+        return result;
     }
 }

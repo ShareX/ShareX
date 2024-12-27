@@ -23,22 +23,25 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.URLShorteners
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class VgdURLShortenerService : URLShortenerService
 {
-    public class VgdURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.VGD;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.VGD;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new VgdURLShortener();
-        }
+        return new VgdURLShortener();
     }
+}
 
-    public class VgdURLShortener : IsgdURLShortener
-    {
-        protected override string APIURL { get { return "http://v.gd/create.php"; } }
-    }
+public class VgdURLShortener : IsgdURLShortener
+{
+    protected override string APIURL { get { return "http://v.gd/create.php"; } }
 }

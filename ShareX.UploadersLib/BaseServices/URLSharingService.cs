@@ -23,10 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
+namespace ShareX.UploadersLib.BaseServices;
+
+public abstract class URLSharingService : UploaderService<URLSharingServices>
 {
-    public abstract class URLSharingService : UploaderService<URLSharingServices>
-    {
-        public abstract URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo);
-    }
+    public abstract URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo);
 }

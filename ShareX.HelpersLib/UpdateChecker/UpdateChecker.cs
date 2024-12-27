@@ -23,86 +23,74 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UpdateChecker;
+
+public abstract class UpdateChecker
 {
-    public abstract class UpdateChecker
+    /// <summary>For testing purposes.</summary>
+    public static bool ForceUpdate { get; private set; } = false;
+
+    public UpdateStatus Status { get; set; }
+    public Version CurrentVersion { get; set; }
+    public Version LatestVersion { get; set; }
+    public ReleaseChannelType ReleaseType { get; set; }
+    public bool IsDev { get; set; }
+    public bool IsPortable { get; set; }
+    public bool IgnoreRevision { get; set; }
+
+    private string fileName;
+
+    public string FileName
     {
-        /// <summary>For testing purposes.</summary>
-        public static bool ForceUpdate { get; private set; } = false;
-
-        public UpdateStatus Status { get; set; }
-        public Version CurrentVersion { get; set; }
-        public Version LatestVersion { get; set; }
-        public ReleaseChannelType ReleaseType { get; set; }
-        public bool IsDev { get; set; }
-        public bool IsPortable { get; set; }
-        public bool IgnoreRevision { get; set; }
-
-        private string fileName;
-
-        public string FileName
+        get
         {
-            get
-            {
-                if (string.IsNullOrEmpty(fileName))
-                {
-                    return HttpUtility.UrlDecode(DownloadURL.Substring(DownloadURL.LastIndexOf('/') + 1));
-                }
+            return string.IsNullOrEmpty(fileName) ? HttpUtility.UrlDecode(DownloadURL.Substring(DownloadURL.LastIndexOf('/') + 1)) : fileName;
+        }
+        set
+        {
+            fileName = value;
+        }
+    }
 
-                return fileName;
-            }
-            set
-            {
-                fileName = value;
-            }
+    public string DownloadURL { get; set; }
+
+    public void RefreshStatus()
+    {
+        if (CurrentVersion == null)
+        {
+            CurrentVersion = Version.Parse(Application.ProductVersion);
         }
 
-        public string DownloadURL { get; set; }
+        Status = Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null && !string.IsNullOrEmpty(DownloadURL) &&
+            (ForceUpdate || Helpers.Helpers.CompareVersion(CurrentVersion, LatestVersion, IgnoreRevision) < 0)
+            ? UpdateStatus.UpdateAvailable
+            : UpdateStatus.UpToDate;
+    }
 
-        public void RefreshStatus()
+    public abstract Task CheckUpdateAsync();
+
+    public void DownloadUpdate()
+    {
+        DebugHelper.WriteLine("Updating ShareX from version {0} to {1}", CurrentVersion, LatestVersion);
+
+        if (IsPortable)
         {
-            if (CurrentVersion == null)
-            {
-                CurrentVersion = Version.Parse(Application.ProductVersion);
-            }
-
-            if (Status != UpdateStatus.UpdateCheckFailed && CurrentVersion != null && LatestVersion != null && !string.IsNullOrEmpty(DownloadURL) &&
-                (ForceUpdate || Helpers.CompareVersion(CurrentVersion, LatestVersion, IgnoreRevision) < 0))
-            {
-                Status = UpdateStatus.UpdateAvailable;
-            }
-            else
-            {
-                Status = UpdateStatus.UpToDate;
-            }
-        }
-
-        public abstract Task CheckUpdateAsync();
-
-        public void DownloadUpdate()
+            URLHelpers.OpenURL(DownloadURL);
+        } else
         {
-            DebugHelper.WriteLine("Updating ShareX from version {0} to {1}", CurrentVersion, LatestVersion);
+            using DownloaderForm updaterForm = new(this);
+            updaterForm.ShowDialog();
 
-            if (IsPortable)
+            if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
             {
-                URLHelpers.OpenURL(DownloadURL);
-            }
-            else
-            {
-                using (DownloaderForm updaterForm = new DownloaderForm(this))
-                {
-                    updaterForm.ShowDialog();
-
-                    if (updaterForm.Status == DownloaderFormStatus.InstallStarted)
-                    {
-                        Application.Exit();
-                    }
-                }
+                Application.Exit();
             }
         }
     }

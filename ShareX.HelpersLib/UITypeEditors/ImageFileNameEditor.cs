@@ -23,44 +23,45 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class ImageFileNameEditor : FileNameEditor
 {
-    public class ImageFileNameEditor : FileNameEditor
+    public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
     {
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        if (context == null || provider == null)
         {
-            if (context == null || provider == null)
-            {
-                return base.EditValue(context, provider, value);
-            }
-
-            string filePath = value as string;
-            string initialDirectory = null;
-
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                filePath = FileHelpers.ExpandFolderVariables(filePath, true);
-                string directoryPath = Path.GetDirectoryName(filePath);
-
-                if (!string.IsNullOrEmpty(directoryPath) && Directory.Exists(directoryPath))
-                {
-                    initialDirectory = directoryPath;
-                }
-            }
-
-            filePath = ImageHelpers.OpenImageFileDialog(null, initialDirectory);
-
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                value = FileHelpers.GetVariableFolderPath(filePath, true);
-            }
-
-            return value;
+            return base.EditValue(context, provider, value);
         }
+
+        string filePath = value as string;
+        string initialDirectory = null;
+
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            filePath = FileHelpers.ExpandFolderVariables(filePath, true);
+            string directoryPath = Path.GetDirectoryName(filePath);
+
+            if (!string.IsNullOrEmpty(directoryPath) && Directory.Exists(directoryPath))
+            {
+                initialDirectory = directoryPath;
+            }
+        }
+
+        filePath = ImageHelpers.OpenImageFileDialog(null, initialDirectory);
+
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            value = FileHelpers.GetVariableFolderPath(filePath, true);
+        }
+
+        return value;
     }
 }

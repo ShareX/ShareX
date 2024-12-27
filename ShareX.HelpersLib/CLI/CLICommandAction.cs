@@ -26,55 +26,47 @@
 using System;
 using System.Collections.Generic;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.CLI;
+
+public class CLICommandAction(params string[] commands)
 {
-    public class CLICommandAction
+    public string[] Commands = commands;
+    public Action DefaultAction;
+    public Action<string> TextAction;
+    public Action<int> NumberAction;
+
+    public bool CheckCommands(List<CLICommand> commands)
     {
-        public string[] Commands;
-        public Action DefaultAction;
-        public Action<string> TextAction;
-        public Action<int> NumberAction;
-
-        public CLICommandAction(params string[] commands)
+        foreach (CLICommand command in commands)
         {
-            Commands = commands;
-        }
-
-        public bool CheckCommands(List<CLICommand> commands)
-        {
-            foreach (CLICommand command in commands)
+            foreach (string text in Commands)
             {
-                foreach (string text in Commands)
+                if (command.CheckCommand(text))
                 {
-                    if (command.CheckCommand(text))
-                    {
-                        ExecuteAction(command.Parameter);
-                        return true;
-                    }
+                    ExecuteAction(command.Parameter);
+                    return true;
                 }
             }
-
-            return false;
         }
 
-        private void ExecuteAction(string parameter)
+        return false;
+    }
+
+    private void ExecuteAction(string parameter)
+    {
+        if (DefaultAction != null)
         {
-            if (DefaultAction != null)
+            DefaultAction();
+        } else if (!string.IsNullOrEmpty(parameter))
+        {
+            if (TextAction != null)
             {
-                DefaultAction();
-            }
-            else if (!string.IsNullOrEmpty(parameter))
+                TextAction(parameter);
+            } else if (NumberAction != null)
             {
-                if (TextAction != null)
+                if (int.TryParse(parameter, out int num))
                 {
-                    TextAction(parameter);
-                }
-                else if (NumberAction != null)
-                {
-                    if (int.TryParse(parameter, out int num))
-                    {
-                        NumberAction(num);
-                    }
+                    NumberAction(num);
                 }
             }
         }

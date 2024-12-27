@@ -23,13 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX
+namespace ShareX.Tools.BorderlessWindow;
+
+public class BorderlessWindowSettings
 {
-    public class BorderlessWindowSettings
-    {
-        public bool RememberWindowTitle { get; set; } = true;
-        public string WindowTitle { get; set; }
-        public bool AutoCloseWindow { get; set; }
-        public bool ExcludeTaskbarArea { get; set; }
-    }
+    public bool RememberWindowTitle { get; set; } = true;
+    public string WindowTitle { get; set; }
+    public bool AutoCloseWindow { get; set; }
+    public bool ExcludeTaskbarArea { get; set; }
 }

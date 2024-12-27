@@ -23,102 +23,101 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Native;
+
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Input;
+
+public class KeyboardHook : IDisposable
 {
-    public class KeyboardHook : IDisposable
+    public event KeyEventHandler KeyDown, KeyUp;
+
+    private HookProc keyboardHookProc;
+    private IntPtr keyboardHookHandle = IntPtr.Zero;
+
+    public KeyboardHook()
     {
-        public event KeyEventHandler KeyDown, KeyUp;
+        keyboardHookProc = KeyboardHookProc;
+        keyboardHookHandle = SetHook(NativeConstants.WH_KEYBOARD_LL, keyboardHookProc);
+    }
 
-        private HookProc keyboardHookProc;
-        private IntPtr keyboardHookHandle = IntPtr.Zero;
+    ~KeyboardHook()
+    {
+        Dispose();
+    }
 
-        public KeyboardHook()
+    private static IntPtr SetHook(int hookType, HookProc hookProc)
+    {
+        using Process currentProcess = Process.GetCurrentProcess();
+        using ProcessModule currentModule = currentProcess.MainModule;
+        return NativeMethods.SetWindowsHookEx(hookType, hookProc, NativeMethods.GetModuleHandle(currentModule.ModuleName), 0);
+    }
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private IntPtr KeyboardHookProc(int nCode, IntPtr wParam, IntPtr lParam)
+    {
+        if (nCode >= 0)
         {
-            keyboardHookProc = KeyboardHookProc;
-            keyboardHookHandle = SetHook(NativeConstants.WH_KEYBOARD_LL, keyboardHookProc);
-        }
+            bool handled = false;
 
-        ~KeyboardHook()
-        {
-            Dispose();
-        }
-
-        private static IntPtr SetHook(int hookType, HookProc hookProc)
-        {
-            using (Process currentProcess = Process.GetCurrentProcess())
-            using (ProcessModule currentModule = currentProcess.MainModule)
+            switch ((KeyEvent)wParam)
             {
-                return NativeMethods.SetWindowsHookEx(hookType, hookProc, NativeMethods.GetModuleHandle(currentModule.ModuleName), 0);
+                case KeyEvent.WM_KEYDOWN:
+                case KeyEvent.WM_SYSKEYDOWN:
+                    handled = OnKeyDown(lParam);
+                    break;
+                case KeyEvent.WM_KEYUP:
+                case KeyEvent.WM_SYSKEYUP:
+                    handled = OnKeyUp(lParam);
+                    break;
+            }
+
+            if (handled)
+            {
+                return keyboardHookHandle;
             }
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        private IntPtr KeyboardHookProc(int nCode, IntPtr wParam, IntPtr lParam)
+        return NativeMethods.CallNextHookEx(keyboardHookHandle, nCode, wParam, lParam);
+    }
+
+    private bool OnKeyDown(IntPtr key)
+    {
+        if (KeyDown != null)
         {
-            if (nCode >= 0)
-            {
-                bool handled = false;
-
-                switch ((KeyEvent)wParam)
-                {
-                    case KeyEvent.WM_KEYDOWN:
-                    case KeyEvent.WM_SYSKEYDOWN:
-                        handled = OnKeyDown(lParam);
-                        break;
-                    case KeyEvent.WM_KEYUP:
-                    case KeyEvent.WM_SYSKEYUP:
-                        handled = OnKeyUp(lParam);
-                        break;
-                }
-
-                if (handled)
-                {
-                    return keyboardHookHandle;
-                }
-            }
-
-            return NativeMethods.CallNextHookEx(keyboardHookHandle, nCode, wParam, lParam);
+            KeyEventArgs keyEventArgs = GetKeyEventArgs(key);
+            KeyDown(this, keyEventArgs);
+            return keyEventArgs.Handled || keyEventArgs.SuppressKeyPress;
         }
 
-        private bool OnKeyDown(IntPtr key)
-        {
-            if (KeyDown != null)
-            {
-                KeyEventArgs keyEventArgs = GetKeyEventArgs(key);
-                KeyDown(this, keyEventArgs);
-                return keyEventArgs.Handled || keyEventArgs.SuppressKeyPress;
-            }
+        return false;
+    }
 
-            return false;
+    private bool OnKeyUp(IntPtr key)
+    {
+        if (KeyUp != null)
+        {
+            KeyEventArgs keyEventArgs = GetKeyEventArgs(key);
+            KeyUp(this, keyEventArgs);
+            return keyEventArgs.Handled || keyEventArgs.SuppressKeyPress;
         }
 
-        private bool OnKeyUp(IntPtr key)
-        {
-            if (KeyUp != null)
-            {
-                KeyEventArgs keyEventArgs = GetKeyEventArgs(key);
-                KeyUp(this, keyEventArgs);
-                return keyEventArgs.Handled || keyEventArgs.SuppressKeyPress;
-            }
+        return false;
+    }
 
-            return false;
-        }
+    private KeyEventArgs GetKeyEventArgs(IntPtr key)
+    {
+        Keys keyData = (Keys)Marshal.ReadInt32(key) | Control.ModifierKeys;
+        return new KeyEventArgs(keyData);
+    }
 
-        private KeyEventArgs GetKeyEventArgs(IntPtr key)
-        {
-            Keys keyData = (Keys)Marshal.ReadInt32(key) | Control.ModifierKeys;
-            return new KeyEventArgs(keyData);
-        }
-
-        public void Dispose()
-        {
-            NativeMethods.UnhookWindowsHookEx(keyboardHookHandle);
-        }
+    public void Dispose()
+    {
+        NativeMethods.UnhookWindowsHookEx(keyboardHookHandle);
     }
 }

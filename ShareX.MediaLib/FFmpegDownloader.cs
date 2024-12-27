@@ -24,48 +24,38 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Zip;
+
 using System;
 using System.Windows.Forms;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public static class FFmpegDownloader
 {
-    public static class FFmpegDownloader
+    public static DialogResult DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
     {
-        public static DialogResult DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
+        string url = Environment.Is64BitOperatingSystem
+            ? "https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.zip"
+            : "https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.zip";
+        using DownloaderForm form = new(url, "ffmpeg.zip");
+        form.InstallType = InstallType.Event;
+        form.RunInstallerInBackground = async;
+        form.InstallRequested += installRequested;
+        return form.ShowDialog();
+    }
+
+    public static bool ExtractFFmpeg(string archivePath, string extractPath)
+    {
+        try
         {
-            string url;
-
-            if (Environment.Is64BitOperatingSystem)
-            {
-                url = "https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.zip";
-            }
-            else
-            {
-                url = "https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.zip";
-            }
-
-            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
-            {
-                form.InstallType = InstallType.Event;
-                form.RunInstallerInBackground = async;
-                form.InstallRequested += installRequested;
-                return form.ShowDialog();
-            }
+            ZipManager.Extract(archivePath, extractPath, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 1_000_000_000);
+            return true;
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
         }
 
-        public static bool ExtractFFmpeg(string archivePath, string extractPath)
-        {
-            try
-            {
-                ZipManager.Extract(archivePath, extractPath, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 1_000_000_000);
-                return true;
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
-        }
+        return false;
     }
 }

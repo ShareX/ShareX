@@ -1,4 +1,6 @@
-﻿namespace ShareX.HelpersLib
+﻿using ShareX.HelpersLib.Controls.BlackStyle;
+
+namespace ShareX.HelpersLib
 {
     partial class HashCheckerForm
     {
@@ -43,7 +45,7 @@
             this.txtFilePath2 = new System.Windows.Forms.TextBox();
             this.btnFilePathBrowse2 = new System.Windows.Forms.Button();
             this.cbCompareTwoFiles = new System.Windows.Forms.CheckBox();
-            this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
+            this.pbProgress = new ShareX.HelpersLib.Controls.BlackStyle.BlackStyleProgressBar();
             this.SuspendLayout();
             // 
             // txtFilePath

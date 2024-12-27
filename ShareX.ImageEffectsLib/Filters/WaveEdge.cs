@@ -23,38 +23,39 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+[Description("Wave edge")]
+internal class WaveEdge : ImageEffect
 {
-    [Description("Wave edge")]
-    internal class WaveEdge : ImageEffect
+    [DefaultValue(15)]
+    public int Depth { get; set; }
+
+    [DefaultValue(20)]
+    public int Range { get; set; }
+
+    [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
+    public AnchorStyles Sides { get; set; }
+
+    public WaveEdge()
     {
-        [DefaultValue(15)]
-        public int Depth { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(20)]
-        public int Range { get; set; }
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        return ImageHelpers.WavyEdges(bmp, Depth, Range, Sides);
+    }
 
-        [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
-        public AnchorStyles Sides { get; set; }
-
-        public WaveEdge()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            return ImageHelpers.WavyEdges(bmp, Depth, Range, Sides);
-        }
-
-        protected override string GetSummary()
-        {
-            return $"{Depth}, {Range}";
-        }
+    protected override string GetSummary()
+    {
+        return $"{Depth}, {Range}";
     }
 }

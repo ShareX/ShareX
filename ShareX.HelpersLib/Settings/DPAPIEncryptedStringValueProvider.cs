@@ -24,57 +24,57 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json.Serialization;
+
+using ShareX.HelpersLib.Cryptographic;
+
 using System.Reflection;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Settings;
+
+public class DPAPIEncryptedStringValueProvider : IValueProvider
 {
-    public class DPAPIEncryptedStringValueProvider : IValueProvider
+    private const string encryptedTag = "$DPAPIEncrypted$";
+
+    private PropertyInfo targetProperty;
+
+    public DPAPIEncryptedStringValueProvider(PropertyInfo targetProperty)
     {
-        private const string encryptedTag = "$DPAPIEncrypted$";
+        this.targetProperty = targetProperty;
+    }
 
-        private PropertyInfo targetProperty;
+    public object GetValue(object target)
+    {
+        string value = (string)targetProperty.GetValue(target);
 
-        public DPAPIEncryptedStringValueProvider(PropertyInfo targetProperty)
+        if (!string.IsNullOrEmpty(value))
         {
-            this.targetProperty = targetProperty;
-        }
-
-        public object GetValue(object target)
-        {
-            string value = (string)targetProperty.GetValue(target);
-
-            if (!string.IsNullOrEmpty(value))
+            try
             {
-                try
-                {
-                    value = encryptedTag + DPAPI.Encrypt(value);
-                }
-                catch
-                {
-                }
-            }
-
-            return value;
-        }
-
-        public void SetValue(object target, object value)
-        {
-            string text = (string)value;
-
-            if (!string.IsNullOrEmpty(text) && text.StartsWith(encryptedTag))
+                value = encryptedTag + DPAPI.Encrypt(value);
+            } catch
             {
-                try
-                {
-                    string encryptedString = text.Substring(encryptedTag.Length);
-                    text = DPAPI.Decrypt(encryptedString);
-                }
-                catch
-                {
-                    text = null;
-                }
             }
-
-            targetProperty.SetValue(target, text);
         }
+
+        return value;
+    }
+
+    public void SetValue(object target, object value)
+    {
+        string text = (string)value;
+
+        if (!string.IsNullOrEmpty(text) && text.StartsWith(encryptedTag))
+        {
+            try
+            {
+                string encryptedString = text.Substring(encryptedTag.Length);
+                text = DPAPI.Decrypt(encryptedString);
+            } catch
+            {
+                text = null;
+            }
+        }
+
+        targetProperty.SetValue(target, text);
     }
 }

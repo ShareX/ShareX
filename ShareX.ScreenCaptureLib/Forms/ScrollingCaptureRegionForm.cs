@@ -24,50 +24,52 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Native;
+
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public partial class ScrollingCaptureRegionForm : Form
 {
-    public partial class ScrollingCaptureRegionForm : Form
+    protected override CreateParams CreateParams
     {
-        protected override CreateParams CreateParams
+        get
         {
-            get
-            {
-                CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= (int)(WindowStyles.WS_EX_TOPMOST | WindowStyles.WS_EX_TRANSPARENT | WindowStyles.WS_EX_TOOLWINDOW);
-                return createParams;
-            }
+            CreateParams createParams = base.CreateParams;
+            createParams.ExStyle |= (int)(WindowStyles.WS_EX_TOPMOST | WindowStyles.WS_EX_TRANSPARENT | WindowStyles.WS_EX_TOOLWINDOW);
+            return createParams;
+        }
+    }
+
+    private Rectangle borderRectangle;
+    private Rectangle borderRectangleClient;
+
+    public ScrollingCaptureRegionForm(Rectangle regionRectangle)
+    {
+        InitializeComponent();
+
+        borderRectangle = regionRectangle.Offset(1);
+        borderRectangleClient = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
+
+        Location = borderRectangle.Location;
+        Size = borderRectangle.Size;
+
+        BackColor = Color.Magenta;
+        TransparencyKey = Color.Magenta;
+    }
+
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        using (Pen pen1 = new(ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : Color.Black) { DashPattern = new float[] { 5, 5 } })
+        using (Pen pen2 = new(Color.Lime) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
+        {
+            e.Graphics.DrawRectangleProper(pen1, borderRectangleClient);
+            e.Graphics.DrawRectangleProper(pen2, borderRectangleClient);
         }
 
-        private Rectangle borderRectangle;
-        private Rectangle borderRectangleClient;
-
-        public ScrollingCaptureRegionForm(Rectangle regionRectangle)
-        {
-            InitializeComponent();
-
-            borderRectangle = regionRectangle.Offset(1);
-            borderRectangleClient = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
-
-            Location = borderRectangle.Location;
-            Size = borderRectangle.Size;
-
-            BackColor = Color.Magenta;
-            TransparencyKey = Color.Magenta;
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            using (Pen pen1 = new Pen(ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : Color.Black) { DashPattern = new float[] { 5, 5 } })
-            using (Pen pen2 = new Pen(Color.Lime) { DashPattern = new float[] { 5, 5 }, DashOffset = 5 })
-            {
-                e.Graphics.DrawRectangleProper(pen1, borderRectangleClient);
-                e.Graphics.DrawRectangleProper(pen2, borderRectangleClient);
-            }
-
-            base.OnPaint(e);
-        }
+        base.OnPaint(e);
     }
 }

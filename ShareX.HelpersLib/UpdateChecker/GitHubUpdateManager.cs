@@ -26,90 +26,89 @@
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using Timer = System.Threading.Timer;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UpdateChecker;
+
+public class GitHubUpdateManager : IDisposable
 {
-    public class GitHubUpdateManager : IDisposable
+    public bool AllowAutoUpdate { get; set; } // ConfigureAutoUpdate function must be called after change this
+    public bool AutoUpdateEnabled { get; set; } = true;
+    public TimeSpan UpdateCheckInterval { get; private set; } = TimeSpan.FromHours(1);
+    public string GitHubOwner { get; set; }
+    public string GitHubRepo { get; set; }
+    public bool IsPortable { get; set; } // If current build is portable then download URL will be opened in browser instead of downloading it
+    public bool CheckPreReleaseUpdates { get; set; }
+
+    private bool firstUpdateCheck = true;
+    private Timer updateTimer = null;
+    private readonly object updateTimerLock = new();
+
+    public GitHubUpdateManager()
     {
-        public bool AllowAutoUpdate { get; set; } // ConfigureAutoUpdate function must be called after change this
-        public bool AutoUpdateEnabled { get; set; } = true;
-        public TimeSpan UpdateCheckInterval { get; private set; } = TimeSpan.FromHours(1);
-        public string GitHubOwner { get; set; }
-        public string GitHubRepo { get; set; }
-        public bool IsPortable { get; set; } // If current build is portable then download URL will be opened in browser instead of downloading it
-        public bool CheckPreReleaseUpdates { get; set; }
+    }
 
-        private bool firstUpdateCheck = true;
-        private Timer updateTimer = null;
-        private readonly object updateTimerLock = new object();
+    public GitHubUpdateManager(string owner, string repo, bool portable = false)
+    {
+        GitHubOwner = owner;
+        GitHubRepo = repo;
+        IsPortable = portable;
+    }
 
-        public GitHubUpdateManager()
+    public void ConfigureAutoUpdate()
+    {
+        lock (updateTimerLock)
         {
-        }
-
-        public GitHubUpdateManager(string owner, string repo, bool portable = false)
-        {
-            GitHubOwner = owner;
-            GitHubRepo = repo;
-            IsPortable = portable;
-        }
-
-        public void ConfigureAutoUpdate()
-        {
-            lock (updateTimerLock)
+            if (AllowAutoUpdate)
             {
-                if (AllowAutoUpdate)
+                if (updateTimer == null)
                 {
-                    if (updateTimer == null)
-                    {
-                        updateTimer = new Timer(TimerCallback, null, TimeSpan.Zero, UpdateCheckInterval);
-                    }
+                    updateTimer = new Timer(TimerCallback, null, TimeSpan.Zero, UpdateCheckInterval);
                 }
-                else
-                {
-                    Dispose();
-                }
+            } else
+            {
+                Dispose();
             }
         }
+    }
 
-        private async void TimerCallback(object state)
-        {
-            await CheckUpdate();
-        }
+    private async void TimerCallback(object state)
+    {
+        await CheckUpdate();
+    }
 
-        private async Task CheckUpdate()
+    private async Task CheckUpdate()
+    {
+        if (AutoUpdateEnabled && !UpdateMessageBox.IsOpen)
         {
-            if (AutoUpdateEnabled && !UpdateMessageBox.IsOpen)
+            UpdateChecker updateChecker = CreateUpdateChecker();
+            await updateChecker.CheckUpdateAsync();
+
+            if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
             {
-                UpdateChecker updateChecker = CreateUpdateChecker();
-                await updateChecker.CheckUpdateAsync();
-
-                if (UpdateMessageBox.Start(updateChecker, firstUpdateCheck) == DialogResult.No)
-                {
-                    AutoUpdateEnabled = false;
-                }
-
-                firstUpdateCheck = false;
+                AutoUpdateEnabled = false;
             }
-        }
 
-        public virtual GitHubUpdateChecker CreateUpdateChecker()
-        {
-            return new GitHubUpdateChecker(GitHubOwner, GitHubRepo)
-            {
-                IsPortable = IsPortable,
-                IncludePreRelease = CheckPreReleaseUpdates
-            };
+            firstUpdateCheck = false;
         }
+    }
 
-        public void Dispose()
+    public virtual GitHubUpdateChecker CreateUpdateChecker()
+    {
+        return new GitHubUpdateChecker(GitHubOwner, GitHubRepo)
         {
-            if (updateTimer != null)
-            {
-                updateTimer.Dispose();
-                updateTimer = null;
-            }
+            IsPortable = IsPortable,
+            IncludePreRelease = CheckPreReleaseUpdates
+        };
+    }
+
+    public void Dispose()
+    {
+        if (updateTimer != null)
+        {
+            updateTimer.Dispose();
+            updateTimer = null;
         }
     }
 }

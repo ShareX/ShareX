@@ -25,21 +25,18 @@
 
 using System.IO;
 
-namespace ShareX.UploadersLib
-{
-    public abstract class FileUploader : GenericUploader
-    {
-        public UploadResult UploadFile(string filePath)
-        {
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-            {
-                using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
-                {
-                    return Upload(stream, Path.GetFileName(filePath));
-                }
-            }
+namespace ShareX.UploadersLib.BaseUploaders;
 
-            return null;
+public abstract class FileUploader : GenericUploader
+{
+    public UploadResult UploadFile(string filePath)
+    {
+        if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+        {
+            using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            return Upload(stream, Path.GetFileName(filePath));
         }
+
+        return null;
     }
 }

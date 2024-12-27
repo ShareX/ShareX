@@ -25,22 +25,21 @@
 
 using System.Drawing;
 
-namespace ShareX
+namespace ShareX.CaptureHelpers;
+
+public class CaptureMonitor : CaptureBase
 {
-    public class CaptureMonitor : CaptureBase
+    public Rectangle MonitorRectangle { get; private set; }
+
+    public CaptureMonitor(Rectangle monitorRectangle)
     {
-        public Rectangle MonitorRectangle { get; private set; }
+        MonitorRectangle = monitorRectangle;
+    }
 
-        public CaptureMonitor(Rectangle monitorRectangle)
-        {
-            MonitorRectangle = monitorRectangle;
-        }
-
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
-        {
-            TaskMetadata metadata = CreateMetadata(MonitorRectangle);
-            metadata.Image = TaskHelpers.GetScreenshot().CaptureRectangle(MonitorRectangle);
-            return metadata;
-        }
+    protected override TaskMetadata Execute(TaskSettings taskSettings)
+    {
+        TaskMetadata metadata = CreateMetadata(MonitorRectangle);
+        metadata.Image = TaskHelpers.GetScreenshot().CaptureRectangle(MonitorRectangle);
+        return metadata;
     }
 }

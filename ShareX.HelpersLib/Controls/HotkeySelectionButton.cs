@@ -23,171 +23,169 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Input;
+
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class HotkeySelectionButton : Button
 {
-    public class HotkeySelectionButton : Button
+    public event EventHandler HotkeyChanged;
+
+    [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public HotkeyInfo HotkeyInfo { get; set; } = new HotkeyInfo();
+
+    [Browsable(false)]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool EditingHotkey { get; private set; }
+
+    [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public override string Text { get; set; }
+
+    public HotkeySelectionButton()
     {
-        public event EventHandler HotkeyChanged;
+        SetDefaultButtonText();
+    }
 
-        [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public HotkeyInfo HotkeyInfo { get; set; } = new HotkeyInfo();
+    private void SetDefaultButtonText()
+    {
+        Text = "Select a hotkey...";
+        Invalidate();
+    }
 
-        [Browsable(false)]
-        public bool EditingHotkey { get; private set; }
+    public void Reset()
+    {
+        EditingHotkey = false;
+        HotkeyInfo = new HotkeyInfo();
+        SetDefaultButtonText();
+    }
 
-        [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public override string Text { get; set; }
+    private void StartEditing()
+    {
+        EditingHotkey = true;
 
-        public HotkeySelectionButton()
+        BackColor = Color.FromArgb(225, 255, 225);
+        SetDefaultButtonText();
+
+        HotkeyInfo.Hotkey = Keys.None;
+        HotkeyInfo.Win = false;
+
+        OnHotkeyChanged();
+    }
+
+    private void StopEditing()
+    {
+        EditingHotkey = false;
+
+        if (HotkeyInfo.IsOnlyModifiers)
         {
-            SetDefaultButtonText();
-        }
-
-        private void SetDefaultButtonText()
-        {
-            Text = "Select a hotkey...";
-            Invalidate();
-        }
-
-        public void Reset()
-        {
-            EditingHotkey = false;
-            HotkeyInfo = new HotkeyInfo();
-            SetDefaultButtonText();
-        }
-
-        private void StartEditing()
-        {
-            EditingHotkey = true;
-
-            BackColor = Color.FromArgb(225, 255, 225);
-            SetDefaultButtonText();
-
             HotkeyInfo.Hotkey = Keys.None;
-            HotkeyInfo.Win = false;
-
-            OnHotkeyChanged();
         }
 
-        private void StopEditing()
-        {
-            EditingHotkey = false;
+        BackColor = SystemColors.Control;
+        UseVisualStyleBackColor = true;
 
-            if (HotkeyInfo.IsOnlyModifiers)
+        OnHotkeyChanged();
+        UpdateHotkeyText();
+    }
+
+    public void UpdateHotkey(HotkeyInfo hotkeyInfo)
+    {
+        HotkeyInfo = hotkeyInfo;
+        UpdateHotkeyText();
+    }
+
+    private void UpdateHotkeyText()
+    {
+        Text = HotkeyInfo.ToString();
+        Invalidate();
+    }
+
+    protected override void OnMouseClick(MouseEventArgs e)
+    {
+        if (EditingHotkey)
+        {
+            StopEditing();
+        } else
+        {
+            StartEditing();
+        }
+
+        base.OnMouseClick(e);
+    }
+
+    protected override void OnLeave(EventArgs e)
+    {
+        if (EditingHotkey)
+        {
+            StopEditing();
+        }
+
+        base.OnLeave(e);
+    }
+
+    protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
+    {
+        if (EditingHotkey)
+        {
+            // For handle Tab key etc.
+            e.IsInputKey = true;
+        }
+
+        base.OnPreviewKeyDown(e);
+    }
+
+    protected override void OnKeyDown(KeyEventArgs kevent)
+    {
+        kevent.SuppressKeyPress = true;
+
+        if (EditingHotkey)
+        {
+            if (kevent.KeyData == Keys.Escape)
             {
                 HotkeyInfo.Hotkey = Keys.None;
-            }
-
-            BackColor = SystemColors.Control;
-            UseVisualStyleBackColor = true;
-
-            OnHotkeyChanged();
-            UpdateHotkeyText();
-        }
-
-        public void UpdateHotkey(HotkeyInfo hotkeyInfo)
-        {
-            HotkeyInfo = hotkeyInfo;
-            UpdateHotkeyText();
-        }
-
-        private void UpdateHotkeyText()
-        {
-            Text = HotkeyInfo.ToString();
-            Invalidate();
-        }
-
-        protected override void OnMouseClick(MouseEventArgs e)
-        {
-            if (EditingHotkey)
+                StopEditing();
+            } else if (kevent.KeyCode == Keys.LWin || kevent.KeyCode == Keys.RWin)
             {
+                HotkeyInfo.Win = !HotkeyInfo.Win;
+                UpdateHotkeyText();
+            } else if (new HotkeyInfo(kevent.KeyData).IsValidHotkey)
+            {
+                HotkeyInfo.Hotkey = kevent.KeyData;
+                StopEditing();
+            } else
+            {
+                HotkeyInfo.Hotkey = kevent.KeyData;
+                UpdateHotkeyText();
+            }
+        }
+
+        base.OnKeyDown(kevent);
+    }
+
+    protected override void OnKeyUp(KeyEventArgs kevent)
+    {
+        kevent.SuppressKeyPress = true;
+
+        if (EditingHotkey)
+        {
+            // PrintScreen not trigger KeyDown event
+            if (kevent.KeyCode == Keys.PrintScreen)
+            {
+                HotkeyInfo.Hotkey = kevent.KeyData;
                 StopEditing();
             }
-            else
-            {
-                StartEditing();
-            }
-
-            base.OnMouseClick(e);
         }
 
-        protected override void OnLeave(EventArgs e)
-        {
-            if (EditingHotkey)
-            {
-                StopEditing();
-            }
+        base.OnKeyUp(kevent);
+    }
 
-            base.OnLeave(e);
-        }
-
-        protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
-        {
-            if (EditingHotkey)
-            {
-                // For handle Tab key etc.
-                e.IsInputKey = true;
-            }
-
-            base.OnPreviewKeyDown(e);
-        }
-
-        protected override void OnKeyDown(KeyEventArgs kevent)
-        {
-            kevent.SuppressKeyPress = true;
-
-            if (EditingHotkey)
-            {
-                if (kevent.KeyData == Keys.Escape)
-                {
-                    HotkeyInfo.Hotkey = Keys.None;
-                    StopEditing();
-                }
-                else if (kevent.KeyCode == Keys.LWin || kevent.KeyCode == Keys.RWin)
-                {
-                    HotkeyInfo.Win = !HotkeyInfo.Win;
-                    UpdateHotkeyText();
-                }
-                else if (new HotkeyInfo(kevent.KeyData).IsValidHotkey)
-                {
-                    HotkeyInfo.Hotkey = kevent.KeyData;
-                    StopEditing();
-                }
-                else
-                {
-                    HotkeyInfo.Hotkey = kevent.KeyData;
-                    UpdateHotkeyText();
-                }
-            }
-
-            base.OnKeyDown(kevent);
-        }
-
-        protected override void OnKeyUp(KeyEventArgs kevent)
-        {
-            kevent.SuppressKeyPress = true;
-
-            if (EditingHotkey)
-            {
-                // PrintScreen not trigger KeyDown event
-                if (kevent.KeyCode == Keys.PrintScreen)
-                {
-                    HotkeyInfo.Hotkey = kevent.KeyData;
-                    StopEditing();
-                }
-            }
-
-            base.OnKeyUp(kevent);
-        }
-
-        protected void OnHotkeyChanged()
-        {
-            HotkeyChanged?.Invoke(this, EventArgs.Empty);
-        }
+    protected void OnHotkeyChanged()
+    {
+        HotkeyChanged?.Invoke(this, EventArgs.Empty);
     }
 }

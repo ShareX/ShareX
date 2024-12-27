@@ -24,59 +24,62 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public partial class ScrollingCaptureOptionsForm : Form
 {
-    public partial class ScrollingCaptureOptionsForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ScrollingCaptureOptions Options { get; private set; }
+
+    public ScrollingCaptureOptionsForm(ScrollingCaptureOptions options)
     {
-        public ScrollingCaptureOptions Options { get; private set; }
+        Options = options;
 
-        public ScrollingCaptureOptionsForm(ScrollingCaptureOptions options)
-        {
-            Options = options;
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+        LoadOptions();
+    }
 
-            LoadOptions();
-        }
+    private void LoadOptions()
+    {
+        nudStartDelay.SetValue(Options.StartDelay);
+        cbAutoScrollTop.Checked = Options.AutoScrollTop;
+        nudScrollDelay.SetValue(Options.ScrollDelay);
+        nudScrollAmount.SetValue(Options.ScrollAmount);
+        cbAutoUpload.Checked = Options.AutoUpload;
+        cbShowRegion.Checked = Options.ShowRegion;
+        cbAutoIgnoreBottomEdge.Checked = Options.AutoIgnoreBottomEdge;
+    }
 
-        private void LoadOptions()
-        {
-            nudStartDelay.SetValue(Options.StartDelay);
-            cbAutoScrollTop.Checked = Options.AutoScrollTop;
-            nudScrollDelay.SetValue(Options.ScrollDelay);
-            nudScrollAmount.SetValue(Options.ScrollAmount);
-            cbAutoUpload.Checked = Options.AutoUpload;
-            cbShowRegion.Checked = Options.ShowRegion;
-            cbAutoIgnoreBottomEdge.Checked = Options.AutoIgnoreBottomEdge;
-        }
+    private void SaveOptions()
+    {
+        Options.StartDelay = (int)nudStartDelay.Value;
+        Options.AutoScrollTop = cbAutoScrollTop.Checked;
+        Options.ScrollDelay = (int)nudScrollDelay.Value;
+        Options.ScrollAmount = (int)nudScrollAmount.Value;
+        Options.AutoUpload = cbAutoUpload.Checked;
+        Options.ShowRegion = cbShowRegion.Checked;
+        Options.AutoIgnoreBottomEdge = cbAutoIgnoreBottomEdge.Checked;
+    }
 
-        private void SaveOptions()
-        {
-            Options.StartDelay = (int)nudStartDelay.Value;
-            Options.AutoScrollTop = cbAutoScrollTop.Checked;
-            Options.ScrollDelay = (int)nudScrollDelay.Value;
-            Options.ScrollAmount = (int)nudScrollAmount.Value;
-            Options.AutoUpload = cbAutoUpload.Checked;
-            Options.ShowRegion = cbShowRegion.Checked;
-            Options.AutoIgnoreBottomEdge = cbAutoIgnoreBottomEdge.Checked;
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        SaveOptions();
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            SaveOptions();
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

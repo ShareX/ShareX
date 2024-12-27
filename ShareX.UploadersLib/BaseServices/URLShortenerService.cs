@@ -23,10 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
+namespace ShareX.UploadersLib.BaseServices;
+
+public abstract class URLShortenerService : UploaderService<UrlShortenerType>
 {
-    public abstract class URLShortenerService : UploaderService<UrlShortenerType>
-    {
-        public abstract URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo);
-    }
+    public abstract URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo);
 }

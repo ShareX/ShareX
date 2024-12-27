@@ -24,18 +24,18 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+internal class Smooth : ImageEffect
 {
-    internal class Smooth : ImageEffect
+    public override Bitmap Apply(Bitmap bmp)
     {
-        public override Bitmap Apply(Bitmap bmp)
+        using (bmp)
         {
-            using (bmp)
-            {
-                return ConvolutionMatrixManager.Smooth().Apply(bmp);
-            }
+            return ConvolutionMatrixManager.Smooth().Apply(bmp);
         }
     }
 }

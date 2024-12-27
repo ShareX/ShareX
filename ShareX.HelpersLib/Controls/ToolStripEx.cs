@@ -23,38 +23,39 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Native;
+
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+// https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/
+public class ToolStripEx : ToolStrip
 {
-    // https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/
-    public class ToolStripEx : ToolStrip
+    private bool clickThrough = false;
+
+    [DefaultValue(false)]
+    public bool ClickThrough
     {
-        private bool clickThrough = false;
-
-        [DefaultValue(false)]
-        public bool ClickThrough
+        get
         {
-            get
-            {
-                return clickThrough;
-            }
-            set
-            {
-                clickThrough = value;
-            }
+            return clickThrough;
         }
-
-        protected override void WndProc(ref Message m)
+        set
         {
-            base.WndProc(ref m);
+            clickThrough = value;
+        }
+    }
 
-            if (clickThrough && m.Msg == (int)WindowsMessages.MOUSEACTIVATE && m.Result == (IntPtr)NativeConstants.MA_ACTIVATEANDEAT)
-            {
-                m.Result = (IntPtr)NativeConstants.MA_ACTIVATE;
-            }
+    protected override void WndProc(ref Message m)
+    {
+        base.WndProc(ref m);
+
+        if (clickThrough && m.Msg == (int)WindowsMessages.MOUSEACTIVATE && m.Result == (IntPtr)NativeConstants.MA_ACTIVATEANDEAT)
+        {
+            m.Result = (IntPtr)NativeConstants.MA_ACTIVATE;
         }
     }
 }

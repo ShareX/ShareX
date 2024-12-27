@@ -24,50 +24,80 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Helpers;
+using ShareX.UploadersLib.BaseUploaders;
+
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.OAuth;
+
+public class GoogleOAuth2 : IOAuth2Loopback
 {
-    public class GoogleOAuth2 : IOAuth2Loopback
+    private const string AuthorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
+    private const string TokenEndpoint = "https://oauth2.googleapis.com/token";
+    private const string UserInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
+
+    public OAuth2Info AuthInfo { get; private set; }
+    private Uploader GoogleUploader { get; set; }
+    public string RedirectURI { get; set; }
+    public string State { get; set; }
+    public string Scope { get; set; }
+
+    public GoogleOAuth2(OAuth2Info oauth, Uploader uploader)
     {
-        private const string AuthorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
-        private const string TokenEndpoint = "https://oauth2.googleapis.com/token";
-        private const string UserInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
+        AuthInfo = oauth;
+        GoogleUploader = uploader;
+    }
 
-        public OAuth2Info AuthInfo { get; private set; }
-        private Uploader GoogleUploader { get; set; }
-        public string RedirectURI { get; set; }
-        public string State { get; set; }
-        public string Scope { get; set; }
+    public string GetAuthorizationURL()
+    {
+        Dictionary<string, string> args = new();
+        args.Add("response_type", "code");
+        args.Add("client_id", AuthInfo.Client_ID);
+        args.Add("redirect_uri", RedirectURI);
+        args.Add("state", State);
+        args.Add("scope", Scope);
 
-        public GoogleOAuth2(OAuth2Info oauth, Uploader uploader)
+        return URLHelpers.CreateQueryString(AuthorizationEndpoint, args);
+    }
+
+    public bool GetAccessToken(string code)
+    {
+        Dictionary<string, string> args = new();
+        args.Add("code", code);
+        args.Add("client_id", AuthInfo.Client_ID);
+        args.Add("client_secret", AuthInfo.Client_Secret);
+        args.Add("redirect_uri", RedirectURI);
+        args.Add("grant_type", "authorization_code");
+
+        string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
+
+        if (!string.IsNullOrEmpty(response))
         {
-            AuthInfo = oauth;
-            GoogleUploader = uploader;
+            OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
+
+            if (token != null && !string.IsNullOrEmpty(token.access_token))
+            {
+                token.UpdateExpireDate();
+                AuthInfo.Token = token;
+                return true;
+            }
         }
 
-        public string GetAuthorizationURL()
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("response_type", "code");
-            args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("redirect_uri", RedirectURI);
-            args.Add("state", State);
-            args.Add("scope", Scope);
+        return false;
+    }
 
-            return URLHelpers.CreateQueryString(AuthorizationEndpoint, args);
-        }
-
-        public bool GetAccessToken(string code)
+    public bool RefreshAccessToken()
+    {
+        if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("code", code);
+            Dictionary<string, string> args = new();
+            args.Add("refresh_token", AuthInfo.Token.refresh_token);
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("client_secret", AuthInfo.Client_Secret);
-            args.Add("redirect_uri", RedirectURI);
-            args.Add("grant_type", "authorization_code");
+            args.Add("grant_type", "refresh_token");
 
             string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
 
@@ -78,80 +108,46 @@ namespace ShareX.UploadersLib
                 if (token != null && !string.IsNullOrEmpty(token.access_token))
                 {
                     token.UpdateExpireDate();
+                    string refresh_token = AuthInfo.Token.refresh_token;
                     AuthInfo.Token = token;
+                    AuthInfo.Token.refresh_token = refresh_token;
                     return true;
                 }
             }
-
-            return false;
         }
 
-        public bool RefreshAccessToken()
+        return false;
+    }
+
+    public bool CheckAuthorization()
+    {
+        if (OAuth2Info.CheckOAuth(AuthInfo))
         {
-            if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
+            if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
             {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("refresh_token", AuthInfo.Token.refresh_token);
-                args.Add("client_id", AuthInfo.Client_ID);
-                args.Add("client_secret", AuthInfo.Client_Secret);
-                args.Add("grant_type", "refresh_token");
-
-                string response = GoogleUploader.SendRequestURLEncoded(HttpMethod.POST, TokenEndpoint, args);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-                    if (token != null && !string.IsNullOrEmpty(token.access_token))
-                    {
-                        token.UpdateExpireDate();
-                        string refresh_token = AuthInfo.Token.refresh_token;
-                        AuthInfo.Token = token;
-                        AuthInfo.Token.refresh_token = refresh_token;
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        public bool CheckAuthorization()
-        {
-            if (OAuth2Info.CheckOAuth(AuthInfo))
-            {
-                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
-                {
-                    GoogleUploader.Errors.Add("Refresh access token failed.");
-                    return false;
-                }
-            }
-            else
-            {
-                GoogleUploader.Errors.Add("Login is required.");
+                GoogleUploader.Errors.Add("Refresh access token failed.");
                 return false;
             }
-
-            return true;
-        }
-
-        public NameValueCollection GetAuthHeaders()
+        } else
         {
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-            return headers;
+            GoogleUploader.Errors.Add("Login is required.");
+            return false;
         }
 
-        public OAuthUserInfo GetUserInfo()
-        {
-            string response = GoogleUploader.SendRequest(HttpMethod.GET, UserInfoEndpoint, null, GetAuthHeaders());
+        return true;
+    }
 
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonConvert.DeserializeObject<OAuthUserInfo>(response);
-            }
+    public NameValueCollection GetAuthHeaders()
+    {
+        NameValueCollection headers = new();
+        headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+        return headers;
+    }
 
-            return null;
-        }
+    public OAuthUserInfo GetUserInfo()
+    {
+        string response = GoogleUploader.SendRequest(HttpMethod.GET, UserInfoEndpoint, null, GetAuthHeaders());
+
+        return !string.IsNullOrEmpty(response) ? JsonConvert.DeserializeObject<OAuthUserInfo>(response) : null;
     }
 }

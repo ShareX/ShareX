@@ -1,4 +1,6 @@
-﻿namespace ShareX.MediaLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.MediaLib
 {
     partial class ImageCombinerForm
     {
@@ -33,7 +35,7 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnMoveDown = new System.Windows.Forms.Button();
-            this.lvImages = new ShareX.HelpersLib.MyListView();
+            this.lvImages = new ShareX.HelpersLib.Controls.MyListView();
             this.chFilepath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCombine = new System.Windows.Forms.Button();
             this.lblSpace = new System.Windows.Forms.Label();
@@ -249,7 +251,7 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnMoveUp;
         private System.Windows.Forms.Button btnMoveDown;
-        private HelpersLib.MyListView lvImages;
+        private MyListView lvImages;
         private System.Windows.Forms.Button btnCombine;
         private System.Windows.Forms.Label lblSpace;
         private System.Windows.Forms.NumericUpDown nudSpace;

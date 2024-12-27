@@ -1,4 +1,6 @@
-﻿namespace ShareX.HistoryLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.HistoryLib
 {
     partial class HistoryForm
     {
@@ -31,7 +33,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.tscHistory = new System.Windows.Forms.ToolStripContainer();
-            this.lvHistory = new ShareX.HelpersLib.MyListView();
+            this.lvHistory = new ShareX.HelpersLib.Controls.MyListView();
             this.chIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,8 +64,8 @@
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
-            this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
-            this.scHistoryItemInfo = new ShareX.HelpersLib.SplitContainerCustomSplitter();
+            this.scMain = new ShareX.HelpersLib.Controls.SplitContainerCustomSplitter();
+            this.scHistoryItemInfo = new ShareX.HelpersLib.Controls.SplitContainerCustomSplitter();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.pgHistoryItemInfo = new System.Windows.Forms.PropertyGrid();
             this.tscHistory.ContentPanel.SuspendLayout();
@@ -416,12 +418,12 @@
 
         #endregion Windows Form Designer generated code
 
-        private ShareX.HelpersLib.MyListView lvHistory;
+        private MyListView lvHistory;
         private System.Windows.Forms.ColumnHeader chFilename;
         private System.Windows.Forms.ColumnHeader chDateTime;
         private System.Windows.Forms.ColumnHeader chURL;
         private System.Windows.Forms.ColumnHeader chIcon;
-        private ShareX.HelpersLib.SplitContainerCustomSplitter scMain;
+        private SplitContainerCustomSplitter scMain;
         private HelpersLib.MyPictureBox pbThumbnail;
         private System.Windows.Forms.GroupBox gbAdvancedSearch;
         private System.Windows.Forms.ComboBox cbHostFilterSelection;
@@ -448,7 +450,7 @@
         private System.Windows.Forms.Button btnAdvancedSearchReset;
         private System.Windows.Forms.ToolStripSeparator tss2;
         private System.Windows.Forms.PropertyGrid pgHistoryItemInfo;
-        private HelpersLib.SplitContainerCustomSplitter scHistoryItemInfo;
+        private SplitContainerCustomSplitter scHistoryItemInfo;
         private System.Windows.Forms.ToolStripButton tsbToggleMoreInfo;
         private System.Windows.Forms.ToolStripButton tsbShowStats;
         private System.Windows.Forms.Button btnAdvancedSearchClose;

@@ -23,57 +23,61 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class LabeledComboBox : UserControl
 {
-    public partial class LabeledComboBox : UserControl
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public new string Text
     {
-        public new string Text
+        get
         {
-            get
-            {
-                return lblText.Text;
-            }
-            set
-            {
-                lblText.Text = value;
-            }
+            return lblText.Text;
         }
+        set
+        {
+            lblText.Text = value;
+        }
+    }
 
-        public int SelectedIndex
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public int SelectedIndex
+    {
+        get
         {
-            get
-            {
-                return cbList.SelectedIndex;
-            }
-            set
-            {
-                cbList.SelectedIndex = value;
-            }
+            return cbList.SelectedIndex;
         }
+        set
+        {
+            cbList.SelectedIndex = value;
+        }
+    }
 
-        public event EventHandler SelectedIndexChanged
-        {
-            add { cbList.SelectedIndexChanged += value; }
-            remove { cbList.SelectedIndexChanged -= value; }
-        }
+    public event EventHandler SelectedIndexChanged
+    {
+        add { cbList.SelectedIndexChanged += value; }
+        remove { cbList.SelectedIndexChanged -= value; }
+    }
 
-        public LabeledComboBox()
-        {
-            InitializeComponent();
-        }
+    public LabeledComboBox()
+    {
+        InitializeComponent();
+    }
 
-        public void Add(object item)
-        {
-            cbList.Items.Add(item);
-        }
+    public void Add(object item)
+    {
+        cbList.Items.Add(item);
+    }
 
-        public void AddRange(object[] items)
-        {
-            cbList.Items.AddRange(items);
-            cbList.AutoSizeDropDown();
-        }
+    public void AddRange(object[] items)
+    {
+        cbList.Items.AddRange(items);
+        cbList.AutoSizeDropDown();
     }
 }

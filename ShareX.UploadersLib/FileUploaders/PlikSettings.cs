@@ -23,24 +23,23 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Settings;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class PlikSettings
 {
-    public class PlikSettings
-    {
-        public string URL { get; set; } = "";
-        [JsonEncrypt]
-        public string APIKey { get; set; } = "";
-        public bool IsSecured { get; set; } = false;
-        public string Login { get; set; } = "";
-        [JsonEncrypt]
-        public string Password { get; set; } = "";
-        public bool Removable { get; set; } = false;
-        public bool OneShot { get; set; } = false;
-        public int TTLUnit { get; set; } = 2;
-        public decimal TTL { get; set; } = 30;
-        public bool HasComment { get; set; } = false;
-        public string Comment { get; set; } = "";
-    }
+    public string URL { get; set; } = "";
+    [JsonEncrypt]
+    public string APIKey { get; set; } = "";
+    public bool IsSecured { get; set; } = false;
+    public string Login { get; set; } = "";
+    [JsonEncrypt]
+    public string Password { get; set; } = "";
+    public bool Removable { get; set; } = false;
+    public bool OneShot { get; set; } = false;
+    public int TTLUnit { get; set; } = 2;
+    public decimal TTL { get; set; } = 30;
+    public bool HasComment { get; set; } = false;
+    public string Comment { get; set; } = "";
 }

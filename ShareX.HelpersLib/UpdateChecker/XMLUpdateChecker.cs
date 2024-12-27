@@ -23,73 +23,72 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UpdateChecker;
+
+public class XMLUpdateChecker : UpdateChecker
 {
-    public class XMLUpdateChecker : UpdateChecker
+    public string URL { get; private set; }
+    public string ApplicationName { get; private set; }
+
+    public XMLUpdateChecker(string url, string applicationName)
     {
-        public string URL { get; private set; }
-        public string ApplicationName { get; private set; }
+        URL = url;
+        ApplicationName = applicationName;
+    }
 
-        public XMLUpdateChecker(string url, string applicationName)
+    public override async Task CheckUpdateAsync()
+    {
+        try
         {
-            URL = url;
-            ApplicationName = applicationName;
-        }
+            string response = await WebHelpers.DownloadStringAsync(URL);
 
-        public override async Task CheckUpdateAsync()
-        {
-            try
+            using StringReader sr = new(response);
+            using XmlTextReader xml = new(sr);
+            XDocument xd = XDocument.Load(xml);
+
+            if (xd != null)
             {
-                string response = await WebHelpers.DownloadStringAsync(URL);
+                string node;
 
-                using (StringReader sr = new StringReader(response))
-                using (XmlTextReader xml = new XmlTextReader(sr))
+                switch (ReleaseType)
                 {
-                    XDocument xd = XDocument.Load(xml);
+                    default:
+                    case ReleaseChannelType.Stable:
+                        node = "Stable";
+                        break;
+                    case ReleaseChannelType.Beta:
+                        node = "Beta|Stable";
+                        break;
+                    case ReleaseChannelType.Dev:
+                        node = "Dev|Beta|Stable";
+                        break;
+                }
 
-                    if (xd != null)
-                    {
-                        string node;
+                string path = string.Format("Update/{0}/{1}", ApplicationName, node);
+                XElement xe = xd.GetNode(path);
 
-                        switch (ReleaseType)
-                        {
-                            default:
-                            case ReleaseChannelType.Stable:
-                                node = "Stable";
-                                break;
-                            case ReleaseChannelType.Beta:
-                                node = "Beta|Stable";
-                                break;
-                            case ReleaseChannelType.Dev:
-                                node = "Dev|Beta|Stable";
-                                break;
-                        }
-
-                        string path = string.Format("Update/{0}/{1}", ApplicationName, node);
-                        XElement xe = xd.GetNode(path);
-
-                        if (xe != null)
-                        {
-                            LatestVersion = new Version(xe.Element("Version").Value);
-                            DownloadURL = xe.Element("URL").Value;
-                            RefreshStatus();
-                            return;
-                        }
-                    }
+                if (xe != null)
+                {
+                    LatestVersion = new Version(xe.Element("Version").Value);
+                    DownloadURL = xe.Element("URL").Value;
+                    RefreshStatus();
+                    return;
                 }
             }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "XML update check failed");
-            }
-
-            Status = UpdateStatus.UpdateCheckFailed;
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "XML update check failed");
         }
+
+        Status = UpdateStatus.UpdateCheckFailed;
     }
 }

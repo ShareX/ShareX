@@ -24,96 +24,90 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Helpers;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders;
+
+public class HastebinTextUploaderService : TextUploaderService
 {
-    public class HastebinTextUploaderService : TextUploaderService
+    public override TextDestination EnumValue { get; } = TextDestination.Hastebin;
+
+    public override Image ServiceImage => Resources.Hastebin;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override TextDestination EnumValue { get; } = TextDestination.Hastebin;
-
-        public override Image ServiceImage => Resources.Hastebin;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        return new Hastebin()
         {
-            return new Hastebin()
-            {
-                CustomDomain = config.HastebinCustomDomain,
-                SyntaxHighlighting = config.HastebinSyntaxHighlighting,
-                UseFileExtension = config.HastebinUseFileExtension
-            };
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpHastebin;
+            CustomDomain = config.HastebinCustomDomain,
+            SyntaxHighlighting = config.HastebinSyntaxHighlighting,
+            UseFileExtension = config.HastebinUseFileExtension
+        };
     }
 
-    public sealed class Hastebin : TextUploader
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpHastebin;
+}
+
+public sealed class Hastebin : TextUploader
+{
+    public string CustomDomain { get; set; }
+    public string SyntaxHighlighting { get; set; }
+    public bool UseFileExtension { get; set; }
+
+    public override UploadResult UploadText(string text, string fileName)
     {
-        public string CustomDomain { get; set; }
-        public string SyntaxHighlighting { get; set; }
-        public bool UseFileExtension { get; set; }
+        UploadResult ur = new();
 
-        public override UploadResult UploadText(string text, string fileName)
+        if (!string.IsNullOrEmpty(text))
         {
-            UploadResult ur = new UploadResult();
+            string domain = !string.IsNullOrEmpty(CustomDomain) ? CustomDomain : "https://hastebin.com";
+            ur.Response = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(domain, "documents"), text);
 
-            if (!string.IsNullOrEmpty(text))
+            if (!string.IsNullOrEmpty(ur.Response))
             {
-                string domain;
+                HastebinResponse response = JsonConvert.DeserializeObject<HastebinResponse>(ur.Response);
 
-                if (!string.IsNullOrEmpty(CustomDomain))
+                if (response != null && !string.IsNullOrEmpty(response.Key))
                 {
-                    domain = CustomDomain;
-                }
-                else
-                {
-                    domain = "https://hastebin.com";
-                }
+                    string url = URLHelpers.CombineURL(domain, response.Key);
 
-                ur.Response = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(domain, "documents"), text);
+                    string syntaxHighlighting = SyntaxHighlighting;
 
-                if (!string.IsNullOrEmpty(ur.Response))
-                {
-                    HastebinResponse response = JsonConvert.DeserializeObject<HastebinResponse>(ur.Response);
-
-                    if (response != null && !string.IsNullOrEmpty(response.Key))
+                    if (UseFileExtension)
                     {
-                        string url = URLHelpers.CombineURL(domain, response.Key);
+                        string ext = FileHelpers.GetFileNameExtension(fileName);
 
-                        string syntaxHighlighting = SyntaxHighlighting;
-
-                        if (UseFileExtension)
+                        if (!string.IsNullOrEmpty(ext) && !ext.Equals("txt", StringComparison.OrdinalIgnoreCase))
                         {
-                            string ext = FileHelpers.GetFileNameExtension(fileName);
-
-                            if (!string.IsNullOrEmpty(ext) && !ext.Equals("txt", StringComparison.OrdinalIgnoreCase))
-                            {
-                                syntaxHighlighting = ext.ToLowerInvariant();
-                            }
+                            syntaxHighlighting = ext.ToLowerInvariant();
                         }
-
-                        if (!string.IsNullOrEmpty(syntaxHighlighting))
-                        {
-                            url += "." + syntaxHighlighting;
-                        }
-
-                        ur.URL = url;
                     }
+
+                    if (!string.IsNullOrEmpty(syntaxHighlighting))
+                    {
+                        url += "." + syntaxHighlighting;
+                    }
+
+                    ur.URL = url;
                 }
             }
-
-            return ur;
         }
 
-        private class HastebinResponse
-        {
-            public string Key { get; set; }
-        }
+        return ur;
+    }
+
+    private class HastebinResponse
+    {
+        public string Key { get; set; }
     }
 }

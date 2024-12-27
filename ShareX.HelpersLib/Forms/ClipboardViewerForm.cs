@@ -23,153 +23,150 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class ClipboardViewerForm : Form
 {
-    public partial class ClipboardViewerForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public DataObject CurrentDataObject { get; private set; }
+
+    public ClipboardViewerForm()
     {
-        public DataObject CurrentDataObject { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+    }
 
-        public ClipboardViewerForm()
+    private void ClipboardViewerForm_Load(object sender, EventArgs e)
+    {
+        RefreshClipboardContentList();
+    }
+
+    private void RefreshClipboardContentList()
+    {
+        ResetSelected();
+
+        lvClipboardContentList.Items.Clear();
+
+        try
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-        }
-
-        private void ClipboardViewerForm_Load(object sender, EventArgs e)
-        {
-            RefreshClipboardContentList();
-        }
-
-        private void RefreshClipboardContentList()
-        {
-            ResetSelected();
-
-            lvClipboardContentList.Items.Clear();
-
-            try
+            CurrentDataObject = (DataObject)Clipboard.GetDataObject();
+            if (CurrentDataObject != null)
             {
-                CurrentDataObject = (DataObject)Clipboard.GetDataObject();
-                if (CurrentDataObject != null)
+                string[] formats = CurrentDataObject.GetFormats();
+                if (formats != null && formats.Length > 0)
                 {
-                    string[] formats = CurrentDataObject.GetFormats();
-                    if (formats != null && formats.Length > 0)
+                    foreach (string format in formats)
                     {
-                        foreach (string format in formats)
-                        {
-                            ListViewItem lvi = new ListViewItem(format);
-                            lvClipboardContentList.Items.Add(lvi);
-                        }
-
-                        lvClipboardContentList.Items[0].Selected = true;
+                        ListViewItem lvi = new(format);
+                        lvClipboardContentList.Items.Add(lvi);
                     }
+
+                    lvClipboardContentList.Items[0].Selected = true;
                 }
             }
-            catch (Exception e)
-            {
-                e.ShowError();
-            }
-        }
-
-        private void UpdateSelectedClipboardContent()
+        } catch (Exception e)
         {
-            ResetSelected();
+            e.ShowError();
+        }
+    }
 
-            if (lvClipboardContentList.SelectedItems.Count > 0)
+    private void UpdateSelectedClipboardContent()
+    {
+        ResetSelected();
+
+        if (lvClipboardContentList.SelectedItems.Count > 0)
+        {
+            ListViewItem lvi = lvClipboardContentList.SelectedItems[0];
+            string format = lvi.Text;
+
+            if (CurrentDataObject != null)
             {
-                ListViewItem lvi = lvClipboardContentList.SelectedItems[0];
-                string format = lvi.Text;
+                object data = CurrentDataObject.GetData(format);
 
-                if (CurrentDataObject != null)
+                if (data != null)
                 {
-                    object data = CurrentDataObject.GetData(format);
-
-                    if (data != null)
+                    try
                     {
-                        try
+                        switch (data)
                         {
-                            switch (data)
-                            {
-                                case MemoryStream ms:
-                                    if (format.Equals(ClipboardHelpers.FORMAT_PNG, StringComparison.OrdinalIgnoreCase))
-                                    {
-                                        using (Bitmap bmp = new Bitmap(ms))
-                                        {
-                                            Bitmap clonedImage = ClipboardHelpersEx.CloneImage(bmp);
-                                            LoadImage(clonedImage);
-                                        }
-                                    }
-                                    else if (format.Equals(DataFormats.Dib, StringComparison.OrdinalIgnoreCase))
-                                    {
-                                        Bitmap bmp = ClipboardHelpersEx.ImageFromClipboardDib(ms.ToArray());
-                                        LoadImage(bmp);
-                                    }
-                                    else if (format.Equals(ClipboardHelpers.FORMAT_17, StringComparison.OrdinalIgnoreCase))
-                                    {
-                                        Bitmap bmp = ClipboardHelpersEx.DIBV5ToBitmap(ms.ToArray());
-                                        LoadImage(bmp);
-                                    }
-                                    else
-                                    {
-                                        LoadText(data.ToString());
-                                    }
-                                    break;
-                                case Bitmap bmp:
+                            case MemoryStream ms:
+                                if (format.Equals(ClipboardHelpers.FORMAT_PNG, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    using Bitmap bmp = new(ms);
+                                    Bitmap clonedImage = ClipboardHelpersEx.CloneImage(bmp);
+                                    LoadImage(clonedImage);
+                                } else if (format.Equals(DataFormats.Dib, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    Bitmap bmp = ClipboardHelpersEx.ImageFromClipboardDib(ms.ToArray());
                                     LoadImage(bmp);
-                                    break;
-                                default:
+                                } else if (format.Equals(ClipboardHelpers.FORMAT_17, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    Bitmap bmp = ClipboardHelpersEx.DIBV5ToBitmap(ms.ToArray());
+                                    LoadImage(bmp);
+                                } else
+                                {
                                     LoadText(data.ToString());
-                                    break;
-                            }
+                                }
+                                break;
+                            case Bitmap bmp:
+                                LoadImage(bmp);
+                                break;
+                            default:
+                                LoadText(data.ToString());
+                                break;
                         }
-                        catch (Exception e)
-                        {
-                            e.ShowError();
-                        }
+                    } catch (Exception e)
+                    {
+                        e.ShowError();
                     }
                 }
             }
         }
+    }
 
-        private void ResetSelected()
-        {
-            txtSelectedClipboardContent.Visible = false;
-            txtSelectedClipboardContent.Clear();
+    private void ResetSelected()
+    {
+        txtSelectedClipboardContent.Visible = false;
+        txtSelectedClipboardContent.Clear();
 
-            pbSelectedClipboardContent.Visible = false;
-            pbSelectedClipboardContent.Reset();
-        }
+        pbSelectedClipboardContent.Visible = false;
+        pbSelectedClipboardContent.Reset();
+    }
 
-        private void LoadImage(Bitmap bmp)
-        {
-            pbSelectedClipboardContent.LoadImage(bmp);
-            pbSelectedClipboardContent.Visible = true;
-        }
+    private void LoadImage(Bitmap bmp)
+    {
+        pbSelectedClipboardContent.LoadImage(bmp);
+        pbSelectedClipboardContent.Visible = true;
+    }
 
-        private void LoadText(string text)
-        {
-            txtSelectedClipboardContent.Text = text;
-            txtSelectedClipboardContent.Visible = true;
-        }
+    private void LoadText(string text)
+    {
+        txtSelectedClipboardContent.Text = text;
+        txtSelectedClipboardContent.Visible = true;
+    }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            RefreshClipboardContentList();
-        }
+    private void btnRefresh_Click(object sender, EventArgs e)
+    {
+        RefreshClipboardContentList();
+    }
 
-        private void btnClearClipboard_Click(object sender, EventArgs e)
-        {
-            ClipboardHelpers.Clear();
-            RefreshClipboardContentList();
-        }
+    private void btnClearClipboard_Click(object sender, EventArgs e)
+    {
+        ClipboardHelpers.Clear();
+        RefreshClipboardContentList();
+    }
 
-        private void lvClipboardContentList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateSelectedClipboardContent();
-        }
+    private void lvClipboardContentList_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        UpdateSelectedClipboardContent();
     }
 }

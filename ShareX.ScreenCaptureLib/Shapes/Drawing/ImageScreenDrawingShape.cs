@@ -25,43 +25,40 @@
 
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
-{
-    public class ImageScreenDrawingShape : ImageDrawingShape
-    {
-        public override ShapeType ShapeType { get; } = ShapeType.DrawingImageScreen;
+namespace ShareX.ScreenCaptureLib.Shapes.Drawing;
 
-        public override void OnCreated()
+public class ImageScreenDrawingShape : ImageDrawingShape
+{
+    public override ShapeType ShapeType { get; } = ShapeType.DrawingImageScreen;
+
+    public override void OnCreated()
+    {
+        if (IsValidShape)
+        {
+            Rectangle = RectangleInsideCanvas;
+            Image = Manager.CropImage(Rectangle);
+        }
+
+        if (Image == null)
+        {
+            Remove();
+        } else
+        {
+            base.OnCreated();
+        }
+    }
+
+    public override void OnDraw(Graphics g)
+    {
+        if (Image == null)
         {
             if (IsValidShape)
             {
-                Rectangle = RectangleInsideCanvas;
-                Image = Manager.CropImage(Rectangle);
+                Manager.DrawRegionArea(g, RectangleInsideCanvas, true);
             }
-
-            if (Image == null)
-            {
-                Remove();
-            }
-            else
-            {
-                base.OnCreated();
-            }
-        }
-
-        public override void OnDraw(Graphics g)
+        } else
         {
-            if (Image == null)
-            {
-                if (IsValidShape)
-                {
-                    Manager.DrawRegionArea(g, RectangleInsideCanvas, true);
-                }
-            }
-            else
-            {
-                base.OnDraw(g);
-            }
+            base.OnDraw(g);
         }
     }
 }

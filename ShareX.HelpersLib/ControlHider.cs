@@ -26,49 +26,48 @@
 using System;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class ControlHider : IDisposable
 {
-    public class ControlHider : IDisposable
+    public Control Control { get; private set; }
+    public int AutoHideTime { get; private set; }
+
+    private Timer timer;
+
+    public ControlHider(Control control, int autoHideTime)
     {
-        public Control Control { get; private set; }
-        public int AutoHideTime { get; private set; }
+        Control = control;
+        AutoHideTime = autoHideTime;
 
-        private Timer timer;
+        timer = new Timer();
+        timer.Interval = AutoHideTime;
+        timer.Tick += Timer_Tick;
+    }
 
-        public ControlHider(Control control, int autoHideTime)
+    private void Timer_Tick(object sender, EventArgs e)
+    {
+        timer.Stop();
+
+        if (Control != null && !Control.IsDisposed)
         {
-            Control = control;
-            AutoHideTime = autoHideTime;
-
-            timer = new Timer();
-            timer.Interval = AutoHideTime;
-            timer.Tick += Timer_Tick;
+            Control.Visible = false;
         }
+    }
 
-        private void Timer_Tick(object sender, EventArgs e)
+    public void Show()
+    {
+        if (Control != null && !Control.IsDisposed)
         {
+            Control.Visible = true;
+
             timer.Stop();
-
-            if (Control != null && !Control.IsDisposed)
-            {
-                Control.Visible = false;
-            }
+            timer.Start();
         }
+    }
 
-        public void Show()
-        {
-            if (Control != null && !Control.IsDisposed)
-            {
-                Control.Visible = true;
-
-                timer.Stop();
-                timer.Start();
-            }
-        }
-
-        public void Dispose()
-        {
-            timer?.Dispose();
-        }
+    public void Dispose()
+    {
+        timer?.Dispose();
     }
 }

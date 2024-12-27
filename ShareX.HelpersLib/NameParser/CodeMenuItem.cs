@@ -23,19 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.HelpersLib
-{
-    public class CodeMenuItem
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Category { get; set; }
+namespace ShareX.HelpersLib.NameParser;
 
-        public CodeMenuItem(string name, string description, string category = null)
-        {
-            Name = name;
-            Description = description;
-            Category = category;
-        }
-    }
+public class CodeMenuItem(string name, string description, string category = null)
+{
+    public string Name { get; set; } = name;
+    public string Description { get; set; } = description;
+    public string Category { get; set; } = category;
 }

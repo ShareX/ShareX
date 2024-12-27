@@ -23,142 +23,77 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+
 using System.Drawing;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Colors;
+
+public struct RGBA
 {
-    public struct RGBA
+    private int red, green, blue, alpha;
+
+    public int Red
     {
-        private int red, green, blue, alpha;
-
-        public int Red
-        {
-            get
-            {
-                return red;
-            }
-            set
-            {
-                red = ColorHelpers.ValidColor(value);
-            }
-        }
-
-        public int Green
-        {
-            get
-            {
-                return green;
-            }
-            set
-            {
-                green = ColorHelpers.ValidColor(value);
-            }
-        }
-
-        public int Blue
-        {
-            get
-            {
-                return blue;
-            }
-            set
-            {
-                blue = ColorHelpers.ValidColor(value);
-            }
-        }
-
-        public int Alpha
-        {
-            get
-            {
-                return alpha;
-            }
-            set
-            {
-                alpha = ColorHelpers.ValidColor(value);
-            }
-        }
-
-        public RGBA(int red, int green, int blue, int alpha = 255) : this()
-        {
-            Red = red;
-            Green = green;
-            Blue = blue;
-            Alpha = alpha;
-        }
-
-        public RGBA(Color color) : this(color.R, color.G, color.B, color.A)
-        {
-        }
-
-        public static implicit operator RGBA(Color color)
-        {
-            return new RGBA(color);
-        }
-
-        public static implicit operator Color(RGBA color)
-        {
-            return color.ToColor();
-        }
-
-        public static implicit operator HSB(RGBA color)
-        {
-            return color.ToHSB();
-        }
-
-        public static implicit operator CMYK(RGBA color)
-        {
-            return color.ToCMYK();
-        }
-
-        public static bool operator ==(RGBA left, RGBA right)
-        {
-            return (left.Red == right.Red) && (left.Green == right.Green) && (left.Blue == right.Blue) && (left.Alpha == right.Alpha);
-        }
-
-        public static bool operator !=(RGBA left, RGBA right)
-        {
-            return !(left == right);
-        }
-
-        public override string ToString()
-        {
-            return $"R: {Red}, G: {Green}, B: {Blue}, A: {Alpha}";
-        }
-
-        public Color ToColor()
-        {
-            return Color.FromArgb(Alpha, Red, Green, Blue);
-        }
-
-        public string ToHex(ColorFormat format = ColorFormat.RGB)
-        {
-            return ColorHelpers.ColorToHex(this, format);
-        }
-
-        public int ToDecimal(ColorFormat format = ColorFormat.RGB)
-        {
-            return ColorHelpers.ColorToDecimal(this, format);
-        }
-
-        public HSB ToHSB()
-        {
-            return ColorHelpers.ColorToHSB(this);
-        }
-
-        public CMYK ToCMYK()
-        {
-            return ColorHelpers.ColorToCMYK(this);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
+        readonly get => red;
+        set => red = ColorHelpers.ValidColor(value);
     }
+
+    public int Green
+    {
+        readonly get => green;
+        set => green = ColorHelpers.ValidColor(value);
+    }
+
+    public int Blue
+    {
+        readonly get => blue;
+        set => blue = ColorHelpers.ValidColor(value);
+    }
+
+    public int Alpha
+    {
+        readonly get => alpha;
+        set => alpha = ColorHelpers.ValidColor(value);
+    }
+
+    public RGBA(int red, int green, int blue, int alpha = 255) : this()
+    {
+        Red = red;
+        Green = green;
+        Blue = blue;
+        Alpha = alpha;
+    }
+
+    public RGBA(Color color) : this(color.R, color.G, color.B, color.A)
+    {
+    }
+
+    public static implicit operator RGBA(Color color) => new(color);
+
+    public static implicit operator Color(RGBA color) => color.ToColor();
+
+    public static implicit operator HSB(RGBA color) => color.ToHSB();
+
+    public static implicit operator CMYK(RGBA color) => color.ToCMYK();
+
+    public static bool operator ==(RGBA left, RGBA right) => left.Red == right.Red && left.Green == right.Green && left.Blue == right.Blue && left.Alpha == right.Alpha;
+
+    public static bool operator !=(RGBA left, RGBA right) => !(left == right);
+
+    public override string ToString() => $"R: {Red}, G: {Green}, B: {Blue}, A: {Alpha}";
+
+    public readonly Color ToColor() => Color.FromArgb(Alpha, Red, Green, Blue);
+
+    public readonly string ToHex(ColorFormat format = ColorFormat.RGB) => ColorHelpers.ColorToHex(this, format);
+
+    public readonly int ToDecimal(ColorFormat format = ColorFormat.RGB) => ColorHelpers.ColorToDecimal(this, format);
+
+    public readonly HSB ToHSB() => ColorHelpers.ColorToHSB(this);
+
+    public readonly CMYK ToCMYK() => ColorHelpers.ColorToCMYK(this);
+
+    public override readonly int GetHashCode() => base.GetHashCode();
+
+    public override readonly bool Equals(object obj) => base.Equals(obj);
 }

@@ -24,52 +24,55 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class WatchFolderForm : Form
 {
-    public partial class WatchFolderForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public WatchFolderSettings WatchFolder { get; private set; }
+
+    public WatchFolderForm() : this(new WatchFolderSettings())
     {
-        public WatchFolderSettings WatchFolder { get; private set; }
+    }
 
-        public WatchFolderForm() : this(new WatchFolderSettings())
-        {
-        }
+    public WatchFolderForm(WatchFolderSettings watchFolder)
+    {
+        WatchFolder = watchFolder;
 
-        public WatchFolderForm(WatchFolderSettings watchFolder)
-        {
-            WatchFolder = watchFolder;
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+        txtFolderPath.Text = watchFolder.FolderPath ?? "";
+        txtFilter.Text = watchFolder.Filter ?? "";
+        cbIncludeSubdirectories.Checked = watchFolder.IncludeSubdirectories;
+        cbMoveToScreenshotsFolder.Checked = watchFolder.MoveFilesToScreenshotsFolder;
+    }
 
-            txtFolderPath.Text = watchFolder.FolderPath ?? "";
-            txtFilter.Text = watchFolder.Filter ?? "";
-            cbIncludeSubdirectories.Checked = watchFolder.IncludeSubdirectories;
-            cbMoveToScreenshotsFolder.Checked = watchFolder.MoveFilesToScreenshotsFolder;
-        }
+    private void btnPathBrowse_Click(object sender, EventArgs e)
+    {
+        FileHelpers.BrowseFolder(txtFolderPath, "", true);
+    }
 
-        private void btnPathBrowse_Click(object sender, EventArgs e)
-        {
-            FileHelpers.BrowseFolder(txtFolderPath, "", true);
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        WatchFolder.FolderPath = txtFolderPath.Text;
+        WatchFolder.Filter = txtFilter.Text;
+        WatchFolder.IncludeSubdirectories = cbIncludeSubdirectories.Checked;
+        WatchFolder.MoveFilesToScreenshotsFolder = cbMoveToScreenshotsFolder.Checked;
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            WatchFolder.FolderPath = txtFolderPath.Text;
-            WatchFolder.Filter = txtFilter.Text;
-            WatchFolder.IncludeSubdirectories = cbIncludeSubdirectories.Checked;
-            WatchFolder.MoveFilesToScreenshotsFolder = cbMoveToScreenshotsFolder.Checked;
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

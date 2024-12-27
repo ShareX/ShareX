@@ -24,79 +24,80 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+[Description("Color matrix")]
+internal class MatrixColor : ImageEffect
 {
-    [Description("Color matrix")]
-    internal class MatrixColor : ImageEffect
+    [DefaultValue(1f), Description("Red = (Red * Rr) + (Green * Rg) + (Blue * Rb) + (Alpha * Ra) + Ro")]
+    public float Rr { get; set; }
+    [DefaultValue(0f)]
+    public float Rg { get; set; }
+    [DefaultValue(0f)]
+    public float Rb { get; set; }
+    [DefaultValue(0f)]
+    public float Ra { get; set; }
+    [DefaultValue(0f)]
+    public float Ro { get; set; }
+
+    [DefaultValue(0f)]
+    public float Gr { get; set; }
+    [DefaultValue(1f)]
+    public float Gg { get; set; }
+    [DefaultValue(0f)]
+    public float Gb { get; set; }
+    [DefaultValue(0f)]
+    public float Ga { get; set; }
+    [DefaultValue(0f)]
+    public float Go { get; set; }
+
+    [DefaultValue(0f)]
+    public float Br { get; set; }
+    [DefaultValue(0f)]
+    public float Bg { get; set; }
+    [DefaultValue(1f)]
+    public float Bb { get; set; }
+    [DefaultValue(0f)]
+    public float Ba { get; set; }
+    [DefaultValue(0f)]
+    public float Bo { get; set; }
+
+    [DefaultValue(0f)]
+    public float Ar { get; set; }
+    [DefaultValue(0f)]
+    public float Ag { get; set; }
+    [DefaultValue(0f)]
+    public float Ab { get; set; }
+    [DefaultValue(1f)]
+    public float Aa { get; set; }
+    [DefaultValue(0f)]
+    public float Ao { get; set; }
+
+    public MatrixColor()
     {
-        [DefaultValue(1f), Description("Red = (Red * Rr) + (Green * Rg) + (Blue * Rb) + (Alpha * Ra) + Ro")]
-        public float Rr { get; set; }
-        [DefaultValue(0f)]
-        public float Rg { get; set; }
-        [DefaultValue(0f)]
-        public float Rb { get; set; }
-        [DefaultValue(0f)]
-        public float Ra { get; set; }
-        [DefaultValue(0f)]
-        public float Ro { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(0f)]
-        public float Gr { get; set; }
-        [DefaultValue(1f)]
-        public float Gg { get; set; }
-        [DefaultValue(0f)]
-        public float Gb { get; set; }
-        [DefaultValue(0f)]
-        public float Ga { get; set; }
-        [DefaultValue(0f)]
-        public float Go { get; set; }
-
-        [DefaultValue(0f)]
-        public float Br { get; set; }
-        [DefaultValue(0f)]
-        public float Bg { get; set; }
-        [DefaultValue(1f)]
-        public float Bb { get; set; }
-        [DefaultValue(0f)]
-        public float Ba { get; set; }
-        [DefaultValue(0f)]
-        public float Bo { get; set; }
-
-        [DefaultValue(0f)]
-        public float Ar { get; set; }
-        [DefaultValue(0f)]
-        public float Ag { get; set; }
-        [DefaultValue(0f)]
-        public float Ab { get; set; }
-        [DefaultValue(1f)]
-        public float Aa { get; set; }
-        [DefaultValue(0f)]
-        public float Ao { get; set; }
-
-        public MatrixColor()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        ColorMatrix colorMatrix = new(new[]
         {
-            this.ApplyDefaultPropertyValues();
-        }
+            new float[] { Rr, Gr, Br, Ar, 0 },
+            new float[] { Rg, Gg, Bg, Ag, 0 },
+            new float[] { Rb, Gb, Bb, Ab, 0 },
+            new float[] { Ra, Ga, Ba, Aa, 0 },
+            new float[] { Ro, Go, Bo, Ao, 1 }
+        });
 
-        public override Bitmap Apply(Bitmap bmp)
+        using (bmp)
         {
-            ColorMatrix colorMatrix = new ColorMatrix(new[]
-            {
-                new float[] { Rr, Gr, Br, Ar, 0 },
-                new float[] { Rg, Gg, Bg, Ag, 0 },
-                new float[] { Rb, Gb, Bb, Ab, 0 },
-                new float[] { Ra, Ga, Ba, Aa, 0 },
-                new float[] { Ro, Go, Bo, Ao, 1 }
-            });
-
-            using (bmp)
-            {
-                return colorMatrix.Apply(bmp);
-            }
+            return colorMatrix.Apply(bmp);
         }
     }
 }

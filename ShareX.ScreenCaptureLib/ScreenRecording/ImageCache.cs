@@ -28,93 +28,89 @@ using System.Collections.Concurrent;
 using System.Drawing;
 using System.Threading;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.ScreenRecording;
+
+public abstract class ImageCache : IDisposable
 {
-    public abstract class ImageCache : IDisposable
+    public bool IsWorking { get; protected set; }
+    public ScreenRecordingOptions Options { get; set; }
+
+    protected Thread task;
+    protected BlockingCollection<Image> imageQueue;
+
+    public ImageCache()
     {
-        public bool IsWorking { get; protected set; }
-        public ScreenRecordingOptions Options { get; set; }
+        imageQueue = new BlockingCollection<Image>();
+    }
 
-        protected Thread task;
-        protected BlockingCollection<Image> imageQueue;
-
-        public ImageCache()
+    public void AddImageAsync(Image img)
+    {
+        if (!IsWorking)
         {
-            imageQueue = new BlockingCollection<Image>();
+            StartConsumerThread();
         }
 
-        public void AddImageAsync(Image img)
+        imageQueue.Add(img);
+    }
+
+    protected virtual void StartConsumerThread()
+    {
+        if (!IsWorking)
         {
-            if (!IsWorking)
+            IsWorking = true;
+
+            task = new Thread(() =>
             {
-                StartConsumerThread();
-            }
-
-            imageQueue.Add(img);
-        }
-
-        protected virtual void StartConsumerThread()
-        {
-            if (!IsWorking)
-            {
-                IsWorking = true;
-
-                task = new Thread(() =>
+                try
                 {
-                    try
+                    while (!imageQueue.IsCompleted)
                     {
-                        while (!imageQueue.IsCompleted)
+                        Image img = null;
+
+                        try
                         {
-                            Image img = null;
+                            img = imageQueue.Take();
 
-                            try
+                            if (img != null)
                             {
-                                img = imageQueue.Take();
-
-                                if (img != null)
-                                {
-                                    //using (new DebugTimer("WriteFrame"))
-                                    WriteFrame(img);
-                                }
+                                //using (new DebugTimer("WriteFrame"))
+                                WriteFrame(img);
                             }
-                            catch (InvalidOperationException)
-                            {
-                            }
-                            finally
-                            {
-                                if (img != null) img.Dispose();
-                            }
+                        } catch (InvalidOperationException)
+                        {
+                        } finally
+                        {
+                            if (img != null) img.Dispose();
                         }
                     }
-                    finally
-                    {
-                        IsWorking = false;
-                    }
-                });
+                } finally
+                {
+                    IsWorking = false;
+                }
+            });
 
-                task.Start();
-            }
+            task.Start();
+        }
+    }
+
+    protected abstract void WriteFrame(Image img);
+
+    public void Finish()
+    {
+        if (IsWorking)
+        {
+            imageQueue.CompleteAdding();
+            task.Join();
         }
 
-        protected abstract void WriteFrame(Image img);
+        Dispose();
+    }
 
-        public void Finish()
+    public virtual void Dispose()
+    {
+        if (imageQueue != null)
         {
-            if (IsWorking)
-            {
-                imageQueue.CompleteAdding();
-                task.Join();
-            }
-
-            Dispose();
-        }
-
-        public virtual void Dispose()
-        {
-            if (imageQueue != null)
-            {
-                imageQueue.Dispose();
-            }
+            imageQueue.Dispose();
         }
     }
 }

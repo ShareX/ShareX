@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class AfterCaptureForm
     {
@@ -34,12 +36,12 @@
             this.btnCopy = new System.Windows.Forms.Button();
             this.tcTasks = new System.Windows.Forms.TabControl();
             this.tpAfterCapture = new System.Windows.Forms.TabPage();
-            this.lvAfterCaptureTasks = new ShareX.HelpersLib.MyListView();
+            this.lvAfterCaptureTasks = new ShareX.HelpersLib.Controls.MyListView();
             this.chAfterCapture = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpBeforeUpload = new System.Windows.Forms.TabPage();
             this.ucBeforeUpload = new ShareX.BeforeUploadControl();
             this.tpAfterUpload = new System.Windows.Forms.TabPage();
-            this.lvAfterUploadTasks = new ShareX.HelpersLib.MyListView();
+            this.lvAfterUploadTasks = new ShareX.HelpersLib.Controls.MyListView();
             this.chAfterUpload = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblFileName = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
@@ -203,9 +205,9 @@
         private System.Windows.Forms.Label lblFileName;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.TabPage tpAfterUpload;
-        private HelpersLib.MyListView lvAfterCaptureTasks;
+        private MyListView lvAfterCaptureTasks;
         private System.Windows.Forms.ColumnHeader chAfterCapture;
-        private HelpersLib.MyListView lvAfterUploadTasks;
+        private MyListView lvAfterUploadTasks;
         private System.Windows.Forms.ColumnHeader chAfterUpload;
     }
 }

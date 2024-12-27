@@ -23,123 +23,127 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.HelpersLib.Properties;
+using ShareX.HelpersLib.UpdateChecker;
+
 using System;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class UpdateMessageBox : Form
 {
-    public partial class UpdateMessageBox : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public static bool IsOpen { get; private set; }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool ActivateWindow { get; private set; }
+
+    protected override bool ShowWithoutActivation => !ActivateWindow;
+
+    public UpdateMessageBox(UpdateChecker.UpdateChecker updateChecker, bool activateWindow = true)
     {
-        public static bool IsOpen { get; private set; }
+        ActivateWindow = activateWindow;
 
-        public bool ActivateWindow { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this);
 
-        protected override bool ShowWithoutActivation => !ActivateWindow;
-
-        public UpdateMessageBox(UpdateChecker updateChecker, bool activateWindow = true)
+        if (!ActivateWindow)
         {
-            ActivateWindow = activateWindow;
-
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this);
-
-            if (!ActivateWindow)
-            {
-                WindowState = FormWindowState.Minimized;
-                NativeMethods.FlashWindowEx(this, 10);
-            }
-
-            Text = Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
-
-            StringBuilder sbText = new StringBuilder();
-
-            if (updateChecker.IsPortable)
-            {
-                sbText.AppendLine(Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_Portable, Application.ProductName));
-            }
-            else
-            {
-                sbText.AppendLine(Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName));
-            }
-
-            sbText.AppendLine();
-            sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
-            sbText.Append(": ");
-            sbText.Append(updateChecker.CurrentVersion);
-            sbText.AppendLine();
-            sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
-            sbText.Append(": ");
-            sbText.Append(updateChecker.LatestVersion);
-            if (updateChecker.IsDev) sbText.Append(" Dev");
-            if (updateChecker is GitHubUpdateChecker githubUpdateChecker && githubUpdateChecker.IsPreRelease) sbText.Append(" (Pre-release)");
-
-            lblText.Text = sbText.ToString();
-
-            lblViewChangelog.Visible = !updateChecker.IsDev;
+            WindowState = FormWindowState.Minimized;
+            NativeMethods.FlashWindowEx(this, 10);
         }
 
-        public static DialogResult Start(UpdateChecker updateChecker, bool activateWindow = true)
+        Text = Resources.UpdateMessageBox_UpdateMessageBox_update_is_available;
+
+        StringBuilder sbText = new();
+
+        if (updateChecker.IsPortable)
         {
-            DialogResult result = DialogResult.None;
+            sbText.AppendLine(Helpers.Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_Portable, Application.ProductName));
+        } else
+        {
+            sbText.AppendLine(Helpers.Helpers.SafeStringFormat(Resources.UpdateMessageBox_UpdateMessageBox_, Application.ProductName));
+        }
 
-            if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
+        sbText.AppendLine();
+        sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_CurrentVersion);
+        sbText.Append(": ");
+        sbText.Append(updateChecker.CurrentVersion);
+        sbText.AppendLine();
+        sbText.Append(Resources.UpdateMessageBox_UpdateMessageBox_LatestVersion);
+        sbText.Append(": ");
+        sbText.Append(updateChecker.LatestVersion);
+        if (updateChecker.IsDev) sbText.Append(" Dev");
+        if (updateChecker is GitHubUpdateChecker githubUpdateChecker && githubUpdateChecker.IsPreRelease) sbText.Append(" (Pre-release)");
+
+        lblText.Text = sbText.ToString();
+
+        lblViewChangelog.Visible = !updateChecker.IsDev;
+    }
+
+    public static DialogResult Start(UpdateChecker.UpdateChecker updateChecker, bool activateWindow = true)
+    {
+        DialogResult result = DialogResult.None;
+
+        if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
+        {
+            IsOpen = true;
+
+            try
             {
-                IsOpen = true;
-
-                try
+                using (UpdateMessageBox messageBox = new(updateChecker, activateWindow))
                 {
-                    using (UpdateMessageBox messageBox = new UpdateMessageBox(updateChecker, activateWindow))
-                    {
-                        result = messageBox.ShowDialog();
-                    }
-
-                    if (result == DialogResult.Yes)
-                    {
-                        updateChecker.DownloadUpdate();
-                    }
+                    result = messageBox.ShowDialog();
                 }
-                finally
+
+                if (result == DialogResult.Yes)
                 {
-                    IsOpen = false;
+                    updateChecker.DownloadUpdate();
                 }
-            }
-
-            return result;
-        }
-
-        private void UpdateMessageBox_Shown(object sender, EventArgs e)
-        {
-            if (ActivateWindow)
+            } finally
             {
-                this.ForceActivate();
+                IsOpen = false;
             }
         }
 
-        private void UpdateMessageBox_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (DialogResult == DialogResult.Cancel && e.CloseReason == CloseReason.UserClosing)
-            {
-                DialogResult = DialogResult.No;
-            }
-        }
+        return result;
+    }
 
-        private void lblViewChangelog_Click(object sender, EventArgs e)
+    private void UpdateMessageBox_Shown(object sender, EventArgs e)
+    {
+        if (ActivateWindow)
         {
-            URLHelpers.OpenURL(Links.Changelog);
+            this.ForceActivate();
         }
+    }
 
-        private void btnYes_MouseClick(object sender, MouseEventArgs e)
-        {
-            DialogResult = DialogResult.Yes;
-            Close();
-        }
-
-        private void btnNo_MouseClick(object sender, MouseEventArgs e)
+    private void UpdateMessageBox_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (DialogResult == DialogResult.Cancel && e.CloseReason == CloseReason.UserClosing)
         {
             DialogResult = DialogResult.No;
-            Close();
         }
+    }
+
+    private void lblViewChangelog_Click(object sender, EventArgs e)
+    {
+        URLHelpers.OpenURL(Links.Changelog);
+    }
+
+    private void btnYes_MouseClick(object sender, MouseEventArgs e)
+    {
+        DialogResult = DialogResult.Yes;
+        Close();
+    }
+
+    private void btnNo_MouseClick(object sender, MouseEventArgs e)
+    {
+        DialogResult = DialogResult.No;
+        Close();
     }
 }

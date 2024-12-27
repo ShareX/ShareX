@@ -24,270 +24,250 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
+
 using System;
 using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+
 using ZXing;
 using ZXing.QrCode;
 using ZXing.Rendering;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class QRCodeForm : Form
 {
-    public partial class QRCodeForm : Form
+    private static QRCodeForm instance;
+
+    public static QRCodeForm Instance
     {
-        private static QRCodeForm instance;
-
-        public static QRCodeForm Instance
+        get
         {
-            get
+            if (instance == null || instance.IsDisposed)
             {
-                if (instance == null || instance.IsDisposed)
-                {
-                    instance = new QRCodeForm();
-                }
-
-                return instance;
+                instance = new QRCodeForm();
             }
+
+            return instance;
         }
+    }
 
-        private bool isReady;
+    private bool isReady;
 
-        public QRCodeForm(string text = null)
+    public QRCodeForm(string text = null)
+    {
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+
+        if (!string.IsNullOrEmpty(text))
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+            txtText.Text = text;
+        }
+    }
+
+    public static QRCodeForm GenerateQRCodeFromClipboard()
+    {
+        string text = ClipboardHelpers.GetText(true);
+
+        return !string.IsNullOrEmpty(text) && TaskHelpers.CheckQRCodeContent(text) ? new QRCodeForm(text) : new QRCodeForm();
+    }
+
+    public static QRCodeForm OpenFormScanFromImageFile(string filePath)
+    {
+        QRCodeForm form = new();
+        form.ScanFromImageFile(filePath);
+        return form;
+    }
+
+    public static QRCodeForm OpenFormScanFromScreen()
+    {
+        QRCodeForm form = Instance;
+        form.ScanFromScreen();
+        return form;
+    }
+
+    private void ClearQRCode()
+    {
+        if (pbQRCode.Image != null)
+        {
+            Image temp = pbQRCode.Image;
+            pbQRCode.Reset();
+            temp.Dispose();
+
+            pbQRCode.PictureBoxBackColor = BackColor;
+        }
+    }
+
+    private void GenerateQRCode(string text)
+    {
+        if (isReady)
+        {
+            ClearQRCode();
 
             if (!string.IsNullOrEmpty(text))
             {
-                txtText.Text = text;
+                int size = nudQRCodeSize.Value > 0 ? (int)nudQRCodeSize.Value : Math.Min(pbQRCode.Width, pbQRCode.Height);
+                size = Math.Max(size, 64);
+
+                Image qrCode = TaskHelpers.GenerateQRCode(text, size);
+
+                pbQRCode.PictureBoxBackColor = Color.White;
+                pbQRCode.LoadImage(qrCode);
             }
         }
+    }
 
-        public static QRCodeForm GenerateQRCodeFromClipboard()
+    private void ScanImage(Bitmap bmp)
+    {
+        string output = "";
+
+        string[] results = TaskHelpers.BarcodeScan(bmp);
+
+        if (results != null)
         {
-            string text = ClipboardHelpers.GetText(true);
+            output = string.Join(Environment.NewLine + Environment.NewLine, results);
+        }
 
-            if (!string.IsNullOrEmpty(text) && TaskHelpers.CheckQRCodeContent(text))
+        txtText.Text = output;
+    }
+
+    private void ScanFromScreen()
+    {
+        try
+        {
+            if (Visible)
             {
-                return new QRCodeForm(text);
+                Hide();
+                Thread.Sleep(250);
             }
 
-            return new QRCodeForm();
-        }
+            TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-        public static QRCodeForm OpenFormScanFromImageFile(string filePath)
-        {
-            QRCodeForm form = new QRCodeForm();
-            form.ScanFromImageFile(filePath);
-            return form;
-        }
-
-        public static QRCodeForm OpenFormScanFromScreen()
-        {
-            QRCodeForm form = Instance;
-            form.ScanFromScreen();
-            return form;
-        }
-
-        private void ClearQRCode()
-        {
-            if (pbQRCode.Image != null)
+            using Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions);
+            if (bmp != null)
             {
-                Image temp = pbQRCode.Image;
-                pbQRCode.Reset();
-                temp.Dispose();
-
-                pbQRCode.PictureBoxBackColor = BackColor;
+                ScanImage(bmp);
             }
-        }
-
-        private void GenerateQRCode(string text)
+        } finally
         {
-            if (isReady)
+            this.ForceActivate();
+        }
+    }
+
+    private void ScanFromImageFile(string filePath)
+    {
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            using Bitmap bmp = ImageHelpers.LoadImage(filePath);
+            if (bmp != null)
             {
-                ClearQRCode();
-
-                if (!string.IsNullOrEmpty(text))
-                {
-                    int size;
-
-                    if (nudQRCodeSize.Value > 0)
-                    {
-                        size = (int)nudQRCodeSize.Value;
-                    }
-                    else
-                    {
-                        size = Math.Min(pbQRCode.Width, pbQRCode.Height);
-                    }
-
-                    size = Math.Max(size, 64);
-
-                    Image qrCode = TaskHelpers.GenerateQRCode(text, size);
-
-                    pbQRCode.PictureBoxBackColor = Color.White;
-                    pbQRCode.LoadImage(qrCode);
-                }
+                ScanImage(bmp);
             }
         }
+    }
 
-        private void ScanImage(Bitmap bmp)
-        {
-            string output = "";
+    private void QRCodeForm_Shown(object sender, EventArgs e)
+    {
+        isReady = true;
 
-            string[] results = TaskHelpers.BarcodeScan(bmp);
+        txtText.SetWatermark(Resources.QRCodeForm_InputTextToEncode);
 
-            if (results != null)
-            {
-                output = string.Join(Environment.NewLine + Environment.NewLine, results);
-            }
+        GenerateQRCode(txtText.Text);
+    }
 
-            txtText.Text = output;
-        }
-
-        private void ScanFromScreen()
-        {
-            try
-            {
-                if (Visible)
-                {
-                    Hide();
-                    Thread.Sleep(250);
-                }
-
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-                using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
-                {
-                    if (bmp != null)
-                    {
-                        ScanImage(bmp);
-                    }
-                }
-            }
-            finally
-            {
-                this.ForceActivate();
-            }
-        }
-
-        private void ScanFromImageFile(string filePath)
-        {
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
-                {
-                    if (bmp != null)
-                    {
-                        ScanImage(bmp);
-                    }
-                }
-            }
-        }
-
-        private void QRCodeForm_Shown(object sender, EventArgs e)
-        {
-            isReady = true;
-
-            txtText.SetWatermark(Resources.QRCodeForm_InputTextToEncode);
-
-            GenerateQRCode(txtText.Text);
-        }
-
-        private void QRCodeForm_Resize(object sender, EventArgs e)
-        {
-            if (nudQRCodeSize.Value == 0)
-            {
-                GenerateQRCode(txtText.Text);
-            }
-        }
-
-        private void btnScanQRCodeFromScreen_Click(object sender, EventArgs e)
-        {
-            txtText.ResetText();
-
-            ScanFromScreen();
-        }
-
-        private void btnScanQRCodeFromImageFile_Click(object sender, EventArgs e)
-        {
-            txtText.ResetText();
-
-            string filePath = ImageHelpers.OpenImageFileDialog();
-
-            ScanFromImageFile(filePath);
-        }
-
-        private void txtText_TextChanged(object sender, EventArgs e)
+    private void QRCodeForm_Resize(object sender, EventArgs e)
+    {
+        if (nudQRCodeSize.Value == 0)
         {
             GenerateQRCode(txtText.Text);
         }
+    }
 
-        private void nudQRCodeSize_ValueChanged(object sender, EventArgs e)
+    private void btnScanQRCodeFromScreen_Click(object sender, EventArgs e)
+    {
+        txtText.ResetText();
+
+        ScanFromScreen();
+    }
+
+    private void btnScanQRCodeFromImageFile_Click(object sender, EventArgs e)
+    {
+        txtText.ResetText();
+
+        string filePath = ImageHelpers.OpenImageFileDialog();
+
+        ScanFromImageFile(filePath);
+    }
+
+    private void txtText_TextChanged(object sender, EventArgs e)
+    {
+        GenerateQRCode(txtText.Text);
+    }
+
+    private void nudQRCodeSize_ValueChanged(object sender, EventArgs e)
+    {
+        GenerateQRCode(txtText.Text);
+    }
+
+    private void btnCopyImage_Click(object sender, EventArgs e)
+    {
+        if (pbQRCode.Image != null)
         {
-            GenerateQRCode(txtText.Text);
+            ClipboardHelpers.CopyImage(pbQRCode.Image);
         }
+    }
 
-        private void btnCopyImage_Click(object sender, EventArgs e)
+    private void btnSaveImage_Click(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrEmpty(txtText.Text))
         {
-            if (pbQRCode.Image != null)
-            {
-                ClipboardHelpers.CopyImage(pbQRCode.Image);
-            }
-        }
+            using SaveFileDialog sfd = new();
+            sfd.Filter = @"PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|SVG (*.svg)|*.svg";
+            sfd.FileName = txtText.Text;
+            sfd.DefaultExt = "png";
 
-        private void btnSaveImage_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtText.Text))
+            if (sfd.ShowDialog() == DialogResult.OK)
             {
-                using (SaveFileDialog sfd = new SaveFileDialog())
+                string filePath = sfd.FileName;
+
+                if (filePath.EndsWith("svg", StringComparison.OrdinalIgnoreCase))
                 {
-                    sfd.Filter = @"PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|SVG (*.svg)|*.svg";
-                    sfd.FileName = txtText.Text;
-                    sfd.DefaultExt = "png";
-
-                    if (sfd.ShowDialog() == DialogResult.OK)
+                    BarcodeWriterSvg writer = new()
                     {
-                        string filePath = sfd.FileName;
-
-                        if (filePath.EndsWith("svg", StringComparison.OrdinalIgnoreCase))
+                        Format = BarcodeFormat.QR_CODE,
+                        Options = new QrCodeEncodingOptions()
                         {
-                            BarcodeWriterSvg writer = new BarcodeWriterSvg()
-                            {
-                                Format = BarcodeFormat.QR_CODE,
-                                Options = new QrCodeEncodingOptions()
-                                {
-                                    Width = pbQRCode.Width,
-                                    Height = pbQRCode.Height,
-                                    CharacterSet = "UTF-8"
-                                }
-                            };
-                            SvgRenderer.SvgImage svgImage = writer.Write(txtText.Text);
-                            File.WriteAllText(filePath, svgImage.Content, Encoding.UTF8);
+                            Width = pbQRCode.Width,
+                            Height = pbQRCode.Height,
+                            CharacterSet = "UTF-8"
                         }
-                        else
-                        {
-                            if (pbQRCode.Image != null)
-                            {
-                                ImageHelpers.SaveImage(pbQRCode.Image, filePath);
-                            }
-                        }
+                    };
+                    SvgRenderer.SvgImage svgImage = writer.Write(txtText.Text);
+                    File.WriteAllText(filePath, svgImage.Content, Encoding.UTF8);
+                } else
+                {
+                    if (pbQRCode.Image != null)
+                    {
+                        ImageHelpers.SaveImage(pbQRCode.Image, filePath);
                     }
                 }
             }
         }
+    }
 
-        private void btnUploadImage_Click(object sender, EventArgs e)
+    private void btnUploadImage_Click(object sender, EventArgs e)
+    {
+        if (pbQRCode.Image != null)
         {
-            if (pbQRCode.Image != null)
-            {
-                Bitmap bmp = (Bitmap)pbQRCode.Image.Clone();
-                TaskHelpers.MainFormUploadImage(bmp);
-            }
+            Bitmap bmp = (Bitmap)pbQRCode.Image.Clone();
+            TaskHelpers.MainFormUploadImage(bmp);
         }
     }
 }

@@ -26,45 +26,44 @@
 using System;
 using System.Diagnostics;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Animations;
+
+internal class BaseAnimation
 {
-    internal class BaseAnimation
+    public virtual bool IsActive { get; protected set; }
+
+    protected Stopwatch Timer { get; private set; }
+    protected TimeSpan TotalElapsed { get; private set; }
+    protected TimeSpan Elapsed { get; private set; }
+
+    protected TimeSpan previousElapsed;
+
+    public BaseAnimation()
     {
-        public virtual bool IsActive { get; protected set; }
+        Timer = new Stopwatch();
+    }
 
-        protected Stopwatch Timer { get; private set; }
-        protected TimeSpan TotalElapsed { get; private set; }
-        protected TimeSpan Elapsed { get; private set; }
+    public virtual void Start()
+    {
+        IsActive = true;
+        Timer.Restart();
+    }
 
-        protected TimeSpan previousElapsed;
+    public virtual void Stop()
+    {
+        Timer.Stop();
+        IsActive = false;
+    }
 
-        public BaseAnimation()
+    public virtual bool Update()
+    {
+        if (IsActive)
         {
-            Timer = new Stopwatch();
+            TotalElapsed = Timer.Elapsed;
+            Elapsed = TotalElapsed - previousElapsed;
+            previousElapsed = TotalElapsed;
         }
 
-        public virtual void Start()
-        {
-            IsActive = true;
-            Timer.Restart();
-        }
-
-        public virtual void Stop()
-        {
-            Timer.Stop();
-            IsActive = false;
-        }
-
-        public virtual bool Update()
-        {
-            if (IsActive)
-            {
-                TotalElapsed = Timer.Elapsed;
-                Elapsed = TotalElapsed - previousElapsed;
-                previousElapsed = TotalElapsed;
-            }
-
-            return IsActive;
-        }
+        return IsActive;
     }
 }

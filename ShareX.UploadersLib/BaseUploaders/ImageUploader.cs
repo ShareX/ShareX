@@ -26,18 +26,15 @@
 using System.Drawing;
 using System.IO;
 
-namespace ShareX.UploadersLib
-{
-    public abstract class ImageUploader : FileUploader
-    {
-        public UploadResult UploadImage(Image image, string fileName)
-        {
-            using (MemoryStream stream = new MemoryStream())
-            {
-                image.Save(stream, image.RawFormat);
+namespace ShareX.UploadersLib.BaseUploaders;
 
-                return Upload(stream, fileName);
-            }
-        }
+public abstract class ImageUploader : FileUploader
+{
+    public UploadResult UploadImage(Image image, string fileName)
+    {
+        using MemoryStream stream = new();
+        image.Save(stream, image.RawFormat);
+
+        return Upload(stream, fileName);
     }
 }

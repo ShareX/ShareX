@@ -1,4 +1,6 @@
-﻿namespace ShareX.HelpersLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.HelpersLib
 {
     partial class MonitorTestForm
     {
@@ -31,8 +33,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonitorTestForm));
             this.pSettings = new System.Windows.Forms.Panel();
             this.btnScreenTearingTest = new System.Windows.Forms.Button();
-            this.btnGradientColor2 = new ShareX.HelpersLib.ColorButton();
-            this.btnGradientColor1 = new ShareX.HelpersLib.ColorButton();
+            this.btnGradientColor2 = new ShareX.HelpersLib.Controls.ColorButton();
+            this.btnGradientColor1 = new ShareX.HelpersLib.Controls.ColorButton();
             this.lblTip = new System.Windows.Forms.Label();
             this.cbGradient = new System.Windows.Forms.ComboBox();
             this.rbGradient = new System.Windows.Forms.RadioButton();
@@ -111,7 +113,7 @@
             resources.ApplyResources(this.btnGradientColor2, "btnGradientColor2");
             this.btnGradientColor2.Name = "btnGradientColor2";
             this.btnGradientColor2.UseVisualStyleBackColor = true;
-            this.btnGradientColor2.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor2_ColorChanged);
+            this.btnGradientColor2.ColorChanged += new ColorButton.ColorChangedEventHandler(this.btnGradientColor2_ColorChanged);
             // 
             // btnGradientColor1
             // 
@@ -120,7 +122,7 @@
             resources.ApplyResources(this.btnGradientColor1, "btnGradientColor1");
             this.btnGradientColor1.Name = "btnGradientColor1";
             this.btnGradientColor1.UseVisualStyleBackColor = true;
-            this.btnGradientColor1.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor1_ColorChanged);
+            this.btnGradientColor1.ColorChanged += new ColorButton.ColorChangedEventHandler(this.btnGradientColor1_ColorChanged);
             // 
             // lblTip
             // 

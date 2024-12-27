@@ -23,69 +23,68 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.NameParser;
+using ShareX.UploadersLib.CustomUploader.Functions;
+using ShareX.UploadersLib.Helpers;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.CustomUploader;
+
+public class ShareXCustomUploaderSyntaxParser : ShareXSyntaxParser
 {
-    public class ShareXCustomUploaderSyntaxParser : ShareXSyntaxParser
+    private static IEnumerable<CustomUploaderFunction> Functions = HelpersLib.Helpers.Helpers.GetInstances<CustomUploaderFunction>();
+
+    public string FileName { get; set; }
+    public string Input { get; set; }
+    public ResponseInfo ResponseInfo { get; set; }
+    public bool URLEncode { get; set; } // Only URL encodes file name and input
+    public bool UseNameParser { get; set; }
+    public NameParserType NameParserType { get; set; } = NameParserType.Text;
+
+    public ShareXCustomUploaderSyntaxParser()
     {
-        private static IEnumerable<CustomUploaderFunction> Functions = Helpers.GetInstances<CustomUploaderFunction>();
+    }
 
-        public string FileName { get; set; }
-        public string Input { get; set; }
-        public ResponseInfo ResponseInfo { get; set; }
-        public bool URLEncode { get; set; } // Only URL encodes file name and input
-        public bool UseNameParser { get; set; }
-        public NameParserType NameParserType { get; set; } = NameParserType.Text;
+    public ShareXCustomUploaderSyntaxParser(CustomUploaderInput input)
+    {
+        FileName = input.FileName;
+        Input = input.Input;
+    }
 
-        public ShareXCustomUploaderSyntaxParser()
+    public override string Parse(string text)
+    {
+        if (UseNameParser && !string.IsNullOrEmpty(text))
         {
+            NameParser nameParser = new(NameParserType);
+            EscapeHelper escapeHelper = new();
+            escapeHelper.KeepEscapeCharacter = true;
+            text = escapeHelper.Parse(text, nameParser.Parse);
         }
 
-        public ShareXCustomUploaderSyntaxParser(CustomUploaderInput input)
+        return base.Parse(text);
+    }
+
+    protected override string CallFunction(string functionName, string[] parameters = null)
+    {
+        if (string.IsNullOrEmpty(functionName))
         {
-            FileName = input.FileName;
-            Input = input.Input;
+            throw new Exception("Function name cannot be empty.");
         }
 
-        public override string Parse(string text)
+        foreach (CustomUploaderFunction function in Functions)
         {
-            if (UseNameParser && !string.IsNullOrEmpty(text))
+            if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase) ||
+                function.Aliases != null && function.Aliases.Any(x => x.Equals(functionName, StringComparison.OrdinalIgnoreCase)))
             {
-                NameParser nameParser = new NameParser(NameParserType);
-                EscapeHelper escapeHelper = new EscapeHelper();
-                escapeHelper.KeepEscapeCharacter = true;
-                text = escapeHelper.Parse(text, nameParser.Parse);
+                return function.MinParameterCount > 0 && (parameters == null || parameters.Length < function.MinParameterCount)
+                    ? throw new Exception($"Minimum parameter count for function \"{function.Name}\" is {function.MinParameterCount}.")
+                    : function.Call(this, parameters);
             }
-
-            return base.Parse(text);
         }
 
-        protected override string CallFunction(string functionName, string[] parameters = null)
-        {
-            if (string.IsNullOrEmpty(functionName))
-            {
-                throw new Exception("Function name cannot be empty.");
-            }
-
-            foreach (CustomUploaderFunction function in Functions)
-            {
-                if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase) ||
-                    (function.Aliases != null && function.Aliases.Any(x => x.Equals(functionName, StringComparison.OrdinalIgnoreCase))))
-                {
-                    if (function.MinParameterCount > 0 && (parameters == null || parameters.Length < function.MinParameterCount))
-                    {
-                        throw new Exception($"Minimum parameter count for function \"{function.Name}\" is {function.MinParameterCount}.");
-                    }
-
-                    return function.Call(this, parameters);
-                }
-            }
-
-            throw new Exception("Invalid function name: " + functionName);
-        }
+        throw new Exception("Invalid function name: " + functionName);
     }
 }

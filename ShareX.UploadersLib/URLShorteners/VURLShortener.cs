@@ -23,41 +23,44 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
 using System.Collections.Generic;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class VURLShortenerService : URLShortenerService
 {
-    public class VURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.VURL;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.VURL;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new VURLShortener();
-        }
+        return new VURLShortener();
     }
+}
 
-    public sealed class VURLShortener : URLShortener
+public sealed class VURLShortener : URLShortener
+{
+    private const string API_ENDPOINT = "http://vurl.com/api.php";
+
+    public override UploadResult ShortenURL(string url)
     {
-        private const string API_ENDPOINT = "http://vurl.com/api.php";
+        UploadResult result = new() { URL = url };
 
-        public override UploadResult ShortenURL(string url)
+        Dictionary<string, string> args = new();
+        args.Add("url", url);
+
+        string response = SendRequest(HttpMethod.GET, API_ENDPOINT, args);
+
+        if (!string.IsNullOrEmpty(response) && response != "Invalid URL")
         {
-            UploadResult result = new UploadResult { URL = url };
-
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("url", url);
-
-            string response = SendRequest(HttpMethod.GET, API_ENDPOINT, args);
-
-            if (!string.IsNullOrEmpty(response) && response != "Invalid URL")
-            {
-                result.ShortenedURL = response;
-            }
-
-            return result;
+            result.ShortenedURL = response;
         }
+
+        return result;
     }
 }

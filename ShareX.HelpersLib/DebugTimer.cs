@@ -27,52 +27,50 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class DebugTimer : IDisposable
 {
-    public class DebugTimer : IDisposable
+    public string Text { get; set; }
+
+    public TimeSpan Elapsed => timer.Elapsed;
+
+    private Stopwatch timer;
+
+    public DebugTimer(string text = null)
     {
-        public string Text { get; set; }
+        Text = text;
+        timer = Stopwatch.StartNew();
+    }
 
-        public TimeSpan Elapsed => timer.Elapsed;
-
-        private Stopwatch timer;
-
-        public DebugTimer(string text = null)
+    private void Write(string time, string text = null)
+    {
+        if (string.IsNullOrEmpty(text))
         {
-            Text = text;
-            timer = Stopwatch.StartNew();
+            text = Text;
         }
 
-        private void Write(string time, string text = null)
+        if (!string.IsNullOrEmpty(text))
         {
-            if (string.IsNullOrEmpty(text))
-            {
-                text = Text;
-            }
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                Debug.WriteLine(text + ": " + time);
-            }
-            else
-            {
-                Debug.WriteLine(time);
-            }
-        }
-
-        public void WriteElapsedMilliseconds(string text = null)
+            Debug.WriteLine(text + ": " + time);
+        } else
         {
-            Write(Elapsed.TotalMilliseconds.ToString("0.000", CultureInfo.InvariantCulture) + " milliseconds.", text);
+            Debug.WriteLine(time);
         }
+    }
 
-        public void WriteElapsedSeconds(string text = null)
-        {
-            Write(Elapsed.TotalSeconds.ToString("0.000", CultureInfo.InvariantCulture) + " seconds.", text);
-        }
+    public void WriteElapsedMilliseconds(string text = null)
+    {
+        Write(Elapsed.TotalMilliseconds.ToString("0.000", CultureInfo.InvariantCulture) + " milliseconds.", text);
+    }
 
-        public void Dispose()
-        {
-            WriteElapsedMilliseconds();
-        }
+    public void WriteElapsedSeconds(string text = null)
+    {
+        Write(Elapsed.TotalSeconds.ToString("0.000", CultureInfo.InvariantCulture) + " seconds.", text);
+    }
+
+    public void Dispose()
+    {
+        WriteElapsedMilliseconds();
     }
 }

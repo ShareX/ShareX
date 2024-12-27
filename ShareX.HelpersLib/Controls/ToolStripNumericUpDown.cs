@@ -27,42 +27,41 @@ using System;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+[ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.ToolStrip)]
+public class ToolStripNumericUpDown : ToolStripControlHost
 {
-    [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.ToolStrip)]
-    public class ToolStripNumericUpDown : ToolStripControlHost
+    public event EventHandler ValueChanged;
+
+    public NumericUpDown NumericUpDownControl
     {
-        public event EventHandler ValueChanged;
-
-        public NumericUpDown NumericUpDownControl
+        get
         {
-            get
-            {
-                return Control as NumericUpDown;
-            }
+            return Control as NumericUpDown;
         }
+    }
 
-        public ToolStripNumericUpDown() : base(new NumericUpDown())
-        {
-        }
+    public ToolStripNumericUpDown() : base(new NumericUpDown())
+    {
+    }
 
-        protected override void OnSubscribeControlEvents(Control control)
-        {
-            base.OnSubscribeControlEvents(control);
+    protected override void OnSubscribeControlEvents(Control control)
+    {
+        base.OnSubscribeControlEvents(control);
 
-            ((NumericUpDown)control).ValueChanged += new EventHandler(OnValueChanged);
-        }
+        ((NumericUpDown)control).ValueChanged += new EventHandler(OnValueChanged);
+    }
 
-        protected override void OnUnsubscribeControlEvents(Control control)
-        {
-            base.OnUnsubscribeControlEvents(control);
+    protected override void OnUnsubscribeControlEvents(Control control)
+    {
+        base.OnUnsubscribeControlEvents(control);
 
-            ((NumericUpDown)control).ValueChanged -= new EventHandler(OnValueChanged);
-        }
+        ((NumericUpDown)control).ValueChanged -= new EventHandler(OnValueChanged);
+    }
 
-        public void OnValueChanged(object sender, EventArgs e)
-        {
-            ValueChanged?.Invoke(this, e);
-        }
+    public void OnValueChanged(object sender, EventArgs e)
+    {
+        ValueChanged?.Invoke(this, e);
     }
 }

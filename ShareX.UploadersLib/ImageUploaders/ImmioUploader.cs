@@ -24,40 +24,42 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+
+using ShareX.UploadersLib.BaseUploaders;
+
 using System.IO;
 
-namespace ShareX.UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders;
+
+public sealed class ImmioUploader : ImageUploader
 {
-    public sealed class ImmioUploader : ImageUploader
+    public override UploadResult Upload(Stream stream, string fileName)
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        UploadResult result = SendRequestFile("http://imm.io/store/", stream, fileName, "image");
+        if (result.IsSuccess)
         {
-            UploadResult result = SendRequestFile("http://imm.io/store/", stream, fileName, "image");
-            if (result.IsSuccess)
-            {
-                ImmioResponse response = JsonConvert.DeserializeObject<ImmioResponse>(result.Response);
-                if (response != null) result.URL = response.Payload.Uri;
-            }
-            return result;
+            ImmioResponse response = JsonConvert.DeserializeObject<ImmioResponse>(result.Response);
+            if (response != null) result.URL = response.Payload.Uri;
         }
+        return result;
+    }
 
-        private class ImmioResponse
-        {
-            public bool Success { get; set; }
-            public ImmioPayload Payload { get; set; }
-        }
+    private class ImmioResponse
+    {
+        public bool Success { get; set; }
+        public ImmioPayload Payload { get; set; }
+    }
 
-        private class ImmioPayload
-        {
-            public string Uid { get; set; }
-            public string Uri { get; set; }
-            public string Link { get; set; }
-            public string Name { get; set; }
-            public string Format { get; set; }
-            public string Ext { get; set; }
-            public int Width { get; set; }
-            public int Height { get; set; }
-            public string Size { get; set; }
-        }
+    private class ImmioPayload
+    {
+        public string Uid { get; set; }
+        public string Uri { get; set; }
+        public string Link { get; set; }
+        public string Name { get; set; }
+        public string Format { get; set; }
+        public string Ext { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public string Size { get; set; }
     }
 }

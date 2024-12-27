@@ -1,4 +1,6 @@
 ﻿
+using ShareX.HelpersLib.Controls;
+
 namespace ShareX
 {
     partial class InspectWindowForm
@@ -41,7 +43,7 @@ namespace ShareX
             this.lblOpacity = new System.Windows.Forms.Label();
             this.nudOpacity = new System.Windows.Forms.NumericUpDown();
             this.lblOpacityTip = new System.Windows.Forms.Label();
-            this.mbWindowList = new ShareX.HelpersLib.MenuButton();
+            this.mbWindowList = new ShareX.HelpersLib.Controls.MenuButton();
             this.pInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOpacity)).BeginInit();
             this.SuspendLayout();
@@ -161,7 +163,7 @@ namespace ShareX
         private System.Windows.Forms.Button btnInspectWindow;
         private System.Windows.Forms.Button btnInspectControl;
         private System.Windows.Forms.Button btnRefresh;
-        private HelpersLib.MenuButton mbWindowList;
+        private MenuButton mbWindowList;
         private System.Windows.Forms.ContextMenuStrip cmsWindowList;
         private System.Windows.Forms.CheckBox cbTopMost;
         private System.Windows.Forms.Label lblOpacity;

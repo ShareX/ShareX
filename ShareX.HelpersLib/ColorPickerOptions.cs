@@ -23,10 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class ColorPickerOptions
 {
-    public class ColorPickerOptions
-    {
-        public bool RecentColorsSelected { get; set; } = true;
-    }
+    public bool RecentColorsSelected { get; set; } = true;
 }

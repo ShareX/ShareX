@@ -24,47 +24,47 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
 using ShareX.Properties;
+
 using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public class ImageData : IDisposable
 {
-    public class ImageData : IDisposable
+    public MemoryStream ImageStream { get; set; }
+    public EImageFormat ImageFormat { get; set; }
+
+    public bool Write(string filePath)
     {
-        public MemoryStream ImageStream { get; set; }
-        public EImageFormat ImageFormat { get; set; }
-
-        public bool Write(string filePath)
+        try
         {
-            try
+            if (ImageStream != null && !string.IsNullOrEmpty(filePath))
             {
-                if (ImageStream != null && !string.IsNullOrEmpty(filePath))
-                {
-                    return ImageStream.WriteToFile(filePath);
-                }
+                return ImageStream.WriteToFile(filePath);
             }
-            catch (Exception e)
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
+
+            string message = $"{Resources.ImageData_Write_Error_Message}\r\n\"{filePath}\"";
+
+            if (e is UnauthorizedAccessException || e is FileNotFoundException)
             {
-                DebugHelper.WriteException(e);
-
-                string message = $"{Resources.ImageData_Write_Error_Message}\r\n\"{filePath}\"";
-
-                if (e is UnauthorizedAccessException || e is FileNotFoundException)
-                {
-                    message += "\r\n\r\n" + Resources.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX;
-                }
-
-                MessageBox.Show(message, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message += "\r\n\r\n" + Resources.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX;
             }
 
-            return false;
+            MessageBox.Show(message, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void Dispose()
-        {
-            ImageStream?.Dispose();
-        }
+        return false;
+    }
+
+    public void Dispose()
+    {
+        ImageStream?.Dispose();
     }
 }

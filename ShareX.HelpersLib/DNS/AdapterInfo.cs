@@ -25,104 +25,71 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Management;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.DNS;
+
+public class AdapterInfo(ManagementObject adapter) : IDisposable
 {
-    public class AdapterInfo : IDisposable
+    private ManagementObject adapter = adapter;
+
+    public static List<AdapterInfo> GetEnabledAdapters()
     {
-        private ManagementObject adapter;
+        List<AdapterInfo> adapters = [];
 
-        public AdapterInfo(ManagementObject adapter)
+        using (ManagementClass mc = new("Win32_NetworkAdapterConfiguration"))
+        using (ManagementObjectCollection moc = mc.GetInstances())
         {
-            this.adapter = adapter;
-        }
-
-        public static List<AdapterInfo> GetEnabledAdapters()
-        {
-            List<AdapterInfo> adapters = new List<AdapterInfo>();
-
-            using (ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration"))
-            using (ManagementObjectCollection moc = mc.GetInstances())
+            foreach (ManagementObject mo in moc.Cast<ManagementObject>())
             {
-                foreach (ManagementObject mo in moc)
+                if ((bool)mo["IPEnabled"])
                 {
-                    if ((bool)mo["IPEnabled"])
-                    {
-                        adapters.Add(new AdapterInfo(mo));
-                    }
-                    else
-                    {
-                        mo.Dispose();
-                    }
-                }
-            }
-
-            return adapters;
-        }
-
-        public bool IsEnabled()
-        {
-            return (bool)adapter["IPEnabled"];
-        }
-
-        public string GetCaption()
-        {
-            return (string)adapter["Caption"];
-        }
-
-        public string GetDescription()
-        {
-            return (string)adapter["Description"];
-        }
-
-        public string[] GetDNS()
-        {
-            return (string[])adapter["DnsServerSearchOrder"];
-        }
-
-        public uint SetDNS(string primary, string secondary)
-        {
-            using (ManagementBaseObject parameters = adapter.GetMethodParameters("SetDNSServerSearchOrder"))
-            {
-                if (string.IsNullOrEmpty(primary))
+                    adapters.Add(new AdapterInfo(mo));
+                } else
                 {
-                    // Obtain DNS server address automatically
-                    parameters["DNSServerSearchOrder"] = null;
-                }
-                else if (string.IsNullOrEmpty(secondary))
-                {
-                    parameters["DNSServerSearchOrder"] = new string[] { primary };
-                }
-                else
-                {
-                    parameters["DNSServerSearchOrder"] = new string[] { primary, secondary };
-                }
-
-                // http://msdn.microsoft.com/en-us/library/aa393295(v=vs.85).aspx
-                using (ManagementBaseObject result = adapter.InvokeMethod("SetDNSServerSearchOrder", parameters, null))
-                {
-                    return (uint)result["ReturnValue"];
+                    mo.Dispose();
                 }
             }
         }
 
-        public uint SetDNSAutomatic()
-        {
-            return SetDNS(null, null);
-        }
+        return adapters;
+    }
 
-        public void Dispose()
-        {
-            if (adapter != null)
-            {
-                adapter.Dispose();
-            }
-        }
+    public bool IsEnabled() => (bool)adapter["IPEnabled"];
 
-        public override string ToString()
+    public string GetCaption() => (string)adapter["Caption"];
+
+    public string GetDescription() => (string)adapter["Description"];
+
+    public string[] GetDNS() => (string[])adapter["DnsServerSearchOrder"];
+
+    public uint SetDNS(string primary, string secondary)
+    {
+        using ManagementBaseObject parameters = adapter.GetMethodParameters("SetDNSServerSearchOrder");
+        if (string.IsNullOrEmpty(primary))
         {
-            return GetDescription();
+            // Obtain DNS server address automatically
+            parameters["DNSServerSearchOrder"] = null;
+        } else
+        {
+            parameters["DNSServerSearchOrder"] = string.IsNullOrEmpty(secondary) ? (new string[] { primary }) : (object)(new string[] { primary, secondary });
         }
+        // http://msdn.microsoft.com/en-us/library/aa393295(v=vs.85).aspx
+        using ManagementBaseObject result = adapter.InvokeMethod("SetDNSServerSearchOrder", parameters, null);
+        return (uint)result["ReturnValue"];
+    }
+
+    public uint SetDNSAutomatic() => SetDNS(null, null);
+
+    public void Dispose()
+    {
+        adapter?.Dispose();
+        GC.SuppressFinalize(this);
+    }
+
+    public override string ToString()
+    {
+        return GetDescription();
     }
 }

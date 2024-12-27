@@ -24,17 +24,17 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+
 using System;
 
-namespace ShareX
-{
-    public class NewsItem
-    {
-        public DateTime DateTime { get; set; }
-        public string Text { get; set; }
-        public string URL { get; set; }
+namespace ShareX;
 
-        [JsonIgnore]
-        public bool IsUnread { get; set; }
-    }
+public class NewsItem
+{
+    public DateTime DateTime { get; set; }
+    public string Text { get; set; }
+    public string URL { get; set; }
+
+    [JsonIgnore]
+    public bool IsUnread { get; set; }
 }

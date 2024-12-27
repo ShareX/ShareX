@@ -25,81 +25,82 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Helpers;
+
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace ShareX.HistoryLib
+namespace ShareX.HistoryLib;
+
+public class HistoryManagerJSON : HistoryManager
 {
-    public class HistoryManagerJSON : HistoryManager
+    private static readonly object thisLock = new();
+
+    public HistoryManagerJSON(string filePath) : base(filePath)
     {
-        private static readonly object thisLock = new object();
+    }
 
-        public HistoryManagerJSON(string filePath) : base(filePath)
+    protected override List<HistoryItem> Load(string filePath)
+    {
+        if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
         {
-        }
-
-        protected override List<HistoryItem> Load(string filePath)
-        {
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            lock (thisLock)
             {
-                lock (thisLock)
+                string json = File.ReadAllText(filePath, Encoding.UTF8);
+
+                if (!string.IsNullOrEmpty(json))
                 {
-                    string json = File.ReadAllText(filePath, Encoding.UTF8);
+                    json = "[" + json + "]";
 
-                    if (!string.IsNullOrEmpty(json))
-                    {
-                        json = "[" + json + "]";
-
-                        return JsonConvert.DeserializeObject<List<HistoryItem>>(json);
-                    }
+                    return JsonConvert.DeserializeObject<List<HistoryItem>>(json);
                 }
             }
-
-            return new List<HistoryItem>();
         }
 
-        protected override bool Append(string filePath, IEnumerable<HistoryItem> historyItems)
+        return new List<HistoryItem>();
+    }
+
+    protected override bool Append(string filePath, IEnumerable<HistoryItem> historyItems)
+    {
+        if (!string.IsNullOrEmpty(filePath))
         {
-            if (!string.IsNullOrEmpty(filePath))
+            lock (thisLock)
             {
-                lock (thisLock)
+                FileHelpers.CreateDirectoryFromFilePath(filePath);
+
+                using (FileStream fileStream = new(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
+                using (StreamWriter streamWriter = new(fileStream))
                 {
-                    FileHelpers.CreateDirectoryFromFilePath(filePath);
+                    JsonSerializer serializer = new();
+                    serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
 
-                    using (FileStream fileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
-                    using (StreamWriter streamWriter = new StreamWriter(fileStream))
+                    bool firstObject = fileStream.Length == 0;
+
+                    foreach (HistoryItem historyItem in historyItems)
                     {
-                        JsonSerializer serializer = new JsonSerializer();
-                        serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
+                        string json = "";
 
-                        bool firstObject = fileStream.Length == 0;
-
-                        foreach (HistoryItem historyItem in historyItems)
+                        if (!firstObject)
                         {
-                            string json = "";
-
-                            if (!firstObject)
-                            {
-                                json += ",\r\n";
-                            }
-
-                            json += JObject.FromObject(historyItem, serializer).ToString();
-
-                            streamWriter.Write(json);
-
-                            firstObject = false;
+                            json += ",\r\n";
                         }
-                    }
 
-                    Backup(FilePath);
+                        json += JObject.FromObject(historyItem, serializer).ToString();
+
+                        streamWriter.Write(json);
+
+                        firstObject = false;
+                    }
                 }
 
-                return true;
+                Backup(FilePath);
             }
 
-            return false;
+            return true;
         }
+
+        return false;
     }
 }

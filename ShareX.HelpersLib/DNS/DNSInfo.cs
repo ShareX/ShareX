@@ -23,24 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.DNS;
+
+public class DNSInfo(string name, string primaryDNS, string secondaryDNS)
 {
-    public class DNSInfo
-    {
-        public string Name { get; set; }
-        public string PrimaryDNS { get; set; }
-        public string SecondaryDNS { get; set; }
+    public string Name { get; set; } = name;
+    public string PrimaryDNS { get; set; } = primaryDNS;
+    public string SecondaryDNS { get; set; } = secondaryDNS;
 
-        public DNSInfo(string name, string primaryDNS, string secondaryDNS)
-        {
-            Name = name;
-            PrimaryDNS = primaryDNS;
-            SecondaryDNS = secondaryDNS;
-        }
-
-        public override string ToString()
-        {
-            return Name;
-        }
-    }
+    public override string ToString() => Name;
 }

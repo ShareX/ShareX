@@ -23,25 +23,26 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseUploaders;
+
 using System.Collections.Generic;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public sealed class NlcmURLShortener : URLShortener
 {
-    public sealed class NlcmURLShortener : URLShortener
+    public override UploadResult ShortenURL(string url)
     {
-        public override UploadResult ShortenURL(string url)
+        UploadResult result = new() { URL = url };
+
+        if (!string.IsNullOrEmpty(url))
         {
-            UploadResult result = new UploadResult { URL = url };
+            Dictionary<string, string> arguments = new();
+            arguments.Add("url", url);
 
-            if (!string.IsNullOrEmpty(url))
-            {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("url", url);
-
-                result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://nl.cm/api/", arguments);
-            }
-
-            return result;
+            result.Response = result.ShortenedURL = SendRequest(HttpMethod.GET, "http://nl.cm/api/", arguments);
         }
+
+        return result;
     }
 }

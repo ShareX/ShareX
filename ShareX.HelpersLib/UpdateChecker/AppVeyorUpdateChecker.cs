@@ -23,80 +23,70 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UpdateChecker;
+
+public class AppVeyorUpdateChecker : UpdateChecker
 {
-    public class AppVeyorUpdateChecker : UpdateChecker
+    public string Branch { get; set; } = "master";
+
+    public override async Task CheckUpdateAsync()
     {
-        public string Branch { get; set; } = "master";
-
-        public override async Task CheckUpdateAsync()
+        try
         {
-            try
+            AppVeyor appveyor = new()
             {
-                AppVeyor appveyor = new AppVeyor()
-                {
-                    AccountName = "ShareX",
-                    ProjectSlug = "sharex"
-                };
+                AccountName = "ShareX",
+                ProjectSlug = "sharex"
+            };
 
-                AppVeyorProject project = await appveyor.GetProjectByBranch(Branch);
+            AppVeyorProject project = await appveyor.GetProjectByBranch(Branch);
 
-                if (!project.build.status.Equals("success", StringComparison.OrdinalIgnoreCase) &&
-                    !project.build.status.Equals("running", StringComparison.OrdinalIgnoreCase))
-                {
-                    throw new Exception("Latest project build is not successful.");
-                }
-
-                AppVeyorProjectJob job = project.build.jobs.FirstOrDefault(x =>
-                    x.name.Equals("Configuration: Release", StringComparison.OrdinalIgnoreCase) &&
-                    x.osType.Equals("Windows", StringComparison.OrdinalIgnoreCase) &&
-                    x.status.Equals("success", StringComparison.OrdinalIgnoreCase));
-
-                if (job == null)
-                {
-                    throw new Exception("Unable to find successful release build.");
-                }
-
-                AppVeyorProjectArtifact[] artifacts = await appveyor.GetArtifacts(job.jobId);
-
-                string deploymentName;
-
-                if (IsPortable)
-                {
-                    deploymentName = "Portable";
-                }
-                else
-                {
-                    deploymentName = "Setup";
-                }
-
-                AppVeyorProjectArtifact artifact = artifacts.FirstOrDefault(x => x.name.Equals(deploymentName, StringComparison.OrdinalIgnoreCase));
-
-                if (artifact == null)
-                {
-                    throw new Exception($"Unable to find \"{deploymentName}\" file.");
-                }
-
-                FileName = artifact.fileName;
-                DownloadURL = appveyor.GetArtifactDownloadURL(job.jobId, artifact.fileName);
-                if (Version.TryParse(project.build.version, out Version version))
-                {
-                    LatestVersion = version;
-                }
-                RefreshStatus();
-                Status = UpdateStatus.UpdateAvailable;
-                return;
-            }
-            catch (Exception e)
+            if (!project.build.status.Equals("success", StringComparison.OrdinalIgnoreCase) &&
+                !project.build.status.Equals("running", StringComparison.OrdinalIgnoreCase))
             {
-                e.ShowError();
+                throw new Exception("Latest project build is not successful.");
             }
 
-            Status = UpdateStatus.UpdateCheckFailed;
+            AppVeyorProjectJob job = project.build.jobs.FirstOrDefault(x =>
+                x.name.Equals("Configuration: Release", StringComparison.OrdinalIgnoreCase) &&
+                x.osType.Equals("Windows", StringComparison.OrdinalIgnoreCase) &&
+                x.status.Equals("success", StringComparison.OrdinalIgnoreCase));
+
+            if (job == null)
+            {
+                throw new Exception("Unable to find successful release build.");
+            }
+
+            AppVeyorProjectArtifact[] artifacts = await appveyor.GetArtifacts(job.jobId);
+
+            string deploymentName = IsPortable ? "Portable" : "Setup";
+            AppVeyorProjectArtifact artifact = artifacts.FirstOrDefault(x => x.name.Equals(deploymentName, StringComparison.OrdinalIgnoreCase));
+
+            if (artifact == null)
+            {
+                throw new Exception($"Unable to find \"{deploymentName}\" file.");
+            }
+
+            FileName = artifact.fileName;
+            DownloadURL = appveyor.GetArtifactDownloadURL(job.jobId, artifact.fileName);
+            if (Version.TryParse(project.build.version, out Version version))
+            {
+                LatestVersion = version;
+            }
+            RefreshStatus();
+            Status = UpdateStatus.UpdateAvailable;
+            return;
+        } catch (Exception e)
+        {
+            e.ShowError();
         }
+
+        Status = UpdateStatus.UpdateCheckFailed;
     }
 }

@@ -25,18 +25,17 @@
 
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
-{
-    public class ToolStripRoundedEdgeRenderer : ToolStripProfessionalRenderer
-    {
-        public ToolStripRoundedEdgeRenderer()
-        {
-            RoundedEdges = false;
-        }
+namespace ShareX.HelpersLib.Controls;
 
-        public ToolStripRoundedEdgeRenderer(ProfessionalColorTable professionalColorTable) : base(professionalColorTable)
-        {
-            RoundedEdges = false;
-        }
+public class ToolStripRoundedEdgeRenderer : ToolStripProfessionalRenderer
+{
+    public ToolStripRoundedEdgeRenderer()
+    {
+        RoundedEdges = false;
+    }
+
+    public ToolStripRoundedEdgeRenderer(ProfessionalColorTable professionalColorTable) : base(professionalColorTable)
+    {
+        RoundedEdges = false;
     }
 }

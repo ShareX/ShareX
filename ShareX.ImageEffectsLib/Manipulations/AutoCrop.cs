@@ -23,40 +23,36 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Manipulations;
+
+[Description("Auto crop")]
+internal class AutoCrop : ImageEffect
 {
-    [Description("Auto crop")]
-    internal class AutoCrop : ImageEffect
+    [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
+    public AnchorStyles Sides { get; set; }
+
+    [DefaultValue(0)]
+    public int Padding { get; set; }
+
+    public AutoCrop()
     {
-        [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
-        public AnchorStyles Sides { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(0)]
-        public int Padding { get; set; }
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        return ImageHelpers.AutoCropImage(bmp, true, Sides, Padding);
+    }
 
-        public AutoCrop()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            return ImageHelpers.AutoCropImage(bmp, true, Sides, Padding);
-        }
-
-        protected override string GetSummary()
-        {
-            if (Padding > 0)
-            {
-                return Padding.ToString();
-            }
-
-            return null;
-        }
+    protected override string GetSummary()
+    {
+        return Padding > 0 ? Padding.ToString() : null;
     }
 }

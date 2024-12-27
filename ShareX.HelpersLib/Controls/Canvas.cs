@@ -24,80 +24,81 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class Canvas : UserControl
 {
-    public class Canvas : UserControl
+    public delegate void DrawEventHandler(Graphics g);
+
+    public event DrawEventHandler Draw;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public int Interval { get; set; }
+
+    private Timer timer;
+    private bool needPaint;
+
+    public Canvas()
     {
-        public delegate void DrawEventHandler(Graphics g);
+        Interval = 100;
+        SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
+    }
 
-        public event DrawEventHandler Draw;
-
-        public int Interval { get; set; }
-
-        private Timer timer;
-        private bool needPaint;
-
-        public Canvas()
-        {
-            Interval = 100;
-            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
-        }
-
-        public void Start()
-        {
-            if (timer == null || !timer.Enabled)
-            {
-                Stop();
-
-                timer = new Timer();
-                timer.Interval = Interval;
-                timer.Tick += timer_Tick;
-                timer.Start();
-            }
-        }
-
-        public void Start(int interval)
-        {
-            Interval = interval;
-            Start();
-        }
-
-        public void Stop()
-        {
-            if (timer != null)
-            {
-                timer.Stop();
-                timer.Dispose();
-            }
-        }
-
-        protected override void Dispose(bool disposing)
+    public void Start()
+    {
+        if (timer == null || !timer.Enabled)
         {
             Stop();
-            base.Dispose(disposing);
-        }
 
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            needPaint = true;
-            Invalidate();
+            timer = new Timer();
+            timer.Interval = Interval;
+            timer.Tick += timer_Tick;
+            timer.Start();
         }
+    }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            if (needPaint)
-            {
-                OnDraw(e.Graphics);
-                needPaint = false;
-            }
-        }
+    public void Start(int interval)
+    {
+        Interval = interval;
+        Start();
+    }
 
-        protected void OnDraw(Graphics g)
+    public void Stop()
+    {
+        if (timer != null)
         {
-            Draw?.Invoke(g);
+            timer.Stop();
+            timer.Dispose();
         }
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        Stop();
+        base.Dispose(disposing);
+    }
+
+    private void timer_Tick(object sender, EventArgs e)
+    {
+        needPaint = true;
+        Invalidate();
+    }
+
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        if (needPaint)
+        {
+            OnDraw(e.Graphics);
+            needPaint = false;
+        }
+    }
+
+    protected void OnDraw(Graphics g)
+    {
+        Draw?.Invoke(g);
     }
 }

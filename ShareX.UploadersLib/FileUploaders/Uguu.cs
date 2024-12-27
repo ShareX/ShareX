@@ -23,34 +23,37 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
 using System.IO;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class UguuFileUploaderService : FileUploaderService
 {
-    public class UguuFileUploaderService : FileUploaderService
+    public override FileDestination EnumValue { get; } = FileDestination.Uguu;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Uguu;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new Uguu();
-        }
+        return new Uguu();
     }
+}
 
-    public class Uguu : FileUploader
+public class Uguu : FileUploader
+{
+    public override UploadResult Upload(Stream stream, string fileName)
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        UploadResult result = SendRequestFile("https://uguu.se/upload.php?output=text", stream, fileName, "files[]");
+
+        if (result.IsSuccess)
         {
-            UploadResult result = SendRequestFile("https://uguu.se/upload.php?output=text", stream, fileName, "files[]");
-
-            if (result.IsSuccess)
-            {
-                result.URL = result.Response;
-            }
-
-            return result;
+            result.URL = result.Response;
         }
+
+        return result;
     }
 }

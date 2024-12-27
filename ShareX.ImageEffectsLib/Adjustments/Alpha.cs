@@ -24,35 +24,36 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+internal class Alpha : ImageEffect
 {
-    internal class Alpha : ImageEffect
+    [DefaultValue(1f), Description("Pixel alpha = Pixel alpha * Value\r\nExample 0.5 will decrease alpha of pixel 50%")]
+    public float Value { get; set; }
+
+    [DefaultValue(0f), Description("Pixel alpha = Pixel alpha + Addition\r\nExample 0.5 will increase alpha of pixel 127.5")]
+    public float Addition { get; set; }
+
+    public Alpha()
     {
-        [DefaultValue(1f), Description("Pixel alpha = Pixel alpha * Value\r\nExample 0.5 will decrease alpha of pixel 50%")]
-        public float Value { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(0f), Description("Pixel alpha = Pixel alpha + Addition\r\nExample 0.5 will increase alpha of pixel 127.5")]
-        public float Addition { get; set; }
-
-        public Alpha()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        using (bmp)
         {
-            this.ApplyDefaultPropertyValues();
+            return ColorMatrixManager.Alpha(Value, Addition).Apply(bmp);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            using (bmp)
-            {
-                return ColorMatrixManager.Alpha(Value, Addition).Apply(bmp);
-            }
-        }
-
-        protected override string GetSummary()
-        {
-            return $"{Value}, {Addition}";
-        }
+    protected override string GetSummary()
+    {
+        return $"{Value}, {Addition}";
     }
 }

@@ -23,516 +23,506 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.ScreenCaptureLib.Helpers;
+
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes;
+
+public abstract class BaseShape : IDisposable
 {
-    public abstract class BaseShape : IDisposable
+    public abstract ShapeCategory ShapeCategory { get; }
+
+    public abstract ShapeType ShapeType { get; }
+
+    private RectangleF rectangle;
+
+    public RectangleF Rectangle
     {
-        public abstract ShapeCategory ShapeCategory { get; }
-
-        public abstract ShapeType ShapeType { get; }
-
-        private RectangleF rectangle;
-
-        public RectangleF Rectangle
+        get
         {
-            get
-            {
-                return rectangle;
-            }
-            set
-            {
-                rectangle = value;
-                startPosition = rectangle.Location;
-                endPosition = new PointF(rectangle.X + rectangle.Width - 1, rectangle.Y + rectangle.Height - 1);
-            }
+            return rectangle;
         }
-
-        public RectangleF RectangleInsideCanvas => RectangleF.Intersect(Rectangle, Manager.Form.CanvasRectangle);
-
-        public bool IsInsideCanvas => !RectangleInsideCanvas.IsEmpty;
-
-        public virtual bool LimitRectangleToInsideCanvas { get; }
-
-        private PointF startPosition;
-
-        public PointF StartPosition
+        set
         {
-            get
-            {
-                return startPosition;
-            }
-            private set
-            {
-                startPosition = value;
-                rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);
-            }
+            rectangle = value;
+            startPosition = rectangle.Location;
+            endPosition = new PointF(rectangle.X + rectangle.Width - 1, rectangle.Y + rectangle.Height - 1);
         }
+    }
 
-        private PointF endPosition;
+    public RectangleF RectangleInsideCanvas => RectangleF.Intersect(Rectangle, Manager.Form.CanvasRectangle);
 
-        public PointF EndPosition
+    public bool IsInsideCanvas => !RectangleInsideCanvas.IsEmpty;
+
+    public virtual bool LimitRectangleToInsideCanvas { get; }
+
+    private PointF startPosition;
+
+    public PointF StartPosition
+    {
+        get
         {
-            get
-            {
-                return endPosition;
-            }
-            private set
-            {
-                endPosition = value;
-                rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);
-            }
+            return startPosition;
         }
-
-        public SizeF InitialSize { get; set; }
-
-        public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= Options.MinimumSize && Rectangle.Height >= Options.MinimumSize;
-
-        public virtual bool IsSelectable => Manager.CurrentTool == ShapeType || Manager.CurrentTool == ShapeType.ToolSelect;
-
-        public bool ForceProportionalResizing { get; protected set; }
-
-        internal ShapeManager Manager { get; set; }
-
-        protected InputManager InputManager => Manager.InputManager;
-        protected RegionCaptureOptions Options => Manager.Options;
-        protected AnnotationOptions AnnotationOptions => Manager.Options.AnnotationOptions;
-
-        private PointF tempNodePos, tempStartPos, tempEndPos;
-        private RectangleF tempRectangle;
-
-        public bool IsHandledBySelectTool
+        private set
         {
-            get
+            startPosition = value;
+            rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);
+        }
+    }
+
+    private PointF endPosition;
+
+    public PointF EndPosition
+    {
+        get
+        {
+            return endPosition;
+        }
+        private set
+        {
+            endPosition = value;
+            rectangle = CaptureHelpers.CreateRectangle(startPosition, endPosition);
+        }
+    }
+
+    public SizeF InitialSize { get; set; }
+
+    public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= Options.MinimumSize && Rectangle.Height >= Options.MinimumSize;
+
+    public virtual bool IsSelectable => Manager.CurrentTool == ShapeType || Manager.CurrentTool == ShapeType.ToolSelect;
+
+    public bool ForceProportionalResizing { get; protected set; }
+
+    internal ShapeManager Manager { get; set; }
+
+    protected InputManager InputManager => Manager.InputManager;
+    protected RegionCaptureOptions Options => Manager.Options;
+    protected AnnotationOptions AnnotationOptions => Manager.Options.AnnotationOptions;
+
+    private PointF tempNodePos, tempStartPos, tempEndPos;
+    private RectangleF tempRectangle;
+
+    public bool IsHandledBySelectTool
+    {
+        get
+        {
+            switch (ShapeCategory)
             {
-                switch (ShapeCategory)
-                {
-                    case ShapeCategory.Drawing:
-                    case ShapeCategory.Effect:
-                        return true;
-                    default:
-                        return false;
-                }
+                case ShapeCategory.Drawing:
+                case ShapeCategory.Effect:
+                    return true;
+                default:
+                    return false;
             }
         }
+    }
 
-        public virtual bool Intersects(PointF position)
+    public virtual bool Intersects(PointF position)
+    {
+        return Rectangle.Contains(position);
+    }
+
+    internal void ChangeNodeShape(NodeShape nodeShape)
+    {
+        foreach (ResizeNode node in Manager.ResizeNodes)
         {
-            return Rectangle.Contains(position);
+            node.Shape = nodeShape;
+        }
+    }
+
+    protected virtual void UseLightResizeNodes()
+    {
+        ChangeNodeShape(NodeShape.Square);
+    }
+
+    protected void UpdateNodeShape()
+    {
+        if (Options.UseLightResizeNodes)
+        {
+            UseLightResizeNodes();
+        } else
+        {
+            ChangeNodeShape(NodeShape.CustomNode);
+        }
+    }
+
+    public virtual void ShowNodes()
+    {
+        UpdateNodeShape();
+        Manager.NodesVisible = true;
+    }
+
+    public virtual void Remove()
+    {
+        Manager.DeleteShape(this);
+    }
+
+    public void AddShapePath(GraphicsPath gp, int sizeOffset = 0)
+    {
+        RectangleF rect = Rectangle;
+
+        if (sizeOffset != 0)
+        {
+            rect = rect.SizeOffset(sizeOffset);
         }
 
-        internal void ChangeNodeShape(NodeShape nodeShape)
+        OnShapePathRequested(gp, rect);
+    }
+
+    public virtual void Move(float x, float y)
+    {
+        StartPosition = StartPosition.Add(x, y);
+        EndPosition = EndPosition.Add(x, y);
+    }
+
+    public void Move(PointF offset)
+    {
+        Move(offset.X, offset.Y);
+    }
+
+    public void MoveAbsolute(float x, float y, bool center = false)
+    {
+        if (center)
         {
-            foreach (ResizeNode node in Manager.ResizeNodes)
-            {
-                node.Shape = nodeShape;
-            }
+            x -= Rectangle.Size.Width / 2;
+            y -= Rectangle.Size.Height / 2;
         }
 
-        protected virtual void UseLightResizeNodes()
+        Move(x - Rectangle.X, y - Rectangle.Y);
+    }
+
+    public void MoveAbsolute(PointF point, bool center = false)
+    {
+        MoveAbsolute(point.X, point.Y, center);
+    }
+
+    public virtual void Resize(int x, int y, bool fromBottomRight)
+    {
+        Rectangle = fromBottomRight ? Rectangle.SizeOffset(x, y) : Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
+    }
+
+    public virtual BaseShape Duplicate()
+    {
+        ShapeManager manager = Manager;
+        Manager = null;
+        BaseShape shape = this.Copy();
+        Manager = manager;
+        shape.Manager = manager;
+        return shape;
+    }
+
+    public virtual void OnCreating()
+    {
+        PointF pos = Manager.Form.ScaledClientMousePosition;
+
+        if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
         {
-            ChangeNodeShape(NodeShape.Square);
-        }
-
-        protected void UpdateNodeShape()
+            Manager.IsMoving = true;
+            Rectangle = new RectangleF(new PointF(pos.X - Options.FixedSize.Width / 2, pos.Y - Options.FixedSize.Height / 2), Options.FixedSize);
+            OnCreated();
+        } else
         {
-            if (Options.UseLightResizeNodes)
-            {
-                UseLightResizeNodes();
-            }
-            else
-            {
-                ChangeNodeShape(NodeShape.CustomNode);
-            }
+            Manager.IsCreating = true;
+            Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
         }
+    }
 
-        public virtual void ShowNodes()
+    public virtual void OnCreated()
+    {
+        InitialSize = Rectangle.Size;
+
+        if (ShapeCategory == ShapeCategory.Drawing || ShapeCategory == ShapeCategory.Effect)
         {
-            UpdateNodeShape();
-            Manager.NodesVisible = true;
+            Manager.OnImageModified();
         }
+    }
 
-        public virtual void Remove()
-        {
-            Manager.DeleteShape(this);
-        }
+    public virtual void OnMoving()
+    {
+    }
 
-        public void AddShapePath(GraphicsPath gp, int sizeOffset = 0)
-        {
-            RectangleF rect = Rectangle;
+    public virtual void OnMoved()
+    {
+    }
 
-            if (sizeOffset != 0)
-            {
-                rect = rect.SizeOffset(sizeOffset);
-            }
+    public virtual void OnResizing()
+    {
+    }
 
-            OnShapePathRequested(gp, rect);
-        }
+    public virtual void OnResized()
+    {
+    }
 
-        public virtual void Move(float x, float y)
-        {
-            StartPosition = StartPosition.Add(x, y);
-            EndPosition = EndPosition.Add(x, y);
-        }
-
-        public void Move(PointF offset)
-        {
-            Move(offset.X, offset.Y);
-        }
-
-        public void MoveAbsolute(float x, float y, bool center = false)
-        {
-            if (center)
-            {
-                x -= Rectangle.Size.Width / 2;
-                y -= Rectangle.Size.Height / 2;
-            }
-
-            Move(x - Rectangle.X, y - Rectangle.Y);
-        }
-
-        public void MoveAbsolute(PointF point, bool center = false)
-        {
-            MoveAbsolute(point.X, point.Y, center);
-        }
-
-        public virtual void Resize(int x, int y, bool fromBottomRight)
-        {
-            if (fromBottomRight)
-            {
-                Rectangle = Rectangle.SizeOffset(x, y);
-            }
-            else
-            {
-                Rectangle = Rectangle.LocationOffset(x, y).SizeOffset(-x, -y);
-            }
-        }
-
-        public virtual BaseShape Duplicate()
-        {
-            ShapeManager manager = Manager;
-            Manager = null;
-            BaseShape shape = this.Copy();
-            Manager = manager;
-            shape.Manager = manager;
-            return shape;
-        }
-
-        public virtual void OnCreating()
+    public virtual void OnUpdate()
+    {
+        if (Manager.IsCreating)
         {
             PointF pos = Manager.Form.ScaledClientMousePosition;
 
-            if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
+            if (Manager.IsCornerMoving && !Manager.IsPanning)
             {
-                Manager.IsMoving = true;
-                Rectangle = new RectangleF(new PointF(pos.X - (Options.FixedSize.Width / 2), pos.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
-                OnCreated();
+                StartPosition = StartPosition.Add(Manager.Form.ScaledClientMouseVelocity);
             }
-            else
+
+            if (Manager.IsProportionalResizing || ForceProportionalResizing)
             {
-                Manager.IsCreating = true;
-                Rectangle = new RectangleF(pos.X, pos.Y, 1, 1);
+                float degree, startDegree;
+
+                if (ShapeType == ShapeType.DrawingLine || ShapeType == ShapeType.DrawingArrow)
+                {
+                    degree = 45;
+                    startDegree = 0;
+                } else
+                {
+                    degree = 90;
+                    startDegree = 45;
+                }
+
+                pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, degree, startDegree).Round();
+            } else if (Manager.IsSnapResizing)
+            {
+                pos = Manager.SnapPosition(StartPosition, pos);
             }
+
+            EndPosition = pos;
+        } else if (Manager.IsMoving && !Manager.IsPanning)
+        {
+            Move(Manager.Form.ScaledClientMouseVelocity);
         }
 
-        public virtual void OnCreated()
+        if (LimitRectangleToInsideCanvas)
         {
-            InitialSize = Rectangle.Size;
+            StartPosition = StartPosition.Restrict(Manager.Form.CanvasRectangle);
+            EndPosition = EndPosition.Restrict(Manager.Form.CanvasRectangle);
+        }
+    }
 
-            if (ShapeCategory == ShapeCategory.Drawing || ShapeCategory == ShapeCategory.Effect)
+    public virtual void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
+    {
+        gp.AddRectangle(rect);
+    }
+
+    public virtual void OnConfigLoad()
+    {
+    }
+
+    public virtual void OnConfigSave()
+    {
+    }
+
+    public virtual void OnDoubleClicked()
+    {
+    }
+
+    public virtual void OnNodeVisible()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            ResizeNode node = Manager.ResizeNodes[i];
+            node.Visible = true;
+        }
+    }
+
+    public virtual void OnNodeUpdate()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            ResizeNode node = Manager.ResizeNodes[i];
+
+            if (node.IsDragging)
             {
-                Manager.OnImageModified();
-            }
-        }
+                Manager.IsResizing = true;
 
-        public virtual void OnMoving()
-        {
-        }
+                if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
+                {
+                    tempNodePos = node.Position;
+                    tempStartPos = Rectangle.Location;
+                    tempEndPos = new PointF(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
+                    tempRectangle = Rectangle;
 
-        public virtual void OnMoved()
-        {
-        }
+                    OnResizing();
+                }
 
-        public virtual void OnResizing()
-        {
-        }
+                if (Manager.IsCornerMoving || Manager.IsPanning)
+                {
+                    tempStartPos.Offset(Manager.Form.ScaledClientMouseVelocity);
+                    tempEndPos.Offset(Manager.Form.ScaledClientMouseVelocity);
+                    tempNodePos.Offset(Manager.Form.ScaledClientMouseVelocity);
+                    tempRectangle.LocationOffset(Manager.Form.ScaledClientMouseVelocity);
+                }
 
-        public virtual void OnResized()
-        {
-        }
-
-        public virtual void OnUpdate()
-        {
-            if (Manager.IsCreating)
-            {
                 PointF pos = Manager.Form.ScaledClientMousePosition;
+                PointF startPos = tempStartPos;
+                PointF endPos = tempEndPos;
 
-                if (Manager.IsCornerMoving && !Manager.IsPanning)
+                NodePosition nodePosition = (NodePosition)i;
+
+                float x = pos.X - tempNodePos.X;
+
+                switch (nodePosition)
                 {
-                    StartPosition = StartPosition.Add(Manager.Form.ScaledClientMouseVelocity);
+                    case NodePosition.TopLeft:
+                    case NodePosition.Left:
+                    case NodePosition.BottomLeft:
+                        startPos.X += x;
+                        break;
+                    case NodePosition.TopRight:
+                    case NodePosition.Right:
+                    case NodePosition.BottomRight:
+                        endPos.X += x;
+                        break;
                 }
 
-                if (Manager.IsProportionalResizing || ForceProportionalResizing)
-                {
-                    float degree, startDegree;
+                float y = pos.Y - tempNodePos.Y;
 
-                    if (ShapeType == ShapeType.DrawingLine || ShapeType == ShapeType.DrawingArrow)
-                    {
-                        degree = 45;
-                        startDegree = 0;
-                    }
-                    else
-                    {
-                        degree = 90;
-                        startDegree = 45;
-                    }
-
-                    pos = CaptureHelpers.SnapPositionToDegree(StartPosition, pos, degree, startDegree).Round();
-                }
-                else if (Manager.IsSnapResizing)
+                switch (nodePosition)
                 {
-                    pos = Manager.SnapPosition(StartPosition, pos);
+                    case NodePosition.TopLeft:
+                    case NodePosition.Top:
+                    case NodePosition.TopRight:
+                        startPos.Y += y;
+                        break;
+                    case NodePosition.BottomLeft:
+                    case NodePosition.Bottom:
+                    case NodePosition.BottomRight:
+                        endPos.Y += y;
+                        break;
                 }
 
-                EndPosition = pos;
-            }
-            else if (Manager.IsMoving && !Manager.IsPanning)
-            {
-                Move(Manager.Form.ScaledClientMouseVelocity);
-            }
+                StartPosition = startPos;
+                EndPosition = endPos;
 
-            if (LimitRectangleToInsideCanvas)
-            {
-                StartPosition = StartPosition.Restrict(Manager.Form.CanvasRectangle);
-                EndPosition = EndPosition.Restrict(Manager.Form.CanvasRectangle);
-            }
-        }
-
-        public virtual void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
-        {
-            gp.AddRectangle(rect);
-        }
-
-        public virtual void OnConfigLoad()
-        {
-        }
-
-        public virtual void OnConfigSave()
-        {
-        }
-
-        public virtual void OnDoubleClicked()
-        {
-        }
-
-        public virtual void OnNodeVisible()
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                ResizeNode node = Manager.ResizeNodes[i];
-                node.Visible = true;
-            }
-        }
-
-        public virtual void OnNodeUpdate()
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                ResizeNode node = Manager.ResizeNodes[i];
-
-                if (node.IsDragging)
+                if (Manager.IsProportionalResizing && !InitialSize.IsEmpty)
                 {
-                    Manager.IsResizing = true;
-
-                    if (!InputManager.IsBeforeMouseDown(MouseButtons.Left))
+                    switch (nodePosition)
                     {
-                        tempNodePos = node.Position;
-                        tempStartPos = Rectangle.Location;
-                        tempEndPos = new PointF(Rectangle.X + Rectangle.Width - 1, Rectangle.Y + Rectangle.Height - 1);
-                        tempRectangle = Rectangle;
-
-                        OnResizing();
+                        case NodePosition.Top:
+                        case NodePosition.Right:
+                        case NodePosition.Bottom:
+                        case NodePosition.Left:
+                            return;
                     }
 
-                    if (Manager.IsCornerMoving || Manager.IsPanning)
-                    {
-                        tempStartPos.Offset(Manager.Form.ScaledClientMouseVelocity);
-                        tempEndPos.Offset(Manager.Form.ScaledClientMouseVelocity);
-                        tempNodePos.Offset(Manager.Form.ScaledClientMouseVelocity);
-                        tempRectangle.LocationOffset(Manager.Form.ScaledClientMouseVelocity);
-                    }
+                    double ratio = Math.Min(Rectangle.Width / (double)InitialSize.Width, Rectangle.Height / (double)InitialSize.Height);
+                    int newWidth = (int)Math.Round(InitialSize.Width * ratio);
+                    int newHeight = (int)Math.Round(InitialSize.Height * ratio);
 
-                    PointF pos = Manager.Form.ScaledClientMousePosition;
-                    PointF startPos = tempStartPos;
-                    PointF endPos = tempEndPos;
-
-                    NodePosition nodePosition = (NodePosition)i;
-
-                    float x = pos.X - tempNodePos.X;
+                    PointF anchor = new();
 
                     switch (nodePosition)
                     {
                         case NodePosition.TopLeft:
                         case NodePosition.Left:
                         case NodePosition.BottomLeft:
-                            startPos.X += x;
+                            anchor.X = tempRectangle.Right - 1;
                             break;
                         case NodePosition.TopRight:
                         case NodePosition.Right:
                         case NodePosition.BottomRight:
-                            endPos.X += x;
+                            anchor.X = tempRectangle.X;
                             break;
                     }
-
-                    float y = pos.Y - tempNodePos.Y;
 
                     switch (nodePosition)
                     {
                         case NodePosition.TopLeft:
                         case NodePosition.Top:
                         case NodePosition.TopRight:
-                            startPos.Y += y;
+                            anchor.Y = tempRectangle.Bottom - 1;
                             break;
                         case NodePosition.BottomLeft:
                         case NodePosition.Bottom:
                         case NodePosition.BottomRight:
-                            endPos.Y += y;
+                            anchor.Y = tempRectangle.Y;
                             break;
                     }
 
-                    StartPosition = startPos;
-                    EndPosition = endPos;
+                    RectangleF newRect = Rectangle;
 
-                    if (Manager.IsProportionalResizing && !InitialSize.IsEmpty)
+                    if (pos.X < anchor.X)
                     {
-                        switch (nodePosition)
-                        {
-                            case NodePosition.Top:
-                            case NodePosition.Right:
-                            case NodePosition.Bottom:
-                            case NodePosition.Left:
-                                return;
-                        }
-
-                        double ratio = Math.Min(Rectangle.Width / (double)InitialSize.Width, Rectangle.Height / (double)InitialSize.Height);
-                        int newWidth = (int)Math.Round(InitialSize.Width * ratio);
-                        int newHeight = (int)Math.Round(InitialSize.Height * ratio);
-
-                        PointF anchor = new PointF();
-
-                        switch (nodePosition)
-                        {
-                            case NodePosition.TopLeft:
-                            case NodePosition.Left:
-                            case NodePosition.BottomLeft:
-                                anchor.X = tempRectangle.Right - 1;
-                                break;
-                            case NodePosition.TopRight:
-                            case NodePosition.Right:
-                            case NodePosition.BottomRight:
-                                anchor.X = tempRectangle.X;
-                                break;
-                        }
-
-                        switch (nodePosition)
-                        {
-                            case NodePosition.TopLeft:
-                            case NodePosition.Top:
-                            case NodePosition.TopRight:
-                                anchor.Y = tempRectangle.Bottom - 1;
-                                break;
-                            case NodePosition.BottomLeft:
-                            case NodePosition.Bottom:
-                            case NodePosition.BottomRight:
-                                anchor.Y = tempRectangle.Y;
-                                break;
-                        }
-
-                        RectangleF newRect = Rectangle;
-
-                        if (pos.X < anchor.X)
-                        {
-                            newRect.X = newRect.Right - newWidth;
-                        }
-
-                        newRect.Width = newWidth;
-
-                        if (pos.Y < anchor.Y)
-                        {
-                            newRect.Y = newRect.Bottom - newHeight;
-                        }
-
-                        newRect.Height = newHeight;
-
-                        Rectangle = newRect;
+                        newRect.X = newRect.Right - newWidth;
                     }
 
-                    if (LimitRectangleToInsideCanvas)
+                    newRect.Width = newWidth;
+
+                    if (pos.Y < anchor.Y)
                     {
-                        Rectangle = RectangleInsideCanvas;
+                        newRect.Y = newRect.Bottom - newHeight;
                     }
+
+                    newRect.Height = newHeight;
+
+                    Rectangle = newRect;
+                }
+
+                if (LimitRectangleToInsideCanvas)
+                {
+                    Rectangle = RectangleInsideCanvas;
                 }
             }
         }
+    }
 
-        public virtual void OnNodePositionUpdate()
+    public virtual void OnNodePositionUpdate()
+    {
+        float xStart = Rectangle.X;
+        float xMid = Rectangle.X + Rectangle.Width / 2;
+        float xEnd = Rectangle.X + Rectangle.Width - 1;
+
+        float yStart = Rectangle.Y;
+        float yMid = Rectangle.Y + Rectangle.Height / 2;
+        float yEnd = Rectangle.Y + Rectangle.Height - 1;
+
+        Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = new PointF(xStart, yStart);
+        Manager.ResizeNodes[(int)NodePosition.Top].Position = new PointF(xMid, yStart);
+        Manager.ResizeNodes[(int)NodePosition.TopRight].Position = new PointF(xEnd, yStart);
+        Manager.ResizeNodes[(int)NodePosition.Right].Position = new PointF(xEnd, yMid);
+        Manager.ResizeNodes[(int)NodePosition.BottomRight].Position = new PointF(xEnd, yEnd);
+        Manager.ResizeNodes[(int)NodePosition.Bottom].Position = new PointF(xMid, yEnd);
+        Manager.ResizeNodes[(int)NodePosition.BottomLeft].Position = new PointF(xStart, yEnd);
+        Manager.ResizeNodes[(int)NodePosition.Left].Position = new PointF(xStart, yMid);
+
+        for (int i = 0; i < 8; i++)
         {
-            float xStart = Rectangle.X;
-            float xMid = Rectangle.X + (Rectangle.Width / 2);
-            float xEnd = Rectangle.X + Rectangle.Width - 1;
+            Manager.ResizeNodes[i].Visible = true;
+        }
 
-            float yStart = Rectangle.Y;
-            float yMid = Rectangle.Y + (Rectangle.Height / 2);
-            float yEnd = Rectangle.Y + Rectangle.Height - 1;
+        if (Manager.ResizeNodes[(int)NodePosition.Right].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
+        {
+            Manager.ResizeNodes[(int)NodePosition.Left].Visible =
+                Manager.ResizeNodes[(int)NodePosition.Right].Visible = false;
+        }
 
-            Manager.ResizeNodes[(int)NodePosition.TopLeft].Position = new PointF(xStart, yStart);
-            Manager.ResizeNodes[(int)NodePosition.Top].Position = new PointF(xMid, yStart);
-            Manager.ResizeNodes[(int)NodePosition.TopRight].Position = new PointF(xEnd, yStart);
-            Manager.ResizeNodes[(int)NodePosition.Right].Position = new PointF(xEnd, yMid);
-            Manager.ResizeNodes[(int)NodePosition.BottomRight].Position = new PointF(xEnd, yEnd);
-            Manager.ResizeNodes[(int)NodePosition.Bottom].Position = new PointF(xMid, yEnd);
-            Manager.ResizeNodes[(int)NodePosition.BottomLeft].Position = new PointF(xStart, yEnd);
-            Manager.ResizeNodes[(int)NodePosition.Left].Position = new PointF(xStart, yMid);
+        if (Manager.ResizeNodes[(int)NodePosition.Bottom].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
+        {
+            Manager.ResizeNodes[(int)NodePosition.Top].Visible =
+                Manager.ResizeNodes[(int)NodePosition.Bottom].Visible = false;
+        }
 
-            for (int i = 0; i < 8; i++)
-            {
-                Manager.ResizeNodes[i].Visible = true;
-            }
-
-            if (Manager.ResizeNodes[(int)NodePosition.Right].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
-            {
-                Manager.ResizeNodes[(int)NodePosition.Left].Visible =
-                    Manager.ResizeNodes[(int)NodePosition.Right].Visible = false;
-            }
-
-            if (Manager.ResizeNodes[(int)NodePosition.Bottom].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
-            {
+        if (Manager.ResizeNodes[(int)NodePosition.TopRight].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
+        {
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible =
                 Manager.ResizeNodes[(int)NodePosition.Top].Visible =
-                    Manager.ResizeNodes[(int)NodePosition.Bottom].Visible = false;
-            }
-
-            if (Manager.ResizeNodes[(int)NodePosition.TopRight].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
-            {
-                Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible =
-                    Manager.ResizeNodes[(int)NodePosition.Top].Visible =
-                    Manager.ResizeNodes[(int)NodePosition.TopRight].Visible = false;
-            }
-
-            if (Manager.ResizeNodes[(int)NodePosition.BottomLeft].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
-            {
-                Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible =
-                    Manager.ResizeNodes[(int)NodePosition.Left].Visible =
-                    Manager.ResizeNodes[(int)NodePosition.BottomLeft].Visible = false;
-            }
+                Manager.ResizeNodes[(int)NodePosition.TopRight].Visible = false;
         }
 
-        public virtual void Dispose()
+        if (Manager.ResizeNodes[(int)NodePosition.BottomLeft].Rectangle.IntersectsWith(Manager.ResizeNodes[(int)NodePosition.BottomRight].Rectangle))
         {
+            Manager.ResizeNodes[(int)NodePosition.TopLeft].Visible =
+                Manager.ResizeNodes[(int)NodePosition.Left].Visible =
+                Manager.ResizeNodes[(int)NodePosition.BottomLeft].Visible = false;
         }
+    }
+
+    public virtual void Dispose()
+    {
     }
 }

@@ -462,18 +462,6 @@
   <data name="&gt;&gt;rbOrientationHorizontal.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;rbOrientationVertical.Name" xml:space="preserve">
-    <value>rbOrientationVertical</value>
-  </data>
-  <data name="&gt;&gt;rbOrientationVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbOrientationVertical.Parent" xml:space="preserve">
-    <value>flpOrientation</value>
-  </data>
-  <data name="&gt;&gt;rbOrientationVertical.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="flpOrientation.Location" type="System.Drawing.Point, System.Drawing">
     <value>200, 371</value>
   </data>
@@ -512,18 +500,6 @@
   </data>
   <data name="rbOrientationHorizontal.Text" xml:space="preserve">
     <value>Horizontal</value>
-  </data>
-  <data name="&gt;&gt;rbOrientationHorizontal.Name" xml:space="preserve">
-    <value>rbOrientationHorizontal</value>
-  </data>
-  <data name="&gt;&gt;rbOrientationHorizontal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbOrientationHorizontal.Parent" xml:space="preserve">
-    <value>flpOrientation</value>
-  </data>
-  <data name="&gt;&gt;rbOrientationHorizontal.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="rbOrientationVertical.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

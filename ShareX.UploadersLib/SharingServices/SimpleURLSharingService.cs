@@ -23,40 +23,42 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 
-namespace ShareX.UploadersLib.SharingServices
+namespace ShareX.UploadersLib.SharingServices;
+
+public abstract class SimpleURLSharingService : URLSharingService
 {
-    public abstract class SimpleURLSharingService : URLSharingService
+    protected abstract string URLFormatString { get; }
+
+    public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        protected abstract string URLFormatString { get; }
-
-        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new SimpleURLSharer(URLFormatString);
-        }
-
-        public override bool CheckConfig(UploadersConfig config) => true;
+        return new SimpleURLSharer(URLFormatString);
     }
 
-    public sealed class SimpleURLSharer : URLSharer
+    public override bool CheckConfig(UploadersConfig config) => true;
+}
+
+public sealed class SimpleURLSharer : URLSharer
+{
+    public string URLFormatString { get; private set; }
+
+    public SimpleURLSharer(string urlFormatString)
     {
-        public string URLFormatString { get; private set; }
+        URLFormatString = urlFormatString;
+    }
 
-        public SimpleURLSharer(string urlFormatString)
-        {
-            URLFormatString = urlFormatString;
-        }
+    public override UploadResult ShareURL(string url)
+    {
+        UploadResult result = new() { URL = url, IsURLExpected = false };
 
-        public override UploadResult ShareURL(string url)
-        {
-            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
+        string encodedURL = URLHelpers.URLEncode(url);
+        string resultURL = string.Format(URLFormatString, encodedURL);
+        URLHelpers.OpenURL(resultURL);
 
-            string encodedURL = URLHelpers.URLEncode(url);
-            string resultURL = string.Format(URLFormatString, encodedURL);
-            URLHelpers.OpenURL(resultURL);
-
-            return result;
-        }
+        return result;
     }
 }

@@ -23,122 +23,123 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Forms;
+
+public class ScreenTearingTestForm : Form
 {
-    public class ScreenTearingTestForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ScreenTearingTestMode Mode { get; set; } = ScreenTearingTestMode.VerticalLines;
+
+    private Rectangle screenRectangle;
+    private Stopwatch animationTime;
+    private TimeSpan lastElapsed;
+    private int rectangleSize = 50;
+    private float animationSpeed = 500, minSpeed = 100, maxSpeed = 2000, speedChange = 50, currentPosition;
+
+    public ScreenTearingTestForm()
     {
-        public ScreenTearingTestMode Mode { get; set; } = ScreenTearingTestMode.VerticalLines;
+        screenRectangle = CaptureHelpers.GetScreenBounds();
 
-        private Rectangle screenRectangle;
-        private Stopwatch animationTime;
-        private TimeSpan lastElapsed;
-        private int rectangleSize = 50;
-        private float animationSpeed = 500, minSpeed = 100, maxSpeed = 2000, speedChange = 50, currentPosition;
+        SuspendLayout();
 
-        public ScreenTearingTestForm()
+        AutoScaleMode = AutoScaleMode.None;
+        StartPosition = FormStartPosition.Manual;
+        Bounds = screenRectangle;
+        Cursor = Cursors.Hand;
+        FormBorderStyle = FormBorderStyle.None;
+        SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+        Text = "ShareX - Screen tearing test";
+        ShowInTaskbar = false;
+        TopMost = true;
+
+        ResumeLayout(false);
+
+        ShareXResources.ApplyTheme(this, true);
+
+        animationTime = Stopwatch.StartNew();
+    }
+
+    protected override void OnShown(EventArgs e)
+    {
+        this.ForceActivate();
+
+        base.OnShown(e);
+    }
+
+    protected override void OnMouseUp(MouseEventArgs e)
+    {
+        if (Mode == ScreenTearingTestMode.VerticalLines)
         {
-            screenRectangle = CaptureHelpers.GetScreenBounds();
+            Mode = ScreenTearingTestMode.HorizontalLines;
+        } else
+        {
+            Close();
+        }
+    }
 
-            SuspendLayout();
-
-            AutoScaleMode = AutoScaleMode.None;
-            StartPosition = FormStartPosition.Manual;
-            Bounds = screenRectangle;
-            Cursor = Cursors.Hand;
-            FormBorderStyle = FormBorderStyle.None;
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            Text = "ShareX - Screen tearing test";
-            ShowInTaskbar = false;
-            TopMost = true;
-
-            ResumeLayout(false);
-
-            ShareXResources.ApplyTheme(this, true);
-
-            animationTime = Stopwatch.StartNew();
+    protected override void OnMouseWheel(MouseEventArgs e)
+    {
+        if (e.Delta > 0)
+        {
+            animationSpeed = (animationSpeed + speedChange).Clamp(minSpeed, maxSpeed);
+        } else if (e.Delta < 0)
+        {
+            animationSpeed = (animationSpeed - speedChange).Clamp(minSpeed, maxSpeed);
         }
 
-        protected override void OnShown(EventArgs e)
-        {
-            this.ForceActivate();
+        base.OnMouseWheel(e);
+    }
 
-            base.OnShown(e);
-        }
+    protected override void OnPaintBackground(PaintEventArgs e)
+    {
+        //base.OnPaintBackground(e);
+    }
 
-        protected override void OnMouseUp(MouseEventArgs e)
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        Graphics g = e.Graphics;
+        g.SmoothingMode = SmoothingMode.HighSpeed;
+
+        g.Clear(Color.White);
+
+        int nextPosition = rectangleSize * 2;
+        int startOffset = (int)(currentPosition % nextPosition);
+
+        if (Mode == ScreenTearingTestMode.VerticalLines)
         {
-            if (Mode == ScreenTearingTestMode.VerticalLines)
+            for (int x = startOffset - rectangleSize; x < screenRectangle.Width; x += nextPosition)
             {
-                Mode = ScreenTearingTestMode.HorizontalLines;
+                g.FillRectangle(Brushes.Black, x, 0, rectangleSize, screenRectangle.Height);
             }
-            else
-            {
-                Close();
-            }
-        }
-
-        protected override void OnMouseWheel(MouseEventArgs e)
+        } else if (Mode == ScreenTearingTestMode.HorizontalLines)
         {
-            if (e.Delta > 0)
+            for (int y = startOffset - rectangleSize; y < screenRectangle.Height; y += nextPosition)
             {
-                animationSpeed = (animationSpeed + speedChange).Clamp(minSpeed, maxSpeed);
+                g.FillRectangle(Brushes.Black, 0, y, screenRectangle.Width, rectangleSize);
             }
-            else if (e.Delta < 0)
-            {
-                animationSpeed = (animationSpeed - speedChange).Clamp(minSpeed, maxSpeed);
-            }
-
-            base.OnMouseWheel(e);
         }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-            //base.OnPaintBackground(e);
-        }
+        TimeSpan elapsed = animationTime.Elapsed - lastElapsed;
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            g.SmoothingMode = SmoothingMode.HighSpeed;
+        currentPosition += (float)(elapsed.TotalSeconds * animationSpeed);
 
-            g.Clear(Color.White);
+        lastElapsed = animationTime.Elapsed;
 
-            int nextPosition = rectangleSize * 2;
-            int startOffset = (int)(currentPosition % nextPosition);
+        Invalidate();
+    }
 
-            if (Mode == ScreenTearingTestMode.VerticalLines)
-            {
-                for (int x = startOffset - rectangleSize; x < screenRectangle.Width; x += nextPosition)
-                {
-                    g.FillRectangle(Brushes.Black, x, 0, rectangleSize, screenRectangle.Height);
-                }
-            }
-            else if (Mode == ScreenTearingTestMode.HorizontalLines)
-            {
-                for (int y = startOffset - rectangleSize; y < screenRectangle.Height; y += nextPosition)
-                {
-                    g.FillRectangle(Brushes.Black, 0, y, screenRectangle.Width, rectangleSize);
-                }
-            }
-
-            TimeSpan elapsed = animationTime.Elapsed - lastElapsed;
-
-            currentPosition += (float)(elapsed.TotalSeconds * animationSpeed);
-
-            lastElapsed = animationTime.Elapsed;
-
-            Invalidate();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-        }
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
     }
 }

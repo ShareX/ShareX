@@ -24,32 +24,33 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+internal class Gamma : ImageEffect
 {
-    internal class Gamma : ImageEffect
+    [DefaultValue(1f), Description("Min 0.1, Max 5.0")]
+    public float Value { get; set; }
+
+    public Gamma()
     {
-        [DefaultValue(1f), Description("Min 0.1, Max 5.0")]
-        public float Value { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        public Gamma()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        using (bmp)
         {
-            this.ApplyDefaultPropertyValues();
+            return ColorMatrixManager.ChangeGamma(bmp, Value);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            using (bmp)
-            {
-                return ColorMatrixManager.ChangeGamma(bmp, Value);
-            }
-        }
-
-        protected override string GetSummary()
-        {
-            return Value.ToString();
-        }
+    protected override string GetSummary()
+    {
+        return Value.ToString();
     }
 }

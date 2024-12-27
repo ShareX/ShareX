@@ -26,41 +26,40 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Forms;
+
+public class TrayForm : Form
 {
-    public class TrayForm : Form
+    protected NotifyIcon TrayIcon = null;
+
+    private IContainer components;
+
+    public TrayForm()
     {
-        protected NotifyIcon TrayIcon = null;
+        components = new Container();
+        Icon = ShareXResources.Icon;
+        TrayIcon = new NotifyIcon(components);
+        TrayIcon.Text = "ShareX";
+    }
 
-        private IContainer components;
-
-        public TrayForm()
+    protected override void SetVisibleCore(bool value)
+    {
+        if (value && !IsHandleCreated)
         {
-            components = new Container();
-            Icon = ShareXResources.Icon;
-            TrayIcon = new NotifyIcon(components);
-            TrayIcon.Text = "ShareX";
+            value = false;
+            CreateHandle();
         }
 
-        protected override void SetVisibleCore(bool value)
-        {
-            if (value && !IsHandleCreated)
-            {
-                value = false;
-                CreateHandle();
-            }
+        base.SetVisibleCore(value);
+    }
 
-            base.SetVisibleCore(value);
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing && components != null)
+        {
+            components.Dispose();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-
-            base.Dispose(disposing);
-        }
+        base.Dispose(disposing);
     }
 }

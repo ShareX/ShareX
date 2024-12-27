@@ -23,96 +23,104 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class LabeledNumericUpDown : UserControl
 {
-    public partial class LabeledNumericUpDown : UserControl
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public new string Text
     {
-        public new string Text
+        get
         {
-            get
-            {
-                return lblText.Text;
-            }
-            set
-            {
-                lblText.Text = value;
-            }
+            return lblText.Text;
         }
-
-        public string Text2
+        set
         {
-            get
-            {
-                return lblText2.Text;
-            }
-            set
-            {
-                lblText2.Text = value;
-            }
+            lblText.Text = value;
         }
+    }
 
-        public decimal Value
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Text2
+    {
+        get
         {
-            get
-            {
-                return nudValue.Value;
-            }
-            set
-            {
-                nudValue.SetValue(value);
-            }
+            return lblText2.Text;
         }
-
-        public decimal Maximum
+        set
         {
-            get
-            {
-                return nudValue.Maximum;
-            }
-            set
-            {
-                nudValue.Maximum = value;
-            }
+            lblText2.Text = value;
         }
+    }
 
-        public decimal Minimum
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public decimal Value
+    {
+        get
         {
-            get
-            {
-                return nudValue.Minimum;
-            }
-            set
-            {
-                nudValue.Minimum = value;
-            }
+            return nudValue.Value;
         }
-
-        public decimal Increment
+        set
         {
-            get
-            {
-                return nudValue.Increment;
-            }
-            set
-            {
-                nudValue.Increment = value;
-            }
+            nudValue.SetValue(value);
         }
+    }
 
-        public EventHandler ValueChanged;
-
-        public LabeledNumericUpDown()
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public decimal Maximum
+    {
+        get
         {
-            InitializeComponent();
-            nudValue.ValueChanged += OnValueChanged;
+            return nudValue.Maximum;
         }
-
-        private void OnValueChanged(object sender, EventArgs e)
+        set
         {
-            ValueChanged?.Invoke(sender, e);
+            nudValue.Maximum = value;
         }
+    }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public decimal Minimum
+    {
+        get
+        {
+            return nudValue.Minimum;
+        }
+        set
+        {
+            nudValue.Minimum = value;
+        }
+    }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public decimal Increment
+    {
+        get
+        {
+            return nudValue.Increment;
+        }
+        set
+        {
+            nudValue.Increment = value;
+        }
+    }
+
+    public EventHandler ValueChanged;
+
+    public LabeledNumericUpDown()
+    {
+        InitializeComponent();
+        nudValue.ValueChanged += OnValueChanged;
+    }
+
+    private void OnValueChanged(object sender, EventArgs e)
+    {
+        ValueChanged?.Invoke(sender, e);
     }
 }

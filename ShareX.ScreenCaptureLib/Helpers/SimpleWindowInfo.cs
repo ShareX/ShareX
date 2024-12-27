@@ -23,35 +23,35 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Native;
+
 using System;
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+public class SimpleWindowInfo
 {
-    public class SimpleWindowInfo
+    public IntPtr Handle { get; set; }
+    public Rectangle Rectangle { get; set; }
+    public bool IsWindow { get; set; }
+
+    public WindowInfo WindowInfo
     {
-        public IntPtr Handle { get; set; }
-        public Rectangle Rectangle { get; set; }
-        public bool IsWindow { get; set; }
-
-        public WindowInfo WindowInfo
+        get
         {
-            get
-            {
-                return new WindowInfo(Handle);
-            }
+            return new WindowInfo(Handle);
         }
+    }
 
-        public SimpleWindowInfo(IntPtr handle)
-        {
-            Handle = handle;
-        }
+    public SimpleWindowInfo(IntPtr handle)
+    {
+        Handle = handle;
+    }
 
-        public SimpleWindowInfo(IntPtr handle, Rectangle rect)
-        {
-            Handle = handle;
-            Rectangle = rect;
-        }
+    public SimpleWindowInfo(IntPtr handle, Rectangle rect)
+    {
+        Handle = handle;
+        Rectangle = rect;
     }
 }

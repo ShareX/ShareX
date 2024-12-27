@@ -25,10 +25,9 @@
 
 using System;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Settings;
+
+[AttributeUsage(AttributeTargets.Property)]
+public class JsonEncryptAttribute : Attribute
 {
-    [AttributeUsage(AttributeTargets.Property)]
-    public class JsonEncryptAttribute : Attribute
-    {
-    }
 }

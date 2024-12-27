@@ -23,38 +23,38 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Animations;
+
+internal class PointAnimation : BaseAnimation
 {
-    internal class PointAnimation : BaseAnimation
+    public Point FromPosition { get; set; }
+    public Point ToPosition { get; set; }
+    public TimeSpan Duration { get; set; }
+
+    public Point CurrentPosition { get; private set; }
+
+    public override bool Update()
     {
-        public Point FromPosition { get; set; }
-        public Point ToPosition { get; set; }
-        public TimeSpan Duration { get; set; }
-
-        public Point CurrentPosition { get; private set; }
-
-        public override bool Update()
+        if (IsActive)
         {
-            if (IsActive)
+            base.Update();
+
+            float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
+            amount = Math.Min(amount, 1);
+
+            CurrentPosition = (Point)MathHelpers.Lerp(FromPosition, ToPosition, amount);
+
+            if (amount >= 1)
             {
-                base.Update();
-
-                float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
-                amount = Math.Min(amount, 1);
-
-                CurrentPosition = (Point)MathHelpers.Lerp(FromPosition, ToPosition, amount);
-
-                if (amount >= 1)
-                {
-                    Stop();
-                }
+                Stop();
             }
-
-            return IsActive;
         }
+
+        return IsActive;
     }
 }

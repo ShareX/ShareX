@@ -24,81 +24,82 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class JiraUpload : Form
 {
-    public partial class JiraUpload : Form
+    public delegate string GetSummaryHandler(string issueId);
+
+    private readonly string issuePrefix;
+    private readonly GetSummaryHandler getSummary;
+
+    public string IssueId
     {
-        public delegate string GetSummaryHandler(string issueId);
-
-        private readonly string issuePrefix;
-        private readonly GetSummaryHandler getSummary;
-
-        public string IssueId
+        get
         {
-            get
-            {
-                return txtIssueId.Text;
-            }
+            return txtIssueId.Text;
         }
+    }
 
-        public JiraUpload()
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-        }
+    public JiraUpload()
+    {
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+    }
 
-        public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()
-        {
-            this.issuePrefix = issuePrefix;
-            this.getSummary = getSummary ?? throw new ArgumentNullException(nameof(getSummary));
-        }
+    public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()
+    {
+        this.issuePrefix = issuePrefix;
+        this.getSummary = getSummary ?? throw new ArgumentNullException(nameof(getSummary));
+    }
 
-        private void JiraUpload_Load(object sender, EventArgs e)
-        {
-            UpdateSummary(null);
+    private void JiraUpload_Load(object sender, EventArgs e)
+    {
+        UpdateSummary(null);
 
-            txtIssueId.Text = issuePrefix;
-            txtIssueId.SelectionStart = txtIssueId.Text.Length;
-        }
+        txtIssueId.Text = issuePrefix;
+        txtIssueId.SelectionStart = txtIssueId.Text.Length;
+    }
 
-        private void txtIssueId_TextChanged(object sender, EventArgs e)
-        {
-            ValidateIssueId(txtIssueId.Text);
-        }
+    private void txtIssueId_TextChanged(object sender, EventArgs e)
+    {
+        ValidateIssueId(txtIssueId.Text);
+    }
 
-        private void ValidateIssueId(string issueId)
-        {
-            Task.Run(() => getSummary(issueId)).ContinueWith(UpdateSummaryAsync);
-        }
+    private void ValidateIssueId(string issueId)
+    {
+        Task.Run(() => getSummary(issueId)).ContinueWith(UpdateSummaryAsync);
+    }
 
-        private void UpdateSummaryAsync(Task<string> task)
-        {
-            this.InvokeSafe(() => UpdateSummary(task.Result));
-        }
+    private void UpdateSummaryAsync(Task<string> task)
+    {
+        this.InvokeSafe(() => UpdateSummary(task.Result));
+    }
 
-        private void UpdateSummary(string summary)
-        {
-            btnUpload.Enabled = summary != null;
+    private void UpdateSummary(string summary)
+    {
+        btnUpload.Enabled = summary != null;
 
-            lblSummary.Text = summary ?? Resources.JiraUpload_ValidateIssueId_Issue_not_found;
-            lblSummary.Enabled = summary != null;
-        }
+        lblSummary.Text = summary ?? Resources.JiraUpload_ValidateIssueId_Issue_not_found;
+        lblSummary.Enabled = summary != null;
+    }
 
-        private void btnSend_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-            Close();
-        }
+    private void btnSend_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

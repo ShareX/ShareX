@@ -24,7 +24,10 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.CLI;
+using ShareX.HelpersLib.Extensions;
 using ShareX.MediaLib.Properties;
+
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -34,273 +37,265 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public class FFmpegCLIManager : ExternalCLIManager
 {
-    public class FFmpegCLIManager : ExternalCLIManager
+    public const int x264_min = 0;
+    public const int x264_max = 51;
+    public const int x265_min = 0;
+    public const int x265_max = 51;
+    public const int vp8_min = 4;
+    public const int vp8_max = 63;
+    public const int vp9_min = 0;
+    public const int vp9_max = 63;
+    public const int av1_min = 0;
+    public const int av1_max = 63;
+    public const int xvid_min = 1;
+    public const int xvid_max = 31;
+    public const int mp3_min = 0;
+    public const int mp3_max = 9;
+
+    public delegate void EncodeStartedEventHandler();
+    public event EncodeStartedEventHandler EncodeStarted;
+
+    public delegate void EncodeProgressChangedEventHandler(float percentage);
+    public event EncodeProgressChangedEventHandler EncodeProgressChanged;
+
+    public string FFmpegPath { get; private set; }
+    public StringBuilder Output { get; private set; }
+    public bool IsEncoding { get; set; }
+    public bool ShowError { get; set; }
+    public bool StopRequested { get; set; }
+    public bool TrackEncodeProgress { get; set; }
+    public TimeSpan VideoDuration { get; set; }
+    public TimeSpan EncodeTime { get; set; }
+    public float EncodePercentage { get; set; }
+
+    private int closeTryCount = 0;
+
+    public FFmpegCLIManager(string ffmpegPath)
     {
-        public const int x264_min = 0;
-        public const int x264_max = 51;
-        public const int x265_min = 0;
-        public const int x265_max = 51;
-        public const int vp8_min = 4;
-        public const int vp8_max = 63;
-        public const int vp9_min = 0;
-        public const int vp9_max = 63;
-        public const int av1_min = 0;
-        public const int av1_max = 63;
-        public const int xvid_min = 1;
-        public const int xvid_max = 31;
-        public const int mp3_min = 0;
-        public const int mp3_max = 9;
+        FFmpegPath = ffmpegPath;
+        Output = new StringBuilder();
+        OutputDataReceived += FFmpeg_DataReceived;
+        ErrorDataReceived += FFmpeg_DataReceived;
+    }
 
-        public delegate void EncodeStartedEventHandler();
-        public event EncodeStartedEventHandler EncodeStarted;
+    public bool Run(string args)
+    {
+        return Run(FFmpegPath, args);
+    }
 
-        public delegate void EncodeProgressChangedEventHandler(float percentage);
-        public event EncodeProgressChangedEventHandler EncodeProgressChanged;
-
-        public string FFmpegPath { get; private set; }
-        public StringBuilder Output { get; private set; }
-        public bool IsEncoding { get; set; }
-        public bool ShowError { get; set; }
-        public bool StopRequested { get; set; }
-        public bool TrackEncodeProgress { get; set; }
-        public TimeSpan VideoDuration { get; set; }
-        public TimeSpan EncodeTime { get; set; }
-        public float EncodePercentage { get; set; }
-
-        private int closeTryCount = 0;
-
-        public FFmpegCLIManager(string ffmpegPath)
+    protected bool Run(string path, string args)
+    {
+        StopRequested = false;
+        int errorCode = Open(path, args);
+        IsEncoding = false;
+        bool result = errorCode == 0;
+        if (!result && ShowError)
         {
-            FFmpegPath = ffmpegPath;
-            Output = new StringBuilder();
-            OutputDataReceived += FFmpeg_DataReceived;
-            ErrorDataReceived += FFmpeg_DataReceived;
+            OutputBox.Show(Output.ToString(), Resources.FFmpegError, true);
         }
+        return result;
+    }
 
-        public bool Run(string args)
-        {
-            return Run(FFmpegPath, args);
-        }
+    public override void Close()
+    {
+        StopRequested = true;
 
-        protected bool Run(string path, string args)
+        if (IsProcessRunning && process != null)
         {
-            StopRequested = false;
-            int errorCode = Open(path, args);
-            IsEncoding = false;
-            bool result = errorCode == 0;
-            if (!result && ShowError)
+            if (closeTryCount >= 2)
             {
-                OutputBox.Show(Output.ToString(), Resources.FFmpegError, true);
+                process.Kill();
+            } else
+            {
+                WriteInput("q");
+
+                closeTryCount++;
             }
-            return result;
         }
+    }
 
-        public override void Close()
+    private void FFmpeg_DataReceived(object sender, DataReceivedEventArgs e)
+    {
+        lock (this)
         {
-            StopRequested = true;
+            string data = e.Data;
 
-            if (IsProcessRunning && process != null)
+            if (!string.IsNullOrEmpty(data))
             {
-                if (closeTryCount >= 2)
-                {
-                    process.Kill();
-                }
-                else
-                {
-                    WriteInput("q");
+                Output.AppendLine(data);
 
-                    closeTryCount++;
+                if (!IsEncoding && data.Contains("Press [q] to stop", StringComparison.OrdinalIgnoreCase))
+                {
+                    IsEncoding = true;
+
+                    OnEncodeStarted();
+                }
+
+                if (TrackEncodeProgress)
+                {
+                    UpdateEncodeProgress(data);
                 }
             }
         }
+    }
 
-        private void FFmpeg_DataReceived(object sender, DataReceivedEventArgs e)
+    private void UpdateEncodeProgress(string data)
+    {
+        if (VideoDuration.Ticks == 0)
         {
-            lock (this)
+            //  Duration: 00:00:15.32, start: 0.000000, bitrate: 1095 kb/s
+            Match match = Regex.Match(data, @"Duration:\s*(\d+:\d+:\d+\.\d+),\s*start:", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
+            if (match.Success && TimeSpan.TryParse(match.Groups[1].Value, out TimeSpan duration))
             {
-                string data = e.Data;
+                VideoDuration = duration;
+            }
+        } else
+        {
+            //frame=  942 fps=187 q=35.0 size=    3072kB time=00:00:38.10 bitrate= 660.5kbits/s speed=7.55x
+            Match match = Regex.Match(data, @"time=\s*(\d+:\d+:\d+\.\d+)\s*bitrate=", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
 
-                if (!string.IsNullOrEmpty(data))
-                {
-                    Output.AppendLine(data);
+            if (match.Success && TimeSpan.TryParse(match.Groups[1].Value, out TimeSpan time))
+            {
+                EncodeTime = time;
+                EncodePercentage = ((float)EncodeTime.Ticks / VideoDuration.Ticks) * 100;
 
-                    if (!IsEncoding && data.Contains("Press [q] to stop", StringComparison.OrdinalIgnoreCase))
-                    {
-                        IsEncoding = true;
-
-                        OnEncodeStarted();
-                    }
-
-                    if (TrackEncodeProgress)
-                    {
-                        UpdateEncodeProgress(data);
-                    }
-                }
+                OnEncodeProgressChanged(EncodePercentage);
             }
         }
+    }
 
-        private void UpdateEncodeProgress(string data)
+    protected void OnEncodeStarted()
+    {
+        EncodeStarted?.Invoke();
+    }
+
+    protected void OnEncodeProgressChanged(float percentage)
+    {
+        EncodeProgressChanged?.Invoke(percentage);
+    }
+
+    public VideoInfo GetVideoInfo(string videoPath)
+    {
+        VideoInfo videoInfo = new();
+        videoInfo.FilePath = videoPath;
+
+        Run($"-i \"{videoPath}\"");
+        string output = Output.ToString();
+
+        Match matchInput = Regex.Match(output, @"Duration: (?<Duration>\d{2}:\d{2}:\d{2}\.\d{2}),.+?start: (?<Start>\d+\.\d+),.+?bitrate: (?<Bitrate>\d+) kb/s",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
+        if (matchInput.Success)
         {
-            if (VideoDuration.Ticks == 0)
-            {
-                //  Duration: 00:00:15.32, start: 0.000000, bitrate: 1095 kb/s
-                Match match = Regex.Match(data, @"Duration:\s*(\d+:\d+:\d+\.\d+),\s*start:", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
-
-                if (match.Success && TimeSpan.TryParse(match.Groups[1].Value, out TimeSpan duration))
-                {
-                    VideoDuration = duration;
-                }
-            }
-            else
-            {
-                //frame=  942 fps=187 q=35.0 size=    3072kB time=00:00:38.10 bitrate= 660.5kbits/s speed=7.55x
-                Match match = Regex.Match(data, @"time=\s*(\d+:\d+:\d+\.\d+)\s*bitrate=", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
-
-                if (match.Success && TimeSpan.TryParse(match.Groups[1].Value, out TimeSpan time))
-                {
-                    EncodeTime = time;
-                    EncodePercentage = ((float)EncodeTime.Ticks / VideoDuration.Ticks) * 100;
-
-                    OnEncodeProgressChanged(EncodePercentage);
-                }
-            }
+            videoInfo.Duration = TimeSpan.Parse(matchInput.Groups["Duration"].Value);
+            //videoInfo.Start = TimeSpan.Parse(match.Groups["Start"].Value);
+            videoInfo.Bitrate = int.Parse(matchInput.Groups["Bitrate"].Value);
+        } else
+        {
+            return null;
         }
 
-        protected void OnEncodeStarted()
+        Match matchVideoStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Video: (?<Codec>.+?) \(.+?,.+?, (?<Width>\d+)x(?<Height>\d+).+?, (?<FPS>\d+(?:\.\d+)?) fps",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
+        if (matchVideoStream.Success)
         {
-            EncodeStarted?.Invoke();
+            videoInfo.VideoCodec = matchVideoStream.Groups["Codec"].Value;
+            videoInfo.VideoResolution = new Size(int.Parse(matchVideoStream.Groups["Width"].Value), int.Parse(matchVideoStream.Groups["Height"].Value));
+            videoInfo.VideoFPS = double.Parse(matchVideoStream.Groups["FPS"].Value, CultureInfo.InvariantCulture);
         }
 
-        protected void OnEncodeProgressChanged(float percentage)
+        Match matchAudioStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Audio: (?<Codec>.+?)(?: \(|,)",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
+        if (matchAudioStream.Success)
         {
-            EncodeProgressChanged?.Invoke(percentage);
+            videoInfo.AudioCodec = matchAudioStream.Groups["Codec"].Value;
         }
 
-        public VideoInfo GetVideoInfo(string videoPath)
+        return videoInfo;
+    }
+
+    public DirectShowDevices GetDirectShowDevices()
+    {
+        DirectShowDevices devices = new();
+
+        Run("-list_devices true -f dshow -i dummy");
+
+        string output = Output.ToString();
+        string[] lines = output.Lines();
+        bool isAudio = false;
+        Regex regex = new(@"\[dshow @ \w+\] +""(.+)""", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+        foreach (string line in lines)
         {
-            VideoInfo videoInfo = new VideoInfo();
-            videoInfo.FilePath = videoPath;
-
-            Run($"-i \"{videoPath}\"");
-            string output = Output.ToString();
-
-            Match matchInput = Regex.Match(output, @"Duration: (?<Duration>\d{2}:\d{2}:\d{2}\.\d{2}),.+?start: (?<Start>\d+\.\d+),.+?bitrate: (?<Bitrate>\d+) kb/s",
-                RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
-
-            if (matchInput.Success)
+            if (line.Contains("] DirectShow video devices"))
             {
-                videoInfo.Duration = TimeSpan.Parse(matchInput.Groups["Duration"].Value);
-                //videoInfo.Start = TimeSpan.Parse(match.Groups["Start"].Value);
-                videoInfo.Bitrate = int.Parse(matchInput.Groups["Bitrate"].Value);
-            }
-            else
+                isAudio = false;
+                continue;
+            } else if (line.Contains("] DirectShow audio devices"))
             {
-                return null;
+                isAudio = true;
+                continue;
             }
 
-            Match matchVideoStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Video: (?<Codec>.+?) \(.+?,.+?, (?<Width>\d+)x(?<Height>\d+).+?, (?<FPS>\d+(?:\.\d+)?) fps",
-                RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+            Match match = regex.Match(line);
 
-            if (matchVideoStream.Success)
+            if (match.Success)
             {
-                videoInfo.VideoCodec = matchVideoStream.Groups["Codec"].Value;
-                videoInfo.VideoResolution = new Size(int.Parse(matchVideoStream.Groups["Width"].Value), int.Parse(matchVideoStream.Groups["Height"].Value));
-                videoInfo.VideoFPS = double.Parse(matchVideoStream.Groups["FPS"].Value, CultureInfo.InvariantCulture);
-            }
-
-            Match matchAudioStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Audio: (?<Codec>.+?)(?: \(|,)",
-                RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
-
-            if (matchAudioStream.Success)
-            {
-                videoInfo.AudioCodec = matchAudioStream.Groups["Codec"].Value;
-            }
-
-            return videoInfo;
-        }
-
-        public DirectShowDevices GetDirectShowDevices()
-        {
-            DirectShowDevices devices = new DirectShowDevices();
-
-            Run("-list_devices true -f dshow -i dummy");
-
-            string output = Output.ToString();
-            string[] lines = output.Lines();
-            bool isAudio = false;
-            Regex regex = new Regex(@"\[dshow @ \w+\] +""(.+)""", RegexOptions.Compiled | RegexOptions.CultureInvariant);
-
-            foreach (string line in lines)
-            {
-                if (line.Contains("] DirectShow video devices"))
+                if (line.EndsWith("\" (video)"))
                 {
                     isAudio = false;
-                    continue;
-                }
-                else if (line.Contains("] DirectShow audio devices"))
+                } else if (line.EndsWith("\" (audio)"))
                 {
                     isAudio = true;
-                    continue;
                 }
 
-                Match match = regex.Match(line);
+                string deviceName = match.Groups[1].Value;
 
-                if (match.Success)
+                if (isAudio)
                 {
-                    if (line.EndsWith("\" (video)"))
-                    {
-                        isAudio = false;
-                    }
-                    else if (line.EndsWith("\" (audio)"))
-                    {
-                        isAudio = true;
-                    }
-
-                    string deviceName = match.Groups[1].Value;
-
-                    if (isAudio)
-                    {
-                        devices.AudioDevices.Add(deviceName);
-                    }
-                    else
-                    {
-                        devices.VideoDevices.Add(deviceName);
-                    }
+                    devices.AudioDevices.Add(deviceName);
+                } else
+                {
+                    devices.VideoDevices.Add(deviceName);
                 }
             }
-
-            return devices;
         }
 
-        public void ConcatenateVideos(string[] inputFiles, string outputFile, bool autoDeleteInputFiles = false)
+        return devices;
+    }
+
+    public void ConcatenateVideos(string[] inputFiles, string outputFile, bool autoDeleteInputFiles = false)
+    {
+        string listFile = outputFile + ".txt";
+        string contents = string.Join(Environment.NewLine, inputFiles.Select(inputFile => $"file '{inputFile}'"));
+        File.WriteAllText(listFile, contents);
+
+        try
         {
-            string listFile = outputFile + ".txt";
-            string contents = string.Join(Environment.NewLine, inputFiles.Select(inputFile => $"file '{inputFile}'"));
-            File.WriteAllText(listFile, contents);
+            bool result = Run($"-f concat -safe 0 -i \"{listFile}\" -c copy \"{outputFile}\"");
 
-            try
+            if (result && autoDeleteInputFiles)
             {
-                bool result = Run($"-f concat -safe 0 -i \"{listFile}\" -c copy \"{outputFile}\"");
-
-                if (result && autoDeleteInputFiles)
+                foreach (string inputFile in inputFiles)
                 {
-                    foreach (string inputFile in inputFiles)
+                    if (File.Exists(inputFile))
                     {
-                        if (File.Exists(inputFile))
-                        {
-                            File.Delete(inputFile);
-                        }
+                        File.Delete(inputFile);
                     }
                 }
             }
-            finally
+        } finally
+        {
+            if (File.Exists(listFile))
             {
-                if (File.Exists(listFile))
-                {
-                    File.Delete(listFile);
-                }
+                File.Delete(listFile);
             }
         }
     }

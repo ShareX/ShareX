@@ -23,15 +23,15 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.Settings;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib;
+
+public class ImageEffectsSerializationBinder : KnownTypesSerializationBinder
 {
-    public class ImageEffectsSerializationBinder : KnownTypesSerializationBinder
+    public ImageEffectsSerializationBinder()
     {
-        public ImageEffectsSerializationBinder()
-        {
-            KnownTypes = Helpers.FindSubclassesOf<ImageEffect>();
-        }
+        KnownTypes = Helpers.FindSubclassesOf<ImageEffect>();
     }
 }

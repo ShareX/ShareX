@@ -27,65 +27,61 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class MenuButton : Button
 {
-    public class MenuButton : Button
+    [DefaultValue(null)]
+    public ContextMenuStrip Menu { get; set; }
+
+    [DefaultValue(false)]
+    public bool ShowMenuUnderCursor { get; set; }
+
+    public void OpenMenu()
     {
-        [DefaultValue(null)]
-        public ContextMenuStrip Menu { get; set; }
-
-        [DefaultValue(false)]
-        public bool ShowMenuUnderCursor { get; set; }
-
-        public void OpenMenu()
+        if (Menu != null)
         {
-            if (Menu != null)
+            OpenMenu(new Point(0, Height));
+        }
+    }
+
+    public void OpenMenu(Point menuPosition)
+    {
+        if (Menu != null)
+        {
+            Menu.Show(this, menuPosition);
+        }
+    }
+
+    protected override void OnMouseDown(MouseEventArgs mevent)
+    {
+        base.OnMouseDown(mevent);
+
+        if (Menu != null && mevent.Button == MouseButtons.Left)
+        {
+            if (ShowMenuUnderCursor)
             {
-                OpenMenu(new Point(0, Height));
+                OpenMenu(mevent.Location);
+            } else
+            {
+                OpenMenu();
             }
         }
+    }
 
-        public void OpenMenu(Point menuPosition)
+    protected override void OnPaint(PaintEventArgs pevent)
+    {
+        base.OnPaint(pevent);
+
+        if (Menu != null)
         {
-            if (Menu != null)
-            {
-                Menu.Show(this, menuPosition);
-            }
-        }
+            int arrowX = ClientRectangle.Width - Padding.Right - 14;
+            int arrowY = ClientRectangle.Height / 2 - 1;
 
-        protected override void OnMouseDown(MouseEventArgs mevent)
-        {
-            base.OnMouseDown(mevent);
-
-            if (Menu != null && mevent.Button == MouseButtons.Left)
-            {
-                if (ShowMenuUnderCursor)
-                {
-                    OpenMenu(mevent.Location);
-                }
-                else
-                {
-                    OpenMenu();
-                }
-            }
-        }
-
-        protected override void OnPaint(PaintEventArgs pevent)
-        {
-            base.OnPaint(pevent);
-
-            if (Menu != null)
-            {
-                int arrowX = ClientRectangle.Width - Padding.Right - 14;
-                int arrowY = (ClientRectangle.Height / 2) - 1;
-
-                Color color = Enabled ? ForeColor : SystemColors.ControlDark;
-                using (Brush brush = new SolidBrush(color))
-                {
-                    Point[] arrows = new Point[] { new Point(arrowX, arrowY), new Point(arrowX + 7, arrowY), new Point(arrowX + 3, arrowY + 4) };
-                    pevent.Graphics.FillPolygon(brush, arrows);
-                }
-            }
+            Color color = Enabled ? ForeColor : SystemColors.ControlDark;
+            using Brush brush = new SolidBrush(color);
+            Point[] arrows = new Point[] { new(arrowX, arrowY), new(arrowX + 7, arrowY), new(arrowX + 3, arrowY + 4) };
+            pevent.Graphics.FillPolygon(brush, arrows);
         }
     }
 }

@@ -23,125 +23,125 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Forms;
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Native;
+
 using System;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ShareX
-{
-    public abstract class CaptureBase
-    {
-        public bool AllowAutoHideForm { get; set; } = true;
-        public bool AllowAnnotation { get; set; } = true;
+namespace ShareX.CaptureHelpers;
 
-        public void Capture(bool autoHideForm)
+public abstract class CaptureBase
+{
+    public bool AllowAutoHideForm { get; set; } = true;
+    public bool AllowAnnotation { get; set; } = true;
+
+    public void Capture(bool autoHideForm)
+    {
+        Capture(null, autoHideForm);
+    }
+
+    public void Capture(TaskSettings taskSettings = null, bool autoHideForm = false)
+    {
+        taskSettings ??= TaskSettings.GetDefaultTaskSettings();
+
+        if (taskSettings.GeneralSettings.ToastWindowAutoHide)
         {
-            Capture(null, autoHideForm);
+            NotificationForm.CloseActiveForm();
         }
 
-        public void Capture(TaskSettings taskSettings = null, bool autoHideForm = false)
+        if (taskSettings.CaptureSettings.ScreenshotDelay > 0)
         {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+            int delay = (int)(taskSettings.CaptureSettings.ScreenshotDelay * 1000);
 
-            if (taskSettings.GeneralSettings.ToastWindowAutoHide)
-            {
-                NotificationForm.CloseActiveForm();
-            }
-
-            if (taskSettings.CaptureSettings.ScreenshotDelay > 0)
-            {
-                int delay = (int)(taskSettings.CaptureSettings.ScreenshotDelay * 1000);
-
-                Task.Delay(delay).ContinueInCurrentContext(() =>
-                {
-                    CaptureInternal(taskSettings, autoHideForm);
-                });
-            }
-            else
+            Task.Delay(delay).ContinueInCurrentContext(() =>
             {
                 CaptureInternal(taskSettings, autoHideForm);
-            }
+            });
+        } else
+        {
+            CaptureInternal(taskSettings, autoHideForm);
+        }
+    }
+
+    protected abstract TaskMetadata Execute(TaskSettings taskSettings);
+
+    private void CaptureInternal(TaskSettings taskSettings, bool autoHideForm)
+    {
+        if (autoHideForm && AllowAutoHideForm)
+        {
+            Program.MainForm.Hide();
+            Thread.Sleep(250);
         }
 
-        protected abstract TaskMetadata Execute(TaskSettings taskSettings);
+        TaskMetadata metadata = null;
 
-        private void CaptureInternal(TaskSettings taskSettings, bool autoHideForm)
+        try
+        {
+            AllowAnnotation = true;
+            metadata = Execute(taskSettings);
+        } catch (Exception ex)
+        {
+            DebugHelper.WriteException(ex);
+        } finally
         {
             if (autoHideForm && AllowAutoHideForm)
             {
-                Program.MainForm.Hide();
-                Thread.Sleep(250);
+                Program.MainForm.ForceActivate();
             }
 
-            TaskMetadata metadata = null;
-
-            try
-            {
-                AllowAnnotation = true;
-                metadata = Execute(taskSettings);
-            }
-            catch (Exception ex)
-            {
-                DebugHelper.WriteException(ex);
-            }
-            finally
-            {
-                if (autoHideForm && AllowAutoHideForm)
-                {
-                    Program.MainForm.ForceActivate();
-                }
-
-                AfterCapture(metadata, taskSettings);
-            }
+            AfterCapture(metadata, taskSettings);
         }
+    }
 
-        private void AfterCapture(TaskMetadata metadata, TaskSettings taskSettings)
+    private void AfterCapture(TaskMetadata metadata, TaskSettings taskSettings)
+    {
+        if (metadata != null && metadata.Image != null)
         {
-            if (metadata != null && metadata.Image != null)
+            TaskHelpers.PlayNotificationSoundAsync(NotificationSound.Capture, taskSettings);
+
+            if (taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage) && !AllowAnnotation)
             {
-                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.Capture, taskSettings);
-
-                if (taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage) && !AllowAnnotation)
-                {
-                    taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
-                }
-
-                if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture &&
-                    GetType() != typeof(CaptureRegion) && GetType() != typeof(CaptureLastRegion))
-                {
-                    taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
-                }
-
-                UploadManager.RunImageTask(metadata, taskSettings);
-            }
-        }
-
-        protected TaskMetadata CreateMetadata()
-        {
-            return CreateMetadata(Rectangle.Empty, null);
-        }
-
-        protected TaskMetadata CreateMetadata(Rectangle insideRect)
-        {
-            return CreateMetadata(insideRect, "explorer");
-        }
-
-        protected TaskMetadata CreateMetadata(Rectangle insideRect, string ignoreProcess)
-        {
-            TaskMetadata metadata = new TaskMetadata();
-
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-            WindowInfo windowInfo = new WindowInfo(handle);
-
-            if ((ignoreProcess == null || !windowInfo.ProcessName.Equals(ignoreProcess, StringComparison.OrdinalIgnoreCase)) &&
-                (insideRect.IsEmpty || windowInfo.Rectangle.Contains(insideRect)))
-            {
-                metadata.UpdateInfo(windowInfo);
+                taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
             }
 
-            return metadata;
+            if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture &&
+                GetType() != typeof(CaptureRegion) && GetType() != typeof(CaptureLastRegion))
+            {
+                taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
+            }
+
+            UploadManager.RunImageTask(metadata, taskSettings);
         }
+    }
+
+    protected TaskMetadata CreateMetadata()
+    {
+        return CreateMetadata(Rectangle.Empty, null);
+    }
+
+    protected TaskMetadata CreateMetadata(Rectangle insideRect)
+    {
+        return CreateMetadata(insideRect, "explorer");
+    }
+
+    protected TaskMetadata CreateMetadata(Rectangle insideRect, string ignoreProcess)
+    {
+        TaskMetadata metadata = new();
+
+        IntPtr handle = NativeMethods.GetForegroundWindow();
+        WindowInfo windowInfo = new(handle);
+
+        if ((ignoreProcess == null || !windowInfo.ProcessName.Equals(ignoreProcess, StringComparison.OrdinalIgnoreCase)) &&
+            (insideRect.IsEmpty || windowInfo.Rectangle.Contains(insideRect)))
+        {
+            metadata.UpdateInfo(windowInfo);
+        }
+
+        return metadata;
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace ShareX.ScreenCaptureLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.ScreenCaptureLib
 {
     partial class NewImageForm
     {
@@ -36,7 +38,7 @@
             this.nudHeight = new System.Windows.Forms.NumericUpDown();
             this.nudWidth = new System.Windows.Forms.NumericUpDown();
             this.cbTransparent = new System.Windows.Forms.CheckBox();
-            this.btnChangeColor = new ShareX.HelpersLib.ColorButton();
+            this.btnChangeColor = new ShareX.HelpersLib.Controls.ColorButton();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.gbBackgroundColor = new System.Windows.Forms.GroupBox();
@@ -169,7 +171,7 @@
         private System.Windows.Forms.NumericUpDown nudHeight;
         private System.Windows.Forms.NumericUpDown nudWidth;
         private System.Windows.Forms.CheckBox cbTransparent;
-        private HelpersLib.ColorButton btnChangeColor;
+        private ColorButton btnChangeColor;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.GroupBox gbBackgroundColor;

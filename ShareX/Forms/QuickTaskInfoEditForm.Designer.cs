@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class QuickTaskInfoEditForm
     {
@@ -30,9 +32,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuickTaskInfoEditForm));
-            this.mbAfterCaptureTasks = new ShareX.HelpersLib.MenuButton();
+            this.mbAfterCaptureTasks = new ShareX.HelpersLib.Controls.MenuButton();
             this.cmsAfterCapture = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mbAfterUploadTasks = new ShareX.HelpersLib.MenuButton();
+            this.mbAfterUploadTasks = new ShareX.HelpersLib.Controls.MenuButton();
             this.cmsAfterUpload = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblAfterCaptureTasks = new System.Windows.Forms.Label();
             this.lblAfterUploadTasks = new System.Windows.Forms.Label();
@@ -116,8 +118,8 @@
 
         #endregion
 
-        private HelpersLib.MenuButton mbAfterCaptureTasks;
-        private HelpersLib.MenuButton mbAfterUploadTasks;
+        private MenuButton mbAfterCaptureTasks;
+        private MenuButton mbAfterUploadTasks;
         private System.Windows.Forms.ContextMenuStrip cmsAfterCapture;
         private System.Windows.Forms.ContextMenuStrip cmsAfterUpload;
         private System.Windows.Forms.Label lblAfterCaptureTasks;

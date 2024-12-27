@@ -24,41 +24,40 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.UpdateChecker;
+using ShareX.HelpersLib.Zip;
+
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public static class FFmpegGitHubDownloader
 {
-    public static class FFmpegGitHubDownloader
+    public static async Task<DialogResult> DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
     {
-        public static async Task<DialogResult> DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
-        {
-            FFmpegUpdateChecker updateChecker = new FFmpegUpdateChecker("ShareX", "FFmpeg");
-            string url = await updateChecker.GetLatestDownloadURL(true);
+        FFmpegUpdateChecker updateChecker = new("ShareX", "FFmpeg");
+        string url = await updateChecker.GetLatestDownloadURL(true);
 
-            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
-            {
-                form.InstallType = InstallType.Event;
-                form.RunInstallerInBackground = async;
-                form.InstallRequested += installRequested;
-                return form.ShowDialog();
-            }
+        using DownloaderForm form = new(url, "ffmpeg.zip");
+        form.InstallType = InstallType.Event;
+        form.RunInstallerInBackground = async;
+        form.InstallRequested += installRequested;
+        return form.ShowDialog();
+    }
+
+    public static bool ExtractFFmpeg(string archivePath, string extractPath)
+    {
+        try
+        {
+            ZipManager.Extract(archivePath, extractPath, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
+            return true;
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
         }
 
-        public static bool ExtractFFmpeg(string archivePath, string extractPath)
-        {
-            try
-            {
-                ZipManager.Extract(archivePath, extractPath, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 200_000_000);
-                return true;
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
-        }
+        return false;
     }
 }

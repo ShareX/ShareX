@@ -23,12 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.SharingServices
-{
-    public class GoogleLensSharingService : SimpleURLSharingService
-    {
-        public override URLSharingServices EnumValue { get; } = URLSharingServices.GoogleImageSearch;
+namespace ShareX.UploadersLib.SharingServices;
 
-        protected override string URLFormatString { get; } = "https://lens.google.com/uploadbyurl?url={0}";
-    }
+public class GoogleLensSharingService : SimpleURLSharingService
+{
+    public override URLSharingServices EnumValue { get; } = URLSharingServices.GoogleImageSearch;
+
+    protected override string URLFormatString { get; } = "https://lens.google.com/uploadbyurl?url={0}";
 }

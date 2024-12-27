@@ -23,165 +23,169 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.Settings;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders;
+
+public class PastebinTextUploaderService : TextUploaderService
 {
-    public class PastebinTextUploaderService : TextUploaderService
+    public override TextDestination EnumValue { get; } = TextDestination.Pastebin;
+
+    public override Icon ServiceIcon => Resources.Pastebin;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override TextDestination EnumValue { get; } = TextDestination.Pastebin;
+        PastebinSettings settings = config.PastebinSettings;
 
-        public override Icon ServiceIcon => Resources.Pastebin;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        if (string.IsNullOrEmpty(settings.TextFormat))
         {
-            PastebinSettings settings = config.PastebinSettings;
-
-            if (string.IsNullOrEmpty(settings.TextFormat))
-            {
-                settings.TextFormat = taskInfo.TextFormat;
-            }
-
-            return new Pastebin(APIKeys.PastebinKey, settings);
+            settings.TextFormat = taskInfo.TextFormat;
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPastebin;
+        return new Pastebin(APIKeys.APIKeys.PastebinKey, settings);
     }
 
-    public sealed class Pastebin : TextUploader
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPastebin;
+}
+
+public sealed class Pastebin : TextUploader
+{
+    private string APIKey;
+
+    public PastebinSettings Settings { get; private set; }
+
+    public Pastebin(string apiKey)
     {
-        private string APIKey;
+        APIKey = apiKey;
+        Settings = new PastebinSettings();
+    }
 
-        public PastebinSettings Settings { get; private set; }
+    public Pastebin(string apiKey, PastebinSettings settings)
+    {
+        APIKey = apiKey;
+        Settings = settings;
+    }
 
-        public Pastebin(string apiKey)
+    public bool Login()
+    {
+        if (!string.IsNullOrEmpty(Settings.Username) && !string.IsNullOrEmpty(Settings.Password))
         {
-            APIKey = apiKey;
-            Settings = new PastebinSettings();
-        }
+            Dictionary<string, string> loginArgs = new();
 
-        public Pastebin(string apiKey, PastebinSettings settings)
-        {
-            APIKey = apiKey;
-            Settings = settings;
-        }
+            loginArgs.Add("api_dev_key", APIKey);
+            loginArgs.Add("api_user_name", Settings.Username);
+            loginArgs.Add("api_user_password", Settings.Password);
 
-        public bool Login()
-        {
-            if (!string.IsNullOrEmpty(Settings.Username) && !string.IsNullOrEmpty(Settings.Password))
+            string loginResponse = SendRequestMultiPart("https://pastebin.com/api/api_login.php", loginArgs);
+
+            if (!string.IsNullOrEmpty(loginResponse) && !loginResponse.StartsWith("Bad API request"))
             {
-                Dictionary<string, string> loginArgs = new Dictionary<string, string>();
-
-                loginArgs.Add("api_dev_key", APIKey);
-                loginArgs.Add("api_user_name", Settings.Username);
-                loginArgs.Add("api_user_password", Settings.Password);
-
-                string loginResponse = SendRequestMultiPart("https://pastebin.com/api/api_login.php", loginArgs);
-
-                if (!string.IsNullOrEmpty(loginResponse) && !loginResponse.StartsWith("Bad API request"))
-                {
-                    Settings.UserKey = loginResponse;
-                    return true;
-                }
-            }
-
-            Settings.UserKey = null;
-            Errors.Add("Pastebin login failed.");
-            return false;
-        }
-
-        public override UploadResult UploadText(string text, string fileName)
-        {
-            UploadResult ur = new UploadResult();
-
-            if (!string.IsNullOrEmpty(text) && Settings != null)
-            {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-
-                args.Add("api_dev_key", APIKey); // which is your unique API Developers Key
-                args.Add("api_option", "paste"); // set as 'paste', this will indicate you want to create a new paste
-                args.Add("api_paste_code", text); // this is the text that will be written inside your paste
-
-                // Optional args
-                args.Add("api_paste_name", Settings.Title); // this will be the name / title of your paste
-                args.Add("api_paste_format", Settings.TextFormat); // this will be the syntax highlighting value
-                args.Add("api_paste_private", GetPrivacy(Settings.Exposure)); // this makes a paste public or private, public = 0, private = 1
-                args.Add("api_paste_expire_date", GetExpiration(Settings.Expiration)); // this sets the expiration date of your paste
-
-                if (!string.IsNullOrEmpty(Settings.UserKey))
-                {
-                    args.Add("api_user_key", Settings.UserKey); // this paramater is part of the login system
-                }
-
-                ur.Response = SendRequestMultiPart("https://pastebin.com/api/api_post.php", args);
-
-                if (URLHelpers.IsValidURL(ur.Response))
-                {
-                    if (Settings.RawURL)
-                    {
-                        string id = URLHelpers.GetFileName(ur.Response);
-                        ur.URL = "https://pastebin.com/raw/" + id;
-                    }
-                    else
-                    {
-                        ur.URL = ur.Response;
-                    }
-                }
-                else
-                {
-                    Errors.Add(ur.Response);
-                }
-            }
-
-            return ur;
-        }
-
-        private string GetPrivacy(PastebinPrivacy privacy)
-        {
-            switch (privacy)
-            {
-                case PastebinPrivacy.Public:
-                    return "0";
-                default:
-                case PastebinPrivacy.Unlisted:
-                    return "1";
-                case PastebinPrivacy.Private:
-                    return "2";
+                Settings.UserKey = loginResponse;
+                return true;
             }
         }
 
-        private string GetExpiration(PastebinExpiration expiration)
+        Settings.UserKey = null;
+        Errors.Add("Pastebin login failed.");
+        return false;
+    }
+
+    public override UploadResult UploadText(string text, string fileName)
+    {
+        UploadResult ur = new();
+
+        if (!string.IsNullOrEmpty(text) && Settings != null)
         {
-            switch (expiration)
+            Dictionary<string, string> args = new();
+
+            args.Add("api_dev_key", APIKey); // which is your unique API Developers Key
+            args.Add("api_option", "paste"); // set as 'paste', this will indicate you want to create a new paste
+            args.Add("api_paste_code", text); // this is the text that will be written inside your paste
+
+            // Optional args
+            args.Add("api_paste_name", Settings.Title); // this will be the name / title of your paste
+            args.Add("api_paste_format", Settings.TextFormat); // this will be the syntax highlighting value
+            args.Add("api_paste_private", GetPrivacy(Settings.Exposure)); // this makes a paste public or private, public = 0, private = 1
+            args.Add("api_paste_expire_date", GetExpiration(Settings.Expiration)); // this sets the expiration date of your paste
+
+            if (!string.IsNullOrEmpty(Settings.UserKey))
             {
-                default:
-                case PastebinExpiration.N:
-                    return "N";
-                case PastebinExpiration.M10:
-                    return "10M";
-                case PastebinExpiration.H1:
-                    return "1H";
-                case PastebinExpiration.D1:
-                    return "1D";
-                case PastebinExpiration.W1:
-                    return "1W";
-                case PastebinExpiration.W2:
-                    return "2W";
-                case PastebinExpiration.M1:
-                    return "1M";
+                args.Add("api_user_key", Settings.UserKey); // this paramater is part of the login system
+            }
+
+            ur.Response = SendRequestMultiPart("https://pastebin.com/api/api_post.php", args);
+
+            if (URLHelpers.IsValidURL(ur.Response))
+            {
+                if (Settings.RawURL)
+                {
+                    string id = URLHelpers.GetFileName(ur.Response);
+                    ur.URL = "https://pastebin.com/raw/" + id;
+                } else
+                {
+                    ur.URL = ur.Response;
+                }
+            } else
+            {
+                Errors.Add(ur.Response);
             }
         }
 
-        public static List<PastebinSyntaxInfo> GetSyntaxList()
+        return ur;
+    }
+
+    private string GetPrivacy(PastebinPrivacy privacy)
+    {
+        switch (privacy)
         {
-            string syntaxList = @"4cs = 4CS
+            case PastebinPrivacy.Public:
+                return "0";
+            default:
+            case PastebinPrivacy.Unlisted:
+                return "1";
+            case PastebinPrivacy.Private:
+                return "2";
+        }
+    }
+
+    private string GetExpiration(PastebinExpiration expiration)
+    {
+        switch (expiration)
+        {
+            default:
+            case PastebinExpiration.N:
+                return "N";
+            case PastebinExpiration.M10:
+                return "10M";
+            case PastebinExpiration.H1:
+                return "1H";
+            case PastebinExpiration.D1:
+                return "1D";
+            case PastebinExpiration.W1:
+                return "1W";
+            case PastebinExpiration.W2:
+                return "2W";
+            case PastebinExpiration.M1:
+                return "1M";
+        }
+    }
+
+    public static List<PastebinSyntaxInfo> GetSyntaxList()
+    {
+        string syntaxList = @"4cs = 4CS
 6502acme = 6502 ACME Cross Assembler
 6502kickass = 6502 Kick Assembler
 6502tasm = 6502 TASM/64TASS
@@ -434,76 +438,75 @@ yaml = YAML
 z80 = Z80 Assembler
 zxbasic = ZXBasic";
 
-            List<PastebinSyntaxInfo> result = new List<PastebinSyntaxInfo>();
-            result.Add(new PastebinSyntaxInfo("None", "text"));
+        List<PastebinSyntaxInfo> result = new();
+        result.Add(new PastebinSyntaxInfo("None", "text"));
 
-            foreach (string line in syntaxList.Lines().Select(x => x.Trim()))
+        foreach (string line in syntaxList.Lines().Select(x => x.Trim()))
+        {
+            int index = line.IndexOf('=');
+
+            if (index > 0)
             {
-                int index = line.IndexOf('=');
-
-                if (index > 0)
-                {
-                    PastebinSyntaxInfo syntaxInfo = new PastebinSyntaxInfo();
-                    syntaxInfo.Value = line.Remove(index).Trim();
-                    syntaxInfo.Name = line.Substring(index + 1).Trim();
-                    result.Add(syntaxInfo);
-                }
+                PastebinSyntaxInfo syntaxInfo = new();
+                syntaxInfo.Value = line.Remove(index).Trim();
+                syntaxInfo.Name = line.Substring(index + 1).Trim();
+                result.Add(syntaxInfo);
             }
-
-            return result;
-        }
-    }
-
-    public enum PastebinPrivacy // Localized
-    {
-        Public,
-        Unlisted,
-        Private
-    }
-
-    public enum PastebinExpiration // Localized
-    {
-        N,
-        M10,
-        H1,
-        D1,
-        W1,
-        W2,
-        M1
-    }
-
-    public class PastebinSyntaxInfo
-    {
-        public string Name { get; set; }
-        public string Value { get; set; }
-
-        public PastebinSyntaxInfo()
-        {
         }
 
-        public PastebinSyntaxInfo(string name, string value)
-        {
-            Name = name;
-            Value = value;
-        }
-
-        public override string ToString()
-        {
-            return Name;
-        }
+        return result;
     }
+}
 
-    public class PastebinSettings
+public enum PastebinPrivacy // Localized
+{
+    Public,
+    Unlisted,
+    Private
+}
+
+public enum PastebinExpiration // Localized
+{
+    N,
+    M10,
+    H1,
+    D1,
+    W1,
+    W2,
+    M1
+}
+
+public class PastebinSyntaxInfo
+{
+    public string Name { get; set; }
+    public string Value { get; set; }
+
+    public PastebinSyntaxInfo()
     {
-        public string Username { get; set; }
-        [JsonEncrypt]
-        public string Password { get; set; }
-        public PastebinPrivacy Exposure { get; set; } = PastebinPrivacy.Unlisted;
-        public PastebinExpiration Expiration { get; set; } = PastebinExpiration.N;
-        public string Title { get; set; }
-        public string TextFormat { get; set; } = "text";
-        [JsonEncrypt]
-        public string UserKey { get; set; }
-        public bool RawURL { get; set; }
     }
+
+    public PastebinSyntaxInfo(string name, string value)
+    {
+        Name = name;
+        Value = value;
+    }
+
+    public override string ToString()
+    {
+        return Name;
+    }
+}
+
+public class PastebinSettings
+{
+    public string Username { get; set; }
+    [JsonEncrypt]
+    public string Password { get; set; }
+    public PastebinPrivacy Exposure { get; set; } = PastebinPrivacy.Unlisted;
+    public PastebinExpiration Expiration { get; set; } = PastebinExpiration.N;
+    public string Title { get; set; }
+    public string TextFormat { get; set; } = "text";
+    [JsonEncrypt]
+    public string UserKey { get; set; }
+    public bool RawURL { get; set; }
 }

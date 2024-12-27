@@ -24,47 +24,50 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.NameParser;
 using ShareX.Properties;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class ClipboardFormatForm : Form
 {
-    public partial class ClipboardFormatForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ClipboardFormat ClipboardFormat { get; private set; }
+
+    public ClipboardFormatForm() : this(new ClipboardFormat())
     {
-        public ClipboardFormat ClipboardFormat { get; private set; }
+    }
 
-        public ClipboardFormatForm() : this(new ClipboardFormat())
-        {
-        }
+    public ClipboardFormatForm(ClipboardFormat cbf)
+    {
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public ClipboardFormatForm(ClipboardFormat cbf)
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+        ClipboardFormat = cbf;
+        txtDescription.Text = cbf.Description ?? "";
+        txtFormat.Text = cbf.Format ?? "";
+        CodeMenu.Create<CodeMenuEntryFilename>(txtFormat);
+        lblExample.Text = string.Format(Resources.ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_,
+            "$result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $thumbnailfilename, $thumbnailfilenamenoext, $folderpath, $foldername, $uploadtime",
+            "%y, %mo, %d");
+    }
 
-            ClipboardFormat = cbf;
-            txtDescription.Text = cbf.Description ?? "";
-            txtFormat.Text = cbf.Format ?? "";
-            CodeMenu.Create<CodeMenuEntryFilename>(txtFormat);
-            lblExample.Text = string.Format(Resources.ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_,
-                "$result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $thumbnailfilename, $thumbnailfilenamenoext, $folderpath, $foldername, $uploadtime",
-                "%y, %mo, %d");
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        ClipboardFormat.Description = txtDescription.Text;
+        ClipboardFormat.Format = txtFormat.Text;
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            ClipboardFormat.Description = txtDescription.Text;
-            ClipboardFormat.Format = txtFormat.Text;
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

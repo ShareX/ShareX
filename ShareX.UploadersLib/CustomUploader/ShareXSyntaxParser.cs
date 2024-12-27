@@ -26,83 +26,69 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.CustomUploader;
+
+public abstract class ShareXSyntaxParser
 {
-    public abstract class ShareXSyntaxParser
+    public virtual char SyntaxStart { get; } = '{';
+    public virtual char SyntaxEnd { get; } = '}';
+    public virtual char SyntaxParameterStart { get; } = ':';
+    public virtual char SyntaxParameterDelimiter { get; } = '|';
+    public virtual char SyntaxEscape { get; } = '\\';
+
+    public virtual string Parse(string text)
     {
-        public virtual char SyntaxStart { get; } = '{';
-        public virtual char SyntaxEnd { get; } = '}';
-        public virtual char SyntaxParameterStart { get; } = ':';
-        public virtual char SyntaxParameterDelimiter { get; } = '|';
-        public virtual char SyntaxEscape { get; } = '\\';
-
-        public virtual string Parse(string text)
-        {
-            if (string.IsNullOrEmpty(text))
-            {
-                return "";
-            }
-
-            return Parse(text, false, 0, out _);
-        }
-
-        private string Parse(string text, bool isFunction, int startPosition, out int endPosition)
-        {
-            StringBuilder sbOutput = new StringBuilder();
-            bool escape = false;
-            int i;
-
-            for (i = startPosition; i < text.Length; i++)
-            {
-                char c = text[i];
-
-                if (!escape)
-                {
-                    if (c == SyntaxStart)
-                    {
-                        string parsed = Parse(text, true, i + 1, out i);
-                        sbOutput.Append(parsed);
-                        continue;
-                    }
-                    else if (c == SyntaxEnd || c == SyntaxParameterDelimiter)
-                    {
-                        break;
-                    }
-                    else if (c == SyntaxEscape)
-                    {
-                        escape = true;
-                        continue;
-                    }
-                    else if (isFunction && c == SyntaxParameterStart)
-                    {
-                        List<string> parameters = new List<string>();
-
-                        do
-                        {
-                            string parsed = Parse(text, false, i + 1, out i);
-                            parameters.Add(parsed);
-                        } while (i < text.Length && text[i] == SyntaxParameterDelimiter);
-
-                        endPosition = i;
-
-                        return CallFunction(sbOutput.ToString(), parameters.ToArray());
-                    }
-                }
-
-                escape = false;
-                sbOutput.Append(c);
-            }
-
-            endPosition = i;
-
-            if (isFunction)
-            {
-                return CallFunction(sbOutput.ToString());
-            }
-
-            return sbOutput.ToString();
-        }
-
-        protected abstract string CallFunction(string functionName, string[] parameters = null);
+        return string.IsNullOrEmpty(text) ? "" : Parse(text, false, 0, out _);
     }
+
+    private string Parse(string text, bool isFunction, int startPosition, out int endPosition)
+    {
+        StringBuilder sbOutput = new();
+        bool escape = false;
+        int i;
+
+        for (i = startPosition; i < text.Length; i++)
+        {
+            char c = text[i];
+
+            if (!escape)
+            {
+                if (c == SyntaxStart)
+                {
+                    string parsed = Parse(text, true, i + 1, out i);
+                    sbOutput.Append(parsed);
+                    continue;
+                } else if (c == SyntaxEnd || c == SyntaxParameterDelimiter)
+                {
+                    break;
+                } else if (c == SyntaxEscape)
+                {
+                    escape = true;
+                    continue;
+                } else if (isFunction && c == SyntaxParameterStart)
+                {
+                    List<string> parameters = new();
+
+                    do
+                    {
+                        string parsed = Parse(text, false, i + 1, out i);
+                        parameters.Add(parsed);
+                    } while (i < text.Length && text[i] == SyntaxParameterDelimiter);
+
+                    endPosition = i;
+
+                    return CallFunction(sbOutput.ToString(), parameters.ToArray());
+                }
+            }
+
+            escape = false;
+            sbOutput.Append(c);
+        }
+
+        endPosition = i;
+
+        return isFunction ? CallFunction(sbOutput.ToString()) : sbOutput.ToString();
+    }
+
+    protected abstract string CallFunction(string functionName, string[] parameters = null);
 }

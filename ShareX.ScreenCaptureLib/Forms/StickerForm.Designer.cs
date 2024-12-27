@@ -1,4 +1,6 @@
-﻿namespace ShareX.ScreenCaptureLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.ScreenCaptureLib
 {
     partial class StickerForm
     {
@@ -30,7 +32,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StickerForm));
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
-            this.ilvStickers = new Manina.Windows.Forms.ImageListView();
+            this.ilvStickers = new ShareX.ImageListView.ImageListView();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.tslSearch = new System.Windows.Forms.ToolStripLabel();
             this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
@@ -38,7 +40,7 @@
             this.tscbStickers = new System.Windows.Forms.ToolStripComboBox();
             this.tsbEditStickers = new System.Windows.Forms.ToolStripButton();
             this.tslSize = new System.Windows.Forms.ToolStripLabel();
-            this.tsnudSize = new ShareX.HelpersLib.ToolStripNumericUpDown();
+            this.tsnudSize = new ShareX.HelpersLib.Controls.ToolStripNumericUpDown();
             this.tscMain.ContentPanel.SuspendLayout();
             this.tscMain.TopToolStripPanel.SuspendLayout();
             this.tscMain.SuspendLayout();
@@ -69,7 +71,7 @@
             this.ilvStickers.PersistentCacheDirectory = "";
             this.ilvStickers.PersistentCacheSize = ((long)(100));
             this.ilvStickers.UseWIC = true;
-            this.ilvStickers.ItemClick += new Manina.Windows.Forms.ItemClickEventHandler(this.ilvStickers_ItemClick);
+            this.ilvStickers.ItemClick += new ShareX.ImageListView.ItemClickEventHandler(this.IlvStickers_ItemClick);
             // 
             // tsMain
             // 
@@ -112,7 +114,7 @@
             this.tscbStickers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.tscbStickers, "tscbStickers");
             this.tscbStickers.Name = "tscbStickers";
-            this.tscbStickers.SelectedIndexChanged += new System.EventHandler(this.tscbStickers_SelectedIndexChanged);
+            this.tscbStickers.SelectedIndexChanged += new System.EventHandler(this.TscbStickers_SelectedIndexChanged);
             // 
             // tsbEditStickers
             // 
@@ -120,7 +122,7 @@
             this.tsbEditStickers.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.gear;
             resources.ApplyResources(this.tsbEditStickers, "tsbEditStickers");
             this.tsbEditStickers.Name = "tsbEditStickers";
-            this.tsbEditStickers.Click += new System.EventHandler(this.tsbEditStickers_Click);
+            this.tsbEditStickers.Click += new System.EventHandler(this.TsbEditStickers_Click);
             // 
             // tslSize
             // 
@@ -132,7 +134,7 @@
             // 
             this.tsnudSize.Name = "tsnudSize";
             resources.ApplyResources(this.tsnudSize, "tsnudSize");
-            this.tsnudSize.ValueChanged += new System.EventHandler(this.tsnudSize_ValueChanged);
+            this.tsnudSize.ValueChanged += new System.EventHandler(this.TsnudSize_ValueChanged);
             // 
             // StickerForm
             // 
@@ -154,7 +156,7 @@
 
         #endregion
 
-        private Manina.Windows.Forms.ImageListView ilvStickers;
+        private ShareX.ImageListView.ImageListView ilvStickers;
         private System.Windows.Forms.ToolStripContainer tscMain;
         private System.Windows.Forms.ToolStrip tsMain;
         private System.Windows.Forms.ToolStripLabel tslSearch;
@@ -162,7 +164,7 @@
         private System.Windows.Forms.ToolStripLabel tslStickers;
         private System.Windows.Forms.ToolStripLabel tslSize;
         private System.Windows.Forms.ToolStripComboBox tscbStickers;
-        private HelpersLib.ToolStripNumericUpDown tsnudSize;
+        private ToolStripNumericUpDown tsnudSize;
         private System.Windows.Forms.ToolStripButton tsbEditStickers;
     }
 }

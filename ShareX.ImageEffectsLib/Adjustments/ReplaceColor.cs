@@ -23,37 +23,39 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+[Description("Replace color")]
+internal class ReplaceColor : ImageEffect
 {
-    [Description("Replace color")]
-    internal class ReplaceColor : ImageEffect
+    [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color SourceColor { get; set; }
+
+    [DefaultValue(false)]
+    public bool AutoSourceColor { get; set; }
+
+    [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color TargetColor { get; set; }
+
+    [DefaultValue(0)]
+    public int Threshold { get; set; }
+
+    public ReplaceColor()
     {
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color SourceColor { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(false)]
-        public bool AutoSourceColor { get; set; }
-
-        [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color TargetColor { get; set; }
-
-        [DefaultValue(0)]
-        public int Threshold { get; set; }
-
-        public ReplaceColor()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            ImageHelpers.ReplaceColor(bmp, SourceColor, TargetColor, AutoSourceColor, Threshold);
-            return bmp;
-        }
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        ImageHelpers.ReplaceColor(bmp, SourceColor, TargetColor, AutoSourceColor, Threshold);
+        return bmp;
     }
 }

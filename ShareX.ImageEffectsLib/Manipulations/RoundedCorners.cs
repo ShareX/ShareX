@@ -23,43 +23,44 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Manipulations;
+
+[Description("Rounded corners")]
+internal class RoundedCorners : ImageEffect
 {
-    [Description("Rounded corners")]
-    internal class RoundedCorners : ImageEffect
+    private int cornerRadius;
+
+    [DefaultValue(20)]
+    public int CornerRadius
     {
-        private int cornerRadius;
-
-        [DefaultValue(20)]
-        public int CornerRadius
+        get
         {
-            get
-            {
-                return cornerRadius;
-            }
-            set
-            {
-                cornerRadius = value.Max(0);
-            }
+            return cornerRadius;
         }
-
-        public RoundedCorners()
+        set
         {
-            this.ApplyDefaultPropertyValues();
+            cornerRadius = value.Max(0);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            return ImageHelpers.RoundedCorners(bmp, CornerRadius);
-        }
+    public RoundedCorners()
+    {
+        this.ApplyDefaultPropertyValues();
+    }
 
-        protected override string GetSummary()
-        {
-            return CornerRadius.ToString();
-        }
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        return ImageHelpers.RoundedCorners(bmp, CornerRadius);
+    }
+
+    protected override string GetSummary()
+    {
+        return CornerRadius.ToString();
     }
 }

@@ -26,20 +26,19 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.BaseServices;
+
+public interface IUploaderService
 {
-    public interface IUploaderService
-    {
-        string ServiceIdentifier { get; }
+    string ServiceIdentifier { get; }
 
-        string ServiceName { get; }
+    string ServiceName { get; }
 
-        Icon ServiceIcon { get; }
+    Icon ServiceIcon { get; }
 
-        Image ServiceImage { get; }
+    Image ServiceImage { get; }
 
-        bool CheckConfig(UploadersConfig config);
+    bool CheckConfig(UploadersConfig config);
 
-        TabPage GetUploadersConfigTabPage(UploadersConfigForm form);
-    }
+    TabPage GetUploadersConfigTabPage(UploadersConfigForm form);
 }

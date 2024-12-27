@@ -27,84 +27,80 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+internal abstract class ImageEditorControl
 {
-    internal abstract class ImageEditorControl
+    public event MouseEventHandler MouseDown, MouseUp;
+    public event Action MouseEnter, MouseLeave;
+
+    public bool Visible { get; set; }
+    public bool HandleMouseInput { get; set; } = true;
+    public RectangleF Rectangle { get; set; }
+
+    private bool isCursorHover;
+
+    public bool IsCursorHover
     {
-        public event MouseEventHandler MouseDown, MouseUp;
-        public event Action MouseEnter, MouseLeave;
-
-        public bool Visible { get; set; }
-        public bool HandleMouseInput { get; set; } = true;
-        public RectangleF Rectangle { get; set; }
-
-        private bool isCursorHover;
-
-        public bool IsCursorHover
+        get
         {
-            get
+            return isCursorHover;
+        }
+        set
+        {
+            if (isCursorHover != value)
             {
-                return isCursorHover;
-            }
-            set
-            {
-                if (isCursorHover != value)
-                {
-                    isCursorHover = value;
+                isCursorHover = value;
 
-                    if (isCursorHover)
-                    {
-                        OnMouseEnter();
-                    }
-                    else
-                    {
-                        OnMouseLeave();
-                    }
+                if (isCursorHover)
+                {
+                    OnMouseEnter();
+                } else
+                {
+                    OnMouseLeave();
                 }
             }
         }
+    }
 
-        public bool IsDragging { get; protected set; }
-        public int Order { get; set; }
+    public bool IsDragging { get; protected set; }
+    public int Order { get; set; }
 
-        public virtual void OnDraw(Graphics g)
+    public virtual void OnDraw(Graphics g)
+    {
+        if (IsDragging)
         {
-            if (IsDragging)
-            {
-                g.FillRectangle(Brushes.Blue, Rectangle);
-            }
-            else if (IsCursorHover)
-            {
-                g.FillRectangle(Brushes.Green, Rectangle);
-            }
-            else
-            {
-                g.FillRectangle(Brushes.Red, Rectangle);
-            }
-        }
-
-        public virtual void OnMouseEnter()
+            g.FillRectangle(Brushes.Blue, Rectangle);
+        } else if (IsCursorHover)
         {
-            MouseEnter?.Invoke();
-        }
-
-        public virtual void OnMouseLeave()
+            g.FillRectangle(Brushes.Green, Rectangle);
+        } else
         {
-            MouseLeave?.Invoke();
+            g.FillRectangle(Brushes.Red, Rectangle);
         }
+    }
 
-        public virtual void OnMouseDown(Point position)
-        {
-            IsDragging = true;
+    public virtual void OnMouseEnter()
+    {
+        MouseEnter?.Invoke();
+    }
 
-            MouseDown?.Invoke(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
-        }
+    public virtual void OnMouseLeave()
+    {
+        MouseLeave?.Invoke();
+    }
 
-        public virtual void OnMouseUp(Point position)
-        {
-            IsDragging = false;
+    public virtual void OnMouseDown(Point position)
+    {
+        IsDragging = true;
 
-            MouseUp?.Invoke(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
-        }
+        MouseDown?.Invoke(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
+    }
+
+    public virtual void OnMouseUp(Point position)
+    {
+        IsDragging = false;
+
+        MouseUp?.Invoke(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
     }
 }

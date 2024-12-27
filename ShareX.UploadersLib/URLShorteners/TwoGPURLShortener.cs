@@ -24,56 +24,60 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
 using System.Collections.Generic;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class TwoGPURLShortenerService : URLShortenerService
 {
-    public class TwoGPURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TwoGP;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.TwoGP;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new TwoGPURLShortener();
-        }
+        return new TwoGPURLShortener();
     }
+}
 
-    public sealed class TwoGPURLShortener : URLShortener
+public sealed class TwoGPURLShortener : URLShortener
+{
+    private const string API_ENDPOINT = "http://2.gp/api/short";
+
+    public override UploadResult ShortenURL(string url)
     {
-        private const string API_ENDPOINT = "http://2.gp/api/short";
+        UploadResult result = new() { URL = url };
 
-        public override UploadResult ShortenURL(string url)
+        Dictionary<string, string> args = new();
+        args.Add("longurl", url);
+
+        string response = SendRequest(HttpMethod.GET, API_ENDPOINT, args);
+
+        if (!string.IsNullOrEmpty(response))
         {
-            UploadResult result = new UploadResult { URL = url };
+            TwoGPURLShortenerResponse jsonResponse = JsonConvert.DeserializeObject<TwoGPURLShortenerResponse>(response);
 
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("longurl", url);
-
-            string response = SendRequest(HttpMethod.GET, API_ENDPOINT, args);
-
-            if (!string.IsNullOrEmpty(response))
+            if (jsonResponse != null)
             {
-                TwoGPURLShortenerResponse jsonResponse = JsonConvert.DeserializeObject<TwoGPURLShortenerResponse>(response);
-
-                if (jsonResponse != null)
-                {
-                    result.ShortenedURL = jsonResponse.url;
-                }
+                result.ShortenedURL = jsonResponse.url;
             }
-
-            return result;
         }
-    }
 
-    public class TwoGPURLShortenerResponse
-    {
-        public string facebook_url { get; set; }
-        public string stat_url { get; set; }
-        public string twitter_url { get; set; }
-        public string url { get; set; }
-        public string target_host { get; set; }
-        public string host { get; set; }
+        return result;
     }
+}
+
+public class TwoGPURLShortenerResponse
+{
+    public string facebook_url { get; set; }
+    public string stat_url { get; set; }
+    public string twitter_url { get; set; }
+    public string url { get; set; }
+    public string target_host { get; set; }
+    public string host { get; set; }
 }

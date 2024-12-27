@@ -24,148 +24,136 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.Win32;
+
+using ShareX.HelpersLib.Extensions;
+
 using System;
 using System.IO;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Helpers;
+
+public static class RegistryHelpers
 {
-    public static class RegistryHelpers
+    public static void CreateRegistry(string path, string value, RegistryHive root = RegistryHive.CurrentUser)
     {
-        public static void CreateRegistry(string path, string value, RegistryHive root = RegistryHive.CurrentUser)
+        CreateRegistry(path, null, value, root);
+    }
+
+    public static void CreateRegistry(string path, string name, string value, RegistryHive root = RegistryHive.CurrentUser)
+    {
+        using RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default).CreateSubKey(path);
+        if (rk != null)
         {
-            CreateRegistry(path, null, value, root);
+            rk.SetValue(name, value, RegistryValueKind.String);
+        }
+    }
+
+    public static void CreateRegistry(string path, int value, RegistryHive root = RegistryHive.CurrentUser)
+    {
+        CreateRegistry(path, null, value, root);
+    }
+
+    public static void CreateRegistry(string path, string name, int value, RegistryHive root = RegistryHive.CurrentUser)
+    {
+        using RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default).CreateSubKey(path);
+        rk?.SetValue(name, value, RegistryValueKind.DWord);
+    }
+
+    public static void RemoveRegistry(string path, RegistryHive root = RegistryHive.CurrentUser)
+    {
+        if (!string.IsNullOrEmpty(path))
+        {
+            using RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default);
+            rk.DeleteSubKeyTree(path, false);
+        }
+    }
+
+    public static object GetValue(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
+    {
+        try
+        {
+            using RegistryKey baseKey = RegistryKey.OpenBaseKey(root, view);
+            using RegistryKey rk = baseKey.OpenSubKey(path);
+            if (rk != null)
+            {
+                return rk.GetValue(name);
+            }
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
         }
 
-        public static void CreateRegistry(string path, string name, string value, RegistryHive root = RegistryHive.CurrentUser)
+        return null;
+    }
+
+    public static string GetValueString(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
+    {
+        return GetValue(path, name, root, view) as string;
+    }
+
+    public static int? GetValueDWord(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
+    {
+        return (int?)GetValue(path, name, root, view);
+    }
+
+    public static bool CheckStringValue(string path, string name = null, string value = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
+    {
+        string registryValue = GetValueString(path, name, root, view);
+
+        return registryValue != null && (value == null || registryValue.Equals(value, StringComparison.OrdinalIgnoreCase));
+    }
+
+    public static string SearchProgramPath(string fileName)
+    {
+        // First method: HKEY_CLASSES_ROOT\Applications\{fileName}\shell\{command}\command
+
+        string[] commands = new string[] { "open", "edit" };
+
+        foreach (string command in commands)
         {
-            using (RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default).CreateSubKey(path))
+            string path = $@"HKEY_CLASSES_ROOT\Applications\{fileName}\shell\{command}\command";
+            string value = Registry.GetValue(path, null, null) as string;
+
+            if (!string.IsNullOrEmpty(value))
             {
-                if (rk != null)
+                string filePath = value.ParseQuoteString();
+
+                if (File.Exists(filePath))
                 {
-                    rk.SetValue(name, value, RegistryValueKind.String);
+                    DebugHelper.WriteLine("Found program with first method: " + filePath);
+                    return filePath;
                 }
             }
         }
 
-        public static void CreateRegistry(string path, int value, RegistryHive root = RegistryHive.CurrentUser)
-        {
-            CreateRegistry(path, null, value, root);
-        }
+        // Second method: HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
 
-        public static void CreateRegistry(string path, string name, int value, RegistryHive root = RegistryHive.CurrentUser)
+        using RegistryKey programs = Registry.CurrentUser.OpenSubKey(@"Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache");
+        if (programs != null)
         {
-            using (RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default).CreateSubKey(path))
+            foreach (string filePath in programs.GetValueNames())
             {
-                if (rk != null)
-                {
-                    rk.SetValue(name, value, RegistryValueKind.DWord);
-                }
-            }
-        }
+                string programPath = filePath;
 
-        public static void RemoveRegistry(string path, RegistryHive root = RegistryHive.CurrentUser)
-        {
-            if (!string.IsNullOrEmpty(path))
-            {
-                using (RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default))
+                if (!string.IsNullOrEmpty(programPath))
                 {
-                    rk.DeleteSubKeyTree(path, false);
-                }
-            }
-        }
-
-        public static object GetValue(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
-        {
-            try
-            {
-                using (RegistryKey baseKey = RegistryKey.OpenBaseKey(root, view))
-                using (RegistryKey rk = baseKey.OpenSubKey(path))
-                {
-                    if (rk != null)
+                    foreach (string trim in new string[] { ".ApplicationCompany", ".FriendlyAppName" })
                     {
-                        return rk.GetValue(name);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return null;
-        }
-
-        public static string GetValueString(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
-        {
-            return GetValue(path, name, root, view) as string;
-        }
-
-        public static int? GetValueDWord(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
-        {
-            return (int?)GetValue(path, name, root, view);
-        }
-
-        public static bool CheckStringValue(string path, string name = null, string value = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
-        {
-            string registryValue = GetValueString(path, name, root, view);
-
-            return registryValue != null && (value == null || registryValue.Equals(value, StringComparison.OrdinalIgnoreCase));
-        }
-
-        public static string SearchProgramPath(string fileName)
-        {
-            // First method: HKEY_CLASSES_ROOT\Applications\{fileName}\shell\{command}\command
-
-            string[] commands = new string[] { "open", "edit" };
-
-            foreach (string command in commands)
-            {
-                string path = $@"HKEY_CLASSES_ROOT\Applications\{fileName}\shell\{command}\command";
-                string value = Registry.GetValue(path, null, null) as string;
-
-                if (!string.IsNullOrEmpty(value))
-                {
-                    string filePath = value.ParseQuoteString();
-
-                    if (File.Exists(filePath))
-                    {
-                        DebugHelper.WriteLine("Found program with first method: " + filePath);
-                        return filePath;
-                    }
-                }
-            }
-
-            // Second method: HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache
-
-            using (RegistryKey programs = Registry.CurrentUser.OpenSubKey(@"Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache"))
-            {
-                if (programs != null)
-                {
-                    foreach (string filePath in programs.GetValueNames())
-                    {
-                        string programPath = filePath;
-
-                        if (!string.IsNullOrEmpty(programPath))
+                        if (programPath.EndsWith(trim, StringComparison.OrdinalIgnoreCase))
                         {
-                            foreach (string trim in new string[] { ".ApplicationCompany", ".FriendlyAppName" })
-                            {
-                                if (programPath.EndsWith(trim, StringComparison.OrdinalIgnoreCase))
-                                {
-                                    programPath = programPath.Remove(programPath.Length - trim.Length);
-                                }
-                            }
-
-                            if (programPath.EndsWith(fileName, StringComparison.OrdinalIgnoreCase) && File.Exists(programPath))
-                            {
-                                DebugHelper.WriteLine("Found program with second method: " + programPath);
-                                return programPath;
-                            }
+                            programPath = programPath.Remove(programPath.Length - trim.Length);
                         }
                     }
+
+                    if (programPath.EndsWith(fileName, StringComparison.OrdinalIgnoreCase) && File.Exists(programPath))
+                    {
+                        DebugHelper.WriteLine("Found program with second method: " + programPath);
+                        return programPath;
+                    }
                 }
             }
-
-            return null;
         }
+
+        return null;
     }
 }

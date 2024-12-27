@@ -24,39 +24,42 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Tools.BorderlessWindow;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class BorderlessWindowSettingsForm : Form
 {
-    public partial class BorderlessWindowSettingsForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public BorderlessWindowSettings Settings { get; private set; }
+
+    public BorderlessWindowSettingsForm(BorderlessWindowSettings settings)
     {
-        public BorderlessWindowSettings Settings { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public BorderlessWindowSettingsForm(BorderlessWindowSettings settings)
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+        Settings = settings;
+        cbRememberWindowTitle.Checked = Settings.RememberWindowTitle;
+        cbAutoCloseWindow.Checked = Settings.AutoCloseWindow;
+        cbExcludeTaskbarArea.Checked = Settings.ExcludeTaskbarArea;
+    }
 
-            Settings = settings;
-            cbRememberWindowTitle.Checked = Settings.RememberWindowTitle;
-            cbAutoCloseWindow.Checked = Settings.AutoCloseWindow;
-            cbExcludeTaskbarArea.Checked = Settings.ExcludeTaskbarArea;
-        }
+    private void cbRememberWindowTitle_CheckedChanged(object sender, EventArgs e)
+    {
+        Settings.RememberWindowTitle = cbRememberWindowTitle.Checked;
+    }
 
-        private void cbRememberWindowTitle_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.RememberWindowTitle = cbRememberWindowTitle.Checked;
-        }
+    private void cbAutoCloseWindow_CheckedChanged(object sender, EventArgs e)
+    {
+        Settings.AutoCloseWindow = cbAutoCloseWindow.Checked;
+    }
 
-        private void cbAutoCloseWindow_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.AutoCloseWindow = cbAutoCloseWindow.Checked;
-        }
-
-        private void cbExcludeTaskbarArea_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.ExcludeTaskbarArea = cbExcludeTaskbarArea.Checked;
-        }
+    private void cbExcludeTaskbarArea_CheckedChanged(object sender, EventArgs e)
+    {
+        Settings.ExcludeTaskbarArea = cbExcludeTaskbarArea.Checked;
     }
 }

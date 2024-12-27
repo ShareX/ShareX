@@ -23,41 +23,41 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
 using ShareX.ScreenCaptureLib.Properties;
+
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes.Effect;
+
+public class PixelateEffectShape : BaseEffectShape
 {
-    public class PixelateEffectShape : BaseEffectShape
+    public override ShapeType ShapeType { get; } = ShapeType.EffectPixelate;
+
+    public override string OverlayText => Resources.Pixelate + $" [{PixelSize}]";
+
+    public int PixelSize { get; set; }
+
+    public override void OnConfigLoad()
     {
-        public override ShapeType ShapeType { get; } = ShapeType.EffectPixelate;
+        PixelSize = AnnotationOptions.PixelateSize;
+    }
 
-        public override string OverlayText => Resources.Pixelate + $" [{PixelSize}]";
+    public override void OnConfigSave()
+    {
+        AnnotationOptions.PixelateSize = PixelSize;
+    }
 
-        public int PixelSize { get; set; }
+    public override void ApplyEffect(Bitmap bmp)
+    {
+        ImageHelpers.Pixelate(bmp, PixelSize);
+    }
 
-        public override void OnConfigLoad()
+    public override void OnDrawFinal(Graphics g, Bitmap bmp)
+    {
+        if (PixelSize > 1)
         {
-            PixelSize = AnnotationOptions.PixelateSize;
-        }
-
-        public override void OnConfigSave()
-        {
-            AnnotationOptions.PixelateSize = PixelSize;
-        }
-
-        public override void ApplyEffect(Bitmap bmp)
-        {
-            ImageHelpers.Pixelate(bmp, PixelSize);
-        }
-
-        public override void OnDrawFinal(Graphics g, Bitmap bmp)
-        {
-            if (PixelSize > 1)
-            {
-                base.OnDrawFinal(g, bmp);
-            }
+            base.OnDrawFinal(g, bmp);
         }
     }
 }

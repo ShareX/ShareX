@@ -23,17 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.ScreenCaptureLib
-{
-    public class LocationInfo
-    {
-        public long Location { get; set; }
-        public long Length { get; set; }
+namespace ShareX.ScreenCaptureLib.Helpers;
 
-        public LocationInfo(long location, long length)
-        {
-            Location = location;
-            Length = length;
-        }
+public class LocationInfo
+{
+    public long Location { get; set; }
+    public long Length { get; set; }
+
+    public LocationInfo(long location, long length)
+    {
+        Location = location;
+        Length = length;
     }
 }

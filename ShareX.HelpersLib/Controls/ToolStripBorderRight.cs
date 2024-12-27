@@ -23,31 +23,30 @@
 
 #endregion License Information (GPL v3)
 
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class ToolStripBorderRight : ToolStrip
 {
-    public class ToolStripBorderRight : ToolStrip
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool DrawCustomBorder { get; set; } = true;
+
+    protected override void OnPaint(PaintEventArgs e)
     {
-        public bool DrawCustomBorder { get; set; } = true;
+        base.OnPaint(e);
 
-        protected override void OnPaint(PaintEventArgs e)
+        if (DrawCustomBorder)
         {
-            base.OnPaint(e);
-
-            if (DrawCustomBorder)
-            {
-                using (Pen pen = new Pen(ProfessionalColors.SeparatorDark))
-                {
-                    e.Graphics.DrawLine(pen, new Point(ClientSize.Width - 1, 0), new Point(ClientSize.Width - 1, ClientSize.Height - 1));
-                }
-            }
+            using Pen pen = new(ProfessionalColors.SeparatorDark);
+            e.Graphics.DrawLine(pen, new Point(ClientSize.Width - 1, 0), new Point(ClientSize.Width - 1, ClientSize.Height - 1));
         }
+    }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-            base.OnPaintBackground(e);
-        }
+    protected override void OnPaintBackground(PaintEventArgs e)
+    {
+        base.OnPaintBackground(e);
     }
 }

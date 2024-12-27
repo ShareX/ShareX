@@ -24,51 +24,56 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class YouTubeVideoOptionsForm : Form
 {
-    public partial class YouTubeVideoOptionsForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Title { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Description { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public YouTubeVideoPrivacy Visibility { get; private set; }
+
+    public YouTubeVideoOptionsForm(string title = "", string description = "", YouTubeVideoPrivacy visibility = YouTubeVideoPrivacy.Private)
     {
-        public string Title { get; private set; }
-        public string Description { get; private set; }
-        public YouTubeVideoPrivacy Visibility { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public YouTubeVideoOptionsForm(string title = "", string description = "", YouTubeVideoPrivacy visibility = YouTubeVideoPrivacy.Private)
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+        Title = title;
+        Description = description;
+        Visibility = visibility;
 
-            Title = title;
-            Description = description;
-            Visibility = visibility;
+        txtTitle.Text = title;
+        txtDescription.Text = description;
+        cbVisibility.Items.AddRange(HelpersLib.Helpers.Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
+        cbVisibility.SelectedIndex = (int)Visibility;
+    }
 
-            txtTitle.Text = title;
-            txtDescription.Text = description;
-            cbVisibility.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<YouTubeVideoPrivacy>());
-            cbVisibility.SelectedIndex = (int)Visibility;
-        }
+    private void YouTubeVideoOptionsForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+    }
 
-        private void YouTubeVideoOptionsForm_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        Title = txtTitle.Text;
+        Description = txtDescription.Text;
+        Visibility = (YouTubeVideoPrivacy)cbVisibility.SelectedIndex;
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            Title = txtTitle.Text;
-            Description = txtDescription.Text;
-            Visibility = (YouTubeVideoPrivacy)cbVisibility.SelectedIndex;
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

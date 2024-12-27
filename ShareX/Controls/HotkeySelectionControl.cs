@@ -24,310 +24,310 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.Input;
 using ShareX.Properties;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class HotkeySelectionControl : UserControl
 {
-    public partial class HotkeySelectionControl : UserControl
+    public event EventHandler HotkeyChanged;
+    public event EventHandler SelectedChanged;
+    public event EventHandler EditRequested;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public HotkeySettings HotkeySettings { get; private set; }
+
+    private bool selected;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool Selected
     {
-        public event EventHandler HotkeyChanged;
-        public event EventHandler SelectedChanged;
-        public event EventHandler EditRequested;
-
-        public HotkeySettings HotkeySettings { get; private set; }
-
-        private bool selected;
-
-        public bool Selected
+        get
         {
-            get
-            {
-                return selected;
-            }
-            set
-            {
-                selected = value;
-
-                UpdateControls();
-            }
+            return selected;
         }
-
-        public bool EditingHotkey { get; private set; }
-
-        public HotkeySelectionControl(HotkeySettings hotkeySettings)
+        set
         {
-            HotkeySettings = hotkeySettings;
+            selected = value;
 
-            InitializeComponent();
             UpdateControls();
+        }
+    }
 
-            AddEnumItemsContextMenu<HotkeyType>(x =>
-            {
-                HotkeySettings.TaskSettings.Job = x;
-                UpdateControls();
-            }, cmsTask);
-            SetEnumCheckedContextMenu(HotkeySettings.TaskSettings.Job, cmsTask);
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool EditingHotkey { get; private set; }
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                ShareXResources.ApplyCustomThemeToControl(this);
-            }
+    public HotkeySelectionControl(HotkeySettings hotkeySettings)
+    {
+        HotkeySettings = hotkeySettings;
 
-            UpdateHotkeyStatus();
+        InitializeComponent();
+        UpdateControls();
+
+        AddEnumItemsContextMenu<HotkeyType>(x =>
+        {
+            HotkeySettings.TaskSettings.Job = x;
+            UpdateControls();
+        }, cmsTask);
+        SetEnumCheckedContextMenu(HotkeySettings.TaskSettings.Job, cmsTask);
+
+        if (ShareXResources.UseCustomTheme)
+        {
+            ShareXResources.ApplyCustomThemeToControl(this);
         }
 
-        private void AddEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents) where T : Enum
+        UpdateHotkeyStatus();
+    }
+
+    private void AddEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents) where T : Enum
+    {
+        EnumInfo[] enums = Helpers.GetEnums<T>().OfType<Enum>().Select(x => new EnumInfo(x)).ToArray();
+
+        foreach (ToolStripDropDown parent in parents)
         {
-            EnumInfo[] enums = Helpers.GetEnums<T>().OfType<Enum>().Select(x => new EnumInfo(x)).ToArray();
-
-            foreach (ToolStripDropDown parent in parents)
+            foreach (EnumInfo enumInfo in enums)
             {
-                foreach (EnumInfo enumInfo in enums)
+                ToolStripMenuItem tsmi = new(enumInfo.Description.Replace("&", "&&"));
+                tsmi.Image = TaskHelpers.FindMenuIcon(enumInfo.Value);
+                tsmi.Tag = enumInfo;
+
+                tsmi.Click += (sender, e) =>
                 {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enumInfo.Description.Replace("&", "&&"));
-                    tsmi.Image = TaskHelpers.FindMenuIcon(enumInfo.Value);
-                    tsmi.Tag = enumInfo;
+                    SetEnumCheckedContextMenu(enumInfo, parents);
 
-                    tsmi.Click += (sender, e) =>
+                    selectedEnum((T)enumInfo.Value);
+
+                    UpdateControls();
+                };
+
+                if (!string.IsNullOrEmpty(enumInfo.Category))
+                {
+                    ToolStripMenuItem tsmiParent = parent.Items.OfType<ToolStripMenuItem>().FirstOrDefault(x => x.Text == enumInfo.Category);
+
+                    if (tsmiParent == null)
                     {
-                        SetEnumCheckedContextMenu(enumInfo, parents);
-
-                        selectedEnum((T)enumInfo.Value);
-
-                        UpdateControls();
-                    };
-
-                    if (!string.IsNullOrEmpty(enumInfo.Category))
-                    {
-                        ToolStripMenuItem tsmiParent = parent.Items.OfType<ToolStripMenuItem>().FirstOrDefault(x => x.Text == enumInfo.Category);
-
-                        if (tsmiParent == null)
-                        {
-                            tsmiParent = new ToolStripMenuItem(enumInfo.Category);
-                            parent.Items.Add(tsmiParent);
-                        }
-
-                        tsmiParent.DropDownItems.Add(tsmi);
+                        tsmiParent = new ToolStripMenuItem(enumInfo.Category);
+                        parent.Items.Add(tsmiParent);
                     }
-                    else
-                    {
-                        parent.Items.Add(tsmi);
-                    }
+
+                    tsmiParent.DropDownItems.Add(tsmi);
+                } else
+                {
+                    parent.Items.Add(tsmi);
                 }
             }
         }
+    }
 
-        private void SetEnumCheckedContextMenu(Enum value, params ToolStripDropDown[] parents)
-        {
-            SetEnumCheckedContextMenu(new EnumInfo(value), parents);
-        }
+    private void SetEnumCheckedContextMenu(Enum value, params ToolStripDropDown[] parents)
+    {
+        SetEnumCheckedContextMenu(new EnumInfo(value), parents);
+    }
 
-        private void SetEnumCheckedContextMenu(EnumInfo enumInfo, params ToolStripDropDown[] parents)
+    private void SetEnumCheckedContextMenu(EnumInfo enumInfo, params ToolStripDropDown[] parents)
+    {
+        foreach (ToolStripDropDown parent in parents)
         {
-            foreach (ToolStripDropDown parent in parents)
+            foreach (ToolStripMenuItem tsmiParent in parent.Items)
             {
-                foreach (ToolStripMenuItem tsmiParent in parent.Items)
-                {
-                    EnumInfo currentEnumInfo;
+                EnumInfo currentEnumInfo;
 
-                    if (tsmiParent.DropDownItems.Count > 0)
+                if (tsmiParent.DropDownItems.Count > 0)
+                {
+                    foreach (ToolStripMenuItem tsmiCategoryParent in tsmiParent.DropDownItems)
                     {
-                        foreach (ToolStripMenuItem tsmiCategoryParent in tsmiParent.DropDownItems)
-                        {
-                            currentEnumInfo = (EnumInfo)tsmiCategoryParent.Tag;
-                            tsmiCategoryParent.Checked = currentEnumInfo.Value.Equals(enumInfo.Value);
-                        }
+                        currentEnumInfo = (EnumInfo)tsmiCategoryParent.Tag;
+                        tsmiCategoryParent.Checked = currentEnumInfo.Value.Equals(enumInfo.Value);
                     }
-                    else
-                    {
-                        currentEnumInfo = (EnumInfo)tsmiParent.Tag;
-                        tsmiParent.Checked = currentEnumInfo.Value.Equals(enumInfo.Value);
-                    }
+                } else
+                {
+                    currentEnumInfo = (EnumInfo)tsmiParent.Tag;
+                    tsmiParent.Checked = currentEnumInfo.Value.Equals(enumInfo.Value);
                 }
             }
         }
+    }
 
-        public void UpdateControls()
+    public void UpdateControls()
+    {
+        if (Selected)
         {
-            if (Selected)
-            {
-                btnTask.ChangeFontStyle(FontStyle.Bold);
-            }
-            else
-            {
-                btnTask.ChangeFontStyle(FontStyle.Regular);
-            }
-
-            btnTask.Image = TaskHelpers.FindMenuIcon(HotkeySettings.TaskSettings.Job);
-
-            string taskText = " " + HotkeySettings.TaskSettings.ToString();
-            if (!HotkeySettings.TaskSettings.IsUsingDefaultSettings)
-            {
-                taskText += "*";
-            }
-            btnTask.Text = taskText;
+            btnTask.ChangeFontStyle(FontStyle.Bold);
+        } else
+        {
+            btnTask.ChangeFontStyle(FontStyle.Regular);
         }
 
-        public void UpdateHotkeyStatus()
-        {
-            btnHotkey.Text = HotkeySettings.HotkeyInfo.ToString();
+        btnTask.Image = TaskHelpers.FindMenuIcon(HotkeySettings.TaskSettings.Job);
 
-            switch (HotkeySettings.HotkeyInfo.Status)
-            {
-                default:
-                case HotkeyStatus.NotConfigured:
-                    btnHotkey.Image = Resources.status_away;
-                    break;
-                case HotkeyStatus.Failed:
-                    btnHotkey.Image = Resources.status_busy;
-                    break;
-                case HotkeyStatus.Registered:
-                    btnHotkey.Image = Resources.status;
-                    break;
-            }
+        string taskText = " " + HotkeySettings.TaskSettings.ToString();
+        if (!HotkeySettings.TaskSettings.IsUsingDefaultSettings)
+        {
+            taskText += "*";
         }
+        btnTask.Text = taskText;
+    }
 
-        private void StartEditing()
+    public void UpdateHotkeyStatus()
+    {
+        btnHotkey.Text = HotkeySettings.HotkeyInfo.ToString();
+
+        switch (HotkeySettings.HotkeyInfo.Status)
         {
-            EditingHotkey = true;
+            default:
+            case HotkeyStatus.NotConfigured:
+                btnHotkey.Image = Resources.status_away;
+                break;
+            case HotkeyStatus.Failed:
+                btnHotkey.Image = Resources.status_busy;
+                break;
+            case HotkeyStatus.Registered:
+                btnHotkey.Image = Resources.status;
+                break;
+        }
+    }
 
-            Program.HotkeyManager.IgnoreHotkeys = true;
+    private void StartEditing()
+    {
+        EditingHotkey = true;
 
+        Program.HotkeyManager.IgnoreHotkeys = true;
+
+        HotkeySettings.HotkeyInfo.Hotkey = Keys.None;
+        HotkeySettings.HotkeyInfo.Win = false;
+        OnHotkeyChanged();
+        UpdateHotkeyStatus();
+        btnHotkey.Text = Resources.HotkeySelectionControl_StartEditing_Select_a_hotkey___;
+    }
+
+    private void StopEditing()
+    {
+        EditingHotkey = false;
+
+        Program.HotkeyManager.IgnoreHotkeys = false;
+
+        if (HotkeySettings.HotkeyInfo.IsOnlyModifiers)
+        {
             HotkeySettings.HotkeyInfo.Hotkey = Keys.None;
-            HotkeySettings.HotkeyInfo.Win = false;
-            OnHotkeyChanged();
-            UpdateHotkeyStatus();
-            btnHotkey.Text = Resources.HotkeySelectionControl_StartEditing_Select_a_hotkey___;
         }
 
-        private void StopEditing()
+        OnHotkeyChanged();
+        UpdateHotkeyStatus();
+    }
+
+    public void OpenTaskMenu()
+    {
+        btnTask.OpenMenu();
+    }
+
+    private void SelectControl()
+    {
+        Selected = true;
+        OnSelectedChanged();
+    }
+
+    protected void OnHotkeyChanged()
+    {
+        HotkeyChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    protected void OnSelectedChanged()
+    {
+        SelectedChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    protected void OnEditRequested()
+    {
+        EditRequested?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void btnTask_Click(object sender, EventArgs e)
+    {
+        SelectControl();
+    }
+
+    private void btnEdit_Click(object sender, EventArgs e)
+    {
+        SelectControl();
+        OnEditRequested();
+    }
+
+    private void btnHotkey_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+    {
+        if (EditingHotkey)
         {
-            EditingHotkey = false;
+            // To handle "Tab" key etc.
+            e.IsInputKey = true;
+        }
+    }
 
-            Program.HotkeyManager.IgnoreHotkeys = false;
+    private void btnHotkey_KeyDown(object sender, KeyEventArgs e)
+    {
+        e.SuppressKeyPress = true;
 
-            if (HotkeySettings.HotkeyInfo.IsOnlyModifiers)
+        if (EditingHotkey)
+        {
+            if (e.KeyData == Keys.Escape)
             {
                 HotkeySettings.HotkeyInfo.Hotkey = Keys.None;
-            }
-
-            OnHotkeyChanged();
-            UpdateHotkeyStatus();
-        }
-
-        public void OpenTaskMenu()
-        {
-            btnTask.OpenMenu();
-        }
-
-        private void SelectControl()
-        {
-            Selected = true;
-            OnSelectedChanged();
-        }
-
-        protected void OnHotkeyChanged()
-        {
-            HotkeyChanged?.Invoke(this, EventArgs.Empty);
-        }
-
-        protected void OnSelectedChanged()
-        {
-            SelectedChanged?.Invoke(this, EventArgs.Empty);
-        }
-
-        protected void OnEditRequested()
-        {
-            EditRequested?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void btnTask_Click(object sender, EventArgs e)
-        {
-            SelectControl();
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            SelectControl();
-            OnEditRequested();
-        }
-
-        private void btnHotkey_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            if (EditingHotkey)
+                StopEditing();
+            } else if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin)
             {
-                // To handle "Tab" key etc.
-                e.IsInputKey = true;
+                HotkeySettings.HotkeyInfo.Win = !HotkeySettings.HotkeyInfo.Win;
+                UpdateHotkeyStatus();
+            } else if (new HotkeyInfo(e.KeyData).IsValidHotkey)
+            {
+                HotkeySettings.HotkeyInfo.Hotkey = e.KeyData;
+                StopEditing();
+            } else
+            {
+                HotkeySettings.HotkeyInfo.Hotkey = e.KeyData;
+                UpdateHotkeyStatus();
             }
         }
+    }
 
-        private void btnHotkey_KeyDown(object sender, KeyEventArgs e)
+    private void btnHotkey_KeyUp(object sender, KeyEventArgs e)
+    {
+        e.SuppressKeyPress = true;
+
+        if (EditingHotkey)
         {
-            e.SuppressKeyPress = true;
-
-            if (EditingHotkey)
+            // PrintScreen not trigger KeyDown event
+            if (e.KeyCode == Keys.PrintScreen)
             {
-                if (e.KeyData == Keys.Escape)
-                {
-                    HotkeySettings.HotkeyInfo.Hotkey = Keys.None;
-                    StopEditing();
-                }
-                else if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin)
-                {
-                    HotkeySettings.HotkeyInfo.Win = !HotkeySettings.HotkeyInfo.Win;
-                    UpdateHotkeyStatus();
-                }
-                else if (new HotkeyInfo(e.KeyData).IsValidHotkey)
-                {
-                    HotkeySettings.HotkeyInfo.Hotkey = e.KeyData;
-                    StopEditing();
-                }
-                else
-                {
-                    HotkeySettings.HotkeyInfo.Hotkey = e.KeyData;
-                    UpdateHotkeyStatus();
-                }
-            }
-        }
-
-        private void btnHotkey_KeyUp(object sender, KeyEventArgs e)
-        {
-            e.SuppressKeyPress = true;
-
-            if (EditingHotkey)
-            {
-                // PrintScreen not trigger KeyDown event
-                if (e.KeyCode == Keys.PrintScreen)
-                {
-                    HotkeySettings.HotkeyInfo.Hotkey = e.KeyData;
-                    StopEditing();
-                }
-            }
-        }
-
-        private void btnHotkey_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (EditingHotkey)
-            {
+                HotkeySettings.HotkeyInfo.Hotkey = e.KeyData;
                 StopEditing();
             }
-            else
-            {
-                SelectControl();
-                StartEditing();
-            }
         }
+    }
 
-        private void btnHotkey_Leave(object sender, EventArgs e)
+    private void btnHotkey_MouseClick(object sender, MouseEventArgs e)
+    {
+        if (EditingHotkey)
         {
-            if (EditingHotkey)
-            {
-                StopEditing();
-            }
+            StopEditing();
+        } else
+        {
+            SelectControl();
+            StartEditing();
+        }
+    }
+
+    private void btnHotkey_Leave(object sender, EventArgs e)
+    {
+        if (EditingHotkey)
+        {
+            StopEditing();
         }
     }
 }

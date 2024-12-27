@@ -23,46 +23,49 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
 using System;
 using System.Collections.Generic;
 
-namespace ShareX.UploadersLib.URLShorteners
+namespace ShareX.UploadersLib.URLShorteners;
+
+public class IsgdURLShortenerService : URLShortenerService
 {
-    public class IsgdURLShortenerService : URLShortenerService
+    public override UrlShortenerType EnumValue { get; } = UrlShortenerType.ISGD;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.ISGD;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new IsgdURLShortener();
-        }
+        return new IsgdURLShortener();
     }
+}
 
-    public class IsgdURLShortener : URLShortener
+public class IsgdURLShortener : URLShortener
+{
+    protected virtual string APIURL { get { return "http://is.gd/create.php"; } }
+
+    public override UploadResult ShortenURL(string url)
     {
-        protected virtual string APIURL { get { return "http://is.gd/create.php"; } }
+        UploadResult result = new() { URL = url };
 
-        public override UploadResult ShortenURL(string url)
+        if (!string.IsNullOrEmpty(url))
         {
-            UploadResult result = new UploadResult { URL = url };
+            Dictionary<string, string> arguments = new();
+            arguments.Add("format", "simple");
+            arguments.Add("url", url);
 
-            if (!string.IsNullOrEmpty(url))
+            result.Response = SendRequest(HttpMethod.GET, APIURL, arguments);
+
+            if (!result.Response.StartsWith("Error:", StringComparison.OrdinalIgnoreCase))
             {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("format", "simple");
-                arguments.Add("url", url);
-
-                result.Response = SendRequest(HttpMethod.GET, APIURL, arguments);
-
-                if (!result.Response.StartsWith("Error:", StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ShortenedURL = result.Response;
-                }
+                result.ShortenedURL = result.Response;
             }
-
-            return result;
         }
+
+        return result;
     }
 }

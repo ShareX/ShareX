@@ -24,31 +24,31 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
+
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class ExeFileNameEditor : FileNameEditor
 {
-    public class ExeFileNameEditor : FileNameEditor
+    public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
     {
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        if (context == null || provider == null)
         {
-            if (context == null || provider == null)
-            {
-                return base.EditValue(context, provider, value);
-            }
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                dlg.Title = Resources.ExeFileNameEditor_EditValue_Browse_for_executable___;
-                dlg.Filter = "Applications (*.exe)|*.exe";
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    value = dlg.FileName;
-                }
-            }
-            return value;
+            return base.EditValue(context, provider, value);
         }
+        using (OpenFileDialog dlg = new())
+        {
+            dlg.Title = Resources.ExeFileNameEditor_EditValue_Browse_for_executable___;
+            dlg.Filter = "Applications (*.exe)|*.exe";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                value = dlg.FileName;
+            }
+        }
+        return value;
     }
 }

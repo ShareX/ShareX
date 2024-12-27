@@ -26,26 +26,23 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class NoFocusBorderButton : Button
 {
-    public class NoFocusBorderButton : Button
+    public NoFocusBorderButton()
     {
-        public NoFocusBorderButton()
-        {
-            FlatAppearance.BorderSize = 0;
-            FlatAppearance.BorderColor = Color.Black;
-            FlatStyle = FlatStyle.Flat;
-        }
+        FlatAppearance.BorderSize = 0;
+        FlatAppearance.BorderColor = Color.Black;
+        FlatStyle = FlatStyle.Flat;
+    }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        base.OnPaint(e);
 
-            using (Pen pen = new Pen(FlatAppearance.BorderColor, 1))
-            {
-                Rectangle rectangle = new Rectangle(0, 0, Size.Width - 1, Size.Height - 1);
-                e.Graphics.DrawRectangle(pen, rectangle);
-            }
-        }
+        using Pen pen = new(FlatAppearance.BorderColor, 1);
+        Rectangle rectangle = new(0, 0, Size.Width - 1, Size.Height - 1);
+        e.Graphics.DrawRectangle(pen, rectangle);
     }
 }

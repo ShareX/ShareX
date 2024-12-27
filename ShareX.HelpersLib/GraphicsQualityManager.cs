@@ -27,65 +27,63 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class GraphicsQualityManager : IDisposable
 {
-    public class GraphicsQualityManager : IDisposable
+    private CompositingQuality previousCompositingQuality;
+    private InterpolationMode previousInterpolationMode;
+    private SmoothingMode previousSmoothingMode;
+    private PixelOffsetMode previousPixelOffsetMode;
+    private Graphics g;
+
+    public GraphicsQualityManager(Graphics g, bool highQuality)
     {
-        private CompositingQuality previousCompositingQuality;
-        private InterpolationMode previousInterpolationMode;
-        private SmoothingMode previousSmoothingMode;
-        private PixelOffsetMode previousPixelOffsetMode;
-        private Graphics g;
+        this.g = g;
 
-        public GraphicsQualityManager(Graphics g, bool highQuality)
+        previousCompositingQuality = g.CompositingQuality;
+        previousInterpolationMode = g.InterpolationMode;
+        previousSmoothingMode = g.SmoothingMode;
+        previousPixelOffsetMode = g.PixelOffsetMode;
+
+        if (highQuality)
         {
-            this.g = g;
-
-            previousCompositingQuality = g.CompositingQuality;
-            previousInterpolationMode = g.InterpolationMode;
-            previousSmoothingMode = g.SmoothingMode;
-            previousPixelOffsetMode = g.PixelOffsetMode;
-
-            if (highQuality)
-            {
-                SetHighQuality();
-            }
-            else
-            {
-                SetLowQuality();
-            }
+            SetHighQuality();
+        } else
+        {
+            SetLowQuality();
         }
+    }
 
-        public void SetHighQuality()
+    public void SetHighQuality()
+    {
+        if (g != null)
         {
-            if (g != null)
-            {
-                g.CompositingQuality = CompositingQuality.HighQuality;
-                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                g.SmoothingMode = SmoothingMode.HighQuality;
-            }
+            g.CompositingQuality = CompositingQuality.HighQuality;
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            g.SmoothingMode = SmoothingMode.HighQuality;
         }
+    }
 
-        public void SetLowQuality()
+    public void SetLowQuality()
+    {
+        if (g != null)
         {
-            if (g != null)
-            {
-                g.CompositingQuality = CompositingQuality.HighSpeed;
-                g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                g.SmoothingMode = SmoothingMode.HighSpeed;
-                g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
-            }
+            g.CompositingQuality = CompositingQuality.HighSpeed;
+            g.InterpolationMode = InterpolationMode.NearestNeighbor;
+            g.SmoothingMode = SmoothingMode.HighSpeed;
+            g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
         }
+    }
 
-        public void Dispose()
+    public void Dispose()
+    {
+        if (g != null)
         {
-            if (g != null)
-            {
-                g.CompositingQuality = previousCompositingQuality;
-                g.InterpolationMode = previousInterpolationMode;
-                g.SmoothingMode = previousSmoothingMode;
-                g.PixelOffsetMode = previousPixelOffsetMode;
-            }
+            g.CompositingQuality = previousCompositingQuality;
+            g.InterpolationMode = previousInterpolationMode;
+            g.SmoothingMode = previousSmoothingMode;
+            g.PixelOffsetMode = previousPixelOffsetMode;
         }
     }
 }

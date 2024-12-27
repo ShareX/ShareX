@@ -23,51 +23,52 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+[Description("Color depth")]
+internal class ColorDepth : ImageEffect
 {
-    [Description("Color depth")]
-    internal class ColorDepth : ImageEffect
+    private int bitsPerChannel;
+
+    [DefaultValue(4)]
+    public int BitsPerChannel
     {
-        private int bitsPerChannel;
-
-        [DefaultValue(4)]
-        public int BitsPerChannel
+        get
         {
-            get
-            {
-                return bitsPerChannel;
-            }
-            set
-            {
-                bitsPerChannel = MathHelpers.Clamp(value, 1, 8);
-            }
+            return bitsPerChannel;
+        }
+        set
+        {
+            bitsPerChannel = MathHelpers.Clamp(value, 1, 8);
+        }
+    }
+
+    public ColorDepth()
+    {
+        this.ApplyDefaultPropertyValues();
+    }
+
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        ImageHelpers.ColorDepth(bmp, BitsPerChannel);
+        return bmp;
+    }
+
+    protected override string GetSummary()
+    {
+        string summary = BitsPerChannel + " bit";
+
+        if (BitsPerChannel > 1)
+        {
+            summary += "s";
         }
 
-        public ColorDepth()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            ImageHelpers.ColorDepth(bmp, BitsPerChannel);
-            return bmp;
-        }
-
-        protected override string GetSummary()
-        {
-            string summary = BitsPerChannel + " bit";
-
-            if (BitsPerChannel > 1)
-            {
-                summary += "s";
-            }
-
-            return summary;
-        }
+        return summary;
     }
 }

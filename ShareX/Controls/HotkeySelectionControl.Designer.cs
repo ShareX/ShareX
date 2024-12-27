@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class HotkeySelectionControl
     {
@@ -32,7 +34,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySelectionControl));
             this.btnEdit = new System.Windows.Forms.Button();
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnTask = new ShareX.HelpersLib.MenuButton();
+            this.btnTask = new ShareX.HelpersLib.Controls.MenuButton();
             this.btnHotkey = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -85,7 +87,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnEdit;
-        private HelpersLib.MenuButton btnTask;
+        private MenuButton btnTask;
         private System.Windows.Forms.ContextMenuStrip cmsTask;
         private System.Windows.Forms.Button btnHotkey;
     }

@@ -23,48 +23,49 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Native;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class OutputBox : Form
 {
-    public partial class OutputBox : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool ScrollToEnd { get; private set; }
+
+    private OutputBox(string text, string title, bool scrollToEnd = false)
     {
-        public bool ScrollToEnd { get; private set; }
+        InitializeComponent();
+        rtbText.AddContextMenu();
+        ShareXResources.ApplyTheme(this, true);
 
-        private OutputBox(string text, string title, bool scrollToEnd = false)
+        Text = "ShareX - " + title;
+        rtbText.Text = text;
+        ScrollToEnd = scrollToEnd;
+    }
+
+    public static void Show(string text, string title, bool scrollToEnd = false)
+    {
+        using OutputBox outputBox = new(text, title, scrollToEnd);
+        outputBox.ShowDialog();
+    }
+
+    private void OutputBox_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+
+        rtbText.SelectionStart = rtbText.TextLength;
+
+        if (ScrollToEnd)
         {
-            InitializeComponent();
-            rtbText.AddContextMenu();
-            ShareXResources.ApplyTheme(this, true);
-
-            Text = "ShareX - " + title;
-            rtbText.Text = text;
-            ScrollToEnd = scrollToEnd;
-        }
-
-        public static void Show(string text, string title, bool scrollToEnd = false)
+            NativeMethods.SendMessage(rtbText.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_BOTTOM, 0);
+        } else
         {
-            using (OutputBox outputBox = new OutputBox(text, title, scrollToEnd))
-            {
-                outputBox.ShowDialog();
-            }
-        }
-
-        private void OutputBox_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
-
-            rtbText.SelectionStart = rtbText.TextLength;
-
-            if (ScrollToEnd)
-            {
-                NativeMethods.SendMessage(rtbText.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_BOTTOM, 0);
-            }
-            else
-            {
-                NativeMethods.SendMessage(rtbText.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
-            }
+            NativeMethods.SendMessage(rtbText.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
         }
     }
 }

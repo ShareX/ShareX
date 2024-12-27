@@ -23,216 +23,215 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.GIF;
+
+public class GifClass
 {
-    public class GifClass
+    public enum GIFVersion
     {
-        public enum GIFVersion
+        GIF87a,
+        GIF89a
+    }
+
+    public enum GIFBlockType
+    {
+        ImageDescriptor = 0x2C,
+        Extension = 0x21,
+        Trailer = 0x3B
+    }
+
+    public GIFVersion Version = GIFVersion.GIF87a;
+    public List<byte>
+        GifSignature = [],
+        ScreenDescriptor = [],
+        ColorTable = [],
+        ImageDescriptor = [],
+        ImageData = [];
+
+    public void LoadGifPicture(Image img, GIFQuality quality)
+    {
+        List<byte> dataList;
+
+        using (MemoryStream ms = new())
         {
-            GIF87a,
-            GIF89a
+            ImageHelpers.SaveGIF(img, ms, quality);
+            dataList = [.. ms.ToArray()];
         }
 
-        public enum GIFBlockType
+        if (!AnalyzeGifSignature(dataList))
         {
-            ImageDescriptor = 0x2C,
-            Extension = 0x21,
-            Trailer = 0x3B
+            throw new Exception("File is not a gif!");
         }
 
-        public GIFVersion Version = GIFVersion.GIF87a;
-        public List<byte> GifSignature = new List<byte>();
-        public List<byte> ScreenDescriptor = new List<byte>();
-        public List<byte> ColorTable = new List<byte>();
-        public List<byte> ImageDescriptor = new List<byte>();
-        public List<byte> ImageData = new List<byte>();
+        AnalyzeScreenDescriptor(dataList);
 
-        public void LoadGifPicture(Image img, GIFQuality quality)
+        GIFBlockType blockType = GetTypeOfNextBlock(dataList);
+
+        while (blockType != GIFBlockType.Trailer)
         {
-            List<byte> dataList;
-
-            using (MemoryStream ms = new MemoryStream())
+            switch (blockType)
             {
-                ImageHelpers.SaveGIF(img, ms, quality);
-                dataList = new List<byte>(ms.ToArray());
+                case GIFBlockType.ImageDescriptor:
+                    AnalyzeImageDescriptor(dataList);
+                    break;
+                case GIFBlockType.Extension:
+                    ThrowAwayExtensionBlock(dataList);
+                    break;
             }
 
-            if (!AnalyzeGifSignature(dataList))
-            {
-                throw new Exception("File is not a gif!");
-            }
+            blockType = GetTypeOfNextBlock(dataList);
+        }
+    }
 
-            AnalyzeScreenDescriptor(dataList);
-
-            GIFBlockType blockType = GetTypeOfNextBlock(dataList);
-
-            while (blockType != GIFBlockType.Trailer)
-            {
-                switch (blockType)
-                {
-                    case GIFBlockType.ImageDescriptor:
-                        AnalyzeImageDescriptor(dataList);
-                        break;
-                    case GIFBlockType.Extension:
-                        ThrowAwayExtensionBlock(dataList);
-                        break;
-                }
-
-                blockType = GetTypeOfNextBlock(dataList);
-            }
+    private bool AnalyzeGifSignature(List<byte> gifData)
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            GifSignature.Add(gifData[i]);
         }
 
-        private bool AnalyzeGifSignature(List<byte> gifData)
+        gifData.RemoveRange(0, 6);
+
+        List<char> chars = GifSignature.ConvertAll(ByteToChar);
+
+        string s = new([.. chars]);
+
+        if (s == GIFVersion.GIF89a.ToString())
         {
-            for (int i = 0; i < 6; i++)
-            {
-                GifSignature.Add(gifData[i]);
-            }
-
-            gifData.RemoveRange(0, 6);
-
-            List<char> chars = GifSignature.ConvertAll(ByteToChar);
-
-            string s = new string(chars.ToArray());
-
-            if (s == GIFVersion.GIF89a.ToString())
-            {
-                Version = GIFVersion.GIF89a;
-            }
-            else if (s == GIFVersion.GIF87a.ToString())
-            {
-                Version = GIFVersion.GIF87a;
-            }
-            else
-            {
-                return false;
-            }
-
-            return true;
+            Version = GIFVersion.GIF89a;
+        } else if (s == GIFVersion.GIF87a.ToString())
+        {
+            Version = GIFVersion.GIF87a;
+        } else
+        {
+            return false;
         }
 
-        private char ByteToChar(byte b)
+        return true;
+    }
+
+    private char ByteToChar(byte b)
+    {
+        return (char)b;
+    }
+
+    private void AnalyzeScreenDescriptor(List<byte> gifData)
+    {
+        for (int i = 0; i < 7; i++)
         {
-            return (char)b;
+            ScreenDescriptor.Add(gifData[i]);
         }
 
-        private void AnalyzeScreenDescriptor(List<byte> gifData)
+        gifData.RemoveRange(0, 7);
+
+        // if the first bit of the fifth byte is set the GlobelColorTable follows this block
+
+        bool globalColorTableFollows = (ScreenDescriptor[4] & 0x80) != 0;
+
+        if (globalColorTableFollows)
         {
-            for (int i = 0; i < 7; i++)
+            int pixel = ScreenDescriptor[4] & 0x07;
+
+            int lengthOfColorTableInByte = 3 * (int)Math.Pow(2, pixel + 1);
+
+            for (int i = 0; i < lengthOfColorTableInByte; i++)
             {
-                ScreenDescriptor.Add(gifData[i]);
+                ColorTable.Add(gifData[i]);
             }
 
-            gifData.RemoveRange(0, 7);
-
-            // if the first bit of the fifth byte is set the GlobelColorTable follows this block
-
-            bool globalColorTableFollows = (ScreenDescriptor[4] & 0x80) != 0;
-
-            if (globalColorTableFollows)
-            {
-                int pixel = ScreenDescriptor[4] & 0x07;
-
-                int lengthOfColorTableInByte = 3 * ((int)Math.Pow(2, pixel + 1));
-
-                for (int i = 0; i < lengthOfColorTableInByte; i++)
-                {
-                    ColorTable.Add(gifData[i]);
-                }
-
-                gifData.RemoveRange(0, lengthOfColorTableInByte);
-            }
-
-            ScreenDescriptor[4] = (byte)(ScreenDescriptor[4] & 0x7F);
+            gifData.RemoveRange(0, lengthOfColorTableInByte);
         }
 
-        private GIFBlockType GetTypeOfNextBlock(List<byte> gifData)
-        {
-            GIFBlockType blockType = (GIFBlockType)gifData[0];
+        ScreenDescriptor[4] = (byte)(ScreenDescriptor[4] & 0x7F);
+    }
 
-            return blockType;
+    private static GIFBlockType GetTypeOfNextBlock(List<byte> gifData)
+    {
+        GIFBlockType blockType = (GIFBlockType)gifData[0];
+
+        return blockType;
+    }
+
+    private void AnalyzeImageDescriptor(List<byte> gifData)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            ImageDescriptor.Add(gifData[i]);
         }
 
-        private void AnalyzeImageDescriptor(List<byte> gifData)
+        gifData.RemoveRange(0, 10);
+
+        // get ColorTable if exists
+
+        bool localColorMapFollows = (ImageDescriptor[9] & 0x80) != 0;
+
+        if (localColorMapFollows)
         {
-            for (int i = 0; i < 10; i++)
+            int pixel = ImageDescriptor[9] & 0x07;
+
+            int lengthOfColorTableInByte = 3 * (int)Math.Pow(2, pixel + 1);
+
+            ColorTable.Clear();
+
+            for (int i = 0; i < lengthOfColorTableInByte; i++)
             {
-                ImageDescriptor.Add(gifData[i]);
+                ColorTable.Add(gifData[i]);
             }
 
-            gifData.RemoveRange(0, 10);
+            gifData.RemoveRange(0, lengthOfColorTableInByte);
+        } else
+        {
+            int lastThreeBitsOfGlobalTableDescription = ScreenDescriptor[4] & 0x07;
 
-            // get ColorTable if exists
+            ImageDescriptor[9] = (byte)(ImageDescriptor[9] & 0xF8);
 
-            bool localColorMapFollows = (ImageDescriptor[9] & 0x80) != 0;
-
-            if (localColorMapFollows)
-            {
-                int pixel = ImageDescriptor[9] & 0x07;
-
-                int lengthOfColorTableInByte = 3 * ((int)Math.Pow(2, pixel + 1));
-
-                ColorTable.Clear();
-
-                for (int i = 0; i < lengthOfColorTableInByte; i++)
-                {
-                    ColorTable.Add(gifData[i]);
-                }
-
-                gifData.RemoveRange(0, lengthOfColorTableInByte);
-            }
-            else
-            {
-                int lastThreeBitsOfGlobalTableDescription = ScreenDescriptor[4] & 0x07;
-
-                ImageDescriptor[9] = (byte)(ImageDescriptor[9] & 0xF8);
-
-                ImageDescriptor[9] = (byte)(ImageDescriptor[9] | lastThreeBitsOfGlobalTableDescription);
-            }
-
-            ImageDescriptor[9] = (byte)(ImageDescriptor[9] | 0x80);
-
-            GetImageData(gifData);
+            ImageDescriptor[9] = (byte)(ImageDescriptor[9] | lastThreeBitsOfGlobalTableDescription);
         }
 
-        private void GetImageData(List<byte> gifData)
+        ImageDescriptor[9] = (byte)(ImageDescriptor[9] | 0x80);
+
+        GetImageData(gifData);
+    }
+
+    private void GetImageData(List<byte> gifData)
+    {
+        ImageData.Add(gifData[0]);
+
+        gifData.RemoveAt(0);
+
+        while (gifData[0] != 0x00)
         {
-            ImageData.Add(gifData[0]);
+            int countOfFollowingDataBytes = gifData[0];
 
-            gifData.RemoveAt(0);
-
-            while (gifData[0] != 0x00)
+            for (int i = 0; i <= countOfFollowingDataBytes; i++)
             {
-                int countOfFollowingDataBytes = gifData[0];
-
-                for (int i = 0; i <= countOfFollowingDataBytes; i++)
-                {
-                    ImageData.Add(gifData[i]);
-                }
-
-                gifData.RemoveRange(0, countOfFollowingDataBytes + 1);
+                ImageData.Add(gifData[i]);
             }
 
-            ImageData.Add(gifData[0]);
-
-            gifData.RemoveAt(0);
+            gifData.RemoveRange(0, countOfFollowingDataBytes + 1);
         }
 
-        private void ThrowAwayExtensionBlock(List<byte> gifData)
+        ImageData.Add(gifData[0]);
+
+        gifData.RemoveAt(0);
+    }
+
+    private static void ThrowAwayExtensionBlock(List<byte> gifData)
+    {
+        gifData.RemoveRange(0, 2); // Delete ExtensionBlockIndicator and ExtensionDetermination
+
+        while (gifData[0] != 0)
         {
-            gifData.RemoveRange(0, 2); // Delete ExtensionBlockIndicator and ExtensionDetermination
-
-            while (gifData[0] != 0)
-            {
-                gifData.RemoveRange(0, gifData[0] + 1);
-            }
-
-            gifData.RemoveAt(0);
+            gifData.RemoveRange(0, gifData[0] + 1);
         }
+
+        gifData.RemoveAt(0);
     }
 }

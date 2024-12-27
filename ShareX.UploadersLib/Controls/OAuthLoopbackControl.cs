@@ -23,79 +23,69 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.OAuth;
 using ShareX.UploadersLib.Properties;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class OAuthLoopbackControl : UserControl
 {
-    public partial class OAuthLoopbackControl : UserControl
+    public event Action ConnectButtonClicked;
+    public event Action DisconnectButtonClicked;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool Connected { get; private set; }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public OAuthUserInfo UserInfo { get; private set; }
+
+    public OAuthLoopbackControl()
     {
-        public event Action ConnectButtonClicked;
-        public event Action DisconnectButtonClicked;
+        InitializeComponent();
+        UpdateStatus();
+    }
 
-        public bool Connected { get; private set; }
-
-        public OAuthUserInfo UserInfo { get; private set; }
-
-        public OAuthLoopbackControl()
+    private void btnConnect_Click(object sender, EventArgs e)
+    {
+        if (Connected)
         {
-            InitializeComponent();
-            UpdateStatus();
+            DisconnectButtonClicked?.Invoke();
+
+            UpdateStatus(null);
+        } else
+        {
+            ConnectButtonClicked?.Invoke();
         }
+    }
 
-        private void btnConnect_Click(object sender, EventArgs e)
+    public void UpdateStatus(OAuth2Info oauth, OAuthUserInfo userInfo = null)
+    {
+        Connected = OAuth2Info.CheckOAuth(oauth);
+
+        UserInfo = Connected ? userInfo : null;
+
+        UpdateStatus();
+    }
+
+    private void UpdateStatus()
+    {
+        if (Connected)
         {
-            if (Connected)
-            {
-                DisconnectButtonClicked?.Invoke();
-
-                UpdateStatus(null);
-            }
-            else
-            {
-                ConnectButtonClicked?.Invoke();
-            }
-        }
-
-        public void UpdateStatus(OAuth2Info oauth, OAuthUserInfo userInfo = null)
+            btnConnect.Text = Resources.Disconnect;
+            lblStatusValue.Text = UserInfo != null && !string.IsNullOrEmpty(UserInfo.name)
+                ? string.Format(Resources.LoggedInAs0, UserInfo.name)
+                : Resources.OAuthControl_Status_LoggedIn;
+            lblStatusValue.ForeColor = Color.FromArgb(0, 180, 0);
+        } else
         {
-            Connected = OAuth2Info.CheckOAuth(oauth);
-
-            if (Connected)
-            {
-                UserInfo = userInfo;
-            }
-            else
-            {
-                UserInfo = null;
-            }
-
-            UpdateStatus();
-        }
-
-        private void UpdateStatus()
-        {
-            if (Connected)
-            {
-                btnConnect.Text = Resources.Disconnect;
-                if (UserInfo != null && !string.IsNullOrEmpty(UserInfo.name))
-                {
-                    lblStatusValue.Text = string.Format(Resources.LoggedInAs0, UserInfo.name);
-                }
-                else
-                {
-                    lblStatusValue.Text = Resources.OAuthControl_Status_LoggedIn;
-                }
-                lblStatusValue.ForeColor = Color.FromArgb(0, 180, 0);
-            }
-            else
-            {
-                btnConnect.Text = Resources.Connect;
-                lblStatusValue.Text = Resources.OAuthControl_Status_NotLoggedIn;
-                lblStatusValue.ForeColor = Color.FromArgb(220, 0, 0);
-            }
+            btnConnect.Text = Resources.Connect;
+            lblStatusValue.Text = Resources.OAuthControl_Status_NotLoggedIn;
+            lblStatusValue.ForeColor = Color.FromArgb(220, 0, 0);
         }
     }
 }

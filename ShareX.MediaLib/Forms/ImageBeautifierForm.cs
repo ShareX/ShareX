@@ -24,427 +24,432 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Colors;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.MediaLib.Properties;
+
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public partial class ImageBeautifierForm : Form
 {
-    public partial class ImageBeautifierForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Bitmap SourceImage { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Bitmap PreviewImage { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ImageBeautifierOptions Options { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string FilePath { get; private set; }
+
+    public event Action<Bitmap> UploadImageRequested;
+    public event Action<Bitmap> PrintImageRequested;
+
+    private bool isReady, isBusy, isPending, pendingQuickRender;
+    private string title;
+    private ImageBeautifier imageBeautifier;
+
+    private ImageBeautifierForm(ImageBeautifierOptions options = null)
     {
-        public Bitmap SourceImage { get; private set; }
-        public Bitmap PreviewImage { get; private set; }
-        public ImageBeautifierOptions Options { get; private set; }
-        public string FilePath { get; private set; }
+        Options = options;
 
-        public event Action<Bitmap> UploadImageRequested;
-        public event Action<Bitmap> PrintImageRequested;
-
-        private bool isReady, isBusy, isPending, pendingQuickRender;
-        private string title;
-        private ImageBeautifier imageBeautifier;
-
-        private ImageBeautifierForm(ImageBeautifierOptions options = null)
+        if (Options == null)
         {
-            Options = options;
-
-            if (Options == null)
-            {
-                Options = new ImageBeautifierOptions();
-            }
-
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-            title = Text;
-
-            LoadOptions();
+            Options = new ImageBeautifierOptions();
         }
 
-        public ImageBeautifierForm(Bitmap sourceImage, ImageBeautifierOptions options = null) : this(options)
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+        title = Text;
+
+        LoadOptions();
+    }
+
+    public ImageBeautifierForm(Bitmap sourceImage, ImageBeautifierOptions options = null) : this(options)
+    {
+        SourceImage = sourceImage;
+    }
+
+    public ImageBeautifierForm(string filePath, ImageBeautifierOptions options = null) : this(options)
+    {
+        FilePath = filePath;
+        SourceImage = ImageHelpers.LoadImage(filePath);
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
         {
-            SourceImage = sourceImage;
+            components?.Dispose();
+            SourceImage?.Dispose();
+            PreviewImage?.Dispose();
+            imageBeautifier?.Dispose();
         }
 
-        public ImageBeautifierForm(string filePath, ImageBeautifierOptions options = null) : this(options)
+        base.Dispose(disposing);
+    }
+
+    private void LoadOptions()
+    {
+        isReady = false;
+
+        tbMargin.SetValue(Options.Margin);
+        tbPadding.SetValue(Options.Padding);
+        cbSmartPadding.Checked = Options.SmartPadding;
+        tbRoundedCorner.SetValue(Options.RoundedCorner);
+        tbShadowRadius.SetValue(Options.ShadowRadius);
+        tbShadowOpacity.SetValue(Options.ShadowOpacity);
+        tbShadowDistance.SetValue(Options.ShadowDistance);
+        tbShadowAngle.SetValue(Options.ShadowAngle);
+        btnShadowColor.Color = Options.ShadowColor;
+        if (cbBackgroundType.Items.Count == 0)
         {
-            FilePath = filePath;
-            SourceImage = ImageHelpers.LoadImage(filePath);
+            cbBackgroundType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageBeautifierBackgroundType>());
         }
+        cbBackgroundType.SelectedIndex = (int)Options.BackgroundType;
+        lblBackgroundImageFilePath.Text = Options.BackgroundImageFilePath;
+        UpdateUI();
+        UpdateBackgroundPreview();
 
-        protected override void Dispose(bool disposing)
+        isReady = true;
+    }
+
+    private void UpdateUI()
+    {
+        lblMarginValue.Text = tbMargin.Value.ToString() + " px";
+        lblPaddingValue.Text = tbPadding.Value.ToString() + " px";
+        lblRoundedCornerValue.Text = tbRoundedCorner.Value.ToString();
+        lblShadowRadiusValue.Text = tbShadowRadius.Value.ToString();
+        lblShadowOpacityValue.Text = tbShadowOpacity.Value.ToString() + "%";
+        lblShadowDistanceValue.Text = tbShadowDistance.Value.ToString() + " px";
+        lblShadowAngleValue.Text = tbShadowAngle.Value.ToString() + "°";
+        lblBackgroundImageFilePath.Text = Options.BackgroundImageFilePath;
+    }
+
+    private void UpdateBackgroundPreview()
+    {
+        pbBackground.Image?.Dispose();
+        pbBackground.Image = null;
+
+        switch (Options.BackgroundType)
         {
-            if (disposing)
-            {
-                components?.Dispose();
-                SourceImage?.Dispose();
-                PreviewImage?.Dispose();
-                imageBeautifier?.Dispose();
-            }
-
-            base.Dispose(disposing);
+            case ImageBeautifierBackgroundType.Gradient:
+                pbBackground.Visible = true;
+                lblBackgroundImageFilePath.Visible = false;
+                btnBackgroundImageFilePathBrowse.Visible = false;
+                pbBackground.Image = Options.BackgroundGradient.CreateGradientPreview(pbBackground.ClientRectangle.Width, pbBackground.ClientRectangle.Height, true, true);
+                break;
+            case ImageBeautifierBackgroundType.Color:
+                pbBackground.Visible = true;
+                lblBackgroundImageFilePath.Visible = false;
+                btnBackgroundImageFilePathBrowse.Visible = false;
+                pbBackground.Image = new GradientInfo(Options.BackgroundColor).
+                    CreateGradientPreview(pbBackground.ClientRectangle.Width, pbBackground.ClientRectangle.Height, true, true);
+                break;
+            case ImageBeautifierBackgroundType.Image:
+                pbBackground.Visible = false;
+                lblBackgroundImageFilePath.Visible = true;
+                btnBackgroundImageFilePathBrowse.Visible = true;
+                break;
+            case ImageBeautifierBackgroundType.Desktop:
+            case ImageBeautifierBackgroundType.Transparent:
+                pbBackground.Visible = false;
+                lblBackgroundImageFilePath.Visible = false;
+                btnBackgroundImageFilePathBrowse.Visible = false;
+                break;
         }
+    }
 
-        private void LoadOptions()
+    private async Task UpdatePreview(bool quickRender = false)
+    {
+        if (isReady)
         {
-            isReady = false;
-
-            tbMargin.SetValue(Options.Margin);
-            tbPadding.SetValue(Options.Padding);
-            cbSmartPadding.Checked = Options.SmartPadding;
-            tbRoundedCorner.SetValue(Options.RoundedCorner);
-            tbShadowRadius.SetValue(Options.ShadowRadius);
-            tbShadowOpacity.SetValue(Options.ShadowOpacity);
-            tbShadowDistance.SetValue(Options.ShadowDistance);
-            tbShadowAngle.SetValue(Options.ShadowAngle);
-            btnShadowColor.Color = Options.ShadowColor;
-            if (cbBackgroundType.Items.Count == 0)
-            {
-                cbBackgroundType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageBeautifierBackgroundType>());
-            }
-            cbBackgroundType.SelectedIndex = (int)Options.BackgroundType;
-            lblBackgroundImageFilePath.Text = Options.BackgroundImageFilePath;
             UpdateUI();
-            UpdateBackgroundPreview();
 
-            isReady = true;
-        }
-
-        private void UpdateUI()
-        {
-            lblMarginValue.Text = tbMargin.Value.ToString() + " px";
-            lblPaddingValue.Text = tbPadding.Value.ToString() + " px";
-            lblRoundedCornerValue.Text = tbRoundedCorner.Value.ToString();
-            lblShadowRadiusValue.Text = tbShadowRadius.Value.ToString();
-            lblShadowOpacityValue.Text = tbShadowOpacity.Value.ToString() + "%";
-            lblShadowDistanceValue.Text = tbShadowDistance.Value.ToString() + " px";
-            lblShadowAngleValue.Text = tbShadowAngle.Value.ToString() + "°";
-            lblBackgroundImageFilePath.Text = Options.BackgroundImageFilePath;
-        }
-
-        private void UpdateBackgroundPreview()
-        {
-            pbBackground.Image?.Dispose();
-            pbBackground.Image = null;
-
-            switch (Options.BackgroundType)
+            if (isBusy)
             {
-                case ImageBeautifierBackgroundType.Gradient:
-                    pbBackground.Visible = true;
-                    lblBackgroundImageFilePath.Visible = false;
-                    btnBackgroundImageFilePathBrowse.Visible = false;
-                    pbBackground.Image = Options.BackgroundGradient.CreateGradientPreview(pbBackground.ClientRectangle.Width, pbBackground.ClientRectangle.Height, true, true);
-                    break;
-                case ImageBeautifierBackgroundType.Color:
-                    pbBackground.Visible = true;
-                    lblBackgroundImageFilePath.Visible = false;
-                    btnBackgroundImageFilePathBrowse.Visible = false;
-                    pbBackground.Image = new GradientInfo(Options.BackgroundColor).
-                        CreateGradientPreview(pbBackground.ClientRectangle.Width, pbBackground.ClientRectangle.Height, true, true);
-                    break;
-                case ImageBeautifierBackgroundType.Image:
-                    pbBackground.Visible = false;
-                    lblBackgroundImageFilePath.Visible = true;
-                    btnBackgroundImageFilePathBrowse.Visible = true;
-                    break;
-                case ImageBeautifierBackgroundType.Desktop:
-                case ImageBeautifierBackgroundType.Transparent:
-                    pbBackground.Visible = false;
-                    lblBackgroundImageFilePath.Visible = false;
-                    btnBackgroundImageFilePathBrowse.Visible = false;
-                    break;
-            }
-        }
-
-        private async Task UpdatePreview(bool quickRender = false)
-        {
-            if (isReady)
+                isPending = true;
+                pendingQuickRender = quickRender;
+            } else
             {
-                UpdateUI();
+                isBusy = true;
 
-                if (isBusy)
+                UpdateOptions();
+
+                ImageBeautifierOptions options = Options.Copy();
+
+                if (quickRender)
                 {
-                    isPending = true;
-                    pendingQuickRender = quickRender;
+                    options.ShadowOpacity = 0;
                 }
-                else
+
+                if (imageBeautifier == null)
                 {
-                    isBusy = true;
+                    imageBeautifier = new ImageBeautifier();
+                    imageBeautifier.LoadImage(SourceImage);
 
-                    UpdateOptions();
-
-                    ImageBeautifierOptions options = Options.Copy();
-
-                    if (quickRender)
+                    if (imageBeautifier.SourceImageCropped == null)
                     {
-                        options.ShadowOpacity = 0;
+                        cbSmartPadding.Enabled = false;
                     }
+                }
 
-                    if (imageBeautifier == null)
-                    {
-                        imageBeautifier = new ImageBeautifier();
-                        imageBeautifier.LoadImage(SourceImage);
+                imageBeautifier.Options = options;
 
-                        if (imageBeautifier.SourceImageCropped == null)
-                        {
-                            cbSmartPadding.Enabled = false;
-                        }
-                    }
+                Stopwatch renderTime = Stopwatch.StartNew();
+                Bitmap resultImage = await imageBeautifier.RenderAsync();
+                renderTime.Stop();
 
-                    imageBeautifier.Options = options;
+                if (IsDisposed)
+                {
+                    resultImage?.Dispose();
+                    return;
+                }
 
-                    Stopwatch renderTime = Stopwatch.StartNew();
-                    Bitmap resultImage = await imageBeautifier.RenderAsync();
-                    renderTime.Stop();
+                if (HelpersOptions.DevMode)
+                {
+                    Text = $"{title} - Render time: {renderTime.ElapsedMilliseconds} ms";
+                }
 
-                    if (IsDisposed)
-                    {
-                        resultImage?.Dispose();
-                        return;
-                    }
+                PreviewImage?.Dispose();
+                PreviewImage = resultImage;
+                pbPreview.LoadImage(PreviewImage);
 
-                    if (HelpersOptions.DevMode)
-                    {
-                        Text = $"{title} - Render time: {renderTime.ElapsedMilliseconds} ms";
-                    }
+                isBusy = false;
 
-                    PreviewImage?.Dispose();
-                    PreviewImage = resultImage;
-                    pbPreview.LoadImage(PreviewImage);
+                if (isPending)
+                {
+                    isPending = false;
 
-                    isBusy = false;
-
-                    if (isPending)
-                    {
-                        isPending = false;
-
-                        await UpdatePreview(pendingQuickRender);
-                    }
+                    await UpdatePreview(pendingQuickRender);
                 }
             }
         }
+    }
 
-        private void UpdateOptions()
+    private void UpdateOptions()
+    {
+        Options.Margin = tbMargin.Value;
+        Options.Padding = tbPadding.Value;
+        Options.SmartPadding = cbSmartPadding.Checked;
+        Options.RoundedCorner = tbRoundedCorner.Value;
+        Options.ShadowRadius = tbShadowRadius.Value;
+        Options.ShadowOpacity = tbShadowOpacity.Value;
+        Options.ShadowDistance = tbShadowDistance.Value;
+        Options.ShadowAngle = tbShadowAngle.Value;
+        Options.ShadowColor = btnShadowColor.Color;
+    }
+
+    private void OnUploadImageRequested()
+    {
+        UploadImageRequested?.Invoke(PreviewImage.CloneSafe());
+    }
+
+    private void OnPrintImageRequested()
+    {
+        PrintImageRequested?.Invoke(PreviewImage.CloneSafe());
+    }
+
+    private async void ImageBeautifierForm_Shown(object sender, EventArgs e)
+    {
+        await UpdatePreview();
+    }
+
+    private async void tbMargin_Scroll(object sender, EventArgs e)
+    {
+        await UpdatePreview(true);
+    }
+
+    private async void tbMargin_MouseUp(object sender, MouseEventArgs e)
+    {
+        await UpdatePreview();
+    }
+
+    private async void tbPadding_Scroll(object sender, EventArgs e)
+    {
+        await UpdatePreview(true);
+    }
+
+    private async void tbPadding_MouseUp(object sender, MouseEventArgs e)
+    {
+        await UpdatePreview();
+    }
+
+    private async void cbSmartPadding_CheckedChanged(object sender, EventArgs e)
+    {
+        await UpdatePreview();
+    }
+
+    private async void tbRoundedCorner_Scroll(object sender, EventArgs e)
+    {
+        await UpdatePreview(true);
+    }
+
+    private async void tbRoundedCorner_MouseUp(object sender, MouseEventArgs e)
+    {
+        await UpdatePreview();
+    }
+
+    private void btnShadowExpand_Click(object sender, EventArgs e)
+    {
+        if (btnShadowExpand.Tag is "+")
         {
-            Options.Margin = tbMargin.Value;
-            Options.Padding = tbPadding.Value;
-            Options.SmartPadding = cbSmartPadding.Checked;
-            Options.RoundedCorner = tbRoundedCorner.Value;
-            Options.ShadowRadius = tbShadowRadius.Value;
-            Options.ShadowOpacity = tbShadowOpacity.Value;
-            Options.ShadowDistance = tbShadowDistance.Value;
-            Options.ShadowAngle = tbShadowAngle.Value;
-            Options.ShadowColor = btnShadowColor.Color;
+            gbShadow.Size = new Size(gbShadow.Width, btnShadowColor.Bottom + 16);
+            btnShadowExpand.Image = Resources.minus_white;
+            btnShadowExpand.Tag = "-";
+        } else
+        {
+            gbShadow.Size = new Size(gbShadow.Width, tbShadowRadius.Bottom + 16);
+            btnShadowExpand.Image = Resources.plus_white;
+            btnShadowExpand.Tag = "+";
         }
+    }
 
-        private void OnUploadImageRequested()
+    private async void tbShadowRadius_Scroll(object sender, EventArgs e)
+    {
+        await UpdatePreview();
+    }
+
+    private async void tbShadowOpacity_Scroll(object sender, EventArgs e)
+    {
+        await UpdatePreview();
+    }
+
+    private async void tbShadowDistance_Scroll(object sender, EventArgs e)
+    {
+        await UpdatePreview();
+    }
+
+    private async void tbShadowAngle_Scroll(object sender, EventArgs e)
+    {
+        await UpdatePreview();
+    }
+
+    private async void btnShadowColor_ColorChanged(Color color)
+    {
+        await UpdatePreview();
+    }
+
+    private async void cbBackgroundType_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Options.BackgroundType = (ImageBeautifierBackgroundType)cbBackgroundType.SelectedIndex;
+        UpdateBackgroundPreview();
+
+        await UpdatePreview();
+    }
+
+    private async void pbBackground_Click(object sender, EventArgs e)
+    {
+        switch (Options.BackgroundType)
         {
-            UploadImageRequested?.Invoke(PreviewImage.CloneSafe());
-        }
+            case ImageBeautifierBackgroundType.Gradient:
+                GradientInfo currentGradient = Options.BackgroundGradient;
 
-        private void OnPrintImageRequested()
-        {
-            PrintImageRequested?.Invoke(PreviewImage.CloneSafe());
-        }
-
-        private async void ImageBeautifierForm_Shown(object sender, EventArgs e)
-        {
-            await UpdatePreview();
-        }
-
-        private async void tbMargin_Scroll(object sender, EventArgs e)
-        {
-            await UpdatePreview(true);
-        }
-
-        private async void tbMargin_MouseUp(object sender, MouseEventArgs e)
-        {
-            await UpdatePreview();
-        }
-
-        private async void tbPadding_Scroll(object sender, EventArgs e)
-        {
-            await UpdatePreview(true);
-        }
-
-        private async void tbPadding_MouseUp(object sender, MouseEventArgs e)
-        {
-            await UpdatePreview();
-        }
-
-        private async void cbSmartPadding_CheckedChanged(object sender, EventArgs e)
-        {
-            await UpdatePreview();
-        }
-
-        private async void tbRoundedCorner_Scroll(object sender, EventArgs e)
-        {
-            await UpdatePreview(true);
-        }
-
-        private async void tbRoundedCorner_MouseUp(object sender, MouseEventArgs e)
-        {
-            await UpdatePreview();
-        }
-
-        private void btnShadowExpand_Click(object sender, EventArgs e)
-        {
-            if (btnShadowExpand.Tag is "+")
-            {
-                gbShadow.Size = new Size(gbShadow.Width, btnShadowColor.Bottom + 16);
-                btnShadowExpand.Image = Resources.minus_white;
-                btnShadowExpand.Tag = "-";
-            }
-            else
-            {
-                gbShadow.Size = new Size(gbShadow.Width, tbShadowRadius.Bottom + 16);
-                btnShadowExpand.Image = Resources.plus_white;
-                btnShadowExpand.Tag = "+";
-            }
-        }
-
-        private async void tbShadowRadius_Scroll(object sender, EventArgs e)
-        {
-            await UpdatePreview();
-        }
-
-        private async void tbShadowOpacity_Scroll(object sender, EventArgs e)
-        {
-            await UpdatePreview();
-        }
-
-        private async void tbShadowDistance_Scroll(object sender, EventArgs e)
-        {
-            await UpdatePreview();
-        }
-
-        private async void tbShadowAngle_Scroll(object sender, EventArgs e)
-        {
-            await UpdatePreview();
-        }
-
-        private async void btnShadowColor_ColorChanged(Color color)
-        {
-            await UpdatePreview();
-        }
-
-        private async void cbBackgroundType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Options.BackgroundType = (ImageBeautifierBackgroundType)cbBackgroundType.SelectedIndex;
-            UpdateBackgroundPreview();
-
-            await UpdatePreview();
-        }
-
-        private async void pbBackground_Click(object sender, EventArgs e)
-        {
-            switch (Options.BackgroundType)
-            {
-                case ImageBeautifierBackgroundType.Gradient:
-                    GradientInfo currentGradient = Options.BackgroundGradient;
-
-                    using (GradientPickerForm gradientPickerForm = new GradientPickerForm(currentGradient.Copy()))
+                using (GradientPickerForm gradientPickerForm = new(currentGradient.Copy()))
+                {
+                    gradientPickerForm.GradientChanged += async () =>
                     {
-                        gradientPickerForm.GradientChanged += async () =>
-                        {
-                            Options.BackgroundGradient = gradientPickerForm.Gradient;
-                            await UpdatePreview(true);
-                        };
+                        Options.BackgroundGradient = gradientPickerForm.Gradient;
+                        await UpdatePreview(true);
+                    };
 
-                        if (gradientPickerForm.ShowDialog() == DialogResult.OK)
-                        {
-                            Options.BackgroundGradient = gradientPickerForm.Gradient;
-                            UpdateBackgroundPreview();
-                        }
-                        else
-                        {
-                            Options.BackgroundGradient = currentGradient;
-                        }
-
-                        await UpdatePreview();
-                    }
-                    break;
-                case ImageBeautifierBackgroundType.Color:
-                    if (ColorPickerForm.PickColor(Options.BackgroundColor, out Color newColor, this))
+                    if (gradientPickerForm.ShowDialog() == DialogResult.OK)
                     {
-                        Options.BackgroundColor = newColor;
+                        Options.BackgroundGradient = gradientPickerForm.Gradient;
                         UpdateBackgroundPreview();
-
-                        await UpdatePreview();
+                    } else
+                    {
+                        Options.BackgroundGradient = currentGradient;
                     }
-                    break;
-            }
-        }
 
-        private async void btnBackgroundImageFilePathBrowse_Click(object sender, EventArgs e)
+                    await UpdatePreview();
+                }
+                break;
+            case ImageBeautifierBackgroundType.Color:
+                if (ColorPickerForm.PickColor(Options.BackgroundColor, out Color newColor, this))
+                {
+                    Options.BackgroundColor = newColor;
+                    UpdateBackgroundPreview();
+
+                    await UpdatePreview();
+                }
+                break;
+        }
+    }
+
+    private async void btnBackgroundImageFilePathBrowse_Click(object sender, EventArgs e)
+    {
+        string filePath = ImageHelpers.OpenImageFileDialog(this);
+
+        if (!string.IsNullOrEmpty(filePath))
         {
-            string filePath = ImageHelpers.OpenImageFileDialog(this);
+            Options.BackgroundImageFilePath = filePath;
+
+            await UpdatePreview();
+        }
+    }
+
+    private async void btnResetOptions_Click(object sender, EventArgs e)
+    {
+        if (MessageBox.Show(Resources.WouldYouLikeToResetOptions, "ShareX - " + Resources.Confirmation, MessageBoxButtons.YesNo,
+            MessageBoxIcon.Information) == DialogResult.Yes)
+        {
+            Options.ResetOptions();
+            LoadOptions();
+
+            await UpdatePreview();
+        }
+    }
+
+    private void btnCopy_Click(object sender, EventArgs e)
+    {
+        if (PreviewImage != null)
+        {
+            ClipboardHelpers.CopyImage(PreviewImage);
+        }
+    }
+
+    private void btnSave_Click(object sender, EventArgs e)
+    {
+        if (PreviewImage != null && !string.IsNullOrEmpty(FilePath))
+        {
+            ImageHelpers.SaveImage(PreviewImage, FilePath);
+        }
+    }
+
+    private void btnSaveAs_Click(object sender, EventArgs e)
+    {
+        if (PreviewImage != null)
+        {
+            string filePath = ImageHelpers.SaveImageFileDialog(PreviewImage, FilePath);
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                Options.BackgroundImageFilePath = filePath;
-
-                await UpdatePreview();
+                FilePath = filePath;
             }
         }
+    }
 
-        private async void btnResetOptions_Click(object sender, EventArgs e)
+    private void btnUpload_Click(object sender, EventArgs e)
+    {
+        if (PreviewImage != null)
         {
-            if (MessageBox.Show(Resources.WouldYouLikeToResetOptions, "ShareX - " + Resources.Confirmation, MessageBoxButtons.YesNo,
-                MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                Options.ResetOptions();
-                LoadOptions();
-
-                await UpdatePreview();
-            }
+            OnUploadImageRequested();
         }
+    }
 
-        private void btnCopy_Click(object sender, EventArgs e)
+    private void btnPrint_Click(object sender, EventArgs e)
+    {
+        if (PreviewImage != null)
         {
-            if (PreviewImage != null)
-            {
-                ClipboardHelpers.CopyImage(PreviewImage);
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (PreviewImage != null && !string.IsNullOrEmpty(FilePath))
-            {
-                ImageHelpers.SaveImage(PreviewImage, FilePath);
-            }
-        }
-
-        private void btnSaveAs_Click(object sender, EventArgs e)
-        {
-            if (PreviewImage != null)
-            {
-                string filePath = ImageHelpers.SaveImageFileDialog(PreviewImage, FilePath);
-
-                if (!string.IsNullOrEmpty(filePath))
-                {
-                    FilePath = filePath;
-                }
-            }
-        }
-
-        private void btnUpload_Click(object sender, EventArgs e)
-        {
-            if (PreviewImage != null)
-            {
-                OnUploadImageRequested();
-            }
-        }
-
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            if (PreviewImage != null)
-            {
-                OnPrintImageRequested();
-            }
+            OnPrintImageRequested();
         }
     }
 }

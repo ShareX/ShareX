@@ -24,90 +24,94 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class QuickTaskInfoEditForm : Form
 {
-    public partial class QuickTaskInfoEditForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public QuickTaskInfo TaskInfo { get; private set; }
+
+    public QuickTaskInfoEditForm(QuickTaskInfo taskInfo)
     {
-        public QuickTaskInfo TaskInfo { get; private set; }
+        TaskInfo = taskInfo;
 
-        public QuickTaskInfoEditForm(QuickTaskInfo taskInfo)
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+
+        txtName.Text = TaskInfo.Name;
+        AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskInfo.AfterCaptureTasks = TaskInfo.AfterCaptureTasks.Swap(x), cmsAfterCapture);
+        AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskInfo.AfterUploadTasks = TaskInfo.AfterUploadTasks.Swap(x), cmsAfterUpload);
+        SetMultiEnumCheckedContextMenu(TaskInfo.AfterCaptureTasks, cmsAfterCapture);
+        SetMultiEnumCheckedContextMenu(TaskInfo.AfterUploadTasks, cmsAfterUpload);
+        UpdateUploaderMenuNames();
+    }
+
+    private void AddMultiEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents) where T : Enum
+    {
+        string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
+
+        foreach (ToolStripDropDown parent in parents)
         {
-            TaskInfo = taskInfo;
+            for (int i = 0; i < enums.Length; i++)
+            {
+                ToolStripMenuItem tsmi = new(enums[i]);
+                tsmi.Image = TaskHelpers.FindMenuIcon<T>(i + 1);
 
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+                int index = i;
 
-            txtName.Text = TaskInfo.Name;
-            AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskInfo.AfterCaptureTasks = TaskInfo.AfterCaptureTasks.Swap(x), cmsAfterCapture);
-            AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskInfo.AfterUploadTasks = TaskInfo.AfterUploadTasks.Swap(x), cmsAfterUpload);
-            SetMultiEnumCheckedContextMenu(TaskInfo.AfterCaptureTasks, cmsAfterCapture);
-            SetMultiEnumCheckedContextMenu(TaskInfo.AfterUploadTasks, cmsAfterUpload);
-            UpdateUploaderMenuNames();
+                tsmi.Click += (sender, e) =>
+                {
+                    foreach (ToolStripDropDown parent2 in parents)
+                    {
+                        ToolStripMenuItem tsmi2 = (ToolStripMenuItem)parent2.Items[index];
+                        tsmi2.Checked = !tsmi2.Checked;
+                    }
+
+                    selectedEnum((T)Enum.ToObject(typeof(T), 1 << index));
+
+                    UpdateUploaderMenuNames();
+                };
+
+                parent.Items.Add(tsmi);
+            }
         }
+    }
 
-        private void AddMultiEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents) where T : Enum
+    private void SetMultiEnumCheckedContextMenu(Enum value, params ToolStripDropDown[] parents)
+    {
+        for (int i = 0; i < parents[0].Items.Count; i++)
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
-
             foreach (ToolStripDropDown parent in parents)
             {
-                for (int i = 0; i < enums.Length; i++)
-                {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
-                    tsmi.Image = TaskHelpers.FindMenuIcon<T>(i + 1);
-
-                    int index = i;
-
-                    tsmi.Click += (sender, e) =>
-                    {
-                        foreach (ToolStripDropDown parent2 in parents)
-                        {
-                            ToolStripMenuItem tsmi2 = (ToolStripMenuItem)parent2.Items[index];
-                            tsmi2.Checked = !tsmi2.Checked;
-                        }
-
-                        selectedEnum((T)Enum.ToObject(typeof(T), 1 << index));
-
-                        UpdateUploaderMenuNames();
-                    };
-
-                    parent.Items.Add(tsmi);
-                }
+                ToolStripMenuItem tsmi = (ToolStripMenuItem)parent.Items[i];
+                tsmi.Checked = value.HasFlag(1 << i);
             }
         }
+    }
 
-        private void SetMultiEnumCheckedContextMenu(Enum value, params ToolStripDropDown[] parents)
-        {
-            for (int i = 0; i < parents[0].Items.Count; i++)
-            {
-                foreach (ToolStripDropDown parent in parents)
-                {
-                    ToolStripMenuItem tsmi = (ToolStripMenuItem)parent.Items[i];
-                    tsmi.Checked = value.HasFlag(1 << i);
-                }
-            }
-        }
+    private void UpdateUploaderMenuNames()
+    {
+        txtName.SetWatermark(TaskInfo.ToString(), true);
+        mbAfterCaptureTasks.Text = string.Join(", ", TaskInfo.AfterCaptureTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
+        mbAfterUploadTasks.Text = string.Join(", ", TaskInfo.AfterUploadTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
+    }
 
-        private void UpdateUploaderMenuNames()
-        {
-            txtName.SetWatermark(TaskInfo.ToString(), true);
-            mbAfterCaptureTasks.Text = string.Join(", ", TaskInfo.AfterCaptureTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
-            mbAfterUploadTasks.Text = string.Join(", ", TaskInfo.AfterUploadTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
-        }
+    private void txtName_TextChanged(object sender, EventArgs e)
+    {
+        TaskInfo.Name = txtName.Text;
+    }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            TaskInfo.Name = txtName.Text;
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-            Close();
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.OK;
+        Close();
     }
 }

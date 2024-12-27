@@ -23,48 +23,51 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
 using ShareX.UploadersLib.FileUploaders;
+using ShareX.UploadersLib.Helpers;
+
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.SharingServices
+namespace ShareX.UploadersLib.SharingServices;
+
+public class PushbulletSharingService : URLSharingService
 {
-    public class PushbulletSharingService : URLSharingService
+    public override URLSharingServices EnumValue { get; } = URLSharingServices.Pushbullet;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override URLSharingServices EnumValue { get; } = URLSharingServices.Pushbullet;
+        PushbulletSettings pushbulletSettings = config.PushbulletSettings;
 
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            PushbulletSettings pushbulletSettings = config.PushbulletSettings;
-
-            return pushbulletSettings != null && !string.IsNullOrEmpty(pushbulletSettings.UserAPIKey) && pushbulletSettings.DeviceList != null &&
-                pushbulletSettings.DeviceList.IsValidIndex(pushbulletSettings.SelectedDevice);
-        }
-
-        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new PushbulletSharer(config.PushbulletSettings);
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPushbullet;
+        return pushbulletSettings != null && !string.IsNullOrEmpty(pushbulletSettings.UserAPIKey) && pushbulletSettings.DeviceList != null &&
+            pushbulletSettings.DeviceList.IsValidIndex(pushbulletSettings.SelectedDevice);
     }
 
-    public sealed class PushbulletSharer : URLSharer
+    public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public PushbulletSettings Settings { get; private set; }
+        return new PushbulletSharer(config.PushbulletSettings);
+    }
 
-        public PushbulletSharer(PushbulletSettings settings)
-        {
-            Settings = settings;
-        }
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPushbullet;
+}
 
-        public override UploadResult ShareURL(string url)
-        {
-            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
+public sealed class PushbulletSharer : URLSharer
+{
+    public PushbulletSettings Settings { get; private set; }
 
-            new Pushbullet(Settings).PushLink(url, "ShareX: URL share");
+    public PushbulletSharer(PushbulletSettings settings)
+    {
+        Settings = settings;
+    }
 
-            return result;
-        }
+    public override UploadResult ShareURL(string url)
+    {
+        UploadResult result = new() { URL = url, IsURLExpected = false };
+
+        new Pushbullet(Settings).PushLink(url, "ShareX: URL share");
+
+        return result;
     }
 }

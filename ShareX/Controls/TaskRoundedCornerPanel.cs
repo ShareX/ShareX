@@ -24,108 +24,98 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Controls;
+using ShareX.HelpersLib.Extensions;
+
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.Controls;
+
+public class TaskRoundedCornerPanel : RoundedCornerPanel
 {
-    public class TaskRoundedCornerPanel : RoundedCornerPanel
+    private bool selected;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool Selected
     {
-        private bool selected;
-
-        public bool Selected
+        get
         {
-            get
-            {
-                return selected;
-            }
-            set
-            {
-                if (selected != value)
-                {
-                    selected = value;
-
-                    Invalidate();
-                }
-            }
+            return selected;
         }
-
-        public Color StatusColor { get; private set; } = Color.Transparent;
-        public ThumbnailTitleLocation StatusLocation { get; set; }
-
-        public void UpdateStatusColor(TaskStatus status)
+        set
         {
-            Color previousStatusColor = StatusColor;
-
-            switch (status)
+            if (selected != value)
             {
-                case TaskStatus.Completed:
-                case TaskStatus.Stopped:
-                    StatusColor = Color.CornflowerBlue;
-                    break;
-                case TaskStatus.Failed:
-                    StatusColor = Color.Red;
-                    break;
-                case TaskStatus.History:
-                    StatusColor = Color.Transparent;
-                    break;
-                default:
-                    StatusColor = Color.PaleGreen;
-                    break;
-            }
+                selected = value;
 
-            if (previousStatusColor != StatusColor)
-            {
                 Invalidate();
             }
         }
+    }
 
-        protected override void OnPaint(PaintEventArgs e)
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Color StatusColor { get; private set; } = Color.Transparent;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ThumbnailTitleLocation StatusLocation { get; set; }
+
+    public void UpdateStatusColor(TaskStatus status)
+    {
+        Color previousStatusColor = StatusColor;
+
+        switch (status)
         {
-            base.OnPaint(e);
+            case TaskStatus.Completed:
+            case TaskStatus.Stopped:
+                StatusColor = Color.CornflowerBlue;
+                break;
+            case TaskStatus.Failed:
+                StatusColor = Color.Red;
+                break;
+            case TaskStatus.History:
+                StatusColor = Color.Transparent;
+                break;
+            default:
+                StatusColor = Color.PaleGreen;
+                break;
+        }
 
-            Graphics g = e.Graphics;
+        if (previousStatusColor != StatusColor)
+        {
+            Invalidate();
+        }
+    }
 
-            if (Selected)
-            {
-                g.PixelOffsetMode = PixelOffsetMode.Default;
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        base.OnPaint(e);
 
-                using (Pen pen = new Pen(ShareXResources.Theme.TextColor) { DashStyle = DashStyle.Dot })
-                {
-                    g.DrawRoundedRectangle(pen, ClientRectangle, Radius);
-                }
-            }
+        Graphics g = e.Graphics;
 
-            if (StatusColor.A > 0)
-            {
-                g.PixelOffsetMode = PixelOffsetMode.Half;
+        if (Selected)
+        {
+            g.PixelOffsetMode = PixelOffsetMode.Default;
 
-                int y;
+            using Pen pen = new(ShareXResources.Theme.TextColor) { DashStyle = DashStyle.Dot };
+            g.DrawRoundedRectangle(pen, ClientRectangle, Radius);
+        }
 
-                if (StatusLocation == ThumbnailTitleLocation.Top)
-                {
-                    y = 0;
-                }
-                else
-                {
-                    y = ClientRectangle.Height;
-                }
+        if (StatusColor.A > 0)
+        {
+            g.PixelOffsetMode = PixelOffsetMode.Half;
 
-                using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientRectangle.Width, 1), Color.Black, Color.Black,
-                    LinearGradientMode.Horizontal))
-                {
-                    ColorBlend cb = new ColorBlend();
-                    cb.Positions = new float[] { 0, 0.3f, 0.7f, 1 };
-                    cb.Colors = new Color[] { Color.Transparent, StatusColor, StatusColor, Color.Transparent };
-                    brush.InterpolationColors = cb;
+            int y = StatusLocation == ThumbnailTitleLocation.Top ? 0 : ClientRectangle.Height;
+            using LinearGradientBrush brush = new(new Rectangle(0, 0, ClientRectangle.Width, 1), Color.Black, Color.Black,
+                LinearGradientMode.Horizontal);
+            ColorBlend cb = new();
+            cb.Positions = new float[] { 0, 0.3f, 0.7f, 1 };
+            cb.Colors = new Color[] { Color.Transparent, StatusColor, StatusColor, Color.Transparent };
+            brush.InterpolationColors = cb;
 
-                    using (Pen pen = new Pen(brush))
-                    {
-                        g.DrawLine(pen, new Point(0, y), new Point(ClientRectangle.Width - 1, y));
-                    }
-                }
-            }
+            using Pen pen = new(brush);
+            g.DrawLine(pen, new Point(0, y), new Point(ClientRectangle.Width - 1, y));
         }
     }
 }

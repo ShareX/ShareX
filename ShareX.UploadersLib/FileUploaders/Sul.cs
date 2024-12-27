@@ -24,93 +24,95 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json.Linq;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Helpers;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class SulFileUploaderService : FileUploaderService
 {
-    public class SulFileUploaderService : FileUploaderService
+    public override FileDestination EnumValue { get; } = FileDestination.Sul;
+
+    public override Image ServiceImage => Resources.Sul;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Sul;
-
-        public override Image ServiceImage => Resources.Sul;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return !string.IsNullOrEmpty(config.SulAPIKey);
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new SulUploader(config.SulAPIKey);
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSul;
+        return !string.IsNullOrEmpty(config.SulAPIKey);
     }
 
-    public sealed class SulUploader : FileUploader
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        private string APIKey { get; set; }
+        return new SulUploader(config.SulAPIKey);
+    }
 
-        public SulUploader(string apiKey)
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpSul;
+}
+
+public sealed class SulUploader : FileUploader
+{
+    private string APIKey { get; set; }
+
+    public SulUploader(string apiKey)
+    {
+        APIKey = apiKey;
+    }
+
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        Dictionary<string, string> args = new();
+        args.Add("wizard", "true");
+        args.Add("key", APIKey);
+        args.Add("client", "sharex-native");
+
+        string url = "https://s-ul.eu";
+        string upload_url = URLHelpers.CombineURL(url, "api/v1/upload");
+
+        UploadResult result = SendRequestFile(upload_url, stream, fileName, "file", args);
+
+        if (result.IsSuccess)
         {
-            APIKey = apiKey;
-        }
+            JToken jsonResponse = JToken.Parse(result.Response);
 
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("wizard", "true");
-            args.Add("key", APIKey);
-            args.Add("client", "sharex-native");
+            string protocol = "";
+            string domain = "";
+            string file = "";
+            string extension = "";
+            string error = "";
 
-            string url = "https://s-ul.eu";
-            string upload_url = URLHelpers.CombineURL(url, "api/v1/upload");
-
-            UploadResult result = SendRequestFile(upload_url, stream, fileName, "file", args);
-
-            if (result.IsSuccess)
+            if (jsonResponse != null)
             {
-                JToken jsonResponse = JToken.Parse(result.Response);
-
-                string protocol = "";
-                string domain = "";
-                string file = "";
-                string extension = "";
-                string error = "";
-
-                if (jsonResponse != null)
-                {
-                    protocol = (string)jsonResponse.SelectToken("protocol");
-                    domain = (string)jsonResponse.SelectToken("domain");
-                    file = (string)jsonResponse.SelectToken("filename");
-                    extension = (string)jsonResponse.SelectToken("extension");
-                    error = (string)jsonResponse.SelectToken("error");
-                }
-
-                if (!string.IsNullOrEmpty(error) || string.IsNullOrEmpty(protocol))
-                {
-                    if (string.IsNullOrEmpty(error))
-                    {
-                        Errors.Add("Generic error occurred, please contact support@s-ul.eu");
-                    }
-                    else
-                    {
-                        Errors.Add(error);
-                    }
-                }
-                else
-                {
-                    result.URL = protocol + domain + "/" + file + extension;
-                    result.DeletionURL = URLHelpers.CombineURL(url, "delete.php?key=" + APIKey + "&file=" + file);
-                }
+                protocol = (string)jsonResponse.SelectToken("protocol");
+                domain = (string)jsonResponse.SelectToken("domain");
+                file = (string)jsonResponse.SelectToken("filename");
+                extension = (string)jsonResponse.SelectToken("extension");
+                error = (string)jsonResponse.SelectToken("error");
             }
 
-            return result;
+            if (!string.IsNullOrEmpty(error) || string.IsNullOrEmpty(protocol))
+            {
+                if (string.IsNullOrEmpty(error))
+                {
+                    Errors.Add("Generic error occurred, please contact support@s-ul.eu");
+                } else
+                {
+                    Errors.Add(error);
+                }
+            } else
+            {
+                result.URL = protocol + domain + "/" + file + extension;
+                result.DeletionURL = URLHelpers.CombineURL(url, "delete.php?key=" + APIKey + "&file=" + file);
+            }
         }
+
+        return result;
     }
 }

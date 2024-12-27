@@ -23,56 +23,53 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+internal class ImageEditorButton : ImageEditorControl
 {
-    internal class ImageEditorButton : ImageEditorControl
+    public string Text { get; set; }
+    public Color ButtonColor { get; set; }
+    public int ButtonDepth { get; set; } = 3;
+    public Color ButtonDepthColor => ColorHelpers.DarkerColor(ButtonColor, 0.5f);
+
+    public override void OnDraw(Graphics g)
     {
-        public string Text { get; set; }
-        public Color ButtonColor { get; set; }
-        public int ButtonDepth { get; set; } = 3;
-        public Color ButtonDepthColor => ColorHelpers.DarkerColor(ButtonColor, 0.5f);
+        RectangleF rect = Rectangle;
 
-        public override void OnDraw(Graphics g)
+        if (IsCursorHover)
         {
-            RectangleF rect = Rectangle;
-
-            if (IsCursorHover)
-            {
-                rect = rect.LocationOffset(0, ButtonDepth);
-            }
-
-            g.SmoothingMode = SmoothingMode.HighQuality;
-
-            using (SolidBrush buttonBrush = new SolidBrush(ButtonColor))
-            {
-                g.PixelOffsetMode = PixelOffsetMode.Half;
-
-                if (!IsCursorHover)
-                {
-                    using (SolidBrush buttonDepthBrush = new SolidBrush(ButtonDepthColor))
-                    {
-                        g.DrawRoundedRectangle(buttonDepthBrush, rect.LocationOffset(0, ButtonDepth), 5);
-                    }
-                }
-
-                g.DrawRoundedRectangle(buttonBrush, rect, 5);
-
-                g.PixelOffsetMode = PixelOffsetMode.Default;
-            }
-
-            g.SmoothingMode = SmoothingMode.None;
-
-            using (Font font = new Font("Arial", 18))
-            using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-            using (SolidBrush textDepthBrush = new SolidBrush(ButtonDepthColor))
-            {
-                g.DrawString(Text, font, textDepthBrush, rect.LocationOffset(0, 4), sf);
-                g.DrawString(Text, font, Brushes.White, rect.LocationOffset(0, 2), sf);
-            }
+            rect = rect.LocationOffset(0, ButtonDepth);
         }
+
+        g.SmoothingMode = SmoothingMode.HighQuality;
+
+        using (SolidBrush buttonBrush = new(ButtonColor))
+        {
+            g.PixelOffsetMode = PixelOffsetMode.Half;
+
+            if (!IsCursorHover)
+            {
+                using SolidBrush buttonDepthBrush = new(ButtonDepthColor);
+                g.DrawRoundedRectangle(buttonDepthBrush, rect.LocationOffset(0, ButtonDepth), 5);
+            }
+
+            g.DrawRoundedRectangle(buttonBrush, rect, 5);
+
+            g.PixelOffsetMode = PixelOffsetMode.Default;
+        }
+
+        g.SmoothingMode = SmoothingMode.None;
+
+        using Font font = new("Arial", 18);
+        using StringFormat sf = new() { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
+        using SolidBrush textDepthBrush = new(ButtonDepthColor);
+        g.DrawString(Text, font, textDepthBrush, rect.LocationOffset(0, 4), sf);
+        g.DrawString(Text, font, Brushes.White, rect.LocationOffset(0, 2), sf);
     }
 }

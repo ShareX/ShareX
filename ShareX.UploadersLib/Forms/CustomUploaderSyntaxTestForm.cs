@@ -24,147 +24,150 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.NameParser;
+using ShareX.UploadersLib.CustomUploader;
+using ShareX.UploadersLib.Helpers;
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class CustomUploaderSyntaxTestForm : Form
 {
-    public partial class CustomUploaderSyntaxTestForm : Form
+    private ResponseInfo testResponseInfo;
+
+    public CustomUploaderSyntaxTestForm() : this(null, null)
     {
-        private ResponseInfo testResponseInfo;
+    }
 
-        public CustomUploaderSyntaxTestForm() : this(null, null)
+    public CustomUploaderSyntaxTestForm(ResponseInfo responseInfo, string urlSyntax)
+    {
+        InitializeComponent();
+
+        testResponseInfo = responseInfo;
+
+        if (testResponseInfo == null)
         {
+            testResponseInfo = new ResponseInfo()
+            {
+                ResponseText = "{\r\n    \"status\": 200,\r\n    \"data\": {\r\n        \"link\": \"https:\\/\\/example.com\\/image.png\"\r\n    }\r\n}",
+                ResponseURL = "https://example.com/upload"
+            };
         }
 
-        public CustomUploaderSyntaxTestForm(ResponseInfo responseInfo, string urlSyntax)
+        if (string.IsNullOrEmpty(urlSyntax))
         {
-            InitializeComponent();
-
-            testResponseInfo = responseInfo;
-
-            if (testResponseInfo == null)
-            {
-                testResponseInfo = new ResponseInfo()
-                {
-                    ResponseText = "{\r\n    \"status\": 200,\r\n    \"data\": {\r\n        \"link\": \"https:\\/\\/example.com\\/image.png\"\r\n    }\r\n}",
-                    ResponseURL = "https://example.com/upload"
-                };
-            }
-
-            if (string.IsNullOrEmpty(urlSyntax))
-            {
-                urlSyntax = "{json:data.link}";
-            }
-
-            rtbResponseText.Text = testResponseInfo.ResponseText;
-            rtbURLSyntax.Text = urlSyntax;
-            rtbURLSyntax.Select(rtbURLSyntax.TextLength, 0);
-
-            CodeMenuItem[] outputCodeMenuItems = new CodeMenuItem[]
-            {
-                new CodeMenuItem("{response}", "Response text"),
-                new CodeMenuItem("{responseurl}", "Response/Redirection URL"),
-                new CodeMenuItem("{header:header_name}", "Response header"),
-                new CodeMenuItem("{json:path}", "Parse JSON response using JSONPath"),
-                new CodeMenuItem("{xml:path}", "Parse XML response using XPath"),
-                new CodeMenuItem("{regex:pattern|group}", "Parse response using Regex"),
-                new CodeMenuItem("{filename}", "File name used when uploading"),
-                new CodeMenuItem("{random:input1|input2}", "Random selection from list"),
-                new CodeMenuItem("{select:input1|input2}", "Lets user to select one input from list"),
-                new CodeMenuItem("{prompt:title|default_value}", "Lets user to input text"),
-                new CodeMenuItem("{base64:input}", "Base64 encode input")
-            };
-
-            new CodeMenu(rtbURLSyntax, outputCodeMenuItems)
-            {
-                MenuLocationOffset = new Point(5, -3)
-            };
-
-            rtbURLSyntax.AddContextMenu();
-
-            ShareXResources.ApplyTheme(this, true);
-
-            CustomUploaderSyntaxHighlight(rtbURLSyntax);
-            UpdatePreview();
+            urlSyntax = "{json:data.link}";
         }
 
-        private void CustomUploaderSyntaxHighlight(RichTextBox rtb)
+        rtbResponseText.Text = testResponseInfo.ResponseText;
+        rtbURLSyntax.Text = urlSyntax;
+        rtbURLSyntax.Select(rtbURLSyntax.TextLength, 0);
+
+        CodeMenuItem[] outputCodeMenuItems = new CodeMenuItem[]
         {
-            string text = rtb.Text;
+            new("{response}", "Response text"),
+            new("{responseurl}", "Response/Redirection URL"),
+            new("{header:header_name}", "Response header"),
+            new("{json:path}", "Parse JSON response using JSONPath"),
+            new("{xml:path}", "Parse XML response using XPath"),
+            new("{regex:pattern|group}", "Parse response using Regex"),
+            new("{filename}", "File name used when uploading"),
+            new("{random:input1|input2}", "Random selection from list"),
+            new("{select:input1|input2}", "Lets user to select one input from list"),
+            new("{prompt:title|default_value}", "Lets user to input text"),
+            new("{base64:input}", "Base64 encode input")
+        };
 
-            if (!string.IsNullOrEmpty(text))
+        new CodeMenu(rtbURLSyntax, outputCodeMenuItems)
+        {
+            MenuLocationOffset = new Point(5, -3)
+        };
+
+        rtbURLSyntax.AddContextMenu();
+
+        ShareXResources.ApplyTheme(this, true);
+
+        CustomUploaderSyntaxHighlight(rtbURLSyntax);
+        UpdatePreview();
+    }
+
+    private void CustomUploaderSyntaxHighlight(RichTextBox rtb)
+    {
+        string text = rtb.Text;
+
+        if (!string.IsNullOrEmpty(text))
+        {
+            int start = rtb.SelectionStart;
+            int length = rtb.SelectionLength;
+            rtb.BeginUpdate();
+
+            rtb.SelectionStart = 0;
+            rtb.SelectionLength = rtb.TextLength;
+            rtb.SelectionColor = rtb.ForeColor;
+
+            ShareXCustomUploaderSyntaxParser parser = new();
+
+            for (int i = 0; i < text.Length; i++)
             {
-                int start = rtb.SelectionStart;
-                int length = rtb.SelectionLength;
-                rtb.BeginUpdate();
+                char c = text[i];
 
-                rtb.SelectionStart = 0;
-                rtb.SelectionLength = rtb.TextLength;
-                rtb.SelectionColor = rtb.ForeColor;
-
-                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser();
-
-                for (int i = 0; i < text.Length; i++)
+                if (c == parser.SyntaxStart || c == parser.SyntaxEnd || c == parser.SyntaxParameterStart ||
+                    c == parser.SyntaxParameterDelimiter || c == parser.SyntaxEscape)
                 {
-                    char c = text[i];
-
-                    if (c == parser.SyntaxStart || c == parser.SyntaxEnd || c == parser.SyntaxParameterStart ||
-                        c == parser.SyntaxParameterDelimiter || c == parser.SyntaxEscape)
-                    {
-                        rtb.SelectionStart = i;
-                        rtb.SelectionLength = 1;
-                        rtb.SelectionColor = Color.Lime;
-                    }
+                    rtb.SelectionStart = i;
+                    rtb.SelectionLength = 1;
+                    rtb.SelectionColor = Color.Lime;
                 }
-
-                rtb.SelectionStart = start;
-                rtb.SelectionLength = length;
-                rtb.EndUpdate();
-            }
-        }
-
-        private string ParseSyntax(ResponseInfo responseInfo, string urlSyntax)
-        {
-            if (responseInfo == null || string.IsNullOrEmpty(urlSyntax))
-            {
-                return null;
             }
 
-            ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser()
-            {
-                FileName = "example.png",
-                ResponseInfo = responseInfo,
-                URLEncode = true
-            };
-
-            return parser.Parse(urlSyntax);
+            rtb.SelectionStart = start;
+            rtb.SelectionLength = length;
+            rtb.EndUpdate();
         }
+    }
 
-        private void UpdatePreview()
+    private string ParseSyntax(ResponseInfo responseInfo, string urlSyntax)
+    {
+        if (responseInfo == null || string.IsNullOrEmpty(urlSyntax))
         {
-            try
-            {
-                testResponseInfo.ResponseText = rtbResponseText.Text;
-                string result = ParseSyntax(testResponseInfo, rtbURLSyntax.Text);
-                txtResult.Text = result;
-            }
-            catch (Exception ex)
-            {
-                txtResult.Text = "Error\r\n" + ex.Message;
-            }
+            return null;
         }
 
-        private void txtResponseText_TextChanged(object sender, EventArgs e)
+        ShareXCustomUploaderSyntaxParser parser = new()
         {
-            UpdatePreview();
-        }
+            FileName = "example.png",
+            ResponseInfo = responseInfo,
+            URLEncode = true
+        };
 
-        private void rtbURLSyntax_TextChanged(object sender, EventArgs e)
+        return parser.Parse(urlSyntax);
+    }
+
+    private void UpdatePreview()
+    {
+        try
         {
-            CustomUploaderSyntaxHighlight(rtbURLSyntax);
-            UpdatePreview();
+            testResponseInfo.ResponseText = rtbResponseText.Text;
+            string result = ParseSyntax(testResponseInfo, rtbURLSyntax.Text);
+            txtResult.Text = result;
+        } catch (Exception ex)
+        {
+            txtResult.Text = "Error\r\n" + ex.Message;
         }
+    }
+
+    private void txtResponseText_TextChanged(object sender, EventArgs e)
+    {
+        UpdatePreview();
+    }
+
+    private void rtbURLSyntax_TextChanged(object sender, EventArgs e)
+    {
+        CustomUploaderSyntaxHighlight(rtbURLSyntax);
+        UpdatePreview();
     }
 }

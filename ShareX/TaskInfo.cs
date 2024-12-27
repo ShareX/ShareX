@@ -24,197 +24,189 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
 using ShareX.HistoryLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.Helpers;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
-namespace ShareX
+namespace ShareX;
+
+public class TaskInfo
 {
-    public class TaskInfo
+    public TaskSettings TaskSettings { get; set; }
+
+    public string Status { get; set; }
+    public TaskJob Job { get; set; }
+
+    public bool IsUploadJob
     {
-        public TaskSettings TaskSettings { get; set; }
-
-        public string Status { get; set; }
-        public TaskJob Job { get; set; }
-
-        public bool IsUploadJob
+        get
         {
-            get
+            switch (Job)
             {
-                switch (Job)
-                {
-                    case TaskJob.Job:
-                        return TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
-                    case TaskJob.DataUpload:
-                    case TaskJob.FileUpload:
-                    case TaskJob.TextUpload:
-                    case TaskJob.ShortenURL:
-                    case TaskJob.ShareURL:
-                    case TaskJob.DownloadUpload:
-                        return true;
-                }
-
-                return false;
+                case TaskJob.Job:
+                    return TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.UploadImageToHost);
+                case TaskJob.DataUpload:
+                case TaskJob.FileUpload:
+                case TaskJob.TextUpload:
+                case TaskJob.ShortenURL:
+                case TaskJob.ShareURL:
+                case TaskJob.DownloadUpload:
+                    return true;
             }
+
+            return false;
         }
+    }
 
-        public ProgressManager Progress { get; set; }
+    public ProgressManager Progress { get; set; }
 
-        private string filePath;
+    private string filePath;
 
-        public string FilePath
+    public string FilePath
+    {
+        get
         {
-            get
-            {
-                return filePath;
-            }
-            set
-            {
-                filePath = value;
-
-                if (string.IsNullOrEmpty(filePath))
-                {
-                    FileName = "";
-                }
-                else
-                {
-                    FileName = Path.GetFileName(filePath);
-                }
-            }
+            return filePath;
         }
-
-        public string FileName { get; set; }
-        public string ThumbnailFilePath { get; set; }
-        public EDataType DataType { get; set; }
-        public TaskMetadata Metadata { get; set; }
-
-        public EDataType UploadDestination
+        set
         {
-            get
-            {
-                if ((DataType == EDataType.Image && TaskSettings.ImageDestination == ImageDestination.FileUploader) ||
-                    (DataType == EDataType.Text && TaskSettings.TextDestination == TextDestination.FileUploader))
-                {
-                    return EDataType.File;
-                }
+            filePath = value;
 
-                return DataType;
-            }
+            FileName = string.IsNullOrEmpty(filePath) ? "" : Path.GetFileName(filePath);
         }
+    }
 
-        public string UploaderHost
+    public string FileName { get; set; }
+    public string ThumbnailFilePath { get; set; }
+    public EDataType DataType { get; set; }
+    public TaskMetadata Metadata { get; set; }
+
+    public EDataType UploadDestination
+    {
+        get
         {
-            get
-            {
-                if (IsUploadJob)
-                {
-                    switch (UploadDestination)
-                    {
-                        case EDataType.Image:
-                            return TaskSettings.ImageDestination.GetLocalizedDescription();
-                        case EDataType.Text:
-                            return TaskSettings.TextDestination.GetLocalizedDescription();
-                        case EDataType.File:
-                            switch (DataType)
-                            {
-                                case EDataType.Image:
-                                    return TaskSettings.ImageFileDestination.GetLocalizedDescription();
-                                case EDataType.Text:
-                                    return TaskSettings.TextFileDestination.GetLocalizedDescription();
-                                default:
-                                case EDataType.File:
-                                    return TaskSettings.FileDestination.GetLocalizedDescription();
-                            }
-                        case EDataType.URL:
-                            if (Job == TaskJob.ShareURL)
-                            {
-                                return TaskSettings.URLSharingServiceDestination.GetLocalizedDescription();
-                            }
-
-                            return TaskSettings.URLShortenerDestination.GetLocalizedDescription();
-                    }
-                }
-
-                return "";
-            }
+            return (DataType == EDataType.Image && TaskSettings.ImageDestination == ImageDestination.FileUploader) ||
+                (DataType == EDataType.Text && TaskSettings.TextDestination == TextDestination.FileUploader)
+                ? EDataType.File
+                : DataType;
         }
+    }
 
-        public DateTime TaskStartTime { get; set; }
-        public DateTime TaskEndTime { get; set; }
-
-        public TimeSpan TaskDuration => TaskEndTime - TaskStartTime;
-
-        public Stopwatch UploadDuration { get; set; }
-
-        public UploadResult Result { get; set; }
-
-        public TaskInfo(TaskSettings taskSettings)
+    public string UploaderHost
+    {
+        get
         {
-            if (taskSettings == null)
+            if (IsUploadJob)
             {
-                taskSettings = TaskSettings.GetDefaultTaskSettings();
-            }
-
-            TaskSettings = taskSettings;
-            Metadata = new TaskMetadata();
-            Result = new UploadResult();
-        }
-
-        public Dictionary<string, string> GetTags()
-        {
-            if (Metadata != null)
-            {
-                Dictionary<string, string> tags = new Dictionary<string, string>();
-
-                if (!string.IsNullOrEmpty(Metadata.WindowTitle))
+                switch (UploadDestination)
                 {
-                    tags.Add("WindowTitle", Metadata.WindowTitle);
-                }
+                    case EDataType.Image:
+                        return TaskSettings.ImageDestination.GetLocalizedDescription();
+                    case EDataType.Text:
+                        return TaskSettings.TextDestination.GetLocalizedDescription();
+                    case EDataType.File:
+                        switch (DataType)
+                        {
+                            case EDataType.Image:
+                                return TaskSettings.ImageFileDestination.GetLocalizedDescription();
+                            case EDataType.Text:
+                                return TaskSettings.TextFileDestination.GetLocalizedDescription();
+                            default:
+                            case EDataType.File:
+                                return TaskSettings.FileDestination.GetLocalizedDescription();
+                        }
+                    case EDataType.URL:
+                        if (Job == TaskJob.ShareURL)
+                        {
+                            return TaskSettings.URLSharingServiceDestination.GetLocalizedDescription();
+                        }
 
-                if (!string.IsNullOrEmpty(Metadata.ProcessName))
-                {
-                    tags.Add("ProcessName", Metadata.ProcessName);
-                }
-
-                if (tags.Count > 0)
-                {
-                    return tags;
+                        return TaskSettings.URLShortenerDestination.GetLocalizedDescription();
                 }
             }
 
-            return null;
+            return "";
+        }
+    }
+
+    public DateTime TaskStartTime { get; set; }
+    public DateTime TaskEndTime { get; set; }
+
+    public TimeSpan TaskDuration => TaskEndTime - TaskStartTime;
+
+    public Stopwatch UploadDuration { get; set; }
+
+    public UploadResult Result { get; set; }
+
+    public TaskInfo(TaskSettings taskSettings)
+    {
+        if (taskSettings == null)
+        {
+            taskSettings = TaskSettings.GetDefaultTaskSettings();
         }
 
-        public override string ToString()
-        {
-            string text = Result.ToString();
+        TaskSettings = taskSettings;
+        Metadata = new TaskMetadata();
+        Result = new UploadResult();
+    }
 
-            if (string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(FilePath))
+    public Dictionary<string, string> GetTags()
+    {
+        if (Metadata != null)
+        {
+            Dictionary<string, string> tags = new();
+
+            if (!string.IsNullOrEmpty(Metadata.WindowTitle))
             {
-                text = FilePath;
+                tags.Add("WindowTitle", Metadata.WindowTitle);
             }
 
-            return text;
+            if (!string.IsNullOrEmpty(Metadata.ProcessName))
+            {
+                tags.Add("ProcessName", Metadata.ProcessName);
+            }
+
+            if (tags.Count > 0)
+            {
+                return tags;
+            }
         }
 
-        public HistoryItem GetHistoryItem()
+        return null;
+    }
+
+    public override string ToString()
+    {
+        string text = Result.ToString();
+
+        if (string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(FilePath))
         {
-            return new HistoryItem
-            {
-                FileName = FileName,
-                FilePath = FilePath,
-                DateTime = TaskEndTime,
-                Type = DataType.ToString(),
-                Host = UploaderHost,
-                URL = Result.URL,
-                ThumbnailURL = Result.ThumbnailURL,
-                DeletionURL = Result.DeletionURL,
-                ShortenedURL = Result.ShortenedURL,
-                Tags = GetTags()
-            };
+            text = FilePath;
         }
+
+        return text;
+    }
+
+    public HistoryItem GetHistoryItem()
+    {
+        return new HistoryItem
+        {
+            FileName = FileName,
+            FilePath = FilePath,
+            DateTime = TaskEndTime,
+            Type = DataType.ToString(),
+            Host = UploaderHost,
+            URL = Result.URL,
+            ThumbnailURL = Result.ThumbnailURL,
+            DeletionURL = Result.DeletionURL,
+            ShortenedURL = Result.ShortenedURL,
+            Tags = GetTags()
+        };
     }
 }

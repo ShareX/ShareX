@@ -24,118 +24,112 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders;
+
+public class Paste_eeTextUploaderService : TextUploaderService
 {
-    public class Paste_eeTextUploaderService : TextUploaderService
+    public override TextDestination EnumValue { get; } = TextDestination.Paste_ee;
+
+    public override Image ServiceImage => Resources.document;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override TextDestination EnumValue { get; } = TextDestination.Paste_ee;
-
-        public override Image ServiceImage => Resources.document;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        string apiKey = !string.IsNullOrEmpty(config.Paste_eeUserKey) ? config.Paste_eeUserKey : APIKeys.APIKeys.Paste_eeApplicationKey;
+        return new Paste_ee(apiKey)
         {
-            string apiKey;
-
-            if (!string.IsNullOrEmpty(config.Paste_eeUserKey))
-            {
-                apiKey = config.Paste_eeUserKey;
-            }
-            else
-            {
-                apiKey = APIKeys.Paste_eeApplicationKey;
-            }
-
-            return new Paste_ee(apiKey)
-            {
-                EncryptPaste = config.Paste_eeEncryptPaste
-            };
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPaste_ee;
+            EncryptPaste = config.Paste_eeEncryptPaste
+        };
     }
 
-    public sealed class Paste_ee : TextUploader
-    {
-        public string APIKey { get; private set; }
-        public bool EncryptPaste { get; set; }
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPaste_ee;
+}
 
-        public Paste_ee(string apiKey)
+public sealed class Paste_ee : TextUploader
+{
+    public string APIKey { get; private set; }
+    public bool EncryptPaste { get; set; }
+
+    public Paste_ee(string apiKey)
+    {
+        APIKey = apiKey;
+    }
+
+    public override UploadResult UploadText(string text, string fileName)
+    {
+        if (string.IsNullOrEmpty(APIKey))
         {
-            APIKey = apiKey;
+            throw new Exception("API key is missing.");
         }
 
-        public override UploadResult UploadText(string text, string fileName)
+        UploadResult ur = new();
+
+        if (!string.IsNullOrEmpty(text))
         {
-            if (string.IsNullOrEmpty(APIKey))
+            Paste_eeSubmitRequestBody requestBody = new()
             {
-                throw new Exception("API key is missing.");
-            }
-
-            UploadResult ur = new UploadResult();
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                Paste_eeSubmitRequestBody requestBody = new Paste_eeSubmitRequestBody()
+                encrypted = EncryptPaste,
+                description = "",
+                expiration = "never",
+                sections = new Paste_eeSubmitRequestBodySection[]
                 {
-                    encrypted = EncryptPaste,
-                    description = "",
-                    expiration = "never",
-                    sections = new Paste_eeSubmitRequestBodySection[]
+                    new()
                     {
-                        new Paste_eeSubmitRequestBodySection()
-                        {
-                            name = "",
-                            syntax = "autodetect",
-                            contents = text
-                        }
+                        name = "",
+                        syntax = "autodetect",
+                        contents = text
                     }
-                };
-
-                string json = JsonConvert.SerializeObject(requestBody);
-
-                NameValueCollection headers = new NameValueCollection();
-                headers.Add("X-Auth-Token", APIKey);
-
-                ur.Response = SendRequest(HttpMethod.POST, "https://api.paste.ee/v1/pastes", json, RequestHelpers.ContentTypeJSON, null, headers);
-
-                if (!string.IsNullOrEmpty(ur.Response))
-                {
-                    Paste_eeSubmitResponse response = JsonConvert.DeserializeObject<Paste_eeSubmitResponse>(ur.Response);
-
-                    ur.URL = response.link;
                 }
+            };
+
+            string json = JsonConvert.SerializeObject(requestBody);
+
+            NameValueCollection headers = new();
+            headers.Add("X-Auth-Token", APIKey);
+
+            ur.Response = SendRequest(HttpMethod.POST, "https://api.paste.ee/v1/pastes", json, RequestHelpers.ContentTypeJSON, null, headers);
+
+            if (!string.IsNullOrEmpty(ur.Response))
+            {
+                Paste_eeSubmitResponse response = JsonConvert.DeserializeObject<Paste_eeSubmitResponse>(ur.Response);
+
+                ur.URL = response.link;
             }
-
-            return ur;
         }
-    }
 
-    public class Paste_eeSubmitRequestBody
-    {
-        public bool encrypted { get; set; }
-        public string description { get; set; }
-        public string expiration { get; set; }
-        public Paste_eeSubmitRequestBodySection[] sections { get; set; }
+        return ur;
     }
+}
 
-    public class Paste_eeSubmitRequestBodySection
-    {
-        public string name { get; set; }
-        public string syntax { get; set; }
-        public string contents { get; set; }
-    }
+public class Paste_eeSubmitRequestBody
+{
+    public bool encrypted { get; set; }
+    public string description { get; set; }
+    public string expiration { get; set; }
+    public Paste_eeSubmitRequestBodySection[] sections { get; set; }
+}
 
-    public class Paste_eeSubmitResponse
-    {
-        public string id { get; set; }
-        public string link { get; set; }
-    }
+public class Paste_eeSubmitRequestBodySection
+{
+    public string name { get; set; }
+    public string syntax { get; set; }
+    public string contents { get; set; }
+}
+
+public class Paste_eeSubmitResponse
+{
+    public string id { get; set; }
+    public string link { get; set; }
 }

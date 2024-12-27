@@ -25,24 +25,23 @@
 
 using System.Drawing;
 
-namespace ShareX
+namespace ShareX.Tools.PinToScreen;
+
+public class PinToScreenOptions
 {
-    public class PinToScreenOptions
-    {
-        public int InitialScale { get; set; } = 100;
-        public int ScaleStep { get; set; } = 10;
-        public bool HighQualityScale { get; set; } = true;
-        public int InitialOpacity { get; set; } = 100;
-        public int OpacityStep { get; set; } = 10;
-        public ContentAlignment Placement { get; set; } = ContentAlignment.BottomRight;
-        public int PlacementOffset { get; set; } = 10;
-        public bool TopMost { get; set; } = true;
-        public bool KeepCenterLocation { get; set; } = true;
-        public Color BackgroundColor { get; set; } = Color.White;
-        public bool Shadow { get; set; } = true;
-        public bool Border { get; set; } = true;
-        public int BorderSize { get; set; } = 2;
-        public Color BorderColor { get; set; } = Color.CornflowerBlue;
-        public Size MinimizeSize { get; set; } = new Size(100, 100);
-    }
+    public int InitialScale { get; set; } = 100;
+    public int ScaleStep { get; set; } = 10;
+    public bool HighQualityScale { get; set; } = true;
+    public int InitialOpacity { get; set; } = 100;
+    public int OpacityStep { get; set; } = 10;
+    public ContentAlignment Placement { get; set; } = ContentAlignment.BottomRight;
+    public int PlacementOffset { get; set; } = 10;
+    public bool TopMost { get; set; } = true;
+    public bool KeepCenterLocation { get; set; } = true;
+    public Color BackgroundColor { get; set; } = Color.White;
+    public bool Shadow { get; set; } = true;
+    public bool Border { get; set; } = true;
+    public int BorderSize { get; set; } = 2;
+    public Color BorderColor { get; set; } = Color.CornflowerBlue;
+    public Size MinimizeSize { get; set; } = new Size(100, 100);
 }

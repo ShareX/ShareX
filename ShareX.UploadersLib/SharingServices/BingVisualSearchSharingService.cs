@@ -23,12 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib.SharingServices
-{
-    public class BingVisualSearchSharingService : SimpleURLSharingService
-    {
-        public override URLSharingServices EnumValue { get; } = URLSharingServices.BingVisualSearch;
+namespace ShareX.UploadersLib.SharingServices;
 
-        protected override string URLFormatString { get; } = "https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:{0}";
-    }
+public class BingVisualSearchSharingService : SimpleURLSharingService
+{
+    public override URLSharingServices EnumValue { get; } = URLSharingServices.BingVisualSearch;
+
+    protected override string URLFormatString { get; } = "https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:{0}";
 }

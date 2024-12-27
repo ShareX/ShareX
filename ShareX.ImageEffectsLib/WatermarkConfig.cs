@@ -23,31 +23,32 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ImageEffectsLib.Drawings;
+
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib;
+
+public class WatermarkConfig
 {
-    public class WatermarkConfig
+    public WatermarkType Type = WatermarkType.Text;
+    public ContentAlignment Placement = ContentAlignment.BottomRight;
+    public int Offset = 5;
+    public DrawText Text = new() { DrawTextShadow = false };
+    public DrawImage Image = new();
+
+    public Bitmap Apply(Bitmap bmp)
     {
-        public WatermarkType Type = WatermarkType.Text;
-        public ContentAlignment Placement = ContentAlignment.BottomRight;
-        public int Offset = 5;
-        public DrawText Text = new DrawText { DrawTextShadow = false };
-        public DrawImage Image = new DrawImage();
+        Text.Placement = Image.Placement = Placement;
+        Text.Offset = Image.Offset = new Point(Offset, Offset);
 
-        public Bitmap Apply(Bitmap bmp)
+        switch (Type)
         {
-            Text.Placement = Image.Placement = Placement;
-            Text.Offset = Image.Offset = new Point(Offset, Offset);
-
-            switch (Type)
-            {
-                default:
-                case WatermarkType.Text:
-                    return Text.Apply(bmp);
-                case WatermarkType.Image:
-                    return Image.Apply(bmp);
-            }
+            default:
+            case WatermarkType.Text:
+                return Text.Apply(bmp);
+            case WatermarkType.Image:
+                return Image.Apply(bmp);
         }
     }
 }

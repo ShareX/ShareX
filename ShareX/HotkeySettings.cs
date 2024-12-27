@@ -23,37 +23,34 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Input;
+
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public class HotkeySettings
 {
-    public class HotkeySettings
+    public HotkeyInfo HotkeyInfo { get; set; }
+
+    public TaskSettings TaskSettings { get; set; }
+
+    public HotkeySettings()
     {
-        public HotkeyInfo HotkeyInfo { get; set; }
+        HotkeyInfo = new HotkeyInfo();
+    }
 
-        public TaskSettings TaskSettings { get; set; }
+    public HotkeySettings(HotkeyType job, Keys hotkey = Keys.None) : this()
+    {
+        TaskSettings = TaskSettings.GetDefaultTaskSettings();
+        TaskSettings.Job = job;
+        HotkeyInfo = new HotkeyInfo(hotkey);
+    }
 
-        public HotkeySettings()
-        {
-            HotkeyInfo = new HotkeyInfo();
-        }
-
-        public HotkeySettings(HotkeyType job, Keys hotkey = Keys.None) : this()
-        {
-            TaskSettings = TaskSettings.GetDefaultTaskSettings();
-            TaskSettings.Job = job;
-            HotkeyInfo = new HotkeyInfo(hotkey);
-        }
-
-        public override string ToString()
-        {
-            if (HotkeyInfo != null && TaskSettings != null)
-            {
-                return string.Format("Hotkey: {0}, Description: {1}, Job: {2}", HotkeyInfo, TaskSettings, TaskSettings.Job);
-            }
-
-            return "";
-        }
+    public override string ToString()
+    {
+        return HotkeyInfo != null && TaskSettings != null
+            ? string.Format("Hotkey: {0}, Description: {1}, Job: {2}", HotkeyInfo, TaskSettings, TaskSettings.Job)
+            : "";
     }
 }

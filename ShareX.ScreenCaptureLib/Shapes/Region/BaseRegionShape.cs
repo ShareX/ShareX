@@ -23,10 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes.Region;
+
+public abstract class BaseRegionShape : BaseShape
 {
-    public abstract class BaseRegionShape : BaseShape
-    {
-        public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Region;
-    }
+    public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Region;
 }

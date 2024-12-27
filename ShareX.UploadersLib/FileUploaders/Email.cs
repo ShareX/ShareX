@@ -23,129 +23,124 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class EmailFileUploaderService : FileUploaderService
 {
-    public class EmailFileUploaderService : FileUploaderService
+    public override FileDestination EnumValue { get; } = FileDestination.Email;
+
+    public override Image ServiceImage => Resources.mail;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Email;
+        return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom) && !string.IsNullOrEmpty(config.EmailPassword);
+    }
 
-        public override Image ServiceImage => Resources.mail;
-
-        public override bool CheckConfig(UploadersConfig config)
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+    {
+        if (config.EmailAutomaticSend && !string.IsNullOrEmpty(config.EmailAutomaticSendTo))
         {
-            return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom) && !string.IsNullOrEmpty(config.EmailPassword);
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            if (config.EmailAutomaticSend && !string.IsNullOrEmpty(config.EmailAutomaticSendTo))
+            return new Email()
             {
+                SmtpServer = config.EmailSmtpServer,
+                SmtpPort = config.EmailSmtpPort,
+                FromEmail = config.EmailFrom,
+                Password = config.EmailPassword,
+                ToEmail = config.EmailAutomaticSendTo,
+                Subject = config.EmailDefaultSubject,
+                Body = config.EmailDefaultBody
+            };
+        } else
+        {
+            using EmailForm emailForm = new(config.EmailRememberLastTo ? config.EmailLastTo : "", config.EmailDefaultSubject, config.EmailDefaultBody);
+            if (emailForm.ShowDialog() == DialogResult.OK)
+            {
+                if (config.EmailRememberLastTo)
+                {
+                    config.EmailLastTo = emailForm.ToEmail;
+                }
+
                 return new Email()
                 {
                     SmtpServer = config.EmailSmtpServer,
                     SmtpPort = config.EmailSmtpPort,
                     FromEmail = config.EmailFrom,
                     Password = config.EmailPassword,
-                    ToEmail = config.EmailAutomaticSendTo,
-                    Subject = config.EmailDefaultSubject,
-                    Body = config.EmailDefaultBody
+                    ToEmail = emailForm.ToEmail,
+                    Subject = emailForm.Subject,
+                    Body = emailForm.Body
                 };
-            }
-            else
+            } else
             {
-                using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : "", config.EmailDefaultSubject, config.EmailDefaultBody))
-                {
-                    if (emailForm.ShowDialog() == DialogResult.OK)
-                    {
-                        if (config.EmailRememberLastTo)
-                        {
-                            config.EmailLastTo = emailForm.ToEmail;
-                        }
-
-                        return new Email()
-                        {
-                            SmtpServer = config.EmailSmtpServer,
-                            SmtpPort = config.EmailSmtpPort,
-                            FromEmail = config.EmailFrom,
-                            Password = config.EmailPassword,
-                            ToEmail = emailForm.ToEmail,
-                            Subject = emailForm.Subject,
-                            Body = emailForm.Body
-                        };
-                    }
-                    else
-                    {
-                        taskInfo.StopRequested = true;
-                    }
-                }
+                taskInfo.StopRequested = true;
             }
-
-            return null;
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpEmail;
+        return null;
     }
 
-    public class Email : FileUploader
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpEmail;
+}
+
+public class Email : FileUploader
+{
+    public string SmtpServer { get; set; }
+    public int SmtpPort { get; set; }
+    public string FromEmail { get; set; }
+    public string Password { get; set; }
+
+    public string ToEmail { get; set; }
+    public string Subject { get; set; }
+    public string Body { get; set; }
+
+    public void Send()
     {
-        public string SmtpServer { get; set; }
-        public int SmtpPort { get; set; }
-        public string FromEmail { get; set; }
-        public string Password { get; set; }
+        Send(ToEmail, Subject, Body);
+    }
 
-        public string ToEmail { get; set; }
-        public string Subject { get; set; }
-        public string Body { get; set; }
+    public void Send(string toEmail, string subject, string body)
+    {
+        Send(toEmail, subject, body, null, null);
+    }
 
-        public void Send()
+    public void Send(string toEmail, string subject, string body, Stream stream, string fileName)
+    {
+        using SmtpClient smtp = new()
         {
-            Send(ToEmail, Subject, Body);
+            Host = SmtpServer,
+            Port = SmtpPort,
+            EnableSsl = true,
+            DeliveryMethod = SmtpDeliveryMethod.Network,
+            UseDefaultCredentials = false,
+            Credentials = new NetworkCredential(FromEmail, Password)
+        };
+        using MailMessage message = new(FromEmail, toEmail);
+        message.Subject = subject;
+        message.Body = body;
+
+        if (stream != null)
+        {
+            Attachment attachment = new(stream, fileName);
+            message.Attachments.Add(attachment);
         }
 
-        public void Send(string toEmail, string subject, string body)
-        {
-            Send(toEmail, subject, body, null, null);
-        }
+        smtp.Send(message);
+    }
 
-        public void Send(string toEmail, string subject, string body, Stream stream, string fileName)
-        {
-            using (SmtpClient smtp = new SmtpClient()
-            {
-                Host = SmtpServer,
-                Port = SmtpPort,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(FromEmail, Password)
-            })
-            {
-                using (MailMessage message = new MailMessage(FromEmail, toEmail))
-                {
-                    message.Subject = subject;
-                    message.Body = body;
-
-                    if (stream != null)
-                    {
-                        Attachment attachment = new Attachment(stream, fileName);
-                        message.Attachments.Add(attachment);
-                    }
-
-                    smtp.Send(message);
-                }
-            }
-        }
-
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            Send(ToEmail, Subject, Body, stream, fileName);
-            return new UploadResult { IsURLExpected = false };
-        }
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        Send(ToEmail, Subject, Body, stream, fileName);
+        return new UploadResult { IsURLExpected = false };
     }
 }

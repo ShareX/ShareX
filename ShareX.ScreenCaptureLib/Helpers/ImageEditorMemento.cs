@@ -23,35 +23,36 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib.Shapes;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+internal class ImageEditorMemento : IDisposable
 {
-    internal class ImageEditorMemento : IDisposable
+    public List<BaseShape> Shapes { get; private set; }
+    public RectangleF CanvasRectangle { get; private set; }
+    public Bitmap Canvas { get; private set; }
+
+    public ImageEditorMemento(List<BaseShape> shapes, RectangleF canvasRectangle, Bitmap canvas = null)
     {
-        public List<BaseShape> Shapes { get; private set; }
-        public RectangleF CanvasRectangle { get; private set; }
-        public Bitmap Canvas { get; private set; }
+        Shapes = shapes;
+        CanvasRectangle = canvasRectangle;
+        Canvas = canvas;
+    }
 
-        public ImageEditorMemento(List<BaseShape> shapes, RectangleF canvasRectangle, Bitmap canvas = null)
+    public void Dispose()
+    {
+        foreach (BaseShape shape in Shapes)
         {
-            Shapes = shapes;
-            CanvasRectangle = canvasRectangle;
-            Canvas = canvas;
+            shape?.Dispose();
         }
 
-        public void Dispose()
-        {
-            foreach (BaseShape shape in Shapes)
-            {
-                shape?.Dispose();
-            }
+        Shapes.Clear();
 
-            Shapes.Clear();
-
-            Canvas?.Dispose();
-        }
+        Canvas?.Dispose();
     }
 }

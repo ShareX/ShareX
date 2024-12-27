@@ -23,86 +23,86 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
 using ShareX.UploadersLib.FileUploaders;
+using ShareX.UploadersLib.Helpers;
+
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.SharingServices
+namespace ShareX.UploadersLib.SharingServices;
+
+public class EmailSharingService : URLSharingService
 {
-    public class EmailSharingService : URLSharingService
+    public override URLSharingServices EnumValue { get; } = URLSharingServices.Email;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override URLSharingServices EnumValue { get; } = URLSharingServices.Email;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom) && !string.IsNullOrEmpty(config.EmailPassword);
-        }
-
-        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new EmailSharer(config);
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpEmail;
+        return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom) && !string.IsNullOrEmpty(config.EmailPassword);
     }
 
-    public sealed class EmailSharer : URLSharer
+    public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        private UploadersConfig config;
+        return new EmailSharer(config);
+    }
 
-        public EmailSharer(UploadersConfig config)
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpEmail;
+}
+
+public sealed class EmailSharer : URLSharer
+{
+    private UploadersConfig config;
+
+    public EmailSharer(UploadersConfig config)
+    {
+        this.config = config;
+    }
+
+    public override UploadResult ShareURL(string url)
+    {
+        UploadResult result = new() { URL = url, IsURLExpected = false };
+
+        if (config.EmailAutomaticSend && !string.IsNullOrEmpty(config.EmailAutomaticSendTo))
         {
-            this.config = config;
-        }
-
-        public override UploadResult ShareURL(string url)
-        {
-            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
-
-            if (config.EmailAutomaticSend && !string.IsNullOrEmpty(config.EmailAutomaticSendTo))
+            Email email = new()
             {
-                Email email = new Email()
+                SmtpServer = config.EmailSmtpServer,
+                SmtpPort = config.EmailSmtpPort,
+                FromEmail = config.EmailFrom,
+                Password = config.EmailPassword,
+                ToEmail = config.EmailAutomaticSendTo,
+                Subject = config.EmailDefaultSubject,
+                Body = url
+            };
+
+            email.Send();
+        } else
+        {
+            using EmailForm emailForm = new(config.EmailRememberLastTo ? config.EmailLastTo : "", config.EmailDefaultSubject, url);
+            if (emailForm.ShowDialog() == DialogResult.OK)
+            {
+                if (config.EmailRememberLastTo)
+                {
+                    config.EmailLastTo = emailForm.ToEmail;
+                }
+
+                Email email = new()
                 {
                     SmtpServer = config.EmailSmtpServer,
                     SmtpPort = config.EmailSmtpPort,
                     FromEmail = config.EmailFrom,
                     Password = config.EmailPassword,
-                    ToEmail = config.EmailAutomaticSendTo,
-                    Subject = config.EmailDefaultSubject,
-                    Body = url
+                    ToEmail = emailForm.ToEmail,
+                    Subject = emailForm.Subject,
+                    Body = emailForm.Body
                 };
 
                 email.Send();
             }
-            else
-            {
-                using (EmailForm emailForm = new EmailForm(config.EmailRememberLastTo ? config.EmailLastTo : "", config.EmailDefaultSubject, url))
-                {
-                    if (emailForm.ShowDialog() == DialogResult.OK)
-                    {
-                        if (config.EmailRememberLastTo)
-                        {
-                            config.EmailLastTo = emailForm.ToEmail;
-                        }
-
-                        Email email = new Email()
-                        {
-                            SmtpServer = config.EmailSmtpServer,
-                            SmtpPort = config.EmailSmtpPort,
-                            FromEmail = config.EmailFrom,
-                            Password = config.EmailPassword,
-                            ToEmail = emailForm.ToEmail,
-                            Subject = emailForm.Subject,
-                            Body = emailForm.Body
-                        };
-
-                        email.Send();
-                    }
-                }
-            }
-
-            //URLHelpers.OpenURL("mailto:?body=" + URLHelpers.URLEncode(url));
-
-            return result;
         }
+
+        //URLHelpers.OpenURL("mailto:?body=" + URLHelpers.URLEncode(url));
+
+        return result;
     }
 }

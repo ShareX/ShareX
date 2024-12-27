@@ -23,42 +23,41 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class ConvolutionMatrix
 {
-    public class ConvolutionMatrix
+    private readonly double[,] matrix;
+
+    public int Width => matrix.GetLength(1);
+    public int Height => matrix.GetLength(0);
+    public byte Offset { get; set; }
+
+    public bool ConsiderAlpha { get; set; }
+
+    public ConvolutionMatrix() : this(3)
     {
-        private readonly double[,] matrix;
+    }
 
-        public int Width => matrix.GetLength(1);
-        public int Height => matrix.GetLength(0);
-        public byte Offset { get; set; }
+    public ConvolutionMatrix(int size) : this(size, size)
+    {
+    }
 
-        public bool ConsiderAlpha { get; set; }
+    public ConvolutionMatrix(int height, int width)
+    {
+        matrix = new double[height, width];
+    }
 
-        public ConvolutionMatrix() : this(3)
+    public void SetAll(double value)
+    {
+        for (int y = 0; y < Height; y++)
         {
-        }
-
-        public ConvolutionMatrix(int size) : this(size, size)
-        {
-        }
-
-        public ConvolutionMatrix(int height, int width)
-        {
-            matrix = new double[height, width];
-        }
-
-        public void SetAll(double value)
-        {
-            for (int y = 0; y < Height; y++)
+            for (int x = 0; x < Width; x++)
             {
-                for (int x = 0; x < Width; x++)
-                {
-                    matrix[y, x] = value;
-                }
+                matrix[y, x] = value;
             }
         }
-
-        public ref double this[int y, int x] => ref matrix[y, x];
     }
+
+    public ref double this[int y, int x] => ref matrix[y, x];
 }

@@ -23,41 +23,36 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+[DefaultEvent("AccountTypeChanged")]
+public partial class AccountTypeControl : UserControl
 {
-    [DefaultEvent("AccountTypeChanged")]
-    public partial class AccountTypeControl : UserControl
+    public delegate void AccountTypeChangedEventHandler(AccountType accountType);
+
+    public event AccountTypeChangedEventHandler AccountTypeChanged;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public AccountType SelectedAccountType
     {
-        public delegate void AccountTypeChangedEventHandler(AccountType accountType);
+        get => (AccountType)cbAccountType.SelectedIndex.Clamp(0, 1);
+        set => cbAccountType.SelectedIndex = (int)value;
+    }
 
-        public event AccountTypeChangedEventHandler AccountTypeChanged;
+    public AccountTypeControl()
+    {
+        InitializeComponent();
+        cbAccountType.SelectedIndexChanged += cbAccountType_SelectedIndexChanged;
+    }
 
-        public AccountType SelectedAccountType
-        {
-            get
-            {
-                return (AccountType)cbAccountType.SelectedIndex.Clamp(0, 1);
-            }
-            set
-            {
-                cbAccountType.SelectedIndex = (int)value;
-            }
-        }
-
-        public AccountTypeControl()
-        {
-            InitializeComponent();
-            cbAccountType.SelectedIndexChanged += cbAccountType_SelectedIndexChanged;
-        }
-
-        private void cbAccountType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            AccountTypeChanged?.Invoke(SelectedAccountType);
-        }
+    private void cbAccountType_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        AccountTypeChanged?.Invoke(SelectedAccountType);
     }
 }

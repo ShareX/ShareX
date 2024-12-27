@@ -23,30 +23,31 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib.Forms;
+
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+internal class ScrollbarManager
 {
-    internal class ScrollbarManager
+    public bool Visible => horizontalScrollbar.Visible || verticalScrollbar.Visible;
+
+    private RegionCaptureForm form;
+    private ImageEditorScrollbar horizontalScrollbar, verticalScrollbar;
+
+    public ScrollbarManager(RegionCaptureForm regionCaptureForm, ShapeManager shapeManager)
     {
-        public bool Visible => horizontalScrollbar.Visible || verticalScrollbar.Visible;
+        form = regionCaptureForm;
+        horizontalScrollbar = new ImageEditorScrollbar(Orientation.Horizontal, form);
+        shapeManager.DrawableObjects.Add(horizontalScrollbar);
+        verticalScrollbar = new ImageEditorScrollbar(Orientation.Vertical, form);
+        shapeManager.DrawableObjects.Add(verticalScrollbar);
+    }
 
-        private RegionCaptureForm form;
-        private ImageEditorScrollbar horizontalScrollbar, verticalScrollbar;
-
-        public ScrollbarManager(RegionCaptureForm regionCaptureForm, ShapeManager shapeManager)
-        {
-            form = regionCaptureForm;
-            horizontalScrollbar = new ImageEditorScrollbar(Orientation.Horizontal, form);
-            shapeManager.DrawableObjects.Add(horizontalScrollbar);
-            verticalScrollbar = new ImageEditorScrollbar(Orientation.Vertical, form);
-            shapeManager.DrawableObjects.Add(verticalScrollbar);
-        }
-
-        public void Update()
-        {
-            horizontalScrollbar.Update();
-            verticalScrollbar.Update();
-        }
+    public void Update()
+    {
+        horizontalScrollbar.Update();
+        verticalScrollbar.Update();
     }
 }

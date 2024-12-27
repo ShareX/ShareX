@@ -24,53 +24,57 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public partial class CanvasSizeForm : Form
 {
-    public partial class CanvasSizeForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Padding Canvas { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Color CanvasColor { get; private set; }
+
+    public CanvasSizeForm()
     {
-        public Padding Canvas { get; private set; }
-        public Color CanvasColor { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+    }
 
-        public CanvasSizeForm()
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-        }
+    public CanvasSizeForm(Padding canvas, Color canvasColor) : this()
+    {
+        Canvas = canvas;
+        CanvasColor = canvasColor;
 
-        public CanvasSizeForm(Padding canvas, Color canvasColor) : this()
-        {
-            Canvas = canvas;
-            CanvasColor = canvasColor;
+        nudLeft.SetValue(Canvas.Left);
+        nudTop.SetValue(Canvas.Top);
+        nudRight.SetValue(Canvas.Right);
+        nudBottom.SetValue(Canvas.Bottom);
+        cbtnCanvasColor.Color = CanvasColor;
+    }
 
-            nudLeft.SetValue(Canvas.Left);
-            nudTop.SetValue(Canvas.Top);
-            nudRight.SetValue(Canvas.Right);
-            nudBottom.SetValue(Canvas.Bottom);
-            cbtnCanvasColor.Color = CanvasColor;
-        }
+    private void CanvasSizeForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+    }
 
-        private void CanvasSizeForm_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        Canvas = new Padding((int)nudLeft.Value, (int)nudTop.Value, (int)nudRight.Value, (int)nudBottom.Value);
+        CanvasColor = cbtnCanvasColor.Color;
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            Canvas = new Padding((int)nudLeft.Value, (int)nudTop.Value, (int)nudRight.Value, (int)nudBottom.Value);
-            CanvasColor = cbtnCanvasColor.Color;
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

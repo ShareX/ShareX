@@ -23,21 +23,22 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
 using System;
 
-namespace ShareX.HelpersLib
-{
-    public class EnumInfo
-    {
-        public Enum Value { get; set; }
-        public string Description { get; set; }
-        public string Category { get; set; }
+namespace ShareX.HelpersLib;
 
-        public EnumInfo(Enum value)
-        {
-            Value = value;
-            Description = Value.GetLocalizedDescription();
-            Category = Value.GetLocalizedCategory();
-        }
+public class EnumInfo
+{
+    public Enum Value { get; set; }
+    public string Description { get; set; }
+    public string Category { get; set; }
+
+    public EnumInfo(Enum value)
+    {
+        Value = value;
+        Description = Value.GetLocalizedDescription();
+        Category = Value.GetLocalizedCategory();
     }
 }

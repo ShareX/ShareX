@@ -24,35 +24,36 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Settings;
+
 using System;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.OAuth;
+
+public class OAuth2Token
 {
-    public class OAuth2Token
+    [JsonEncrypt]
+    public string access_token { get; set; }
+    [JsonEncrypt]
+    public string refresh_token { get; set; }
+    public int expires_in { get; set; }
+    public string token_type { get; set; }
+    public string scope { get; set; }
+
+    public DateTime ExpireDate { get; set; }
+
+    [JsonIgnore]
+    public bool IsExpired
     {
-        [JsonEncrypt]
-        public string access_token { get; set; }
-        [JsonEncrypt]
-        public string refresh_token { get; set; }
-        public int expires_in { get; set; }
-        public string token_type { get; set; }
-        public string scope { get; set; }
-
-        public DateTime ExpireDate { get; set; }
-
-        [JsonIgnore]
-        public bool IsExpired
+        get
         {
-            get
-            {
-                return ExpireDate == DateTime.MinValue || DateTime.UtcNow > ExpireDate;
-            }
+            return ExpireDate == DateTime.MinValue || DateTime.UtcNow > ExpireDate;
         }
+    }
 
-        public void UpdateExpireDate()
-        {
-            ExpireDate = DateTime.UtcNow + TimeSpan.FromSeconds(expires_in - 10);
-        }
+    public void UpdateExpireDate()
+    {
+        ExpireDate = DateTime.UtcNow + TimeSpan.FromSeconds(expires_in - 10);
     }
 }

@@ -24,31 +24,31 @@
 #endregion License Information (GPL v3)
 
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.Helpers;
+
+internal class KeyFileNameEditor : FileNameEditor
 {
-    internal class KeyFileNameEditor : FileNameEditor
+    public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
     {
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        if (context == null || provider == null)
         {
-            if (context == null || provider == null)
-            {
-                return base.EditValue(context, provider, value);
-            }
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                dlg.Title = Resources.KeyFileNameEditor_EditValue_Browse_for_a_key_file___;
-                dlg.Filter = "Key file (*.*)|*.*";
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    value = dlg.FileName;
-                }
-            }
-            return value;
+            return base.EditValue(context, provider, value);
         }
+        using (OpenFileDialog dlg = new())
+        {
+            dlg.Title = Resources.KeyFileNameEditor_EditValue_Browse_for_a_key_file___;
+            dlg.Filter = "Key file (*.*)|*.*";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                value = dlg.FileName;
+            }
+        }
+        return value;
     }
 }

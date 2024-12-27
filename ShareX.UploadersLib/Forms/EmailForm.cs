@@ -24,49 +24,53 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class EmailForm : Form
 {
-    public partial class EmailForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string ToEmail { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Subject { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Body { get; private set; }
+
+    public EmailForm()
     {
-        public string ToEmail { get; private set; }
-        public string Subject { get; private set; }
-        public string Body { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+    }
 
-        public EmailForm()
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-        }
+    public EmailForm(string toEmail, string subject, string body) : this()
+    {
+        txtToEmail.Text = toEmail;
+        txtSubject.Text = subject;
+        txtMessage.Text = body;
+    }
 
-        public EmailForm(string toEmail, string subject, string body) : this()
-        {
-            txtToEmail.Text = toEmail;
-            txtSubject.Text = subject;
-            txtMessage.Text = body;
-        }
+    private void EmailForm_Shown(object sender, EventArgs e)
+    {
+        txtMessage.Focus();
+    }
 
-        private void EmailForm_Shown(object sender, EventArgs e)
-        {
-            txtMessage.Focus();
-        }
+    private void btnSend_Click(object sender, EventArgs e)
+    {
+        ToEmail = txtToEmail.Text;
+        Subject = txtSubject.Text;
+        Body = txtMessage.Text;
 
-        private void btnSend_Click(object sender, EventArgs e)
-        {
-            ToEmail = txtToEmail.Text;
-            Subject = txtSubject.Text;
-            Body = txtMessage.Text;
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

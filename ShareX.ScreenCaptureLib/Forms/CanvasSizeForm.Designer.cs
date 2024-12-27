@@ -1,4 +1,6 @@
-﻿namespace ShareX.ScreenCaptureLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.ScreenCaptureLib
 {
     partial class CanvasSizeForm
     {
@@ -39,7 +41,7 @@
             this.nudBottom = new System.Windows.Forms.NumericUpDown();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cbtnCanvasColor = new ShareX.HelpersLib.ColorButton();
+            this.cbtnCanvasColor = new ShareX.HelpersLib.Controls.ColorButton();
             ((System.ComponentModel.ISupportInitialize)(this.nudLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTop)).BeginInit();
@@ -191,6 +193,6 @@
         private System.Windows.Forms.NumericUpDown nudBottom;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
-        private HelpersLib.ColorButton cbtnCanvasColor;
+        private ColorButton cbtnCanvasColor;
     }
 }

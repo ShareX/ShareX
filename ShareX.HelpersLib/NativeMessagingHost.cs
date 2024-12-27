@@ -27,45 +27,62 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class NativeMessagingHost
 {
-    public class NativeMessagingHost
+    public string Read()
     {
-        public string Read()
+        string input = null;
+
+        Stream inputStream = Console.OpenStandardInput();
+
+        byte[] bytesLength = new byte[4];
+        int totalBytesRead = 0;
+        while (totalBytesRead < bytesLength.Length)
         {
-            string input = null;
-
-            Stream inputStream = Console.OpenStandardInput();
-
-            byte[] bytesLength = new byte[4];
-            inputStream.Read(bytesLength, 0, bytesLength.Length);
-            int inputLength = BitConverter.ToInt32(bytesLength, 0);
-
-            if (inputLength > 0)
+            int bytesRead = inputStream.Read(bytesLength, totalBytesRead, bytesLength.Length - totalBytesRead);
+            if (bytesRead == 0)
             {
-                byte[] bytesInput = new byte[inputLength];
-                inputStream.Read(bytesInput, 0, bytesInput.Length);
-                input = Encoding.UTF8.GetString(bytesInput);
+                throw new EndOfStreamException("Stream ended before reading the expected number of bytes.");
             }
+            totalBytesRead += bytesRead;
+        }
+        int inputLength = BitConverter.ToInt32(bytesLength, 0);
 
-            return input;
+        if (inputLength > 0)
+        {
+            byte[] bytesInput = new byte[inputLength];
+            totalBytesRead = 0;
+            while (totalBytesRead < bytesInput.Length)
+            {
+                int bytesRead = inputStream.Read(bytesInput, totalBytesRead, bytesInput.Length - totalBytesRead);
+                if (bytesRead == 0)
+                {
+                    throw new EndOfStreamException("Stream ended before reading the expected number of bytes.");
+                }
+                totalBytesRead += bytesRead;
+            }
+            input = Encoding.UTF8.GetString(bytesInput);
         }
 
-        public void Write(string data)
+        return input;
+    }
+
+    public void Write(string data)
+    {
+        Stream outputStream = Console.OpenStandardOutput();
+
+        byte[] bytesData = Encoding.UTF8.GetBytes(data);
+        byte[] bytesLength = BitConverter.GetBytes(bytesData.Length);
+
+        outputStream.Write(bytesLength, 0, bytesLength.Length);
+
+        if (bytesData.Length > 0)
         {
-            Stream outputStream = Console.OpenStandardOutput();
-
-            byte[] bytesData = Encoding.UTF8.GetBytes(data);
-            byte[] bytesLength = BitConverter.GetBytes(bytesData.Length);
-
-            outputStream.Write(bytesLength, 0, bytesLength.Length);
-
-            if (bytesData.Length > 0)
-            {
-                outputStream.Write(bytesData, 0, bytesData.Length);
-            }
-
-            outputStream.Flush();
+            outputStream.Write(bytesData, 0, bytesData.Length);
         }
+
+        outputStream.Flush();
     }
 }

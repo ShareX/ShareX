@@ -24,96 +24,100 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.ImageEffectsLib.Properties;
+
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib;
+
+public partial class ImageEffectPackagerForm : Form
 {
-    public partial class ImageEffectPackagerForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string ImageEffectJson { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string ImageEffectName { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string ShareXImageEffectsFolderPath { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string AssetsFolderPath { get; set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string PackageFilePath { get; set; }
+
+    public ImageEffectPackagerForm(string json, string name, string imageEffectsFolderPath)
     {
-        public string ImageEffectJson { get; private set; }
-        public string ImageEffectName { get; private set; }
-        public string ShareXImageEffectsFolderPath { get; private set; }
-        public string AssetsFolderPath { get; set; }
-        public string PackageFilePath { get; set; }
+        ImageEffectJson = json;
+        ImageEffectName = name;
+        ShareXImageEffectsFolderPath = imageEffectsFolderPath;
 
-        public ImageEffectPackagerForm(string json, string name, string imageEffectsFolderPath)
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+
+        AssetsFolderPath = Path.Combine(ShareXImageEffectsFolderPath, ImageEffectName);
+        txtAssetsFolderPath.Text = AssetsFolderPath;
+        PackageFilePath = AssetsFolderPath + ".sxie";
+        txtPackageFilePath.Text = PackageFilePath;
+    }
+
+    private void btnOpenImageEffectsFolder_Click(object sender, EventArgs e)
+    {
+        FileHelpers.OpenFolder(ShareXImageEffectsFolderPath);
+    }
+
+    private void txtAssetsFolderPath_TextChanged(object sender, EventArgs e)
+    {
+        AssetsFolderPath = txtAssetsFolderPath.Text;
+    }
+
+    private void btnAssetsFolderPathBrowse_Click(object sender, EventArgs e)
+    {
+        FileHelpers.BrowseFolder(txtAssetsFolderPath, ShareXImageEffectsFolderPath);
+    }
+
+    private void txtPackageFilePath_TextChanged(object sender, EventArgs e)
+    {
+        PackageFilePath = txtPackageFilePath.Text;
+    }
+
+    private void btnPackageFilePathBrowse_Click(object sender, EventArgs e)
+    {
+        using SaveFileDialog sfd = new();
+        sfd.DefaultExt = "sxie";
+        sfd.FileName = ImageEffectName + ".sxie";
+        sfd.Filter = "ShareX image effect (*.sxie)|*.sxie";
+        sfd.InitialDirectory = ShareXImageEffectsFolderPath;
+
+        if (sfd.ShowDialog() == DialogResult.OK)
         {
-            ImageEffectJson = json;
-            ImageEffectName = name;
-            ShareXImageEffectsFolderPath = imageEffectsFolderPath;
-
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            AssetsFolderPath = Path.Combine(ShareXImageEffectsFolderPath, ImageEffectName);
-            txtAssetsFolderPath.Text = AssetsFolderPath;
-            PackageFilePath = AssetsFolderPath + ".sxie";
-            txtPackageFilePath.Text = PackageFilePath;
+            txtPackageFilePath.Text = sfd.FileName;
         }
+    }
 
-        private void btnOpenImageEffectsFolder_Click(object sender, EventArgs e)
+    private void btnPackage_Click(object sender, EventArgs e)
+    {
+        try
         {
-            FileHelpers.OpenFolder(ShareXImageEffectsFolderPath);
-        }
-
-        private void txtAssetsFolderPath_TextChanged(object sender, EventArgs e)
-        {
-            AssetsFolderPath = txtAssetsFolderPath.Text;
-        }
-
-        private void btnAssetsFolderPathBrowse_Click(object sender, EventArgs e)
-        {
-            FileHelpers.BrowseFolder(txtAssetsFolderPath, ShareXImageEffectsFolderPath);
-        }
-
-        private void txtPackageFilePath_TextChanged(object sender, EventArgs e)
-        {
-            PackageFilePath = txtPackageFilePath.Text;
-        }
-
-        private void btnPackageFilePathBrowse_Click(object sender, EventArgs e)
-        {
-            using (SaveFileDialog sfd = new SaveFileDialog())
+            if (!string.IsNullOrEmpty(AssetsFolderPath) && !AssetsFolderPath.StartsWith(ShareXImageEffectsFolderPath + "\\", StringComparison.OrdinalIgnoreCase))
             {
-                sfd.DefaultExt = "sxie";
-                sfd.FileName = ImageEffectName + ".sxie";
-                sfd.Filter = "ShareX image effect (*.sxie)|*.sxie";
-                sfd.InitialDirectory = ShareXImageEffectsFolderPath;
+                MessageBox.Show(Resources.AssetsFolderMustBeInsideShareXImageEffectsFolder, "ShareX - " + Resources.InvalidAssetsFolderPath,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } else if (!File.Exists(PackageFilePath) || MessageBox.Show(Resources.PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt, "ShareX",
+                  MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string outputFilePath = ImageEffectPackager.Package(PackageFilePath, ImageEffectJson, AssetsFolderPath);
 
-                if (sfd.ShowDialog() == DialogResult.OK)
+                if (!string.IsNullOrEmpty(outputFilePath) && File.Exists(outputFilePath))
                 {
-                    txtPackageFilePath.Text = sfd.FileName;
+                    FileHelpers.OpenFolderWithFile(outputFilePath);
                 }
             }
-        }
-
-        private void btnPackage_Click(object sender, EventArgs e)
+        } catch (Exception ex)
         {
-            try
-            {
-                if (!string.IsNullOrEmpty(AssetsFolderPath) && !AssetsFolderPath.StartsWith(ShareXImageEffectsFolderPath + "\\", StringComparison.OrdinalIgnoreCase))
-                {
-                    MessageBox.Show(Resources.AssetsFolderMustBeInsideShareXImageEffectsFolder, "ShareX - " + Resources.InvalidAssetsFolderPath,
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (!File.Exists(PackageFilePath) || MessageBox.Show(Resources.PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt, "ShareX",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string outputFilePath = ImageEffectPackager.Package(PackageFilePath, ImageEffectJson, AssetsFolderPath);
-
-                    if (!string.IsNullOrEmpty(outputFilePath) && File.Exists(outputFilePath))
-                    {
-                        FileHelpers.OpenFolderWithFile(outputFilePath);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
+            ex.ShowError();
         }
     }
 }

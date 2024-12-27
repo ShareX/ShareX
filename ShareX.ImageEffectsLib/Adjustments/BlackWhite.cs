@@ -24,20 +24,20 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+[Description("Black & white")]
+internal class BlackWhite : ImageEffect
 {
-    [Description("Black & white")]
-    internal class BlackWhite : ImageEffect
+    public override Bitmap Apply(Bitmap bmp)
     {
-        public override Bitmap Apply(Bitmap bmp)
+        using (bmp)
         {
-            using (bmp)
-            {
-                return ColorMatrixManager.BlackWhite().Apply(bmp);
-            }
+            return ColorMatrixManager.BlackWhite().Apply(bmp);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class ActionsToolbarEditForm
     {
@@ -31,9 +33,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActionsToolbarEditForm));
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnAdd = new ShareX.HelpersLib.MenuButton();
+            this.btnAdd = new ShareX.HelpersLib.Controls.MenuButton();
             this.cmsAction = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lvActions = new ShareX.HelpersLib.MyListView();
+            this.lvActions = new ShareX.HelpersLib.Controls.MyListView();
             this.chAction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ilMain = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
@@ -73,7 +75,7 @@
             this.lvActions.SmallImageList = this.ilMain;
             this.lvActions.UseCompatibleStateImageBehavior = false;
             this.lvActions.View = System.Windows.Forms.View.Details;
-            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
+            this.lvActions.ItemMoved += new MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
             // 
             // chAction
             // 
@@ -101,9 +103,9 @@
 
         #endregion
         private System.Windows.Forms.Button btnRemove;
-        private HelpersLib.MenuButton btnAdd;
+        private MenuButton btnAdd;
         private System.Windows.Forms.ContextMenuStrip cmsAction;
-        private HelpersLib.MyListView lvActions;
+        private MyListView lvActions;
         private System.Windows.Forms.ColumnHeader chAction;
         private System.Windows.Forms.ImageList ilMain;
     }

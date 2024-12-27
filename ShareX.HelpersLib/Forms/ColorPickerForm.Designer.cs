@@ -1,4 +1,7 @@
-﻿namespace ShareX.HelpersLib
+﻿using ShareX.HelpersLib.Colors;
+using ShareX.HelpersLib.Controls;
+
+namespace ShareX.HelpersLib
 {
     partial class ColorPickerForm
     {
@@ -70,7 +73,7 @@
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.btnScreenColorPicker = new System.Windows.Forms.Button();
             this.btnClipboardColorPicker = new System.Windows.Forms.Button();
-            this.cbTransparent = new ShareX.HelpersLib.ColorButton();
+            this.cbTransparent = new ShareX.HelpersLib.Controls.ColorButton();
             this.cmsCopy = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCopyAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyRGB = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,9 +96,9 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblNameValue = new System.Windows.Forms.Label();
             this.btnClipboardStatus = new System.Windows.Forms.Button();
-            this.mbCopy = new ShareX.HelpersLib.MenuButton();
+            this.mbCopy = new ShareX.HelpersLib.Controls.MenuButton();
             this.pbColorPreview = new ShareX.HelpersLib.MyPictureBox();
-            this.colorPicker = new ShareX.HelpersLib.ColorPicker();
+            this.colorPicker = new ShareX.HelpersLib.Colors.ColorPicker();
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYellow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMagenta)).BeginInit();
@@ -613,7 +616,7 @@
             resources.ApplyResources(this.colorPicker, "colorPicker");
             this.colorPicker.DrawStyle = ShareX.HelpersLib.DrawStyle.Hue;
             this.colorPicker.Name = "colorPicker";
-            this.colorPicker.ColorChanged += new ShareX.HelpersLib.ColorEventHandler(this.colorPicker_ColorChanged);
+            this.colorPicker.ColorChanged += new ColorEventHandler(this.colorPicker_ColorChanged);
             // 
             // ColorPickerForm
             // 

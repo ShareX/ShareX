@@ -23,61 +23,56 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Colors;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Drawings;
+
+[Description("Background")]
+public class DrawBackground : ImageEffect
 {
-    [Description("Background")]
-    public class DrawBackground : ImageEffect
+    [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color Color { get; set; }
+
+    [DefaultValue(false)]
+    public bool UseGradient { get; set; }
+
+    [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
+    public GradientInfo Gradient { get; set; }
+
+    public DrawBackground()
     {
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
+        this.ApplyDefaultPropertyValues();
+        AddDefaultGradient();
+    }
 
-        [DefaultValue(false)]
-        public bool UseGradient { get; set; }
+    private void AddDefaultGradient()
+    {
+        Gradient = new GradientInfo();
+        Gradient.Colors.Add(new GradientStop(Color.FromArgb(68, 120, 194), 0f));
+        Gradient.Colors.Add(new GradientStop(Color.FromArgb(13, 58, 122), 50f));
+        Gradient.Colors.Add(new GradientStop(Color.FromArgb(6, 36, 78), 50f));
+        Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
+    }
 
-        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
-        public GradientInfo Gradient { get; set; }
-
-        public DrawBackground()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        using (bmp)
         {
-            this.ApplyDefaultPropertyValues();
-            AddDefaultGradient();
+            return UseGradient && Gradient != null && Gradient.IsValid
+                ? ImageHelpers.FillBackground(bmp, Gradient)
+                : ImageHelpers.FillBackground(bmp, Color);
         }
+    }
 
-        private void AddDefaultGradient()
-        {
-            Gradient = new GradientInfo();
-            Gradient.Colors.Add(new GradientStop(Color.FromArgb(68, 120, 194), 0f));
-            Gradient.Colors.Add(new GradientStop(Color.FromArgb(13, 58, 122), 50f));
-            Gradient.Colors.Add(new GradientStop(Color.FromArgb(6, 36, 78), 50f));
-            Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
-        }
-
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            using (bmp)
-            {
-                if (UseGradient && Gradient != null && Gradient.IsValid)
-                {
-                    return ImageHelpers.FillBackground(bmp, Gradient);
-                }
-
-                return ImageHelpers.FillBackground(bmp, Color);
-            }
-        }
-
-        protected override string GetSummary()
-        {
-            if (!UseGradient)
-            {
-                return $"{Color.R}, {Color.G}, {Color.B}";
-            }
-
-            return null;
-        }
+    protected override string GetSummary()
+    {
+        return !UseGradient ? $"{Color.R}, {Color.G}, {Color.B}" : null;
     }
 }

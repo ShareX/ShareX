@@ -23,53 +23,48 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Animations;
+
+internal class OpacityAnimation : BaseAnimation
 {
-    internal class OpacityAnimation : BaseAnimation
+    private double opacity;
+
+    public double Opacity
     {
-        private double opacity;
-
-        public double Opacity
+        get
         {
-            get
+            return opacity;
+        }
+        private set
+        {
+            opacity = value.Clamp(0, 1);
+        }
+    }
+
+    public TimeSpan FadeInDuration { get; set; }
+    public TimeSpan Duration { get; set; }
+    public TimeSpan FadeOutDuration { get; set; }
+
+    public TimeSpan TotalDuration => FadeInDuration + Duration + FadeOutDuration;
+
+    public override bool Update()
+    {
+        if (IsActive)
+        {
+            Opacity = Timer.Elapsed < FadeInDuration
+                ? Timer.Elapsed.TotalMilliseconds / FadeInDuration.TotalMilliseconds
+                : 1 - (Timer.Elapsed - (FadeInDuration + Duration)).TotalMilliseconds / FadeOutDuration.TotalMilliseconds;
+
+            if (Opacity == 0)
             {
-                return opacity;
-            }
-            private set
-            {
-                opacity = value.Clamp(0, 1);
+                Timer.Stop();
             }
         }
 
-        public TimeSpan FadeInDuration { get; set; }
-        public TimeSpan Duration { get; set; }
-        public TimeSpan FadeOutDuration { get; set; }
-
-        public TimeSpan TotalDuration => FadeInDuration + Duration + FadeOutDuration;
-
-        public override bool Update()
-        {
-            if (IsActive)
-            {
-                if (Timer.Elapsed < FadeInDuration)
-                {
-                    Opacity = Timer.Elapsed.TotalMilliseconds / FadeInDuration.TotalMilliseconds;
-                }
-                else
-                {
-                    Opacity = 1 - ((Timer.Elapsed - (FadeInDuration + Duration)).TotalMilliseconds / FadeOutDuration.TotalMilliseconds);
-                }
-
-                if (Opacity == 0)
-                {
-                    Timer.Stop();
-                }
-            }
-
-            return IsActive;
-        }
+        return IsActive;
     }
 }

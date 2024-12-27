@@ -26,16 +26,15 @@
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
-{
-    [ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
-    public class ToolStripLabeledNumericUpDown : ToolStripControlHost
-    {
-        public LabeledNumericUpDown Content => Control as LabeledNumericUpDown;
+namespace ShareX.HelpersLib.Controls;
 
-        public ToolStripLabeledNumericUpDown(string text) : base(new LabeledNumericUpDown())
-        {
-            Content.Text = text;
-        }
+[ToolStripItemDesignerAvailability(ToolStripItemDesignerAvailability.MenuStrip | ToolStripItemDesignerAvailability.ContextMenuStrip)]
+public class ToolStripLabeledNumericUpDown : ToolStripControlHost
+{
+    public LabeledNumericUpDown Content => Control as LabeledNumericUpDown;
+
+    public ToolStripLabeledNumericUpDown(string text) : base(new LabeledNumericUpDown())
+    {
+        Content.Text = text;
     }
 }

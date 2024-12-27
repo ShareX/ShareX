@@ -27,53 +27,52 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Cryptographic;
+
+// https://en.wikipedia.org/wiki/Data_Protection_API
+public static class DPAPI
 {
-    // https://en.wikipedia.org/wiki/Data_Protection_API
-    public static class DPAPI
+    public static string Encrypt(string stringToEncrypt, string optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
     {
-        public static string Encrypt(string stringToEncrypt, string optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
-        {
-            byte[] data = Encoding.UTF8.GetBytes(stringToEncrypt);
-            return Encrypt(data, optionalEntropy, scope);
-        }
+        byte[] data = Encoding.UTF8.GetBytes(stringToEncrypt);
+        return Encrypt(data, optionalEntropy, scope);
+    }
 
-        public static string Encrypt(byte[] data, string optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
+    public static string Encrypt(byte[] data, string optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
+    {
+        byte[] entropyData = null;
+        if (optionalEntropy != null)
         {
-            byte[] entropyData = null;
-            if (optionalEntropy != null)
-            {
-                entropyData = Encoding.UTF8.GetBytes(optionalEntropy);
-            }
-            return Encrypt(data, entropyData, scope);
+            entropyData = Encoding.UTF8.GetBytes(optionalEntropy);
         }
+        return Encrypt(data, entropyData, scope);
+    }
 
-        public static string Encrypt(byte[] data, byte[] optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
-        {
-            byte[] encryptedData = ProtectedData.Protect(data, optionalEntropy, scope);
-            return Convert.ToBase64String(encryptedData);
-        }
+    public static string Encrypt(byte[] data, byte[] optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
+    {
+        byte[] encryptedData = ProtectedData.Protect(data, optionalEntropy, scope);
+        return Convert.ToBase64String(encryptedData);
+    }
 
-        public static string Decrypt(string encryptedString, string optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
-        {
-            byte[] encryptedData = Convert.FromBase64String(encryptedString);
-            return Decrypt(encryptedData, optionalEntropy, scope);
-        }
+    public static string Decrypt(string encryptedString, string optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
+    {
+        byte[] encryptedData = Convert.FromBase64String(encryptedString);
+        return Decrypt(encryptedData, optionalEntropy, scope);
+    }
 
-        public static string Decrypt(byte[] encryptedData, string optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
+    public static string Decrypt(byte[] encryptedData, string optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
+    {
+        byte[] entropyData = null;
+        if (optionalEntropy != null)
         {
-            byte[] entropyData = null;
-            if (optionalEntropy != null)
-            {
-                entropyData = Encoding.UTF8.GetBytes(optionalEntropy);
-            }
-            return Decrypt(encryptedData, entropyData, scope);
+            entropyData = Encoding.UTF8.GetBytes(optionalEntropy);
         }
+        return Decrypt(encryptedData, entropyData, scope);
+    }
 
-        public static string Decrypt(byte[] encryptedData, byte[] optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
-        {
-            byte[] decryptedData = ProtectedData.Unprotect(encryptedData, optionalEntropy, scope);
-            return Encoding.UTF8.GetString(decryptedData);
-        }
+    public static string Decrypt(byte[] encryptedData, byte[] optionalEntropy = null, DataProtectionScope scope = DataProtectionScope.CurrentUser)
+    {
+        byte[] decryptedData = ProtectedData.Unprotect(encryptedData, optionalEntropy, scope);
+        return Encoding.UTF8.GetString(decryptedData);
     }
 }

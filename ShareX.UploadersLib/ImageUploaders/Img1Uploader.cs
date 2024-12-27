@@ -23,25 +23,26 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseUploaders;
+
 using System.IO;
 
-namespace ShareX.UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders;
+
+public sealed class Img1Uploader : ImageUploader
 {
-    public sealed class Img1Uploader : ImageUploader
+    private const string uploadURL = "http://img1.us/?app";
+
+    public override UploadResult Upload(Stream stream, string fileName)
     {
-        private const string uploadURL = "http://img1.us/?app";
+        UploadResult result = SendRequestFile(uploadURL, stream, fileName, "fileup");
 
-        public override UploadResult Upload(Stream stream, string fileName)
+        if (result.IsSuccess)
         {
-            UploadResult result = SendRequestFile(uploadURL, stream, fileName, "fileup");
-
-            if (result.IsSuccess)
-            {
-                string lastLine = result.Response.Remove(0, result.Response.LastIndexOf('\n') + 1).Trim();
-                result.URL = lastLine;
-            }
-
-            return result;
+            string lastLine = result.Response.Remove(0, result.Response.LastIndexOf('\n') + 1).Trim();
+            result.URL = lastLine;
         }
+
+        return result;
     }
 }

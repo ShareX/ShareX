@@ -23,62 +23,62 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.UploadersLib.BaseUploaders;
+
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class FileSonic : FileUploader
 {
-    public class FileSonic : FileUploader
+    public string Username { get; set; }
+
+    public string Password { get; set; }
+
+    private const string APIURL = "http://api.filesonic.com/upload";
+
+    public FileSonic(string username, string password)
     {
-        public string Username { get; set; }
+        Username = username;
+        Password = password;
+    }
 
-        public string Password { get; set; }
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        UploadResult result = null;
 
-        private const string APIURL = "http://api.filesonic.com/upload";
+        string url = GetUploadURL();
 
-        public FileSonic(string username, string password)
+        if (!string.IsNullOrEmpty(url))
         {
-            Username = username;
-            Password = password;
-        }
+            result = SendRequestFile(url, stream, fileName, "file");
 
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            UploadResult result = null;
-
-            string url = GetUploadURL();
-
-            if (!string.IsNullOrEmpty(url))
+            if (!string.IsNullOrEmpty(result.Response))
             {
-                result = SendRequestFile(url, stream, fileName, "file");
-
-                if (!string.IsNullOrEmpty(result.Response))
-                {
-                    result.URL = result.Response;
-                }
+                result.URL = result.Response;
             }
-            else
-            {
-                Errors.Add("GetUploadURL failed.");
-            }
-
-            return result;
-        }
-
-        public string GetUploadURL()
+        } else
         {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("method", "getUploadUrl");
-            args.Add("format", "xml");
-            args.Add("u", Username);
-            args.Add("p", Password);
-
-            string response = SendRequest(HttpMethod.GET, APIURL, args);
-
-            XDocument xd = XDocument.Parse(response);
-            return xd.GetValue("FSApi_Upload/getUploadUrl/response/url");
+            Errors.Add("GetUploadURL failed.");
         }
+
+        return result;
+    }
+
+    public string GetUploadURL()
+    {
+        Dictionary<string, string> args = new();
+        args.Add("method", "getUploadUrl");
+        args.Add("format", "xml");
+        args.Add("u", Username);
+        args.Add("p", Password);
+
+        string response = SendRequest(HttpMethod.GET, APIURL, args);
+
+        XDocument xd = XDocument.Parse(response);
+        return xd.GetValue("FSApi_Upload/getUploadUrl/response/url");
     }
 }

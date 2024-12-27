@@ -26,13 +26,9 @@
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class MyColorConverter : ColorConverter
 {
-    public class MyColorConverter : ColorConverter
-    {
-        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
-        {
-            return false;
-        }
-    }
+    public override bool GetStandardValuesSupported(ITypeDescriptorContext context) => false;
 }

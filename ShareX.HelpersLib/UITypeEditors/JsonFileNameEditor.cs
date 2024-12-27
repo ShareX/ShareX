@@ -28,25 +28,24 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UITypeEditors;
+
+public class JsonFileNameEditor : FileNameEditor
 {
-    public class JsonFileNameEditor : FileNameEditor
+    public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
     {
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        if (context == null || provider == null)
         {
-            if (context == null || provider == null)
-            {
-                return base.EditValue(context, provider, value);
-            }
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                dlg.Filter = "JavaScript Object Notation files (*.json)|*.json";
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    value = dlg.FileName;
-                }
-            }
-            return value;
+            return base.EditValue(context, provider, value);
         }
+        using (OpenFileDialog dlg = new())
+        {
+            dlg.Filter = "JavaScript Object Notation files (*.json)|*.json";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                value = dlg.FileName;
+            }
+        }
+        return value;
     }
 }

@@ -25,30 +25,29 @@
 
 using System.Runtime.InteropServices;
 
-namespace ShareX.Steam
+namespace ShareX.Steam;
+
+internal static class SteamAPI
 {
-    internal static class SteamAPI
-    {
-        private const string LibraryName = "steam_api";
+    private const string LibraryName = "steam_api";
 
-        /// <summary>
-        /// Initialize the Steamworks SDK.
-        /// </summary>
-        [DllImport(LibraryName, EntryPoint = "SteamAPI_Init", CallingConvention = CallingConvention.Cdecl)]
-        [return: MarshalAs(UnmanagedType.I1)]
-        public static extern bool Init();
+    /// <summary>
+    /// Initialize the Steamworks SDK.
+    /// </summary>
+    [DllImport(LibraryName, EntryPoint = "SteamAPI_Init", CallingConvention = CallingConvention.Cdecl)]
+    [return: MarshalAs(UnmanagedType.I1)]
+    public static extern bool Init();
 
-        /// <summary>
-        /// SteamAPI_Shutdown should be called during process shutdown if possible.
-        /// </summary>
-        [DllImport(LibraryName, EntryPoint = "SteamAPI_Shutdown", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void Shutdown();
+    /// <summary>
+    /// SteamAPI_Shutdown should be called during process shutdown if possible.
+    /// </summary>
+    [DllImport(LibraryName, EntryPoint = "SteamAPI_Shutdown", CallingConvention = CallingConvention.Cdecl)]
+    public static extern void Shutdown();
 
-        /// <summary>
-        /// SteamAPI_IsSteamRunning() returns true if Steam is currently running.
-        /// </summary>
-        [DllImport(LibraryName, EntryPoint = "SteamAPI_IsSteamRunning", CallingConvention = CallingConvention.Cdecl)]
-        [return: MarshalAs(UnmanagedType.I1)]
-        public static extern bool IsSteamRunning();
-    }
+    /// <summary>
+    /// SteamAPI_IsSteamRunning() returns true if Steam is currently running.
+    /// </summary>
+    [DllImport(LibraryName, EntryPoint = "SteamAPI_IsSteamRunning", CallingConvention = CallingConvention.Cdecl)]
+    [return: MarshalAs(UnmanagedType.I1)]
+    public static extern bool IsSteamRunning();
 }

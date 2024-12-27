@@ -23,39 +23,38 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
 
-namespace ShareX.IndexerLib
+namespace ShareX.IndexerLib;
+
+public static class HtmlHelper
 {
-    public static class HtmlHelper
+    public static string StartTag(string tag, string style = "", string otherFields = "")
     {
-        public static string StartTag(string tag, string style = "", string otherFields = "")
+        string css = "";
+
+        if (!string.IsNullOrEmpty(style))
         {
-            string css = "";
-
-            if (!string.IsNullOrEmpty(style))
-            {
-                css = $" style=\"{style}\"";
-            }
-
-            string fields = "";
-
-            if (!string.IsNullOrEmpty(otherFields))
-            {
-                fields = $" {otherFields}";
-            }
-
-            return $"<{tag}{css}{fields}>";
+            css = $" style=\"{style}\"";
         }
 
-        public static string EndTag(string tag)
+        string fields = "";
+
+        if (!string.IsNullOrEmpty(otherFields))
         {
-            return $"</{tag}>";
+            fields = $" {otherFields}";
         }
 
-        public static string Tag(string tag, string content, string style = "", string otherFields = "")
-        {
-            return StartTag(tag, style, otherFields) + URLHelpers.HtmlEncode(content) + EndTag(tag);
-        }
+        return $"<{tag}{css}{fields}>";
+    }
+
+    public static string EndTag(string tag)
+    {
+        return $"</{tag}>";
+    }
+
+    public static string Tag(string tag, string content, string style = "", string otherFields = "")
+    {
+        return StartTag(tag, style, otherFields) + URLHelpers.HtmlEncode(content) + EndTag(tag);
     }
 }

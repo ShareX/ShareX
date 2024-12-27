@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader1 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "Name", 100, 0, true);
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader2 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "Size", 100, 1, true);
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader3 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "Dimensions", 100, 2, true);
-            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader4 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "Path", 100, 3, true);
+            ShareX.ImageListView.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader1 = new ShareX.ImageListView.ImageListView.ImageListViewColumnHeader(ShareX.ImageListView.ColumnType.Name, "Name", 100, 0, true);
+            ShareX.ImageListView.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader2 = new ShareX.ImageListView.ImageListView.ImageListViewColumnHeader(ShareX.ImageListView.ColumnType.FileSize, "Size", 100, 1, true);
+            ShareX.ImageListView.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader3 = new ShareX.ImageListView.ImageListView.ImageListViewColumnHeader(ShareX.ImageListView.ColumnType.Dimensions, "Dimensions", 100, 2, true);
+            ShareX.ImageListView.ImageListView.ImageListViewColumnHeader imageListViewColumnHeader4 = new ShareX.ImageListView.ImageListView.ImageListViewColumnHeader(ShareX.ImageListView.ColumnType.FilePath, "Path", 100, 3, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
-            this.ilvImages = new Manina.Windows.Forms.ImageListView();
+            this.ilvImages = new ShareX.ImageListView.ImageListView();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.tslSearch = new System.Windows.Forms.ToolStripLabel();
             this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
@@ -72,23 +72,23 @@
             imageListViewColumnHeader1.DisplayIndex = 0;
             imageListViewColumnHeader1.Grouper = null;
             imageListViewColumnHeader1.Key = "";
-            imageListViewColumnHeader1.Type = Manina.Windows.Forms.ColumnType.Name;
+            imageListViewColumnHeader1.Type = ShareX.ImageListView.ColumnType.Name;
             imageListViewColumnHeader2.Comparer = null;
             imageListViewColumnHeader2.DisplayIndex = 1;
             imageListViewColumnHeader2.Grouper = null;
             imageListViewColumnHeader2.Key = "";
-            imageListViewColumnHeader2.Type = Manina.Windows.Forms.ColumnType.FileSize;
+            imageListViewColumnHeader2.Type = ShareX.ImageListView.ColumnType.FileSize;
             imageListViewColumnHeader3.Comparer = null;
             imageListViewColumnHeader3.DisplayIndex = 2;
             imageListViewColumnHeader3.Grouper = null;
             imageListViewColumnHeader3.Key = "";
-            imageListViewColumnHeader3.Type = Manina.Windows.Forms.ColumnType.Dimensions;
+            imageListViewColumnHeader3.Type = ShareX.ImageListView.ColumnType.Dimensions;
             imageListViewColumnHeader4.Comparer = null;
             imageListViewColumnHeader4.DisplayIndex = 3;
             imageListViewColumnHeader4.Grouper = null;
             imageListViewColumnHeader4.Key = "";
-            imageListViewColumnHeader4.Type = Manina.Windows.Forms.ColumnType.FilePath;
-            this.ilvImages.Columns.AddRange(new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader[] {
+            imageListViewColumnHeader4.Type = ShareX.ImageListView.ColumnType.FilePath;
+            this.ilvImages.Columns.AddRange(new ShareX.ImageListView.ImageListView.ImageListViewColumnHeader[] {
             imageListViewColumnHeader1,
             imageListViewColumnHeader2,
             imageListViewColumnHeader3,
@@ -99,7 +99,7 @@
             this.ilvImages.PersistentCacheSize = ((long)(100));
             this.ilvImages.ThumbnailSize = new System.Drawing.Size(100, 100);
             this.ilvImages.UseWIC = true;
-            this.ilvImages.ItemDoubleClick += new Manina.Windows.Forms.ItemDoubleClickEventHandler(this.ilvImages_ItemDoubleClick);
+            this.ilvImages.ItemDoubleClick += new ShareX.ImageListView.ItemDoubleClickEventHandler(this.ilvImages_ItemDoubleClick);
             this.ilvImages.SelectionChanged += new System.EventHandler(this.ilvImages_SelectionChanged);
             this.ilvImages.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ilvImages_KeyDown);
             // 
@@ -173,7 +173,7 @@
 
         #endregion
 
-        private Manina.Windows.Forms.ImageListView ilvImages;
+        private ShareX.ImageListView.ImageListView ilvImages;
         private System.Windows.Forms.ToolStripContainer tscMain;
         private System.Windows.Forms.ToolStrip tsMain;
         private System.Windows.Forms.ToolStripLabel tslSearch;

@@ -23,64 +23,66 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class RoundedCornerPanel : Panel
 {
-    public class RoundedCornerPanel : Panel
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public float Radius
     {
-        public float Radius
+        get
         {
-            get
-            {
-                return radius;
-            }
-            set
-            {
-                radius = value;
-
-                Invalidate();
-            }
+            return radius;
         }
-
-        private float radius;
-
-        public Color PanelColor
+        set
         {
-            get
-            {
-                return panelColor;
-            }
-            set
-            {
-                panelColor = value;
+            radius = value;
 
-                Invalidate();
-            }
+            Invalidate();
         }
+    }
 
-        private Color panelColor;
+    private float radius;
 
-        public RoundedCornerPanel()
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Color PanelColor
+    {
+        get
         {
-            BackColor = Color.Transparent;
-
-            SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
+            return panelColor;
         }
-
-        protected override void OnPaint(PaintEventArgs e)
+        set
         {
-            Graphics g = e.Graphics;
+            panelColor = value;
 
-            g.PixelOffsetMode = PixelOffsetMode.Half;
-            g.SmoothingMode = SmoothingMode.HighQuality;
-
-            using (SolidBrush brush = new SolidBrush(PanelColor))
-            {
-                g.DrawRoundedRectangle(brush, ClientRectangle.SizeOffset(1), Radius);
-            }
+            Invalidate();
         }
+    }
+
+    private Color panelColor;
+
+    public RoundedCornerPanel()
+    {
+        BackColor = Color.Transparent;
+
+        SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
+    }
+
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        Graphics g = e.Graphics;
+
+        g.PixelOffsetMode = PixelOffsetMode.Half;
+        g.SmoothingMode = SmoothingMode.HighQuality;
+
+        using SolidBrush brush = new(PanelColor);
+        g.DrawRoundedRectangle(brush, ClientRectangle.SizeOffset(1), Radius);
     }
 }

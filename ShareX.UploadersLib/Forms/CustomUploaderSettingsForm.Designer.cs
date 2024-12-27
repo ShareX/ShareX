@@ -1,4 +1,6 @@
-﻿namespace ShareX.UploadersLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.UploadersLib
 {
     partial class CustomUploaderSettingsForm
     {
@@ -43,7 +45,7 @@
             this.cbTextUploader = new System.Windows.Forms.ComboBox();
             this.btnURLShortenerTest = new System.Windows.Forms.Button();
             this.lblTextUploader = new System.Windows.Forms.Label();
-            this.mbHelp = new ShareX.HelpersLib.MenuButton();
+            this.mbHelp = new ShareX.HelpersLib.Controls.MenuButton();
             this.cmsHelp = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCustomUploaderGuide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearUploaders = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,7 +102,7 @@
             this.lblResultURL = new System.Windows.Forms.Label();
             this.lblDestinationType = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.mbDestinationType = new ShareX.HelpersLib.MenuButton();
+            this.mbDestinationType = new ShareX.HelpersLib.Controls.MenuButton();
             this.cmsDestinationType = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblURLSharingService = new System.Windows.Forms.Label();
@@ -838,7 +840,7 @@
         private System.Windows.Forms.Label lblResultURL;
         private System.Windows.Forms.Label lblDestinationType;
         private System.Windows.Forms.Label lblName;
-        private HelpersLib.MenuButton mbDestinationType;
+        private MenuButton mbDestinationType;
         private System.Windows.Forms.ContextMenuStrip cmsDestinationType;
         private System.Windows.Forms.ToolTip ttHelpTip;
         private System.Windows.Forms.TextBox txtName;
@@ -848,7 +850,7 @@
         private System.Windows.Forms.ContextMenuStrip cmsHelp;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderGuide;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportAll;
-        private HelpersLib.MenuButton mbHelp;
+        private MenuButton mbHelp;
         private System.Windows.Forms.DataGridView dgvParameters;
         private System.Windows.Forms.DataGridView dgvHeaders;
         private System.Windows.Forms.DataGridView dgvArguments;

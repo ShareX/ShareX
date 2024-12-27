@@ -24,32 +24,33 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+internal class Contrast : ImageEffect
 {
-    internal class Contrast : ImageEffect
+    [DefaultValue(1f), Description("Pixel color = Pixel color * Value\r\nExample 1.5 will increase color of pixel 50%")]
+    public float Value { get; set; }
+
+    public Contrast()
     {
-        [DefaultValue(1f), Description("Pixel color = Pixel color * Value\r\nExample 1.5 will increase color of pixel 50%")]
-        public float Value { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        public Contrast()
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        using (bmp)
         {
-            this.ApplyDefaultPropertyValues();
+            return ColorMatrixManager.Contrast(Value).Apply(bmp);
         }
+    }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            using (bmp)
-            {
-                return ColorMatrixManager.Contrast(Value).Apply(bmp);
-            }
-        }
-
-        protected override string GetSummary()
-        {
-            return Value.ToString();
-        }
+    protected override string GetSummary()
+    {
+        return Value.ToString();
     }
 }

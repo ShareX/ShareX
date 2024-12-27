@@ -23,31 +23,30 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.NameParser;
+
+public abstract class CodeMenuEntry
 {
-    public abstract class CodeMenuEntry
+    protected abstract string Prefix { get; }
+
+    public string Value { get; private set; }
+    public string Description { get; private set; }
+    public string Category { get; private set; }
+
+    public CodeMenuEntry(string value, string description, string category = null)
     {
-        protected abstract string Prefix { get; }
+        Value = value;
+        Description = description;
+        Category = category;
+    }
 
-        public string Value { get; private set; }
-        public string Description { get; private set; }
-        public string Category { get; private set; }
+    public string ToPrefixString()
+    {
+        return ToPrefixString(Prefix);
+    }
 
-        public CodeMenuEntry(string value, string description, string category = null)
-        {
-            Value = value;
-            Description = description;
-            Category = category;
-        }
-
-        public string ToPrefixString()
-        {
-            return ToPrefixString(Prefix);
-        }
-
-        public string ToPrefixString(string prefix)
-        {
-            return prefix + Value;
-        }
+    public string ToPrefixString(string prefix)
+    {
+        return prefix + Value;
     }
 }

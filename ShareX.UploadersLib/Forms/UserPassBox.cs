@@ -24,65 +24,71 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class UserPassBox : Form
 {
-    public partial class UserPassBox : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string FullName { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string UserName { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Password { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Email { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool Success { get; set; }
+
+    public UserPassBox(string title, string userName, string password)
     {
-        public string FullName { get; private set; }
-        public string UserName { get; private set; }
-        public string Password { get; private set; }
-        public string Email { get; private set; }
-        public bool Success { get; set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public UserPassBox(string title, string userName, string password)
+        Text = title;
+        txtUserName.Text = userName;
+        txtPassword.Text = password;
+    }
+
+    public UserPassBox(string title, string fullName, string userName, string password) : this(title, userName, password)
+    {
+        txtFullName.Text = fullName;
+        txtFullName.Enabled = true;
+    }
+
+    public UserPassBox(string title, string fullName, string email, string userName, string password) : this(title, fullName, userName, password)
+    {
+        txtEmail.Text = email;
+        txtEmail.Enabled = true;
+    }
+
+    private void InputBox_Shown(object sender, EventArgs e)
+    {
+        txtUserName.Focus();
+        txtUserName.SelectionLength = txtUserName.Text.Length;
+    }
+
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrEmpty(txtUserName.Text))
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+            UserName = txtUserName.Text;
+            Password = txtPassword.Text;
+            Email = txtEmail.Text;
+            FullName = txtFullName.Text;
 
-            Text = title;
-            txtUserName.Text = userName;
-            txtPassword.Text = password;
-        }
-
-        public UserPassBox(string title, string fullName, string userName, string password) : this(title, userName, password)
-        {
-            txtFullName.Text = fullName;
-            txtFullName.Enabled = true;
-        }
-
-        public UserPassBox(string title, string fullName, string email, string userName, string password) : this(title, fullName, userName, password)
-        {
-            txtEmail.Text = email;
-            txtEmail.Enabled = true;
-        }
-
-        private void InputBox_Shown(object sender, EventArgs e)
-        {
-            txtUserName.Focus();
-            txtUserName.SelectionLength = txtUserName.Text.Length;
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtUserName.Text))
-            {
-                UserName = txtUserName.Text;
-                Password = txtPassword.Text;
-                Email = txtEmail.Text;
-                FullName = txtFullName.Text;
-
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.OK;
             Close();
         }
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

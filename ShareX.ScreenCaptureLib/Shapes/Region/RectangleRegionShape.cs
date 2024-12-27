@@ -23,31 +23,31 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Shapes.Region;
+
+public class RectangleRegionShape : BaseRegionShape
 {
-    public class RectangleRegionShape : BaseRegionShape
+    public override ShapeType ShapeType { get; } = ShapeType.RegionRectangle;
+
+    public int CornerRadius { get; set; }
+
+    public override void OnConfigLoad()
     {
-        public override ShapeType ShapeType { get; } = ShapeType.RegionRectangle;
+        CornerRadius = AnnotationOptions.RegionCornerRadius;
+    }
 
-        public int CornerRadius { get; set; }
+    public override void OnConfigSave()
+    {
+        AnnotationOptions.RegionCornerRadius = CornerRadius;
+    }
 
-        public override void OnConfigLoad()
-        {
-            CornerRadius = AnnotationOptions.RegionCornerRadius;
-        }
-
-        public override void OnConfigSave()
-        {
-            AnnotationOptions.RegionCornerRadius = CornerRadius;
-        }
-
-        public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
-        {
-            gp.AddRoundedRectangle(rect, CornerRadius);
-        }
+    public override void OnShapePathRequested(GraphicsPath gp, RectangleF rect)
+    {
+        gp.AddRoundedRectangle(rect, CornerRadius);
     }
 }

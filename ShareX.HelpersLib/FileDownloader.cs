@@ -29,170 +29,155 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class FileDownloader
 {
-    public class FileDownloader
+    public event Action FileSizeReceived;
+    public event Action ProgressChanged;
+
+    public string URL { get; set; }
+    public string DownloadLocation { get; set; }
+    public string AcceptHeader { get; set; }
+
+    public bool IsDownloading { get; private set; }
+    public bool IsCanceled { get; private set; }
+    public long FileSize { get; private set; } = -1;
+    public long DownloadedSize { get; private set; }
+    public double DownloadSpeed { get; private set; }
+
+    public double DownloadPercentage
     {
-        public event Action FileSizeReceived;
-        public event Action ProgressChanged;
-
-        public string URL { get; set; }
-        public string DownloadLocation { get; set; }
-        public string AcceptHeader { get; set; }
-
-        public bool IsDownloading { get; private set; }
-        public bool IsCanceled { get; private set; }
-        public long FileSize { get; private set; } = -1;
-        public long DownloadedSize { get; private set; }
-        public double DownloadSpeed { get; private set; }
-
-        public double DownloadPercentage
+        get
         {
-            get
-            {
-                if (FileSize > 0)
-                {
-                    return (double)DownloadedSize / FileSize * 100;
-                }
+            return FileSize > 0 ? (double)DownloadedSize / FileSize * 100 : 0;
+        }
+    }
 
-                return 0;
+    private const int bufferSize = 32768;
+
+    public FileDownloader()
+    {
+    }
+
+    public FileDownloader(string url, string downloadLocation)
+    {
+        URL = url;
+        DownloadLocation = downloadLocation;
+    }
+
+    public async Task<bool> StartDownload()
+    {
+        if (!IsDownloading && !string.IsNullOrEmpty(URL))
+        {
+            IsDownloading = true;
+            IsCanceled = false;
+            FileSize = -1;
+            DownloadedSize = 0;
+            DownloadSpeed = 0;
+
+            return await DoWork();
+        }
+
+        return false;
+    }
+
+    public void StopDownload()
+    {
+        IsCanceled = true;
+    }
+
+    private async Task<bool> DoWork()
+    {
+        try
+        {
+            HttpClient client = HttpClientFactory.Create();
+
+            using HttpRequestMessage requestMessage = new(HttpMethod.Get, URL);
+            if (!string.IsNullOrEmpty(AcceptHeader))
+            {
+                requestMessage.Headers.Accept.ParseAdd(AcceptHeader);
             }
-        }
 
-        private const int bufferSize = 32768;
+            using HttpResponseMessage responseMessage = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead);
+            responseMessage.EnsureSuccessStatusCode();
 
-        public FileDownloader()
-        {
-        }
+            FileSize = responseMessage.Content.Headers.ContentLength ?? -1;
 
-        public FileDownloader(string url, string downloadLocation)
-        {
-            URL = url;
-            DownloadLocation = downloadLocation;
-        }
+            FileSizeReceived?.Invoke();
 
-        public async Task<bool> StartDownload()
-        {
-            if (!IsDownloading && !string.IsNullOrEmpty(URL))
+            if (FileSize > 0)
             {
-                IsDownloading = true;
-                IsCanceled = false;
-                FileSize = -1;
-                DownloadedSize = 0;
-                DownloadSpeed = 0;
+                Stopwatch timer = new();
+                Stopwatch progressEventTimer = new();
+                long speedTest = 0;
 
-                return await DoWork();
-            }
+                byte[] buffer = new byte[(int)Math.Min(bufferSize, FileSize)];
+                int bytesRead;
 
-            return false;
-        }
-
-        public void StopDownload()
-        {
-            IsCanceled = true;
-        }
-
-        private async Task<bool> DoWork()
-        {
-            try
-            {
-                HttpClient client = HttpClientFactory.Create();
-
-                using (HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, URL))
+                using Stream responseStream = await responseMessage.Content.ReadAsStreamAsync();
+                using FileStream fileStream = new(DownloadLocation, FileMode.Create, FileAccess.Write, FileShare.Read);
+                while (DownloadedSize < FileSize && !IsCanceled)
                 {
-                    if (!string.IsNullOrEmpty(AcceptHeader))
+                    if (!timer.IsRunning)
                     {
-                        requestMessage.Headers.Accept.ParseAdd(AcceptHeader);
+                        timer.Start();
                     }
 
-                    using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead))
+                    if (!progressEventTimer.IsRunning)
                     {
-                        responseMessage.EnsureSuccessStatusCode();
-
-                        FileSize = responseMessage.Content.Headers.ContentLength ?? -1;
-
-                        FileSizeReceived?.Invoke();
-
-                        if (FileSize > 0)
-                        {
-                            Stopwatch timer = new Stopwatch();
-                            Stopwatch progressEventTimer = new Stopwatch();
-                            long speedTest = 0;
-
-                            byte[] buffer = new byte[(int)Math.Min(bufferSize, FileSize)];
-                            int bytesRead;
-
-                            using (Stream responseStream = await responseMessage.Content.ReadAsStreamAsync())
-                            using (FileStream fileStream = new FileStream(DownloadLocation, FileMode.Create, FileAccess.Write, FileShare.Read))
-                            {
-                                while (DownloadedSize < FileSize && !IsCanceled)
-                                {
-                                    if (!timer.IsRunning)
-                                    {
-                                        timer.Start();
-                                    }
-
-                                    if (!progressEventTimer.IsRunning)
-                                    {
-                                        progressEventTimer.Start();
-                                    }
-
-                                    bytesRead = await responseStream.ReadAsync(buffer, 0, buffer.Length);
-                                    await fileStream.WriteAsync(buffer, 0, bytesRead);
-
-                                    DownloadedSize += bytesRead;
-                                    speedTest += bytesRead;
-
-                                    if (timer.ElapsedMilliseconds > 500)
-                                    {
-                                        DownloadSpeed = (double)speedTest / timer.ElapsedMilliseconds * 1000;
-                                        speedTest = 0;
-                                        timer.Reset();
-                                    }
-
-                                    if (progressEventTimer.ElapsedMilliseconds > 100)
-                                    {
-                                        ProgressChanged?.Invoke();
-
-                                        progressEventTimer.Reset();
-                                    }
-                                }
-
-                                ProgressChanged?.Invoke();
-                            }
-
-                            return true;
-                        }
+                        progressEventTimer.Start();
                     }
-                }
-            }
-            catch (Exception e)
-            {
-                if (!IsCanceled)
-                {
-                    throw e;
-                }
-            }
-            finally
-            {
-                if (IsCanceled)
-                {
-                    try
+
+                    bytesRead = await responseStream.ReadAsync(buffer, 0, buffer.Length);
+                    await fileStream.WriteAsync(buffer, 0, bytesRead);
+
+                    DownloadedSize += bytesRead;
+                    speedTest += bytesRead;
+
+                    if (timer.ElapsedMilliseconds > 500)
                     {
-                        if (File.Exists(DownloadLocation))
-                        {
-                            File.Delete(DownloadLocation);
-                        }
+                        DownloadSpeed = (double)speedTest / timer.ElapsedMilliseconds * 1000;
+                        speedTest = 0;
+                        timer.Reset();
                     }
-                    catch
+
+                    if (progressEventTimer.ElapsedMilliseconds > 100)
                     {
+                        ProgressChanged?.Invoke();
+
+                        progressEventTimer.Reset();
                     }
                 }
 
-                IsDownloading = false;
+                ProgressChanged?.Invoke();
+
+                return true;
+            }
+        } catch
+        {
+            if (!IsCanceled)
+            {
+                throw;
+            }
+        } finally
+        {
+            if (IsCanceled)
+            {
+                try
+                {
+                    if (File.Exists(DownloadLocation))
+                    {
+                        File.Delete(DownloadLocation);
+                    }
+                } catch
+                {
+                }
             }
 
-            return false;
+            IsDownloading = false;
         }
+
+        return false;
     }
 }

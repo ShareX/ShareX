@@ -24,138 +24,141 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Forms;
+using ShareX.HelpersLib.Helpers;
 using ShareX.ScreenCaptureLib.Properties;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib;
+
+public partial class EditorStartupForm : Form
 {
-    public partial class EditorStartupForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public RegionCaptureOptions Options { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public Bitmap Image { get; private set; }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string ImageFilePath { get; private set; }
+
+    public EditorStartupForm(RegionCaptureOptions options)
     {
-        public RegionCaptureOptions Options { get; private set; }
-        public Bitmap Image { get; private set; }
-        public string ImageFilePath { get; private set; }
+        Options = options;
 
-        public EditorStartupForm(RegionCaptureOptions options)
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+    }
+
+    private void LoadImageFile(string imageFilePath)
+    {
+        if (!string.IsNullOrEmpty(imageFilePath))
         {
-            Options = options;
+            Image = ImageHelpers.LoadImage(imageFilePath);
 
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-        }
-
-        private void LoadImageFile(string imageFilePath)
-        {
-            if (!string.IsNullOrEmpty(imageFilePath))
+            if (Image != null)
             {
-                Image = ImageHelpers.LoadImage(imageFilePath);
-
-                if (Image != null)
-                {
-                    ImageFilePath = imageFilePath;
-                    DialogResult = DialogResult.OK;
-                    Close();
-                }
+                ImageFilePath = imageFilePath;
+                DialogResult = DialogResult.OK;
+                Close();
             }
         }
+    }
 
-        private void btnOpenImageFile_Click(object sender, EventArgs e)
+    private void btnOpenImageFile_Click(object sender, EventArgs e)
+    {
+        string imageFilePath = ImageHelpers.OpenImageFileDialog(this);
+        LoadImageFile(imageFilePath);
+    }
+
+    private void btnLoadImageFromClipboard_Click(object sender, EventArgs e)
+    {
+        if (ClipboardHelpers.ContainsImage())
         {
-            string imageFilePath = ImageHelpers.OpenImageFileDialog(this);
-            LoadImageFile(imageFilePath);
-        }
-
-        private void btnLoadImageFromClipboard_Click(object sender, EventArgs e)
-        {
-            if (ClipboardHelpers.ContainsImage())
-            {
-                Image = ClipboardHelpers.GetImage();
-
-                if (Image != null)
-                {
-                    DialogResult = DialogResult.OK;
-                    Close();
-                }
-            }
-            else if (ClipboardHelpers.ContainsFileDropList())
-            {
-                string[] files = ClipboardHelpers.GetFileDropList();
-
-                if (files != null)
-                {
-                    string imageFilePath = files.FirstOrDefault(x => FileHelpers.IsImageFile(x));
-                    LoadImageFile(imageFilePath);
-                }
-            }
-            else
-            {
-                MessageBox.Show(Resources.EditorStartupForm_ClipboardDoesNotContainAnImage, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private async void btnLoadImageFromURL_Click(object sender, EventArgs e)
-        {
-            string inputText = null;
-
-            string text = ClipboardHelpers.GetText(true);
-
-            if (URLHelpers.IsValidURL(text))
-            {
-                inputText = text;
-            }
-
-            string url = InputBox.Show(Resources.ImageURL, inputText);
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                btnOpenImageFile.Enabled = btnLoadImageFromClipboard.Enabled = btnLoadImageFromURL.Enabled = btnCreateNewImage.Enabled = false;
-                Cursor = Cursors.WaitCursor;
-
-                try
-                {
-                    Image = await WebHelpers.DownloadImageAsync(url);
-
-                    if (IsDisposed)
-                    {
-                        Image?.Dispose();
-
-                        return;
-                    }
-                    else if (Image != null)
-                    {
-                        DialogResult = DialogResult.OK;
-                        Close();
-
-                        return;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ex.ShowError();
-                }
-
-                Cursor = Cursors.Default;
-                btnOpenImageFile.Enabled = btnLoadImageFromClipboard.Enabled = btnLoadImageFromURL.Enabled = btnCreateNewImage.Enabled = true;
-            }
-        }
-
-        private void btnCreateNewImage_Click(object sender, EventArgs e)
-        {
-            Image = NewImageForm.CreateNewImage(Options, this);
+            Image = ClipboardHelpers.GetImage();
 
             if (Image != null)
             {
                 DialogResult = DialogResult.OK;
                 Close();
             }
+        } else if (ClipboardHelpers.ContainsFileDropList())
+        {
+            string[] files = ClipboardHelpers.GetFileDropList();
+
+            if (files != null)
+            {
+                string imageFilePath = files.FirstOrDefault(x => FileHelpers.IsImageFile(x));
+                LoadImageFile(imageFilePath);
+            }
+        } else
+        {
+            MessageBox.Show(Resources.EditorStartupForm_ClipboardDoesNotContainAnImage, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
+
+    private async void btnLoadImageFromURL_Click(object sender, EventArgs e)
+    {
+        string inputText = null;
+
+        string text = ClipboardHelpers.GetText(true);
+
+        if (URLHelpers.IsValidURL(text))
+        {
+            inputText = text;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        string url = InputBox.Show(Resources.ImageURL, inputText);
+
+        if (!string.IsNullOrEmpty(url))
         {
-            DialogResult = DialogResult.Cancel;
+            btnOpenImageFile.Enabled = btnLoadImageFromClipboard.Enabled = btnLoadImageFromURL.Enabled = btnCreateNewImage.Enabled = false;
+            Cursor = Cursors.WaitCursor;
+
+            try
+            {
+                Image = await WebHelpers.DownloadImageAsync(url);
+
+                if (IsDisposed)
+                {
+                    Image?.Dispose();
+
+                    return;
+                } else if (Image != null)
+                {
+                    DialogResult = DialogResult.OK;
+                    Close();
+
+                    return;
+                }
+            } catch (Exception ex)
+            {
+                ex.ShowError();
+            }
+
+            Cursor = Cursors.Default;
+            btnOpenImageFile.Enabled = btnLoadImageFromClipboard.Enabled = btnLoadImageFromURL.Enabled = btnCreateNewImage.Enabled = true;
+        }
+    }
+
+    private void btnCreateNewImage_Click(object sender, EventArgs e)
+    {
+        Image = NewImageForm.CreateNewImage(Options, this);
+
+        if (Image != null)
+        {
+            DialogResult = DialogResult.OK;
             Close();
         }
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

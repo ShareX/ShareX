@@ -26,21 +26,20 @@
 using System;
 using System.IO;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public class VideoThumbnailInfo
 {
-    public class VideoThumbnailInfo
+    public string FilePath { get; set; }
+    public TimeSpan Timestamp { get; set; }
+
+    public VideoThumbnailInfo(string filePath)
     {
-        public string FilePath { get; set; }
-        public TimeSpan Timestamp { get; set; }
+        FilePath = filePath;
+    }
 
-        public VideoThumbnailInfo(string filePath)
-        {
-            FilePath = filePath;
-        }
-
-        public override string ToString()
-        {
-            return Path.GetFileName(FilePath);
-        }
+    public override string ToString()
+    {
+        return Path.GetFileName(FilePath);
     }
 }

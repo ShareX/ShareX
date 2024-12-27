@@ -25,77 +25,62 @@
 
 using System;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UpdateChecker;
+
+public class FFmpegUpdateChecker : GitHubUpdateChecker
 {
-    public class FFmpegUpdateChecker : GitHubUpdateChecker
+    public FFmpegArchitecture Architecture { get; private set; }
+
+    public FFmpegUpdateChecker(string owner, string repo) : base(owner, repo)
     {
-        public FFmpegArchitecture Architecture { get; private set; }
+        Architecture = Environment.Is64BitOperatingSystem ? FFmpegArchitecture.win64 : FFmpegArchitecture.win32;
+    }
 
-        public FFmpegUpdateChecker(string owner, string repo) : base(owner, repo)
+    public FFmpegUpdateChecker(string owner, string repo, FFmpegArchitecture architecture) : base(owner, repo)
+    {
+        Architecture = architecture;
+    }
+
+    protected override bool UpdateReleaseInfo(GitHubRelease release, bool isPortable, bool isBrowserDownloadURL)
+    {
+        if (release != null && !string.IsNullOrEmpty(release.tag_name) && release.tag_name.Length > 1 && release.tag_name[0] == 'v')
         {
-            if (Environment.Is64BitOperatingSystem)
-            {
-                Architecture = FFmpegArchitecture.win64;
-            }
-            else
-            {
-                Architecture = FFmpegArchitecture.win32;
-            }
-        }
+            LatestVersion = new Version(release.tag_name.Substring(1));
 
-        public FFmpegUpdateChecker(string owner, string repo, FFmpegArchitecture architecture) : base(owner, repo)
-        {
-            Architecture = architecture;
-        }
-
-        protected override bool UpdateReleaseInfo(GitHubRelease release, bool isPortable, bool isBrowserDownloadURL)
-        {
-            if (release != null && !string.IsNullOrEmpty(release.tag_name) && release.tag_name.Length > 1 && release.tag_name[0] == 'v')
+            if (release.assets != null && release.assets.Length > 0)
             {
-                LatestVersion = new Version(release.tag_name.Substring(1));
+                string endsWith;
 
-                if (release.assets != null && release.assets.Length > 0)
+                switch (Architecture)
                 {
-                    string endsWith;
+                    default:
+                    case FFmpegArchitecture.win64:
+                        endsWith = "win64.zip";
+                        break;
+                    case FFmpegArchitecture.win32:
+                        endsWith = "win32.zip";
+                        break;
+                    case FFmpegArchitecture.macos64:
+                        endsWith = "macos64.zip";
+                        break;
+                }
 
-                    switch (Architecture)
+                foreach (GitHubAsset asset in release.assets)
+                {
+                    if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.OrdinalIgnoreCase))
                     {
-                        default:
-                        case FFmpegArchitecture.win64:
-                            endsWith = "win64.zip";
-                            break;
-                        case FFmpegArchitecture.win32:
-                            endsWith = "win32.zip";
-                            break;
-                        case FFmpegArchitecture.macos64:
-                            endsWith = "macos64.zip";
-                            break;
-                    }
+                        FileName = asset.name;
 
-                    foreach (GitHubAsset asset in release.assets)
-                    {
-                        if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.OrdinalIgnoreCase))
-                        {
-                            FileName = asset.name;
+                        DownloadURL = isBrowserDownloadURL ? asset.browser_download_url : asset.url;
 
-                            if (isBrowserDownloadURL)
-                            {
-                                DownloadURL = asset.browser_download_url;
-                            }
-                            else
-                            {
-                                DownloadURL = asset.url;
-                            }
+                        IsPreRelease = release.prerelease;
 
-                            IsPreRelease = release.prerelease;
-
-                            return true;
-                        }
+                        return true;
                     }
                 }
             }
-
-            return false;
         }
+
+        return false;
     }
 }

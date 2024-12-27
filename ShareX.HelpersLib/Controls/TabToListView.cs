@@ -28,163 +28,165 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public partial class TabToListView : UserControl
 {
-    public partial class TabToListView : UserControl
+    private TabControl mainTabControl;
+
+    [Browsable(false)]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public TabControl MainTabControl
     {
-        private TabControl mainTabControl;
-
-        [Browsable(false)]
-        public TabControl MainTabControl
+        get
         {
-            get
-            {
-                return mainTabControl;
-            }
-            set
-            {
-                mainTabControl = value;
-                FillListView(mainTabControl);
-            }
+            return mainTabControl;
         }
-
-        private int listViewSize;
-
-        public int ListViewSize
+        set
         {
-            get
-            {
-                return listViewSize;
-            }
-            set
-            {
-                listViewSize = value;
-                scMain.SplitterDistance = listViewSize;
-            }
+            mainTabControl = value;
+            FillListView(mainTabControl);
         }
+    }
 
-        public ImageList ImageList
+    private int listViewSize;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public int ListViewSize
+    {
+        get
         {
-            get
-            {
-                return lvMain.SmallImageList;
-            }
-            set
-            {
-                lvMain.SmallImageList = tcMain.ImageList = value;
-            }
+            return listViewSize;
         }
-
-        public TabToListView()
+        set
         {
-            InitializeComponent();
-            ListViewSize = 150;
+            listViewSize = value;
+            scMain.SplitterDistance = listViewSize;
         }
+    }
 
-        private void FillListView(TabControl tab)
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ImageList ImageList
+    {
+        get
         {
-            if (tab != null)
+            return lvMain.SmallImageList;
+        }
+        set
+        {
+            lvMain.SmallImageList = tcMain.ImageList = value;
+        }
+    }
+
+    public TabToListView()
+    {
+        InitializeComponent();
+        ListViewSize = 150;
+    }
+
+    private void FillListView(TabControl tab)
+    {
+        if (tab != null)
+        {
+            foreach (TabPage tabPage in tab.TabPages)
             {
-                foreach (TabPage tabPage in tab.TabPages)
+                ListViewGroup lvg = new(tabPage.Text);
+                lvMain.Groups.Add(lvg);
+
+                foreach (Control control in tabPage.Controls)
                 {
-                    ListViewGroup lvg = new ListViewGroup(tabPage.Text);
-                    lvMain.Groups.Add(lvg);
-
-                    foreach (Control control in tabPage.Controls)
+                    if (control is TabControl)
                     {
-                        if (control is TabControl)
+                        TabControl tab2 = control as TabControl;
+
+                        foreach (TabPage tabPage2 in tab2.TabPages)
                         {
-                            TabControl tab2 = control as TabControl;
-
-                            foreach (TabPage tabPage2 in tab2.TabPages)
-                            {
-                                ListViewItem lvi = new ListViewItem(tabPage2.Text);
-                                lvi.ImageKey = tabPage2.ImageKey;
-                                lvi.Tag = tabPage2;
-                                lvi.Group = lvg;
-                                lvMain.Items.Add(lvi);
-                            }
-
-                            tab2.TabPages.Clear();
+                            ListViewItem lvi = new(tabPage2.Text);
+                            lvi.ImageKey = tabPage2.ImageKey;
+                            lvi.Tag = tabPage2;
+                            lvi.Group = lvg;
+                            lvMain.Items.Add(lvi);
                         }
-                    }
-                }
 
-                if (lvMain.Items.Count > 0)
-                {
-                    lvMain.Items[0].Selected = true;
-                }
-            }
-        }
-
-        private void lvMain_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (lvMain.SelectedItems.Count == 0 && (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right))
-            {
-                ListViewItem lvi = lvMain.GetItemAt(e.X, e.Y);
-
-                if (lvi == null)
-                {
-                    // Workaround for 1px space between items
-                    lvi = lvMain.GetItemAt(e.X, e.Y - 1);
-                }
-
-                if (lvi != null)
-                {
-                    lvi.Selected = true;
-                }
-            }
-        }
-
-        private void lvMain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lvMain.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lvMain.SelectedItems[0];
-                TabPage tabPage = lvi.Tag as TabPage;
-                LoadTabPage(tabPage);
-            }
-        }
-
-        private void LoadTabPage(TabPage tabPage)
-        {
-            if (tabPage != null && !tcMain.TabPages.Contains(tabPage))
-            {
-                tcMain.TabPages.Clear();
-                tcMain.TabPages.Add(tabPage);
-                // Need to set ImageKey again otherwise icon not show up
-                tabPage.ImageKey = tabPage.ImageKey;
-                tabPage.Refresh();
-                lvMain.Focus();
-            }
-        }
-
-        public void NavigateToTabPage(TabPage tabPage)
-        {
-            if (tabPage != null)
-            {
-                foreach (ListViewItem lvi in lvMain.Items)
-                {
-                    TabPage currentTabPage = lvi.Tag as TabPage;
-
-                    if (currentTabPage == tabPage)
-                    {
-                        lvi.Selected = true;
-                        return;
+                        tab2.TabPages.Clear();
                     }
                 }
             }
-        }
 
-        public void FocusListView()
+            if (lvMain.Items.Count > 0)
+            {
+                lvMain.Items[0].Selected = true;
+            }
+        }
+    }
+
+    private void lvMain_MouseUp(object sender, MouseEventArgs e)
+    {
+        if (lvMain.SelectedItems.Count == 0 && (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right))
         {
+            ListViewItem lvi = lvMain.GetItemAt(e.X, e.Y);
+
+            if (lvi == null)
+            {
+                // Workaround for 1px space between items
+                lvi = lvMain.GetItemAt(e.X, e.Y - 1);
+            }
+
+            if (lvi != null)
+            {
+                lvi.Selected = true;
+            }
+        }
+    }
+
+    private void lvMain_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (lvMain.SelectedItems.Count > 0)
+        {
+            ListViewItem lvi = lvMain.SelectedItems[0];
+            TabPage tabPage = lvi.Tag as TabPage;
+            LoadTabPage(tabPage);
+        }
+    }
+
+    private void LoadTabPage(TabPage tabPage)
+    {
+        if (tabPage != null && !tcMain.TabPages.Contains(tabPage))
+        {
+            tcMain.TabPages.Clear();
+            tcMain.TabPages.Add(tabPage);
+            // Need to set ImageKey again otherwise icon not show up
+            tabPage.ImageKey = tabPage.ImageKey;
+            tabPage.Refresh();
             lvMain.Focus();
         }
+    }
 
-        protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+    public void NavigateToTabPage(TabPage tabPage)
+    {
+        if (tabPage != null)
         {
-            base.ScaleControl(factor, specified);
-            scMain.SplitterDistance = (int)Math.Round(scMain.SplitterDistance * factor.Width);
+            foreach (ListViewItem lvi in lvMain.Items)
+            {
+                TabPage currentTabPage = lvi.Tag as TabPage;
+
+                if (currentTabPage == tabPage)
+                {
+                    lvi.Selected = true;
+                    return;
+                }
+            }
         }
+    }
+
+    public void FocusListView()
+    {
+        lvMain.Focus();
+    }
+
+    protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+    {
+        base.ScaleControl(factor, specified);
+        scMain.SplitterDistance = (int)Math.Round(scMain.SplitterDistance * factor.Width);
     }
 }

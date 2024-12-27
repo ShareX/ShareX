@@ -25,34 +25,33 @@
 
 using ShareX.HelpersLib;
 using ShareX.Properties;
+
 using System;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.CaptureHelpers;
+
+public class CaptureCustomWindow : CaptureWindow
 {
-    public class CaptureCustomWindow : CaptureWindow
+    protected override TaskMetadata Execute(TaskSettings taskSettings)
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
+        string windowTitle = taskSettings.CaptureSettings.CaptureCustomWindow;
+
+        if (!string.IsNullOrEmpty(windowTitle))
         {
-            string windowTitle = taskSettings.CaptureSettings.CaptureCustomWindow;
+            IntPtr hWnd = NativeMethods.SearchWindow(windowTitle);
 
-            if (!string.IsNullOrEmpty(windowTitle))
+            if (hWnd == IntPtr.Zero)
             {
-                IntPtr hWnd = NativeMethods.SearchWindow(windowTitle);
+                MessageBox.Show(Resources.UnableToFindAWindowWithSpecifiedWindowTitle, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else
+            {
+                WindowHandle = hWnd;
 
-                if (hWnd == IntPtr.Zero)
-                {
-                    MessageBox.Show(Resources.UnableToFindAWindowWithSpecifiedWindowTitle, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    WindowHandle = hWnd;
-
-                    return base.Execute(taskSettings);
-                }
+                return base.Execute(taskSettings);
             }
-
-            return null;
         }
+
+        return null;
     }
 }

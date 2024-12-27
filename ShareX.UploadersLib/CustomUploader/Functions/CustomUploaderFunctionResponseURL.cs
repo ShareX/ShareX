@@ -23,16 +23,15 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.UploadersLib
-{
-    // Example: {responseurl}
-    internal class CustomUploaderFunctionResponseURL : CustomUploaderFunction
-    {
-        public override string Name { get; } = "responseurl";
+namespace ShareX.UploadersLib.CustomUploader.Functions;
 
-        public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
-        {
-            return parser.ResponseInfo.ResponseURL;
-        }
+// Example: {responseurl}
+internal class CustomUploaderFunctionResponseURL : CustomUploaderFunction
+{
+    public override string Name { get; } = "responseurl";
+
+    public override string Call(ShareXCustomUploaderSyntaxParser parser, string[] parameters)
+    {
+        return parser.ResponseInfo.ResponseURL;
     }
 }

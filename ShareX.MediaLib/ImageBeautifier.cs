@@ -23,132 +23,123 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public class ImageBeautifier : IDisposable
 {
-    public class ImageBeautifier : IDisposable
+    public ImageBeautifierOptions Options { get; set; }
+    public Bitmap SourceImage { get; private set; }
+    public Bitmap SourceImageCropped { get; private set; }
+    public Color PaddingColor { get; private set; }
+
+    public ImageBeautifier()
     {
-        public ImageBeautifierOptions Options { get; set; }
-        public Bitmap SourceImage { get; private set; }
-        public Bitmap SourceImageCropped { get; private set; }
-        public Color PaddingColor { get; private set; }
+    }
 
-        public ImageBeautifier()
+    public ImageBeautifier(ImageBeautifierOptions options)
+    {
+        Options = options;
+    }
+
+    public ImageBeautifier(Bitmap image, ImageBeautifierOptions options) : this(options)
+    {
+        LoadImage(image);
+    }
+
+    public void Dispose()
+    {
+        SourceImage?.Dispose();
+        SourceImageCropped?.Dispose();
+    }
+
+    public void LoadImage(Bitmap image)
+    {
+        SourceImage = (Bitmap)image.Clone();
+        SourceImageCropped = null;
+
+        Rectangle source = new(0, 0, SourceImage.Width, SourceImage.Height);
+        Rectangle rect = ImageHelpers.FindAutoCropRectangle(SourceImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+
+        if (source != rect)
         {
+            SourceImageCropped = ImageHelpers.CropBitmap(SourceImage, rect);
         }
 
-        public ImageBeautifier(ImageBeautifierOptions options)
+        PaddingColor = SourceImage.GetPixel(0, 0);
+    }
+
+    public Bitmap Render()
+    {
+        Bitmap resultImage = Options.SmartPadding && SourceImageCropped != null ? (Bitmap)SourceImageCropped.Clone() : (Bitmap)SourceImage.Clone();
+        if (Options.Padding > 0)
         {
-            Options = options;
+            Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Options.Padding, PaddingColor);
+            resultImage.Dispose();
+            resultImage = resultImageNew;
         }
 
-        public ImageBeautifier(Bitmap image, ImageBeautifierOptions options) : this(options)
+        if (Options.RoundedCorner > 0)
         {
-            LoadImage(image);
+            resultImage = ImageHelpers.RoundedCorners(resultImage, Options.RoundedCorner);
         }
 
-        public void Dispose()
+        if (Options.Margin > 0)
         {
-            SourceImage?.Dispose();
-            SourceImageCropped?.Dispose();
+            Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Options.Margin);
+            resultImage.Dispose();
+            resultImage = resultImageNew;
         }
 
-        public void LoadImage(Bitmap image)
+        if (Options.ShadowOpacity > 0 && (Options.ShadowRadius > 0 || Options.ShadowDistance > 0))
         {
-            SourceImage = (Bitmap)image.Clone();
-            SourceImageCropped = null;
-
-            Rectangle source = new Rectangle(0, 0, SourceImage.Width, SourceImage.Height);
-            Rectangle rect = ImageHelpers.FindAutoCropRectangle(SourceImage, true, AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-
-            if (source != rect)
-            {
-                SourceImageCropped = ImageHelpers.CropBitmap(SourceImage, rect);
-            }
-
-            PaddingColor = SourceImage.GetPixel(0, 0);
+            float shadowOpacity = Options.ShadowOpacity / 100f;
+            Point shadowOffset = (Point)MathHelpers.DegreeToVector2(Options.ShadowAngle - 90, Options.ShadowDistance);
+            resultImage = ImageHelpers.AddShadow(resultImage, shadowOpacity, Options.ShadowRadius, 0f, Options.ShadowColor, shadowOffset, false);
         }
 
-        public Bitmap Render()
+        switch (Options.BackgroundType)
         {
-            Bitmap resultImage;
-
-            if (Options.SmartPadding && SourceImageCropped != null)
-            {
-                resultImage = (Bitmap)SourceImageCropped.Clone();
-            }
-            else
-            {
-                resultImage = (Bitmap)SourceImage.Clone();
-            }
-
-            if (Options.Padding > 0)
-            {
-                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Options.Padding, PaddingColor);
-                resultImage.Dispose();
-                resultImage = resultImageNew;
-            }
-
-            if (Options.RoundedCorner > 0)
-            {
-                resultImage = ImageHelpers.RoundedCorners(resultImage, Options.RoundedCorner);
-            }
-
-            if (Options.Margin > 0)
-            {
-                Bitmap resultImageNew = ImageHelpers.AddCanvas(resultImage, Options.Margin);
-                resultImage.Dispose();
-                resultImage = resultImageNew;
-            }
-
-            if (Options.ShadowOpacity > 0 && (Options.ShadowRadius > 0 || Options.ShadowDistance > 0))
-            {
-                float shadowOpacity = Options.ShadowOpacity / 100f;
-                Point shadowOffset = (Point)MathHelpers.DegreeToVector2(Options.ShadowAngle - 90, Options.ShadowDistance);
-                resultImage = ImageHelpers.AddShadow(resultImage, shadowOpacity, Options.ShadowRadius, 0f, Options.ShadowColor, shadowOffset, false);
-            }
-
-            switch (Options.BackgroundType)
-            {
-                case ImageBeautifierBackgroundType.Gradient:
-                    if (Options.BackgroundGradient != null && Options.BackgroundGradient.IsVisible)
-                    {
-                        Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, Options.BackgroundGradient);
-                        resultImage.Dispose();
-                        resultImage = resultImageNew;
-                    }
-                    break;
-                case ImageBeautifierBackgroundType.Color:
-                    if (!Options.BackgroundColor.IsTransparent())
-                    {
-                        Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, Options.BackgroundColor);
-                        resultImage.Dispose();
-                        resultImage = resultImageNew;
-                    }
-                    break;
-                case ImageBeautifierBackgroundType.Image:
-                    resultImage = ImageHelpers.DrawBackgroundImage(resultImage, Options.BackgroundImageFilePath);
-                    break;
-                case ImageBeautifierBackgroundType.Desktop:
-                    string desktopWallpaperFilePath = Helpers.GetDesktopWallpaperFilePath();
-                    resultImage = ImageHelpers.DrawBackgroundImage(resultImage, desktopWallpaperFilePath);
-                    break;
-                default:
-                case ImageBeautifierBackgroundType.Transparent:
-                    break;
-            }
-
-            return resultImage;
+            case ImageBeautifierBackgroundType.Gradient:
+                if (Options.BackgroundGradient != null && Options.BackgroundGradient.IsVisible)
+                {
+                    Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, Options.BackgroundGradient);
+                    resultImage.Dispose();
+                    resultImage = resultImageNew;
+                }
+                break;
+            case ImageBeautifierBackgroundType.Color:
+                if (!Options.BackgroundColor.IsTransparent())
+                {
+                    Bitmap resultImageNew = ImageHelpers.FillBackground(resultImage, Options.BackgroundColor);
+                    resultImage.Dispose();
+                    resultImage = resultImageNew;
+                }
+                break;
+            case ImageBeautifierBackgroundType.Image:
+                resultImage = ImageHelpers.DrawBackgroundImage(resultImage, Options.BackgroundImageFilePath);
+                break;
+            case ImageBeautifierBackgroundType.Desktop:
+                string desktopWallpaperFilePath = Helpers.GetDesktopWallpaperFilePath();
+                resultImage = ImageHelpers.DrawBackgroundImage(resultImage, desktopWallpaperFilePath);
+                break;
+            default:
+            case ImageBeautifierBackgroundType.Transparent:
+                break;
         }
 
-        public async Task<Bitmap> RenderAsync()
-        {
-            return await Task.Run(Render);
-        }
+        return resultImage;
+    }
+
+    public async Task<Bitmap> RenderAsync()
+    {
+        return await Task.Run(Render);
     }
 }

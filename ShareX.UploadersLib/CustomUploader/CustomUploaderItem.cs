@@ -24,8 +24,13 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.NameParser;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -33,436 +38,418 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.CustomUploader;
+
+public class CustomUploaderItem
 {
-    public class CustomUploaderItem
+    [DefaultValue("")]
+    public string Version { get; set; }
+
+    [DefaultValue("")]
+    public string Name { get; set; }
+
+    public bool ShouldSerializeName() => !string.IsNullOrEmpty(Name) && Name != URLHelpers.GetHostName(RequestURL);
+
+    [DefaultValue(CustomUploaderDestinationType.None)]
+    public CustomUploaderDestinationType DestinationType { get; set; }
+
+    [DefaultValue(HttpMethod.POST), JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
+    public HttpMethod RequestMethod { get; set; } = HttpMethod.POST;
+
+    [DefaultValue("")]
+    public string RequestURL { get; set; }
+
+    [DefaultValue(null)]
+    public Dictionary<string, string> Parameters { get; set; }
+
+    public bool ShouldSerializeParameters() => Parameters != null && Parameters.Count > 0;
+
+    [DefaultValue(null)]
+    public Dictionary<string, string> Headers { get; set; }
+
+    public bool ShouldSerializeHeaders() => Headers != null && Headers.Count > 0;
+
+    [DefaultValue(CustomUploaderBody.None)]
+    public CustomUploaderBody Body { get; set; }
+
+    [DefaultValue(null)]
+    public Dictionary<string, string> Arguments { get; set; }
+
+    public bool ShouldSerializeArguments() => (Body == CustomUploaderBody.MultipartFormData || Body == CustomUploaderBody.FormURLEncoded) &&
+        Arguments != null && Arguments.Count > 0;
+
+    [DefaultValue("")]
+    public string FileFormName { get; set; }
+
+    public bool ShouldSerializeFileFormName() => Body == CustomUploaderBody.MultipartFormData && !string.IsNullOrEmpty(FileFormName);
+
+    [DefaultValue("")]
+    public string Data { get; set; }
+
+    public bool ShouldSerializeData() => (Body == CustomUploaderBody.JSON || Body == CustomUploaderBody.XML) && !string.IsNullOrEmpty(Data);
+
+    [DefaultValue("")]
+    public string URL { get; set; }
+
+    [DefaultValue("")]
+    public string ThumbnailURL { get; set; }
+
+    [DefaultValue("")]
+    public string DeletionURL { get; set; }
+
+    [DefaultValue("")]
+    public string ErrorMessage { get; set; }
+
+    private CustomUploaderItem()
     {
-        [DefaultValue("")]
-        public string Version { get; set; }
+    }
 
-        [DefaultValue("")]
-        public string Name { get; set; }
-
-        public bool ShouldSerializeName() => !string.IsNullOrEmpty(Name) && Name != URLHelpers.GetHostName(RequestURL);
-
-        [DefaultValue(CustomUploaderDestinationType.None)]
-        public CustomUploaderDestinationType DestinationType { get; set; }
-
-        [DefaultValue(HttpMethod.POST), JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
-        public HttpMethod RequestMethod { get; set; } = HttpMethod.POST;
-
-        [DefaultValue("")]
-        public string RequestURL { get; set; }
-
-        [DefaultValue(null)]
-        public Dictionary<string, string> Parameters { get; set; }
-
-        public bool ShouldSerializeParameters() => Parameters != null && Parameters.Count > 0;
-
-        [DefaultValue(null)]
-        public Dictionary<string, string> Headers { get; set; }
-
-        public bool ShouldSerializeHeaders() => Headers != null && Headers.Count > 0;
-
-        [DefaultValue(CustomUploaderBody.None)]
-        public CustomUploaderBody Body { get; set; }
-
-        [DefaultValue(null)]
-        public Dictionary<string, string> Arguments { get; set; }
-
-        public bool ShouldSerializeArguments() => (Body == CustomUploaderBody.MultipartFormData || Body == CustomUploaderBody.FormURLEncoded) &&
-            Arguments != null && Arguments.Count > 0;
-
-        [DefaultValue("")]
-        public string FileFormName { get; set; }
-
-        public bool ShouldSerializeFileFormName() => Body == CustomUploaderBody.MultipartFormData && !string.IsNullOrEmpty(FileFormName);
-
-        [DefaultValue("")]
-        public string Data { get; set; }
-
-        public bool ShouldSerializeData() => (Body == CustomUploaderBody.JSON || Body == CustomUploaderBody.XML) && !string.IsNullOrEmpty(Data);
-
-        [DefaultValue("")]
-        public string URL { get; set; }
-
-        [DefaultValue("")]
-        public string ThumbnailURL { get; set; }
-
-        [DefaultValue("")]
-        public string DeletionURL { get; set; }
-
-        [DefaultValue("")]
-        public string ErrorMessage { get; set; }
-
-        private CustomUploaderItem()
+    public static CustomUploaderItem Init()
+    {
+        return new CustomUploaderItem()
         {
+            Version = HelpersLib.Helpers.Helpers.GetApplicationVersion(),
+            RequestMethod = HttpMethod.POST,
+            Body = CustomUploaderBody.MultipartFormData
+        };
+    }
+
+    public override string ToString()
+    {
+        if (!string.IsNullOrEmpty(Name))
+        {
+            return Name;
         }
 
-        public static CustomUploaderItem Init()
+        string name = URLHelpers.GetHostName(RequestURL);
+
+        return !string.IsNullOrEmpty(name) ? name : "Name";
+    }
+
+    public string GetFileName()
+    {
+        return ToString() + ".sxcu";
+    }
+
+    public string GetRequestURL(CustomUploaderInput input)
+    {
+        if (string.IsNullOrEmpty(RequestURL))
         {
-            return new CustomUploaderItem()
+            throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
+        }
+
+        ShareXCustomUploaderSyntaxParser parser = new(input);
+        parser.URLEncode = true;
+        string url = parser.Parse(RequestURL);
+
+        url = URLHelpers.FixPrefix(url);
+
+        Dictionary<string, string> parameters = GetParameters(input);
+        return URLHelpers.CreateQueryString(url, parameters);
+    }
+
+    public Dictionary<string, string> GetParameters(CustomUploaderInput input)
+    {
+        Dictionary<string, string> parameters = new();
+
+        if (Parameters != null)
+        {
+            ShareXCustomUploaderSyntaxParser parser = new(input);
+            parser.UseNameParser = true;
+
+            foreach (KeyValuePair<string, string> parameter in Parameters)
             {
-                Version = Helpers.GetApplicationVersion(),
-                RequestMethod = HttpMethod.POST,
-                Body = CustomUploaderBody.MultipartFormData
+                parameters.Add(parameter.Key, parser.Parse(parameter.Value));
+            }
+        }
+
+        return parameters;
+    }
+
+    public string GetContentType()
+    {
+        switch (Body)
+        {
+            case CustomUploaderBody.MultipartFormData:
+                return RequestHelpers.ContentTypeMultipartFormData;
+            case CustomUploaderBody.FormURLEncoded:
+                return RequestHelpers.ContentTypeURLEncoded;
+            case CustomUploaderBody.JSON:
+                return RequestHelpers.ContentTypeJSON;
+            case CustomUploaderBody.XML:
+                return RequestHelpers.ContentTypeXML;
+            case CustomUploaderBody.Binary:
+                return RequestHelpers.ContentTypeOctetStream;
+        }
+
+        return null;
+    }
+
+    public string GetData(CustomUploaderInput input)
+    {
+        NameParser nameParser = new(NameParserType.Text);
+        string result = nameParser.Parse(Data);
+
+        Dictionary<string, string> replace = new();
+        replace.Add("{input}", EncodeBodyData(input.Input));
+        replace.Add("{filename}", EncodeBodyData(input.FileName));
+        result = result.BatchReplace(replace, StringComparison.OrdinalIgnoreCase);
+
+        return result;
+    }
+
+    private string EncodeBodyData(string input)
+    {
+        if (!string.IsNullOrEmpty(input))
+        {
+            if (Body == CustomUploaderBody.JSON)
+            {
+                return URLHelpers.JSONEncode(input);
+            } else if (Body == CustomUploaderBody.XML)
+            {
+                return URLHelpers.XMLEncode(input);
+            }
+        }
+
+        return input;
+    }
+
+    public string GetFileFormName()
+    {
+        return string.IsNullOrEmpty(FileFormName)
+            ? throw new Exception(Resources.CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured)
+            : FileFormName;
+    }
+
+    public Dictionary<string, string> GetArguments(CustomUploaderInput input)
+    {
+        Dictionary<string, string> arguments = new();
+
+        if (Arguments != null)
+        {
+            ShareXCustomUploaderSyntaxParser parser = new(input);
+            parser.UseNameParser = true;
+
+            foreach (KeyValuePair<string, string> arg in Arguments)
+            {
+                arguments.Add(arg.Key, parser.Parse(arg.Value));
+            }
+        }
+
+        return arguments;
+    }
+
+    public NameValueCollection GetHeaders(CustomUploaderInput input)
+    {
+        if (Headers != null && Headers.Count > 0)
+        {
+            NameValueCollection collection = new();
+
+            ShareXCustomUploaderSyntaxParser parser = new(input);
+            parser.UseNameParser = true;
+
+            foreach (KeyValuePair<string, string> header in Headers)
+            {
+                collection.Add(header.Key, parser.Parse(header.Value));
+            }
+
+            return collection;
+        }
+
+        return null;
+    }
+
+    public void ParseResponse(UploadResult result, ResponseInfo responseInfo, UploaderErrorManager errors, CustomUploaderInput input, bool isShortenedURL = false)
+    {
+        if (result != null && responseInfo != null)
+        {
+            result.ResponseInfo = responseInfo;
+
+            if (responseInfo.ResponseText == null)
+            {
+                responseInfo.ResponseText = "";
+            }
+
+            ShareXCustomUploaderSyntaxParser parser = new()
+            {
+                FileName = input.FileName,
+                ResponseInfo = responseInfo,
+                URLEncode = true
             };
-        }
 
-        public override string ToString()
-        {
-            if (!string.IsNullOrEmpty(Name))
+            if (responseInfo.IsSuccess)
             {
-                return Name;
-            }
+                string url;
 
-            string name = URLHelpers.GetHostName(RequestURL);
+                if (!string.IsNullOrEmpty(URL))
+                {
+                    url = parser.Parse(URL);
 
-            if (!string.IsNullOrEmpty(name))
+                    if (string.IsNullOrEmpty(url) && !string.IsNullOrEmpty(URL) && URL.Contains("{output:"))
+                    {
+                        result.IsURLExpected = false;
+                    }
+                } else
+                {
+                    url = parser.ResponseInfo.ResponseText;
+                }
+
+                if (isShortenedURL)
+                {
+                    result.ShortenedURL = url;
+                } else
+                {
+                    result.URL = url;
+                }
+
+                result.ThumbnailURL = parser.Parse(ThumbnailURL);
+                result.DeletionURL = parser.Parse(DeletionURL);
+            } else
             {
-                return name;
+                if (!string.IsNullOrEmpty(ErrorMessage))
+                {
+                    string parsedErrorMessage = parser.Parse(ErrorMessage);
+
+                    if (!string.IsNullOrEmpty(parsedErrorMessage))
+                    {
+                        errors.AddFirst(parsedErrorMessage);
+                    }
+                }
             }
+        }
+    }
 
-            return "Name";
+    public void TryParseResponse(UploadResult result, ResponseInfo responseInfo, UploaderErrorManager errors, CustomUploaderInput input, bool isShortenedURL = false)
+    {
+        try
+        {
+            ParseResponse(result, responseInfo, errors, input, isShortenedURL);
+        } catch (JsonReaderException e)
+        {
+            string hostName = URLHelpers.GetHostName(RequestURL);
+            errors.AddFirst($"Invalid response content is returned from host ({hostName}), expected response content is JSON." +
+                Environment.NewLine + Environment.NewLine + e);
+        } catch (Exception e)
+        {
+            string hostName = URLHelpers.GetHostName(RequestURL);
+            errors.AddFirst($"Unable to parse response content returned from host ({hostName})." +
+                Environment.NewLine + Environment.NewLine + e);
+        }
+    }
+
+    public void CheckBackwardCompatibility()
+    {
+        if (string.IsNullOrEmpty(Version) || HelpersLib.Helpers.Helpers.CompareVersion(Version, "12.3.1") <= 0)
+        {
+            throw new Exception("Unsupported custom uploader" + ": " + ToString());
         }
 
-        public string GetFileName()
+        CheckRequestURL();
+
+        if (HelpersLib.Helpers.Helpers.CompareVersion(Version, "13.7.1") <= 0)
         {
-            return ToString() + ".sxcu";
-        }
-
-        public string GetRequestURL(CustomUploaderInput input)
-        {
-            if (string.IsNullOrEmpty(RequestURL))
-            {
-                throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
-            }
-
-            ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
-            parser.URLEncode = true;
-            string url = parser.Parse(RequestURL);
-
-            url = URLHelpers.FixPrefix(url);
-
-            Dictionary<string, string> parameters = GetParameters(input);
-            return URLHelpers.CreateQueryString(url, parameters);
-        }
-
-        public Dictionary<string, string> GetParameters(CustomUploaderInput input)
-        {
-            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            RequestURL = MigrateOldSyntax(RequestURL);
 
             if (Parameters != null)
             {
-                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
-                parser.UseNameParser = true;
-
-                foreach (KeyValuePair<string, string> parameter in Parameters)
+                foreach (string key in Parameters.Keys.ToList())
                 {
-                    parameters.Add(parameter.Key, parser.Parse(parameter.Value));
+                    Parameters[key] = MigrateOldSyntax(Parameters[key]);
                 }
             }
 
-            return parameters;
-        }
-
-        public string GetContentType()
-        {
-            switch (Body)
+            if (Headers != null)
             {
-                case CustomUploaderBody.MultipartFormData:
-                    return RequestHelpers.ContentTypeMultipartFormData;
-                case CustomUploaderBody.FormURLEncoded:
-                    return RequestHelpers.ContentTypeURLEncoded;
-                case CustomUploaderBody.JSON:
-                    return RequestHelpers.ContentTypeJSON;
-                case CustomUploaderBody.XML:
-                    return RequestHelpers.ContentTypeXML;
-                case CustomUploaderBody.Binary:
-                    return RequestHelpers.ContentTypeOctetStream;
-            }
-
-            return null;
-        }
-
-        public string GetData(CustomUploaderInput input)
-        {
-            NameParser nameParser = new NameParser(NameParserType.Text);
-            string result = nameParser.Parse(Data);
-
-            Dictionary<string, string> replace = new Dictionary<string, string>();
-            replace.Add("{input}", EncodeBodyData(input.Input));
-            replace.Add("{filename}", EncodeBodyData(input.FileName));
-            result = result.BatchReplace(replace, StringComparison.OrdinalIgnoreCase);
-
-            return result;
-        }
-
-        private string EncodeBodyData(string input)
-        {
-            if (!string.IsNullOrEmpty(input))
-            {
-                if (Body == CustomUploaderBody.JSON)
+                foreach (string key in Headers.Keys.ToList())
                 {
-                    return URLHelpers.JSONEncode(input);
-                }
-                else if (Body == CustomUploaderBody.XML)
-                {
-                    return URLHelpers.XMLEncode(input);
+                    Headers[key] = MigrateOldSyntax(Headers[key]);
                 }
             }
-
-            return input;
-        }
-
-        public string GetFileFormName()
-        {
-            if (string.IsNullOrEmpty(FileFormName))
-            {
-                throw new Exception(Resources.CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured);
-            }
-
-            return FileFormName;
-        }
-
-        public Dictionary<string, string> GetArguments(CustomUploaderInput input)
-        {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
 
             if (Arguments != null)
             {
-                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
-                parser.UseNameParser = true;
-
-                foreach (KeyValuePair<string, string> arg in Arguments)
+                foreach (string key in Arguments.Keys.ToList())
                 {
-                    arguments.Add(arg.Key, parser.Parse(arg.Value));
+                    Arguments[key] = MigrateOldSyntax(Arguments[key]);
                 }
             }
 
-            return arguments;
+            Data = Data.Replace("$input$", "{input}", StringComparison.OrdinalIgnoreCase).
+                Replace("$filename$", "{filename}", StringComparison.OrdinalIgnoreCase);
+            URL = MigrateOldSyntax(URL);
+            ThumbnailURL = MigrateOldSyntax(ThumbnailURL);
+            DeletionURL = MigrateOldSyntax(DeletionURL);
+            ErrorMessage = MigrateOldSyntax(ErrorMessage);
+
+            Version = HelpersLib.Helpers.Helpers.GetApplicationVersion();
+        }
+    }
+
+    private string MigrateOldSyntax(string input)
+    {
+        if (string.IsNullOrEmpty(input))
+        {
+            return input;
         }
 
-        public NameValueCollection GetHeaders(CustomUploaderInput input)
+        StringBuilder sbInput = new();
+
+        bool start = true;
+
+        for (int i = 0; i < input.Length; i++)
         {
-            if (Headers != null && Headers.Count > 0)
+            if (input[i] == '$')
             {
-                NameValueCollection collection = new NameValueCollection();
-
-                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser(input);
-                parser.UseNameParser = true;
-
-                foreach (KeyValuePair<string, string> header in Headers)
-                {
-                    collection.Add(header.Key, parser.Parse(header.Value));
-                }
-
-                return collection;
+                sbInput.Append(start ? '{' : '}');
+                start = !start;
+                continue;
+            } else if (input[i] == '\\')
+            {
+                i++;
+                continue;
+            } else if (input[i] == '{' || input[i] == '}')
+            {
+                sbInput.Append('\\');
             }
 
-            return null;
+            sbInput.Append(input[i]);
         }
 
-        public void ParseResponse(UploadResult result, ResponseInfo responseInfo, UploaderErrorManager errors, CustomUploaderInput input, bool isShortenedURL = false)
-        {
-            if (result != null && responseInfo != null)
-            {
-                result.ResponseInfo = responseInfo;
+        return sbInput.ToString();
+    }
 
-                if (responseInfo.ResponseText == null)
+    private void CheckRequestURL()
+    {
+        if (!string.IsNullOrEmpty(RequestURL))
+        {
+            NameValueCollection nvc = URLHelpers.ParseQueryString(RequestURL);
+
+            if (nvc != null && nvc.Count > 0)
+            {
+                if (Parameters == null)
                 {
-                    responseInfo.ResponseText = "";
+                    Parameters = new Dictionary<string, string>();
                 }
 
-                ShareXCustomUploaderSyntaxParser parser = new ShareXCustomUploaderSyntaxParser()
+                foreach (string key in nvc)
                 {
-                    FileName = input.FileName,
-                    ResponseInfo = responseInfo,
-                    URLEncode = true
-                };
-
-                if (responseInfo.IsSuccess)
-                {
-                    string url;
-
-                    if (!string.IsNullOrEmpty(URL))
+                    if (key == null)
                     {
-                        url = parser.Parse(URL);
-
-                        if (string.IsNullOrEmpty(url) && !string.IsNullOrEmpty(URL) && URL.Contains("{output:"))
+                        foreach (string value in nvc.GetValues(key))
                         {
-                            result.IsURLExpected = false;
-                        }
-                    }
-                    else
-                    {
-                        url = parser.ResponseInfo.ResponseText;
-                    }
-
-                    if (isShortenedURL)
-                    {
-                        result.ShortenedURL = url;
-                    }
-                    else
-                    {
-                        result.URL = url;
-                    }
-
-                    result.ThumbnailURL = parser.Parse(ThumbnailURL);
-                    result.DeletionURL = parser.Parse(DeletionURL);
-                }
-                else
-                {
-                    if (!string.IsNullOrEmpty(ErrorMessage))
-                    {
-                        string parsedErrorMessage = parser.Parse(ErrorMessage);
-
-                        if (!string.IsNullOrEmpty(parsedErrorMessage))
-                        {
-                            errors.AddFirst(parsedErrorMessage);
-                        }
-                    }
-                }
-            }
-        }
-
-        public void TryParseResponse(UploadResult result, ResponseInfo responseInfo, UploaderErrorManager errors, CustomUploaderInput input, bool isShortenedURL = false)
-        {
-            try
-            {
-                ParseResponse(result, responseInfo, errors, input, isShortenedURL);
-            }
-            catch (JsonReaderException e)
-            {
-                string hostName = URLHelpers.GetHostName(RequestURL);
-                errors.AddFirst($"Invalid response content is returned from host ({hostName}), expected response content is JSON." +
-                    Environment.NewLine + Environment.NewLine + e);
-            }
-            catch (Exception e)
-            {
-                string hostName = URLHelpers.GetHostName(RequestURL);
-                errors.AddFirst($"Unable to parse response content returned from host ({hostName})." +
-                    Environment.NewLine + Environment.NewLine + e);
-            }
-        }
-
-        public void CheckBackwardCompatibility()
-        {
-            if (string.IsNullOrEmpty(Version) || Helpers.CompareVersion(Version, "12.3.1") <= 0)
-            {
-                throw new Exception("Unsupported custom uploader" + ": " + ToString());
-            }
-
-            CheckRequestURL();
-
-            if (Helpers.CompareVersion(Version, "13.7.1") <= 0)
-            {
-                RequestURL = MigrateOldSyntax(RequestURL);
-
-                if (Parameters != null)
-                {
-                    foreach (string key in Parameters.Keys.ToList())
-                    {
-                        Parameters[key] = MigrateOldSyntax(Parameters[key]);
-                    }
-                }
-
-                if (Headers != null)
-                {
-                    foreach (string key in Headers.Keys.ToList())
-                    {
-                        Headers[key] = MigrateOldSyntax(Headers[key]);
-                    }
-                }
-
-                if (Arguments != null)
-                {
-                    foreach (string key in Arguments.Keys.ToList())
-                    {
-                        Arguments[key] = MigrateOldSyntax(Arguments[key]);
-                    }
-                }
-
-                Data = Data.Replace("$input$", "{input}", StringComparison.OrdinalIgnoreCase).
-                    Replace("$filename$", "{filename}", StringComparison.OrdinalIgnoreCase);
-                URL = MigrateOldSyntax(URL);
-                ThumbnailURL = MigrateOldSyntax(ThumbnailURL);
-                DeletionURL = MigrateOldSyntax(DeletionURL);
-                ErrorMessage = MigrateOldSyntax(ErrorMessage);
-
-                Version = Helpers.GetApplicationVersion();
-            }
-        }
-
-        private string MigrateOldSyntax(string input)
-        {
-            if (string.IsNullOrEmpty(input))
-            {
-                return input;
-            }
-
-            StringBuilder sbInput = new StringBuilder();
-
-            bool start = true;
-
-            for (int i = 0; i < input.Length; i++)
-            {
-                if (input[i] == '$')
-                {
-                    sbInput.Append(start ? '{' : '}');
-                    start = !start;
-                    continue;
-                }
-                else if (input[i] == '\\')
-                {
-                    i++;
-                    continue;
-                }
-                else if (input[i] == '{' || input[i] == '}')
-                {
-                    sbInput.Append('\\');
-                }
-
-                sbInput.Append(input[i]);
-            }
-
-            return sbInput.ToString();
-        }
-
-        private void CheckRequestURL()
-        {
-            if (!string.IsNullOrEmpty(RequestURL))
-            {
-                NameValueCollection nvc = URLHelpers.ParseQueryString(RequestURL);
-
-                if (nvc != null && nvc.Count > 0)
-                {
-                    if (Parameters == null)
-                    {
-                        Parameters = new Dictionary<string, string>();
-                    }
-
-                    foreach (string key in nvc)
-                    {
-                        if (key == null)
-                        {
-                            foreach (string value in nvc.GetValues(key))
+                            if (!Parameters.ContainsKey(value))
                             {
-                                if (!Parameters.ContainsKey(value))
-                                {
-                                    Parameters.Add(value, "");
-                                }
+                                Parameters.Add(value, "");
                             }
                         }
-                        else if (!Parameters.ContainsKey(key))
-                        {
-                            string value = nvc[key];
-                            Parameters.Add(key, value);
-                        }
+                    } else if (!Parameters.ContainsKey(key))
+                    {
+                        string value = nvc[key];
+                        Parameters.Add(key, value);
                     }
-
-                    RequestURL = URLHelpers.RemoveQueryString(RequestURL);
                 }
+
+                RequestURL = URLHelpers.RemoveQueryString(RequestURL);
             }
         }
     }

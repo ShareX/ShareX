@@ -39,14 +39,14 @@ namespace ShareX.HistoryLib
             resources.ApplyResources(this.cbRememberSearchText, "cbRememberSearchText");
             this.cbRememberSearchText.Name = "cbRememberSearchText";
             this.cbRememberSearchText.UseVisualStyleBackColor = true;
-            this.cbRememberSearchText.CheckedChanged += new System.EventHandler(this.cbRememberSearchText_CheckedChanged);
+            this.cbRememberSearchText.CheckedChanged += new System.EventHandler(this.CbRememberSearchText_CheckedChanged);
             // 
             // cbRememberWindowState
             // 
             resources.ApplyResources(this.cbRememberWindowState, "cbRememberWindowState");
             this.cbRememberWindowState.Name = "cbRememberWindowState";
             this.cbRememberWindowState.UseVisualStyleBackColor = true;
-            this.cbRememberWindowState.CheckedChanged += new System.EventHandler(this.cbRememberWindowState_CheckedChanged);
+            this.cbRememberWindowState.CheckedChanged += new System.EventHandler(this.CbRememberWindowState_CheckedChanged);
             // 
             // HistorySettingsForm
             // 

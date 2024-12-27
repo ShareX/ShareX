@@ -23,43 +23,43 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Animations;
+
+internal class RectangleAnimation : BaseAnimation
 {
-    internal class RectangleAnimation : BaseAnimation
+    public RectangleF FromRectangle { get; set; }
+    public RectangleF ToRectangle { get; set; }
+    public TimeSpan Duration { get; set; }
+
+    public RectangleF CurrentRectangle { get; private set; }
+
+    public override bool Update()
     {
-        public RectangleF FromRectangle { get; set; }
-        public RectangleF ToRectangle { get; set; }
-        public TimeSpan Duration { get; set; }
-
-        public RectangleF CurrentRectangle { get; private set; }
-
-        public override bool Update()
+        if (IsActive)
         {
-            if (IsActive)
+            base.Update();
+
+            float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
+            amount = Math.Min(amount, 1);
+
+            float x = MathHelpers.Lerp(FromRectangle.X, ToRectangle.X, amount);
+            float y = MathHelpers.Lerp(FromRectangle.Y, ToRectangle.Y, amount);
+            float width = MathHelpers.Lerp(FromRectangle.Width, ToRectangle.Width, amount);
+            float height = MathHelpers.Lerp(FromRectangle.Height, ToRectangle.Height, amount);
+
+            CurrentRectangle = new RectangleF(x, y, width, height);
+
+            if (amount >= 1)
             {
-                base.Update();
-
-                float amount = (float)Timer.Elapsed.Ticks / Duration.Ticks;
-                amount = Math.Min(amount, 1);
-
-                float x = MathHelpers.Lerp(FromRectangle.X, ToRectangle.X, amount);
-                float y = MathHelpers.Lerp(FromRectangle.Y, ToRectangle.Y, amount);
-                float width = MathHelpers.Lerp(FromRectangle.Width, ToRectangle.Width, amount);
-                float height = MathHelpers.Lerp(FromRectangle.Height, ToRectangle.Height, amount);
-
-                CurrentRectangle = new RectangleF(x, y, width, height);
-
-                if (amount >= 1)
-                {
-                    Stop();
-                }
+                Stop();
             }
-
-            return IsActive;
         }
+
+        return IsActive;
     }
 }

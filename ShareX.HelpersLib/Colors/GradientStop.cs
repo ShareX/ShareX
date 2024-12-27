@@ -23,40 +23,36 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Colors;
+
+public class GradientStop
 {
-    public class GradientStop
+    [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color Color { get; set; } = Color.Black;
+
+    private float location;
+
+    [DefaultValue(0f)]
+    public float Location
     {
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; } = Color.Black;
+        get => location;
+        set => location = value.Clamp(0f, 100f);
+    }
 
-        private float location;
+    public GradientStop()
+    {
+    }
 
-        [DefaultValue(0f)]
-        public float Location
-        {
-            get
-            {
-                return location;
-            }
-            set
-            {
-                location = value.Clamp(0f, 100f);
-            }
-        }
-
-        public GradientStop()
-        {
-        }
-
-        public GradientStop(Color color, float offset)
-        {
-            Color = color;
-            Location = offset;
-        }
+    public GradientStop(Color color, float offset)
+    {
+        Color = color;
+        Location = offset;
     }
 }

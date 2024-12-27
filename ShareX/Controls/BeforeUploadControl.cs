@@ -24,246 +24,232 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.Properties;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.CustomUploader;
+
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class BeforeUploadControl : UserControl
 {
-    public partial class BeforeUploadControl : UserControl
+    public delegate void EventHandler(string currentDestination);
+    public event EventHandler InitCompleted;
+
+    public BeforeUploadControl()
     {
-        public delegate void EventHandler(string currentDestination);
-        public event EventHandler InitCompleted;
+        InitializeComponent();
+    }
 
-        public BeforeUploadControl()
+    public void Init(TaskInfo info)
+    {
+        switch (info.DataType)
         {
-            InitializeComponent();
-        }
-
-        public void Init(TaskInfo info)
-        {
-            switch (info.DataType)
-            {
-                case EDataType.Image:
-                    InitCapture(info.TaskSettings);
-                    break;
-                case EDataType.Text:
-                    Helpers.GetEnums<TextDestination>().ForEach(x =>
-                    {
-                        if (x != TextDestination.FileUploader)
-                        {
-                            string overrideText = null;
-
-                            if (x == TextDestination.CustomTextUploader)
-                            {
-                                overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomTextUploaderSelected, info.TaskSettings);
-                            }
-
-                            AddDestination<TextDestination>((int)x, EDataType.Text, info.TaskSettings, overrideText);
-                        }
-                    });
-
-                    Helpers.GetEnums<FileDestination>().ForEach(x =>
+            case EDataType.Image:
+                InitCapture(info.TaskSettings);
+                break;
+            case EDataType.Text:
+                Helpers.GetEnums<TextDestination>().ForEach(x =>
+                {
+                    if (x != TextDestination.FileUploader)
                     {
                         string overrideText = null;
 
-                        if (x == FileDestination.CustomFileUploader)
+                        if (x == TextDestination.CustomTextUploader)
                         {
-                            overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomFileUploaderSelected, info.TaskSettings);
+                            overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomTextUploaderSelected, info.TaskSettings);
                         }
 
-                        AddDestination<FileDestination>((int)x, EDataType.Text, info.TaskSettings, overrideText);
-                    });
+                        AddDestination<TextDestination>((int)x, EDataType.Text, info.TaskSettings, overrideText);
+                    }
+                });
 
-                    flp.Controls.OfType<RadioButton>().ForEach(x =>
-                    {
-                        if (info.TaskSettings.TextDestination != TextDestination.FileUploader)
-                        {
-                            x.Checked = x.Tag is TextDestination textDestination && textDestination == info.TaskSettings.TextDestination;
-                        }
-                        else
-                        {
-                            x.Checked = x.Tag is FileDestination fileDestination && fileDestination == info.TaskSettings.TextFileDestination;
-                        }
-                    });
-                    break;
-                case EDataType.File:
-                    Helpers.GetEnums<FileDestination>().ForEach(x =>
-                    {
-                        string overrideText = null;
-
-                        if (x == FileDestination.CustomFileUploader)
-                        {
-                            overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomFileUploaderSelected, info.TaskSettings);
-                        }
-
-                        AddDestination<FileDestination>((int)x, EDataType.File, info.TaskSettings, overrideText);
-                    });
-
-                    flp.Controls.OfType<RadioButton>().ForEach(x =>
-                    {
-                        x.Checked = x.Tag is FileDestination fileDestination && fileDestination == info.TaskSettings.FileDestination;
-                    });
-                    break;
-                case EDataType.URL:
-                    Helpers.GetEnums<UrlShortenerType>().ForEach(x =>
-                    {
-                        string overrideText = null;
-
-                        if (x == UrlShortenerType.CustomURLShortener)
-                        {
-                            overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomURLShortenerSelected, info.TaskSettings);
-                        }
-
-                        AddDestination<UrlShortenerType>((int)x, EDataType.URL, info.TaskSettings, overrideText);
-                    });
-
-                    flp.Controls.OfType<RadioButton>().ForEach(x =>
-                    {
-                        x.Checked = x.Tag is UrlShortenerType urlShortenerType && urlShortenerType == info.TaskSettings.URLShortenerDestination;
-                    });
-
-                    break;
-            }
-
-            OnInitCompleted();
-        }
-
-        public void InitCapture(TaskSettings taskSettings)
-        {
-            Helpers.GetEnums<ImageDestination>().ForEach(x =>
-            {
-                if (x != ImageDestination.FileUploader)
+                Helpers.GetEnums<FileDestination>().ForEach(x =>
                 {
                     string overrideText = null;
 
-                    if (x == ImageDestination.CustomImageUploader)
+                    if (x == FileDestination.CustomFileUploader)
                     {
-                        overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomImageUploaderSelected, taskSettings);
+                        overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomFileUploaderSelected, info.TaskSettings);
                     }
 
-                    AddDestination<ImageDestination>((int)x, EDataType.Image, taskSettings, overrideText);
-                }
-            });
+                    AddDestination<FileDestination>((int)x, EDataType.Text, info.TaskSettings, overrideText);
+                });
 
-            Helpers.GetEnums<FileDestination>().ForEach(x =>
+                flp.Controls.OfType<RadioButton>().ForEach(x =>
+                {
+                    x.Checked = info.TaskSettings.TextDestination != TextDestination.FileUploader
+                        ? x.Tag is TextDestination textDestination && textDestination == info.TaskSettings.TextDestination
+                        : x.Tag is FileDestination fileDestination && fileDestination == info.TaskSettings.TextFileDestination;
+                });
+                break;
+            case EDataType.File:
+                Helpers.GetEnums<FileDestination>().ForEach(x =>
+                {
+                    string overrideText = null;
+
+                    if (x == FileDestination.CustomFileUploader)
+                    {
+                        overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomFileUploaderSelected, info.TaskSettings);
+                    }
+
+                    AddDestination<FileDestination>((int)x, EDataType.File, info.TaskSettings, overrideText);
+                });
+
+                flp.Controls.OfType<RadioButton>().ForEach(x =>
+                {
+                    x.Checked = x.Tag is FileDestination fileDestination && fileDestination == info.TaskSettings.FileDestination;
+                });
+                break;
+            case EDataType.URL:
+                Helpers.GetEnums<UrlShortenerType>().ForEach(x =>
+                {
+                    string overrideText = null;
+
+                    if (x == UrlShortenerType.CustomURLShortener)
+                    {
+                        overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomURLShortenerSelected, info.TaskSettings);
+                    }
+
+                    AddDestination<UrlShortenerType>((int)x, EDataType.URL, info.TaskSettings, overrideText);
+                });
+
+                flp.Controls.OfType<RadioButton>().ForEach(x =>
+                {
+                    x.Checked = x.Tag is UrlShortenerType urlShortenerType && urlShortenerType == info.TaskSettings.URLShortenerDestination;
+                });
+
+                break;
+        }
+
+        OnInitCompleted();
+    }
+
+    public void InitCapture(TaskSettings taskSettings)
+    {
+        Helpers.GetEnums<ImageDestination>().ForEach(x =>
+        {
+            if (x != ImageDestination.FileUploader)
             {
                 string overrideText = null;
 
-                if (x == FileDestination.CustomFileUploader)
+                if (x == ImageDestination.CustomImageUploader)
                 {
-                    overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomFileUploaderSelected, taskSettings);
+                    overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomImageUploaderSelected, taskSettings);
                 }
 
-                AddDestination<FileDestination>((int)x, EDataType.File, taskSettings, overrideText);
-            });
+                AddDestination<ImageDestination>((int)x, EDataType.Image, taskSettings, overrideText);
+            }
+        });
 
-            flp.Controls.OfType<RadioButton>().ForEach(x =>
+        Helpers.GetEnums<FileDestination>().ForEach(x =>
+        {
+            string overrideText = null;
+
+            if (x == FileDestination.CustomFileUploader)
             {
-                if (taskSettings.ImageDestination != ImageDestination.FileUploader)
+                overrideText = GetCustomUploaderName(Program.UploadersConfig.CustomFileUploaderSelected, taskSettings);
+            }
+
+            AddDestination<FileDestination>((int)x, EDataType.File, taskSettings, overrideText);
+        });
+
+        flp.Controls.OfType<RadioButton>().ForEach(x =>
+        {
+            x.Checked = taskSettings.ImageDestination != ImageDestination.FileUploader
+                ? x.Tag is ImageDestination imageDestination && imageDestination == taskSettings.ImageDestination
+                : x.Tag is FileDestination fileDestination && fileDestination == taskSettings.ImageFileDestination;
+        });
+    }
+
+    private void OnInitCompleted()
+    {
+        if (InitCompleted != null)
+        {
+            RadioButton rbDestination = flp.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
+            string currentDestination = "";
+            if (rbDestination != null)
+            {
+                currentDestination = rbDestination.Text;
+            }
+            InitCompleted(currentDestination);
+        }
+    }
+
+    private void AddDestination<T>(int index, EDataType dataType, TaskSettings taskSettings, string overrideText = null)
+    {
+        Enum destination = (Enum)Enum.ToObject(typeof(T), index);
+
+        if (UploadersConfigValidator.Validate<T>(index, Program.UploadersConfig))
+        {
+            RadioButton rb = new() { AutoSize = true };
+
+            rb.Text = string.IsNullOrEmpty(overrideText) ? destination.GetLocalizedDescription() :
+                string.Format("{0} [{1}]", Resources.BeforeUploadControl_AddDestination_Custom, overrideText);
+            rb.Tag = destination;
+            rb.CheckedChanged += (sender, e) => SetDestinations(rb.Checked, dataType, rb.Tag, taskSettings);
+
+            flp.Controls.Add(rb);
+        }
+    }
+
+    private void SetDestinations(bool isActive, EDataType dataType, object destination, TaskSettings taskSettings)
+    {
+        if (!isActive) return;
+
+        switch (dataType)
+        {
+            case EDataType.Image:
+                if (destination is ImageDestination imageDestination)
                 {
-                    x.Checked = x.Tag is ImageDestination imageDestination && imageDestination == taskSettings.ImageDestination;
-                }
-                else
+                    taskSettings.ImageDestination = imageDestination;
+                } else if (destination is FileDestination imageFileDestination)
                 {
-                    x.Checked = x.Tag is FileDestination fileDestination && fileDestination == taskSettings.ImageFileDestination;
+                    taskSettings.ImageDestination = ImageDestination.FileUploader;
+                    taskSettings.ImageFileDestination = imageFileDestination;
                 }
-            });
-        }
-
-        private void OnInitCompleted()
-        {
-            if (InitCompleted != null)
-            {
-                RadioButton rbDestination = flp.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked);
-                string currentDestination = "";
-                if (rbDestination != null)
+                break;
+            case EDataType.Text:
+                if (destination is TextDestination textDestination)
                 {
-                    currentDestination = rbDestination.Text;
+                    taskSettings.TextDestination = textDestination;
+                } else if (destination is FileDestination textFileDestination)
+                {
+                    taskSettings.TextDestination = TextDestination.FileUploader;
+                    taskSettings.TextFileDestination = textFileDestination;
                 }
-                InitCompleted(currentDestination);
-            }
+                break;
+            case EDataType.File:
+                if (destination is FileDestination fileDestination)
+                {
+                    taskSettings.ImageDestination = ImageDestination.FileUploader;
+                    taskSettings.TextDestination = TextDestination.FileUploader;
+                    taskSettings.ImageFileDestination = taskSettings.TextFileDestination = taskSettings.FileDestination = fileDestination;
+                }
+                break;
+            case EDataType.URL:
+                if (destination is UrlShortenerType urlShortenerDestination)
+                {
+                    taskSettings.URLShortenerDestination = urlShortenerDestination;
+                }
+                break;
         }
+    }
 
-        private void AddDestination<T>(int index, EDataType dataType, TaskSettings taskSettings, string overrideText = null)
+    private string GetCustomUploaderName(int index, TaskSettings taskSettings)
+    {
+        if (taskSettings.OverrideCustomUploader)
         {
-            Enum destination = (Enum)Enum.ToObject(typeof(T), index);
-
-            if (UploadersConfigValidator.Validate<T>(index, Program.UploadersConfig))
-            {
-                RadioButton rb = new RadioButton() { AutoSize = true };
-
-                rb.Text = string.IsNullOrEmpty(overrideText) ? destination.GetLocalizedDescription() :
-                    string.Format("{0} [{1}]", Resources.BeforeUploadControl_AddDestination_Custom, overrideText);
-                rb.Tag = destination;
-                rb.CheckedChanged += (sender, e) => SetDestinations(rb.Checked, dataType, rb.Tag, taskSettings);
-
-                flp.Controls.Add(rb);
-            }
+            index = taskSettings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1);
         }
 
-        private void SetDestinations(bool isActive, EDataType dataType, object destination, TaskSettings taskSettings)
-        {
-            if (!isActive) return;
+        CustomUploaderItem cui = Program.UploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
 
-            switch (dataType)
-            {
-                case EDataType.Image:
-                    if (destination is ImageDestination imageDestination)
-                    {
-                        taskSettings.ImageDestination = imageDestination;
-                    }
-                    else if (destination is FileDestination imageFileDestination)
-                    {
-                        taskSettings.ImageDestination = ImageDestination.FileUploader;
-                        taskSettings.ImageFileDestination = imageFileDestination;
-                    }
-                    break;
-                case EDataType.Text:
-                    if (destination is TextDestination textDestination)
-                    {
-                        taskSettings.TextDestination = textDestination;
-                    }
-                    else if (destination is FileDestination textFileDestination)
-                    {
-                        taskSettings.TextDestination = TextDestination.FileUploader;
-                        taskSettings.TextFileDestination = textFileDestination;
-                    }
-                    break;
-                case EDataType.File:
-                    if (destination is FileDestination fileDestination)
-                    {
-                        taskSettings.ImageDestination = ImageDestination.FileUploader;
-                        taskSettings.TextDestination = TextDestination.FileUploader;
-                        taskSettings.ImageFileDestination = taskSettings.TextFileDestination = taskSettings.FileDestination = fileDestination;
-                    }
-                    break;
-                case EDataType.URL:
-                    if (destination is UrlShortenerType urlShortenerDestination)
-                    {
-                        taskSettings.URLShortenerDestination = urlShortenerDestination;
-                    }
-                    break;
-            }
-        }
-
-        private string GetCustomUploaderName(int index, TaskSettings taskSettings)
-        {
-            if (taskSettings.OverrideCustomUploader)
-            {
-                index = taskSettings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1);
-            }
-
-            CustomUploaderItem cui = Program.UploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
-
-            if (cui != null)
-            {
-                return cui.ToString();
-            }
-
-            return null;
-        }
+        return cui != null ? cui.ToString() : null;
     }
 }

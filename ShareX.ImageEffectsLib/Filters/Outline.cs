@@ -23,64 +23,66 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+internal class Outline : ImageEffect
 {
-    internal class Outline : ImageEffect
+    private int size;
+
+    [DefaultValue(1)]
+    public int Size
     {
-        private int size;
-
-        [DefaultValue(1)]
-        public int Size
+        get
         {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value.Max(1);
-            }
+            return size;
         }
-
-        private int padding;
-
-        [DefaultValue(0)]
-        public int Padding
+        set
         {
-            get
-            {
-                return padding;
-            }
-            set
-            {
-                padding = value.Max(0);
-            }
+            size = value.Max(1);
         }
+    }
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
+    private int padding;
 
-        [DefaultValue(false)]
-        public bool OutlineOnly { get; set; }
-
-        public Outline()
+    [DefaultValue(0)]
+    public int Padding
+    {
+        get
         {
-            this.ApplyDefaultPropertyValues();
+            return padding;
         }
-
-        public override Bitmap Apply(Bitmap bmp)
+        set
         {
-            return ImageHelpers.Outline(bmp, Size, Color, Padding, OutlineOnly);
+            padding = value.Max(0);
         }
+    }
 
-        protected override string GetSummary()
-        {
-            return Size.ToString();
-        }
+    [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color Color { get; set; }
+
+    [DefaultValue(false)]
+    public bool OutlineOnly { get; set; }
+
+    public Outline()
+    {
+        this.ApplyDefaultPropertyValues();
+    }
+
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        return ImageHelpers.Outline(bmp, Size, Color, Padding, OutlineOnly);
+    }
+
+    protected override string GetSummary()
+    {
+        return Size.ToString();
     }
 }

@@ -23,31 +23,24 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
+
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+public struct MouseState
 {
-    public struct MouseState
+    public MouseButtons Buttons { get; private set; }
+    public Point Position { get; private set; }
+    public Point ClientPosition { get; private set; }
+
+    public void Update(Control control)
     {
-        public MouseButtons Buttons { get; private set; }
-        public Point Position { get; private set; }
-        public Point ClientPosition { get; private set; }
+        Buttons = Control.MouseButtons;
+        Position = Control.MousePosition;
 
-        public void Update(Control control)
-        {
-            Buttons = Control.MouseButtons;
-            Position = Control.MousePosition;
-
-            if (control != null)
-            {
-                ClientPosition = control.PointToClient(Position);
-            }
-            else
-            {
-                ClientPosition = CaptureHelpers.ScreenToClient(Position);
-            }
-        }
+        ClientPosition = control != null ? control.PointToClient(Position) : CaptureHelpers.ScreenToClient(Position);
     }
 }

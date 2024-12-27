@@ -23,73 +23,69 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Manipulations;
+
+internal class Canvas : ImageEffect
 {
-    internal class Canvas : ImageEffect
+    [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
+    public Padding Margin { get; set; }
+
+    [DefaultValue(CanvasMarginMode.AbsoluteSize), Description("How the margin around the canvas will be calculated."), TypeConverter(typeof(EnumDescriptionConverter))]
+    public CanvasMarginMode MarginMode { get; set; }
+
+    [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color Color { get; set; }
+
+    public Canvas()
     {
-        [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
-        public Padding Margin { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(CanvasMarginMode.AbsoluteSize), Description("How the margin around the canvas will be calculated."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public CanvasMarginMode MarginMode { get; set; }
+    public enum CanvasMarginMode
+    {
+        AbsoluteSize,
+        PercentageOfCanvas
+    }
 
-        [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        Padding canvasMargin;
 
-        public Canvas()
+        if (MarginMode == CanvasMarginMode.PercentageOfCanvas)
         {
-            this.ApplyDefaultPropertyValues();
+            canvasMargin = new Padding();
+            canvasMargin.Left = (int)Math.Round(Margin.Left / 100f * bmp.Width);
+            canvasMargin.Right = (int)Math.Round(Margin.Right / 100f * bmp.Width);
+            canvasMargin.Top = (int)Math.Round(Margin.Top / 100f * bmp.Height);
+            canvasMargin.Bottom = (int)Math.Round(Margin.Bottom / 100f * bmp.Height);
+        } else
+        {
+            canvasMargin = Margin;
         }
 
-        public enum CanvasMarginMode
+        Bitmap bmpResult = ImageHelpers.AddCanvas(bmp, canvasMargin, Color);
+
+        if (bmpResult == null)
         {
-            AbsoluteSize,
-            PercentageOfCanvas
+            return bmp;
         }
 
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            Padding canvasMargin;
+        bmp.Dispose();
+        return bmpResult;
+    }
 
-            if (MarginMode == CanvasMarginMode.PercentageOfCanvas)
-            {
-                canvasMargin = new Padding();
-                canvasMargin.Left = (int)Math.Round(Margin.Left / 100f * bmp.Width);
-                canvasMargin.Right = (int)Math.Round(Margin.Right / 100f * bmp.Width);
-                canvasMargin.Top = (int)Math.Round(Margin.Top / 100f * bmp.Height);
-                canvasMargin.Bottom = (int)Math.Round(Margin.Bottom / 100f * bmp.Height);
-            }
-            else
-            {
-                canvasMargin = Margin;
-            }
-
-            Bitmap bmpResult = ImageHelpers.AddCanvas(bmp, canvasMargin, Color);
-
-            if (bmpResult == null)
-            {
-                return bmp;
-            }
-
-            bmp.Dispose();
-            return bmpResult;
-        }
-
-        protected override string GetSummary()
-        {
-            if (Margin.All == -1)
-            {
-                return $"{Margin.Left}, {Margin.Top}, {Margin.Right}, {Margin.Bottom}";
-            }
-
-            return Margin.All.ToString();
-        }
+    protected override string GetSummary()
+    {
+        return Margin.All == -1 ? $"{Margin.Left}, {Margin.Top}, {Margin.Right}, {Margin.Bottom}" : Margin.All.ToString();
     }
 }

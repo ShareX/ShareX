@@ -23,34 +23,36 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+using ShareX.HelpersLib.UITypeEditors;
+
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Adjustments;
+
+[Description("Selective color")]
+internal class SelectiveColor : ImageEffect
 {
-    [Description("Selective color")]
-    internal class SelectiveColor : ImageEffect
+    [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color LightColor { get; set; }
+
+    [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+    public Color DarkColor { get; set; }
+
+    [DefaultValue(10)]
+    public int PaletteSize { get; set; }
+
+    public SelectiveColor()
     {
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color LightColor { get; set; }
+        this.ApplyDefaultPropertyValues();
+    }
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color DarkColor { get; set; }
-
-        [DefaultValue(10)]
-        public int PaletteSize { get; set; }
-
-        public SelectiveColor()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override Bitmap Apply(Bitmap bmp)
-        {
-            ImageHelpers.SelectiveColor(bmp, LightColor, DarkColor, MathHelpers.Clamp(PaletteSize, 2, 100));
-            return bmp;
-        }
+    public override Bitmap Apply(Bitmap bmp)
+    {
+        ImageHelpers.SelectiveColor(bmp, LightColor, DarkColor, MathHelpers.Clamp(PaletteSize, 2, 100));
+        return bmp;
     }
 }

@@ -23,75 +23,74 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
+
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class SevenZipManager
 {
-    public class SevenZipManager
+    public string SevenZipPath { get; set; }
+
+    public SevenZipManager()
     {
-        public string SevenZipPath { get; set; }
+        SevenZipPath = FileHelpers.GetAbsolutePath("7za.exe");
+    }
 
-        public SevenZipManager()
+    public SevenZipManager(string sevenZipPath)
+    {
+        SevenZipPath = sevenZipPath;
+    }
+
+    public bool Extract(string archivePath, string destination)
+    {
+        string arguments = $"x \"{archivePath}\" -o\"{destination}\" -y";
+        return Run(arguments) == 0;
+    }
+
+    public bool Extract(string archivePath, string destination, List<string> files)
+    {
+        string fileArgs = string.Join(" ", files.Select(x => $"\"{x}\""));
+        string arguments = $"e \"{archivePath}\" -o\"{destination}\" {fileArgs} -r -y";
+        return Run(arguments) == 0;
+    }
+
+    public bool Compress(string archivePath, List<string> files, string workingDirectory = "")
+    {
+        if (File.Exists(archivePath))
         {
-            SevenZipPath = FileHelpers.GetAbsolutePath("7za.exe");
+            File.Delete(archivePath);
         }
 
-        public SevenZipManager(string sevenZipPath)
+        string fileArgs = string.Join(" ", files.Select(x => $"\"{x}\""));
+        string arguments = $"a -tzip \"{archivePath}\" {fileArgs} -mx=9";
+        return Run(arguments, workingDirectory) == 0;
+    }
+
+    private int Run(string arguments, string workingDirectory = "")
+    {
+        using Process process = new();
+        ProcessStartInfo psi = new()
         {
-            SevenZipPath = sevenZipPath;
+            FileName = SevenZipPath,
+            Arguments = arguments,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
+
+        if (!string.IsNullOrEmpty(workingDirectory))
+        {
+            psi.WorkingDirectory = workingDirectory;
         }
 
-        public bool Extract(string archivePath, string destination)
-        {
-            string arguments = $"x \"{archivePath}\" -o\"{destination}\" -y";
-            return Run(arguments) == 0;
-        }
+        process.StartInfo = psi;
+        process.Start();
+        process.WaitForExit();
 
-        public bool Extract(string archivePath, string destination, List<string> files)
-        {
-            string fileArgs = string.Join(" ", files.Select(x => $"\"{x}\""));
-            string arguments = $"e \"{archivePath}\" -o\"{destination}\" {fileArgs} -r -y";
-            return Run(arguments) == 0;
-        }
-
-        public bool Compress(string archivePath, List<string> files, string workingDirectory = "")
-        {
-            if (File.Exists(archivePath))
-            {
-                File.Delete(archivePath);
-            }
-
-            string fileArgs = string.Join(" ", files.Select(x => $"\"{x}\""));
-            string arguments = $"a -tzip \"{archivePath}\" {fileArgs} -mx=9";
-            return Run(arguments, workingDirectory) == 0;
-        }
-
-        private int Run(string arguments, string workingDirectory = "")
-        {
-            using (Process process = new Process())
-            {
-                ProcessStartInfo psi = new ProcessStartInfo()
-                {
-                    FileName = SevenZipPath,
-                    Arguments = arguments,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-
-                if (!string.IsNullOrEmpty(workingDirectory))
-                {
-                    psi.WorkingDirectory = workingDirectory;
-                }
-
-                process.StartInfo = psi;
-                process.Start();
-                process.WaitForExit();
-
-                return process.ExitCode;
-            }
-        }
+        return process.ExitCode;
     }
 }

@@ -26,31 +26,26 @@
 using System.IO;
 using System.Text;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.BaseUploaders;
+
+public abstract class TextUploader : GenericUploader
 {
-    public abstract class TextUploader : GenericUploader
+    public override UploadResult Upload(Stream stream, string fileName)
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        using StreamReader sr = new(stream, Encoding.UTF8);
+        return UploadText(sr.ReadToEnd(), fileName);
+    }
+
+    public abstract UploadResult UploadText(string text, string fileName);
+
+    public UploadResult UploadTextFile(string filePath)
+    {
+        if (File.Exists(filePath))
         {
-            using (StreamReader sr = new StreamReader(stream, Encoding.UTF8))
-            {
-                return UploadText(sr.ReadToEnd(), fileName);
-            }
+            using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            return Upload(stream, Path.GetFileName(filePath));
         }
 
-        public abstract UploadResult UploadText(string text, string fileName);
-
-        public UploadResult UploadTextFile(string filePath)
-        {
-            if (File.Exists(filePath))
-            {
-                using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
-                {
-                    return Upload(stream, Path.GetFileName(filePath));
-                }
-            }
-
-            return null;
-        }
+        return null;
     }
 }

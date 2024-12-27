@@ -26,49 +26,48 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+public class InputManager
 {
-    public class InputManager
+    public Point MousePosition => mouseState.Position;
+
+    public Point PreviousMousePosition => oldMouseState.Position;
+
+    public Point ClientMousePosition => mouseState.ClientPosition;
+
+    public Point PreviousClientMousePosition => oldMouseState.ClientPosition;
+
+    public Point MouseVelocity => new(ClientMousePosition.X - PreviousClientMousePosition.X, ClientMousePosition.Y - PreviousClientMousePosition.Y);
+
+    public bool IsMouseMoved => MouseVelocity.X != 0 || MouseVelocity.Y != 0;
+
+    private MouseState mouseState = new();
+    private MouseState oldMouseState;
+
+    public void Update(Control control)
     {
-        public Point MousePosition => mouseState.Position;
+        oldMouseState = mouseState;
+        mouseState.Update(control);
+    }
 
-        public Point PreviousMousePosition => oldMouseState.Position;
+    public bool IsMouseDown(MouseButtons button)
+    {
+        return mouseState.Buttons.HasFlag(button);
+    }
 
-        public Point ClientMousePosition => mouseState.ClientPosition;
+    public bool IsBeforeMouseDown(MouseButtons button)
+    {
+        return oldMouseState.Buttons.HasFlag(button);
+    }
 
-        public Point PreviousClientMousePosition => oldMouseState.ClientPosition;
+    public bool IsMousePressed(MouseButtons button)
+    {
+        return IsMouseDown(button) && !IsBeforeMouseDown(button);
+    }
 
-        public Point MouseVelocity => new Point(ClientMousePosition.X - PreviousClientMousePosition.X, ClientMousePosition.Y - PreviousClientMousePosition.Y);
-
-        public bool IsMouseMoved => MouseVelocity.X != 0 || MouseVelocity.Y != 0;
-
-        private MouseState mouseState = new MouseState();
-        private MouseState oldMouseState;
-
-        public void Update(Control control)
-        {
-            oldMouseState = mouseState;
-            mouseState.Update(control);
-        }
-
-        public bool IsMouseDown(MouseButtons button)
-        {
-            return mouseState.Buttons.HasFlag(button);
-        }
-
-        public bool IsBeforeMouseDown(MouseButtons button)
-        {
-            return oldMouseState.Buttons.HasFlag(button);
-        }
-
-        public bool IsMousePressed(MouseButtons button)
-        {
-            return IsMouseDown(button) && !IsBeforeMouseDown(button);
-        }
-
-        public bool IsMouseReleased(MouseButtons button)
-        {
-            return !IsMouseDown(button) && IsBeforeMouseDown(button);
-        }
+    public bool IsMouseReleased(MouseButtons button)
+    {
+        return !IsMouseDown(button) && IsBeforeMouseDown(button);
     }
 }

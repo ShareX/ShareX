@@ -23,100 +23,103 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
+
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace ShareX.UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders;
+
+public class SlexyTextUploaderService : TextUploaderService
 {
-    public class SlexyTextUploaderService : TextUploaderService
+    public override TextDestination EnumValue { get; } = TextDestination.Slexy;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override TextDestination EnumValue { get; } = TextDestination.Slexy;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        SlexySettings settings = new()
         {
-            SlexySettings settings = new SlexySettings()
-            {
-                TextFormat = taskInfo.TextFormat
-            };
+            TextFormat = taskInfo.TextFormat
+        };
 
-            return new Slexy(settings);
-        }
+        return new Slexy(settings);
+    }
+}
+
+public sealed class Slexy : TextUploader
+{
+    private const string APIURL = "http://slexy.org/index.php/submit";
+
+    private SlexySettings settings;
+
+    public Slexy()
+    {
+        settings = new SlexySettings();
     }
 
-    public sealed class Slexy : TextUploader
+    public Slexy(SlexySettings settings)
     {
-        private const string APIURL = "http://slexy.org/index.php/submit";
-
-        private SlexySettings settings;
-
-        public Slexy()
-        {
-            settings = new SlexySettings();
-        }
-
-        public Slexy(SlexySettings settings)
-        {
-            this.settings = settings;
-        }
-
-        public override UploadResult UploadText(string text, string fileName)
-        {
-            UploadResult ur = new UploadResult();
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("raw_paste", text);
-                arguments.Add("author", settings.Author);
-                arguments.Add("comment", "");
-                arguments.Add("desc", settings.Description);
-                arguments.Add("expire", settings.Expiration);
-                arguments.Add("language", settings.TextFormat);
-                arguments.Add("linenumbers", settings.LineNumbers ? "1" : "0");
-                arguments.Add("permissions", settings.Visibility == Privacy.Private ? "1" : "0");
-                arguments.Add("submit", "Submit Paste");
-                arguments.Add("tabbing", "true");
-                arguments.Add("tabtype", "real");
-
-                SendRequestMultiPart(APIURL, arguments);
-                ur.URL = LastResponseInfo.ResponseURL;
-            }
-
-            return ur;
-        }
+        this.settings = settings;
     }
 
-    public class SlexySettings
+    public override UploadResult UploadText(string text, string fileName)
     {
-        /// <summary>language</summary>
-        public string TextFormat { get; set; }
+        UploadResult ur = new();
 
-        /// <summary>author</summary>
-        public string Author { get; set; }
-
-        /// <summary>permissions</summary>
-        public Privacy Visibility { get; set; }
-
-        /// <summary>desc</summary>
-        public string Description { get; set; }
-
-        /// <summary>linenumbers</summary>
-        public bool LineNumbers { get; set; }
-
-        /// <summary>expire</summary>
-        [Description("Expiration time with seconds. Example: 0 = Forever, 60 = 1 minutes, 3600 = 1 hour, 2592000 = 1 month")]
-        public string Expiration { get; set; }
-
-        public SlexySettings()
+        if (!string.IsNullOrEmpty(text))
         {
-            TextFormat = "text";
-            Author = "";
-            Visibility = Privacy.Private;
-            Description = "";
-            LineNumbers = true;
-            Expiration = "2592000";
+            Dictionary<string, string> arguments = new();
+            arguments.Add("raw_paste", text);
+            arguments.Add("author", settings.Author);
+            arguments.Add("comment", "");
+            arguments.Add("desc", settings.Description);
+            arguments.Add("expire", settings.Expiration);
+            arguments.Add("language", settings.TextFormat);
+            arguments.Add("linenumbers", settings.LineNumbers ? "1" : "0");
+            arguments.Add("permissions", settings.Visibility == Privacy.Private ? "1" : "0");
+            arguments.Add("submit", "Submit Paste");
+            arguments.Add("tabbing", "true");
+            arguments.Add("tabtype", "real");
+
+            SendRequestMultiPart(APIURL, arguments);
+            ur.URL = LastResponseInfo.ResponseURL;
         }
+
+        return ur;
+    }
+}
+
+public class SlexySettings
+{
+    /// <summary>language</summary>
+    public string TextFormat { get; set; }
+
+    /// <summary>author</summary>
+    public string Author { get; set; }
+
+    /// <summary>permissions</summary>
+    public Privacy Visibility { get; set; }
+
+    /// <summary>desc</summary>
+    public string Description { get; set; }
+
+    /// <summary>linenumbers</summary>
+    public bool LineNumbers { get; set; }
+
+    /// <summary>expire</summary>
+    [Description("Expiration time with seconds. Example: 0 = Forever, 60 = 1 minutes, 3600 = 1 hour, 2592000 = 1 month")]
+    public string Expiration { get; set; }
+
+    public SlexySettings()
+    {
+        TextFormat = "text";
+        Author = "";
+        Visibility = Privacy.Private;
+        Description = "";
+        LineNumbers = true;
+        Expiration = "2592000";
     }
 }

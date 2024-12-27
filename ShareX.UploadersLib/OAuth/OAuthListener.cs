@@ -24,115 +24,92 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.OAuth;
+
+public class OAuthListener : IDisposable
 {
-    public class OAuthListener : IDisposable
+    public IOAuth2Loopback OAuth { get; private set; }
+
+    private HttpListener listener;
+
+    public OAuthListener(IOAuth2Loopback oauth)
     {
-        public IOAuth2Loopback OAuth { get; private set; }
+        OAuth = oauth;
+    }
 
-        private HttpListener listener;
-
-        public OAuthListener(IOAuth2Loopback oauth)
+    public void Dispose()
+    {
+        if (listener != null)
         {
-            OAuth = oauth;
+            listener.Close();
+            listener = null;
         }
+    }
 
-        public void Dispose()
+    public async Task<bool> ConnectAsync()
+    {
+        Dispose();
+
+        IPAddress ip = IPAddress.Loopback;
+        int port = WebHelpers.GetRandomUnusedPort();
+        string redirectURI = string.Format($"http://{ip}:{port}/");
+        string state = HelpersLib.Helpers.Helpers.GetRandomAlphanumeric(32);
+
+        OAuth.RedirectURI = redirectURI;
+        OAuth.State = state;
+        string url = OAuth.GetAuthorizationURL();
+
+        if (!string.IsNullOrEmpty(url))
         {
-            if (listener != null)
-            {
-                listener.Close();
-                listener = null;
-            }
-        }
-
-        public async Task<bool> ConnectAsync()
+            URLHelpers.OpenURL(url);
+            DebugHelper.WriteLine("Authorization URL is opened: " + url);
+        } else
         {
-            Dispose();
-
-            IPAddress ip = IPAddress.Loopback;
-            int port = WebHelpers.GetRandomUnusedPort();
-            string redirectURI = string.Format($"http://{ip}:{port}/");
-            string state = Helpers.GetRandomAlphanumeric(32);
-
-            OAuth.RedirectURI = redirectURI;
-            OAuth.State = state;
-            string url = OAuth.GetAuthorizationURL();
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                URLHelpers.OpenURL(url);
-                DebugHelper.WriteLine("Authorization URL is opened: " + url);
-            }
-            else
-            {
-                DebugHelper.WriteLine("Authorization URL is empty.");
-                return false;
-            }
-
-            string queryCode = null;
-            string queryState = null;
-
-            try
-            {
-                listener = new HttpListener();
-                listener.Prefixes.Add(redirectURI);
-                listener.Start();
-
-                HttpListenerContext context = await listener.GetContextAsync();
-                queryCode = context.Request.QueryString.Get("code");
-                queryState = context.Request.QueryString.Get("state");
-
-                using (HttpListenerResponse response = context.Response)
-                {
-                    string status;
-
-                    if (queryState != state)
-                    {
-                        status = "Invalid state parameter.";
-                    }
-                    else if (!string.IsNullOrEmpty(queryCode))
-                    {
-                        status = "Authorization completed successfully.";
-                    }
-                    else
-                    {
-                        status = "Authorization did not succeed.";
-                    }
-
-                    string responseText = Resources.OAuthCallbackPage.Replace("{0}", status);
-                    byte[] buffer = Encoding.UTF8.GetBytes(responseText);
-                    response.ContentLength64 = buffer.Length;
-                    response.KeepAlive = false;
-
-                    using (Stream responseOutput = response.OutputStream)
-                    {
-                        await responseOutput.WriteAsync(buffer, 0, buffer.Length);
-                        await responseOutput.FlushAsync();
-                    }
-                }
-            }
-            catch (ObjectDisposedException)
-            {
-            }
-            finally
-            {
-                Dispose();
-            }
-
-            if (queryState == state && !string.IsNullOrEmpty(queryCode))
-            {
-                return await Task.Run(() => OAuth.GetAccessToken(queryCode));
-            }
-
+            DebugHelper.WriteLine("Authorization URL is empty.");
             return false;
         }
+
+        string queryCode = null;
+        string queryState = null;
+
+        try
+        {
+            listener = new HttpListener();
+            listener.Prefixes.Add(redirectURI);
+            listener.Start();
+
+            HttpListenerContext context = await listener.GetContextAsync();
+            queryCode = context.Request.QueryString.Get("code");
+            queryState = context.Request.QueryString.Get("state");
+
+            using HttpListenerResponse response = context.Response;
+            string status = queryState != state
+                ? "Invalid state parameter."
+                : !string.IsNullOrEmpty(queryCode) ? "Authorization completed successfully." : "Authorization did not succeed.";
+            string responseText = Resources.OAuthCallbackPage.Replace("{0}", status);
+            byte[] buffer = Encoding.UTF8.GetBytes(responseText);
+            response.ContentLength64 = buffer.Length;
+            response.KeepAlive = false;
+
+            using Stream responseOutput = response.OutputStream;
+            await responseOutput.WriteAsync(buffer, 0, buffer.Length);
+            await responseOutput.FlushAsync();
+        } catch (ObjectDisposedException)
+        {
+        } finally
+        {
+            Dispose();
+        }
+
+        return queryState == state && !string.IsNullOrEmpty(queryCode) ? await Task.Run(() => OAuth.GetAccessToken(queryCode)) : false;
     }
 }

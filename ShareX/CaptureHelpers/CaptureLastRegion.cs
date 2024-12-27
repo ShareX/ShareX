@@ -23,59 +23,51 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Helpers;
 using ShareX.ScreenCaptureLib;
+using ShareX.ScreenCaptureLib.Forms;
+
 using System.Drawing;
 
-namespace ShareX
+namespace ShareX.CaptureHelpers;
+
+public class CaptureLastRegion : CaptureRegion
 {
-    public class CaptureLastRegion : CaptureRegion
+    protected override TaskMetadata Execute(TaskSettings taskSettings)
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
+        switch (lastRegionCaptureType)
         {
-            switch (lastRegionCaptureType)
-            {
-                default:
-                case RegionCaptureType.Default:
-                    if (RegionCaptureForm.LastRegionFillPath != null)
-                    {
-                        using (Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                        {
-                            Bitmap bmp = RegionCaptureTasks.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath, out _);
-                            return new TaskMetadata(bmp);
-                        }
-                    }
-                    else
-                    {
-                        return ExecuteRegionCapture(taskSettings);
-                    }
-                case RegionCaptureType.Light:
-                    if (!RegionCaptureLightForm.LastSelectionRectangle0Based.IsEmpty)
-                    {
-                        using (Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                        {
-                            Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureLightForm.LastSelectionRectangle0Based);
-                            return new TaskMetadata(bmp);
-                        }
-                    }
-                    else
-                    {
-                        return ExecuteRegionCaptureLight(taskSettings);
-                    }
-                case RegionCaptureType.Transparent:
-                    if (!RegionCaptureTransparentForm.LastSelectionRectangle0Based.IsEmpty)
-                    {
-                        using (Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen())
-                        {
-                            Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureTransparentForm.LastSelectionRectangle0Based);
-                            return new TaskMetadata(bmp);
-                        }
-                    }
-                    else
-                    {
-                        return ExecuteRegionCaptureTransparent(taskSettings);
-                    }
-            }
+            default:
+            case RegionCaptureType.Default:
+                if (RegionCaptureForm.LastRegionFillPath != null)
+                {
+                    using Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
+                    Bitmap bmp = RegionCaptureTasks.ApplyRegionPathToImage(screenshot, RegionCaptureForm.LastRegionFillPath, out _);
+                    return new TaskMetadata(bmp);
+                } else
+                {
+                    return ExecuteRegionCapture(taskSettings);
+                }
+            case RegionCaptureType.Light:
+                if (!RegionCaptureLightForm.LastSelectionRectangle0Based.IsEmpty)
+                {
+                    using Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
+                    Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureLightForm.LastSelectionRectangle0Based);
+                    return new TaskMetadata(bmp);
+                } else
+                {
+                    return ExecuteRegionCaptureLight(taskSettings);
+                }
+            case RegionCaptureType.Transparent:
+                if (!RegionCaptureTransparentForm.LastSelectionRectangle0Based.IsEmpty)
+                {
+                    using Bitmap screenshot = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
+                    Bitmap bmp = ImageHelpers.CropBitmap(screenshot, RegionCaptureTransparentForm.LastSelectionRectangle0Based);
+                    return new TaskMetadata(bmp);
+                } else
+                {
+                    return ExecuteRegionCaptureTransparent(taskSettings);
+                }
         }
     }
 }

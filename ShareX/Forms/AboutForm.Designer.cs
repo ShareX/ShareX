@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class AboutForm
     {
@@ -33,13 +35,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.lblProductName = new System.Windows.Forms.Label();
-            this.rtbInfo = new ShareX.HelpersLib.ReadOnlyRichTextBox();
+            this.rtbInfo = new ShareX.HelpersLib.Controls.ReadOnlyRichTextBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnShareXLicense = new System.Windows.Forms.Button();
             this.btnLicenses = new System.Windows.Forms.Button();
             this.lblBuild = new System.Windows.Forms.Label();
-            this.cLogo = new ShareX.HelpersLib.Canvas();
+            this.cLogo = new ShareX.HelpersLib.Controls.Canvas();
             this.uclUpdate = new ShareX.HelpersLib.UpdateCheckerLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -131,8 +133,8 @@
         #endregion Windows Form Designer generated code
 
         private System.Windows.Forms.Label lblProductName;
-        private HelpersLib.Canvas cLogo;
-        private HelpersLib.ReadOnlyRichTextBox rtbInfo;
+        private Canvas cLogo;
+        private ReadOnlyRichTextBox rtbInfo;
         private HelpersLib.UpdateCheckerLabel uclUpdate;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnClose;

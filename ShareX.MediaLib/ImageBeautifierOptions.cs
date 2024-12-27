@@ -23,48 +23,48 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Colors;
+
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace ShareX.MediaLib
+namespace ShareX.MediaLib;
+
+public class ImageBeautifierOptions
 {
-    public class ImageBeautifierOptions
+    public int Margin { get; set; }
+    public int Padding { get; set; }
+    public bool SmartPadding { get; set; }
+    public int RoundedCorner { get; set; }
+    public int ShadowRadius { get; set; }
+    public int ShadowOpacity { get; set; }
+    public int ShadowDistance { get; set; }
+    public int ShadowAngle { get; set; }
+    public Color ShadowColor { get; set; }
+    public ImageBeautifierBackgroundType BackgroundType { get; set; }
+    public GradientInfo BackgroundGradient { get; set; }
+    public Color BackgroundColor { get; set; }
+    public string BackgroundImageFilePath { get; set; }
+
+    public ImageBeautifierOptions()
     {
-        public int Margin { get; set; }
-        public int Padding { get; set; }
-        public bool SmartPadding { get; set; }
-        public int RoundedCorner { get; set; }
-        public int ShadowRadius { get; set; }
-        public int ShadowOpacity { get; set; }
-        public int ShadowDistance { get; set; }
-        public int ShadowAngle { get; set; }
-        public Color ShadowColor { get; set; }
-        public ImageBeautifierBackgroundType BackgroundType { get; set; }
-        public GradientInfo BackgroundGradient { get; set; }
-        public Color BackgroundColor { get; set; }
-        public string BackgroundImageFilePath { get; set; }
+        ResetOptions();
+    }
 
-        public ImageBeautifierOptions()
-        {
-            ResetOptions();
-        }
-
-        public void ResetOptions()
-        {
-            Margin = 80;
-            Padding = 40;
-            SmartPadding = true;
-            RoundedCorner = 20;
-            ShadowRadius = 30;
-            ShadowOpacity = 80;
-            ShadowDistance = 10;
-            ShadowAngle = 180;
-            ShadowColor = Color.Black;
-            BackgroundType = ImageBeautifierBackgroundType.Gradient;
-            BackgroundGradient = new GradientInfo(LinearGradientMode.ForwardDiagonal, Color.FromArgb(255, 81, 47), Color.FromArgb(221, 36, 118));
-            BackgroundColor = Color.FromArgb(34, 34, 34);
-            BackgroundImageFilePath = "";
-        }
+    public void ResetOptions()
+    {
+        Margin = 80;
+        Padding = 40;
+        SmartPadding = true;
+        RoundedCorner = 20;
+        ShadowRadius = 30;
+        ShadowOpacity = 80;
+        ShadowDistance = 10;
+        ShadowAngle = 180;
+        ShadowColor = Color.Black;
+        BackgroundType = ImageBeautifierBackgroundType.Gradient;
+        BackgroundGradient = new GradientInfo(LinearGradientMode.ForwardDiagonal, Color.FromArgb(255, 81, 47), Color.FromArgb(221, 36, 118));
+        BackgroundColor = Color.FromArgb(34, 34, 34);
+        BackgroundImageFilePath = "";
     }
 }

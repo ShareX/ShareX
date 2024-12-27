@@ -1,4 +1,6 @@
-﻿namespace ShareX.MediaLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.MediaLib
 {
     partial class ImageBeautifierForm
     {
@@ -39,7 +41,7 @@
             this.lblShadowAngleValue = new System.Windows.Forms.Label();
             this.lblShadowDistanceValue = new System.Windows.Forms.Label();
             this.lblShadowOpacityValue = new System.Windows.Forms.Label();
-            this.btnShadowColor = new ShareX.HelpersLib.ColorButton();
+            this.btnShadowColor = new ShareX.HelpersLib.Controls.ColorButton();
             this.tbShadowAngle = new System.Windows.Forms.TrackBar();
             this.lblShadowAngle = new System.Windows.Forms.Label();
             this.tbShadowDistance = new System.Windows.Forms.TrackBar();
@@ -253,7 +255,7 @@
             resources.ApplyResources(this.btnShadowColor, "btnShadowColor");
             this.btnShadowColor.Name = "btnShadowColor";
             this.btnShadowColor.UseVisualStyleBackColor = true;
-            this.btnShadowColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnShadowColor_ColorChanged);
+            this.btnShadowColor.ColorChanged += new ColorButton.ColorChangedEventHandler(this.btnShadowColor_ColorChanged);
             // 
             // tbShadowAngle
             // 
@@ -431,7 +433,7 @@
         private System.Windows.Forms.Button btnResetOptions;
         private System.Windows.Forms.TrackBar tbShadowOpacity;
         private System.Windows.Forms.Label lblShadowOpacity;
-        private HelpersLib.ColorButton btnShadowColor;
+        private ColorButton btnShadowColor;
         private System.Windows.Forms.TrackBar tbShadowAngle;
         private System.Windows.Forms.Label lblShadowAngle;
         private System.Windows.Forms.TrackBar tbShadowDistance;

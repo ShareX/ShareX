@@ -24,69 +24,68 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.Win32;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Helpers;
+
 using System;
 
-namespace ShareX
+namespace ShareX;
+
+public static class SystemOptions
 {
-    public static class SystemOptions
+    private const string RegistryPath = @"SOFTWARE\ShareX";
+
+    public static bool DisableUpdateCheck { get; private set; }
+    public static bool DisableUpload { get; private set; }
+    public static bool DisableLogging { get; private set; }
+    public static string PersonalPath { get; private set; }
+
+    public static void UpdateSystemOptions()
     {
-        private const string RegistryPath = @"SOFTWARE\ShareX";
+        DisableUpdateCheck = GetSystemOptionBoolean("DisableUpdateCheck");
+        DisableUpload = GetSystemOptionBoolean("DisableUpload");
+        DisableLogging = GetSystemOptionBoolean("DisableLogging");
+        PersonalPath = GetSystemOptionString("PersonalPath");
+    }
 
-        public static bool DisableUpdateCheck { get; private set; }
-        public static bool DisableUpload { get; private set; }
-        public static bool DisableLogging { get; private set; }
-        public static string PersonalPath { get; private set; }
+    private static bool GetSystemOptionBoolean(string name)
+    {
+        object value = RegistryHelpers.GetValue(RegistryPath, name, RegistryHive.LocalMachine);
 
-        public static void UpdateSystemOptions()
+        if (value != null)
         {
-            DisableUpdateCheck = GetSystemOptionBoolean("DisableUpdateCheck");
-            DisableUpload = GetSystemOptionBoolean("DisableUpload");
-            DisableLogging = GetSystemOptionBoolean("DisableLogging");
-            PersonalPath = GetSystemOptionString("PersonalPath");
+            try
+            {
+                return Convert.ToBoolean(value);
+            } catch
+            {
+            }
         }
 
-        private static bool GetSystemOptionBoolean(string name)
+        value = RegistryHelpers.GetValue(RegistryPath, name, RegistryHive.CurrentUser);
+
+        if (value != null)
         {
-            object value = RegistryHelpers.GetValue(RegistryPath, name, RegistryHive.LocalMachine);
-
-            if (value != null)
+            try
             {
-                try
-                {
-                    return Convert.ToBoolean(value);
-                }
-                catch
-                {
-                }
-            }
-
-            value = RegistryHelpers.GetValue(RegistryPath, name, RegistryHive.CurrentUser);
-
-            if (value != null)
+                return Convert.ToBoolean(value);
+            } catch
             {
-                try
-                {
-                    return Convert.ToBoolean(value);
-                }
-                catch
-                {
-                }
             }
-
-            return false;
         }
 
-        private static string GetSystemOptionString(string name)
+        return false;
+    }
+
+    private static string GetSystemOptionString(string name)
+    {
+        string value = RegistryHelpers.GetValueString(RegistryPath, name, RegistryHive.LocalMachine);
+
+        if (value == null)
         {
-            string value = RegistryHelpers.GetValueString(RegistryPath, name, RegistryHive.LocalMachine);
-
-            if (value == null)
-            {
-                value = RegistryHelpers.GetValueString(RegistryPath, name, RegistryHive.CurrentUser);
-            }
-
-            return value;
+            value = RegistryHelpers.GetValueString(RegistryPath, name, RegistryHive.CurrentUser);
         }
+
+        return value;
     }
 }

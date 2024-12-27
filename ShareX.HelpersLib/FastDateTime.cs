@@ -25,36 +25,32 @@
 
 using System;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public static class FastDateTime
 {
-    public static class FastDateTime
+    public static TimeSpan LocalUtcOffset { get; private set; }
+
+    public static DateTime Now
     {
-        public static TimeSpan LocalUtcOffset { get; private set; }
-
-        public static DateTime Now
+        get
         {
-            get
-            {
-                return ToLocalTime(DateTime.UtcNow);
-            }
+            return ToLocalTime(DateTime.UtcNow);
         }
+    }
 
-        public static long NowUnix
+    public static long NowUnix
+    {
+        get
         {
-            get
-            {
-                return (DateTime.UtcNow.Ticks - 621355968000000000) / 10000000;
-            }
+            return (DateTime.UtcNow.Ticks - 621355968000000000) / 10000000;
         }
+    }
 
-        static FastDateTime()
-        {
-            LocalUtcOffset = TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now);
-        }
+    static FastDateTime() => LocalUtcOffset = TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
 
-        public static DateTime ToLocalTime(DateTime dateTime)
-        {
-            return dateTime + LocalUtcOffset;
-        }
+    public static DateTime ToLocalTime(DateTime dateTime)
+    {
+        return dateTime + LocalUtcOffset;
     }
 }

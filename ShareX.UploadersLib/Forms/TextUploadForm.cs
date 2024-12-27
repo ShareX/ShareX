@@ -24,49 +24,53 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
+
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib;
+
+public partial class TextUploadForm : Form
 {
-    public partial class TextUploadForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public string Content { get; private set; }
+
+    public TextUploadForm(string content = null)
     {
-        public string Content { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public TextUploadForm(string content = null)
+        if (string.IsNullOrEmpty(content) && ClipboardHelpers.ContainsText())
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-
-            if (string.IsNullOrEmpty(content) && ClipboardHelpers.ContainsText())
-            {
-                content = ClipboardHelpers.GetText();
-            }
-
-            if (!string.IsNullOrEmpty(content))
-            {
-                txtContent.Text = content;
-                txtContent.SelectAll();
-            }
+            content = ClipboardHelpers.GetText();
         }
 
-        private void TextUploadForm_Shown(object sender, EventArgs e)
+        if (!string.IsNullOrEmpty(content))
         {
-            this.ForceActivate();
+            txtContent.Text = content;
+            txtContent.SelectAll();
         }
+    }
 
-        private void btnUpload_Click(object sender, EventArgs e)
-        {
-            Content = txtContent.Text;
+    private void TextUploadForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+    }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
+    private void btnUpload_Click(object sender, EventArgs e)
+    {
+        Content = txtContent.Text;
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+        DialogResult = DialogResult.OK;
+        Close();
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

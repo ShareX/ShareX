@@ -23,78 +23,78 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.UploadersLib.BaseUploaders;
+
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Linq;
 
-namespace ShareX.UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders;
+
+public class UploadScreenshot : ImageUploader
 {
-    public class UploadScreenshot : ImageUploader
+    private string APIKey { get; set; }
+
+    public UploadScreenshot(string key)
     {
-        private string APIKey { get; set; }
+        APIKey = key;
+    }
 
-        public UploadScreenshot(string key)
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        Dictionary<string, string> arguments = new();
+        arguments.Add("apiKey", APIKey);
+        arguments.Add("xmlOutput", "1");
+        //arguments.Add("testMode", "1");
+
+        UploadResult result = SendRequestFile("http://img1.uploadscreenshot.com/api-upload.php", stream, fileName, "userfile", arguments);
+
+        return ParseResult(result);
+    }
+
+    private UploadResult ParseResult(UploadResult result)
+    {
+        if (result.IsSuccess)
         {
-            APIKey = key;
-        }
+            XDocument xdoc = XDocument.Parse(result.Response);
+            XElement xele = xdoc.Root.Element("upload");
 
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("apiKey", APIKey);
-            arguments.Add("xmlOutput", "1");
-            //arguments.Add("testMode", "1");
-
-            UploadResult result = SendRequestFile("http://img1.uploadscreenshot.com/api-upload.php", stream, fileName, "userfile", arguments);
-
-            return ParseResult(result);
-        }
-
-        private UploadResult ParseResult(UploadResult result)
-        {
-            if (result.IsSuccess)
+            string error = xele.GetElementValue("errorCode");
+            if (!string.IsNullOrEmpty(error))
             {
-                XDocument xdoc = XDocument.Parse(result.Response);
-                XElement xele = xdoc.Root.Element("upload");
+                string errorMessage;
 
-                string error = xele.GetElementValue("errorCode");
-                if (!string.IsNullOrEmpty(error))
+                switch (error)
                 {
-                    string errorMessage;
-
-                    switch (error)
-                    {
-                        case "1":
-                            errorMessage = "The MD5 sum that you provided did not match the MD5 sum that we calculated for the uploaded image file." +
-                                           " There may of been a network interruption during upload. Suggest that you try the upload again.";
-                            break;
-                        case "2":
-                            errorMessage = "The apiKey that you provided does not exist or has been banned. Please contact us for more information.";
-                            break;
-                        case "3":
-                            errorMessage = "The file that you provided was not a png or jpg.";
-                            break;
-                        case "4":
-                            errorMessage = "The file that you provided was too large, currently the limit per file is 50MB.";
-                            break;
-                        case "99":
-                        default:
-                            errorMessage = "An unkown error occured, please contact the admin and include a copy of the file that you were trying to upload.";
-                            break;
-                    }
-
-                    Errors.Add(errorMessage);
+                    case "1":
+                        errorMessage = "The MD5 sum that you provided did not match the MD5 sum that we calculated for the uploaded image file." +
+                                       " There may of been a network interruption during upload. Suggest that you try the upload again.";
+                        break;
+                    case "2":
+                        errorMessage = "The apiKey that you provided does not exist or has been banned. Please contact us for more information.";
+                        break;
+                    case "3":
+                        errorMessage = "The file that you provided was not a png or jpg.";
+                        break;
+                    case "4":
+                        errorMessage = "The file that you provided was too large, currently the limit per file is 50MB.";
+                        break;
+                    case "99":
+                    default:
+                        errorMessage = "An unkown error occured, please contact the admin and include a copy of the file that you were trying to upload.";
+                        break;
                 }
-                else
-                {
-                    result.URL = xele.GetElementValue("original");
-                    result.ThumbnailURL = xele.GetElementValue("small");
-                    result.DeletionURL = xele.GetElementValue("deleteurl");
-                }
+
+                Errors.Add(errorMessage);
+            } else
+            {
+                result.URL = xele.GetElementValue("original");
+                result.ThumbnailURL = xele.GetElementValue("small");
+                result.DeletionURL = xele.GetElementValue("deleteurl");
             }
-
-            return result;
         }
+
+        return result;
     }
 }

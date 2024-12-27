@@ -23,117 +23,118 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Helpers;
 using ShareX.HelpersLib.Properties;
+
 using System;
 using System.ComponentModel;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Controls;
+
+public class ObjectListView : MyListView
 {
-    public class ObjectListView : MyListView
+    public enum ObjectType
     {
-        public enum ObjectType
+        Fields,
+        Properties
+    }
+
+    [DefaultValue(ObjectType.Properties)]
+    public ObjectType SetObjectType { get; set; }
+
+    private object selectedObject;
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public object SelectedObject
+    {
+        get
         {
-            Fields,
-            Properties
+            return selectedObject;
         }
-
-        [DefaultValue(ObjectType.Properties)]
-        public ObjectType SetObjectType { get; set; }
-
-        private object selectedObject;
-
-        public object SelectedObject
+        set
         {
-            get
+            selectedObject = value;
+
+            SelectObject(selectedObject);
+        }
+    }
+
+    public ObjectListView()
+    {
+        SetObjectType = ObjectType.Properties;
+        MultiSelect = false;
+        Columns.Add(Resources.ObjectListView_ObjectListView_Name, 125);
+        Columns.Add(Resources.ObjectListView_ObjectListView_Value, 300);
+
+        ContextMenuStrip cms = new();
+        cms.ShowImageMargin = false;
+        cms.Items.Add(Resources.ObjectListView_ObjectListView_Copy_name).Click += PropertyListView_Click_Name;
+        cms.Items.Add(Resources.ObjectListView_ObjectListView_Copy_value).Click += PropertyListView_Click_Value;
+        ContextMenuStrip = cms;
+    }
+
+    private void PropertyListView_Click_Name(object sender, EventArgs e)
+    {
+        if (SelectedItems.Count > 0)
+        {
+            string text = SelectedItems[0].Text;
+
+            if (!string.IsNullOrEmpty(text))
             {
-                return selectedObject;
+                ClipboardHelpers.CopyText(text);
             }
-            set
-            {
-                selectedObject = value;
+        }
+    }
 
-                SelectObject(selectedObject);
+    private void PropertyListView_Click_Value(object sender, EventArgs e)
+    {
+        if (SelectedItems.Count > 0 && SelectedItems[0].SubItems.Count > 1)
+        {
+            string text = SelectedItems[0].SubItems[1].Text;
+
+            if (!string.IsNullOrEmpty(text))
+            {
+                ClipboardHelpers.CopyText(text);
             }
         }
+    }
 
-        public ObjectListView()
+    private void SelectObject(object obj)
+    {
+        Items.Clear();
+
+        if (obj != null)
         {
-            SetObjectType = ObjectType.Properties;
-            MultiSelect = false;
-            Columns.Add(Resources.ObjectListView_ObjectListView_Name, 125);
-            Columns.Add(Resources.ObjectListView_ObjectListView_Value, 300);
+            Type type = obj.GetType();
 
-            ContextMenuStrip cms = new ContextMenuStrip();
-            cms.ShowImageMargin = false;
-            cms.Items.Add(Resources.ObjectListView_ObjectListView_Copy_name).Click += PropertyListView_Click_Name;
-            cms.Items.Add(Resources.ObjectListView_ObjectListView_Copy_value).Click += PropertyListView_Click_Value;
-            ContextMenuStrip = cms;
-        }
-
-        private void PropertyListView_Click_Name(object sender, EventArgs e)
-        {
-            if (SelectedItems.Count > 0)
+            if (SetObjectType == ObjectType.Fields)
             {
-                string text = SelectedItems[0].Text;
-
-                if (!string.IsNullOrEmpty(text))
+                foreach (FieldInfo field in type.GetFields())
                 {
-                    ClipboardHelpers.CopyText(text);
+                    AddObject(field.GetValue(obj), field.Name);
+                }
+            } else if (SetObjectType == ObjectType.Properties)
+            {
+                foreach (PropertyInfo property in type.GetProperties())
+                {
+                    AddObject(property.GetValue(obj, null), property.Name);
                 }
             }
         }
+    }
 
-        private void PropertyListView_Click_Value(object sender, EventArgs e)
+    private void AddObject(object obj, string name)
+    {
+        ListViewItem lvi = new(name);
+
+        if (obj != null)
         {
-            if (SelectedItems.Count > 0 && SelectedItems[0].SubItems.Count > 1)
-            {
-                string text = SelectedItems[0].SubItems[1].Text;
-
-                if (!string.IsNullOrEmpty(text))
-                {
-                    ClipboardHelpers.CopyText(text);
-                }
-            }
+            lvi.Tag = obj;
+            lvi.SubItems.Add(obj.ToString());
         }
 
-        private void SelectObject(object obj)
-        {
-            Items.Clear();
-
-            if (obj != null)
-            {
-                Type type = obj.GetType();
-
-                if (SetObjectType == ObjectType.Fields)
-                {
-                    foreach (FieldInfo field in type.GetFields())
-                    {
-                        AddObject(field.GetValue(obj), field.Name);
-                    }
-                }
-                else if (SetObjectType == ObjectType.Properties)
-                {
-                    foreach (PropertyInfo property in type.GetProperties())
-                    {
-                        AddObject(property.GetValue(obj, null), property.Name);
-                    }
-                }
-            }
-        }
-
-        private void AddObject(object obj, string name)
-        {
-            ListViewItem lvi = new ListViewItem(name);
-
-            if (obj != null)
-            {
-                lvi.Tag = obj;
-                lvi.SubItems.Add(obj.ToString());
-            }
-
-            Items.Add(lvi);
-        }
+        Items.Add(lvi);
     }
 }

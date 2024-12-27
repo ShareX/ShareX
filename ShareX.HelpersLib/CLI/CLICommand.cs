@@ -25,42 +25,32 @@
 
 using System;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.CLI;
+
+public class CLICommand(string command = null, string parameter = null)
 {
-    public class CLICommand
+    public string Command { get; set; } = command;
+    public string Parameter { get; set; } = parameter;
+    public bool IsCommand { get; set; } // Starts with hyphen?
+
+    public bool CheckCommand(string command, StringComparison comparisonType = StringComparison.OrdinalIgnoreCase) => !string.IsNullOrEmpty(Command) && Command.Equals(command, comparisonType);
+
+    public override string ToString()
     {
-        public string Command { get; set; }
-        public string Parameter { get; set; }
-        public bool IsCommand { get; set; } // Starts with hyphen?
+        string text = "";
 
-        public CLICommand(string command = null, string parameter = null)
+        if (IsCommand)
         {
-            Command = command;
-            Parameter = parameter;
+            text += "-";
         }
 
-        public bool CheckCommand(string command, StringComparison comparisonType = StringComparison.OrdinalIgnoreCase)
+        text += Command;
+
+        if (!string.IsNullOrEmpty(Parameter))
         {
-            return !string.IsNullOrEmpty(Command) && Command.Equals(command, comparisonType);
+            text += " \"" + Parameter + "\"";
         }
 
-        public override string ToString()
-        {
-            string text = "";
-
-            if (IsCommand)
-            {
-                text += "-";
-            }
-
-            text += Command;
-
-            if (!string.IsNullOrEmpty(Parameter))
-            {
-                text += " \"" + Parameter + "\"";
-            }
-
-            return text;
-        }
+        return text;
     }
 }

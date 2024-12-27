@@ -23,22 +23,21 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX
+namespace ShareX.Tools.OCR;
+
+public class OCRLanguage
 {
-    public class OCRLanguage
+    public string DisplayName { get; set; }
+    public string LanguageTag { get; set; }
+
+    public OCRLanguage(string displayName, string languageTag)
     {
-        public string DisplayName { get; set; }
-        public string LanguageTag { get; set; }
+        DisplayName = displayName;
+        LanguageTag = languageTag;
+    }
 
-        public OCRLanguage(string displayName, string languageTag)
-        {
-            DisplayName = displayName;
-            LanguageTag = languageTag;
-        }
-
-        public override string ToString()
-        {
-            return DisplayName;
-        }
+    public override string ToString()
+    {
+        return DisplayName;
     }
 }

@@ -24,82 +24,86 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
+
+using ShareX.HelpersLib.Helpers;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders;
+
+public class OneTimeSecretTextUploaderService : TextUploaderService
 {
-    public class OneTimeSecretTextUploaderService : TextUploaderService
+    public override TextDestination EnumValue { get; } = TextDestination.OneTimeSecret;
+
+    public override Icon ServiceIcon => Resources.OneTimeSecret;
+
+    public override bool CheckConfig(UploadersConfig config) => true;
+
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        public override TextDestination EnumValue { get; } = TextDestination.OneTimeSecret;
-
-        public override Icon ServiceIcon => Resources.OneTimeSecret;
-
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        return new OneTimeSecret()
         {
-            return new OneTimeSecret()
-            {
-                API_KEY = config.OneTimeSecretAPIKey,
-                API_USERNAME = config.OneTimeSecretAPIUsername
-            };
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOneTimeSecret;
+            API_KEY = config.OneTimeSecretAPIKey,
+            API_USERNAME = config.OneTimeSecretAPIUsername
+        };
     }
 
-    public sealed class OneTimeSecret : TextUploader
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpOneTimeSecret;
+}
+
+public sealed class OneTimeSecret : TextUploader
+{
+    private const string API_ENDPOINT = "https://onetimesecret.com/api/v1/share";
+
+    public string API_KEY { get; set; }
+    public string API_USERNAME { get; set; }
+
+    public override UploadResult UploadText(string text, string fileName)
     {
-        private const string API_ENDPOINT = "https://onetimesecret.com/api/v1/share";
+        UploadResult result = new();
 
-        public string API_KEY { get; set; }
-        public string API_USERNAME { get; set; }
-
-        public override UploadResult UploadText(string text, string fileName)
+        if (!string.IsNullOrEmpty(text))
         {
-            UploadResult result = new UploadResult();
+            Dictionary<string, string> args = new();
+            args.Add("secret", text);
 
-            if (!string.IsNullOrEmpty(text))
+            NameValueCollection headers = null;
+
+            if (!string.IsNullOrEmpty(API_USERNAME) && !string.IsNullOrEmpty(API_KEY))
             {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("secret", text);
-
-                NameValueCollection headers = null;
-
-                if (!string.IsNullOrEmpty(API_USERNAME) && !string.IsNullOrEmpty(API_KEY))
-                {
-                    headers = RequestHelpers.CreateAuthenticationHeader(API_USERNAME, API_KEY);
-                }
-
-                result.Response = SendRequestMultiPart(API_ENDPOINT, args, headers);
-
-                if (!string.IsNullOrEmpty(result.Response))
-                {
-                    OneTimeSecretResponse jsonResponse = JsonConvert.DeserializeObject<OneTimeSecretResponse>(result.Response);
-
-                    if (jsonResponse != null)
-                    {
-                        result.URL = URLHelpers.CombineURL("https://onetimesecret.com/secret/", jsonResponse.secret_key);
-                    }
-                }
+                headers = RequestHelpers.CreateAuthenticationHeader(API_USERNAME, API_KEY);
             }
 
-            return result;
+            result.Response = SendRequestMultiPart(API_ENDPOINT, args, headers);
+
+            if (!string.IsNullOrEmpty(result.Response))
+            {
+                OneTimeSecretResponse jsonResponse = JsonConvert.DeserializeObject<OneTimeSecretResponse>(result.Response);
+
+                if (jsonResponse != null)
+                {
+                    result.URL = URLHelpers.CombineURL("https://onetimesecret.com/secret/", jsonResponse.secret_key);
+                }
+            }
         }
 
-        public class OneTimeSecretResponse
-        {
-            public string custid { get; set; }
-            public string metadata_key { get; set; }
-            public string secret_key { get; set; }
-            public string ttl { get; set; }
-            public string updated { get; set; }
-            public string created { get; set; }
-        }
+        return result;
+    }
+
+    public class OneTimeSecretResponse
+    {
+        public string custid { get; set; }
+        public string metadata_key { get; set; }
+        public string secret_key { get; set; }
+        public string ttl { get; set; }
+        public string updated { get; set; }
+        public string created { get; set; }
     }
 }

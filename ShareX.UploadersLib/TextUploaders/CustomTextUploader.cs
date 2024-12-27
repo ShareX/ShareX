@@ -24,106 +24,88 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.CustomUploader;
+using ShareX.UploadersLib.Helpers;
+
 using System;
 using System.IO;
 using System.Text;
 
-namespace ShareX.UploadersLib.TextUploaders
+namespace ShareX.UploadersLib.TextUploaders;
+
+public class CustomTextUploaderService : TextUploaderService
 {
-    public class CustomTextUploaderService : TextUploaderService
+    public override TextDestination EnumValue { get; } = TextDestination.CustomTextUploader;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override TextDestination EnumValue { get; } = TextDestination.CustomTextUploader;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomTextUploaderSelected);
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            int index;
-
-            if (taskInfo.OverrideCustomUploader)
-            {
-                index = taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1);
-            }
-            else
-            {
-                index = config.CustomTextUploaderSelected;
-            }
-
-            CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
-
-            if (customUploader != null)
-            {
-                return new CustomTextUploader(customUploader);
-            }
-
-            return null;
-        }
+        return config.CustomUploadersList != null && config.CustomUploadersList.IsValidIndex(config.CustomTextUploaderSelected);
     }
 
-    public sealed class CustomTextUploader : TextUploader
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        private CustomUploaderItem uploader;
+        int index = taskInfo.OverrideCustomUploader
+            ? taskInfo.CustomUploaderIndex.BetweenOrDefault(0, config.CustomUploadersList.Count - 1)
+            : config.CustomTextUploaderSelected;
+        CustomUploaderItem customUploader = config.CustomUploadersList.ReturnIfValidIndex(index);
 
-        public CustomTextUploader(CustomUploaderItem customUploaderItem)
+        return customUploader != null ? new CustomTextUploader(customUploader) : (GenericUploader)null;
+    }
+}
+
+public sealed class CustomTextUploader : TextUploader
+{
+    private CustomUploaderItem uploader;
+
+    public CustomTextUploader(CustomUploaderItem customUploaderItem)
+    {
+        uploader = customUploaderItem;
+    }
+
+    public override UploadResult UploadText(string text, string fileName)
+    {
+        UploadResult result = new();
+        CustomUploaderInput input = new(fileName, text);
+
+        if (uploader.Body == CustomUploaderBody.None)
         {
-            uploader = customUploaderItem;
-        }
-
-        public override UploadResult UploadText(string text, string fileName)
+            result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input));
+        } else if (uploader.Body == CustomUploaderBody.MultipartFormData)
         {
-            UploadResult result = new UploadResult();
-            CustomUploaderInput input = new CustomUploaderInput(fileName, text);
-
-            if (uploader.Body == CustomUploaderBody.None)
+            if (string.IsNullOrEmpty(uploader.FileFormName))
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input));
-            }
-            else if (uploader.Body == CustomUploaderBody.MultipartFormData)
-            {
-                if (string.IsNullOrEmpty(uploader.FileFormName))
-                {
-                    result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input),
-                        null, uploader.RequestMethod);
-                }
-                else
-                {
-                    byte[] bytes = Encoding.UTF8.GetBytes(text);
-                    using (MemoryStream stream = new MemoryStream(bytes))
-                    {
-                        result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(), uploader.GetArguments(input),
-                            uploader.GetHeaders(input), null, uploader.RequestMethod);
-                    }
-                }
-            }
-            else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
-            {
-                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input));
-            }
-            else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
-            {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(),
-                    null, uploader.GetHeaders(input));
-            }
-            else if (uploader.Body == CustomUploaderBody.Binary)
+                result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input),
+                    null, uploader.RequestMethod);
+            } else
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(text);
-                using (MemoryStream stream = new MemoryStream(bytes))
-                {
-                    result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, MimeTypes.GetMimeTypeFromFileName(fileName),
-                        null, uploader.GetHeaders(input));
-                }
+                using MemoryStream stream = new(bytes);
+                result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.RequestMethod);
             }
-            else
-            {
-                throw new Exception("Unsupported request format: " + uploader.Body);
-            }
-
-            uploader.TryParseResponse(result, LastResponseInfo, Errors, input);
-
-            return result;
+        } else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
+        {
+            result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input));
+        } else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
+        {
+            result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(),
+                null, uploader.GetHeaders(input));
+        } else if (uploader.Body == CustomUploaderBody.Binary)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(text);
+            using MemoryStream stream = new(bytes);
+            result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, MimeTypes.GetMimeTypeFromFileName(fileName),
+                null, uploader.GetHeaders(input));
+        } else
+        {
+            throw new Exception("Unsupported request format: " + uploader.Body);
         }
+
+        uploader.TryParseResponse(result, LastResponseInfo, Errors, input);
+
+        return result;
     }
 }

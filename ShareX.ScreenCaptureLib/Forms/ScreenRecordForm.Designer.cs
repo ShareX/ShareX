@@ -1,4 +1,6 @@
-﻿namespace ShareX.ScreenCaptureLib
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX.ScreenCaptureLib
 {
     partial class ScreenRecordForm
     {
@@ -17,12 +19,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScreenRecordForm));
-            this.btnStart = new ShareX.HelpersLib.NoFocusBorderButton();
+            this.btnStart = new ShareX.HelpersLib.Controls.NoFocusBorderButton();
             this.lblTimer = new System.Windows.Forms.Label();
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
-            this.btnAbort = new ShareX.HelpersLib.NoFocusBorderButton();
+            this.btnAbort = new ShareX.HelpersLib.Controls.NoFocusBorderButton();
             this.pInfo = new System.Windows.Forms.Panel();
-            this.btnPause = new ShareX.HelpersLib.NoFocusBorderButton();
+            this.btnPause = new ShareX.HelpersLib.Controls.NoFocusBorderButton();
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiStart = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPause = new System.Windows.Forms.ToolStripMenuItem();
@@ -127,16 +129,16 @@
 
         #endregion
 
-        private ShareX.HelpersLib.NoFocusBorderButton btnStart;
+        private NoFocusBorderButton btnStart;
         private System.Windows.Forms.Timer timerRefresh;
         private System.Windows.Forms.Label lblTimer;
-        private ShareX.HelpersLib.NoFocusBorderButton btnAbort;
+        private NoFocusBorderButton btnAbort;
         private System.Windows.Forms.Panel pInfo;
         private System.Windows.Forms.ContextMenuStrip cmsMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiStart;
         private System.Windows.Forms.ToolStripMenuItem tsmiAbort;
         private System.Windows.Forms.NotifyIcon niTray;
-        private HelpersLib.NoFocusBorderButton btnPause;
+        private NoFocusBorderButton btnPause;
         private System.Windows.Forms.ToolStripMenuItem tsmiPause;
     }
 }

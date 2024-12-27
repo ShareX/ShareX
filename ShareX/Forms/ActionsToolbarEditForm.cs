@@ -24,148 +24,130 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+using ShareX.HelpersLib.Helpers;
 using ShareX.Properties;
+
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class ActionsToolbarEditForm : Form
 {
-    public partial class ActionsToolbarEditForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public List<HotkeyType> Actions { get; private set; }
+
+    public ActionsToolbarEditForm(List<HotkeyType> actions)
     {
-        public List<HotkeyType> Actions { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public ActionsToolbarEditForm(List<HotkeyType> actions)
+        Actions = actions;
+
+        foreach (HotkeyType hotkeyType in Helpers.GetEnums<HotkeyType>())
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+            Image img = hotkeyType == HotkeyType.None ? Resources.ui_splitter : TaskHelpers.FindMenuIcon(hotkeyType);
+            ilMain.Images.Add(hotkeyType.ToString(), img);
+        }
 
-            Actions = actions;
+        AddEnumItemsContextMenu(AddAction, cmsAction);
 
-            foreach (HotkeyType hotkeyType in Helpers.GetEnums<HotkeyType>())
+        foreach (HotkeyType action in Actions)
+        {
+            AddActionToList(action);
+        }
+    }
+
+    private void AddEnumItemsContextMenu(Action<HotkeyType> selectedEnum, params ToolStripDropDown[] parents)
+    {
+        EnumInfo[] enums = Helpers.GetEnums<HotkeyType>().OfType<Enum>().Select(x => new EnumInfo(x)).ToArray();
+
+        foreach (ToolStripDropDown parent in parents)
+        {
+            foreach (EnumInfo enumInfo in enums)
             {
+                HotkeyType hotkeyType = (HotkeyType)Enum.ToObject(typeof(HotkeyType), enumInfo.Value);
+
+                string text;
                 Image img;
 
                 if (hotkeyType == HotkeyType.None)
                 {
+                    text = Resources.ActionsToolbarEditForm_Separator;
                     img = Resources.ui_splitter;
-                }
-                else
+                } else
                 {
+                    text = enumInfo.Description.Replace("&", "&&");
                     img = TaskHelpers.FindMenuIcon(hotkeyType);
                 }
 
-                ilMain.Images.Add(hotkeyType.ToString(), img);
-            }
+                ToolStripMenuItem tsmi = new(text);
+                tsmi.Image = img;
+                tsmi.Tag = enumInfo;
 
-            AddEnumItemsContextMenu(AddAction, cmsAction);
-
-            foreach (HotkeyType action in Actions)
-            {
-                AddActionToList(action);
-            }
-        }
-
-        private void AddEnumItemsContextMenu(Action<HotkeyType> selectedEnum, params ToolStripDropDown[] parents)
-        {
-            EnumInfo[] enums = Helpers.GetEnums<HotkeyType>().OfType<Enum>().Select(x => new EnumInfo(x)).ToArray();
-
-            foreach (ToolStripDropDown parent in parents)
-            {
-                foreach (EnumInfo enumInfo in enums)
+                tsmi.Click += (sender, e) =>
                 {
-                    HotkeyType hotkeyType = (HotkeyType)Enum.ToObject(typeof(HotkeyType), enumInfo.Value);
+                    selectedEnum(hotkeyType);
+                };
 
-                    string text;
-                    Image img;
+                if (!string.IsNullOrEmpty(enumInfo.Category))
+                {
+                    ToolStripMenuItem tsmiParent = parent.Items.OfType<ToolStripMenuItem>().FirstOrDefault(x => x.Text == enumInfo.Category);
 
-                    if (hotkeyType == HotkeyType.None)
+                    if (tsmiParent == null)
                     {
-                        text = Resources.ActionsToolbarEditForm_Separator;
-                        img = Resources.ui_splitter;
-                    }
-                    else
-                    {
-                        text = enumInfo.Description.Replace("&", "&&");
-                        img = TaskHelpers.FindMenuIcon(hotkeyType);
+                        tsmiParent = new ToolStripMenuItem(enumInfo.Category);
+                        parent.Items.Add(tsmiParent);
                     }
 
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(text);
-                    tsmi.Image = img;
-                    tsmi.Tag = enumInfo;
-
-                    tsmi.Click += (sender, e) =>
-                    {
-                        selectedEnum(hotkeyType);
-                    };
-
-                    if (!string.IsNullOrEmpty(enumInfo.Category))
-                    {
-                        ToolStripMenuItem tsmiParent = parent.Items.OfType<ToolStripMenuItem>().FirstOrDefault(x => x.Text == enumInfo.Category);
-
-                        if (tsmiParent == null)
-                        {
-                            tsmiParent = new ToolStripMenuItem(enumInfo.Category);
-                            parent.Items.Add(tsmiParent);
-                        }
-
-                        tsmiParent.DropDownItems.Add(tsmi);
-                    }
-                    else
-                    {
-                        parent.Items.Add(tsmi);
-                    }
+                    tsmiParent.DropDownItems.Add(tsmi);
+                } else
+                {
+                    parent.Items.Add(tsmi);
                 }
             }
         }
+    }
 
-        private void AddAction(HotkeyType hotkeyType)
+    private void AddAction(HotkeyType hotkeyType)
+    {
+        Actions.Add(hotkeyType);
+        AddActionToList(hotkeyType);
+    }
+
+    private void AddActionToList(HotkeyType hotkeyType)
+    {
+        string text = hotkeyType == HotkeyType.None ? Resources.ActionsToolbarEditForm_Separator : hotkeyType.GetLocalizedDescription();
+        ListViewItem lvi = new()
         {
-            Actions.Add(hotkeyType);
-            AddActionToList(hotkeyType);
-        }
+            Text = text,
+            ImageKey = hotkeyType.ToString()
+        };
 
-        private void AddActionToList(HotkeyType hotkeyType)
+        lvActions.Items.Add(lvi);
+    }
+
+    private void RemoveAction(int index)
+    {
+        Actions.RemoveAt(index);
+        lvActions.Items.RemoveAt(index);
+    }
+
+    private void btnRemove_Click(object sender, EventArgs e)
+    {
+        if (lvActions.SelectedIndex >= 0)
         {
-            string text;
-
-            if (hotkeyType == HotkeyType.None)
-            {
-                text = Resources.ActionsToolbarEditForm_Separator;
-            }
-            else
-            {
-                text = hotkeyType.GetLocalizedDescription();
-            }
-
-            ListViewItem lvi = new ListViewItem()
-            {
-                Text = text,
-                ImageKey = hotkeyType.ToString()
-            };
-
-            lvActions.Items.Add(lvi);
+            RemoveAction(lvActions.SelectedIndex);
         }
+    }
 
-        private void RemoveAction(int index)
-        {
-            Actions.RemoveAt(index);
-            lvActions.Items.RemoveAt(index);
-        }
-
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-            if (lvActions.SelectedIndex >= 0)
-            {
-                RemoveAction(lvActions.SelectedIndex);
-            }
-        }
-
-        private void lvActions_ItemMoved(object sender, int oldIndex, int newIndex)
-        {
-            Actions.Move(oldIndex, newIndex);
-        }
+    private void lvActions_ItemMoved(object sender, int oldIndex, int newIndex)
+    {
+        Actions.Move(oldIndex, newIndex);
     }
 }

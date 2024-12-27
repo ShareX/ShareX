@@ -27,75 +27,72 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class FPSManager
 {
-    public class FPSManager
+    public event Action FPSUpdated;
+
+    public int FPS { get; private set; }
+    public int FPSLimit { get; set; }
+
+    private int frameCount;
+    private Stopwatch fpsTimer, frameTimer;
+
+    public FPSManager()
     {
-        public event Action FPSUpdated;
+        fpsTimer = new Stopwatch();
+        frameTimer = new Stopwatch();
+    }
 
-        public int FPS { get; private set; }
-        public int FPSLimit { get; set; }
+    public FPSManager(int fpsLimit) : this()
+    {
+        FPSLimit = fpsLimit;
+    }
 
-        private int frameCount;
-        private Stopwatch fpsTimer, frameTimer;
+    protected void OnFPSUpdated()
+    {
+        FPSUpdated?.Invoke();
+    }
 
-        public FPSManager()
+    public void Update()
+    {
+        frameCount++;
+
+        if (!fpsTimer.IsRunning)
         {
-            fpsTimer = new Stopwatch();
-            frameTimer = new Stopwatch();
+            fpsTimer.Start();
+        } else if (fpsTimer.ElapsedMilliseconds >= 1000)
+        {
+            FPS = (int)Math.Round(frameCount / fpsTimer.Elapsed.TotalSeconds);
+
+            OnFPSUpdated();
+
+            frameCount = 0;
+            fpsTimer.Restart();
         }
 
-        public FPSManager(int fpsLimit) : this()
+        if (FPSLimit > 0)
         {
-            FPSLimit = fpsLimit;
-        }
-
-        protected void OnFPSUpdated()
-        {
-            FPSUpdated?.Invoke();
-        }
-
-        public void Update()
-        {
-            frameCount++;
-
-            if (!fpsTimer.IsRunning)
+            if (!frameTimer.IsRunning)
             {
-                fpsTimer.Start();
-            }
-            else if (fpsTimer.ElapsedMilliseconds >= 1000)
+                frameTimer.Start();
+            } else
             {
-                FPS = (int)Math.Round(frameCount / fpsTimer.Elapsed.TotalSeconds);
+                double currentFrameDuration = frameTimer.Elapsed.TotalMilliseconds;
+                double targetFrameDuration = 1000d / FPSLimit;
 
-                OnFPSUpdated();
-
-                frameCount = 0;
-                fpsTimer.Restart();
-            }
-
-            if (FPSLimit > 0)
-            {
-                if (!frameTimer.IsRunning)
+                if (currentFrameDuration < targetFrameDuration)
                 {
-                    frameTimer.Start();
-                }
-                else
-                {
-                    double currentFrameDuration = frameTimer.Elapsed.TotalMilliseconds;
-                    double targetFrameDuration = 1000d / FPSLimit;
+                    int sleepDuration = (int)Math.Round(targetFrameDuration - currentFrameDuration);
 
-                    if (currentFrameDuration < targetFrameDuration)
+                    if (sleepDuration > 0)
                     {
-                        int sleepDuration = (int)Math.Round(targetFrameDuration - currentFrameDuration);
-
-                        if (sleepDuration > 0)
-                        {
-                            Thread.Sleep(sleepDuration);
-                        }
+                        Thread.Sleep(sleepDuration);
                     }
-
-                    frameTimer.Restart();
                 }
+
+                frameTimer.Restart();
             }
         }
     }

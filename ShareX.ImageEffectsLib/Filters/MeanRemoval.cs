@@ -24,20 +24,20 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System.ComponentModel;
 using System.Drawing;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.ImageEffectsLib.Filters;
+
+[Description("Mean removal")]
+internal class MeanRemoval : ImageEffect
 {
-    [Description("Mean removal")]
-    internal class MeanRemoval : ImageEffect
+    public override Bitmap Apply(Bitmap bmp)
     {
-        public override Bitmap Apply(Bitmap bmp)
+        using (bmp)
         {
-            using (bmp)
-            {
-                return ConvolutionMatrixManager.MeanRemoval().Apply(bmp);
-            }
+            return ConvolutionMatrixManager.MeanRemoval().Apply(bmp);
         }
     }
 }

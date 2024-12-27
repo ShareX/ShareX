@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using ShareX.HelpersLib.Controls;
+
+namespace ShareX
 {
     partial class PinToScreenForm
     {
@@ -16,88 +18,94 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PinToScreenForm));
-            this.tsMain = new ShareX.HelpersLib.ToolStripEx();
-            this.tsbCopy = new System.Windows.Forms.ToolStripButton();
-            this.tslScale = new System.Windows.Forms.ToolStripLabel();
-            this.tsbOptions = new System.Windows.Forms.ToolStripButton();
-            this.tsbClose = new System.Windows.Forms.ToolStripButton();
-            this.tsMain.SuspendLayout();
-            this.SuspendLayout();
+            tsMain = new ToolStripEx();
+            tsbCopy = new System.Windows.Forms.ToolStripButton();
+            tslScale = new System.Windows.Forms.ToolStripLabel();
+            tsbOptions = new System.Windows.Forms.ToolStripButton();
+            tsbClose = new System.Windows.Forms.ToolStripButton();
+            tsbSave = new System.Windows.Forms.ToolStripButton();
+            tsMain.SuspendLayout();
+            SuspendLayout();
             // 
             // tsMain
             // 
-            this.tsMain.ClickThrough = true;
-            resources.ApplyResources(this.tsMain, "tsMain");
-            this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbCopy,
-            this.tslScale,
-            this.tsbOptions,
-            this.tsbClose});
-            this.tsMain.Name = "tsMain";
-            this.tsMain.MouseLeave += new System.EventHandler(this.tsMain_MouseLeave);
+            tsMain.ClickThrough = true;
+            resources.ApplyResources(tsMain, "tsMain");
+            tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsbCopy, tsbSave, tslScale, tsbOptions, tsbClose });
+            tsMain.Name = "tsMain";
+            tsMain.MouseLeave += TsMain_MouseLeave;
             // 
             // tsbCopy
             // 
-            this.tsbCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCopy.Image = global::ShareX.Properties.Resources.document_copy;
-            resources.ApplyResources(this.tsbCopy, "tsbCopy");
-            this.tsbCopy.Name = "tsbCopy";
-            this.tsbCopy.Padding = new System.Windows.Forms.Padding(4);
-            this.tsbCopy.Click += new System.EventHandler(this.tsbCopy_Click);
+            tsbCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsbCopy.Image = Properties.Resources.document_copy;
+            resources.ApplyResources(tsbCopy, "tsbCopy");
+            tsbCopy.Name = "tsbCopy";
+            tsbCopy.Padding = new System.Windows.Forms.Padding(4);
+            tsbCopy.Click += TsbCopy_Click;
             // 
             // tslScale
             // 
-            resources.ApplyResources(this.tslScale, "tslScale");
-            this.tslScale.Name = "tslScale";
-            this.tslScale.Padding = new System.Windows.Forms.Padding(4);
-            this.tslScale.Click += new System.EventHandler(this.tslScale_Click);
+            resources.ApplyResources(tslScale, "tslScale");
+            tslScale.Name = "tslScale";
+            tslScale.Padding = new System.Windows.Forms.Padding(4);
+            tslScale.Click += TslScale_Click;
             // 
             // tsbOptions
             // 
-            this.tsbOptions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbOptions.Image = global::ShareX.Properties.Resources.gear;
-            resources.ApplyResources(this.tsbOptions, "tsbOptions");
-            this.tsbOptions.Name = "tsbOptions";
-            this.tsbOptions.Padding = new System.Windows.Forms.Padding(4);
-            this.tsbOptions.Click += new System.EventHandler(this.tsbOptions_Click);
+            tsbOptions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsbOptions.Image = Properties.Resources.gear;
+            resources.ApplyResources(tsbOptions, "tsbOptions");
+            tsbOptions.Name = "tsbOptions";
+            tsbOptions.Padding = new System.Windows.Forms.Padding(4);
+            tsbOptions.Click += tsbOptions_Click;
             // 
             // tsbClose
             // 
-            this.tsbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbClose.Image = global::ShareX.Properties.Resources.cross_button;
-            resources.ApplyResources(this.tsbClose, "tsbClose");
-            this.tsbClose.Name = "tsbClose";
-            this.tsbClose.Padding = new System.Windows.Forms.Padding(4);
-            this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
+            tsbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsbClose.Image = Properties.Resources.cross_button;
+            resources.ApplyResources(tsbClose, "tsbClose");
+            tsbClose.Name = "tsbClose";
+            tsbClose.Padding = new System.Windows.Forms.Padding(4);
+            tsbClose.Click += tsbClose_Click;
+            // 
+            // tsbSave
+            // 
+            tsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            tsbSave.Image = Properties.Resources.disk;
+            resources.ApplyResources(tsbSave, "tsbSave");
+            tsbSave.Name = "tsbSave";
+            tsbSave.Click += TsbSave_Click;
             // 
             // PinToScreenForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tsMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PinToScreenForm";
-            this.ShowInTaskbar = false;
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PinToScreenForm_KeyUp);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PinToScreenForm_MouseDown);
-            this.MouseEnter += new System.EventHandler(this.PinToScreenForm_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.PinToScreenForm_MouseLeave);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PinToScreenForm_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PinToScreenForm_MouseUp);
-            this.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.PinToScreenForm_MouseWheel);
-            this.tsMain.ResumeLayout(false);
-            this.tsMain.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(tsMain);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Name = "PinToScreenForm";
+            ShowInTaskbar = false;
+            KeyUp += PinToScreenForm_KeyUp;
+            MouseDown += PinToScreenForm_MouseDown;
+            MouseEnter += PinToScreenForm_MouseEnter;
+            MouseLeave += PinToScreenForm_MouseLeave;
+            MouseMove += PinToScreenForm_MouseMove;
+            MouseUp += PinToScreenForm_MouseUp;
+            MouseWheel += PinToScreenForm_MouseWheel;
+            tsMain.ResumeLayout(false);
+            tsMain.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
         #endregion
-        private HelpersLib.ToolStripEx tsMain;
+        private ToolStripEx tsMain;
         private System.Windows.Forms.ToolStripButton tsbOptions;
         private System.Windows.Forms.ToolStripButton tsbClose;
         private System.Windows.Forms.ToolStripLabel tslScale;
         private System.Windows.Forms.ToolStripButton tsbCopy;
+        private System.Windows.Forms.ToolStripButton tsbSave;
     }
 }

@@ -25,18 +25,18 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Settings;
+
+public class WritablePropertiesOnlyResolver : DefaultContractResolver
 {
-    public class WritablePropertiesOnlyResolver : DefaultContractResolver
+    protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
     {
-        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
-        {
-            IList<JsonProperty> props = base.CreateProperties(type, memberSerialization);
-            return props.Where(p => p.Writable).ToList();
-        }
+        IList<JsonProperty> props = base.CreateProperties(type, memberSerialization);
+        return [.. props.Where(p => p.Writable)];
     }
 }

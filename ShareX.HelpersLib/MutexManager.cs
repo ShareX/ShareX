@@ -26,59 +26,54 @@
 using System;
 using System.Threading;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+public class MutexManager : IDisposable
 {
-    public class MutexManager : IDisposable
+    public bool HasHandle { get; private set; }
+
+    private Mutex mutex;
+
+    public MutexManager(string mutexName) : this(mutexName, Timeout.Infinite)
     {
-        public bool HasHandle { get; private set; }
+    }
 
-        private Mutex mutex;
+    public MutexManager(string mutexName, int timeout)
+    {
+        mutex = new Mutex(false, mutexName);
 
-        public MutexManager(string mutexName) : this(mutexName, Timeout.Infinite)
+        try
+        {
+            HasHandle = mutex.WaitOne(timeout, false);
+        } catch (AbandonedMutexException)
+        {
+            HasHandle = true;
+        }
+    }
+
+    public static bool IsRunning(string mutexName)
+    {
+        try
+        {
+            using Mutex mutex = new(false, mutexName, out bool createdNew);
+            return !createdNew;
+        } catch
         {
         }
 
-        public MutexManager(string mutexName, int timeout)
+        return false;
+    }
+
+    public void Dispose()
+    {
+        if (mutex != null)
         {
-            mutex = new Mutex(false, mutexName);
-
-            try
+            if (HasHandle)
             {
-                HasHandle = mutex.WaitOne(timeout, false);
-            }
-            catch (AbandonedMutexException)
-            {
-                HasHandle = true;
-            }
-        }
-
-        public static bool IsRunning(string mutexName)
-        {
-            try
-            {
-                using (Mutex mutex = new Mutex(false, mutexName, out bool createdNew))
-                {
-                    return !createdNew;
-                }
-            }
-            catch
-            {
+                mutex.ReleaseMutex();
             }
 
-            return false;
-        }
-
-        public void Dispose()
-        {
-            if (mutex != null)
-            {
-                if (HasHandle)
-                {
-                    mutex.ReleaseMutex();
-                }
-
-                mutex.Dispose();
-            }
+            mutex.Dispose();
         }
     }
 }

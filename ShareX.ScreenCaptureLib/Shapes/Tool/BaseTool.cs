@@ -25,14 +25,13 @@
 
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
-{
-    public abstract class BaseTool : BaseShape
-    {
-        public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Tool;
+namespace ShareX.ScreenCaptureLib.Shapes.Tool;
 
-        public virtual void OnDraw(Graphics g)
-        {
-        }
+public abstract class BaseTool : BaseShape
+{
+    public override ShapeCategory ShapeCategory { get; } = ShapeCategory.Tool;
+
+    public virtual void OnDraw(Graphics g)
+    {
     }
 }

@@ -23,99 +23,99 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+using ShareX.HelpersLib.Settings;
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.ComponentModel;
 
-namespace ShareX.UploadersLib
+namespace ShareX.UploadersLib.OAuth;
+
+public class OAuthInfo : ICloneable
 {
-    public class OAuthInfo : ICloneable
+    public enum OAuthInfoSignatureMethod
     {
-        public enum OAuthInfoSignatureMethod
-        {
-            HMAC_SHA1,
-            RSA_SHA1
-        }
+        HMAC_SHA1,
+        RSA_SHA1
+    }
 
-        public string Description { get; set; }
+    public string Description { get; set; }
 
-        [Browsable(false)]
-        public string OAuthVersion { get; set; }
+    [Browsable(false)]
+    public string OAuthVersion { get; set; }
 
-        [Browsable(false)]
-        public string ConsumerKey { get; set; }
+    [Browsable(false)]
+    public string ConsumerKey { get; set; }
 
-        // Used for HMAC_SHA1 signature
-        [Browsable(false)]
-        public string ConsumerSecret { get; set; }
+    // Used for HMAC_SHA1 signature
+    [Browsable(false)]
+    public string ConsumerSecret { get; set; }
 
-        // Used for RSA_SHA1 signature
-        [Browsable(false)]
-        public string ConsumerPrivateKey { get; set; }
+    // Used for RSA_SHA1 signature
+    [Browsable(false)]
+    public string ConsumerPrivateKey { get; set; }
 
-        [Browsable(false)]
-        public OAuthInfoSignatureMethod SignatureMethod { get; set; }
+    [Browsable(false)]
+    public OAuthInfoSignatureMethod SignatureMethod { get; set; }
 
-        [Browsable(false)]
-        public string AuthToken { get; set; }
+    [Browsable(false)]
+    public string AuthToken { get; set; }
 
-        [Browsable(false), JsonEncrypt]
-        public string AuthSecret { get; set; }
+    [Browsable(false), JsonEncrypt]
+    public string AuthSecret { get; set; }
 
-        [JsonEncrypt, Description("Verification Code from the Authorization Page")]
-        public string AuthVerifier { get; set; }
+    [JsonEncrypt, Description("Verification Code from the Authorization Page")]
+    public string AuthVerifier { get; set; }
 
-        [Browsable(false)]
-        public string UserToken { get; set; }
+    [Browsable(false)]
+    public string UserToken { get; set; }
 
-        [Browsable(false), JsonEncrypt]
-        public string UserSecret { get; set; }
+    [Browsable(false), JsonEncrypt]
+    public string UserSecret { get; set; }
 
-        public OAuthInfo()
-        {
-            Description = Resources.OAuthInfo_OAuthInfo_New_account;
-            OAuthVersion = "1.0";
-        }
+    public OAuthInfo()
+    {
+        Description = Resources.OAuthInfo_OAuthInfo_New_account;
+        OAuthVersion = "1.0";
+    }
 
-        public OAuthInfo(string consumerKey) : this()
-        {
-            ConsumerKey = consumerKey;
-        }
+    public OAuthInfo(string consumerKey) : this()
+    {
+        ConsumerKey = consumerKey;
+    }
 
-        public OAuthInfo(string consumerKey, string consumerSecret) : this()
-        {
-            ConsumerKey = consumerKey;
-            ConsumerSecret = consumerSecret;
-        }
+    public OAuthInfo(string consumerKey, string consumerSecret) : this()
+    {
+        ConsumerKey = consumerKey;
+        ConsumerSecret = consumerSecret;
+    }
 
-        public OAuthInfo(string consumerKey, string consumerSecret, string userToken, string userSecret) : this(consumerKey, consumerSecret)
-        {
-            UserToken = userToken;
-            UserSecret = userSecret;
-        }
+    public OAuthInfo(string consumerKey, string consumerSecret, string userToken, string userSecret) : this(consumerKey, consumerSecret)
+    {
+        UserToken = userToken;
+        UserSecret = userSecret;
+    }
 
-        public static bool CheckOAuth(OAuthInfo oauth)
-        {
-            return oauth != null && !string.IsNullOrEmpty(oauth.ConsumerKey) &&
-                ((oauth.SignatureMethod == OAuthInfoSignatureMethod.HMAC_SHA1 && !string.IsNullOrEmpty(oauth.ConsumerSecret)) ||
-                (oauth.SignatureMethod == OAuthInfoSignatureMethod.RSA_SHA1 && !string.IsNullOrEmpty(oauth.ConsumerPrivateKey))) &&
-                !string.IsNullOrEmpty(oauth.UserToken) && !string.IsNullOrEmpty(oauth.UserSecret);
-        }
+    public static bool CheckOAuth(OAuthInfo oauth)
+    {
+        return oauth != null && !string.IsNullOrEmpty(oauth.ConsumerKey) &&
+            (oauth.SignatureMethod == OAuthInfoSignatureMethod.HMAC_SHA1 && !string.IsNullOrEmpty(oauth.ConsumerSecret) ||
+            oauth.SignatureMethod == OAuthInfoSignatureMethod.RSA_SHA1 && !string.IsNullOrEmpty(oauth.ConsumerPrivateKey)) &&
+            !string.IsNullOrEmpty(oauth.UserToken) && !string.IsNullOrEmpty(oauth.UserSecret);
+    }
 
-        public OAuthInfo Clone()
-        {
-            return MemberwiseClone() as OAuthInfo;
-        }
+    public OAuthInfo Clone()
+    {
+        return MemberwiseClone() as OAuthInfo;
+    }
 
-        object ICloneable.Clone()
-        {
-            return Clone();
-        }
+    object ICloneable.Clone()
+    {
+        return Clone();
+    }
 
-        public override string ToString()
-        {
-            return Description;
-        }
+    public override string ToString()
+    {
+        return Description;
     }
 }

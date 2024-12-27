@@ -24,79 +24,71 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+
+using ShareX.HelpersLib.Helpers;
+
 using System.Threading.Tasks;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UpdateChecker;
+
+public class AppVeyor
 {
-    public class AppVeyor
+    public string AccountName { get; set; }
+    public string ProjectSlug { get; set; }
+
+    private const string APIURL = "https://ci.appveyor.com/api";
+
+    public async Task<AppVeyorProject> GetProjectByBranch(string branch = "master")
     {
-        public string AccountName { get; set; }
-        public string ProjectSlug { get; set; }
+        string url = $"{APIURL}/projects/{AccountName}/{ProjectSlug}/branch/{branch}";
+        string response = await WebHelpers.DownloadStringAsync(url);
 
-        private const string APIURL = "https://ci.appveyor.com/api";
-
-        public async Task<AppVeyorProject> GetProjectByBranch(string branch = "master")
-        {
-            string url = $"{APIURL}/projects/{AccountName}/{ProjectSlug}/branch/{branch}";
-            string response = await WebHelpers.DownloadStringAsync(url);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonConvert.DeserializeObject<AppVeyorProject>(response);
-            }
-
-            return null;
-        }
-
-        public async Task<AppVeyorProjectArtifact[]> GetArtifacts(string jobId)
-        {
-            string url = $"{APIURL}/buildjobs/{jobId}/artifacts";
-            string response = await WebHelpers.DownloadStringAsync(url);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                return JsonConvert.DeserializeObject<AppVeyorProjectArtifact[]>(response);
-            }
-
-            return null;
-        }
-
-        public string GetArtifactDownloadURL(string jobId, string fileName)
-        {
-            return $"{APIURL}/buildjobs/{jobId}/artifacts/{fileName}";
-        }
+        return !string.IsNullOrEmpty(response) ? JsonConvert.DeserializeObject<AppVeyorProject>(response) : null;
     }
 
-    public class AppVeyorProject
+    public async Task<AppVeyorProjectArtifact[]> GetArtifacts(string jobId)
     {
-        public AppVeyorProjectInfo project { get; set; }
-        public AppVeyorProjectBuild build { get; set; }
+        string url = $"{APIURL}/buildjobs/{jobId}/artifacts";
+        string response = await WebHelpers.DownloadStringAsync(url);
+
+        return !string.IsNullOrEmpty(response) ? JsonConvert.DeserializeObject<AppVeyorProjectArtifact[]>(response) : null;
     }
 
-    public class AppVeyorProjectInfo
+    public string GetArtifactDownloadURL(string jobId, string fileName)
     {
+        return $"{APIURL}/buildjobs/{jobId}/artifacts/{fileName}";
     }
+}
 
-    public class AppVeyorProjectBuild
-    {
-        public AppVeyorProjectJob[] jobs { get; set; }
-        public string version { get; set; }
-        public string status { get; set; }
-    }
+public class AppVeyorProject
+{
+    public AppVeyorProjectInfo project { get; set; }
+    public AppVeyorProjectBuild build { get; set; }
+}
 
-    public class AppVeyorProjectJob
-    {
-        public string jobId { get; set; }
-        public string name { get; set; }
-        public string osType { get; set; }
-        public string status { get; set; }
-    }
+public class AppVeyorProjectInfo
+{
+}
 
-    public class AppVeyorProjectArtifact
-    {
-        public string fileName { get; set; }
-        public string name { get; set; }
-        public string type { get; set; }
-        public long size { get; set; }
-    }
+public class AppVeyorProjectBuild
+{
+    public AppVeyorProjectJob[] jobs { get; set; }
+    public string version { get; set; }
+    public string status { get; set; }
+}
+
+public class AppVeyorProjectJob
+{
+    public string jobId { get; set; }
+    public string name { get; set; }
+    public string osType { get; set; }
+    public string status { get; set; }
+}
+
+public class AppVeyorProjectArtifact
+{
+    public string fileName { get; set; }
+    public string name { get; set; }
+    public string type { get; set; }
+    public long size { get; set; }
 }

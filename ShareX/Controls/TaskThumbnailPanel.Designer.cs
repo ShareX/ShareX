@@ -1,4 +1,7 @@
-﻿namespace ShareX
+﻿using ShareX.Controls;
+using ShareX.HelpersLib.Controls.BlackStyle;
+
+namespace ShareX
 {
     partial class TaskThumbnailPanel
     {
@@ -34,12 +37,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskThumbnailPanel));
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
-            this.lblTitle = new ShareX.HelpersLib.BlackStyleLabel();
-            this.pThumbnail = new ShareX.TaskRoundedCornerPanel();
-            this.lblCombineVertical = new ShareX.HelpersLib.BlackStyleLabel();
-            this.lblError = new ShareX.HelpersLib.BlackStyleLabel();
-            this.lblCombineHorizontal = new ShareX.HelpersLib.BlackStyleLabel();
-            this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
+            this.lblTitle = new ShareX.HelpersLib.Controls.BlackStyle.BlackStyleLabel();
+            this.pThumbnail = new ShareX.Controls.TaskRoundedCornerPanel();
+            this.lblCombineVertical = new ShareX.HelpersLib.Controls.BlackStyle.BlackStyleLabel();
+            this.lblError = new ShareX.HelpersLib.Controls.BlackStyle.BlackStyleLabel();
+            this.lblCombineHorizontal = new ShareX.HelpersLib.Controls.BlackStyle.BlackStyleLabel();
+            this.pbProgress = new ShareX.HelpersLib.Controls.BlackStyle.BlackStyleProgressBar();
             this.pbThumbnail = new System.Windows.Forms.PictureBox();
             this.pThumbnail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbThumbnail)).BeginInit();
@@ -147,13 +150,13 @@
 
         #endregion
 
-        private ShareX.TaskRoundedCornerPanel pThumbnail;
-        private HelpersLib.BlackStyleLabel lblTitle;
-        private HelpersLib.BlackStyleProgressBar pbProgress;
+        private TaskRoundedCornerPanel pThumbnail;
+        private BlackStyleLabel lblTitle;
+        private BlackStyleProgressBar pbProgress;
         private System.Windows.Forms.PictureBox pbThumbnail;
         private System.Windows.Forms.ToolTip ttMain;
-        private HelpersLib.BlackStyleLabel lblError;
-        private HelpersLib.BlackStyleLabel lblCombineHorizontal;
-        private HelpersLib.BlackStyleLabel lblCombineVertical;
+        private BlackStyleLabel lblError;
+        private BlackStyleLabel lblCombineHorizontal;
+        private BlackStyleLabel lblCombineVertical;
     }
 }

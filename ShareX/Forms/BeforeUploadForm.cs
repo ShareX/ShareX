@@ -24,46 +24,47 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
 using ShareX.Properties;
+
 using System;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX;
+
+public partial class BeforeUploadForm : Form
 {
-    public partial class BeforeUploadForm : Form
+    public BeforeUploadForm(TaskInfo info)
     {
-        public BeforeUploadForm(TaskInfo info)
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
+        DialogResult = DialogResult.OK;
+
+        ucBeforeUpload.InitCompleted += currentDestination =>
         {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
-            DialogResult = DialogResult.OK;
+            string title = string.IsNullOrEmpty(currentDestination) ? Resources.BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_ :
+                Resources.BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_;
+            lblTitle.Text = string.Format(title, info.FileName, currentDestination);
+            pbPreview.LoadImageFromFileAsync(info.FilePath);
+        };
 
-            ucBeforeUpload.InitCompleted += currentDestination =>
-            {
-                string title = string.IsNullOrEmpty(currentDestination) ? Resources.BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_ :
-                    Resources.BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_;
-                lblTitle.Text = string.Format(title, info.FileName, currentDestination);
-                pbPreview.LoadImageFromFileAsync(info.FilePath);
-            };
+        ucBeforeUpload.Init(info);
+    }
 
-            ucBeforeUpload.Init(info);
-        }
+    private void BeforeUploadForm_Shown(object sender, EventArgs e)
+    {
+        this.ForceActivate();
+    }
 
-        private void BeforeUploadForm_Shown(object sender, EventArgs e)
-        {
-            this.ForceActivate();
-        }
+    private void btnOK_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

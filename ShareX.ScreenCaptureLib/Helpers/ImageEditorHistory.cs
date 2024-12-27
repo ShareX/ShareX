@@ -23,134 +23,133 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib.Shapes;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.ScreenCaptureLib.Helpers;
+
+internal class ImageEditorHistory : IDisposable
 {
-    internal class ImageEditorHistory : IDisposable
+    public bool CanUndo => undoMementoStack.Count > 0;
+    public bool CanRedo => redoMementoStack.Count > 0;
+
+    private readonly ShapeManager shapeManager;
+    private Stack<ImageEditorMemento> undoMementoStack = new();
+    private Stack<ImageEditorMemento> redoMementoStack = new();
+
+    public ImageEditorHistory(ShapeManager shapeManager)
     {
-        public bool CanUndo => undoMementoStack.Count > 0;
-        public bool CanRedo => redoMementoStack.Count > 0;
+        this.shapeManager = shapeManager;
+    }
 
-        private readonly ShapeManager shapeManager;
-        private Stack<ImageEditorMemento> undoMementoStack = new Stack<ImageEditorMemento>();
-        private Stack<ImageEditorMemento> redoMementoStack = new Stack<ImageEditorMemento>();
+    private void AddMemento(ImageEditorMemento memento)
+    {
+        undoMementoStack.Push(memento);
 
-        public ImageEditorHistory(ShapeManager shapeManager)
+        foreach (ImageEditorMemento redoMemento in redoMementoStack)
         {
-            this.shapeManager = shapeManager;
+            redoMemento?.Dispose();
         }
 
-        private void AddMemento(ImageEditorMemento memento)
+        redoMementoStack.Clear();
+    }
+
+    private ImageEditorMemento GetMementoFromCanvas()
+    {
+        List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
+        Bitmap canvas = (Bitmap)shapeManager.Form.Canvas.Clone();
+        return new ImageEditorMemento(shapes, shapeManager.Form.CanvasRectangle, canvas);
+    }
+
+    private ImageEditorMemento GetMementoFromShapes()
+    {
+        List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
+        return new ImageEditorMemento(shapes, shapeManager.Form.CanvasRectangle);
+    }
+
+    public void CreateCanvasMemento()
+    {
+        ImageEditorMemento memento = GetMementoFromCanvas();
+        AddMemento(memento);
+    }
+
+    public void CreateShapesMemento()
+    {
+        if (!shapeManager.IsCurrentShapeTypeRegion && shapeManager.CurrentTool != ShapeType.ToolCrop && shapeManager.CurrentTool != ShapeType.ToolCutOut)
         {
-            undoMementoStack.Push(memento);
-
-            foreach (ImageEditorMemento redoMemento in redoMementoStack)
-            {
-                redoMemento?.Dispose();
-            }
-
-            redoMementoStack.Clear();
-        }
-
-        private ImageEditorMemento GetMementoFromCanvas()
-        {
-            List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
-            Bitmap canvas = (Bitmap)shapeManager.Form.Canvas.Clone();
-            return new ImageEditorMemento(shapes, shapeManager.Form.CanvasRectangle, canvas);
-        }
-
-        private ImageEditorMemento GetMementoFromShapes()
-        {
-            List<BaseShape> shapes = shapeManager.Shapes.Select(x => x.Duplicate()).ToList();
-            return new ImageEditorMemento(shapes, shapeManager.Form.CanvasRectangle);
-        }
-
-        public void CreateCanvasMemento()
-        {
-            ImageEditorMemento memento = GetMementoFromCanvas();
+            ImageEditorMemento memento = GetMementoFromShapes();
             AddMemento(memento);
         }
+    }
 
-        public void CreateShapesMemento()
+    public void Undo()
+    {
+        if (CanUndo)
         {
-            if (!shapeManager.IsCurrentShapeTypeRegion && shapeManager.CurrentTool != ShapeType.ToolCrop && shapeManager.CurrentTool != ShapeType.ToolCutOut)
-            {
-                ImageEditorMemento memento = GetMementoFromShapes();
-                AddMemento(memento);
-            }
-        }
+            ImageEditorMemento undoMemento = undoMementoStack.Pop();
 
-        public void Undo()
-        {
-            if (CanUndo)
+            if (undoMemento.Shapes != null)
             {
-                ImageEditorMemento undoMemento = undoMementoStack.Pop();
-
-                if (undoMemento.Shapes != null)
+                if (undoMemento.Canvas == null)
                 {
-                    if (undoMemento.Canvas == null)
-                    {
-                        ImageEditorMemento redoMemento = GetMementoFromShapes();
-                        redoMementoStack.Push(redoMemento);
+                    ImageEditorMemento redoMemento = GetMementoFromShapes();
+                    redoMementoStack.Push(redoMemento);
 
-                        shapeManager.RestoreState(undoMemento);
-                    }
-                    else
-                    {
-                        ImageEditorMemento redoMemento = GetMementoFromCanvas();
-                        redoMementoStack.Push(redoMemento);
+                    shapeManager.RestoreState(undoMemento);
+                } else
+                {
+                    ImageEditorMemento redoMemento = GetMementoFromCanvas();
+                    redoMementoStack.Push(redoMemento);
 
-                        shapeManager.RestoreState(undoMemento);
-                    }
+                    shapeManager.RestoreState(undoMemento);
                 }
             }
         }
+    }
 
-        public void Redo()
+    public void Redo()
+    {
+        if (CanRedo)
         {
-            if (CanRedo)
+            ImageEditorMemento redoMemento = redoMementoStack.Pop();
+
+            if (redoMemento.Shapes != null)
             {
-                ImageEditorMemento redoMemento = redoMementoStack.Pop();
-
-                if (redoMemento.Shapes != null)
+                if (redoMemento.Canvas == null)
                 {
-                    if (redoMemento.Canvas == null)
-                    {
-                        ImageEditorMemento undoMemento = GetMementoFromShapes();
-                        undoMementoStack.Push(undoMemento);
+                    ImageEditorMemento undoMemento = GetMementoFromShapes();
+                    undoMementoStack.Push(undoMemento);
 
-                        shapeManager.RestoreState(redoMemento);
-                    }
-                    else
-                    {
-                        ImageEditorMemento undoMemento = GetMementoFromCanvas();
-                        undoMementoStack.Push(undoMemento);
+                    shapeManager.RestoreState(redoMemento);
+                } else
+                {
+                    ImageEditorMemento undoMemento = GetMementoFromCanvas();
+                    undoMementoStack.Push(undoMemento);
 
-                        shapeManager.RestoreState(redoMemento);
-                    }
+                    shapeManager.RestoreState(redoMemento);
                 }
             }
         }
+    }
 
-        public void Dispose()
+    public void Dispose()
+    {
+        foreach (ImageEditorMemento undoMemento in undoMementoStack)
         {
-            foreach (ImageEditorMemento undoMemento in undoMementoStack)
-            {
-                undoMemento?.Dispose();
-            }
-
-            undoMementoStack.Clear();
-
-            foreach (ImageEditorMemento redoMemento in redoMementoStack)
-            {
-                redoMemento?.Dispose();
-            }
-
-            redoMementoStack.Clear();
+            undoMemento?.Dispose();
         }
+
+        undoMementoStack.Clear();
+
+        foreach (ImageEditorMemento redoMemento in redoMementoStack)
+        {
+            redoMemento?.Dispose();
+        }
+
+        redoMementoStack.Clear();
     }
 }

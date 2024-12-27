@@ -24,206 +24,188 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+
+using ShareX.HelpersLib.Helpers;
+
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.UpdateChecker;
+
+public class GitHubUpdateChecker : UpdateChecker
 {
-    public class GitHubUpdateChecker : UpdateChecker
+    public string Owner { get; private set; }
+    public string Repo { get; private set; }
+    public bool IncludePreRelease { get; set; }
+    public bool IsPreRelease { get; protected set; }
+
+    private const string APIURL = "https://api.github.com";
+
+    private string ReleasesURL => $"{APIURL}/repos/{Owner}/{Repo}/releases";
+    private string LatestReleaseURL => $"{ReleasesURL}/latest";
+
+    public GitHubUpdateChecker(string owner, string repo)
     {
-        public string Owner { get; private set; }
-        public string Repo { get; private set; }
-        public bool IncludePreRelease { get; set; }
-        public bool IsPreRelease { get; protected set; }
+        Owner = owner;
+        Repo = repo;
+    }
 
-        private const string APIURL = "https://api.github.com";
-
-        private string ReleasesURL => $"{APIURL}/repos/{Owner}/{Repo}/releases";
-        private string LatestReleaseURL => $"{ReleasesURL}/latest";
-
-        public GitHubUpdateChecker(string owner, string repo)
+    public override async Task CheckUpdateAsync()
+    {
+        try
         {
-            Owner = owner;
-            Repo = repo;
+            GitHubRelease latestRelease = await GetLatestRelease(IncludePreRelease);
+
+            if (UpdateReleaseInfo(latestRelease, IsPortable, IsPortable))
+            {
+                RefreshStatus();
+                return;
+            }
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "GitHub update check failed.");
         }
 
-        public override async Task CheckUpdateAsync()
-        {
-            try
-            {
-                GitHubRelease latestRelease = await GetLatestRelease(IncludePreRelease);
+        Status = UpdateStatus.UpdateCheckFailed;
+    }
 
-                if (UpdateReleaseInfo(latestRelease, IsPortable, IsPortable))
+    public virtual async Task<string> GetLatestDownloadURL(bool isBrowserDownloadURL)
+    {
+        try
+        {
+            GitHubRelease latestRelease = await GetLatestRelease(IncludePreRelease);
+
+            if (UpdateReleaseInfo(latestRelease, IsPortable, isBrowserDownloadURL))
+            {
+                return DownloadURL;
+            }
+        } catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
+        }
+
+        return null;
+    }
+
+    protected async Task<List<GitHubRelease>> GetReleases()
+    {
+        List<GitHubRelease> releases = null;
+
+        string response = await WebHelpers.DownloadStringAsync(ReleasesURL);
+
+        if (!string.IsNullOrEmpty(response))
+        {
+            releases = JsonConvert.DeserializeObject<List<GitHubRelease>>(response);
+
+            if (releases != null && releases.Count > 0)
+            {
+                releases.Sort((x, y) => y.published_at.CompareTo(x.published_at));
+            }
+        }
+
+        return releases;
+    }
+
+    protected async Task<GitHubRelease> GetLatestRelease()
+    {
+        GitHubRelease latestRelease = null;
+
+        string response = await WebHelpers.DownloadStringAsync(LatestReleaseURL);
+
+        if (!string.IsNullOrEmpty(response))
+        {
+            latestRelease = JsonConvert.DeserializeObject<GitHubRelease>(response);
+        }
+
+        return latestRelease;
+    }
+
+    protected async Task<GitHubRelease> GetLatestRelease(bool includePreRelease)
+    {
+        GitHubRelease latestRelease = null;
+
+        if (includePreRelease)
+        {
+            List<GitHubRelease> releases = await GetReleases();
+
+            if (releases != null && releases.Count > 0)
+            {
+                latestRelease = releases[0];
+            }
+        } else
+        {
+            latestRelease = await GetLatestRelease();
+        }
+
+        return latestRelease;
+    }
+
+    protected virtual bool UpdateReleaseInfo(GitHubRelease release, bool isPortable, bool isBrowserDownloadURL)
+    {
+        if (release != null && !string.IsNullOrEmpty(release.tag_name) && release.tag_name.Length > 1 && release.tag_name[0] == 'v')
+        {
+            LatestVersion = new Version(release.tag_name.Substring(1));
+
+            if (release.assets != null && release.assets.Length > 0)
+            {
+                string endsWith = isPortable ? "portable.zip" : ".exe";
+                foreach (GitHubAsset asset in release.assets)
                 {
-                    RefreshStatus();
-                    return;
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "GitHub update check failed.");
-            }
-
-            Status = UpdateStatus.UpdateCheckFailed;
-        }
-
-        public virtual async Task<string> GetLatestDownloadURL(bool isBrowserDownloadURL)
-        {
-            try
-            {
-                GitHubRelease latestRelease = await GetLatestRelease(IncludePreRelease);
-
-                if (UpdateReleaseInfo(latestRelease, IsPortable, isBrowserDownloadURL))
-                {
-                    return DownloadURL;
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return null;
-        }
-
-        protected async Task<List<GitHubRelease>> GetReleases()
-        {
-            List<GitHubRelease> releases = null;
-
-            string response = await WebHelpers.DownloadStringAsync(ReleasesURL);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                releases = JsonConvert.DeserializeObject<List<GitHubRelease>>(response);
-
-                if (releases != null && releases.Count > 0)
-                {
-                    releases.Sort((x, y) => y.published_at.CompareTo(x.published_at));
-                }
-            }
-
-            return releases;
-        }
-
-        protected async Task<GitHubRelease> GetLatestRelease()
-        {
-            GitHubRelease latestRelease = null;
-
-            string response = await WebHelpers.DownloadStringAsync(LatestReleaseURL);
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                latestRelease = JsonConvert.DeserializeObject<GitHubRelease>(response);
-            }
-
-            return latestRelease;
-        }
-
-        protected async Task<GitHubRelease> GetLatestRelease(bool includePreRelease)
-        {
-            GitHubRelease latestRelease = null;
-
-            if (includePreRelease)
-            {
-                List<GitHubRelease> releases = await GetReleases();
-
-                if (releases != null && releases.Count > 0)
-                {
-                    latestRelease = releases[0];
-                }
-            }
-            else
-            {
-                latestRelease = await GetLatestRelease();
-            }
-
-            return latestRelease;
-        }
-
-        protected virtual bool UpdateReleaseInfo(GitHubRelease release, bool isPortable, bool isBrowserDownloadURL)
-        {
-            if (release != null && !string.IsNullOrEmpty(release.tag_name) && release.tag_name.Length > 1 && release.tag_name[0] == 'v')
-            {
-                LatestVersion = new Version(release.tag_name.Substring(1));
-
-                if (release.assets != null && release.assets.Length > 0)
-                {
-                    string endsWith;
-
-                    if (isPortable)
+                    if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.OrdinalIgnoreCase))
                     {
-                        endsWith = "portable.zip";
-                    }
-                    else
-                    {
-                        endsWith = ".exe";
-                    }
+                        FileName = asset.name;
 
-                    foreach (GitHubAsset asset in release.assets)
-                    {
-                        if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.OrdinalIgnoreCase))
-                        {
-                            FileName = asset.name;
+                        DownloadURL = isBrowserDownloadURL ? asset.browser_download_url : asset.url;
 
-                            if (isBrowserDownloadURL)
-                            {
-                                DownloadURL = asset.browser_download_url;
-                            }
-                            else
-                            {
-                                DownloadURL = asset.url;
-                            }
+                        IsPreRelease = release.prerelease;
 
-                            IsPreRelease = release.prerelease;
-
-                            return true;
-                        }
+                        return true;
                     }
                 }
             }
-
-            return false;
         }
 
-        protected class GitHubRelease
-        {
-            public string url { get; set; }
-            public string assets_url { get; set; }
-            public string upload_url { get; set; }
-            public string html_url { get; set; }
-            public long id { get; set; }
-            //public GitHubAuthor author { get; set; }
-            public string node_id { get; set; }
-            public string tag_name { get; set; }
-            public string target_commitish { get; set; }
-            public string name { get; set; }
-            public bool draft { get; set; }
-            public bool prerelease { get; set; }
-            public DateTime created_at { get; set; }
-            public DateTime published_at { get; set; }
-            public GitHubAsset[] assets { get; set; }
-            public string tarball_url { get; set; }
-            public string zipball_url { get; set; }
-            public string body { get; set; }
-            //public GitHubReactions reactions { get; set; }
-        }
+        return false;
+    }
 
-        protected class GitHubAsset
-        {
-            public string url { get; set; }
-            public long id { get; set; }
-            public string node_id { get; set; }
-            public string name { get; set; }
-            public string label { get; set; }
-            //public GitHubUploader uploader { get; set; }
-            public string content_type { get; set; }
-            public string state { get; set; }
-            public long size { get; set; }
-            public long download_count { get; set; }
-            public DateTime created_at { get; set; }
-            public DateTime updated_at { get; set; }
-            public string browser_download_url { get; set; }
-        }
+    protected class GitHubRelease
+    {
+        public string url { get; set; }
+        public string assets_url { get; set; }
+        public string upload_url { get; set; }
+        public string html_url { get; set; }
+        public long id { get; set; }
+        //public GitHubAuthor author { get; set; }
+        public string node_id { get; set; }
+        public string tag_name { get; set; }
+        public string target_commitish { get; set; }
+        public string name { get; set; }
+        public bool draft { get; set; }
+        public bool prerelease { get; set; }
+        public DateTime created_at { get; set; }
+        public DateTime published_at { get; set; }
+        public GitHubAsset[] assets { get; set; }
+        public string tarball_url { get; set; }
+        public string zipball_url { get; set; }
+        public string body { get; set; }
+        //public GitHubReactions reactions { get; set; }
+    }
+
+    protected class GitHubAsset
+    {
+        public string url { get; set; }
+        public long id { get; set; }
+        public string node_id { get; set; }
+        public string name { get; set; }
+        public string label { get; set; }
+        //public GitHubUploader uploader { get; set; }
+        public string content_type { get; set; }
+        public string state { get; set; }
+        public long size { get; set; }
+        public long download_count { get; set; }
+        public DateTime created_at { get; set; }
+        public DateTime updated_at { get; set; }
+        public string browser_download_url { get; set; }
     }
 }

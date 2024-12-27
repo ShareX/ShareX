@@ -24,7 +24,12 @@
 #endregion License Information (GPL v3)
 
 using CG.Web.MegaApiClient;
+
+using ShareX.UploadersLib.BaseServices;
+using ShareX.UploadersLib.BaseUploaders;
+using ShareX.UploadersLib.Helpers;
 using ShareX.UploadersLib.Properties;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -32,194 +37,186 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib.FileUploaders;
+
+public class MegaFileUploaderService : FileUploaderService
 {
-    public class MegaFileUploaderService : FileUploaderService
+    public override FileDestination EnumValue { get; } = FileDestination.Mega;
+
+    public override Icon ServiceIcon => Resources.Mega;
+
+    public override bool CheckConfig(UploadersConfig config)
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Mega;
-
-        public override Icon ServiceIcon => Resources.Mega;
-
-        public override bool CheckConfig(UploadersConfig config)
-        {
-            return config.MegaAuthInfos != null && config.MegaAuthInfos.Email != null && config.MegaAuthInfos.Hash != null &&
-                config.MegaAuthInfos.PasswordAesKey != null;
-        }
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
-        {
-            return new Mega(config.MegaAuthInfos?.GetMegaApiClientAuthInfos(), config.MegaParentNodeId);
-        }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMega;
+        return config.MegaAuthInfos != null && config.MegaAuthInfos.Email != null && config.MegaAuthInfos.Hash != null &&
+            config.MegaAuthInfos.PasswordAesKey != null;
     }
 
-    public sealed class Mega : FileUploader, IWebClient
+    public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
     {
-        // Pack all chunks in a single upload fragment
-        // (by default, MegaApiClient splits files in 1MB fragments and do multiple uploads)
-        // It allows to have a consistent upload progression in ShareX
-        private const int UploadChunksPackSize = -1;
+        return new Mega(config.MegaAuthInfos?.GetMegaApiClientAuthInfos(), config.MegaParentNodeId);
+    }
 
-        private readonly MegaApiClient megaClient;
-        private readonly MegaApiClient.AuthInfos authInfos;
-        private readonly string parentNodeId;
+    public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMega;
+}
 
-        public Mega() : this(null, null)
-        {
-        }
+public sealed class Mega : FileUploader, IWebClient
+{
+    // Pack all chunks in a single upload fragment
+    // (by default, MegaApiClient splits files in 1MB fragments and do multiple uploads)
+    // It allows to have a consistent upload progression in ShareX
+    private const int UploadChunksPackSize = -1;
 
-        public Mega(MegaApiClient.AuthInfos authInfos) : this(authInfos, null)
-        {
-        }
+    private readonly MegaApiClient megaClient;
+    private readonly MegaApiClient.AuthInfos authInfos;
+    private readonly string parentNodeId;
 
-        public Mega(MegaApiClient.AuthInfos authInfos, string parentNodeId)
-        {
-            AllowReportProgress = false;
-            Options options = new Options(chunksPackSize: UploadChunksPackSize);
-            megaClient = new MegaApiClient(options, this);
-            this.authInfos = authInfos;
-            this.parentNodeId = parentNodeId;
-        }
+    public Mega() : this(null, null)
+    {
+    }
 
-        public bool TryLogin()
-        {
-            try
-            {
-                Login();
-                return true;
-            }
-            catch (ApiException)
-            {
-                return false;
-            }
-        }
+    public Mega(MegaApiClient.AuthInfos authInfos) : this(authInfos, null)
+    {
+    }
 
-        private void Login()
-        {
-            if (authInfos == null)
-            {
-                megaClient.LoginAnonymous();
-            }
-            else
-            {
-                megaClient.Login(authInfos);
-            }
-        }
+    public Mega(MegaApiClient.AuthInfos authInfos, string parentNodeId)
+    {
+        AllowReportProgress = false;
+        Options options = new(chunksPackSize: UploadChunksPackSize);
+        megaClient = new MegaApiClient(options, this);
+        this.authInfos = authInfos;
+        this.parentNodeId = parentNodeId;
+    }
 
-        internal IEnumerable<DisplayNode> GetDisplayNodes()
-        {
-            IEnumerable<INode> nodes = megaClient.GetNodes().Where(n => n.Type == NodeType.Directory || n.Type == NodeType.Root).ToArray();
-            List<DisplayNode> displayNodes = new List<DisplayNode>();
-
-            foreach (INode node in nodes)
-            {
-                displayNodes.Add(new DisplayNode(node, nodes));
-            }
-
-            displayNodes.Sort((x, y) => string.Compare(x.DisplayName, y.DisplayName, StringComparison.CurrentCultureIgnoreCase));
-            displayNodes.Insert(0, DisplayNode.EmptyNode);
-
-            return displayNodes;
-        }
-
-        public INode GetParentNode()
-        {
-            if (authInfos == null || parentNodeId == null)
-            {
-                return megaClient.GetNodes().SingleOrDefault(n => n.Type == NodeType.Root);
-            }
-
-            return megaClient.GetNodes().SingleOrDefault(n => n.Id == parentNodeId);
-        }
-
-        public override UploadResult Upload(Stream stream, string fileName)
+    public bool TryLogin()
+    {
+        try
         {
             Login();
+            return true;
+        } catch (ApiException)
+        {
+            return false;
+        }
+    }
 
-            INode createdNode = megaClient.Upload(stream, fileName, GetParentNode());
+    private void Login()
+    {
+        if (authInfos == null)
+        {
+            megaClient.LoginAnonymous();
+        } else
+        {
+            megaClient.Login(authInfos);
+        }
+    }
 
-            UploadResult res = new UploadResult();
-            res.IsURLExpected = true;
-            res.URL = megaClient.GetDownloadLink(createdNode).ToString();
+    internal IEnumerable<DisplayNode> GetDisplayNodes()
+    {
+        IEnumerable<INode> nodes = megaClient.GetNodes().Where(n => n.Type == NodeType.Directory || n.Type == NodeType.Root).ToArray();
+        List<DisplayNode> displayNodes = new();
 
-            return res;
+        foreach (INode node in nodes)
+        {
+            displayNodes.Add(new DisplayNode(node, nodes));
         }
 
-        #region IWebClient
+        displayNodes.Sort((x, y) => string.Compare(x.DisplayName, y.DisplayName, StringComparison.CurrentCultureIgnoreCase));
+        displayNodes.Insert(0, DisplayNode.EmptyNode);
 
-        public Stream GetRequestRaw(Uri url)
+        return displayNodes;
+    }
+
+    public INode GetParentNode()
+    {
+        return authInfos == null || parentNodeId == null
+            ? megaClient.GetNodes().SingleOrDefault(n => n.Type == NodeType.Root)
+            : megaClient.GetNodes().SingleOrDefault(n => n.Id == parentNodeId);
+    }
+
+    public override UploadResult Upload(Stream stream, string fileName)
+    {
+        Login();
+
+        INode createdNode = megaClient.Upload(stream, fileName, GetParentNode());
+
+        UploadResult res = new();
+        res.IsURLExpected = true;
+        res.URL = megaClient.GetDownloadLink(createdNode).ToString();
+
+        return res;
+    }
+
+    #region IWebClient
+
+    public Stream GetRequestRaw(Uri url)
+    {
+        throw new NotImplementedException();
+    }
+
+    public string PostRequestJson(Uri url, string jsonData)
+    {
+        return SendRequest(HttpMethod.POST, url.ToString(), jsonData, RequestHelpers.ContentTypeJSON);
+    }
+
+    public string PostRequestRaw(Uri url, Stream dataStream)
+    {
+        try
         {
-            throw new NotImplementedException();
+            AllowReportProgress = true;
+            return SendRequest(HttpMethod.POST, url.ToString(), dataStream, "application/octet-stream");
+        } finally
+        {
+            AllowReportProgress = false;
+        }
+    }
+
+    public Stream PostRequestRawAsStream(Uri url, Stream dataStream)
+    {
+        throw new NotImplementedException();
+    }
+
+    #endregion IWebClient
+
+    internal class DisplayNode
+    {
+        public static readonly DisplayNode EmptyNode = new();
+
+        private DisplayNode()
+        {
+            DisplayName = "[Select a folder]";
         }
 
-        public string PostRequestJson(Uri url, string jsonData)
+        public DisplayNode(INode node, IEnumerable<INode> nodes)
         {
-            return SendRequest(HttpMethod.POST, url.ToString(), jsonData, RequestHelpers.ContentTypeJSON);
+            Node = node;
+            DisplayName = GenerateDisplayName(node, nodes);
         }
 
-        public string PostRequestRaw(Uri url, Stream dataStream)
+        public INode Node { get; private set; }
+
+        public string DisplayName { get; private set; }
+
+        private string GenerateDisplayName(INode node, IEnumerable<INode> nodes)
         {
-            try
+            List<string> nodesTree = new();
+
+            INode parent = node;
+            do
             {
-                AllowReportProgress = true;
-                return SendRequest(HttpMethod.POST, url.ToString(), dataStream, "application/octet-stream");
-            }
-            finally
-            {
-                AllowReportProgress = false;
-            }
-        }
-
-        public Stream PostRequestRawAsStream(Uri url, Stream dataStream)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion IWebClient
-
-        internal class DisplayNode
-        {
-            public static readonly DisplayNode EmptyNode = new DisplayNode();
-
-            private DisplayNode()
-            {
-                DisplayName = "[Select a folder]";
-            }
-
-            public DisplayNode(INode node, IEnumerable<INode> nodes)
-            {
-                Node = node;
-                DisplayName = GenerateDisplayName(node, nodes);
-            }
-
-            public INode Node { get; private set; }
-
-            public string DisplayName { get; private set; }
-
-            private string GenerateDisplayName(INode node, IEnumerable<INode> nodes)
-            {
-                List<string> nodesTree = new List<string>();
-
-                INode parent = node;
-                do
+                if (parent.Type == NodeType.Directory)
                 {
-                    if (parent.Type == NodeType.Directory)
-                    {
-                        nodesTree.Add(parent.Name);
-                    }
-                    else
-                    {
-                        nodesTree.Add(parent.Type.ToString());
-                    }
-
-                    parent = nodes.FirstOrDefault(n => n.Id == parent.ParentId);
+                    nodesTree.Add(parent.Name);
+                } else
+                {
+                    nodesTree.Add(parent.Type.ToString());
                 }
-                while (parent != null);
 
-                nodesTree.Reverse();
-                return string.Join(@"\", nodesTree.ToArray());
+                parent = nodes.FirstOrDefault(n => n.Id == parent.ParentId);
             }
+            while (parent != null);
+
+            nodesTree.Reverse();
+            return string.Join(@"\", nodesTree.ToArray());
         }
     }
 }

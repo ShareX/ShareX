@@ -28,72 +28,70 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib.Native;
+
+public class LayeredForm : Form
 {
-    public class LayeredForm : Form
+    public LayeredForm()
     {
-        public LayeredForm()
+        SuspendLayout();
+        AutoScaleDimensions = new SizeF(6F, 13F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(300, 300);
+        FormBorderStyle = FormBorderStyle.None;
+        Icon = ShareXResources.Icon;
+        Name = "LayeredForm";
+        ShowInTaskbar = false;
+        Text = "LayeredForm";
+        ResumeLayout(false);
+    }
+
+    protected override CreateParams CreateParams
+    {
+        get
         {
-            SuspendLayout();
-            AutoScaleDimensions = new SizeF(6F, 13F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 300);
-            FormBorderStyle = FormBorderStyle.None;
-            Icon = ShareXResources.Icon;
-            Name = "LayeredForm";
-            ShowInTaskbar = false;
-            Text = "LayeredForm";
-            ResumeLayout(false);
+            CreateParams createParams = base.CreateParams;
+            createParams.ExStyle |= (int)WindowStyles.WS_EX_LAYERED;
+            return createParams;
+        }
+    }
+
+    public void SelectBitmap(Bitmap bitmap, int opacity = 255)
+    {
+        if (bitmap.PixelFormat != PixelFormat.Format32bppArgb)
+        {
+            throw new ApplicationException("The bitmap must be 32bpp with alpha-channel.");
         }
 
-        protected override CreateParams CreateParams
+        IntPtr screenDc = NativeMethods.GetDC(IntPtr.Zero);
+        IntPtr memDc = NativeMethods.CreateCompatibleDC(screenDc);
+        IntPtr hBitmap = IntPtr.Zero;
+        IntPtr hOldBitmap = IntPtr.Zero;
+
+        try
         {
-            get
-            {
-                CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= (int)WindowStyles.WS_EX_LAYERED;
-                return createParams;
-            }
-        }
+            hBitmap = bitmap.GetHbitmap(Color.FromArgb(0));
+            hOldBitmap = NativeMethods.SelectObject(memDc, hBitmap);
 
-        public void SelectBitmap(Bitmap bitmap, int opacity = 255)
+            SIZE newSize = new(bitmap.Width, bitmap.Height);
+            POINT sourceLocation = new(0, 0);
+            POINT newLocation = new(Left, Top);
+            BLENDFUNCTION blend = new();
+            blend.BlendOp = NativeConstants.AC_SRC_OVER;
+            blend.BlendFlags = 0;
+            blend.SourceConstantAlpha = (byte)opacity;
+            blend.AlphaFormat = NativeConstants.AC_SRC_ALPHA;
+
+            NativeMethods.UpdateLayeredWindow(Handle, screenDc, ref newLocation, ref newSize, memDc, ref sourceLocation, 0, ref blend, NativeConstants.ULW_ALPHA);
+        } finally
         {
-            if (bitmap.PixelFormat != PixelFormat.Format32bppArgb)
+            NativeMethods.ReleaseDC(IntPtr.Zero, screenDc);
+            if (hBitmap != IntPtr.Zero)
             {
-                throw new ApplicationException("The bitmap must be 32bpp with alpha-channel.");
+                NativeMethods.SelectObject(memDc, hOldBitmap);
+                NativeMethods.DeleteObject(hBitmap);
             }
-
-            IntPtr screenDc = NativeMethods.GetDC(IntPtr.Zero);
-            IntPtr memDc = NativeMethods.CreateCompatibleDC(screenDc);
-            IntPtr hBitmap = IntPtr.Zero;
-            IntPtr hOldBitmap = IntPtr.Zero;
-
-            try
-            {
-                hBitmap = bitmap.GetHbitmap(Color.FromArgb(0));
-                hOldBitmap = NativeMethods.SelectObject(memDc, hBitmap);
-
-                SIZE newSize = new SIZE(bitmap.Width, bitmap.Height);
-                POINT sourceLocation = new POINT(0, 0);
-                POINT newLocation = new POINT(Left, Top);
-                BLENDFUNCTION blend = new BLENDFUNCTION();
-                blend.BlendOp = NativeConstants.AC_SRC_OVER;
-                blend.BlendFlags = 0;
-                blend.SourceConstantAlpha = (byte)opacity;
-                blend.AlphaFormat = NativeConstants.AC_SRC_ALPHA;
-
-                NativeMethods.UpdateLayeredWindow(Handle, screenDc, ref newLocation, ref newSize, memDc, ref sourceLocation, 0, ref blend, NativeConstants.ULW_ALPHA);
-            }
-            finally
-            {
-                NativeMethods.ReleaseDC(IntPtr.Zero, screenDc);
-                if (hBitmap != IntPtr.Zero)
-                {
-                    NativeMethods.SelectObject(memDc, hOldBitmap);
-                    NativeMethods.DeleteObject(hBitmap);
-                }
-                NativeMethods.DeleteDC(memDc);
-            }
+            NativeMethods.DeleteDC(memDc);
         }
     }
 }

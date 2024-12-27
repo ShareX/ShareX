@@ -24,18 +24,18 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+
 using System.Drawing;
 
-namespace ShareX.HistoryLib
+namespace ShareX.HistoryLib;
+
+public class ImageHistorySettings
 {
-    public class ImageHistorySettings
-    {
-        public bool RememberWindowState { get; set; } = true;
-        public WindowState WindowState { get; set; } = new WindowState();
-        public Size ThumbnailSize { get; set; } = new Size(150, 150);
-        public int MaxItemCount { get; set; } = 250;
-        public bool FilterMissingFiles { get; set; } = false;
-        public bool RememberSearchText { get; set; } = false;
-        public string SearchText { get; set; } = "";
-    }
+    public bool RememberWindowState { get; set; } = true;
+    public WindowState WindowState { get; set; } = new WindowState();
+    public Size ThumbnailSize { get; set; } = new Size(150, 150);
+    public int MaxItemCount { get; set; } = 250;
+    public bool FilterMissingFiles { get; set; } = false;
+    public bool RememberSearchText { get; set; } = false;
+    public string SearchText { get; set; } = "";
 }

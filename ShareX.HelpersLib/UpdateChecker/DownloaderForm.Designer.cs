@@ -1,4 +1,6 @@
-﻿namespace ShareX.HelpersLib
+﻿using ShareX.HelpersLib.Controls.BlackStyle;
+
+namespace ShareX.HelpersLib
 {
     partial class DownloaderForm
     {
@@ -33,7 +35,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblFilename = new System.Windows.Forms.Label();
             this.btnAction = new System.Windows.Forms.Button();
-            this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
+            this.pbProgress = new ShareX.HelpersLib.Controls.BlackStyle.BlackStyleProgressBar();
             this.SuspendLayout();
             // 
             // lblProgress

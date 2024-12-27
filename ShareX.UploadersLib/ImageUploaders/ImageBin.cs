@@ -23,38 +23,39 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.BaseUploaders;
+
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace ShareX.UploadersLib.ImageUploaders
+namespace ShareX.UploadersLib.ImageUploaders;
+
+public sealed class ImageBin : ImageUploader
 {
-    public sealed class ImageBin : ImageUploader
+    public override UploadResult Upload(Stream stream, string fileName)
     {
-        public override UploadResult Upload(Stream stream, string fileName)
+        Dictionary<string, string> arguments = new();
+        arguments.Add("t", "file");
+        arguments.Add("name", "ShareX");
+        arguments.Add("tags", "ShareX");
+        arguments.Add("description", "test");
+        arguments.Add("adult", "t");
+        arguments.Add("sfile", "Upload");
+        arguments.Add("url", "");
+
+        UploadResult result = SendRequestFile("http://imagebin.ca/upload.php", stream, fileName, "f", arguments);
+
+        if (result.IsSuccess)
         {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("t", "file");
-            arguments.Add("name", "ShareX");
-            arguments.Add("tags", "ShareX");
-            arguments.Add("description", "test");
-            arguments.Add("adult", "t");
-            arguments.Add("sfile", "Upload");
-            arguments.Add("url", "");
-
-            UploadResult result = SendRequestFile("http://imagebin.ca/upload.php", stream, fileName, "f", arguments);
-
-            if (result.IsSuccess)
+            Match match = Regex.Match(result.Response, @"(?<=ca/view/).+(?=\.html'>)");
+            if (match != null)
             {
-                Match match = Regex.Match(result.Response, @"(?<=ca/view/).+(?=\.html'>)");
-                if (match != null)
-                {
-                    string url = "http://imagebin.ca/img/" + match.Value + Path.GetExtension(fileName);
-                    result.URL = url;
-                }
+                string url = "http://imagebin.ca/img/" + match.Value + Path.GetExtension(fileName);
+                result.URL = url;
             }
-
-            return result;
         }
+
+        return result;
     }
 }

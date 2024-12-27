@@ -24,52 +24,55 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HelpersLib.Extensions;
+
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HistoryLib
+namespace ShareX.HistoryLib;
+
+public partial class ImageHistorySettingsForm : Form
 {
-    public partial class ImageHistorySettingsForm : Form
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ImageHistorySettings Settings { get; private set; }
+
+    public ImageHistorySettingsForm(ImageHistorySettings settings)
     {
-        public ImageHistorySettings Settings { get; private set; }
+        InitializeComponent();
+        ShareXResources.ApplyTheme(this, true);
 
-        public ImageHistorySettingsForm(ImageHistorySettings settings)
-        {
-            InitializeComponent();
-            ShareXResources.ApplyTheme(this, true);
+        Settings = settings;
+        nudThumbnailSize.SetValue(Settings.ThumbnailSize.Width);
+        nudMaximumImageLimit.SetValue(Settings.MaxItemCount);
+        cbFilterMissingFiles.Checked = Settings.FilterMissingFiles;
+        cbRememberSearchText.Checked = Settings.RememberSearchText;
+        cbRememberWindowState.Checked = Settings.RememberWindowState;
+    }
 
-            Settings = settings;
-            nudThumbnailSize.SetValue(Settings.ThumbnailSize.Width);
-            nudMaximumImageLimit.SetValue(Settings.MaxItemCount);
-            cbFilterMissingFiles.Checked = Settings.FilterMissingFiles;
-            cbRememberSearchText.Checked = Settings.RememberSearchText;
-            cbRememberWindowState.Checked = Settings.RememberWindowState;
-        }
+    private void nudThumbnailSize_ValueChanged(object sender, EventArgs e)
+    {
+        Settings.ThumbnailSize = new Size((int)nudThumbnailSize.Value, (int)nudThumbnailSize.Value);
+    }
 
-        private void nudThumbnailSize_ValueChanged(object sender, EventArgs e)
-        {
-            Settings.ThumbnailSize = new Size((int)nudThumbnailSize.Value, (int)nudThumbnailSize.Value);
-        }
+    private void nudMaximumImageLimit_ValueChanged(object sender, EventArgs e)
+    {
+        Settings.MaxItemCount = (int)nudMaximumImageLimit.Value;
+    }
 
-        private void nudMaximumImageLimit_ValueChanged(object sender, EventArgs e)
-        {
-            Settings.MaxItemCount = (int)nudMaximumImageLimit.Value;
-        }
+    private void cbFilterMissingFiles_CheckedChanged(object sender, EventArgs e)
+    {
+        Settings.FilterMissingFiles = cbFilterMissingFiles.Checked;
+    }
 
-        private void cbFilterMissingFiles_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.FilterMissingFiles = cbFilterMissingFiles.Checked;
-        }
+    private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)
+    {
+        Settings.RememberSearchText = cbRememberSearchText.Checked;
+    }
 
-        private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.RememberSearchText = cbRememberSearchText.Checked;
-        }
-
-        private void cbRememberWindowState_CheckedChanged(object sender, EventArgs e)
-        {
-            Settings.RememberWindowState = cbRememberWindowState.Checked;
-        }
+    private void cbRememberWindowState_CheckedChanged(object sender, EventArgs e)
+    {
+        Settings.RememberWindowState = cbRememberWindowState.Checked;
     }
 }

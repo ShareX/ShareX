@@ -28,19 +28,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace ShareX.HelpersLib
-{
-    public class StringCollectionToStringTypeConverter : TypeConverter
-    {
-        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
-        {
-            if (destinationType == typeof(string))
-            {
-                List<string> list = (List<string>)value;
-                return string.Join(", ", list);
-            }
+namespace ShareX.HelpersLib.UITypeEditors;
 
-            return base.ConvertTo(context, culture, value, destinationType);
+public class StringCollectionToStringTypeConverter : TypeConverter
+{
+    public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
+    {
+        if (destinationType == typeof(string))
+        {
+            List<string> list = (List<string>)value;
+            return string.Join(", ", list);
         }
+
+        return base.ConvertTo(context, culture, value, destinationType);
     }
 }
