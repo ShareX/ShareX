@@ -222,11 +222,11 @@ namespace ShareX
                 case HotkeyType.ImageEffects:
                     if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
                     {
-                        OpenImageEffects(command.Parameter, taskSettings);
+                        OpenImageEffects(command.Parameter, safeTaskSettings);
                     }
                     else
                     {
-                        OpenImageEffects(taskSettings);
+                        OpenImageEffects(safeTaskSettings);
                     }
                     break;
                 case HotkeyType.ImageViewer:
@@ -1214,12 +1214,12 @@ namespace ShareX
 
                     if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
 
-                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(bmp, taskSettings.ImageSettings.ImageEffectPresets,
+                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(bmp, taskSettings.ImageSettingsReference.ImageEffectPresets,
                         taskSettings.ImageSettings.SelectedImageEffectPreset))
                     {
                         imageEffectsForm.EnableToolMode(x => UploadManager.RunImageTask(x, taskSettings), filePath);
                         imageEffectsForm.ShowDialog();
-                        //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                        //taskSettings.ImageSettingsReference.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
                     }
                 }
             }
