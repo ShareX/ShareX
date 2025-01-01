@@ -278,11 +278,13 @@ namespace ShareX.ScreenCaptureLib
                             args.Append($"-quality {FFmpeg.AMF_Quality} ");
                             args.Append($"-b:v {FFmpeg.AMF_Bitrate}k ");
                             args.Append("-pix_fmt yuv420p ");
+                            args.Append("-tag:v hvc1 "); // tagging HEVC stream to be compatible with iOS devices
                             break;
                         case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                         case FFmpegVideoCodec.hevc_qsv:
                             args.Append($"-preset {FFmpeg.QSV_Preset} ");
                             args.Append($"-b:v {FFmpeg.QSV_Bitrate}k ");
+                            args.Append("-tag:v hvc1 "); // tagging HEVC stream to be compatible with iOS devices
                             break;
                         case FFmpegVideoCodec.libwebp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
                             args.Append("-lossless 0 ");
