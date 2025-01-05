@@ -990,7 +990,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpYourls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpYourls.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1176,7 +1176,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>4, 22</value>
   </data>
   <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1365,7 +1365,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpFirebaseDynamicLinks.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1626,7 +1626,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpKutt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpKutt.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1755,7 +1755,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpZeroWidthShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpZeroWidthShortener.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2009,33 +2009,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;cbFTPAppendRemoteDirectory.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnFTPTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnFTPTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 376</value>
-  </data>
-  <data name="btnFTPTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 24</value>
-  </data>
-  <data name="btnFTPTest.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="btnFTPTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="&gt;&gt;btnFTPTest.Name" xml:space="preserve">
-    <value>btnFTPTest</value>
-  </data>
-  <data name="&gt;&gt;btnFTPTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnFTPTest.Parent" xml:space="preserve">
-    <value>gbFTPAccount</value>
-  </data>
-  <data name="&gt;&gt;btnFTPTest.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lblFTPProtocol.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2064,7 +2037,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPProtocol.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="lblFTPName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2094,7 +2067,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPName.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="cbFTPRemoveFileExtension.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2124,7 +2097,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;cbFTPRemoveFileExtension.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="txtFTPName.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 20</value>
@@ -2145,7 +2118,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;txtFTPName.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="lblFTPHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2175,28 +2148,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPHost.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="eiFTP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 376</value>
-  </data>
-  <data name="eiFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 24</value>
-  </data>
-  <data name="eiFTP.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;eiFTP.Name" xml:space="preserve">
-    <value>eiFTP</value>
-  </data>
-  <data name="&gt;&gt;eiFTP.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=16.1.4.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
-    <value>gbFTPAccount</value>
-  </data>
-  <data name="&gt;&gt;eiFTP.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="pFTPTransferMode.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -2280,7 +2232,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;pFTPTransferMode.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="txtFTPHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 68</value>
@@ -2301,7 +2253,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;txtFTPHost.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="pFTPProtocol.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -2415,7 +2367,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;pFTPProtocol.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="lblFTPPort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2445,7 +2397,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPPort.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="lblFTPTransferMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2475,7 +2427,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPTransferMode.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="nudFTPPort.Location" type="System.Drawing.Point, System.Drawing">
     <value>496, 68</value>
@@ -2499,7 +2451,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;nudFTPPort.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="lblFTPURLPreviewValue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2526,7 +2478,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPURLPreviewValue.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <data name="lblFTPUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2556,7 +2508,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPUsername.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="lblFTPURLPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2586,7 +2538,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPURLPreview.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>15</value>
   </data>
   <data name="txtFTPUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 92</value>
@@ -2607,7 +2559,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;txtFTPUsername.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>16</value>
   </data>
   <data name="cbFTPURLPathProtocol.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 188</value>
@@ -2628,7 +2580,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;cbFTPURLPathProtocol.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>17</value>
   </data>
   <data name="lblFTPPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2658,7 +2610,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPPassword.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>18</value>
   </data>
   <data name="txtFTPURLPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>240, 188</value>
@@ -2679,7 +2631,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;txtFTPURLPath.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>19</value>
   </data>
   <data name="txtFTPPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 116</value>
@@ -2700,7 +2652,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;txtFTPPassword.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>20</value>
   </data>
   <data name="lblFTPURLPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2730,7 +2682,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPURLPath.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>21</value>
   </data>
   <data name="lblFTPRemoteDirectory.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2760,7 +2712,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;lblFTPRemoteDirectory.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>22</value>
   </data>
   <data name="txtFTPRemoteDirectory.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 164</value>
@@ -2781,7 +2733,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;txtFTPRemoteDirectory.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>23</value>
   </data>
   <data name="btnFTPSCertificateLocationBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2934,16 +2886,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>gbFTPAccount</value>
   </data>
   <data name="&gt;&gt;gbFTPS.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>24</value>
   </data>
   <data name="gbFTPAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 112</value>
   </data>
   <data name="gbFTPAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>776, 416</value>
+    <value>776, 384</value>
   </data>
   <data name="gbFTPAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="gbFTPAccount.Text" xml:space="preserve">
     <value>Account</value>
@@ -2964,13 +2916,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="btnFTPDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>696, 11</value>
+    <value>224, 16</value>
   </data>
   <data name="btnFTPDuplicate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>96, 24</value>
   </data>
   <data name="btnFTPDuplicate.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnFTPDuplicate.Text" xml:space="preserve">
     <value>Duplicate</value>
@@ -2987,17 +2939,44 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;btnFTPDuplicate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnFTPTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnFTPTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 16</value>
+  </data>
+  <data name="btnFTPTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 24</value>
+  </data>
+  <data name="btnFTPTest.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnFTPTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnFTPTest.Name" xml:space="preserve">
+    <value>btnFTPTest</value>
+  </data>
+  <data name="&gt;&gt;btnFTPTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFTPTest.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;btnFTPTest.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="btnFTPRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnFTPRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 11</value>
+    <value>120, 16</value>
   </data>
   <data name="btnFTPRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>96, 24</value>
   </data>
   <data name="btnFTPRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="btnFTPRemove.Text" xml:space="preserve">
     <value>Remove</value>
@@ -3012,19 +2991,19 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;btnFTPRemove.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnFTPAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnFTPAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 11</value>
+    <value>16, 16</value>
   </data>
   <data name="btnFTPAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 23</value>
+    <value>96, 24</value>
   </data>
   <data name="btnFTPAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="btnFTPAdd.Text" xml:space="preserve">
     <value>Add</value>
@@ -3039,16 +3018,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;btnFTPAdd.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 12</value>
+    <value>128, 52</value>
   </data>
   <data name="cbFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 21</value>
+    <value>296, 21</value>
   </data>
   <data name="cbFTPAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;cbFTPAccounts.Name" xml:space="preserve">
     <value>cbFTPAccounts</value>
@@ -3060,7 +3039,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;cbFTPAccounts.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblFTPAccounts.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3069,13 +3048,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
+    <value>13, 56</value>
   </data>
   <data name="lblFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
   </data>
   <data name="lblFTPAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="lblFTPAccounts.Text" xml:space="preserve">
     <value>Accounts:</value>
@@ -3090,7 +3069,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;lblFTPAccounts.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblFTPFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3099,13 +3078,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblFTPFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>541, 48</value>
+    <value>541, 88</value>
   </data>
   <data name="lblFTPFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
   </data>
   <data name="lblFTPFile.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="lblFTPFile.Text" xml:space="preserve">
     <value>File:</value>
@@ -3120,7 +3099,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;lblFTPFile.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblFTPText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3129,13 +3108,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblFTPText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 48</value>
+    <value>277, 88</value>
   </data>
   <data name="lblFTPText.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
   </data>
   <data name="lblFTPText.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="lblFTPText.Text" xml:space="preserve">
     <value>Text:</value>
@@ -3150,7 +3129,28 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;lblFTPText.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
+  </data>
+  <data name="eiFTP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>432, 16</value>
+  </data>
+  <data name="eiFTP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 24</value>
+  </data>
+  <data name="eiFTP.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;eiFTP.Name" xml:space="preserve">
+    <value>eiFTP</value>
+  </data>
+  <data name="&gt;&gt;eiFTP.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=16.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;eiFTP.Parent" xml:space="preserve">
+    <value>tpFTP</value>
+  </data>
+  <data name="&gt;&gt;eiFTP.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="lblFTPImage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3159,13 +3159,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>NoControl</value>
   </data>
   <data name="lblFTPImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
+    <value>13, 88</value>
   </data>
   <data name="lblFTPImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
   </data>
   <data name="lblFTPImage.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="lblFTPImage.Text" xml:space="preserve">
     <value>Image:</value>
@@ -3180,16 +3180,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;lblFTPImage.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="cbFTPImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 44</value>
+    <value>80, 84</value>
   </data>
   <data name="cbFTPImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
   </data>
   <data name="cbFTPImage.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;cbFTPImage.Name" xml:space="preserve">
     <value>cbFTPImage</value>
@@ -3201,16 +3201,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;cbFTPImage.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="cbFTPFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 44</value>
+    <value>608, 84</value>
   </data>
   <data name="cbFTPFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
   </data>
   <data name="cbFTPFile.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;cbFTPFile.Name" xml:space="preserve">
     <value>cbFTPFile</value>
@@ -3222,16 +3222,16 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;cbFTPFile.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="cbFTPText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 44</value>
+    <value>344, 84</value>
   </data>
   <data name="cbFTPText.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
   </data>
   <data name="cbFTPText.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;cbFTPText.Name" xml:space="preserve">
     <value>cbFTPText</value>
@@ -3243,7 +3243,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpFTP</value>
   </data>
   <data name="&gt;&gt;cbFTPText.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="tpFTP.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 58</value>
@@ -3405,13 +3405,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>4</value>
   </data>
   <data name="tpDropbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 22</value>
   </data>
   <data name="tpDropbox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpDropbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 543</value>
   </data>
   <data name="tpDropbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3518,6 +3518,9 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="cbOneDriveUseDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbOneDriveUseDirectLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbOneDriveUseDirectLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 288</value>
   </data>
@@ -3564,13 +3567,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>4</value>
   </data>
   <data name="tpOneDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 22</value>
   </data>
   <data name="tpOneDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 543</value>
   </data>
   <data name="tpOneDrive.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -3589,6 +3592,9 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   </data>
   <data name="&gt;&gt;tpOneDrive.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnGoogleDriveFolderIDHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnGoogleDriveFolderIDHelp.Location" type="System.Drawing.Point, System.Drawing">
     <value>424, 174</value>
@@ -3614,27 +3620,6 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;btnGoogleDriveFolderIDHelp.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>448, 75</value>
-  </data>
-  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
-    <value>oauth2GoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
-    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.1.4.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
-    <value>tpGoogleDrive</value>
-  </data>
-  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="cbGoogleDriveSharedDrive.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 208</value>
   </data>
@@ -3657,7 +3642,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveSharedDrive.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="cbGoogleDriveDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3687,7 +3672,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveDirectLink.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="cbGoogleDriveUseFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3717,7 +3702,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveUseFolder.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="txtGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 176</value>
@@ -3738,7 +3723,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="lblGoogleDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3768,6 +3753,27 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lblGoogleDriveFolderID.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="oauth2GoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 75</value>
+  </data>
+  <data name="oauth2GoogleDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Name" xml:space="preserve">
+    <value>oauth2GoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Type" xml:space="preserve">
+    <value>ShareX.UploadersLib.OAuthLoopbackControl, ShareX.UploadersLib, Version=16.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
@@ -3870,13 +3876,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>9</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGoogleDrive.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleDrive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 543</value>
   </data>
   <data name="tpGoogleDrive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4107,13 +4113,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>7</value>
   </data>
   <data name="tpPuush.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPuush.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPuush.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 543</value>
   </data>
   <data name="tpPuush.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -4356,13 +4362,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>7</value>
   </data>
   <data name="tpBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 22</value>
   </data>
   <data name="tpBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 543</value>
   </data>
   <data name="tpBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -5187,13 +5193,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>20</value>
   </data>
   <data name="tpAmazonS3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 22</value>
   </data>
   <data name="tpAmazonS3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAmazonS3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 543</value>
   </data>
   <data name="tpAmazonS3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -5622,13 +5628,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>9</value>
   </data>
   <data name="tpGoogleCloudStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpGoogleCloudStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGoogleCloudStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpGoogleCloudStorage.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -6111,13 +6117,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>16</value>
   </data>
   <data name="tpAzureStorage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 22</value>
   </data>
   <data name="tpAzureStorage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAzureStorage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 543</value>
   </data>
   <data name="tpAzureStorage.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -6348,13 +6354,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>11</value>
   </data>
   <data name="tpBackblazeB2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 22</value>
   </data>
   <data name="tpBackblazeB2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBackblazeB2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 543</value>
   </data>
   <data name="tpBackblazeB2.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -6669,10 +6675,10 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>10</value>
   </data>
   <data name="tpMega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 22</value>
   </data>
   <data name="tpMega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 543</value>
   </data>
   <data name="tpMega.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -7158,13 +7164,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>16</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -7368,13 +7374,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>6</value>
   </data>
   <data name="tpMediaFire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpMediaFire.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMediaFire.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpMediaFire.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -7530,13 +7536,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>4</value>
   </data>
   <data name="tpPushbullet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPushbullet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPushbullet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpPushbullet.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -7707,13 +7713,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>5</value>
   </data>
   <data name="tpSendSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpSendSpace.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSendSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpSendSpace.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -7866,13 +7872,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>4</value>
   </data>
   <data name="tpHostr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpHostr.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHostr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpHostr.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -8076,10 +8082,10 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>3</value>
   </data>
   <data name="tpJira.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpJira.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpJira.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -8232,13 +8238,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>4</value>
   </data>
   <data name="tpLambda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpLambda.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLambda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpLambda.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -8361,13 +8367,13 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>3</value>
   </data>
   <data name="tpPomf.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPomf.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPomf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpPomf.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -9352,13 +9358,13 @@ Using an encrypted library disables sharing.</value>
     <value>21</value>
   </data>
   <data name="tpSeafile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpSeafile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSeafile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpSeafile.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -9523,10 +9529,10 @@ Using an encrypted library disables sharing.</value>
     <value>4</value>
   </data>
   <data name="tpStreamable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpStreamable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpStreamable.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -9625,13 +9631,13 @@ Using an encrypted library disables sharing.</value>
     <value>2</value>
   </data>
   <data name="tpSul.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpSul.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSul.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpSul.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -9859,13 +9865,13 @@ Using an encrypted library disables sharing.</value>
     <value>7</value>
   </data>
   <data name="tpLithiio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpLithiio.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpLithiio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpLithiio.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -10366,13 +10372,13 @@ Using an encrypted library disables sharing.</value>
     <value>1</value>
   </data>
   <data name="tpPlik.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 40</value>
   </data>
   <data name="tpPlik.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPlik.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 525</value>
   </data>
   <data name="tpPlik.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -10585,10 +10591,10 @@ Using an encrypted library disables sharing.</value>
     <value>6</value>
   </data>
   <data name="tpYouTube.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpYouTube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpYouTube.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -10888,13 +10894,13 @@ Using an encrypted library disables sharing.</value>
     <value>10</value>
   </data>
   <data name="tpSharedFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpSharedFolder.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSharedFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpSharedFolder.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -11308,13 +11314,13 @@ Using an encrypted library disables sharing.</value>
     <value>14</value>
   </data>
   <data name="tpEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 220</value>
+    <value>4, 58</value>
   </data>
   <data name="tpEmail.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 0</value>
+    <value>803, 507</value>
   </data>
   <data name="tpEmail.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -11935,7 +11941,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaste_ee.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpPaste_ee.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -12151,7 +12157,7 @@ Using an encrypted library disables sharing.</value>
     <value>4, 22</value>
   </data>
   <data name="tpGist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpGist.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -12259,7 +12265,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpaste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpUpaste.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -12418,7 +12424,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHastebin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpHastebin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -12547,7 +12553,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOneTimeSecret.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpOneTimeSecret.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -12604,7 +12610,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPastie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 42</value>
+    <value>803, 543</value>
   </data>
   <data name="tpPastie.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -14189,6 +14195,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1044, 601</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>

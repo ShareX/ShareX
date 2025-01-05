@@ -470,7 +470,7 @@ namespace ShareX.UploadersLib
         private void FTPUpdateEnabledStates()
         {
             cbFTPImage.Enabled = cbFTPText.Enabled = cbFTPFile.Enabled = cbFTPAccounts.Enabled = cbFTPAccounts.Items.Count > 0;
-            btnFTPRemove.Enabled = btnFTPDuplicate.Enabled = gbFTPAccount.Enabled = cbFTPAccounts.SelectedIndex > -1;
+            btnFTPRemove.Enabled = btnFTPDuplicate.Enabled = btnFTPTest.Enabled = gbFTPAccount.Enabled = cbFTPAccounts.SelectedIndex > -1;
 
             FTPAccount account = FTPGetSelectedAccount();
 
