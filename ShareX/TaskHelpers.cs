@@ -728,7 +728,8 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             await ScrollingCaptureForm.StartStopScrollingCapture(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
-                img => UploadManager.RunImageTask(img, taskSettings));
+                img => UploadManager.RunImageTask(img, taskSettings),
+                () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
 
         public static void OpenAutoCapture(TaskSettings taskSettings = null)

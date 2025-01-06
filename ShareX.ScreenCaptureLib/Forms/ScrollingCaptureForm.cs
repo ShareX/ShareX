@@ -40,6 +40,7 @@ namespace ShareX.ScreenCaptureLib
         private static ScrollingCaptureForm instance;
 
         public event Action<Bitmap> UploadRequested;
+        public event Action PlayNotificationSound;
 
         public ScrollingCaptureOptions Options { get; private set; }
 
@@ -56,7 +57,7 @@ namespace ShareX.ScreenCaptureLib
             manager = new ScrollingCaptureManager(Options);
         }
 
-        public static async Task StartStopScrollingCapture(ScrollingCaptureOptions options, Action<Bitmap> uploadRequested = null)
+        public static async Task StartStopScrollingCapture(ScrollingCaptureOptions options, Action<Bitmap> uploadRequested = null, Action playNotificationSound = null)
         {
             if (instance == null || instance.IsDisposed)
             {
@@ -69,6 +70,11 @@ namespace ShareX.ScreenCaptureLib
                         if (uploadRequested != null)
                         {
                             instance.UploadRequested += uploadRequested;
+                        }
+
+                        if (playNotificationSound != null)
+                        {
+                            instance.PlayNotificationSound += playNotificationSound;
                         }
 
                         instance.Show();
@@ -137,6 +143,8 @@ namespace ShareX.ScreenCaptureLib
                         pbStatus.Image = Resources.control_record_green;
                         break;
                 }
+
+                OnPlayNotificationSound();
             }
             catch (Exception e)
             {
@@ -204,6 +212,11 @@ namespace ShareX.ScreenCaptureLib
         protected void OnUploadRequested(Bitmap bmp)
         {
             UploadRequested?.Invoke(bmp);
+        }
+
+        protected void OnPlayNotificationSound()
+        {
+            PlayNotificationSound?.Invoke();
         }
 
         private async void ScrollingCaptureForm_Load(object sender, EventArgs e)
