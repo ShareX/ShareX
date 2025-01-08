@@ -13,7 +13,7 @@ PackageName: ShareX
 PackageUrl: https://github.com/ShareX/ShareX
 License: GNU General Public License v3.0
 LicenseUrl: https://github.com/ShareX/ShareX/blob/master/LICENSE.txt
-Copyright: Copyright (c) 2007-2024 ShareX Team
+Copyright: Copyright (c) 2007-2025 ShareX Team
 ShortDescription: ShareX is a free and open-source screen capture and file sharing software.
 Description: |-
   ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key.
