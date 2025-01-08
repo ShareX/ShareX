@@ -209,6 +209,7 @@
             this.nudRegionCaptureMagnifierPixelCount = new System.Windows.Forms.NumericUpDown();
             this.nudRegionCaptureMagnifierPixelSize = new System.Windows.Forms.NumericUpDown();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.cbScreenRecorderShowCursorEffect = new System.Windows.Forms.CheckBox();
             this.cbScreenRecordTransparentRegion = new System.Windows.Forms.CheckBox();
             this.cbScreenRecordTwoPassEncoding = new System.Windows.Forms.CheckBox();
             this.cbScreenRecordConfirmAbort = new System.Windows.Forms.CheckBox();
@@ -1876,6 +1877,7 @@
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.BackColor = System.Drawing.SystemColors.Window;
+            this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderShowCursorEffect);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecordTransparentRegion);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecordTwoPassEncoding);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecordConfirmAbort);
@@ -1893,6 +1895,13 @@
             this.tpScreenRecorder.Controls.Add(this.lblGIFFPS);
             resources.ApplyResources(this.tpScreenRecorder, "tpScreenRecorder");
             this.tpScreenRecorder.Name = "tpScreenRecorder";
+            // 
+            // cbScreenRecorderShowCursorEffect
+            // 
+            resources.ApplyResources(this.cbScreenRecorderShowCursorEffect, "cbScreenRecorderShowCursorEffect");
+            this.cbScreenRecorderShowCursorEffect.Name = "cbScreenRecorderShowCursorEffect";
+            this.cbScreenRecorderShowCursorEffect.UseVisualStyleBackColor = true;
+            this.cbScreenRecorderShowCursorEffect.CheckedChanged += new System.EventHandler(this.cbScreenRecorderShowCursorEffect_CheckedChanged);
             // 
             // cbScreenRecordTransparentRegion
             // 
@@ -2813,6 +2822,7 @@
         private System.Windows.Forms.CheckBox cbCaptureTransparent;
         private System.Windows.Forms.TabPage tpRegionCapture;
         private System.Windows.Forms.TabPage tpScreenRecorder;
+        private System.Windows.Forms.CheckBox cbScreenRecorderShowCursorEffect;
         private System.Windows.Forms.TabPage tpTask;
         private System.Windows.Forms.TabPage tpActions;
         private System.Windows.Forms.Button btnActionsEdit;

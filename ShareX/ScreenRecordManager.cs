@@ -40,6 +40,7 @@ namespace ShareX
         public static bool IsRecording { get; private set; }
 
         private static ScreenRecorder screenRecorder;
+        private static MouseClickEffectManager mouseClickEffectManager;
         private static ScreenRecordForm recordForm;
 
         public static void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
@@ -59,17 +60,23 @@ namespace ShareX
 
         public static void StopRecording()
         {
-            if (IsRecording && screenRecorder != null)
+            if (IsRecording)
             {
-                screenRecorder.StopRecording();
+                mouseClickEffectManager?.Pause();
+                screenRecorder?.StopRecording();
             }
         }
 
         public static void PauseScreenRecording()
         {
-            if (IsRecording && recordForm != null && !recordForm.IsDisposed)
+            if (IsRecording)
             {
-                recordForm.PauseResumeRecording();
+                mouseClickEffectManager?.Pause();
+
+                if (recordForm != null && !recordForm.IsDisposed)
+                {
+                    recordForm.PauseResumeRecording();
+                }
             }
         }
 
@@ -78,6 +85,11 @@ namespace ShareX
             if (IsRecording && recordForm != null && !recordForm.IsDisposed)
             {
                 recordForm.AbortRecording();
+            }
+
+            if (IsRecording)
+            {
+                mouseClickEffectManager?.Stop();
             }
         }
 
@@ -197,6 +209,12 @@ namespace ShareX
             recordForm.StopRequested += StopRecording;
             recordForm.Show();
 
+            if (taskSettings.CaptureSettings.ScreenRecordShowCursorEffect)
+            {
+                mouseClickEffectManager = new MouseClickEffectManager();
+                mouseClickEffectManager.Start();
+            }
+
             Task.Run(() =>
             {
                 try
@@ -259,6 +277,7 @@ namespace ShareX
                             }
 
                             recordForm.ChangeState(ScreenRecordState.AfterStart);
+                            mouseClickEffectManager?.Resume();
 
                             captureRectangle = recordForm.RecordingRegion;
 
@@ -271,7 +290,7 @@ namespace ShareX
                                 Duration = duration,
                                 OutputPath = path,
                                 CaptureArea = captureRectangle,
-                                DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor
+                                DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor,
                             };
 
                             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
@@ -329,6 +348,12 @@ namespace ShareX
                 {
                     screenRecorder.Dispose();
                     screenRecorder = null;
+                }
+
+                if (mouseClickEffectManager != null)
+                {
+                    mouseClickEffectManager.Stop();
+                    mouseClickEffectManager = null;
                 }
 
                 if (abortRequested)

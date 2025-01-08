@@ -18,6 +18,8 @@ dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_m
 dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
 # IDE0051: Remove unused private member
 dotnet_diagnostic.IDE0051.severity = silent
+# spacing options
+csharp_space_after_keywords_in_control_flow_statements = true
 
 # Xml project files
 [*.{csproj,vcxproj,vcxproj.filters,proj,nativeproj,locproj}]
