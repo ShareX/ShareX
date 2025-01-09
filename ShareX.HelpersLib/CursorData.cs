@@ -131,7 +131,6 @@ namespace ShareX.HelpersLib
             if (IsVisible)
             {
                 Point drawPosition = new Point(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y);
-                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
 
                 NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
