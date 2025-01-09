@@ -13,6 +13,6 @@
     <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ImageListView" Version="13.8.2" />
+    <PackageReference Include="ImageListViewCore" Version="0.0.2" />
   </ItemGroup>
 </Project>
