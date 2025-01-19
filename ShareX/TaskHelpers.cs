@@ -185,7 +185,14 @@ namespace ShareX
                     OpenRuler(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreen:
-                    PinToScreen(safeTaskSettings);
+                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    {
+                        PinToScreen(command.Parameter, safeTaskSettings);
+                    }
+                    else
+                    {
+                        PinToScreen(safeTaskSettings);
+                    }
                     break;
                 case HotkeyType.PinToScreenFromScreen:
                     PinToScreenFromScreen(safeTaskSettings);
