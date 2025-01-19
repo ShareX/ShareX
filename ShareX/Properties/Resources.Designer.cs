@@ -1943,6 +1943,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pin to screen with ShareX.
+        /// </summary>
+        internal static string IntegrationHelpers_PinToScreenWithShareX {
+            get {
+                return ResourceManager.GetString("IntegrationHelpers_PinToScreenWithShareX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload with ShareX.
         /// </summary>
         internal static string IntegrationHelpers_UploadWithShareX {

@@ -591,6 +591,9 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Edit with ShareX</value>
   </data>
+  <data name="IntegrationHelpers_PinToScreenWithShareX" xml:space="preserve">
+    <value>Pin to screen with ShareX</value>
+  </data>
   <data name="AboutForm_AboutForm_Links" xml:space="preserve">
     <value>Links</value>
   </data>

@@ -132,6 +132,9 @@
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Hızlı görev menüsünü düzenle...</value>
   </data>
+  <data name="cbPinToScreenWithShareX.Text" xml:space="preserve">
+    <value>"ShareX ile ekrana sabitle" tuşunu Windows sağ tık menüsünde göster</value>
+  </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>"Gönder" menüsünde ShareX göster</value>
   </data>

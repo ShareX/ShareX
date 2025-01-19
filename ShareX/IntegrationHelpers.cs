@@ -51,6 +51,13 @@ namespace ShareX
         private static readonly string ShellExtEditIcon = $"{ApplicationPath},0";
         private static readonly string ShellExtEditPath = $"{ApplicationPath} -ImageEditor \"%1\"";
 
+        private static readonly string ShellExtPinToScreenName = "ShareXPinToScreen";
+        private static readonly string ShellExtPinToScreenImage = $@"Software\Classes\SystemFileAssociations\image\shell\{ShellExtPinToScreenName}";
+        private static readonly string ShellExtPinToScreenImageCmd = $@"{ShellExtPinToScreenImage}\command";
+        private static readonly string ShellExtPinToScreenDesc = Resources.IntegrationHelpers_PinToScreenWithShareX;
+        private static readonly string ShellExtPinToScreenIcon = $"{ApplicationPath},0";
+        private static readonly string ShellExtPinToScreenPath = $"{ApplicationPath} -PinToScreen \"%1\"";
+
         private static readonly string ShellCustomUploaderExtensionPath = @"Software\Classes\.sxcu";
         private static readonly string ShellCustomUploaderExtensionValue = "ShareX.sxcu";
         private static readonly string ShellCustomUploaderAssociatePath = $@"Software\Classes\{ShellCustomUploaderExtensionValue}";
@@ -170,6 +177,52 @@ namespace ShareX
         private static void UnregisterEditShellContextMenuButton()
         {
             RegistryHelpers.RemoveRegistry(ShellExtEditImage);
+        }
+
+        public static bool CheckPinToScreenShellContextMenuButton()
+        {
+            try
+            {
+                return RegistryHelpers.CheckStringValue(ShellExtPinToScreenImageCmd, null, ShellExtPinToScreenPath);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static void CreatePinToScreenShellContextMenuButton(bool create)
+        {
+            try
+            {
+                if (create)
+                {
+                    UnregisterPinToScreenShellContextMenuButton();
+                    RegisterPinToScreenShellContextMenuButton();
+                }
+                else
+                {
+                    UnregisterPinToScreenShellContextMenuButton();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+        }
+
+        private static void RegisterPinToScreenShellContextMenuButton()
+        {
+            RegistryHelpers.CreateRegistry(ShellExtPinToScreenImage, ShellExtPinToScreenDesc);
+            RegistryHelpers.CreateRegistry(ShellExtPinToScreenImage, "Icon", ShellExtPinToScreenIcon);
+            RegistryHelpers.CreateRegistry(ShellExtPinToScreenImageCmd, ShellExtPinToScreenPath);
+        }
+
+        private static void UnregisterPinToScreenShellContextMenuButton()
+        {
+            RegistryHelpers.RemoveRegistry(ShellExtPinToScreenImage);
         }
 
         public static bool CheckCustomUploaderExtension()
@@ -408,6 +461,7 @@ namespace ShareX
             StartupManager.State = StartupState.Disabled;
             CreateShellContextMenuButton(false);
             CreateEditShellContextMenuButton(false);
+            CreatePinToScreenShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);
             CreateImageEffectExtension(false);
             CreateSendToMenuButton(false);

@@ -72,6 +72,7 @@ namespace ShareX
             this.cbChromeExtensionSupport = new System.Windows.Forms.CheckBox();
             this.btnChromeOpenExtensionPage = new System.Windows.Forms.Button();
             this.gbWindows = new System.Windows.Forms.GroupBox();
+            this.cbPinToScreenWithShareX = new System.Windows.Forms.CheckBox();
             this.cbEditWithShareX = new System.Windows.Forms.CheckBox();
             this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
@@ -537,6 +538,7 @@ namespace ShareX
             // 
             // gbWindows
             // 
+            this.gbWindows.Controls.Add(this.cbPinToScreenWithShareX);
             this.gbWindows.Controls.Add(this.cbEditWithShareX);
             this.gbWindows.Controls.Add(this.cbStartWithWindows);
             this.gbWindows.Controls.Add(this.cbSendToMenu);
@@ -544,6 +546,13 @@ namespace ShareX
             resources.ApplyResources(this.gbWindows, "gbWindows");
             this.gbWindows.Name = "gbWindows";
             this.gbWindows.TabStop = false;
+            // 
+            // cbPinToScreenWithShareX
+            // 
+            resources.ApplyResources(this.cbPinToScreenWithShareX, "cbPinToScreenWithShareX");
+            this.cbPinToScreenWithShareX.Name = "cbPinToScreenWithShareX";
+            this.cbPinToScreenWithShareX.UseVisualStyleBackColor = true;
+            this.cbPinToScreenWithShareX.CheckedChanged += new System.EventHandler(this.cbPinToScreenWithShareX_CheckedChanged);
             // 
             // cbEditWithShareX
             // 
@@ -1651,5 +1660,6 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbAutoCheckUpdate;
         private System.Windows.Forms.ComboBox cbUpdateChannel;
         private System.Windows.Forms.Label lblUpdateChannel;
+        private System.Windows.Forms.CheckBox cbPinToScreenWithShareX;
     }
 }

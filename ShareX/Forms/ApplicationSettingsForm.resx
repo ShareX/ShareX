@@ -532,7 +532,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=17.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -697,7 +697,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -886,7 +886,7 @@
     <value>eiTheme</value>
   </data>
   <data name="&gt;&gt;eiTheme.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=17.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiTheme.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -901,7 +901,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpTheme.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -979,7 +979,7 @@
     <value>1</value>
   </data>
   <data name="gbFirefox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 240</value>
+    <value>8, 264</value>
   </data>
   <data name="gbFirefox.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 88</value>
@@ -1033,7 +1033,7 @@
     <value>0</value>
   </data>
   <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 336</value>
+    <value>8, 360</value>
   </data>
   <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 56</value>
@@ -1114,7 +1114,7 @@
     <value>1</value>
   </data>
   <data name="gbChrome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 144</value>
+    <value>8, 168</value>
   </data>
   <data name="gbChrome.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 88</value>
@@ -1137,6 +1137,36 @@
   <data name="&gt;&gt;gbChrome.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cbPinToScreenWithShareX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPinToScreenWithShareX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbPinToScreenWithShareX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 96</value>
+  </data>
+  <data name="cbPinToScreenWithShareX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>387, 17</value>
+  </data>
+  <data name="cbPinToScreenWithShareX.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbPinToScreenWithShareX.Text" xml:space="preserve">
+    <value>Show "Pin to screen with ShareX" button in Windows Explorer context menu</value>
+  </data>
+  <data name="&gt;&gt;cbPinToScreenWithShareX.Name" xml:space="preserve">
+    <value>cbPinToScreenWithShareX</value>
+  </data>
+  <data name="&gt;&gt;cbPinToScreenWithShareX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPinToScreenWithShareX.Parent" xml:space="preserve">
+    <value>gbWindows</value>
+  </data>
+  <data name="&gt;&gt;cbPinToScreenWithShareX.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbEditWithShareX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1150,7 +1180,7 @@
     <value>343, 17</value>
   </data>
   <data name="cbEditWithShareX.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
@@ -1165,7 +1195,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbEditWithShareX.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1192,7 +1222,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbStartWithWindows.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1201,13 +1231,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
+    <value>16, 120</value>
   </data>
   <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 17</value>
   </data>
   <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Show ShareX in "Send to" menu</value>
@@ -1222,7 +1252,7 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbShellContextMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1252,13 +1282,13 @@
     <value>gbWindows</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenu.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="gbWindows.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
   <data name="gbWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 128</value>
+    <value>536, 152</value>
   </data>
   <data name="gbWindows.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1285,7 +1315,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpIntegration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpIntegration.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1708,7 +1738,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpPaths.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2074,7 +2104,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpSettings.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2629,7 +2659,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpMainWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpMainWindow.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -2785,7 +2815,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>tpClipboardFormats</value>
@@ -2800,7 +2830,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpClipboardFormats.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -2836,7 +2866,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -2917,7 +2947,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -2968,7 +2998,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=17.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -3199,7 +3229,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpUpload.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3508,7 +3538,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpHistory.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3679,7 +3709,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpPrint.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3964,7 +3994,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="tpProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpProxy.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3991,7 +4021,7 @@
     <value>3, 3</value>
   </data>
   <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>550, 418</value>
   </data>
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4015,7 +4045,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 376</value>
+    <value>556, 424</value>
   </data>
   <data name="tpAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -4039,7 +4069,7 @@
     <value>173, 0</value>
   </data>
   <data name="tcSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>564, 402</value>
+    <value>564, 450</value>
   </data>
   <data name="tcSettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4069,7 +4099,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tttvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>737, 402</value>
+    <value>737, 450</value>
   </data>
   <data name="tttvMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4078,7 +4108,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=16.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=17.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -4093,7 +4123,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>737, 402</value>
+    <value>737, 450</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>

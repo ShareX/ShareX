@@ -150,12 +150,14 @@ namespace ShareX
 #if MicrosoftStore
             cbShellContextMenu.Visible = false;
             cbEditWithShareX.Visible = false;
+            cbPinToScreenWithShareX.Visible = false;
             cbSendToMenu.Visible = false;
             gbChrome.Visible = false;
             gbFirefox.Visible = false;
 #else
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbEditWithShareX.Checked = IntegrationHelpers.CheckEditShellContextMenuButton();
+            cbPinToScreenWithShareX.Checked = IntegrationHelpers.CheckPinToScreenShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
             cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
             btnChromeOpenExtensionPage.Enabled = cbChromeExtensionSupport.Checked;
@@ -621,6 +623,14 @@ namespace ShareX
             if (ready)
             {
                 IntegrationHelpers.CreateEditShellContextMenuButton(cbEditWithShareX.Checked);
+            }
+        }
+
+        private void cbPinToScreenWithShareX_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ready)
+            {
+                IntegrationHelpers.CreatePinToScreenShellContextMenuButton(cbPinToScreenWithShareX.Checked);
             }
         }
 
