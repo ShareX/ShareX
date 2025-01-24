@@ -252,6 +252,7 @@ namespace ShareX.ScreenCaptureLib
                                 args.Append($"-crf {FFmpeg.x264_CRF} ");
                             }
                             args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
+                            args.Append("-tag:v hvc1 "); // tagging HEVC stream to be compatible with iOS devices
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
@@ -268,6 +269,7 @@ namespace ShareX.ScreenCaptureLib
                             args.Append($"-preset {FFmpeg.NVENC_Preset} ");
                             args.Append($"-tune {FFmpeg.NVENC_Tune} ");
                             args.Append($"-b:v {FFmpeg.NVENC_Bitrate}k ");
+                            args.Append("-tag:v hvc1 "); // tagging HEVC stream to be compatible with iOS devices
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.h264_amf:
@@ -276,11 +278,13 @@ namespace ShareX.ScreenCaptureLib
                             args.Append($"-quality {FFmpeg.AMF_Quality} ");
                             args.Append($"-b:v {FFmpeg.AMF_Bitrate}k ");
                             args.Append("-pix_fmt yuv420p ");
+                            args.Append("-tag:v hvc1 "); // tagging HEVC stream to be compatible with iOS devices
                             break;
                         case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                         case FFmpegVideoCodec.hevc_qsv:
                             args.Append($"-preset {FFmpeg.QSV_Preset} ");
                             args.Append($"-b:v {FFmpeg.QSV_Bitrate}k ");
+                            args.Append("-tag:v hvc1 "); // tagging HEVC stream to be compatible with iOS devices
                             break;
                         case FFmpegVideoCodec.libwebp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
                             args.Append("-lossless 0 ");
