@@ -263,7 +263,14 @@ namespace ShareX
                     OpenImageThumbnailer();
                     break;
                 case HotkeyType.VideoConverter:
-                    OpenVideoConverter(safeTaskSettings);
+                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    {
+                        OpenVideoConverter(command.Parameter, safeTaskSettings);
+                    }
+                    else
+                    {
+                        OpenVideoConverter(safeTaskSettings);
+                    }
                     break;
                 case HotkeyType.VideoThumbnailer:
                     OpenVideoThumbnailer(safeTaskSettings);
@@ -931,6 +938,23 @@ namespace ShareX
             VideoConverterForm videoConverterForm = new VideoConverterForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
                 taskSettings.ToolsSettingsReference.VideoConverterOptions);
             videoConverterForm.Show();
+        }
+
+        public static void OpenVideoConverter(string filePath, TaskSettings taskSettings = null)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                if (!CheckFFmpeg(taskSettings))
+                {
+                    return;
+                }
+
+                VideoConverterForm videoConverterForm = new VideoConverterForm(filePath, taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
+                    taskSettings.ToolsSettingsReference.VideoConverterOptions);
+                videoConverterForm.Show();
+            }
         }
 
         public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)

@@ -71,6 +71,13 @@ namespace ShareX.MediaLib
             formReady = true;
         }
 
+        public VideoConverterForm(string inputFilePath, string ffmpegFilePath, VideoConverterOptions options) : this(ffmpegFilePath, options)
+        {
+            txtInputFilePath.Text = inputFilePath;
+            txtOutputFolder.Text = Path.GetDirectoryName(inputFilePath);
+            txtOutputFileName.Text = Path.GetFileNameWithoutExtension(inputFilePath) + "-output";
+        }
+
         private void UpdateOptions()
         {
             if (formReady)
