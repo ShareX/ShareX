@@ -276,7 +276,14 @@ namespace ShareX
                     OpenVideoThumbnailer(safeTaskSettings);
                     break;
                 case HotkeyType.OCR:
-                    await OCRImage(safeTaskSettings);
+                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    {
+                        await OCRImage(command.Parameter, safeTaskSettings);
+                    }
+                    else
+                    {
+                        await OCRImage(safeTaskSettings);
+                    }
                     break;
                 case HotkeyType.QRCode:
                     OpenQRCode();
