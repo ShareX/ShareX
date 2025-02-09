@@ -286,7 +286,14 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.QRCode:
-                    OpenQRCode();
+                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    {
+                        OpenQRCodeScanFromImageFile(command.Parameter);
+                    }
+                    else
+                    {
+                        OpenQRCode();
+                    }
                     break;
                 case HotkeyType.QRCodeDecodeFromScreen:
                     OpenQRCodeDecodeFromScreen();
@@ -1364,6 +1371,11 @@ namespace ShareX
         public static void OpenQRCode()
         {
             QRCodeForm.GenerateQRCodeFromClipboard().Show();
+        }
+
+        public static void OpenQRCodeScanFromImageFile(string filePath)
+        {
+            QRCodeForm.OpenFormScanFromImageFile(filePath).Show();
         }
 
         public static void OpenQRCodeDecodeFromScreen()
