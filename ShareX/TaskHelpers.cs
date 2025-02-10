@@ -70,6 +70,8 @@ namespace ShareX
 
             TaskSettings safeTaskSettings = TaskSettings.GetSafeTaskSettings(taskSettings);
 
+            string filePath = CheckParameterForFilePath(command);
+
             switch (job)
             {
                 // Upload
@@ -185,9 +187,9 @@ namespace ShareX
                     OpenRuler(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreen:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        PinToScreen(command.Parameter, safeTaskSettings);
+                        PinToScreen(filePath, safeTaskSettings);
                     }
                     else
                     {
@@ -201,9 +203,9 @@ namespace ShareX
                     PinToScreenFromClipboard(safeTaskSettings);
                     break;
                 case HotkeyType.PinToScreenFromFile:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        PinToScreen(command.Parameter, safeTaskSettings);
+                        PinToScreen(filePath, safeTaskSettings);
                     }
                     else
                     {
@@ -214,9 +216,9 @@ namespace ShareX
                     PinToScreenCloseAll(safeTaskSettings);
                     break;
                 case HotkeyType.ImageEditor:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        AnnotateImageFromFile(command.Parameter, safeTaskSettings);
+                        AnnotateImageFromFile(filePath, safeTaskSettings);
                     }
                     else
                     {
@@ -224,9 +226,9 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.ImageBeautifier:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        OpenImageBeautifier(command.Parameter, safeTaskSettings);
+                        OpenImageBeautifier(filePath, safeTaskSettings);
                     }
                     else
                     {
@@ -234,9 +236,9 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.ImageEffects:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        OpenImageEffects(command.Parameter, safeTaskSettings);
+                        OpenImageEffects(filePath, safeTaskSettings);
                     }
                     else
                     {
@@ -244,9 +246,9 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.ImageViewer:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        OpenImageViewer(command.Parameter);
+                        OpenImageViewer(filePath);
                     }
                     else
                     {
@@ -263,9 +265,9 @@ namespace ShareX
                     OpenImageThumbnailer();
                     break;
                 case HotkeyType.VideoConverter:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        OpenVideoConverter(command.Parameter, safeTaskSettings);
+                        OpenVideoConverter(filePath, safeTaskSettings);
                     }
                     else
                     {
@@ -276,9 +278,9 @@ namespace ShareX
                     OpenVideoThumbnailer(safeTaskSettings);
                     break;
                 case HotkeyType.OCR:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        await OCRImage(command.Parameter, safeTaskSettings);
+                        await OCRImage(filePath, safeTaskSettings);
                     }
                     else
                     {
@@ -286,9 +288,9 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.QRCode:
-                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        OpenQRCodeScanFromImageFile(command.Parameter);
+                        OpenQRCodeScanFromImageFile(filePath);
                     }
                     else
                     {
@@ -351,6 +353,21 @@ namespace ShareX
                     Program.MainForm.ForceClose();
                     break;
             }
+        }
+
+        public static string CheckParameterForFilePath(CLICommand command)
+        {
+            if (command != null && !string.IsNullOrEmpty(command.Parameter))
+            {
+                string filePath = FileHelpers.GetAbsolutePath(command.Parameter);
+
+                if (File.Exists(filePath))
+                {
+                    return filePath;
+                }
+            }
+
+            return null;
         }
 
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
