@@ -192,7 +192,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!isRequest && !string.IsNullOrEmpty(AzureStorageCustomDomain))
             {
-                url = URLHelpers.CombineURL(AzureStorageCustomDomain, uploadPath);
+                if (AzureStorageContainer == "$root")
+                {
+                    url = URLHelpers.CombineURL(AzureStorageCustomDomain, uploadPath);
+                }
+                else
+                {
+                    url = URLHelpers.CombineURL(AzureStorageCustomDomain, AzureStorageContainer, uploadPath);
+                }
                 url = URLHelpers.FixPrefix(url);
             }
             else if (!isRequest && AzureStorageContainer == "$root")
