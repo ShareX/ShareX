@@ -70,7 +70,17 @@ namespace ShareX
 
             TaskSettings safeTaskSettings = TaskSettings.GetSafeTaskSettings(taskSettings);
 
-            string filePath = CheckParameterForFilePath(command);
+            string filePath;
+
+            try
+            {
+                filePath = CheckParameterForFilePath(command);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                return;
+            }
 
             switch (job)
             {
@@ -301,7 +311,7 @@ namespace ShareX
                     OpenQRCodeDecodeFromScreen();
                     break;
                 case HotkeyType.HashCheck:
-                    OpenHashCheck();
+                    OpenHashCheck(filePath);
                     break;
                 case HotkeyType.IndexFolder:
                     UploadManager.IndexFolder();
@@ -361,10 +371,12 @@ namespace ShareX
             {
                 string filePath = FileHelpers.GetAbsolutePath(command.Parameter);
 
-                if (File.Exists(filePath))
+                if (!File.Exists(filePath))
                 {
-                    return filePath;
+                    throw new FileNotFoundException();
                 }
+
+                return filePath;
             }
 
             return null;
@@ -901,9 +913,10 @@ namespace ShareX
             }
         }
 
-        public static void OpenHashCheck()
+        public static void OpenHashCheck(string filePath = null)
         {
-            new HashCheckerForm().Show();
+            HashCheckerForm hashCheckerForm = new HashCheckerForm(filePath);
+            hashCheckerForm.Show();
         }
 
         public static void OpenDirectoryIndexer(TaskSettings taskSettings = null)

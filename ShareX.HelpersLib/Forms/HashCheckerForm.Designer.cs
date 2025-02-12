@@ -168,6 +168,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "HashCheckerForm";
+            this.Shown += new System.EventHandler(this.HashCheckerForm_Shown);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.HashCheckerForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.HashCheckerForm_DragEnter);
             this.ResumeLayout(false);

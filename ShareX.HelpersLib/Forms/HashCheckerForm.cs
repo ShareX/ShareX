@@ -26,6 +26,7 @@
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -36,7 +37,7 @@ namespace ShareX.HelpersLib
 
         private HashChecker hashChecker;
 
-        public HashCheckerForm()
+        public HashCheckerForm(string filePath = null)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this, true);
@@ -51,6 +52,11 @@ namespace ShareX.HelpersLib
 
             txtResult.SupportSelectAll();
             txtTarget.SupportSelectAll();
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                txtFilePath.Text = filePath;
+            }
         }
 
         private void UpdateCompareControls()
@@ -95,6 +101,58 @@ namespace ShareX.HelpersLib
             {
                 txtTarget.BackColor = txtResult.BackColor;
                 txtTarget.ForeColor = txtResult.ForeColor;
+            }
+        }
+
+        private async Task StartHashCheck()
+        {
+            if (hashChecker.IsWorking)
+            {
+                hashChecker.Stop();
+            }
+            else
+            {
+                btnStartHashCheck.Text = Resources.Stop;
+                pbProgress.Value = 0;
+                txtResult.Text = "";
+
+                if (CompareTwoFiles)
+                {
+                    txtTarget.Text = "";
+                }
+
+                HashType hashType = (HashType)cbHashType.SelectedIndex;
+
+                string filePath = txtFilePath.Text;
+                string result = await hashChecker.Start(filePath, hashType);
+
+                if (!string.IsNullOrEmpty(result))
+                {
+                    txtResult.Text = result.ToUpperInvariant();
+
+                    if (CompareTwoFiles)
+                    {
+                        string filePath2 = txtFilePath2.Text;
+                        string result2 = await hashChecker.Start(filePath2, hashType);
+
+                        if (!string.IsNullOrEmpty(result2))
+                        {
+                            txtTarget.Text = result2.ToUpperInvariant();
+                        }
+                    }
+                }
+
+                btnStartHashCheck.Text = Resources.Check;
+            }
+        }
+
+        private async void HashCheckerForm_Shown(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtFilePath.Text))
+            {
+                btnStartHashCheck.Focus();
+
+                await StartHashCheck();
             }
         }
 
@@ -167,44 +225,7 @@ namespace ShareX.HelpersLib
 
         private async void btnStartHashCheck_Click(object sender, EventArgs e)
         {
-            if (hashChecker.IsWorking)
-            {
-                hashChecker.Stop();
-            }
-            else
-            {
-                btnStartHashCheck.Text = Resources.Stop;
-                pbProgress.Value = 0;
-                txtResult.Text = "";
-
-                if (CompareTwoFiles)
-                {
-                    txtTarget.Text = "";
-                }
-
-                HashType hashType = (HashType)cbHashType.SelectedIndex;
-
-                string filePath = txtFilePath.Text;
-                string result = await hashChecker.Start(filePath, hashType);
-
-                if (!string.IsNullOrEmpty(result))
-                {
-                    txtResult.Text = result.ToUpperInvariant();
-
-                    if (CompareTwoFiles)
-                    {
-                        string filePath2 = txtFilePath2.Text;
-                        string result2 = await hashChecker.Start(filePath2, hashType);
-
-                        if (!string.IsNullOrEmpty(result2))
-                        {
-                            txtTarget.Text = result2.ToUpperInvariant();
-                        }
-                    }
-                }
-
-                btnStartHashCheck.Text = Resources.Check;
-            }
+            await StartHashCheck();
         }
 
         private void fileCheck_FileCheckProgressChanged(float progress)
