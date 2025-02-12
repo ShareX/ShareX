@@ -86,7 +86,14 @@ namespace ShareX
             {
                 // Upload
                 case HotkeyType.FileUpload:
-                    UploadManager.UploadFile(safeTaskSettings);
+                    if (!string.IsNullOrEmpty(filePath))
+                    {
+                        UploadManager.UploadFile(filePath, safeTaskSettings);
+                    }
+                    else
+                    {
+                        UploadManager.UploadFile(safeTaskSettings);
+                    }
                     break;
                 case HotkeyType.FolderUpload:
                     UploadManager.UploadFolder(safeTaskSettings);
