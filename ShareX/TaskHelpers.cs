@@ -52,9 +52,9 @@ namespace ShareX
 {
     public static class TaskHelpers
     {
-        public static async Task ExecuteJob(HotkeyType job, CLICommand command = null)
+        public static async Task ExecuteJob(HotkeyType job, string filePath = null)
         {
-            await ExecuteJob(Program.DefaultTaskSettings, job, command);
+            await ExecuteJob(Program.DefaultTaskSettings, job, filePath);
         }
 
         public static async Task ExecuteJob(TaskSettings taskSettings)
@@ -62,25 +62,13 @@ namespace ShareX
             await ExecuteJob(taskSettings, taskSettings.Job);
         }
 
-        public static async Task ExecuteJob(TaskSettings taskSettings, HotkeyType job, CLICommand command = null)
+        public static async Task ExecuteJob(TaskSettings taskSettings, HotkeyType job, string filePath = null)
         {
             if (job == HotkeyType.None) return;
 
             DebugHelper.WriteLine("Executing: " + job.GetLocalizedDescription());
 
             TaskSettings safeTaskSettings = TaskSettings.GetSafeTaskSettings(taskSettings);
-
-            string filePath;
-
-            try
-            {
-                filePath = CheckParameterForFilePath(command);
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-                return;
-            }
 
             switch (job)
             {
@@ -370,23 +358,6 @@ namespace ShareX
                     Program.MainForm.ForceClose();
                     break;
             }
-        }
-
-        public static string CheckParameterForFilePath(CLICommand command)
-        {
-            if (command != null && !string.IsNullOrEmpty(command.Parameter))
-            {
-                string filePath = FileHelpers.GetAbsolutePath(command.Parameter);
-
-                if (!File.Exists(filePath))
-                {
-                    throw new FileNotFoundException();
-                }
-
-                return filePath;
-            }
-
-            return null;
         }
 
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
