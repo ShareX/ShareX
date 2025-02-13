@@ -2,8 +2,8 @@
   <PropertyGroup>
     <Company>ShareX Team</Company>
     <Product>ShareX</Product>
-    <Copyright>Copyright (c) 2007-2024 ShareX Team</Copyright>
-    <Version>16.0.2</Version>
+    <Copyright>Copyright (c) 2007-2025 ShareX Team</Copyright>
+    <Version>17.0.1</Version>
     <EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
@@ -14,11 +14,11 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'MicrosoftStore'">
-    <DefineConstants>$(DefineConstants);RELEASE;MICROSOFTSTORE</DefineConstants>
+    <DefineConstants>$(DefineConstants);MicrosoftStore</DefineConstants>
     <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'MicrosoftStoreDebug'">
-    <DefineConstants>$(DefineConstants);DEBUG;MICROSOFTSTORE</DefineConstants>
+    <DefineConstants>$(DefineConstants);DEBUG;MicrosoftStore</DefineConstants>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
   </PropertyGroup>

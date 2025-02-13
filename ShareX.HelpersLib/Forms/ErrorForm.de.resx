@@ -127,15 +127,14 @@
     <value>&amp;OK</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Logdateien öffnen</value>
+    <value>Logdateien öffnen...</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Bugreport senden</value>
+    <value>Bugreport senden...</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Fehler
-Fehler 2
-</value>
+Fehler 2</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>Ok</value>

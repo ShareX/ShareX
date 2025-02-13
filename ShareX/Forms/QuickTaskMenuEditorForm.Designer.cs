@@ -114,6 +114,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lvPresets);
             this.Name = "QuickTaskMenuEditorForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.ResumeLayout(false);
             this.PerformLayout();
 

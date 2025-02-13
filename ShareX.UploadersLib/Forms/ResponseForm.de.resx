@@ -123,4 +123,28 @@
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Webbrowser</value>
   </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Antwort kopieren</value>
+  </data>
+  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
+    <value>Gekürzte URL kopieren</value>
+  </data>
+  <data name="tsbCopyURL.Text" xml:space="preserve">
+    <value>URL kopieren</value>
+  </data>
+  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
+    <value>Thumbnail-URL kopieren</value>
+  </data>
+  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
+    <value>Löschungs-URL kopieren</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Ergebnis</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Antwortinfos</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Antworttext</value>
+  </data>
 </root>

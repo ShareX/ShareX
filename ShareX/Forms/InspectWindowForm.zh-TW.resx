@@ -126,10 +126,19 @@
   <data name="btnInspectWindow.Text" xml:space="preserve">
     <value>檢視視窗...</value>
   </data>
-  <data name="btnPinToTop.Text" xml:space="preserve">
-    <value>置頂</value>
-  </data>
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>重新整理</value>
+  </data>
+  <data name="cbTopMost.Text" xml:space="preserve">
+    <value>最上層</value>
+  </data>
+  <data name="lblOpacity.Text" xml:space="preserve">
+    <value>不透明度：</value>
+  </data>
+  <data name="lblOpacityTip.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="mbWindowList.Text" xml:space="preserve">
+    <value>視窗清單</value>
   </data>
 </root>

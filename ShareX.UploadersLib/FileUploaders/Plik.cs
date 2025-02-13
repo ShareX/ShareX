@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -115,21 +115,22 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        internal static void CalculateTTLValue(NumericUpDown ttlElement, int newUnit, int oldUnit)
+        internal static void CalculateTTLValue(NumericUpDown nudTTL, int newUnit, int oldUnit)
         {
             if (newUnit != 3)
             {
-                if (ttlElement.Value == -1)
+                if (nudTTL.Value == -1)
                 {
-                    ttlElement.Value = 1;
+                    nudTTL.SetValue(1);
                 }
-                ttlElement.Value *= GetMultiplyIndex(newUnit, oldUnit);
-                ttlElement.ReadOnly = false;
+
+                nudTTL.SetValue(nudTTL.Value * GetMultiplyIndex(newUnit, oldUnit));
+                nudTTL.ReadOnly = false;
             }
             else
             {
-                ttlElement.Value = -1;
-                ttlElement.ReadOnly = true;
+                nudTTL.SetValue(-1);
+                nudTTL.ReadOnly = true;
             }
         }
 

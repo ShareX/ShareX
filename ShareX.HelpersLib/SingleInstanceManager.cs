@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -42,8 +42,9 @@ namespace ShareX.HelpersLib
         public bool IsFirstInstance { get; private set; }
 
         private const int MaxArgumentsLength = 100;
+        private const int ConnectTimeout = 5000;
 
-        private readonly Mutex mutex;
+        private readonly MutexManager mutex;
         private CancellationTokenSource cts;
 
         public SingleInstanceManager(string mutexName, string pipeName, string[] args) : this(mutexName, pipeName, true, args)
@@ -56,50 +57,47 @@ namespace ShareX.HelpersLib
             PipeName = pipeName;
             IsSingleInstance = isSingleInstance;
 
-            mutex = new Mutex(false, MutexName);
+            mutex = new MutexManager(MutexName, 0);
+            IsFirstInstance = mutex.HasHandle;
 
-            try
+            if (IsSingleInstance)
             {
-                IsFirstInstance = mutex.WaitOne(100, false);
-
-                if (IsSingleInstance)
+                if (IsFirstInstance)
                 {
-                    if (IsFirstInstance)
-                    {
-                        cts = new CancellationTokenSource();
+                    cts = new CancellationTokenSource();
 
-                        Task.Run(ListenForConnectionsAsync, cts.Token);
-                    }
-                    else
-                    {
-                        RedirectArgumentsToFirstInstance(args);
-                    }
+                    Task.Run(ListenForConnectionsAsync, cts.Token);
                 }
-            }
-            catch (AbandonedMutexException)
-            {
-                DebugHelper.WriteLine("Single instance mutex found abandoned from another process.");
-
-                IsFirstInstance = true;
+                else
+                {
+                    RedirectArgumentsToFirstInstance(args);
+                }
             }
         }
 
         protected virtual void OnArgumentsReceived(string[] arguments)
         {
-            ArgumentsReceived?.Invoke(arguments);
+            if (ArgumentsReceived != null)
+            {
+                Task.Run(() => ArgumentsReceived?.Invoke(arguments));
+            }
         }
 
         private async Task ListenForConnectionsAsync()
         {
             while (!cts.IsCancellationRequested)
             {
+                bool namedPipeServerCreated = false;
+
                 try
                 {
-                    using (NamedPipeServerStream serverPipe = new NamedPipeServerStream(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous))
+                    using (NamedPipeServerStream namedPipeServer = new NamedPipeServerStream(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous))
                     {
-                        await serverPipe.WaitForConnectionAsync(cts.Token);
+                        namedPipeServerCreated = true;
 
-                        using (BinaryReader reader = new BinaryReader(serverPipe, Encoding.UTF8))
+                        await namedPipeServer.WaitForConnectionAsync(cts.Token).ConfigureAwait(false);
+
+                        using (BinaryReader reader = new BinaryReader(namedPipeServer, Encoding.UTF8))
                         {
                             int length = reader.ReadInt32();
 
@@ -119,12 +117,17 @@ namespace ShareX.HelpersLib
                         }
                     }
                 }
-                catch when (cts.IsCancellationRequested)
+                catch (OperationCanceledException)
                 {
                 }
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
+
+                    if (!namedPipeServerCreated)
+                    {
+                        break;
+                    }
                 }
             }
         }
@@ -133,11 +136,11 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                using (NamedPipeClientStream clientPipe = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
+                using (NamedPipeClientStream namedPipeClient = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
                 {
-                    clientPipe.Connect();
+                    namedPipeClient.Connect(ConnectTimeout);
 
-                    using (BinaryWriter writer = new BinaryWriter(clientPipe, Encoding.UTF8))
+                    using (BinaryWriter writer = new BinaryWriter(namedPipeClient, Encoding.UTF8))
                     {
                         writer.Write(args.Length);
 
@@ -162,15 +165,7 @@ namespace ShareX.HelpersLib
                 cts.Dispose();
             }
 
-            if (mutex != null)
-            {
-                if (IsFirstInstance)
-                {
-                    mutex.ReleaseMutex();
-                }
-
-                mutex.Dispose();
-            }
+            mutex?.Dispose();
         }
     }
 }

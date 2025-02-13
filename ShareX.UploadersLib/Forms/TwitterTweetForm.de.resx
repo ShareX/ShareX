@@ -121,9 +121,9 @@
     <value>ShareX - Nachricht twittern</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;Abbrechen</value>
+    <value>Abbrechen</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>&amp;Twittern</value>
+    <value>Twittern</value>
   </data>
 </root>

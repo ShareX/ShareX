@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -43,6 +43,10 @@ namespace ShareX.HelpersLib
         private bool firstUpdateCheck = true;
         private Timer updateTimer = null;
         private readonly object updateTimerLock = new object();
+
+        public GitHubUpdateManager()
+        {
+        }
 
         public GitHubUpdateManager(string owner, string repo, bool portable = false)
         {
@@ -90,7 +94,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public GitHubUpdateChecker CreateUpdateChecker()
+        public virtual GitHubUpdateChecker CreateUpdateChecker()
         {
             return new GitHubUpdateChecker(GitHubOwner, GitHubRepo)
             {

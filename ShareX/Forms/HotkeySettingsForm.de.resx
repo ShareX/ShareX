@@ -132,4 +132,10 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Entfernen</value>
   </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>Zurücksetzen...</value>
+  </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Hotkeys sind deaktiviert. Sie können hier klicken, um diese zu aktivieren.</value>
+  </data>
 </root>

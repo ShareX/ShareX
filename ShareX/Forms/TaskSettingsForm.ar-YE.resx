@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>المهمة...</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>العرض:</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>العرض:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>العرض:</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>العرض</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>استخدام منطقة تحديد شفّافة</value>
+  </data>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>عند التقاط نافذة متداخلة مع شريط المهام</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>لقطة شاشة</value>
+  </data>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>التقاط نافذة مع التظليل (يتطلب الشفافيّة)</value>
+  </data>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>التقاط نافذة مع الشفافيّة</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>إضافة...</value>
+  </data>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>إضافة...</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>متقدّم</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>ما بعد الالتقاط...</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>ما بعد الرّفع...</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>اكتشاف أماكن عناصر التحكم داخل الوندوز</value>
+  </data>
+  <data name="cbCloseWindowAfterOpenServiceLink.Text" xml:space="preserve">
+    <value>إغلاق نافذة OCR بعد فتح رابط الخدمة</value>
+  </data>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>إنشاء معاينة عندما الصورة أكبر من المعاينة فقط</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>اللغة الافتراضية:</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>الوصف:</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>الوجهات...</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>تعطيل الاشعارات</value>
+  </data>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>تكرار</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>المدّة:</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>تعديل...</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>تعديل...</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>المؤثرات</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>تسمية الملف</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>مسار الملف</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>رافعو الملفات</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>المرشّح</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>مدة ثابتة:</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>وضع منطقة التسجيل الثابتة:</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>مسار المجلد</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>مراقبة المجلد ورفع أية ملفات جديدة يتم إنشاءها</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>مراقبة المجلدات</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>استحدام شكل مربع للعدسة</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>تخصيص المنطقة الزمنية:</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>استخدام JPEG كصيغة للصور إذا كان حجم الصورة أكبر من:</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>ثانية</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>ثانية</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>ثانية</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>ثانية</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>ثانية</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>صيغة منتقي الألوان (Ctrl + click):</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>صيغة منتقي الألوان:</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>نص معلومات منتقي الألوان:</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>مسجّل الشاشة</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>عدد الإطارات/ثانية لمسجّل الشاشة:</value>
+  </data>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>خيارات تسجيل الشاشة...</value>
+  </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>تأخير لقطة الشاشة:</value>
+  </data>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>طلب التأكد عند إلغاء التسجيل</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>رقم الزيادة تلقائية:</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>نسخ النتائج تلقائيًا إلى الحافظة</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>إخفاء تلقائي عند التقاط الشاشة</value>
+  </data>
+  <data name="lblRegionCaptureBackgroundDimStrength.Text" xml:space="preserve">
+    <value>شدة التعمية للون الخلفية:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>عدد بكسلات العدسة المكبرة:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>حجم بكسلات العدسة المكبرة:</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>نقرة بالزر الأوسط:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>نقرة على زر الفأرة 4:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>نقرة على زر الفأرة 5:</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>نقرة على زر الفأرة الأوسط:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>نقرة على زر الفأرة الأيمن:</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>نمط الاسم للقطة أو مرفوعات الحافظة:</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>نمط الاسم للقطة النافذة:</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>الإشعارات</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>التعرف على النصوص OCR</value>
+  </data>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>تطبيق المؤثرات للقطات المساحات فقط</value>
+  </data>
+  <data name="cbOverrideActions.Text" xml:space="preserve">
+    <value>تخصيص البرامج</value>
+  </data>
+  <data name="cbOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>تخصيص الإعدادات المتقدمة</value>
+  </data>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>تخصيص مهام ما بعد الإلتقاط</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>تخصيص مهام ما بعد الرفع</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>تخصيص إعدادات الالتقاط</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
+    <value>تخصيص الرافع المخصص الافتراضي</value>
+  </data>
+  <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
+    <value>تخصيص حساب FTP الافتراضي</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>تخصيص الوجهة</value>
+  </data>
+  <data name="cbOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>تخصيص الإعدادات العامة</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>تخصيص إعدادات الصورة</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>تخصيص مجلد لقطات الشاشة</value>
+  </data>
+  <data name="cbOverrideToolsSettings.Text" xml:space="preserve">
+    <value>تخصيص إعدادات الأدوات</value>
+  </data>
+  <data name="cbOverrideUploadSettings.Text" xml:space="preserve">
+    <value>تخصيص إعدادات الرفع</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>النمط:</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>المكان:</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>إشعار بالصوت بعد إجراء لقطة</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>إشعار بالصوت بعد انتهاء مهمة</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>عمق ألوان PNG:</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>مساحة محددة مسبقًا:</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Text" xml:space="preserve">
+    <value>عنوان نافذة محدد مسبقًا:</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>المعاينة</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>المعاينة:</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>المعاينة:</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>تنفيذ OCR بصمت</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>استخدام صيغة خام الفيديو للتسجيل ثم تنفيذ عملية الترميز بعد ذلك</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>التقاط منطقة</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>استخدام رمز الخط السطري '_' لاستبدال الحروف غير المدعومة عند رفع الملفات</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>ستبدال عنوان URL الناتج باستخدام استبدالات التعبيرات المنتظمة</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>الاستبدال:</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Text" xml:space="preserve">
+    <value>تقييد منطقة الالتقاط ومؤشر الفأرة على الشاشة النشطة فقط</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>إجراء النقر بزر الفأرة الأيمن:</value>
+  </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>تحديد منطقة...</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>إزاحة التظليل:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - إعدادات المهمة</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>عرض مؤشر الفأرة أثناء تسجيل الشاشة</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>عرض مؤشر الفأرة في لقطات الشاشة</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>عرض معدل الإطارات FPS</value>
+  </data>
+  <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>عرض نافذة مؤثرات الصور بعد إجراء الالتقاط</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>عرض العدسة المكبرة قرب مؤشر الفأرة</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>عرض معلومات الموضع و الحجم</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>الحجم:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>الضغط على Alt لجذب مربع التحديد إلى الحواف:</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>بدء التسجيل بعد:</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>المهمة</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>المهمة:</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>رافعو النصوص</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>الصورة المصغرة</value>
+  </data>
+  <data name="lblThumbnailName.Text" xml:space="preserve">
+    <value>اسم الصورة المصغرة:</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>الإشعار المنبثق</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>الأدوات</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>الرافع</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>عوامل تصفية الرافع</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>الرافع:</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>خدمات مشاركة عناوين URL</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>خدمات اختصار عناوين URL</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>استخدام نغمة مخصصة  للإشعار عن الإلتقاط:</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>استخدام نغمة مخصصة للإشعار عن خطأ:</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>استخدام نص معلومات مخصصًا بجانب المؤشر:</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>استخدام نغمة مخصصة  للإشعار عن انتهاء مهمة:</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>استخدام الوضع متعدد المناطق الذي سيسمح بتغيير حجم المناطق ومكانها</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>استخدم نمط تسمية الملف للمرفوعات بدلًا من الاسم الفعلي للملف</value>
+  </data>
+  <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
+    <value>استخدام مؤثرات عشوائية للصور</value>
+  </data>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>عند التقاط نافذة أو نافذة نشطة قم بالتقاط مساحة المستخدم فقط</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>تغيير</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>رفع الحافظة</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>اكتشاف مناطق النافذة والسماح لمؤشر الفأرة بالظهور في اللقطة</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>مثلًا: png, jpg, jpeg</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>الإضافة</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>مرشح الامتدادات:</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>الامتدادات</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>مدة التضاؤل:</value>
+  </data>
+  <data name="lblRegionCaptureFPSLimit.Text" xml:space="preserve">
+    <value>تقييد معدل الإطارات FPS:</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>معدل إطارات GIF:</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>جودة GIF:</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>الارتفاع</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>الارتفاع:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>الارتفاع:</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>الارتفاع:</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>إجراءات</value>
+  </data>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>إجراءات...</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>ضبط جودة الصور من النوع JPEG تلقائيًا لتكون قريبة من الحجم المحدد</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>المتغيرات</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>استعراض...</value>
+  </data>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>إذا كانت الحافظة تحتوي على عنوان URL لملف، قم بتنزيل ورفع هذا الملف</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>إذا كانت الحافظة تحتوي على مسار مجلد، قم بفهرسة هذا المجلد وورفع الفهرس</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>إذا كانت الحافظة تحتوي على عنوان URL، قم بمشاركته باستخدام خدمة مشاركة عنوان URL</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>إذا كانت الحافظة تحتوي على عنوان URL، فاستخدم خدمة اختصار عنوان URL</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>إذا كان الملف موجودًا:</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>إعدادات مؤثرات الصور...</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>صيغة الصورة:</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>رافعو الصور</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>تضمين المجلدات الفرعية</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>جودة JPEG:</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>عند النقر بزر الفأرة الأيسر:</value>
+  </data>
+  <data name="cbUseCustomActionCompletedSound.Text" xml:space="preserve">
+    <value>استخدام نغمة مخصصة  للإشعار عن إنتهاء الإجراءات المخصصة:</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>عرض إشعار منبثق عند انتهاء مهمة</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>إظهار علامة التقاطع على الشاشة</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>يمكنك تفعيل/تعطيل الإجراءات بالذهاب إلى "مهام ما بعد الالتقاط -&gt; تنفيذ إجراء بعد الالتقاط".</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>يمكنك تفعيل/تعطيل مؤثرات الصور بالذهاب إلى "مهام ما بعد الالتقاط -&gt; إضافة مؤثرات للصورة".</value>
+  </data>
+  <data name="cbPlaySoundAfterAction.Text" xml:space="preserve">
+    <value>إشعار بالصوت بعد انتهاء إجراء</value>
+  </data>
+</root>

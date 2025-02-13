@@ -132,4 +132,7 @@
   <data name="cbFilterMissingFiles.Text" xml:space="preserve">
     <value>Fehlende Dateien filtern</value>
   </data>
+  <data name="cbRememberWindowState.Text" xml:space="preserve">
+    <value>Fensterstatus merken</value>
+  </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,12 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -73,6 +71,8 @@ namespace ShareX
 
         private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
         private static readonly string FirefoxNativeMessagingHosts = @"SOFTWARE\Mozilla\NativeMessagingHosts\ShareX";
+        private static readonly string ChromeHostManifestFilePath = FileHelpers.GetAbsolutePath("host-manifest-chrome.json");
+        private static readonly string FirefoxHostManifestFilePath = FileHelpers.GetAbsolutePath("host-manifest-firefox.json");
 
         public static bool CheckShellContextMenuButton()
         {
@@ -122,8 +122,8 @@ namespace ShareX
 
         private static void UnregisterShellContextMenuButton()
         {
-            RegistryHelpers.RemoveRegistry(ShellExtMenuFiles, true);
-            RegistryHelpers.RemoveRegistry(ShellExtMenuDirectory, true);
+            RegistryHelpers.RemoveRegistry(ShellExtMenuFiles);
+            RegistryHelpers.RemoveRegistry(ShellExtMenuDirectory);
         }
 
         public static bool CheckEditShellContextMenuButton()
@@ -169,7 +169,7 @@ namespace ShareX
 
         private static void UnregisterEditShellContextMenuButton()
         {
-            RegistryHelpers.RemoveRegistry(ShellExtEditImage, true);
+            RegistryHelpers.RemoveRegistry(ShellExtEditImage);
         }
 
         public static bool CheckCustomUploaderExtension()
@@ -220,7 +220,7 @@ namespace ShareX
         private static void UnregisterCustomUploaderExtension()
         {
             RegistryHelpers.RemoveRegistry(ShellCustomUploaderExtensionPath);
-            RegistryHelpers.RemoveRegistry(ShellCustomUploaderAssociatePath, true);
+            RegistryHelpers.RemoveRegistry(ShellCustomUploaderAssociatePath);
         }
 
         public static bool CheckImageEffectExtension()
@@ -271,15 +271,14 @@ namespace ShareX
         private static void UnregisterImageEffectExtension()
         {
             RegistryHelpers.RemoveRegistry(ShellImageEffectExtensionPath);
-            RegistryHelpers.RemoveRegistry(ShellImageEffectAssociatePath, true);
+            RegistryHelpers.RemoveRegistry(ShellImageEffectAssociatePath);
         }
 
         public static bool CheckChromeExtensionSupport()
         {
             try
             {
-                return RegistryHelpers.CheckStringValue(ChromeNativeMessagingHosts, null, Program.ChromeHostManifestFilePath) &&
-                    File.Exists(Program.ChromeHostManifestFilePath);
+                return RegistryHelpers.CheckStringValue(ChromeNativeMessagingHosts, null, ChromeHostManifestFilePath) && File.Exists(ChromeHostManifestFilePath);
             }
             catch (Exception e)
             {
@@ -309,38 +308,13 @@ namespace ShareX
             }
         }
 
-        private static void CreateChromeHostManifest(string filePath)
-        {
-            FileHelpers.CreateDirectoryFromFilePath(filePath);
-
-            ChromeManifest manifest = new ChromeManifest()
-            {
-                name = "com.getsharex.sharex",
-                description = "ShareX",
-                path = Program.NativeMessagingHostFilePath,
-                type = "stdio",
-                allowed_origins = new string[] { "chrome-extension://nlkoigbdolhchiicbonbihbphgamnaoc/" }
-            };
-
-            string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
-
-            File.WriteAllText(filePath, json, Encoding.UTF8);
-        }
-
         private static void RegisterChromeExtensionSupport()
         {
-            CreateChromeHostManifest(Program.ChromeHostManifestFilePath);
-
-            RegistryHelpers.CreateRegistry(ChromeNativeMessagingHosts, Program.ChromeHostManifestFilePath);
+            RegistryHelpers.CreateRegistry(ChromeNativeMessagingHosts, ChromeHostManifestFilePath);
         }
 
         private static void UnregisterChromeExtensionSupport()
         {
-            if (File.Exists(Program.ChromeHostManifestFilePath))
-            {
-                File.Delete(Program.ChromeHostManifestFilePath);
-            }
-
             RegistryHelpers.RemoveRegistry(ChromeNativeMessagingHosts);
         }
 
@@ -348,8 +322,7 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckStringValue(FirefoxNativeMessagingHosts, null, Program.FirefoxHostManifestFilePath) &&
-                    File.Exists(Program.FirefoxHostManifestFilePath);
+                return RegistryHelpers.CheckStringValue(FirefoxNativeMessagingHosts, null, FirefoxHostManifestFilePath) && File.Exists(FirefoxHostManifestFilePath);
             }
             catch (Exception e)
             {
@@ -379,38 +352,13 @@ namespace ShareX
             }
         }
 
-        private static void CreateFirefoxHostManifest(string filePath)
-        {
-            FileHelpers.CreateDirectoryFromFilePath(filePath);
-
-            FirefoxManifest manifest = new FirefoxManifest()
-            {
-                name = "ShareX",
-                description = "ShareX",
-                path = Program.NativeMessagingHostFilePath,
-                type = "stdio",
-                allowed_extensions = new string[] { "firefox@getsharex.com" }
-            };
-
-            string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
-
-            File.WriteAllText(filePath, json, Encoding.UTF8);
-        }
-
         private static void RegisterFirefoxAddonSupport()
         {
-            CreateFirefoxHostManifest(Program.FirefoxHostManifestFilePath);
-
-            RegistryHelpers.CreateRegistry(FirefoxNativeMessagingHosts, Program.FirefoxHostManifestFilePath);
+            RegistryHelpers.CreateRegistry(FirefoxNativeMessagingHosts, FirefoxHostManifestFilePath);
         }
 
         private static void UnregisterFirefoxAddonSupport()
         {
-            if (File.Exists(Program.FirefoxHostManifestFilePath))
-            {
-                File.Delete(Program.FirefoxHostManifestFilePath);
-            }
-
             RegistryHelpers.RemoveRegistry(FirefoxNativeMessagingHosts);
         }
 
@@ -457,12 +405,14 @@ namespace ShareX
 
         public static void Uninstall()
         {
-            StartupManagerSingletonProvider.CurrentStartupManager.State = StartupState.Disabled;
+            StartupManager.State = StartupState.Disabled;
             CreateShellContextMenuButton(false);
             CreateEditShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);
             CreateImageEffectExtension(false);
             CreateSendToMenuButton(false);
+            UnregisterChromeExtensionSupport();
+            UnregisterFirefoxAddonSupport();
         }
     }
 }

@@ -166,10 +166,10 @@
     <value>Bild</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Bildervorschau</value>
+    <value>Bildervorschau...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Mehr Informationen</value>
+    <value>Mehr Informationen...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Öffnen</value>
@@ -218,5 +218,26 @@
   </data>
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>Hosts:</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Gefiltert</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Beim Lesen der Chronikdatei ist ein Fehler aufgetreten:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Gesamt</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>Dateiname, Fenstertitel, Prozessname, usw.</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>Prozessnamen:</value>
+  </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>Chronikstatistiken</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>An Bildschirm anheften</value>
   </data>
 </root>

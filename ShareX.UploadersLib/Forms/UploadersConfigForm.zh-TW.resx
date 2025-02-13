@@ -481,7 +481,7 @@
     <value>備註：雙擊資料夾名稱可開啟該資料夾。</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>是否公開上傳？</value>
+    <value>公開上傳</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>重新整理資料夾清單</value>
@@ -1271,5 +1271,8 @@
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
+  </data>
+  <data name="btnGoogleDriveFolderIDHelp.Text" xml:space="preserve">
+    <value>?</value>
   </data>
 </root>

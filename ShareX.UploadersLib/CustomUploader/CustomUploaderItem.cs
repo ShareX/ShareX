@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -51,10 +51,6 @@ namespace ShareX.UploadersLib
         [DefaultValue(HttpMethod.POST), JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
         public HttpMethod RequestMethod { get; set; } = HttpMethod.POST;
 
-        // TEMP: For backward compatibility
-        [JsonProperty]
-        private HttpMethod RequestType { set => RequestMethod = value; }
-
         [DefaultValue("")]
         public string RequestURL { get; set; }
 
@@ -86,9 +82,6 @@ namespace ShareX.UploadersLib
         public string Data { get; set; }
 
         public bool ShouldSerializeData() => (Body == CustomUploaderBody.JSON || Body == CustomUploaderBody.XML) && !string.IsNullOrEmpty(Data);
-
-        // TEMP: For backward compatibility
-        public ResponseType ResponseType { private get; set; }
 
         [DefaultValue("")]
         public string URL { get; set; }
@@ -355,68 +348,12 @@ namespace ShareX.UploadersLib
 
         public void CheckBackwardCompatibility()
         {
-            CheckRequestURL();
-
             if (string.IsNullOrEmpty(Version) || Helpers.CompareVersion(Version, "12.3.1") <= 0)
             {
-                if (RequestMethod == HttpMethod.POST)
-                {
-                    Body = CustomUploaderBody.MultipartFormData;
-                }
-                else
-                {
-                    Body = CustomUploaderBody.None;
-
-                    if (Arguments != null)
-                    {
-                        if (Parameters == null)
-                        {
-                            Parameters = new Dictionary<string, string>();
-                        }
-
-                        foreach (KeyValuePair<string, string> pair in Arguments)
-                        {
-                            if (!Parameters.ContainsKey(pair.Key))
-                            {
-                                Parameters.Add(pair.Key, pair.Value);
-                            }
-                        }
-
-                        Arguments = null;
-                    }
-                }
-
-                if (ResponseType == ResponseType.RedirectionURL)
-                {
-                    if (string.IsNullOrEmpty(URL))
-                    {
-                        URL = "$responseurl$";
-                    }
-
-                    URL = URL.Replace("$response$", "$responseurl$");
-                    ThumbnailURL = ThumbnailURL?.Replace("$response$", "$responseurl$");
-                    DeletionURL = DeletionURL?.Replace("$response$", "$responseurl$");
-                }
-                else if (ResponseType == ResponseType.Headers)
-                {
-                    URL = "Response type option is deprecated, please use \\$header:header_name\\$ syntax instead.";
-                }
-                else if (ResponseType == ResponseType.LocationHeader)
-                {
-                    if (string.IsNullOrEmpty(URL))
-                    {
-                        URL = "$header:Location$";
-                    }
-
-                    URL = URL.Replace("$response$", "$header:Location$");
-                    ThumbnailURL = ThumbnailURL?.Replace("$response$", "$header:Location$");
-                    DeletionURL = DeletionURL?.Replace("$response$", "$header:Location$");
-                }
-
-                ResponseType = ResponseType.Text;
-
-                Version = "13.7.1";
+                throw new Exception("Unsupported custom uploader" + ": " + ToString());
             }
+
+            CheckRequestURL();
 
             if (Helpers.CompareVersion(Version, "13.7.1") <= 0)
             {

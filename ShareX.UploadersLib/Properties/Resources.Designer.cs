@@ -63,16 +63,6 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon AdFly {
-            get {
-                object obj = ResourceManager.GetObject("AdFly", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
         internal static System.Drawing.Icon AmazonS3 {
             get {
                 object obj = ResourceManager.GetObject("AmazonS3", resourceCulture);
@@ -335,16 +325,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static string GoogleDrive_MyDrive_My_drive {
             get {
                 return ResourceManager.GetString("GoogleDrive_MyDrive_My_drive", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap GooglePhotos {
-            get {
-                object obj = ResourceManager.GetObject("GooglePhotos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1106,12 +1086,12 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon YouTube {
+        internal static System.Drawing.Bitmap YouTube {
             get {
                 object obj = ResourceManager.GetObject("YouTube", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -42,9 +42,18 @@ namespace ShareX
         Unknown
     }
 
+    public enum UpdateChannel // Localized
+    {
+        Release,
+        PreRelease,
+        Dev
+    }
+
     public enum SupportedLanguage
     {
         Automatic, // Localized
+        [Description("العربية (Arabic)")]
+        Arabic,
         [Description("Nederlands (Dutch)")]
         Dutch,
         [Description("English")]
@@ -263,6 +272,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         PinToScreenFromFile,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        PinToScreenCloseAll,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageEditor,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageBeautifier,
@@ -294,6 +305,10 @@ namespace ShareX
         ClipboardViewer,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         BorderlessWindow,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        ActiveWindowBorderless,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        ActiveWindowTopMost,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         InspectWindow,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
@@ -414,5 +429,13 @@ namespace ShareX
         UploadAudio,
         UploadText,
         ShortenURL
+    }
+
+    public enum NotificationSound
+    {
+        Capture,
+        TaskCompleted,
+        ActionCompleted,
+        Error
     }
 }

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,7 +34,7 @@ namespace ShareX.Steam
 {
     public static class Launcher
     {
-        private static string ContentFolderPath = GetContentFolderPath();
+        private static string ContentFolderPath = Helpers.GetAbsolutePath("ShareX");
         private static string ContentExecutablePath = Path.Combine(ContentFolderPath, "ShareX.exe");
         private static string ContentSteamFilePath = Path.Combine(ContentFolderPath, "Steam");
         private static string UpdatingTempFilePath = Path.Combine(ContentFolderPath, "Updating");
@@ -55,11 +55,7 @@ namespace ShareX.Steam
 
             IsStartupRun = Helpers.IsCommandExist(args, "-silent");
 
-#if DEBUG
-            ShowInApp = true;
-#else
             ShowInApp = File.Exists(ContentSteamFilePath);
-#endif
 
             if (!IsShareXRunning())
             {
@@ -134,20 +130,6 @@ namespace ShareX.Steam
                     }
                 }
             }
-        }
-
-        private static string GetContentFolderPath()
-        {
-#if DEBUG
-            string path = Helpers.GetAbsolutePath(@"..\..\..\ShareX\bin\Debug");
-
-            if (Directory.Exists(path))
-            {
-                return path;
-            }
-#endif
-
-            return Helpers.GetAbsolutePath("ShareX");
         }
 
         private static bool IsShareXRunning()

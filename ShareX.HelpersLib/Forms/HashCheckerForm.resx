@@ -547,7 +547,7 @@
     <value>pbProgress</value>
   </data>
   <data name="&gt;&gt;pbProgress.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=15.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=17.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbProgress.Parent" xml:space="preserve">
     <value>$this</value>

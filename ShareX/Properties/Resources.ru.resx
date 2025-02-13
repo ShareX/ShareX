@@ -655,4 +655,7 @@
   <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
     <value>Хотите еще раз попробовать загрузить из буфера?</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
+    <value>Арабский</value>
+  </data>
 </root>

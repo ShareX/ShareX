@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -130,7 +130,7 @@ namespace ShareX
         internal static Stopwatch StartTimer { get; private set; }
         internal static HotkeyManager HotkeyManager { get; set; }
         internal static WatchFolderManager WatchFolderManager { get; set; }
-        internal static GitHubUpdateManager UpdateManager { get; private set; }
+        internal static ShareXUpdateManager UpdateManager { get; private set; }
         internal static ShareXCLIManager CLI { get; private set; }
 
         #region Paths
@@ -161,7 +161,6 @@ namespace ShareX
             AppName, PersonalPathConfigFileName);
 
         private static readonly string PortableCheckFilePath = FileHelpers.GetAbsolutePath("Portable");
-        public static readonly string NativeMessagingHostFilePath = FileHelpers.GetAbsolutePath("ShareX_NativeMessagingHost.exe");
         public static readonly string SteamInAppFilePath = FileHelpers.GetAbsolutePath("Steam");
 
         private static string CustomPersonalPath { get; set; }
@@ -255,10 +254,7 @@ namespace ShareX
             }
         }
 
-        public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
         public static string ImageEffectsFolder => Path.Combine(PersonalFolder, "ImageEffects");
-        public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
-        public static string FirefoxHostManifestFilePath => Path.Combine(ToolsFolder, "Firefox-host-manifest.json");
 
         private static string PersonalPathDetectionMethod;
 
@@ -356,7 +352,7 @@ namespace ShareX
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
-            UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Portable);
+            UpdateManager = new ShareXUpdateManager();
             LanguageHelper.ChangeLanguage(Settings.Language);
             CleanupManager.CleanupAsync();
             Helpers.TryFixHandCursor();
@@ -394,6 +390,19 @@ namespace ShareX
 
         private static void SingleInstanceManager_ArgumentsReceived(string[] arguments)
         {
+            string message = "Arguments received: ";
+
+            if (arguments == null)
+            {
+                message += "null";
+            }
+            else
+            {
+                message += "\"" + string.Join(" ", arguments) + "\"";
+            }
+
+            DebugHelper.WriteLine(message);
+
             if (WaitFormLoad(5000))
             {
                 MainForm.InvokeSafe(async () =>
@@ -514,7 +523,6 @@ namespace ShareX
                 FileHelpers.CreateDirectory(SettingManager.BackupFolder);
                 FileHelpers.CreateDirectory(ImageEffectsFolder);
                 FileHelpers.CreateDirectory(ScreenshotsParentFolder);
-                FileHelpers.CreateDirectory(ToolsFolder);
             }
         }
 

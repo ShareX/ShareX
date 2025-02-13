@@ -120,7 +120,7 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Utilisez cette option si vous avez un bucket mis en place avec un nom de domaine personnalisé.
 Si le champ est vide, le nom de bucket sera utilisé pour l'URL.
-Par exemple, si votre bucket est appelé bucket.example.com alors l'URL sera http://bucket.example.com/...</value>
+Par exemple, si votre bucket est appelé "bucket.example.com" alors l'URL sera "http://bucket.example.com/...".</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Autres services de mise en ligne</value>
@@ -445,7 +445,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>Remarque : Vous pouvez effectuer un double clic sur le nom du dossier pour voir son contenu.</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Est-ce une mise en ligne publique ?</value>
+    <value>Mise en ligne publique</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Rafraîchir la liste des dossiers</value>
@@ -763,7 +763,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>Ajouter</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>Clé d'API : </value>
+    <value>Clé d'API :</value>
   </data>
   <data name="btnFTPDuplicate.Text" xml:space="preserve">
     <value>Dupliquer</value>
@@ -772,7 +772,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>Supprimer</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>Les fichiers seront automatiquement supprimés dans </value>
+    <value>Les fichiers seront automatiquement supprimés dans</value>
   </data>
   <data name="btnFTPTest.Text" xml:space="preserve">
     <value>Tester</value>
@@ -1259,5 +1259,26 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   </data>
   <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
     <value>Utiliser les liens directs</value>
+  </data>
+  <data name="lblAzureStorageCacheControl.Text" xml:space="preserve">
+    <value>Entête Cache-Control :</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Concaténer le nom du fichier à l'URL</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>jours</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>heures</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>jamais</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>Vous pourrez révoquer les accès à n'importe quel moment avec le lien ci-dessous :</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>Afficher la fenêtre de dialogue des options vidéo</value>
   </data>
 </root>

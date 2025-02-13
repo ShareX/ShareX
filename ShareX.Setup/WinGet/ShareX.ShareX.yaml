@@ -1,0 +1,8 @@
+# Created using wingetcreate 1.6.1.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.version.1.6.0.schema.json
+
+PackageIdentifier: ShareX.ShareX
+PackageVersion: {PackageVersion}
+DefaultLocale: en-US
+ManifestType: version
+ManifestVersion: 1.6.0

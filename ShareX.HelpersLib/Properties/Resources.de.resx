@@ -117,558 +117,463 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
-    <value>Dateipfad</value>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Freihandbereich</value>
   </data>
-  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
-    <value>Dateipfad ohne Erweiterung + "Output Dateinamenserweiterung"</value>
-  </data>
-  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>Nach CSS durchsuchen...</value>
-  </data>
-  <data name="Stop" xml:space="preserve">
-    <value>Anhalten</value>
-  </data>
-  <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
-    <value>Name {0}, Größe: {1}</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
-    <value>Aktualisierungscheck fehlgeschlagen</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Eine neuere Version von {0} ist verfügbar</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} ist aktuell</value>
-  </data>
-  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
-    <value>Warte.</value>
-  </data>
-  <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>Schließen</value>
-  </data>
-  <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
-    <value>Ordner auswählen</value>
-  </data>
-  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
-    <value>Drucken</value>
-  </data>
-  <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
-    <value>Exportieren fehlgeschlagen</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Fehler</value>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>Derzeitiger Wochenname (Lokale Sprache)</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
-    <value>Einstellungen in Zwischenablage kopiert</value>
+    <value>Einstellungen in Zwischenablage kopiert.</value>
   </data>
-  <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
-    <value>Dateiname: {0}</value>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Großes Quadrat</value>
   </data>
-  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
-    <value>Abbrechen</value>
-  </data>
-  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
-    <value>Ja</value>
-  </data>
-  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
-    <value>Nein</value>
-  </data>
-  <data name="HSB_ToString_" xml:space="preserve">
-    <value>Färbung: {0:0.0}°, Sättigung: {1:0.0}%, Helligkeit: {2:0.0}%</value>
-  </data>
-  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
-    <value>Cyan: {0:0.0}%, Magenta {1:0.0}%, Gelb: {2:0.0}%, Schlüssel: {3:0.0}%</value>
-  </data>
-  <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
-    <value>Import fehlgeschlagen.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
-    <value>DNS erfolgreich gesetzt.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
-    <value>DNS erfolgreich gesetzt. Neustart ist erforderlich.</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>DNS setzen fehlgeschlagen mit Fehlercode:</value>
-  </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>DNS setzen fehlgeschlagen </value>
-  </data>
-  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
-    <value>Status: {0}</value>
-  </data>
-  <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
-    <value>Fortschritt: {0:0.0}%
-Übertragungsgeschwindigkeit: {1:0.0} KB/s
-Dateigröße: {2:n0} / {3:n0} KB</value>
-  </data>
-  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
-    <value>Lädt Bild...</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
-    <value>Schneiden</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
-    <value>Kopieren</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
-    <value>Einfügen</value>
-  </data>
-  <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
-    <value>URL um Einstellungen herunterzuladen von</value>
-  </data>
-  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
-    <value>Abbrechen</value>
-  </data>
-  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>Lädt runter...</value>
-  </data>
-  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>Erhalte Dateigröße.</value>
-  </data>
-  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
-    <value>Lädt Bild: {0}%</value>
-  </data>
-  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
-    <value>Herunterladen beendet.</value>
-  </data>
-  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
-    <value>Installieren</value>
-  </data>
-  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
-    <value>Ordner existiert nicht:</value>
-  </data>
-  <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
-    <value>Herunterladen fehlgeschlagen:</value>
-  </data>
-  <data name="GIFQuality_Bit4" xml:space="preserve">
-    <value>16 Farben</value>
-  </data>
-  <data name="GIFQuality_Bit8" xml:space="preserve">
-    <value>256 Farben (Langsames Kodieren, aber bessere Qualität)</value>
-  </data>
-  <data name="GIFQuality_Default" xml:space="preserve">
-    <value>Standard .NET-Kodierung (Schnelles kodieren, aber Durchschnittsqualität)</value>
-  </data>
-  <data name="GIFQuality_Grayscale" xml:space="preserve">
-    <value>Paletten Größenwandler Grauwert 256 Farben</value>
-  </data>
-  <data name="ProxyMethod_Automatic" xml:space="preserve">
-    <value>Automatisch</value>
-  </data>
-  <data name="ProxyMethod_Manual" xml:space="preserve">
-    <value>Manuell</value>
-  </data>
-  <data name="ProxyMethod_None" xml:space="preserve">
-    <value>Keine</value>
-  </data>
-  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
-    <value>Aktiven Monitor aufnehmen</value>
-  </data>
-  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
-    <value>Aktives Fenster aufnehmen</value>
-  </data>
-  <data name="HotkeyType_AutoCapture" xml:space="preserve">
-    <value>Autoaufnahme</value>
-  </data>
-  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
-    <value>Aus Zwischenablage hochladen</value>
-  </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
-    <value>Aus Zwischenablage mit Inhaltsbetrachter hochladen</value>
-  </data>
-  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
-    <value>Drag-and-drop hochladen</value>
-  </data>
-  <data name="HotkeyType_FileUpload" xml:space="preserve">
-    <value>Datei hochladen</value>
-  </data>
-  <data name="HotkeyType_FolderUpload" xml:space="preserve">
-    <value>Ordner hochladen</value>
-  </data>
-  <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>Hash-Überprüfung</value>
-  </data>
-  <data name="HotkeyType_ImageEffects" xml:space="preserve">
-    <value>Bildeffekte</value>
-  </data>
-  <data name="HotkeyType_IndexFolder" xml:space="preserve">
-    <value>Ordner indizieren</value>
-  </data>
-  <data name="HotkeyType_LastRegion" xml:space="preserve">
-    <value>Letzten Bereich aufnehmen</value>
-  </data>
-  <data name="HotkeyType_None" xml:space="preserve">
-    <value>Keine</value>
-  </data>
-  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
-    <value>Screenshot-Ordner öffnen</value>
-  </data>
-  <data name="HotkeyType_PrintScreen" xml:space="preserve">
-    <value>Gesamten Bildschirm aufnehmen</value>
-  </data>
-  <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR-Code</value>
-  </data>
-  <data name="HotkeyType_RectangleLight" xml:space="preserve">
-    <value>Bereich aufnehmen (Einfach)</value>
-  </data>
-  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
-    <value>Bereich aufnehmen</value>
-  </data>
-  <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Lineal</value>
-  </data>
-  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
-    <value>Bildschirmfarbenwähler</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
-  </data>
-  <data name="HotkeyType_StopUploads" xml:space="preserve">
-    <value>Alle aktiven Uploads anhalten</value>
-  </data>
-  <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Nachricht twittern</value>
-  </data>
-  <data name="HotkeyType_UploadURL" xml:space="preserve">
-    <value>Von URL hochladen</value>
-  </data>
-  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Eigener Dateiuploader</value>
-  </data>
-  <data name="FileDestination_Email" xml:space="preserve">
-    <value>E-Mail</value>
-  </data>
-  <data name="FileDestination_SharedFolder" xml:space="preserve">
-    <value>Freigegebene Ordner</value>
-  </data>
-  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Eigener Bilduploader</value>
-  </data>
-  <data name="ImageDestination_FileUploader" xml:space="preserve">
-    <value>Dateiuploader</value>
-  </data>
-  <data name="ResponseType_Headers" xml:space="preserve">
-    <value>Antwortköpfe</value>
-  </data>
-  <data name="ResponseType_RedirectionURL" xml:space="preserve">
-    <value>UmleitungsURL</value>
-  </data>
-  <data name="ResponseType_Text" xml:space="preserve">
-    <value>Antworttexte</value>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>Derzeitige Sekunde</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Eigener Textuploader</value>
   </data>
-  <data name="TextDestination_FileUploader" xml:space="preserve">
-    <value>Dateiuploader</value>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>Keine</value>
   </data>
-  <data name="URLSharingServices_Email" xml:space="preserve">
-    <value>E-Mail</value>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>Derzeitiger Monat</value>
   </data>
-  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Eigener URL-Kürzer</value>
+  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
+    <value>Nach CSS durchsuchen...</value>
   </data>
-  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Bildeffekte / Wasserzeichen hinzufügen</value>
-  </data>
-  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
-    <value>Bild im Editor öffnen</value>
-  </data>
-  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
-    <value>Dateipfad in Zwischenablage kopieren</value>
-  </data>
-  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
-    <value>Datei in Zwischenablage kopieren</value>
-  </data>
-  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
-    <value>Bild in Zwischenablage kopieren</value>
-  </data>
-  <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
-    <value>Datei lokal löschen</value>
-  </data>
-  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
-    <value>Aktion ausführen</value>
-  </data>
-  <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
-    <value>Bild zu Datei speichern</value>
-  </data>
-  <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Bild zu Datei speichern als...</value>
-  </data>
-  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
-    <value>Datei im Explorer anzeigen</value>
-  </data>
-  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
-    <value>Thumbnailbild zu Datei speichern</value>
-  </data>
-  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
-    <value>Bild drucken</value>
-  </data>
-  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>Bild zum Host hochladen</value>
-  </data>
-  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
-    <value>URL in Zwischenablage kopieren</value>
-  </data>
-  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
-    <value>URL öffnen</value>
-  </data>
-  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
-    <value>URL teilen</value>
-  </data>
-  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
-    <value>"QR-Code"-Fenster anzeigen</value>
-  </data>
-  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
-    <value>URL kürzen</value>
-  </data>
-  <data name="FileExistAction_Ask" xml:space="preserve">
-    <value>Fragen, was jetzt zutun ist</value>
-  </data>
-  <data name="FileExistAction_Cancel" xml:space="preserve">
-    <value>Nicht speichern</value>
-  </data>
-  <data name="FileExistAction_Overwrite" xml:space="preserve">
-    <value>Datei überschreiben</value>
-  </data>
-  <data name="FileExistAction_UniqueName" xml:space="preserve">
-    <value>Nummer zum Dateinamen hinzufügen</value>
-  </data>
-  <data name="SupportedLanguage_Automatic" xml:space="preserve">
-    <value>Automatisch</value>
-  </data>
-  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
-    <value>Autoaufnahme mit letztem Bereich starten</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
-    <value>Bildschirmaufzeichnung mit letztem Bereich starten</value>
-  </data>
-  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Eine neuere Version von {0} ist verfügbar.
-Soll sie heruntergeladen und installiert werden?</value>
-  </data>
-  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
-    <value>Update ist verfügbar</value>
-  </data>
-  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
-    <value>Konnte Verzeichnis nicht erstellen.</value>
-  </data>
-  <data name="HotkeyType_ColorPicker" xml:space="preserve">
-    <value>Farbauswähler</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
-    <value>Bildschirmaufzeichnung (GIF)</value>
-  </data>
-  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
-    <value>Bildschirmaufzeichnung (GIF) mit letztem Bereich starten</value>
-  </data>
-  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
-    <value>Bereich aufnehmen (Transparent)</value>
-  </data>
-  <data name="HotkeyType_CustomRegion" xml:space="preserve">
-    <value>Vordefinierten Bereich aufnehmen</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
-    <value>FFmpeg (Gute Qualität)</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
-    <value>.NET (Schlechte Qualität)</value>
-  </data>
-  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
-    <value>Octree quantizer (Mittlere Qualität)</value>
-  </data>
-  <data name="HotkeyType_Category_Tools" xml:space="preserve">
-    <value>Werkzeuge</value>
-  </data>
-  <data name="HotkeyType_Category_Upload" xml:space="preserve">
-    <value>Hochladen</value>
-  </data>
-  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
-    <value>Bildschirmaufnahme</value>
-  </data>
-  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
-    <value>Bildschirmaufzeichnung</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
-    <value>Bildschirmaufzeichnung mit dem aktiven Fensterbereich starten</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
-    <value>Bildschirmaufzeichnung (GIF) mit dem aktiven Fensterbereich starten/stoppen</value>
-  </data>
-  <data name="HotkeyType_ImageEditor" xml:space="preserve">
-    <value>Bildeditor</value>
-  </data>
-  <data name="HotkeyType_DNSChanger" xml:space="preserve">
-    <value>DNS-Wechsler</value>
-  </data>
-  <data name="HotkeyType_MonitorTest" xml:space="preserve">
-    <value>Monitortest</value>
-  </data>
-  <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
-    <value>Webpage Aufnahme</value>
-  </data>
-  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
-    <value>Deaktiviere/Aktiviere Hotkeys</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>Automatisch alphanumerisch erhöhen. 0 pad left using {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Automatisch hexadezimal erhöhen. 0 pad left using {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
-    <value>Zufälliges Hexadezimalzeichen. Wiederholen mit {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>Automatisch alphanumerisch (Groß-/Kleinschreibung) erhöhen. 0 pad left using {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
-    <value>Automatisch nach Basis {n} alphanumerisch (1 &lt; n &lt; 63) erhöhen</value>
-  </data>
-  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
-    <value>Zufällige GUID</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
-    <value>Datum und Zeit</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
-    <value>Inkrementell</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
-    <value>Zufällig</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
-    <value>Bild</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
-    <value>Computer</value>
-  </data>
-  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
-    <value>Scroll-Aufnahme</value>
-  </data>
-  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
-    <value>Bildverbinder</value>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Wiederholen</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>Video-Thumbnailer</value>
   </data>
-  <data name="ResponseType_LocationHeader" xml:space="preserve">
-    <value>Location header</value>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>Unkenntlich machen</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Schnellzugriffsmenü anzeigen</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>URL-Kürzer</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>Benutzerlogin Name</value>
+  </data>
+  <data name="HotkeyType_ImageEffects" xml:space="preserve">
+    <value>Bildeffekte</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>Bild (Bildschirm)</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
+    <value>Eine neuere Version von {0} ist verfügbar</value>
+  </data>
+  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
+    <value>"QR-Code"-Fenster anzeigen</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>Sprechblase hinzufügen</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
+    <value>{0} ist aktuell</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
+    <value>Bildschirmaufzeichnung</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>1 Stunde</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>Scroll-Aufnahme</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>Automatisch alphanumerisch (Groß-/Kleinschreibung) erhöhen. 0 pad left using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>Titel des aktiven Fensters</value>
+  </data>
+  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
+    <value>Bild drucken</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>Rechtecksbereich</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>Aktionsleiste umschalten</value>
+  </data>
+  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
+    <value>Aktion ausführen</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Prozentsatz der Leinwand</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>Datum und Zeit</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>Bildverbinder</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Bereich aufnehmen (Transparent)</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
+    <value>Herunterladen beendet.</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Privat</value>
+  </data>
+  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
+    <value>URL teilen</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Dateiuploader</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>Derzeitige Stunde</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
+    <value>Aktualisierungscheck fehlgeschlagen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>Derzeitige Millisekunde</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
+    <value>Installieren</value>
+  </data>
+  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
+    <value>Bild zum Host hochladen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>Automatisch hexadezimal erhöhen. 0 pad left using {n}</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>Cyan: {0:0.0}%, Magenta {1:0.0}%, Gelb: {2:0.0}%, Schlüssel: {3:0.0}%</value>
+  </data>
+  <data name="HotkeyType_FolderUpload" xml:space="preserve">
+    <value>Ordner hochladen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>Derzeitige Minute</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>Verpixeln</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>Derzeitiger Tag</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>1 Tag</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>Pfeil zeichnen</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Intelligentes Radiergummi</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>Ungelistet</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>Update ist verfügbar</value>
+  </data>
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
+    <value>DNS setzen fehlgeschlagen mit Fehlercode:</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
+    <value>Schneiden</value>
+  </data>
+  <data name="FileExistAction_Cancel" xml:space="preserve">
+    <value>Nicht speichern</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
+    <value>Bild in Zwischenablage kopieren</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 Bit</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>Bildschirmaufzeichnung (GIF) mit dem aktiven Fensterbereich starten/stoppen</value>
+  </data>
+  <data name="HotkeyType_PrintScreen" xml:space="preserve">
+    <value>Gesamten Bildschirm aufnehmen</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>Bildschirmaufzeichnung (GIF) mit vordefiniertem Bereich starten/stoppen</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
+    <value>DNS erfolgreich gesetzt.</value>
+  </data>
+  <data name="HotkeyType_CustomRegion" xml:space="preserve">
+    <value>Vordefinierten Bereich aufnehmen</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10 Minuten</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Werkzeugtyp tauschen</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
+    <value>Bereich aufnehmen</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Text erkennen (OCR)</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>ShareX beenden</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
     <value>Eine neuere Version von {0} ist verfügbar.
 Soll sie heruntergeladen werden?</value>
   </data>
-  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
-    <value>"Nach der Aufnahme"-Fenster anzeigen</value>
+  <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
+    <value>Herunterladen fehlgeschlagen:</value>
   </data>
-  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
-    <value>"Vor dem Upload"-Fenster anzeigen</value>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>Text mit Umriss zeichnen</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Aktiven Monitor aufnehmen</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Kleines Thumbnail</value>
+  </data>
+  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
+  <data name="GIFQuality_Bit4" xml:space="preserve">
+    <value>16 Farben</value>
   </data>
   <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
     <value>"Nach dem Upload"-Fenster anzeigen</value>
   </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>Nach Ordner durchsuchen...</value>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>Zufälliges Adjektiv</value>
   </data>
-  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Manuell</value>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Alle auswählen</value>
   </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>Nach .exe durchsuchen...</value>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>Eigener Dateiuploader</value>
   </data>
-  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
-    <value>Computername</value>
+  <data name="LinearGradientMode_Vertical" xml:space="preserve">
+    <value>Vertikal</value>
   </data>
-  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
-    <value>Derzeitiger Tag</value>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>Zufällig</value>
   </data>
-  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
-    <value>Derzeitige Stunde</value>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Bilduploader</value>
   </data>
-  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
-    <value>Bildhöhe</value>
+  <data name="HotkeyType_HashCheck" xml:space="preserve">
+    <value>Hash-Überprüfung</value>
   </data>
-  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Automatisch Zahl erhöhen. 0 pad left using {n}</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
-    <value>Derzeitige Minute</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
-    <value>Derzeitiger Monat</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
-    <value>Derzeitiger Monatsname (Lokale Sprache)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
-    <value>Derzeitiger Monatsname (Englisch)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
-    <value>Derzeitige Millisekunde</value>
-  </data>
-  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
-    <value>Neue Zeile</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
-    <value>Bekommt AM/PM</value>
-  </data>
-  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>Name von aktiven Fenster verarbeiten</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Zufälliges alphanummerisches Zeichen. Wiederholen mit {n}</value>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>Bildschirmaufzeichnung mit dem aktiven Fensterbereich starten</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
     <value>Zufällige Zahl von 0 bis 9. Wiederholen mit {n}</value>
   </data>
-  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
-    <value>Derzeitige Sekunde</value>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
+    <value>Aus Zwischenablage mit Inhaltsbetrachter hochladen</value>
   </data>
-  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
-    <value>Titel des aktiven Fensters</value>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Öffentlich</value>
   </data>
-  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
-    <value>Benutzerlogin Name</value>
+  <data name="HSB_ToString_" xml:space="preserve">
+    <value>Färbung: {0:0.0}°, Sättigung: {1:0.0}%, Helligkeit: {2:0.0}%</value>
   </data>
-  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
-    <value>Benutzername</value>
+  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
-    <value>Unix Zeitstempel</value>
+  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
+    <value>Drag-and-drop hochladen</value>
   </data>
-  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
-    <value>Derzeitiger Wochenname (Lokale Sprache)</value>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>Niemals</value>
   </data>
-  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
-    <value>Derzeitiger Wochenname (Englisch)</value>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>Bildschirmaufzeichnung mit letztem Bereich starten</value>
   </data>
-  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
-    <value>Bildweite</value>
+  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
+    <value>Ja</value>
   </data>
-  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
-    <value>Derzeitiges Jahr</value>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Bild-Thumbnailer</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>Derzeitiger Monatsname (Lokale Sprache)</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>256 Farben (Langsames Kodieren, aber bessere Qualität)</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>Bild aus Datei hinzufügen</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (Schlechte Qualität)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>Automatisch alphanumerisch erhöhen. 0 pad left using {n}</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
+    <value>DNS setzen fehlgeschlagen.</value>
+  </data>
+  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
+    <value>Manuell</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>Bildeffekte / Wasserzeichen hinzufügen</value>
+  </data>
+  <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
+    <value>Datei lokal löschen</value>
+  </data>
+  <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
+    <value>Exportieren fehlgeschlagen.</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>Computer</value>
+  </data>
+  <data name="FileExistAction_UniqueName" xml:space="preserve">
+    <value>Nummer zum Dateinamen hinzufügen</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Großes Thumbnail</value>
   </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Derzeitiges Jahr (2 Ziffern)</value>
   </data>
-  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
-    <value>Schnellzugriffsmenü anzeigen</value>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Automatisch</value>
   </data>
-  <data name="HotkeyType_OpenHistory" xml:space="preserve">
-    <value>Chronik-Fenster öffnen</value>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>Vorheriger Zustand</value>
   </data>
-  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
-    <value>Bilderchronik-Fenster öffnen</value>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>Ellipsenbereich</value>
   </data>
-  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
-    <value>Hauptfenster öffnen</value>
+  <data name="HotkeyType_DNSChanger" xml:space="preserve">
+    <value>DNS-Wechsler</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>Bildschirmaufzeichnung (GIF)</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>Ungelistet</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Fenster</value>
+  </data>
+  <data name="HotkeyType_Ruler" xml:space="preserve">
+    <value>Lineal</value>
+  </data>
+  <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
+    <value>URL um Einstellungen herunterzuladen von</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>Freihand zeichnen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>Bekommt AM/PM</value>
+  </data>
+  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
+    <value>Nach Ordner durchsuchen...</value>
+  </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Rückwärtsdiagonale</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>Mauszeiger einfügen</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Riesiges Thumbnail</value>
+  </data>
+  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Bildschirmaufzeichnung abbrechen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>Derzeitiges Jahr</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>2 Wochen</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>Vollbildschirm</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
+    <value>Dateipfad in Zwischenablage kopieren</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
+    <value>Bildschirmaufzeichnung</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
+    <value>Bild zu Datei speichern</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>Dateipfad ohne Erweiterung + "Output Dateinamenserweiterung"</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Google-Bildersuche</value>
+  </data>
+  <data name="HotkeyType_IndexFolder" xml:space="preserve">
+    <value>Ordner indizieren</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>Unix Zeitstempel</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (Gute Qualität)</value>
+  </data>
+  <data name="HotkeyType_TweetMessage" xml:space="preserve">
+    <value>Nachricht twittern</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Größe nicht ändern</value>
+  </data>
+  <data name="HotkeyType_StopUploads" xml:space="preserve">
+    <value>Alle aktiven Uploads anhalten</value>
+  </data>
+  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
+    <value>URL öffnen</value>
+  </data>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>Bild im Editor öffnen</value>
+  </data>
+  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
+    <value>Lädt Bild...</value>
+  </data>
+  <data name="HotkeyType_LastRegion" xml:space="preserve">
+    <value>Letzten Bereich aufnehmen</value>
+  </data>
+  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
+    <value>Ordner existiert nicht:</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
+    <value>Momentane Version</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>Eine neuere Version von {0} ist verfügbar.
+Soll sie heruntergeladen und installiert werden?</value>
+  </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>Nach .wav durchsuchen...</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>Datei existiert nicht:</value>
@@ -676,259 +581,658 @@ Soll sie heruntergeladen werden?</value>
   <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
     <value>Ordner auswählen</value>
   </data>
-  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
-    <value>Datei auswählen</value>
-  </data>
-  <data name="PNGBitDepth_Automatic" xml:space="preserve">
-    <value>Automatisch</value>
-  </data>
-  <data name="PNGBitDepth_Bit24" xml:space="preserve">
-    <value>24 Bit</value>
-  </data>
-  <data name="PNGBitDepth_Bit32" xml:space="preserve">
-    <value>32 Bit</value>
-  </data>
-  <data name="PNGBitDepth_Default" xml:space="preserve">
-    <value>Standard</value>
-  </data>
-  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
-    <value>Text erkennen (OCR)</value>
-  </data>
-  <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Unkenntlich machen</value>
-  </data>
-  <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Hervorheben (H)</value>
-  </data>
-  <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Verpixeln</value>
-  </data>
-  <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Pfeil zeichnen</value>
-  </data>
-  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Ellipse zeichnen</value>
-  </data>
-  <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Linie zeichnen</value>
-  </data>
-  <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>Auswählen und Verschieben</value>
-  </data>
-  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Rechteck zeichnen</value>
-  </data>
-  <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Schritt hinzufügen</value>
-  </data>
-  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Freihand zeichnen</value>
-  </data>
-  <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Bild aus Datei hinzufügen</value>
-  </data>
-  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Sprechblase hinzufügen</value>
-  </data>
-  <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Mauszeiger einfügen</value>
-  </data>
-  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Text mit Umriss zeichnen</value>
-  </data>
-  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Text mit Hintergrund zeichnen</value>
-  </data>
-  <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Bild zuschneiden</value>
-  </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>Nach .wav durchsuchen...</value>
-  </data>
-  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
-    <value>URL-Freigabedienst</value>
-  </data>
-  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
-    <value>Eigener URL-Freigabedienst</value>
-  </data>
-  <data name="HotkeyType_ShortenURL" xml:space="preserve">
-    <value>URL kürzen</value>
-  </data>
-  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
-    <value>URL-Kürzer</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
-    <value>Bildschirmaufzeichnung (GIF) mit vordefiniertem Bereich starten/stoppen</value>
-  </data>
-  <data name="HotkeyType_ExitShareX" xml:space="preserve">
-    <value>ShareX beenden</value>
-  </data>
-  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
-    <value>Bildschirmaufzeichnung abbrechen</value>
-  </data>
-  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
-    <value>Aktionsleiste umschalten</value>
-  </data>
-  <data name="HotkeyType_Category_Other" xml:space="preserve">
-    <value>Sonstiges</value>
-  </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
-    <value>Bildschirmaufzeichnung mit vordefiniertem Bereich starten/stoppen</value>
-  </data>
-  <data name="HotkeyType_UploadText" xml:space="preserve">
-    <value>Text hochladen</value>
-  </data>
-  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
-    <value>Vollbildschirm</value>
-  </data>
-  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
-    <value>Ungelistet</value>
-  </data>
-  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
-    <value>Riesiges Thumbnail</value>
-  </data>
-  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>Google-Bildersuche</value>
-  </data>
-  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
-    <value>Dateiuploader</value>
-  </data>
-  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
-    <value>Großes Quadrat</value>
-  </data>
-  <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Rechtecksbereich</value>
-  </data>
-  <data name="PastebinExpiration_D1" xml:space="preserve">
-    <value>1 Tag</value>
-  </data>
-  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
-    <value>QR-Code scannen</value>
-  </data>
-  <data name="PastebinExpiration_H1" xml:space="preserve">
-    <value>1 Stunde</value>
-  </data>
-  <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Freihandbereich</value>
-  </data>
-  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>Bild (Bildschirm)</value>
-  </data>
-  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
-    <value>Privat</value>
-  </data>
-  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
-    <value>Ungelistet</value>
-  </data>
-  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
-    <value>Normal</value>
-  </data>
-  <data name="PastebinExpiration_M10" xml:space="preserve">
-    <value>10 Minuten</value>
-  </data>
-  <data name="LinearGradientMode_Vertical" xml:space="preserve">
-    <value>Vertikal</value>
-  </data>
-  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
-    <value>Zufälliges Adjektiv</value>
-  </data>
-  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
-    <value>Mittelgroßes Thumbnail</value>
-  </data>
-  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
-    <value>Bilduploader</value>
-  </data>
-  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
-    <value>Öffentlich</value>
-  </data>
-  <data name="PastebinExpiration_N" xml:space="preserve">
-    <value>Niemals</value>
-  </data>
-  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
-    <value>Großes Thumbnail</value>
-  </data>
-  <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Ellipsenbereich</value>
-  </data>
-  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
-    <value>Kleines Quadrat</value>
-  </data>
-  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
-    <value>Kleines Thumbnail</value>
-  </data>
-  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
-    <value>Automatische Größe</value>
-  </data>
-  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
-    <value>Aufnahme abbrechen</value>
-  </data>
-  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
-    <value>Vollbild aufnehmen</value>
-  </data>
-  <data name="PastebinPrivacy_Private" xml:space="preserve">
-    <value>Privat (nur Mitglieder)</value>
-  </data>
-  <data name="PastebinPrivacy_Public" xml:space="preserve">
-    <value>Öffentlich</value>
-  </data>
-  <data name="RegionCaptureAction_None" xml:space="preserve">
-    <value>Nichts tun</value>
-  </data>
-  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
-    <value>Form entfernen</value>
-  </data>
-  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
-    <value>Vorheriger Zustand</value>
-  </data>
-  <data name="PastebinExpiration_W1" xml:space="preserve">
-    <value>1 Woche</value>
-  </data>
-  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
-    <value>Maximiert</value>
-  </data>
-  <data name="PastebinExpiration_M1" xml:space="preserve">
-    <value>1 Monat</value>
-  </data>
-  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
-    <value>Textuploader</value>
-  </data>
-  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
-    <value>Aktuellste Version</value>
+  <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
+    <value>Import fehlgeschlagen.</value>
   </data>
   <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
     <value>Löschen</value>
   </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>Alle auswählen</value>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>Einfügen</value>
   </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Wiederholen</value>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR-Code (Vom Bildschirm dekodieren)</value>
   </data>
-  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
-    <value>Rückgängig</value>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>Vorwärtsdiagonale</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 Bit</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Woche des Jahres</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Absolute Größe</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Bilderchronik-Fenster öffnen</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>Inkrementell</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Zufälliges Emoji (Wiederholung mit {n})</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
+    <value>Thumbnailbild zu Datei speichern</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
+    <value>Lädt runter...</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>Form entfernen oder Erfassung abbrechen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>Benutzername</value>
   </data>
   <data name="ShapeType_DrawingMagnify" xml:space="preserve">
     <value>Vergrößern</value>
   </data>
-  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
-    <value>Zufälliges Tier</value>
-  </data>
-  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Zufällige Zeile einer Datei. Zur Bestimmung der Datei {filepath} verwenden</value>
-  </data>
-  <data name="PastebinExpiration_W2" xml:space="preserve">
-    <value>2 Wochen</value>
-  </data>
-  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
-    <value>Momentane Version</value>
-  </data>
-  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
-    <value>Aktiven Monitor aufnehmen</value>
+  <data name="CodeMenu_Create_Close" xml:space="preserve">
+    <value>Schließen</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Sticker</value>
   </data>
-  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
-    <value>Horizontal</value>
+  <data name="HotkeyType_QRCode" xml:space="preserve">
+    <value>QR-Code</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>1 Woche</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>URL-Freigabedienst</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>Hervorheben (H)</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>Paletten Größenwandler Grauwert 256 Farben</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>Standard .NET-Kodierung (Schnelles kodieren, aber Durchschnittsqualität)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>Zufälliges Hexadezimalzeichen. Wiederholen mit {n}</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Privat (nur Mitglieder)</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>Zufälliges Tier</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Eigener URL-Freigabedienst</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Vollbild aufnehmen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>Name von aktiven Fenster verarbeiten</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
+    <value>Warte...</value>
+  </data>
+  <data name="HotkeyType_ImageEditor" xml:space="preserve">
+    <value>Bildeditor</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Chronik-Fenster öffnen</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Auswählen und Verschieben</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>Automatisch nach Basis {n} alphanumerisch (1 &lt; n &lt; 63) erhöhen</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
+    <value>Webpage Aufnahme</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Aufnahme abbrechen</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>QR-Code scannen</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>Bereich aufnehmen (Einfach)</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="HotkeyType_FileUpload" xml:space="preserve">
+    <value>Datei hochladen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>Zufällige GUID</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>Linie zeichnen</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Wert kopieren</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>"Vor dem Upload"-Fenster anzeigen</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>Datei im Explorer anzeigen</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>Eigener Bilduploader</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
+    <value>Bildschirmaufnahme</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
+    <value>Aktives Fenster aufnehmen</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>Schritt hinzufügen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>Automatisch Zahl erhöhen. 0 pad left using {n}</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
+    <value>Aus Zwischenablage hochladen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>Neue Zeile</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>Derzeitiger Monatsname (Englisch)</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
+    <value>Screenshot-Ordner öffnen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>Bildweite</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>Derzeitiger Wochenname (Englisch)</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>Nach .exe durchsuchen...</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>Dateiuploader</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Automatische Größe</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>Keine</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>Konnte Verzeichnis nicht erstellen.</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
+    <value>DNS erfolgreich gesetzt. Neustart ist erforderlich.</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>Manuell</value>
+  </data>
+  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
+    <value>Status: {0}</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>Bildschirmaufzeichnung (GIF) mit letztem Bereich starten</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Kleines Quadrat</value>
+  </data>
+  <data name="HotkeyType_MonitorTest" xml:space="preserve">
+    <value>Monitortest</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
+    <value>URL kürzen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Zufällige Zeile einer Datei. Zur Bestimmung der Datei {filepath} verwenden</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
+    <value>Werkzeuge</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>Freigegebene Ordner</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
+    <value>Aktiven Monitor aufnehmen</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
+    <value>Erhalte Dateigröße...</value>
+  </data>
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
+    <value>Sonstiges</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
+    <value>Dateiname: {0}</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>Ellipse zeichnen</value>
+  </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>Farbauswähler</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Anhalten</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Dateiuploader</value>
+  </data>
+  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
+    <value>Lädt Bild: {0}%</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>Zufälliges alphanummerisches Zeichen. Wiederholen mit {n}</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>Deaktiviere/Aktiviere Hotkeys</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Nichts tun</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
+    <value>Bild zu Datei speichern als...</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Namen kopieren</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>Form entfernen</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>Dateipfad</value>
+  </data>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Videokonvertierer</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
+    <value>Ordner auswählen</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>Hauptfenster öffnen</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
+    <value>Bildschirmfarbenwähler</value>
+  </data>
+  <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
+    <value>Name {0}, Größe: {1}</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>Autoaufnahme</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>Rechteck zeichnen</value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>Maximiert</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>Bildschirmaufzeichnung mit vordefiniertem Bereich starten/stoppen</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Octree quantizer (Mittlere Qualität)</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>Datei auswählen</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>Bildhöhe</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>1 Monat</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>Text mit Hintergrund zeichnen</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Zufälliges, nicht mehrdeutiges alphanumerisches Zeichen (Wiederholung mit {n})</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>Eigener URL-Kürzer</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Öffentlich</value>
+  </data>
+  <data name="FileExistAction_Overwrite" xml:space="preserve">
+    <value>Datei überschreiben</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Prozentsatz des Bildes</value>
+  </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>URL kürzen</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Textuploader</value>
+  </data>
+  <data name="FileExistAction_Ask" xml:space="preserve">
+    <value>Fragen, was jetzt zutun ist</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
+    <value>Aktuellste Version</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>"Nach der Aufnahme"-Fenster anzeigen</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>Text hochladen</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>Bild zuschneiden</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>Von URL hochladen</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Bildteiler</value>
+  </data>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>URL in Zwischenablage kopieren</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>Computername</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>Autoaufnahme mit letztem Bereich starten</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Mittelgroßes Thumbnail</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Rückgängig</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>Datei in Zwischenablage kopieren</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>Ergebnis der ersten Datei:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>Ergebnis der zweiten Datei:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Ergebnis:</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Ziel:</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Ende</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Beides</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>Buchstaben (Kleinbuchtstaben)</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>Buchstaben (Großbuchtstaben)</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>Nummern</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>Römische Ziffern (Kleinbuchstaben)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>Römische Ziffern (Großbuchstaben)</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>Zwischenablage-Betrachter</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>Fenster überprüfen</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>Durchgehend</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>Strich</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>Punkt</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>StrichPunkt</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>StrichPunktPunkt</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>Benachrichtigung schließen</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>Bild bearbeiten</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>Bild kopieren</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>Datei kopieren</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>Dateipfad kopieren</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>Link kopieren</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>Datei öffnen</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>Ordner öffnen</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>Link öffnen</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>Datei hochladen</value>
+  </data>
+  <data name="ContentAlignment_TopLeft" xml:space="preserve">
+    <value>Links oben</value>
+  </data>
+  <data name="ContentAlignment_TopCenter" xml:space="preserve">
+    <value>Mitte oben</value>
+  </data>
+  <data name="ContentAlignment_TopRight" xml:space="preserve">
+    <value>Rechts oben</value>
+  </data>
+  <data name="ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>Mitte links</value>
+  </data>
+  <data name="ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>Mittelpunkt</value>
+  </data>
+  <data name="ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>Mitte rechts</value>
+  </data>
+  <data name="ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>Links unten</value>
+  </data>
+  <data name="ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>Mitte unten</value>
+  </data>
+  <data name="ContentAlignment_BottomRight" xml:space="preserve">
+    <value>Rechts unten</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Visuelle Bing Suche</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>Letzten Bereich aufnehmen</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>Bildschirmaufnahme beenden</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Menü umschalten</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>Bild bearbeiten</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>Datei öffnen</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>Ordner öffnen</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>Bildbetrachter öffnen</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>URL öffnen</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>Auswählen</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Seite</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Verstecken</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Anzeigen</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Listenansicht</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Thumbnail-Ansicht</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>Bildbetrachter</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Randloses Fenster</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>An Bildschirm anheften</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>An Bildschirm anheften</value>
+  </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - Bildbetrachter</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>An Bildschirm anheften</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>Keinen Effekt</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>eingerissene Kanten</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>Welle</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Sägezahn</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>Ausschneiden (X)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>An Bildschirm anheften (Von Zwischenablage)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>An Bildschirm anheften (Von Datei)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>An Bildschirm anheften (Von Bildschirm)</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>Bildschirmaufnahme pausieren</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>Freihand Pfeil</value>
+  </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>Bildverschönerung</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>Bild verschönern</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Überprüfen</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>Vorkonfiguriertes Fenster aufnehmen</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>Fortschritt</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>Downloadgeschwindigkeit</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>Dateigröße</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>Aktives Fenster randlos machen</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>Aktives Fenster in den Vordergrund</value>
+  </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>An Bildschirm anheften (Alles schließen)</value>
   </data>
 </root>

@@ -148,7 +148,7 @@
     <value>Alt:</value>
   </data>
   <data name="lblYellow.Text" xml:space="preserve">
-    <value>Gelb</value>
+    <value>Gelb:</value>
   </data>
   <data name="rbBlue.Text" xml:space="preserve">
     <value>Blau:</value>
@@ -212,5 +212,8 @@
   </data>
   <data name="rbStandardColors.Text" xml:space="preserve">
     <value>Standardfarben</value>
+  </data>
+  <data name="btnClipboardColorPicker.ToolTip" xml:space="preserve">
+    <value>Farbe von der Zwischenablage auswählen</value>
   </data>
 </root>

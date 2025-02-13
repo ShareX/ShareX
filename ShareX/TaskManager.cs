@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -269,6 +269,20 @@ namespace ShareX
 
                     if (info != null && info.Result != null)
                     {
+                        string result = info.ToString();
+
+                        if (!string.IsNullOrEmpty(result))
+                        {
+                            if (Program.Settings.HistorySaveTasks && (!Program.Settings.HistoryCheckURL ||
+                                !string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL)))
+                            {
+                                HistoryItem historyItem = info.GetHistoryItem();
+                                AppendHistoryItemAsync(historyItem);
+                            }
+
+                            RecentManager.Add(task);
+                        }
+
                         TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
 
                         if (panel != null)
@@ -303,36 +317,29 @@ namespace ShareX
                                 lvi.ImageIndex = 1;
                             }
 
-                            if (!info.TaskSettings.GeneralSettings.DisableNotifications)
+                            TaskHelpers.PlayNotificationSoundAsync(NotificationSound.Error, info.TaskSettings);
+
+                            if (info.Result.Errors.Count > 0)
                             {
-                                if (info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                                UploaderErrorInfo error = info.Result.Errors.Errors[0];
+
+                                string title = error.Title;
+
+                                if (string.IsNullOrEmpty(title))
                                 {
-                                    TaskHelpers.PlayErrorSound(info.TaskSettings);
+                                    title = Resources.TaskManager_task_UploadCompleted_Error;
                                 }
 
-                                if (info.Result.Errors.Count > 0)
+                                if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(error.Text) &&
+                                    (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                 {
-                                    UploaderErrorInfo error = info.Result.Errors.Errors[0];
-
-                                    string title = error.Title;
-                                    if (string.IsNullOrEmpty(title))
-                                    {
-                                        title = Resources.TaskManager_task_UploadCompleted_Error;
-                                    }
-
-                                    if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(error.Text) &&
-                                        (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
-                                    {
-                                        TaskHelpers.ShowNotificationTip(error.Text, "ShareX - " + title, 5000);
-                                    }
+                                    TaskHelpers.ShowNotificationTip(error.Text, "ShareX - " + title, 5000);
                                 }
                             }
                         }
                         else
                         {
                             DebugHelper.WriteLine($"Task completed. File name: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
-
-                            string result = info.ToString();
 
                             if (lvi != null)
                             {
@@ -346,57 +353,42 @@ namespace ShareX
                                 }
                             }
 
-                            if (!task.StopRequested && !string.IsNullOrEmpty(result))
+                            if (!task.StopRequested && info.Job != TaskJob.ShareURL && !string.IsNullOrEmpty(result))
                             {
-                                if (Program.Settings.HistorySaveTasks && (!Program.Settings.HistoryCheckURL ||
-                                   (!string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL))))
+                                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.TaskCompleted, info.TaskSettings);
+
+                                if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
                                 {
-                                    HistoryItem historyItem = info.GetHistoryItem();
-                                    AppendHistoryItemAsync(historyItem);
+                                    result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                 }
 
-                                RecentManager.Add(task);
-
-                                if (!info.TaskSettings.GeneralSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
+                                if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(result) &&
+                                    (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                 {
-                                    if (info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
+                                    task.KeepImage = true;
+
+                                    NotificationFormConfig toastConfig = new NotificationFormConfig()
                                     {
-                                        TaskHelpers.PlayTaskCompleteSound(info.TaskSettings);
-                                    }
+                                        Duration = (int)(info.TaskSettings.GeneralSettings.ToastWindowDuration * 1000),
+                                        FadeDuration = (int)(info.TaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
+                                        Placement = info.TaskSettings.GeneralSettings.ToastWindowPlacement,
+                                        Size = info.TaskSettings.GeneralSettings.ToastWindowSize,
+                                        LeftClickAction = info.TaskSettings.GeneralSettings.ToastWindowLeftClickAction,
+                                        RightClickAction = info.TaskSettings.GeneralSettings.ToastWindowRightClickAction,
+                                        MiddleClickAction = info.TaskSettings.GeneralSettings.ToastWindowMiddleClickAction,
+                                        FilePath = info.FilePath,
+                                        Image = task.Image,
+                                        Title = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
+                                        Text = result,
+                                        URL = result
+                                    };
 
-                                    if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
+                                    NotificationForm.Show(toastConfig);
+
+                                    if (info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowAfterUploadWindow) && info.IsUploadJob)
                                     {
-                                        result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
-                                    }
-
-                                    if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(result) &&
-                                        (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
-                                    {
-                                        task.KeepImage = true;
-
-                                        NotificationFormConfig toastConfig = new NotificationFormConfig()
-                                        {
-                                            Duration = (int)(info.TaskSettings.GeneralSettings.ToastWindowDuration * 1000),
-                                            FadeDuration = (int)(info.TaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
-                                            Placement = info.TaskSettings.GeneralSettings.ToastWindowPlacement,
-                                            Size = info.TaskSettings.GeneralSettings.ToastWindowSize,
-                                            LeftClickAction = info.TaskSettings.GeneralSettings.ToastWindowLeftClickAction,
-                                            RightClickAction = info.TaskSettings.GeneralSettings.ToastWindowRightClickAction,
-                                            MiddleClickAction = info.TaskSettings.GeneralSettings.ToastWindowMiddleClickAction,
-                                            FilePath = info.FilePath,
-                                            Image = task.Image,
-                                            Title = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
-                                            Text = result,
-                                            URL = result
-                                        };
-
-                                        NotificationForm.Show(toastConfig);
-
-                                        if (info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.ShowAfterUploadWindow) && info.IsUploadJob)
-                                        {
-                                            AfterUploadForm dlg = new AfterUploadForm(info);
-                                            NativeMethods.ShowWindow(dlg.Handle, (int)WindowShowStyle.ShowNoActivate);
-                                        }
+                                        AfterUploadForm dlg = new AfterUploadForm(info);
+                                        NativeMethods.ShowWindow(dlg.Handle, (int)WindowShowStyle.ShowNoActivate);
                                     }
                                 }
                             }

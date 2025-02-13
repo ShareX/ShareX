@@ -160,7 +160,7 @@
     <value>選擇快捷鍵...</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>任務設定</value>
+    <value>排程設定</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
     <value>請選擇目的地。</value>
@@ -241,7 +241,7 @@
     <value>文字上傳測試</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>{0} 的任務設定</value>
+    <value>{0} 的排程設定</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>下載中</value>
@@ -327,7 +327,7 @@
     <value>停用快捷鍵</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
-    <value>任務完成</value>
+    <value>排程完成</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>資料夾上傳</value>
@@ -365,7 +365,7 @@
     <value>歷史</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
-    <value>是否要重設所有快速任務為預設值？</value>
+    <value>是否要重設所有快速排程為預設值？</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
     <value>編輯此選單...</value>
@@ -470,15 +470,6 @@
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>偵錯日誌可能包含敏感資訊。確定要繼續嗎？</value>
-  </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>OCR 結果已複製到剪貼簿。</value>
-  </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>OCR 處理過程發生錯誤，或未回傳任何文字。</value>
-  </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>OCR 處理中。</value>
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>輸入文字以產生二維碼</value>
@@ -591,13 +582,13 @@
     <value>延伸視窗樣式</value>
   </data>
   <data name="InspectWindow_ProcessFileName" xml:space="preserve">
-    <value>程序檔案名稱</value>
+    <value>處理程序檔案名稱</value>
   </data>
   <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
-    <value>程序識別碼</value>
+    <value>處理程序識別碼</value>
   </data>
   <data name="InspectWindow_ProcessName" xml:space="preserve">
-    <value>程序名稱</value>
+    <value>處理程序名稱</value>
   </data>
   <data name="InspectWindow_WindowHandle" xml:space="preserve">
     <value>視窗控制碼</value>
@@ -623,7 +614,7 @@
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
     <value>錄製螢幕時無法關閉 ShareX。
 
-是否要中止目前的螢幕錄製？</value>
+是否要取消目前的螢幕錄製？</value>
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
     <value>ShareX 已最小化到系統匣。</value>
@@ -640,10 +631,10 @@
   <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
     <value>是否要啟用圖片效果？
 
-之後可以從「擷取後任務」選單中停用。</value>
+之後可以從「擷取後排程」選單中停用。</value>
   </data>
   <data name="WouldYouLikeToResetThemes" xml:space="preserve">
-    <value>是否要重設主題？</value>
+    <value>是否要重設佈景主題？</value>
   </data>
   <data name="WouldYouLikeToRetryClipboardUpload" xml:space="preserve">
     <value>是否要重試剪貼簿上傳？</value>

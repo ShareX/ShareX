@@ -225,7 +225,7 @@
     <value>已篩選</value>
   </data>
   <data name="HistoryForm_Search_Watermark" xml:space="preserve">
-    <value>檔名、視窗標題、程序名稱等</value>
+    <value>檔名、視窗標題、處理程序名稱等</value>
   </data>
   <data name="HistoryStats" xml:space="preserve">
     <value>歷史記錄統計資料</value>
@@ -234,7 +234,7 @@
     <value>釘選至螢幕</value>
   </data>
   <data name="ProcessNames" xml:space="preserve">
-    <value>程序名稱：</value>
+    <value>處理程序名稱：</value>
   </data>
   <data name="Total" xml:space="preserve">
     <value>總計</value>

@@ -150,4 +150,31 @@
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>Nom du fichier :</value>
   </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Recherche :</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>Recherche avancée...</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>Afficher plus d'informations</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Afficher les statistiques...</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Paramètres...</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>Recherche avancée</value>
+  </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
 </root>

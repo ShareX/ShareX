@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -68,15 +68,6 @@ namespace ShareX.UploadersLib
         public PhotobucketAccountInfo PhotobucketAccountInfo { get; set; } = null;
 
         #endregion Photobucket
-
-        #region Google Photos
-
-        public OAuth2Info GooglePhotosOAuth2Info { get; set; } = null;
-        public OAuthUserInfo GooglePhotosUserInfo { get; set; } = null;
-        public string GooglePhotosAlbumID { get; set; } = "";
-        public bool GooglePhotosIsPublic { get; set; } = false;
-
-        #endregion Google Photos
 
         #region Chevereto
 
@@ -439,14 +430,6 @@ namespace ShareX.UploadersLib
         public string YourlsPassword { get; set; } = "";
 
         #endregion yourls.org
-
-        #region adf.ly
-
-        public string AdFlyAPIUID { get; set; } = "";
-        [JsonEncrypt]
-        public string AdFlyAPIKEY { get; set; } = "";
-
-        #endregion adf.ly
 
         #region polr
 

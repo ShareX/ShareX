@@ -121,7 +121,7 @@
     <value>ShareX - Zwischenablageninhalte</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;Abbrechen</value>
+    <value>Abbrechen</value>
   </data>
   <data name="cbDontShowThisWindow.Text" xml:space="preserve">
     <value>Dieses Fenster nicht mehr zeigen</value>

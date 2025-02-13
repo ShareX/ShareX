@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>العرض:</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>هل تريد إعادة ضبط الخيارات؟</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>انتظار...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>قيمة الخطوة الأولى:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>تكبير حتى الملائمة عند الفتح</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>إلغاء المهمة (ESC)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>حجم الصفحة...</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>لقطة شاشة</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>لقطة شاشة</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>التقاط الشاشة النشطة</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>التقاط الشاشة كاملة</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>التقاط المنطقة السابقة</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>التقاط الشاشة</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>التقاط مساحات</value>
+  </data>
+  <data name="ShapeManager_CenterPoints" xml:space="preserve">
+    <value>نقاط المركز:</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>إضافة مؤثرات للصورة...</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>إغلاق (Esc)</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>التأكيد</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>استئناف المهمة (المسطرة أو نقرة بالزر الأيمن)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>نسخ الصورة إلى الحافظة (Ctrl + C)</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>نصف قطر الزاوية:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>اقتصاص الصورة...</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>نوع المؤشّر:</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>حجم مؤثرات الاقتطاع:</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>مؤثرات الاقتطاع:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>حذف الكل</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>التظليل</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>لون التظليل...</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>تكرار</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>قائمة المحرّر</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>أسلوب البدء الخاص بالمحرّر:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>تفعيل مؤثرات الحركة</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>جارٍ الترميز...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>لون التعبئة...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>وضع منطقة التسجيل الثابتة</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>انعكاس أفقي</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>انعكاس عمودي</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>استخدام نقاط بيضاء لحواف مربع تغيير الحجم</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>تذكّر حالة القائمة</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>إعادة</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>جارٍ المعالجة...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>طباعة الصورة... (Ctrl + P)</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>اتجاه رأس السهم:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>إغلاق المحرّر بشكل تلقائي عند بدء مهمة</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>نسخ الصورة تلقائيًا إلى الحافظة</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>اقتصاص تلقائي لصورة...</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>معدل البِت:</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>تشويش</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
+    <value>شدة التمويه:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>لون الحدود...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>حجم الحدود:</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>مظهر الحدود:</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>قفل القائمة</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>عدد بكسلات العدسة المكبرة:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>حجم بكسلات العدسة المكبرة:</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>قوة التكبير:</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>حجم أيقونات القائمة:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>وضع تعدد المناطق</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
+    <value>صورة جديدة...</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>سطر جديد: Ctrl + Enter, موافق: Enter</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>سطر جديد: Ctrl + Enter, موافق: Enter</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>فتح ملف صورة...</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>فتح صفحة وٍب اختصارات لوحة المفاتيح...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>الخيارات</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>لصق الصورة/النص</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>إيقاف مؤقت</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>حجم البكسل:</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>تشويش</value>
+  </data>
+  <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
+    <value>لقطة مستطيلة فاتحة</value>
+  </data>
+  <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
+    <value>لقطة مستطيلة شفافة</value>
+  </data>
+  <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
+    <value>التقاط منطقة</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>متابعة</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>تدوير 180°</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>تدوير 90°</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>تدوير 90° معاكس</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>تشغيل مهام ما بعد الالتقاط (Enter)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>حفظ  الصورة (Ctrl+S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>حفظ الصورة باسم... (Ctrl+Shift+S)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>تحريك إلى الخلف</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>إرسال إلى الخلف</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - محرّر الصور</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>عرض معدل الإطارات FPS</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>عرض العدسة المكبرة</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>عرض معلومات الموضع و الحجم</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>عدسة تكبير مربعة</value>
+  </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>بدء</value>
+  </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>بدء الالتقاط</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>نوع الخطوة:</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
+    <value>إيقاف الالتقاط</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>تبديل إلى أداة الرسم بعد تحديد الشكل</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>تبديل إلى أداة التحديد بعد رسم شكل</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>هناك تعديلات غير محفوظة.
+
+هل تريد حفظ التغييرات وإغلاق محرّر الصور؟</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>سيتم إغلاق النافذة قبل فتح صفحة وب اختصارات لوحة المفاتيح، هل تريد المتابعة؟</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>تلميح: يمكنك تحريك الصورة بواسطة النقر باستمرار على زر الفأرة الأوسط والتحريك.</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>خيارات الأدوات</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>تراجع</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>رفع الصورة  (Ctrl+U)</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>انقر لبدء تسجيل الشاشة.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>انقر لإيقاف تسجيل الشاشة.</value>
+  </data>
+  <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>الحافظة لا تحتوي على صورة.</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
+    <value>حجم الخط:</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>تقييد معدل الإطارات FPS:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>الارتفاع:</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>تمييز</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>لون التمييز...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>تطبيق التغييرات ومتابعة المهمة (Enter)</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>سيتم إلغاء التسجيل، هل أنت متأكد؟</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>تحريك إلى الأمام</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>إرسال إلى المقدمة</value>
+  </data>
+  <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
+    <value>تحديد الملف ffmpeg.exe</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>تخلص من لون الخلفية...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>تم نسخ الصورة</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>محرّر الصور</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>تم حفظ الصورة</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>تم حفظ الصورة</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>حجم الصورة...</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>رفع الصورة</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>عنوان URL للصورة</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
+    <value>إدراج ملف صورة...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
+    <value>إدراج لقطة من الشاشة...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>وضع التوليد:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>إظهار علامة التقاطع على الشاشة</value>
+  </data>
+</root>

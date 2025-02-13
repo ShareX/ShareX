@@ -22,8 +22,16 @@
     <ProjectReference Include="..\ShareX.UploadersLib\ShareX.UploadersLib.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22621.3233" />
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.26100.1742" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="ZXing.Net" Version="0.16.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host-manifest-chrome.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="host-manifest-firefox.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -448,7 +448,7 @@
     <value>Заметка: Двойной клин по имени папки откроет ее.</value>
   </data>
   <data name="cbGoogleDriveIsPublic.Text" xml:space="preserve">
-    <value>Публичная загрузка?</value>
+    <value>Публичная загрузка</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Обновить список папок</value>

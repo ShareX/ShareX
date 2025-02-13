@@ -123,4 +123,76 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Benutzerdefinierte Uploader-Einstellungen</value>
   </data>
+  <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
+    <value>Benutzerdefinierte Uploader-Anleitung...</value>
+  </data>
+  <data name="lblTextUploader.Text" xml:space="preserve">
+    <value>Text Uploader:</value>
+  </data>
+  <data name="tsmiClearUploaders.Text" xml:space="preserve">
+    <value>Uploader löschen...</value>
+  </data>
+  <data name="tsmiExportAll.Text" xml:space="preserve">
+    <value>Alles exportieren...</value>
+  </data>
+  <data name="tsmiUpdateFolder.Text" xml:space="preserve">
+    <value>Ordner hochladen...</value>
+  </data>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Duplizieren</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="lblFileUploader.Text" xml:space="preserve">
+    <value>Datei-Uploader:</value>
+  </data>
+  <data name="lblImageUploader.Text" xml:space="preserve">
+    <value>Bild-Uploader:</value>
+  </data>
+  <data name="cHeadersValue.HeaderText" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="lblParameters.Text" xml:space="preserve">
+    <value>URL Parameter:</value>
+  </data>
+  <data name="lblRequestURL.Text" xml:space="preserve">
+    <value>Anforderungs-URL:</value>
+  </data>
+  <data name="lblRequestMethod.Text" xml:space="preserve">
+    <value>Methode:</value>
+  </data>
+  <data name="cArgumentsValue.HeaderText" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="lblFileFormName.Text" xml:space="preserve">
+    <value>Name des Dateiformats:</value>
+  </data>
+  <data name="btnDataBeautify.Text" xml:space="preserve">
+    <value>Verschönern</value>
+  </data>
+  <data name="btnDataMinify.Text" xml:space="preserve">
+    <value>Verkleinern</value>
+  </data>
+  <data name="lblResultErrorMessage.Text" xml:space="preserve">
+    <value>Fehlernachricht:</value>
+  </data>
+  <data name="lblResultDeletionURL.Text" xml:space="preserve">
+    <value>Löschungs-URL:</value>
+  </data>
+  <data name="lblResultThumbnailURL.Text" xml:space="preserve">
+    <value>Thumbnail-URL:</value>
+  </data>
+  <data name="lblDestinationType.Text" xml:space="preserve">
+    <value>Zieltyp:</value>
+  </data>
+  <data name="mbDestinationType.ToolTip" xml:space="preserve">
+    <value>Derzeit wird der Zieltyp verwendet, wenn Benutzer den benutzerdefinierten Uploader durch Doppelklicken auf die .sxcu-Datei importieren.</value>
+  </data>
+  <data name="lblURLSharingService.Text" xml:space="preserve">
+    <value>URL-Freigabedienst:</value>
+  </data>
 </root>

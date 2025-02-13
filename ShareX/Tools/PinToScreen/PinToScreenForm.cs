@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -36,6 +37,9 @@ namespace ShareX
 {
     public partial class PinToScreenForm : Form
     {
+        private static readonly object syncLock = new object();
+        private static readonly List<PinToScreenForm> forms = new List<PinToScreenForm>();
+
         public Image Image { get; private set; }
 
         private int imageScale = 100;
@@ -189,13 +193,34 @@ namespace ShareX
                 {
                     using (PinToScreenForm form = new PinToScreenForm(image, options, location))
                     {
+                        lock (syncLock)
+                        {
+                            forms.Add(form);
+                        }
+
                         form.ShowDialog();
+
+                        lock (syncLock)
+                        {
+                            forms.Remove(form);
+                        }
                     }
                 });
 
                 thread.IsBackground = true;
                 thread.SetApartmentState(ApartmentState.STA);
                 thread.Start();
+            }
+        }
+
+        public static void CloseAll()
+        {
+            lock (syncLock)
+            {
+                foreach (PinToScreenForm form in forms)
+                {
+                    form.InvokeSafe(form.Close);
+                }
             }
         }
 

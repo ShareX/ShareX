@@ -164,7 +164,7 @@ Une valeur élevée signifie une mauvaise qualité d'image mais un fichier lége
     <value>ShareX - Options d'enregistrement de l'écran</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
-    <value>Utiliser des commandes personnalisées</value>
+    <value>Utiliser des commandes personnalisées :</value>
   </data>
   <data name="lblVP8Bitrate.Text" xml:space="preserve">
     <value>Bitrate variable :</value>
@@ -187,7 +187,7 @@ Préréglage lent = encodage lent mais fichier léger.
 Pour un encodage en temps réel (ex : enregistrement d'écran), le préréglage doit être le plus rapide possible.</value>
   </data>
   <data name="btnInstallHelperDevices.Text" xml:space="preserve">
-    <value>Installer les dispositifs d'enregistrement</value>
+    <value>Installer les dispositifs d'enregistrement...</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Installe la source vidéo/audio « screen-capture-recorder » et « virtual-audio-capturer ».</value>
@@ -282,5 +282,32 @@ Autrement, il ne pourra pas suivre l'enregistrement : il y aura donc beaucoup de
   </data>
   <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
     <value>Contrôle l'indice d'échelle de Bayer, une échelle plus élevée affichera plus de bandes. La valeur par défaut est 2.</value>
+  </data>
+  <data name="lblCommandLineArgs.Text" xml:space="preserve">
+    <value>Ajouter des arguments à la ligne de commande :</value>
+  </data>
+  <data name="cbUseCustomFFmpegPath.Text" xml:space="preserve">
+    <value>Utiliser un chemin FFmpeg personnalisé :</value>
+  </data>
+  <data name="lblVideoEncoder.Text" xml:space="preserve">
+    <value>Encodeur vidéo :</value>
+  </data>
+  <data name="lblAudioEncoder.Text" xml:space="preserve">
+    <value>Encodeur audio :</value>
+  </data>
+  <data name="lblAACBitrate.Text" xml:space="preserve">
+    <value>Bitrate :</value>
+  </data>
+  <data name="lblOpusBitrate.Text" xml:space="preserve">
+    <value>Bitrate :</value>
+  </data>
+  <data name="cbx264UseBitrate.Text" xml:space="preserve">
+    <value>Utiliser le bitrate</value>
+  </data>
+  <data name="lblAMFBitrate.Text" xml:space="preserve">
+    <value>Bitrate :</value>
+  </data>
+  <data name="btnResetOptions.Text" xml:space="preserve">
+    <value>Réinitialiser les options...</value>
   </data>
 </root>

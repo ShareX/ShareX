@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -326,9 +326,15 @@ namespace ShareX.UploadersLib
 
                             if (cui != null)
                             {
-                                cui.CheckBackwardCompatibility();
-                                CustomUploaderSerialize(cui, folderPath);
-                                updated++;
+                                try
+                                {
+                                    cui.CheckBackwardCompatibility();
+                                    CustomUploaderSerialize(cui, folderPath);
+                                    updated++;
+                                }
+                                catch
+                                {
+                                }
                             }
                         }
                     }
@@ -784,8 +790,15 @@ namespace ShareX.UploadersLib
 
                     if (cui != null)
                     {
-                        cui.CheckBackwardCompatibility();
-                        CustomUploaderAdd(cui);
+                        try
+                        {
+                            cui.CheckBackwardCompatibility();
+                            CustomUploaderAdd(cui);
+                        }
+                        catch (Exception ex)
+                        {
+                            ex.ShowError(false);
+                        }
                     }
                 }
 
@@ -872,9 +885,17 @@ namespace ShareX.UploadersLib
 
         private void eiCustomUploaders_ImportRequested(object obj)
         {
-            CustomUploaderItem uploader = obj as CustomUploaderItem;
-            uploader.CheckBackwardCompatibility();
-            CustomUploaderAdd(uploader);
+            CustomUploaderItem cui = obj as CustomUploaderItem;
+
+            try
+            {
+                cui.CheckBackwardCompatibility();
+                CustomUploaderAdd(cui);
+            }
+            catch (Exception e)
+            {
+                e.ShowError(false);
+            }
         }
 
         private void eiCustomUploaders_ImportCompleted()

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,229 +30,61 @@ namespace ShareX.HelpersLib
 {
     public class DarkColorTable : ProfessionalColorTable
     {
-        public override Color ButtonSelectedHighlight
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color ButtonSelectedHighlightBorder
-        {
-            get { return ShareXResources.Theme.MenuHighlightBorderColor; }
-        }
-        public override Color ButtonPressedHighlight
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color ButtonPressedHighlightBorder
-        {
-            get { return ShareXResources.Theme.MenuHighlightBorderColor; }
-        }
-        public override Color ButtonCheckedHighlight
-        {
-            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
-        }
-        public override Color ButtonCheckedHighlightBorder
-        {
-            get { return ShareXResources.Theme.MenuHighlightBorderColor; }
-        }
-        public override Color ButtonPressedBorder
-        {
-            get { return ShareXResources.Theme.MenuHighlightBorderColor; }
-        }
-        public override Color ButtonSelectedBorder
-        {
-            get { return ShareXResources.Theme.MenuHighlightBorderColor; }
-        }
-        public override Color ButtonCheckedGradientBegin
-        {
-            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
-        }
-        public override Color ButtonCheckedGradientMiddle
-        {
-            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
-        }
-        public override Color ButtonCheckedGradientEnd
-        {
-            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
-        }
-        public override Color ButtonSelectedGradientBegin
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color ButtonSelectedGradientMiddle
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color ButtonSelectedGradientEnd
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color ButtonPressedGradientBegin
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color ButtonPressedGradientMiddle
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color ButtonPressedGradientEnd
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color CheckBackground
-        {
-            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
-        }
-        public override Color CheckSelectedBackground
-        {
-            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
-        }
-        public override Color CheckPressedBackground
-        {
-            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
-        }
-        public override Color GripDark
-        {
-            get { return ShareXResources.Theme.SeparatorDarkColor; }
-        }
-        public override Color GripLight
-        {
-            get { return ShareXResources.Theme.SeparatorLightColor; }
-        }
-        public override Color ImageMarginGradientBegin
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ImageMarginGradientMiddle
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ImageMarginGradientEnd
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ImageMarginRevealedGradientBegin
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ImageMarginRevealedGradientMiddle
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ImageMarginRevealedGradientEnd
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color MenuStripGradientBegin
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color MenuStripGradientEnd
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color MenuItemSelected
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color MenuItemBorder
-        {
-            get { return ShareXResources.Theme.MenuBorderColor; }
-        }
-        public override Color MenuBorder
-        {
-            get { return ShareXResources.Theme.MenuBorderColor; }
-        }
-        public override Color MenuItemSelectedGradientBegin
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color MenuItemSelectedGradientEnd
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color MenuItemPressedGradientBegin
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color MenuItemPressedGradientMiddle
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color MenuItemPressedGradientEnd
-        {
-            get { return ShareXResources.Theme.MenuHighlightColor; }
-        }
-        public override Color RaftingContainerGradientBegin
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color RaftingContainerGradientEnd
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color SeparatorDark
-        {
-            get { return ShareXResources.Theme.SeparatorDarkColor; }
-        }
-        public override Color SeparatorLight
-        {
-            get { return ShareXResources.Theme.SeparatorLightColor; }
-        }
-        public override Color StatusStripGradientBegin
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color StatusStripGradientEnd
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ToolStripBorder
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ToolStripDropDownBackground
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ToolStripGradientBegin
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ToolStripGradientMiddle
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ToolStripGradientEnd
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ToolStripContentPanelGradientBegin
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ToolStripContentPanelGradientEnd
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ToolStripPanelGradientBegin
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color ToolStripPanelGradientEnd
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color OverflowButtonGradientBegin
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color OverflowButtonGradientMiddle
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
-        public override Color OverflowButtonGradientEnd
-        {
-            get { return ShareXResources.Theme.BackgroundColor; }
-        }
+        public override Color ButtonSelectedHighlight => ShareXResources.Theme.MenuHighlightColor;
+        public override Color ButtonSelectedHighlightBorder => ShareXResources.Theme.MenuHighlightBorderColor;
+        public override Color ButtonPressedHighlight => ShareXResources.Theme.MenuHighlightColor;
+        public override Color ButtonPressedHighlightBorder => ShareXResources.Theme.MenuHighlightBorderColor;
+        public override Color ButtonCheckedHighlight => ShareXResources.Theme.MenuCheckBackgroundColor;
+        public override Color ButtonCheckedHighlightBorder => ShareXResources.Theme.MenuHighlightBorderColor;
+        public override Color ButtonPressedBorder => ShareXResources.Theme.MenuHighlightBorderColor;
+        public override Color ButtonSelectedBorder => ShareXResources.Theme.MenuHighlightBorderColor;
+        public override Color ButtonCheckedGradientBegin => ShareXResources.Theme.MenuCheckBackgroundColor;
+        public override Color ButtonCheckedGradientMiddle => ShareXResources.Theme.MenuCheckBackgroundColor;
+        public override Color ButtonCheckedGradientEnd => ShareXResources.Theme.MenuCheckBackgroundColor;
+        public override Color ButtonSelectedGradientBegin => ShareXResources.Theme.MenuHighlightColor;
+        public override Color ButtonSelectedGradientMiddle => ShareXResources.Theme.MenuHighlightColor;
+        public override Color ButtonSelectedGradientEnd => ShareXResources.Theme.MenuHighlightColor;
+        public override Color ButtonPressedGradientBegin => ShareXResources.Theme.MenuHighlightColor;
+        public override Color ButtonPressedGradientMiddle => ShareXResources.Theme.MenuHighlightColor;
+        public override Color ButtonPressedGradientEnd => ShareXResources.Theme.MenuHighlightColor;
+        public override Color CheckBackground => ShareXResources.Theme.MenuCheckBackgroundColor;
+        public override Color CheckSelectedBackground => ShareXResources.Theme.MenuCheckBackgroundColor;
+        public override Color CheckPressedBackground => ShareXResources.Theme.MenuCheckBackgroundColor;
+        public override Color GripDark => ShareXResources.Theme.SeparatorDarkColor;
+        public override Color GripLight => ShareXResources.Theme.SeparatorLightColor;
+        public override Color ImageMarginGradientBegin => ShareXResources.Theme.BackgroundColor;
+        public override Color ImageMarginGradientMiddle => ShareXResources.Theme.BackgroundColor;
+        public override Color ImageMarginGradientEnd => ShareXResources.Theme.BackgroundColor;
+        public override Color ImageMarginRevealedGradientBegin => ShareXResources.Theme.BackgroundColor;
+        public override Color ImageMarginRevealedGradientMiddle => ShareXResources.Theme.BackgroundColor;
+        public override Color ImageMarginRevealedGradientEnd => ShareXResources.Theme.BackgroundColor;
+        public override Color MenuStripGradientBegin => ShareXResources.Theme.BackgroundColor;
+        public override Color MenuStripGradientEnd => ShareXResources.Theme.BackgroundColor;
+        public override Color MenuItemSelected => ShareXResources.Theme.MenuHighlightColor;
+        public override Color MenuItemBorder => ShareXResources.Theme.MenuBorderColor;
+        public override Color MenuBorder => ShareXResources.Theme.MenuBorderColor;
+        public override Color MenuItemSelectedGradientBegin => ShareXResources.Theme.MenuHighlightColor;
+        public override Color MenuItemSelectedGradientEnd => ShareXResources.Theme.MenuHighlightColor;
+        public override Color MenuItemPressedGradientBegin => ShareXResources.Theme.MenuHighlightColor;
+        public override Color MenuItemPressedGradientMiddle => ShareXResources.Theme.MenuHighlightColor;
+        public override Color MenuItemPressedGradientEnd => ShareXResources.Theme.MenuHighlightColor;
+        public override Color RaftingContainerGradientBegin => ShareXResources.Theme.BackgroundColor;
+        public override Color RaftingContainerGradientEnd => ShareXResources.Theme.BackgroundColor;
+        public override Color SeparatorDark => ShareXResources.Theme.SeparatorDarkColor;
+        public override Color SeparatorLight => ShareXResources.Theme.SeparatorLightColor;
+        public override Color StatusStripGradientBegin => ShareXResources.Theme.BackgroundColor;
+        public override Color StatusStripGradientEnd => ShareXResources.Theme.BackgroundColor;
+        public override Color ToolStripBorder => ShareXResources.Theme.BackgroundColor;
+        public override Color ToolStripDropDownBackground => ShareXResources.Theme.BackgroundColor;
+        public override Color ToolStripGradientBegin => ShareXResources.Theme.BackgroundColor;
+        public override Color ToolStripGradientMiddle => ShareXResources.Theme.BackgroundColor;
+        public override Color ToolStripGradientEnd => ShareXResources.Theme.BackgroundColor;
+        public override Color ToolStripContentPanelGradientBegin => ShareXResources.Theme.BackgroundColor;
+        public override Color ToolStripContentPanelGradientEnd => ShareXResources.Theme.BackgroundColor;
+        public override Color ToolStripPanelGradientBegin => ShareXResources.Theme.BackgroundColor;
+        public override Color ToolStripPanelGradientEnd => ShareXResources.Theme.BackgroundColor;
+        public override Color OverflowButtonGradientBegin => ShareXResources.Theme.BackgroundColor;
+        public override Color OverflowButtonGradientMiddle => ShareXResources.Theme.BackgroundColor;
+        public override Color OverflowButtonGradientEnd => ShareXResources.Theme.BackgroundColor;
     }
 }

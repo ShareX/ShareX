@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>منطقة الرسم حر</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>اسم الاسبوع (بلغة النظام)</value>
+  </data>
+  <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
+    <value>تم نسخ الإعدادات إلى الحافظة.</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>مربع كبير</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>ثانية</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>رافع نصوص مخصص</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>بدون</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>الشهر</value>
+  </data>
+  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
+    <value>تحديد ملف CSS...</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>إعادة</value>
+  </data>
+  <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
+    <value>صانع مصغرات الفيديو</value>
+  </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>تمويه (B)</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>عرض قائمة المهام السريعة</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>خدمة اختصار عناوين URL</value>
+  </data>
+  <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
+    <value>اسم تسجيل الدخول</value>
+  </data>
+  <data name="HotkeyType_ImageEffects" xml:space="preserve">
+    <value>مؤثرات الصور</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>صورة من الشاشة</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
+    <value>إصدار جديد من {0} متاح</value>
+  </data>
+  <data name="AfterUploadTasks_ShowQRCode" xml:space="preserve">
+    <value>عرض نافذة قارئ QR</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>بالون المحادثة (S)</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
+    <value>{0} بالفعل تم تحديثها</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenRecord" xml:space="preserve">
+    <value>تسجيل الشاشة</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>ساعة</value>
+  </data>
+  <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
+    <value>بدء/إيقاف اللقطة القابلة للتمرير</value>
+  </data>
+  <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
+    <value>زيادة تلقائية للأرقام والحروف مع حساسية لحالة الأحرف (حشو بالأصفار بمقدار {n})</value>
+  </data>
+  <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
+    <value>عنوان النافذة</value>
+  </data>
+  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
+    <value>طباعة الصورة</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>مساحة مستطيلة</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>عرض/إخفاء شريط الإجراءات</value>
+  </data>
+  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
+    <value>تنفيذ إجراء</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>نسبة أبعاد الرقعة</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>التأريخ والوقت</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>مركّب الصور</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>التقاط مساحة</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
+    <value>تم التنزيل.</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>خاص</value>
+  </data>
+  <data name="AfterUploadTasks_ShareURL" xml:space="preserve">
+    <value>مشاركة الـ URL</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>رافعو الملفات</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>الساعة</value>
+  </data>
+  <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
+    <value>خطأ في البحث عن تحديثات</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>ميللي ثانية</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
+    <value>تثبت</value>
+  </data>
+  <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
+    <value>رفع الصورة إلى مضيف</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
+    <value>زيادة تلقائية باستخدام النظام السداسي عشري (حشو بالأصفار بمقدار {n})</value>
+  </data>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>سماوي: {0:0.0}%, وردي: {1:0.0}%, أصفر: {2:0.0}%, Key: {3:0.0}%</value>
+  </data>
+  <data name="HotkeyType_FolderUpload" xml:space="preserve">
+    <value>رفع المجلد</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>دقيقة</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>تشويش (P)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>اليوم</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>يوم</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>سهم (A)</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>المسلحة الذكية</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>غير متوفرة</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
+    <value>التحديثات متاحة</value>
+  </data>
+  <data name="HotkeyType_Category_Upload" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
+    <value>فشل في إعداد DNS مع رمز الخطأ التالي:</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
+    <value>قص</value>
+  </data>
+  <data name="FileExistAction_Cancel" xml:space="preserve">
+    <value>لا تقم بالحفظ</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
+    <value>نسخ الصورة إلى الحافظة</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32-بت</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>بدء/إيقاف تسجيل الشاشة من النوع (GIF) الخاص بالنافذة النشطة</value>
+  </data>
+  <data name="HotkeyType_PrintScreen" xml:space="preserve">
+    <value>التقاط الشاشة كاملة</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>عادي</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>بدء/إيقاف تسجيل الشاشة من النوع (GIF) الخاص بالمنطقة مسبقة التحديد</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
+    <value>تم إعداد DNS بنجاح.</value>
+  </data>
+  <data name="HotkeyType_CustomRegion" xml:space="preserve">
+    <value>التقاط مساحة مهيئة مسبقًا</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10 دقائق</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>تبديل نوع الأدلة</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
+    <value>التقاط مساحة</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>تعرف على النصوص (OCR)</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>خروج من التطبيق</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>إصدار جديد من {0} متاح.
+هل تريد تنزيله؟</value>
+  </data>
+  <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
+    <value>فشل التنزيل:</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>نص مع الحدود (T)</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>التقاط الشاشة النشطة</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>مصغرات ضئيلة</value>
+  </data>
+  <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
+    <value>طباعة</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>عرض نافذة ما بعد الرفع</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>قيمة عشوائية</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>تحديد الكل</value>
+  </data>
+  <data name="FileDestination_CustomFileUploader" xml:space="preserve">
+    <value>رافع ملفات مخصص</value>
+  </data>
+  <data name="LinearGradientMode_Vertical" xml:space="preserve">
+    <value>عمودي</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>عشوائي</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>رافع الصور</value>
+  </data>
+  <data name="HotkeyType_HashCheck" xml:space="preserve">
+    <value>فاحص الهاش</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>بدء/إيقاف تسجيل الشاشة الخاص بالنافذة النشطة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
+    <value>رقم عشوائي بين 0 - 9 (مكررة بمقدار {n})</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
+    <value>رفع من الحافظة مع عارض المحتوى</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>عمومي</value>
+  </data>
+  <data name="HSB_ToString_" xml:space="preserve">
+    <value>اللون: {0:0.0}°, التشبع: {1:0.0}%, السطوع: {2:0.0}%</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_OK" xml:space="preserve">
+    <value>حسنًا</value>
+  </data>
+  <data name="HotkeyType_DragDropUpload" xml:space="preserve">
+    <value>الرفع بالسحب والإفلات</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>أبدًا</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>بدء/إيقاف تسجيل الشاشة الخاص بآخر منطقة محددة</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>صانع الصور المصغرة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>اسم الشهر (باللغة المحلية)</value>
+  </data>
+  <data name="GIFQuality_Bit8" xml:space="preserve">
+    <value>Octree quantizer 256 colors (ترميز أبطأ مع جودة أفضل)</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>صورة من ملف</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (جودة سيئة)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
+    <value>زيادة تلقائية للأرقام والحروف  (حشو بالأصفار بمقدار {n})</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
+    <value>فشل في إعداد DNS.</value>
+  </data>
+  <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
+    <value>يدوي</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>إضافة مؤثرات للصورة</value>
+  </data>
+  <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
+    <value>حذف الملف الموجود في الجهاز</value>
+  </data>
+  <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
+    <value>خطأ في التصدير.</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>الجهاز</value>
+  </data>
+  <data name="FileExistAction_UniqueName" xml:space="preserve">
+    <value>إلحاق الرقم باسم الملف</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>صور مصغرة كبيرة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>السنة (رقمين)</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>اكتشاف تلقائي</value>
+  </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>الحالة السابقة</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>مساحة بيضاوية الشكل</value>
+  </data>
+  <data name="HotkeyType_DNSChanger" xml:space="preserve">
+    <value>إعدادات DNS</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>بدء/إيقاف تسجيل الشاشة من النوع (GIF)</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>غير متوفرة</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>النافذة</value>
+  </data>
+  <data name="HotkeyType_Ruler" xml:space="preserve">
+    <value>المسطرة</value>
+  </data>
+  <data name="ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from" xml:space="preserve">
+    <value>عنوان URL لتنزيل الإعدادات من</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>رسم الحر (F)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
+    <value>ص/م</value>
+  </data>
+  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
+    <value>تحديد مجلد...</value>
+  </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>قطري إلى الخلف</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>المؤشّر</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>صور مصغرة كبيرة</value>
+  </data>
+  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>أفقي</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>إلغاء تسجيل الشاشة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>السنة</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>أسبوعين</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>الشاشة كاملة</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
+    <value>نسخ مسار الملف إلى الحافظة</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
+    <value>بدء/إيقاف تسجيل الشاشة</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
+    <value>حفظ الصورة إلى ملف</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
+    <value>مسار الملف مع امتداد اسم الملف الناتج</value>
+  </data>
+  <data name="HotkeyType_IndexFolder" xml:space="preserve">
+    <value>مفهرس المجلدات</value>
+  </data>
+  <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
+    <value>دمغة وقت بصيغة Unix</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (جودة مرتفعة)</value>
+  </data>
+  <data name="HotkeyType_TweetMessage" xml:space="preserve">
+    <value>تغريدة</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>لا تقم بتغيير الحجم</value>
+  </data>
+  <data name="HotkeyType_StopUploads" xml:space="preserve">
+    <value>إيقاف كل عمليات الرفع النشطة</value>
+  </data>
+  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
+    <value>فتح URL</value>
+  </data>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>فتح في محرّر الصور</value>
+  </data>
+  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
+    <value>تحميل الصورة...</value>
+  </data>
+  <data name="HotkeyType_LastRegion" xml:space="preserve">
+    <value>التقاط المنطقة السابقة</value>
+  </data>
+  <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
+    <value>المجلد غير موجود:</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
+    <value>الإصدار الحالي</value>
+  </data>
+  <data name="FileDestination_Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>إصدار جديد من {0} متاح.
+هل تريد تنزيله وتثبيته؟</value>
+  </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>تحديد ملف صوتي...</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>الملف غير موجود:</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>اختيار مجلد</value>
+  </data>
+  <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
+    <value>خطأ في الاستيراد.</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>لصق</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>قراءة QR من الشاشة</value>
+  </data>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>قطري إلى الأمام</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24-بت</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>اسبوع السنة</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>حجم فعلي</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>فتح نافذة سجل الصور</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>تزايدي</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>رمز تعبيرية عشوائية (مكررة بمقدار {n})</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
+    <value>حفظ الصورة المصغّرة إلى ملف</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
+    <value>جارٍ التنزيل...</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>حذف الشكل أو إلغاء اللقطة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>تكبير</value>
+  </data>
+  <data name="CodeMenu_Create_Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="ShapeType_DrawingSticker" xml:space="preserve">
+    <value>ملصق</value>
+  </data>
+  <data name="HotkeyType_QRCode" xml:space="preserve">
+    <value>قارئ QR</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>أسبوع</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>خدمة مشاركة عناوين URL</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>تمييز (H)</value>
+  </data>
+  <data name="GIFQuality_Grayscale" xml:space="preserve">
+    <value>تدرج رمادي بـ 256 درجة</value>
+  </data>
+  <data name="GIFQuality_Default" xml:space="preserve">
+    <value>ترميز .NET الافتراضي (سريع لكن بجودة متوسطة)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
+    <value>رموز سداسية عشرية عشوائية (مكررة بمقدار {n})</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>خاص (الأعضاء فقط)</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>اسم حيوان عشوائي</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>خدمة مخصصة لمشاركة عناوين URL</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>التقاط الشاشة كاملة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>اسم عملية النافذة</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
+    <value>انتظار...</value>
+  </data>
+  <data name="HotkeyType_ImageEditor" xml:space="preserve">
+    <value>محرّر الصور</value>
+  </data>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>فتح نافذة السجل</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>تحديد وتحريك (M)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
+    <value>زيادة تلقائية بدءًا من  {n} باستخدام الأرقام والحروف داخل النطاق (1 &lt; n &lt; 63)</value>
+  </data>
+  <data name="HotkeyType_CaptureWebpage" xml:space="preserve">
+    <value>التقاط صفحة وٍب</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>إلغاء الالتقاط</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>مسح رمز QR</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>التقاط مساحة (حدود فاتحة)</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="HotkeyType_FileUpload" xml:space="preserve">
+    <value>رفع الملف</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>رمز GUID عشوائي</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>خط (L)</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>نسخ القيمة</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>عرض نافذة ما قبل الرفع</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>عرض الملف في متصفح الملفات</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>رافع صور مخصص</value>
+  </data>
+  <data name="HotkeyType_Category_ScreenCapture" xml:space="preserve">
+    <value>التقاط الشاشة</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
+    <value>التقاط الشاشة النشطة</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>خطوة (I)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
+    <value>زيادة تلقائية للأرقام (حشو بالأصفار بمقدار {n})</value>
+  </data>
+  <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
+    <value>رفع من الحافظة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_n_New_line" xml:space="preserve">
+    <value>سطر جديد</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>اسم الشهر (إنجليزي)</value>
+  </data>
+  <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
+    <value>فتح مجلد لقطات الشاشة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>عرض الصورة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>اسم الاسبوع (الإنجليزية)</value>
+  </data>
+  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
+    <value>تحديد ملف تنفيذي...</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>رافعو الملفات</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>حجم تلقائي</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>بدون</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>الافتراضي</value>
+  </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>فشل إنشاء المجلد.</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set__Reboot_is_required_" xml:space="preserve">
+    <value>تم إعداد DNS بنجاح. يجب إعادة تشغيل النظام.</value>
+  </data>
+  <data name="ProxyMethod_Manual" xml:space="preserve">
+    <value>يدوي</value>
+  </data>
+  <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
+    <value>الحالة: {0}</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>بدء/إيقاف تسجيل الشاشة من النوع (GIF) الخاص بآخر منطقة محددة</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>مربع صغير</value>
+  </data>
+  <data name="HotkeyType_MonitorTest" xml:space="preserve">
+    <value>اختبار الشاشة</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
+    <value>نسخ</value>
+  </data>
+  <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
+    <value>اختصار عنوان URL</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>سطر عشوائي من ملف (استخدام {filepath} لتحديد الملف)</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="HotkeyType_Category_Tools" xml:space="preserve">
+    <value>الأدوات</value>
+  </data>
+  <data name="FileDestination_SharedFolder" xml:space="preserve">
+    <value>مجلد المشاركة</value>
+  </data>
+  <data name="HotkeyType_ActiveMonitor" xml:space="preserve">
+    <value>التقاط الشاشة النشطة</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
+    <value>الحصول على حجم الملف...</value>
+  </data>
+  <data name="HotkeyType_Category_Other" xml:space="preserve">
+    <value>أخرى</value>
+  </data>
+  <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
+    <value>اسم الملف: {0}</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>بيضاوي (E)</value>
+  </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>منتقي الألوان</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>رافعو الملفات</value>
+  </data>
+  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
+    <value>تحميل الصورة: {0}%</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
+    <value>حروف وأرقام عشوائية (مكررة بمقدار {n})</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>القيمة</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>تعطيل / تفعيل مفاتيح الاختصار</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>تجاهل</value>
+  </data>
+  <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
+    <value>حفظ الصورة كملف باسم...</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>نسخ الاسم</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>حذف الشكل</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>مسار الملف</value>
+  </data>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>محوّل صيغ الفيديو</value>
+  </data>
+  <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
+    <value>تحديد مجلد</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>فتح النافذة الرئيسية</value>
+  </data>
+  <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
+    <value>منتقي الألوان</value>
+  </data>
+  <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
+    <value>الاسم: {0}, الحجم: {1}</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>التقاط تلقائي</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>مستطيل (R)</value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>نافذة موسّعة</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>بدء/إيقاف تسجيل الشاشة الخاص بالمنطقة مسبقة التحديد</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_OctreeQuantizer" xml:space="preserve">
+    <value>Octree quantizer (جودة متوسطة)</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>اختيار ملف</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>ارتفاع الصورة</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>شهر</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>نص مع الخلفية (T)</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>استخدام رمز غير غامض (مكررة بمقدار {n})</value>
+  </data>
+  <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
+    <value>خدمة مخصصة لاختصار عناوين URL</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>عمومي</value>
+  </data>
+  <data name="FileExistAction_Overwrite" xml:space="preserve">
+    <value>كتابة فوق الملف</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>نسبة أبعاد الصورة</value>
+  </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>اختصار عنوان URL</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>رافع النصوص</value>
+  </data>
+  <data name="FileExistAction_Ask" xml:space="preserve">
+    <value>اسألني ما الذي يجب القيام به</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
+    <value>الإصدار الأخير</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>عرض نافذة ما بعد الالتقاط</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>رفع النص</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>اقتصاص الصورة (C)</value>
+  </data>
+  <data name="HotkeyType_UploadURL" xml:space="preserve">
+    <value>رفع من عنوان URL</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>مجزّء الصور</value>
+  </data>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>نسخ العنوان إلى الحافظة</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>اسم الجهاز</value>
+  </data>
+  <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
+    <value>بدء الالتقاط التلقائي باستخدام آخر منطقة محددة</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>صور مصغرة متوسطة</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>تراجع</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>نسخ الملف إلى الحافظة</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>نتيجة الملف الأول:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>نتيجة الملف الثاني:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>النتيجة:</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>الهدف:</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>نهاية</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>بدء</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>كلا الاتجاهين</value>
+  </data>
+  <data name="StepType_LettersLowercase" xml:space="preserve">
+    <value>حروف صعيرة</value>
+  </data>
+  <data name="StepType_LettersUppercase" xml:space="preserve">
+    <value>حروف كبيرة</value>
+  </data>
+  <data name="StepType_Numbers" xml:space="preserve">
+    <value>أرقام</value>
+  </data>
+  <data name="StepType_RomanNumeralsLowercase" xml:space="preserve">
+    <value>أرقام رومانية (حروف صغيرة)</value>
+  </data>
+  <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
+    <value>أرقام رومانية (حروف كبيرة)</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>عارض الحافظة</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>مشخّص النوافذ</value>
+  </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>مصمت</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>شَرطة</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>نقطة</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>شَرطة، نقطة</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>شَرطة، نقطة، شَرطة</value>
+  </data>
+  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
+    <value>إغلاق الإشعار</value>
+  </data>
+  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
+    <value>تعديل الصورة</value>
+  </data>
+  <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
+    <value>نسخ الصورة</value>
+  </data>
+  <data name="ToastClickAction_CopyFile" xml:space="preserve">
+    <value>نسخ الملف</value>
+  </data>
+  <data name="ToastClickAction_CopyFilePath" xml:space="preserve">
+    <value>نسخ مسار الملف</value>
+  </data>
+  <data name="ToastClickAction_CopyUrl" xml:space="preserve">
+    <value>نسخ الرابط</value>
+  </data>
+  <data name="ToastClickAction_OpenFile" xml:space="preserve">
+    <value>فتح ملف</value>
+  </data>
+  <data name="ToastClickAction_OpenFolder" xml:space="preserve">
+    <value>فتح مجلد</value>
+  </data>
+  <data name="ToastClickAction_OpenUrl" xml:space="preserve">
+    <value>فتح الرابط</value>
+  </data>
+  <data name="ToastClickAction_Upload" xml:space="preserve">
+    <value>رفع الملف</value>
+  </data>
+  <data name="ContentAlignment_TopLeft" xml:space="preserve">
+    <value>أعلى اليسار</value>
+  </data>
+  <data name="ContentAlignment_TopCenter" xml:space="preserve">
+    <value>أعلى الوسط</value>
+  </data>
+  <data name="ContentAlignment_TopRight" xml:space="preserve">
+    <value>أعلى اليمين</value>
+  </data>
+  <data name="ContentAlignment_MiddleLeft" xml:space="preserve">
+    <value>وسط - يسار</value>
+  </data>
+  <data name="ContentAlignment_MiddleCenter" xml:space="preserve">
+    <value>في المركز</value>
+  </data>
+  <data name="ContentAlignment_MiddleRight" xml:space="preserve">
+    <value>وسط - يمين</value>
+  </data>
+  <data name="ContentAlignment_BottomLeft" xml:space="preserve">
+    <value>أسفل - يسار</value>
+  </data>
+  <data name="ContentAlignment_BottomCenter" xml:space="preserve">
+    <value>أسفل - متوسط</value>
+  </data>
+  <data name="ContentAlignment_BottomRight" xml:space="preserve">
+    <value>أسفل - يمين</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>بحث الصور باستخدام Bing</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>الافتراضي</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>ملف</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>الصورة</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>النص</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>عنوان URL</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>التقاط المنطقة السابقة</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>إيقاف تسجيل الشاشة</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>عرض/إخفاء قائمة أيقونة الإشعارات</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>الافتراضي</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>تعديل الصورة</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>فتح ملف</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>فتح مجلد</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>فتح عارض الصور</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>فتح URL</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>تحديد</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>أسفل</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>جانبي</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>إخفاء</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>عرض كقائمة</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>عرض كـ شبكة</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>أسفل</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>أعلى</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>عارض الصور</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>التعرف على النصوص OCR</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>نافذة بلا إطار</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>تثيبت على الشاشة</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>تثيبت على الشاشة</value>
+  </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - عارض الصور</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>تثيبت على الشاشة</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>بلا تأخير</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>حواف ممزقة</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>موجة</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>أسنان المنشار</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>اقتطاع (X)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>تثيبت على الشاشة (من الحافظة)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>تثيبت على الشاشة ( من ملف)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>تثيبت على الشاشة (من الشاشة)</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>إيقاف تسجيل الشاشة مؤقتًا</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>رسم الحر مع سهم</value>
+  </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>محسّن الصور</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>تحسين صورة</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>فحص</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>التقاط نافذة مهيئة مسبقًا</value>
+  </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>الإصدارات الاختبارية - Dev</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>الإصدارات التجريبية - Pre</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>الإصدار المستقر - Release</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>التقدّم</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>سرعة التنزيل</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>حجم الملف</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>حذف حدود النافذة النشطة</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>إبقاء النافذة النشطة في المقدمة</value>
+  </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>تثبيت على الشاشة وإغلاق الكل</value>
+  </data>
+</root>

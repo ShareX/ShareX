@@ -1,0 +1,40 @@
+# Created using wingetcreate 1.6.1.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.6.0.schema.json
+
+PackageIdentifier: ShareX.ShareX
+PackageVersion: {PackageVersion}
+PackageLocale: en-US
+Publisher: ShareX Team
+PublisherUrl: https://getsharex.com
+PublisherSupportUrl: https://github.com/ShareX/ShareX/issues
+PrivacyUrl: https://getsharex.com/privacy-policy
+Author: ShareX Team
+PackageName: ShareX
+PackageUrl: https://github.com/ShareX/ShareX
+License: GNU General Public License v3.0
+LicenseUrl: https://github.com/ShareX/ShareX/blob/master/LICENSE.txt
+Copyright: Copyright (c) 2007-2025 ShareX Team
+ShortDescription: ShareX is a free and open-source screen capture and file sharing software.
+Description: |-
+  ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key.
+  It also allows uploading images, text or other types of files to many supported destinations you can choose from.
+Moniker: sharex
+Tags:
+- capture
+- color-picker
+- file-sharing
+- file-upload
+- foss
+- gif-recorder
+- image-annotation
+- ocr
+- productivity
+- region-capture
+- screen-capture
+- screen-recorder
+- screenshot
+- share
+- uploader
+- url-shortener
+ManifestType: defaultLocale
+ManifestVersion: 1.6.0

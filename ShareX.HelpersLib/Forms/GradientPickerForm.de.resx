@@ -136,7 +136,7 @@
     <value>Farbe</value>
   </data>
   <data name="chLocation.Text" xml:space="preserve">
-    <value>Ort:</value>
+    <value>Ort</value>
   </data>
   <data name="lblGradientType.Text" xml:space="preserve">
     <value>Neigungsart:</value>
@@ -146,5 +146,17 @@
   </data>
   <data name="lblPreview.Text" xml:space="preserve">
     <value>Vorschau:</value>
+  </data>
+  <data name="btnReverse.Text" xml:space="preserve">
+    <value>Umkehren</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Voreinstellungen:</value>
+  </data>
+  <data name="chGradient.Text" xml:space="preserve">
+    <value>Verlauf</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Löschen</value>
   </data>
 </root>

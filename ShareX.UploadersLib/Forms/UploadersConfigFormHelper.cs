@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -204,47 +204,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Photobucket
-
-        #region Google Photos
-
-        public void GooglePhotosRefreshAlbumList()
-        {
-            try
-            {
-                lvPicasaAlbumList.Items.Clear();
-
-                if (OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info))
-                {
-                    List<GooglePhotosAlbumInfo> albums = new GooglePhotos(Config.GooglePhotosOAuth2Info).GetAlbumList();
-
-                    if (albums != null && albums.Count > 0)
-                    {
-                        foreach (GooglePhotosAlbumInfo album in albums)
-                        {
-                            ListViewItem lvi = new ListViewItem(album.ID);
-                            lvi.SubItems.Add(album.Name ?? "");
-                            lvi.SubItems.Add(album.Summary ?? "");
-                            lvi.Tag = album;
-                            lvPicasaAlbumList.Items.Add(lvi);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.ShowError();
-            }
-        }
-
-        public void GooglePhotosCreateAlbum(string albumName)
-        {
-            if (OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info))
-            {
-                new GooglePhotos(Config.GooglePhotosOAuth2Info).CreateAlbum(albumName);
-            }
-        }
-
-        #endregion Google Photos
 
         #region Amazon S3
 
@@ -511,7 +470,7 @@ namespace ShareX.UploadersLib
         private void FTPUpdateEnabledStates()
         {
             cbFTPImage.Enabled = cbFTPText.Enabled = cbFTPFile.Enabled = cbFTPAccounts.Enabled = cbFTPAccounts.Items.Count > 0;
-            btnFTPRemove.Enabled = btnFTPDuplicate.Enabled = gbFTPAccount.Enabled = cbFTPAccounts.SelectedIndex > -1;
+            btnFTPRemove.Enabled = btnFTPDuplicate.Enabled = btnFTPTest.Enabled = gbFTPAccount.Enabled = cbFTPAccounts.SelectedIndex > -1;
 
             FTPAccount account = FTPGetSelectedAccount();
 
@@ -563,7 +522,7 @@ namespace ShareX.UploadersLib
             }
 
             txtFTPHost.Text = account.Host;
-            nudFTPPort.Value = account.Port;
+            nudFTPPort.SetValue(account.Port);
             txtFTPUsername.Text = account.Username;
             txtFTPPassword.Text = account.Password;
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiRedo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
-            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
+            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiCutOutBackgroundColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength, tslnudCutOutEffectSize;
         private ToolStripLabel tslDragLeft, tslDragRight;
@@ -667,6 +667,22 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCutOutEffectSize);
+
+            tsmiCutOutBackgroundColor = new ToolStripMenuItem(Resources.CutOutBackgroundColor);
+            tsmiCutOutBackgroundColor.Click += (sender, e) =>
+            {
+                Form.Pause();
+
+                if (PickColor(AnnotationOptions.CutOutBackgroundColor, out Color newColor))
+                {
+                    AnnotationOptions.CutOutBackgroundColor = newColor;
+                    UpdateMenu();
+                    UpdateCurrentShape();
+                }
+
+                Form.Resume();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tsmiCutOutBackgroundColor);
 
             // In dropdown menu if only last item is visible then menu opens at 0, 0 position on first open, so need to add dummy item to solve this weird bug...
             tsddbShapeOptions.DropDownItems.Add(new ToolStripSeparator() { Visible = false });
@@ -1294,42 +1310,45 @@ namespace ShareX.ScreenCaptureLib
 
         private void CheckMenuPosition()
         {
-            Rectangle rectMenu = menuForm.Bounds;
-            Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
-            Point pos = rectMenu.Location;
-
-            if (rectMenu.Width < rectScreen.Width)
+            if (!Form.IsEditorMode)
             {
-                if (rectMenu.X < rectScreen.X)
-                {
-                    pos.X = rectScreen.X;
-                }
-                else if (rectMenu.Right > rectScreen.Right)
-                {
-                    pos.X = rectScreen.Right - rectMenu.Width;
-                }
-            }
+                Rectangle rectMenu = menuForm.Bounds;
+                Rectangle rectScreen = CaptureHelpers.GetScreenBounds();
+                Point pos = rectMenu.Location;
 
-            if (rectMenu.Height < rectScreen.Height)
-            {
-                if (rectMenu.Y < rectScreen.Y)
+                if (rectMenu.Width < rectScreen.Width)
                 {
-                    pos.Y = rectScreen.Y;
+                    if (rectMenu.X < rectScreen.X)
+                    {
+                        pos.X = rectScreen.X;
+                    }
+                    else if (rectMenu.Right > rectScreen.Right)
+                    {
+                        pos.X = rectScreen.Right - rectMenu.Width;
+                    }
                 }
-                else if (rectMenu.Bottom > rectScreen.Bottom)
+
+                if (rectMenu.Height < rectScreen.Height)
                 {
-                    pos.Y = rectScreen.Bottom - rectMenu.Height;
+                    if (rectMenu.Y < rectScreen.Y)
+                    {
+                        pos.Y = rectScreen.Y;
+                    }
+                    else if (rectMenu.Bottom > rectScreen.Bottom)
+                    {
+                        pos.Y = rectScreen.Bottom - rectMenu.Height;
+                    }
                 }
-            }
 
-            if (pos != rectMenu.Location)
-            {
-                menuForm.Location = pos;
-            }
+                if (pos != rectMenu.Location)
+                {
+                    menuForm.Location = pos;
+                }
 
-            if (!Form.IsEditorMode && Options.RememberMenuState)
-            {
-                Options.MenuPosition = pos;
+                if (Options.RememberMenuState)
+                {
+                    Options.MenuPosition = pos;
+                }
             }
         }
 
@@ -1492,6 +1511,9 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCutOutEffectSize.Content.Value = AnnotationOptions.CutOutEffectSize;
 
+            if (tsmiCutOutBackgroundColor.Image != null) tsmiCutOutBackgroundColor.Image.Dispose();
+            tsmiCutOutBackgroundColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.CutOutBackgroundColor, new Rectangle(0, 0, 16, 16));
+
             switch (shapeType)
             {
                 default:
@@ -1605,6 +1627,7 @@ namespace ShareX.ScreenCaptureLib
             tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
             tscbCutOutEffectType.Visible = shapeType == ShapeType.ToolCutOut;
             tslnudCutOutEffectSize.Visible = shapeType == ShapeType.ToolCutOut;
+            tsmiCutOutBackgroundColor.Visible = shapeType == ShapeType.ToolCutOut;
 
             if (tsmiRegionCapture != null)
             {

@@ -133,9 +133,6 @@
   <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
     <value>Simplified Chinese</value>
   </data>
-  <data name="OCRForm_AutoProcessing" xml:space="preserve">
-    <value>OCR is processing.</value>
-  </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>File path can't be empty.</value>
   </data>
@@ -953,9 +950,6 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
     <value>hotkey</value>
   </data>
-  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
-    <value>Error occurred during OCR processing, or no text was returned.</value>
-  </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Hotkeys enabled.</value>
   </data>
@@ -1084,9 +1078,6 @@ Middle click to close</value>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
     <value>Clipboard is empty or contains unknown data.</value>
   </data>
-  <data name="OCRForm_AutoComplete" xml:space="preserve">
-    <value>The OCR output has been copied to your clipboard.</value>
-  </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Screenshot delay: {0}s</value>
   </data>
@@ -1129,5 +1120,17 @@ Middle click to close</value>
   </data>
   <data name="Google-Lens" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Google-Lens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pin__minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pin--minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ActionCompletedSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ActionCompletedSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
+    <value>Arabic</value>
   </data>
 </root>

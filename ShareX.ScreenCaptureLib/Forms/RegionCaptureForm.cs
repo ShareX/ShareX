@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -360,9 +360,9 @@ namespace ShareX.ScreenCaptureLib
 
         internal void InitBackground(Bitmap canvas, bool centerCanvas = true)
         {
-            if (Canvas != null) Canvas.Dispose();
-            if (backgroundBrush != null) backgroundBrush.Dispose();
-            if (backgroundHighlightBrush != null) backgroundHighlightBrush.Dispose();
+            Canvas?.Dispose();
+            backgroundBrush?.Dispose();
+            backgroundHighlightBrush?.Dispose();
 
             Canvas = canvas;
 
@@ -404,13 +404,15 @@ namespace ShareX.ScreenCaptureLib
                     CenterCanvas();
                 }
             }
-            else if (Options.UseDimming)
+            else if (Options.BackgroundDimStrength > 0)
             {
                 DimmedCanvas?.Dispose();
                 DimmedCanvas = (Bitmap)Canvas.Clone();
 
+                int alpha = (int)Math.Round(255 * (Options.BackgroundDimStrength / 100f));
+
                 using (Graphics g = Graphics.FromImage(DimmedCanvas))
-                using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
+                using (Brush brush = new SolidBrush(Color.FromArgb(alpha, Color.Black)))
                 {
                     g.FillRectangle(brush, 0, 0, DimmedCanvas.Width, DimmedCanvas.Height);
 
@@ -609,8 +611,8 @@ namespace ShareX.ScreenCaptureLib
             if (IsImageModified)
             {
                 Pause();
-                DialogResult dialogResult = MessageBox.Show(this, Resources.RegionCaptureForm_SaveChangesBeforeClosingEditor, Resources.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor,
-                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show(this, Resources.RegionCaptureForm_SaveChangesBeforeClosingEditor,
+                    Resources.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -956,7 +958,7 @@ namespace ShareX.ScreenCaptureLib
                 UpdateRegionPath();
 
                 // If background is dimmed then draw non dimmed background to region selections
-                if (!IsEditorMode && Options.UseDimming)
+                if (!IsEditorMode && Options.BackgroundDimStrength > 0 && backgroundHighlightBrush != null)
                 {
                     using (Region region = new Region(regionDrawPath))
                     {
@@ -1218,13 +1220,14 @@ namespace ShareX.ScreenCaptureLib
             else if (Mode == RegionCaptureMode.Ruler)
             {
                 PointF endLocation = new PointF(rect.Right - 1, rect.Bottom - 1);
-                string text = $"X: {rect.X} | Y: {rect.Y} | Right: {endLocation.X} | Bottom: {endLocation.Y}\r\n" +
-                    $"Width: {rect.Width} px | Height: {rect.Height} px | Area: {rect.Area()} px | Perimeter: {rect.Perimeter()} px\r\n" +
-                    $"Distance: {MathHelpers.Distance(rect.Location, endLocation):0.00} px | Angle: {MathHelpers.LookAtDegree(rect.Location, endLocation):0.00}°";
+                string text = $"X: {rect.X} | Y: {rect.Y} | {Resources.RulerRight}: {endLocation.X} | {Resources.RulerBottom}: {endLocation.Y}\r\n" +
+                    $"{Resources.RulerWidth}: {rect.Width} px | {Resources.RulerHeight}: {rect.Height} px | {Resources.RulerArea}: {rect.Area()} px | {Resources.RulerPerimeter}: {rect.Perimeter()} px\r\n" +
+                    $"{Resources.RulerDistance}: {MathHelpers.Distance(rect.Location, endLocation):0.00} px | {Resources.RulerAngle}: {MathHelpers.LookAtDegree(rect.Location, endLocation):0.00}°";
                 return text;
             }
 
-            return string.Format(Resources.RectangleRegion_GetAreaText_Area, rect.X, rect.Y, rect.Width, rect.Height);
+            Rectangle area = rect.Round();
+            return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
         }
 
         private string GetInfoText()

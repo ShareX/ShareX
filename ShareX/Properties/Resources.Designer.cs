@@ -79,6 +79,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arabic.
+        /// </summary>
+        internal static string AboutForm_AboutForm_Language_ar_YE {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_ar_YE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to German.
         /// </summary>
         internal static string AboutForm_AboutForm_Language_de {
@@ -327,6 +336,15 @@ namespace ShareX.Properties {
         internal static string AboutForm_AboutForm_Website {
             get {
                 return ResourceManager.GetString("AboutForm_AboutForm_Website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ActionCompletedSound {
+            get {
+                return ResourceManager.GetStream("ActionCompletedSound", resourceCulture);
             }
         }
         
@@ -2207,33 +2225,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The OCR output has been copied to your clipboard..
-        /// </summary>
-        internal static string OCRForm_AutoComplete {
-            get {
-                return ResourceManager.GetString("OCRForm_AutoComplete", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error occurred during OCR processing, or no text was returned..
-        /// </summary>
-        internal static string OCRForm_AutoCompleteFail {
-            get {
-                return ResourceManager.GetString("OCRForm_AutoCompleteFail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to OCR is processing..
-        /// </summary>
-        internal static string OCRForm_AutoProcessing {
-            get {
-                return ResourceManager.GetString("OCRForm_AutoProcessing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] openhand {
@@ -2278,6 +2269,16 @@ namespace ShareX.Properties {
         internal static System.Drawing.Bitmap pin {
             get {
                 object obj = ResourceManager.GetObject("pin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pin__minus {
+            get {
+                object obj = ResourceManager.GetObject("pin__minus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3202,6 +3203,16 @@ namespace ShareX.Properties {
         internal static System.Drawing.Bitmap X_white {
             get {
                 object obj = ResourceManager.GetObject("X_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ye {
+            get {
+                object obj = ResourceManager.GetObject("ye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

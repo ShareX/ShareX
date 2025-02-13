@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,6 +31,7 @@ namespace ShareX.ScreenCaptureLib
         public bool AutoScrollTop { get; set; } = false;
         public int ScrollDelay { get; set; } = 300;
         public int ScrollAmount { get; set; } = 2;
+        public bool AutoIgnoreBottomEdge { get; set; } = true;
         public bool AutoUpload { get; set; } = false;
         public bool ShowRegion { get; set; } = true;
     }

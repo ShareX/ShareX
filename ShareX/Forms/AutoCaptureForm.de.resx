@@ -124,7 +124,7 @@
     <value>Starten</value>
   </data>
   <data name="btnRegion.Text" xml:space="preserve">
-    <value>Bereich auswählen</value>
+    <value>Bereich auswählen...</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
     <value>Automatisch in den Infobereich/Tray minimieren</value>

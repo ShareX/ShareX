@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -588,31 +588,35 @@ namespace ShareX.HistoryLib
 
         private void pbThumbnail_MouseDown(object sender, MouseEventArgs e)
         {
-            pbThumbnail.Enabled = false;
-
             int currentImageIndex = lvHistory.SelectedIndex;
-            int modifiedImageIndex = 0;
-            int halfRange = 100;
-            int startIndex = Math.Max(currentImageIndex - halfRange, 0);
-            int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, filteredHistoryItems.Count);
 
-            List<string> filteredImages = new List<string>();
-
-            for (int i = startIndex; i < endIndex; i++)
+            if (currentImageIndex > -1 && pbThumbnail.Image != null && filteredHistoryItems != null && filteredHistoryItems.Count > 0)
             {
-                string imageFilePath = filteredHistoryItems[i].FilePath;
+                pbThumbnail.Enabled = false;
 
-                if (i == currentImageIndex)
+                int modifiedImageIndex = 0;
+                int halfRange = 100;
+                int startIndex = Math.Max(currentImageIndex - halfRange, 0);
+                int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, filteredHistoryItems.Count);
+
+                List<string> filteredImages = new List<string>();
+
+                for (int i = startIndex; i < endIndex; i++)
                 {
-                    modifiedImageIndex = filteredImages.Count;
+                    string imageFilePath = filteredHistoryItems[i].FilePath;
+
+                    if (i == currentImageIndex)
+                    {
+                        modifiedImageIndex = filteredImages.Count;
+                    }
+
+                    filteredImages.Add(imageFilePath);
                 }
 
-                filteredImages.Add(imageFilePath);
+                ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
+
+                pbThumbnail.Enabled = true;
             }
-
-            ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
-
-            pbThumbnail.Enabled = true;
         }
 
         #endregion Form events

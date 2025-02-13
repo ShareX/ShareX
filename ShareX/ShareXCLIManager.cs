@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -131,13 +132,43 @@ namespace ShareX
             {
                 if (command.CheckCommand(job.ToString()))
                 {
-                    await TaskHelpers.ExecuteJob(job, command);
+                    string filePath = null;
+
+                    try
+                    {
+                        filePath = CheckParameterForFilePath(command);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+
+                        return true;
+                    }
+
+                    await TaskHelpers.ExecuteJob(job, filePath);
 
                     return true;
                 }
             }
 
             return false;
+        }
+
+        private string CheckParameterForFilePath(CLICommand command)
+        {
+            if (command != null && !string.IsNullOrEmpty(command.Parameter))
+            {
+                string filePath = FileHelpers.GetAbsolutePath(command.Parameter);
+
+                if (!File.Exists(filePath))
+                {
+                    throw new FileNotFoundException();
+                }
+
+                return filePath;
+            }
+
+            return null;
         }
 
         private async Task<bool> CheckCLIWorkflow(CLICommand command)

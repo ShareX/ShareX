@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnPackageFilePathBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="btnAssetsFolderPathBrowse.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="lblAssetsFolderPath.Text" xml:space="preserve">
     <value>Chemin du dossier des ressources :</value>
   </data>

@@ -123,4 +123,34 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Réponse</value>
   </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>Format JSON</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>Format XML</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Copier la réponse</value>
+  </data>
+  <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
+    <value>Copier l'URL raccourci</value>
+  </data>
+  <data name="tsbCopyURL.Text" xml:space="preserve">
+    <value>Copier l'URL</value>
+  </data>
+  <data name="tsbCopyThumbnailURL.Text" xml:space="preserve">
+    <value>Copier l'URL de la miniature</value>
+  </data>
+  <data name="tsbCopyDeletionURL.Text" xml:space="preserve">
+    <value>Copier l'URL de suppression</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Résultat</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Info de la réponse</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Texte de la réponse</value>
+  </data>
 </root>

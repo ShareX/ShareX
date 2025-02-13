@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2024 ShareX Team
+    Copyright (c) 2007-2025 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -47,21 +47,20 @@ namespace ShareX.Steam
             return Path.GetFullPath(path);
         }
 
-        public static bool IsRunning(string name)
+        public static bool IsRunning(string mutexName)
         {
-            bool createdNew = true;
-
             try
             {
-                using (Mutex mutex = new Mutex(false, name, out createdNew))
+                using (Mutex mutex = new Mutex(false, mutexName, out bool createdNew))
                 {
+                    return !createdNew;
                 }
             }
             catch
             {
             }
 
-            return !createdNew;
+            return false;
         }
 
         /// <summary>
