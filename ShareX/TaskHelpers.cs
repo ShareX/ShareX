@@ -306,7 +306,7 @@ namespace ShareX
                     OpenQRCodeDecodeFromScreen();
                     break;
                 case HotkeyType.HashCheck:
-                    OpenHashCheck(filePath);
+                    OpenHashCheck(filePath, safeTaskSettings);
                     break;
                 case HotkeyType.IndexFolder:
                     UploadManager.IndexFolder();
@@ -891,9 +891,12 @@ namespace ShareX
             }
         }
 
-        public static void OpenHashCheck(string filePath = null)
+        public static void OpenHashCheck(string filePath = null, TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             HashCheckerForm hashCheckerForm = new HashCheckerForm(filePath);
+            hashCheckerForm.PlayNotificationSound += () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
             hashCheckerForm.Show();
         }
 
