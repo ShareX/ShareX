@@ -86,8 +86,6 @@ namespace ShareX
             this.CloseOnEscape();
             cmsTray.IgnoreSeparatorClick();
             cmsTaskInfo.IgnoreSeparatorClick();
-            tsddbWorkflows.HideImageMargin();
-            tsmiTrayWorkflows.HideImageMargin();
             tsmiMonitor.HideImageMargin();
             tsmiTrayMonitor.HideImageMargin();
             tsmiOpen.HideImageMargin();
@@ -438,17 +436,21 @@ namespace ShareX
 
         private ToolStripMenuItem WorkflowMenuItem(HotkeySettings hotkeySetting)
         {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem(hotkeySetting.TaskSettings.ToString().Replace("&", "&&"));
+            ToolStripMenuItem tsmi = new ToolStripMenuItem();
+
+            tsmi.Text = hotkeySetting.TaskSettings.ToString().Replace("&", "&&");
+
+            if (!hotkeySetting.TaskSettings.IsUsingDefaultSettings)
+            {
+                tsmi.Text += "*";
+            }
 
             if (hotkeySetting.HotkeyInfo.IsValidHotkey)
             {
                 tsmi.ShortcutKeyDisplayString = "  " + hotkeySetting.HotkeyInfo;
             }
 
-            if (!hotkeySetting.TaskSettings.IsUsingDefaultSettings)
-            {
-                tsmi.Font = new Font(tsmi.Font, FontStyle.Bold);
-            }
+            tsmi.Image = TaskHelpers.FindMenuIcon(hotkeySetting.TaskSettings.Job);
 
             tsmi.Click += async (sender, e) => await TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
 
