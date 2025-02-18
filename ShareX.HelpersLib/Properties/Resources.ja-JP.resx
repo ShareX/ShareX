@@ -121,7 +121,7 @@
     <value>領域: フリーハンド</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
-    <value>曜日 (ローカル言語)</value>
+    <value>曜日 (システムの言語)</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
     <value>設定をクリップボードにコピーしました。</value>
@@ -413,7 +413,7 @@
     <value>画像のサムネイル作成</value>
   </data>
   <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
-    <value>月の名前 (ローカル言語)</value>
+    <value>月の名前 (システムの言語)</value>
   </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
     <value>オクトリー量子化 256色 (低速エンコード 、良画質)</value>
@@ -437,7 +437,7 @@
     <value>画像エフェクトを追加</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
-    <value>ローカル ファイルを削除</value>
+    <value>ファイルを削除</value>
   </data>
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
     <value>エクスポートに失敗しました。</value>
@@ -621,7 +621,7 @@
     <value>サムネイル画像をファイルに保存</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>ダウンロードしています。</value>
+    <value>ダウンロード中...</value>
   </data>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>図形の削除 / キャプチャー中止</value>
@@ -678,7 +678,7 @@
     <value>アクティブ ウィンドウのプロセス名</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
-    <value>待機しています。</value>
+    <value>待機中...</value>
   </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>画像エディタ</value>
@@ -822,7 +822,7 @@
     <value>アクティブ モニターをキャプチャー</value>
   </data>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
-    <value>ファイルサイズを取得しています。</value>
+    <value>ファイルサイズを取得...</value>
   </data>
   <data name="HotkeyType_Category_Other" xml:space="preserve">
     <value>その他</value>
@@ -1210,5 +1210,59 @@
   </data>
   <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
     <value>描画: フリーハンド矢印</value>
+  </data>
+  <data name="UpdateChannel_Release" xml:space="preserve">
+    <value>公開版</value>
+  </data>
+  <data name="UpdateChannel_PreRelease" xml:space="preserve">
+    <value>準公開版</value>
+  </data>
+  <data name="UpdateChannel_Dev" xml:space="preserve">
+    <value>開発版</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_DownloadSpeed" xml:space="preserve">
+    <value>ダウンロード速度</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Desktop" xml:space="preserve">
+    <value>デスクトップ</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_FileSize" xml:space="preserve">
+    <value>ファイルサイズ</value>
+  </data>
+  <data name="DownloaderForm_FileDownloader_ProgressChanged_Progress" xml:space="preserve">
+    <value>進行状況</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="HotkeyType_CustomWindow" xml:space="preserve">
+    <value>事前に指定したウィンドウをキャプチャ</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowBorderless" xml:space="preserve">
+    <value>アクティブウィンドウをボーダーレスにする</value>
+  </data>
+  <data name="HotkeyType_ActiveWindowTopMost" xml:space="preserve">
+    <value>アクティブウィンドウを最前面にする</value>
+  </data>
+  <data name="HotkeyType_PinToScreenCloseAll" xml:space="preserve">
+    <value>最前面に固定 (すべて閉じる)</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Image" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Transparent" xml:space="preserve">
+    <value>透明</value>
+  </data>
+  <data name="ImageBeautifierBackgroundType_Gradient" xml:space="preserve">
+    <value>グラデーション</value>
+  </data>
+  <data name="HotkeyType_ImageBeautifier" xml:space="preserve">
+    <value>画像装飾</value>
+  </data>
+  <data name="AfterCaptureTasks_BeautifyImage" xml:space="preserve">
+    <value>画像装飾</value>
   </data>
 </root>

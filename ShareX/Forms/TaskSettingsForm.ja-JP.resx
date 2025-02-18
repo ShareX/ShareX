@@ -625,7 +625,7 @@
     <value>説明を開く...</value>
   </data>
   <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
-    <value>ロスレス・エンコーディングで録画した後、ユーザー・エンコーディング・オプションを適用する</value>
+    <value>無劣化のエンコードで録画後、ユーザーのエンコードオプションを適用</value>
   </data>
   <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
     <value>キャプチャー時に自動で非表示</value>
@@ -635,5 +635,26 @@
   </data>
   <data name="lblTask.Text" xml:space="preserve">
     <value>タスク:</value>
+  </data>
+  <data name="cbUseCustomActionCompletedSound.Text" xml:space="preserve">
+    <value>操作完了時の音を指定:</value>
+  </data>
+  <data name="cbPlaySoundAfterAction.Text" xml:space="preserve">
+    <value>操作完了時に音を鳴らす</value>
+  </data>
+  <data name="cbUseRandomImageEffect.Text" xml:space="preserve">
+    <value>画像エフェクトをランダムに適用</value>
+  </data>
+  <data name="lblCaptureCustomWindow.Text" xml:space="preserve">
+    <value>事前に指定したウィンドウの題名:</value>
+  </data>
+  <data name="lblRegionCaptureBackgroundDimStrength.Text" xml:space="preserve">
+    <value>背景を暗くする強度:</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Text" xml:space="preserve">
+    <value>領域キャプチャとカーソルをアクティブなモニターに制限</value>
+  </data>
+  <data name="cbCloseWindowAfterOpenServiceLink.Text" xml:space="preserve">
+    <value>サービスのリンクを開いた後、OCRのウィンドウを閉じる</value>
   </data>
 </root>

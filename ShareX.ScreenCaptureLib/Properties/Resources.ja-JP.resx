@@ -382,7 +382,7 @@
     <value>小さいリサイズ用ハンドルを使う</value>
   </data>
   <data name="OpenKeybindsPage" xml:space="preserve">
-    <value>キーバインド一覧のページを開く...</value>
+    <value>キー割り当て一覧のページを開く...</value>
   </data>
   <data name="Duplicate" xml:space="preserve">
     <value>複製</value>
@@ -415,13 +415,13 @@
     <value>録画開始</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>クリックすると録画を開始。</value>
+    <value>クリックで録画を開始。</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>クリックすると録画を停止。</value>
   </data>
   <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
-    <value>レコーディングを停止しますか？</value>
+    <value>録画を中止しますか？</value>
   </data>
   <data name="AutoCopyImageToClipboard" xml:space="preserve">
     <value>クリップボードに自動でコピー</value>
@@ -482,5 +482,49 @@
   </data>
   <data name="CutOutEffectSize" xml:space="preserve">
     <value>切り抜き削除の効果の大きさ:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Redo" xml:space="preserve">
+    <value>やり直し</value>
+  </data>
+  <data name="RegionCaptureForm_SaveChangesBeforeClosingEditor" xml:space="preserve">
+    <value>変更内容が保存されていません。
+
+画像エディタを閉じる前に変更を保存しますか？</value>
+  </data>
+  <data name="ImageURL" xml:space="preserve">
+    <value>画像URL</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>オプションを初期化しますか？</value>
+  </data>
+  <data name="CutOutBackgroundColor" xml:space="preserve">
+    <value>切り抜き削除の背景色...</value>
+  </data>
+  <data name="RulerAngle" xml:space="preserve">
+    <value>角度</value>
+  </data>
+  <data name="RulerWidth" xml:space="preserve">
+    <value>幅</value>
+  </data>
+  <data name="RulerHeight" xml:space="preserve">
+    <value>高さ</value>
+  </data>
+  <data name="RulerRight" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="RulerBottom" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="RulerPerimeter" xml:space="preserve">
+    <value>外周</value>
+  </data>
+  <data name="RulerArea" xml:space="preserve">
+    <value>面積</value>
+  </data>
+  <data name="RulerDistance" xml:space="preserve">
+    <value>距離</value>
   </data>
 </root>
