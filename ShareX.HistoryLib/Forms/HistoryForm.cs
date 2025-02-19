@@ -75,6 +75,7 @@ namespace ShareX.HistoryLib
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen, true);
             him.GetHistoryItems += him_GetHistoryItems;
+            him.SelectAllHistoryItems += lvHistory.SelectAll;
             lvHistory.ContextMenuStrip = him.cmsHistory;
 
             pbThumbnail.Reset();

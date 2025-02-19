@@ -228,6 +228,19 @@ namespace ShareX
             }
         }
 
+        public void SelectAll()
+        {
+            SelectedPanels.Clear();
+
+            foreach (TaskThumbnailPanel panel in Panels)
+            {
+                panel.Selected = true;
+                SelectedPanels.Add(panel);
+            }
+
+            OnSelectedPanelChanged();
+        }
+
         public void UnselectAllPanels(TaskThumbnailPanel ignorePanel = null)
         {
             SelectedPanels.Clear();

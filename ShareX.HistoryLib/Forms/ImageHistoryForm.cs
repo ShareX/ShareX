@@ -65,6 +65,7 @@ namespace ShareX.HistoryLib
 
             him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
             him.GetHistoryItems += him_GetHistoryItems;
+            him.SelectAllHistoryItems += ilvImages.SelectAll;
             ilvImages.ContextMenuStrip = him.cmsHistory;
 
             defaultTitle = Text;

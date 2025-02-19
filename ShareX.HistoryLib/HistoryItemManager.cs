@@ -38,6 +38,8 @@ namespace ShareX.HistoryLib
 
         public event GetHistoryItemsEventHandler GetHistoryItems;
 
+        public event Action SelectAllHistoryItems;
+
         public HistoryItem HistoryItem { get; private set; }
         public List<HistoryItem> HistoryItems { get; private set; }
 
@@ -149,6 +151,9 @@ namespace ShareX.HistoryLib
                     break;
                 case Keys.Shift | Keys.Enter:
                     OpenFolder();
+                    break;
+                case Keys.Control | Keys.A:
+                    SelectAllHistoryItems?.Invoke(); // Null check is good practice for events
                     break;
                 case Keys.Control | Keys.C:
                     CopyURL();
