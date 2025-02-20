@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
+using ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -272,6 +273,8 @@ namespace ShareX
             #region General
 
             cbShowCursor.Checked = TaskSettings.CaptureSettings.ShowCursor;
+            cbUseWinRTCapture.Checked = TaskSettings.CaptureSettings.UseWinRTGraphicsCaptureAPI;
+            cbUseWinRTCapture.Enabled = ModernCaptureSignletonManager.Instance.IsAvailable;
             nudScreenshotDelay.SetValue(TaskSettings.CaptureSettings.ScreenshotDelay);
             cbCaptureTransparent.Checked = TaskSettings.CaptureSettings.CaptureTransparent;
             cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
@@ -1063,6 +1066,11 @@ namespace ShareX
         private void cbShowCursor_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.ShowCursor = cbShowCursor.Checked;
+        }
+
+        private void cbUseWinRTCapture_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.UseWinRTGraphicsCaptureAPI = cbUseWinRTCapture.Checked;
         }
 
         private void nudScreenshotDelay_ValueChanged(object sender, EventArgs e)
