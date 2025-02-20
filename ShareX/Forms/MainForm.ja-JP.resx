@@ -235,7 +235,7 @@
     <value>定規...</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
-    <value>フォルダーのインデックス作成...</value>
+    <value>フォルダ内一覧の作成...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>画像の結合...</value>
@@ -553,7 +553,7 @@
     <value>定規...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>フォルダーのインデックス作成...</value>
+    <value>フォルダ内一覧の作成...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>画像の結合...</value>
