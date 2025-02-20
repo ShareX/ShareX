@@ -533,7 +533,7 @@
     <value>Google 画像検索</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
-    <value>フォルダーのインデックス作成</value>
+    <value>フォルダ内一覧の作成</value>
   </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Unix時間</value>
