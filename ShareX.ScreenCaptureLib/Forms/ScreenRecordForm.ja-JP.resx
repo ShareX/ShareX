@@ -135,4 +135,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 動画キャプチャー</value>
   </data>
+  <data name="tsmiPause.Text" xml:space="preserve">
+    <value>停止</value>
+  </data>
 </root>

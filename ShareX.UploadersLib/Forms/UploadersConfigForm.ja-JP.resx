@@ -1068,4 +1068,7 @@
   <data name="cbOneDriveUseDirectLink.Text" xml:space="preserve">
     <value>ダイレクト リンクを使用</value>
   </data>
+  <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
+    <value>署名付きペイロード (Signed payload)</value>
+  </data>
 </root>

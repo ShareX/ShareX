@@ -130,7 +130,7 @@
     <value>Chrome 拡張機能をインストール...</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
-    <value>開発中バージョンをインストール...</value>
+    <value>開発版をインストール...</value>
   </data>
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>追加...</value>
@@ -425,5 +425,11 @@
   </data>
   <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
     <value>既定のプリンターを上書き:</value>
+  </data>
+  <data name="cbAutoCheckUpdate.Text" xml:space="preserve">
+    <value>更新を自動で確認</value>
+  </data>
+  <data name="lblUpdateChannel.Text" xml:space="preserve">
+    <value>更新するバージョン:</value>
   </data>
 </root>

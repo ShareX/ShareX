@@ -156,4 +156,10 @@
   <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
     <value>サムネイルの作成に成功。</value>
   </data>
+  <data name="WouldYouLikeToResetOptions" xml:space="preserve">
+    <value>オプションを初期化しますか？</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>確認</value>
+  </data>
 </root>

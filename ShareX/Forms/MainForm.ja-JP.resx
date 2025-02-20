@@ -235,7 +235,7 @@
     <value>定規...</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
-    <value>フォルダーのインデックス作成...</value>
+    <value>フォルダ内一覧の作成...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>画像の結合...</value>
@@ -349,7 +349,7 @@
     <value>一覧からタスクを取り除く</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
-    <value>ローカル ファイルを削除...</value>
+    <value>ファイルを削除...</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
     <value>短縮URLの作成</value>
@@ -553,7 +553,7 @@
     <value>定規...</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>フォルダーのインデックス作成...</value>
+    <value>フォルダ内一覧の作成...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>画像の結合...</value>
@@ -746,5 +746,26 @@
   </data>
   <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
     <value>ボーダーレスウィンドウ...</value>
+  </data>
+  <data name="tsbX.Text" xml:space="preserve">
+    <value>@ShareXをフォロー...</value>
+  </data>
+  <data name="cHotkey.HeaderText" xml:space="preserve">
+    <value>ホットキー</value>
+  </data>
+  <data name="cDescription.HeaderText" xml:space="preserve">
+    <value>説明</value>
+  </data>
+  <data name="tsmiTrayHashChecker.Text" xml:space="preserve">
+    <value>ハッシュ値の照合...</value>
+  </data>
+  <data name="tsmiHashChecker.Text" xml:space="preserve">
+    <value>ハッシュ値の照合...</value>
+  </data>
+  <data name="tsmiImageBeautifier.Text" xml:space="preserve">
+    <value>画像装飾...</value>
+  </data>
+  <data name="tsmiTrayImageBeautifier.Text" xml:space="preserve">
+    <value>画像装飾...</value>
   </data>
 </root>
