@@ -1423,27 +1423,55 @@ namespace ShareX.HelpersLib
 
         public static void HighlightImage(Bitmap bmp, Color highlightColor)
         {
-            HighlightImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), highlightColor);
+            HighlightImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), highlightColor, Color.Red, 0);
         }
 
+        public static void HighlightImage(Bitmap bmp, Color highlightColor, Color borderColor, int borderSize)
+        {
+            HighlightImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), highlightColor, borderColor, borderSize);
+        }
         public static void HighlightImage(Bitmap bmp, Rectangle rect)
         {
-            HighlightImage(bmp, rect, Color.Yellow);
+            HighlightImage(bmp, rect, Color.Yellow, Color.Red, 0);
         }
 
-        public static void HighlightImage(Bitmap bmp, Rectangle rect, Color highlightColor)
+
+        public static void HighlightImage(Bitmap bmp, Rectangle rect, Color highlightColor, Color borderColor, int borderSize)
         {
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
             {
-                for (int y = rect.Y; y < rect.Height; y++)
+                for (int y = rect.Y + borderSize; y < (rect.Height - borderSize); y++)
                 {
-                    for (int x = rect.X; x < rect.Width; x++)
+                    for (int x = rect.X + borderSize; x < (rect.Width - borderSize); x++)
                     {
                         ColorBgra color = unsafeBitmap.GetPixel(x, y);
                         color.Red = Math.Min(color.Red, highlightColor.R);
                         color.Green = Math.Min(color.Green, highlightColor.G);
                         color.Blue = Math.Min(color.Blue, highlightColor.B);
                         unsafeBitmap.SetPixel(x, y, color);
+                    }
+                }
+                ColorBgra _borderColor = new ColorBgra(borderColor.B, borderColor.G, borderColor.R, borderColor.A);
+                for (int y = rect.Y; y < rect.Height; y++)
+                {
+                    for (int x = rect.X; x < rect.X + borderSize; x++)
+                    {
+                        unsafeBitmap.SetPixel(x, y, _borderColor);
+                    }
+                    for (int x = rect.Width - borderSize; x < rect.Width; x++)
+                    {
+                        unsafeBitmap.SetPixel(x, y, _borderColor);
+                    }
+                }
+                for (int x = rect.X; x < rect.Width; x++)
+                {
+                    for (int y = rect.Y; y < rect.Y + borderSize; y++)
+                    {
+                        unsafeBitmap.SetPixel(x, y, _borderColor);
+                    }
+                    for (int y = rect.Height - borderSize; y < rect.Height; y++)
+                    {
+                        unsafeBitmap.SetPixel(x, y, _borderColor);
                     }
                 }
             }

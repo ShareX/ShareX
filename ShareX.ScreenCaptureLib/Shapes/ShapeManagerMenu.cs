@@ -1536,6 +1536,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingCursor:
                 case ShapeType.EffectBlur:
                 case ShapeType.EffectPixelate:
+                case ShapeType.EffectHighlight:
                 case ShapeType.ToolCutOut:
                     tsddbShapeOptions.Visible = true;
                     break;
@@ -1569,6 +1570,18 @@ namespace ShareX.ScreenCaptureLib
                     tslnudBorderSize.Visible = true;
                     tsmiShadow.Visible = true;
                     tsmiShadowColor.Visible = true;
+                    break;
+            }
+
+            switch (shapeType)
+            {
+                default:
+                    tsbBorderColor.Visible = false;
+                    tslnudBorderSize.Visible = false;
+                    break;
+                case ShapeType.EffectHighlight:
+                    tsbBorderColor.Visible = true;
+                    tslnudBorderSize.Visible = true;
                     break;
             }
 
