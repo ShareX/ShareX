@@ -1536,6 +1536,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingCursor:
                 case ShapeType.EffectBlur:
                 case ShapeType.EffectPixelate:
+                case ShapeType.EffectHighlight:
                 case ShapeType.ToolCutOut:
                     tsddbShapeOptions.Visible = true;
                     break;
@@ -1549,8 +1550,6 @@ namespace ShareX.ScreenCaptureLib
             switch (shapeType)
             {
                 default:
-                    tsbBorderColor.Visible = false;
-                    tslnudBorderSize.Visible = false;
                     tsmiShadow.Visible = false;
                     tsmiShadowColor.Visible = false;
                     break;
@@ -1565,10 +1564,31 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
                 case ShapeType.DrawingMagnify:
-                    tsbBorderColor.Visible = true;
-                    tslnudBorderSize.Visible = true;
                     tsmiShadow.Visible = true;
                     tsmiShadowColor.Visible = true;
+                    break;
+            }
+
+            switch (shapeType)
+            {
+                default:
+                    tsbBorderColor.Visible = false;
+                    tslnudBorderSize.Visible = false;
+                    break;
+                case ShapeType.DrawingRectangle:
+                case ShapeType.DrawingEllipse:
+                case ShapeType.DrawingFreehand:
+                case ShapeType.DrawingFreehandArrow:
+                case ShapeType.DrawingLine:
+                case ShapeType.DrawingArrow:
+                case ShapeType.DrawingTextOutline:
+                case ShapeType.DrawingTextBackground:
+                case ShapeType.DrawingSpeechBalloon:
+                case ShapeType.DrawingStep:
+                case ShapeType.DrawingMagnify:
+                case ShapeType.EffectHighlight:
+                    tsbBorderColor.Visible = true;
+                    tslnudBorderSize.Visible = true;
                     break;
             }
 

@@ -35,21 +35,29 @@ namespace ShareX.ScreenCaptureLib
 
         public override string OverlayText => Resources.Highlight;
 
+        public Color BorderColor { get; set; }
+
+        public int BorderSize { get; set; }
+
         public Color HighlightColor { get; set; }
 
         public override void OnConfigLoad()
         {
+            BorderSize = AnnotationOptions.BorderSize;
+            BorderColor = AnnotationOptions.BorderColor;
             HighlightColor = AnnotationOptions.HighlightColor;
         }
 
         public override void OnConfigSave()
         {
+            AnnotationOptions.BorderSize = BorderSize;
+            AnnotationOptions.BorderColor = BorderColor;
             AnnotationOptions.HighlightColor = HighlightColor;
         }
 
         public override void ApplyEffect(Bitmap bmp)
         {
-            ImageHelpers.HighlightImage(bmp, HighlightColor);
+            ImageHelpers.HighlightImage(bmp, HighlightColor, BorderColor, BorderSize);
         }
     }
 }
