@@ -28,7 +28,7 @@ namespace ShareX.HelpersLib
     public static class Links
     {
         public const string Website = "https://getsharex.com";
-        public const string GitHub = "https://github.com/ShareX/ShareX";
+        public const string GitHub = "https://github.com/thatislg/ShareX";
         public const string GitHubIssues = GitHub + "/issues?q=is%3Aissue";
         public const string Callback = Website + "/callback/";
         public const string Changelog = Website + "/changelog";
@@ -39,7 +39,7 @@ namespace ShareX.HelpersLib
         public const string Jaex = "https://github.com/Jaex";
         public const string McoreD = "https://github.com/McoreD";
         public const string Steam = "https://store.steampowered.com/app/400040/ShareX/";
-        public const string Discord = "https://discord.gg/ShareX";
+        public const string Discord = "https://discord.gg/tA4Q87bQ"; // Đã cập nhật thành discord riêng
         public const string X = "https://twitter.com/ShareX";
         public const string XFollow = "https://twitter.com/intent/follow?screen_name=ShareX";
         private const string Docs = Website + "/docs";

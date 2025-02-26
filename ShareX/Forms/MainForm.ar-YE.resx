@@ -651,12 +651,6 @@
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>الأدوات</value>
   </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>تغريدة...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>تغريدة...</value>
-  </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>رفع</value>
   </data>

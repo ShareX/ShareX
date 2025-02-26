@@ -249,12 +249,6 @@
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Wyłącz skróty klawiszowe</value>
   </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweetnij wiadomość...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweetnij wiadomość...</value>
-  </data>
   <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
     <value>Prześlij</value>
   </data>

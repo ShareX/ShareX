@@ -222,9 +222,6 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Crea Miniature Video...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Prova il Monitor...</value>
   </data>

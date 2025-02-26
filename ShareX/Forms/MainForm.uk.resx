@@ -267,9 +267,6 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр відео...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Повідомлення у Twitter...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Тест монітора...</value>
   </data>

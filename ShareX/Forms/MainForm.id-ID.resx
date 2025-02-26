@@ -240,9 +240,6 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Pemotret video...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet pesan...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Uji monitor...</value>
   </data>

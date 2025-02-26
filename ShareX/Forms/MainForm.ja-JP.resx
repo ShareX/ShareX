@@ -246,9 +246,6 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>動画のサムネイル作成...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>メッセージをツイート...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>モニター テスト...</value>
   </data>

@@ -309,9 +309,6 @@
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>Encurtadores de URL</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tuitar mensagem...</value>
-  </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>Envio da área de transferência...</value>
   </data>

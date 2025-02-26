@@ -702,12 +702,6 @@
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Instrumente</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Dați Tweet cu mesajul...</value>
-  </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Dați Tweet cu mesajul...</value>
-  </data>
   <data name="tsbTwitter.Text" xml:space="preserve">
     <value>Twitter...</value>
   </data>

@@ -666,9 +666,6 @@
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Fluxos de trabalho</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Enviar um Tweet...</value>
-  </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>Enviar através da área de transferências...</value>
   </data>

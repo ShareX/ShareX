@@ -240,9 +240,6 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Generador de miniaturas de video...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tuitear mensaje...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Prueba de monitor...</value>
   </data>

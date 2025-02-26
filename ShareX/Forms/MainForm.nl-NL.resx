@@ -207,9 +207,6 @@
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet bericht...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Scherm tester...</value>
   </data>

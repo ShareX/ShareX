@@ -494,9 +494,6 @@
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>快捷動作</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>推特發文...</value>
-  </data>
   <data name="tsmiUploadClipboard.Text" xml:space="preserve">
     <value>從剪貼簿上傳...</value>
   </data>

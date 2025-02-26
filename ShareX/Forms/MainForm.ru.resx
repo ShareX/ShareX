@@ -531,12 +531,6 @@
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>Изменение DNS...</value>
   </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Сообщение в Twitter...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Сообщение в Twitter...</value>
-  </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>Сервисы коротких ссылок</value>
   </data>

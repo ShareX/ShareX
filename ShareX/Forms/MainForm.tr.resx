@@ -210,9 +210,6 @@
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Cetvel...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet gönder...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitör testi...</value>
   </data>

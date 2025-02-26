@@ -207,9 +207,6 @@
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Vonalzó...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet üzenet...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitor teszt...</value>
   </data>

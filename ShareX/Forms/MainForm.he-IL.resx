@@ -549,9 +549,6 @@
   <data name="tsmiUploadURL.Text" xml:space="preserve">
     <value>העלה מקישור...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>צייץ הודעה...</value>
-  </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>העלה</value>
   </data>

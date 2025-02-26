@@ -213,9 +213,6 @@
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Carpeta de índice...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet mensaje...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Prueba del monitor...</value>
   </data>

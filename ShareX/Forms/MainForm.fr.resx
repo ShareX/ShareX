@@ -198,9 +198,6 @@
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Règle...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweeter un message...</value>
-  </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Test d'écran...</value>
   </data>

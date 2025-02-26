@@ -465,12 +465,6 @@
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
     <value>섬네일 URL</value>
   </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>트윗 날리기...</value>
-  </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>트윗 날리기...</value>
-  </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>업로드</value>
   </data>

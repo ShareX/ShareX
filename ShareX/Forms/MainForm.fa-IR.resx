@@ -341,9 +341,6 @@
   <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
     <value>آپلود با کشیدن و رهاکردن ...</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>پیام توئیت ...</value>
-  </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>گردش کار</value>
   </data>
