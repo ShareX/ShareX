@@ -77,32 +77,8 @@ namespace ShareX
                 case SupportedLanguage.Automatic:
                     icon = Resources.globe;
                     break;
-                case SupportedLanguage.Arabic:
-                    icon = Resources.ye;
-                    break;
-                case SupportedLanguage.Dutch:
-                    icon = Resources.nl;
-                    break;
                 case SupportedLanguage.English:
                     icon = Resources.us;
-                    break;
-                case SupportedLanguage.French:
-                    icon = Resources.fr;
-                    break;
-                case SupportedLanguage.German:
-                    icon = Resources.de;
-                    break;
-                case SupportedLanguage.Hebrew:
-                    icon = Resources.il;
-                    break;
-                case SupportedLanguage.Hungarian:
-                    icon = Resources.hu;
-                    break;
-                case SupportedLanguage.Indonesian:
-                    icon = Resources.id;
-                    break;
-                case SupportedLanguage.Italian:
-                    icon = Resources.it;
                     break;
                 case SupportedLanguage.Japanese:
                     icon = Resources.jp;
@@ -110,41 +86,11 @@ namespace ShareX
                 case SupportedLanguage.Korean:
                     icon = Resources.kr;
                     break;
-                case SupportedLanguage.MexicanSpanish:
-                    icon = Resources.mx;
-                    break;
-                case SupportedLanguage.Persian:
-                    icon = Resources.ir;
-                    break;
-                case SupportedLanguage.Polish:
-                    icon = Resources.pl;
-                    break;
-                case SupportedLanguage.Portuguese:
-                    icon = Resources.pt;
-                    break;
-                case SupportedLanguage.PortugueseBrazil:
-                    icon = Resources.br;
-                    break;
-                case SupportedLanguage.Romanian:
-                    icon = Resources.ro;
-                    break;
-                case SupportedLanguage.Russian:
-                    icon = Resources.ru;
-                    break;
                 case SupportedLanguage.SimplifiedChinese:
                     icon = Resources.cn;
                     break;
-                case SupportedLanguage.Spanish:
-                    icon = Resources.es;
-                    break;
                 case SupportedLanguage.TraditionalChinese:
                     icon = Resources.tw;
-                    break;
-                case SupportedLanguage.Turkish:
-                    icon = Resources.tr;
-                    break;
-                case SupportedLanguage.Ukrainian:
-                    icon = Resources.ua;
                     break;
                 case SupportedLanguage.Vietnamese:
                     icon = Resources.vn;
@@ -159,34 +105,10 @@ namespace ShareX
             string cultureName;
 
             switch (language)
-            {
-                case SupportedLanguage.Arabic:
-                    cultureName = "ar-YE";
-                    break;
-                case SupportedLanguage.Dutch:
-                    cultureName = "nl-NL";
-                    break;
+            {                
                 default:
                 case SupportedLanguage.English:
                     cultureName = "en-US";
-                    break;
-                case SupportedLanguage.French:
-                    cultureName = "fr-FR";
-                    break;
-                case SupportedLanguage.German:
-                    cultureName = "de-DE";
-                    break;
-                case SupportedLanguage.Hebrew:
-                    cultureName = "he-IL";
-                    break;
-                case SupportedLanguage.Hungarian:
-                    cultureName = "hu-HU";
-                    break;
-                case SupportedLanguage.Indonesian:
-                    cultureName = "id-ID";
-                    break;
-                case SupportedLanguage.Italian:
-                    cultureName = "it-IT";
                     break;
                 case SupportedLanguage.Japanese:
                     cultureName = "ja-JP";
@@ -194,41 +116,11 @@ namespace ShareX
                 case SupportedLanguage.Korean:
                     cultureName = "ko-KR";
                     break;
-                case SupportedLanguage.MexicanSpanish:
-                    cultureName = "es-MX";
-                    break;
-                case SupportedLanguage.Persian:
-                    cultureName = "fa-IR";
-                    break;
-                case SupportedLanguage.Polish:
-                    cultureName = "pl-PL";
-                    break;
-                case SupportedLanguage.Portuguese:
-                    cultureName = "pt-PT";
-                    break;
-                case SupportedLanguage.PortugueseBrazil:
-                    cultureName = "pt-BR";
-                    break;
-                case SupportedLanguage.Romanian:
-                    cultureName = "ro-RO";
-                    break;
-                case SupportedLanguage.Russian:
-                    cultureName = "ru-RU";
-                    break;
                 case SupportedLanguage.SimplifiedChinese:
                     cultureName = "zh-CN";
                     break;
-                case SupportedLanguage.Spanish:
-                    cultureName = "es-ES";
-                    break;
                 case SupportedLanguage.TraditionalChinese:
                     cultureName = "zh-TW";
-                    break;
-                case SupportedLanguage.Turkish:
-                    cultureName = "tr-TR";
-                    break;
-                case SupportedLanguage.Ukrainian:
-                    cultureName = "uk-UA";
                     break;
                 case SupportedLanguage.Vietnamese:
                     cultureName = "vi-VN";
