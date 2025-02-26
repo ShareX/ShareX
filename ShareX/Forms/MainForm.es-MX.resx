@@ -315,9 +315,6 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Depurar</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Donar...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Acerca de...</value>
   </data>

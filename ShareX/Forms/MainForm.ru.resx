@@ -585,9 +585,6 @@
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>О программе...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Пожертвовать...</value>
-  </data>
   <data name="tsmiUploadText.Text" xml:space="preserve">
     <value>Загрузить текст...</value>
   </data>

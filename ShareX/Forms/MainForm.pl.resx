@@ -381,9 +381,6 @@
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Prześlij</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Dotacja...</value>
-  </data>
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>Historia...</value>
   </data>

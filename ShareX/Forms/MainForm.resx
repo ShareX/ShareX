@@ -861,18 +861,6 @@
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Test URL sharing</value>
   </data>
-  <data name="tsbDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbDonate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
-  </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Donate...</value>
-  </data>
   <data name="tsbX.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -2579,12 +2567,6 @@
   </data>
   <data name="&gt;&gt;tsmiTestURLSharing.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbDonate.Name" xml:space="preserve">
-    <value>tsbDonate</value>
-  </data>
-  <data name="&gt;&gt;tsbDonate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbX.Name" xml:space="preserve">
     <value>tsbX</value>

@@ -614,9 +614,6 @@
   <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
     <value>自訂上傳工具設定...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>捐獻...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>關於...</value>
   </data>

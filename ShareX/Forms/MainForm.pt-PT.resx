@@ -150,10 +150,7 @@
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Faça uma doação...</value>
-  </data>
-  <data name="tsbHistory.Text" xml:space="preserve">
+   <data name="tsbHistory.Text" xml:space="preserve">
     <value>Histórico...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">

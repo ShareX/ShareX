@@ -323,9 +323,6 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>خطایابی</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>کمک مالی ...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>درباره ما ...</value>
   </data>

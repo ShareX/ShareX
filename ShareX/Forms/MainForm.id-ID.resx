@@ -312,9 +312,6 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Debug</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Donasi...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Tentang...</value>
   </data>

@@ -345,9 +345,6 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Налагодження</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Пожертвувати...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Про програму...</value>
   </data>

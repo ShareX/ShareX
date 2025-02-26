@@ -129,7 +129,6 @@
             this.tsmiTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbDonate = new System.Windows.Forms.ToolStripButton();
             this.tsbX = new System.Windows.Forms.ToolStripButton();
             this.tsbDiscord = new System.Windows.Forms.ToolStripButton();
             this.tsbAbout = new System.Windows.Forms.ToolStripButton();
@@ -414,7 +413,6 @@
             this.tsbImageHistory,
             this.tssMain3,
             this.tsddbDebug,
-            this.tsbDonate,
             this.tsbX,
             this.tsbDiscord,
             this.tsbAbout});
@@ -1057,13 +1055,6 @@
             this.tsmiTestURLSharing.Name = "tsmiTestURLSharing";
             resources.ApplyResources(this.tsmiTestURLSharing, "tsmiTestURLSharing");
             this.tsmiTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
-            // 
-            // tsbDonate
-            // 
-            this.tsbDonate.Image = global::ShareX.Properties.Resources.heart;
-            resources.ApplyResources(this.tsbDonate, "tsbDonate");
-            this.tsbDonate.Name = "tsbDonate";
-            this.tsbDonate.Click += new System.EventHandler(this.tsbDonate_Click);
             // 
             // tsbX
             // 
@@ -2590,7 +2581,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiBingVisualSearch;
         private System.Windows.Forms.ToolStripButton tsbDiscord;
         private System.Windows.Forms.ToolStripSeparator tssMain3;
-        private System.Windows.Forms.ToolStripButton tsbDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiBorderlessWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayBorderlessWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageViewer;

@@ -579,9 +579,6 @@
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>Verkort URL...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Doneer...</value>
-  </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>Laat cursor zien</value>
   </data>

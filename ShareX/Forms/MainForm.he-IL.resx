@@ -369,9 +369,6 @@
   <data name="tsmiInspectWindow.Text" xml:space="preserve">
     <value>בדוק חלון...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>תרומה...</value>
-  </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>בוחר הצבעים...</value>
   </data>

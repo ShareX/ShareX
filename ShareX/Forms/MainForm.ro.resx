@@ -339,9 +339,6 @@
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>Schimbător DNS...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Donați...</value>
-  </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>Descărcare</value>
   </data>

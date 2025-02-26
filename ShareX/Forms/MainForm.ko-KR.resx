@@ -567,9 +567,6 @@
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>이미지 취합기...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>기부...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>정보...</value>
   </data>

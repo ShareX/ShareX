@@ -573,9 +573,6 @@
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Gộp ảnh...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Quyên góp...</value>
-  </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>Tải về</value>
   </data>

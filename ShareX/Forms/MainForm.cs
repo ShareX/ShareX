@@ -1954,11 +1954,6 @@ namespace ShareX
             UploadManager.ShareURL(Links.Website);
         }
 
-        private void tsbDonate_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.Donate);
-        }
-
         private void tsbX_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.XFollow);

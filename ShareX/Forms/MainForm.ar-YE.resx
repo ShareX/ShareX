@@ -246,9 +246,6 @@
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>إعدادات DNS...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>تبرع...</value>
-  </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>تنزيل</value>
   </data>

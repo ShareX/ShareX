@@ -570,9 +570,6 @@
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Über...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Spenden...</value>
-  </data>
   <data name="tsmiShortenURL.Text" xml:space="preserve">
     <value>URL kürzen...</value>
   </data>

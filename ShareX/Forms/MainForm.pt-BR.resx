@@ -690,9 +690,6 @@
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Doar...</value>
-  </data>
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Enter</value>
   </data>

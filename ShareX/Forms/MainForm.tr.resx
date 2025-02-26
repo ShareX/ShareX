@@ -582,9 +582,6 @@
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>Küçük resim yapıcı...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Bağış yap...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Hakkında...</value>
   </data>
